@@ -1,0 +1,20 @@
+{
+  "thresholds": {
+    "exact_match": 1.0,
+    "inclusion_match": 0.6,
+    "semantic_similarity": 0.55,
+    "auto_merge": 0.65
+  },
+  "weights": {
+    "name_similarity": 0.35,
+    "keyword_overlap": 0.35,
+    "industry_match": 0.2,
+    "semantic_similarity": 0.1
+  },
+  "strategies": {
+    "enable_exact_match": true,
+    "enable_inclusion_check": true,
+    "enable_semantic_analysis": true,
+    "use_jieba": true
+  }
+}

@@ -1,0 +1,5 @@
+import asyncpg
+from theme_service.config import settings
+
+async def get_conn():
+    return await asyncpg.connect(settings.DATABASE_URL)

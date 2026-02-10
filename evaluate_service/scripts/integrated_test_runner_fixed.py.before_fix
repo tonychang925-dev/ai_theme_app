@@ -1,0 +1,419 @@
+#!/usr/bin/env python3
+"""
+集成测试运行器 - 修复完整版
+🚀 修复所有语法问题，确保正确的try-except结构和缩进
+"""
+import asyncio
+import logging
+import sys
+import os
+from pathlib import Path
+
+# 添加项目根目录到Python路径
+project_root = Path(__file__).parent.parent.parent
+sys.path.insert(0, str(project_root))
+
+# 配置日志
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler('/tmp/integrated_test.log')
+    ]
+)
+from datetime import datetime
+
+logger = logging.getLogger(__name__)
+
+async def main():
+    """主测试函数"""
+    logger.info("🚀 启动集成测试运行器")
+
+        # 🎯 76个数据集路径定义
+        DATASET_PATHS = {
+            "raw_dataset": "evaluate_service/data/raw/validation_dataset.json",
+            "processed_events": "evaluate_service/data/processed/validation_events_enhanced.json", 
+            "clustering_results": "evaluate_service/data/results/clustering_evaluation_results/clustering_report_20260107_192548.json",
+            "ground_truth": "evaluate_service/config/ground_truth_correct.json"
+        }
+        
+        # 检查数据集文件是否存在
+        for name, path in DATASET_PATHS.items():
+            if os.path.exists(path):
+                logger.info(f"✅ 数据集 '{name}' 存在: {path}")
+            else:
+                logger.warning(f"⚠️  数据集 '{name}' 不存在: {path}")
+    
+    try:
+        # ========== 导入依赖 ==========
+        from database_service.config import DatabaseConfig
+        from database_service.memory_manager import MemoryDatabaseManager
+        from database_service.client import DatabaseClient
+        from database_service.pure_data_fetcher import PureDataFetcher
+        
+        # ========== 数据库连接 ==========
+        logger.info("🔗 初始化数据库连接...")
+        db_config = DatabaseConfig()
+        db_manager = MemoryDatabaseManager(db_config)
+        
+        # 连接数据库
+        connected = await db_manager.connect()
+        if not connected:
+            logger.error("❌ 数据库连接失败")
+            return
+        
+        logger.info("✅ 数据库连接成功")
+        
+        # 🚀 确保数据库中有基础数据
+        logger.info("检查数据库初始状态...")
+        stats = await db_manager.get_stats()
+        logger.info(f"数据库初始状态: {stats}")
+        
+        if stats.get("total_themes", 0) == 0:
+            logger.warning("⚠️  数据库为空，创建示例主题...")
+            example_themes = [
+                {"name": "人工智能芯片", "keywords": ["AI芯片", "半导体"]},
+                {"name": "新能源电池", "keywords": ["锂电池", "储能"]}
+            ]
+            for theme in example_themes:
+                try:
+                    await db_manager.create_theme(**theme)
+                    logger.info(f"创建示例主题: {theme['name']}")
+                except Exception as e:
+                    logger.debug(f"主题已存在或创建失败: {e}")
+        
+        # 创建数据库客户端
+        db_client = DatabaseClient(db_manager)
+        
+        # 🚀 修复：创建共享的data_fetcher
+        shared_data_fetcher = PureDataFetcher(db_manager)
+        logger.info(f"✅ 创建共享data_fetcher: {shared_data_fetcher.__class__.__name__}")
+        
+        # ========== 创建AI客户端 ==========
+        from theme_service.enhanced_ai_client import EnhancedAIThemeClient
+        from theme_service.ai_similarity_analyzer import AIThemeSimilarityAnalyzer
+        
+        logger.info("🤖 初始化AI客户端...")
+        ai_client = EnhancedAIThemeClient()
+        # 🚀 创建AI相似性分析器（纯AI版）
+        similarity_analyzer = AIThemeSimilarityAnalyzer(ai_client.llm_parser)
+        logger.info(f"✅ 创建AI相似性分析器: {similarity_analyzer.__class__.__name__}")
+        
+        # ========== 创建引擎 ==========
+        from theme_service.enhanced_theme_discovery import EnhancedThemeDiscoveryEngine
+        
+        logger.info("🚀 初始化EnhancedThemeDiscoveryEngine...")
+        
+        # 🚀 修复：传递shared_data_fetcher参数
+        engine = EnhancedThemeDiscoveryEngine(
+            ai_client=ai_client,
+            database_client=db_client,
+        similarity_analyzer=similarity_analyzer,
+            data_fetcher=shared_data_fetcher  # 关键修复！
+        )
+        
+        logger.info(f"✅ 引擎初始化完成: {engine.get_engine_info()['engine_version']}")
+        
+        # ========== 测试事件 ==========
+        test_events = [
+            {
+                'id': 'test_event_001',
+                'title': '华为发布最新AI芯片，性能提升200%',
+                'summary': '华为今天发布了最新一代AI芯片，据称性能比上一代提升200%，将用于云计算和边缘计算场景',
+                'impact_industries': ['半导体', '人工智能', '云计算'],
+                'theme_directive': {
+                    'action': 'CLUSTER',
+                    'confidence': 0.8,
+                    'reason': '涉及AI芯片技术'
+                }
+            },
+            {
+                'id': 'test_event_002', 
+                'title': '特斯拉宣布在上海建设超级电池工厂',
+                'summary': '特斯拉计划在上海投资建设新的超级电池工厂，预计年产能将达到100GWh',
+                'impact_industries': ['新能源汽车', '锂电池', '储能'],
+                'theme_directive': {
+                    'action': 'CLUSTER',
+                    'confidence': 0.9,
+                    'reason': '新能源产业重大投资'
+                }
+            }
+        ]
+        
+        # ========== 处理事件 ==========
+        logger.info(f"\n{'='*60}")
+        logger.info(f"🧪 开始处理测试事件 (共{len(test_events)}个)")
+        logger.info(f"{'='*60}")
+        
+        for event in test_events:
+            logger.info(f"\n📋 处理事件: {event['id']}")
+            logger.info(f"  标题: {event['title']}")
+            
+            result = await engine.process_single_event(event)
+            
+            if result['status'] in ['created', 'merged']:
+                logger.info(f"✅ 处理成功: {result['status']}, 主题: {result.get('theme_name', '未知')}")
+                if 'ai_decision' in result:
+                    logger.info(f"   AI决策: {result['ai_decision'].get('decision')}, 置信度: {result['ai_decision'].get('confidence', 0):.2f}")
+            else:
+                logger.warning(f"⚠️  处理状态: {result['status']}")
+                if 'error' in result:
+                    logger.warning(f"   错误: {result['error']}")
+        
+
+        # ========== 76个数据集评估 ==========
+        logger.info(f"\n{'='*60}")
+        logger.info(f"📊 开始76个数据集评估")
+        logger.info(f"{'='*60}")
+        
+        # 加载原始数据集
+        raw_dataset_path = DATASET_PATHS["raw_dataset"]
+        if os.path.exists(raw_dataset_path):
+            logger.info(f"📂 加载原始数据集: {raw_dataset_path}")
+            try:
+                with open(raw_dataset_path, 'r', encoding='utf-8') as f:
+                    raw_dataset = json.load(f)
+                
+                logger.info(f"✅ 成功加载原始数据集，共 {len(raw_dataset) if isinstance(raw_dataset, list) else '未知'} 条记录")
+                
+                # 简单统计
+                if isinstance(raw_dataset, list):
+                    logger.info(f"📈 数据集统计:")
+                    logger.info(f"   总记录数: {len(raw_dataset)}")
+                    
+                    # 显示前5条记录
+                    for i, record in enumerate(raw_dataset[:3]):
+                        logger.info(f"   记录{i+1}: {record.get('title', '无标题')[:50]}...")
+                
+            except Exception as e:
+                logger.error(f"❌ 加载原始数据集失败: {e}")
+        else:
+            logger.warning(f"⚠️  原始数据集文件不存在: {raw_dataset_path}")
+        
+        # 加载处理后的事件数据
+        processed_events_path = DATASET_PATHS["processed_events"]
+        if os.path.exists(processed_events_path):
+            logger.info(f"\n📂 加载处理后的事件数据: {processed_events_path}")
+            try:
+                with open(processed_events_path, 'r', encoding='utf-8') as f:
+                    processed_events = json.load(f)
+                
+                event_count = len(processed_events) if isinstance(processed_events, list) else 0
+                logger.info(f"✅ 成功加载处理后事件，共 {event_count} 个事件")
+                
+                if event_count > 0 and event_count <= 20:
+                    # 如果事件数量不多，全部处理
+                    logger.info(f"🧪 开始处理 {event_count} 个评估事件...")
+                    
+                    processed_count = 0
+                    success_count = 0
+                    
+                    for event in processed_events[:10]:  # 先处理前10个
+                        try:
+                            result = await engine.process_single_event(event)
+                            processed_count += 1
+                            
+                            if result.get('status') in ['created', 'merged']:
+                                success_count += 1
+                                logger.info(f"   ✅ {event.get('id', '未知')}: {result.get('status')} → {result.get('theme_name', '未知')}")
+                            else:
+                                logger.warning(f"   ⚠️  {event.get('id', '未知')}: {result.get('status')}")
+                                
+                        except Exception as e:
+                            logger.error(f"   ❌ {event.get('id', '未知')} 处理失败: {e}")
+                    
+                    logger.info(f"📊 评估处理完成: {success_count}/{processed_count} 成功")
+                    
+                elif event_count > 20:
+                    logger.info(f"📊 事件数量较多 ({event_count})，进行抽样处理...")
+                    # 抽样处理10个事件
+                    import random
+                    sample_size = min(10, event_count)
+                    sample_indices = random.sample(range(event_count), sample_size)
+                    
+                    processed_count = 0
+                    success_count = 0
+                    
+                    for idx in sample_indices:
+                        event = processed_events[idx]
+                        try:
+                            result = await engine.process_single_event(event)
+                            processed_count += 1
+                            
+                            if result.get('status') in ['created', 'merged']:
+                                success_count += 1
+                                logger.info(f"   ✅ 样本{idx+1}: {result.get('status')} → {result.get('theme_name', '未知')}")
+                            else:
+                                logger.warning(f"   ⚠️  样本{idx+1}: {result.get('status')}")
+                                
+                        except Exception as e:
+                            logger.error(f"   ❌ 样本{idx+1} 处理失败: {e}")
+                    
+                    logger.info(f"📊 抽样评估完成: {success_count}/{processed_count} 成功")
+                
+            except Exception as e:
+                logger.error(f"❌ 加载处理后事件失败: {e}")
+        else:
+            logger.warning(f"⚠️  处理后事件文件不存在: {processed_events_path}")
+        
+        # 加载聚类评估结果进行比较
+        clustering_results_path = DATASET_PATHS["clustering_results"]
+        if os.path.exists(clustering_results_path):
+            logger.info(f"\n📂 加载聚类评估结果: {clustering_results_path}")
+            try:
+                with open(clustering_results_path, 'r', encoding='utf-8') as f:
+                    clustering_results = json.load(f)
+                
+                logger.info(f"✅ 成功加载聚类评估结果")
+                
+                # 显示关键指标
+                if isinstance(clustering_results, dict):
+                    logger.info(f"📈 基线聚类结果指标:")
+                    for key in ['total_events', 'created_themes', 'merged_themes', 'accuracy', 'precision']:
+                        if key in clustering_results:
+                            logger.info(f"   {key}: {clustering_results[key]}")
+                
+            except Exception as e:
+                logger.error(f"❌ 加载聚类评估结果失败: {e}")
+        else:
+            logger.warning(f"⚠️  聚类评估结果文件不存在: {clustering_results_path}")
+        
+        # 加载ground truth数据
+        ground_truth_path = DATASET_PATHS["ground_truth"]
+        if os.path.exists(ground_truth_path):
+            logger.info(f"\n📂 加载ground truth数据: {ground_truth_path}")
+            try:
+                with open(ground_truth_path, 'r', encoding='utf-8') as f:
+                    ground_truth = json.load(f)
+                
+                logger.info(f"✅ 成功加载ground truth数据")
+                
+                if isinstance(ground_truth, dict):
+                    # 简单的准确率计算
+                    total_events = ground_truth.get('total_events', 0)
+                    correct_matches = ground_truth.get('correct_matches', 0)
+                    
+                    if total_events > 0:
+                        accuracy = correct_matches / total_events
+                        logger.info(f"🎯 Ground Truth准确率: {accuracy:.2%} ({correct_matches}/{total_events})")
+                
+            except Exception as e:
+                logger.error(f"❌ 加载ground truth失败: {e}")
+        else:
+            logger.warning(f"⚠️  ground truth文件不存在: {ground_truth_path}")
+        # ========== 验证结果 ==========
+        logger.info(f"\n{'='*60}")
+        logger.info(f"📊 验证处理结果")
+        logger.info(f"{'='*60}")
+        
+        # 获取统计信息
+        stats = await engine.get_processing_stats()
+        logger.info(f"📈 处理统计:")
+        logger.info(f"   总事件数: {stats['total_events']}")
+        logger.info(f"   成功: {stats['successful']}")
+        logger.info(f"   失败: {stats['failed']}")
+        logger.info(f"   创建主题: {stats['created_themes']}")
+        logger.info(f"   合并主题: {stats['merged_themes']}")
+        logger.info(f"   平均耗时: {stats['avg_processing_time']:.2f}s")
+        
+        # 验证数据库中的主题
+        logger.info("\n🔍 验证数据库中的主题...")
+        try:
+            themes = await db_client.get_all_themes(limit=10)
+            if themes:
+                logger.info(f"✅ 数据库中有 {len(themes)} 个主题:")
+                for theme in themes:
+                    logger.info(f"   - {theme.name} (ID: {theme.id})")
+            else:
+                logger.warning("⚠️  数据库中没有主题")
+                
+                # 检查data_fetcher是否能获取数据
+                logger.info("\n🔍 检查data_fetcher数据源...")
+                test_data = await shared_data_fetcher.get_all_themes(limit=5)
+                logger.info(f"data_fetcher返回: {len(test_data) if test_data else 0} 个主题")
+                
+        except Exception as e:
+            logger.error(f"❌ 验证主题失败: {e}")
+        
+
+        # 🎯 与基线聚类结果对比
+        logger.info(f"\n{'='*60}")
+        logger.info(f"🔬 与基线聚类结果对比")
+        logger.info(f"{'='*60}")
+        
+        if os.path.exists(clustering_results_path):
+            try:
+                with open(clustering_results_path, 'r', encoding='utf-8') as f:
+                    baseline = json.load(f)
+                
+                current_stats = await engine.get_processing_stats()
+                
+                logger.info(f"📊 性能对比:")
+                logger.info(f"   当前系统 - 总事件: {current_stats['total_events']}")
+                logger.info(f"   基线系统 - 总事件: {baseline.get('total_events', 'N/A')}")
+                
+                if current_stats['total_events'] > 0 and 'total_events' in baseline:
+                    # 计算改进
+                    baseline_avg_time = baseline.get('avg_processing_time', 0)
+                    current_avg_time = current_stats['avg_processing_time']
+                    
+                    if baseline_avg_time > 0:
+                        time_improvement = (baseline_avg_time - current_avg_time) / baseline_avg_time
+                        logger.info(f"   ⏱️  平均处理时间改进: {time_improvement:.1%}")
+                
+                # 主题数量对比
+                baseline_themes = baseline.get('total_themes', 0)
+                current_themes = len(await db_client.get_all_themes(limit=1000))
+                
+                logger.info(f"   📌 主题数量: 当前{current_themes} vs 基线{baseline_themes}")
+                
+            except Exception as e:
+                logger.error(f"❌ 对比分析失败: {e}")
+        
+        # 🎯 输出完整评估报告路径
+        report_path = f"/tmp/76_dataset_evaluation_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json"
+        evaluation_report = {
+            "evaluation_time": datetime.now().isoformat(),
+            "system_version": engine.get_engine_info()['engine_version'],
+            "processing_stats": await engine.get_processing_stats(),
+            "database_stats": await db_manager.get_stats(),
+            "dataset_info": {
+                "raw_dataset_exists": os.path.exists(raw_dataset_path),
+                "processed_events_exists": os.path.exists(processed_events_path),
+                "clustering_results_exists": os.path.exists(clustering_results_path),
+                "ground_truth_exists": os.path.exists(ground_truth_path)
+            }
+        }
+        
+        try:
+            with open(report_path, 'w', encoding='utf-8') as f:
+                json.dump(evaluation_report, f, ensure_ascii=False, indent=2)
+            logger.info(f"📄 完整评估报告已保存: {report_path}")
+        except Exception as e:
+            logger.error(f"❌ 保存评估报告失败: {e}")
+        logger.info(f"\n{'='*60}")
+        logger.info(f"🎉 测试完成！")
+        logger.info(f"{'='*60}")
+        
+    except ImportError as e:
+        logger.error(f"❌ 导入失败: {e}")
+        logger.error("请确保所有依赖都已正确安装")
+        return 1
+        
+    except Exception as e:
+        logger.error(f"❌ 测试运行失败: {e}")
+        import traceback
+        traceback.print_exc()
+        return 1
+    
+    return 0
+
+if __name__ == "__main__":
+    # 设置事件循环策略
+    if sys.platform == 'win32':
+        asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+    
+    # 运行主函数
+    exit_code = asyncio.run(main())
+    sys.exit(exit_code)

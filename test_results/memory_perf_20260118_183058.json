@@ -1,0 +1,91 @@
+{
+  "create_single": {
+    "count": 50,
+    "avg_ms": 0.021839141845703125,
+    "min_ms": 0.018835067749023438,
+    "max_ms": 0.046253204345703125,
+    "std_ms": 0.004586325884413831,
+    "ops_per_sec": 45789.34497816594
+  },
+  "get_by_id": {
+    "count": 50,
+    "avg_ms": 0.0013494491577148438,
+    "ops_per_sec": 741043.1095406361
+  },
+  "get_by_code": {
+    "count": 50,
+    "avg_ms": 0.004715919494628906,
+    "ops_per_sec": 212047.72497472193
+  },
+  "update_full": {
+    "count": 50,
+    "avg_ms": 0.0068759918212890625,
+    "ops_per_sec": 145433.56449375866
+  },
+  "update_increment": {
+    "count": 50,
+    "avg_ms": 0.006575584411621094,
+    "ops_per_sec": 152077.73749093545
+  },
+  "search_general": {
+    "count": 20,
+    "avg_ms": 0.43442249298095703,
+    "ops_per_sec": 2301.9065912957576
+  },
+  "search_keyword": {
+    "count": 20,
+    "avg_ms": 0.3474235534667969,
+    "ops_per_sec": 2878.3310458413393
+  },
+  "search_heat": {
+    "count": 20,
+    "avg_ms": 0.04729032516479492,
+    "ops_per_sec": 21145.974287874968
+  },
+  "batch_create": {
+    "1": {
+      "batch_size": 1,
+      "total_time_ms": 0.11610984802246094,
+      "avg_time_per_theme_ms": 0.11610984802246094,
+      "ops_per_sec": 8612.533880903491,
+      "efficiency_gain": 1.0
+    },
+    "10": {
+      "batch_size": 10,
+      "total_time_ms": 0.3628730773925781,
+      "avg_time_per_theme_ms": 0.03628730773925781,
+      "ops_per_sec": 27557.84494086728,
+      "efficiency_gain": 3.1997371879106438
+    },
+    "50": {
+      "batch_size": 50,
+      "total_time_ms": 1.6942024230957031,
+      "avg_time_per_theme_ms": 0.03388404846191406,
+      "ops_per_sec": 29512.412046158177,
+      "efficiency_gain": 3.4266816774556714
+    }
+  },
+  "concurrent_read": {
+    "1": {
+      "concurrency": 1,
+      "total_operations": 5,
+      "total_time_ms": 0.4940032958984375,
+      "avg_time_per_op_ms": 0.0988006591796875,
+      "ops_per_sec": 10121.389961389961
+    },
+    "5": {
+      "concurrency": 5,
+      "total_operations": 25,
+      "total_time_ms": 0.5462169647216797,
+      "avg_time_per_op_ms": 0.021848678588867188,
+      "ops_per_sec": 45769.35835879529
+    },
+    "10": {
+      "concurrency": 10,
+      "total_operations": 50,
+      "total_time_ms": 0.5850791931152344,
+      "avg_time_per_op_ms": 0.011701583862304688,
+      "ops_per_sec": 85458.51670741646
+    }
+  }
+}

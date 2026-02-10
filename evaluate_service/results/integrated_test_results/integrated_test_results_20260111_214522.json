@@ -1,0 +1,382 @@
+{
+  "metadata": {
+    "test_date": "2026-01-11T21:45:22.078700",
+    "data_source": "/Users/admin/Desktop/ai_theme_app/evaluate_service/data/processed/validation_events_enhanced.json",
+    "total_events": 10,
+    "duration_seconds": 0.344373
+  },
+  "stats": {
+    "total_events": 10,
+    "success": 0,
+    "failed": 10,
+    "created": 0,
+    "merged": 0,
+    "ignored": 0,
+    "decision_distribution": {},
+    "theme_counts": {},
+    "accuracy_stats": {
+      "comparable_events": 10,
+      "matches": 0,
+      "accuracy": 0.0,
+      "details": [
+        {
+          "event_id": "news_000",
+          "ground_truth": "AI/AR眼镜",
+          "ai_theme": null,
+          "match": false
+        },
+        {
+          "event_id": "news_001",
+          "ground_truth": "AI/AR眼镜",
+          "ai_theme": null,
+          "match": false
+        },
+        {
+          "event_id": "news_002",
+          "ground_truth": "AI/AR眼镜",
+          "ai_theme": null,
+          "match": false
+        },
+        {
+          "event_id": "news_003",
+          "ground_truth": "AI/AR眼镜",
+          "ai_theme": null,
+          "match": false
+        },
+        {
+          "event_id": "news_004",
+          "ground_truth": "AI/AR眼镜",
+          "ai_theme": null,
+          "match": false
+        },
+        {
+          "event_id": "news_005",
+          "ground_truth": "AI/AR眼镜",
+          "ai_theme": null,
+          "match": false
+        },
+        {
+          "event_id": "news_006",
+          "ground_truth": "AI/AR眼镜",
+          "ai_theme": null,
+          "match": false
+        },
+        {
+          "event_id": "news_007",
+          "ground_truth": "AI/AR眼镜",
+          "ai_theme": null,
+          "match": false
+        },
+        {
+          "event_id": "news_008",
+          "ground_truth": "AI/AR眼镜",
+          "ai_theme": null,
+          "match": false
+        },
+        {
+          "event_id": "news_009",
+          "ground_truth": "AI/AR眼镜",
+          "ai_theme": null,
+          "match": false
+        }
+      ]
+    },
+    "duration_seconds": 0.344373,
+    "success_rate": 0.0,
+    "failure_rate": 100.0,
+    "events_per_second": 29.03828116606122,
+    "seconds_per_event": 0.0344373
+  },
+  "results": [
+    {
+      "event_id": "news_000",
+      "processed_at": "2026-01-11T21:45:21.728403",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:21.728410"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:21.728414",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "failed",
+          "timestamp": "2026-01-11T21:45:21.728452",
+          "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'"
+        }
+      ],
+      "related_themes_count": 0,
+      "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'",
+      "error_type": "Exception",
+      "ground_truth_theme": "AI/AR眼镜"
+    },
+    {
+      "event_id": "news_001",
+      "processed_at": "2026-01-11T21:45:22.057170",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.057180"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.057185",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "failed",
+          "timestamp": "2026-01-11T21:45:22.057250",
+          "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'"
+        }
+      ],
+      "related_themes_count": 0,
+      "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'",
+      "error_type": "Exception",
+      "ground_truth_theme": "AI/AR眼镜"
+    },
+    {
+      "event_id": "news_002",
+      "processed_at": "2026-01-11T21:45:22.059275",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.059283"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.059287",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "failed",
+          "timestamp": "2026-01-11T21:45:22.059361",
+          "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'"
+        }
+      ],
+      "related_themes_count": 0,
+      "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'",
+      "error_type": "Exception",
+      "ground_truth_theme": "AI/AR眼镜"
+    },
+    {
+      "event_id": "news_003",
+      "processed_at": "2026-01-11T21:45:22.060954",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.060959"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.060962",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "failed",
+          "timestamp": "2026-01-11T21:45:22.061009",
+          "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'"
+        }
+      ],
+      "related_themes_count": 0,
+      "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'",
+      "error_type": "Exception",
+      "ground_truth_theme": "AI/AR眼镜"
+    },
+    {
+      "event_id": "news_004",
+      "processed_at": "2026-01-11T21:45:22.062554",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.062559"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.062562",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "failed",
+          "timestamp": "2026-01-11T21:45:22.062609",
+          "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'"
+        }
+      ],
+      "related_themes_count": 0,
+      "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'",
+      "error_type": "Exception",
+      "ground_truth_theme": "AI/AR眼镜"
+    },
+    {
+      "event_id": "news_005",
+      "processed_at": "2026-01-11T21:45:22.064127",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.064133"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.064136",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "failed",
+          "timestamp": "2026-01-11T21:45:22.064182",
+          "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'"
+        }
+      ],
+      "related_themes_count": 0,
+      "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'",
+      "error_type": "Exception",
+      "ground_truth_theme": "AI/AR眼镜"
+    },
+    {
+      "event_id": "news_006",
+      "processed_at": "2026-01-11T21:45:22.065681",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.065686"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.065688",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "failed",
+          "timestamp": "2026-01-11T21:45:22.065730",
+          "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'"
+        }
+      ],
+      "related_themes_count": 0,
+      "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'",
+      "error_type": "Exception",
+      "ground_truth_theme": "AI/AR眼镜"
+    },
+    {
+      "event_id": "news_007",
+      "processed_at": "2026-01-11T21:45:22.068521",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.068528"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.068531",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "failed",
+          "timestamp": "2026-01-11T21:45:22.068574",
+          "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'"
+        }
+      ],
+      "related_themes_count": 0,
+      "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'",
+      "error_type": "Exception",
+      "ground_truth_theme": "AI/AR眼镜"
+    },
+    {
+      "event_id": "news_008",
+      "processed_at": "2026-01-11T21:45:22.069942",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.069946"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.069949",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "failed",
+          "timestamp": "2026-01-11T21:45:22.069989",
+          "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'"
+        }
+      ],
+      "related_themes_count": 0,
+      "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'",
+      "error_type": "Exception",
+      "ground_truth_theme": "AI/AR眼镜"
+    },
+    {
+      "event_id": "news_009",
+      "processed_at": "2026-01-11T21:45:22.071369",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.071374"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T21:45:22.071377",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "failed",
+          "timestamp": "2026-01-11T21:45:22.071415",
+          "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'"
+        }
+      ],
+      "related_themes_count": 0,
+      "error": "EnhancedThemeAnalyzer分析失败: EnhancedThemeAnalyzer初始化失败: ❌ DEEPSEEK_API_KEY 环境变量未设置\n请在运行前设置: export DEEPSEEK_API_KEY='your-api-key'",
+      "error_type": "Exception",
+      "ground_truth_theme": "AI/AR眼镜"
+    }
+  ]
+}

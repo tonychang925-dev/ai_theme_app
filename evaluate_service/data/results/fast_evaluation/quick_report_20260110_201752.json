@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "test_time": "2026-01-10T20:17:52.294442",
+    "test_type": "快速聚类评估",
+    "total_events": 50
+  },
+  "results": {
+    "total_events": 50,
+    "detected_themes": 1,
+    "expected_themes": 10,
+    "consistency_score": 1.0,
+    "error_examples": [
+      {
+        "event_id": "event_0",
+        "assigned_theme": "unknown",
+        "expected_theme": "其他"
+      }
+    ],
+    "theme_sizes": {
+      "unknown": 50
+    }
+  },
+  "recommendations": [
+    "检测到1个主题，比期望少9个。可能原因：1) 相似主题被合并；2) 事件特征不足；3) 判重阈值过高"
+  ]
+}

@@ -1,0 +1,122 @@
+# evaluate_service/config/test_config.yaml
+"""
+测试框架配置文件
+"""
+# 虚拟数据库配置
+virtual_database:
+  initial_state: "empty"  # empty | sample_data
+  max_themes: 1000
+  enable_keyword_cache: true
+  keyword_cache_size: 1000
+
+# 增强引擎配置
+enhanced_engine:
+  fast_track_threshold: 0.85
+  review_threshold: 0.65
+  ignore_threshold: 0.30
+  dedup_threshold: 0.70
+  
+  # 执行路径配置
+  execution_paths:
+    fast_track_create:
+      enabled: true
+      min_confidence: 0.85
+    guided_create:
+      enabled: true  
+      confidence_range: [0.65, 0.85]
+    guided_merge:
+      enabled: true
+      min_confidence: 0.65
+    review_pool:
+      enabled: true
+      max_wait_time_minutes: 1440  # 24小时
+
+# AI客户端配置
+ai_client:
+  use_enhanced_mode: true
+  dedup_test_mode: false
+  merge_threshold: 0.75
+  create_threshold: 0.85
+  
+  # 决策权重
+  decision_weights:
+    name_similarity: 0.6
+    industry_match: 0.4
+
+# 相关题材检索器配置
+theme_fetcher:
+  use_cache: true
+  cache_ttl_seconds: 300
+  max_related_themes: 5
+  
+  # 同义词配置
+  synonyms:
+    AI: ["人工智能", "AI技术", "机器学习"]
+    AR: ["增强现实", "AR技术"]
+    VR: ["虚拟现实", "VR技术"]
+    新能源: ["新能源汽车", "电动车"]
+    半导体: ["芯片", "集成电路"]
+
+# 判重引擎配置
+deduplication_engine:
+  thresholds:
+    exact_match: 1.0
+    inclusion_match: 0.9
+    semantic_similarity: 0.85
+    event_overlap: 0.7
+    auto_merge: 0.90
+  
+  strategies:
+    enable_exact_match: true
+    enable_inclusion_check: true
+    enable_semantic_analysis: true
+    enable_event_overlap: true
+
+# 测试运行配置
+test_runner:
+  # 数据源
+  event_source: "processed"  # raw | processed
+  event_file: "validation_events_enhanced.json"
+  
+  # 处理选项
+  sort_by_date: true
+  max_events: null  # null表示处理所有事件
+  shuffle_events: false
+  
+  # 输出配置
+  output_dir: "evaluate_service/results"
+  save_detailed_results: true
+  max_detailed_results: 50
+  generate_markdown_report: true
+  
+  # 性能监控
+  enable_performance_monitoring: true
+  log_level: "INFO"  # DEBUG | INFO | WARNING | ERROR
+
+# 评估配置
+evaluation:
+  ground_truth_source: "auto_generate"  # file | auto_generate
+  ground_truth_file: "ground_truth_mapping.json"
+  
+  # 评估指标
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1_score
+    - processing_time
+    - duplicate_rate
+  
+  # 错误分析
+  error_analysis:
+    enable: true
+    max_errors_to_analyze: 20
+    generate_suggestions: true
+
+# 日志配置
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "evaluate_service/logs/test_{timestamp}.log"
+  max_file_size_mb: 10
+  backup_count: 5

@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-01-15T14:43:08.753456",
+  "test_events": 3,
+  "original_flow": {
+    "event_id": "AI_AR眼镜_001",
+    "theme_count": 0,
+    "theme_analysis": {
+      "has_content": false,
+      "content_length": 0,
+      "content_fields": [],
+      "prompt_length": 1971,
+      "prompt_contains_content": true
+    },
+    "prompt_analysis": {
+      "length": 1971,
+      "contains_full_content": true
+    }
+  },
+  "enhanced_flow": {
+    "event_id": "AI_AR眼镜_001",
+    "theme_count": 0,
+    "theme_analysis": {
+      "has_content": false,
+      "content_length": 0,
+      "content_fields": []
+    },
+    "discovery_method": "EnhancedThemeDiscovery"
+  },
+  "differences": []
+}

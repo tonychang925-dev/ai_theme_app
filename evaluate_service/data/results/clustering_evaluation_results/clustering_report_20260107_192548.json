@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "evaluation_id": "clustering_eval_20260107_192548",
+    "evaluation_time": "2026-01-07T19:25:48.691901",
+    "evaluation_focus": "事件归集能力评估",
+    "dataset_size": 76,
+    "data_source": "evaluate_service/data/processed/validation_dataset.json"
+  },
+  "summary": {
+    "overall_score": 0.7766052631578947,
+    "clustering_precision": 0.85,
+    "collection_completeness": 0.6983333333333334,
+    "event_coverage": 0.7105263157894737,
+    "evaluation_level": "⚠️  良好",
+    "recommendation": "可以在监控下用于生产",
+    "business_value": "主题聚类效果良好，可以支持半自动化的主题投资分析"
+  },
+  "theme_analysis": {
+    "total_themes": 10,
+    "good_themes": 6,
+    "problem_themes": 1,
+    "theme_performance": {
+      "AI/AR眼镜": {
+        "consistency": 1.1,
+        "event_count": 10,
+        "primary_ai_theme": "AI/AR眼镜",
+        "coverage": "11/10"
+      },
+      "SpaceX": {
+        "consistency": 1.2,
+        "event_count": 5,
+        "primary_ai_theme": "SpaceX",
+        "coverage": "6/5"
+      },
+      "可控核聚变": {
+        "consistency": 0.6,
+        "event_count": 10,
+        "primary_ai_theme": "可控核聚变",
+        "coverage": "6/10"
+      },
+      "对日制裁": {
+        "consistency": 0.6666666666666666,
+        "event_count": 6,
+        "primary_ai_theme": "对日制裁",
+        "coverage": "4/6"
+      },
+      "稀土永磁": {
+        "consistency": 0.5,
+        "event_count": 8,
+        "primary_ai_theme": "稀土永磁",
+        "coverage": "4/8"
+      },
+      "海洋经济": {
+        "consistency": 0.4,
+        "event_count": 5,
+        "primary_ai_theme": "光刻胶",
+        "coverage": "2/5"
+      },
+      "光刻胶": {
+        "consistency": 1.25,
+        "event_count": 8,
+        "primary_ai_theme": "光刻胶",
+        "coverage": "10/8"
+      },
+      "卫星互联": {
+        "consistency": 0.7,
+        "event_count": 10,
+        "primary_ai_theme": "卫星互联",
+        "coverage": "7/10"
+      },
+      "液冷数据中心": {
+        "consistency": 1.25,
+        "event_count": 8,
+        "primary_ai_theme": "液冷数据中心",
+        "coverage": "10/8"
+      },
+      "AI智能体Manus": {
+        "consistency": 0.8333333333333334,
+        "event_count": 6,
+        "primary_ai_theme": "AI智能体Manus",
+        "coverage": "5/6"
+      }
+    },
+    "clustering_details": {
+      "AI/AR眼镜": {
+        "score": 1.1,
+        "primary_ai_theme": "AI/AR眼镜",
+        "coverage": "11/10",
+        "ai_themes": {
+          "AI/AR眼镜": 11,
+          "混合现实眼镜": 1,
+          "卫星互联": 1
+        },
+        "event_count": 10
+      },
+      "SpaceX": {
+        "score": 1.2,
+        "primary_ai_theme": "SpaceX",
+        "coverage": "6/5",
+        "ai_themes": {
+          "SpaceX": 6,
+          "马斯克": 1
+        },
+        "event_count": 5
+      },
+      "可控核聚变": {
+        "score": 0.6,
+        "primary_ai_theme": "可控核聚变",
+        "coverage": "6/10",
+        "ai_themes": {
+          "可控核聚变": 6,
+          "聚变能源": 1,
+          "ITER": 1
+        },
+        "event_count": 10
+      },
+      "对日制裁": {
+        "score": 0.6666666666666666,
+        "primary_ai_theme": "对日制裁",
+        "coverage": "4/6",
+        "ai_themes": {
+          "对日制裁": 4,
+          "技术封锁": 1,
+          "AI智能体Manus": 1
+        },
+        "event_count": 6
+      },
+      "稀土永磁": {
+        "score": 0.5,
+        "primary_ai_theme": "稀土永磁",
+        "coverage": "4/8",
+        "ai_themes": {
+          "稀土永磁": 4,
+          "AI/AR眼镜": 1,
+          "磁性材料": 1
+        },
+        "event_count": 8
+      },
+      "海洋经济": {
+        "score": 0.4,
+        "primary_ai_theme": "光刻胶",
+        "coverage": "2/5",
+        "ai_themes": {
+          "光刻胶": 2,
+          "SpaceX": 1,
+          "海洋经济": 1
+        },
+        "event_count": 5
+      },
+      "光刻胶": {
+        "score": 1.25,
+        "primary_ai_theme": "光刻胶",
+        "coverage": "10/8",
+        "ai_themes": {
+          "光刻胶": 10,
+          "半导体光刻胶": 1,
+          "稀土永磁": 1
+        },
+        "event_count": 8
+      },
+      "卫星互联": {
+        "score": 0.7,
+        "primary_ai_theme": "卫星互联",
+        "coverage": "7/10",
+        "ai_themes": {
+          "卫星互联": 7,
+          "海洋经济": 1,
+          "卫星星座": 1
+        },
+        "event_count": 10
+      },
+      "液冷数据中心": {
+        "score": 1.25,
+        "primary_ai_theme": "液冷数据中心",
+        "coverage": "10/8",
+        "ai_themes": {
+          "液冷数据中心": 10,
+          "对日制裁": 1
+        },
+        "event_count": 8
+      },
+      "AI智能体Manus": {
+        "score": 0.8333333333333334,
+        "primary_ai_theme": "AI智能体Manus",
+        "coverage": "5/6",
+        "ai_themes": {
+          "AI智能体Manus": 5,
+          "液冷数据中心": 1
+        },
+        "event_count": 6
+      }
+    }
+  },
+  "cluster_stats": {
+    "true_clusters": 10,
+    "ai_clusters": 20,
+    "clusters_ratio": 2.0
+  }
+}

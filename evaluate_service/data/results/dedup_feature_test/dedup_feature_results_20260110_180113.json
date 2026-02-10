@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "test_type": "判重功能专项测试",
+    "test_time": "2026-01-10T18:01:13.456540",
+    "test_focus": "验证ThemeDeduplicationEngine的准确性"
+  },
+  "statistics": {
+    "total_tests": 6,
+    "duplicates_detected": 2,
+    "false_positives": 0,
+    "false_negatives": 3,
+    "test_cases": {
+      "精确匹配测试": 1,
+      "同义词匹配测试": 1,
+      "包含关系测试": 1,
+      "语义相似度测试": 1,
+      "不同题材测试": 1,
+      "实际AI拍摄眼镜用例": 1
+    }
+  },
+  "test_results": [
+    {
+      "test_id": "exact_match_001",
+      "description": "精确匹配测试",
+      "new_theme_name": "人工智能",
+      "existing_themes": [
+        "人工智能"
+      ],
+      "expected_should_merge": true,
+      "actual_should_merge": true,
+      "similarity_score": 1.0,
+      "match_type": "exact",
+      "reason": "名称完全匹配: 人工智能 == 人工智能",
+      "test_passed": true,
+      "result_details": {
+        "should_merge": true,
+        "target_theme": {
+          "id": 1,
+          "name": "人工智能",
+          "keywords": "AI,人工智能,机器学习",
+          "event_count": 50
+        },
+        "similarity_score": 1.0,
+        "match_type": "exact",
+        "reason": "名称完全匹配: 人工智能 == 人工智能",
+        "confidence": 1.0,
+        "suggestions": []
+      }
+    },
+    {
+      "test_id": "synonym_match_001",
+      "description": "同义词匹配测试",
+      "new_theme_name": "AI技术发展",
+      "existing_themes": [
+        "人工智能"
+      ],
+      "expected_should_merge": true,
+      "actual_should_merge": true,
+      "similarity_score": 1.0,
+      "match_type": "semantic",
+      "reason": "语义相似度过高: 1.00",
+      "test_passed": true,
+      "result_details": {
+        "should_merge": true,
+        "target_theme": {
+          "id": 1,
+          "name": "人工智能",
+          "keywords": "AI,人工智能,机器学习",
+          "event_count": 50
+        },
+        "similarity_score": 1.0,
+        "match_type": "semantic",
+        "reason": "语义相似度过高: 1.00",
+        "confidence": 1.0,
+        "suggestions": []
+      }
+    },
+    {
+      "test_id": "inclusion_match_001",
+      "description": "包含关系测试",
+      "new_theme_name": "人工智能芯片",
+      "existing_themes": [
+        "人工智能",
+        "半导体芯片"
+      ],
+      "expected_should_merge": true,
+      "actual_should_merge": false,
+      "similarity_score": 0.5367,
+      "match_type": "keep_separate",
+      "reason": "有一定相似度(0.54)，但建议保持独立",
+      "test_passed": false,
+      "result_details": {
+        "should_merge": false,
+        "target_theme": null,
+        "similarity_score": 0.5367,
+        "match_type": "keep_separate",
+        "reason": "有一定相似度(0.54)，但建议保持独立",
+        "confidence": 0.4633,
+        "suggestions": [
+          "保持独立，监控后续发展"
+        ]
+      }
+    },
+    {
+      "test_id": "semantic_similarity_001",
+      "description": "语义相似度测试",
+      "new_theme_name": "智能机器人技术",
+      "existing_themes": [
+        "机器人"
+      ],
+      "expected_should_merge": true,
+      "actual_should_merge": false,
+      "similarity_score": 0.35,
+      "match_type": "distinct",
+      "reason": "相似度较低(0.35)，可以创建新题材",
+      "test_passed": false,
+      "result_details": {
+        "should_merge": false,
+        "target_theme": null,
+        "similarity_score": 0.35,
+        "match_type": "distinct",
+        "reason": "相似度较低(0.35)，可以创建新题材",
+        "confidence": 0.65,
+        "suggestions": [
+          "可以创建新题材"
+        ]
+      }
+    },
+    {
+      "test_id": "distinct_theme_001",
+      "description": "不同题材测试",
+      "new_theme_name": "新能源汽车",
+      "existing_themes": [
+        "人工智能",
+        "光伏发电"
+      ],
+      "expected_should_merge": false,
+      "actual_should_merge": false,
+      "similarity_score": 0.0889,
+      "match_type": "distinct",
+      "reason": "相似度较低(0.09)，可以创建新题材",
+      "test_passed": true,
+      "result_details": {
+        "should_merge": false,
+        "target_theme": null,
+        "similarity_score": 0.0889,
+        "match_type": "distinct",
+        "reason": "相似度较低(0.09)，可以创建新题材",
+        "confidence": 0.9111,
+        "suggestions": [
+          "可以创建新题材"
+        ]
+      }
+    },
+    {
+      "test_id": "real_world_001",
+      "description": "实际AI拍摄眼镜用例",
+      "new_theme_name": "AI智能眼镜",
+      "existing_themes": [
+        "AI拍摄眼镜",
+        "可穿戴设备"
+      ],
+      "expected_should_merge": true,
+      "actual_should_merge": false,
+      "similarity_score": 0.3167,
+      "match_type": "distinct",
+      "reason": "相似度较低(0.32)，可以创建新题材",
+      "test_passed": false,
+      "result_details": {
+        "should_merge": false,
+        "target_theme": null,
+        "similarity_score": 0.3167,
+        "match_type": "distinct",
+        "reason": "相似度较低(0.32)，可以创建新题材",
+        "confidence": 0.6833,
+        "suggestions": [
+          "可以创建新题材"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "total_tests": 6,
+    "passed_tests": 3,
+    "accuracy_rate": 0.5,
+    "duplicate_detection_rate": 0.3333333333333333
+  }
+}

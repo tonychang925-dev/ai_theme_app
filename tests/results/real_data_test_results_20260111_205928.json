@@ -1,0 +1,2333 @@
+{
+  "metadata": {
+    "test_date": "2026-01-11T20:59:28.718036",
+    "total_events": 76,
+    "data_source": "/Users/admin/Desktop/ai_theme_app/evaluate_service/data/processed/validation_events_enhanced.json",
+    "duration_seconds": -2e-06
+  },
+  "stats": {
+    "total_events": 76,
+    "success": 10,
+    "failed": 66,
+    "created": 10,
+    "merged": 0,
+    "ignored": 0,
+    "decision_distribution": {
+      "CREATE_NEW": 76
+    },
+    "processing_times": [],
+    "theme_creation_stats": {
+      "unique_themes": 10,
+      "most_common_theme": [
+        "眼镜相关新闻",
+        10
+      ],
+      "themes_with_multiple_events": 10
+    },
+    "accuracy_stats": {},
+    "error_types": {
+      "DuplicateError": 66
+    },
+    "total_themes_created": 10,
+    "top_themes": {
+      "眼镜相关新闻": 10,
+      "可控核聚变相关新": 10,
+      "卫星互联相关新闻": 10,
+      "稀土永磁相关新闻": 8,
+      "光刻胶相关新闻": 8,
+      "液冷数据中心相关": 8,
+      "对日制裁相关新闻": 6,
+      "智能体相关新闻": 6,
+      "相关新闻题材": 5,
+      "海洋经济相关新闻": 5
+    },
+    "success_rate": 13.157894736842104,
+    "failure_rate": 86.8421052631579
+  },
+  "results": [
+    {
+      "event_id": "news_000",
+      "processed_at": "2026-01-11T20:59:28.125638",
+      "status": "created",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.125664"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.125674",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.125770",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.611193",
+          "result": {
+            "status": "created",
+            "theme_id": 1,
+            "theme_name": "眼镜相关新闻",
+            "relation_id": 1,
+            "message": "成功创建新主题并关联事件"
+          }
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_000"
+      },
+      "execution_result": {
+        "status": "created",
+        "theme_id": 1,
+        "theme_name": "眼镜相关新闻",
+        "relation_id": 1,
+        "message": "成功创建新主题并关联事件"
+      },
+      "theme_id": 1
+    },
+    {
+      "event_id": "news_001",
+      "processed_at": "2026-01-11T20:59:28.612102",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.612107"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.612110",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.614210",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.614336",
+          "error": "主题 '眼镜相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_001"
+      },
+      "error": "主题 '眼镜相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_002",
+      "processed_at": "2026-01-11T20:59:28.620010",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.620017"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.620020",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.620510",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.620629",
+          "error": "主题 '眼镜相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_002"
+      },
+      "error": "主题 '眼镜相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_003",
+      "processed_at": "2026-01-11T20:59:28.622128",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.622134"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.622137",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.622227",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.622330",
+          "error": "主题 '眼镜相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_003"
+      },
+      "error": "主题 '眼镜相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_004",
+      "processed_at": "2026-01-11T20:59:28.623373",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.623378"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.623382",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.623568",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.623769",
+          "error": "主题 '眼镜相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_004"
+      },
+      "error": "主题 '眼镜相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_005",
+      "processed_at": "2026-01-11T20:59:28.624973",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.624980"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.624983",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.625104",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.625230",
+          "error": "主题 '眼镜相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_005"
+      },
+      "error": "主题 '眼镜相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_006",
+      "processed_at": "2026-01-11T20:59:28.626306",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.626311"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.626314",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.626394",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.626498",
+          "error": "主题 '眼镜相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_006"
+      },
+      "error": "主题 '眼镜相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_007",
+      "processed_at": "2026-01-11T20:59:28.627508",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.627513"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.627516",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.627593",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.627692",
+          "error": "主题 '眼镜相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_007"
+      },
+      "error": "主题 '眼镜相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_008",
+      "processed_at": "2026-01-11T20:59:28.629171",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.629177"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.629180",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.629333",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.629508",
+          "error": "主题 '眼镜相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_008"
+      },
+      "error": "主题 '眼镜相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_009",
+      "processed_at": "2026-01-11T20:59:28.630591",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.630596"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.630599",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.630673",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.630773",
+          "error": "主题 '眼镜相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_009"
+      },
+      "error": "主题 '眼镜相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_010",
+      "processed_at": "2026-01-11T20:59:28.631740",
+      "status": "created",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.631745"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.631748",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.632738",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.632848",
+          "result": {
+            "status": "created",
+            "theme_id": 2,
+            "theme_name": "相关新闻题材",
+            "relation_id": 2,
+            "message": "成功创建新主题并关联事件"
+          }
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "相关新闻题材",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_010"
+      },
+      "execution_result": {
+        "status": "created",
+        "theme_id": 2,
+        "theme_name": "相关新闻题材",
+        "relation_id": 2,
+        "message": "成功创建新主题并关联事件"
+      },
+      "theme_id": 2
+    },
+    {
+      "event_id": "news_011",
+      "processed_at": "2026-01-11T20:59:28.633120",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.633124"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.633126",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.633207",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.633302",
+          "error": "主题 '相关新闻题材' 已存在"
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "相关新闻题材",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_011"
+      },
+      "error": "主题 '相关新闻题材' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_012",
+      "processed_at": "2026-01-11T20:59:28.634268",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.634273"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.634276",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.634368",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.634469",
+          "error": "主题 '相关新闻题材' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "相关新闻题材",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_012"
+      },
+      "error": "主题 '相关新闻题材' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_013",
+      "processed_at": "2026-01-11T20:59:28.635399",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.635404"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.635407",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.635494",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.635594",
+          "error": "主题 '相关新闻题材' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "相关新闻题材",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_013"
+      },
+      "error": "主题 '相关新闻题材' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_014",
+      "processed_at": "2026-01-11T20:59:28.636647",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.636653"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.636656",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.636747",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.636850",
+          "error": "主题 '相关新闻题材' 已存在"
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "相关新闻题材",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_014"
+      },
+      "error": "主题 '相关新闻题材' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_015",
+      "processed_at": "2026-01-11T20:59:28.637789",
+      "status": "created",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.637793"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.637796",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.637889",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.638027",
+          "result": {
+            "status": "created",
+            "theme_id": 3,
+            "theme_name": "可控核聚变相关新",
+            "relation_id": 3,
+            "message": "成功创建新主题并关联事件"
+          }
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "可控核聚变相关新",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_015"
+      },
+      "execution_result": {
+        "status": "created",
+        "theme_id": 3,
+        "theme_name": "可控核聚变相关新",
+        "relation_id": 3,
+        "message": "成功创建新主题并关联事件"
+      },
+      "theme_id": 3
+    },
+    {
+      "event_id": "news_016",
+      "processed_at": "2026-01-11T20:59:28.638297",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.638302"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.638324",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.638455",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.638575",
+          "error": "主题 '可控核聚变相关新' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "可控核聚变相关新",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_016"
+      },
+      "error": "主题 '可控核聚变相关新' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_017",
+      "processed_at": "2026-01-11T20:59:28.639707",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.639713"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.639716",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.639823",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.639925",
+          "error": "主题 '可控核聚变相关新' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "可控核聚变相关新",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_017"
+      },
+      "error": "主题 '可控核聚变相关新' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_018",
+      "processed_at": "2026-01-11T20:59:28.640874",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.640879"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.640882",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.640988",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.641128",
+          "error": "主题 '可控核聚变相关新' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "可控核聚变相关新",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_018"
+      },
+      "error": "主题 '可控核聚变相关新' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_019",
+      "processed_at": "2026-01-11T20:59:28.642250",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.642257"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.642260",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.642370",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.642480",
+          "error": "主题 '可控核聚变相关新' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "可控核聚变相关新",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_019"
+      },
+      "error": "主题 '可控核聚变相关新' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_020",
+      "processed_at": "2026-01-11T20:59:28.643696",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.643705"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.643709",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.643892",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.644007",
+          "error": "主题 '可控核聚变相关新' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "可控核聚变相关新",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_020"
+      },
+      "error": "主题 '可控核聚变相关新' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_021",
+      "processed_at": "2026-01-11T20:59:28.645046",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.645065"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.645070",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.645188",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.645328",
+          "error": "主题 '可控核聚变相关新' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "可控核聚变相关新",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_021"
+      },
+      "error": "主题 '可控核聚变相关新' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_022",
+      "processed_at": "2026-01-11T20:59:28.646377",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.646384"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.646389",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.646536",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.646678",
+          "error": "主题 '可控核聚变相关新' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "可控核聚变相关新",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_022"
+      },
+      "error": "主题 '可控核聚变相关新' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_023",
+      "processed_at": "2026-01-11T20:59:28.647919",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.647925"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.647928",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.648036",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.648138",
+          "error": "主题 '可控核聚变相关新' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "可控核聚变相关新",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_023"
+      },
+      "error": "主题 '可控核聚变相关新' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_024",
+      "processed_at": "2026-01-11T20:59:28.649085",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.649091"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.649093",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.649197",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.649400",
+          "error": "主题 '可控核聚变相关新' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "可控核聚变相关新",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_024"
+      },
+      "error": "主题 '可控核聚变相关新' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_025",
+      "processed_at": "2026-01-11T20:59:28.650363",
+      "status": "created",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.650368"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.650370",
+          "themes_found": 2
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.650480",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.650579",
+          "result": {
+            "status": "created",
+            "theme_id": 4,
+            "theme_name": "对日制裁相关新闻",
+            "relation_id": 4,
+            "message": "成功创建新主题并关联事件"
+          }
+        }
+      ],
+      "related_themes_count": 2,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "对日制裁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_025"
+      },
+      "execution_result": {
+        "status": "created",
+        "theme_id": 4,
+        "theme_name": "对日制裁相关新闻",
+        "relation_id": 4,
+        "message": "成功创建新主题并关联事件"
+      },
+      "theme_id": 4
+    },
+    {
+      "event_id": "news_026",
+      "processed_at": "2026-01-11T20:59:28.650889",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.650893"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.650896",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.651001",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.651099",
+          "error": "主题 '对日制裁相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "对日制裁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_026"
+      },
+      "error": "主题 '对日制裁相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_027",
+      "processed_at": "2026-01-11T20:59:28.652122",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.652127"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.652130",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.652244",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.652343",
+          "error": "主题 '对日制裁相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "对日制裁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_027"
+      },
+      "error": "主题 '对日制裁相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_028",
+      "processed_at": "2026-01-11T20:59:28.655814",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.655820"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.655823",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.655946",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.656051",
+          "error": "主题 '对日制裁相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "对日制裁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_028"
+      },
+      "error": "主题 '对日制裁相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_029",
+      "processed_at": "2026-01-11T20:59:28.657149",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.657154"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.657157",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.657258",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.657360",
+          "error": "主题 '对日制裁相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "对日制裁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_029"
+      },
+      "error": "主题 '对日制裁相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_030",
+      "processed_at": "2026-01-11T20:59:28.658414",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.658429"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.658432",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.658552",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.658987",
+          "error": "主题 '对日制裁相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "对日制裁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_030"
+      },
+      "error": "主题 '对日制裁相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_031",
+      "processed_at": "2026-01-11T20:59:28.660516",
+      "status": "created",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.660525"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.660530",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.660749",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.660891",
+          "result": {
+            "status": "created",
+            "theme_id": 5,
+            "theme_name": "稀土永磁相关新闻",
+            "relation_id": 5,
+            "message": "成功创建新主题并关联事件"
+          }
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "稀土永磁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_031"
+      },
+      "execution_result": {
+        "status": "created",
+        "theme_id": 5,
+        "theme_name": "稀土永磁相关新闻",
+        "relation_id": 5,
+        "message": "成功创建新主题并关联事件"
+      },
+      "theme_id": 5
+    },
+    {
+      "event_id": "news_032",
+      "processed_at": "2026-01-11T20:59:28.661415",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.661421"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.661424",
+          "themes_found": 2
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.661658",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.661908",
+          "error": "主题 '稀土永磁相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 2,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "稀土永磁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_032"
+      },
+      "error": "主题 '稀土永磁相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_033",
+      "processed_at": "2026-01-11T20:59:28.663681",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.663688"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.663692",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.663868",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.664012",
+          "error": "主题 '稀土永磁相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "稀土永磁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_033"
+      },
+      "error": "主题 '稀土永磁相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_034",
+      "processed_at": "2026-01-11T20:59:28.665794",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.665807"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.665811",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.666154",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.666311",
+          "error": "主题 '稀土永磁相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "稀土永磁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_034"
+      },
+      "error": "主题 '稀土永磁相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_035",
+      "processed_at": "2026-01-11T20:59:28.667562",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.667568"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.667570",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.667695",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.667800",
+          "error": "主题 '稀土永磁相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "稀土永磁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_035"
+      },
+      "error": "主题 '稀土永磁相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_036",
+      "processed_at": "2026-01-11T20:59:28.668807",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.668811"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.668814",
+          "themes_found": 3
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.668938",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.669037",
+          "error": "主题 '稀土永磁相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 3,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "稀土永磁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_036"
+      },
+      "error": "主题 '稀土永磁相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_037",
+      "processed_at": "2026-01-11T20:59:28.669964",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.669969"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.669971",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.670142",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.670247",
+          "error": "主题 '稀土永磁相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "稀土永磁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_037"
+      },
+      "error": "主题 '稀土永磁相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_038",
+      "processed_at": "2026-01-11T20:59:28.671225",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.671229"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.671232",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.671400",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.671502",
+          "error": "主题 '稀土永磁相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "稀土永磁相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_038"
+      },
+      "error": "主题 '稀土永磁相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_039",
+      "processed_at": "2026-01-11T20:59:28.672438",
+      "status": "created",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.672442"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.672444",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.672597",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.672694",
+          "result": {
+            "status": "created",
+            "theme_id": 6,
+            "theme_name": "海洋经济相关新闻",
+            "relation_id": 6,
+            "message": "成功创建新主题并关联事件"
+          }
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "海洋经济相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_039"
+      },
+      "execution_result": {
+        "status": "created",
+        "theme_id": 6,
+        "theme_name": "海洋经济相关新闻",
+        "relation_id": 6,
+        "message": "成功创建新主题并关联事件"
+      },
+      "theme_id": 6
+    },
+    {
+      "event_id": "news_040",
+      "processed_at": "2026-01-11T20:59:28.672933",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.672936"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.672938",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.673079",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.673172",
+          "error": "主题 '海洋经济相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "海洋经济相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_040"
+      },
+      "error": "主题 '海洋经济相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_041",
+      "processed_at": "2026-01-11T20:59:28.674054",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.674059"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.674062",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.674244",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.674346",
+          "error": "主题 '海洋经济相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "海洋经济相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_041"
+      },
+      "error": "主题 '海洋经济相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_042",
+      "processed_at": "2026-01-11T20:59:28.675229",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.675233"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.675236",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.675367",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.675468",
+          "error": "主题 '海洋经济相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "海洋经济相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_042"
+      },
+      "error": "主题 '海洋经济相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_043",
+      "processed_at": "2026-01-11T20:59:28.676350",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.676354"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.676357",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.676485",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.676585",
+          "error": "主题 '海洋经济相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "海洋经济相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_043"
+      },
+      "error": "主题 '海洋经济相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_044",
+      "processed_at": "2026-01-11T20:59:28.677450",
+      "status": "created",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.677455"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.677457",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.677567",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.677669",
+          "result": {
+            "status": "created",
+            "theme_id": 7,
+            "theme_name": "光刻胶相关新闻",
+            "relation_id": 7,
+            "message": "成功创建新主题并关联事件"
+          }
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "光刻胶相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_044"
+      },
+      "execution_result": {
+        "status": "created",
+        "theme_id": 7,
+        "theme_name": "光刻胶相关新闻",
+        "relation_id": 7,
+        "message": "成功创建新主题并关联事件"
+      },
+      "theme_id": 7
+    },
+    {
+      "event_id": "news_045",
+      "processed_at": "2026-01-11T20:59:28.677907",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.677910"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.677912",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.678031",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.678124",
+          "error": "主题 '光刻胶相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "光刻胶相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_045"
+      },
+      "error": "主题 '光刻胶相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_046",
+      "processed_at": "2026-01-11T20:59:28.679116",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.679121"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.679124",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.679286",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.679390",
+          "error": "主题 '光刻胶相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "光刻胶相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_046"
+      },
+      "error": "主题 '光刻胶相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_047",
+      "processed_at": "2026-01-11T20:59:28.680292",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.680296"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.680299",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.680413",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.680509",
+          "error": "主题 '光刻胶相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "光刻胶相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_047"
+      },
+      "error": "主题 '光刻胶相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_048",
+      "processed_at": "2026-01-11T20:59:28.681499",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.681504"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.681506",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.681633",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.681733",
+          "error": "主题 '光刻胶相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "光刻胶相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_048"
+      },
+      "error": "主题 '光刻胶相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    },
+    {
+      "event_id": "news_049",
+      "processed_at": "2026-01-11T20:59:28.682730",
+      "status": "failed",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.682734"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.682737",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T20:59:28.682865",
+          "decision": "CREATE_NEW",
+          "confidence": 0.7
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "failed",
+          "timestamp": "2026-01-11T20:59:28.683002",
+          "error": "主题 '光刻胶相关新闻' 已存在"
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "光刻胶相关新闻",
+        "confidence": 0.7,
+        "reason": "模拟：新题材值得创建",
+        "comparison_analysis": "新方向",
+        "source": "enhanced_ai_client",
+        "event_id": "news_049"
+      },
+      "error": "主题 '光刻胶相关新闻' 已存在",
+      "error_type": "DuplicateError"
+    }
+  ]
+}

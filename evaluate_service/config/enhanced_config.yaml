@@ -1,0 +1,58 @@
+# evaluate_service/config/enhanced_config.yaml
+evaluation:
+  name: "增强系统性能评估"
+  version: "1.0"
+  description: "评估两阶段归并框架的性能表现"
+
+metrics_weights:
+  decision_accuracy: 0.30
+  response_time: 0.25
+  theme_quality: 0.25
+  system_stability: 0.20
+
+thresholds:
+  decision_accuracy:
+    excellent: 0.90
+    good: 0.80
+    acceptable: 0.70
+  
+  response_time_ms:
+    excellent: 1000
+    good: 2000
+    acceptable: 3000
+  
+  theme_duplication_rate:
+    excellent: 0.10
+    good: 0.20
+    acceptable: 0.30
+  
+  naming_quality:
+    excellent: 0.90
+    good: 0.80
+    acceptable: 0.70
+
+optimization_goals:
+  decision_accuracy: 0.85
+  response_time_ms: 2000
+  duplication_rate_reduction: 0.80
+  naming_quality: 0.90
+  system_stability: 0.95
+
+test_data:
+  dataset_path: "data/raw/test_dataset_76.json"
+  sample_size: 76
+  categories:
+    - name: "重大政策事件"
+      count: 15
+    - name: "相似产品发布"
+      count: 20
+    - name: "常规行业动态"
+      count: 25
+    - name: "无关噪声事件"
+      count: 16
+
+output:
+  save_detailed_results: true
+  generate_html_report: true
+  output_dir: "data/results/enhanced"
+  comparison_dir: "data/results/comparison"

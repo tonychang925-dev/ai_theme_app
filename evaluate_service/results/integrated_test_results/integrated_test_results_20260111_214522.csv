@@ -1,0 +1,11 @@
+﻿event_id,status,decision,theme_name,confidence,ground_truth_theme,match
+news_000,failed,,,0,AI/AR眼镜,False
+news_001,failed,,,0,AI/AR眼镜,False
+news_002,failed,,,0,AI/AR眼镜,False
+news_003,failed,,,0,AI/AR眼镜,False
+news_004,failed,,,0,AI/AR眼镜,False
+news_005,failed,,,0,AI/AR眼镜,False
+news_006,failed,,,0,AI/AR眼镜,False
+news_007,failed,,,0,AI/AR眼镜,False
+news_008,failed,,,0,AI/AR眼镜,False
+news_009,failed,,,0,AI/AR眼镜,False

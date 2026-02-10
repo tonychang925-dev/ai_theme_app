@@ -1,0 +1,11 @@
+﻿event_id,status,decision,theme_name,confidence,ground_truth_theme,match
+news_000,created,CREATE_NEW,智能眼镜发布,0.88,AI/AR眼镜,False
+news_001,merged,MERGE_INTO,智能眼镜发布,0.9,AI/AR眼镜,False
+news_002,created,CREATE_NEW,全息AR技术,0.8,AI/AR眼镜,False
+news_003,merged,MERGE_INTO,智能眼镜发布,0.8,AI/AR眼镜,False
+news_004,merged,MERGE_INTO,智能眼镜发布,0.85,AI/AR眼镜,False
+news_005,merged,MERGE_INTO,智能眼镜发布,0.8,AI/AR眼镜,False
+news_006,merged,MERGE_INTO,智能眼镜发布,0.8,AI/AR眼镜,False
+news_007,merged,MERGE_INTO,智能眼镜发布,0.8,AI/AR眼镜,False
+news_008,merged,MERGE_INTO,智能眼镜发布,0.9,AI/AR眼镜,False
+news_009,merged,MERGE_INTO,智能眼镜发布,0.85,AI/AR眼镜,False

@@ -1,0 +1,80 @@
+[
+  {
+    "event_id": "event_0",
+    "event_title": "",
+    "event_industries": [],
+    "theme_directive": {
+      "action": "CREATE_NEW",
+      "confidence": 0.7,
+      "reason": "来自增强数据"
+    },
+    "ai_decision": {
+      "decision": "CREATE_NEW",
+      "target_theme_name": "新兴题材",
+      "confidence": 0.8,
+      "reason": "与现有题材无明显关联，适合创建新题材。行业: ",
+      "comparison_analysis": "与现有题材相似度: 0.00，属于新方向",
+      "match_type": "new_direction",
+      "source": "virtual_db_enhanced_analyzer",
+      "virtual_db_theme_count": 0
+    },
+    "processing_result": {
+      "status": "created",
+      "execution_path": "guided_create",
+      "execution_result": {
+        "action": "create",
+        "new_theme_name": "新兴题材",
+        "timestamp": "2026-01-11T15:12:02.854388"
+      }
+    },
+    "deduplication_info": {
+      "should_merge": false,
+      "target_theme": "",
+      "similarity": 0.0,
+      "match_type": "",
+      "reason": "无现有题材可比较",
+      "confidence": 0.0
+    },
+    "processing_time_seconds": 0.002,
+    "processed_at": "2026-01-11T15:12:02.854604"
+  },
+  {
+    "event_id": "event_1",
+    "event_title": "",
+    "event_industries": [],
+    "theme_directive": {
+      "action": "CREATE_NEW",
+      "confidence": 0.7,
+      "reason": "来自增强数据"
+    },
+    "ai_decision": {
+      "decision": "CREATE_NEW",
+      "target_theme_name": "新兴题材",
+      "confidence": 0.8,
+      "reason": "与现有题材无明显关联，适合创建新题材。行业: ",
+      "comparison_analysis": "与现有题材相似度: 0.00，属于新方向",
+      "match_type": "new_direction",
+      "source": "virtual_db_enhanced_analyzer",
+      "virtual_db_theme_count": 1
+    },
+    "processing_result": {
+      "status": "created",
+      "execution_path": "guided_create",
+      "execution_result": {
+        "action": "create",
+        "new_theme_name": "新兴题材",
+        "timestamp": "2026-01-11T15:12:02.858105"
+      }
+    },
+    "deduplication_info": {
+      "should_merge": false,
+      "target_theme": "",
+      "similarity": 0.0,
+      "match_type": "",
+      "reason": "无现有题材可比较",
+      "confidence": 0.0
+    },
+    "processing_time_seconds": 0.001,
+    "processed_at": "2026-01-11T15:12:02.858305"
+  }
+]

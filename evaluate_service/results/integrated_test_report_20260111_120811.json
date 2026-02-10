@@ -1,0 +1,2577 @@
+{
+  "test_summary": {
+    "test_timestamp": "2026-01-11T12:08:11.926361",
+    "total_events_processed": 76,
+    "successful_processing": 76,
+    "failed_processing": 0,
+    "success_rate": 100.0,
+    "test_duration_seconds": null,
+    "engine_version": "enhanced_final_fixed_v1"
+  },
+  "performance_metrics": {
+    "avg_processing_time_ms": 0,
+    "max_processing_time_ms": 0,
+    "min_processing_time_ms": 0,
+    "avg_decision_time_ms": 0.15777631578947368,
+    "events_per_second": 0,
+    "meets_performance_target": {
+      "target_ms": 2000,
+      "below_target_count": 0,
+      "below_target_percentage": 0,
+      "meets_target": false
+    }
+  },
+  "decision_quality": {
+    "total_events": 76,
+    "correct_decisions": 0,
+    "accuracy": 0.0,
+    "decision_distribution": {
+      "create": {
+        "count": 73,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "merge": {
+        "count": 3,
+        "correct": 0,
+        "accuracy": 0.0
+      }
+    }
+  },
+  "virtual_database_final_state": {
+    "total_themes": 63,
+    "theme_names": [
+      "消费电子",
+      "可穿戴设备",
+      "半导体",
+      "智能穿戴",
+      "光学制造",
+      "AR/VR设备",
+      "新兴题材",
+      "光学元件",
+      "增强现实(AR)",
+      "人工智能",
+      "航空航天",
+      "航天军工",
+      "商业航天",
+      "金融投资",
+      "卫星通信",
+      "可控核聚变",
+      "能源",
+      "高端装备制造",
+      "媒体科技",
+      "电力",
+      "高耗能产业",
+      "核能",
+      "高端制造",
+      "新材料",
+      "特种材料",
+      "国防军工",
+      "国际贸易",
+      "旅游",
+      "外交关系相关行业",
+      "地缘政治",
+      "航运物流",
+      "稀土开采与加工",
+      "稀土永磁材料",
+      "风电",
+      "稀土永磁电机",
+      "关键矿物开采与加工",
+      "风电设备",
+      "海洋化工",
+      "海洋船舶",
+      "海洋工程",
+      "海洋执法",
+      "海洋科技",
+      "海洋生物医药",
+      "光刻胶制造",
+      "PCB",
+      "商业火箭",
+      "卫星制造",
+      "航天航空",
+      "航天发射",
+      "航天制造",
+      "卫星运营",
+      "航天技术",
+      "数据中心",
+      "液冷技术",
+      "高压直流电源",
+      "散热技术",
+      "高性能计算",
+      "液冷散热",
+      "互联网",
+      "视频制作",
+      "金融科技",
+      "软件服务",
+      "风险投资"
+    ],
+    "keyword_index_size": 65,
+    "avg_events_per_theme": 1.2063492063492063,
+    "lifecycle_distribution": {
+      "candidate": 63,
+      "growing": 0,
+      "mature": 0,
+      "decline": 0
+    }
+  },
+  "detailed_results": {
+    "processing_results": [
+      {
+        "event_id": "news_000",
+        "processed_at": "2026-01-11T12:08:11.163337",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "",
+          "reason": "无现有题材可比较",
+          "confidence": 0.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 0,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "消费电子",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 消费电子, 可穿戴设备, 人工智能, 增强现实, 光学制造",
+          "comparison_analysis": "与现有题材相似度: 0.00，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 0
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "消费电子",
+          "timestamp": "2026-01-11T12:08:11.164740"
+        },
+        "decision_time_ms": 1.1900000000000002
+      },
+      {
+        "event_id": "news_001",
+        "processed_at": "2026-01-11T12:08:11.168061",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.125,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.875
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "可穿戴设备",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 消费电子, 可穿戴设备, 运动科技, AR/VR",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 1
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "可穿戴设备",
+          "timestamp": "2026-01-11T12:08:11.844710"
+        },
+        "decision_time_ms": 0.187
+      },
+      {
+        "event_id": "news_002",
+        "processed_at": "2026-01-11T12:08:11.845154",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.125,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.875
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "半导体",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 半导体, 消费电子, AR/VR设备, 光学元件",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 2
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "半导体",
+          "timestamp": "2026-01-11T12:08:11.845864"
+        },
+        "decision_time_ms": 0.15
+      },
+      {
+        "event_id": "news_003",
+        "processed_at": "2026-01-11T12:08:11.846233",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.125,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.875
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "智能穿戴",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 消费电子, 智能穿戴, 增强现实, 半导体",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 3
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "智能穿戴",
+          "timestamp": "2026-01-11T12:08:11.847084"
+        },
+        "decision_time_ms": 0.29300000000000004
+      },
+      {
+        "event_id": "news_004",
+        "processed_at": "2026-01-11T12:08:11.847573",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.125,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.875
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "光学制造",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 消费电子, 智能穿戴, 光学制造, AR/VR",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 4
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "光学制造",
+          "timestamp": "2026-01-11T12:08:11.848172"
+        },
+        "decision_time_ms": 0.16
+      },
+      {
+        "event_id": "news_005",
+        "processed_at": "2026-01-11T12:08:11.848442",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.125,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.875
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "AR/VR设备",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: AR/VR设备, MicroLED显示技术, 半导体制造, 消费电子",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 5
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "AR/VR设备",
+          "timestamp": "2026-01-11T12:08:11.848908"
+        },
+        "decision_time_ms": 0.097
+      },
+      {
+        "event_id": "news_006",
+        "processed_at": "2026-01-11T12:08:11.849178",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.16666666666666666,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.17)，可以创建新题材",
+          "confidence": 0.8333333333333334
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 3,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "新兴题材",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 消费电子, 半导体, AR/VR设备",
+          "comparison_analysis": "与现有题材相似度: 0.13，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 6
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "新兴题材",
+          "timestamp": "2026-01-11T12:08:11.849774"
+        },
+        "decision_time_ms": 0.122
+      },
+      {
+        "event_id": "news_007",
+        "processed_at": "2026-01-11T12:08:11.850079",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.125,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.875
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 4,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "光学元件",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 消费电子, 半导体, 光学元件, 软件与内容",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 7
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "光学元件",
+          "timestamp": "2026-01-11T12:08:11.850687"
+        },
+        "decision_time_ms": 0.106
+      },
+      {
+        "event_id": "news_008",
+        "processed_at": "2026-01-11T12:08:11.850956",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.13333333333333333,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.13)，可以创建新题材",
+          "confidence": 0.8666666666666667
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 3,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "增强现实(AR)",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 消费电子, 增强现实(AR), 人工智能(AI), 光学元件, 人机交互",
+          "comparison_analysis": "与现有题材相似度: 0.08，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 8
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "增强现实(AR)",
+          "timestamp": "2026-01-11T12:08:11.852804"
+        },
+        "decision_time_ms": 1.123
+      },
+      {
+        "event_id": "news_009",
+        "processed_at": "2026-01-11T12:08:11.853355",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.325,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.33)，可以创建新题材",
+          "confidence": 0.675
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "人工智能",
+          "confidence": 0.92,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。该事件符合'首创性'重大标准：1. 闪极科技将推出'国内首款量产AI拍摄眼镜'，这是AI与AR眼镜融合的突破性产品首次实现商业化量产；2. 云天励飞作为AI公司战略投资，表明技术整合与产业协同，可能催生'AI+AR智能穿戴'这一全新投资题材，具备定义新兴细分市场的潜力。",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 9
+        },
+        "decision_confidence_raw": 0.92,
+        "execution_path": "fast_track_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "人工智能",
+          "timestamp": "2026-01-11T12:08:11.854020"
+        },
+        "decision_time_ms": 0.122
+      },
+      {
+        "event_id": "news_010",
+        "processed_at": "2026-01-11T12:08:11.855008",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "",
+          "reason": "无现有题材可比较",
+          "confidence": 0.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 0,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "航空航天",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 航空航天, 基础设施建设, 环保与生态保护",
+          "comparison_analysis": "与现有题材相似度: 0.00，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 10
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "航空航天",
+          "timestamp": "2026-01-11T12:08:11.855705"
+        },
+        "decision_time_ms": 0.372
+      },
+      {
+        "event_id": "news_011",
+        "processed_at": "2026-01-11T12:08:11.856160",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "",
+          "reason": "无现有题材可比较",
+          "confidence": 0.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 0,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "航天军工",
+          "confidence": 0.92,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。此事件符合'定义性'和'全局性'重大标准：1. 定义性：这是美军首次大规模采购低地球轨道导弹预警卫星星座，标志着国家级太空防御战略进入新阶段，可能定义未来军事卫星采购模式。2. 全局性：35亿美元的大额合同将重塑全球低轨卫星产业链格局，推动相关技术商业化，可能催生'军事低轨卫星星座'这一全新投资题材，涉及卫星制造、发射服务、地面站、数据处理等多个细分领域。",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 11
+        },
+        "decision_confidence_raw": 0.92,
+        "execution_path": "fast_track_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "航天军工",
+          "timestamp": "2026-01-11T12:08:11.856492"
+        },
+        "decision_time_ms": 0.103
+      },
+      {
+        "event_id": "news_012",
+        "processed_at": "2026-01-11T12:08:11.856747",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.325,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.33)，可以创建新题材",
+          "confidence": 0.675
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "商业航天",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 航空航天, 商业航天, 风险投资, 二级市场投资",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 12
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "商业航天",
+          "timestamp": "2026-01-11T12:08:11.857633"
+        },
+        "decision_time_ms": 0.093
+      },
+      {
+        "event_id": "news_013",
+        "processed_at": "2026-01-11T12:08:11.857911",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.16666666666666666,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.17)，可以创建新题材",
+          "confidence": 0.8333333333333334
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "金融投资",
+          "confidence": 0.88,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。SpaceX作为全球商业航天领域的领导者，其首次公开募股（IPO）具有'定义性'和'全局性'特征。这不仅是商业航天领域规模最大的IPO之一，还可能重新定义全球航天产业的资本运作模式，吸引大量资金关注并可能催生'商业航天投资'这一全新市场题材，改变行业竞争格局和估值体系。",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 13
+        },
+        "decision_confidence_raw": 0.88,
+        "execution_path": "fast_track_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "金融投资",
+          "timestamp": "2026-01-11T12:08:11.858367"
+        },
+        "decision_time_ms": 0.09000000000000001
+      },
+      {
+        "event_id": "news_014",
+        "processed_at": "2026-01-11T12:08:11.858979",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.16666666666666666,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.17)，可以创建新题材",
+          "confidence": 0.8333333333333334
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "卫星通信",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 商业航天, 卫星通信, 太空科技",
+          "comparison_analysis": "与现有题材相似度: 0.13，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 14
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "卫星通信",
+          "timestamp": "2026-01-11T12:08:11.859665"
+        },
+        "decision_time_ms": 0.16899999999999998
+      },
+      {
+        "event_id": "news_015",
+        "processed_at": "2026-01-11T12:08:11.859945",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "",
+          "reason": "无现有题材可比较",
+          "confidence": 0.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 0,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "可控核聚变",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 可控核聚变, 新能源, 高端装备制造, 新材料, 电力",
+          "comparison_analysis": "与现有题材相似度: 0.00，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 15
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "可控核聚变",
+          "timestamp": "2026-01-11T12:08:11.860290"
+        },
+        "decision_time_ms": 0.089
+      },
+      {
+        "event_id": "news_016",
+        "processed_at": "2026-01-11T12:08:11.860543",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.00)，可以创建新题材",
+          "confidence": 1.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "能源",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 能源, 电力, 高端制造, 新材料, 科研服务",
+          "comparison_analysis": "与现有题材相似度: 0.00，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 16
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "能源",
+          "timestamp": "2026-01-11T12:08:11.860975"
+        },
+        "decision_time_ms": 0.095
+      },
+      {
+        "event_id": "news_017",
+        "processed_at": "2026-01-11T12:08:11.861643",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.1,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.10)，可以创建新题材",
+          "confidence": 0.9
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "高端装备制造",
+          "confidence": 0.92,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。可控核聚变作为'终极能源'解决方案，其技术工程化与商业可行性突破具有'定义性'（可能重塑全球能源格局）和'全局性'（将彻底改变能源、工业、交通等多个基础行业）。当前阶段的大科学装置建设及实验堆订单标志着从实验室研究向产业化迈进的临界点，符合'首创性'特征（首次大规模工程化尝试）。这很可能催生一个全新的'可控核聚变产业链'投资题材，涵盖材料、装备、工程建设等多个高价值环节。",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 17
+        },
+        "decision_confidence_raw": 0.92,
+        "execution_path": "fast_track_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "高端装备制造",
+          "timestamp": "2026-01-11T12:08:11.862137"
+        },
+        "decision_time_ms": 0.1
+      },
+      {
+        "event_id": "news_018",
+        "processed_at": "2026-01-11T12:08:11.862412",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.16666666666666666,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.17)，可以创建新题材",
+          "confidence": 0.8333333333333334
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 3,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "媒体科技",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 可控核聚变, 人工智能, 媒体科技",
+          "comparison_analysis": "与现有题材相似度: 0.13，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 18
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "媒体科技",
+          "timestamp": "2026-01-11T12:08:11.862970"
+        },
+        "decision_time_ms": 0.102
+      },
+      {
+        "event_id": "news_019",
+        "processed_at": "2026-01-11T12:08:11.863422",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.1,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.10)，可以创建新题材",
+          "confidence": 0.9
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "电力",
+          "confidence": 0.88,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。该事件符合'定义性'和'全局性'重大标准：1. 国际能源署的权威预测为核聚变产业设定了明确的商业化时间框架和市场规模预期，具有行业定义性；2. 核聚变作为终极能源解决方案，其商业化将彻底颠覆全球能源结构、电力系统及相关产业链，具备改变多个行业格局的全局性影响；3. 5000亿美元的市场规模预测表明该领域正在从科研阶段向大规模产业化过渡，可能催生'可控核聚变商业化'这一全新的市场投资题材。",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 19
+        },
+        "decision_confidence_raw": 0.88,
+        "execution_path": "fast_track_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "电力",
+          "timestamp": "2026-01-11T12:08:11.863922"
+        },
+        "decision_time_ms": 0.104
+      },
+      {
+        "event_id": "news_020",
+        "processed_at": "2026-01-11T12:08:11.864293",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.1888888888888889,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.19)，可以创建新题材",
+          "confidence": 0.8111111111111111
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 3,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "高耗能产业",
+          "confidence": 0.92,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。该事件完全符合重大题材的'定义性'标准：1. 事件源自'十五五规划'这一国家级顶层设计，具有明确的政策定义性；2. 将可控核聚变从'前沿科学探索'升级为'战略性科技攻关方向'，标志着国家战略层面的重大转向；3. 作为'清洁基荷能源'，其商业化将可能重塑全球能源格局，具有'全局性'影响潜力。因此，该事件具备催生'可控核聚变产业链'这一全新市场投资题材的核心要素。",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 20
+        },
+        "decision_confidence_raw": 0.92,
+        "execution_path": "fast_track_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "高耗能产业",
+          "timestamp": "2026-01-11T12:08:11.864848"
+        },
+        "decision_time_ms": 0.103
+      },
+      {
+        "event_id": "news_021",
+        "processed_at": "2026-01-11T12:08:11.865119",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.2,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.20)，可以创建新题材",
+          "confidence": 0.8
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "核能",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 核能, 新能源, 高端制造, 科研服务",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 21
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "核能",
+          "timestamp": "2026-01-11T12:08:11.865532"
+        },
+        "decision_time_ms": 0.094
+      },
+      {
+        "event_id": "news_022",
+        "processed_at": "2026-01-11T12:08:11.865795",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.125,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.875
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "高端制造",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 可控核聚变, 新能源, 高端制造, 新材料",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 22
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "高端制造",
+          "timestamp": "2026-01-11T12:08:11.866291"
+        },
+        "decision_time_ms": 0.097
+      },
+      {
+        "event_id": "news_023",
+        "processed_at": "2026-01-11T12:08:11.866561",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.1,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.10)，可以创建新题材",
+          "confidence": 0.9
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 3,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "新材料",
+          "confidence": 0.92,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。该事件符合'首创性'和'全局性'重大标准：1）'首创性'：BEST计划是中国首次面向国际发布的紧凑型聚变能实验装置研究计划，标志着可控核聚变从基础研究向工程化、实用化迈出关键一步，具有突破性技术意义；2）'全局性'：若实现聚变能发电商业化，将彻底改变全球能源格局，催生万亿级新兴市场，涉及能源生产、储存、输送、应用全产业链变革。",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 23
+        },
+        "decision_confidence_raw": 0.92,
+        "execution_path": "fast_track_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "新材料",
+          "timestamp": "2026-01-11T12:08:11.867079"
+        },
+        "decision_time_ms": 0.1
+      },
+      {
+        "event_id": "news_024",
+        "processed_at": "2026-01-11T12:08:11.867348",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.125,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.875
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "特种材料",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 可控核聚变, 高端装备制造, 特种材料, 科研仪器",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 24
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "特种材料",
+          "timestamp": "2026-01-11T12:08:11.868082"
+        },
+        "decision_time_ms": 0.098
+      },
+      {
+        "event_id": "news_025",
+        "processed_at": "2026-01-11T12:08:11.868456",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.1,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.10)，可以创建新题材",
+          "confidence": 0.9
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 4,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "国防军工",
+          "confidence": 0.92,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。该事件符合'定义性'和'全局性'重大标准：1. 定义性：这是国家级出口管制新政，具有明确的政策导向和法律效力，可能定义未来对日技术出口的新框架；2. 全局性：两用物项涉及半导体、新材料、高端制造等多个关键行业，此举可能重塑相关产业链格局，催生'对日技术管制替代'或'自主可控供应链强化'等全新投资题材。",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 25
+        },
+        "decision_confidence_raw": 0.92,
+        "execution_path": "fast_track_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "国防军工",
+          "timestamp": "2026-01-11T12:08:11.869097"
+        },
+        "decision_time_ms": 0.1
+      },
+      {
+        "event_id": "news_026",
+        "processed_at": "2026-01-11T12:08:11.869367",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.22499999999999998,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.22)，可以创建新题材",
+          "confidence": 0.775
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "国际贸易",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 国防军工, 国际贸易, 旅游航空, 区域基建",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 26
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "国际贸易",
+          "timestamp": "2026-01-11T12:08:11.870125"
+        },
+        "decision_time_ms": 0.178
+      },
+      {
+        "event_id": "news_027",
+        "processed_at": "2026-01-11T12:08:11.870408",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.1,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.10)，可以创建新题材",
+          "confidence": 0.9
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 3,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "旅游",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 国际贸易, 旅游, 制造业, 能源, 金融",
+          "comparison_analysis": "与现有题材相似度: 0.08，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 27
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "旅游",
+          "timestamp": "2026-01-11T12:08:11.871008"
+        },
+        "decision_time_ms": 0.107
+      },
+      {
+        "event_id": "news_028",
+        "processed_at": "2026-01-11T12:08:11.871309",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.16666666666666666,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.17)，可以创建新题材",
+          "confidence": 0.8333333333333334
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "外交关系相关行业",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 国防军工, 外交关系相关行业, 中日贸易相关行业",
+          "comparison_analysis": "与现有题材相似度: 0.13，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 28
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "外交关系相关行业",
+          "timestamp": "2026-01-11T12:08:11.872314"
+        },
+        "decision_time_ms": 0.194
+      },
+      {
+        "event_id": "news_029",
+        "processed_at": "2026-01-11T12:08:11.872714",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.16666666666666666,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.17)，可以创建新题材",
+          "confidence": 0.8333333333333334
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "地缘政治",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 国际贸易, 外交关系, 地缘政治",
+          "comparison_analysis": "与现有题材相似度: 0.13，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 29
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "地缘政治",
+          "timestamp": "2026-01-11T12:08:11.873494"
+        },
+        "decision_time_ms": 0.153
+      },
+      {
+        "event_id": "news_030",
+        "processed_at": "2026-01-11T12:08:11.873876",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.125,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.875
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 3,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "航运物流",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 国防军工, 外交关系, 国际贸易, 航运物流",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 30
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "航运物流",
+          "timestamp": "2026-01-11T12:08:11.874517"
+        },
+        "decision_time_ms": 0.104
+      },
+      {
+        "event_id": "news_031",
+        "processed_at": "2026-01-11T12:08:11.874797",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.07142857142857142,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.07)，可以创建新题材",
+          "confidence": 0.9285714285714286
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 3,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "稀土开采与加工",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 稀土开采与加工, 稀土永磁材料, 新能源汽车, 风电设备, 消费电子, 工业电机, 日本相关制造业",
+          "comparison_analysis": "与现有题材相似度: 0.06，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 31
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "稀土开采与加工",
+          "timestamp": "2026-01-11T12:08:11.875462"
+        },
+        "decision_time_ms": 0.107
+      },
+      {
+        "event_id": "news_032",
+        "processed_at": "2026-01-11T12:08:11.875840",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.23666666666666664,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.24)，可以创建新题材",
+          "confidence": 0.7633333333333334
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 5,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "稀土永磁材料",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 稀土开采与加工, 稀土永磁材料, 新能源汽车, 风电设备, 消费电子, 国防军工",
+          "comparison_analysis": "与现有题材相似度: 0.07，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 32
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "稀土永磁材料",
+          "timestamp": "2026-01-11T12:08:11.876698"
+        },
+        "decision_time_ms": 0.11299999999999999
+      },
+      {
+        "event_id": "news_033",
+        "processed_at": "2026-01-11T12:08:11.877106",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.23333333333333334,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.23)，可以创建新题材",
+          "confidence": 0.7666666666666666
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 3,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "风电",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 稀土永磁, 新能源汽车, 风电, 消费电子, 工业电机",
+          "comparison_analysis": "与现有题材相似度: 0.08，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 33
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "风电",
+          "timestamp": "2026-01-11T12:08:11.877720"
+        },
+        "decision_time_ms": 0.106
+      },
+      {
+        "event_id": "news_034",
+        "processed_at": "2026-01-11T12:08:11.877993",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.3880952380952381,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.39)，可以创建新题材",
+          "confidence": 0.611904761904762
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 5,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "稀土永磁电机",
+          "confidence": 0.88,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。该事件符合'定义性'和'全局性'重大标准：1. 这是省级'十四五'规划中的专项政策，具有明确的战略导向和系统性部署；2. 提出'建设全国最大的稀土新材料基地和全球领先的稀土应用基地'的宏大目标，并明确'实施稀土永磁电机替代工程'的具体路径，可能催生'稀土永磁电机替代'这一全新的投资主题；3. 涉及从资源勘探、开采加工到新材料研发、应用推广的全产业链布局，具备改变稀土产业格局的潜力。",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 34
+        },
+        "decision_confidence_raw": 0.88,
+        "execution_path": "fast_track_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "稀土永磁电机",
+          "timestamp": "2026-01-11T12:08:11.878767"
+        },
+        "decision_time_ms": 0.111
+      },
+      {
+        "event_id": "news_035",
+        "processed_at": "2026-01-11T12:08:11.879044",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.125,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.875
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 3,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "关键矿物开采与加工",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 稀土永磁, 关键矿物开采与加工, 化工（芬太尼相关）, 国际贸易",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 35
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "关键矿物开采与加工",
+          "timestamp": "2026-01-11T12:08:11.879797"
+        },
+        "decision_time_ms": 0.114
+      },
+      {
+        "event_id": "news_036",
+        "processed_at": "2026-01-11T12:08:11.880075",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.16666666666666666,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.17)，可以创建新题材",
+          "confidence": 0.8333333333333334
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 4,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "新兴题材",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 稀土永磁, 新能源, 高端制造",
+          "comparison_analysis": "与现有题材相似度: 0.13，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 36
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "新兴题材",
+          "timestamp": "2026-01-11T12:08:11.881099"
+        },
+        "decision_time_ms": 0.102
+      },
+      {
+        "event_id": "news_037",
+        "processed_at": "2026-01-11T12:08:11.881475",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.19333333333333336,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.19)，可以创建新题材",
+          "confidence": 0.8066666666666666
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 5,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "风电设备",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 稀土开采与加工, 稀土永磁材料, 新能源汽车, 风电设备, 消费电子, 工业电机",
+          "comparison_analysis": "与现有题材相似度: 0.07，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 36
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "风电设备",
+          "timestamp": "2026-01-11T12:08:11.882361"
+        },
+        "decision_time_ms": 0.15
+      },
+      {
+        "event_id": "news_038",
+        "processed_at": "2026-01-11T12:08:11.882648",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.11846153846153848,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.8815384615384615
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 5,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "海洋化工",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 稀土开采与加工, 稀土永磁材料, 海洋化工, 海洋船舶, 海洋工程装备, 航运服务, 海洋旅游, 海洋渔业, 海洋清洁能源, 海水淡化, 海洋新材料, 海洋生物医药, 海洋电子信息",
+          "comparison_analysis": "与现有题材相似度: 0.03，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 37
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "海洋化工",
+          "timestamp": "2026-01-11T12:08:11.883529"
+        },
+        "decision_time_ms": 0.122
+      },
+      {
+        "event_id": "news_039",
+        "processed_at": "2026-01-11T12:08:11.883802",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.2787878787878788,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.28)，可以创建新题材",
+          "confidence": 0.7212121212121212
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 4,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "海洋船舶",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 海洋化工, 海洋船舶, 海洋工程装备, 航运服务, 海洋旅游, 海洋渔业, 海洋清洁能源, 海水淡化, 海洋新材料, 海洋生物医药, 海洋电子信息",
+          "comparison_analysis": "与现有题材相似度: 0.04，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 38
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "海洋船舶",
+          "timestamp": "2026-01-11T12:08:11.884545"
+        },
+        "decision_time_ms": 0.11
+      },
+      {
+        "event_id": "news_040",
+        "processed_at": "2026-01-11T12:08:11.885253",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.00)，可以创建新题材",
+          "confidence": 1.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "海洋工程",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 海洋工程, 海洋环保, 海洋资源开发, 海洋装备制造, 海洋科技, 海洋运输, 海洋旅游",
+          "comparison_analysis": "与现有题材相似度: 0.06，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 39
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "海洋工程",
+          "timestamp": "2026-01-11T12:08:11.885835"
+        },
+        "decision_time_ms": 0.101
+      },
+      {
+        "event_id": "news_041",
+        "processed_at": "2026-01-11T12:08:11.886103",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.00)，可以创建新题材",
+          "confidence": 1.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 3,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "海洋执法",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 海洋执法, 海洋经济统计, 深海资源开发, 港口航运, 海洋能源, 海洋高端装备, 智能船舶, 水下机器人, 海洋生物, 海洋生态预警, 海洋防灾减灾, 远洋渔业",
+          "comparison_analysis": "与现有题材相似度: 0.03，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 40
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "海洋执法",
+          "timestamp": "2026-01-11T12:08:11.886830"
+        },
+        "decision_time_ms": 0.108
+      },
+      {
+        "event_id": "news_042",
+        "processed_at": "2026-01-11T12:08:11.887099",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.00)，可以创建新题材",
+          "confidence": 1.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "海洋科技",
+          "confidence": 0.92,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。该事件符合'定义性'和'全局性'重大标准：1. 定义性：由中央财经委员会部署、国家发展改革委牵头编制国家级'十五五'海洋经济发展规划，属于顶层政策设计；2. 全局性：规划涵盖海洋科技自立自强、传统产业升级、新兴产业发展和未来产业培育，将系统性重塑海洋经济产业链，可能催生'海洋经济创新产业'或'蓝色经济'等全新投资题材。",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 41
+        },
+        "decision_confidence_raw": 0.92,
+        "execution_path": "fast_track_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "海洋科技",
+          "timestamp": "2026-01-11T12:08:11.887580"
+        },
+        "decision_time_ms": 0.089
+      },
+      {
+        "event_id": "news_043",
+        "processed_at": "2026-01-11T12:08:11.887834",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.28500000000000003,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.29)，可以创建新题材",
+          "confidence": 0.715
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "海洋生物医药",
+          "confidence": 0.92,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。该事件符合'定义性'和'全局性'重大标准：1. 这是国家级'十五五'海洋经济发展规划的编制启动，具有顶层设计和政策定义性；2. 规划明确部署海洋科技自立自强、传统产业升级和新兴/未来产业培育，将系统性重塑海洋经济格局，催生'海洋经济创新升级'这一全新投资题材。",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 42
+        },
+        "decision_confidence_raw": 0.92,
+        "execution_path": "fast_track_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "海洋生物医药",
+          "timestamp": "2026-01-11T12:08:11.888423"
+        },
+        "decision_time_ms": 0.093
+      },
+      {
+        "event_id": "news_044",
+        "processed_at": "2026-01-11T12:08:11.888772",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.16666666666666666,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.17)，可以创建新题材",
+          "confidence": 0.8333333333333334
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "光刻胶制造",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 半导体, 光刻胶制造, 芯片制造",
+          "comparison_analysis": "与现有题材相似度: 0.13，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 43
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "光刻胶制造",
+          "timestamp": "2026-01-11T12:08:11.889271"
+        },
+        "decision_time_ms": 0.11
+      },
+      {
+        "event_id": "news_045",
+        "processed_at": "2026-01-11T12:08:11.889548",
+        "status": "auto_merged",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": true,
+          "target_theme": "半导体",
+          "similarity": 0.8571428571428571,
+          "match_type": "semantic",
+          "reason": "语义相似度过高: 0.86",
+          "confidence": 0.8571428571428571
+        },
+        "ai_decision_overridden": true,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "集成电路材料",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 半导体, 光刻胶, 集成电路材料",
+          "comparison_analysis": "与现有题材相似度: 0.13，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 44
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "merge",
+          "target_theme_name": "半导体",
+          "timestamp": "2026-01-11T12:08:11.890116"
+        },
+        "decision_time_ms": 0.097
+      },
+      {
+        "event_id": "news_046",
+        "processed_at": "2026-01-11T12:08:11.893609",
+        "status": "auto_merged",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": true,
+          "target_theme": "半导体",
+          "similarity": 0.8571428571428571,
+          "match_type": "semantic",
+          "reason": "语义相似度过高: 0.86",
+          "confidence": 0.8571428571428571
+        },
+        "ai_decision_overridden": true,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "集成电路材料",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 半导体, 光刻胶, 集成电路材料",
+          "comparison_analysis": "与现有题材相似度: 0.13，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 44
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "merge",
+          "target_theme_name": "半导体",
+          "timestamp": "2026-01-11T12:08:11.894910"
+        },
+        "decision_time_ms": 0.152
+      },
+      {
+        "event_id": "news_047",
+        "processed_at": "2026-01-11T12:08:11.895613",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.25,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.25)，可以创建新题材",
+          "confidence": 0.75
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "新兴题材",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 半导体, 光刻胶",
+          "comparison_analysis": "与现有题材相似度: 0.20，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 44
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "新兴题材",
+          "timestamp": "2026-01-11T12:08:11.896663"
+        },
+        "decision_time_ms": 0.135
+      },
+      {
+        "event_id": "news_048",
+        "processed_at": "2026-01-11T12:08:11.897423",
+        "status": "auto_merged",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": true,
+          "target_theme": "半导体",
+          "similarity": 0.8571428571428571,
+          "match_type": "semantic",
+          "reason": "语义相似度过高: 0.86",
+          "confidence": 0.8571428571428571
+        },
+        "ai_decision_overridden": true,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "集成电路制造",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 半导体, 光刻胶, 集成电路制造",
+          "comparison_analysis": "与现有题材相似度: 0.13，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 44
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "merge",
+          "target_theme_name": "半导体",
+          "timestamp": "2026-01-11T12:08:11.898349"
+        },
+        "decision_time_ms": 0.15100000000000002
+      },
+      {
+        "event_id": "news_049",
+        "processed_at": "2026-01-11T12:08:11.898824",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.00)，可以创建新题材",
+          "confidence": 1.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "PCB",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 光刻胶, PCB, 电子化学品",
+          "comparison_analysis": "与现有题材相似度: 0.13，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 44
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "PCB",
+          "timestamp": "2026-01-11T12:08:11.899480"
+        },
+        "decision_time_ms": 0.11299999999999999
+      }
+    ],
+    "evaluation_results": [
+      {
+        "event_id": "event_1",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "消费电子",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.167934"
+      },
+      {
+        "event_id": "event_2",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "可穿戴设备",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.845073"
+      },
+      {
+        "event_id": "event_3",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "半导体",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.846118"
+      },
+      {
+        "event_id": "event_4",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "智能穿戴",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.847438"
+      },
+      {
+        "event_id": "event_5",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "光学制造",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.848382"
+      },
+      {
+        "event_id": "event_6",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "AR/VR设备",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.849119"
+      },
+      {
+        "event_id": "event_7",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "新兴题材",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.850018"
+      },
+      {
+        "event_id": "event_8",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "光学元件",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.850899"
+      },
+      {
+        "event_id": "event_9",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "增强现实(AR)",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.853284"
+      },
+      {
+        "event_id": "event_10",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "人工智能",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.92,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.854614"
+      },
+      {
+        "event_id": "event_11",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "航空航天",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.856046"
+      },
+      {
+        "event_id": "event_12",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "航天军工",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.92,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.856688"
+      },
+      {
+        "event_id": "event_13",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "商业航天",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.857851"
+      },
+      {
+        "event_id": "event_14",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "金融投资",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.88,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.858855"
+      },
+      {
+        "event_id": "event_15",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "卫星通信",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.859884"
+      },
+      {
+        "event_id": "event_16",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "可控核聚变",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.860483"
+      },
+      {
+        "event_id": "event_17",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "能源",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.861572"
+      },
+      {
+        "event_id": "event_18",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "高端装备制造",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.92,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.862352"
+      },
+      {
+        "event_id": "event_19",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "媒体科技",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.863176"
+      },
+      {
+        "event_id": "event_20",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "电力",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.88,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.864133"
+      },
+      {
+        "event_id": "event_21",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "高耗能产业",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.92,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.865061"
+      },
+      {
+        "event_id": "event_22",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "核能",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.865736"
+      },
+      {
+        "event_id": "event_23",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "高端制造",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.866501"
+      },
+      {
+        "event_id": "event_24",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "新材料",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.92,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.867288"
+      },
+      {
+        "event_id": "event_25",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "特种材料",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.868345"
+      },
+      {
+        "event_id": "event_26",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "国防军工",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.92,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.869308"
+      },
+      {
+        "event_id": "event_27",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "国际贸易",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.870346"
+      },
+      {
+        "event_id": "event_28",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "旅游",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.871247"
+      },
+      {
+        "event_id": "event_29",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "外交关系相关行业",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.872650"
+      },
+      {
+        "event_id": "event_30",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "地缘政治",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.873715"
+      },
+      {
+        "event_id": "event_31",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "航运物流",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.874737"
+      },
+      {
+        "event_id": "event_32",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "稀土开采与加工",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.875779"
+      },
+      {
+        "event_id": "event_33",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "稀土永磁材料",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.877044"
+      },
+      {
+        "event_id": "event_34",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "风电",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.877933"
+      },
+      {
+        "event_id": "event_35",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "稀土永磁电机",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.88,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.878985"
+      },
+      {
+        "event_id": "event_36",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "关键矿物开采与加工",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.880016"
+      },
+      {
+        "event_id": "event_37",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "新兴题材",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.881392"
+      },
+      {
+        "event_id": "event_38",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "风电设备",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.882587"
+      },
+      {
+        "event_id": "event_39",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "海洋化工",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.883744"
+      },
+      {
+        "event_id": "event_40",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "海洋船舶",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.884925"
+      },
+      {
+        "event_id": "event_41",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "海洋工程",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.886042"
+      },
+      {
+        "event_id": "event_42",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "海洋执法",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.887040"
+      },
+      {
+        "event_id": "event_43",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "海洋科技",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.92,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.887777"
+      },
+      {
+        "event_id": "event_44",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "海洋生物医药",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.92,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.888679"
+      },
+      {
+        "event_id": "event_45",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "光刻胶制造",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.889466"
+      },
+      {
+        "event_id": "event_46",
+        "ground_truth": "未知",
+        "system_decision": "merge",
+        "system_theme": "半导体",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "归并目标不匹配: 半导体 != 未知",
+        "evaluation_timestamp": "2026-01-11T12:08:11.892437"
+      },
+      {
+        "event_id": "event_47",
+        "ground_truth": "未知",
+        "system_decision": "merge",
+        "system_theme": "半导体",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "归并目标不匹配: 半导体 != 未知",
+        "evaluation_timestamp": "2026-01-11T12:08:11.895488"
+      },
+      {
+        "event_id": "event_48",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "新兴题材",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.897318"
+      },
+      {
+        "event_id": "event_49",
+        "ground_truth": "未知",
+        "system_decision": "merge",
+        "system_theme": "半导体",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "归并目标不匹配: 半导体 != 未知",
+        "evaluation_timestamp": "2026-01-11T12:08:11.898749"
+      },
+      {
+        "event_id": "event_50",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "PCB",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T12:08:11.899727"
+      }
+    ]
+  },
+  "recommendations": [
+    "决策准确率 0.0% 低于85%目标，需要改进AI决策逻辑",
+    "平均每个主题的事件数较低，可能存在过度创建新主题的问题"
+  ]
+}

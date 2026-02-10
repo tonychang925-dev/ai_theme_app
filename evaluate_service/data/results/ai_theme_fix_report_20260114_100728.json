@@ -1,0 +1,78 @@
+{
+  "timestamp": "2026-01-14T10:07:28.090747",
+  "summary": {
+    "total_cases": 3,
+    "passed_cases": 0,
+    "failed_cases": 3,
+    "average_score": 0.3866666666666667,
+    "average_time": 8.957057
+  },
+  "test_cases": [
+    {
+      "case_id": "spacex_001",
+      "case_name": "SpaceX卫星采购",
+      "time_cost": 8.19801,
+      "theme_name": "消费电子",
+      "recommendation": "CREATE_NEW",
+      "confidence": 1.0,
+      "reason": "由于当前系统内既无现有主题也无新事件内容，无法执行具体分析。在接收到有效的新事件内容后，系统将根据其核心内容，遵循2-6个中文字符、使用行业术语、避免通用后缀的规则，为其创建新的主题。",
+      "evaluation": {
+        "score": 0.2800000000000001,
+        "theme_name_quality": 0.30000000000000004,
+        "decision_correctness": 1.0,
+        "naming_issues": [
+          "错误匹配到禁止主题: '消费电子'"
+        ],
+        "decision_issues": [],
+        "warnings": [
+          "主题名称可能不够准确"
+        ]
+      },
+      "success": false
+    },
+    {
+      "case_id": "meta_001",
+      "case_name": "Meta智能眼镜",
+      "time_cost": 9.003453,
+      "theme_name": "消费电子",
+      "recommendation": "CREATE_NEW",
+      "confidence": 1.0,
+      "reason": "由于当前没有任何主题存在，且新事件信息缺失，系统默认推荐创建新主题。但主题命名无法进行，因为缺乏事件核心内容作为命名依据。需要提供新事件的完整原始内容，才能基于其核心内容、行业术语生成符合规则（2-6个中文字符，无冗余后缀）的主题名称。",
+      "evaluation": {
+        "score": 0.6,
+        "theme_name_quality": 1.0,
+        "decision_correctness": 0.0,
+        "naming_issues": [],
+        "decision_issues": [
+          "决策错误: 期望'MERGE_WITH_EXISTING', 实际'CREATE_NEW'"
+        ],
+        "warnings": [
+          "主题名称可能不够准确"
+        ]
+      },
+      "success": false
+    },
+    {
+      "case_id": "tsmc_001",
+      "case_name": "台积电芯片技术",
+      "time_cost": 9.669708,
+      "theme_name": "消费电子",
+      "recommendation": "CREATE_NEW",
+      "confidence": 1.0,
+      "reason": "由于当前系统没有任何主题，任何新事件（当有内容时）都需要创建新主题。在创建新主题时，命名应严格遵循规则：基于事件核心内容，使用2-6个中文字符的行业术语，避免使用'相关'、'新闻'等后缀。例如，若事件核心为'某公司发布新型人工智能芯片'，可命名为'AI芯片发布'或'半导体新品'。",
+      "evaluation": {
+        "score": 0.2800000000000001,
+        "theme_name_quality": 0.30000000000000004,
+        "decision_correctness": 1.0,
+        "naming_issues": [
+          "错误匹配到禁止主题: '消费电子'"
+        ],
+        "decision_issues": [],
+        "warnings": [
+          "主题名称可能不够准确"
+        ]
+      },
+      "success": false
+    }
+  ]
+}

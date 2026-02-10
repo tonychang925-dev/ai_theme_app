@@ -1,0 +1,29 @@
+# tests/test_config.yaml
+# 集成测试配置文件
+database:
+  type: "memory"  # 使用内存数据库进行测试
+  postgres:
+    host: "localhost"
+    port: 5432
+    database: "financial_ai_test"
+    username: "postgres"
+    password: ""
+
+cache:
+  type: "memory"
+  default_ttl: 300
+
+ai:
+  use_real_api: false  # 测试时使用模拟AI
+  timeout: 30
+  max_retries: 3
+
+engine:
+  fast_track_threshold: 0.85
+  review_threshold: 0.65
+  ignore_threshold: 0.3
+
+test:
+  max_events: 20  # 最大测试事件数
+  save_results: true
+  results_dir: "tests/results"

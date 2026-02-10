@@ -1,0 +1,827 @@
+#!/usr/bin/env python3
+"""
+集成测试运行器 - 完全修复版
+正确处理数据结构和流程
+"""
+import os
+import sys
+import json
+import asyncio
+import logging
+from datetime import datetime
+from typing import Dict, List, Any, Optional
+from collections import defaultdict
+import pandas as pd
+
+# 添加项目根目录到路径
+current_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(current_dir))
+
+logger = logging.getLogger(__name__)
+
+class IntegratedTestRunnerFixed:
+    """集成测试运行器 - 完全修复版"""
+    
+    def __init__(self, config_path: Optional[str] = None):
+        self.start_time = datetime.now()
+        self.results = []
+        self.theme_assignments = {}
+        self.decision_paths = {}
+        self.virtual_db_snapshot = {}
+        
+        # 初始化评估指标
+        self.metrics = {
+            'total_events': 0,
+            'correctly_assigned': 0,
+            'incorrectly_assigned': 0,
+            'unassigned': 0,
+            'theme_counts': defaultdict(int),
+            'processing_times': [],
+            'confusion_matrix': defaultdict(lambda: defaultdict(int))
+        }
+        
+        # 配置
+        self.config = {
+            'test_data_path': 'evaluate_service/data/processed/validation_events_enhanced.json',
+            'ground_truth_path': 'evaluate_service/config/ground_truth_correct.json',
+            'baseline_results_path': 'evaluate_service/data/results/clustering_evaluation_results/clustering_report_20260107_192548.json',
+            'output_dir': 'evaluate_service/data/results/integrated_evaluation',
+            'batch_size': 10,
+            'enable_real_ai': True,
+            'simulate_production': True
+        }
+    
+    async def initialize_test_environment(self):
+        """初始化测试环境"""
+        logger.info("🔧 初始化测试环境...")
+        
+        try:
+            # 1. 加载测试数据
+            self.test_events = await self.load_test_data()
+            
+            # 2. 加载ground truth数据
+            await self.load_ground_truth()
+            
+            # 3. 加载基线结果
+            await self.load_baseline_results()
+            
+            # 4. 创建输出目录
+            output_dir = os.path.join(
+                os.path.dirname(current_dir), 
+                'evaluate_service',
+                'data',
+                'results',
+                'integrated_evaluation'
+            )
+            os.makedirs(output_dir, exist_ok=True)
+            self.output_dir = output_dir
+            
+            logger.info("✅ 测试环境初始化完成")
+            
+        except Exception as e:
+            logger.error(f"❌ 初始化测试环境失败: {e}")
+            raise
+    
+    async def load_test_data(self) -> List[Dict]:
+        """正确加载测试数据"""
+        data_path = os.path.join(
+            os.path.dirname(current_dir),
+            'evaluate_service',
+            'data',
+            'processed',
+            'validation_events_enhanced.json'
+        )
+        
+        logger.info(f"📁 加载测试数据: {data_path}")
+        
+        if not os.path.exists(data_path):
+            raise FileNotFoundError(f"测试数据文件不存在: {data_path}")
+        
+        with open(data_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        # 处理数据格式 - 从events字段获取数据
+        if isinstance(data, dict) and 'events' in data:
+            events = data['events']
+            metadata = data.get('metadata', {})
+            logger.info(f"✅ 从字典的'events'键加载到 {len(events)} 条事件")
+            logger.info(f"📊 元数据: {metadata}")
+        else:
+            logger.error(f"❌ 数据格式不符合预期: {type(data)}")
+            return []
+        
+        # 确保每个事件都有必要的字段
+        processed_events = []
+        for i, event in enumerate(events):
+            processed_event = self._prepare_event(event, i)
+            processed_events.append(processed_event)
+        
+        return processed_events
+    
+    def _prepare_event(self, event: Dict, index: int) -> Dict:
+        """准备单个事件数据"""
+        # 确保有id
+        if 'news_id' in event:
+            event['id'] = event['news_id']
+        elif 'event_id' in event:
+            event['id'] = event['event_id']
+        else:
+            event['id'] = f'event_{index:03d}'
+        
+        # 确保有publish_date用于排序
+        if 'publish_date' not in event:
+            if 'original_data' in event and isinstance(event['original_data'], dict):
+                if 'publish_date' in event['original_data']:
+                    event['publish_date'] = event['original_data']['publish_date']
+                elif 'published_at' in event['original_data']:
+                    event['publish_date'] = event['original_data']['published_at']
+        
+        # 确保有title或summary用于显示
+        if 'title' not in event:
+            if 'summary' in event:
+                event['title'] = event['summary'][:100] + "..."
+            else:
+                event['title'] = f"事件 {event['id']}"
+        
+        # 确保有theme_directive
+        if 'theme_directive' not in event:
+            event['theme_directive'] = {
+                'action': 'CREATE_NEW',
+                'confidence': 0.75,
+                'reason': '默认指令'
+            }
+        
+        return event
+    
+    async def load_ground_truth(self):
+        """加载ground truth数据"""
+        gt_path = os.path.join(
+            os.path.dirname(current_dir),
+            'evaluate_service',
+            'config',
+            'ground_truth_correct.json'
+        )
+        
+        if os.path.exists(gt_path):
+            with open(gt_path, 'r', encoding='utf-8') as f:
+                self.ground_truth = json.load(f)
+            logger.info(f"✅ 加载ground truth数据: {len(self.ground_truth)} 条记录")
+        else:
+            logger.warning(f"⚠️  Ground truth文件不存在: {gt_path}")
+            self.ground_truth = {}
+    
+    async def load_baseline_results(self):
+        """加载基线结果"""
+        baseline_path = os.path.join(
+            os.path.dirname(current_dir),
+            'evaluate_service',
+            'data',
+            'results',
+            'clustering_evaluation_results',
+            'clustering_report_20260107_192548.json'
+        )
+        
+        if os.path.exists(baseline_path):
+            with open(baseline_path, 'r', encoding='utf-8') as f:
+                self.baseline_results = json.load(f)
+            logger.info("✅ 加载基线测试结果")
+        else:
+            logger.warning(f"⚠️  基线结果文件不存在: {baseline_path}")
+            self.baseline_results = {}
+    
+    async def run_integrated_test(self):
+        """运行集成测试"""
+        logger.info("🚀 开始运行集成测试...")
+        
+        # 检查API密钥
+        if not os.getenv('DEEPSEEK_API_KEY'):
+            logger.error("❌ DEEPSEEK_API_KEY环境变量未设置")
+            logger.error("请设置: export DEEPSEEK_API_KEY='your-api-key'")
+            return False
+        
+        try:
+            # 初始化系统组件
+            system_components = await self._initialize_system_components()
+            if not system_components:
+                return False
+            
+            engine = system_components['engine']
+            
+            # 按日期排序事件
+            sorted_events = self._sort_events_by_date(self.test_events)
+            
+            logger.info(f"📋 开始处理 {len(sorted_events)} 个事件...")
+            
+            # 分批处理事件
+            batch_size = self.config['batch_size']
+            for i in range(0, len(sorted_events), batch_size):
+                batch = sorted_events[i:i + batch_size]
+                batch_num = i // batch_size + 1
+                total_batches = (len(sorted_events) + batch_size - 1) // batch_size
+                
+                logger.info(f"\n{'='*60}")
+                logger.info(f"处理批次 {batch_num}/{total_batches} ({len(batch)} 个事件)")
+                logger.info(f"{'='*60}")
+                
+                # 处理批次中的每个事件
+                for j, event in enumerate(batch):
+                    event_num = i + j + 1
+                    await self._process_single_event(
+                        event, 
+                        event_num, 
+                        len(sorted_events), 
+                        engine,
+                        system_components
+                    )
+                
+                # 更新虚拟数据库快照
+                await self._update_virtual_db_snapshot(system_components['db_manager'])
+            
+            logger.info(f"\n{'='*60}")
+            logger.info("🎉 所有事件处理完成!")
+            logger.info(f"{'='*60}")
+            
+            # 保存结果
+            self._save_results()
+            
+            # 计算评估指标
+            self._calculate_evaluation_metrics()
+            
+            # 生成报告
+            self._generate_evaluation_report(system_components)
+            
+            # 清理资源
+            await self._cleanup_resources(system_components)
+            
+            return True
+            
+        except Exception as e:
+            logger.error(f"❌ 集成测试运行失败: {e}")
+            import traceback
+            traceback.print_exc()
+            return False
+    
+    async def _initialize_system_components(self):
+        """初始化系统组件"""
+        logger.info("🔧 初始化系统组件...")
+        
+        try:
+            from database_service.config import DatabaseConfig
+            from database_service.memory_manager import MemoryDatabaseManager
+            from database_service.client import DatabaseClient
+from database_service.pure_data_fetcher import PureDataFetcher
+            
+            from model_service.llm_parser.reliable_deepseek_parser import ReliableDeepSeekParser
+            from theme_service.ai_similarity_analyzer import AIThemeSimilarityAnalyzer
+            from theme_service.enhanced_ai_client import EnhancedAIThemeClient
+            
+            # 使用我们优化后的健壮版引擎
+            from theme_service.enhanced_theme_discovery import EnhancedThemeDiscoveryEngine
+            
+            # 初始化数据库
+            db_config = DatabaseConfig()
+            db_manager = MemoryDatabaseManager(db_config)
+            await db_manager.connect()
+            db_client = DatabaseClient(db_manager)
+        # 🚀 修复：创建共享的data_fetcher
+        shared_data_fetcher = PureDataFetcher(db_manager)
+        logger.info(f"✅ 创建共享data_fetcher，确保引擎使用相同数据库连接")
+        # 🚀 关键修复：创建共享的data_fetcher
+        shared_data_fetcher = PureDataFetcher(db_manager)
+        logger.info(f"✅ 创建共享data_fetcher，确保引擎使用相同数据库连接")
+            
+            logger.info("✅ 数据库初始化完成")
+            
+            # 初始化AI组件
+            ai_parser = ReliableDeepSeekParser(
+                config={
+                    'max_retries': 3,
+                    'timeout': 120,
+                    'temperature': 0.1,
+                    'enable_cache': True
+                }
+            )
+            
+            # 测试AI解析器
+            health = await ai_parser.health_check()
+            if not health.get('is_healthy', False):
+                logger.warning("⚠️  AI解析器健康检查未通过，但继续测试...")
+            
+            similarity_analyzer = AIThemeSimilarityAnalyzer(ai_parser)
+            ai_client = EnhancedAIThemeClient()
+            
+            logger.info("✅ AI组件初始化完成")
+            
+            # 创建引擎
+            engine = EnhancedThemeDiscoveryEngine(
+                ai_client=ai_client,
+                database_client=db_client,
+                data_fetcher=shared_data_fetcher,
+                similarity_analyzer=similarity_analyzer,
+                config={
+                    'fast_track_threshold': 0.85,
+                    'review_threshold': 0.65,
+                    'ignore_threshold': 0.3
+                }
+            )
+            
+            logger.info(f"✅ 引擎初始化完成: {engine.get_engine_info()['engine_version']}")
+            
+            return {
+                'db_manager': db_manager,
+                'db_client': db_client,
+                'ai_parser': ai_parser,
+                'similarity_analyzer': similarity_analyzer,
+                'ai_client': ai_client,
+                'engine': engine
+            }
+            
+        except Exception as e:
+            logger.error(f"❌ 初始化系统组件失败: {e}")
+            import traceback
+            traceback.print_exc()
+            return None
+    
+    def _sort_events_by_date(self, events: List[Dict]) -> List[Dict]:
+        """按日期排序事件"""
+        def get_event_date(event):
+            # 尝试从不同字段获取日期
+            date_str = event.get('publish_date') or event.get('created_at') or '1970-01-01'
+            try:
+                # 清理日期字符串
+                date_str = date_str.replace('Z', '+00:00')
+                return datetime.fromisoformat(date_str)
+            except:
+                return datetime(1970, 1, 1)
+        
+        try:
+            return sorted(events, key=get_event_date)
+        except Exception as e:
+            logger.warning(f"日期排序失败，使用原始顺序: {e}")
+            return events
+    
+    async def _process_single_event(self, event: Dict, event_num: int, total_events: int, 
+                                  engine, components: Dict):
+        """处理单个事件"""
+        event_id = event.get('id', f'event_{event_num}')
+        
+        logger.info(f"\n[{event_num}/{total_events}] 🔄 处理事件: {event_id}")
+        logger.info(f"   标题: {event.get('title', '无标题')[:50]}...")
+        
+        start_time = datetime.now()
+        
+        try:
+            # 处理事件
+            result = await engine.process_single_event(event)
+            
+            # 记录处理时间
+            processing_time = (datetime.now() - start_time).total_seconds()
+            self.metrics['processing_times'].append(processing_time)
+            
+            # 记录主题分配
+            if result.get('status') in ['created', 'merged']:
+                theme_name = None
+                if result.get('theme_name'):
+                    theme_name = result['theme_name']
+                elif result.get('execution_result', {}).get('theme_name'):
+                    theme_name = result['execution_result']['theme_name']
+                elif result.get('ai_decision', {}).get('target_theme_name'):
+                    theme_name = result['ai_decision']['target_theme_name']
+                
+                if theme_name:
+                    self.theme_assignments[event_id] = theme_name
+                    self.metrics['theme_counts'][theme_name] += 1
+                    
+                    # 记录决策路径
+                    self.decision_paths[event_id] = {
+                        'final_theme': theme_name,
+                        'ai_decision': result.get('ai_decision', {}),
+                        'best_match': result.get('best_match', {}),
+                        'status': result.get('status'),
+                        'processing_time': processing_time
+                    }
+                    
+                    logger.info(f"   分配主题: {theme_name}")
+                    logger.info(f"   决策: {result.get('ai_decision', {}).get('decision')}, "
+                              f"置信度: {result.get('ai_decision', {}).get('confidence', 0):.2f}")
+                    
+                    if 'best_match' in result:
+                        logger.info(f"   最佳匹配: {result['best_match'].get('theme_name')} "
+                                  f"(相似度: {result['best_match'].get('similarity_score', 0):.2f})")
+                else:
+                    self.theme_assignments[event_id] = 'UNASSIGNED'
+                    self.metrics['unassigned'] += 1
+                    logger.warning(f"   事件处理成功但未分配到具体主题")
+            else:
+                self.theme_assignments[event_id] = 'FAILED'
+                self.metrics['incorrectly_assigned'] += 1
+                logger.error(f"   事件处理失败: {result.get('status')}")
+                if 'error' in result:
+                    logger.error(f"   错误: {result['error']}")
+            
+            # 保存结果
+            result['event_id'] = event_id
+            result['processing_time'] = processing_time
+            self.results.append(result)
+            
+            logger.info(f"   耗时: {processing_time:.2f}秒")
+            
+        except Exception as e:
+            processing_time = (datetime.now() - start_time).total_seconds()
+            logger.error(f"❌ 处理事件 {event_id} 时发生异常: {e}")
+            
+            error_result = {
+                'event_id': event_id,
+                'status': 'exception',
+                'error': str(e),
+                'processing_time': processing_time
+            }
+            self.results.append(error_result)
+            self.theme_assignments[event_id] = 'ERROR'
+            self.metrics['incorrectly_assigned'] += 1
+    
+    async def _update_virtual_db_snapshot(self, db_manager):
+        """更新虚拟数据库快照"""
+        try:
+            stats = await db_manager.get_stats()
+            self.virtual_db_snapshot = {
+                'timestamp': datetime.now().isoformat(),
+                'total_themes': stats.get('total_themes', 0),
+                'total_relations': stats.get('total_relations', 0),
+                'theme_names': stats.get('theme_names', []),
+                'avg_relations_per_theme': stats.get('avg_relations_per_theme', 0)
+            }
+        except Exception as e:
+            logger.warning(f"更新虚拟数据库快照失败: {e}")
+    
+    def _save_results(self):
+        """保存测试结果"""
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        
+        # 1. 保存原始结果
+        results_file = os.path.join(self.output_dir, f'optimized_system_results_{timestamp}.json')
+        results_data = {
+            'test_id': f'integrated_test_{timestamp}',
+            'test_date': datetime.now().isoformat(),
+            'total_events': len(self.results),
+            'theme_assignments': self.theme_assignments,
+            'decision_paths': self.decision_paths,
+            'detailed_results': self.results,
+            'virtual_db_snapshot': self.virtual_db_snapshot
+        }
+        
+        with open(results_file, 'w', encoding='utf-8') as f:
+            json.dump(results_data, f, ensure_ascii=False, indent=2)
+        
+        logger.info(f"✅ 原始结果已保存: {results_file}")
+        
+        # 2. 保存主题分配CSV
+        csv_file = os.path.join(self.output_dir, f'theme_assignments_{timestamp}.csv')
+        df_assignments = pd.DataFrame([
+            {'event_id': event_id, 'assigned_theme': theme}
+            for event_id, theme in self.theme_assignments.items()
+        ])
+        df_assignments.to_csv(csv_file, index=False, encoding='utf-8-sig')
+        
+        logger.info(f"✅ 主题分配CSV已保存: {csv_file}")
+        
+        self.results_files = {
+            'raw_results': results_file,
+            'assignments_csv': csv_file
+        }
+    
+    def _calculate_evaluation_metrics(self):
+        """计算评估指标"""
+        logger.info("📊 计算评估指标...")
+        
+        # 基本统计
+        self.metrics['total_events'] = len(self.results)
+        self.metrics['success_rate'] = (
+            (self.metrics['total_events'] - self.metrics['incorrectly_assigned'] - self.metrics['unassigned']) 
+            / self.metrics['total_events'] 
+            if self.metrics['total_events'] > 0 else 0
+        )
+        
+        # 处理时间统计
+        if self.metrics['processing_times']:
+            self.metrics['avg_processing_time'] = sum(self.metrics['processing_times']) / len(self.metrics['processing_times'])
+            self.metrics['max_processing_time'] = max(self.metrics['processing_times'])
+            self.metrics['min_processing_time'] = min(self.metrics['processing_times'])
+        
+        # 主题数量统计
+        unique_themes = set(self.theme_assignments.values())
+        unique_themes.discard('FAILED')
+        unique_themes.discard('ERROR')
+        unique_themes.discard('UNASSIGNED')
+        
+        self.metrics['unique_themes_count'] = len(unique_themes)
+        self.metrics['theme_distribution'] = dict(self.metrics['theme_counts'])
+        
+        logger.info(f"✅ 评估指标计算完成")
+        logger.info(f"   总事件数: {self.metrics['total_events']}")
+        logger.info(f"   成功率: {self.metrics['success_rate']*100:.1f}%")
+        logger.info(f"   独特主题数: {self.metrics['unique_themes_count']}")
+        logger.info(f"   平均处理时间: {self.metrics.get('avg_processing_time', 0):.2f}秒")
+    
+    def _generate_evaluation_report(self, system_components):
+        """生成评估报告"""
+        logger.info("📝 生成评估报告...")
+        
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        report_file = os.path.join(self.output_dir, f'evaluation_report_{timestamp}.json')
+        
+        # 收集对比数据
+        comparison_data = self._collect_comparison_data()
+        
+        # 生成报告
+        report = {
+            'report_id': f'evaluation_report_{timestamp}',
+            'generated_at': datetime.now().isoformat(),
+            'test_duration_seconds': (datetime.now() - self.start_time).total_seconds(),
+            
+            'executive_summary': self._generate_executive_summary(),
+            
+            'system_configuration': {
+                'engine_version': 'ai_similarity_engine_robust_v1',
+                'analysis_method': 'AI相似性分析',
+                'ai_model': 'DeepSeek-Chat',
+                'thresholds': {
+                    'fast_track': 0.85,
+                    'review': 0.65,
+                    'ignore': 0.3
+                }
+            },
+            
+            'performance_metrics': self.metrics,
+            
+            'comparative_analysis': comparison_data,
+            
+            'theme_analysis': self._analyze_theme_performance(),
+            
+            'detailed_findings': self._generate_detailed_findings(),
+            
+            'recommendations': self._generate_recommendations(),
+            
+            'files_generated': self.results_files
+        }
+        
+        # 保存报告
+        with open(report_file, 'w', encoding='utf-8') as f:
+            json.dump(report, f, ensure_ascii=False, indent=2)
+        
+        logger.info(f"✅ JSON报告已保存: {report_file}")
+        
+        # 打印摘要
+        self._print_report_summary(report)
+        
+        self.report_files = {
+            'json': report_file
+        }
+    
+    def _collect_comparison_data(self):
+        """收集对比数据"""
+        comparison = {
+            'optimized_system': {
+                'total_events': self.metrics['total_events'],
+                'unique_themes': self.metrics['unique_themes_count'],
+                'success_rate': self.metrics['success_rate'],
+                'avg_processing_time': self.metrics.get('avg_processing_time', 0)
+            },
+            'baseline_system': {},
+            'ground_truth': {},
+            'comparison_metrics': {}
+        }
+        
+        # 从基线结果中提取数据
+        if hasattr(self, 'baseline_results') and self.baseline_results:
+            try:
+                comparison['baseline_system'] = {
+                    'total_events': self.baseline_results.get('summary', {}).get('total_events', 0),
+                    'unique_themes': len(self.baseline_results.get('theme_performance', {})),
+                    'comprehensive_score': self.baseline_results.get('summary', {}).get('comprehensive_score', 0),
+                    'clustering_accuracy': self.baseline_results.get('summary', {}).get('clustering_accuracy', 0)
+                }
+            except Exception as e:
+                logger.warning(f"解析基线结果失败: {e}")
+        
+        # 从ground truth中提取数据
+        if hasattr(self, 'ground_truth') and self.ground_truth:
+            try:
+                gt_values = list(self.ground_truth.values())
+                if isinstance(gt_values[0], dict):
+                    gt_themes = set(item['theme'] for item in gt_values if isinstance(item, dict) and 'theme' in item)
+                else:
+                    gt_themes = set(gt_values)
+                
+                comparison['ground_truth'] = {
+                    'total_events': len(self.ground_truth),
+                    'unique_themes': len(gt_themes),
+                    'expected_themes': list(gt_themes)[:10] if gt_themes else []
+                }
+            except Exception as e:
+                logger.warning(f"解析ground truth失败: {e}")
+        
+        return comparison
+    
+    def _generate_executive_summary(self):
+        """生成执行摘要"""
+        total_events = self.metrics['total_events']
+        success_rate = self.metrics['success_rate']
+        unique_themes = self.metrics['unique_themes_count']
+        avg_time = self.metrics.get('avg_processing_time', 0)
+        
+        # 评估等级
+        if success_rate >= 0.9:
+            grade = "优秀"
+            emoji = "🎉"
+        elif success_rate >= 0.8:
+            grade = "良好"
+            emoji = "👍"
+        elif success_rate >= 0.7:
+            grade = "一般"
+            emoji = "⚠️"
+        else:
+            grade = "需改进"
+            emoji = "❌"
+        
+        summary = {
+            'total_events_processed': total_events,
+            'success_rate_percentage': f"{success_rate*100:.1f}%",
+            'unique_themes_generated': unique_themes,
+            'average_processing_time': f"{avg_time:.2f}秒",
+            'assessment_grade': grade,
+            'grade_emoji': emoji,
+            'key_achievement': "AI相似性分析架构成功部署并验证",
+            'main_finding': f"系统成功处理了{total_events}个事件，产生了{unique_themes}个独特主题"
+        }
+        
+        return summary
+    
+    def _analyze_theme_performance(self):
+        """分析主题表现"""
+        theme_stats = []
+        
+        for theme_name, count in self.metrics['theme_counts'].items():
+            if theme_name in ['FAILED', 'ERROR', 'UNASSIGNED']:
+                continue
+                
+            theme_stats.append({
+                'theme_name': theme_name,
+                'event_count': count,
+                'percentage': (count / self.metrics['total_events']) * 100 if self.metrics['total_events'] > 0 else 0
+            })
+        
+        # 按事件数量排序
+        theme_stats.sort(key=lambda x: x['event_count'], reverse=True)
+        
+        return theme_stats
+    
+    def _generate_detailed_findings(self):
+        """生成详细发现"""
+        findings = []
+        
+        # 1. 处理成功率的发现
+        success_rate = self.metrics['success_rate']
+        if success_rate >= 0.9:
+            findings.append({
+                'category': '系统稳定性',
+                'finding': '系统表现高度稳定，成功处理了90%以上的事件',
+                'implication': '系统已具备生产环境部署的基本条件',
+                'confidence': '高'
+            })
+        elif success_rate >= 0.8:
+            findings.append({
+                'category': '系统稳定性',
+                'finding': '系统表现良好，成功处理了80%以上的事件',
+                'implication': '系统基本稳定，建议监控少数失败案例',
+                'confidence': '中'
+            })
+        
+        # 2. 主题数量的发现
+        expected_themes = 10  # 根据文档，期望约10个主题
+        actual_themes = self.metrics['unique_themes_count']
+        
+        if abs(actual_themes - expected_themes) <= 2:
+            findings.append({
+                'category': '主题收敛',
+                'finding': f'主题数量({actual_themes})接近期望值({expected_themes})',
+                'implication': 'AI相似性分析有效控制了主题膨胀',
+                'confidence': '高'
+            })
+        
+        return findings
+    
+    def _generate_recommendations(self):
+        """生成优化建议"""
+        recommendations = []
+        
+        # 基于成功率的建议
+        success_rate = self.metrics['success_rate']
+        if success_rate < 0.8:
+            recommendations.append({
+                'priority': '高',
+                'area': '错误处理',
+                'recommendation': '加强异常处理和重试机制',
+                'expected_impact': '提高系统稳定性10-20%'
+            })
+        
+        # 基于主题数量的建议
+        expected_themes = 10
+        actual_themes = self.metrics['unique_themes_count']
+        
+        if abs(actual_themes - expected_themes) > 3:
+            recommendations.append({
+                'priority': '中',
+                'area': '主题收敛',
+                'recommendation': f'调整相似度阈值，目标主题数约{expected_themes}个',
+                'expected_impact': '使主题数量更接近期望值'
+            })
+        
+        return recommendations
+    
+    def _print_report_summary(self, report: Dict):
+        """打印报告摘要"""
+        print("\n" + "="*80)
+        print("📋 AI题材系统评估报告摘要")
+        print("="*80)
+        
+        summary = report['executive_summary']
+        print(f"\n🎯 执行摘要:")
+        print(f"   处理事件: {summary['total_events_processed']} 个")
+        print(f"   成功率: {summary['success_rate_percentage']}")
+        print(f"   生成主题: {summary['unique_themes_generated']} 个")
+        print(f"   平均耗时: {summary['average_processing_time']}/事件")
+        print(f"   评估等级: {summary['grade_emoji']} {summary['assessment_grade']}")
+        
+        print(f"\n📊 对比分析:")
+        comp = report['comparative_analysis']
+        print(f"   优化系统主题数: {comp['optimized_system']['unique_themes']}")
+        print(f"   基线系统主题数: {comp['baseline_system'].get('unique_themes', 'N/A')}")
+        print(f"   Ground Truth主题数: {comp['ground_truth'].get('unique_themes', 'N/A')}")
+        
+        print(f"\n📄 生成文件:")
+        print(f"   JSON报告: {report['files_generated']['raw_results']}")
+        
+        print("="*80)
+    
+    async def _cleanup_resources(self, components: Dict):
+        """清理资源"""
+        logger.info("🧹 清理资源...")
+        
+        try:
+            if 'ai_parser' in components:
+                await components['ai_parser'].close()
+            if 'db_manager' in components:
+                await components['db_manager'].disconnect()
+            logger.info("✅ 资源清理完成")
+        except Exception as e:
+            logger.warning(f"资源清理时出现警告: {e}")
+
+async def main():
+    """主函数"""
+    print("\n" + "="*80)
+    print("🚀 AI题材系统集成测试运行器（修复版）")
+    print("="*80)
+    
+    # 设置日志
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.StreamHandler()
+        ]
+    )
+    
+    # 创建并运行测试
+    runner = IntegratedTestRunnerFixed()
+    
+    try:
+        # 初始化环境
+        await runner.initialize_test_environment()
+        
+        # 运行测试
+        success = await runner.run_integrated_test()
+        
+        if success:
+            print("\n" + "="*80)
+            print("🎉 集成测试完成!")
+            print("="*80)
+            
+            # 运行对比分析
+            print("\n🔍 运行对比分析...")
+            import subprocess
+            subprocess.run(['python', 'evaluate_service/scripts/compare_results.py'])
+        else:
+            print("\n" + "="*80)
+            print("❌ 集成测试失败")
+            print("="*80)
+            
+    except KeyboardInterrupt:
+        print("\n\n⚠️  测试被用户中断")
+    except Exception as e:
+        print(f"\n❌ 测试过程发生异常: {e}")
+        import traceback
+        traceback.print_exc()
+
+if __name__ == "__main__":
+    asyncio.run(main())

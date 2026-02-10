@@ -1,0 +1,5922 @@
+{
+  "config": {
+    "semantic_threshold": 0.7,
+    "eval_mode": "semantic",
+    "batch_size": 5,
+    "max_retries": 3,
+    "retry_delay": 2
+  },
+  "stats": {
+    "total": 76,
+    "successful": 76,
+    "failed": 0,
+    "matched": 32,
+    "similarities": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.7,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "processing_times": [
+      7.762,
+      7.986,
+      8.619,
+      10.327,
+      8.191,
+      9.569,
+      8.906,
+      9.114,
+      8.293,
+      8.396,
+      6.584,
+      9.363,
+      8.681,
+      7.574,
+      8.018,
+      8.142,
+      8.443,
+      7.986,
+      7.608,
+      9.522,
+      8.069,
+      7.262,
+      9.28,
+      8.176,
+      7.943,
+      7.646,
+      7.327,
+      7.285,
+      8.451,
+      7.403,
+      8.734,
+      7.481,
+      8.391,
+      8.61,
+      9.432,
+      7.707,
+      9.821,
+      9.046,
+      7.859,
+      8.323,
+      9.373,
+      8.573,
+      7.879,
+      8.003,
+      7.613,
+      8.191,
+      7.948,
+      9.008,
+      7.228,
+      7.315,
+      7.143,
+      6.862,
+      8.278,
+      9.891,
+      8.085,
+      8.506,
+      9.591,
+      7.316,
+      7.144,
+      7.543,
+      8.099,
+      7.674,
+      7.379,
+      9.901,
+      8.802,
+      7.233,
+      7.785,
+      9.006,
+      10.14,
+      8.07,
+      8.154,
+      8.09,
+      7.373,
+      8.296,
+      7.298,
+      7.657
+    ],
+    "retries_count": {
+      "0": 76
+    },
+    "theme_stats": {
+      "AI/AR眼镜": {
+        "total": 10,
+        "successful": 10,
+        "matched": 10,
+        "similarities": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.7,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "processing_times": [
+          7.762,
+          7.986,
+          8.619,
+          10.327,
+          8.191,
+          9.569,
+          8.906,
+          9.114,
+          8.293,
+          8.396
+        ],
+        "accuracy": 1.0,
+        "avg_similarity": 0.97,
+        "min_similarity": 0.7,
+        "max_similarity": 1.0,
+        "avg_processing_time": 8.7163
+      },
+      "SpaceX": {
+        "total": 5,
+        "successful": 5,
+        "matched": 5,
+        "similarities": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "processing_times": [
+          6.584,
+          9.363,
+          8.681,
+          7.574,
+          8.018
+        ],
+        "accuracy": 1.0,
+        "avg_similarity": 1.0,
+        "min_similarity": 1.0,
+        "max_similarity": 1.0,
+        "avg_processing_time": 8.044
+      },
+      "可控核聚变": {
+        "total": 10,
+        "successful": 10,
+        "matched": 9,
+        "similarities": [
+          1.0,
+          1.0,
+          1.0,
+          0.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "processing_times": [
+          8.142,
+          8.443,
+          7.986,
+          7.608,
+          9.522,
+          8.069,
+          7.262,
+          9.28,
+          8.176,
+          7.943
+        ],
+        "accuracy": 0.9,
+        "avg_similarity": 0.9,
+        "min_similarity": 0.0,
+        "max_similarity": 1.0,
+        "avg_processing_time": 8.2431
+      },
+      "对日制裁": {
+        "total": 6,
+        "successful": 6,
+        "matched": 0,
+        "similarities": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "processing_times": [
+          7.646,
+          7.327,
+          7.285,
+          8.451,
+          7.403,
+          8.734
+        ],
+        "accuracy": 0.0,
+        "avg_similarity": 0.0,
+        "min_similarity": 0.0,
+        "max_similarity": 0.0,
+        "avg_processing_time": 7.807666666666667
+      },
+      "稀土永磁": {
+        "total": 8,
+        "successful": 8,
+        "matched": 4,
+        "similarities": [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0,
+          0.0,
+          1.0
+        ],
+        "processing_times": [
+          7.481,
+          8.391,
+          8.61,
+          9.432,
+          7.707,
+          9.821,
+          9.046,
+          7.859
+        ],
+        "accuracy": 0.5,
+        "avg_similarity": 0.5,
+        "min_similarity": 0.0,
+        "max_similarity": 1.0,
+        "avg_processing_time": 8.543375
+      },
+      "海洋经济": {
+        "total": 5,
+        "successful": 5,
+        "matched": 1,
+        "similarities": [
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "processing_times": [
+          8.323,
+          9.373,
+          8.573,
+          7.879,
+          8.003
+        ],
+        "accuracy": 0.2,
+        "avg_similarity": 0.2,
+        "min_similarity": 0.0,
+        "max_similarity": 1.0,
+        "avg_processing_time": 8.4302
+      },
+      "光刻胶": {
+        "total": 8,
+        "successful": 8,
+        "matched": 0,
+        "similarities": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "processing_times": [
+          7.613,
+          8.191,
+          7.948,
+          9.008,
+          7.228,
+          7.315,
+          7.143,
+          6.862
+        ],
+        "accuracy": 0.0,
+        "avg_similarity": 0.0,
+        "min_similarity": 0.0,
+        "max_similarity": 0.0,
+        "avg_processing_time": 7.6635
+      },
+      "卫星互联": {
+        "total": 10,
+        "successful": 10,
+        "matched": 0,
+        "similarities": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "processing_times": [
+          8.278,
+          9.891,
+          8.085,
+          8.506,
+          9.591,
+          7.316,
+          7.144,
+          7.543,
+          8.099,
+          7.674
+        ],
+        "accuracy": 0.0,
+        "avg_similarity": 0.0,
+        "min_similarity": 0.0,
+        "max_similarity": 0.0,
+        "avg_processing_time": 8.2127
+      },
+      "液冷数据中心": {
+        "total": 8,
+        "successful": 8,
+        "matched": 3,
+        "similarities": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "processing_times": [
+          7.379,
+          9.901,
+          8.802,
+          7.233,
+          7.785,
+          9.006,
+          10.14,
+          8.07
+        ],
+        "accuracy": 0.375,
+        "avg_similarity": 0.375,
+        "min_similarity": 0.0,
+        "max_similarity": 1.0,
+        "avg_processing_time": 8.5395
+      },
+      "AI智能体Manus": {
+        "total": 6,
+        "successful": 6,
+        "matched": 0,
+        "similarities": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "processing_times": [
+          8.154,
+          8.09,
+          7.373,
+          8.296,
+          7.298,
+          7.657
+        ],
+        "accuracy": 0.0,
+        "avg_similarity": 0.0,
+        "min_similarity": 0.0,
+        "max_similarity": 0.0,
+        "avg_processing_time": 7.811333333333334
+      }
+    },
+    "confidence_scores": [
+      0.85,
+      0.75,
+      0.75,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.75,
+      0.75,
+      0.85,
+      0.85,
+      0.85,
+      0.9,
+      0.85,
+      0.75,
+      0.75,
+      0.75,
+      0.65,
+      0.75,
+      0.85,
+      0.7,
+      0.85,
+      0.75,
+      0.75,
+      0.75,
+      0.75,
+      0.75,
+      0.75,
+      0.75,
+      0.85,
+      0.85,
+      0.8,
+      0.8,
+      0.85,
+      0.75,
+      0.85,
+      0.85,
+      0.85,
+      0.8,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.75,
+      0.75,
+      0.75,
+      0.85,
+      0.8,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.8,
+      0.85,
+      0.75,
+      0.75,
+      0.85,
+      0.85,
+      0.75,
+      0.9,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.85,
+      0.75,
+      0.75,
+      0.75,
+      0.75
+    ],
+    "accuracy": 0.42105263157894735,
+    "success_rate": 1.0,
+    "avg_similarity": 0.41710526315789476,
+    "max_similarity": 1.0,
+    "min_similarity": 0.0,
+    "similarity_std": 0.4935282924398524,
+    "avg_processing_time": 8.233907894736841,
+    "max_processing_time": 10.327,
+    "min_processing_time": 6.584,
+    "processing_time_std": 0.8332077960530067,
+    "avg_confidence": 0.8092105263157895,
+    "max_confidence": 0.9,
+    "min_confidence": 0.65
+  },
+  "problem_areas": {
+    "low_accuracy_themes": [
+      {
+        "theme": "对日制裁",
+        "accuracy": 0.0,
+        "samples": 6,
+        "avg_similarity": 0.0
+      },
+      {
+        "theme": "稀土永磁",
+        "accuracy": 0.5,
+        "samples": 8,
+        "avg_similarity": 0.5
+      },
+      {
+        "theme": "海洋经济",
+        "accuracy": 0.2,
+        "samples": 5,
+        "avg_similarity": 0.2
+      },
+      {
+        "theme": "光刻胶",
+        "accuracy": 0.0,
+        "samples": 8,
+        "avg_similarity": 0.0
+      },
+      {
+        "theme": "卫星互联",
+        "accuracy": 0.0,
+        "samples": 10,
+        "avg_similarity": 0.0
+      },
+      {
+        "theme": "液冷数据中心",
+        "accuracy": 0.375,
+        "samples": 8,
+        "avg_similarity": 0.375
+      },
+      {
+        "theme": "AI智能体Manus",
+        "accuracy": 0.0,
+        "samples": 6,
+        "avg_similarity": 0.0
+      }
+    ],
+    "failed_cases": [],
+    "low_similarity_cases": [
+      {
+        "theme": "可控核聚变",
+        "similarity": 0.0,
+        "ground_truth": [
+          "可控核聚变"
+        ],
+        "discovered": [
+          "可控核聚变商业化",
+          "AI能源革命",
+          "跨界并购题材"
+        ],
+        "test_id": "可控核聚变_004"
+      },
+      {
+        "theme": "对日制裁",
+        "similarity": 0.0,
+        "ground_truth": [
+          "对日制裁"
+        ],
+        "discovered": [
+          "稀土永磁",
+          "国产替代",
+          "军工材料",
+          "战略资源"
+        ],
+        "test_id": "对日制裁_001"
+      },
+      {
+        "theme": "对日制裁",
+        "similarity": 0.0,
+        "ground_truth": [
+          "对日制裁"
+        ],
+        "discovered": [
+          "稀土永磁",
+          "国产替代",
+          "军工材料"
+        ],
+        "test_id": "对日制裁_002"
+      },
+      {
+        "theme": "对日制裁",
+        "similarity": 0.0,
+        "ground_truth": [
+          "对日制裁"
+        ],
+        "discovered": [
+          "稀土永磁",
+          "国产替代",
+          "军工材料",
+          "战略资源"
+        ],
+        "test_id": "对日制裁_003"
+      },
+      {
+        "theme": "对日制裁",
+        "similarity": 0.0,
+        "ground_truth": [
+          "对日制裁"
+        ],
+        "discovered": [
+          "稀土永磁",
+          "军工电子",
+          "自主可控",
+          "反制裁概念"
+        ],
+        "test_id": "对日制裁_004"
+      },
+      {
+        "theme": "对日制裁",
+        "similarity": 0.0,
+        "ground_truth": [
+          "对日制裁"
+        ],
+        "discovered": [
+          "稀土永磁",
+          "国产替代",
+          "战略资源"
+        ],
+        "test_id": "对日制裁_005"
+      },
+      {
+        "theme": "对日制裁",
+        "similarity": 0.0,
+        "ground_truth": [
+          "对日制裁"
+        ],
+        "discovered": [
+          "稀土永磁",
+          "国防军工",
+          "自主可控"
+        ],
+        "test_id": "对日制裁_006"
+      },
+      {
+        "theme": "稀土永磁",
+        "similarity": 0.0,
+        "ground_truth": [
+          "稀土永磁"
+        ],
+        "discovered": [
+          "稀土永磁材料",
+          "关键矿产资源自主可控",
+          "高端制造上游材料"
+        ],
+        "test_id": "稀土永磁_001"
+      },
+      {
+        "theme": "稀土永磁",
+        "similarity": 0.0,
+        "ground_truth": [
+          "稀土永磁"
+        ],
+        "discovered": [
+          "稀土永磁出口便利化",
+          "稀土供应链安全",
+          "高端制造材料国产替代"
+        ],
+        "test_id": "稀土永磁_003"
+      },
+      {
+        "theme": "稀土永磁",
+        "similarity": 0.0,
+        "ground_truth": [
+          "稀土永磁"
+        ],
+        "discovered": [
+          "稀土永磁材料",
+          "稀土新材料",
+          "稀土产业链整合",
+          "高端制造上游材料"
+        ],
+        "test_id": "稀土永磁_004"
+      },
+      {
+        "theme": "稀土永磁",
+        "similarity": 0.0,
+        "ground_truth": [
+          "稀土永磁"
+        ],
+        "discovered": [
+          "稀土资源自主可控",
+          "永磁材料涨价传导",
+          "新能源上游资源"
+        ],
+        "test_id": "稀土永磁_007"
+      },
+      {
+        "theme": "海洋经济",
+        "similarity": 0.0,
+        "ground_truth": [
+          "海洋经济"
+        ],
+        "discovered": [
+          "海洋经济高质量发展",
+          "海洋新兴产业",
+          "海洋工程装备",
+          "航运服务升级",
+          "海洋旅游"
+        ],
+        "test_id": "海洋经济_001"
+      },
+      {
+        "theme": "海洋经济",
+        "similarity": 0.0,
+        "ground_truth": [
+          "海洋经济"
+        ],
+        "discovered": [
+          "AI+海洋",
+          "海洋智能化",
+          "智能船舶",
+          "水下机器人",
+          "海洋高端装备"
+        ],
+        "test_id": "海洋经济_003"
+      },
+      {
+        "theme": "海洋经济",
+        "similarity": 0.0,
+        "ground_truth": [
+          "海洋经济"
+        ],
+        "discovered": [
+          "海洋科技自立自强",
+          "海上风电",
+          "海洋生物医药",
+          "海洋工程装备",
+          "海洋新材料"
+        ],
+        "test_id": "海洋经济_004"
+      },
+      {
+        "theme": "海洋经济",
+        "similarity": 0.0,
+        "ground_truth": [
+          "海洋经济"
+        ],
+        "discovered": [
+          "海洋科技自立自强",
+          "海上风电",
+          "海洋生物医药",
+          "海洋工程装备",
+          "海洋新材料"
+        ],
+        "test_id": "海洋经济_005"
+      },
+      {
+        "theme": "光刻胶",
+        "similarity": 0.0,
+        "ground_truth": [
+          "光刻胶"
+        ],
+        "discovered": [
+          "光刻胶国产化",
+          "半导体材料自主可控"
+        ],
+        "test_id": "光刻胶_001"
+      },
+      {
+        "theme": "光刻胶",
+        "similarity": 0.0,
+        "ground_truth": [
+          "光刻胶"
+        ],
+        "discovered": [
+          "光刻胶国产化",
+          "半导体材料",
+          "先进封装材料"
+        ],
+        "test_id": "光刻胶_002"
+      },
+      {
+        "theme": "光刻胶",
+        "similarity": 0.0,
+        "ground_truth": [
+          "光刻胶"
+        ],
+        "discovered": [
+          "光刻胶国产化",
+          "半导体材料自主可控",
+          "先进封装材料"
+        ],
+        "test_id": "光刻胶_003"
+      },
+      {
+        "theme": "光刻胶",
+        "similarity": 0.0,
+        "ground_truth": [
+          "光刻胶"
+        ],
+        "discovered": [
+          "先进光刻胶",
+          "半导体材料国产化",
+          "芯片制造良率提升"
+        ],
+        "test_id": "光刻胶_004"
+      },
+      {
+        "theme": "光刻胶",
+        "similarity": 0.0,
+        "ground_truth": [
+          "光刻胶"
+        ],
+        "discovered": [
+          "光刻胶国产化",
+          "半导体材料",
+          "先进制程"
+        ],
+        "test_id": "光刻胶_005"
+      },
+      {
+        "theme": "光刻胶",
+        "similarity": 0.0,
+        "ground_truth": [
+          "光刻胶"
+        ],
+        "discovered": [
+          "光刻胶国产化",
+          "半导体材料",
+          "PCB产业链"
+        ],
+        "test_id": "光刻胶_006"
+      },
+      {
+        "theme": "光刻胶",
+        "similarity": 0.0,
+        "ground_truth": [
+          "光刻胶"
+        ],
+        "discovered": [
+          "国产光刻胶",
+          "半导体材料自主化",
+          "先进制程配套"
+        ],
+        "test_id": "光刻胶_007"
+      },
+      {
+        "theme": "光刻胶",
+        "similarity": 0.0,
+        "ground_truth": [
+          "光刻胶"
+        ],
+        "discovered": [
+          "国产光刻胶",
+          "半导体材料自主化",
+          "先进制程配套"
+        ],
+        "test_id": "光刻胶_008"
+      },
+      {
+        "theme": "卫星互联",
+        "similarity": 0.0,
+        "ground_truth": [
+          "卫星互联"
+        ],
+        "discovered": [
+          "商业航天",
+          "卫星互联网",
+          "低轨星座",
+          "火箭制造",
+          "航天新材料"
+        ],
+        "test_id": "卫星互联_001"
+      },
+      {
+        "theme": "卫星互联",
+        "similarity": 0.0,
+        "ground_truth": [
+          "卫星互联"
+        ],
+        "discovered": [
+          "卫星互联网",
+          "商业航天",
+          "低轨星座",
+          "太空经济",
+          "6G通信"
+        ],
+        "test_id": "卫星互联_002"
+      },
+      {
+        "theme": "卫星互联",
+        "similarity": 0.0,
+        "ground_truth": [
+          "卫星互联"
+        ],
+        "discovered": [
+          "卫星互联网",
+          "低轨星座",
+          "商业航天",
+          "空天信息",
+          "6G通信"
+        ],
+        "test_id": "卫星互联_003"
+      },
+      {
+        "theme": "卫星互联",
+        "similarity": 0.0,
+        "ground_truth": [
+          "卫星互联"
+        ],
+        "discovered": [
+          "商业航天",
+          "卫星互联网",
+          "低轨星座",
+          "火箭制造",
+          "航天供应链"
+        ],
+        "test_id": "卫星互联_004"
+      },
+      {
+        "theme": "卫星互联",
+        "similarity": 0.0,
+        "ground_truth": [
+          "卫星互联"
+        ],
+        "discovered": [
+          "卫星互联网",
+          "低轨卫星星座",
+          "航天制造",
+          "空天信息产业",
+          "6G通信"
+        ],
+        "test_id": "卫星互联_005"
+      },
+      {
+        "theme": "卫星互联",
+        "similarity": 0.0,
+        "ground_truth": [
+          "卫星互联"
+        ],
+        "discovered": [
+          "商业航天",
+          "卫星互联网",
+          "液氧甲烷火箭",
+          "低轨卫星星座"
+        ],
+        "test_id": "卫星互联_006"
+      },
+      {
+        "theme": "卫星互联",
+        "similarity": 0.0,
+        "ground_truth": [
+          "卫星互联"
+        ],
+        "discovered": [
+          "可重复使用火箭",
+          "卫星互联网",
+          "低轨卫星星座",
+          "航天商业化"
+        ],
+        "test_id": "卫星互联_007"
+      },
+      {
+        "theme": "卫星互联",
+        "similarity": 0.0,
+        "ground_truth": [
+          "卫星互联"
+        ],
+        "discovered": [
+          "卫星互联网",
+          "商业航天",
+          "低轨卫星星座",
+          "空天地一体化网络"
+        ],
+        "test_id": "卫星互联_008"
+      },
+      {
+        "theme": "卫星互联",
+        "similarity": 0.0,
+        "ground_truth": [
+          "卫星互联"
+        ],
+        "discovered": [
+          "太空算力",
+          "卫星数据中心",
+          "低轨星座基建",
+          "在轨服务"
+        ],
+        "test_id": "卫星互联_009"
+      },
+      {
+        "theme": "卫星互联",
+        "similarity": 0.0,
+        "ground_truth": [
+          "卫星互联"
+        ],
+        "discovered": [
+          "卫星互联网",
+          "商业航天",
+          "低轨卫星星座",
+          "太空经济",
+          "6G通信"
+        ],
+        "test_id": "卫星互联_010"
+      },
+      {
+        "theme": "液冷数据中心",
+        "similarity": 0.0,
+        "ground_truth": [
+          "液冷数据中心"
+        ],
+        "discovered": [
+          "液冷散热",
+          "AI算力基础设施",
+          "数据中心节能",
+          "高功率密度散热"
+        ],
+        "test_id": "液冷数据中心_002"
+      },
+      {
+        "theme": "液冷数据中心",
+        "similarity": 0.0,
+        "ground_truth": [
+          "液冷数据中心"
+        ],
+        "discovered": [
+          "液冷散热",
+          "AI算力基础设施",
+          "绿色数据中心",
+          "高阶PCB",
+          "高压直流电源"
+        ],
+        "test_id": "液冷数据中心_003"
+      },
+      {
+        "theme": "液冷数据中心",
+        "similarity": 0.0,
+        "ground_truth": [
+          "液冷数据中心"
+        ],
+        "discovered": [
+          "液冷散热",
+          "AI算力基础设施",
+          "绿色数据中心"
+        ],
+        "test_id": "液冷数据中心_004"
+      },
+      {
+        "theme": "液冷数据中心",
+        "similarity": 0.0,
+        "ground_truth": [
+          "液冷数据中心"
+        ],
+        "discovered": [
+          "AI液冷散热",
+          "数据中心节能",
+          "算力基础设施"
+        ],
+        "test_id": "液冷数据中心_005"
+      },
+      {
+        "theme": "液冷数据中心",
+        "similarity": 0.0,
+        "ground_truth": [
+          "液冷数据中心"
+        ],
+        "discovered": [
+          "液冷散热",
+          "AI算力基础设施",
+          "绿色数据中心"
+        ],
+        "test_id": "液冷数据中心_006"
+      },
+      {
+        "theme": "AI智能体Manus",
+        "similarity": 0.0,
+        "ground_truth": [
+          "AI智能体Manus"
+        ],
+        "discovered": [
+          "AI智能体",
+          "AI应用生态",
+          "大模型商业化"
+        ],
+        "test_id": "AI智能体Manus_001"
+      },
+      {
+        "theme": "AI智能体Manus",
+        "similarity": 0.0,
+        "ground_truth": [
+          "AI智能体Manus"
+        ],
+        "discovered": [
+          "AI视频生成",
+          "多模态AI",
+          "AIGC内容创作",
+          "AI智能体"
+        ],
+        "test_id": "AI智能体Manus_002"
+      },
+      {
+        "theme": "AI智能体Manus",
+        "similarity": 0.0,
+        "ground_truth": [
+          "AI智能体Manus"
+        ],
+        "discovered": [
+          "AI智能体",
+          "国资AI",
+          "AI应用商业化"
+        ],
+        "test_id": "AI智能体Manus_003"
+      },
+      {
+        "theme": "AI智能体Manus",
+        "similarity": 0.0,
+        "ground_truth": [
+          "AI智能体Manus"
+        ],
+        "discovered": [
+          "AI智能体",
+          "AI应用平台",
+          "AI商业化"
+        ],
+        "test_id": "AI智能体Manus_004"
+      },
+      {
+        "theme": "AI智能体Manus",
+        "similarity": 0.0,
+        "ground_truth": [
+          "AI智能体Manus"
+        ],
+        "discovered": [
+          "AI智能体",
+          "AI应用商业化",
+          "中美AI投资联动"
+        ],
+        "test_id": "AI智能体Manus_005"
+      },
+      {
+        "theme": "AI智能体Manus",
+        "similarity": 0.0,
+        "ground_truth": [
+          "AI智能体Manus"
+        ],
+        "discovered": [
+          "AI智能体",
+          "国产大模型",
+          "AI Agent应用"
+        ],
+        "test_id": "AI智能体Manus_006"
+      }
+    ],
+    "slow_processing_cases": [],
+    "recommendations": [
+      "重点优化主题: 对日制裁, 稀土永磁, 海洋经济。检查同义词映射和AI提示词。",
+      "整体准确率(42.1%)有待提升，建议优化匹配算法。",
+      "平均相似度(0.417)较低，建议扩展同义词库。"
+    ]
+  },
+  "theme_counts": {
+    "AI/AR眼镜": 10,
+    "SpaceX": 5,
+    "可控核聚变": 10,
+    "对日制裁": 6,
+    "稀土永磁": 8,
+    "海洋经济": 5,
+    "光刻胶": 8,
+    "卫星互联": 10,
+    "液冷数据中心": 8,
+    "AI智能体Manus": 6
+  },
+  "summary": {
+    "total_cases": 76,
+    "accuracy": 0.42105263157894735,
+    "avg_similarity": 0.41710526315789476,
+    "success_rate": 1.0,
+    "total_time": 655.8086929321289,
+    "business_value": "需改进"
+  },
+  "sample_results": [
+    {
+      "test_id": "AI_AR眼镜_001",
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "智能穿戴",
+        "人机交互",
+        "AR/VR生态"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 7.762,
+      "retries": 0
+    },
+    {
+      "test_id": "AI_AR眼镜_002",
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "智能穿戴",
+        "运动科技",
+        "人机交互"
+      ],
+      "confidence": 0.75,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 7.986,
+      "retries": 0
+    },
+    {
+      "test_id": "AI_AR眼镜_003",
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "空间计算",
+        "全息显示"
+      ],
+      "confidence": 0.75,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 8.619,
+      "retries": 0
+    },
+    {
+      "test_id": "AI_AR眼镜_004",
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "空间计算",
+        "人机交互",
+        "AI终端硬件",
+        "XR生态"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "XR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "XR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "XR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "XR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "XR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "XR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "XR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "XR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "XR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "XR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "XR生态",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 10.327,
+      "retries": 0
+    },
+    {
+      "test_id": "AI_AR眼镜_005",
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "智能穿戴",
+        "人机交互",
+        "AI硬件"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 8.191,
+      "retries": 0
+    },
+    {
+      "test_id": "AI_AR眼镜_006",
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AR/MR眼镜",
+        "MicroLED显示",
+        "空间计算硬件",
+        "AI终端硬件"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 0.7,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AR/MR眼镜"
+        ],
+        "details": [
+          {
+            "truth": "MR眼镜",
+            "discovered": "AR/MR眼镜",
+            "similarity": 0.7
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AR/MR眼镜",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "MicroLED显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "空间计算硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AR/MR眼镜",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "MicroLED显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "空间计算硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AR/MR眼镜",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "MicroLED显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "空间计算硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AR/MR眼镜",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "MicroLED显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "空间计算硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AR/MR眼镜",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "MicroLED显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "空间计算硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "MicroLED显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "空间计算硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AR/MR眼镜",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "MicroLED显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "空间计算硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AR/MR眼镜",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "MicroLED显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "空间计算硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AR/MR眼镜",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "MicroLED显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "空间计算硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AR/MR眼镜",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "MicroLED显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "空间计算硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AR/MR眼镜",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "MicroLED显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "空间计算硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AI终端硬件",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 9.569,
+      "retries": 0
+    },
+    {
+      "test_id": "AI_AR眼镜_007",
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "空间计算",
+        "XR生态链",
+        "消费级AR硬件"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 8.906,
+      "retries": 0
+    },
+    {
+      "test_id": "AI_AR眼镜_008",
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "XR设备",
+        "空间计算",
+        "人机交互革命",
+        "消费电子创新周期"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "XR设备",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "XR设备",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "XR设备",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "XR设备",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "XR设备",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "XR设备",
+            "similarity": 0.9
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "XR设备",
+            "similarity": 0.9
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "XR设备",
+            "similarity": 0.9
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "XR设备",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "XR设备",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "XR设备",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 9.114,
+      "retries": 0
+    },
+    {
+      "test_id": "AI_AR眼镜_009",
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "AR硬件",
+        "人机交互"
+      ],
+      "confidence": 0.75,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 8.293,
+      "retries": 0
+    },
+    {
+      "test_id": "AI_AR眼镜_010",
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "智能穿戴",
+        "计算机视觉",
+        "消费电子创新"
+      ],
+      "confidence": 0.75,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "计算机视觉",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "计算机视觉",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "计算机视觉",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "计算机视觉",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "计算机视觉",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "计算机视觉",
+            "similarity": 0.0
+          },
+          {
+            "truth": "MR眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "计算机视觉",
+            "similarity": 0.0
+          },
+          {
+            "truth": "XR设备",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "计算机视觉",
+            "similarity": 0.0
+          },
+          {
+            "truth": "增强现实",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "计算机视觉",
+            "similarity": 0.0
+          },
+          {
+            "truth": "虚拟现实",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "计算机视觉",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可穿戴设备",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "计算机视觉",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人机交互设备",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 8.396,
+      "retries": 0
+    },
+    {
+      "test_id": "SpaceX_001",
+      "theme": "SpaceX",
+      "success": true,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "discovered": [
+        "商业航天基建",
+        "卫星互联网",
+        "太空经济"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "SpaceX",
+          "卫星互联网"
+        ],
+        "details": [
+          {
+            "truth": "卫星互联网",
+            "discovered": "卫星互联网",
+            "similarity": 1.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "太空经济",
+            "similarity": 1.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "商业航天基建",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "商业航天基建",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "商业航天基建",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "商业航天基建",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "商业航天基建",
+            "similarity": 0.0
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "商业航天基建",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "商业航天基建",
+            "similarity": 0.0
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "商业航天基建",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "商业航天基建",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "商业航天基建",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 6.584,
+      "retries": 0
+    },
+    {
+      "test_id": "SpaceX_002",
+      "theme": "SpaceX",
+      "success": true,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "discovered": [
+        "低轨卫星星座",
+        "太空军事化",
+        "导弹预警系统",
+        "商业航天"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "SpaceX",
+          "商业航天"
+        ],
+        "details": [
+          {
+            "truth": "商业航天",
+            "discovered": "商业航天",
+            "similarity": 1.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "太空军事化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "太空军事化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "太空军事化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "太空军事化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "太空军事化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "太空军事化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "太空军事化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "太空军事化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "太空军事化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "太空军事化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 9.363,
+      "retries": 0
+    },
+    {
+      "test_id": "SpaceX_003",
+      "theme": "SpaceX",
+      "success": true,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "discovered": [
+        "商业航天IPO",
+        "卫星互联网",
+        "太空经济",
+        "航天供应链国产化"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "SpaceX",
+          "卫星互联网"
+        ],
+        "details": [
+          {
+            "truth": "卫星互联网",
+            "discovered": "卫星互联网",
+            "similarity": 1.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "太空经济",
+            "similarity": 1.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "商业航天IPO",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "航天供应链国产化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "商业航天IPO",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "航天供应链国产化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "商业航天IPO",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "航天供应链国产化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "商业航天IPO",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "航天供应链国产化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "商业航天IPO",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "航天供应链国产化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "商业航天IPO",
+            "similarity": 0.0
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "航天供应链国产化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "商业航天IPO",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "航天供应链国产化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "商业航天IPO",
+            "similarity": 0.0
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "航天供应链国产化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "商业航天IPO",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "航天供应链国产化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "商业航天IPO",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "航天供应链国产化",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 8.681,
+      "retries": 0
+    },
+    {
+      "test_id": "SpaceX_004",
+      "theme": "SpaceX",
+      "success": true,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "discovered": [
+        "商业航天",
+        "卫星互联网",
+        "太空经济",
+        "火箭制造",
+        "航天材料"
+      ],
+      "confidence": 0.9,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "SpaceX",
+          "商业航天"
+        ],
+        "details": [
+          {
+            "truth": "商业航天",
+            "discovered": "商业航天",
+            "similarity": 1.0
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "卫星互联网",
+            "similarity": 1.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "太空经济",
+            "similarity": 1.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "卫星互联网",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "火箭制造",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "航天材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "火箭制造",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "航天材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "火箭制造",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "航天材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "火箭制造",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "航天材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "火箭制造",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "航天材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "火箭制造",
+            "similarity": 0.0
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "航天材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "火箭制造",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "航天材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "火箭制造",
+            "similarity": 0.0
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "航天材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "火箭制造",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "航天材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "火箭制造",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "航天材料",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 7.574,
+      "retries": 0
+    },
+    {
+      "test_id": "SpaceX_005",
+      "theme": "SpaceX",
+      "success": true,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "discovered": [
+        "商业航天",
+        "低轨卫星互联网",
+        "可重复使用火箭",
+        "太空经济"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "SpaceX",
+          "商业航天"
+        ],
+        "details": [
+          {
+            "truth": "商业航天",
+            "discovered": "商业航天",
+            "similarity": 1.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "太空经济",
+            "similarity": 1.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "太空经济",
+            "similarity": 0.9
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "卫星互联网",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空经济",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "低轨卫星",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天公司",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭技术",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 8.018,
+      "retries": 0
+    },
+    {
+      "test_id": "可控核聚变_001",
+      "theme": "可控核聚变",
+      "success": true,
+      "ground_truth": [
+        "可控核聚变"
+      ],
+      "discovered": [
+        "可控核聚变",
+        "人造太阳",
+        "超导材料",
+        "等离子体设备",
+        "核聚变装置"
+      ],
+      "confidence": 0.75,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "可控核聚变",
+          "可控核聚变"
+        ],
+        "details": [
+          {
+            "truth": "可控核聚变",
+            "discovered": "可控核聚变",
+            "similarity": 1.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "人造太阳",
+            "similarity": 1.0
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "超导材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "等离子体设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "核聚变装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "超导材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "等离子体设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "核聚变装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "超导材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "等离子体设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "核聚变装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "超导材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "等离子体设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "核聚变装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "超导材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "等离子体设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "核聚变装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "超导材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "等离子体设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "核聚变装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "超导材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "等离子体设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "核聚变装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "超导材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "等离子体设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "核聚变装置",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 8.142,
+      "retries": 0
+    },
+    {
+      "test_id": "可控核聚变_002",
+      "theme": "可控核聚变",
+      "success": true,
+      "ground_truth": [
+        "可控核聚变"
+      ],
+      "discovered": [
+        "可控核聚变",
+        "人造太阳",
+        "聚变能源",
+        "高温超导",
+        "等离子体技术"
+      ],
+      "confidence": 0.75,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "可控核聚变",
+          "可控核聚变"
+        ],
+        "details": [
+          {
+            "truth": "可控核聚变",
+            "discovered": "可控核聚变",
+            "similarity": 1.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "人造太阳",
+            "similarity": 1.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "聚变能源",
+            "similarity": 1.0
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "聚变能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "聚变能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "聚变能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "聚变能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "聚变能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "聚变能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "聚变能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "高温超导",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "等离子体技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "高温超导",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "等离子体技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "高温超导",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "等离子体技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "高温超导",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "等离子体技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "高温超导",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "等离子体技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "高温超导",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "等离子体技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "高温超导",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "等离子体技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "高温超导",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "等离子体技术",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 8.443,
+      "retries": 0
+    },
+    {
+      "test_id": "可控核聚变_003",
+      "theme": "可控核聚变",
+      "success": true,
+      "ground_truth": [
+        "可控核聚变"
+      ],
+      "discovered": [
+        "可控核聚变",
+        "大科学装置",
+        "聚变材料",
+        "超导磁体",
+        "等离子体控制"
+      ],
+      "confidence": 0.75,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "可控核聚变",
+          "可控核聚变"
+        ],
+        "details": [
+          {
+            "truth": "可控核聚变",
+            "discovered": "可控核聚变",
+            "similarity": 1.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "大科学装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "等离子体控制",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "大科学装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "等离子体控制",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "大科学装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "等离子体控制",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "大科学装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "等离子体控制",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "大科学装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "等离子体控制",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "大科学装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "等离子体控制",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "大科学装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "等离子体控制",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "大科学装置",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "等离子体控制",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 7.986,
+      "retries": 0
+    },
+    {
+      "test_id": "可控核聚变_004",
+      "theme": "可控核聚变",
+      "success": true,
+      "ground_truth": [
+        "可控核聚变"
+      ],
+      "discovered": [
+        "可控核聚变商业化",
+        "AI能源革命",
+        "跨界并购题材"
+      ],
+      "confidence": 0.65,
+      "match_result": {
+        "matched": false,
+        "match_type": "none",
+        "similarity": 0.0,
+        "best_pair": [
+          "",
+          ""
+        ],
+        "details": [
+          {
+            "truth": "可控核聚变",
+            "discovered": "可控核聚变商业化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "AI能源革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "跨界并购题材",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "可控核聚变商业化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "AI能源革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "跨界并购题材",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "可控核聚变商业化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "AI能源革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "跨界并购题材",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "可控核聚变商业化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "AI能源革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "跨界并购题材",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "可控核聚变商业化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "AI能源革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "跨界并购题材",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "可控核聚变商业化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "AI能源革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "跨界并购题材",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "可控核聚变商业化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "AI能源革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "跨界并购题材",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "可控核聚变商业化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "AI能源革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "跨界并购题材",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 7.608,
+      "retries": 0
+    },
+    {
+      "test_id": "可控核聚变_005",
+      "theme": "可控核聚变",
+      "success": true,
+      "ground_truth": [
+        "可控核聚变"
+      ],
+      "discovered": [
+        "可控核聚变",
+        "人造太阳",
+        "终极能源",
+        "聚变材料",
+        "超导磁体"
+      ],
+      "confidence": 0.75,
+      "match_result": {
+        "matched": true,
+        "match_type": "none",
+        "similarity": 1.0,
+        "best_pair": [
+          "可控核聚变",
+          "可控核聚变"
+        ],
+        "details": [
+          {
+            "truth": "可控核聚变",
+            "discovered": "可控核聚变",
+            "similarity": 1.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "人造太阳",
+            "similarity": 1.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "终极能源",
+            "similarity": 1.0
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "终极能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "终极能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "终极能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "终极能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "终极能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "终极能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "可控核聚变",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "人造太阳",
+            "similarity": 0.9
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "终极能源",
+            "similarity": 0.9
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "可控核聚变",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核聚变",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "人造太阳",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变能源",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "终极能源",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "清洁能源",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "聚变反应",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "聚变材料",
+            "similarity": 0.0
+          },
+          {
+            "truth": "核能技术",
+            "discovered": "超导磁体",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "processing_time": 9.522,
+      "retries": 0
+    }
+  ]
+}

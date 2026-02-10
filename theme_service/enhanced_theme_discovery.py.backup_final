@@ -1,0 +1,440 @@
+"""
+增强版主题发现引擎 - AI相似性分析版
+🔥 使用AI判断相似性，而不是关键词匹配
+🚀 关键修复：修复数据库连接问题，使用共享data_fetcher
+"""
+import logging
+import asyncio
+from typing import Dict, List, Any, Optional, Tuple
+from datetime import datetime
+import traceback
+
+from .enhanced_ai_client import EnhancedAIThemeClient
+from .related_theme_fetcher import RelatedThemeFetcher
+from database_service.client import DatabaseClient
+from model_service.llm_parser.base import LLMParser
+
+logger = logging.getLogger(__name__)
+
+
+class EnhancedThemeDiscoveryEngine:
+    """
+    增强版主题发现引擎
+    基于AI相似性分析，而不是关键词匹配
+    
+    🚀 关键修复：使用传入的data_fetcher，避免创建空数据库
+    """
+    
+    def __init__(self,
+                 ai_client: EnhancedAIThemeClient,
+                 database_client: DatabaseClient,
+                 similarity_analyzer: Any = None,
+                 data_fetcher=None,  # 🚀 新增：传入的data_fetcher
+                 config: Optional[Dict] = None):
+        """
+        初始化引擎
+        
+        Args:
+            ai_client: AI客户端
+            database_client: 数据库客户端
+            similarity_analyzer: AI相似性分析器（可选）
+            data_fetcher: 数据获取器实例（可选，强烈建议传入）
+            config: 配置参数
+        """
+        self.ai_client = ai_client
+        self.db_client = database_client
+        self.similarity_analyzer = similarity_analyzer
+        
+        # 配置
+        self.config = config or {
+            'fast_track_threshold': 0.85,
+            'review_threshold': 0.65,
+            'ignore_threshold': 0.3,
+            'max_processing_time': 60,
+            'enable_detailed_logging': True
+        }
+        
+        # 🚀 关键修复：使用传入的data_fetcher或创建新的
+        if data_fetcher:
+            self.data_fetcher = data_fetcher
+            logger.info(f"✅ 使用传入的data_fetcher: {data_fetcher.__class__.__name__}")
+        else:
+            # 后备方案：创建新的（可能为空）
+            from database_service.pure_data_fetcher import PureDataFetcher
+            from database_service.config import DatabaseConfig
+            from database_service.memory_manager import MemoryDatabaseManager
+            
+            db_config = DatabaseConfig()
+            db_manager = MemoryDatabaseManager(db_config)
+            self.data_fetcher = PureDataFetcher(db_manager)
+            logger.warning("⚠️  创建了新的data_fetcher，数据库可能为空！")
+        
+        # 创建主题检索器
+        self.theme_fetcher = RelatedThemeFetcher(
+            data_fetcher=self.data_fetcher,
+            similarity_analyzer=self.similarity_analyzer,
+            use_cache=True
+        )
+        
+        # 统计信息
+        self.processing_stats = {
+            'total_events': 0,
+            'successful': 0,
+            'failed': 0,
+            'created_themes': 0,
+            'merged_themes': 0,
+            'avg_processing_time': 0
+        }
+        
+        logger.info("🚀 EnhancedThemeDiscoveryEngine 初始化完成（AI相似性分析版）")
+        logger.info(f"   组件: AI客户端 ✅, 数据库客户端 ✅, AI相似性分析器 {'✅' if similarity_analyzer else '❌'}")
+        logger.info(f"   主题检索器: 使用AI相似性分析（非关键词匹配）")
+        logger.info(f"   增强功能: 重复主题处理、详细进度跟踪")
+        logger.info(f"   数据源: {'传入的data_fetcher' if data_fetcher else '新建的data_fetcher（可能为空）'}")
+    
+    def get_engine_info(self) -> Dict[str, Any]:
+        """获取引擎信息"""
+        return {
+            'engine_version': 'ai_similarity_engine_robust_v1',
+            'analysis_method': 'AI相似性分析',
+            'config': self.config,
+            'stats': self.processing_stats.copy(),
+            'data_source': 'shared_data_fetcher' if hasattr(self, 'data_fetcher') else 'new_data_fetcher'
+        }
+    
+    async def process_single_event(self, event: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        处理单个事件
+        
+        Args:
+            event: 事件数据
+            
+        Returns:
+            处理结果
+        """
+        event_id = event.get('id', event.get('news_id', 'unknown'))
+        start_time = datetime.now()
+        
+        logger.info(f"\n{'='*60}")
+        logger.info(f"🚀 开始处理事件 {event_id} (总耗时: 0.0s)")
+        logger.info(f"{'='*60}")
+        logger.info(f"📰 标题: {event.get('title', '无标题')[:50]}...")
+        
+        try:
+            # 1. 验证事件数据
+            validation_result = await self._validate_event(event)
+            if not validation_result['valid']:
+                return self._create_error_result(event_id, 'invalid_event', validation_result['reason'])
+            
+            logger.info(f"✅ 步骤1: 事件验证完成 ({(datetime.now() - start_time).total_seconds():.2f}s)")
+            
+            # 2. 获取相关主题（AI相似性分析）
+            related_themes = await self._get_related_themes(event)
+            logger.info(f"📊 AI相似性分析找到 {len(related_themes)} 个相关主题 ({(datetime.now() - start_time).total_seconds():.2f}s)")
+            
+            # 3. 转发给AI分析器进行决策
+            logger.info(f"🔍 转发AI分析请求，事件: {event_id}, 相关题材数: {len(related_themes)}")
+            ai_decision = await self.ai_client.analyze_theme_context(
+                event_data=event,
+                related_themes=related_themes
+            )
+            
+            decision_time = (datetime.now() - start_time).total_seconds()
+            logger.info(f"🤖 AI决策: {ai_decision.get('decision')}, 置信度: {ai_decision.get('confidence', 0):.2f} ({decision_time:.2f}s)")
+            
+            # 4. 执行业务逻辑
+            logger.info(f"🔧 执行业务逻辑，事件: {event_id}, 决策: {ai_decision.get('decision')}, 目标主题: {ai_decision.get('target_theme_name', '未知')}")
+            execution_result = await self._execute_business_logic_robust(event_id, ai_decision, event)
+            
+            # 5. 记录处理结果
+            total_time = (datetime.now() - start_time).total_seconds()
+            self._update_stats(execution_result.get('status'), total_time)
+            
+            result = {
+                'event_id': event_id,
+                'status': execution_result.get('status', 'unknown'),
+                'ai_decision': ai_decision,
+                'best_match': related_themes[0] if related_themes else {},
+                'execution_result': execution_result,
+                'processing_time': total_time,
+                'related_themes_count': len(related_themes)
+            }
+            
+            if execution_result.get('status') in ['created', 'merged']:
+                result['theme_name'] = execution_result.get('theme_name')
+                logger.info(f"✅ 事件 {event_id} 处理成功: {execution_result['status']}, 主题: {execution_result.get('theme_name')} (耗时: {total_time:.2f}s)")
+            else:
+                logger.warning(f"⚠️  事件 {event_id} 处理状态: {execution_result.get('status')} (耗时: {total_time:.2f}s)")
+            
+            return result
+            
+        except asyncio.TimeoutError:
+            error_time = (datetime.now() - start_time).total_seconds()
+            logger.error(f"⏰ 事件 {event_id} 处理超时 (耗时: {error_time:.2f}s)")
+            return self._create_error_result(event_id, 'timeout', f'处理超时: {error_time:.2f}s')
+            
+        except Exception as e:
+            error_time = (datetime.now() - start_time).total_seconds()
+            logger.error(f"❌ 事件 {event_id} 处理失败: {e} (耗时: {error_time:.2f}s)")
+            logger.error(traceback.format_exc())
+            return self._create_error_result(event_id, 'exception', str(e))
+    
+    async def _validate_event(self, event: Dict) -> Dict[str, Any]:
+        """验证事件数据"""
+        required_fields = ['title', 'summary']
+        missing_fields = [field for field in required_fields if field not in event]
+        
+        if missing_fields:
+            return {
+                'valid': False,
+                'reason': f'缺少必要字段: {missing_fields}'
+            }
+        
+        # 确保有theme_directive
+        if 'theme_directive' not in event:
+            event['theme_directive'] = {
+                'action': 'CLUSTER',
+                'confidence': 0.5,
+                'reason': '自动添加默认指令'
+            }
+        
+        return {'valid': True, 'reason': '事件数据有效'}
+    
+    async def _get_related_themes(self, event: Dict) -> List[Dict]:
+        """
+        获取相关主题
+        使用AI相似性分析，而不是关键词匹配
+        """
+        try:
+            # 使用主题检索器获取相关主题
+            related_themes = await self.theme_fetcher.fetch_related_themes(event, limit=5)
+            return related_themes
+        except Exception as e:
+            logger.warning(f"获取相关主题失败: {e}, 返回空列表")
+            return []
+    
+    async def _execute_business_logic_robust(self, 
+                                           event_id: str,
+                                           ai_decision: Dict[str, Any],
+                                           event: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        健壮的业务逻辑执行
+        包含重试和错误处理
+        """
+        max_retries = 2
+        retry_count = 0
+        
+        while retry_count <= max_retries:
+            try:
+                return await self._execute_business_logic(event_id, ai_decision, event)
+            except Exception as e:
+                retry_count += 1
+                if retry_count <= max_retries:
+                    logger.warning(f"业务逻辑执行失败，重试 {retry_count}/{max_retries}: {e}")
+                    await asyncio.sleep(0.5 * retry_count)  # 指数退避
+                else:
+                    logger.error(f"业务逻辑执行最终失败: {e}")
+                    raise
+        
+        # 永远不会执行到这里
+        return {'status': 'failed', 'error': '未知错误'}
+    
+    async def _execute_business_logic(self,
+                                     event_id: str,
+                                     ai_decision: Dict[str, Any],
+                                     event: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        执行业务逻辑
+        根据AI决策创建或合并主题
+        """
+        decision = ai_decision.get('decision', 'UNKNOWN')
+        target_theme_name = ai_decision.get('target_theme_name', '')
+        confidence = ai_decision.get('confidence', 0)
+        
+        if decision == 'CREATE_NEW':
+            # 创建新主题
+            theme_data = {
+                'name': target_theme_name,
+                'keywords': self._extract_keywords_from_event(event),
+                'description': ai_decision.get('theme_description', f'关于{target_theme_name}的主题'),
+                'discovery_source': 'enhanced_engine',
+                'discovery_confidence': confidence
+            }
+            
+            theme = await self._safe_create_theme(theme_data)
+            
+            if theme:
+                # 创建事件-主题关联
+                await self._create_event_theme_relation(event_id, theme.id, confidence)
+                return {
+                    'status': 'created',
+                    'theme_name': target_theme_name,
+                    'theme_id': theme.id,
+                    'confidence': confidence
+                }
+            else:
+                return {'status': 'failed', 'error': '创建主题失败'}
+                
+        elif decision == 'MERGE_WITH_EXISTING':
+            # 合并到现有主题
+            existing_theme = await self._find_existing_theme(target_theme_name)
+            
+            if existing_theme:
+                # 创建事件-主题关联
+                await self._create_event_theme_relation(event_id, existing_theme.id, confidence)
+                return {
+                    'status': 'merged',
+                    'theme_name': target_theme_name,
+                    'theme_id': existing_theme.id,
+                    'confidence': confidence
+                }
+            else:
+                # 如果主题不存在，降级为创建新主题
+                logger.warning(f"主题 {target_theme_name} 不存在，降级为创建新主题")
+                return await self._execute_business_logic(event_id, {
+                    'decision': 'CREATE_NEW',
+                    'target_theme_name': target_theme_name,
+                    'confidence': confidence * 0.8  # 降低置信度
+                }, event)
+                
+        elif decision == 'IGNORE':
+            # 忽略事件
+            return {
+                'status': 'ignored',
+                'reason': ai_decision.get('reason', 'AI建议忽略')
+            }
+            
+        else:
+            logger.warning(f"未知的AI决策: {decision}，降级为CREATE_NEW")
+            return await self._execute_business_logic(event_id, {
+                'decision': 'CREATE_NEW',
+                'target_theme_name': f'未分类_{event_id[:8]}',
+                'confidence': 0.5
+            }, event)
+    
+    async def _safe_create_theme(self, theme_data: Dict) -> Any:
+        """
+        安全创建主题
+        包含错误处理和日志记录
+        """
+        try:
+            theme = await self.db_client.create_theme(**theme_data)
+            if theme:
+                # 🚀 修复：使用属性访问，而不是字典访问
+                logger.info(f"✅ 创建新主题: {theme.name} (ID: {theme.id})")
+                return theme
+            else:
+                logger.error(f"❌ 创建主题失败: 返回None")
+                return None
+        except Exception as e:
+            logger.error(f"❌ 创建主题失败: {e}")
+            import traceback
+            traceback.print_exc()
+            return None
+    
+    async def _find_existing_theme(self, theme_name: str) -> Any:
+        """查找现有主题"""
+        try:
+            theme = await self.db_client.get_theme_by_name(theme_name)
+            return theme
+        except Exception as e:
+            logger.warning(f"查找主题失败: {theme_name}, 错误: {e}")
+            return None
+    
+    async def _create_event_theme_relation(self, 
+                                          event_id: str, 
+                                          theme_id: int, 
+                                          confidence: float) -> bool:
+        """创建事件-主题关联"""
+        try:
+            success = await self.db_client.create_event_theme_relation(
+                event_id=event_id,
+                theme_id=theme_id,
+                confidence=confidence,
+                confidence_level='high' if confidence > 0.8 else 'medium' if confidence > 0.6 else 'low'
+            )
+            
+            if success:
+                logger.debug(f"✅ 创建事件-主题关联: event={event_id}, theme={theme_id}, confidence={confidence}")
+            else:
+                logger.warning(f"⚠️  创建事件-主题关联失败: event={event_id}, theme={theme_id}")
+            
+            return success
+        except Exception as e:
+            logger.error(f"❌ 创建事件-主题关联异常: {e}")
+            return False
+    
+    def _extract_keywords_from_event(self, event: Dict) -> List[str]:
+        """从事件中提取关键词"""
+        keywords = []
+        
+        # 从标题提取
+        title = event.get('title', '')
+        if title:
+            # 简单提取中文关键词
+            import re
+            chinese_words = re.findall(r'[\u4e00-\u9fff]{2,4}', title)
+            keywords.extend(chinese_words[:3])
+        
+        # 从摘要提取
+        summary = event.get('summary', '')
+        if summary:
+            import re
+            words = re.findall(r'[\u4e00-\u9fff]{2,4}', summary)
+            keywords.extend(words[:2])
+        
+        # 添加影响行业
+        industries = event.get('impact_industries', [])
+        keywords.extend(industries)
+        
+        # 去重
+        return list(set(keywords))[:5] if keywords else ['综合']
+    
+    def _create_error_result(self, event_id: str, error_type: str, error_msg: str) -> Dict[str, Any]:
+        """创建错误结果"""
+        return {
+            'event_id': event_id,
+            'status': 'failed',
+            'error_type': error_type,
+            'error': error_msg,
+            'processing_time': 0
+        }
+    
+    def _update_stats(self, status: str, processing_time: float):
+        """更新统计信息"""
+        self.processing_stats['total_events'] += 1
+        
+        if status in ['created', 'merged']:
+            self.processing_stats['successful'] += 1
+            if status == 'created':
+                self.processing_stats['created_themes'] += 1
+            elif status == 'merged':
+                self.processing_stats['merged_themes'] += 1
+        else:
+            self.processing_stats['failed'] += 1
+        
+        # 更新平均处理时间
+        total_events = self.processing_stats['total_events']
+        if total_events > 1:
+            prev_avg = self.processing_stats['avg_processing_time']
+            self.processing_stats['avg_processing_time'] = (
+                prev_avg * (total_events - 1) + processing_time
+            ) / total_events
+        else:
+            self.processing_stats['avg_processing_time'] = processing_time
+    
+    async def get_processing_stats(self) -> Dict[str, Any]:
+        """获取处理统计信息"""
+        return self.processing_stats.copy()
+    
+    async def reset_stats(self):
+        """重置统计信息"""
+        self.processing_stats = {
+            'total_events': 0,
+            'successful': 0,
+            'failed': 0,
+            'created_themes': 0,
+            'merged_themes': 0,
+            'avg_processing_time': 0
+        }
+        logger.info("📊 处理统计已重置")

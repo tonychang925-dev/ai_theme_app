@@ -1,0 +1,178 @@
+{
+  "report_id": "evaluation_report_20260112_165502",
+  "generated_at": "2026-01-12T16:55:02.625174",
+  "test_duration_seconds": 0.685344,
+  "executive_summary": {
+    "total_events_processed": 76,
+    "success_rate_percentage": "1.3%",
+    "unique_themes_generated": 1,
+    "average_processing_time": "0.00秒",
+    "assessment_grade": "需改进",
+    "grade_emoji": "❌",
+    "key_achievement": "AI相似性分析架构成功部署并验证",
+    "main_finding": "系统成功处理了76个事件，产生了1个独特主题"
+  },
+  "system_configuration": {
+    "engine_version": "ai_similarity_engine_robust_v1",
+    "analysis_method": "AI相似性分析",
+    "ai_model": "DeepSeek-Chat",
+    "thresholds": {
+      "fast_track": 0.85,
+      "review": 0.65,
+      "ignore": 0.3
+    }
+  },
+  "performance_metrics": {
+    "total_events": 76,
+    "correctly_assigned": 0,
+    "incorrectly_assigned": 75,
+    "unassigned": 0,
+    "theme_counts": {
+      "分析失败或未找到相似主题相关主题": 1
+    },
+    "processing_times": [
+      0.007437,
+      0.001479,
+      0.001183,
+      0.001168,
+      0.00116,
+      0.001178,
+      0.001115,
+      0.001126,
+      0.001104,
+      0.002132,
+      0.002108,
+      0.001232,
+      0.001148,
+      0.001037,
+      0.000992,
+      0.001203,
+      0.001125,
+      0.000965,
+      0.001034,
+      0.000895,
+      0.001085,
+      0.000998,
+      0.001132,
+      0.000922,
+      0.001035,
+      0.000916,
+      0.000919,
+      0.001214,
+      0.003512,
+      0.001021,
+      0.001027,
+      0.00087,
+      0.001012,
+      0.000994,
+      0.001724,
+      0.001495,
+      0.001616,
+      0.001546,
+      0.001087,
+      0.001027,
+      0.000875,
+      0.000876,
+      0.000862,
+      0.000868,
+      0.000864,
+      0.001059,
+      0.00127,
+      0.001397,
+      0.000913,
+      0.001178,
+      0.001206,
+      0.001305,
+      0.000984,
+      0.000934,
+      0.000898,
+      0.000921,
+      0.001038,
+      0.000872,
+      0.000886,
+      0.000841,
+      0.0014,
+      0.000883,
+      0.001022,
+      0.001065,
+      0.00259,
+      0.002497,
+      0.0015,
+      0.001095,
+      0.000976,
+      0.000892,
+      0.001002,
+      0.001257,
+      0.001495,
+      0.000891,
+      0.000946,
+      0.001067
+    ],
+    "confusion_matrix": {},
+    "success_rate": 0.013157894736842105,
+    "avg_processing_time": 0.0012710263157894738,
+    "max_processing_time": 0.007437,
+    "min_processing_time": 0.000841,
+    "unique_themes_count": 1,
+    "theme_distribution": {
+      "分析失败或未找到相似主题相关主题": 1
+    }
+  },
+  "comparative_analysis": {
+    "optimized_system": {
+      "total_events": 76,
+      "unique_themes": 1,
+      "success_rate": 0.013157894736842105,
+      "avg_processing_time": 0.0012710263157894738
+    },
+    "baseline_system": {
+      "total_events": 0,
+      "unique_themes": 0,
+      "comprehensive_score": 0,
+      "clustering_accuracy": 0
+    },
+    "ground_truth": {
+      "total_events": 76,
+      "unique_themes": 10,
+      "expected_themes": [
+        "光刻胶",
+        "AI/AR眼镜",
+        "卫星互联",
+        "SpaceX",
+        "AI智能体Manus",
+        "海洋经济",
+        "对日制裁",
+        "液冷数据中心",
+        "稀土永磁",
+        "可控核聚变"
+      ]
+    },
+    "comparison_metrics": {}
+  },
+  "theme_analysis": [
+    {
+      "theme_name": "分析失败或未找到相似主题相关主题",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    }
+  ],
+  "detailed_findings": [],
+  "recommendations": [
+    {
+      "priority": "高",
+      "area": "错误处理",
+      "recommendation": "加强异常处理和重试机制",
+      "expected_impact": "提高系统稳定性10-20%"
+    },
+    {
+      "priority": "中",
+      "area": "主题收敛",
+      "recommendation": "调整相似度阈值，目标主题数约10个",
+      "expected_impact": "使主题数量更接近期望值"
+    }
+  ],
+  "files_generated": {
+    "raw_results": "/Users/admin/Desktop/ai_theme_app/evaluate_service/data/results/integrated_evaluation/optimized_system_results_20260112_165502.json",
+    "assignments_csv": "/Users/admin/Desktop/ai_theme_app/evaluate_service/data/results/integrated_evaluation/theme_assignments_20260112_165502.csv"
+  }
+}

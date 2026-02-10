@@ -1,0 +1,84 @@
+{
+  "analysis_time": "2026-01-13T14:22:14.474024",
+  "total_events": 76,
+  "quality_stats": {
+    "has_original_data": 76,
+    "has_summary": 76,
+    "has_theme_directive": 76,
+    "has_impact_industries": 76,
+    "valid_news_id": 76,
+    "avg_summary_length": 94.85526315789474,
+    "avg_confidence": 0.8914473684210527
+  },
+  "sample_event": {
+    "news_id": "AI_AR眼镜_001",
+    "event_type": "产品发布",
+    "impact_industries": [
+      "消费电子",
+      "智能穿戴设备",
+      "光学器件",
+      "人机交互技术"
+    ],
+    "direction": "中性",
+    "confidence": 0.85,
+    "summary": "Meta与Oakley合作开发的智能眼镜产品举行发布会，属于行业内已有技术路径的常规产品迭代，缺乏定义性、首创性或全局性突破，对现有市场格局影响有限。",
+    "raw_ai_response": {
+      "event_info": {
+        "event_type": "产品发布",
+        "summary": "Meta与Oakley合作开发的智能眼镜产品举行发布会，属于行业内已有技术路径的常规产品迭代，缺乏定义性、首创性或全局性突破，对现有市场格局影响有限。",
+        "impact_industries": [
+          "消费电子",
+          "智能穿戴设备",
+          "光学器件",
+          "人机交互技术"
+        ],
+        "direction": "中性",
+        "confidence": 0.85
+      },
+      "theme_discovery_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.88,
+        "reason": "该事件不符合重大标准：1. 缺乏定义性：非国家级政策或行业标准制定事件；2. 缺乏首创性：智能眼镜技术已有多年发展历史（如Google Glass、Microsoft HoloLens等），此次为现有技术路径的产品迭代，非突破性技术首次商用；3. 缺乏全局性：Meta与Oakley的合作属于企业间常规商业合作，未显著改变AR/智能穿戴行业的竞争格局或技术范式。事件应归类于现有'智能穿戴设备'或'AR技术应用'投资主题下。"
+      }
+    },
+    "theme_directive": {
+      "action": "CLUSTER",
+      "confidence": 0.88,
+      "reason": "该事件不符合重大标准：1. 缺乏定义性：非国家级政策或行业标准制定事件；2. 缺乏首创性：智能眼镜技术已有多年发展历史（如Google Glass、Microsoft HoloLens等），此次为现有技术路径的产品迭代，非突破性技术首次商用；3. 缺乏全局性：Meta与Oakley的合作属于企业间常规商业合作，未显著改变AR/智能穿戴行业的竞争格局或技术范式。事件应归类于现有'智能穿戴设备'或'AR技术应用'投资主题下。"
+    },
+    "original_data": {
+      "title": "AI/AR眼镜相关新闻",
+      "content": "Meta与Oakley合作开发的智能眼镜产品于6月20日举行发布会。",
+      "content_preview": "Meta与Oakley合作开发的智能眼镜产品于6月20日举行发布会。",
+      "content_length": 34,
+      "has_full_content": false
+    },
+    "ai_response": {
+      "event_info": {
+        "event_type": "产品发布",
+        "summary": "Meta与Oakley合作开发的智能眼镜产品举行发布会，属于行业内已有技术路径的常规产品迭代，缺乏定义性、首创性或全局性突破，对现有市场格局影响有限。",
+        "impact_industries": [
+          "消费电子",
+          "智能穿戴设备",
+          "光学器件",
+          "人机交互技术"
+        ],
+        "direction": "中性",
+        "confidence": 0.85
+      },
+      "theme_discovery_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.88,
+        "reason": "该事件不符合重大标准：1. 缺乏定义性：非国家级政策或行业标准制定事件；2. 缺乏首创性：智能眼镜技术已有多年发展历史（如Google Glass、Microsoft HoloLens等），此次为现有技术路径的产品迭代，非突破性技术首次商用；3. 缺乏全局性：Meta与Oakley的合作属于企业间常规商业合作，未显著改变AR/智能穿戴行业的竞争格局或技术范式。事件应归类于现有'智能穿戴设备'或'AR技术应用'投资主题下。"
+      }
+    },
+    "data_integrity": {
+      "has_title": true,
+      "has_content": true,
+      "content_length": 34,
+      "ai_summary_length": 75,
+      "enhancement_ratio": 2.2058823529411766,
+      "extraction_success": true
+    }
+  }
+}

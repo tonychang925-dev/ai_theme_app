@@ -1,0 +1,15 @@
+{
+  "test_time": "2026-01-13T09:37:55.241741",
+  "modules": {
+    "RelatedThemeFetcher": "PASS"
+  },
+  "tests": [
+    {
+      "name": "基本功能测试",
+      "status": "PASS",
+      "description": "主题检索器基本功能和数据传递测试"
+    }
+  ],
+  "passed": true,
+  "errors": []
+}

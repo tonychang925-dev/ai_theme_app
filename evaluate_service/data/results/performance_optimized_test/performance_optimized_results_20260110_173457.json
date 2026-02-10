@@ -1,0 +1,220 @@
+{
+  "metadata": {
+    "test_type": "性能优化测试",
+    "test_time": "2026-01-10T17:34:57.094893",
+    "dataset_size": 15,
+    "optimizations": [
+      "缓存优化",
+      "并发处理",
+      "批量分析"
+    ]
+  },
+  "statistics": {
+    "total_events": 15,
+    "processed": 15,
+    "processing_times": [
+      7183.789,
+      9168.997,
+      11711.973,
+      9113.198,
+      8246.399,
+      6822.295,
+      7786.465999999999,
+      8119.646,
+      8950.805,
+      8804.003,
+      8397.93,
+      9112.537,
+      9238.239,
+      9113.44,
+      10918.159
+    ],
+    "batch_sizes": [],
+    "concurrent_tasks": 0,
+    "api_calls_saved": 0,
+    "themes_created": {
+      "AI拍摄眼镜": 1,
+      "军事低轨星座": 1,
+      "商业航天IPO": 1
+    },
+    "themes_merged": {
+      "可穿戴设备题材": 2,
+      "AR/VR设备题材": 3,
+      "消费电子题材": 2,
+      "智能穿戴题材": 1,
+      "增强现实(AR)题材": 1,
+      "航空航天题材": 1,
+      "商业航天题材": 2
+    },
+    "errors": [],
+    "cache_hits": 0,
+    "cache_hit_rate": 0.0,
+    "engine_performance": {
+      "cache_hits": 1,
+      "cache_misses": 16,
+      "avg_decision_time": 8760.098062500001,
+      "total_processed": 16,
+      "cache_hit_rate_percent": 5.88,
+      "cache_size": 16
+    }
+  },
+  "detailed_results": [
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "可穿戴设备题材",
+      "status": "merged",
+      "processing_time_ms": 7183.789,
+      "cached": false,
+      "decision_time_ms": 7183.309
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "可穿戴设备题材",
+      "status": "merged",
+      "processing_time_ms": 11711.973,
+      "cached": false,
+      "decision_time_ms": 11711.704
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "AR/VR设备题材",
+      "status": "merged",
+      "processing_time_ms": 9168.997,
+      "cached": false,
+      "decision_time_ms": 9168.511
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "消费电子题材",
+      "status": "merged",
+      "processing_time_ms": 9113.198,
+      "cached": false,
+      "decision_time_ms": 9112.689
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "智能穿戴题材",
+      "status": "merged",
+      "processing_time_ms": 8246.399,
+      "cached": false,
+      "decision_time_ms": 8246.031
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "AR/VR设备题材",
+      "status": "merged",
+      "processing_time_ms": 8119.646,
+      "cached": false,
+      "decision_time_ms": 8119.267000000001
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "AR/VR设备题材",
+      "status": "merged",
+      "processing_time_ms": 7786.465999999999,
+      "cached": false,
+      "decision_time_ms": 7786.120000000001
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "消费电子题材",
+      "status": "merged",
+      "processing_time_ms": 6822.295,
+      "cached": false,
+      "decision_time_ms": 6822.019
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "增强现实(AR)题材",
+      "status": "merged",
+      "processing_time_ms": 8950.805,
+      "cached": false,
+      "decision_time_ms": 8950.417
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "CREATE_NEW",
+      "final_theme": "AI拍摄眼镜",
+      "status": "created",
+      "processing_time_ms": 8804.003,
+      "cached": false,
+      "decision_time_ms": 8803.547999999999
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "航空航天题材",
+      "status": "merged",
+      "processing_time_ms": 8397.93,
+      "cached": false,
+      "decision_time_ms": 8397.460000000001
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "CREATE_NEW",
+      "final_theme": "军事低轨星座",
+      "status": "created",
+      "processing_time_ms": 9238.239,
+      "cached": false,
+      "decision_time_ms": 9237.821
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "商业航天题材",
+      "status": "merged",
+      "processing_time_ms": 9112.537,
+      "cached": false,
+      "decision_time_ms": 9112.119
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "CREATE_NEW",
+      "final_theme": "商业航天IPO",
+      "status": "created",
+      "processing_time_ms": 9113.44,
+      "cached": false,
+      "decision_time_ms": 9112.947
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "商业航天题材",
+      "status": "merged",
+      "processing_time_ms": 10918.159,
+      "cached": false,
+      "decision_time_ms": 10917.672
+    }
+  ],
+  "summary": {
+    "total_processed": 15,
+    "success_rate": 1.0,
+    "avg_processing_time_ms": 8845.8584,
+    "unique_themes_created": 3,
+    "performance_improvement": "待计算"
+  }
+}

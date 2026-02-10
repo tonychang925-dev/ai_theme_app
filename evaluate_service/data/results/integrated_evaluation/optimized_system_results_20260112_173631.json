@@ -1,0 +1,4611 @@
+{
+  "test_id": "integrated_test_20260112_173631",
+  "test_date": "2026-01-12T17:36:31.382118",
+  "total_events": 76,
+  "theme_assignments": {
+    "news_000": "新合作开发的智能眼相关",
+    "news_001": "新合作推出专为运动相关",
+    "news_002": "新英伟达公开了一项相关",
+    "news_003": "新三星电子宣布将于相关",
+    "news_004": "新合作计划在相关",
+    "news_005": "新鸿海宣布合作进军相关",
+    "news_006": "新谷歌与国眼镜厂商相关",
+    "news_007": "新三星计划年第三季相关",
+    "news_008": "新智能眼镜厂商相关",
+    "news_009": "新云天励飞战略投资相关",
+    "news_010": "新白宫考虑将部分联相关",
+    "news_011": "新美国太空军下属的相关",
+    "news_012": "新正式向员工通报正相关",
+    "news_013": "新创始人马斯克确认相关",
+    "news_014": "新马斯克澄亿美元估相关",
+    "news_015": "新中国科学院合肥物相关",
+    "news_016": "新可控核聚变创新联相关",
+    "news_017": "新中信建投研报指出相关",
+    "news_018": "新特朗普媒体与科技相关",
+    "news_019": "新国际能源署预测相关",
+    "news_020": "新中金公司研报表示相关",
+    "news_021": "新中国国家原子能机相关",
+    "news_022": "新家公司在京参加核相关",
+    "news_023": "新中国科学院在合肥相关",
+    "news_024": "新聚变新能安徽相关",
+    "news_025": "新中国商务部宣布加相关",
+    "news_026": "新日本首相高市早苗相关",
+    "news_027": "FAILED",
+    "news_028": "新中国外交部依据相关",
+    "news_029": "新中国外交部发言人相关",
+    "news_030": "新中国针对日本高市相关",
+    "news_031": "新中国政府考虑收紧相关",
+    "news_032": "新商务部新闻发言人相关",
+    "news_033": "新中国政府通过通用相关",
+    "news_034": "新内蒙古自治区党委相关",
+    "news_035": "新中美元首会晤后相关",
+    "news_036": "新美股稀土股盘前普相关",
+    "news_037": "新包钢股份公告拟将相关",
+    "news_038": "新中国商务海关总署相关",
+    "news_039": "新浙江省人大常委会相关",
+    "news_040": "新国家发展改革委主相关",
+    "news_041": "新深圳市海洋发展局相关",
+    "news_042": "新国家发展改革委正相关",
+    "news_043": "FAILED",
+    "news_044": "新日本实际上停止向相关",
+    "news_045": "新日将在绍兴举行光相关",
+    "news_046": "新光刻胶及集成电路相关",
+    "news_047": "新北京大学彭海琳教相关",
+    "news_048": "新清华大学化学系许相关",
+    "news_049": "新因下游行业需求相关",
+    "news_050": "新武汉太紫微光电科相关",
+    "news_051": "FAILED",
+    "news_052": "新上交所发布新规相关",
+    "news_053": "新我国在海南商业航相关",
+    "news_054": "新中国航天今年已完相关",
+    "news_055": "新蓝箭航天副总裁张相关",
+    "news_056": "新文昌国际航天城即相关",
+    "news_057": "新蓝箭航天的朱雀三相关",
+    "news_058": "新中国航天科技集团相关",
+    "news_059": "新国家航天局设立商相关",
+    "news_060": "新北京市科中关村管相关",
+    "news_061": "新北京蓝箭航天朱雀相关",
+    "news_062": "新英伟达首席财务官相关",
+    "news_063": "新东方证券基于相关",
+    "news_064": "新谷歌新一因单芯片相关",
+    "news_065": "新第五届国液冷供应相关",
+    "news_066": "FAILED",
+    "news_067": "新英伟达透露其相关",
+    "news_068": "新微软萨提亚相关",
+    "news_069": "新英伟达因新平台功相关",
+    "news_070": "新以数十亿美元收购相关",
+    "news_071": "新智能体推出文生相关",
+    "news_072": "新智能体产背后的公相关",
+    "news_073": "新智能体平宣布向所相关",
+    "news_074": "新智能体的开发者相关",
+    "news_075": "新中国团队发布通用相关"
+  },
+  "decision_paths": {
+    "news_000": {
+      "final_theme": "新合作开发的智能眼相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新合作开发的智能眼相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "合作开发的智能眼相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.002091
+    },
+    "news_001": {
+      "final_theme": "新合作推出专为运动相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新合作推出专为运动相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "合作推出专为运动相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001149
+    },
+    "news_002": {
+      "final_theme": "新英伟达公开了一项相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新英伟达公开了一项相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "英伟达公开了一项相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001414
+    },
+    "news_003": {
+      "final_theme": "新三星电子宣布将于相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新三星电子宣布将于相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "三星电子宣布将于相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000948
+    },
+    "news_004": {
+      "final_theme": "新合作计划在相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新合作计划在相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "合作计划在相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000773
+    },
+    "news_005": {
+      "final_theme": "新鸿海宣布合作进军相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新鸿海宣布合作进军相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "鸿海宣布合作进军相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000851
+    },
+    "news_006": {
+      "final_theme": "新谷歌与国眼镜厂商相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新谷歌与国眼镜厂商相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "谷歌与国眼镜厂商相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001236
+    },
+    "news_007": {
+      "final_theme": "新三星计划年第三季相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新三星计划年第三季相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "三星计划年第三季相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000938
+    },
+    "news_008": {
+      "final_theme": "新智能眼镜厂商相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新智能眼镜厂商相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "智能眼镜厂商相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000847
+    },
+    "news_009": {
+      "final_theme": "新云天励飞战略投资相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新云天励飞战略投资相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "云天励飞战略投资相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000801
+    },
+    "news_010": {
+      "final_theme": "新白宫考虑将部分联相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新白宫考虑将部分联相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "白宫考虑将部分联相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001025
+    },
+    "news_011": {
+      "final_theme": "新美国太空军下属的相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新美国太空军下属的相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "美国太空军下属的相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.00106
+    },
+    "news_012": {
+      "final_theme": "新正式向员工通报正相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新正式向员工通报正相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "正式向员工通报正相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000791
+    },
+    "news_013": {
+      "final_theme": "新创始人马斯克确认相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新创始人马斯克确认相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "创始人马斯克确认相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000744
+    },
+    "news_014": {
+      "final_theme": "新马斯克澄亿美元估相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新马斯克澄亿美元估相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "马斯克澄亿美元估相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000707
+    },
+    "news_015": {
+      "final_theme": "新中国科学院合肥物相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国科学院合肥物相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国科学院合肥物相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001344
+    },
+    "news_016": {
+      "final_theme": "新可控核聚变创新联相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新可控核聚变创新联相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "可控核聚变创新联相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000926
+    },
+    "news_017": {
+      "final_theme": "新中信建投研报指出相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中信建投研报指出相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中信建投研报指出相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000993
+    },
+    "news_018": {
+      "final_theme": "新特朗普媒体与科技相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新特朗普媒体与科技相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "特朗普媒体与科技相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001014
+    },
+    "news_019": {
+      "final_theme": "新国际能源署预测相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新国际能源署预测相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "国际能源署预测相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000975
+    },
+    "news_020": {
+      "final_theme": "新中金公司研报表示相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中金公司研报表示相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中金公司研报表示相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000736
+    },
+    "news_021": {
+      "final_theme": "新中国国家原子能机相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国国家原子能机相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国国家原子能机相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000939
+    },
+    "news_022": {
+      "final_theme": "新家公司在京参加核相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新家公司在京参加核相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "家公司在京参加核相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001069
+    },
+    "news_023": {
+      "final_theme": "新中国科学院在合肥相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国科学院在合肥相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国科学院在合肥相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000876
+    },
+    "news_024": {
+      "final_theme": "新聚变新能安徽相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新聚变新能安徽相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "聚变新能安徽相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000928
+    },
+    "news_025": {
+      "final_theme": "新中国商务部宣布加相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国商务部宣布加相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国商务部宣布加相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000709
+    },
+    "news_026": {
+      "final_theme": "新日本首相高市早苗相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新日本首相高市早苗相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "日本首相高市早苗相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000932
+    },
+    "news_028": {
+      "final_theme": "新中国外交部依据相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国外交部依据相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国外交部依据相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000674
+    },
+    "news_029": {
+      "final_theme": "新中国外交部发言人相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国外交部发言人相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国外交部发言人相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.00067
+    },
+    "news_030": {
+      "final_theme": "新中国针对日本高市相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国针对日本高市相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国针对日本高市相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000663
+    },
+    "news_031": {
+      "final_theme": "新中国政府考虑收紧相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国政府考虑收紧相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国政府考虑收紧相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000964
+    },
+    "news_032": {
+      "final_theme": "新商务部新闻发言人相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新商务部新闻发言人相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "商务部新闻发言人相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000928
+    },
+    "news_033": {
+      "final_theme": "新中国政府通过通用相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国政府通过通用相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国政府通过通用相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000804
+    },
+    "news_034": {
+      "final_theme": "新内蒙古自治区党委相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新内蒙古自治区党委相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "内蒙古自治区党委相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000794
+    },
+    "news_035": {
+      "final_theme": "新中美元首会晤后相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中美元首会晤后相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中美元首会晤后相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000764
+    },
+    "news_036": {
+      "final_theme": "新美股稀土股盘前普相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新美股稀土股盘前普相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "美股稀土股盘前普相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000933
+    },
+    "news_037": {
+      "final_theme": "新包钢股份公告拟将相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新包钢股份公告拟将相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "包钢股份公告拟将相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000816
+    },
+    "news_038": {
+      "final_theme": "新中国商务海关总署相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国商务海关总署相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国商务海关总署相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000837
+    },
+    "news_039": {
+      "final_theme": "新浙江省人大常委会相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新浙江省人大常委会相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "浙江省人大常委会相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.003146
+    },
+    "news_040": {
+      "final_theme": "新国家发展改革委主相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新国家发展改革委主相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "国家发展改革委主相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001918
+    },
+    "news_041": {
+      "final_theme": "新深圳市海洋发展局相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新深圳市海洋发展局相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "深圳市海洋发展局相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.003083
+    },
+    "news_042": {
+      "final_theme": "新国家发展改革委正相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新国家发展改革委正相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "国家发展改革委正相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001581
+    },
+    "news_044": {
+      "final_theme": "新日本实际上停止向相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新日本实际上停止向相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "日本实际上停止向相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000721
+    },
+    "news_045": {
+      "final_theme": "新日将在绍兴举行光相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新日将在绍兴举行光相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "日将在绍兴举行光相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000738
+    },
+    "news_046": {
+      "final_theme": "新光刻胶及集成电路相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新光刻胶及集成电路相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "光刻胶及集成电路相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000712
+    },
+    "news_047": {
+      "final_theme": "新北京大学彭海琳教相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新北京大学彭海琳教相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "北京大学彭海琳教相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001044
+    },
+    "news_048": {
+      "final_theme": "新清华大学化学系许相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新清华大学化学系许相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "清华大学化学系许相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000714
+    },
+    "news_049": {
+      "final_theme": "新因下游行业需求相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新因下游行业需求相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "因下游行业需求相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001056
+    },
+    "news_050": {
+      "final_theme": "新武汉太紫微光电科相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新武汉太紫微光电科相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "武汉太紫微光电科相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.00118
+    },
+    "news_052": {
+      "final_theme": "新上交所发布新规相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新上交所发布新规相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "上交所发布新规相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000748
+    },
+    "news_053": {
+      "final_theme": "新我国在海南商业航相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新我国在海南商业航相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "我国在海南商业航相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000714
+    },
+    "news_054": {
+      "final_theme": "新中国航天今年已完相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国航天今年已完相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国航天今年已完相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001172
+    },
+    "news_055": {
+      "final_theme": "新蓝箭航天副总裁张相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新蓝箭航天副总裁张相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "蓝箭航天副总裁张相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000742
+    },
+    "news_056": {
+      "final_theme": "新文昌国际航天城即相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新文昌国际航天城即相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "文昌国际航天城即相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.00101
+    },
+    "news_057": {
+      "final_theme": "新蓝箭航天的朱雀三相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新蓝箭航天的朱雀三相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "蓝箭航天的朱雀三相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.00072
+    },
+    "news_058": {
+      "final_theme": "新中国航天科技集团相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国航天科技集团相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国航天科技集团相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001078
+    },
+    "news_059": {
+      "final_theme": "新国家航天局设立商相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新国家航天局设立商相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "国家航天局设立商相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000752
+    },
+    "news_060": {
+      "final_theme": "新北京市科中关村管相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新北京市科中关村管相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "北京市科中关村管相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000724
+    },
+    "news_061": {
+      "final_theme": "新北京蓝箭航天朱雀相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新北京蓝箭航天朱雀相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "北京蓝箭航天朱雀相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000711
+    },
+    "news_062": {
+      "final_theme": "新英伟达首席财务官相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新英伟达首席财务官相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "英伟达首席财务官相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000711
+    },
+    "news_063": {
+      "final_theme": "新东方证券基于相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新东方证券基于相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "东方证券基于相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000712
+    },
+    "news_064": {
+      "final_theme": "新谷歌新一因单芯片相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新谷歌新一因单芯片相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "谷歌新一因单芯片相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000807
+    },
+    "news_065": {
+      "final_theme": "新第五届国液冷供应相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新第五届国液冷供应相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "第五届国液冷供应相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001476
+    },
+    "news_067": {
+      "final_theme": "新英伟达透露其相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新英伟达透露其相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "英伟达透露其相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000808
+    },
+    "news_068": {
+      "final_theme": "新微软萨提亚相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新微软萨提亚相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "微软萨提亚相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.00075
+    },
+    "news_069": {
+      "final_theme": "新英伟达因新平台功相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新英伟达因新平台功相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "英伟达因新平台功相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001178
+    },
+    "news_070": {
+      "final_theme": "新以数十亿美元收购相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新以数十亿美元收购相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "以数十亿美元收购相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001032
+    },
+    "news_071": {
+      "final_theme": "新智能体推出文生相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新智能体推出文生相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "智能体推出文生相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.000836
+    },
+    "news_072": {
+      "final_theme": "新智能体产背后的公相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新智能体产背后的公相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "智能体产背后的公相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001129
+    },
+    "news_073": {
+      "final_theme": "新智能体平宣布向所相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新智能体平宣布向所相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "智能体平宣布向所相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001026
+    },
+    "news_074": {
+      "final_theme": "新智能体的开发者相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新智能体的开发者相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "智能体的开发者相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001007
+    },
+    "news_075": {
+      "final_theme": "新中国团队发布通用相关",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国团队发布通用相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国团队发布通用相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.001207
+    }
+  },
+  "detailed_results": [
+    {
+      "event_id": "news_000",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新合作开发的智能眼相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "合作开发的智能眼相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新合作开发的智能眼相关",
+        "theme_id": 1,
+        "confidence": 0.3
+      },
+      "processing_time": 0.002091,
+      "related_themes_count": 0,
+      "theme_name": "新合作开发的智能眼相关"
+    },
+    {
+      "event_id": "news_001",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新合作推出专为运动相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "合作推出专为运动相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新合作推出专为运动相关",
+        "theme_id": 2,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001149,
+      "related_themes_count": 0,
+      "theme_name": "新合作推出专为运动相关"
+    },
+    {
+      "event_id": "news_002",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新英伟达公开了一项相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "英伟达公开了一项相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新英伟达公开了一项相关",
+        "theme_id": 3,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001414,
+      "related_themes_count": 0,
+      "theme_name": "新英伟达公开了一项相关"
+    },
+    {
+      "event_id": "news_003",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新三星电子宣布将于相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "三星电子宣布将于相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新三星电子宣布将于相关",
+        "theme_id": 4,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000948,
+      "related_themes_count": 0,
+      "theme_name": "新三星电子宣布将于相关"
+    },
+    {
+      "event_id": "news_004",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新合作计划在相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "合作计划在相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新合作计划在相关",
+        "theme_id": 5,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000773,
+      "related_themes_count": 0,
+      "theme_name": "新合作计划在相关"
+    },
+    {
+      "event_id": "news_005",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新鸿海宣布合作进军相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "鸿海宣布合作进军相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新鸿海宣布合作进军相关",
+        "theme_id": 6,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000851,
+      "related_themes_count": 0,
+      "theme_name": "新鸿海宣布合作进军相关"
+    },
+    {
+      "event_id": "news_006",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新谷歌与国眼镜厂商相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "谷歌与国眼镜厂商相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新谷歌与国眼镜厂商相关",
+        "theme_id": 7,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001236,
+      "related_themes_count": 0,
+      "theme_name": "新谷歌与国眼镜厂商相关"
+    },
+    {
+      "event_id": "news_007",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新三星计划年第三季相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "三星计划年第三季相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新三星计划年第三季相关",
+        "theme_id": 8,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000938,
+      "related_themes_count": 0,
+      "theme_name": "新三星计划年第三季相关"
+    },
+    {
+      "event_id": "news_008",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新智能眼镜厂商相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "智能眼镜厂商相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新智能眼镜厂商相关",
+        "theme_id": 9,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000847,
+      "related_themes_count": 0,
+      "theme_name": "新智能眼镜厂商相关"
+    },
+    {
+      "event_id": "news_009",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新云天励飞战略投资相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "云天励飞战略投资相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新云天励飞战略投资相关",
+        "theme_id": 10,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000801,
+      "related_themes_count": 0,
+      "theme_name": "新云天励飞战略投资相关"
+    },
+    {
+      "event_id": "news_010",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新白宫考虑将部分联相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "白宫考虑将部分联相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新白宫考虑将部分联相关",
+        "theme_id": 11,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001025,
+      "related_themes_count": 0,
+      "theme_name": "新白宫考虑将部分联相关"
+    },
+    {
+      "event_id": "news_011",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新美国太空军下属的相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "美国太空军下属的相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新美国太空军下属的相关",
+        "theme_id": 12,
+        "confidence": 0.3
+      },
+      "processing_time": 0.00106,
+      "related_themes_count": 0,
+      "theme_name": "新美国太空军下属的相关"
+    },
+    {
+      "event_id": "news_012",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新正式向员工通报正相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "正式向员工通报正相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新正式向员工通报正相关",
+        "theme_id": 13,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000791,
+      "related_themes_count": 0,
+      "theme_name": "新正式向员工通报正相关"
+    },
+    {
+      "event_id": "news_013",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新创始人马斯克确认相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "创始人马斯克确认相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新创始人马斯克确认相关",
+        "theme_id": 14,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000744,
+      "related_themes_count": 0,
+      "theme_name": "新创始人马斯克确认相关"
+    },
+    {
+      "event_id": "news_014",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新马斯克澄亿美元估相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "马斯克澄亿美元估相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新马斯克澄亿美元估相关",
+        "theme_id": 15,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000707,
+      "related_themes_count": 0,
+      "theme_name": "新马斯克澄亿美元估相关"
+    },
+    {
+      "event_id": "news_015",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国科学院合肥物相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国科学院合肥物相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国科学院合肥物相关",
+        "theme_id": 16,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001344,
+      "related_themes_count": 0,
+      "theme_name": "新中国科学院合肥物相关"
+    },
+    {
+      "event_id": "news_016",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新可控核聚变创新联相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "可控核聚变创新联相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新可控核聚变创新联相关",
+        "theme_id": 17,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000926,
+      "related_themes_count": 0,
+      "theme_name": "新可控核聚变创新联相关"
+    },
+    {
+      "event_id": "news_017",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中信建投研报指出相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中信建投研报指出相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中信建投研报指出相关",
+        "theme_id": 18,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000993,
+      "related_themes_count": 0,
+      "theme_name": "新中信建投研报指出相关"
+    },
+    {
+      "event_id": "news_018",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新特朗普媒体与科技相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "特朗普媒体与科技相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新特朗普媒体与科技相关",
+        "theme_id": 19,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001014,
+      "related_themes_count": 0,
+      "theme_name": "新特朗普媒体与科技相关"
+    },
+    {
+      "event_id": "news_019",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新国际能源署预测相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "国际能源署预测相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新国际能源署预测相关",
+        "theme_id": 20,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000975,
+      "related_themes_count": 0,
+      "theme_name": "新国际能源署预测相关"
+    },
+    {
+      "event_id": "news_020",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中金公司研报表示相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中金公司研报表示相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中金公司研报表示相关",
+        "theme_id": 21,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000736,
+      "related_themes_count": 0,
+      "theme_name": "新中金公司研报表示相关"
+    },
+    {
+      "event_id": "news_021",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国国家原子能机相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国国家原子能机相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国国家原子能机相关",
+        "theme_id": 22,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000939,
+      "related_themes_count": 0,
+      "theme_name": "新中国国家原子能机相关"
+    },
+    {
+      "event_id": "news_022",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新家公司在京参加核相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "家公司在京参加核相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新家公司在京参加核相关",
+        "theme_id": 23,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001069,
+      "related_themes_count": 0,
+      "theme_name": "新家公司在京参加核相关"
+    },
+    {
+      "event_id": "news_023",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国科学院在合肥相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国科学院在合肥相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国科学院在合肥相关",
+        "theme_id": 24,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000876,
+      "related_themes_count": 0,
+      "theme_name": "新中国科学院在合肥相关"
+    },
+    {
+      "event_id": "news_024",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新聚变新能安徽相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "聚变新能安徽相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新聚变新能安徽相关",
+        "theme_id": 25,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000928,
+      "related_themes_count": 0,
+      "theme_name": "新聚变新能安徽相关"
+    },
+    {
+      "event_id": "news_025",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国商务部宣布加相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国商务部宣布加相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国商务部宣布加相关",
+        "theme_id": 26,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000709,
+      "related_themes_count": 0,
+      "theme_name": "新中国商务部宣布加相关"
+    },
+    {
+      "event_id": "news_026",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新日本首相高市早苗相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "日本首相高市早苗相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新日本首相高市早苗相关",
+        "theme_id": 27,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000932,
+      "related_themes_count": 0,
+      "theme_name": "新日本首相高市早苗相关"
+    },
+    {
+      "event_id": "news_027",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新日本首相高市早苗相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "日本首相高市早苗相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000674,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_028",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国外交部依据相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国外交部依据相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国外交部依据相关",
+        "theme_id": 28,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000674,
+      "related_themes_count": 0,
+      "theme_name": "新中国外交部依据相关"
+    },
+    {
+      "event_id": "news_029",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国外交部发言人相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国外交部发言人相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国外交部发言人相关",
+        "theme_id": 29,
+        "confidence": 0.3
+      },
+      "processing_time": 0.00067,
+      "related_themes_count": 0,
+      "theme_name": "新中国外交部发言人相关"
+    },
+    {
+      "event_id": "news_030",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国针对日本高市相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国针对日本高市相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国针对日本高市相关",
+        "theme_id": 30,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000663,
+      "related_themes_count": 0,
+      "theme_name": "新中国针对日本高市相关"
+    },
+    {
+      "event_id": "news_031",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国政府考虑收紧相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国政府考虑收紧相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国政府考虑收紧相关",
+        "theme_id": 31,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000964,
+      "related_themes_count": 0,
+      "theme_name": "新中国政府考虑收紧相关"
+    },
+    {
+      "event_id": "news_032",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新商务部新闻发言人相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "商务部新闻发言人相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新商务部新闻发言人相关",
+        "theme_id": 32,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000928,
+      "related_themes_count": 0,
+      "theme_name": "新商务部新闻发言人相关"
+    },
+    {
+      "event_id": "news_033",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国政府通过通用相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国政府通过通用相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国政府通过通用相关",
+        "theme_id": 33,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000804,
+      "related_themes_count": 0,
+      "theme_name": "新中国政府通过通用相关"
+    },
+    {
+      "event_id": "news_034",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新内蒙古自治区党委相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "内蒙古自治区党委相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新内蒙古自治区党委相关",
+        "theme_id": 34,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000794,
+      "related_themes_count": 0,
+      "theme_name": "新内蒙古自治区党委相关"
+    },
+    {
+      "event_id": "news_035",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中美元首会晤后相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中美元首会晤后相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中美元首会晤后相关",
+        "theme_id": 35,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000764,
+      "related_themes_count": 0,
+      "theme_name": "新中美元首会晤后相关"
+    },
+    {
+      "event_id": "news_036",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新美股稀土股盘前普相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "美股稀土股盘前普相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新美股稀土股盘前普相关",
+        "theme_id": 36,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000933,
+      "related_themes_count": 0,
+      "theme_name": "新美股稀土股盘前普相关"
+    },
+    {
+      "event_id": "news_037",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新包钢股份公告拟将相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "包钢股份公告拟将相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新包钢股份公告拟将相关",
+        "theme_id": 37,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000816,
+      "related_themes_count": 0,
+      "theme_name": "新包钢股份公告拟将相关"
+    },
+    {
+      "event_id": "news_038",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国商务海关总署相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国商务海关总署相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国商务海关总署相关",
+        "theme_id": 38,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000837,
+      "related_themes_count": 0,
+      "theme_name": "新中国商务海关总署相关"
+    },
+    {
+      "event_id": "news_039",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新浙江省人大常委会相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "浙江省人大常委会相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新浙江省人大常委会相关",
+        "theme_id": 39,
+        "confidence": 0.3
+      },
+      "processing_time": 0.003146,
+      "related_themes_count": 0,
+      "theme_name": "新浙江省人大常委会相关"
+    },
+    {
+      "event_id": "news_040",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新国家发展改革委主相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "国家发展改革委主相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新国家发展改革委主相关",
+        "theme_id": 40,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001918,
+      "related_themes_count": 0,
+      "theme_name": "新国家发展改革委主相关"
+    },
+    {
+      "event_id": "news_041",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新深圳市海洋发展局相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "深圳市海洋发展局相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新深圳市海洋发展局相关",
+        "theme_id": 41,
+        "confidence": 0.3
+      },
+      "processing_time": 0.003083,
+      "related_themes_count": 0,
+      "theme_name": "新深圳市海洋发展局相关"
+    },
+    {
+      "event_id": "news_042",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新国家发展改革委正相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "国家发展改革委正相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新国家发展改革委正相关",
+        "theme_id": 42,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001581,
+      "related_themes_count": 0,
+      "theme_name": "新国家发展改革委正相关"
+    },
+    {
+      "event_id": "news_043",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新国家发展改革委正相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "国家发展改革委正相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000793,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_044",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新日本实际上停止向相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "日本实际上停止向相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新日本实际上停止向相关",
+        "theme_id": 43,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000721,
+      "related_themes_count": 0,
+      "theme_name": "新日本实际上停止向相关"
+    },
+    {
+      "event_id": "news_045",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新日将在绍兴举行光相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "日将在绍兴举行光相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新日将在绍兴举行光相关",
+        "theme_id": 44,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000738,
+      "related_themes_count": 0,
+      "theme_name": "新日将在绍兴举行光相关"
+    },
+    {
+      "event_id": "news_046",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新光刻胶及集成电路相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "光刻胶及集成电路相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新光刻胶及集成电路相关",
+        "theme_id": 45,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000712,
+      "related_themes_count": 0,
+      "theme_name": "新光刻胶及集成电路相关"
+    },
+    {
+      "event_id": "news_047",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新北京大学彭海琳教相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "北京大学彭海琳教相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新北京大学彭海琳教相关",
+        "theme_id": 46,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001044,
+      "related_themes_count": 0,
+      "theme_name": "新北京大学彭海琳教相关"
+    },
+    {
+      "event_id": "news_048",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新清华大学化学系许相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "清华大学化学系许相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新清华大学化学系许相关",
+        "theme_id": 47,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000714,
+      "related_themes_count": 0,
+      "theme_name": "新清华大学化学系许相关"
+    },
+    {
+      "event_id": "news_049",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新因下游行业需求相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "因下游行业需求相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新因下游行业需求相关",
+        "theme_id": 48,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001056,
+      "related_themes_count": 0,
+      "theme_name": "新因下游行业需求相关"
+    },
+    {
+      "event_id": "news_050",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新武汉太紫微光电科相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "武汉太紫微光电科相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新武汉太紫微光电科相关",
+        "theme_id": 49,
+        "confidence": 0.3
+      },
+      "processing_time": 0.00118,
+      "related_themes_count": 0,
+      "theme_name": "新武汉太紫微光电科相关"
+    },
+    {
+      "event_id": "news_051",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新武汉太紫微光电科相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "武汉太紫微光电科相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001003,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_052",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新上交所发布新规相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "上交所发布新规相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新上交所发布新规相关",
+        "theme_id": 50,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000748,
+      "related_themes_count": 0,
+      "theme_name": "新上交所发布新规相关"
+    },
+    {
+      "event_id": "news_053",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新我国在海南商业航相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "我国在海南商业航相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新我国在海南商业航相关",
+        "theme_id": 51,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000714,
+      "related_themes_count": 0,
+      "theme_name": "新我国在海南商业航相关"
+    },
+    {
+      "event_id": "news_054",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国航天今年已完相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国航天今年已完相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国航天今年已完相关",
+        "theme_id": 52,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001172,
+      "related_themes_count": 0,
+      "theme_name": "新中国航天今年已完相关"
+    },
+    {
+      "event_id": "news_055",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新蓝箭航天副总裁张相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "蓝箭航天副总裁张相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新蓝箭航天副总裁张相关",
+        "theme_id": 53,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000742,
+      "related_themes_count": 0,
+      "theme_name": "新蓝箭航天副总裁张相关"
+    },
+    {
+      "event_id": "news_056",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新文昌国际航天城即相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "文昌国际航天城即相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新文昌国际航天城即相关",
+        "theme_id": 54,
+        "confidence": 0.3
+      },
+      "processing_time": 0.00101,
+      "related_themes_count": 0,
+      "theme_name": "新文昌国际航天城即相关"
+    },
+    {
+      "event_id": "news_057",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新蓝箭航天的朱雀三相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "蓝箭航天的朱雀三相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新蓝箭航天的朱雀三相关",
+        "theme_id": 55,
+        "confidence": 0.3
+      },
+      "processing_time": 0.00072,
+      "related_themes_count": 0,
+      "theme_name": "新蓝箭航天的朱雀三相关"
+    },
+    {
+      "event_id": "news_058",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国航天科技集团相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国航天科技集团相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国航天科技集团相关",
+        "theme_id": 56,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001078,
+      "related_themes_count": 0,
+      "theme_name": "新中国航天科技集团相关"
+    },
+    {
+      "event_id": "news_059",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新国家航天局设立商相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "国家航天局设立商相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新国家航天局设立商相关",
+        "theme_id": 57,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000752,
+      "related_themes_count": 0,
+      "theme_name": "新国家航天局设立商相关"
+    },
+    {
+      "event_id": "news_060",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新北京市科中关村管相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "北京市科中关村管相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新北京市科中关村管相关",
+        "theme_id": 58,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000724,
+      "related_themes_count": 0,
+      "theme_name": "新北京市科中关村管相关"
+    },
+    {
+      "event_id": "news_061",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新北京蓝箭航天朱雀相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "北京蓝箭航天朱雀相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新北京蓝箭航天朱雀相关",
+        "theme_id": 59,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000711,
+      "related_themes_count": 0,
+      "theme_name": "新北京蓝箭航天朱雀相关"
+    },
+    {
+      "event_id": "news_062",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新英伟达首席财务官相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "英伟达首席财务官相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新英伟达首席财务官相关",
+        "theme_id": 60,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000711,
+      "related_themes_count": 0,
+      "theme_name": "新英伟达首席财务官相关"
+    },
+    {
+      "event_id": "news_063",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新东方证券基于相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "东方证券基于相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新东方证券基于相关",
+        "theme_id": 61,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000712,
+      "related_themes_count": 0,
+      "theme_name": "新东方证券基于相关"
+    },
+    {
+      "event_id": "news_064",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新谷歌新一因单芯片相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "谷歌新一因单芯片相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新谷歌新一因单芯片相关",
+        "theme_id": 62,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000807,
+      "related_themes_count": 0,
+      "theme_name": "新谷歌新一因单芯片相关"
+    },
+    {
+      "event_id": "news_065",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新第五届国液冷供应相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "第五届国液冷供应相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新第五届国液冷供应相关",
+        "theme_id": 63,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001476,
+      "related_themes_count": 0,
+      "theme_name": "新第五届国液冷供应相关"
+    },
+    {
+      "event_id": "news_066",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中信建投研报指出相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中信建投研报指出相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001003,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_067",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新英伟达透露其相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "英伟达透露其相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新英伟达透露其相关",
+        "theme_id": 64,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000808,
+      "related_themes_count": 0,
+      "theme_name": "新英伟达透露其相关"
+    },
+    {
+      "event_id": "news_068",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新微软萨提亚相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "微软萨提亚相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新微软萨提亚相关",
+        "theme_id": 65,
+        "confidence": 0.3
+      },
+      "processing_time": 0.00075,
+      "related_themes_count": 0,
+      "theme_name": "新微软萨提亚相关"
+    },
+    {
+      "event_id": "news_069",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新英伟达因新平台功相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "英伟达因新平台功相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新英伟达因新平台功相关",
+        "theme_id": 66,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001178,
+      "related_themes_count": 0,
+      "theme_name": "新英伟达因新平台功相关"
+    },
+    {
+      "event_id": "news_070",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新以数十亿美元收购相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "以数十亿美元收购相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新以数十亿美元收购相关",
+        "theme_id": 67,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001032,
+      "related_themes_count": 0,
+      "theme_name": "新以数十亿美元收购相关"
+    },
+    {
+      "event_id": "news_071",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新智能体推出文生相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "智能体推出文生相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新智能体推出文生相关",
+        "theme_id": 68,
+        "confidence": 0.3
+      },
+      "processing_time": 0.000836,
+      "related_themes_count": 0,
+      "theme_name": "新智能体推出文生相关"
+    },
+    {
+      "event_id": "news_072",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新智能体产背后的公相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "智能体产背后的公相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新智能体产背后的公相关",
+        "theme_id": 69,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001129,
+      "related_themes_count": 0,
+      "theme_name": "新智能体产背后的公相关"
+    },
+    {
+      "event_id": "news_073",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新智能体平宣布向所相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "智能体平宣布向所相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新智能体平宣布向所相关",
+        "theme_id": 70,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001026,
+      "related_themes_count": 0,
+      "theme_name": "新智能体平宣布向所相关"
+    },
+    {
+      "event_id": "news_074",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新智能体的开发者相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "智能体的开发者相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新智能体的开发者相关",
+        "theme_id": 71,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001007,
+      "related_themes_count": 0,
+      "theme_name": "新智能体的开发者相关"
+    },
+    {
+      "event_id": "news_075",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "新中国团队发布通用相关",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.10)",
+        "analysis_summary": "没有现有主题可比较，建议创建新主题",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "中国团队发布通用相关",
+            "similarity_score": 0.1,
+            "similarity_reason": "没有现有主题或AI分析失败，需要创建新主题",
+            "confidence": 0.3,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "没有现有主题可比较，建议创建新主题",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "没有现有主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "新中国团队发布通用相关",
+        "theme_id": 72,
+        "confidence": 0.3
+      },
+      "processing_time": 0.001207,
+      "related_themes_count": 0,
+      "theme_name": "新中国团队发布通用相关"
+    }
+  ],
+  "virtual_db_snapshot": {
+    "timestamp": "2026-01-12T17:36:31.381953",
+    "total_themes": 72,
+    "total_relations": 72,
+    "theme_names": [
+      "新合作开发的智能眼相关",
+      "新合作推出专为运动相关",
+      "新英伟达公开了一项相关",
+      "新三星电子宣布将于相关",
+      "新合作计划在相关",
+      "新鸿海宣布合作进军相关",
+      "新谷歌与国眼镜厂商相关",
+      "新三星计划年第三季相关",
+      "新智能眼镜厂商相关",
+      "新云天励飞战略投资相关",
+      "新白宫考虑将部分联相关",
+      "新美国太空军下属的相关",
+      "新正式向员工通报正相关",
+      "新创始人马斯克确认相关",
+      "新马斯克澄亿美元估相关",
+      "新中国科学院合肥物相关",
+      "新可控核聚变创新联相关",
+      "新中信建投研报指出相关",
+      "新特朗普媒体与科技相关",
+      "新国际能源署预测相关",
+      "新中金公司研报表示相关",
+      "新中国国家原子能机相关",
+      "新家公司在京参加核相关",
+      "新中国科学院在合肥相关",
+      "新聚变新能安徽相关",
+      "新中国商务部宣布加相关",
+      "新日本首相高市早苗相关",
+      "新中国外交部依据相关",
+      "新中国外交部发言人相关",
+      "新中国针对日本高市相关",
+      "新中国政府考虑收紧相关",
+      "新商务部新闻发言人相关",
+      "新中国政府通过通用相关",
+      "新内蒙古自治区党委相关",
+      "新中美元首会晤后相关",
+      "新美股稀土股盘前普相关",
+      "新包钢股份公告拟将相关",
+      "新中国商务海关总署相关",
+      "新浙江省人大常委会相关",
+      "新国家发展改革委主相关",
+      "新深圳市海洋发展局相关",
+      "新国家发展改革委正相关",
+      "新日本实际上停止向相关",
+      "新日将在绍兴举行光相关",
+      "新光刻胶及集成电路相关",
+      "新北京大学彭海琳教相关",
+      "新清华大学化学系许相关",
+      "新因下游行业需求相关",
+      "新武汉太紫微光电科相关",
+      "新上交所发布新规相关",
+      "新我国在海南商业航相关",
+      "新中国航天今年已完相关",
+      "新蓝箭航天副总裁张相关",
+      "新文昌国际航天城即相关",
+      "新蓝箭航天的朱雀三相关",
+      "新中国航天科技集团相关",
+      "新国家航天局设立商相关",
+      "新北京市科中关村管相关",
+      "新北京蓝箭航天朱雀相关",
+      "新英伟达首席财务官相关",
+      "新东方证券基于相关",
+      "新谷歌新一因单芯片相关",
+      "新第五届国液冷供应相关",
+      "新英伟达透露其相关",
+      "新微软萨提亚相关",
+      "新英伟达因新平台功相关",
+      "新以数十亿美元收购相关",
+      "新智能体推出文生相关",
+      "新智能体产背后的公相关",
+      "新智能体平宣布向所相关",
+      "新智能体的开发者相关",
+      "新中国团队发布通用相关"
+    ],
+    "avg_relations_per_theme": 1.0
+  }
+}

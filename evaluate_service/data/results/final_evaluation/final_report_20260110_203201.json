@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "test_time": "2026-01-10T20:32:01.068585",
+    "test_type": "最终修复版评估",
+    "dataset_source": "久赢恒丰模拟",
+    "total_events_processed": 76
+  },
+  "metrics": {
+    "total_events": 76,
+    "detected_theme_count": 1,
+    "expected_theme_count": 10,
+    "target_theme_count": 10,
+    "clustering_accuracy": 0.14473684210526316,
+    "error_count": 65,
+    "deep_sea_errors": 0
+  },
+  "theme_analysis": {
+    "detected_themes": [
+      "其他"
+    ],
+    "expected_themes": [
+      "可控核聚变",
+      "其他",
+      "数据中心",
+      "人工智能",
+      "商业航天",
+      "深海经济",
+      "新材料",
+      "卫星通信",
+      "半导体",
+      "消费电子"
+    ],
+    "theme_distribution": {
+      "其他": 76
+    },
+    "theme_comparison": {
+      "our_count": 1,
+      "jiuying_count": 10,
+      "difference": 9
+    }
+  },
+  "clustering_results": {
+    "total_correct": 11,
+    "total_errors": 65,
+    "accuracy": 0.14473684210526316,
+    "error_examples": [
+      {
+        "event_title": "",
+        "expected": "人工智能",
+        "detected": "其他",
+        "status": "created"
+      },
+      {
+        "event_title": "",
+        "expected": "人工智能",
+        "detected": "其他",
+        "status": "created"
+      },
+      {
+        "event_title": "",
+        "expected": "消费电子",
+        "detected": "其他",
+        "status": "created"
+      },
+      {
+        "event_title": "",
+        "expected": "人工智能",
+        "detected": "其他",
+        "status": "created"
+      },
+      {
+        "event_title": "",
+        "expected": "人工智能",
+        "detected": "其他",
+        "status": "created"
+      },
+      {
+        "event_title": "",
+        "expected": "消费电子",
+        "detected": "其他",
+        "status": "created"
+      },
+      {
+        "event_title": "",
+        "expected": "半导体",
+        "detected": "其他",
+        "status": "created"
+      },
+      {
+        "event_title": "",
+        "expected": "人工智能",
+        "detected": "其他",
+        "status": "created"
+      },
+      {
+        "event_title": "",
+        "expected": "人工智能",
+        "detected": "其他",
+        "status": "created"
+      },
+      {
+        "event_title": "",
+        "expected": "商业航天",
+        "detected": "其他",
+        "status": "created"
+      }
+    ]
+  },
+  "specific_checks": {
+    "deep_sea_to_ai_ar_errors": []
+  },
+  "recommendations": [
+    {
+      "type": "主题数量不足",
+      "suggestion": "降低判重合并阈值，从0.65调整到0.55；提高AI创建新主题的倾向",
+      "priority": "高"
+    },
+    {
+      "type": "聚类准确性低",
+      "suggestion": "改进事件特征提取算法；增加领域知识识别；优化相似度计算",
+      "priority": "高"
+    }
+  ]
+}

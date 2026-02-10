@@ -1,0 +1,18 @@
+{
+  "theme_count": 6,
+  "theme_names": [
+    "消费电子",
+    "人工智能",
+    "眼镜相关新闻",
+    "商业航天",
+    "国防",
+    "相关新闻"
+  ],
+  "avg_events_per_theme": 1.0,
+  "lifecycle_distribution": {
+    "candidate": 6,
+    "growing": 0,
+    "mature": 0,
+    "decline": 0
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "metadata": {
+    "evaluation_id": "enhanced_eval_20260109_164512",
+    "evaluation_time": "2026-01-09T16:45:12.410186",
+    "evaluation_name": "增强系统评估（简化版）",
+    "test_dataset_size": 20
+  },
+  "summary": {
+    "overall_score": 0.96,
+    "evaluation_level": "优秀",
+    "recommendation": "可以直接部署到生产环境",
+    "key_metrics": {
+      "decision_accuracy": 1.0,
+      "avg_response_time_ms": 0.0,
+      "theme_duplication_rate": 0.2222,
+      "naming_quality": 1.0
+    }
+  },
+  "detailed_results": {
+    "decision_accuracy": {
+      "total_tests": 20,
+      "correct_decisions": 20,
+      "accuracy": 1.0,
+      "details": [
+        {
+          "event_id": "policy_1",
+          "expected": "CREATE_NEW",
+          "actual": "CREATE_NEW",
+          "is_correct": true,
+          "confidence": 0.85,
+          "reason": "重大政策发布，创建新题材"
+        },
+        {
+          "event_id": "policy_2",
+          "expected": "CREATE_NEW",
+          "actual": "CREATE_NEW",
+          "is_correct": true,
+          "confidence": 0.85,
+          "reason": "重大政策发布，创建新题材"
+        },
+        {
+          "event_id": "policy_3",
+          "expected": "CREATE_NEW",
+          "actual": "CREATE_NEW",
+          "is_correct": true,
+          "confidence": 0.85,
+          "reason": "重大政策发布，创建新题材"
+        },
+        {
+          "event_id": "policy_4",
+          "expected": "CREATE_NEW",
+          "actual": "CREATE_NEW",
+          "is_correct": true,
+          "confidence": 0.85,
+          "reason": "重大政策发布，创建新题材"
+        },
+        {
+          "event_id": "policy_5",
+          "expected": "CREATE_NEW",
+          "actual": "CREATE_NEW",
+          "is_correct": true,
+          "confidence": 0.85,
+          "reason": "重大政策发布，创建新题材"
+        },
+        {
+          "event_id": "product_1",
+          "expected": "MERGE_INTO",
+          "actual": "MERGE_INTO",
+          "is_correct": true,
+          "confidence": 0.75,
+          "reason": "同类产品发布，归入现有题材"
+        },
+        {
+          "event_id": "product_2",
+          "expected": "MERGE_INTO",
+          "actual": "MERGE_INTO",
+          "is_correct": true,
+          "confidence": 0.75,
+          "reason": "同类产品发布，归入现有题材"
+        },
+        {
+          "event_id": "product_3",
+          "expected": "MERGE_INTO",
+          "actual": "MERGE_INTO",
+          "is_correct": true,
+          "confidence": 0.75,
+          "reason": "同类产品发布，归入现有题材"
+        },
+        {
+          "event_id": "product_4",
+          "expected": "MERGE_INTO",
+          "actual": "MERGE_INTO",
+          "is_correct": true,
+          "confidence": 0.75,
+          "reason": "同类产品发布，归入现有题材"
+        },
+        {
+          "event_id": "product_5",
+          "expected": "MERGE_INTO",
+          "actual": "MERGE_INTO",
+          "is_correct": true,
+          "confidence": 0.75,
+          "reason": "同类产品发布，归入现有题材"
+        }
+      ]
+    },
+    "response_time": {
+      "single_event_times_ms": [
+        0.02,
+        0.028,
+        0.026,
+        0.020999999999999998,
+        0.027,
+        0.022,
+        0.017,
+        0.023,
+        0.023,
+        0.023
+      ],
+      "single_event_avg_ms": 0.023,
+      "single_event_p95_ms": 0.028,
+      "batch_performance": [
+        {
+          "batch_size": 1,
+          "total_time_ms": 0.029,
+          "avg_time_per_event_ms": 0.029
+        },
+        {
+          "batch_size": 5,
+          "total_time_ms": 0.018000000000000002,
+          "avg_time_per_event_ms": 0.0036000000000000003
+        },
+        {
+          "batch_size": 10,
+          "total_time_ms": 0.020999999999999998,
+          "avg_time_per_event_ms": 0.0021
+        }
+      ],
+      "meets_target_2s": true,
+      "meets_target_5s": true
+    },
+    "theme_quality": {
+      "total_themes_created": 9,
+      "unique_themes": 2,
+      "duplicate_groups_count": 2,
+      "duplication_rate": 0.2222222222222222,
+      "naming_quality_avg": 1.0,
+      "sample_themes": [
+        "人工智能政策",
+        "人工智能政策",
+        "人工智能政策",
+        "人工智能政策",
+        "人工智能政策"
+      ]
+    }
+  },
+  "target_comparison": {
+    "decision_accuracy_target": 0.85,
+    "response_time_target_ms": 2000,
+    "duplication_rate_target": 0.2,
+    "meets_accuracy_target": true,
+    "meets_response_target": true,
+    "meets_duplication_target": false
+  }
+}

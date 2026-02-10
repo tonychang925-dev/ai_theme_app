@@ -1,0 +1,775 @@
+{
+  "test_summary": {
+    "test_name": "优化系统集成测试",
+    "test_time": "2026-01-11T15:15:16.463636",
+    "total_events_processed": 76,
+    "total_duration_seconds": 0.76,
+    "avg_processing_time_seconds": 0.01,
+    "success_rate": 7.894736842105263
+  },
+  "virtual_database_final_state": {
+    "theme_count": 6,
+    "theme_names": [
+      "消费电子",
+      "人工智能",
+      "眼镜相关新闻",
+      "商业航天",
+      "国防",
+      "相关新闻"
+    ],
+    "avg_events_per_theme": 1.0,
+    "lifecycle_distribution": {
+      "candidate": 6,
+      "growing": 0,
+      "mature": 0,
+      "decline": 0
+    }
+  },
+  "processing_statistics": {
+    "status_distribution": {
+      "created": 6,
+      "merged": 0,
+      "auto_merged": 0,
+      "ignored": 0,
+      "in_review": 70,
+      "failed": 0
+    },
+    "execution_path_distribution": {
+      "guided_create": 6,
+      "fast_track_create": 0,
+      "guided_merge": 0
+    },
+    "performance_metrics": {
+      "min_processing_time": 0.0005168914794921875,
+      "max_processing_time": 0.689845085144043,
+      "avg_processing_time": 0.00980375001305028,
+      "total_processing_time": 0.7450850009918213
+    }
+  },
+  "generated_themes_analysis": {
+    "total_unique_themes": 6,
+    "theme_size_distribution": {
+      "相关新闻": 1,
+      "消费电子": 1,
+      "商业航天": 1,
+      "人工智能": 1,
+      "国防": 1,
+      "眼镜相关新闻": 1
+    },
+    "largest_theme": [
+      "相关新闻",
+      1
+    ],
+    "smallest_theme": [
+      "相关新闻",
+      1
+    ],
+    "theme_name_analysis": {
+      "potential_duplicates": [
+        {
+          "theme1": "相关新闻",
+          "theme2": "眼镜相关新闻",
+          "relationship": "inclusion",
+          "reason": "\"相关新闻\" 包含在 \"眼镜相关新闻\" 中"
+        }
+      ],
+      "similarity_checks": []
+    }
+  },
+  "event_theme_mapping": {
+    "news_0": "消费电子",
+    "news_1": "人工智能",
+    "news_2": "眼镜相关新闻",
+    "news_10": "商业航天",
+    "news_11": "国防",
+    "news_12": "相关新闻"
+  },
+  "sample_processing_results": [
+    {
+      "event_id": "news_0",
+      "event_title": "AI/AR眼镜相关新闻",
+      "event_industries": [
+        "消费电子",
+        "人工智能"
+      ],
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: AI/AR眼镜"
+      },
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "消费电子",
+        "confidence": 0.8,
+        "reason": "与现有题材无明显关联，适合创建新题材。行业: 消费电子, 人工智能",
+        "comparison_analysis": "与现有题材相似度: 0.00，属于新方向",
+        "match_type": "new_direction",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 0
+      },
+      "processing_result": {
+        "status": "created",
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "消费电子",
+          "timestamp": "2026-01-11T15:15:15.709733"
+        }
+      },
+      "deduplication_info": {
+        "should_merge": false,
+        "target_theme": "",
+        "similarity": 0.0,
+        "match_type": "",
+        "reason": "无现有题材可比较",
+        "confidence": 0.0
+      },
+      "processing_time_seconds": 0.002,
+      "processed_at": "2026-01-11T15:15:15.710069"
+    },
+    {
+      "event_id": "news_1",
+      "event_title": "AI/AR眼镜相关新闻",
+      "event_industries": [
+        "消费电子",
+        "人工智能"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "人工智能",
+        "confidence": 0.7,
+        "reason": "与现有题材无明显关联，适合创建新题材。行业: 消费电子, 人工智能",
+        "comparison_analysis": "与现有题材相似度: 0.20，属于新方向",
+        "match_type": "new_direction",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 1
+      },
+      "processing_result": {
+        "status": "created",
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "人工智能",
+          "timestamp": "2026-01-11T15:15:16.402824"
+        }
+      },
+      "deduplication_info": {
+        "should_merge": false,
+        "target_theme": "",
+        "similarity": 0.25,
+        "match_type": "distinct",
+        "reason": "相似度较低(0.25)，可以创建新题材",
+        "confidence": 0.75
+      },
+      "processing_time_seconds": 0.69,
+      "processed_at": "2026-01-11T15:15:16.403166"
+    },
+    {
+      "event_id": "news_2",
+      "event_title": "AI/AR眼镜相关新闻",
+      "event_industries": [
+        "消费电子",
+        "人工智能"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.7,
+        "reason": "与现有题材无明显关联，适合创建新题材。行业: 消费电子, 人工智能",
+        "comparison_analysis": "与现有题材相似度: 0.20，属于新方向",
+        "match_type": "new_direction",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 2
+      },
+      "processing_result": {
+        "status": "created",
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "眼镜相关新闻",
+          "timestamp": "2026-01-11T15:15:16.405484"
+        }
+      },
+      "deduplication_info": {
+        "should_merge": false,
+        "target_theme": "",
+        "similarity": 0.25,
+        "match_type": "distinct",
+        "reason": "相似度较低(0.25)，可以创建新题材",
+        "confidence": 0.75
+      },
+      "processing_time_seconds": 0.002,
+      "processed_at": "2026-01-11T15:15:16.405831"
+    },
+    {
+      "event_id": "news_3",
+      "event_title": "AI/AR眼镜相关新闻",
+      "event_industries": [
+        "消费电子",
+        "人工智能"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'眼镜相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 3
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.406682"
+    },
+    {
+      "event_id": "news_4",
+      "event_title": "AI/AR眼镜相关新闻",
+      "event_industries": [
+        "消费电子",
+        "人工智能"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'眼镜相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 3
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.407345"
+    },
+    {
+      "event_id": "news_6",
+      "event_title": "AI/AR眼镜相关新闻",
+      "event_industries": [
+        "消费电子",
+        "人工智能"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'眼镜相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 3
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.407992"
+    },
+    {
+      "event_id": "news_7",
+      "event_title": "AI/AR眼镜相关新闻",
+      "event_industries": [
+        "消费电子",
+        "人工智能"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'眼镜相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 3
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.408614"
+    },
+    {
+      "event_id": "news_8",
+      "event_title": "AI/AR眼镜相关新闻",
+      "event_industries": [
+        "消费电子",
+        "人工智能"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'眼镜相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 3
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.409242"
+    },
+    {
+      "event_id": "news_9",
+      "event_title": "AI/AR眼镜相关新闻",
+      "event_industries": [
+        "消费电子",
+        "人工智能"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'眼镜相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 3
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.409830"
+    },
+    {
+      "event_id": "news_10",
+      "event_title": "SpaceX相关新闻",
+      "event_industries": [
+        "商业航天",
+        "国防"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "商业航天",
+        "confidence": 0.8,
+        "reason": "与现有题材无明显关联，适合创建新题材。行业: 商业航天, 国防",
+        "comparison_analysis": "与现有题材相似度: 0.00，属于新方向",
+        "match_type": "new_direction",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 3
+      },
+      "processing_result": {
+        "status": "created",
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "商业航天",
+          "timestamp": "2026-01-11T15:15:16.410871"
+        }
+      },
+      "deduplication_info": {
+        "should_merge": false,
+        "target_theme": "",
+        "similarity": 0.0,
+        "match_type": "",
+        "reason": "无现有题材可比较",
+        "confidence": 0.0
+      },
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.411169"
+    },
+    {
+      "event_id": "news_11",
+      "event_title": "SpaceX相关新闻",
+      "event_industries": [
+        "商业航天",
+        "国防"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "国防",
+        "confidence": 0.7,
+        "reason": "与现有题材无明显关联，适合创建新题材。行业: 商业航天, 国防",
+        "comparison_analysis": "与现有题材相似度: 0.20，属于新方向",
+        "match_type": "new_direction",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 4
+      },
+      "processing_result": {
+        "status": "created",
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "国防",
+          "timestamp": "2026-01-11T15:15:16.412542"
+        }
+      },
+      "deduplication_info": {
+        "should_merge": false,
+        "target_theme": "",
+        "similarity": 0.25,
+        "match_type": "distinct",
+        "reason": "相似度较低(0.25)，可以创建新题材",
+        "confidence": 0.75
+      },
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.412849"
+    },
+    {
+      "event_id": "news_12",
+      "event_title": "SpaceX相关新闻",
+      "event_industries": [
+        "商业航天",
+        "国防"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "相关新闻",
+        "confidence": 0.7,
+        "reason": "与现有题材无明显关联，适合创建新题材。行业: 商业航天, 国防",
+        "comparison_analysis": "与现有题材相似度: 0.20，属于新方向",
+        "match_type": "new_direction",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 5
+      },
+      "processing_result": {
+        "status": "created",
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "相关新闻",
+          "timestamp": "2026-01-11T15:15:16.413737"
+        }
+      },
+      "deduplication_info": {
+        "should_merge": false,
+        "target_theme": "",
+        "similarity": 0.25,
+        "match_type": "distinct",
+        "reason": "相似度较低(0.25)，可以创建新题材",
+        "confidence": 0.75
+      },
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.413964"
+    },
+    {
+      "event_id": "news_13",
+      "event_title": "SpaceX相关新闻",
+      "event_industries": [
+        "商业航天",
+        "国防"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 6
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.414986"
+    },
+    {
+      "event_id": "news_14",
+      "event_title": "SpaceX相关新闻",
+      "event_industries": [
+        "商业航天",
+        "国防"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 6
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.415612"
+    },
+    {
+      "event_id": "news_31",
+      "event_title": "稀土永磁相关新闻",
+      "event_industries": [
+        "稀土",
+        "磁性材料"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 6
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.416210"
+    },
+    {
+      "event_id": "news_38",
+      "event_title": "稀土永磁相关新闻",
+      "event_industries": [
+        "稀土",
+        "磁性材料"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 6
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.416812"
+    },
+    {
+      "event_id": "news_39",
+      "event_title": "海洋经济相关新闻",
+      "event_industries": [
+        "海洋工程",
+        "航运"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 6
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.417404"
+    },
+    {
+      "event_id": "news_49",
+      "event_title": "光刻胶相关新闻",
+      "event_industries": [
+        "半导体",
+        "化学材料"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 6
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.417991"
+    },
+    {
+      "event_id": "news_5",
+      "event_title": "AI/AR眼镜相关新闻",
+      "event_industries": [
+        "消费电子",
+        "人工智能"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "眼镜相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'眼镜相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 6
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.418630"
+    },
+    {
+      "event_id": "news_15",
+      "event_title": "可控核聚变相关新闻",
+      "event_industries": [
+        "新能源",
+        "高端装备"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "原始新闻事件: 新题材"
+      },
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "相关新闻",
+        "confidence": 0.48,
+        "reason": "与现有题材'相关新闻'有一定关联 (相似度: 0.48)",
+        "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+        "match_type": "moderate_similarity",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 6
+      },
+      "processing_result": {
+        "status": "in_review",
+        "execution_path": "review_pool",
+        "execution_result": null
+      },
+      "deduplication_info": {},
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T15:15:16.419223"
+    }
+  ]
+}

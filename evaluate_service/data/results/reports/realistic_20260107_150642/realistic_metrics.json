@@ -1,0 +1,382 @@
+{
+  "timestamp": "2026-01-07T15:06:42.692003",
+  "total_cases": 76,
+  "successful_cases": 72,
+  "overall_precision": 0.834,
+  "overall_recall": 0.829,
+  "overall_f1": 0.832,
+  "theme_wise_metrics": {
+    "AI/AR眼镜": {
+      "test_count": 10,
+      "correct_count": 10,
+      "precision": 0.86,
+      "recall": 0.903,
+      "f1": 0.88
+    },
+    "SpaceX": {
+      "test_count": 5,
+      "correct_count": 5,
+      "precision": 0.943,
+      "recall": 0.868,
+      "f1": 0.904
+    },
+    "可控核聚变": {
+      "test_count": 10,
+      "correct_count": 10,
+      "precision": 0.737,
+      "recall": 0.794,
+      "f1": 0.764
+    },
+    "对日制裁": {
+      "test_count": 6,
+      "correct_count": 4,
+      "precision": 0.881,
+      "recall": 0.861,
+      "f1": 0.871
+    },
+    "稀土永磁": {
+      "test_count": 8,
+      "correct_count": 7,
+      "precision": 0.801,
+      "recall": 0.75,
+      "f1": 0.774
+    },
+    "海洋经济": {
+      "test_count": 5,
+      "correct_count": 5,
+      "precision": 0.694,
+      "recall": 0.651,
+      "f1": 0.671
+    },
+    "光刻胶": {
+      "test_count": 8,
+      "correct_count": 8,
+      "precision": 0.855,
+      "recall": 0.798,
+      "f1": 0.825
+    },
+    "卫星互联": {
+      "test_count": 10,
+      "correct_count": 10,
+      "precision": 0.886,
+      "recall": 0.924,
+      "f1": 0.904
+    },
+    "液冷数据中心": {
+      "test_count": 8,
+      "correct_count": 7,
+      "precision": 0.785,
+      "recall": 0.814,
+      "f1": 0.799
+    },
+    "AI智能体Manus": {
+      "test_count": 6,
+      "correct_count": 6,
+      "precision": 0.93,
+      "recall": 0.857,
+      "f1": 0.892
+    }
+  },
+  "results": [
+    {
+      "test_id": "AI_AR眼镜_001",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 0.836,
+        "recall": 0.938,
+        "f1": 0.884
+      }
+    },
+    {
+      "test_id": "AI_AR眼镜_002",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 0.882,
+        "recall": 0.889,
+        "f1": 0.886
+      }
+    },
+    {
+      "test_id": "AI_AR眼镜_003",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 0.808,
+        "recall": 0.94,
+        "f1": 0.869
+      }
+    },
+    {
+      "test_id": "AI_AR眼镜_004",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 0.841,
+        "recall": 0.913,
+        "f1": 0.875
+      }
+    },
+    {
+      "test_id": "AI_AR眼镜_005",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 0.871,
+        "recall": 0.879,
+        "f1": 0.875
+      }
+    },
+    {
+      "test_id": "AI_AR眼镜_006",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 0.863,
+        "recall": 0.913,
+        "f1": 0.887
+      }
+    },
+    {
+      "test_id": "AI_AR眼镜_007",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 0.883,
+        "recall": 0.908,
+        "f1": 0.895
+      }
+    },
+    {
+      "test_id": "AI_AR眼镜_008",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 0.866,
+        "recall": 0.886,
+        "f1": 0.876
+      }
+    },
+    {
+      "test_id": "AI_AR眼镜_009",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 0.872,
+        "recall": 0.903,
+        "f1": 0.887
+      }
+    },
+    {
+      "test_id": "AI_AR眼镜_010",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 0.876,
+        "recall": 0.863,
+        "f1": 0.87
+      }
+    },
+    {
+      "test_id": "SpaceX_001",
+      "theme": "SpaceX",
+      "discovered": [
+        "SpaceX"
+      ],
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "metrics": {
+        "precision": 0.921,
+        "recall": 0.841,
+        "f1": 0.879
+      }
+    },
+    {
+      "test_id": "SpaceX_002",
+      "theme": "SpaceX",
+      "discovered": [
+        "SpaceX"
+      ],
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "metrics": {
+        "precision": 0.931,
+        "recall": 0.861,
+        "f1": 0.894
+      }
+    },
+    {
+      "test_id": "SpaceX_003",
+      "theme": "SpaceX",
+      "discovered": [
+        "SpaceX"
+      ],
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "metrics": {
+        "precision": 0.982,
+        "recall": 0.895,
+        "f1": 0.937
+      }
+    },
+    {
+      "test_id": "SpaceX_004",
+      "theme": "SpaceX",
+      "discovered": [
+        "SpaceX"
+      ],
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "metrics": {
+        "precision": 0.955,
+        "recall": 0.905,
+        "f1": 0.929
+      }
+    },
+    {
+      "test_id": "SpaceX_005",
+      "theme": "SpaceX",
+      "discovered": [
+        "SpaceX"
+      ],
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "metrics": {
+        "precision": 0.927,
+        "recall": 0.837,
+        "f1": 0.88
+      }
+    },
+    {
+      "test_id": "可控核聚变_001",
+      "theme": "可控核聚变",
+      "discovered": [
+        "可控核聚变"
+      ],
+      "ground_truth": [
+        "可控核聚变"
+      ],
+      "metrics": {
+        "precision": 0.726,
+        "recall": 0.811,
+        "f1": 0.766
+      }
+    },
+    {
+      "test_id": "可控核聚变_002",
+      "theme": "可控核聚变",
+      "discovered": [
+        "可控核聚变"
+      ],
+      "ground_truth": [
+        "可控核聚变"
+      ],
+      "metrics": {
+        "precision": 0.728,
+        "recall": 0.836,
+        "f1": 0.779
+      }
+    },
+    {
+      "test_id": "可控核聚变_003",
+      "theme": "可控核聚变",
+      "discovered": [
+        "可控核聚变"
+      ],
+      "ground_truth": [
+        "可控核聚变"
+      ],
+      "metrics": {
+        "precision": 0.75,
+        "recall": 0.778,
+        "f1": 0.764
+      }
+    },
+    {
+      "test_id": "可控核聚变_004",
+      "theme": "可控核聚变",
+      "discovered": [
+        "可控核聚变"
+      ],
+      "ground_truth": [
+        "可控核聚变"
+      ],
+      "metrics": {
+        "precision": 0.717,
+        "recall": 0.794,
+        "f1": 0.754
+      }
+    },
+    {
+      "test_id": "可控核聚变_005",
+      "theme": "可控核聚变",
+      "discovered": [
+        "可控核聚变"
+      ],
+      "ground_truth": [
+        "可控核聚变"
+      ],
+      "metrics": {
+        "precision": 0.785,
+        "recall": 0.776,
+        "f1": 0.781
+      }
+    }
+  ]
+}

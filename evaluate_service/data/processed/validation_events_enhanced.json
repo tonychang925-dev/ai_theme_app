@@ -1,0 +1,3570 @@
+{
+  "metadata": {
+    "processing_time": "2026-01-10T11:43:35.680102",
+    "script": "01_preprocess_validation_data_v2.py",
+    "version": "2.0",
+    "description": "使用DeepSeekParser处理原始新闻 -> 结构化事件",
+    "parser_used": "DeepSeekParser (测试模式)",
+    "total_news": 76,
+    "stats": {
+      "total_processed": 76,
+      "successful": 76,
+      "failed": 0,
+      "with_create_new": 21,
+      "with_cluster": 55,
+      "avg_confidence": 0.8868421052631589
+    }
+  },
+  "events": [
+    {
+      "news_id": "news_000",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "消费电子",
+        "可穿戴设备",
+        "人工智能",
+        "增强现实",
+        "光学制造"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "Meta与Oakley合作开发的智能眼镜产品于6月20日举行发布会。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件为两家知名公司合作推出的智能眼镜产品发布会，属于现有AI/AR可穿戴设备领域的常规产品迭代，不具备'定义性'（非国家级政策）、'首创性'（智能眼镜已有多个品牌推出）或'全局性'（未显著改变行业格局）的重大标准，应归类到现有'智能穿戴'或'AI硬件'投资题材中。"
+      },
+      "original_data": {
+        "title": "AI/AR眼镜相关新闻",
+        "theme": "AI/AR眼镜",
+        "content_preview": "Meta与Oakley合作开发的智能眼镜产品于6月20日举行发布会。..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "Meta与Oakley合作开发的智能眼镜产品于6月20日举行发布会。",
+            "impact_industries": [
+              "消费电子",
+              "可穿戴设备",
+              "人工智能",
+              "增强现实",
+              "光学制造"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件为两家知名公司合作推出的智能眼镜产品发布会，属于现有AI/AR可穿戴设备领域的常规产品迭代，不具备'定义性'（非国家级政策）、'首创性'（智能眼镜已有多个品牌推出）或'全局性'（未显著改变行业格局）的重大标准，应归类到现有'智能穿戴'或'AI硬件'投资题材中。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:19.550421"
+    },
+    {
+      "news_id": "news_001",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "消费电子",
+        "可穿戴设备",
+        "运动科技",
+        "AR/VR"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "Meta与Oakley合作推出专为运动设计的智能眼镜，旨在挑战传统运动相机市场。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件属于现有AR/VR及智能穿戴设备赛道的产品迭代与合作，虽具创新性（运动场景优化），但未达到'定义性'（如国家级政策）、'首创性'（非突破性技术首次商用）或'全局性'（未显著改变行业格局）的重大标准。建议归入现有'智能穿戴'或'AR应用'投资主题进行跟踪。"
+      },
+      "original_data": {
+        "title": "AI/AR眼镜相关新闻",
+        "theme": "AI/AR眼镜",
+        "content_preview": "Meta联手Oakley推出智能眼镜 ，为运动设计挑战运动相机。..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "Meta与Oakley合作推出专为运动设计的智能眼镜，旨在挑战传统运动相机市场。",
+            "impact_industries": [
+              "消费电子",
+              "可穿戴设备",
+              "运动科技",
+              "AR/VR"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件属于现有AR/VR及智能穿戴设备赛道的产品迭代与合作，虽具创新性（运动场景优化），但未达到'定义性'（如国家级政策）、'首创性'（非突破性技术首次商用）或'全局性'（未显著改变行业格局）的重大标准。建议归入现有'智能穿戴'或'AR应用'投资主题进行跟踪。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:20.559573"
+    },
+    {
+      "news_id": "news_002",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "半导体",
+        "消费电子",
+        "AR/VR设备",
+        "光学元件"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "英伟达公开了一项名为'无背光增强现实数字全息技术'的AR眼镜专利，展示了其在AR/VR领域的技术创新。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件属于AR/VR技术领域的持续创新，但专利公开本身并非首次定义性技术突破（数字全息技术已有研究）、非国家级政策、也未达到改变行业格局的全局性影响。它更可能强化现有'AR/VR硬件创新'或'元宇宙基础设施'等已有投资题材，而非催生全新独立题材。"
+      },
+      "original_data": {
+        "title": "AI/AR眼镜相关新闻",
+        "theme": "AI/AR眼镜",
+        "content_preview": "1月3日电，美国专利及商标局官网显示，英伟达公开了一项AR眼镜专利（US20250004275A1），名为“无背光增强现实数字全息技术”。**..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "英伟达公开了一项名为'无背光增强现实数字全息技术'的AR眼镜专利，展示了其在AR/VR领域的技术创新。",
+            "impact_industries": [
+              "半导体",
+              "消费电子",
+              "AR/VR设备",
+              "光学元件"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件属于AR/VR技术领域的持续创新，但专利公开本身并非首次定义性技术突破（数字全息技术已有研究）、非国家级政策、也未达到改变行业格局的全局性影响。它更可能强化现有'AR/VR硬件创新'或'元宇宙基础设施'等已有投资题材，而非催生全新独立题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:19.842427"
+    },
+    {
+      "news_id": "news_003",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "消费电子",
+        "智能穿戴",
+        "增强现实",
+        "半导体"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "三星电子宣布将于2025年1月发布Galaxy S25系列手机、Galaxy Ring 2智能戒指和AR智能眼镜。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件为三星在现有产品线（智能手机、智能穿戴）基础上的常规迭代与扩展，AR智能眼镜虽属新产品形态，但市场已有Meta、苹果等厂商布局，三星此举属于跟进而非首创；事件缺乏国家级政策支持、突破性技术首次商用或颠覆行业格局的全局性影响，因此不符合'定义性'、'首创性'或'全局性'的重大标准，应归类至现有'消费电子创新'或'AR/VR设备'投资题材中。"
+      },
+      "original_data": {
+        "title": "AI/AR眼镜相关新闻",
+        "theme": "AI/AR眼镜",
+        "content_preview": "三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以及其他两款新品：Galaxy Ring 2 智能戒指和 AR 智..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "三星电子宣布将于2025年1月发布Galaxy S25系列手机、Galaxy Ring 2智能戒指和AR智能眼镜。",
+            "impact_industries": [
+              "消费电子",
+              "智能穿戴",
+              "增强现实",
+              "半导体"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件为三星在现有产品线（智能手机、智能穿戴）基础上的常规迭代与扩展，AR智能眼镜虽属新产品形态，但市场已有Meta、苹果等厂商布局，三星此举属于跟进而非首创；事件缺乏国家级政策支持、突破性技术首次商用或颠覆行业格局的全局性影响，因此不符合'定义性'、'首创性'或'全局性'的重大标准，应归类至现有'消费电子创新'或'AR/VR设备'投资题材中。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:20.516195"
+    },
+    {
+      "news_id": "news_004",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "消费电子",
+        "智能穿戴",
+        "光学制造",
+        "AR/VR"
+      ],
+      "direction": "利好",
+      "confidence": 0.85,
+      "summary": "Meta与EssilorLuxottica合作，计划在2025年下半年推出带显示屏的智能太阳镜，用于显示通知和虚拟助手回复。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.9,
+        "reason": "该事件属于现有智能穿戴/AR眼镜赛道的产品迭代，不具备'定义性'（非国家级政策）、'首创性'（显示屏集成非突破性技术首次商用）或'全局性'（未改变行业根本格局），应归类至现有'智能穿戴设备'或'AR硬件'投资主题。"
+      },
+      "original_data": {
+        "title": "AI/AR眼镜相关新闻",
+        "theme": "AI/AR眼镜",
+        "content_preview": "24日讯，Meta正与眼镜集团EssilorLuxottica合作，计划在其售价300美元的太阳镜中加入显示屏。知情人士透露，新版眼镜可能最早将在2025年下半年推出，显示屏可能用于展示通知或来自Me..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "Meta与EssilorLuxottica合作，计划在2025年下半年推出带显示屏的智能太阳镜，用于显示通知和虚拟助手回复。",
+            "impact_industries": [
+              "消费电子",
+              "智能穿戴",
+              "光学制造",
+              "AR/VR"
+            ],
+            "direction": "利好",
+            "confidence": 0.85
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.9,
+            "reason": "该事件属于现有智能穿戴/AR眼镜赛道的产品迭代，不具备'定义性'（非国家级政策）、'首创性'（显示屏集成非突破性技术首次商用）或'全局性'（未改变行业根本格局），应归类至现有'智能穿戴设备'或'AR硬件'投资主题。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:19.661957"
+    },
+    {
+      "news_id": "news_005",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "AR/VR设备",
+        "MicroLED显示技术",
+        "半导体制造",
+        "消费电子"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "鸿海宣布与Porotech合作进军AR眼镜市场，计划在台中建立MicroLED晶圆制程产线，预计2025年第四季量产。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件虽涉及AR眼镜和MicroLED技术布局，但属于现有AR/VR产业链的延伸和产能扩张，未达到'定义性'（如国家级新政）、'首创性'（MicroLED技术已有其他厂商布局，非首次商用）或'全局性'（未明显改变行业格局）的重大标准。建议归入现有'AR/VR硬件'或'MicroLED显示'投资题材集群。"
+      },
+      "original_data": {
+        "title": "AI/AR眼镜相关新闻",
+        "theme": "AI/AR眼镜",
+        "content_preview": "24日讯，鸿海宣布，将携手Porotech进军AR眼镜市场。依双方合作内容，鸿海将加速在AR与MicroLED的战略布局，并计划在台中建立MicroLED晶圆制程产线，预计2025年第四季投入量产。..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "鸿海宣布与Porotech合作进军AR眼镜市场，计划在台中建立MicroLED晶圆制程产线，预计2025年第四季量产。",
+            "impact_industries": [
+              "AR/VR设备",
+              "MicroLED显示技术",
+              "半导体制造",
+              "消费电子"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件虽涉及AR眼镜和MicroLED技术布局，但属于现有AR/VR产业链的延伸和产能扩张，未达到'定义性'（如国家级新政）、'首创性'（MicroLED技术已有其他厂商布局，非首次商用）或'全局性'（未明显改变行业格局）的重大标准。建议归入现有'AR/VR硬件'或'MicroLED显示'投资题材集群。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:20.601810"
+    },
+    {
+      "news_id": "news_006",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "消费电子",
+        "半导体",
+        "AR/VR设备"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "谷歌与国内AR眼镜厂商XREAL达成战略合作，XREAL发布搭载自研空间计算芯片X1的新产品XREAL One。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件虽涉及谷歌战略合作、自研芯片发布等积极因素，但本质上属于现有AR/VR产业链的深化合作与技术迭代，未达到'定义性'（如国家级政策）、'首创性'（空间计算芯片非首次商用）或'全局性'（未显著改变行业格局）的重大标准。建议归入现有'AR/VR硬件'或'空间计算'投资题材集群。"
+      },
+      "original_data": {
+        "title": "AI/AR眼镜相关新闻",
+        "theme": "AI/AR眼镜",
+        "content_preview": "在Android XR发布会上，谷歌与国内消费级AR眼镜厂商XREAL达成了战略合作。《科创板日报》记者获悉，XREAL的产业链伙伴包括立讯精密、龙旗科技等。上周，XREAL刚刚发布了全新一代产品XR..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "谷歌与国内AR眼镜厂商XREAL达成战略合作，XREAL发布搭载自研空间计算芯片X1的新产品XREAL One。",
+            "impact_industries": [
+              "消费电子",
+              "半导体",
+              "AR/VR设备"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件虽涉及谷歌战略合作、自研芯片发布等积极因素，但本质上属于现有AR/VR产业链的深化合作与技术迭代，未达到'定义性'（如国家级政策）、'首创性'（空间计算芯片非首次商用）或'全局性'（未显著改变行业格局）的重大标准。建议归入现有'AR/VR硬件'或'空间计算'投资题材集群。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:19.827134"
+    },
+    {
+      "news_id": "news_007",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "消费电子",
+        "半导体",
+        "光学元件",
+        "软件与内容"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "三星计划在2025年第三季度正式发售名为Infinite的扩展现实（XR）设备，预计在2025年第三季度和第四季度分别出货2万至3万台以上。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件属于现有XR/AR/VR市场中的新产品发布，三星作为主要消费电子厂商进入该领域，虽能提振市场关注度和供应链需求，但缺乏'定义性'（非国家级政策）、'首创性'（XR技术已有Meta、苹果等先行者）或'全局性'（未颠覆行业格局）特征，因此应归类到现有'XR/AR设备'或'消费电子创新'题材中，而非催生全新投资题材。"
+      },
+      "original_data": {
+        "title": "AI/AR眼镜相关新闻",
+        "theme": "AI/AR眼镜",
+        "content_preview": "10日讯，三星内部正积极推进名为Infinite的扩展现实（XR）项目，计划在明年1月召开的Galaxy Unpacked发布会上公开展示，并会在2025年第三季度正式发售。三星电子已制定了XR设备的..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "三星计划在2025年第三季度正式发售名为Infinite的扩展现实（XR）设备，预计在2025年第三季度和第四季度分别出货2万至3万台以上。",
+            "impact_industries": [
+              "消费电子",
+              "半导体",
+              "光学元件",
+              "软件与内容"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件属于现有XR/AR/VR市场中的新产品发布，三星作为主要消费电子厂商进入该领域，虽能提振市场关注度和供应链需求，但缺乏'定义性'（非国家级政策）、'首创性'（XR技术已有Meta、苹果等先行者）或'全局性'（未颠覆行业格局）特征，因此应归类到现有'XR/AR设备'或'消费电子创新'题材中，而非催生全新投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:20.670509"
+    },
+    {
+      "news_id": "news_008",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "消费电子",
+        "增强现实(AR)",
+        "人工智能(AI)",
+        "光学元件",
+        "人机交互"
+      ],
+      "direction": "利好",
+      "confidence": 0.9,
+      "summary": "智能眼镜厂商INMO影目科技将于11月29日在成都举办新品发布会，预计发布INMO Air3、INMO Go2两款AR眼镜，同时行业报告预测到2029年智能眼镜市场规模将达1067.78亿元，年复合增速18.56%。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件为单一厂商的产品迭代发布，虽结合了AI/AR技术并处于高增长赛道，但缺乏'定义性'（非国家级政策）、'首创性'（非突破性技术首次商用）或'全局性'（未显著改变行业竞争格局）特征。智能眼镜作为现有'元宇宙'、'可穿戴设备'或'人机交互'投资题材的组成部分，更适合归类到现有主题集群中。"
+      },
+      "original_data": {
+        "title": "AI/AR眼镜相关新闻",
+        "theme": "AI/AR眼镜",
+        "content_preview": "消息面上，智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会。有行业媒体报道称，届时或将发布INMO Air3、INMO Go2两款AR眼镜。根据贝哲斯智能眼镜市场研究报..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "智能眼镜厂商INMO影目科技将于11月29日在成都举办新品发布会，预计发布INMO Air3、INMO Go2两款AR眼镜，同时行业报告预测到2029年智能眼镜市场规模将达1067.78亿元，年复合增速18.56%。",
+            "impact_industries": [
+              "消费电子",
+              "增强现实(AR)",
+              "人工智能(AI)",
+              "光学元件",
+              "人机交互"
+            ],
+            "direction": "利好",
+            "confidence": 0.9
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件为单一厂商的产品迭代发布，虽结合了AI/AR技术并处于高增长赛道，但缺乏'定义性'（非国家级政策）、'首创性'（非突破性技术首次商用）或'全局性'（未显著改变行业竞争格局）特征。智能眼镜作为现有'元宇宙'、'可穿戴设备'或'人机交互'投资题材的组成部分，更适合归类到现有主题集群中。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:21.247807"
+    },
+    {
+      "news_id": "news_009",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "人工智能",
+        "消费电子",
+        "智能穿戴",
+        "计算机视觉"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "云天励飞战略投资闪极科技，后者将推出国内首款量产AI拍摄眼镜。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "该事件符合'首创性'重大标准：1. 闪极科技将推出'国内首款量产AI拍摄眼镜'，这是AI与AR眼镜融合的突破性产品首次实现商业化量产；2. 云天励飞作为AI公司战略投资，表明技术整合与产业协同，可能催生'AI+AR智能穿戴'这一全新投资题材，具备定义新兴细分市场的潜力。"
+      },
+      "original_data": {
+        "title": "AI/AR眼镜相关新闻",
+        "theme": "AI/AR眼镜",
+        "content_preview": "云天励飞战略投资闪极科技 后者将推国内首款量产AI拍摄眼镜**..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "云天励飞战略投资闪极科技，后者将推出国内首款量产AI拍摄眼镜。",
+            "impact_industries": [
+              "人工智能",
+              "消费电子",
+              "智能穿戴",
+              "计算机视觉"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "该事件符合'首创性'重大标准：1. 闪极科技将推出'国内首款量产AI拍摄眼镜'，这是AI与AR眼镜融合的突破性产品首次实现商业化量产；2. 云天励飞作为AI公司战略投资，表明技术整合与产业协同，可能催生'AI+AR智能穿戴'这一全新投资题材，具备定义新兴细分市场的潜力。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:19.426571"
+    },
+    {
+      "news_id": "news_010",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "航空航天",
+        "基础设施建设",
+        "环保与生态保护"
+      ],
+      "direction": "利好",
+      "confidence": 0.85,
+      "summary": "白宫考虑将部分联邦野生动物保护用地划拨给SpaceX，用于扩建火箭发射与生产基地。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.75,
+        "reason": "该事件虽涉及联邦土地政策调整，但本质上属于SpaceX现有商业航天业务的产能扩张，不具备'定义性'（非国家级新政）、'首创性'（非突破性技术首次商用）或'全局性'（未改变行业格局），更可能归入现有'商业航天'或'基础设施建设'投资题材，而非催生全新市场题材。"
+      },
+      "original_data": {
+        "title": "SpaceX相关新闻",
+        "theme": "SpaceX",
+        "content_preview": "据报道，白宫考虑将部分联邦野生动物保护用地划拨给SpaceX用于扩建火箭发射与生产基地。（新闻来源：财联社）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "白宫考虑将部分联邦野生动物保护用地划拨给SpaceX，用于扩建火箭发射与生产基地。",
+            "impact_industries": [
+              "航空航天",
+              "基础设施建设",
+              "环保与生态保护"
+            ],
+            "direction": "利好",
+            "confidence": 0.85
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.75,
+            "reason": "该事件虽涉及联邦土地政策调整，但本质上属于SpaceX现有商业航天业务的产能扩张，不具备'定义性'（非国家级新政）、'首创性'（非突破性技术首次商用）或'全局性'（未改变行业格局），更可能归入现有'商业航天'或'基础设施建设'投资题材，而非催生全新市场题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:28.448925"
+    },
+    {
+      "news_id": "news_011",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "航天军工",
+        "卫星制造",
+        "通信技术",
+        "国防安全"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "美国太空军下属的太空发展局向4家公司授予价值35亿美元的合同，采购72颗导弹预警和跟踪卫星，这是美军低地球轨道星座迄今最大交易。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "此事件符合'定义性'和'全局性'重大标准：1. 定义性：这是美军首次大规模采购低地球轨道导弹预警卫星星座，标志着国家级太空防御战略进入新阶段，可能定义未来军事卫星采购模式。2. 全局性：35亿美元的大额合同将重塑全球低轨卫星产业链格局，推动相关技术商业化，可能催生'军事低轨卫星星座'这一全新投资题材，涉及卫星制造、发射服务、地面站、数据处理等多个细分领域。"
+      },
+      "original_data": {
+        "title": "SpaceX相关新闻",
+        "theme": "SpaceX",
+        "content_preview": "据美国《空天部队》杂志网站12月19日报道，美国太空军下属的太空发展局当天宣布，向4家公司授予价值35亿美元的合同，用于采购总共72颗导弹预警和跟踪卫星——这是迄今为止美军低地球轨道星座的最大一笔交易..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "美国太空军下属的太空发展局向4家公司授予价值35亿美元的合同，采购72颗导弹预警和跟踪卫星，这是美军低地球轨道星座迄今最大交易。",
+            "impact_industries": [
+              "航天军工",
+              "卫星制造",
+              "通信技术",
+              "国防安全"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "此事件符合'定义性'和'全局性'重大标准：1. 定义性：这是美军首次大规模采购低地球轨道导弹预警卫星星座，标志着国家级太空防御战略进入新阶段，可能定义未来军事卫星采购模式。2. 全局性：35亿美元的大额合同将重塑全球低轨卫星产业链格局，推动相关技术商业化，可能催生'军事低轨卫星星座'这一全新投资题材，涉及卫星制造、发射服务、地面站、数据处理等多个细分领域。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:29.923260"
+    },
+    {
+      "news_id": "news_012",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "航空航天",
+        "商业航天",
+        "风险投资",
+        "二级市场投资"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "SpaceX正式向员工通报正在为明年可能进行的IPO做准备，内部股票定价显示公司估值从约4000亿美元翻倍至约8000亿美元。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "SpaceX的IPO准备和估值翻倍虽然是重大事件，但商业航天和私人太空探索作为投资题材已存在多年（如维珍银河、蓝色起源等）。此事属于现有'商业航天/太空经济'题材的强化和验证，而非定义性、首创性或全局性的全新题材开创。它可能推动该题材热度上升，吸引更多资本关注，但未达到'定义新市场格局'的标准。"
+      },
+      "original_data": {
+        "title": "SpaceX相关新闻",
+        "theme": "SpaceX",
+        "content_preview": "SpaceX已正式向员工通报，公司正在为明年可能进行的首次公开募股(IPO)做准备，这一表态证实了近期的市场传闻。知情人士透露，约翰森在备忘录中披露了最新的内部股票定价为每股421美元，这意味着Spa..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "SpaceX正式向员工通报正在为明年可能进行的IPO做准备，内部股票定价显示公司估值从约4000亿美元翻倍至约8000亿美元。",
+            "impact_industries": [
+              "航空航天",
+              "商业航天",
+              "风险投资",
+              "二级市场投资"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "SpaceX的IPO准备和估值翻倍虽然是重大事件，但商业航天和私人太空探索作为投资题材已存在多年（如维珍银河、蓝色起源等）。此事属于现有'商业航天/太空经济'题材的强化和验证，而非定义性、首创性或全局性的全新题材开创。它可能推动该题材热度上升，吸引更多资本关注，但未达到'定义新市场格局'的标准。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:29.629965"
+    },
+    {
+      "news_id": "news_013",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "航空航天",
+        "金融投资",
+        "科技"
+      ],
+      "direction": "利好",
+      "confidence": 0.85,
+      "summary": "SpaceX创始人马斯克确认公司计划明年通过IPO筹集数百亿美元资金。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.88,
+        "reason": "SpaceX作为全球商业航天领域的领导者，其首次公开募股（IPO）具有'定义性'和'全局性'特征。这不仅是商业航天领域规模最大的IPO之一，还可能重新定义全球航天产业的资本运作模式，吸引大量资金关注并可能催生'商业航天投资'这一全新市场题材，改变行业竞争格局和估值体系。"
+      },
+      "original_data": {
+        "title": "SpaceX相关新闻",
+        "theme": "SpaceX",
+        "content_preview": "北京时间12月11日，SpaceX的创始人马斯克在X上确认了“SpaceX计划明年通过首次公开募股（IPO）筹集数百亿美元资金”的消息。（新闻来源：第一财经）**..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "SpaceX创始人马斯克确认公司计划明年通过IPO筹集数百亿美元资金。",
+            "impact_industries": [
+              "航空航天",
+              "金融投资",
+              "科技"
+            ],
+            "direction": "利好",
+            "confidence": 0.85
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.88,
+            "reason": "SpaceX作为全球商业航天领域的领导者，其首次公开募股（IPO）具有'定义性'和'全局性'特征。这不仅是商业航天领域规模最大的IPO之一，还可能重新定义全球航天产业的资本运作模式，吸引大量资金关注并可能催生'商业航天投资'这一全新市场题材，改变行业竞争格局和估值体系。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:28.510653"
+    },
+    {
+      "news_id": "news_014",
+      "event_type": "市场传闻澄清",
+      "impact_industries": [
+        "商业航天",
+        "卫星通信",
+        "太空科技"
+      ],
+      "direction": "中性",
+      "confidence": 0.95,
+      "summary": "马斯克澄清SpaceX以8000亿美元估值融资的传闻不准确，并强调公司现金流为正，估值提升取决于星舰、星链进展及手机网络频谱获取。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件本质是对市场传闻的澄清，未涉及定义性政策、首创性技术或全局性行业格局改变。SpaceX的星舰、星链及手机网络业务均属已有商业航天与卫星通信赛道，其进展可归入现有'太空经济'或'低轨卫星互联网'投资主题，无需创建全新题材。"
+      },
+      "original_data": {
+        "title": "SpaceX相关新闻",
+        "theme": "SpaceX",
+        "content_preview": "针对商业航天龙头SpaceX“冲击8000亿美元估值，并瞄准明年IPO”的最新传闻，世界首富马斯克在北京时间周日凌晨公开回应。他在社交媒体上发帖称，SpaceX以8000亿美元估值融资的消息“并不准确..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "市场传闻澄清",
+            "summary": "马斯克澄清SpaceX以8000亿美元估值融资的传闻不准确，并强调公司现金流为正，估值提升取决于星舰、星链进展及手机网络频谱获取。",
+            "impact_industries": [
+              "商业航天",
+              "卫星通信",
+              "太空科技"
+            ],
+            "direction": "中性",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件本质是对市场传闻的澄清，未涉及定义性政策、首创性技术或全局性行业格局改变。SpaceX的星舰、星链及手机网络业务均属已有商业航天与卫星通信赛道，其进展可归入现有'太空经济'或'低轨卫星互联网'投资主题，无需创建全新题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:28.914128"
+    },
+    {
+      "news_id": "news_015",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "可控核聚变",
+        "新能源",
+        "高端装备制造",
+        "新材料",
+        "电力"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "中国科学院合肥物质科学研究院等离子体物理研究所科研团队宣布，全超导托卡马克核聚变实验装置（EAST）实验证实托卡马克密度自由区的存在，找到突破密度极限的方法，为磁约束核聚变装置高密度运行提供了重要的物理依据。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件属于可控核聚变领域的重要技术突破，证实了密度自由区的存在并找到了突破密度极限的方法，具有显著的科学价值和长期产业潜力。然而，从投资题材角度看，它不完全符合'重大标准'：1. 非'定义性'：这不是国家级新政或产业规划，而是具体科研进展；2. 非'首创性'：EAST装置此前已有多次实验突破，本次是持续研究中的一步，非首次商用或颠覆性应用；3. 非'全局性'：目前仍处于实验阶段，距离商业化应用较远，尚未立即改变能源行业格局。因此，它更应归入现有'可控核聚变'或'新能源技术'投资主题中，作为该主题下的重要催化事件，而非催生全新独立题材。"
+      },
+      "original_data": {
+        "title": "可控核聚变相关新闻",
+        "theme": "可控核聚变",
+        "content_preview": "中国科学院合肥物质科学研究院等离子体物理研究所科研团队宣布，有“人造太阳”之称的全超导托卡马克核聚变实验装置（EAST）实验证实托卡马克密度自由区的存在，找到突破密度极限的方法，为磁约束核聚变装置高密..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "中国科学院合肥物质科学研究院等离子体物理研究所科研团队宣布，全超导托卡马克核聚变实验装置（EAST）实验证实托卡马克密度自由区的存在，找到突破密度极限的方法，为磁约束核聚变装置高密度运行提供了重要的物理依据。",
+            "impact_industries": [
+              "可控核聚变",
+              "新能源",
+              "高端装备制造",
+              "新材料",
+              "电力"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件属于可控核聚变领域的重要技术突破，证实了密度自由区的存在并找到了突破密度极限的方法，具有显著的科学价值和长期产业潜力。然而，从投资题材角度看，它不完全符合'重大标准'：1. 非'定义性'：这不是国家级新政或产业规划，而是具体科研进展；2. 非'首创性'：EAST装置此前已有多次实验突破，本次是持续研究中的一步，非首次商用或颠覆性应用；3. 非'全局性'：目前仍处于实验阶段，距离商业化应用较远，尚未立即改变能源行业格局。因此，它更应归入现有'可控核聚变'或'新能源技术'投资主题中，作为该主题下的重要催化事件，而非催生全新独立题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:33.214752"
+    },
+    {
+      "news_id": "news_016",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "能源",
+        "电力",
+        "高端制造",
+        "新材料",
+        "科研服务"
+      ],
+      "direction": "利好",
+      "confidence": 0.9,
+      "summary": "可控核聚变创新联合体于12月30日举办第二届锦江论坛，旨在推动相关技术研发与合作。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件为行业论坛的举办，属于技术交流与合作活动，虽涉及前沿的可控核聚变领域，但新闻未提及具体的定义性政策、首创性技术突破或全局性格局改变（如商业化落地、重大实验成果发布等），因此不符合'定义性'、'首创性'或'全局性'的重大标准。它更可能融入现有的'新能源'、'先进能源技术'或'碳中和'等投资题材中，而非催生全新市场题材。"
+      },
+      "original_data": {
+        "title": "可控核聚变相关新闻",
+        "theme": "可控核聚变",
+        "content_preview": "可控核聚变创新联合体第二届锦江论坛于12月30日举办（新闻来源：财联社）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "可控核聚变创新联合体于12月30日举办第二届锦江论坛，旨在推动相关技术研发与合作。",
+            "impact_industries": [
+              "能源",
+              "电力",
+              "高端制造",
+              "新材料",
+              "科研服务"
+            ],
+            "direction": "利好",
+            "confidence": 0.9
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件为行业论坛的举办，属于技术交流与合作活动，虽涉及前沿的可控核聚变领域，但新闻未提及具体的定义性政策、首创性技术突破或全局性格局改变（如商业化落地、重大实验成果发布等），因此不符合'定义性'、'首创性'或'全局性'的重大标准。它更可能融入现有的'新能源'、'先进能源技术'或'碳中和'等投资题材中，而非催生全新市场题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:29.668752"
+    },
+    {
+      "news_id": "news_017",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "可控核聚变",
+        "高端装备制造",
+        "新材料",
+        "超导技术",
+        "能源"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "中信建投研报指出，可控核聚变行业正聚焦技术工程化与商业可行性突破，大科学装置及实验堆建设催生大额订单，投资机会集中于中上游环节。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "可控核聚变作为'终极能源'解决方案，其技术工程化与商业可行性突破具有'定义性'（可能重塑全球能源格局）和'全局性'（将彻底改变能源、工业、交通等多个基础行业）。当前阶段的大科学装置建设及实验堆订单标志着从实验室研究向产业化迈进的临界点，符合'首创性'特征（首次大规模工程化尝试）。这很可能催生一个全新的'可控核聚变产业链'投资题材，涵盖材料、装备、工程建设等多个高价值环节。"
+      },
+      "original_data": {
+        "title": "可控核聚变相关新闻",
+        "theme": "可控核聚变",
+        "content_preview": "中信建投研报称，当前可控核聚变行业聚焦技术工程化与商业可行性突破，建设大科学装置及实验堆催生大额订单，高价值量投资机会集中于中上游环节（新闻来源：财联社）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "中信建投研报指出，可控核聚变行业正聚焦技术工程化与商业可行性突破，大科学装置及实验堆建设催生大额订单，投资机会集中于中上游环节。",
+            "impact_industries": [
+              "可控核聚变",
+              "高端装备制造",
+              "新材料",
+              "超导技术",
+              "能源"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "可控核聚变作为'终极能源'解决方案，其技术工程化与商业可行性突破具有'定义性'（可能重塑全球能源格局）和'全局性'（将彻底改变能源、工业、交通等多个基础行业）。当前阶段的大科学装置建设及实验堆订单标志着从实验室研究向产业化迈进的临界点，符合'首创性'特征（首次大规模工程化尝试）。这很可能催生一个全新的'可控核聚变产业链'投资题材，涵盖材料、装备、工程建设等多个高价值环节。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:30.325876"
+    },
+    {
+      "news_id": "news_018",
+      "event_type": "企业并购",
+      "impact_industries": [
+        "可控核聚变",
+        "人工智能",
+        "媒体科技"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "特朗普媒体与科技集团以全股票交易方式与核聚变能源企业TAE科技公司合并，交易价值超60亿美元，旨在整合资本与技术为AI产业提供能源支持，特朗普媒体科技集团股价上涨41.93%。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件虽涉及可控核聚变与AI能源支持的概念整合，但本质是企业间的资本与技术并购，缺乏'定义性'（如国家级能源政策）、'首创性'（可控核聚变技术本身尚未实现商业化突破）或'全局性'（未改变核聚变或AI行业现有格局）。事件更可能归入现有'核聚变投资'或'AI基础设施'题材，而非催生全新独立投资主题。"
+      },
+      "original_data": {
+        "title": "可控核聚变相关新闻",
+        "theme": "可控核聚变",
+        "content_preview": "特朗普旗下的媒体企业——特朗普媒体与科技集团，同意以全股票交易方式与核聚变能源企业TAE科技公司合并，交易总价值超60亿美元。此项交易旨在整合特朗普媒体与科技集团的资本渠道，以及TAE科技的核聚变技术..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "企业并购",
+            "summary": "特朗普媒体与科技集团以全股票交易方式与核聚变能源企业TAE科技公司合并，交易价值超60亿美元，旨在整合资本与技术为AI产业提供能源支持，特朗普媒体科技集团股价上涨41.93%。",
+            "impact_industries": [
+              "可控核聚变",
+              "人工智能",
+              "媒体科技"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件虽涉及可控核聚变与AI能源支持的概念整合，但本质是企业间的资本与技术并购，缺乏'定义性'（如国家级能源政策）、'首创性'（可控核聚变技术本身尚未实现商业化突破）或'全局性'（未改变核聚变或AI行业现有格局）。事件更可能归入现有'核聚变投资'或'AI基础设施'题材，而非催生全新独立投资主题。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:30.121306"
+    },
+    {
+      "news_id": "news_019",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "能源",
+        "电力",
+        "高端制造",
+        "新材料",
+        "金融投资"
+      ],
+      "direction": "利好",
+      "confidence": 0.85,
+      "summary": "国际能源署预测，到2030年全球核聚变市场规模有望接近5000亿美元。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.88,
+        "reason": "该事件符合'定义性'和'全局性'重大标准：1. 国际能源署的权威预测为核聚变产业设定了明确的商业化时间框架和市场规模预期，具有行业定义性；2. 核聚变作为终极能源解决方案，其商业化将彻底颠覆全球能源结构、电力系统及相关产业链，具备改变多个行业格局的全局性影响；3. 5000亿美元的市场规模预测表明该领域正在从科研阶段向大规模产业化过渡，可能催生'可控核聚变商业化'这一全新的市场投资题材。"
+      },
+      "original_data": {
+        "title": "可控核聚变相关新闻",
+        "theme": "可控核聚变",
+        "content_preview": "国际能源署预测，到 2030年，全球核聚变市场规模有望接近5000亿美元(3.5万亿元人民币)。（新闻来源：财联社）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "国际能源署预测，到2030年全球核聚变市场规模有望接近5000亿美元。",
+            "impact_industries": [
+              "能源",
+              "电力",
+              "高端制造",
+              "新材料",
+              "金融投资"
+            ],
+            "direction": "利好",
+            "confidence": 0.85
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.88,
+            "reason": "该事件符合'定义性'和'全局性'重大标准：1. 国际能源署的权威预测为核聚变产业设定了明确的商业化时间框架和市场规模预期，具有行业定义性；2. 核聚变作为终极能源解决方案，其商业化将彻底颠覆全球能源结构、电力系统及相关产业链，具备改变多个行业格局的全局性影响；3. 5000亿美元的市场规模预测表明该领域正在从科研阶段向大规模产业化过渡，可能催生'可控核聚变商业化'这一全新的市场投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:29.982273"
+    },
+    {
+      "news_id": "news_020",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "可控核聚变",
+        "清洁能源",
+        "高耗能产业",
+        "新材料",
+        "高端装备制造"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "中金公司研报表示，十五五规划将可控核聚变明确纳入国家未来产业体系，标志着其从前沿科学探索正式升级为战略性科技攻关方向，为商业化奠定基础。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "该事件完全符合重大题材的'定义性'标准：1. 事件源自'十五五规划'这一国家级顶层设计，具有明确的政策定义性；2. 将可控核聚变从'前沿科学探索'升级为'战略性科技攻关方向'，标志着国家战略层面的重大转向；3. 作为'清洁基荷能源'，其商业化将可能重塑全球能源格局，具有'全局性'影响潜力。因此，该事件具备催生'可控核聚变产业链'这一全新市场投资题材的核心要素。"
+      },
+      "original_data": {
+        "title": "可控核聚变相关新闻",
+        "theme": "可控核聚变",
+        "content_preview": "中金公司研报表示，十五五规划将可控核聚变明确纳入国家未来产业体系，标志着其从前沿科学探索正式升级为战略性科技攻关方向。其作为清洁基荷能源，不仅能支撑高耗能产业降碳升级，还可衍生多领域应用，当前产业链上..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "中金公司研报表示，十五五规划将可控核聚变明确纳入国家未来产业体系，标志着其从前沿科学探索正式升级为战略性科技攻关方向，为商业化奠定基础。",
+            "impact_industries": [
+              "可控核聚变",
+              "清洁能源",
+              "高耗能产业",
+              "新材料",
+              "高端装备制造"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "该事件完全符合重大题材的'定义性'标准：1. 事件源自'十五五规划'这一国家级顶层设计，具有明确的政策定义性；2. 将可控核聚变从'前沿科学探索'升级为'战略性科技攻关方向'，标志着国家战略层面的重大转向；3. 作为'清洁基荷能源'，其商业化将可能重塑全球能源格局，具有'全局性'影响潜力。因此，该事件具备催生'可控核聚变产业链'这一全新市场投资题材的核心要素。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:42.558690"
+    },
+    {
+      "news_id": "news_021",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "核能",
+        "新能源",
+        "高端制造",
+        "科研服务"
+      ],
+      "direction": "利好",
+      "confidence": 0.9,
+      "summary": "中国国家原子能机构与法国原子能和替代能源委员会签署合作议定书，将加强核聚变技术等领域的合作。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件属于既有'可控核聚变'或'先进核能'投资题材的延续性进展，而非定义性、首创性或全局性突破。具体依据：1. 事件性质为国际合作议定书签署，属于政策层面的常规合作框架更新，未涉及具体技术突破、商业化时间表或大规模资金投入；2. 核聚变技术本身仍处于研发阶段，本次合作未改变其长期性、高风险性的基本面；3. 对市场的影响更多是情绪提振和现有主题的强化，而非催生全新独立题材。因此，应归类于现有相关题材的集群（CLUSTER）而非创建全新题材（CREATE_NEW）。"
+      },
+      "original_data": {
+        "title": "可控核聚变相关新闻",
+        "theme": "可控核聚变",
+        "content_preview": "《中国国家原子能机构和法国原子能和替代能源委员会第十五个和平利用核能合作议定书》中提及将加强核基础研究、核技术应用、核聚变技术等合作。（新闻来源：财联社）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "中国国家原子能机构与法国原子能和替代能源委员会签署合作议定书，将加强核聚变技术等领域的合作。",
+            "impact_industries": [
+              "核能",
+              "新能源",
+              "高端制造",
+              "科研服务"
+            ],
+            "direction": "利好",
+            "confidence": 0.9
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件属于既有'可控核聚变'或'先进核能'投资题材的延续性进展，而非定义性、首创性或全局性突破。具体依据：1. 事件性质为国际合作议定书签署，属于政策层面的常规合作框架更新，未涉及具体技术突破、商业化时间表或大规模资金投入；2. 核聚变技术本身仍处于研发阶段，本次合作未改变其长期性、高风险性的基本面；3. 对市场的影响更多是情绪提振和现有主题的强化，而非催生全新独立题材。因此，应归类于现有相关题材的集群（CLUSTER）而非创建全新题材（CREATE_NEW）。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:43.006524"
+    },
+    {
+      "news_id": "news_022",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "可控核聚变",
+        "新能源",
+        "高端制造",
+        "新材料"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "17家公司在京参加核聚变科技成果转化展览与对接活动，展示了先进场反聚变堆、直线型场反位形可控核聚变装置等技术进展，吸引了60-70家投资机构参与。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件属于核聚变技术领域的阶段性成果展示和资本对接活动，虽然展示了三重约束先进场反聚变堆、直线型FRC装置等技术进展，但尚未达到'定义性'（如国家级产业政策）、'首创性'（如首次实现净能量增益的商业化突破）或'全局性'（如颠覆现有能源格局）的重大标准。当前仍属于现有'可控核聚变'或'先进能源'投资主题下的技术集群演进，建议归入现有主题进行跟踪。"
+      },
+      "original_data": {
+        "title": "可控核聚变相关新闻",
+        "theme": "可控核聚变",
+        "content_preview": "核聚变科技成果转化展览展示与对接活动在京举行，17家公司集中参加路演，推介核聚变装置及部件等的研究成果。参与公司包括星能玄光、瀚海智能、合肥星核聚变能源、岩超聚能等，展示了基于三重约束的先进场反聚变堆..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "17家公司在京参加核聚变科技成果转化展览与对接活动，展示了先进场反聚变堆、直线型场反位形可控核聚变装置等技术进展，吸引了60-70家投资机构参与。",
+            "impact_industries": [
+              "可控核聚变",
+              "新能源",
+              "高端制造",
+              "新材料"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件属于核聚变技术领域的阶段性成果展示和资本对接活动，虽然展示了三重约束先进场反聚变堆、直线型FRC装置等技术进展，但尚未达到'定义性'（如国家级产业政策）、'首创性'（如首次实现净能量增益的商业化突破）或'全局性'（如颠覆现有能源格局）的重大标准。当前仍属于现有'可控核聚变'或'先进能源'投资主题下的技术集群演进，建议归入现有主题进行跟踪。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:42.327719"
+    },
+    {
+      "news_id": "news_023",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "能源",
+        "电力",
+        "高端制造",
+        "新材料",
+        "科研仪器"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "中国科学院在合肥启动'燃烧等离子体'国际科学计划，首次发布紧凑型聚变能实验装置（BEST）研究计划，旨在实现聚变能发电的突破。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "该事件符合'首创性'和'全局性'重大标准：1）'首创性'：BEST计划是中国首次面向国际发布的紧凑型聚变能实验装置研究计划，标志着可控核聚变从基础研究向工程化、实用化迈出关键一步，具有突破性技术意义；2）'全局性'：若实现聚变能发电商业化，将彻底改变全球能源格局，催生万亿级新兴市场，涉及能源生产、储存、输送、应用全产业链变革。"
+      },
+      "original_data": {
+        "title": "可控核聚变相关新闻",
+        "theme": "可控核聚变",
+        "content_preview": "开展燃烧等离子体物理研究、实现产出能量大于消耗能量、演示聚变能发电……11月24日上午，在位于安徽合肥未来大科学城的紧凑型聚变能实验装置（BEST）主机大厅，中国科学院“燃烧等离子体”国际科学计划正式..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "中国科学院在合肥启动'燃烧等离子体'国际科学计划，首次发布紧凑型聚变能实验装置（BEST）研究计划，旨在实现聚变能发电的突破。",
+            "impact_industries": [
+              "能源",
+              "电力",
+              "高端制造",
+              "新材料",
+              "科研仪器"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "该事件符合'首创性'和'全局性'重大标准：1）'首创性'：BEST计划是中国首次面向国际发布的紧凑型聚变能实验装置研究计划，标志着可控核聚变从基础研究向工程化、实用化迈出关键一步，具有突破性技术意义；2）'全局性'：若实现聚变能发电商业化，将彻底改变全球能源格局，催生万亿级新兴市场，涉及能源生产、储存、输送、应用全产业链变革。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:41.869486"
+    },
+    {
+      "news_id": "news_024",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "可控核聚变",
+        "高端装备制造",
+        "特种材料",
+        "科研仪器"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "聚变新能（安徽）有限公司近日发布总金额超20亿元的采购项目，涉及BEST离子回旋波源系统、低温系统关键部件等，标志着可控核聚变实验装置EAST的后续项目BEST进入实质性采购阶段。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件虽涉及可控核聚变这一前沿领域，但属于现有技术路线的延续性采购（EAST后续项目BEST），未达到'定义性'（如国家级新政）、'首创性'（突破性技术首次商用）或'全局性'（改变行业格局）的重大标准。当前可控核聚变投资题材已存在，此事应归类为现有题材的进展事件。"
+      },
+      "original_data": {
+        "title": "可控核聚变相关新闻",
+        "theme": "可控核聚变",
+        "content_preview": "《科创板日报》17日讯，近日，聚变新能（安徽）有限公司采购项目发布，总金额超20亿元。根据业务需要，本次采购涉及BEST离子回旋波源系统、低温系统关键部件、BEST屏蔽包层系统不锈钢屏蔽块、BEST屏..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "聚变新能（安徽）有限公司近日发布总金额超20亿元的采购项目，涉及BEST离子回旋波源系统、低温系统关键部件等，标志着可控核聚变实验装置EAST的后续项目BEST进入实质性采购阶段。",
+            "impact_industries": [
+              "可控核聚变",
+              "高端装备制造",
+              "特种材料",
+              "科研仪器"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件虽涉及可控核聚变这一前沿领域，但属于现有技术路线的延续性采购（EAST后续项目BEST），未达到'定义性'（如国家级新政）、'首创性'（突破性技术首次商用）或'全局性'（改变行业格局）的重大标准。当前可控核聚变投资题材已存在，此事应归类为现有题材的进展事件。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:41.955044"
+    },
+    {
+      "news_id": "news_025",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "国防军工",
+        "高端制造",
+        "半导体",
+        "新材料",
+        "航空航天"
+      ],
+      "direction": "利好",
+      "confidence": 0.98,
+      "summary": "中国商务部宣布加强两用物项对日本出口管制，禁止相关物项用于日本军事用户、军事用途及提升军事实力的其他用途，违者将追究法律责任。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "该事件符合'定义性'和'全局性'重大标准：1. 定义性：这是国家级出口管制新政，具有明确的政策导向和法律效力，可能定义未来对日技术出口的新框架；2. 全局性：两用物项涉及半导体、新材料、高端制造等多个关键行业，此举可能重塑相关产业链格局，催生'对日技术管制替代'或'自主可控供应链强化'等全新投资题材。"
+      },
+      "original_data": {
+        "title": "对日制裁相关新闻",
+        "theme": "对日制裁",
+        "content_preview": "商务部公告，根据《中华人民共和国出口管制法》等法律法规有关规定，为维护国家安全和利益、履行防扩散等国际义务，决定加强两用物项对日本出口管制。现将有关事项公告如下：禁止所有两用物项对日本军事用户、军事用..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "中国商务部宣布加强两用物项对日本出口管制，禁止相关物项用于日本军事用户、军事用途及提升军事实力的其他用途，违者将追究法律责任。",
+            "impact_industries": [
+              "国防军工",
+              "高端制造",
+              "半导体",
+              "新材料",
+              "航空航天"
+            ],
+            "direction": "利好",
+            "confidence": 0.98
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "该事件符合'定义性'和'全局性'重大标准：1. 定义性：这是国家级出口管制新政，具有明确的政策导向和法律效力，可能定义未来对日技术出口的新框架；2. 全局性：两用物项涉及半导体、新材料、高端制造等多个关键行业，此举可能重塑相关产业链格局，催生'对日技术管制替代'或'自主可控供应链强化'等全新投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:41.734304"
+    },
+    {
+      "news_id": "news_026",
+      "event_type": "政治事件",
+      "impact_industries": [
+        "国防军工",
+        "国际贸易",
+        "旅游航空",
+        "区域基建"
+      ],
+      "direction": "利空",
+      "confidence": 0.85,
+      "summary": "日本首相高市早苗可能在12月26日参拜靖国神社，引发周边国家及国际社会高度警惕，破坏东亚地区互信基础并加剧地区安全焦虑。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.88,
+        "reason": "该事件属于周期性政治事件，虽可能引发地缘政治紧张和短期市场波动，但不符合'定义性'（非国家级新政）、'首创性'（非突破性技术）或'全局性'（未改变行业根本格局）的重大标准。建议归入现有'地缘政治风险'或'东亚区域安全'题材进行跟踪分析。"
+      },
+      "original_data": {
+        "title": "对日制裁相关新闻",
+        "theme": "对日制裁",
+        "content_preview": "据多家日媒爆料，日本首相高市早苗极有可能在12月26日这一天参拜靖国神社。这引发了周边国家及国际社会的高度警惕。因为这不仅是彻底与历史正义为敌，也无疑会将日本带入充满风险对抗的危险境地，破坏东亚地区来..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政治事件",
+            "summary": "日本首相高市早苗可能在12月26日参拜靖国神社，引发周边国家及国际社会高度警惕，破坏东亚地区互信基础并加剧地区安全焦虑。",
+            "impact_industries": [
+              "国防军工",
+              "国际贸易",
+              "旅游航空",
+              "区域基建"
+            ],
+            "direction": "利空",
+            "confidence": 0.85
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.88,
+            "reason": "该事件属于周期性政治事件，虽可能引发地缘政治紧张和短期市场波动，但不符合'定义性'（非国家级新政）、'首创性'（非突破性技术）或'全局性'（未改变行业根本格局）的重大标准。建议归入现有'地缘政治风险'或'东亚区域安全'题材进行跟踪分析。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:40.868453"
+    },
+    {
+      "news_id": "news_027",
+      "event_type": "政治事件",
+      "impact_industries": [
+        "国际贸易",
+        "旅游",
+        "制造业",
+        "能源",
+        "金融"
+      ],
+      "direction": "利空",
+      "confidence": 0.85,
+      "summary": "日本首相高市早苗计划于12月26日参拜靖国神社，这是其两个月内第二次触碰中国红线，可能将中日关系推向决裂边缘。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.9,
+        "reason": "该事件属于中日关系紧张局势的延续，不具备'定义性'（非国家级新政）、'首创性'（类似政治摩擦历史常见）或'全局性'（未改变行业根本格局）。它应归类于现有'地缘政治风险'或'中日关系主题'投资题材，而非催生全新独立题材。"
+      },
+      "original_data": {
+        "title": "对日制裁相关新闻",
+        "theme": "对日制裁",
+        "content_preview": "日本政坛正在上演一场危险的赌局。首相高市早苗被曝计划在12月26日参拜靖国神社，这将是其两个月内第二次触碰中国红线。从\"台湾有事即日本有事\"的狂妄言论到如今准备在敏感时间节点拜鬼，这位右翼政客正将中日..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政治事件",
+            "summary": "日本首相高市早苗计划于12月26日参拜靖国神社，这是其两个月内第二次触碰中国红线，可能将中日关系推向决裂边缘。",
+            "impact_industries": [
+              "国际贸易",
+              "旅游",
+              "制造业",
+              "能源",
+              "金融"
+            ],
+            "direction": "利空",
+            "confidence": 0.85
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.9,
+            "reason": "该事件属于中日关系紧张局势的延续，不具备'定义性'（非国家级新政）、'首创性'（类似政治摩擦历史常见）或'全局性'（未改变行业根本格局）。它应归类于现有'地缘政治风险'或'中日关系主题'投资题材，而非催生全新独立题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:40.792087"
+    },
+    {
+      "news_id": "news_028",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "国防军工",
+        "外交关系相关行业",
+        "中日贸易相关行业"
+      ],
+      "direction": "中性",
+      "confidence": 0.98,
+      "summary": "中国外交部依据《反外国制裁法》对日本自卫队前统合幕僚长岩崎茂采取反制措施，因其与'台独'分裂势力勾连，严重干涉中国内政。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件属于中国对个别外国人员实施反制措施的具体案例，不具备'定义性'（非国家级新政）、'首创性'（《反外国制裁法》已实施）或'全局性'（未改变行业格局）。此类事件应归类于现有'地缘政治风险'或'反制裁概念'投资题材中，而非催生全新独立题材。"
+      },
+      "original_data": {
+        "title": "对日制裁相关新闻",
+        "theme": "对日制裁",
+        "content_preview": "据外交部官网，日本自卫队前统合幕僚长岩崎茂公然同“台独”分裂势力勾连，严重违背一个中国原则和中日四个政治文件精神，严重干涉中国内政，严重损害中国主权和领土完整。依据《中华人民共和国反外国制裁法》第三条..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "中国外交部依据《反外国制裁法》对日本自卫队前统合幕僚长岩崎茂采取反制措施，因其与'台独'分裂势力勾连，严重干涉中国内政。",
+            "impact_industries": [
+              "国防军工",
+              "外交关系相关行业",
+              "中日贸易相关行业"
+            ],
+            "direction": "中性",
+            "confidence": 0.98
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件属于中国对个别外国人员实施反制措施的具体案例，不具备'定义性'（非国家级新政）、'首创性'（《反外国制裁法》已实施）或'全局性'（未改变行业格局）。此类事件应归类于现有'地缘政治风险'或'反制裁概念'投资题材中，而非催生全新独立题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:41.201404"
+    },
+    {
+      "news_id": "news_029",
+      "event_type": "外交表态",
+      "impact_industries": [
+        "国际贸易",
+        "外交关系",
+        "地缘政治"
+      ],
+      "direction": "中性",
+      "confidence": 0.95,
+      "summary": "中国外交部发言人林剑12月1日就日本在相关问题上言行不一表示绝不接受，敦促日方深刻反省并收回错误言论。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件属于常规外交表态，未涉及国家级新政、突破性技术或行业格局改变等'定义性'、'首创性'或'全局性'特征。其影响可归入现有'地缘政治风险'或'国际贸易摩擦'题材，无需创建全新投资主题。"
+      },
+      "original_data": {
+        "title": "对日制裁相关新闻",
+        "theme": "对日制裁",
+        "content_preview": "据新华社，外交部发言人林剑12月1日表示，日本在口头上搪塞敷行，在行动上一意孤行，中方对此绝不接受。“在大是大非问题上，日本不要妄想蒙混过关。我们敦促日方以史为鉴，深刻反省，严对待中方要求，老老实实收..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "外交表态",
+            "summary": "中国外交部发言人林剑12月1日就日本在相关问题上言行不一表示绝不接受，敦促日方深刻反省并收回错误言论。",
+            "impact_industries": [
+              "国际贸易",
+              "外交关系",
+              "地缘政治"
+            ],
+            "direction": "中性",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件属于常规外交表态，未涉及国家级新政、突破性技术或行业格局改变等'定义性'、'首创性'或'全局性'特征。其影响可归入现有'地缘政治风险'或'国际贸易摩擦'题材，无需创建全新投资主题。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:40.485261"
+    },
+    {
+      "news_id": "news_030",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "国防军工",
+        "外交关系",
+        "国际贸易",
+        "航运物流"
+      ],
+      "direction": "利空",
+      "confidence": 0.95,
+      "summary": "中国针对日本高市早苗的挑衅言论，通过外交部、国防部、驻日使馆等多渠道密集表态，警告日本若武力介入台海将遭反制，已做好实质反制准备。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件属于地缘政治紧张局势的升级，虽涉及外交、军事等多领域表态，但未达到'定义性'（如国家级新政）、'首创性'（如突破性技术首次商用）或'全局性'（改变行业格局）的重大标准。它更可能归入现有的'地缘政治风险'或'中日关系紧张'投资主题，而非催生全新市场题材。"
+      },
+      "original_data": {
+        "title": "对日制裁相关新闻",
+        "theme": "对日制裁",
+        "content_preview": "据媒体披露，中方已做好对日实质反制准备。针对高市早苗的露骨挑衅言论，我们的忍耐，是有限度的。仅在11月14日以来：14日凌晨2点56分，外交部官网发布消息，外交部副部长孙卫东奉示召见日本驻华大使金杉宪..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "中国针对日本高市早苗的挑衅言论，通过外交部、国防部、驻日使馆等多渠道密集表态，警告日本若武力介入台海将遭反制，已做好实质反制准备。",
+            "impact_industries": [
+              "国防军工",
+              "外交关系",
+              "国际贸易",
+              "航运物流"
+            ],
+            "direction": "利空",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件属于地缘政治紧张局势的升级，虽涉及外交、军事等多领域表态，但未达到'定义性'（如国家级新政）、'首创性'（如突破性技术首次商用）或'全局性'（改变行业格局）的重大标准。它更可能归入现有的'地缘政治风险'或'中日关系紧张'投资主题，而非催生全新市场题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:51.420617"
+    },
+    {
+      "news_id": "news_031",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "稀土开采与加工",
+        "稀土永磁材料",
+        "新能源汽车",
+        "风电设备",
+        "消费电子",
+        "工业电机",
+        "日本相关制造业"
+      ],
+      "direction": "利好",
+      "confidence": 0.85,
+      "summary": "中国政府考虑收紧对日本的中重稀土出口许可审查，可能限制相关物项出口。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.9,
+        "reason": "该事件属于现有'稀土战略资源管控'题材的延伸，不具备'定义性'（非全新国家级政策）、'首创性'（稀土管控已有先例）或'全局性'（未改变行业根本格局），应归入现有题材集群进行跟踪分析。"
+      },
+      "original_data": {
+        "title": "稀土永磁相关新闻",
+        "theme": "稀土永磁",
+        "content_preview": "据中国日报，可靠消息人士称，鉴于日本近期恶劣表现，中国政府正考虑针对性收紧2025年4月4日列管的中重稀土相关物项出口许可审查（新闻来源：中国日报）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "中国政府考虑收紧对日本的中重稀土出口许可审查，可能限制相关物项出口。",
+            "impact_industries": [
+              "稀土开采与加工",
+              "稀土永磁材料",
+              "新能源汽车",
+              "风电设备",
+              "消费电子",
+              "工业电机",
+              "日本相关制造业"
+            ],
+            "direction": "利好",
+            "confidence": 0.85
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.9,
+            "reason": "该事件属于现有'稀土战略资源管控'题材的延伸，不具备'定义性'（非全新国家级政策）、'首创性'（稀土管控已有先例）或'全局性'（未改变行业根本格局），应归入现有题材集群进行跟踪分析。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:50.417817"
+    },
+    {
+      "news_id": "news_032",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "稀土开采与加工",
+        "稀土永磁材料",
+        "新能源汽车",
+        "风电设备",
+        "消费电子",
+        "国防军工"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "商务部新闻发言人何亚东表示，对稀土相关物项实施出口管制后，部分中国出口商已初步达到申请通用许可的基本要求，目前已收到并批准了部分申请。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件属于既有稀土出口管制政策的执行进展，而非全新的国家级政策、突破性技术或改变行业格局的全局性事件。它强化了现有'稀土供应链安全'和'关键原材料自主可控'的投资主题，应归入相关题材集群进行跟踪分析。"
+      },
+      "original_data": {
+        "title": "稀土永磁相关新闻",
+        "theme": "稀土永磁",
+        "content_preview": "在今天（18日）下午召开的商务部例行新闻发布会上，新闻发言人何亚东针对稀土相关物项出口管制的最新进展进行回应。商务部新闻发言人何亚东表示，对稀土相关物项实施出口管制以来，中方主管部门向中国出口商进行了..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "商务部新闻发言人何亚东表示，对稀土相关物项实施出口管制后，部分中国出口商已初步达到申请通用许可的基本要求，目前已收到并批准了部分申请。",
+            "impact_industries": [
+              "稀土开采与加工",
+              "稀土永磁材料",
+              "新能源汽车",
+              "风电设备",
+              "消费电子",
+              "国防军工"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件属于既有稀土出口管制政策的执行进展，而非全新的国家级政策、突破性技术或改变行业格局的全局性事件。它强化了现有'稀土供应链安全'和'关键原材料自主可控'的投资主题，应归入相关题材集群进行跟踪分析。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:50.620033"
+    },
+    {
+      "news_id": "news_033",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "稀土永磁",
+        "新能源汽车",
+        "风电",
+        "消费电子",
+        "工业电机"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "中国政府通过通用许可等便利化措施，批准金力永磁、中科三环、宁波韵升等企业的民用合规稀土永磁出口申请，简化出口流程并加快交付速度。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件属于现有'稀土永磁出口便利化'政策框架下的具体实施案例，不具备'定义性'（非国家级新政）、'首创性'（通用许可非首次应用）或'全局性'（未改变行业根本格局），主要影响现有稀土永磁产业链的出口效率，应归类到现有'稀土政策'或'高端制造供应链'投资主题中。"
+      },
+      "original_data": {
+        "title": "稀土永磁相关新闻",
+        "theme": "稀土永磁",
+        "content_preview": "记者从知情人士处获悉，金力永磁、中科三环、宁波韵升已获得通用出口许可证。据报道，商务部新闻发言人何亚东4日表示，中国政府依法依规开展稀土相关物项出口管制工作。只要是用于民用用途的、合规的出口申请，中国..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "中国政府通过通用许可等便利化措施，批准金力永磁、中科三环、宁波韵升等企业的民用合规稀土永磁出口申请，简化出口流程并加快交付速度。",
+            "impact_industries": [
+              "稀土永磁",
+              "新能源汽车",
+              "风电",
+              "消费电子",
+              "工业电机"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件属于现有'稀土永磁出口便利化'政策框架下的具体实施案例，不具备'定义性'（非国家级新政）、'首创性'（通用许可非首次应用）或'全局性'（未改变行业根本格局），主要影响现有稀土永磁产业链的出口效率，应归类到现有'稀土政策'或'高端制造供应链'投资主题中。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:51.338898"
+    },
+    {
+      "news_id": "news_034",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "稀土开采与加工",
+        "稀土永磁材料",
+        "稀土永磁电机",
+        "新能源汽车",
+        "风电设备",
+        "工业电机",
+        "矿产资源勘探"
+      ],
+      "direction": "利好",
+      "confidence": 0.98,
+      "summary": "内蒙古自治区党委发布'十四五'规划建议，提出加强稀土战略性矿产资源开发利用，建设全国最大稀土新材料基地和全球领先稀土应用基地，实施稀土永磁电机替代工程。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.88,
+        "reason": "该事件符合'定义性'和'全局性'重大标准：1. 这是省级'十四五'规划中的专项政策，具有明确的战略导向和系统性部署；2. 提出'建设全国最大的稀土新材料基地和全球领先的稀土应用基地'的宏大目标，并明确'实施稀土永磁电机替代工程'的具体路径，可能催生'稀土永磁电机替代'这一全新的投资主题；3. 涉及从资源勘探、开采加工到新材料研发、应用推广的全产业链布局，具备改变稀土产业格局的潜力。"
+      },
+      "original_data": {
+        "title": "稀土永磁相关新闻",
+        "theme": "稀土永磁",
+        "content_preview": "内蒙古自治区党委关于制定国民经济和社会发展第十五个五年规划的建议发布。其中指出，加强战略性矿产资源开发利用。坚持保护性开发、高质化利用、规范化管理，加强稀土新技术、新工艺、新产品、新材料和新装备的研发..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "内蒙古自治区党委发布'十四五'规划建议，提出加强稀土战略性矿产资源开发利用，建设全国最大稀土新材料基地和全球领先稀土应用基地，实施稀土永磁电机替代工程。",
+            "impact_industries": [
+              "稀土开采与加工",
+              "稀土永磁材料",
+              "稀土永磁电机",
+              "新能源汽车",
+              "风电设备",
+              "工业电机",
+              "矿产资源勘探"
+            ],
+            "direction": "利好",
+            "confidence": 0.98
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.88,
+            "reason": "该事件符合'定义性'和'全局性'重大标准：1. 这是省级'十四五'规划中的专项政策，具有明确的战略导向和系统性部署；2. 提出'建设全国最大的稀土新材料基地和全球领先的稀土应用基地'的宏大目标，并明确'实施稀土永磁电机替代工程'的具体路径，可能催生'稀土永磁电机替代'这一全新的投资主题；3. 涉及从资源勘探、开采加工到新材料研发、应用推广的全产业链布局，具备改变稀土产业格局的潜力。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:52.980073"
+    },
+    {
+      "news_id": "news_035",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "稀土永磁",
+        "关键矿物开采与加工",
+        "化工（芬太尼相关）",
+        "国际贸易"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "中美元首会晤后，美国总统特朗普宣布与中国就稀土和关键矿物达成一年期协议，并将对中国产芬太尼产品的关税减半。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件虽涉及稀土和关键矿物这一重要战略资源，但属于既有'稀土永磁'或'关键矿物供应链'题材下的政策进展，而非定义性、首创性或全局性的全新题材。具体分析：1. 事件性质为既有贸易协议的延续或调整（一年期协议），非国家级全新战略发布；2. 稀土和关键矿物的战略重要性及市场关注已长期存在，此协议未突破现有技术或商业模式；3. 影响范围集中于供应链稳定和关税调整，未引发行业格局的根本性改变。因此，应归类到现有相关题材中。"
+      },
+      "original_data": {
+        "title": "稀土永磁相关新闻",
+        "theme": "稀土永磁",
+        "content_preview": "据央视新闻报道，当地时间10月30日中午，国家主席在韩国釜山同美国总统特朗普举行会晤。历时约1小时40分钟，中美元首会晤结束，美国总统唐纳德·特朗普表示，他已与中国就稀土和关键矿物达成一项为期一年的协..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "中美元首会晤后，美国总统特朗普宣布与中国就稀土和关键矿物达成一年期协议，并将对中国产芬太尼产品的关税减半。",
+            "impact_industries": [
+              "稀土永磁",
+              "关键矿物开采与加工",
+              "化工（芬太尼相关）",
+              "国际贸易"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件虽涉及稀土和关键矿物这一重要战略资源，但属于既有'稀土永磁'或'关键矿物供应链'题材下的政策进展，而非定义性、首创性或全局性的全新题材。具体分析：1. 事件性质为既有贸易协议的延续或调整（一年期协议），非国家级全新战略发布；2. 稀土和关键矿物的战略重要性及市场关注已长期存在，此协议未突破现有技术或商业模式；3. 影响范围集中于供应链稳定和关税调整，未引发行业格局的根本性改变。因此，应归类到现有相关题材中。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:52.980943"
+    },
+    {
+      "news_id": "news_036",
+      "event_type": "市场异动",
+      "impact_industries": [
+        "稀土永磁",
+        "新能源",
+        "高端制造"
+      ],
+      "direction": "利好",
+      "confidence": 0.98,
+      "summary": "美股稀土股盘前普涨，其中Critical Metals大涨38%，USA Rare Earth涨超11%，MP Materials涨超7%。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该新闻仅报道了美股稀土股的短期价格异动，属于市场交易层面的现象，未提及任何具有'定义性'（如国家级新政）、'首创性'（如突破性技术首次商用）或'全局性'（改变行业格局）的事件。此类股价波动通常是对现有'稀土永磁'或'关键矿物'等已有投资题材的短期反应，而非催生全新题材的源头。"
+      },
+      "original_data": {
+        "title": "稀土永磁相关新闻",
+        "theme": "稀土永磁",
+        "content_preview": "美股稀土股盘前普涨，Critical Metals大涨38%，USA Rare Earth涨超11%，MP Materials涨超7%。（新闻来源：财联社）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "市场异动",
+            "summary": "美股稀土股盘前普涨，其中Critical Metals大涨38%，USA Rare Earth涨超11%，MP Materials涨超7%。",
+            "impact_industries": [
+              "稀土永磁",
+              "新能源",
+              "高端制造"
+            ],
+            "direction": "利好",
+            "confidence": 0.98
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该新闻仅报道了美股稀土股的短期价格异动，属于市场交易层面的现象，未提及任何具有'定义性'（如国家级新政）、'首创性'（如突破性技术首次商用）或'全局性'（改变行业格局）的事件。此类股价波动通常是对现有'稀土永磁'或'关键矿物'等已有投资题材的短期反应，而非催生全新题材的源头。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:50.930629"
+    },
+    {
+      "news_id": "news_037",
+      "event_type": "价格调整",
+      "impact_industries": [
+        "稀土开采与加工",
+        "稀土永磁材料",
+        "新能源汽车",
+        "风电设备",
+        "消费电子",
+        "工业电机"
+      ],
+      "direction": "利好",
+      "confidence": 0.98,
+      "summary": "包钢股份公告拟将2025年第四季度稀土精矿关联交易价格调整为不含税26205元/吨，较第三季度环比上涨37.13%。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件为单一企业基于现有定价机制的季度价格调整，属于常规经营行为，不具备'定义性'（非国家级新政）、'首创性'（非突破性技术首次商用）或'全局性'（未改变行业整体供需格局或技术路线）。价格上涨主要反映短期市场供需或成本变化，应归入现有'稀土永磁'、'关键矿产资源'等成熟投资题材进行跟踪分析。"
+      },
+      "original_data": {
+        "title": "稀土永磁相关新闻",
+        "theme": "稀土永磁",
+        "content_preview": "包钢股份公告称，根据公司2022年年度股东大会审议通过的稀土精矿价格调整机制及计算公式，公司拟将2025年第四季度稀土精矿关联交易价格调整为不含税26205元/吨（干量，REO=50%）。REO每增减..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "价格调整",
+            "summary": "包钢股份公告拟将2025年第四季度稀土精矿关联交易价格调整为不含税26205元/吨，较第三季度环比上涨37.13%。",
+            "impact_industries": [
+              "稀土开采与加工",
+              "稀土永磁材料",
+              "新能源汽车",
+              "风电设备",
+              "消费电子",
+              "工业电机"
+            ],
+            "direction": "利好",
+            "confidence": 0.98
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件为单一企业基于现有定价机制的季度价格调整，属于常规经营行为，不具备'定义性'（非国家级新政）、'首创性'（非突破性技术首次商用）或'全局性'（未改变行业整体供需格局或技术路线）。价格上涨主要反映短期市场供需或成本变化，应归入现有'稀土永磁'、'关键矿产资源'等成熟投资题材进行跟踪分析。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:51.834143"
+    },
+    {
+      "news_id": "news_038",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "稀土开采与加工",
+        "稀土永磁材料",
+        "海洋化工",
+        "海洋船舶",
+        "海洋工程装备",
+        "航运服务",
+        "海洋旅游",
+        "海洋渔业",
+        "海洋清洁能源",
+        "海水淡化",
+        "海洋新材料",
+        "海洋生物医药",
+        "海洋电子信息"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "中国商务部、海关总署对多项稀土设备和原辅料实施出口管制，同时浙江省通过《海洋经济高质量发展促进条例》推动海洋产业转型升级和新兴产业发展。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "稀土出口管制属于现有'稀土战略资源'题材的强化政策，而浙江海洋经济条例属于区域性的'海洋经济'政策落地，两者均不具备'定义性'（国家级新政但非首次）、'首创性'（非突破性技术首次商用）或'全局性'（未改变行业根本格局）的重大标准，更适合归入现有投资题材集群进行分析。"
+      },
+      "original_data": {
+        "title": "稀土永磁相关新闻",
+        "theme": "稀土永磁",
+        "content_preview": "商务部、海关总署发布公告2025年第56号，公布对部分稀土设备和原辅料相关物项实施出口管制的决定，根据《中华人民共和国出口管制法》《中华人民共和国对外贸易法》《中华人民共和国海关法》《中华人民共和国两..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "中国商务部、海关总署对多项稀土设备和原辅料实施出口管制，同时浙江省通过《海洋经济高质量发展促进条例》推动海洋产业转型升级和新兴产业发展。",
+            "impact_industries": [
+              "稀土开采与加工",
+              "稀土永磁材料",
+              "海洋化工",
+              "海洋船舶",
+              "海洋工程装备",
+              "航运服务",
+              "海洋旅游",
+              "海洋渔业",
+              "海洋清洁能源",
+              "海水淡化",
+              "海洋新材料",
+              "海洋生物医药",
+              "海洋电子信息"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "稀土出口管制属于现有'稀土战略资源'题材的强化政策，而浙江海洋经济条例属于区域性的'海洋经济'政策落地，两者均不具备'定义性'（国家级新政但非首次）、'首创性'（非突破性技术首次商用）或'全局性'（未改变行业根本格局）的重大标准，更适合归入现有投资题材集群进行分析。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:52.366050"
+    },
+    {
+      "news_id": "news_039",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "海洋化工",
+        "海洋船舶",
+        "海洋工程装备",
+        "航运服务",
+        "海洋旅游",
+        "海洋渔业",
+        "海洋清洁能源",
+        "海水淡化",
+        "海洋新材料",
+        "海洋生物医药",
+        "海洋电子信息"
+      ],
+      "direction": "利好",
+      "confidence": 0.98,
+      "summary": "浙江省人大常委会审议通过《浙江省海洋经济高质量发展促进条例》，这是浙江首部海洋经济综合性法规，将于2026年3月1日起施行，旨在推动海洋产业转型升级和新兴产业发展。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件为省级法规发布，虽具有首创性（浙江首部海洋经济综合性法规）和一定定义性（明确海洋产业发展方向），但缺乏国家级新政的全局影响力，也未涉及突破性技术首次商用等颠覆性变革。主要影响集中在浙江省内相关海洋产业，属于现有'海洋经济'或'区域发展'投资题材的深化和细化，而非催生全新市场投资题材。"
+      },
+      "original_data": {
+        "title": "海洋经济相关新闻",
+        "theme": "海洋经济",
+        "content_preview": "浙江省十四届人大常委会第二十一次会议近日审议并通过《浙江省海洋经济高质量发展促进条例》（以下简称《条例》）。这是浙江在海洋经济领域出台的首部综合性法规，标志着浙江海洋强省建设迈入了战略引领、法治护航的..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "浙江省人大常委会审议通过《浙江省海洋经济高质量发展促进条例》，这是浙江首部海洋经济综合性法规，将于2026年3月1日起施行，旨在推动海洋产业转型升级和新兴产业发展。",
+            "impact_industries": [
+              "海洋化工",
+              "海洋船舶",
+              "海洋工程装备",
+              "航运服务",
+              "海洋旅游",
+              "海洋渔业",
+              "海洋清洁能源",
+              "海水淡化",
+              "海洋新材料",
+              "海洋生物医药",
+              "海洋电子信息"
+            ],
+            "direction": "利好",
+            "confidence": 0.98
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件为省级法规发布，虽具有首创性（浙江首部海洋经济综合性法规）和一定定义性（明确海洋产业发展方向），但缺乏国家级新政的全局影响力，也未涉及突破性技术首次商用等颠覆性变革。主要影响集中在浙江省内相关海洋产业，属于现有'海洋经济'或'区域发展'投资题材的深化和细化，而非催生全新市场投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:42:52.261258"
+    },
+    {
+      "news_id": "news_040",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "海洋工程",
+        "海洋环保",
+        "海洋资源开发",
+        "海洋装备制造",
+        "海洋科技",
+        "海洋运输",
+        "海洋旅游"
+      ],
+      "direction": "利好",
+      "confidence": 0.98,
+      "summary": "国家发展改革委主任郑栅洁在中共中央新闻发布会上宣布我国海洋经济总量已突破10万亿元，并提出加强海洋开发利用保护、生态环境保护修复及维护海洋权益等举措，将推动海洋经济高质量发展和海洋强国建设。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件属于国家级政策发布，具有'定义性'（明确海洋经济总量突破10万亿元并规划发展方向）和'全局性'（涉及海洋经济多领域发展），但'海洋经济'本身已是既有投资题材，此次更多是强化和细化现有题材，而非催生全新题材。因此，更适合归类到现有'海洋经济'或'海洋强国'主题中进行集群分析。"
+      },
+      "original_data": {
+        "title": "海洋经济相关新闻",
+        "theme": "海洋经济",
+        "content_preview": "10月24日，中共中央举行新闻发布会介绍和解读党的二十届四中全会精神。国家发展改革委党组书记、主任郑栅洁在会上表示，我国海洋经济总量已突破10万亿元。《建议》提出加强海洋开发利用保护，加强重点海域生态..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "国家发展改革委主任郑栅洁在中共中央新闻发布会上宣布我国海洋经济总量已突破10万亿元，并提出加强海洋开发利用保护、生态环境保护修复及维护海洋权益等举措，将推动海洋经济高质量发展和海洋强国建设。",
+            "impact_industries": [
+              "海洋工程",
+              "海洋环保",
+              "海洋资源开发",
+              "海洋装备制造",
+              "海洋科技",
+              "海洋运输",
+              "海洋旅游"
+            ],
+            "direction": "利好",
+            "confidence": 0.98
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件属于国家级政策发布，具有'定义性'（明确海洋经济总量突破10万亿元并规划发展方向）和'全局性'（涉及海洋经济多领域发展），但'海洋经济'本身已是既有投资题材，此次更多是强化和细化现有题材，而非催生全新题材。因此，更适合归类到现有'海洋经济'或'海洋强国'主题中进行集群分析。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:01.888628"
+    },
+    {
+      "news_id": "news_041",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "海洋执法",
+        "海洋经济统计",
+        "深海资源开发",
+        "港口航运",
+        "海洋能源",
+        "海洋高端装备",
+        "智能船舶",
+        "水下机器人",
+        "海洋生物",
+        "海洋生态预警",
+        "海洋防灾减灾",
+        "远洋渔业"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "深圳市海洋发展局联合招商局港口集团、中集海工智能创新中心等龙头企业，在2025深圳（国际）通用人工智能大会上成功发布了涵盖三大类60项应用的'AI+海洋'行业应用场景清单。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件虽涉及AI与海洋产业的深度融合，并发布了60项具体应用场景，具有一定创新性和产业带动性，但本质上仍属于'AI+行业应用'的范畴，是对现有'人工智能'和'海洋经济'两大投资题材的深化与拓展，而非定义性、首创性或全局性的突破。它缺乏国家级新政的顶层设计、突破性技术的首次商用或颠覆行业格局的全局性影响，因此更适合归入现有题材集群进行跟踪分析。"
+      },
+      "original_data": {
+        "title": "海洋经济相关新闻",
+        "theme": "海洋经济",
+        "content_preview": "深圳市海洋发展局8月28日下午联合招商局港口集团股份有限公司、中集海工智能创新中心等龙头企业，在2025深圳（国际）通用人工智能大会暨产业博览会“Agent＋场景驱动”论坛上，成功发布“AI+海洋”行..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "深圳市海洋发展局联合招商局港口集团、中集海工智能创新中心等龙头企业，在2025深圳（国际）通用人工智能大会上成功发布了涵盖三大类60项应用的'AI+海洋'行业应用场景清单。",
+            "impact_industries": [
+              "海洋执法",
+              "海洋经济统计",
+              "深海资源开发",
+              "港口航运",
+              "海洋能源",
+              "海洋高端装备",
+              "智能船舶",
+              "水下机器人",
+              "海洋生物",
+              "海洋生态预警",
+              "海洋防灾减灾",
+              "远洋渔业"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件虽涉及AI与海洋产业的深度融合，并发布了60项具体应用场景，具有一定创新性和产业带动性，但本质上仍属于'AI+行业应用'的范畴，是对现有'人工智能'和'海洋经济'两大投资题材的深化与拓展，而非定义性、首创性或全局性的突破。它缺乏国家级新政的顶层设计、突破性技术的首次商用或颠覆行业格局的全局性影响，因此更适合归入现有题材集群进行跟踪分析。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:03.525305"
+    },
+    {
+      "news_id": "news_042",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "海洋科技",
+        "海上风电",
+        "海洋生物医药",
+        "海洋传统产业"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "国家发展改革委正牵头编制'十五五'海洋经济发展规划，强调创新驱动、核心技术突破和海洋产业转型升级。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "该事件符合'定义性'和'全局性'重大标准：1. 定义性：由中央财经委员会部署、国家发展改革委牵头编制国家级'十五五'海洋经济发展规划，属于顶层政策设计；2. 全局性：规划涵盖海洋科技自立自强、传统产业升级、新兴产业发展和未来产业培育，将系统性重塑海洋经济产业链，可能催生'海洋经济创新产业'或'蓝色经济'等全新投资题材。"
+      },
+      "original_data": {
+        "title": "海洋经济相关新闻",
+        "theme": "海洋经济",
+        "content_preview": "国家发展改革委区域协调发展司副司长马维晨表示，按照中央财经委员会第六次会议部署，国家发展改革委正与相关部门一道着手“十五五”海洋经济发展规划以及相关领域专项规划的编制工作。“我们将更加注重创新驱动，部..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "国家发展改革委正牵头编制'十五五'海洋经济发展规划，强调创新驱动、核心技术突破和海洋产业转型升级。",
+            "impact_industries": [
+              "海洋科技",
+              "海上风电",
+              "海洋生物医药",
+              "海洋传统产业"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "该事件符合'定义性'和'全局性'重大标准：1. 定义性：由中央财经委员会部署、国家发展改革委牵头编制国家级'十五五'海洋经济发展规划，属于顶层政策设计；2. 全局性：规划涵盖海洋科技自立自强、传统产业升级、新兴产业发展和未来产业培育，将系统性重塑海洋经济产业链，可能催生'海洋经济创新产业'或'蓝色经济'等全新投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:01.045095"
+    },
+    {
+      "news_id": "news_043",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "海洋科技",
+        "海上风电",
+        "海洋生物医药",
+        "海洋传统产业"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "国家发展改革委正牵头编制'十五五'海洋经济发展规划，强调创新驱动、关键技术突破和海洋新兴产业培育。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "该事件符合'定义性'和'全局性'重大标准：1. 这是国家级'十五五'海洋经济发展规划的编制启动，具有顶层设计和政策定义性；2. 规划明确部署海洋科技自立自强、传统产业升级和新兴/未来产业培育，将系统性重塑海洋经济格局，催生'海洋经济创新升级'这一全新投资题材。"
+      },
+      "original_data": {
+        "title": "海洋经济相关新闻",
+        "theme": "海洋经济",
+        "content_preview": "国家发展改革委区域协调发展司副司长马维晨表示，按照中央财经委员会第六次会议部署，国家发展改革委正与相关部门一道着手“十五五”海洋经济发展规划以及相关领域专项规划的编制工作。“我们将更加注重创新驱动，部..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "国家发展改革委正牵头编制'十五五'海洋经济发展规划，强调创新驱动、关键技术突破和海洋新兴产业培育。",
+            "impact_industries": [
+              "海洋科技",
+              "海上风电",
+              "海洋生物医药",
+              "海洋传统产业"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "该事件符合'定义性'和'全局性'重大标准：1. 这是国家级'十五五'海洋经济发展规划的编制启动，具有顶层设计和政策定义性；2. 规划明确部署海洋科技自立自强、传统产业升级和新兴/未来产业培育，将系统性重塑海洋经济格局，催生'海洋经济创新升级'这一全新投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:00.563979"
+    },
+    {
+      "news_id": "news_044",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "半导体",
+        "光刻胶制造",
+        "芯片制造"
+      ],
+      "direction": "利空",
+      "confidence": 0.85,
+      "summary": "日本实际上停止向中国出口光刻胶，可能影响中国半导体产业链的稳定供应。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.9,
+        "reason": "该事件属于供应链中断类新闻，虽具全局性影响（可能改变半导体行业供应链格局），但缺乏'定义性'（非国家级新政）、'首创性'（非突破性技术）或完全重塑行业生态的特征。它更可能归入现有'半导体国产替代'或'供应链安全'投资题材，而非催生全新独立题材。"
+      },
+      "original_data": {
+        "title": "光刻胶相关新闻",
+        "theme": "光刻胶",
+        "content_preview": "日本实际上停止向中国出口光刻胶的状况被曝光（新闻来源：亚洲时报）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "日本实际上停止向中国出口光刻胶，可能影响中国半导体产业链的稳定供应。",
+            "impact_industries": [
+              "半导体",
+              "光刻胶制造",
+              "芯片制造"
+            ],
+            "direction": "利空",
+            "confidence": 0.85
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.9,
+            "reason": "该事件属于供应链中断类新闻，虽具全局性影响（可能改变半导体行业供应链格局），但缺乏'定义性'（非国家级新政）、'首创性'（非突破性技术）或完全重塑行业生态的特征。它更可能归入现有'半导体国产替代'或'供应链安全'投资题材，而非催生全新独立题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:00.461546"
+    },
+    {
+      "news_id": "news_045",
+      "event_type": "技术研讨",
+      "impact_industries": [
+        "半导体",
+        "光刻胶",
+        "集成电路材料"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "2025年11月20-21日将在绍兴举行光刻胶及集成电路材料先进技术和产业应用研讨会，主题为'光刻突围 材聚绍兴'。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件为行业技术研讨会，属于常规性行业交流活动，不具备'定义性'（非国家级新政）、'首创性'（非突破性技术首次商用）或'全局性'（未明确改变行业格局）的重大标准。应归类到现有'半导体材料'或'光刻技术'投资题材中。"
+      },
+      "original_data": {
+        "title": "光刻胶相关新闻",
+        "theme": "光刻胶",
+        "content_preview": "消息面上，11月20-21日，2025·光刻胶及集成电路材料先进技术和产业应用研讨会将举行，主题“光刻突围 材聚绍兴”。（新闻来源：财联社）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术研讨",
+            "summary": "2025年11月20-21日将在绍兴举行光刻胶及集成电路材料先进技术和产业应用研讨会，主题为'光刻突围 材聚绍兴'。",
+            "impact_industries": [
+              "半导体",
+              "光刻胶",
+              "集成电路材料"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件为行业技术研讨会，属于常规性行业交流活动，不具备'定义性'（非国家级新政）、'首创性'（非突破性技术首次商用）或'全局性'（未明确改变行业格局）的重大标准。应归类到现有'半导体材料'或'光刻技术'投资题材中。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:00.412443"
+    },
+    {
+      "news_id": "news_046",
+      "event_type": "技术研讨",
+      "impact_industries": [
+        "半导体",
+        "光刻胶",
+        "集成电路材料"
+      ],
+      "direction": "中性",
+      "confidence": 0.95,
+      "summary": "2025年11月20-21日，光刻胶及集成电路材料先进技术和产业应用研讨会将在绍兴举行，主题为“光刻突围 材聚绍兴”。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件为行业技术研讨会，属于常规的产业交流活动，不具备'定义性'（非国家级政策）、'首创性'（非突破性技术首次商用）或'全局性'（未明确改变行业格局）的重大标准。其内容聚焦于现有技术讨论和产业应用，更可能强化现有'半导体材料'或'光刻胶'等已有投资题材，而非催生全新市场投资题材。"
+      },
+      "original_data": {
+        "title": "光刻胶相关新闻",
+        "theme": "光刻胶",
+        "content_preview": "11月20-21日，2025·光刻胶及集成电路材料先进技术和产业应用研讨会将举行，主题“光刻突围 材聚绍兴”。（新闻来源：新浪财经）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术研讨",
+            "summary": "2025年11月20-21日，光刻胶及集成电路材料先进技术和产业应用研讨会将在绍兴举行，主题为“光刻突围 材聚绍兴”。",
+            "impact_industries": [
+              "半导体",
+              "光刻胶",
+              "集成电路材料"
+            ],
+            "direction": "中性",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件为行业技术研讨会，属于常规的产业交流活动，不具备'定义性'（非国家级政策）、'首创性'（非突破性技术首次商用）或'全局性'（未明确改变行业格局）的重大标准。其内容聚焦于现有技术讨论和产业应用，更可能强化现有'半导体材料'或'光刻胶'等已有投资题材，而非催生全新市场投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:01.159341"
+    },
+    {
+      "news_id": "news_047",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "半导体",
+        "光刻胶"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "北京大学彭海琳教授团队通过冷冻电子断层扫描技术首次原位解析光刻胶分子微观结构，指导开发出可显著减少光刻缺陷的产业化方案。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件属于光刻胶材料领域的技术突破，具有显著的首创性（首次原位解析液相环境微观结构）和潜在应用价值（减少光刻缺陷）。但尚未达到'定义性'（非国家级政策）、'首创性'（技术首次商用）或'全局性'（改变行业格局）的重大标准。当前更适合归类到现有'半导体材料'或'光刻技术'投资主题中，作为技术迭代的催化因素，而非催生全新独立题材。"
+      },
+      "original_data": {
+        "title": "光刻胶相关新闻",
+        "theme": "光刻胶",
+        "content_preview": "近日，北京大学化学与分子工程学院彭海琳教授团队及合作者通过冷冻电子断层扫描技术，首次在原位状态下解析了光刻胶分子在液相环境中的微观三维结构、界面分布与缠结行为，指导开发出可显著减少光刻缺陷的产业化方案..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "北京大学彭海琳教授团队通过冷冻电子断层扫描技术首次原位解析光刻胶分子微观结构，指导开发出可显著减少光刻缺陷的产业化方案。",
+            "impact_industries": [
+              "半导体",
+              "光刻胶"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件属于光刻胶材料领域的技术突破，具有显著的首创性（首次原位解析液相环境微观结构）和潜在应用价值（减少光刻缺陷）。但尚未达到'定义性'（非国家级政策）、'首创性'（技术首次商用）或'全局性'（改变行业格局）的重大标准。当前更适合归类到现有'半导体材料'或'光刻技术'投资主题中，作为技术迭代的催化因素，而非催生全新独立题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:01.579345"
+    },
+    {
+      "news_id": "news_048",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "半导体",
+        "光刻胶",
+        "集成电路制造"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "清华大学化学系许华平教授团队开发出基于聚碲氧烷的新型EUV光刻胶，为先进半导体制造提供了新的材料设计策略。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件属于光刻胶材料领域的技术突破，具有重要产业价值，但尚未达到'定义性'（非国家级政策）、'首创性'（EUV光刻胶已有多种技术路线）或'全局性'（未明确改变现有行业格局）的重大标准。建议归入现有'半导体材料'或'光刻技术'投资主题进行跟踪。"
+      },
+      "original_data": {
+        "title": "光刻胶相关新闻",
+        "theme": "光刻胶",
+        "content_preview": "清华大学官网介绍，日前，清华大学化学系许华平教授团队在极紫外（EUV）光刻材料上取得重要进展，开发出一种基于聚碲氧烷的新型光刻胶，为先进半导体制造中的关键材料提供了新的设计策略。（新闻来源：清华大学官..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "清华大学化学系许华平教授团队开发出基于聚碲氧烷的新型EUV光刻胶，为先进半导体制造提供了新的材料设计策略。",
+            "impact_industries": [
+              "半导体",
+              "光刻胶",
+              "集成电路制造"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件属于光刻胶材料领域的技术突破，具有重要产业价值，但尚未达到'定义性'（非国家级政策）、'首创性'（EUV光刻胶已有多种技术路线）或'全局性'（未明确改变现有行业格局）的重大标准。建议归入现有'半导体材料'或'光刻技术'投资主题进行跟踪。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:00.522743"
+    },
+    {
+      "news_id": "news_049",
+      "event_type": "价格波动",
+      "impact_industries": [
+        "光刻胶",
+        "PCB",
+        "电子化学品"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "因下游PCB行业需求持续增长，国内光引发剂多种牌号价格走高，其中907牌号参考出厂价格较年初上涨19元/公斤。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件属于常规的原材料价格波动，由下游PCB行业需求增长驱动，不具备'定义性'（如国家级新政）、'首创性'（如突破性技术首次商用）或'全局性'（改变行业格局）特征。价格波动是市场供需关系的正常反映，应归类到现有的'电子化学品'或'PCB产业链'投资主题中。"
+      },
+      "original_data": {
+        "title": "光刻胶相关新闻",
+        "theme": "光刻胶",
+        "content_preview": "据百川盈孚，因下游PCB行业需求持续增长，国内光引发剂多种牌号价格走高。截至2025年7月3日，907牌号参考出厂价格88元/公斤，较上月价格上涨2元/公斤，较年初上涨19元/公斤。（新闻来源：财联社..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "价格波动",
+            "summary": "因下游PCB行业需求持续增长，国内光引发剂多种牌号价格走高，其中907牌号参考出厂价格较年初上涨19元/公斤。",
+            "impact_industries": [
+              "光刻胶",
+              "PCB",
+              "电子化学品"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件属于常规的原材料价格波动，由下游PCB行业需求增长驱动，不具备'定义性'（如国家级新政）、'首创性'（如突破性技术首次商用）或'全局性'（改变行业格局）特征。价格波动是市场供需关系的正常反映，应归类到现有的'电子化学品'或'PCB产业链'投资主题中。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:00.521166"
+    },
+    {
+      "news_id": "news_050",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "半导体",
+        "光刻胶"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "武汉太紫微光电科技有限公司推出的t150a光刻胶产品通过半导体工艺量产验证，实现配方全自主设计，对标国际头部企业主流krf光刻胶系列。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件属于光刻胶国产化替代进程中的一项具体技术突破，虽然具有自主设计、对标国际主流产品的积极意义，但尚未达到'定义性'（如国家级产业政策）、'首创性'（光刻胶国产化已有先例，非全球首次）或'全局性'（单款产品验证通过尚不足以立即改变全球光刻胶供应格局）的重大标准。它更可能强化现有的'半导体材料国产化'或'光刻胶供应链自主'等既有投资题材，而非催生一个全新的独立题材。"
+      },
+      "original_data": {
+        "title": "光刻胶相关新闻",
+        "theme": "光刻胶",
+        "content_preview": "2024 年 10 月消息，武汉太紫微光电科技有限公司推出的 t150a 光刻胶产品，已通过半导体工艺量产验证，实现配方全自主设计，该产品对标国际头部企业主流 krf 光刻胶系列。..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "武汉太紫微光电科技有限公司推出的t150a光刻胶产品通过半导体工艺量产验证，实现配方全自主设计，对标国际头部企业主流krf光刻胶系列。",
+            "impact_industries": [
+              "半导体",
+              "光刻胶"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件属于光刻胶国产化替代进程中的一项具体技术突破，虽然具有自主设计、对标国际主流产品的积极意义，但尚未达到'定义性'（如国家级产业政策）、'首创性'（光刻胶国产化已有先例，非全球首次）或'全局性'（单款产品验证通过尚不足以立即改变全球光刻胶供应格局）的重大标准。它更可能强化现有的'半导体材料国产化'或'光刻胶供应链自主'等既有投资题材，而非催生一个全新的独立题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:12.540003"
+    },
+    {
+      "news_id": "news_051",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "半导体",
+        "光刻胶"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "武汉太紫微光电科技有限公司推出的T150 A光刻胶产品通过半导体工艺量产验证，实现配方全自主设计，有望开创国内半导体光刻制造新局面。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "该事件符合'首创性'和'全局性'重大标准：1. 首创性：T150 A光刻胶是国内首个通过半导体工艺量产验证、实现配方全自主设计的KrF光刻胶产品，打破了国外技术垄断；2. 全局性：该产品对标国际头部企业主流KrF光刻胶系列，性能优于国外同系列产品UV1610，在极限分辨率、工艺宽容度、稳定性等方面表现优异，有望改变国内半导体光刻制造依赖进口的行业格局，可能催生'国产高端光刻胶替代'这一全新的市场投资题材。"
+      },
+      "original_data": {
+        "title": "光刻胶相关新闻",
+        "theme": "光刻胶",
+        "content_preview": "据“中国光谷”消息，光谷企业近日在半导体专用光刻胶领域实现重大突破:武汉太紫微光电科技有限公司推出的T150 A光刻胶产品，已通过半导体工艺量产验证，实现配方全自主设计，有望开创国内半导体光刻制造新局..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "武汉太紫微光电科技有限公司推出的T150 A光刻胶产品通过半导体工艺量产验证，实现配方全自主设计，有望开创国内半导体光刻制造新局面。",
+            "impact_industries": [
+              "半导体",
+              "光刻胶"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "该事件符合'首创性'和'全局性'重大标准：1. 首创性：T150 A光刻胶是国内首个通过半导体工艺量产验证、实现配方全自主设计的KrF光刻胶产品，打破了国外技术垄断；2. 全局性：该产品对标国际头部企业主流KrF光刻胶系列，性能优于国外同系列产品UV1610，在极限分辨率、工艺宽容度、稳定性等方面表现优异，有望改变国内半导体光刻制造依赖进口的行业格局，可能催生'国产高端光刻胶替代'这一全新的市场投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:12.766946"
+    },
+    {
+      "news_id": "news_052",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "商业火箭",
+        "卫星互联",
+        "航天科技",
+        "金融投资"
+      ],
+      "direction": "利好",
+      "confidence": 0.98,
+      "summary": "上交所发布新规，明确支持尚未形成一定收入规模的优质商业火箭企业适用科创板第五套上市标准发行上市。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.88,
+        "reason": "此事件符合'定义性'和'全局性'重大标准：1. 定义性：这是中国证监会和上交所首次针对商业火箭企业制定的专项上市规则，为行业设立了明确的资本准入标准；2. 全局性：该政策将显著改变商业火箭行业的融资生态，降低早期企业的上市门槛，可能吸引大量资本涌入，重塑行业竞争格局，并可能催生'商业火箭/卫星互联资本化'这一全新的市场投资题材。"
+      },
+      "original_data": {
+        "title": "卫星互联相关新闻",
+        "theme": "卫星互联",
+        "content_preview": "上交所公告，为了落实中国证监会《关于在科创板设置科创成长层 增强制度包容性适应性的意见》，进一步规范科技型企业适用科创板第五套上市标准，支持尚未形成一定收入规模的优质商业火箭企业在科创板发行上市，上海..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "上交所发布新规，明确支持尚未形成一定收入规模的优质商业火箭企业适用科创板第五套上市标准发行上市。",
+            "impact_industries": [
+              "商业火箭",
+              "卫星互联",
+              "航天科技",
+              "金融投资"
+            ],
+            "direction": "利好",
+            "confidence": 0.98
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.88,
+            "reason": "此事件符合'定义性'和'全局性'重大标准：1. 定义性：这是中国证监会和上交所首次针对商业火箭企业制定的专项上市规则，为行业设立了明确的资本准入标准；2. 全局性：该政策将显著改变商业火箭行业的融资生态，降低早期企业的上市门槛，可能吸引大量资本涌入，重塑行业竞争格局，并可能催生'商业火箭/卫星互联资本化'这一全新的市场投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:12.678838"
+    },
+    {
+      "news_id": "news_053",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "卫星制造",
+        "火箭发射",
+        "通信设备",
+        "地面终端",
+        "数据服务",
+        "物联网",
+        "自动驾驶"
+      ],
+      "direction": "利好",
+      "confidence": 0.98,
+      "summary": "我国在海南商业航天发射场使用长征八号甲运载火箭，成功将卫星互联网低轨17组卫星发射升空，卫星顺利进入预定轨道，发射任务获得圆满成功。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.85,
+        "reason": "此次事件符合'定义性'和'全局性'重大标准：1. 定义性：作为国家级卫星互联网星座建设的关键一步，标志着我国低轨卫星互联网进入规模化部署阶段，具有明确的战略导向和产业定义作用；2. 全局性：低轨卫星互联网将重塑全球通信基础设施格局，对传统地面通信、物联网、自动驾驶等多个行业产生颠覆性影响，可能催生'卫星互联网'或'空天地一体化网络'这一全新的市场投资题材。"
+      },
+      "original_data": {
+        "title": "卫星互联相关新闻",
+        "theme": "卫星互联",
+        "content_preview": "12月26日7时26分，我国在海南商业航天发射场使用长征八号甲运载火箭，成功将卫星互联网低轨17组卫星发射升空，卫星顺利进入预定轨道，发射任务获得圆满成功。（新闻来源：央视新闻）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "我国在海南商业航天发射场使用长征八号甲运载火箭，成功将卫星互联网低轨17组卫星发射升空，卫星顺利进入预定轨道，发射任务获得圆满成功。",
+            "impact_industries": [
+              "卫星制造",
+              "火箭发射",
+              "通信设备",
+              "地面终端",
+              "数据服务",
+              "物联网",
+              "自动驾驶"
+            ],
+            "direction": "利好",
+            "confidence": 0.98
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.85,
+            "reason": "此次事件符合'定义性'和'全局性'重大标准：1. 定义性：作为国家级卫星互联网星座建设的关键一步，标志着我国低轨卫星互联网进入规模化部署阶段，具有明确的战略导向和产业定义作用；2. 全局性：低轨卫星互联网将重塑全球通信基础设施格局，对传统地面通信、物联网、自动驾驶等多个行业产生颠覆性影响，可能催生'卫星互联网'或'空天地一体化网络'这一全新的市场投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:13.011165"
+    },
+    {
+      "news_id": "news_054",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "航天航空",
+        "卫星通信",
+        "商业航天",
+        "航天制造"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "中国航天今年已完成近90次发射，刷新历史纪录，其中商业发射占比显著提升。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件虽刷新发射纪录且商业发射占比提升，但属于现有航天/卫星产业链的规模扩张和技术成熟化进程，缺乏'定义性'（如国家级新政）、'首创性'（如突破性技术首次商用）或'全局性'（彻底改变行业格局）特征。建议归入现有'商业航天'或'卫星互联网'题材进行跟踪。"
+      },
+      "original_data": {
+        "title": "卫星互联相关新闻",
+        "theme": "卫星互联",
+        "content_preview": "中国航天今年已完成近90次发射，刷新历史纪录，其中商业发射占比显著提升。（新闻来源：财联社）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "中国航天今年已完成近90次发射，刷新历史纪录，其中商业发射占比显著提升。",
+            "impact_industries": [
+              "航天航空",
+              "卫星通信",
+              "商业航天",
+              "航天制造"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件虽刷新发射纪录且商业发射占比提升，但属于现有航天/卫星产业链的规模扩张和技术成熟化进程，缺乏'定义性'（如国家级新政）、'首创性'（如突破性技术首次商用）或'全局性'（彻底改变行业格局）特征。建议归入现有'商业航天'或'卫星互联网'题材进行跟踪。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:11.564331"
+    },
+    {
+      "news_id": "news_055",
+      "event_type": "产能扩张",
+      "impact_industries": [
+        "航天航空",
+        "高端制造",
+        "卫星通信"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "蓝箭航天副总裁张静茹透露公司供应链覆盖全国90余城、600余家供应商，且无锡朱雀三号装配基地正冲刺建设，力争2026年投用。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该新闻主要披露了蓝箭航天的供应链布局和产能建设进展，属于企业层面的运营扩张信息，不具备'定义性'（如国家级卫星互联网新政）、'首创性'（如突破性火箭技术首次商用）或'全局性'（显著改变行业竞争格局）特征。此类信息更可能融入现有的'商业航天'或'卫星互联网'投资题材，而非催生全新独立题材。"
+      },
+      "original_data": {
+        "title": "卫星互联相关新闻",
+        "theme": "卫星互联",
+        "content_preview": "蓝箭航天副总裁张静茹告诉《科创板日报》记者，蓝箭航天供应链600余家供应商覆盖全国90余城，民企占比近70%、国企30%。同时，无锡朱雀三号装配基地正冲刺建设，力争年底验收，2026年投用，专注火箭装..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产能扩张",
+            "summary": "蓝箭航天副总裁张静茹透露公司供应链覆盖全国90余城、600余家供应商，且无锡朱雀三号装配基地正冲刺建设，力争2026年投用。",
+            "impact_industries": [
+              "航天航空",
+              "高端制造",
+              "卫星通信"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该新闻主要披露了蓝箭航天的供应链布局和产能建设进展，属于企业层面的运营扩张信息，不具备'定义性'（如国家级卫星互联网新政）、'首创性'（如突破性火箭技术首次商用）或'全局性'（显著改变行业竞争格局）特征。此类信息更可能融入现有的'商业航天'或'卫星互联网'投资题材，而非催生全新独立题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:12.074091"
+    },
+    {
+      "news_id": "news_056",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "卫星制造",
+        "航天发射",
+        "通信设备",
+        "物联网",
+        "地理信息"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "文昌国际航天城即将投产年产1000颗卫星的超级工厂，实现'卫星出厂即发射'的无缝衔接，并已吸引20余家产业链企业签约落户，完善了火箭研发、卫星制造、发射测控的全链条生态。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "该事件具有'定义性'和'全局性'特征：1. 年产1000颗卫星的超级工厂投产，标志着卫星制造从'小批量定制'向'大规模工业化'的根本性转变，重新定义了卫星产业的产能标准和生产模式；2. '卫星出厂即发射'的无缝衔接技术，结合全链条生态的完善，将显著降低卫星部署成本和时间，可能颠覆传统航天发射服务模式；3. 这种规模化、低成本、快速响应的卫星制造与发射能力，将催生全新的商业应用场景（如全球物联网、实时遥感、低轨通信星座等），可能改变通信、导航、遥感等多个行业的竞争格局，因此具备催生全新市场投资题材的潜力。"
+      },
+      "original_data": {
+        "title": "卫星互联相关新闻",
+        "theme": "卫星互联",
+        "content_preview": "在文昌国际航天城，年产1000颗卫星的超级工厂即将投产，可实现“卫星出厂即发射”的无缝衔接；目前20余家产业链上下游企业已签约落户，火箭研发、卫星制造、发射测控的全链条生态日趋完善。（新闻来源：央视网..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "文昌国际航天城即将投产年产1000颗卫星的超级工厂，实现'卫星出厂即发射'的无缝衔接，并已吸引20余家产业链企业签约落户，完善了火箭研发、卫星制造、发射测控的全链条生态。",
+            "impact_industries": [
+              "卫星制造",
+              "航天发射",
+              "通信设备",
+              "物联网",
+              "地理信息"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "该事件具有'定义性'和'全局性'特征：1. 年产1000颗卫星的超级工厂投产，标志着卫星制造从'小批量定制'向'大规模工业化'的根本性转变，重新定义了卫星产业的产能标准和生产模式；2. '卫星出厂即发射'的无缝衔接技术，结合全链条生态的完善，将显著降低卫星部署成本和时间，可能颠覆传统航天发射服务模式；3. 这种规模化、低成本、快速响应的卫星制造与发射能力，将催生全新的商业应用场景（如全球物联网、实时遥感、低轨通信星座等），可能改变通信、导航、遥感等多个行业的竞争格局，因此具备催生全新市场投资题材的潜力。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:14.714899"
+    },
+    {
+      "news_id": "news_057",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "商业航天",
+        "卫星通信",
+        "航天制造"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "蓝箭航天的朱雀三号遥一运载火箭成功首飞入轨，实现国内首次九机并联液氧甲烷动力系统集成应用，但一子级回收失败。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件虽具有'首创性'（国内首次实现九机并联液氧甲烷动力系统集成应用），但属于现有'商业航天'或'卫星互联网'投资题材下的技术进展，未达到'定义性'（如国家级新政）、'全局性'（改变行业格局）或催生全新独立题材的标准。事件核心是民营航天企业技术验证，虽可能加速卫星组网进程，但未突破现有投资框架。"
+      },
+      "original_data": {
+        "title": "卫星互联相关新闻",
+        "theme": "卫星互联",
+        "content_preview": "12月3日中午，朱雀三号遥一运载火箭在东风商业航天创新试验区发射升空，按程序完成了飞行任务，火箭二级进入预定轨道，火箭一子级回收失败。据了解，本次朱雀三号遥一运载火箭的首飞入轨，也是国内首次实现九机并..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "蓝箭航天的朱雀三号遥一运载火箭成功首飞入轨，实现国内首次九机并联液氧甲烷动力系统集成应用，但一子级回收失败。",
+            "impact_industries": [
+              "商业航天",
+              "卫星通信",
+              "航天制造"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件虽具有'首创性'（国内首次实现九机并联液氧甲烷动力系统集成应用），但属于现有'商业航天'或'卫星互联网'投资题材下的技术进展，未达到'定义性'（如国家级新政）、'全局性'（改变行业格局）或催生全新独立题材的标准。事件核心是民营航天企业技术验证，虽可能加速卫星组网进程，但未突破现有投资框架。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:12.629626"
+    },
+    {
+      "news_id": "news_058",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "航天航空",
+        "卫星通信",
+        "高端装备制造",
+        "新材料"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "中国航天科技集团一院研制的我国首艘火箭网系回收海上平台'领航者'成功交付，标志着可重复使用运载火箭技术从验证迈向工程应用。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "该事件同时满足'首创性'和'全局性'重大标准：1. 首创性：这是我国首艘火箭网系回收海上平台，实现了可重复使用运载火箭关键技术环节的首次工程化应用突破；2. 全局性：该技术将显著降低卫星发射成本（预计可降低30%-50%），可能重塑全球商业航天竞争格局，催生'可重复使用火箭产业链'这一全新投资主题，涵盖海上回收平台、特种材料、导航控制、商业发射服务等多个细分领域。"
+      },
+      "original_data": {
+        "title": "卫星互联相关新闻",
+        "theme": "卫星互联",
+        "content_preview": "从中国航天科技集团一院获悉，由该院抓总研制的我国首艘火箭网系回收海上平台于近日被命名为“领航者”并成功交付，标志着该院在可重复使用运载火箭技术链条上完成了重要一环，助推从技术验证到工程应用的跨越。（新..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "中国航天科技集团一院研制的我国首艘火箭网系回收海上平台'领航者'成功交付，标志着可重复使用运载火箭技术从验证迈向工程应用。",
+            "impact_industries": [
+              "航天航空",
+              "卫星通信",
+              "高端装备制造",
+              "新材料"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "该事件同时满足'首创性'和'全局性'重大标准：1. 首创性：这是我国首艘火箭网系回收海上平台，实现了可重复使用运载火箭关键技术环节的首次工程化应用突破；2. 全局性：该技术将显著降低卫星发射成本（预计可降低30%-50%），可能重塑全球商业航天竞争格局，催生'可重复使用火箭产业链'这一全新投资主题，涵盖海上回收平台、特种材料、导航控制、商业发射服务等多个细分领域。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:12.884857"
+    },
+    {
+      "news_id": "news_059",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "商业航天",
+        "卫星制造",
+        "卫星运营",
+        "地面设备",
+        "航天发射"
+      ],
+      "direction": "利好",
+      "confidence": 0.98,
+      "summary": "国家航天局设立商业航天司，标志着我国商业航天产业迎来专职监管机构。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.85,
+        "reason": "该事件符合'定义性'重大标准：1. 国家级监管机构设立，为商业航天产业提供明确的政策框架和监管路径，具有里程碑意义；2. 专职监管将加速产业规范化、规模化发展，可能催生'商业航天监管红利'或'航天产业化'等全新投资题材；3. 此举可能带动从卫星制造、发射服务到运营应用的完整产业链价值重估，具备改变行业格局的'全局性'潜力。"
+      },
+      "original_data": {
+        "title": "卫星互联相关新闻",
+        "theme": "卫星互联",
+        "content_preview": "据国家航天局消息，该局已于近期设立商业航天司，相关业务正在逐步开展，标志着我国商业航天产业迎来专职监管机构（新闻来源：央视新闻）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "国家航天局设立商业航天司，标志着我国商业航天产业迎来专职监管机构。",
+            "impact_industries": [
+              "商业航天",
+              "卫星制造",
+              "卫星运营",
+              "地面设备",
+              "航天发射"
+            ],
+            "direction": "利好",
+            "confidence": 0.98
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.85,
+            "reason": "该事件符合'定义性'重大标准：1. 国家级监管机构设立，为商业航天产业提供明确的政策框架和监管路径，具有里程碑意义；2. 专职监管将加速产业规范化、规模化发展，可能催生'商业航天监管红利'或'航天产业化'等全新投资题材；3. 此举可能带动从卫星制造、发射服务到运营应用的完整产业链价值重估，具备改变行业格局的'全局性'潜力。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:12.539575"
+    },
+    {
+      "news_id": "news_060",
+      "event_type": "政策发布",
+      "impact_industries": [
+        "卫星制造与发射",
+        "航天技术",
+        "数据中心与云计算",
+        "通信技术",
+        "能源与散热技术"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "北京市科委、中关村管委会等单位组织召开太空数据中心建设工作推进会，发布分三阶段（2025-2035年）建设太空数据中心的规划方案，旨在构建由空间算力、中继传输和地面管控分系统组成的太空数据中心系统。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "该事件符合'定义性'和'全局性'重大标准：1. 定义性：由北京市科委、中关村管委会等官方单位组织推进，发布了国家级太空数据中心建设的明确规划方案（2025-2035年三阶段），具有政策定义和顶层设计属性。2. 全局性：规划涉及从关键技术突破（能源散热、在轨组装）、试验星迭代、算力星座建设到大规模批量生产组网的全产业链布局，旨在构建'空间算力+中继传输+地面管控'的系统，可能重塑卫星互联网、太空计算、数据存储等行业的竞争格局，催生'太空数据中心'或'轨道计算'等全新投资题材。"
+      },
+      "original_data": {
+        "title": "卫星互联相关新闻",
+        "theme": "卫星互联",
+        "content_preview": "“智绘星空 胜算在天——太空数据中心建设工作推进会”召开，推进会由北京市科委、中关村管委会等单位组织召开。根据推进会上发布的规划方案，数据中心系统由空间算力、中继传输和地面管控分系统组成。数据中心建设..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "政策发布",
+            "summary": "北京市科委、中关村管委会等单位组织召开太空数据中心建设工作推进会，发布分三阶段（2025-2035年）建设太空数据中心的规划方案，旨在构建由空间算力、中继传输和地面管控分系统组成的太空数据中心系统。",
+            "impact_industries": [
+              "卫星制造与发射",
+              "航天技术",
+              "数据中心与云计算",
+              "通信技术",
+              "能源与散热技术"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "该事件符合'定义性'和'全局性'重大标准：1. 定义性：由北京市科委、中关村管委会等官方单位组织推进，发布了国家级太空数据中心建设的明确规划方案（2025-2035年三阶段），具有政策定义和顶层设计属性。2. 全局性：规划涉及从关键技术突破（能源散热、在轨组装）、试验星迭代、算力星座建设到大规模批量生产组网的全产业链布局，旨在构建'空间算力+中继传输+地面管控'的系统，可能重塑卫星互联网、太空计算、数据存储等行业的竞争格局，催生'太空数据中心'或'轨道计算'等全新投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:25.890994"
+    },
+    {
+      "news_id": "news_061",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "航天航空",
+        "卫星通信",
+        "高端制造",
+        "新材料"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "北京蓝箭航天朱雀三号运载火箭计划于11月29日首飞，标志着中国商业航天运载能力取得重要进展。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件属于商业航天领域的技术进展，虽具重要意义，但不符合'定义性'（非国家级新政）、'首创性'（中国已有多次商业火箭发射）或'全局性'（未改变行业根本格局）的重大标准。应归入现有'商业航天'或'卫星互联网'投资主题进行跟踪。"
+      },
+      "original_data": {
+        "title": "卫星互联相关新闻",
+        "theme": "卫星互联",
+        "content_preview": "北京蓝箭航天朱雀三号运载火箭首飞计划已进入最后准备阶段，计划于本周六即11月29日首飞。（新闻来源：每日经济新闻）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "北京蓝箭航天朱雀三号运载火箭计划于11月29日首飞，标志着中国商业航天运载能力取得重要进展。",
+            "impact_industries": [
+              "航天航空",
+              "卫星通信",
+              "高端制造",
+              "新材料"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件属于商业航天领域的技术进展，虽具重要意义，但不符合'定义性'（非国家级新政）、'首创性'（中国已有多次商业火箭发射）或'全局性'（未改变行业根本格局）的重大标准。应归入现有'商业航天'或'卫星互联网'投资主题进行跟踪。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:22.878947"
+    },
+    {
+      "news_id": "news_062",
+      "event_type": "需求预测上调",
+      "impact_industries": [
+        "半导体",
+        "数据中心",
+        "存储芯片"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "英伟达首席财务官表示数据中心芯片需求较此前预测的5000亿美元有所增长，带动SanDisk、西部数据、美光科技等相关公司股价大幅上涨。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件属于现有数据中心/半导体产业链的需求端利好确认，而非定义性、首创性或全局性变革。英伟达上调需求预测是对行业趋势的强化，SanDisk、西部数据、美光科技的股价反应属于产业链联动效应，未催生全新技术范式、政策框架或商业模式。事件更符合对'数据中心芯片'、'存储芯片'等现有投资主题的聚类强化，而非开创独立新题材。"
+      },
+      "original_data": {
+        "title": "液冷数据中心相关新闻",
+        "theme": "液冷数据中心",
+        "content_preview": "英伟达首席财务官表示，数据中心芯片需求较此前预测的5000亿美元有所增长。SanDisk收涨超27%，创去年2月份以来最大单日涨幅。西部数据涨超16%，创逾五年来最大单日涨幅。美光科技涨超10%，再创..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "需求预测上调",
+            "summary": "英伟达首席财务官表示数据中心芯片需求较此前预测的5000亿美元有所增长，带动SanDisk、西部数据、美光科技等相关公司股价大幅上涨。",
+            "impact_industries": [
+              "半导体",
+              "数据中心",
+              "存储芯片"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件属于现有数据中心/半导体产业链的需求端利好确认，而非定义性、首创性或全局性变革。英伟达上调需求预测是对行业趋势的强化，SanDisk、西部数据、美光科技的股价反应属于产业链联动效应，未催生全新技术范式、政策框架或商业模式。事件更符合对'数据中心芯片'、'存储芯片'等现有投资主题的聚类强化，而非开创独立新题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:23.240143"
+    },
+    {
+      "news_id": "news_063",
+      "event_type": "市场预测",
+      "impact_industries": [
+        "液冷技术",
+        "数据中心",
+        "服务器制造",
+        "散热解决方案"
+      ],
+      "direction": "利好",
+      "confidence": 0.85,
+      "summary": "东方证券基于TPUv7出货量及单机柜液冷价值量测算，预计2026年谷歌服务器液冷市场规模将达约180亿元，较2025年大幅提升。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.9,
+        "reason": "该事件属于现有'液冷数据中心'或'AI算力基础设施'投资题材的深化和验证，而非定义性、首创性或全局性事件。具体分析：1. 非定义性：未涉及国家级政策或行业标准重塑；2. 非首创性：液冷技术已在数据中心领域应用，本次仅为单一企业（谷歌）的市场规模预测；3. 非全局性：虽显示细分市场高增长潜力，但未提及技术突破、产业链重构或竞争格局颠覆。因此，应归类至现有题材而非催生全新题材。"
+      },
+      "original_data": {
+        "title": "液冷数据中心相关新闻",
+        "theme": "液冷数据中心",
+        "content_preview": "考虑TPUv7出货量及单机柜液冷价值量等，根据东方证券测算，预计2026年谷歌服务器液冷市场规模约为180亿元左右，较2025年大幅提升（新闻来源：新浪财经）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "市场预测",
+            "summary": "东方证券基于TPUv7出货量及单机柜液冷价值量测算，预计2026年谷歌服务器液冷市场规模将达约180亿元，较2025年大幅提升。",
+            "impact_industries": [
+              "液冷技术",
+              "数据中心",
+              "服务器制造",
+              "散热解决方案"
+            ],
+            "direction": "利好",
+            "confidence": 0.85
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.9,
+            "reason": "该事件属于现有'液冷数据中心'或'AI算力基础设施'投资题材的深化和验证，而非定义性、首创性或全局性事件。具体分析：1. 非定义性：未涉及国家级政策或行业标准重塑；2. 非首创性：液冷技术已在数据中心领域应用，本次仅为单一企业（谷歌）的市场规模预测；3. 非全局性：虽显示细分市场高增长潜力，但未提及技术突破、产业链重构或竞争格局颠覆。因此，应归类至现有题材而非催生全新题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:24.210868"
+    },
+    {
+      "news_id": "news_064",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "液冷数据中心",
+        "高阶PCB",
+        "高压直流电源",
+        "半导体",
+        "人工智能芯片"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "谷歌新一代TPUv7因单芯片功耗飙升至980W，其机柜将采用100%全液冷架构，标志着液冷从可选方案升级为ASIC阵营的强制标配，确立了独立于英伟达生态之外的全新强劲增长引擎。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "该事件符合'定义性'和'全局性'重大标准：1. 定义性：谷歌作为全球科技巨头，将液冷从'可选方案'升级为ASIC阵营的'强制标配'，重新定义了AI芯片散热的技术标准；2. 全局性：事件确立了'独立于英伟达生态之外的全新强劲增长引擎'，可能改变AI芯片散热技术路线和产业链格局，影响范围超越单一企业，涉及液冷、高阶PCB、高压直流电源等多个产业链环节，具备催生'AI芯片强制液冷'或'下一代数据中心散热'等全新投资题材的潜力。"
+      },
+      "original_data": {
+        "title": "液冷数据中心相关新闻",
+        "theme": "液冷数据中心",
+        "content_preview": "根据12月15日左右的市场信息，谷歌新一代TPUv7因单芯片功耗飙升至980W，其机柜将采用100%全液冷架构，标志着液冷从可选方案升级为ASIC阵营的强制标配。这一变化确立了独立于英伟达生态之外的全..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "谷歌新一代TPUv7因单芯片功耗飙升至980W，其机柜将采用100%全液冷架构，标志着液冷从可选方案升级为ASIC阵营的强制标配，确立了独立于英伟达生态之外的全新强劲增长引擎。",
+            "impact_industries": [
+              "液冷数据中心",
+              "高阶PCB",
+              "高压直流电源",
+              "半导体",
+              "人工智能芯片"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "该事件符合'定义性'和'全局性'重大标准：1. 定义性：谷歌作为全球科技巨头，将液冷从'可选方案'升级为ASIC阵营的'强制标配'，重新定义了AI芯片散热的技术标准；2. 全局性：事件确立了'独立于英伟达生态之外的全新强劲增长引擎'，可能改变AI芯片散热技术路线和产业链格局，影响范围超越单一企业，涉及液冷、高阶PCB、高压直流电源等多个产业链环节，具备催生'AI芯片强制液冷'或'下一代数据中心散热'等全新投资题材的潜力。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:25.251370"
+    },
+    {
+      "news_id": "news_065",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "数据中心",
+        "人工智能",
+        "半导体",
+        "散热技术"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "第五届国际AIDC液冷供应链千人峰会暨国际数据中心液冷市场趋势分析会将于12月18日-19日召开，媒体报道显示近两年全球AI巨头（如英伟达）已开始从风冷散热升级为液冷散热。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件虽涉及AI巨头技术升级和行业会议，但液冷技术本身并非全新首创（已有应用），且事件缺乏国家级政策支持或颠覆性技术突破，更多属于现有'数据中心节能'、'AI基础设施'等题材的深化和验证，因此不符合'定义性'、'首创性'或'全局性'重大标准。"
+      },
+      "original_data": {
+        "title": "液冷数据中心相关新闻",
+        "theme": "液冷数据中心",
+        "content_preview": "第五届国际AIDC液冷供应链干人峰会暨·国际数据中心液冷市场趋势分析会将于12月18日-19日召开。据媒体报道，近两年全球的AI巨头已开始拥抱液冷。以英伟达为例，去年在B100、H200芯片上，就正式..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "第五届国际AIDC液冷供应链千人峰会暨国际数据中心液冷市场趋势分析会将于12月18日-19日召开，媒体报道显示近两年全球AI巨头（如英伟达）已开始从风冷散热升级为液冷散热。",
+            "impact_industries": [
+              "数据中心",
+              "人工智能",
+              "半导体",
+              "散热技术"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件虽涉及AI巨头技术升级和行业会议，但液冷技术本身并非全新首创（已有应用），且事件缺乏国家级政策支持或颠覆性技术突破，更多属于现有'数据中心节能'、'AI基础设施'等题材的深化和验证，因此不符合'定义性'、'首创性'或'全局性'重大标准。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:23.205123"
+    },
+    {
+      "news_id": "news_066",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "半导体",
+        "数据中心",
+        "液冷技术"
+      ],
+      "direction": "利好",
+      "confidence": 0.9,
+      "summary": "中信建投研报指出，2025年英伟达AI芯片液冷渗透率将大幅提升，随着单芯片功耗增加，液冷市场规模将显著增长。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件虽预示液冷技术在AI芯片领域的加速渗透和市场规模增长，但液冷技术本身并非全新概念，已在数据中心、高性能计算等领域有应用基础。事件缺乏'定义性'（如国家级政策强制推行）、'首创性'（液冷技术非首次商用）或'全局性'（未提及颠覆现有行业格局）。它更可能强化现有'数据中心节能'、'AI基础设施'或'散热技术'等投资题材，而非催生全新独立题材。"
+      },
+      "original_data": {
+        "title": "液冷数据中心相关新闻",
+        "theme": "液冷数据中心",
+        "content_preview": "中信建投研报指出，2025年是英伟达AI芯片液冷渗透大幅提升的一年，同时随着单芯片功耗的提升，后续液冷市场规模将明显增长。（新闻来源：财联社）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "中信建投研报指出，2025年英伟达AI芯片液冷渗透率将大幅提升，随着单芯片功耗增加，液冷市场规模将显著增长。",
+            "impact_industries": [
+              "半导体",
+              "数据中心",
+              "液冷技术"
+            ],
+            "direction": "利好",
+            "confidence": 0.9
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件虽预示液冷技术在AI芯片领域的加速渗透和市场规模增长，但液冷技术本身并非全新概念，已在数据中心、高性能计算等领域有应用基础。事件缺乏'定义性'（如国家级政策强制推行）、'首创性'（液冷技术非首次商用）或'全局性'（未提及颠覆现有行业格局）。它更可能强化现有'数据中心节能'、'AI基础设施'或'散热技术'等投资题材，而非催生全新独立题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:23.298229"
+    },
+    {
+      "news_id": "news_067",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "数据中心",
+        "半导体",
+        "液冷技术",
+        "人工智能计算"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "英伟达透露其Vera Rubin计算架构实现了8个GPU全部无缆连接和全液冷设计，标志着数据中心液冷技术的重要进展。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件属于液冷数据中心技术的重要进展，但并非定义性、首创性或全局性突破。液冷数据中心作为现有投资题材（如数据中心基础设施、AI算力、绿色计算等）的子集已有市场关注，此次英伟达的技术细节更新属于该题材的强化而非催生全新独立题材。"
+      },
+      "original_data": {
+        "title": "液冷数据中心相关新闻",
+        "theme": "液冷数据中心",
+        "content_preview": "英伟达透露，Vera Rubin计算架构底部配备了8个Rubin CPX GPU、BlueField-4数据处理器、两颗Vera CPU以及4个Rubin封装，总共8个GPU全部实现了无缆连接和全液冷..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "英伟达透露其Vera Rubin计算架构实现了8个GPU全部无缆连接和全液冷设计，标志着数据中心液冷技术的重要进展。",
+            "impact_industries": [
+              "数据中心",
+              "半导体",
+              "液冷技术",
+              "人工智能计算"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件属于液冷数据中心技术的重要进展，但并非定义性、首创性或全局性突破。液冷数据中心作为现有投资题材（如数据中心基础设施、AI算力、绿色计算等）的子集已有市场关注，此次英伟达的技术细节更新属于该题材的强化而非催生全新独立题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:23.002725"
+    },
+    {
+      "news_id": "news_068",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "数据中心",
+        "半导体",
+        "人工智能硬件",
+        "高性能计算"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "微软CEO萨提亚·纳德拉宣布其团队成功开发出微流体冷却技术，能将芯片最高温升降低65%，并与瑞士初创公司Corintis合作利用AI设计仿生结构实现精准冷却。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.92,
+        "reason": "该事件符合'首创性'和'全局性'重大标准：1. 首创性：微软首次将微流体冷却技术与AI驱动的仿生结构设计结合，实现芯片温升降低65%的突破性效果，属于冷却技术领域的重大创新；2. 全局性：该技术能显著提升数据中心能效和计算密度，可能改变液冷技术路线，推动半导体、AI硬件等产业链升级，具备重塑行业格局的潜力。"
+      },
+      "original_data": {
+        "title": "液冷数据中心相关新闻",
+        "theme": "液冷数据中心",
+        "content_preview": "微软CEO萨提亚·纳德拉宣布，其团队已成功开发出微流体冷却技术；该技术能将芯片最高温升降低65%。微软与瑞士初创公司Corintis合作，借助AI设计出仿生结构使冷却液精准覆盖芯片热点。（新闻来源：财..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "微软CEO萨提亚·纳德拉宣布其团队成功开发出微流体冷却技术，能将芯片最高温升降低65%，并与瑞士初创公司Corintis合作利用AI设计仿生结构实现精准冷却。",
+            "impact_industries": [
+              "数据中心",
+              "半导体",
+              "人工智能硬件",
+              "高性能计算"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.92,
+            "reason": "该事件符合'首创性'和'全局性'重大标准：1. 首创性：微软首次将微流体冷却技术与AI驱动的仿生结构设计结合，实现芯片温升降低65%的突破性效果，属于冷却技术领域的重大创新；2. 全局性：该技术能显著提升数据中心能效和计算密度，可能改变液冷技术路线，推动半导体、AI硬件等产业链升级，具备重塑行业格局的潜力。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:23.274958"
+    },
+    {
+      "news_id": "news_069",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "液冷散热",
+        "数据中心",
+        "AI芯片"
+      ],
+      "direction": "利好",
+      "confidence": 0.9,
+      "summary": "英伟达因AI新平台功耗过高，要求供应商开发全新的微通道水冷板技术，单价是现有散热方案的三至五倍。",
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.85,
+        "reason": "该事件符合'首创性'和'全局性'重大标准。首先，英伟达作为AI芯片龙头，因AI平台功耗突破2000W而要求开发全新的微通道水冷板技术，这是针对高功耗AI芯片的首次明确技术升级需求，具有'首创性'。其次，这一技术变革将推动数据中心散热方案从传统风冷向液冷全面升级，单价提升3-5倍意味着市场规模将显著扩大，可能改变整个数据中心散热行业的竞争格局和技术路线，具有'全局性'影响。因此，可能催生'AI液冷散热'这一全新的市场投资题材。"
+      },
+      "original_data": {
+        "title": "液冷数据中心相关新闻",
+        "theme": "液冷数据中心",
+        "content_preview": "《科创板日报》15日讯，由于AI新平台Rubin与下一代Feynman平台功耗或高达2000W以上，现有散热方案无法应对，消息称英伟达要求供应商开发全新“微通道水冷板（MLCP）”技术，单价是现有散热..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "英伟达因AI新平台功耗过高，要求供应商开发全新的微通道水冷板技术，单价是现有散热方案的三至五倍。",
+            "impact_industries": [
+              "液冷散热",
+              "数据中心",
+              "AI芯片"
+            ],
+            "direction": "利好",
+            "confidence": 0.9
+          },
+          "theme_discovery_directive": {
+            "action": "CREATE_NEW",
+            "confidence": 0.85,
+            "reason": "该事件符合'首创性'和'全局性'重大标准。首先，英伟达作为AI芯片龙头，因AI平台功耗突破2000W而要求开发全新的微通道水冷板技术，这是针对高功耗AI芯片的首次明确技术升级需求，具有'首创性'。其次，这一技术变革将推动数据中心散热方案从传统风冷向液冷全面升级，单价提升3-5倍意味着市场规模将显著扩大，可能改变整个数据中心散热行业的竞争格局和技术路线，具有'全局性'影响。因此，可能催生'AI液冷散热'这一全新的市场投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:24.210499"
+    },
+    {
+      "news_id": "news_070",
+      "event_type": "并购",
+      "impact_industries": [
+        "人工智能",
+        "科技",
+        "互联网"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "Meta以数十亿美元收购AI智能体公司Manus，以加速人工智能创新，这是Meta成立以来第三大收购。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件是大型科技公司对AI初创企业的常规并购行为，虽然交易规模较大（Meta第三大收购），但缺乏'定义性'（非国家级政策）、'首创性'（AI智能体技术已有多个玩家）或'全局性'（未改变AI行业整体格局）。事件更可能强化现有'AI应用'或'AI智能体'投资主题，而非催生全新题材。"
+      },
+      "original_data": {
+        "title": "AI智能体Manus相关新闻",
+        "theme": "AI智能体Manus",
+        "content_preview": "Meta宣布收购AI智能体公司Manus，以加速人工智能创新，具体交易条款未披露。据《晚点 LatePost》报道，Meta以数十亿美元收购开发AI应用Manus的公司蝴蝶效应，这是Meta成立以来第..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "并购",
+            "summary": "Meta以数十亿美元收购AI智能体公司Manus，以加速人工智能创新，这是Meta成立以来第三大收购。",
+            "impact_industries": [
+              "人工智能",
+              "科技",
+              "互联网"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件是大型科技公司对AI初创企业的常规并购行为，虽然交易规模较大（Meta第三大收购），但缺乏'定义性'（非国家级政策）、'首创性'（AI智能体技术已有多个玩家）或'全局性'（未改变AI行业整体格局）。事件更可能强化现有'AI应用'或'AI智能体'投资主题，而非催生全新题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:33.835896"
+    },
+    {
+      "news_id": "news_071",
+      "event_type": "技术突破",
+      "impact_industries": [
+        "人工智能",
+        "视频制作",
+        "内容创作",
+        "数字营销",
+        "教育培训"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "AI智能体Manus推出文生视频功能，可通过连续拼接突破视频时长限制，几分钟内将文本转为视频故事。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "虽然Manus的文生视频功能在连续拼接突破时长限制方面有技术亮点，但这属于现有AI视频生成技术领域的渐进式改进，而非定义性、首创性或全局性的突破。该技术仍属于'AI内容生成'这一已有投资题材的范畴，未达到催生全新市场投资题材的标准。"
+      },
+      "original_data": {
+        "title": "AI智能体Manus相关新闻",
+        "theme": "AI智能体Manus",
+        "content_preview": "Manus 推出文生视频功能，AI智能体几分钟内将文本转为视频故事:和大多数视频生成AI不同Manus这次可以通过连续拼接突破视频时长限制（新闻来源：财联社）..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "技术突破",
+            "summary": "AI智能体Manus推出文生视频功能，可通过连续拼接突破视频时长限制，几分钟内将文本转为视频故事。",
+            "impact_industries": [
+              "人工智能",
+              "视频制作",
+              "内容创作",
+              "数字营销",
+              "教育培训"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "虽然Manus的文生视频功能在连续拼接突破时长限制方面有技术亮点，但这属于现有AI视频生成技术领域的渐进式改进，而非定义性、首创性或全局性的突破。该技术仍属于'AI内容生成'这一已有投资题材的范畴，未达到催生全新市场投资题材的标准。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:33.528618"
+    },
+    {
+      "news_id": "news_072",
+      "event_type": "融资事件",
+      "impact_industries": [
+        "人工智能",
+        "金融科技",
+        "企业服务"
+      ],
+      "direction": "利好",
+      "confidence": 0.85,
+      "summary": "智能体产品Manus背后的公司蝴蝶效应计划进行新一轮1亿美元融资，估值15亿美元，将有国资参与，资金主要用于发展中国市场业务。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.9,
+        "reason": "该事件为一家AI智能体公司的融资活动，虽然涉及国资参与和中国市场扩张，但本质上属于现有'人工智能'或'智能体技术'投资题材下的具体案例。事件缺乏'定义性'（如国家级AI新政）、'首创性'（Manus非突破性技术首次商用）或'全局性'（未提及改变整个AI行业格局），因此不足以催生全新市场投资题材，应归类到现有相关题材中。"
+      },
+      "original_data": {
+        "title": "AI智能体Manus相关新闻",
+        "theme": "AI智能体Manus",
+        "content_preview": "《科创板日报》记者从知情人士方面了解到，智能体产品Manus背后公司蝴蝶效应正在计划新一轮融资，预计融资规模为1亿美元，估值15亿美元。本轮融资将有国资参与，所筹集的资金将主要用于发展中国市场业务。（..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "融资事件",
+            "summary": "智能体产品Manus背后的公司蝴蝶效应计划进行新一轮1亿美元融资，估值15亿美元，将有国资参与，资金主要用于发展中国市场业务。",
+            "impact_industries": [
+              "人工智能",
+              "金融科技",
+              "企业服务"
+            ],
+            "direction": "利好",
+            "confidence": 0.85
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.9,
+            "reason": "该事件为一家AI智能体公司的融资活动，虽然涉及国资参与和中国市场扩张，但本质上属于现有'人工智能'或'智能体技术'投资题材下的具体案例。事件缺乏'定义性'（如国家级AI新政）、'首创性'（Manus非突破性技术首次商用）或'全局性'（未提及改变整个AI行业格局），因此不足以催生全新市场投资题材，应归类到现有相关题材中。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:34.311666"
+    },
+    {
+      "news_id": "news_073",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "人工智能",
+        "软件服务",
+        "云计算"
+      ],
+      "direction": "利好",
+      "confidence": 0.95,
+      "summary": "AI智能体平台Manus宣布向所有人开放注册，取消等待名单，并提供免费积分奖励。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.92,
+        "reason": "该事件属于现有AI智能体/自动化平台领域的市场策略调整（从封闭邀请制转向开放注册），虽能提升平台可及性和用户基础，但缺乏'定义性'（非国家级政策）、'首创性'（开放注册模式常见）或'全局性'（未提及技术突破或行业格局重塑），因此更可能融入现有'AI应用'或'自动化工具'投资题材，而非催生全新题材。"
+      },
+      "original_data": {
+        "title": "AI智能体Manus相关新闻",
+        "theme": "AI智能体Manus",
+        "content_preview": "价格曾经炒到10万，一码难求的AI智能体平台Manus宣布开放注册，Manus在公告中表示，Manus向所有人开放，无需等待名单；所有用户每天可免费执行一项任务（300积分），所有用户一次性获得100..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "AI智能体平台Manus宣布向所有人开放注册，取消等待名单，并提供免费积分奖励。",
+            "impact_industries": [
+              "人工智能",
+              "软件服务",
+              "云计算"
+            ],
+            "direction": "利好",
+            "confidence": 0.95
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.92,
+            "reason": "该事件属于现有AI智能体/自动化平台领域的市场策略调整（从封闭邀请制转向开放注册），虽能提升平台可及性和用户基础，但缺乏'定义性'（非国家级政策）、'首创性'（开放注册模式常见）或'全局性'（未提及技术突破或行业格局重塑），因此更可能融入现有'AI应用'或'自动化工具'投资题材，而非催生全新题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:34.154916"
+    },
+    {
+      "news_id": "news_074",
+      "event_type": "融资事件",
+      "impact_industries": [
+        "人工智能",
+        "风险投资",
+        "企业服务"
+      ],
+      "direction": "利好",
+      "confidence": 0.9,
+      "summary": "AI智能体Manus的开发者蝴蝶效应正与潜在投资者谈判，计划以至少5亿美元估值进行新一轮融资，估值较前次增长约五倍，本轮融资可能达数千万美元，由腾讯和红杉资本中国领投，真格基金参与。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件为AI领域内一家初创公司的高估值融资，虽涉及腾讯、红杉等知名机构投资，估值增长显著，但本质上属于现有'AI应用'或'AI智能体'投资主题下的个案融资事件，不具备'定义性'（如国家级AI新政）、'首创性'（如突破性基础模型首次发布）或'全局性'（如颠覆整个AI产业链格局）的特征，因此应归入现有相关投资题材进行聚类分析。"
+      },
+      "original_data": {
+        "title": "AI智能体Manus相关新闻",
+        "theme": "AI智能体Manus",
+        "content_preview": "据The Information报道，三位知情人士透露，Manus AI的团队正在与包括美国风投机构在内的潜在投资者进行谈判，计划以至少5亿美元(约合37.5亿人民币)的估值进行新一轮融资，这一估值比..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "融资事件",
+            "summary": "AI智能体Manus的开发者蝴蝶效应正与潜在投资者谈判，计划以至少5亿美元估值进行新一轮融资，估值较前次增长约五倍，本轮融资可能达数千万美元，由腾讯和红杉资本中国领投，真格基金参与。",
+            "impact_industries": [
+              "人工智能",
+              "风险投资",
+              "企业服务"
+            ],
+            "direction": "利好",
+            "confidence": 0.9
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件为AI领域内一家初创公司的高估值融资，虽涉及腾讯、红杉等知名机构投资，估值增长显著，但本质上属于现有'AI应用'或'AI智能体'投资主题下的个案融资事件，不具备'定义性'（如国家级AI新政）、'首创性'（如突破性基础模型首次发布）或'全局性'（如颠覆整个AI产业链格局）的特征，因此应归入现有相关投资题材进行聚类分析。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:35.678930"
+    },
+    {
+      "news_id": "news_075",
+      "event_type": "产品发布",
+      "impact_industries": [
+        "人工智能",
+        "软件服务",
+        "科技"
+      ],
+      "direction": "利好",
+      "confidence": 0.9,
+      "summary": "中国团队发布通用型AI Agent产品Manus，在GAIA基准测试中取得SOTA成绩，性能超越OpenAI同层次大模型。",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件属于AI Agent领域的产品发布和技术性能提升，虽在基准测试中取得SOTA成绩并超越OpenAI同层次模型，但尚未达到'定义性'（如国家级新政）、'首创性'（AI Agent非首次商用技术）或'全局性'（未明确改变行业格局）的重大标准。因此，更适合归类到现有'人工智能'或'AI Agent'投资题材中，而非催生全新市场投资题材。"
+      },
+      "original_data": {
+        "title": "AI智能体Manus相关新闻",
+        "theme": "AI智能体Manus",
+        "content_preview": "3月6日消息，日前，一支来自中国的团队正式对外发布通用型AI Agent产品Manus。据团队介绍，Manus在GAIA基准测试中取得了SOTA（State-of-the-Art）的成绩，显示其性能超..."
+      },
+      "ai_response": {
+        "raw_response": {
+          "event_info": {
+            "event_type": "产品发布",
+            "summary": "中国团队发布通用型AI Agent产品Manus，在GAIA基准测试中取得SOTA成绩，性能超越OpenAI同层次大模型。",
+            "impact_industries": [
+              "人工智能",
+              "软件服务",
+              "科技"
+            ],
+            "direction": "利好",
+            "confidence": 0.9
+          },
+          "theme_discovery_directive": {
+            "action": "CLUSTER",
+            "confidence": 0.85,
+            "reason": "该事件属于AI Agent领域的产品发布和技术性能提升，虽在基准测试中取得SOTA成绩并超越OpenAI同层次模型，但尚未达到'定义性'（如国家级新政）、'首创性'（AI Agent非首次商用技术）或'全局性'（未明确改变行业格局）的重大标准。因此，更适合归类到现有'人工智能'或'AI Agent'投资题材中，而非催生全新市场投资题材。"
+          }
+        },
+        "parser_version": "DeepSeekParser_v2"
+      },
+      "processed_at": "2026-01-10T11:43:34.143096"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "evaluation_time": "2026-01-10T16:01:47.455011",
+    "evaluation_scope": "归并后的题材群组准确性",
+    "total_news": 76,
+    "true_theme_count": 10,
+    "ai_theme_count": 1
+  },
+  "performance_metrics": {
+    "f1_score": 0.19354838709677416,
+    "precision": 1.0,
+    "recall": 0.10714285714285714
+  },
+  "theme_mapping_quality": {
+    "AI/AR眼镜": "poor",
+    "SpaceX": "poor",
+    "可控核聚变": "poor",
+    "对日制裁": "poor",
+    "稀土永磁": "none",
+    "海洋经济": "poor",
+    "光刻胶": "none",
+    "卫星互联": "none",
+    "液冷数据中心": "none",
+    "AI智能体Manus": "none"
+  },
+  "cross_category_errors": [],
+  "key_findings": [
+    "基于归并后结果的评估",
+    "重点考察同类新闻是否聚合",
+    "允许题材名称不同，但要求逻辑正确"
+  ],
+  "recommendations": [
+    "优化判重引擎的相似度计算",
+    "加强题材特征的识别",
+    "建立题材互斥规则"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "thresholds": {
+    "exact_match": 1.0,
+    "inclusion_match": 0.6,
+    "semantic_similarity": 0.55,
+    "event_overlap": 0.5,
+    "auto_merge": 0.65
+  },
+  "strategies": {
+    "enable_exact_match": true,
+    "enable_inclusion_check": true,
+    "enable_semantic_analysis": true,
+    "enable_event_overlap": true,
+    "use_jieba": true
+  },
+  "weights": {
+    "title": 0.4,
+    "summary": 0.3,
+    "content": 0.2,
+    "keywords": 0.1
+  }
+}

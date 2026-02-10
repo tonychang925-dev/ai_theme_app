@@ -1,0 +1,122 @@
+{
+  "metadata": {
+    "test_type": "判重引擎优化配置测试",
+    "test_time": "2026-01-10T18:04:26.595845",
+    "test_focus": "寻找最佳判重阈值配置"
+  },
+  "statistics": {
+    "total_tests": 0,
+    "duplicates_detected": 0,
+    "test_passed": 0,
+    "configurations_tested": [
+      "config_low_threshold",
+      "config_industry_focus",
+      "config_aggressive"
+    ]
+  },
+  "all_config_results": [
+    {
+      "config_id": "config_low_threshold",
+      "description": "低阈值配置 (semantic: 0.7)",
+      "tests": [
+        {
+          "test_id": "inclusion_failed_001",
+          "error": "'strategies'",
+          "passed": false
+        },
+        {
+          "test_id": "semantic_failed_001",
+          "error": "'strategies'",
+          "passed": false
+        },
+        {
+          "test_id": "real_world_failed_001",
+          "error": "'strategies'",
+          "passed": false
+        },
+        {
+          "test_id": "boundary_test_001",
+          "error": "'strategies'",
+          "passed": false
+        }
+      ],
+      "summary": {
+        "total_tests": 0,
+        "passed": 0,
+        "duplicates_detected": 0,
+        "accuracy": 0
+      }
+    },
+    {
+      "config_id": "config_industry_focus",
+      "description": "行业焦点配置",
+      "tests": [
+        {
+          "test_id": "inclusion_failed_001",
+          "error": "'strategies'",
+          "passed": false
+        },
+        {
+          "test_id": "semantic_failed_001",
+          "error": "'strategies'",
+          "passed": false
+        },
+        {
+          "test_id": "real_world_failed_001",
+          "error": "'strategies'",
+          "passed": false
+        },
+        {
+          "test_id": "boundary_test_001",
+          "error": "'strategies'",
+          "passed": false
+        }
+      ],
+      "summary": {
+        "total_tests": 0,
+        "passed": 0,
+        "duplicates_detected": 0,
+        "accuracy": 0
+      }
+    },
+    {
+      "config_id": "config_aggressive",
+      "description": "激进配置 (高敏感度)",
+      "tests": [
+        {
+          "test_id": "inclusion_failed_001",
+          "error": "'strategies'",
+          "passed": false
+        },
+        {
+          "test_id": "semantic_failed_001",
+          "error": "'strategies'",
+          "passed": false
+        },
+        {
+          "test_id": "real_world_failed_001",
+          "error": "'strategies'",
+          "passed": false
+        },
+        {
+          "test_id": "boundary_test_001",
+          "error": "'strategies'",
+          "passed": false
+        }
+      ],
+      "summary": {
+        "total_tests": 0,
+        "passed": 0,
+        "duplicates_detected": 0,
+        "accuracy": 0
+      }
+    }
+  ],
+  "best_configuration": null,
+  "summary": {
+    "total_configurations_tested": 3,
+    "overall_accuracy": 0,
+    "best_config_id": null,
+    "best_accuracy": 0
+  }
+}

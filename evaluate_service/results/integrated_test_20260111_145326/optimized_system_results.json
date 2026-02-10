@@ -1,0 +1,16 @@
+{
+  "system": "enhanced_ai_theme_discovery",
+  "event_theme_mapping": {
+    "mock_ai_001_0": "人工智能",
+    "mock_semiconductor_001_1": "半导体",
+    "mock_new_energy_001_2": "新能源汽车",
+    "mock_ai_001_3": "信息技术",
+    "mock_semiconductor_001_4": "半导体",
+    "mock_new_energy_001_5": "新能源汽车",
+    "mock_ai_001_6": "新型人工智能技术取得",
+    "mock_semiconductor_001_7": "半导体",
+    "mock_new_energy_001_8": "新能源汽车",
+    "mock_ai_001_9": "新型人工智能技术取得"
+  },
+  "generated_at": "2026-01-11T14:53:26.911378"
+}

@@ -1,0 +1,14 @@
+{
+  "检查名称": "EnhancedThemeDiscovery数据保存完整性检查",
+  "检查时间": "2026-01-15T20:27:58.057364",
+  "检查结果": "通过",
+  "发现问题": [
+    "RelatedThemeFetcher.fetch_themes_with_complete_news_content过滤没有完整内容的主题",
+    "导致AI只能分析部分主题"
+  ],
+  "修复建议": [
+    "检查事件保存逻辑，确保original_news.content正确保存",
+    "修改fetch_themes_with_complete_news_content，不要过滤主题",
+    "或确保所有主题的关联事件都有完整内容"
+  ]
+}

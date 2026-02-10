@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "test_type": "REAL_AI_SIMILARITY_ANALYZER_TEST",
+    "timestamp": "2026-01-14T12:29:09.086908",
+    "ai_provider": "DeepSeek",
+    "data_structure": "实际生产数据结构",
+    "test_focus": "领域区分能力和相似性分析准确性"
+  },
+  "test_summary": {
+    "total_cases": 3,
+    "passed_cases": 1,
+    "success_rate": 0.3333333333333333,
+    "failed_cases": [
+      "半导体技术匹配测试",
+      "CLUSTER事件相似性测试"
+    ]
+  },
+  "detailed_results": [
+    {
+      "test_id": "REAL_001",
+      "test_name": "国防航天 vs 消费电子",
+      "upstream_action": "CREATE_NEW",
+      "processing_time": 0.0037441253662109375,
+      "ai_analysis": {
+        "best_match_theme": "分析失败",
+        "similarity_score": 0.0,
+        "similarity_reason": "AI分析失败: name 'is_defense_event' is not defined"
+      },
+      "verification": {
+        "passed": true,
+        "critical_check_passed": true,
+        "score_check_passed": true,
+        "reason_quality_check_passed": true,
+        "issues": [],
+        "warnings": [
+          "✅ 关键检查通过: 国防航天 ≠ 消费电子",
+          "✅ 分数范围正确: 0.000 在 [0.0, 0.3] 内",
+          "⚠️  分析理由缺少关键词: ['国防', '军事', '航天', '领域不同', '本质不同']"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test_id": "REAL_002",
+      "test_name": "半导体技术匹配测试",
+      "upstream_action": "CREATE_NEW",
+      "processing_time": 0.002249002456665039,
+      "ai_analysis": {
+        "best_match_theme": "分析失败",
+        "similarity_score": 0.0,
+        "similarity_reason": "AI分析失败: name 'is_defense_event' is not defined"
+      },
+      "verification": {
+        "passed": false,
+        "critical_check_passed": true,
+        "score_check_passed": false,
+        "reason_quality_check_passed": true,
+        "issues": [
+          "❌ 分数范围错误: 0.000 不在 [0.6, 1.0] 内"
+        ],
+        "warnings": [
+          "✅ 关键检查通过: 半导体技术 ≈ 半导体",
+          "⚠️  未匹配到期望主题 '半导体'，实际匹配: '分析失败'",
+          "⚠️  分析理由缺少关键词: ['半导体', '芯片', '技术相关', '领域相同']"
+        ]
+      },
+      "passed": false
+    },
+    {
+      "test_id": "REAL_003",
+      "test_name": "CLUSTER事件相似性测试",
+      "upstream_action": "CLUSTER",
+      "processing_time": 0.0019521713256835938,
+      "ai_analysis": {
+        "best_match_theme": "分析失败",
+        "similarity_score": 0.0,
+        "similarity_reason": "AI分析失败: name 'is_defense_event' is not defined"
+      },
+      "verification": {
+        "passed": false,
+        "critical_check_passed": true,
+        "score_check_passed": false,
+        "reason_quality_check_passed": true,
+        "issues": [
+          "❌ 分数范围错误: 0.000 不在 [0.7, 1.0] 内"
+        ],
+        "warnings": [
+          "✅ 关键检查通过: 智能眼镜 ∈ 消费电子",
+          "⚠️  未匹配到期望主题 '消费电子'，实际匹配: '分析失败'",
+          "⚠️  分析理由缺少关键词: ['消费电子', '可穿戴', '同类产品', '领域相同']"
+        ]
+      },
+      "passed": false
+    }
+  ],
+  "key_findings": {
+    "domain_differentiation": {
+      "status": "good",
+      "details": [
+        "✅ 国防航天 vs 消费电子: 正确区分国防航天和消费电子"
+      ]
+    },
+    "score_accuracy": {
+      "status": "unknown",
+      "details": []
+    },
+    "reasoning_quality": {
+      "status": "unknown",
+      "details": []
+    },
+    "critical_issues": [
+      {
+        "case": "半导体技术匹配测试",
+        "error": "测试失败"
+      },
+      {
+        "case": "CLUSTER事件相似性测试",
+        "error": "测试失败"
+      }
+    ],
+    "successful_tests": [
+      "国防航天 vs 消费电子"
+    ],
+    "overall_status": "poor"
+  },
+  "recommendations": [
+    "分析AI提示词是否需要优化以更好区分领域",
+    "考虑调整相似度分数的阈值",
+    "检查AI返回的理由是否符合业务要求"
+  ]
+}

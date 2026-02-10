@@ -1,0 +1,2091 @@
+[
+  {
+    "id": 2000,
+    "name": "农林牧渔",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "农林牧渔行业分类",
+    "keywords": [
+      "农林牧渔",
+      "Agriculture"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "010000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2001,
+    "name": "采掘",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "采掘行业分类",
+    "keywords": [
+      "采掘",
+      "Mining"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "020000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2002,
+    "name": "化工",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "化工行业分类",
+    "keywords": [
+      "化工",
+      "Chemicals"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "030000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2003,
+    "name": "钢铁",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "钢铁行业分类",
+    "keywords": [
+      "钢铁",
+      "Steel"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "040000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2004,
+    "name": "有色金属",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "有色金属行业分类",
+    "keywords": [
+      "有色金属",
+      "Nonferrous Metals"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "050000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2005,
+    "name": "电子",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "电子行业分类",
+    "keywords": [
+      "电子",
+      "Electronics"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2006,
+    "name": "家用电器",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "家用电器行业分类",
+    "keywords": [
+      "家用电器",
+      "Household Appliances"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "070000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2007,
+    "name": "食品饮料",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "食品饮料行业分类",
+    "keywords": [
+      "食品饮料",
+      "Food & Beverage"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "080000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2008,
+    "name": "纺织服装",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "纺织服装行业分类",
+    "keywords": [
+      "纺织服装",
+      "Textiles & Apparel"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "090000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2009,
+    "name": "轻工制造",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "轻工制造行业分类",
+    "keywords": [
+      "轻工制造",
+      "Light Industry"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "100000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2010,
+    "name": "医药生物",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "医药生物行业分类",
+    "keywords": [
+      "医药生物",
+      "Pharmaceuticals & Biology"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "110000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2011,
+    "name": "公用事业",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "公用事业行业分类",
+    "keywords": [
+      "公用事业",
+      "Utilities"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "120000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2012,
+    "name": "交通运输",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "交通运输行业分类",
+    "keywords": [
+      "交通运输",
+      "Transportation"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "130000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2013,
+    "name": "房地产",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "房地产行业分类",
+    "keywords": [
+      "房地产",
+      "Real Estate"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "140000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2014,
+    "name": "商业贸易",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "商业贸易行业分类",
+    "keywords": [
+      "商业贸易",
+      "Commerce & Trade"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "150000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2015,
+    "name": "休闲服务",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "休闲服务行业分类",
+    "keywords": [
+      "休闲服务",
+      "Leisure Services"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "160000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2016,
+    "name": "综合",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "综合行业分类",
+    "keywords": [
+      "综合",
+      "Conglomerates"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "170000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2017,
+    "name": "建筑材料",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "建筑材料行业分类",
+    "keywords": [
+      "建筑材料",
+      "Building Materials"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "180000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2018,
+    "name": "建筑装饰",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "建筑装饰行业分类",
+    "keywords": [
+      "建筑装饰",
+      "Building Decoration"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "190000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2019,
+    "name": "电气设备",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "电气设备行业分类",
+    "keywords": [
+      "电气设备",
+      "Electrical Equipment"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "200000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2020,
+    "name": "国防军工",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "国防军工行业分类",
+    "keywords": [
+      "国防军工",
+      "Defense & Military"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "210000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2021,
+    "name": "计算机",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "计算机行业分类",
+    "keywords": [
+      "计算机",
+      "Computer"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "220000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2022,
+    "name": "传媒",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "传媒行业分类",
+    "keywords": [
+      "传媒",
+      "Media"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "230000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2023,
+    "name": "通信",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "通信行业分类",
+    "keywords": [
+      "通信",
+      "Communications"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "240000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2024,
+    "name": "银行",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "银行行业分类",
+    "keywords": [
+      "银行",
+      "Banking"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "250000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2025,
+    "name": "非银金融",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "非银金融行业分类",
+    "keywords": [
+      "非银金融",
+      "Non-bank Finance"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "260000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2026,
+    "name": "汽车",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "汽车行业分类",
+    "keywords": [
+      "汽车",
+      "Automobile"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "270000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2027,
+    "name": "机械设备",
+    "category": "行业分类",
+    "sub_category": "一级行业",
+    "description": "机械设备行业分类",
+    "keywords": [
+      "机械设备",
+      "Machinery"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.95,
+    "heat_score": 75,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "280000",
+    "classification_level": "primary",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2028,
+    "name": "半导体",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "半导体细分行业",
+    "keywords": [
+      "半导体"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060100",
+    "classification_level": "secondary",
+    "parent_industry_code": "060000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2029,
+    "name": "元件",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "元件细分行业",
+    "keywords": [
+      "元件"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060200",
+    "classification_level": "secondary",
+    "parent_industry_code": "060000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2030,
+    "name": "光学光电子",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "光学光电子细分行业",
+    "keywords": [
+      "光学光电子"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060300",
+    "classification_level": "secondary",
+    "parent_industry_code": "060000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2031,
+    "name": "电子制造",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "电子制造细分行业",
+    "keywords": [
+      "电子制造"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060400",
+    "classification_level": "secondary",
+    "parent_industry_code": "060000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2032,
+    "name": "其他电子",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "其他电子细分行业",
+    "keywords": [
+      "其他电子"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060500",
+    "classification_level": "secondary",
+    "parent_industry_code": "060000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2033,
+    "name": "化学制药",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "化学制药细分行业",
+    "keywords": [
+      "化学制药"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "110100",
+    "classification_level": "secondary",
+    "parent_industry_code": "110000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2034,
+    "name": "中药",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "中药细分行业",
+    "keywords": [
+      "中药"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "110200",
+    "classification_level": "secondary",
+    "parent_industry_code": "110000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2035,
+    "name": "生物制品",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "生物制品细分行业",
+    "keywords": [
+      "生物制品"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "110300",
+    "classification_level": "secondary",
+    "parent_industry_code": "110000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2036,
+    "name": "医药商业",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "医药商业细分行业",
+    "keywords": [
+      "医药商业"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "110400",
+    "classification_level": "secondary",
+    "parent_industry_code": "110000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2037,
+    "name": "医疗器械",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "医疗器械细分行业",
+    "keywords": [
+      "医疗器械"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "110500",
+    "classification_level": "secondary",
+    "parent_industry_code": "110000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2038,
+    "name": "医疗服务",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "医疗服务细分行业",
+    "keywords": [
+      "医疗服务"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "110600",
+    "classification_level": "secondary",
+    "parent_industry_code": "110000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2039,
+    "name": "计算机设备",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "计算机设备细分行业",
+    "keywords": [
+      "计算机设备"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "220100",
+    "classification_level": "secondary",
+    "parent_industry_code": "220000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2040,
+    "name": "计算机应用",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "计算机应用细分行业",
+    "keywords": [
+      "计算机应用"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "220200",
+    "classification_level": "secondary",
+    "parent_industry_code": "220000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2041,
+    "name": "汽车整车",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "汽车整车细分行业",
+    "keywords": [
+      "汽车整车"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "270100",
+    "classification_level": "secondary",
+    "parent_industry_code": "270000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2042,
+    "name": "汽车零部件",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "汽车零部件细分行业",
+    "keywords": [
+      "汽车零部件"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "270200",
+    "classification_level": "secondary",
+    "parent_industry_code": "270000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2043,
+    "name": "汽车服务",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "汽车服务细分行业",
+    "keywords": [
+      "汽车服务"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "270300",
+    "classification_level": "secondary",
+    "parent_industry_code": "270000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2044,
+    "name": "通用设备",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "通用设备细分行业",
+    "keywords": [
+      "通用设备"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "280100",
+    "classification_level": "secondary",
+    "parent_industry_code": "280000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2045,
+    "name": "专用设备",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "专用设备细分行业",
+    "keywords": [
+      "专用设备"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "280200",
+    "classification_level": "secondary",
+    "parent_industry_code": "280000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2046,
+    "name": "仪器仪表",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "仪器仪表细分行业",
+    "keywords": [
+      "仪器仪表"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "280300",
+    "classification_level": "secondary",
+    "parent_industry_code": "280000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2047,
+    "name": "金属制品",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "金属制品细分行业",
+    "keywords": [
+      "金属制品"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "280400",
+    "classification_level": "secondary",
+    "parent_industry_code": "280000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2048,
+    "name": "国有银行",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "国有银行细分行业",
+    "keywords": [
+      "国有银行"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "250100",
+    "classification_level": "secondary",
+    "parent_industry_code": "250000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2049,
+    "name": "股份制银行",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "股份制银行细分行业",
+    "keywords": [
+      "股份制银行"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "250200",
+    "classification_level": "secondary",
+    "parent_industry_code": "250000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2050,
+    "name": "城商行",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "城商行细分行业",
+    "keywords": [
+      "城商行"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "250300",
+    "classification_level": "secondary",
+    "parent_industry_code": "250000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2051,
+    "name": "农商行",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "农商行细分行业",
+    "keywords": [
+      "农商行"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "250400",
+    "classification_level": "secondary",
+    "parent_industry_code": "250000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2052,
+    "name": "证券",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "证券细分行业",
+    "keywords": [
+      "证券"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "260100",
+    "classification_level": "secondary",
+    "parent_industry_code": "260000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2053,
+    "name": "保险",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "保险细分行业",
+    "keywords": [
+      "保险"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "260200",
+    "classification_level": "secondary",
+    "parent_industry_code": "260000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2054,
+    "name": "多元金融",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "多元金融细分行业",
+    "keywords": [
+      "多元金融"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "260300",
+    "classification_level": "secondary",
+    "parent_industry_code": "260000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2055,
+    "name": "电机",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "电机细分行业",
+    "keywords": [
+      "电机"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "200100",
+    "classification_level": "secondary",
+    "parent_industry_code": "200000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2056,
+    "name": "电气自动化设备",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "电气自动化设备细分行业",
+    "keywords": [
+      "电气自动化设备"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "200200",
+    "classification_level": "secondary",
+    "parent_industry_code": "200000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2057,
+    "name": "电源设备",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "电源设备细分行业",
+    "keywords": [
+      "电源设备"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "200300",
+    "classification_level": "secondary",
+    "parent_industry_code": "200000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2058,
+    "name": "高低压设备",
+    "category": "行业分类",
+    "sub_category": "二级行业",
+    "description": "高低压设备细分行业",
+    "keywords": [
+      "高低压设备"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.9,
+    "heat_score": 70,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "200400",
+    "classification_level": "secondary",
+    "parent_industry_code": "200000",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2059,
+    "name": "集成电路设计",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "集成电路设计细分领域",
+    "keywords": [
+      "集成电路设计"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060101",
+    "classification_level": "tertiary",
+    "parent_industry_code": "060100",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2060,
+    "name": "半导体材料",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "半导体材料细分领域",
+    "keywords": [
+      "半导体材料"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060102",
+    "classification_level": "tertiary",
+    "parent_industry_code": "060100",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2061,
+    "name": "半导体设备",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "半导体设备细分领域",
+    "keywords": [
+      "半导体设备"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060103",
+    "classification_level": "tertiary",
+    "parent_industry_code": "060100",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2062,
+    "name": "分立器件",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "分立器件细分领域",
+    "keywords": [
+      "分立器件"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060104",
+    "classification_level": "tertiary",
+    "parent_industry_code": "060100",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2063,
+    "name": "集成电路制造",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "集成电路制造细分领域",
+    "keywords": [
+      "集成电路制造"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060105",
+    "classification_level": "tertiary",
+    "parent_industry_code": "060100",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2064,
+    "name": "集成电路封测",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "集成电路封测细分领域",
+    "keywords": [
+      "集成电路封测"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060106",
+    "classification_level": "tertiary",
+    "parent_industry_code": "060100",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2065,
+    "name": "PCB",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "PCB细分领域",
+    "keywords": [
+      "PCB"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060201",
+    "classification_level": "tertiary",
+    "parent_industry_code": "060200",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2066,
+    "name": "被动元件",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "被动元件细分领域",
+    "keywords": [
+      "被动元件"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060202",
+    "classification_level": "tertiary",
+    "parent_industry_code": "060200",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2067,
+    "name": "显示器件",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "显示器件细分领域",
+    "keywords": [
+      "显示器件"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060203",
+    "classification_level": "tertiary",
+    "parent_industry_code": "060200",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2068,
+    "name": "LED",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "LED细分领域",
+    "keywords": [
+      "LED"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060301",
+    "classification_level": "tertiary",
+    "parent_industry_code": "060300",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2069,
+    "name": "光学元件",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "光学元件细分领域",
+    "keywords": [
+      "光学元件"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060302",
+    "classification_level": "tertiary",
+    "parent_industry_code": "060300",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2070,
+    "name": "显示模组",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "显示模组细分领域",
+    "keywords": [
+      "显示模组"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "060303",
+    "classification_level": "tertiary",
+    "parent_industry_code": "060300",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2071,
+    "name": "原料药",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "原料药细分领域",
+    "keywords": [
+      "原料药"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "110101",
+    "classification_level": "tertiary",
+    "parent_industry_code": "110100",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2072,
+    "name": "化学制剂",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "化学制剂细分领域",
+    "keywords": [
+      "化学制剂"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "110102",
+    "classification_level": "tertiary",
+    "parent_industry_code": "110100",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2073,
+    "name": "中药饮片",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "中药饮片细分领域",
+    "keywords": [
+      "中药饮片"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "110201",
+    "classification_level": "tertiary",
+    "parent_industry_code": "110200",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2074,
+    "name": "中成药",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "中成药细分领域",
+    "keywords": [
+      "中成药"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "110202",
+    "classification_level": "tertiary",
+    "parent_industry_code": "110200",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2075,
+    "name": "券商",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "券商细分领域",
+    "keywords": [
+      "券商"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "260101",
+    "classification_level": "tertiary",
+    "parent_industry_code": "260100",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2076,
+    "name": "期货",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "期货细分领域",
+    "keywords": [
+      "期货"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "260102",
+    "classification_level": "tertiary",
+    "parent_industry_code": "260100",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2077,
+    "name": "金融信息服务",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "金融信息服务细分领域",
+    "keywords": [
+      "金融信息服务"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "260103",
+    "classification_level": "tertiary",
+    "parent_industry_code": "260100",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2078,
+    "name": "发动机",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "发动机细分领域",
+    "keywords": [
+      "发动机"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "270201",
+    "classification_level": "tertiary",
+    "parent_industry_code": "270200",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2079,
+    "name": "底盘",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "底盘细分领域",
+    "keywords": [
+      "底盘"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "270202",
+    "classification_level": "tertiary",
+    "parent_industry_code": "270200",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2080,
+    "name": "车身",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "车身细分领域",
+    "keywords": [
+      "车身"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "270203",
+    "classification_level": "tertiary",
+    "parent_industry_code": "270200",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2081,
+    "name": "汽车电子",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "汽车电子细分领域",
+    "keywords": [
+      "汽车电子"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "270204",
+    "classification_level": "tertiary",
+    "parent_industry_code": "270200",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2082,
+    "name": "轮胎",
+    "category": "行业分类",
+    "sub_category": "三级行业",
+    "description": "轮胎细分领域",
+    "keywords": [
+      "轮胎"
+    ],
+    "discovery_source": "flush_industry",
+    "discovery_confidence": 0.85,
+    "heat_score": 65,
+    "lifecycle_stage": "平稳",
+    "is_industry_standard": true,
+    "classification_code": "270205",
+    "classification_level": "tertiary",
+    "parent_industry_code": "270200",
+    "related_keywords": [],
+    "status": "active"
+  },
+  {
+    "id": 2083,
+    "name": "人工智能",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "人工智能技术及应用",
+    "keywords": [
+      "AI",
+      "人工智能",
+      "机器学习",
+      "深度学习",
+      "大模型"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881121",
+    "classification_level": "concept",
+    "related_keywords": [
+      "AI",
+      "人工智能",
+      "机器学习",
+      "深度学习",
+      "大模型"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2084,
+    "name": "云计算",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "云计算技术及服务",
+    "keywords": [
+      "云计算",
+      "云服务",
+      "数据中心",
+      "SaaS",
+      "PaaS"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881124",
+    "classification_level": "concept",
+    "related_keywords": [
+      "云计算",
+      "云服务",
+      "数据中心",
+      "SaaS",
+      "PaaS"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2085,
+    "name": "大数据",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "大数据技术及应用",
+    "keywords": [
+      "大数据",
+      "数据分析",
+      "数据挖掘",
+      "数据可视化"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881125",
+    "classification_level": "concept",
+    "related_keywords": [
+      "大数据",
+      "数据分析",
+      "数据挖掘",
+      "数据可视化"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2086,
+    "name": "国产芯片",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "国产芯片设计制造",
+    "keywords": [
+      "芯片",
+      "半导体",
+      "集成电路",
+      "国产替代",
+      "自主可控"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881126",
+    "classification_level": "concept",
+    "related_keywords": [
+      "芯片",
+      "半导体",
+      "集成电路",
+      "国产替代",
+      "自主可控"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2087,
+    "name": "新能源汽车",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "新能源汽车产业链",
+    "keywords": [
+      "新能源车",
+      "电动车",
+      "锂电池",
+      "充电桩",
+      "智能驾驶"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881127",
+    "classification_level": "concept",
+    "related_keywords": [
+      "新能源车",
+      "电动车",
+      "锂电池",
+      "充电桩",
+      "智能驾驶"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2088,
+    "name": "光伏概念",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "光伏发电产业链",
+    "keywords": [
+      "光伏",
+      "太阳能",
+      "硅料",
+      "组件",
+      "逆变器"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881128",
+    "classification_level": "concept",
+    "related_keywords": [
+      "光伏",
+      "太阳能",
+      "硅料",
+      "组件",
+      "逆变器"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2089,
+    "name": "锂电池",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "锂电池产业链",
+    "keywords": [
+      "锂电池",
+      "锂电材料",
+      "正极材料",
+      "负极材料",
+      "电解液"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881129",
+    "classification_level": "concept",
+    "related_keywords": [
+      "锂电池",
+      "锂电材料",
+      "正极材料",
+      "负极材料",
+      "电解液"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2090,
+    "name": "军工",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "国防军工产业",
+    "keywords": [
+      "军工",
+      "国防",
+      "航空",
+      "航天",
+      "船舶"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881130",
+    "classification_level": "concept",
+    "related_keywords": [
+      "军工",
+      "国防",
+      "航空",
+      "航天",
+      "船舶"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2091,
+    "name": "医药",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "医药健康产业",
+    "keywords": [
+      "医药",
+      "创新药",
+      "医疗器械",
+      "疫苗",
+      "CXO"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881131",
+    "classification_level": "concept",
+    "related_keywords": [
+      "医药",
+      "创新药",
+      "医疗器械",
+      "疫苗",
+      "CXO"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2092,
+    "name": "白酒",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "白酒酿造及销售",
+    "keywords": [
+      "白酒",
+      "茅台",
+      "五粮液",
+      "高端白酒",
+      "次高端白酒"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881132",
+    "classification_level": "concept",
+    "related_keywords": [
+      "白酒",
+      "茅台",
+      "五粮液",
+      "高端白酒",
+      "次高端白酒"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2093,
+    "name": "5G概念",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "5G通信技术及应用",
+    "keywords": [
+      "5G",
+      "基站",
+      "光模块",
+      "光纤光缆",
+      "通信设备"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881133",
+    "classification_level": "concept",
+    "related_keywords": [
+      "5G",
+      "基站",
+      "光模块",
+      "光纤光缆",
+      "通信设备"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2094,
+    "name": "区块链",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "区块链技术及应用",
+    "keywords": [
+      "区块链",
+      "数字货币",
+      "智能合约",
+      "分布式账本",
+      "NFT"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881134",
+    "classification_level": "concept",
+    "related_keywords": [
+      "区块链",
+      "数字货币",
+      "智能合约",
+      "分布式账本",
+      "NFT"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2095,
+    "name": "元宇宙",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "元宇宙概念及相关技术",
+    "keywords": [
+      "元宇宙",
+      "虚拟现实",
+      "增强现实",
+      "数字孪生",
+      "虚拟社交"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881135",
+    "classification_level": "concept",
+    "related_keywords": [
+      "元宇宙",
+      "虚拟现实",
+      "增强现实",
+      "数字孪生",
+      "虚拟社交"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2096,
+    "name": "工业互联网",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "工业互联网平台及解决方案",
+    "keywords": [
+      "工业互联网",
+      "智能制造",
+      "工业软件",
+      "数字工厂"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881136",
+    "classification_level": "concept",
+    "related_keywords": [
+      "工业互联网",
+      "智能制造",
+      "工业软件",
+      "数字工厂"
+    ],
+    "status": "active"
+  },
+  {
+    "id": 2097,
+    "name": "网络安全",
+    "category": "概念板块",
+    "sub_category": "热门概念",
+    "description": "网络安全技术及服务",
+    "keywords": [
+      "网络安全",
+      "信息安全",
+      "数据安全",
+      "云安全"
+    ],
+    "discovery_source": "flush_concept",
+    "discovery_confidence": 0.88,
+    "heat_score": 80,
+    "lifecycle_stage": "成长",
+    "is_industry_standard": true,
+    "classification_code": "881137",
+    "classification_level": "concept",
+    "related_keywords": [
+      "网络安全",
+      "信息安全",
+      "数据安全",
+      "云安全"
+    ],
+    "status": "active"
+  }
+]

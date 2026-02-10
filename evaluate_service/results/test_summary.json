@@ -1,0 +1,19 @@
+{
+  "test_completed_at": "2026-01-11T12:08:11.931330",
+  "test_duration_seconds": 0.771125,
+  "key_metrics": {
+    "total_events": 76,
+    "success_rate": 100.0,
+    "avg_processing_time_ms": 0,
+    "decision_accuracy": 0.0,
+    "total_themes_created": 63
+  },
+  "meets_targets": {
+    "processing_time_2s": false,
+    "accuracy_85pct": false
+  },
+  "recommendations": [
+    "决策准确率 0.0% 低于85%目标，需要改进AI决策逻辑",
+    "平均每个主题的事件数较低，可能存在过度创建新主题的问题"
+  ]
+}

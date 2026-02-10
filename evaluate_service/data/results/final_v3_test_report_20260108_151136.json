@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-08T15:11:36.591847",
+  "project_root": "/Users/admin/Desktop/ai_theme_app",
+  "test_summary": {
+    "single_test_passed": true,
+    "batch_test_passed": true,
+    "batch_success_rate": 1.0,
+    "batch_results_count": 2,
+    "overall_passed": true
+  },
+  "example_result": {
+    "news_id": 9999,
+    "event_type": "政策发布",
+    "direction": "利好",
+    "confidence": 0.98,
+    "summary": "上海市经信委发布元宇宙产业发展行动计划，提出到2027年相关产业规模达到3500亿元。",
+    "raw_ai_response": {},
+    "theme_directive": {
+      "action": "CREATE_NEW",
+      "confidence": 0.85,
+      "reason": "该事件符合'定义性'重大标准：1. 这是上海市政府发布的官方产业行动计划，具有明确的政策导向和量化目标（3500亿元产业规模），为元宇宙产业提供了官方定义和发展框架；2. 作为中国重要经济中心，上海的政策发布具有示范效应，可能引发其他地区跟进，形成全国性产业政策趋势；3. 行动计划覆盖2025-2027年，具有中长期战略规划性质，可能催生'上海元宇宙产业'或'政策驱动元宇宙'等新的市场投资题材。"
+    }
+  }
+}

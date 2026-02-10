@@ -1,0 +1,331 @@
+# theme_service/enhanced_ai_client.py
+"""
+增强AI客户端 - 使用可靠的AI解析器
+🔥 完全移除模拟逻辑，使用可靠的DeepSeek解析器
+"""
+import logging
+from typing import Dict, Any, List, Optional
+import time
+
+logger = logging.getLogger(__name__)
+
+class EnhancedAIThemeClient:
+    """
+    增强AI客户端 - 使用可靠的AI解析器
+    职责：转发请求到可靠的AI分析器
+    """
+    
+    def __init__(self, settings=None):
+        """
+        初始化客户端
+        
+        Args:
+            settings: 配置对象
+        """
+        self.settings = settings or {}
+        self._enhanced_analyzer = None
+        self._parser_health_cache = None
+        self._last_health_check = 0
+        self.health_cache_ttl = 60  # 健康检查缓存60秒
+        
+        logger.info(f"EnhancedAIThemeClient初始化（使用可靠AI解析器）")
+    
+    async def analyze_event_with_context(self,
+                                        event_data: Dict[str, Any],
+                                        related_themes: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """
+        转发请求到EnhancedThemeAnalyzer进行两阶段AI分析
+        🔥 使用可靠的AI解析器，包含重试和监控
+        
+        Args:
+            event_data: 事件数据
+            related_themes: 相关题材列表
+            
+        Returns:
+            EnhancedThemeAnalyzer的决策结果
+            
+        Raises:
+            Exception: AI分析失败
+        """
+        event_id = event_data.get('id', 'unknown')
+        logger.info(f"🔍 转发AI分析请求，事件: {event_id}, 相关题材数: {len(related_themes)}")
+        
+        # 检查AI服务健康状态
+        health_status = await self._check_ai_health()
+        if not health_status['is_healthy']:
+            logger.warning(f"⚠️ AI服务状态不佳: {health_status.get('status', 'unknown')}")
+            
+            # 但仍然尝试调用，让解析器自己的重试机制处理
+            logger.info("尝试调用AI，依赖解析器的重试机制...")
+        
+        try:
+            # 初始化分析器
+            await self._init_enhanced_analyzer()
+            
+            if not self._enhanced_analyzer:
+                raise RuntimeError("EnhancedThemeAnalyzer初始化失败")
+            
+            # 记录开始时间
+            start_time = time.time()
+            
+            # 🔥 转发请求到增强分析器
+            result = await self._enhanced_analyzer.analyze_with_context(event_data, related_themes)
+            
+            # 计算耗时
+            duration = time.time() - start_time
+            
+            # 添加追踪信息
+            result["event_id"] = event_id
+            result["source"] = "enhanced_ai_client"
+            result["analysis_duration"] = duration
+            result["ai_health_status"] = health_status.get('status', 'unknown')
+            
+            logger.info(f"✅ AI分析完成，事件: {event_id}, "
+                       f"决策: {result.get('decision')}, "
+                       f"置信度: {result.get('confidence', 0):.2f}, "
+                       f"耗时: {duration:.2f}秒")
+            
+            return result
+            
+        except ImportError as e:
+            logger.error(f"❌ 无法导入AI分析器: {e}")
+            raise ImportError(f"无法加载EnhancedThemeAnalyzer: {e}") from e
+        except Exception as e:
+            logger.error(f"❌ AI分析失败: {e}")
+            
+            # 更新健康状态缓存
+            self._parser_health_cache = {
+                'is_healthy': False,
+                'status': 'error',
+                'last_error': str(e),
+                'timestamp': time.time()
+            }
+            
+            raise Exception(f"EnhancedThemeAnalyzer分析失败: {e}") from e
+    
+    async def _init_enhanced_analyzer(self):
+        """初始化增强分析器（使用可靠解析器）"""
+        if self._enhanced_analyzer is not None:
+            return
+        
+        try:
+            # 🔥 使用可靠的解析器
+            from model_service.llm_parser.reliable_deepseek_parser import ReliableDeepSeekParser
+            from model_service.llm_parser.enhanced_theme_analyzer import EnhancedThemeAnalyzer
+            
+            # 配置参数
+            ai_config = {
+                'max_retries': self.settings.get('ai_max_retries', 3),
+                'timeout': self.settings.get('ai_timeout', 45),  # 增加到45秒
+                'enable_cache': self.settings.get('ai_enable_cache', True),
+                'cache_ttl': self.settings.get('ai_cache_ttl', 300),
+                'failure_threshold': self.settings.get('ai_failure_threshold', 5),
+                'recovery_timeout': self.settings.get('ai_recovery_timeout', 60),
+                'temperature': 0.1  # 低温度确保确定性
+            }
+            
+            # 创建可靠的解析器
+            parser = ReliableDeepSeekParser(
+                model_name="deepseek-chat",
+                config=ai_config
+            )
+            
+            # 创建增强分析器
+            self._enhanced_analyzer = EnhancedThemeAnalyzer(parser)
+            
+            # 测试连接并获取健康状态
+            health = await parser.health_check()
+            
+            if health['is_healthy']:
+                logger.info(f"✅ EnhancedThemeAnalyzer初始化成功")
+                logger.info(f"  AI状态: {health.get('service_status', 'unknown')}")
+                logger.info(f"  成功率: {health.get('success_rate', 0):.1%}")
+                logger.info(f"  平均响应: {health.get('avg_response_time', 0):.2f}秒")
+            else:
+                logger.warning(f"⚠️ AI服务状态不佳: {health}")
+                # 仍然继续，让解析器的重试机制处理
+            
+        except ImportError as e:
+            logger.error(f"❌ 导入失败: {e}")
+            # 🔥 不创建模拟分析器，直接抛出异常
+            self._enhanced_analyzer = None
+            raise ImportError(f"无法导入AI组件: {e}") from e
+        except Exception as e:
+            logger.error(f"❌ 初始化失败: {e}")
+            self._enhanced_analyzer = None
+            raise Exception(f"EnhancedThemeAnalyzer初始化失败: {e}") from e
+    
+    async def _check_ai_health(self) -> Dict[str, Any]:
+        """检查AI服务健康状态（带缓存）"""
+        current_time = time.time()
+        
+        # 检查缓存
+        if (self._parser_health_cache and 
+            current_time - self._parser_health_cache.get('timestamp', 0) < self.health_cache_ttl):
+            return self._parser_health_cache
+        
+        try:
+            if self._enhanced_analyzer is None:
+                await self._init_enhanced_analyzer()
+            
+            if self._enhanced_analyzer and hasattr(self._enhanced_analyzer, 'llm_parser'):
+                parser = self._enhanced_analyzer.llm_parser
+                if hasattr(parser, 'health_check'):
+                    health = await parser.health_check()
+                    
+                    # 缓存结果
+                    self._parser_health_cache = {
+                        'is_healthy': health.get('is_healthy', False),
+                        'status': health.get('service_status', 'unknown'),
+                        'success_rate': health.get('success_rate', 0),
+                        'avg_response_time': health.get('avg_response_time', 0),
+                        'total_calls': health.get('total_calls', 0),
+                        'last_error': health.get('last_error'),
+                        'timestamp': current_time
+                    }
+                    
+                    return self._parser_health_cache
+        
+        except Exception as e:
+            logger.warning(f"AI健康检查失败: {e}")
+        
+        # 默认返回
+        return {
+            'is_healthy': False,
+            'status': 'unknown',
+            'timestamp': current_time
+        }
+    
+    async def analyze_event_for_themes(self, event_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        传统分析接口 - 保持向后兼容
+        🔥 也使用真实AI，不模拟
+        
+        Args:
+            event_data: 事件数据
+            
+        Returns:
+            传统分析结果
+        """
+        logger.info("调用传统分析接口（向后兼容）")
+        
+        try:
+            # 🔥 使用可靠的解析器
+            from model_service.llm_parser.reliable_deepseek_parser import ReliableDeepSeekParser
+            from model_service.llm_parser.theme_analyzer import ThemeAnalyzer
+            
+            # 创建可靠解析器
+            parser = ReliableDeepSeekParser(
+                model_name="deepseek-chat",
+                config={
+                    'max_retries': 3,
+                    'timeout': 45,
+                    'enable_cache': True,
+                    'temperature': 0.1
+                }
+            )
+            
+            analyzer = ThemeAnalyzer(parser)
+            
+            # 转发请求
+            return await analyzer.analyze_for_theme_discovery(event_data)
+            
+        except ImportError as e:
+            logger.error(f"❌ 无法导入传统分析器: {e}")
+            raise ImportError(f"无法加载ThemeAnalyzer: {e}") from e
+        except Exception as e:
+            logger.error(f"❌ 传统分析失败: {e}")
+            raise Exception(f"ThemeAnalyzer分析失败: {e}") from e
+    
+    async def get_ai_metrics(self) -> Dict[str, Any]:
+        """获取AI调用指标"""
+        try:
+            if self._enhanced_analyzer and hasattr(self._enhanced_analyzer, 'llm_parser'):
+                parser = self._enhanced_analyzer.llm_parser
+                if hasattr(parser, 'get_metrics'):
+                    return parser.get_metrics()
+        except Exception as e:
+            logger.error(f"获取AI指标失败: {e}")
+        
+        return {}
+    
+    async def clear_ai_cache(self):
+        """清除AI缓存"""
+        try:
+            if self._enhanced_analyzer and hasattr(self._enhanced_analyzer, 'llm_parser'):
+                parser = self._enhanced_analyzer.llm_parser
+                if hasattr(parser, 'clear_cache'):
+                    parser.clear_cache()
+                    logger.info("AI缓存已清除")
+        except Exception as e:
+            logger.error(f"清除AI缓存失败: {e}")
+
+# 保持向后兼容
+class AIThemeClient:
+    """原始AIThemeClient的别名"""
+    
+    def __init__(self, settings):
+        self._client = EnhancedAIThemeClient(settings)
+    
+    async def analyze_event_for_themes(self, event_data: Dict[str, Any]) -> Dict[str, Any]:
+        return await self._client.analyze_event_for_themes(event_data)
+
+# 测试函数
+async def test_enhanced_ai_client():
+    """测试增强的AI客户端"""
+    print("🧪 测试EnhancedAIThemeClient（使用可靠解析器）...")
+    
+    # 检查API密钥
+    import os
+    if not os.getenv('DEEPSEEK_API_KEY'):
+        print("⚠️  DEEPSEEK_API_KEY未设置，跳过真实测试")
+        return True
+    
+    try:
+        # 创建客户端
+        client = EnhancedAIThemeClient(settings={
+            'ai_max_retries': 2,
+            'ai_timeout': 45,
+            'ai_enable_cache': True,
+            'ai_temperature': 0.1
+        })
+        
+        # 健康检查
+        health = await client._check_ai_health()
+        print(f"健康状态: {health.get('status', 'unknown')}")
+        
+        # 创建测试事件
+        test_event = {
+            "id": "test_real_event_001",
+            "title": "AI芯片技术突破",
+            "summary": "国产AI芯片性能大幅提升",
+            "event_type": "技术突破",
+            "impact_industries": ["人工智能", "半导体"],
+            "theme_directive": {"action": "CREATE_NEW", "confidence": 0.8, "reason": "技术突破"}
+        }
+        
+        test_themes = [
+            {"name": "人工智能", "description": "AI技术相关", "event_count": 15},
+            {"name": "芯片半导体", "description": "半导体芯片技术", "event_count": 20}
+        ]
+        
+        # 分析事件
+        print("分析事件...")
+        result = await client.analyze_event_with_context(test_event, test_themes)
+        
+        print(f"✅ 分析成功!")
+        print(f"  决策: {result.get('decision')}")
+        print(f"  置信度: {result.get('confidence', 0):.2f}")
+        print(f"  耗时: {result.get('analysis_duration', 0):.2f}秒")
+        
+        return True
+        
+    except Exception as e:
+        print(f"❌ 测试失败: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(test_enhanced_ai_client())

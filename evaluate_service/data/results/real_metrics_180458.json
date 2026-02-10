@@ -1,0 +1,258 @@
+{
+  "theme_wise_metrics": {
+    "AI/AR眼镜": {
+      "test_count": 10,
+      "correct_count": 0,
+      "accuracy": 0.0
+    },
+    "SpaceX": {
+      "test_count": 5,
+      "correct_count": 0,
+      "accuracy": 0.0
+    }
+  },
+  "overall_metrics": {
+    "total_cases": 15,
+    "successful_cases": 15,
+    "correct_cases": 0,
+    "overall_accuracy": 0.0
+  },
+  "detailed_results": [
+    {
+      "test_id": "AI_AR眼镜_001",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI眼镜",
+        "人机交互",
+        "消费电子创新",
+        "AI硬件"
+      ],
+      "confidence": 0.85,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "AI_AR眼镜_002",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI眼镜",
+        "智能穿戴",
+        "运动科技",
+        "人机交互"
+      ],
+      "confidence": 0.75,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "AI_AR眼镜_003",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI眼镜",
+        "空间计算",
+        "全息显示"
+      ],
+      "confidence": 0.75,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "AI_AR眼镜_004",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI眼镜",
+        "空间计算",
+        "人机交互",
+        "AI终端",
+        "消费电子创新"
+      ],
+      "confidence": 0.85,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "AI_AR眼镜_005",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI眼镜",
+        "智能穿戴",
+        "人机交互",
+        "消费电子创新"
+      ],
+      "confidence": 0.75,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "AI_AR眼镜_006",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI眼镜",
+        "MicroLED",
+        "AR硬件",
+        "人机交互"
+      ],
+      "confidence": 0.85,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "AI_AR眼镜_007",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI眼镜",
+        "空间计算",
+        "XR生态链",
+        "消费级AR硬件"
+      ],
+      "confidence": 0.85,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "AI_AR眼镜_008",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI眼镜",
+        "XR设备",
+        "空间计算",
+        "人机交互"
+      ],
+      "confidence": 0.85,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "AI_AR眼镜_009",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI眼镜",
+        "消费级AR",
+        "人机交互"
+      ],
+      "confidence": 0.75,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "AI_AR眼镜_010",
+      "theme": "AI/AR眼镜",
+      "discovered": [
+        "AI眼镜",
+        "智能穿戴",
+        "人机交互",
+        "计算机视觉"
+      ],
+      "confidence": 0.75,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "SpaceX_001",
+      "theme": "SpaceX",
+      "discovered": [
+        "商业航天基建",
+        "低轨卫星星座",
+        "火箭发射商业化",
+        "国防航天"
+      ],
+      "confidence": 0.75,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "SpaceX_002",
+      "theme": "SpaceX",
+      "discovered": [
+        "低轨卫星星座",
+        "军事航天商业化",
+        "太空基建"
+      ],
+      "confidence": 0.85,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "SpaceX_003",
+      "theme": "SpaceX",
+      "discovered": [
+        "商业航天IPO",
+        "低轨卫星星座",
+        "太空经济"
+      ],
+      "confidence": 0.9,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "SpaceX_004",
+      "theme": "SpaceX",
+      "discovered": [
+        "商业航天IPO",
+        "太空经济",
+        "低轨卫星星座",
+        "火箭发射商业化"
+      ],
+      "confidence": 0.85,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "is_correct": false,
+      "success": true
+    },
+    {
+      "test_id": "SpaceX_005",
+      "theme": "SpaceX",
+      "discovered": [
+        "商业航天",
+        "低轨卫星互联网",
+        "可重复使用火箭"
+      ],
+      "confidence": 0.85,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "is_correct": false,
+      "success": true
+    }
+  ]
+}

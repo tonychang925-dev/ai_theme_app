@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "test_type": "REAL_AI_SIMILARITY_ANALYZER_TEST",
+    "timestamp": "2026-01-14T14:34:44.823174",
+    "ai_provider": "DeepSeek",
+    "data_structure": "实际生产数据结构",
+    "test_focus": "领域区分能力和相似性分析准确性"
+  },
+  "test_summary": {
+    "total_cases": 3,
+    "passed_cases": 3,
+    "success_rate": 1.0,
+    "failed_cases": []
+  },
+  "detailed_results": [
+    {
+      "test_id": "REAL_001",
+      "test_name": "国防航天 vs 消费电子",
+      "upstream_action": "CREATE_NEW",
+      "processing_time": 7.531405925750732,
+      "ai_analysis": {
+        "best_match_theme": "无匹配主题",
+        "similarity_score": 0.1,
+        "similarity_reason": "1. 核心领域不同：新闻属于国防航天与国家安全领域，而现有主题均为民用科技领域。2. 应用目的不同：新闻涉及军事防御和国家安全，现有主题服务于消费或商业市场。3. 技术侧重点不同：新闻强调卫星系统、雷达和军事部署，现有主题关注电子消费品、算法或芯片制造。"
+      },
+      "verification": {
+        "passed": true,
+        "critical_check_passed": true,
+        "score_check_passed": true,
+        "reason_quality_check_passed": true,
+        "issues": [],
+        "warnings": [
+          "✅ 关键检查通过: 国防航天 ≠ 消费电子",
+          "✅ 分数范围正确: 0.100 在 [0.0, 0.3] 内",
+          "⚠️  分析理由缺少关键词: ['本质不同']"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test_id": "REAL_002",
+      "test_name": "半导体技术匹配测试",
+      "upstream_action": "CREATE_NEW",
+      "processing_time": 7.741106986999512,
+      "ai_analysis": {
+        "best_match_theme": "半导体",
+        "similarity_score": 0.9,
+        "similarity_reason": "1. 新闻事件的核心是芯片制造技术突破，与'半导体'主题的'芯片制造'、'晶圆代工'关键词高度契合；2. 新闻影响的行业包括半导体、芯片制造、集成电路，与'半导体'主题描述完全一致；3. 台积电作为全球领先的晶圆代工厂，其技术进展是半导体产业的核心驱动力。"
+      },
+      "verification": {
+        "passed": true,
+        "critical_check_passed": true,
+        "score_check_passed": true,
+        "reason_quality_check_passed": true,
+        "issues": [],
+        "warnings": [
+          "✅ 关键检查通过: 半导体技术 ≈ 半导体",
+          "✅ 分数范围正确: 0.900 在 [0.6, 1.0] 内",
+          "⚠️  分析理由缺少关键词: ['技术相关', '领域相同']"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test_id": "REAL_003",
+      "test_name": "CLUSTER事件相似性测试",
+      "upstream_action": "CLUSTER",
+      "processing_time": 7.96174693107605,
+      "ai_analysis": {
+        "best_match_theme": "智能穿戴设备",
+        "similarity_score": 0.9,
+        "similarity_reason": "1. 产品类型高度一致：新闻中的'智能眼镜'与现有主题关键词'智能眼镜'完全匹配。2. 行业领域相同：新闻影响行业包含'可穿戴设备'，与现有主题描述'可穿戴智能设备和技术'完全对应。3. 功能属性重叠：产品具备运动监测等功能，与现有主题关键词'健康监测'同属可穿戴设备功能范畴。"
+      },
+      "verification": {
+        "passed": true,
+        "critical_check_passed": true,
+        "score_check_passed": true,
+        "reason_quality_check_passed": true,
+        "issues": [],
+        "warnings": [
+          "✅ 关键检查通过: 智能眼镜 ∈ 消费电子",
+          "⚠️  未匹配到期望主题 '消费电子'，实际匹配: '智能穿戴设备'",
+          "✅ 分数范围正确: 0.900 在 [0.7, 1.0] 内",
+          "⚠️  分析理由缺少关键词: ['消费电子', '同类产品']"
+        ]
+      },
+      "passed": true
+    }
+  ],
+  "key_findings": {
+    "domain_differentiation": {
+      "status": "good",
+      "details": [
+        "✅ 国防航天 vs 消费电子: 正确区分国防航天和消费电子"
+      ]
+    },
+    "score_accuracy": {
+      "status": "unknown",
+      "details": []
+    },
+    "reasoning_quality": {
+      "status": "unknown",
+      "details": []
+    },
+    "critical_issues": [],
+    "successful_tests": [
+      "国防航天 vs 消费电子",
+      "半导体技术匹配测试",
+      "CLUSTER事件相似性测试"
+    ],
+    "overall_status": "excellent"
+  },
+  "recommendations": [
+    "分析AI提示词是否需要优化以更好区分领域",
+    "考虑调整相似度分数的阈值",
+    "检查AI返回的理由是否符合业务要求"
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "unit_tests": {
+    "factory": {
+      "name": "\u6570\u636e\u5e93\u5de5\u5382\u6d4b\u8bd5 (28\u5b57\u6bb5\u9002\u914d)",
+      "command": "pytest /Users/admin/Desktop/ai_theme_app/database_service/tests/unit/test_factory.py -v --tb=short",
+      "status": "failed",
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "ImportError while loading conftest '/Users/admin/Desktop/ai_theme_app/database_service/tests/conftest.py'.\ntests/conftest.py:16: in <module>\n    from database_service.config import DatabaseConfig, DatabaseType\n__init__.py:8: in <module>\n    from .gateway import DatabaseGateway\ngateway.py:13: in <module>\n    from .factory import DatabaseManagerFactory\nfactory.py:12: in <module>\n    from .managers.memory_manager import MemoryDatabaseManager\nmanagers/__init__.py:7: in <module>\n    from .redis_cached_manager import RedisCachedDatabaseManager\nmanagers/redis_cached_manager.py:6: in <module>\n    import aioredis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/__init__.py:1: in <module>\n    from aioredis.client import Redis, StrictRedis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/client.py:32: in <module>\n    from aioredis.connection import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/connection.py:33: in <module>\n    from .exceptions import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/exceptions.py:14: in <module>\n    class TimeoutError(asyncio.TimeoutError, builtins.TimeoutError, RedisError):\nE   TypeError: duplicate base class TimeoutError\n",
+      "execution_time": 1.4113521575927734,
+      "test_summary": {}
+    },
+    "memory_manager": {
+      "name": "\u5185\u5b58\u7ba1\u7406\u5668\u6d4b\u8bd5 (28\u5b57\u6bb5\u7ed3\u6784)",
+      "command": "pytest /Users/admin/Desktop/ai_theme_app/database_service/tests/unit/test_memory_manager.py -v --tb=short",
+      "status": "failed",
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "ImportError while loading conftest '/Users/admin/Desktop/ai_theme_app/database_service/tests/conftest.py'.\ntests/conftest.py:16: in <module>\n    from database_service.config import DatabaseConfig, DatabaseType\n__init__.py:8: in <module>\n    from .gateway import DatabaseGateway\ngateway.py:13: in <module>\n    from .factory import DatabaseManagerFactory\nfactory.py:12: in <module>\n    from .managers.memory_manager import MemoryDatabaseManager\nmanagers/__init__.py:7: in <module>\n    from .redis_cached_manager import RedisCachedDatabaseManager\nmanagers/redis_cached_manager.py:6: in <module>\n    import aioredis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/__init__.py:1: in <module>\n    from aioredis.client import Redis, StrictRedis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/client.py:32: in <module>\n    from aioredis.connection import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/connection.py:33: in <module>\n    from .exceptions import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/exceptions.py:14: in <module>\n    class TimeoutError(asyncio.TimeoutError, builtins.TimeoutError, RedisError):\nE   TypeError: duplicate base class TimeoutError\n",
+      "execution_time": 0.7564730644226074,
+      "test_summary": {}
+    },
+    "postgres_manager": {
+      "name": "PostgreSQL\u7ba1\u7406\u5668\u6d4b\u8bd5 (28\u5b57\u6bb5\u7ed3\u6784)",
+      "command": "pytest /Users/admin/Desktop/ai_theme_app/database_service/tests/unit/test_postgres_manager.py -v --tb=short",
+      "status": "failed",
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "ImportError while loading conftest '/Users/admin/Desktop/ai_theme_app/database_service/tests/conftest.py'.\ntests/conftest.py:16: in <module>\n    from database_service.config import DatabaseConfig, DatabaseType\n__init__.py:8: in <module>\n    from .gateway import DatabaseGateway\ngateway.py:13: in <module>\n    from .factory import DatabaseManagerFactory\nfactory.py:12: in <module>\n    from .managers.memory_manager import MemoryDatabaseManager\nmanagers/__init__.py:7: in <module>\n    from .redis_cached_manager import RedisCachedDatabaseManager\nmanagers/redis_cached_manager.py:6: in <module>\n    import aioredis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/__init__.py:1: in <module>\n    from aioredis.client import Redis, StrictRedis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/client.py:32: in <module>\n    from aioredis.connection import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/connection.py:33: in <module>\n    from .exceptions import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/exceptions.py:14: in <module>\n    class TimeoutError(asyncio.TimeoutError, builtins.TimeoutError, RedisError):\nE   TypeError: duplicate base class TimeoutError\n",
+      "execution_time": 0.7730779647827148,
+      "test_summary": {}
+    },
+    "redis_cached_manager": {
+      "name": "Redis\u7f13\u5b58\u7ba1\u7406\u5668\u6d4b\u8bd5 (28\u5b57\u6bb5\u7ed3\u6784)",
+      "command": "pytest /Users/admin/Desktop/ai_theme_app/database_service/tests/unit/test_redis_cached_manager.py -v --tb=short",
+      "status": "failed",
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "ImportError while loading conftest '/Users/admin/Desktop/ai_theme_app/database_service/tests/conftest.py'.\ntests/conftest.py:16: in <module>\n    from database_service.config import DatabaseConfig, DatabaseType\n__init__.py:8: in <module>\n    from .gateway import DatabaseGateway\ngateway.py:13: in <module>\n    from .factory import DatabaseManagerFactory\nfactory.py:12: in <module>\n    from .managers.memory_manager import MemoryDatabaseManager\nmanagers/__init__.py:7: in <module>\n    from .redis_cached_manager import RedisCachedDatabaseManager\nmanagers/redis_cached_manager.py:6: in <module>\n    import aioredis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/__init__.py:1: in <module>\n    from aioredis.client import Redis, StrictRedis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/client.py:32: in <module>\n    from aioredis.connection import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/connection.py:33: in <module>\n    from .exceptions import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/exceptions.py:14: in <module>\n    class TimeoutError(asyncio.TimeoutError, builtins.TimeoutError, RedisError):\nE   TypeError: duplicate base class TimeoutError\n",
+      "execution_time": 0.7371199131011963,
+      "test_summary": {}
+    }
+  },
+  "smoke_tests": {
+    "basic_functionality": {
+      "name": "\u57fa\u7840\u529f\u80fd\u5192\u70df\u6d4b\u8bd5",
+      "command": "python /Users/admin/Desktop/ai_theme_app/database_service/tests/smoke/test_basic_smoke.py -v",
+      "status": "failed",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/admin/Desktop/ai_theme_app/database_service/tests/smoke/test_basic_smoke.py\", line 15, in <module>\n    from database_service.factory import DatabaseManagerFactory\nModuleNotFoundError: No module named 'database_service'\n",
+      "execution_time": 0.13766098022460938,
+      "test_summary": {}
+    },
+    "schema_validation": {
+      "name": "28\u5b57\u6bb5\u7ed3\u6784\u9a8c\u8bc1\u6d4b\u8bd5",
+      "command": "python /Users/admin/Desktop/ai_theme_app/database_service/tests/smoke/test_schema_validation.py -v",
+      "status": "failed",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/admin/Desktop/ai_theme_app/database_service/tests/smoke/test_schema_validation.py\", line 15, in <module>\n    from database_service.interface import ThemeRecord, ThemeTags\nModuleNotFoundError: No module named 'database_service'\n",
+      "execution_time": 0.12904596328735352,
+      "test_summary": {}
+    },
+    "cache_strategy": {
+      "name": "\u7f13\u5b58\u7b56\u7565\u5192\u70df\u6d4b\u8bd5",
+      "command": "pytest /Users/admin/Desktop/ai_theme_app/database_service/tests/smoke/test_cache_smoke.py -v --tb=short",
+      "status": "failed",
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "ImportError while loading conftest '/Users/admin/Desktop/ai_theme_app/database_service/tests/conftest.py'.\ntests/conftest.py:16: in <module>\n    from database_service.config import DatabaseConfig, DatabaseType\n__init__.py:8: in <module>\n    from .gateway import DatabaseGateway\ngateway.py:13: in <module>\n    from .factory import DatabaseManagerFactory\nfactory.py:12: in <module>\n    from .managers.memory_manager import MemoryDatabaseManager\nmanagers/__init__.py:7: in <module>\n    from .redis_cached_manager import RedisCachedDatabaseManager\nmanagers/redis_cached_manager.py:6: in <module>\n    import aioredis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/__init__.py:1: in <module>\n    from aioredis.client import Redis, StrictRedis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/client.py:32: in <module>\n    from aioredis.connection import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/connection.py:33: in <module>\n    from .exceptions import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/exceptions.py:14: in <module>\n    class TimeoutError(asyncio.TimeoutError, builtins.TimeoutError, RedisError):\nE   TypeError: duplicate base class TimeoutError\n",
+      "execution_time": 0.7597942352294922,
+      "test_summary": {}
+    }
+  },
+  "integration_tests": {
+    "memory_integration": {
+      "name": "\u5185\u5b58\u6570\u636e\u5e93\u96c6\u6210\u6d4b\u8bd5",
+      "command": "pytest /Users/admin/Desktop/ai_theme_app/database_service/tests/integration/test_memory_integration.py -v --tb=short",
+      "status": "failed",
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "ImportError while loading conftest '/Users/admin/Desktop/ai_theme_app/database_service/tests/conftest.py'.\ntests/conftest.py:16: in <module>\n    from database_service.config import DatabaseConfig, DatabaseType\n__init__.py:8: in <module>\n    from .gateway import DatabaseGateway\ngateway.py:13: in <module>\n    from .factory import DatabaseManagerFactory\nfactory.py:12: in <module>\n    from .managers.memory_manager import MemoryDatabaseManager\nmanagers/__init__.py:7: in <module>\n    from .redis_cached_manager import RedisCachedDatabaseManager\nmanagers/redis_cached_manager.py:6: in <module>\n    import aioredis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/__init__.py:1: in <module>\n    from aioredis.client import Redis, StrictRedis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/client.py:32: in <module>\n    from aioredis.connection import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/connection.py:33: in <module>\n    from .exceptions import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/exceptions.py:14: in <module>\n    class TimeoutError(asyncio.TimeoutError, builtins.TimeoutError, RedisError):\nE   TypeError: duplicate base class TimeoutError\n",
+      "execution_time": 0.9020469188690186,
+      "test_summary": {}
+    },
+    "postgres_integration": {
+      "name": "PostgreSQL\u96c6\u6210\u6d4b\u8bd5 (\u53ef\u9009)",
+      "command": "pytest /Users/admin/Desktop/ai_theme_app/database_service/tests/integration/test_postgres_integration.py -v --tb=short",
+      "status": "failed",
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "ImportError while loading conftest '/Users/admin/Desktop/ai_theme_app/database_service/tests/conftest.py'.\ntests/conftest.py:16: in <module>\n    from database_service.config import DatabaseConfig, DatabaseType\n__init__.py:8: in <module>\n    from .gateway import DatabaseGateway\ngateway.py:13: in <module>\n    from .factory import DatabaseManagerFactory\nfactory.py:12: in <module>\n    from .managers.memory_manager import MemoryDatabaseManager\nmanagers/__init__.py:7: in <module>\n    from .redis_cached_manager import RedisCachedDatabaseManager\nmanagers/redis_cached_manager.py:6: in <module>\n    import aioredis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/__init__.py:1: in <module>\n    from aioredis.client import Redis, StrictRedis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/client.py:32: in <module>\n    from aioredis.connection import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/connection.py:33: in <module>\n    from .exceptions import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/exceptions.py:14: in <module>\n    class TimeoutError(asyncio.TimeoutError, builtins.TimeoutError, RedisError):\nE   TypeError: duplicate base class TimeoutError\n",
+      "execution_time": 0.7306361198425293,
+      "test_summary": {}
+    },
+    "redis_integration": {
+      "name": "Redis\u96c6\u6210\u6d4b\u8bd5 (\u53ef\u9009)",
+      "command": "pytest /Users/admin/Desktop/ai_theme_app/database_service/tests/integration/test_redis_integration.py -v --tb=short",
+      "status": "failed",
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "ImportError while loading conftest '/Users/admin/Desktop/ai_theme_app/database_service/tests/conftest.py'.\ntests/conftest.py:16: in <module>\n    from database_service.config import DatabaseConfig, DatabaseType\n__init__.py:8: in <module>\n    from .gateway import DatabaseGateway\ngateway.py:13: in <module>\n    from .factory import DatabaseManagerFactory\nfactory.py:12: in <module>\n    from .managers.memory_manager import MemoryDatabaseManager\nmanagers/__init__.py:7: in <module>\n    from .redis_cached_manager import RedisCachedDatabaseManager\nmanagers/redis_cached_manager.py:6: in <module>\n    import aioredis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/__init__.py:1: in <module>\n    from aioredis.client import Redis, StrictRedis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/client.py:32: in <module>\n    from aioredis.connection import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/connection.py:33: in <module>\n    from .exceptions import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/exceptions.py:14: in <module>\n    class TimeoutError(asyncio.TimeoutError, builtins.TimeoutError, RedisError):\nE   TypeError: duplicate base class TimeoutError\n",
+      "execution_time": 0.7196879386901855,
+      "test_summary": {}
+    },
+    "gateway_integration": {
+      "name": "\u6570\u636e\u5e93\u7f51\u5173\u96c6\u6210\u6d4b\u8bd5",
+      "command": "pytest /Users/admin/Desktop/ai_theme_app/database_service/tests/integration/test_gateway_integration.py -v --tb=short",
+      "status": "failed",
+      "returncode": 4,
+      "stdout": "",
+      "stderr": "ImportError while loading conftest '/Users/admin/Desktop/ai_theme_app/database_service/tests/conftest.py'.\ntests/conftest.py:16: in <module>\n    from database_service.config import DatabaseConfig, DatabaseType\n__init__.py:8: in <module>\n    from .gateway import DatabaseGateway\ngateway.py:13: in <module>\n    from .factory import DatabaseManagerFactory\nfactory.py:12: in <module>\n    from .managers.memory_manager import MemoryDatabaseManager\nmanagers/__init__.py:7: in <module>\n    from .redis_cached_manager import RedisCachedDatabaseManager\nmanagers/redis_cached_manager.py:6: in <module>\n    import aioredis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/__init__.py:1: in <module>\n    from aioredis.client import Redis, StrictRedis\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/client.py:32: in <module>\n    from aioredis.connection import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/connection.py:33: in <module>\n    from .exceptions import (\n/opt/miniconda3/lib/python3.13/site-packages/aioredis/exceptions.py:14: in <module>\n    class TimeoutError(asyncio.TimeoutError, builtins.TimeoutError, RedisError):\nE   TypeError: duplicate base class TimeoutError\n",
+      "execution_time": 0.6363139152526855,
+      "test_summary": {}
+    }
+  }
+}

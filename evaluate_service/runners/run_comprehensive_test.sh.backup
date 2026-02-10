@@ -1,0 +1,63 @@
+#!/bin/bash
+# run_comprehensive_test.sh - 统一格式提取器全面测试脚本
+
+set -e
+
+# ==================== 配置区 ====================
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+EVALUATE_DIR="$SCRIPT_DIR"
+
+# 颜色定义
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# 测试模式配置
+TEST_MODE=true
+
+# ==================== 函数定义 ====================
+
+print_header() {
+    echo -e "${BLUE}"
+    echo "=========================================="
+    echo "      统一格式提取器全面测试套件"
+    echo "=========================================="
+    echo -e "${NC}"
+    echo ""
+}
+
+print_step() {
+    echo -e "${BLUE}▶ $1${NC}"
+}
+
+print_success() {
+    echo -e "${GREEN}✓ $1${NC}"
+}
+
+print_error() {
+    echo -e "${RED}✗ $1${NC}"
+}
+
+setup_environment() {
+    print_step "1. 设置测试环境"
+    
+    # 创建目录结构
+    mkdir -p data/test_inputs
+    mkdir -p data/results
+    mkdir -p scripts
+    
+    # 设置Python路径
+    export PYTHONPATH="$PROJECT_ROOT:$PYTHONPATH"
+    
+    # 设置测试模式环境变量
+    if [ "$TEST_MODE" = true ]; then
+        export TEST_MODE=1
+        echo "启用测试模式（模拟API响应）"
+    fi
+    
+    print_success "环境设置完成"
+}
+

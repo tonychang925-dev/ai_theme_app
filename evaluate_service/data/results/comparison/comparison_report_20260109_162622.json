@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "report_id": "comparison_20260109_162622",
+    "generated_at": "2026-01-09T16:26:22.804424",
+    "purpose": "优化效果对比分析"
+  },
+  "type": "enhanced_only",
+  "enhanced_results": {
+    "overall_score": 0.96,
+    "evaluation_level": "优秀",
+    "recommendation": "可以直接部署到生产环境",
+    "key_metrics": {
+      "decision_accuracy": 1.0,
+      "avg_response_time_ms": 0.0,
+      "theme_duplication_rate": 0.2222,
+      "naming_quality": 1.0
+    }
+  },
+  "summary": {
+    "message": "只有增强系统评估结果",
+    "recommendation": "建议运行基线评估进行对比"
+  }
+}

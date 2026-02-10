@@ -1,0 +1,68 @@
+{
+  "evaluation_name": "事件重新生成评估",
+  "evaluation_time": "2026-01-13T14:05:46.190288",
+  "metadata": {
+    "generated_at": "2026-01-13T14:05:46.184936",
+    "evaluator": "EventRegenerationEvaluator_v1.0",
+    "total_processed": 5,
+    "successful": 5,
+    "failed": 0,
+    "success_rate": 1.0,
+    "avg_processing_time": 9.9461052,
+    "avg_integrity_score": 1.0,
+    "test_mode": true,
+    "note": "使用真实AI模型重新生成的事件数据"
+  },
+  "summary_metrics": {
+    "extraction_success_rate": 1.0,
+    "avg_processing_time": 9.9461052,
+    "avg_integrity_score": 1.0,
+    "total_events": 5
+  },
+  "integrity_analysis": {
+    "events_with_content": 5,
+    "events_with_summary": 5,
+    "events_with_theme_directive": 5,
+    "events_with_industries": 5,
+    "total_analyzed": 5
+  },
+  "error_analysis": {},
+  "sample_events": [
+    {
+      "news_id": null,
+      "event_type": "产品发布",
+      "summary_preview": "Meta与Oakley合作开发的智能眼镜产品举行发布会，属于行业内已有技术路径下的产品迭代，缺乏定义性、首创性或全局性特征，未达到催生全新市场投资题材的标准。...",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件不符合重大标准：1. 非定义性事件（无国家级政策或行业标准确立）；2. 非首创性（智能眼镜已有Google Glass等先例，Meta此前已发布Ray-Ban Stories，此次为合作品牌迭代）；3. 非全局性（未改变AR/智能穿戴行业现有竞争格局，属于现有技术框架下的产品发布）。因此应归类至现有'智能穿戴/AR设备'主题，而非催生全新投资题材。"
+      },
+      "integrity_score": 1.0
+    },
+    {
+      "news_id": null,
+      "event_type": "产品发布",
+      "summary_preview": "Meta与Oakley合作推出针对运动场景的智能眼镜，挑战传统运动相机市场。该事件属于现有智能穿戴设备领域的常规产品迭代，缺乏定义性、首创性或全局性影响，因此判断为现有市场题材的补充而非全新投资主题。...",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.88,
+        "reason": "该事件不符合重大标准：1. 非定义性事件（无国家级政策或行业标准制定）；2. 非首创性（智能眼镜已有多年商用历史，如Google Glass、Snap Spectacles等，本次仅为特定场景的产品合作）；3. 非全局性（未改变智能穿戴或运动设备行业的核心格局，属于现有市场细分领域的竞争延伸）。因此应归类至现有智能穿戴/AR设备投资主题中。"
+      },
+      "integrity_score": 1.0
+    },
+    {
+      "news_id": null,
+      "event_type": "技术突破",
+      "summary_preview": "英伟达公开AR眼镜专利'无背光增强现实数字全息技术'，属于前沿光学显示技术探索，但仅为专利公开阶段，尚未形成商业化产品或明确市场应用。...",
+      "theme_directive": {
+        "action": "CLUSTER",
+        "confidence": 0.85,
+        "reason": "该事件为英伟达公开一项AR眼镜专利，属于技术研发进展。不符合重大标准：1. 非'定义性'（非国家级政策或行业标准）；2. 非'首创性'（数字全息、无背光等技术在AR领域已有探索，非首次突破或商用）；3. 非'全局性'（单家企业专利公开，未改变AR/VR行业现有格局或引发产业链重构）。因此，应归类于现有'AR/VR'或'可穿戴设备'投资主题，而非催生全新市场题材。"
+      },
+      "integrity_score": 1.0
+    }
+  ],
+  "recommendations": [
+    "当前配置良好，继续保持"
+  ]
+}

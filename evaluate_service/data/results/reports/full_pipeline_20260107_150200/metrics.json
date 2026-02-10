@@ -1,0 +1,51 @@
+{
+  "total_cases": 76,
+  "evaluated_cases": 3,
+  "overall_precision": 1.0,
+  "overall_recall": 1.0,
+  "overall_f1": 1.0,
+  "results": [
+    {
+      "test_id": "AI_AR眼镜_001",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "test_id": "AI_AR眼镜_002",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "test_id": "AI_AR眼镜_003",
+      "discovered": [
+        "AI/AR眼镜"
+      ],
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+# ai_theme_app/run_dual_scheduler_final.py
+#!/usr/bin/env python3
+import asyncio
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from news_crawler_service.scheduler.task_manager import TaskManager
+
+async def main():
+    """运行完整的双源差异化调度器"""
+    print("🏃 启动双源差异化调度器（最终版）")
+    print("=" * 60)
+    print("   财联社: 每15分钟运行")
+    print("   央视新闻: 每60分钟运行")
+    print("   测试模式: 运行3个周期（约45分钟）")
+    print("   按 Ctrl+C 可随时停止")
+    print("=" * 60)
+    
+    manager = TaskManager()
+    
+    # 使用差异化调度
+    await manager.start_differential_scheduling(max_cycles=3)
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\n👋 用户中断，程序退出")
+    except Exception as e:
+        print(f"\n❌ 程序异常退出: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)

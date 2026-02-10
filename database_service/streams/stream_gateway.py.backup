@@ -1,0 +1,1126 @@
+"""
+Stream 增强版数据库网关 - 集成重试功能
+在原有网关基础上增加 Redis Stream 功能和重试机制
+"""
+import asyncio
+import logging
+import json
+from datetime import datetime
+# from typing import Dict, List, Any, Optional, Callable, Union  # 已注释，避免 Python 3.13 问题
+import time
+
+try:
+    from .stream_config import get_enhanced_config
+    IMPORT_SUCCESS = True
+except ImportError:
+    IMPORT_SUCCESS = False
+    import logging
+    logging.getLogger(__name__).warning(f"导入失败: .stream_config")
+
+try:
+    from .stream_manager import RedisStreamManager
+    IMPORT_SUCCESS = True
+except ImportError:
+    IMPORT_SUCCESS = False
+    import logging
+    logging.getLogger(__name__).warning(f"导入失败: .stream_manager")
+
+try:
+    from .producers.news_producer import NewsProducer
+    IMPORT_SUCCESS = True
+except ImportError:
+    IMPORT_SUCCESS = False
+    import logging
+    logging.getLogger(__name__).warning(f"导入失败: .producers.news_producer")
+
+try:
+    from .producers.event_producer import EventProducer
+    IMPORT_SUCCESS = True
+except ImportError:
+    IMPORT_SUCCESS = False
+    import logging
+    logging.getLogger(__name__).warning(f"导入失败: .producers.event_producer")
+
+try:
+    from .producers.theme_producer import ThemeProducer
+    IMPORT_SUCCESS = True
+except ImportError:
+    IMPORT_SUCCESS = False
+    import logging
+    logging.getLogger(__name__).warning(f"导入失败: .producers.theme_producer")
+
+
+# 尝试导入重试管理器（可选依赖）
+try:
+    try:
+        from .utils.retry_manager import RetryManager, with_retry, RetryStrategy
+        IMPORT_SUCCESS = True
+    except ImportError:
+        IMPORT_SUCCESS = False
+        import logging
+        logging.getLogger(__name__).warning(f"导入失败: .utils.retry_manager")
+
+        RETRY_MANAGER_AVAILABLE = True
+except ImportError:
+    RETRY_MANAGER_AVAILABLE = False
+    logger = logging.getLogger(__name__)
+    logger.warning("重试管理器未找到，将使用简化重试逻辑")
+
+logger = logging.getLogger(__name__)
+
+
+class StreamEnhancedGateway:
+    """
+    Stream 增强网关
+    在原有网关基础上添加 Stream 发布功能和重试机制
+    """
+    
+    def __init__(self, base_gateway, stream_manager: RedisStreamManager = None,
+                 enable_retry: bool = True, retry_config = None):
+        """
+        初始化增强网关
+        
+        Args:
+            base_gateway: 原有的 DatabaseGateway 实例
+            stream_manager: Redis Stream 管理器，如果为 None 则自动创建
+            enable_retry: 是否启用重试功能
+            retry_config: 重试配置
+        """
+        self.base_gateway = base_gateway
+        self.config = get_enhanced_config()
+        
+        # Stream 管理器
+        self.stream_manager = stream_manager
+        self.stream_initialized = False
+        
+        # 生产者
+        self.news_producer = None
+        self.event_producer = None
+        self.theme_producer = None
+        
+        # Stream 统计
+        self.stream_stats = {
+            'published_messages': 0,
+            'published_errors': 0,
+            'streams': {},
+            'last_publish_time': None
+        }
+        
+        # 双写模式配置
+        self.dual_write_enabled = self.config.dual_write_mode
+        self.legacy_event_bus_enabled = self.config.enable_legacy_event_bus
+        
+        # 重试功能配置
+        self.enable_retry = enable_retry and RETRY_MANAGER_AVAILABLE
+        self.retry_config = retry_config or {
+            "max_retries": 3,
+            "base_delay": 1.0,
+            "strategy": "exponential",
+            "max_delay": 30.0,
+            "jitter": True
+        }
+        
+        # 重试管理器（延迟创建）
+        self._retry_manager = None
+        self.retry_stats = {
+            'total_operations': 0,
+            'operations_with_retries': 0,
+            'successful_retries': 0,
+            'failed_retries': 0,
+            'retry_history': []
+        }
+        
+        # 操作特定的重试配置
+        self._operation_retry_configs = {
+            'publish_news': {
+                'max_retries': 3,
+                'base_delay': 1.0,
+                'strategy': 'exponential',
+                'retry_on_exception': None
+            },
+            'publish_event': {
+                'max_retries': 2,
+                'base_delay': 0.5,
+                'strategy': 'fixed'
+            },
+            'publish_theme_update': {
+                'max_retries': 3,
+                'base_delay': 1.0,
+                'strategy': 'exponential'
+            },
+            'initialize_streams': {
+                'max_retries': 5,
+                'base_delay': 2.0,
+                'strategy': 'fibonacci'
+            },
+            'database_operation': {
+                'max_retries': 3,
+                'base_delay': 0.5,
+                'strategy': 'exponential'
+            }
+        }
+        
+        logger.info(f"🚀 StreamEnhancedGateway 初始化完成 (重试功能: {'启用' if self.enable_retry else '禁用'})")
+    
+    # ========== 重试相关方法和属性 ==========
+    
+    @property
+    def retry_manager(self):
+        """获取或创建重试管理器"""
+        if not self.enable_retry:
+            return None
+            
+        if self._retry_manager is None:
+            self._retry_manager = self._create_retry_manager()
+            
+        return self._retry_manager
+    
+    def _create_retry_manager(self, operation_type: str = None) -> Optional[RetryManager]:
+        """创建重试管理器"""
+        if not self.enable_retry or not RETRY_MANAGER_AVAILABLE:
+            return None
+            
+        if operation_type and operation_type in self._operation_retry_configs:
+            config = self._operation_retry_configs[operation_type]
+        else:
+            config = self.retry_config
+        
+        try:
+            return RetryManager(
+                max_retries=config.get('max_retries', 3),
+                base_delay=config.get('base_delay', 1.0),
+                strategy=config.get('strategy', 'exponential'),
+                max_delay=config.get('max_delay', 30.0),
+                jitter=config.get('jitter', True),
+                retry_on_exception=config.get('retry_on_exception'),
+                stop_on_exception=config.get('stop_on_exception')
+            )
+        except Exception as e:
+            logger.warning(f"创建重试管理器失败: {e}")
+            return None
+    
+    def _record_retry_stats(self, operation: str, retry_manager):
+        """记录重试统计"""
+        if not retry_manager or not self.enable_retry:
+            return
+            
+        try:
+            stats = retry_manager.get_stats()
+            if stats.get('total_retries', 0) > 0:
+                self.retry_stats['operations_with_retries'] += 1
+                
+                if stats.get('successful_retries', 0) > 0:
+                    self.retry_stats['successful_retries'] += 1
+                else:
+                    self.retry_stats['failed_retries'] += 1
+                
+                # 记录历史（限制大小）
+                self.retry_stats['retry_history'].append({
+                    "operation": operation,
+                    "timestamp": datetime.now().isoformat(),
+                    "stats": {
+                        "total_retries": stats.get('total_retries', 0),
+                        "successful": stats.get('successful_retries', 0) > 0
+                    }
+                })
+                
+                # 保持历史记录在合理大小
+                if len(self.retry_stats['retry_history']) > 100:
+                    self.retry_stats['retry_history'] = self.retry_stats['retry_history'][-50:]
+                    
+        except Exception as e:
+            logger.debug(f"记录重试统计失败: {e}")
+    
+    def _execute_with_retry(self, func: Callable, operation_type: str = None, 
+                           context = None, *args, **kwargs) :
+        """
+        执行带重试的操作（内部方法）
+        
+        Args:
+            func: 要执行的函数
+            operation_type: 操作类型，用于选择重试配置
+            context: 上下文信息
+            *args: 函数参数
+            **kwargs: 函数关键字参数
+            
+        Returns:
+            函数执行结果
+        """
+        self.retry_stats['total_operations'] += 1
+        
+        if not self.enable_retry or not self.retry_manager:
+            # 禁用重试，直接执行
+            return func(*args, **kwargs)
+        
+        try:
+            # 为特定操作创建独立的重试管理器
+            retry_manager = self._create_retry_manager(operation_type) or self.retry_manager
+            
+            # 执行带重试的操作
+            result = retry_manager.execute_with_retry(
+                func, *args, 
+                context=context or {"operation": operation_type or "unknown"},
+                **kwargs
+            )
+            
+            # 记录统计
+            self._record_retry_stats(operation_type or "unknown", retry_manager)
+            
+            return result
+            
+        except Exception as e:
+            logger.debug(f"带重试执行失败，降级到直接执行: {e}")
+            # 降级：直接执行
+            return func(*args, **kwargs)
+    
+    async def _execute_with_retry_async(self, func: Callable, operation_type: str = None,
+                                       context = None, *args, **kwargs) :
+        """
+        异步执行带重试的操作（内部方法）
+        """
+        self.retry_stats['total_operations'] += 1
+        
+        if not self.enable_retry or not self.retry_manager:
+            # 禁用重试，直接执行
+            return await func(*args, **kwargs)
+        
+        try:
+            # 为特定操作创建独立的重试管理器
+            retry_manager = self._create_retry_manager(operation_type) or self.retry_manager
+            
+            # 执行带重试的操作
+            result = await retry_manager.execute_with_retry(
+                func, *args, 
+                context=context or {"operation": operation_type or "unknown"},
+                **kwargs
+            )
+            
+            # 记录统计
+            self._record_retry_stats(operation_type or "unknown", retry_manager)
+            
+            return result
+            
+        except Exception as e:
+            logger.debug(f"带重试异步执行失败，降级到直接执行: {e}")
+            # 降级：直接执行
+            return await func(*args, **kwargs)
+    
+    # ========== 原有方法（保持完全兼容）==========
+    
+    async def initialize_streams(self):
+        """初始化 Stream 相关组件（带重试）"""
+        if self.stream_initialized:
+            return
+        
+        logger.info("🚀 初始化 Redis Stream 组件...")
+        
+        try:
+            # 使用重试执行初始化
+            await self._execute_with_retry_async(
+                self._initialize_streams_internal,
+                operation_type="initialize_streams",
+                context={"operation": "initialize_streams"}
+            )
+            
+            self.stream_initialized = True
+            logger.info("✅ Stream 组件初始化完成")
+            
+        except Exception as e:
+            logger.error(f"❌ Stream 组件初始化失败: {e}")
+            raise
+    
+    async def _initialize_streams_internal(self):
+        """内部初始化方法（供重试使用）"""
+        # 创建 Stream 管理器
+        if self.stream_manager is None:
+            redis_url = f"redis://{self.config.redis.host}:{self.config.redis.port}/{self.config.redis.db}"
+            if self.config.redis.password:
+                redis_url = f"redis://:{self.config.redis.password}@{self.config.redis.host}:{self.config.redis.port}/{self.config.redis.db}"
+            
+            self.stream_manager = RedisStreamManager(redis_url)
+            await self.stream_manager.connect()
+        
+        # 创建生产者
+        self.news_producer = NewsProducer(self.stream_manager)
+        self.event_producer = EventProducer(self.stream_manager)
+        self.theme_producer = ThemeProducer(self.stream_manager)
+        
+        # 确保所有 Stream 存在
+        await self._ensure_streams_exist()
+        
+        # 启动 Stream 监控任务
+        if self.config.redis_stream.enable_monitoring:
+            asyncio.create_task(self._monitor_streams_task())
+    
+    # ========== Stream 发布方法（增强版）==========
+    
+    async def publish_news(self, news_data) -> Optional[str]:
+        """
+        发布新闻到 Stream（带重试）
+        
+        Args:
+            news_data: 新闻数据，必须包含 id, title, content
+            
+        Returns:
+            Stream 消息ID，失败返回 None
+        """
+        try:
+            # 验证新闻数据
+            if not self._validate_news_data(news_data):
+                raise ValueError("新闻数据格式无效")
+            
+            if not self.stream_initialized:
+                await self.initialize_streams()
+            
+            # 使用重试执行发布
+            message_id = await self._execute_with_retry_async(
+                self._publish_news_internal,
+                operation_type="publish_news",
+                context={"operation": "publish_news", "news_id": news_data.get('id')},
+                news_data=news_data
+            )
+            
+            if message_id:
+                self.stream_stats['published_messages'] += 1
+                self.stream_stats['last_publish_time'] = datetime.now()
+                
+                logger.info(f"📤 发布新闻到 Stream: {news_data.get('id', 'unknown')} -> {message_id}")
+                
+                # 双写模式
+                if self.dual_write_enabled:
+                    await self._dual_write_news(news_data)
+                
+                # 记录统计
+                stream_name = self.config.get_stream_url("news_raw")
+                if stream_name not in self.stream_stats['streams']:
+                    self.stream_stats['streams'][stream_name] = {
+                        'published_count': 0,
+                        'last_message_id': None
+                    }
+                self.stream_stats['streams'][stream_name]['published_count'] += 1
+                self.stream_stats['streams'][stream_name]['last_message_id'] = message_id
+            
+            return message_id
+            
+        except Exception as e:
+            self.stream_stats['published_errors'] += 1
+            logger.error(f"发布新闻到 Stream 失败: {e}")
+            return None
+    
+    async def _publish_news_internal(self, news_data) -> Optional[str]:
+        """内部发布新闻方法（供重试使用）"""
+        # 发布到新闻 Stream
+        return await self.news_producer.publish(news_data)
+    
+    async def publish_event(self, event_data, is_major: bool = False) -> Optional[str]:
+        """
+        发布事件到 Stream（带重试）
+        
+        Args:
+            event_data: 事件数据
+            is_major: 是否为重大事件
+            
+        Returns:
+            Stream 消息ID，失败返回 None
+        """
+        try:
+            # 验证事件数据
+            if 'id' not in event_data or 'classification' not in event_data:
+                raise ValueError("事件数据必须包含 id 和 classification 字段")
+            
+            if not self.stream_initialized:
+                await self.initialize_streams()
+            
+            # 确定目标 Stream
+            stream_key = "events_major" if is_major else "events_normal"
+            
+            # 添加元数据
+            event_with_meta = {
+                **event_data,
+                "published_at": datetime.now().isoformat(),
+                "is_major": is_major,
+                "source": "database_gateway"
+            }
+            
+            # 使用重试执行发布
+            message_id = await self._execute_with_retry_async(
+                self.event_producer.publish,
+                operation_type="publish_event",
+                context={"operation": "publish_event", "event_id": event_data.get('id')},
+                data=event_with_meta,
+                stream_key=stream_key
+            )
+            
+            if message_id:
+                logger.info(f"📤 发布事件到 Stream: {event_data.get('id')} -> {message_id}")
+                
+                # 双写模式
+                if self.dual_write_enabled:
+                    await self._dual_write_event(event_data, is_major)
+            
+            return message_id
+            
+        except Exception as e:
+            logger.error(f"发布事件到 Stream 失败: {e}")
+            return None
+    
+    async def publish_theme_update(self, theme_data) -> Optional[str]:
+        """
+        发布主题更新到 Stream（带重试）
+        
+        Args:
+            theme_data: 主题数据，必须包含 theme_id
+            
+        Returns:
+            Stream 消息ID，失败返回 None
+        """
+        try:
+            # 验证主题数据
+            if 'theme_id' not in theme_data and 'id' not in theme_data:
+                raise ValueError("主题数据必须包含 theme_id 或 id 字段")
+            
+            if not self.stream_initialized:
+                await self.initialize_streams()
+            
+            theme_id = theme_data.get('theme_id') or theme_data.get('id')
+            
+            # 添加元数据
+            update_data = {
+                "theme_id": theme_id,
+                "update_data": theme_data,
+                "updated_at": datetime.now().isoformat(),
+                "source": "database_gateway"
+            }
+            
+            # 使用重试执行发布
+            message_id = await self._execute_with_retry_async(
+                self.theme_producer.publish,
+                operation_type="publish_theme_update",
+                context={"operation": "publish_theme_update", "theme_id": theme_id},
+                data=update_data
+            )
+            
+            if message_id:
+                logger.info(f"📤 发布主题更新到 Stream: {theme_id} -> {message_id}")
+            
+            return message_id
+            
+        except Exception as e:
+            logger.error(f"发布主题更新到 Stream 失败: {e}")
+            return None
+    
+    async def publish_to_stream(self, stream_key: str, data) -> Optional[str]:
+        """
+        通用方法：发布消息到指定 Stream（带重试）
+        
+        Args:
+            stream_key: Stream 键名
+            data: 消息数据
+            
+        Returns:
+            Stream 消息ID，失败返回 None
+        """
+        try:
+            if not self.stream_initialized:
+                await self.initialize_streams()
+            
+            # 获取 Stream 配置
+            stream_config = self.config.get_stream_config(stream_key)
+            if not stream_config:
+                raise ValueError(f"未找到 Stream 配置: {stream_key}")
+            
+            # 添加元数据
+            message_data = {
+                "payload": data,
+                "published_at": datetime.now().isoformat(),
+                "source": "database_gateway",
+                "stream_key": stream_key
+            }
+            
+            # 使用重试执行发布
+            message_id = await self._execute_with_retry_async(
+                self.stream_manager.publish,
+                operation_type="publish_to_stream",
+                context={"operation": "publish_to_stream", "stream_key": stream_key},
+                stream_name=stream_config.name,
+                data=message_data,
+                max_len=stream_config.max_length
+            )
+            
+            if message_id:
+                logger.debug(f"📤 发布消息到 {stream_key}: {message_id}")
+            
+            return message_id
+            
+        except Exception as e:
+            logger.error(f"发布消息到 {stream_key} 失败: {e}")
+            return None
+    
+    # ========== 新增：智能重试方法 ==========
+    
+    async def smart_publish(self, data, data_type: str = None) -> Optional[str]:
+        """
+        智能发布：自动识别数据类型并选择最佳重试策略
+        
+        Args:
+            data: 要发布的数据
+            data_type: 数据类型（自动检测如果为None）
+            
+        Returns:
+            Stream 消息ID，失败返回 None
+        """
+        try:
+            # 自动检测数据类型
+            if data_type is None:
+                data_type = self._detect_data_type(data)
+            
+            # 选择发布方法
+            if data_type == "news":
+                return await self.publish_news(data)
+            elif data_type == "event":
+                is_major = data.get("severity", "normal") == "major"
+                return await self.publish_event(data, is_major)
+            elif data_type == "theme":
+                return await self.publish_theme_update(data)
+            else:
+                # 默认使用通用发布
+                stream_key = self._determine_stream_key(data_type, data)
+                return await self.publish_to_stream(stream_key, data)
+                
+        except Exception as e:
+            logger.error(f"智能发布失败: {e}")
+            return None
+    
+    async def batch_publish(self, items, 
+                           data_type: str = None,
+                           max_concurrent: int = 5) -> List[Optional[str]]:
+        """
+        批量发布（带重试和并发控制）
+        
+        Args:
+            items: 要发布的数据列表
+            data_type: 数据类型
+            max_concurrent: 最大并发数
+            
+        Returns:
+            消息ID列表
+        """
+        logger.info(f"📦 批量发布开始: {len(items)} 条数据")
+        
+        results = []
+        semaphore = asyncio.Semaphore(max_concurrent)
+        
+        async def publish_with_semaphore(item):
+            async with semaphore:
+                return await self.smart_publish(item, data_type)
+        
+        # 创建任务
+        tasks = [publish_with_semaphore(item) for item in items]
+        
+        # 并发执行
+        try:
+            results = await asyncio.gather(*tasks, return_exceptions=True)
+            
+            # 处理结果
+            success_count = 0
+            for i, result in enumerate(results):
+                if isinstance(result, Exception):
+                    logger.error(f"批量发布失败第 {i} 项: {result}")
+                    results[i] = None
+                elif result:
+                    success_count += 1
+            
+            logger.info(f"📦 批量发布完成: {success_count}/{len(items)} 成功")
+            
+        except Exception as e:
+            logger.error(f"批量发布整体失败: {e}")
+            results = [None] * len(items)
+        
+        return results
+    
+    # ========== 数据库操作增强（保持向后兼容）==========
+    
+    async def create_theme_with_stream(self, name: str, code: str, **kwargs) -> Optional[Any]:
+        """
+        增强版创建主题：同时发布到 Stream（带重试）
+        
+        Args:
+            name: 主题名称
+            code: 主题代码
+            **kwargs: 其他主题属性
+            
+        Returns:
+            创建的主题记录
+        """
+        try:
+            # 调用原有方法创建主题
+            theme = await self._execute_with_retry_async(
+                self.base_gateway.create_theme,
+                operation_type="database_operation",
+                context={"operation": "create_theme", "name": name, "code": code},
+                name=name,
+                code=code,
+                **kwargs
+            )
+            
+            if theme:
+                # 发布主题创建事件到 Stream
+                theme_data = {
+                    "theme_id": theme.id,
+                    "name": theme.name,
+                    "code": theme.code,
+                    "action": "create",
+                    "created_at": datetime.now().isoformat()
+                }
+                
+                await self.publish_theme_update(theme_data)
+                
+                logger.info(f"🎉 主题创建事件已发布到 Stream: {name} ({code})")
+            
+            return theme
+            
+        except Exception as e:
+            logger.error(f"增强版创建主题失败: {e}")
+            # 降级：尝试仅使用原有方法
+            return await self.base_gateway.create_theme(name, code, **kwargs)
+    
+    async def update_theme_with_stream(self, theme_id: int, updates) -> Optional[Any]:
+        """
+        增强版更新主题：同时发布到 Stream（带重试）
+        
+        Args:
+            theme_id: 主题ID
+            updates: 更新数据
+            
+        Returns:
+            更新的主题记录
+        """
+        try:
+            # 调用原有方法更新主题
+            theme = await self._execute_with_retry_async(
+                self.base_gateway.update_theme,
+                operation_type="database_operation",
+                context={"operation": "update_theme", "theme_id": theme_id},
+                theme_id=theme_id,
+                updates=updates
+            )
+            
+            if theme:
+                # 发布主题更新事件到 Stream
+                update_data = {
+                    "theme_id": theme_id,
+                    "updates": updates,
+                    "action": "update",
+                    "updated_at": datetime.now().isoformat()
+                }
+                
+                await self.publish_theme_update(update_data)
+                
+                logger.info(f"🔄 主题更新事件已发布到 Stream: {theme_id}")
+            
+            return theme
+            
+        except Exception as e:
+            logger.error(f"增强版更新主题失败: {e}")
+            # 降级：尝试仅使用原有方法
+            return await self.base_gateway.update_theme(theme_id, updates)
+    
+    async def increment_theme_heat_with_stream(self, theme_id: int, increment: int = 1) -> None:
+        """
+        增强版增加主题热度：同时发布到 Stream（带重试）
+        
+        Args:
+            theme_id: 主题ID
+            increment: 增加的热度值
+        """
+        try:
+            # 调用原有方法增加热度
+            await self._execute_with_retry_async(
+                self.base_gateway.increment_theme_heat,
+                operation_type="database_operation",
+                context={"operation": "increment_theme_heat", "theme_id": theme_id},
+                theme_id=theme_id,
+                increment=increment
+            )
+            
+            # 发布热度变化事件到 Stream
+            heat_data = {
+                "theme_id": theme_id,
+                "increment": increment,
+                "action": "heat_increment",
+                "timestamp": datetime.now().isoformat()
+            }
+            
+            await self.publish_theme_update(heat_data)
+            
+            logger.debug(f"🔥 主题热度变化事件已发布到 Stream: {theme_id} +{increment}")
+            
+        except Exception as e:
+            logger.error(f"增强版增加主题热度失败: {e}")
+            # 降级：尝试仅使用原有方法
+            await self.base_gateway.increment_theme_heat(theme_id, increment)
+    
+    # ========== 统计和监控增强 ==========
+    
+    async def get_enhanced_stats(self) -> Dict[str, Any]:
+        """获取增强的统计信息（包含原有统计、Stream统计和重试统计）"""
+        try:
+            # 获取原有统计
+            base_stats = await self.base_gateway.get_stats()
+            
+            # 获取 Stream 统计
+            stream_stats = await self.get_stream_stats()
+            
+            # 合并统计
+            enhanced_stats = {
+                **base_stats,
+                "stream_enhanced": True,
+                "retry_enabled": self.enable_retry,
+                "stream_stats": stream_stats,
+                "retry_stats": self._get_retry_stats_summary(),
+                "config": {
+                    "enable_stream_processing": self.config.enable_stream_processing,
+                    "redis_stream_enabled": self.config.redis_stream.enabled,
+                    "stream_count": len(self.config.redis_stream.streams),
+                    "consumer_group_count": len(self.config.redis_stream.consumer_groups)
+                }
+            }
+            
+            return enhanced_stats
+            
+        except Exception as e:
+            logger.error(f"获取增强统计失败: {e}")
+            # 降级：仅返回原有统计
+            return await self.base_gateway.get_stats()
+    
+    async def health_check_with_streams(self) -> Dict[str, Any]:
+        """增强版健康检查（包含Stream和重试健康状态）"""
+        try:
+            # 原有健康检查
+            base_healthy = await self.base_gateway.health_check()
+            
+            # Stream 健康检查
+            stream_healthy = False
+            stream_error = None
+            
+            if self.stream_initialized:
+                try:
+                    # 尝试执行一个简单的 Stream 操作
+                    test_stream = "news_raw"
+                    stream_name = self.config.get_stream_url(test_stream)
+                    
+                    # 使用重试检查 Stream
+                    info = await self._execute_with_retry_async(
+                        self.stream_manager.get_stream_info,
+                        operation_type="health_check",
+                        context={"operation": "health_check_stream"},
+                        stream_name=stream_name
+                    )
+                    
+                    stream_healthy = "error" not in info
+                    
+                except Exception as e:
+                    stream_error = str(e)
+                    stream_healthy = False
+            else:
+                stream_healthy = True  # 未初始化不算错误
+                stream_error = "Stream 未初始化"
+            
+            # 重试系统健康检查
+            retry_healthy = True
+            retry_error = None
+            if self.enable_retry and not RETRY_MANAGER_AVAILABLE:
+                retry_healthy = False
+                retry_error = "重试管理器不可用"
+            
+            return {
+                "overall": base_healthy and stream_healthy and retry_healthy,
+                "database": {
+                    "healthy": base_healthy,
+                    "message": "数据库连接正常" if base_healthy else "数据库连接异常"
+                },
+                "stream": {
+                    "healthy": stream_healthy,
+                    "initialized": self.stream_initialized,
+                    "enabled": self.config.redis_stream.enabled,
+                    "error": stream_error,
+                    "message": "Stream 系统正常" if stream_healthy else f"Stream 系统异常: {stream_error}"
+                },
+                "retry": {
+                    "healthy": retry_healthy,
+                    "enabled": self.enable_retry,
+                    "available": RETRY_MANAGER_AVAILABLE,
+                    "error": retry_error,
+                    "message": "重试系统正常" if retry_healthy else f"重试系统异常: {retry_error}"
+                },
+                "timestamp": datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            logger.error(f"增强版健康检查失败: {e}")
+            return {
+                "overall": False,
+                "database": {"healthy": False, "message": str(e)},
+                "stream": {"healthy": False, "message": "检查失败"},
+                "retry": {"healthy": False, "message": "检查失败"},
+                "timestamp": datetime.now().isoformat()
+            }
+    
+    # ========== 配置管理 ==========
+    
+    def enable_retry_function(self, enable: bool = True):
+        """启用或禁用重试功能"""
+        old_status = self.enable_retry
+        self.enable_retry = enable and RETRY_MANAGER_AVAILABLE
+        
+        if old_status != self.enable_retry:
+            if self.enable_retry:
+                logger.info("✅ 重试功能已启用")
+            else:
+                logger.info("⏸️  重试功能已禁用")
+    
+    def update_retry_config(self, config_updates, 
+                           operation_type: str = None):
+        """
+        更新重试配置
+        
+        Args:
+            config_updates: 配置更新
+            operation_type: 操作类型（None 表示全局配置）
+        """
+        if operation_type:
+            # 更新特定操作配置
+            if operation_type in self._operation_retry_configs:
+                self._operation_retry_configs[operation_type].update(config_updates)
+                logger.info(f"✅ 更新 {operation_type} 重试配置")
+            else:
+                self._operation_retry_configs[operation_type] = config_updates
+                logger.info(f"✅ 添加 {operation_type} 重试配置")
+        else:
+            # 更新全局配置
+            self.retry_config.update(config_updates)
+            self._retry_manager = None  # 重置重试管理器
+            logger.info("✅ 更新全局重试配置")
+    
+    def get_retry_config(self, operation_type: str = None) -> Dict[str, Any]:
+        """获取重试配置"""
+        if operation_type and operation_type in self._operation_retry_configs:
+            return self._operation_retry_configs[operation_type].copy()
+        else:
+            return self.retry_config.copy()
+    
+    # ========== 工具方法 ==========
+    
+    def _detect_data_type(self, data) -> str:
+        """自动检测数据类型"""
+        if "title" in data and "content" in data:
+            return "news"
+        elif "classification" in data or "event_type" in data:
+            return "event"
+        elif "theme_id" in data or "theme_name" in data:
+            return "theme"
+        elif "updates" in data or "action" in data:
+            return "theme"
+        else:
+            return "generic"
+    
+    def _determine_stream_key(self, data_type: str, data) -> str:
+        """确定 Stream 键名"""
+        stream_map = {
+            "news": "news_raw",
+            "event": "events_normal",
+            "theme": "themes_updates",
+            "generic": "generic_messages"
+        }
+        
+        if data_type == "event" and data.get("severity") == "major":
+            return "events_major"
+        
+        return stream_map.get(data_type, "generic_messages")
+    
+    def _get_retry_stats_summary(self) -> Dict[str, Any]:
+        """获取重试统计摘要"""
+        total_retry_operations = self.retry_stats['operations_with_retries']
+        successful_retries = self.retry_stats['successful_retries']
+        
+        retry_success_rate = 0
+        if total_retry_operations > 0:
+            retry_success_rate = successful_retries / total_retry_operations
+        
+        return {
+            "total_operations": self.retry_stats['total_operations'],
+            "operations_with_retries": self.retry_stats['operations_with_retries'],
+            "successful_retries": self.retry_stats['successful_retries'],
+            "failed_retries": self.retry_stats['failed_retries'],
+            "retry_success_rate": retry_success_rate,
+            "retry_manager_available": RETRY_MANAGER_AVAILABLE,
+            "retry_enabled": self.enable_retry
+        }
+    
+    def print_retry_report(self):
+        """打印重试报告"""
+        if not self.enable_retry:
+            print("重试功能已禁用")
+            return
+            
+        stats = self._get_retry_stats_summary()
+        
+        print("\n📊 重试功能报告")
+        print("=" * 50)
+        print(f"总操作数: {stats['total_operations']}")
+        print(f"带重试操作: {stats['operations_with_retries']}")
+        print(f"成功重试: {stats['successful_retries']}")
+        print(f"失败重试: {stats['failed_retries']}")
+        
+        if stats['operations_with_retries'] > 0:
+            print(f"重试成功率: {stats['retry_success_rate']:.1%}")
+        
+        print(f"重试管理器: {'可用' if stats['retry_manager_available'] else '不可用'}")
+        print("=" * 50)
+    
+    # ========== 原有方法（保持不变）==========
+    
+    async def _ensure_streams_exist(self):
+        """确保所有配置的 Stream 都存在"""
+        for stream_key, stream_def in self.config.redis_stream.streams.items():
+            try:
+                await self.stream_manager.ensure_stream(
+                    stream_def.name, 
+                    stream_def.max_length
+                )
+                logger.debug(f"✅ 确保 Stream 存在: {stream_def.name}")
+            except Exception as e:
+                logger.warning(f"⚠️  确保 Stream 存在失败 {stream_def.name}: {e}")
+    
+    async def _monitor_streams_task(self):
+        """监控 Stream 状态的后台任务"""
+        interval = self.config.redis_stream.metrics_interval
+        
+        while True:
+            try:
+                if self.stream_initialized:
+                    await self._report_stream_metrics()
+                await asyncio.sleep(interval)
+            except asyncio.CancelledError:
+                break
+            except Exception as e:
+                logger.error(f"Stream 监控任务错误: {e}")
+                await asyncio.sleep(60)
+    
+    async def _report_stream_metrics(self):
+        """报告 Stream 指标"""
+        try:
+            # 获取所有 Stream 的信息
+            streams_info = await self.stream_manager.get_all_streams_info()
+            
+            # 统计消息总数
+            total_messages = sum(info.get('length', 0) for info in streams_info.values())
+            
+            logger.debug(f"📊 Stream 监控 - 总消息数: {total_messages}")
+            
+            # 记录到统计中
+            self.stream_stats['total_messages'] = total_messages
+            self.stream_stats['streams_info'] = streams_info
+            
+        except Exception as e:
+            logger.error(f"获取 Stream 指标失败: {e}")
+    
+    async def _dual_write_news(self, news_data):
+        """双写模式：同时写入旧版事件总线"""
+        if not self.legacy_event_bus_enabled:
+            return
+        
+        try:
+            logger.debug(f"双写模式：同时写入旧版新闻总线: {news_data.get('id')}")
+        except Exception as e:
+            logger.warning(f"双写模式写入旧版系统失败: {e}")
+    
+    async def _dual_write_event(self, event_data, is_major: bool):
+        """双写模式：同时写入旧版事件总线"""
+        if not self.legacy_event_bus_enabled:
+            return
+        
+        try:
+            logger.debug(f"双写模式：同时写入旧版事件总线: {event_data.get('id')}")
+        except Exception as e:
+            logger.warning(f"双写模式写入旧版系统失败: {e}")
+    
+    def _validate_news_data(self, news_data) -> bool:
+        """验证新闻数据格式"""
+        required_fields = ["id", "title", "content"]
+        for field in required_fields:
+            if field not in news_data:
+                return False
+        
+        if len(news_data.get("content", "")) < 10:
+            return False
+        
+        return True
+    
+    async def get_stream_info(self, stream_key: str = None) -> Dict[str, Any]:
+        """获取 Stream 信息"""
+        try:
+            if not self.stream_initialized:
+                return {"error": "Stream 未初始化"}
+            
+            if stream_key:
+                stream_name = self.config.get_stream_url(stream_key)
+                info = await self.stream_manager.get_stream_info(stream_name)
+                return {stream_name: info}
+            else:
+                return await self.stream_manager.get_all_streams_info()
+                
+        except Exception as e:
+            logger.error(f"获取 Stream 信息失败: {e}")
+            return {"error": str(e)}
+    
+    async def get_stream_stats(self) -> Dict[str, Any]:
+        """获取 Stream 统计信息"""
+        try:
+            stream_info = await self.get_stream_info()
+            
+            stats = {
+                "initialized": self.stream_initialized,
+                "enabled": self.config.redis_stream.enabled,
+                "dual_write_enabled": self.dual_write_enabled,
+                "legacy_event_bus_enabled": self.legacy_event_bus_enabled,
+                "published_messages": self.stream_stats['published_messages'],
+                "published_errors": self.stream_stats['published_errors'],
+                "last_publish_time": self.stream_stats['last_publish_time'].isoformat() 
+                    if self.stream_stats['last_publish_time'] else None,
+                "streams": {}
+            }
+            
+            for stream_key, stream_def in self.config.redis_stream.streams.items():
+                stream_name = stream_def.name
+                if stream_info and stream_name in stream_info:
+                    stream_data = stream_info[stream_name]
+                    stats["streams"][stream_name] = {
+                        "length": stream_data.get("length", 0),
+                        "groups": stream_data.get("groups", 0),
+                        "published_count": self.stream_stats['streams'].get(stream_name, {}).get('published_count', 0)
+                    }
+            
+            return stats
+            
+        except Exception as e:
+            logger.error(f"获取 Stream 统计失败: {e}")
+            return {"error": str(e)}
+    
+    def __getattr__(self, name):
+        """代理所有未定义的方法到原有网关"""
+        if hasattr(self.base_gateway, name):
+            return getattr(self.base_gateway, name)
+        raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{name}'")
+    
+    async def close(self):
+        """关闭连接"""
+        try:
+            if self.stream_manager:
+                await self.stream_manager.redis.close()
+            
+            await self.base_gateway.close()
+            
+            logger.info("✅ StreamEnhancedGateway 已关闭")
+        except Exception as e:
+            logger.error(f"关闭增强网关失败: {e}")

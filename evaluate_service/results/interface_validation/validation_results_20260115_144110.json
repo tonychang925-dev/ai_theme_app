@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-15T14:41:10.116975",
+  "test_events": 5,
+  "methods": {
+    "fetch_relevant_themes": {
+      "theme_count": 1,
+      "has_complete_content": true,
+      "total_content_length": 137,
+      "content_field_analysis": {
+        "has_complete_content": true,
+        "related_news_full_contents": true
+      }
+    },
+    "fetch_themes_with_complete_news_content": {
+      "theme_count": 1,
+      "has_complete_content": true,
+      "total_content_length": 137,
+      "content_field_analysis": {
+        "has_complete_content": true,
+        "related_news_full_contents": true
+      }
+    }
+  }
+}

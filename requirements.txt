@@ -1,0 +1,4 @@
+
+# Redis Stream 集成依赖
+aioredis>=2.0.0
+aiohttp>=3.8.0

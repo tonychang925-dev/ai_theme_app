@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "analysis_time": "2026-01-10T15:40:56.012061",
+    "true_themes_count": 10,
+    "total_events": 76,
+    "analysis_focus": "题材归并准确性深度分析"
+  },
+  "true_theme_distribution": {
+    "AI/AR眼镜": 10,
+    "SpaceX": 5,
+    "可控核聚变": 10,
+    "对日制裁": 6,
+    "稀土永磁": 8,
+    "海洋经济": 5,
+    "光刻胶": 8,
+    "卫星互联": 10,
+    "液冷数据中心": 8,
+    "AI智能体Manus": 6
+  },
+  "accuracy_summary": {
+    "AI/AR眼镜": {
+      "correct_rate": 0.0,
+      "create_new_rate": 10.0,
+      "cluster_rate": 90.0
+    },
+    "SpaceX": {
+      "correct_rate": 0.0,
+      "create_new_rate": 40.0,
+      "cluster_rate": 60.0
+    },
+    "可控核聚变": {
+      "correct_rate": 60.0,
+      "create_new_rate": 40.0,
+      "cluster_rate": 60.0
+    },
+    "对日制裁": {
+      "correct_rate": 0.0,
+      "create_new_rate": 16.666666666666664,
+      "cluster_rate": 83.33333333333334
+    },
+    "稀土永磁": {
+      "correct_rate": 100.0,
+      "create_new_rate": 12.5,
+      "cluster_rate": 87.5
+    },
+    "海洋经济": {
+      "correct_rate": 20.0,
+      "create_new_rate": 40.0,
+      "cluster_rate": 60.0
+    },
+    "光刻胶": {
+      "correct_rate": 100.0,
+      "create_new_rate": 12.5,
+      "cluster_rate": 87.5
+    },
+    "卫星互联": {
+      "correct_rate": 10.0,
+      "create_new_rate": 60.0,
+      "cluster_rate": 40.0
+    },
+    "液冷数据中心": {
+      "correct_rate": 12.5,
+      "create_new_rate": 37.5,
+      "cluster_rate": 62.5
+    },
+    "AI智能体Manus": {
+      "correct_rate": 0.0,
+      "create_new_rate": 0.0,
+      "cluster_rate": 100.0
+    }
+  },
+  "theme_final_analysis": {
+    "AI/AR眼镜": {
+      "total_events": 10,
+      "final_decisions": {
+        "MERGE_INTO": 9,
+        "CREATE_NEW": 1
+      },
+      "merged_to": 

@@ -1,0 +1,13 @@
+{
+  "theme_count": 1,
+  "theme_names": [
+    "新兴题材"
+  ],
+  "avg_events_per_theme": 2.0,
+  "lifecycle_distribution": {
+    "candidate": 1,
+    "growing": 0,
+    "mature": 0,
+    "decline": 0
+  }
+}

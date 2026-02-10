@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "test_time": "2026-01-10T20:20:45.134446",
+    "test_type": "修复配置评估",
+    "total_events": 30
+  },
+  "config_used": {
+    "thresholds": {
+      "exact_match": 1.0,
+      "inclusion_match": 0.6,
+      "semantic_similarity": 0.55,
+      "auto_merge": 0.65
+    },
+    "weights": {
+      "name_similarity": 0.35,
+      "keyword_overlap": 0.35,
+      "industry_match": 0.2,
+      "semantic_similarity": 0.1
+    },
+    "strategies": {
+      "enable_exact_match": true,
+      "enable_inclusion_check": true,
+      "enable_semantic_analysis": true,
+      "use_jieba": true
+    }
+  },
+  "theme_distribution": {
+    "其他主题": 30
+  },
+  "events_by_theme": {
+    "其他主题": [
+      "事件0",
+      "事件1",
+      "事件2",
+      "事件3",
+      "事件4",
+      "事件5",
+      "事件6",
+      "事件7",
+      "事件8",
+      "事件9",
+      "事件10",
+      "事件11",
+      "事件12",
+      "事件13",
+      "事件14",
+      "事件15",
+      "事件16",
+      "事件17",
+      "事件18",
+      "事件19",
+      "事件20",
+      "事件21",
+      "事件22",
+      "事件23",
+      "事件24",
+      "事件25",
+      "事件26",
+      "事件27",
+      "事件28",
+      "事件29"
+    ]
+  },
+  "error_examples": [],
+  "metrics": {
+    "detected_theme_count": 1,
+    "expected_theme_count": 10,
+    "theme_count_difference": 9,
+    "error_count": 0
+  },
+  "recommendations": [
+    "1. 调整判重阈值以控制主题合并程度",
+    "2. 改进AI决策逻辑以提高分类准确性",
+    "3. 增加事件特征提取以提高聚类纯度"
+  ]
+}

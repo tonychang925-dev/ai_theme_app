@@ -1,0 +1,21 @@
+# 数据库
+asyncpg>=0.27.0
+aioredis>=2.0.0
+redis>=4.5.0
+
+# 配置管理
+pyyaml>=6.0
+pydantic>=2.0.0  # 可选，用于更严格的配置验证
+
+# 工具
+python-dateutil>=2.8.2
+ujson>=5.7.0  # 更快的JSON处理
+
+# 监控
+prometheus-client>=0.17.0  # 用于指标暴露
+
+# 开发依赖
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+mypy>=1.0.0

@@ -1,0 +1,22 @@
+{
+  "test_timestamp": "2026-01-13T22:43:36.005742",
+  "new_event": {
+    "id": "new_ai_glasses",
+    "title": "苹果Vision Pro 2代将集成AI助手，支持实时翻译和AR导航",
+    "content_preview": "据供应链消息，苹果正在开发Vision Pro第二代，将深度集成AI助手功能，支持实时多语言翻译、AR导航和环境感知。产品预计2025年底发布，定价可能更加亲民。"
+  },
+  "ai_analysis_result": {
+    "decision": "CREATE_NEW",
+    "confidence": 0.7,
+    "suggested_theme_name": "AI技术应用",
+    "reason": "新事件涉及消费电子, 人工智能, 硬件行业，与现有主题关联度不高。建议创建新主题'AI技术应用'。",
+    "analysis_method": "enhanced_simulation"
+  },
+  "database_changes": {
+    "themes_before": 3,
+    "themes_after": 4,
+    "event_processed": true,
+    "relations_created": 1
+  },
+  "workflow_status": "completed"
+}

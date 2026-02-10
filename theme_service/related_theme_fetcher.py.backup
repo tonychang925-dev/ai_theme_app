@@ -1,0 +1,206 @@
+# theme_service/related_theme_fetcher.py
+"""
+重构的相关题材检索器 - AI相似性分析版
+🔥 使用AI判断相似性，彻底移除关键词匹配
+"""
+import logging
+from typing import Dict, Any, List, Optional
+from datetime import datetime
+
+logger = logging.getLogger(__name__)
+
+class RelatedThemeFetcher:
+    """
+    重构的相关题材检索器
+    使用AI判断相似性，而不是关键词匹配
+    """
+    
+    def __init__(self, 
+                 data_fetcher,           # PureDataFetcher实例（database_service）
+                 similarity_analyzer,    # AIThemeSimilarityAnalyzer实例（theme_service）
+                 use_cache: bool = True):
+        """
+        初始化检索器
+        
+        Args:
+            data_fetcher: 纯数据获取器（database_service）
+            similarity_analyzer: AI相似性分析器（theme_service）
+            use_cache: 是否使用缓存
+        """
+        if not data_fetcher:
+            raise ValueError("必须提供PureDataFetcher实例")
+        if not similarity_analyzer:
+            raise ValueError("必须提供AIThemeSimilarityAnalyzer实例")
+            
+        self.data_fetcher = data_fetcher
+        self.similarity_analyzer = similarity_analyzer
+        self.use_cache = use_cache
+        self.cache = {}
+        self.cache_ttl = 300
+        
+        logger.info("✅ RelatedThemeFetcher初始化完成（AI相似性分析版）")
+    
+    async def fetch_related_themes(self, 
+                                  event_data: Dict[str, Any], 
+                                  limit: int = 5) -> List[Dict[str, Any]]:
+        """
+        检索与事件相关的现有题材
+        🔥 使用AI相似性分析，不是关键词匹配
+        
+        Args:
+            event_data: 事件数据
+            limit: 最大返回数量
+            
+        Returns:
+            相关题材列表（按AI分析的相似度排序）
+        """
+        event_id = event_data.get('id', 'unknown')
+        
+        # 检查缓存
+        cache_key = self._get_cache_key(event_data, limit)
+        if self.use_cache and cache_key in self.cache:
+            cached_result = self.cache[cache_key]
+            if self._is_cache_valid(cached_result):
+                logger.debug(f"使用缓存结果，事件: {event_id}")
+                return cached_result['themes']
+        
+        try:
+            # 1. 从数据库获取所有活跃主题
+            logger.info(f"获取数据库中的活跃主题...")
+            all_themes = await self.data_fetcher.get_all_active_themes(limit=100)
+            
+            if not all_themes:
+                logger.info(f"数据库中没有活跃主题，返回空列表")
+                return []
+            
+            # 2. 转换为字典格式供AI分析
+            themes_for_ai = [self._theme_record_to_dict(theme) for theme in all_themes]
+            
+            # 3. 使用AI分析相似性
+            logger.info(f"使用AI分析相似性，事件: {event_id}, 主题数: {len(themes_for_ai)}")
+            similarity_result = await self.similarity_analyzer.analyze_similarity(
+                event_data=event_data,
+                existing_themes=themes_for_ai,
+                top_n=limit
+            )
+            
+            # 4. 提取相似主题
+            related_themes = self._extract_related_themes_from_analysis(
+                similarity_result, themes_for_ai, limit
+            )
+            
+            # 5. 缓存结果
+            if self.use_cache and related_themes:
+                self.cache[cache_key] = {
+                    'themes': related_themes,
+                    'timestamp': datetime.now().timestamp(),
+                    'event_id': event_id,
+                    'similarity_analysis': similarity_result.get('analysis_summary', '')
+                }
+            
+            logger.info(f"✅ AI相似性分析完成，事件: {event_id}, "
+                       f"相关题材数: {len(related_themes)}, "
+                       f"最相似: {similarity_result.get('most_similar_theme', {}).get('theme_name', '无')}")
+            
+            return related_themes
+            
+        except Exception as e:
+            logger.error(f"❌ 检索相关题材失败，事件: {event_id}, 错误: {e}")
+            # 🔥 返回空列表，不降级到关键词匹配
+            return []
+    
+    def _theme_record_to_dict(self, theme_record) -> Dict[str, Any]:
+        """将ThemeRecord转换为字典"""
+        if hasattr(theme_record, 'to_dict'):
+            return theme_record.to_dict()
+        
+        # 兼容处理
+        return {
+            'id': getattr(theme_record, 'id', None),
+            'name': getattr(theme_record, 'name', ''),
+            'description': getattr(theme_record, 'description', ''),
+            'keywords': getattr(theme_record, 'keywords', []),
+            'event_count': 0,  # 需要从数据库获取
+            'discovery_confidence': getattr(theme_record, 'discovery_confidence', 0.5)
+        }
+    
+    def _extract_related_themes_from_analysis(self,
+                                            similarity_result: Dict,
+                                            all_themes: List[Dict],
+                                            limit: int) -> List[Dict[str, Any]]:
+        """从相似性分析结果中提取相关主题"""
+        related_themes = []
+        
+        # 1. 从similar_themes提取
+        similar_themes = similarity_result.get('similar_themes', [])
+        for theme_info in similar_themes[:limit]:
+            theme_name = theme_info.get('theme_name')
+            if not theme_name:
+                continue
+            
+            # 查找完整主题信息
+            original_theme = next(
+                (t for t in all_themes if t.get('name') == theme_name),
+                None
+            )
+            
+            if original_theme:
+                # 添加相似度信息
+                enhanced_theme = original_theme.copy()
+                enhanced_theme['similarity_score'] = theme_info.get('similarity_score', 0)
+                enhanced_theme['similarity_reason'] = theme_info.get('similarity_reason', '')
+                enhanced_theme['confidence'] = theme_info.get('confidence', 0.5)
+                related_themes.append(enhanced_theme)
+        
+        # 2. 如果数量不足，添加最相似主题
+        if len(related_themes) < limit:
+            most_similar = similarity_result.get('most_similar_theme', {})
+            theme_name = most_similar.get('theme_name')
+            
+            if theme_name and theme_name not in [t.get('name') for t in related_themes]:
+                original_theme = next(
+                    (t for t in all_themes if t.get('name') == theme_name),
+                    None
+                )
+                
+                if original_theme:
+                    enhanced_theme = original_theme.copy()
+                    enhanced_theme['similarity_score'] = most_similar.get('similarity_score', 0)
+                    enhanced_theme['similarity_reason'] = most_similar.get('similarity_reason', '')
+                    enhanced_theme['confidence'] = 0.5
+                    related_themes.append(enhanced_theme)
+        
+        # 3. 按相似度排序
+        related_themes.sort(key=lambda x: x.get('similarity_score', 0), reverse=True)
+        
+        return related_themes[:limit]
+    
+    def _get_cache_key(self, event_data: Dict, limit: int) -> str:
+        """生成缓存键"""
+        event_id = event_data.get('id', 'unknown')
+        industries = '-'.join(sorted(event_data.get('impact_industries', [])))
+        title_hash = hash(event_data.get('title', '')) % 10000
+        return f"{event_id}:{industries}:{title_hash}:{limit}"
+    
+    def _is_cache_valid(self, cached_item: Dict) -> bool:
+        """检查缓存是否有效"""
+        timestamp = cached_item.get('timestamp', 0)
+        current_time = datetime.now().timestamp()
+        return current_time - timestamp < self.cache_ttl
+    
+    def clear_cache(self):
+        """清除缓存"""
+        self.cache.clear()
+        logger.info("相关题材缓存已清除")
+    
+    async def get_analysis_metrics(self) -> Dict[str, Any]:
+        """获取分析指标"""
+        try:
+            metrics = await self.similarity_analyzer.get_similarity_metrics()
+            return {
+                'cache_size': len(self.cache),
+                'cache_enabled': self.use_cache,
+                'similarity_analyzer_metrics': metrics
+            }
+        except:
+            return {'cache_size': len(self.cache), 'cache_enabled': self.use_cache}

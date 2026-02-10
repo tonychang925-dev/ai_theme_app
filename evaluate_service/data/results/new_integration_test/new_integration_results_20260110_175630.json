@@ -1,0 +1,226 @@
+{
+  "metadata": {
+    "test_type": "新集成测试（优化版引擎）",
+    "test_time": "2026-01-10T17:56:30.947390",
+    "dataset_size": 11,
+    "test_focus": "组件整合验证"
+  },
+  "statistics": {
+    "total_events": 11,
+    "processed": 11,
+    "processing_times": [
+      10541.603000000001,
+      10015.488,
+      9134.827,
+      8501.508,
+      9012.342999999999,
+      7479.2300000000005,
+      12491.116,
+      9935.517000000002,
+      10285.235999999999,
+      10401.039,
+      7782.287
+    ],
+    "components_verified": {
+      "theme_fetcher": 1,
+      "dedup_engine": 1,
+      "theme_fetcher_used": 11
+    },
+    "themes_created": {
+      "AI拍摄眼镜": 2
+    },
+    "themes_merged": {
+      "增强现实主题": 1,
+      "AR/VR设备主题": 2,
+      "消费电子主题": 2,
+      "MicroLED显示技术主题": 1,
+      "增强现实(AR)主题": 1,
+      "可控核聚变主题": 1,
+      "人工智能主题": 1
+    },
+    "duplicates_prevented": 0,
+    "errors": []
+  },
+  "detailed_results": [
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "增强现实主题",
+      "status": "merged",
+      "processing_time_ms": 10541.603000000001,
+      "components_used": {
+        "theme_fetcher": true
+      },
+      "deduplication_checked": false,
+      "duplicate_prevented": false,
+      "execution_path": "guided_merge"
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "AR/VR设备主题",
+      "status": "merged",
+      "processing_time_ms": 10015.488,
+      "components_used": {
+        "theme_fetcher": true
+      },
+      "deduplication_checked": false,
+      "duplicate_prevented": false,
+      "execution_path": "guided_merge"
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "消费电子主题",
+      "status": "merged",
+      "processing_time_ms": 9134.827,
+      "components_used": {
+        "theme_fetcher": true
+      },
+      "deduplication_checked": false,
+      "duplicate_prevented": false,
+      "execution_path": "guided_merge"
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "MicroLED显示技术主题",
+      "status": "merged",
+      "processing_time_ms": 8501.508,
+      "components_used": {
+        "theme_fetcher": true
+      },
+      "deduplication_checked": false,
+      "duplicate_prevented": false,
+      "execution_path": "guided_merge"
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "AR/VR设备主题",
+      "status": "merged",
+      "processing_time_ms": 9012.342999999999,
+      "components_used": {
+        "theme_fetcher": true
+      },
+      "deduplication_checked": false,
+      "duplicate_prevented": false,
+      "execution_path": "guided_merge"
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "消费电子主题",
+      "status": "merged",
+      "processing_time_ms": 7479.2300000000005,
+      "components_used": {
+        "theme_fetcher": true
+      },
+      "deduplication_checked": false,
+      "duplicate_prevented": false,
+      "execution_path": "guided_merge"
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "增强现实(AR)主题",
+      "status": "merged",
+      "processing_time_ms": 12491.116,
+      "components_used": {
+        "theme_fetcher": true
+      },
+      "deduplication_checked": false,
+      "duplicate_prevented": false,
+      "execution_path": "guided_merge"
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "CREATE_NEW",
+      "final_theme": "AI拍摄眼镜",
+      "status": "created",
+      "processing_time_ms": 9935.517000000002,
+      "components_used": {
+        "theme_fetcher": true
+      },
+      "deduplication_checked": false,
+      "duplicate_prevented": false,
+      "execution_path": "fast_track_create"
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "可控核聚变主题",
+      "status": "merged",
+      "processing_time_ms": 10285.235999999999,
+      "components_used": {
+        "theme_fetcher": true
+      },
+      "deduplication_checked": false,
+      "duplicate_prevented": false,
+      "execution_path": "guided_merge"
+    },
+    {
+      "event_id": null,
+      "title": "",
+      "final_decision": "CREATE_NEW",
+      "final_theme": "AI拍摄眼镜",
+      "status": "created",
+      "processing_time_ms": 10401.039,
+      "components_used": {
+        "theme_fetcher": true
+      },
+      "deduplication_checked": false,
+      "duplicate_prevented": false,
+      "execution_path": "fast_track_create"
+    },
+    {
+      "event_id": "explicit_duplicate_test",
+      "title": "人工智能芯片技术突破重复测试",
+      "final_decision": "MERGE_INTO",
+      "final_theme": "人工智能主题",
+      "status": "merged",
+      "processing_time_ms": 7782.287,
+      "components_used": {
+        "theme_fetcher": true
+      },
+      "deduplication_checked": false,
+      "duplicate_prevented": false,
+      "execution_path": "guided_merge"
+    }
+  ],
+  "engine_info": {
+    "engine_version": "enhanced_v2",
+    "components_available": {
+      "theme_fetcher": true,
+      "dedup_engine": true,
+      "db_manager": false
+    },
+    "thresholds": {
+      "fast_track_threshold": 0.85,
+      "review_threshold": 0.65,
+      "ignore_threshold": 0.3,
+      "dedup_threshold": 0.8
+    },
+    "cache_size": 2
+  },
+  "summary": {
+    "total_processed": 11,
+    "success_rate": 1.0,
+    "components_verified": {
+      "theme_fetcher": 1,
+      "dedup_engine": 1,
+      "theme_fetcher_used": 11
+    },
+    "duplicates_prevented": 0,
+    "avg_processing_time_ms": 9598.199454545455
+  }
+}

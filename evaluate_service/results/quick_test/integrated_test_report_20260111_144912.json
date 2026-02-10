@@ -1,0 +1,155 @@
+{
+  "test_summary": {
+    "test_name": "优化系统集成测试",
+    "test_time": "2026-01-11T14:49:12.745104",
+    "total_events_processed": 2,
+    "total_duration_seconds": 0.7,
+    "avg_processing_time_seconds": 0.35,
+    "success_rate": 100.0
+  },
+  "virtual_database_final_state": {
+    "theme_count": 2,
+    "theme_names": [
+      "人工智能",
+      "信息技术"
+    ],
+    "avg_events_per_theme": 1.0,
+    "lifecycle_distribution": {
+      "candidate": 2,
+      "growing": 0,
+      "mature": 0,
+      "decline": 0
+    }
+  },
+  "processing_statistics": {
+    "status_distribution": {
+      "created": 2,
+      "merged": 0,
+      "auto_merged": 0,
+      "ignored": 0,
+      "in_review": 0,
+      "failed": 0
+    },
+    "execution_path_distribution": {
+      "guided_create": 2,
+      "fast_track_create": 0,
+      "guided_merge": 0
+    },
+    "performance_metrics": {
+      "min_processing_time": 0.0010900497436523438,
+      "max_processing_time": 0.6981120109558105,
+      "avg_processing_time": 0.34960103034973145,
+      "total_processing_time": 0.6992020606994629
+    }
+  },
+  "generated_themes_analysis": {
+    "total_unique_themes": 2,
+    "theme_size_distribution": {
+      "信息技术": 1,
+      "人工智能": 1
+    },
+    "largest_theme": [
+      "信息技术",
+      1
+    ],
+    "smallest_theme": [
+      "信息技术",
+      1
+    ],
+    "theme_name_analysis": {
+      "potential_duplicates": [],
+      "similarity_checks": []
+    }
+  },
+  "event_theme_mapping": {
+    "test_ai_001": "人工智能",
+    "test_ai_002": "信息技术"
+  },
+  "sample_processing_results": [
+    {
+      "event_id": "test_ai_001",
+      "event_title": "人工智能技术新突破",
+      "event_industries": [
+        "人工智能"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.8,
+        "reason": "测试"
+      },
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "人工智能",
+        "confidence": 0.8,
+        "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。测试",
+        "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+        "match_type": "distinct",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 0
+      },
+      "processing_result": {
+        "status": "created",
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "人工智能",
+          "timestamp": "2026-01-11T14:49:12.044296"
+        }
+      },
+      "deduplication_info": {
+        "should_merge": false,
+        "target_theme": "",
+        "similarity": 0.0,
+        "match_type": "",
+        "reason": "无现有题材可比较",
+        "confidence": 0.0
+      },
+      "processing_time_seconds": 0.001,
+      "virtual_db_theme_count_before": 0,
+      "processed_at": "2026-01-11T14:49:12.044317"
+    },
+    {
+      "event_id": "test_ai_002",
+      "event_title": "AI应用场景扩大",
+      "event_industries": [
+        "人工智能",
+        "信息技术"
+      ],
+      "theme_directive": {
+        "action": "CREATE_NEW",
+        "confidence": 0.7,
+        "reason": "测试"
+      },
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "信息技术",
+        "confidence": 0.7,
+        "reason": "与现有题材无明显关联，适合创建新题材。行业: 人工智能, 信息技术",
+        "comparison_analysis": "与现有题材相似度: 0.20，属于新方向",
+        "match_type": "new_direction",
+        "source": "virtual_db_enhanced_analyzer",
+        "virtual_db_theme_count": 1
+      },
+      "processing_result": {
+        "status": "created",
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "信息技术",
+          "timestamp": "2026-01-11T14:49:12.744999"
+        }
+      },
+      "deduplication_info": {
+        "should_merge": false,
+        "target_theme": "",
+        "similarity": 0.25,
+        "match_type": "distinct",
+        "reason": "相似度较低(0.25)，可以创建新题材",
+        "confidence": 0.75
+      },
+      "processing_time_seconds": 0.698,
+      "virtual_db_theme_count_before": 0,
+      "processed_at": "2026-01-11T14:49:12.745033"
+    }
+  ]
+}

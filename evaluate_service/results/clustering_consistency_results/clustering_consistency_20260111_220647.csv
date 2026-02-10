@@ -1,0 +1,11 @@
+﻿event_id,status,decision,ai_theme,ground_truth,confidence,is_serious_error
+news_000,created,CREATE_NEW,智能眼镜发布,AI/AR眼镜,0.85,NEEDS_CHECK
+news_001,merged,MERGE_INTO,智能眼镜发布,AI/AR眼镜,0.9,NEEDS_CHECK
+news_002,created,CREATE_NEW,全息AR技术,AI/AR眼镜,0.8,NEEDS_CHECK
+news_003,merged,MERGE_INTO,智能眼镜发布,AI/AR眼镜,0.8,NEEDS_CHECK
+news_004,merged,MERGE_INTO,智能眼镜发布,AI/AR眼镜,0.85,NEEDS_CHECK
+news_005,merged,MERGE_INTO,智能眼镜发布,AI/AR眼镜,0.8,NEEDS_CHECK
+news_006,merged,MERGE_INTO,智能眼镜发布,AI/AR眼镜,0.8,NEEDS_CHECK
+news_007,merged,MERGE_INTO,智能眼镜发布,AI/AR眼镜,0.8,NEEDS_CHECK
+news_008,merged,MERGE_INTO,智能眼镜发布,AI/AR眼镜,0.9,NEEDS_CHECK
+news_009,merged,MERGE_INTO,智能眼镜发布,AI/AR眼镜,0.85,NEEDS_CHECK

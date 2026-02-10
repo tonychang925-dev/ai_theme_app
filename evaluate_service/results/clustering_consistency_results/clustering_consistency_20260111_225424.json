@@ -1,0 +1,616 @@
+{
+  "metadata": {
+    "test_date": "2026-01-11T22:54:24.783297",
+    "data_source": "/Users/admin/Desktop/ai_theme_app/evaluate_service/data/processed/validation_events_enhanced.json",
+    "total_events": 10,
+    "duration_seconds": 114.413356,
+    "evaluation_focus": "clustering_consistency"
+  },
+  "stats": {
+    "total_events": 10,
+    "success": 10,
+    "failed": 0,
+    "created": 3,
+    "merged": 7,
+    "ignored": 0,
+    "decision_distribution": {
+      "CREATE_NEW": 3,
+      "MERGE_INTO": 7
+    },
+    "theme_counts": {
+      "智能眼镜发布": 1,
+      "MicroLED量产": 1,
+      "三星XR设备": 1
+    },
+    "duration_seconds": 114.413356,
+    "success_rate": 100.0,
+    "failure_rate": 0.0,
+    "events_per_second": 0.08740238333713418,
+    "seconds_per_event": 11.441335599999999,
+    "clustering_analysis": {
+      "ground_truth_groups": 1,
+      "ai_theme_groups": 3,
+      "overall_consistency": 0.8,
+      "overall_consistency_percentage": 80.0,
+      "consistency_analysis": [
+        {
+          "ground_truth": "AI/AR眼镜",
+          "total_events": 10,
+          "ai_themes_distribution": {
+            "智能眼镜发布": 8,
+            "MicroLED量产": 1,
+            "三星XR设备": 1
+          },
+          "main_ai_theme": "智能眼镜发布",
+          "main_ratio": 0.8,
+          "score": 0.8,
+          "status": "GOOD"
+        }
+      ],
+      "serious_errors": [],
+      "serious_error_count": 0
+    }
+  },
+  "sample_results": [
+    {
+      "event_id": "news_000",
+      "processed_at": "2026-01-11T22:52:30.366907",
+      "status": "created",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:52:30.366918"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:52:30.366924",
+          "themes_found": 0
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:52:30.367007",
+          "decision": "CREATE_NEW",
+          "confidence": 0.88
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:52:40.899737",
+          "result": {
+            "status": "created",
+            "theme_id": 1,
+            "theme_name": "智能眼镜发布",
+            "relation_id": 1,
+            "message": "成功创建新主题并关联事件"
+          }
+        }
+      ],
+      "related_themes_count": 0,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "智能眼镜发布",
+        "confidence": 0.88,
+        "reason": "Meta与Oakley合作开发的智能眼镜产品发布会事件，代表了消费电子、可穿戴设备、人工智能、增强现实和光学制造等多个行业的交叉融合。该事件具有明确的投资价值：1）Meta作为科技巨头，其产品发布通常能带动相关产业链关注；2）Oakley作为知名光学品牌，合作提升了产品的专业性和市场认可度；3）智能眼镜作为AR/AI技术的重要落地场景，正处于商业化加速阶段。事件核心逻辑是“科技巨头与专业品牌合作推出新一代智能穿戴产品”，这既不是已有题材的简单延伸，也不是完全无关的孤立事件，而是具备独立投资逻辑的新主题。",
+        "comparison_analysis": "现有相关题材列表为空，表明当前题材库中尚无与此事件密切相关的主题。虽然智能眼镜可能涉及“增强现实”、“可穿戴设备”等宽泛概念，但本次事件聚焦于具体产品发布、品牌合作及商业化进展，具有更强的时效性和指向性。因此，不适合归入现有题材，也不应忽略（因具备明确投资价值），最合适的决策是创建全新题材。",
+        "event_id": "news_000",
+        "source": "enhanced_ai_client"
+      },
+      "execution_result": {
+        "status": "created",
+        "theme_id": 1,
+        "theme_name": "智能眼镜发布",
+        "relation_id": 1,
+        "message": "成功创建新主题并关联事件"
+      },
+      "theme_id": 1
+    },
+    {
+      "event_id": "news_001",
+      "processed_at": "2026-01-11T22:52:40.900681",
+      "status": "merged",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:52:40.900690"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:52:40.900697",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:52:40.903005",
+          "decision": "MERGE_INTO",
+          "confidence": 0.9
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:52:52.513628",
+          "result": {
+            "status": "merged",
+            "theme_id": 1,
+            "theme_name": "智能眼镜发布",
+            "relation_id": 2,
+            "message": "成功将事件合并到现有主题"
+          }
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "智能眼镜发布",
+        "confidence": 0.9,
+        "reason": "该事件的核心逻辑与现有题材'智能眼镜发布'高度一致：1）事件主体均为Meta与合作伙伴（现有题材未指定具体合作伙伴，但本质相同）推出智能眼镜产品；2）涉及行业高度重叠，包括消费电子、可穿戴设备、AR/VR等；3）技术路径均为智能眼镜在特定场景（现有题材为通用场景，本事件聚焦运动场景）的应用，未突破现有技术框架；4）商业模式均为硬件产品发布，未引入全新盈利模式。事件虽强调运动设计和对传统运动相机的挑战，但这属于应用场景的细化，而非本质差异。",
+        "comparison_analysis": "与现有题材'智能眼镜发布'的比较：1）核心逻辑：均为智能眼镜产品发布事件，现有题材描述'消费电子、可穿戴设备、人工智能、增强现实和光学制造等多个行业的交叉融合'完全涵盖本事件的'消费电子、可穿戴设备、运动科技、AR/VR'；2）技术路径：现有题材已覆盖AR/VR和人工智能技术，本事件未提及超越这些范畴的全新技术；3）商业模式：均为硬件产品导向，无本质区别；4）差异点：本事件明确合作伙伴（Oakley）和运动场景定位，但这是现有题材下的具体案例细化，而非独立新题材。因此，事件应归入现有题材。",
+        "event_id": "news_001",
+        "source": "enhanced_ai_client"
+      },
+      "execution_result": {
+        "status": "merged",
+        "theme_id": 1,
+        "theme_name": "智能眼镜发布",
+        "relation_id": 2,
+        "message": "成功将事件合并到现有主题"
+      },
+      "theme_id": 1
+    },
+    {
+      "event_id": "news_002",
+      "processed_at": "2026-01-11T22:52:52.514077",
+      "status": "merged",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:52:52.514083"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:52:52.514087",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:52:52.514212",
+          "decision": "MERGE_INTO",
+          "confidence": 0.8
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:04.340249",
+          "result": {
+            "status": "merged",
+            "theme_id": 1,
+            "theme_name": "智能眼镜发布",
+            "relation_id": 3,
+            "message": "成功将事件合并到现有主题"
+          }
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "智能眼镜发布",
+        "confidence": 0.8,
+        "reason": "英伟达公开AR眼镜专利事件与'智能眼镜发布'题材在核心逻辑上高度一致：1）两者均聚焦于增强现实（AR）技术在可穿戴设备（眼镜）中的具体应用；2）均涉及消费电子、光学元件等产业链环节；3）均代表AR/VR领域的技术创新与产品化进展。虽然英伟达事件为专利公开而非产品发布，但其技术路径（数字全息技术）仍属于智能眼镜的技术演进范畴，未形成全新的技术范式或商业模式。事件对半导体（英伟达自身）、AR/VR设备及光学元件行业有明确影响，投资价值显著，不应忽略。",
+        "comparison_analysis": "与现有题材'智能眼镜发布'比较：1）相似性：均以AR眼镜为核心载体，涉及消费电子、光学制造、增强现实等相同行业；技术本质均为AR设备创新（现有题材为产品发布，本事件为专利技术展示）。2）差异性：现有题材侧重产品商业化发布（Meta与Oakley合作），本事件侧重底层技术专利（英伟达）；但两者均服务于智能眼镜的产业生态发展，未脱离'智能眼镜'这一核心主题。3）结论：事件核心逻辑（AR眼镜技术创新）与现有题材本质上相同，可归入同一投资主题。",
+        "event_id": "news_002",
+        "source": "enhanced_ai_client"
+      },
+      "execution_result": {
+        "status": "merged",
+        "theme_id": 1,
+        "theme_name": "智能眼镜发布",
+        "relation_id": 3,
+        "message": "成功将事件合并到现有主题"
+      },
+      "theme_id": 1
+    },
+    {
+      "event_id": "news_003",
+      "processed_at": "2026-01-11T22:53:04.341055",
+      "status": "merged",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:04.341067"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:04.341132",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:04.341514",
+          "decision": "MERGE_INTO",
+          "confidence": 0.8
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:15.657716",
+          "result": {
+            "status": "merged",
+            "theme_id": 1,
+            "theme_name": "智能眼镜发布",
+            "relation_id": 4,
+            "message": "成功将事件合并到现有主题"
+          }
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "智能眼镜发布",
+        "confidence": 0.8,
+        "reason": "三星电子宣布将于2025年1月发布Galaxy S25系列手机、Galaxy Ring 2智能戒指和AR智能眼镜，其中AR智能眼镜是核心投资亮点。该事件与现有题材'智能眼镜发布'在核心逻辑上高度一致：1）都涉及消费电子和智能穿戴行业；2）都聚焦增强现实（AR）技术应用；3）都代表消费电子向可穿戴、智能化方向演进；4）都涉及光学制造、半导体等产业链。虽然三星与Meta的品牌和产品细节不同，但技术路径（AR智能眼镜）和商业模式（消费级智能穿戴设备）本质相同，未呈现全新的技术范式或政策方向。",
+        "comparison_analysis": "与现有题材'智能眼镜发布'（Meta与Oakley合作）比较：1）相似点：均属于消费电子领域的AR智能眼镜产品发布，推动可穿戴设备、增强现实技术发展，涉及半导体、光学制造等供应链；投资逻辑均围绕技术创新、消费升级和产业链机会。2）差异点：三星为独立品牌发布，Meta为合作发布；产品具体功能可能不同，但核心均为AR智能眼镜。差异属于同一技术路径下的产品迭代或市场扩展，而非本质逻辑不同。因此，事件可归入现有题材，丰富其覆盖范围。",
+        "event_id": "news_003",
+        "source": "enhanced_ai_client"
+      },
+      "execution_result": {
+        "status": "merged",
+        "theme_id": 1,
+        "theme_name": "智能眼镜发布",
+        "relation_id": 4,
+        "message": "成功将事件合并到现有主题"
+      },
+      "theme_id": 1
+    },
+    {
+      "event_id": "news_004",
+      "processed_at": "2026-01-11T22:53:15.657981",
+      "status": "merged",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:15.657985"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:15.657988",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:15.658085",
+          "decision": "MERGE_INTO",
+          "confidence": 0.85
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:27.639985",
+          "result": {
+            "status": "merged",
+            "theme_id": 1,
+            "theme_name": "智能眼镜发布",
+            "relation_id": 5,
+            "message": "成功将事件合并到现有主题"
+          }
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "智能眼镜发布",
+        "confidence": 0.85,
+        "reason": "该事件与现有题材'智能眼镜发布'在核心逻辑上高度一致：1）事件主体均为Meta与知名眼镜制造商合作（Oakley vs EssilorLuxottica）；2）产品形态均为带显示屏的智能太阳镜；3）核心功能均涉及通知显示和虚拟助手交互；4）影响的行业高度重叠（消费电子、智能穿戴、AR/VR、光学制造）。虽然合作方和具体推出时间不同，但技术路径、商业模式和产品定位本质相同，均代表智能眼镜在消费电子与可穿戴设备领域的商业化推进。",
+        "comparison_analysis": "现有题材'智能眼镜发布'描述的是Meta与Oakley合作开发智能眼镜的事件，核心特征包括：消费电子与可穿戴设备融合、AR技术应用、光学制造升级、人工智能交互。待分析事件中，Meta与EssilorLuxottica合作推出带显示屏的智能太阳镜，同样具备：1）消费电子属性（显示屏、智能功能）；2）可穿戴设备特征（太阳镜形态）；3）AR/VR技术应用潜力（显示虚拟信息）；4）光学制造需求（镜片技术）；5）人工智能交互（虚拟助手）。两者在技术路径（智能眼镜+显示屏）、商业模式（科技巨头+传统眼镜商合作）、产品定位（日常佩戴+信息显示）上无本质差异，仅合作方和具体产品细节略有不同，属于同一投资逻辑下的同类事件。",
+        "event_id": "news_004",
+        "source": "enhanced_ai_client"
+      },
+      "execution_result": {
+        "status": "merged",
+        "theme_id": 1,
+        "theme_name": "智能眼镜发布",
+        "relation_id": 5,
+        "message": "成功将事件合并到现有主题"
+      },
+      "theme_id": 1
+    },
+    {
+      "event_id": "news_005",
+      "processed_at": "2026-01-11T22:53:27.640676",
+      "status": "created",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:27.640687"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:27.640695",
+          "themes_found": 1
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:27.640940",
+          "decision": "CREATE_NEW",
+          "confidence": 0.8
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:39.723248",
+          "result": {
+            "status": "created",
+            "theme_id": 2,
+            "theme_name": "MicroLED量产",
+            "relation_id": 6,
+            "message": "成功创建新主题并关联事件"
+          }
+        }
+      ],
+      "related_themes_count": 1,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "MicroLED量产",
+        "confidence": 0.8,
+        "reason": "鸿海与Porotech合作在台中建立MicroLED晶圆制程产线，预计2025年第四季量产，这一事件代表了MicroLED显示技术从研发向规模化量产的关键转折点。该事件涉及AR眼镜市场应用、半导体制造工艺升级和消费电子创新等多个维度，具有明确的产业升级和投资价值。虽然与智能眼镜发布题材都涉及AR/VR领域，但核心逻辑不同：智能眼镜发布侧重于终端产品发布和消费市场推广，而本事件聚焦于上游核心显示技术的产业化突破和供应链建设，属于全新的技术路径和商业模式。",
+        "comparison_analysis": "与现有题材'智能眼镜发布'的比较：1. 技术层面：智能眼镜发布主要涉及光学制造、人工智能集成等终端技术；本事件聚焦MicroLED晶圆制程，属于半导体制造和显示技术上游突破。2. 产业环节：智能眼镜发布处于消费端产品发布环节；本事件处于产业链上游的材料和制造环节。3. 投资逻辑：智能眼镜发布的投资逻辑基于消费电子创新和市场渗透；本事件的投资逻辑基于技术产业化、供应链自主和产能扩张。4. 影响范围：智能眼镜发布主要影响可穿戴设备市场；本事件同时影响AR/VR设备、半导体制造、显示面板等多个行业。两者虽然都涉及AR/VR生态，但本质上是产业链不同环节、不同技术路径的事件。",
+        "event_id": "news_005",
+        "source": "enhanced_ai_client"
+      },
+      "execution_result": {
+        "status": "created",
+        "theme_id": 2,
+        "theme_name": "MicroLED量产",
+        "relation_id": 6,
+        "message": "成功创建新主题并关联事件"
+      },
+      "theme_id": 2
+    },
+    {
+      "event_id": "news_006",
+      "processed_at": "2026-01-11T22:53:39.723892",
+      "status": "merged",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:39.723900"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:39.723905",
+          "themes_found": 2
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:39.724096",
+          "decision": "MERGE_INTO",
+          "confidence": 0.8
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:49.923151",
+          "result": {
+            "status": "merged",
+            "theme_id": 1,
+            "theme_name": "智能眼镜发布",
+            "relation_id": 7,
+            "message": "成功将事件合并到现有主题"
+          }
+        }
+      ],
+      "related_themes_count": 2,
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "智能眼镜发布",
+        "confidence": 0.8,
+        "reason": "该事件的核心逻辑与'智能眼镜发布'题材高度一致：1）事件主体均为知名科技公司与硬件厂商的战略合作（谷歌+XREAL vs Meta+Oakley）；2）产品形态均为消费级智能眼镜，聚焦增强现实（AR）应用；3）均涉及硬件创新（XREAL自研芯片X1 vs Oakley光学技术）与生态整合；4）目标市场均为消费电子和AR/VR设备领域。事件虽涉及半导体（自研芯片），但芯片为眼镜专用，未形成独立技术路径，本质仍属智能眼镜产品迭代。",
+        "comparison_analysis": "与'智能眼镜发布'题材比较：共同点包括：1）行业重叠（消费电子、AR/VR）；2）合作模式相似（互联网巨头+硬件厂商）；3）产品定位一致（消费级AR眼镜）。差异点：XREAL事件强调自研芯片，但芯片为产品服务，未脱离'硬件发布'核心逻辑。与'MicroLED量产'题材比较：后者聚焦显示技术上游量产突破，属产业链环节创新；本事件为终端产品发布，逻辑本质不同。",
+        "event_id": "news_006",
+        "source": "enhanced_ai_client"
+      },
+      "execution_result": {
+        "status": "merged",
+        "theme_id": 1,
+        "theme_name": "智能眼镜发布",
+        "relation_id": 7,
+        "message": "成功将事件合并到现有主题"
+      },
+      "theme_id": 1
+    },
+    {
+      "event_id": "news_007",
+      "processed_at": "2026-01-11T22:53:49.923812",
+      "status": "created",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:49.923822"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:49.923830",
+          "themes_found": 2
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:53:49.924073",
+          "decision": "CREATE_NEW",
+          "confidence": 0.8
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:54:02.289224",
+          "result": {
+            "status": "created",
+            "theme_id": 3,
+            "theme_name": "三星XR设备",
+            "relation_id": 8,
+            "message": "成功创建新主题并关联事件"
+          }
+        }
+      ],
+      "related_themes_count": 2,
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "三星XR设备",
+        "confidence": 0.8,
+        "reason": "三星Infinite XR设备发售事件代表了XR硬件从概念验证向商业化量产的关键转折点，具有明确的投资价值。该事件涉及消费电子、半导体、光学元件、软件与内容等多个行业，预计2025年第三季度正式发售，第四季度出货量达2万至3万台以上，标志着XR设备进入规模化市场阶段。虽然与现有题材存在技术关联，但核心逻辑不同：MicroLED量产事件聚焦显示技术产业链突破，智能眼镜发布事件聚焦可穿戴设备与AI融合，而本事件聚焦XR硬件整机商业化，具有独立的技术路径和市场意义。",
+        "comparison_analysis": "1. 与MicroLED量产比较：MicroLED事件核心是显示技术从研发向量产的关键转折，涉及鸿海与Porotech的晶圆制程合作，属于产业链上游突破；三星XR设备事件核心是XR整机产品商业化，涉及硬件集成、软件生态和终端销售，属于下游应用落地。两者技术关联但逻辑本质不同。2. 与智能眼镜发布比较：智能眼镜事件核心是Meta与Oakley合作的智能眼镜产品发布，聚焦可穿戴设备与增强现实的融合；三星XR设备是扩展现实（XR）设备，涵盖VR、AR、MR更广范畴，且三星作为消费电子巨头入局，对产业链拉动效应更显著。两者虽同属XR领域，但产品定位、技术路径和市场影响不同。",
+        "event_id": "news_007",
+        "source": "enhanced_ai_client"
+      },
+      "execution_result": {
+        "status": "created",
+        "theme_id": 3,
+        "theme_name": "三星XR设备",
+        "relation_id": 8,
+        "message": "成功创建新主题并关联事件"
+      },
+      "theme_id": 3
+    },
+    {
+      "event_id": "news_008",
+      "processed_at": "2026-01-11T22:54:02.290035",
+      "status": "merged",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:54:02.290046"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:54:02.290053",
+          "themes_found": 3
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:54:02.290333",
+          "decision": "MERGE_INTO",
+          "confidence": 0.9
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:54:12.490543",
+          "result": {
+            "status": "merged",
+            "theme_id": 1,
+            "theme_name": "智能眼镜发布",
+            "relation_id": 9,
+            "message": "成功将事件合并到现有主题"
+          }
+        }
+      ],
+      "related_themes_count": 3,
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "智能眼镜发布",
+        "confidence": 0.9,
+        "reason": "INMO影目科技新品发布会事件与现有题材'智能眼镜发布'在核心逻辑上高度一致：1）两者均为智能眼镜厂商发布新产品的具体事件；2）都涉及消费电子、增强现实(AR)、人工智能(AI)、光学元件等相同行业；3）都代表了智能眼镜从研发向市场推广的关键节点，具有明确的投资价值。虽然INMO是独立厂商而非Meta这样的科技巨头，但事件本质相同，都是智能眼镜产品发布推动产业链发展的典型案例。",
+        "comparison_analysis": "与'智能眼镜发布'题材比较：核心逻辑完全一致，都是智能眼镜产品发布事件，涉及行业高度重叠（消费电子、AR、AI、光学元件）。与'三星XR设备'比较：虽然都涉及XR硬件，但三星事件更侧重XR设备商业化量产，而INMO事件是具体产品发布会。与'MicroLED量产'比较：后者是显示技术量产事件，属于产业链上游，而INMO事件是终端产品发布。因此，INMO事件最适合归入现有'智能眼镜发布'题材，丰富该题材的案例多样性。",
+        "event_id": "news_008",
+        "source": "enhanced_ai_client"
+      },
+      "execution_result": {
+        "status": "merged",
+        "theme_id": 1,
+        "theme_name": "智能眼镜发布",
+        "relation_id": 9,
+        "message": "成功将事件合并到现有主题"
+      },
+      "theme_id": 1
+    },
+    {
+      "event_id": "news_009",
+      "processed_at": "2026-01-11T22:54:12.491068",
+      "status": "merged",
+      "engine_version": "business_engine_v1",
+      "steps": [
+        {
+          "step": "validate_event",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:54:12.491071"
+        },
+        {
+          "step": "fetch_related_themes",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:54:12.491074",
+          "themes_found": 3
+        },
+        {
+          "step": "ai_decision",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:54:12.491247",
+          "decision": "MERGE_INTO",
+          "confidence": 0.85
+        },
+        {
+          "step": "execute_business_logic",
+          "status": "completed",
+          "timestamp": "2026-01-11T22:54:24.779739",
+          "result": {
+            "status": "merged",
+            "theme_id": 1,
+            "theme_name": "智能眼镜发布",
+            "relation_id": 10,
+            "message": "成功将事件合并到现有主题"
+          }
+        }
+      ],
+      "related_themes_count": 3,
+      "ai_decision": {
+        "decision": "MERGE_INTO",
+        "target_theme_name": "智能眼镜发布",
+        "confidence": 0.85,
+        "reason": "事件核心逻辑与'智能眼镜发布'题材高度一致：1）核心产品均为智能眼镜，属于消费电子和智能穿戴领域；2）均融合人工智能技术（云天励飞投资AI拍摄眼镜 vs Meta合作开发智能眼镜）；3）均涉及产品发布或量产节点（闪极科技将推出国内首款量产AI拍摄眼镜 vs Meta与Oakley产品发布会）；4）目标市场均为消费级智能穿戴设备。事件虽强调'国内首款'和'AI拍摄'特色，但未突破智能眼镜的基本技术框架或商业模式，本质仍属于智能眼镜产品迭代范畴。",
+        "comparison_analysis": "与现有题材对比：1）与'智能眼镜发布'题材：核心逻辑高度重叠（均为智能眼镜产品发布），差异仅在于具体技术侧重（AI拍摄 vs 增强现实）和厂商背景（国内初创企业 vs 国际巨头），但未形成本质区别。2）与'MicroLED量产'题材：技术路径完全不同（AI拍摄眼镜聚焦计算机视觉应用，MicroLED聚焦显示技术），无直接关联。3）与'三星XR设备'题材：虽同属穿戴设备，但产品形态和技术方向不同（AI拍摄眼镜侧重拍摄功能，XR设备侧重沉浸式交互），且事件未涉及XR生态或核心硬件突破。因此，事件最适配'智能眼镜发布'题材，无需创建全新题材。",
+        "event_id": "news_009",
+        "source": "enhanced_ai_client"
+      },
+      "execution_result": {
+        "status": "merged",
+        "theme_id": 1,
+        "theme_name": "智能眼镜发布",
+        "relation_id": 10,
+        "message": "成功将事件合并到现有主题"
+      },
+      "theme_id": 1
+    }
+  ]
+}

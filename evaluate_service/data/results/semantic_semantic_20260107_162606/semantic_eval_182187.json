@@ -1,0 +1,3861 @@
+{
+  "config": {
+    "semantic_threshold": 0.7,
+    "eval_mode": "semantic",
+    "use_synonyms": true
+  },
+  "total_cases": 15,
+  "results": [
+    {
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "智能穿戴",
+        "人机交互",
+        "AR/VR生态"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI/AR眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.4
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.1
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "智能穿戴",
+        "人机交互",
+        "运动科技",
+        "AR/VR生态"
+      ],
+      "confidence": 0.75,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI/AR眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.4
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.1
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AR/VR生态",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "运动科技",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "空间计算",
+        "全息显示",
+        "人机交互"
+      ],
+      "confidence": 0.75,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI/AR眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "全息显示",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "空间计算",
+        "人机交互",
+        "可穿戴AI"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI/AR眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "可穿戴AI",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "可穿戴AI",
+            "similarity": 0.4
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "可穿戴AI",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "可穿戴AI",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "可穿戴AI",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "可穿戴AI",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "智能穿戴",
+        "人机交互",
+        "消费电子创新"
+      ],
+      "confidence": 0.75,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI/AR眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.4
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AR眼镜",
+        "MicroLED",
+        "AI硬件",
+        "消费电子创新"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "AR眼镜",
+          "AR眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AR眼镜",
+            "discovered": "AR眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AR眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI硬件",
+            "similarity": 0.2
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI硬件",
+            "similarity": 0.2
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI硬件",
+            "similarity": 0.2
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AR眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI硬件",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AR眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "MicroLED",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "MicroLED",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "MicroLED",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "MicroLED",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "MicroLED",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "MicroLED",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "空间计算",
+        "XR生态链",
+        "消费级AR硬件"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI/AR眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.2
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.2
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "XR生态链",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "消费级AR硬件",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "XR设备",
+        "空间计算",
+        "人机交互革命",
+        "消费电子创新周期"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI/AR眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "XR设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "XR设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "XR设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "XR设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "XR设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "XR设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "空间计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "消费电子创新周期",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互革命",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "AR/VR设备",
+        "消费电子创新"
+      ],
+      "confidence": 0.8,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI/AR眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AR/VR设备",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AR/VR设备",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AR/VR设备",
+            "similarity": 0.1
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AR/VR设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AR/VR设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "数码创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "消费电子创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "消费电子",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "电子产品创新",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AR/VR设备",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "AI/AR眼镜",
+      "success": true,
+      "ground_truth": [
+        "AI/AR眼镜"
+      ],
+      "discovered": [
+        "AI眼镜",
+        "AR/VR设备",
+        "智能穿戴",
+        "人机交互",
+        "边缘计算"
+      ],
+      "confidence": 0.75,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "AI/AR眼镜",
+          "AI/AR眼镜"
+        ],
+        "details": [
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 1.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.9
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AI/AR眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.9
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AI眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "智能穿戴",
+            "similarity": 0.4
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.4
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.26666666666666666
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "增强现实眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "AR/VR设备",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AI眼镜",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "智能穿戴",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "AR/VR设备",
+            "similarity": 0.13333333333333333
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "AR/VR设备",
+            "similarity": 0.1
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "边缘计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能穿戴设备",
+            "discovered": "AR/VR设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "边缘计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI/AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "边缘计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "智能眼镜",
+            "discovered": "AR/VR设备",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "边缘计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "混合现实眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "边缘计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AR眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "用户体验",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "边缘计算",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "交互技术",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机界面",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "人机交互",
+            "similarity": 0.0
+          },
+          {
+            "truth": "AI眼镜",
+            "discovered": "AR/VR设备",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "SpaceX",
+      "success": true,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "discovered": [
+        "商业航天基建",
+        "卫星互联网",
+        "太空经济"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": false,
+        "match_type": "none",
+        "similarity": 0.4,
+        "best_pair": [
+          "商业航天",
+          "太空经济"
+        ],
+        "details": [
+          {
+            "truth": "商业航天",
+            "discovered": "太空经济",
+            "similarity": 0.4
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "商业航天基建",
+            "similarity": 0.4
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "太空经济",
+            "similarity": 0.4
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "商业航天基建",
+            "similarity": 0.4
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "太空经济",
+            "similarity": 0.2
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "商业航天基建",
+            "similarity": 0.2
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "太空经济",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "商业航天基建",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "太空经济",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "商业航天基建",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "卫星互联网",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "SpaceX",
+      "success": true,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "discovered": [
+        "低轨卫星星座",
+        "太空军事化",
+        "导弹预警系统",
+        "商业航天"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "商业航天",
+          "商业航天"
+        ],
+        "details": [
+          {
+            "truth": "商业航天",
+            "discovered": "商业航天",
+            "similarity": 1.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "太空军事化",
+            "similarity": 0.4
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "商业航天",
+            "similarity": 0.4
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "太空军事化",
+            "similarity": 0.4
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "商业航天",
+            "similarity": 0.2
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "太空军事化",
+            "similarity": 0.2
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "商业航天",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "太空军事化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "太空军事化",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "导弹预警系统",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "低轨卫星星座",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "SpaceX",
+      "success": true,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "discovered": [
+        "商业航天",
+        "太空经济",
+        "低轨卫星",
+        "火箭发射"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "商业航天",
+          "商业航天"
+        ],
+        "details": [
+          {
+            "truth": "商业航天",
+            "discovered": "商业航天",
+            "similarity": 1.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "火箭发射",
+            "similarity": 1.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "火箭发射",
+            "similarity": 0.9
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "太空经济",
+            "similarity": 0.4
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "太空经济",
+            "similarity": 0.4
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "商业航天",
+            "similarity": 0.4
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "太空经济",
+            "similarity": 0.2
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "商业航天",
+            "similarity": 0.2
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "低轨卫星",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "火箭发射",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "太空经济",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "低轨卫星",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "商业航天",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "低轨卫星",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "火箭发射",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "太空经济",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "低轨卫星",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "低轨卫星",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "火箭发射",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "SpaceX",
+      "success": true,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "discovered": [
+        "商业航天IPO",
+        "太空经济",
+        "卫星互联网",
+        "火箭发射"
+      ],
+      "confidence": 0.9,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "火箭发射",
+          "火箭发射"
+        ],
+        "details": [
+          {
+            "truth": "火箭发射",
+            "discovered": "火箭发射",
+            "similarity": 1.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "火箭发射",
+            "similarity": 0.9
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "太空经济",
+            "similarity": 0.4
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "商业航天IPO",
+            "similarity": 0.4
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "太空经济",
+            "similarity": 0.4
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "商业航天IPO",
+            "similarity": 0.4
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "太空经济",
+            "similarity": 0.2
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "商业航天IPO",
+            "similarity": 0.2
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "火箭发射",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "太空经济",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "商业航天IPO",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "火箭发射",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "太空经济",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "商业航天IPO",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "火箭发射",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    },
+    {
+      "theme": "SpaceX",
+      "success": true,
+      "ground_truth": [
+        "SpaceX"
+      ],
+      "discovered": [
+        "商业航天",
+        "低轨卫星互联网",
+        "可重复使用火箭",
+        "太空经济"
+      ],
+      "confidence": 0.85,
+      "match_result": {
+        "matched": true,
+        "match_type": "semantic",
+        "similarity": 1.0,
+        "best_pair": [
+          "商业航天",
+          "商业航天"
+        ],
+        "details": [
+          {
+            "truth": "商业航天",
+            "discovered": "商业航天",
+            "similarity": 1.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "商业航天",
+            "similarity": 0.9
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "太空经济",
+            "similarity": 0.4
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "太空经济",
+            "similarity": 0.4
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "商业航天",
+            "similarity": 0.4
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "太空经济",
+            "similarity": 0.2
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "商业航天",
+            "similarity": 0.2
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "商业航天",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "太空经济",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "火箭发射",
+            "discovered": "商业航天",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "太空探索",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "太空经济",
+            "similarity": 0.0
+          },
+          {
+            "truth": "SpaceX",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "低轨卫星互联网",
+            "similarity": 0.0
+          },
+          {
+            "truth": "航天技术",
+            "discovered": "可重复使用火箭",
+            "similarity": 0.0
+          }
+        ]
+      },
+      "ai_analysis": {
+        "event_type": "",
+        "impact_industries": []
+      }
+    }
+  ],
+  "metrics": {
+    "total": 15,
+    "successful": 15,
+    "failed": 0,
+    "matched_strict": 14,
+    "matched_semantic": 0,
+    "matched_loose": 0,
+    "similarity_scores": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.4,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "theme_performance": {
+      "AI/AR眼镜": {
+        "total": 10,
+        "matched": 10,
+        "similarities": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "SpaceX": {
+        "total": 5,
+        "matched": 4,
+        "similarities": [
+          0.4,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    "accuracy_strict": 0.9333333333333333,
+    "accuracy_semantic": 0.0,
+    "accuracy_loose": 0.0,
+    "avg_similarity": 0.9600000000000001,
+    "max_similarity": 1.0,
+    "min_similarity": 0.4
+  }
+}

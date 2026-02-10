@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="zh-CN" translate="no" yb-theme="3.0" yb-theme-mode="system"><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><meta charSet="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="apple-mobile-web-app-capable" content="yes"/><link rel="icon" type="image/png" href="https://static.yuanbao.tencent.com/m/yuanbao-web/favicon@32.png"/><meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,width=device-width,viewport-fit=cover"/><meta property="og:type" content="website"/><meta property="og:url" content="https://yuanbao.tencent.com"/><link rel="canonical" href="https://yuanbao.tencent.com"/><link rel="preconnect" href="https://snowflake.qq.com"/><link rel="preconnect" href="https://rumt-zh.com"/><link rel="preconnect" href="https://rdelivery.qq.com"/><script>window.__BOT_COMMIT_ID__ = "971d04e3";</script><script>
+            (function() {
+              // 浏览器检测函数（不依赖任何外部模块）
+              function checkBrowserVersion() {
+                var userAgent = navigator.userAgent;
+                var pathname = window.location.pathname;
+
+                // 客户端UA还没种进去，先这样改
+                if (pathname.indexOf('app/appscan') > -1 || pathname.indexOf('app/appQQlogin') > -1) {
+                  return true;
+                }
+
+                // PC客户端 - 检查 Tauri 或 UA
+                if (window.__TAURI__ || /app\/tencent_yuanbao/i.test(userAgent)) {
+                  return true;
+                }
+
+                // MQQBrowser
+                if (/MQQBrowser/i.test(userAgent)) {
+                  return true;
+                }
+
+                // 放开百度搜索
+                if (userAgent.indexOf('Baiduspider/') > -1) {
+                  return true;
+                }
+
+                // 搜狗使用的chrome内核版本为80
+                if (/SGWebviewClient/i.test(userAgent)) {
+                  return true;
+                }
+
+                // 企业微信
+                if (/wxwork/i.test(userAgent)) {
+                  return true;
+                }
+
+                // 腾讯会议客户端
+                if (/app\/tencent_wemeet/i.test(userAgent)) {
+                  return true;
+                }
+
+                // 放开微信内置浏览器（微信消息总结页）
+                if (/MicroMessenger/i.test(userAgent)) {
+                  var searchParams = new URLSearchParams(window.location.search);
+                  if (searchParams.get('from') === 'wxMessage') {
+                    return true;
+                  }
+                  if (sessionStorage.getItem('WX_MESSAGE_IS_NEWS_LANDING_PAGE_KEY') === '1') {
+                    return true;
+                  }
+                }
+
+                // UA 白名单：包含这些标识的 UA，跳过 iOS 版本检测
+                var uaWhitelist = ['YbScreenshot'];
+                var isInWhitelist = uaWhitelist.some(function(keyword) {
+                  return userAgent.indexOf(keyword) !== -1;
+                });
+
+                // 检测 iOS 版本（包括 QQ 新闻等客户端，需要在 Safari 检测之前）
+                // 白名单中的 UA 跳过 iOS 版本检测，继续执行后续浏览器检测
+                var isIOS = /iPhone|iPad|iPod/i.test(userAgent);
+                if (isIOS && !isInWhitelist) {
+                  // 检测 iOS 版本：iPhone OS 13_6_1 -> 13.6.1
+                  var iosVersionMatch = userAgent.match(/iPhone OS (\d+)[._](\d+)(?:[._](\d+))?/i);
+                  if (iosVersionMatch) {
+                    var majorVersion = parseInt(iosVersionMatch[1], 10);
+                    // iOS 15.0+ 才支持，iOS 14.x 及以下需要升级系统
+                    if (majorVersion < 15) {
+                      return -2; // iOS 14.x 及以下需要升级系统
+                    }
+                  }
+                }
+
+                // 检测Edge
+                if (userAgent.indexOf('Edg/') > -1) {
+                  var edgeMatch = userAgent.match(/Edg\/(\d+)/);
+                  if (edgeMatch && edgeMatch.length > 1) {
+                    return parseInt(edgeMatch[1], 10) >= 84;
+                  }
+                }
+
+                // 检测Firefox
+                if (userAgent.indexOf('Firefox/') > -1) {
+                  var firefoxMatch = userAgent.match(/Firefox\/(\d+)/);
+                  if (firefoxMatch && firefoxMatch.length > 1) {
+                    return parseInt(firefoxMatch[1], 10) >= 83;
+                  }
+                }
+
+                // 检测Chrome
+                if (userAgent.indexOf('Chrome/') > -1 && userAgent.indexOf('Edg/') === -1) {
+                  var chromeMatch = userAgent.match(/Chrome\/(\d+)/);
+                  if (chromeMatch && chromeMatch.length > 1) {
+                    return parseInt(chromeMatch[1], 10) >= 84;
+                  }
+                }
+
+                // 检测Safari
+                if (userAgent.indexOf('Safari/') > -1 && userAgent.indexOf('Chrome/') === -1) {
+                  var safariMatch = userAgent.match(/Version\/(\d+\.\d+)/);
+                  if (safariMatch && safariMatch.length > 1) {
+                    return parseFloat(safariMatch[1]) >= 14.1;
+                  }
+                }
+
+                // 移动端检测 replaceAll
+                if (/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|IEMobile)/i.test(userAgent)) {
+                  return typeof String.prototype.replaceAll === 'function';
+                }
+
+                // 没匹配到的PC端
+                return -1;
+              }
+
+              // 如果当前已经在浏览器提示页面，跳过检查避免死循环
+              var pathname = window.location.pathname;
+              if (pathname === '/browser-support.html' || pathname === '/browser-upgrade.html' || pathname === '/browser-os-upgrade.html') {
+                return;
+              }
+
+              // 执行检测并跳转
+              var checkBrowser = checkBrowserVersion();
+              console.log('checkBrowser', checkBrowser);
+              if (checkBrowser === -2) {
+                // 系统版本过低，跳转到系统升级页面
+                window.location.replace('/browser-os-upgrade.html');
+              } else if (checkBrowser === -1) {
+                // 不支持的浏览器
+                window.location.replace('/browser-support.html');
+              } else if (!checkBrowser) {
+                // 浏览器版本过低
+                window.location.replace('/browser-upgrade.html');
+              }
+            })();
+            </script><link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous"/><link rel="stylesheet" href="https://static.yuanbao.tencent.com/_next/static/css/10c05c9db5d802c1.css?qb_c_bid=98" crossorigin="anonymous" data-n-g=""/><link rel="stylesheet" href="https://static.yuanbao.tencent.com/_next/static/css/c602c5cded9be7af.css?qb_c_bid=98" crossorigin="anonymous" data-n-g=""/><link rel="stylesheet" href="https://static.yuanbao.tencent.com/_next/static/css/14b0bcec68b24350.css?qb_c_bid=98" crossorigin="anonymous" data-n-g=""/><link rel="stylesheet" href="https://static.yuanbao.tencent.com/_next/static/css/a20f14cd8cbdbb3e.css?qb_c_bid=98" crossorigin="anonymous" data-n-g=""/><link rel="stylesheet" href="https://static.yuanbao.tencent.com/_next/static/css/576e3070211f5e5b.css?qb_c_bid=98" crossorigin="anonymous" data-n-p=""/><noscript data-n-css=""></noscript><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_init-script.fa1b8a4060b16f64.js?qb_c_bid=98" crossorigin="anonymous"></script></head><body id="hunyuan-bot"><div id="__next"><div id="app"><div class="yb-layout agent-layout layout-pc yb-layout--pc-container"><div class="yb-nav-fixed yb-nav-fixed--pc-ctx yb-nav-fixed--hide"><div class="yb-common-nav__trigger yb-common-nav__trigger--grey" data-desc="unfold"><span style="font-size:20px" class="yb-icon iconfont-yb icon-yb-ic_sidebar_20"></span></div></div><div class="yb-nav-mobile__header-wrapper"></div><div class="yb-nav yb-common-nav yb-nav--overlay yb-nav--pc-ctx yb-nav--floating"><div class="yb-nav__mask"></div><div class="yb-nav__content-wrapper" style="width:260px"><div class="yb-nav__header yb-common-nav__hd"><div class="yb-common-nav__trigger" data-desc="fold"><span style="font-size:20px" class="yb-icon iconfont-yb icon-yb-ic_sidebar_20"></span></div><div style="margin:0px 8px" class="yb-common-nav__trigger" data-desc="new-chat"><span style="font-size:20px" class="yb-icon iconfont-yb icon-yb-ic_newchat_20"></span></div></div><div dt-exposure="OnPageMod" dt-page-id="SlidePage" dt-mod-id="main_agent_mod" dt-button-id="search_bar" dt-ext1="pc" class="yb-common-nav__tool"><span style="font-size:20px" class="yb-icon iconfont-yb icon-yb-ic_search_20 yb-common-nav__tool-icon"></span><p class="yb-common-nav__tool-word">搜索</p></div><div class="yb-nav__content"></div><div class="yb-nav__footer"><div class="index_pc_download__A+Izz yb__pc_download"><div class="index_content__Ya5lt"><span class="yb-icon iconfont-yb icon-yb-ic_download_16"></span><div class="index_text__0Xay5">前往下载中心</div></div></div><div class="yb-nav__user"><div class="yb-nav__user-skeleton"><div class="t-skeleton__row"><div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient"></div></div></div></div></div></div></div><div class="yb-layout__content-skeleton yb-layout__content-skeleton--empty"><div class="yb-layout__chat-skeleton"><div class="yb-layout__chat-skeleton__header"></div><div class="yb-layout__homepage-skeleton"><div class="yb-layout__homepage-skeleton__content"><div class="say-hi_say-hi__2TUvz say-hi_align-center__dbw-X say-hi_size-medium__IqDo8 say-hi_theme-auto__dcNax say-hi_animation-none__f5iIv yb-layout__homepage-skeleton__content_sayhi" aria-label="Hi，我是元宝"><h1 class="say-hi_title__-GN0J">Hi，我是元宝</h1></div></div><div class="yb-layout__homepage-skeleton__input__guide"><div class="yb-layout__homepage-skeleton__input__guide__item" style="width:228px"><div class="t-skeleton__row"><div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient"></div></div></div><div class="yb-layout__homepage-skeleton__input__guide__item" style="width:144px"><div class="t-skeleton__row"><div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient"></div></div></div><div class="yb-layout__homepage-skeleton__input__guide__item" style="width:144px"><div class="t-skeleton__row"><div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient"></div></div></div><div class="yb-layout__homepage-skeleton__input__guide__item" style="width:144px"><div class="t-skeleton__row"><div class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient"></div></div></div></div></div></div><div class="yb-layout__input-skeleton"><div class="yb-layout__input-skeleton__content"><div class="yb-layout__input-skeleton__content__input"></div><div class="yb-layout__input-skeleton__content__ft"><div class="yb-layout__input-skeleton__content__model"><div class="yb-layout__input-skeleton__content__model__item m1"></div><div class="yb-layout__input-skeleton__content__model__item m2"></div><div class="yb-layout__input-skeleton__content__model__item m3"></div></div><div class="yb-layout__input-skeleton__content__send-btn"></div></div></div></div><div class="yb-layout__content-skeleton__copyright"><div class="yb-layout__content-skeleton__copyright__content">内容由AI生成，仅供参考</div></div></div></div></div></div><script id="__NEXT_DATA__" type="application/json" crossorigin="anonymous">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"zMr739nJLvAFgoi3fY-As","assetPrefix":"https://static.yuanbao.tencent.com","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script><link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous"/><noscript data-n-css=""></noscript><script defer="" crossorigin="anonymous" nomodule="" src="https://static.yuanbao.tencent.com/_next/static/chunks/polyfills-42372ed130431b0a.js?qb_c_bid=98"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_runtime.afda679b5fc5133a.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_vendor_react_ecosystem.3410eee012330307.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_vendor_common.d97e3e6e1b73f78b.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_main.ac26c1866036c439.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_vendor_tencent_core.9565ee205ff5e516.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_vendor_tdesign.2b1c73c5846dd39f.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_vendor_qimei.27aead6763edac2a.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_yb-util.73edf613ccb9e9e0.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_yb-component.d7401af96e743d79.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_yb-chat.4180d9986ed13058.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_pages/_app.35a841495e925fc5.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_locales.03b709729a97cbef.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/chunks/yb_v2_pages/index.87b7a004e0767b4d.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/zMr739nJLvAFgoi3fY-As/_buildManifest.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script><script src="https://static.yuanbao.tencent.com/_next/static/zMr739nJLvAFgoi3fY-As/_ssgManifest.js?qb_c_bid=98" defer="" crossorigin="anonymous"></script></body></html>

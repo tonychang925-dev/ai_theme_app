@@ -1,0 +1,491 @@
+{
+  "test_summary": {
+    "test_name": "优化系统集成测试",
+    "test_time": "2026-01-11T14:53:26.910738",
+    "total_events_processed": 10,
+    "total_duration_seconds": 0.67,
+    "avg_processing_time_seconds": 0.067,
+    "success_rate": 70.0
+  },
+  "virtual_database_final_state": {
+    "theme_count": 5,
+    "theme_names": [
+      "人工智能",
+      "半导体",
+      "新能源汽车",
+      "信息技术",
+      "新型人工智能技术取得"
+    ]
+  },
+  "processing_statistics": {
+    "status_distribution": {
+      "created": 5,
+      "merged": 2,
+      "ignored": 0,
+      "in_review": 0,
+      "failed": 0
+    }
+  },
+  "generated_themes_analysis": {
+    "total_unique_themes": 5
+  },
+  "event_theme_mapping": {
+    "mock_ai_001_0": "人工智能",
+    "mock_semiconductor_001_1": "半导体",
+    "mock_new_energy_001_2": "新能源汽车",
+    "mock_ai_001_3": "信息技术",
+    "mock_semiconductor_001_4": "半导体",
+    "mock_new_energy_001_5": "新能源汽车",
+    "mock_ai_001_6": "新型人工智能技术取得",
+    "mock_semiconductor_001_7": "半导体",
+    "mock_new_energy_001_8": "新能源汽车",
+    "mock_ai_001_9": "新型人工智能技术取得"
+  },
+  "sample_processing_results": [
+    {
+      "event_id": "mock_ai_001_0",
+      "event_title": "人工智能技术取得重大突破",
+      "processing_result": {
+        "event_id": "mock_ai_001_0",
+        "processed_at": "2026-01-11T14:53:26.239072",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "",
+          "reason": "无现有题材可比较",
+          "confidence": 0.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 0,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "人工智能",
+          "confidence": 0.8,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。重大技术突破",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 0
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "人工智能",
+          "timestamp": "2026-01-11T14:53:26.240644"
+        },
+        "decision_time_ms": 1.143
+      },
+      "processing_time_seconds": 0.002,
+      "processed_at": "2026-01-11T14:53:26.241133"
+    },
+    {
+      "event_id": "mock_semiconductor_001_1",
+      "event_title": "半导体芯片国产化加速",
+      "processing_result": {
+        "event_id": "mock_semiconductor_001_1",
+        "processed_at": "2026-01-11T14:53:26.244048",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "",
+          "reason": "无现有题材可比较",
+          "confidence": 0.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 0,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "半导体",
+          "confidence": 0.75,
+          "reason": "第一轮指令建议创建新题材，且与现有题材无明显冲突。产业升级",
+          "comparison_analysis": "与现有题材相似度低，适合创建新题材",
+          "match_type": "distinct",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 1
+        },
+        "decision_confidence_raw": 0.75,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "半导体",
+          "timestamp": "2026-01-11T14:53:26.246401"
+        },
+        "decision_time_ms": 0.201
+      },
+      "processing_time_seconds": 0.003,
+      "processed_at": "2026-01-11T14:53:26.246697"
+    },
+    {
+      "event_id": "mock_new_energy_001_2",
+      "event_title": "新能源汽车销量创新高",
+      "processing_result": {
+        "event_id": "mock_new_energy_001_2",
+        "processed_at": "2026-01-11T14:53:26.246984",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "",
+          "reason": "无现有题材可比较",
+          "confidence": 0.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 0,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "新能源汽车",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 新能源汽车, 锂电池",
+          "comparison_analysis": "与现有题材相似度: 0.00，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 2
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "新能源汽车",
+          "timestamp": "2026-01-11T14:53:26.247427"
+        },
+        "decision_time_ms": 0.191
+      },
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T14:53:26.247655"
+    },
+    {
+      "event_id": "mock_ai_001_3",
+      "event_title": "人工智能技术取得重大突破",
+      "processing_result": {
+        "event_id": "mock_ai_001_3",
+        "processed_at": "2026-01-11T14:53:26.247970",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.25,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.25)，可以创建新题材",
+          "confidence": 0.75
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "信息技术",
+          "confidence": 0.75,
+          "reason": "第一轮指令建议创建新题材，但与现有题材有相似性，需谨慎创建。重大技术突破",
+          "comparison_analysis": "与现有题材相似度: 0.68，但未达到合并阈值",
+          "match_type": "moderate_similarity",
+          "needs_review": true,
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 3
+        },
+        "decision_confidence_raw": 0.75,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "信息技术",
+          "timestamp": "2026-01-11T14:53:26.901569"
+        },
+        "decision_time_ms": 0.206
+      },
+      "processing_time_seconds": 0.654,
+      "processed_at": "2026-01-11T14:53:26.901995"
+    },
+    {
+      "event_id": "mock_semiconductor_001_4",
+      "event_title": "半导体芯片国产化加速",
+      "processing_result": {
+        "event_id": "mock_semiconductor_001_4",
+        "processed_at": "2026-01-11T14:53:26.902481",
+        "status": "auto_merged",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": true,
+          "target_theme": "半导体",
+          "similarity": 0.95,
+          "match_type": "exact_with_synonyms",
+          "reason": "考虑同义词后名称匹配: 芯片 ≈ 半导体",
+          "confidence": 0.9
+        },
+        "ai_decision_overridden": true,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "芯片",
+          "confidence": 0.75,
+          "reason": "第一轮指令建议创建新题材，但与现有题材有相似性，需谨慎创建。产业升级",
+          "comparison_analysis": "与现有题材相似度: 0.68，但未达到合并阈值",
+          "match_type": "moderate_similarity",
+          "needs_review": true,
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 4
+        },
+        "decision_confidence_raw": 0.75,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "merge",
+          "target_theme_name": "半导体",
+          "timestamp": "2026-01-11T14:53:26.903263"
+        },
+        "decision_time_ms": 0.32
+      },
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T14:53:26.903532"
+    },
+    {
+      "event_id": "mock_new_energy_001_5",
+      "event_title": "新能源汽车销量创新高",
+      "processing_result": {
+        "event_id": "mock_new_energy_001_5",
+        "processed_at": "2026-01-11T14:53:26.903731",
+        "status": "merged",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": true,
+          "target_theme": "新能源汽车",
+          "similarity": 1.0,
+          "match_type": "exact",
+          "reason": "名称完全匹配: 新能源汽车 == 新能源汽车",
+          "confidence": 1.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "MERGE_INTO",
+          "target_theme_name": "新能源汽车",
+          "confidence": 0.6799999999999999,
+          "reason": "与现有题材'新能源汽车'有一定关联 (相似度: 0.68)",
+          "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+          "match_type": "moderate_similarity",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 4
+        },
+        "decision_confidence_raw": 0.6799999999999999,
+        "execution_path": "guided_merge",
+        "execution_result": {
+          "action": "merge",
+          "target_theme_name": "新能源汽车",
+          "timestamp": "2026-01-11T14:53:26.904150"
+        },
+        "decision_time_ms": 0.148
+      },
+      "processing_time_seconds": 0.002,
+      "processed_at": "2026-01-11T14:53:26.905231"
+    },
+    {
+      "event_id": "mock_ai_001_6",
+      "event_title": "人工智能技术取得重大突破",
+      "processing_result": {
+        "event_id": "mock_ai_001_6",
+        "processed_at": "2026-01-11T14:53:26.905491",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.5499999999999999,
+          "match_type": "keep_separate",
+          "reason": "有一定相似度(0.55)，但建议保持独立",
+          "confidence": 0.45000000000000007
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 2,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "新型人工智能技术取得",
+          "confidence": 0.75,
+          "reason": "第一轮指令建议创建新题材，但与现有题材有相似性，需谨慎创建。重大技术突破",
+          "comparison_analysis": "与现有题材相似度: 0.68，但未达到合并阈值",
+          "match_type": "moderate_similarity",
+          "needs_review": true,
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 4
+        },
+        "decision_confidence_raw": 0.75,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "新型人工智能技术取得",
+          "timestamp": "2026-01-11T14:53:26.906456"
+        },
+        "decision_time_ms": 0.264
+      },
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T14:53:26.906855"
+    },
+    {
+      "event_id": "mock_semiconductor_001_7",
+      "event_title": "半导体芯片国产化加速",
+      "processing_result": {
+        "event_id": "mock_semiconductor_001_7",
+        "processed_at": "2026-01-11T14:53:26.907134",
+        "status": "auto_merged",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": true,
+          "target_theme": "半导体",
+          "similarity": 0.95,
+          "match_type": "exact_with_synonyms",
+          "reason": "考虑同义词后名称匹配: 芯片 ≈ 半导体",
+          "confidence": 0.9
+        },
+        "ai_decision_overridden": true,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "芯片",
+          "confidence": 0.75,
+          "reason": "第一轮指令建议创建新题材，但与现有题材有相似性，需谨慎创建。产业升级",
+          "comparison_analysis": "与现有题材相似度: 0.68，但未达到合并阈值",
+          "match_type": "moderate_similarity",
+          "needs_review": true,
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 5
+        },
+        "decision_confidence_raw": 0.75,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "merge",
+          "target_theme_name": "半导体",
+          "timestamp": "2026-01-11T14:53:26.908040"
+        },
+        "decision_time_ms": 0.268
+      },
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T14:53:26.908333"
+    },
+    {
+      "event_id": "mock_new_energy_001_8",
+      "event_title": "新能源汽车销量创新高",
+      "processing_result": {
+        "event_id": "mock_new_energy_001_8",
+        "processed_at": "2026-01-11T14:53:26.908640",
+        "status": "merged",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": true,
+          "target_theme": "新能源汽车",
+          "similarity": 1.0,
+          "match_type": "exact",
+          "reason": "名称完全匹配: 新能源汽车 == 新能源汽车",
+          "confidence": 1.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "MERGE_INTO",
+          "target_theme_name": "新能源汽车",
+          "confidence": 0.6799999999999999,
+          "reason": "与现有题材'新能源汽车'有一定关联 (相似度: 0.68)",
+          "comparison_analysis": "核心概念有重叠，建议归并而非创建新题材",
+          "match_type": "moderate_similarity",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 5
+        },
+        "decision_confidence_raw": 0.6799999999999999,
+        "execution_path": "guided_merge",
+        "execution_result": {
+          "action": "merge",
+          "target_theme_name": "新能源汽车",
+          "timestamp": "2026-01-11T14:53:26.909116"
+        },
+        "decision_time_ms": 0.162
+      },
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T14:53:26.909319"
+    },
+    {
+      "event_id": "mock_ai_001_9",
+      "event_title": "人工智能技术取得重大突破",
+      "processing_result": {
+        "event_id": "mock_ai_001_9",
+        "processed_at": "2026-01-11T14:53:26.909515",
+        "status": "auto_merged",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": true,
+          "target_theme": "新型人工智能技术取得",
+          "similarity": 1.0,
+          "match_type": "exact",
+          "reason": "名称完全匹配: 新型人工智能技术取得 == 新型人工智能技术取得",
+          "confidence": 1.0
+        },
+        "ai_decision_overridden": true,
+        "related_themes_count": 3,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "新型人工智能技术取得",
+          "confidence": 0.75,
+          "reason": "第一轮指令建议创建新题材，但与现有题材有相似性，需谨慎创建。重大技术突破",
+          "comparison_analysis": "与现有题材相似度: 0.68，但未达到合并阈值",
+          "match_type": "moderate_similarity",
+          "needs_review": true,
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 5
+        },
+        "decision_confidence_raw": 0.75,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "merge",
+          "target_theme_name": "新型人工智能技术取得",
+          "timestamp": "2026-01-11T14:53:26.910286"
+        },
+        "decision_time_ms": 0.21800000000000003
+      },
+      "processing_time_seconds": 0.001,
+      "processed_at": "2026-01-11T14:53:26.910563"
+    }
+  ]
+}

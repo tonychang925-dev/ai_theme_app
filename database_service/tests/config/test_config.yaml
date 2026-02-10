@@ -1,0 +1,32 @@
+# tests/config/test_config.yaml
+# Phase1测试配置
+database:
+  type: postgresql
+  host: localhost
+  port: 5432
+  database: stock_data_test  # 建议创建测试数据库
+  username: postgres
+  password: zxbzj~925
+  schema: public
+
+redis:
+  enabled: true
+  host: localhost
+  port: 6379
+  # 测试用短TTL
+  cache_ttl:
+    theme: 30      # 30秒
+    themes_list: 15
+    related_themes: 20
+    stats: 10
+    default: 10
+
+cache:
+  strategy: intelligent
+  enable_cache_warming: false  # 测试时关闭预热
+  warm_cache_items: 10
+
+connection_pool:
+  max_size: 5     # 测试用小连接池
+  min_size: 1
+  connection_timeout: 10

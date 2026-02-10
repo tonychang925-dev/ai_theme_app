@@ -1,0 +1,94 @@
+{
+  "new_event": {
+    "title": "Rokid发布新一代AI智能眼镜，销量突破30万台",
+    "content": "Rokid公司今日发布新一代AI智能眼镜，集成了语音助手、实时翻译和AR导航功能。据悉，该产品累计销量已达30万台，下半年将上线打车功能。",
+    "event_type": "产品发布",
+    "industries": [
+      "消费电子",
+      "人工智能",
+      "硬件"
+    ]
+  },
+  "existing_themes": [
+    {
+      "id": 1,
+      "name": "人工智能技术",
+      "keywords": [
+        "AI",
+        "机器学习",
+        "深度学习",
+        "算法"
+      ],
+      "description": "基础人工智能技术研究，包括机器学习、深度学习等算法",
+      "discovery_source": "test",
+      "discovery_confidence": 0.9,
+      "heat_score": 2,
+      "lifecycle_stage": "candidate",
+      "created_at": "2026-01-13T22:20:04.561582",
+      "updated_at": "2026-01-13T22:20:04.565762",
+      "context": {
+        "event_count": 2,
+        "has_events": true,
+        "event_ids": [
+          "ai_glasses_002",
+          "ai_glasses_001"
+        ]
+      },
+      "ai_description": "人工智能技术主题，关键词：AI、机器学习、深度学习，关联2个事件。"
+    },
+    {
+      "id": 3,
+      "name": "智能穿戴设备",
+      "keywords": [
+        "智能手表",
+        "智能眼镜",
+        "可穿戴",
+        "AR眼镜"
+      ],
+      "description": "智能手表、智能眼镜等穿戴式智能设备",
+      "discovery_source": "test",
+      "discovery_confidence": 0.7,
+      "heat_score": 1,
+      "lifecycle_stage": "candidate",
+      "created_at": "2026-01-13T22:20:04.561719",
+      "updated_at": "2026-01-13T22:20:04.565508",
+      "context": {
+        "event_count": 1,
+        "has_events": true,
+        "event_ids": [
+          "ai_glasses_001"
+        ]
+      },
+      "ai_description": "智能穿戴设备主题，关键词：智能手表、智能眼镜、可穿戴，关联1个事件。"
+    },
+    {
+      "id": 2,
+      "name": "AI硬件产品",
+      "keywords": [
+        "AI芯片",
+        "硬件",
+        "智能设备",
+        "服务器"
+      ],
+      "description": "AI相关的硬件产品，如AI芯片、AI服务器、智能设备等",
+      "discovery_source": "test",
+      "discovery_confidence": 0.8,
+      "heat_score": 0,
+      "lifecycle_stage": "candidate",
+      "created_at": "2026-01-13T22:20:04.561667",
+      "updated_at": "2026-01-13T22:20:04.561668",
+      "context": {
+        "event_count": 0,
+        "has_events": false,
+        "event_ids": []
+      },
+      "ai_description": "AI硬件产品主题，尚无关联事件。"
+    }
+  ],
+  "analysis_requirements": {
+    "compare_content": true,
+    "check_semantic_similarity": true,
+    "evaluate_merge_possibility": true,
+    "suggest_new_theme_name": true
+  }
+}

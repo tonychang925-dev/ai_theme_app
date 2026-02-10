@@ -1,0 +1,319 @@
+# evaluate_service/core/virtual_theme_database.py
+"""
+虚拟主题数据库 - 模拟生产环境的theme_master表
+作为测试框架的状态核心，所有组件共享此状态
+🔥 已修复：find_related_themes方法参数名统一为limit
+"""
+import json
+import re
+from datetime import datetime
+from typing import Dict, List, Any, Optional
+from dataclasses import dataclass
+import logging
+
+logger = logging.getLogger(__name__)
+
+@dataclass
+class ThemeRecord:
+    """主题记录，对应theme_master表结构"""
+    id: int
+    name: str
+    keywords: str  # 逗号分隔的关键词
+    description: Optional[str] = None
+    discovery_source: str = "enhanced_engine"
+    discovery_confidence: float = 0.0
+    heat_score: int = 0
+    lifecycle_stage: str = "candidate"  # candidate, growing, mature, decline
+    related_event_ids: List[str] = None  # 关联的事件test_id
+    created_at: datetime = None
+    updated_at: datetime = None
+    
+    def __post_init__(self):
+        if self.related_event_ids is None:
+            self.related_event_ids = []
+        if self.created_at is None:
+            self.created_at = datetime.now()
+        if self.updated_at is None:
+            self.updated_at = datetime.now()
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """转换为字典格式，用于API返回"""
+        return {
+            'id': self.id,
+            'name': self.name,
+            'keywords': self.keywords,
+            'description': self.description or f"{self.name}相关主题",
+            'discovery_source': self.discovery_source,
+            'discovery_confidence': self.discovery_confidence,
+            'heat_score': self.heat_score,
+            'lifecycle_stage': self.lifecycle_stage,
+            'related_event_count': len(self.related_event_ids),
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'updated_at': self.updated_at.isoformat() if self.updated_at else None
+        }
+
+
+class VirtualThemeDatabase:
+    """
+    虚拟主题数据库 - 测试框架的状态核心
+    模拟生产环境的theme_master表，维护测试过程中的主题状态
+    """
+    
+    def __init__(self):
+        # 初始化空数据库，模拟从零开始的状态
+        self.themes: Dict[int, ThemeRecord] = {}  # id -> ThemeRecord
+        self.name_index: Dict[str, int] = {}      # name -> id，用于快速查找
+        self._next_id = 1
+        self._keyword_cache: Dict[str, List[int]] = {}  # 关键词 -> theme_ids
+        logger.info("虚拟主题数据库初始化完成（初始状态为空）")
+    
+    def add_theme(self, 
+                  name: str, 
+                  discovery_source: str = "enhanced_engine",
+                  initial_confidence: float = 0.0,
+                  event_id: Optional[str] = None,
+                  keywords: Optional[str] = None) -> ThemeRecord:
+        """
+        创建新主题（模拟插入theme_master表）
+        
+        Args:
+            name: 主题名称
+            discovery_source: 发现来源
+            initial_confidence: 初始置信度
+            event_id: 触发创建的事件ID
+            keywords: 自定义关键词（如为空则从名称提取）
+            
+        Returns:
+            新创建的主题记录
+        """
+        # 检查是否已存在同名主题
+        if name in self.name_index:
+            logger.warning(f"主题'{name}'已存在，ID: {self.name_index[name]}")
+            return self.themes[self.name_index[name]]
+        
+        # 提取关键词（如果未提供）
+        if keywords is None:
+            keywords = self._extract_keywords_from_name(name)
+        
+        # 创建主题记录
+        theme = ThemeRecord(
+            id=self._next_id,
+            name=name,
+            keywords=keywords,
+            discovery_source=discovery_source,
+            discovery_confidence=initial_confidence,
+            related_event_ids=[event_id] if event_id else []
+        )
+        
+        # 存储到数据库
+        self.themes[self._next_id] = theme
+        self.name_index[name] = self._next_id
+        
+        # 更新关键词索引
+        self._update_keyword_index(self._next_id, keywords)
+        
+        logger.info(f"✅ 创建新主题: {name} (ID: {self._next_id}, 关键词: {keywords})")
+        
+        self._next_id += 1
+        return theme
+    
+    def find_related_themes(self, 
+                           event_data: Dict[str, Any], 
+                           limit: int = 5) -> List[Dict[str, Any]]:  # 🔥 修复：参数名为limit
+        """
+        根据事件内容查找相关已有主题
+        实现真实的关键词匹配和简单语义相似度计算
+        
+        Args:
+            event_data: 事件数据，包含title, summary, impact_industries等
+            limit: 返回的最大数量  # 🔥 修复：统一参数名为limit
+            
+        Returns:
+            按相关度排序的主题列表
+        """
+        if not self.themes:
+            return []
+        
+        # 从事件数据中提取搜索关键词
+        search_keywords = self._extract_search_keywords(event_data)
+        
+        # 计算每个主题的相关度得分
+        theme_scores = []
+        for theme_id, theme in self.themes.items():
+            score = self._calculate_relevance_score(theme, search_keywords, event_data)
+            if score > 0:  # 只返回有相关性的主题
+                theme_scores.append((theme, score))
+        
+        # 按得分排序
+        theme_scores.sort(key=lambda x: x[1], reverse=True)
+        
+        # 转换为API格式并返回
+        result = []
+        for theme, score in theme_scores[:limit]:  # 🔥 修复：使用limit
+            theme_dict = theme.to_dict()
+            theme_dict['relevance_score'] = round(score, 4)
+            result.append(theme_dict)
+        
+        logger.debug(f"为事件'{event_data.get('title', '')}'找到 {len(result)} 个相关主题")
+        return result
+    
+    def _extract_keywords_from_name(self, name: str) -> str:
+        """从主题名称中提取关键词"""
+        # 移除标点符号
+        cleaned = re.sub(r'[^\w\u4e00-\u9fff]', ' ', name)
+        
+        # 提取中文关键词（长度>=2）
+        chinese_words = re.findall(r'[\u4e00-\u9fff]{2,}', cleaned)
+        
+        # 提取英文/缩写关键词
+        english_words = re.findall(r'[A-Z]{2,}|[A-Z][a-z]+', cleaned)
+        
+        # 合并关键词
+        keywords = chinese_words + english_words
+        
+        # 去重并限制数量
+        unique_keywords = list(set(keywords))
+        
+        # 如果提取不到关键词，使用名称本身
+        if not unique_keywords:
+            unique_keywords = [name[:20]]
+        
+        return ','.join(unique_keywords[:5])  # 最多5个关键词
+    
+    def _extract_search_keywords(self, event_data: Dict[str, Any]) -> List[str]:
+        """从事件数据中提取搜索关键词"""
+        keywords = []
+        
+        # 从标题提取
+        title = event_data.get('title', '')
+        if title:
+            # 移除常见停用词
+            stop_words = {'的', '了', '在', '是', '和', '与', '及', '或'}
+            words = re.findall(r'[\w\u4e00-\u9fff]+', title)
+            keywords.extend([w for w in words if w not in stop_words and len(w) >= 2])
+        
+        # 从摘要提取
+        summary = event_data.get('summary', '')
+        if summary:
+            words = re.findall(r'[\w\u4e00-\u9fff]+', summary)
+            keywords.extend([w for w in words if len(w) >= 2][:5])  # 最多取5个
+        
+        # 添加影响行业
+        industries = event_data.get('impact_industries', [])
+        keywords.extend(industries)
+        
+        # 去重
+        unique_keywords = list(set(keywords))
+        logger.debug(f"提取的搜索关键词: {unique_keywords}")
+        
+        return unique_keywords
+    
+    def _calculate_relevance_score(self, 
+                                 theme: ThemeRecord, 
+                                 search_keywords: List[str],
+                                 event_data: Dict[str, Any]) -> float:
+        """计算主题与事件的相关度得分"""
+        if not search_keywords:
+            return 0.0
+        
+        # 获取主题关键词
+        theme_keywords = [k.strip() for k in theme.keywords.split(',') if k.strip()]
+        
+        # 1. 关键词匹配得分
+        keyword_matches = 0
+        for search_kw in search_keywords:
+            for theme_kw in theme_keywords:
+                if search_kw in theme_kw or theme_kw in search_kw:
+                    keyword_matches += 1
+                    break
+        
+        keyword_score = keyword_matches / len(search_keywords) if search_keywords else 0
+        
+        # 2. 名称匹配得分
+        name_score = 0.0
+        event_title = event_data.get('title', '').lower()
+        theme_name = theme.name.lower()
+        
+        if event_title and theme_name:
+            # 简单包含关系检查
+            if theme_name in event_title or event_title in theme_name:
+                name_score = 0.5
+            # 共享关键词检查
+            title_words = set(re.findall(r'[\w\u4e00-\u9fff]{2,}', event_title))
+            theme_words = set(re.findall(r'[\w\u4e00-\u9fff]{2,}', theme_name))
+            common_words = title_words & theme_words
+            if common_words:
+                name_score = max(name_score, len(common_words) / max(len(title_words), 1))
+        
+        # 3. 行业匹配得分（如果有）
+        industry_score = 0.0
+        industries = event_data.get('impact_industries', [])
+        if industries:
+            industry_keywords = ' '.join(industries).lower()
+            for theme_kw in theme_keywords:
+                if any(industry in theme_kw.lower() for industry in industries):
+                    industry_score = 0.3
+                    break
+        
+        # 加权综合得分
+        total_score = (
+            keyword_score * 0.5 +      # 关键词匹配最重要
+            name_score * 0.3 +         # 名称匹配次重要
+            industry_score * 0.2       # 行业匹配
+        )
+        
+        return min(1.0, total_score)
+    
+    def _update_keyword_index(self, theme_id: int, keywords: str):
+        """更新关键词索引"""
+        if not keywords:
+            return
+        
+        keyword_list = [k.strip().lower() for k in keywords.split(',') if k.strip()]
+        for keyword in keyword_list:
+            if keyword not in self._keyword_cache:
+                self._keyword_cache[keyword] = []
+            if theme_id not in self._keyword_cache[keyword]:
+                self._keyword_cache[keyword].append(theme_id)
+    
+    def get_theme_by_name(self, name: str) -> Optional[ThemeRecord]:
+        """根据名称获取主题"""
+        theme_id = self.name_index.get(name)
+        return self.themes.get(theme_id) if theme_id else None
+    
+    def get_theme_by_id(self, theme_id: int) -> Optional[ThemeRecord]:
+        """根据ID获取主题"""
+        return self.themes.get(theme_id)
+    
+    def increment_event_count(self, theme_id: int, event_id: str):
+        """为主题增加关联事件"""
+        theme = self.themes.get(theme_id)
+        if theme:
+            if event_id not in theme.related_event_ids:
+                theme.related_event_ids.append(event_id)
+                theme.heat_score = len(theme.related_event_ids) * 10  # 简化的热度计算
+                theme.updated_at = datetime.now()
+                logger.debug(f"主题 {theme.name} 关联事件数: {len(theme.related_event_ids)}")
+    
+    def get_stats(self) -> Dict[str, Any]:
+        """获取数据库统计信息"""
+        return {
+            'total_themes': len(self.themes),
+            'theme_names': list(self.name_index.keys()),
+            'keyword_index_size': len(self._keyword_cache),
+            'avg_events_per_theme': sum(len(t.related_event_ids) for t in self.themes.values()) / max(len(self.themes), 1),
+            'lifecycle_distribution': {
+                'candidate': sum(1 for t in self.themes.values() if t.lifecycle_stage == 'candidate'),
+                'growing': sum(1 for t in self.themes.values() if t.lifecycle_stage == 'growing'),
+                'mature': sum(1 for t in self.themes.values() if t.lifecycle_stage == 'mature'),
+                'decline': sum(1 for t in self.themes.values() if t.lifecycle_stage == 'decline'),
+            }
+        }
+    
+    def clear(self):
+        """清空数据库（用于测试重置）"""
+        self.themes.clear()
+        self.name_index.clear()
+        self._keyword_cache.clear()
+        self._next_id = 1
+        logger.info("虚拟主题数据库已清空")

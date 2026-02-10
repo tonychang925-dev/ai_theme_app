@@ -1,0 +1,14 @@
+{
+  "theme_count": 2,
+  "theme_names": [
+    "人工智能",
+    "信息技术"
+  ],
+  "avg_events_per_theme": 1.0,
+  "lifecycle_distribution": {
+    "candidate": 2,
+    "growing": 0,
+    "mature": 0,
+    "decline": 0
+  }
+}

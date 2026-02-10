@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "report_id": "full_discovery_flow_20260113_183108",
+    "generated_at": "2026-01-13T18:31:08.212876",
+    "test_type": "full_discovery_flow",
+    "data_source": "validation_events_fixed.json",
+    "test_version": "1.0.0"
+  },
+  "test_summary": {
+    "total_test_events": 3,
+    "events_processed": 3,
+    "successful_events": 1,
+    "failed_events": 2,
+    "success_rate": 0.3333333333333333,
+    "themes_created": 1
+  },
+  "test_events": [
+    {
+      "news_id": "AI_AR眼镜_001",
+      "title": "AI/AR眼镜相关新闻",
+      "content_length": 34,
+      "event_type": "产品发布",
+      "industries": [
+        "消费电子",
+        "可穿戴设备",
+        "人工智能",
+        "增强现实",
+        "光学制造"
+      ]
+    },
+    {
+      "news_id": "AI_AR眼镜_002",
+      "title": "AI/AR眼镜相关新闻",
+      "content_length": 32,
+      "event_type": "产品发布",
+      "industries": [
+        "消费电子",
+        "可穿戴设备",
+        "运动科技",
+        "AR/VR",
+        "智能硬件"
+      ]
+    },
+    {
+      "news_id": "AI_AR眼镜_003",
+      "title": "AI/AR眼镜相关新闻",
+      "content_length": 71,
+      "event_type": "技术突破",
+      "industries": [
+        "增强现实（AR）",
+        "人工智能（AI）",
+        "半导体",
+        "消费电子",
+        "光学技术"
+      ]
+    }
+  ],
+  "detailed_results": [
+    {
+      "event_id": "AI_AR眼镜_001",
+      "status": "created",
+      "processing_time": 0.155416,
+      "ai_decision": "CREATE_NEW",
+      "confidence": 0.3,
+      "theme_name": "新眼镜相关新闻相关",
+      "success": true
+    },
+    {
+      "event_id": "AI_AR眼镜_002",
+      "status": "failed",
+      "processing_time": 0.2107,
+      "ai_decision": "CREATE_NEW",
+      "confidence": 0.3,
+      "theme_name": "",
+      "success": false
+    },
+    {
+      "event_id": "AI_AR眼镜_003",
+      "status": "failed",
+      "processing_time": 0.162688,
+      "ai_decision": "CREATE_NEW",
+      "confidence": 0.3,
+      "theme_name": "",
+      "success": false
+    }
+  ],
+  "verification": {
+    "total_events": 3,
+    "successful": 1,
+    "failed": 2,
+    "success_rate": 0.3333333333333333,
+    "themes_created": 1,
+    "database_stats": {
+      "total_themes": 1,
+      "total_relations": 0,
+      "total_events": 3,
+      "theme_names": [
+        "新眼镜相关新闻相关"
+      ],
+      "avg_relations_per_theme": 0.0,
+      "memory_usage": "N/A",
+      "data_structure": "适配新结构",
+      "event_avg_content_length": 45.666666666666664
+    }
+  },
+  "conclusion": {
+    "overall_status": "FAIL",
+    "data_flow_status": "WORKING",
+    "ai_integration_status": "WORKING",
+    "database_integration_status": "WORKING",
+    "issues_found": [],
+    "recommendations": [
+      "验证AI大模型能看到完整original_news.content",
+      "检查主题合并决策的准确性",
+      "验证事件-主题关联的正确性"
+    ]
+  }
+}

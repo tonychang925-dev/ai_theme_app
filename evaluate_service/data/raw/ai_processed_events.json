@@ -1,0 +1,2497 @@
+[
+  {
+    "event_id": "event_20260203110648_9234b5",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "Meta与Oakley合作开发的智能眼镜产品于6月20日举行发布会。",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:06:48.059373",
+    "ai_analysis": {
+      "core_concept": "Meta与Oakley合作发布智能眼镜",
+      "industry_keywords": [
+        "智能眼镜",
+        "增强现实",
+        "可穿戴设备",
+        "消费电子",
+        "人机交互"
+      ],
+      "summary": "Meta与知名眼镜品牌Oakley合作开发的智能眼镜产品于6月20日举行发布会。这一合作结合了Meta在增强现实技术和人工智能领域的优势与Oakley在眼镜设计和制造方面的专业经验，标志着智能可穿戴设备市场的重要进展。该产品预计将推动AR技术在消费电子领域的应用，可能对相关产业链产生积极影响，包括硬件制造、软件开发和内容生态建设。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_0",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:06:48.059392"
+    }
+  },
+  {
+    "event_id": "event_20260203110649_b00e5c",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "Meta联手Oakley推出智能眼镜 ，为运动设计挑战运动相机。",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:06:49.092631",
+    "ai_analysis": {
+      "core_concept": "Meta与Oakley合作推出运动智能眼镜",
+      "industry_keywords": [
+        "智能眼镜",
+        "增强现实",
+        "运动科技",
+        "可穿戴设备",
+        "Meta",
+        "Oakley"
+      ],
+      "summary": "Meta与运动眼镜品牌Oakley合作推出专为运动设计的智能眼镜，旨在挑战传统运动相机的市场地位。该产品结合了Meta的增强现实技术和Oakley在运动眼镜领域的专业设计，为运动员和运动爱好者提供更便捷的第一人称视角记录和增强现实体验。这一合作标志着智能可穿戴设备向垂直运动领域的深度渗透，可能重塑运动记录设备市场格局，并对GoPro等运动相机厂商构成直接竞争压力。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_1",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:06:49.092653"
+    }
+  },
+  {
+    "event_id": "event_20260203110650_04f886",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "1月3日电，美国专利及商标局官网显示，英伟达公开了一项AR眼镜专利（US20250004275A1），名为“无背光增强现实数字全息技术”。**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:06:50.116496",
+    "ai_analysis": {
+      "core_concept": "英伟达AR眼镜无背光全息技术专利",
+      "industry_keywords": [
+        "增强现实",
+        "全息技术",
+        "无背光显示",
+        "英伟达",
+        "专利技术",
+        "AR眼镜",
+        "数字全息",
+        "光学技术"
+      ],
+      "summary": "美国专利及商标局官网显示，英伟达于1月3日公开了一项名为'无背光增强现实数字全息技术'的AR眼镜专利（US20250004275A1）。该专利涉及无需传统背光源的全息显示技术，可能提升AR眼镜的显示效果和能效。作为AI计算领域的领导者，英伟达在AR/VR硬件技术上的布局，可能推动相关产业链的技术升级，并增强其在元宇宙和空间计算生态中的竞争力。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_2",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:06:50.116517"
+    }
+  },
+  {
+    "event_id": "event_20260203110659_05959e",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以及其他两款新品：Galaxy Ring 2 智能戒指和 AR 智能眼镜。**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:06:59.947722",
+    "ai_analysis": {
+      "core_concept": "三星发布AR眼镜等新品",
+      "industry_keywords": [
+        "AR智能眼镜",
+        "Galaxy S25",
+        "Galaxy Ring 2",
+        "三星电子",
+        "可穿戴设备",
+        "消费电子",
+        "增强现实",
+        "智能手机"
+      ],
+      "summary": "三星电子宣布将于2025年1月的Galaxy Unpacked活动上发布Galaxy S25智能手机系列，同时推出Galaxy Ring 2智能戒指和AR智能眼镜两款新品。这一发布计划表明三星正加速布局可穿戴设备和增强现实领域，通过产品组合扩展强化其在消费电子市场的竞争力。新品的推出可能刺激相关供应链需求，并对AR眼镜等新兴市场产生示范效应。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_3",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:06:59.947742"
+    }
+  },
+  {
+    "event_id": "event_20260203110701_dd40ce",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "24日讯，鸿海宣布，将携手Porotech进军AR眼镜市场。依双方合作内容，鸿海将加速在AR与MicroLED的战略布局，并计划在台中建立MicroLED晶圆制程产线，预计2025年第四季投入量产。",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:01.073261",
+    "ai_analysis": {
+      "core_concept": "鸿海与Porotech合作布局AR眼镜",
+      "industry_keywords": [
+        "AR眼镜",
+        "MicroLED",
+        "晶圆制程",
+        "鸿海",
+        "Porotech",
+        "量产计划",
+        "战略布局",
+        "台中产线"
+      ],
+      "summary": "鸿海宣布与Porotech合作进军AR眼镜市场，双方将加速在AR与MicroLED领域的战略布局。鸿海计划在台中建立MicroLED晶圆制程产线，预计2025年第四季度投入量产。这一合作将推动AR眼镜产业链的技术升级和产能扩张，对相关硬件制造和显示技术行业产生积极影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_5",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:01.073281"
+    }
+  },
+  {
+    "event_id": "event_20260203110701_6fd764",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "24日讯，Meta正与眼镜集团EssilorLuxottica合作，计划在其售价300美元的太阳镜中加入显示屏。知情人士透露，新版眼镜可能最早将在2025年下半年推出，显示屏可能用于展示通知或来自Meta虚拟助手的回复。",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:01.224106",
+    "ai_analysis": {
+      "core_concept": "Meta与EssilorLuxottica合作开发智能太阳镜",
+      "industry_keywords": [
+        "智能眼镜",
+        "增强现实",
+        "可穿戴设备",
+        "Meta",
+        "EssilorLuxottica",
+        "虚拟助手",
+        "人机交互",
+        "消费电子"
+      ],
+      "summary": "Meta正与眼镜集团EssilorLuxottica合作，计划在售价300美元的太阳镜中集成显示屏，预计最早2025年下半年推出。该显示屏将用于展示通知或Meta虚拟助手的回复，标志着智能眼镜向更轻便、日常化方向发展。此举可能推动可穿戴设备市场增长，增强Meta在AR/VR生态系统的布局，同时为EssilorLuxottica带来技术升级机会。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_4",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:01.224126"
+    }
+  },
+  {
+    "event_id": "event_20260203110711_faac31",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "在Android XR发布会上，谷歌与国内消费级AR眼镜厂商XREAL达成了战略合作。《科创板日报》记者获悉，XREAL的产业链伙伴包括立讯精密、龙旗科技等。上周，XREAL刚刚发布了全新一代产品XREAL One，首次搭载了XREAL自研的空间计算芯片——X1。**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:11.722147",
+    "ai_analysis": {
+      "core_concept": "谷歌与XREAL达成AR眼镜战略合作",
+      "industry_keywords": [
+        "AR眼镜",
+        "空间计算芯片",
+        "Android XR",
+        "消费级AR",
+        "产业链合作",
+        "战略合作",
+        "自研芯片",
+        "XR生态"
+      ],
+      "summary": "谷歌在Android XR发布会上宣布与国内消费级AR眼镜厂商XREAL达成战略合作。XREAL的产业链伙伴包括立讯精密、龙旗科技等知名企业。上周，XREAL刚刚发布了全新一代产品XREAL One，首次搭载了自研的空间计算芯片X1。此次合作将加强谷歌在XR生态的布局，同时提升XREAL在消费级AR市场的竞争力，可能推动AR眼镜技术普及和产业链发展。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_6",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:11.722162"
+    }
+  },
+  {
+    "event_id": "event_20260203110712_f82a88",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "消息面上，智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会。有行业媒体报道称，届时或将发布INMO Air3、INMO Go2两款AR眼镜。根据贝哲斯智能眼镜市场研究报告显示，预计到2029年，智能眼镜市场规模将达到1067.78亿元，期间年复合增速高达18.56%。**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:12.541961",
+    "ai_analysis": {
+      "core_concept": "AR眼镜新品发布与市场增长",
+      "industry_keywords": [
+        "AR眼镜",
+        "智能眼镜",
+        "INMO影目科技",
+        "新品发布会",
+        "市场预测",
+        "可穿戴设备",
+        "增强现实",
+        "消费电子"
+      ],
+      "summary": "智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会，预计发布INMO Air3和INMO Go2两款AR眼镜。根据贝哲斯市场研究报告，预计到2029年智能眼镜市场规模将达到1067.78亿元，期间年复合增速高达18.56%。这表明AR眼镜行业正迎来快速发展期，企业新品发布与市场增长预期形成积极互动。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_8",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:12.541981"
+    }
+  },
+  {
+    "event_id": "event_20260203110713_993a76",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "10日讯，三星内部正积极推进名为Infinite的扩展现实（XR）项目，计划在明年1月召开的Galaxy Unpacked发布会上公开展示，并会在2025年第三季度正式发售。三星电子已制定了XR设备的生产计划，预计在明年第三季度和第四季度分别出货2万至3万台以上。**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:13.463472",
+    "ai_analysis": {
+      "core_concept": "三星XR设备量产计划",
+      "industry_keywords": [
+        "扩展现实",
+        "XR设备",
+        "三星电子",
+        "Galaxy Unpacked",
+        "量产计划",
+        "AR眼镜",
+        "VR设备",
+        "消费电子"
+      ],
+      "summary": "三星电子正在积极推进名为Infinite的扩展现实（XR）项目，计划在2025年1月的Galaxy Unpacked发布会上首次展示，并于2025年第三季度正式发售。公司已制定详细的生产计划，预计在2025年第三季度和第四季度分别出货2万至3万台以上。这表明三星正式进入XR硬件市场，将加剧与苹果Vision Pro、Meta Quest等产品的竞争，推动XR技术普及和产业链发展。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_7",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:13.463491"
+    }
+  },
+  {
+    "event_id": "event_20260203110722_2bf943",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "云天励飞战略投资闪极科技 后者将推国内首款量产AI拍摄眼镜**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:22.987195",
+    "ai_analysis": {
+      "core_concept": "AI眼镜战略投资与量产突破",
+      "industry_keywords": [
+        "AI眼镜",
+        "AR/VR",
+        "智能穿戴",
+        "计算机视觉",
+        "人工智能硬件",
+        "消费电子",
+        "战略投资",
+        "量产突破"
+      ],
+      "summary": "云天励飞对闪极科技进行战略投资，支持其推出国内首款量产AI拍摄眼镜。这一事件标志着AI硬件在消费级市场的实质性进展，将推动智能穿戴设备的技术创新和商业化进程。投资不仅为闪极科技提供了资金支持，还可能带来技术协同效应，加速产品迭代和市场渗透。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_9",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:22.987218"
+    }
+  },
+  {
+    "event_id": "event_20260203110723_1ef0cc",
+    "event_type": "normal",
+    "title": "SpaceX相关新闻",
+    "content": "据报道，白宫考虑将部分联邦野生动物保护用地划拨给SpaceX用于扩建火箭发射与生产基地。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:23.334247",
+    "ai_analysis": {
+      "core_concept": "SpaceX获联邦土地扩建发射基地",
+      "industry_keywords": [
+        "航天航空",
+        "商业航天",
+        "土地政策",
+        "基础设施",
+        "环境保护"
+      ],
+      "summary": "据财联社报道，白宫正考虑将部分联邦野生动物保护用地划拨给SpaceX，用于扩建其火箭发射与生产基地。这一举措若实施，将显著提升SpaceX的发射能力与生产规模，可能加速美国商业航天发展，但同时也涉及环境保护与土地利用的政策平衡问题。事件反映了政府对航天产业的支持态度，可能引发相关环保组织的关注。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_10",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:23.334267"
+    }
+  },
+  {
+    "event_id": "event_20260203110724_81b438",
+    "event_type": "major",
+    "title": "SpaceX相关新闻",
+    "content": "据美国《空天部队》杂志网站12月19日报道，美国太空军下属的太空发展局当天宣布，向4家公司授予价值35亿美元的合同，用于采购总共72颗导弹预警和跟踪卫星——这是迄今为止美军低地球轨道星座的最大一笔交易。（新闻来源：澎湃新闻）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:24.317039",
+    "ai_analysis": {
+      "core_concept": "美军采购72颗导弹预警卫星",
+      "industry_keywords": [
+        "太空军事",
+        "卫星制造",
+        "导弹预警",
+        "低地球轨道",
+        "国防合同",
+        "SpaceX"
+      ],
+      "summary": "美国太空发展局于12月19日宣布，向4家公司授予价值35亿美元的合同，用于采购72颗导弹预警和跟踪卫星。这是美军低地球轨道星座迄今为止最大的一笔交易，标志着太空军事化进程加速，将增强美国的导弹防御能力。该合同涉及多家私营航天公司，包括SpaceX等，预计将推动相关产业链发展，并可能引发国际太空军备竞赛的关注。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_11",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:24.317094"
+    }
+  },
+  {
+    "event_id": "event_20260203110733_8b3829",
+    "event_type": "major",
+    "title": "SpaceX相关新闻",
+    "content": "SpaceX已正式向员工通报，公司正在为明年可能进行的首次公开募股(IPO)做准备，这一表态证实了近期的市场传闻。知情人士透露，约翰森在备忘录中披露了最新的内部股票定价为每股421美元，这意味着SpaceX的整体估值约为8000亿美元，显著高于今年早些时候约4000亿美元的估值水平。（新闻来源：财联社）**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:33.943536",
+    "ai_analysis": {
+      "core_concept": "SpaceX估值翻倍并筹备IPO",
+      "industry_keywords": [
+        "SpaceX",
+        "IPO",
+        "估值",
+        "航空航天",
+        "科技金融",
+        "股票定价"
+      ],
+      "summary": "SpaceX已正式向员工通报正在为明年可能进行的IPO做准备，证实了近期市场传闻。根据内部备忘录披露的最新股票定价为每股421美元，公司整体估值达到约8000亿美元，较今年早些时候约4000亿美元的估值水平实现翻倍增长。这一消息表明SpaceX正加速推进上市进程，可能成为全球最具价值的航空航天企业之一，对科技投资市场和商业航天行业将产生重要影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_12",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:33.943556"
+    }
+  },
+  {
+    "event_id": "event_20260203110735_87ebed",
+    "event_type": "normal",
+    "title": "SpaceX相关新闻",
+    "content": "针对商业航天龙头SpaceX“冲击8000亿美元估值，并瞄准明年IPO”的最新传闻，世界首富马斯克在北京时间周日凌晨公开回应。他在社交媒体上发帖称，SpaceX以8000亿美元估值融资的消息“并不准确”（not accurate）。他也接着表示，SpaceX已经是一家多年现金流为正的公司，每年会进行两次股票回购，为员工和投资者提供流动性。估值的提升取决于星舰（Starship）和星链（Starlink）的推进进展，以及获得全球直连手机网络的频谱，这将大幅扩大公司可服务市场的规模。（新闻来源：科创板日报）**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:35.127573",
+    "ai_analysis": {
+      "core_concept": "SpaceX估值传闻澄清与业务进展",
+      "industry_keywords": [
+        "商业航天",
+        "SpaceX",
+        "星舰",
+        "星链",
+        "IPO传闻",
+        "现金流",
+        "股票回购",
+        "频谱资源"
+      ],
+      "summary": "针对SpaceX估值达8000亿美元并计划明年IPO的市场传闻，马斯克公开回应称该消息不准确。他澄清SpaceX已是多年现金流为正的公司，每年进行两次股票回购为员工和投资者提供流动性。公司未来估值提升将取决于星舰和星链项目的推进进展，以及获得全球直连手机网络频谱的能力，这将显著扩大公司可服务市场规模。",
+      "sentiment": "neutral",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_14",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:35.127594"
+    }
+  },
+  {
+    "event_id": "event_20260203110735_8d9e96",
+    "event_type": "major",
+    "title": "SpaceX相关新闻",
+    "content": "北京时间12月11日，SpaceX的创始人马斯克在X上确认了“SpaceX计划明年通过首次公开募股（IPO）筹集数百亿美元资金”的消息。（新闻来源：第一财经）**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:35.159393",
+    "ai_analysis": {
+      "core_concept": "SpaceX计划明年IPO融资数百亿美元",
+      "industry_keywords": [
+        "SpaceX",
+        "IPO",
+        "航空航天",
+        "融资",
+        "马斯克",
+        "商业航天",
+        "资本市场",
+        "科技公司"
+      ],
+      "summary": "北京时间12月11日，SpaceX创始人马斯克在社交媒体平台X上确认，公司计划于明年通过首次公开募股（IPO）筹集数百亿美元资金。这一消息由第一财经报道，标志着全球领先的商业航天企业可能即将进入公开市场。若成功实施，这将是近年来规模最大的科技公司IPO之一，可能对航空航天行业、资本市场以及相关产业链产生深远影响，为SpaceX的星链、星舰等重大项目提供资金支持，并可能改变商业航天领域的竞争格局。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_13",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:35.159414"
+    }
+  },
+  {
+    "event_id": "event_20260203110744_520fd1",
+    "event_type": "normal",
+    "title": "可控核聚变相关新闻",
+    "content": "中国科学院合肥物质科学研究院等离子体物理研究所科研团队宣布，有“人造太阳”之称的全超导托卡马克核聚变实验装置（EAST）实验证实托卡马克密度自由区的存在，找到突破密度极限的方法，为磁约束核聚变装置高密度运行提供了重要的物理依据。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:44.695433",
+    "ai_analysis": {
+      "core_concept": "核聚变密度极限突破",
+      "industry_keywords": [
+        "可控核聚变",
+        "托卡马克",
+        "EAST装置",
+        "磁约束",
+        "能源技术",
+        "科研突破",
+        "高密度运行",
+        "物理依据"
+      ],
+      "summary": "中国科学院合肥物质科学研究院等离子体物理研究所宣布，全超导托卡马克核聚变实验装置（EAST）实验证实了托卡马克密度自由区的存在，并找到了突破密度极限的方法。这一发现为磁约束核聚变装置实现高密度运行提供了关键物理依据，是可控核聚变研究领域的重要进展，有望推动未来清洁能源技术的发展。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_15",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:44.695453"
+    }
+  },
+  {
+    "event_id": "event_20260203110745_e24c38",
+    "event_type": "normal",
+    "title": "可控核聚变相关新闻",
+    "content": "可控核聚变创新联合体第二届锦江论坛于12月30日举办（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:45.092808",
+    "ai_analysis": {
+      "core_concept": "可控核聚变技术论坛举办",
+      "industry_keywords": [
+        "可控核聚变",
+        "清洁能源",
+        "技术创新",
+        "能源转型",
+        "科研合作"
+      ],
+      "summary": "可控核聚变创新联合体于12月30日举办第二届锦江论坛。该论坛作为行业重要交流平台，汇聚了相关领域的专家学者和企业代表，旨在推动可控核聚变技术的研发合作与创新突破。这一活动反映了全球对清洁能源技术的持续关注，有望促进相关产业链的技术进步和商业化探索，对能源行业的长期发展具有积极意义。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_16",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:45.092828"
+    }
+  },
+  {
+    "event_id": "event_20260203110746_c5cf8e",
+    "event_type": "normal",
+    "title": "可控核聚变相关新闻",
+    "content": "中信建投研报称，当前可控核聚变行业聚焦技术工程化与商业可行性突破，建设大科学装置及实验堆催生大额订单，高价值量投资机会集中于中上游环节（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:46.160394",
+    "ai_analysis": {
+      "core_concept": "可控核聚变技术工程化与商业突破",
+      "industry_keywords": [
+        "可控核聚变",
+        "大科学装置",
+        "实验堆",
+        "中上游环节",
+        "高价值量投资",
+        "技术工程化",
+        "商业可行性",
+        "中信建投"
+      ],
+      "summary": "中信建投研报指出，当前可控核聚变行业正聚焦于技术工程化与商业可行性突破阶段。行业通过建设大科学装置及实验堆催生了大额订单，投资机会主要集中在产业链中上游环节，这些环节具有较高的价值量。这表明可控核聚变正从科研探索向产业化初期过渡，为相关领域带来潜在增长动力。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_17",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:46.160413"
+    }
+  },
+  {
+    "event_id": "event_20260203110754_fc4062",
+    "event_type": "major",
+    "title": "可控核聚变相关新闻",
+    "content": "国际能源署预测，到 2030年，全球核聚变市场规模有望接近5000亿美元(3.5万亿元人民币)。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:54.994577",
+    "ai_analysis": {
+      "core_concept": "核聚变市场规模预测",
+      "industry_keywords": [
+        "可控核聚变",
+        "清洁能源",
+        "国际能源署",
+        "市场规模",
+        "能源转型"
+      ],
+      "summary": "国际能源署发布预测报告，预计到2030年全球核聚变市场规模将接近5000亿美元（约3.5万亿元人民币）。这一预测表明核聚变技术商业化进程正在加速，可能成为未来能源结构的重要组成部分。该预测将推动相关技术研发投资，并对传统能源行业产生深远影响，标志着清洁能源领域的重要发展趋势。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_19",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:54.994598"
+    }
+  },
+  {
+    "event_id": "event_20260203110757_9d3f97",
+    "event_type": "normal",
+    "title": "可控核聚变相关新闻",
+    "content": "特朗普旗下的媒体企业——特朗普媒体与科技集团，同意以全股票交易方式与核聚变能源企业TAE科技公司合并，交易总价值超60亿美元。此项交易旨在整合特朗普媒体与科技集团的资本渠道，以及TAE科技的核聚变技术，从而为人工智能产业的蓬勃发展提供能源支持。特朗普媒体科技集团股价上涨41.93%。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:57.085870",
+    "ai_analysis": {
+      "core_concept": "媒体与核聚变企业合并",
+      "industry_keywords": [
+        "可控核聚变",
+        "人工智能",
+        "能源支持",
+        "全股票交易",
+        "特朗普媒体",
+        "TAE科技",
+        "资本整合",
+        "技术整合"
+      ],
+      "summary": "特朗普媒体与科技集团与核聚变能源企业TAE科技公司达成全股票交易合并，交易总价值超过60亿美元。此举旨在整合特朗普媒体的资本渠道与TAE科技的核聚变技术，为人工智能产业提供能源支持。交易公布后，特朗普媒体科技集团股价大幅上涨41.93%。该合并可能推动核聚变技术在AI能源领域的应用探索，并引发市场对跨界技术整合的关注。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_18",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:57.085888"
+    }
+  },
+  {
+    "event_id": "event_20260203110757_2dad4d",
+    "event_type": "major",
+    "title": "可控核聚变相关新闻",
+    "content": "中金公司研报表示，十五五规划将可控核聚变明确纳入国家未来产业体系，标志着其从前沿科学探索正式升级为战略性科技攻关方向。其作为清洁基荷能源，不仅能支撑高耗能产业降碳升级，还可衍生多领域应用，当前产业链上中下游协同突破，核心材料、关键设备与集成设计环节技术成熟度持续提升，为商业化奠定基础（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:57.802277",
+    "ai_analysis": {
+      "core_concept": "可控核聚变纳入国家战略产业",
+      "industry_keywords": [
+        "可控核聚变",
+        "清洁能源",
+        "十五五规划",
+        "产业链",
+        "商业化",
+        "技术成熟度",
+        "基荷能源",
+        "降碳升级"
+      ],
+      "summary": "中金公司研报指出，十五五规划将可控核聚变明确纳入国家未来产业体系，标志着该技术从前沿科学探索升级为战略性科技攻关方向。作为清洁基荷能源，可控核聚变不仅能支撑高耗能产业降碳升级，还可衍生多领域应用。当前产业链上中下游协同突破，核心材料、关键设备与集成设计环节技术成熟度持续提升，为商业化奠定基础。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_20",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:57.802297"
+    }
+  },
+  {
+    "event_id": "event_20260203110805_7e9461",
+    "event_type": "normal",
+    "title": "可控核聚变相关新闻",
+    "content": "《中国国家原子能机构和法国原子能和替代能源委员会第十五个和平利用核能合作议定书》中提及将加强核基础研究、核技术应用、核聚变技术等合作。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:05.789762",
+    "ai_analysis": {
+      "core_concept": "中法加强核聚变技术合作",
+      "industry_keywords": [
+        "可控核聚变",
+        "核能合作",
+        "清洁能源",
+        "核技术应用",
+        "基础研究"
+      ],
+      "summary": "中国国家原子能机构与法国原子能和替代能源委员会签署第十五个和平利用核能合作议定书，明确将加强在核基础研究、核技术应用及核聚变技术等领域的合作。该协议标志着两国在核能前沿技术领域的战略合作进一步深化，特别是核聚变技术作为未来清洁能源的重要方向，合作有望加速相关技术研发进程，对全球能源转型产生积极影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_21",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:05.789782"
+    }
+  },
+  {
+    "event_id": "event_20260203110809_cbd9f0",
+    "event_type": "normal",
+    "title": "可控核聚变相关新闻",
+    "content": "核聚变科技成果转化展览展示与对接活动在京举行，17家公司集中参加路演，推介核聚变装置及部件等的研究成果。参与公司包括星能玄光、瀚海智能、合肥星核聚变能源、岩超聚能等，展示了基于三重约束的先进场反聚变堆、直线型场反位形（FRC）可控核聚变装置项目等技术进展。当天到场的投资机构达60—70家，中金、顺为、尚德以及安徽、河南地方产业投资机构悉数到场。 (新闻来源：界面新闻)",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:09.374588",
+    "ai_analysis": {
+      "core_concept": "核聚变科技成果转化对接",
+      "industry_keywords": [
+        "可控核聚变",
+        "科技成果转化",
+        "投资机构",
+        "场反聚变堆",
+        "FRC装置",
+        "清洁能源",
+        "路演活动",
+        "产业投资"
+      ],
+      "summary": "核聚变科技成果转化展览展示与对接活动在北京举行，17家公司集中参加路演，推介核聚变装置及部件等研究成果，包括星能玄光、瀚海智能等企业展示了基于三重约束的先进场反聚变堆、直线型场反位形可控核聚变装置项目等技术进展。当天有60-70家投资机构到场，包括中金、顺为、尚德以及安徽、河南地方产业投资机构。该活动促进了核聚变技术从实验室向产业化的转化，吸引了资本市场关注，对清洁能源领域发展具有积极推动作用。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_22",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:09.374610"
+    }
+  },
+  {
+    "event_id": "event_20260203110809_bf7056",
+    "event_type": "major",
+    "title": "可控核聚变相关新闻",
+    "content": "开展燃烧等离子体物理研究、实现产出能量大于消耗能量、演示聚变能发电……11月24日上午，在位于安徽合肥未来大科学城的紧凑型聚变能实验装置（BEST）主机大厅，中国科学院“燃烧等离子体”国际科学计划正式启动并面向国际聚变界首次发布BEST研究计划，聚力点燃“人造太阳”。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:09.514482",
+    "ai_analysis": {
+      "core_concept": "紧凑型聚变能实验装置启动",
+      "industry_keywords": [
+        "可控核聚变",
+        "燃烧等离子体",
+        "聚变能发电",
+        "人造太阳",
+        "清洁能源",
+        "中国科学院",
+        "BEST装置",
+        "能源技术"
+      ],
+      "summary": "11月24日，中国科学院在安徽合肥未来大科学城正式启动“燃烧等离子体”国际科学计划，并首次面向国际发布紧凑型聚变能实验装置（BEST）研究计划。该计划聚焦燃烧等离子体物理研究、实现能量产出大于消耗、演示聚变能发电等关键技术目标，标志着我国在可控核聚变领域迈出重要一步，有望推动清洁能源技术发展，对全球能源转型具有潜在深远影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_23",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:09.514503"
+    }
+  },
+  {
+    "event_id": "event_20260203110818_fa28ae",
+    "event_type": "normal",
+    "title": "可控核聚变相关新闻",
+    "content": "《科创板日报》17日讯，近日，聚变新能（安徽）有限公司采购项目发布，总金额超20亿元。根据业务需要，本次采购涉及BEST离子回旋波源系统、低温系统关键部件、BEST屏蔽包层系统不锈钢屏蔽块、BEST屏蔽包层系统高硼钢屏蔽块等。小K注：BEST是全超导托卡马克核聚变实验装置（EAST）的后续项目，由中国科学院等离子体物理研究所主导设计，聚变新能负责运营。（新闻来源：科创板日报）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:18.180003",
+    "ai_analysis": {
+      "core_concept": "可控核聚变设备采购",
+      "industry_keywords": [
+        "可控核聚变",
+        "聚变新能",
+        "BEST项目",
+        "EAST装置",
+        "超导托卡马克",
+        "核聚变实验",
+        "中国科学院",
+        "等离子体物理"
+      ],
+      "summary": "聚变新能（安徽）有限公司近日发布总金额超20亿元的采购项目，涉及BEST离子回旋波源系统、低温系统关键部件、屏蔽包层系统等设备。BEST项目是中国科学院等离子体物理研究所主导设计的全超导托卡马克核聚变实验装置（EAST）的后续项目，由聚变新能负责运营。此次大规模采购表明我国在可控核聚变技术研发方面持续推进，为相关产业链带来实质性订单。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_24",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:18.180023"
+    }
+  },
+  {
+    "event_id": "event_20260203110819_a986a5",
+    "event_type": "major",
+    "title": "对日制裁相关新闻",
+    "content": "据多家日媒爆料，日本首相高市早苗极有可能在12月26日这一天参拜靖国神社。这引发了周边国家及国际社会的高度警惕。因为这不仅是彻底与历史正义为敌，也无疑会将日本带入充满风险对抗的危险境地，破坏东亚地区来之不易的互信基础，加剧地区安全焦虑。（新闻来源：国际在线新闻）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:19.920817",
+    "ai_analysis": {
+      "core_concept": "日本首相参拜靖国神社引发地区紧张",
+      "industry_keywords": [
+        "地缘政治",
+        "国际关系",
+        "东亚安全",
+        "历史问题",
+        "外交风险"
+      ],
+      "summary": "据日媒报道，日本首相高市早苗可能在12月26日参拜靖国神社，此举引发周边国家和国际社会高度警惕。分析认为，参拜行为被视为与历史正义对立，可能将日本推向风险对抗的境地，破坏东亚地区长期建立的互信基础，加剧区域安全焦虑。这一事件可能影响日本与邻国的外交关系，并对地区稳定构成潜在威胁。",
+      "sentiment": "negative",
+      "concept_confidence": 0.85,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_26",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:19.920838"
+    }
+  },
+  {
+    "event_id": "event_20260203110821_10bc3c",
+    "event_type": "major",
+    "title": "对日制裁相关新闻",
+    "content": "商务部公告，根据《中华人民共和国出口管制法》等法律法规有关规定，为维护国家安全和利益、履行防扩散等国际义务，决定加强两用物项对日本出口管制。现将有关事项公告如下：禁止所有两用物项对日本军事用户、军事用途，以及一切有助于提升日本军事实力的其他最终用户用途出口。任何国家和地区的组织和个人，违反上述规定，将原产于中华人民共和国的相关两用物项转移或提供给日本的组织和个人，将依法追究法律责任。本公告自公布之日起正式实施。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:21.209009",
+    "ai_analysis": {
+      "core_concept": "对日两用物项出口管制",
+      "industry_keywords": [
+        "出口管制",
+        "两用物项",
+        "军事用途",
+        "国家安全",
+        "防扩散",
+        "中日贸易",
+        "技术转移",
+        "国际义务"
+      ],
+      "summary": "中国商务部发布公告，依据《中华人民共和国出口管制法》等法律法规，决定加强对日本的两用物项出口管制。新规禁止所有两用物项对日本军事用户、军事用途及任何有助于提升日本军事实力的最终用户用途出口。违反规定向日本转移或提供相关物项的组织和个人将承担法律责任。此举旨在维护国家安全和利益，履行防扩散等国际义务，自公布之日起实施。该措施可能影响中日间特定技术和高科技产品的贸易往来，并引发国际关注。",
+      "sentiment": "neutral",
+      "concept_confidence": 0.92,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_25",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:21.209029"
+    }
+  },
+  {
+    "event_id": "event_20260203110828_c10ff8",
+    "event_type": "major",
+    "title": "对日制裁相关新闻",
+    "content": "日本政坛正在上演一场危险的赌局。首相高市早苗被曝计划在12月26日参拜靖国神社，这将是其两个月内第二次触碰中国红线。从\"台湾有事即日本有事\"的狂妄言论到如今准备在敏感时间节点拜鬼，这位右翼政客正将中日关系推向决裂边缘。（新闻来源：路透社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:28.090269",
+    "ai_analysis": {
+      "core_concept": "中日关系紧张升级",
+      "industry_keywords": [
+        "地缘政治",
+        "外交关系",
+        "国际关系",
+        "政治风险",
+        "区域安全"
+      ],
+      "summary": "日本首相高市早苗计划于12月26日参拜靖国神社，这将是其两个月内第二次参拜。此前她曾发表\"台湾有事即日本有事\"的言论。这些行为被中国视为触碰红线，可能导致中日关系进一步恶化，增加区域政治紧张局势。路透社报道称，这一系列右翼政治举动正将两国关系推向决裂边缘。",
+      "sentiment": "negative",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_27",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:28.090289"
+    }
+  },
+  {
+    "event_id": "event_20260203110831_9cb48c",
+    "event_type": "normal",
+    "title": "对日制裁相关新闻",
+    "content": "据外交部官网，日本自卫队前统合幕僚长岩崎茂公然同“台独”分裂势力勾连，严重违背一个中国原则和中日四个政治文件精神，严重干涉中国内政，严重损害中国主权和领土完整。依据《中华人民共和国反外国制裁法》第三条、第四条、第五条、第六条、第九条、第十五条规定，中方决定对岩崎茂采取反制措施（新闻来源：外交部官网）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:31.035254",
+    "ai_analysis": {
+      "core_concept": "中方对日方人员实施反制措施",
+      "industry_keywords": [
+        "外交关系",
+        "地缘政治",
+        "主权争议",
+        "国际制裁",
+        "中日关系"
+      ],
+      "summary": "根据中国外交部官网消息，日本自卫队前统合幕僚长岩崎茂因公然与“台独”分裂势力勾连，严重违反一个中国原则和中日四个政治文件精神，干涉中国内政，损害中国主权和领土完整。中方依据《中华人民共和国反外国制裁法》相关规定，决定对岩崎茂采取反制措施。这一事件可能加剧中日之间的外交紧张局势，影响双边经贸合作与区域稳定。",
+      "sentiment": "negative",
+      "concept_confidence": 0.92,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_28",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:31.035274"
+    }
+  },
+  {
+    "event_id": "event_20260203110833_a0d4a9",
+    "event_type": "normal",
+    "title": "对日制裁相关新闻",
+    "content": "据新华社，外交部发言人林剑12月1日表示，日本在口头上搪塞敷行，在行动上一意孤行，中方对此绝不接受。“在大是大非问题上，日本不要妄想蒙混过关。我们敦促日方以史为鉴，深刻反省，严对待中方要求，老老实实收回错误言论，以实际行动体现对中方的政治承诺。（新闻来源：新华社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:33.009781",
+    "ai_analysis": {
+      "core_concept": "中日外交关系紧张升级",
+      "industry_keywords": [
+        "外交关系",
+        "政治风险",
+        "国际贸易",
+        "地缘政治",
+        "双边关系"
+      ],
+      "summary": "12月1日，中国外交部发言人林剑就日本在相关问题上的言行表示强烈不满，指出日本在口头上搪塞敷衍，在行动上一意孤行，中方对此绝不接受。中方敦促日方以史为鉴，深刻反省，严肃对待中方要求，收回错误言论，以实际行动体现对中方的政治承诺。这一表态反映了中日双边关系的紧张态势，可能对两国间的经贸合作、外交互动及区域稳定产生负面影响，增加了相关行业面临的政治风险。",
+      "sentiment": "negative",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_29",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:33.009795"
+    }
+  },
+  {
+    "event_id": "event_20260203110839_631063",
+    "event_type": "major",
+    "title": "对日制裁相关新闻",
+    "content": "据媒体披露，中方已做好对日实质反制准备。针对高市早苗的露骨挑衅言论，我们的忍耐，是有限度的。仅在11月14日以来：14日凌晨2点56分，外交部官网发布消息，外交部副部长孙卫东奉示召见日本驻华大使金杉宪治。下午，外交部发言人三问日方近期军事安全动向。同一时间，国防部发言人正告日方，若胆敢铤而走险必将碰得头破血流。晚上，中国驻日本大使馆发布消息，中国驻日本大使吴江浩奉示约见日本外务事务次官船越健裕。15日一早，“钧声”署名文章《日本胆敢武力介入台海局势必遭迎头痛击》发布。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:39.892771",
+    "ai_analysis": {
+      "core_concept": "中日外交军事紧张升级",
+      "industry_keywords": [
+        "外交关系",
+        "军事安全",
+        "地缘政治",
+        "台海局势",
+        "国防"
+      ],
+      "summary": "针对日本高市早苗的挑衅言论，中方近期采取系列反制措施：11月14日，外交部副部长孙卫东召见日本驻华大使，外交部三问日方军事动向，国防部警告日方若铤而走险将遭反击，中国驻日大使约见日本外务次官；15日，官方媒体发表文章警告日本武力介入台海必遭迎头痛击。事件显示中日外交军事紧张显著升级，可能影响区域稳定与双边经贸关系。",
+      "sentiment": "negative",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_30",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:39.892792"
+    }
+  },
+  {
+    "event_id": "event_20260203110841_3b95f1",
+    "event_type": "normal",
+    "title": "稀土永磁相关新闻",
+    "content": "据中国日报，可靠消息人士称，鉴于日本近期恶劣表现，中国政府正考虑针对性收紧2025年4月4日列管的中重稀土相关物项出口许可审查（新闻来源：中国日报）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:41.834518",
+    "ai_analysis": {
+      "core_concept": "中国考虑收紧稀土出口审查",
+      "industry_keywords": [
+        "稀土永磁",
+        "中重稀土",
+        "出口许可",
+        "日本",
+        "供应链"
+      ],
+      "summary": "据中国日报报道，可靠消息人士透露，鉴于日本近期表现，中国政府正考虑针对性收紧2025年4月4日列管的中重稀土相关物项出口许可审查。这一政策动向可能影响稀土供应链，特别是对依赖中国稀土进口的日本相关产业。此举反映了地缘政治因素对关键矿产资源贸易的影响，可能引发国际市场对稀土供应稳定性的关注。",
+      "sentiment": "negative",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_31",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:41.834534"
+    }
+  },
+  {
+    "event_id": "event_20260203110844_57aefe",
+    "event_type": "normal",
+    "title": "稀土永磁相关新闻",
+    "content": "在今天（18日）下午召开的商务部例行新闻发布会上，新闻发言人何亚东针对稀土相关物项出口管制的最新进展进行回应。商务部新闻发言人何亚东表示，对稀土相关物项实施出口管制以来，中方主管部门向中国出口商进行了政策宣介，随着相关出口和合规经验的积累，部分中国出口商已初步达到申请通用许可的基本要求。据我所知，目前已收到并批准了部分中国出口商提交的通用许可申请。（新闻来源：央视新闻）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:44.497006",
+    "ai_analysis": {
+      "core_concept": "稀土出口管制政策实施进展",
+      "industry_keywords": [
+        "稀土永磁",
+        "出口管制",
+        "通用许可",
+        "商务部",
+        "合规管理",
+        "出口商",
+        "政策宣介",
+        "供应链"
+      ],
+      "summary": "商务部新闻发言人何亚东在例行发布会上回应了稀土相关物项出口管制的最新进展。自实施出口管制以来，中方主管部门已向出口商进行政策宣介，随着出口和合规经验的积累，部分中国出口商已达到申请通用许可的基本要求。目前，商务部已收到并批准了部分出口商提交的通用许可申请。这表明稀土出口管制政策正在有序推进，有助于规范出口秩序，同时为符合条件的出口商提供了合规出口渠道。",
+      "sentiment": "neutral",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_32",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:44.497029"
+    }
+  },
+  {
+    "event_id": "event_20260203110851_234ac9",
+    "event_type": "normal",
+    "title": "稀土永磁相关新闻",
+    "content": "记者从知情人士处获悉，金力永磁、中科三环、宁波韵升已获得通用出口许可证。据报道，商务部新闻发言人何亚东4日表示，中国政府依法依规开展稀土相关物项出口管制工作。只要是用于民用用途的、合规的出口申请，中国政府都及时予以了批准。同时，中国政府积极适用通用许可等便利化措施，促进两用物项合规贸易，切实维护全球产供链安全稳定。有业内人士表示，通用许可证的应用将简化稀土永磁企业出口流程，加快交付速度，利于稀土永磁行业下游需求恢复。 (新闻来源：上证报)",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:51.459707",
+    "ai_analysis": {
+      "core_concept": "稀土永磁出口管制优化",
+      "industry_keywords": [
+        "稀土永磁",
+        "出口许可证",
+        "通用许可",
+        "金力永磁",
+        "中科三环",
+        "宁波韵升",
+        "出口管制",
+        "供应链"
+      ],
+      "summary": "根据上证报报道，金力永磁、中科三环、宁波韵升等企业已获得通用出口许可证。商务部发言人何亚东表示，中国政府依法开展稀土相关物项出口管制，对民用合规出口申请及时批准，并积极适用通用许可等便利化措施，促进两用物项合规贸易，维护全球产供链安全稳定。业内人士认为，通用许可证将简化企业出口流程，加快交付速度，有利于稀土永磁行业下游需求恢复。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_33",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:51.459727"
+    }
+  },
+  {
+    "event_id": "event_20260203110853_9a0767",
+    "event_type": "major",
+    "title": "稀土永磁相关新闻",
+    "content": "内蒙古自治区党委关于制定国民经济和社会发展第十五个五年规划的建议发布。其中指出，加强战略性矿产资源开发利用。坚持保护性开发、高质化利用、规范化管理，加强稀土新技术、新工艺、新产品、新材料和新装备的研发应用，加快轻稀土产业延链补链强链，加大中重稀土开发利用力度，建设面向全国的稀土新材料科创中心和稀土产品交易中心，建成全国最大的稀土新材料基地和全球领先的稀土应用基地。做大做强稀土永磁电机产业，实施稀土永磁电机替代工程。深入实施新一轮找矿突破战略行动，创新矿产资源勘探体制机制，加强重点地区重要矿产资源增储勘查，完善探产供储销统筹和衔接体系。提高大中型矿山比例，培育采选冶加一体化矿业集团和产业集群（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:53.098922",
+    "ai_analysis": {
+      "core_concept": "内蒙古加强稀土资源开发与产业升级",
+      "industry_keywords": [
+        "稀土永磁",
+        "稀土新材料",
+        "矿产资源",
+        "电机产业",
+        "战略矿产"
+      ],
+      "summary": "内蒙古发布'十四五'规划建议，强调加强战略性矿产资源开发利用，重点推进稀土产业高质量发展。规划提出加强稀土新技术研发应用，加快轻稀土产业延链补链强链，加大中重稀土开发力度，建设全国稀土新材料科创中心和交易中心，打造全国最大稀土新材料基地和全球领先应用基地。同时推动稀土永磁电机产业发展，实施替代工程，并加强矿产资源勘探增储，培育一体化矿业集团。",
+      "sentiment": "positive",
+      "concept_confidence": 0.92,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_34",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:53.098942"
+    }
+  },
+  {
+    "event_id": "event_20260203110855_d4335a",
+    "event_type": "normal",
+    "title": "稀土永磁相关新闻",
+    "content": "据央视新闻报道，当地时间10月30日中午，国家主席在韩国釜山同美国总统特朗普举行会晤。历时约1小时40分钟，中美元首会晤结束，美国总统唐纳德·特朗普表示，他已与中国就稀土和关键矿物达成一项为期一年的协议，并将对北京方面生产的芬太尼产品征收的关税减半（新闻来源：央视新闻）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:08:55.862986",
+    "ai_analysis": {
+      "core_concept": "中美稀土协议与关税调整",
+      "industry_keywords": [
+        "稀土",
+        "关键矿物",
+        "芬太尼",
+        "关税",
+        "中美贸易",
+        "永磁材料",
+        "供应链",
+        "国际贸易"
+      ],
+      "summary": "据央视新闻报道，当地时间10月30日，中国国家主席在韩国釜山与美国总统特朗普举行会晤，历时约1小时40分钟。特朗普表示，中美已就稀土和关键矿物达成一项为期一年的协议，并将对中国生产的芬太尼产品征收的关税减半。这一协议可能缓解稀土供应链的紧张局势，对相关产业产生积极影响，同时关税调整可能促进芬太尼相关贸易。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_35",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:08:55.863006"
+    }
+  },
+  {
+    "event_id": "event_20260203110902_709132",
+    "event_type": "normal",
+    "title": "稀土永磁相关新闻",
+    "content": "美股稀土股盘前普涨，Critical Metals大涨38%，USA Rare Earth涨超11%，MP Materials涨超7%。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:02.937058",
+    "ai_analysis": {
+      "core_concept": "美股稀土股盘前普涨",
+      "industry_keywords": [
+        "稀土永磁",
+        "美股",
+        "Critical Metals",
+        "USA Rare Earth",
+        "MP Materials",
+        "盘前交易",
+        "资源股",
+        "新能源材料"
+      ],
+      "summary": "根据财联社报道，美股稀土相关股票在盘前交易中普遍上涨，其中Critical Metals股价大幅上涨38%，USA Rare Earth涨幅超过11%，MP Materials涨幅超过7%。这一市场动态反映了投资者对稀土永磁材料板块的关注度提升，可能与新能源、电动汽车等下游需求预期增强或行业政策变化有关，短期内对稀土产业链相关公司形成积极影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_36",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:02.937079"
+    }
+  },
+  {
+    "event_id": "event_20260203110904_02419b",
+    "event_type": "normal",
+    "title": "稀土永磁相关新闻",
+    "content": "包钢股份公告称，根据公司2022年年度股东大会审议通过的稀土精矿价格调整机制及计算公式，公司拟将2025年第四季度稀土精矿关联交易价格调整为不含税26205元/吨（干量，REO=50%）。REO每增减1%，不含税价格增减524.10元/吨。此前，包钢股份7月10日公告，拟将2025年第三季度稀土精矿关联交易价格调整为不含税19109元/吨。据此估算，此次价格环比上涨37.13%。",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:04.875141",
+    "ai_analysis": {
+      "core_concept": "稀土精矿价格大幅上调",
+      "industry_keywords": [
+        "稀土永磁",
+        "包钢股份",
+        "稀土精矿",
+        "价格调整",
+        "关联交易",
+        "原材料成本",
+        "稀土产业链",
+        "价格机制"
+      ],
+      "summary": "包钢股份公告拟将2025年第四季度稀土精矿关联交易价格调整为不含税26205元/吨，较第三季度的19109元/吨环比上涨37.13%。此次调整依据公司股东大会审议通过的价格调整机制，REO每增减1%，价格相应增减524.10元/吨。这一大幅涨价将直接影响下游稀土分离、永磁材料等企业的原材料成本，可能推动产业链价格传导。",
+      "sentiment": "positive",
+      "concept_confidence": 0.92,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_37",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:04.875161"
+    }
+  },
+  {
+    "event_id": "event_20260203110906_08be4d",
+    "event_type": "normal",
+    "title": "稀土永磁相关新闻",
+    "content": "商务部、海关总署发布公告2025年第56号，公布对部分稀土设备和原辅料相关物项实施出口管制的决定，根据《中华人民共和国出口管制法》《中华人民共和国对外贸易法》《中华人民共和国海关法》《中华人民共和国两用物项出口管制条例》有关规定，为维护国家安全和利益、履行防扩散等国际义务，经国务院批准，决定对多项稀土设备和原辅料进行出口管制。（新闻来源：每日经济新闻）浙江省十四届人大常委会第二十一次会议近日审议并通过《浙江省海洋经济高质量发展促进条例》（以下简称《条例》）。这是浙江在海洋经济领域出台的首部综合性法规，标志着浙江海洋强省建设迈入了战略引领、法治护航的新阶段。《条例》将于2026年3月1日起正式施行。《条例》中提到，推进海洋传统产业转型升级，培育海洋新兴产业、未来产业，支持海洋化工、海洋船舶、海洋工程装备、航运服务、海洋旅游、海洋渔业等重点产业转型升级，推动海洋清洁能源、海水淡化、海洋新材料、海洋生物医药、海洋电子信息等产业规模化发展（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:06.923013",
+    "ai_analysis": {
+      "core_concept": "稀土出口管制与海洋经济立法",
+      "industry_keywords": [
+        "稀土永磁",
+        "出口管制",
+        "海洋经济",
+        "新材料",
+        "清洁能源",
+        "产业升级",
+        "国家安全",
+        "法规建设"
+      ],
+      "summary": "商务部、海关总署发布公告，对部分稀土设备和原辅料实施出口管制，旨在维护国家安全和履行国际义务。同时，浙江省通过《海洋经济高质量发展促进条例》，推动海洋传统产业转型升级，培育海洋新兴产业如清洁能源、新材料等，该条例将于2026年3月施行。这两项政策分别影响稀土供应链和海洋产业发展，可能引发相关行业调整。",
+      "sentiment": "neutral",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_38",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:06.923033"
+    }
+  },
+  {
+    "event_id": "event_20260203110914_6c542d",
+    "event_type": "normal",
+    "title": "海洋经济相关新闻",
+    "content": "10月24日，中共中央举行新闻发布会介绍和解读党的二十届四中全会精神。国家发展改革委党组书记、主任郑栅洁在会上表示，我国海洋经济总量已突破10万亿元。《建议》提出加强海洋开发利用保护，加强重点海域生态环境保护修复，坚定维护海洋权益和安全等举措，这将进一步推动海洋经济高质量发展，加快海洋强国建设。(新闻来源：人民财讯)",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:14.891587",
+    "ai_analysis": {
+      "core_concept": "海洋经济突破10万亿元",
+      "industry_keywords": [
+        "海洋经济",
+        "海洋强国",
+        "海洋开发利用",
+        "生态环境保护",
+        "海洋权益"
+      ],
+      "summary": "10月24日，国家发展改革委党组书记、主任郑栅洁在中共中央新闻发布会上宣布，我国海洋经济总量已突破10万亿元。会议解读了党的二十届四中全会精神，提出加强海洋开发利用保护、重点海域生态环境保护修复、维护海洋权益和安全等举措。这些政策将进一步推动海洋经济高质量发展，加快海洋强国建设进程，对相关产业具有积极引导作用。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_40",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:14.891601"
+    }
+  },
+  {
+    "event_id": "event_20260203110915_32adf6",
+    "event_type": "normal",
+    "title": "海洋经济相关新闻",
+    "content": "浙江省十四届人大常委会第二十一次会议近日审议并通过《浙江省海洋经济高质量发展促进条例》（以下简称《条例》）。这是浙江在海洋经济领域出台的首部综合性法规，标志着浙江海洋强省建设迈入了战略引领、法治护航的新阶段。《条例》将于2026年3月1日起正式施行。《条例》中提到，推进海洋传统产业转型升级，培育海洋新兴产业、未来产业，支持海洋化工、海洋船舶、海洋工程装备、航运服务、海洋旅游、海洋渔业等重点产业转型升级，推动海洋清洁能源、海水淡化、海洋新材料、海洋生物医药、海洋电子信息等产业规模化发展（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:15.523700",
+    "ai_analysis": {
+      "core_concept": "浙江海洋经济法治化发展",
+      "industry_keywords": [
+        "海洋经济",
+        "海洋新兴产业",
+        "海洋清洁能源",
+        "海洋生物医药",
+        "海洋工程装备",
+        "海洋旅游",
+        "海洋化工",
+        "海水淡化"
+      ],
+      "summary": "浙江省人大常委会审议通过《浙江省海洋经济高质量发展促进条例》，这是该省首部海洋经济综合性法规，将于2026年3月1日施行。条例旨在推进海洋传统产业转型升级，培育海洋新兴产业和未来产业，重点支持海洋化工、船舶、工程装备、航运服务、旅游、渔业等产业升级，并推动海洋清洁能源、海水淡化、新材料、生物医药、电子信息等产业规模化发展。此举标志着浙江海洋强省建设进入战略引领与法治护航新阶段，对区域海洋经济发展具有长期指导意义。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_39",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:15.523721"
+    }
+  },
+  {
+    "event_id": "event_20260203110918_e0b321",
+    "event_type": "normal",
+    "title": "海洋经济相关新闻",
+    "content": "深圳市海洋发展局8月28日下午联合招商局港口集团股份有限公司、中集海工智能创新中心等龙头企业，在2025深圳（国际）通用人工智能大会暨产业博览会“Agent＋场景驱动”论坛上，成功发布“AI+海洋”行业应用场景。此次共发布海洋业务、海洋产业、海洋公共服务三大类60项应用场景清单，涵盖了海洋执法、海洋经济统计、深海资源开发、港口航运、海洋能源、海洋高端装备、智能船舶、水下机器人、海洋生物、海洋生态预警、海洋防灾减灾、远洋渔业等细分领域。 (新闻来源：证券时报)",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:18.903256",
+    "ai_analysis": {
+      "core_concept": "AI+海洋应用场景发布",
+      "industry_keywords": [
+        "人工智能",
+        "海洋经济",
+        "智能船舶",
+        "深海资源",
+        "港口航运",
+        "海洋装备",
+        "水下机器人",
+        "海洋生态"
+      ],
+      "summary": "深圳市海洋发展局联合招商局港口集团、中集海工智能创新中心等龙头企业，在2025深圳（国际）通用人工智能大会期间发布了“AI+海洋”行业应用场景。此次共发布海洋业务、海洋产业、海洋公共服务三大类60项具体应用场景，覆盖海洋执法、经济统计、深海资源开发、港口航运、海洋能源、智能船舶、水下机器人、海洋生物、生态预警、防灾减灾、远洋渔业等多个细分领域。这标志着人工智能技术在海洋经济领域的系统化应用进入新阶段，将推动海洋产业智能化升级。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_41",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:18.903276"
+    }
+  },
+  {
+    "event_id": "event_20260203110926_ea02dd",
+    "event_type": "normal",
+    "title": "海洋经济相关新闻",
+    "content": "国家发展改革委区域协调发展司副司长马维晨表示，按照中央财经委员会第六次会议部署，国家发展改革委正与相关部门一道着手“十五五”海洋经济发展规划以及相关领域专项规划的编制工作。“我们将更加注重创新驱动，部署尽快突破一批关键核心技术，接续取得一批原创重大成果，实现海洋科技高水平自立自强。”马维晨说，与此同时，加快推动海洋传统产业转型升级，大力发展海上风电、海洋生物医药等新兴产业，积极培育海洋未来产业。(新闻来源：新华社)",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:26.378354",
+    "ai_analysis": {
+      "core_concept": "海洋经济规划与科技创新",
+      "industry_keywords": [
+        "海洋经济",
+        "海洋科技",
+        "海上风电",
+        "海洋生物医药",
+        "传统产业转型",
+        "未来产业",
+        "关键核心技术",
+        "专项规划"
+      ],
+      "summary": "国家发展改革委区域协调发展司副司长马维晨表示，根据中央财经委员会第六次会议部署，发改委正与相关部门共同启动“十五五”海洋经济发展规划及相关专项规划的编制工作。规划将强调创新驱动，旨在突破关键核心技术、取得原创重大成果，实现海洋科技高水平自立自强。同时，将推动海洋传统产业转型升级，大力发展海上风电、海洋生物医药等新兴产业，并积极培育海洋未来产业。此举预计将促进海洋经济结构优化和科技竞争力提升。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_42",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:26.378368"
+    }
+  },
+  {
+    "event_id": "event_20260203110928_9bea82",
+    "event_type": "major",
+    "title": "海洋经济相关新闻",
+    "content": "国家发展改革委区域协调发展司副司长马维晨表示，按照中央财经委员会第六次会议部署，国家发展改革委正与相关部门一道着手“十五五”海洋经济发展规划以及相关领域专项规划的编制工作。“我们将更加注重创新驱动，部署尽快突破一批关键核心技术，接续取得一批原创重大成果，实现海洋科技高水平自立自强。”马维晨说，与此同时，加快推动海洋传统产业转型升级，大力发展海上风电、海洋生物医药等新兴产业，积极培育海洋未来产业。(新闻来源：新华社)",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:28.220743",
+    "ai_analysis": {
+      "core_concept": "海洋经济规划与科技创新",
+      "industry_keywords": [
+        "海洋经济",
+        "海洋科技",
+        "海上风电",
+        "海洋生物医药",
+        "传统产业转型",
+        "未来产业",
+        "关键核心技术",
+        "专项规划"
+      ],
+      "summary": "国家发展改革委区域协调发展司副司长马维晨表示，根据中央财经委员会第六次会议部署，国家发展改革委正与相关部门共同启动“十五五”海洋经济发展规划及相关领域专项规划的编制工作。规划将更加注重创新驱动，部署突破关键核心技术，实现海洋科技高水平自立自强，同时加快推动海洋传统产业转型升级，大力发展海上风电、海洋生物医药等新兴产业，并积极培育海洋未来产业。此举将推动海洋经济高质量发展，提升我国在全球海洋领域的竞争力。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_43",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:28.220752"
+    }
+  },
+  {
+    "event_id": "event_20260203110928_464c72",
+    "event_type": "major",
+    "title": "光刻胶相关新闻",
+    "content": "日本实际上停止向中国出口光刻胶的状况被曝光（新闻来源：亚洲时报）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:28.632550",
+    "ai_analysis": {
+      "core_concept": "日本停止向中国出口光刻胶",
+      "industry_keywords": [
+        "光刻胶",
+        "半导体",
+        "供应链",
+        "日本出口管制",
+        "芯片制造"
+      ],
+      "summary": "据亚洲时报报道，日本实际上已停止向中国出口光刻胶。光刻胶是半导体制造的关键材料，日本在全球光刻胶市场占据主导地位。这一出口限制将直接影响中国半导体企业的生产活动，可能加剧全球芯片供应链的紧张局势，并对中国半导体产业的自主可控进程构成挑战。",
+      "sentiment": "negative",
+      "concept_confidence": 0.85,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_44",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:28.632570"
+    }
+  },
+  {
+    "event_id": "event_20260203110936_e8c54c",
+    "event_type": "normal",
+    "title": "光刻胶相关新闻",
+    "content": "消息面上，11月20-21日，2025·光刻胶及集成电路材料先进技术和产业应用研讨会将举行，主题“光刻突围 材聚绍兴”。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:36.003671",
+    "ai_analysis": {
+      "core_concept": "光刻胶技术研讨会即将举行",
+      "industry_keywords": [
+        "光刻胶",
+        "集成电路材料",
+        "半导体",
+        "先进技术",
+        "产业应用"
+      ],
+      "summary": "2025年11月20-21日，光刻胶及集成电路材料先进技术和产业应用研讨会将在绍兴举行，主题为“光刻突围 材聚绍兴”。该会议聚焦光刻胶等关键半导体材料的技术突破和产业应用，预计将促进相关技术交流与合作，对半导体产业链上游材料环节具有积极推动作用。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_45",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:36.003691"
+    }
+  },
+  {
+    "event_id": "event_20260203110939_31ef36",
+    "event_type": "normal",
+    "title": "光刻胶相关新闻",
+    "content": "近日，北京大学化学与分子工程学院彭海琳教授团队及合作者通过冷冻电子断层扫描技术，首次在原位状态下解析了光刻胶分子在液相环境中的微观三维结构、界面分布与缠结行为，指导开发出可显著减少光刻缺陷的产业化方案。（新闻来源：科技日报）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:39.846032",
+    "ai_analysis": {
+      "core_concept": "光刻胶微观结构解析技术突破",
+      "industry_keywords": [
+        "光刻胶",
+        "半导体制造",
+        "冷冻电子断层扫描",
+        "光刻缺陷",
+        "纳米技术",
+        "材料科学",
+        "集成电路"
+      ],
+      "summary": "北京大学彭海琳教授团队利用冷冻电子断层扫描技术，首次在原位状态下解析了光刻胶分子在液相环境中的微观三维结构、界面分布与缠结行为。这项基础研究突破为开发减少光刻缺陷的产业化方案提供了科学指导，有望提升半导体制造工艺的精度和良率。该成果代表了材料表征技术的重要进展，对高端光刻胶的研发具有直接推动作用。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_47",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:39.846052"
+    }
+  },
+  {
+    "event_id": "event_20260203110940_382897",
+    "event_type": "normal",
+    "title": "光刻胶相关新闻",
+    "content": "11月20-21日，2025·光刻胶及集成电路材料先进技术和产业应用研讨会将举行，主题“光刻突围 材聚绍兴”。（新闻来源：新浪财经）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:40.057104",
+    "ai_analysis": {
+      "core_concept": "光刻胶技术研讨会即将举行",
+      "industry_keywords": [
+        "光刻胶",
+        "集成电路材料",
+        "半导体",
+        "先进技术",
+        "产业应用",
+        "绍兴"
+      ],
+      "summary": "2025年11月20-21日，光刻胶及集成电路材料先进技术和产业应用研讨会将在绍兴举行，主题为“光刻突围 材聚绍兴”。该研讨会聚焦光刻胶等关键半导体材料的技术突破和产业应用，旨在推动相关领域的技术交流和产业发展。作为半导体制造的核心材料之一，光刻胶的技术进步对提升集成电路制造水平具有重要意义。此次会议可能促进产学研合作，加速国产化进程，对半导体产业链上游材料环节产生积极影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_46",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:40.057124"
+    }
+  },
+  {
+    "event_id": "event_20260203110947_8fdd73",
+    "event_type": "normal",
+    "title": "光刻胶相关新闻",
+    "content": "清华大学官网介绍，日前，清华大学化学系许华平教授团队在极紫外（EUV）光刻材料上取得重要进展，开发出一种基于聚碲氧烷的新型光刻胶，为先进半导体制造中的关键材料提供了新的设计策略。（新闻来源：清华大学官网）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:47.473025",
+    "ai_analysis": {
+      "core_concept": "清华大学开发新型EUV光刻胶",
+      "industry_keywords": [
+        "光刻胶",
+        "半导体制造",
+        "极紫外光刻",
+        "材料科学",
+        "清华大学",
+        "聚碲氧烷",
+        "先进制程",
+        "国产替代"
+      ],
+      "summary": "清华大学化学系许华平教授团队在极紫外（EUV）光刻材料领域取得重要进展，成功开发出一种基于聚碲氧烷的新型光刻胶。该技术为先进半导体制造中的关键材料提供了新的设计策略，有望提升光刻工艺的性能和效率。这一突破对国内半导体产业链的自主可控具有积极意义，特别是在高端光刻胶这一长期依赖进口的环节上展现了技术潜力。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_48",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:47.473046"
+    }
+  },
+  {
+    "event_id": "event_20260203110950_977cbd",
+    "event_type": "normal",
+    "title": "光刻胶相关新闻",
+    "content": "据百川盈孚，因下游PCB行业需求持续增长，国内光引发剂多种牌号价格走高。截至2025年7月3日，907牌号参考出厂价格88元/公斤，较上月价格上涨2元/公斤，较年初上涨19元/公斤。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:50.749240",
+    "ai_analysis": {
+      "core_concept": "光引发剂价格上涨",
+      "industry_keywords": [
+        "光刻胶",
+        "光引发剂",
+        "PCB行业",
+        "价格走势",
+        "电子化学品"
+      ],
+      "summary": "根据百川盈孚数据，由于下游PCB行业需求持续增长，国内光引发剂多种牌号价格呈现上涨趋势。截至2025年7月3日，907牌号参考出厂价格为88元/公斤，较上月上涨2元/公斤，较年初上涨19元/公斤。这一价格变动反映了光刻胶上游原材料市场的供需变化，可能对PCB制造及相关电子产业链成本产生影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_49",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:50.749259"
+    }
+  },
+  {
+    "event_id": "event_20260203110951_baec40",
+    "event_type": "normal",
+    "title": "光刻胶相关新闻",
+    "content": "2024 年 10 月消息，武汉太紫微光电科技有限公司推出的 t150a 光刻胶产品，已通过半导体工艺量产验证，实现配方全自主设计，该产品对标国际头部企业主流 krf 光刻胶系列。",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:09:51.158876",
+    "ai_analysis": {
+      "core_concept": "国产光刻胶技术突破",
+      "industry_keywords": [
+        "光刻胶",
+        "半导体材料",
+        "国产替代",
+        "KRF光刻胶",
+        "半导体工艺",
+        "武汉太紫微光电",
+        "技术自主"
+      ],
+      "summary": "2024年10月，武汉太紫微光电科技有限公司推出的t150a光刻胶产品已通过半导体工艺量产验证，实现配方全自主设计。该产品对标国际头部企业主流KRF光刻胶系列，标志着国产光刻胶在关键技术领域取得重要突破。这一进展有望减少对进口光刻胶的依赖，提升国内半导体产业链的自主可控能力，对半导体材料行业具有积极意义。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_50",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:09:51.158896"
+    }
+  },
+  {
+    "event_id": "event_20260203111000_5b1de3",
+    "event_type": "major",
+    "title": "光刻胶相关新闻",
+    "content": "据“中国光谷”消息，光谷企业近日在半导体专用光刻胶领域实现重大突破:武汉太紫微光电科技有限公司推出的T150 A光刻胶产品，已通过半导体工艺量产验证，实现配方全自主设计，有望开创国内半导体光刻制造新局面。该产品对标国际头部企业主流KrF光刻胶系列。相较于被业内称之为“妖胶”的国外同系列产品UV1610，T150 A在光刻工艺中表现出的极限分辨率达到120nm，且工艺宽容度更大，稳定性更高，坚膜后烘留膜率优秀，其对后道刻蚀工艺表现更为友好，通过验证发现T150 A中密集图形经过刻蚀，下层介质的侧壁垂直度表现优异。",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:00.068682",
+    "ai_analysis": {
+      "core_concept": "国产光刻胶技术突破",
+      "industry_keywords": [
+        "光刻胶",
+        "半导体",
+        "KrF光刻胶",
+        "国产替代",
+        "光刻工艺",
+        "刻蚀工艺",
+        "工艺验证",
+        "技术自主"
+      ],
+      "summary": "武汉太紫微光电科技有限公司推出的T150 A光刻胶产品已通过半导体工艺量产验证，实现配方全自主设计，对标国际头部企业主流KrF光刻胶系列。该产品在极限分辨率、工艺宽容度、稳定性和后道刻蚀工艺表现方面优于国外同系列产品UV1610，密集图形刻蚀后下层介质侧壁垂直度优异。这一突破有望推动国内半导体光刻制造技术自主化，减少对进口光刻胶的依赖。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_51",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:00.068702"
+    }
+  },
+  {
+    "event_id": "event_20260203111001_1c383c",
+    "event_type": "normal",
+    "title": "卫星互联相关新闻",
+    "content": "上交所公告，为了落实中国证监会《关于在科创板设置科创成长层 增强制度包容性适应性的意见》，进一步规范科技型企业适用科创板第五套上市标准，支持尚未形成一定收入规模的优质商业火箭企业在科创板发行上市，上海证券交易所制定了《上海证券交易所发行上市审核规则适用指引第9号——商业火箭企业适用科创板第五套上市标准》，现予以发布，并自发布之日起施行。（新闻来源：第一财经）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:01.402103",
+    "ai_analysis": {
+      "core_concept": "商业火箭企业科创板上市新规",
+      "industry_keywords": [
+        "商业火箭",
+        "科创板",
+        "第五套上市标准",
+        "卫星互联",
+        "航天产业"
+      ],
+      "summary": "上海证券交易所发布《发行上市审核规则适用指引第9号》，明确商业火箭企业适用科创板第五套上市标准的具体规则。该指引旨在落实证监会相关意见，支持尚未形成稳定收入规模的优质商业火箭企业在科创板上市，自发布之日起立即生效。此举将降低商业火箭企业的上市门槛，为卫星互联等航天领域企业提供更便捷的融资渠道，推动相关产业发展。",
+      "sentiment": "positive",
+      "concept_confidence": 0.92,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_52",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:01.402123"
+    }
+  },
+  {
+    "event_id": "event_20260203111002_0d45e1",
+    "event_type": "normal",
+    "title": "卫星互联相关新闻",
+    "content": "12月26日7时26分，我国在海南商业航天发射场使用长征八号甲运载火箭，成功将卫星互联网低轨17组卫星发射升空，卫星顺利进入预定轨道，发射任务获得圆满成功。（新闻来源：央视新闻）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:02.524906",
+    "ai_analysis": {
+      "core_concept": "卫星互联网发射成功",
+      "industry_keywords": [
+        "卫星互联网",
+        "低轨卫星",
+        "商业航天",
+        "长征八号",
+        "海南发射场"
+      ],
+      "summary": "12月26日，我国在海南商业航天发射场使用长征八号甲运载火箭，成功将卫星互联网低轨17组卫星发射升空，卫星顺利进入预定轨道，发射任务获得圆满成功。此次发射标志着我国在卫星互联网建设方面取得重要进展，有助于提升全球通信覆盖能力，推动商业航天产业发展，对相关产业链如卫星制造、发射服务、地面设备等产生积极影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_53",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:02.524926"
+    }
+  },
+  {
+    "event_id": "event_20260203111010_20f348",
+    "event_type": "normal",
+    "title": "卫星互联相关新闻",
+    "content": "中国航天今年已完成近90次发射，刷新历史纪录，其中商业发射占比显著提升。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:10.307707",
+    "ai_analysis": {
+      "core_concept": "中国航天发射次数创新高",
+      "industry_keywords": [
+        "航天发射",
+        "商业航天",
+        "卫星互联网",
+        "太空经济",
+        "发射服务"
+      ],
+      "summary": "根据财联社报道，中国航天今年已完成近90次发射任务，刷新历史最高纪录。其中商业发射占比显著提升，表明中国商业航天市场正在快速发展。这一进展将推动卫星互联网等太空应用技术的进步，增强中国在全球航天领域的竞争力，并为相关产业链带来新的发展机遇。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_54",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:10.307727"
+    }
+  },
+  {
+    "event_id": "event_20260203111012_2dd99b",
+    "event_type": "normal",
+    "title": "卫星互联相关新闻",
+    "content": "蓝箭航天副总裁张静茹告诉《科创板日报》记者，蓝箭航天供应链600余家供应商覆盖全国90余城，民企占比近70%、国企30%。同时，无锡朱雀三号装配基地正冲刺建设，力争年底验收，2026年投用，专注火箭装配与智能制造。 (新闻来源：科创板日报)",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:12.458783",
+    "ai_analysis": {
+      "core_concept": "蓝箭航天供应链与基地建设",
+      "industry_keywords": [
+        "商业航天",
+        "火箭制造",
+        "供应链",
+        "智能制造",
+        "卫星互联"
+      ],
+      "summary": "蓝箭航天副总裁张静茹透露，公司供应链覆盖全国90余城，拥有600余家供应商，其中民营企业占比近70%，国有企业占30%。同时，无锡朱雀三号装配基地正加速建设，目标年底完成验收，2026年投入使用，专注于火箭装配与智能制造。这表明蓝箭航天在商业航天领域的供应链布局和产能扩张取得进展，有助于提升中国商业火箭的制造效率和竞争力。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_55",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:12.458802"
+    }
+  },
+  {
+    "event_id": "event_20260203111012_dc8a43",
+    "event_type": "major",
+    "title": "卫星互联相关新闻",
+    "content": "在文昌国际航天城，年产1000颗卫星的超级工厂即将投产，可实现“卫星出厂即发射”的无缝衔接；目前20余家产业链上下游企业已签约落户，火箭研发、卫星制造、发射测控的全链条生态日趋完善。（新闻来源：央视网）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:12.970945",
+    "ai_analysis": {
+      "core_concept": "卫星制造产能大幅提升",
+      "industry_keywords": [
+        "卫星制造",
+        "航天产业",
+        "产业链整合",
+        "发射服务",
+        "商业航天"
+      ],
+      "summary": "文昌国际航天城即将投产年产1000颗卫星的超级工厂，实现“卫星出厂即发射”的无缝衔接。目前已有20余家产业链上下游企业签约落户，涵盖火箭研发、卫星制造、发射测控等环节，标志着全链条生态日趋完善。这一进展将显著提升我国商业卫星制造能力，降低发射成本，推动卫星互联网等新兴产业发展。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_56",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:12.970956"
+    }
+  },
+  {
+    "event_id": "event_20260203111022_38dc55",
+    "event_type": "normal",
+    "title": "卫星互联相关新闻",
+    "content": "12月3日中午，朱雀三号遥一运载火箭在东风商业航天创新试验区发射升空，按程序完成了飞行任务，火箭二级进入预定轨道，火箭一子级回收失败。据了解，本次朱雀三号遥一运载火箭的首飞入轨，也是国内首次实现九机并联液氧甲烷动力系统的集成应用。而研制方蓝箭航天已在今年7月启动科创板上市辅导，辅导机构为中国国际金融股份有限公司。新鼎资本创始合伙人张驰同时也是蓝箭航天、星际荣耀等商业航天企业的投资人。他告诉记者，尽管本次可回收技术验证失败，但只要发射成功，并不会给蓝箭航天申报上市带来阻力。“这次发射成功的箭型本身，已经是民营商业航天中运载能力头部的箭型了，预计会加快卫星组网的进程。” (新闻来源：第一财经)",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:22.493469",
+    "ai_analysis": {
+      "core_concept": "商业航天技术突破与上市进程",
+      "industry_keywords": [
+        "商业航天",
+        "卫星组网",
+        "可回收火箭",
+        "液氧甲烷动力",
+        "科创板上市",
+        "民营航天",
+        "运载火箭",
+        "卫星互联"
+      ],
+      "summary": "12月3日，朱雀三号遥一运载火箭在东风商业航天创新试验区成功发射入轨，完成了国内首次九机并联液氧甲烷动力系统的集成应用，但火箭一子级回收失败。研制方蓝箭航天已于今年7月启动科创板上市辅导，辅导机构为中金公司。投资人张驰表示，尽管可回收技术验证失败，但发射成功本身不会阻碍上市进程，且该箭型运载能力处于民营商业航天头部，预计将加快卫星组网进程。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_57",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:22.493491"
+    }
+  },
+  {
+    "event_id": "event_20260203111022_d3d1f6",
+    "event_type": "normal",
+    "title": "卫星互联相关新闻",
+    "content": "从中国航天科技集团一院获悉，由该院抓总研制的我国首艘火箭网系回收海上平台于近日被命名为“领航者”并成功交付，标志着该院在可重复使用运载火箭技术链条上完成了重要一环，助推从技术验证到工程应用的跨越。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:22.709928",
+    "ai_analysis": {
+      "core_concept": "可重复使用火箭技术突破",
+      "industry_keywords": [
+        "航天科技",
+        "可重复使用火箭",
+        "海上回收平台",
+        "卫星发射",
+        "商业航天"
+      ],
+      "summary": "中国航天科技集团一院研制的我国首艘火箭网系回收海上平台“领航者”近日成功交付，标志着该院在可重复使用运载火箭技术链条上完成重要环节，实现了从技术验证到工程应用的跨越。这一进展将提升我国火箭回收效率，降低发射成本，对商业航天和卫星互联网发展具有积极推动作用。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_58",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:22.709947"
+    }
+  },
+  {
+    "event_id": "event_20260203111023_c71a0b",
+    "event_type": "normal",
+    "title": "卫星互联相关新闻",
+    "content": "据国家航天局消息，该局已于近期设立商业航天司，相关业务正在逐步开展，标志着我国商业航天产业迎来专职监管机构（新闻来源：央视新闻）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:23.929708",
+    "ai_analysis": {
+      "core_concept": "商业航天监管机构设立",
+      "industry_keywords": [
+        "商业航天",
+        "卫星互联",
+        "国家航天局",
+        "监管机构",
+        "产业政策"
+      ],
+      "summary": "国家航天局近期设立商业航天司，标志着我国商业航天产业迎来专职监管机构。这一举措表明政府正加强对商业航天领域的规范化管理，为卫星互联等新兴业务提供政策支持和发展框架。专职监管机构的设立有助于明确行业标准、优化资源配置，推动商业航天产业链的健康发展，对卫星制造、发射服务、地面设备等相关产业将产生积极影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_59",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:23.929727"
+    }
+  },
+  {
+    "event_id": "event_20260203111033_aa40d6",
+    "event_type": "normal",
+    "title": "卫星互联相关新闻",
+    "content": "北京蓝箭航天朱雀三号运载火箭首飞计划已进入最后准备阶段，计划于本周六即11月29日首飞。（新闻来源：每日经济新闻）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:33.040241",
+    "ai_analysis": {
+      "core_concept": "商业航天火箭首飞准备",
+      "industry_keywords": [
+        "商业航天",
+        "运载火箭",
+        "卫星发射",
+        "航天技术",
+        "太空经济"
+      ],
+      "summary": "北京蓝箭航天朱雀三号运载火箭计划于11月29日进行首次飞行，目前处于最后准备阶段。该事件标志着中国商业航天领域的重要进展，若首飞成功将提升蓝箭航天的市场竞争力，为后续卫星发射任务奠定基础，对国内商业航天产业链发展具有积极意义。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_61",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:33.040262"
+    }
+  },
+  {
+    "event_id": "event_20260203111033_1f6f3b",
+    "event_type": "major",
+    "title": "卫星互联相关新闻",
+    "content": "“智绘星空 胜算在天——太空数据中心建设工作推进会”召开，推进会由北京市科委、中关村管委会等单位组织召开。根据推进会上发布的规划方案，数据中心系统由空间算力、中继传输和地面管控分系统组成。数据中心建设分为三个阶段：2025年至2027年，突破能源与散热等关键技术，迭代研制试验星，建设一期算力星座；2028年至2030年，突破在轨组装建造等关键技术，降低建设与运营成本，建设二期算力星座；2031年至2035年，卫星大规模批量生产并组网发射，在轨对接建成大规模太空数据中心。（新闻来源：中国新闻网）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:33.449333",
+    "ai_analysis": {
+      "core_concept": "太空数据中心建设规划",
+      "industry_keywords": [
+        "太空数据中心",
+        "卫星互联网",
+        "空间算力",
+        "在轨组装",
+        "算力星座"
+      ],
+      "summary": "北京市科委、中关村管委会等单位组织召开太空数据中心建设工作推进会，发布三阶段建设规划：2025-2027年突破关键技术并建设一期算力星座；2028-2030年突破在轨组装技术并建设二期星座；2031-2035年实现卫星批量生产组网，建成大规模太空数据中心。该规划标志着中国在太空计算基础设施领域迈出实质性步伐，将推动卫星互联网和空间计算技术发展。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_60",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:33.449348"
+    }
+  },
+  {
+    "event_id": "event_20260203111035_e585df",
+    "event_type": "major",
+    "title": "液冷数据中心相关新闻",
+    "content": "英伟达首席财务官表示，数据中心芯片需求较此前预测的5000亿美元有所增长。SanDisk收涨超27%，创去年2月份以来最大单日涨幅。西部数据涨超16%，创逾五年来最大单日涨幅。美光科技涨超10%，再创历史新高，总市值达到3865亿美元（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:35.907647",
+    "ai_analysis": {
+      "core_concept": "数据中心芯片需求超预期增长",
+      "industry_keywords": [
+        "数据中心",
+        "芯片",
+        "存储",
+        "半导体",
+        "人工智能",
+        "英伟达",
+        "美光科技",
+        "西部数据"
+      ],
+      "summary": "英伟达首席财务官表示数据中心芯片需求较此前预测的5000亿美元有所增长，引发存储和半导体板块强劲上涨。SanDisk收涨超27%，创去年2月以来最大单日涨幅；西部数据涨超16%，创逾五年最大涨幅；美光科技涨超10%再创历史新高，总市值达3865亿美元。这表明市场对数据中心基础设施和AI相关硬件的需求持续旺盛，带动产业链公司股价大幅攀升。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_62",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:35.907667"
+    }
+  },
+  {
+    "event_id": "event_20260203111043_379c25",
+    "event_type": "normal",
+    "title": "液冷数据中心相关新闻",
+    "content": "考虑TPUv7出货量及单机柜液冷价值量等，根据东方证券测算，预计2026年谷歌服务器液冷市场规模约为180亿元左右，较2025年大幅提升（新闻来源：新浪财经）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:43.627598",
+    "ai_analysis": {
+      "core_concept": "谷歌液冷服务器市场增长",
+      "industry_keywords": [
+        "液冷数据中心",
+        "TPUv7",
+        "服务器",
+        "谷歌",
+        "市场规模",
+        "东方证券",
+        "2026年预测",
+        "单机柜价值"
+      ],
+      "summary": "根据东方证券测算，考虑TPUv7出货量及单机柜液冷价值量等因素，预计2026年谷歌服务器液冷市场规模将达到约180亿元，较2025年实现大幅提升。这表明液冷技术在数据中心领域的应用加速，特别是针对高性能计算需求，可能推动相关产业链发展。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_63",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:43.627618"
+    }
+  },
+  {
+    "event_id": "event_20260203111045_effa80",
+    "event_type": "major",
+    "title": "液冷数据中心相关新闻",
+    "content": "根据12月15日左右的市场信息，谷歌新一代TPUv7因单芯片功耗飙升至980W，其机柜将采用100%全液冷架构，标志着液冷从可选方案升级为ASIC阵营的强制标配。这一变化确立了独立于英伟达生态之外的全新强劲增长引擎，验证了液冷及上游高阶PCB、高压直流电源等环节更广阔、更确定的放量周期。（新闻来源：腾讯新闻）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:45.152920",
+    "ai_analysis": {
+      "core_concept": "液冷技术成为AI芯片强制标配",
+      "industry_keywords": [
+        "液冷数据中心",
+        "TPUv7",
+        "AI芯片",
+        "数据中心基础设施",
+        "PCB",
+        "高压直流电源",
+        "谷歌",
+        "ASIC"
+      ],
+      "summary": "根据12月15日左右的市场信息，谷歌新一代TPUv7芯片单芯片功耗飙升至980W，其机柜将采用100%全液冷架构。这一变化标志着液冷技术从可选方案升级为ASIC阵营的强制标配，确立了独立于英伟达生态之外的全新增长引擎。该事件验证了液冷及上游高阶PCB、高压直流电源等环节更广阔、更确定的放量周期，对数据中心基础设施行业产生重要影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_64",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:45.152940"
+    }
+  },
+  {
+    "event_id": "event_20260203111048_2cf78c",
+    "event_type": "normal",
+    "title": "液冷数据中心相关新闻",
+    "content": "第五届国际AIDC液冷供应链干人峰会暨·国际数据中心液冷市场趋势分析会将于12月18日-19日召开。据媒体报道，近两年全球的AI巨头已开始拥抱液冷。以英伟达为例，去年在B100、H200芯片上，就正式从风冷散热升级为液冷散热。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:48.297843",
+    "ai_analysis": {
+      "core_concept": "液冷技术成为AI数据中心散热新趋势",
+      "industry_keywords": [
+        "液冷技术",
+        "数据中心",
+        "AI芯片",
+        "散热解决方案",
+        "供应链峰会",
+        "英伟达",
+        "市场趋势",
+        "绿色计算"
+      ],
+      "summary": "第五届国际AIDC液冷供应链千人峰会暨国际数据中心液冷市场趋势分析会将于12月18日-19日召开，聚焦液冷技术在数据中心的应用趋势。新闻指出，近两年全球AI巨头已开始采用液冷技术，例如英伟达在B100、H200芯片上已从风冷升级为液冷散热。这表明液冷技术正成为高功耗AI数据中心的主流散热方案，可能推动相关产业链发展和技术标准化进程。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_65",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:48.297850"
+    }
+  },
+  {
+    "event_id": "event_20260203111055_47186a",
+    "event_type": "normal",
+    "title": "液冷数据中心相关新闻",
+    "content": "中信建投研报指出，2025年是英伟达AI芯片液冷渗透大幅提升的一年，同时随着单芯片功耗的提升，后续液冷市场规模将明显增长。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:55.466710",
+    "ai_analysis": {
+      "core_concept": "AI芯片液冷技术渗透加速",
+      "industry_keywords": [
+        "液冷数据中心",
+        "英伟达AI芯片",
+        "单芯片功耗",
+        "中信建投研报",
+        "市场规模增长",
+        "2025年",
+        "AI基础设施",
+        "散热技术"
+      ],
+      "summary": "中信建投研报指出，2025年将是英伟达AI芯片液冷技术渗透率大幅提升的关键年份。随着AI芯片单芯片功耗持续增加，传统风冷散热方案面临瓶颈，液冷技术因其高效散热能力将成为必然选择。这一趋势预计将推动液冷数据中心市场规模显著增长，为相关产业链带来发展机遇。该分析基于行业技术演进路径和功耗增长趋势，反映了AI算力基础设施升级的重要方向。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_66",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:55.466729"
+    }
+  },
+  {
+    "event_id": "event_20260203111058_2fef62",
+    "event_type": "normal",
+    "title": "液冷数据中心相关新闻",
+    "content": "微软CEO萨提亚·纳德拉宣布，其团队已成功开发出微流体冷却技术；该技术能将芯片最高温升降低65%。微软与瑞士初创公司Corintis合作，借助AI设计出仿生结构使冷却液精准覆盖芯片热点。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:10:58.542016",
+    "ai_analysis": {
+      "core_concept": "微流体冷却技术突破",
+      "industry_keywords": [
+        "液冷数据中心",
+        "微流体冷却",
+        "AI设计",
+        "芯片散热",
+        "数据中心节能",
+        "微软",
+        "Corintis",
+        "仿生结构"
+      ],
+      "summary": "微软CEO萨提亚·纳德拉宣布，其团队成功开发出微流体冷却技术，能将芯片最高温升降低65%。该技术是与瑞士初创公司Corintis合作，借助AI设计出仿生结构，使冷却液精准覆盖芯片热点。这一突破有望显著提升数据中心能效，降低散热成本，推动高性能计算和AI基础设施发展。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_68",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:10:58.542036"
+    }
+  },
+  {
+    "event_id": "event_20260203111104_1fe5c0",
+    "event_type": "normal",
+    "title": "液冷数据中心相关新闻",
+    "content": "英伟达透露，Vera Rubin计算架构底部配备了8个Rubin CPX GPU、BlueField-4数据处理器、两颗Vera CPU以及4个Rubin封装，总共8个GPU全部实现了无缆连接和全液冷设计。（新闻来源：科创板日报）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:11:04.683166",
+    "ai_analysis": {
+      "core_concept": "英伟达发布全液冷数据中心架构",
+      "industry_keywords": [
+        "液冷技术",
+        "数据中心",
+        "GPU",
+        "英伟达",
+        "高性能计算",
+        "散热解决方案",
+        "AI基础设施",
+        "芯片封装"
+      ],
+      "summary": "英伟达透露其Vera Rubin计算架构采用全液冷设计，配备8个Rubin CPX GPU、BlueField-4数据处理器、两颗Vera CPU及4个Rubin封装，所有GPU实现无缆连接。这一技术突破标志着数据中心散热方案的重大进步，有望提升计算密度和能效，对AI和高性能计算领域产生积极影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_67",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:11:04.683186"
+    }
+  },
+  {
+    "event_id": "event_20260203111107_ff07e5",
+    "event_type": "normal",
+    "title": "液冷数据中心相关新闻",
+    "content": "《科创板日报》15日讯，由于AI新平台Rubin与下一代Feynman平台功耗或高达2000W以上，现有散热方案无法应对，消息称英伟达要求供应商开发全新“微通道水冷板（MLCP）”技术，单价是现有散热方案的三至五倍。 （新闻来源：科创板日报）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:11:07.038405",
+    "ai_analysis": {
+      "core_concept": "英伟达推动液冷散热技术升级",
+      "industry_keywords": [
+        "液冷数据中心",
+        "AI芯片散热",
+        "微通道水冷板",
+        "英伟达",
+        "高功耗芯片",
+        "散热技术",
+        "数据中心基础设施",
+        "AI硬件"
+      ],
+      "summary": "据《科创板日报》报道，由于英伟达即将推出的AI新平台Rubin及下一代Feynman平台功耗可能高达2000W以上，现有散热方案已无法满足需求。为此，英伟达要求供应商开发全新的“微通道水冷板（MLCP）”技术，该技术单价预计是现有散热方案的三至五倍。这一动向凸显了AI硬件高功耗趋势下，液冷散热技术的重要性提升，可能推动数据中心散热方案升级和相关产业链发展。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_69",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:11:07.038413"
+    }
+  },
+  {
+    "event_id": "event_20260203111109_5c87d2",
+    "event_type": "major",
+    "title": "AI智能体Manus相关新闻",
+    "content": "Meta宣布收购AI智能体公司Manus，以加速人工智能创新，具体交易条款未披露。据《晚点 LatePost》报道，Meta以数十亿美元收购开发AI应用Manus的公司蝴蝶效应，这是Meta成立以来第三大收购。在Meta收购前，Manus正以20亿美元估值进行新一轮融资。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:11:09.085188",
+    "ai_analysis": {
+      "core_concept": "Meta收购AI智能体公司Manus",
+      "industry_keywords": [
+        "人工智能",
+        "科技并购",
+        "Meta",
+        "AI智能体",
+        "企业收购",
+        "技术创新",
+        "估值融资",
+        "科技巨头"
+      ],
+      "summary": "Meta宣布收购AI智能体公司Manus以加速人工智能创新，具体交易条款未披露。据《晚点LatePost》报道，Meta以数十亿美元收购开发AI应用Manus的蝴蝶效应公司，这是Meta成立以来第三大收购。在收购前，Manus正以20亿美元估值进行新一轮融资。此次收购将增强Meta在AI领域的技术实力，可能推动AI智能体技术的商业化应用，对人工智能行业产生重要影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "high"
+    },
+    "raw_data": {
+      "original_id": "news_70",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:11:09.085208"
+    }
+  },
+  {
+    "event_id": "event_20260203111114_d4acff",
+    "event_type": "normal",
+    "title": "AI智能体Manus相关新闻",
+    "content": "Manus 推出文生视频功能，AI智能体几分钟内将文本转为视频故事:和大多数视频生成AI不同Manus这次可以通过连续拼接突破视频时长限制（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:11:14.981377",
+    "ai_analysis": {
+      "core_concept": "AI智能体突破视频时长限制",
+      "industry_keywords": [
+        "AI智能体",
+        "文生视频",
+        "视频生成",
+        "人工智能",
+        "内容创作",
+        "多媒体技术",
+        "AIGC"
+      ],
+      "summary": "AI智能体Manus推出文生视频功能，可将文本在几分钟内转换为视频故事。与多数视频生成AI不同，Manus通过连续拼接技术突破了视频时长限制，实现了更长的视频内容生成能力。这一技术突破将显著提升视频内容的生产效率，降低制作门槛，对视频内容创作、营销、教育等行业产生积极影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_71",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:11:14.981397"
+    }
+  },
+  {
+    "event_id": "event_20260203111117_b4bb87",
+    "event_type": "normal",
+    "title": "AI智能体Manus相关新闻",
+    "content": "《科创板日报》记者从知情人士方面了解到，智能体产品Manus背后公司蝴蝶效应正在计划新一轮融资，预计融资规模为1亿美元，估值15亿美元。本轮融资将有国资参与，所筹集的资金将主要用于发展中国市场业务。（新闻来源：科创板日报）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:11:17.276574",
+    "ai_analysis": {
+      "core_concept": "AI智能体公司融资扩张",
+      "industry_keywords": [
+        "人工智能",
+        "智能体",
+        "融资",
+        "科创板",
+        "国资投资",
+        "中国市场",
+        "估值",
+        "蝴蝶效应"
+      ],
+      "summary": "据《科创板日报》报道，AI智能体产品Manus背后的公司蝴蝶效应正计划进行新一轮融资，预计融资规模达1亿美元，公司估值15亿美元。本轮融资将有国资参与，所筹资金将主要用于发展中国市场业务。这表明AI智能体领域持续受到资本关注，特别是国资的参与可能带来政策支持和市场拓展机会，对AI行业和中国科技市场具有积极影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_72",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:11:17.276588"
+    }
+  },
+  {
+    "event_id": "event_20260203111119_1fd9b1",
+    "event_type": "normal",
+    "title": "AI智能体Manus相关新闻",
+    "content": "价格曾经炒到10万，一码难求的AI智能体平台Manus宣布开放注册，Manus在公告中表示，Manus向所有人开放，无需等待名单；所有用户每天可免费执行一项任务（300积分），所有用户一次性获得1000积分奖励。（新闻来源：财联社）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:11:19.020536",
+    "ai_analysis": {
+      "core_concept": "AI智能体平台开放注册",
+      "industry_keywords": [
+        "AI智能体",
+        "平台开放",
+        "积分奖励",
+        "免费任务",
+        "人工智能"
+      ],
+      "summary": "AI智能体平台Manus宣布向所有人开放注册，无需等待名单。此前该平台曾出现价格炒至10万元、一码难求的情况。新政策下，所有用户每天可免费执行一项任务（价值300积分），并一次性获得1000积分奖励。此举降低了用户准入门槛，可能促进平台用户增长和生态活跃度，对AI智能体市场格局产生影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_73",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:11:19.020550"
+    }
+  },
+  {
+    "event_id": "event_20260203111125_f999b3",
+    "event_type": "normal",
+    "title": "AI智能体Manus相关新闻",
+    "content": "据The Information报道，三位知情人士透露，Manus AI的团队正在与包括美国风投机构在内的潜在投资者进行谈判，计划以至少5亿美元(约合37.5亿人民币)的估值进行新一轮融资，这一估值比之前的估值增长了约五倍。Manus的开发者是蝴蝶效应(Butterfly Effect)。据知情人士透露，这家主要团队位于北京的公司近期通过线上和线下方式与部分美国投资者接洽，本轮融资规模可能达到数千万美元。据一位知情人士和另一位了解内情的人士透露，蝴蝶效应去年底以约1亿美元估值(包含所筹资金在内)完成一轮融资。此轮融资由中国科技巨头腾讯和红杉资本中国领投，真格基金作为现有投资者参与，后者自2023年公司创立以来便是其早期支持者。报道称，Manus使用Anthropic的Claude AI模型等工具，平均每项任务需向Anthropic支付2美元。新一轮融资可能使Manus向更多用户开放。(新闻来源：财经网)",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:11:25.877833",
+    "ai_analysis": {
+      "core_concept": "AI智能体Manus高估值融资",
+      "industry_keywords": [
+        "人工智能",
+        "风险投资",
+        "腾讯",
+        "红杉资本",
+        "Anthropic",
+        "Claude AI",
+        "融资",
+        "估值增长"
+      ],
+      "summary": "据The Information报道，AI智能体Manus的开发者蝴蝶效应正与潜在投资者谈判，计划以至少5亿美元估值进行新一轮融资，较之前估值增长约五倍。该公司去年底以约1亿美元估值完成融资，由腾讯和红杉资本中国领投。Manus使用Anthropic的Claude AI模型，每项任务平均支付2美元。新一轮融资可能使Manus向更多用户开放，显示AI应用领域持续受资本青睐。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_74",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:11:25.877847"
+    }
+  },
+  {
+    "event_id": "event_20260203111127_26524f",
+    "event_type": "normal",
+    "title": "AI智能体Manus相关新闻",
+    "content": "3月6日消息，日前，一支来自中国的团队正式对外发布通用型AI Agent产品Manus。据团队介绍，Manus在GAIA基准测试中取得了SOTA（State-of-the-Art）的成绩，显示其性能超越OpenAI的同层次大模型。（新闻来源：中国财富网）",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:11:27.827232",
+    "ai_analysis": {
+      "core_concept": "中国团队发布通用AI智能体Manus",
+      "industry_keywords": [
+        "人工智能",
+        "AI智能体",
+        "大模型",
+        "GAIA基准测试",
+        "SOTA",
+        "OpenAI",
+        "技术突破",
+        "中国团队"
+      ],
+      "summary": "3月6日，一支中国团队正式发布了通用型AI智能体产品Manus。该产品在GAIA基准测试中取得了SOTA（State-of-the-Art）成绩，显示其性能超越了OpenAI的同层次大模型。这一技术突破表明中国在AI智能体领域取得了重要进展，可能对全球AI竞争格局产生影响，并推动相关技术应用的发展。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_75",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:11:27.827253"
+    }
+  }
+]

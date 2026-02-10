@@ -1,0 +1,337 @@
+[
+{
+    "event_id": "event_20260203110648_9234b5",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "Meta与Oakley合作开发的智能眼镜产品于6月20日举行发布会。",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:06:48.059373",
+    "ai_analysis": {
+      "core_concept": "Meta与Oakley合作发布智能眼镜",
+      "industry_keywords": [
+        "智能眼镜",
+        "增强现实",
+        "可穿戴设备",
+        "消费电子",
+        "人机交互"
+      ],
+      "summary": "Meta与知名眼镜品牌Oakley合作开发的智能眼镜产品于6月20日举行发布会。这一合作结合了Meta在增强现实技术和人工智能领域的优势与Oakley在眼镜设计和制造方面的专业经验，标志着智能可穿戴设备市场的重要进展。该产品预计将推动AR技术在消费电子领域的应用，可能对相关产业链产生积极影响，包括硬件制造、软件开发和内容生态建设。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_0",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:06:48.059392"
+    }
+  },
+  {
+    "event_id": "event_20260203110649_b00e5c",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "Meta联手Oakley推出智能眼镜 ，为运动设计挑战运动相机。",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:06:49.092631",
+    "ai_analysis": {
+      "core_concept": "Meta与Oakley合作推出运动智能眼镜",
+      "industry_keywords": [
+        "智能眼镜",
+        "增强现实",
+        "运动科技",
+        "可穿戴设备",
+        "Meta",
+        "Oakley"
+      ],
+      "summary": "Meta与运动眼镜品牌Oakley合作推出专为运动设计的智能眼镜，旨在挑战传统运动相机的市场地位。该产品结合了Meta的增强现实技术和Oakley在运动眼镜领域的专业设计，为运动员和运动爱好者提供更便捷的第一人称视角记录和增强现实体验。这一合作标志着智能可穿戴设备向垂直运动领域的深度渗透，可能重塑运动记录设备市场格局，并对GoPro等运动相机厂商构成直接竞争压力。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_1",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:06:49.092653"
+    }
+  },
+  {
+    "event_id": "event_20260203110650_04f886",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "1月3日电，美国专利及商标局官网显示，英伟达公开了一项AR眼镜专利（US20250004275A1），名为“无背光增强现实数字全息技术”。**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:06:50.116496",
+    "ai_analysis": {
+      "core_concept": "英伟达AR眼镜无背光全息技术专利",
+      "industry_keywords": [
+        "增强现实",
+        "全息技术",
+        "无背光显示",
+        "英伟达",
+        "专利技术",
+        "AR眼镜",
+        "数字全息",
+        "光学技术"
+      ],
+      "summary": "美国专利及商标局官网显示，英伟达于1月3日公开了一项名为'无背光增强现实数字全息技术'的AR眼镜专利（US20250004275A1）。该专利涉及无需传统背光源的全息显示技术，可能提升AR眼镜的显示效果和能效。作为AI计算领域的领导者，英伟达在AR/VR硬件技术上的布局，可能推动相关产业链的技术升级，并增强其在元宇宙和空间计算生态中的竞争力。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_2",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:06:50.116517"
+    }
+  },
+  {
+    "event_id": "event_20260203110659_05959e",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以及其他两款新品：Galaxy Ring 2 智能戒指和 AR 智能眼镜。**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:06:59.947722",
+    "ai_analysis": {
+      "core_concept": "三星发布AR眼镜等新品",
+      "industry_keywords": [
+        "AR智能眼镜",
+        "Galaxy S25",
+        "Galaxy Ring 2",
+        "三星电子",
+        "可穿戴设备",
+        "消费电子",
+        "增强现实",
+        "智能手机"
+      ],
+      "summary": "三星电子宣布将于2025年1月的Galaxy Unpacked活动上发布Galaxy S25智能手机系列，同时推出Galaxy Ring 2智能戒指和AR智能眼镜两款新品。这一发布计划表明三星正加速布局可穿戴设备和增强现实领域，通过产品组合扩展强化其在消费电子市场的竞争力。新品的推出可能刺激相关供应链需求，并对AR眼镜等新兴市场产生示范效应。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_3",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:06:59.947742"
+    }
+  },
+  {
+    "event_id": "event_20260203110701_dd40ce",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "24日讯，鸿海宣布，将携手Porotech进军AR眼镜市场。依双方合作内容，鸿海将加速在AR与MicroLED的战略布局，并计划在台中建立MicroLED晶圆制程产线，预计2025年第四季投入量产。",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:01.073261",
+    "ai_analysis": {
+      "core_concept": "鸿海与Porotech合作布局AR眼镜",
+      "industry_keywords": [
+        "AR眼镜",
+        "MicroLED",
+        "晶圆制程",
+        "鸿海",
+        "Porotech",
+        "量产计划",
+        "战略布局",
+        "台中产线"
+      ],
+      "summary": "鸿海宣布与Porotech合作进军AR眼镜市场，双方将加速在AR与MicroLED领域的战略布局。鸿海计划在台中建立MicroLED晶圆制程产线，预计2025年第四季度投入量产。这一合作将推动AR眼镜产业链的技术升级和产能扩张，对相关硬件制造和显示技术行业产生积极影响。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_5",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:01.073281"
+    }
+  },
+  {
+    "event_id": "event_20260203110701_6fd764",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "24日讯，Meta正与眼镜集团EssilorLuxottica合作，计划在其售价300美元的太阳镜中加入显示屏。知情人士透露，新版眼镜可能最早将在2025年下半年推出，显示屏可能用于展示通知或来自Meta虚拟助手的回复。",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:01.224106",
+    "ai_analysis": {
+      "core_concept": "Meta与EssilorLuxottica合作开发智能太阳镜",
+      "industry_keywords": [
+        "智能眼镜",
+        "增强现实",
+        "可穿戴设备",
+        "Meta",
+        "EssilorLuxottica",
+        "虚拟助手",
+        "人机交互",
+        "消费电子"
+      ],
+      "summary": "Meta正与眼镜集团EssilorLuxottica合作，计划在售价300美元的太阳镜中集成显示屏，预计最早2025年下半年推出。该显示屏将用于展示通知或Meta虚拟助手的回复，标志着智能眼镜向更轻便、日常化方向发展。此举可能推动可穿戴设备市场增长，增强Meta在AR/VR生态系统的布局，同时为EssilorLuxottica带来技术升级机会。",
+      "sentiment": "positive",
+      "concept_confidence": 0.85,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_4",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:01.224126"
+    }
+  },
+  {
+    "event_id": "event_20260203110711_faac31",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "在Android XR发布会上，谷歌与国内消费级AR眼镜厂商XREAL达成了战略合作。《科创板日报》记者获悉，XREAL的产业链伙伴包括立讯精密、龙旗科技等。上周，XREAL刚刚发布了全新一代产品XREAL One，首次搭载了XREAL自研的空间计算芯片——X1。**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:11.722147",
+    "ai_analysis": {
+      "core_concept": "谷歌与XREAL达成AR眼镜战略合作",
+      "industry_keywords": [
+        "AR眼镜",
+        "空间计算芯片",
+        "Android XR",
+        "消费级AR",
+        "产业链合作",
+        "战略合作",
+        "自研芯片",
+        "XR生态"
+      ],
+      "summary": "谷歌在Android XR发布会上宣布与国内消费级AR眼镜厂商XREAL达成战略合作。XREAL的产业链伙伴包括立讯精密、龙旗科技等知名企业。上周，XREAL刚刚发布了全新一代产品XREAL One，首次搭载了自研的空间计算芯片X1。此次合作将加强谷歌在XR生态的布局，同时提升XREAL在消费级AR市场的竞争力，可能推动AR眼镜技术普及和产业链发展。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_6",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:11.722162"
+    }
+  },
+  {
+    "event_id": "event_20260203110712_f82a88",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "消息面上，智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会。有行业媒体报道称，届时或将发布INMO Air3、INMO Go2两款AR眼镜。根据贝哲斯智能眼镜市场研究报告显示，预计到2029年，智能眼镜市场规模将达到1067.78亿元，期间年复合增速高达18.56%。**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:12.541961",
+    "ai_analysis": {
+      "core_concept": "AR眼镜新品发布与市场增长",
+      "industry_keywords": [
+        "AR眼镜",
+        "智能眼镜",
+        "INMO影目科技",
+        "新品发布会",
+        "市场预测",
+        "可穿戴设备",
+        "增强现实",
+        "消费电子"
+      ],
+      "summary": "智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会，预计发布INMO Air3和INMO Go2两款AR眼镜。根据贝哲斯市场研究报告，预计到2029年智能眼镜市场规模将达到1067.78亿元，期间年复合增速高达18.56%。这表明AR眼镜行业正迎来快速发展期，企业新品发布与市场增长预期形成积极互动。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_8",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:12.541981"
+    }
+  },
+  {
+    "event_id": "event_20260203110713_993a76",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "10日讯，三星内部正积极推进名为Infinite的扩展现实（XR）项目，计划在明年1月召开的Galaxy Unpacked发布会上公开展示，并会在2025年第三季度正式发售。三星电子已制定了XR设备的生产计划，预计在明年第三季度和第四季度分别出货2万至3万台以上。**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:13.463472",
+    "ai_analysis": {
+      "core_concept": "三星XR设备量产计划",
+      "industry_keywords": [
+        "扩展现实",
+        "XR设备",
+        "三星电子",
+        "Galaxy Unpacked",
+        "量产计划",
+        "AR眼镜",
+        "VR设备",
+        "消费电子"
+      ],
+      "summary": "三星电子正在积极推进名为Infinite的扩展现实（XR）项目，计划在2025年1月的Galaxy Unpacked发布会上首次展示，并于2025年第三季度正式发售。公司已制定详细的生产计划，预计在2025年第三季度和第四季度分别出货2万至3万台以上。这表明三星正式进入XR硬件市场，将加剧与苹果Vision Pro、Meta Quest等产品的竞争，推动XR技术普及和产业链发展。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_7",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:13.463491"
+    }
+  },
+  {
+    "event_id": "event_20260203110722_2bf943",
+    "event_type": "normal",
+    "title": "AI/AR眼镜相关新闻",
+    "content": "云天励飞战略投资闪极科技 后者将推国内首款量产AI拍摄眼镜**",
+    "source": "未知",
+    "publish_time": "2026-02-03T11:07:22.987195",
+    "ai_analysis": {
+      "core_concept": "AI眼镜战略投资与量产突破",
+      "industry_keywords": [
+        "AI眼镜",
+        "AR/VR",
+        "智能穿戴",
+        "计算机视觉",
+        "人工智能硬件",
+        "消费电子",
+        "战略投资",
+        "量产突破"
+      ],
+      "summary": "云天励飞对闪极科技进行战略投资，支持其推出国内首款量产AI拍摄眼镜。这一事件标志着AI硬件在消费级市场的实质性进展，将推动智能穿戴设备的技术创新和商业化进程。投资不仅为闪极科技提供了资金支持，还可能带来技术协同效应，加速产品迭代和市场渗透。",
+      "sentiment": "positive",
+      "concept_confidence": 0.88,
+      "impact_level": "medium"
+    },
+    "raw_data": {
+      "original_id": "news_9",
+      "url": "",
+      "category": ""
+    },
+    "metadata": {
+      "test_flag": true,
+      "converted_at": "2026-02-03T11:07:22.987218"
+    }
+  }
+]

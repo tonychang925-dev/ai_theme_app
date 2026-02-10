@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "test_type": "REAL_AI_SIMILARITY_ANALYZER_TEST",
+    "timestamp": "2026-01-14T12:37:20.139301",
+    "ai_provider": "DeepSeek",
+    "data_structure": "实际生产数据结构",
+    "test_focus": "领域区分能力和相似性分析准确性"
+  },
+  "test_summary": {
+    "total_cases": 3,
+    "passed_cases": 3,
+    "success_rate": 1.0,
+    "failed_cases": []
+  },
+  "detailed_results": [
+    {
+      "test_id": "REAL_001",
+      "test_name": "国防航天 vs 消费电子",
+      "upstream_action": "CREATE_NEW",
+      "processing_time": 8.61539888381958,
+      "ai_analysis": {
+        "best_match_theme": "无匹配（领域不同）",
+        "similarity_score": 0.1,
+        "similarity_reason": "1. 领域相似性说明：新闻事件属于国防航天与国家安全领域，而现有主题均为民用科技领域，两者在核心目标、应用场景和监管体系上完全不同。\n2. 技术关联性说明：虽然卫星可能涉及半导体或人工智能等基础技术，但其应用是高度专业化的军事系统，与消费电子或通用AI技术的商业应用无直接关联。\n3. 应用场景对比：导弹预警卫星用于国家战略防御，而现有主题关注消费市场或通用技术研发，应用场景无重叠。"
+      },
+      "verification": {
+        "passed": true,
+        "critical_check_passed": true,
+        "score_check_passed": true,
+        "reason_quality_check_passed": true,
+        "issues": [],
+        "warnings": [
+          "✅ 关键检查通过: 国防航天 ≠ 消费电子",
+          "✅ 分数范围正确: 0.100 在 [0.0, 0.3] 内",
+          "⚠️  分析理由缺少关键词: ['领域不同', '本质不同']"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test_id": "REAL_002",
+      "test_name": "半导体技术匹配测试",
+      "upstream_action": "CREATE_NEW",
+      "processing_time": 6.903711795806885,
+      "ai_analysis": {
+        "best_match_theme": "半导体",
+        "similarity_score": 0.95,
+        "similarity_reason": "1. 领域相似性说明：新闻事件核心为芯片制造技术突破，属于半导体制造领域，与'半导体'主题完全一致。\n2. 技术关联性说明：事件涉及晶体管密度、功耗、GAA架构等半导体制造关键技术，与主题描述中的'芯片制造'高度相关。\n3. 应用场景对比：事件提及对AI芯片、高性能计算的影响，与半导体主题的广泛技术应用场景相符。"
+      },
+      "verification": {
+        "passed": true,
+        "critical_check_passed": true,
+        "score_check_passed": true,
+        "reason_quality_check_passed": true,
+        "issues": [],
+        "warnings": [
+          "✅ 关键检查通过: 半导体技术 ≈ 半导体",
+          "✅ 分数范围正确: 0.950 在 [0.6, 1.0] 内",
+          "⚠️  分析理由缺少关键词: ['技术相关', '领域相同']"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test_id": "REAL_003",
+      "test_name": "CLUSTER事件相似性测试",
+      "upstream_action": "CLUSTER",
+      "processing_time": 8.443664789199829,
+      "ai_analysis": {
+        "best_match_theme": "智能穿戴设备",
+        "similarity_score": 0.9,
+        "similarity_reason": "1. 领域相似性说明：新闻事件的核心是智能眼镜产品发布，属于可穿戴设备领域，与'智能穿戴设备'主题完全一致。\n2. 技术关联性说明：产品集成了AR和AI技术，与'人工智能应用'主题部分相关，但其核心载体和主要功能定位是穿戴式硬件。\n3. 应用场景对比：产品主打运动场景应用，与'智能穿戴设备'主题中健康监测等应用场景高度契合。"
+      },
+      "verification": {
+        "passed": true,
+        "critical_check_passed": true,
+        "score_check_passed": true,
+        "reason_quality_check_passed": true,
+        "issues": [],
+        "warnings": [
+          "✅ 关键检查通过: 智能眼镜 ∈ 消费电子",
+          "⚠️  未匹配到期望主题 '消费电子'，实际匹配: '智能穿戴设备'",
+          "✅ 分数范围正确: 0.900 在 [0.7, 1.0] 内",
+          "⚠️  分析理由缺少关键词: ['消费电子', '同类产品', '领域相同']"
+        ]
+      },
+      "passed": true
+    }
+  ],
+  "key_findings": {
+    "domain_differentiation": {
+      "status": "good",
+      "details": [
+        "✅ 国防航天 vs 消费电子: 正确区分国防航天和消费电子"
+      ]
+    },
+    "score_accuracy": {
+      "status": "unknown",
+      "details": []
+    },
+    "reasoning_quality": {
+      "status": "unknown",
+      "details": []
+    },
+    "critical_issues": [],
+    "successful_tests": [
+      "国防航天 vs 消费电子",
+      "半导体技术匹配测试",
+      "CLUSTER事件相似性测试"
+    ],
+    "overall_status": "excellent"
+  },
+  "recommendations": [
+    "分析AI提示词是否需要优化以更好区分领域",
+    "考虑调整相似度分数的阈值",
+    "检查AI返回的理由是否符合业务要求"
+  ]
+}

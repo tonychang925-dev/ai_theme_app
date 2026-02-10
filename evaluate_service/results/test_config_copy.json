@@ -1,0 +1,21 @@
+{
+  "virtual_database": {
+    "initial_state": "empty",
+    "max_themes": 1000,
+    "enable_keyword_cache": true
+  },
+  "enhanced_engine": {
+    "fast_track_threshold": 0.85,
+    "review_threshold": 0.65,
+    "ignore_threshold": 0.3
+  },
+  "test_runner": {
+    "event_source": "processed",
+    "output_dir": "evaluate_service/results",
+    "max_events": null
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  }
+}

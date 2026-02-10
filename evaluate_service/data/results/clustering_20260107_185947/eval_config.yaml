@@ -1,0 +1,33 @@
+evaluation:
+  name: "主题聚类能力评估"
+  focus: "事件归集能力评估"
+  version: "1.0"
+
+metrics:
+  weights:
+    clustering_precision: 0.30
+    collection_completeness: 0.25
+    theme_purity: 0.20
+    theme_separation: 0.15
+    event_coverage: 0.10
+  
+  thresholds:
+    excellent: 0.85
+    good: 0.70
+    acceptable: 0.60
+    needs_improvement: 0.50
+
+sampling:
+  focus_themes:
+    - "光刻胶"
+    - "卫星互联"
+    - "稀土永磁"
+    - "海洋经济"
+    - "对日制裁"
+  samples_per_theme: 3
+  max_total_samples: 25
+
+output:
+  save_detailed_results: true
+  generate_html_report: true
+  output_dir: "$OUTPUT_DIR"

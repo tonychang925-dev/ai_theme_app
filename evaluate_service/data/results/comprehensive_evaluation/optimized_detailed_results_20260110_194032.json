@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "type": "详细优化方案结果",
+    "total_datasets": 1,
+    "generated_at": "2026-01-10T19:40:32.398345"
+  },
+  "results": [
+    {
+      "total_events": 76,
+      "status_distribution": {
+        "merged": 14,
+        "created": 62
+      },
+      "execution_path_distribution": {
+        "guided_merge": 76
+      },
+      "decision_distribution": {
+        "MERGE_INTO": 76
+      },
+      "dedup_stats": {
+        "dedup_checks": 76,
+        "duplicates_detected": 14,
+        "dedup_overrides": 62
+      },
+      "efficiency_metrics": {
+        "average_processing_time_ms": 0.004197368421052634,
+        "success_rate": 1.0
+      },
+      "processing_time_seconds": 0.77343,
+      "dataset_id": 0,
+      "dataset_name": "dataset_001",
+      "event_count": 76,
+      "engine_stats": {
+        "total_processed": 76,
+        "created": 62,
+        "merged": 14,
+        "ignored": 0,
+        "failed": 0,
+        "in_review": 0,
+        "auto_merged": 0,
+        "duplicate_prevented": 14,
+        "guided_create_path": 0,
+        "fast_track_create_path": 0,
+        "guided_merge_path": 76,
+        "guided_merge_with_dedup": 14,
+        "fast_track_with_dedup": 0,
+        "ai_decision_overridden": 62,
+        "component_usage": {
+          "theme_fetcher_used": 0,
+          "dedup_engine_used": 76,
+          "theme_fetcher_failed": 0,
+          "dedup_engine_failed": 0,
+          "dedup_checks_in_guided_merge": 76,
+          "dedup_checks_in_fast_track": 0,
+          "dedup_overrides_ai_decision": 62
+        }
+      }
+    }
+  ]
+}

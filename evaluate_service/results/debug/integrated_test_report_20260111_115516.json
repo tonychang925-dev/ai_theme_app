@@ -1,0 +1,209 @@
+{
+  "test_summary": {
+    "test_timestamp": "2026-01-11T11:55:16.699737",
+    "total_events_processed": 3,
+    "successful_processing": 3,
+    "failed_processing": 0,
+    "success_rate": 100.0,
+    "test_duration_seconds": null,
+    "engine_version": "enhanced_final_fixed_v1"
+  },
+  "performance_metrics": {
+    "avg_processing_time_ms": 0,
+    "max_processing_time_ms": 0,
+    "min_processing_time_ms": 0,
+    "avg_decision_time_ms": 0.5206666666666667,
+    "events_per_second": 0,
+    "meets_performance_target": {
+      "target_ms": 2000,
+      "below_target_count": 0,
+      "below_target_percentage": 0,
+      "meets_target": false
+    }
+  },
+  "decision_quality": {
+    "total_events": 3,
+    "correct_decisions": 0,
+    "accuracy": 0.0,
+    "decision_distribution": {
+      "create": {
+        "count": 3,
+        "correct": 0,
+        "accuracy": 0.0
+      }
+    }
+  },
+  "virtual_database_final_state": {
+    "total_themes": 3,
+    "theme_names": [
+      "消费电子",
+      "可穿戴设备",
+      "半导体"
+    ],
+    "keyword_index_size": 3,
+    "avg_events_per_theme": 1.0,
+    "lifecycle_distribution": {
+      "candidate": 3,
+      "growing": 0,
+      "mature": 0,
+      "decline": 0
+    }
+  },
+  "detailed_results": {
+    "processing_results": [
+      {
+        "event_id": "unknown",
+        "processed_at": "2026-01-11T11:55:15.981058",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.0,
+          "match_type": "",
+          "reason": "无现有题材可比较",
+          "confidence": 0.0
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 0,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "消费电子",
+          "confidence": 0.8,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 消费电子, 可穿戴设备, 人工智能, 增强现实, 光学制造",
+          "comparison_analysis": "与现有题材相似度: 0.00，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 0
+        },
+        "decision_confidence_raw": 0.8,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "消费电子",
+          "timestamp": "2026-01-11T11:55:15.982613"
+        },
+        "decision_time_ms": 1.189
+      },
+      {
+        "event_id": "unknown",
+        "processed_at": "2026-01-11T11:55:15.983089",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.125,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.875
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "可穿戴设备",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 消费电子, 可穿戴设备, 运动科技, AR/VR",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 1
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "可穿戴设备",
+          "timestamp": "2026-01-11T11:55:16.696397"
+        },
+        "decision_time_ms": 0.243
+      },
+      {
+        "event_id": "unknown",
+        "processed_at": "2026-01-11T11:55:16.697132",
+        "status": "created",
+        "engine_version": "enhanced_final_fixed_v1",
+        "components_used": {
+          "theme_fetcher": true,
+          "dedup_engine": true
+        },
+        "deduplication_info": {
+          "should_merge": false,
+          "target_theme": "",
+          "similarity": 0.125,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.12)，可以创建新题材",
+          "confidence": 0.875
+        },
+        "ai_decision_overridden": false,
+        "related_themes_count": 1,
+        "ai_decision": {
+          "decision": "CREATE_NEW",
+          "target_theme_name": "半导体",
+          "confidence": 0.7,
+          "reason": "与现有题材无明显关联，适合创建新题材。行业: 半导体, 消费电子, AR/VR设备, 光学元件",
+          "comparison_analysis": "与现有题材相似度: 0.10，属于新方向",
+          "match_type": "new_direction",
+          "source": "virtual_db_enhanced_analyzer",
+          "virtual_db_theme_count": 2
+        },
+        "decision_confidence_raw": 0.7,
+        "execution_path": "guided_create",
+        "execution_result": {
+          "action": "create",
+          "new_theme_name": "半导体",
+          "timestamp": "2026-01-11T11:55:16.698084"
+        },
+        "decision_time_ms": 0.12999999999999998
+      }
+    ],
+    "evaluation_results": [
+      {
+        "event_id": "event_1",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "消费电子",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.8,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T11:55:15.982915"
+      },
+      {
+        "event_id": "event_2",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "可穿戴设备",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T11:55:16.696987"
+      },
+      {
+        "event_id": "event_3",
+        "ground_truth": "未知",
+        "system_decision": "create",
+        "system_theme": "半导体",
+        "ai_decision": "CREATE_NEW",
+        "ai_confidence": 0.7,
+        "is_correct": false,
+        "reason": "",
+        "evaluation_timestamp": "2026-01-11T11:55:16.699440"
+      }
+    ]
+  },
+  "recommendations": [
+    "决策准确率 0.0% 低于85%目标，需要改进AI决策逻辑",
+    "平均每个主题的事件数较低，可能存在过度创建新主题的问题"
+  ]
+}

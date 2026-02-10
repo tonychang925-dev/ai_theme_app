@@ -1,0 +1,25 @@
+{
+  "total_events": 76,
+  "event_type_distribution": {
+    "normal": 60,
+    "major": 16
+  },
+  "impact_level_distribution": {
+    "medium": 30,
+    "low": 30,
+    "high": 16
+  },
+  "core_concept_distribution": {
+    "科技创新": 22,
+    "人工智能": 14,
+    "半导体": 12,
+    "5G通信": 8,
+    "金融": 6,
+    "云计算": 5,
+    "医疗": 4,
+    "文化娱乐": 3,
+    "电商零售": 2
+  },
+  "generation_time": "2026-02-03T10:31:45.689295",
+  "data_source": "validation_dataset.json"
+}

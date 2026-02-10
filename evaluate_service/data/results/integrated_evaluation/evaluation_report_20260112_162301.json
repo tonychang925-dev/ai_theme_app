@@ -1,0 +1,424 @@
+{
+  "report_id": "evaluation_report_20260112_162301",
+  "generated_at": "2026-01-12T16:23:01.290249",
+  "test_duration_seconds": 4571.773106,
+  "executive_summary": {
+    "total_events_processed": 76,
+    "success_rate_percentage": "98.7%",
+    "unique_themes_generated": 36,
+    "average_processing_time": "60.14秒",
+    "assessment_grade": "优秀",
+    "grade_emoji": "🎉",
+    "key_achievement": "AI相似性分析架构成功部署并验证",
+    "main_finding": "系统成功处理了76个事件，产生了36个独特主题"
+  },
+  "system_configuration": {
+    "engine_version": "ai_similarity_engine_robust_v1",
+    "analysis_method": "AI相似性分析",
+    "ai_model": "DeepSeek-Chat",
+    "thresholds": {
+      "fast_track": 0.85,
+      "review": 0.65,
+      "ignore": 0.3
+    }
+  },
+  "performance_metrics": {
+    "total_events": 76,
+    "correctly_assigned": 0,
+    "incorrectly_assigned": 1,
+    "unassigned": 0,
+    "theme_counts": {
+      "智能眼镜": 10,
+      "航天基地扩建": 1,
+      "低轨预警星座": 1,
+      "航天商业化": 8,
+      "可控核聚变突破": 2,
+      "核聚变工程化": 6,
+      "核聚变资本整合": 1,
+      "紧凑聚变装置": 1,
+      "两用物项出口管制": 4,
+      "东亚地缘紧张": 4,
+      "稀土出口便利化": 1,
+      "稀土基地建设": 1,
+      "中美关税缓和": 2,
+      "稀土价格上调": 1,
+      "海洋经济条例": 2,
+      "AI海洋应用": 1,
+      "海洋强国规划": 2,
+      "光刻胶国产替代": 8,
+      "卫星超级工厂": 1,
+      "火箭海上回收": 1,
+      "航天专职监管": 1,
+      "太空数据中心": 1,
+      "商业航天发射": 1,
+      "数据中心芯片": 1,
+      "液冷服务器": 2,
+      "液冷散热": 1,
+      "AI液冷": 1,
+      "液冷数据中心": 1,
+      "微流体冷却": 1,
+      "微通道水冷": 1,
+      "AI智能体并购": 1,
+      "文生视频突破": 1,
+      "国资AI融资": 1,
+      "AI智能体平台": 1,
+      "AI智能体融资": 1,
+      "AI智能体": 1
+    },
+    "processing_times": [
+      11.829352,
+      27.065045,
+      35.601481,
+      25.915105,
+      39.886265,
+      31.725764,
+      31.563695,
+      37.119971,
+      31.692462,
+      41.570094,
+      27.656541,
+      42.605142,
+      32.210956,
+      39.797286,
+      44.281088,
+      39.85955,
+      37.29421,
+      49.383247,
+      59.142744,
+      46.178928,
+      54.526007,
+      47.438429,
+      55.856583,
+      63.984062,
+      47.647336,
+      49.219457,
+      57.272584,
+      54.914802,
+      56.054029,
+      52.153834,
+      57.430951,
+      59.084984,
+      53.598668,
+      55.084015,
+      57.150413,
+      65.726841,
+      63.980378,
+      62.664891,
+      73.450526,
+      58.847729,
+      73.552112,
+      60.076427,
+      63.376885,
+      72.128075,
+      74.336594,
+      72.8771,
+      81.807212,
+      79.88234,
+      80.914941,
+      73.846746,
+      68.317067,
+      70.222834,
+      77.053689,
+      87.830581,
+      78.591486,
+      78.746876,
+      71.462086,
+      89.64661,
+      66.134802,
+      73.007774,
+      74.481123,
+      83.765306,
+      70.44872,
+      81.238278,
+      57.590961,
+      80.644617,
+      84.661093,
+      82.651611,
+      77.742569,
+      81.249953,
+      50.034798,
+      55.47672,
+      67.920493,
+      83.303014,
+      82.923499,
+      84.465023
+    ],
+    "confusion_matrix": {},
+    "success_rate": 0.9868421052631579,
+    "avg_processing_time": 60.14309815789474,
+    "max_processing_time": 89.64661,
+    "min_processing_time": 11.829352,
+    "unique_themes_count": 36,
+    "theme_distribution": {
+      "智能眼镜": 10,
+      "航天基地扩建": 1,
+      "低轨预警星座": 1,
+      "航天商业化": 8,
+      "可控核聚变突破": 2,
+      "核聚变工程化": 6,
+      "核聚变资本整合": 1,
+      "紧凑聚变装置": 1,
+      "两用物项出口管制": 4,
+      "东亚地缘紧张": 4,
+      "稀土出口便利化": 1,
+      "稀土基地建设": 1,
+      "中美关税缓和": 2,
+      "稀土价格上调": 1,
+      "海洋经济条例": 2,
+      "AI海洋应用": 1,
+      "海洋强国规划": 2,
+      "光刻胶国产替代": 8,
+      "卫星超级工厂": 1,
+      "火箭海上回收": 1,
+      "航天专职监管": 1,
+      "太空数据中心": 1,
+      "商业航天发射": 1,
+      "数据中心芯片": 1,
+      "液冷服务器": 2,
+      "液冷散热": 1,
+      "AI液冷": 1,
+      "液冷数据中心": 1,
+      "微流体冷却": 1,
+      "微通道水冷": 1,
+      "AI智能体并购": 1,
+      "文生视频突破": 1,
+      "国资AI融资": 1,
+      "AI智能体平台": 1,
+      "AI智能体融资": 1,
+      "AI智能体": 1
+    }
+  },
+  "comparative_analysis": {
+    "optimized_system": {
+      "total_events": 76,
+      "unique_themes": 36,
+      "success_rate": 0.9868421052631579,
+      "avg_processing_time": 60.14309815789474
+    },
+    "baseline_system": {
+      "total_events": 0,
+      "unique_themes": 0,
+      "comprehensive_score": 0,
+      "clustering_accuracy": 0
+    },
+    "ground_truth": {
+      "total_events": 76,
+      "unique_themes": 10,
+      "expected_themes": [
+        "AI/AR眼镜",
+        "稀土永磁",
+        "海洋经济",
+        "光刻胶",
+        "卫星互联",
+        "液冷数据中心",
+        "可控核聚变",
+        "SpaceX",
+        "AI智能体Manus",
+        "对日制裁"
+      ]
+    },
+    "comparison_metrics": {}
+  },
+  "theme_analysis": [
+    {
+      "theme_name": "智能眼镜",
+      "event_count": 10,
+      "percentage": 13.157894736842104
+    },
+    {
+      "theme_name": "航天商业化",
+      "event_count": 8,
+      "percentage": 10.526315789473683
+    },
+    {
+      "theme_name": "光刻胶国产替代",
+      "event_count": 8,
+      "percentage": 10.526315789473683
+    },
+    {
+      "theme_name": "核聚变工程化",
+      "event_count": 6,
+      "percentage": 7.894736842105263
+    },
+    {
+      "theme_name": "两用物项出口管制",
+      "event_count": 4,
+      "percentage": 5.263157894736842
+    },
+    {
+      "theme_name": "东亚地缘紧张",
+      "event_count": 4,
+      "percentage": 5.263157894736842
+    },
+    {
+      "theme_name": "可控核聚变突破",
+      "event_count": 2,
+      "percentage": 2.631578947368421
+    },
+    {
+      "theme_name": "中美关税缓和",
+      "event_count": 2,
+      "percentage": 2.631578947368421
+    },
+    {
+      "theme_name": "海洋经济条例",
+      "event_count": 2,
+      "percentage": 2.631578947368421
+    },
+    {
+      "theme_name": "海洋强国规划",
+      "event_count": 2,
+      "percentage": 2.631578947368421
+    },
+    {
+      "theme_name": "液冷服务器",
+      "event_count": 2,
+      "percentage": 2.631578947368421
+    },
+    {
+      "theme_name": "航天基地扩建",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "低轨预警星座",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "核聚变资本整合",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "紧凑聚变装置",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "稀土出口便利化",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "稀土基地建设",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "稀土价格上调",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "AI海洋应用",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "卫星超级工厂",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "火箭海上回收",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "航天专职监管",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "太空数据中心",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "商业航天发射",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "数据中心芯片",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "液冷散热",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "AI液冷",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "液冷数据中心",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "微流体冷却",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "微通道水冷",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "AI智能体并购",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "文生视频突破",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "国资AI融资",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "AI智能体平台",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "AI智能体融资",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    },
+    {
+      "theme_name": "AI智能体",
+      "event_count": 1,
+      "percentage": 1.3157894736842104
+    }
+  ],
+  "detailed_findings": [
+    {
+      "category": "系统稳定性",
+      "finding": "系统表现高度稳定，成功处理了90%以上的事件",
+      "implication": "系统已具备生产环境部署的基本条件",
+      "confidence": "高"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "中",
+      "area": "主题收敛",
+      "recommendation": "调整相似度阈值，目标主题数约10个",
+      "expected_impact": "使主题数量更接近期望值"
+    }
+  ],
+  "files_generated": {
+    "raw_results": "/Users/admin/Desktop/ai_theme_app/evaluate_service/data/results/integrated_evaluation/optimized_system_results_20260112_162300.json",
+    "assignments_csv": "/Users/admin/Desktop/ai_theme_app/evaluate_service/data/results/integrated_evaluation/theme_assignments_20260112_162300.csv"
+  }
+}

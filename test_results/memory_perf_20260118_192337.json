@@ -1,0 +1,91 @@
+{
+  "create_single": {
+    "count": 50,
+    "avg_ms": 0.02426624298095703,
+    "min_ms": 0.0171661376953125,
+    "max_ms": 0.07224082946777344,
+    "std_ms": 0.011501957647100939,
+    "ops_per_sec": 41209.51070937316
+  },
+  "get_by_id": {
+    "count": 50,
+    "avg_ms": 0.001468658447265625,
+    "ops_per_sec": 680893.5064935065
+  },
+  "get_by_code": {
+    "count": 50,
+    "avg_ms": 0.004954338073730469,
+    "ops_per_sec": 201843.31087584214
+  },
+  "update_full": {
+    "count": 50,
+    "avg_ms": 0.010180473327636719,
+    "ops_per_sec": 98227.2599531616
+  },
+  "update_increment": {
+    "count": 50,
+    "avg_ms": 0.006318092346191406,
+    "ops_per_sec": 158275.62264150943
+  },
+  "search_general": {
+    "count": 20,
+    "avg_ms": 0.32126903533935547,
+    "ops_per_sec": 3112.656029684601
+  },
+  "search_keyword": {
+    "count": 20,
+    "avg_ms": 0.3519296646118164,
+    "ops_per_sec": 2841.4768647110627
+  },
+  "search_heat": {
+    "count": 20,
+    "avg_ms": 0.05104541778564453,
+    "ops_per_sec": 19590.397010742643
+  },
+  "batch_create": {
+    "1": {
+      "batch_size": 1,
+      "total_time_ms": 0.07295608520507812,
+      "avg_time_per_theme_ms": 0.07295608520507812,
+      "ops_per_sec": 13706.875816993464,
+      "efficiency_gain": 1.0
+    },
+    "10": {
+      "batch_size": 10,
+      "total_time_ms": 0.3337860107421875,
+      "avg_time_per_theme_ms": 0.03337860107421875,
+      "ops_per_sec": 29959.314285714285,
+      "efficiency_gain": 2.1857142857142855
+    },
+    "50": {
+      "batch_size": 50,
+      "total_time_ms": 2.2058486938476562,
+      "avg_time_per_theme_ms": 0.044116973876953125,
+      "ops_per_sec": 22667.012537829658,
+      "efficiency_gain": 1.6536964980544746
+    }
+  },
+  "concurrent_read": {
+    "1": {
+      "concurrency": 1,
+      "total_operations": 5,
+      "total_time_ms": 0.9081363677978516,
+      "avg_time_per_op_ms": 0.1816272735595703,
+      "ops_per_sec": 5505.7810448936725
+    },
+    "5": {
+      "concurrency": 5,
+      "total_operations": 25,
+      "total_time_ms": 1.4209747314453125,
+      "avg_time_per_op_ms": 0.0568389892578125,
+      "ops_per_sec": 17593.557046979866
+    },
+    "10": {
+      "concurrency": 10,
+      "total_operations": 50,
+      "total_time_ms": 1.09100341796875,
+      "avg_time_per_op_ms": 0.021820068359375,
+      "ops_per_sec": 45829.37062937063
+    }
+  }
+}

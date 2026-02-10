@@ -1,0 +1,2481 @@
+{
+  "test_id": "integrated_test_20260112_165502",
+  "test_date": "2026-01-12T16:55:02.607417",
+  "total_events": 76,
+  "theme_assignments": {
+    "news_000": "分析失败或未找到相似主题相关主题",
+    "news_001": "FAILED",
+    "news_002": "FAILED",
+    "news_003": "FAILED",
+    "news_004": "FAILED",
+    "news_005": "FAILED",
+    "news_006": "FAILED",
+    "news_007": "FAILED",
+    "news_008": "FAILED",
+    "news_009": "FAILED",
+    "news_010": "FAILED",
+    "news_011": "FAILED",
+    "news_012": "FAILED",
+    "news_013": "FAILED",
+    "news_014": "FAILED",
+    "news_015": "FAILED",
+    "news_016": "FAILED",
+    "news_017": "FAILED",
+    "news_018": "FAILED",
+    "news_019": "FAILED",
+    "news_020": "FAILED",
+    "news_021": "FAILED",
+    "news_022": "FAILED",
+    "news_023": "FAILED",
+    "news_024": "FAILED",
+    "news_025": "FAILED",
+    "news_026": "FAILED",
+    "news_027": "FAILED",
+    "news_028": "FAILED",
+    "news_029": "FAILED",
+    "news_030": "FAILED",
+    "news_031": "FAILED",
+    "news_032": "FAILED",
+    "news_033": "FAILED",
+    "news_034": "FAILED",
+    "news_035": "FAILED",
+    "news_036": "FAILED",
+    "news_037": "FAILED",
+    "news_038": "FAILED",
+    "news_039": "FAILED",
+    "news_040": "FAILED",
+    "news_041": "FAILED",
+    "news_042": "FAILED",
+    "news_043": "FAILED",
+    "news_044": "FAILED",
+    "news_045": "FAILED",
+    "news_046": "FAILED",
+    "news_047": "FAILED",
+    "news_048": "FAILED",
+    "news_049": "FAILED",
+    "news_050": "FAILED",
+    "news_051": "FAILED",
+    "news_052": "FAILED",
+    "news_053": "FAILED",
+    "news_054": "FAILED",
+    "news_055": "FAILED",
+    "news_056": "FAILED",
+    "news_057": "FAILED",
+    "news_058": "FAILED",
+    "news_059": "FAILED",
+    "news_060": "FAILED",
+    "news_061": "FAILED",
+    "news_062": "FAILED",
+    "news_063": "FAILED",
+    "news_064": "FAILED",
+    "news_065": "FAILED",
+    "news_066": "FAILED",
+    "news_067": "FAILED",
+    "news_068": "FAILED",
+    "news_069": "FAILED",
+    "news_070": "FAILED",
+    "news_071": "FAILED",
+    "news_072": "FAILED",
+    "news_073": "FAILED",
+    "news_074": "FAILED",
+    "news_075": "FAILED"
+  },
+  "decision_paths": {
+    "news_000": {
+      "final_theme": "分析失败或未找到相似主题相关主题",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "status": "created",
+      "processing_time": 0.007437
+    }
+  },
+  "detailed_results": [
+    {
+      "event_id": "news_000",
+      "status": "created",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "created",
+        "theme_name": "分析失败或未找到相似主题相关主题",
+        "theme_id": 1,
+        "confidence": 0.3
+      },
+      "processing_time": 0.007437,
+      "related_themes_count": 0,
+      "theme_name": "分析失败或未找到相似主题相关主题"
+    },
+    {
+      "event_id": "news_001",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001479,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_002",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001183,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_003",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001168,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_004",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.00116,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_005",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001178,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_006",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001115,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_007",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001126,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_008",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001104,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_009",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.002132,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_010",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.002108,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_011",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001232,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_012",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001148,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_013",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001037,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_014",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000992,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_015",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001203,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_016",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001125,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_017",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000965,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_018",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001034,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_019",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000895,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_020",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001085,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_021",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000998,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_022",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001132,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_023",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000922,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_024",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001035,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_025",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000916,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_026",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000919,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_027",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001214,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_028",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.003512,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_029",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001021,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_030",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001027,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_031",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.00087,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_032",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001012,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_033",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000994,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_034",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001724,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_035",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001495,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_036",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001616,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_037",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001546,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_038",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001087,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_039",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001027,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_040",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000875,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_041",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000876,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_042",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000862,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_043",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000868,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_044",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000864,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_045",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001059,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_046",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.00127,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_047",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001397,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_048",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000913,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_049",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001178,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_050",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001206,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_051",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001305,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_052",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000984,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_053",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000934,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_054",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000898,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_055",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000921,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_056",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001038,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_057",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000872,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_058",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000886,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_059",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000841,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_060",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.0014,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_061",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000883,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_062",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001022,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_063",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001065,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_064",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.00259,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_065",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.002497,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_066",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.0015,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_067",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001095,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_068",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000976,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_069",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000892,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_070",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001002,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_071",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001257,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_072",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001495,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_073",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000891,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_074",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.000946,
+      "related_themes_count": 0
+    },
+    {
+      "event_id": "news_075",
+      "status": "failed",
+      "ai_decision": {
+        "decision": "CREATE_NEW",
+        "target_theme_name": "分析失败或未找到相似主题相关主题",
+        "confidence": 0.3,
+        "reason": "未找到相似主题或相似度过低 (0.00)",
+        "analysis_summary": "AI分析未返回有效结果",
+        "similarity_analysis": {
+          "most_similar_theme": {
+            "theme_name": "",
+            "similarity_score": 0.0,
+            "similarity_reason": "AI分析失败或未找到相似主题",
+            "confidence": 0.0,
+            "should_create_new": true
+          },
+          "similar_themes": [],
+          "analysis_summary": "AI分析未返回有效结果",
+          "recommendation": "CREATE_NEW",
+          "recommendation_reason": "未找到相似主题"
+        }
+      },
+      "best_match": {},
+      "execution_result": {
+        "status": "failed",
+        "error": "创建主题失败"
+      },
+      "processing_time": 0.001067,
+      "related_themes_count": 0
+    }
+  ],
+  "virtual_db_snapshot": {
+    "timestamp": "2026-01-12T16:55:02.607300",
+    "total_themes": 1,
+    "total_relations": 1,
+    "theme_names": [
+      "分析失败或未找到相似主题相关主题"
+    ],
+    "avg_relations_per_theme": 1.0
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "evaluation_time": "2026-01-09T16:39:44.828973",
+    "test_name": "简化性能测试",
+    "test_events": 50
+  },
+  "results": {
+    "total_events": 50,
+    "total_time_seconds": 5.381,
+    "events_per_second": 9.29,
+    "avg_processing_time_ms": 104.68,
+    "p95_processing_time_ms": 279.78
+  },
+  "performance_rating": "良好"
+}

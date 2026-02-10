@@ -1,0 +1,182 @@
+# model_service/service/event_extractor.py
+"""
+事件提取器 - 基于LLM解析器的新实现
+🔥 已升级支持统一格式提取和theme_directive字段
+"""
+import logging
+from typing import Dict, Optional, Any
+import json
+
+from llm_parser.factory import LLMParserFactory
+from ..llm_parser.base import LLMParser
+
+logger = logging.getLogger(__name__)
+
+class AIEventExtractor:
+    """基于抽象LLMParser的事件提取器"""
+    
+    def __init__(self, llm_parser: Optional[LLMParser] = None):
+        """
+        可以传入一个已有的解析器，如果为None则从工厂创建默认解析器。
+        """
+        self.llm_parser = llm_parser or LLMParserFactory.create_parser_from_env()
+        logger.info(f"AI事件提取器已初始化，使用 {getattr(self.llm_parser, 'provider', getattr(self.llm_parser, 'model_name', type(self.llm_parser).__name__))} 提供商")
+    
+    async def extract_event(self, news_data: Dict) -> Optional[Dict]:
+        """
+        从新闻数据中提取结构化事件。
+        🔥 已升级支持统一格式和theme_directive字段
+        """
+        title = news_data.get('title', '')
+        content = news_data.get('content', '')
+        news_id = news_data.get('news_id')
+        
+        if not title or not content:
+            logger.warning(f"新闻数据不完整，跳过处理。news_id: {news_id}")
+            return None
+        
+        # 调用抽象的LLM解析器（现在返回统一格式）
+        parsed_result = await self.llm_parser.parse_news(title, content)
+        
+        if not parsed_result:
+            logger.warning(f"LLM解析失败，未提取到事件。news_id: {news_id}")
+            return None
+        
+        # 🔥 从统一格式中提取信息
+        event_info = parsed_result.get("event_info", {})
+        theme_directive = parsed_result.get("theme_discovery_directive", {
+            "action": "CLUSTER",
+            "confidence": 0.0,
+            "reason": ""
+        })
+        
+        # 处理行业字段：确保是列表
+        impact_industries = event_info.get("impact_industries", [])
+        if isinstance(impact_industries, str):
+            # 尝试解析字符串为列表
+            try:
+                impact_industries = json.loads(impact_industries)
+            except (json.JSONDecodeError, TypeError):
+                # 如果不是JSON，尝试按逗号分割
+                if ',' in impact_industries:
+                    impact_industries = [item.strip() for item in impact_industries.split(',') if item.strip()]
+                else:
+                    impact_industries = [impact_industries] if impact_industries else []
+        
+        # 处理置信度：确保是0-1的浮点数
+        confidence = event_info.get('confidence', 0.5)
+        if isinstance(confidence, (int, float)):
+            # 如果是0-100范围的整数，转换为0-1
+            if confidence > 1 and confidence <= 100:
+                confidence = confidence / 100.0
+            confidence = float(confidence)
+        else:
+            confidence = 0.5
+        
+        # 确保置信度在合理范围内
+        confidence = max(0.0, min(1.0, confidence))
+        
+        # 处理方向：标准化
+        direction = event_info.get('direction', 'neutral')
+        direction_map = {
+            'positive': '利好',
+            'negative': '利空', 
+            'neutral': '中性',
+            '利好': '利好',
+            '利空': '利空',
+            '中性': '中性'
+        }
+        direction = direction_map.get(direction.lower() if isinstance(direction, str) else direction, '中性')
+        
+        logger.info(f"成功提取事件: news_id={news_id}, type={event_info.get('event_type')}, "
+                   f"directive={theme_directive.get('action')}, confidence={confidence:.2f}")
+        
+        # 转换为news_event表所需的格式
+        event_result = {
+            'news_id': news_id,
+            'event_type': event_info.get('event_type', 'unknown'),
+            'impact_industries': impact_industries,
+            'direction': direction,
+            'confidence': confidence,
+            'summary': event_info.get('summary', ''),  # AI生成的摘要
+            'raw_ai_response': parsed_result.get('raw_response', parsed_result),
+            'theme_directive': theme_directive,
+            
+            # 🚀 关键修复：保存完整原始数据
+            'original_data': {
+                'title': title,
+                'content': content,  # 原始完整内容
+                'content_preview': content[:500] + '...' if content and len(content) > 500 else content,
+                'content_length': len(content) if content else 0,
+                'has_full_content': len(content) > 200 if content else False
+            },
+            
+            # 🚀 关键修复：保存完整AI响应
+            'ai_response': parsed_result,
+            
+            # 数据完整性标记
+            'data_integrity': {
+                'has_title': bool(title),
+                'has_content': bool(content),
+                'content_length': len(content) if content else 0,
+                'ai_summary_length': len(event_info.get('summary', '')),
+                'enhancement_ratio': len(event_info.get('summary', '')) / max(len(content), 1) if content else 0,
+                'extraction_success': True
+            }
+        }
+
+        logger.info(f"✅ 事件提取完成: news_id={news_id}, "
+                f"原始内容长度={len(content) if content else 0}, "
+                f"AI摘要长度={len(event_info.get('summary', ''))}, "
+                f"增强比例={len(event_info.get('summary', '')) / max(len(content), 1) if content else 0:.1f}x")
+
+        return event_result
+    
+    async def health_check(self) -> bool:
+        """检查提取器健康状态"""
+        if not self.llm_parser:
+            return False
+        return await self.llm_parser.health_check()
+    
+    async def close(self):
+        """清理资源"""
+        if self.llm_parser:
+            await self.llm_parser.close()
+            logger.info("AI事件提取器资源已释放")
+
+# 保持向后兼容的Mock提取器（供测试使用）
+class MockEventExtractor:
+    """模拟事件提取器，用于测试"""
+    
+    async def extract_event(self, news_data: Dict) -> Optional[Dict]:
+        import random
+        from datetime import datetime
+        
+        event_types = ["政策发布", "技术突破", "产品发布", "业绩预告", "战略合作"]
+        industries = ["人工智能", "新能源汽车", "芯片半导体", "医药生物", "金融服务"]
+        directions = ["利好", "利空", "中性"]
+        
+        # 🔥 模拟重大事件判断
+        is_major = random.random() > 0.7  # 30%的概率是重大事件
+        
+        return {
+            'news_id': news_data.get('news_id', 'mock_001'),
+            'event_type': random.choice(event_types),
+            'impact_industries': random.sample(industries, k=random.randint(1, 3)),
+            'direction': random.choice(directions),
+            'confidence': round(random.uniform(0.7, 0.95), 2),
+            'summary': f"模拟事件摘要 - {datetime.now().strftime('%H:%M:%S')}",
+            'raw_ai_response': {"mock": True},
+            # 🔥 新增：模拟theme_directive
+            'theme_directive': {
+                "action": "CREATE_NEW" if is_major else "CLUSTER",
+                "confidence": round(random.uniform(0.8, 0.95), 2) if is_major else round(random.uniform(0.3, 0.6), 2),
+                "reason": "模拟重大事件理由" if is_major else "模拟常规事件理由"
+            }
+        }
+    
+    async def health_check(self) -> bool:
+        return True
+    
+    async def close(self):
+        pass

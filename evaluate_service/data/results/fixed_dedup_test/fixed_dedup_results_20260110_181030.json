@@ -1,0 +1,539 @@
+{
+  "metadata": {
+    "test_type": "判重引擎修复版配置测试",
+    "test_time": "2026-01-10T18:10:30.901581",
+    "test_focus": "使用正确配置格式测试判重引擎"
+  },
+  "statistics": {
+    "total_tests": 28,
+    "duplicates_detected": 13,
+    "test_passed": 16,
+    "configurations_tested": [
+      "config_default",
+      "config_optimized",
+      "config_sensitive",
+      "config_conservative"
+    ]
+  },
+  "all_config_results": [
+    {
+      "config_id": "config_default",
+      "description": "默认配置（引擎原版）",
+      "tests": [
+        {
+          "test_id": "exact_match_001",
+          "description": "精确匹配测试",
+          "new_theme_name": "人工智能",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 1.0,
+          "match_type": "exact",
+          "reason": "名称完全匹配: 人工智能 == 人工智能",
+          "passed": true
+        },
+        {
+          "test_id": "inclusion_001",
+          "description": "包含关系测试-人工智能芯片",
+          "new_theme_name": "人工智能芯片",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": false,
+          "similarity": 0.5367,
+          "match_type": "keep_separate",
+          "reason": "有一定相似度(0.54)，但建议保持独立",
+          "passed": false
+        },
+        {
+          "test_id": "synonym_001",
+          "description": "同义词测试-AI技术",
+          "new_theme_name": "AI技术发展",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 1.0,
+          "match_type": "semantic",
+          "reason": "语义相似度过高: 1.00",
+          "passed": true
+        },
+        {
+          "test_id": "semantic_001",
+          "description": "语义相似度测试-智能机器人",
+          "new_theme_name": "智能机器人技术",
+          "existing_themes": [
+            "机器人"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": false,
+          "similarity": 0.35,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.35)，可以创建新题材",
+          "passed": false
+        },
+        {
+          "test_id": "real_world_001",
+          "description": "实际用例-AI智能眼镜",
+          "new_theme_name": "AI智能眼镜",
+          "existing_themes": [
+            "AI拍摄眼镜",
+            "可穿戴设备"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": false,
+          "similarity": 0.3167,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.32)，可以创建新题材",
+          "passed": false
+        },
+        {
+          "test_id": "distinct_001",
+          "description": "不同题材测试-新能源汽车",
+          "new_theme_name": "新能源汽车",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": false,
+          "actual_should_merge": false,
+          "similarity": 0.0889,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.09)，可以创建新题材",
+          "passed": true
+        },
+        {
+          "test_id": "boundary_001",
+          "description": "边界测试-新能源车电池",
+          "new_theme_name": "新能源车电池",
+          "existing_themes": [
+            "新能源汽车",
+            "锂电池"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": false,
+          "similarity": 0.3444,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.34)，可以创建新题材",
+          "passed": false
+        }
+      ],
+      "summary": {
+        "total_tests": 7,
+        "passed": 3,
+        "duplicates_detected": 2,
+        "accuracy": 0.42857142857142855
+      }
+    },
+    {
+      "config_id": "config_optimized",
+      "description": "优化配置（降低阈值）",
+      "tests": [
+        {
+          "test_id": "exact_match_001",
+          "description": "精确匹配测试",
+          "new_theme_name": "人工智能",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 1.0,
+          "match_type": "exact",
+          "reason": "名称完全匹配: 人工智能 == 人工智能",
+          "passed": true
+        },
+        {
+          "test_id": "inclusion_001",
+          "description": "包含关系测试-人工智能芯片",
+          "new_theme_name": "人工智能芯片",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": false,
+          "similarity": 0.5367,
+          "match_type": "keep_separate",
+          "reason": "有一定相似度(0.54)，但建议保持独立",
+          "passed": false
+        },
+        {
+          "test_id": "synonym_001",
+          "description": "同义词测试-AI技术",
+          "new_theme_name": "AI技术发展",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 1.0,
+          "match_type": "semantic",
+          "reason": "语义相似度过高: 1.00",
+          "passed": true
+        },
+        {
+          "test_id": "semantic_001",
+          "description": "语义相似度测试-智能机器人",
+          "new_theme_name": "智能机器人技术",
+          "existing_themes": [
+            "机器人"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": false,
+          "similarity": 0.35,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.35)，可以创建新题材",
+          "passed": false
+        },
+        {
+          "test_id": "real_world_001",
+          "description": "实际用例-AI智能眼镜",
+          "new_theme_name": "AI智能眼镜",
+          "existing_themes": [
+            "AI拍摄眼镜",
+            "可穿戴设备"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 0.7778,
+          "match_type": "semantic",
+          "reason": "语义相似度过高: 0.78",
+          "passed": true
+        },
+        {
+          "test_id": "distinct_001",
+          "description": "不同题材测试-新能源汽车",
+          "new_theme_name": "新能源汽车",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": false,
+          "actual_should_merge": false,
+          "similarity": 0.0889,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.09)，可以创建新题材",
+          "passed": true
+        },
+        {
+          "test_id": "boundary_001",
+          "description": "边界测试-新能源车电池",
+          "new_theme_name": "新能源车电池",
+          "existing_themes": [
+            "新能源汽车",
+            "锂电池"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 0.6667,
+          "match_type": "semantic",
+          "reason": "语义相似度过高: 0.67",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "total_tests": 7,
+        "passed": 5,
+        "duplicates_detected": 4,
+        "accuracy": 0.7142857142857143
+      }
+    },
+    {
+      "config_id": "config_sensitive",
+      "description": "高敏感度配置（易于检测重复）",
+      "tests": [
+        {
+          "test_id": "exact_match_001",
+          "description": "精确匹配测试",
+          "new_theme_name": "人工智能",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 1.0,
+          "match_type": "exact",
+          "reason": "名称完全匹配: 人工智能 == 人工智能",
+          "passed": true
+        },
+        {
+          "test_id": "inclusion_001",
+          "description": "包含关系测试-人工智能芯片",
+          "new_theme_name": "人工智能芯片",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 0.6667,
+          "match_type": "inclusion",
+          "reason": "现有题材名被新题材名包含: 人工智能 ⊆ 人工智能芯片",
+          "passed": true
+        },
+        {
+          "test_id": "synonym_001",
+          "description": "同义词测试-AI技术",
+          "new_theme_name": "AI技术发展",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 1.0,
+          "match_type": "semantic",
+          "reason": "语义相似度过高: 1.00",
+          "passed": true
+        },
+        {
+          "test_id": "semantic_001",
+          "description": "语义相似度测试-智能机器人",
+          "new_theme_name": "智能机器人技术",
+          "existing_themes": [
+            "机器人"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": false,
+          "similarity": 0.3125,
+          "match_type": "keep_separate",
+          "reason": "有一定相似度(0.31)，但建议保持独立",
+          "passed": false
+        },
+        {
+          "test_id": "real_world_001",
+          "description": "实际用例-AI智能眼镜",
+          "new_theme_name": "AI智能眼镜",
+          "existing_themes": [
+            "AI拍摄眼镜",
+            "可穿戴设备"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 0.7778,
+          "match_type": "semantic",
+          "reason": "语义相似度过高: 0.78",
+          "passed": true
+        },
+        {
+          "test_id": "distinct_001",
+          "description": "不同题材测试-新能源汽车",
+          "new_theme_name": "新能源汽车",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": false,
+          "actual_should_merge": false,
+          "similarity": 0.0778,
+          "match_type": "distinct",
+          "reason": "相似度较低(0.08)，可以创建新题材",
+          "passed": true
+        },
+        {
+          "test_id": "boundary_001",
+          "description": "边界测试-新能源车电池",
+          "new_theme_name": "新能源车电池",
+          "existing_themes": [
+            "新能源汽车",
+            "锂电池"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 0.6667,
+          "match_type": "semantic",
+          "reason": "语义相似度过高: 0.67",
+          "passed": true
+        }
+      ],
+      "summary": {
+        "total_tests": 7,
+        "passed": 6,
+        "duplicates_detected": 5,
+        "accuracy": 0.8571428571428571
+      }
+    },
+    {
+      "config_id": "config_conservative",
+      "description": "保守配置（高相似度才判重）",
+      "tests": [
+        {
+          "test_id": "exact_match_001",
+          "description": "精确匹配测试",
+          "new_theme_name": "人工智能",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 1.0,
+          "match_type": "exact",
+          "reason": "名称完全匹配: 人工智能 == 人工智能",
+          "passed": true
+        },
+        {
+          "test_id": "inclusion_001",
+          "error": "'enable_event_overlap'",
+          "passed": false
+        },
+        {
+          "test_id": "synonym_001",
+          "description": "同义词测试-AI技术",
+          "new_theme_name": "AI技术发展",
+          "existing_themes": [
+            "人工智能"
+          ],
+          "expected_should_merge": true,
+          "actual_should_merge": true,
+          "similarity": 1.0,
+          "match_type": "semantic",
+          "reason": "语义相似度过高: 1.00",
+          "passed": true
+        },
+        {
+          "test_id": "semantic_001",
+          "error": "'enable_event_overlap'",
+          "passed": false
+        },
+        {
+          "test_id": "real_world_001",
+          "error": "'enable_event_overlap'",
+          "passed": false
+        },
+        {
+          "test_id": "distinct_001",
+          "error": "'enable_event_overlap'",
+          "passed": false
+        },
+        {
+          "test_id": "boundary_001",
+          "error": "'enable_event_overlap'",
+          "passed": false
+        }
+      ],
+      "summary": {
+        "total_tests": 7,
+        "passed": 2,
+        "duplicates_detected": 2,
+        "accuracy": 0.2857142857142857
+      }
+    }
+  ],
+  "best_configuration": {
+    "config_id": "config_sensitive",
+    "description": "高敏感度配置（易于检测重复）",
+    "tests": [
+      {
+        "test_id": "exact_match_001",
+        "description": "精确匹配测试",
+        "new_theme_name": "人工智能",
+        "existing_themes": [
+          "人工智能"
+        ],
+        "expected_should_merge": true,
+        "actual_should_merge": true,
+        "similarity": 1.0,
+        "match_type": "exact",
+        "reason": "名称完全匹配: 人工智能 == 人工智能",
+        "passed": true
+      },
+      {
+        "test_id": "inclusion_001",
+        "description": "包含关系测试-人工智能芯片",
+        "new_theme_name": "人工智能芯片",
+        "existing_themes": [
+          "人工智能"
+        ],
+        "expected_should_merge": true,
+        "actual_should_merge": true,
+        "similarity": 0.6667,
+        "match_type": "inclusion",
+        "reason": "现有题材名被新题材名包含: 人工智能 ⊆ 人工智能芯片",
+        "passed": true
+      },
+      {
+        "test_id": "synonym_001",
+        "description": "同义词测试-AI技术",
+        "new_theme_name": "AI技术发展",
+        "existing_themes": [
+          "人工智能"
+        ],
+        "expected_should_merge": true,
+        "actual_should_merge": true,
+        "similarity": 1.0,
+        "match_type": "semantic",
+        "reason": "语义相似度过高: 1.00",
+        "passed": true
+      },
+      {
+        "test_id": "semantic_001",
+        "description": "语义相似度测试-智能机器人",
+        "new_theme_name": "智能机器人技术",
+        "existing_themes": [
+          "机器人"
+        ],
+        "expected_should_merge": true,
+        "actual_should_merge": false,
+        "similarity": 0.3125,
+        "match_type": "keep_separate",
+        "reason": "有一定相似度(0.31)，但建议保持独立",
+        "passed": false
+      },
+      {
+        "test_id": "real_world_001",
+        "description": "实际用例-AI智能眼镜",
+        "new_theme_name": "AI智能眼镜",
+        "existing_themes": [
+          "AI拍摄眼镜",
+          "可穿戴设备"
+        ],
+        "expected_should_merge": true,
+        "actual_should_merge": true,
+        "similarity": 0.7778,
+        "match_type": "semantic",
+        "reason": "语义相似度过高: 0.78",
+        "passed": true
+      },
+      {
+        "test_id": "distinct_001",
+        "description": "不同题材测试-新能源汽车",
+        "new_theme_name": "新能源汽车",
+        "existing_themes": [
+          "人工智能"
+        ],
+        "expected_should_merge": false,
+        "actual_should_merge": false,
+        "similarity": 0.0778,
+        "match_type": "distinct",
+        "reason": "相似度较低(0.08)，可以创建新题材",
+        "passed": true
+      },
+      {
+        "test_id": "boundary_001",
+        "description": "边界测试-新能源车电池",
+        "new_theme_name": "新能源车电池",
+        "existing_themes": [
+          "新能源汽车",
+          "锂电池"
+        ],
+        "expected_should_merge": true,
+        "actual_should_merge": true,
+        "similarity": 0.6667,
+        "match_type": "semantic",
+        "reason": "语义相似度过高: 0.67",
+        "passed": true
+      }
+    ],
+    "summary": {
+      "total_tests": 7,
+      "passed": 6,
+      "duplicates_detected": 5,
+      "accuracy": 0.8571428571428571
+    }
+  },
+  "summary": {
+    "total_configurations_tested": 4,
+    "overall_accuracy": 0.5714285714285714,
+    "best_config_id": "config_sensitive",
+    "best_accuracy": 0.8571428571428571
+  }
+}

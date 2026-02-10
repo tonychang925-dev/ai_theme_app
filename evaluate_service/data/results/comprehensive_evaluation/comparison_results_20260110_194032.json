@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "type": "对比分析结果",
+    "total_comparisons": 1,
+    "generated_at": "2026-01-10T19:40:32.398629"
+  },
+  "comparisons": [
+    {
+      "dataset_name": "dataset_001",
+      "dataset_id": 0,
+      "event_count": 76,
+      "metrics_comparison": {
+        "success_rate": {
+          "baseline": 0,
+          "optimized": 1.0,
+          "improvement": 1.0,
+          "improvement_percent": 10000.0
+        }
+      },
+      "improvement_summary": [
+        {
+          "metric": "成功率",
+          "improvement": "+100.0%",
+          "explanation": "两阶段AI决策提高了处理准确性"
+        },
+        {
+          "metric": "重复检测",
+          "improvement": "检测到 14 个重复",
+          "explanation": "判重引擎有效防止了重复创建"
+        },
+        {
+          "metric": "AI决策验证",
+          "improvement": "覆盖了 62 个AI决策",
+          "explanation": "判重引擎验证并修正了AI决策"
+        }
+      ],
+      "dedup_metrics": {
+        "dedup_check_rate": 1.0,
+        "duplicate_detection_rate": 0.18421052631578946,
+        "dedup_overrides": 62,
+        "duplicates_detected": 14
+      }
+    }
+  ]
+}
