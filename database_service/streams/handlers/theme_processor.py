@@ -1083,7 +1083,7 @@ class ThemeProcessor:
             )
             return error_decision
 
-    def _get_action_for_decision_type(self, decision_type: str, stream_type: str) -> str:
+    def _get_action_for_decision_type_legacy(self, decision_type: str, stream_type: str) -> str:
         """根据决策类型获取动作 - 修复版"""
         # 注意：decision_type是字符串常量，不是DecisionType类的属性
         
@@ -1611,26 +1611,26 @@ class ThemeProcessor:
     
     def print_stats(self):
         """打印统计信息 - 保持原有结构"""
-        print("\n" + "=" * 60)
-        print("📊 ThemeProcessor统计信息")
-        print("=" * 60)
-        print(f"运行模式: {'分类优先' if self.enable_classification_first else '传统'}")
-        print(f"运行时间: {self.stats['started_at']}")
-        print(f"总处理事件: {self.stats['total_processed']}")
-        print(f"  Normal: {self.stats['by_stream']['normal']}")
-        print(f"  Major: {self.stats['by_stream']['major']}")
-        print(f"匹配结果:")
-        print(f"  匹配成功: {self.stats['by_outcome']['matched']}")
-        print(f"  进入pending: {self.stats['by_outcome']['pending']}")
-        print(f"  处理错误: {self.stats['by_outcome']['error']}")
+        logger.info("\n" + "=" * 60)
+        logger.info("📊 ThemeProcessor统计信息")
+        logger.info("=" * 60)
+        logger.info(f"运行模式: {'分类优先' if self.enable_classification_first else '传统'}")
+        logger.info(f"运行时间: {self.stats['started_at']}")
+        logger.info(f"总处理事件: {self.stats['total_processed']}")
+        logger.info(f"  Normal: {self.stats['by_stream']['normal']}")
+        logger.info(f"  Major: {self.stats['by_stream']['major']}")
+        logger.info(f"匹配结果:")
+        logger.info(f"  匹配成功: {self.stats['by_outcome']['matched']}")
+        logger.info(f"  进入pending: {self.stats['by_outcome']['pending']}")
+        logger.info(f"  处理错误: {self.stats['by_outcome']['error']}")
         
         if self.enable_classification_first:
-            print(f"分类统计:")
-            print(f"  分类推断次数: {self.classification_stats['category_inferences']}")
-            print(f"  分类匹配成功: {self.classification_stats['category_matched']}")
-            print(f"  分类匹配失败: {self.classification_stats['category_not_matched']}")
-            print(f"  按分类加载题材数: {self.classification_stats['themes_loaded_by_category']}")
-            print(f"  缓存命中率: {self.classification_stats['category_cache_hits']}/"
+            logger.info(f"分类统计:")
+            logger.info(f"  分类推断次数: {self.classification_stats['category_inferences']}")
+            logger.info(f"  分类匹配成功: {self.classification_stats['category_matched']}")
+            logger.info(f"  分类匹配失败: {self.classification_stats['category_not_matched']}")
+            logger.info(f"  按分类加载题材数: {self.classification_stats['themes_loaded_by_category']}")
+            logger.info(f"  缓存命中率: {self.classification_stats['category_cache_hits']}/"
                 f"{self.classification_stats['category_cache_hits'] + self.classification_stats['category_cache_misses']}")
         
-        print("=" * 60)
+        logger.info("=" * 60)

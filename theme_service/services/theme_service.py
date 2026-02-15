@@ -136,7 +136,7 @@ class ThemeService:
             return False
         
     
-    async def initialize_with_categories_only(self, categories: List[Dict]) -> bool:
+    async def _initialize_with_categories_only_legacy(self, categories: List[Dict]) -> bool:
         """分类优先模式初始化"""
         logger.info("🔄 ThemeService分类优先初始化")
         
@@ -222,7 +222,7 @@ class ThemeService:
         except Exception as e:
             logger.error(f"❌ ThemeService数据驱动初始化异常: {e}")
             import traceback
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return False
     
     async def discover_theme(self, event_data: Dict, **kwargs) -> Dict[str, Any]:
@@ -351,7 +351,7 @@ class ThemeService:
             
         except Exception as e:
             logger.error(f"❌ 主题发现失败: {e}")
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return self._create_error_response(str(e), operation)
     
     async def discover_and_create_theme(self, event_data: Dict, **kwargs) -> Dict[str, Any]:
@@ -515,7 +515,7 @@ class ThemeService:
             
         except Exception as e:
             logger.error(f"❌ 发现并创建主题失败: {e}")
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return self._create_error_response(str(e), operation)
     
     async def trigger_clustering_analysis(self, unmatched_pool: List, 
@@ -597,7 +597,7 @@ class ThemeService:
             
         except Exception as e:
             logger.error(f"❌ 聚类分析失败: {e}")
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return self._create_error_response(str(e), operation)
     
     async def batch_discover_themes(self, events_data: List[Dict], **kwargs) -> Dict[str, Any]:
@@ -861,7 +861,7 @@ class ThemeService:
             
         except Exception as e:
             logger.error(f"❌ 自动创建失败: {e}")
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return self._create_error_response(str(e), operation)
     
     def _get_mock_themes(self) -> List[Dict]:
@@ -1050,11 +1050,11 @@ class ThemeService:
             
         except Exception as e:
             logger.error(f"❌ ThemeService分类专用初始化失败: {e}")
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             self._initialized = False
             return False
 
-    async def discover_category_only(self, event_data: Dict) -> Dict:
+    async def _discover_category_only_legacy(self, event_data: Dict) -> Dict:
         """
         仅进行分类匹配（不匹配具体题材）
         返回分类推断结果，不返回具体题材
@@ -1520,7 +1520,7 @@ class ThemeService:
         except Exception as e:
             logger.error(f"❌ {operation} 失败: {e}")
             import traceback
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return self._create_error_response(str(e), operation)
         
     def create_new_theme_by_rules(self, event_data: Dict) -> Optional[Dict]:
@@ -1610,7 +1610,7 @@ class ThemeService:
         except Exception as e:
             logger.error(f"❌ ThemeService生成新题材数据失败: {e}")
             import traceback
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return None
 
     def _determine_operations_from_category_info(self, category_info: Dict) -> List[str]:
@@ -1707,9 +1707,9 @@ def get_theme_service(enable_clustering: bool = False) -> ThemeService:
 
 if __name__ == "__main__":
     # 运行测试
-    print("选择测试模式:")
-    print("1. 基础功能测试")
-    print("2. 聚类分析测试")
+    logger.info("选择测试模式:")
+    logger.info("1. 基础功能测试")
+    logger.info("2. 聚类分析测试")
     choice = input("请输入选择 (1/2): ").strip()
     
     if choice == "2":

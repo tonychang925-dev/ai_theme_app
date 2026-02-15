@@ -1,0 +1,19 @@
+{
+  "phase": "P1.phase0",
+  "milestone": "P1",
+  "source": "tmp/pm_plan_payload.json",
+  "task_updates": [
+    {"task_name": "P1.phase0-T01 冻结第一阶段唯一运行时链路与入口清单", "status": "done"},
+    {"task_name": "P1.phase0-T02 定义DecisionEnvelope v1字段与dual-read兼容策略", "status": "done"},
+    {"task_name": "P1.phase0-T03 清理重复函数定义并建立静态扫描门禁", "status": "done"},
+    {"task_name": "P1.phase0-T04 trace_id与payload_version全链路贯通方案评审", "status": "done"}
+  ],
+  "qa_gate": {
+    "status": "failed",
+    "reason": "pytest database_service/tests/streams -q failed: 62 failed, 28 passed"
+  },
+  "reports": [
+    "docs/project_control/QA_GATE.md",
+    "docs/project_control/reports/phase-P1.phase0.md"
+  ]
+}
