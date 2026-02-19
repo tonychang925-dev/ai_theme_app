@@ -1,0 +1,35 @@
+{
+  "run_id": "20260217_212755",
+  "phase": "P1.phase0",
+  "mode": "autopilot",
+  "generated_at": "2026-02-17T13:40:30Z",
+  "checks": {
+    "token_verify": {
+      "ok": false,
+      "token_fingerprint": "ntn_...B7li",
+      "user_type": null,
+      "name": null,
+      "error": "[Errno 8] nodename nor servname provided, or not known",
+      "note": null
+    },
+    "network_fetch_tasks": {
+      "ok": false,
+      "task_prefix": "P1.phase0",
+      "status_filter": "Todo,Doing,In review",
+      "tasks_count": 0,
+      "output": "tmp/runs/20260217_212755/preflight_tasks.json",
+      "error": "📋 获取任务列表...\n❌ 获取活跃任务失败: [Errno 8] nodename nor servname provided, or not known\n✅ 按前缀 'P1.phase0' 获取到 0 个任务\n💾 已保存到: tmp/runs/20260217_212755/preflight_tasks.json",
+      "failed_by_output": true
+    }
+  },
+  "gate_ready": false,
+  "transient_network_error": true,
+  "require_network_escalation_once": true,
+  "next_action": "request_network_escalation_once",
+  "blocking_issues": [
+    "token_verify_failed",
+    "network_fetch_failed",
+    "request_network_escalation_once"
+  ],
+  "allow_offline": false
+}

@@ -3,6 +3,7 @@
 Stream配置模块测试
 测试配置加载、验证等功能
 """
+# TC-ID: TC-P1P0-004
 import os
 import sys
 import tempfile

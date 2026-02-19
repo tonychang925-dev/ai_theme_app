@@ -343,7 +343,34 @@ class StreamEnhancedGateway:
     
     async def publish_news(self, news_data: Dict[str, Any]) -> Optional[str]:
         """直接发布新闻"""
-        return await self.publish_to_stream("news_raw", news_data)
+        try:
+            if not self._validate_news_data(news_data):
+                self.stream_stats['published_errors'] += 1
+                logger.warning("新闻数据验证失败，拒绝发布")
+                return None
+
+            if not self.stream_initialized:
+                await self.initialize_streams()
+
+            message_id = await self._execute_with_retry_async(
+                self._publish_news_internal,
+                operation_type="publish_news",
+                context={"operation": "publish_news"},
+                news_data=news_data
+            )
+
+            if message_id:
+                self.stream_stats['published_messages'] += 1
+                self.stream_stats['last_publish_time'] = datetime.now()
+            else:
+                self.stream_stats['published_errors'] += 1
+
+            return message_id
+
+        except Exception as e:
+            logger.error(f"发布新闻失败: {e}")
+            self.stream_stats['published_errors'] += 1
+            return None
     
     async def publish_to_stream(self, stream_key: str, data: Dict[str, Any]) -> Optional[str]:
         """

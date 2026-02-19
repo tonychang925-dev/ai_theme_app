@@ -1,0 +1,68 @@
+{
+  "milestone": {
+    "name": "Phase 0 - Architecture Review",
+    "phase": "phase 0",
+    "summary": "基于第一阶段十个核心模块完成深度代码评审，识别13项风险并形成P1.phase0-P1.phase4收敛方案与11项ADR（含分类推断单一真源）。"
+  },
+  "review": {
+    "name": "Architecture Review - 2026-02-13",
+    "type": "Architecture"
+  },
+  "adr_list": [
+    {
+      "name": "ADR-001: 第一阶段运行时单链路冻结",
+      "context": "重复定义与并行分支导致运行时行为不确定。",
+      "decision": "冻结单链路实现并清理重复定义。"
+    },
+    {
+      "name": "ADR-002: DecisionEnvelope v1 强制契约",
+      "context": "决策消息弱解析与字段漂移影响回放一致性。",
+      "decision": "强制v1契约与必填字段校验。"
+    },
+    {
+      "name": "ADR-003: DecisionExecutor 幂等门禁",
+      "context": "重试/回放可能导致重复写入。",
+      "decision": "执行前校验idempotency_key并命中跳过。"
+    },
+    {
+      "name": "ADR-004: unknown operation fail-fast",
+      "context": "未知操作被跳过导致语义不闭合。",
+      "decision": "unknown action/operation直接dead-letter。"
+    },
+    {
+      "name": "ADR-005: 动态阈值替代固定阈值主路径",
+      "context": "固定阈值导致漏召回与候选爆炸并存。",
+      "decision": "采用事件级动态阈值与三段分层治理。"
+    },
+    {
+      "name": "ADR-006: 禁止随机/零向量进入最终决策",
+      "context": "模型异常回退会污染最终匹配结果。",
+      "decision": "异常路径仅允许受控降级，不产出最终主题决策。"
+    },
+    {
+      "name": "ADR-007: 题材代码与决策ID确定性生成",
+      "context": "时间戳与运行时hash导致回放不一致。",
+      "decision": "改为输入哈希派生的稳定ID策略。"
+    },
+    {
+      "name": "ADR-008: mock 数据门禁化",
+      "context": "mock数据可长期混入评估与发布流程。",
+      "decision": "将mock_source_ratio纳入发布阻断门禁。"
+    },
+    {
+      "name": "ADR-009: pending 清理与 durable success 强绑定",
+      "context": "先清后写会造成回放缺口。",
+      "decision": "清理动作必须依赖durable success证据。"
+    },
+    {
+      "name": "ADR-010: 结构化可观测性最小集合",
+      "context": "生产路径print/traceback过多且缺统一指标。",
+      "decision": "统一关键日志字段与门禁指标并纳入发布流程。"
+    },
+    {
+      "name": "ADR-011: 新题材创建阶段禁止二次分类推断",
+      "context": "架构第12章要求沿用首阶段分类结果，但theme_rule_generator仍在创建阶段重做分类推断。",
+      "decision": "分类推断前置为单一真源，创建阶段仅消费classification_result/category_info。"
+    }
+  ]
+}

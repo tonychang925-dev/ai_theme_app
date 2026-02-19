@@ -1,0 +1,77 @@
+{
+  "tasks": [
+    {
+      "id": "3067bab0-ee1d-81ff-95ca-e7d0e5235953",
+      "name": "P1.phase0-T01 冻结第一阶段唯一运行时链路与入口清单",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "文档更新",
+        "代码审查"
+      ],
+      "test_evidence": "run 20260217_163407: step2 evidence recorded",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase0-T01-3067bab0ee1d81ff95cae7d0e5235953",
+      "last_edited": "2026-02-17T08:51:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-81ae-a6a9-e57a25bac6b9",
+      "name": "P1.phase0-T02 定义DecisionEnvelope v1字段与dual-read兼容策略",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "API文档",
+        "文档更新",
+        "代码审查"
+      ],
+      "test_evidence": "run 20260217_163407: step2 evidence recorded",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase0-T02-DecisionEnvelope-v1-dual-read-3067bab0ee1d81aea6a9e57a25bac6b9",
+      "last_edited": "2026-02-17T08:51:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-8137-aaab-d1ac95960be9",
+      "name": "P1.phase0-T03 清理重复函数定义并建立静态扫描门禁",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "单元测试",
+        "代码审查"
+      ],
+      "test_evidence": "run 20260217_163407: step2 evidence recorded",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase0-T03-3067bab0ee1d8137aaabd1ac95960be9",
+      "last_edited": "2026-02-17T08:51:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-818f-b3cc-eda9bba5a0fb",
+      "name": "P1.phase0-T04 trace_id与payload_version全链路贯通方案评审",
+      "status": "Todo",
+      "priority": "P1",
+      "estimate": 1,
+      "dod_checklist": [
+        "文档更新",
+        "代码审查"
+      ],
+      "test_evidence": "run 20260217_163407: step2 evidence recorded",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase0-T04-trace_id-payload_version-3067bab0ee1d818fb3cceda9bba5a0fb",
+      "last_edited": "2026-02-17T08:51:00.000Z"
+    }
+  ]
+}

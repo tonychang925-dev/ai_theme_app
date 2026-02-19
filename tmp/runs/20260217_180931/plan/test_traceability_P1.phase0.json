@@ -1,0 +1,68 @@
+{
+  "phase": "P1.phase0",
+  "generated_at": "2026-02-17T10:11:09.102868Z",
+  "source_files": {
+    "wbs": "tmp/runs/20260217_180931/plan/wbs.md",
+    "acceptance": "docs/project_control/ACCEPTANCE.md",
+    "contract": "docs/project_control/PHASE_CONTRACT_P1.phase0.md",
+    "test_case_spec": "docs/project_control/TEST_CASE_SPEC_P1.phase0.md"
+  },
+  "summary": {
+    "wbs_task_count": 4,
+    "test_case_count": 4,
+    "unmapped_wbs_tasks": 0,
+    "unmapped_acceptance_items": 0
+  },
+  "traceability": [
+    {
+      "wbs_task_id": "P1.phase0-T01",
+      "test_cases": [
+        {
+          "id": "TC-P1P0-001"
+        }
+      ],
+      "coverage": {
+        "positive": true,
+        "negative_or_boundary": true
+      }
+    },
+    {
+      "wbs_task_id": "P1.phase0-T02",
+      "test_cases": [
+        {
+          "id": "TC-P1P0-002"
+        }
+      ],
+      "coverage": {
+        "positive": true,
+        "negative_or_boundary": true
+      }
+    },
+    {
+      "wbs_task_id": "P1.phase0-T03",
+      "test_cases": [
+        {
+          "id": "TC-P1P0-003"
+        }
+      ],
+      "coverage": {
+        "positive": true,
+        "negative_or_boundary": true
+      }
+    },
+    {
+      "wbs_task_id": "P1.phase0-T04",
+      "test_cases": [
+        {
+          "id": "TC-P1P0-004"
+        }
+      ],
+      "coverage": {
+        "positive": true,
+        "negative_or_boundary": true
+      }
+    }
+  ],
+  "gaps": [],
+  "gate_ready": true
+}

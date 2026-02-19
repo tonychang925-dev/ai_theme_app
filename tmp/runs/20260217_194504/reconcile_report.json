@@ -1,0 +1,9 @@
+{
+  "phase": "P1.phase0",
+  "run_id": "20260217_194504",
+  "generated_at": "2026-02-17T11:47:11Z",
+  "reconcile_basis": "local_artifacts+required_commands",
+  "pending_sync": [],
+  "status": "accepted_synced",
+  "updated_at": "2026-02-17T12:01:42Z"
+}

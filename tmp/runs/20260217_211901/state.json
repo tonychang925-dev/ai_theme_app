@@ -1,0 +1,24 @@
+{
+  "run_id": "20260217_211901",
+  "mode": "autopilot",
+  "phase": "P1.phase0",
+  "current_step": "COMPLETED",
+  "current_task_id": null,
+  "attempt": 0,
+  "pending_sync": [
+    {
+      "operation_type": "record_decision",
+      "target_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "payload_hash": "na",
+      "idempotency_key": "20260217_211901:record_decision:ACCEPT",
+      "created_at": "2026-02-17T13:22:26Z",
+      "payload": {
+        "decision": "ACCEPT",
+        "notes": "phase0 autopilot run 20260217_211901 accepted"
+      },
+      "reason": "online_sync_failed"
+    }
+  ],
+  "gate_status": "accepted",
+  "updated_at": "2026-02-17T13:22:26Z"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "phase": "P1.phase2",
+  "checked_at": "2026-02-18T07:36:00Z",
+  "checks": [
+    {"name": "id_uniqueness", "passed": true, "severity": "error"},
+    {"name": "traceability_complete", "passed": true, "severity": "error"},
+    {"name": "test_command_ready", "passed": true, "severity": "error"},
+    {"name": "rollback_defined", "passed": true, "severity": "warn"},
+    {"name": "schema_valid", "passed": true, "severity": "error"}
+  ],
+  "gate_ready": true
+}

@@ -47,6 +47,7 @@ class DecisionExecutor:
             "started_at": None,
             "decisions_received": 0,
             "decisions_executed": 0,
+            "decisions_deduplicated": 0,
             "decisions_failed": 0,
             "themes_created": 0,
             "themes_updated": 0,
@@ -148,10 +149,20 @@ class DecisionExecutor:
             decision_id = decision.get('decision_id', message_id)
             
             logger.info(f"🎯 执行决策: {action} (事件: {event_id})")
-            
+
             # 更新统计
             self.stats["decisions_received"] += 1
             self.stats["by_action_type"][action] = self.stats["by_action_type"].get(action, 0) + 1
+
+            # 执行级幂等去重：同一idempotency_key只执行一次
+            idempotency_key = decision.get("idempotency_key")
+            if await self._should_skip_duplicate_execution(idempotency_key, message_id):
+                await self.redis.xack(self.decision_stream, self.consumer_group, message_id)
+                self.stats["decisions_deduplicated"] += 1
+                logger.info(
+                    f"⏭️ 跳过重复决策执行: action={action}, idempotency_key={idempotency_key}"
+                )
+                return
             
             # 🔥 修复：统一路由执行（更简洁）
             try:
@@ -855,6 +866,21 @@ class DecisionExecutor:
         except Exception as e:
             logger.warning(f"解析决策数据失败: {e}")
             return None
+
+    async def _should_skip_duplicate_execution(self, idempotency_key: Optional[str], message_id: str) -> bool:
+        """基于 Redis NX 锁判断该决策是否重复执行。"""
+        if not idempotency_key:
+            return False
+
+        lock_key = f"decision_executor:idempotency:{idempotency_key}"
+        try:
+            # NX: key不存在才写入，返回True表示首个执行；否则为重复
+            first_seen = await self.redis.set(lock_key, message_id, ex=86400, nx=True)
+            return not bool(first_seen)
+        except Exception as e:
+            # 幂等检查异常不阻断主流程，但记录告警便于排查
+            logger.warning(f"幂等锁检查失败，按非重复继续执行: {e}")
+            return False
 
     def _normalize_and_validate_decision_envelope(
         self,

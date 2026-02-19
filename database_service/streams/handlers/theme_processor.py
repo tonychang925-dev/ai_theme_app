@@ -817,7 +817,8 @@ class ThemeProcessor:
     def _build_decision(self, decision_type: str, **kwargs) -> Dict:
         """构建统一格式的决策 - 修复版"""
         try:
-            event_data = kwargs.get('event_data', {})
+            raw_event_data = kwargs.get('event_data', {}) or {}
+            event_data = dict(raw_event_data)
             stream_type = kwargs.get('stream_type', 'normal')
             
             logger.info(f"🔧 构建决策: {decision_type}, 事件类型: {stream_type}")
@@ -831,11 +832,19 @@ class ThemeProcessor:
             # 2. 构建基础决策
             import time
             
+            decision_id = f"decision_{int(time.time())}_{hash(str(kwargs))}"
+            event_id = event_data.get("event_id", "unknown")
+            trace_id = event_data.get("trace_id") or f"trace_{event_id}"
+            event_data.setdefault("trace_id", trace_id)
+            event_data.setdefault("decision_id", decision_id)
+
             decision = {
-                "decision_id": f"decision_{int(time.time())}_{hash(str(kwargs))}",
+                "decision_id": decision_id,
                 "decision_type": decision_type,
                 "action": action,
-                "event_id": event_data.get("event_id", "unknown"),
+                "event_id": event_id,
+                "trace_id": trace_id,
+                "payload_version": "v1",
                 "event_type": stream_type,
                 "event_title": event_data.get('title', '')[:100],
                 "timestamp": datetime.now().isoformat(),

@@ -1,0 +1,9 @@
+{
+  "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+  "decision": "ACCEPT",
+  "record_decision_rc": 0,
+  "record_decision_error": null,
+  "fetch_rc": 0,
+  "fetch_error": null,
+  "post_fetch_output": "tmp/runs/20260218_101928/post_accept_fetch.json"
+}

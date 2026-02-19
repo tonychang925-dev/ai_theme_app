@@ -1,0 +1,36 @@
+{
+  "phase": "P1.phase1",
+  "contract_md": "docs/project_control/PHASE_CONTRACT_P1.phase1.md",
+  "source_documents": [
+    "docs/project_control/PRD.md",
+    "docs/project_control/prd_p1.md",
+    "docs/project_control/ACCEPTANCE.md",
+    "docs/project_control/PLAN_WBS.md",
+    "docs/project_control/ARCH_REVIEW.md",
+    "docs/adrs/ADR_LIST.md"
+  ],
+  "prd_p1_requirement_ids": [
+    "PRD-P1-P1-R01",
+    "PRD-P1-P1-R02",
+    "PRD-P1-P1-R03",
+    "PRD-P1-P1-R04",
+    "PRD-P1-P1-R05",
+    "PRD-P1-P1-R06",
+    "PRD-P1-P1-R07",
+    "PRD-P1-P1-R08",
+    "PRD-P1-P1-R09",
+    "PRD-P1-P1-R10"
+  ],
+  "acceptance_targets": [
+    "决策执行前强制校验 `idempotency_key`，命中后 `duplicate-skip`。",
+    "决策/事件载荷解析禁止 `str(value)` 降级进入执行路径。",
+    "未知 `action/operation` 必须 fail-fast 并进入 dead-letter。",
+    "`normal` 未匹配事件必须落到 `stream:events:pending` 且原消息 ACK。",
+    "失败消息必须进入受控处理（重试上限 + dead-letter），不得无限悬挂。"
+  ],
+  "required_commands": [
+    ".venv/bin/python -m pytest -q database_service/tests/streams",
+    ".venv/bin/python -m pytest -q tests",
+    "rg -n \"idempotency_key|duplicate_skip|dead-letter|fail-fast|stream:events:pending|str\\(value\\)\" database_service theme_service docs"
+  ]
+}

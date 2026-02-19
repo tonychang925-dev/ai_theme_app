@@ -6,7 +6,10 @@ import logging
 from typing import Dict, List, Any, Optional
 from datetime import datetime
 
-from .interface import DatabaseManager, ThemeRecord
+try:
+    from database_service.interface import DatabaseManager, ThemeRecord
+except ImportError:
+    from .interface import DatabaseManager, ThemeRecord
 
 logger = logging.getLogger(__name__)
 

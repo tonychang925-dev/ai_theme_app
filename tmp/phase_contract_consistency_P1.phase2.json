@@ -1,0 +1,35 @@
+{
+  "phase": "P1.phase2",
+  "acceptance_source": "docs/project_control/ACCEPTANCE.md#Phase P1.phase2",
+  "contract": "docs/project_control/PHASE_CONTRACT_P1.phase2.md",
+  "acceptance_source_targets": [
+    "动态阈值按事件分布（p95/p98）计算并可切换 `baseline/balanced/strict`。",
+    "动态阈值必须实现 `Strong/Candidate/Weak` 三段分层并记录分层命中分布。",
+    "候选治理先于精排，候选窗口稳定在 3~30。",
+    "生产路径禁止随机向量/零向量结果作为最终决策依据。",
+    "输出 `source_type(real/mock)` 质量指标并设置门禁阈值。",
+    "76 案例集 A/B 报告必须包含：候选爆炸比、完整性、分离度、精度代理。",
+    "76 案例集必须形成三方对比：优化系统 vs 基线系统（纯聚类） vs 久赢恒丰标准。",
+    "76 案例集验收指标必须满足：题材数量收敛到 8~12，且 Precision/Completeness/Separation 三指标均不低于基线系统。",
+    "A/B 灰度必须先在 10% 流量执行，通过后才允许扩大范围。",
+    "本阶段验收必须使用真实 DeepSeek 调用（`source_type=real`），禁止模拟数据替代正式结论。"
+  ],
+  "contract_targets": [
+    "动态阈值按事件分布（p95/p98）计算并可切换 `baseline/balanced/strict`。",
+    "动态阈值必须实现 `Strong/Candidate/Weak` 三段分层并记录分层命中分布。",
+    "候选治理先于精排，候选窗口稳定在 3~30。",
+    "生产路径禁止随机向量/零向量结果作为最终决策依据。",
+    "输出 `source_type(real/mock)` 质量指标并设置门禁阈值。",
+    "76 案例集 A/B 报告必须包含：候选爆炸比、完整性、分离度、精度代理。",
+    "76 案例集必须形成三方对比：优化系统 vs 基线系统（纯聚类） vs 久赢恒丰标准。",
+    "76 案例集验收指标必须满足：题材数量收敛到 8~12，且 Precision/Completeness/Separation 三指标均不低于基线系统。",
+    "A/B 灰度必须先在 10% 流量执行，通过后才允许扩大范围。",
+    "本阶段验收必须使用真实 DeepSeek 调用（`source_type=real`），禁止模拟数据替代正式结论。"
+  ],
+  "acceptance_target_count": 10,
+  "contract_target_count": 10,
+  "missing_in_contract": [],
+  "extra_in_contract": [],
+  "non_empty_ok": true,
+  "is_consistent": true
+}

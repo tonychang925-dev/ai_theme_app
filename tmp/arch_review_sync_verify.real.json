@@ -1,0 +1,16 @@
+{
+  "run_id": "20260217_184000",
+  "sync_status": "success",
+  "dry_run": false,
+  "generated_at": "2026-02-17T10:37:14.463752+00:00",
+  "errors": [],
+  "warnings": [],
+  "id_mapping": {
+    "milestone_id": "30a7bab0-ee1d-8172-a7a2-d14a3ebfdd3c",
+    "review_id": "30a7bab0-ee1d-81dd-b535-c0a8a621a6ba",
+    "adr_ids": [
+      "30a7bab0-ee1d-817c-98d4-c3c0e7360fda"
+    ]
+  },
+  "scope": "phase:第一阶段"
+}

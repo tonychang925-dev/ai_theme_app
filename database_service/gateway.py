@@ -78,7 +78,12 @@ class DatabaseGateway:
             logger.info(f"   表结构: 28字段表")
             
             if cls._instance._config.db_type.value != "memory":
-                logger.info(f"   主题表: {cls._instance._config.table_names.theme_master}")
+                table_names = cls._instance._config.table_names
+                if isinstance(table_names, dict):
+                    theme_table = table_names.get("theme_master", "theme_master")
+                else:
+                    theme_table = getattr(table_names, "theme_master", "theme_master")
+                logger.info(f"   主题表: {theme_table}")
             
             # 创建客户端
             from database_service.managers.postgres_manager import PostgresDatabaseManager
@@ -1005,7 +1010,10 @@ class DatabaseGateway:
         """关闭连接"""
         try:
             if self._client:
-                await self._client.close()
+                if hasattr(self._client, "close"):
+                    await self._client.close()
+                elif hasattr(self._client, "disconnect"):
+                    await self._client.disconnect()
             self._initialized = False
             logger.info("✅ DatabaseGateway 已关闭")
         except Exception as e:
