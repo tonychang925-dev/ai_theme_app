@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 560594784.02,
+    "changeCount": 0.52,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:02",
+    "detail": "<p><span style=\"font-weight: bold;\">1、营业收入构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20220930114821_32e8d0aef0a6b5bb.png\" /></span></p>\n<p>资料来自于2022年半年度报告</p>\n<p>公司是国内领先的能源领域的综合服务商，在报告期内主要从事智能电网、新能源业务及综合能源服务三大业务，其中智能电网业务占比75.61%，储能业务占比11.96%，综合能源管理及服务占比10.27%，2022年半年度营业收入同比增长1.39%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、智能电网业务</span></p>\n<p>智能电网板块业务是公司的核心基础，核心技术是高精度量测技术、电力系统保护控制技术和&mdash;二次融合技术，<span style=\"font-weight: bold;\">是国家电网和南方电网的主流供应商</span>，为智能电网建设提供产品服务和系统解决方案。主要包括标准仪器仪表、智能电表和智能配电网一二次产品和设备</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、新能源业务</span></p>\n<p><span style=\"font-weight: bold;\">（1）、储能业务</span></p>\n<p>公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、<span style=\"font-weight: bold;\">储能双向变流器PCS</span>、光储一体变流器、中压变流系统、<span style=\"font-weight: bold;\">BMS电池管理系统、EMS能量管理系统</span>、储能系统建设及运维服务。主要应用场景有：火电厂联合调频、新能源配套储能、电网侧调峰/独立储能电站、用户侧填谷套利、无电地区微电网等</p>\n<p><span style=\"font-weight: bold;\">（2）、新能源汽车充电及运营业务</span></p>\n<p>公司新能源汽车充电及运营业务涵盖全系列新能源电动汽车充电设施的自主研发、生产、销售及售后服务，可以提供基于公交场站、的士码头、物流园区、商业地产等全场景下新能源电动汽车充电站的综合解决方案，<span style=\"font-weight: bold;\">包括集中场站式公共充电解决方案、住宅区及商业区充电解决方案、分布式充电公共充电解决方案等</span>。同时，公司基于云架构构建的充电运营平台，通过自主研发充电云平台，向上对接政府监管平台，横向完成互联互通操作，向下兼容停车、广告媒体等应用场景，完善的C端和B端应用为新能源汽车企业生产商、新能源汽车经销商、充电运营企业、新能源汽车运营商、新能源汽车个人用户等提供智能高效的运营管理服务。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、综合能源服务</span></p>\n<p>通过综合能源（电、冷、热、气）为客户提供综合服务（节能、储能、多能互补、能源保障、能源增值等）。主要是以电网为依托，以电力供应为基础，面向用户电、冷、热、气等差异化的能源需求，依靠区域配电网、供热（冷）网和天然气网，采用现代科技及互联网技术，为用户提供能源供给，节能和能效监测，涵盖设计、施工、设备供应、设备运维和工程服务及能源信息化增值等服务。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、行业发展情况</span></p>\n<p><span style=\"font-weight: bold;\">（1）、智能电网业务</span></p>\n<p>公司在国家电网2022年第一次电能表（含用电信息采集）招标、南方电网2022年计量产品第一批框架招标活动中分别中标54,336.79万元、8,322.19万元，<span style=\"font-weight: bold;\">中标数量及金额排名靠前</span></p>\n<p><span style=\"font-weight: bold;\">（2）、储能业务</span></p>\n<p>全球储能市场增长迅速，公司大力开拓海外储能市场，<span style=\"font-weight: bold;\">与美洲知名能源企业签订了合计755MWh集装箱式电池储能系统供货合同</span>，进一步深化了与该客户在新能源领域的战略合作伙伴关系，巩固了公司在美洲市场的行业地位；公司中标宁夏京能宣和150MW/300MWh储能项目储能系统设备采购项目，该项目是公司在国内参与的首个百兆瓦级独立储能项目</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+    "firstLetter": "KLDZ",
+    "high": 9.27,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 8.8,
+    "marketValue": 14382672518.08,
+    "name": "科陆电子",
+    "pctChg": 6.0,
+    "price": 9.18,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 4,
+    "recent60Change": 13.33,
+    "recentChange": 0.55,
+    "remark": "以能源的发、配、用、储产品业务为核心，集自主研发、生产、销售及服务为一体的国家重点高新技术企业",
+    "status": 1,
+    "stockId": "002121",
+    "stockLightspots": [
+      {
+        "bizKey": "38480",
+        "content": "科陆电子三十年为一世而道更，旧时储能龙头涅槃重生",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38480,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38481",
+        "content": "全产业布局智慧能源生态，新能源焕发真成长本色",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38481,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38482",
+        "content": "储能行业高景气，美的入主助力发展新阶",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38482,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38483",
+        "content": "科陆电子前瞻布局“智能电网+新能源”，高速成长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38483,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38484",
+        "content": "收购卡耐打造锂电新秀，参与辅助服务成就储能龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38484,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38485",
+        "content": "科陆电子打造智慧能源全产业链",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38485,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38486",
+        "content": "科陆电子深化模式转型，打造能源互联网平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38486,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38487",
+        "content": "科陆电子全面布局能源服务领域，有望受益于储能、新能源汽车行业发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38487,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38488",
+        "content": "基本面反转并将持续高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38488,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38489",
+        "content": "科陆电子储能业务快速发展，盈利有望恢复",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38489,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38490",
+        "content": "科陆电子公司跟踪报告-储能先行，多点开花",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38490,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38491",
+        "content": "科陆电子稳准狠,巨额增持发展能源互联网",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38491,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38492",
+        "content": "充电桩快速拓展，储能抢占先机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38492,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38493",
+        "content": "科陆电子公告点评",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38493,
+        "stockId": "002121",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38494",
+        "content": "布局新业务谋转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38494,
+        "stockId": "002121",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 619367.43
+  }
+}

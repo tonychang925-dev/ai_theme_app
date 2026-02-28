@@ -8,6 +8,7 @@ import hashlib
 import numpy as np
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
+import os
 import torch
 from transformers import AutoModel, AutoTokenizer
 import jieba
@@ -19,9 +20,10 @@ class LocalQwenEmbeddingMatcher(BaseMatcher):
     """本地Qwen嵌入语义匹配算法 - 完全离线部署"""
     
     def __init__(self, config: Dict = None):
-        import os
         os.environ['TRANSFORMERS_NO_ADVISORY_WARNINGS'] = '1'  # 禁用警告
         os.environ['PYTORCH_ENABLE_MPS_FALLBACK'] = '1'  # 启用MPS回退
+        os.environ['HF_HUB_OFFLINE'] = '1'  # 强制离线，禁止下载
+        os.environ['TRANSFORMERS_OFFLINE'] = '1'
         super().__init__(config)
         self.algorithm_type = 'local_qwen_embedding'
         
@@ -109,9 +111,21 @@ class LocalQwenEmbeddingMatcher(BaseMatcher):
         """加载本地Qwen模型"""
         start_time = time.time()
         model_name = self.config['model_name']
+        model_name_str = str(model_name)
         
         print(f"🔧 加载本地Qwen模型: {model_name}")
         print(f"  缓存目录: {self.config['cache_dir']}")
+
+        # gguf 不是 transformers 模型目录，必须走 llama.cpp 服务
+        if model_name_str.endswith(".gguf"):
+            raise RuntimeError(
+                "local_qwen_matcher 仅支持 transformers 本地目录模型；"
+                "检测到 .gguf，请改用 llama.cpp 服务链路。"
+            )
+
+        # 若提供了本地目录则强制本地加载；否则按离线缓存查找
+        model_path = Path(model_name_str)
+        force_local_only = model_path.exists()
         
         try:
             # 设置设备
@@ -122,7 +136,8 @@ class LocalQwenEmbeddingMatcher(BaseMatcher):
             self.tokenizer = AutoTokenizer.from_pretrained(
                 model_name,
                 trust_remote_code=True,
-                cache_dir=self.config['cache_dir']
+                cache_dir=self.config['cache_dir'],
+                local_files_only=True if force_local_only else True
             )
             
             # 确保有pad token
@@ -139,12 +154,19 @@ class LocalQwenEmbeddingMatcher(BaseMatcher):
             
             # 3. 加载模型
             print(f"  2. 加载模型到 {self.device}...")
+            # CPU环境不要传device_map，否则transformers会要求accelerate依赖
+            model_load_kwargs = {
+                "trust_remote_code": True,
+                "torch_dtype": torch_dtype,
+                "cache_dir": self.config['cache_dir'],
+                "local_files_only": True if force_local_only else True,
+            }
+            if self.device.startswith('cuda:'):
+                model_load_kwargs["device_map"] = "auto"
+
             self.model = AutoModel.from_pretrained(
                 model_name,
-                trust_remote_code=True,
-                torch_dtype=torch_dtype,
-                device_map=self.device if not self.device.startswith('cuda:') else 'auto',
-                cache_dir=self.config['cache_dir']
+                **model_load_kwargs
             )
             
             # 设置为评估模式
@@ -169,9 +191,9 @@ class LocalQwenEmbeddingMatcher(BaseMatcher):
         except Exception as e:
             print(f"❌ 模型加载失败: {e}")
             print("\n💡 解决方案：")
-            print(f"   1. 手动下载模型: https://huggingface.co/{model_name}")
-            print(f"   2. 下载到本地目录: {self.config['cache_dir']}")
-            print(f"   3. 使用本地路径: model_name='{self.config['cache_dir']}'")
+            print("   1. 使用本地 transformers 模型目录（包含 config.json/tokenizer/model 权重）")
+            print("   2. 或使用 .gguf + llama.cpp 服务，不走 local_qwen_matcher")
+            print(f"   3. 当前已强制离线(local_files_only=True)，不会联网下载")
             raise
     
     def _test_model_functionality(self):
@@ -279,22 +301,71 @@ class LocalQwenEmbeddingMatcher(BaseMatcher):
                 # 检查数据完整性
                 theme_ids = loaded['theme_ids']
                 embeddings = loaded['embeddings']
-                
-                if len(theme_ids) == len(self.themes):
-                    # 重建向量字典
-                    for i, theme_id in enumerate(theme_ids):
-                        self.theme_vectors[theme_id] = embeddings[i]
-                    
+
+                # 部分命中也可复用，避免每次全量重算
+                cache_map = {}
+                for i, theme_id in enumerate(theme_ids):
+                    try:
+                        cache_map[str(theme_id)] = embeddings[i]
+                    except Exception:
+                        continue
+
+                hit = 0
+                for theme_id in self.themes.keys():
+                    if theme_id in cache_map:
+                        self.theme_vectors[theme_id] = cache_map[theme_id]
+                        hit += 1
+
+                miss = len(self.themes) - hit
+                if miss <= 0:
                     print(f"✅ 加载缓存的题材向量: {len(self.theme_vectors)} 个")
                     return
-                else:
-                    print(f"⚠️  缓存数据不匹配，重新计算...")
+
+                print(f"⚠️  缓存部分命中: {hit}/{len(self.themes)}，补算缺失: {miss}")
             except Exception as e:
                 print(f"⚠️  缓存加载失败: {e}")
         
-        # 预计算并保存
-        self._precompute_all_theme_vectors()
+        # 仅补算缺失项
+        self._precompute_missing_theme_vectors()
         self._save_theme_vectors_to_cache()
+
+    def _precompute_missing_theme_vectors(self):
+        """仅预计算缺失的题材向量"""
+        missing_theme_ids = [tid for tid in self.themes.keys() if tid not in self.theme_vectors]
+        if not missing_theme_ids:
+            print("✅ 题材向量完整，无需补算")
+            return
+
+        print(f"🔨 补算题材向量: {len(missing_theme_ids)} 个")
+        theme_texts = []
+        for theme_id in missing_theme_ids:
+            theme = self.themes[theme_id]
+            theme_text = self._build_theme_embedding_text(theme)
+            theme_texts.append(theme_text)
+
+        total = len(theme_texts)
+        batch_size = self.config['batch_size']
+        total_batches = (total + batch_size - 1) // batch_size
+
+        for batch_idx in range(0, total, batch_size):
+            batch_texts = theme_texts[batch_idx:batch_idx + batch_size]
+            batch_ids = missing_theme_ids[batch_idx:batch_idx + batch_size]
+
+            batch_num = batch_idx // batch_size + 1
+            print(f"   补算批次 {batch_num}/{total_batches}: {len(batch_texts)} 个题材")
+
+            try:
+                embeddings = self._encode_batch_direct(batch_texts)
+                for i, theme_id in enumerate(batch_ids):
+                    if i < len(embeddings) and embeddings[i] is not None:
+                        self.theme_vectors[theme_id] = embeddings[i]
+
+                progress = min(batch_idx + batch_size, total)
+                print(f"     进度: {progress}/{total} ({progress/total*100:.1f}%)")
+            except Exception as e:
+                print(f"   ⚠️  补算批次失败: {e}")
+
+        print(f"✅ 补算完成: 当前总向量 {len(self.theme_vectors)} 个")
     
     def _precompute_all_theme_vectors(self):
         """预计算所有题材的向量"""
@@ -496,7 +567,8 @@ class LocalQwenEmbeddingMatcher(BaseMatcher):
         print(f"✅ 本地语义匹配完成")
         print(f"   匹配结果: {len(final_results)} 个")
         print(f"   处理时间: {processing_time:.3f}秒")
-        print(f"   最高相似度: {final_results[0].match_score:.4f if final_results else 0}")
+        top_score = final_results[0].match_score if final_results else 0.0
+        print(f"   最高相似度: {top_score:.4f}")
         
         return final_results
     
@@ -941,10 +1013,11 @@ class LocalQwenEmbeddingMatcher(BaseMatcher):
 
 # 便捷函数：创建小型模型版本
 def create_tiny_qwen_matcher(config: Dict = None) -> LocalQwenEmbeddingMatcher:
-    """创建使用超小Qwen模型的匹配器（仅32MB）"""
+    """创建轻量Qwen模型匹配器（兼容旧函数名，默认0.5B）"""
     config = config or {}
-    config['model_name'] = 'Qwen/Qwen2.5-32M-Instruct'  # 仅32MB
-    config['batch_size'] = 16  # 小模型可以更大的批次
+    # 兼容历史调用入口：统一切到当前项目标准模型 0.5B。
+    config.setdefault('model_name', 'Qwen/Qwen2.5-0.5B-Instruct')
+    config.setdefault('batch_size', 8)
     return LocalQwenEmbeddingMatcher(config)
 
 

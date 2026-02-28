@@ -1,113 +1,72 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "phase": "P1.phase2",
-  "generated_at": "2026-02-18T08:06:00Z",
-  "source_files": [
-    "tmp/plan/wbs.md",
-    "tmp/plan/test_traceability_P1.phase2.json",
-    "docs/project_control/PRD.md",
-    "docs/project_control/prd_p1.md",
-    "docs/project_control/ACCEPTANCE.md",
-    "docs/project_control/PHASE_CONTRACT_P1.phase2.md",
-    "docs/project_control/FEATURE_SPEC_P1.phase2.md",
-    "docs/project_control/TEST_EXEC_PLAN_P1.md",
-    "docs/architecture/个人投资助理-项目架构设计-第一阶段.md",
-    "docs/architecture/个人投资助理-项目架构设计-第二阶段.md"
-  ],
+  "generated_at": "2026-02-19T12:55:00Z",
   "summary": {
-    "total_tasks": 5,
-    "mapped_tasks": 5,
+    "total_tasks": 6,
+    "mapped_tasks": 6,
     "unmapped_tasks": 0,
     "risk_level": "P0"
   },
   "traceability": [
     {
       "task_id": "P1.phase2-T01",
-      "requirement_ids": ["PRD-REQ-P1.phase2-001", "PRD-REQ-P1.phase2-002"],
       "acceptance_ids": ["ACC-P1-P2-01", "ACC-P1-P2-06"],
       "test_case_ids": ["TC-P1P2-001", "TC-P1P2-006"],
-      "execution_mode": "real",
-      "allow_mock": false,
-      "critical_dependencies": ["redis", "database", "deepseek"],
-      "implementation_anchors": [
-        "theme_service/matchers/semantic_matcher.py",
-        "theme_service/services/theme_discovery_engine.py"
-      ],
+      "feature_slices": ["F-P1P2-T01-01", "F-P1P2-T01-02", "F-P1P2-T01-03", "F-P1P2-T01-04"],
       "test_commands": [
-        "PHASE2_THRESHOLD_SAMPLE=10 /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_semantic_matcher_unit.py -k \"t01_fixed_threshold_sensitivity\"",
-        "PHASE2_THRESHOLD_SAMPLE=10 /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_semantic_matcher_unit.py -k \"t01_semantic_score_segmentation\""
+        "PHASE2_THRESHOLD_SAMPLE=24 PHASE2_THRESHOLD_GRID_SIZE=80 /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_semantic_matcher_unit.py -k \"t01_fixed_threshold_sensitivity\"",
+        "PHASE2_THRESHOLD_SAMPLE=24 PHASE2_THRESHOLD_GRID_SIZE=80 /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_semantic_matcher_unit.py -k \"t01_semantic_score_segmentation\""
       ]
     },
     {
       "task_id": "P1.phase2-T02",
-      "requirement_ids": ["PRD-REQ-P1.phase2-003", "PRD-REQ-P1.phase2-005"],
-      "acceptance_ids": ["ACC-P1-P2-02", "ACC-P1-P2-01"],
+      "acceptance_ids": ["ACC-P1-P2-02", "ACC-P1-P2-08"],
       "test_case_ids": ["TC-P1P2-002", "TC-P1P2-008"],
-      "execution_mode": "real",
-      "allow_mock": false,
-      "critical_dependencies": ["redis", "database"],
-      "implementation_anchors": [
-        "theme_service/matchers/semantic_matcher.py",
-        "database_service/streams/handlers/theme_processor.py"
-      ],
+      "feature_slices": ["F-P1P2-T02-01", "F-P1P2-T02-02", "F-P1P2-T02-03", "F-P1P2-T02-04"],
       "test_commands": [
-        "conda run -n theme_matcher_env python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"candidate_window_stability or candidate_explosion_ratio_below_5_percent\"",
-        "conda run -n theme_matcher_env python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"candidate_observability_outputs_present\""
+        "/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"candidate_window_stability or candidate_explosion_ratio_below_5_percent\"",
+        "/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"candidate_observability_outputs_present\""
       ]
     },
     {
       "task_id": "P1.phase2-T03",
-      "requirement_ids": ["PRD-REQ-P1.phase2-007", "PRD-REQ-P1.phase2-008"],
-      "acceptance_ids": ["ACC-P1-P2-03"],
+      "acceptance_ids": ["ACC-P1-P2-03", "ACC-P1-P2-09"],
       "test_case_ids": ["TC-P1P2-003A", "TC-P1P2-003B", "TC-P1P2-003C", "TC-P1P2-003D", "TC-P1P2-009"],
-      "execution_mode": "real",
-      "allow_mock": false,
-      "critical_dependencies": ["database"],
-      "implementation_anchors": [
-        "theme_service/creators/theme_rule_generator.py",
-        "database_service/streams/handlers/theme_processor.py"
-      ],
+      "feature_slices": ["F-P1P2-T03-01", "F-P1P2-T03-02", "F-P1P2-T03-03", "F-P1P2-T03-04"],
       "test_commands": [
-        "PHASE2_TC003_MODE=arch_guard /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_tc003_architecture_guard.py -k \"no_zero_vector_final_decision_runtime\"",
-        "PHASE2_TC003_MODE=arch_guard /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_tc003_architecture_guard.py -k \"generator_must_not_secondary_inference_when_upstream_given\"",
-        "PHASE2_TC003_MODE=arch_guard /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_tc003_architecture_guard.py -k \"missing_upstream_classification_must_fail_closed\"",
-        "PHASE2_TC003_MODE=arch_guard /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_tc003_architecture_guard.py -k \"adr_list_audit or acceptance_feature_alignment\"",
-        "conda run -n theme_matcher_env python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"classification_consistency_audit_fields\""
+        "PHASE2_TC003_MODE=arch_guard /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_tc003_architecture_guard.py",
+        "/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"generate_theme_data_only_reuses_upstream_classification or forbids_secondary_category_inference\""
       ]
     },
     {
       "task_id": "P1.phase2-T04",
-      "requirement_ids": ["PRD-REQ-P1.phase2-004", "PRD-REQ-P1.phase2-006"],
-      "acceptance_ids": ["ACC-P1-P2-05"],
+      "acceptance_ids": ["ACC-P1-P2-05", "ACC-P1-P2-10"],
       "test_case_ids": ["TC-P1P2-005", "TC-P1P2-010"],
-      "execution_mode": "real",
-      "allow_mock": false,
-      "critical_dependencies": ["redis", "database"],
-      "implementation_anchors": [
-        "database_service/streams/handlers/theme_processor.py",
-        "docs/adrs"
-      ],
+      "feature_slices": ["F-P1P2-T04-01", "F-P1P2-T04-02", "F-P1P2-T04-03"],
       "test_commands": [
-        "conda run -n theme_matcher_env python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"ab_gray_10_percent or bucket_evidence_and_profile_recorded\"",
-        "conda run -n theme_matcher_env python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"phase2_adr_decisions_documented\""
+        "/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"ab_gray_10_percent or bucket_evidence_and_profile_recorded\"",
+        "/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"phase2_adr_decisions_documented\""
       ]
     },
     {
       "task_id": "P1.phase2-T05",
-      "requirement_ids": ["PRD-REQ-P1.phase2-009", "PRD-REQ-P1.phase2-010"],
       "acceptance_ids": ["ACC-P1-P2-04", "ACC-P1-P2-07"],
       "test_case_ids": ["TC-P1P2-004", "TC-P1P2-007"],
-      "execution_mode": "real",
-      "allow_mock": false,
-      "critical_dependencies": ["deepseek", "database", "redis"],
-      "implementation_anchors": [
-        "database_service/scripts/test_theme_processor.py",
-        "database_service/tests/streams/test_phase2_behavior_tests.py"
-      ],
+      "feature_slices": ["F-P1P2-T05-01", "F-P1P2-T05-02", "F-P1P2-T05-03", "F-P1P2-T05-04"],
       "test_commands": [
-        "conda run -n theme_matcher_env python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"phase2_triparty_metrics\"",
-        "conda run -n theme_matcher_env python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"phase2_real_deepseek_evidence\"",
-        "printf \"9\\n\" | conda run -n theme_matcher_env python database_service/scripts/test_theme_processor.py"
+        "/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"phase2_triparty_metrics\"",
+        "/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"phase2_real_deepseek_evidence\""
+      ]
+    },
+    {
+      "task_id": "P1.phase2-T06",
+      "acceptance_ids": ["ACC-P1-P2-11", "ACC-P1-P2-12"],
+      "test_case_ids": ["TC-P1P2-011", "TC-P1P2-012"],
+      "feature_slices": ["F-P1P2-T06-01", "F-P1P2-T06-02", "F-P1P2-T06-03", "F-P1P2-T06-04"],
+      "test_commands": [
+        "/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"category_keywords_backfill_from_theme_master or l1_keywords_aggregated_from_l2_keywords\"",
+        "/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py -k \"category_keywords_backfill_idempotent or category_keyword_coverage_metrics_present\""
       ]
     }
   ],

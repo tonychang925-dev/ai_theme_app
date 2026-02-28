@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 55186263.0,
+    "changeCount": -0.17,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司介绍</span></p>\n<p>公司前身为广泽乳业，2016年通过收购方式进军奶酪行业，2018年推出拳头产品&ldquo;妙可蓝多&rdquo;奶酪棒后，进入爆发成长阶段，尽享中国奶酪行业发展红利。2021年，妙可蓝多的奶酪市占率超越百吉福、跃居行业第一。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20220927164552_b2303683138e3313.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220927164608_96ab84b337f9c986.dat\" /></p>\n<p>&nbsp;</p>\n<p>公司业务主要包括奶酪、液奶和贸易业务，2021年奶酪业务营收/毛利润占比分别为74%/95%，是公司的核心业务。奶酪业务贡献了公司主要收入增量，从2016年的1.4亿元增长到2021年的33.3亿元，期间CAGR近90%；2022Q1，奶酪业务继续保持50%较高增速水平。</p>\n<p>&nbsp;</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20220927164818_b8f9b3e2d651679a.dat\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20220927164832_f6927dbffcd97ef9.dat\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、奶酪市场：行业方兴未艾，巨大潜在需求空间待挖掘</span></p>\n<p>奶酪行业可以按照需求来源划分为：①零食奶酪，包括奶酪棒、手撕成人奶酪、杯装奶酪等直接食用奶酪，面向C端消费者；②餐饮端奶酪，用作餐桌菜品的主料或者辅料，餐桌场景又可以划分为家庭餐桌（C端消费者）和餐饮（B端餐饮企业）两个场景；③工业端奶酪，作为各种食品的生产辅料（B端食品加工企业）。</p>\n<p>&nbsp;</p>\n<p>未来5年中国奶酪市场复合增速15%+，有望从2021年的235亿元扩容至2026年的500+亿元。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20220927165050_671cb9adcc55fbd8.dat\" /></p>\n<p>更长时间维度看，我们认为中国奶酪行业具备千亿元市场空间。</p>\n<p>奶酪是乳制品消费升级的下一个大方向，对比中外乳品消费结构，中国奶酪市场具备较大发展潜力。每1公斤奶酪由约8~10公斤牛奶浓缩而成，因此被誉为&ldquo;牛奶的精华&rdquo;&ldquo;奶中黄金&rdquo;。</p>\n<p>对比中国和海外发达国家食品饮料不同细分赛道的人均消费水平，我们发现奶酪是中国与海外差距最显著的品类之一。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20220927165240_c9f97c1d8eb41058.dat\" /></p>\n<p><span style=\"font-weight: bold;\">3、蒙牛成为第一大股东，助力公司开疆拓土</span></p>\n<p>蒙牛于2020年1月出资2.87亿元受让妙可蓝多5%股份，同时出资4.6亿元认购吉林科技42.9%股份。蒙牛又分别在2020年12月、2021年1月、2021年3月三次增持妙可蓝多股票，并于2021年7月出资30亿元认购妙可蓝多约1亿股增发股票，2021年9月底蒙牛持有妙可蓝多28.5%股份，成为公司第一大股东。2022年1月蒙牛在二级市场连续增持妙可股份，截至2022年5月底，蒙牛对妙可的持股比例升至30%以上。</p>\n<div><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20220927165646_49dd7484ba4caaa9.dat\" /></div>",
+    "firstLetter": "MKLD",
+    "high": 22.4,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 21.91,
+    "marketValue": 11343593109.28,
+    "name": "妙可蓝多",
+    "pctChg": -0.76,
+    "price": 22.07,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 3,
+    "recent60Change": -16.65,
+    "recentChange": -3.33,
+    "remark": "中国奶酪行业绝对王者，常温放量叠加蒙牛赋能，享受成长之风",
+    "status": 1,
+    "stockId": "600882",
+    "stockLightspots": [
+      {
+        "bizKey": "20326",
+        "content": "乘乳制品消费升级之东风，奶酪龙头业绩加速兑现",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20326,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20327",
+        "content": "龙头优势持续验证，品类延展享受成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20327,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20328",
+        "content": "妙可蓝多加速渠道下沉与品牌建设，引爆儿童奶酪零售市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20328,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20329",
+        "content": "妙可蓝多国民奶酪第一品牌，乘行业东风快速腾飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20329,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20330",
+        "content": "妙可蓝多奶酪黑马横空出世，未来龙头初具雏形",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20330,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20331",
+        "content": "妙可蓝多中国奶酪的破局者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20331,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20332",
+        "content": "妙可蓝多奶酪需求方兴未艾，龙头新星扶摇直上",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20332,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20333",
+        "content": "妙可蓝多低温做精，常温做广，品类延展打开增长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20333,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20334",
+        "content": "妙可蓝多乳制品行业新赛道，奶酪龙头加速崛起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20334,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20335",
+        "content": "常温奶酪棒开启新篇章",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20335,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20336",
+        "content": "妙可蓝多蓄势待发，国民奶酪先行者妙可蓝多",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20336,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20337",
+        "content": "国产奶酪先行者，紧紧抓住成长窗口",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20337,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20338",
+        "content": "妙可蓝多短期业绩承压、长期成长性突出，奶酪行业稀缺标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20338,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20339",
+        "content": "妙可蓝多常温放量叠加蒙牛赋能，国产奶酪龙头开启新篇章",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20339,
+        "stockId": "600882",
+        "updateTime": null
+      },
+      {
+        "bizKey": "20340",
+        "content": "妙可蓝多常温放量叠加蒙牛赋能，国产奶酪龙头开启新篇章",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 20340,
+        "stockId": "600882",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 25022.99
+  }
+}

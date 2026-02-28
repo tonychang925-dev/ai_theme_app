@@ -1,0 +1,53 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 51550406.0,
+    "changeCount": 0.11,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营业务分行业、分产品、分地区、分销售模式情况</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221008092014_d86047856cb845be.png\" /></span></p>\n<p>资料来源：公司2021年年度报告</p>\n<p>作为国内最早一家<span style=\"font-weight: bold;\">&ldquo;以创业孵化带动工业地产与产业投资&rdquo;的工业园区类上市公司，公司以创业孵化服务为基础，孵化器及工业园区建设、运营与产业投资两翼并举，主营业务涉及工业园区运营、高新技术产业投资、孵化服务、贸易等。</span></p>\n<p>公司依托天津滨海新区开发开放带来的有利机遇，将工业园区开发与运营作为公司的重点经营业务，自主开发建设了多个高品质有亮点的工业园区。</p>\n<p>海泰孵化器2005年由国家科技部认定为国家级孵化器，从提供融资咨询、专利服务、创业导师培训服务等方面为在孵企业提供专业化服务，逐步形成软件及服务外包产业集聚效应。公司在孵化器建设方面，加强对滨海高新区政策的研究，将孵化器由多范围全领域的发展转向专业化、精细化方向，结合天津高新区&ldquo;细胞谷&rdquo;&ldquo;信创谷&rdquo;建设，重点关注新一代信息技术、生物医药、新能源、航天航空等先进制造业集群，充分发挥公司科技园区产业聚集效应。</p>\n<p>贸易业务主要为商品批发，经营主体为全资子公司天津海泰方通投资有限公司。<span style=\"font-weight: bold;\">公司开展棉花和电解铜等贸易业务。</span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.核心竞争力</span><br />随着天津加快构筑现代产业体系，推动构建新发展格局，<span style=\"font-weight: bold;\">推动京津冀协同发展取得新的更大进展，</span>并致力于打造自主创新的重要源头和原始创新的主要策源地。为打造产业创新承接平台，推动先进科技成果和优质企业资源落地转化，<span style=\"font-weight: bold;\">滨海高新区作为承接平台，</span>迎来新的发展机遇。通过二十年的发展，公司在利用政策优势强化招商销售，发挥地域优势做好项目建设，加强人才队伍建设，不断积累工业园建设经验，提升园区运营服务功能，培育产业聚集效应，推进资本运作平台和投资平台建设等方面形成了公司独特的核心竞争力。</p>\n<p><span style=\"font-weight: bold;\">拥有规模化的园区载体空间优势。</span>多年来，公司开发运营了绿色产业基地、创新基地、国家软件服务外包基地（BPO）、精工国际、蓝海等逾百余万平方米多个工业园区项目，围绕软件开发、服务外包、生物医药等产业聚集了一批优质科技企业，为公司业务拓展提供有力支撑。</p>\n<p><span style=\"font-weight: bold;\">拥有国内最早的国家级综合孵化器，具备运作产业投资的增值服务优势。</span>通过加强国家自主创新示范区政策研究，更好地为在孵企业提供政策咨询服务，创建更优的企业成长环境，提升海泰国家级孵化器服务水平，不断扩大海泰国家级孵化器的招商影响力。聚集了新一代信息技术、新能源新材料、生物医药等一批科技型企业，为运作产业投资工作提供了增值服务优势。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.公司与实际控制人之间的产权及控制关系的方框图</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221008093058_f7ef3bd7ab139fc5.png\" /></span></p>\n<p>资料来源：公司2021年年度报告</p>\n<p><span style=\"font-weight: bold;\">公司实际控制人为天津市人民政府，控股股东为天津海泰控股集团有限公司（天津市人民政府授权的国有资产经营管理单位）</span></p>",
+    "firstLetter": "HTFZ",
+    "high": 4.48,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 4.3,
+    "marketValue": 2778298051.8,
+    "name": "海泰发展",
+    "pctChg": 2.56,
+    "price": 4.41,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 3,
+    "recent60Change": -11.62,
+    "recentChange": 7.82,
+    "remark": "天津国资控股，国内最早一家“以创业孵化带动工业地产与产业投资”的工业园区类上市公司",
+    "status": 1,
+    "stockId": "600082",
+    "stockLightspots": [
+      {
+        "bizKey": "12658",
+        "content": "项目储备丰富,财务稳健",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12658,
+        "stockId": "600082",
+        "updateTime": null
+      },
+      {
+        "bizKey": "12659",
+        "content": "滨海新区项目储备丰富",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 12659,
+        "stockId": "600082",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:52",
+    "vol": 116906.0
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 4072963930.97,
+    "changeCount": -2.88,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><strong>一、公司介绍</strong></p><p>英维克于 2005 年成立，总部位于深圳，2016 年深交所上市。公司是国内领先的精密温控节能解决方案和产品提供商，致力于为云计算数据中心、服务器机房、通信网络、电力电网、储能系统、电源转换等领域提供设备散热解决方案，为客车、重卡、冷藏车、地铁等车辆提供相关车用空调、冷机等产品及服务，并为人居健康空气环境推出系列空气环境机。</p><p><strong>二、主营业务</strong></p><p>四大产品线齐头并进，应用场景广泛。<span style=\"color: rgb(225, 60, 57);\"><strong>公司目前拥有机房温控节能、机柜温控节能、客车空调、轨道交通列车空调及服务四大产品线，</strong></span>产品及服务涵盖数据中心温控、数据中心集成及总包、机柜温控、电子散热及液冷温控，新能源车用空调、轨道交通列车空调、冷链温控，空气环境控制等领域，广泛应用于数据中心、储能电站、通信、智能电网、冷链运输、新能源车、轨交、智慧教育、家居、医疗等行业。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/22/b6ba634d-3a6b-4301-99b0-e43806d33b8b.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><strong>三、液冷市场需求</strong></p><p>在芯片侧，高算力推动芯片功率密度持续攀升。大模型的出现和迭代升级催生了算力需求的大幅提高，芯片的 TDP(热设计功率)随之攀升。目前，英伟达 GPU芯片 H100 SXM 的 TDP 已高达 700W，2025 年还将推出 TDP 为 1000W的 B200芯片，功耗较 H100 增加 40%以上。英特尔 CPU 芯片的 TDP 已经突破了 350W。我们认为，随着 Scaling Law 持续演绎，传统风冷等方式将无法满足新的算力芯片单点散热需求，液冷需求有望提升。在机柜侧，单机柜功率已超 100kW。在芯片功率密度攀升的同时，整柜功率密度也不断增长。目前，英伟达 GB200 NVL72 的单机柜功率已高达 120kW，采用液冷散热方案。GB200 NVL72 的核心是 NVIDIA GB200 Grace Blackwell 超级芯片,它通过 NVLink-Chip-to-Chip(C2C)接口简化了编程并支持万亿参数 LLM、多模态任务的变换器模型、models for large-scale simulations 和 3D 数据生成模型的更大内存需求。冷却剂以2升/秒的速度和 25 摄氏度的温度进入机架，然后升高 20度后离开机架。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/22/2c67b909-506f-43d2-b690-26d9b79261f7.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>单机柜功率突破风冷散热极限，液冷是未来的产业方向。</strong></span>随着机柜功率密度不断增长，数据中心适宜的制冷技术逐渐从风冷过渡到液冷。当机架密度超过 20kW时，风冷成本高、难度大的问题更加明显，混合冷却成为数据中心制冷的主要方案。热管背板热交换器利用了液体的高热传导特性，并采用与直接液冷所需数据中心基础设施类似的设备，为 20kW 以上热密度的机柜提供了可行的冷却解决方案。根据 Vertiv 提供的数据，当机架密度超过 75kW 时，风冷和混合冷却不再有效，只有直接式液冷方案能够满足高功率密度机柜的散热需求，</p><p><strong>四、液冷各部件</strong></p><p>冷板。冷板是以液冷工质为媒介，实现热量交换的紧凑型换热部件，与设备配套管路、QDC、CDU、RCM、LCM 等形成二次侧冷却环路，并最终将处理器热量传递至室外的部件。冷板的选型需要结合实际功耗、工作压力、流速等条件，综合考虑冷板材质、工艺，具有较强的定制化特点。</p><p>Manifold。Manifold 分为LCM(环路工艺冷媒供回歧管)和 RCM(机柜工艺冷媒供回歧管)。ICM 用于向环路内各支路分配工艺冷媒，一般安装于数据中心地板底部，将从 CDU 冷却的工艺冷媒，通过分支软管输送到 RCM 处。RCM 用于向机柜内各液冷冷板分配冷却液，安装在IT设备液冷机柜内，将系统的循环工质分配到各个 IT 设备节点，在液冷板内换热后将热量带出到主水管路，其设计选型需要综合考虑流速、充注量和机柜总重量等。</p><p>快速接头(ODC)。快速接头是用于节点冷板模组和液冷机柜集分水器之间的水路连接接头，需支持插拔节点时快速连通和截断节点与液冷机柜集分水器之间的水路，并保证不漏液。根据安装位置的不同，分为自锁式和球阀式。自锁式又分为手插式和盲插式两种。手插式对运维人员的要求较高，插拔操作依赖机房运维人员，服务器和机柜易于解耦。盲插快接头插拔具备自动化保障，操作方便，连接精度高，但服务器和机柜解耦难度大。需要根据机柜的特定结构和运维人员的技术能力灵活选择快速接头的类型。</p><p>CDU 换热量覆盖范围广，满足多场景需求。CDU 是一次侧与二次侧的热交换中枢，为一次侧循环冷却液的进入和排出交换热量，同时为二次侧工质提供冷却和循环动力并对二次侧系统进行集中控制。根据CDU的形态和部署位置，可分为集中式 CDU 和分布式 CDU 两种。集中式 CDU 表现为机柜形态，适用于大型数据中心和大规模的液冷部署。分布式 CDU 表现为设备形态，适用于中小型数据中心的液冷部署。公司研发了不同规格的 CDU,覆盖的换热量从几十 kW 到几百 kW能够充分满足不同规模数据中心的散热需求。</p><p><strong>五、液冷布局企业</strong></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/22/7ac5ef8e-955d-4efe-934d-06b9be113406.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>服务器厂商和第三方温控厂商广泛布局，公司液冷实现GW 级交付。超聚变浪潮、宁畅、联想、新华三等液冷服务器厂商依托 IT 核心部件，掌握产业链核心价值控制点，同时基于服务器产品提供综合性解决方案及服务。曙光数创、申菱环境、云酷智能等设备厂商凭借在精密温控领域的技术及经验，提供液冷基础设施产品及解决方案。英维克推出针对算力设备和数据中心的 Coolinside 液冷机柜及全链条液冷解决方案，相关产品涉及冷源、管路连接、CDU 分配、快换接头、Manifold、冷板、长效液冷工质、漏液检测等，截至 2024年9月在液冷链条的累计交付已超 1GW。</p>",
+    "firstLetter": "YWK",
+    "high": 113.0,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 105.73,
+    "marketValue": 110487530792.38,
+    "name": "英维克",
+    "pctChg": -2.55,
+    "price": 110.26,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 10,
+    "recent60Change": 52.52,
+    "recentChange": 3.06,
+    "remark": "Coolinside 全链条液冷解决方案，深度受益AI液冷浪潮",
+    "status": 1,
+    "stockId": "002837",
+    "stockLightspots": [
+      {
+        "bizKey": "37655",
+        "content": "温控龙头多领域发力，聚焦“大温控”掘金新基建+碳中和",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37655,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37656",
+        "content": "英维克精密温控设备龙头，多点布局市场空间持续扩大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37656,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37657",
+        "content": "英维克领跑储能温控设备行业，多点布局助力高速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37657,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37658",
+        "content": "英维克精密温控节能龙头开启平台化布局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37658,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37659",
+        "content": "精密温控龙头，助力新能源与绿色科技",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37659,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37660",
+        "content": "英维克精密温控领军者，5G时代迎来机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37660,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37661",
+        "content": "精密温控龙头，助力新能源与绿色科技",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37661,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37662",
+        "content": "英维克温控行业领跑者，储能助力公司景气度提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37662,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37663",
+        "content": "英维克精密温控龙头，创新能力打开多增长曲线",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37663,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37664",
+        "content": "英维克擅长弯道超车的精密空调小龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37664,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37665",
+        "content": "英维克储能和通信业务高发展，行业与公司发展双景气",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37665,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37666",
+        "content": "温控龙头迎来量价齐升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37666,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37667",
+        "content": "英维克精密温控龙头，多轮驱动打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37667,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37668",
+        "content": "英维克数据中心制冷龙头，5G差异化精品标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37668,
+        "stockId": "002837",
+        "updateTime": null
+      },
+      {
+        "bizKey": "37669",
+        "content": "数据中心、5G 接力驱动，优秀团队护航长期发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 37669,
+        "stockId": "002837",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 373759.76
+  }
+}

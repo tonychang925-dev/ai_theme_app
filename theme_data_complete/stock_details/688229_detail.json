@@ -1,0 +1,134 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 331156472.0,
+    "changeCount": -12.0,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:48",
+    "detail": "<p><span style=\"font-weight: bold;\">1、行业趋势：微服务与APM</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20230206150711_35e07aa2dfa7bc6c.dat\" /></span></p>\n<div data-canvas-width=\"90.17999999999999\">云原生时代，微服务架构成为高效部署、灵活拓展的关键。传统集中式架构把所有功能模块集成到一个进程中，拓展过程就是复制整体的进程。这种方式的弊端是：1）内部结构紧耦合，牵一发动全身，更新、升级、维护都不灵活。例如，某系统的某一功能升级，需要整个系统停止服务才能升级；2）资源利用率较低，无法按需扩展，也存在资源空占。在移动支付时代，手机APP逐渐取代网页成为主要的应用场景和数据交互载体。来自移动端的用户访问量呈现高并发、时间非均匀的特点，传统的集中式架构不再适合，微服务设计理念应运而生。</div>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20230206150848_a6d794000c33df9b.png\" /></p>\n<p>客户端出现故障，理论上需要全链路监测追踪才能有效定位故障源头。在移动支付APP竞争白热化的今天，用户体验感和流畅度直接影响APP和网站的访问量。在移动支付和在线场景普及时代，用户请求高并发，APP和网站经常面临卡顿、崩溃等突发情况。而且，随着功能丰富度的增加，用户能否直接清晰地找到需要的功能也成为APP和网页关注的焦点。理论上来讲，客户端的故障可能源于前&mdash;中&mdash;后端任何一个环节，而且在微服务架构下，可能任何其中一个模块或者任何两个模块之间的交互出现问题，都会最终导致客户端体验不佳。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20230206150911_bda91944d1c471bb.png\" /></p>\n<p>因此，随着微服务架构逐渐成为IT发展趋势，应用性能监测(Application Performance Management &amp;Monitoring，以下简写为APM)服务和产品逐渐成为一种刚需。APM属于IT运维的细分领域，工作原理是在后端服务器加入探针、在前端内嵌SDK，在应用程序实际运行时，监测前端到后端调用链路中出现故障的代码段，为故障排查、应用性能优化提供直接帮助，这种方式成为&ldquo;被动式&rdquo;监测；或以模拟用户访问的形式，从使用者角度发现应用软件是否存在使用问题，但不对前后端程序内部做故障定位，这种方式成为&ldquo;主动式&rdquo;监测。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、全球APM市场：格局较分散，云原生新势力崛起</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20230206151330_b7d2d81265428b6a.dat\" /></span></p>\n<p>据Gartner定义，IT运维管理(简写ITOM)全球市场规模在2019年为155亿美元，包含4个主要领域：基础设施监控及AI Ops(以下简写IMO)、应用性能监测(APM)、安全信息及事件管理(SIEM)、网络性能监控(NPM)。Gartner预计，2023年全球ITOM市场将达230亿美元，2019-2023复合增速为10.4%。其中，APM市场2019年规模为41亿美元，预计2023年达到62亿美元，2019-2023复合增速约为10.9%。</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20230206151250_8ab2a57f1ef75261.dat\" /></span></p>\n<p>全球APM市场份额较为分散。据Gartner统计，IBM、Splunk和SolarWinds是全球APM市场份额前三，而新兴厂商份额暂时较低。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20230206151613_dec34305e0c4aff2.png\" /></p>\n<p>在Gartner象限列出的企业中，有2家代表性的公司：Dynatrace和Datadog。这2家公司的产品和定位可作为APM行业的重要趋势。Dynatrace在云原始时代之前就已经占据全球APM行业领军地位，Dynatrace在全球范围积累了较多的大型企业客户典型案例，例如华为、三星、加拿大航空、以及部分大型银行，目前处于云化转型期；而Datadog一开始就定位于云原生，产品采用SaaS模式，从IT设施监测起家并逐渐横向拓展产品维度，向客户提供开箱即用的全栈性能监测一体化平台，获得中型和小型企业的青睐，也逐渐被大型企业接受。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、中长期利好驱动，国产APM厂商前景广阔</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid14_20230206152848_dc9df3860856766e.png\" /></span></p>\n<p>国内APM行业长期驱动因素有3点：1）微服务在传统行业开始普及，APM需求从无到有、从可选到必备，需求开始释放；2）国内公有云市场仍处于较高增速发展期，而且SaaS比例仍有较大提升空间；3）国产APM企业技术升级，依靠本土优势、成本优势，在国内市场替代海外品牌。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid17_20230206153001_2fdfd788a7fa7b85.dat\" /></p>\n<p>应用性能监测(APM)已明确成为各大公有云平台的重要服务，反映了这类服务的刚需化趋势。目前，阿里云、腾讯云、华为云都明确把应用实时监测列入产品目录中。我们认为，公有云巨头这种共识性的产品布局，反映了应用性能监测服务逐渐成为一种刚需。而且，由于国内公有云巨头仍处于较高增长期，有望直接提升应用性能监测方向的生态合作伙伴的业务体量。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid19_20230206153259_4402c2048c0f6c55.dat\" /></p>\n<p>软硬件国产化已经是不可逆转的大趋势，信创战略是近期加速的催化剂。2011年，国内x86服务器市场份额前三均由海外品牌主导，戴尔、IBM、HP合计占据60%的市场份额。而在2019年，国产品牌成为份额主导，浪潮、华为、新华三合计占据58%的份额，海外品牌份额已经大幅缩水。在数据库领域，阿里、腾讯、华为也早已推出自主品牌的软件，并且已经在内部推广使用。在信创战略的催化下，国产化趋势有望在各行业、各领域加速推进。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、博睿数据发展历程</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid20_20230206153402_46235082a1e15c29.png\" /></span></p>\n<p>博睿数据是国内APM行业的领军者。公司成立于2008年，自创立以来一直专注于数据赋能IT运维，助力企业数字化转型。2008~2012，博睿的产品主要以主动式性能监测为主；2013~2015，公司在移动APP端、服务器端的被动式性能监测产品陆续发布，开启被动式监测领域的征程；2019年，公司可视化产品DataView发布，实现多数据源海量数据的统一存储和在线分析；2020年8月17日，公司在科创板上市，是国内APM领域目前在A股上市的唯一企业。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、公司产品列表</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid23_20230206153602_05376a7173ca4ad2.dat\" /></span></p>\n<p>公司产品和解决方案覆盖IT运维监控管理所有分支领域，包括DEM(数字体验管理工具)、APM(应用性能管理工具)、ITIM(IT基础设施管理工具)、NPM(网络性能监测)和大数据智能分析管理。其中，应用性能监测系列是公司的基石产品，是目前公司收入的主要来源。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、公司主要客户</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid25_20230206153725_e8aa6578c4dd9c73.dat\" /></span></p>\n<p>商业进程稳步推进，逐渐积累行业标杆客户，市场影响力不断扩大。公司已在北京、上海、广州、深圳、武汉、成都等地设立了营销中心，在北京、武汉、厦门等地设立有研发中心。在Gartner发布的《中国AIOps市场指南报告》中，博睿数据是国内唯一一家同时具备较强APM背景和较强数据分析/AI能力的厂商。公司成为AIOps标准工作组、中国电子工业标准化技术协会信息技术应用创新工委会等行业权威组织的会员单位，目前已经积累起众多行业标杆性客户，包括阿里、腾讯、百度、华为、中信银行、中国南方航空等。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">7、核心骨干团队稳定，有利于长期战略的稳步推进</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid26_20230206154035_7aaf32dd27199bd8.png\" /></span></p>\n<p>公司前十大股东主要由高管团队、员工持股平台构成，股权关系稳定。截至2020年三季报，公司前十大股东持股比重为68.9%，而且基本由高管团队、员工持股平台组成。董事长李凯先生是公司第一大股东，持股比例23.12%；冯云彪先生任总经理，持股11.41%。公司上市前，冯云彪(总经理)、孟曦东(副总经理)已与李凯(董事长)签署《一致行动协议书》，约定与李凯保持一致行动并在出现不一致的表决意见时以李凯意见为准。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid29_20230206154110_ce0ccf2e2d6b3cfe.dat\" /></p>\n<p>核心技术团队在公司长期任职，与公司发展深度绑定，有助于公司技术路线稳步推进和持续迭代。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">8、主要业务增量：被动式APM产品迅速增长，发展前景广阔</span></p>\n<div data-canvas-width=\"69.98939999999999\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid31_20230206154308_e8b087f30f40318f.dat\" /></div>\n<div data-canvas-width=\"69.98939999999999\">被动式&rdquo;的含义可理解为&ldquo;自动化，不需要用户主动干预&rdquo;，而且嵌入企业用户的前&mdash;中&mdash;后端中，以探针或者SDK的形式监测在真实业务场景中。主要作用是当真实用户访问APP或网页端时，监测前后端各进程的运行情况，准确定位卡顿等故障在代码中的位置，并进行可视化的链路展示，以帮助企业提升APP和网站的用户体验度，节省优化、故障排查的精力，提升运维效率。</div>\n<div data-canvas-width=\"69.98939999999999\">&nbsp;</div>\n<div data-canvas-width=\"69.98939999999999\">公司被动式产品主要包括3款：Bonree Server、Bonree SDK、Bonree Browser。被动式产品收入占比持续提升，Bonree Server是被动式APM最核心的产品。由于有效解决了微服务时代在后端性能监测的痛点，公司的Server产品销量增速较高，是公司被动式最核心的产品，占营收的比重在3年内也从3.9%提升到了17.9%，带动整个被动式系列占营收的比重由10%提升至22.2%。</div>\n<div data-canvas-width=\"69.98939999999999\">&nbsp;</div>\n<div data-canvas-width=\"69.98939999999999\">&nbsp;</div>\n<div data-canvas-width=\"69.98939999999999\"><span style=\"font-weight: bold;\">9、萌发中的亮点：网络性能监测、智能数据运维</span></div>\n<div data-canvas-width=\"69.98939999999999\"><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid32_20230206154607_4805c52347dbc5c0.png\" /></span></div>\n<div data-canvas-width=\"69.98939999999999\">Bonree Reesii是博睿的网络性能监测产品。公司在2019年推出了网络性能监测产品Bonree Reesii，该产品从网络层面分析应用性能状况，发现网络设备的故障情况，有效避免因网络性能问题给企业带来的运营风险。Bonree Reesii 产品的推出，填补了公司对于基础网络核心设备的监控视角，与数字体验监测产品和应用发现跟踪和诊断产品相结合，可进一步实现贯穿前端应用（数字体验监测产品）、中端网络（网络性能监测产品）、后端服务器（应用发现跟踪和诊断产品）的完善的端到端全业务链产品体系。</div>\n<div data-canvas-width=\"69.98939999999999\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid34_20230206154656_55f31ec8b1d760e4.png\" /></div>\n<div data-canvas-width=\"69.98939999999999\">Bonree Dataview是公司新推出的智能数据运维中台。Bonree DataView通过将海量数据存储、计算、分析、可视化进行一体化集成，从一个数据分析需求的提出到形成可使用的数据报表的时间大大缩短，大幅缩减了企业相关成本，使企业业务人员将精力更多地专注在数据分析本身上，及时掌控业务状况和精准决策。</div>\n<div data-canvas-width=\"69.98939999999999\">&nbsp;</div>\n<div data-canvas-width=\"69.98939999999999\">&nbsp;</div>\n<div data-canvas-width=\"69.98939999999999\"><span style=\"font-weight: bold;\">10、风险提示：</span>疫情控制不及预期；行业竞争加剧；应收账款增加；产品推广不及预期</div>",
+    "firstLetter": "BRSJ",
+    "high": 99.0,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 84.6,
+    "marketValue": 4395600000.0,
+    "name": "博睿数据",
+    "pctChg": -12.12,
+    "price": 87.0,
+    "recent10BlueCount": 2,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 2,
+    "recent365LimitUpCount": 3,
+    "recent60Change": 25.47,
+    "recentChange": 20.13,
+    "remark": "专注于企业IT应用性能监控管理领域，以APM产品技术为主体，形成数据存储和分析、AI智能分析的技术群",
+    "status": 1,
+    "stockId": "688229",
+    "stockLightspots": [
+      {
+        "bizKey": "32750",
+        "content": "博睿数据国产APM龙头，受益于微服务时代刚需释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32750,
+        "stockId": "688229",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32751",
+        "content": "APM龙头，布局IT运维蓝海",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32751,
+        "stockId": "688229",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32752",
+        "content": "博睿数据APM行业领军，中国版Datadog启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32752,
+        "stockId": "688229",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32753",
+        "content": "博睿数据广阔蓝海市场的稀缺标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32753,
+        "stockId": "688229",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32754",
+        "content": "博睿数据APM龙头启航，市场潜力巨大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32754,
+        "stockId": "688229",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32755",
+        "content": "加大投入蓄势待发，看好公司未来发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32755,
+        "stockId": "688229",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32756",
+        "content": "APM技术龙头企业，好赛道前景广",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32756,
+        "stockId": "688229",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32757",
+        "content": "博睿数据云化变革阵痛期尾声，KA策略收效显著",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32757,
+        "stockId": "688229",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32758",
+        "content": "强化智能运维能力，拥抱国产化云化浪潮",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32758,
+        "stockId": "688229",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32759",
+        "content": "博睿数据人员扩张添动力，股权激励树决心",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32759,
+        "stockId": "688229",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32760",
+        "content": "博睿数据股权激励授予核心员工，利于调动积极性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32760,
+        "stockId": "688229",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:53",
+    "vol": 37279.71
+  }
+}

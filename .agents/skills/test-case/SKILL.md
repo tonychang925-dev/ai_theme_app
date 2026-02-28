@@ -25,13 +25,17 @@ model: gpt-5
 
 # 0. 输出文件（必须）
 
-生成：
+优先级规则（MUST）：
 
-docs/test_cases/<level>/<filename>.md
+1. 若请求或上下文明确到某一阶段（如 `P1.phase3`），必须输出到分阶段文件：  
+   `docs/project_control/TEST_CASE_SPEC_<phase>.md`（示例：`TEST_CASE_SPEC_P1.phase3.md`）。
+2. 仅当用户明确要求“汇总总表”或项目尚未采用分阶段文件时，才写入：  
+   `docs/project_control/TEST_CASE_SPEC.md`。
+3. 若同时存在总表与分阶段文件，分阶段文件为该阶段真源；总表只保留索引或镜像，不得先写总表再补阶段文件。
 
-或统一汇总文件：
+可选输出：
 
-docs/project_control/TEST_CASE_SPEC.md
+- `docs/test_cases/<level>/<filename>.md`
 
 ---
 

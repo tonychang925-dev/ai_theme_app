@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 74648327.5,
+    "changeCount": 0.24,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p>1公司介绍</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>主营聚焦音响电声业务，开拓汽车音响、VR/AR 等新赛道</strong></span>。公司主营业务以音响电声类业务、锂电池业务及 VR/AR 业务为主，下游涉及广泛，产品可应用于可穿戴产品(如VR/AR)、汽车、智能手机、平板电脑、笔记本电脑、台式电脑、智能电视、智能音响等。细分来看，扬声器和音箱业务可拆分为:第一，扬声器、蓝牙音箱、Wi-Fi 音箱、电脑周边音响等传统音箱业务，第二，智能音箱、AI音箱业务，第三，新赛道汽车音响业务;锂电池业务主要产品为锂离子电池,主要产品运用于无线耳机、智能音响、可穿戴设备等:VR/AR声学业务包括组件与整机，与国内外主要 VR 企业深度绑定。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/22/d936c518-051a-4527-97e9-e4e0194d7264.png\" alt=\"\" data-href=\"\" style=\"width: 606.00px;height: 478.97px;\"/></p><p>2公司亮点</p><p>音响电声产品快速迭代,使用场景进一步延伸。在传统音响领域,以蓝牙音箱、传统耳机为代表的消费类音响电声产品需求旺盛，产品快速迭代优化，使用场景正在从家庭、娱乐向教育、酒店、医疗、运动、金融等场景延伸，有望进一步扩大市场需求，推动消费升级。<span style=\"color: rgb(225, 60, 57);\"><strong>公司积累了 70 余年扬声器设计及制造经验，能在多个方面、用多个举措为客户供应高音质、高可靠性的各种扬声器及音响系统产品，目前传统音响板块包括:扬声器、蓝牙音箱、传统耳机、电脑周边音响、Wi-i音箱、soundbar 等产品</strong></span>。</p><p>Al与硬件深度融合，智能硬件新品层出不穷。在A1大模型的升级的带动下，智能音箱、AI 眼镜、AI 耳机等各种创新类硬件产品层出不穷，各行业企业纷纷加大投入，探索A1与硬件的深度融合。随着技术的不断进步和市场的逐渐成熟，特别是当下大模型的应用竞争逐渐进入白热化阶段，Al智能硬件的潜力正逐步被挖掘，其应用场景也在不断拓展。公司沿用在音响电声领域的技术优势、质量把控能力、交付能力等持续获得客户新产品、新项目的开发机会。同时，公司突破了多个大客户的FATP 项目，其中包括A| 眼镜等项目，取得了更多JDM、ODM 订单。未来公司将重点发展智能音箱、A|眼镜、AI 耳机、VR/AR等智能硬件产品，密切关注行业技术的发展方向，紧跟市场需求。车载音响系统升级，扬声器单车搭载数量翻倍增长。当汽车进入智能化时代，用户体验成为汽车产品竞争力的重要表现，因此车企在人机互动和车载娱乐等汽车电子方面的投入更多，音响系统成为较能体现差异化配置的重要卖点。随着音响系统升级，扬声器单车搭载数量翻倍增长，由原来的4-8个成倍增长至20-30个，车载功放配置也从高端车型下放，成为标配，单车音响配套价值量更是呈十倍增长2024 年公司汽车实验室和 DSP 组开展了汽车功放软、硬件开发和音频算法研究，完成了多款车型的系统声学改制和调音，预计今、明年将会陆续上车。</p>",
+    "firstLetter": "GGDQ",
+    "high": 14.0,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 13.75,
+    "marketValue": 7711643739.72,
+    "name": "国光电器",
+    "pctChg": 1.75,
+    "price": 13.95,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 3,
+    "recent60Change": -3.06,
+    "recentChange": 1.09,
+    "remark": "全球电声制造领先企业，掌握优质客户资源",
+    "status": 1,
+    "stockId": "002045",
+    "stockLightspots": [
+      {
+        "bizKey": "43166",
+        "content": "国光电器三大转型动力造就新国光",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43166,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43167",
+        "content": "被低估的声学龙头，VR、AIoT助力扬帆再",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43167,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43168",
+        "content": "国光电器扬声器龙头站上智能音箱风口",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43168,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43169",
+        "content": "国光电器智能音响时代的核心领导者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43169,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43170",
+        "content": "国光电器绑定优质客户，聚焦电声业务",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43170,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43171",
+        "content": "战略转向积极,14年盈利将快速增长,建议增持",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43171,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43172",
+        "content": "国光电器传统业务基础扎实，拟定增布局智能音响业务",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43172,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43173",
+        "content": "国光电器微电声业务或迎来订单突破，锂电池业务将充分受益电动车爆发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43173,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43174",
+        "content": "国光电器三大转型动力造就新国光",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43174,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43175",
+        "content": "关注公司业绩拐点和价值重估",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43175,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43176",
+        "content": "国光电器扬声器龙头，高度受益智能音箱产业爆发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43176,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43177",
+        "content": "国光电器主营业务毛利下滑，战略调整刻不容缓",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43177,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43178",
+        "content": "多媒体音响和电池业务是未来看点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43178,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43179",
+        "content": "国光电器战略发展新方向，升级转型皆可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43179,
+        "stockId": "002045",
+        "updateTime": null
+      },
+      {
+        "bizKey": "43180",
+        "content": "中报业绩低于预期，转型成长逻辑不变",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 43180,
+        "stockId": "002045",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 53824.5
+  }
+}

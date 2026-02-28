@@ -150,3 +150,40 @@
   - 优点：显著降低语义误匹配，形成可解释最终裁决链路。
   - 成本：引入时延、调用成本与运行复杂度，需要熔断、超时回退和预算门禁。
   - 兼容：保留受控降级路径，但降级命中超预算时阻断发布。
+
+### ADR-013: 分类命中后全量 LLM 复核（禁止仅歧义触发）
+- Context
+  - 已发生“高相似事件被误匹配到错误题材”的线上/验收样本（如 SpaceX 相关事件误归并到非同题材簇）。
+  - “仅歧义样本触发 LLM 复核”无法覆盖部分高置信误匹配场景。
+- Problem
+  - 语义初筛（向量相似度）在特定样本上存在系统性误判风险；如果未进入复核，会直接进入最终落库。
+- Proposed Decision
+  - 固化为：`动态语义向量匹配（初筛召回） -> LLM 全量复核（分类命中样本） -> 门禁判定 -> 最终落库`。
+  - 灰度策略仅影响“是否采用裁决结果落库比例”，不影响“是否执行复核调用”。
+  - 超时/不可用时允许受控回退 stage1，并强制记录 `timeout_fallback/model_unavailable` 原因码。
+- Alternatives
+  - 仅歧义样本触发复核。
+  - 全量复核但无门禁，直接放量。
+- Consequences
+  - 优点：显著降低漏检型误匹配，提升最终结果可信度与可解释性。
+  - 成本：LLM 调用量、时延和预算压力上升，需要并发池、缓存、熔断和预算门禁。
+  - 约束：必须维持 `source_type=real` 证据链与 `request_id/timestamp/model_name` 审计字段完整。
+
+### ADR-014: 人工终审兜底机制（pending_manual_review）
+- Context
+  - 即使引入 LLM 全量复核，仍存在模型不确定（`abstain/category_uncertain`）与市场语义突变场景。
+  - 业务方确认采用“AI 自动为主 + 人工复核兜底”的动态 2/8 原则（比喻，不是固定比例）。
+- Problem
+  - 若缺少人工终审入口，不确定样本只能机器自动决策，可能导致误创建、误归并或误丢弃。
+- Proposed Decision
+  - 引入统一人工终审队列：`pending_manual_review`。
+  - 进入条件：`abstain/category_uncertain`、门禁异常、或策略要求人工确认的中低置信样本。
+  - 分析师在前端复核后回写 `events:decision`，再由 `DecisionExecutor` 执行最终动作。
+  - 强制审计字段：`review_status,llm_suggestion,review_reason,reviewer_id,trace_id,request_id,model_name,timestamp`。
+- Alternatives
+  - 继续全自动闭环，不设人工终审。
+  - 仅离线抽样复盘，不做实时人工回写。
+- Consequences
+  - 优点：显著降低机器误判直落库风险，提升高风险样本可控性与可解释性。
+  - 成本：引入人工操作与前端审批链路，处理时延上升。
+  - 约束：`manual_review_rate` 需动态调节并纳入发布门禁，不得写死固定比例。

@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 21931244.0,
+    "changeCount": 0.17,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1.1营业收入构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220914110932_903ec4a4bcf59d6c.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">1.2&nbsp;占公司营业收入或营业利润 10%以上的行业、产品或地区情况</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220914111125_5e749c70adf99261.png\" /></span></p>\n<p>资料来源：公司2022年半年度报告</p>\n<p>大连友谊是以零售百货、酒店管理、房地产开収为主业，以其他策略性投资为补充的大型综合性商贸企业集团。&nbsp;主要产品或服务为：房地产开发及销售、商品零售、对船供应、进出口贸易、 仓储、免税商品（限分支机构）、农副产品收购（限分支机构）、客房写字间出租、企业管理服务、广告业务等。&nbsp;</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.1 门店基本情况&nbsp;</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20220914112944_4ad8c6e147e7c26e.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">2.2 门店店效信息</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20220914113055_90f4642e45d6f37d.png\" /></span></p>\n<p>资料来源：公司2022年半年度报告</p>\n<p>公司零售业实现营业收入 8,161.21 万元，同比减少 9.02%，主要原因为：目前新冠疫情对公司零售业影 响依然存在，公司零售门店销售尚在逐步恢复中，未达到预期盈利水平。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.公司主营业务之一为房地产业</span></p>\n<p>房地产业实现收入 24.05 万元，同比减少 33.41%。</p>\n<p>公司房地产业集中在大连地区，即公司控股子公司拟开发的&ldquo;金石谷&rdquo;项目，以前年度该项目因政策原因处于暂缓建设阶 段，公司对其开发一直保持着持续的调研和论证。2021 年 9 月公司接到项目所在地政府有关文件，要求公司按照整体主 动退出球场标准进行整改。公司按照政府要求，整体消除了该项目的球场特征，并封存了部分建筑，同时公司也在项目 所在地政府的支持下，启动了项目整体转型的调研工作，目前对该项目转型方案正在论证中。&nbsp;</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.核心竞争力</span></p>\n<p>2016 年，公司原控股股东友谊集团签署《关于转让大连友谊（集团）股份有限公司部分股份之股份转让协议》，上市公司引入了新的控股股东武信投资控股。武信投资控股成为控股股东后，将借助上市公司的平台，通过各种有效途径，创新发展，打造大连友谊的持续经营能力。</p>\n<p>公司调整了地产业的发展方向，初步确立了&ldquo;在中心城市的中心区域，发展中小地块&rdquo;的 &ldquo;三中&rdquo;原则，并重塑管理能力，以储备相应竞争力。</p>\n<p>公司现有零售门店，位于区域市场的核心商圈，多年来稳健运营，在区域市场中树立了良好的品牌形象，形成了相对有利的区域竞争优势。</p>",
+    "firstLetter": "DLYY",
+    "high": 7.35,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 7.19,
+    "marketValue": 2551824000.0,
+    "name": "大连友谊",
+    "pctChg": 2.37,
+    "price": 7.33,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": -13.25,
+    "recentChange": 3.09,
+    "remark": "是以零售百货、酒店管理、房地产开収为主业，以其他策略性投资为补充的大型综合性商贸企业集团。 ",
+    "status": 1,
+    "stockId": "000679",
+    "stockLightspots": [
+      {
+        "bizKey": "52489",
+        "content": "大连友谊“金融+”战略初现，打造武汉金控上市平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52489,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52490",
+        "content": "蚕蛹化蝶待起舞,业绩释放或可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52490,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52491",
+        "content": "大连友谊重组“实业+金融”，武汉金控旗下唯一上市平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52491,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52492",
+        "content": "转型“金融+”，金控平台助力“P2P+征信”起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52492,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52493",
+        "content": "大连友谊打造武汉金控平台，构筑小微融资产业链",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52493,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52494",
+        "content": "12年业绩低于预期,未来看点在MBO后的业绩释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52494,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52495",
+        "content": "大连友谊武汉金控入主，“金融+”战略转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52495,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52496",
+        "content": "期待业绩爆发性增长商业与酒店业务稳步增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52496,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52497",
+        "content": "大连友谊主业低迷，静待转型",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52497,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52498",
+        "content": "签订4.5亿信托贷款合同,变更应收款坏账计提比例",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52498,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52499",
+        "content": "股价接近底部,等待结构性机会",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52499,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52500",
+        "content": "收购辽阳项目渠道,下沉起步中",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52500,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52501",
+        "content": "开始新的征程",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52501,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52502",
+        "content": "财务费用大增拖累一季业绩",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52502,
+        "stockId": "000679",
+        "updateTime": null
+      },
+      {
+        "bizKey": "52503",
+        "content": "目前估值合理,未来值得期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 52503,
+        "stockId": "000679",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 30082.0
+  }
+}

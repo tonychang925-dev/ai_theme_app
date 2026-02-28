@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 57489680.0,
+    "changeCount": -0.08,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:49",
+    "detail": "<p><span style=\"font-size: 14px;\">一、公司以及行业介绍</span></p><p><span style=\"color: rgb(225, 60, 57); font-size: 14px;\">公司从事的主要业务 公司主营业务涵盖旅游文化科技、文旅综合体运营、旅游综合服务三大业务板块</span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">。旅游文化科技板块即文旅科技公司业务，包含旅游园区策划设计、高科技游乐设备研发生产、主题公园工程建设、系统软件提供等业务；文旅综合体板 块即文旅综合体的规划设计、投资建设及运营管理等业务；旅游综合服务板块即公司的旅游交通等业务。 </span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">2024 年，国内出游人次、游客出游总花费实现稳步增长。 </span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\">根据文化和旅游部发布的数据显示，全年国内出游人次 56.15 亿，比上年同期增加 7.24 亿，同比增长 14.8%。国内游客 出游总花费 5.75 万亿元，比上年增加 0.84 万亿元，同比增长 17.1%，</span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">春节、劳动节、国庆节、暑期、冰雪季等“七节 两季”的国内旅游主要指标连续创下历史新高。 随着我国旅游经济从快速复苏阶段转向繁荣发展新周期，旅游业新业态、新模式不断涌现，数字文旅、低空文旅、 康养旅游、博物馆旅游及“文旅+”新产业蕴含广阔发展潜能，不断赋能我国文旅产业高质量发展。 </span></p><p><br></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">二、公司核心业务</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">主要工作开展情况 2024 年，公司立足“科技升级文旅、文旅服务消费”发展愿景，围绕“开源、节流、盘活、创新”四大经营主线， 固本培元，持续夯实市场化、专业化发展能力。</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\"> 1.持续做好开源工作，夯实未来发展基础 公司充分发挥自身在文化、旅游、科技领域的优势，积极拓展“TOG”型综合文旅项目，实现多个项目战略合作协议 的签订；完善单体设备销售体系建设，夯实单体设备销售能力，助力单体设备销售订单落地。</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\"> 2.高品质推进在建项目建设，</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\">创新产品广受市场好评 由公司所属企业文旅科技设计建设的黄石恐龙奇域旅游度假区于 2024 年 6 月 21 日正式开园</span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">，助力黄石打造“城市 客厅”，为黄石市乃至鄂东城市群文旅产业发展提供强大支撑，该项目荣获 2024 游乐界“杰出新乐园／景区”金冠奖； 滁州文旅装备产业基地项目严格按照工程进度节点推进项目建设，夯实公司单体设备生产标准化、智能化管理水平； “恐龙来了”恐龙真品化石全国巡展首展于 2024 年 6 月 29 日在深圳举办，该展览以云南禄丰真品化石为核心展品，融 入轻量化互动设备和沉浸式 VR 体验大空间，为游客带来一场精彩的文化盛宴，项目一度入选大众点评“深圳市南山区展 览馆热门榜”第五名和抖音 APP“深圳市展览热销榜”第三名。</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\"> 3.科技创新成效更加显现,各项成果充分获得业界肯定 ，公司所属企业文旅科技获批文化和旅游部首批技术创新中心名单，文旅科技改革实践入选国务院国资委《千帆竞渡 基层国有企业改革深化提升行动案例集》；VR 大空间项目在恐龙化石深圳巡展中落地，并在后期实践过程中，逐步形成 可复制、可推广的标准化商业模式；动感飞行影院被文旅部、工信部两部委评为 2024 年全国文化和旅游装备技术提升优 秀案例；“卡乐”品牌系列获得四项游乐界金冠奖；恐龙谷公司成为国家文化产业示范基地。</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\">子公司深圳华侨城文化旅游科技集团有限公司与浙江人形机器人创新中心有限公司签署战略合作协议，重点开发适用于主题公园、景区的机器恐龙、互动NPC机器人</span></p><p><br></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\"> </span></p>",
+    "firstLetter": "YNLY",
+    "high": 5.35,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 5.19,
+    "marketValue": 5345655812.64,
+    "name": "云南旅游",
+    "pctChg": -1.52,
+    "price": 5.2,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 5,
+    "recent60Change": -16.67,
+    "recentChange": -6.64,
+    "remark": "云南省为数不多的综合性旅游上市公司",
+    "status": 1,
+    "stockId": "002059",
+    "stockLightspots": [
+      {
+        "bizKey": "44927",
+        "content": "云南旅游加速整合云南旅游资源，融合科技助力文旅新成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44927,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44928",
+        "content": "云南旅游定增收购文旅科技，景区综合运营迎来协同",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44928,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44929",
+        "content": "华侨城战略入滇，云旅成资源整合平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44929,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44930",
+        "content": "开启大股东资产注入帷幕,孵化注入模式初现",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44930,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44931",
+        "content": "云南旅游注入稀缺游乐设备龙头，打造全域旅游综合服务商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44931,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44932",
+        "content": "公司迎来业绩大拐点+700亩土地重估机会",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44932,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44933",
+        "content": "华侨城入主，云旅将换新面貌",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44933,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44934",
+        "content": "云南旅游积极推进转型升级，资源整合预期较高",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44934,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44935",
+        "content": "云南旅游乘改革之风，迎二次发展大机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44935,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44936",
+        "content": "云南旅游业绩增速超预期，华侨城战略入股打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44936,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44937",
+        "content": "建设云南最强旅游投融资平台 开启新一轮扩张",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44937,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44938",
+        "content": "云南旅游资产整合 价值几何",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44938,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44939",
+        "content": "云南旅游引进华侨城正式落地，助推公司二次腾飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44939,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44940",
+        "content": "云南旅游符合预期，预期今年受地产推动小幅增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44940,
+        "stockId": "002059",
+        "updateTime": null
+      },
+      {
+        "bizKey": "44941",
+        "content": "云南旅游业绩符合预期，仍存在外延预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 44941,
+        "stockId": "002059",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:53",
+    "vol": 110205.0
+  }
+}

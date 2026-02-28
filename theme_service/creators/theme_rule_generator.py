@@ -315,8 +315,20 @@ class ThemeRuleBasedGeneratorFixed:
                 logger.warning("没有AI分析数据")
                 raise ValueError("AI分析数据不存在")
             
-            # 2. 匹配分类
-            matched_level1, matched_level2 = self._match_categories(ai_analysis)
+            # 2. 分类真源策略：
+            #    - 有上游分类结果：严格复用，禁止二次分类推断
+            #    - 无上游分类结果：走概念新建路径（由AI关键词驱动）
+            classification_source = "created_from_ai_keywords"
+            classification_result = event_data.get('classification_result')
+            matched_level1 = None
+            matched_level2 = None
+
+            if isinstance(classification_result, dict) and classification_result:
+                matched_level1, matched_level2 = self._resolve_categories_from_upstream(
+                    classification_result
+                )
+                if matched_level1 or matched_level2:
+                    classification_source = "upstream"
             
             # 3. 确定规则类型和题材类型
             rule_info = self._determine_rule_type(matched_level1, matched_level2)
@@ -375,7 +387,7 @@ class ThemeRuleBasedGeneratorFixed:
             # 11. 构建category_info（供ThemeProcessor决策用）
             category_info = self._build_category_info_only(
                 matched_level1, matched_level2, category_result, 
-                rule_type, theme_type, category_action
+                rule_type, theme_type, category_action, classification_source
             )
             
             # 12. 构建StrictCompleteThemeDTO
@@ -387,7 +399,8 @@ class ThemeRuleBasedGeneratorFixed:
                     'rule_applied': rule_type,
                     'generated_at': datetime.now().isoformat(),
                     'event_id': event_id,
-                    'generator_version': 'clean_v1.0'
+                    'generator_version': 'clean_v1.0',
+                    'classification_source': classification_source,
                 }
             )
             
@@ -414,6 +427,44 @@ class ThemeRuleBasedGeneratorFixed:
             except:
                 return {}
         return ai_analysis
+
+    def _resolve_categories_from_upstream(
+        self,
+        classification_result: Dict
+    ) -> Tuple[Optional[Dict], Optional[Dict]]:
+        """
+        复用上游分类结果（不做二次推断）。
+        优先按编码匹配，其次按名称匹配。
+        """
+        level1_code = classification_result.get("level1_code")
+        level2_code = classification_result.get("level2_code")
+        category_code = classification_result.get("category_code")
+        category_level = classification_result.get("category_level")
+
+        if not level2_code and category_code and category_level == 2:
+            level2_code = category_code
+        if not level1_code:
+            level1_code = classification_result.get("parent_code")
+
+        matched_level1 = self.category_by_code.get(level1_code) if level1_code else None
+        matched_level2 = self.category_by_code.get(level2_code) if level2_code else None
+
+        if not matched_level1:
+            l1_name = classification_result.get("level1_category")
+            if l1_name:
+                matched_level1 = self.category_by_name.get(l1_name)
+
+        if not matched_level2:
+            l2_name = classification_result.get("level2_category")
+            if l2_name:
+                matched_level2 = self.category_by_name.get(l2_name)
+
+        if matched_level2 and not matched_level1:
+            parent_code = matched_level2.get("parent_code")
+            if parent_code:
+                matched_level1 = self.category_by_code.get(parent_code)
+
+        return matched_level1, matched_level2
     
     def _match_categories(self, classification_result: Dict) -> Tuple[Optional[Dict], Optional[Dict]]:
         """匹配分类 - 使用KeywordMatcher进行语义匹配"""
@@ -503,7 +554,12 @@ class ThemeRuleBasedGeneratorFixed:
         """
         if matched_level1 and matched_level2:
             # 检查分类类型
-            level2_type = matched_level2.get('category_type')
+            level2_type = (
+                matched_level2.get('category_type')
+                or self._infer_category_type_by_code(matched_level2.get('category_code'))
+                or matched_level1.get('category_type')
+                or self._infer_category_type_by_code(matched_level1.get('category_code'))
+            )
             if level2_type == 'industry':
                 return "匹配到1、2级行业分类", "investment", "use_existing"
             elif level2_type == 'concept':
@@ -517,10 +573,20 @@ class ThemeRuleBasedGeneratorFixed:
                 return "匹配到1级概念分类，无2级分类", "concept", "create_level2"
         
         elif not matched_level1 and not matched_level2:
-            # 🔥🔥🔥 关键修复：根据7.2.2规则，未匹配到任何分类时，只创建1级概念分类
-            print("🔥 _determine_rule_type: 未匹配到任何分类 -> 返回 create_level1")
-            return "未匹配到任何分类", "concept", "create_level1"  # ❌ 原来是"create_both"
+            # 未命中上游分类：进入概念新建路径（主概念/子概念）
+            return "未匹配到任何分类", "concept", "create_both"
         
+        return None
+
+    def _infer_category_type_by_code(self, category_code: Optional[str]) -> Optional[str]:
+        """根据分类编码推断类型：CT* 视为 concept，其它数字编码视为 industry。"""
+        if not category_code:
+            return None
+        code = str(category_code).upper()
+        if code.startswith("CT"):
+            return "concept"
+        if code.isdigit():
+            return "industry"
         return None
     
     def _generate_category_data_only(self, matched_level1, matched_level2, category_action, 
@@ -543,16 +609,13 @@ class ThemeRuleBasedGeneratorFixed:
             print(f"   3. category_action: {category_action}")
             print(f"   4. theme_type: {theme_type}")
             
-            # 🔥 情况1：概念题材且未匹配到任何分类
+            # 🔥 情况1：概念题材且未匹配到任何分类（创建主/子概念）
             if (theme_type == 'concept' and 
                 not matched_level1 and not matched_level2 and
-                category_action == 'create_level1'):  # 🔥 只处理create_level1
-                
-                logger.info("   🎯 情况1：创建新概念分类（根据7.2.2规则，只创建1级）")
-                print("   🔥 进入情况1")
-                # 绕过FixedCategoryGenerator，直接生成
-                result = self._generate_simple_concept_category_only_level1(ai_analysis, event_data)
-                print(f"   🔥 情况1返回: {result}")
+                category_action == 'create_both'):
+
+                logger.info("   🎯 情况1：创建主/子概念分类")
+                result = self._generate_concept_category_hierarchy(ai_analysis, event_data)
                 return result
             
             # 🔥 情况2：匹配到一级行业分类，但无二级分类
@@ -611,6 +674,50 @@ class ThemeRuleBasedGeneratorFixed:
             traceback.print_exc()
             raise RuntimeError(f"分类数据生成失败: {str(e)[:200]}") from e
 
+    def _generate_concept_category_hierarchy(self, ai_analysis: Dict, event_data: Dict) -> Dict:
+        """无上游分类时，基于AI关键词创建概念主类(L1)与子类(L2)。"""
+        existing_codes = [
+            cat.get('category_code') for cat in self.existing_categories if cat.get('category_code')
+        ]
+        level1_code = ShenwanCodeGenerator.generate_concept_level1_code(existing_codes)
+
+        main_concept = self._get_concrete_concept_name(ai_analysis, event_data)
+        sub_concept = self._get_sub_concept_name(ai_analysis, event_data, main_concept)
+
+        level1_data = {
+            'category_code': level1_code,
+            'category_name': main_concept,
+            'category_level': 1,
+            'category_type': 'concept',
+            'description': None,
+            'keywords': self._build_category_keywords(ai_analysis, event_data, main_concept),
+            'source_system': 'ai_theme_discovery'
+        }
+
+        existing_child_codes = [
+            cat.get('category_code', '')
+            for cat in self.existing_categories
+            if cat.get('parent_code') == level1_code and cat.get('category_level') == 2
+        ]
+        level2_code = self._generate_concept_level2_code(level1_code, existing_child_codes)
+        level2_data = {
+            'category_code': level2_code,
+            'category_name': sub_concept,
+            'category_level': 2,
+            'category_type': 'concept',
+            'parent_code': level1_code,
+            'description': None,
+            'keywords': self._build_category_keywords(ai_analysis, event_data, main_concept, sub_concept),
+            'source_system': 'ai_theme_discovery'
+        }
+
+        return {
+            'level1': level1_data,
+            'level2': level2_data,
+            'need_create_category': True,
+            'action': 'create_both'
+        }
+
     def _generate_simple_concept_category_only_level1(self, ai_analysis: Dict, event_data: Dict) -> Dict:
         """生成简单的概念分类（只创建1级）- 修复版"""
         # 提取现有编码
@@ -629,7 +736,7 @@ class ThemeRuleBasedGeneratorFixed:
             'category_level': 1,
             'category_type': 'concept',
             'description': f'概念分类：{level1_name}',
-            'keywords': ai_analysis.get('event_keywords', [])[:5],
+            'keywords': self._build_category_keywords(ai_analysis, event_data, level1_name),
             'source_system': 'ai_theme_discovery'
         }
         
@@ -671,6 +778,45 @@ class ThemeRuleBasedGeneratorFixed:
         # 4. 生成基于时间的唯一名称
         timestamp = datetime.now().strftime('%m%d%H%M')
         return f"概念_{timestamp}"
+
+    def _get_sub_concept_name(self, ai_analysis: Dict, event_data: Dict, main_concept: str) -> str:
+        """从AI关键词中推断子概念名称。"""
+        for key in ("industry_keywords", "event_keywords"):
+            kws = ai_analysis.get(key, [])
+            if isinstance(kws, list):
+                for kw in kws:
+                    if kw and kw != main_concept:
+                        return str(kw)[:20]
+
+        title = event_data.get("title", "")
+        short = self._simplify_for_category_name(title, max_length=20)
+        if short and short != main_concept:
+            return short
+        return f"{main_concept}子概念"
+
+    def _build_category_keywords(self, ai_analysis: Dict, event_data: Dict, *extra: str) -> List[str]:
+        """组装新分类关键词，确保分类关键词非空且可复用匹配。"""
+        merged: List[str] = []
+
+        for key in ("industry_keywords", "event_keywords"):
+            kws = ai_analysis.get(key, [])
+            if isinstance(kws, list):
+                merged.extend([str(k).strip() for k in kws if str(k).strip()])
+
+        core_concept = str(ai_analysis.get("core_concept", "")).strip()
+        if core_concept:
+            merged.append(core_concept)
+
+        title = str(event_data.get("title", "")).strip()
+        if title:
+            merged.append(self._simplify_for_category_name(title, max_length=20))
+
+        for item in extra:
+            val = str(item).strip()
+            if val:
+                merged.append(val)
+
+        return list(dict.fromkeys([k for k in merged if k]))[:8]
     
     def _generate_industry_level2_category(self, level1_data: Dict, 
                                          event_data: Dict, ai_analysis: Dict) -> Dict:
@@ -705,7 +851,7 @@ class ThemeRuleBasedGeneratorFixed:
                 'category_type': 'industry',
                 'parent_code': level1_data.get('category_code'),
                 'description': f'{level1_data.get("category_name")}细分行业: {level2_name}',
-                'keywords': ai_analysis.get('industry_keywords', [])[:5],
+                'keywords': self._build_category_keywords(ai_analysis, event_data, level2_name),
                 'source_system': 'ai_theme_discovery'
             }
             
@@ -776,7 +922,7 @@ class ThemeRuleBasedGeneratorFixed:
                 'category_type': 'concept',
                 'parent_code': level1_data.get('category_code'),
                 'description': f'概念子类: {level2_name}',
-                'keywords': ai_analysis.get('event_keywords', [])[:5],
+                'keywords': self._build_category_keywords(ai_analysis, event_data, level2_name),
                 'source_system': 'ai_theme_discovery'
             }
             
@@ -1096,7 +1242,7 @@ class ThemeRuleBasedGeneratorFixed:
         return None
     
     def _build_category_info_only(self, matched_level1, matched_level2, category_result, 
-                                rule_type, theme_type, category_action) -> Dict:
+                                rule_type, theme_type, category_action, classification_source: str) -> Dict:
         """构建category_info（供ThemeProcessor决策用）"""
         # 🔥 添加对 category_result 的检查
         level1_code = None
@@ -1119,7 +1265,8 @@ class ThemeRuleBasedGeneratorFixed:
             'need_create_category': category_action != 'use_existing',
             'level1_code': level1_code,
             'level2_code': level2_code,
-            'category_type': category_type
+            'category_type': category_type,
+            'classification_source': classification_source,
         }
     
     # ============ 保留原始方法以保持向后兼容性 ============

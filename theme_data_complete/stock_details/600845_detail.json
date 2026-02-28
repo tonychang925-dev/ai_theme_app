@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 597774289.0,
+    "changeCount": 0.22,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p>1公司介绍</p><p>五大业务协同发展，提升产品化、平台化能力。公司信息化业务包括工业软件、服务业应用、信息服务三大细分，主要面向钢铁、有色、化工等制造业，基于工业互联网平台，打造“流程管控+数字智能”融合驱动的新一代工业软件产品，以及面向集团型、大中型企业提供“企业智慧治理”类软件产品和 SaaS 软件服务,“平台生态”相关产品等:自动化业务以自主可控中大型 PLC 为核心，为客户提供智能工厂数字化转型解决方案，以及通过融合工业互联网、A1、大数据等新一代信息技术与智能装备技术，提供装备数智化整体解决方案和全生命周期服务:机器人业务方面自主研发工业机器人用于 3C、新能源、金属加工等行业，同时基于行业经验和宝罗机器人云平台，实现钢铁制造全流程机器人嵌入式应用，以及基于宝联登工业互联网平台基数底座及 BOO.RaaS 等商业模式创新，提供全生命周期机器人平台化运营服务;智慧交通业务方面面向城市轨交、地面交通管理系统等，助力交通信息化;新一代信息基础设施方面为用户提供融合高品质 IDC、云计算、网络安全等服务的信息基础设施综合解决方案。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/5f78f7e2-82af-4244-80e9-77f05ac7dd98.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>2公司亮点</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>国内工业信息化龙头，国企改革释放成长潜能</strong></span>。宝信软件是国内领先工业软件信息化企业，前身为上海宝钢自动化部，经过40多年发展业务已覆盖信息化、自动化、机器人、智慧交通及新一代信息基础设施等领域，钢铁信息化领军企业。宝武集团持续的兼并重组及数智化转型，释放大量钢铁改造升级信息化需求，有力推动公司业务发展，关联交易额占营收比重约55%。同时公司加快集团外钢企和非钢市场拓展，带动业务规模持续增加。2013-2023年公司营收与净利润CAGR分别为13.7%和24.3%，净利润增速高于营收，盈利能力增强，2024Q1营收同比增速超过 30%，净利润创历史同期新高，随着公司自身产品化、平台化能力进一步提升，国企改革释放发展动能，业绩规模有望持续扩张。</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>智能制造升级，核心环节国产替代加速</strong></span>。智能制造是新型工业化重要基础能力，推动其自主可控成为提升产业竞争力关键。国内工业信息化低于工业产值全球规模占比，工业数字化水平仍有较大提升空间。国内钢铁行业供给侧改革持续推进，目前CR10约 44%，较国务院明确的2025年达到60%-70%目标仍有差距，经济结构调整带动钢材需求占比变化，中高端板材品种相应增加，企业整合、产能优化以及行业数智化转型加速有望推动生产线升级，催生信息化、自动化市场需求。同时智能制造解决“卡脖子”问题，核心环节的国产化如大型 PLC、工业机器人、传感器等将面临市场机遇。根据亿渡数据，国内 PLC 市场规模 2021年约 154 亿元，预计 2026 年增长至 193 亿元，PLC 市场整体由国外龙头西门子、三菱、罗克韦尔等企业主导，国产品牌在国内PLC市场份额较小，尤其在中大型PLC领域国产化率很低，有较大的替代空间。</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>PLC+工业机器人成为新增长点，AI驱动 AIDC 需求</strong></span>。公司工业软件覆盖 MES、ERP等，品类齐全，支持宝武集团“多基地一体化运营”管理体系运行。公司在国内制造业 MES 软件市场份额领先，前瞻布局自主可控中大型PLC，具备全栈国产化工控软硬件产品矩阵，成为国内首家拥有大型PLC的硬件、Runtime 和组态软件全部自主知识产权的公司，产品性能指标对标欧美厂商高端系列，2024年与广西宏旺、港迪技术等签约合作。工业机器人方面，推动机器人规模化接入宝罗云平台，探索 BOO、RaaS 等服务模式并落地多个钢铁基地，另外增资控股图灵机器人，切入高端重载机器人市场。依托宝武集团资源发展 IDC，立足上海宝之云基地，规划太仓、南京、北京周边等全国环都市圈节点布局。随着 AIGC 发展数据中心业务未来两年有望恢复快速增长</p>",
+    "firstLetter": "BXRJ",
+    "high": 24.49,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 23.56,
+    "marketValue": 68640321155.82,
+    "name": "宝信软件",
+    "pctChg": 0.92,
+    "price": 24.13,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": 6.44,
+    "recentChange": 5.56,
+    "remark": "坚定赋能钢铁“智”造潜心打造数字基建",
+    "status": 1,
+    "stockId": "600845",
+    "stockLightspots": [
+      {
+        "bizKey": "19956",
+        "content": "国之重器，高端智能制造龙头肩负使命，巨舰起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19956,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19957",
+        "content": "宝信软件温故知新鉴宝信，五维价值释龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19957,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19958",
+        "content": "宝信软件受益钢铁兼并重组，IDC和工业4.0领先企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19958,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19959",
+        "content": "宝信软件IDC及软件开发双轮驱动，成长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19959,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19960",
+        "content": "宝信软件从三大预期差解读新基建龙头长期确定性价值",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19960,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19961",
+        "content": "5G及云大变革时代“数联智”新基建龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19961,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19962",
+        "content": "宝信软件钢铁MES需求景气高企，背靠宝武生态优势显著",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19962,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19963",
+        "content": "宝信软件工业软件厚积薄发，IDC资源整合加速扩容",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19963,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19964",
+        "content": "钢铁信息化龙头，踏“物”腾“云”开启新征程",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19964,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19965",
+        "content": "宝信软件IDC、智能制造双轮驱动，王者归来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19965,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19966",
+        "content": "宝信软件IDC行业“核心资产”，智能制造助力腾飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19966,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19967",
+        "content": "宝信软件IDC开启龙头集中，工业互联网领航工控",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19967,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19968",
+        "content": "工业数字化龙头，开启黄金十年",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19968,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19969",
+        "content": "“IDC+工业互联网”两翼齐飞，高景气行业的强α",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19969,
+        "stockId": "600845",
+        "updateTime": null
+      },
+      {
+        "bizKey": "19970",
+        "content": "宝信软件横纵双向成长的智能化核心",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 19970,
+        "stockId": "600845",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 248845.47
+  }
+}

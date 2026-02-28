@@ -1,0 +1,234 @@
+{
+  "started_at": "2026-02-19T15:38:28.900529",
+  "plan": "reuse_real24_and_run1 + repeat5_run2 + duplicate_audit",
+  "real24": {
+    "success": true,
+    "sample_size": 24,
+    "published": 24,
+    "decision_count": 43,
+    "updates_count": 41,
+    "executor_decisions_executed": 21,
+    "note": "reused from completed run at 2026-02-19 15:34:06"
+  },
+  "repeat5_run1": {
+    "success": true,
+    "sample_size": 5,
+    "published": 5,
+    "decision_count": 5,
+    "updates_count": 5,
+    "executor_decisions_executed": 5,
+    "note": "reused from completed run at 2026-02-19 15:37:47"
+  },
+  "repeat5_run2": {
+    "success": true,
+    "success_criteria": {
+      "events_published": true,
+      "decisions_generated": true,
+      "theme_updates_generated": true,
+      "processor_working": true,
+      "executor_working": true
+    },
+    "stream_stats": {
+      "stream:events:major": 2,
+      "stream:events:normal": 3,
+      "stream:events:pending": 0,
+      "stream:events:decision": 5,
+      "stream:themes:updates": 5,
+      "stream:dead:letter": 0
+    },
+    "decision_details": [
+      {
+        "message_id": "1771486819656-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110648_9234b5",
+        "decision_id": "decision_1771486819_-1466163237310042133",
+        "trace_id": "trace_event_20260203110648_9234b5",
+        "timestamp": "2026-02-19T15:40:19.654679"
+      },
+      {
+        "message_id": "1771486889343-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110649_b00e5c",
+        "decision_id": "decision_1771486888_-4351313590128574208",
+        "trace_id": "trace_event_20260203110649_b00e5c",
+        "timestamp": "2026-02-19T15:41:29.000713"
+      },
+      {
+        "message_id": "1771487021898-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110650_04f886",
+        "decision_id": "decision_1771487021_6937507616364175363",
+        "trace_id": "trace_event_20260203110650_04f886",
+        "timestamp": "2026-02-19T15:43:41.798187"
+      },
+      {
+        "message_id": "1771486819656-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110648_9234b5",
+        "decision_id": "decision_1771486819_-1466163237310042133",
+        "trace_id": "trace_event_20260203110648_9234b5",
+        "timestamp": "2026-02-19T15:40:19.654679"
+      },
+      {
+        "message_id": "1771486889343-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110649_b00e5c",
+        "decision_id": "decision_1771486888_-4351313590128574208",
+        "trace_id": "trace_event_20260203110649_b00e5c",
+        "timestamp": "2026-02-19T15:41:29.000713"
+      },
+      {
+        "message_id": "1771487021898-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110650_04f886",
+        "decision_id": "decision_1771487021_6937507616364175363",
+        "trace_id": "trace_event_20260203110650_04f886",
+        "timestamp": "2026-02-19T15:43:41.798187"
+      },
+      {
+        "message_id": "1771486819656-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110648_9234b5",
+        "decision_id": "decision_1771486819_-1466163237310042133",
+        "trace_id": "trace_event_20260203110648_9234b5",
+        "timestamp": "2026-02-19T15:40:19.654679"
+      },
+      {
+        "message_id": "1771486889343-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110649_b00e5c",
+        "decision_id": "decision_1771486888_-4351313590128574208",
+        "trace_id": "trace_event_20260203110649_b00e5c",
+        "timestamp": "2026-02-19T15:41:29.000713"
+      },
+      {
+        "message_id": "1771487021898-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110650_04f886",
+        "decision_id": "decision_1771487021_6937507616364175363",
+        "trace_id": "trace_event_20260203110650_04f886",
+        "timestamp": "2026-02-19T15:43:41.798187"
+      },
+      {
+        "message_id": "1771486819656-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110648_9234b5",
+        "decision_id": "decision_1771486819_-1466163237310042133",
+        "trace_id": "trace_event_20260203110648_9234b5",
+        "timestamp": "2026-02-19T15:40:19.654679"
+      },
+      {
+        "message_id": "1771486889343-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110649_b00e5c",
+        "decision_id": "decision_1771486888_-4351313590128574208",
+        "trace_id": "trace_event_20260203110649_b00e5c",
+        "timestamp": "2026-02-19T15:41:29.000713"
+      },
+      {
+        "message_id": "1771487021898-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110650_04f886",
+        "decision_id": "decision_1771487021_6937507616364175363",
+        "trace_id": "trace_event_20260203110650_04f886",
+        "timestamp": "2026-02-19T15:43:41.798187"
+      },
+      {
+        "message_id": "1771486819656-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110648_9234b5",
+        "decision_id": "decision_1771486819_-1466163237310042133",
+        "trace_id": "trace_event_20260203110648_9234b5",
+        "timestamp": "2026-02-19T15:40:19.654679"
+      },
+      {
+        "message_id": "1771486889343-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110649_b00e5c",
+        "decision_id": "decision_1771486888_-4351313590128574208",
+        "trace_id": "trace_event_20260203110649_b00e5c",
+        "timestamp": "2026-02-19T15:41:29.000713"
+      },
+      {
+        "message_id": "1771487021898-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110650_04f886",
+        "decision_id": "decision_1771487021_6937507616364175363",
+        "trace_id": "trace_event_20260203110650_04f886",
+        "timestamp": "2026-02-19T15:43:41.798187"
+      }
+    ],
+    "create_new_theme_details": [],
+    "t04_validation": {
+      "publish_clustering_decision": false,
+      "pending_written": false,
+      "pending_matches_publish_decision_id": false,
+      "pending_trace_id_present": false,
+      "decision_ack_verified": true,
+      "decision_executor_pending_count": 0
+    },
+    "t03_validation": {
+      "create_new_theme_decisions": 0,
+      "classification_source_upstream_count": 0,
+      "classification_source_ai_keywords_count": 0,
+      "concept_hierarchy_created_count": 0,
+      "all_create_decisions_have_classification_source": true
+    },
+    "sample_size": 5,
+    "tag": "repeat5_run2"
+  },
+  "duplicate_audit": {
+    "duplicate_group_count": 3,
+    "top_groups": [
+      {
+        "source_id": "",
+        "category1_code": "",
+        "category2_code": "",
+        "name": "日本停止向中国出口光刻胶",
+        "count": 2,
+        "codes": [
+          "T1770188534_2fbca64f",
+          "T1770188086_c9db9ea2"
+        ]
+      },
+      {
+        "source_id": "",
+        "category1_code": "",
+        "category2_code": "",
+        "name": "数据中心芯片需求超预期增长",
+        "count": 2,
+        "codes": [
+          "T1770188534_05cdef2d",
+          "T1770188087_684c9ae9"
+        ]
+      },
+      {
+        "source_id": "",
+        "category1_code": "",
+        "category2_code": "",
+        "name": "日本首相参拜靖国神社引发地区紧张",
+        "count": 2,
+        "codes": [
+          "T1770188533_e4cd1750",
+          "T1770188086_c3e382fd"
+        ]
+      }
+    ]
+  },
+  "finished_at": "2026-02-19T15:43:57.378419"
+}

@@ -426,7 +426,7 @@ tmp/active_tasks.json格式输出如下：
 ### 1.2 计划输出
 必须生成以下文档到 tmp/plan/ 目录：
 
-#### 1. WBS 执行子集（wbs.md）
+#### 1. WBS 执行子集（wbs_<phase>.md）
 
 执行任务清单：
 
@@ -434,9 +434,14 @@ tmp/active_tasks.json格式输出如下：
 - [ ] 任务2: 具体实施步骤
 
 边界约束（MUST）：
-- `wbs.md` 仅定义“做什么/先后顺序/依赖关系/优先级”；
-- 禁止在 `wbs.md` 写接口字段、数据表细节、错误码、回滚操作；
+- `wbs_<phase>.md` 仅定义“做什么/先后顺序/依赖关系/优先级”；
+- 禁止在 `wbs_<phase>.md` 写接口字段、数据表细节、错误码、回滚操作；
 - 这些“如何实现”的内容必须在 `STEP 1.8` 的 `feature` 设计中给出。
+
+命名规则（MUST）：
+- WBS 文件必须带阶段后缀：`tmp/plan/wbs_<phase>.md`。
+- 示例：`tmp/plan/wbs_P1.phase3.md`。
+- 禁止只生成无后缀文件 `tmp/plan/wbs.md` 作为阶段真源。
 
 #### 2. 风险列表（risks.md）
 
@@ -461,12 +466,12 @@ tmp/active_tasks.json格式输出如下：
 
 请求用户确认后才能进入STEP 1.5
 
-## STEP 1.5 —— 测试用例设计（不写代码）
-基于 `STEP 1` 输出的 `tmp/plan/wbs.md`，调用 `test-case` 技能生成测试用例规范，再进入实施。
+## STEP 1.5 —— 测试用例与测试脚本预置（先于 STEP 2）
+基于 `STEP 1` 输出的 `tmp/plan/wbs_<phase>.md`，调用 `test-case` 技能生成测试用例规范，并在进入 `STEP 2` 循环前预置可执行测试脚本骨架。
 
 ### 1.5.1 输入
 
-- `tmp/plan/wbs.md`
+- `tmp/plan/wbs_<phase>.md`
 - `docs/project_control/ACCEPTANCE.md`
 - `docs/project_control/PHASE_CONTRACT_*.md`（当前阶段合同）
 
@@ -474,6 +479,7 @@ tmp/active_tasks.json格式输出如下：
 
 - `docs/project_control/TEST_CASE_SPEC_<phase>.md`
 - `tmp/plan/test_traceability_<phase>.json`（任务 -> 用例 -> 验收条款映射）
+- 可执行测试脚本（或在既有脚本中新增 `test_*` 用例），并带 `TC-ID` 可追溯标记
 
 ### 1.5.3 覆盖规则（MUST）
 
@@ -486,7 +492,8 @@ tmp/active_tasks.json格式输出如下：
 
 - 用例覆盖率满足 1.5.3；
 - `test_traceability_<phase>.json` 无未映射任务；
-- 若存在缺口，必须先补齐用例，不得进入 STEP 1.8/STEP 2。
+- 关键任务（默认 `P0/P1`）对应的可执行测试脚本已预置完成（允许先失败）；
+- 若存在缺口，必须先补齐用例/脚本，不得进入 STEP 1.8/STEP 2。
 
 ### 1.5.5 标准命令模板（可直接复用）
 
@@ -508,7 +515,7 @@ MILESTONE_ID="<milestone_id>"
 ```text
 # 2) 调用 test-case 技能（由执行器完成）
 输入：
-- tmp/plan/wbs.md
+- tmp/plan/wbs_<phase>.md
 - docs/project_control/ACCEPTANCE.md
 - docs/project_control/PHASE_CONTRACT_${PHASE_TAG}.md
 
@@ -546,7 +553,7 @@ rg -n "\"phase\"\\s*:\\s*\"${PHASE_TAG}\"|\"traceability\"" "tmp/plan/test_trace
   "phase": "P1.phase0",
   "generated_at": "2026-02-17T15:30:00",
   "source_files": {
-    "wbs": "tmp/plan/wbs.md",
+    "wbs": "tmp/plan/wbs_P1.phase0.md",
     "acceptance": "docs/project_control/ACCEPTANCE.md",
     "contract": "docs/project_control/PHASE_CONTRACT_P1.phase0.md",
     "test_case_spec": "docs/project_control/TEST_CASE_SPEC_P1.phase0.md"
@@ -595,11 +602,11 @@ rg -n "\"phase\"\\s*:\\s*\"${PHASE_TAG}\"|\"traceability\"" "tmp/plan/test_trace
 - `summary.unmapped_wbs_tasks` 或 `summary.unmapped_acceptance_items` > 0 时，`gate_ready` 必须为 `false`。
 
 ## STEP 1.8 —— Feature 设计（不写业务代码）
-基于 `STEP 1` 的 `wbs.md` 与 `STEP 1.5` 的测试映射，调用 `feature` 技能生成任务级实现设计契约，再进入实施。
+基于 `STEP 1` 的 `wbs_<phase>.md` 与 `STEP 1.5` 的测试映射，调用 `feature` 技能生成任务级实现设计契约，再进入实施。
 
 ### 1.8.1 输入
 
-- `tmp/plan/wbs.md`
+- `tmp/plan/wbs_<phase>.md`
 - `tmp/plan/test_traceability_<phase>.json`
 - `docs/project_control/PRD.md`
 - `docs/project_control/ACCEPTANCE.md`
@@ -615,7 +622,7 @@ rg -n "\"phase\"\\s*:\\s*\"${PHASE_TAG}\"|\"traceability\"" "tmp/plan/test_trace
 
 - `WBS`：定义任务集合、依赖、顺序（What）
 - `feature`：定义接口/数据/错误处理/回滚/测试执行入口（How）
-- 若 `wbs.md` 出现实现细节，或 `FEATURE_SPEC_<phase>.md` 出现越界任务，必须退回修订。
+- 若 `wbs_<phase>.md` 出现实现细节，或 `FEATURE_SPEC_<phase>.md` 出现越界任务，必须退回修订。
 
 ### 1.8.4 进入 STEP 2 的门禁（MUST）
 
@@ -652,7 +659,7 @@ rg -n "\"phase\"\\s*:\\s*\"${PHASE_TAG}\"|\"traceability\"" "tmp/plan/test_trace
 ```text
 # 1) 调用 feature 技能（由执行器完成）
 输入：
-- tmp/plan/wbs.md
+- tmp/plan/wbs_<phase>.md
 - tmp/plan/test_traceability_${PHASE_TAG}.json
 - docs/project_control/PRD.md
 - docs/project_control/ACCEPTANCE.md
@@ -735,12 +742,13 @@ phase3: PHASE_TAG=P1.phase3
 phase4: PHASE_TAG=P1.phase4
 ```
 
-## STEP 2 —— 按任务循环执行
+## STEP 2 —— 按任务循环执行（专注执行）
 对每一个从真源获取的任务，严格执行以下子步骤：
 
 进入 STEP 2 前置条件（MUST）：
 - `test_traceability_<phase>.json` 与 `feature_traceability_<phase>.json` 均已生成；
 - 两者对当前任务的 `task_id` 映射均存在；
+- 当前任务对应 `TC-ID` 的可执行测试脚本已在仓库就绪（不得等到实现中途才补）；
 - 任一映射缺失时，禁止开始任务实现。
 
 Autopilot 追加规则（MUST）：
@@ -762,16 +770,18 @@ Autopilot 追加规则（MUST）：
 
 遵循 TDD 原则：先写测试，后实现
 
-### 2.2.1 测试实现规则（MUST）
+### 2.2.1 执行期测试规则（MUST）
 
-`STEP 1.5` 仅产出测试设计文档，不产出可执行测试脚本。可执行测试脚本必须在 `STEP 2` 随任务实现同步落地。
+`STEP 2` 不承担测试准备职责；测试脚本预置必须在 `STEP 1.5` 完成。  
+`STEP 2` 只做执行闭环：运行预置测试（先失败/确认失败证据）-> 最小实现 -> 回归验证 -> 证据归档。
+若进入 `STEP 2` 时发现当前任务测试脚本未预置，必须立即回退 `STEP 1.5` 补齐，不得继续当前任务实现。
 
 执行顺序（每个任务）：
 
 1. 从 `TEST_CASE_SPEC_<phase>.md` 选择当前任务对应 `TC-ID`。
 2. 从 `feature_traceability_<phase>.json` 读取本任务 `test_commands` 与实现约束。
-3. 先新增/更新自动化测试脚本（期望先失败）。
-4. 再实现最小代码改动使测试通过。
+3. 运行预置自动化测试并保留先失败证据（若已通过则记录“预置测试已通过”证据）。
+4. 实现最小代码改动使目标测试通过。
 5. 运行 `qa-gate` 与本阶段必跑命令。
 6. 将通过结果写入 `--test-evidence`。
 

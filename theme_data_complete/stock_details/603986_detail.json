@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 7565893364.0,
+    "changeCount": 19.11,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p>一、公司介绍</p><p><span style=\"color: rgb(0, 0, 0);\">兆易创新（GigaDevice）是中国领先的半导体芯片设计企业，2005年成立于北京，2016年于上交所上市（股票代码：603986），专注于​​存储器（NOR Flash、利基型DRAM）、32位通用MCU​​以及​​传感器​​的研发与销售，其SPI NOR Flash市场份额全球前三，MCU产品是中国市场的主流选择，产品广泛应用于工业、汽车、消费电子和物联网等领域</span></p><p><br></p><p>二、行业介绍</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/24/12e0438b-c011-4391-87cb-c5f50407333e.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><span style=\"color: rgb(0, 0, 0);\">NOR Flash 属于通用型非易失性存储芯片，在数据读取效率方面具有显著优势。2023 年全球 NOR FLASH 市场规模约为 23 亿美元，预计于 2028 年增长至约 35 亿美元，2023-2028 年 CAGR 约 9%。短期看，AI 手机/PC 放量直接拉动 NOR Flash 用量；长期看，XR、AI 眼镜等新兴场景叠加汽车电子放量正打 开增量空间。</span></p><p>SLC NAND：竞争格局优化，大陆厂商崭露头角。SLC NAND 高性能、高可靠性的优点让其在需要耐久度和高速的关键任务应用中受到欢迎。根据华邦电子，2024 年 SLC NAND 市场规模为 12 亿美元。随着闪存行业向高堆叠层数、大容量的 3D NAND 方向发展，三星、海力士、铠侠、美光等海外大厂将战略重心转移至 3D TLC NAND 和 3D QLC NAND 领域，SLCNAND 市场的竞争参与者数量减少，市场空间得以逐步释放。国内市场中SLC NAND 由中国台湾的华邦和旺宏占据主导地位</p><p>3）DRAM：原厂逐步退出 DDR3&DDR4，端侧定制化助力行业发展。利基型 DRAM 涵盖 DDR3、小容量 DDR4 及低功耗产品，2024 年全球利基DRAM 市场规模达到人民币 596 亿元。三星、SK 海力士和美光等主要 DRAM制造商逐步计划在 2025 年下半年终止 DDR3 和 DDR4 内存的生产，随着这些原厂逐步退出利基型市场，国产厂商的利基型 DRAM 制程逐渐成熟，有望实现国产替代，兆易创新产品技术覆盖度持续提升。</p><p><span style=\"color: rgb(0, 0, 0);\">MCU：MCU（Microcontroller Unit）即微控制单元，是一类高度集 成化的芯片级计算机，根据位宽差异主要可划分为 8 位、16 位、32 位 三大类别。2023 年全球 MCU 市场规模已达 229 亿美元，预计 2023- 2028 年期间，行业将以 5.3%的年复合增长率持续扩容，至 2028 年市 场规模有望突破 320 亿美元。近年来新能源汽车市场已成为 MCU 行业 核心增长引擎。</span></p><p><span style=\"color: rgb(0, 0, 0);\">传感器：在传感器领域，公司触控、指纹传感器产品均处国内领先 地位。传感器处于物联网产业链上游，是物联网感知层重要设备，正 逐步向集成化、智能化、可移动、多样化方向发展。2022 年全球智 能传感器市场规模 418.6 亿美元，预计 2025 年达 572.5 亿美元。北 美、欧洲、日本占全球智能传感器市场超九成份额，是主要生产基地， 亚太地区发展速度较快。</span></p><p> </p><p>三、公司优势</p><p><span style=\"color: rgb(0, 0, 0);\">NOR Flash ：从竞争格局看，华邦全球市占率第一，达 27%；</span><span style=\"color: rgb(225, 60, 57);\">兆易创新 NOR Flash 市场份额排名全球第二，达 23%</span></p><p>SLC NAND：兆易创新（<span style=\"color: rgb(225, 60, 57);\">2024 年市占率 4%</span>）、东芯股份等大陆厂商也崭露头角，随着海外巨头转向主流 NAND 市场，国产化未来具备广阔的增长空间。兆易创新 38nm和 24nm 两种制程全面量产，并正在以 24nm 为主要工艺制程，车规市场实现突破</p><p>DRAM：<span style=\"color: rgb(0, 0, 0);\">兆易创新与燧原科技等合资成立端侧 AI 芯 片公司光羽芯辰，该公司采用创新的 3D 堆叠技术，整合燧原的 AI 专长与 兆易的 DRAM 技术，以提升存储性能</span></p><p><span style=\"color: rgb(0, 0, 0);\">MCU：</span><span style=\"color: rgb(225, 60, 57);\">公司是中国排名第一的 32 位 Arm®通用型 MCU 供应 商</span><span style=\"color: rgb(0, 0, 0);\">，已构建起庞大且完善的产品矩阵，是全球率先推出并量产基于 RISC-V 内核的 32 位通用 MCU 产品的厂商，更是国内首款 M7 内核高 性能 MCU 产品的缔造者。在车规 MCU 领域，公司发展迅速，推出搭 载超高性能 M7 内核的新一代车规级 MCU 产品</span></p><p><span style=\"color: rgb(0, 0, 0);\">传感器：公司触控芯片包含自容和互容两大品类，涵 盖手机、平板及智能家居等人机交互领域，支持 ITO 大阻抗、单层多 点、超窄边框功能，广泛应用于 OGS 触摸屏；</span><span style=\"color: rgb(225, 60, 57);\">公司指纹识别芯片包括 电容指纹、OLED 屏下镜头式指纹等，已在多款旗舰/高/中阶智能手机 商用前置/后置/侧边电容和光学方案，是指纹识别芯片市场主流方案商 之一</span></p>",
+    "firstLetter": "ZYCX",
+    "high": 331.16,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 311.0,
+    "marketValue": 216430326623.7,
+    "name": "兆易创新",
+    "pctChg": 6.19,
+    "price": 327.81,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 7,
+    "recent60Change": 61.87,
+    "recentChange": 4.11,
+    "remark": "公司在 NOR Flash 领域全球市占率第二，达 23%。国内存储芯片领域龙头，已经成为存储+MCU+传感器的平台型企业。",
+    "status": 1,
+    "stockId": "603986",
+    "stockLightspots": [
+      {
+        "bizKey": "29959",
+        "content": "MCU高歌猛进，利基存储龙头平台化布局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29959,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29960",
+        "content": "NOR稳扎稳打，MCU与DRAM未来可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29960,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29961",
+        "content": "兆易创新利基存储平台化发展，MCU加速国产替代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29961,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29962",
+        "content": "兆易创新国之重器，亮剑DRAM",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29962,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29963",
+        "content": "兆易创新中国存储“芯”希望",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29963,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29964",
+        "content": "兆易创新布局DRAM存储，盈利持续提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29964,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29965",
+        "content": "兆易创新利基存储核心厂家，受益Nor上行周期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29965,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29966",
+        "content": "兆易创新中国存储“芯”希望",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29966,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29967",
+        "content": "兆易创新存储微控全布局，业绩梦想齐双飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29967,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29968",
+        "content": "兆易创新以NOR为核心打造全存储布局，收购思立微加强物联网方案平台能力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29968,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29969",
+        "content": "多业务驱动，存储龙头进入发展新阶段",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29969,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29970",
+        "content": "兆易创新存储平台再启航，MCU龙头迎良机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29970,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29971",
+        "content": "受益MCU国产化，拓展车载/工业增量市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29971,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29972",
+        "content": "兆易创新MCU高景气，存储迈入成长新阶段",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29972,
+        "stockId": "603986",
+        "updateTime": null
+      },
+      {
+        "bizKey": "29973",
+        "content": "存储&MCU双龙头，开启成长新征程",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 29973,
+        "stockId": "603986",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 236403.29
+  }
+}

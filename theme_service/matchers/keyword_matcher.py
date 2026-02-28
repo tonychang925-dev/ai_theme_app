@@ -730,7 +730,18 @@ class KeywordMatcher(BaseMatcher):
                 'level2_category': '新兴概念'
             }
         
-        ai_keywords = ai_analysis.get('industry_keywords', [])
+        ai_keywords = []
+        for key in ("industry_keywords", "event_keywords"):
+            values = ai_analysis.get(key, [])
+            if isinstance(values, list):
+                ai_keywords.extend([str(v).strip() for v in values if str(v).strip()])
+
+        core_concept = str(ai_analysis.get("core_concept", "")).strip()
+        if core_concept:
+            ai_keywords.append(core_concept)
+
+        # 保序去重，避免重复词影响匹配分数
+        ai_keywords = list(dict.fromkeys(ai_keywords))
         print(f"   🔍 [DEBUG] AI关键词: {ai_keywords}")
         print(f"   🔍 [DEBUG] AI关键词数量: {len(ai_keywords)}")
         
@@ -738,7 +749,7 @@ class KeywordMatcher(BaseMatcher):
             print(f"   ⚠️  [DEBUG] 无AI关键词")
             return {
                 'matched': False,
-                'theme_type': '概念题材',
+                'theme_type': 'concept',
                 'level1_category': '概念题材',
                 'level2_category': '新兴概念'
             }

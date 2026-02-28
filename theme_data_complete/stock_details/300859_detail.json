@@ -1,0 +1,44 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 88199582.0,
+    "changeCount": -0.61,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "<p><span style=\"font-weight: bold;\">1、企业介绍</span></p>\n<p>公司是一家专业从事自然资源开发、提供产品服务的新疆旅游龙头企业。</p>\n<p>公司的主营业务为旅游资源的开发经营，通过对景区景点的开发，为游客提供旅游服务。</p>\n<p>公司经营的景区包括天池景区和五彩湾温泉景区。公司的旅游产品主要为在天山天池景区为游客提供旅游客运服务、游船观光、索道观光、演艺等旅游综合服务；在五彩湾温泉景区为游客提供温泉娱乐、酒店、会议等综合服务。</p>\n<p><span style=\"font-weight: bold;\">公司经营业务季节性较强，每年6-10月为公司经营的旺季，经营业绩主要来源于第三季度。</span></p>\n<p>&nbsp;</p>\n<p>公开发行后持股5%以上的股东持股75%，控制权集中。天池控股直接持有公司38.25%的股权，为公司控股股东；因天池控股为国有独资公司，阜康市国有资产监督管理局持有天池控股100%股份，为公司的实际控制人。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220919135307_4581d7447fbf0685.dat\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、新疆具有独特的地理优势及丰富的旅游产品。</span></p>\n<p>新疆国内旅游总收入从2008年198亿元增加到2019年3,594亿元，年度复合增长率为30.15%；国内旅游总人次从2008年2,195万人次增加到2019年21,121万人次，年度复合增长率为22.85%。到2020&nbsp;年全疆旅游接待总人数达到3亿人次，实现旅游总消费6,000亿元。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20220919135620_e2bc61842f68c0bc.dat\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、行业壁垒</span></p>\n<p>行业进入壁垒较高。</p>\n<p>1）行政许可壁垒。旅游资源通常具有不可再生性，因此，国家对于旅游资源开发和风景区内相关业务开展等均制定了严格的行政许可程序。</p>\n<p>2）资金壁垒。旅游景区的建设对资金要求较高，既需要对土地、建筑物、设备等无形资产和固定资产的投入，还需要长期文化和品牌的推广，且景区设施更新维护等持续投入，回报期相对较长。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、公司业务</span></p>\n<p>公司在天山天池景区上开展了多项旅游项目，满足游客的不同需求，同时开发了五彩湾温泉旅游项目，丰富了公司业务内容，增加了公司旅游淡季的收入，提升了公司的抗风险能力。演艺公司除了在天池景区内演出外，还承接疆内外的演出业务，扩大了公司品牌的知名度。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20220919140042_ecfd0899d74340ba.dat\" /></span></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+    "firstLetter": "XYLY",
+    "high": 36.98,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 35.96,
+    "marketValue": 5696250000.0,
+    "name": "西域旅游",
+    "pctChg": -1.66,
+    "price": 36.14,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -0.3,
+    "recentChange": -6.03,
+    "remark": "疫情复苏之下的新疆旅游龙头企业",
+    "status": 1,
+    "stockId": "300859",
+    "stockLightspots": [
+      {
+        "bizKey": "10370",
+        "content": "西域旅游内生外延稳健增长的新疆龙头旅游企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 10370,
+        "stockId": "300859",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:53",
+    "vol": 24344.0
+  }
+}

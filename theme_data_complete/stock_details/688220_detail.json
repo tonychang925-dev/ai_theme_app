@@ -1,0 +1,143 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 581305763.0,
+    "changeCount": -2.98,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:48",
+    "detail": "<p>一、公司介绍</p><p>翱捷科技（股票代码：688220）成立于2015年，是一家专注于​<strong>​无线通信芯片​</strong>​及​<strong>​超大规模芯片​</strong>​设计的平台型企业，于2022年在科创板上市。公司以其在​<strong>​全制式蜂窝基带技术（覆盖2G至5G）​</strong>​ 和​<strong>​多协议非蜂窝物联网芯片（如Wi-Fi、蓝牙、LoRa）​</strong>​ 方面的整合能力为核心优势，产品与技术服务广泛应用于智能手机、智能穿戴、AIoT及汽车电子等领域。近年来，公司持续推进4G/5G智能手机芯片量产，其首颗6nm 5G八核芯片预计于2025年内流片；2025年上半年公司营收达18.98亿元，尽管因高研发投入仍处于战略亏损期，但亏损额正逐步收窄。通过持续布局AI与低空经济等新兴场景，翱捷科技致力于成为平台型芯片解决方案的全球供应商。</p><p>二、行业介绍</p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">AI ASIC：云厂商 出于降本以及差异化竞争等考虑加快自研芯片对通用芯片的替代，Capex 不 断提高，算力长期增长趋势不变，阿里 25Q2 业绩会重申将在未来三年持续 投入 3800 亿元用于 AI 资本开支。目前芯片定制业务订单承接情况良好，预 计 2026 年芯片定制业务收入对标 2024 年将有数倍级增长</span></p><p>三、核心优势</p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">翱捷科技是一家提供无线通信、超大规模芯片的平台型芯片企业。主要产品 包括蜂窝基带芯片、非蜂窝物联网芯片、芯片定制服务及半导体 IP 授权业 务，</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\"><strong>产品已服务模组供应商中兴、移远，国内白电龙头美的，小米、OPPO 等手机厂商，人工智能算法企业商汤</strong></span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">物联网基带稳健成长，手机基带有望放量。物联网领域，基带芯片用于车联网、可穿戴等领域，</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\"><strong>公司在 Cat.1bis 细分赛道 24 年市场份额近 50%，位居行业第一</strong></span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">，Cat.4 出货量 24 年同比增长 100%，Cat.7 新一代产品已成功导 入中兴等品牌客户；手机领域，4G 八核智能手机芯片已于 2025H1 成功导 入客户，5G 手机芯片进入研发后期，预计 26 下半年开始客户导入，后续伴 随公司新品持续推出及客户拓展，基带芯片收入后续有望持续放量</span><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/dc80feff-c8e1-4744-b850-75f2866e8dd8.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">AI ASIC 有望成为第二曲线。公司是国内少数已在“云”、“端”两侧同时 布局的芯片设计公司，曾为客户定制云端大型推理芯片、训练芯片</span></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/8d678066-8ad8-4aae-b656-3da46fd0e39f.png\" alt=\"\" data-href=\"\" style=\"\"/></p>",
+    "firstLetter": "AJKJ",
+    "high": 92.98,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 86.68,
+    "marketValue": 38496230814.67,
+    "name": "翱捷科技",
+    "pctChg": -3.24,
+    "price": 89.05,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 1,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 4.75,
+    "recentChange": 0.41,
+    "remark": "公司蜂窝 IoT 芯片市占率约为 10.4%。公司是国内少数已在“云”、“端”两侧同时 布局的芯片设计公司",
+    "status": 1,
+    "stockId": "688220",
+    "stockLightspots": [
+      {
+        "bizKey": "32670",
+        "content": "翱捷科技国内领先的通信基带芯片供应商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32670,
+        "stockId": "688220",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32671",
+        "content": "翱捷科技无线通信芯片新锐初露锋芒，多元化业务协同布局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32671,
+        "stockId": "688220",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32672",
+        "content": "国内稀缺的无线通信平台型芯片企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32672,
+        "stockId": "688220",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32673",
+        "content": "翱捷科技深耕高稀缺基带芯片赛道，下游AIoT步入黄金十年",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32673,
+        "stockId": "688220",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32674",
+        "content": "国内稀缺的无线通信平台型芯片企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32674,
+        "stockId": "688220",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32675",
+        "content": "营收环比增长，亏损显著收窄",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32675,
+        "stockId": "688220",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32676",
+        "content": "终端需求疲软，存货压力加大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32676,
+        "stockId": "688220",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32677",
+        "content": "定制芯片业务收入低于预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32677,
+        "stockId": "688220",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32678",
+        "content": "翱捷科技1Q22收入延续高增，关注产能释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32678,
+        "stockId": "688220",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32679",
+        "content": "翱捷科技收入持续高增，亏损大幅收窄",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32679,
+        "stockId": "688220",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32680",
+        "content": "翱捷科技Q3收入增长放缓，各项新品研发进展顺利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32680,
+        "stockId": "688220",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32681",
+        "content": "业绩波动Q3承压，毛利率稳步提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32681,
+        "stockId": "688220",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 65334.97
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 41944899.0,
+    "changeCount": 0.15,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营业务收入构成</span></p>\n<div data-canvas-width=\"30.464999999999996\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221102172042_e967367299a8d810.png\" /></div>\n<div data-canvas-width=\"30.464999999999996\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20221102172050_bcbb14d9988ef735.png\" /></div>\n<div data-canvas-width=\"30.464999999999996\">资料来源：公司2021年年度报告</div>\n<p>公司主要从事模具、塑胶、五金制品、电子产品的研发、设计、制造和销售。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.主要产品</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20221102172227_92b67034fc8a884b.png\" /></p>\n<p>资料来源：公司2021年年度报告</p>\n<p>公司以模具为核心，集工业设计、模具制造、智能制造为一体化&ldquo;模具+&rdquo;服务提供商。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.核心竞争力</span></p>\n<p>公司凭借在模具行业多年积累的技术研发、设备投入、生产管理、质量管理等方面的综合优势，与<span style=\"font-weight: bold;\">国内外主要知名汽车厂商</span>、<span style=\"font-weight: bold;\">零部件供应商</span>及<span style=\"font-weight: bold;\">通信行业领先企业</span>建立了<span style=\"font-weight: bold;\">稳固的战略协作关系</span>。</p>\n<p>公司服务的汽车行业客户有<span style=\"font-weight: bold;\">宝马BMW、日产NISSAN、本田HONDA、丰田TOYOTA、大众VW、福特FORD、广汽GAC</span>等以及<span style=\"font-weight: bold;\">佛吉亚集团（Faurecia）、彼欧集团（PlasticOmnium）、延锋集团</span>等<span style=\"font-weight: bold;\">全球领先的汽车零部件总成生产企业</span>。通讯及消费电子行业核心客户有<span style=\"font-weight: bold;\">华为Huawei、中兴ZTE、思科Cisco、先进科技ASM、TCL、三星SAMSUNG等知名企业</span>。</p>\n<p>公司荣获<span style=\"font-weight: bold;\">中国模具工业协会</span>颁布<span style=\"font-weight: bold;\">&ldquo;中国大型精密注塑模具重点骨干企业&rdquo;</span>证书、<span style=\"font-weight: bold;\">&ldquo;优秀模具供应商&rdquo;</span>称号；荣获<span style=\"font-weight: bold;\">广东省人民政府</span>颁布<span style=\"font-weight: bold;\">&ldquo;广东科技进步奖-高质高效医疗防护制品制造装备关键技术及产业化应用项目&rdquo;一等奖</span>；公司为高新技术企业、深圳市宝安区诚信合规示范企业，被赋予<span style=\"font-weight: bold;\">创新百强企业</span>称号。</p>\n<p>公司及子公司拥有646项专利，其中<span style=\"font-weight: bold;\">发明专利42项</span>，实用新型专利442项、外观设计专利14项，软件著作权148项。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.主要参控股子公司</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20221102172814_fafea7a2333a7e13.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20221102172821_63c6a4e7ace0f5a4.png\" /></p>\n<p>资料来源：公司2021年年度报告</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5.风险提示</span></p>\n<p>经济周期波动风险;市场竞争加剧风险;原材料、人工成本上涨的风险;新型冠状肺炎疫情风险</p>",
+    "firstLetter": "YBSX",
+    "high": 8.75,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 8.59,
+    "marketValue": 4237482600.0,
+    "name": "银宝山新",
+    "pctChg": 1.75,
+    "price": 8.7,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 3,
+    "recent60Change": -4.08,
+    "recentChange": 3.57,
+    "remark": "以模具为核心，集工业设计、模具制造、智能制造为一体化“模具+”服务提供商",
+    "status": 1,
+    "stockId": "002786",
+    "stockLightspots": [
+      {
+        "bizKey": "53087",
+        "content": "银宝山新下游需求旺盛，公司未来前景广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 53087,
+        "stockId": "002786",
+        "updateTime": null
+      },
+      {
+        "bizKey": "53088",
+        "content": "银宝山新7月6日推荐申购",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 53088,
+        "stockId": "002786",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:27",
+    "vol": 48222.0
+  }
+}

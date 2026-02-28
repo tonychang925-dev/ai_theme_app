@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 45492551.0,
+    "changeCount": 0.08,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营业务</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220913105356_d90d1f6da10c4a38.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20220913105912_678ad3d504e7e134.png\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20220913105523_a692608a889c7027.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20220913105927_56895d05102247e5.png\" /></span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-family: 宋体;\">国际空海综合物流为基石、跨境电商物流成为重要第三极</span></p>\n<p><span style=\"font-family: 宋体;\">经营概览：公司抓住疫情后跨境物流机遇，实现快速增长收入：公司</span>2012-2016<span style=\"font-family: 宋体;\">年收入基本维持在</span><span style=\"font-family: Verdana;\">70-80</span><span style=\"font-family: 宋体;\">亿左右的水平，</span><span style=\"font-family: Verdana;\">2017</span><span style=\"font-family: 宋体;\">年受运力采购成本上升影响推动价格提升，收入增速有所提速。</span><span style=\"font-family: Verdana;\">2020</span><span style=\"font-family: 宋体;\">年疫情后，全球航空及海运运力的紧张使得具备较强综合能力的服务商迎来了发展机遇，公司把握住了这一窗口，在</span><span style=\"font-family: Verdana;\">2020-2021</span><span style=\"font-family: 宋体;\">年实现收入</span><span style=\"font-family: Verdana;\">141</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">247</span><span style=\"font-family: 宋体;\">亿元，同比分别增长</span><span style=\"font-family: Verdana;\">37%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">75%</span><span style=\"font-family: 宋体;\">。毛利：公司上市以来毛利持续增长，其中</span><span style=\"font-family: Verdana;\">2015-16</span><span style=\"font-family: 宋体;\">年连续两年实现毛利增速约</span><span style=\"font-family: Verdana;\">30%</span><span style=\"font-family: 宋体;\">，</span><span style=\"font-family: Verdana;\">2020-2021</span><span style=\"font-family: 宋体;\">年公司毛利分别为</span><span style=\"font-family: Verdana;\">16.5</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">24.8</span><span style=\"font-family: 宋体;\">亿元，同比分别增长</span><span style=\"font-family: Verdana;\">38%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">50%</span><span style=\"font-family: 宋体;\">。收入结构：</span><span style=\"font-family: Verdana;\">2021</span><span style=\"font-family: 宋体;\">年公司收入结构中，海运、空运、跨境电商物流占比分别为</span><span style=\"font-family: Verdana;\">48%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">28%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">15%</span><span style=\"font-family: 宋体;\">，合计达到</span><span style=\"font-family: Verdana;\">9</span><span style=\"font-family: 宋体;\">成；特种物流、仓储和工程物流占比分别为</span><span style=\"font-family: Verdana;\">4%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">2%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">1%</span><span style=\"font-family: 宋体;\">。毛利结构：</span><span style=\"font-family: Verdana;\">2021</span><span style=\"font-family: 宋体;\">年空运、海运、跨境电商物流占比分别为</span><span style=\"font-family: Verdana;\">35%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">30%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">20%</span><span style=\"font-family: 宋体;\">，合计达到</span><span style=\"font-family: Verdana;\">85%</span><span style=\"font-family: 宋体;\">，对应毛利率分别为</span><span style=\"font-family: Verdana;\">12.8%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">6.3%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">13.1%</span><span style=\"font-family: 宋体;\">。特种物流、仓储、工程物流毛利占比分别为</span><span style=\"font-family: Verdana;\">9%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">2%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">0.3%</span><span style=\"font-family: 宋体;\">，对应毛利率分别为</span><span style=\"font-family: Verdana;\">22.3%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">11.2%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">3%</span><span style=\"font-family: 宋体;\">。公司</span><span style=\"font-family: Verdana;\">2016</span><span style=\"font-family: 宋体;\">年起开始有序减少供应链贸易业务，</span><span style=\"font-family: Verdana;\">16</span><span style=\"font-family: 宋体;\">年减少钢铁供应链贸易，</span><span style=\"font-family: Verdana;\">20</span><span style=\"font-family: 宋体;\">年退出电子供应链贸易业务，因该业务属性下的毛利率水平较低（不到</span><span style=\"font-family: Verdana;\">2%</span><span style=\"font-family: 宋体;\">），故优化结构后，公司毛利率自</span><span style=\"font-family: Verdana;\">2016</span><span style=\"font-family: 宋体;\">年起提升至</span><span style=\"font-family: Verdana;\">10%</span><span style=\"font-family: 宋体;\">以上，</span><span style=\"font-family: Verdana;\">2019-2021</span><span style=\"font-family: 宋体;\">年分别为</span><span style=\"font-family: Verdana;\">11.7%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">11.7%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">10%</span><span style=\"font-family: 宋体;\">，其中核心产品毛利率保持相对稳定。</span></p>\n<p><span style=\"font-family: 宋体; font-weight: bold;\">1.1国际海运</span></p>\n<p><span style=\"font-family: 宋体;\">收入结构看：</span>21<span style=\"font-family: 宋体;\">年海运业务占比大幅提升海运业务：</span><span style=\"font-family: Verdana;\">2016-2020</span><span style=\"font-family: 宋体;\">年占比在</span><span style=\"font-family: Verdana;\">30-40%</span><span style=\"font-family: 宋体;\">，</span><span style=\"font-family: Verdana;\">2021</span><span style=\"font-family: 宋体;\">年提升至</span><span style=\"font-family: Verdana;\">48%</span><span style=\"font-family: 宋体;\">；空运业务：</span><span style=\"font-family: Verdana;\">2016-2020</span><span style=\"font-family: 宋体;\">年占比在</span><span style=\"font-family: Verdana;\">35-40%</span><span style=\"font-family: 宋体;\">，</span><span style=\"font-family: Verdana;\">2021</span><span style=\"font-family: 宋体;\">年为</span><span style=\"font-family: Verdana;\">28%</span><span style=\"font-family: 宋体;\">；特种物流业务：自</span><span style=\"font-family: Verdana;\">2016</span><span style=\"font-family: 宋体;\">年收购中特物流后列示，</span><span style=\"font-family: Verdana;\">2016-2021</span><span style=\"font-family: 宋体;\">营收占比在</span><span style=\"font-family: Verdana;\">4-8%</span><span style=\"font-family: 宋体;\">之间；跨境电商物流：自</span><span style=\"font-family: Verdana;\">2019</span><span style=\"font-family: 宋体;\">年列示，营收占比持续提升，从</span><span style=\"font-family: Verdana;\">19</span><span style=\"font-family: 宋体;\">年</span><span style=\"font-family: Verdana;\">2%</span><span style=\"font-family: 宋体;\">提升至</span><span style=\"font-family: Verdana;\">2021</span><span style=\"font-family: 宋体;\">年</span><span style=\"font-family: Verdana;\">15%</span><span style=\"font-family: 宋体;\">；仓储物流：占比在</span><span style=\"font-family: Verdana;\">2-4%</span><span style=\"font-family: 宋体;\">。毛利结构看：空运业务毛利占比最高、跨境物流提升最快海运和空运业务毛利占比较为稳定，</span><span style=\"font-family: Verdana;\">2012-2021</span><span style=\"font-family: 宋体;\">年分别在</span><span style=\"font-family: Verdana;\">20-32%</span><span style=\"font-family: 宋体;\">、</span><span style=\"font-family: Verdana;\">35%-45%</span><span style=\"font-family: 宋体;\">之间，空运业务毛利占比最高；特种物流毛利占比近三年平均约为</span><span style=\"font-family: Verdana;\">11%</span><span style=\"font-family: 宋体;\">；跨境电商物流毛利占比自</span><span style=\"font-family: Verdana;\">2019</span><span style=\"font-family: 宋体;\">年</span><span style=\"font-family: Verdana;\">4%</span><span style=\"font-family: 宋体;\">提升至</span><span style=\"font-family: Verdana;\">2021</span><span style=\"font-family: 宋体;\">年</span><span style=\"font-family: Verdana;\">20%。</span></p>\n<p><span style=\"font-family: Verdana;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20220913111530_df89f5b1ce7246d6.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20220913111551_c628a9163ea39a54.png\" /></span></p>\n<p><span style=\"font-family: Verdana;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid14_20220913111800_5ef041985381ab21.png\" /></span></p>\n<p><span style=\"font-family: Verdana;\">2021年国际海运业务单箱毛利大幅提升，主要由于：在运力资源非常紧张的市场背景下，公司通过加强资源整合、实现网络协同，逐步舍弃资源占用大的代订舱单环节物流产品服务，向全流程综合物流服务转型，实现海运业绩的快速提升。</span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">1.2国际空运</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid15_20220913112304_3e1a6b8d4b7e4a54.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid20_20220913112517_1cd9e64248f5738e.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid18_20220913112430_9060812d1746de9f.png\" /></p>\n<p><span style=\"font-family: Verdana;\">公司国际空运物流服务包含工业普货、跨境电商商品、国际快递物品以及万国邮政渠道物品等。营业收入：公司2012-2019年国际空运营业收入CAGR为10%，2020-2021年营收分别为57、68.5亿元，同比分别增长53%、20%。2020年在疫情后国际航线客机大范围停飞使得空运市场整体运力高度紧张，公司通过加大服务环节、延伸服务链条、提高服务质量的方式，持续获得直接大客户的业务，成功开发阿里巴巴、京东、华为、小米科技、海康威视、中兴通讯、大华技术、大疆创新、上汽集团、中国中车、中国医药、中免集团、厦门太古等一系列优质直接客户。营收结构看，2016-2020年空运营收占比均保持35%以上，2021年由于海运业务增长快速，空运营收占比有所下滑。毛利：公司2012-2019年国际空运毛利从1.9亿升至4.5亿，CAGR为13%，2020-2021年毛利分别为5.9、8.7亿元，同比分别增31%、49%。20-21年毛利率分别为10.3%、12.8%。毛利结构看，空运业务毛利占比整体稳定，近十年保持35%-45%之间，为公司毛利贡献最大的业务板块。</span></p>\n<p><span style=\"font-family: Verdana;\">1.3跨境电商物流</span></p>\n<p><span style=\"font-family: Verdana;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid21_20220913112635_629147e7f38d2a85.png\" /></span></p>\n<p><span style=\"font-family: Verdana;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid23_20220913112648_8bfc449e6933f31c.png\" /></span></p>\n<p><span style=\"font-family: Verdana;\">跨境电商物流：已经成为公司第三大业务支柱及重要增长极</span></p>\n<p><span style=\"font-family: Verdana;\">跨境电商物流业务主要包括：国际邮政航空函件（邮政小包）、专线物流、跨境电商商品空海铁干线运输以及对应的地面收集、安全检测、分拨、包装、清关、海外仓、终端派送相关配套服务，同时公司运营跨境电商进出口海关监管区，可以提供清关、商品分拨、卡车通关检验等服务。2021年收购杭州佳成后，业务能力进一步提升：公司2021年7月收购杭州佳成国际物流股份有限公司70%股份，交易对价5.05亿元。双方合作意义：佳成物流在跨境电商物流领域具备业务经验和布局，尤其是在前端揽收、关务、海外段尾程服务能力较强。收购佳成后，其一、可在跨境电商物流领域构建全产品线、全服务链、全数字化的能力。其二、结合传统贸易的普货、邮政小包以及佳成物流的FBA专线电商货，进一步构建和充实华贸物流的干线产品。</span></p>\n<p><span style=\"font-weight: bold;\">2.行业地位</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid26_20220913124432_9b69ceaf5ce3c775.png\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid28_20220913124445_053c5385d53171cd.png\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid30_20220913124457_1f8cc55c2d88428e.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">在Armstrong&amp;&nbsp;Associates,Inc.（A&amp;A）2020年榜单中，华贸物流分别位居全球货代、全球空运货代的第15名和第14名、全球第三方物流第44名。2021年，华贸国际海运、空运业务量分别为103.5TEU、35.4万吨，处于国际头部运输量范围。</span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.公司业务网络</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid32_20220913124616_95dc80a6992b2c33.png\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid36_20220913124836_2e86d5e2e3c24d7f.png\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid38_20220913124853_70a217f52f1262f0.png\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid34_20220913124641_47f3a0aeeddddaf0.png\" /></span></p>\n<p><span style=\"font-family: 宋体;\">公司官网显示，华贸物流旗下分支机构已发展至</span><span style=\"font-family: 宋体;\">90余家，遍布中国主要港口、内陆经济发达城市以及中国香港、美国、新加坡、卢森堡、德国、法国、意大利、西班牙、匈牙利、荷兰、比利时、英国、越南等国家，其中海外网络遍布160多个国家和地区。近年来，公司通过成立河南航投物流（卢森堡）有限责任公司、在欧洲8国设立全资子公司等逐步扩大自身业务全球化进程。</span></p>",
+    "firstLetter": "HMWL",
+    "high": 5.98,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 5.91,
+    "marketValue": 7697193384.72,
+    "name": "华贸物流",
+    "pctChg": 1.36,
+    "price": 5.96,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 5,
+    "recent60Change": -0.5,
+    "recentChange": -0.17,
+    "remark": "华贸物流位列综合实力第8 位、国际空运业务第5 位、国际海运业务第7 位。",
+    "status": 1,
+    "stockId": "603128",
+    "stockLightspots": [
+      {
+        "bizKey": "25129",
+        "content": "业务版图持续扩张，跨境物流综合服务商开启新篇章",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25129,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25130",
+        "content": "华贸物流分享制造业优势红利，致力打造跨境物流龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25130,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25131",
+        "content": "华贸物流景气延续，稳健成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25131,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25132",
+        "content": "华贸物流抢占跨境电商物流高成长赛道，估值由“货代”切换对标“综合物流”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25132,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25133",
+        "content": "估值底部的货代龙头，迎接疫后复苏",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25133,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25134",
+        "content": "华贸物流转型跨境综合物流，业绩增速迎来拐点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25134,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25135",
+        "content": "华贸物流轻资产内生增长，并购进军跨境物流和特种物流",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25135,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25136",
+        "content": "华贸物流深度报告",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25136,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25137",
+        "content": "跨境物流服务集成商和领跑者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25137,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25138",
+        "content": "中国空运货代龙头，后疫情时代跨境电商物流显峥嵘",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25138,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25139",
+        "content": "传统国际货代基本盘稳固，跨境电商物流多维优势打造新增长极",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25139,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25140",
+        "content": "国际货代领航员,综合物流方案提供者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25140,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25141",
+        "content": "华贸物流外延扩张业绩可期，领军跨境综合物流",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25141,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25142",
+        "content": "由国际货代向国际综合物流服务纵深发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25142,
+        "stockId": "603128",
+        "updateTime": null
+      },
+      {
+        "bizKey": "25143",
+        "content": "华贸物流外延扩张业绩可期，领军跨境综合物流",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 25143,
+        "stockId": "603128",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:52",
+    "vol": 76362.66
+  }
+}

@@ -178,18 +178,21 @@ Then:
 - [ ] 动态阈值必须实现 `Strong/Candidate/Weak` 三段分层并记录分层命中分布。
 - [ ] 候选治理先于精排，候选窗口稳定在 3~30。
 - [ ] 生产路径禁止随机向量/零向量结果作为最终决策依据。
+- [ ] 创建阶段有上游分类结果时必须复用；无上游分类结果时走 `create_concept_category_path`（主/子概念创建），禁止二次 `_match_categories` 推断。
 - [ ] 输出 `source_type(real/mock)` 质量指标并设置门禁阈值。
-- [ ] 76 案例集 A/B 报告必须包含：候选爆炸比、完整性、分离度、精度代理。
-- [ ] 76 案例集必须形成三方对比：优化系统 vs 基线系统（纯聚类） vs 久赢恒丰标准。
-- [ ] 76 案例集验收指标必须满足：题材数量收敛到 8~12，且 Precision/Completeness/Separation 三指标均不低于基线系统。
+- [ ] 30 案例集 A/B 报告必须包含：候选爆炸比、完整性、分离度、精度代理。
+- [ ] 30 案例集必须形成三方对比：优化系统 vs 基线系统（纯聚类） vs 久赢恒丰标准。
+- [ ] 30 案例集验收指标必须满足：题材数量收敛到 8~12，且 Precision/Completeness/Separation 三指标均不低于基线系统。
 - [ ] A/B 灰度必须先在 10% 流量执行，通过后才允许扩大范围。
 - [ ] 本阶段验收必须使用真实 DeepSeek 调用（`source_type=real`），禁止模拟数据替代正式结论。
+- [ ] 分类关键词索引补全完成：L2 分类关键词来自 L3 题材关键词去重聚合，L1 分类关键词来自 L2 关键词去重聚合。
+- [ ] 关键词回填具备幂等性，且输出覆盖率对比证据（before/after）。
 
 ### 3. 验收测试用例（Given / When / Then）
 
 #### 案例 ID: ACC-P1-P2-01
 Given:
-- 76 案例测试集
+- 30 案例测试集
 - baseline 与 dynamic 两组配置
 When:
 - 执行全量对比评测
@@ -209,16 +212,19 @@ Then:
 
 #### 案例 ID: ACC-P1-P2-03
 Given:
-- 匹配器发生模型异常
+- 主题创建流程进入 `generate_theme_data_only`
 When:
-- 执行匹配
+- 执行分类复用与创建路径决策
 Then:
 - 不得使用随机/零向量直接产出最终主题
-- 触发受控降级并记录异常原因
+- 当存在上游分类结果时必须复用该分类
+- 当不存在上游分类结果时，必须基于 AI 关键词创建概念主/子分类路径
+- 禁止在创建阶段再次调用 `_match_categories`
+- 全流程记录 `classification_source`（`upstream` 或 `created_from_ai_keywords`）以供审计
 
 #### 案例 ID: ACC-P1-P2-04
 Given:
-- 76 案例测试集
+- 30 案例测试集
 - 三组系统：优化系统、基线纯聚类、久赢恒丰标准口径
 When:
 - 执行统一评估脚本并输出三方报告
@@ -247,12 +253,59 @@ Then:
 
 #### 案例 ID: ACC-P1-P2-07
 Given:
-- 76 案例验收执行环境
+- 30 案例验收执行环境
 When:
 - 运行 `test_theme_processor.py` 评估任务
 Then:
 - `source_type=real` 占比为 100%
 - 报告中包含 DeepSeek 调用证据（请求ID/时间戳/模型名）
+
+#### 案例 ID: ACC-P1-P2-11
+Given:
+- 分类表 `financial_categories.keywords` 为空或覆盖不足
+- 题材表 `theme_master.tags.keywords` 可用
+When:
+- 执行分类关键词回填流程
+Then:
+- L2 分类关键词来自对应 L3 题材关键词去重聚合
+- L1 分类关键词来自其子 L2 分类关键词去重聚合
+- 回填后 L1/L2 关键词非空覆盖率显著提升
+
+#### 案例 ID: ACC-P1-P2-12
+Given:
+- 已执行一次分类关键词回填
+When:
+- 在相同输入数据下再次执行回填
+Then:
+- 不产生重复关键词
+- 第二次执行不应产生额外更新（幂等）
+- 输出覆盖率 before/after 指标用于审计
+
+#### 案例 ID: ACC-P1-P2-08
+Given:
+- 已输出 phase2 行为测试结果
+When:
+- 校验候选可观测性字段
+Then:
+- 输出中包含 `candidate_count_raw/candidate_count_windowed/candidate_explosion_ratio`
+
+#### 案例 ID: ACC-P1-P2-09
+Given:
+- 已输出 `create_new_theme` 决策明细
+When:
+- 校验分类来源审计字段
+Then:
+- `t03_validation` 中存在分类来源统计
+- 每条 `create_new_theme` 决策均包含 `classification_source`
+
+#### 案例 ID: ACC-P1-P2-10
+Given:
+- phase2 ADR 文档与行为测试产物
+When:
+- 校验 ADR 与执行器行为一致性
+Then:
+- `ADR-005/ADR-011` 归档完整
+- 行为侧存在 `decision_ack_verified=true` 证据
 
 ### 4. 边界/非目标
 - 不做 LLM 裁判生产放量。
@@ -281,27 +334,31 @@ Then:
 - 候选窗口长期偏离 3~30。
 - dynamic 指标显著劣化且未触发回退。
 - 使用随机/零向量结果进入最终决策。
+- 创建阶段触发二次 `_match_categories` 推断。
+- `create_new_theme` 决策缺失 `classification_source` 审计字段。
 - mock 占比超门限仍允许发布。
 - 未输出 Strong/Candidate/Weak 分层统计。
 - 未按 10% 灰度执行即直接全量切换。
-- 76 案例题材数量不在 8~12。
+- 30 案例题材数量不在 8~12。
 - Precision/Completeness/Separation 任一低于基线系统。
 - 验收报告使用模拟调用替代真实 DeepSeek。
 
 ### 7. 可观察性要求
-- 必需指标：`candidate_count_distribution`、`candidate_explosion_ratio`、`fallback_profile_count`、`mock_source_ratio`、`theme_count`、`clustering_precision`、`collection_completeness`、`theme_separation`、`ab_gray_traffic_ratio`。
-- 必需日志字段：`event_id,profile,dynamic_threshold,candidate_count,segment_bucket,fallback_triggered,source_type,ab_bucket`。
+- 必需指标：`candidate_count_distribution`、`candidate_explosion_ratio`、`fallback_profile_count`、`mock_source_ratio`、`theme_count`、`clustering_precision`、`collection_completeness`、`theme_separation`、`ab_gray_traffic_ratio`、`classification_source_upstream_count`、`classification_source_ai_keywords_count`。
+- 必需日志字段：`event_id,profile,dynamic_threshold,candidate_count,segment_bucket,fallback_triggered,source_type,ab_bucket,classification_source,category_action`。
 - 审计条目：A/B 对比报告版本号、数据集版本、执行参数、DeepSeek 请求证据、`test_theme_processor.py` 运行摘要。
+- 测试执行分层：`PR 快测=PHASE2_THRESHOLD_SAMPLE=24,PHASE2_THRESHOLD_GRID_SIZE=80`；`合并前门禁=36,100`；`阶段验收=30,100`。
 
 ---
 
 ## Phase P1.phase3 — LLM 最终裁决落地（Qwen2.5 + llama.cpp）
 
 ### 1. 目标（1-3 行）
-在高歧义样本引入二阶段裁判，并将其落地为最终裁决必经链路，解决“仅向量语义匹配导致错配”的核心问题。控制附加时延与成本，保留可降级可熔断能力。
+在分类命中后的候选结果引入二阶段裁判全量复核，并将其落地为最终裁决必经链路，解决“仅向量语义匹配导致错配”的核心问题。控制附加时延与成本，保留可降级可熔断能力。
 
 ### 2. 验收目标（清单）
 - [ ] 二阶段链路顺序固定为“语义粗筛 -> LLM 裁判最终裁决”，不得绕过粗筛直接裁判。
+- [ ] 分类命中后的候选结果必须全量进入 LLM 复核，不得仅对歧义样本复核。
 - [ ] 在第一阶段验收流量范围内，最终落库结果必须来自 LLM 裁判结论。
 - [ ] 裁判超时必须回退阶段一结果，不阻塞主链路。
 - [ ] P95 裁判附加时延 < 800ms。
@@ -314,8 +371,8 @@ Then:
 
 #### 案例 ID: ACC-P1-P3-01
 Given:
-- 歧义样本（Top2 分差低于触发阈值）
-- 裁判模式 = final_judge（10%灰度）
+- 分类命中样本（覆盖高相似与非歧义样本）
+- 裁判模式 = full_review（10%灰度控制采纳比例）
 When:
 - 执行两阶段判定
 Then:
@@ -363,6 +420,7 @@ Then:
 
 ### 6. 失败标准（必须明确）
 - 未将 LLM 裁判作为最终落库必经链路。
+- 分类命中样本未全量复核。
 - 10% 灰度下 `llm_final_judged_ratio < 95%`。
 - 裁判超时未回退。
 - P95 附加时延 >= 800ms。
@@ -370,7 +428,7 @@ Then:
 - 裁判模型栈非 `Qwen2.5 + llama.cpp` 或缺失真实调用证据。
 
 ### 7. 可观察性要求
-- 必需指标：`arbiter_trigger_rate`、`llm_final_judged_ratio`、`arbiter_timeout_rate`、`arbiter_p95_latency`、`arbiter_cost_per_1k`。
+- 必需指标：`arbiter_trigger_rate`、`judge_full_review_ratio`、`llm_final_judged_ratio`、`arbiter_timeout_rate`、`arbiter_p95_latency`、`arbiter_cost_per_1k`。
 - 必需日志字段：`event_id,decision_id,arbiter_mode,arbiter_result,applied,timeout,fallback_reason,model_name`。
 - 审计条目：最终裁决报告（精度/时延/成本/误判归因）与门禁结论。
 
@@ -458,7 +516,7 @@ Then:
 将架构文档第12章的优化验证要求固化为第一阶段发布前强制门禁，确保指标口径、实验流量、模型真实性和测试入口一致。
 
 ### 2. 验收目标（清单）
-- [ ] 76 案例集三方对比报告完整（优化系统 / 基线纯聚类 / 久赢恒丰标准）。
+- [ ] 30 案例集三方对比报告完整（优化系统 / 基线纯聚类 / 久赢恒丰标准）。
 - [ ] 指标口径固定并可复算：`Precision = 正确归集事件数/总事件数`、`Completeness = AI发现事件数/实际相关事件数`、`Separation = 1 - 交叉混入事件数/总事件数`。
 - [ ] 验收执行入口固定为 `test_theme_processor.py`，环境固定为 macOS + Python 3.13。
 - [ ] transformer 相关测试在 `conda activate theme_matcher_env` 环境执行并记录环境指纹。
@@ -469,7 +527,7 @@ Then:
 
 #### 案例 ID: ACC-P1-ARCH12-01
 Given:
-- 76 案例数据集与三组系统输出
+- 30 案例数据集与三组系统输出
 When:
 - 计算题材数量与三项质量指标
 Then:

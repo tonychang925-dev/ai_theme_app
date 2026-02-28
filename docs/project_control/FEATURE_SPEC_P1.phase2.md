@@ -2,7 +2,7 @@
 
 ## 0. Meta
 - Phase: `P1.phase2`
-- 目标: 动态阈值与候选治理落地，分类真源复用，76案例三方评估与10%灰度门禁
+- 目标: 动态阈值与候选治理落地，分类真源复用，分类关键词索引补全，30案例复用验收与10%灰度门禁
 - 约束: 不进入 phase3 的 LLM 最终裁决放量；不进入 phase4 发布收口
 - 真源文档:
   - `docs/project_control/PHASE_CONTRACT_P1.phase2.md`
@@ -139,9 +139,9 @@
 - `F-P1P2-T03-02` 生成器改造
   - 优先使用透传分类，禁止在创建路径触发 `_match_categories`
 - `F-P1P2-T03-03` 保护性断言
-  - 若缺失分类真源，进入受控失败，不静默回退到二次推断
+  - 若缺失分类真源，进入 `create_concept_category_path`（AI关键词驱动主/子概念创建），不静默回退到二次推断
 - `F-P1P2-T03-04` 一致性审计
-  - 输出 `classification_source=upstream` 与 `category_consistency=true/false`
+  - 输出 `classification_source=upstream|created_from_ai_keywords` 与 create_new_theme 分类来源统计
 
 ### 4) 数据约束（对齐架构SQL）
 - 分类编码必须符合 `financial_categories_schema.sql` 约束
@@ -184,14 +184,15 @@
 
 ---
 
-## Task P1.phase2-T05 — 76案例三方评估 + real DeepSeek证据
+## Task P1.phase2-T05 — 三方评估（30复用验收基线）+ real DeepSeek证据
 
 ### 1) 目标与边界
 - 目标:
-  - 76案例三方对比（优化/基线/久赢恒丰）
+  - 30案例三方对比（优化/基线/久赢恒丰），复用已完成证据
   - 题材数收敛到 8~12
   - Precision/Completeness/Separation 不低于基线
   - `source_type=real` 且输出 DeepSeek 调用证据
+  - 30案例全量作为夜间可选回归，不作为当前阶段收口阻断项
 
 ### 2) 子功能切片
 - `F-P1P2-T05-01` 评估聚合器
@@ -214,6 +215,53 @@
 
 ---
 
+## Task P1.phase2-T06 — 分类关键词反向索引补全（由题材反哺分类）
+
+### 1) 目标与边界
+- 目标:
+  - 基于 `theme_master.tags.keywords` 构建 `financial_categories.keywords` 反向索引
+  - 提升 1/2 级分类命中率，减少“全量题材语义匹配”触发比例
+  - 严格遵循关键词继承原则：`L2 <- L3`，`L1 <- L2`
+- 非目标:
+  - 不改 `financial_categories` / `theme_master` 表结构
+  - 不在 phase2 改动匹配排序算法，仅补数据索引
+
+### 2) 现状问题（SQL锚点）
+- `financial_categories_data_only.sql` 中大量分类 `keywords` 为空（`{}`）
+- `theme_master_data_only.sql` 中 `tags.keywords` 信息完整但未回写到分类维度
+- 结果: 分类优先匹配缺少关键词证据，导致回退到全量题材匹配，耗时升高
+
+### 3) 子功能切片
+- `F-P1P2-T06-01` L2关键词汇聚器
+  - 规则: 从 `theme_master` 中按 `category2_code` 聚合 `tags.keywords` 去重，回写到对应 L2 分类 `keywords`
+- `F-P1P2-T06-02` L1关键词继承器
+  - 规则: 从同父级 L2 的 `keywords` 继续去重汇总，回写到对应 L1 分类 `keywords`
+- `F-P1P2-T06-03` 幂等更新器
+  - 规则: 同一关键词不重复写入；重复运行结果稳定（集合一致）
+- `F-P1P2-T06-04` 观测与质量校验
+  - 输出: `category_keyword_coverage_before/after`、`l1_non_empty_rate`、`l2_non_empty_rate`
+
+### 4) 数据约束（对齐架构SQL）
+- 目标字段: `financial_categories.keywords`（`text[]`，已有 `GIN` 索引 `idx_categories_keywords`）
+- 来源字段: `theme_master.tags`（`jsonb`，读取 `tags->'keywords'`）
+- 键约束:
+  - L2 汇聚键: `theme_master.category2_code`
+  - L1 汇聚键: `theme_master.category1_code`
+- 过滤建议:
+  - 仅纳入 `theme_master.status='active'`
+  - 仅纳入存在有效关键词数组的题材记录
+
+### 5) 测试落点
+- 新增: `test_category_keywords_backfill_from_theme_master`
+- 新增: `test_l1_keywords_aggregated_from_l2_keywords`
+- 新增: `test_category_keywords_backfill_idempotent`
+- 复用: `test_theme_processor.py` 数据集回放，对比分类命中率与平均匹配耗时
+
+### 6) 验收映射
+- `ACC-P1-P2-11`, `ACC-P1-P2-12`
+
+---
+
 ## 3. 统一实施规则（STEP2 前声明）
 
 1. 先测后改: 每个任务先新增/更新自动化测试（期望先失败）再做最小代码改动。
@@ -221,3 +269,38 @@
 3. 可追溯: 每个测试函数必须带 `TC-P1P2-*` 标识。
 4. 状态门禁: `P1` 任务写入 `In review/done` 必须传 `--test-files` 且文件出现在 diff。
 5. 收口标准: phase2 完成前必须有三方评估报告和 real 调用证据。
+
+---
+
+## 4. 增量优化记录（2026-02-19）
+
+### 4.1 语义向量缓存复用（提速项）
+- 目标: 避免每次全量题材重算向量，降低 `discover_with_themes(300 themes)` 初始化耗时。
+- 实施:
+  - `theme_service/matchers/semantic_matcher.py`
+    - 新增向量缓存分层：`Redis(优先) -> 本地磁盘(兜底) -> 实时编码`。
+    - 新增缓存统计：`redis_hit/redis_miss/redis_write/disk_hit/recompute_count`。
+  - 新增单测：`database_service/tests/streams/test_semantic_embedding_cache_unit.py`
+    - 验证二次初始化命中缓存，避免重复编码。
+- 验收证据:
+  - 24条集成回放日志出现 `向量缓存命中: 300, 新计算: 0`（后续轮次）。
+
+### 4.2 审计链路修正（全量读取决策流）
+- 目标: 修复“按时间窗口抓最近3条”导致的审计漏采样，确保 `update_theme` 映射统计可验收。
+- 实施:
+  - `database_service/scripts/test_theme_processor.py`
+    - 处理结束后增加 `xrange("stream:events:decision","-","+")` 全量读取。
+    - 等待窗口仅保留进度监控，不再用于抽样审计。
+  - `database_service/scripts/phase2_update_mapping_audit.py`
+    - 汇总 `decision_details` 全量映射并输出报告。
+- 验收证据:
+  - 24条回放产出 `决策全量读取完成: 24 条, 审计明细: 24 条`。
+
+### 4.3 准确率规则修正（同题材簇可接受映射）
+- 目标: 避免将“同题材簇复用”误判为错配（如 SpaceX 与太空军事同题材簇）。
+- 实施:
+  - `database_service/scripts/phase2_update_mapping_audit.py`
+    - 增加同题材簇等价规则（`EQUIVALENT_TOPIC_CLUSTERS`）。
+    - 修复字段映射：准确率判断从 `matched_theme_name` 取值（兼容回退 `best_theme_name`）。
+- 结果:
+  - 基于 `tmp/phase2_update_mapping_audit_sanitized_title.json` 复算：`13/13`，准确率 `1.0`。

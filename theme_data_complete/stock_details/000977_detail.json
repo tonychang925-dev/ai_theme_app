@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 2756438692.55,
+    "changeCount": -1.66,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><strong>一、公司介绍</strong></p><p>浪潮信息是全球领先的 IT 基础架构产品、方案及服务提供商。公司业务覆盖计算存储、网络三大关键领域，提供云计算、大数据、人工智能、边缘计算等在内的全方位数字化解决方案。凭借浪潮高端服务器、海量存储、云操作系统、信息安全技术为客户打造领先的云计算基础架构平台。公司前身为浪潮电子信息产业集团，在1983 年研制了中国第一台微型计算机，打破了国外在PC 领域的垄断，也为国内 II产业发展拉开序幕;随后浪潮前身在 1993 年研制出中国第一台小型机服务器，实现国产服务器从0到1的突破，随后公司开启了长达20多年的国内品牌服务器市场深耕，且伴随服务器技术迭代，公司持续提升产品性能，丰富产品矩阵，拓展了存储、边缘计算、人工智能等专用服务器市场。截至目前，公司业务遍及全球主要国家和地区，拥有8个研发中心、14 个生产基地、50 个业务分支机构，<span style=\"color: rgb(207, 19, 34);\"><strong>服务器出货量全球第二，存储装机容量全球第三，人工智能服务器销售额全球第一。</strong></span></p><p><strong>二、主要产品</strong></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>浪潮信息具备通用、边缘、人工智能等多个服务器产品线。</strong></span>多年服务器领域深耕公司能够紧密跟踪下游云计算厂商及政企客户的需求，目前已形成完善的服务器产品线:其中，通用服务器产品支持Intel、AMD和ARM架构 CPU，对最新Intel第五代可扩展处理器、AMDMilan 系列都进行了适配:人工智能服务器方面，公司根据主要客户需求进行了产品设计，支持多种主流 AI 加速卡和领先深度学习框架灵活适配业务场景;边缘服务器方面，产品支持灵活部署，具有低功耗、环境适应能力更强的特点。公司在 AI 计算、开放计算、绿色计算领域处于全球领先地位,引领着 AI产业化、产业 AI化、智算新基建等领域的发展和演进。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/25/685eb10b-81d0-4877-99d5-1ce8084302fa.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><strong>三、AI服务器行业</strong></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>AI服务器为机器学习设计，擅长处理密集型数据运算。</strong></span>AI服务器与普通服务器的主要区别在于:1)硬件架构:AI 服务器通常配备高效的中央处理器(CPU)和多块图形处理器(GPU)、张量处理器(TPU)或专用的 AI加速器，普通服务器主要以 CPU 为算力提供者，适用于处理逻辑计算和浮点型计算等任务。AI服务器通常配备 1-2 个 CPU+4/8/16 个GPU，通用服务器则可以支持更多 CPU 插槽。2)计算能力:AI服务器通常采用并行计算模式，普通服务器的CPU 在进行逻辑判断时需要大量的分支跳转处理，结构复杂，算力提升主要依靠增加核心数。此外，AI服务器对内存、网络能力具有更高的要求。</p><p><span style=\"color: rgb(207, 19, 34);\"><strong>AI服务器 CPU+GPU 成本占比大幅提升,价值量约为通用服务器的7倍。</strong></span>根据 IDC数据，高性能、推理性、机器学习型服务器中，CPU+GPU 成本占比在 50-83%，显著高于基础型服务器的 32%。在单机价值上，根据 Intel 官网，第四代可扩展处理器Gold 6434H 处理器的建议售价为 3070 美元，Platinum8468V 处理器的建议售价为7121美元:根据芯东西报道，英伟达中国特供版H20 芯片的参考价格为 12000 美元。参考浪潮信息服务器产品技术白皮书的配置，估算搭载了2块 Intel&reg; Xeon&reg;Gold 6434H 的通用服务器的成本约为 2 万美元，搭载 2 块 Intel&reg; Xeon&reg; Platinum8468V+8 块英伟达H系列 GPU 的 AI服务器成本约为 15 万美元,AI服务器价值量可以达到通用服务器的7倍左右。</p><p>云厂商开启大模型军备竞赛，AI 服务器需求量大幅抬升。根据TrendForce，预估2023 年 AI 服务器(包含搭载 GPU、FPGA、ASIC 等)出货量近 120 万台，年增38.4%，占整体服务器出货量近 9%，预计 2024年全球服务器整机出货量约 1.365.4万台，年增约 2.05%，AI服务器出货占比约12.1%，即164万台。根据IDC《中国半年度加速计算市场(2023 全年)跟踪》报告，2023 全年中国加速服务器市场规模达到 94 亿美元，同比 2022 年增长 104%。从行业的角度看，互联网依然是最大的采购行业，占整体加速服务器市场近60%的份额，此外金融、电信、交通和医疗健康等多数行业均有超过一倍以上的增长。从互联网角度看，为了训练自己的 AI大模型，在下一代技术变革中取得先发优势，各大厂对于 AI 投入的重视程度显著提升，并开启一轮 AI算力储备。</p><p><strong>四、公司AI服务器竞争力</strong></p><p>浪潮信息在 AI服务器份额略高于服务器整体市场份额。根据 JDC 数据，国内市场方面，<span style=\"color: rgb(207, 19, 34);\"><strong>2023 年从厂商销售额角度看，浪潮、新华三、宁畅位居前三，占据了近 70%的市场份额;从服务器出货台数角度看浪潮、坤前、新华三位居前三名，占有超过50%以上的市场份额。根据 Gartner,截至 202303,浪潮信息服务器蝉联全球第二，中国第一，全球出货量市占率 11.9%，销售额市占率 9.3%。</strong></span>AI服务器在国内和全球的市场份额均高于服务器整体市场的市占率。由于 AI 服务器具有附加值更高、需求增速显著快于行业平均的特点，未来 AI 服务器规模增长将持续带动浪潮在整体服务器市场的市占率、公司收入规模以及盈利能力提升。</p><p>浪潮在AI服务器的基础上，推进了“元脑”生态建设，打造全场景 AI 解决方案。2019年4月 16 日,浪潮在 2019 浪潮合作伙伴大会上发布了全新人工智能一体化系统“浪潮元脑”，包含人工智能基础设施、深度学习框架与工具以及人工智能 PaaS平台和 AutoMLSuite 等产品，具有人工智能算法优化、系统优化服务的能力，将为人工智能提供基础创新支撑，加速产业人工智能化进程。浪潮将元脑生态伙伴分为两类左手伙伴(技术型伙伴)和右手伙伴(战略型伙伴、能力型伙伴)。在企业开发平台方面,浪潮信息发布的企业大模型开发平台“元脑企智\"EPAI(Enterprise PlatformOfAI)，面向企业大模型应用开发，提供了全链路、高可用的系列能力工具，能够帮助企业有效降低大模型应用门槛，帮助伙伴提升模型开发效能，打造智能生产力。在生态平台方面，浪潮 AIStore 是国内首个面向B端，为人工智能技术型左手伙伴和整合方案型 ISV、SI等右手伙伴构建社区化线上交流、服务和孵化平台，实现行业最新商机、AI热点咨询、前沿技术趋势与伙伴全场景 AI方案的聚合分享。Aistore已孵化出 200 多个 AI 行业案例。</p><p><br></p>",
+    "firstLetter": "LCXX",
+    "high": 66.36,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 63.27,
+    "marketValue": 95935579871.15,
+    "name": "浪潮信息",
+    "pctChg": -2.54,
+    "price": 63.67,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 4.91,
+    "recentChange": 1.22,
+    "remark": "服务器出货量全球第二，存储装机容量全球第三，人工智能服务器销售额全球第一",
+    "status": 1,
+    "stockId": "000977",
+    "stockLightspots": [
+      {
+        "bizKey": "36185",
+        "content": "立于新一轮产业成长之巅",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36185,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36186",
+        "content": "服务器龙头再起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36186,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36187",
+        "content": "浪潮信息服务器龙头遥遥领先，AI与海外助力加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36187,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36188",
+        "content": "浪潮信息卡位智慧计算，服务器龙头迈入成长新时期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36188,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36189",
+        "content": "浪潮信息人均毛利超百万，多维拓展迎CPU换代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36189,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36190",
+        "content": "需求端将迎拐点，长期成长性延续",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36190,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36191",
+        "content": "浪潮信息5G降临 浪潮之巅",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36191,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36192",
+        "content": "行业“浪潮”再起，见证服务器龙头腾飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36192,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36193",
+        "content": "浪潮信息增速领先的服务器龙头，云计算资本开支主要受益者之一",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36193,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36194",
+        "content": "预期需求拐点叠加，5G助力剑指全球",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36194,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36195",
+        "content": "新基建龙头三问三答",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36195,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36196",
+        "content": "浪潮信息云、AI现中期景气信号，服务器领军创新模式迎毛利率拐点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36196,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36197",
+        "content": "浪潮信息执国企改革之剑 登IT浪潮之巅",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36197,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36198",
+        "content": "浪潮信息乘风而起，进击全球第一",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36198,
+        "stockId": "000977",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36199",
+        "content": "“规模效应”凸显，市场份额快速提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36199,
+        "stockId": "000977",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 430095.86
+  }
+}

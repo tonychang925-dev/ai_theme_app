@@ -1,0 +1,44 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 537880180.0,
+    "changeCount": -1.95,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:28:22",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营业务收入构成</span></p>\n<div data-canvas-width=\"773.1600000000001\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220922163458_c63b0a93ac4dc626.png\" /></div>\n<div data-canvas-width=\"773.1600000000001\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20220922163529_d4bb470f7e464624.png\" /></div>\n<div data-canvas-width=\"773.1600000000001\">资料来源：公司2021年年度报告</div>\n<p>公司主要产品是高技术和高附加值的烟标及相关镭射包装材料镭射膜和镭射纸等。烟标俗称&ldquo;烟盒&rdquo;，是烟草制品的商标以及具有标识性包装物总称，用于卷烟包装，是卷烟品牌建设、卷烟文化传播以及卷烟防伪的重要载体，是卷烟品质的重要体现。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.核心竞争力</span></p>\n<p>公司作为市场主力品牌的长期服务商，行业地位稳固，生产高品质的烟标及相关配套产品，有利于公司市场份额的进一步提升。</p>\n<p>公司拥有行业领先的超高精度、高稳定性和高度自动化的生产设备，并运用长期积累的生产经验和工艺对生产设备进行创新性的二次改进，公司的生产保障能力能够充分满足高品质、高稳定性、大规模、多品种烟标印刷生产需求</p>\n<p>公司凭借强大的新产品开发能力，积极参与各大中烟公司在产品改版升级和新烟标产品的设计开发，充分体现了公司的新产品研发优势，公司对客户在产品改版和新产品需求产生之时，能做出快速响应</p>\n<p>公司已经分别实现烟标上游包装材料镭射转移纸、电化铝的量产。目前，公司的全产业链布局处于持续发展阶段，与仅从事烟标印刷的竞争对手相比，在全产业链研发和成本控制方面具备明显竞争优势。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.超级电容技术储备</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20220922163922_bdc17848782073c3.png\" /></p>\n<p>资料来源：公司2021年年度报告</p>",
+    "firstLetter": "JSKJ",
+    "high": 19.48,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 17.53,
+    "marketValue": 7889400000.0,
+    "name": "金时科技",
+    "pctChg": -10.01,
+    "price": 17.53,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 4,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 23,
+    "recent60Change": 19.5,
+    "recentChange": 28.9,
+    "remark": "烟标等包装印刷品的研发、生产和销售",
+    "status": 1,
+    "stockId": "002951",
+    "stockLightspots": [
+      {
+        "bizKey": "49716",
+        "content": "金时科技新股网下申购询价建议报告",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 49716,
+        "stockId": "002951",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 295388.0
+  }
+}

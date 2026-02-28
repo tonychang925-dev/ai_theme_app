@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 2309358401.33,
+    "changeCount": 2.86,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p>一、公司介绍</p><p>北方华创科技集团股份有限公司（股票代码：002371）是一家源自2001年、由北京电控整合七星电子与北方微电子战略重组而成的国有控股上市公司，作为国内高端半导体工艺装备的龙头企业，其主营业务包括刻蚀机、物理气相沉积（PVD）、化学气相沉积（CVD）等集成电路核心设备，以及真空装备、新能源锂电装备和精密电子元器件，产品广泛应用于半导体、新能源、新材料等领域。公司近年来业绩增长显著，2024年营收达298.38亿元，2025年上半年营收161.42亿元且同比增长29.51%，并持续加大研发投入（2025年上半年研发费用20.77亿元，同比增长54.28%），累计申请专利超8300件，技术覆盖国内主流晶圆厂批量采购，部分设备市占率国内领先。<img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/23/3a05d99b-a4f7-4799-9280-f1d7234edac8.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><br></p><p><span style=\"color: rgb(0, 0, 0);\">二、公司核心优势</span></p><p><span style=\"color: rgb(0, 0, 0);\">1、薄膜沉积设备：北方华创自 2008 年起开始 PVD 装备研发， 目前</span><span style=\"color: rgb(225, 60, 57);\">已实现对逻辑芯片和存储芯片金属化制程的全覆盖</span><span style=\"color: rgb(0, 0, 0);\">。截至 2023 年底，公司已推出 40 余款 PVD 设备，累计出货超 3500 腔。同时公司布局拓展 CVD 领域，形成 DCVD 和 MCVD 两大系列产品，截至 2023 年底，已实现 30 余款 CVD 产品量产应用，为超过 50 家客户提供技术支持，累计出货超 1000腔</span></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/23/5ee58e20-978f-4a96-abf2-800602ef82eb.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><span style=\"color: rgb(225, 60, 57);\">当前国内主要薄膜沉积设备厂商包括北方华创、中微公司、 拓荆科技、微导纳米等，且不同公司工艺路线有差异</span><span style=\"color: rgb(0, 0, 0);\">。1）北方华创：PVD 实现了对逻辑 芯片和存储芯片金属化制程的全覆盖，CVD 布局拓展了 DCVD 和 MCVD 两大系列产品， HDPCVD、高介电常数原子层沉积实现稳定量产</span></p><p><span style=\"color: rgb(0, 0, 0);\">2、刻蚀设备：</span><span style=\"color: rgb(225, 60, 57);\">公司 ICP 刻蚀设备已累计出货超 3200 腔</span><span style=\"color: rgb(0, 0, 0);\">。CCP 领域，公司目前已实现逻辑、存储、 功率半导体等领域多个关键制程的覆盖，截至 2023 年底，CCP 刻蚀设备已累计出货超 100 腔。此外公司 12 英寸深硅刻蚀机 PSE V300，已成为 TSV 量产生产线主力机台， 截至 24 年 3 月，设备装机量已超百腔。</span></p><p><span style=\"color: rgb(0, 0, 0);\">全球范围来看，LAM、应用材料、东 京电子等企业占据了刻蚀机市场的主导地位，2022 年 LAM RESEARCH 占比达 46.7%。</span><span style=\"color: rgb(225, 60, 57);\"> 在中国，北方华创、中微公司等企业在刻蚀机领域具有较强的竞争力</span><span style=\"color: rgb(0, 0, 0);\">，成为国内刻蚀机 行业的领军企业，2023 年北方华创刻蚀设备营收近 60 亿元，中微公司刻蚀设备营收超 47</span></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/23/01603c70-236e-47d1-93c9-b07a6d6c7345.png\" alt=\"\" data-href=\"\" style=\"\"/><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/23/a7cea529-9af6-4cea-b0fb-281610875e32.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><span style=\"color: rgb(0, 0, 0);\">3、高端精密电子元器件：</span><span style=\"color: rgb(225, 60, 57);\">公司主要产 品为电源管理芯片、石英晶体器件、石英微机电传感器、高精密电阻器、钽电容器、微波组件等。</span></p><p><span style=\"color: rgb(0, 0, 0);\">2024 年，公司成功完成北京七星华创流量计有限公司、北京七星华创集成 电路装备有限公司及北京北方华创微电子装备有限公司射频业务单元三大板块业务重 组，形成以“半导体核心零部件”为核心业务的全新实体—北京华丞电子。同时，华丞 电子零部件平台研发及产业化总部基地建设项目正式开工，建成后将为公司气体质量 流量控制器、射频电源等产品的研发和生产提供扩展空间。2024 年华丞电子在半导体 领域营收持续增长，50 多款半导体产品成功通过验证</span></p><p><span style=\"color: rgb(0, 0, 0);\">4、氢能源： eArctic 系列阴极电弧复合磁控溅射镀膜设备实现稳定量产，新能源领域持续发力。</span><span style=\"color: rgb(225, 60, 57);\">公司定位氢能燃料电池领域大规模生产应用</span><span style=\"color: rgb(0, 0, 0);\">，</span><span style=\"color: rgb(225, 60, 57);\">通过开发非贵金属材料涂层工艺，研发出高效稳定运行的氢能燃料电池双极板 eArctic AS-MAG 系列单体式镀膜设备及 eVerizon VL 系列连续式镀膜设备。</span><span style=\"color: rgb(0, 0, 0);\">两型设备凭借自研的 GISETCH 气体离子刻蚀及辅助沉积技术、 4G-CAE 第四代阴极电弧技术及泰坦涂层工艺技术，在涂层性能显著提高的同时，有效降 低生产成本。GISETCH 气体离子刻蚀及辅助沉积技术通过活化工件表面的氧化层，使镀 制膜层更加致密和光滑，膜基结合力提升 30%，极大减少了因膜层缺陷导致的氢能燃料 电池耐久性下降的问题，4G-CAE 第四代阴极电弧技术在涂层综合性能显著提升的情况 下，促使靶材成本下降超 30%，泰坦涂层工艺技术将双极板使用寿命延长 30%。</span></p>",
+    "firstLetter": "BFHC",
+    "high": 494.0,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 476.03,
+    "marketValue": 352355631289.92,
+    "name": "北方华创",
+    "pctChg": 0.59,
+    "price": 488.98,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": 16.62,
+    "recentChange": 2.89,
+    "remark": "公司半导体设备覆盖品类A股第一，电感性等离子体刻蚀 ICP设备排名第一；物理气相沉积薄膜生长设备PVD排名第一",
+    "status": 1,
+    "stockId": "002371",
+    "stockLightspots": [
+      {
+        "bizKey": "39596",
+        "content": "自主创新为基，平台化为翼",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39596,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39597",
+        "content": "北方华创国产晶圆厂持续突破，公司迎订单爆发良机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39597,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39598",
+        "content": "北方华创国产晶圆厂持续突破，公司迎订单爆发良机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39598,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39599",
+        "content": "北方华创半导体设备龙头，国产化替代先锋",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39599,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39600",
+        "content": "北方华创双结构化持建机遇，由大做强倍显张力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39600,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39601",
+        "content": "北方华创国内半导体设备最全玩家，晶圆厂扩产推动业绩持续增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39601,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39602",
+        "content": "北方华创厚积薄发，成就国产半导体设备龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39602,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39603",
+        "content": "北方华创国产设备龙头，深度受益下游加速扩产和国产化稳步提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39603,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39604",
+        "content": "北方华创在半导体设备行业的产业格局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39604,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39605",
+        "content": "受益国内晶圆厂投建潮，国产替代持续推进",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39605,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39606",
+        "content": "北方华创中国半导体设备龙头厂商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39606,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39607",
+        "content": "国内半导体设备龙头，引领设备国产化大浪潮",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39607,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39608",
+        "content": "北方华创国产半导体设备领跑者，进口替代空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39608,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39609",
+        "content": "北方华创国内领先半导体设备企业，受益国产替代浪潮",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39609,
+        "stockId": "002371",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39610",
+        "content": "北方华创半导体行业复苏在即，设备龙头北方华创再启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39610,
+        "stockId": "002371",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 47673.12
+  }
+}

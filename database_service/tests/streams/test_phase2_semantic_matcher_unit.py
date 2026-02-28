@@ -23,6 +23,8 @@ REPORT_PATH = Path("tmp/phase2_t01_threshold_scan.json")
 LOCAL_MODEL_PATH = Path("models/text2vec-base-chinese")
 FULL_DATASET_SIZE = 76
 SAMPLE_COUNT = int(os.getenv("PHASE2_THRESHOLD_SAMPLE", "10"))
+SCAN_GRID_SIZE = int(os.getenv("PHASE2_THRESHOLD_GRID_SIZE", "120"))
+_CALIBRATION_CACHE: dict[tuple[int, int], dict[str, Any]] = {}
 
 
 def _load_cases() -> list[dict[str, Any]]:
@@ -33,7 +35,33 @@ def _load_cases() -> list[dict[str, Any]]:
     assert 1 <= SAMPLE_COUNT <= FULL_DATASET_SIZE, (
         f"PHASE2_THRESHOLD_SAMPLE must be in [1,{FULL_DATASET_SIZE}], got {SAMPLE_COUNT}"
     )
-    return data[:SAMPLE_COUNT]
+    assert 10 <= SCAN_GRID_SIZE <= 400, (
+        f"PHASE2_THRESHOLD_GRID_SIZE must be in [10,400], got {SCAN_GRID_SIZE}"
+    )
+    if SAMPLE_COUNT >= len(data):
+        return data[:SAMPLE_COUNT]
+    return _select_diverse_cases(data, SAMPLE_COUNT)
+
+
+def _select_diverse_cases(data: list[dict[str, Any]], sample_count: int) -> list[dict[str, Any]]:
+    """Deterministic round-robin sampling by label for better small-sample coverage."""
+    buckets: dict[str, list[dict[str, Any]]] = {}
+    for item in data:
+        label = _extract_label(item) or "__EMPTY__"
+        buckets.setdefault(label, []).append(item)
+
+    selected: list[dict[str, Any]] = []
+    labels = sorted(buckets.keys())
+    idx = 0
+    while len(selected) < sample_count and labels:
+        label = labels[idx % len(labels)]
+        group = buckets[label]
+        if group:
+            selected.append(group.pop(0))
+        idx += 1
+        if idx % len(labels) == 0:
+            labels = [k for k in labels if buckets[k]]
+    return selected[:sample_count]
 
 
 def _extract_label(item: dict[str, Any]) -> str:
@@ -113,7 +141,7 @@ def _metrics_at_threshold(pair_sim: np.ndarray, pair_y: np.ndarray, threshold: f
 def _scan_best_threshold(pair_sim: np.ndarray, pair_y: np.ndarray) -> tuple[dict[str, float], dict[str, float]]:
     t_min = float(np.min(pair_sim))
     t_max = float(np.max(pair_sim))
-    grid = np.linspace(t_min, t_max, 200)
+    grid = np.linspace(t_min, t_max, SCAN_GRID_SIZE)
 
     best: dict[str, float] | None = None
     for t in grid:
@@ -147,6 +175,10 @@ def _segment_quality(pair_sim: np.ndarray, pair_y: np.ndarray, center: float, ma
 
 
 def _run_real_76_calibration() -> dict[str, Any]:
+    cache_key = (SAMPLE_COUNT, SCAN_GRID_SIZE)
+    if cache_key in _CALIBRATION_CACHE:
+        return _CALIBRATION_CACHE[cache_key]
+
     cases = _load_cases()
     labels = [_extract_label(c) for c in cases]
     texts = [_extract_text(c) for c in cases]
@@ -177,9 +209,11 @@ def _run_real_76_calibration() -> dict[str, Any]:
         "best_threshold_by_f1": best,
         "fixed_threshold_0_95": fixed,
         "segmentation": seg,
+        "scan_grid_size": SCAN_GRID_SIZE,
     }
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
     REPORT_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    _CALIBRATION_CACHE[cache_key] = report
     return report
 
 

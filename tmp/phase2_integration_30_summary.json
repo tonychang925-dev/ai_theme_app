@@ -1,0 +1,34 @@
+{
+  "ok": true,
+  "selected_or_input_events": 30,
+  "stream_stats": {
+    "stream:events:major": 15,
+    "stream:events:normal": 15,
+    "stream:events:pending": 2,
+    "stream:events:decision": 30,
+    "stream:themes:updates": 28,
+    "stream:dead:letter": 0
+  },
+  "success_criteria": {
+    "events_published": true,
+    "decisions_generated": true,
+    "theme_updates_generated": true,
+    "processor_working": true,
+    "executor_working": true
+  },
+  "t03_validation": {
+    "create_new_theme_decisions": 0,
+    "classification_source_upstream_count": 0,
+    "classification_source_ai_keywords_count": 0,
+    "concept_hierarchy_created_count": 0,
+    "all_create_decisions_have_classification_source": true
+  },
+  "t04_validation": {
+    "publish_clustering_decision": false,
+    "pending_written": true,
+    "pending_matches_publish_decision_id": false,
+    "pending_trace_id_present": true,
+    "decision_ack_verified": true,
+    "decision_executor_pending_count": 0
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 230341262.0,
+    "changeCount": -0.03,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:01",
+    "detail": "<p><span style=\"font-weight: bold;\">1.公司发展历程</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220906110348_74d0ce14bfda6a00.png\" /></span></p>\n<p>利扬芯片是国内知名的独立第三方集成电路测试技服务商，主营业务包括集成电路测试方案开发、&nbsp;12&nbsp;英寸及&nbsp;8&nbsp;英寸晶圆测试服务（简称&ldquo;中测&rdquo;、&ldquo;&nbsp;Chip&nbsp;Probing&nbsp;&rdquo;或&nbsp;CP&nbsp;&rdquo;）、芯片成品测试服务（简称&ldquo;成测&rdquo;、&ldquo;&nbsp;FinalTest&nbsp;&rdquo;或&nbsp;FT&nbsp;&rdquo;）以及与集成电路测试相关的配套服务。</p>\n<p>公司成立于&nbsp;2010&nbsp;年，经过十余年的发展，公司的测试技术和市场销售渠道更为成熟，客户资源越来越丰富，公司布局了更多的高端测试平台和测试产能，取得了多项专利权和软件著作权。公司率先推出了指纹、存储、物联网、射频等量产测试解决方案，公司深入挖掘客户需求，不断开发新的测试方案，公司的客户范围已覆盖&nbsp;5G&nbsp;通讯、传感器、物联网、北斗导航、区块链、工业控制、汽车电子等多个领域。并且公司在测试设备上也取得突破，公司自主研发设计的条状封装产品自动探针台、3D&nbsp;高频分类机械手等集成电路专用测试设备已运用到公司的生产实践中,在指纹识别芯片、先进工艺离散性芯片等实际产品中得到量产化应用。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.主要产品</span></p>\n<p>图 ：公司晶圆测试服务</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220906112024_7798e5c846f57f02.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20220906112125_d4f1e7080190d188.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20220906112150_0b7402a6dc45f368.png\" /></p>\n<p>公司主要产品为芯片成品测试及晶圆测试两大类。</p>\n<p>晶圆测试环节：晶圆检测是指在晶圆完成后进行封装前，通过探针台和测试机的配合使用，对晶圆上的裸芯片进行功能和电参数测试。探针台将晶圆逐片自动传送至测试位置，芯片的&nbsp;Pad&nbsp;点通过探针、专用连接线与测试机的功能模块进行连接，测试机对芯片施加输入信号并采集输出信号，判断芯片功能和性能在不同工作条件下是否达到设计规范要求。测试结果通过通信接口传送给探针台，探针台据此对芯片进行打点标记，形成晶圆的&nbsp;Map&nbsp;图。该环节的目的是确保在芯片封装前，尽可能地把无效芯片筛选出来以节约封装费用。</p>\n<p>成品测试环节：成品测试是指芯片完成封装后，通过分选机和测试机的配合使用，对封装完成后的芯片进行功能和电参数测试。分选机将被测芯片逐个自动传送至测试工位，被测芯片的引脚通过测试工位上的基座、专用连接线与测试机的功能模块进行连接，测试机对芯片施加输入信号并采集输出信号，判断芯片功能和性能在不同工作条件下是否达到设计规范要求。测试结果通过通信接口传送给分选机，分选机据此对被测芯片进行标记、分选、收料或编带。该环节的目的是保证出厂的每颗集成电路的功能和性能指标能够达到设计规范要求。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.公司营收构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221026102832_c964536c2d1bac36.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221026102846_d8358c6a80a3221b.png\" /></span></p>\n<p>资料来源：公司2021年年度报告</p>\n<p><span style=\"font-weight: bold;\">公司以集成电路晶圆测试和芯片成品测试为主要收入来源，</span>公司实现营业收入39,119.81万元，比上年同期增长54.73%。营业成本18,470.71&nbsp;万元，比上年同期增长35.55%。2021年度伴随国内集成电路产业蓬勃发展，行业景气度持续提升，公司积极把握市场机遇，持续对中高端测试产能布局扩充，加大市场开拓力度，引进优质客户，客户结构发生变化。另外，随着募投项目逐步落地，测试产能逐渐释放并产生效益，公司2021年度在5G通讯、工业控制、生物识别、MCU、AIoT等领域的芯片测试保持快速增长。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.独立测试必要性：产能调配灵活、高专业性、测试平台更多样丰富</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20221026103323_0e8c5486349ff94b.png\" /></span></p>\n<p>公司相较于晶圆厂（布局部分晶圆测试）以及封测厂（布局部分终端测试），独立第三方的优势有：<span style=\"font-weight: bold;\"><br /></span>1）高专业性，国内极少具备大量测试相关专利的企业；<br />2）客观中立，公司作为独立第三方测试企业，拥有公正的身份立场，具有较强的服务意识和较高的服务效率，能够全面满足客户对测试公正立场的要求；<br />3）产能调配灵活，尽力满足客户测试产能需求；公司坚持以市场为导向，根据市场发展走势及公司战略布局方向，积极有序储备和调配中高端集成电路测试产能，尽可能满足存量客户及潜在客户的测试产能需求；<br />4）提供&ldquo;美食街&rdquo;模式&nbsp;的测试平台选择，&nbsp;满足各类工艺各类应用的芯片测试需求。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5.公司特色优势：绑定最优设备+叠加软硬件开发带来极大客户粘性</span></p>\n<p><span style=\"font-weight: bold;\">公司作为大陆首家公司绑定爱德万测试最新设备：</span></p>\n<p>2021年6月21日，中国大陆第一台爱德万测试EXA&nbsp;SCALE&nbsp;V93000在利扬装机完。新一代V93000&nbsp;EXA&nbsp;Scale是一款针对达到百亿亿（EXA=10的18次方=1百亿亿）级别性能的先进SoC芯片的测试系统。测试头采用了Xtreme&nbsp;Link&trade;技术，配备了&nbsp;EXA&nbsp;Scale通用数字卡和电源卡，用来实现新的IC测试方式，帮助用户降低测试成本的同时加快了其上市（Timeto&nbsp;Market）时间。</p>\n<p><span style=\"font-weight: bold;\">公司除测试机、探针台、分选机设备外，还为客户提供最优测试平台的选择以及相关软硬件开发，增强核心竞争力，同时深度绑定客户为战略合作伙伴。</span></p>\n<p>公司在选用最优测试平台基础上，研究芯片功能模块组成及特点，通过硬件开发和软件开发，分别设计不同模块的测试方法，搭建实验验证软硬件环境，完成测试技术的验证、确认和定型。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6.1后道测试：高毛利的利基赛道</span></p>\n<p>图&nbsp;19：晶圆测试和芯片成品测试是公司在集成电路产业链中所处的环节：</p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20221026104040_b42a686f0c047d07.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid16_20221026105225_d0883d782e9d1698.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">在半导体设计、制造、封装中的各个环节都要进行反复多次的检验、测试以确保产品质量，从而研制开发出符合系统要求的器件。</span>半导体后道测试设备主要是用在晶圆加工之后、封装测试环节内，目的是检查芯片的性能是否符合要求，属于电性能的检测。后道测试主要是利用电学对芯片进行测试，包含电参数、电路是否正常运作、成品是否可达到设计要求；<span style=\"font-weight: bold;\">后道测试核心环节CP与FT。</span></p>\n<p><span style=\"font-weight: bold;\">晶圆检测环节：</span>晶圆检测是指在晶圆完成后进行封装前，通过探针台和测试机的配合使用，对晶圆上的裸芯片进行功能和电参数测试。探针台将晶圆逐片自动传送至测试位置，芯片的Pad点通过探针、专用连接线与测试机的功能模块进行连接，测试机对芯片施加输入信号并采集输出信号，判断芯片功能和性能在不同工作条件下是否达到设计规范要求。测试结果通过通信接口传送给探针台，探针台据此对芯片进行打点标记，形成晶圆的Map图。该环节的目的是确保在芯片封装前，尽可能地把无效芯片筛选出来以节约封装费用。</p>\n<p><span style=\"font-weight: bold;\">成品测试环节：</span>成品测试是指芯片完成封装后，通过分选机和测试机的配合使用，对封装完成后的芯片进行功能和电参数测试。分选机将被测芯片逐个自动传送至测试工位，被测芯片的引脚通过测试工位上的基座、专用连接线与测试机的功能模块进行连接，测试机对芯片施加输入信号并采集输出信号，判断芯片功能和性能在不同工作条件下是否达到设计规范要求。测试结果通过通信接口传送给分选机，分选机据此对被测芯片进行标记、分选、收料或编带。该环节的目的是保证出厂的每颗集成电路的功能和性能指标能够达到设计规范要求。</p>\n<p>公司毛利率水平较电子行业整体毛利率水平略高，同时芯片测试行业毛利率整体高于电子行业平均，属于高毛利赛道。</p>\n<p><span style=\"font-weight: bold;\">6.2测试设备市场规模</span></p>\n<p>图&nbsp;20：中国测试设备构成及市场规模（%，亿美元）</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20221026104528_3828fea3f3c47d49.png\" /></p>\n<p>图&nbsp;21：中国测试设备构成及市场分类（%）</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20221026104623_40f6ff0b66bfd9ea.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20221026104832_3cad9f54ee81f6ff.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid15_20221026104929_9e200f9b8a1c31f4.png\" /></p>\n<p>测试公司中主要的产线为测试设备，2020年后道测试设备市场规模约62亿美元。根据Gartner&nbsp;数据，2016年至2018年全球半导体后道测试设备市场规模为37&nbsp;亿、47亿、56亿美元，年复合增长率为23%，2019年根据SEMI发布全球半导体设备中后道设备占9%计算，主要受到全球半导体设备景气的影响下降至54亿美元。后道量测设备中测试机在CP、FT两个环节皆有应用，因此占比最大达到63.1%，其他设备分选机占17.4%、探针台占15.2%。</p>\n<p>在后道测试设备中，测试机（ATE）是应用最多的设备。测试机根据下游半导体产品（根据Garnter统计全球ATE设备分别的市占率）可以分为SoC（64%）、存储（18%）、射频（16%）、功率（2%）。由于5G、AI、物联网的业兴，推动SoC测试机的需求，因此在市场占比中是最大的分类，其次因为大容量、高度存储的需求持续强劲，成为测试机第二大应用场景。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">7.下游丰富应用场景加速上量，赋予公多类细分赛道</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid19_20221026105411_8b49c1e2189750c8.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid20_20221026105441_d62aae8f465ff3c4.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid22_20221026105507_b9d3694dc9435be6.png\" /></span></p>\n<p>利扬测试的芯片产品应用范围广阔，随着5G、新能源汽车、可穿戴设备等下游应用高速起量，公司未来芯片测试需求预计稳定高增长。<br />（1）5G通讯（RF、PA、FPGA、LNA、Switch等）；<br />（2）传感器（MEMS、心率监测、生物识别、消防安全等）；<br />（3）智能可穿戴（物联网IoT、人脸识别、智慧家居等）；<br />（4）汽车电子（车联网、胎压监控、自动驾驶、ETC等）；<br />（5）计算类芯片（人工智能AI、服务器、区块链、云计算等）；<br />（6）北斗应用（雷达、导航、定位等）；<br />（7）工业类和消费类产品（医疗电子、电表应用、智能手机等）；<br />（8）信息安全（金融IC卡、加密算法、U-KEY等）。</p>\n<p>公司覆盖下游板块未来赛道极为广阔，需求迭起，公司已经在5G通讯、传感器、物联网、指纹识别、金融IC卡、北斗导航、汽车电子等新兴产品应用领域取得测试优势，未来公司将加大力度继续布局AI、&nbsp;VR、区块链、大数据、云计算等领域的集成电路测试。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">8.风险提示：</span>销售区域集中、劳动力成本上升、疫情加重、研发技术人员流失等。</p>",
+    "firstLetter": "LYXP",
+    "high": 35.88,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 34.7,
+    "marketValue": 7171726463.25,
+    "name": "利扬芯片",
+    "pctChg": -0.09,
+    "price": 35.22,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 26.74,
+    "recentChange": -8.23,
+    "remark": "我国独立测试龙头：专注于测试板块十余年，深耕中高端测试领域。",
+    "status": 1,
+    "stockId": "688135",
+    "stockLightspots": [
+      {
+        "bizKey": "32071",
+        "content": "利扬芯片国内芯片测试龙头，IC金矿边的卖水人",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32071,
+        "stockId": "688135",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32072",
+        "content": "利扬芯片专注独立测试十余年，深耕高毛利中高端测试赛道",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32072,
+        "stockId": "688135",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32073",
+        "content": "国产专业测试领军者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32073,
+        "stockId": "688135",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32074",
+        "content": "业绩短期承压，产能扩张赋能长期发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32074,
+        "stockId": "688135",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32075",
+        "content": "国产专业测试龙头，业绩大幅增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32075,
+        "stockId": "688135",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32076",
+        "content": "利扬芯片22年上半年营收增速亮眼，3nm测试高筑壁垒利好长期发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32076,
+        "stockId": "688135",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32077",
+        "content": "利扬芯片2022Q1营收同比大幅增长，股权激励赋能长期发展信心",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32077,
+        "stockId": "688135",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32078",
+        "content": "利扬芯片下游应用多点开花，2021年度业绩预增亮眼",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32078,
+        "stockId": "688135",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32079",
+        "content": "利扬芯片5G+MCU+AIOT带动芯片测试高增长，三季度业绩预增亮眼",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32079,
+        "stockId": "688135",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 65390.39
+  }
+}

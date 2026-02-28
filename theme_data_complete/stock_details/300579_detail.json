@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 146902963.0,
+    "changeCount": -1.14,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1、主营业务构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20221031181429_ffd3cadfea235d9a.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">公司主营业务包括电子认证服务及产品、安全集成和安全咨询及运维服务三个板块。</span>其中电子认证板块主要是公司作为独立、公正的CA 机构向政府机构、企事业单位、个人等各类用户发放数字证书，并保障各类用户数字证书的安全使用，除此以外还包括为用户在电子交易过程中生成并验证电子签名的服务。安全集成业务指将公司自有产品、第三方的信息系统和信息安全产品有效集成到用户业务系统中，从而提高客户业务信息系统的安全保障能力。安全咨询及运维服务则包括风险评估、合规咨询、安全巡检等。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、公司实控人为北京市国有资产经营有限公司</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20221031182538_701d22f212747c30.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">数字认证是北京市国有资产经营有限责任公司控股的国有企业，北京市国有资产经营有限公司直接持有数字认证26.2%的股份，通过首都信息发展股份有限公司和北京科桥创业投资中心分别间接持有数字认证26.2%/6.3%的股份</span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、《密码法》草案初审有助于进一步规范行业竞争，商业密码应用场景有望不断丰富</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20221031182752_80b30cc9b60d0bc0.png\" /></span></p>\n<p>2019年6月25日，十三届全国人大常委会第十一次会议初次审议密码法草案，提出在商用密码方面，充分体现职能转变和&ldquo;放管服&rdquo;改革要求，明确公民、法人和其他组织均可依法使用。密码法草案中多次提到密码服务，并提出对提供密码服务的企业进行许可和认定，有望对促进、规范密码服务市场的发展有重要作用。<span style=\"font-weight: bold;\">数字认证在商用密码应用领域已具备较大优势，有望在行业需求集中释放期进一步加快自身成长。</span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、公司积极推进信创产品和云服务战略，云服务业务发展步入快车道</span></p>\n<p><span style=\"font-weight: bold;\">2019年，公司已为安全可靠领域电子认证类产品主要提供商，已有8款产品通过适配检测并进入到目录，相关产品已得到应用。在云技术领域，公司不断加大资源投入，着力进行云服务的基础技术研发，持续对云密码、云信任、云安全、云签名、可信电子合同等方面的云服务体系进行优化完善。公司签名服务业务逐渐产生规模效益，报告期内签名服务业务量将近翻一番，目前公司的公有云签名服务平台同时支撑数百个项目的运营服务，云服务业务发展步入快车道。</span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、风险提示</span></p>\n<p>电子合同业务竞争格局恶化，推进不及预期；市场竞争加剧导致数字证书单价下降的风险；部分行业的认证服务业务被垄断的风险等</p>",
+    "firstLetter": "SZRZ",
+    "high": 33.34,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 31.98,
+    "marketValue": 9001800000.0,
+    "name": "数字认证",
+    "pctChg": -3.42,
+    "price": 32.2,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -1.59,
+    "recentChange": 4.89,
+    "remark": "国内领先的CA机构，数字证书业务有望进行行业深化拓展，中国身份和数字信任软件市场份额中排名第二。",
+    "status": 1,
+    "stockId": "300579",
+    "stockLightspots": [
+      {
+        "bizKey": "7740",
+        "content": "数字认证，共建可信数字世界",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7740,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7741",
+        "content": "数字认证CA业务稳步增长，电子签名成为新增长点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7741,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7742",
+        "content": "数字认证电子认证第一股，登陆资本市场开启CA新纪元",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7742,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7743",
+        "content": "数字认证电子认证龙头，电子签名高弹性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7743,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7744",
+        "content": "数字认证电子认证稀缺标的，“一体化”优势奠定龙头地位",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7744,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7745",
+        "content": "电子认证龙头，“法人一证通”开启业绩红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7745,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7746",
+        "content": "数字认证电子认证领先企业，“法人一证通”、电子签名驱动成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7746,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7747",
+        "content": "数字认证CA机构龙头，电子签名景气旺",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7747,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7748",
+        "content": "数字认证年报点评 主营稳步提升，业务延伸可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7748,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7749",
+        "content": "数字认证三季度需求显著加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7749,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7750",
+        "content": "数字认证订单反映需求拐点已至",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7750,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7751",
+        "content": "数字认证解决方案跨行业、跨地区加速拓展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7751,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7752",
+        "content": "电子认证稀缺标的，成长空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7752,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7753",
+        "content": "数字认证电子认证稀缺标的，成长空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7753,
+        "stockId": "300579",
+        "updateTime": null
+      },
+      {
+        "bizKey": "7754",
+        "content": "数字认证CA龙头，商密+网安双重利好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 7754,
+        "stockId": "300579",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:53",
+    "vol": 45383.25
+  }
+}

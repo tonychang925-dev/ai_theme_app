@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 15727297678.71,
+    "changeCount": 28.55,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p>1公司介绍</p><p>公司是一家专注于研发和生产高速光通信模块的龙头企业。公司集高端光通信收发模块的研发、设计、封装、测试和销售于一体，为云数据中心客户提供 100G、200G、400G和 800G 等高速光模块，为电信设备商客户提供 5G 前传、中传和回传光模块以及应用于骨干网和核心网传输光模块等高端整体解决方案。</p><p>公司产品矩阵丰富，数通光模块相关业务主要由全资子公司苏州旭创开展。公司主要业务包括:1)高端光通信收发模块的研发、设计、封装、测试和销售，主要由全资子公司苏州旭创开展，产品服务于云计算数据中心、数据通信、5G 无线网络、电信传输和固网接入等领域的国内外客户;2)接入网光模块和光组件生产及销售，由控股子公司成都储翰开展，拥有从芯片从封装到光电器件到光电模块的垂直整合产品线。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/25/a5099a5e-0844-45df-bb3d-25db074726ea.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/25/cdafadc9-3c5c-4ee9-ac5b-46e7ee1db79d.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/25/7e18bae0-1c64-4c7c-9658-6eb03941e2b9.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>2公司亮点</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>公司为全球市占率领先的数通光模块龙头</strong></span>。公司主营业务集高端光通信收发模块的研发、设计、封装、测试和销售于一体，为云数据中心客户提供 100G、200G、400G和 800G等高速光模块，为电信设备商客户提供5G前传、中传和回传光模块以及应用于骨干网和核心网传输光模块等高端整体解决方案。根据 Lightcounting，公司市占率在过去 10 年内迅速攀升，2023 年超越 Coherent成为全球第一的光模块供应商。公司率先发布 800G/1.6T 等高速数通产品，卡位 AI 算力设施建设浪潮。1)英伟达明确一年一迭代平台，配套光模块速率不断提升,有望拉动高速率光模块需求。AI算力的核心是 GPU，而英伟达提升到一年一迭代的节奏，将拉动NvLink、IB、以太网等网络连接解决方案的提速，进而对光互联的关键器件光模块释放长期持续的更新迭代需求。2)北美云厂商资本开支进入上行周期，有望带动高速光模块出货量提升。AI应用前景广阔，AI基础设施建设需求与日俱增,北美头部云厂商对2024全年资本开支指引乐观,未来更高性能的 GPU将要求配套光模块实现更快速率，预计 800G 及 1.6T 等超高速率光模块将成为市场主流。3)公司前瞻性布局 800G、1.6T，于行业内率先发布 800G 产品。公司在 2020 年首次推出 800G 光模块产品，在 2023 年推出 1.6T 光模块产品,延续产品领先优势，有望抢占行业先机。</p><p><span style=\"color: rgb(225, 60, 57);\"><strong>公司率先发布 800G/1.6T 等高速数通产品，卡位 AI 算力设施建设浪潮</strong></span>。1)英伟达明确一年一迭代平台，配套光模块速率不断提升,有望拉动高速率光模块需求。AI算力的核心是 GPU，而英伟达提升到一年一迭代的节奏，将拉动NvLink、IB、以太网等网络连接解决方案的提速，进而对光互联的关键器件光模块释放长期持续的更新迭代需求。2)北美云厂商资本开支进入上行周期，有望带动高速光模块出货量提升。AI应用前景广阔，AI基础设施建设需求与日俱增,北美头部云厂商对2024全年资本开支指引乐观,未来更高性能的 GPU将要求配套光模块实现更快速率，预计 800G 及 1.6T 等超高速率光模块将成为市场主流。3)公司前瞻性布局 800G、1.6T，于行业内率先发布 800G 产品。公司在 2020 年首次推出 800G 光模块产品，在 2023 年推出 1.6T 光模块产品，延续产品领先优势，有望抢占行业先机。</p><p>硅光、LPO、CPO等新兴技术储备充足，巩固公司长期发展优势。1)新兴技术路线丰富，有望迎来渗透率拐点。技术路线1:硅光，相比于传统的分立式方案，硅光方案集成度高，结构简单。硅光模块有望在 800G 时代迎来渗透率拐点;技术路线 2:LPO&LRO，LPO 通过线性直驱技术替换传统的DSP，将功能集成到交换芯片中，从而实现了更为出色的功耗和成本控制，同时显著降低了延迟。LRO 在发射端使用重定时器，线性接收器直接驱动到主机 ASIC,虽在降低功耗或成本上逊色于 LPO，但仍然起到了降低模块功耗和成本的作用。目前 LPO 的技术生态系统已准备就绪，有望在1.6T 实现 LRO 出货。技术路线 3:CPO，CPO 为芯片封装级别的光学组件集成新技术，有望通过缩短光信号输入和运算单元之间的电学互连长度来减少信号损耗问题。预计将于2024-2025 年实现商用，2026-2027年实现规模上量;2)公司在硅光、LPO、CPO 等新兴技术储备充足，巩固公司长期发展优势。公司较早自研布局硅光技术，掌握硅光芯片设计核心能力，并与Tower Semiconductor 硅光平台合作流片，可为公司提供先进工艺及稳定流片;LPO产品具有较高市场需求预期，公司已发布相关产品;此外，公司高度重视 CPO 技术，正在积极进行相关核心技术预研。</p><p><br></p>",
+    "firstLetter": "ZJXC",
+    "high": 572.02,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 522.0,
+    "marketValue": 590003835354.0,
+    "name": "中际旭创",
+    "pctChg": 5.38,
+    "price": 559.55,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 14.52,
+    "recentChange": -13.78,
+    "remark": "1.6T 上量将进一步提升盈利，光模块全球最佳交付者地位不变",
+    "status": 1,
+    "stockId": "300308",
+    "stockLightspots": [
+      {
+        "bizKey": "4275",
+        "content": "收购苏州旭创，光模块产业崛起新龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4275,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4276",
+        "content": "IDC/5G双驱动，高端光模块龙头持续领先",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4276,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4277",
+        "content": "中际旭创等待曙光，首次覆盖评为中性以体现关税不确定因素",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4277,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4278",
+        "content": "中际旭创数通电信齐头并进，光模块龙头地位稳固",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4278,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4279",
+        "content": "全球领先的光模块供应商，业绩增速与估值有望同步修复",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4279,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4280",
+        "content": "中际旭创数通龙头强者恒强，电信市场助力成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4280,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4281",
+        "content": "中际旭创市场“迎春绽放”，龙头“强者恒强”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4281,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4282",
+        "content": "中际旭创旭创并表并更名为中际旭创，数通光模块新龙头浮现",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4282,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4283",
+        "content": "中际旭创高速率光模块龙头厂商，400G景气提振业绩高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4283,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4284",
+        "content": "中际旭创战略战术皆优，一起成长一起飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4284,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4285",
+        "content": "中际旭创龙头地位稳固，400G+5G带动业绩回暖",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4285,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4286",
+        "content": "绕组装备龙头受益下游升级",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4286,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4287",
+        "content": "光模块行业领军者，多产业布局打开成长新空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4287,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4288",
+        "content": "中际旭创全球光模块龙头优势凸显，迎行业升级趋势振翅高飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4288,
+        "stockId": "300308",
+        "updateTime": null
+      },
+      {
+        "bizKey": "4289",
+        "content": "去库存影响消除确认业绩底部，400G和5G驱动未来高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 4289,
+        "stockId": "300308",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 285121.68
+  }
+}

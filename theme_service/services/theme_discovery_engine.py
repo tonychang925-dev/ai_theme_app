@@ -1529,12 +1529,19 @@ class ThemeDiscoveryEngine:
             # 转换为业务格式
             match_results = []
             for match in filtered_matches:
+                extra = getattr(match, "match_details", {}) or {}
                 match_results.append({
                     'theme_id': match.theme_id,
                     'theme_name': match.theme_name,
                     'confidence': match.confidence,
                     'matched_keywords': match.matched_keywords,
+                    'matched_keywords_count': len(match.matched_keywords or []),
                     'match_type': match.match_type,
+                    'semantic_score': extra.get('semantic_score'),
+                    'final_score': match.confidence,
+                    'segment_bucket': extra.get('segment_bucket'),
+                    'dynamic_threshold': extra.get('dynamic_threshold'),
+                    'threshold_profile': extra.get('threshold_profile'),
                     'algorithm_used': 'transformer_matching_fallback'
                 })
             

@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 168660118.22,
+    "changeCount": -0.26,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营业务构成</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220926190701_0e67009e2190783e.png\" /></p>\n<p>资料来源：wind、东莞证券研究所</p>\n<p>从营收上看，虽然公司上市后实施战略投资扩张业务线，但出境游业务在过去十年间占营收比重仍呈现逐渐提高趋势，近年来基本维持在90%。2019年，公司出境游批发业务收入为89.92亿元，占营收的70.93%；出境游零售业务收入为23.58亿元，占营收的18.60%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.主要经营模式</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20220926190848_665077c5242002db.png\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.与阿里巴巴达成战略合作</span></p>\n<p>公司实际控制人冯滨先生于2020年9月29日与阿里巴巴（中国）网络技术有限公司签署《股份转让协议》</p>\n<p>众信旅游通过阿里旅行在科技、互联网、大数据技术、品牌、系统管理方面的优势，结合公司在产品、运营、采购、分销等方面的经验，相互提供合作资源支持以开展全面合作。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.与中国中免集团达成战略合作</span></p>\n<p>2020年2月，众信旅游与中国免税品（集团）有限责任公司签订了《中免集团与众信旅游战略合作框架协议》</p>\n<p>双方通过资源共享、优势互补与业务创新，共同打造&ldquo;旅游+购物&rdquo;的业务合作，包括设立旅游零售门店，推动双方业务实。双方共同在境内外尤其是&ldquo;一带一路&rdquo;沿线国家和地区开展&ldquo;旅游+购物&rdquo;业务。</p>\n<p>借助中国中免已有基础流量、深耕多年的目的地经验以及对中国消费者旅游购物需求判断，结合众信在产品、品牌以及旅游零售运营等多方面优势，共同开发境内外旅游零售业务。在境外，双方可以通过多种合作方式共同开展旅游零售门店的合作。</p>",
+    "firstLetter": "ZXLY",
+    "high": 7.81,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 7.51,
+    "marketValue": 7635695806.41,
+    "name": "众信旅游",
+    "pctChg": -3.35,
+    "price": 7.51,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 3,
+    "recent60Change": 5.77,
+    "recentChange": -7.51,
+    "remark": "国内领先的大型出境旅游运营商，全国最大的旅游批发商之一",
+    "status": 1,
+    "stockId": "002707",
+    "stockLightspots": [
+      {
+        "bizKey": "38221",
+        "content": "众信旅游淡化旅游边界，打造境外生活服务平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38221,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38222",
+        "content": "资本助力领先者专业优势再升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38222,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38223",
+        "content": "众信旅游与阿里合作拟重塑旅游B2B生态，公司发展拟迎二次腾飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38223,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38224",
+        "content": "众信旅游出境游运营商龙头，产业链一体化加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38224,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38225",
+        "content": "产业链整合，出境综合服务平台崛起！众信者信者众也",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38225,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38226",
+        "content": "众信旅游出境游资源整合者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38226,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38227",
+        "content": "民营出境游旅行社龙头,分享行业高成长盛宴",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38227,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38228",
+        "content": "专注出境旅游,看好成长性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38228,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38229",
+        "content": "众信旅游出境游行业复苏批发龙头获益，利益绑定带动公司经营效率提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38229,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38230",
+        "content": "稳健成长 稳健成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38230,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38231",
+        "content": "国内领先的出境旅游服务商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38231,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38232",
+        "content": "批零一体化战略明晰，有望随行业再迎高成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38232,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38233",
+        "content": "众信旅游深度报告-‘一纵一横‘打造出境游综合服务平台，行业龙头成出境游景气度最大受益者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38233,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38234",
+        "content": "众信旅游出境游龙头，疫后业绩弹性可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38234,
+        "stockId": "002707",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38235",
+        "content": "出境游龙头 有望受益疫情后复苏",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38235,
+        "stockId": "002707",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 222636.0
+  }
+}

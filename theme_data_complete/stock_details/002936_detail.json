@@ -1,0 +1,107 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 47159374.76,
+    "changeCount": 0.0,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "\n\t\t\t\t　　一、经营情况讨论与分析\n<br>　　打造政策性科创金融特色银行。本行积极学习宁波、成都、重庆地区科创金融发展的有益经验，健全科创金融管理机制，持续优化运营机制。充分发挥政策性科创金融运营主体作用，优化预授信额度模型及风控规则，全省首推“研发贷”产品，全面满足企业的科研及经营需求。主动拜会各地市政府，推进政府配套支持政策落地。加大与创投公司、担保机构、知识产权部门、科研机构开展对接活动，打通科创生态链条。\n<br>　　高质量发展战略稳步推进。报告期内，本行启动2023年度战略管理工作，明确重点战略任务，强化转型引领作用；市民金融战略丰富特色场景、匹配权益活动，推出专属理财产品，优化“新市民”金融服务，扎实推进零售转型；乡村金融战略坚持服务下沉，举办惠农活动300余场次，提升惠农客群粘性。小微企业园战略实现全省重点园区对接全覆盖，多部门联动营销，持续强化筑巢质效，壮大客群规模。\n<br>　　重点业务持续突破。按计划实施数字化转型提升工程各项任务，上线财富管理平台、新一代票据系统，强化科技与业务联动发展。涉农贷款及普惠型涉农贷款较年初稳步增长，完成两增考核指标。采用“基本发行规模+超额增发”的创新发行机制，发行2023年第一期金融债券人民币50亿元，认购倍数2.3倍。积极推进“双碳”战略稳步落地，入选中国人民银行使用碳减排支持工具的金融机构名单。\t\t\t\t<span style=\"display: inline-block;width: 42px;\"></span>\n\t\t\t\t<a class=\"less fr\" href=\"javascript:void(0)\" style=\"position:absolute;right:0;bottom:0;\"></a>\n\t\t\t",
+    "firstLetter": "ZZYH",
+    "high": 1.92,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 1.91,
+    "marketValue": 17365894493.78,
+    "name": "郑州银行",
+    "pctChg": 0.0,
+    "price": 1.91,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -6.37,
+    "recentChange": 0.0,
+    "remark": "打造独具特色的“商贸物流银行”",
+    "status": 1,
+    "stockId": "002936",
+    "stockLightspots": [
+      {
+        "bizKey": "48445",
+        "content": "郑州银行不良贷款加速暴露，未来业绩或改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48445,
+        "stockId": "002936",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48446",
+        "content": "郑州银行获批月余后招股，持续关注金力永磁",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48446,
+        "stockId": "002936",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48447",
+        "content": "郑州银行大幅计提致归母净利下滑，五云平台建商贸特色银行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48447,
+        "stockId": "002936",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48448",
+        "content": "不良确认与核销力度加大，定增落地可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48448,
+        "stockId": "002936",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48449",
+        "content": "郑州银行净息差提升，业绩改善明显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48449,
+        "stockId": "002936",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48450",
+        "content": "郑州银行新股询价报告",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48450,
+        "stockId": "002936",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48451",
+        "content": "郑州银行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48451,
+        "stockId": "002936",
+        "updateTime": null
+      },
+      {
+        "bizKey": "48452",
+        "content": "郑州银行新股网下申购询价建议报告",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 48452,
+        "stockId": "002936",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 246682.36
+  }
+}

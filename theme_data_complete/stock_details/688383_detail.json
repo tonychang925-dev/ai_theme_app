@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 52285926.0,
+    "changeCount": 0.66,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:48",
+    "detail": "<p><span style=\"font-weight: bold;\">1、新益昌主要业务及产品</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20220906153402_d210b303d94928bf.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220906153440_197a097732708605.png\" /></p>\n<p>公司主营业务包括LED固晶机、半导体固晶机、电容器老化测试设备、锂电池设备四大块。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.1&nbsp;&nbsp;固晶机是Mini LED封装的重要设备</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20220906160316_8f9b721172401f7e.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20220906160334_5d1b0a081445fb02.png\" /></p>\n<p>固晶机是一种将LED晶片从晶片盘吸取后贴装到PCB上，实现LED晶片的自动健合和缺陷晶片检测功能的自动化设备，是MiniLED封装的重要设备。根据隆利科技的公告，中大尺寸MiniLED显示模组制造项目中，固晶机支出6240万，是最大的设备支出，占设备采购金额的22.4%。</p>\n<p><span style=\"font-weight: bold;\">2.2&nbsp;&nbsp;全球固晶机市场规模</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20220906161802_ca15b160d8dbcf82.png\" /></p>\n<p>从市场规模来看，2018年固晶机整体市场规模为9.79亿美元，其中半导体固晶机为6.94亿美元，占比72%，LED固晶机为2.73亿美元，占比28%，根据Yole预测，到2024年，固晶机整体市场规模为13.71亿美元，CAGR为6%，其中半导体固晶机占比为78%，LED固晶机占比为22%。</p>\n<p><span style=\"font-weight: bold;\">2.3&nbsp;固晶机竞争格局</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20220906160556_ef3347c6731591bf.png\" /></p>\n<p>YoleDevelopment数据显示，2018年，ASMPT占据全球固晶机31%的市场份额；Besi紧随其后，市占率28%；新益昌位列第三，市占率6%。在LED固晶机方面，根据2018年LED固晶机市场规模为2.74亿美元以及公司2018年LED固晶机收入5.23亿元人民币测算，2018年发行人LED固晶机的全球市场份额为28%，国内市占率60%（国内第一）。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司产品在电容器生产流程中的应用</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20220906162844_644b6a007ad9d8e1.png\" /></p>\n<p>电容器生产工艺可分为铆接、卷绕、浸渍、装配、老化及测试六大环节。其中，老化和测试环节尤为关键，具体包括：1）对产品导针整形且做极性检测，排除开路、弯脚、短路及反极的产品；2）将产品送入烤箱进行高温充电老化；3）进行容量、损失角、&ldquo;ESR&rdquo;和漏电流测试。电容器老化测试设备领域，公司已成为国内知名厂商的首选品牌之一。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、锂电池生产历程及新益昌布局</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid14_20220906163319_20fa2950b99fc795.png\" /></p>\n<p>公司自2017年开始切入锂电池设备领域，目前产品现已涵盖制片机、卷绕机、制片卷绕一体机等，客户包括路华集团等。</p>",
+    "firstLetter": "XYC",
+    "high": 74.11,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 71.15,
+    "marketValue": 7465966160.0,
+    "name": "新益昌",
+    "pctChg": 0.9,
+    "price": 73.76,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 15.11,
+    "recentChange": -1.93,
+    "remark": "公司是LED固晶机龙头，在Mini LED固晶机领域领先行业。",
+    "status": 1,
+    "stockId": "688383",
+    "stockLightspots": [
+      {
+        "bizKey": "33821",
+        "content": "LED固晶机龙头受益Mini LED增长，布局半导体打开更大市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33821,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33822",
+        "content": "固晶机龙头，MiniLED和半导体业务迎新机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33822,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33823",
+        "content": "固晶机行业龙头，Mini LED渗透提速注入新动能",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33823,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33824",
+        "content": "新益昌Mini LED设备龙头启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33824,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33825",
+        "content": "新益昌国产固晶机龙头，Mini LED和半导体固晶机乘风而起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33825,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33826",
+        "content": "新益昌新型显示“卖铲人”，半导体封装设备拓展可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33826,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33827",
+        "content": "新益昌国内LED固晶设备龙头，Mini LED需求释放助力业绩增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33827,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33828",
+        "content": "国内LED固晶机龙头，MiniLED和半导体固晶机潜力充足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33828,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33829",
+        "content": "国内固晶机龙头，Mini LED和半导体业务加速成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33829,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33830",
+        "content": "新益昌国内LED固晶机龙头，mini-LED和半导体封装设备打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33830,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33831",
+        "content": "新益昌21年LED、半导体固晶设备营收及净利快速增长，22Q1延续高增",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33831,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33832",
+        "content": "新益昌Mini LED与半导体产业打开公司成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33832,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33833",
+        "content": "新益昌Mini LED行业景气，固晶龙头业绩持续增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33833,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33834",
+        "content": "新益昌LED固晶设备龙头，布局半导体及锂电设备",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33834,
+        "stockId": "688383",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33835",
+        "content": "新益昌Mini LED及半导体封装市场景气，业绩大幅上升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33835,
+        "stockId": "688383",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 7210.7
+  }
+}

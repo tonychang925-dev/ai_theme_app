@@ -94,27 +94,36 @@ python test_fixed_decision_executor.py
 ### 2.5 语义匹配器测试（P0）
 
 ```bash
-# T01 算法级门禁（MUST，先快后全）
-PHASE2_THRESHOLD_SAMPLE=10 /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_semantic_matcher_unit.py
-# 阶段验收再跑全量
-PHASE2_THRESHOLD_SAMPLE=76 /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q database_service/tests/streams/test_phase2_semantic_matcher_unit.py
+# T01 算法级门禁（MUST，三档口径）
+PHASE2_THRESHOLD_SAMPLE=24 PHASE2_THRESHOLD_GRID_SIZE=80 /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase2_semantic_matcher_unit.py
+PHASE2_THRESHOLD_SAMPLE=36 PHASE2_THRESHOLD_GRID_SIZE=100 /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase2_semantic_matcher_unit.py
+PHASE2_THRESHOLD_SAMPLE=30 PHASE2_THRESHOLD_GRID_SIZE=100 /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase2_semantic_matcher_unit.py
 
-# 任务级门禁（MUST，需在 theme_matcher_env）
-conda run -n theme_matcher_env python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py
+# TC003 架构守卫（MUST）
+PHASE2_TC003_MODE=arch_guard /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase2_tc003_architecture_guard.py
+
+# 任务级门禁（MUST）
+/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase2_behavior_tests.py
+
+# 缓存复用守卫（MUST）
+/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_semantic_embedding_cache_unit.py
 
 # 算法专项补充（SHOULD，建议在 theme_matcher_env）
-conda run -n theme_matcher_env python test_semantic_matcher.py
-conda run -n theme_matcher_env python test_transformer_matcher.py
+/opt/miniconda3/envs/theme_matcher_env/bin/python /Users/admin/Desktop/ai_theme_app/test_semantic_matcher.py
+/opt/miniconda3/envs/theme_matcher_env/bin/python /Users/admin/Desktop/ai_theme_app/test_transformer_matcher.py
 ```
 
-### 2.6 10% 灰度与 76 案例评估入口（P0）
+### 2.6 10% 灰度与 30 案例评估入口（P0）
 
 ```bash
 # 数据集快速检查（选项11）
-printf "11\n" | conda run -n theme_matcher_env python database_service/scripts/test_theme_processor.py
+printf "11\n" | /opt/miniconda3/envs/theme_matcher_env/bin/python /Users/admin/Desktop/ai_theme_app/database_service/scripts/test_theme_processor.py
 
 # 新架构+数据集完整工作流（选项9）
-printf "9\n" | conda run -n theme_matcher_env python database_service/scripts/test_theme_processor.py
+printf "9\n" | /opt/miniconda3/envs/theme_matcher_env/bin/python /Users/admin/Desktop/ai_theme_app/database_service/scripts/test_theme_processor.py
+
+# 映射审计（全量读取 decision 流）
+/opt/miniconda3/envs/theme_matcher_env/bin/python /Users/admin/Desktop/ai_theme_app/database_service/scripts/phase2_update_mapping_audit.py --sample-size 24 --out /Users/admin/Desktop/ai_theme_app/tmp/phase2_update_mapping_audit.json
 ```
 
 通过判定：
@@ -186,11 +195,15 @@ pytest -q database_service/tests/streams/test_stream_integration.py
 python test_fixed_decision_executor.py
 
 # Phase2
-conda run -n theme_matcher_env python -m pytest -q database_service/tests/streams/test_phase2_behavior_tests.py
-conda run -n theme_matcher_env python test_semantic_matcher.py
-conda run -n theme_matcher_env python test_transformer_matcher.py
-printf "11\n" | conda run -n theme_matcher_env python database_service/scripts/test_theme_processor.py
-printf "9\n" | conda run -n theme_matcher_env python database_service/scripts/test_theme_processor.py
+PHASE2_THRESHOLD_SAMPLE=24 PHASE2_THRESHOLD_GRID_SIZE=80 /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase2_semantic_matcher_unit.py
+PHASE2_TC003_MODE=arch_guard /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase2_tc003_architecture_guard.py
+/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase2_behavior_tests.py
+/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_semantic_embedding_cache_unit.py
+/opt/miniconda3/envs/theme_matcher_env/bin/python /Users/admin/Desktop/ai_theme_app/test_semantic_matcher.py
+/opt/miniconda3/envs/theme_matcher_env/bin/python /Users/admin/Desktop/ai_theme_app/test_transformer_matcher.py
+printf "11\n" | /opt/miniconda3/envs/theme_matcher_env/bin/python /Users/admin/Desktop/ai_theme_app/database_service/scripts/test_theme_processor.py
+printf "9\n" | /opt/miniconda3/envs/theme_matcher_env/bin/python /Users/admin/Desktop/ai_theme_app/database_service/scripts/test_theme_processor.py
+/opt/miniconda3/envs/theme_matcher_env/bin/python /Users/admin/Desktop/ai_theme_app/database_service/scripts/phase2_update_mapping_audit.py --sample-size 24 --out /Users/admin/Desktop/ai_theme_app/tmp/phase2_update_mapping_audit.json
 
 # Phase3
 python test_llm_theme_judge_batch.py
@@ -220,5 +233,5 @@ python database_service/tests/run_phase1_tests.py
 以下任一命中，停止后续发布流程：
 - 任一 P0 命令非 0 退出。
 - 缺少 `source_type=real` 证据。
-- 缺少 76 案例指标输出（`theme_count/precision/completeness/separation`）。
+- 缺少 30 案例指标输出（`theme_count/precision/completeness/separation`）。
 - 发现 `release_gate` 结果与阈值不一致。

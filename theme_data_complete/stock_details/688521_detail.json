@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 4413161615.0,
+    "changeCount": -15.22,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司业务分类</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20230202124007_1df51d4c6408df6a.png\" /></p>\n<p>公司目前拥有六大处理器IP、1,400 多个数模混合IP 和射频IP储备。2021年，公司IP授权业务市场份额位于国内第一，全球第七。IP种类数量在全球前七中排名第二。公司处理器IP 主要包括图形处理器IP（GPU IP）、神经网络处理器IP（NPU IP）、视频处理器IP（VPU IP）、数字信号处理器IP（DSP IP）、芯原图像信号处理器IP（ISP IP）和显示处理器IP（Display Processor IP）。</p>\n<div data-page-number=\"6\" data-loaded=\"true\">\n<div>&nbsp;</div>\n</div>\n<p><span style=\"font-weight: bold;\">2、各项业务营收占比</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20230202124125_6c324469db0d113e.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20230202124558_d627c3f1050675df.png\" /></p>\n<p>公司有四大细分主营业务，2021年，芯片量产业务占41.36%，芯片设计业务占25.46%；IP授权业务及特许使用权业务分别占比28.52%，4.49%。受益于半导体行业扩张和持续增长的芯片设计需求，公司芯片设计、芯片量产及IP授权业务均保持高速增长。公司IP数量多，品类全，结合卓越的研发能力，公司未来有望持续高速增长趋势。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20230202124621_6e45c551f73fca22.png\" /></p>\n<p>公司各个业务毛利率差异大，IP授权业务毛利率接近100%，芯片设计及量产毛利率相对较低。公司IP研发费用计入费用科目，因此IP授权业务只有相关的人工成本，毛利率高。公司一站式芯片定制成本高，芯片设计中包括高额的研发及人工成本，以及公司会战略性地与优质客户群体合作，客户议价能力强，毛利率水平也受客户影响较大。芯片量产业务毛利率受大客户终端产品出货情况影响，波动较大，因为芯片制造成本较高，其中包含晶圆制造、封装、测试等成本，毛利率相对较低。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、Fabless模式带来新机遇</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20230202125149_9934f3150d8cd682.png\" /></p>\n<p><span style=\"font-weight: bold;\">数据来源：公司季报，财通证券研究所</span></p>\n<p>随着集成电路下游应用行业细分，系统厂商、互联网公司、云服务厂商、汽车制造企业为了掌握核心技术，控制供应链风险，开始设计自主品牌芯片。但由于芯片设计能力、水平及经验限制，该类企业往往选择与芯片设计公司合作寻求包括硬件及软件的系统解决方案，来降低芯片研发周期、成本及风险，为芯片设计业务带来市场空间。与这类企业合作的芯片设计公司会更多地使用已经验证完成的IP，促进半导体IP行业增长。公司独特的SiPaaS商业模式使公司受益，越来越多的客户选择与公司合作。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、新兴下游需求增长</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20230202125258_dfde757925f22ce4.png\" /></p>\n<p>下游新兴产业高速发展带动上游芯片行业高速扩张。集成电路技术上的突破也催生出众多新兴产业，如物联网、人工智能、大数据等。公司技术、经验积累及独特商业模式顺应行业增长趋势，未来可期。公司在快速发展的下游应用领域均有技术积累和战略布局，2022年上半年，公司汽车电子应用营收增幅最大，达到382%，物联网领域营收超过消费电子成为公司细分领域营收第一。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20230202125325_258fb35a133941b1.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid16_20230202125332_b87cb8c5817d7e78.png\" /></p>\n<p>汽车电子领域，公司集成多曝光宽动态处理及高级降噪技术的图像信号处理器IP通过了汽车功能安全标准ISO26262认证。同时公司的图形处理器IP也应用在车载信息娱乐系统中，与全球知名OEM厂商合作。公司的神经网络处理器IP也应用在多家客户的ADAS产品上。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid18_20230202125357_0dd86181ee8fe9a7.png\" /></p>\n<p>在AIoT领域，公司的人工智能神经网络处理器IP（NPUIP）已被50余家客户应用在100余个人工智能芯片中，应用于物联网、可穿戴智能设备、智能家居等领域，公司也在物联网拥有众多在研技术及专利，部分实现了IP设计及客户量产验证。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、公司受益半导体国产化</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid19_20230202125457_481489b5ee713bfa.png\" /></p>\n<p>公司依靠自身技术经验优势，有望在半导体产业国产化趋势中持续受益。公司为客户提供一站式芯片设计服务，在目前的国产化趋势下，公司境内销售收入持续增加。2022年上半年，公司境内营业收入7.32亿元，同比增加73.68%，占比60.89%。目前，中国半导体行业及集成电路行业严重依赖进口，在国产化趋势下，公司有望在国产替代中持续受益。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、chiplet业务进展</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid22_20230202125632_2d0e01d208273c80.png\" /></p>\n<p>芯原股份在Chiplet领域战略布局多年，并且成为中国大陆地区首批加入UCIe联盟企业之一。公司凭借深厚的IP以及技术储备，于2021年推出采用Chiplet架构设计的高端应用处理器平台从完成定义到流片仅用12个月，2021年5月，工程样片已经回片，并在当天顺利点亮。Linux、Chromium操作系统，YouTube等应用在工程样片上顺利运行，该高端应用处理器平台主要面向手机、平板电脑、笔记本电脑、自动驾驶应用，目前此平台正在自动驾驶域控制器上开展验证工作。2022年到2023年，公司持续推进高端应用处理器平台Chiplet的迭代方案研发，有望成为全球第一批面向客户推出Chiplet商用产品的企业。未来，公司计划以Chiplet形式实现IP芯片化。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">7、风险提示</span></p>\n<p>研发失败、产品或服务客户端认证失败风险，研发人员流失风险，行业增长趋势放缓或行业出现负增长风险，海外经营风险。</p>",
+    "firstLetter": "XYGF",
+    "high": 288.0,
+    "importance": 2,
+    "isDone": null,
+    "isSelf": null,
+    "low": 253.0,
+    "marketValue": 144889657711.5,
+    "name": "芯原股份",
+    "pctChg": -5.52,
+    "price": 260.28,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 4,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 70.76,
+    "recentChange": 17.24,
+    "remark": "\n【RISC-V】\n参与阿里玄铁RISC-V芯片设计，RISC-V理事长单位\n\n【ASIC芯片】\nNPU芯片A股进度第二，全球出货量已超1亿颗\n\n\n",
+    "status": 1,
+    "stockId": "688521",
+    "stockLightspots": [
+      {
+        "bizKey": "34216",
+        "content": "芯原股份国内IP龙头厂商，推动SiPaaS模式发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34216,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34217",
+        "content": "芯原股份SiPaaS平台傲立潮头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34217,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34218",
+        "content": "芯原股份打造一体化设计平台，IP行业多轮驱动增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34218,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34219",
+        "content": "芯原股份一站式服务平台，赋能芯片设计创新",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34219,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34220",
+        "content": "全球领先的IP授权服务商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34220,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34221",
+        "content": "芯原股份自主芯片IP之独角兽",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34221,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34222",
+        "content": "国内顶级IP Power House，迎Chiplet加速起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34222,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34223",
+        "content": "芯原股份国内自主半导体IP龙头，小而美市场乘风破浪",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34223,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34224",
+        "content": "芯原股份IP授权龙头打造一站式芯片定制平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34224,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34225",
+        "content": "芯原股份芯原股份五问五答，深度剖析投资价值",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34225,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34226",
+        "content": "前瞻布局创新领域，盈利能力持续提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34226,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34227",
+        "content": "IP独角兽的盈利拐点，“十问十答”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34227,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34228",
+        "content": "取之IP，用之IOT，立之国本",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34228,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34229",
+        "content": "IP“芯”星，风起燎“原”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34229,
+        "stockId": "688521",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34230",
+        "content": "芯原股份国内半导体IP龙头，芯片定制化服务和IP协同发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34230,
+        "stockId": "688521",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 167491.85
+  }
+}

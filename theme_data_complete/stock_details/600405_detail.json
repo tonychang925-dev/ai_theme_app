@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 39567773.0,
+    "changeCount": 0.13,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:48",
+    "detail": "<p><strong>一、公司主要业务</strong></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>公司主营业务方向由数据通信行业逐渐拓展至绿色出行、新能源的电能转换与能源利用，并形成了以数据通信、绿色出行、新能源业务为核心的三大核心业务，实现了公司的业务多元化转型。</strong></span>面对技术加速迭代、行业竞争激烈、复杂的国际关系，公司秉承“聚焦主业”这一核心战略，以客户需求为导向，以技术创新为驱动，在相关领域中为客户提供从产品到整体解决方案以及完整的全生命周期服务。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/e878625c-0b36-41da-a70e-cd938adb68e7.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><strong>1、数据通信</strong></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/df57f317-ee9e-4cd7-9cb5-53c260c5ad29.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><strong>2、绿色出行</strong></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/ccddbc2b-ad45-45fc-9d72-449509c19c4f.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><strong>3、新能源业务</strong></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/eb5f9e84-8f15-4368-9c2a-10b3c4b4c3f4.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>4、节能业务</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/ff1e8067-6af1-4830-b9d8-a0737304d8b1.png\" alt=\"\" data-href=\"\" style=\"\"/></p>",
+    "firstLetter": "DLY",
+    "high": 5.55,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 5.45,
+    "marketValue": 3315408071.08,
+    "name": "动力源",
+    "pctChg": 2.4,
+    "price": 5.54,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -1.95,
+    "recentChange": 5.73,
+    "remark": "数据中心、通信电源领先",
+    "status": 1,
+    "stockId": "600405",
+    "stockLightspots": [
+      {
+        "bizKey": "15702",
+        "content": "专注能源动力，5G建设推动公司增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15702,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15703",
+        "content": "专注电源新技术，5G时代再铸辉煌",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15703,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15704",
+        "content": "基于电力电源技术的高成长科技及节能公司",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15704,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15705",
+        "content": "EMC发力+传统业务转暖",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15705,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15706",
+        "content": "BAT的共同选择，云计算的动力之源",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15706,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15707",
+        "content": "私人定制的能效管理服务商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15707,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15708",
+        "content": "聚焦主业砥砺前行 5G时代重塑辉煌",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15708,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15709",
+        "content": "深耕通信电源行业，5G建设带来快速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15709,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15710",
+        "content": "供货铁塔5G电源产品，开启5G业务新阶段",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15710,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15711",
+        "content": "公司业务调整见成效，借助5G建设进入上升期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15711,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15712",
+        "content": "5G与新能源双轮驱动，业绩反转趋势确立",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15712,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15713",
+        "content": "公司业务调整见成效，电源业务有望进入快车道",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15713,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15714",
+        "content": "公司业务调整见成效，电源有望进入快车道",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15714,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15715",
+        "content": "放下包袱优化业务，依托5G建设走出业绩谷底",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15715,
+        "stockId": "600405",
+        "updateTime": null
+      },
+      {
+        "bizKey": "15716",
+        "content": "巩固通信电源业务 积极拓展新能源汽车领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 15716,
+        "stockId": "600405",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:01",
+    "vol": 71704.98
+  }
+}

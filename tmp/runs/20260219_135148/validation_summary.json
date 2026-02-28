@@ -1,0 +1,55 @@
+{
+  "phase": "P1.phase2",
+  "run_id": "20260219_135148",
+  "generated_at": "2026-02-19T13:51:48-08:00",
+  "test_summary": {
+    "executed_this_run": [
+      {
+        "command": "PHASE2_TC003_MODE=arch_guard /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase2_tc003_architecture_guard.py",
+        "result": "passed",
+        "stats": "5 passed"
+      },
+      {
+        "command": "PHASE2_THRESHOLD_SAMPLE=30 PHASE2_THRESHOLD_GRID_SIZE=100 /opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest -s -vv /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase2_semantic_matcher_unit.py",
+        "result": "passed",
+        "stats": "2 passed, 1 warning"
+      }
+    ],
+    "reused_evidence": [
+      {
+        "source": "tmp/phase2_execution_record_20260219.md",
+        "items": [
+          "phase2_behavior_tests -k phase2_triparty_metrics: 1 passed",
+          "phase2_behavior_tests -k candidate_window_stability/candidate_explosion_ratio/.../phase2_real_deepseek_evidence: 9 passed",
+          "phase2_behavior_tests -k category_keywords_backfill/l1_keywords_aggregated/category_keyword_coverage/category_keywords_backfill_idempotent: 4 passed"
+        ]
+      },
+      {
+        "source": "tmp/phase2_dynamic_ab_30.json",
+        "items": [
+          "30样本动态阈值A/B指标输出"
+        ]
+      },
+      {
+        "source": "tmp/phase2_integration_30_summary.json",
+        "items": [
+          "30样本集成链路摘要（decision/updates/dead-letter）"
+        ]
+      },
+      {
+        "source": "tmp/phase2_post_backfill_30.json",
+        "items": [
+          "关键词回填与分类真源复用行为证据"
+        ]
+      }
+    ],
+    "cancelled_by_user_instruction": [
+      "full behavior rerun cancelled; reused prior pass evidence per user instruction"
+    ]
+  },
+  "lint_summary": {
+    "status": "not_run",
+    "reason": "phase2 contract focuses on functional acceptance tests"
+  },
+  "build_status": "not_applicable"
+}

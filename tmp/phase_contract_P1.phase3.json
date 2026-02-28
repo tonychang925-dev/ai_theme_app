@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.2",
+  "phase": "P1.phase3",
+  "contract_file": "docs/project_control/PHASE_CONTRACT_P1.phase3.md",
+  "scope": "phase:P1.phase3",
+  "final_judge_policy": "full_review_after_classification_match",
+  "source_documents": [
+    "docs/project_control/PRD.md",
+    "docs/project_control/prd_p1.md",
+    "docs/project_control/ACCEPTANCE.md",
+    "docs/project_control/PLAN_WBS.md",
+    "docs/project_control/TEST_CASE_SPEC.md",
+    "docs/project_control/ARCH_REVIEW.md",
+    "docs/adrs/ADR_LIST.md",
+    "docs/project_control/TEST_CASE_SPEC_P1.phase3.md",
+    "tmp/plan/test_traceability_P1.phase3.json",
+    "tmp/feature_traceability_P1.phase3.json"
+  ],
+  "acceptance_targets": [
+    {
+      "id": "ACC-P1-P3-01",
+      "task_ids": [
+        "P1.phase3-T01",
+        "P1.phase3-T02",
+        "P1.phase3-T03"
+      ],
+      "test_case_ids": [
+        "TC-P1-P3-IT-001",
+        "TC-P1-P3-ST-001"
+      ],
+      "verify_command": ".venv/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase3_behavior_tests.py -k \"llm_final_judge_routing or llm_final_judge_gate\""
+    },
+    {
+      "id": "ACC-P1-P3-02",
+      "task_ids": [
+        "P1.phase3-T02",
+        "P1.phase3-T04"
+      ],
+      "test_case_ids": [
+        "TC-P1-P3-ET-001",
+        "TC-P1-P3-PT-001"
+      ],
+      "verify_command": ".venv/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase3_behavior_tests.py -k \"arbiter_timeout_fallback or arbiter_latency_budget\""
+    },
+    {
+      "id": "ACC-P1-P3-03",
+      "task_ids": [
+        "P1.phase3-T02",
+        "P1.phase3-T04"
+      ],
+      "test_case_ids": [
+        "TC-P1-P3-ET-002",
+        "TC-P1-P3-RT-001"
+      ],
+      "verify_command": ".venv/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase3_behavior_tests.py -k \"model_unavailable_circuit_breaker or final_judge_report_regression\""
+    }
+  ],
+  "required_commands": [
+    "/Users/admin/Desktop/ai_theme_app/.venv/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase3_behavior_tests.py",
+    "/Users/admin/Desktop/ai_theme_app/.venv/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase3_behavior_tests.py -k \"llm_final_judge_routing or arbiter_timeout_fallback or model_unavailable_circuit_breaker\"",
+    "/Users/admin/Desktop/ai_theme_app/.venv/bin/python -m pytest -q /Users/admin/Desktop/ai_theme_app/database_service/tests/streams/test_phase3_behavior_tests.py -k \"llm_final_judge_gate or arbiter_latency_budget or final_judge_report_regression\"",
+    "rg -n \"Qwen2\\.5|llama\\.cpp|llm_final_judged_ratio|arbiter_p95_latency|timeout_fallback|model_unavailable|request_id|model_name\" /Users/admin/Desktop/ai_theme_app/database_service /Users/admin/Desktop/ai_theme_app/theme_service /Users/admin/Desktop/ai_theme_app/docs"
+  ],
+  "is_consistent": true,
+  "generated_from": "phase-contract-generator(fallback)",
+  "consistency_report": "tmp/phase_contract_consistency_P1.phase3.json"
+}

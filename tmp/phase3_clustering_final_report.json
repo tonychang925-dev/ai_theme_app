@@ -1,0 +1,714 @@
+{
+  "test_time": "2026-02-20 22:39:17",
+  "test_config": {
+    "sample_size": 30,
+    "model_path": "/Users/admin/Desktop/ai_theme_app/model_service/models/qwen2.5/qwen2.5-1.5b-instruct-q5_k_m.gguf",
+    "model_size": "1.5B",
+    "batch_size": 5
+  },
+  "clustering_result": [
+    {
+      "theme_name": "题材_1",
+      "size": 5,
+      "purity": 0.2,
+      "dominant_theme": "稀土永磁相关新闻",
+      "events": [
+        {
+          "index": 1,
+          "event_id": "event_20260203110904_02419b",
+          "title": "稀土永磁相关新闻",
+          "true_theme": "稀土永磁相关新闻"
+        },
+        {
+          "index": 2,
+          "event_id": "event_20260203110828_c10ff8",
+          "title": "对日制裁相关新闻",
+          "true_theme": "对日制裁相关新闻"
+        },
+        {
+          "index": 3,
+          "event_id": "event_20260203110735_87ebed",
+          "title": "SpaceX相关新闻",
+          "true_theme": "SpaceX相关新闻"
+        },
+        {
+          "index": 4,
+          "event_id": "event_20260203110649_b00e5c",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻"
+        },
+        {
+          "index": 5,
+          "event_id": "event_20260203111048_2cf78c",
+          "title": "液冷数据中心相关新闻",
+          "true_theme": "液冷数据中心相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_2",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "对日制裁相关新闻",
+      "events": [
+        {
+          "index": 6,
+          "event_id": "event_20260203110833_a0d4a9",
+          "title": "对日制裁相关新闻",
+          "true_theme": "对日制裁相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_3",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "AI/AR眼镜相关新闻",
+      "events": [
+        {
+          "index": 7,
+          "event_id": "event_20260203110722_2bf943",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_4",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "可控核聚变相关新闻",
+      "events": [
+        {
+          "index": 8,
+          "event_id": "event_20260203110809_bf7056",
+          "title": "可控核聚变相关新闻",
+          "true_theme": "可控核聚变相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_5",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "SpaceX相关新闻",
+      "events": [
+        {
+          "index": 9,
+          "event_id": "event_20260203110723_1ef0cc",
+          "title": "SpaceX相关新闻",
+          "true_theme": "SpaceX相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_6",
+      "size": 2,
+      "purity": 0.5,
+      "dominant_theme": "对日制裁相关新闻",
+      "events": [
+        {
+          "index": 10,
+          "event_id": "event_20260203110821_10bc3c",
+          "title": "对日制裁相关新闻",
+          "true_theme": "对日制裁相关新闻"
+        },
+        {
+          "index": 23,
+          "event_id": "event_20260203111107_ff07e5",
+          "title": "液冷数据中心相关新闻",
+          "true_theme": "液冷数据中心相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_7",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "可控核聚变相关新闻",
+      "events": [
+        {
+          "index": 11,
+          "event_id": "event_20260203110818_fa28ae",
+          "title": "可控核聚变相关新闻",
+          "true_theme": "可控核聚变相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_8",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "AI智能体Manus相关新闻",
+      "events": [
+        {
+          "index": 12,
+          "event_id": "event_20260203111109_5c87d2",
+          "title": "AI智能体Manus相关新闻",
+          "true_theme": "AI智能体Manus相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_9",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "光刻胶相关新闻",
+      "events": [
+        {
+          "index": 13,
+          "event_id": "event_20260203110951_baec40",
+          "title": "光刻胶相关新闻",
+          "true_theme": "光刻胶相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_10",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "AI/AR眼镜相关新闻",
+      "events": [
+        {
+          "index": 14,
+          "event_id": "event_20260203110713_993a76",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_11",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "卫星互联相关新闻",
+      "events": [
+        {
+          "index": 15,
+          "event_id": "event_20260203111022_38dc55",
+          "title": "卫星互联相关新闻",
+          "true_theme": "卫星互联相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_12",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "海洋经济相关新闻",
+      "events": [
+        {
+          "index": 16,
+          "event_id": "event_20260203110926_ea02dd",
+          "title": "海洋经济相关新闻",
+          "true_theme": "海洋经济相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_13",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "光刻胶相关新闻",
+      "events": [
+        {
+          "index": 17,
+          "event_id": "event_20260203110947_8fdd73",
+          "title": "光刻胶相关新闻",
+          "true_theme": "光刻胶相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_14",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "AI/AR眼镜相关新闻",
+      "events": [
+        {
+          "index": 18,
+          "event_id": "event_20260203110659_05959e",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_15",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "卫星互联相关新闻",
+      "events": [
+        {
+          "index": 19,
+          "event_id": "event_20260203111033_1f6f3b",
+          "title": "卫星互联相关新闻",
+          "true_theme": "卫星互联相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_16",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "稀土永磁相关新闻",
+      "events": [
+        {
+          "index": 20,
+          "event_id": "event_20260203110841_3b95f1",
+          "title": "稀土永磁相关新闻",
+          "true_theme": "稀土永磁相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_17",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "可控核聚变相关新闻",
+      "events": [
+        {
+          "index": 21,
+          "event_id": "event_20260203110744_520fd1",
+          "title": "可控核聚变相关新闻",
+          "true_theme": "可控核聚变相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_18",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "对日制裁相关新闻",
+      "events": [
+        {
+          "index": 22,
+          "event_id": "event_20260203110839_631063",
+          "title": "对日制裁相关新闻",
+          "true_theme": "对日制裁相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_19",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "光刻胶相关新闻",
+      "events": [
+        {
+          "index": 24,
+          "event_id": "event_20260203110928_464c72",
+          "title": "光刻胶相关新闻",
+          "true_theme": "光刻胶相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_20",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "液冷数据中心相关新闻",
+      "events": [
+        {
+          "index": 25,
+          "event_id": "event_20260203111058_2fef62",
+          "title": "液冷数据中心相关新闻",
+          "true_theme": "液冷数据中心相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_21",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "可控核聚变相关新闻",
+      "events": [
+        {
+          "index": 26,
+          "event_id": "event_20260203110757_9d3f97",
+          "title": "可控核聚变相关新闻",
+          "true_theme": "可控核聚变相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_22",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "液冷数据中心相关新闻",
+      "events": [
+        {
+          "index": 27,
+          "event_id": "event_20260203111045_effa80",
+          "title": "液冷数据中心相关新闻",
+          "true_theme": "液冷数据中心相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_23",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "光刻胶相关新闻",
+      "events": [
+        {
+          "index": 28,
+          "event_id": "event_20260203110940_382897",
+          "title": "光刻胶相关新闻",
+          "true_theme": "光刻胶相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_24",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "卫星互联相关新闻",
+      "events": [
+        {
+          "index": 29,
+          "event_id": "event_20260203111012_dc8a43",
+          "title": "卫星互联相关新闻",
+          "true_theme": "卫星互联相关新闻"
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_25",
+      "size": 1,
+      "purity": 1.0,
+      "dominant_theme": "AI/AR眼镜相关新闻",
+      "events": [
+        {
+          "index": 30,
+          "event_id": "event_20260203110650_04f886",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻"
+        }
+      ]
+    }
+  ],
+  "evaluation": {
+    "total_clusters": 25,
+    "avg_purity": 0.948,
+    "overall_purity": 0.8333333333333334,
+    "correctly_clustered": 25,
+    "total_events": 30,
+    "cluster_details": [
+      {
+        "theme_name": "题材_1",
+        "size": 5,
+        "dominant_theme": "稀土永磁相关新闻",
+        "dominant_count": 1,
+        "purity": 0.2,
+        "theme_distribution": {
+          "稀土永磁相关新闻": 1,
+          "对日制裁相关新闻": 1,
+          "SpaceX相关新闻": 1,
+          "AI/AR眼镜相关新闻": 1,
+          "液冷数据中心相关新闻": 1
+        },
+        "errors": [
+          {
+            "event_id": "event_20260203110828_c10ff8",
+            "title": "对日制裁相关新闻",
+            "true_theme": "对日制裁相关新闻"
+          },
+          {
+            "event_id": "event_20260203110735_87ebed",
+            "title": "SpaceX相关新闻",
+            "true_theme": "SpaceX相关新闻"
+          },
+          {
+            "event_id": "event_20260203110649_b00e5c",
+            "title": "AI/AR眼镜相关新闻",
+            "true_theme": "AI/AR眼镜相关新闻"
+          },
+          {
+            "event_id": "event_20260203111048_2cf78c",
+            "title": "液冷数据中心相关新闻",
+            "true_theme": "液冷数据中心相关新闻"
+          }
+        ]
+      },
+      {
+        "theme_name": "题材_2",
+        "size": 1,
+        "dominant_theme": "对日制裁相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "对日制裁相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_3",
+        "size": 1,
+        "dominant_theme": "AI/AR眼镜相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "AI/AR眼镜相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_4",
+        "size": 1,
+        "dominant_theme": "可控核聚变相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "可控核聚变相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_5",
+        "size": 1,
+        "dominant_theme": "SpaceX相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "SpaceX相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_6",
+        "size": 2,
+        "dominant_theme": "对日制裁相关新闻",
+        "dominant_count": 1,
+        "purity": 0.5,
+        "theme_distribution": {
+          "对日制裁相关新闻": 1,
+          "液冷数据中心相关新闻": 1
+        },
+        "errors": [
+          {
+            "event_id": "event_20260203111107_ff07e5",
+            "title": "液冷数据中心相关新闻",
+            "true_theme": "液冷数据中心相关新闻"
+          }
+        ]
+      },
+      {
+        "theme_name": "题材_7",
+        "size": 1,
+        "dominant_theme": "可控核聚变相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "可控核聚变相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_8",
+        "size": 1,
+        "dominant_theme": "AI智能体Manus相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "AI智能体Manus相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_9",
+        "size": 1,
+        "dominant_theme": "光刻胶相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "光刻胶相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_10",
+        "size": 1,
+        "dominant_theme": "AI/AR眼镜相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "AI/AR眼镜相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_11",
+        "size": 1,
+        "dominant_theme": "卫星互联相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "卫星互联相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_12",
+        "size": 1,
+        "dominant_theme": "海洋经济相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "海洋经济相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_13",
+        "size": 1,
+        "dominant_theme": "光刻胶相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "光刻胶相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_14",
+        "size": 1,
+        "dominant_theme": "AI/AR眼镜相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "AI/AR眼镜相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_15",
+        "size": 1,
+        "dominant_theme": "卫星互联相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "卫星互联相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_16",
+        "size": 1,
+        "dominant_theme": "稀土永磁相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "稀土永磁相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_17",
+        "size": 1,
+        "dominant_theme": "可控核聚变相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "可控核聚变相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_18",
+        "size": 1,
+        "dominant_theme": "对日制裁相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "对日制裁相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_19",
+        "size": 1,
+        "dominant_theme": "光刻胶相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "光刻胶相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_20",
+        "size": 1,
+        "dominant_theme": "液冷数据中心相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "液冷数据中心相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_21",
+        "size": 1,
+        "dominant_theme": "可控核聚变相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "可控核聚变相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_22",
+        "size": 1,
+        "dominant_theme": "液冷数据中心相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "液冷数据中心相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_23",
+        "size": 1,
+        "dominant_theme": "光刻胶相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "光刻胶相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_24",
+        "size": 1,
+        "dominant_theme": "卫星互联相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "卫星互联相关新闻": 1
+        },
+        "errors": []
+      },
+      {
+        "theme_name": "题材_25",
+        "size": 1,
+        "dominant_theme": "AI/AR眼镜相关新闻",
+        "dominant_count": 1,
+        "purity": 1.0,
+        "theme_distribution": {
+          "AI/AR眼镜相关新闻": 1
+        },
+        "errors": []
+      }
+    ]
+  },
+  "performance": {
+    "total_events": 30,
+    "total_clusters": 25,
+    "total_calls": 78,
+    "total_time": 378.1414740085602,
+    "avg_time_per_call": 4.847967615494361
+  }
+}

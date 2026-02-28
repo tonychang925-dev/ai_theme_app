@@ -5,6 +5,8 @@
 import time
 import json
 import re
+import hashlib
+import pickle
 import numpy as np
 import jieba
 from typing import List, Dict, Optional, Tuple
@@ -12,6 +14,7 @@ import warnings
 from collections import defaultdict
 warnings.filterwarnings('ignore')
 import os
+from pathlib import Path
 
 # 🔥 彻底禁用所有联网检查
 os.environ['HF_HUB_OFFLINE'] = '1'
@@ -35,9 +38,23 @@ class TransformerSemanticMatcher(BaseMatcher):
         self.semantic_config = {
             'model_name': 'shibing624/text2vec-base-chinese',
             'semantic_threshold': 0.95,
+            'enable_dynamic_threshold': True,
+            'dynamic_profile': 'balanced',  # baseline | balanced | strict
+            'dynamic_threshold_min': 0.70,
+            'dynamic_threshold_max': 0.97,
+            'candidate_window_min': 3,
+            'candidate_window_max': 30,
             'batch_size': 32,
             'use_cache': True,
             'cache_max_size': 1000,
+            'enable_redis_embedding_cache': True,
+            'redis_cache_url': os.getenv('REDIS_URL', ''),
+            'redis_cache_ttl_seconds': 86400,
+            'redis_cache_timeout_seconds': 0.2,
+            'redis_key_prefix': 'db:',
+            'enable_embedding_disk_cache': True,
+            'embedding_cache_dir': 'tmp/semantic_embedding_cache',
+            'embedding_cache_version': 1,
             'max_text_length': 512,
             'enable_ai_boost': True,
             'ai_boost_factor': 0.1
@@ -52,7 +69,20 @@ class TransformerSemanticMatcher(BaseMatcher):
         self.model = None
         self.theme_embeddings = {}  # theme_id -> vector
         self.theme_texts = {}       # theme_id -> text
+        self.theme_text_hashes = {}  # theme_id -> text_hash
         self.text_cache = {}
+        self._embedding_disk_cache = {}
+        self._embedding_disk_cache_dirty = False
+        self._embedding_cache_path: Optional[Path] = None
+        self._redis_client = None
+        self.embedding_cache_stats = {
+            'redis_hit': 0,
+            'redis_miss': 0,
+            'redis_write': 0,
+            'disk_hit': 0,
+            'recompute_count': 0,
+            'total_themes': 0,
+        }
         
         # 🔥 初始化缓存和索引（与 KeywordMatcher 一致）
         self.theme_keywords_cache = {}
@@ -107,6 +137,7 @@ class TransformerSemanticMatcher(BaseMatcher):
         
         # 🔥 加载语义模型并构建语义索引
         self._load_semantic_model()
+        self._prepare_embedding_caches()
         if themes:
             self._build_semantic_index()
         
@@ -160,18 +191,57 @@ class TransformerSemanticMatcher(BaseMatcher):
         
         print(f"🔨 构建语义索引...")
         start_time = time.time()
-        
-        theme_count = 0
+        self.theme_embeddings = {}
+        self.theme_texts = {}
+        self.theme_text_hashes = {}
+        self.embedding_cache_stats = {
+            'redis_hit': 0,
+            'redis_miss': 0,
+            'redis_write': 0,
+            'disk_hit': 0,
+            'recompute_count': 0,
+            'total_themes': len(self.themes),
+        }
+
         for theme_id, theme in self.themes.items():
-            # 构建题材文本
             text = self._build_theme_text(theme)
             self.theme_texts[theme_id] = text
+            self.theme_text_hashes[theme_id] = self._hash_text(text)
+
+        redis_hits_map = self._bulk_get_embeddings_from_redis(list(self.theme_text_hashes.values()))
+        pending_redis_updates = {}
+
+        theme_count = 0
+        cache_hits = 0
+        cache_misses = 0
+        for theme_id, text_hash in self.theme_text_hashes.items():
+            text = self.theme_texts.get(theme_id, '')
+
+            cached_embedding = redis_hits_map.get(text_hash)
+            if cached_embedding is None:
+                cached_embedding = self._try_get_embedding_from_disk_cache(text_hash)
+
+            if cached_embedding is not None:
+                self.theme_embeddings[theme_id] = cached_embedding
+                theme_count += 1
+                cache_hits += 1
+                if text_hash in redis_hits_map:
+                    self.embedding_cache_stats['redis_hit'] += 1
+                else:
+                    self.embedding_cache_stats['disk_hit'] += 1
+                if text_hash not in redis_hits_map:
+                    pending_redis_updates[text_hash] = cached_embedding
+                continue
             
             # 编码文本
+            cache_misses += 1
+            self.embedding_cache_stats['recompute_count'] += 1
             if self.model is not None:
                 try:
                     embedding = self._encode(text)
                     self.theme_embeddings[theme_id] = embedding
+                    self._update_disk_cache_with_embedding(text_hash, embedding)
+                    pending_redis_updates[text_hash] = embedding
                     theme_count += 1
                 except Exception as e:
                     print(f"⚠️  题材 {theme_id} 编码失败: {e}")
@@ -185,7 +255,18 @@ class TransformerSemanticMatcher(BaseMatcher):
         
         elapsed = time.time() - start_time
         print(f"✅ 语义索引构建完成: {theme_count} 个题材向量，耗时 {elapsed:.2f}s")
+        print(f"   向量缓存命中: {cache_hits}, 新计算: {cache_misses}")
+        print(
+            "   缓存统计: "
+            f"redis_hit={self.embedding_cache_stats['redis_hit']}, "
+            f"disk_hit={self.embedding_cache_stats['disk_hit']}, "
+            f"redis_miss={self.embedding_cache_stats['redis_miss']}, "
+            f"redis_write={self.embedding_cache_stats['redis_write']}, "
+            f"recompute={self.embedding_cache_stats['recompute_count']}"
+        )
         print(f"   模型状态: {'已加载' if self.model else '未加载，使用随机向量'}")
+        self._bulk_set_embeddings_to_redis(pending_redis_updates)
+        self._save_embedding_disk_cache()
 
     def _build_category_keyword_index(self):
         """🔥 完整保留 KeywordMatcher 的分类索引构建逻辑"""
@@ -347,72 +428,100 @@ class TransformerSemanticMatcher(BaseMatcher):
             return []
         
         results = []
-        semantic_threshold = self.semantic_config.get('semantic_threshold', 0.8)
-        final_score_threshold = semantic_threshold  # 🔥 最终分数也要过滤
+        default_semantic_threshold = float(self.semantic_config.get('semantic_threshold', 0.8))
+        profile = self._resolve_threshold_profile(event_data)
         
         print(f"\n🔍 语义匹配详细信息:")
-        print(f"   语义阈值: {semantic_threshold}")
-        print(f"   最终分数阈值: {final_score_threshold}")
+        print(f"   阈值模式: {profile}")
+        print(f"   默认语义阈值: {default_semantic_threshold}")
         print(f"   题材总数: {len(self.theme_embeddings)}")
-        
-        # 🔥 收集所有分数用于分析
-        all_semantic_scores = []
-        all_final_scores = []
-        
-        # 🔥 遍历所有题材
-        passed_count = 0
-        filtered_semantic_count = 0
-        filtered_final_count = 0
-        
+
+        # 1) 先计算全部语义分，按事件分布生成动态阈值
+        semantic_scores_by_theme = {}
         for theme_id, theme_embedding in self.theme_embeddings.items():
+            semantic_scores_by_theme[theme_id] = self._cosine_similarity(event_embedding, theme_embedding)
+
+        all_semantic_scores = list(semantic_scores_by_theme.values())
+        threshold_info = self._compute_dynamic_threshold_info(
+            all_semantic_scores,
+            default_semantic_threshold,
+            profile
+        )
+        semantic_threshold = threshold_info['semantic_threshold']
+        strong_threshold = threshold_info['strong_threshold']
+        candidate_lower = threshold_info['candidate_lower']
+        final_score_threshold = semantic_threshold
+
+        print(f"   动态语义阈值: {semantic_threshold:.4f}")
+        print(f"   分段阈值: strong>={strong_threshold:.4f}, candidate>={candidate_lower:.4f}")
+
+        # 2) 三段分层
+        strong_candidates = []
+        candidate_candidates = []
+        weak_candidates = []
+        for theme_id, semantic_score in semantic_scores_by_theme.items():
+            if semantic_score >= strong_threshold:
+                strong_candidates.append((theme_id, semantic_score))
+            elif semantic_score >= candidate_lower:
+                candidate_candidates.append((theme_id, semantic_score))
+            else:
+                weak_candidates.append((theme_id, semantic_score))
+
+        # 3) 候选窗口治理（3~30）
+        raw_candidates = strong_candidates + candidate_candidates
+        raw_count = len(raw_candidates)
+        max_window = int(self.semantic_config.get('candidate_window_max', 30))
+        min_window = int(self.semantic_config.get('candidate_window_min', 3))
+        raw_candidates.sort(key=lambda x: x[1], reverse=True)
+
+        windowed_candidates = raw_candidates[:max_window]
+        if len(windowed_candidates) < min_window:
+            weak_sorted = sorted(weak_candidates, key=lambda x: x[1], reverse=True)
+            needed = min_window - len(windowed_candidates)
+            windowed_candidates.extend(weak_sorted[:needed])
+
+        # 4) 计算最终分并应用最终阈值
+        passed_count = 0
+        filtered_final_count = 0
+        all_final_scores = []
+        for theme_id, semantic_score in windowed_candidates:
             theme = self.themes.get(theme_id, {})
             theme_name = theme.get('name', theme_id)[:20]
-            
-            # 1. 计算语义相似度
-            semantic_score = self._cosine_similarity(event_embedding, theme_embedding)
-            all_semantic_scores.append(semantic_score)
-            
-            # 2. 语义相似度阈值过滤
-            if semantic_score < semantic_threshold:
-                filtered_semantic_count += 1
-                if filtered_semantic_count <= 3:
-                    print(f"   ❌ 过滤[语义分低]: {theme_name}... - 语义分: {semantic_score:.3f} < {semantic_threshold}")
-                continue
-            
-            # 3. 提取题材关键词
+
             theme_keywords = self.theme_keywords_cache.get(theme_id, [])
             matched_keywords = list(set(event_keywords) & set(theme_keywords))
-            
-            # 4. 计算最终分数（使用修复后的方法）
+
             final_score = self._calculate_semantic_score(
-                semantic_score, 
+                semantic_score,
                 matched_keywords,
                 theme_id,
                 event_data
             )
             all_final_scores.append(final_score)
-            
-            # 🔥 关键修复：对final_score也应用阈值过滤
+
             if final_score < final_score_threshold:
                 filtered_final_count += 1
                 if filtered_final_count <= 3:
-                    print(f"   ❌ 过滤[总分低]: {theme_name}... - 总分: {final_score:.3f} < {final_score_threshold} (语义分: {semantic_score:.3f})")
+                    print(f"   ❌ 过滤[总分低]: {theme_name}... - 总分: {final_score:.3f} < {final_score_threshold:.3f} (语义分: {semantic_score:.3f})")
                 continue
-            
-            # 5. 创建匹配结果
+
+            segment_bucket = self._segment_bucket(semantic_score, strong_threshold, candidate_lower)
             result = self._create_match_result(
-                theme_id, 
-                final_score, 
+                theme_id,
+                final_score,
                 matched_keywords,
-                event_data
+                event_data,
+                extra_details={
+                    'semantic_score': round(float(semantic_score), 6),
+                    'segment_bucket': segment_bucket,
+                    'dynamic_threshold': round(float(semantic_threshold), 6),
+                    'threshold_profile': profile,
+                }
             )
-            
             results.append(result)
             passed_count += 1
-            
-            # 显示前几个通过的
             if passed_count <= 3:
-                print(f"   ✅ 通过: {theme_name}... - 语义分: {semantic_score:.3f}, 总分: {final_score:.3f}")
+                print(f"   ✅ 通过: {theme_name}... - 语义分: {semantic_score:.3f}, 总分: {final_score:.3f}, 段: {segment_bucket}")
         
         # 🔥 分析相似度分布
         if all_semantic_scores and all_final_scores:
@@ -441,14 +550,325 @@ class TransformerSemanticMatcher(BaseMatcher):
             print(f"     语义分≥{semantic_threshold}: {above_semantic_threshold}/{len(semantic_array)}")
             print(f"     最终分≥{final_score_threshold}: {above_final_threshold}/{len(final_array)}")
         
+        filtered_semantic_count = len(self.theme_embeddings) - raw_count
         print(f"\n📊 过滤统计:")
         print(f"   总题材数: {len(self.theme_embeddings)}")
         print(f"   语义分过滤: {filtered_semantic_count} 个")
         print(f"   最终分过滤: {filtered_final_count} 个")
+        print(f"   候选窗口: raw={raw_count}, windowed={len(windowed_candidates)}, target=[{min_window},{max_window}]")
         print(f"   最终通过: {passed_count} 个")
         print(f"   通过率: {passed_count/len(self.theme_embeddings)*100:.1f}%")
+
+        explosion_ratio = max(0.0, (raw_count - max_window) / max(1, len(self.theme_embeddings)))
+        self.last_dynamic_threshold_info = {
+            **threshold_info,
+            'threshold_profile': profile,
+            'candidate_count_raw': raw_count,
+            'candidate_count_windowed': len(windowed_candidates),
+            'candidate_explosion_ratio': round(float(explosion_ratio), 6),
+            'segment_hits': {
+                'strong': len(strong_candidates),
+                'candidate': len(candidate_candidates),
+                'weak': len(weak_candidates),
+            },
+            'final_passed_count': passed_count,
+        }
         
         return results
+
+    def _resolve_threshold_profile(self, event_data: Dict) -> str:
+        profile = (
+            (event_data or {}).get('threshold_profile')
+            or (event_data or {}).get('profile')
+            or self.semantic_config.get('dynamic_profile', 'balanced')
+        )
+        profile = str(profile).lower()
+        if profile not in ('baseline', 'balanced', 'strict'):
+            return 'balanced'
+        return profile
+
+    def _compute_dynamic_threshold_info(
+        self,
+        semantic_scores: List[float],
+        fallback_threshold: float,
+        profile: str,
+    ) -> Dict:
+        if not semantic_scores:
+            return {
+                'semantic_threshold': fallback_threshold,
+                'strong_threshold': min(1.0, fallback_threshold + 0.03),
+                'candidate_lower': max(0.0, fallback_threshold - 0.03),
+                'p95': fallback_threshold,
+                'p98': fallback_threshold,
+            }
+
+        arr = np.asarray(semantic_scores, dtype=float)
+        p95 = float(np.percentile(arr, 95))
+        p98 = float(np.percentile(arr, 98))
+        min_th = float(self.semantic_config.get('dynamic_threshold_min', 0.70))
+        max_th = float(self.semantic_config.get('dynamic_threshold_max', 0.97))
+        enable_dynamic = bool(self.semantic_config.get('enable_dynamic_threshold', True))
+
+        if not enable_dynamic:
+            semantic_threshold = fallback_threshold
+        elif profile == 'baseline':
+            semantic_threshold = p95
+        elif profile == 'strict':
+            semantic_threshold = p98
+        else:
+            semantic_threshold = (p95 + p98) / 2.0
+
+        semantic_threshold = min(max(semantic_threshold, min_th), max_th)
+
+        if profile == 'strict':
+            strong_margin = 0.02
+            candidate_margin = 0.02
+        elif profile == 'baseline':
+            strong_margin = 0.03
+            candidate_margin = 0.03
+        else:
+            strong_margin = 0.04
+            candidate_margin = 0.03
+
+        strong_threshold = min(1.0, semantic_threshold + strong_margin)
+        candidate_lower = max(0.0, semantic_threshold - candidate_margin)
+        return {
+            'semantic_threshold': semantic_threshold,
+            'strong_threshold': strong_threshold,
+            'candidate_lower': candidate_lower,
+            'p95': p95,
+            'p98': p98,
+        }
+
+    @staticmethod
+    def _segment_bucket(score: float, strong_threshold: float, candidate_lower: float) -> str:
+        if score >= strong_threshold:
+            return 'Strong'
+        if score >= candidate_lower:
+            return 'Candidate'
+        return 'Weak'
+
+    # ===================== 题材向量缓存（Redis + 本地） =====================
+
+    def _prepare_embedding_caches(self):
+        self._prepare_embedding_disk_cache()
+        self._prepare_embedding_redis_cache()
+
+    def _prepare_embedding_disk_cache(self):
+        """准备题材向量磁盘缓存，避免每次初始化重复编码全量题材。"""
+        self._embedding_disk_cache = {}
+        self._embedding_disk_cache_dirty = False
+        self._embedding_cache_path = None
+
+        if not self.semantic_config.get('enable_embedding_disk_cache', True):
+            return
+
+        try:
+            cache_path = self._build_embedding_cache_path()
+            cache_path.parent.mkdir(parents=True, exist_ok=True)
+            self._embedding_cache_path = cache_path
+            self._load_embedding_disk_cache()
+        except Exception as e:
+            print(f"⚠️  准备向量缓存失败，降级为实时编码: {e}")
+            self._embedding_disk_cache = {}
+            self._embedding_disk_cache_dirty = False
+            self._embedding_cache_path = None
+
+    def _prepare_embedding_redis_cache(self):
+        self._redis_client = None
+        if not self.semantic_config.get('enable_redis_embedding_cache', True):
+            return
+
+        redis_url = str(self.semantic_config.get('redis_cache_url', '')).strip()
+        if not redis_url:
+            return
+
+        timeout = float(self.semantic_config.get('redis_cache_timeout_seconds', 0.2))
+        try:
+            import redis
+            client = redis.Redis.from_url(
+                redis_url,
+                decode_responses=True,
+                socket_connect_timeout=timeout,
+                socket_timeout=timeout,
+            )
+            client.ping()
+            self._redis_client = client
+            print(f"📦 Redis向量缓存已启用: {redis_url}")
+        except Exception as e:
+            print(f"⚠️  Redis向量缓存不可用，自动降级本地缓存: {e}")
+            self._redis_client = None
+
+    def _embedding_model_hash(self) -> str:
+        model_name = str(self.semantic_config.get('model_name', 'unknown'))
+        return hashlib.md5(model_name.encode('utf-8')).hexdigest()[:12]
+
+    def _build_embedding_cache_path(self) -> Path:
+        model_hash = self._embedding_model_hash()
+        cache_dir = Path(self.semantic_config.get('embedding_cache_dir', 'tmp/semantic_embedding_cache'))
+        return cache_dir / f"theme_embeddings_{model_hash}.pkl"
+
+    def _load_embedding_disk_cache(self):
+        if not self._embedding_cache_path or not self._embedding_cache_path.exists():
+            return
+
+        payload = {}
+        try:
+            with self._embedding_cache_path.open('rb') as f:
+                payload = pickle.load(f)
+        except Exception as e:
+            print(f"⚠️  读取向量缓存失败，忽略旧缓存: {e}")
+            return
+
+        if not isinstance(payload, dict):
+            return
+        if payload.get('version') != int(self.semantic_config.get('embedding_cache_version', 1)):
+            return
+
+        raw_items = payload.get('items', {})
+        if not isinstance(raw_items, dict):
+            return
+
+        loaded = 0
+        for text_hash, vector in raw_items.items():
+            try:
+                vec = np.asarray(vector, dtype=np.float32)
+                if vec.ndim != 1 or vec.size == 0:
+                    continue
+                if float(np.linalg.norm(vec)) == 0.0:
+                    continue
+                self._embedding_disk_cache[str(text_hash)] = vec
+                loaded += 1
+            except Exception:
+                continue
+
+        if loaded:
+            print(f"📦 已加载题材向量缓存: {loaded} 条 ({self._embedding_cache_path})")
+
+    def _save_embedding_disk_cache(self):
+        if not self._embedding_disk_cache_dirty:
+            return
+        if not self._embedding_cache_path:
+            return
+
+        payload = {
+            'version': int(self.semantic_config.get('embedding_cache_version', 1)),
+            'model_name': str(self.semantic_config.get('model_name', 'unknown')),
+            'saved_at': int(time.time()),
+            'items': self._embedding_disk_cache,
+        }
+
+        tmp_path = self._embedding_cache_path.with_suffix('.tmp')
+        try:
+            with tmp_path.open('wb') as f:
+                pickle.dump(payload, f, protocol=pickle.HIGHEST_PROTOCOL)
+            tmp_path.replace(self._embedding_cache_path)
+            self._embedding_disk_cache_dirty = False
+            print(f"💾 已写入题材向量缓存: {len(self._embedding_disk_cache)} 条")
+        except Exception as e:
+            print(f"⚠️  写入向量缓存失败: {e}")
+            try:
+                if tmp_path.exists():
+                    tmp_path.unlink()
+            except Exception:
+                pass
+
+    @staticmethod
+    def _hash_text(text: str) -> str:
+        return hashlib.md5((text or '').encode('utf-8')).hexdigest()
+
+    def _try_get_embedding_from_disk_cache(self, text_hash: str) -> Optional[np.ndarray]:
+        if not text_hash:
+            return None
+        vec = self._embedding_disk_cache.get(text_hash)
+        if vec is None:
+            return None
+        return np.asarray(vec, dtype=np.float32)
+
+    def _update_disk_cache_with_embedding(self, text_hash: str, embedding: np.ndarray):
+        if not text_hash:
+            return
+        if not self._embedding_cache_path:
+            return
+        vec = np.asarray(embedding, dtype=np.float32)
+        if vec.ndim != 1 or vec.size == 0:
+            return
+        if float(np.linalg.norm(vec)) == 0.0:
+            return
+        if text_hash in self._embedding_disk_cache:
+            return
+        self._embedding_disk_cache[text_hash] = vec
+        self._embedding_disk_cache_dirty = True
+
+    def _build_redis_embedding_key(self, text_hash: str) -> str:
+        prefix = str(self.semantic_config.get('redis_key_prefix', 'db:'))
+        if not prefix.endswith(':'):
+            prefix = f"{prefix}:"
+        return f"{prefix}semantic_embedding:{self._embedding_model_hash()}:{text_hash}"
+
+    def _bulk_get_embeddings_from_redis(self, text_hashes: List[str]) -> Dict[str, np.ndarray]:
+        if not self._redis_client:
+            return {}
+        unique_hashes = list(dict.fromkeys([h for h in text_hashes if h]))
+        if not unique_hashes:
+            return {}
+
+        keys = [self._build_redis_embedding_key(h) for h in unique_hashes]
+        try:
+            raw_values = self._redis_client.mget(keys)
+        except Exception as e:
+            print(f"⚠️  Redis批量读取向量失败: {e}")
+            return {}
+
+        hits = {}
+        miss_count = 0
+        for text_hash, raw in zip(unique_hashes, raw_values):
+            if not raw:
+                miss_count += 1
+                continue
+            try:
+                vec = np.asarray(json.loads(raw), dtype=np.float32)
+                if vec.ndim != 1 or vec.size == 0:
+                    miss_count += 1
+                    continue
+                if float(np.linalg.norm(vec)) == 0.0:
+                    miss_count += 1
+                    continue
+                hits[text_hash] = vec
+            except Exception:
+                miss_count += 1
+                continue
+        self.embedding_cache_stats['redis_miss'] += miss_count
+        if hits:
+            print(f"📦 Redis向量缓存命中: {len(hits)} 条")
+        return hits
+
+    def _bulk_set_embeddings_to_redis(self, embeddings: Dict[str, np.ndarray]):
+        if not self._redis_client or not embeddings:
+            return
+
+        ttl = int(self.semantic_config.get('redis_cache_ttl_seconds', 86400))
+        try:
+            pipe = self._redis_client.pipeline(transaction=False)
+            count = 0
+            for text_hash, embedding in embeddings.items():
+                vec = np.asarray(embedding, dtype=np.float32)
+                if vec.ndim != 1 or vec.size == 0:
+                    continue
+                if float(np.linalg.norm(vec)) == 0.0:
+                    continue
+                pipe.setex(
+                    self._build_redis_embedding_key(text_hash),
+                    ttl,
+                    json.dumps(vec.tolist(), ensure_ascii=False),
+                )
+                count += 1
+            if count:
+                pipe.execute()
+                self.embedding_cache_stats['redis_write'] += count
+                print(f"💾 Redis写入题材向量缓存: {count} 条")
+        except Exception as e:
+            print(f"⚠️  Redis批量写入向量失败: {e}")
 
     # ===================== 编码和向量计算 =====================
 
@@ -511,16 +931,27 @@ class TransformerSemanticMatcher(BaseMatcher):
         """编码文本 - 修复版"""
         if not text:
             return np.zeros(768)
-        
+        use_cache = bool(self.semantic_config.get('use_cache', True))
+        text_hash = self._hash_text(text)
+        if use_cache and text_hash in self.text_cache:
+            return self.text_cache[text_hash]
+
         try:
             if hasattr(self, '_use_transformers') and self._use_transformers:
                 # 🔥 使用 transformers 方式编码
-                return self._encode_with_transformers(text)
+                vec = self._encode_with_transformers(text)
             elif self.model is not None and hasattr(self.model, 'encode'):
                 # 🔥 使用 text2vec 的 encode 方法
-                return self.model._encode([text])[0]
+                vec = self.model._encode([text])[0]
             else:
-                return self._get_random_vector(text)
+                vec = self._get_random_vector(text)
+
+            if use_cache:
+                max_cache = int(self.semantic_config.get('cache_max_size', 1000))
+                if len(self.text_cache) >= max_cache:
+                    self.text_cache.pop(next(iter(self.text_cache)))
+                self.text_cache[text_hash] = vec
+            return vec
                 
         except Exception as e:
             print(f"⚠️  编码失败，使用随机向量: {e}")
@@ -634,7 +1065,8 @@ class TransformerSemanticMatcher(BaseMatcher):
         return min(final_score, 1.0)
 
     def _create_match_result(self, theme_id: str, match_score: float,
-                            matched_keywords: List[str], event_data: Dict = None) -> MatchResult:
+                            matched_keywords: List[str], event_data: Dict = None,
+                            extra_details: Dict = None) -> MatchResult:
         """创建语义匹配结果"""
         theme = self.themes.get(theme_id, {})
         
@@ -655,6 +1087,8 @@ class TransformerSemanticMatcher(BaseMatcher):
             'has_ai_analysis': event_data and 'ai_analysis' in event_data,
             'embedding_used': self.model is not None
         }
+        if extra_details:
+            match_details.update(extra_details)
         
         result = MatchResult(
             theme_id=theme_id,
@@ -898,7 +1332,18 @@ class TransformerSemanticMatcher(BaseMatcher):
                 'level2_category': '新兴概念'
             }
         
-        ai_keywords = ai_analysis.get('industry_keywords', [])
+        ai_keywords = []
+        for key in ("industry_keywords", "event_keywords"):
+            values = ai_analysis.get(key, [])
+            if isinstance(values, list):
+                ai_keywords.extend([str(v).strip() for v in values if str(v).strip()])
+
+        core_concept = str(ai_analysis.get("core_concept", "")).strip()
+        if core_concept:
+            ai_keywords.append(core_concept)
+
+        # 保序去重，避免重复词影响匹配分数
+        ai_keywords = list(dict.fromkeys(ai_keywords))
         print(f"   🔍 [DEBUG] AI关键词: {ai_keywords}")
         print(f"   🔍 [DEBUG] AI关键词数量: {len(ai_keywords)}")
         
@@ -1125,6 +1570,7 @@ class TransformerSemanticMatcher(BaseMatcher):
             'embedding_dim': 768,
             'theme_vectors': len(self.theme_embeddings)
         }
+        info['embedding_cache_stats'] = self.embedding_cache_stats.copy()
         
         info['keyword_index'] = {
             'themes': len(self.theme_keywords_cache),

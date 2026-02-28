@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 105745858.0,
+    "changeCount": -1.54,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:01",
+    "detail": "<p><span style=\"font-weight: bold;\">1、中望软件产品体系</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20221012140044_e26cea9ac91d503f.png\" /></p>\n<p>公司已形成2D CAD+3D CAD+CAE三大产品线。自推行All-in-One CAx 战略以来，公司在原有产品基础上增加了CAE产品布局，现拥有2D CAD、3D CAD和CAE三大核心产品线，客户覆盖工业企业及教育机构。对于2D CAD产品，公司除推出具备自主核心技术的ZWCAD外，还会进行基于ZWCAD的二次开发，现推出中望CAD机械版和中望CAD建筑版。此外，公司还有中望景园、中望模具、中望水暖电、中望结构等行业应用软件，为客户提供丰富的设计支持。对于3D CAD产品，公司基于Overdrive几何建模引擎推出三维CAD/CAM一体化软件ZW3D，根据功能分为标准版、专业版和铂金版三个版本。对于CAE产品，公司已成功构建结合通用前后处理平台ZWMeshWorks、电磁仿真ZWSim-EM和结构仿真ZWSimStructural为一体的产品矩阵。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、公司主要收入来源</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221012140220_d4c64c756c530c8b.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20221012140246_1067c0a57a063a5b.png\" /></p>\n<p>从产品角度看，2DCAD产品经过20年的技术迭代，现位居全球第二梯队，也是目前公司最主要的收入来源。3DCAD产品近年来高速发展，在通用机械、3C电子、模具等行业具有一定竞争力。CAE产品已达到商用级水平，在市场上初获认可，2021年实现收入0.04亿元，同比增长6191%。从客户角度看，工业企业仍为公司客户主体，收入占比均在70%以上。但在2D和3D教育客户上，公司除推出针对不同年级、不同专业和学校所推出的针对性产品外，还推出一系列针对建筑和机械学科的解决方案，产品在行业内实现闭环，用户活跃度快速增加，2021年2D和3D教育类收入增速都在50%左右，远超工业企业收入增速。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.1&nbsp; 国产CAD迎来发展机遇</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20221012140624_84f3dfb13b51fa4a.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20221012140801_8d6b4563b628e383.png\" /></p>\n<p>CAD（Computer Aided Design，计算机辅助设计）是利用计算机辅助工程师、设计师、建筑师等工程技术人员进行产品设计、工程绘图和数据管理的一项技术。目前已被广泛应用于机械、电子、建筑等行业中。CAD是产品设计流程的第一个环节，CAD设计的模型通过CAE进行仿真设计的成品分析，最终再通过CAM进行产品的生产，能够大幅提升设计和生产效率，提升产品质量。</p>\n<p>近年来，随着CAD下游应用场景的不断丰富，市场规模稳定增长。2020年，全球CAD市场规模达99亿美元。根据艾瑞咨询预测，2023年全球市场规模将达到127亿美元。相较于欧美等发达国家，我国CAD发展成熟度较低，对国外软件依赖度较强。但近几年来，在国产替代大逻辑驱动下，我国CAD发展步入快车道，复合增速在20%以上。2020年我国CAD市场规模为35亿元，预计到2023年将达到67亿元。</p>\n<p><span style=\"font-weight: bold;\">3.2&nbsp; &nbsp;中望软件2021年2D CAD产品发布情况</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20221012141113_21ca38d1395994c2.png\" /></p>\n<p>2021年开始，公司产品迭代速度加快，年内共完成4次产品新版发布。2021年7月发布的ZWCAD 2022对API、图形数据库、图形交互等都进行重构升级，实现开图速度提升40%，平移效率提升6倍，缩放效率提升2倍。在信创生态建设上，公司推出ZWCAD Linux版本，利用跨平台三维软光栅显示技术，成功解决8种信创操作系统和5种CPU架构环境下ZWCAD Linux版本打开DWG图纸时三维实体丢失问题。目前，ZWCAD Linux已成为信创工业软件的一面旗帜，API更加完善，同时也推出中望建筑Linux版和中望机械Linux版，推动各个专业应用向信创软硬件环境移植。</p>\n<p><span style=\"font-weight: bold;\">3.3&nbsp;&nbsp;中望软件2021年3D CAD产品发布情况</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20221012141318_08520a241f1ee22d.png\" /></p>\n<p>2021年，公司发布2022版ZW3D产品，在高质量曲面建模上取得重要突破，能够进行曲线G3高阶连续，实现对曲面的G2/G3连续性的支持。CAM方面，2022版ZW3D全机床仿真技术持续迭代，3轴粗加工刀轨计算速度得到显著提升。此外，公司也发布了面向信创市场的ZW3D Linux版本，能够实现从草图到加工方案的一体化三维工业设计，填补了当前信创市场无完整功能三维工业设计软件的空白。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、风险提示：</span>核心技术授权断供的风险；行业竞争加剧的风险；产品研发打磨不及预期。</p>\n<p>&nbsp;</p>",
+    "firstLetter": "ZWRJ",
+    "high": 68.45,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 66.13,
+    "marketValue": 11544427040.3,
+    "name": "中望软件",
+    "pctChg": -2.26,
+    "price": 66.51,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -8.1,
+    "recentChange": -3.86,
+    "remark": "国内领先CAD企业，已具备完善的2D/3D CAD产品线，核心产品拥有自主知识产权。",
+    "status": 1,
+    "stockId": "688083",
+    "stockLightspots": [
+      {
+        "bizKey": "31627",
+        "content": "进军中国工业软件的“无人区”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31627,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31628",
+        "content": "国产CAx龙头扬帆起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31628,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31629",
+        "content": "中望所归一体化，龙腾CAx执牛耳",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31629,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31630",
+        "content": "中望软件从海内外同行格局看CAX一体化发展战略",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31630,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31631",
+        "content": "中望软件冉冉升起的国产CAX软件领导者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31631,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31632",
+        "content": "中望软件国产CAx软件龙头，产品生态不断扩大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31632,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31633",
+        "content": "中望软件中国CAX软件龙头，国产化、云化双翼齐飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31633,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31634",
+        "content": "中望软件工业软件明珠现，国产头游望化龙",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31634,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31635",
+        "content": "国内CAx软件龙头，国产化机遇下迎来黄金发展期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31635,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31636",
+        "content": "国产CAD领导者，优质赛道的稀缺标的",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31636,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31637",
+        "content": "中望软件千亿潜力的国产CAx守望者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31637,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31638",
+        "content": "中国CAD龙头，国产替代可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31638,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31639",
+        "content": "工业软件龙头，迈向世界一流",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31639,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31640",
+        "content": "CAX领域稀缺龙头，深度受益国产替代红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31640,
+        "stockId": "688083",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31641",
+        "content": "中望软件国产CAD龙头，CAX战略成效初显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31641,
+        "stockId": "688083",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 15863.97
+  }
+}

@@ -129,56 +129,56 @@
     {
       "id": "3067bab0-ee1d-816a-8a98-f5f90f1a5ede",
       "name": "P1.phase2-T01 动态阈值profile与三段分层策略实现",
-      "status": "Todo",
+      "status": "done",
       "priority": "P0",
       "estimate": 2,
       "dod_checklist": [
         "单元测试",
         "代码审查"
       ],
-      "test_evidence": "",
+      "test_evidence": "phase2 T01 validated: semantic 30/100 passed; see tmp/phase2_execution_record_20260219.md",
       "dependencies": [],
       "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
       "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
       "phase": "phase 0",
       "url": "https://www.notion.so/P1-phase2-T01-profile-3067bab0ee1d816a8a98f5f90f1a5ede",
-      "last_edited": "2026-02-13T10:18:00.000Z"
+      "last_edited": "2026-02-19T06:05:00.000Z"
     },
     {
       "id": "3067bab0-ee1d-816a-afd3-f4fe3a072adf",
       "name": "P1.phase2-T02 候选窗口治理与候选爆炸比监控",
-      "status": "Todo",
+      "status": "done",
       "priority": "P0",
       "estimate": 2,
       "dod_checklist": [
         "单元测试",
         "性能测试"
       ],
-      "test_evidence": "",
+      "test_evidence": "phase2 T02 validated: candidate window/explosion/observability passed; see tmp/phase2_execution_record_20260219.md",
       "dependencies": [],
       "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
       "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
       "phase": "phase 0",
       "url": "https://www.notion.so/P1-phase2-T02-3067bab0ee1d816aafd3f4fe3a072adf",
-      "last_edited": "2026-02-13T10:18:00.000Z"
+      "last_edited": "2026-02-19T06:05:00.000Z"
     },
     {
       "id": "3067bab0-ee1d-8171-bbcf-cd7ba8577dcf",
       "name": "P1.phase2-T03 关键优化 移除generate_theme_data_only二次_match_categories推断",
-      "status": "Todo",
+      "status": "done",
       "priority": "P0",
       "estimate": 1,
       "dod_checklist": [
         "单元测试",
         "代码审查"
       ],
-      "test_evidence": "",
+      "test_evidence": "phase2 T03 validated: TC003A/B/C architecture guard passed; classification-source checks passed",
       "dependencies": [],
       "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
       "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
       "phase": "phase 0",
       "url": "https://www.notion.so/P1-phase2-T03-generate_theme_data_only-_match_categories-3067bab0ee1d8171bbcfcd7ba8577dcf",
-      "last_edited": "2026-02-13T10:18:00.000Z"
+      "last_edited": "2026-02-19T06:05:00.000Z"
     },
     {
       "id": "3067bab0-ee1d-8179-a889-ffe7de99d5f8",
@@ -237,20 +237,20 @@
     {
       "id": "3067bab0-ee1d-819b-a852-fdefb0cb79c6",
       "name": "P1.phase2-T04 更新ADR 分类真源复用策略并完成评审归档",
-      "status": "Todo",
+      "status": "done",
       "priority": "P1",
       "estimate": 1,
       "dod_checklist": [
         "文档更新",
         "代码审查"
       ],
-      "test_evidence": "",
+      "test_evidence": "phase2 T04 validated: AB 10% and ADR decision_ack checks passed",
       "dependencies": [],
       "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
       "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
       "phase": "phase 0",
       "url": "https://www.notion.so/P1-phase2-T04-ADR-3067bab0ee1d819ba852fdefb0cb79c6",
-      "last_edited": "2026-02-13T10:18:00.000Z"
+      "last_edited": "2026-02-19T06:05:00.000Z"
     },
     {
       "id": "3067bab0-ee1d-81ab-b8c5-f68ae8cafff0",
@@ -347,20 +347,20 @@
     {
       "id": "3067bab0-ee1d-81ed-a28d-dc996322aa58",
       "name": "P1.phase2-T05 76案例AB对比并输出分类一致性报告",
-      "status": "Todo",
+      "status": "done",
       "priority": "P0",
       "estimate": 2,
       "dod_checklist": [
         "集成测试",
         "文档更新"
       ],
-      "test_evidence": "",
+      "test_evidence": "phase2 T05 validated: triparty metrics and real DeepSeek evidence passed (30-sample standard)",
       "dependencies": [],
       "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
       "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
       "phase": "phase 0",
       "url": "https://www.notion.so/P1-phase2-T05-76-AB-3067bab0ee1d81eda28ddc996322aa58",
-      "last_edited": "2026-02-13T10:18:00.000Z"
+      "last_edited": "2026-02-19T06:05:00.000Z"
     },
     {
       "id": "3067bab0-ee1d-81f2-b574-dd948929d19e",
@@ -401,5 +401,5 @@
       "last_edited": "2026-02-18T02:06:00.000Z"
     }
   ],
-  "timestamp": "2026-02-18T15:31:11.714527"
+  "timestamp": "2026-02-19T19:08:15.053971"
 }

@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 101973273.16,
+    "changeCount": 0.18,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:00",
+    "detail": "<p><span style=\"font-weight: bold;\">1、营业收入构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20221115181912_fcca2b9059002267.png\" /></span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221115181922_1b9abb6a992dc9f7.dat\" /></span></p>\n<p>资料来自：2021年年度报告</p>\n<p>公司2021年全年营业收入同比下降9.23%，分行业来看，医药行业同比增加4.90%，母婴健康用品同比下降9.73%，医疗服务同比下降38.25%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、核心竞争力分析</span></p>\n<p><span style=\"font-weight: bold;\">儿童药</span></p>\n<p>专注儿童用药的全面创新公司拥有国际先进的&ldquo;口腔速溶膜剂&rdquo;、&ldquo;药物超细微粒制备&rdquo;及&ldquo;药粉微观形态结构检测&rdquo;三大技术平台，为公司打造国际级儿童药基地奠定了扎实的技术基础。公司大力推进该创新研究平台，致力于解决降低药物剂量、提升安全性等儿童制剂创新难题，研发、生产优质的儿童药物新制剂，打造中国儿童大健康产业的领军品牌。</p>\n<p><span style=\"font-weight: bold;\">母婴健康用品</span></p>\n<p>高新技术企业中山爱护作为国内母婴健康用品领军品牌，一直专注于母婴生活的每个细节，始终坚持为全球宝宝家庭提供优质的产品和专业的母婴护理指导，具有婴童纸尿裤类、特殊护理类、洗衣液类、免奶瓶果蔬清洗液、洗手消毒凝胶、消毒液、湿巾类、皮肤清洁类、粉类、夏季护理类、冬季护理类等完善的产品链规模。</p>\n<p><span style=\"font-weight: bold;\">医用口罩等医疗防护用品</span></p>\n<p>公司在海南及中山生产基地有医用口罩的生产及销售，公司医用口罩以其舒适度好、独立包装、携带方便、质量过硬等优势，受到市场的青睐，也是新冠状病毒疫情期间政府定点采购的口罩。公司在海南开始建设&ldquo;康芝&middot;海南(国际)医疗防护生产基地&rdquo;，该项目建成后，公司计划通过该项目建设，以利用海南自由贸易港的进出口税收政策等优势，进口全球优质的医疗耗材产品进行生产、加工、创新后，在满足国内生产生活和战略储备需要的同时，让高品质医疗耗材产品进军国际市场，塑造良好的公司及产品形象，提高公司的盈利能力。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、生殖医学及妇儿健康医疗服务</span></p>\n<p>自2018年度，公司通过收购间接持有云南九洲医院有限公司及昆明和万家妇产医院有限公司各51%股权，新增了生殖医学及妇儿健康医疗服务板块的业务。2021年6月18日、2021年6月18日及2021年6月29日，公司分别召开第五届董事会第十六次会议、第五届监事会第十三次会议及2020年度股东大会，审议通过了《关于公司出售广东康芝医院管理有限公司的100%股份暨间接出让云南九洲医院有限公司和昆明和万家妇产医院有限公司各51%股权的议案》。2021年7月31日已完成本次股权转让及全部交割手续，自本次全部交割手续完成后，公司不再持有康芝医院公司股权，康芝医院公司、九洲医院及和万家医院也将不再纳入公司合并报表范围核算。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、风险提示</span></p>\n<p>政策风险、经营风险</p>",
+    "firstLetter": "KZYY",
+    "high": 9.26,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 9.05,
+    "marketValue": 4118875919.55,
+    "name": "康芝药业",
+    "pctChg": 1.99,
+    "price": 9.23,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 4,
+    "recent60Change": -17.22,
+    "recentChange": -8.97,
+    "remark": "以儿童药、母婴健康用品、生殖医学及妇儿健康、医用口罩等医疗器械为主营业务的国内领先儿童大健康企业",
+    "status": 1,
+    "stockId": "300086",
+    "stockLightspots": [
+      {
+        "bizKey": "1148",
+        "content": "康芝药业深度报告-专注儿童大健康的复苏转型期黑马",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1148,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1149",
+        "content": "深耕第三终端,业绩恢复可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1149,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1150",
+        "content": "康芝药业同呼吸、共命运，加速外延战略布局的优秀儿童大健康龙头，给予“买入”",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1150,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1151",
+        "content": "打造儿童大健康产业的领军品牌",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1151,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1152",
+        "content": "强渠道搭载日益增多的品种,保持续增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1152,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1153",
+        "content": "2013年值得期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1153,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1154",
+        "content": "净利润部分来自非经常性收益,复苏在路上",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1154,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1155",
+        "content": "股权激励条件符合预期,一季度收入下滑",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1155,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1156",
+        "content": "康芝药业信达证券-康芝药业儿童大健康与精品战略成效初显-180502",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1156,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1157",
+        "content": "康芝药业专注儿科大健康,战略布局‘精准医疗‘",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1157,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1158",
+        "content": "康芝药业盐酸左西替利嗪注册获批,儿童药布局进一步完善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1158,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1159",
+        "content": "业绩快速增长，2015年或持续",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1159,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1160",
+        "content": "康芝药业员工持股计划彰显信心,外延式扩张可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1160,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1161",
+        "content": "康芝药业战略布局人工耳蜗，儿童药主业喜迎政策利好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1161,
+        "stockId": "300086",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1162",
+        "content": "短期业绩增速放缓，不改长期发展大逻辑",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1162,
+        "stockId": "300086",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:04:37",
+    "vol": 111154.03
+  }
+}

@@ -20,7 +20,7 @@
   - 契约治理（DecisionEnvelope 版本化）
   - 幂等与回放安全（duplicate-skip + durable cleanup）
   - 观测门禁（死信率、候选爆炸比、积压时长、real_call_ratio）
-  - 验证体系（76 案例、三方对比、10% 灰度、真实 DeepSeek）
+  - 验证体系（30 案例、三方对比、10% 灰度、真实 DeepSeek）
   - ADR 管理（关键架构决策与变更追溯）
 - 关键路径与不确定性：
   - 关键路径：路由收敛 -> 契约化 -> 幂等门禁 -> 动态阈值 -> 分类复用改造 -> 裁判灰度 -> 回放门禁
@@ -109,7 +109,7 @@
 #### DoD
 - [ ] 动态阈值策略完成并可切换
 - [ ] 分类复用策略落地（无二次推断）
-- [ ] 76案例对比报告产出
+- [ ] 30案例对比报告产出
 - [ ] 无新增 P0/P1 缺陷
 #### Acceptance Gate
 - 必跑命令：`pytest database_service/scripts/test_theme_processor.py -q`
@@ -122,7 +122,7 @@
 - 对歧义样本引入二阶段裁判，同时满足第12章验证体系约束。
 #### Scope
 - 粗筛后裁判链路（可开关、shadow 优先）。
-- 76 案例三方对比（优化系统 vs 基线纯聚类 vs 久赢恒丰标准）。
+- 30 案例三方对比（优化系统 vs 基线纯聚类 vs 久赢恒丰标准）。
 - 10% 灰度 + 真实 DeepSeek 调用门禁（`source_type=real`）。
 #### Out of Scope
 - 全量生产切流。
@@ -197,14 +197,16 @@
 | P1.phase2-T02 | 实施候选窗口治理（3~30）与爆炸比监控 | P1.phase2-T01 | 1.5人天 | 高 | 候选分布报表 | 单元测试,性能测试 |
 | P1.phase2-T03 | 关键优化：`generate_theme_data_only` 复用首阶段分类结果，移除 `_match_categories` 二次推断 | P1.phase2-T01 | 1人天 | 高 | 分类一致性回放测试 | 单元测试,代码审查 |
 | P1.phase2-T04 | 更新 ADR（分类真源复用决策）并完成设计评审归档 | P1.phase2-T03 | 0.5人天 | 中 | ADR 审批记录 | 文档更新,代码审查 |
-| P1.phase2-T05 | 76案例 A/B 对比（含分类一致性指标） | P1.phase2-T02 | 1.5人天 | 中 | A/B 报告 | 集成测试,文档更新 |
+| P1.phase2-T05 | 30案例 A/B 对比（含分类一致性指标） | P1.phase2-T02 | 1.5人天 | 中 | A/B 报告 | 集成测试,文档更新 |
+| P1.phase2-T06 | 分类关键词反向索引补全（`L2 <- L3(tags.keywords)`, `L1 <- L2(keywords)`） | P1.phase2-T03 | 1人天 | 中 | 关键词覆盖率与幂等性报告 | 单元测试,集成测试,文档更新 |
 
 ### WBS — P1.phase3
 | Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
 | --- | --- | --- | --- | --- | --- | --- |
 | P1.phase3-T01 | 定义二阶段 LLM 裁判触发条件与回退策略 | P1.phase2-T05 | 0.5人天 | 中 | 设计评审 | 文档更新,代码审查 |
-| P1.phase3-T02 | 裁判 shadow 接入（仅歧义样本）与超时回退 | P1.phase3-T01 | 1.5人天 | 高 | shadow 运行记录 | 单元测试,集成测试 |
+| P1.phase3-T02 | 裁判 shadow 接入（分类命中样本全量复核）与超时回退 | P1.phase3-T01 | 1.5人天 | 高 | shadow 运行记录 | 单元测试,集成测试 |
 | P1.phase3-T03 | 落地第12章验证体系：10%灰度、三方评估、真实调用证据链 | P1.phase3-T02 | 1.5人天 | 高 | 验收报告与证据包 | 集成测试,文档更新 |
+| P1.phase3-T03a | 补充 `source_type(real/mock)` 与质量标签门禁验证（PRD-P1-P3-R07） | P1.phase3-T03 | 0.5人天 | 中 | 门禁验证记录与审计样本 | 集成测试,文档更新 |
 | P1.phase3-T04 | 成本/时延/real_call_ratio 门禁配置与评审 | P1.phase3-T03 | 0.5人天 | 中 | Product Gate 记录 | 性能测试,文档更新 |
 
 ### WBS — P1.phase4

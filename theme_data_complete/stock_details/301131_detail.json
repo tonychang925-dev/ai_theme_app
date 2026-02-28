@@ -1,0 +1,44 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 38276546.97,
+    "changeCount": 0.8,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司介绍</span><br />公司自 1998 年成立以来专注于高分子材料领域，是国内较早具备完整的改性塑料研 发、生产和销售的企业。公司主要产品包括改性通用塑料、改性工程塑料、改性特种 工程塑料及其他高分子材料等产品。公司产品广泛应用于家用电器、汽车工业、电子 通信、医护用品等领域，主要客户包括美的、格力、苏泊尔、九阳、海信、格兰仕、 东芝、奥克斯、松下、丰田、长安、广汽、奇瑞、江淮、东风日产、通用五菱、雅 迪、普联技术、TOTO 等知名企业，公司产品获得了客户的广泛认可。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221107170454_7aeb86a8f7569822.png\" /><br />经过多年的研发和技术积累，公司已经建立了较为全面的产品线，覆盖 PP、ABS、 PC、PC/ABS、PBT、PET、HIPS、PPO、PPS 等及各类材料，能够实现抗染、抗静电、 导热、抗菌、阻燃、免喷涂、耐候、耐老化等多种功能。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221107170613_78a534ab2a098633.png\" /><br /><br /><span style=\"font-weight: bold;\">2、改性塑料行业市场容量巨大</span><br />我国规模以上工业企业的改性塑料产量从 2010 年 705 万吨增长至 2019 年的 1955 万 吨，复合年增长率达到 12.00%，同期合成树脂及共聚物产量的复合年增长率为 9.13%，改性化率由 2010 年的 16.20%增长至 2019 年的 20.40%。改性塑料产品具备明显的&ldquo;中间产品&rdquo;特征，广泛应用于家电、汽车、电子电器、 医疗卫生等不同细分领域，并随着下游细分市场需求的不断提升，应用比例相应提高。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20221107171101_88bbcc7d706cf656.png\" /><br /><br /><span style=\"font-weight: bold;\">3、公司业绩介绍</span><br />2018-2021 年公司的主营业务收入主要来自改性塑料产品的生产和销售，改性塑料的 销售收入占各期主营业务收入的比例分别为 92.11%、90.88%、93.21%和 95.88%。其 中，改性 PP 由于改性方向众多，改性后性能丰富，应用广泛，是公司最主要的产品 系列，各期的销售收入占比为 59.10%、63.67%、61.32%和 52.96%。此外，公司为提 高存货管理效率，有效应对上游原料的市场变化，以销售订单和安全库存为中心对库 存原料进行动态管理，根据市场情况以贸易的形式处置少量闲余原材料，以快速回笼 资金，提高资金运转效率，降低原材料积压的风险，2018-2021 年公司原料贸易占当 期主营业务收入的比例分别为 7.89%、9.12%、6.79%和 4.12%。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20221107170706_3ef293e8d4c65ff1.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20221107170715_d681960524a06387.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20221107170724_55bed46006936086.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20221107170732_dcb0e75ed7cfd41e.png\" /><br /><br /><span style=\"font-weight: bold;\">4、募投项目为公司增长奠定基础</span><br />根据公司公告的项目可行性分析，华东生产基地二期 建设项目达产后预计新增改性 PP、改性 PC/ABS、改性 PBT 及其他改性塑料产品产能 10 万吨，投资总额 2.10 亿元，预计 2024 年底投产，完全投产后预计增加年均销售收 入 12 亿元，项目税后内部收益率为 18.82%，税后静态投资回收期为 7.83 年；华南生 产基地二期建设项目达产后预计新增改性 PP、改性 PC/ABS、改性 PBT 及其他改性塑 料产品产能 5 万吨，投资总额 8615 万元，预计 2022 年底投产，完全投产后预计增加 年均销售收入 6 亿元，项目税后内部收益率为 20.49%，税后静态投资回收期为 7.44 年。<br /><br /><span style=\"font-weight: bold;\">5、风险提示</span><br />宏观经济变化风险；营运资金周转风险；原材料价格大幅波动</p>",
+    "firstLetter": "JSL",
+    "high": 48.54,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 47.74,
+    "marketValue": 2437801850.88,
+    "name": "聚赛龙",
+    "pctChg": 1.68,
+    "price": 48.32,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -0.8,
+    "recentChange": 0.88,
+    "remark": "国内改性塑料领域的领先企业，建立了较为全面的产品线",
+    "status": 1,
+    "stockId": "301131",
+    "stockLightspots": [
+      {
+        "bizKey": "11426",
+        "content": "聚赛龙改性塑料领先企业，募投项目为增长奠定基础",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11426,
+        "stockId": "301131",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:27",
+    "vol": 7931.09
+  }
+}

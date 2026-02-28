@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "phase": "P1.phase3",
+  "checked_at": "2026-02-19T18:10:00Z",
+  "checks": [
+    {
+      "name": "id_uniqueness",
+      "passed": true,
+      "severity": "error",
+      "details": "Task IDs unique across 4 phase3 tasks."
+    },
+    {
+      "name": "traceability_complete",
+      "passed": true,
+      "severity": "error",
+      "details": "All tasks mapped to requirement_ids, acceptance_ids, test_case_ids and commands."
+    },
+    {
+      "name": "test_command_ready",
+      "passed": true,
+      "severity": "error",
+      "details": "All commands use .venv/bin/python and point to phase3 behavior test entry."
+    },
+    {
+      "name": "rollback_defined",
+      "passed": true,
+      "severity": "warn",
+      "details": "Each task includes trigger + rollback actions."
+    },
+    {
+      "name": "schema_valid",
+      "passed": true,
+      "severity": "error",
+      "details": "Artifacts validated against local feature schemas and validator script."
+    }
+  ],
+  "gate_ready": true
+}

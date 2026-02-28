@@ -1,0 +1,219 @@
+{
+  "generated_at": "2026-02-20T12:16:54.630750",
+  "sample_size": 13,
+  "mode": "phase3_semantic_vs_llm_semantic_plus_llm",
+  "ground_truth_source": "evaluate_service/data/raw/validation_dataset.json",
+  "events_source": "evaluate_service/data/raw/ai_processed_events.json",
+  "auto_cleanup_between_runs": true,
+  "cleanup_between_runs_result": {
+    "deleted_themes": 0,
+    "deleted_categories": 0
+  },
+  "semantic_only": {
+    "mode": "semantic_only",
+    "sample_size": 13,
+    "success": true,
+    "summary": {
+      "decision_total": 13,
+      "update_theme_decisions": 2,
+      "create_new_theme_decisions": 0,
+      "concept_hierarchy_created_count": 0,
+      "accuracy_rule": 0.0,
+      "accuracy_rule_passed_count": 0,
+      "ground_truth_covered": 2,
+      "ground_truth_hit_count": 0,
+      "ground_truth_accuracy": 0.0,
+      "db_new_theme_count": 0,
+      "db_new_category_count": 0
+    },
+    "db_delta": {
+      "new_theme_codes": [],
+      "new_category_codes": [],
+      "category_code_column": "category_code"
+    },
+    "stream_stats": {
+      "stream:events:major": 2,
+      "stream:events:normal": 11,
+      "stream:events:pending": 11,
+      "stream:events:decision": 13,
+      "stream:themes:updates": 2,
+      "stream:dead:letter": 0
+    },
+    "t03_validation": {
+      "create_new_theme_decisions": 0,
+      "classification_source_upstream_count": 0,
+      "classification_source_ai_keywords_count": 0,
+      "concept_hierarchy_created_count": 0,
+      "all_create_decisions_have_classification_source": true
+    },
+    "t04_validation": {
+      "publish_clustering_decision": true,
+      "pending_written": true,
+      "pending_matches_publish_decision_id": true,
+      "pending_trace_id_present": true,
+      "decision_ack_verified": true,
+      "decision_executor_pending_count": 0
+    },
+    "update_theme_mappings": [
+      {
+        "event_id": "event_20260203110928_464c72",
+        "event_title": "日本停止向中国出口光刻胶进展引发市场关注",
+        "event_core_concept": "日本停止向中国出口光刻胶",
+        "matched_theme_id": "INVEST_SW_270104",
+        "matched_theme_name": "数字芯片设计",
+        "match_confidence": null,
+        "guardrail_overlap_count": 0,
+        "algorithm_used": null,
+        "match_reason": null,
+        "accuracy_rule_passed": false
+      },
+      {
+        "event_id": "event_20260203111035_e585df",
+        "event_title": "数据中心芯片需求超预期增长进展引发市场关注",
+        "event_core_concept": "数据中心芯片需求超预期增长",
+        "matched_theme_id": "INVEST_SW_270104",
+        "matched_theme_name": "数字芯片设计",
+        "match_confidence": null,
+        "guardrail_overlap_count": 0,
+        "algorithm_used": null,
+        "match_reason": null,
+        "accuracy_rule_passed": false
+      }
+    ],
+    "ground_truth_comparison": [
+      {
+        "event_id": "event_20260203110928_464c72",
+        "event_title": "日本停止向中国出口光刻胶进展引发市场关注",
+        "matched_theme_name": "数字芯片设计",
+        "ground_truth_themes": [
+          "光刻胶"
+        ],
+        "ground_truth_theme_group": "光刻胶",
+        "ground_truth_passed": false,
+        "accuracy_rule_passed": false
+      },
+      {
+        "event_id": "event_20260203111035_e585df",
+        "event_title": "数据中心芯片需求超预期增长进展引发市场关注",
+        "matched_theme_name": "数字芯片设计",
+        "ground_truth_themes": [
+          "液冷数据中心"
+        ],
+        "ground_truth_theme_group": "液冷数据中心",
+        "ground_truth_passed": false,
+        "accuracy_rule_passed": false
+      }
+    ]
+  },
+  "semantic_plus_llm": {
+    "mode": "semantic_plus_llm",
+    "sample_size": 13,
+    "success": true,
+    "summary": {
+      "decision_total": 13,
+      "update_theme_decisions": 1,
+      "create_new_theme_decisions": 1,
+      "concept_hierarchy_created_count": 1,
+      "accuracy_rule": 0.0,
+      "accuracy_rule_passed_count": 0,
+      "ground_truth_covered": 1,
+      "ground_truth_hit_count": 0,
+      "ground_truth_accuracy": 0.0,
+      "db_new_theme_count": 1,
+      "db_new_category_count": 2
+    },
+    "db_delta": {
+      "new_theme_codes": [
+        "TEST_CONCEPT_260220121606_990048"
+      ],
+      "new_category_codes": [
+        "CT0001",
+        "CT0001_C01"
+      ],
+      "category_code_column": "category_code"
+    },
+    "stream_stats": {
+      "stream:events:major": 2,
+      "stream:events:normal": 11,
+      "stream:events:pending": 11,
+      "stream:events:decision": 13,
+      "stream:themes:updates": 2,
+      "stream:dead:letter": 0
+    },
+    "t03_validation": {
+      "create_new_theme_decisions": 1,
+      "classification_source_upstream_count": 0,
+      "classification_source_ai_keywords_count": 1,
+      "concept_hierarchy_created_count": 1,
+      "all_create_decisions_have_classification_source": true
+    },
+    "t04_validation": {
+      "publish_clustering_decision": true,
+      "pending_written": true,
+      "pending_matches_publish_decision_id": true,
+      "pending_trace_id_present": true,
+      "decision_ack_verified": true,
+      "decision_executor_pending_count": 0
+    },
+    "update_theme_mappings": [
+      {
+        "event_id": "event_20260203111035_e585df",
+        "event_title": "数据中心芯片需求超预期增长进展引发市场关注",
+        "event_core_concept": "数据中心芯片需求超预期增长",
+        "matched_theme_id": "INVEST_SW_270104",
+        "matched_theme_name": "数字芯片设计",
+        "match_confidence": null,
+        "guardrail_overlap_count": 0,
+        "algorithm_used": null,
+        "match_reason": null,
+        "accuracy_rule_passed": false
+      }
+    ],
+    "ground_truth_comparison": [
+      {
+        "event_id": "event_20260203111035_e585df",
+        "event_title": "数据中心芯片需求超预期增长进展引发市场关注",
+        "matched_theme_name": "数字芯片设计",
+        "ground_truth_themes": [
+          "液冷数据中心"
+        ],
+        "ground_truth_theme_group": "液冷数据中心",
+        "ground_truth_passed": false,
+        "accuracy_rule_passed": false
+      }
+    ]
+  },
+  "ab_comparison": {
+    "ground_truth_accuracy": {
+      "semantic_only": 0.0,
+      "semantic_plus_llm": 0.0,
+      "delta": 0.0
+    },
+    "accuracy_rule": {
+      "semantic_only": 0.0,
+      "semantic_plus_llm": 0.0,
+      "delta": 0.0
+    },
+    "db_new_theme_count": {
+      "semantic_only": 0,
+      "semantic_plus_llm": 1,
+      "delta": 1
+    },
+    "db_new_category_count": {
+      "semantic_only": 0,
+      "semantic_plus_llm": 2,
+      "delta": 2
+    },
+    "create_new_theme_decisions": {
+      "semantic_only": 0,
+      "semantic_plus_llm": 1,
+      "delta": 1
+    },
+    "update_theme_decisions": {
+      "semantic_only": 2,
+      "semantic_plus_llm": 1,
+      "delta": -1
+    }
+  },
+  "baseline_report": "/Users/admin/Desktop/ai_theme_app/tmp/phase3_semantic_only_mismatch13_rerun.json"
+}

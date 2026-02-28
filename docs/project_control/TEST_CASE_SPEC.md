@@ -58,10 +58,11 @@
 | ARCH-P1-12-R04 | 验收必须真实 DeepSeek（非 mock） | P0 | TC-P1-P2-RT-002, TC-P1-ARCH12-ST-003 |
 | ARCH-P1-12-R05 | 固定测试入口与环境（test_theme_processor.py + py3.13 + theme_matcher_env） | P1 | TC-P1-ARCH12-ST-001 |
 | ARCH-P1-12-R06 | 指标公式可复算与报告完整性 | P1 | TC-P1-ARCH12-ST-002 |
-| PRD-P1-P3-R01/R02/R06 | 最终裁决必经链路 + 10%灰度判定比例 | P0 | TC-P1-P3-IT-001, TC-P1-P3-ST-001 |
+| PRD-P1-P3-R01/R02/R06 | 最终裁决必经链路 + 分类命中全量复核 + 10%灰度判定比例 | P0 | TC-P1-P3-IT-001, TC-P1-P3-ST-001 |
 | PRD-P1-P3-R03 | 超时回退 | P0 | TC-P1-P3-ET-001 |
 | PRD-P1-P3-R08/R09 | model不可用降级 + 熔断预算 | P1 | TC-P1-P3-ET-002 |
 | PRD-P1-P3-R04/R05 | 最终裁决统计与报告 | P1 | TC-P1-P3-RT-001 |
+| PRD-P1-P3-R07 | 裁判输入必须携带 source_type 与质量标签，mock 不参与生产裁判 | P1 | TC-P1-P3-ST-002, TC-P1-P3-ET-003 |
 | PRD-P1-P3-R10 | Qwen2.5 + llama.cpp 模型栈与调用证据 | P0 | TC-P1-P3-ST-001 |
 | PRD-P1-P4-R01/R08 | pending清理与durable success绑定+证据三元组 | P0 | TC-P1-P4-IT-001 |
 | PRD-P1-P4-R07 | 题材代码生成可重放（去时间戳） | P0 | TC-P1-P4-UT-001, TC-P1-P4-RT-001 |
@@ -782,141 +783,9 @@ related_requirements: ARCH-P1-12-R04, ARCH-P1-12-R05
 
 ### Phase P1.phase3 — LLM 最终裁决落地（Qwen2.5 + llama.cpp）
 
----
-id: TC-P1-P3-IT-001
-module: LLM Final Judge Routing
-level: 集成测试
-type: 功能测试
-priority: P0
-author: Codex
-created: 2026-02-13
-updated: 2026-02-13
-related_requirements: PRD-P1-P3-R01, PRD-P1-P3-R02
----
-
-# 最终裁决必经链路（语义粗筛 -> LLM）
-
-## 1. 测试目标
-验证两阶段顺序固定，且验收流量内最终落库结果必须来自 LLM 裁判。
-
-## 2. 失败判定标准
-- 绕过 LLM 裁判直接落库。
-- 顺序不是“语义粗筛 -> LLM 最终裁决”。
-
----
-id: TC-P1-P3-ET-001
-module: Arbiter Timeout Fallback
-level: 边缘测试
-type: 异常测试
-priority: P0
-author: Codex
-created: 2026-02-13
-updated: 2026-02-13
-related_requirements: PRD-P1-P3-R03
----
-
-# 裁判超时回退不阻塞主链路
-
-## 1. 测试目标
-验证超时后返回阶段一结果并记录 `timeout_fallback`。
-
-## 2. 失败判定标准
-- 超时未回退。
-- 主链路阻塞。
-
----
-id: TC-P1-P3-ST-001
-module: LLM Final Judge Gate
-level: 系统测试
-type: 功能测试
-priority: P0
-author: Codex
-created: 2026-02-13
-updated: 2026-02-13
-related_requirements: AG-06, PRD-P1-P3-R06, PRD-P1-P3-R10
----
-
-# 10%灰度最终裁决比例与模型栈证据
-
-## 1. 测试目标
-验证 10% 灰度下 `llm_final_judged_ratio >= 95%`，且裁判模型栈固定为 `Qwen2.5 + llama.cpp` 并具备审计证据。
-
-## 2. 前置条件
-- 验收流量已按 10% 分桶。
-- 裁判调用日志可查询 `model_name/request_id/timestamp`。
-
-## 3. 测试步骤
-| 步骤 | 操作 | 预期结果 | 实际结果 | 状态 |
-| --- | --- | --- | --- | --- |
-| 1 | 执行 10% 灰度批次 | 成功产出裁判统计 | 待执行 | 待执行 |
-| 2 | 统计 `llm_final_judged_ratio` | 比例 >= 95% | 待执行 | 待执行 |
-| 3 | 抽样审计调用证据 | 模型栈为 Qwen2.5 + llama.cpp，证据完整 | 待执行 | 待执行 |
-
-## 4. 失败判定标准
-- `llm_final_judged_ratio < 95%`。
-- 模型栈不符合 `Qwen2.5 + llama.cpp`。
-- 缺失调用证据字段。
-
----
-id: TC-P1-P3-ET-002
-module: Model Unavailable Circuit Breaker
-level: 边缘测试
-type: 异常测试
-priority: P1
-author: Codex
-created: 2026-02-13
-updated: 2026-02-13
-related_requirements: PRD-P1-P3-R08, PRD-P1-P3-R09
----
-
-# ModelService 不可用降级与熔断
-
-## 1. 测试目标
-验证 model 服务故障时明确降级、记录原因码并触发分钟级熔断保护。
-
-## 2. 失败判定标准
-- 静默回退无原因码。
-- 熔断窗口不生效。
-
----
-id: TC-P1-P3-PT-001
-module: Arbiter Latency Budget
-level: 性能测试
-type: 性能测试
-priority: P0
-author: Codex
-created: 2026-02-13
-updated: 2026-02-13
-related_requirements: AG-06, PRD-P1-P3-R03
----
-
-# 裁判附加时延预算
-
-## 1. 测试目标
-验证 P95 附加时延 < 800ms。
-
-## 2. 失败判定标准
-- P95 >= 800ms。
-
----
-id: TC-P1-P3-RT-001
-module: Final Judge Report Regression
-level: 回归测试
-type: 回归测试
-priority: P1
-author: Codex
-created: 2026-02-13
-updated: 2026-02-13
-related_requirements: PRD-P1-P3-R04, PRD-P1-P3-R05
----
-
-# 最终裁决报告完整性回归
-
-## 1. 测试目标
-验证最终裁决报告含精度/时延/成本/误判归因，并可与基线比对。
-
-## 2. 失败判定标准
-- 报告缺关键维度。
+> 真源文件：`docs/project_control/TEST_CASE_SPEC_P1.phase3.md`
+>
+> 说明：本总表不再维护 phase3 详细用例内容，避免双份漂移；请直接在 phase3 专项文件维护与验收。
 
 
 ### Phase P1.phase4 — 回放安全与发布门禁
@@ -1142,7 +1011,7 @@ related_requirements: ARCH-P1-12-R04
 | P1.phase2 | ACC-P1-P2-07 | TC-P1-P2-RT-002 |
 | P1.phase3 | ACC-P1-P3-01 | TC-P1-P3-IT-001, TC-P1-P3-ST-001 |
 | P1.phase3 | ACC-P1-P3-02 | TC-P1-P3-ET-001 |
-| P1.phase3 | ACC-P1-P3-03 | TC-P1-P3-ET-002 |
+| P1.phase3 | ACC-P1-P3-03 | TC-P1-P3-ET-002, TC-P1-P3-ST-002, TC-P1-P3-ET-003 |
 | P1.phase4 | ACC-P1-P4-01 | TC-P1-P4-RT-001 |
 | P1.phase4 | ACC-P1-P4-02 | TC-P1-P4-IT-001 |
 | P1.phase4 | ACC-P1-P4-03 | TC-P1-P4-ST-001 |

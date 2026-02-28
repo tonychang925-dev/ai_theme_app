@@ -1,0 +1,71 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 31394566.0,
+    "changeCount": 0.13,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营业务收入构成</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221121171802_f29395cdf7fbe897.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221121171815_aabb13624f5f966e.png\" /></p>\n<p>资料来源：公司2021年年度报告</p>\n<p>2021年度，公司实现营业总收入46,313.84万元，比上年同期增加35.58%，主要增加了产品销售、运维服务和系统集成及其他收入。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.股权结构</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20221121172011_e198c64f363bfd64.png\" /></p>\n<p>资料来源：公司2021年年度报告</p>\n<p>公司控股股东为北京中邮资产管理有限公司，实际控制人为中国邮政集团。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.主营业务内容</span></p>\n<p><span style=\"font-weight: bold;\">平台运营类业务：</span>2021年，公司大力推广研发+运营模式，已开发了车管平台、物资平台、聚合支付平台等多个平台运营项目。</p>\n<p><span style=\"font-weight: bold;\">软件开发业务：</span>在传统邮务板块完成了集邮选题、邮政政务平台二期等多个项目；<span style=\"font-weight: bold;\">金融板块普惠金融项目</span>推广到福建、上海分行，成功开发了云南、四川等省行的中平迁移项目；寄递板块加大省级寄递市场的开拓，策划了数字化中心局、国际商业渠道、同城运营等项目。</p>\n<p><span style=\"font-weight: bold;\">统集成类业务：</span>智能安防加快向软硬件一体化解决方案转型，入围了邮储总行安防设备项目，推进湖南四类金库升级改造工程。</p>\n<p><span style=\"font-weight: bold;\">代理产品类业务：</span>加强与优质上游厂商的合作，突出国产替代，不断<span style=\"font-weight: bold;\">提升国产化核心IT设备及高端设备的维保服务</span>，在稳固集团代理的基础上，在<span style=\"font-weight: bold;\">邮储总行代理</span>、<span style=\"font-weight: bold;\">国产信创产品销售</span>方面实现突破。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.核心竞争力</span></p>\n<p><span style=\"font-weight: bold;\">行业资质：</span>公司通过了<span style=\"font-weight: bold;\">CMMI5软件能力成熟度模型</span>、ISO9001质量体系、ISO14001环境体系、ISO27001信息安全管理资质、ISO22301业务连续性管理体系、ISO20000信息技术服务管理体系、ISO45001职业健康安全管理体系等认证，获得<span style=\"font-weight: bold;\">企业信用等级AAA</span>证书</p>\n<p><span style=\"font-weight: bold;\">成果转化：</span>公司加快了<span style=\"font-weight: bold;\">核心技术</span>、<span style=\"font-weight: bold;\">核心产品</span>的<span style=\"font-weight: bold;\">研发和成果转化</span>，加大了<span style=\"font-weight: bold;\">自主研发</span>的产品、系统平台在外行业的推广力度。<span style=\"font-weight: bold;\">北斗车载终端产品</span>已推广到<span style=\"font-weight: bold;\">中国重汽、一汽解放</span>等多家车厂；为外部公司提供<span style=\"font-weight: bold;\">IDC一体化建设解决方案</span>并负责建设，集成了公司自研的数据中台、研发运维一体化平台等软件产品和<span style=\"font-weight: bold;\">高性能闪存等硬件产品</span>。</p>\n<p><span style=\"font-weight: bold;\">研发能力：</span>公司持续加大科研投入，引进技术人员140人，公司技术人员队伍已达380人，其中<span style=\"font-weight: bold;\">研发人员298人，占比48%</span>，公司整体科技研发实力逐步提升。32项科研成果取得了软件著作权。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5.产销情况</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20221121174837_a2ef6cfbaffbd59d.png\" /></p>\n<p>资料来源：公司2021年年度报告</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6.主要客户销售情况</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20221121174907_7e65dcd3119301e6.png\" /></p>\n<p>资料来源：公司2021年年度报告</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">7.风险提示</span></p>\n<p>业务结构还没有达到预期目标;市场拓展能力亟待加强;在科技赋能重点领域的服务能力应快速加强;缺少技术领军和核心人才</p>",
+    "firstLetter": "XYKJ",
+    "high": 13.9,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 13.6,
+    "marketValue": 2211491100.0,
+    "name": "湘邮科技",
+    "pctChg": 0.95,
+    "price": 13.86,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": -18.76,
+    "recentChange": -19.28,
+    "remark": "中国邮政下属的软件和信息服务公司",
+    "status": 1,
+    "stockId": "600476",
+    "stockLightspots": [
+      {
+        "bizKey": "16187",
+        "content": "湘邮科技经营业绩逐步改善，资产注入值得期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16187,
+        "stockId": "600476",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16188",
+        "content": "湘邮科技管理层空降或激活公司资本运作平台属性",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16188,
+        "stockId": "600476",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16189",
+        "content": "业绩符合预期 资产整合预期升温",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16189,
+        "stockId": "600476",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16190",
+        "content": "业绩符合预期 实施总部大客户战略",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16190,
+        "stockId": "600476",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 22757.0
+  }
+}

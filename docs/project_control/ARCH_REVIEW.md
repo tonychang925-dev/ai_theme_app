@@ -151,6 +151,9 @@
 ### 4.2 匹配与裁判目标
 - 第一阶段：事件级动态阈值 + 候选窗口治理（3~30） + LLM 最终裁决（Qwen2.5 + llama.cpp）落地。
 - 决策顺序固定：`语义粗筛` 仅负责召回候选，最终是否匹配必须由 LLM 裁判给出可审计结论。
+- 复核覆盖固定：分类命中样本必须全量进入 LLM 复核（不允许仅歧义样本复核）。
+- 人工终审兜底：`category_uncertain/abstain` 与门禁异常样本进入 `pending_manual_review`，由分析师审批后回写 `events:decision`。
+- 执行策略采用动态2/8原则（比喻）：`manual_review_rate` 动态调节，不写死固定比例。
 
 ### 4.3 执行与回放目标
 - 幂等执行：决策执行前必检 `idempotency_key`。
@@ -205,10 +208,12 @@
 ### 5.5 P1.phase3（LLM最终裁决落地：Qwen2.5 + llama.cpp）
 - 变更
   - 固化 `Qwen2.5 + llama.cpp` 为最终裁决链路；语义匹配结果不可直接作为最终决策。
+  - 分类命中样本全量复核；灰度仅控制“采纳比例”，不控制“复核调用覆盖率”。
+  - 对不确定样本落 `pending_manual_review`，分析师终审后回写决策再执行。
   - 第一阶段默认 10% 灰度切流，满足门槛后逐步扩大；全过程必须保留 real-call 证据。
   - 超时/预算/熔断保护，失败走受控降级并纳入门禁预算（不可静默通过）。
 - 风险下降：R7/R10/R14
-- 回滚：从“强制最终裁决”回退到“仅对歧义样本强制裁判”，并触发发布阻断评审。
+- 回滚：从“强制最终裁决落库”回退到“全量复核但仅shadow不采纳”，并触发发布阻断评审。
 
 ### 5.6 P1.phase4（回放安全与发布门禁）
 - 变更
@@ -241,7 +246,9 @@
 ### P1.phase3：LLM 最终裁决（Qwen2.5 + llama.cpp）
 - 验收门槛
   - `语义粗筛 -> LLM最终裁决` 顺序固定，未裁判样本不得进入最终落库
+  - 分类命中样本 `judge_full_review_ratio = 100%`
   - 10% 灰度下 `llm_final_judged_ratio >= 95%`
+  - `manual_review_rate` 按质量门禁动态调节（非固定比例）
   - 超时回退可验证且在失败预算内
   - 76 案例三方评估达标（题材数8~12，质量指标不低于基线）
 
@@ -326,3 +333,67 @@
 - 决策：第一阶段必须将 LLM 裁判（Qwen2.5 + llama.cpp）作为最终裁决必经链路，向量层仅作候选召回。
 - 代价：引入模型调用时延、成本与运维复杂度；需建设熔断/超时/预算保护。
 - 兼容性：保留受控降级路径，但降级结果不得绕过门禁直接作为“通过验收”的最终结果。
+
+### ADR-013：分类命中后全量 LLM 复核（禁止仅歧义触发）
+- 现状不足：仅歧义触发会漏掉“高相似但语义错配”样本。
+- 决策：分类命中样本 `judge_full_review_ratio=100%`；灰度仅控制采纳比例，不控制复核覆盖率。
+- 代价：模型调用量与时延成本上升，需并发池/缓存/熔断保护。
+- 兼容性：允许受控回退 stage1，但必须附 `timeout_fallback/model_unavailable` 原因码。
+
+### ADR-014：人工终审兜底机制（pending_manual_review）
+- 现状不足：LLM 不确定样本无统一人工终审入口，可能误自动落库。
+- 决策：引入 `pending_manual_review` 队列；分析师审批后回写 `events:decision` 再执行。
+- 代价：引入人工链路与处理时延。
+- 兼容性：动态 2/8（比喻）策略，不写死固定人工比例。
+
+### 7.1 ADR-013/014 最小实现清单（开发执行版）
+
+1. 接口与服务
+- 新增/扩展 `FinalJudgeOrchestrator`：对分类命中样本全量复核并输出统一裁决对象。
+- 新增/扩展 `LLMThemeArbiterClient`：返回 `decision/confidence/request_id/model_name/timestamp`。
+- 新增/扩展 `ArbiterGovernanceGuard`：输出 `manual_review_rate` 与门禁结论。
+- 新增 `ManualReviewBridge`（可在 processor 层实现）：接收人工审批回写并转为标准 decision。
+
+2. 消息与字段契约
+- Decision 侧新增字段：`judge_source,judge_applied,fallback_reason,arbiter_mode,review_status,llm_suggestion,review_reason,reviewer_id`。
+- 必填审计字段：`trace_id,decision_id,request_id,model_name,timestamp,source_type`。
+- 人工终审状态：`review_status in {pending_manual,approved,rejected}`。
+
+3. 流转与动作映射
+- 机器不确定样本（`abstain/category_uncertain`）统一写入 `pending_manual_review`。
+- 人工审批后回写 `events:decision`：
+  - `approve_update -> update_theme`
+  - `approve_create -> create_new_theme`
+  - `approve_cluster -> publish_clustering`
+  - `reject_drop -> drop_event`
+
+4. 门禁与指标
+- 覆盖率门禁：`judge_full_review_ratio = 100%`（分类命中样本）。
+- 质量门禁：`llm_final_judged_ratio >= 95%`（10%灰度）。
+- 运行门禁：`arbiter_p95_latency < 800ms`，超预算触发降级与告警。
+- 人工策略指标：`manual_review_rate,false_positive_rate,false_no_match_rate`（动态调节，不固定阈值）。
+
+5. 最小测试映射
+- `TC-P1-P3-IT-001`：链路顺序 + 全量复核覆盖。
+- `TC-P1-P3-ET-001`：超时回退不阻塞。
+- `TC-P1-P3-ET-002`：不可用降级 + 熔断。
+- `TC-P1-P3-ST-001`：`judge_full_review_ratio=100%` + `llm_final_judged_ratio>=95%`。
+- `TC-P1-P3-PT-001`：时延预算。
+- `TC-P1-P3-RT-001`：报告维度与审计可追溯性。
+
+### 7.2 P1.phase3 实现任务拆分表（T01~T04）
+
+| WBS Task | 子任务ID | 实施内容 | 主要产出（路径） | 依赖 | 测试映射 | 完成判定（DoD） |
+| --- | --- | --- | --- | --- | --- | --- |
+| P1.phase3-T01 | T01-S01 | 建立“分类命中 -> 全量LLM复核”编排规则（替代仅歧义触发） | `theme_service/services/theme_service.py`、`database_service/streams/handlers/theme_processor.py` | phase2 分类真源复用 | TC-P1-P3-IT-001 | 分类命中样本 `judge_full_review_ratio=100%` 且链路顺序断言通过 |
+| P1.phase3-T01 | T01-S02 | 定义复核契约与原因码（`fallback_reason/judge_source`） | `database_service/streams/handlers/DecisionExecutor.py`、契约校验逻辑 | T01-S01 | TC-P1-P3-IT-001, TC-P1-P3-ET-001 | 决策消息包含新增字段并通过 v1 校验 |
+| P1.phase3-T02 | T02-S01 | 接入 `LLMThemeArbiterClient`（Qwen2.5+llama.cpp）与调用审计 | `theme_service/services/` | T01-S02 | TC-P1-P3-ST-001 | 审计字段 `request_id/model_name/timestamp/source_type` 完整 |
+| P1.phase3-T02 | T02-S02 | 实现超时回退与不可用熔断（fail-close） | `theme_service/services/`、`database_service/streams/handlers/theme_processor.py` | T02-S01 | TC-P1-P3-ET-001, TC-P1-P3-ET-002 | 超时与不可用均触发受控降级，原因码可追溯 |
+| P1.phase3-T03 | T03-S01 | 实现动态2/8调节与人工终审分流（`pending_manual_review`） | `database_service/streams/handlers/theme_processor.py`、前端回写契约文档 | T02-S02 | TC-P1-P3-ST-001, TC-P1-P3-RT-001 | 可输出 `manual_review_rate` 且不确定样本进入人工队列 |
+| P1.phase3-T03 | T03-S02 | 构建 `FinalJudgeEvidenceCollector` 报告聚合 | `database_service/scripts/`、`docs/project_control/reports/phase-P1.phase3.md` | T03-S01 | TC-P1-P3-RT-001 | 报告包含精度/时延/成本/误判归因及可追溯索引 |
+| P1.phase3-T04 | T04-S01 | 门禁配置化（ratio/latency/cost/real_call/manual_review） | `theme_service/services/`、配置文件 | T03-S02 | TC-P1-P3-PT-001, TC-P1-P3-ST-001 | 门禁阈值可配置，失败触发降级与告警 |
+| P1.phase3-T04 | T04-S02 | 发布前验证脚本与绝对路径测试命令固化 | `docs/project_control/PHASE_CONTRACT_P1.phase3.md`、`database_service/tests/streams/test_phase3_behavior_tests.py` | T04-S01 | 全部 phase3 TC | 绝对路径命令可直接执行，测试证据与任务状态可对账 |
+
+实施顺序建议（串并行）：
+- 串行主线：`T01-S01 -> T01-S02 -> T02-S01 -> T02-S02 -> T03-S01 -> T03-S02 -> T04-S01 -> T04-S02`
+- 可并行：`T03-S02` 可在 `T03-S01` 接口冻结后并行推进；`T04-S01` 可与报告聚合联调并行。

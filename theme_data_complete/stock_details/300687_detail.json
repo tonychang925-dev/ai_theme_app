@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 233980667.87,
+    "changeCount": 0.24,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>公司主要包括泛 ERP（管理软件）、智能制造两大产品群，打造全方位数字化管理 及智能制造解决方案。</p>\n<p>（1）泛 ERP（管理软件）：主要包含核心 ERP 产品以及数字化中台产品，是一系列帮助企业管 理者管理业务流程，优化经营运作，提高工作效率的信息化及数字化软件平 台与工具。&nbsp;</p>\n<p>（2）智能制造：主要包含赛意自主研发的制造运营一体化的工业管理软件产品家 族（简称 S-MOM），能为企业实现制造过程透明化、制造数据可视化、制造品 质可控化的工厂建设目标。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1401_20221014161841_075b6af83a8abbcf.png\" alt=\"\" width=\"1052\" height=\"577\" /></p>\n<p><span style=\"font-weight: bold;\">2、主营数据</span></p>\n<p>2021 年，受益于泛 ERP、智能制造业务双轮驱动，公司实 现营业收入 19.35 亿元，同比增长 39.68%，2018-2021 年 CAGR 为 28.63%；实现 归母净利润 2.25 亿元，同比增长 27.53%，2018-2021 年 CAGR 为 25.44%。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1402_20221014162023_c8c2fc61dcd2e365.png\" alt=\"\" width=\"1029\" height=\"684\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司客户</span></p>\n<p>公司最初 的行业客户主要为美的集团、华为公司，近年来，公司从消费电子、家电等制造 业逐步向新行业领域拓展，现服务的客户主要为通讯、电子、机械装备、PCB 印 刷电路板、家电和光伏等行业的优质客户，未来有望持续向更多的高景气领域下 游辐射，以推动公司业务领域发展。&nbsp;</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1403_20221014162139_d70f45683fabb3c1.png\" alt=\"\" width=\"1084\" height=\"484\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、公司业绩增长点-智能制造</span></p>\n<p>公司依托西门子、Infor 公司 工业软件产品进行开发实施，在过程中不断加强自研，从产品从管理软件和大数 据分析延展至以 MES/MOM 为核心的智能制造领域。&nbsp;</p>\n<p>MES（制造执行系统）：主要是用来连接计划决策层和生产执行层，起着承上 启下的作用，上接 ERP 软件，下启 PLC、DCS、SCADA 等软件，实现了设备和 工装工单派发、人员派工、质量管理、在产品管理等功能的集成应用，打通制造环节的信息流通，是工业软件的核心。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1404_20221014162737_ab08750a2b4db8e0.png\" alt=\"\" width=\"1011\" height=\"637\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1405_20221014162944_7522b07ded623285.png\" alt=\"\" width=\"1224\" height=\"673\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、风险提示</span></p>\n<p>宏观因素扰动导致公司下游行业客户信息化投入不及预期，外部环境致使公司与海外龙头合作进展不及预期，S-MOM 等自研产品研发及市场拓展不及预期都会影响公司经营情况。</p>",
+    "firstLetter": "SYXX",
+    "high": 23.28,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 22.31,
+    "marketValue": 9283195895.3,
+    "name": "赛意信息",
+    "pctChg": 1.06,
+    "price": 22.97,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": -0.69,
+    "recentChange": -0.17,
+    "remark": "近廿载深耕泛 ERP 领域，逐步深化智能制造转型。",
+    "status": 1,
+    "stockId": "300687",
+    "stockLightspots": [
+      {
+        "bizKey": "8902",
+        "content": "赛意信息乘风破浪的智能制造新星",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8902,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8903",
+        "content": "赛意信息乘“数转智改”大势，行“一体三翼”战略",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8903,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8904",
+        "content": "赛意信息格局优于彼时ERP行业，公司崛起正当时",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8904,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8905",
+        "content": "赛意信息“泛ERP+智能制造”双轮驱动，引领企业实现数字化转型创新",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8905,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8906",
+        "content": "赛意信息工业智造核心标的，积极转型软件厂商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8906,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8907",
+        "content": "赛意信息华南之虎，会当水击三千里",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8907,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8908",
+        "content": "赛意信息首批广东省工业互联网重点企业，未来增速有望持续超预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8908,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8909",
+        "content": "蜕变中的智能制造优质企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8909,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8910",
+        "content": "智能制造快速发展，商业模式优化升级",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8910,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8911",
+        "content": "受益制造业“顺周期”，智能制造业务加速发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8911,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8912",
+        "content": "乘风数字化转型之风，迎工业“信创”之潮",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8912,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8913",
+        "content": "自研能力持续加强，乘工业软件发展东风",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8913,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8914",
+        "content": "赛意信息蜕变中的工业软件企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8914,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8915",
+        "content": "赛意信息乘工业软件行业发展机遇，公司有望步入快速成长期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8915,
+        "stockId": "300687",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8916",
+        "content": "赛意信息国产替代叠加制造业景气度回升，智能制造领军企业紧抓时代机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8916,
+        "stockId": "300687",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:27",
+    "vol": 102806.57
+  }
+}

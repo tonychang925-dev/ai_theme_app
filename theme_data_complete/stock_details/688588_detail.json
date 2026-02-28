@@ -1,0 +1,143 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 46554252.0,
+    "changeCount": -0.11,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20230308151928_93813a28eb162f5c.png\" /></span></p>\n<p>公司是一家金融软件公司，主要业务为对日软件开发业务及国内应用软件解决方案业务。公司致力于新兴技术在金融行业的应用，为客户提供咨询、设计、开发、维护等全方位的软件开发服务，业务范围涵盖了证券、保险、银行、信托、资产管理等金融领域。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.主营业务</span></p>\n<p>公司为客户提供的软件产品及解决方案，按功能可分为营销与服务类、业务及管理类、数据服务类、数据分析类、前端客户类、架构与工具类六大类。</p>\n<p>对日软件开发业务方面，公司是日本多家知名金融公司的长期合作伙伴，为日本主要金融机构开发了众多核心业务系统。在证券业，公司为日本多家证券公司构筑了包括股票、债券、基金等经纪业务的核心交易系统、融资融券交易系统、投资银行业务系统和财富管理系统等；在银行业，公司开发的网银系统、债券交易、资产管理、年金管理等核心业务系统支撑着多家商业银行的日常运营；在保险业，公司为多家知名保险公司开发的系统实现了保险业务流程和商品全覆盖，其中包括损保核心系统、寿险核心系统、网络直销平台；在资产管理业，公司为某知名信托机构重新构筑了日本租赁物件市场保有量第一的房地产租赁平台系统。</p>\n<p>国内应用软件解决方案业务方面，公司依托多年对日软件开发服务积累的丰富经验，经过近几年的产品研发及国内市场特别是证券市场开拓，为国内证券公司提供包括O2O客户智能精准营销服务解决方案、财富管理解决方案、大投行业务综合管理解决方案、面向机构服务的综合金融服务解决方案、微服务云管理解决方案、资产管理解决方案和数据中台等各类金融行业软件产品及解决方案，为公司的长期发展打下了基础。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.行业地位</span></p>\n<p>公司对日软件开发服务业务，以金融行业为主，最终用户涵盖保险、证券和银行等多类金融行业公司。公司从2004年起与全球顶尖金融服务技术供应商野村综研合作，经过多年的经营，已在日本金融业软件开发服务领域取得了一定的市场地位和较好的口碑；从2014年起，公司与日本其他知名IT咨询服务机构如SRA、TIS等公司的业务量逐渐增长，共同为终端客户研发了如日本信用卡系统、企业年金系统等产品，公司目前已成为野村综研软件开发最大的供应商之一。</p>\n<p>公司依靠在日本金融行业多年丰富的业务经验和软件开发经验，2010年起逐步开拓国内证券市场软件解决方案业务，将对日软件开发服务的经验技术和业务人才导入国内，推动国内证券信息服务系统的转型与升级。经过几年的市场开拓，公司已经在国内证券市场取得了一定的影响力，积累了较多证券公司客户资源，包括国泰君安、华泰证券、中信建投、国信证券、申万宏源、方正证券等70多家证券公司客户，同时积累了10多家基金公司和资产管理公司客户，为公司今后继续开拓国内资本市场软件解决方案业务奠定了客户基础。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.公司的核心技术</span></p>\n<p>公司核心技术分为通用技术和专用技术解决方案，具体如下：</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20230308153538_0fd17e8881a88791.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20230308153612_87affbeb467e9a81.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20230308153651_6b382dbe6aac6503.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid8_20230308153720_feedf5a7bdc4c804.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20230308153741_80c1d3c7ee9e312b.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20230308153804_e8ab7a0ea4eb2891.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid15_20230308153830_68f44533ffe4f451.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid17_20230308153850_d35bfc1817a5769d.png\" /></p>\n<p>资料来源：公司2022年半年度报告</p>\n<p>公司形成的核心技术主要包括项目实施管控技术、开发工具、大数据、云计算、互联网应用、移动端开发等通用技术以及金融领域相关的解决方案，上述核心技术均系公司自主研发而来，形成具有公司特征的专有技术，部分在此基础上原始取得了相应的计算机软件著作权，部分正在申请发明专利。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5.在研项目</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid19_20230308154657_bd32fb1381aa09f5.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid21_20230308154730_c2d07e9e4ef40392.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid23_20230308154806_cf91ec490fa0f624.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid25_20230308154821_a3b699f4048c2a81.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid27_20230308154905_f0c0e0a66dcfe283.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid29_20230308154935_d1a5a973b2a5d301.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid30_20230308155015_6367cdce3a6a2386.png\" /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid33_20230308155046_a878600693b39e2a.png\" /></span></p>\n<p>资料来源：公司2022年半年度报告</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6.主要控股参股公司</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid34_20230308155610_c928e230c755c419.png\" /></span></p>\n<p>资料来源：公司2022年半年度报告</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">7.核心竞争力</span></p>\n<p><span style=\"font-weight: bold;\">技术优势。</span>公司通过积极加大对云计算、大数据、人工智能等新兴技术的研发投入，实现了大部分项目均与新兴技术需求相关。在对日软件开发服务中，客户因新技术发展产生了大量的软件开发服务需求，公司依靠不断研发的技术优势和积累的业务经验，聚焦于新兴技术在金融行业的运用，目前，公司为客户提供的软件开发服务中，已将公司所掌握的云计算、大数据、人工智能等新兴技术应用于大部分项目中。在大数据与人工智能方面，公司掌握了互联网行为采集分析技术、数据仓库技术、大数据标签计算引擎、MOT智能推荐引擎、智能化数据服务平台（DMP）等一系列融合了大数据分析处理技术与人工智能算法的引擎及产品。在云计算方面，公司以实时行情云计算技术、云数据库高效储存访问技术等专有核心技术为基础，运用阿里云DataV数据可视化服务，为金融公司提供风控数据大屏展示服务，能够全方位展示业务发展的数据指标和风险动向。</p>\n<p><span style=\"font-weight: bold;\">软件开发服务能力优势。</span>公司在对日软件开发服务中，通过向全球顶尖金融服务技术供应商野村综研等提供十多年的软件开发服务，积累了较多的行业及项目实施经验。公司所具备的软件开发服务能力优势主要体现在如下方面：公司参与软件开发上游工程的比例较高；公司最终用户以金融业为主，项目的盈利能力较强；公司参与众多软件的核心系统开发；公司在对日软件开发服务中形成了具有国际竞争力的服务能力；公司具有合理调配内外部资源高效完成项目的能力。</p>\n<p><span style=\"font-weight: bold;\">客户资源优势。</span>公司已与日本优秀的一级软件承包商建立了长期稳定的合作伙伴关系。由于日本一级软件承包商数量较少，公司与其建立稳定合作关系后，能有效降低公司的销售费用和关系维护成本，并能提高合作效率。公司在与日本一级软件承包商合作过程中，积累了丰富的金融、房地产、电信、电子商务等行业经验，在客户中赢得良好的口碑。经过近几年的国内市场开拓，公司在国内金融应用软件解决方案领域树立了良好的市场形象，使用公司产品和服务的证券公司已包括国泰君安、华泰证券、中信建投、国信证券、申万宏源、方正证券等70多家证券公司，另外还有10多家基金公司和资产管理公司。由于IT服务商的口碑在证券公司之间或证券公司不同部门间易于传播，通过在各大证券公司建立一定的品牌知名度，公司产品和服务的广度和深度将得到快速扩张，有利于公司经营业绩增长。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">8.风险提示：</span>核心竞争力风险、依赖日本市场风险、依赖主要客户的风险、依赖软件外协商的风险、财务风险等。</p>",
+    "firstLetter": "LZRJ",
+    "high": 14.4,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 14.01,
+    "marketValue": 5700142542.75,
+    "name": "凌志软件",
+    "pctChg": -0.77,
+    "price": 14.14,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -4.01,
+    "recentChange": -2.21,
+    "remark": "公司为野村综研软件开发最大的供应商，主要业务为对日软件开发业务及国内应用软件解决方案业务。",
+    "status": 1,
+    "stockId": "688588",
+    "stockLightspots": [
+      {
+        "bizKey": "34492",
+        "content": "聚焦金融科技，竞争优势明显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34492,
+        "stockId": "688588",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34493",
+        "content": "凌志软件稳健增长的对日金融IT服务龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34493,
+        "stockId": "688588",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34494",
+        "content": "凌志软件对日软件开发空间广阔，国内金融IT增长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34494,
+        "stockId": "688588",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34495",
+        "content": "站在需求风口上的管理大师",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34495,
+        "stockId": "688588",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34496",
+        "content": "凌志软件中日市场双轮驱动增长，盈利能力显著提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34496,
+        "stockId": "688588",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34497",
+        "content": "凌志软件营收相对稳健，利润受日元贬值拖累",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34497,
+        "stockId": "688588",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34498",
+        "content": "中日双轮驱动的金融IT龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34498,
+        "stockId": "688588",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34499",
+        "content": "经营业绩短期承压，积极研发信创产品",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34499,
+        "stockId": "688588",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34500",
+        "content": "营业收入稳健增长，国内业务拓展顺利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34500,
+        "stockId": "688588",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34501",
+        "content": "凌志软件人效稳步提升，新技术持续深化应用",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34501,
+        "stockId": "688588",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34502",
+        "content": "凌志软件对日软件开发实力进一步验证，受益国内券商机构服务浪潮",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34502,
+        "stockId": "688588",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34503",
+        "content": "凌志软件业绩符合预期，国内国外业务有望同步高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34503,
+        "stockId": "688588",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 32943.39
+  }
+}

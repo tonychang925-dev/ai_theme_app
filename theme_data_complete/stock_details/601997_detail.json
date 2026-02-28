@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 89381155.0,
+    "changeCount": 0.02,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "\n\t\t\t\t　　一、总体经营情况\n<br>　　报告期内，面对复杂多变的经济形势，本行积极贯彻落实各级党委政府决策部署和监管要求，紧紧围绕贵州省“一二三四”总体发展思路和贵阳市“强省会”五年行动、贵阳贵安融合发展，积极抢抓新国发2号文件重大机遇，以高质量发展为统揽，保持战略定力，加大减费让利力度，有效服务实体经济，持续推动业务转型和结构调整，强化风险管控，整体实现了规模、质量、效益的协调发展。\n<br>　　经营规模稳健增长。截至报告期末，资产总额6,643.64亿元，较年初增加183.66亿元，增长2.84%。贷款总额2,960.51亿元，较年初增加107.62亿元，增长3.77%。存款总额4,003.86亿元，较年初增加167.48亿元，增长4.37%，其中，储蓄存款余额1,855.26亿元，较年初增加154.77亿元，增长9.10%，储蓄存款占存款总额的比例为46.34%，较年初上升2.01个百分点。\n<br>　　经营业绩稳步提升。报告期内，实现营业收入37.39亿元，同比增长3.12%，实现归属于母公司股东的净利润16.07亿元，同比增长1.07%；实现基本每股收益0.44元；加权平均净资产收益率12.24%（年化）；总资产收益率1.00%（年化）。\n<br>　　监管指标总体平稳。截至报告期末，不良贷款率1.49%，较年初上升0.04个百分点，本行将密切关注重点领域重点行业风险，加大风险化解和处置力度，保持资产质量可控；拨备覆盖率 260.31%,拨贷比 3.87%，拨备水平充足；资本充足率 14.20%，一级资本充足率12.08%，核心一级资本充足率11.03%，分别较年初上升0.04个百分点、0.06个百分点和0.08个百分点，风险抵补能力较强。\t\t\t\t<span style=\"display: inline-block;width: 42px;\"></span>\n\t\t\t\t<a class=\"less fr\" href=\"javascript:void(0)\" style=\"position:absolute;right:0;bottom:0;\"></a>\n\t\t\t",
+    "firstLetter": "GYYH",
+    "high": 5.86,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 5.82,
+    "marketValue": 21279072802.32,
+    "name": "贵阳银行",
+    "pctChg": 0.34,
+    "price": 5.84,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -3.79,
+    "recentChange": 0.52,
+    "remark": "机构网点实现贵州88个县域全覆盖的城商行",
+    "status": 1,
+    "stockId": "601997",
+    "stockLightspots": [
+      {
+        "bizKey": "24076",
+        "content": "贵阳银行新股研究报告-受益区域经济发展,高成长高盈利可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24076,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24077",
+        "content": "贵阳银行新股研究报告-受益区域经济发展,高成长高盈利可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24077,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24078",
+        "content": "贵阳银行区域优势显著，高息差高成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24078,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24079",
+        "content": "贵阳银行四十年沉淀厚积薄发，中国羽绒服龙头调整到位，迈入发展新里程",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24079,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24080",
+        "content": "贵阳银行享西南地区发展红利，息差亮眼资产质量有待改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24080,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24081",
+        "content": "贵阳银行十八舞象，销售提速、逆周期拿地助力业绩生辉",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24081,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24082",
+        "content": "贵阳银行成长快、盈利强，存量资产质量压力较大但边际生成有望企稳",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24082,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24083",
+        "content": "贵阳银行高成长，银行PPP第一股 ",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24083,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24084",
+        "content": "贵阳银行负债优势明显,资产质量承压",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24084,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24085",
+        "content": "贵阳银行负债优势明显，资产质量承压",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24085,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24086",
+        "content": "贵阳银行乘区域经济发展东风",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24086,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24087",
+        "content": "贵阳银行不良“双降”，基本面低位改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24087,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24088",
+        "content": "贵阳银行零售存款优势显著，不良率边际改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24088,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24089",
+        "content": "贵阳银行成长势头良好，盈利表现突出",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24089,
+        "stockId": "601997",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24090",
+        "content": "贵阳银行定位小微享西南增长红利，定价能力强于同业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24090,
+        "stockId": "601997",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 153067.42
+  }
+}

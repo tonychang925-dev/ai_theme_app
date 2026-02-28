@@ -26,6 +26,30 @@ _DEFAULT_RETRY_CONFIG = {
     "jitter": True
 }
 
+def _is_stale_stream_gateway(gateway: Optional[StreamEnhancedGateway]) -> bool:
+    """检查全局增强网关是否已失效（例如被关闭后仍被单例持有）。"""
+    if gateway is None:
+        return True
+
+    base = getattr(gateway, "base_gateway", None)
+    if base is None:
+        return True
+
+    # DatabaseGateway.close() 后会把 _initialized 置为 False
+    if getattr(base, "_initialized", True) is False:
+        return True
+
+    client = getattr(base, "_client", None)
+    if client is None:
+        return True
+
+    # Postgres 管理器连接池为空时，后续 acquire 会报 NoneType.acquire
+    pool = getattr(client, "pool", None)
+    if pool is None:
+        return True
+
+    return False
+
 
 async def get_stream_enhanced_gateway(
     enable_retry: bool = True,
@@ -42,8 +66,11 @@ async def get_stream_enhanced_gateway(
         StreamEnhancedGateway 实例
     """
     global _stream_enhanced_gateway
-    
-    if _stream_enhanced_gateway is None:
+
+    if _is_stale_stream_gateway(_stream_enhanced_gateway):
+        if _stream_enhanced_gateway is not None:
+            logger.warning("♻️ 检测到失效的 StreamEnhancedGateway，触发重建")
+        _stream_enhanced_gateway = None
         await initialize_stream_gateway(
             enable_retry=enable_retry,
             retry_config=retry_config
@@ -70,7 +97,7 @@ async def initialize_stream_gateway(
     """
     global _stream_enhanced_gateway
     
-    if _stream_enhanced_gateway is not None:
+    if _stream_enhanced_gateway is not None and not _is_stale_stream_gateway(_stream_enhanced_gateway):
         # 如果网关已存在，可以更新其配置
         if enable_retry != _stream_enhanced_gateway.enable_retry:
             _stream_enhanced_gateway.enable_retry_function(enable_retry)
@@ -79,6 +106,9 @@ async def initialize_stream_gateway(
             _stream_enhanced_gateway.update_retry_config(retry_config)
         
         return _stream_enhanced_gateway
+    elif _stream_enhanced_gateway is not None:
+        logger.warning("♻️ initialize_stream_gateway 发现现有网关失效，执行重建")
+        _stream_enhanced_gateway = None
     
     logger.info("🚀 初始化 Stream 增强网关（带重试功能）...")
     

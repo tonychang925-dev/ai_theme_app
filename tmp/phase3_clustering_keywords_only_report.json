@@ -1,0 +1,852 @@
+{
+  "test_time": "2026-02-20 21:35:04",
+  "test_config": {
+    "sample_size": 30,
+    "model_path": "/Users/admin/Desktop/ai_theme_app/model_service/models/qwen2.5/qwen2.5-1.5b-instruct-q5_k_m.gguf",
+    "model_size": "1.5B",
+    "matching_method": "keywords_only"
+  },
+  "ground_truth": [
+    {
+      "index": 1,
+      "event_id": "event_20260203110722_2bf943",
+      "title": "AI/AR眼镜相关新闻",
+      "true_theme": "AI/AR眼镜相关新闻",
+      "keywords": [
+        "AI眼镜",
+        "AR/VR",
+        "智能穿戴"
+      ]
+    },
+    {
+      "index": 2,
+      "event_id": "event_20260203110659_05959e",
+      "title": "AI/AR眼镜相关新闻",
+      "true_theme": "AI/AR眼镜相关新闻",
+      "keywords": [
+        "AR智能眼镜",
+        "Galaxy S25",
+        "Galaxy Ring 2"
+      ]
+    },
+    {
+      "index": 3,
+      "event_id": "event_20260203110918_e0b321",
+      "title": "海洋经济相关新闻",
+      "true_theme": "海洋经济相关新闻",
+      "keywords": [
+        "人工智能",
+        "海洋经济",
+        "智能船舶"
+      ]
+    },
+    {
+      "index": 4,
+      "event_id": "event_20260203110723_1ef0cc",
+      "title": "SpaceX相关新闻",
+      "true_theme": "SpaceX相关新闻",
+      "keywords": [
+        "航天航空",
+        "商业航天",
+        "土地政策"
+      ]
+    },
+    {
+      "index": 5,
+      "event_id": "event_20260203110914_6c542d",
+      "title": "海洋经济相关新闻",
+      "true_theme": "海洋经济相关新闻",
+      "keywords": [
+        "海洋经济",
+        "海洋强国",
+        "海洋开发利用"
+      ]
+    },
+    {
+      "index": 6,
+      "event_id": "event_20260203110744_520fd1",
+      "title": "可控核聚变相关新闻",
+      "true_theme": "可控核聚变相关新闻",
+      "keywords": [
+        "可控核聚变",
+        "托卡马克",
+        "EAST装置"
+      ]
+    },
+    {
+      "index": 7,
+      "event_id": "event_20260203110940_382897",
+      "title": "光刻胶相关新闻",
+      "true_theme": "光刻胶相关新闻",
+      "keywords": [
+        "光刻胶",
+        "集成电路材料",
+        "半导体"
+      ]
+    },
+    {
+      "index": 8,
+      "event_id": "event_20260203110648_9234b5",
+      "title": "AI/AR眼镜相关新闻",
+      "true_theme": "AI/AR眼镜相关新闻",
+      "keywords": [
+        "智能眼镜",
+        "增强现实",
+        "可穿戴设备"
+      ]
+    },
+    {
+      "index": 9,
+      "event_id": "event_20260203110819_a986a5",
+      "title": "对日制裁相关新闻",
+      "true_theme": "对日制裁相关新闻",
+      "keywords": [
+        "地缘政治",
+        "国际关系",
+        "东亚安全"
+      ]
+    },
+    {
+      "index": 10,
+      "event_id": "event_20260203110947_8fdd73",
+      "title": "光刻胶相关新闻",
+      "true_theme": "光刻胶相关新闻",
+      "keywords": [
+        "光刻胶",
+        "半导体制造",
+        "极紫外光刻"
+      ]
+    },
+    {
+      "index": 11,
+      "event_id": "event_20260203110735_8d9e96",
+      "title": "SpaceX相关新闻",
+      "true_theme": "SpaceX相关新闻",
+      "keywords": [
+        "SpaceX",
+        "IPO",
+        "航空航天"
+      ]
+    },
+    {
+      "index": 12,
+      "event_id": "event_20260203110757_2dad4d",
+      "title": "可控核聚变相关新闻",
+      "true_theme": "可控核聚变相关新闻",
+      "keywords": [
+        "可控核聚变",
+        "清洁能源",
+        "十五五规划"
+      ]
+    },
+    {
+      "index": 13,
+      "event_id": "event_20260203110851_234ac9",
+      "title": "稀土永磁相关新闻",
+      "true_theme": "稀土永磁相关新闻",
+      "keywords": [
+        "稀土永磁",
+        "出口许可证",
+        "通用许可"
+      ]
+    },
+    {
+      "index": 14,
+      "event_id": "event_20260203110828_c10ff8",
+      "title": "对日制裁相关新闻",
+      "true_theme": "对日制裁相关新闻",
+      "keywords": [
+        "地缘政治",
+        "外交关系",
+        "国际关系"
+      ]
+    },
+    {
+      "index": 15,
+      "event_id": "event_20260203111000_5b1de3",
+      "title": "光刻胶相关新闻",
+      "true_theme": "光刻胶相关新闻",
+      "keywords": [
+        "光刻胶",
+        "半导体",
+        "KrF光刻胶"
+      ]
+    },
+    {
+      "index": 16,
+      "event_id": "event_20260203110904_02419b",
+      "title": "稀土永磁相关新闻",
+      "true_theme": "稀土永磁相关新闻",
+      "keywords": [
+        "稀土永磁",
+        "包钢股份",
+        "稀土精矿"
+      ]
+    },
+    {
+      "index": 17,
+      "event_id": "event_20260203110841_3b95f1",
+      "title": "稀土永磁相关新闻",
+      "true_theme": "稀土永磁相关新闻",
+      "keywords": [
+        "稀土永磁",
+        "中重稀土",
+        "出口许可"
+      ]
+    },
+    {
+      "index": 18,
+      "event_id": "event_20260203111010_20f348",
+      "title": "卫星互联相关新闻",
+      "true_theme": "卫星互联相关新闻",
+      "keywords": [
+        "航天发射",
+        "商业航天",
+        "卫星互联网"
+      ]
+    },
+    {
+      "index": 19,
+      "event_id": "event_20260203110928_9bea82",
+      "title": "海洋经济相关新闻",
+      "true_theme": "海洋经济相关新闻",
+      "keywords": [
+        "海洋经济",
+        "海洋科技",
+        "海上风电"
+      ]
+    },
+    {
+      "index": 20,
+      "event_id": "event_20260203110936_e8c54c",
+      "title": "光刻胶相关新闻",
+      "true_theme": "光刻胶相关新闻",
+      "keywords": [
+        "光刻胶",
+        "集成电路材料",
+        "半导体"
+      ]
+    },
+    {
+      "index": 21,
+      "event_id": "event_20260203110724_81b438",
+      "title": "SpaceX相关新闻",
+      "true_theme": "SpaceX相关新闻",
+      "keywords": [
+        "太空军事",
+        "卫星制造",
+        "导弹预警"
+      ]
+    },
+    {
+      "index": 22,
+      "event_id": "event_20260203110833_a0d4a9",
+      "title": "对日制裁相关新闻",
+      "true_theme": "对日制裁相关新闻",
+      "keywords": [
+        "外交关系",
+        "政治风险",
+        "国际贸易"
+      ]
+    },
+    {
+      "index": 23,
+      "event_id": "event_20260203110735_87ebed",
+      "title": "SpaceX相关新闻",
+      "true_theme": "SpaceX相关新闻",
+      "keywords": [
+        "商业航天",
+        "SpaceX",
+        "星舰"
+      ]
+    },
+    {
+      "index": 24,
+      "event_id": "event_20260203111012_2dd99b",
+      "title": "卫星互联相关新闻",
+      "true_theme": "卫星互联相关新闻",
+      "keywords": [
+        "商业航天",
+        "火箭制造",
+        "供应链"
+      ]
+    },
+    {
+      "index": 25,
+      "event_id": "event_20260203110745_e24c38",
+      "title": "可控核聚变相关新闻",
+      "true_theme": "可控核聚变相关新闻",
+      "keywords": [
+        "可控核聚变",
+        "清洁能源",
+        "技术创新"
+      ]
+    },
+    {
+      "index": 26,
+      "event_id": "event_20260203110844_57aefe",
+      "title": "稀土永磁相关新闻",
+      "true_theme": "稀土永磁相关新闻",
+      "keywords": [
+        "稀土永磁",
+        "出口管制",
+        "通用许可"
+      ]
+    },
+    {
+      "index": 27,
+      "event_id": "event_20260203110713_993a76",
+      "title": "AI/AR眼镜相关新闻",
+      "true_theme": "AI/AR眼镜相关新闻",
+      "keywords": [
+        "扩展现实",
+        "XR设备",
+        "三星电子"
+      ]
+    },
+    {
+      "index": 28,
+      "event_id": "event_20260203110821_10bc3c",
+      "title": "对日制裁相关新闻",
+      "true_theme": "对日制裁相关新闻",
+      "keywords": [
+        "出口管制",
+        "两用物项",
+        "军事用途"
+      ]
+    },
+    {
+      "index": 29,
+      "event_id": "event_20260203110915_32adf6",
+      "title": "海洋经济相关新闻",
+      "true_theme": "海洋经济相关新闻",
+      "keywords": [
+        "海洋经济",
+        "海洋新兴产业",
+        "海洋清洁能源"
+      ]
+    },
+    {
+      "index": 30,
+      "event_id": "event_20260203110746_c5cf8e",
+      "title": "可控核聚变相关新闻",
+      "true_theme": "可控核聚变相关新闻",
+      "keywords": [
+        "可控核聚变",
+        "大科学装置",
+        "实验堆"
+      ]
+    }
+  ],
+  "clustering_result": [
+    {
+      "theme_name": "题材_1",
+      "size": 15,
+      "purity": 0.26666666666666666,
+      "dominant_theme": "AI/AR眼镜相关新闻",
+      "events": [
+        {
+          "index": 1,
+          "event_id": "event_20260203110722_2bf943",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻",
+          "keywords": [
+            "AI眼镜",
+            "AR/VR",
+            "智能穿戴"
+          ]
+        },
+        {
+          "index": 2,
+          "event_id": "event_20260203110659_05959e",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻",
+          "keywords": [
+            "AR智能眼镜",
+            "Galaxy S25",
+            "Galaxy Ring 2"
+          ]
+        },
+        {
+          "index": 3,
+          "event_id": "event_20260203110918_e0b321",
+          "title": "海洋经济相关新闻",
+          "true_theme": "海洋经济相关新闻",
+          "keywords": [
+            "人工智能",
+            "海洋经济",
+            "智能船舶"
+          ]
+        },
+        {
+          "index": 7,
+          "event_id": "event_20260203110940_382897",
+          "title": "光刻胶相关新闻",
+          "true_theme": "光刻胶相关新闻",
+          "keywords": [
+            "光刻胶",
+            "集成电路材料",
+            "半导体"
+          ]
+        },
+        {
+          "index": 8,
+          "event_id": "event_20260203110648_9234b5",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻",
+          "keywords": [
+            "智能眼镜",
+            "增强现实",
+            "可穿戴设备"
+          ]
+        },
+        {
+          "index": 10,
+          "event_id": "event_20260203110947_8fdd73",
+          "title": "光刻胶相关新闻",
+          "true_theme": "光刻胶相关新闻",
+          "keywords": [
+            "光刻胶",
+            "半导体制造",
+            "极紫外光刻"
+          ]
+        },
+        {
+          "index": 12,
+          "event_id": "event_20260203110757_2dad4d",
+          "title": "可控核聚变相关新闻",
+          "true_theme": "可控核聚变相关新闻",
+          "keywords": [
+            "可控核聚变",
+            "清洁能源",
+            "十五五规划"
+          ]
+        },
+        {
+          "index": 16,
+          "event_id": "event_20260203110904_02419b",
+          "title": "稀土永磁相关新闻",
+          "true_theme": "稀土永磁相关新闻",
+          "keywords": [
+            "稀土永磁",
+            "包钢股份",
+            "稀土精矿"
+          ]
+        },
+        {
+          "index": 19,
+          "event_id": "event_20260203110928_9bea82",
+          "title": "海洋经济相关新闻",
+          "true_theme": "海洋经济相关新闻",
+          "keywords": [
+            "海洋经济",
+            "海洋科技",
+            "海上风电"
+          ]
+        },
+        {
+          "index": 20,
+          "event_id": "event_20260203110936_e8c54c",
+          "title": "光刻胶相关新闻",
+          "true_theme": "光刻胶相关新闻",
+          "keywords": [
+            "光刻胶",
+            "集成电路材料",
+            "半导体"
+          ]
+        },
+        {
+          "index": 21,
+          "event_id": "event_20260203110724_81b438",
+          "title": "SpaceX相关新闻",
+          "true_theme": "SpaceX相关新闻",
+          "keywords": [
+            "太空军事",
+            "卫星制造",
+            "导弹预警"
+          ]
+        },
+        {
+          "index": 25,
+          "event_id": "event_20260203110745_e24c38",
+          "title": "可控核聚变相关新闻",
+          "true_theme": "可控核聚变相关新闻",
+          "keywords": [
+            "可控核聚变",
+            "清洁能源",
+            "技术创新"
+          ]
+        },
+        {
+          "index": 26,
+          "event_id": "event_20260203110844_57aefe",
+          "title": "稀土永磁相关新闻",
+          "true_theme": "稀土永磁相关新闻",
+          "keywords": [
+            "稀土永磁",
+            "出口管制",
+            "通用许可"
+          ]
+        },
+        {
+          "index": 27,
+          "event_id": "event_20260203110713_993a76",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻",
+          "keywords": [
+            "扩展现实",
+            "XR设备",
+            "三星电子"
+          ]
+        },
+        {
+          "index": 29,
+          "event_id": "event_20260203110915_32adf6",
+          "title": "海洋经济相关新闻",
+          "true_theme": "海洋经济相关新闻",
+          "keywords": [
+            "海洋经济",
+            "海洋新兴产业",
+            "海洋清洁能源"
+          ]
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_2",
+      "size": 10,
+      "purity": 0.3,
+      "dominant_theme": "SpaceX相关新闻",
+      "events": [
+        {
+          "index": 4,
+          "event_id": "event_20260203110723_1ef0cc",
+          "title": "SpaceX相关新闻",
+          "true_theme": "SpaceX相关新闻",
+          "keywords": [
+            "航天航空",
+            "商业航天",
+            "土地政策"
+          ]
+        },
+        {
+          "index": 6,
+          "event_id": "event_20260203110744_520fd1",
+          "title": "可控核聚变相关新闻",
+          "true_theme": "可控核聚变相关新闻",
+          "keywords": [
+            "可控核聚变",
+            "托卡马克",
+            "EAST装置"
+          ]
+        },
+        {
+          "index": 11,
+          "event_id": "event_20260203110735_8d9e96",
+          "title": "SpaceX相关新闻",
+          "true_theme": "SpaceX相关新闻",
+          "keywords": [
+            "SpaceX",
+            "IPO",
+            "航空航天"
+          ]
+        },
+        {
+          "index": 13,
+          "event_id": "event_20260203110851_234ac9",
+          "title": "稀土永磁相关新闻",
+          "true_theme": "稀土永磁相关新闻",
+          "keywords": [
+            "稀土永磁",
+            "出口许可证",
+            "通用许可"
+          ]
+        },
+        {
+          "index": 15,
+          "event_id": "event_20260203111000_5b1de3",
+          "title": "光刻胶相关新闻",
+          "true_theme": "光刻胶相关新闻",
+          "keywords": [
+            "光刻胶",
+            "半导体",
+            "KrF光刻胶"
+          ]
+        },
+        {
+          "index": 17,
+          "event_id": "event_20260203110841_3b95f1",
+          "title": "稀土永磁相关新闻",
+          "true_theme": "稀土永磁相关新闻",
+          "keywords": [
+            "稀土永磁",
+            "中重稀土",
+            "出口许可"
+          ]
+        },
+        {
+          "index": 18,
+          "event_id": "event_20260203111010_20f348",
+          "title": "卫星互联相关新闻",
+          "true_theme": "卫星互联相关新闻",
+          "keywords": [
+            "航天发射",
+            "商业航天",
+            "卫星互联网"
+          ]
+        },
+        {
+          "index": 23,
+          "event_id": "event_20260203110735_87ebed",
+          "title": "SpaceX相关新闻",
+          "true_theme": "SpaceX相关新闻",
+          "keywords": [
+            "商业航天",
+            "SpaceX",
+            "星舰"
+          ]
+        },
+        {
+          "index": 24,
+          "event_id": "event_20260203111012_2dd99b",
+          "title": "卫星互联相关新闻",
+          "true_theme": "卫星互联相关新闻",
+          "keywords": [
+            "商业航天",
+            "火箭制造",
+            "供应链"
+          ]
+        },
+        {
+          "index": 30,
+          "event_id": "event_20260203110746_c5cf8e",
+          "title": "可控核聚变相关新闻",
+          "true_theme": "可控核聚变相关新闻",
+          "keywords": [
+            "可控核聚变",
+            "大科学装置",
+            "实验堆"
+          ]
+        }
+      ]
+    },
+    {
+      "theme_name": "题材_3",
+      "size": 5,
+      "purity": 0.8,
+      "dominant_theme": "对日制裁相关新闻",
+      "events": [
+        {
+          "index": 5,
+          "event_id": "event_20260203110914_6c542d",
+          "title": "海洋经济相关新闻",
+          "true_theme": "海洋经济相关新闻",
+          "keywords": [
+            "海洋经济",
+            "海洋强国",
+            "海洋开发利用"
+          ]
+        },
+        {
+          "index": 9,
+          "event_id": "event_20260203110819_a986a5",
+          "title": "对日制裁相关新闻",
+          "true_theme": "对日制裁相关新闻",
+          "keywords": [
+            "地缘政治",
+            "国际关系",
+            "东亚安全"
+          ]
+        },
+        {
+          "index": 14,
+          "event_id": "event_20260203110828_c10ff8",
+          "title": "对日制裁相关新闻",
+          "true_theme": "对日制裁相关新闻",
+          "keywords": [
+            "地缘政治",
+            "外交关系",
+            "国际关系"
+          ]
+        },
+        {
+          "index": 22,
+          "event_id": "event_20260203110833_a0d4a9",
+          "title": "对日制裁相关新闻",
+          "true_theme": "对日制裁相关新闻",
+          "keywords": [
+            "外交关系",
+            "政治风险",
+            "国际贸易"
+          ]
+        },
+        {
+          "index": 28,
+          "event_id": "event_20260203110821_10bc3c",
+          "title": "对日制裁相关新闻",
+          "true_theme": "对日制裁相关新闻",
+          "keywords": [
+            "出口管制",
+            "两用物项",
+            "军事用途"
+          ]
+        }
+      ]
+    }
+  ],
+  "evaluation": {
+    "total_clusters": 3,
+    "avg_purity": 0.45555555555555555,
+    "overall_purity": 0.36666666666666664,
+    "correctly_clustered": 11,
+    "total_events": 30,
+    "cluster_details": [
+      {
+        "theme_name": "题材_1",
+        "size": 15,
+        "dominant_theme": "AI/AR眼镜相关新闻",
+        "dominant_count": 4,
+        "purity": 0.26666666666666666,
+        "theme_distribution": {
+          "AI/AR眼镜相关新闻": 4,
+          "海洋经济相关新闻": 3,
+          "光刻胶相关新闻": 3,
+          "可控核聚变相关新闻": 2,
+          "稀土永磁相关新闻": 2,
+          "SpaceX相关新闻": 1
+        },
+        "errors": [
+          {
+            "event_id": "event_20260203110918_e0b321",
+            "title": "海洋经济相关新闻",
+            "true_theme": "海洋经济相关新闻"
+          },
+          {
+            "event_id": "event_20260203110940_382897",
+            "title": "光刻胶相关新闻",
+            "true_theme": "光刻胶相关新闻"
+          },
+          {
+            "event_id": "event_20260203110947_8fdd73",
+            "title": "光刻胶相关新闻",
+            "true_theme": "光刻胶相关新闻"
+          },
+          {
+            "event_id": "event_20260203110757_2dad4d",
+            "title": "可控核聚变相关新闻",
+            "true_theme": "可控核聚变相关新闻"
+          },
+          {
+            "event_id": "event_20260203110904_02419b",
+            "title": "稀土永磁相关新闻",
+            "true_theme": "稀土永磁相关新闻"
+          },
+          {
+            "event_id": "event_20260203110928_9bea82",
+            "title": "海洋经济相关新闻",
+            "true_theme": "海洋经济相关新闻"
+          },
+          {
+            "event_id": "event_20260203110936_e8c54c",
+            "title": "光刻胶相关新闻",
+            "true_theme": "光刻胶相关新闻"
+          },
+          {
+            "event_id": "event_20260203110724_81b438",
+            "title": "SpaceX相关新闻",
+            "true_theme": "SpaceX相关新闻"
+          },
+          {
+            "event_id": "event_20260203110745_e24c38",
+            "title": "可控核聚变相关新闻",
+            "true_theme": "可控核聚变相关新闻"
+          },
+          {
+            "event_id": "event_20260203110844_57aefe",
+            "title": "稀土永磁相关新闻",
+            "true_theme": "稀土永磁相关新闻"
+          },
+          {
+            "event_id": "event_20260203110915_32adf6",
+            "title": "海洋经济相关新闻",
+            "true_theme": "海洋经济相关新闻"
+          }
+        ]
+      },
+      {
+        "theme_name": "题材_2",
+        "size": 10,
+        "dominant_theme": "SpaceX相关新闻",
+        "dominant_count": 3,
+        "purity": 0.3,
+        "theme_distribution": {
+          "SpaceX相关新闻": 3,
+          "可控核聚变相关新闻": 2,
+          "稀土永磁相关新闻": 2,
+          "光刻胶相关新闻": 1,
+          "卫星互联相关新闻": 2
+        },
+        "errors": [
+          {
+            "event_id": "event_20260203110744_520fd1",
+            "title": "可控核聚变相关新闻",
+            "true_theme": "可控核聚变相关新闻"
+          },
+          {
+            "event_id": "event_20260203110851_234ac9",
+            "title": "稀土永磁相关新闻",
+            "true_theme": "稀土永磁相关新闻"
+          },
+          {
+            "event_id": "event_20260203111000_5b1de3",
+            "title": "光刻胶相关新闻",
+            "true_theme": "光刻胶相关新闻"
+          },
+          {
+            "event_id": "event_20260203110841_3b95f1",
+            "title": "稀土永磁相关新闻",
+            "true_theme": "稀土永磁相关新闻"
+          },
+          {
+            "event_id": "event_20260203111010_20f348",
+            "title": "卫星互联相关新闻",
+            "true_theme": "卫星互联相关新闻"
+          },
+          {
+            "event_id": "event_20260203111012_2dd99b",
+            "title": "卫星互联相关新闻",
+            "true_theme": "卫星互联相关新闻"
+          },
+          {
+            "event_id": "event_20260203110746_c5cf8e",
+            "title": "可控核聚变相关新闻",
+            "true_theme": "可控核聚变相关新闻"
+          }
+        ]
+      },
+      {
+        "theme_name": "题材_3",
+        "size": 5,
+        "dominant_theme": "对日制裁相关新闻",
+        "dominant_count": 4,
+        "purity": 0.8,
+        "theme_distribution": {
+          "海洋经济相关新闻": 1,
+          "对日制裁相关新闻": 4
+        },
+        "errors": [
+          {
+            "event_id": "event_20260203110914_6c542d",
+            "title": "海洋经济相关新闻",
+            "true_theme": "海洋经济相关新闻"
+          }
+        ]
+      }
+    ]
+  },
+  "performance": {
+    "total_time": 70.86871910095215,
+    "total_calls": 47,
+    "avg_time_per_call": 1.5078103846692024
+  }
+}

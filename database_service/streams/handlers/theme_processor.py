@@ -581,6 +581,18 @@ class ThemeProcessor:
             
             # 3. 根据匹配结果构建决策
             if service_match_result.get('matched', False):
+                if not self._has_usable_theme_in_match_result(service_match_result):
+                    logger.warning("   ⚠️  分类内匹配结果缺少有效theme_id，降级为未匹配")
+                    return self._build_decision(
+                        decision_type=DecisionType.NO_MATCH_IN_CATEGORY,
+                        event_data=event_data,
+                        stream_type=stream_type,
+                        category_info=category_info,
+                        match_result=service_match_result,
+                        confidence=category_confidence,
+                        reason="match_result_missing_theme_id",
+                        themes_in_category_count=len(themes_in_category)
+                    )
                 # 匹配成功
                 return self._build_decision(
                     decision_type=DecisionType.MATCH_SUCCESS_IN_CATEGORY,
@@ -681,6 +693,17 @@ class ThemeProcessor:
                                 match_data = full_match_result
                             
                             if match_data.get('matched', False):
+                                if not self._has_usable_theme_in_match_result(match_data):
+                                    logger.warning("   ⚠️  全量匹配结果缺少有效theme_id，降级为未匹配")
+                                    return self._build_decision(
+                                        decision_type=DecisionType.NO_MATCH_AFTER_FALLBACK,
+                                        event_data=event_data,
+                                        stream_type=stream_type,
+                                        match_result=match_data,
+                                        confidence=0,
+                                        reason="match_result_missing_theme_id",
+                                        source="theme_service_full_match_invalid"
+                                    )
                                 return self._build_decision(
                                     decision_type=DecisionType.MATCH_SUCCESS_FALLBACK,
                                     event_data=event_data,
@@ -714,6 +737,17 @@ class ThemeProcessor:
                 response_data = result
             
             if response_data.get('matched', False):
+                if not self._has_usable_theme_in_match_result(response_data):
+                    logger.warning("   ⚠️  fallback discover_theme结果缺少有效theme_id，降级为未匹配")
+                    return self._build_decision(
+                        decision_type=DecisionType.NO_MATCH_AFTER_FALLBACK,
+                        event_data=event_data,
+                        stream_type=stream_type,
+                        match_result=response_data,
+                        confidence=0,
+                        reason="match_result_missing_theme_id",
+                        source="fallback_match_invalid"
+                    )
                 # 全量匹配成功
                 return self._build_decision(
                     decision_type=DecisionType.MATCH_SUCCESS_FALLBACK,
@@ -1191,6 +1225,26 @@ class ThemeProcessor:
             reason=f"处理错误: {error_msg}",
             source="error_handler"
         )
+
+    def _has_usable_theme_in_match_result(self, match_result: Dict[str, Any]) -> bool:
+        """判断匹配结果是否包含可执行theme_id。"""
+        if not isinstance(match_result, dict):
+            return False
+
+        best_match = match_result.get("best_match", {})
+        if isinstance(best_match, dict):
+            if best_match.get("theme_id") or best_match.get("id"):
+                return True
+
+        themes = match_result.get("themes", [])
+        if isinstance(themes, list) and themes:
+            first = themes[0]
+            if isinstance(first, dict):
+                if first.get("theme_id") or first.get("id"):
+                    return True
+            elif hasattr(first, "theme_id") and getattr(first, "theme_id"):
+                return True
+        return False
     
     # ==================== 核心匹配方法（保持原有结构） ====================
     
