@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "装卸",
+      "evidence_span": "公司业务主要包括装卸、销售、物流和港口综合配套服务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司业务主要包括装卸、销售、物流和港口综合配套服务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物流",
+      "evidence_span": "公司业务主要包括装卸、销售、物流和港口综合配套服务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "港口综合配套服务",
+      "evidence_span": "公司业务主要包括装卸、销售、物流和港口综合配套服务等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大型港口综合服务商",
+      "evidence_span": "是集货物装卸、港口物流及其它相关港口服务为一体的大型港口综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "天津港装卸物流产业运营主体",
+      "evidence_span": "公司作为天津港装卸物流产业运营主体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "货物装卸",
+      "evidence_span": "是集货物装卸、港口物流及其它相关港口服务为一体的大型港口综合服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "港口物流",
+      "evidence_span": "是集货物装卸、港口物流及其它相关港口服务为一体的大型港口综合服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集装箱业务",
+      "evidence_span": "开展集装箱业务受理中心窗口服务水平再提升专项行动"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "滚装汽车业务",
+      "evidence_span": "在集装箱和滚装汽车等业务上不断取得新的突破"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "散杂货装卸",
+      "evidence_span": "公司主要货类包括散杂货、集装箱等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集装箱装卸",
+      "evidence_span": "公司主要货类包括散杂货、集装箱等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧港口建设",
+      "evidence_span": "在智慧港口、枢纽港口、世界一流港口建设上持续用力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "设备自动化改造",
+      "evidence_span": "持续发力设备自动化改造，提升设备自动化水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新一代智能化集装箱码头操作系统",
+      "evidence_span": "努力打造新一代智能化集装箱码头操作系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "能源管控平台系统",
+      "evidence_span": "建成天津港能源管控平台系统"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "抢抓“一带一路”、雄安新区建设和京津冀协同发展等重大战略机遇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "雄安新区建设",
+      "evidence_span": "抢抓“一带一路”、雄安新区建设和京津冀协同发展等重大战略机遇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "京津冀协同发展",
+      "evidence_span": "抢抓“一带一路”、雄安新区建设和京津冀协同发展等重大战略机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "装卸",
+        "evidence_span": "公司业务主要包括装卸、销售、物流和港口综合配套服务等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "销售",
+        "evidence_span": "公司业务主要包括装卸、销售、物流和港口综合配套服务等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物流",
+        "evidence_span": "公司业务主要包括装卸、销售、物流和港口综合配套服务等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "港口综合配套服务",
+        "evidence_span": "公司业务主要包括装卸、销售、物流和港口综合配套服务等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大型港口综合服务商",
+        "evidence_span": "是集货物装卸、港口物流及其它相关港口服务为一体的大型港口综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "天津港装卸物流产业运营主体",
+        "evidence_span": "公司作为天津港装卸物流产业运营主体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "货物装卸",
+        "evidence_span": "是集货物装卸、港口物流及其它相关港口服务为一体的大型港口综合服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "港口物流",
+        "evidence_span": "是集货物装卸、港口物流及其它相关港口服务为一体的大型港口综合服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集装箱业务",
+        "evidence_span": "开展集装箱业务受理中心窗口服务水平再提升专项行动"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "滚装汽车业务",
+        "evidence_span": "在集装箱和滚装汽车等业务上不断取得新的突破"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "散杂货装卸",
+        "evidence_span": "公司主要货类包括散杂货、集装箱等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集装箱装卸",
+        "evidence_span": "公司主要货类包括散杂货、集装箱等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧港口建设",
+        "evidence_span": "在智慧港口、枢纽港口、世界一流港口建设上持续用力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "设备自动化改造",
+        "evidence_span": "持续发力设备自动化改造，提升设备自动化水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新一代智能化集装箱码头操作系统",
+        "evidence_span": "努力打造新一代智能化集装箱码头操作系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "能源管控平台系统",
+        "evidence_span": "建成天津港能源管控平台系统"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "抢抓“一带一路”、雄安新区建设和京津冀协同发展等重大战略机遇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "雄安新区建设",
+        "evidence_span": "抢抓“一带一路”、雄安新区建设和京津冀协同发展等重大战略机遇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "京津冀协同发展",
+        "evidence_span": "抢抓“一带一路”、雄安新区建设和京津冀协同发展等重大战略机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:07:26"
+}

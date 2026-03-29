@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "ccc6ba4bd69c", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落报告台积电从ASML接收高数值孔径极紫外光刻机的具体事件，涉及设备交付时间，是纯事件性内容，无稳定知识成分。"}}

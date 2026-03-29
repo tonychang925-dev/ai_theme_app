@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:00:28", "result": {"span_uid": "e16a086cb1a1", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为德国计划采购国防物资的具体事件，属于一次性新闻事件，且与陆军题材本体关联较弱，无法形成稳定知识块。"}}

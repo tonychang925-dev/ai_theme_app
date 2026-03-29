@@ -1,0 +1,614 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "通信",
+      "evidence_span": "公司主营业务包括通信及物联网业务、职业教育业务。"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物联网业务",
+      "evidence_span": "公司主营业务包括通信及物联网业务、职业教育业务。"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "职业教育业务",
+      "evidence_span": "公司主营业务包括通信及物联网业务、职业教育业务。"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "移动通信网络优化方案综合供应商",
+      "evidence_span": "是国内领先的移动通信网络优化方案综合供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无线通信领域测量测试仪表供应商",
+      "evidence_span": "已成为无线通信领域市场占有率处于绝对优势的测量测试仪表供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无线网络服务商",
+      "evidence_span": "已成为无线通信领域市场占有率处于绝对优势的测量测试仪表供应商和无线网络服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无线网络端到端解决方案提供商",
+      "evidence_span": "是国内拥有成熟的无线网络端到端解决方案的提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络测试产品",
+      "evidence_span": "提供专业的网络测试、优化、建设、运维等方面的产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络优化产品",
+      "evidence_span": "提供专业的网络测试、优化、建设、运维等方面的产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络建设产品",
+      "evidence_span": "提供专业的网络测试、优化、建设、运维等方面的产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络运维产品",
+      "evidence_span": "提供专业的网络测试、优化、建设、运维等方面的产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "RFID产品",
+      "evidence_span": "产品和服务包括 RFID 产品、工业自动化装备、物联网行业解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业自动化装备",
+      "evidence_span": "产品和服务包括 RFID 产品、工业自动化装备、物联网行业解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物联网行业解决方案",
+      "evidence_span": "产品和服务包括 RFID 产品、工业自动化装备、物联网行业解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能卡 Inlay",
+      "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "RFID 电子标签",
+      "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能机械臂",
+      "evidence_span": "工业机器人装备业务包括智能机械臂、AGV小车等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AGV小车",
+      "evidence_span": "工业机器人装备业务包括智能机械臂、AGV小车等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能卡生产设备",
+      "evidence_span": "智能卡生产设备、RFID 生产设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "RFID 生产设备",
+      "evidence_span": "智能卡生产设备、RFID 生产设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产品溯源解决方案",
+      "evidence_span": "物联网解决方案主要是产品溯源解决方案、资产及人员管理解决方案、智慧消防解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产及人员管理解决方案",
+      "evidence_span": "物联网解决方案主要是产品溯源解决方案、资产及人员管理解决方案、智慧消防解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧消防解决方案",
+      "evidence_span": "物联网解决方案主要是产品溯源解决方案、资产及人员管理解决方案、智慧消防解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "身份认证解决方案",
+      "evidence_span": "身份认证解决方案（身份证，人脸，指纹，虹膜等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能仓储物流解决方案",
+      "evidence_span": "智能仓储物流解决方案、服装及零售解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "服装及零售解决方案",
+      "evidence_span": "智能仓储物流解决方案、服装及零售解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产管理软件",
+      "evidence_span": "资产管理软件、以及与解决方案相关的智能设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "学历教育运营服务",
+      "evidence_span": "为国内高职领域提供学历教育运营服务及相关教育装备产品的销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教育装备产品",
+      "evidence_span": "为国内高职领域提供学历教育运营服务及相关教育装备产品的销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际学历课程教育运营服务",
+      "evidence_span": "提供国际学历课程教育运营服务及高端财经类培训服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端财经类培训服务",
+      "evidence_span": "提供国际学历课程教育运营服务及高端财经类培训服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基础硬件",
+      "evidence_span": "产品形态包括基础硬件、仿真软件系统、平台系统、课程、教案等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仿真软件系统",
+      "evidence_span": "产品形态包括基础硬件、仿真软件系统、平台系统、课程、教案等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "平台系统",
+      "evidence_span": "产品形态包括基础硬件、仿真软件系统、平台系统、课程、教案等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "课程",
+      "evidence_span": "产品形态包括基础硬件、仿真软件系统、平台系统、课程、教案等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教案",
+      "evidence_span": "产品形态包括基础硬件、仿真软件系统、平台系统、课程、教案等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际教育解决方案",
+      "evidence_span": "融合于自主的集学术管理、产品管理、运营管理为一体的国际教育解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际学院共建",
+      "evidence_span": "形成国际学院共建、国际项目运营、教育技术输出的产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际项目运营",
+      "evidence_span": "形成国际学院共建、国际项目运营、教育技术输出的产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教育技术输出",
+      "evidence_span": "形成国际学院共建、国际项目运营、教育技术输出的产品线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超大规模的大数据存储",
+      "evidence_span": "具备了超大规模的大数据存储、分布式计算、实时大数据的流式处理以及快速建模和数据挖掘等核心能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分布式计算",
+      "evidence_span": "具备了超大规模的大数据存储、分布式计算、实时大数据的流式处理以及快速建模和数据挖掘等核心能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "实时大数据的流式处理",
+      "evidence_span": "具备了超大规模的大数据存储、分布式计算、实时大数据的流式处理以及快速建模和数据挖掘等核心能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "快速建模和数据挖掘",
+      "evidence_span": "具备了超大规模的大数据存储、分布式计算、实时大数据的流式处理以及快速建模和数据挖掘等核心能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "耦合工艺 Inlay",
+      "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锡片工艺 Inlay",
+      "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "挑线工艺 Inlay",
+      "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "导电胶工艺 Inlay",
+      "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "非接触 Inlay",
+      "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化工厂改造",
+      "evidence_span": "智能化工厂改造等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "UBL 人才培养模式",
+      "evidence_span": "构建了独具特色的“UBL 人才培养模式”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通信运营商",
+      "evidence_span": "公司为通信运营商、系统设备商、终端厂商等提供专业的网络测试、优化、建设、运维等方面的产品、服务和综合解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "系统设备商",
+      "evidence_span": "公司为通信运营商、系统设备商、终端厂商等提供专业的网络测试、优化、建设、运维等方面的产品、服务和综合解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "终端厂商",
+      "evidence_span": "公司为通信运营商、系统设备商、终端厂商等提供专业的网络测试、优化、建设、运维等方面的产品、服务和综合解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "公司全部中标及入围中国移动、中国电信和中国联通三大运营商的 5G 仪表集采项目的公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电信",
+      "evidence_span": "公司全部中标及入围中国移动、中国电信和中国联通三大运营商的 5G 仪表集采项目的公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国联通",
+      "evidence_span": "公司全部中标及入围中国移动、中国电信和中国联通三大运营商的 5G 仪表集采项目的公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "5G 小站设备厂家",
+      "evidence_span": "同时新增了 5G 小站设备厂家作为新增客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内高校",
+      "evidence_span": "通过与国内高校合作，建立共建共管的二级学院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高职学院",
+      "evidence_span": "根据高职学院实训教学的需求提供相关的教育装备产品"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "物联网爆发",
+      "evidence_span": "世纪鼎利ICT+职业教育双轮驱动，恰逢物联网爆发之际"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "通信及物联网业务",
+        "evidence_span": "公司主营业务包括通信及物联网业务、职业教育业务。"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "职业教育业务",
+        "evidence_span": "公司主营业务包括通信及物联网业务、职业教育业务。"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "移动通信网络优化方案综合供应商",
+        "evidence_span": "是国内领先的移动通信网络优化方案综合供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无线通信领域测量测试仪表供应商",
+        "evidence_span": "已成为无线通信领域市场占有率处于绝对优势的测量测试仪表供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无线网络服务商",
+        "evidence_span": "已成为无线通信领域市场占有率处于绝对优势的测量测试仪表供应商和无线网络服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无线网络端到端解决方案提供商",
+        "evidence_span": "是国内拥有成熟的无线网络端到端解决方案的提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络测试产品",
+        "evidence_span": "提供专业的网络测试、优化、建设、运维等方面的产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络优化产品",
+        "evidence_span": "提供专业的网络测试、优化、建设、运维等方面的产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络建设产品",
+        "evidence_span": "提供专业的网络测试、优化、建设、运维等方面的产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络运维产品",
+        "evidence_span": "提供专业的网络测试、优化、建设、运维等方面的产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "RFID产品",
+        "evidence_span": "产品和服务包括 RFID 产品、工业自动化装备、物联网行业解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业自动化装备",
+        "evidence_span": "产品和服务包括 RFID 产品、工业自动化装备、物联网行业解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物联网行业解决方案",
+        "evidence_span": "产品和服务包括 RFID 产品、工业自动化装备、物联网行业解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能卡 Inlay",
+        "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "RFID 电子标签",
+        "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能机械臂",
+        "evidence_span": "工业机器人装备业务包括智能机械臂、AGV小车等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AGV小车",
+        "evidence_span": "工业机器人装备业务包括智能机械臂、AGV小车等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能卡生产设备",
+        "evidence_span": "智能卡生产设备、RFID 生产设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "RFID 生产设备",
+        "evidence_span": "智能卡生产设备、RFID 生产设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产品溯源解决方案",
+        "evidence_span": "物联网解决方案主要是产品溯源解决方案、资产及人员管理解决方案、智慧消防解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产及人员管理解决方案",
+        "evidence_span": "物联网解决方案主要是产品溯源解决方案、资产及人员管理解决方案、智慧消防解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧消防解决方案",
+        "evidence_span": "物联网解决方案主要是产品溯源解决方案、资产及人员管理解决方案、智慧消防解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "身份认证解决方案",
+        "evidence_span": "身份认证解决方案（身份证，人脸，指纹，虹膜等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能仓储物流解决方案",
+        "evidence_span": "智能仓储物流解决方案、服装及零售解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "服装及零售解决方案",
+        "evidence_span": "智能仓储物流解决方案、服装及零售解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产管理软件",
+        "evidence_span": "资产管理软件、以及与解决方案相关的智能设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "学历教育运营服务",
+        "evidence_span": "为国内高职领域提供学历教育运营服务及相关教育装备产品的销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教育装备产品",
+        "evidence_span": "为国内高职领域提供学历教育运营服务及相关教育装备产品的销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际学历课程教育运营服务",
+        "evidence_span": "提供国际学历课程教育运营服务及高端财经类培训服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端财经类培训服务",
+        "evidence_span": "提供国际学历课程教育运营服务及高端财经类培训服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基础硬件",
+        "evidence_span": "产品形态包括基础硬件、仿真软件系统、平台系统、课程、教案等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仿真软件系统",
+        "evidence_span": "产品形态包括基础硬件、仿真软件系统、平台系统、课程、教案等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "平台系统",
+        "evidence_span": "产品形态包括基础硬件、仿真软件系统、平台系统、课程、教案等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "课程",
+        "evidence_span": "产品形态包括基础硬件、仿真软件系统、平台系统、课程、教案等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教案",
+        "evidence_span": "产品形态包括基础硬件、仿真软件系统、平台系统、课程、教案等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际教育解决方案",
+        "evidence_span": "融合于自主的集学术管理、产品管理、运营管理为一体的国际教育解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际学院共建",
+        "evidence_span": "形成国际学院共建、国际项目运营、教育技术输出的产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际项目运营",
+        "evidence_span": "形成国际学院共建、国际项目运营、教育技术输出的产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教育技术输出",
+        "evidence_span": "形成国际学院共建、国际项目运营、教育技术输出的产品线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超大规模的大数据存储",
+        "evidence_span": "具备了超大规模的大数据存储、分布式计算、实时大数据的流式处理以及快速建模和数据挖掘等核心能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分布式计算",
+        "evidence_span": "具备了超大规模的大数据存储、分布式计算、实时大数据的流式处理以及快速建模和数据挖掘等核心能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "实时大数据的流式处理",
+        "evidence_span": "具备了超大规模的大数据存储、分布式计算、实时大数据的流式处理以及快速建模和数据挖掘等核心能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "快速建模和数据挖掘",
+        "evidence_span": "具备了超大规模的大数据存储、分布式计算、实时大数据的流式处理以及快速建模和数据挖掘等核心能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "耦合工艺 Inlay",
+        "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锡片工艺 Inlay",
+        "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "挑线工艺 Inlay",
+        "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "导电胶工艺 Inlay",
+        "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "非接触 Inlay",
+        "evidence_span": "RFID 产品包括：耦合工艺 Inlay、锡片工艺 Inlay、挑线工艺 Inlay、导电胶工艺Inlay 以及非接触 Inlay 等智能卡 Inlay 和 RFID 电子标签"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化工厂改造",
+        "evidence_span": "智能化工厂改造等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "UBL 人才培养模式",
+        "evidence_span": "构建了独具特色的“UBL 人才培养模式”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通信运营商",
+        "evidence_span": "公司为通信运营商、系统设备商、终端厂商等提供专业的网络测试、优化、建设、运维等方面的产品、服务和综合解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "系统设备商",
+        "evidence_span": "公司为通信运营商、系统设备商、终端厂商等提供专业的网络测试、优化、建设、运维等方面的产品、服务和综合解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "终端厂商",
+        "evidence_span": "公司为通信运营商、系统设备商、终端厂商等提供专业的网络测试、优化、建设、运维等方面的产品、服务和综合解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "公司全部中标及入围中国移动、中国电信和中国联通三大运营商的 5G 仪表集采项目的公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电信",
+        "evidence_span": "公司全部中标及入围中国移动、中国电信和中国联通三大运营商的 5G 仪表集采项目的公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国联通",
+        "evidence_span": "公司全部中标及入围中国移动、中国电信和中国联通三大运营商的 5G 仪表集采项目的公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "5G 小站设备厂家",
+        "evidence_span": "同时新增了 5G 小站设备厂家作为新增客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内高校",
+        "evidence_span": "通过与国内高校合作，建立共建共管的二级学院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高职学院",
+        "evidence_span": "根据高职学院实训教学的需求提供相关的教育装备产品"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "物联网爆发",
+        "evidence_span": "世纪鼎利ICT+职业教育双轮驱动，恰逢物联网爆发之际"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T20:01:55"
+}

@@ -1,0 +1,61 @@
+{
+  "must": [
+    "高端科学仪器装备",
+    "仪器传感器",
+    "实验分析仪器",
+    "实验室仪器"
+  ],
+  "should": [
+    "设备更新改造",
+    "再贷款政策",
+    "部、市、区三级政策联动",
+    "龙头企业",
+    "专精特新企业",
+    "生态链企业",
+    "产业集聚区",
+    "本国产品标准",
+    "国产替代补贴",
+    "政府采购",
+    "本国产品",
+    "价格扣除"
+  ],
+  "not": [
+    "美国商务部工业安全局",
+    "BIS",
+    "临时最终规则",
+    "IFR",
+    "出口管制"
+  ],
+  "evidence_refs": [
+    {
+      "term": "高端科学仪器装备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "高端科学仪器装备"
+    },
+    {
+      "term": "仪器传感器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "仪器传感器"
+    },
+    {
+      "term": "实验分析仪器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "实验分析仪器"
+    },
+    {
+      "term": "实验室仪器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "实验室仪器"
+    }
+  ],
+  "subject_id": "9035925",
+  "quality": "medium",
+  "generated_at": "2026-03-10T10:37:32",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

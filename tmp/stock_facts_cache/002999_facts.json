@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "农资流通",
+      "evidence_span": "公司作为一家广东省供销社系统企业，以直达终端的网络配送体系为支撑，提供全品类的农资产品及专业的现代农技服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农技服务",
+      "evidence_span": "公司作为一家广东省供销社系统企业，以直达终端的网络配送体系为支撑，提供全品类的农资产品及专业的现代农技服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农资流通及农业社会化综合服务企业",
+      "evidence_span": "公司作为一家广东省供销合作社系统企业，系华南地区乃至全国具有较大市场影响力的农资流通及农业社会化综合服务企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农资流通行业改革创新的排头兵",
+      "evidence_span": "是国内农资流通行业改革创新的排头兵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氮肥",
+      "evidence_span": "公司面向批发客户和工业客户主要销售氮肥和钾肥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钾肥",
+      "evidence_span": "公司面向批发客户和工业客户主要销售氮肥和钾肥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复混肥",
+      "evidence_span": "销售复混肥和农药等差异化较大、市场稳定的产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农药",
+      "evidence_span": "销售复混肥和农药等差异化较大、市场稳定的产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "以色列钾肥",
+      "evidence_span": "公司既是以色列钾肥、加拿大钾肥、富岛尿素等大宗商品的工厂直营经销商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加拿大钾肥",
+      "evidence_span": "公司既是以色列钾肥、加拿大钾肥、富岛尿素等大宗商品的工厂直营经销商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "富岛尿素",
+      "evidence_span": "公司既是以色列钾肥、加拿大钾肥、富岛尿素等大宗商品的工厂直营经销商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "雅苒复合肥",
+      "evidence_span": "又是多种面向终端的高端产品如雅苒复合肥、撒可富复合肥、拜耳“好力克”、美国仙农“仙农必备”、成都新朝阳“胜收”、永农“精展”等产品的区域或全国总经销商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "撒可富复合肥",
+      "evidence_span": "又是多种面向终端的高端产品如雅苒复合肥、撒可富复合肥、拜耳“好力克”、美国仙农“仙农必备”、成都新朝阳“胜收”、永农“精展”等产品的区域或全国总经销商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "拜耳“好力克”",
+      "evidence_span": "又是多种面向终端的高端产品如雅苒复合肥、撒可富复合肥、拜耳“好力克”、美国仙农“仙农必备”、成都新朝阳“胜收”、永农“精展”等产品的区域或全国总经销商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "美国仙农“仙农必备”",
+      "evidence_span": "又是多种面向终端的高端产品如雅苒复合肥、撒可富复合肥、拜耳“好力克”、美国仙农“仙农必备”、成都新朝阳“胜收”、永农“精展”等产品的区域或全国总经销商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "成都新朝阳“胜收”",
+      "evidence_span": "又是多种面向终端的高端产品如雅苒复合肥、撒可富复合肥、拜耳“好力克”、美国仙农“仙农必备”、成都新朝阳“胜收”、永农“精展”等产品的区域或全国总经销商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "永农“精展”",
+      "evidence_span": "又是多种面向终端的高端产品如雅苒复合肥、撒可富复合肥、拜耳“好力克”、美国仙农“仙农必备”、成都新朝阳“胜收”、永农“精展”等产品的区域或全国总经销商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "测土配方施肥",
+      "evidence_span": "中加化肥负责测土配方施肥"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "远程视频诊断系统",
+      "evidence_span": "总部的400电话、远程视频诊断系统以及移动终端APP平台提供在线解疑和远程服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "移动终端APP平台",
+      "evidence_span": "总部的400电话、远程视频诊断系统以及移动终端APP平台提供在线解疑和远程服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "批发客户",
+      "evidence_span": "公司面向批发客户和工业客户主要销售氮肥和钾肥"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工业客户",
+      "evidence_span": "公司面向批发客户和工业客户主要销售氮肥和钾肥"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "种植大户",
+      "evidence_span": "销售对象主要包括种植大户、农资服务站等终端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "农资服务站",
+      "evidence_span": "销售对象主要包括种植大户、农资服务站等终端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "超过20000家农资服务站及种植大户",
+      "evidence_span": "服务于超过20000家农资服务站及种植大户等终端客户"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "农资流通",
+        "evidence_span": "公司作为一家广东省供销社系统企业，以直达终端的网络配送体系为支撑，提供全品类的农资产品及专业的现代农技服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农技服务",
+        "evidence_span": "公司作为一家广东省供销社系统企业，以直达终端的网络配送体系为支撑，提供全品类的农资产品及专业的现代农技服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农资流通及农业社会化综合服务企业",
+        "evidence_span": "公司作为一家广东省供销合作社系统企业，系华南地区乃至全国具有较大市场影响力的农资流通及农业社会化综合服务企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农资流通行业改革创新的排头兵",
+        "evidence_span": "是国内农资流通行业改革创新的排头兵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氮肥",
+        "evidence_span": "公司面向批发客户和工业客户主要销售氮肥和钾肥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钾肥",
+        "evidence_span": "公司面向批发客户和工业客户主要销售氮肥和钾肥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复混肥",
+        "evidence_span": "销售复混肥和农药等差异化较大、市场稳定的产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农药",
+        "evidence_span": "销售复混肥和农药等差异化较大、市场稳定的产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "以色列钾肥",
+        "evidence_span": "公司既是以色列钾肥、加拿大钾肥、富岛尿素等大宗商品的工厂直营经销商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加拿大钾肥",
+        "evidence_span": "公司既是以色列钾肥、加拿大钾肥、富岛尿素等大宗商品的工厂直营经销商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "富岛尿素",
+        "evidence_span": "公司既是以色列钾肥、加拿大钾肥、富岛尿素等大宗商品的工厂直营经销商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "雅苒复合肥",
+        "evidence_span": "又是多种面向终端的高端产品如雅苒复合肥、撒可富复合肥、拜耳“好力克”、美国仙农“仙农必备”、成都新朝阳“胜收”、永农“精展”等产品的区域或全国总经销商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "撒可富复合肥",
+        "evidence_span": "又是多种面向终端的高端产品如雅苒复合肥、撒可富复合肥、拜耳“好力克”、美国仙农“仙农必备”、成都新朝阳“胜收”、永农“精展”等产品的区域或全国总经销商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "拜耳“好力克”",
+        "evidence_span": "又是多种面向终端的高端产品如雅苒复合肥、撒可富复合肥、拜耳“好力克”、美国仙农“仙农必备”、成都新朝阳“胜收”、永农“精展”等产品的区域或全国总经销商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "美国仙农“仙农必备”",
+        "evidence_span": "又是多种面向终端的高端产品如雅苒复合肥、撒可富复合肥、拜耳“好力克”、美国仙农“仙农必备”、成都新朝阳“胜收”、永农“精展”等产品的区域或全国总经销商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "成都新朝阳“胜收”",
+        "evidence_span": "又是多种面向终端的高端产品如雅苒复合肥、撒可富复合肥、拜耳“好力克”、美国仙农“仙农必备”、成都新朝阳“胜收”、永农“精展”等产品的区域或全国总经销商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "永农“精展”",
+        "evidence_span": "又是多种面向终端的高端产品如雅苒复合肥、撒可富复合肥、拜耳“好力克”、美国仙农“仙农必备”、成都新朝阳“胜收”、永农“精展”等产品的区域或全国总经销商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "测土配方施肥",
+        "evidence_span": "中加化肥负责测土配方施肥"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "远程视频诊断系统",
+        "evidence_span": "总部的400电话、远程视频诊断系统以及移动终端APP平台提供在线解疑和远程服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "移动终端APP平台",
+        "evidence_span": "总部的400电话、远程视频诊断系统以及移动终端APP平台提供在线解疑和远程服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "批发客户",
+        "evidence_span": "公司面向批发客户和工业客户主要销售氮肥和钾肥"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工业客户",
+        "evidence_span": "公司面向批发客户和工业客户主要销售氮肥和钾肥"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "种植大户",
+        "evidence_span": "销售对象主要包括种植大户、农资服务站等终端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "农资服务站",
+        "evidence_span": "销售对象主要包括种植大户、农资服务站等终端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "超过20000家农资服务站及种植大户",
+        "evidence_span": "服务于超过20000家农资服务站及种植大户等终端客户"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:23:44"
+}

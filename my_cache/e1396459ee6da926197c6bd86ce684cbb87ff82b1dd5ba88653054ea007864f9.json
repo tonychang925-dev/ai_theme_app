@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:00:49", "result": {"chunk_id": "60f3bc148617", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含小米汽车首款SUV的发布事件（如售价、大定数据），但也提供了车型的静态规格信息（如续航、马力、加速性能），这些可能用于构建题材知识，但混合了事件元素。"}}

@@ -1,0 +1,409 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能安防",
+      "evidence_span": "公司围绕“智能安防”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "音视频监测",
+      "evidence_span": "“音视频监测”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字水印技术",
+      "evidence_span": "“数字水印技术”三大业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "安防产品及解决方案提供商",
+      "evidence_span": "汉邦高科国内领先的安防产品及解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "广电领域龙头企业",
+      "evidence_span": "公司是广电领域深耕多年的龙头企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字水印核心技术企业",
+      "evidence_span": "是行业内少数掌握数字水印核心技术的企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安防整体解决方案",
+      "evidence_span": "为客户提供贴合行业特点的安防整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧金融安防解决方案",
+      "evidence_span": "为银行等金融类客户提供安防产品、服务及整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧公安安防解决方案",
+      "evidence_span": "提供“一对一”定制化产品开发和专业化的整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧社区安防解决方案",
+      "evidence_span": "为客户提供整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "监测云系统平台",
+      "evidence_span": "研发了具有先进水平的监测云系统平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "音视频监测软件系统",
+      "evidence_span": "提供了全国性的音视频监测软件系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "音视频监测硬件设备",
+      "evidence_span": "硬件设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字水印产品Viewmark",
+      "evidence_span": "公司数字水印技术核心产品Viewmark"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "警务大数据分析及研判系统",
+      "evidence_span": "警务大数据分析及研判系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社会治安综合治理大联动系统",
+      "evidence_span": "社会治安综合治理大联动系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公安多维数据侦查防控系统",
+      "evidence_span": "公安多维数据侦查防控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "平安社区智能管理系统",
+      "evidence_span": "平安社区智能管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公安可视化立体防控系统",
+      "evidence_span": "公安可视化立体防控系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字视频处理技术",
+      "evidence_span": "数字视频处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字音视频编解码技术",
+      "evidence_span": "数字音视频编解码技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "嵌入式系统技术",
+      "evidence_span": "嵌入式系统技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字视频网络传输控制技术",
+      "evidence_span": "数字视频网络传输控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能视频分析技术",
+      "evidence_span": "智能视频分析技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统安全稳定技术",
+      "evidence_span": "系统安全稳定技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统集成技术",
+      "evidence_span": "系统集成技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "网络互通互联技术",
+      "evidence_span": "网络互通互联技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人脸识别算法",
+      "evidence_span": "人脸识别算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车辆识别算法",
+      "evidence_span": "车辆识别算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视频图片结构化解析算法",
+      "evidence_span": "视频图片结构化解析算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字水印算法",
+      "evidence_span": "致力于数字水印算法的研究"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "银行",
+      "evidence_span": "为银行等金融类客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安客户",
+      "evidence_span": "结合公安客户的实际应用需求"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家广电总局",
+      "evidence_span": "为国家和地方广电主管部门"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广播电视播出机构",
+      "evidence_span": "广播电视播出机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广电网络运营商",
+      "evidence_span": "广电网络运营商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "CCTV",
+      "evidence_span": "CCTV"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "地方台",
+      "evidence_span": "地方台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电影技术质量检测所",
+      "evidence_span": "电影技术质量检测所"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "知识产权保护",
+      "evidence_span": "乘知识产权保护政策东风"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能安防",
+        "evidence_span": "公司围绕“智能安防”"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "音视频监测",
+        "evidence_span": "“音视频监测”"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字水印技术",
+        "evidence_span": "“数字水印技术”三大业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "安防产品及解决方案提供商",
+        "evidence_span": "汉邦高科国内领先的安防产品及解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "广电领域龙头企业",
+        "evidence_span": "公司是广电领域深耕多年的龙头企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字水印核心技术企业",
+        "evidence_span": "是行业内少数掌握数字水印核心技术的企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安防整体解决方案",
+        "evidence_span": "为客户提供贴合行业特点的安防整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧金融安防解决方案",
+        "evidence_span": "为银行等金融类客户提供安防产品、服务及整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧公安安防解决方案",
+        "evidence_span": "提供“一对一”定制化产品开发和专业化的整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧社区安防解决方案",
+        "evidence_span": "为客户提供整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "监测云系统平台",
+        "evidence_span": "研发了具有先进水平的监测云系统平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "音视频监测软件系统",
+        "evidence_span": "提供了全国性的音视频监测软件系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "音视频监测硬件设备",
+        "evidence_span": "硬件设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字水印产品Viewmark",
+        "evidence_span": "公司数字水印技术核心产品Viewmark"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "警务大数据分析及研判系统",
+        "evidence_span": "警务大数据分析及研判系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社会治安综合治理大联动系统",
+        "evidence_span": "社会治安综合治理大联动系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公安多维数据侦查防控系统",
+        "evidence_span": "公安多维数据侦查防控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "平安社区智能管理系统",
+        "evidence_span": "平安社区智能管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公安可视化立体防控系统",
+        "evidence_span": "公安可视化立体防控系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字视频处理技术",
+        "evidence_span": "数字视频处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字音视频编解码技术",
+        "evidence_span": "数字音视频编解码技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "嵌入式系统技术",
+        "evidence_span": "嵌入式系统技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字视频网络传输控制技术",
+        "evidence_span": "数字视频网络传输控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能视频分析技术",
+        "evidence_span": "智能视频分析技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统安全稳定技术",
+        "evidence_span": "系统安全稳定技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统集成技术",
+        "evidence_span": "系统集成技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "网络互通互联技术",
+        "evidence_span": "网络互通互联技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人脸识别算法",
+        "evidence_span": "人脸识别算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车辆识别算法",
+        "evidence_span": "车辆识别算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视频图片结构化解析算法",
+        "evidence_span": "视频图片结构化解析算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字水印算法",
+        "evidence_span": "致力于数字水印算法的研究"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "银行",
+        "evidence_span": "为银行等金融类客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安客户",
+        "evidence_span": "结合公安客户的实际应用需求"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家广电总局",
+        "evidence_span": "为国家和地方广电主管部门"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广播电视播出机构",
+        "evidence_span": "广播电视播出机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广电网络运营商",
+        "evidence_span": "广电网络运营商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "CCTV",
+        "evidence_span": "CCTV"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "地方台",
+        "evidence_span": "地方台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电影技术质量检测所",
+        "evidence_span": "电影技术质量检测所"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "知识产权保护",
+        "evidence_span": "乘知识产权保护政策东风"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:33:20"
+}

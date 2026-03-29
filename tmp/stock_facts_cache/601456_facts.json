@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "泛财富管理业务",
+      "evidence_span": "着力推动传统经纪业务和资产管理业务向泛财富管理业务转型"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资本中介交易",
+      "evidence_span": "从传统的方向性自营交易向风险中性的资本中介交易转型"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "综合性大投行业务",
+      "evidence_span": "推动传统通道型投行业务向“投行+投资”的综合性大投行业务模式转型"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融科技",
+      "evidence_span": "金融科技战略方面，加大投入"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特色券商",
+      "evidence_span": "国联证券小而美的特色券商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "创业型券商",
+      "evidence_span": "创业型券商典范"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基金投顾业务",
+      "evidence_span": "公司基金投顾具先发优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "代销金融产品",
+      "evidence_span": "代销金融产品收入及占比提升明显"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "股权融资业务",
+      "evidence_span": "主要涵盖股权融资业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "债券融资业务",
+      "evidence_span": "债券融资业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "财务顾问业务",
+      "evidence_span": "财务顾问业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新三板业务",
+      "evidence_span": "新三板业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产证券化业务",
+      "evidence_span": "资产证券化业务表现亮眼"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集合资产管理业务",
+      "evidence_span": "公司集合资产管理业务收入占比呈现波动下滑趋势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公开募集证券投资基金管理业务",
+      "evidence_span": "从事公开募集证券投资基金管理业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杭州银行",
+      "evidence_span": "国联证券与杭州银行正式牵手"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "互联网大平台",
+      "evidence_span": "继续深入与互联网大平台的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "互联网消费金融企业",
+      "evidence_span": "互联网消费金融企业 ABS 发行规模位列行业第三"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "财富管理",
+      "evidence_span": "财富管理有望驱动公司快速成长"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "泛财富管理业务",
+        "evidence_span": "着力推动传统经纪业务和资产管理业务向泛财富管理业务转型"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资本中介交易",
+        "evidence_span": "从传统的方向性自营交易向风险中性的资本中介交易转型"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "综合性大投行业务",
+        "evidence_span": "推动传统通道型投行业务向“投行+投资”的综合性大投行业务模式转型"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融科技",
+        "evidence_span": "金融科技战略方面，加大投入"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特色券商",
+        "evidence_span": "国联证券小而美的特色券商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "创业型券商",
+        "evidence_span": "创业型券商典范"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基金投顾业务",
+        "evidence_span": "公司基金投顾具先发优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "代销金融产品",
+        "evidence_span": "代销金融产品收入及占比提升明显"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "股权融资业务",
+        "evidence_span": "主要涵盖股权融资业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "债券融资业务",
+        "evidence_span": "债券融资业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "财务顾问业务",
+        "evidence_span": "财务顾问业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新三板业务",
+        "evidence_span": "新三板业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产证券化业务",
+        "evidence_span": "资产证券化业务表现亮眼"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集合资产管理业务",
+        "evidence_span": "公司集合资产管理业务收入占比呈现波动下滑趋势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公开募集证券投资基金管理业务",
+        "evidence_span": "从事公开募集证券投资基金管理业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杭州银行",
+        "evidence_span": "国联证券与杭州银行正式牵手"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "互联网大平台",
+        "evidence_span": "继续深入与互联网大平台的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "互联网消费金融企业",
+        "evidence_span": "互联网消费金融企业 ABS 发行规模位列行业第三"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "财富管理",
+        "evidence_span": "财富管理有望驱动公司快速成长"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:24:44"
+}

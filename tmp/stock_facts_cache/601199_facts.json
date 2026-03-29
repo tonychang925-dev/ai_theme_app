@@ -1,0 +1,344 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "自来水制售",
+      "evidence_span": "公司主营业务为自来水制售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自来水排水",
+      "evidence_span": "公司主营业务为自来水制售；自来水排水及相关水处理业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "相关水处理业务",
+      "evidence_span": "公司主营业务为自来水制售；自来水排水及相关水处理业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程业务",
+      "evidence_span": "同时经营工程业务和污水处理业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "污水处理业务",
+      "evidence_span": "同时经营工程业务和污水处理业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "供水行业领先企业",
+      "evidence_span": "供水行业处于领先地位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "江苏服务业名牌",
+      "evidence_span": "江苏服务业名牌"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国供水服务5A级企业",
+      "evidence_span": "被评为“中国供水服务5A级企业”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自来水",
+      "evidence_span": "主要产品为自来水"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "供水管网工程",
+      "evidence_span": "供水管网工程全力推进"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自来水管道安装工程",
+      "evidence_span": "自来水管道安装工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一户一表改造工程",
+      "evidence_span": "一户一表改造工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高层高压管工程",
+      "evidence_span": "高层高压管工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房产小区管网建设工程",
+      "evidence_span": "房产小区管网建设工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二次供水设施建设和维护工程",
+      "evidence_span": "二次供水设施建设和维护工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市政雨污水管网工程",
+      "evidence_span": "市政雨污水管网工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污水处理",
+      "evidence_span": "污水处理业务包括污水处理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "排水管网运维",
+      "evidence_span": "排水管网运维"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "排水管网工程",
+      "evidence_span": "排水管网工程业务板块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧排水服务",
+      "evidence_span": "为客户提供排水管网设施和排水泵站的运行管理、巡视、养护和疏通等“智慧排水”服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧水务",
+      "evidence_span": "智慧水务2.0建设稳步推进"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧排水系统",
+      "evidence_span": "智慧排水系统建设顺利推进"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "城市地下管网非开挖管道修复技术",
+      "evidence_span": "城市地下管网非开挖管道修复技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "cipp热塑成型管道修复技术",
+      "evidence_span": "cipp热塑成型管道修复技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "uv-cipp光固化管道修复技术",
+      "evidence_span": "uv-cipp光固化管道修复技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "给水管道不锈钢内衬管道修复技术",
+      "evidence_span": "给水管道不锈钢内衬管道修复技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "给排水设施物联网智控系统",
+      "evidence_span": "给排水设施物联网智控系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江阴市",
+      "evidence_span": "业务范围主要在江阴市"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "申港街道",
+      "evidence_span": "中标了“2022-2023年度申港街道雨污水管网设施运行维护及常规维修项目”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "夏港街道",
+      "evidence_span": "夏港街道排水管网养护"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "周庄镇",
+      "evidence_span": "周庄镇“四位一体”业务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "江南水务地方水务龙头，国改最先锋"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "固废处理",
+      "evidence_span": "试水固废处理"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "环保转型",
+      "evidence_span": "环保转型稳步推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "自来水制售",
+        "evidence_span": "公司主营业务为自来水制售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自来水排水及相关水处理业务",
+        "evidence_span": "公司主营业务为自来水制售；自来水排水及相关水处理业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程业务",
+        "evidence_span": "同时经营工程业务和污水处理业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "污水处理业务",
+        "evidence_span": "同时经营工程业务和污水处理业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "供水行业领先企业",
+        "evidence_span": "供水行业处于领先地位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "江苏服务业名牌",
+        "evidence_span": "江苏服务业名牌"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国供水服务5A级企业",
+        "evidence_span": "被评为“中国供水服务5A级企业”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自来水",
+        "evidence_span": "主要产品为自来水"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "供水管网工程",
+        "evidence_span": "供水管网工程全力推进"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自来水管道安装工程",
+        "evidence_span": "自来水管道安装工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一户一表改造工程",
+        "evidence_span": "一户一表改造工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高层高压管工程",
+        "evidence_span": "高层高压管工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房产小区管网建设工程",
+        "evidence_span": "房产小区管网建设工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二次供水设施建设和维护工程",
+        "evidence_span": "二次供水设施建设和维护工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市政雨污水管网工程",
+        "evidence_span": "市政雨污水管网工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污水处理",
+        "evidence_span": "污水处理业务包括污水处理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "排水管网运维",
+        "evidence_span": "排水管网运维"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "排水管网工程",
+        "evidence_span": "排水管网工程业务板块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧排水服务",
+        "evidence_span": "为客户提供排水管网设施和排水泵站的运行管理、巡视、养护和疏通等“智慧排水”服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧水务",
+        "evidence_span": "智慧水务2.0建设稳步推进"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧排水系统",
+        "evidence_span": "智慧排水系统建设顺利推进"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "城市地下管网非开挖管道修复技术",
+        "evidence_span": "城市地下管网非开挖管道修复技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "cipp热塑成型管道修复技术",
+        "evidence_span": "cipp热塑成型管道修复技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "uv-cipp光固化管道修复技术",
+        "evidence_span": "uv-cipp光固化管道修复技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "给水管道不锈钢内衬管道修复技术",
+        "evidence_span": "给水管道不锈钢内衬管道修复技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "给排水设施物联网智控系统",
+        "evidence_span": "给排水设施物联网智控系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江阴市",
+        "evidence_span": "业务范围主要在江阴市"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "申港街道",
+        "evidence_span": "中标了“2022-2023年度申港街道雨污水管网设施运行维护及常规维修项目”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "夏港街道",
+        "evidence_span": "夏港街道排水管网养护"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "周庄镇",
+        "evidence_span": "周庄镇“四位一体”业务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "江南水务地方水务龙头，国改最先锋"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "固废处理",
+        "evidence_span": "试水固废处理"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "环保转型",
+        "evidence_span": "环保转型稳步推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:17:38"
+}

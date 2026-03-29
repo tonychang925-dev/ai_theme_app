@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:31:44", "result": {"chunk_id": "6d8319bed650", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述分析师对Vision Pro出货量的预估和量产时间表，属于事件性预测和动态，不包含静态知识。"}}

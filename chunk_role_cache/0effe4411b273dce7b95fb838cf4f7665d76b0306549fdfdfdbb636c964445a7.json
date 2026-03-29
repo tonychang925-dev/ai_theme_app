@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:24:22", "result": {"chunk_id": "4fac397b6017", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落说明稀土永磁材料在稀土消费中的占比和重要性，是静态统计和角色描述，无事件或动态内容。"}}

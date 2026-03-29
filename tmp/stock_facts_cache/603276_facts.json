@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "有机酮",
+      "evidence_span": "主营有机酮、酸、酯"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有机酸",
+      "evidence_span": "主营有机酮、酸、酯"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有机酯",
+      "evidence_span": "主营有机酮、酸、酯"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "有机酮、酯、酸类生产企业",
+      "evidence_span": "已成为国内生产规模领先、具备国际竞争力的有机酮、酯、酸类生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3-戊酮",
+      "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甲基异丙基酮",
+      "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丙酸丙酯",
+      "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丙酸乙酯",
+      "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丁酸乙酯",
+      "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "异丁酸",
+      "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "正戊酸",
+      "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三丁酸甘油酯",
+      "evidence_span": "三丁酸甘油酯、乙二醇二醋酸酯、正丁酸和酸酐类等产品的销售规模增长迅速"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乙二醇二醋酸酯",
+      "evidence_span": "三丁酸甘油酯、乙二醇二醋酸酯、正丁酸和酸酐类等产品的销售规模增长迅速"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "正丁酸",
+      "evidence_span": "三丁酸甘油酯、乙二醇二醋酸酯、正丁酸和酸酐类等产品的销售规模增长迅速"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酸酐类",
+      "evidence_span": "三丁酸甘油酯、乙二醇二醋酸酯、正丁酸和酸酐类等产品的销售规模增长迅速"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色除草剂中间体",
+      "evidence_span": "公司产品可分为绿色除草剂中间体、锂电池电解液添加剂、绿色食品及饲料添加剂、环保型高档有机溶剂、医药中间体、其他重要的多用途化学中间品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池电解液添加剂",
+      "evidence_span": "公司产品可分为绿色除草剂中间体、锂电池电解液添加剂、绿色食品及饲料添加剂、环保型高档有机溶剂、医药中间体、其他重要的多用途化学中间品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色食品及饲料添加剂",
+      "evidence_span": "公司产品可分为绿色除草剂中间体、锂电池电解液添加剂、绿色食品及饲料添加剂、环保型高档有机溶剂、医药中间体、其他重要的多用途化学中间品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保型高档有机溶剂",
+      "evidence_span": "公司产品可分为绿色除草剂中间体、锂电池电解液添加剂、绿色食品及饲料添加剂、环保型高档有机溶剂、医药中间体、其他重要的多用途化学中间品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药中间体",
+      "evidence_span": "公司产品可分为绿色除草剂中间体、锂电池电解液添加剂、绿色食品及饲料添加剂、环保型高档有机溶剂、医药中间体、其他重要的多用途化学中间品等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "酸酸法脂肪酮和芳香酮成套技术",
+      "evidence_span": "公司拥有多项具有自主知识产权的成套技术，如酸酸法脂肪酮和芳香酮成套技术、醇一步法酯类合成技术、连续化酸类和酯类合成技术和丙酮缩甘油及其醋酸酯合成技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "醇一步法酯类合成技术",
+      "evidence_span": "公司拥有多项具有自主知识产权的成套技术，如酸酸法脂肪酮和芳香酮成套技术、醇一步法酯类合成技术、连续化酸类和酯类合成技术和丙酮缩甘油及其醋酸酯合成技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连续化酸类和酯类合成技术",
+      "evidence_span": "公司拥有多项具有自主知识产权的成套技术，如酸酸法脂肪酮和芳香酮成套技术、醇一步法酯类合成技术、连续化酸类和酯类合成技术和丙酮缩甘油及其醋酸酯合成技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "丙酮缩甘油及其醋酸酯合成技术",
+      "evidence_span": "公司拥有多项具有自主知识产权的成套技术，如酸酸法脂肪酮和芳香酮成套技术、醇一步法酯类合成技术、连续化酸类和酯类合成技术和丙酮缩甘油及其醋酸酯合成技术等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "巴斯夫",
+      "evidence_span": "公司的甲基异丙基酮凭借优秀的品质、稳定的供应能力和成本优势持续获得了国内主要客户和国际化工巨头巴斯夫的认可"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "长期以来，公司产品以取代进口为主"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "有机酮",
+        "evidence_span": "主营有机酮、酸、酯"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有机酸",
+        "evidence_span": "主营有机酮、酸、酯"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有机酯",
+        "evidence_span": "主营有机酮、酸、酯"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "有机酮、酯、酸类生产企业",
+        "evidence_span": "已成为国内生产规模领先、具备国际竞争力的有机酮、酯、酸类生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3-戊酮",
+        "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甲基异丙基酮",
+        "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丙酸丙酯",
+        "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丙酸乙酯",
+        "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丁酸乙酯",
+        "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "异丁酸",
+        "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "正戊酸",
+        "evidence_span": "主要产品在原有3-戊酮、甲基异丙基酮、丙酸丙酯、丙酸乙酯、丁酸乙酯、异丁酸和正戊酸的基础上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三丁酸甘油酯",
+        "evidence_span": "三丁酸甘油酯、乙二醇二醋酸酯、正丁酸和酸酐类等产品的销售规模增长迅速"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乙二醇二醋酸酯",
+        "evidence_span": "三丁酸甘油酯、乙二醇二醋酸酯、正丁酸和酸酐类等产品的销售规模增长迅速"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "正丁酸",
+        "evidence_span": "三丁酸甘油酯、乙二醇二醋酸酯、正丁酸和酸酐类等产品的销售规模增长迅速"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酸酐类",
+        "evidence_span": "三丁酸甘油酯、乙二醇二醋酸酯、正丁酸和酸酐类等产品的销售规模增长迅速"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色除草剂中间体",
+        "evidence_span": "公司产品可分为绿色除草剂中间体、锂电池电解液添加剂、绿色食品及饲料添加剂、环保型高档有机溶剂、医药中间体、其他重要的多用途化学中间品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池电解液添加剂",
+        "evidence_span": "公司产品可分为绿色除草剂中间体、锂电池电解液添加剂、绿色食品及饲料添加剂、环保型高档有机溶剂、医药中间体、其他重要的多用途化学中间品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色食品及饲料添加剂",
+        "evidence_span": "公司产品可分为绿色除草剂中间体、锂电池电解液添加剂、绿色食品及饲料添加剂、环保型高档有机溶剂、医药中间体、其他重要的多用途化学中间品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保型高档有机溶剂",
+        "evidence_span": "公司产品可分为绿色除草剂中间体、锂电池电解液添加剂、绿色食品及饲料添加剂、环保型高档有机溶剂、医药中间体、其他重要的多用途化学中间品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药中间体",
+        "evidence_span": "公司产品可分为绿色除草剂中间体、锂电池电解液添加剂、绿色食品及饲料添加剂、环保型高档有机溶剂、医药中间体、其他重要的多用途化学中间品等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "酸酸法脂肪酮和芳香酮成套技术",
+        "evidence_span": "公司拥有多项具有自主知识产权的成套技术，如酸酸法脂肪酮和芳香酮成套技术、醇一步法酯类合成技术、连续化酸类和酯类合成技术和丙酮缩甘油及其醋酸酯合成技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "醇一步法酯类合成技术",
+        "evidence_span": "公司拥有多项具有自主知识产权的成套技术，如酸酸法脂肪酮和芳香酮成套技术、醇一步法酯类合成技术、连续化酸类和酯类合成技术和丙酮缩甘油及其醋酸酯合成技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连续化酸类和酯类合成技术",
+        "evidence_span": "公司拥有多项具有自主知识产权的成套技术，如酸酸法脂肪酮和芳香酮成套技术、醇一步法酯类合成技术、连续化酸类和酯类合成技术和丙酮缩甘油及其醋酸酯合成技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "丙酮缩甘油及其醋酸酯合成技术",
+        "evidence_span": "公司拥有多项具有自主知识产权的成套技术，如酸酸法脂肪酮和芳香酮成套技术、醇一步法酯类合成技术、连续化酸类和酯类合成技术和丙酮缩甘油及其醋酸酯合成技术等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "巴斯夫",
+        "evidence_span": "公司的甲基异丙基酮凭借优秀的品质、稳定的供应能力和成本优势持续获得了国内主要客户和国际化工巨头巴斯夫的认可"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "长期以来，公司产品以取代进口为主"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:50:54"
+}

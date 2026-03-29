@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "274c3332061e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述美国出口管制事件，但列举了受影响的半导体设备公司、材料公司和EDA公司，这些信息可能隐含产业链结构知识，需要后续分析。"}}

@@ -1,0 +1,569 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端无源器件垂直整合方案",
+      "evidence_span": "业界领先的高端无源器件垂直整合方案提供商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高速光器件封装ODM",
+      "evidence_span": "高速光器件封装ODM/OEM商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "OEM",
+      "evidence_span": "高速光器件封装ODM/OEM商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端无源器件垂直整合方案提供商",
+      "evidence_span": "业界领先的高端无源器件垂直整合方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高速光器件封装ODM/OEM商",
+      "evidence_span": "高速光器件封装ODM/OEM商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光器件平台型厂商",
+      "evidence_span": "天孚通信稀缺的光器件平台型厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "一站式领先光器件平台",
+      "evidence_span": "一站式领先光器件平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "一体化光器件龙头",
+      "evidence_span": "一体化光器件龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光器件一站式应用平台",
+      "evidence_span": "光器件一站式应用平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光模块上游一站式解决方案提供商",
+      "evidence_span": "光模块上游一站式解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光纤连接行业领军企业",
+      "evidence_span": "光纤连接行业领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光器件生产行业龙头",
+      "evidence_span": "天孚通信作为光器件生产行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光器件龙头企业",
+      "evidence_span": "公司作为光器件龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光通信精密制造新秀",
+      "evidence_span": "天孚通信光通信精密制造新秀"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光器件平台型公司",
+      "evidence_span": "光器件平台型公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中高速光器件产品",
+      "evidence_span": "各类中高速光器件产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "垂直整合一站式解决方案",
+      "evidence_span": "为下游客户提供垂直整合一站式解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有源产品线",
+      "evidence_span": "有源产品线包括BOX/TO封装OSA、光引擎等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无源产品线",
+      "evidence_span": "无源产品线包括传统的连接器、隔离器、光收发组件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BOX/TO封装OSA",
+      "evidence_span": "有源产品线包括BOX/TO封装OSA"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光引擎",
+      "evidence_span": "有源产品线包括光引擎等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连接器",
+      "evidence_span": "无源产品线包括传统的连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "隔离器",
+      "evidence_span": "无源产品线包括隔离器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光收发组件",
+      "evidence_span": "无源产品线包括光收发组件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AWG",
+      "evidence_span": "形成AWG完备的解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AOC",
+      "evidence_span": "形成AOC完备的解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速光同轴",
+      "evidence_span": "形成高速光同轴等完备的解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镀膜及光学元器件",
+      "evidence_span": "公司镀膜及光学元器件产品线量产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光线透镜",
+      "evidence_span": "光线透镜批量交付"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线缆连接器",
+      "evidence_span": "线缆连接器等无源产品批量交付"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有源TOSA&BOSA封装代工",
+      "evidence_span": "有源TOSA&BOSA封装代工线量产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FA",
+      "evidence_span": "FA批量交付"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PM保偏器件",
+      "evidence_span": "PM保偏器件等无源器件批量交付"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光器件Box封装",
+      "evidence_span": "光器件Box封装量产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速光引擎",
+      "evidence_span": "高速光引擎转入批量生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光雷达光器件产品",
+      "evidence_span": "为激光雷达厂商定制提供符合各项性能要求的光器件产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "滤光片",
+      "evidence_span": "可提供的滤光片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "透镜",
+      "evidence_span": "可提供的透镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光纤透镜阵列产品线",
+      "evidence_span": "主要可提供产品有光纤透镜阵列产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "棱镜",
+      "evidence_span": "主要可提供产品有透镜&棱镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光雷达滤光片",
+      "evidence_span": "主要可提供产品有激光雷达滤光片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "荧光滤光片",
+      "evidence_span": "主要可提供产品有荧光滤光片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有源模组",
+      "evidence_span": "主要可提供产品有有源模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光学元件",
+      "evidence_span": "主要可提供产品有相关光学元件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "400G光模块配套光器件",
+      "evidence_span": "为400G光模块配套的光器件产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "800G光模块配套光器件",
+      "evidence_span": "为800G光模块配套的光器件产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "垂直整合产品矩阵",
+      "evidence_span": "垂直整合产品矩阵"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光组件的设计研发",
+      "evidence_span": "从光组件的设计研发扩展至光器件的封装代工"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光器件的封装代工",
+      "evidence_span": "从光组件的设计研发扩展至光器件的封装代工"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "迭代工艺技术",
+      "evidence_span": "不断迭代工艺技术来提高产品良率"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速光模块产能稳定快速交付",
+      "evidence_span": "公司高速光模块产能稳定快速交付客户"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CPO封装技术",
+      "evidence_span": "公司积极推进CPO封装技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "混合集成光器件平台",
+      "evidence_span": "从分立式元器件向混合集成光器件平台转型升级"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "激光雷达厂商",
+      "evidence_span": "为激光雷达厂商定制提供符合各项性能要求的光器件产品"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益5G大周期景气度提升",
+      "evidence_span": "受益5G大周期景气度提升"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于数据中心市场的高景气度",
+      "evidence_span": "受益于数据中心市场的高景气度"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端无源器件垂直整合方案",
+        "evidence_span": "业界领先的高端无源器件垂直整合方案提供商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高速光器件封装ODM/OEM",
+        "evidence_span": "高速光器件封装ODM/OEM商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端无源器件垂直整合方案提供商",
+        "evidence_span": "业界领先的高端无源器件垂直整合方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高速光器件封装ODM/OEM商",
+        "evidence_span": "高速光器件封装ODM/OEM商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光器件平台型厂商",
+        "evidence_span": "天孚通信稀缺的光器件平台型厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "一站式领先光器件平台",
+        "evidence_span": "一站式领先光器件平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "一体化光器件龙头",
+        "evidence_span": "一体化光器件龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光器件一站式应用平台",
+        "evidence_span": "光器件一站式应用平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光模块上游一站式解决方案提供商",
+        "evidence_span": "光模块上游一站式解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光纤连接行业领军企业",
+        "evidence_span": "光纤连接行业领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光器件生产行业龙头",
+        "evidence_span": "天孚通信作为光器件生产行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光器件龙头企业",
+        "evidence_span": "公司作为光器件龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光通信精密制造新秀",
+        "evidence_span": "天孚通信光通信精密制造新秀"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光器件平台型公司",
+        "evidence_span": "光器件平台型公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中高速光器件产品",
+        "evidence_span": "各类中高速光器件产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "垂直整合一站式解决方案",
+        "evidence_span": "为下游客户提供垂直整合一站式解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有源产品线",
+        "evidence_span": "有源产品线包括BOX/TO封装OSA、光引擎等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无源产品线",
+        "evidence_span": "无源产品线包括传统的连接器、隔离器、光收发组件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BOX/TO封装OSA",
+        "evidence_span": "有源产品线包括BOX/TO封装OSA"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光引擎",
+        "evidence_span": "有源产品线包括光引擎等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连接器",
+        "evidence_span": "无源产品线包括传统的连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "隔离器",
+        "evidence_span": "无源产品线包括隔离器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光收发组件",
+        "evidence_span": "无源产品线包括光收发组件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AWG",
+        "evidence_span": "形成AWG完备的解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AOC",
+        "evidence_span": "形成AOC完备的解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速光同轴",
+        "evidence_span": "形成高速光同轴等完备的解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镀膜及光学元器件",
+        "evidence_span": "公司镀膜及光学元器件产品线量产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光线透镜",
+        "evidence_span": "光线透镜批量交付"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线缆连接器",
+        "evidence_span": "线缆连接器等无源产品批量交付"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有源TOSA&BOSA封装代工",
+        "evidence_span": "有源TOSA&BOSA封装代工线量产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FA",
+        "evidence_span": "FA批量交付"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PM保偏器件",
+        "evidence_span": "PM保偏器件等无源器件批量交付"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光器件Box封装",
+        "evidence_span": "光器件Box封装量产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速光引擎",
+        "evidence_span": "高速光引擎转入批量生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光雷达光器件产品",
+        "evidence_span": "为激光雷达厂商定制提供符合各项性能要求的光器件产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "滤光片",
+        "evidence_span": "可提供的滤光片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "透镜",
+        "evidence_span": "可提供的透镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光纤透镜阵列产品线",
+        "evidence_span": "主要可提供产品有光纤透镜阵列产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "棱镜",
+        "evidence_span": "主要可提供产品有透镜&棱镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光雷达滤光片",
+        "evidence_span": "主要可提供产品有激光雷达滤光片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "荧光滤光片",
+        "evidence_span": "主要可提供产品有荧光滤光片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有源模组",
+        "evidence_span": "主要可提供产品有有源模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光学元件",
+        "evidence_span": "主要可提供产品有相关光学元件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速光引擎",
+        "evidence_span": "公司积极推进高速光引擎"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "400G光模块配套光器件",
+        "evidence_span": "为400G光模块配套的光器件产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "800G光模块配套光器件",
+        "evidence_span": "为800G光模块配套的光器件产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "垂直整合产品矩阵",
+        "evidence_span": "垂直整合产品矩阵"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光组件的设计研发",
+        "evidence_span": "从光组件的设计研发扩展至光器件的封装代工"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光器件的封装代工",
+        "evidence_span": "从光组件的设计研发扩展至光器件的封装代工"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "迭代工艺技术",
+        "evidence_span": "不断迭代工艺技术来提高产品良率"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速光模块产能稳定快速交付",
+        "evidence_span": "公司高速光模块产能稳定快速交付客户"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CPO封装技术",
+        "evidence_span": "公司积极推进CPO封装技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "混合集成光器件平台",
+        "evidence_span": "从分立式元器件向混合集成光器件平台转型升级"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "激光雷达厂商",
+        "evidence_span": "为激光雷达厂商定制提供符合各项性能要求的光器件产品"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益5G大周期景气度提升",
+        "evidence_span": "受益5G大周期景气度提升"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于数据中心市场的高景气度",
+        "evidence_span": "受益于数据中心市场的高景气度"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:16:16"
+}

@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品制造",
+      "evidence_span": "一家集科研开发、生产、销售为一体的食品制造企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "调味品研发",
+      "evidence_span": "一直致力于调味品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "调味品生产",
+      "evidence_span": "一直致力于调味品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "调味品销售",
+      "evidence_span": "一直致力于调味品的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "食品制造企业",
+      "evidence_span": "一家集科研开发、生产、销售为一体的食品制造企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "调味品企业",
+      "evidence_span": "一直致力于调味品的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "广东省高新技术企业",
+      "evidence_span": "公司被评为“广东省高新技术企业”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "广东省省级企业技术中心",
+      "evidence_span": "公司被评为“广东省省级企业技术中心”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农业产业化国家重点龙头企业",
+      "evidence_span": "被评为“农业产业化国家重点龙头企业”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国调味品企业20强单位",
+      "evidence_span": "被评为“中国调味品企业20强单位”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国鸡精行业十强单位",
+      "evidence_span": "被评为“中国鸡精行业十强单位”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鸡粉",
+      "evidence_span": "主导产品鸡粉、鸡精是公司营业收入和利润的主要来源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鸡精",
+      "evidence_span": "主导产品鸡粉、鸡精是公司营业收入和利润的主要来源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鸡汁",
+      "evidence_span": "公司目前生产的产品涵盖了鸡粉、鸡精、鸡汁、青芥辣酱、玉米粳等多个系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "青芥辣酱",
+      "evidence_span": "公司目前生产的产品涵盖了鸡粉、鸡精、鸡汁、青芥辣酱、玉米粳等多个系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玉米粳",
+      "evidence_span": "公司目前生产的产品涵盖了鸡粉、鸡精、鸡汁、青芥辣酱、玉米粳等多个系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "调味品",
+      "evidence_span": "子公司佳隆食品夏津有限公司主要从事各类食品研究开发，调味品，副食品，罐头食品，食品添加剂，功能饮料生产销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "副食品",
+      "evidence_span": "子公司佳隆食品夏津有限公司主要从事各类食品研究开发，调味品，副食品，罐头食品，食品添加剂，功能饮料生产销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "罐头食品",
+      "evidence_span": "子公司佳隆食品夏津有限公司主要从事各类食品研究开发，调味品，副食品，罐头食品，食品添加剂，功能饮料生产销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "食品添加剂",
+      "evidence_span": "子公司佳隆食品夏津有限公司主要从事各类食品研究开发，调味品，副食品，罐头食品，食品添加剂，功能饮料生产销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能饮料",
+      "evidence_span": "子公司佳隆食品夏津有限公司主要从事各类食品研究开发，调味品，副食品，罐头食品，食品添加剂，功能饮料生产销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一步法风味鸡粉生产关键技术",
+      "evidence_span": "公司“一步法风味鸡粉生产关键技术及产业化”荣获广东省科学技术进步奖三等奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "鸡肉粉生产新技术",
+      "evidence_span": "“鸡肉粉生产新技术研究”荣获揭阳市科学技术进步奖一等奖"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "餐饮企业",
+      "evidence_span": "将公司产品销往餐饮企业、便民店、副食店、商场、超市、食品制造企业等终端市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "便民店",
+      "evidence_span": "将公司产品销往餐饮企业、便民店、副食店、商场、超市、食品制造企业等终端市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "副食店",
+      "evidence_span": "将公司产品销往餐饮企业、便民店、副食店、商场、超市、食品制造企业等终端市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "商场",
+      "evidence_span": "将公司产品销往餐饮企业、便民店、副食店、商场、超市、食品制造企业等终端市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "超市",
+      "evidence_span": "将公司产品销往餐饮企业、便民店、副食店、商场、超市、食品制造企业等终端市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "食品制造企业",
+      "evidence_span": "将公司产品销往餐饮企业、便民店、副食店、商场、超市、食品制造企业等终端市场"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品制造",
+        "evidence_span": "一家集科研开发、生产、销售为一体的食品制造企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "调味品研发",
+        "evidence_span": "一直致力于调味品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "调味品生产",
+        "evidence_span": "一直致力于调味品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "调味品销售",
+        "evidence_span": "一直致力于调味品的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "食品制造企业",
+        "evidence_span": "一家集科研开发、生产、销售为一体的食品制造企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "调味品企业",
+        "evidence_span": "一直致力于调味品的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "广东省高新技术企业",
+        "evidence_span": "公司被评为“广东省高新技术企业”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "广东省省级企业技术中心",
+        "evidence_span": "公司被评为“广东省省级企业技术中心”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农业产业化国家重点龙头企业",
+        "evidence_span": "被评为“农业产业化国家重点龙头企业”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国调味品企业20强单位",
+        "evidence_span": "被评为“中国调味品企业20强单位”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国鸡精行业十强单位",
+        "evidence_span": "被评为“中国鸡精行业十强单位”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鸡粉",
+        "evidence_span": "主导产品鸡粉、鸡精是公司营业收入和利润的主要来源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鸡精",
+        "evidence_span": "主导产品鸡粉、鸡精是公司营业收入和利润的主要来源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鸡汁",
+        "evidence_span": "公司目前生产的产品涵盖了鸡粉、鸡精、鸡汁、青芥辣酱、玉米粳等多个系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "青芥辣酱",
+        "evidence_span": "公司目前生产的产品涵盖了鸡粉、鸡精、鸡汁、青芥辣酱、玉米粳等多个系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玉米粳",
+        "evidence_span": "公司目前生产的产品涵盖了鸡粉、鸡精、鸡汁、青芥辣酱、玉米粳等多个系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "调味品",
+        "evidence_span": "子公司佳隆食品夏津有限公司主要从事各类食品研究开发，调味品，副食品，罐头食品，食品添加剂，功能饮料生产销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "副食品",
+        "evidence_span": "子公司佳隆食品夏津有限公司主要从事各类食品研究开发，调味品，副食品，罐头食品，食品添加剂，功能饮料生产销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "罐头食品",
+        "evidence_span": "子公司佳隆食品夏津有限公司主要从事各类食品研究开发，调味品，副食品，罐头食品，食品添加剂，功能饮料生产销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "食品添加剂",
+        "evidence_span": "子公司佳隆食品夏津有限公司主要从事各类食品研究开发，调味品，副食品，罐头食品，食品添加剂，功能饮料生产销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能饮料",
+        "evidence_span": "子公司佳隆食品夏津有限公司主要从事各类食品研究开发，调味品，副食品，罐头食品，食品添加剂，功能饮料生产销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一步法风味鸡粉生产关键技术",
+        "evidence_span": "公司“一步法风味鸡粉生产关键技术及产业化”荣获广东省科学技术进步奖三等奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "鸡肉粉生产新技术",
+        "evidence_span": "“鸡肉粉生产新技术研究”荣获揭阳市科学技术进步奖一等奖"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "餐饮企业",
+        "evidence_span": "将公司产品销往餐饮企业、便民店、副食店、商场、超市、食品制造企业等终端市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "便民店",
+        "evidence_span": "将公司产品销往餐饮企业、便民店、副食店、商场、超市、食品制造企业等终端市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "副食店",
+        "evidence_span": "将公司产品销往餐饮企业、便民店、副食店、商场、超市、食品制造企业等终端市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "商场",
+        "evidence_span": "将公司产品销往餐饮企业、便民店、副食店、商场、超市、食品制造企业等终端市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "超市",
+        "evidence_span": "将公司产品销往餐饮企业、便民店、副食店、商场、超市、食品制造企业等终端市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "食品制造企业",
+        "evidence_span": "将公司产品销往餐饮企业、便民店、副食店、商场、超市、食品制造企业等终端市场"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:19:20"
+}

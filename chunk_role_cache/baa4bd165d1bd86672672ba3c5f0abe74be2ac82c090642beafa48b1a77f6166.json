@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "39413fbbd077", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落包含应用材料发布财报和中微公司起诉美国国防部两个事件，都是具体的时间性动态，如业绩公告和法律行动，没有提供稳定的半导体设备知识。"}}

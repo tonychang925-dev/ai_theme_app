@@ -1,0 +1,419 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "移动智能终端领域的整合型单芯片研发",
+      "evidence_span": "专注于移动智能终端领域的整合型单芯片研发、设计、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "移动智能终端领域的整合型单芯片设计",
+      "evidence_span": "专注于移动智能终端领域的整合型单芯片研发、设计、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "移动智能终端领域的整合型单芯片销售",
+      "evidence_span": "专注于移动智能终端领域的整合型单芯片研发、设计、销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集成电路设计企业",
+      "evidence_span": "公司为集成电路设计企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "Fabess业务模式的芯片设计公司",
+      "evidence_span": "作为采用Fabess业务模式的芯片设计公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能移动终端显示驱动芯片",
+      "evidence_span": "智能移动终端显示驱动芯片产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "触控与显示驱动集成芯片",
+      "evidence_span": "主力产品TDDI（触控与显示驱动集成芯片）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AMOLED显示驱动芯片",
+      "evidence_span": "AMOLED显示驱动芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子价签驱动芯片",
+      "evidence_span": "电子价签驱动芯片产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "快充协议芯片",
+      "evidence_span": "快充协议芯片产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "摄像头音圈马达驱动芯片",
+      "evidence_span": "摄像头音圈马达驱动芯片产品线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TDDI技术",
+      "evidence_span": "公司TDDI技术先进"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AMOLED显示驱动芯片技术算法",
+      "evidence_span": "持续进行显示驱动芯片技术算法发展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "补偿内存共享设计",
+      "evidence_span": "补偿内存共享设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Demura外部补偿技术",
+      "evidence_span": "透过算法Demura外部补偿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "子像素渲染技术",
+      "evidence_span": "内建SPR即子像素渲染技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "RF波能源采集技术",
+      "evidence_span": "RF波能源采集技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "下沉式TDDI",
+      "evidence_span": "下沉式TDDI"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AMOLED屏驱动芯片自研技术方案",
+      "evidence_span": "AMOLED屏驱动芯片自研技术方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "记忆金属光学防抖技术",
+      "evidence_span": "记忆金属光学防抖技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "获得了全球主流手机品牌的认可，公司产品已成功进入三星、VIVO和OPPO的供应链"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "VIVO",
+      "evidence_span": "获得了全球主流手机品牌的认可，公司产品已成功进入三星、VIVO和OPPO的供应链"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "获得了全球主流手机品牌的认可，公司产品已成功进入三星、VIVO和OPPO的供应链"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "BOE",
+      "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "群创光电",
+      "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华星光电",
+      "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合力泰",
+      "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国显科技",
+      "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "星源电子",
+      "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华勤通讯",
+      "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "闻泰科技",
+      "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "龙旗通讯",
+      "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "产品广泛应用于三星、VIVO、OPPO、华为、荣耀等手机品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荣耀",
+      "evidence_span": "产品广泛应用于三星、VIVO、OPPO、华为、荣耀等手机品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚马逊",
+      "evidence_span": "亚马逊、谷歌、百度、小米等平板、智能音箱客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "谷歌",
+      "evidence_span": "亚马逊、谷歌、百度、小米等平板、智能音箱客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "百度",
+      "evidence_span": "亚马逊、谷歌、百度、小米等平板、智能音箱客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "亚马逊、谷歌、百度、小米等平板、智能音箱客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "360",
+      "evidence_span": "360、TikTok等智能穿戴客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TikTok",
+      "evidence_span": "360、TikTok等智能穿戴客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "预计未来中国集成电路产业产品将迎来大规模国产替代时期"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "移动智能终端领域的整合型单芯片研发",
+        "evidence_span": "专注于移动智能终端领域的整合型单芯片研发、设计、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "移动智能终端领域的整合型单芯片设计",
+        "evidence_span": "专注于移动智能终端领域的整合型单芯片研发、设计、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "移动智能终端领域的整合型单芯片销售",
+        "evidence_span": "专注于移动智能终端领域的整合型单芯片研发、设计、销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集成电路设计企业",
+        "evidence_span": "公司为集成电路设计企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "Fabess业务模式的芯片设计公司",
+        "evidence_span": "作为采用Fabess业务模式的芯片设计公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能移动终端显示驱动芯片",
+        "evidence_span": "智能移动终端显示驱动芯片产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "触控与显示驱动集成芯片",
+        "evidence_span": "主力产品TDDI（触控与显示驱动集成芯片）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AMOLED显示驱动芯片",
+        "evidence_span": "AMOLED显示驱动芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子价签驱动芯片",
+        "evidence_span": "电子价签驱动芯片产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "快充协议芯片",
+        "evidence_span": "快充协议芯片产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "摄像头音圈马达驱动芯片",
+        "evidence_span": "摄像头音圈马达驱动芯片产品线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TDDI技术",
+        "evidence_span": "公司TDDI技术先进"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AMOLED显示驱动芯片技术算法",
+        "evidence_span": "持续进行显示驱动芯片技术算法发展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "补偿内存共享设计",
+        "evidence_span": "补偿内存共享设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Demura外部补偿技术",
+        "evidence_span": "透过算法Demura外部补偿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "子像素渲染技术",
+        "evidence_span": "内建SPR即子像素渲染技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "RF波能源采集技术",
+        "evidence_span": "RF波能源采集技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "下沉式TDDI",
+        "evidence_span": "下沉式TDDI"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AMOLED屏驱动芯片自研技术方案",
+        "evidence_span": "AMOLED屏驱动芯片自研技术方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "记忆金属光学防抖技术",
+        "evidence_span": "记忆金属光学防抖技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "获得了全球主流手机品牌的认可，公司产品已成功进入三星、VIVO和OPPO的供应链"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "VIVO",
+        "evidence_span": "获得了全球主流手机品牌的认可，公司产品已成功进入三星、VIVO和OPPO的供应链"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "获得了全球主流手机品牌的认可，公司产品已成功进入三星、VIVO和OPPO的供应链"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "BOE",
+        "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "群创光电",
+        "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华星光电",
+        "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合力泰",
+        "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国显科技",
+        "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "星源电子",
+        "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华勤通讯",
+        "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "闻泰科技",
+        "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "龙旗通讯",
+        "evidence_span": "已与BOE、群创光电、华星光电、合力泰、国显科技、星源电子、华勤通讯、闻泰科技、龙旗通讯等知名下游企业建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "产品广泛应用于三星、VIVO、OPPO、华为、荣耀等手机品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荣耀",
+        "evidence_span": "产品广泛应用于三星、VIVO、OPPO、华为、荣耀等手机品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚马逊",
+        "evidence_span": "亚马逊、谷歌、百度、小米等平板、智能音箱客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "谷歌",
+        "evidence_span": "亚马逊、谷歌、百度、小米等平板、智能音箱客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "百度",
+        "evidence_span": "亚马逊、谷歌、百度、小米等平板、智能音箱客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "亚马逊、谷歌、百度、小米等平板、智能音箱客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "360",
+        "evidence_span": "360、TikTok等智能穿戴客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TikTok",
+        "evidence_span": "360、TikTok等智能穿戴客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "预计未来中国集成电路产业产品将迎来大规模国产替代时期"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:42:19"
+}

@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 39171411.0,
+    "changeCount": -3.49,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "\n\t\t\t\t　　一、公司经营情况\n<br>　　院线端：报告期内（1-3 月），公司守正创新、精业笃行，继续保持充足的现金储备，在卓越的成本管控及租金成本下降带来的长期效应下，进一步加强细节管控，节约各项运营费用，提升经营管理效率。报告期内，公司新开直营影院5家，新增银幕34块。截至报告期末，公司共拥有已开业直营影院419家，银幕2,669块，累计票房54,352.93万元，市场占有率3.75%，实现观影人次1,350.59万；公司共拥有加盟影院80家，银幕465块，累计票房9,168.81万元，市场占有率0.63%，实现观影人次209.93万。公司根据评估指标，持续开展影院关停制度，优胜劣汰，提升整体品质，增加综合竞争力，报告期内关停影院1家，银幕数6块。 （注：票房收入不含服务费）\n<br>　　内容端：截至报告期末，公司全资子公司浙江横店影业有限公司参与出品的《流浪地球2》、《熊出没伴我“熊芯”》、《断网》、《保你平安》等影片上映，取得了较好的社会及经济效益。全资子公司影视制作正在全力孵化自主原创电视剧，同时积极开拓爱奇艺“青创计划”网剧及网络电影投资业务。孙公司浙江横店柏品影视传媒有限公司参与制作、宣发了《地心危机》、《红色特工》、《七叔归来》等网络电影。\t\t\t\t<span style=\"display: inline-block;width: 42px;\"></span>\n\t\t\t\t<a class=\"less fr\" href=\"javascript:void(0)\" style=\"position:absolute;right:0;bottom:0;\"></a>\n\t\t\t",
+    "firstLetter": "HDYS",
+    "high": 31.41,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 31.41,
+    "marketValue": 22133580000.0,
+    "name": "横店影视",
+    "pctChg": -10.0,
+    "price": 31.41,
+    "recent10BlueCount": 3,
+    "recent10RedCount": 5,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 11,
+    "recent60Change": 91.99,
+    "recentChange": 23.18,
+    "remark": "国内处于行业领先且极具潜力的民营院线及影院投资公司",
+    "status": 1,
+    "stockId": "603103",
+    "stockLightspots": [
+      {
+        "bizKey": "24952",
+        "content": "影投院线龙头，瞄准渠道下沉机会",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24952,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24953",
+        "content": "影院行业进入上升周期；横店影视高经营杠杆有望释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24953,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24954",
+        "content": "横店影视把握渠道下沉票房红利，高效运营护航龙头扩张",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24954,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24955",
+        "content": "影院龙头再起航，高运营效率助腾飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24955,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24956",
+        "content": "横店影视高自营，深下沉，稳扩张，铸就院线龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24956,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24957",
+        "content": "横店影视受益于影院下沉，布局三四五线票房高增长城市",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24957,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24958",
+        "content": "先发优势与运营管理享大国效应红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24958,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24959",
+        "content": "横店影视大浪淘沙沉者金，深耕下沉胜者王",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24959,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24960",
+        "content": "横店影视电影票房重返高增长，三线以下城市布局红利或将释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24960,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24961",
+        "content": "横店影视前瞻布局三四五线城市，高扩张速度与高经营效率打造优质院线资产",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24961,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24962",
+        "content": "横店影视领先布局三四五线市场，非票业务助增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24962,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24963",
+        "content": "横店影视渠道下沉，非票业务助力利润新增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24963,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24964",
+        "content": "横店影视控股股东影视资源丰富，行业上行业绩弹性较大",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24964,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24965",
+        "content": "横店影视国内影投龙头，渠道下沉，扩张加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24965,
+        "stockId": "603103",
+        "updateTime": null
+      },
+      {
+        "bizKey": "24966",
+        "content": "横店影视低线城市快速渗透，非票业务流量变现",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 24966,
+        "stockId": "603103",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 12471.0
+  }
+}

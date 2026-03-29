@@ -1,0 +1,74 @@
+{
+  "event_id": "evt_628a39e9ec99",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "产品发布",
+  "entities": [
+    {
+      "name": "Meta",
+      "type": "公司",
+      "normalized": "Meta"
+    },
+    {
+      "name": "EssilorLuxottica",
+      "type": "公司",
+      "normalized": "EssilorLuxottica"
+    },
+    {
+      "name": "太阳镜",
+      "type": "产品",
+      "normalized": "太阳镜"
+    },
+    {
+      "name": "显示屏",
+      "type": "技术",
+      "normalized": "显示屏"
+    },
+    {
+      "name": "Meta虚拟助手",
+      "type": "技术",
+      "normalized": "Meta虚拟助手"
+    }
+  ],
+  "summary": "Meta与EssilorLuxottica合作，计划在太阳镜中加入显示屏，用于展示通知或虚拟助手回复。",
+  "causal_claim": [
+    "AR眼镜合作",
+    "智能穿戴创新",
+    "AI交互应用"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "太阳镜加入显示屏",
+      "展示通知",
+      "虚拟助手回复"
+    ],
+    "normalized_terms": {
+      "Meta": "Meta",
+      "EssilorLuxottica": "EssilorLuxottica",
+      "太阳镜": "太阳镜",
+      "显示屏": "显示屏",
+      "Meta虚拟助手": "Meta虚拟助手"
+    },
+    "evidence_spans": [
+      {
+        "text": "Meta正与眼镜集团EssilorLuxottica合作，计划在其售价300美元的太阳镜中加入显示屏。",
+        "start": 0,
+        "end": 60
+      },
+      {
+        "text": "知情人士透露，新版眼镜可能最早将在2025年下半年推出，显示屏可能用于展示通知或来自Meta虚拟助手的回复。",
+        "start": 60,
+        "end": 120
+      }
+    ],
+    "core_concepts": [
+      "AR眼镜",
+      "智能穿戴",
+      "AI助手"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-12-24T00:00:00Z",
+  "raw_text": "2024年12月24日，24日讯，Meta正与眼镜集团EssilorLuxottica合作，计划在其售价300美元的太阳镜中加入显示屏。知情人士透露，新版眼镜可能最早将在2025年下半年推出，显示屏可能用于展示通知或来自Meta虚拟助手的回复。"
+}

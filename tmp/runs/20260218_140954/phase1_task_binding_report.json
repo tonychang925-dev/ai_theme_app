@@ -1,0 +1,16 @@
+{
+  "phase_prefix": "P1.phase1",
+  "expected_count": 5,
+  "milestone_phase_count": 5,
+  "present": [
+    "P1.phase1-T01",
+    "P1.phase1-T02",
+    "P1.phase1-T03",
+    "P1.phase1-T04",
+    "P1.phase1-T05"
+  ],
+  "missing": [],
+  "unexpected": [],
+  "missing_locations": [],
+  "ok": true
+}

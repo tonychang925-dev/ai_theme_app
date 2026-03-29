@@ -1,0 +1,63 @@
+{
+  "event_id": "evt_781a9f683489",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "产品发布",
+  "entities": [
+    {
+      "name": "三星电子",
+      "type": "公司",
+      "normalized": "三星电子"
+    },
+    {
+      "name": "Galaxy S25",
+      "type": "产品",
+      "normalized": "Galaxy S25"
+    },
+    {
+      "name": "Galaxy Ring 2",
+      "type": "产品",
+      "normalized": "Galaxy Ring 2"
+    },
+    {
+      "name": "AR 智能眼镜",
+      "type": "产品",
+      "normalized": "AR 智能眼镜"
+    }
+  ],
+  "summary": "三星电子将在2025年1月发布Galaxy S25系列、Galaxy Ring 2和AR智能眼镜。",
+  "causal_claim": [
+    "AR智能眼镜发布",
+    "AR设备市场增长",
+    "消费电子创新"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "AR智能眼镜",
+      "Galaxy Unpacked活动",
+      "智能手机系列"
+    ],
+    "normalized_terms": {
+      "三星电子": "三星电子",
+      "Galaxy S25": "Galaxy S25",
+      "Galaxy Ring 2": "Galaxy Ring 2",
+      "AR 智能眼镜": "AR 智能眼镜"
+    },
+    "evidence_spans": [
+      {
+        "text": "三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以及其他两款新品：Galaxy Ring 2 智能戒指和 AR 智能眼镜。",
+        "start": 0,
+        "end": 103
+      }
+    ],
+    "core_concepts": [
+      "产品发布",
+      "AR设备",
+      "消费电子"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.95,
+  "source_weight": 1.0,
+  "timestamp": "2024-12-27T00:00:00Z",
+  "raw_text": "2024年12月27日，三星电子近日宣布，将在 2025 年 1 月举行的 Galaxy Unpacked 活动上发布其 Galaxy S25 智能手机系列，以及其他两款新品：Galaxy Ring 2 智能戒指和 AR 智能眼镜。"
+}

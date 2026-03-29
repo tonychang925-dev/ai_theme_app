@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "家居服饰研发",
+      "evidence_span": "专注于家居服饰研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "家居服饰设计",
+      "evidence_span": "专注于家居服饰设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "家居服饰生产",
+      "evidence_span": "专注于家居服饰生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "家居服饰销售",
+      "evidence_span": "专注于家居服饰销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "家居服行业领军企业",
+      "evidence_span": "成为家居服行业领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "家居服行业头部企业",
+      "evidence_span": "家居服行业的头部企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家居服",
+      "evidence_span": "家居服饰产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内衣",
+      "evidence_span": "家居服、内衣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "居家生活类产品",
+      "evidence_span": "居家生活类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "儿童家居服饰",
+      "evidence_span": "儿童家居服饰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "居家办公系列家居服饰",
+      "evidence_span": "居家办公系列家居服饰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "差旅系列家居服饰",
+      "evidence_span": "差旅系列家居服饰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻运动系列家居服饰",
+      "evidence_span": "轻运动系列家居服饰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "亲子家居服",
+      "evidence_span": "亲子家居服"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IP联名款家居服",
+      "evidence_span": "推出联名款"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗菌功能面料",
+      "evidence_span": "研发生产抗菌功能的面料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主研发IP FENNY家族",
+      "evidence_span": "自主研发的IP FENNY家族"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "发明专利",
+      "evidence_span": "拥有发明专利4项"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "外观设计专利",
+      "evidence_span": "外观设计专利2项"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "实用新型专利",
+      "evidence_span": "实用新型专利3项"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天猫",
+      "evidence_span": "天猫"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "唯品会",
+      "evidence_span": "唯品会"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东",
+      "evidence_span": "京东"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚马逊",
+      "evidence_span": "亚马逊"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国潮",
+      "evidence_span": "融入国潮元素"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "家居服饰研发",
+        "evidence_span": "专注于家居服饰研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "家居服饰设计",
+        "evidence_span": "专注于家居服饰设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "家居服饰生产",
+        "evidence_span": "专注于家居服饰生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "家居服饰销售",
+        "evidence_span": "专注于家居服饰销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "家居服行业领军企业",
+        "evidence_span": "成为家居服行业领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "家居服行业头部企业",
+        "evidence_span": "家居服行业的头部企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家居服",
+        "evidence_span": "家居服饰产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内衣",
+        "evidence_span": "家居服、内衣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "居家生活类产品",
+        "evidence_span": "居家生活类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "儿童家居服饰",
+        "evidence_span": "儿童家居服饰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "居家办公系列家居服饰",
+        "evidence_span": "居家办公系列家居服饰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "差旅系列家居服饰",
+        "evidence_span": "差旅系列家居服饰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻运动系列家居服饰",
+        "evidence_span": "轻运动系列家居服饰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "亲子家居服",
+        "evidence_span": "亲子家居服"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IP联名款家居服",
+        "evidence_span": "推出联名款"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗菌功能面料",
+        "evidence_span": "研发生产抗菌功能的面料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主研发IP FENNY家族",
+        "evidence_span": "自主研发的IP FENNY家族"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "发明专利",
+        "evidence_span": "拥有发明专利4项"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "外观设计专利",
+        "evidence_span": "外观设计专利2项"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "实用新型专利",
+        "evidence_span": "实用新型专利3项"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天猫",
+        "evidence_span": "天猫"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "唯品会",
+        "evidence_span": "唯品会"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东",
+        "evidence_span": "京东"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚马逊",
+        "evidence_span": "亚马逊"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国潮",
+        "evidence_span": "融入国潮元素"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:07:34"
+}

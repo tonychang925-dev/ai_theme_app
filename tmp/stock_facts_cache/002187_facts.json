@@ -1,0 +1,139 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "百货零售服务",
+      "evidence_span": "公司从事的主要业务为百货零售服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "联销业务",
+      "evidence_span": "联销业务：公司就供货形式、价格管理、退换货、结算方式等方面与供应商达成一致并签署相关经营协议"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "购销业务",
+      "evidence_span": "购销业务：公司与供应商签订商品购销合同，公司先向供应商下订单采购商品、办理入库，由公司负责商品销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物业出租",
+      "evidence_span": "物业出租：是在本公司经营场所里进行的租赁经营，其利润来源于租金收入扣除物业成本后的余额"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "广州国资百货连锁零售企业",
+      "evidence_span": "广州国资百货连锁零售企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "广东省百货连锁龙头企业",
+      "evidence_span": "公司是广东省百货连锁龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "百货门店零售业务",
+      "evidence_span": "配合百货门店零售业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "购物中心",
+      "evidence_span": "购物中心3家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超市专业店",
+      "evidence_span": "超市专业店3家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钟表专业店",
+      "evidence_span": "钟表专业店1家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际和国内知名品牌供应商",
+      "evidence_span": "公司与超过2000家国际和国内知名品牌供应商建立了良好的长期合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "广州市国企改革",
+      "evidence_span": "关注广州市国企改革"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "广东国企改革",
+      "evidence_span": "关注广东国企改革政策落地"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "百货零售服务",
+        "evidence_span": "公司从事的主要业务为百货零售服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "联销业务",
+        "evidence_span": "联销业务：公司就供货形式、价格管理、退换货、结算方式等方面与供应商达成一致并签署相关经营协议"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "购销业务",
+        "evidence_span": "购销业务：公司与供应商签订商品购销合同，公司先向供应商下订单采购商品、办理入库，由公司负责商品销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物业出租",
+        "evidence_span": "物业出租：是在本公司经营场所里进行的租赁经营，其利润来源于租金收入扣除物业成本后的余额"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "广州国资百货连锁零售企业",
+        "evidence_span": "广州国资百货连锁零售企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "广东省百货连锁龙头企业",
+        "evidence_span": "公司是广东省百货连锁龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "百货门店零售业务",
+        "evidence_span": "配合百货门店零售业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "购物中心",
+        "evidence_span": "购物中心3家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超市专业店",
+        "evidence_span": "超市专业店3家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钟表专业店",
+        "evidence_span": "钟表专业店1家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际和国内知名品牌供应商",
+        "evidence_span": "公司与超过2000家国际和国内知名品牌供应商建立了良好的长期合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "广州市国企改革",
+        "evidence_span": "关注广州市国企改革"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "广东国企改革",
+        "evidence_span": "关注广东国企改革政策落地"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:20:29"
+}

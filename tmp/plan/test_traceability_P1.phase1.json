@@ -1,0 +1,128 @@
+{
+  "phase": "P1.phase1",
+  "generated_at": "2026-02-18T05:45:00Z",
+  "source_files": {
+    "wbs": "tmp/plan/wbs.md",
+    "acceptance": "docs/project_control/ACCEPTANCE.md",
+    "contract": "docs/project_control/PHASE_CONTRACT_P1.phase1.md",
+    "test_case_spec": "docs/project_control/TEST_CASE_SPEC_P1.phase1.md"
+  },
+  "summary": {
+    "wbs_task_count": 5,
+    "test_case_count": 7,
+    "unmapped_wbs_tasks": 0,
+    "unmapped_acceptance_items": 0
+  },
+  "traceability": [
+    {
+      "wbs_task_id": "P1.phase1-T01",
+      "wbs_task_name": "unknown action fail-fast + dead-letter",
+      "risk_level": "P0",
+      "acceptance_refs": ["ACC-P1-P1-02"],
+      "test_cases": [
+        {
+          "id": "TC-P1P1-001",
+          "level": "IT",
+          "type": "异常测试",
+          "priority": "P0",
+          "spec_ref": "docs/project_control/TEST_CASE_SPEC_P1.phase1.md#tc-p1p1-001",
+          "command": "pytest -q database_service/tests/streams/test_phase1_behavior_tests.py -k \"unknown_action_fail_fast_to_dead_letter_behavior\"",
+          "expected": "pass"
+        }
+      ],
+      "coverage": {"positive": true, "negative_or_boundary": true}
+    },
+    {
+      "wbs_task_id": "P1.phase1-T02",
+      "wbs_task_name": "strict schema parser + reject strategy",
+      "risk_level": "P0",
+      "acceptance_refs": ["ACC-P1-P1-02"],
+      "test_cases": [
+        {
+          "id": "TC-P1P1-002",
+          "level": "IT",
+          "type": "契约测试",
+          "priority": "P0",
+          "spec_ref": "docs/project_control/TEST_CASE_SPEC_P1.phase1.md#tc-p1p1-002",
+          "command": "pytest -q database_service/tests/streams/test_phase1_behavior_tests.py -k \"strict_schema_missing_required_field_goes_dead_letter\"",
+          "expected": "pass"
+        }
+      ],
+      "coverage": {"positive": true, "negative_or_boundary": true}
+    },
+    {
+      "wbs_task_id": "P1.phase1-T03",
+      "wbs_task_name": "idempotency gate and duplicate guard",
+      "risk_level": "P0",
+      "acceptance_refs": ["ACC-P1-P1-01"],
+      "test_cases": [
+        {
+          "id": "TC-P1P1-003",
+          "level": "ST",
+          "type": "回归测试",
+          "priority": "P0",
+          "spec_ref": "docs/project_control/TEST_CASE_SPEC_P1.phase1.md#tc-p1p1-003",
+          "command": "pytest -q database_service/tests/streams/test_phase1_behavior_tests.py -k \"duplicate_skip_for_same_idempotency_key\"",
+          "expected": "pass"
+        }
+      ],
+      "coverage": {"positive": true, "negative_or_boundary": true}
+    },
+    {
+      "wbs_task_id": "P1.phase1-T04",
+      "wbs_task_name": "replay validation and gate closure",
+      "risk_level": "P1",
+      "acceptance_refs": ["ACC-P1-P1-03"],
+      "test_cases": [
+        {
+          "id": "TC-P1P1-004",
+          "level": "IT",
+          "type": "集成测试",
+          "priority": "P1",
+          "spec_ref": "docs/project_control/TEST_CASE_SPEC_P1.phase1.md#tc-p1p1-004",
+          "command": "pytest -q database_service/tests/streams/test_phase1_behavior_tests.py -k \"normal_unmatched_event_flows_to_pending_via_decision_executor\"",
+          "expected": "pass"
+        },
+        {
+          "id": "TC-P1P1-004B",
+          "level": "IT",
+          "type": "集成测试",
+          "priority": "P1",
+          "spec_ref": "docs/project_control/TEST_CASE_SPEC_P1.phase1.md#tc-p1p1-004b",
+          "command": "pytest -q database_service/tests/streams/test_phase1_behavior_tests.py -k \"test_phase1_dataset_baseline_via_test_theme_processor\"",
+          "expected": "pass"
+        },
+        {
+          "id": "TC-P1P1-004C",
+          "level": "IT",
+          "type": "回归测试",
+          "priority": "P1",
+          "spec_ref": "docs/project_control/TEST_CASE_SPEC_P1.phase1.md#tc-p1p1-004c",
+          "command": "pytest -q database_service/tests/streams",
+          "expected": "pass"
+        }
+      ],
+      "coverage": {"positive": true, "negative_or_boundary": true}
+    },
+    {
+      "wbs_task_id": "P1.phase1-T05",
+      "wbs_task_name": "phase report and ADR traceability update",
+      "risk_level": "P1",
+      "acceptance_refs": ["ACC-P1-P1-02"],
+      "test_cases": [
+        {
+          "id": "TC-P1P1-005",
+          "level": "IT",
+          "type": "可追溯性测试",
+          "priority": "P1",
+          "spec_ref": "docs/project_control/TEST_CASE_SPEC_P1.phase1.md#tc-p1p1-005",
+          "command": "pytest -q database_service/tests/streams/test_phase1_behavior_tests.py -k \"failure_message_controlled_to_dead_letter_no_hang\"",
+          "expected": "pass"
+        }
+      ],
+      "coverage": {"positive": true, "negative_or_boundary": true}
+    }
+  ],
+  "gaps": [],
+  "gate_ready": true
+}

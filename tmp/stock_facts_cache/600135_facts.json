@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏材料",
+      "evidence_span": "主营业务为光伏材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电材料",
+      "evidence_span": "主营业务为光伏材料、锂电材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗材料",
+      "evidence_span": "主营业务为光伏材料、锂电材料、医疗材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "影像材料",
+      "evidence_span": "主营业务为光伏材料、锂电材料、医疗材料、影像材料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医用材料系统服务商",
+      "evidence_span": "公司为医用材料、影像材料和新能源材料系统服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "影像材料系统服务商",
+      "evidence_span": "公司为医用材料、影像材料和新能源材料系统服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新能源材料系统服务商",
+      "evidence_span": "公司为医用材料、影像材料和新能源材料系统服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医用干式胶片国产品牌龙头企业",
+      "evidence_span": "公司为医用干式胶片国产品牌的龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "太阳能电池背板",
+      "evidence_span": "主营产品有太阳能电池背板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂离子电池隔膜",
+      "evidence_span": "主营产品有太阳能电池背板、锂离子电池隔膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝塑膜",
+      "evidence_span": "主营产品有太阳能电池背板、锂离子电池隔膜、铝塑膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医用干式胶片",
+      "evidence_span": "主营产品有太阳能电池背板、锂离子电池隔膜、铝塑膜、医用干式片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业探伤胶片",
+      "evidence_span": "主营产品有太阳能电池背板、锂离子电池隔膜、铝塑膜、医用干式片、工业探伤胶片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩色相纸",
+      "evidence_span": "主营产品有太阳能电池背板、锂离子电池隔膜、铝塑膜、医用干式片、工业探伤胶片、彩色相纸等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏背板",
+      "evidence_span": "光伏背板出口同比大幅增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银盐相纸",
+      "evidence_span": "银盐相纸实现规模恢复发货"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "成膜核心技术",
+      "evidence_span": "拥有“成膜、涂层、微结构”三个核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "涂层核心技术",
+      "evidence_span": "拥有“成膜、涂层、微结构”三个核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微结构核心技术",
+      "evidence_span": "拥有“成膜、涂层、微结构”三个核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "涂覆工艺技术",
+      "evidence_span": "公司十几年来一直致力于涂覆工艺技术的研究和应用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产铝塑膜的生产工艺已日渐成熟，国产替代化明显加快"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏材料",
+        "evidence_span": "主营业务为光伏材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电材料",
+        "evidence_span": "主营业务为光伏材料、锂电材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗材料",
+        "evidence_span": "主营业务为光伏材料、锂电材料、医疗材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "影像材料",
+        "evidence_span": "主营业务为光伏材料、锂电材料、医疗材料、影像材料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医用材料系统服务商",
+        "evidence_span": "公司为医用材料、影像材料和新能源材料系统服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "影像材料系统服务商",
+        "evidence_span": "公司为医用材料、影像材料和新能源材料系统服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新能源材料系统服务商",
+        "evidence_span": "公司为医用材料、影像材料和新能源材料系统服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医用干式胶片国产品牌龙头企业",
+        "evidence_span": "公司为医用干式胶片国产品牌的龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "太阳能电池背板",
+        "evidence_span": "主营产品有太阳能电池背板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂离子电池隔膜",
+        "evidence_span": "主营产品有太阳能电池背板、锂离子电池隔膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝塑膜",
+        "evidence_span": "主营产品有太阳能电池背板、锂离子电池隔膜、铝塑膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医用干式胶片",
+        "evidence_span": "主营产品有太阳能电池背板、锂离子电池隔膜、铝塑膜、医用干式片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业探伤胶片",
+        "evidence_span": "主营产品有太阳能电池背板、锂离子电池隔膜、铝塑膜、医用干式片、工业探伤胶片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩色相纸",
+        "evidence_span": "主营产品有太阳能电池背板、锂离子电池隔膜、铝塑膜、医用干式片、工业探伤胶片、彩色相纸等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏背板",
+        "evidence_span": "光伏背板出口同比大幅增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银盐相纸",
+        "evidence_span": "银盐相纸实现规模恢复发货"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "成膜核心技术",
+        "evidence_span": "拥有“成膜、涂层、微结构”三个核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "涂层核心技术",
+        "evidence_span": "拥有“成膜、涂层、微结构”三个核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微结构核心技术",
+        "evidence_span": "拥有“成膜、涂层、微结构”三个核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "涂覆工艺技术",
+        "evidence_span": "公司十几年来一直致力于涂覆工艺技术的研究和应用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产铝塑膜的生产工艺已日渐成熟，国产替代化明显加快"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:28:40"
+}

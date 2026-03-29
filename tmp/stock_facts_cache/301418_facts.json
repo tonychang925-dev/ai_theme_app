@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "运动控制产品",
+      "evidence_span": "公司主要从事运动控制产品、功率芯片的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "功率芯片",
+      "evidence_span": "公司主要从事运动控制产品、功率芯片的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电力电子产业链纵向布局企业",
+      "evidence_span": "行业内少数几家拥有电力电子产业链纵向布局的企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运动控制器",
+      "evidence_span": "公司运动控制器的下游客户主要以中大型电动车整车厂商为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功率芯片",
+      "evidence_span": "公司功率芯片产品主要集中于运动控制领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "控制模块",
+      "evidence_span": "公司积极推进控制模块产品的迭代升级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "沟槽型MOSFET",
+      "evidence_span": "逐步开发并建立了沟槽型MOSFET（Trench-MOSFET）等产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "屏蔽栅沟槽型MOSFET",
+      "evidence_span": "逐步开发并建立了屏蔽栅沟槽型MOSFET（SGT-MOSFET）等产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超结MOSFET",
+      "evidence_span": "逐步开发并建立了超结MOSFET（SJ-MOSFET）等产品线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "矢量变频控制方案",
+      "evidence_span": "公司自主研发并推出了矢量变频控制方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "有感及无感多模一体的控制算法",
+      "evidence_span": "公司自主研发并推出了有感及无感多模一体的控制算法等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大电流电子线路布线",
+      "evidence_span": "自主研发并形成了大电流电子线路布线等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MOSFET并联均流",
+      "evidence_span": "自主研发并形成了MOSFET并联均流等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "沟槽型MOSFET研发平台",
+      "evidence_span": "搭建了沟槽型MOSFET研发平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "中低压SGT MOSFET研发平台",
+      "evidence_span": "搭建了中低压SGT MOSFET研发平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高压超结MOSFET研发平台",
+      "evidence_span": "搭建了高压超结MOSFET研发平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "IGBT研发平台",
+      "evidence_span": "搭建了IGBT研发平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内一线电动车整车厂商",
+      "evidence_span": "强化与国内一线电动车整车厂商客户间的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中大型电动车整车厂商",
+      "evidence_span": "公司运动控制器的下游客户主要以中大型电动车整车厂商为主"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "不断推动国产替代进口的行业趋势"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "运动控制产品",
+        "evidence_span": "公司主要从事运动控制产品、功率芯片的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "功率芯片",
+        "evidence_span": "公司主要从事运动控制产品、功率芯片的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电力电子产业链纵向布局企业",
+        "evidence_span": "行业内少数几家拥有电力电子产业链纵向布局的企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运动控制器",
+        "evidence_span": "公司运动控制器的下游客户主要以中大型电动车整车厂商为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功率芯片",
+        "evidence_span": "公司功率芯片产品主要集中于运动控制领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "控制模块",
+        "evidence_span": "公司积极推进控制模块产品的迭代升级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "沟槽型MOSFET",
+        "evidence_span": "逐步开发并建立了沟槽型MOSFET（Trench-MOSFET）等产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "屏蔽栅沟槽型MOSFET",
+        "evidence_span": "逐步开发并建立了屏蔽栅沟槽型MOSFET（SGT-MOSFET）等产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超结MOSFET",
+        "evidence_span": "逐步开发并建立了超结MOSFET（SJ-MOSFET）等产品线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "矢量变频控制方案",
+        "evidence_span": "公司自主研发并推出了矢量变频控制方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "有感及无感多模一体的控制算法",
+        "evidence_span": "公司自主研发并推出了有感及无感多模一体的控制算法等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大电流电子线路布线",
+        "evidence_span": "自主研发并形成了大电流电子线路布线等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MOSFET并联均流",
+        "evidence_span": "自主研发并形成了MOSFET并联均流等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "沟槽型MOSFET研发平台",
+        "evidence_span": "搭建了沟槽型MOSFET研发平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "中低压SGT MOSFET研发平台",
+        "evidence_span": "搭建了中低压SGT MOSFET研发平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高压超结MOSFET研发平台",
+        "evidence_span": "搭建了高压超结MOSFET研发平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "IGBT研发平台",
+        "evidence_span": "搭建了IGBT研发平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内一线电动车整车厂商",
+        "evidence_span": "强化与国内一线电动车整车厂商客户间的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中大型电动车整车厂商",
+        "evidence_span": "公司运动控制器的下游客户主要以中大型电动车整车厂商为主"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "不断推动国产替代进口的行业趋势"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:37:00"
+}

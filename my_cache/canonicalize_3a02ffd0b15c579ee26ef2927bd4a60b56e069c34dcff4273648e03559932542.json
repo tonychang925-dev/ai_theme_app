@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:51:28", "result": {"span_uid": "15e4c9afe470", "action": "rewrite", "canonical_text": "半导体制造涉及光刻、清洗、刻蚀、离子注入、沉积等关键设备和零部件，这些设备的国产化替代是产业链发展的重要环节。", "final_type": "related", "final_role": "制造设备国产化", "stability": "medium", "reason": "原文为政策表述，去事件化改写后保留了半导体制造关键设备及国产化意义的稳定知识。"}}

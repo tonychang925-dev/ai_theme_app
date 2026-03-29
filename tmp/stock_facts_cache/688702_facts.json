@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "以太网交换芯片设计",
+      "evidence_span": "盛科通信为国内领先的以太网交换芯片设计企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "以太网交换芯片",
+      "evidence_span": "主营业务为以太网交换芯片及配套产品的研发、设计和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "配套产品的研发",
+      "evidence_span": "主营业务为以太网交换芯片及配套产品的研发、设计和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设计",
+      "evidence_span": "主营业务为以太网交换芯片及配套产品的研发、设计和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主营业务为以太网交换芯片及配套产品的研发、设计和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "以太网交换芯片设计企业",
+      "evidence_span": "盛科通信为国内领先的以太网交换芯片设计企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "商用以太网交换芯片厂商",
+      "evidence_span": "全球范围内涌现出博通、美满、瑞昱、盛科通信等以太网交换芯片商用厂商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "以太网交换芯片",
+      "evidence_span": "公司主要产品包括以太网交换芯片及配套产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "以太网交换芯片模组",
+      "evidence_span": "公司为行业客户进行定制化开发，为其提供以太网交换芯片模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "以太网交换机",
+      "evidence_span": "公司亦构建少量以太网交换机产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定制化产品解决方案",
+      "evidence_span": "为其提供定制化产品解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高性能交换架构",
+      "evidence_span": "高性能交换架构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高性能端口设计技术",
+      "evidence_span": "高性能端口设计技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多特性流水线技术",
+      "evidence_span": "多特性流水线技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "芯片榫卯可编程技术",
+      "evidence_span": "芯片榫卯可编程技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "交换芯片安全互联技术",
+      "evidence_span": "交换芯片安全互联技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "交换芯片可视化技术",
+      "evidence_span": "交换芯片可视化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "网络低时延与确定性技术",
+      "evidence_span": "网络低时延与确定性技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "面向特定场景的高性能增强引擎技术",
+      "evidence_span": "面向特定场景的高性能增强引擎技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "以太网交换芯片验证技术",
+      "evidence_span": "以太网交换芯片验证技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SDK内核与接口兼容性技术",
+      "evidence_span": "SDK内核与接口兼容性技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "开放标准化驱动设计与实现技术",
+      "evidence_span": "开放标准化驱动设计与实现技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内主流网络设备商",
+      "evidence_span": "公司与国内主流网络设备商和信息技术厂商建立了长期稳定的合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "信息技术厂商",
+      "evidence_span": "公司与国内主流网络设备商和信息技术厂商建立了长期稳定的合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内主要运营商",
+      "evidence_span": "以公司芯片为核心生产的以太网交换设备已在国内主要运营商以及金融、政府、交通、能源等各大行业网络实现规模应用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "符合国产化需求的核心技术能力"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "以太网交换芯片设计",
+        "evidence_span": "盛科通信为国内领先的以太网交换芯片设计企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "以太网交换芯片及配套产品的研发、设计和销售",
+        "evidence_span": "主营业务为以太网交换芯片及配套产品的研发、设计和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "以太网交换芯片设计企业",
+        "evidence_span": "盛科通信为国内领先的以太网交换芯片设计企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "商用以太网交换芯片厂商",
+        "evidence_span": "全球范围内涌现出博通、美满、瑞昱、盛科通信等以太网交换芯片商用厂商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "以太网交换芯片",
+        "evidence_span": "公司主要产品包括以太网交换芯片及配套产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "以太网交换芯片模组",
+        "evidence_span": "公司为行业客户进行定制化开发，为其提供以太网交换芯片模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "以太网交换机",
+        "evidence_span": "公司亦构建少量以太网交换机产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定制化产品解决方案",
+        "evidence_span": "为其提供定制化产品解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高性能交换架构",
+        "evidence_span": "高性能交换架构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高性能端口设计技术",
+        "evidence_span": "高性能端口设计技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多特性流水线技术",
+        "evidence_span": "多特性流水线技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "芯片榫卯可编程技术",
+        "evidence_span": "芯片榫卯可编程技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "交换芯片安全互联技术",
+        "evidence_span": "交换芯片安全互联技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "交换芯片可视化技术",
+        "evidence_span": "交换芯片可视化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "网络低时延与确定性技术",
+        "evidence_span": "网络低时延与确定性技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "面向特定场景的高性能增强引擎技术",
+        "evidence_span": "面向特定场景的高性能增强引擎技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "以太网交换芯片验证技术",
+        "evidence_span": "以太网交换芯片验证技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SDK内核与接口兼容性技术",
+        "evidence_span": "SDK内核与接口兼容性技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "开放标准化驱动设计与实现技术",
+        "evidence_span": "开放标准化驱动设计与实现技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内主流网络设备商",
+        "evidence_span": "公司与国内主流网络设备商和信息技术厂商建立了长期稳定的合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "信息技术厂商",
+        "evidence_span": "公司与国内主流网络设备商和信息技术厂商建立了长期稳定的合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内主要运营商",
+        "evidence_span": "以公司芯片为核心生产的以太网交换设备已在国内主要运营商以及金融、政府、交通、能源等各大行业网络实现规模应用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "符合国产化需求的核心技术能力"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:38:42"
+}

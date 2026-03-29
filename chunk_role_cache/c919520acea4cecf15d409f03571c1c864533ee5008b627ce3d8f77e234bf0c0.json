@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "a3752ec6bc37", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述了关于三星公司采购计划的传闻，这是一个具体的、可能影响市场的事件动态，不构成稳定的行业知识。"}}

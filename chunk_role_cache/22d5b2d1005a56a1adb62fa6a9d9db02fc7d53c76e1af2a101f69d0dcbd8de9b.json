@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "6c5383ad0f83", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述了长征六号改运载火箭成功发射卫星互联网低轨05组卫星的具体事件，包含精确时间和动态信息，属于发射任务类事件，无静态知识内容。"}}

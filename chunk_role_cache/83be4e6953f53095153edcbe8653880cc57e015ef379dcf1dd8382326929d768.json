@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T12:19:46", "result": {"chunk_id": "9a19692dcdbf", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落基于中国电子展的事件，但包含了对中国半导体设备产业销售收入增长和市场占有率的具体统计数据，这些数据可能用于题材知识构建，但混合了事件和景气信息。"}}

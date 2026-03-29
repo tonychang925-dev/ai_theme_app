@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 288848147.0,
+    "changeCount": 0.04,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1.全球光伏电池片龙头</span></p>\n<p>深耕晶硅太阳能电池领域，持续研发技术创新。公司深耕国际市场，产品远销韩国、日本、印度、欧洲等国家及地区，2019年电池出口量全球第一，深受全球晶硅组件企业的青睐。电池片出货量维持行业前列，2018-2020公司连续3年实现电池片出货量全球第二。</p>\n<p><span style=\"font-weight: bold;\">2.公司ABC技术有序推进，H2将实现GW级量产</span></p>\n<p>爱旭ABC电池片技术是在IBC技术基础上进行了创新升级，预计GW级别的产品量产时间2022Q3。公司2021年年报披露ABC技术的300MW电池中试线及500MW组件实验线进展正常，珠海6.5GW的ABC电池量产项目已顺利开工，项目建设正有序推进中，预计2022年三季度可建成投产。ABC技术工艺步骤复杂，模仿难度高，量产效率高，银浆耗量低。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220906140630_7cfe8cf70a2d6925.png\" /></p>\n<p>3.背靠&ldquo;华发+IDG&rdquo;</p>\n<p>华发+IDG打造的&ldquo;光伏虚拟一体化&rdquo;产业链逐步成型。2021年华发集团和IDG大手笔投资高景太阳能，推动其硅片切片产能快速落地珠海。同时，又引进自己的参股公司爱旭科技到珠海投资180亿元，释放ABC技术产能。在光伏上游，参股青海丽豪，保障青海高景硅棒原材料需求。预计在光伏下游组件端，今年也会有实质性行动，珠海光伏产业园的集群效益即将显现。该产业链内的公司均只专注于自己领域的技术突破，在之外的环节通过相互参股来分享行业收益，同时也能够在产业上下游激烈博弈的时期确保原材料的稳定供应。该&ldquo;虚拟一体化&rdquo;的产业模式或将更优，抗风险能力更强。</p>",
+    "firstLetter": "AXGF",
+    "high": 14.6,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 14.3,
+    "marketValue": 30382536395.05,
+    "name": "爱旭股份",
+    "pctChg": 0.28,
+    "price": 14.39,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": -5.33,
+    "recentChange": 5.81,
+    "remark": "光伏电池片龙头；困境反转",
+    "status": 1,
+    "stockId": "600732",
+    "stockLightspots": [
+      {
+        "bizKey": "18776",
+        "content": "电池片龙头企业，借成本优势强势扩张",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18776,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18777",
+        "content": "爱旭股份PERC最纯龙头，乘大尺寸之风翱翔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18777,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18778",
+        "content": "爱旭股份困境反转，期待新生",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18778,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18779",
+        "content": "爱旭股份专业光伏电池片领先厂商，大尺寸产能领跑",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18779,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18780",
+        "content": "全球电池片龙头，N型ABC电池打开新成长曲线",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18780,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18781",
+        "content": "专业化电池片龙头，引领产品升级浪潮",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18781,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18782",
+        "content": "光伏高效电池龙头，大尺寸将迎超额收益",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18782,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18783",
+        "content": "爱旭股份电池龙头标的，PERC硬核担当",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18783,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18784",
+        "content": "光伏电池新技术龙头，新型一体化提升格局",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18784,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18785",
+        "content": "爱旭股份光伏电池领军企业，盈利能力筑底回升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18785,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18786",
+        "content": "爱旭股份效率成本行业领先，借壳成功开启新一轮扩张",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18786,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18787",
+        "content": "爱旭股份高效电池片龙头，超前布局大尺寸产能",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18787,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18788",
+        "content": "爱旭股份专业太阳能电池龙头引领产业进步",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18788,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18789",
+        "content": "爱旭股份全球光伏电池片龙头借壳启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18789,
+        "stockId": "600732",
+        "updateTime": null
+      },
+      {
+        "bizKey": "18790",
+        "content": "聚焦新技术，重新再出发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 18790,
+        "stockId": "600732",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 199995.04
+  }
+}

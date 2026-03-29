@@ -1,0 +1,78 @@
+{
+  "must": [
+    "卫星互联网",
+    "空间段",
+    "地面段",
+    "用户端",
+    "低轨卫星",
+    "星间链路"
+  ],
+  "should": [
+    "火箭链",
+    "数据链",
+    "发射场",
+    "卫星超级工厂",
+    "部组件制造中心",
+    "高轨卫星",
+    "中轨卫星",
+    "地面通信网络",
+    "话音和短消息等通信服务",
+    "星间激光",
+    "地面和空中终端",
+    "天通"
+  ],
+  "not": [
+    "蓝箭航天",
+    "IPO上市辅导",
+    "资本化进程",
+    "雄安造卫星",
+    "雄安一号",
+    "首飞箭",
+    "加注合练",
+    "静态点火试验"
+  ],
+  "evidence_refs": [
+    {
+      "term": "卫星互联网",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卫星互联网"
+    },
+    {
+      "term": "空间段",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "空间段"
+    },
+    {
+      "term": "地面段",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "地面段"
+    },
+    {
+      "term": "用户端",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "用户端"
+    },
+    {
+      "term": "低轨卫星",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "低轨卫星"
+    },
+    {
+      "term": "星间链路",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "星间链路"
+    }
+  ],
+  "subject_id": "9019807",
+  "quality": "strong",
+  "generated_at": "2026-03-13T11:23:12",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

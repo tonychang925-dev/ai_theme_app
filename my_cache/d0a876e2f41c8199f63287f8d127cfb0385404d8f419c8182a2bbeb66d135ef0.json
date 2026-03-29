@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:11", "result": {"chunk_id": "d718314d0816", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含黄仁勋的言论，涉及AI、机器人训练和未来工厂等概念，可能隐含机器人技术（如灵巧手）的静态知识（如推理、执行能力），但混合了事件性内容（链博会发言），需要进一步裁决以提取知识。"}}

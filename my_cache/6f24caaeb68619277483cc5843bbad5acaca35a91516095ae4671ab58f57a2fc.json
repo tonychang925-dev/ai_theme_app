@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:57:40", "result": {"chunk_id": "f69bf9c6f637", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含静态知识（如新能源汽车检测规程的技术细节和检测设备描述）和事件信息（如标准批准阶段和市场空间预测），混合了可用于题材本体构建的稳定知识和动态内容。"}}

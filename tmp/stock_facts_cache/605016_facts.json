@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "益生元系列产品",
+      "evidence_span": "公司主要从事益生元系列产品、膳食纤维系列产品、其他淀粉糖（醇）产品和健康甜味剂产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "膳食纤维系列产品",
+      "evidence_span": "公司主要从事益生元系列产品、膳食纤维系列产品、其他淀粉糖（醇）产品和健康甜味剂产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "健康甜味剂产品",
+      "evidence_span": "公司主要从事益生元系列产品、膳食纤维系列产品、其他淀粉糖（醇）产品和健康甜味剂产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "功能糖产品种类较齐全的生产企业",
+      "evidence_span": "国内功能糖产品种类较齐全的生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "益生元、膳食纤维和阿洛酮糖生产企业",
+      "evidence_span": "公司是国内规模较大、产品齐全的益生元、膳食纤维和阿洛酮糖生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低聚果糖",
+      "evidence_span": "公司生产的益生元系列产品主要包括低聚果糖、低聚异麦芽糖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低聚异麦芽糖",
+      "evidence_span": "公司生产的益生元系列产品主要包括低聚果糖、低聚异麦芽糖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低聚半乳糖",
+      "evidence_span": "以及低聚半乳糖、低聚木糖、水苏糖等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低聚木糖",
+      "evidence_span": "以及低聚半乳糖、低聚木糖、水苏糖等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水苏糖",
+      "evidence_span": "以及低聚半乳糖、低聚木糖、水苏糖等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗性糊精",
+      "evidence_span": "公司生产的膳食纤维系列产品主要包括抗性糊精和聚葡萄糖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚葡萄糖",
+      "evidence_span": "公司生产的膳食纤维系列产品主要包括抗性糊精和聚葡萄糖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阿洛酮糖",
+      "evidence_span": "公司生产的健康甜味剂产品主要为阿洛酮糖和异麦芽酮糖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "异麦芽酮糖",
+      "evidence_span": "公司生产的健康甜味剂产品主要为阿洛酮糖和异麦芽酮糖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "D-阿洛酮糖制备关键技术",
+      "evidence_span": "D-阿洛酮糖制备关键技术开发与应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗性糊精及其制备方法",
+      "evidence_span": "抗性糊精及其制备方法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全自动生产线",
+      "evidence_span": "公司建设了全自动生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "柔性生产",
+      "evidence_span": "可以实现柔性生产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "娃哈哈",
+      "evidence_span": "娃哈哈既向公司采购聚葡萄糖用于其娃哈哈乳酸菌饮料系列产品中"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "益生元系列产品",
+        "evidence_span": "公司主要从事益生元系列产品、膳食纤维系列产品、其他淀粉糖（醇）产品和健康甜味剂产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "膳食纤维系列产品",
+        "evidence_span": "公司主要从事益生元系列产品、膳食纤维系列产品、其他淀粉糖（醇）产品和健康甜味剂产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "健康甜味剂产品",
+        "evidence_span": "公司主要从事益生元系列产品、膳食纤维系列产品、其他淀粉糖（醇）产品和健康甜味剂产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "功能糖产品种类较齐全的生产企业",
+        "evidence_span": "国内功能糖产品种类较齐全的生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "益生元、膳食纤维和阿洛酮糖生产企业",
+        "evidence_span": "公司是国内规模较大、产品齐全的益生元、膳食纤维和阿洛酮糖生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低聚果糖",
+        "evidence_span": "公司生产的益生元系列产品主要包括低聚果糖、低聚异麦芽糖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低聚异麦芽糖",
+        "evidence_span": "公司生产的益生元系列产品主要包括低聚果糖、低聚异麦芽糖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低聚半乳糖",
+        "evidence_span": "以及低聚半乳糖、低聚木糖、水苏糖等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低聚木糖",
+        "evidence_span": "以及低聚半乳糖、低聚木糖、水苏糖等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水苏糖",
+        "evidence_span": "以及低聚半乳糖、低聚木糖、水苏糖等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗性糊精",
+        "evidence_span": "公司生产的膳食纤维系列产品主要包括抗性糊精和聚葡萄糖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚葡萄糖",
+        "evidence_span": "公司生产的膳食纤维系列产品主要包括抗性糊精和聚葡萄糖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阿洛酮糖",
+        "evidence_span": "公司生产的健康甜味剂产品主要为阿洛酮糖和异麦芽酮糖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "异麦芽酮糖",
+        "evidence_span": "公司生产的健康甜味剂产品主要为阿洛酮糖和异麦芽酮糖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "D-阿洛酮糖制备关键技术",
+        "evidence_span": "D-阿洛酮糖制备关键技术开发与应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗性糊精及其制备方法",
+        "evidence_span": "抗性糊精及其制备方法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全自动生产线",
+        "evidence_span": "公司建设了全自动生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "柔性生产",
+        "evidence_span": "可以实现柔性生产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "娃哈哈",
+        "evidence_span": "娃哈哈既向公司采购聚葡萄糖用于其娃哈哈乳酸菌饮料系列产品中"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:49:14"
+}

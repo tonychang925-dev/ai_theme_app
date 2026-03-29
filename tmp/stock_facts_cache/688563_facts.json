@@ -1,0 +1,224 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "钛合金铸件",
+      "evidence_span": "钛合金铸件业务收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "橡胶",
+      "evidence_span": "橡胶与密封件业务收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "密封件",
+      "evidence_span": "橡胶与密封件业务收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "透明件",
+      "evidence_span": "透明件主营业务收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高温合金母合金",
+      "evidence_span": "高温合金母合金业务收入"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空航天用部件及材料供应商",
+      "evidence_span": "主营航空航天用部件及材料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国际民用航空钛合金铸件供应商",
+      "evidence_span": "国内少数批产国际民用航空钛合金铸件的供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钛合金铸件",
+      "evidence_span": "钛合金铸件业务收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "橡胶与密封件",
+      "evidence_span": "橡胶与密封件业务收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "透明件",
+      "evidence_span": "透明件主营业务收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高温合金母合金",
+      "evidence_span": "高温合金母合金业务收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "弹性元件及产品34",
+      "evidence_span": "弹性元件及产品34"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "密封剂及减振器",
+      "evidence_span": "密封剂及减振器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有机透明件",
+      "evidence_span": "有机透明件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无机透明件",
+      "evidence_span": "无机透明件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定向高温合金母合金",
+      "evidence_span": "定向凝固高温合金产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "等轴晶高温合金母合金",
+      "evidence_span": "等轴晶高温合金产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粉末高温合金母合金",
+      "evidence_span": "粉末高温合金母合金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "橡胶胶料及型材",
+      "evidence_span": "橡胶胶料及型材"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军品",
+      "evidence_span": "军品收入"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际宇航",
+      "evidence_span": "国际宇航产品收入"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国外民品",
+      "evidence_span": "国外民品"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "钛合金铸件",
+        "evidence_span": "钛合金铸件业务收入"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "橡胶与密封件",
+        "evidence_span": "橡胶与密封件业务收入"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "透明件",
+        "evidence_span": "透明件主营业务收入"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高温合金母合金",
+        "evidence_span": "高温合金母合金业务收入"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空航天用部件及材料供应商",
+        "evidence_span": "主营航空航天用部件及材料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国际民用航空钛合金铸件供应商",
+        "evidence_span": "国内少数批产国际民用航空钛合金铸件的供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钛合金铸件",
+        "evidence_span": "钛合金铸件业务收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "橡胶与密封件",
+        "evidence_span": "橡胶与密封件业务收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "透明件",
+        "evidence_span": "透明件主营业务收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高温合金母合金",
+        "evidence_span": "高温合金母合金业务收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "弹性元件及产品34",
+        "evidence_span": "弹性元件及产品34"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "密封剂及减振器",
+        "evidence_span": "密封剂及减振器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有机透明件",
+        "evidence_span": "有机透明件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无机透明件",
+        "evidence_span": "无机透明件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定向高温合金母合金",
+        "evidence_span": "定向凝固高温合金产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "等轴晶高温合金母合金",
+        "evidence_span": "等轴晶高温合金产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粉末高温合金母合金",
+        "evidence_span": "粉末高温合金母合金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "橡胶胶料及型材",
+        "evidence_span": "橡胶胶料及型材"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军品",
+        "evidence_span": "军品收入"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际宇航",
+        "evidence_span": "国际宇航产品收入"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国外民品",
+        "evidence_span": "国外民品"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:51:10"
+}

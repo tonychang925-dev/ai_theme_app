@@ -1,0 +1,524 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "整车",
+      "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "零部件",
+      "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "移动出行",
+      "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融",
+      "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "国际经营",
+      "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "创新科技",
+      "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车集团",
+      "evidence_span": "公司率先成为中国首个新能源汽车和海外市场年销量“双百万辆”汽车集团"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "整车制造商",
+      "evidence_span": "主要从事乘用车、商用车的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乘用车",
+      "evidence_span": "主要从事乘用车、商用车的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商用车",
+      "evidence_span": "主要从事乘用车、商用车的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车",
+      "evidence_span": "新能源汽车销量达到107.3万辆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力驱动系统",
+      "evidence_span": "主要从事动力驱动系统、底盘系统、内外饰系统，以及电池、电驱、电控等新能源和智能汽车零部件及系统的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "底盘系统",
+      "evidence_span": "主要从事动力驱动系统、底盘系统、内外饰系统，以及电池、电驱、电控等新能源和智能汽车零部件及系统的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内外饰系统",
+      "evidence_span": "主要从事动力驱动系统、底盘系统、内外饰系统，以及电池、电驱、电控等新能源和智能汽车零部件及系统的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池",
+      "evidence_span": "主要从事动力驱动系统、底盘系统、内外饰系统，以及电池、电驱、电控等新能源和智能汽车零部件及系统的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电驱",
+      "evidence_span": "主要从事动力驱动系统、底盘系统、内外饰系统，以及电池、电驱、电控等新能源和智能汽车零部件及系统的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电控",
+      "evidence_span": "主要从事动力驱动系统、底盘系统、内外饰系统，以及电池、电驱、电控等新能源和智能汽车零部件及系统的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物流运输",
+      "evidence_span": "主要从事物流运输、出行服务、汽车生活服务、节能和充换电服务等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "出行服务",
+      "evidence_span": "主要从事物流运输、出行服务、汽车生活服务、节能和充换电服务等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车生活服务",
+      "evidence_span": "主要从事物流运输、出行服务、汽车生活服务、节能和充换电服务等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "节能和充换电服务",
+      "evidence_span": "主要从事物流运输、出行服务、汽车生活服务、节能和充换电服务等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车金融",
+      "evidence_span": "主要从事汽车金融、公司金融、保险销售、产业金融投资等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公司金融",
+      "evidence_span": "主要从事汽车金融、公司金融、保险销售、产业金融投资等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保险销售",
+      "evidence_span": "主要从事汽车金融、公司金融、保险销售、产业金融投资等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产业金融投资",
+      "evidence_span": "主要从事汽车金融、公司金融、保险销售、产业金融投资等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源核心技术研发",
+      "evidence_span": "主要从事新能源、软件、人工智能、大数据、物联网等新领域的核心技术研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软件核心技术研发",
+      "evidence_span": "主要从事新能源、软件、人工智能、大数据、物联网等新领域的核心技术研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工智能核心技术研发",
+      "evidence_span": "主要从事新能源、软件、人工智能、大数据、物联网等新领域的核心技术研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大数据核心技术研发",
+      "evidence_span": "主要从事新能源、软件、人工智能、大数据、物联网等新领域的核心技术研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物联网核心技术研发",
+      "evidence_span": "主要从事新能源、软件、人工智能、大数据、物联网等新领域的核心技术研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电动智能网联技术",
+      "evidence_span": "以电动智能网联技术为突破口"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新一代智能电动车整车架构",
+      "evidence_span": "着力打造新一代智能电动车的整车架构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "中央集中式控制结合区/域控制",
+      "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云管端一体化",
+      "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据驱动和迭代",
+      "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能感知",
+      "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能驾驶",
+      "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能座舱",
+      "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "整车运动智能控制",
+      "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一体式铸造",
+      "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分布式制造",
+      "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "固态电芯技术",
+      "evidence_span": "在固态电芯、800V高压、ChatGPT人工智能和机器学习的技术应用、可再生能源和材料科学等领域，加大技术研发深度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "800V高压技术",
+      "evidence_span": "在固态电芯、800V高压、ChatGPT人工智能和机器学习的技术应用、可再生能源和材料科学等领域，加大技术研发深度"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "清陶能源",
+      "evidence_span": "与清陶能源成立固态电池联合实验室"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "携手中石油、中石化、宁德时代等成立捷能智电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "携手中石油、中石化、宁德时代等成立捷能智电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "携手中石油、中石化、宁德时代等成立捷能智电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "与OPPO、地平线等在“生态域”、大算力芯片等领域深化合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "地平线",
+      "evidence_span": "与OPPO、地平线等在“生态域”、大算力芯片等领域深化合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自主品牌转型",
+      "evidence_span": "自主品牌转型，智能电动推进"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能电动推进",
+      "evidence_span": "自主品牌转型，智能电动推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "整车",
+        "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "零部件",
+        "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "移动出行和服务",
+        "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融",
+        "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "国际经营",
+        "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "创新科技",
+        "evidence_span": "公司业务主要涵盖整车、零部件、移动出行和服务、金融、国际经营、创新科技等领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车集团",
+        "evidence_span": "公司率先成为中国首个新能源汽车和海外市场年销量“双百万辆”汽车集团"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "整车制造商",
+        "evidence_span": "主要从事乘用车、商用车的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乘用车",
+        "evidence_span": "主要从事乘用车、商用车的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商用车",
+        "evidence_span": "主要从事乘用车、商用车的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车",
+        "evidence_span": "新能源汽车销量达到107.3万辆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力驱动系统",
+        "evidence_span": "主要从事动力驱动系统、底盘系统、内外饰系统，以及电池、电驱、电控等新能源和智能汽车零部件及系统的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "底盘系统",
+        "evidence_span": "主要从事动力驱动系统、底盘系统、内外饰系统，以及电池、电驱、电控等新能源和智能汽车零部件及系统的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内外饰系统",
+        "evidence_span": "主要从事动力驱动系统、底盘系统、内外饰系统，以及电池、电驱、电控等新能源和智能汽车零部件及系统的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池",
+        "evidence_span": "主要从事动力驱动系统、底盘系统、内外饰系统，以及电池、电驱、电控等新能源和智能汽车零部件及系统的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电驱",
+        "evidence_span": "主要从事动力驱动系统、底盘系统、内外饰系统，以及电池、电驱、电控等新能源和智能汽车零部件及系统的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电控",
+        "evidence_span": "主要从事动力驱动系统、底盘系统、内外饰系统，以及电池、电驱、电控等新能源和智能汽车零部件及系统的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物流运输",
+        "evidence_span": "主要从事物流运输、出行服务、汽车生活服务、节能和充换电服务等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "出行服务",
+        "evidence_span": "主要从事物流运输、出行服务、汽车生活服务、节能和充换电服务等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车生活服务",
+        "evidence_span": "主要从事物流运输、出行服务、汽车生活服务、节能和充换电服务等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "节能和充换电服务",
+        "evidence_span": "主要从事物流运输、出行服务、汽车生活服务、节能和充换电服务等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车金融",
+        "evidence_span": "主要从事汽车金融、公司金融、保险销售、产业金融投资等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公司金融",
+        "evidence_span": "主要从事汽车金融、公司金融、保险销售、产业金融投资等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保险销售",
+        "evidence_span": "主要从事汽车金融、公司金融、保险销售、产业金融投资等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产业金融投资",
+        "evidence_span": "主要从事汽车金融、公司金融、保险销售、产业金融投资等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源核心技术研发",
+        "evidence_span": "主要从事新能源、软件、人工智能、大数据、物联网等新领域的核心技术研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软件核心技术研发",
+        "evidence_span": "主要从事新能源、软件、人工智能、大数据、物联网等新领域的核心技术研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工智能核心技术研发",
+        "evidence_span": "主要从事新能源、软件、人工智能、大数据、物联网等新领域的核心技术研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大数据核心技术研发",
+        "evidence_span": "主要从事新能源、软件、人工智能、大数据、物联网等新领域的核心技术研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物联网核心技术研发",
+        "evidence_span": "主要从事新能源、软件、人工智能、大数据、物联网等新领域的核心技术研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电动智能网联技术",
+        "evidence_span": "以电动智能网联技术为突破口"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新一代智能电动车整车架构",
+        "evidence_span": "着力打造新一代智能电动车的整车架构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "中央集中式控制结合区/域控制",
+        "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云管端一体化",
+        "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据驱动和迭代",
+        "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能感知",
+        "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能驾驶",
+        "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能座舱",
+        "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "整车运动智能控制",
+        "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一体式铸造",
+        "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分布式制造",
+        "evidence_span": "具备中央集中式控制结合区/域控制、云管端一体化、数据驱动和迭代、智能感知、智能驾驶、智能座舱、整车运动智能控制、一体式铸造、分布式制造等产品和制造技术的最新特征"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "固态电芯技术",
+        "evidence_span": "在固态电芯、800V高压、ChatGPT人工智能和机器学习的技术应用、可再生能源和材料科学等领域，加大技术研发深度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "800V高压技术",
+        "evidence_span": "在固态电芯、800V高压、ChatGPT人工智能和机器学习的技术应用、可再生能源和材料科学等领域，加大技术研发深度"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "清陶能源",
+        "evidence_span": "与清陶能源成立固态电池联合实验室"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "携手中石油、中石化、宁德时代等成立捷能智电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "携手中石油、中石化、宁德时代等成立捷能智电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "携手中石油、中石化、宁德时代等成立捷能智电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "与OPPO、地平线等在“生态域”、大算力芯片等领域深化合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "地平线",
+        "evidence_span": "与OPPO、地平线等在“生态域”、大算力芯片等领域深化合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自主品牌转型",
+        "evidence_span": "自主品牌转型，智能电动推进"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能电动推进",
+        "evidence_span": "自主品牌转型，智能电动推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:20:28"
+}

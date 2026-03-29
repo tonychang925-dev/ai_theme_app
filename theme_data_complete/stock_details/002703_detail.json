@@ -1,0 +1,98 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 2638862978.27,
+    "changeCount": 1.42,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:01",
+    "detail": "<p><span style=\"font-weight: bold;\">1.营业收入构成&nbsp;</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220919101747_1d8ea8d46aa6b51d.png\" /></span></p>\n<p>资料来源：公司2022年半年度报告</p>\n<p>浙江世宝以提高汽车驾驶安全性和舒适性为使命，长期致力于汽车转向系统的研发与制造，在汽车行业积累了丰富的系统配套经验和国际化客户资源，是国内外众多大型汽车集团的一级配套商。公司主要从事汽车转向器及其他转向系统关键零部件的研发、制造及销售，在杭州、义乌、四平及芜湖设有5个生产基地，并在北京设有一个研究中心。公司具备为商用车、乘用车及新能源汽车提供各类转向产品的能力。公司是国内率先自主开发汽车液压助力转向系统、汽车电动助力转向系统的企业之一。公司研发的用于智能汽车、无人驾驶汽车的智能转向技术处于推广应用阶段。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.公司主要产品</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20220919102902_b44fce38d1ceff62.png\" /></span></p>\n<div>\n<div>资料来源：公司官网、公司公告、Wind、天风证券研究所</div>\n<div>主要产品包括商用车循球球转向器、商用车和乘用车电子助力转向系统、转向节、转向管柱及其他部件，也提供自动驾驶和无人驾驶汽车的线控转向、智能转向系统。公司是国内率先完成电动助力转向系统和智能转向系统自主研发的企业。</div>\n</div>\n<div>&nbsp;</div>\n<div><span style=\"font-weight: bold;\">3.、核心竞争力</span></div>\n<div><span style=\"font-weight: bold;\">领先的技术研发能力：</span>公司在转向技术领域拥有大量专利和软件著作权。同时，为迎接汽车产业技术革新给汽车零部件企业带来的新机遇与新挑战，公司已领先国内同行开展汽车智能驾驶，包括自动驾驶相关的技术研发、试验、试装及市场培育推广。</div>\n<div><span style=\"font-weight: bold;\">先进的生产制造工艺：</span>公司主要生产基地全面推行精益生产模式及IATF:16949质量认证体系，以最优价格、最新技术和最高品质为客户提供量身定制的转向系统产品。</div>",
+    "firstLetter": "ZJSB",
+    "high": 25.23,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 24.18,
+    "marketValue": 18871186888.96,
+    "name": "浙江世宝",
+    "pctChg": 6.19,
+    "price": 24.36,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 13,
+    "recent60Change": 90.91,
+    "recentChange": 19.24,
+    "remark": "是国内率先自主开发汽车液压助力转向系统、汽车电动助力转向系统的企业之一。是众多汽车厂商的一级配套商。",
+    "status": 1,
+    "stockId": "002703",
+    "stockLightspots": [
+      {
+        "bizKey": "39944",
+        "content": "积极布局,稳健增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39944,
+        "stockId": "002703",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39945",
+        "content": "汽车转向系统国产化龙头，电调管柱打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39945,
+        "stockId": "002703",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39946",
+        "content": "汽车转向系统行业的领先企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39946,
+        "stockId": "002703",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39947",
+        "content": "综合竞争力处行业中游的转向系统供应商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39947,
+        "stockId": "002703",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39948",
+        "content": "汽车转向行业的优质公司",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39948,
+        "stockId": "002703",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39949",
+        "content": "短期受阻,期待电动助力转向突破",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39949,
+        "stockId": "002703",
+        "updateTime": null
+      },
+      {
+        "bizKey": "39950",
+        "content": "汽车转向器领先供应商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 39950,
+        "stockId": "002703",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 1070926.96
+  }
+}

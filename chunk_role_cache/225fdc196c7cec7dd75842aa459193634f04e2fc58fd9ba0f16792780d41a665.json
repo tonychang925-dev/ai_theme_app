@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "5cb2011876f6", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落包含事件（电子展开幕、论坛发言），但引用了市场数据（如半导体设备销售收入、封测市场规模），这些数据可能反映行业趋势，需要后续评估其知识价值。"}}

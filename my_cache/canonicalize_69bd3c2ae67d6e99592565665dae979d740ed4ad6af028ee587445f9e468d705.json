@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:00:28", "result": {"span_uid": "555dff8713a4", "action": "rewrite", "canonical_text": "陆军无人化作战模式包括无人机蜂群和机器狼群协同作战等战术形式。", "final_type": "core", "final_role": "无人化作战模式", "stability": "medium", "reason": "该片段描述了陆军无人化作战模式的核心构成，属于题材本体定义，改写后去除了事件化表述（如“首次披露”），形成稳定知识表达。"}}

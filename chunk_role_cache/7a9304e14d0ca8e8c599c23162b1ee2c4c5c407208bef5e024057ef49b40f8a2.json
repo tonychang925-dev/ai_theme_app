@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "7b40f6fb2d3d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述英伟达GTC 2024大会的事件，包括时间（2024年3月18-21日）和计划发布的内容，是具体会议动态，无静态知识。"}}

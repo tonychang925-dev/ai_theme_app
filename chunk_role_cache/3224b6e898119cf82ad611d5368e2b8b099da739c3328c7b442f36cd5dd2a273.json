@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "e9e6858bf561", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "low", "reason": "该段引用国家发改委主任在记者会上的发言，属于具体事件，但提及设备更新需求的估算（5万亿以上市场），这涉及半导体设备市场的潜在规模知识，因此判为candidate_mixed。"}}

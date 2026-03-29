@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "c445f0db3d70", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落前半部分描述了HBM技术发展（如Hybrid Bonding），可能包含有价值的半导体技术知识，但后半部分提到了两个即将举办的会议事件，混合了事件信息，因此作为候选知识需要进一步裁决。"}}

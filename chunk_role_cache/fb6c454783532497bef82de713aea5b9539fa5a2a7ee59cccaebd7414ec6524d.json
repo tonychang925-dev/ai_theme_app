@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "ddd8478bbdb5", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段描述了千帆星座第三批组网卫星发射、在轨卫星数量增至54颗、预计完成部署目标等事件信息，属于动态进展。但同时也隐含了星座部署的规模、目标等潜在知识，对卫星互联网题材有参考价值，因此归类为混合候选。"}}

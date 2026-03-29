@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "核电装备制造",
+      "evidence_span": "公司所属行业主要是核电装备制造行业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端装备机械制造",
+      "evidence_span": "本公司主要从事高端装备机械制造业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "石化装备产品",
+      "evidence_span": "台海核电生产制造石化装备的高压容器、高温合金炉管"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其他行业用高端材料",
+      "evidence_span": "其他行业用高端材料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "核电设备细分龙头",
+      "evidence_span": "核电设备细分龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "核电主管道绝对龙头",
+      "evidence_span": "核电主管道绝对龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "核级铸锻件领先企业",
+      "evidence_span": "核级铸锻件领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "核电设备龙头",
+      "evidence_span": "核电设备龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "核电最纯设备供应商",
+      "evidence_span": "核电最纯设备供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核电主管道",
+      "evidence_span": "核电主管道是核岛七大主设备之一，是台海核电主要产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核电主泵泵壳",
+      "evidence_span": "主泵泵壳制造技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核电主设备支承铸件",
+      "evidence_span": "主设备支承铸件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石化装备的高压容器",
+      "evidence_span": "石化装备的高压容器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石化装备的高温合金炉管",
+      "evidence_span": "高温合金炉管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "火电、水电、油气等行业的流体机械用泵、阀铸件",
+      "evidence_span": "火电、水电、油气等行业的流体机械用泵、阀铸件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽轮机相关铸件",
+      "evidence_span": "汽轮机相关铸件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "火电、水电、船舶等相关转子、轴类锻件",
+      "evidence_span": "火电、水电、船舶等相关转子、轴类锻件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乏燃料储运容器",
+      "evidence_span": "乏燃料储运容器制造技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核废后处理系统装备",
+      "evidence_span": "核废后处理系统装备制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "100吨级大型不锈钢电渣钢锭冶炼工艺",
+      "evidence_span": "掌握100吨级大型不锈钢电渣钢锭冶炼工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核电奥氏体钢主泵泵壳整体铸造技术",
+      "evidence_span": "核电奥氏体钢主泵泵壳整体铸造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "四代快堆主泵奥氏体材料制造技术",
+      "evidence_span": "四代快堆主泵奥氏体材料制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "四代快堆蒸发器管板锻件材料制造技术",
+      "evidence_span": "四代快堆蒸发器管板锻件材料制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超级双相钢大型海水循环泵叶轮铸造技术",
+      "evidence_span": "超级双相钢大型海水循环泵叶轮铸造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海工装备大型支撑节点制造技术",
+      "evidence_span": "海工装备大型支撑节点制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超高压容器制造技术",
+      "evidence_span": "超高压容器制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "火电超超临界汽轮机转子材料制造技术",
+      "evidence_span": "火电超超临界汽轮机转子材料制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "二代半核电主管道全流程制造技术",
+      "evidence_span": "二代半核电主管道全流程制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三代主管道全流程制造技术",
+      "evidence_span": "三代主管道全流程制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "小型堆核岛主设备关键装备制造技术",
+      "evidence_span": "小型堆核岛主设备关键装备制造技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "核电回暖",
+      "evidence_span": "有望分享核电回暖"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海军舰船列装",
+      "evidence_span": "海军舰船列装盛宴"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "核电行业转暖",
+      "evidence_span": "受益核电行业转暖"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军民市场拓展",
+      "evidence_span": "军民市场拓展可期"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "核电国产化",
+      "evidence_span": "已经实现了国产化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "核电装备制造",
+        "evidence_span": "公司所属行业主要是核电装备制造行业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端装备机械制造",
+        "evidence_span": "本公司主要从事高端装备机械制造业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "石化装备产品",
+        "evidence_span": "台海核电生产制造石化装备的高压容器、高温合金炉管"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "其他行业用高端材料",
+        "evidence_span": "其他行业用高端材料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "核电设备细分龙头",
+        "evidence_span": "核电设备细分龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "核电主管道绝对龙头",
+        "evidence_span": "核电主管道绝对龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "核级铸锻件领先企业",
+        "evidence_span": "核级铸锻件领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "核电设备龙头",
+        "evidence_span": "核电设备龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "核电最纯设备供应商",
+        "evidence_span": "核电最纯设备供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核电主管道",
+        "evidence_span": "核电主管道是核岛七大主设备之一，是台海核电主要产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核电主泵泵壳",
+        "evidence_span": "主泵泵壳制造技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核电主设备支承铸件",
+        "evidence_span": "主设备支承铸件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石化装备的高压容器",
+        "evidence_span": "石化装备的高压容器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石化装备的高温合金炉管",
+        "evidence_span": "高温合金炉管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "火电、水电、油气等行业的流体机械用泵、阀铸件",
+        "evidence_span": "火电、水电、油气等行业的流体机械用泵、阀铸件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽轮机相关铸件",
+        "evidence_span": "汽轮机相关铸件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "火电、水电、船舶等相关转子、轴类锻件",
+        "evidence_span": "火电、水电、船舶等相关转子、轴类锻件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乏燃料储运容器",
+        "evidence_span": "乏燃料储运容器制造技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核废后处理系统装备",
+        "evidence_span": "核废后处理系统装备制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "100吨级大型不锈钢电渣钢锭冶炼工艺",
+        "evidence_span": "掌握100吨级大型不锈钢电渣钢锭冶炼工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核电奥氏体钢主泵泵壳整体铸造技术",
+        "evidence_span": "核电奥氏体钢主泵泵壳整体铸造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "四代快堆主泵奥氏体材料制造技术",
+        "evidence_span": "四代快堆主泵奥氏体材料制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "四代快堆蒸发器管板锻件材料制造技术",
+        "evidence_span": "四代快堆蒸发器管板锻件材料制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超级双相钢大型海水循环泵叶轮铸造技术",
+        "evidence_span": "超级双相钢大型海水循环泵叶轮铸造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海工装备大型支撑节点制造技术",
+        "evidence_span": "海工装备大型支撑节点制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超高压容器制造技术",
+        "evidence_span": "超高压容器制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "火电超超临界汽轮机转子材料制造技术",
+        "evidence_span": "火电超超临界汽轮机转子材料制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "二代半核电主管道全流程制造技术",
+        "evidence_span": "二代半核电主管道全流程制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三代主管道全流程制造技术",
+        "evidence_span": "三代主管道全流程制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "小型堆核岛主设备关键装备制造技术",
+        "evidence_span": "小型堆核岛主设备关键装备制造技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "核电回暖",
+        "evidence_span": "有望分享核电回暖"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海军舰船列装",
+        "evidence_span": "海军舰船列装盛宴"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "核电行业转暖",
+        "evidence_span": "受益核电行业转暖"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军民市场拓展",
+        "evidence_span": "军民市场拓展可期"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "核电国产化",
+        "evidence_span": "已经实现了国产化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:26:39"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:42:00", "result": {"span_uid": "2cd19b56405a", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅提供关联公司的注册信息、法定代表人、注册资本和经营范围等具体工商细节，这些信息属于特定主体的事件性数据，无法整理成脱离原新闻的稳定知识表达，且对'蜜雪冰城鲜啤'题材的本体定义、相关机制或信号无直接贡献，不符合知识块要求。"}}

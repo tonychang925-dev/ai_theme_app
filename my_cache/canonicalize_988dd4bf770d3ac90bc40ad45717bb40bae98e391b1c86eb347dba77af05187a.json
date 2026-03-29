@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:41:55", "result": {"span_uid": "4cb478a66776", "action": "rewrite", "canonical_text": "预制菜标准体系正在完善中，包括制定食品安全国家标准、质量国家标准，以及术语与分类标准。", "final_type": "signal", "final_role": "标准制定进展", "stability": "medium", "reason": "该片段描述了标准制定的进展，是重要的产业信号，但需去除具体事件细节（如日期、机构名称）以形成更通用的知识表达。"}}

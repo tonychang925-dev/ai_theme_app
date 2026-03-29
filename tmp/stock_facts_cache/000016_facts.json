@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "消费类电子",
+      "evidence_span": "本公司的主要业务有消费类电子、工贸、半导体和环保"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工贸",
+      "evidence_span": "本公司的主要业务有消费类电子、工贸、半导体和环保"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体",
+      "evidence_span": "本公司的主要业务有消费类电子、工贸、半导体和环保"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保",
+      "evidence_span": "本公司的主要业务有消费类电子、工贸、半导体和环保"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "彩电行业骨干龙头企业",
+      "evidence_span": "中国彩电行业和手机行业骨干龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "手机行业骨干龙头企业",
+      "evidence_span": "中国彩电行业和手机行业骨干龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩电",
+      "evidence_span": "内销彩电业务主要以B2B和B2C两种业务模式为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冰箱",
+      "evidence_span": "公司白电业务主要经营冰箱、洗衣机、空调、冷柜等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洗衣机",
+      "evidence_span": "公司白电业务主要经营冰箱、洗衣机、空调、冷柜等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空调",
+      "evidence_span": "公司白电业务主要经营冰箱、洗衣机、空调、冷柜等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷柜",
+      "evidence_span": "公司白电业务主要经营冰箱、洗衣机、空调、冷柜等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洗碗机",
+      "evidence_span": "通过新建西安智能家电产业园，探索发展洗碗机业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IC芯片存储",
+      "evidence_span": "工贸业务主要是围绕本公司传统主营业务中涉及的IC芯片存储、液晶屏等物料开展采购、加工及分销业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液晶屏",
+      "evidence_span": "工贸业务主要是围绕本公司传统主营业务中涉及的IC芯片存储、液晶屏等物料开展采购、加工及分销业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "存储类产品的封装和测试",
+      "evidence_span": "存储领域主要是进行存储类产品的封装和测试"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Micro LED相关产品",
+      "evidence_span": "光电领域目前主要是进行Micro LED相关产品的研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "再生资源回收再利用",
+      "evidence_span": "公司环保业务主要集中在再生资源回收再利用等环保相关领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G路由器",
+      "evidence_span": "移动互联业务布局5G路由器与平板产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "平板产品",
+      "evidence_span": "移动互联业务布局5G路由器与平板产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Mini LED直显板",
+      "evidence_span": "PCB业务开发了Mini LED直显板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "厚铜产品",
+      "evidence_span": "厚铜和通讯类产品收入同比提升"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通讯类产品",
+      "evidence_span": "厚铜和通讯类产品收入同比提升"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "康佳550对开门系列冰箱",
+      "evidence_span": "推出康佳550对开门系列冰箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "H21彩屏滚筒洗衣机",
+      "evidence_span": "H21彩屏滚筒洗衣机等新品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "康佳双15天生态原鲜冰箱",
+      "evidence_span": "康佳双15天生态原鲜冰箱获得2022中国冰箱行业超长保鲜领先产品奖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "深冷冰箱",
+      "evidence_span": "在研发出民用空气制冷深低温-86℃冰箱后，进一步实现制冷温度突破-120℃"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Micro LED芯片制作",
+      "evidence_span": "自主研发的15um*30um Micro LED芯片制作良率达到99%"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Micro LED混合式巨量转移技术",
+      "evidence_span": "本公司自主开发的Micro LED“混合式巨量转移技术”修复后的三色转移良率达到99.999%"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "逆布雷顿制冷技术",
+      "evidence_span": "开展了《基于逆布雷顿制冷技术的深冷冰箱技术开发》项目的应用基础研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "15天生态原鲜技术",
+      "evidence_span": "开发的15天生态原鲜技术通过多场耦合保鲜技术，提升了冰箱内食品保鲜期"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "存储半导体封装",
+      "evidence_span": "存储半导体盐城封测工厂投产，封装良率超99.95%"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MLED直显量产线",
+      "evidence_span": "落地MLED直显量产线等产业化项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MLED芯片量产线",
+      "evidence_span": "落地MLED直显量产线、MLED芯片量产线等产业化项目"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "存储国产化",
+      "evidence_span": "中国近年来也在加快提升半导体存储的产能，预计自给率将持续提升"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "消费类电子",
+        "evidence_span": "本公司的主要业务有消费类电子、工贸、半导体和环保"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工贸",
+        "evidence_span": "本公司的主要业务有消费类电子、工贸、半导体和环保"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体",
+        "evidence_span": "本公司的主要业务有消费类电子、工贸、半导体和环保"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保",
+        "evidence_span": "本公司的主要业务有消费类电子、工贸、半导体和环保"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "彩电行业骨干龙头企业",
+        "evidence_span": "中国彩电行业和手机行业骨干龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "手机行业骨干龙头企业",
+        "evidence_span": "中国彩电行业和手机行业骨干龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩电",
+        "evidence_span": "内销彩电业务主要以B2B和B2C两种业务模式为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冰箱",
+        "evidence_span": "公司白电业务主要经营冰箱、洗衣机、空调、冷柜等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洗衣机",
+        "evidence_span": "公司白电业务主要经营冰箱、洗衣机、空调、冷柜等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空调",
+        "evidence_span": "公司白电业务主要经营冰箱、洗衣机、空调、冷柜等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷柜",
+        "evidence_span": "公司白电业务主要经营冰箱、洗衣机、空调、冷柜等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洗碗机",
+        "evidence_span": "通过新建西安智能家电产业园，探索发展洗碗机业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IC芯片存储",
+        "evidence_span": "工贸业务主要是围绕本公司传统主营业务中涉及的IC芯片存储、液晶屏等物料开展采购、加工及分销业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液晶屏",
+        "evidence_span": "工贸业务主要是围绕本公司传统主营业务中涉及的IC芯片存储、液晶屏等物料开展采购、加工及分销业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "存储类产品的封装和测试",
+        "evidence_span": "存储领域主要是进行存储类产品的封装和测试"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Micro LED相关产品",
+        "evidence_span": "光电领域目前主要是进行Micro LED相关产品的研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "再生资源回收再利用",
+        "evidence_span": "公司环保业务主要集中在再生资源回收再利用等环保相关领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G路由器",
+        "evidence_span": "移动互联业务布局5G路由器与平板产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "平板产品",
+        "evidence_span": "移动互联业务布局5G路由器与平板产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Mini LED直显板",
+        "evidence_span": "PCB业务开发了Mini LED直显板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "厚铜产品",
+        "evidence_span": "厚铜和通讯类产品收入同比提升"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通讯类产品",
+        "evidence_span": "厚铜和通讯类产品收入同比提升"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "康佳550对开门系列冰箱",
+        "evidence_span": "推出康佳550对开门系列冰箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "H21彩屏滚筒洗衣机",
+        "evidence_span": "H21彩屏滚筒洗衣机等新品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "康佳双15天生态原鲜冰箱",
+        "evidence_span": "康佳双15天生态原鲜冰箱获得2022中国冰箱行业超长保鲜领先产品奖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "深冷冰箱",
+        "evidence_span": "在研发出民用空气制冷深低温-86℃冰箱后，进一步实现制冷温度突破-120℃"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Micro LED芯片制作",
+        "evidence_span": "自主研发的15um*30um Micro LED芯片制作良率达到99%"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Micro LED混合式巨量转移技术",
+        "evidence_span": "本公司自主开发的Micro LED“混合式巨量转移技术”修复后的三色转移良率达到99.999%"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "逆布雷顿制冷技术",
+        "evidence_span": "开展了《基于逆布雷顿制冷技术的深冷冰箱技术开发》项目的应用基础研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "15天生态原鲜技术",
+        "evidence_span": "开发的15天生态原鲜技术通过多场耦合保鲜技术，提升了冰箱内食品保鲜期"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "存储半导体封装",
+        "evidence_span": "存储半导体盐城封测工厂投产，封装良率超99.95%"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MLED直显量产线",
+        "evidence_span": "落地MLED直显量产线等产业化项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MLED芯片量产线",
+        "evidence_span": "落地MLED直显量产线、MLED芯片量产线等产业化项目"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "存储国产化",
+        "evidence_span": "中国近年来也在加快提升半导体存储的产能，预计自给率将持续提升"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:41:29"
+}

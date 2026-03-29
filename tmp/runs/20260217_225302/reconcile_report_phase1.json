@@ -1,0 +1,23 @@
+{
+  "phase": "P1.phase1",
+  "run_id": "20260217_225302",
+  "pending_sync": [
+    {
+      "type": "preflight_verify_token",
+      "args": {
+        "phase": "P1.phase1"
+      },
+      "reason": "dns_transient"
+    },
+    {
+      "type": "fetch_tasks",
+      "args": {
+        "task_prefix": "P1.phase1",
+        "status": "Todo,Doing,In review",
+        "output": "tmp/runs/20260217_225302/preflight_tasks.json"
+      },
+      "reason": "dns_transient"
+    }
+  ],
+  "generated_at": "2026-02-17T14:55:19Z"
+}

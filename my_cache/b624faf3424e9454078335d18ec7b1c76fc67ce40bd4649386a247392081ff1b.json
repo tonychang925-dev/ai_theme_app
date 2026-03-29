@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:44:20", "result": {"chunk_id": "030752894964", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述抖音用户基于华为产品制作裸眼3D效果并登上热榜的具体事件，属于用户生成内容或社交媒体动态，没有提供裸眼3D的静态知识。"}}

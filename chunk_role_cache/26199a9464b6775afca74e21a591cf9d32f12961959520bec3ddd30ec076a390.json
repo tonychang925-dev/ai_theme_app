@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_3", "model": "deepseek-chat", "timestamp": "2026-03-08T09:33:12", "result": {"chunk_id": "274c3332061e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落以美国出口管制事件开头，但详细列举了受影响的半导体设备公司和技术领域（如涂胶显影、刻蚀、薄膜沉积等），这些是静态知识，但混合了事件信息。"}}

@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "饲料加工",
+      "evidence_span": "公司主营业务包括饲料加工和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生猪养殖",
+      "evidence_span": "公司主营业务包括生猪养殖和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生猪屠宰",
+      "evidence_span": "公司主营业务包括生猪屠宰"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生鲜猪肉食品销售",
+      "evidence_span": "公司主营业务包括生鲜猪肉食品销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农业产业化国家重点龙头企业",
+      "evidence_span": "农业产业化国家重点龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "生猪产业链一体化龙头企业",
+      "evidence_span": "打造生猪产业链一体化的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "省内最大的生猪定点屠宰企业",
+      "evidence_span": "公司是省内最大的生猪定点屠宰企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "猪用配合料",
+      "evidence_span": "公司饲料业务的主要产品是猪用配合料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "猪用浓缩料",
+      "evidence_span": "公司饲料业务的主要产品是猪用浓缩料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品猪",
+      "evidence_span": "主要产品包括商品猪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仔猪",
+      "evidence_span": "主要产品包括仔猪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "种猪",
+      "evidence_span": "主要产品包括种猪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热鲜白条猪肉",
+      "evidence_span": "主要产品包括热鲜白条猪肉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷鲜白条猪肉",
+      "evidence_span": "主要产品包括冷鲜白条猪肉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分割肉",
+      "evidence_span": "主要产品包括分割肉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "猪副产品",
+      "evidence_span": "主要产品包括猪副产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生猪委托屠宰服务",
+      "evidence_span": "对外提供生猪屠宰服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低温速冻肉肠",
+      "evidence_span": "低温速冻肉肠"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小酥肉",
+      "evidence_span": "小酥肉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "午餐肉",
+      "evidence_span": "午餐肉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肉酱系列猪肉深加工产品",
+      "evidence_span": "肉酱系列猪肉深加工产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空气过滤种猪场",
+      "evidence_span": "建成4个空气过滤种猪场"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高健康高遗传指数的核心种猪群",
+      "evidence_span": "引进2020头高健康高遗传指数的核心种猪群"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三位一体的生物安全管理体系",
+      "evidence_span": "三位一体的生物安全管理体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动环境控制系统",
+      "evidence_span": "自动环境控制系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动饲喂系统",
+      "evidence_span": "自动饲喂系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全漏粪地板",
+      "evidence_span": "全漏粪地板"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "PIC国际育种公司",
+      "evidence_span": "与PIC国际育种公司的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "勃林格",
+      "evidence_span": "选用勃林格等国际知名公司的疫苗产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杜邦",
+      "evidence_span": "选用杜邦、默沙东等公司的消毒剂和清洁剂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "默沙东",
+      "evidence_span": "选用杜邦、默沙东等公司的消毒剂和清洁剂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国爱科集团",
+      "evidence_span": "采购自美国爱科集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "谷瑞机械",
+      "evidence_span": "采购自美国爱科集团及其下属的谷瑞机械"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国豪格斯莱特公司",
+      "evidence_span": "采购自美国豪格斯莱特公司"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "饲料加工",
+        "evidence_span": "公司主营业务包括饲料加工和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生猪养殖",
+        "evidence_span": "公司主营业务包括生猪养殖和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生猪屠宰",
+        "evidence_span": "公司主营业务包括生猪屠宰"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生鲜猪肉食品销售",
+        "evidence_span": "公司主营业务包括生鲜猪肉食品销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农业产业化国家重点龙头企业",
+        "evidence_span": "农业产业化国家重点龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "生猪产业链一体化龙头企业",
+        "evidence_span": "打造生猪产业链一体化的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "省内最大的生猪定点屠宰企业",
+        "evidence_span": "公司是省内最大的生猪定点屠宰企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "猪用配合料",
+        "evidence_span": "公司饲料业务的主要产品是猪用配合料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "猪用浓缩料",
+        "evidence_span": "公司饲料业务的主要产品是猪用浓缩料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品猪",
+        "evidence_span": "主要产品包括商品猪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仔猪",
+        "evidence_span": "主要产品包括仔猪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "种猪",
+        "evidence_span": "主要产品包括种猪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热鲜白条猪肉",
+        "evidence_span": "主要产品包括热鲜白条猪肉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷鲜白条猪肉",
+        "evidence_span": "主要产品包括冷鲜白条猪肉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分割肉",
+        "evidence_span": "主要产品包括分割肉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "猪副产品",
+        "evidence_span": "主要产品包括猪副产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生猪委托屠宰服务",
+        "evidence_span": "对外提供生猪屠宰服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低温速冻肉肠",
+        "evidence_span": "低温速冻肉肠"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小酥肉",
+        "evidence_span": "小酥肉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "午餐肉",
+        "evidence_span": "午餐肉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肉酱系列猪肉深加工产品",
+        "evidence_span": "肉酱系列猪肉深加工产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空气过滤种猪场",
+        "evidence_span": "建成4个空气过滤种猪场"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高健康高遗传指数的核心种猪群",
+        "evidence_span": "引进2020头高健康高遗传指数的核心种猪群"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三位一体的生物安全管理体系",
+        "evidence_span": "三位一体的生物安全管理体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动环境控制系统",
+        "evidence_span": "自动环境控制系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动饲喂系统",
+        "evidence_span": "自动饲喂系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全漏粪地板",
+        "evidence_span": "全漏粪地板"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "PIC国际育种公司",
+        "evidence_span": "与PIC国际育种公司的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "勃林格",
+        "evidence_span": "选用勃林格等国际知名公司的疫苗产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杜邦",
+        "evidence_span": "选用杜邦、默沙东等公司的消毒剂和清洁剂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "默沙东",
+        "evidence_span": "选用杜邦、默沙东等公司的消毒剂和清洁剂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国爱科集团",
+        "evidence_span": "采购自美国爱科集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "谷瑞机械",
+        "evidence_span": "采购自美国爱科集团及其下属的谷瑞机械"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国豪格斯莱特公司",
+        "evidence_span": "采购自美国豪格斯莱特公司"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:18:46"
+}

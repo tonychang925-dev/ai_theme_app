@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "33b52e03ac96", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落涉及集成电路大基金三期项目和上海微电子研发光刻机的信息，可能包含投资机制或技术知识，但混有爆料、消息和预计交付时间等事件元素，需进一步裁决。"}}

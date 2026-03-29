@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "3691d47ce5b7", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要描述特斯拉股东大会的日期和开源证券对特斯拉人形机器人产量和预售时间的预测。这完全是时间性动态和事件信息，没有静态知识元素，因此分类为pure_event。"}}

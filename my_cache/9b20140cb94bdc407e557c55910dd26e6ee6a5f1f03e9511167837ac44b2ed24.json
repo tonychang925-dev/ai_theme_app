@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "6584787293bf", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落详细描述《生成式人工智能服务管理暂行办法》的发布（事件），但包含大量监管原则、数据安全要求、模型安全等静态知识，对题材本体构建有高价值，需裁决分离事件与知识。"}}

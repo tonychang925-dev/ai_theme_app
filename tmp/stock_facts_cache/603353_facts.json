@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "加油站零售连锁经营",
+      "evidence_span": "公司主营业务为加油站零售连锁经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "成品油仓储",
+      "evidence_span": "公司主营业务为加油站零售连锁经营、成品油仓储"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物流配送",
+      "evidence_span": "公司主营业务为加油站零售连锁经营、成品油仓储、物流配送"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "成品油批发",
+      "evidence_span": "公司主营业务为加油站零售连锁经营、成品油仓储、物流配送、批发"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "连锁加油站上市企业",
+      "evidence_span": "公司是连锁加油站上市企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "成品油批发资质的石油企业",
+      "evidence_span": "获国家商务部批准取得成品油批发资质的石油企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "成品油零售",
+      "evidence_span": "成品油零售实现销量21.65万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "成品油批发",
+      "evidence_span": "批发实现销量25.70万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源充电和换电示范站点",
+      "evidence_span": "正在逐步落地首座新能源充电和换电示范站点的相关工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合能源补给站",
+      "evidence_span": "建成一座占地面积为4,000多平方米的兼具充电和换电双重功能的综合能源补给站"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧油联平台",
+      "evidence_span": "公司正在搭建和完善集油库、车队物流、油站及公司后台系统的智慧油联平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信息化管理平台",
+      "evidence_span": "自行研发运营的基于互联网技术的信息化管理平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "壳牌",
+      "evidence_span": "成功入选壳牌、中海油、省高速等一批跨国公司、央企、国企、民企等企业的上游供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中海油",
+      "evidence_span": "成功入选壳牌、中海油、省高速等一批跨国公司、央企、国企、民企等企业的上游供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "省高速",
+      "evidence_span": "成功入选壳牌、中海油、省高速等一批跨国公司、央企、国企、民企等企业的上游供应商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "加油站零售连锁经营",
+        "evidence_span": "公司主营业务为加油站零售连锁经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "成品油仓储",
+        "evidence_span": "公司主营业务为加油站零售连锁经营、成品油仓储"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物流配送",
+        "evidence_span": "公司主营业务为加油站零售连锁经营、成品油仓储、物流配送"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "成品油批发",
+        "evidence_span": "公司主营业务为加油站零售连锁经营、成品油仓储、物流配送、批发"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "连锁加油站上市企业",
+        "evidence_span": "公司是连锁加油站上市企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "成品油批发资质的石油企业",
+        "evidence_span": "获国家商务部批准取得成品油批发资质的石油企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "成品油零售",
+        "evidence_span": "成品油零售实现销量21.65万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "成品油批发",
+        "evidence_span": "批发实现销量25.70万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源充电和换电示范站点",
+        "evidence_span": "正在逐步落地首座新能源充电和换电示范站点的相关工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合能源补给站",
+        "evidence_span": "建成一座占地面积为4,000多平方米的兼具充电和换电双重功能的综合能源补给站"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧油联平台",
+        "evidence_span": "公司正在搭建和完善集油库、车队物流、油站及公司后台系统的智慧油联平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信息化管理平台",
+        "evidence_span": "自行研发运营的基于互联网技术的信息化管理平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "壳牌",
+        "evidence_span": "成功入选壳牌、中海油、省高速等一批跨国公司、央企、国企、民企等企业的上游供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中海油",
+        "evidence_span": "成功入选壳牌、中海油、省高速等一批跨国公司、央企、国企、民企等企业的上游供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "省高速",
+        "evidence_span": "成功入选壳牌、中海油、省高速等一批跨国公司、央企、国企、民企等企业的上游供应商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:04:14"
+}

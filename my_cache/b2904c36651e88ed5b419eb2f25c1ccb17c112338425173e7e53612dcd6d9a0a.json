@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:11", "result": {"chunk_id": "023d54c97452", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述了北京市发布的政策征求意见稿内容，属于政策发布事件，虽然提及具身智能机器人应用，但没有提供灵巧手本身的静态知识（如定义、机制）。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:58:46", "result": {"chunk_id": "39c12f1656bd", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要描述商务部等5部门联合出台《推动电动自行车以旧换新实施方案》的具体内容，如补贴标准和方式，这是一个政策发布和实施方案的事件，没有提供核心的题材静态知识。"}}

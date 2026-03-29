@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "913144d7f932", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "段落报告美国国际贸易委员会的终裁、排除令、禁止令等具体法律事件，是事件公告，无本体性知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:00:49", "result": {"chunk_id": "742ee4d0188a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报告小米汽车上市24小时的大定数量，是具体销售数据事件，无题材定义或结构知识。"}}

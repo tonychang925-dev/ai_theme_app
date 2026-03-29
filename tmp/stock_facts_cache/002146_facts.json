@@ -1,0 +1,344 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产开发",
+      "evidence_span": "公司的主营业务为房地产开发与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司的主营业务为房地产开发与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "康旅",
+      "evidence_span": "以康旅、产业新城、物业为支柱"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "产业新城",
+      "evidence_span": "以康旅、产业新城、物业为支柱"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物业",
+      "evidence_span": "以康旅、产业新城、物业为支柱"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "房地产开发企业",
+      "evidence_span": "公司的主营业务为房地产开发与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "河北省首家在A股上市的房地产企业",
+      "evidence_span": "作为河北省首家在A股上市的房地产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普通住宅",
+      "evidence_span": "以面向首次置业和改善性需求的普通住宅为主导产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物业管理服务",
+      "evidence_span": "主要通过物业管理服务、非业主增值服务及社区增值服三条业务线提供多元化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非业主增值服务",
+      "evidence_span": "主要通过物业管理服务、非业主增值服务及社区增值服三条业务线提供多元化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社区增值服务",
+      "evidence_span": "主要通过物业管理服务、非业主增值服务及社区增值服三条业务线提供多元化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社区零售",
+      "evidence_span": "社区生活服务在社区零售、家政服务深入开展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家政服务",
+      "evidence_span": "社区生活服务在社区零售、家政服务深入开展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社区医养",
+      "evidence_span": "在社区医养、社区文教等方面积极探索"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社区文教",
+      "evidence_span": "在社区医养、社区文教等方面积极探索"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游",
+      "evidence_span": "康旅板块以“旅游、度假、养老、养生”等产业为切入点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "度假",
+      "evidence_span": "康旅板块以“旅游、度假、养老、养生”等产业为切入点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "养老",
+      "evidence_span": "康旅板块以“旅游、度假、养老、养生”等产业为切入点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "养生",
+      "evidence_span": "康旅板块以“旅游、度假、养老、养生”等产业为切入点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酒店",
+      "evidence_span": "康旅旗下酒店产业荣膺“星光奖-年度民族品牌酒店管理集团”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产业园区",
+      "evidence_span": "产业新城板块积极响应国家战略，经过多年发展已在河北、安徽2个省布局香河、永清、霸州、固安、兴隆、宣化、蔚县、唐山玉田、唐山路南、衡水、淮北等多个园区"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "被动式建筑",
+      "evidence_span": "该技术已应用到被动式建筑中"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家装",
+      "evidence_span": "进驻家装市场，升级产品满足高端品质需求"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "住宅产品全周期设计管理",
+      "evidence_span": "公司编制了《住宅产品全周期设计管理白皮书》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "住宅立面标化系统",
+      "evidence_span": "将20年的住宅立面标化系统进行了全面升级优化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "立面标准化节点库系统",
+      "evidence_span": "创新性地完成了立面标准化节点库系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "发明专利技术",
+      "evidence_span": "家居板块通过自主研发获得2项发明专利技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "量化设计流程管控",
+      "evidence_span": "通过量化设计流程管控，强化设计进度管控"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "设计制图的标准化",
+      "evidence_span": "实现了设计制图的标准化、同质化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "设计制图的同质化",
+      "evidence_span": "实现了设计制图的标准化、同质化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "项目动态利润系统",
+      "evidence_span": "构建项目动态利润系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航道图管理机制",
+      "evidence_span": "“航道图”、“领航灯”管理机制设置"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "领航灯管理机制",
+      "evidence_span": "“航道图”、“领航灯”管理机制设置"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "京津冀一体化",
+      "evidence_span": "荣盛发展京津冀一体化步入落地年"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产开发与销售",
+        "evidence_span": "公司的主营业务为房地产开发与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "康旅",
+        "evidence_span": "以康旅、产业新城、物业为支柱"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "产业新城",
+        "evidence_span": "以康旅、产业新城、物业为支柱"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物业",
+        "evidence_span": "以康旅、产业新城、物业为支柱"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "房地产开发企业",
+        "evidence_span": "公司的主营业务为房地产开发与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "河北省首家在A股上市的房地产企业",
+        "evidence_span": "作为河北省首家在A股上市的房地产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普通住宅",
+        "evidence_span": "以面向首次置业和改善性需求的普通住宅为主导产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物业管理服务",
+        "evidence_span": "主要通过物业管理服务、非业主增值服务及社区增值服三条业务线提供多元化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非业主增值服务",
+        "evidence_span": "主要通过物业管理服务、非业主增值服务及社区增值服三条业务线提供多元化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社区增值服务",
+        "evidence_span": "主要通过物业管理服务、非业主增值服务及社区增值服三条业务线提供多元化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社区零售",
+        "evidence_span": "社区生活服务在社区零售、家政服务深入开展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家政服务",
+        "evidence_span": "社区生活服务在社区零售、家政服务深入开展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社区医养",
+        "evidence_span": "在社区医养、社区文教等方面积极探索"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社区文教",
+        "evidence_span": "在社区医养、社区文教等方面积极探索"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游",
+        "evidence_span": "康旅板块以“旅游、度假、养老、养生”等产业为切入点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "度假",
+        "evidence_span": "康旅板块以“旅游、度假、养老、养生”等产业为切入点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "养老",
+        "evidence_span": "康旅板块以“旅游、度假、养老、养生”等产业为切入点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "养生",
+        "evidence_span": "康旅板块以“旅游、度假、养老、养生”等产业为切入点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酒店",
+        "evidence_span": "康旅旗下酒店产业荣膺“星光奖-年度民族品牌酒店管理集团”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产业园区",
+        "evidence_span": "产业新城板块积极响应国家战略，经过多年发展已在河北、安徽2个省布局香河、永清、霸州、固安、兴隆、宣化、蔚县、唐山玉田、唐山路南、衡水、淮北等多个园区"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "被动式建筑",
+        "evidence_span": "该技术已应用到被动式建筑中"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家装",
+        "evidence_span": "进驻家装市场，升级产品满足高端品质需求"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "住宅产品全周期设计管理",
+        "evidence_span": "公司编制了《住宅产品全周期设计管理白皮书》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "住宅立面标化系统",
+        "evidence_span": "将20年的住宅立面标化系统进行了全面升级优化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "立面标准化节点库系统",
+        "evidence_span": "创新性地完成了立面标准化节点库系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "发明专利技术",
+        "evidence_span": "家居板块通过自主研发获得2项发明专利技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "量化设计流程管控",
+        "evidence_span": "通过量化设计流程管控，强化设计进度管控"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "设计制图的标准化",
+        "evidence_span": "实现了设计制图的标准化、同质化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "设计制图的同质化",
+        "evidence_span": "实现了设计制图的标准化、同质化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "项目动态利润系统",
+        "evidence_span": "构建项目动态利润系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航道图管理机制",
+        "evidence_span": "“航道图”、“领航灯”管理机制设置"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "领航灯管理机制",
+        "evidence_span": "“航道图”、“领航灯”管理机制设置"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "京津冀一体化",
+        "evidence_span": "荣盛发展京津冀一体化步入落地年"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:10:03"
+}

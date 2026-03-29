@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "d2dc837b8319", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "段落主要描述政策措施内容，聚焦于EDA软件、IP核、半导体材料、设备国产化等稳定、本体性的产业支持方向，不涉及具体事件推进，属于静态说明。"}}

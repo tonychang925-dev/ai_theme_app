@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "b9942b866818", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述八亿时空投建KrF光刻胶树脂产线及公司产能计划的具体事件，属于公司公告和动态，不包含静态知识，与题材本体构建无关。"}}

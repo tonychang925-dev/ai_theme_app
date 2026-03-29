@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "060a14e8cbd3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了一个具体事件（试验场即将运行），但同时也提到了该试验场可服务于通用航空飞行器测试，这涉及低空经济的测试基础设施，可能包含有价值的静态知识（如测试场地的功能），因此混合了事件和潜在知识。"}}

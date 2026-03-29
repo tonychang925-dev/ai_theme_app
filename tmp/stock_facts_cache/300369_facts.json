@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "企业级网络安全解决方案",
+      "evidence_span": "提供具备核心竞争力的企业级网络安全产品、解决方案和服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "网络安全产品",
+      "evidence_span": "提供全品类网络安全产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全服务",
+      "evidence_span": "提供各类安全服务、运营服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性网络安全公司",
+      "evidence_span": "已成为国内领先的综合性网络安全公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "网络安全解决方案供应商",
+      "evidence_span": "企业级网络安全解决方案供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据安全产品",
+      "evidence_span": "数据安全产品包括隐私计算平台、数据库防火墙、数据脱敏系统、数据安全运营平台、敏感数据发现与风险评估系统、数据泄露防护系统和数据库审计系统等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云计算安全产品",
+      "evidence_span": "云计算安全产品包括云安全集中管理系统、云原生容器安全检测平台、云工作负载保护平台、安全访问服务边缘、网站云防护服务、黑洞云清洗服务、等保一体机和虚拟化安全产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业互联网产品",
+      "evidence_span": "工业互联网产品包括工控安全审计系统、工业安全隔离装置、工控安全入侵检测系统、工控漏洞扫描系统、工业网络安全监测管理平台、工业安全网关、工业网络安全合规评估工具、主机卫士系统、数据安全交换系统、视频安全交换系统、安全隔离与信息单向导入系统等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "入侵防护系统",
+      "evidence_span": "入侵防护系统（IPS）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗DDoS攻击系统",
+      "evidence_span": "抗DDoS攻击系统（ADS）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "远程安全评估系统",
+      "evidence_span": "远程安全评估系统（RSAS）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Web应用防火墙",
+      "evidence_span": "Web应用防火墙（WAF）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "隐私计算平台",
+      "evidence_span": "联合发布了“数安湖”隐私计算平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车联网安全监测与防护系统",
+      "evidence_span": "车联网安全监测与防护系统产品方案（VSOC+SDK）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "T-ONE CLOUD平台",
+      "evidence_span": "发布了T-ONE CLOUD云化战略，推出绿盟智安云"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云原生安全技术",
+      "evidence_span": "围绕云原生安全、安全资源池、云安全态势管理（CSPM）、云工作负载保护平台（CWPP）、安全访问服务边缘（SASE）、网络安全网格架构（CSMA）、云基础设施权限管理（CIEM）、云原生应用防护平台（CNAPP）等云安全技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "隐私计算核心技术",
+      "evidence_span": "已自主研发获得了联邦学习安全防护、通用安全多方计算和可编排可信执行环境等多项核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能安全技术",
+      "evidence_span": "积极探索以AISecOps、SecXOps和安全知识图谱为代表的新型人工智能技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府",
+      "evidence_span": "客户已覆盖政府、金融、运营商、能源、交通、科教文卫等行业用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融",
+      "evidence_span": "客户已覆盖政府、金融、运营商、能源、交通、科教文卫等行业用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "运营商",
+      "evidence_span": "客户已覆盖政府、金融、运营商、能源、交通、科教文卫等行业用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "能源",
+      "evidence_span": "客户已覆盖政府、金融、运营商、能源、交通、科教文卫等行业用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交通",
+      "evidence_span": "客户已覆盖政府、金融、运营商、能源、交通、科教文卫等行业用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科教文卫",
+      "evidence_span": "客户已覆盖政府、金融、运营商、能源、交通、科教文卫等行业用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "知名车企",
+      "evidence_span": "车联网安全监测与防护系统产品方案（VSOC+SDK）在知名车企得到应用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数据安全",
+      "evidence_span": "数据安全产业所具有的高增长潜力和强劲发展态势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信息技术应用创新",
+      "evidence_span": "信创建设从党政逐渐扩展到金融、电信、电力、石油、交通、航空航天等领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "企业级网络安全解决方案",
+        "evidence_span": "提供具备核心竞争力的企业级网络安全产品、解决方案和服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "网络安全产品",
+        "evidence_span": "提供全品类网络安全产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "安全服务",
+        "evidence_span": "提供各类安全服务、运营服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性网络安全公司",
+        "evidence_span": "已成为国内领先的综合性网络安全公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "网络安全解决方案供应商",
+        "evidence_span": "企业级网络安全解决方案供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据安全产品",
+        "evidence_span": "数据安全产品包括隐私计算平台、数据库防火墙、数据脱敏系统、数据安全运营平台、敏感数据发现与风险评估系统、数据泄露防护系统和数据库审计系统等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云计算安全产品",
+        "evidence_span": "云计算安全产品包括云安全集中管理系统、云原生容器安全检测平台、云工作负载保护平台、安全访问服务边缘、网站云防护服务、黑洞云清洗服务、等保一体机和虚拟化安全产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业互联网产品",
+        "evidence_span": "工业互联网产品包括工控安全审计系统、工业安全隔离装置、工控安全入侵检测系统、工控漏洞扫描系统、工业网络安全监测管理平台、工业安全网关、工业网络安全合规评估工具、主机卫士系统、数据安全交换系统、视频安全交换系统、安全隔离与信息单向导入系统等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "入侵防护系统",
+        "evidence_span": "入侵防护系统（IPS）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗DDoS攻击系统",
+        "evidence_span": "抗DDoS攻击系统（ADS）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "远程安全评估系统",
+        "evidence_span": "远程安全评估系统（RSAS）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Web应用防火墙",
+        "evidence_span": "Web应用防火墙（WAF）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "隐私计算平台",
+        "evidence_span": "联合发布了“数安湖”隐私计算平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车联网安全监测与防护系统",
+        "evidence_span": "车联网安全监测与防护系统产品方案（VSOC+SDK）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "T-ONE CLOUD平台",
+        "evidence_span": "发布了T-ONE CLOUD云化战略，推出绿盟智安云"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云原生安全技术",
+        "evidence_span": "围绕云原生安全、安全资源池、云安全态势管理（CSPM）、云工作负载保护平台（CWPP）、安全访问服务边缘（SASE）、网络安全网格架构（CSMA）、云基础设施权限管理（CIEM）、云原生应用防护平台（CNAPP）等云安全技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "隐私计算核心技术",
+        "evidence_span": "已自主研发获得了联邦学习安全防护、通用安全多方计算和可编排可信执行环境等多项核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能安全技术",
+        "evidence_span": "积极探索以AISecOps、SecXOps和安全知识图谱为代表的新型人工智能技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府",
+        "evidence_span": "客户已覆盖政府、金融、运营商、能源、交通、科教文卫等行业用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融",
+        "evidence_span": "客户已覆盖政府、金融、运营商、能源、交通、科教文卫等行业用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "运营商",
+        "evidence_span": "客户已覆盖政府、金融、运营商、能源、交通、科教文卫等行业用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "能源",
+        "evidence_span": "客户已覆盖政府、金融、运营商、能源、交通、科教文卫等行业用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交通",
+        "evidence_span": "客户已覆盖政府、金融、运营商、能源、交通、科教文卫等行业用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科教文卫",
+        "evidence_span": "客户已覆盖政府、金融、运营商、能源、交通、科教文卫等行业用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "知名车企",
+        "evidence_span": "车联网安全监测与防护系统产品方案（VSOC+SDK）在知名车企得到应用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数据安全",
+        "evidence_span": "数据安全产业所具有的高增长潜力和强劲发展态势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信息技术应用创新",
+        "evidence_span": "信创建设从党政逐渐扩展到金融、电信、电力、石油、交通、航空航天等领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:03:16"
+}

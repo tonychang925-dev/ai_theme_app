@@ -1,0 +1,78 @@
+{
+  "must": [
+    "导弹",
+    "雷达",
+    "红外",
+    "惯性",
+    "地形匹配",
+    "卫星"
+  ],
+  "should": [
+    "地面",
+    "地下",
+    "舰艇",
+    "水下",
+    "空中",
+    "歼-10战斗机",
+    "03式中程防空导弹",
+    "防空导弹",
+    "射程远",
+    "精度高",
+    "威力大",
+    "突防能力强"
+  ],
+  "not": [
+    "国际过境航班关闭",
+    "伊朗官员",
+    "国际检查",
+    "核计划",
+    "铀浓缩问题",
+    "以色列总理",
+    "伊朗核目标",
+    "特朗普表示"
+  ],
+  "evidence_refs": [
+    {
+      "term": "导弹",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "导弹"
+    },
+    {
+      "term": "雷达",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "雷达"
+    },
+    {
+      "term": "红外",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "红外"
+    },
+    {
+      "term": "惯性",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "惯性"
+    },
+    {
+      "term": "地形匹配",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "地形匹配"
+    },
+    {
+      "term": "卫星",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卫星"
+    }
+  ],
+  "subject_id": "9030207",
+  "quality": "strong",
+  "generated_at": "2026-03-10T12:24:52",
+  "semantic_type": "军事武器技术",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

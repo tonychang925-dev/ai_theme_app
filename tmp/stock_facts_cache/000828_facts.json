@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高速公路经营管理",
+      "evidence_span": "公司经营管理莞深高速一二期、三期东城段及龙林高速"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市轨道交通投资建设",
+      "evidence_span": "公司投资的轨道交通1号线项目属于PPP项目"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源汽车充换电业务",
+      "evidence_span": "公司的下属公司东能公司及康亿创公司致力于新能源汽车充换电站建设及综合服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "融资租赁业务",
+      "evidence_span": "公司的全资子公司——融通租赁从事融资租赁业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业保理业务",
+      "evidence_span": "控股子公司——宏通保理从事商业保理业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市公共事业与金融服务业融合驱动的典范",
+      "evidence_span": "成为城市公共事业与金融服务业融合驱动的典范"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "东莞国资唯一上市平台",
+      "evidence_span": "东莞国资唯一上市平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国有控股金控平台",
+      "evidence_span": "东莞控股国有控股金控平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速公路通行费收入",
+      "evidence_span": "高速公路通行费收入11.83亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PPP项目建造服务",
+      "evidence_span": "PPP项目建造服务收入26.55万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "租赁及保理业务收入",
+      "evidence_span": "租赁及保理业务收入1.91亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车充电运营",
+      "evidence_span": "新能源汽车充电运营公司业务收入合计1.83亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融资租赁业务",
+      "evidence_span": "融通租赁主要开展基础设备或设施的售后回租业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商业保理业务",
+      "evidence_span": "宏通保理则以应收账款开展有追索权的商业保理业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信息化、智能化治堵措施",
+      "evidence_span": "深入实施信息化、智能化治堵措施"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "收费机器人",
+      "evidence_span": "积极推动收费机器人"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字人民币缴交通行费",
+      "evidence_span": "数字人民币缴交通行费等专项项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "“光储充换检”一体化",
+      "evidence_span": "积极探索“光储充换检”一体化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "“车+桩+金融”一体化",
+      "evidence_span": "“车+桩+金融”一体化等新型业务模式"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "基础设施",
+      "evidence_span": "以基础设施、公共交通、新能源等为主要业务领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公共交通",
+      "evidence_span": "以基础设施、公共交通、新能源等为主要业务领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源",
+      "evidence_span": "以基础设施、公共交通、新能源等为主要业务领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "粤港澳湾区推进",
+      "evidence_span": "粤港澳湾区推进送风来"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "产融双驱",
+      "evidence_span": "产融双驱值得期待"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高速公路经营管理",
+        "evidence_span": "公司经营管理莞深高速一二期、三期东城段及龙林高速"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市轨道交通投资建设",
+        "evidence_span": "公司投资的轨道交通1号线项目属于PPP项目"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源汽车充换电业务",
+        "evidence_span": "公司的下属公司东能公司及康亿创公司致力于新能源汽车充换电站建设及综合服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "融资租赁业务",
+        "evidence_span": "公司的全资子公司——融通租赁从事融资租赁业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业保理业务",
+        "evidence_span": "控股子公司——宏通保理从事商业保理业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市公共事业与金融服务业融合驱动的典范",
+        "evidence_span": "成为城市公共事业与金融服务业融合驱动的典范"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "东莞国资唯一上市平台",
+        "evidence_span": "东莞国资唯一上市平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国有控股金控平台",
+        "evidence_span": "东莞控股国有控股金控平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速公路通行费收入",
+        "evidence_span": "高速公路通行费收入11.83亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PPP项目建造服务",
+        "evidence_span": "PPP项目建造服务收入26.55万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "租赁及保理业务收入",
+        "evidence_span": "租赁及保理业务收入1.91亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车充电运营",
+        "evidence_span": "新能源汽车充电运营公司业务收入合计1.83亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融资租赁业务",
+        "evidence_span": "融通租赁主要开展基础设备或设施的售后回租业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商业保理业务",
+        "evidence_span": "宏通保理则以应收账款开展有追索权的商业保理业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信息化、智能化治堵措施",
+        "evidence_span": "深入实施信息化、智能化治堵措施"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "收费机器人",
+        "evidence_span": "积极推动收费机器人"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字人民币缴交通行费",
+        "evidence_span": "数字人民币缴交通行费等专项项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "“光储充换检”一体化",
+        "evidence_span": "积极探索“光储充换检”一体化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "“车+桩+金融”一体化",
+        "evidence_span": "“车+桩+金融”一体化等新型业务模式"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "基础设施",
+        "evidence_span": "以基础设施、公共交通、新能源等为主要业务领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公共交通",
+        "evidence_span": "以基础设施、公共交通、新能源等为主要业务领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源",
+        "evidence_span": "以基础设施、公共交通、新能源等为主要业务领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "粤港澳湾区推进",
+        "evidence_span": "粤港澳湾区推进送风来"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "产融双驱",
+        "evidence_span": "产融双驱值得期待"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:39:08"
+}

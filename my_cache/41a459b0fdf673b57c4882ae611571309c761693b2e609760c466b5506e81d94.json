@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:23:29", "result": {"chunk_id": "4cdb5bea5b35", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落系统阐述了原子级制造的定义、原理、应用、挑战、发展现状等核心静态知识，包括技术细节、对比分析、应用场景和战略价值，虽然提及了一些事件（如政策支持、产业布局）和日期，但主要目的是提供题材本体的稳定知识构建，事件信息处于次要地位，整体以静态说明为主。"}}

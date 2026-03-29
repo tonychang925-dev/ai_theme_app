@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:24:22", "result": {"chunk_id": "2b27312206ed", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落简要定义稀土产业链的上游、中游和下游构成，是纯静态知识，无事件信息。"}}

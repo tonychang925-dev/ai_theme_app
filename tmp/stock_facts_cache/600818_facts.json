@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "自行车等制造业务",
+      "evidence_span": "公司目前主要从事自行车等制造业务以及对外股权投资业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "对外股权投资业务",
+      "evidence_span": "公司目前主要从事自行车等制造业务以及对外股权投资业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国自行车制造业民族品牌",
+      "evidence_span": "是中国自行车制造业民族品牌的象征"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "共享经济先行者",
+      "evidence_span": "共享经济先行者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自行车及零部件",
+      "evidence_span": "生产销售自行车及零部件、助力车等各类特种车辆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "助力车",
+      "evidence_span": "生产销售自行车及零部件、助力车等各类特种车辆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种车辆",
+      "evidence_span": "生产销售自行车及零部件、助力车等各类特种车辆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自行车相关的其他配套产品",
+      "evidence_span": "与自行车相关的其他配套产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保龄球设备及其相关产品",
+      "evidence_span": "中路实业从事保龄球设备及其相关产品的研制生产销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "靹米皮皮革",
+      "evidence_span": "安庆莱迪科斯从事靹米皮皮革的生产及销售业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公共自行车租赁业务",
+      "evidence_span": "公司于2009年就已开展公共自行车租赁业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "永久电踏车",
+      "evidence_span": "开始小批量销售附加值较高的永久电踏车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高空风能发电项目",
+      "evidence_span": "绩溪高空风能发电项目地面土建工程、设备安装已竣工"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高空风能发电技术",
+      "evidence_span": "高空风能发电的创新技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府交通管理部门",
+      "evidence_span": "按年向政府交通管理部门收取租金"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色出行",
+      "evidence_span": "积极倡导低碳经济、绿色出行"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "低碳出行",
+      "evidence_span": "低碳出行"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色能源",
+      "evidence_span": "高空风电将引领绿色能源新革命"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "自行车等制造业务",
+        "evidence_span": "公司目前主要从事自行车等制造业务以及对外股权投资业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "对外股权投资业务",
+        "evidence_span": "公司目前主要从事自行车等制造业务以及对外股权投资业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国自行车制造业民族品牌",
+        "evidence_span": "是中国自行车制造业民族品牌的象征"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "共享经济先行者",
+        "evidence_span": "共享经济先行者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自行车及零部件",
+        "evidence_span": "生产销售自行车及零部件、助力车等各类特种车辆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "助力车",
+        "evidence_span": "生产销售自行车及零部件、助力车等各类特种车辆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种车辆",
+        "evidence_span": "生产销售自行车及零部件、助力车等各类特种车辆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自行车相关的其他配套产品",
+        "evidence_span": "与自行车相关的其他配套产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保龄球设备及其相关产品",
+        "evidence_span": "中路实业从事保龄球设备及其相关产品的研制生产销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "靹米皮皮革",
+        "evidence_span": "安庆莱迪科斯从事靹米皮皮革的生产及销售业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公共自行车租赁业务",
+        "evidence_span": "公司于2009年就已开展公共自行车租赁业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "永久电踏车",
+        "evidence_span": "开始小批量销售附加值较高的永久电踏车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高空风能发电项目",
+        "evidence_span": "绩溪高空风能发电项目地面土建工程、设备安装已竣工"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高空风能发电技术",
+        "evidence_span": "高空风能发电的创新技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府交通管理部门",
+        "evidence_span": "按年向政府交通管理部门收取租金"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色出行",
+        "evidence_span": "积极倡导低碳经济、绿色出行"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "低碳出行",
+        "evidence_span": "低碳出行"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色能源",
+        "evidence_span": "高空风电将引领绿色能源新革命"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:24:34"
+}

@@ -1,0 +1,62 @@
+{
+  "event_id": "evt_3356620fed90",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "融资IPO",
+  "entities": [
+    {
+      "name": "云天励飞",
+      "type": "公司",
+      "normalized": "云天励飞"
+    },
+    {
+      "name": "闪极科技",
+      "type": "公司",
+      "normalized": "闪极科技"
+    },
+    {
+      "name": "AI拍摄眼镜",
+      "type": "产品",
+      "normalized": "AI拍摄眼镜"
+    }
+  ],
+  "summary": "云天励飞战略投资闪极科技，后者将推出国内首款量产AI拍摄眼镜",
+  "causal_claim": [
+    "战略投资",
+    "AI拍摄眼镜量产",
+    "AI/AR眼镜发展"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "战略投资",
+      "AI拍摄眼镜",
+      "量产"
+    ],
+    "normalized_terms": {
+      "云天励飞": "云天励飞",
+      "闪极科技": "闪极科技",
+      "AI拍摄眼镜": "AI拍摄眼镜"
+    },
+    "evidence_spans": [
+      {
+        "text": "云天励飞战略投资闪极科技",
+        "start": 0,
+        "end": 12
+      },
+      {
+        "text": "后者将推国内首款量产AI拍摄眼镜",
+        "start": 13,
+        "end": 30
+      }
+    ],
+    "core_concepts": [
+      "投资",
+      "AI眼镜",
+      "量产"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-11-20T00:00:00Z",
+  "raw_text": "2024年11月20日，云天励飞战略投资闪极科技 后者将推国内首款量产AI拍摄眼镜"
+}

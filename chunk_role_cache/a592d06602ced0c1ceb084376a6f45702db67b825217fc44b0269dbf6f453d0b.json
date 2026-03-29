@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:58:48", "result": {"chunk_id": "e40e042c03a6", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "段落聚焦于中国BEST装置的开建事件和未来发电时间表（日期、2030年目标），是项目进展和预测，虽然提及核聚变发电验证，但以事件驱动为主，缺乏静态知识说明。"}}

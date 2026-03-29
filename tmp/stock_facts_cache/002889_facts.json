@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "一体化4PL数字供应链服务",
+      "evidence_span": "东方嘉盛是国内领先的一体化4PL数字供应链服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "全球消费品品牌一站式数字供应链交付平台",
+      "evidence_span": "全球消费品品牌一站式数字供应链交付平台"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "国际物流服务",
+      "evidence_span": "国际物流服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "AI智能数字报关平台",
+      "evidence_span": "AI智能数字报关平台"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "冷链物流服务",
+      "evidence_span": "冷链物流服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "跨境电商数字交易服务平台",
+      "evidence_span": "跨境电商数字交易服务平台"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗健康数字交易服务平台",
+      "evidence_span": "医疗健康数字交易服务平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "一体化4PL数字供应链服务商",
+      "evidence_span": "东方嘉盛是国内领先的一体化4PL数字供应链服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "第四方物流供应链服务商",
+      "evidence_span": "已成为国内领先的4PL(第四方物流)供应链服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家供应链管理试点示范企业",
+      "evidence_span": "公司是商务部认定的“国家供应链管理试点示范企业”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海关高级认证企业",
+      "evidence_span": "拥有海关部门颁发的“高级认证企业”（AEO认证）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一体化供应链服务",
+      "evidence_span": "为客户提供一体化供应链服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产品采购分销交易服务",
+      "evidence_span": "产品采购分销交易服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际货运代理服务",
+      "evidence_span": "提供门对门的空运、海运、小包快递等国际货运代理服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "关务物流可视化跟踪系统",
+      "evidence_span": "关务物流可视化跟踪系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药冷链物流服务",
+      "evidence_span": "为客户提供全程多温区专业医药冷链物流服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消费食品冷链物流服务",
+      "evidence_span": "提供高质量的消费食品冷链物流服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗健康耗材供应链方案设计",
+      "evidence_span": "医疗健康耗材供应链方案设计"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "供应链金融",
+      "evidence_span": "供应链金融"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "业财一体化数字化供应链saas服务平台",
+      "evidence_span": "自主研发了一套完整的业财一体化数字化供应链saas服务平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI人工智能数字报关系统平台",
+      "evidence_span": "AI人工智能数字报关系统平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能通关机器人",
+      "evidence_span": "人工智能通关机器人"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网监控平台",
+      "evidence_span": "利用物联网监控平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "OCR解决方案",
+      "evidence_span": "OCR解决方案可自动识别各类单证数据"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全球中心仓模式",
+      "evidence_span": "保税区全球中心仓模式成功复制"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球知名消费品品牌客户",
+      "evidence_span": "主要围绕全球知名消费品品牌客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球头部电商平台客户",
+      "evidence_span": "全球头部电商平台客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球头部医疗健康行业客户",
+      "evidence_span": "主要面向全球头部医疗健康和消费食品行业客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "世界500强企业",
+      "evidence_span": "与众多不同行业的世界500强头部企业形成长期合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚马逊平台卖家",
+      "evidence_span": "服务众多亚马逊平台卖家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路沿线供应链物流服务",
+      "evidence_span": "一带一路沿线贸易带动沿线供应链物流服务需求"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "跨境电商",
+      "evidence_span": "跨境电商再扩围，行业迎来新发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "产业链供应链稳定和安全",
+      "evidence_span": "产业链供应链稳定和安全首次被提上国家重要议题"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车及智能制造物流服务",
+      "evidence_span": "加速拓展新能源汽车及智能制造物流服务业务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "一体化4PL数字供应链服务",
+        "evidence_span": "东方嘉盛是国内领先的一体化4PL数字供应链服务商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "全球消费品品牌一站式数字供应链交付平台",
+        "evidence_span": "全球消费品品牌一站式数字供应链交付平台"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "国际物流服务",
+        "evidence_span": "国际物流服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "AI智能数字报关平台",
+        "evidence_span": "AI智能数字报关平台"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "冷链物流服务",
+        "evidence_span": "冷链物流服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "跨境电商数字交易服务平台",
+        "evidence_span": "跨境电商数字交易服务平台"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗健康数字交易服务平台",
+        "evidence_span": "医疗健康数字交易服务平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "一体化4PL数字供应链服务商",
+        "evidence_span": "东方嘉盛是国内领先的一体化4PL数字供应链服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "第四方物流供应链服务商",
+        "evidence_span": "已成为国内领先的4PL(第四方物流)供应链服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家供应链管理试点示范企业",
+        "evidence_span": "公司是商务部认定的“国家供应链管理试点示范企业”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海关高级认证企业",
+        "evidence_span": "拥有海关部门颁发的“高级认证企业”（AEO认证）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一体化供应链服务",
+        "evidence_span": "为客户提供一体化供应链服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产品采购分销交易服务",
+        "evidence_span": "产品采购分销交易服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际货运代理服务",
+        "evidence_span": "提供门对门的空运、海运、小包快递等国际货运代理服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "关务物流可视化跟踪系统",
+        "evidence_span": "关务物流可视化跟踪系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药冷链物流服务",
+        "evidence_span": "为客户提供全程多温区专业医药冷链物流服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消费食品冷链物流服务",
+        "evidence_span": "提供高质量的消费食品冷链物流服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗健康耗材供应链方案设计",
+        "evidence_span": "医疗健康耗材供应链方案设计"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "供应链金融",
+        "evidence_span": "供应链金融"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "业财一体化数字化供应链saas服务平台",
+        "evidence_span": "自主研发了一套完整的业财一体化数字化供应链saas服务平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI人工智能数字报关系统平台",
+        "evidence_span": "AI人工智能数字报关系统平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能通关机器人",
+        "evidence_span": "人工智能通关机器人"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网监控平台",
+        "evidence_span": "利用物联网监控平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "OCR解决方案",
+        "evidence_span": "OCR解决方案可自动识别各类单证数据"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全球中心仓模式",
+        "evidence_span": "保税区全球中心仓模式成功复制"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球知名消费品品牌客户",
+        "evidence_span": "主要围绕全球知名消费品品牌客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球头部电商平台客户",
+        "evidence_span": "全球头部电商平台客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球头部医疗健康行业客户",
+        "evidence_span": "主要面向全球头部医疗健康和消费食品行业客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "世界500强企业",
+        "evidence_span": "与众多不同行业的世界500强头部企业形成长期合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚马逊平台卖家",
+        "evidence_span": "服务众多亚马逊平台卖家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路沿线供应链物流服务",
+        "evidence_span": "一带一路沿线贸易带动沿线供应链物流服务需求"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "跨境电商",
+        "evidence_span": "跨境电商再扩围，行业迎来新发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "产业链供应链稳定和安全",
+        "evidence_span": "产业链供应链稳定和安全首次被提上国家重要议题"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车及智能制造物流服务",
+        "evidence_span": "加速拓展新能源汽车及智能制造物流服务业务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:16:18"
+}

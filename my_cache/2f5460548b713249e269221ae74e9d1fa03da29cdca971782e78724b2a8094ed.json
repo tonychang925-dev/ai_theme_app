@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:12:54", "result": {"chunk_id": "d7975332466c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含静态知识（如全球商品浆需求量、增长率、供需分析），但混合了事件信息（如具体年份数据、产能投产时间、价格预测），需要进一步裁决以提取稳定知识。"}}

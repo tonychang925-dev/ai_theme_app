@@ -1,0 +1,264 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "成套设备出口",
+      "evidence_span": "公司的主要业务有成套设备出口和工程承包"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程承包",
+      "evidence_span": "公司的主要业务有成套设备出口和工程承包"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环境科技",
+      "evidence_span": "公司的主要业务有...环境科技"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "复合材料生产",
+      "evidence_span": "公司的主要业务有...和复合材料生产"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环保产业投建营平台",
+      "evidence_span": "被赋予国投集团环保产业投建营平台的新的主业定位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "细分市场行业领先企业",
+      "evidence_span": "处于细分市场的行业领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃钢防腐应用复合材料",
+      "evidence_span": "公司复合材料生产主要属于细分领域中的玻璃钢防腐应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市政固废处置技术",
+      "evidence_span": "市政固废（垃圾衍生燃料制备和气化、有机垃圾发酵堆肥和干化、市政污泥处置等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业危废处置技术",
+      "evidence_span": "工业危废处置技术（包括危废高温无害化和资源化、烟气净化系统、废气处理系统）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能源和资源回收技术",
+      "evidence_span": "能源和资源回收技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水和废水处理技术",
+      "evidence_span": "水和废水处理技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业尾气处理工艺",
+      "evidence_span": "废气污染物洗涤、吸附、热氧化/催化氧化等工艺"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保解决方案",
+      "evidence_span": "为客户提供从工程设计、建设管理、采购物流、运营服务的量身定制的环保解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LeDeNOx有机废弃物低能耗超低氮焚烧处理成套技术",
+      "evidence_span": "自主研发的LeDeNOx有机废弃物低能耗超低氮焚烧处理成套技术与产业化应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "塑料和纤维增强塑料储罐",
+      "evidence_span": "塑料和纤维增强塑料（即FRP，玻璃钢）储罐、容器、管道系统的设计、工程、制造和安装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃钢内衬塑料",
+      "evidence_span": "主要产品包括玻璃钢内衬塑料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢衬塑料",
+      "evidence_span": "钢衬塑料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纯塑料",
+      "evidence_span": "纯塑料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃钢",
+      "evidence_span": "玻璃钢"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "固废、废气和废水处理完整工艺包",
+      "evidence_span": "亚德公司拥有固废、废气和废水处理完整工艺包"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高温无害化处理技术",
+      "evidence_span": "在危废高温无害化处理技术方面，拥有在废物处理系统和环境管理方面技术储备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "成套的技术解决方案",
+      "evidence_span": "在气体、液体和固体处理方面拥有成套的技术解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "巴巴多斯旅游投资公司",
+      "evidence_span": "公司与业主巴巴多斯旅游投资公司签署了《补充协议》"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "跨国客户",
+      "evidence_span": "可满足诸多跨国客户的较高要求"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "背靠国投集团驰骋一带一路"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "环保领域转型",
+      "evidence_span": "实现公司向环保领域的转型发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "成套设备出口和工程承包",
+        "evidence_span": "公司的主要业务有成套设备出口和工程承包"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环境科技",
+        "evidence_span": "公司的主要业务有...环境科技"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "复合材料生产",
+        "evidence_span": "公司的主要业务有...和复合材料生产"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环保产业投建营平台",
+        "evidence_span": "被赋予国投集团环保产业投建营平台的新的主业定位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "细分市场行业领先企业",
+        "evidence_span": "处于细分市场的行业领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃钢防腐应用复合材料",
+        "evidence_span": "公司复合材料生产主要属于细分领域中的玻璃钢防腐应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市政固废处置技术",
+        "evidence_span": "市政固废（垃圾衍生燃料制备和气化、有机垃圾发酵堆肥和干化、市政污泥处置等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业危废处置技术",
+        "evidence_span": "工业危废处置技术（包括危废高温无害化和资源化、烟气净化系统、废气处理系统）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能源和资源回收技术",
+        "evidence_span": "能源和资源回收技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水和废水处理技术",
+        "evidence_span": "水和废水处理技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业尾气处理工艺",
+        "evidence_span": "废气污染物洗涤、吸附、热氧化/催化氧化等工艺"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保解决方案",
+        "evidence_span": "为客户提供从工程设计、建设管理、采购物流、运营服务的量身定制的环保解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LeDeNOx有机废弃物低能耗超低氮焚烧处理成套技术",
+        "evidence_span": "自主研发的LeDeNOx有机废弃物低能耗超低氮焚烧处理成套技术与产业化应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "塑料和纤维增强塑料储罐",
+        "evidence_span": "塑料和纤维增强塑料（即FRP，玻璃钢）储罐、容器、管道系统的设计、工程、制造和安装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃钢内衬塑料",
+        "evidence_span": "主要产品包括玻璃钢内衬塑料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢衬塑料",
+        "evidence_span": "钢衬塑料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纯塑料",
+        "evidence_span": "纯塑料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃钢",
+        "evidence_span": "玻璃钢"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "固废、废气和废水处理完整工艺包",
+        "evidence_span": "亚德公司拥有固废、废气和废水处理完整工艺包"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高温无害化处理技术",
+        "evidence_span": "在危废高温无害化处理技术方面，拥有在废物处理系统和环境管理方面技术储备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "成套的技术解决方案",
+        "evidence_span": "在气体、液体和固体处理方面拥有成套的技术解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "巴巴多斯旅游投资公司",
+        "evidence_span": "公司与业主巴巴多斯旅游投资公司签署了《补充协议》"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "跨国客户",
+        "evidence_span": "可满足诸多跨国客户的较高要求"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "背靠国投集团驰骋一带一路"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "环保领域转型",
+        "evidence_span": "实现公司向环保领域的转型发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:53:34"
+}

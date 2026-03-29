@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:55:16", "result": {"chunk_id": "04be1b4562fa", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段提到政策文件推动具身智能机器人应用，包含政策动态（事件）和机器人应用方向（潜在知识），需进一步裁决。"}}

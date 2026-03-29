@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "热敏票的印刷",
+      "evidence_span": "公司主营业务为热敏票的印刷"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体彩即开票印刷业务",
+      "evidence_span": "通过收购中科彩进入体彩即开票印刷业务领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业票据印刷",
+      "evidence_span": "公司在商业票据印刷领域经过多年发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "书刊印刷",
+      "evidence_span": "公司是北京地区书刊印刷领域的主要参与者之一"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端包装印刷",
+      "evidence_span": "公司业务涵盖安全印务、彩票新渠道服务、书刊印刷与高端包装印刷等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全印务业务",
+      "evidence_span": "安全印务业务，产品包括体彩福彩热敏纸票证、体彩即开型彩票普通税务发票、证书证件等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "彩票新渠道服务",
+      "evidence_span": "彩票新渠道服务，产品包括区块链彩票、新媒体营销服务系统及技术平台开发等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "体彩即开票印刷业务领域主要参与者",
+      "evidence_span": "体彩即开票印刷业务领域主要参与者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "商业票据印刷领域行业龙头企业",
+      "evidence_span": "商业票据印刷领域行业龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "北京地区书刊印刷领域的主要参与者",
+      "evidence_span": "北京地区书刊印刷领域的主要参与者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "四川地区主要的酒盒包装企业",
+      "evidence_span": "公司已成为四川地区主要的酒盒包装企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体彩福彩热敏纸票证",
+      "evidence_span": "产品包括体彩福彩热敏纸票证"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体彩即开型彩票",
+      "evidence_span": "产品包括体彩福彩热敏纸票证、体彩即开型彩票普通税务发票、证书证件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普通税务发票",
+      "evidence_span": "产品包括体彩福彩热敏纸票证、体彩即开型彩票普通税务发票、证书证件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证书证件",
+      "evidence_span": "产品包括体彩福彩热敏纸票证、体彩即开型彩票普通税务发票、证书证件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "区块链彩票",
+      "evidence_span": "产品包括区块链彩票、新媒体营销服务系统及技术平台开发等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新媒体营销服务系统",
+      "evidence_span": "产品包括区块链彩票、新媒体营销服务系统及技术平台开发等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "技术平台开发",
+      "evidence_span": "产品包括区块链彩票、新媒体营销服务系统及技术平台开发等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "书刊",
+      "evidence_span": "产品主要包括书刊以及高档酒盒等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高档酒盒",
+      "evidence_span": "产品主要包括书刊以及高档酒盒等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "热敏纸票证技术",
+      "evidence_span": "公司在热敏纸票证、即开票业务、高档商业票据、高端包装印刷等方面的技术实力不断增强"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "即开票业务技术",
+      "evidence_span": "公司在热敏纸票证、即开票业务、高档商业票据、高端包装印刷等方面的技术实力不断增强"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高档商业票据技术",
+      "evidence_span": "公司在热敏纸票证、即开票业务、高档商业票据、高端包装印刷等方面的技术实力不断增强"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高端包装印刷技术",
+      "evidence_span": "公司在热敏纸票证、即开票业务、高档商业票据、高端包装印刷等方面的技术实力不断增强"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融客户",
+      "evidence_span": "公司继续保持与众多金融、保险、财税以及高端白酒客户稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保险客户",
+      "evidence_span": "公司继续保持与众多金融、保险、财税以及高端白酒客户稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "财税客户",
+      "evidence_span": "公司继续保持与众多金融、保险、财税以及高端白酒客户稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高端白酒客户",
+      "evidence_span": "公司继续保持与众多金融、保险、财税以及高端白酒客户稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "彩票行业领域客户",
+      "evidence_span": "同时积极深耕彩票行业领域客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "打通整个彩票产业链",
+      "evidence_span": "力争打通整个彩票产业链"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "彩票全产业链布局",
+      "evidence_span": "进一步打造公司彩票全产业链布局"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "热敏票的印刷",
+        "evidence_span": "公司主营业务为热敏票的印刷"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体彩即开票印刷业务",
+        "evidence_span": "通过收购中科彩进入体彩即开票印刷业务领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业票据印刷",
+        "evidence_span": "公司在商业票据印刷领域经过多年发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "书刊印刷",
+        "evidence_span": "公司是北京地区书刊印刷领域的主要参与者之一"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端包装印刷",
+        "evidence_span": "公司业务涵盖安全印务、彩票新渠道服务、书刊印刷与高端包装印刷等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "安全印务业务",
+        "evidence_span": "安全印务业务，产品包括体彩福彩热敏纸票证、体彩即开型彩票普通税务发票、证书证件等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "彩票新渠道服务",
+        "evidence_span": "彩票新渠道服务，产品包括区块链彩票、新媒体营销服务系统及技术平台开发等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "体彩即开票印刷业务领域主要参与者",
+        "evidence_span": "体彩即开票印刷业务领域主要参与者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "商业票据印刷领域行业龙头企业",
+        "evidence_span": "商业票据印刷领域行业龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "北京地区书刊印刷领域的主要参与者",
+        "evidence_span": "北京地区书刊印刷领域的主要参与者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "四川地区主要的酒盒包装企业",
+        "evidence_span": "公司已成为四川地区主要的酒盒包装企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体彩福彩热敏纸票证",
+        "evidence_span": "产品包括体彩福彩热敏纸票证"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体彩即开型彩票",
+        "evidence_span": "产品包括体彩福彩热敏纸票证、体彩即开型彩票普通税务发票、证书证件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普通税务发票",
+        "evidence_span": "产品包括体彩福彩热敏纸票证、体彩即开型彩票普通税务发票、证书证件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证书证件",
+        "evidence_span": "产品包括体彩福彩热敏纸票证、体彩即开型彩票普通税务发票、证书证件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "区块链彩票",
+        "evidence_span": "产品包括区块链彩票、新媒体营销服务系统及技术平台开发等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新媒体营销服务系统",
+        "evidence_span": "产品包括区块链彩票、新媒体营销服务系统及技术平台开发等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "技术平台开发",
+        "evidence_span": "产品包括区块链彩票、新媒体营销服务系统及技术平台开发等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "书刊",
+        "evidence_span": "产品主要包括书刊以及高档酒盒等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高档酒盒",
+        "evidence_span": "产品主要包括书刊以及高档酒盒等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "热敏纸票证技术",
+        "evidence_span": "公司在热敏纸票证、即开票业务、高档商业票据、高端包装印刷等方面的技术实力不断增强"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "即开票业务技术",
+        "evidence_span": "公司在热敏纸票证、即开票业务、高档商业票据、高端包装印刷等方面的技术实力不断增强"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高档商业票据技术",
+        "evidence_span": "公司在热敏纸票证、即开票业务、高档商业票据、高端包装印刷等方面的技术实力不断增强"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高端包装印刷技术",
+        "evidence_span": "公司在热敏纸票证、即开票业务、高档商业票据、高端包装印刷等方面的技术实力不断增强"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融客户",
+        "evidence_span": "公司继续保持与众多金融、保险、财税以及高端白酒客户稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保险客户",
+        "evidence_span": "公司继续保持与众多金融、保险、财税以及高端白酒客户稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "财税客户",
+        "evidence_span": "公司继续保持与众多金融、保险、财税以及高端白酒客户稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高端白酒客户",
+        "evidence_span": "公司继续保持与众多金融、保险、财税以及高端白酒客户稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "彩票行业领域客户",
+        "evidence_span": "同时积极深耕彩票行业领域客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "打通整个彩票产业链",
+        "evidence_span": "力争打通整个彩票产业链"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "彩票全产业链布局",
+        "evidence_span": "进一步打造公司彩票全产业链布局"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:33:01"
+}

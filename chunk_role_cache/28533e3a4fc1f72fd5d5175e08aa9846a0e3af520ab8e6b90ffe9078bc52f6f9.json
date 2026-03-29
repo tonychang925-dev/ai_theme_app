@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "9ac4d85d6f99", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段描述了台积电SoIC产能的具体扩张计划（事件性），但也包含了AI、HPC需求背景（知识性），可能沉淀为半导体设备需求趋势的稳定知识。"}}

@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "LNG销售服务",
+      "evidence_span": "公司坚持LNG运贸一体化发展战略，在全国范围内开展LNG业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运输服务",
+      "evidence_span": "公司全资子公司胜通物流从事传统物流业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "天然气终端服务商",
+      "evidence_span": "天然气终端服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "液化天然气“运贸一体化”龙头",
+      "evidence_span": "国内稀缺的液化天然气“运贸一体化”龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "LNG贸易企业",
+      "evidence_span": "在金联创统计的2022年中国LNG贸易企业排名中，公司位居第四位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "LNG运输企业",
+      "evidence_span": "在金联创统计的2022年中国十大LNG运输企业排名中位居第二位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "AAAA级物流企业",
+      "evidence_span": "公司为AAAA级物流企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LNG",
+      "evidence_span": "公司经营产品主要为LNG"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LNG加气站",
+      "evidence_span": "投资经营LNG加气站等终端业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LNG气化站整体应用解决方案",
+      "evidence_span": "提供LNG气化站整体应用解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LNG运输服务",
+      "evidence_span": "胜通物流共有运输车辆421辆，其中LNG槽车334辆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普通货物运输",
+      "evidence_span": "普通货物包括木片、化肥、饲料等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "危险化学品运输",
+      "evidence_span": "危险化学品包括LNG、原油"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LNG槽车运载能力",
+      "evidence_span": "公司拥有稳定规模化的LNG槽车运载能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LNG罐箱多式联运",
+      "evidence_span": "完成首单LNG罐箱多式联运的陆上运输"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "91LNG互联网运营平台",
+      "evidence_span": "引进了91LNG互联网运营平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中海油气电",
+      "evidence_span": "除主要供应商中海油气电外"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "公司亦向中石化、其它LNG运营商进行询价"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "振华石油",
+      "evidence_span": "公司与振华石油共同从中海油气电拍卖购得"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工业用气客户",
+      "evidence_span": "终端客户主要处于工业用气、城市燃气、交通用气、燃气发电等领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "城市燃气客户",
+      "evidence_span": "终端客户主要处于工业用气、城市燃气、交通用气、燃气发电等领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交通用气客户",
+      "evidence_span": "终端客户主要处于工业用气、城市燃气、交通用气、燃气发电等领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "燃气发电客户",
+      "evidence_span": "终端客户主要处于工业用气、城市燃气、交通用气、燃气发电等领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "清洁能源",
+      "evidence_span": "在巩固现有以供应清洁能源为主业的基础上"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "LNG销售服务",
+        "evidence_span": "公司坚持LNG运贸一体化发展战略，在全国范围内开展LNG业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "运输服务",
+        "evidence_span": "公司全资子公司胜通物流从事传统物流业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "天然气终端服务商",
+        "evidence_span": "天然气终端服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "液化天然气“运贸一体化”龙头",
+        "evidence_span": "国内稀缺的液化天然气“运贸一体化”龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "LNG贸易企业",
+        "evidence_span": "在金联创统计的2022年中国LNG贸易企业排名中，公司位居第四位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "LNG运输企业",
+        "evidence_span": "在金联创统计的2022年中国十大LNG运输企业排名中位居第二位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "AAAA级物流企业",
+        "evidence_span": "公司为AAAA级物流企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LNG",
+        "evidence_span": "公司经营产品主要为LNG"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LNG加气站",
+        "evidence_span": "投资经营LNG加气站等终端业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LNG气化站整体应用解决方案",
+        "evidence_span": "提供LNG气化站整体应用解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LNG运输服务",
+        "evidence_span": "胜通物流共有运输车辆421辆，其中LNG槽车334辆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普通货物运输",
+        "evidence_span": "普通货物包括木片、化肥、饲料等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "危险化学品运输",
+        "evidence_span": "危险化学品包括LNG、原油"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LNG槽车运载能力",
+        "evidence_span": "公司拥有稳定规模化的LNG槽车运载能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LNG罐箱多式联运",
+        "evidence_span": "完成首单LNG罐箱多式联运的陆上运输"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "91LNG互联网运营平台",
+        "evidence_span": "引进了91LNG互联网运营平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中海油气电",
+        "evidence_span": "除主要供应商中海油气电外"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "公司亦向中石化、其它LNG运营商进行询价"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "振华石油",
+        "evidence_span": "公司与振华石油共同从中海油气电拍卖购得"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工业用气客户",
+        "evidence_span": "终端客户主要处于工业用气、城市燃气、交通用气、燃气发电等领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "城市燃气客户",
+        "evidence_span": "终端客户主要处于工业用气、城市燃气、交通用气、燃气发电等领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交通用气客户",
+        "evidence_span": "终端客户主要处于工业用气、城市燃气、交通用气、燃气发电等领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "燃气发电客户",
+        "evidence_span": "终端客户主要处于工业用气、城市燃气、交通用气、燃气发电等领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "清洁能源",
+        "evidence_span": "在巩固现有以供应清洁能源为主业的基础上"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:23:42"
+}

@@ -1,0 +1,604 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能物流系统",
+      "evidence_span": "公司主营业务包括智能物流系统及装备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "装备",
+      "evidence_span": "公司主营业务包括智能物流系统及装备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能产线系统",
+      "evidence_span": "公司主营业务包括智能产线系统及装备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运营维护",
+      "evidence_span": "公司主营业务包括运营维护及备品备件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "备品备件",
+      "evidence_span": "公司主营业务包括运营维护及备品备件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "专项产品",
+      "evidence_span": "公司主营业务包括专项产品及相关服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "相关服务",
+      "evidence_span": "公司主营业务包括专项产品及相关服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能物流装备和智能产线企业",
+      "evidence_span": "国内具有较强影响力的智能物流装备和智能产线企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "技术装备供应商",
+      "evidence_span": "是一家集咨询规划、系统集成、设备研发制造、运营维护于一体的技术装备供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "立体仓库系统",
+      "evidence_span": "立体仓库系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "搬运与输送系统",
+      "evidence_span": "搬运与输送系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分拣配送系统",
+      "evidence_span": "分拣配送系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "堆垛机",
+      "evidence_span": "堆垛机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动导引运输车（AGV）",
+      "evidence_span": "自动导引运输车（AGV）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有轨导引车/穿梭车（RGV）",
+      "evidence_span": "有轨导引车/穿梭车（RGV）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软件及自动化控制产品",
+      "evidence_span": "软件及自动化控制产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烟草打叶复烤线系统",
+      "evidence_span": "烟草打叶复烤线系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烟草制丝线系统",
+      "evidence_span": "烟草制丝线系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烟草卷包集成系统",
+      "evidence_span": "烟草卷包集成系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烟草装备",
+      "evidence_span": "烟草装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运营维护服务",
+      "evidence_span": "运营维护及备品备件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专项产品",
+      "evidence_span": "专项产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统总体规划与系统集成技术",
+      "evidence_span": "系统总体规划与系统集成技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化信息化技术",
+      "evidence_span": "数字化信息化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能装备定制化研发与生产技术",
+      "evidence_span": "智能装备定制化研发与生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光导引技术",
+      "evidence_span": "运用激光导引等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网技术",
+      "evidence_span": "以物联网技术为核心的全过程互联互通应用场景"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G控制",
+      "evidence_span": "公司部分智能装备单机已实现5G控制"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国烟草",
+      "evidence_span": "最终客户已覆盖中国烟草"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "最终客户已覆盖华为"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中兴通讯",
+      "evidence_span": "最终客户已覆盖中兴通讯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山西汾酒",
+      "evidence_span": "最终客户已覆盖山西汾酒"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "舍得酒业",
+      "evidence_span": "最终客户已覆盖舍得酒业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "泸州老窖",
+      "evidence_span": "最终客户已覆盖泸州老窖"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "网易考拉",
+      "evidence_span": "最终客户已覆盖网易考拉"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江菜鸟",
+      "evidence_span": "最终客户已覆盖浙江菜鸟"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "顺丰速运",
+      "evidence_span": "最终客户已覆盖顺丰速运"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东物流",
+      "evidence_span": "最终客户已覆盖京东物流"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "老板电器",
+      "evidence_span": "最终客户已覆盖老板电器"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "青岛海尔",
+      "evidence_span": "最终客户已覆盖青岛海尔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "伊利股份",
+      "evidence_span": "最终客户已覆盖伊利股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "云内动力",
+      "evidence_span": "最终客户已覆盖云内动力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽集团",
+      "evidence_span": "最终客户已覆盖广汽集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "柳药股份",
+      "evidence_span": "最终客户已覆盖柳药股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石药集团",
+      "evidence_span": "最终客户已覆盖石药集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "九州通",
+      "evidence_span": "最终客户已覆盖九州通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华东医药",
+      "evidence_span": "最终客户已覆盖华东医药"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天药股份",
+      "evidence_span": "最终客户已覆盖天药股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "齐鲁制药",
+      "evidence_span": "最终客户已覆盖齐鲁制药"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "云南白药",
+      "evidence_span": "最终客户已覆盖云南白药"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "最终客户已覆盖国家电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "最终客户已覆盖南方电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国能建",
+      "evidence_span": "最终客户已覆盖中国能建"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军事军工",
+      "evidence_span": "最终客户已覆盖军事军工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "烟草行业",
+      "evidence_span": "公司智能产线、智能物流业务以烟草行业为起点"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "酒业",
+      "evidence_span": "公司物流系统已广泛应用于烟草、酒业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医药",
+      "evidence_span": "公司物流系统已广泛应用于医药"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "快递电商",
+      "evidence_span": "公司物流系统已广泛应用于快递电商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车",
+      "evidence_span": "公司物流系统已广泛应用于汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家电",
+      "evidence_span": "公司物流系统已广泛应用于家电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "3C",
+      "evidence_span": "公司物流系统已广泛应用于3C"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能物流系统及装备",
+        "evidence_span": "公司主营业务包括智能物流系统及装备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能产线系统及装备",
+        "evidence_span": "公司主营业务包括智能产线系统及装备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "运营维护及备品备件",
+        "evidence_span": "公司主营业务包括运营维护及备品备件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "专项产品及相关服务",
+        "evidence_span": "公司主营业务包括专项产品及相关服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能物流装备和智能产线企业",
+        "evidence_span": "国内具有较强影响力的智能物流装备和智能产线企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "技术装备供应商",
+        "evidence_span": "是一家集咨询规划、系统集成、设备研发制造、运营维护于一体的技术装备供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "立体仓库系统",
+        "evidence_span": "立体仓库系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "搬运与输送系统",
+        "evidence_span": "搬运与输送系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分拣配送系统",
+        "evidence_span": "分拣配送系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "堆垛机",
+        "evidence_span": "堆垛机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动导引运输车（AGV）",
+        "evidence_span": "自动导引运输车（AGV）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有轨导引车/穿梭车（RGV）",
+        "evidence_span": "有轨导引车/穿梭车（RGV）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软件及自动化控制产品",
+        "evidence_span": "软件及自动化控制产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烟草打叶复烤线系统",
+        "evidence_span": "烟草打叶复烤线系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烟草制丝线系统",
+        "evidence_span": "烟草制丝线系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烟草卷包集成系统",
+        "evidence_span": "烟草卷包集成系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烟草装备",
+        "evidence_span": "烟草装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运营维护服务",
+        "evidence_span": "运营维护及备品备件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专项产品",
+        "evidence_span": "专项产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统总体规划与系统集成技术",
+        "evidence_span": "系统总体规划与系统集成技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化信息化技术",
+        "evidence_span": "数字化信息化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能装备定制化研发与生产技术",
+        "evidence_span": "智能装备定制化研发与生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光导引技术",
+        "evidence_span": "运用激光导引等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网技术",
+        "evidence_span": "以物联网技术为核心的全过程互联互通应用场景"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G控制",
+        "evidence_span": "公司部分智能装备单机已实现5G控制"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国烟草",
+        "evidence_span": "最终客户已覆盖中国烟草"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "最终客户已覆盖华为"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中兴通讯",
+        "evidence_span": "最终客户已覆盖中兴通讯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山西汾酒",
+        "evidence_span": "最终客户已覆盖山西汾酒"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "舍得酒业",
+        "evidence_span": "最终客户已覆盖舍得酒业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "泸州老窖",
+        "evidence_span": "最终客户已覆盖泸州老窖"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "网易考拉",
+        "evidence_span": "最终客户已覆盖网易考拉"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江菜鸟",
+        "evidence_span": "最终客户已覆盖浙江菜鸟"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "顺丰速运",
+        "evidence_span": "最终客户已覆盖顺丰速运"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东物流",
+        "evidence_span": "最终客户已覆盖京东物流"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "老板电器",
+        "evidence_span": "最终客户已覆盖老板电器"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "青岛海尔",
+        "evidence_span": "最终客户已覆盖青岛海尔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "伊利股份",
+        "evidence_span": "最终客户已覆盖伊利股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "云内动力",
+        "evidence_span": "最终客户已覆盖云内动力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽集团",
+        "evidence_span": "最终客户已覆盖广汽集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "柳药股份",
+        "evidence_span": "最终客户已覆盖柳药股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石药集团",
+        "evidence_span": "最终客户已覆盖石药集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "九州通",
+        "evidence_span": "最终客户已覆盖九州通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华东医药",
+        "evidence_span": "最终客户已覆盖华东医药"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天药股份",
+        "evidence_span": "最终客户已覆盖天药股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "齐鲁制药",
+        "evidence_span": "最终客户已覆盖齐鲁制药"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "云南白药",
+        "evidence_span": "最终客户已覆盖云南白药"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "最终客户已覆盖国家电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "最终客户已覆盖南方电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国能建",
+        "evidence_span": "最终客户已覆盖中国能建"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军事军工",
+        "evidence_span": "最终客户已覆盖军事军工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "烟草行业",
+        "evidence_span": "公司智能产线、智能物流业务以烟草行业为起点"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "酒业",
+        "evidence_span": "公司物流系统已广泛应用于烟草、酒业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医药",
+        "evidence_span": "公司物流系统已广泛应用于医药"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "快递电商",
+        "evidence_span": "公司物流系统已广泛应用于快递电商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车",
+        "evidence_span": "公司物流系统已广泛应用于汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家电",
+        "evidence_span": "公司物流系统已广泛应用于家电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "3C",
+        "evidence_span": "公司物流系统已广泛应用于3C"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:14:44"
+}

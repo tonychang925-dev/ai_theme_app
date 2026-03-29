@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "超市经营",
+      "evidence_span": "以超市为经营主体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生鲜经营",
+      "evidence_span": "以生鲜为经营特色"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "全供应链零售",
+      "evidence_span": "全供应链、多业态的综合性零售渠道商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "山东省超市龙头",
+      "evidence_span": "公司为山东省超市龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "胶东生鲜龙头",
+      "evidence_span": "家家悦求深求广，走向跨区发展的胶东生鲜龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域生鲜龙头",
+      "evidence_span": "家家悦“靠谱”的中小业态，“踏实”的区域龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合超市",
+      "evidence_span": "公司以综合超市、社区生鲜食品超市、乡村超市为主要业态"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社区生鲜食品超市",
+      "evidence_span": "公司以综合超市、社区生鲜食品超市、乡村超市为主要业态"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乡村超市",
+      "evidence_span": "公司以综合超市、社区生鲜食品超市、乡村超市为主要业态"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "百货",
+      "evidence_span": "公司拥有包含综合超市、社区生鲜食品超市、乡村超市、百货在内的多种门店形式"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生鲜产品",
+      "evidence_span": "生鲜为公司销售的主体品类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "熟食",
+      "evidence_span": "产品品类包括熟食、卤肉、面食、净菜等品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卤肉",
+      "evidence_span": "产品品类包括熟食、卤肉、面食、净菜等品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "面食",
+      "evidence_span": "产品品类包括熟食、卤肉、面食、净菜等品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "净菜",
+      "evidence_span": "产品品类包括熟食、卤肉、面食、净菜等品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线上销售",
+      "evidence_span": "积极拓展线上业务板块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "到家业务",
+      "evidence_span": "450多家门店开通了到家业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直播和社群团购",
+      "evidence_span": "930多家门店参与直播和社群团购"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一体化物流管理体系",
+      "evidence_span": "已形成较为完善的一体化物流管理体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自有冷链系统",
+      "evidence_span": "建立了自有冷链系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "中央厨房模式",
+      "evidence_span": "成立中央厨房和PC加工中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生鲜加工能力",
+      "evidence_span": "增强了公司生鲜产品的深加工能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美团",
+      "evidence_span": "同美团、京东、饿了么等三方平台的合作力度不断加大"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东",
+      "evidence_span": "同美团、京东、饿了么等三方平台的合作力度不断加大"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "饿了么",
+      "evidence_span": "同美团、京东、饿了么等三方平台的合作力度不断加大"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "超市经营",
+        "evidence_span": "以超市为经营主体"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生鲜经营",
+        "evidence_span": "以生鲜为经营特色"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "全供应链零售",
+        "evidence_span": "全供应链、多业态的综合性零售渠道商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "山东省超市龙头",
+        "evidence_span": "公司为山东省超市龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "胶东生鲜龙头",
+        "evidence_span": "家家悦求深求广，走向跨区发展的胶东生鲜龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域生鲜龙头",
+        "evidence_span": "家家悦“靠谱”的中小业态，“踏实”的区域龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合超市",
+        "evidence_span": "公司以综合超市、社区生鲜食品超市、乡村超市为主要业态"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社区生鲜食品超市",
+        "evidence_span": "公司以综合超市、社区生鲜食品超市、乡村超市为主要业态"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乡村超市",
+        "evidence_span": "公司以综合超市、社区生鲜食品超市、乡村超市为主要业态"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "百货",
+        "evidence_span": "公司拥有包含综合超市、社区生鲜食品超市、乡村超市、百货在内的多种门店形式"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生鲜产品",
+        "evidence_span": "生鲜为公司销售的主体品类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "熟食",
+        "evidence_span": "产品品类包括熟食、卤肉、面食、净菜等品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卤肉",
+        "evidence_span": "产品品类包括熟食、卤肉、面食、净菜等品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "面食",
+        "evidence_span": "产品品类包括熟食、卤肉、面食、净菜等品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "净菜",
+        "evidence_span": "产品品类包括熟食、卤肉、面食、净菜等品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线上销售",
+        "evidence_span": "积极拓展线上业务板块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "到家业务",
+        "evidence_span": "450多家门店开通了到家业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直播和社群团购",
+        "evidence_span": "930多家门店参与直播和社群团购"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一体化物流管理体系",
+        "evidence_span": "已形成较为完善的一体化物流管理体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自有冷链系统",
+        "evidence_span": "建立了自有冷链系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "中央厨房模式",
+        "evidence_span": "成立中央厨房和PC加工中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生鲜加工能力",
+        "evidence_span": "增强了公司生鲜产品的深加工能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美团",
+        "evidence_span": "同美团、京东、饿了么等三方平台的合作力度不断加大"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东",
+        "evidence_span": "同美团、京东、饿了么等三方平台的合作力度不断加大"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "饿了么",
+        "evidence_span": "同美团、京东、饿了么等三方平台的合作力度不断加大"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:58:00"
+}

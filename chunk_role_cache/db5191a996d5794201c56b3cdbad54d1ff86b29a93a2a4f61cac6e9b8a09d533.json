@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "400638509b69", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落引用政策文件，鼓励发展半导体关键环节，涉及产业链结构知识，但以政策发布事件形式呈现，混合了事件和知识。"}}

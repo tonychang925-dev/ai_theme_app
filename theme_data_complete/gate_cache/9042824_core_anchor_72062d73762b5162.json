@@ -1,0 +1,146 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "原子级制造",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'原子级制造'，是题材最核心的定义对象，完全符合题材名称的核心语义，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "半导体与集成电路",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是原子级制造的核心应用场景之一，直接指向产业对象和关键环节，符合题材名称'原子级制造'在产业应用中的核心语义，且策略类型为industry_chain，适合作为must锚点覆盖核心产业对象。"
+      },
+      {
+        "term": "量子科技与高端仪器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是原子级制造的核心应用场景，直接指向产业对象和技术对象，符合题材名称'原子级制造'的核心应用语义，且策略类型为industry_chain，适合作为must锚点覆盖关键产业领域。"
+      },
+      {
+        "term": "新能源与航空航天",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是原子级制造的核心应用场景，指向产业对象和关键环节，符合题材名称'原子级制造'的应用范围，且策略类型为industry_chain，适合作为must锚点覆盖重要产业领域。"
+      },
+      {
+        "term": "生物医药",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是原子级制造的核心应用场景，直接指向产业对象，符合题材名称'原子级制造'的应用语义，且策略类型为industry_chain，适合作为must锚点覆盖核心产业对象。"
+      },
+      {
+        "term": "离子束",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "离子束是原子级制造中用于原子去除加工的关键技术工具，直接对应'原子或分子尺度上精确操控物质'的核心语义，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "等离子体",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "等离子体在原子级制造中用于原子去除加工，是操控原子的关键技术手段之一，直接贴合题材名称定义的核心技术范围，适合作为must锚点。"
+      },
+      {
+        "term": "原子层沉积",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "原子层沉积是原子级制造中增材制造的核心技术，直接实现'逐原子层堆叠材料'，完美契合'原子级制造'的核心语义，是关键技术对象，必须作为must锚点。"
+      },
+      {
+        "term": "扫描隧道显微镜",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "扫描隧道显微镜是原子级制造中迁移操控的关键设备，用于'移动单个原子构建结构'，直接对应原子尺度操控的核心技术，能稳定指向设备对象，适合作为must锚点。"
+      },
+      {
+        "term": "多原子协同操控",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "多原子协同操控是原子级制造的核心技术挑战和未来突破方向，直接对应'原子尺度上操控物质'的进阶能力，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "量子力学",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是原子级制造的理论基础，在知识上重要，但题材名称'原子级制造'更强调制造技术本身而非理论，且策略类型为industry_chain，优先指向产业对象/技术对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "1纳米以下芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是原子级制造在半导体领域的具体产品应用，虽与题材相关，但题材名称'原子级制造'更强调制造技术本身而非具体产品，且策略类型为industry_chain下，优先选择更稳定的产业对象/技术对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "原子级量子比特器件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是原子级制造在量子科技领域的具体器件应用，与题材相关，但题材名称'原子级制造'更强调制造技术而非具体器件，且策略类型为industry_chain下，优先选择更宏观的产业对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "超灵敏传感器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是原子级制造在仪器领域的具体产品应用，与题材相关，但题材名称'原子级制造'更强调制造技术本身，且策略类型为industry_chain下，优先选择更稳定的产业对象/技术对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "原子级金属粉体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "该术语是原子级制造在材料领域的具体产品，与题材相关，但题材名称'原子级制造'更强调制造技术而非具体材料，且策略类型为industry_chain下，优先选择更宏观的产业对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "3D打印",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "该术语是原子级制造可能涉及的一种制造方法，但并非原子级制造独有的核心技术，与题材名称'原子级制造'的核心语义不够直接吻合，且策略类型为industry_chain下，优先选择更直接相关的产业对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "原子级钝化层",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是原子级制造在新能源领域的具体应用产品，与题材相关，但题材名称'原子级制造'更强调制造技术本身，且策略类型为industry_chain下，优先选择更宏观的产业对象，因此更适合作为辅助识别信息。"
+      },
+      {
+        "term": "纳米药物载体",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于原子级制造在生物医药领域的应用场景，虽然与原子级制造相关，但并非直接指向产业对象、技术对象或关键环节的核心定义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "量子科技",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "量子科技是原子级制造的重要应用领域，但属于应用场景而非核心技术或关键环节，与题材名称定义的核心语义不够直接，更适合作为should。"
+      },
+      {
+        "term": "新能源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "新能源是原子级制造的应用领域之一，但范围较广，不直接指向原子级制造的核心技术或产业对象，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "航空航天",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "航空航天是原子级制造的应用场景，但并非核心技术或关键环节，与题材名称的核心定义关联较弱，更适合作为should。"
+      },
+      {
+        "term": "光伏电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "光伏电池是原子级制造在新能源领域的具体应用产品，但属于下游应用而非核心技术对象，与原子级制造的直接关联度不足，更适合作为辅助信息。"
+      },
+      {
+        "term": "高精度测量仪器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "高精度测量仪器是原子级制造的关键支撑设备，但在题材中更偏向技术瓶颈与挑战，而非核心制造技术本身，更适合作为should以辅助识别。"
+      }
+    ]
+  }
+}

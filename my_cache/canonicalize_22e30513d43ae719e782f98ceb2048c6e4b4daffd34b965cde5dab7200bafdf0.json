@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:41:55", "result": {"span_uid": "77df1571b8a0", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "许可范围界定", "stability": "low", "reason": "该片段内容过于简略（仅提及“四川：现制现售的预包装菜肴等情形不纳入预制菜许可范围”），缺乏完整解释和上下文，无法形成独立、稳定的知识块。"}}

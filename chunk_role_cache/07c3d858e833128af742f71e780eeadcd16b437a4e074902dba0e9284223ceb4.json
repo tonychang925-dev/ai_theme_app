@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:34", "result": {"chunk_id": "a57386554786", "decision": "cross_topic_or_noise", "confidence": 0.9, "reason": "该段核心内容聚焦于华为的先进封装专利和技术，属于封装题材，与半导体设备（如光刻、刻蚀、沉积等制造设备）直接关联较弱，混杂了其他题材内容，不适合用于构建半导体设备本体。"}}

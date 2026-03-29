@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "1927d6d9d7b4", "label": "knowledge_like", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到ASML将EUV技术扩展到下一个十年并扩展产品组合，这涉及半导体设备（光刻机）的技术路径和发展方向，提供了关于题材核心构成（光刻设备）的稳定知识性信息，但出现在事件上下文中，稳定性较弱。"}}

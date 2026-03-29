@@ -1,0 +1,154 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "FPGA芯片研发",
+      "evidence_span": "公司主营业务为FPGA芯片和专用EDA软件的研发、设计和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营业务为FPGA芯片和专用EDA软件的研发、设计和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "专用EDA软件研发",
+      "evidence_span": "公司主营业务为FPGA芯片和专用EDA软件的研发、设计和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产FPGA芯片厂商",
+      "evidence_span": "安路科技在国产FPGA芯片厂商中排名第一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "Fabless业务模式",
+      "evidence_span": "公司采用Fabless业务模式"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PHOENIX高性能产品系列",
+      "evidence_span": "公司目前拥有三大产品系列，分别为PHOENIX高性能产品系列、EAGLE高性价比产品系列和ELF低功耗产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "EAGLE高性价比产品系列",
+      "evidence_span": "公司目前拥有三大产品系列，分别为PHOENIX高性能产品系列、EAGLE高性价比产品系列和ELF低功耗产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ELF低功耗产品系列",
+      "evidence_span": "公司目前拥有三大产品系列，分别为PHOENIX高性能产品系列、EAGLE高性价比产品系列和ELF低功耗产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TangDynasty软件",
+      "evidence_span": "公司的TangDynasty 软件是应用于多个行业的全流程自主开发FPGA 专用EDA 软件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全流程自主开发FPGA专用EDA软件",
+      "evidence_span": "公司的TangDynasty 软件是应用于多个行业的全流程自主开发FPGA 专用EDA 软件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际领先通信设备商",
+      "evidence_span": "是国内极少数通过多家国际领先通信设备商认证的合格供应商之一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中芯国际",
+      "evidence_span": "与中芯国际、台积电、华天科技等供应商建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "台积电",
+      "evidence_span": "与中芯国际、台积电、华天科技等供应商建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华天科技",
+      "evidence_span": "与中芯国际、台积电、华天科技等供应商建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产FPGA龙头，主要专注于FPGA芯片和专用EDA软件的研发和销售"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "FPGA芯片研发和销售",
+        "evidence_span": "公司主营业务为FPGA芯片和专用EDA软件的研发、设计和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "专用EDA软件研发和销售",
+        "evidence_span": "公司主营业务为FPGA芯片和专用EDA软件的研发、设计和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产FPGA芯片厂商",
+        "evidence_span": "安路科技在国产FPGA芯片厂商中排名第一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "Fabless业务模式",
+        "evidence_span": "公司采用Fabless业务模式"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PHOENIX高性能产品系列",
+        "evidence_span": "公司目前拥有三大产品系列，分别为PHOENIX高性能产品系列、EAGLE高性价比产品系列和ELF低功耗产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "EAGLE高性价比产品系列",
+        "evidence_span": "公司目前拥有三大产品系列，分别为PHOENIX高性能产品系列、EAGLE高性价比产品系列和ELF低功耗产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ELF低功耗产品系列",
+        "evidence_span": "公司目前拥有三大产品系列，分别为PHOENIX高性能产品系列、EAGLE高性价比产品系列和ELF低功耗产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TangDynasty软件",
+        "evidence_span": "公司的TangDynasty 软件是应用于多个行业的全流程自主开发FPGA 专用EDA 软件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全流程自主开发FPGA专用EDA软件",
+        "evidence_span": "公司的TangDynasty 软件是应用于多个行业的全流程自主开发FPGA 专用EDA 软件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际领先通信设备商",
+        "evidence_span": "是国内极少数通过多家国际领先通信设备商认证的合格供应商之一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中芯国际",
+        "evidence_span": "与中芯国际、台积电、华天科技等供应商建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "台积电",
+        "evidence_span": "与中芯国际、台积电、华天科技等供应商建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华天科技",
+        "evidence_span": "与中芯国际、台积电、华天科技等供应商建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产FPGA龙头，主要专注于FPGA芯片和专用EDA软件的研发和销售"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:00:44"
+}

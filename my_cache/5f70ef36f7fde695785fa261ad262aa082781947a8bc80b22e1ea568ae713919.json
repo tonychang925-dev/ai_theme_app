@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:41:20", "result": {"chunk_id": "01d49ac09763", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落主要说明ISO 3级洁净室的典型应用场景（如半导体制造、生物制药、航空航天），包含有价值的静态知识，但混入了具体公司或工厂的示例（如中芯国际、三星），这些示例可能带有事件性或动态信息，需要进一步裁决。"}}

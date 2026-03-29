@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:34", "result": {"chunk_id": "d2dc837b8319", "decision": "ontology_useful", "confidence": 0.85, "reason": "该段明确列出了半导体设备的关键类型（如光刻、清洗、刻蚀、离子注入、沉积等设备）和国产化替代方向，有助于定义半导体设备的核心环节、关键对象和结构边界，适合用于本体构建。"}}

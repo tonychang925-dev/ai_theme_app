@@ -1,0 +1,30 @@
+{
+  "must": [
+    "Manus"
+  ],
+  "should": [
+    "Meta",
+    "肖弘",
+    "app",
+    "网站",
+    "订阅服务",
+    "token",
+    "虚拟计算机",
+    "首席执行官"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "Manus",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "Manus"
+    }
+  ],
+  "subject_id": "9043089",
+  "quality": "medium",
+  "generated_at": "2026-03-13T14:42:59",
+  "semantic_type": "未定义",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

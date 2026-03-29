@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "72e7f6f08ae1", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述上海推进低空飞行服务的事件，但包含具体目标（如划设航线数量），可能隐含低空经济基础设施知识，混合了事件和潜在知识。"}}

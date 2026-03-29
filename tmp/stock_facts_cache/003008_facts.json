@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电力系统二次设备的检测服务",
+      "evidence_span": "公司主营业务包括：电力系统二次设备的检测服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其他技术服务",
+      "evidence_span": "公司主营业务包括：电力系统二次设备的检测服务、其他技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "检测设备销售",
+      "evidence_span": "公司主营业务包括：电力系统二次设备的检测服务、其他技术服务以及检测设备销售等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "独立第三方检测服务机构",
+      "evidence_span": "作为独立第三方检测服务机构"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家产品质量监督检验中心",
+      "evidence_span": "拥有多个国家授权的检测服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力系统保护与控制设备检测",
+      "evidence_span": "公司的检测业务分为：电力系统保护与控制设备检测"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源控制设备及系统检测",
+      "evidence_span": "公司的检测业务分为：电力系统保护与控制设备检测、新能源控制设备及系统检测"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车充换电系统检测",
+      "evidence_span": "公司的检测业务分为：电力系统保护与控制设备检测、新能源控制设备及系统检测和电动汽车充换电系统检测"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "RTplus智能电网实时数字仿真系统",
+      "evidence_span": "RTplus智能电网实时数字仿真系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "继电保护静模标准化测试仪",
+      "evidence_span": "继电保护静模标准化测试仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力二次设备数字孪生系统",
+      "evidence_span": "电力二次设备数字孪生系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "继电保护检测技术",
+      "evidence_span": "扎实的继电保护检测技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能电网通信规约检测关键技术",
+      "evidence_span": "智能电网通信规约检测关键技术及应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新能源控保设备实时闭环仿真测试",
+      "evidence_span": "新能源控保设备实时闭环仿真测试"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "4MW大功率变流器试验研究平台",
+      "evidence_span": "建成4MW大功率变流器试验研究平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "变流器半实物仿真试验研究平台",
+      "evidence_span": "变流器半实物仿真试验研究平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "储能电池电芯、模组的充放电测试系统",
+      "evidence_span": "新建了储能电池电芯、模组的充放电测试系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BMS（电池管理系统）测试系统",
+      "evidence_span": "BMS（电池管理系统）测试系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "积极参与国家电网、南方电网、各大发电集团等终端用户的质量检测活动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "积极参与国家电网、南方电网、各大发电集团等终端用户的质量检测活动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各大发电集团",
+      "evidence_span": "积极参与国家电网、南方电网、各大发电集团等终端用户的质量检测活动"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新型电力系统建设",
+      "evidence_span": "围绕“十四五”规划出台、“新型电力系统”建设提速"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源产业投资",
+      "evidence_span": "加大新能源产业投资力度"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电动汽车充电产业",
+      "evidence_span": "依托国家对电动汽车充电产业的政策支持"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电力系统二次设备的检测服务",
+        "evidence_span": "公司主营业务包括：电力系统二次设备的检测服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "其他技术服务",
+        "evidence_span": "公司主营业务包括：电力系统二次设备的检测服务、其他技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "检测设备销售",
+        "evidence_span": "公司主营业务包括：电力系统二次设备的检测服务、其他技术服务以及检测设备销售等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "独立第三方检测服务机构",
+        "evidence_span": "作为独立第三方检测服务机构"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家产品质量监督检验中心",
+        "evidence_span": "拥有多个国家授权的检测服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力系统保护与控制设备检测",
+        "evidence_span": "公司的检测业务分为：电力系统保护与控制设备检测"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源控制设备及系统检测",
+        "evidence_span": "公司的检测业务分为：电力系统保护与控制设备检测、新能源控制设备及系统检测"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车充换电系统检测",
+        "evidence_span": "公司的检测业务分为：电力系统保护与控制设备检测、新能源控制设备及系统检测和电动汽车充换电系统检测"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "RTplus智能电网实时数字仿真系统",
+        "evidence_span": "RTplus智能电网实时数字仿真系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "继电保护静模标准化测试仪",
+        "evidence_span": "继电保护静模标准化测试仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力二次设备数字孪生系统",
+        "evidence_span": "电力二次设备数字孪生系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "继电保护检测技术",
+        "evidence_span": "扎实的继电保护检测技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能电网通信规约检测关键技术",
+        "evidence_span": "智能电网通信规约检测关键技术及应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新能源控保设备实时闭环仿真测试",
+        "evidence_span": "新能源控保设备实时闭环仿真测试"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "4MW大功率变流器试验研究平台",
+        "evidence_span": "建成4MW大功率变流器试验研究平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "变流器半实物仿真试验研究平台",
+        "evidence_span": "变流器半实物仿真试验研究平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "储能电池电芯、模组的充放电测试系统",
+        "evidence_span": "新建了储能电池电芯、模组的充放电测试系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BMS（电池管理系统）测试系统",
+        "evidence_span": "BMS（电池管理系统）测试系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "积极参与国家电网、南方电网、各大发电集团等终端用户的质量检测活动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "积极参与国家电网、南方电网、各大发电集团等终端用户的质量检测活动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各大发电集团",
+        "evidence_span": "积极参与国家电网、南方电网、各大发电集团等终端用户的质量检测活动"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新型电力系统建设",
+        "evidence_span": "围绕“十四五”规划出台、“新型电力系统”建设提速"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源产业投资",
+        "evidence_span": "加大新能源产业投资力度"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电动汽车充电产业",
+        "evidence_span": "依托国家对电动汽车充电产业的政策支持"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:26:04"
+}

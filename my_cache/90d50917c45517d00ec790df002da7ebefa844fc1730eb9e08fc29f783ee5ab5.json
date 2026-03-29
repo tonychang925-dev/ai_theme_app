@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "d1bd3e6c99b3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落详细描述泰国和柬埔寨边境交火的事件，包括军事行动、伤亡和武器使用，完全是动态新闻，没有提供可用于陆军题材构建的静态知识。"}}

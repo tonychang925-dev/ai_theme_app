@@ -1,0 +1,55 @@
+{
+  "event_id": "evt_6f100ed37407",
+  "theme_name": "稀土永磁",
+  "event_type": "政策",
+  "entities": [
+    {
+      "name": "中国",
+      "type": "国家",
+      "normalized": "中国"
+    },
+    {
+      "name": "日本",
+      "type": "国家",
+      "normalized": "日本"
+    },
+    {
+      "name": "中重稀土",
+      "type": "产品",
+      "normalized": "中重稀土"
+    }
+  ],
+  "summary": "中国考虑收紧中重稀土出口许可审查，针对日本近期表现。",
+  "causal_claim": [
+    "收紧出口许可",
+    "稀土供应受限",
+    "稀土价格上涨"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "收紧出口许可审查",
+      "中重稀土"
+    ],
+    "normalized_terms": {
+      "中国": "中国",
+      "日本": "日本",
+      "中重稀土": "中重稀土"
+    },
+    "evidence_spans": [
+      {
+        "text": "中国政府正考虑针对性收紧2025年4月4日列管的中重稀土相关物项出口许可审查",
+        "start": 20,
+        "end": 70
+      }
+    ],
+    "core_concepts": [
+      "出口管制",
+      "稀土"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.2,
+  "timestamp": "2025-04-04T00:00:00Z",
+  "raw_text": "据中国日报，可靠消息人士称，鉴于日本近期恶劣表现，中国政府正考虑针对性收紧2025年4月4日列管的中重稀土相关物项出口许可审查（新闻来源：中国日报）"
+}

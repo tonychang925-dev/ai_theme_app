@@ -1,0 +1,419 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "集成灶",
+      "evidence_span": "专注于以集成灶为核心的新兴集成智能厨电和家居产品的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新兴集成智能厨电",
+      "evidence_span": "专注于以集成灶为核心的新兴集成智能厨电和家居产品的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "家居产品",
+      "evidence_span": "专注于以集成灶为核心的新兴集成智能厨电和家居产品的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "全屋定制",
+      "evidence_span": "同时已延伸至全屋定制"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集成灶行业的开创者",
+      "evidence_span": "是集成灶行业的开创者和领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集成灶行业的引领者",
+      "evidence_span": "是集成灶行业的开创者和领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集成灶行业内首家上市公司",
+      "evidence_span": "是集成灶行业内首家上市公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "厨电行业品类最全、产品性能最优的企业",
+      "evidence_span": "也是目前厨电行业品类最全、产品性能最优的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集成灶",
+      "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电蒸箱",
+      "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电烤箱",
+      "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸烤一体机",
+      "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸烤炸炖一体机",
+      "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集成水槽",
+      "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集成水槽洗碗机",
+      "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "净水机",
+      "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热水器",
+      "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "橱柜",
+      "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "衣柜",
+      "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能变频技术",
+      "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低阻静吸",
+      "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "油烟自动巡航",
+      "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧阻逆",
+      "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3D高效燃烧",
+      "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能手势感应",
+      "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能语音控制",
+      "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI核心蒸烤算法",
+      "evidence_span": "拥有AI核心蒸烤算法、PID温场平衡科技、变频理想温场"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PID温场平衡科技",
+      "evidence_span": "拥有AI核心蒸烤算法、PID温场平衡科技、变频理想温场"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "变频理想温场",
+      "evidence_span": "拥有AI核心蒸烤算法、PID温场平衡科技、变频理想温场"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3D涡流全喷淋系统",
+      "evidence_span": "产品拥有3D涡流全喷淋系统、多种智能清洗模式、AI智能浊度感应技术、智能烘干技术、智能呼吸换气系统等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI智能浊度感应技术",
+      "evidence_span": "产品拥有3D涡流全喷淋系统、多种智能清洗模式、AI智能浊度感应技术、智能烘干技术、智能呼吸换气系统等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能烘干技术",
+      "evidence_span": "产品拥有3D涡流全喷淋系统、多种智能清洗模式、AI智能浊度感应技术、智能烘干技术、智能呼吸换气系统等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能呼吸换气系统",
+      "evidence_span": "产品拥有3D涡流全喷淋系统、多种智能清洗模式、AI智能浊度感应技术、智能烘干技术、智能呼吸换气系统等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主知识产权196项",
+      "evidence_span": "拥有自主知识产权196项"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国际专利11项",
+      "evidence_span": "其中国际专利11项"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "发明专利31项",
+      "evidence_span": "发明专利31项"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "实用新型专利81项",
+      "evidence_span": "实用新型专利81项"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "计算机软件著作权25项",
+      "evidence_span": "计算机软件著作权25项"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家级CNAS检测中心",
+      "evidence_span": "公司率先建立了国家级CNAS检测中心"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "集成灶增长红利",
+      "evidence_span": "浙江美大受益集成灶增长红利"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "渗透率提升",
+      "evidence_span": "受益渗透率提升"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "集成灶",
+        "evidence_span": "专注于以集成灶为核心的新兴集成智能厨电和家居产品的研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新兴集成智能厨电",
+        "evidence_span": "专注于以集成灶为核心的新兴集成智能厨电和家居产品的研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "家居产品",
+        "evidence_span": "专注于以集成灶为核心的新兴集成智能厨电和家居产品的研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "全屋定制",
+        "evidence_span": "同时已延伸至全屋定制"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集成灶行业的开创者",
+        "evidence_span": "是集成灶行业的开创者和领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集成灶行业的引领者",
+        "evidence_span": "是集成灶行业的开创者和领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集成灶行业内首家上市公司",
+        "evidence_span": "是集成灶行业内首家上市公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "厨电行业品类最全、产品性能最优的企业",
+        "evidence_span": "也是目前厨电行业品类最全、产品性能最优的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集成灶",
+        "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电蒸箱",
+        "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电烤箱",
+        "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸烤一体机",
+        "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸烤炸炖一体机",
+        "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集成水槽",
+        "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集成水槽洗碗机",
+        "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "净水机",
+        "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热水器",
+        "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "橱柜",
+        "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "衣柜",
+        "evidence_span": "产品主要包括集成灶、电蒸箱、电烤箱、蒸烤一体机、蒸烤炸炖一体机、集成水槽、集成水槽洗碗机、净水机、热水器、橱柜、衣柜等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能变频技术",
+        "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低阻静吸",
+        "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "油烟自动巡航",
+        "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧阻逆",
+        "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3D高效燃烧",
+        "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能手势感应",
+        "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能语音控制",
+        "evidence_span": "运用公司潜心自主研发的智能变频技术、低阻静吸、油烟自动巡航、智慧阻逆、3D高效燃烧、智能手势感应、智能语音控制等多项行业前沿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI核心蒸烤算法",
+        "evidence_span": "拥有AI核心蒸烤算法、PID温场平衡科技、变频理想温场"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PID温场平衡科技",
+        "evidence_span": "拥有AI核心蒸烤算法、PID温场平衡科技、变频理想温场"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "变频理想温场",
+        "evidence_span": "拥有AI核心蒸烤算法、PID温场平衡科技、变频理想温场"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3D涡流全喷淋系统",
+        "evidence_span": "产品拥有3D涡流全喷淋系统、多种智能清洗模式、AI智能浊度感应技术、智能烘干技术、智能呼吸换气系统等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI智能浊度感应技术",
+        "evidence_span": "产品拥有3D涡流全喷淋系统、多种智能清洗模式、AI智能浊度感应技术、智能烘干技术、智能呼吸换气系统等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能烘干技术",
+        "evidence_span": "产品拥有3D涡流全喷淋系统、多种智能清洗模式、AI智能浊度感应技术、智能烘干技术、智能呼吸换气系统等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能呼吸换气系统",
+        "evidence_span": "产品拥有3D涡流全喷淋系统、多种智能清洗模式、AI智能浊度感应技术、智能烘干技术、智能呼吸换气系统等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主知识产权196项",
+        "evidence_span": "拥有自主知识产权196项"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国际专利11项",
+        "evidence_span": "其中国际专利11项"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "发明专利31项",
+        "evidence_span": "发明专利31项"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "实用新型专利81项",
+        "evidence_span": "实用新型专利81项"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "计算机软件著作权25项",
+        "evidence_span": "计算机软件著作权25项"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家级CNAS检测中心",
+        "evidence_span": "公司率先建立了国家级CNAS检测中心"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "集成灶增长红利",
+        "evidence_span": "浙江美大受益集成灶增长红利"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "渗透率提升",
+        "evidence_span": "受益渗透率提升"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:11:36"
+}

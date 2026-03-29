@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能显示",
+      "evidence_span": "主营业务包括智能显示"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "VR体验",
+      "evidence_span": "主营业务包括VR体验"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "夜游经济",
+      "evidence_span": "主营业务包括夜游经济"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "文旅新业态",
+      "evidence_span": "主营业务包括文旅新业态"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球LED显示应用行业龙头企业",
+      "evidence_span": "利亚德是全球LED显示应用行业龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球LED显示龙头",
+      "evidence_span": "利亚德全球LED显示龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球视听文化领创者",
+      "evidence_span": "利亚德全球视听文化领创者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED通用显示",
+      "evidence_span": "显示产品主要包括LED通用显示"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED专业显示",
+      "evidence_span": "显示产品主要包括LED专业显示"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED创意显示",
+      "evidence_span": "显示产品主要包括LED创意显示"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "夜景照明",
+      "evidence_span": "在夜景照明领域也进行了布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "文化旅游",
+      "evidence_span": "在文化旅游领域也进行了布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VR娱乐",
+      "evidence_span": "在VR娱乐领域也进行了布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Micro LED家用电视",
+      "evidence_span": "公司推出“Planar”品牌的大尺寸Micro LED家用电视"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VR业务",
+      "evidence_span": "开启VR业务以来"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "小间距",
+      "evidence_span": "产品间距覆盖小间距"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微间距",
+      "evidence_span": "产品间距覆盖微间距"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Mini/Micro LED",
+      "evidence_span": "全球LED显示领创者深度布局Mini/Micro赛道"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海外市场",
+      "evidence_span": "全面打开海外市场"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "Mini/Micro LED新动能",
+      "evidence_span": "Mini/Micro LED新动能"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能显示",
+        "evidence_span": "主营业务包括智能显示"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "VR体验",
+        "evidence_span": "主营业务包括VR体验"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "夜游经济",
+        "evidence_span": "主营业务包括夜游经济"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "文旅新业态",
+        "evidence_span": "主营业务包括文旅新业态"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球LED显示应用行业龙头企业",
+        "evidence_span": "利亚德是全球LED显示应用行业龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球LED显示龙头",
+        "evidence_span": "利亚德全球LED显示龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球视听文化领创者",
+        "evidence_span": "利亚德全球视听文化领创者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED通用显示",
+        "evidence_span": "显示产品主要包括LED通用显示"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED专业显示",
+        "evidence_span": "显示产品主要包括LED专业显示"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED创意显示",
+        "evidence_span": "显示产品主要包括LED创意显示"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "夜景照明",
+        "evidence_span": "在夜景照明领域也进行了布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "文化旅游",
+        "evidence_span": "在文化旅游领域也进行了布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VR娱乐",
+        "evidence_span": "在VR娱乐领域也进行了布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Micro LED家用电视",
+        "evidence_span": "公司推出“Planar”品牌的大尺寸Micro LED家用电视"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VR业务",
+        "evidence_span": "开启VR业务以来"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "小间距",
+        "evidence_span": "产品间距覆盖小间距"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微间距",
+        "evidence_span": "产品间距覆盖微间距"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Mini/Micro LED",
+        "evidence_span": "全球LED显示领创者深度布局Mini/Micro赛道"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海外市场",
+        "evidence_span": "全面打开海外市场"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "Mini/Micro LED新动能",
+        "evidence_span": "Mini/Micro LED新动能"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:29:43"
+}

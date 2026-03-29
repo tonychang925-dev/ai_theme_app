@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "da3a3f431e12", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含Counterpoint发布的全球晶圆代工产业营收数据，涉及景气数据，但可能沉淀为行业趋势知识，混有事件元素。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "80d660d38057", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "纯粹是报道一则关于美国可能出台新对华出口限制的传闻/预期事件，引用了路透社和美国商会的邮件内容。内容聚焦于事件本身（时间、可能内容、来源），没有附带解释性或背景知识。"}}

@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字化体验空间",
+      "evidence_span": "数字化体验空间通过数字化的技术手段展示城市历史文化底蕴"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "文化",
+      "evidence_span": "文化及品牌数字化体验空间通过将创意、设计、数字艺术和沉浸式体验元素深度融入IP主题"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "品牌数字化体验空间",
+      "evidence_span": "文化及品牌数字化体验空间通过将创意、设计、数字艺术和沉浸式体验元素深度融入IP主题"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字化产品",
+      "evidence_span": "数字化产品及服务主要通过全息影像、裸眼3D、CGI特效等技术手段"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "数字化产品及服务主要通过全息影像、裸眼3D、CGI特效等技术手段"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字化体验服务商",
+      "evidence_span": "致力于成为国内领先的数字化体验服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字展示行业龙头企业",
+      "evidence_span": "公司是中国数字展示行业的龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化体验项目",
+      "evidence_span": "高效统筹推进数字化体验项目的实施进度"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "文化数字化体验中心",
+      "evidence_span": "打造了一批融合中华传统文化、数字艺术与元宇宙前沿技术的新型数字化体验空间，包括：央视重磅IP《典籍里的中国》陈列馆、国家方志馆南方丝绸之路分馆、三国合肥历史文化馆等文化数字化体验中心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "规划展示馆",
+      "evidence_span": "展示3.0时代的规划展示代表作品，如上海嘉定新城规划展示馆、深圳光明区城市规划展览馆、成都东部新区未来城市体验中心等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧城市标杆项目",
+      "evidence_span": "参与打造并交付了日照市城市大脑及智慧城市科普展示项目，是一个集数据分析、运行联动、成果体验和对外展示于一体的智慧城市标杆项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大数据可视化业务",
+      "evidence_span": "积极开拓大数据可视化业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3D数字设计及系统化数字虚拟内容建设业务",
+      "evidence_span": "布局3D数字设计及系统化数字虚拟内容建设业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "元宇宙虚拟发布会",
+      "evidence_span": "助力“上海国际美妆节”、“上海虹口区科技节”打造元宇宙虚拟发布会"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "创意AR体验",
+      "evidence_span": "为上海、厦门、广东开平、江西樟树等城市打造创意AR体验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全息影像",
+      "evidence_span": "在全息影像、裸眼3D、VR/AR/MR、大数据可视化、AI人机交互等技术应用领域的优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "裸眼3D",
+      "evidence_span": "在全息影像、裸眼3D、VR/AR/MR、大数据可视化、AI人机交互等技术应用领域的优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "VR/AR/MR",
+      "evidence_span": "在全息影像、裸眼3D、VR/AR/MR、大数据可视化、AI人机交互等技术应用领域的优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据可视化",
+      "evidence_span": "在全息影像、裸眼3D、VR/AR/MR、大数据可视化、AI人机交互等技术应用领域的优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI人机交互",
+      "evidence_span": "在全息影像、裸眼3D、VR/AR/MR、大数据可视化、AI人机交互等技术应用领域的优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "虚拟仿真技术",
+      "evidence_span": "利用虚拟仿真技术，在虚拟空间中打造物理世界的延伸"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CGI特效",
+      "evidence_span": "主要通过全息影像、裸眼3D、CGI特效等技术手段"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "4K/8K超高清视频",
+      "evidence_span": "AR/VR/MR、4K/8K超高清视频等媒介形式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AIGC人机交互",
+      "evidence_span": "充分运用大数据可视化、AIGC人机交互、VR/AR/MR等新兴技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3D可视化",
+      "evidence_span": "重点投入VR/AR/MR、AIGC人机交互、3D可视化、中控融合软件开发等技术研发和应用领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府部门单位",
+      "evidence_span": "公司目前的主要客户为政府部门单位"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "元宇宙",
+      "evidence_span": "持续受益于元宇宙大趋势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "文化新基建",
+      "evidence_span": "“文化新基建”践行者"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字化体验空间",
+        "evidence_span": "数字化体验空间通过数字化的技术手段展示城市历史文化底蕴"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "文化及品牌数字化体验空间",
+        "evidence_span": "文化及品牌数字化体验空间通过将创意、设计、数字艺术和沉浸式体验元素深度融入IP主题"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字化产品及服务",
+        "evidence_span": "数字化产品及服务主要通过全息影像、裸眼3D、CGI特效等技术手段"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字化体验服务商",
+        "evidence_span": "致力于成为国内领先的数字化体验服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字展示行业龙头企业",
+        "evidence_span": "公司是中国数字展示行业的龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化体验项目",
+        "evidence_span": "高效统筹推进数字化体验项目的实施进度"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "文化数字化体验中心",
+        "evidence_span": "打造了一批融合中华传统文化、数字艺术与元宇宙前沿技术的新型数字化体验空间，包括：央视重磅IP《典籍里的中国》陈列馆、国家方志馆南方丝绸之路分馆、三国合肥历史文化馆等文化数字化体验中心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "规划展示馆",
+        "evidence_span": "展示3.0时代的规划展示代表作品，如上海嘉定新城规划展示馆、深圳光明区城市规划展览馆、成都东部新区未来城市体验中心等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧城市标杆项目",
+        "evidence_span": "参与打造并交付了日照市城市大脑及智慧城市科普展示项目，是一个集数据分析、运行联动、成果体验和对外展示于一体的智慧城市标杆项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大数据可视化业务",
+        "evidence_span": "积极开拓大数据可视化业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3D数字设计及系统化数字虚拟内容建设业务",
+        "evidence_span": "布局3D数字设计及系统化数字虚拟内容建设业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "元宇宙虚拟发布会",
+        "evidence_span": "助力“上海国际美妆节”、“上海虹口区科技节”打造元宇宙虚拟发布会"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "创意AR体验",
+        "evidence_span": "为上海、厦门、广东开平、江西樟树等城市打造创意AR体验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全息影像",
+        "evidence_span": "在全息影像、裸眼3D、VR/AR/MR、大数据可视化、AI人机交互等技术应用领域的优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "裸眼3D",
+        "evidence_span": "在全息影像、裸眼3D、VR/AR/MR、大数据可视化、AI人机交互等技术应用领域的优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "VR/AR/MR",
+        "evidence_span": "在全息影像、裸眼3D、VR/AR/MR、大数据可视化、AI人机交互等技术应用领域的优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据可视化",
+        "evidence_span": "在全息影像、裸眼3D、VR/AR/MR、大数据可视化、AI人机交互等技术应用领域的优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI人机交互",
+        "evidence_span": "在全息影像、裸眼3D、VR/AR/MR、大数据可视化、AI人机交互等技术应用领域的优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "虚拟仿真技术",
+        "evidence_span": "利用虚拟仿真技术，在虚拟空间中打造物理世界的延伸"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CGI特效",
+        "evidence_span": "主要通过全息影像、裸眼3D、CGI特效等技术手段"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "4K/8K超高清视频",
+        "evidence_span": "AR/VR/MR、4K/8K超高清视频等媒介形式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AIGC人机交互",
+        "evidence_span": "充分运用大数据可视化、AIGC人机交互、VR/AR/MR等新兴技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3D可视化",
+        "evidence_span": "重点投入VR/AR/MR、AIGC人机交互、3D可视化、中控融合软件开发等技术研发和应用领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府部门单位",
+        "evidence_span": "公司目前的主要客户为政府部门单位"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "元宇宙",
+        "evidence_span": "持续受益于元宇宙大趋势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "文化新基建",
+        "evidence_span": "“文化新基建”践行者"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:25:57"
+}

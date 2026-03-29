@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:58", "result": {"span_uid": "2a70a9955d44", "action": "rewrite", "canonical_text": "机器人可以在虚拟世界中进行训练，以便在物理世界中与人类安全协作。", "final_type": "related", "final_role": "机器人训练方法", "stability": "high", "reason": "原文包含具体公司名称和产品，去事件化改写为通用知识表达，保留机器人训练的核心机制，适合作为相关技术知识。"}}

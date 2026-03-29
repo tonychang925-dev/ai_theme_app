@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "0c11eebefbc5", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供了低空经济的定义、核心构成和特点，是纯静态说明，没有涉及任何事件、时间动态或新闻信息。"}}

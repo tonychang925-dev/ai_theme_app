@@ -1,0 +1,29 @@
+{
+  "n": 30,
+  "static": {
+    "avg_candidates": 0.06666666666666667,
+    "window_hit_rate": 0.0,
+    "precision_proxy": 0.06666666666666667,
+    "recall_proxy": 0.03333333333333333
+  },
+  "dynamic": {
+    "avg_candidates": 3.1,
+    "window_hit_rate": 1.0,
+    "precision_proxy": 0.5277777777777778,
+    "recall_proxy": 0.8,
+    "avg_threshold": 0.7150421423862522,
+    "avg_p95": 0.6662683935568606,
+    "avg_p98": 0.7152992498885157,
+    "segment_hits": {
+      "strong": 13,
+      "candidate": 41,
+      "weak": 816
+    }
+  },
+  "delta": {
+    "avg_candidates": 3.033333333333333,
+    "window_hit_rate": 1.0,
+    "precision_proxy": 0.46111111111111114,
+    "recall_proxy": 0.7666666666666667
+  }
+}

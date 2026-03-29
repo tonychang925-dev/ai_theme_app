@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:37:38", "result": {"span_uid": "8f202ff768e7", "action": "keep", "canonical_text": "高阶制程的芯片并不只采用单一品种光刻胶作为主要材料。", "final_type": "core", "final_role": "材料使用特性", "stability": "high", "reason": "原文直接定义光刻胶在芯片制程中的核心使用机制，可独立成立，无需改写。"}}

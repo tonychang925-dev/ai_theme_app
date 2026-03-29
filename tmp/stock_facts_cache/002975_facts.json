@@ -1,0 +1,439 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业自动化设备",
+      "evidence_span": "专注于工业自动化设备与配件的研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能制造解决方案",
+      "evidence_span": "专注于智能制造领域工业自动化、智能化设备及系统解决方案的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工业自动化测试组装专家",
+      "evidence_span": "博杰股份工业自动化测试组装专家"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球领先ICT测试设备商",
+      "evidence_span": "博杰股份全球领先ICT测试设备商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化测试设备",
+      "evidence_span": "开发了自动化测试设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化组装设备",
+      "evidence_span": "自动化组装设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业机器人",
+      "evidence_span": "工业机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整线自动化设备",
+      "evidence_span": "整线自动化设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频测试设备",
+      "evidence_span": "博杰股份射频测试设备龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ICT测试设备",
+      "evidence_span": "ICT测试设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G射频测试设备",
+      "evidence_span": "5G射频测试设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AOI检测设备",
+      "evidence_span": "AOI检测设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体切割设备",
+      "evidence_span": "在半导体切割设备领域实现布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MLCC核心制程设备",
+      "evidence_span": "覆盖超过50%价值量的MLCC核心制程设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "六面体外观检测机",
+      "evidence_span": "六面体外观检测机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速测试机",
+      "evidence_span": "高速测试机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速叠层机",
+      "evidence_span": "高速叠层机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "运动控制平台",
+      "evidence_span": "形成了运动控制、人工智能、机器人软件算法等平台化模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "射频测试技术",
+      "evidence_span": "射频、声学、电学、光学等各项功能技术模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "声学测试技术",
+      "evidence_span": "射频、声学、电学、光学等各项功能技术模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光学检测技术",
+      "evidence_span": "拓展加强光学和视觉检测能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器视觉算法",
+      "evidence_span": "机器视觉和深度学习等算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "半导体切割技术",
+      "evidence_span": "已拥有较成熟的半导体切割技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苹果",
+      "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "META",
+      "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "微软",
+      "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "思科",
+      "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特斯拉",
+      "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "谷歌",
+      "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚马逊",
+      "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高通",
+      "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "以及比亚迪、鸿海集团、广达集团、仁宝集团等全球著名电子产品智能制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "鸿海集团",
+      "evidence_span": "以及比亚迪、鸿海集团、广达集团、仁宝集团等全球著名电子产品智能制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广达集团",
+      "evidence_span": "以及比亚迪、鸿海集团、广达集团、仁宝集团等全球著名电子产品智能制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "仁宝集团",
+      "evidence_span": "以及比亚迪、鸿海集团、广达集团、仁宝集团等全球著名电子产品智能制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "华为、蔚来、大疆等国内知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "华为、蔚来、大疆等国内知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大疆",
+      "evidence_span": "华为、蔚来、大疆等国内知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球头部新能源车企",
+      "evidence_span": "已实现对全球头部新能源车企自动化产线设备的供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内主流MLCC厂商",
+      "evidence_span": "相关设备已覆盖国内所有主流MLCC厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本MLCC厂家",
+      "evidence_span": "已成功向日本MLCC厂家供应设备"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G建设",
+      "evidence_span": "5G建设+3C复苏带来高成长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "产品可实现进口替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业自动化设备",
+        "evidence_span": "专注于工业自动化设备与配件的研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能制造解决方案",
+        "evidence_span": "专注于智能制造领域工业自动化、智能化设备及系统解决方案的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工业自动化测试组装专家",
+        "evidence_span": "博杰股份工业自动化测试组装专家"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球领先ICT测试设备商",
+        "evidence_span": "博杰股份全球领先ICT测试设备商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化测试设备",
+        "evidence_span": "开发了自动化测试设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化组装设备",
+        "evidence_span": "自动化组装设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业机器人",
+        "evidence_span": "工业机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整线自动化设备",
+        "evidence_span": "整线自动化设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频测试设备",
+        "evidence_span": "博杰股份射频测试设备龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ICT测试设备",
+        "evidence_span": "ICT测试设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G射频测试设备",
+        "evidence_span": "5G射频测试设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AOI检测设备",
+        "evidence_span": "AOI检测设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体切割设备",
+        "evidence_span": "在半导体切割设备领域实现布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MLCC核心制程设备",
+        "evidence_span": "覆盖超过50%价值量的MLCC核心制程设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "六面体外观检测机",
+        "evidence_span": "六面体外观检测机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速测试机",
+        "evidence_span": "高速测试机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速叠层机",
+        "evidence_span": "高速叠层机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "运动控制平台",
+        "evidence_span": "形成了运动控制、人工智能、机器人软件算法等平台化模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "射频测试技术",
+        "evidence_span": "射频、声学、电学、光学等各项功能技术模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "声学测试技术",
+        "evidence_span": "射频、声学、电学、光学等各项功能技术模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光学检测技术",
+        "evidence_span": "拓展加强光学和视觉检测能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器视觉算法",
+        "evidence_span": "机器视觉和深度学习等算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "半导体切割技术",
+        "evidence_span": "已拥有较成熟的半导体切割技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苹果",
+        "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "META",
+        "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "微软",
+        "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "思科",
+        "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特斯拉",
+        "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "谷歌",
+        "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚马逊",
+        "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高通",
+        "evidence_span": "包括苹果、META、微软、思科、特斯拉、谷歌、亚马逊、高通等全球著名高科技公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "以及比亚迪、鸿海集团、广达集团、仁宝集团等全球著名电子产品智能制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "鸿海集团",
+        "evidence_span": "以及比亚迪、鸿海集团、广达集团、仁宝集团等全球著名电子产品智能制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广达集团",
+        "evidence_span": "以及比亚迪、鸿海集团、广达集团、仁宝集团等全球著名电子产品智能制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "仁宝集团",
+        "evidence_span": "以及比亚迪、鸿海集团、广达集团、仁宝集团等全球著名电子产品智能制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "华为、蔚来、大疆等国内知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "华为、蔚来、大疆等国内知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大疆",
+        "evidence_span": "华为、蔚来、大疆等国内知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球头部新能源车企",
+        "evidence_span": "已实现对全球头部新能源车企自动化产线设备的供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内主流MLCC厂商",
+        "evidence_span": "相关设备已覆盖国内所有主流MLCC厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本MLCC厂家",
+        "evidence_span": "已成功向日本MLCC厂家供应设备"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G建设",
+        "evidence_span": "5G建设+3C复苏带来高成长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "产品可实现进口替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:03:47"
+}

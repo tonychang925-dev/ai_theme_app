@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金车轮的研发",
+      "evidence_span": "从事于铝合金车轮的研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金车轮的设计",
+      "evidence_span": "从事于铝合金车轮的设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金车轮的制造",
+      "evidence_span": "从事于铝合金车轮的制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金车轮的销售",
+      "evidence_span": "从事于铝合金车轮的销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铝合金车轮企业",
+      "evidence_span": "国内领先的铝合金车轮企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铝合金车轮国际AM市场龙头企业",
+      "evidence_span": "铝合金车轮国际AM市场龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铝制车轮AM市场龙头企业",
+      "evidence_span": "铝制车轮AM市场龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "售后配套铝车轮制造商",
+      "evidence_span": "国际领先的售后配套铝车轮制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家汽车零部件出口基地企业",
+      "evidence_span": "国家汽车零部件出口基地企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝合金车轮",
+      "evidence_span": "从事于铝合金车轮的研发、设计、制造与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车铝合金车轮",
+      "evidence_span": "公司汽车铝合金车轮目前主要定位于国际AM市场"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铝合金车轮轻量化技术",
+      "evidence_span": "铝合金车轮轻量化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铝车轮表面多色涂装技术",
+      "evidence_span": "铝车轮表面多色涂装技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "重力铸造双边浇技术",
+      "evidence_span": "重力铸造双边浇技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "旋压制造技术",
+      "evidence_span": "旋压制造技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际售后改装市场",
+      "evidence_span": "产品销售以国际售后改装市场为核心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球80多个国家和地区",
+      "evidence_span": "产品销往全球80多个国家和地区"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "经销商",
+      "evidence_span": "主要采取经销商方式销售"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "主机厂",
+      "evidence_span": "加大国内外整车配套市场的开拓力度，已与数家主机厂建立或初步建立合作关系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金车轮的研发",
+        "evidence_span": "从事于铝合金车轮的研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金车轮的设计",
+        "evidence_span": "从事于铝合金车轮的设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金车轮的制造",
+        "evidence_span": "从事于铝合金车轮的制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金车轮的销售",
+        "evidence_span": "从事于铝合金车轮的销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铝合金车轮企业",
+        "evidence_span": "国内领先的铝合金车轮企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铝合金车轮国际AM市场龙头企业",
+        "evidence_span": "铝合金车轮国际AM市场龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铝制车轮AM市场龙头企业",
+        "evidence_span": "铝制车轮AM市场龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "售后配套铝车轮制造商",
+        "evidence_span": "国际领先的售后配套铝车轮制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家汽车零部件出口基地企业",
+        "evidence_span": "国家汽车零部件出口基地企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝合金车轮",
+        "evidence_span": "从事于铝合金车轮的研发、设计、制造与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车铝合金车轮",
+        "evidence_span": "公司汽车铝合金车轮目前主要定位于国际AM市场"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铝合金车轮轻量化技术",
+        "evidence_span": "铝合金车轮轻量化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铝车轮表面多色涂装技术",
+        "evidence_span": "铝车轮表面多色涂装技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "重力铸造双边浇技术",
+        "evidence_span": "重力铸造双边浇技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "旋压制造技术",
+        "evidence_span": "旋压制造技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际售后改装市场",
+        "evidence_span": "产品销售以国际售后改装市场为核心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球80多个国家和地区",
+        "evidence_span": "产品销往全球80多个国家和地区"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "经销商",
+        "evidence_span": "主要采取经销商方式销售"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "主机厂",
+        "evidence_span": "加大国内外整车配套市场的开拓力度，已与数家主机厂建立或初步建立合作关系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:21:12"
+}

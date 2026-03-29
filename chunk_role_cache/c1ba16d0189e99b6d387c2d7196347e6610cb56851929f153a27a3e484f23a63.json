@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "9a136a956325", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落引用报告预测（如2030年eVTOL数量），包含趋势信息，可能对低空经济规模有知识价值，但基于报告发布事件，混合了事件和预测知识。"}}

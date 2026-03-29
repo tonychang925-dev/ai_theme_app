@@ -1,0 +1,129 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "食用菌研发",
+      "evidence_span": "专业从事食用菌的研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食用菌工厂化种植",
+      "evidence_span": "工厂化种植"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食用菌销售",
+      "evidence_span": "销售业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "食用菌工厂化生产企业",
+      "evidence_span": "是国内领先的食用菌工厂化生产企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金针菇",
+      "evidence_span": "主要产品包括金针菇"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "真姬菇",
+      "evidence_span": "真姬菇（含白玉菇、蟹味菇）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "舞茸",
+      "evidence_span": "舞茸（灰树花）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "白玉菇",
+      "evidence_span": "白玉菇"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蟹味菇",
+      "evidence_span": "蟹味菇"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "液体菌种技术",
+      "evidence_span": "成熟的液体菌种技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "杂菌污染率控制",
+      "evidence_span": "杂菌污染率处于行业较高水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物转化率控制",
+      "evidence_span": "生物转化率等食用菌育菇技术参数处于行业较高水平"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "食用菌研发",
+        "evidence_span": "专业从事食用菌的研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食用菌工厂化种植",
+        "evidence_span": "工厂化种植"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食用菌销售",
+        "evidence_span": "销售业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "食用菌工厂化生产企业",
+        "evidence_span": "是国内领先的食用菌工厂化生产企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金针菇",
+        "evidence_span": "主要产品包括金针菇"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "真姬菇",
+        "evidence_span": "真姬菇（含白玉菇、蟹味菇）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "舞茸",
+        "evidence_span": "舞茸（灰树花）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "白玉菇",
+        "evidence_span": "白玉菇"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蟹味菇",
+        "evidence_span": "蟹味菇"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "液体菌种技术",
+        "evidence_span": "成熟的液体菌种技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "杂菌污染率控制",
+        "evidence_span": "杂菌污染率处于行业较高水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物转化率控制",
+        "evidence_span": "生物转化率等食用菌育菇技术参数处于行业较高水平"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:07:40"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "57957389119d", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述美国对芯片制程的出口管控及台积电的应对措施，是具体事件性报道，聚焦于政策影响和公司行动，未涉及半导体设备题材的构成或技术细节。"}}

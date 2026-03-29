@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "a57386554786", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落混合了华为专利技术（稳定知识，如封装设计、桥接技术、HBM集成）和事件动态（专利申请、可能用于昇腾910D、与台积电比较），边界不清，但包含值得沉淀的半导体封装知识。"}}

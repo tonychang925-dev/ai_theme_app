@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药工业",
+      "evidence_span": "医药工业与医药商业两大板块双轮驱动的业务格局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药商业",
+      "evidence_span": "医药工业与医药商业两大板块双轮驱动的业务格局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "麻醉镇痛药",
+      "evidence_span": "以宜昌人福为核心的麻醉镇痛药板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特色药",
+      "evidence_span": "以新疆维药（维吾尔民族药）、葛店人福（生育调节药）等为核心的特色药板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "海外仿制药",
+      "evidence_span": "以EpicPharma为核心的海外仿制药板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精神麻醉药龙头",
+      "evidence_span": "精神麻醉药龙头，医药细分市场领导者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医药细分市场领导者",
+      "evidence_span": "精神麻醉药龙头，医药细分市场领导者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域性医药流通龙头",
+      "evidence_span": "着力打造区域性医药流通龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阿片类镇痛药物",
+      "evidence_span": "产品主要以阿片类镇痛药物为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芬太尼家族药物",
+      "evidence_span": "主要产品为芬太尼家族为主的阿片类镇痛药物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "舒芬太尼",
+      "evidence_span": "舒芬太尼是镇痛效果最强的阿片类药物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "米非司酮制剂",
+      "evidence_span": "主要产品是（复方）米非司酮制剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复方米非司酮",
+      "evidence_span": "公司的复方米非司酮是全国独家品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "祖卡木颗粒",
+      "evidence_span": "新疆维药的祖卡木颗粒等4个产品已在中亚国家注册销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄体酮原料药",
+      "evidence_span": "葛店人福的黄体酮、非那雄胺、布地奈德等原料药的质量标准已全面对接欧盟和美国市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非那雄胺原料药",
+      "evidence_span": "葛店人福的黄体酮、非那雄胺、布地奈德等原料药的质量标准已全面对接欧盟和美国市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "布地奈德原料药",
+      "evidence_span": "葛店人福的黄体酮、非那雄胺、布地奈德等原料药的质量标准已全面对接欧盟和美国市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗器械",
+      "evidence_span": "以北京巴瑞医疗为核心的医疗器械流通平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IVD器械",
+      "evidence_span": "北京巴瑞是罗氏诊断在国内的最大区域经销商之一，主要从事华北地区的IVD器械流通业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "独家品种",
+      "evidence_span": "多个产品为独家品种"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "罗氏诊断",
+      "evidence_span": "与罗氏诊断密切合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "麻醉药品壁垒属性",
+      "evidence_span": "麻醉药品壁垒属性显现"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药工业",
+        "evidence_span": "医药工业与医药商业两大板块双轮驱动的业务格局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药商业",
+        "evidence_span": "医药工业与医药商业两大板块双轮驱动的业务格局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "麻醉镇痛药",
+        "evidence_span": "以宜昌人福为核心的麻醉镇痛药板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特色药",
+        "evidence_span": "以新疆维药（维吾尔民族药）、葛店人福（生育调节药）等为核心的特色药板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "海外仿制药",
+        "evidence_span": "以EpicPharma为核心的海外仿制药板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精神麻醉药龙头",
+        "evidence_span": "精神麻醉药龙头，医药细分市场领导者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医药细分市场领导者",
+        "evidence_span": "精神麻醉药龙头，医药细分市场领导者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域性医药流通龙头",
+        "evidence_span": "着力打造区域性医药流通龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阿片类镇痛药物",
+        "evidence_span": "产品主要以阿片类镇痛药物为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芬太尼家族药物",
+        "evidence_span": "主要产品为芬太尼家族为主的阿片类镇痛药物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "舒芬太尼",
+        "evidence_span": "舒芬太尼是镇痛效果最强的阿片类药物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "米非司酮制剂",
+        "evidence_span": "主要产品是（复方）米非司酮制剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复方米非司酮",
+        "evidence_span": "公司的复方米非司酮是全国独家品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "祖卡木颗粒",
+        "evidence_span": "新疆维药的祖卡木颗粒等4个产品已在中亚国家注册销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄体酮原料药",
+        "evidence_span": "葛店人福的黄体酮、非那雄胺、布地奈德等原料药的质量标准已全面对接欧盟和美国市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非那雄胺原料药",
+        "evidence_span": "葛店人福的黄体酮、非那雄胺、布地奈德等原料药的质量标准已全面对接欧盟和美国市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "布地奈德原料药",
+        "evidence_span": "葛店人福的黄体酮、非那雄胺、布地奈德等原料药的质量标准已全面对接欧盟和美国市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗器械",
+        "evidence_span": "以北京巴瑞医疗为核心的医疗器械流通平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IVD器械",
+        "evidence_span": "北京巴瑞是罗氏诊断在国内的最大区域经销商之一，主要从事华北地区的IVD器械流通业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "独家品种",
+        "evidence_span": "多个产品为独家品种"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "罗氏诊断",
+        "evidence_span": "与罗氏诊断密切合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "麻醉药品壁垒属性",
+        "evidence_span": "麻醉药品壁垒属性显现"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:13:41"
+}

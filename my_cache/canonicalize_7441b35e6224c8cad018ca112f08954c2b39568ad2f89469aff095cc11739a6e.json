@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:21:45", "result": {"span_uid": "0abc0cc08ce7", "action": "rewrite", "canonical_text": "HBM采用TSV（硅通孔）技术来突破内存带宽与容量瓶颈，属于新一代的DRAM解决方案。", "final_type": "core", "final_role": "核心技术", "stability": "high", "reason": "明确HBM的关键技术（TSV）及其作用，信息稳定且可独立成立，改写后更规范。"}}

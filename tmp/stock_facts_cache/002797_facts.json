@@ -1,0 +1,484 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产管理业务",
+      "evidence_span": "资产管理业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "固定收益业务",
+      "evidence_span": "固定收益业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资银行业务",
+      "evidence_span": "投资银行业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "证券经纪",
+      "evidence_span": "证券经纪及信用业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信用业务",
+      "evidence_span": "证券经纪及信用业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "私募股权基金管理",
+      "evidence_span": "私募股权基金管理及另类投资业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "另类投资业务",
+      "evidence_span": "私募股权基金管理及另类投资业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自营投资",
+      "evidence_span": "自营投资及交易业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "交易业务",
+      "evidence_span": "自营投资及交易业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "有固定收益特色的证券公司",
+      "evidence_span": "成为有固定收益特色的、以资产管理业务为核心的证券公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "以资产管理业务为核心的证券公司",
+      "evidence_span": "成为有固定收益特色的、以资产管理业务为核心的证券公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集合资产管理",
+      "evidence_span": "集合资产管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单一资产管理",
+      "evidence_span": "单一资产管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专项资产管理",
+      "evidence_span": "专项资产管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公募基金",
+      "evidence_span": "公募基金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "私募资产管理",
+      "evidence_span": "私募资产管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固定收益类产品承销",
+      "evidence_span": "固定收益类产品的承销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固定收益类产品参团",
+      "evidence_span": "参团"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固定收益类产品销售",
+      "evidence_span": "销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "股权融资",
+      "evidence_span": "股权融资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "债权融资",
+      "evidence_span": "债权融资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "并购重组",
+      "evidence_span": "并购重组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "结构化融资",
+      "evidence_span": "结构化融资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新三板推荐挂牌",
+      "evidence_span": "新三板推荐挂牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "财务顾问",
+      "evidence_span": "财务顾问"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券经纪",
+      "evidence_span": "证券经纪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券投资咨询",
+      "evidence_span": "证券投资咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融资融券",
+      "evidence_span": "融资融券"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金融产品销售",
+      "evidence_span": "金融产品销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "股票质押式回购",
+      "evidence_span": "股票质押式回购"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品期货经纪",
+      "evidence_span": "商品期货经纪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金融期货经纪",
+      "evidence_span": "金融期货经纪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "期货投资咨询",
+      "evidence_span": "期货投资咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "私募股权投资基金",
+      "evidence_span": "私募股权投资基金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "另类投资",
+      "evidence_span": "另类投资业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "权益类证券投资",
+      "evidence_span": "权益类证券投资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "权益类衍生品投资",
+      "evidence_span": "权益类衍生品投资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新三板做市业务",
+      "evidence_span": "新三板做市业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ESG整合策略债券型券商资管产品",
+      "evidence_span": "ESG整合策略债券型券商资管产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公益券商资管产品",
+      "evidence_span": "公益券商资管产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FOF资管产品",
+      "evidence_span": "FOF资管产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ABS业务",
+      "evidence_span": "ABS业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公募REITs业务",
+      "evidence_span": "公募REITs业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ESG投研体系",
+      "evidence_span": "ESG投研体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "FOF团队",
+      "evidence_span": "FOF团队"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ABS业务特色",
+      "evidence_span": "ABS业务特色"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "机构客户",
+      "evidence_span": "机构客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "个人客户",
+      "evidence_span": "个人客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京国企",
+      "evidence_span": "北京国企"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产管理业务",
+        "evidence_span": "资产管理业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "固定收益业务",
+        "evidence_span": "固定收益业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资银行业务",
+        "evidence_span": "投资银行业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "证券经纪及信用业务",
+        "evidence_span": "证券经纪及信用业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "私募股权基金管理及另类投资业务",
+        "evidence_span": "私募股权基金管理及另类投资业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自营投资及交易业务",
+        "evidence_span": "自营投资及交易业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "有固定收益特色的证券公司",
+        "evidence_span": "成为有固定收益特色的、以资产管理业务为核心的证券公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "以资产管理业务为核心的证券公司",
+        "evidence_span": "成为有固定收益特色的、以资产管理业务为核心的证券公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集合资产管理",
+        "evidence_span": "集合资产管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单一资产管理",
+        "evidence_span": "单一资产管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专项资产管理",
+        "evidence_span": "专项资产管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公募基金",
+        "evidence_span": "公募基金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "私募资产管理",
+        "evidence_span": "私募资产管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固定收益类产品承销",
+        "evidence_span": "固定收益类产品的承销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固定收益类产品参团",
+        "evidence_span": "参团"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固定收益类产品销售",
+        "evidence_span": "销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "股权融资",
+        "evidence_span": "股权融资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "债权融资",
+        "evidence_span": "债权融资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "并购重组",
+        "evidence_span": "并购重组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "结构化融资",
+        "evidence_span": "结构化融资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新三板推荐挂牌",
+        "evidence_span": "新三板推荐挂牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "财务顾问",
+        "evidence_span": "财务顾问"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券经纪",
+        "evidence_span": "证券经纪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券投资咨询",
+        "evidence_span": "证券投资咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融资融券",
+        "evidence_span": "融资融券"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金融产品销售",
+        "evidence_span": "金融产品销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "股票质押式回购",
+        "evidence_span": "股票质押式回购"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品期货经纪",
+        "evidence_span": "商品期货经纪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金融期货经纪",
+        "evidence_span": "金融期货经纪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "期货投资咨询",
+        "evidence_span": "期货投资咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "私募股权投资基金",
+        "evidence_span": "私募股权投资基金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "另类投资",
+        "evidence_span": "另类投资业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "权益类证券投资",
+        "evidence_span": "权益类证券投资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "权益类衍生品投资",
+        "evidence_span": "权益类衍生品投资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新三板做市业务",
+        "evidence_span": "新三板做市业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ESG整合策略债券型券商资管产品",
+        "evidence_span": "ESG整合策略债券型券商资管产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公益券商资管产品",
+        "evidence_span": "公益券商资管产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FOF资管产品",
+        "evidence_span": "FOF资管产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ABS业务",
+        "evidence_span": "ABS业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公募REITs业务",
+        "evidence_span": "公募REITs业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ESG投研体系",
+        "evidence_span": "ESG投研体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "FOF团队",
+        "evidence_span": "FOF团队"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ABS业务特色",
+        "evidence_span": "ABS业务特色"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "机构客户",
+        "evidence_span": "机构客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "个人客户",
+        "evidence_span": "个人客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京国企",
+        "evidence_span": "北京国企"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:42:54"
+}

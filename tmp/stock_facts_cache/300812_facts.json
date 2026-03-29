@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "平板显示模组组装设备",
+      "evidence_span": "公司主要从事平板显示模组组装设备的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体微组装设备",
+      "evidence_span": "已向半导体微组装设备、Mini LED 巨量转移生产设备等领域拓展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "Mini LED 巨量转移生产设备",
+      "evidence_span": "已向半导体微组装设备、Mini LED 巨量转移生产设备等领域拓展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "平板显示器件生产设备供应商",
+      "evidence_span": "公司是国内平板显示器件生产设备行业的优秀企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全自动平板显示模组组装设备研发和制造企业",
+      "evidence_span": "公司是国内为数不多的具备全自动平板显示模组组装设备研发和制造能力的企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "偏光片贴附系列设备",
+      "evidence_span": "主要产品为偏光片贴附系列设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "背光组装系列设备",
+      "evidence_span": "主要产品为...背光组装系列设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全贴合系列设备",
+      "evidence_span": "主要产品为...全贴合系列设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清洗设备",
+      "evidence_span": "主要产品为...清洗设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "邦定设备",
+      "evidence_span": "主要产品为...邦定设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他自动化专用设备",
+      "evidence_span": "主要产品为...其他自动化专用设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Mini LED 返修设备",
+      "evidence_span": "公司子公司微组半导体持续加大 Mini LED 返修设备及半导体封装设备方面的研发力度"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体封装设备",
+      "evidence_span": "公司子公司微组半导体持续加大 Mini LED 返修设备及半导体封装设备方面的研发力度"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Mini LED 巨量转移整线设备",
+      "evidence_span": "公司子公司易天半导体专注于 Mini LED 巨量转移整线设备的研发和制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CT 探测器高精度微组装设备",
+      "evidence_span": "公司控股子公司微组半导体研发并推出的 CT 探测器高精度微组装设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Mini LED 检测返修设备",
+      "evidence_span": "Mini LED 检测返修设备(COG 背光/直显）和 COB 直显 Mini LED 检测返修设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅基 OLED 玻璃贴合设备",
+      "evidence_span": "硅基 OLED 玻璃贴合设备已实现出货"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SHEET 贴附方式",
+      "evidence_span": "公司研发并推出首款采用 SHEET 贴附方式的研磨水洗偏光片贴附生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "芯片巨量转移技术",
+      "evidence_span": "公司自主研发的芯片巨量转移技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光局部焊接工艺",
+      "evidence_span": "公司以激光局部焊接工艺代替传统回流焊整板焊接工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精密级校正平台",
+      "evidence_span": "采用公司自主研发的高精密级校正平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视觉定位系统",
+      "evidence_span": "采用...视觉定位系统精确校正"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多研磨头上下同时研磨技术",
+      "evidence_span": "公司自主研发了多研磨头上下同时研磨技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AOI 在线缺陷检测技术",
+      "evidence_span": "公司自主研发了...AOI 在线缺陷检测技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东方",
+      "evidence_span": "与京东方、深天马、TCL 等国内外行业龙头企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深天马",
+      "evidence_span": "与京东方、深天马、TCL 等国内外行业龙头企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TCL",
+      "evidence_span": "与京东方、深天马、TCL 等国内外行业龙头企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华星光电",
+      "evidence_span": "获得了华星光电、聚华、维信诺等客户的订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "聚华",
+      "evidence_span": "获得了华星光电、聚华、维信诺等客户的订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "维信诺",
+      "evidence_span": "获得了华星光电、聚华、维信诺等客户的订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航卫通用",
+      "evidence_span": "公司控股子公司微组半导体在持续加深与原有医疗行业客户航卫通用、联影医疗、东软医疗合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联影医疗",
+      "evidence_span": "公司控股子公司微组半导体在持续加深与原有医疗行业客户航卫通用、联影医疗、东软医疗合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东软医疗",
+      "evidence_span": "公司控股子公司微组半导体在持续加深与原有医疗行业客户航卫通用、联影医疗、东软医疗合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "为客户提供国产化设备，实现进口替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "平板显示模组组装设备",
+        "evidence_span": "公司主要从事平板显示模组组装设备的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体微组装设备",
+        "evidence_span": "已向半导体微组装设备、Mini LED 巨量转移生产设备等领域拓展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "Mini LED 巨量转移生产设备",
+        "evidence_span": "已向半导体微组装设备、Mini LED 巨量转移生产设备等领域拓展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "平板显示器件生产设备供应商",
+        "evidence_span": "公司是国内平板显示器件生产设备行业的优秀企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全自动平板显示模组组装设备研发和制造企业",
+        "evidence_span": "公司是国内为数不多的具备全自动平板显示模组组装设备研发和制造能力的企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "偏光片贴附系列设备",
+        "evidence_span": "主要产品为偏光片贴附系列设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "背光组装系列设备",
+        "evidence_span": "主要产品为...背光组装系列设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全贴合系列设备",
+        "evidence_span": "主要产品为...全贴合系列设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清洗设备",
+        "evidence_span": "主要产品为...清洗设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "邦定设备",
+        "evidence_span": "主要产品为...邦定设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他自动化专用设备",
+        "evidence_span": "主要产品为...其他自动化专用设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Mini LED 返修设备",
+        "evidence_span": "公司子公司微组半导体持续加大 Mini LED 返修设备及半导体封装设备方面的研发力度"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体封装设备",
+        "evidence_span": "公司子公司微组半导体持续加大 Mini LED 返修设备及半导体封装设备方面的研发力度"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Mini LED 巨量转移整线设备",
+        "evidence_span": "公司子公司易天半导体专注于 Mini LED 巨量转移整线设备的研发和制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CT 探测器高精度微组装设备",
+        "evidence_span": "公司控股子公司微组半导体研发并推出的 CT 探测器高精度微组装设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Mini LED 检测返修设备",
+        "evidence_span": "Mini LED 检测返修设备(COG 背光/直显）和 COB 直显 Mini LED 检测返修设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅基 OLED 玻璃贴合设备",
+        "evidence_span": "硅基 OLED 玻璃贴合设备已实现出货"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SHEET 贴附方式",
+        "evidence_span": "公司研发并推出首款采用 SHEET 贴附方式的研磨水洗偏光片贴附生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "芯片巨量转移技术",
+        "evidence_span": "公司自主研发的芯片巨量转移技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光局部焊接工艺",
+        "evidence_span": "公司以激光局部焊接工艺代替传统回流焊整板焊接工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精密级校正平台",
+        "evidence_span": "采用公司自主研发的高精密级校正平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视觉定位系统",
+        "evidence_span": "采用...视觉定位系统精确校正"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多研磨头上下同时研磨技术",
+        "evidence_span": "公司自主研发了多研磨头上下同时研磨技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AOI 在线缺陷检测技术",
+        "evidence_span": "公司自主研发了...AOI 在线缺陷检测技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东方",
+        "evidence_span": "与京东方、深天马、TCL 等国内外行业龙头企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深天马",
+        "evidence_span": "与京东方、深天马、TCL 等国内外行业龙头企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TCL",
+        "evidence_span": "与京东方、深天马、TCL 等国内外行业龙头企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华星光电",
+        "evidence_span": "获得了华星光电、聚华、维信诺等客户的订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "聚华",
+        "evidence_span": "获得了华星光电、聚华、维信诺等客户的订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "维信诺",
+        "evidence_span": "获得了华星光电、聚华、维信诺等客户的订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航卫通用",
+        "evidence_span": "公司控股子公司微组半导体在持续加深与原有医疗行业客户航卫通用、联影医疗、东软医疗合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联影医疗",
+        "evidence_span": "公司控股子公司微组半导体在持续加深与原有医疗行业客户航卫通用、联影医疗、东软医疗合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东软医疗",
+        "evidence_span": "公司控股子公司微组半导体在持续加深与原有医疗行业客户航卫通用、联影医疗、东软医疗合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "为客户提供国产化设备，实现进口替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:19:34"
+}

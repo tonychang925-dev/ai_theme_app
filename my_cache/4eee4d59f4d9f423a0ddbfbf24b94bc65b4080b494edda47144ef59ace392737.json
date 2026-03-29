@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "fed2eee145a9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "段落涉及机器人部队执行任务、无人系统作战等军事技术知识，但以事件形式（乌克兰冲突变化、首次被俘）报道，可能含有对军工题材有价值的信息，需进一步处理。"}}

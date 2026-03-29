@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "95af51bb61ec", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述东航接收第7架C919飞机的事件，是具体的时间性动态，没有提供静态知识。"}}

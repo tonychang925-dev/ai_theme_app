@@ -1,0 +1,214 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电镀液",
+      "evidence_span": "形成了电镀液及配套试剂、光刻胶及配套试剂两大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "配套试剂",
+      "evidence_span": "形成了电镀液及配套试剂、光刻胶及配套试剂两大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光刻胶",
+      "evidence_span": "形成了电镀液及配套试剂、光刻胶及配套试剂两大业务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电子化学品企业",
+      "evidence_span": "艾森股份是国内领先的电子化学品企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体封装用电镀液及配套试剂生产企业",
+      "evidence_span": "公司是国内前二的半导体封装用电镀液及配套试剂生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电镀液及配套试剂",
+      "evidence_span": "致力于电镀液及配套试剂、光刻胶及配套试剂的研发、生产及销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光刻胶及配套试剂",
+      "evidence_span": "致力于电镀液及配套试剂、光刻胶及配套试剂的研发、生产及销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "先进封装用电镀铜基液",
+      "evidence_span": "公司先进封装用电镀铜基液(高纯硫酸铜)已在华天科技正式供应"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "先进封装用电镀锡银添加剂",
+      "evidence_span": "先进封装用电镀锡银添加剂已通过长电科技的认证"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "先进封装用q/i线负性光刻胶",
+      "evidence_span": "公司自研先进封装用q/i线负性光刻胶、晶圆制造浅线正性光刻胶均已实现批量供应"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "晶圆制造浅线正性光刻胶",
+      "evidence_span": "公司自研先进封装用q/i线负性光刻胶、晶圆制造浅线正性光刻胶均已实现批量供应"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "晶圆制造正性PSPI",
+      "evidence_span": "晶圆制造正性PSP已获得主流晶圆厂的首个国产化材料订单"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OLED阵列制造用光刻胶",
+      "evidence_span": "公司以先进封装负性光刻胶、OLED阵列制造用光刻胶以及晶圆用PSPI等特色,工艺光刻胶为突破口"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "28nm大马士革镀铜添加剂",
+      "evidence_span": "28nm大马士革镀铜添加剂已在华力小批量验证中"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "14nm超纯硫酸钴",
+      "evidence_span": "14nm超纯硫酸钴也已在华力验证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长电科技",
+      "evidence_span": "与长电科技、通富微电、华天科技、日月新、国巨电子等知名厂商建立了稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通富微电",
+      "evidence_span": "与长电科技、通富微电、华天科技、日月新、国巨电子等知名厂商建立了稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华天科技",
+      "evidence_span": "与长电科技、通富微电、华天科技、日月新、国巨电子等知名厂商建立了稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日月新",
+      "evidence_span": "与长电科技、通富微电、华天科技、日月新、国巨电子等知名厂商建立了稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国巨电子",
+      "evidence_span": "与长电科技、通富微电、华天科技、日月新、国巨电子等知名厂商建立了稳定合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化材料",
+      "evidence_span": "晶圆制造正性PSP已获得主流晶圆厂的首个国产化材料订单"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电镀液及配套试剂",
+        "evidence_span": "形成了电镀液及配套试剂、光刻胶及配套试剂两大业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光刻胶及配套试剂",
+        "evidence_span": "形成了电镀液及配套试剂、光刻胶及配套试剂两大业务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电子化学品企业",
+        "evidence_span": "艾森股份是国内领先的电子化学品企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体封装用电镀液及配套试剂生产企业",
+        "evidence_span": "公司是国内前二的半导体封装用电镀液及配套试剂生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电镀液及配套试剂",
+        "evidence_span": "致力于电镀液及配套试剂、光刻胶及配套试剂的研发、生产及销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光刻胶及配套试剂",
+        "evidence_span": "致力于电镀液及配套试剂、光刻胶及配套试剂的研发、生产及销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "先进封装用电镀铜基液",
+        "evidence_span": "公司先进封装用电镀铜基液(高纯硫酸铜)已在华天科技正式供应"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "先进封装用电镀锡银添加剂",
+        "evidence_span": "先进封装用电镀锡银添加剂已通过长电科技的认证"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "先进封装用q/i线负性光刻胶",
+        "evidence_span": "公司自研先进封装用q/i线负性光刻胶、晶圆制造浅线正性光刻胶均已实现批量供应"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "晶圆制造浅线正性光刻胶",
+        "evidence_span": "公司自研先进封装用q/i线负性光刻胶、晶圆制造浅线正性光刻胶均已实现批量供应"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "晶圆制造正性PSPI",
+        "evidence_span": "晶圆制造正性PSP已获得主流晶圆厂的首个国产化材料订单"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OLED阵列制造用光刻胶",
+        "evidence_span": "公司以先进封装负性光刻胶、OLED阵列制造用光刻胶以及晶圆用PSPI等特色,工艺光刻胶为突破口"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "28nm大马士革镀铜添加剂",
+        "evidence_span": "28nm大马士革镀铜添加剂已在华力小批量验证中"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "14nm超纯硫酸钴",
+        "evidence_span": "14nm超纯硫酸钴也已在华力验证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长电科技",
+        "evidence_span": "与长电科技、通富微电、华天科技、日月新、国巨电子等知名厂商建立了稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通富微电",
+        "evidence_span": "与长电科技、通富微电、华天科技、日月新、国巨电子等知名厂商建立了稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华天科技",
+        "evidence_span": "与长电科技、通富微电、华天科技、日月新、国巨电子等知名厂商建立了稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日月新",
+        "evidence_span": "与长电科技、通富微电、华天科技、日月新、国巨电子等知名厂商建立了稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国巨电子",
+        "evidence_span": "与长电科技、通富微电、华天科技、日月新、国巨电子等知名厂商建立了稳定合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化材料",
+        "evidence_span": "晶圆制造正性PSP已获得主流晶圆厂的首个国产化材料订单"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:40:14"
+}

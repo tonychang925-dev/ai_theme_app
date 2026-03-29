@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型灭火抑爆系统",
+      "evidence_span": "公司主要从事新型灭火抑爆系统"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "三防通用采集驱动装置",
+      "evidence_span": "某三防通用采集驱动装置"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高能航空点火放电器件",
+      "evidence_span": "高能航空点火放电器件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高精度熔断器件",
+      "evidence_span": "高精度熔断器件等产品研发、生产、销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用灭火抑爆系统自主研发量产公司",
+      "evidence_span": "国内为数不多的具备军用灭火抑爆系统自主研发能力并实现量产的公司之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空放电管",
+      "evidence_span": "公司主要产品为航空放电管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种熔断器",
+      "evidence_span": "特种熔断器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型灭火抑爆系统",
+      "evidence_span": "新型灭火抑爆系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三防采集驱动装置",
+      "evidence_span": "三防采集驱动装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "矿用灭火抑爆系统",
+      "evidence_span": "民用系统类产品主要以矿用灭火抑爆系统产品为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池储能站安全防护系统",
+      "evidence_span": "公司持续加大锂电池储能站安全防护系统的研制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高可靠实时探测技术",
+      "evidence_span": "高可靠实时探测技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂环境下的火焰信息提取与识别技术",
+      "evidence_span": "复杂环境下的火焰信息提取与识别技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多信息融合与智能控制技术",
+      "evidence_span": "多信息融合与智能控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "温度与红外背景智能自适应补偿技术",
+      "evidence_span": "温度与红外背景智能自适应补偿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "灭火抑爆技术平台",
+      "evidence_span": "建立灭火抑爆技术平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国兵器工业集团",
+      "evidence_span": "公司与中国兵器工业集团下属某集团公司持续合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中航物资装备有限公司",
+      "evidence_span": "已与中航物资装备有限公司签订《战略合作协议书》"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国航空工业集团公司",
+      "evidence_span": "目前已与中国航空工业集团公司下属某研究所签订了《技术开发合同》"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化替代",
+      "evidence_span": "核心器件国产化替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型灭火抑爆系统",
+        "evidence_span": "公司主要从事新型灭火抑爆系统"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "三防通用采集驱动装置",
+        "evidence_span": "某三防通用采集驱动装置"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高能航空点火放电器件",
+        "evidence_span": "高能航空点火放电器件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高精度熔断器件",
+        "evidence_span": "高精度熔断器件等产品研发、生产、销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用灭火抑爆系统自主研发量产公司",
+        "evidence_span": "国内为数不多的具备军用灭火抑爆系统自主研发能力并实现量产的公司之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空放电管",
+        "evidence_span": "公司主要产品为航空放电管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种熔断器",
+        "evidence_span": "特种熔断器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型灭火抑爆系统",
+        "evidence_span": "新型灭火抑爆系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三防采集驱动装置",
+        "evidence_span": "三防采集驱动装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "矿用灭火抑爆系统",
+        "evidence_span": "民用系统类产品主要以矿用灭火抑爆系统产品为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池储能站安全防护系统",
+        "evidence_span": "公司持续加大锂电池储能站安全防护系统的研制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高可靠实时探测技术",
+        "evidence_span": "高可靠实时探测技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂环境下的火焰信息提取与识别技术",
+        "evidence_span": "复杂环境下的火焰信息提取与识别技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多信息融合与智能控制技术",
+        "evidence_span": "多信息融合与智能控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "温度与红外背景智能自适应补偿技术",
+        "evidence_span": "温度与红外背景智能自适应补偿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "灭火抑爆技术平台",
+        "evidence_span": "建立灭火抑爆技术平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国兵器工业集团",
+        "evidence_span": "公司与中国兵器工业集团下属某集团公司持续合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中航物资装备有限公司",
+        "evidence_span": "已与中航物资装备有限公司签订《战略合作协议书》"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国航空工业集团公司",
+        "evidence_span": "目前已与中国航空工业集团公司下属某研究所签订了《技术开发合同》"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化替代",
+        "evidence_span": "核心器件国产化替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:39:20"
+}

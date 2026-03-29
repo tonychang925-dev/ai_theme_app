@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:39:50", "result": {"span_uid": "4fdb59347119", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述在特定硬件上推出具体软件版本的事件，属于短期技术更新，无法形成稳定、可脱离上下文独立理解的知识块。"}}

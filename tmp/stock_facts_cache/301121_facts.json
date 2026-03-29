@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "消费类锂离子电池业务",
+      "evidence_span": "公司专注于消费类锂离子电池业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方形电池",
+      "evidence_span": "主要产品按照外形划分可分为方形电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "扣式电池",
+      "evidence_span": "主要产品按照外形划分可分为扣式电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圆柱电池",
+      "evidence_span": "主要产品按照外形划分可分为圆柱电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "针型电池",
+      "evidence_span": "主要产品按照外形划分可分为针型电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硬壳叠片扣式电池",
+      "evidence_span": "硬壳叠片扣式电池针对高端市场"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "叠片工艺",
+      "evidence_span": "成功开发出叠片工艺硬壳扣式电池"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "叠片式扣式电池技术",
+      "evidence_span": "公司通过叠片工艺硬壳扣式电池技术进入大厂供应链"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "公司的下游客户包括华为"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "公司的下游客户包括小米"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "公司的下游客户包括OPPO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "vivo",
+      "evidence_span": "公司的下游客户包括vivo"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "哈曼",
+      "evidence_span": "公司的下游客户包括哈曼"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "B&O",
+      "evidence_span": "公司的下游客户包括B&O"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "森海塞尔",
+      "evidence_span": "公司的下游客户包括森海塞尔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Jabra",
+      "evidence_span": "公司的下游客户包括Jabra"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "缤特力",
+      "evidence_span": "公司的下游客户包括缤特力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "索尼",
+      "evidence_span": "公司的下游客户包括索尼"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LG",
+      "evidence_span": "公司的下游客户包括LG"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "松下",
+      "evidence_span": "公司的下游客户包括松下"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "先锋",
+      "evidence_span": "公司的下游客户包括先锋"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁三角",
+      "evidence_span": "公司的下游客户包括铁三角"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Marshall",
+      "evidence_span": "公司的下游客户包括Marshall"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "3M",
+      "evidence_span": "公司的下游客户包括3M"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Anker",
+      "evidence_span": "公司的下游客户包括Anker"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "谷歌",
+      "evidence_span": "公司的下游客户包括谷歌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Jlab",
+      "evidence_span": "公司的下游客户包括Jlab"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "漫步者",
+      "evidence_span": "公司的下游客户包括漫步者"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "JVC",
+      "evidence_span": "公司的下游客户包括JVC"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一加",
+      "evidence_span": "公司的下游客户包括一加"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "1more",
+      "evidence_span": "公司的下游客户包括1more"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "消费类锂离子电池业务",
+        "evidence_span": "公司专注于消费类锂离子电池业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方形电池",
+        "evidence_span": "主要产品按照外形划分可分为方形电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "扣式电池",
+        "evidence_span": "主要产品按照外形划分可分为扣式电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圆柱电池",
+        "evidence_span": "主要产品按照外形划分可分为圆柱电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "针型电池",
+        "evidence_span": "主要产品按照外形划分可分为针型电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硬壳叠片扣式电池",
+        "evidence_span": "硬壳叠片扣式电池针对高端市场"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "叠片工艺",
+        "evidence_span": "成功开发出叠片工艺硬壳扣式电池"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "叠片式扣式电池技术",
+        "evidence_span": "公司通过叠片工艺硬壳扣式电池技术进入大厂供应链"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "公司的下游客户包括华为"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "公司的下游客户包括小米"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "公司的下游客户包括OPPO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "vivo",
+        "evidence_span": "公司的下游客户包括vivo"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "哈曼",
+        "evidence_span": "公司的下游客户包括哈曼"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "B&O",
+        "evidence_span": "公司的下游客户包括B&O"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "森海塞尔",
+        "evidence_span": "公司的下游客户包括森海塞尔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Jabra",
+        "evidence_span": "公司的下游客户包括Jabra"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "缤特力",
+        "evidence_span": "公司的下游客户包括缤特力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "索尼",
+        "evidence_span": "公司的下游客户包括索尼"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LG",
+        "evidence_span": "公司的下游客户包括LG"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "松下",
+        "evidence_span": "公司的下游客户包括松下"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "先锋",
+        "evidence_span": "公司的下游客户包括先锋"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁三角",
+        "evidence_span": "公司的下游客户包括铁三角"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Marshall",
+        "evidence_span": "公司的下游客户包括Marshall"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "3M",
+        "evidence_span": "公司的下游客户包括3M"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Anker",
+        "evidence_span": "公司的下游客户包括Anker"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "谷歌",
+        "evidence_span": "公司的下游客户包括谷歌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Jlab",
+        "evidence_span": "公司的下游客户包括Jlab"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "漫步者",
+        "evidence_span": "公司的下游客户包括漫步者"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "JVC",
+        "evidence_span": "公司的下游客户包括JVC"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一加",
+        "evidence_span": "公司的下游客户包括一加"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "1more",
+        "evidence_span": "公司的下游客户包括1more"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:39:46"
+}

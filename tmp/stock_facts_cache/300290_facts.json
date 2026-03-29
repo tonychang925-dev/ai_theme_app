@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧医疗",
+      "evidence_span": "公司所从事的主要业务为智慧医疗、健康数据和云计算及运维服务两大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "健康数据",
+      "evidence_span": "公司所从事的主要业务为智慧医疗、健康数据和云计算及运维服务两大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "云计算",
+      "evidence_span": "公司所从事的主要业务为智慧医疗、健康数据和云计算及运维服务两大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运维服务",
+      "evidence_span": "公司所从事的主要业务为智慧医疗、健康数据和云计算及运维服务两大板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医疗行业内信息化产品门类最齐全的公司",
+      "evidence_span": "荣科科技作为医疗行业内信息化产品门类最齐全的公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "深耕东北地区的IT服务提供商",
+      "evidence_span": "深耕东北地区的IT服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "东北区域系统集成龙头企业",
+      "evidence_span": "东北区域的系统集成龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧医院解决方案",
+      "evidence_span": "荣科智慧医院解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "紧密型县域医共体解决方案",
+      "evidence_span": "荣科紧密型县域医共体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字健康城市",
+      "evidence_span": "荣科数字健康城市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "临床信息化细分产品",
+      "evidence_span": "基于临床信息化细分产品和健康大数据平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "健康大数据平台",
+      "evidence_span": "基于临床信息化细分产品和健康大数据平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智维云平台",
+      "evidence_span": "以智维云平台为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全栈式云增值服务",
+      "evidence_span": "提供全栈式云增值服务与标准增值服务相结合的双态服务支持"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字政府解决方案",
+      "evidence_span": "数字政府方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字民生产品和服务",
+      "evidence_span": "数字民生方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字能源应用系统",
+      "evidence_span": "数字能源方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医保DRG/DIP解决方案",
+      "evidence_span": "医保DRG/DIP、质控、智慧病案全新整体解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据、AI、区块链等核心能力",
+      "evidence_span": "依托大数据、AI、区块链等核心能力的智慧化生态赋能中台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云计算、物联网、移动互联网及人工智能技术",
+      "evidence_span": "采用云计算、物联网、移动互联网及人工智能等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微服务、大数据、中台技术",
+      "evidence_span": "结合微服务、大数据、中台等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "医疗信创环境适配能力",
+      "evidence_span": "整合医疗信创环境适配、医疗行业中间件搭建、大数据分析能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器学习技术、语言识别处理、图像识别、知识图谱",
+      "evidence_span": "机器学习技术、语言识别处理、图像识别、知识图谱、低代码平台等技术能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融、教育、医疗、政府、能源、通信等行业客户",
+      "evidence_span": "为金融、教育、医疗、政府、能源、通信等行业客户提供全栈式云增值服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医疗、能源、金融、政府、教育等各类需求客户",
+      "evidence_span": "紧扣下游医疗、能源、金融、政府、教育等各类需求客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化替代",
+      "evidence_span": "助力国产化信创之路"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信创产业",
+      "evidence_span": "信创成为国家发展的重要推手"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧医疗、健康数据",
+        "evidence_span": "公司所从事的主要业务为智慧医疗、健康数据和云计算及运维服务两大板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "云计算及运维服务",
+        "evidence_span": "公司所从事的主要业务为智慧医疗、健康数据和云计算及运维服务两大板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医疗行业内信息化产品门类最齐全的公司",
+        "evidence_span": "荣科科技作为医疗行业内信息化产品门类最齐全的公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "深耕东北地区的IT服务提供商",
+        "evidence_span": "深耕东北地区的IT服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "东北区域系统集成龙头企业",
+        "evidence_span": "东北区域的系统集成龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧医院解决方案",
+        "evidence_span": "荣科智慧医院解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "紧密型县域医共体解决方案",
+        "evidence_span": "荣科紧密型县域医共体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字健康城市",
+        "evidence_span": "荣科数字健康城市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "临床信息化细分产品",
+        "evidence_span": "基于临床信息化细分产品和健康大数据平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "健康大数据平台",
+        "evidence_span": "基于临床信息化细分产品和健康大数据平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智维云平台",
+        "evidence_span": "以智维云平台为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全栈式云增值服务",
+        "evidence_span": "提供全栈式云增值服务与标准增值服务相结合的双态服务支持"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字政府解决方案",
+        "evidence_span": "数字政府方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字民生产品和服务",
+        "evidence_span": "数字民生方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字能源应用系统",
+        "evidence_span": "数字能源方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医保DRG/DIP解决方案",
+        "evidence_span": "医保DRG/DIP、质控、智慧病案全新整体解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据、AI、区块链等核心能力",
+        "evidence_span": "依托大数据、AI、区块链等核心能力的智慧化生态赋能中台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云计算、物联网、移动互联网及人工智能技术",
+        "evidence_span": "采用云计算、物联网、移动互联网及人工智能等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微服务、大数据、中台技术",
+        "evidence_span": "结合微服务、大数据、中台等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "医疗信创环境适配能力",
+        "evidence_span": "整合医疗信创环境适配、医疗行业中间件搭建、大数据分析能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器学习技术、语言识别处理、图像识别、知识图谱",
+        "evidence_span": "机器学习技术、语言识别处理、图像识别、知识图谱、低代码平台等技术能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融、教育、医疗、政府、能源、通信等行业客户",
+        "evidence_span": "为金融、教育、医疗、政府、能源、通信等行业客户提供全栈式云增值服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医疗、能源、金融、政府、教育等各类需求客户",
+        "evidence_span": "紧扣下游医疗、能源、金融、政府、教育等各类需求客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化替代",
+        "evidence_span": "助力国产化信创之路"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信创产业",
+        "evidence_span": "信创成为国家发展的重要推手"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:29:08"
+}

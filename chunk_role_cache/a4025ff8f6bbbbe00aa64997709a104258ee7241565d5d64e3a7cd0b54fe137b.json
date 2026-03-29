@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "5f8d554d5f4c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落列举多个事件，包括广州市委书记调研、珠海系统发布、基金设立和杭州无人机航线启用，都是政策、发布和动态新闻，没有稳定知识构建。"}}

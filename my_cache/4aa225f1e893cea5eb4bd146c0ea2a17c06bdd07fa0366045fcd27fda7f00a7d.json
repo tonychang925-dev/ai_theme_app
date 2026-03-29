@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:10:23", "result": {"chunk_id": "a4a801caf18f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了华为等公司囤积HBM芯片的具体事件，但涉及芯片类型（HBM芯片）和潜在限制，可能包含对华为芯片链有价值的知识（如供应链策略），但混合了事件信息，需要进一步裁决。"}}

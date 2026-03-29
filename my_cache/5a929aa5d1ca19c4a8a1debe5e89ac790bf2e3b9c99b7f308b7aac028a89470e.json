@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:54:59", "result": {"chunk_id": "40da3efe0e1a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落简要说明汽车零部件DSO概念的具体利好表现，属于静态知识的一部分，概述了概念的应用方面，没有事件或时间性内容。"}}

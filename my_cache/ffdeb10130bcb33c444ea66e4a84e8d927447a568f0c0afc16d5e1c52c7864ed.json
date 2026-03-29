@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:31:44", "result": {"chunk_id": "da8016984b89", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述苹果Vision Pro国行版正式发售的具体事件，包括发售日期、版本和售价，属于明确的时间性动态，没有提供静态知识。"}}

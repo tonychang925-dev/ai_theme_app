@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "纺织品设计",
+      "evidence_span": "公司的主要业务：纺织品、服装和服饰的设计、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司的主要业务：纺织品、服装和服饰的设计、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司的主要业务：纺织品、服装和服饰的设计、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服装",
+      "evidence_span": "公司的主要业务：纺织品、服装和服饰的设计、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服饰设计",
+      "evidence_span": "公司的主要业务：纺织品、服装和服饰的设计、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "羊毛",
+      "evidence_span": "羊毛及其他纺织原料辅料的收购、加工及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其他纺织原料辅料的收购",
+      "evidence_span": "羊毛及其他纺织原料辅料的收购、加工及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "加工",
+      "evidence_span": "羊毛及其他纺织原料辅料的收购、加工及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "纺织服装技术的研发",
+      "evidence_span": "纺织服装技术的研发、推广等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "推广",
+      "evidence_span": "纺织服装技术的研发、推广等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "毛纺服装行业科技创新能力和研发设计能力的领军企业",
+      "evidence_span": "成为中国毛纺服装行业科技创新能力和研发设计能力的领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家制造业单项冠军示范企业",
+      "evidence_span": "纯毛机织物荣获国家制造业单项冠军示范企业称号"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精纺呢绒面料",
+      "evidence_span": "公司产品主要为精纺呢绒面料及西装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "西装",
+      "evidence_span": "公司产品主要为精纺呢绒面料及西装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端定制面料系列",
+      "evidence_span": "高端定制面料系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "科技功能性职业装面料",
+      "evidence_span": "科技功能性职业装面料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天然高品质男女商务系列",
+      "evidence_span": "天然高品质男女商务系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可机洗功能性裤料系列",
+      "evidence_span": "可机洗功能性裤料系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "休闲单西系列",
+      "evidence_span": "休闲单西系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "庆典提花系列",
+      "evidence_span": "庆典提花系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机可洗羊毛衬衫系列",
+      "evidence_span": "机可洗羊毛衬衫系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全毛衬手工定制西装",
+      "evidence_span": "全毛衬手工定制西装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半毛衬定制西装",
+      "evidence_span": "半毛衬定制西装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "职业正装系列",
+      "evidence_span": "职业正装系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "男女大衣风衣系列",
+      "evidence_span": "男女大衣风衣系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "夹克",
+      "evidence_span": "夹克等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效短流程嵌入式复合纺纱技术",
+      "evidence_span": "高效短流程嵌入式复合纺纱技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "赛络菲尔双组份纺纱技术",
+      "evidence_span": "赛络菲尔双组份纺纱技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗菌抗病毒可机洗毛精纺面料的开发与研制",
+      "evidence_span": "抗菌抗病毒可机洗毛精纺面料的开发与研制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "银系抗菌剂",
+      "evidence_span": "银系抗菌剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "石墨烯材料",
+      "evidence_span": "石墨烯材料等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗病毒专利",
+      "evidence_span": "拥有抗病毒专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗菌专利",
+      "evidence_span": "抗菌专利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内高档职业服装",
+      "evidence_span": "是国内高档职业服装、著名品牌服装的首选面料"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "著名品牌服装",
+      "evidence_span": "是国内高档职业服装、著名品牌服装的首选面料"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "纺织品设计、生产、销售",
+        "evidence_span": "公司的主要业务：纺织品、服装和服饰的设计、生产、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "服装和服饰设计、生产、销售",
+        "evidence_span": "公司的主要业务：纺织品、服装和服饰的设计、生产、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "羊毛及其他纺织原料辅料的收购、加工及销售",
+        "evidence_span": "羊毛及其他纺织原料辅料的收购、加工及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "纺织服装技术的研发、推广",
+        "evidence_span": "纺织服装技术的研发、推广等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "毛纺服装行业科技创新能力和研发设计能力的领军企业",
+        "evidence_span": "成为中国毛纺服装行业科技创新能力和研发设计能力的领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家制造业单项冠军示范企业",
+        "evidence_span": "纯毛机织物荣获国家制造业单项冠军示范企业称号"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精纺呢绒面料",
+        "evidence_span": "公司产品主要为精纺呢绒面料及西装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "西装",
+        "evidence_span": "公司产品主要为精纺呢绒面料及西装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端定制面料系列",
+        "evidence_span": "高端定制面料系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "科技功能性职业装面料",
+        "evidence_span": "科技功能性职业装面料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天然高品质男女商务系列",
+        "evidence_span": "天然高品质男女商务系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可机洗功能性裤料系列",
+        "evidence_span": "可机洗功能性裤料系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "休闲单西系列",
+        "evidence_span": "休闲单西系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "庆典提花系列",
+        "evidence_span": "庆典提花系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机可洗羊毛衬衫系列",
+        "evidence_span": "机可洗羊毛衬衫系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全毛衬手工定制西装",
+        "evidence_span": "全毛衬手工定制西装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半毛衬定制西装",
+        "evidence_span": "半毛衬定制西装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "职业正装系列",
+        "evidence_span": "职业正装系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "男女大衣风衣系列",
+        "evidence_span": "男女大衣风衣系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "夹克",
+        "evidence_span": "夹克等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效短流程嵌入式复合纺纱技术",
+        "evidence_span": "高效短流程嵌入式复合纺纱技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "赛络菲尔双组份纺纱技术",
+        "evidence_span": "赛络菲尔双组份纺纱技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗菌抗病毒可机洗毛精纺面料的开发与研制",
+        "evidence_span": "抗菌抗病毒可机洗毛精纺面料的开发与研制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "银系抗菌剂",
+        "evidence_span": "银系抗菌剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "石墨烯材料",
+        "evidence_span": "石墨烯材料等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗病毒专利",
+        "evidence_span": "拥有抗病毒专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗菌专利",
+        "evidence_span": "抗菌专利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内高档职业服装",
+        "evidence_span": "是国内高档职业服装、著名品牌服装的首选面料"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "著名品牌服装",
+        "evidence_span": "是国内高档职业服装、著名品牌服装的首选面料"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:21:08"
+}

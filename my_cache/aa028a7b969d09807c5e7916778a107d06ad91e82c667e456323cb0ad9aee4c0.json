@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "88ae8b749c2b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述一个具体事件（英伟达计划从三星采购HBM芯片），是公司动态，没有涉及HBM的定义、结构或机制等静态知识。"}}

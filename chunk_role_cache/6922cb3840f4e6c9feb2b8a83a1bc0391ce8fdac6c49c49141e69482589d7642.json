@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "7467828df8fd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了G60星座卫星发射的具体事件（预计于8月5日举行），但同时也包含了对卫星互联网产业未来趋势的静态知识分析，如成本降低、需求爆发和产业链受益，这些可用于题材本体构建。"}}

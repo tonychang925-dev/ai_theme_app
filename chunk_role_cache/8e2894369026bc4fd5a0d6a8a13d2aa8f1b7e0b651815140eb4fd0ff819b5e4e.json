@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "b54015485dff", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落开头介绍了台积电CoWoS先进封装技术的应用（如英伟达、AMD芯片使用），这是稳定的技术知识；但后半部分描述了产能紧缺和台积电总裁的言论，涉及事件和市场动态。由于混有知识和事件，适合分类为candidate_mixed。"}}

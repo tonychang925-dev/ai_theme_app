@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药零售",
+      "evidence_span": "医药零售门店"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "便利店",
+      "evidence_span": "之佳便利店"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "药妆店",
+      "evidence_span": "药妆店"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "健康广场",
+      "evidence_span": "健康广场"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中医诊所",
+      "evidence_span": "中医诊所"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "社区诊所",
+      "evidence_span": "社区诊所"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体检中心",
+      "evidence_span": "体检中心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "社区卫生服务站",
+      "evidence_span": "社区卫生服务站"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "线上渠道",
+      "evidence_span": "线上渠道"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "连锁药店企业",
+      "evidence_span": "连锁药店企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "多业态连锁药店企业",
+      "evidence_span": "多业态连锁药店企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "头部药店企业",
+      "evidence_span": "头部药店企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中西成药",
+      "evidence_span": "中西成药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药材",
+      "evidence_span": "中药材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保健食品",
+      "evidence_span": "保健食品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗器械",
+      "evidence_span": "医疗器械"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "个人护理品",
+      "evidence_span": "个人护理品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体检服务",
+      "evidence_span": "体检服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生活便利品",
+      "evidence_span": "生活便利品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "健康营养咨询",
+      "evidence_span": "健康营养咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "皮肤护理咨询",
+      "evidence_span": "皮肤护理咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专业药事服务",
+      "evidence_span": "专业药事服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "佳E购",
+      "evidence_span": "佳E购"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "健之佳急送",
+      "evidence_span": "健之佳急送"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自建+收购双轮驱动",
+      "evidence_span": "自建+收购双轮驱动"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全渠道服务能力",
+      "evidence_span": "全渠道服务能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "河北唐人医药",
+      "evidence_span": "收购河北唐人医药"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药零售",
+        "evidence_span": "医药零售门店"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "便利店",
+        "evidence_span": "之佳便利店"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "药妆店",
+        "evidence_span": "药妆店"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "健康广场",
+        "evidence_span": "健康广场"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中医诊所",
+        "evidence_span": "中医诊所"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "社区诊所",
+        "evidence_span": "社区诊所"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体检中心",
+        "evidence_span": "体检中心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "社区卫生服务站",
+        "evidence_span": "社区卫生服务站"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "线上渠道",
+        "evidence_span": "线上渠道"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "连锁药店企业",
+        "evidence_span": "连锁药店企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "多业态连锁药店企业",
+        "evidence_span": "多业态连锁药店企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "头部药店企业",
+        "evidence_span": "头部药店企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中西成药",
+        "evidence_span": "中西成药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药材",
+        "evidence_span": "中药材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保健食品",
+        "evidence_span": "保健食品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗器械",
+        "evidence_span": "医疗器械"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "个人护理品",
+        "evidence_span": "个人护理品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体检服务",
+        "evidence_span": "体检服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生活便利品",
+        "evidence_span": "生活便利品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "健康营养咨询",
+        "evidence_span": "健康营养咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "皮肤护理咨询",
+        "evidence_span": "皮肤护理咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专业药事服务",
+        "evidence_span": "专业药事服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "佳E购",
+        "evidence_span": "佳E购"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "健之佳急送",
+        "evidence_span": "健之佳急送"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自建+收购双轮驱动",
+        "evidence_span": "自建+收购双轮驱动"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全渠道服务能力",
+        "evidence_span": "全渠道服务能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "河北唐人医药",
+        "evidence_span": "收购河北唐人医药"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:14:16"
+}

@@ -1,0 +1,122 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "高通",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "题材名称直接定义为'高通'，这是最核心的公司对象，符合产业/供应链类策略下优先识别核心产业对象的要求，必须作为must锚点。"
+      },
+      {
+        "term": "基于近存储计算的全新内存架构",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "这是高通AI芯片的核心技术特点，直接指向技术对象和关键环节，符合产业/供应链类策略下识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "大型数据中心芯片市场",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "直接指向高通进军的关键市场领域，是核心产业环节和竞争背景，符合产业/供应链类策略下识别关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "数据中心AI芯片业务",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "这是高通业务拓展的核心方向，直接对应题材名称'高通'在AI芯片领域的业务定义，是核心产业对象，必须作为must锚点。"
+      },
+      {
+        "term": "高通AI250解决方案",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "是高通具体的AI芯片产品方案，直接指向核心产品对象，符合产业/供应链类策略下识别关键产品的标准，适合作为must锚点。"
+      },
+      {
+        "term": "高通公司",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "与'高通'同义，直接对应题材名称定义的核心公司对象，是必须的must锚点，确保门禁精准识别该题材。"
+      },
+      {
+        "term": "高通AI200",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "是高通AI芯片的具体产品型号，指向核心产品对象，符合产业/供应链类策略下识别关键产品的要求，适合作为must锚点。"
+      },
+      {
+        "term": "高通AI250",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'高通'，策略类型为industry_chain，需优先识别核心产业对象/技术对象/关键环节。'高通AI250'是题材本体中明确列出的产品方案（高通AI250解决方案），直接对应高通在AI芯片业务中的具体产品，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "高通AI芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'高通'，策略类型为industry_chain，需优先识别核心产业对象/技术对象。'高通AI芯片'直接对应题材名称（高通）和业务核心（AI芯片），在原始知识和题材本体中多次出现，能稳定指向产业对象和关键环节，最适合作为must锚点。"
+      },
+      {
+        "term": "高通AI200芯片",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'高通'，策略类型为industry_chain，需优先识别核心产业对象/技术对象/关键环节。'高通AI200芯片'是题材中明确的产品（在原始知识中提及），直接对应高通在AI芯片业务中的具体产品，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "直接液冷散热方案",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然是高通AI芯片解决方案的具体技术细节，但更偏向产品实现方案而非核心产业对象或技术对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "支持通过PCIe进行纵向扩展",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于产品扩展特性，与题材名称'高通'的核心语义不够直接，更偏向技术细节而非核心产业环节，适合作为should。"
+      },
+      {
+        "term": "支持通过以太网进行横向扩展",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "与PCIe扩展类似，是产品网络扩展特性，非核心产业对象或关键技术，更适合作为辅助信息进入should。"
+      },
+      {
+        "term": "AI芯片市场",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虽然相关，但范围比'数据中心AI芯片业务'更宽泛，与题材名称定义的核心业务领域不够精准匹配，更适合作为should。"
+      },
+      {
+        "term": "高通AI芯片的机架解决方案",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是产品解决方案的具体形式，但更偏向实现细节而非核心产业对象，与题材名称的核心语义关联度较低，适合作为should。"
+      },
+      {
+        "term": "机架产品",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'高通'，策略类型为industry_chain。'机架产品'在原始知识中提及（高通AI芯片的机架解决方案），属于产品方案的一部分，但与题材名称定义的核心语义（高通公司及其AI芯片业务）不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "英伟达",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'高通'，策略类型为industry_chain。'英伟达'在题材本体的市场背景中提及（降低对英伟达的依赖），是竞争背景的一部分，但与高通公司的核心语义不直接一致，更适合作为should中的辅助信息，判为secondary_anchor。"
+      },
+      {
+        "term": "自研神经处理单元",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称为'高通'，策略类型为industry_chain。'自研神经处理单元'在原始知识中提及（高通AI芯片采用自研神经处理单元技术），属于技术特点，但与题材名称定义的核心语义（高通公司及其AI芯片业务）不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "NPU",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'高通'，策略类型为industry_chain。'NPU'是自研神经处理单元的缩写，在原始知识中提及，属于技术特点，但与题材名称定义的核心语义不够直接一致，更适合作为should中的辅助信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

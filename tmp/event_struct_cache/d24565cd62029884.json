@@ -1,0 +1,68 @@
+{
+  "event_id": "evt_5c0ba75dbb13",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "产品发布",
+  "entities": [
+    {
+      "name": "Rokid",
+      "type": "公司",
+      "normalized": "Rokid"
+    },
+    {
+      "name": "AR智能眼镜",
+      "type": "产品",
+      "normalized": "AR智能眼镜"
+    },
+    {
+      "name": "《黑神话：悟空》",
+      "type": "产品",
+      "normalized": "黑神话：悟空"
+    },
+    {
+      "name": "腾讯Start云游戏",
+      "type": "产品",
+      "normalized": "腾讯Start云游戏"
+    }
+  ],
+  "summary": "Rokid宣布《黑神话：悟空》AR体验将开启直播，可通过其设备进行AR游戏体验。",
+  "causal_claim": [
+    "AR体验直播",
+    "云游戏合作",
+    "AR眼镜推广"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "AR智能眼镜",
+      "AR体验",
+      "云游戏"
+    ],
+    "normalized_terms": {
+      "Rokid": "Rokid",
+      "AR智能眼镜": "AR智能眼镜",
+      "《黑神话：悟空》": "黑神话：悟空",
+      "腾讯Start云游戏": "腾讯Start云游戏"
+    },
+    "evidence_spans": [
+      {
+        "text": "AR智能眼镜企业Rokid今日宣布，8月22日，《黑神话：悟空》AR体验将开启直播。",
+        "start": 0,
+        "end": 50
+      },
+      {
+        "text": "在Rokid Station / Station 2应用商店，下载并打开腾讯Start云游戏，无需开通Start会员即可开玩《黑神话：悟空》，进行AR体验。",
+        "start": 50,
+        "end": 120
+      }
+    ],
+    "core_concepts": [
+      "AR体验",
+      "云游戏",
+      "直播"
+    ]
+  },
+  "severity_score": 0.6,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-08-20T00:00:00Z",
+  "raw_text": "2024年8月20日，AR智能眼镜企业Rokid今日宣布，8月22日，《黑神话：悟空》AR体验将开启直播。在Rokid Station / Station 2应用商店，下载并打开腾讯Start云游戏，无需开通Start会员即可开玩《黑神话：悟空》，进行AR体验。"
+}

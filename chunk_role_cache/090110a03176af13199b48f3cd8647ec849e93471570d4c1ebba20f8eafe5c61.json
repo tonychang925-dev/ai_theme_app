@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "74431937fb8f", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述长鑫存储启动上市辅导的公司公告事件，包括成立时间、注册资本和股东信息，属于企业动态，没有提供半导体设备的静态知识。"}}

@@ -1,0 +1,224 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "百货",
+      "evidence_span": "百货和购物中心为平台型业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "购物中心",
+      "evidence_span": "百货和购物中心为平台型业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超市",
+      "evidence_span": "超市为垂直型业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国性传统零售龙头",
+      "evidence_span": "全国性传统零售龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国连锁百强企业",
+      "evidence_span": "已连续多年入围中国连锁百强企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "第一家中外合资零售企业",
+      "evidence_span": "我国第一家中外合资零售企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天优酱香酒",
+      "evidence_span": "天虹自有品牌开发并推出了天优酱香酒"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化平台",
+      "evidence_span": "数字化平台已实现了从会员管理、营销、服务、销售到中后台的供应链和品类管理全流程的覆盖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自助买单",
+      "evidence_span": "自助买单"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧停车",
+      "evidence_span": "智慧停车"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "导购连接",
+      "evidence_span": "导购连接"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "社群运营",
+      "evidence_span": "社群运营"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "在线直播",
+      "evidence_span": "在线直播"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超级客服",
+      "evidence_span": "上线“超级客服”功能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "供应链数据共享",
+      "evidence_span": "与供应商数据共享"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "商品区域协同和全国共享",
+      "evidence_span": "商品实现区域协同和全国共享"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "极速达",
+      "evidence_span": "极速达"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "次日达",
+      "evidence_span": "次日达"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全国配",
+      "evidence_span": "全国配"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "百货数字化平台",
+      "evidence_span": "百货数字化平台已覆盖1.9万个线下专柜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "APP餐饮外卖、排队、订座功能",
+      "evidence_span": "天虹APP上线购物中心餐饮外卖、排队、订座等功能"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新零售",
+      "evidence_span": "“货”+“场”重塑，新零售低估值标的"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "百货和购物中心",
+        "evidence_span": "百货和购物中心为平台型业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "超市",
+        "evidence_span": "超市为垂直型业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国性传统零售龙头",
+        "evidence_span": "全国性传统零售龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国连锁百强企业",
+        "evidence_span": "已连续多年入围中国连锁百强企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "第一家中外合资零售企业",
+        "evidence_span": "我国第一家中外合资零售企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天优酱香酒",
+        "evidence_span": "天虹自有品牌开发并推出了天优酱香酒"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化平台",
+        "evidence_span": "数字化平台已实现了从会员管理、营销、服务、销售到中后台的供应链和品类管理全流程的覆盖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自助买单",
+        "evidence_span": "自助买单"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧停车",
+        "evidence_span": "智慧停车"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "导购连接",
+        "evidence_span": "导购连接"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "社群运营",
+        "evidence_span": "社群运营"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "在线直播",
+        "evidence_span": "在线直播"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超级客服",
+        "evidence_span": "上线“超级客服”功能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "供应链数据共享",
+        "evidence_span": "与供应商数据共享"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "商品区域协同和全国共享",
+        "evidence_span": "商品实现区域协同和全国共享"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "极速达",
+        "evidence_span": "极速达"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "次日达",
+        "evidence_span": "次日达"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全国配",
+        "evidence_span": "全国配"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "百货数字化平台",
+        "evidence_span": "百货数字化平台已覆盖1.9万个线下专柜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "APP餐饮外卖、排队、订座功能",
+        "evidence_span": "天虹APP上线购物中心餐饮外卖、排队、订座等功能"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新零售",
+        "evidence_span": "“货”+“场”重塑，新零售低估值标的"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:45:21"
+}

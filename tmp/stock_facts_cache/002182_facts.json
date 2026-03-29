@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "镁合金",
+      "evidence_span": "公司主营产品为镁合金和铝合金产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金",
+      "evidence_span": "公司主营产品为镁合金和铝合金产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "镁合金深加工",
+      "evidence_span": "公司镁合金深加工产品为汽车压铸件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金深加工",
+      "evidence_span": "铝深加工成为稳定增长点"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建筑模板",
+      "evidence_span": "公司抢占先机，在安徽巢湖投资建设年产 200 万片建筑模板项目"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "镁合金行业龙头",
+      "evidence_span": "云海金属镁合金产能约占行业总产能的 35%，是全球镁合金龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "镁产业链一体化龙头",
+      "evidence_span": "已经形成了“白云石开采-原镁冶炼-镁合金熔炼-镁合金加工-镁合金回收”完整镁产业链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镁合金锭",
+      "evidence_span": "公司生产符合 ASTM标准的 AZ、AM、ZK等全系列镁合金锭"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镁合金粒子",
+      "evidence_span": "公司生产符合 ASTM标准的 AZ、AM、ZK等全系列镁合金锭、镁合金粒子"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镁合金棒",
+      "evidence_span": "公司生产符合 ASTM标准的 AZ、AM、ZK等全系列镁合金锭、镁合金粒子、镁合金棒产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车压铸件",
+      "evidence_span": "公司镁合金深加工产品为汽车压铸件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仪表盘支架",
+      "evidence_span": "主要有仪表盘支架、座椅支架、显示屏支架、中控支架、方向盘等部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "座椅支架",
+      "evidence_span": "主要有仪表盘支架、座椅支架、显示屏支架、中控支架、方向盘等部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "显示屏支架",
+      "evidence_span": "主要有仪表盘支架、座椅支架、显示屏支架、中控支架、方向盘等部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中控支架",
+      "evidence_span": "主要有仪表盘支架、座椅支架、显示屏支架、中控支架、方向盘等部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方向盘",
+      "evidence_span": "主要有仪表盘支架、座椅支架、显示屏支架、中控支架、方向盘等部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝合金锭",
+      "evidence_span": "产品包括ADC1、ADC12、A380、AlSi9Cu3等各种规格铝合金锭"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能铝合金棒",
+      "evidence_span": "产品包括ADC1、ADC12、A380、AlSi9Cu3等各种规格铝合金锭和 1-7系高性能铝合金棒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝挤压汽车结构件",
+      "evidence_span": "铝挤压汽车结构件是公司近年来大力发展方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微通道扁管",
+      "evidence_span": "铝挤压微通道扁管是一种薄壁多孔扁形管状材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镁合金建筑模板",
+      "evidence_span": "子公司安徽镁铝与中建四局签署了《关于镁合金模板租赁框架协议》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "竖罐节能炼镁工艺",
+      "evidence_span": "公司率先全部采用竖罐节能炼镁工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大罐竖罐底出渣镁冶炼技术",
+      "evidence_span": "自主研发了大罐竖罐底出渣镁冶炼技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "镁合金熔炼净化技术",
+      "evidence_span": "公司自主研发镁合金生产加工设备、镁合金熔炼净化技术和镁合金成型技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "镁合金成型技术",
+      "evidence_span": "公司自主研发镁合金生产加工设备、镁合金熔炼净化技术和镁合金成型技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "镁合金熔体过滤装置",
+      "evidence_span": "“一种镁合金熔体过滤装置”获南京市优秀实用新型专利奖"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特斯拉",
+      "evidence_span": "铝挤压汽车结构件主要供应给特斯拉、比亚迪、蔚来、小鹏、吉利、上汽新能源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "铝挤压汽车结构件主要供应给特斯拉、比亚迪、蔚来、小鹏、吉利、上汽新能源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "铝挤压汽车结构件主要供应给特斯拉、比亚迪、蔚来、小鹏、吉利、上汽新能源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏",
+      "evidence_span": "铝挤压汽车结构件主要供应给特斯拉、比亚迪、蔚来、小鹏、吉利、上汽新能源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "铝挤压汽车结构件主要供应给特斯拉、比亚迪、蔚来、小鹏、吉利、上汽新能源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽新能源",
+      "evidence_span": "铝挤压汽车结构件主要供应给特斯拉、比亚迪、蔚来、小鹏、吉利、上汽新能源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中建四局",
+      "evidence_span": "子公司安徽镁铝与中建四局签署了《关于镁合金模板租赁框架协议》"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车轻量化",
+      "evidence_span": "汽车轻量化助力公司成长"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "镁合金",
+        "evidence_span": "公司主营产品为镁合金和铝合金产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金",
+        "evidence_span": "公司主营产品为镁合金和铝合金产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "镁合金深加工",
+        "evidence_span": "公司镁合金深加工产品为汽车压铸件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金深加工",
+        "evidence_span": "铝深加工成为稳定增长点"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "建筑模板",
+        "evidence_span": "公司抢占先机，在安徽巢湖投资建设年产 200 万片建筑模板项目"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "镁合金行业龙头",
+        "evidence_span": "云海金属镁合金产能约占行业总产能的 35%，是全球镁合金龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "镁产业链一体化龙头",
+        "evidence_span": "已经形成了“白云石开采-原镁冶炼-镁合金熔炼-镁合金加工-镁合金回收”完整镁产业链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镁合金锭",
+        "evidence_span": "公司生产符合 ASTM标准的 AZ、AM、ZK等全系列镁合金锭"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镁合金粒子",
+        "evidence_span": "公司生产符合 ASTM标准的 AZ、AM、ZK等全系列镁合金锭、镁合金粒子"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镁合金棒",
+        "evidence_span": "公司生产符合 ASTM标准的 AZ、AM、ZK等全系列镁合金锭、镁合金粒子、镁合金棒产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车压铸件",
+        "evidence_span": "公司镁合金深加工产品为汽车压铸件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仪表盘支架",
+        "evidence_span": "主要有仪表盘支架、座椅支架、显示屏支架、中控支架、方向盘等部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "座椅支架",
+        "evidence_span": "主要有仪表盘支架、座椅支架、显示屏支架、中控支架、方向盘等部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "显示屏支架",
+        "evidence_span": "主要有仪表盘支架、座椅支架、显示屏支架、中控支架、方向盘等部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中控支架",
+        "evidence_span": "主要有仪表盘支架、座椅支架、显示屏支架、中控支架、方向盘等部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方向盘",
+        "evidence_span": "主要有仪表盘支架、座椅支架、显示屏支架、中控支架、方向盘等部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝合金锭",
+        "evidence_span": "产品包括ADC1、ADC12、A380、AlSi9Cu3等各种规格铝合金锭"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能铝合金棒",
+        "evidence_span": "产品包括ADC1、ADC12、A380、AlSi9Cu3等各种规格铝合金锭和 1-7系高性能铝合金棒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝挤压汽车结构件",
+        "evidence_span": "铝挤压汽车结构件是公司近年来大力发展方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微通道扁管",
+        "evidence_span": "铝挤压微通道扁管是一种薄壁多孔扁形管状材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镁合金建筑模板",
+        "evidence_span": "子公司安徽镁铝与中建四局签署了《关于镁合金模板租赁框架协议》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "竖罐节能炼镁工艺",
+        "evidence_span": "公司率先全部采用竖罐节能炼镁工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大罐竖罐底出渣镁冶炼技术",
+        "evidence_span": "自主研发了大罐竖罐底出渣镁冶炼技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "镁合金熔炼净化技术",
+        "evidence_span": "公司自主研发镁合金生产加工设备、镁合金熔炼净化技术和镁合金成型技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "镁合金成型技术",
+        "evidence_span": "公司自主研发镁合金生产加工设备、镁合金熔炼净化技术和镁合金成型技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "镁合金熔体过滤装置",
+        "evidence_span": "“一种镁合金熔体过滤装置”获南京市优秀实用新型专利奖"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特斯拉",
+        "evidence_span": "铝挤压汽车结构件主要供应给特斯拉、比亚迪、蔚来、小鹏、吉利、上汽新能源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "铝挤压汽车结构件主要供应给特斯拉、比亚迪、蔚来、小鹏、吉利、上汽新能源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "铝挤压汽车结构件主要供应给特斯拉、比亚迪、蔚来、小鹏、吉利、上汽新能源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏",
+        "evidence_span": "铝挤压汽车结构件主要供应给特斯拉、比亚迪、蔚来、小鹏、吉利、上汽新能源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "铝挤压汽车结构件主要供应给特斯拉、比亚迪、蔚来、小鹏、吉利、上汽新能源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽新能源",
+        "evidence_span": "铝挤压汽车结构件主要供应给特斯拉、比亚迪、蔚来、小鹏、吉利、上汽新能源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中建四局",
+        "evidence_span": "子公司安徽镁铝与中建四局签署了《关于镁合金模板租赁框架协议》"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车轻量化",
+        "evidence_span": "汽车轻量化助力公司成长"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:18:54"
+}

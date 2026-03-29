@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:58:48", "result": {"chunk_id": "61e3e48a53dd", "label": "strict_knowledge", "confidence": 0.97, "ontology_value": "high", "reason": "该段落提供了核聚变实验堆和托卡马克主机的成本结构数据，属于静态的构成和关键要素知识，基于FIRE项目参考，没有事件或动态内容。"}}

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-theme-app.local/schemas/feature_traceability.schema.json",
+  "title": "Feature Traceability",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "phase",
+    "generated_at",
+    "source_files",
+    "summary",
+    "traceability",
+    "gaps",
+    "gate_ready"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0" },
+    "phase": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source_files": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_tasks", "mapped_tasks", "unmapped_tasks", "risk_level"],
+      "properties": {
+        "total_tasks": { "type": "integer", "minimum": 0 },
+        "mapped_tasks": { "type": "integer", "minimum": 0 },
+        "unmapped_tasks": { "type": "integer", "minimum": 0 },
+        "risk_level": { "type": "string", "enum": ["P0", "P1", "P2"] }
+      }
+    },
+    "traceability": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "task_id",
+          "requirement_ids",
+          "acceptance_ids",
+          "test_case_ids",
+          "test_commands"
+        ],
+        "properties": {
+          "task_id": { "type": "string", "minLength": 1 },
+          "requirement_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "pattern": "^PRD-REQ-[A-Za-z0-9.-]+-\\d{3}$" }
+          },
+          "acceptance_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "pattern": "^ACPT-[A-Za-z0-9.-]+-\\d{3}$" }
+          },
+          "test_case_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "test_commands": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "gate_ready": { "type": "boolean" }
+  }
+}

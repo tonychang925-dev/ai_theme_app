@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体显示器件",
+      "evidence_span": "公司主营业务为半导体显示器件及特种胶粘材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种胶粘材料",
+      "evidence_span": "公司主营业务为半导体显示器件及特种胶粘材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "显示行业企业",
+      "evidence_span": "公司业务及发展重心已全面聚焦在显示行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "偏光片",
+      "evidence_span": "偏光片业务作为公司主营业务之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能性器件",
+      "evidence_span": "半导体显示器件是显示面板及其配套组件的重要组成部分，公司该类产品具体可细分为偏光片、功能性器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信号连接器",
+      "evidence_span": "半导体显示器件是显示面板及其配套组件的重要组成部分，公司该类产品具体可细分为偏光片、功能性器件、信号连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液晶面板",
+      "evidence_span": "半导体显示器件是显示面板及其配套组件的重要组成部分，公司该类产品具体可细分为偏光片、功能性器件、信号连接器、液晶面板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生产辅耗材",
+      "evidence_span": "半导体显示器件是显示面板及其配套组件的重要组成部分，公司该类产品具体可细分为偏光片、功能性器件、信号连接器、液晶面板、生产辅耗材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OCA光学胶",
+      "evidence_span": "半导体显示器件是显示面板及其配套组件的重要组成部分，公司该类产品具体可细分为偏光片、功能性器件、信号连接器、液晶面板、生产辅耗材及OCA光学胶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "胶带",
+      "evidence_span": "特种胶粘材料包括胶带、搭扣、泡棉、保护膜、标签等各类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "搭扣",
+      "evidence_span": "特种胶粘材料包括胶带、搭扣、泡棉、保护膜、标签等各类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "泡棉",
+      "evidence_span": "特种胶粘材料包括胶带、搭扣、泡棉、保护膜、标签等各类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保护膜",
+      "evidence_span": "特种胶粘材料包括胶带、搭扣、泡棉、保护膜、标签等各类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "标签",
+      "evidence_span": "特种胶粘材料包括胶带、搭扣、泡棉、保护膜、标签等各类产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "偏光片加工技术",
+      "evidence_span": "公司从事的偏光片业务是对偏光片卷材进行后端加工，通过SLT分条、裁断、检验、收取、面取和包装等多道工序"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精密功能性器件生产能力",
+      "evidence_span": "公司具备高精密、高附加值功能性器件产品的生产能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东方",
+      "evidence_span": "目前已与京东方、彩虹光电、富士康、华星光电等国内外显示面板制造龙头企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "彩虹光电",
+      "evidence_span": "目前已与京东方、彩虹光电、富士康、华星光电等国内外显示面板制造龙头企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富士康",
+      "evidence_span": "目前已与京东方、彩虹光电、富士康、华星光电等国内外显示面板制造龙头企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华星光电",
+      "evidence_span": "目前已与京东方、彩虹光电、富士康、华星光电等国内外显示面板制造龙头企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "VIVO",
+      "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海信",
+      "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "创维",
+      "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苹果",
+      "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体显示器件",
+        "evidence_span": "公司主营业务为半导体显示器件及特种胶粘材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种胶粘材料",
+        "evidence_span": "公司主营业务为半导体显示器件及特种胶粘材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "显示行业企业",
+        "evidence_span": "公司业务及发展重心已全面聚焦在显示行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "偏光片",
+        "evidence_span": "偏光片业务作为公司主营业务之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能性器件",
+        "evidence_span": "半导体显示器件是显示面板及其配套组件的重要组成部分，公司该类产品具体可细分为偏光片、功能性器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信号连接器",
+        "evidence_span": "半导体显示器件是显示面板及其配套组件的重要组成部分，公司该类产品具体可细分为偏光片、功能性器件、信号连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液晶面板",
+        "evidence_span": "半导体显示器件是显示面板及其配套组件的重要组成部分，公司该类产品具体可细分为偏光片、功能性器件、信号连接器、液晶面板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生产辅耗材",
+        "evidence_span": "半导体显示器件是显示面板及其配套组件的重要组成部分，公司该类产品具体可细分为偏光片、功能性器件、信号连接器、液晶面板、生产辅耗材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OCA光学胶",
+        "evidence_span": "半导体显示器件是显示面板及其配套组件的重要组成部分，公司该类产品具体可细分为偏光片、功能性器件、信号连接器、液晶面板、生产辅耗材及OCA光学胶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "胶带",
+        "evidence_span": "特种胶粘材料包括胶带、搭扣、泡棉、保护膜、标签等各类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "搭扣",
+        "evidence_span": "特种胶粘材料包括胶带、搭扣、泡棉、保护膜、标签等各类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "泡棉",
+        "evidence_span": "特种胶粘材料包括胶带、搭扣、泡棉、保护膜、标签等各类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保护膜",
+        "evidence_span": "特种胶粘材料包括胶带、搭扣、泡棉、保护膜、标签等各类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "标签",
+        "evidence_span": "特种胶粘材料包括胶带、搭扣、泡棉、保护膜、标签等各类产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "偏光片加工技术",
+        "evidence_span": "公司从事的偏光片业务是对偏光片卷材进行后端加工，通过SLT分条、裁断、检验、收取、面取和包装等多道工序"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精密功能性器件生产能力",
+        "evidence_span": "公司具备高精密、高附加值功能性器件产品的生产能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东方",
+        "evidence_span": "目前已与京东方、彩虹光电、富士康、华星光电等国内外显示面板制造龙头企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "彩虹光电",
+        "evidence_span": "目前已与京东方、彩虹光电、富士康、华星光电等国内外显示面板制造龙头企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富士康",
+        "evidence_span": "目前已与京东方、彩虹光电、富士康、华星光电等国内外显示面板制造龙头企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华星光电",
+        "evidence_span": "目前已与京东方、彩虹光电、富士康、华星光电等国内外显示面板制造龙头企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "VIVO",
+        "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海信",
+        "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "创维",
+        "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苹果",
+        "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "产品最终应用于华为、小米、OPPO、VIVO、海信、创维、苹果、三星等知名消费电子品牌商的畅销机型"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:27:10"
+}

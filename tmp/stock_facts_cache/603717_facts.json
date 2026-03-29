@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态环境业务",
+      "evidence_span": "公司主营业务主要集中在三大业务板块：生态环境业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态农牧业务",
+      "evidence_span": "公司主营业务主要集中在三大业务板块：生态农牧业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏新能源业务",
+      "evidence_span": "公司主营业务主要集中在三大业务板块：新设的光伏新能源业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "园林生态工程设计施工一体化企业",
+      "evidence_span": "天域生态园林工程设计施工一体化企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性园林龙头",
+      "evidence_span": "天域生态综合性园林龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "乡村振兴产业的综合运营商",
+      "evidence_span": "成为乡村振兴产业的综合运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "园林生态工程",
+      "evidence_span": "园林生态工程业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生态环境治理",
+      "evidence_span": "生态环境治理及田园综合体业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "田园综合体",
+      "evidence_span": "生态环境治理及田园综合体业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生猪养殖",
+      "evidence_span": "生猪养殖业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农产品销售",
+      "evidence_span": "农产品销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分布式光伏发电项目",
+      "evidence_span": "分布式光伏发电项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "设计施工一体化能力",
+      "evidence_span": "拥有设计施工一体化能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "综合环境治理技术",
+      "evidence_span": "在综合环境治理、土壤改良、有机废弃物循环利用、环境监测等领域拥有先进技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "土壤改良技术",
+      "evidence_span": "在综合环境治理、土壤改良、有机废弃物循环利用、环境监测等领域拥有先进技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "有机废弃物循环利用技术",
+      "evidence_span": "在综合环境治理、土壤改良、有机废弃物循环利用、环境监测等领域拥有先进技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "环境监测技术",
+      "evidence_span": "在综合环境治理、土壤改良、有机废弃物循环利用、环境监测等领域拥有先进技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "黑臭水体治理技术",
+      "evidence_span": "在黑臭水体治理、污水处理、土壤修复、河道治理等领域共计拥有172项实用新型专利和3项发明专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "污水处理技术",
+      "evidence_span": "在黑臭水体治理、污水处理、土壤修复、河道治理等领域共计拥有172项实用新型专利和3项发明专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "土壤修复技术",
+      "evidence_span": "在黑臭水体治理、污水处理、土壤修复、河道治理等领域共计拥有172项实用新型专利和3项发明专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "河道治理技术",
+      "evidence_span": "在黑臭水体治理、污水处理、土壤修复、河道治理等领域共计拥有172项实用新型专利和3项发明专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光储充一体化技术",
+      "evidence_span": "研究培育“光储充一体化技术”的实际应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光伏建筑一体化（BIPV)技术",
+      "evidence_span": "“光伏建筑一体化（BIPV)技术”的开发应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府机构",
+      "evidence_span": "与政府机构建立了稳定、友好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "遵义市新蒲发展集团有限责任公司",
+      "evidence_span": "与遵义市新蒲发展集团有限责任公司等国有法人债务人沟通清欠与化债事宜"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "乡村振兴",
+      "evidence_span": "以“乡村振兴”为经营使命"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "美丽中国",
+      "evidence_span": "在“美丽中国”、“乡村振兴”、“碳中和、碳达峰”等战略背景下"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳中和",
+      "evidence_span": "在“美丽中国”、“乡村振兴”、“碳中和、碳达峰”等战略背景下"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳达峰",
+      "evidence_span": "在“美丽中国”、“乡村振兴”、“碳中和、碳达峰”等战略背景下"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新基建",
+      "evidence_span": "助力国家推进“新基建”和“智慧城市”建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧城市",
+      "evidence_span": "助力国家推进“新基建”和“智慧城市”建设"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态环境业务",
+        "evidence_span": "公司主营业务主要集中在三大业务板块：生态环境业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态农牧业务",
+        "evidence_span": "公司主营业务主要集中在三大业务板块：生态农牧业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏新能源业务",
+        "evidence_span": "公司主营业务主要集中在三大业务板块：新设的光伏新能源业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "园林生态工程设计施工一体化企业",
+        "evidence_span": "天域生态园林工程设计施工一体化企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性园林龙头",
+        "evidence_span": "天域生态综合性园林龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "乡村振兴产业的综合运营商",
+        "evidence_span": "成为乡村振兴产业的综合运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "园林生态工程",
+        "evidence_span": "园林生态工程业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生态环境治理",
+        "evidence_span": "生态环境治理及田园综合体业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "田园综合体",
+        "evidence_span": "生态环境治理及田园综合体业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生猪养殖",
+        "evidence_span": "生猪养殖业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农产品销售",
+        "evidence_span": "农产品销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分布式光伏发电项目",
+        "evidence_span": "分布式光伏发电项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "设计施工一体化能力",
+        "evidence_span": "拥有设计施工一体化能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "综合环境治理技术",
+        "evidence_span": "在综合环境治理、土壤改良、有机废弃物循环利用、环境监测等领域拥有先进技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "土壤改良技术",
+        "evidence_span": "在综合环境治理、土壤改良、有机废弃物循环利用、环境监测等领域拥有先进技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "有机废弃物循环利用技术",
+        "evidence_span": "在综合环境治理、土壤改良、有机废弃物循环利用、环境监测等领域拥有先进技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "环境监测技术",
+        "evidence_span": "在综合环境治理、土壤改良、有机废弃物循环利用、环境监测等领域拥有先进技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "黑臭水体治理技术",
+        "evidence_span": "在黑臭水体治理、污水处理、土壤修复、河道治理等领域共计拥有172项实用新型专利和3项发明专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "污水处理技术",
+        "evidence_span": "在黑臭水体治理、污水处理、土壤修复、河道治理等领域共计拥有172项实用新型专利和3项发明专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "土壤修复技术",
+        "evidence_span": "在黑臭水体治理、污水处理、土壤修复、河道治理等领域共计拥有172项实用新型专利和3项发明专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "河道治理技术",
+        "evidence_span": "在黑臭水体治理、污水处理、土壤修复、河道治理等领域共计拥有172项实用新型专利和3项发明专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光储充一体化技术",
+        "evidence_span": "研究培育“光储充一体化技术”的实际应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光伏建筑一体化（BIPV)技术",
+        "evidence_span": "“光伏建筑一体化（BIPV)技术”的开发应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府机构",
+        "evidence_span": "与政府机构建立了稳定、友好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "遵义市新蒲发展集团有限责任公司",
+        "evidence_span": "与遵义市新蒲发展集团有限责任公司等国有法人债务人沟通清欠与化债事宜"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "乡村振兴",
+        "evidence_span": "以“乡村振兴”为经营使命"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "美丽中国",
+        "evidence_span": "在“美丽中国”、“乡村振兴”、“碳中和、碳达峰”等战略背景下"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳中和",
+        "evidence_span": "在“美丽中国”、“乡村振兴”、“碳中和、碳达峰”等战略背景下"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳达峰",
+        "evidence_span": "在“美丽中国”、“乡村振兴”、“碳中和、碳达峰”等战略背景下"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新基建",
+        "evidence_span": "助力国家推进“新基建”和“智慧城市”建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧城市",
+        "evidence_span": "助力国家推进“新基建”和“智慧城市”建设"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:01:14"
+}

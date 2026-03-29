@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_3", "model": "deepseek-chat", "timestamp": "2026-03-08T09:33:12", "result": {"chunk_id": "9a19692dcdbf", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落以展会事件开头，但包含了对半导体设备销售收入增长数据的静态说明，这些是知识性内容，但混合了事件信息。"}}

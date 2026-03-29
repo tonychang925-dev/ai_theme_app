@@ -1,0 +1,424 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能制造装备",
+      "evidence_span": "公司主要业务为智能制造装备及其关键器件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其关键器件的研发",
+      "evidence_span": "公司主要业务为智能制造装备及其关键器件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主要业务为智能制造装备及其关键器件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要业务为智能制造装备及其关键器件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息产业设备",
+      "evidence_span": "公司产品涵盖信息产业设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源设备",
+      "evidence_span": "公司产品涵盖新能源设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体设备",
+      "evidence_span": "公司产品涵盖半导体设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "通用工业激光加工设备",
+      "evidence_span": "公司产品涵盖通用工业激光加工设备"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球领先的智能制造装备整体解决方案提供商",
+      "evidence_span": "是全球领先的智能制造装备整体解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "亚洲最大激光加工设备生产商",
+      "evidence_span": "亚洲最大激光加工设备生产商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "紫外及超快激光器",
+      "evidence_span": "通用元件及行业普及产品主要产品为紫外及超快激光器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高功率光纤激光器",
+      "evidence_span": "通用元件及行业普及产品主要产品为高功率光纤激光器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中低功率CO2激光器",
+      "evidence_span": "通用元件及行业普及产品主要产品为中低功率CO2激光器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "脉冲光纤激光器",
+      "evidence_span": "通用元件及行业普及产品主要产品为脉冲光纤激光器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通用运动控制系统",
+      "evidence_span": "通用元件及行业普及产品主要产品为通用运动控制系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "振镜",
+      "evidence_span": "通用元件及行业普及产品主要产品为振镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "伺服电机",
+      "evidence_span": "通用元件及行业普及产品主要产品为伺服电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消费电子设备",
+      "evidence_span": "消费电子设备：主要产品为专用激光打标设备、激光焊接设备、激光钻孔设备、防水气密性检测设备、CNC数控机床等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PCB设备",
+      "evidence_span": "PCB设备：主要产品为钻孔设备、激光直接成像设备、成型设备以及检测设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电设备",
+      "evidence_span": "锂电设备：主要产品为匀浆、搅拌、涂布、辊压、模切、分切、卷绕/叠片、电芯组装、烘烤、注液、化成分容等加工设备及自动化生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏设备",
+      "evidence_span": "光伏设备：主要产品在光伏电池及组件环节，包括 Topcon电池生产主设备：激光硼掺杂设备、PECVD（等离子增强气相沉积设备）、LPCVD（低压化学气相沉积设备）、扩散炉、氧化炉、退火炉，以及组件段的无损划片机、划焊一体机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体设备",
+      "evidence_span": "半导体设备：主要产品为激光表切、全切设备，激光内部改质切割设备以及刀轮切割设备等前道晶圆切割设备；焊线设备、固晶设备、测试编带设备等后道封测设备以及晶圆自动化传输设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通用激光加工设备",
+      "evidence_span": "极限制造业务主要产品为标准激光切割、焊接、打标设备等通用激光加工设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "从基础器件、整机设备到工艺解决方案的垂直一体化优势",
+      "evidence_span": "具备从基础器件、整机设备到工艺解决方案的垂直一体化优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TOPCON电池全产业链设备研发制造能力",
+      "evidence_span": "在 TOPCON 领域产品布局完整，逐步具备TOPCON电池全产业链设备研发制造能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钙钛矿激光刻划设备",
+      "evidence_span": "公司自主研发了钙钛矿激光刻划设备，已实现量产销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "碳化硅激光切片设备",
+      "evidence_span": "成功研发出碳化硅激光切片设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Micro-LED巨量转移Mini-LED巨量焊接设备",
+      "evidence_span": "完成了Micro-LED巨量转移Mini-LED巨量焊接等设备的原型机开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富士康",
+      "evidence_span": "获得富士康战略供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "捷普电子",
+      "evidence_span": "获得捷普电子最佳供应商等奖项"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "公司与宁德时代、中创新航(原中航锂电)、亿纬锂能、欣旺达、海辰、蜂巢能源等行业主流客户保持良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中创新航",
+      "evidence_span": "公司与宁德时代、中创新航(原中航锂电)、亿纬锂能、欣旺达、海辰、蜂巢能源等行业主流客户保持良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿纬锂能",
+      "evidence_span": "公司与宁德时代、中创新航(原中航锂电)、亿纬锂能、欣旺达、海辰、蜂巢能源等行业主流客户保持良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欣旺达",
+      "evidence_span": "公司与宁德时代、中创新航(原中航锂电)、亿纬锂能、欣旺达、海辰、蜂巢能源等行业主流客户保持良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海辰",
+      "evidence_span": "公司与宁德时代、中创新航(原中航锂电)、亿纬锂能、欣旺达、海辰、蜂巢能源等行业主流客户保持良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蜂巢能源",
+      "evidence_span": "公司与宁德时代、中创新航(原中航锂电)、亿纬锂能、欣旺达、海辰、蜂巢能源等行业主流客户保持良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "协鑫光电",
+      "evidence_span": "与协鑫光电等行业头部客户一直保持合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "为比亚迪、蔚来、零跑、吉利、长城等国内多家新能源汽车厂商提供了汽车白车身智能焊装线及激光焊接设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "为比亚迪、蔚来、零跑、吉利、长城等国内多家新能源汽车厂商提供了汽车白车身智能焊装线及激光焊接设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "零跑",
+      "evidence_span": "为比亚迪、蔚来、零跑、吉利、长城等国内多家新能源汽车厂商提供了汽车白车身智能焊装线及激光焊接设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "为比亚迪、蔚来、零跑、吉利、长城等国内多家新能源汽车厂商提供了汽车白车身智能焊装线及激光焊接设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "为比亚迪、蔚来、零跑、吉利、长城等国内多家新能源汽车厂商提供了汽车白车身智能焊装线及激光焊接设备"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化替代",
+      "evidence_span": "有望实现国产化替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能制造装备及其关键器件的研发、生产和销售",
+        "evidence_span": "公司主要业务为智能制造装备及其关键器件的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息产业设备",
+        "evidence_span": "公司产品涵盖信息产业设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源设备",
+        "evidence_span": "公司产品涵盖新能源设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体设备",
+        "evidence_span": "公司产品涵盖半导体设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "通用工业激光加工设备",
+        "evidence_span": "公司产品涵盖通用工业激光加工设备"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球领先的智能制造装备整体解决方案提供商",
+        "evidence_span": "是全球领先的智能制造装备整体解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "亚洲最大激光加工设备生产商",
+        "evidence_span": "亚洲最大激光加工设备生产商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "紫外及超快激光器",
+        "evidence_span": "通用元件及行业普及产品主要产品为紫外及超快激光器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高功率光纤激光器",
+        "evidence_span": "通用元件及行业普及产品主要产品为高功率光纤激光器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中低功率CO2激光器",
+        "evidence_span": "通用元件及行业普及产品主要产品为中低功率CO2激光器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "脉冲光纤激光器",
+        "evidence_span": "通用元件及行业普及产品主要产品为脉冲光纤激光器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通用运动控制系统",
+        "evidence_span": "通用元件及行业普及产品主要产品为通用运动控制系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "振镜",
+        "evidence_span": "通用元件及行业普及产品主要产品为振镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "伺服电机",
+        "evidence_span": "通用元件及行业普及产品主要产品为伺服电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消费电子设备",
+        "evidence_span": "消费电子设备：主要产品为专用激光打标设备、激光焊接设备、激光钻孔设备、防水气密性检测设备、CNC数控机床等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PCB设备",
+        "evidence_span": "PCB设备：主要产品为钻孔设备、激光直接成像设备、成型设备以及检测设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电设备",
+        "evidence_span": "锂电设备：主要产品为匀浆、搅拌、涂布、辊压、模切、分切、卷绕/叠片、电芯组装、烘烤、注液、化成分容等加工设备及自动化生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏设备",
+        "evidence_span": "光伏设备：主要产品在光伏电池及组件环节，包括 Topcon电池生产主设备：激光硼掺杂设备、PECVD（等离子增强气相沉积设备）、LPCVD（低压化学气相沉积设备）、扩散炉、氧化炉、退火炉，以及组件段的无损划片机、划焊一体机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体设备",
+        "evidence_span": "半导体设备：主要产品为激光表切、全切设备，激光内部改质切割设备以及刀轮切割设备等前道晶圆切割设备；焊线设备、固晶设备、测试编带设备等后道封测设备以及晶圆自动化传输设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通用激光加工设备",
+        "evidence_span": "极限制造业务主要产品为标准激光切割、焊接、打标设备等通用激光加工设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "从基础器件、整机设备到工艺解决方案的垂直一体化优势",
+        "evidence_span": "具备从基础器件、整机设备到工艺解决方案的垂直一体化优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TOPCON电池全产业链设备研发制造能力",
+        "evidence_span": "在 TOPCON 领域产品布局完整，逐步具备TOPCON电池全产业链设备研发制造能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钙钛矿激光刻划设备",
+        "evidence_span": "公司自主研发了钙钛矿激光刻划设备，已实现量产销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "碳化硅激光切片设备",
+        "evidence_span": "成功研发出碳化硅激光切片设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Micro-LED巨量转移Mini-LED巨量焊接设备",
+        "evidence_span": "完成了Micro-LED巨量转移Mini-LED巨量焊接等设备的原型机开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富士康",
+        "evidence_span": "获得富士康战略供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "捷普电子",
+        "evidence_span": "获得捷普电子最佳供应商等奖项"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "公司与宁德时代、中创新航(原中航锂电)、亿纬锂能、欣旺达、海辰、蜂巢能源等行业主流客户保持良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中创新航",
+        "evidence_span": "公司与宁德时代、中创新航(原中航锂电)、亿纬锂能、欣旺达、海辰、蜂巢能源等行业主流客户保持良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿纬锂能",
+        "evidence_span": "公司与宁德时代、中创新航(原中航锂电)、亿纬锂能、欣旺达、海辰、蜂巢能源等行业主流客户保持良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欣旺达",
+        "evidence_span": "公司与宁德时代、中创新航(原中航锂电)、亿纬锂能、欣旺达、海辰、蜂巢能源等行业主流客户保持良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海辰",
+        "evidence_span": "公司与宁德时代、中创新航(原中航锂电)、亿纬锂能、欣旺达、海辰、蜂巢能源等行业主流客户保持良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蜂巢能源",
+        "evidence_span": "公司与宁德时代、中创新航(原中航锂电)、亿纬锂能、欣旺达、海辰、蜂巢能源等行业主流客户保持良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "协鑫光电",
+        "evidence_span": "与协鑫光电等行业头部客户一直保持合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "为比亚迪、蔚来、零跑、吉利、长城等国内多家新能源汽车厂商提供了汽车白车身智能焊装线及激光焊接设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "为比亚迪、蔚来、零跑、吉利、长城等国内多家新能源汽车厂商提供了汽车白车身智能焊装线及激光焊接设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "零跑",
+        "evidence_span": "为比亚迪、蔚来、零跑、吉利、长城等国内多家新能源汽车厂商提供了汽车白车身智能焊装线及激光焊接设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "为比亚迪、蔚来、零跑、吉利、长城等国内多家新能源汽车厂商提供了汽车白车身智能焊装线及激光焊接设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "为比亚迪、蔚来、零跑、吉利、长城等国内多家新能源汽车厂商提供了汽车白车身智能焊装线及激光焊接设备"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化替代",
+        "evidence_span": "有望实现国产化替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:30:43"
+}

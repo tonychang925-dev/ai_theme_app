@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "542523c91a9f", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段引用了黄仁勋的观点，并提及2024年世界人工智能大会和世界机器人大会等事件，以及特斯拉人形机器人的供应商定点预测。它混合了行业趋势（物理AI）和具体事件，可能包含对题材知识构建有用的信息，因此分类为candidate_mixed。"}}

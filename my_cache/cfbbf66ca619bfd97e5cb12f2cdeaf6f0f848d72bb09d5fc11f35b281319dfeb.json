@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "f7fa8c0d8e29", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述AES100发动机获颁型号合格证的具体事件，是时间性动态，没有提供C919大飞机的静态知识。"}}

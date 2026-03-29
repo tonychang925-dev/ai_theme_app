@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "80d660d38057", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述美国可能出台新出口限制的事件，包括时间线和潜在影响，没有提供半导体设备的静态知识，纯属事件性动态。"}}

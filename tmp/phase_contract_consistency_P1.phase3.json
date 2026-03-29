@@ -1,0 +1,32 @@
+{
+  "phase": "P1.phase3",
+  "acceptance_source": "docs/project_control/ACCEPTANCE.md",
+  "contract": "docs/project_control/PHASE_CONTRACT_P1.phase3.md",
+  "acceptance_target_count": 9,
+  "contract_target_count": 9,
+  "missing_in_contract": [],
+  "extra_in_contract": [],
+  "is_consistent": true,
+  "source_targets": [
+    "二阶段链路顺序固定为“语义粗筛 -> LLM 裁判最终裁决”，不得绕过粗筛直接裁判。",
+    "分类命中后的候选结果必须全量进入 LLM 复核，不得仅对歧义样本复核。",
+    "在第一阶段验收流量范围内，最终落库结果必须来自 LLM 裁判结论。",
+    "裁判超时必须回退阶段一结果，不阻塞主链路。",
+    "P95 裁判附加时延 < 800ms。",
+    "成本预算超阈触发告警与自动降级。",
+    "`model_service` 不可用时触发明确降级原因码。",
+    "10% 灰度下 `llm_final_judged_ratio >= 95%`。",
+    "裁判模型固定为 `Qwen2.5 + llama.cpp`，并保留真实调用证据（request_id/timestamp/model）。"
+  ],
+  "contract_targets": [
+    "二阶段链路顺序固定为“语义粗筛 -> LLM 裁判最终裁决”，不得绕过粗筛直接裁判。",
+    "分类命中后的候选结果必须全量进入 LLM 复核，不得仅对歧义样本复核。",
+    "在第一阶段验收流量范围内，最终落库结果必须来自 LLM 裁判结论。",
+    "裁判超时必须回退阶段一结果，不阻塞主链路。",
+    "P95 裁判附加时延 < 800ms。",
+    "成本预算超阈触发告警与自动降级。",
+    "`model_service` 不可用时触发明确降级原因码。",
+    "10% 灰度下 `llm_final_judged_ratio >= 95%`。",
+    "裁判模型固定为 `Qwen2.5 + llama.cpp`，并保留真实调用证据（request_id/timestamp/model）。"
+  ]
+}

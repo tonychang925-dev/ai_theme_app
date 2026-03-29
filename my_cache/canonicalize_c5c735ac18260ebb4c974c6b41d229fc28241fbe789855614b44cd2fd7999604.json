@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:34:19", "result": {"span_uid": "6ec5c9ecf5bb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文本为法规背景和目的的描述，属于主观看法和口号式表述，无法形成稳定、可独立成立的知识块。"}}

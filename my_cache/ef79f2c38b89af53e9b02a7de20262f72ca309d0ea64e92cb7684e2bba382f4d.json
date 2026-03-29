@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "23d5dd409a21", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含预制菜行业发展历史、消费者行为变化和行业现状等有价值知识，但涉及疫情、后疫情时代等时间性动态和事件背景，混有事件元素，需要进一步裁决以提取稳定知识。"}}

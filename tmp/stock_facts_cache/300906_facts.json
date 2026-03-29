@@ -1,0 +1,274 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "轨道安全测控设备研发",
+      "evidence_span": "主营业务为轨道安全测控设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轨道安全测控设备生产",
+      "evidence_span": "主营业务为轨道安全测控设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轨道安全测控设备销售",
+      "evidence_span": "主营业务为轨道安全测控设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轨道测控技术研究",
+      "evidence_span": "轨道测控技术的研究与应用"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "应用",
+      "evidence_span": "轨道测控技术的研究与应用"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "轨道安全测控设备和技术方案提供商",
+      "evidence_span": "国内专业的轨道安全测控设备和技术方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "轨道安全测控领域龙头企业",
+      "evidence_span": "公司已经成为轨道安全测控领域的龙头企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道几何状态检测产品",
+      "evidence_span": "轨道几何状态检测产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道表面质量检测类产品",
+      "evidence_span": "轨道表面质量检测类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "检定平台系列",
+      "evidence_span": "检定平台系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁路接触网检测",
+      "evidence_span": "铁路接触网检测"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道精测精调服务",
+      "evidence_span": "轨道精测精调服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道检查仪",
+      "evidence_span": "轨道检查仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道测量仪",
+      "evidence_span": "轨道测量仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "T型快速绝对测量仪",
+      "evidence_span": "完成T型快速绝对测量仪的T6系列的迭代设计"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁路综合快速检测",
+      "evidence_span": "铁路综合快速检测创新了车仪一体式综合快速检测"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速铁路轨道平顺性保持技术",
+      "evidence_span": "高速铁路轨道平顺性保持技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速铁路数字化测量系统",
+      "evidence_span": "高速铁路数字化测量系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "星控+桩控轨道测控成套技术与装备",
+      "evidence_span": "星控+桩控的轨道测控成套技术与装备项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "惯性+全站仪轨检",
+      "evidence_span": "惯性+全站仪轨检"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "惯性+卫星轨检",
+      "evidence_span": "惯性+卫星轨检"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "牵引式轨检",
+      "evidence_span": "牵引式轨检"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁路局及下属工务段",
+      "evidence_span": "主要客户为铁路局及下属工务段"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "地方铁路公司",
+      "evidence_span": "地方铁路公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工程建设单位",
+      "evidence_span": "工程建设单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "城市轨道交通运营单位",
+      "evidence_span": "城市轨道交通运营单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国铁集团",
+      "evidence_span": "国铁集团及其下属单位是公司的主要客户"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "轨道安全测控设备研发",
+        "evidence_span": "主营业务为轨道安全测控设备的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "轨道安全测控设备生产",
+        "evidence_span": "主营业务为轨道安全测控设备的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "轨道安全测控设备销售",
+        "evidence_span": "主营业务为轨道安全测控设备的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "轨道测控技术研究与应用",
+        "evidence_span": "轨道测控技术的研究与应用"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "轨道安全测控设备和技术方案提供商",
+        "evidence_span": "国内专业的轨道安全测控设备和技术方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "轨道安全测控领域龙头企业",
+        "evidence_span": "公司已经成为轨道安全测控领域的龙头企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道几何状态检测产品",
+        "evidence_span": "轨道几何状态检测产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道表面质量检测类产品",
+        "evidence_span": "轨道表面质量检测类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "检定平台系列",
+        "evidence_span": "检定平台系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁路接触网检测",
+        "evidence_span": "铁路接触网检测"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道精测精调服务",
+        "evidence_span": "轨道精测精调服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道检查仪",
+        "evidence_span": "轨道检查仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道测量仪",
+        "evidence_span": "轨道测量仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "T型快速绝对测量仪",
+        "evidence_span": "完成T型快速绝对测量仪的T6系列的迭代设计"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁路综合快速检测",
+        "evidence_span": "铁路综合快速检测创新了车仪一体式综合快速检测"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速铁路轨道平顺性保持技术",
+        "evidence_span": "高速铁路轨道平顺性保持技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速铁路数字化测量系统",
+        "evidence_span": "高速铁路数字化测量系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "星控+桩控轨道测控成套技术与装备",
+        "evidence_span": "星控+桩控的轨道测控成套技术与装备项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "惯性+全站仪轨检",
+        "evidence_span": "惯性+全站仪轨检"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "惯性+卫星轨检",
+        "evidence_span": "惯性+卫星轨检"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "牵引式轨检",
+        "evidence_span": "牵引式轨检"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁路局及下属工务段",
+        "evidence_span": "主要客户为铁路局及下属工务段"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "地方铁路公司",
+        "evidence_span": "地方铁路公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工程建设单位",
+        "evidence_span": "工程建设单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "城市轨道交通运营单位",
+        "evidence_span": "城市轨道交通运营单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国铁集团",
+        "evidence_span": "国铁集团及其下属单位是公司的主要客户"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:46:09"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:54:59", "result": {"chunk_id": "42a958e08710", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含有价值的知识：解释了汽车零部件DSO概念的起源，即多家车企在2025年6月承诺支付账期不超过60天，这对供应商是利好并催生了该概念。但段落也混入了具体事件（车企声明日期和内容），因此属于混合状态，需要进一步裁决以提取静态知识。"}}

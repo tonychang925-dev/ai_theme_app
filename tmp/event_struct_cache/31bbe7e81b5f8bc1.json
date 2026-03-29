@@ -1,0 +1,63 @@
+{
+  "event_id": "evt_67a3ddec965f",
+  "theme_name": "AI智能体Manus",
+  "event_type": "技术突破",
+  "entities": [
+    {
+      "name": "中国",
+      "type": "国家",
+      "normalized": "中国"
+    },
+    {
+      "name": "Manus",
+      "type": "产品",
+      "normalized": "Manus"
+    },
+    {
+      "name": "OpenAI",
+      "type": "公司",
+      "normalized": "OpenAI"
+    }
+  ],
+  "summary": "中国团队发布通用型AI Agent产品Manus，在GAIA基准测试中取得SOTA成绩。",
+  "causal_claim": [
+    "AI Agent发布",
+    "性能超越OpenAI",
+    "AI技术突破"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "通用型AI Agent",
+      "GAIA基准测试",
+      "SOTA",
+      "大模型"
+    ],
+    "normalized_terms": {
+      "中国": "中国",
+      "Manus": "Manus",
+      "OpenAI": "OpenAI"
+    },
+    "evidence_spans": [
+      {
+        "text": "一支来自中国的团队正式对外发布通用型AI Agent产品Manus",
+        "start": 0,
+        "end": 40
+      },
+      {
+        "text": "Manus在GAIA基准测试中取得了SOTA（State-of-the-Art）的成绩，显示其性能超越OpenAI的同层次大模型",
+        "start": 40,
+        "end": 100
+      }
+    ],
+    "core_concepts": [
+      "AI Agent",
+      "基准测试",
+      "性能超越"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": null,
+  "raw_text": "3月6日消息，日前，一支来自中国的团队正式对外发布通用型AI Agent产品Manus。据团队介绍，Manus在GAIA基准测试中取得了SOTA（State-of-the-Art）的成绩，显示其性能超越OpenAI的同层次大模型。（新闻来源：中国财富网）"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "9037dd1f29af", "label": "knowledge_like", "confidence": 0.6, "ontology_value": "medium", "reason": "该段落前半部分为北方华创和中微公司的财务公告，属于pure_event；后半部分提到三星引进High-NA EUV光刻机及其技术细节（如用于2纳米以下制程），这提供了半导体设备（光刻机）在先进制程中的应用场景和技术路径知识，但出现在事件上下文中，稳定性一般。"}}

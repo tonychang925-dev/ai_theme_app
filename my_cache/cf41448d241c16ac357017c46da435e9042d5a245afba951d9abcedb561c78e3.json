@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "eca2acd40cc3", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落报告了截至特定日期（7月14日22时）的暑期档票房数据（突破42亿元），是纯粹的事件动态。"}}

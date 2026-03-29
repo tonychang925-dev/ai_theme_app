@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态环保",
+      "evidence_span": "生态环保为公司核心主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "区域开发",
+      "evidence_span": "公司的主要业务集中在四大产业领域：生态环保、区域开发、能源贸易和股权投资"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "能源贸易",
+      "evidence_span": "公司的主要业务集中在四大产业领域：生态环保、区域开发、能源贸易和股权投资"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "股权投资",
+      "evidence_span": "公司的主要业务集中在四大产业领域：生态环保、区域开发、能源贸易和股权投资"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "固废处理及生物质能利用领域",
+      "evidence_span": "公司所属泰达环保为固废处理及生物质能利用领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "过滤材料领域",
+      "evidence_span": "公司所属泰达洁净属过滤材料领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "碳资产管理领域",
+      "evidence_span": "公司所属碳资产管理公司属碳资产管理领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生活垃圾焚烧发电",
+      "evidence_span": "泰达环保主要从事生活垃圾焚烧发电及卫生填埋"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "秸秆焚烧发电",
+      "evidence_span": "农林秸秆焚烧发电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "餐厨污泥协同处置",
+      "evidence_span": "餐厨/厨余垃圾、污泥协同处理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热电联产",
+      "evidence_span": "热电联产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生活垃圾卫生填埋",
+      "evidence_span": "生活垃圾焚烧发电及卫生填埋"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗卫生防护材料",
+      "evidence_span": "泰达洁净生产的口罩滤材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液体过滤材料",
+      "evidence_span": "液体过滤材料广泛应用于生物制药、食品饮料、酿酒、水处理、化工以及电子电力等行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保暖及隔音材料",
+      "evidence_span": "双组份保暖材料主要应用于服装、帐篷、鞋帽、户外用品等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空气过滤材料",
+      "evidence_span": "空气过滤材料广泛应用于医院、电子、生物制药、化纤等行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有色金属贸易",
+      "evidence_span": "公司所属泰达能源主营业务为有色金属贸易"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "土地整理及市政配套建设服务",
+      "evidence_span": "一级开发为土地整理及市政配套建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "住宅建设与销售",
+      "evidence_span": "二级开发包括住宅、商业综合体等项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商业综合体开发与运营",
+      "evidence_span": "二级开发包括住宅、商业综合体等项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "熔喷技术",
+      "evidence_span": "泰达洁净是以熔喷技术为核心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "熔喷超细纤维",
+      "evidence_span": "泰达洁净生产的最新型液体滤材由熔喷超细纤维制成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PBT耐高温高孔隙率燃油过滤材料",
+      "evidence_span": "泰达洁净延伸开发出PBT耐高温高孔隙率燃油过滤材料系列熔喷产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "熔喷双组份结构",
+      "evidence_span": "中效滤材采用了双组份结构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "熔喷复合HEPA级滤材",
+      "evidence_span": "熔喷复合HEPA级滤材替代玻纤滤材被广泛应用于医院、电子、生物制药、化纤等行业空气净化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "驻极技术",
+      "evidence_span": "公司研发的 HEPA级吸尘器专用滤材由于使用了独特的熔喷超细纤维及驻极技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "打破多年来国外技术壁垒，实现国产替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态环保",
+        "evidence_span": "生态环保为公司核心主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "区域开发",
+        "evidence_span": "公司的主要业务集中在四大产业领域：生态环保、区域开发、能源贸易和股权投资"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "能源贸易",
+        "evidence_span": "公司的主要业务集中在四大产业领域：生态环保、区域开发、能源贸易和股权投资"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "股权投资",
+        "evidence_span": "公司的主要业务集中在四大产业领域：生态环保、区域开发、能源贸易和股权投资"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "固废处理及生物质能利用领域",
+        "evidence_span": "公司所属泰达环保为固废处理及生物质能利用领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "过滤材料领域",
+        "evidence_span": "公司所属泰达洁净属过滤材料领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "碳资产管理领域",
+        "evidence_span": "公司所属碳资产管理公司属碳资产管理领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生活垃圾焚烧发电",
+        "evidence_span": "泰达环保主要从事生活垃圾焚烧发电及卫生填埋"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "秸秆焚烧发电",
+        "evidence_span": "农林秸秆焚烧发电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "餐厨污泥协同处置",
+        "evidence_span": "餐厨/厨余垃圾、污泥协同处理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热电联产",
+        "evidence_span": "热电联产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生活垃圾卫生填埋",
+        "evidence_span": "生活垃圾焚烧发电及卫生填埋"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗卫生防护材料",
+        "evidence_span": "泰达洁净生产的口罩滤材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液体过滤材料",
+        "evidence_span": "液体过滤材料广泛应用于生物制药、食品饮料、酿酒、水处理、化工以及电子电力等行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保暖及隔音材料",
+        "evidence_span": "双组份保暖材料主要应用于服装、帐篷、鞋帽、户外用品等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空气过滤材料",
+        "evidence_span": "空气过滤材料广泛应用于医院、电子、生物制药、化纤等行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有色金属贸易",
+        "evidence_span": "公司所属泰达能源主营业务为有色金属贸易"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "土地整理及市政配套建设服务",
+        "evidence_span": "一级开发为土地整理及市政配套建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "住宅建设与销售",
+        "evidence_span": "二级开发包括住宅、商业综合体等项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商业综合体开发与运营",
+        "evidence_span": "二级开发包括住宅、商业综合体等项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "熔喷技术",
+        "evidence_span": "泰达洁净是以熔喷技术为核心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "熔喷超细纤维",
+        "evidence_span": "泰达洁净生产的最新型液体滤材由熔喷超细纤维制成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PBT耐高温高孔隙率燃油过滤材料",
+        "evidence_span": "泰达洁净延伸开发出PBT耐高温高孔隙率燃油过滤材料系列熔喷产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "熔喷双组份结构",
+        "evidence_span": "中效滤材采用了双组份结构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "熔喷复合HEPA级滤材",
+        "evidence_span": "熔喷复合HEPA级滤材替代玻纤滤材被广泛应用于医院、电子、生物制药、化纤等行业空气净化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "驻极技术",
+        "evidence_span": "公司研发的 HEPA级吸尘器专用滤材由于使用了独特的熔喷超细纤维及驻极技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "打破多年来国外技术壁垒，实现国产替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:12:52"
+}

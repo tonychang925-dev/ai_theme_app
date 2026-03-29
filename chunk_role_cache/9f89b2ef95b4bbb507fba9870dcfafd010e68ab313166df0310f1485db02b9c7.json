@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "ffec9af217ba", "label": "strict_knowledge", "confidence": 0.97, "ontology_value": "high", "reason": "该段落强调了光刻胶作为关键材料的地位和光刻工艺的重要性，包括决定芯片最小特征尺寸，是静态知识说明，无事件或时间性内容。"}}

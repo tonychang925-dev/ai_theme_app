@@ -1,0 +1,53 @@
+{
+  "must": [
+    "新凯来（深圳新凯来技术有限公司）",
+    "自对准四重图案化（SAQP）",
+    "国产DUV光刻机"
+  ],
+  "should": [
+    "外延沉积（EPI）",
+    "蚀刻（ETCH）",
+    "化学气相沉积（CVD）",
+    "物理气相沉积（PVD）",
+    "原子层沉积（ALD）",
+    "华为",
+    "中芯国际",
+    "突破光刻机等卡脖子技术封锁",
+    "实现先进制程芯片的自主制造",
+    "深圳半导体企业",
+    "美系半导体设备",
+    "EUV"
+  ],
+  "not": [
+    "台积电南京厂",
+    "VEU地位",
+    "三星中国晶圆厂",
+    "SK海力士中国晶圆厂"
+  ],
+  "evidence_refs": [
+    {
+      "term": "新凯来（深圳新凯来技术有限公司）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "新凯来（深圳新凯来技术有限公司）"
+    },
+    {
+      "term": "自对准四重图案化（SAQP）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "自对准四重图案化（SAQP）"
+    },
+    {
+      "term": "国产DUV光刻机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国产DUV光刻机"
+    }
+  ],
+  "subject_id": "9044844",
+  "quality": "strong",
+  "generated_at": "2026-03-10T10:54:44",
+  "semantic_type": "技术突破与产业链自主化",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

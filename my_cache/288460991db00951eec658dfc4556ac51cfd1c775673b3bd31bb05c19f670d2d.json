@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "400638509b69", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述广东省政府政策中鼓励发展半导体关键环节，这涉及产业政策知识，可能用于构建半导体设备产业链支持环境，但混合了事件信息（政策印发），需要进一步裁决。"}}

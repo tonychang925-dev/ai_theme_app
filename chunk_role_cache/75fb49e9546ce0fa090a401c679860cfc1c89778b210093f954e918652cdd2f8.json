@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "5a2cf68659c4", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "标题式陈述，描述了佳能交付首台新型纳米压印光刻机这一具体产品发布/交付事件，并提及了其能耗特点（“据称”），属于动态新闻。"}}

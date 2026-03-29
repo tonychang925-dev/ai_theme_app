@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:34:19", "result": {"span_uid": "aae34f8c5dd9", "action": "rewrite", "canonical_text": "《网络数据安全管理条例（草案）》已审议通过，属于网络数据安全领域的法规草案。", "final_type": "signal", "final_role": "法规草案进展", "stability": "medium", "reason": "原文本为具体事件（审议通过草案），改写为去事件化、可独立成立的知识表达，体现政策催化信号。"}}

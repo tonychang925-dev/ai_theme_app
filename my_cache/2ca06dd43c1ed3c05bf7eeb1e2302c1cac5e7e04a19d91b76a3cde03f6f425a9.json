@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "b267ad321b1f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述江波龙接受机构调研时对存储市场回暖、价格变化等事件的分析和预测，属于市场动态和公司言论。"}}

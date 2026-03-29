@@ -1,0 +1,25 @@
+{
+  "phase": "P1.phase2",
+  "acceptance_source": "docs/project_control/ACCEPTANCE.md#Phase P1.phase2",
+  "contract": "docs/project_control/PHASE_CONTRACT_P1.phase2.md",
+  "acceptance_target_count": 12,
+  "contract_target_count": 12,
+  "missing_in_contract": [],
+  "extra_in_contract": [],
+  "non_empty_ok": true,
+  "is_consistent": true,
+  "acceptance_ids": [
+    "ACC-P1-P2-01",
+    "ACC-P1-P2-02",
+    "ACC-P1-P2-03",
+    "ACC-P1-P2-04",
+    "ACC-P1-P2-05",
+    "ACC-P1-P2-06",
+    "ACC-P1-P2-07",
+    "ACC-P1-P2-08",
+    "ACC-P1-P2-09",
+    "ACC-P1-P2-10",
+    "ACC-P1-P2-11",
+    "ACC-P1-P2-12"
+  ]
+}

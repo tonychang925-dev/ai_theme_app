@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保在线监测仪器",
+      "evidence_span": "环保在线监测仪器和检漏仪器为公司营收做主要贡献"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "检漏仪器",
+      "evidence_span": "环保在线监测仪器和检漏仪器为公司营收做主要贡献"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "实验室分析仪器",
+      "evidence_span": "形成了环保在线监测仪器、检漏仪器、实验室分析仪器、电子测量仪器等四大产品体系"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子测量仪器",
+      "evidence_span": "形成了环保在线监测仪器、检漏仪器、实验室分析仪器、电子测量仪器等四大产品体系"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工业检漏环节的核心供应商",
+      "evidence_span": "工业检漏环节的核心供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环境监测领域领军企业",
+      "evidence_span": "环境监测领域领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产龙头",
+      "evidence_span": "皖仪科技作为国产龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气密性检漏仪",
+      "evidence_span": "形成了气密性检漏仪、氦质谱检漏仪和真空箱检漏回收系统三大产品模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氦质谱检漏仪",
+      "evidence_span": "形成了气密性检漏仪、氦质谱检漏仪和真空箱检漏回收系统三大产品模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "真空箱检漏回收系统",
+      "evidence_span": "形成了气密性检漏仪、氦质谱检漏仪和真空箱检漏回收系统三大产品模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CEMS烟气排放连续监测系统",
+      "evidence_span": "公司环境气体监测仪器的核心产品是CEMS烟气排放连续监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环境水质在线监测仪",
+      "evidence_span": "公司自主研发的环境水质在线监测仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高效液相色谱仪",
+      "evidence_span": "公司自主研发的高效液相色谱仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "离子色谱仪",
+      "evidence_span": "公司自主研发的离子色谱仪"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氦质谱检漏技术",
+      "evidence_span": "氦质谱检漏技术的优势最为突出"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多真空箱联动系统与控制技术",
+      "evidence_span": "依托多真空箱联动系统与控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超低排放烟气检测系统",
+      "evidence_span": "公司自主研制的超低排放烟气检测系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "色谱联用技术",
+      "evidence_span": "随着色谱联用技术日益普及"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "CATL",
+      "evidence_span": "获得了包括CATL、ATL、华为、比亚迪、国轩高科、中航锂电等各领域巨头企业的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ATL",
+      "evidence_span": "获得了包括CATL、ATL、华为、比亚迪、国轩高科、中航锂电等各领域巨头企业的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "获得了包括CATL、ATL、华为、比亚迪、国轩高科、中航锂电等各领域巨头企业的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "获得了包括CATL、ATL、华为、比亚迪、国轩高科、中航锂电等各领域巨头企业的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国轩高科",
+      "evidence_span": "获得了包括CATL、ATL、华为、比亚迪、国轩高科、中航锂电等各领域巨头企业的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中航锂电",
+      "evidence_span": "获得了包括CATL、ATL、华为、比亚迪、国轩高科、中航锂电等各领域巨头企业的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "净山环保",
+      "evidence_span": "主要客户包括净山环保、碧霞环保、豫南科技等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "碧霞环保",
+      "evidence_span": "主要客户包括净山环保、碧霞环保、豫南科技等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "豫南科技",
+      "evidence_span": "主要客户包括净山环保、碧霞环保、豫南科技等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产替代空间广阔"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保在线监测仪器",
+        "evidence_span": "环保在线监测仪器和检漏仪器为公司营收做主要贡献"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "检漏仪器",
+        "evidence_span": "环保在线监测仪器和检漏仪器为公司营收做主要贡献"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "实验室分析仪器",
+        "evidence_span": "形成了环保在线监测仪器、检漏仪器、实验室分析仪器、电子测量仪器等四大产品体系"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子测量仪器",
+        "evidence_span": "形成了环保在线监测仪器、检漏仪器、实验室分析仪器、电子测量仪器等四大产品体系"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工业检漏环节的核心供应商",
+        "evidence_span": "工业检漏环节的核心供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环境监测领域领军企业",
+        "evidence_span": "环境监测领域领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产龙头",
+        "evidence_span": "皖仪科技作为国产龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气密性检漏仪",
+        "evidence_span": "形成了气密性检漏仪、氦质谱检漏仪和真空箱检漏回收系统三大产品模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氦质谱检漏仪",
+        "evidence_span": "形成了气密性检漏仪、氦质谱检漏仪和真空箱检漏回收系统三大产品模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "真空箱检漏回收系统",
+        "evidence_span": "形成了气密性检漏仪、氦质谱检漏仪和真空箱检漏回收系统三大产品模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CEMS烟气排放连续监测系统",
+        "evidence_span": "公司环境气体监测仪器的核心产品是CEMS烟气排放连续监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环境水质在线监测仪",
+        "evidence_span": "公司自主研发的环境水质在线监测仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高效液相色谱仪",
+        "evidence_span": "公司自主研发的高效液相色谱仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "离子色谱仪",
+        "evidence_span": "公司自主研发的离子色谱仪"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氦质谱检漏技术",
+        "evidence_span": "氦质谱检漏技术的优势最为突出"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多真空箱联动系统与控制技术",
+        "evidence_span": "依托多真空箱联动系统与控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超低排放烟气检测系统",
+        "evidence_span": "公司自主研制的超低排放烟气检测系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "色谱联用技术",
+        "evidence_span": "随着色谱联用技术日益普及"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "CATL",
+        "evidence_span": "获得了包括CATL、ATL、华为、比亚迪、国轩高科、中航锂电等各领域巨头企业的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ATL",
+        "evidence_span": "获得了包括CATL、ATL、华为、比亚迪、国轩高科、中航锂电等各领域巨头企业的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "获得了包括CATL、ATL、华为、比亚迪、国轩高科、中航锂电等各领域巨头企业的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "获得了包括CATL、ATL、华为、比亚迪、国轩高科、中航锂电等各领域巨头企业的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国轩高科",
+        "evidence_span": "获得了包括CATL、ATL、华为、比亚迪、国轩高科、中航锂电等各领域巨头企业的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中航锂电",
+        "evidence_span": "获得了包括CATL、ATL、华为、比亚迪、国轩高科、中航锂电等各领域巨头企业的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "净山环保",
+        "evidence_span": "主要客户包括净山环保、碧霞环保、豫南科技等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "碧霞环保",
+        "evidence_span": "主要客户包括净山环保、碧霞环保、豫南科技等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "豫南科技",
+        "evidence_span": "主要客户包括净山环保、碧霞环保、豫南科技等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产替代空间广阔"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:06:28"
+}

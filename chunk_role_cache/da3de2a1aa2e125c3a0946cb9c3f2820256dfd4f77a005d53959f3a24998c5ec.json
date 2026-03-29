@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "71f35549b481", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含两部分：第一部分描述工业和信息化部发布的指导目录，涉及光刻机的技术规格（如分辨率、套刻精度、支持工艺），这提供了半导体设备（光刻机）的静态知识；第二部分描述苹果包下台积电产能的事件。由于混合了静态知识和事件信息，优先判为candidate_mixed。"}}

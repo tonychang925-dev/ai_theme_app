@@ -1,0 +1,59 @@
+{
+  "must": [
+    "微通道水冷板散热技术",
+    "蚀刻精密加工技术",
+    "金属基板",
+    "MLCP技术"
+  ],
+  "should": [
+    "均热板",
+    "水冷板",
+    "集成散热盖",
+    "芯片裸晶",
+    "高精度密封技术",
+    "腔体结构设计",
+    "铜",
+    "铝",
+    "微米级的通道网络",
+    "高功耗AI芯片平台散热",
+    "散热效能",
+    "热传导路径"
+  ],
+  "not": [
+    "英伟达",
+    "AI新平台Rubin",
+    "下一代Feynman平台"
+  ],
+  "evidence_refs": [
+    {
+      "term": "微通道水冷板散热技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "微通道水冷板散热技术"
+    },
+    {
+      "term": "蚀刻精密加工技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "蚀刻精密加工技术"
+    },
+    {
+      "term": "金属基板",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "金属基板"
+    },
+    {
+      "term": "MLCP技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MLCP技术"
+    }
+  ],
+  "subject_id": "9057022",
+  "quality": "strong",
+  "generated_at": "2026-03-10T12:31:08",
+  "semantic_type": "技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

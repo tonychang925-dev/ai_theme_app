@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:51:46", "result": {"span_uid": "0df2c5aa605a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产能规划", "stability": "low", "reason": "原文是具体公司的产能规划事件，包含具体数字和时间点，属于阶段性变化信息，但过于具体和事件化，无法形成稳定、可独立成立的知识块。"}}

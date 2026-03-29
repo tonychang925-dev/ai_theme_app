@@ -1,0 +1,109 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "百货",
+      "evidence_span": "业务涉及百货"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超市",
+      "evidence_span": "业务涉及...超市"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电器",
+      "evidence_span": "业务涉及...电器"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽贸",
+      "evidence_span": "业务涉及...汽贸"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域性多业态零售龙头",
+      "evidence_span": "区域性多业态零售龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "百货",
+      "evidence_span": "百货业态"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超市",
+      "evidence_span": "超市业态"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电器",
+      "evidence_span": "电器业态"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽贸",
+      "evidence_span": "汽贸业态"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "马上消费金融",
+      "evidence_span": "参股马上消费金融"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "百货",
+        "evidence_span": "业务涉及百货"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "超市",
+        "evidence_span": "业务涉及...超市"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电器",
+        "evidence_span": "业务涉及...电器"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽贸",
+        "evidence_span": "业务涉及...汽贸"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域性多业态零售龙头",
+        "evidence_span": "区域性多业态零售龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "百货",
+        "evidence_span": "百货业态"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超市",
+        "evidence_span": "超市业态"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电器",
+        "evidence_span": "电器业态"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽贸",
+        "evidence_span": "汽贸业态"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "马上消费金融",
+        "evidence_span": "参股马上消费金融"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:09:11"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "818d4800520e", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落简短提及三星、谷歌、高通联手研发混合现实智能眼镜，这隐含了AR眼镜的研发动态和潜在技术知识，但信息有限且以事件形式呈现。"}}

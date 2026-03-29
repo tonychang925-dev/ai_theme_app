@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_3", "model": "deepseek-chat", "timestamp": "2026-03-08T09:33:12", "result": {"chunk_id": "68ecf3971097", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述一个具体事件：中国大陆在特定时间（11月）进口光刻设备的数量和金额变化，包括日期和同比数据。这属于市场表现和新闻事件，没有提供半导体设备的稳定知识（如定义、应用场景等），因此应归类为pure_event。"}}

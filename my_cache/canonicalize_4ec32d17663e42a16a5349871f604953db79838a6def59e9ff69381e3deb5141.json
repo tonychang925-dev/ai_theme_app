@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:39:32", "result": {"span_uid": "7a27708ced0c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为功能更新方式的简短描述，是残句且依赖上下文，无法形成完整、独立的知识块。"}}

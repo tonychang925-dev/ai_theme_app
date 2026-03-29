@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "5a2cf68659c4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提到佳能交付首台新型纳米压印光刻机，并提及能耗优势，这涉及半导体设备的技术进展（纳米压印光刻技术），可能包含有价值的知识，但以新闻事件形式描述，需要进一步裁决以提取稳定知识。"}}

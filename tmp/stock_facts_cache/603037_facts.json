@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车底盘悬架系统减震元件",
+      "evidence_span": "主要从事汽车底盘悬架系统减震元件和操控系统轻量化踏板总成的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "操控系统轻量化踏板总成",
+      "evidence_span": "主要从事汽车底盘悬架系统减震元件和操控系统轻量化踏板总成的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高性能聚氨酯承载轮",
+      "evidence_span": "非汽车零部件领域高性能聚氨酯承载轮等特种聚氨酯弹性体的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车零部件制造业",
+      "evidence_span": "公司主营业务所属行业为汽车零部件制造业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "聚氨酯减震材料专家",
+      "evidence_span": "聚氨酯减震材料专家"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车减震元件龙头",
+      "evidence_span": "汽车减震元件龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚氨酯缓冲块",
+      "evidence_span": "公司汽车底盘悬架系统减震元件产品主要包括聚氨酯缓冲块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚氨酯弹簧垫",
+      "evidence_span": "聚氨酯弹簧垫"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚氨酯减震支撑",
+      "evidence_span": "聚氨酯减震支撑"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防尘罩",
+      "evidence_span": "防尘罩等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻量化踏板总成",
+      "evidence_span": "公司轻量化踏板总成产品包括制动、离合和电子油门三种踏板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子油门",
+      "evidence_span": "电子油门是公司为了强化踏板总成核心竞争力而成功开发的汽车电子产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "附带能量回收的制动踏板",
+      "evidence_span": "公司开发了附带能量回收的制动踏板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "快接结构的制动踏板",
+      "evidence_span": "公司自主研发的快接结构的制动踏板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线控制动踏板",
+      "evidence_span": "公司开始布局线控制动踏板的技术路线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "落地式加速踏板",
+      "evidence_span": "加速踏板产品开始布局落地式加速踏板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动机悬置",
+      "evidence_span": "目前已可预见拓展至电动机悬置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池包壳体",
+      "evidence_span": "电池包壳体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机罩",
+      "evidence_span": "电机罩等新的产品应用场景"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端传感器制动踏板",
+      "evidence_span": "成功开发的高端传感器制动踏板"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "聚氨酯材料配方技术",
+      "evidence_span": "材料配方技术和与整车厂同步的工程设计开发能力是公司减震元件产品的核心优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "与整车企业同步开发的工程技术研发",
+      "evidence_span": "公司的技术优势突出体现在拥有自主知识产权的材料配方技术和与整车企业同步开发的工程技术研发及系统设计能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统设计能力",
+      "evidence_span": "系统设计能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "1/4台架试验设备",
+      "evidence_span": "1/4台架试验设备已正式投入使用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CNAS认证实验室",
+      "evidence_span": "公司研发中心实验室已获得CNAS认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通用",
+      "evidence_span": "聚氨酯减震元件业务获得了通用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞",
+      "evidence_span": "奇瑞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽",
+      "evidence_span": "上汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "吉利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽乘用车",
+      "evidence_span": "轻量化踏板业务获得了上汽乘用车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "蔚来"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "理想",
+      "evidence_span": "理想"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽",
+      "evidence_span": "获得了广汽AH8制动踏板项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏",
+      "evidence_span": "成熟产品首批已应用至蔚来、小鹏、理想等主流新能源车车型上"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保时捷",
+      "evidence_span": "已与保时捷"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ZF",
+      "evidence_span": "ZF"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "BWI",
+      "evidence_span": "BWI等国际知名整车企业和悬架总成企业的供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电动化",
+      "evidence_span": "受益于电动化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "轻量化",
+      "evidence_span": "轻量化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "消费升级",
+      "evidence_span": "消费升级"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车底盘悬架系统减震元件",
+        "evidence_span": "主要从事汽车底盘悬架系统减震元件和操控系统轻量化踏板总成的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "操控系统轻量化踏板总成",
+        "evidence_span": "主要从事汽车底盘悬架系统减震元件和操控系统轻量化踏板总成的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高性能聚氨酯承载轮",
+        "evidence_span": "非汽车零部件领域高性能聚氨酯承载轮等特种聚氨酯弹性体的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车零部件制造业",
+        "evidence_span": "公司主营业务所属行业为汽车零部件制造业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "聚氨酯减震材料专家",
+        "evidence_span": "聚氨酯减震材料专家"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车减震元件龙头",
+        "evidence_span": "汽车减震元件龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚氨酯缓冲块",
+        "evidence_span": "公司汽车底盘悬架系统减震元件产品主要包括聚氨酯缓冲块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚氨酯弹簧垫",
+        "evidence_span": "聚氨酯弹簧垫"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚氨酯减震支撑",
+        "evidence_span": "聚氨酯减震支撑"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防尘罩",
+        "evidence_span": "防尘罩等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻量化踏板总成",
+        "evidence_span": "公司轻量化踏板总成产品包括制动、离合和电子油门三种踏板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子油门",
+        "evidence_span": "电子油门是公司为了强化踏板总成核心竞争力而成功开发的汽车电子产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "附带能量回收的制动踏板",
+        "evidence_span": "公司开发了附带能量回收的制动踏板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "快接结构的制动踏板",
+        "evidence_span": "公司自主研发的快接结构的制动踏板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线控制动踏板",
+        "evidence_span": "公司开始布局线控制动踏板的技术路线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "落地式加速踏板",
+        "evidence_span": "加速踏板产品开始布局落地式加速踏板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动机悬置",
+        "evidence_span": "目前已可预见拓展至电动机悬置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池包壳体",
+        "evidence_span": "电池包壳体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机罩",
+        "evidence_span": "电机罩等新的产品应用场景"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端传感器制动踏板",
+        "evidence_span": "成功开发的高端传感器制动踏板"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "聚氨酯材料配方技术",
+        "evidence_span": "材料配方技术和与整车厂同步的工程设计开发能力是公司减震元件产品的核心优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "与整车企业同步开发的工程技术研发",
+        "evidence_span": "公司的技术优势突出体现在拥有自主知识产权的材料配方技术和与整车企业同步开发的工程技术研发及系统设计能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统设计能力",
+        "evidence_span": "系统设计能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "1/4台架试验设备",
+        "evidence_span": "1/4台架试验设备已正式投入使用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CNAS认证实验室",
+        "evidence_span": "公司研发中心实验室已获得CNAS认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通用",
+        "evidence_span": "聚氨酯减震元件业务获得了通用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞",
+        "evidence_span": "奇瑞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽",
+        "evidence_span": "上汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "吉利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽乘用车",
+        "evidence_span": "轻量化踏板业务获得了上汽乘用车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "蔚来"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "理想",
+        "evidence_span": "理想"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽",
+        "evidence_span": "获得了广汽AH8制动踏板项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏",
+        "evidence_span": "成熟产品首批已应用至蔚来、小鹏、理想等主流新能源车车型上"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保时捷",
+        "evidence_span": "已与保时捷"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ZF",
+        "evidence_span": "ZF"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "BWI",
+        "evidence_span": "BWI等国际知名整车企业和悬架总成企业的供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电动化",
+        "evidence_span": "受益于电动化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "轻量化",
+        "evidence_span": "轻量化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "消费升级",
+        "evidence_span": "消费升级"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:01:56"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "274c3332061e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落基于美国修订出口条例的事件，但列举了涉及半导体设备的具体公司和技术领域（如涂胶显影、刻蚀、薄膜沉积等），这些是静态知识，混合了事件和知识。"}}

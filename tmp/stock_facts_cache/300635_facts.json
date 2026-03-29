@@ -1,0 +1,264 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程监理",
+      "evidence_span": "公司主要从事以工程监理为主的建设工程项目管理服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程咨询",
+      "evidence_span": "工程咨询（含造价咨询业务、招标代理业务、工程咨询、项目代建/项目管理与全过程工程咨询）业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电力勘察设计",
+      "evidence_span": "电力勘察设计业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧工程管理",
+      "evidence_span": "智慧工程管理和软件研发业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "软件研发",
+      "evidence_span": "智慧工程管理和软件研发业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工程监理企业",
+      "evidence_span": "公司主要从事以工程监理为主的建设工程项目管理服务业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全过程工程咨询管理企业",
+      "evidence_span": "作为国内领先的全过程工程咨询管理企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信工程监理",
+      "evidence_span": "公司工程监理业务以通信监理、电力监理、房建监理和水利监理为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力工程监理",
+      "evidence_span": "公司工程监理业务以通信监理、电力监理、房建监理和水利监理为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房屋建筑工程监理",
+      "evidence_span": "公司工程监理业务以通信监理、电力监理、房建监理和水利监理为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水利工程监理",
+      "evidence_span": "公司工程监理业务以通信监理、电力监理、房建监理和水利监理为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全过程工程咨询",
+      "evidence_span": "工程咨询（含造价咨询业务、招标代理业务、工程咨询、项目代建/项目管理与全过程工程咨询）业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力勘察设计",
+      "evidence_span": "电力勘察设计业务主要以电力咨询设计和工程总承包业务为主要收入来源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "isDC智慧工程数据中心",
+      "evidence_span": "自主创新研发了“isDC智慧工程数据中心、isPM智慧工程项目管理平台、isCM智慧工程全过程咨询管理平台、isBM智慧工程企业管理平台、isGM智慧工程监管平台”等产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "isPM智慧工程项目管理平台",
+      "evidence_span": "自主创新研发了“isDC智慧工程数据中心、isPM智慧工程项目管理平台、isCM智慧工程全过程咨询管理平台、isBM智慧工程企业管理平台、isGM智慧工程监管平台”等产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "isCM智慧工程全过程咨询管理平台",
+      "evidence_span": "自主创新研发了“isDC智慧工程数据中心、isPM智慧工程项目管理平台、isCM智慧工程全过程咨询管理平台、isBM智慧工程企业管理平台、isGM智慧工程监管平台”等产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "isBM智慧工程企业管理平台",
+      "evidence_span": "自主创新研发了“isDC智慧工程数据中心、isPM智慧工程项目管理平台、isCM智慧工程全过程咨询管理平台、isBM智慧工程企业管理平台、isGM智慧工程监管平台”等产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "isGM智慧工程监管平台",
+      "evidence_span": "自主创新研发了“isDC智慧工程数据中心、isPM智慧工程项目管理平台、isCM智慧工程全过程咨询管理平台、isBM智慧工程企业管理平台、isGM智慧工程监管平台”等产品体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网技术",
+      "evidence_span": "应用物联网、5G、BIM、人工智能、大数据、云计算等前沿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G技术",
+      "evidence_span": "应用物联网、5G、BIM、人工智能、大数据、云计算等前沿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BIM技术",
+      "evidence_span": "应用物联网、5G、BIM、人工智能、大数据、云计算等前沿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能技术",
+      "evidence_span": "应用物联网、5G、BIM、人工智能、大数据、云计算等前沿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据技术",
+      "evidence_span": "应用物联网、5G、BIM、人工智能、大数据、云计算等前沿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云计算技术",
+      "evidence_span": "应用物联网、5G、BIM、人工智能、大数据、云计算等前沿技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G推广",
+      "evidence_span": "中达安5G推广为监理业务带来更多订单和丰富应用场景"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新基建建设",
+      "evidence_span": "有望受益大湾区、长三角、新基建建设和大单落地"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程监理",
+        "evidence_span": "公司主要从事以工程监理为主的建设工程项目管理服务业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程咨询",
+        "evidence_span": "工程咨询（含造价咨询业务、招标代理业务、工程咨询、项目代建/项目管理与全过程工程咨询）业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电力勘察设计",
+        "evidence_span": "电力勘察设计业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧工程管理和软件研发",
+        "evidence_span": "智慧工程管理和软件研发业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工程监理企业",
+        "evidence_span": "公司主要从事以工程监理为主的建设工程项目管理服务业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全过程工程咨询管理企业",
+        "evidence_span": "作为国内领先的全过程工程咨询管理企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信工程监理",
+        "evidence_span": "公司工程监理业务以通信监理、电力监理、房建监理和水利监理为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力工程监理",
+        "evidence_span": "公司工程监理业务以通信监理、电力监理、房建监理和水利监理为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房屋建筑工程监理",
+        "evidence_span": "公司工程监理业务以通信监理、电力监理、房建监理和水利监理为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水利工程监理",
+        "evidence_span": "公司工程监理业务以通信监理、电力监理、房建监理和水利监理为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全过程工程咨询",
+        "evidence_span": "工程咨询（含造价咨询业务、招标代理业务、工程咨询、项目代建/项目管理与全过程工程咨询）业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力勘察设计",
+        "evidence_span": "电力勘察设计业务主要以电力咨询设计和工程总承包业务为主要收入来源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "isDC智慧工程数据中心",
+        "evidence_span": "自主创新研发了“isDC智慧工程数据中心、isPM智慧工程项目管理平台、isCM智慧工程全过程咨询管理平台、isBM智慧工程企业管理平台、isGM智慧工程监管平台”等产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "isPM智慧工程项目管理平台",
+        "evidence_span": "自主创新研发了“isDC智慧工程数据中心、isPM智慧工程项目管理平台、isCM智慧工程全过程咨询管理平台、isBM智慧工程企业管理平台、isGM智慧工程监管平台”等产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "isCM智慧工程全过程咨询管理平台",
+        "evidence_span": "自主创新研发了“isDC智慧工程数据中心、isPM智慧工程项目管理平台、isCM智慧工程全过程咨询管理平台、isBM智慧工程企业管理平台、isGM智慧工程监管平台”等产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "isBM智慧工程企业管理平台",
+        "evidence_span": "自主创新研发了“isDC智慧工程数据中心、isPM智慧工程项目管理平台、isCM智慧工程全过程咨询管理平台、isBM智慧工程企业管理平台、isGM智慧工程监管平台”等产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "isGM智慧工程监管平台",
+        "evidence_span": "自主创新研发了“isDC智慧工程数据中心、isPM智慧工程项目管理平台、isCM智慧工程全过程咨询管理平台、isBM智慧工程企业管理平台、isGM智慧工程监管平台”等产品体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网技术",
+        "evidence_span": "应用物联网、5G、BIM、人工智能、大数据、云计算等前沿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G技术",
+        "evidence_span": "应用物联网、5G、BIM、人工智能、大数据、云计算等前沿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BIM技术",
+        "evidence_span": "应用物联网、5G、BIM、人工智能、大数据、云计算等前沿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能技术",
+        "evidence_span": "应用物联网、5G、BIM、人工智能、大数据、云计算等前沿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据技术",
+        "evidence_span": "应用物联网、5G、BIM、人工智能、大数据、云计算等前沿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云计算技术",
+        "evidence_span": "应用物联网、5G、BIM、人工智能、大数据、云计算等前沿技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G推广",
+        "evidence_span": "中达安5G推广为监理业务带来更多订单和丰富应用场景"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新基建建设",
+        "evidence_span": "有望受益大湾区、长三角、新基建建设和大单落地"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:39:35"
+}

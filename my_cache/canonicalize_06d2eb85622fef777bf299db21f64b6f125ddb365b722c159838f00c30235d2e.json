@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:44:00", "result": {"span_uid": "8df5f4933ddd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段表达了高通对AI芯片业务的期望，属于主观看法或未来目标，无法形成稳定、独立的知识块。"}}

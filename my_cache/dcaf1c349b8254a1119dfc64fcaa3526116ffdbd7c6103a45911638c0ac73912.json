@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "6e640d4bda98", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落涉及贸易限制事件，但包含静态知识（东京电子和阿斯麦的产品对芯片行业至关重要），这对理解半导体产业链有价值，但混合了政策动态，需进一步处理。"}}

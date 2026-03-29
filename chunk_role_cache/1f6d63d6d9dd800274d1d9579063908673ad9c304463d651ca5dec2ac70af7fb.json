@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "e426081ecd76", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含低空经济的应用场景（如旅游观光、载人交通）和产业链信息（如eVTOL），这些是静态知识，但混合了具体事件（广州实施方案、亿航智能合作、江门项目启动），因此属于候选混合状态。"}}

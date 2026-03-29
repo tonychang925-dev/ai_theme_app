@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "防务类连接产品",
+      "evidence_span": "主营业务主要为防务类连接产品、通讯类连接产品以及工业类连接产品的销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "通讯类连接产品",
+      "evidence_span": "主营业务主要为防务类连接产品、通讯类连接产品以及工业类连接产品的销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业类连接产品",
+      "evidence_span": "主营业务主要为防务类连接产品、通讯类连接产品以及工业类连接产品的销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "连接器企业",
+      "evidence_span": "发行人主营业务主要为防务类连接产品、通讯类连接产品以及工业类连接产品的销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "防务连接器核心骨干企业",
+      "evidence_span": "作为国内率先从事防务连接器研制和生产的核心骨干企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防务类连接器及组件",
+      "evidence_span": "公司防务类连接器及组件实现销售收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通讯类连接产品",
+      "evidence_span": "公司通讯类连接产品的销量和金额随着华为5G网络的批量建设进程不断增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道交通用连接产品",
+      "evidence_span": "轨道交通用连接产品的销售收入有所波动"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车连接器",
+      "evidence_span": "新能源汽车连接器收入呈稳步增长态势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速连接器",
+      "evidence_span": "5G基站、数据中心等通讯基础设施及设备对高速连接器的需求势不可挡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "零部件加工业务",
+      "evidence_span": "为外部客户提供电子元器件零部件加工服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连接器前端制造工艺",
+      "evidence_span": "发行人拥有国内先进的连接器前端制造工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "零部件加工产线",
+      "evidence_span": "较完整的零部件加工产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多品类连接系统的设计、研发及生产能力",
+      "evidence_span": "掌握了多品类连接系统的设计、研发及生产能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "公司通讯类连接产品的销量和金额随着华为5G网络的批量建设进程不断增长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中兴",
+      "evidence_span": "在航天科工、中国电科、中国兵工、华为、中兴、诺基亚、中国中车、上汽通用五菱、比亚迪等大型集团中树立了良好口碑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "诺基亚",
+      "evidence_span": "在航天科工、中国电科、中国兵工、华为、中兴、诺基亚、中国中车、上汽通用五菱、比亚迪等大型集团中树立了良好口碑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国中车",
+      "evidence_span": "轨道交通领域的客户主要系中国中车各项目子公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用五菱",
+      "evidence_span": "主要覆盖上汽通用五菱及比亚迪等新能源整车头部企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "主要覆盖上汽通用五菱及比亚迪等新能源整车头部企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "对国产化要求的进一步提高给国内连接器龙头企业提供较大市场空间"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "防务类连接产品",
+        "evidence_span": "主营业务主要为防务类连接产品、通讯类连接产品以及工业类连接产品的销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "通讯类连接产品",
+        "evidence_span": "主营业务主要为防务类连接产品、通讯类连接产品以及工业类连接产品的销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业类连接产品",
+        "evidence_span": "主营业务主要为防务类连接产品、通讯类连接产品以及工业类连接产品的销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "连接器企业",
+        "evidence_span": "发行人主营业务主要为防务类连接产品、通讯类连接产品以及工业类连接产品的销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "防务连接器核心骨干企业",
+        "evidence_span": "作为国内率先从事防务连接器研制和生产的核心骨干企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防务类连接器及组件",
+        "evidence_span": "公司防务类连接器及组件实现销售收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通讯类连接产品",
+        "evidence_span": "公司通讯类连接产品的销量和金额随着华为5G网络的批量建设进程不断增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道交通用连接产品",
+        "evidence_span": "轨道交通用连接产品的销售收入有所波动"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车连接器",
+        "evidence_span": "新能源汽车连接器收入呈稳步增长态势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速连接器",
+        "evidence_span": "5G基站、数据中心等通讯基础设施及设备对高速连接器的需求势不可挡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "零部件加工业务",
+        "evidence_span": "为外部客户提供电子元器件零部件加工服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连接器前端制造工艺",
+        "evidence_span": "发行人拥有国内先进的连接器前端制造工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "零部件加工产线",
+        "evidence_span": "较完整的零部件加工产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多品类连接系统的设计、研发及生产能力",
+        "evidence_span": "掌握了多品类连接系统的设计、研发及生产能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "公司通讯类连接产品的销量和金额随着华为5G网络的批量建设进程不断增长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中兴",
+        "evidence_span": "在航天科工、中国电科、中国兵工、华为、中兴、诺基亚、中国中车、上汽通用五菱、比亚迪等大型集团中树立了良好口碑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "诺基亚",
+        "evidence_span": "在航天科工、中国电科、中国兵工、华为、中兴、诺基亚、中国中车、上汽通用五菱、比亚迪等大型集团中树立了良好口碑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国中车",
+        "evidence_span": "轨道交通领域的客户主要系中国中车各项目子公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用五菱",
+        "evidence_span": "主要覆盖上汽通用五菱及比亚迪等新能源整车头部企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "主要覆盖上汽通用五菱及比亚迪等新能源整车头部企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "对国产化要求的进一步提高给国内连接器龙头企业提供较大市场空间"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:24:24"
+}

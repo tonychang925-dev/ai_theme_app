@@ -1,0 +1,379 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "PCB",
+      "evidence_span": "主营业务：PCB 为核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "企业通讯市场板",
+      "evidence_span": "产品以企业通讯市场板、汽车板为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车板",
+      "evidence_span": "产品以企业通讯市场板、汽车板为主"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球PCB领军企业",
+      "evidence_span": "全球PCB领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球高端通信大类PCB主要玩家之一",
+      "evidence_span": "公司是全球高端通信大类PCB主要玩家之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车PCB在内资中位列第二",
+      "evidence_span": "公司汽车PCB在内资中位列第二"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "14~38层企业通讯市场板",
+      "evidence_span": "主要产品为 14~38 层企业通讯市场板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中高阶汽车板",
+      "evidence_span": "中高阶汽车板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "办公及工业设备板",
+      "evidence_span": "办公及工业设备板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G基站应用领域相关PCB产品",
+      "evidence_span": "5G 基站应用领域相关 PCB 产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "下一代服务器平台印制电路板",
+      "evidence_span": "下一代服务器平台印制电路板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高阶数据中心交换机印制电路板",
+      "evidence_span": "高阶数据中心交换机印制电路板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速Interposer印制电路板",
+      "evidence_span": "高速Interposer印制电路板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池管理系统PCB",
+      "evidence_span": "电池管理系统PCB"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "24GHz和77GHz汽车主动测距雷达用PCB产品",
+      "evidence_span": "24GHz和77GHz汽车主动测距雷达用PCB产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4D车载雷达",
+      "evidence_span": "4D车载雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动驾驶域控制器",
+      "evidence_span": "自动驾驶域控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能座舱域控制器",
+      "evidence_span": "智能座舱域控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载网关",
+      "evidence_span": "车载网关"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "背板加工最高层数56层",
+      "evidence_span": "背板加工的最高层数可以达到56 层"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线板最高层数32层",
+      "evidence_span": "线板最高层数可达32层"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HDI板最高层数24层",
+      "evidence_span": "HDI板最高层数可达24层"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "厚铜最高铜厚12OZ",
+      "evidence_span": "厚铜最高铜厚可达12OZ"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速材料测试评估及开发",
+      "evidence_span": "高速材料的测试评估及开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信号完整性性能提升研究",
+      "evidence_span": "信号完整性的性能提升研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "混压技术研究及开发",
+      "evidence_span": "混压技术、高密集成技术的研究及开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高密集成技术研究及开发",
+      "evidence_span": "混压技术、高密集成技术的研究及开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3阶HDI产品量产",
+      "evidence_span": "3阶HDI产品已经实现量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "4阶HDI产品样品打样",
+      "evidence_span": "4阶HDI产品已进入客户样品打样阶段"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5阶以上HDI产品开发测试",
+      "evidence_span": "5阶以上HDI产品正在开发测试"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大陆",
+      "evidence_span": "积累了包括大陆、博世等优质客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世",
+      "evidence_span": "积累了包括大陆、博世等优质客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G",
+      "evidence_span": "沪电股份受益5G和云计算"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "云计算",
+      "evidence_span": "沪电股份受益5G和云计算"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车电气化",
+      "evidence_span": "契合于汽车行业电气化、智能化的趋势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车智能化",
+      "evidence_span": "契合于汽车行业电气化、智能化的趋势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "全球数字化加速",
+      "evidence_span": "深度受益全球数字化加速"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "PCB",
+        "evidence_span": "主营业务：PCB 为核心业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "企业通讯市场板",
+        "evidence_span": "产品以企业通讯市场板、汽车板为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车板",
+        "evidence_span": "产品以企业通讯市场板、汽车板为主"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球PCB领军企业",
+        "evidence_span": "全球PCB领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球高端通信大类PCB主要玩家之一",
+        "evidence_span": "公司是全球高端通信大类PCB主要玩家之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车PCB在内资中位列第二",
+        "evidence_span": "公司汽车PCB在内资中位列第二"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "14~38层企业通讯市场板",
+        "evidence_span": "主要产品为 14~38 层企业通讯市场板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中高阶汽车板",
+        "evidence_span": "中高阶汽车板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "办公及工业设备板",
+        "evidence_span": "办公及工业设备板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G基站应用领域相关PCB产品",
+        "evidence_span": "5G 基站应用领域相关 PCB 产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "下一代服务器平台印制电路板",
+        "evidence_span": "下一代服务器平台印制电路板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高阶数据中心交换机印制电路板",
+        "evidence_span": "高阶数据中心交换机印制电路板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速Interposer印制电路板",
+        "evidence_span": "高速Interposer印制电路板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池管理系统PCB",
+        "evidence_span": "电池管理系统PCB"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "24GHz和77GHz汽车主动测距雷达用PCB产品",
+        "evidence_span": "24GHz和77GHz汽车主动测距雷达用PCB产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4D车载雷达",
+        "evidence_span": "4D车载雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动驾驶域控制器",
+        "evidence_span": "自动驾驶域控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能座舱域控制器",
+        "evidence_span": "智能座舱域控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载网关",
+        "evidence_span": "车载网关"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "背板加工最高层数56层",
+        "evidence_span": "背板加工的最高层数可以达到56 层"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线板最高层数32层",
+        "evidence_span": "线板最高层数可达32层"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HDI板最高层数24层",
+        "evidence_span": "HDI板最高层数可达24层"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "厚铜最高铜厚12OZ",
+        "evidence_span": "厚铜最高铜厚可达12OZ"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速材料测试评估及开发",
+        "evidence_span": "高速材料的测试评估及开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信号完整性性能提升研究",
+        "evidence_span": "信号完整性的性能提升研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "混压技术研究及开发",
+        "evidence_span": "混压技术、高密集成技术的研究及开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高密集成技术研究及开发",
+        "evidence_span": "混压技术、高密集成技术的研究及开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3阶HDI产品量产",
+        "evidence_span": "3阶HDI产品已经实现量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "4阶HDI产品样品打样",
+        "evidence_span": "4阶HDI产品已进入客户样品打样阶段"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5阶以上HDI产品开发测试",
+        "evidence_span": "5阶以上HDI产品正在开发测试"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大陆",
+        "evidence_span": "积累了包括大陆、博世等优质客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世",
+        "evidence_span": "积累了包括大陆、博世等优质客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G",
+        "evidence_span": "沪电股份受益5G和云计算"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "云计算",
+        "evidence_span": "沪电股份受益5G和云计算"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车电气化",
+        "evidence_span": "契合于汽车行业电气化、智能化的趋势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车智能化",
+        "evidence_span": "契合于汽车行业电气化、智能化的趋势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "全球数字化加速",
+        "evidence_span": "深度受益全球数字化加速"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:00:57"
+}

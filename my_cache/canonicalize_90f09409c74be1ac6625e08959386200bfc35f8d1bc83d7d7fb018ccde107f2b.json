@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:45:16", "result": {"span_uid": "2d7aac0e8b6d", "action": "rewrite", "canonical_text": "视涯科技在2022年至2024年期间营业收入呈现增长趋势，2024年同比增长约30%。", "final_type": "signal", "final_role": "营收增长趋势", "stability": "medium", "reason": "该片段体现了公司的阶段性财务表现，属于景气信号，改写后去除了具体数值的强事件化表达，使其更稳定。"}}

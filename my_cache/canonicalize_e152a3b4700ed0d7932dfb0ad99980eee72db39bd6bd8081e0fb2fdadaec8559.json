@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:51:12", "result": {"span_uid": "07a719f028fb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原片段为具体企业专利事件和预测，包含新闻口吻和不确定表述，无法形成稳定知识块，适合丢弃。"}}

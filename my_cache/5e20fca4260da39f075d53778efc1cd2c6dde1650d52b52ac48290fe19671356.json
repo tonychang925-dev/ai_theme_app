@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:54:59", "result": {"chunk_id": "557c31430c21", "label": "strict_knowledge", "confidence": 0.92, "ontology_value": "high", "reason": "该段落静态解释汽车零部件DSO概念的另一个利好：省下利息钱并增厚利润，描述提前拿到现金如何减少贷款和财务成本。内容属于核心构成和机制说明，没有夹杂事件。"}}

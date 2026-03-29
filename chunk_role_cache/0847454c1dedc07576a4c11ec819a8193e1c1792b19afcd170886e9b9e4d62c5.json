@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "e9e6858bf561", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落记录了国家发改委主任在特定场合（2024年3月6日记者会）发表的关于设备更新市场规模的言论。这是一个具体的事件（发言）和动态信息，不构成对半导体设备本身的稳定知识说明。"}}

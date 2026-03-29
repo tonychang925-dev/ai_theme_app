@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "d97cdcf6b67b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落详细描述《人工智能安全治理框架》的内容、目的和措施，包含有价值的静态知识（如安全风险分类、技术指南），但混合了发布事件，需进一步提取知识。"}}

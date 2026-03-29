@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "bdc1cbdc8712", "label": "noise", "confidence": 1.0, "ontology_value": "low", "reason": "该段落描述海啸预警和地震事件，与预制菜题材完全无关，属于噪音内容。"}}

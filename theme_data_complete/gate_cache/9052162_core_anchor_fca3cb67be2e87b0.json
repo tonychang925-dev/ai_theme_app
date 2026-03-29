@@ -1,0 +1,152 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "航母",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "航母是海军核心装备之一，直接对应题材名称'海军'的核心对象，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "驱逐舰",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "驱逐舰是海军核心装备之一，直接贴合题材名称'海军'的核心范围，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "潜艇",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "潜艇是海军核心装备之一，直接符合题材名称'海军'的核心含义，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "总装集成",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "总装集成是海军产业链的核心环节，直接对应造船和装备制造的关键过程，稳定指向产业对象和关键环节，符合题材名称'海军'的产业语义，适合作为must锚点。"
+      },
+      {
+        "term": "核心配套",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "核心配套是海军产业链的重要部分，涵盖动力、电子、武器等关键子系统，直接支撑海军装备制造，稳定指向产业对象和关键环节，符合题材核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "主要造船厂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "主要造船厂是海军产业的关键主体，直接负责舰艇制造和总装集成，稳定指向产业对象和核心环节，符合题材名称'海军'的产业语义，适合作为must锚点。"
+      },
+      {
+        "term": "动力系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "动力系统是海军装备的核心配套之一，直接影响舰艇性能和作战能力，稳定指向技术对象和关键环节，符合题材核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "电子系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "电子系统是海军装备的核心配套，涵盖雷达、通信、导航等关键技术，稳定指向技术对象和关键环节，符合题材名称'海军'的产业语义，适合作为must锚点。"
+      },
+      {
+        "term": "武器与材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "武器与材料是海军装备的核心配套，直接涉及舰载武器、防护材料等关键组成部分，稳定指向技术对象和关键环节，符合题材核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "核潜艇",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "核潜艇是海军核心装备之一，直接对应题材本体中的'核心装备'维度，稳定指向产业对象和关键产品，最符合题材名称'海军'的核心语义，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "电磁弹射",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "电磁弹射是航母关键技术，虽与海军相关，但更偏向具体技术细节，与题材名称'海军'的核心定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "舰载机集成",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "舰载机集成是航母关键技术，与海军相关，但属于具体技术环节，与题材名称'海军'的核心语义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "双波段雷达",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "双波段雷达是驱逐舰配备技术，虽重要，但更偏向电子系统细节，与题材名称'海军'的核心定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "高超音速反舰导弹",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "高超音速反舰导弹是驱逐舰武器技术，与海军相关，但属于具体武器对象，与题材名称'海军'的核心语义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "舰载无人机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "舰载无人机是海军智能化转型技术，虽相关，但更偏向新兴技术应用，与题材名称'海军'的核心定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "无人潜航器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "无人潜航器是海军无人化转型技术，与海军相关，但属于具体设备对象，与题材名称'海军'的核心语义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "AI作战系统",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "AI作战系统是海军智能化技术，虽重要，但更偏向技术系统细节，与题材名称'海军'的核心定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "全电推进",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "全电推进是舰艇动力技术，与海军相关，但属于具体技术环节，与题材名称'海军'的核心语义不够直接吻合，更适合作为should。"
+      },
+      {
+        "term": "激光动力",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "激光动力是舰艇动力技术，虽相关，但更偏向前沿技术细节，与题材名称'海军'的核心定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "智能材料",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "智能材料是海军装备中的关键技术之一，能提升舰艇隐身性和性能，但作为具体技术细节，与题材名称'海军'的核心产业对象或关键环节的直接贴合度不如总装集成、核心装备等，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "军民融合",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "军民融合是海军产业发展的重要模式，促进技术转化和资本参与，但与题材名称'海军'的直接核心语义（如装备、技术、环节）相比，更偏向政策或机制层面，适合作为辅助识别信息。"
+      },
+      {
+        "term": "社会资本",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "社会资本通过军民融合参与海军产业，但作为资金或投资方，与题材名称'海军'的核心产业对象、技术或环节的直接贴合度较低，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "中国超大型水下无人机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "中国超大型水下无人机是海军智能化转型的具体装备，但作为特定型号或产品，与题材名称'海军'的广义产业语义不够直接一致，且知识证据中未明确提及，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "水下无人机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "水下无人机（如无人潜航器）是海军无人化装备，属于关键技术应用，但与核心装备如航母、驱逐舰、潜艇相比，直接贴合题材名称'海军'产业核心的优先级较低，更适合作为辅助识别信息。"
+      }
+    ]
+  }
+}

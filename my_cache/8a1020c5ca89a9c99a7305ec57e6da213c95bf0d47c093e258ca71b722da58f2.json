@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:38:06", "result": {"chunk_id": "a18bc66174d2", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细解释MSCI指数的核心作用和重要性（如作为业绩基准、投资标的、分析工具），属于静态知识构建，无具体事件或时间性动态。"}}

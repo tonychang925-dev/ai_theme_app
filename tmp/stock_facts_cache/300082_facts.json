@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "环氧乙烷衍生绿色低碳精细化工高端新材料",
+      "evidence_span": "专注于环氧乙烷、乙烯衍生绿色低碳精细化工高端新材料的研发与生产销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "减水剂聚醚单体",
+      "evidence_span": "形成减水剂聚醚单体等传统环氧衍生产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "碳酸乙烯酯系列新能源新材料",
+      "evidence_span": "碳酸乙烯酯系列新能源新材料两大产品板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环氧乙烷精深加工行业龙头",
+      "evidence_span": "国内环氧乙烷精深加工行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环氧乙烷衍生绿色低碳精细化工新材料制造企业",
+      "evidence_span": "环氧乙烷衍生绿色低碳精细化工新材料制造企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "减水剂聚醚单体",
+      "evidence_span": "减水剂聚醚单体等传统环氧衍生产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳酸乙烯酯",
+      "evidence_span": "碳酸乙烯酯系列新能源新材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳酸二甲酯",
+      "evidence_span": "碳酸二甲酯联产乙二醇绿色工艺"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药用聚乙二醇辅料",
+      "evidence_span": "药用聚乙二醇辅料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油脂乙氧基化物",
+      "evidence_span": "油脂乙氧基化物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "脂肪酸酯乙氧基化物",
+      "evidence_span": "脂肪酸酯乙氧基化物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池电解液溶剂",
+      "evidence_span": "锂电池电解液溶剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "离子液体催化CO2合成碳酸酯绿色低碳成套新技术",
+      "evidence_span": "离子液体催化CO2合成碳酸酯绿色低碳成套新技术及产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "固载化离子液体催化二氧化碳与环氧乙烷制备碳酸二甲酯联产乙二醇绿色工艺",
+      "evidence_span": "固载化离子液体催化二氧化碳与环氧乙烷制备碳酸二甲酯联产乙二醇绿色工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低温低压高效催化环氧乙烷、二氧化碳合成碳酸乙烯酯及其本质安全成套技术",
+      "evidence_span": "低温低压高效催化环氧乙烷、二氧化碳合成碳酸乙烯酯及其本质安全成套技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "垒知",
+      "evidence_span": "与垒知、苏博特、红墙、东方雨虹、立白、西卡等知名企业建立了战略合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苏博特",
+      "evidence_span": "与垒知、苏博特、红墙、东方雨虹、立白、西卡等知名企业建立了战略合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "红墙",
+      "evidence_span": "与垒知、苏博特、红墙、东方雨虹、立白、西卡等知名企业建立了战略合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东方雨虹",
+      "evidence_span": "与垒知、苏博特、红墙、东方雨虹、立白、西卡等知名企业建立了战略合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "立白",
+      "evidence_span": "与垒知、苏博特、红墙、东方雨虹、立白、西卡等知名企业建立了战略合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西卡",
+      "evidence_span": "与垒知、苏博特、红墙、东方雨虹、立白、西卡等知名企业建立了战略合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天赐材料",
+      "evidence_span": "与天赐材料、新宙邦、江苏国泰、中华蓝天等知名电解液企业建立业务合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新宙邦",
+      "evidence_span": "与天赐材料、新宙邦、江苏国泰、中华蓝天等知名电解液企业建立业务合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江苏国泰",
+      "evidence_span": "与天赐材料、新宙邦、江苏国泰、中华蓝天等知名电解液企业建立业务合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中华蓝天",
+      "evidence_span": "与天赐材料、新宙邦、江苏国泰、中华蓝天等知名电解液企业建立业务合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "环氧衍生新能源电池新材料",
+      "evidence_span": "重点发展环氧衍生新能源电池新材料"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "二氧化碳资源化利用",
+      "evidence_span": "二氧化碳资源化利用"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "环氧乙烷衍生绿色低碳精细化工高端新材料",
+        "evidence_span": "专注于环氧乙烷、乙烯衍生绿色低碳精细化工高端新材料的研发与生产销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "减水剂聚醚单体",
+        "evidence_span": "形成减水剂聚醚单体等传统环氧衍生产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "碳酸乙烯酯系列新能源新材料",
+        "evidence_span": "碳酸乙烯酯系列新能源新材料两大产品板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环氧乙烷精深加工行业龙头",
+        "evidence_span": "国内环氧乙烷精深加工行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环氧乙烷衍生绿色低碳精细化工新材料制造企业",
+        "evidence_span": "环氧乙烷衍生绿色低碳精细化工新材料制造企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "减水剂聚醚单体",
+        "evidence_span": "减水剂聚醚单体等传统环氧衍生产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳酸乙烯酯",
+        "evidence_span": "碳酸乙烯酯系列新能源新材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳酸二甲酯",
+        "evidence_span": "碳酸二甲酯联产乙二醇绿色工艺"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药用聚乙二醇辅料",
+        "evidence_span": "药用聚乙二醇辅料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油脂乙氧基化物",
+        "evidence_span": "油脂乙氧基化物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "脂肪酸酯乙氧基化物",
+        "evidence_span": "脂肪酸酯乙氧基化物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池电解液溶剂",
+        "evidence_span": "锂电池电解液溶剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "离子液体催化CO2合成碳酸酯绿色低碳成套新技术",
+        "evidence_span": "离子液体催化CO2合成碳酸酯绿色低碳成套新技术及产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "固载化离子液体催化二氧化碳与环氧乙烷制备碳酸二甲酯联产乙二醇绿色工艺",
+        "evidence_span": "固载化离子液体催化二氧化碳与环氧乙烷制备碳酸二甲酯联产乙二醇绿色工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低温低压高效催化环氧乙烷、二氧化碳合成碳酸乙烯酯及其本质安全成套技术",
+        "evidence_span": "低温低压高效催化环氧乙烷、二氧化碳合成碳酸乙烯酯及其本质安全成套技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "垒知",
+        "evidence_span": "与垒知、苏博特、红墙、东方雨虹、立白、西卡等知名企业建立了战略合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苏博特",
+        "evidence_span": "与垒知、苏博特、红墙、东方雨虹、立白、西卡等知名企业建立了战略合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "红墙",
+        "evidence_span": "与垒知、苏博特、红墙、东方雨虹、立白、西卡等知名企业建立了战略合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东方雨虹",
+        "evidence_span": "与垒知、苏博特、红墙、东方雨虹、立白、西卡等知名企业建立了战略合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "立白",
+        "evidence_span": "与垒知、苏博特、红墙、东方雨虹、立白、西卡等知名企业建立了战略合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西卡",
+        "evidence_span": "与垒知、苏博特、红墙、东方雨虹、立白、西卡等知名企业建立了战略合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天赐材料",
+        "evidence_span": "与天赐材料、新宙邦、江苏国泰、中华蓝天等知名电解液企业建立业务合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新宙邦",
+        "evidence_span": "与天赐材料、新宙邦、江苏国泰、中华蓝天等知名电解液企业建立业务合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江苏国泰",
+        "evidence_span": "与天赐材料、新宙邦、江苏国泰、中华蓝天等知名电解液企业建立业务合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中华蓝天",
+        "evidence_span": "与天赐材料、新宙邦、江苏国泰、中华蓝天等知名电解液企业建立业务合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "环氧衍生新能源电池新材料",
+        "evidence_span": "重点发展环氧衍生新能源电池新材料"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "二氧化碳资源化利用",
+        "evidence_span": "二氧化碳资源化利用"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:16:01"
+}

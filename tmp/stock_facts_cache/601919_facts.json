@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "集装箱航运",
+      "evidence_span": "经营国际、国内海上集装箱运输服务及相关业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "码头运营管理",
+      "evidence_span": "从事集装箱和散杂货码头的装卸和堆存业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球数字化供应链运营和投资平台",
+      "evidence_span": "以集装箱航运为核心的全球数字化供应链运营和投资平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集装箱运输综合物流供应链服务的上市平台",
+      "evidence_span": "专注于发展集装箱运输综合物流供应链服务的上市平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球Top3班轮集团",
+      "evidence_span": "中远海控全球Top3班轮集团"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "端到端全程物流解决方案",
+      "evidence_span": "为全球客户提供优质的端到端全程物流解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化供应链服务",
+      "evidence_span": "构建覆盖全球的“集装箱航运+港口+相关物流”三位一体数字化供应链服务生态"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SynConHub电商平台",
+      "evidence_span": "SynConHub电商平台成交箱量快速增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海运产品模块",
+      "evidence_span": "推出海运、陆运、报关、仓配四大产品模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陆运产品模块",
+      "evidence_span": "推出海运、陆运、报关、仓配四大产品模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "报关产品模块",
+      "evidence_span": "推出海运、陆运、报关、仓配四大产品模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仓配产品模块",
+      "evidence_span": "推出海运、陆运、报关、仓配四大产品模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "泰鸿供应链组合产品",
+      "evidence_span": "上线首个供应链组合产品——“泰鸿（TaentPegasus）”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中欧陆海快线运输服务",
+      "evidence_span": "持续开拓中欧陆海快线运输服务网络"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子提单服务",
+      "evidence_span": "联合中国银行共同推出电子提单服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海运+海外仓+二次分拨运输",
+      "evidence_span": "服务于家电行业的“海运+海外仓+二次分拨运输”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整车集装箱运输全链路运输",
+      "evidence_span": "应用于汽车行业的“整车集装箱运输全链路运输”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化供应链顶层规划",
+      "evidence_span": "高效完成数字化供应链顶层规划的编制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "GSBN区块链技术生态平台",
+      "evidence_span": "参与创建的GSBN，作为独立的、非盈利性的区块链技术生态平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "IRIS-4信息化系统",
+      "evidence_span": "通过GSBN、IRIS-4、5G港口等信息化、数字化系统更为广泛的应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G港口",
+      "evidence_span": "通过GSBN、IRIS-4、5G港口等信息化、数字化系统更为广泛的应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "港口自动化建设",
+      "evidence_span": "旗下港口自动化建设进一步提速"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全流程自动化升级改造项目",
+      "evidence_span": "天津集装箱码头“全流程自动化升级改造项目”全面投产运营"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "甲醇双燃料动力集装箱船",
+      "evidence_span": "订造了12艘24,000标准箱甲醇双燃料动力集装箱船"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电动集装箱船",
+      "evidence_span": "积极参与长江干线首艘700标准箱电动集装箱船项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分布式光伏发电项目",
+      "evidence_span": "在武汉码头引进分布式光伏发电项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海洋联盟成员",
+      "evidence_span": "携手海洋联盟成员发布远东往返欧洲/地中海、跨太平洋、跨大西洋、远东往返中东/红海等全新航线产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽集团",
+      "evidence_span": "促进上汽集团与本集团在整车出口、零部件进出口等领域的深度协同"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中粮福临门",
+      "evidence_span": "本集团认购中粮福临门5.81%的股份"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "积极把握“一带一路”倡议和RCEP等区域经贸协议带来的商业机遇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "RCEP",
+      "evidence_span": "积极把握“一带一路”倡议和RCEP等区域经贸协议带来的商业机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "集装箱航运",
+        "evidence_span": "经营国际、国内海上集装箱运输服务及相关业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "码头运营管理",
+        "evidence_span": "从事集装箱和散杂货码头的装卸和堆存业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球数字化供应链运营和投资平台",
+        "evidence_span": "以集装箱航运为核心的全球数字化供应链运营和投资平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集装箱运输综合物流供应链服务的上市平台",
+        "evidence_span": "专注于发展集装箱运输综合物流供应链服务的上市平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球Top3班轮集团",
+        "evidence_span": "中远海控全球Top3班轮集团"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "端到端全程物流解决方案",
+        "evidence_span": "为全球客户提供优质的端到端全程物流解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化供应链服务",
+        "evidence_span": "构建覆盖全球的“集装箱航运+港口+相关物流”三位一体数字化供应链服务生态"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SynConHub电商平台",
+        "evidence_span": "SynConHub电商平台成交箱量快速增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海运产品模块",
+        "evidence_span": "推出海运、陆运、报关、仓配四大产品模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陆运产品模块",
+        "evidence_span": "推出海运、陆运、报关、仓配四大产品模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "报关产品模块",
+        "evidence_span": "推出海运、陆运、报关、仓配四大产品模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仓配产品模块",
+        "evidence_span": "推出海运、陆运、报关、仓配四大产品模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "泰鸿供应链组合产品",
+        "evidence_span": "上线首个供应链组合产品——“泰鸿（TaentPegasus）”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中欧陆海快线运输服务",
+        "evidence_span": "持续开拓中欧陆海快线运输服务网络"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子提单服务",
+        "evidence_span": "联合中国银行共同推出电子提单服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海运+海外仓+二次分拨运输",
+        "evidence_span": "服务于家电行业的“海运+海外仓+二次分拨运输”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整车集装箱运输全链路运输",
+        "evidence_span": "应用于汽车行业的“整车集装箱运输全链路运输”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化供应链顶层规划",
+        "evidence_span": "高效完成数字化供应链顶层规划的编制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "GSBN区块链技术生态平台",
+        "evidence_span": "参与创建的GSBN，作为独立的、非盈利性的区块链技术生态平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "IRIS-4信息化系统",
+        "evidence_span": "通过GSBN、IRIS-4、5G港口等信息化、数字化系统更为广泛的应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G港口",
+        "evidence_span": "通过GSBN、IRIS-4、5G港口等信息化、数字化系统更为广泛的应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "港口自动化建设",
+        "evidence_span": "旗下港口自动化建设进一步提速"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全流程自动化升级改造项目",
+        "evidence_span": "天津集装箱码头“全流程自动化升级改造项目”全面投产运营"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "甲醇双燃料动力集装箱船",
+        "evidence_span": "订造了12艘24,000标准箱甲醇双燃料动力集装箱船"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电动集装箱船",
+        "evidence_span": "积极参与长江干线首艘700标准箱电动集装箱船项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分布式光伏发电项目",
+        "evidence_span": "在武汉码头引进分布式光伏发电项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海洋联盟成员",
+        "evidence_span": "携手海洋联盟成员发布远东往返欧洲/地中海、跨太平洋、跨大西洋、远东往返中东/红海等全新航线产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽集团",
+        "evidence_span": "促进上汽集团与本集团在整车出口、零部件进出口等领域的深度协同"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中粮福临门",
+        "evidence_span": "本集团认购中粮福临门5.81%的股份"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "积极把握“一带一路”倡议和RCEP等区域经贸协议带来的商业机遇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "RCEP",
+        "evidence_span": "积极把握“一带一路”倡议和RCEP等区域经贸协议带来的商业机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:44:34"
+}

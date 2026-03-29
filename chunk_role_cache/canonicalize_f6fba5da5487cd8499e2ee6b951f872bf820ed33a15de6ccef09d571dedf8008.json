@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:48:02", "result": {"span_uid": "bb927af6b0e8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述苹果公司可能重启AR眼镜计划的具体事件，包含爆料、代号、调研等新闻细节，属于企业研发动向的事件性信息，无法整理成稳定、可独立成立的知识块。"}}

@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "宠物卫生用品",
+      "evidence_span": "公司主要产品包括宠物卫生用品、个人卫生用品与无纺布"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "个人卫生用品",
+      "evidence_span": "公司主要产品包括宠物卫生用品、个人卫生用品与无纺布"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "无纺布",
+      "evidence_span": "公司主要产品包括宠物卫生用品、个人卫生用品与无纺布"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "宠物卫生用品龙头制造商",
+      "evidence_span": "依依股份宠物卫生用品龙头制造商成长可期"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "宠物卫生护理出口龙头",
+      "evidence_span": "宠物卫生护理出口龙头，静待疫后重回增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "宠物垫",
+      "evidence_span": "宠物垫为公司核心产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "宠物尿裤",
+      "evidence_span": "宠物卫生护理用品包括宠物垫、宠物尿裤、宠物清洁袋、宠物湿巾、宠物垃圾袋等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "宠物清洁袋",
+      "evidence_span": "宠物卫生护理用品包括宠物垫、宠物尿裤、宠物清洁袋、宠物湿巾、宠物垃圾袋等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "宠物湿巾",
+      "evidence_span": "宠物卫生护理用品包括宠物垫、宠物尿裤、宠物清洁袋、宠物湿巾、宠物垃圾袋等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "宠物垃圾袋",
+      "evidence_span": "宠物卫生护理用品包括宠物垫、宠物尿裤、宠物清洁袋、宠物湿巾、宠物垃圾袋等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卫生巾",
+      "evidence_span": "个人卫生护理用品包括卫生巾、护理垫、纸尿裤、口罩等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "护理垫",
+      "evidence_span": "个人卫生护理用品包括卫生巾、护理垫、纸尿裤、口罩等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纸尿裤",
+      "evidence_span": "个人卫生护理用品包括卫生巾、护理垫、纸尿裤、口罩等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "口罩",
+      "evidence_span": "个人卫生护理用品包括卫生巾、护理垫、纸尿裤、口罩等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "PetSmart",
+      "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃尔玛",
+      "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚马逊",
+      "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Chewy",
+      "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本 JAPELL",
+      "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本 ITO",
+      "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本山善",
+      "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本永旺",
+      "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "宠物卫生用品",
+        "evidence_span": "公司主要产品包括宠物卫生用品、个人卫生用品与无纺布"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "个人卫生用品",
+        "evidence_span": "公司主要产品包括宠物卫生用品、个人卫生用品与无纺布"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "无纺布",
+        "evidence_span": "公司主要产品包括宠物卫生用品、个人卫生用品与无纺布"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "宠物卫生用品龙头制造商",
+        "evidence_span": "依依股份宠物卫生用品龙头制造商成长可期"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "宠物卫生护理出口龙头",
+        "evidence_span": "宠物卫生护理出口龙头，静待疫后重回增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "宠物垫",
+        "evidence_span": "宠物垫为公司核心产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "宠物尿裤",
+        "evidence_span": "宠物卫生护理用品包括宠物垫、宠物尿裤、宠物清洁袋、宠物湿巾、宠物垃圾袋等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "宠物清洁袋",
+        "evidence_span": "宠物卫生护理用品包括宠物垫、宠物尿裤、宠物清洁袋、宠物湿巾、宠物垃圾袋等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "宠物湿巾",
+        "evidence_span": "宠物卫生护理用品包括宠物垫、宠物尿裤、宠物清洁袋、宠物湿巾、宠物垃圾袋等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "宠物垃圾袋",
+        "evidence_span": "宠物卫生护理用品包括宠物垫、宠物尿裤、宠物清洁袋、宠物湿巾、宠物垃圾袋等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卫生巾",
+        "evidence_span": "个人卫生护理用品包括卫生巾、护理垫、纸尿裤、口罩等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "护理垫",
+        "evidence_span": "个人卫生护理用品包括卫生巾、护理垫、纸尿裤、口罩等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纸尿裤",
+        "evidence_span": "个人卫生护理用品包括卫生巾、护理垫、纸尿裤、口罩等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "口罩",
+        "evidence_span": "个人卫生护理用品包括卫生巾、护理垫、纸尿裤、口罩等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "PetSmart",
+        "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃尔玛",
+        "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚马逊",
+        "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Chewy",
+        "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本 JAPELL",
+        "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本 ITO",
+        "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本山善",
+        "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本永旺",
+        "evidence_span": "公司主要客户包括PetSmart、沃尔玛、亚马逊、Chewy、日本 JAPELL、日本 ITO、日本山善、日本永旺等"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:07:10"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:54:36", "result": {"span_uid": "acd3eae280d4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "国产化趋势", "stability": "low", "reason": "该片段主要表达国元证券的主观看法和预测，涉及具体企业动作和进口替代趋势，属于事件性、预测性内容，不稳定且无法整理成独立、稳定的知识块。"}}

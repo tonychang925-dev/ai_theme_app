@@ -1,0 +1,214 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "复合材料中间体",
+      "evidence_span": "发展复合材料中间体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药",
+      "evidence_span": "医药及农药中间体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农药中间体",
+      "evidence_span": "医药及农药中间体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "染料中间体",
+      "evidence_span": "染料中间体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "纸张化学品",
+      "evidence_span": "纸张化学品四个系列"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精细化工企业",
+      "evidence_span": "公司产品属于精细化工行业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中间体产业链企业",
+      "evidence_span": "主要产品处于中间体产业链的高级中间体阶段"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "间氨基苯磺酸",
+      "evidence_span": "以间氨基苯磺酸为基础"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Jianxin-201",
+      "evidence_span": "1000吨Jianxin-201"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4,4'-二氯二苯砜",
+      "evidence_span": "3000吨4,4'-二氯二苯砜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4,4'-二氨基二苯砜",
+      "evidence_span": "500吨4,4'-二氨基二苯砜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二苯砜",
+      "evidence_span": "200吨二苯砜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水煤浆添加剂",
+      "evidence_span": "新型环保材料水煤浆添加剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "异构体控制",
+      "evidence_span": "在异构体控制、产品提纯等核心工艺上达到了较高的水准"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产品提纯",
+      "evidence_span": "在异构体控制、产品提纯等核心工艺上达到了较高的水准"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连续加氢生产间氨基苯磺酸产业化",
+      "evidence_span": "连续加氢生产间氨基苯磺酸产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连续化生产间氨基苯酚的方法及装置",
+      "evidence_span": "一种连续化生产间氨基苯酚的方法及装置"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "催化加氢制备芳胺的方法",
+      "evidence_span": "一种稳定高效的催化加氢制备芳胺的方法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微通道连续流反应器合成间硝基苯磺酸的方法",
+      "evidence_span": "一种采用微通道连续流反应器合成间硝基苯磺酸的方法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "二氯二苯砜釜残脱氯制备二苯砜的方法",
+      "evidence_span": "一种二氯二苯砜釜残脱氯制备二苯砜的方法"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "环保趋严",
+      "evidence_span": "环保趋严,竞争格局变化,建新再起航"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "复合材料中间体",
+        "evidence_span": "发展复合材料中间体"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药及农药中间体",
+        "evidence_span": "医药及农药中间体"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "染料中间体",
+        "evidence_span": "染料中间体"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "纸张化学品",
+        "evidence_span": "纸张化学品四个系列"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精细化工企业",
+        "evidence_span": "公司产品属于精细化工行业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中间体产业链企业",
+        "evidence_span": "主要产品处于中间体产业链的高级中间体阶段"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "间氨基苯磺酸",
+        "evidence_span": "以间氨基苯磺酸为基础"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Jianxin-201",
+        "evidence_span": "1000吨Jianxin-201"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4,4'-二氯二苯砜",
+        "evidence_span": "3000吨4,4'-二氯二苯砜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4,4'-二氨基二苯砜",
+        "evidence_span": "500吨4,4'-二氨基二苯砜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二苯砜",
+        "evidence_span": "200吨二苯砜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水煤浆添加剂",
+        "evidence_span": "新型环保材料水煤浆添加剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "异构体控制",
+        "evidence_span": "在异构体控制、产品提纯等核心工艺上达到了较高的水准"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产品提纯",
+        "evidence_span": "在异构体控制、产品提纯等核心工艺上达到了较高的水准"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连续加氢生产间氨基苯磺酸产业化",
+        "evidence_span": "连续加氢生产间氨基苯磺酸产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连续化生产间氨基苯酚的方法及装置",
+        "evidence_span": "一种连续化生产间氨基苯酚的方法及装置"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "催化加氢制备芳胺的方法",
+        "evidence_span": "一种稳定高效的催化加氢制备芳胺的方法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微通道连续流反应器合成间硝基苯磺酸的方法",
+        "evidence_span": "一种采用微通道连续流反应器合成间硝基苯磺酸的方法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "二氯二苯砜釜残脱氯制备二苯砜的方法",
+        "evidence_span": "一种二氯二苯砜釜残脱氯制备二苯砜的方法"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "环保趋严",
+        "evidence_span": "环保趋严,竞争格局变化,建新再起航"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:32:52"
+}

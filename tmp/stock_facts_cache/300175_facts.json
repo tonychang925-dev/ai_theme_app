@@ -1,0 +1,294 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "农副产品加工业务",
+      "evidence_span": "公司农副产品加工业务主要是果干、坚果果仁、鲜果的加工、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数据中心",
+      "evidence_span": "公司数据中心业务覆盖数据中心行业全生命周期管理服务、智慧物联解决方案及边缘云计算IT基础架构"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧城市业务",
+      "evidence_span": "公司数据中心业务覆盖数据中心行业全生命周期管理服务、智慧物联解决方案及边缘云计算IT基础架构"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农产品加工示范企业",
+      "evidence_span": "先后获得了“第四批农业产业化省重点龙头企业”、“农产品加工示范企业”等荣誉称号"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农业产业化省重点龙头企业",
+      "evidence_span": "先后获得了“第四批农业产业化省重点龙头企业”、“农产品加工示范企业”等荣誉称号"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "葡萄干",
+      "evidence_span": "主要的产品有葡萄干、松子及松子仁、苹果等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "松子",
+      "evidence_span": "主要的产品有葡萄干、松子及松子仁、苹果等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "松子仁",
+      "evidence_span": "主要的产品有葡萄干、松子及松子仁、苹果等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "苹果",
+      "evidence_span": "主要的产品有葡萄干、松子及松子仁、苹果等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据中心全生命周期管理服务",
+      "evidence_span": "公司数据中心业务覆盖数据中心行业全生命周期管理服务、智慧物联解决方案及边缘云计算IT基础架构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧物联解决方案",
+      "evidence_span": "公司数据中心业务覆盖数据中心行业全生命周期管理服务、智慧物联解决方案及边缘云计算IT基础架构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "边缘云计算IT基础架构",
+      "evidence_span": "公司数据中心业务覆盖数据中心行业全生命周期管理服务、智慧物联解决方案及边缘云计算IT基础架构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "干鲜冷链共享技术",
+      "evidence_span": "先进的干鲜冷链共享技术和严格的食品加工检测流程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "食品加工检测流程",
+      "evidence_span": "先进的干鲜冷链共享技术和严格的食品加工检测流程"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "洽洽食品",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三只松鼠",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "桃李面包",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "徐福记",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美珍香",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "青岛沃隆",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天虹果仁",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "盼盼食品",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "维维食品",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "旺旺食品",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "知味轩",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "凯利来",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "湖南大麦",
+      "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "星巴克",
+      "evidence_span": "成为星巴克、COSTA等知名品牌的供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "COSTA",
+      "evidence_span": "成为星巴克、COSTA等知名品牌的供应商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "农副产品加工业务",
+        "evidence_span": "公司农副产品加工业务主要是果干、坚果果仁、鲜果的加工、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数据中心及智慧城市业务",
+        "evidence_span": "公司数据中心业务覆盖数据中心行业全生命周期管理服务、智慧物联解决方案及边缘云计算IT基础架构"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农产品加工示范企业",
+        "evidence_span": "先后获得了“第四批农业产业化省重点龙头企业”、“农产品加工示范企业”等荣誉称号"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农业产业化省重点龙头企业",
+        "evidence_span": "先后获得了“第四批农业产业化省重点龙头企业”、“农产品加工示范企业”等荣誉称号"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "葡萄干",
+        "evidence_span": "主要的产品有葡萄干、松子及松子仁、苹果等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "松子",
+        "evidence_span": "主要的产品有葡萄干、松子及松子仁、苹果等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "松子仁",
+        "evidence_span": "主要的产品有葡萄干、松子及松子仁、苹果等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "苹果",
+        "evidence_span": "主要的产品有葡萄干、松子及松子仁、苹果等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据中心全生命周期管理服务",
+        "evidence_span": "公司数据中心业务覆盖数据中心行业全生命周期管理服务、智慧物联解决方案及边缘云计算IT基础架构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧物联解决方案",
+        "evidence_span": "公司数据中心业务覆盖数据中心行业全生命周期管理服务、智慧物联解决方案及边缘云计算IT基础架构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "边缘云计算IT基础架构",
+        "evidence_span": "公司数据中心业务覆盖数据中心行业全生命周期管理服务、智慧物联解决方案及边缘云计算IT基础架构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "干鲜冷链共享技术",
+        "evidence_span": "先进的干鲜冷链共享技术和严格的食品加工检测流程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "食品加工检测流程",
+        "evidence_span": "先进的干鲜冷链共享技术和严格的食品加工检测流程"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "洽洽食品",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三只松鼠",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "桃李面包",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "徐福记",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美珍香",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "青岛沃隆",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天虹果仁",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "盼盼食品",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "维维食品",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "旺旺食品",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "知味轩",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "凯利来",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "湖南大麦",
+        "evidence_span": "公司已与洽洽食品、三只松鼠、桃李面包、徐福记、美珍香、青岛沃隆、天虹果仁、盼盼食品、维维食品、旺旺食品、知味轩、凯利来、湖南大麦等国内知名休闲零食品牌及烘焙企业达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "星巴克",
+        "evidence_span": "成为星巴克、COSTA等知名品牌的供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "COSTA",
+        "evidence_span": "成为星巴克、COSTA等知名品牌的供应商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:01:51"
+}

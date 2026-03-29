@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 206502658.59,
+    "changeCount": 0.71,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:47",
+    "detail": "<p><span style=\"font-weight: bold;\">1、星云股份国内领先的锂电后段设备供应商</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20221027100319_75d2c85ca663057d.png\" /></p>\n<p>星云股份是一家以锂电池检测系统为核心的智能制造解决方案供应商，成立于2005年，于2017年在深圳创业板上市。公司以电池仿真及过程测试、生产制造执行系统（MES）为核心，着重加强储能及充电桩领域布局，为客户提供智能制造解决方案。公司当前业务涉及消费及小动力、动力、储能锂电池检测服务，主要客户覆盖华为、苹果OEM/ODM、三星、LG、松下、福特、一汽大众、比亚迪、宁德时代、亿纬锂能等主流厂商。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、公司主要产品及客户</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid2_20221027100450_5ad9799335a982d6.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20221027100518_b0e21c19c8411be6.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20221027100558_7f62465ee51bfd17.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20221027100807_93b44cfb4b48264d.png\" /></p>\n<p>公司主要产品有锂电池保护板检测系统、锂电池成品检测系统、锂电池组BMS检测系统、锂电池组充放电检测系统、锂电池组工况模拟检测系统、锂电池组自动化组装系统、动力电池模组/电池组EOL检测系统、一体式车载直流充电机、储能智能变流器。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司保持高比例研发费用</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20221027101102_d83734c7d07131a9.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20221027101119_cdee761f26404c84.png\" /></p>\n<p>2020年底，公司研发技术人员共计446人，占公司员工人数的36%。2020年，公司投入研发费用0.82亿元，占营收比例为14%。公司长期保持较高的研发强度，参与多项国家相关课题研究。2019年，公司作为主要参与单位，凭借&ldquo;新能源汽车能源动力系统关键共性检测技术及标准体系&rdquo;这一项目，荣获国家科技进步二等奖。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、公司业务在产业链中的位置</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid14_20221027101220_e53cfa03f1d24c24.png\" /></p>\n<p>伴随着全球碳中和目标的推动，全球主流电池厂商积极进行产业布局，中国成为外国电池厂商产能扩张的主要基地。伴随着锂电产业在全球的扩展以及在我国市场的进一步发展与集中，国内动力锂电设备需求将获得大幅度增长。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、公司主要产品及解决方案</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid17_20221027101631_dd73177a0e000c73.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid19_20221027101650_fbac6b02625103cf.png\" /></p>\n<p>公司拥有7大主要产品和3大解决方案。产品线覆盖消费类锂电池检测、小动力产品锂电池检测、新能源汽车动力锂电池检测及储能相关产品等多个领域，包含设备及产品销售、检测服务、充电运营服务等多种业务形式。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、风险提示：</span>客户集中度较高的风险、原材料价格上涨的风险、新能源车渗透率不及预期的风险。</p>\n<p>&nbsp;</p>",
+    "firstLetter": "XYGF",
+    "high": 62.6,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 60.26,
+    "marketValue": 10657307610.0,
+    "name": "星云股份",
+    "pctChg": 1.16,
+    "price": 61.86,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 28.5,
+    "recentChange": 12.45,
+    "remark": "一家以锂电池检测系统为核心的智能制造解决方案供应商。",
+    "status": 1,
+    "stockId": "300648",
+    "stockLightspots": [
+      {
+        "bizKey": "8472",
+        "content": "国内锂电检测设备龙头，储能及充电桩业务注入新动能",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8472,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8473",
+        "content": "星云股份积极转型的锂电池检测设备领跑者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8473,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8474",
+        "content": "立足锂电检测领域，打造后段设备龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8474,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8475",
+        "content": "星云股份锂电池检测设备领先企业,业绩高速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8475,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8476",
+        "content": "星云股份立足锂电检测设备，迎新能源和储能双轮驱动",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8476,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8477",
+        "content": "锂电后段设备领先供应商，打造第二增长曲线",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8477,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8478",
+        "content": "星云股份快速成长中的锂电设备新星",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8478,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8479",
+        "content": "星云股份立足锂电检测，积极开拓储能领域",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8479,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8480",
+        "content": "星云股份聚焦后端检测设备，打造锂电生产自动化系统",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8480,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8481",
+        "content": "星云股份PACK自动化趋势崛起，锂电检测先行者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8481,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8482",
+        "content": "星云股份新能源+储能布局，锂电检测设备新星升起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8482,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8483",
+        "content": "星云股份领先的锂电池检测系统服务商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8483,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8484",
+        "content": "专注于锂电自动化检测的小而美公司",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8484,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8485",
+        "content": "星云股份业绩波动难挡趋势，厚积薄发正当其时",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8485,
+        "stockId": "300648",
+        "updateTime": null
+      },
+      {
+        "bizKey": "8486",
+        "content": "星云股份Pack自动化新锐，受益新能源高速发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 8486,
+        "stockId": "300648",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:53",
+    "vol": 33370.0
+  }
+}

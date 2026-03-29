@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_3", "model": "deepseek-chat", "timestamp": "2026-03-08T09:33:12", "result": {"chunk_id": "6ec214d229b5", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述华为和中芯国际的专利提交及合作计划，涉及SAQP技术和DUV光刻机应用，包含技术路径知识，但混合了事件信息（专利提交、罢工新闻），适合作为候选混合内容。"}}

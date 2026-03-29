@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_3", "model": "deepseek-chat", "timestamp": "2026-03-08T09:33:12", "result": {"chunk_id": "0319c83aa726", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落简要描述微电子公司公布新专利的事件，包括日期。这属于公司动态或公告，没有详细说明专利内容或技术知识，因此应归类为pure_event。"}}

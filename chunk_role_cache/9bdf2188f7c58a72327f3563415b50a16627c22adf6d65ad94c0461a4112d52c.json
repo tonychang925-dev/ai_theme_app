@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:43:18", "result": {"chunk_id": "b2a2b302a004", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明了热捕获环节的功能、技术路线（冷板式和浸没式液冷）及其特点，属于液冷数据中心核心架构的静态知识，无事件信息。"}}

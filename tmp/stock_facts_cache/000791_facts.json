@@ -1,0 +1,79 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "水力发电",
+      "evidence_span": "公司从事的主要业务包括水力发电"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "风力发电",
+      "evidence_span": "公司从事的主要业务包括风力发电"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏发电",
+      "evidence_span": "公司从事的主要业务包括光伏发电"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性清洁能源上市公司",
+      "evidence_span": "公司是一家集水电、风电、光电为一体的综合性清洁能源上市公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "甘肃水电龙头",
+      "evidence_span": "甘肃电投大集团小公司”的甘肃水电龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力",
+      "evidence_span": "主要产品为电力"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "清洁能源",
+      "evidence_span": "集水电、风电、光电为一体的综合性清洁能源上市公司"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "水力发电",
+        "evidence_span": "公司从事的主要业务包括水力发电"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "风力发电",
+        "evidence_span": "公司从事的主要业务包括风力发电"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏发电",
+        "evidence_span": "公司从事的主要业务包括光伏发电"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性清洁能源上市公司",
+        "evidence_span": "公司是一家集水电、风电、光电为一体的综合性清洁能源上市公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "甘肃水电龙头",
+        "evidence_span": "甘肃电投大集团小公司”的甘肃水电龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力",
+        "evidence_span": "主要产品为电力"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "清洁能源",
+        "evidence_span": "集水电、风电、光电为一体的综合性清洁能源上市公司"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:32:12"
+}

@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电气精密部品",
+      "evidence_span": "业务发展定位于电气精密部品及汽车精密部品构建的“一体”业务体系"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车精密部品",
+      "evidence_span": "业务发展定位于电气精密部品及汽车精密部品构建的“一体”业务体系"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "储能系统产品",
+      "evidence_span": "目前公司正通过苏州津荣和浙江津荣积极布局储能系统产品业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精密金属制造服务高新技术企业",
+      "evidence_span": "国内领先的精密金属制造服务高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能源管理及输配电电力保障系统精密金属部品",
+      "evidence_span": "为能源管理及输配电电力保障系统提供贴合需求的低成本、高品质精密金属部品解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业自动化及智能制造电力保障系统精密金属部品",
+      "evidence_span": "为工业自动化及智能制造电力保障系统提供贴合需求的低成本、高品质精密金属部品解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分布式能源电力保障系统精密金属部品",
+      "evidence_span": "为风力发电、水利发电及太阳能发电的分布式能源电力保障系统提供贴合需求的低成本、高品质精密金属部品解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云计算数据中心电力保障系统精密金属部品",
+      "evidence_span": "为云计算数据中心电力保障系统提供贴合需求的低成本、高品质精密金属部品解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃油汽车及新能源汽车减震金属部品",
+      "evidence_span": "为一线品牌燃油汽车及新能源汽车提供减震金属部品解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃油汽车及新能源汽车安全金属部品",
+      "evidence_span": "为一线品牌燃油汽车及新能源汽车提供安全金属部品解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃油汽车及新能源汽车空调座椅金属部品",
+      "evidence_span": "为一线品牌燃油汽车及新能源汽车提供空调座椅金属部品解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃油汽车及新能源汽车轻量化金属部品",
+      "evidence_span": "为一线品牌燃油汽车及新能源汽车提供轻量化金属部品解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户用储能系统",
+      "evidence_span": "可生产产品范围涵盖户用储能系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分布式工商业储能系统",
+      "evidence_span": "可生产产品范围涵盖分布式工商业储能系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密模具开发",
+      "evidence_span": "公司运用长期研发和积累的精密模具开发核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密冲压",
+      "evidence_span": "公司运用长期研发和积累的精密冲压核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密钣金",
+      "evidence_span": "公司运用长期研发和积累的精密钣金核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铝合金层流压铸",
+      "evidence_span": "公司运用长期研发和积累的铝合金层流压铸核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化焊接",
+      "evidence_span": "公司运用长期研发和积累的自动化焊接核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化组装",
+      "evidence_span": "公司运用长期研发和积累的自动化组装核心技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "施耐德",
+      "evidence_span": "在电气精密部品领域，公司主要客户包括施耐德"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ABB",
+      "evidence_span": "在电气精密部品领域，公司主要客户包括ABB"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子",
+      "evidence_span": "在电气精密部品领域，公司主要客户包括西门子"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰田",
+      "evidence_span": "在汽车精密部品领域，公司主要服务于丰田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本田",
+      "evidence_span": "在汽车精密部品领域，公司主要服务于本田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日产",
+      "evidence_span": "在汽车精密部品领域，公司主要服务于日产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "在汽车精密部品领域，公司主要服务于大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东海橡塑",
+      "evidence_span": "主要客户包括东海橡塑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电装",
+      "evidence_span": "主要客户包括电装"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "均胜汽车",
+      "evidence_span": "主要客户包括均胜汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰田纺织",
+      "evidence_span": "主要客户包括丰田纺织"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "延锋",
+      "evidence_span": "主要客户包括延锋"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "采埃孚-天合",
+      "evidence_span": "主要客户包括采埃孚-天合"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双碳目标",
+      "evidence_span": "在国家“双碳”战略下，公司将进一步秉承绿色智能制造的发展战略进行业务拓展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新基建",
+      "evidence_span": "公司所处行业将重点在推进“新型电力系统和终端电气化系统”，以及发展“新能源汽车和汽车轻量化”领域，成为我国实现双碳目标和执行新基建政策的重要产业根基和推手"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电气精密部品",
+        "evidence_span": "业务发展定位于电气精密部品及汽车精密部品构建的“一体”业务体系"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车精密部品",
+        "evidence_span": "业务发展定位于电气精密部品及汽车精密部品构建的“一体”业务体系"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "储能系统产品",
+        "evidence_span": "目前公司正通过苏州津荣和浙江津荣积极布局储能系统产品业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精密金属制造服务高新技术企业",
+        "evidence_span": "国内领先的精密金属制造服务高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能源管理及输配电电力保障系统精密金属部品",
+        "evidence_span": "为能源管理及输配电电力保障系统提供贴合需求的低成本、高品质精密金属部品解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业自动化及智能制造电力保障系统精密金属部品",
+        "evidence_span": "为工业自动化及智能制造电力保障系统提供贴合需求的低成本、高品质精密金属部品解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分布式能源电力保障系统精密金属部品",
+        "evidence_span": "为风力发电、水利发电及太阳能发电的分布式能源电力保障系统提供贴合需求的低成本、高品质精密金属部品解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云计算数据中心电力保障系统精密金属部品",
+        "evidence_span": "为云计算数据中心电力保障系统提供贴合需求的低成本、高品质精密金属部品解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃油汽车及新能源汽车减震金属部品",
+        "evidence_span": "为一线品牌燃油汽车及新能源汽车提供减震金属部品解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃油汽车及新能源汽车安全金属部品",
+        "evidence_span": "为一线品牌燃油汽车及新能源汽车提供安全金属部品解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃油汽车及新能源汽车空调座椅金属部品",
+        "evidence_span": "为一线品牌燃油汽车及新能源汽车提供空调座椅金属部品解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃油汽车及新能源汽车轻量化金属部品",
+        "evidence_span": "为一线品牌燃油汽车及新能源汽车提供轻量化金属部品解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户用储能系统",
+        "evidence_span": "可生产产品范围涵盖户用储能系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分布式工商业储能系统",
+        "evidence_span": "可生产产品范围涵盖分布式工商业储能系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密模具开发",
+        "evidence_span": "公司运用长期研发和积累的精密模具开发核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密冲压",
+        "evidence_span": "公司运用长期研发和积累的精密冲压核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密钣金",
+        "evidence_span": "公司运用长期研发和积累的精密钣金核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铝合金层流压铸",
+        "evidence_span": "公司运用长期研发和积累的铝合金层流压铸核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化焊接",
+        "evidence_span": "公司运用长期研发和积累的自动化焊接核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化组装",
+        "evidence_span": "公司运用长期研发和积累的自动化组装核心技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "施耐德",
+        "evidence_span": "在电气精密部品领域，公司主要客户包括施耐德"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ABB",
+        "evidence_span": "在电气精密部品领域，公司主要客户包括ABB"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子",
+        "evidence_span": "在电气精密部品领域，公司主要客户包括西门子"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰田",
+        "evidence_span": "在汽车精密部品领域，公司主要服务于丰田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本田",
+        "evidence_span": "在汽车精密部品领域，公司主要服务于本田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日产",
+        "evidence_span": "在汽车精密部品领域，公司主要服务于日产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "在汽车精密部品领域，公司主要服务于大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东海橡塑",
+        "evidence_span": "主要客户包括东海橡塑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电装",
+        "evidence_span": "主要客户包括电装"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "均胜汽车",
+        "evidence_span": "主要客户包括均胜汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰田纺织",
+        "evidence_span": "主要客户包括丰田纺织"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "延锋",
+        "evidence_span": "主要客户包括延锋"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "采埃孚-天合",
+        "evidence_span": "主要客户包括采埃孚-天合"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双碳目标",
+        "evidence_span": "在国家“双碳”战略下，公司将进一步秉承绿色智能制造的发展战略进行业务拓展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新基建",
+        "evidence_span": "公司所处行业将重点在推进“新型电力系统和终端电气化系统”，以及发展“新能源汽车和汽车轻量化”领域，成为我国实现双碳目标和执行新基建政策的重要产业根基和推手"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:10:51"
+}

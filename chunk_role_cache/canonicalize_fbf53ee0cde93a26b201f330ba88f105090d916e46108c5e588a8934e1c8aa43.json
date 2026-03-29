@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:44:17", "result": {"span_uid": "896f66d927ea", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅描述液冷技术在AI算力硬件中应用地位的具体事件性变化，属于阶段性趋势信息，但表达过于简略且依赖原新闻上下文，无法形成稳定、独立的知识块。"}}

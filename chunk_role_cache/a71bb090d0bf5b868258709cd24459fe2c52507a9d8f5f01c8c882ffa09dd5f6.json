@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "092829e0a4e8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述半导体销售额的月度增长数据，是具体的景气数据事件，不提供半导体设备的静态知识。"}}

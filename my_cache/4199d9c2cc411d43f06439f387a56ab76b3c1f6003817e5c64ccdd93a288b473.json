@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:31:43", "result": {"chunk_id": "cdcf85f7f69b", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落开头提到“高德获行业大额订单，再次验证行业景气度”，属于事件信息；但后续详细介绍了导弹的定义、性能特点、工作原理等静态知识，这些内容对题材本体构建有价值。因此，段落混合了事件和知识，应分类为candidate_mixed。"}}

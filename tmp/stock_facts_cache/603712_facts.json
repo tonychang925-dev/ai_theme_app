@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "专用无线通信",
+      "evidence_span": "主营业务包括专用无线通信、民用无线通信两大领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "民用无线通信",
+      "evidence_span": "主营业务包括专用无线通信、民用无线通信两大领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用超短波通信龙头",
+      "evidence_span": "军用超短波通信龙头享黄金大列装时代红利"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用无线通信领军企业",
+      "evidence_span": "七一二军用无线通信领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用无线通信装备核心供应商",
+      "evidence_span": "七一二军用无线通信装备核心供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空无线通信龙头",
+      "evidence_span": "航空无线通信龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铁路无线通信设备定点企业",
+      "evidence_span": "我国铁路无线通信设备定点企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "行业标准的主要制定者",
+      "evidence_span": "行业标准的主要制定者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线通信终端产品",
+      "evidence_span": "无线通信终端产品业务收入的占比最高"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "系统产品",
+      "evidence_span": "系统业务营业收入10.89亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用超短波无线通信终端产品",
+      "evidence_span": "公司军用超短波无线通信终端产品应用于机载和地面"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机载无线通信终端",
+      "evidence_span": "机载应用于歼击机、轰炸机、运输机、直升机、无人机、教练机等各种平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地面无线通信终端",
+      "evidence_span": "地面无线通信终端包含车载、背负式电台等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "指挥控制综合系统",
+      "evidence_span": "从单任务终端产品向指挥控制、任务管理、作战协同、目标监视、电子对抗等多任务一体化综合系统发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "任务管理综合系统",
+      "evidence_span": "从单任务终端产品向指挥控制、任务管理、作战协同、目标监视、电子对抗等多任务一体化综合系统发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "作战协同综合系统",
+      "evidence_span": "从单任务终端产品向指挥控制、任务管理、作战协同、目标监视、电子对抗等多任务一体化综合系统发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "目标监视综合系统",
+      "evidence_span": "从单任务终端产品向指挥控制、任务管理、作战协同、目标监视、电子对抗等多任务一体化综合系统发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子对抗综合系统",
+      "evidence_span": "从单任务终端产品向指挥控制、任务管理、作战协同、目标监视、电子对抗等多任务一体化综合系统发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁路无线通信设备",
+      "evidence_span": "自主研发的无线通信设备成功应用于“复兴号”、“和谐号”等高铁列车和新型重载机车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型应急台",
+      "evidence_span": "完成了新型应急台、新型宽带调度设备、车载台、录音录像系统等多款产品的研制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型宽带调度设备",
+      "evidence_span": "完成了新型应急台、新型宽带调度设备、车载台、录音录像系统等多款产品的研制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载台",
+      "evidence_span": "完成了新型应急台、新型宽带调度设备、车载台、录音录像系统等多款产品的研制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "录音录像系统",
+      "evidence_span": "完成了新型应急台、新型宽带调度设备、车载台、录音录像系统等多款产品的研制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用调度系统",
+      "evidence_span": "第一条基于3GPP国际标准的专用调度系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "综合布线技术",
+      "evidence_span": "系统产品是将不同功能的通信终端通过综合布线和网络技术有机结合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "网络技术",
+      "evidence_span": "系统产品是将不同功能的通信终端通过综合布线和网络技术有机结合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G-R技术",
+      "evidence_span": "5G-R的应用丰富了铁路无线通信应用场景"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陆军",
+      "evidence_span": "广泛应用于陆军、装甲、火箭军等多军种"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "装甲",
+      "evidence_span": "广泛应用于陆军、装甲、火箭军等多军种"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "火箭军",
+      "evidence_span": "广泛应用于陆军、装甲、火箭军等多军种"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高铁列车",
+      "evidence_span": "无线通信设备成功应用于“复兴号”、“和谐号”等高铁列车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "重载机车",
+      "evidence_span": "无线通信设备成功应用于“复兴号”、“和谐号”等高铁列车和新型重载机车"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国防信息化建设",
+      "evidence_span": "受益于国防信息化建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军民融合",
+      "evidence_span": "军民融合专网通信持续扩张"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "专用无线通信",
+        "evidence_span": "主营业务包括专用无线通信、民用无线通信两大领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "民用无线通信",
+        "evidence_span": "主营业务包括专用无线通信、民用无线通信两大领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用超短波通信龙头",
+        "evidence_span": "军用超短波通信龙头享黄金大列装时代红利"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用无线通信领军企业",
+        "evidence_span": "七一二军用无线通信领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用无线通信装备核心供应商",
+        "evidence_span": "七一二军用无线通信装备核心供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空无线通信龙头",
+        "evidence_span": "航空无线通信龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铁路无线通信设备定点企业",
+        "evidence_span": "我国铁路无线通信设备定点企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "行业标准的主要制定者",
+        "evidence_span": "行业标准的主要制定者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线通信终端产品",
+        "evidence_span": "无线通信终端产品业务收入的占比最高"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "系统产品",
+        "evidence_span": "系统业务营业收入10.89亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用超短波无线通信终端产品",
+        "evidence_span": "公司军用超短波无线通信终端产品应用于机载和地面"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机载无线通信终端",
+        "evidence_span": "机载应用于歼击机、轰炸机、运输机、直升机、无人机、教练机等各种平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地面无线通信终端",
+        "evidence_span": "地面无线通信终端包含车载、背负式电台等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "指挥控制综合系统",
+        "evidence_span": "从单任务终端产品向指挥控制、任务管理、作战协同、目标监视、电子对抗等多任务一体化综合系统发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "任务管理综合系统",
+        "evidence_span": "从单任务终端产品向指挥控制、任务管理、作战协同、目标监视、电子对抗等多任务一体化综合系统发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "作战协同综合系统",
+        "evidence_span": "从单任务终端产品向指挥控制、任务管理、作战协同、目标监视、电子对抗等多任务一体化综合系统发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "目标监视综合系统",
+        "evidence_span": "从单任务终端产品向指挥控制、任务管理、作战协同、目标监视、电子对抗等多任务一体化综合系统发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子对抗综合系统",
+        "evidence_span": "从单任务终端产品向指挥控制、任务管理、作战协同、目标监视、电子对抗等多任务一体化综合系统发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁路无线通信设备",
+        "evidence_span": "自主研发的无线通信设备成功应用于“复兴号”、“和谐号”等高铁列车和新型重载机车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型应急台",
+        "evidence_span": "完成了新型应急台、新型宽带调度设备、车载台、录音录像系统等多款产品的研制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型宽带调度设备",
+        "evidence_span": "完成了新型应急台、新型宽带调度设备、车载台、录音录像系统等多款产品的研制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载台",
+        "evidence_span": "完成了新型应急台、新型宽带调度设备、车载台、录音录像系统等多款产品的研制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "录音录像系统",
+        "evidence_span": "完成了新型应急台、新型宽带调度设备、车载台、录音录像系统等多款产品的研制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用调度系统",
+        "evidence_span": "第一条基于3GPP国际标准的专用调度系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "综合布线技术",
+        "evidence_span": "系统产品是将不同功能的通信终端通过综合布线和网络技术有机结合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "网络技术",
+        "evidence_span": "系统产品是将不同功能的通信终端通过综合布线和网络技术有机结合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G-R技术",
+        "evidence_span": "5G-R的应用丰富了铁路无线通信应用场景"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陆军",
+        "evidence_span": "广泛应用于陆军、装甲、火箭军等多军种"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "装甲",
+        "evidence_span": "广泛应用于陆军、装甲、火箭军等多军种"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "火箭军",
+        "evidence_span": "广泛应用于陆军、装甲、火箭军等多军种"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高铁列车",
+        "evidence_span": "无线通信设备成功应用于“复兴号”、“和谐号”等高铁列车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "重载机车",
+        "evidence_span": "无线通信设备成功应用于“复兴号”、“和谐号”等高铁列车和新型重载机车"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国防信息化建设",
+        "evidence_span": "受益于国防信息化建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军民融合",
+        "evidence_span": "军民融合专网通信持续扩张"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:00:23"
+}

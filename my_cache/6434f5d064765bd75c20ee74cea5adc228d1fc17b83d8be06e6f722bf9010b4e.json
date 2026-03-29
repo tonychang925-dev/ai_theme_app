@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:10:23", "result": {"chunk_id": "ca3b5dd343d9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述AISHPerf基准体系的启动和测试工作，涉及国产软硬件适配的静态知识，但混合了事件性内容（正式启动、欢迎报名），可能含有有价值的题材知识。"}}

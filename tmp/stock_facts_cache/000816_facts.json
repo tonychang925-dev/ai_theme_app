@@ -1,0 +1,374 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "动力",
+      "evidence_span": "公司致力成为动力及终端设备综合服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "终端设备",
+      "evidence_span": "公司致力成为动力及终端设备综合服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有色金属矿采选",
+      "evidence_span": "多品种金属精矿供应商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧农业",
+      "evidence_span": "智慧农业数字化解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "动力及终端设备综合服务商",
+      "evidence_span": "公司致力成为动力及终端设备综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "多品种金属精矿供应商",
+      "evidence_span": "多品种金属精矿供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧农业数字化解决方案提供商",
+      "evidence_span": "智慧农业数字化解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "便携式储能电源",
+      "evidence_span": "便携式储能电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "背包电池",
+      "evidence_span": "背包电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动高压清洗机",
+      "evidence_span": "电动高压清洗机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传统动力及新能源动力割草机",
+      "evidence_span": "传统动力及新能源动力割草机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铜精粉",
+      "evidence_span": "铜精粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锌精粉",
+      "evidence_span": "锌精粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁精粉",
+      "evidence_span": "铁精粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农业大数据及相关领域的技术服务",
+      "evidence_span": "农业大数据及相关领域的技术研发、技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农业农村大数据应用",
+      "evidence_span": "农业农村大数据"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农业一张图",
+      "evidence_span": "农业一张图"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农村土地承包经营权管理",
+      "evidence_span": "农村土地承包经营权管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "南繁土地管理及服务",
+      "evidence_span": "南繁土地管理及服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "花卉温室智能化生产管理",
+      "evidence_span": "花卉温室智能化生产管理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SURPAC三维矿业软件",
+      "evidence_span": "SURPAC三维矿业软件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SLAM三维激光扫描仪",
+      "evidence_span": "SLAM三维激光扫描仪"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全景地图",
+      "evidence_span": "全景地图"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化感知技术",
+      "evidence_span": "数字化感知"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化决策技术",
+      "evidence_span": "智能化决策"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精准化作业技术",
+      "evidence_span": "精准化作业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧化管理技术",
+      "evidence_span": "智慧化管理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能感知技术",
+      "evidence_span": "智能感知"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能控制技术",
+      "evidence_span": "智能控制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模型模拟技术",
+      "evidence_span": "模型模拟"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Briggs & Stratton LLC",
+      "evidence_span": "Briggs & Stratton LLC"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Husqvarna",
+      "evidence_span": "Husqvarna"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色低碳转型",
+      "evidence_span": "加快绿色低碳及智能化转型"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源产品转型升级",
+      "evidence_span": "加快向新能源产品转型升级的步伐"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧农业",
+      "evidence_span": "智慧农业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字农业",
+      "evidence_span": "数字农业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "乡村振兴",
+      "evidence_span": "助力国家乡村振兴战略"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "动力及终端设备",
+        "evidence_span": "公司致力成为动力及终端设备综合服务商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有色金属矿采选",
+        "evidence_span": "多品种金属精矿供应商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧农业",
+        "evidence_span": "智慧农业数字化解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "动力及终端设备综合服务商",
+        "evidence_span": "公司致力成为动力及终端设备综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "多品种金属精矿供应商",
+        "evidence_span": "多品种金属精矿供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧农业数字化解决方案提供商",
+        "evidence_span": "智慧农业数字化解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "便携式储能电源",
+        "evidence_span": "便携式储能电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "背包电池",
+        "evidence_span": "背包电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动高压清洗机",
+        "evidence_span": "电动高压清洗机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传统动力及新能源动力割草机",
+        "evidence_span": "传统动力及新能源动力割草机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铜精粉",
+        "evidence_span": "铜精粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锌精粉",
+        "evidence_span": "锌精粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁精粉",
+        "evidence_span": "铁精粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农业大数据及相关领域的技术服务",
+        "evidence_span": "农业大数据及相关领域的技术研发、技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农业农村大数据应用",
+        "evidence_span": "农业农村大数据"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农业一张图",
+        "evidence_span": "农业一张图"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农村土地承包经营权管理",
+        "evidence_span": "农村土地承包经营权管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "南繁土地管理及服务",
+        "evidence_span": "南繁土地管理及服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "花卉温室智能化生产管理",
+        "evidence_span": "花卉温室智能化生产管理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SURPAC三维矿业软件",
+        "evidence_span": "SURPAC三维矿业软件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SLAM三维激光扫描仪",
+        "evidence_span": "SLAM三维激光扫描仪"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全景地图",
+        "evidence_span": "全景地图"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化感知技术",
+        "evidence_span": "数字化感知"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化决策技术",
+        "evidence_span": "智能化决策"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精准化作业技术",
+        "evidence_span": "精准化作业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧化管理技术",
+        "evidence_span": "智慧化管理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能感知技术",
+        "evidence_span": "智能感知"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能控制技术",
+        "evidence_span": "智能控制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模型模拟技术",
+        "evidence_span": "模型模拟"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Briggs & Stratton LLC",
+        "evidence_span": "Briggs & Stratton LLC"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Husqvarna",
+        "evidence_span": "Husqvarna"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色低碳转型",
+        "evidence_span": "加快绿色低碳及智能化转型"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源产品转型升级",
+        "evidence_span": "加快向新能源产品转型升级的步伐"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧农业",
+        "evidence_span": "智慧农业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字农业",
+        "evidence_span": "数字农业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "乡村振兴",
+        "evidence_span": "助力国家乡村振兴战略"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:38:19"
+}

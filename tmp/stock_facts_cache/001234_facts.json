@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "针织面料",
+      "evidence_span": "公司主营业务为针织面料和针织服装的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "针织服装",
+      "evidence_span": "公司主营业务为针织面料和针织服装的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "纵向一体化针织服装制造商",
+      "evidence_span": "作为纵向一体化服装制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "贴牌加工服务商",
+      "evidence_span": "提供贴牌加工服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "针织面料",
+      "evidence_span": "公司主营业务为针织面料和针织服装的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "针织服装",
+      "evidence_span": "公司主营业务为针织面料和针织服装的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贴牌加工服务",
+      "evidence_span": "提供贴牌加工服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "针织面料开发",
+      "evidence_span": "公司拥有针织面料开发、织造、染整以及针织服装裁剪、印绣花、缝制等完善的生产体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "织造",
+      "evidence_span": "公司拥有针织面料开发、织造、染整以及针织服装裁剪、印绣花、缝制等完善的生产体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "染整",
+      "evidence_span": "公司拥有针织面料开发、织造、染整以及针织服装裁剪、印绣花、缝制等完善的生产体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "针织服装裁剪",
+      "evidence_span": "公司拥有针织面料开发、织造、染整以及针织服装裁剪、印绣花、缝制等完善的生产体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "印绣花",
+      "evidence_span": "公司拥有针织面料开发、织造、染整以及针织服装裁剪、印绣花、缝制等完善的生产体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "缝制",
+      "evidence_span": "公司拥有针织面料开发、织造、染整以及针织服装裁剪、印绣花、缝制等完善的生产体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "迪卡侬",
+      "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "森马服饰",
+      "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Quiksilver",
+      "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Kappa",
+      "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "佐丹奴",
+      "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全棉时代",
+      "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "曼妮芬",
+      "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安踏",
+      "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特步",
+      "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "针织面料",
+        "evidence_span": "公司主营业务为针织面料和针织服装的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "针织服装",
+        "evidence_span": "公司主营业务为针织面料和针织服装的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "纵向一体化针织服装制造商",
+        "evidence_span": "作为纵向一体化服装制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "贴牌加工服务商",
+        "evidence_span": "提供贴牌加工服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "针织面料",
+        "evidence_span": "公司主营业务为针织面料和针织服装的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "针织服装",
+        "evidence_span": "公司主营业务为针织面料和针织服装的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贴牌加工服务",
+        "evidence_span": "提供贴牌加工服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "针织面料开发",
+        "evidence_span": "公司拥有针织面料开发、织造、染整以及针织服装裁剪、印绣花、缝制等完善的生产体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "织造",
+        "evidence_span": "公司拥有针织面料开发、织造、染整以及针织服装裁剪、印绣花、缝制等完善的生产体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "染整",
+        "evidence_span": "公司拥有针织面料开发、织造、染整以及针织服装裁剪、印绣花、缝制等完善的生产体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "针织服装裁剪",
+        "evidence_span": "公司拥有针织面料开发、织造、染整以及针织服装裁剪、印绣花、缝制等完善的生产体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "印绣花",
+        "evidence_span": "公司拥有针织面料开发、织造、染整以及针织服装裁剪、印绣花、缝制等完善的生产体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "缝制",
+        "evidence_span": "公司拥有针织面料开发、织造、染整以及针织服装裁剪、印绣花、缝制等完善的生产体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "迪卡侬",
+        "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "森马服饰",
+        "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Quiksilver",
+        "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Kappa",
+        "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "佐丹奴",
+        "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全棉时代",
+        "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "曼妮芬",
+        "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安踏",
+        "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特步",
+        "evidence_span": "主要为迪卡侬、森马服饰、Quiksilver、Kappa、佐丹奴、全棉时代、曼妮芬、安踏、特步等知名服装品牌提供贴牌加工服务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:13:36"
+}

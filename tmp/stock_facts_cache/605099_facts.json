@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "人造草坪的研发",
+      "evidence_span": "主要从事人造草坪的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "人造草坪的生产",
+      "evidence_span": "主要从事人造草坪的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "人造草坪的销售",
+      "evidence_span": "主要从事人造草坪的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "人造草坪行业龙头",
+      "evidence_span": "公司是人造草坪行业龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运动草",
+      "evidence_span": "生产及销售具有高耐磨度、高回弹性能、高拔脱力和抗老化的运动草"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "休闲草",
+      "evidence_span": "具有优质耐候性、防褪色性和环保的休闲草"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "草丝",
+      "evidence_span": "草丝及辅料业务收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "辅料",
+      "evidence_span": "草丝及辅料业务收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运动草坪的销售和铺装总包服务",
+      "evidence_span": "专业提供境内运动草坪的销售和铺装总包服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自制草丝",
+      "evidence_span": "通过自制草丝及辅料向上延伸产业链条"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自制辅料",
+      "evidence_span": "通过自制草丝及辅料向上延伸产业链条"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "设备技改",
+      "evidence_span": "通过设备技改提升单机产能及品质"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "优化产品配方",
+      "evidence_span": "不断优化产品配方"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Polyloom",
+      "evidence_span": "与Polyloom、Syn-Turf等大客户合作时间超过10年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Syn-Turf",
+      "evidence_span": "与Polyloom、Syn-Turf等大客户合作时间超过10年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧美地区主要批发商",
+      "evidence_span": "与欧美地区主要批发商建立起稳定的合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "全球人造草坪龙头",
+      "evidence_span": "全球人造草坪龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "人造草坪的研发",
+        "evidence_span": "主要从事人造草坪的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "人造草坪的生产",
+        "evidence_span": "主要从事人造草坪的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "人造草坪的销售",
+        "evidence_span": "主要从事人造草坪的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "人造草坪行业龙头",
+        "evidence_span": "公司是人造草坪行业龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运动草",
+        "evidence_span": "生产及销售具有高耐磨度、高回弹性能、高拔脱力和抗老化的运动草"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "休闲草",
+        "evidence_span": "具有优质耐候性、防褪色性和环保的休闲草"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "草丝",
+        "evidence_span": "草丝及辅料业务收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "辅料",
+        "evidence_span": "草丝及辅料业务收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运动草坪的销售和铺装总包服务",
+        "evidence_span": "专业提供境内运动草坪的销售和铺装总包服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自制草丝",
+        "evidence_span": "通过自制草丝及辅料向上延伸产业链条"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自制辅料",
+        "evidence_span": "通过自制草丝及辅料向上延伸产业链条"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "设备技改",
+        "evidence_span": "通过设备技改提升单机产能及品质"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "优化产品配方",
+        "evidence_span": "不断优化产品配方"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Polyloom",
+        "evidence_span": "与Polyloom、Syn-Turf等大客户合作时间超过10年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Syn-Turf",
+        "evidence_span": "与Polyloom、Syn-Turf等大客户合作时间超过10年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧美地区主要批发商",
+        "evidence_span": "与欧美地区主要批发商建立起稳定的合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "全球人造草坪龙头",
+        "evidence_span": "全球人造草坪龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:55:11"
+}

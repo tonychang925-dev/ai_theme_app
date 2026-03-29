@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:54:59", "result": {"chunk_id": "e3eda8f0c118", "label": "strict_knowledge", "confidence": 0.92, "ontology_value": "high", "reason": "该段落静态解释汽车零部件DSO概念的利好之一：现金加速回笼，描述60天强制收款如何缩短资金占用时间并缓解现金流压力。内容聚焦于机制和影响，没有事件或动态信息。"}}

@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业冷却塔的研发",
+      "evidence_span": "主要从事工业冷却塔的研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业冷却塔的设计",
+      "evidence_span": "主要从事工业冷却塔的设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业冷却塔的制造",
+      "evidence_span": "主要从事工业冷却塔的制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业冷却塔的安装业务",
+      "evidence_span": "主要从事工业冷却塔的安装业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业冷却塔相关的技术服务",
+      "evidence_span": "提供工业冷却塔相关的技术服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内冷却塔领军企业",
+      "evidence_span": "系国内冷却塔赛道的领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "制造业单项冠军示范企业",
+      "evidence_span": "公司被工信部评为首批制造业单项冠军企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业冷却塔",
+      "evidence_span": "主要从事工业冷却塔的研发、设计、制造及安装业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "民用冷却塔",
+      "evidence_span": "民用冷却塔则主要应用于公共设施、商务建筑以及数据中心等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "节能节水技术",
+      "evidence_span": "在节能节水技术领域获得多项研究成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "消雾技术",
+      "evidence_span": "在消雾技术领域获得多项研究成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "降噪技术",
+      "evidence_span": "在降噪技术领域获得多项研究成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海水循环技术",
+      "evidence_span": "在海水循环技术等领域获得多项研究成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "防冻设计",
+      "evidence_span": "冷却塔产品在防冻设计方面达到了行业领先水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "消雾设计",
+      "evidence_span": "冷却塔产品在消雾设计方面达到了行业领先水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "节能设计",
+      "evidence_span": "冷却塔产品在节能设计方面达到了行业领先水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "节水设计",
+      "evidence_span": "冷却塔产品在节水设计方面达到了行业领先水平"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石化领域",
+      "evidence_span": "产品广泛应用于石化"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "冶金领域",
+      "evidence_span": "产品广泛应用于冶金"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电力领域",
+      "evidence_span": "产品广泛应用于电力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源领域",
+      "evidence_span": "产品广泛应用于新能源等工业领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公共设施",
+      "evidence_span": "民用冷却塔则主要应用于公共设施"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "商务建筑",
+      "evidence_span": "民用冷却塔则主要应用于商务建筑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "数据中心",
+      "evidence_span": "民用冷却塔则主要应用于数据中心等"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业冷却塔的研发",
+        "evidence_span": "主要从事工业冷却塔的研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业冷却塔的设计",
+        "evidence_span": "主要从事工业冷却塔的设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业冷却塔的制造",
+        "evidence_span": "主要从事工业冷却塔的制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业冷却塔的安装业务",
+        "evidence_span": "主要从事工业冷却塔的安装业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业冷却塔相关的技术服务",
+        "evidence_span": "提供工业冷却塔相关的技术服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内冷却塔领军企业",
+        "evidence_span": "系国内冷却塔赛道的领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "制造业单项冠军示范企业",
+        "evidence_span": "公司被工信部评为首批制造业单项冠军企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业冷却塔",
+        "evidence_span": "主要从事工业冷却塔的研发、设计、制造及安装业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "民用冷却塔",
+        "evidence_span": "民用冷却塔则主要应用于公共设施、商务建筑以及数据中心等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "节能节水技术",
+        "evidence_span": "在节能节水技术领域获得多项研究成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "消雾技术",
+        "evidence_span": "在消雾技术领域获得多项研究成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "降噪技术",
+        "evidence_span": "在降噪技术领域获得多项研究成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海水循环技术",
+        "evidence_span": "在海水循环技术等领域获得多项研究成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "防冻设计",
+        "evidence_span": "冷却塔产品在防冻设计方面达到了行业领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "消雾设计",
+        "evidence_span": "冷却塔产品在消雾设计方面达到了行业领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "节能设计",
+        "evidence_span": "冷却塔产品在节能设计方面达到了行业领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "节水设计",
+        "evidence_span": "冷却塔产品在节水设计方面达到了行业领先水平"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石化领域",
+        "evidence_span": "产品广泛应用于石化"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "冶金领域",
+        "evidence_span": "产品广泛应用于冶金"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电力领域",
+        "evidence_span": "产品广泛应用于电力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源领域",
+        "evidence_span": "产品广泛应用于新能源等工业领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公共设施",
+        "evidence_span": "民用冷却塔则主要应用于公共设施"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "商务建筑",
+        "evidence_span": "民用冷却塔则主要应用于商务建筑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "数据中心",
+        "evidence_span": "民用冷却塔则主要应用于数据中心等"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:48:09"
+}

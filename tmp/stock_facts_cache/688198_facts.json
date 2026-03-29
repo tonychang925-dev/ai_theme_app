@@ -1,0 +1,414 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "心脏瓣膜置换",
+      "evidence_span": "产品覆盖心脏瓣膜置换与修复"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "修复",
+      "evidence_span": "产品覆盖心脏瓣膜置换与修复"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "先天性心脏病植介入治疗",
+      "evidence_span": "先天性心脏病植介入治疗"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "外科软组织修复",
+      "evidence_span": "外科软组织修复三大领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "动物源性植介入医疗器械研发平台企业",
+      "evidence_span": "公司是国内技术领先的动物源性植介入医疗器械研发平台企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "植入材料专家",
+      "evidence_span": "佰仁医疗植入材料专家"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "进口替代先锋",
+      "evidence_span": "进口替代先锋"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工生物心脏瓣膜",
+      "evidence_span": "核心产品人工生物心脏瓣膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "牛心包瓣",
+      "evidence_span": "人工生物心脏瓣膜——牛心包瓣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "猪主动脉瓣",
+      "evidence_span": "人工生物心脏瓣膜（牛心包瓣、猪主动脉瓣）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肺动脉带瓣管道",
+      "evidence_span": "肺动脉带瓣管道"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "瓣膜成形环",
+      "evidence_span": "瓣膜成形环"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "心胸外科生物补片",
+      "evidence_span": "心胸外科生物补片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "神经外科微血管减压垫片",
+      "evidence_span": "神经外科微血管减压垫片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "流出道单瓣补片",
+      "evidence_span": "流出道单瓣补片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "介入瓣中瓣系统",
+      "evidence_span": "Renato介入瓣中瓣系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "介入主动脉瓣",
+      "evidence_span": "介入主动脉瓣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "眼科生物补片",
+      "evidence_span": "眼科生物补片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分体式介入主动脉瓣",
+      "evidence_span": "分体式介入主动脉瓣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "介入二尖瓣",
+      "evidence_span": "介入二尖瓣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "介入三尖瓣",
+      "evidence_span": "介入三尖瓣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "介入环中瓣系统",
+      "evidence_span": "介入环中瓣系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预置主动脉瓣",
+      "evidence_span": "预置主动脉瓣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微创限位可扩主动脉瓣",
+      "evidence_span": "微创限位可扩主动脉瓣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型三尖瓣成形环",
+      "evidence_span": "新型三尖瓣成形环"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型二尖瓣成形环",
+      "evidence_span": "新型二尖瓣成形环"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "心脏瓣膜补片",
+      "evidence_span": "心脏瓣膜补片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "心外房颤治疗系统",
+      "evidence_span": "心外房颤治疗系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无支架生物瓣带瓣管道",
+      "evidence_span": "无支架生物瓣带瓣管道"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复杂先心带瓣补片",
+      "evidence_span": "复杂先心带瓣补片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "介入肺动脉瓣及输送系统",
+      "evidence_span": "SausTM介入肺动脉瓣及输送系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卵圆孔未闭封堵器及输送系统",
+      "evidence_span": "卵圆孔未闭封堵器及输送系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "心外科生物补片",
+      "evidence_span": "心外科生物补片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "动物组织工程和化学改性处理技术",
+      "evidence_span": "拥有原创性的动物组织工程和化学改性处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "植介入人工瓣膜类产品自主设计开发",
+      "evidence_span": "植介入人工瓣膜类产品自主设计开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "加工制造工艺技术",
+      "evidence_span": "加工制造工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "体外模拟验证技术及设备",
+      "evidence_span": "体外模拟验证技术及设备"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产动物源性植介入平台",
+      "evidence_span": "国产动物源性植介入平台崛地而起"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "进口替代先锋"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "生物瓣潜在龙头",
+      "evidence_span": "生物瓣潜在龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "动物源性植介入龙头",
+      "evidence_span": "佰仁医疗动物源性植介入龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "心脏瓣膜置换与修复",
+        "evidence_span": "产品覆盖心脏瓣膜置换与修复"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "先天性心脏病植介入治疗",
+        "evidence_span": "先天性心脏病植介入治疗"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "外科软组织修复",
+        "evidence_span": "外科软组织修复三大领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "动物源性植介入医疗器械研发平台企业",
+        "evidence_span": "公司是国内技术领先的动物源性植介入医疗器械研发平台企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "植入材料专家",
+        "evidence_span": "佰仁医疗植入材料专家"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "进口替代先锋",
+        "evidence_span": "进口替代先锋"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工生物心脏瓣膜",
+        "evidence_span": "核心产品人工生物心脏瓣膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "牛心包瓣",
+        "evidence_span": "人工生物心脏瓣膜——牛心包瓣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "猪主动脉瓣",
+        "evidence_span": "人工生物心脏瓣膜（牛心包瓣、猪主动脉瓣）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肺动脉带瓣管道",
+        "evidence_span": "肺动脉带瓣管道"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "瓣膜成形环",
+        "evidence_span": "瓣膜成形环"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "心胸外科生物补片",
+        "evidence_span": "心胸外科生物补片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "神经外科微血管减压垫片",
+        "evidence_span": "神经外科微血管减压垫片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "流出道单瓣补片",
+        "evidence_span": "流出道单瓣补片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "介入瓣中瓣系统",
+        "evidence_span": "Renato介入瓣中瓣系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "介入主动脉瓣",
+        "evidence_span": "介入主动脉瓣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "眼科生物补片",
+        "evidence_span": "眼科生物补片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分体式介入主动脉瓣",
+        "evidence_span": "分体式介入主动脉瓣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "介入二尖瓣",
+        "evidence_span": "介入二尖瓣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "介入三尖瓣",
+        "evidence_span": "介入三尖瓣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "介入环中瓣系统",
+        "evidence_span": "介入环中瓣系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预置主动脉瓣",
+        "evidence_span": "预置主动脉瓣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微创限位可扩主动脉瓣",
+        "evidence_span": "微创限位可扩主动脉瓣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型三尖瓣成形环",
+        "evidence_span": "新型三尖瓣成形环"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型二尖瓣成形环",
+        "evidence_span": "新型二尖瓣成形环"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "心脏瓣膜补片",
+        "evidence_span": "心脏瓣膜补片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "心外房颤治疗系统",
+        "evidence_span": "心外房颤治疗系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无支架生物瓣带瓣管道",
+        "evidence_span": "无支架生物瓣带瓣管道"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复杂先心带瓣补片",
+        "evidence_span": "复杂先心带瓣补片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "介入肺动脉瓣及输送系统",
+        "evidence_span": "SausTM介入肺动脉瓣及输送系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卵圆孔未闭封堵器及输送系统",
+        "evidence_span": "卵圆孔未闭封堵器及输送系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "心外科生物补片",
+        "evidence_span": "心外科生物补片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "动物组织工程和化学改性处理技术",
+        "evidence_span": "拥有原创性的动物组织工程和化学改性处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "植介入人工瓣膜类产品自主设计开发",
+        "evidence_span": "植介入人工瓣膜类产品自主设计开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "加工制造工艺技术",
+        "evidence_span": "加工制造工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "体外模拟验证技术及设备",
+        "evidence_span": "体外模拟验证技术及设备"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产动物源性植介入平台",
+        "evidence_span": "国产动物源性植介入平台崛地而起"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "进口替代先锋"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "生物瓣潜在龙头",
+        "evidence_span": "生物瓣潜在龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "动物源性植介入龙头",
+        "evidence_span": "佰仁医疗动物源性植介入龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:33:49"
+}

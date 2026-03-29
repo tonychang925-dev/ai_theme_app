@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "白酒",
+      "evidence_span": "穿越周期的白酒龙头"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "茅台酒",
+      "evidence_span": "茅台酒定位高端市场，贡献了公司的主要收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "系列酒",
+      "evidence_span": "系列酒定位大众市场，结构升级带来稳定增量"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "白酒龙头",
+      "evidence_span": "穿越周期的白酒龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "超高端白酒品牌",
+      "evidence_span": "一枝独秀的超高端白酒品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "53度飞天茅台",
+      "evidence_span": "就53度飞天茅台而言"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非标茅台酒",
+      "evidence_span": "就非标茅台酒而言"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "茅台1935",
+      "evidence_span": "在千元价格带主打“茅台1935”品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汉酱",
+      "evidence_span": "在500~1000元价格带主打“汉酱”品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "茅台王子酒",
+      "evidence_span": "在200~500元价格带主打“茅台王子酒”品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "i茅台电商平台",
+      "evidence_span": "i茅台电商是茅台数字化营销改革的应有之义"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "端午制曲重阳下沙",
+      "evidence_span": "端午制曲重阳下沙，充分利用气候特点自然酿造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "12987工艺",
+      "evidence_span": "严格按照“12987”的工艺进行生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "酱香、醇甜、窖底三种典型体",
+      "evidence_span": "按照酱香、醇甜、窖底三种典型体和不同等级、不同轮次，入库装坛分型贮存"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全链路可溯源",
+      "evidence_span": "注重全链路打造和全链路可溯源"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链和智能风控技术",
+      "evidence_span": "运用区块链和智能风控技术"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "白酒",
+        "evidence_span": "穿越周期的白酒龙头"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "茅台酒",
+        "evidence_span": "茅台酒定位高端市场，贡献了公司的主要收入"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "系列酒",
+        "evidence_span": "系列酒定位大众市场，结构升级带来稳定增量"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "白酒龙头",
+        "evidence_span": "穿越周期的白酒龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "超高端白酒品牌",
+        "evidence_span": "一枝独秀的超高端白酒品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "53度飞天茅台",
+        "evidence_span": "就53度飞天茅台而言"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非标茅台酒",
+        "evidence_span": "就非标茅台酒而言"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "茅台1935",
+        "evidence_span": "在千元价格带主打“茅台1935”品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汉酱",
+        "evidence_span": "在500~1000元价格带主打“汉酱”品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "茅台王子酒",
+        "evidence_span": "在200~500元价格带主打“茅台王子酒”品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "i茅台电商平台",
+        "evidence_span": "i茅台电商是茅台数字化营销改革的应有之义"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "端午制曲重阳下沙",
+        "evidence_span": "端午制曲重阳下沙，充分利用气候特点自然酿造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "12987工艺",
+        "evidence_span": "严格按照“12987”的工艺进行生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "酱香、醇甜、窖底三种典型体",
+        "evidence_span": "按照酱香、醇甜、窖底三种典型体和不同等级、不同轮次，入库装坛分型贮存"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全链路可溯源",
+        "evidence_span": "注重全链路打造和全链路可溯源"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链和智能风控技术",
+        "evidence_span": "运用区块链和智能风控技术"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:24:55"
+}

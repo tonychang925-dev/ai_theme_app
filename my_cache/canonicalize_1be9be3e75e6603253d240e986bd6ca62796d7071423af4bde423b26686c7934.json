@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:35:36", "result": {"span_uid": "3dc8cb0ec4a5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是具体战场事件报道，涉及特定冲突和日期，无法整理成稳定、可独立成立的军工知识块，且信息时效性强，不适合入库。"}}

@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "结构力学性能测试",
+      "evidence_span": "国内结构力学测试龙头"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电化学工作站",
+      "evidence_span": "电化学工作站优质国产企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "PHM平台",
+      "evidence_span": "打造PHM平台长期价值重估"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内力学测试龙头",
+      "evidence_span": "国内力学测试龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电化学工作站优质国产企业",
+      "evidence_span": "电化学工作站优质国产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内结构力学测试仪器的领导者",
+      "evidence_span": "国内结构力学测试仪器的领导者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电化学工作站",
+      "evidence_span": "电化学工作站优质国产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DH7000系列电化学工作站",
+      "evidence_span": "公司的DH7000系列电化学工作站产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "适调器",
+      "evidence_span": "自主研发、制造包括适调器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据采集仪",
+      "evidence_span": "自主研发、制造包括...数据采集仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分析软件",
+      "evidence_span": "自主研发、制造包括...分析软件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "交流阻抗技术",
+      "evidence_span": "公司交流阻抗技术实力优异"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "单正弦技术",
+      "evidence_span": "采用国际先进的单正弦技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "电化学工作站市场存国产替代空间"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源市场应用",
+      "evidence_span": "新能源市场应用具备潜力"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "结构力学性能测试",
+        "evidence_span": "国内结构力学测试龙头"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电化学工作站",
+        "evidence_span": "电化学工作站优质国产企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "PHM平台",
+        "evidence_span": "打造PHM平台长期价值重估"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内力学测试龙头",
+        "evidence_span": "国内力学测试龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电化学工作站优质国产企业",
+        "evidence_span": "电化学工作站优质国产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内结构力学测试仪器的领导者",
+        "evidence_span": "国内结构力学测试仪器的领导者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电化学工作站",
+        "evidence_span": "电化学工作站优质国产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DH7000系列电化学工作站",
+        "evidence_span": "公司的DH7000系列电化学工作站产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "适调器",
+        "evidence_span": "自主研发、制造包括适调器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据采集仪",
+        "evidence_span": "自主研发、制造包括...数据采集仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分析软件",
+        "evidence_span": "自主研发、制造包括...分析软件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "交流阻抗技术",
+        "evidence_span": "公司交流阻抗技术实力优异"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "单正弦技术",
+        "evidence_span": "采用国际先进的单正弦技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "电化学工作站市场存国产替代空间"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源市场应用",
+        "evidence_span": "新能源市场应用具备潜力"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:56:33"
+}

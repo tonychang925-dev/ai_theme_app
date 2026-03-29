@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:46:00", "result": {"chunk_id": "17857db67653", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明SAQP技术的定义、核心构成、工艺步骤和目标，不包含事件、新闻或时间性动态，是纯静态知识，可用于题材本体构建。"}}

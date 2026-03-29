@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:14:55", "result": {"span_uid": "f742a2599c29", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是对未来需求的预测（预计2025年），属于主观看法或预测性信息，无法形成稳定知识块。"}}

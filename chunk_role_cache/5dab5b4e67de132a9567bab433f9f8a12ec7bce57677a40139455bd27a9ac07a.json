@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "4cb1c3916c19", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了三星推进XR项目的事件，包含具体时间计划（2025年第三季度发售）和生产出货数据，是动态新闻，没有提供AR眼镜的静态知识。"}}

@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药业务",
+      "evidence_span": "坚持推进“大健康+大商业”双主业发展战略"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业运营业务",
+      "evidence_span": "坚持推进“大健康+大商业”双主业发展战略"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗器械业务",
+      "evidence_span": "进一步扩展了中药、生物医用材料、辅助生殖业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "辅助生殖业务",
+      "evidence_span": "进一步扩展了中药、生物医用材料、辅助生殖业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "会展运营业务",
+      "evidence_span": "增强商业会展业务市场竞争能力"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医药高新技术企业",
+      "evidence_span": "迪康药业是集研发、制造和营销于一体的医药高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "可规模化生产医用级聚乳酸材料的龙头生产商",
+      "evidence_span": "为国内可规模化生产医用级聚乳酸材料的龙头生产商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "百货零售商业运营商",
+      "evidence_span": "公司是湖北省内规模较大的百货零售商业运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域型专业会展运营商",
+      "evidence_span": "公司是湖北地区具有展会活动主办、承办能力的区域型专业会展运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "雷贝拉唑钠肠溶片",
+      "evidence_span": "主要产品包括雷贝拉唑钠肠溶片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通窍鼻炎颗粒",
+      "evidence_span": "主要产品包括雷贝拉唑钠肠溶片、通窍鼻炎颗粒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阿莫西林胶囊",
+      "evidence_span": "主要产品包括雷贝拉唑钠肠溶片、通窍鼻炎颗粒、阿莫西林胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盐酸吡格列酮片",
+      "evidence_span": "主要产品包括雷贝拉唑钠肠溶片、通窍鼻炎颗粒、阿莫西林胶囊、盐酸吡格列酮片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工牛黄甲硝唑胶囊",
+      "evidence_span": "主要产品包括雷贝拉唑钠肠溶片、通窍鼻炎颗粒、阿莫西林胶囊、盐酸吡格列酮片、人工牛黄甲硝唑胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氨咖黄敏胶囊",
+      "evidence_span": "主要产品包括雷贝拉唑钠肠溶片、通窍鼻炎颗粒、阿莫西林胶囊、盐酸吡格列酮片、人工牛黄甲硝唑胶囊、氨咖黄敏胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可吸收医用膜",
+      "evidence_span": "主要包括以聚乳酸材料制备的可吸收医用膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可吸收骨折内固定螺钉",
+      "evidence_span": "主要包括以聚乳酸材料制备的可吸收医用膜、可吸收骨折内固定螺钉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医用冷敷贴",
+      "evidence_span": "此外公司还拥有包括医用冷敷贴"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一次性止血夹",
+      "evidence_span": "此外公司还拥有包括医用冷敷贴、一次性止血夹"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能性敷料（贴敷剂）",
+      "evidence_span": "此外公司还拥有包括医用冷敷贴、一次性止血夹、功能性敷料（贴敷剂）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能性敷料（凝胶剂）",
+      "evidence_span": "此外公司还拥有包括医用冷敷贴、一次性止血夹、功能性敷料（贴敷剂）、功能性敷料（凝胶剂）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚乳酸材料",
+      "evidence_span": "以及聚乳酸材料（PDLLA及PLLA）和生物活性玻璃等原材料销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物活性玻璃",
+      "evidence_span": "以及聚乳酸材料（PDLLA及PLLA）和生物活性玻璃等原材料销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "购物中心运营管理",
+      "evidence_span": "公司商业板块主要从事购物中心及专业市场的商业运营管理业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专业市场运营管理",
+      "evidence_span": "公司商业板块主要从事购物中心及专业市场的商业运营管理业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "会展运营及配套服务",
+      "evidence_span": "公司会展运营业务主要依托于自持的武汉国际会展中心，向客户提供会展运营及配套服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "可吸收医用材料技术",
+      "evidence_span": "致力于可吸收医用材料的产品研发、生产制备和工艺优化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "医用级聚乳酸材料技术",
+      "evidence_span": "以医用级聚乳酸材料为基础"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物活性创面修复技术",
+      "evidence_span": "基于生物活性创面修复、微创及介入治疗器械方面优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微创及介入治疗器械技术",
+      "evidence_span": "基于生物活性创面修复、微创及介入治疗器械方面优势"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "形成以“比亚迪”品牌为首的新能源汽车产业聚集地"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "在集中采购、国产替代等因素影响下"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药业务",
+        "evidence_span": "坚持推进“大健康+大商业”双主业发展战略"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业运营业务",
+        "evidence_span": "坚持推进“大健康+大商业”双主业发展战略"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗器械业务",
+        "evidence_span": "进一步扩展了中药、生物医用材料、辅助生殖业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "辅助生殖业务",
+        "evidence_span": "进一步扩展了中药、生物医用材料、辅助生殖业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "会展运营业务",
+        "evidence_span": "增强商业会展业务市场竞争能力"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医药高新技术企业",
+        "evidence_span": "迪康药业是集研发、制造和营销于一体的医药高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "可规模化生产医用级聚乳酸材料的龙头生产商",
+        "evidence_span": "为国内可规模化生产医用级聚乳酸材料的龙头生产商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "百货零售商业运营商",
+        "evidence_span": "公司是湖北省内规模较大的百货零售商业运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域型专业会展运营商",
+        "evidence_span": "公司是湖北地区具有展会活动主办、承办能力的区域型专业会展运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "雷贝拉唑钠肠溶片",
+        "evidence_span": "主要产品包括雷贝拉唑钠肠溶片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通窍鼻炎颗粒",
+        "evidence_span": "主要产品包括雷贝拉唑钠肠溶片、通窍鼻炎颗粒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阿莫西林胶囊",
+        "evidence_span": "主要产品包括雷贝拉唑钠肠溶片、通窍鼻炎颗粒、阿莫西林胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盐酸吡格列酮片",
+        "evidence_span": "主要产品包括雷贝拉唑钠肠溶片、通窍鼻炎颗粒、阿莫西林胶囊、盐酸吡格列酮片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工牛黄甲硝唑胶囊",
+        "evidence_span": "主要产品包括雷贝拉唑钠肠溶片、通窍鼻炎颗粒、阿莫西林胶囊、盐酸吡格列酮片、人工牛黄甲硝唑胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氨咖黄敏胶囊",
+        "evidence_span": "主要产品包括雷贝拉唑钠肠溶片、通窍鼻炎颗粒、阿莫西林胶囊、盐酸吡格列酮片、人工牛黄甲硝唑胶囊、氨咖黄敏胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可吸收医用膜",
+        "evidence_span": "主要包括以聚乳酸材料制备的可吸收医用膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可吸收骨折内固定螺钉",
+        "evidence_span": "主要包括以聚乳酸材料制备的可吸收医用膜、可吸收骨折内固定螺钉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医用冷敷贴",
+        "evidence_span": "此外公司还拥有包括医用冷敷贴"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一次性止血夹",
+        "evidence_span": "此外公司还拥有包括医用冷敷贴、一次性止血夹"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能性敷料（贴敷剂）",
+        "evidence_span": "此外公司还拥有包括医用冷敷贴、一次性止血夹、功能性敷料（贴敷剂）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能性敷料（凝胶剂）",
+        "evidence_span": "此外公司还拥有包括医用冷敷贴、一次性止血夹、功能性敷料（贴敷剂）、功能性敷料（凝胶剂）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚乳酸材料",
+        "evidence_span": "以及聚乳酸材料（PDLLA及PLLA）和生物活性玻璃等原材料销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物活性玻璃",
+        "evidence_span": "以及聚乳酸材料（PDLLA及PLLA）和生物活性玻璃等原材料销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "购物中心运营管理",
+        "evidence_span": "公司商业板块主要从事购物中心及专业市场的商业运营管理业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专业市场运营管理",
+        "evidence_span": "公司商业板块主要从事购物中心及专业市场的商业运营管理业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "会展运营及配套服务",
+        "evidence_span": "公司会展运营业务主要依托于自持的武汉国际会展中心，向客户提供会展运营及配套服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "可吸收医用材料技术",
+        "evidence_span": "致力于可吸收医用材料的产品研发、生产制备和工艺优化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "医用级聚乳酸材料技术",
+        "evidence_span": "以医用级聚乳酸材料为基础"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物活性创面修复技术",
+        "evidence_span": "基于生物活性创面修复、微创及介入治疗器械方面优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微创及介入治疗器械技术",
+        "evidence_span": "基于生物活性创面修复、微创及介入治疗器械方面优势"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "形成以“比亚迪”品牌为首的新能源汽车产业聚集地"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "在集中采购、国产替代等因素影响下"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:15:22"
+}

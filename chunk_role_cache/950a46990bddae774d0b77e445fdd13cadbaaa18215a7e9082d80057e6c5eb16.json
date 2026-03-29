@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T12:19:46", "result": {"chunk_id": "d2dc837b8319", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落基于政策发布事件，但详细列举了半导体设备产业链的关键组成部分（如EDA软件、IP核、光掩模、电子气体、光刻胶、抛光材料、高纯靶材、光刻、清洗、刻蚀、离子注入、沉积等设备及零部件），这些是静态的题材知识，具有高本体价值，但混合了事件信息。"}}

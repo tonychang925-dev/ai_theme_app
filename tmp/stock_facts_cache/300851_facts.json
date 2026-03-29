@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "轨道交通列车运行控制系统关键设备",
+      "evidence_span": "公司主营业务为轨道交通列车运行控制系统关键设备的研发设计、组织生产、销售及技术支持"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "列控系统关键设备供应商",
+      "evidence_span": "轨交行业领先的列控系统关键设备供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "应答器系统",
+      "evidence_span": "公司提供的主要产品包括应答器系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机车信号CPU组件",
+      "evidence_span": "公司提供的主要产品包括机车信号CPU组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道电路读取器",
+      "evidence_span": "公司提供的主要产品包括轨道电路读取器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SIL4级安全等级",
+      "evidence_span": "研制的产品均实现了业界安全完整性等级中最高的安全等级SIL4级"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交控科技",
+      "evidence_span": "对于长期合作的列控系统集成商，如交控科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通号设计院",
+      "evidence_span": "对于长期合作的列控系统集成商，如通号设计院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "和利时",
+      "evidence_span": "对于长期合作的列控系统集成商，如和利时"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国中铁",
+      "evidence_span": "在铁路领域，公司客户包括中国中铁"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国铁建",
+      "evidence_span": "在铁路领域，公司客户包括中国铁建"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国通号",
+      "evidence_span": "在铁路领域，公司客户包括中国通号"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南京恩瑞特",
+      "evidence_span": "在城市轨道交通领域，公司客户包括南京恩瑞特"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "众合科技",
+      "evidence_span": "在城市轨道交通领域，公司客户包括众合科技"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "轨道交通列车运行控制系统关键设备",
+        "evidence_span": "公司主营业务为轨道交通列车运行控制系统关键设备的研发设计、组织生产、销售及技术支持"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "列控系统关键设备供应商",
+        "evidence_span": "轨交行业领先的列控系统关键设备供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "应答器系统",
+        "evidence_span": "公司提供的主要产品包括应答器系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机车信号CPU组件",
+        "evidence_span": "公司提供的主要产品包括机车信号CPU组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道电路读取器",
+        "evidence_span": "公司提供的主要产品包括轨道电路读取器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SIL4级安全等级",
+        "evidence_span": "研制的产品均实现了业界安全完整性等级中最高的安全等级SIL4级"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交控科技",
+        "evidence_span": "对于长期合作的列控系统集成商，如交控科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通号设计院",
+        "evidence_span": "对于长期合作的列控系统集成商，如通号设计院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "和利时",
+        "evidence_span": "对于长期合作的列控系统集成商，如和利时"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国中铁",
+        "evidence_span": "在铁路领域，公司客户包括中国中铁"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国铁建",
+        "evidence_span": "在铁路领域，公司客户包括中国铁建"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国通号",
+        "evidence_span": "在铁路领域，公司客户包括中国通号"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南京恩瑞特",
+        "evidence_span": "在城市轨道交通领域，公司客户包括南京恩瑞特"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "众合科技",
+        "evidence_span": "在城市轨道交通领域，公司客户包括众合科技"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:29:30"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:49", "result": {"chunk_id": "f5b3c48a3acb", "decision": "related_but_event_only", "confidence": 0.85, "reason": "该段落主要描述全球晶圆厂设备支出的市场规模和行业景气情况，属于新闻事件和行业动态，不适合作为本体定义输入。"}}

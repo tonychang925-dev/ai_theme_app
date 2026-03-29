@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "金属粉体业务",
+      "evidence_span": "为专注金属粉体业务，公司已将焊锡业务出售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端金属粉体制造商",
+      "evidence_span": "公司是全球领先电气电容专用高端金属粉体制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "MLCC用镍粉行业标准制定者",
+      "evidence_span": "中国MLCC用镍粉行业标准唯一制定者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端粉体材料平台企业",
+      "evidence_span": "博迁新材高端粉体材料平台企业雏形已现"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纯金属粉",
+      "evidence_span": "公司产品可分为纯金属粉及合金粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "合金粉",
+      "evidence_span": "公司产品可分为纯金属粉及合金粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镍粉",
+      "evidence_span": "纯金属粉可进一步细分为镍粉、铜粉、银粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铜粉",
+      "evidence_span": "纯金属粉可进一步细分为镍粉、铜粉、银粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银粉",
+      "evidence_span": "纯金属粉可进一步细分为镍粉、铜粉、银粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镍铬合金粉",
+      "evidence_span": "合金粉主要为镍铬、镍锡以及镍铁合金粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镍锡合金粉",
+      "evidence_span": "合金粉主要为镍铬、镍锡以及镍铁合金粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镍铁合金粉",
+      "evidence_span": "合金粉主要为镍铬、镍锡以及镍铁合金粉"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PVD技术",
+      "evidence_span": "PVD技术为基，“一体两翼”起飞"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "纳米粉体制备工艺",
+      "evidence_span": "博迁新材纳米粉体制备工艺领先"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "80nm镍粉量产能力",
+      "evidence_span": "是全球唯一具备80nm镍粉量产能力的企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化替代",
+      "evidence_span": "博迁新材国产化替代进程加速"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "金属粉体业务",
+        "evidence_span": "为专注金属粉体业务，公司已将焊锡业务出售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端金属粉体制造商",
+        "evidence_span": "公司是全球领先电气电容专用高端金属粉体制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "MLCC用镍粉行业标准制定者",
+        "evidence_span": "中国MLCC用镍粉行业标准唯一制定者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端粉体材料平台企业",
+        "evidence_span": "博迁新材高端粉体材料平台企业雏形已现"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纯金属粉",
+        "evidence_span": "公司产品可分为纯金属粉及合金粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "合金粉",
+        "evidence_span": "公司产品可分为纯金属粉及合金粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镍粉",
+        "evidence_span": "纯金属粉可进一步细分为镍粉、铜粉、银粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铜粉",
+        "evidence_span": "纯金属粉可进一步细分为镍粉、铜粉、银粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银粉",
+        "evidence_span": "纯金属粉可进一步细分为镍粉、铜粉、银粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镍铬合金粉",
+        "evidence_span": "合金粉主要为镍铬、镍锡以及镍铁合金粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镍锡合金粉",
+        "evidence_span": "合金粉主要为镍铬、镍锡以及镍铁合金粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镍铁合金粉",
+        "evidence_span": "合金粉主要为镍铬、镍锡以及镍铁合金粉"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PVD技术",
+        "evidence_span": "PVD技术为基，“一体两翼”起飞"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "纳米粉体制备工艺",
+        "evidence_span": "博迁新材纳米粉体制备工艺领先"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "80nm镍粉量产能力",
+        "evidence_span": "是全球唯一具备80nm镍粉量产能力的企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化替代",
+        "evidence_span": "博迁新材国产化替代进程加速"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:20:46"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "7a9c37cd2804", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述以色列监测到导弹袭击并要求民众避难的具体事件，属于实时新闻更新，不涉及题材本体知识。"}}

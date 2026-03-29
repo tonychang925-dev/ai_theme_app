@@ -1,0 +1,304 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种装备",
+      "evidence_span": "主要业务包括特种装备、超硬材料、专用车及汽车零部件三大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超硬材料",
+      "evidence_span": "主要业务包括特种装备、超硬材料、专用车及汽车零部件三大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "专用车",
+      "evidence_span": "主要业务包括特种装备、超硬材料、专用车及汽车零部件三大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车零部件",
+      "evidence_span": "主要业务包括特种装备、超硬材料、专用车及汽车零部件三大业务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "超硬材料行业龙头企业",
+      "evidence_span": "中南钻石是超硬材料行业龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军民融合型企业",
+      "evidence_span": "红宇专汽为军民结合型企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人造金刚石",
+      "evidence_span": "超硬材料业务主要包括人造金刚石、培育钻石、立方氮化硼等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "培育钻石",
+      "evidence_span": "超硬材料业务主要包括人造金刚石、培育钻石、立方氮化硼等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "立方氮化硼",
+      "evidence_span": "超硬材料业务主要包括人造金刚石、培育钻石、立方氮化硼等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业金刚石",
+      "evidence_span": "主导产品工业金刚石产销量及市场占有率连续多年稳居世界首位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "立方氮化硼单晶及聚晶系列产品",
+      "evidence_span": "中南钻石的主要产品包括工业金刚石和立方氮化硼单晶及聚晶系列产品、复合材料、培育钻石、高纯石墨及制品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合材料",
+      "evidence_span": "中南钻石的主要产品包括工业金刚石和立方氮化硼单晶及聚晶系列产品、复合材料、培育钻石、高纯石墨及制品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯石墨及制品",
+      "evidence_span": "中南钻石的主要产品包括工业金刚石和立方氮化硼单晶及聚晶系列产品、复合材料、培育钻石、高纯石墨及制品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷藏保温汽车",
+      "evidence_span": "主要从事冷藏保温汽车（军用及民用）、爆破器材运输车（军用及民用）、医疗废物转运车、军用各类方舱等系列产品的研发、制造与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "爆破器材运输车",
+      "evidence_span": "主要从事冷藏保温汽车（军用及民用）、爆破器材运输车（军用及民用）、医疗废物转运车、军用各类方舱等系列产品的研发、制造与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗废物转运车",
+      "evidence_span": "主要从事冷藏保温汽车（军用及民用）、爆破器材运输车（军用及民用）、医疗废物转运车、军用各类方舱等系列产品的研发、制造与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用各类方舱",
+      "evidence_span": "主要从事冷藏保温汽车（军用及民用）、爆破器材运输车（军用及民用）、医疗废物转运车、军用各类方舱等系列产品的研发、制造与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发动机活塞缸套",
+      "evidence_span": "银河动力生产的发动机活塞缸套、北方滨海生产的厢式挂车零部件在汽车零部件领域具有一定优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "厢式挂车零部件",
+      "evidence_span": "银河动力生产的发动机活塞缸套、北方滨海生产的厢式挂车零部件在汽车零部件领域具有一定优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用发动机缸套活塞",
+      "evidence_span": "军用发动机缸套活塞和无电切割刀产品的开发和推广应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无电切割刀",
+      "evidence_span": "军用发动机缸套活塞和无电切割刀产品的开发和推广应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超硬材料产品全流程技术优势",
+      "evidence_span": "拥有超硬材料产品全流程技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高温高压法制备30克拉以上培育钻石单晶技术",
+      "evidence_span": "高温高压法制备30克拉以上培育钻石单晶技术继续保持行业领先水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "30克拉以上宝石级培育金刚石大单晶批量制备技术",
+      "evidence_span": "攻克30克拉以上宝石级培育金刚石大单晶及10克拉以上MPCVD培育钻石毛坯批量制备技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "10克拉以上MPCVD培育钻石毛坯批量制备技术",
+      "evidence_span": "攻克30克拉以上宝石级培育金刚石大单晶及10克拉以上MPCVD培育钻石毛坯批量制备技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "成熟的组装、焊接工艺技术",
+      "evidence_span": "掌握成熟的组装、焊接工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "底盘结构件加工制造工艺技术能力",
+      "evidence_span": "形成北方滨海特有的底盘结构件加工制造工艺技术能力"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "培育钻石渗透加速",
+      "evidence_span": "培育钻石渗透加速，多维度领先铸就行业龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "培育钻石+工业金刚石",
+      "evidence_span": "培育钻石+工业金刚石，兵器集团智能弹药龙头军民品双驱动"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "超硬材料与智能弹药双主业",
+      "evidence_span": "开启超硬材料与智能弹药双主业时代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种装备",
+        "evidence_span": "主要业务包括特种装备、超硬材料、专用车及汽车零部件三大业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "超硬材料",
+        "evidence_span": "主要业务包括特种装备、超硬材料、专用车及汽车零部件三大业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "专用车及汽车零部件",
+        "evidence_span": "主要业务包括特种装备、超硬材料、专用车及汽车零部件三大业务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "超硬材料行业龙头企业",
+        "evidence_span": "中南钻石是超硬材料行业龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军民融合型企业",
+        "evidence_span": "红宇专汽为军民结合型企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人造金刚石",
+        "evidence_span": "超硬材料业务主要包括人造金刚石、培育钻石、立方氮化硼等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "培育钻石",
+        "evidence_span": "超硬材料业务主要包括人造金刚石、培育钻石、立方氮化硼等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "立方氮化硼",
+        "evidence_span": "超硬材料业务主要包括人造金刚石、培育钻石、立方氮化硼等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业金刚石",
+        "evidence_span": "主导产品工业金刚石产销量及市场占有率连续多年稳居世界首位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "立方氮化硼单晶及聚晶系列产品",
+        "evidence_span": "中南钻石的主要产品包括工业金刚石和立方氮化硼单晶及聚晶系列产品、复合材料、培育钻石、高纯石墨及制品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合材料",
+        "evidence_span": "中南钻石的主要产品包括工业金刚石和立方氮化硼单晶及聚晶系列产品、复合材料、培育钻石、高纯石墨及制品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯石墨及制品",
+        "evidence_span": "中南钻石的主要产品包括工业金刚石和立方氮化硼单晶及聚晶系列产品、复合材料、培育钻石、高纯石墨及制品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷藏保温汽车",
+        "evidence_span": "主要从事冷藏保温汽车（军用及民用）、爆破器材运输车（军用及民用）、医疗废物转运车、军用各类方舱等系列产品的研发、制造与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "爆破器材运输车",
+        "evidence_span": "主要从事冷藏保温汽车（军用及民用）、爆破器材运输车（军用及民用）、医疗废物转运车、军用各类方舱等系列产品的研发、制造与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗废物转运车",
+        "evidence_span": "主要从事冷藏保温汽车（军用及民用）、爆破器材运输车（军用及民用）、医疗废物转运车、军用各类方舱等系列产品的研发、制造与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用各类方舱",
+        "evidence_span": "主要从事冷藏保温汽车（军用及民用）、爆破器材运输车（军用及民用）、医疗废物转运车、军用各类方舱等系列产品的研发、制造与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发动机活塞缸套",
+        "evidence_span": "银河动力生产的发动机活塞缸套、北方滨海生产的厢式挂车零部件在汽车零部件领域具有一定优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "厢式挂车零部件",
+        "evidence_span": "银河动力生产的发动机活塞缸套、北方滨海生产的厢式挂车零部件在汽车零部件领域具有一定优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用发动机缸套活塞",
+        "evidence_span": "军用发动机缸套活塞和无电切割刀产品的开发和推广应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无电切割刀",
+        "evidence_span": "军用发动机缸套活塞和无电切割刀产品的开发和推广应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超硬材料产品全流程技术优势",
+        "evidence_span": "拥有超硬材料产品全流程技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高温高压法制备30克拉以上培育钻石单晶技术",
+        "evidence_span": "高温高压法制备30克拉以上培育钻石单晶技术继续保持行业领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "30克拉以上宝石级培育金刚石大单晶批量制备技术",
+        "evidence_span": "攻克30克拉以上宝石级培育金刚石大单晶及10克拉以上MPCVD培育钻石毛坯批量制备技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "10克拉以上MPCVD培育钻石毛坯批量制备技术",
+        "evidence_span": "攻克30克拉以上宝石级培育金刚石大单晶及10克拉以上MPCVD培育钻石毛坯批量制备技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "成熟的组装、焊接工艺技术",
+        "evidence_span": "掌握成熟的组装、焊接工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "底盘结构件加工制造工艺技术能力",
+        "evidence_span": "形成北方滨海特有的底盘结构件加工制造工艺技术能力"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "培育钻石渗透加速",
+        "evidence_span": "培育钻石渗透加速，多维度领先铸就行业龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "培育钻石+工业金刚石",
+        "evidence_span": "培育钻石+工业金刚石，兵器集团智能弹药龙头军民品双驱动"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "超硬材料与智能弹药双主业",
+        "evidence_span": "开启超硬材料与智能弹药双主业时代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:59:49"
+}

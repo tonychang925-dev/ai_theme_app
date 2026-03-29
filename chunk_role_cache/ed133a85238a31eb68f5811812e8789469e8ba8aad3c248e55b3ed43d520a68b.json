@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "e1f4f6897460", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落核心是关于台积电发布设备急单和扩产计划的具体事件。然而，其中包含了关于CoWoS产能（2024年底4万片/月，2025年6万片/月）和订单能见度（至2029年）的潜在行业数据信息。这些信息具有知识性，但紧密附着于事件报道中，边界不干净。"}}

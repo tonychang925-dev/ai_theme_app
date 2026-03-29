@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:11", "result": {"chunk_id": "fc47148c8791", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落主要提供静态说明，包括特斯拉灵巧手的结构变化（自由度、电机数量）、驱动装置、传动装置和传感器装置等核心构成和机制，属于纯静态知识，可用于题材本体构建。"}}

@@ -1,0 +1,97 @@
+{
+  "event_id": "evt_3c0c54315f13",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "产品发布",
+  "entities": [
+    {
+      "name": "Meta",
+      "type": "公司",
+      "normalized": "Meta"
+    },
+    {
+      "name": "雷朋",
+      "type": "公司",
+      "normalized": "雷朋"
+    },
+    {
+      "name": "Ray-Ban Meta",
+      "type": "产品",
+      "normalized": "Ray-Ban Meta"
+    },
+    {
+      "name": "博士眼镜",
+      "type": "公司",
+      "normalized": "博士眼镜"
+    },
+    {
+      "name": "A股",
+      "type": "行业",
+      "normalized": "A股"
+    },
+    {
+      "name": "AI智能眼镜",
+      "type": "产品",
+      "normalized": "AI智能眼镜"
+    },
+    {
+      "name": "TWS耳机",
+      "type": "产品",
+      "normalized": "TWS耳机"
+    }
+  ],
+  "summary": "Meta与雷朋联合推出的Ray-Ban Meta走红，带动AI智能眼镜概念在A股活跃，博士眼镜涨停。",
+  "causal_claim": [
+    "产品走红",
+    "概念活跃",
+    "股价上涨",
+    "端侧AI落地"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "AI智能眼镜",
+      "端侧AI落地",
+      "TWS耳机"
+    ],
+    "normalized_terms": {
+      "Meta": "Meta",
+      "雷朋": "雷朋",
+      "Ray-Ban Meta": "Ray-Ban Meta",
+      "博士眼镜": "博士眼镜",
+      "A股": "A股",
+      "AI智能眼镜": "AI智能眼镜",
+      "TWS耳机": "TWS耳机"
+    },
+    "evidence_spans": [
+      {
+        "text": "Meta与雷朋联合打造的Ray-Ban Meta在社交网站上走红",
+        "start": 0,
+        "end": 30
+      },
+      {
+        "text": "AI智能眼镜概念开始在A股活跃起来",
+        "start": 31,
+        "end": 50
+      },
+      {
+        "text": "龙头股博士眼镜最近持续大涨，今天上午再度20%涨停，迎来两连板",
+        "start": 51,
+        "end": 85
+      },
+      {
+        "text": "AI智能眼镜是端侧AI落地的最优解之一，有望成为继TWS耳机后的又一个爆款",
+        "start": 86,
+        "end": 130
+      }
+    ],
+    "core_concepts": [
+      "AI智能眼镜",
+      "端侧AI",
+      "爆款产品"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": null,
+  "raw_text": "Meta与雷朋联合打造的Ray-Ban Meta在社交网站上走红，AI智能眼镜概念开始在A股活跃起来，龙头股博士眼镜最近持续大涨，今天上午再度20%涨停，迎来两连板。市场认为，AI智能眼镜是端侧AI落地的最优解之一，有望成为继TWS耳机后的又一个爆款。"
+}

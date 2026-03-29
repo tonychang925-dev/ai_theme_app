@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "协同管理软件产品",
+      "evidence_span": "协同管理软件产品是公司的主要收入来源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "协同管理解决方案",
+      "evidence_span": "为客户提供协同管理软件产品、解决方案、协同管理平台及云服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "协同管理平台",
+      "evidence_span": "为客户提供协同管理软件产品、解决方案、协同管理平台及云服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "云服务",
+      "evidence_span": "为客户提供协同管理软件产品、解决方案、协同管理平台及云服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数智人力资源云服务",
+      "evidence_span": "提供数智人力资源云服务和数据采集云服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数据采集云服务",
+      "evidence_span": "提供数智人力资源云服务和数据采集云服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "协同管理软件与服务行业领先的解决方案、软件产品与服务提供商",
+      "evidence_span": "是协同管理软件与服务行业领先的解决方案、软件产品与服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "协同管理软件商",
+      "evidence_span": "以公司等为代表的协同管理软件商处于产业链的中游"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "A6产品",
+      "evidence_span": "面向中小企业组织的A6产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "A8产品",
+      "evidence_span": "面向中大型及集团型企业组织的A8、A8-N产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "A8-N产品",
+      "evidence_span": "面向中大型及集团型企业组织的A8、A8-N产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "G6产品",
+      "evidence_span": "面向政府组织及事业单位的G6、G6-N产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "G6-N产品",
+      "evidence_span": "面向政府组织及事业单位的G6、G6-N产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "A8-N协同运营平台",
+      "evidence_span": "云南省烟草专卖局已应用了公司的A8-N协同运营平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "协同管理平台V5",
+      "evidence_span": "打造出了协同管理平台V5和FormtalkPaaS平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FormtalkPaaS平台",
+      "evidence_span": "打造出了协同管理平台V5和FormtalkPaaS平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "协同管理技术平台V8",
+      "evidence_span": "启动了全新一代协同管理技术平台V8的研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PaaS协同云平台Formtalk",
+      "evidence_span": "推出支持云计算技术的PaaS协同云平台Formtalk"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "协同技术平台V5",
+      "evidence_span": "拥有自主研发的协同技术平台V5"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低代码搭建能力",
+      "evidence_span": "通过其低代码搭建能力，为客户实现业务定制化与应用整合功能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云原生技术栈",
+      "evidence_span": "采用云原生、微服务架构等主流技术栈"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微服务架构",
+      "evidence_span": "采用云原生、微服务架构等主流技术栈"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "协同技术平台CTP",
+      "evidence_span": "协同管理平台V5由协同技术平台CTP、协同应用平台CAP、协同移动平台CMP、协同集成平台CIP、协同数据平台CDP五大平台组件构成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "协同应用平台CAP",
+      "evidence_span": "协同管理平台V5由协同技术平台CTP、协同应用平台CAP、协同移动平台CMP、协同集成平台CIP、协同数据平台CDP五大平台组件构成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "协同移动平台CMP",
+      "evidence_span": "协同管理平台V5由协同技术平台CTP、协同应用平台CAP、协同移动平台CMP、协同集成平台CIP、协同数据平台CDP五大平台组件构成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "协同集成平台CIP",
+      "evidence_span": "协同管理平台V5由协同技术平台CTP、协同应用平台CAP、协同移动平台CMP、协同集成平台CIP、协同数据平台CDP五大平台组件构成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "协同数据平台CDP",
+      "evidence_span": "协同管理平台V5由协同技术平台CTP、协同应用平台CAP、协同移动平台CMP、协同集成平台CIP、协同数据平台CDP五大平台组件构成"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中小企业组织",
+      "evidence_span": "面向中小企业组织的A6产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中大型及集团型企业组织",
+      "evidence_span": "面向中大型及集团型企业组织的A8、A8-N产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府组织及事业单位",
+      "evidence_span": "面向政府组织及事业单位的G6、G6-N产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "云南省烟草专卖局",
+      "evidence_span": "云南省烟草专卖局已应用了公司的A8-N协同运营平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信创国产化",
+      "evidence_span": "致远互联协同管理软件龙头，引领信创国产化春风"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信创",
+      "evidence_span": "信创业务放量高增，新技术平台有望推出"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "协同管理软件产品",
+        "evidence_span": "协同管理软件产品是公司的主要收入来源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "协同管理解决方案",
+        "evidence_span": "为客户提供协同管理软件产品、解决方案、协同管理平台及云服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "协同管理平台",
+        "evidence_span": "为客户提供协同管理软件产品、解决方案、协同管理平台及云服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "云服务",
+        "evidence_span": "为客户提供协同管理软件产品、解决方案、协同管理平台及云服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数智人力资源云服务",
+        "evidence_span": "提供数智人力资源云服务和数据采集云服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数据采集云服务",
+        "evidence_span": "提供数智人力资源云服务和数据采集云服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "协同管理软件与服务行业领先的解决方案、软件产品与服务提供商",
+        "evidence_span": "是协同管理软件与服务行业领先的解决方案、软件产品与服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "协同管理软件商",
+        "evidence_span": "以公司等为代表的协同管理软件商处于产业链的中游"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "A6产品",
+        "evidence_span": "面向中小企业组织的A6产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "A8产品",
+        "evidence_span": "面向中大型及集团型企业组织的A8、A8-N产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "A8-N产品",
+        "evidence_span": "面向中大型及集团型企业组织的A8、A8-N产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "G6产品",
+        "evidence_span": "面向政府组织及事业单位的G6、G6-N产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "G6-N产品",
+        "evidence_span": "面向政府组织及事业单位的G6、G6-N产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "A8-N协同运营平台",
+        "evidence_span": "云南省烟草专卖局已应用了公司的A8-N协同运营平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "协同管理平台V5",
+        "evidence_span": "打造出了协同管理平台V5和FormtalkPaaS平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FormtalkPaaS平台",
+        "evidence_span": "打造出了协同管理平台V5和FormtalkPaaS平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "协同管理技术平台V8",
+        "evidence_span": "启动了全新一代协同管理技术平台V8的研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PaaS协同云平台Formtalk",
+        "evidence_span": "推出支持云计算技术的PaaS协同云平台Formtalk"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "协同技术平台V5",
+        "evidence_span": "拥有自主研发的协同技术平台V5"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低代码搭建能力",
+        "evidence_span": "通过其低代码搭建能力，为客户实现业务定制化与应用整合功能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云原生技术栈",
+        "evidence_span": "采用云原生、微服务架构等主流技术栈"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微服务架构",
+        "evidence_span": "采用云原生、微服务架构等主流技术栈"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "协同技术平台CTP",
+        "evidence_span": "协同管理平台V5由协同技术平台CTP、协同应用平台CAP、协同移动平台CMP、协同集成平台CIP、协同数据平台CDP五大平台组件构成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "协同应用平台CAP",
+        "evidence_span": "协同管理平台V5由协同技术平台CTP、协同应用平台CAP、协同移动平台CMP、协同集成平台CIP、协同数据平台CDP五大平台组件构成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "协同移动平台CMP",
+        "evidence_span": "协同管理平台V5由协同技术平台CTP、协同应用平台CAP、协同移动平台CMP、协同集成平台CIP、协同数据平台CDP五大平台组件构成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "协同集成平台CIP",
+        "evidence_span": "协同管理平台V5由协同技术平台CTP、协同应用平台CAP、协同移动平台CMP、协同集成平台CIP、协同数据平台CDP五大平台组件构成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "协同数据平台CDP",
+        "evidence_span": "协同管理平台V5由协同技术平台CTP、协同应用平台CAP、协同移动平台CMP、协同集成平台CIP、协同数据平台CDP五大平台组件构成"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中小企业组织",
+        "evidence_span": "面向中小企业组织的A6产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中大型及集团型企业组织",
+        "evidence_span": "面向中大型及集团型企业组织的A8、A8-N产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府组织及事业单位",
+        "evidence_span": "面向政府组织及事业单位的G6、G6-N产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "云南省烟草专卖局",
+        "evidence_span": "云南省烟草专卖局已应用了公司的A8-N协同运营平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信创国产化",
+        "evidence_span": "致远互联协同管理软件龙头，引领信创国产化春风"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信创",
+        "evidence_span": "信创业务放量高增，新技术平台有望推出"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:21:03"
+}

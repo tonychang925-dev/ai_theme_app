@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:46:14", "result": {"span_uid": "58baffadcc53", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文包含事件性信息（中国进展、专利技术）和具体主体（北斗系统、蓝箭航天），属于阶段性、地域性的进展描述。无法改写为稳定、可脱离原新闻上下文独立成立的知识表达，因此丢弃。"}}

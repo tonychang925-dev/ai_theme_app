@@ -1,0 +1,499 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "IT系统解决方案",
+      "evidence_span": "报告期内公司主要从事IT系统解决方案、数字化基础设施、数字化应用等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字化基础设施",
+      "evidence_span": "报告期内公司主要从事IT系统解决方案、数字化基础设施、数字化应用等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字化应用",
+      "evidence_span": "报告期内公司主要从事IT系统解决方案、数字化基础设施、数字化应用等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新基建",
+      "evidence_span": "公司将把“新基建”列为“三大工程”之首"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信创",
+      "evidence_span": "公司在2022年持续拓展信创市场"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字民生",
+      "evidence_span": "公司在智慧民政、社会救助领域深耕多年"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字能源",
+      "evidence_span": "2022年公司积极尝试能源行业的数字化转型，发展数字能源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧应急",
+      "evidence_span": "公司是应急领域的领军企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资源外包",
+      "evidence_span": "公司的资源外包服务，包括IT设备和软件维保服务、机房搬迁、人员外包、驻场运维等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "企业级云服务提供商",
+      "evidence_span": "具有领先优势的企业级云服务和企业IT系统解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "企业IT系统解决方案提供商",
+      "evidence_span": "具有领先优势的企业级云服务和企业IT系统解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新一代数字化创新服务的领先企业",
+      "evidence_span": "做新一代数字化创新服务的领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "系统集成商",
+      "evidence_span": "在传统的系统集成领域，是国内最老牌的服务商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "应急领域的领军企业",
+      "evidence_span": "公司是应急领域的领军企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "企业IT系统解决方案",
+      "evidence_span": "华胜天成的IT系统解决方案业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云计算产品及服务",
+      "evidence_span": "云计算产品及服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化基础设施",
+      "evidence_span": "数字化基础设施业务包括新一代的人工智能中心（AICC）、新计算架构的超算中心和分布式计算中心相关的规划设计、实施与后续服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化场景应用",
+      "evidence_span": "数字化应用业务包括：人工智能技术的行业应用与价值场景"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天成云系列产品",
+      "evidence_span": "公司通过“天成云”系列产品的研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低收入人口动态监测信息平台",
+      "evidence_span": "打造了“低收入人口动态监测信息平台”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非煤矿山安全生产监测预警解决方案",
+      "evidence_span": "公司研发了非煤矿山安全生产监测预警解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "尾矿库在线监测系统",
+      "evidence_span": "为吉林省应急管理厅构建了尾矿库在线监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ASLMarketpace云端综合网上平台",
+      "evidence_span": "ASL公司的云端综合网上平台「ASLMarketpace」已问世一周年"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SaaS化办公自动化（OA）软件",
+      "evidence_span": "SaaS化办公自动化（OA）软件取得规模化收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据库私有云PaaS",
+      "evidence_span": "数据库私有云PaaS与华为、中国移动等国内头部云平台达成合作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "混合云管",
+      "evidence_span": "公司以混合云管、运管、安管、信创和节能减排为重点切入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信创",
+      "evidence_span": "公司具备底层软件的设计能力、生态适配能力、项目集约化管理能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网",
+      "evidence_span": "公司将物联网IoT技术与能源产业的深度融合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据",
+      "evidence_span": "利用大数据技术为依托"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能",
+      "evidence_span": "利用人工智能、边缘计算等新技术为客户提供平台的集成、应用的开发等服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "边缘计算",
+      "evidence_span": "利用人工智能、边缘计算等新技术为客户提供平台的集成、应用的开发等服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云原生",
+      "evidence_span": "在混合云环境下的云原生业务应用及应用定制开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字孪生",
+      "evidence_span": "其他采用新技术或针对新场景的规划、设计、定制开发、运营、培训等服务（如数字孪生、AR/VR、区块链）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AR/VR",
+      "evidence_span": "其他采用新技术或针对新场景的规划、设计、定制开发、运营、培训等服务（如数字孪生、AR/VR、区块链）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链",
+      "evidence_span": "其他采用新技术或针对新场景的规划、设计、定制开发、运营、培训等服务（如数字孪生、AR/VR、区块链）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CMMI-L5国际评估认证",
+      "evidence_span": "公司及子公司ASL具备软件开发能力成熟度的CMMI最高第五级别认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国人保",
+      "evidence_span": "“金融信创”中标金额超过两亿元（标杆项目——中国人保）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "在中国移动、邮储银行、中信银行等大客户取得20%以上的外包服务份额收入规模增长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "邮储银行",
+      "evidence_span": "在中国移动、邮储银行、中信银行等大客户取得20%以上的外包服务份额收入规模增长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中信银行",
+      "evidence_span": "在中国移动、邮储银行、中信银行等大客户取得20%以上的外包服务份额收入规模增长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京银行",
+      "evidence_span": "新获得了北京银行、西南证券、深信服、海康威视等客户的外包服务订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西南证券",
+      "evidence_span": "新获得了北京银行、西南证券、深信服、海康威视等客户的外包服务订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深信服",
+      "evidence_span": "新获得了北京银行、西南证券、深信服、海康威视等客户的外包服务订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海康威视",
+      "evidence_span": "新获得了北京银行、西南证券、深信服、海康威视等客户的外包服务订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉林省应急管理厅",
+      "evidence_span": "为吉林省应急管理厅构建了尾矿库在线监测系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "数据库私有云PaaS与华为、中国移动等国内头部云平台达成合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "肩负中高端服务器国产化重任"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "去“ioe”",
+      "evidence_span": "根植云计算,受益去“ioe”"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自主可控",
+      "evidence_span": "从代理到自主可控云计算转型见效"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "IT系统解决方案",
+        "evidence_span": "报告期内公司主要从事IT系统解决方案、数字化基础设施、数字化应用等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字化基础设施",
+        "evidence_span": "报告期内公司主要从事IT系统解决方案、数字化基础设施、数字化应用等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字化应用",
+        "evidence_span": "报告期内公司主要从事IT系统解决方案、数字化基础设施、数字化应用等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新基建",
+        "evidence_span": "公司将把“新基建”列为“三大工程”之首"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信创",
+        "evidence_span": "公司在2022年持续拓展信创市场"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字民生",
+        "evidence_span": "公司在智慧民政、社会救助领域深耕多年"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字能源",
+        "evidence_span": "2022年公司积极尝试能源行业的数字化转型，发展数字能源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧应急",
+        "evidence_span": "公司是应急领域的领军企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资源外包",
+        "evidence_span": "公司的资源外包服务，包括IT设备和软件维保服务、机房搬迁、人员外包、驻场运维等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "企业级云服务提供商",
+        "evidence_span": "具有领先优势的企业级云服务和企业IT系统解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "企业IT系统解决方案提供商",
+        "evidence_span": "具有领先优势的企业级云服务和企业IT系统解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新一代数字化创新服务的领先企业",
+        "evidence_span": "做新一代数字化创新服务的领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "系统集成商",
+        "evidence_span": "在传统的系统集成领域，是国内最老牌的服务商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "应急领域的领军企业",
+        "evidence_span": "公司是应急领域的领军企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "企业IT系统解决方案",
+        "evidence_span": "华胜天成的IT系统解决方案业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云计算产品及服务",
+        "evidence_span": "云计算产品及服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化基础设施",
+        "evidence_span": "数字化基础设施业务包括新一代的人工智能中心（AICC）、新计算架构的超算中心和分布式计算中心相关的规划设计、实施与后续服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化场景应用",
+        "evidence_span": "数字化应用业务包括：人工智能技术的行业应用与价值场景"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天成云系列产品",
+        "evidence_span": "公司通过“天成云”系列产品的研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低收入人口动态监测信息平台",
+        "evidence_span": "打造了“低收入人口动态监测信息平台”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非煤矿山安全生产监测预警解决方案",
+        "evidence_span": "公司研发了非煤矿山安全生产监测预警解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "尾矿库在线监测系统",
+        "evidence_span": "为吉林省应急管理厅构建了尾矿库在线监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ASLMarketpace云端综合网上平台",
+        "evidence_span": "ASL公司的云端综合网上平台「ASLMarketpace」已问世一周年"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SaaS化办公自动化（OA）软件",
+        "evidence_span": "SaaS化办公自动化（OA）软件取得规模化收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据库私有云PaaS",
+        "evidence_span": "数据库私有云PaaS与华为、中国移动等国内头部云平台达成合作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "混合云管",
+        "evidence_span": "公司以混合云管、运管、安管、信创和节能减排为重点切入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信创",
+        "evidence_span": "公司具备底层软件的设计能力、生态适配能力、项目集约化管理能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网",
+        "evidence_span": "公司将物联网IoT技术与能源产业的深度融合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据",
+        "evidence_span": "利用大数据技术为依托"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能",
+        "evidence_span": "利用人工智能、边缘计算等新技术为客户提供平台的集成、应用的开发等服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "边缘计算",
+        "evidence_span": "利用人工智能、边缘计算等新技术为客户提供平台的集成、应用的开发等服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云原生",
+        "evidence_span": "在混合云环境下的云原生业务应用及应用定制开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字孪生",
+        "evidence_span": "其他采用新技术或针对新场景的规划、设计、定制开发、运营、培训等服务（如数字孪生、AR/VR、区块链）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AR/VR",
+        "evidence_span": "其他采用新技术或针对新场景的规划、设计、定制开发、运营、培训等服务（如数字孪生、AR/VR、区块链）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链",
+        "evidence_span": "其他采用新技术或针对新场景的规划、设计、定制开发、运营、培训等服务（如数字孪生、AR/VR、区块链）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CMMI-L5国际评估认证",
+        "evidence_span": "公司及子公司ASL具备软件开发能力成熟度的CMMI最高第五级别认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国人保",
+        "evidence_span": "“金融信创”中标金额超过两亿元（标杆项目——中国人保）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "在中国移动、邮储银行、中信银行等大客户取得20%以上的外包服务份额收入规模增长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "邮储银行",
+        "evidence_span": "在中国移动、邮储银行、中信银行等大客户取得20%以上的外包服务份额收入规模增长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中信银行",
+        "evidence_span": "在中国移动、邮储银行、中信银行等大客户取得20%以上的外包服务份额收入规模增长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京银行",
+        "evidence_span": "新获得了北京银行、西南证券、深信服、海康威视等客户的外包服务订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西南证券",
+        "evidence_span": "新获得了北京银行、西南证券、深信服、海康威视等客户的外包服务订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深信服",
+        "evidence_span": "新获得了北京银行、西南证券、深信服、海康威视等客户的外包服务订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海康威视",
+        "evidence_span": "新获得了北京银行、西南证券、深信服、海康威视等客户的外包服务订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉林省应急管理厅",
+        "evidence_span": "为吉林省应急管理厅构建了尾矿库在线监测系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "数据库私有云PaaS与华为、中国移动等国内头部云平台达成合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "肩负中高端服务器国产化重任"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "去“ioe”",
+        "evidence_span": "根植云计算,受益去“ioe”"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自主可控",
+        "evidence_span": "从代理到自主可控云计算转型见效"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:10:24"
+}

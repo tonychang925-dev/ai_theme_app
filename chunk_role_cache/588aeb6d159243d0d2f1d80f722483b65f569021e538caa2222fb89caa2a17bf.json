@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "fa170ceae1e1", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述亿航智能的财报事件和飞行汽车在广州CBD的示范飞行事件，包括业绩超预期、商业化进程等时间性动态，没有提供题材的静态说明。"}}

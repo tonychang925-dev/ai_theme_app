@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "52e31d931a50", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述小鹏飞行汽车在北京展示的具体事件，没有涉及低空经济的定义、结构或机制等静态知识，属于纯事件。"}}

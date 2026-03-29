@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:43:21", "result": {"chunk_id": "d8851ed3e41b", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段主要描述公司的核心技术、产品应用和行业地位，均为静态说明，不包含明确的事件、时间推进或动态公告，适合用于题材本体构建。"}}

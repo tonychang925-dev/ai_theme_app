@@ -1,0 +1,439 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能网联产品",
+      "evidence_span": "研发、生产和销售智能网联"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能座舱产品",
+      "evidence_span": "研发、生产和销售智能座舱"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "控制器产品",
+      "evidence_span": "研发、生产和销售控制器"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "软件平台开发",
+      "evidence_span": "研发、生产和销售软件平台开发"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "商用车智能网联龙头",
+      "evidence_span": "鸿泉物联商用车智能网联龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "商用车车联网引领者",
+      "evidence_span": "商用车车联网引领者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "辅助驾驶先驱",
+      "evidence_span": "辅助驾驶先驱"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "商用车智能网联先行者",
+      "evidence_span": "鸿泉物联商用车智能网联先行者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车智能网联业务综合解决方案提供商",
+      "evidence_span": "公司致力于成为汽车智能网联业务综合解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "行驶记录仪",
+      "evidence_span": "行驶记录仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "T-BOX",
+      "evidence_span": "T-BOX"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ADAS高级辅助驾驶系统",
+      "evidence_span": "ADAS高级辅助驾驶系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载中控屏",
+      "evidence_span": "车载中控屏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车仪表",
+      "evidence_span": "汽车仪表"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车身控制器",
+      "evidence_span": "车身控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车门控制器",
+      "evidence_span": "车门控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空调控制器",
+      "evidence_span": "空调控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网关",
+      "evidence_span": "网关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热管理控制器",
+      "evidence_span": "热管理控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "座椅控制器",
+      "evidence_span": "座椅控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冰箱控制器",
+      "evidence_span": "冰箱控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "政务监管平台",
+      "evidence_span": "政务监管平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车联网平台",
+      "evidence_span": "车联网平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能算法",
+      "evidence_span": "人工智能算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G通信",
+      "evidence_span": "5G通信"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "V2X技术",
+      "evidence_span": "V2X技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "组合导航",
+      "evidence_span": "组合导航"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "驾驶员身份及分神识别",
+      "evidence_span": "驾驶员身份及分神识别"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "盲区行人车辆监测",
+      "evidence_span": "盲区行人车辆监测"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车道偏离识别",
+      "evidence_span": "车道偏离识别"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "360环视",
+      "evidence_span": "360环视"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "罐体转向识别",
+      "evidence_span": "罐体转向识别"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德力新能源",
+      "evidence_span": "德力新能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山河智能",
+      "evidence_span": "山河智能"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陕汽",
+      "evidence_span": "陕汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三一",
+      "evidence_span": "三一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "重汽",
+      "evidence_span": "重汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华菱",
+      "evidence_span": "华菱"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北奔",
+      "evidence_span": "北奔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利商用车",
+      "evidence_span": "吉利商用车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金龙",
+      "evidence_span": "金龙"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国六",
+      "evidence_span": "掘金国六蓝海"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G时代",
+      "evidence_span": "5G时代迎风口"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能网联产品",
+        "evidence_span": "研发、生产和销售智能网联"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能座舱产品",
+        "evidence_span": "研发、生产和销售智能座舱"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "控制器产品",
+        "evidence_span": "研发、生产和销售控制器"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "软件平台开发",
+        "evidence_span": "研发、生产和销售软件平台开发"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "商用车智能网联龙头",
+        "evidence_span": "鸿泉物联商用车智能网联龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "商用车车联网引领者",
+        "evidence_span": "商用车车联网引领者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "辅助驾驶先驱",
+        "evidence_span": "辅助驾驶先驱"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "商用车智能网联先行者",
+        "evidence_span": "鸿泉物联商用车智能网联先行者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车智能网联业务综合解决方案提供商",
+        "evidence_span": "公司致力于成为汽车智能网联业务综合解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "行驶记录仪",
+        "evidence_span": "行驶记录仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "T-BOX",
+        "evidence_span": "T-BOX"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ADAS高级辅助驾驶系统",
+        "evidence_span": "ADAS高级辅助驾驶系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载中控屏",
+        "evidence_span": "车载中控屏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车仪表",
+        "evidence_span": "汽车仪表"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车身控制器",
+        "evidence_span": "车身控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车门控制器",
+        "evidence_span": "车门控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空调控制器",
+        "evidence_span": "空调控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网关",
+        "evidence_span": "网关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热管理控制器",
+        "evidence_span": "热管理控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "座椅控制器",
+        "evidence_span": "座椅控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冰箱控制器",
+        "evidence_span": "冰箱控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "政务监管平台",
+        "evidence_span": "政务监管平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车联网平台",
+        "evidence_span": "车联网平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能算法",
+        "evidence_span": "人工智能算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G通信",
+        "evidence_span": "5G通信"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "V2X技术",
+        "evidence_span": "V2X技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "组合导航",
+        "evidence_span": "组合导航"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "驾驶员身份及分神识别",
+        "evidence_span": "驾驶员身份及分神识别"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "盲区行人车辆监测",
+        "evidence_span": "盲区行人车辆监测"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车道偏离识别",
+        "evidence_span": "车道偏离识别"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "360环视",
+        "evidence_span": "360环视"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "罐体转向识别",
+        "evidence_span": "罐体转向识别"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德力新能源",
+        "evidence_span": "德力新能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山河智能",
+        "evidence_span": "山河智能"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陕汽",
+        "evidence_span": "陕汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三一",
+        "evidence_span": "三一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "重汽",
+        "evidence_span": "重汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华菱",
+        "evidence_span": "华菱"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北奔",
+        "evidence_span": "北奔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利商用车",
+        "evidence_span": "吉利商用车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金龙",
+        "evidence_span": "金龙"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国六",
+        "evidence_span": "掘金国六蓝海"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G时代",
+        "evidence_span": "5G时代迎风口"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:57:58"
+}

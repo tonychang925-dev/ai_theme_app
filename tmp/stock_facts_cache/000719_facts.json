@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "教育出版",
+      "evidence_span": "形成了以教育出版和教育服务为主线"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "教育服务",
+      "evidence_span": "形成了以教育出版和教育服务为主线"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大众出版",
+      "evidence_span": "以大众出版和专业出版为两翼"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "专业出版",
+      "evidence_span": "以大众出版和专业出版为两翼"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新兴媒体",
+      "evidence_span": "以新兴媒体、数字教育、数字出版等多元发展为支撑"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字教育",
+      "evidence_span": "以新兴媒体、数字教育、数字出版等多元发展为支撑"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字出版",
+      "evidence_span": "以新兴媒体、数字教育、数字出版等多元发展为支撑"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "河南省文化企业龙头",
+      "evidence_span": "河南省文化企业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "河南省教育出版龙头",
+      "evidence_span": "河南省教育出版龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "主流教材出版社河南省独家代理商",
+      "evidence_span": "主流教材出版社河南省独家代理商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教材教辅",
+      "evidence_span": "教材教辅近8年来占据出版物零售市场主要份额"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字出版应用智能部署重点实验室",
+      "evidence_span": "数字出版应用智能部署重点实验室"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中国手工创意产业数字服务平台",
+      "evidence_span": "中国手工创意产业数字服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中小学劳动教育中的手工非遗传承出版融合平台",
+      "evidence_span": "中小学劳动教育中的手工非遗传承出版融合平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大象考试与教学测评服务系统",
+      "evidence_span": "大象考试与教学测评服务系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中教通智慧课堂",
+      "evidence_span": "中教通智慧课堂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中原云印平台",
+      "evidence_span": "搭建了中原云印平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "文创研学基地",
+      "evidence_span": "加快推进集研学、文创、文旅等于一体的文创研学基地建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中原出版博物馆",
+      "evidence_span": "中原出版博物馆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手工创意博览中心",
+      "evidence_span": "手工创意博览中心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄河文化研学馆",
+      "evidence_span": "黄河文化研学馆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "少儿绘本研学馆",
+      "evidence_span": "少儿绘本研学馆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中原作家作品博物馆",
+      "evidence_span": "中原作家作品博物馆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国学经典研学馆",
+      "evidence_span": "国学经典研学馆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工智能研学馆",
+      "evidence_span": "人工智能研学馆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大象课堂数字体验中心",
+      "evidence_span": "大象课堂数字体验中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字印刷全线系统",
+      "evidence_span": "引进并投入使用数字印刷全线系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "按需印刷生产线",
+      "evidence_span": "建设河南省第一条按需印刷生产线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "河南省",
+      "evidence_span": "河南省教育出版龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字化升级",
+      "evidence_span": "积极推进数字化升级"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "大教育体系构建",
+      "evidence_span": "大教育体系构建"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "教育出版",
+        "evidence_span": "形成了以教育出版和教育服务为主线"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "教育服务",
+        "evidence_span": "形成了以教育出版和教育服务为主线"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大众出版",
+        "evidence_span": "以大众出版和专业出版为两翼"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "专业出版",
+        "evidence_span": "以大众出版和专业出版为两翼"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新兴媒体",
+        "evidence_span": "以新兴媒体、数字教育、数字出版等多元发展为支撑"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字教育",
+        "evidence_span": "以新兴媒体、数字教育、数字出版等多元发展为支撑"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字出版",
+        "evidence_span": "以新兴媒体、数字教育、数字出版等多元发展为支撑"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "河南省文化企业龙头",
+        "evidence_span": "河南省文化企业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "河南省教育出版龙头",
+        "evidence_span": "河南省教育出版龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "主流教材出版社河南省独家代理商",
+        "evidence_span": "主流教材出版社河南省独家代理商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教材教辅",
+        "evidence_span": "教材教辅近8年来占据出版物零售市场主要份额"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字出版应用智能部署重点实验室",
+        "evidence_span": "数字出版应用智能部署重点实验室"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中国手工创意产业数字服务平台",
+        "evidence_span": "中国手工创意产业数字服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中小学劳动教育中的手工非遗传承出版融合平台",
+        "evidence_span": "中小学劳动教育中的手工非遗传承出版融合平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大象考试与教学测评服务系统",
+        "evidence_span": "大象考试与教学测评服务系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中教通智慧课堂",
+        "evidence_span": "中教通智慧课堂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中原云印平台",
+        "evidence_span": "搭建了中原云印平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "文创研学基地",
+        "evidence_span": "加快推进集研学、文创、文旅等于一体的文创研学基地建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中原出版博物馆",
+        "evidence_span": "中原出版博物馆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手工创意博览中心",
+        "evidence_span": "手工创意博览中心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄河文化研学馆",
+        "evidence_span": "黄河文化研学馆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "少儿绘本研学馆",
+        "evidence_span": "少儿绘本研学馆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中原作家作品博物馆",
+        "evidence_span": "中原作家作品博物馆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国学经典研学馆",
+        "evidence_span": "国学经典研学馆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工智能研学馆",
+        "evidence_span": "人工智能研学馆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大象课堂数字体验中心",
+        "evidence_span": "大象课堂数字体验中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字印刷全线系统",
+        "evidence_span": "引进并投入使用数字印刷全线系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "按需印刷生产线",
+        "evidence_span": "建设河南省第一条按需印刷生产线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "河南省",
+        "evidence_span": "河南省教育出版龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字化升级",
+        "evidence_span": "积极推进数字化升级"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "大教育体系构建",
+        "evidence_span": "大教育体系构建"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:20:34"
+}

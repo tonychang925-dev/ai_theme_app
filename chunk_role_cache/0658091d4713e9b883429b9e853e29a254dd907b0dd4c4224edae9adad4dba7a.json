@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "57fd8b4a5ac7", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含事件信息（英伟达公开AR眼镜专利）和潜在的有价值知识（专利名称'无背光增强现实数字全息技术'可能涉及AR眼镜的技术机制），混合了事件和静态知识元素。"}}

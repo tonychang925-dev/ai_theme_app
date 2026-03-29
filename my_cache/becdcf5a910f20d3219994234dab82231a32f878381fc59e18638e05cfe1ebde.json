@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "c5c9be6bcd8b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述特斯拉对FSD授权传闻的回应和市场消息，涉及具体日期和事件动态，没有提供关于FSD本身的静态知识。"}}

@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "现代中药研发",
+      "evidence_span": "本公司的主营业务为现代中药及西药的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "本公司的主营业务为现代中药及西药的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "本公司的主营业务为现代中药及西药的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "西药研发",
+      "evidence_span": "本公司的主营业务为现代中药及西药的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药商业产品的零售连锁",
+      "evidence_span": "公司还经营医药商业产品的零售连锁等流通业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性高科技医药企业",
+      "evidence_span": "目前已发展成为一家集药品研发、生产、销售于一体的综合性高科技医药企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银黄滴丸",
+      "evidence_span": "主要产品包括银黄滴丸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益母草软胶囊",
+      "evidence_span": "主要产品包括银黄滴丸、益母草软胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益母草分散片",
+      "evidence_span": "益母草分散片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "七叶神安分散片",
+      "evidence_span": "七叶神安分散片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "枫蓼肠胃康分散片",
+      "evidence_span": "枫蓼肠胃康分散片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人参健脾片",
+      "evidence_span": "人参健脾片等中成药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "罗红霉素软胶囊",
+      "evidence_span": "罗红霉素软胶囊等西药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硬胶囊剂",
+      "evidence_span": "生产剂型覆盖硬胶囊剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "片剂",
+      "evidence_span": "片剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "颗粒剂",
+      "evidence_span": "颗粒剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软胶囊剂",
+      "evidence_span": "软胶囊剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丸剂（滴丸）",
+      "evidence_span": "丸剂（滴丸）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "滴丸技术",
+      "evidence_span": "公司利用滴丸技术生产出的产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "软胶囊技术",
+      "evidence_span": "公司利用软胶囊技术生产出的产品"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "中医药传承创新发展",
+      "evidence_span": "促进中医药传承创新发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "现代中药研发、生产和销售",
+        "evidence_span": "本公司的主营业务为现代中药及西药的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "西药研发、生产和销售",
+        "evidence_span": "本公司的主营业务为现代中药及西药的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药商业产品的零售连锁",
+        "evidence_span": "公司还经营医药商业产品的零售连锁等流通业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性高科技医药企业",
+        "evidence_span": "目前已发展成为一家集药品研发、生产、销售于一体的综合性高科技医药企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银黄滴丸",
+        "evidence_span": "主要产品包括银黄滴丸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益母草软胶囊",
+        "evidence_span": "主要产品包括银黄滴丸、益母草软胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益母草分散片",
+        "evidence_span": "益母草分散片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "七叶神安分散片",
+        "evidence_span": "七叶神安分散片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "枫蓼肠胃康分散片",
+        "evidence_span": "枫蓼肠胃康分散片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人参健脾片",
+        "evidence_span": "人参健脾片等中成药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "罗红霉素软胶囊",
+        "evidence_span": "罗红霉素软胶囊等西药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硬胶囊剂",
+        "evidence_span": "生产剂型覆盖硬胶囊剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "片剂",
+        "evidence_span": "片剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "颗粒剂",
+        "evidence_span": "颗粒剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软胶囊剂",
+        "evidence_span": "软胶囊剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丸剂（滴丸）",
+        "evidence_span": "丸剂（滴丸）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "滴丸技术",
+        "evidence_span": "公司利用滴丸技术生产出的产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "软胶囊技术",
+        "evidence_span": "公司利用软胶囊技术生产出的产品"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "中医药传承创新发展",
+        "evidence_span": "促进中医药传承创新发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:35:30"
+}

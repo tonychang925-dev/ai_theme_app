@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产开发",
+      "evidence_span": "公司主要从事房地产开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物业出租",
+      "evidence_span": "物业出租"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物业管理",
+      "evidence_span": "物业管理"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "天津港保税区下属唯一一家A股上市公司",
+      "evidence_span": "天津港保税区下属唯一一家A股上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "住宅项目",
+      "evidence_span": "住宅项目可售资源增加"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端涉外公寓",
+      "evidence_span": "打造高端涉外公寓"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "写字楼定制化装修",
+      "evidence_span": "试点12套写字楼定制化装修"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产业园区运营",
+      "evidence_span": "加快推进“孵化器+加速器”的产业运营新模式"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "知识产权服务",
+      "evidence_span": "知识产权保护中心天保智谷工作站"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "辉盛集团",
+      "evidence_span": "携手头部企业辉盛集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华润万家",
+      "evidence_span": "公司与华润万家签署战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "勤恩",
+      "evidence_span": "成功引入勤恩"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一商",
+      "evidence_span": "一商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "河北钢铁",
+      "evidence_span": "河北钢铁"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恒瑞创新药物研发中心",
+      "evidence_span": "恒瑞创新药物研发中心贴建一、二期工程圆满完成"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "转型航空产业",
+      "evidence_span": "天保基建开启转型航空新征程"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "民航产业稀缺标的",
+      "evidence_span": "民航产业稀缺标的"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "航空产业成功布局",
+      "evidence_span": "航空产业成功布局"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产开发",
+        "evidence_span": "公司主要从事房地产开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物业出租",
+        "evidence_span": "物业出租"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物业管理",
+        "evidence_span": "物业管理"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "天津港保税区下属唯一一家A股上市公司",
+        "evidence_span": "天津港保税区下属唯一一家A股上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "住宅项目",
+        "evidence_span": "住宅项目可售资源增加"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端涉外公寓",
+        "evidence_span": "打造高端涉外公寓"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "写字楼定制化装修",
+        "evidence_span": "试点12套写字楼定制化装修"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产业园区运营",
+        "evidence_span": "加快推进“孵化器+加速器”的产业运营新模式"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "知识产权服务",
+        "evidence_span": "知识产权保护中心天保智谷工作站"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "辉盛集团",
+        "evidence_span": "携手头部企业辉盛集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华润万家",
+        "evidence_span": "公司与华润万家签署战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "勤恩",
+        "evidence_span": "成功引入勤恩"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一商",
+        "evidence_span": "一商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "河北钢铁",
+        "evidence_span": "河北钢铁"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恒瑞创新药物研发中心",
+        "evidence_span": "恒瑞创新药物研发中心贴建一、二期工程圆满完成"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "转型航空产业",
+        "evidence_span": "天保基建开启转型航空新征程"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "民航产业稀缺标的",
+        "evidence_span": "民航产业稀缺标的"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "航空产业成功布局",
+        "evidence_span": "航空产业成功布局"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:01:03"
+}

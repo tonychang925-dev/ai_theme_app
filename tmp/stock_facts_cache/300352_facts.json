@@ -1,0 +1,404 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息安全",
+      "evidence_span": "公司产品体系已经完成“信息安全及信创、移动办公及安全通讯应用、智慧社区及健康医疗”三大格局的打造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信创",
+      "evidence_span": "公司产品体系已经完成“信息安全及信创、移动办公及安全通讯应用、智慧社区及健康医疗”三大格局的打造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "移动办公",
+      "evidence_span": "公司产品体系已经完成“信息安全及信创、移动办公及安全通讯应用、智慧社区及健康医疗”三大格局的打造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全通讯应用",
+      "evidence_span": "公司产品体系已经完成“信息安全及信创、移动办公及安全通讯应用、智慧社区及健康医疗”三大格局的打造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧社区",
+      "evidence_span": "公司产品体系已经完成“信息安全及信创、移动办公及安全通讯应用、智慧社区及健康医疗”三大格局的打造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "健康医疗",
+      "evidence_span": "公司产品体系已经完成“信息安全及信创、移动办公及安全通讯应用、智慧社区及健康医疗”三大格局的打造"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "终端安全管理领域的龙头企业",
+      "evidence_span": "公司是国内终端安全管理领域的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "网络与信息安全领域领先的解决方案提供商",
+      "evidence_span": "是国内网络与信息安全领域领先的解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "信创安全的领军企业",
+      "evidence_span": "成为信创安全的领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "信创即时通讯底座和应用市场的领军企业",
+      "evidence_span": "公司也因此成为信创即时通讯底座和应用市场的领军企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "终端安全管理产品",
+      "evidence_span": "北信源已累计15年实现国内终端安全管理市场占有率第一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信创平台安全产品",
+      "evidence_span": "公司推出了完整的信创平台安全产品和解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信源密信",
+      "evidence_span": "信源密信是公司为党政军、央、国企客户打造的“即时通讯底座”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商密文档安全产品",
+      "evidence_span": "北信源的商密文档安全产品在工商银行完成60万点部署"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据防泄漏（DLP）产品",
+      "evidence_span": "北信源的数据防泄漏（DLP）等产品更是被中国移动、中石油和中海油等重要单位选用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "边界及网络安全产品",
+      "evidence_span": "全面布局了网络接入控制、防火墙、入侵防御监测、网络安全审计等边界及网络安全产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工控安全产品",
+      "evidence_span": "在工控安全业务领域已经形成“1+5+2+N”产品矩阵体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大数据安全产品",
+      "evidence_span": "公司大数据安全技术和产品得到行业广泛认可"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "区块链机",
+      "evidence_span": "公司与杭州安存网络科技有限公司自主研发的区块链机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "泛终端安全管理体系",
+      "evidence_span": "是业界最早建立“泛”终端安全管理体系的安全厂商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新内网安全一体化管控平台",
+      "evidence_span": "全力打造了新内网安全一体化管控平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微服务架构",
+      "evidence_span": "一体化服务器平台采用SOA分布式面向服务的微服务架构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "主动安全网络架构",
+      "evidence_span": "公司依托于主动安全网络架构的专利技术优势"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府",
+      "evidence_span": "公司主要客户为政府、军队、军工、能源、金融、医疗等重要行业的大中型用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军队",
+      "evidence_span": "公司主要客户为政府、军队、军工、能源、金融、医疗等重要行业的大中型用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军工",
+      "evidence_span": "公司主要客户为政府、军队、军工、能源、金融、医疗等重要行业的大中型用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "能源",
+      "evidence_span": "公司主要客户为政府、军队、军工、能源、金融、医疗等重要行业的大中型用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融",
+      "evidence_span": "公司主要客户为政府、军队、军工、能源、金融、医疗等重要行业的大中型用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医疗",
+      "evidence_span": "公司主要客户为政府、军队、军工、能源、金融、医疗等重要行业的大中型用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "党政军",
+      "evidence_span": "作为党政军、央企、国企等重要行业终端安全的绝对市场领导者"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "央企",
+      "evidence_span": "作为党政军、央企、国企等重要行业终端安全的绝对市场领导者"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国企",
+      "evidence_span": "作为党政军、央企、国企等重要行业终端安全的绝对市场领导者"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工商银行",
+      "evidence_span": "北信源的商密文档安全产品在工商银行完成60万点部署"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国联通",
+      "evidence_span": "相继被中国联通、国电投、中粮集团等央企选用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国电投",
+      "evidence_span": "相继被中国联通、国电投、中粮集团等央企选用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中粮集团",
+      "evidence_span": "相继被中国联通、国电投、中粮集团等央企选用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "北信源的数据防泄漏（DLP）等产品更是被中国移动、中石油和中海油等重要单位选用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "北信源的数据防泄漏（DLP）等产品更是被中国移动、中石油和中海油等重要单位选用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中海油",
+      "evidence_span": "北信源的数据防泄漏（DLP）等产品更是被中国移动、中石油和中海油等重要单位选用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信创",
+      "evidence_span": "信创平台安全作为重要发展战略之一"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "为国家信息安全建设与信创平台发展战略贡献更多力量"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息安全及信创",
+        "evidence_span": "公司产品体系已经完成“信息安全及信创、移动办公及安全通讯应用、智慧社区及健康医疗”三大格局的打造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "移动办公及安全通讯应用",
+        "evidence_span": "公司产品体系已经完成“信息安全及信创、移动办公及安全通讯应用、智慧社区及健康医疗”三大格局的打造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧社区及健康医疗",
+        "evidence_span": "公司产品体系已经完成“信息安全及信创、移动办公及安全通讯应用、智慧社区及健康医疗”三大格局的打造"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "终端安全管理领域的龙头企业",
+        "evidence_span": "公司是国内终端安全管理领域的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "网络与信息安全领域领先的解决方案提供商",
+        "evidence_span": "是国内网络与信息安全领域领先的解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "信创安全的领军企业",
+        "evidence_span": "成为信创安全的领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "信创即时通讯底座和应用市场的领军企业",
+        "evidence_span": "公司也因此成为信创即时通讯底座和应用市场的领军企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "终端安全管理产品",
+        "evidence_span": "北信源已累计15年实现国内终端安全管理市场占有率第一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信创平台安全产品",
+        "evidence_span": "公司推出了完整的信创平台安全产品和解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信源密信",
+        "evidence_span": "信源密信是公司为党政军、央、国企客户打造的“即时通讯底座”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商密文档安全产品",
+        "evidence_span": "北信源的商密文档安全产品在工商银行完成60万点部署"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据防泄漏（DLP）产品",
+        "evidence_span": "北信源的数据防泄漏（DLP）等产品更是被中国移动、中石油和中海油等重要单位选用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "边界及网络安全产品",
+        "evidence_span": "全面布局了网络接入控制、防火墙、入侵防御监测、网络安全审计等边界及网络安全产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工控安全产品",
+        "evidence_span": "在工控安全业务领域已经形成“1+5+2+N”产品矩阵体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大数据安全产品",
+        "evidence_span": "公司大数据安全技术和产品得到行业广泛认可"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "区块链机",
+        "evidence_span": "公司与杭州安存网络科技有限公司自主研发的区块链机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "泛终端安全管理体系",
+        "evidence_span": "是业界最早建立“泛”终端安全管理体系的安全厂商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新内网安全一体化管控平台",
+        "evidence_span": "全力打造了新内网安全一体化管控平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微服务架构",
+        "evidence_span": "一体化服务器平台采用SOA分布式面向服务的微服务架构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "主动安全网络架构",
+        "evidence_span": "公司依托于主动安全网络架构的专利技术优势"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府",
+        "evidence_span": "公司主要客户为政府、军队、军工、能源、金融、医疗等重要行业的大中型用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军队",
+        "evidence_span": "公司主要客户为政府、军队、军工、能源、金融、医疗等重要行业的大中型用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军工",
+        "evidence_span": "公司主要客户为政府、军队、军工、能源、金融、医疗等重要行业的大中型用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "能源",
+        "evidence_span": "公司主要客户为政府、军队、军工、能源、金融、医疗等重要行业的大中型用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融",
+        "evidence_span": "公司主要客户为政府、军队、军工、能源、金融、医疗等重要行业的大中型用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医疗",
+        "evidence_span": "公司主要客户为政府、军队、军工、能源、金融、医疗等重要行业的大中型用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "党政军",
+        "evidence_span": "作为党政军、央企、国企等重要行业终端安全的绝对市场领导者"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "央企",
+        "evidence_span": "作为党政军、央企、国企等重要行业终端安全的绝对市场领导者"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国企",
+        "evidence_span": "作为党政军、央企、国企等重要行业终端安全的绝对市场领导者"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工商银行",
+        "evidence_span": "北信源的商密文档安全产品在工商银行完成60万点部署"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国联通",
+        "evidence_span": "相继被中国联通、国电投、中粮集团等央企选用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国电投",
+        "evidence_span": "相继被中国联通、国电投、中粮集团等央企选用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中粮集团",
+        "evidence_span": "相继被中国联通、国电投、中粮集团等央企选用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "北信源的数据防泄漏（DLP）等产品更是被中国移动、中石油和中海油等重要单位选用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "北信源的数据防泄漏（DLP）等产品更是被中国移动、中石油和中海油等重要单位选用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中海油",
+        "evidence_span": "北信源的数据防泄漏（DLP）等产品更是被中国移动、中石油和中海油等重要单位选用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信创",
+        "evidence_span": "信创平台安全作为重要发展战略之一"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "为国家信息安全建设与信创平台发展战略贡献更多力量"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:56:08"
+}

@@ -1,0 +1,369 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "药品流通",
+      "evidence_span": "公司主要从事业务\n　　公司立足于大健康产业发展，目前在药品流通行业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗器械流通",
+      "evidence_span": "打造以药品、医疗器械、大健康产品流通业务为主业的集成化供应链"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大健康产品流通",
+      "evidence_span": "打造以药品、医疗器械、大健康产品流通业务为主业的集成化供应链"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药批发",
+      "evidence_span": "公司目前的经营模式包括医药批发、医药零售、医药“互联网+”以及医药第三方物流服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药零售",
+      "evidence_span": "公司目前的经营模式包括医药批发、医药零售、医药“互联网+”以及医药第三方物流服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药“互联网+”",
+      "evidence_span": "公司目前的经营模式包括医药批发、医药零售、医药“互联网+”以及医药第三方物流服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药第三方物流服务",
+      "evidence_span": "公司目前的经营模式包括医药批发、医药零售、医药“互联网+”以及医药第三方物流服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域性集团化企业",
+      "evidence_span": "公司是医药流通行业内的区域性集团化企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域医药商业龙头企业",
+      "evidence_span": "成为中国医药流通行业内具有“智慧型”和“数字化”发展特色的区域医药商业龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医药流通企业",
+      "evidence_span": "产业链中游为医药流通企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "处方药",
+      "evidence_span": "销售处方药、非处方药及医疗器械、相关健康产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非处方药",
+      "evidence_span": "销售处方药、非处方药及医疗器械、相关健康产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗器械",
+      "evidence_span": "销售处方药、非处方药及医疗器械、相关健康产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "健康产品",
+      "evidence_span": "销售处方药、非处方药及医疗器械、相关健康产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新特药",
+      "evidence_span": "持续拓展主营新特药的特药药店业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医美类产品",
+      "evidence_span": "年内销售医美类产品的同比增幅53.44%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特医食品类产品",
+      "evidence_span": "特医食品类产品的同比增幅68.59%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "血液制品类产品",
+      "evidence_span": "血液制品类产品的同比增幅20.51%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药药事服务",
+      "evidence_span": "南京区域中药药事服务医院客户数80家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合药事服务解决方案",
+      "evidence_span": "为医疗机构提供医药批发服务和标准化、专业化、个性化与增值化的综合药事服务解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药第三方物流服务",
+      "evidence_span": "公司的医药第三方物流配送服务业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化业务管控平台",
+      "evidence_span": "南京医药数字化业务管控平台项目入选南京市工业和信息化局的“2022年南京市优质场景”项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧供应链平台",
+      "evidence_span": "公司打造智慧供应链平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "患者服务云平台",
+      "evidence_span": "“南京医药患者服务云平台”完成项目验收"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子处方共享平台",
+      "evidence_span": "公司积极探索实践南京医药电子处方共享平台项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物流客户服务管理系统",
+      "evidence_span": "物流客户服务管理系统已在6家物流中心和10家货主企业推广应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车辆运输过程监管系统",
+      "evidence_span": "车辆运输过程监管系统在14家子公司正式上线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医院",
+      "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "社区卫生机构",
+      "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "连锁药房",
+      "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "单体药店",
+      "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "乡镇卫生院",
+      "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "诊所",
+      "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "商业分销企业",
+      "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构，以及商业分销企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "正大天晴药业集团股份有限公司",
+      "evidence_span": "公司与正大天晴药业集团股份有限公司签署相关股权转让框架协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赛诺菲",
+      "evidence_span": "“赛诺菲与南京医药数字供应链集成项目”获评中国医药商业协会2021-2022年度“药品流通新业态新模式创新最佳案例奖”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "药品流通",
+        "evidence_span": "公司主要从事业务\n　　公司立足于大健康产业发展，目前在药品流通行业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗器械流通",
+        "evidence_span": "打造以药品、医疗器械、大健康产品流通业务为主业的集成化供应链"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大健康产品流通",
+        "evidence_span": "打造以药品、医疗器械、大健康产品流通业务为主业的集成化供应链"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药批发",
+        "evidence_span": "公司目前的经营模式包括医药批发、医药零售、医药“互联网+”以及医药第三方物流服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药零售",
+        "evidence_span": "公司目前的经营模式包括医药批发、医药零售、医药“互联网+”以及医药第三方物流服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药“互联网+”",
+        "evidence_span": "公司目前的经营模式包括医药批发、医药零售、医药“互联网+”以及医药第三方物流服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药第三方物流服务",
+        "evidence_span": "公司目前的经营模式包括医药批发、医药零售、医药“互联网+”以及医药第三方物流服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域性集团化企业",
+        "evidence_span": "公司是医药流通行业内的区域性集团化企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域医药商业龙头企业",
+        "evidence_span": "成为中国医药流通行业内具有“智慧型”和“数字化”发展特色的区域医药商业龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医药流通企业",
+        "evidence_span": "产业链中游为医药流通企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "处方药",
+        "evidence_span": "销售处方药、非处方药及医疗器械、相关健康产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非处方药",
+        "evidence_span": "销售处方药、非处方药及医疗器械、相关健康产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗器械",
+        "evidence_span": "销售处方药、非处方药及医疗器械、相关健康产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "健康产品",
+        "evidence_span": "销售处方药、非处方药及医疗器械、相关健康产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新特药",
+        "evidence_span": "持续拓展主营新特药的特药药店业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医美类产品",
+        "evidence_span": "年内销售医美类产品的同比增幅53.44%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特医食品类产品",
+        "evidence_span": "特医食品类产品的同比增幅68.59%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "血液制品类产品",
+        "evidence_span": "血液制品类产品的同比增幅20.51%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药药事服务",
+        "evidence_span": "南京区域中药药事服务医院客户数80家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合药事服务解决方案",
+        "evidence_span": "为医疗机构提供医药批发服务和标准化、专业化、个性化与增值化的综合药事服务解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药第三方物流服务",
+        "evidence_span": "公司的医药第三方物流配送服务业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化业务管控平台",
+        "evidence_span": "南京医药数字化业务管控平台项目入选南京市工业和信息化局的“2022年南京市优质场景”项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧供应链平台",
+        "evidence_span": "公司打造智慧供应链平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "患者服务云平台",
+        "evidence_span": "“南京医药患者服务云平台”完成项目验收"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子处方共享平台",
+        "evidence_span": "公司积极探索实践南京医药电子处方共享平台项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物流客户服务管理系统",
+        "evidence_span": "物流客户服务管理系统已在6家物流中心和10家货主企业推广应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车辆运输过程监管系统",
+        "evidence_span": "车辆运输过程监管系统在14家子公司正式上线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医院",
+        "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "社区卫生机构",
+        "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "连锁药房",
+        "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "单体药店",
+        "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "乡镇卫生院",
+        "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "诊所",
+        "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "商业分销企业",
+        "evidence_span": "业务服务对象主要包括医院、社区卫生机构、连锁药房及单体药店、乡镇卫生院、诊所等非公立医疗机构，以及商业分销企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "正大天晴药业集团股份有限公司",
+        "evidence_span": "公司与正大天晴药业集团股份有限公司签署相关股权转让框架协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赛诺菲",
+        "evidence_span": "“赛诺菲与南京医药数字供应链集成项目”获评中国医药商业协会2021-2022年度“药品流通新业态新模式创新最佳案例奖”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:06:34"
+}

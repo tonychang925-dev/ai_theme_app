@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "274c3332061e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含美国商务部修订出口条例的事件，但详细列出了涉及的半导体设备公司（如北方华创、拓荆科技）和设备领域（如刻蚀、薄膜沉积），这些信息具有知识价值，可用于构建半导体设备本体，因此是混合内容。"}}

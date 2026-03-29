@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品包装原纸",
+      "evidence_span": "公司主营业务有食品包装原纸、生活用纸原纸以及生活用纸成品纸的生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生活用纸原纸",
+      "evidence_span": "公司主营业务有食品包装原纸、生活用纸原纸以及生活用纸成品纸的生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生活用纸成品纸",
+      "evidence_span": "公司主营业务有食品包装原纸、生活用纸原纸以及生活用纸成品纸的生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "竹浆本色食品原纸企业",
+      "evidence_span": "全球首家研发出竹浆本色食品原纸的企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级绿色工厂",
+      "evidence_span": "公司被国家工信部列入国家级绿色工厂名单"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "竹浆本色食品原纸",
+      "evidence_span": "全球首家研发出竹浆本色食品原纸的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全竹浆本色纸",
+      "evidence_span": "宜宾纸业开发的全竹浆本色纸凭借绿色低碳环保、抗菌抑菌、医护级等差异化特性"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "160g高松纸",
+      "evidence_span": "研发出160g高松纸、140g披萨盒纸及450g吸水卡纸等优势产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "140g披萨盒纸",
+      "evidence_span": "研发出160g高松纸、140g披萨盒纸及450g吸水卡纸等优势产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "450g吸水卡纸",
+      "evidence_span": "研发出160g高松纸、140g披萨盒纸及450g吸水卡纸等优势产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "本色乳霜纸",
+      "evidence_span": "研发出本色乳霜纸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "100%竹浆纸塑杯盖",
+      "evidence_span": "成功研发出100%竹浆纸塑杯盖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "100%竹浆纤维长丝",
+      "evidence_span": "成功纺出100%竹浆纤维长丝"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "竹浆本色食品原纸研发",
+      "evidence_span": "全球首家研发出竹浆本色食品原纸的企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "竹基浆精深加工技术",
+      "evidence_span": "在竹基浆精深加工技术研发与应用、竹基高品质纤维素纤维研究与开发等领域开展创新攻关"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "竹基高品质纤维素纤维研究",
+      "evidence_span": "在竹基浆精深加工技术研发与应用、竹基高品质纤维素纤维研究与开发等领域开展创新攻关"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "省委、省政府各机关团体",
+      "evidence_span": "成为省委、省政府各机关团体会议和接待专供产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内多家高端食品消费类知名品牌连锁店",
+      "evidence_span": "已进入国内多家高端食品消费类知名品牌连锁店"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "厦门建发纸业有限公司",
+      "evidence_span": "引入在流通领域纸张销量、纸浆进口量和销量位列全国第一的厦门建发纸业有限公司作为战略投资者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "竹产业发展",
+      "evidence_span": "公司实施竹产业发展模式"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "环保政策受益",
+      "evidence_span": "叠加国内“禁废令”、“限塑令”等环保政策影响"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品包装原纸",
+        "evidence_span": "公司主营业务有食品包装原纸、生活用纸原纸以及生活用纸成品纸的生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生活用纸原纸",
+        "evidence_span": "公司主营业务有食品包装原纸、生活用纸原纸以及生活用纸成品纸的生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生活用纸成品纸",
+        "evidence_span": "公司主营业务有食品包装原纸、生活用纸原纸以及生活用纸成品纸的生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "竹浆本色食品原纸企业",
+        "evidence_span": "全球首家研发出竹浆本色食品原纸的企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级绿色工厂",
+        "evidence_span": "公司被国家工信部列入国家级绿色工厂名单"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "竹浆本色食品原纸",
+        "evidence_span": "全球首家研发出竹浆本色食品原纸的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全竹浆本色纸",
+        "evidence_span": "宜宾纸业开发的全竹浆本色纸凭借绿色低碳环保、抗菌抑菌、医护级等差异化特性"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "160g高松纸",
+        "evidence_span": "研发出160g高松纸、140g披萨盒纸及450g吸水卡纸等优势产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "140g披萨盒纸",
+        "evidence_span": "研发出160g高松纸、140g披萨盒纸及450g吸水卡纸等优势产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "450g吸水卡纸",
+        "evidence_span": "研发出160g高松纸、140g披萨盒纸及450g吸水卡纸等优势产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "本色乳霜纸",
+        "evidence_span": "研发出本色乳霜纸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "100%竹浆纸塑杯盖",
+        "evidence_span": "成功研发出100%竹浆纸塑杯盖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "100%竹浆纤维长丝",
+        "evidence_span": "成功纺出100%竹浆纤维长丝"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "竹浆本色食品原纸研发",
+        "evidence_span": "全球首家研发出竹浆本色食品原纸的企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "竹基浆精深加工技术",
+        "evidence_span": "在竹基浆精深加工技术研发与应用、竹基高品质纤维素纤维研究与开发等领域开展创新攻关"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "竹基高品质纤维素纤维研究",
+        "evidence_span": "在竹基浆精深加工技术研发与应用、竹基高品质纤维素纤维研究与开发等领域开展创新攻关"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "省委、省政府各机关团体",
+        "evidence_span": "成为省委、省政府各机关团体会议和接待专供产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内多家高端食品消费类知名品牌连锁店",
+        "evidence_span": "已进入国内多家高端食品消费类知名品牌连锁店"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "厦门建发纸业有限公司",
+        "evidence_span": "引入在流通领域纸张销量、纸浆进口量和销量位列全国第一的厦门建发纸业有限公司作为战略投资者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "竹产业发展",
+        "evidence_span": "公司实施竹产业发展模式"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "环保政策受益",
+        "evidence_span": "叠加国内“禁废令”、“限塑令”等环保政策影响"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:18:45"
+}

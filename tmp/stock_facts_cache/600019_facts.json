@@ -1,0 +1,529 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "钢铁主业",
+      "evidence_span": "公司钢铁主业专业生产高技术含量、高附加值的碳钢薄板、厚板与钢管等钢铁精品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "碳钢薄板",
+      "evidence_span": "公司钢铁主业专业生产高技术含量、高附加值的碳钢薄板、厚板与钢管等钢铁精品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "厚板",
+      "evidence_span": "公司钢铁主业专业生产高技术含量、高附加值的碳钢薄板、厚板与钢管等钢铁精品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "钢管",
+      "evidence_span": "公司钢铁主业专业生产高技术含量、高附加值的碳钢薄板、厚板与钢管等钢铁精品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "我国最大、最现代化的钢铁联合企业",
+      "evidence_span": "我国最大、最现代化的钢铁联合企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "世界级钢铁联合企业",
+      "evidence_span": "世界级钢铁联合企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球碳钢品种最为齐全的钢铁企业之一",
+      "evidence_span": "是全球碳钢品种最为齐全的钢铁企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车用钢",
+      "evidence_span": "形成汽车用钢、硅钢、能源及重大工程用钢、高等级薄板、镀锡板、长材等六大战略产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅钢",
+      "evidence_span": "形成汽车用钢、硅钢、能源及重大工程用钢、高等级薄板、镀锡板、长材等六大战略产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能源及重大工程用钢",
+      "evidence_span": "形成汽车用钢、硅钢、能源及重大工程用钢、高等级薄板、镀锡板、长材等六大战略产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高等级薄板",
+      "evidence_span": "形成汽车用钢、硅钢、能源及重大工程用钢、高等级薄板、镀锡板、长材等六大战略产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镀锡板",
+      "evidence_span": "形成汽车用钢、硅钢、能源及重大工程用钢、高等级薄板、镀锡板、长材等六大战略产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "长材",
+      "evidence_span": "形成汽车用钢、硅钢、能源及重大工程用钢、高等级薄板、镀锡板、长材等六大战略产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷轧汽车板",
+      "evidence_span": "冷轧汽车板、取向硅钢、新能源汽车用高牌号无取向硅钢、精品能源及结构船舶使命类用钢等高盈利产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "取向硅钢",
+      "evidence_span": "冷轧汽车板、取向硅钢、新能源汽车用高牌号无取向硅钢、精品能源及结构船舶使命类用钢等高盈利产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车用高牌号无取向硅钢",
+      "evidence_span": "冷轧汽车板、取向硅钢、新能源汽车用高牌号无取向硅钢、精品能源及结构船舶使命类用钢等高盈利产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精品能源及结构船舶使命类用钢",
+      "evidence_span": "冷轧汽车板、取向硅钢、新能源汽车用高牌号无取向硅钢、精品能源及结构船舶使命类用钢等高盈利产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新一代汽车高强钢",
+      "evidence_span": "公司自主研发的新一代汽车高强钢、取向硅钢、高等级家电用钢、能源海工用钢、桥梁用钢等高端产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高等级家电用钢",
+      "evidence_span": "公司自主研发的新一代汽车高强钢、取向硅钢、高等级家电用钢、能源海工用钢、桥梁用钢等高端产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能源海工用钢",
+      "evidence_span": "公司自主研发的新一代汽车高强钢、取向硅钢、高等级家电用钢、能源海工用钢、桥梁用钢等高端产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "桥梁用钢",
+      "evidence_span": "公司自主研发的新一代汽车高强钢、取向硅钢、高等级家电用钢、能源海工用钢、桥梁用钢等高端产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超高强钢",
+      "evidence_span": "发展包括超高强钢、取向硅钢在内的高端产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩涂",
+      "evidence_span": "推动取向硅钢、彩涂和镀锡的商业模式创新"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镀锡",
+      "evidence_span": "推动取向硅钢、彩涂和镀锡的商业模式创新"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热轧及线材产品",
+      "evidence_span": "热轧及线材产品环境声明在中国钢铁行业EPD平台首发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "破冰船用复合钢板",
+      "evidence_span": "破冰船用复合钢板研制成功"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端汽车动力系统用精冲钢",
+      "evidence_span": "高端汽车动力系统用精冲钢批量供货超6000吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏支架材料解决方案",
+      "evidence_span": "形成光伏支架、商用车、电动车等领域82项行业综合材料解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商用车材料解决方案",
+      "evidence_span": "形成光伏支架、商用车、电动车等领域82项行业综合材料解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动车材料解决方案",
+      "evidence_span": "形成光伏支架、商用车、电动车等领域82项行业综合材料解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "薄板钢内欠检测技术",
+      "evidence_span": "薄板钢内欠检测技术、极端环境船舶及海洋工程用钢等取得突破性"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "极端环境船舶及海洋工程用钢技术",
+      "evidence_span": "薄板钢内欠检测技术、极端环境船舶及海洋工程用钢等取得突破性"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽车板内欠仪检测能力",
+      "evidence_span": "汽车板内欠仪具备检测全板宽1800mm能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "富氢碳循环氧气高炉全氧冶炼",
+      "evidence_span": "富氢碳循环氧气高炉全氧冶炼、煤气循环及喷吹工艺流程全面打通"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "煤气循环及喷吹工艺",
+      "evidence_span": "富氢碳循环氧气高炉全氧冶炼、煤气循环及喷吹工艺流程全面打通"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高炉高利用系数生产技术",
+      "evidence_span": "全年累计完成“高炉高利用系数生产技术”等40项标志性技术认定"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧碳数据平台",
+      "evidence_span": "智慧碳数据平台（iCD）正式上线，实现碳核算、碳资产和产品碳足迹管理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧制造",
+      "evidence_span": "公司积极落实智慧制造新一轮规划"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业机器人应用",
+      "evidence_span": "全年新增投运200多台工业机器人"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能流程自动化机器人",
+      "evidence_span": "首批10个使用人工智能技术的流程自动化机器人应用投运上岗"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车行业",
+      "evidence_span": "主要产品被广泛应用于汽车、家电、石油化工、机械制造、能源交通等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家电行业",
+      "evidence_span": "主要产品被广泛应用于汽车、家电、石油化工、机械制造、能源交通等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石油化工行业",
+      "evidence_span": "主要产品被广泛应用于汽车、家电、石油化工、机械制造、能源交通等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "机械制造行业",
+      "evidence_span": "主要产品被广泛应用于汽车、家电、石油化工、机械制造、能源交通等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "能源交通行业",
+      "evidence_span": "主要产品被广泛应用于汽车、家电、石油化工、机械制造、能源交通等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军工产业",
+      "evidence_span": "紧密关注中国高端制造业如军工、核电、高铁、海工装备、新能源汽车等产业的高速增长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "核电产业",
+      "evidence_span": "紧密关注中国高端制造业如军工、核电、高铁、海工装备、新能源汽车等产业的高速增长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高铁产业",
+      "evidence_span": "紧密关注中国高端制造业如军工、核电、高铁、海工装备、新能源汽车等产业的高速增长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海工装备产业",
+      "evidence_span": "紧密关注中国高端制造业如军工、核电、高铁、海工装备、新能源汽车等产业的高速增长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源汽车产业",
+      "evidence_span": "紧密关注中国高端制造业如军工、核电、高铁、海工装备、新能源汽车等产业的高速增长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色低碳",
+      "evidence_span": "践行绿色低碳发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧制造",
+      "evidence_span": "数智化转型实现新提升"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "钢铁主业",
+        "evidence_span": "公司钢铁主业专业生产高技术含量、高附加值的碳钢薄板、厚板与钢管等钢铁精品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "碳钢薄板",
+        "evidence_span": "公司钢铁主业专业生产高技术含量、高附加值的碳钢薄板、厚板与钢管等钢铁精品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "厚板",
+        "evidence_span": "公司钢铁主业专业生产高技术含量、高附加值的碳钢薄板、厚板与钢管等钢铁精品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "钢管",
+        "evidence_span": "公司钢铁主业专业生产高技术含量、高附加值的碳钢薄板、厚板与钢管等钢铁精品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "我国最大、最现代化的钢铁联合企业",
+        "evidence_span": "我国最大、最现代化的钢铁联合企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "世界级钢铁联合企业",
+        "evidence_span": "世界级钢铁联合企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球碳钢品种最为齐全的钢铁企业之一",
+        "evidence_span": "是全球碳钢品种最为齐全的钢铁企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车用钢",
+        "evidence_span": "形成汽车用钢、硅钢、能源及重大工程用钢、高等级薄板、镀锡板、长材等六大战略产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅钢",
+        "evidence_span": "形成汽车用钢、硅钢、能源及重大工程用钢、高等级薄板、镀锡板、长材等六大战略产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能源及重大工程用钢",
+        "evidence_span": "形成汽车用钢、硅钢、能源及重大工程用钢、高等级薄板、镀锡板、长材等六大战略产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高等级薄板",
+        "evidence_span": "形成汽车用钢、硅钢、能源及重大工程用钢、高等级薄板、镀锡板、长材等六大战略产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镀锡板",
+        "evidence_span": "形成汽车用钢、硅钢、能源及重大工程用钢、高等级薄板、镀锡板、长材等六大战略产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "长材",
+        "evidence_span": "形成汽车用钢、硅钢、能源及重大工程用钢、高等级薄板、镀锡板、长材等六大战略产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷轧汽车板",
+        "evidence_span": "冷轧汽车板、取向硅钢、新能源汽车用高牌号无取向硅钢、精品能源及结构船舶使命类用钢等高盈利产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "取向硅钢",
+        "evidence_span": "冷轧汽车板、取向硅钢、新能源汽车用高牌号无取向硅钢、精品能源及结构船舶使命类用钢等高盈利产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车用高牌号无取向硅钢",
+        "evidence_span": "冷轧汽车板、取向硅钢、新能源汽车用高牌号无取向硅钢、精品能源及结构船舶使命类用钢等高盈利产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精品能源及结构船舶使命类用钢",
+        "evidence_span": "冷轧汽车板、取向硅钢、新能源汽车用高牌号无取向硅钢、精品能源及结构船舶使命类用钢等高盈利产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新一代汽车高强钢",
+        "evidence_span": "公司自主研发的新一代汽车高强钢、取向硅钢、高等级家电用钢、能源海工用钢、桥梁用钢等高端产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高等级家电用钢",
+        "evidence_span": "公司自主研发的新一代汽车高强钢、取向硅钢、高等级家电用钢、能源海工用钢、桥梁用钢等高端产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能源海工用钢",
+        "evidence_span": "公司自主研发的新一代汽车高强钢、取向硅钢、高等级家电用钢、能源海工用钢、桥梁用钢等高端产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "桥梁用钢",
+        "evidence_span": "公司自主研发的新一代汽车高强钢、取向硅钢、高等级家电用钢、能源海工用钢、桥梁用钢等高端产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超高强钢",
+        "evidence_span": "发展包括超高强钢、取向硅钢在内的高端产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩涂",
+        "evidence_span": "推动取向硅钢、彩涂和镀锡的商业模式创新"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镀锡",
+        "evidence_span": "推动取向硅钢、彩涂和镀锡的商业模式创新"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热轧及线材产品",
+        "evidence_span": "热轧及线材产品环境声明在中国钢铁行业EPD平台首发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "破冰船用复合钢板",
+        "evidence_span": "破冰船用复合钢板研制成功"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端汽车动力系统用精冲钢",
+        "evidence_span": "高端汽车动力系统用精冲钢批量供货超6000吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏支架材料解决方案",
+        "evidence_span": "形成光伏支架、商用车、电动车等领域82项行业综合材料解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商用车材料解决方案",
+        "evidence_span": "形成光伏支架、商用车、电动车等领域82项行业综合材料解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动车材料解决方案",
+        "evidence_span": "形成光伏支架、商用车、电动车等领域82项行业综合材料解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "薄板钢内欠检测技术",
+        "evidence_span": "薄板钢内欠检测技术、极端环境船舶及海洋工程用钢等取得突破性"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "极端环境船舶及海洋工程用钢技术",
+        "evidence_span": "薄板钢内欠检测技术、极端环境船舶及海洋工程用钢等取得突破性"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽车板内欠仪检测能力",
+        "evidence_span": "汽车板内欠仪具备检测全板宽1800mm能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "富氢碳循环氧气高炉全氧冶炼",
+        "evidence_span": "富氢碳循环氧气高炉全氧冶炼、煤气循环及喷吹工艺流程全面打通"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "煤气循环及喷吹工艺",
+        "evidence_span": "富氢碳循环氧气高炉全氧冶炼、煤气循环及喷吹工艺流程全面打通"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高炉高利用系数生产技术",
+        "evidence_span": "全年累计完成“高炉高利用系数生产技术”等40项标志性技术认定"
+      },
+      {
+        "fact_type": "technology",
+        "evidence_span": "智慧碳数据平台（iCD）正式上线，实现碳核算、碳资产和产品碳足迹管理",
+        "fact_value": "智慧碳数据平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧制造",
+        "evidence_span": "公司积极落实智慧制造新一轮规划"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业机器人应用",
+        "evidence_span": "全年新增投运200多台工业机器人"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能流程自动化机器人",
+        "evidence_span": "首批10个使用人工智能技术的流程自动化机器人应用投运上岗"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车行业",
+        "evidence_span": "主要产品被广泛应用于汽车、家电、石油化工、机械制造、能源交通等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家电行业",
+        "evidence_span": "主要产品被广泛应用于汽车、家电、石油化工、机械制造、能源交通等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石油化工行业",
+        "evidence_span": "主要产品被广泛应用于汽车、家电、石油化工、机械制造、能源交通等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "机械制造行业",
+        "evidence_span": "主要产品被广泛应用于汽车、家电、石油化工、机械制造、能源交通等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "能源交通行业",
+        "evidence_span": "主要产品被广泛应用于汽车、家电、石油化工、机械制造、能源交通等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军工产业",
+        "evidence_span": "紧密关注中国高端制造业如军工、核电、高铁、海工装备、新能源汽车等产业的高速增长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "核电产业",
+        "evidence_span": "紧密关注中国高端制造业如军工、核电、高铁、海工装备、新能源汽车等产业的高速增长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高铁产业",
+        "evidence_span": "紧密关注中国高端制造业如军工、核电、高铁、海工装备、新能源汽车等产业的高速增长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海工装备产业",
+        "evidence_span": "紧密关注中国高端制造业如军工、核电、高铁、海工装备、新能源汽车等产业的高速增长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源汽车产业",
+        "evidence_span": "紧密关注中国高端制造业如军工、核电、高铁、海工装备、新能源汽车等产业的高速增长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色低碳",
+        "evidence_span": "践行绿色低碳发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧制造",
+        "evidence_span": "数智化转型实现新提升"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:57:10"
+}

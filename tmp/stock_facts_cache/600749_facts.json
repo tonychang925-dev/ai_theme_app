@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "旅游景区运营",
+      "evidence_span": "公司所从事的核心业务为旅游景区、旅游服务及旅游商业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "旅游服务",
+      "evidence_span": "公司所从事的核心业务为旅游景区、旅游服务及旅游商业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "旅游商业",
+      "evidence_span": "公司所从事的核心业务为旅游景区、旅游服务及旅游商业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "西藏旅游藏区旅游龙头企业",
+      "evidence_span": "西藏旅游藏区旅游龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "雅鲁藏布大峡谷景区",
+      "evidence_span": "雅鲁藏布大峡谷景区为国家5A级景区"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "巴松措景区",
+      "evidence_span": "巴松措景区为国家5A级景区"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "神山景区",
+      "evidence_span": "阿里神山、圣湖景区是国家4A级景区"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圣湖景区",
+      "evidence_span": "阿里神山、圣湖景区是国家4A级景区"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "苯日景区",
+      "evidence_span": "苯日、鲁朗花海牧场景区等户外休闲旅游资源丰富"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鲁朗花海牧场景区",
+      "evidence_span": "苯日、鲁朗花海牧场景区等户外休闲旅游资源丰富"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "南峰大本营品质线路产品",
+      "evidence_span": "南峰大本营品质线路产品投入运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玉松岛",
+      "evidence_span": "玉松岛完成施工建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "巴松措轻奢徒步",
+      "evidence_span": "巴松措轻奢徒步内容加以丰富"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "研学主题线路产品",
+      "evidence_span": "共创研学、亲子等主题线路产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "亲子主题线路产品",
+      "evidence_span": "共创研学、亲子等主题线路产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "景区配套游客服务",
+      "evidence_span": "景区配套游客服务、体验产品服务、短途游客运输等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体验产品服务",
+      "evidence_span": "景区配套游客服务、体验产品服务、短途游客运输等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "短途游客运输",
+      "evidence_span": "景区配套游客服务、体验产品服务、短途游客运输等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "会展服务",
+      "evidence_span": "公司旅游服务业务涵盖会展服务、OTA（在线旅游）平台、旅游商品销售和国内外旅游服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OTA（在线旅游）平台",
+      "evidence_span": "公司旅游服务业务涵盖会展服务、OTA（在线旅游）平台、旅游商品销售和国内外旅游服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游商品销售",
+      "evidence_span": "公司旅游服务业务涵盖会展服务、OTA（在线旅游）平台、旅游商品销售和国内外旅游服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国内外旅游服务",
+      "evidence_span": "公司旅游服务业务涵盖会展服务、OTA（在线旅游）平台、旅游商品销售和国内外旅游服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "景区旅游IP衍生品",
+      "evidence_span": "重点致力于景区旅游IP衍生品打造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物业管理",
+      "evidence_span": "提供各景区配套商业服务，其中包括物业管理、商业活动策划、政企商业项目合作开发等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商业活动策划",
+      "evidence_span": "提供各景区配套商业服务，其中包括物业管理、商业活动策划、政企商业项目合作开发等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "政企商业项目合作开发",
+      "evidence_span": "提供各景区配套商业服务，其中包括物业管理、商业活动策划、政企商业项目合作开发等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产出租",
+      "evidence_span": "资产出租、劳务服务输出等业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "劳务服务输出",
+      "evidence_span": "资产出租、劳务服务输出等业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧旅游平台",
+      "evidence_span": "以智慧旅游平台为支撑，助数智化运营快速发力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生态数字化运营平台",
+      "evidence_span": "重点打造生态数字化运营平台、销售综合系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "销售综合系统",
+      "evidence_span": "重点打造生态数字化运营平台、销售综合系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧旅游小程序",
+      "evidence_span": "智慧旅游小程序、微信公众平台等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微信公众平台",
+      "evidence_span": "智慧旅游小程序、微信公众平台等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "业财一体化智慧平台",
+      "evidence_span": "通过业财一体化智慧平台的打造和完成阶段性上线目标"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "西藏旅游",
+      "evidence_span": "西藏旅游藏区旅游龙头企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "旅游景区运营",
+        "evidence_span": "公司所从事的核心业务为旅游景区、旅游服务及旅游商业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "旅游服务",
+        "evidence_span": "公司所从事的核心业务为旅游景区、旅游服务及旅游商业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "旅游商业",
+        "evidence_span": "公司所从事的核心业务为旅游景区、旅游服务及旅游商业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "西藏旅游藏区旅游龙头企业",
+        "evidence_span": "西藏旅游藏区旅游龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "雅鲁藏布大峡谷景区",
+        "evidence_span": "雅鲁藏布大峡谷景区为国家5A级景区"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "巴松措景区",
+        "evidence_span": "巴松措景区为国家5A级景区"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "神山景区",
+        "evidence_span": "阿里神山、圣湖景区是国家4A级景区"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圣湖景区",
+        "evidence_span": "阿里神山、圣湖景区是国家4A级景区"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "苯日景区",
+        "evidence_span": "苯日、鲁朗花海牧场景区等户外休闲旅游资源丰富"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鲁朗花海牧场景区",
+        "evidence_span": "苯日、鲁朗花海牧场景区等户外休闲旅游资源丰富"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "南峰大本营品质线路产品",
+        "evidence_span": "南峰大本营品质线路产品投入运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玉松岛",
+        "evidence_span": "玉松岛完成施工建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "巴松措轻奢徒步",
+        "evidence_span": "巴松措轻奢徒步内容加以丰富"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "研学主题线路产品",
+        "evidence_span": "共创研学、亲子等主题线路产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "亲子主题线路产品",
+        "evidence_span": "共创研学、亲子等主题线路产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "景区配套游客服务",
+        "evidence_span": "景区配套游客服务、体验产品服务、短途游客运输等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体验产品服务",
+        "evidence_span": "景区配套游客服务、体验产品服务、短途游客运输等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "短途游客运输",
+        "evidence_span": "景区配套游客服务、体验产品服务、短途游客运输等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "会展服务",
+        "evidence_span": "公司旅游服务业务涵盖会展服务、OTA（在线旅游）平台、旅游商品销售和国内外旅游服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OTA（在线旅游）平台",
+        "evidence_span": "公司旅游服务业务涵盖会展服务、OTA（在线旅游）平台、旅游商品销售和国内外旅游服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游商品销售",
+        "evidence_span": "公司旅游服务业务涵盖会展服务、OTA（在线旅游）平台、旅游商品销售和国内外旅游服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国内外旅游服务",
+        "evidence_span": "公司旅游服务业务涵盖会展服务、OTA（在线旅游）平台、旅游商品销售和国内外旅游服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "景区旅游IP衍生品",
+        "evidence_span": "重点致力于景区旅游IP衍生品打造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物业管理",
+        "evidence_span": "提供各景区配套商业服务，其中包括物业管理、商业活动策划、政企商业项目合作开发等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商业活动策划",
+        "evidence_span": "提供各景区配套商业服务，其中包括物业管理、商业活动策划、政企商业项目合作开发等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "政企商业项目合作开发",
+        "evidence_span": "提供各景区配套商业服务，其中包括物业管理、商业活动策划、政企商业项目合作开发等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产出租",
+        "evidence_span": "资产出租、劳务服务输出等业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "劳务服务输出",
+        "evidence_span": "资产出租、劳务服务输出等业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧旅游平台",
+        "evidence_span": "以智慧旅游平台为支撑，助数智化运营快速发力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生态数字化运营平台",
+        "evidence_span": "重点打造生态数字化运营平台、销售综合系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "销售综合系统",
+        "evidence_span": "重点打造生态数字化运营平台、销售综合系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧旅游小程序",
+        "evidence_span": "智慧旅游小程序、微信公众平台等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微信公众平台",
+        "evidence_span": "智慧旅游小程序、微信公众平台等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "业财一体化智慧平台",
+        "evidence_span": "通过业财一体化智慧平台的打造和完成阶段性上线目标"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "西藏旅游",
+        "evidence_span": "西藏旅游藏区旅游龙头企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:12:38"
+}

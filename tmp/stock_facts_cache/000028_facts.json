@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药分销",
+      "evidence_span": "公司的主要业务包括医药分销和医药零售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药零售",
+      "evidence_span": "公司的主要业务包括医药分销和医药零售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医药商业集团",
+      "evidence_span": "医药批发、零售连锁为一体的大型医药商业集团"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "两广区域医药分销业务规模领先",
+      "evidence_span": "在两广区域医药分销业务规模领先"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内销售规模领先的医药零售企业",
+      "evidence_span": "国大药房是国内销售规模领先的医药零售企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药品分销",
+      "evidence_span": "药品和器械耗材分销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "器械耗材分销",
+      "evidence_span": "药品和器械耗材分销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "零售直销",
+      "evidence_span": "零售直销业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "零售诊疗",
+      "evidence_span": "零售诊疗业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三方物流业务",
+      "evidence_span": "开展第三方物流业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SPD解决方案",
+      "evidence_span": "SPD解决方案树立行业标杆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双通道门店服务",
+      "evidence_span": "国大双通道门店数量已达到309家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "互联网医院平台",
+      "evidence_span": "搭建互联网医院平台（嘉隆互联网医院）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电商平台",
+      "evidence_span": "国大药房自营商城"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AIOCR自动识别系统",
+      "evidence_span": "行业内首创“AIOCR”自动识别系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化物流",
+      "evidence_span": "数字化物流"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧供应链服务",
+      "evidence_span": "智慧供应链服务解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "两广二三级医疗机构",
+      "evidence_span": "覆盖两广二三级医疗机构1092家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "基层医疗客户",
+      "evidence_span": "基层医疗客户8026家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "零售终端客户",
+      "evidence_span": "零售终端客户（连锁药店、单店、医院自费药房）6043家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "默沙东",
+      "evidence_span": "默沙东“莫诺拉韦”全国首发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "澳门张权破痛油",
+      "evidence_span": "承接澳门张权破痛油全国进口及总代业务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "批零一体化",
+      "evidence_span": "国药一致批零一体化的新一致蓄势待发"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双轮驱动",
+      "evidence_span": "国药一致零售+分销”双轮驱动"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药分销",
+        "evidence_span": "公司的主要业务包括医药分销和医药零售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药零售",
+        "evidence_span": "公司的主要业务包括医药分销和医药零售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医药商业集团",
+        "evidence_span": "医药批发、零售连锁为一体的大型医药商业集团"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "两广区域医药分销业务规模领先",
+        "evidence_span": "在两广区域医药分销业务规模领先"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内销售规模领先的医药零售企业",
+        "evidence_span": "国大药房是国内销售规模领先的医药零售企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药品分销",
+        "evidence_span": "药品和器械耗材分销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "器械耗材分销",
+        "evidence_span": "药品和器械耗材分销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "零售直销",
+        "evidence_span": "零售直销业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "零售诊疗",
+        "evidence_span": "零售诊疗业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三方物流业务",
+        "evidence_span": "开展第三方物流业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SPD解决方案",
+        "evidence_span": "SPD解决方案树立行业标杆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双通道门店服务",
+        "evidence_span": "国大双通道门店数量已达到309家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "互联网医院平台",
+        "evidence_span": "搭建互联网医院平台（嘉隆互联网医院）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电商平台",
+        "evidence_span": "国大药房自营商城"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AIOCR自动识别系统",
+        "evidence_span": "行业内首创“AIOCR”自动识别系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化物流",
+        "evidence_span": "数字化物流"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧供应链服务",
+        "evidence_span": "智慧供应链服务解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "两广二三级医疗机构",
+        "evidence_span": "覆盖两广二三级医疗机构1092家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "基层医疗客户",
+        "evidence_span": "基层医疗客户8026家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "零售终端客户",
+        "evidence_span": "零售终端客户（连锁药店、单店、医院自费药房）6043家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "默沙东",
+        "evidence_span": "默沙东“莫诺拉韦”全国首发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "澳门张权破痛油",
+        "evidence_span": "承接澳门张权破痛油全国进口及总代业务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "批零一体化",
+        "evidence_span": "国药一致批零一体化的新一致蓄势待发"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双轮驱动",
+        "evidence_span": "国药一致零售+分销”双轮驱动"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:42:16"
+}

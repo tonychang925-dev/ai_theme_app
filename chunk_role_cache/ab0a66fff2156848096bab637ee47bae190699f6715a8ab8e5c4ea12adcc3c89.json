@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "a7ebc2267c06", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落虽然以长江存储扩产事件为背景，但直接揭示了半导体设备国产替代的关键环节（如蚀刻和沉积工艺），并说明了工艺差异和转型难度，这些内容有助于理解半导体设备的技术路径和受益方向，因此归为knowledge_like。"}}

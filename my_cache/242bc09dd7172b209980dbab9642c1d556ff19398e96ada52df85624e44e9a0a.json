@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "6a9d17e70644", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述伊朗外长对美国袭击的声明事件，属于政治动态，无知识构建内容。"}}

@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "清洁能源热应用板块",
+      "evidence_span": "清洁能源热应用板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "清洁能源电应用板块",
+      "evidence_span": "清洁能源电应用板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "厨电板块",
+      "evidence_span": "厨电板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "太阳能热水器龙头",
+      "evidence_span": "太阳能热水器龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "清洁能源供热行业的引领者",
+      "evidence_span": "清洁能源供热行业的引领者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "健康厨房开创者",
+      "evidence_span": "健康厨房开创者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "太阳能热水器",
+      "evidence_span": "太阳能热水器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "太阳能采暖",
+      "evidence_span": "太阳能采暖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空气能热水器",
+      "evidence_span": "空气能热水器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空气能采暖",
+      "evidence_span": "空气能采暖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多能源互补采暖",
+      "evidence_span": "多能源互补采暖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "吸油烟机",
+      "evidence_span": "吸油烟机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃气灶具",
+      "evidence_span": "燃气灶具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集成灶",
+      "evidence_span": "集成灶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "净水机",
+      "evidence_span": "净水机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电热水器",
+      "evidence_span": "电热水器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃气热水器",
+      "evidence_span": "燃气热水器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消毒柜",
+      "evidence_span": "消毒柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "嵌入式电烤箱",
+      "evidence_span": "嵌入式电烤箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸汽炉",
+      "evidence_span": "蒸汽炉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微波炉",
+      "evidence_span": "微波炉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸烤一体机",
+      "evidence_span": "蒸烤一体机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洗碗机",
+      "evidence_span": "洗碗机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "垃圾处理器",
+      "evidence_span": "垃圾处理器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空气源热泵",
+      "evidence_span": "空气源热泵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "健康烹饪空间",
+      "evidence_span": "健康烹饪空间"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "脉冲蒸压洗集成灶",
+      "evidence_span": "脉冲蒸压洗集成灶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分布式光储一体化业务",
+      "evidence_span": "分布式光储一体化业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空气源热泵技术",
+      "evidence_span": "空气源热泵技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电控自主研发能力",
+      "evidence_span": "电控自主研发能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "太阳能+空气能、电热、燃热、生物质等多能互补的系统解决方案",
+      "evidence_span": "太阳能+空气能、电热、燃热、生物质等多能互补的系统解决方案"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "节能政策",
+      "evidence_span": "节能政策"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "工程业务",
+      "evidence_span": "工程业务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "清洁能源热应用板块",
+        "evidence_span": "清洁能源热应用板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "清洁能源电应用板块",
+        "evidence_span": "清洁能源电应用板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "厨电板块",
+        "evidence_span": "厨电板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "太阳能热水器龙头",
+        "evidence_span": "太阳能热水器龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "清洁能源供热行业的引领者",
+        "evidence_span": "清洁能源供热行业的引领者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "健康厨房开创者",
+        "evidence_span": "健康厨房开创者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "太阳能热水器",
+        "evidence_span": "太阳能热水器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "太阳能采暖",
+        "evidence_span": "太阳能采暖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空气能热水器",
+        "evidence_span": "空气能热水器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空气能采暖",
+        "evidence_span": "空气能采暖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多能源互补采暖",
+        "evidence_span": "多能源互补采暖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "吸油烟机",
+        "evidence_span": "吸油烟机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃气灶具",
+        "evidence_span": "燃气灶具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集成灶",
+        "evidence_span": "集成灶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "净水机",
+        "evidence_span": "净水机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电热水器",
+        "evidence_span": "电热水器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃气热水器",
+        "evidence_span": "燃气热水器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消毒柜",
+        "evidence_span": "消毒柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "嵌入式电烤箱",
+        "evidence_span": "嵌入式电烤箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸汽炉",
+        "evidence_span": "蒸汽炉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微波炉",
+        "evidence_span": "微波炉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸烤一体机",
+        "evidence_span": "蒸烤一体机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洗碗机",
+        "evidence_span": "洗碗机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "垃圾处理器",
+        "evidence_span": "垃圾处理器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空气源热泵",
+        "evidence_span": "空气源热泵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "健康烹饪空间",
+        "evidence_span": "健康烹饪空间"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "脉冲蒸压洗集成灶",
+        "evidence_span": "脉冲蒸压洗集成灶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分布式光储一体化业务",
+        "evidence_span": "分布式光储一体化业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空气源热泵技术",
+        "evidence_span": "空气源热泵技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电控自主研发能力",
+        "evidence_span": "电控自主研发能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "太阳能+空气能、电热、燃热、生物质等多能互补的系统解决方案",
+        "evidence_span": "太阳能+空气能、电热、燃热、生物质等多能互补的系统解决方案"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "节能政策",
+        "evidence_span": "节能政策"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "工程业务",
+        "evidence_span": "工程业务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:07:12"
+}

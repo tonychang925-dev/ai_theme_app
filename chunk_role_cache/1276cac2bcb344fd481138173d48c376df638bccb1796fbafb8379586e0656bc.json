@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "b16629dcaa82", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述上海市奉贤区发布产业发展行动方案的具体政策事件，涉及材料方向和支持措施，但主要焦点是政策发布和材料领域，没有直接揭示半导体设备的核心构成或技术，因此归为pure_event。"}}

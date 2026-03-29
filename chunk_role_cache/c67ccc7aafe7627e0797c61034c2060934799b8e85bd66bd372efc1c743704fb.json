@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "8bbfdad47760", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落描述了台积电在特定日期的股价表现、市值以及具体的季度财务业绩（净利润、营业收入、每股盈余），这些都是具体的事件性动态和财务公告，不包含稳定的、可沉淀的静态知识。"}}

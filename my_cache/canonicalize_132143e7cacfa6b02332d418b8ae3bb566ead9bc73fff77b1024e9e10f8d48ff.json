@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:58", "result": {"span_uid": "936aa257f5d3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "未来工厂预测", "stability": "low", "reason": "原文是具体时间框架的预测性事件，无法整理成稳定、可独立成立的知识块，且与灵巧手题材关联较弱。"}}

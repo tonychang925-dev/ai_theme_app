@@ -1,0 +1,414 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电接触材料",
+      "evidence_span": "公司的主要产品为电接触材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "贵金属循环回收",
+      "evidence_span": "拓展贵金属循环回收"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能制造",
+      "evidence_span": "拓展智能制造及工业自动化等新业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业自动化",
+      "evidence_span": "拓展智能制造及工业自动化等新业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电接触材料制造企业",
+      "evidence_span": "细分行业为电接触材料制造行业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电接触系统整体解决方案领先者",
+      "evidence_span": "成功转型为电接触系统整体解决方案领先者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "触头材料",
+      "evidence_span": "主要产品为触头材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复层触头",
+      "evidence_span": "主要产品为复层触头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "触头元件",
+      "evidence_span": "主要产品为触头元件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电接触材料一体化解决方案",
+      "evidence_span": "能够为客户提供电接触材料一体化解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风光储专用电接触材料",
+      "evidence_span": "配套生产风光储专用电接触材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G专用电接触材料",
+      "evidence_span": "配套生产5G专用电接触材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车专用电接触材料",
+      "evidence_span": "配套生产新能源汽车专用电接触材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "柔性执行平台",
+      "evidence_span": "自主开发出柔性执行平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智控板卡",
+      "evidence_span": "自主开发出智控板卡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "柔性供料器",
+      "evidence_span": "自主开发出柔性供料器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产线管理软件",
+      "evidence_span": "自主开发出产线管理软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "标准应用模组",
+      "evidence_span": "自主开发出标准应用模组"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "银点触桥废料回收工艺",
+      "evidence_span": "开发了用焊膏、焊料焊接的银点触桥废料回收工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高镍含量废铆钉银回收工艺",
+      "evidence_span": "开发了高镍含量废铆钉银回收工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "银钨类废料无害化银回收工艺",
+      "evidence_span": "开发了银钨类废料无害化银回收工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "贵金属提取回收技术",
+      "evidence_span": "所掌握的先进的贵金属提取回收技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "柔性视觉检测设备",
+      "evidence_span": "开发了柔性视觉检测设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视觉智能应用平台",
+      "evidence_span": "开发了视觉智能应用平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视觉筛选设备",
+      "evidence_span": "开发了视觉筛选设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密高速直线电机",
+      "evidence_span": "开发了精密高速直线电机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "良信电器",
+      "evidence_span": "分别为良信电器配套生产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "分别为比亚迪配套生产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子",
+      "evidence_span": "获得西门子优秀供应商奖"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "施耐德",
+      "evidence_span": "获得施耐德优质合作供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宏发股份",
+      "evidence_span": "巩固宏发股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "正泰电器",
+      "evidence_span": "巩固正泰电器"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德力西",
+      "evidence_span": "巩固德力西"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苏奥传感",
+      "evidence_span": "巩固苏奥传感"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ABB",
+      "evidence_span": "通过了ABB供应商体系认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧姆龙",
+      "evidence_span": "通过了欧姆龙供应商体系认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "泰科",
+      "evidence_span": "通过了泰科供应商体系认证"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G",
+      "evidence_span": "在5G领域抢占先机"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车",
+      "evidence_span": "在新能源汽车领域抢占先机"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "风光储",
+      "evidence_span": "在风光储领域抢占先机"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新基建",
+      "evidence_span": "积极参与国家“新基建”建设"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电接触材料",
+        "evidence_span": "公司的主要产品为电接触材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "贵金属循环回收",
+        "evidence_span": "拓展贵金属循环回收"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能制造及工业自动化",
+        "evidence_span": "拓展智能制造及工业自动化等新业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电接触材料制造企业",
+        "evidence_span": "细分行业为电接触材料制造行业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电接触系统整体解决方案领先者",
+        "evidence_span": "成功转型为电接触系统整体解决方案领先者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "触头材料",
+        "evidence_span": "主要产品为触头材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复层触头",
+        "evidence_span": "主要产品为复层触头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "触头元件",
+        "evidence_span": "主要产品为触头元件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电接触材料一体化解决方案",
+        "evidence_span": "能够为客户提供电接触材料一体化解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风光储专用电接触材料",
+        "evidence_span": "配套生产风光储专用电接触材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G专用电接触材料",
+        "evidence_span": "配套生产5G专用电接触材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车专用电接触材料",
+        "evidence_span": "配套生产新能源汽车专用电接触材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "柔性执行平台",
+        "evidence_span": "自主开发出柔性执行平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智控板卡",
+        "evidence_span": "自主开发出智控板卡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "柔性供料器",
+        "evidence_span": "自主开发出柔性供料器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产线管理软件",
+        "evidence_span": "自主开发出产线管理软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "标准应用模组",
+        "evidence_span": "自主开发出标准应用模组"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "银点触桥废料回收工艺",
+        "evidence_span": "开发了用焊膏、焊料焊接的银点触桥废料回收工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高镍含量废铆钉银回收工艺",
+        "evidence_span": "开发了高镍含量废铆钉银回收工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "银钨类废料无害化银回收工艺",
+        "evidence_span": "开发了银钨类废料无害化银回收工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "贵金属提取回收技术",
+        "evidence_span": "所掌握的先进的贵金属提取回收技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "柔性视觉检测设备",
+        "evidence_span": "开发了柔性视觉检测设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视觉智能应用平台",
+        "evidence_span": "开发了视觉智能应用平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视觉筛选设备",
+        "evidence_span": "开发了视觉筛选设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密高速直线电机",
+        "evidence_span": "开发了精密高速直线电机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "良信电器",
+        "evidence_span": "分别为良信电器配套生产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "分别为比亚迪配套生产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子",
+        "evidence_span": "获得西门子优秀供应商奖"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "施耐德",
+        "evidence_span": "获得施耐德优质合作供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宏发股份",
+        "evidence_span": "巩固宏发股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "正泰电器",
+        "evidence_span": "巩固正泰电器"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德力西",
+        "evidence_span": "巩固德力西"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苏奥传感",
+        "evidence_span": "巩固苏奥传感"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ABB",
+        "evidence_span": "通过了ABB供应商体系认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧姆龙",
+        "evidence_span": "通过了欧姆龙供应商体系认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "泰科",
+        "evidence_span": "通过了泰科供应商体系认证"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G",
+        "evidence_span": "在5G领域抢占先机"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车",
+        "evidence_span": "在新能源汽车领域抢占先机"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "风光储",
+        "evidence_span": "在风光储领域抢占先机"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新基建",
+        "evidence_span": "积极参与国家“新基建”建设"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:04:13"
+}

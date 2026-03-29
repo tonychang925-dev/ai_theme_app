@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "消费电子精密零组件",
+      "evidence_span": "主营业务是消费电子精密零组件及新能源产品零组件两大业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源产品零组件",
+      "evidence_span": "主营业务是消费电子精密零组件及新能源产品零组件两大业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精密制造公司",
+      "evidence_span": "是全球领先的精密制造公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "结构件综合制造龙头",
+      "evidence_span": "长盈精密结构件综合制造龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "结构件加工平台型企业",
+      "evidence_span": "结构件加工平台型企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "CNC龙头",
+      "evidence_span": "CNC龙头再腾飞"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子连接器",
+      "evidence_span": "主要产品是电子连接器及智能电子产品精密小件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电子产品精密小件",
+      "evidence_span": "主要产品是电子连接器及智能电子产品精密小件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源产品零组件",
+      "evidence_span": "主要产品是电子连接器及智能电子产品精密小件、新能源产品零组件及连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消费类电子精密结构件",
+      "evidence_span": "消费类电子精密结构件及模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机器人及智能装备",
+      "evidence_span": "机器人及智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力电池结构件",
+      "evidence_span": "动力电池结构件产能逐步释放"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人形机器人零件",
+      "evidence_span": "海外人形机器人零件实现收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速背板连接器",
+      "evidence_span": "应用于服务器、工作站内部高速背板连接器产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属外壳",
+      "evidence_span": "金属外壳拉升公司业绩高速成长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防水材料",
+      "evidence_span": "防水材料拓新篇"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陶瓷外观件",
+      "evidence_span": "长盈精密陶瓷打开外观件长线空间"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属中框",
+      "evidence_span": "加码金属中框"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钛合金材料全制程工艺",
+      "evidence_span": "已落地钛合金材料全制程工艺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苹果",
+      "evidence_span": "深度绑定苹果大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特斯拉",
+      "evidence_span": "与特斯拉首次开展合作并成为特斯拉新能源汽车零组件的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "PSA",
+      "evidence_span": "目前已拓展至PSA、戴姆勒奔驰、上海汽车、宁德时代等大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "戴姆勒奔驰",
+      "evidence_span": "目前已拓展至PSA、戴姆勒奔驰、上海汽车、宁德时代等大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海汽车",
+      "evidence_span": "目前已拓展至PSA、戴姆勒奔驰、上海汽车、宁德时代等大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "目前已拓展至PSA、戴姆勒奔驰、上海汽车、宁德时代等大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "FigureAI",
+      "evidence_span": "与特斯拉、FigureAI等头部厂商建立合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内头部客户",
+      "evidence_span": "已给国内头部客户送样验证"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "机器人",
+      "evidence_span": "机器人零件供货数个头部公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "消费电子",
+      "evidence_span": "在消费电子、新能源、机器人领域均有明显竞争优势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源",
+      "evidence_span": "在消费电子、新能源、机器人领域均有明显竞争优势"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "消费电子精密零组件",
+        "evidence_span": "主营业务是消费电子精密零组件及新能源产品零组件两大业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源产品零组件",
+        "evidence_span": "主营业务是消费电子精密零组件及新能源产品零组件两大业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精密制造公司",
+        "evidence_span": "是全球领先的精密制造公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "结构件综合制造龙头",
+        "evidence_span": "长盈精密结构件综合制造龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "结构件加工平台型企业",
+        "evidence_span": "结构件加工平台型企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "CNC龙头",
+        "evidence_span": "CNC龙头再腾飞"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子连接器",
+        "evidence_span": "主要产品是电子连接器及智能电子产品精密小件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电子产品精密小件",
+        "evidence_span": "主要产品是电子连接器及智能电子产品精密小件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源产品零组件",
+        "evidence_span": "主要产品是电子连接器及智能电子产品精密小件、新能源产品零组件及连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消费类电子精密结构件",
+        "evidence_span": "消费类电子精密结构件及模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机器人及智能装备",
+        "evidence_span": "机器人及智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力电池结构件",
+        "evidence_span": "动力电池结构件产能逐步释放"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人形机器人零件",
+        "evidence_span": "海外人形机器人零件实现收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速背板连接器",
+        "evidence_span": "应用于服务器、工作站内部高速背板连接器产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属外壳",
+        "evidence_span": "金属外壳拉升公司业绩高速成长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防水材料",
+        "evidence_span": "防水材料拓新篇"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陶瓷外观件",
+        "evidence_span": "长盈精密陶瓷打开外观件长线空间"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属中框",
+        "evidence_span": "加码金属中框"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钛合金材料全制程工艺",
+        "evidence_span": "已落地钛合金材料全制程工艺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苹果",
+        "evidence_span": "深度绑定苹果大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特斯拉",
+        "evidence_span": "与特斯拉首次开展合作并成为特斯拉新能源汽车零组件的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "PSA",
+        "evidence_span": "目前已拓展至PSA、戴姆勒奔驰、上海汽车、宁德时代等大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "戴姆勒奔驰",
+        "evidence_span": "目前已拓展至PSA、戴姆勒奔驰、上海汽车、宁德时代等大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海汽车",
+        "evidence_span": "目前已拓展至PSA、戴姆勒奔驰、上海汽车、宁德时代等大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "目前已拓展至PSA、戴姆勒奔驰、上海汽车、宁德时代等大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "FigureAI",
+        "evidence_span": "与特斯拉、FigureAI等头部厂商建立合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内头部客户",
+        "evidence_span": "已给国内头部客户送样验证"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "机器人",
+        "evidence_span": "机器人零件供货数个头部公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "消费电子",
+        "evidence_span": "在消费电子、新能源、机器人领域均有明显竞争优势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源",
+        "evidence_span": "在消费电子、新能源、机器人领域均有明显竞争优势"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:37:32"
+}

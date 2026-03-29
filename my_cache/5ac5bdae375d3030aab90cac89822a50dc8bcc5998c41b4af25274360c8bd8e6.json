@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "e80869049f17", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落预告第十五届中国国际航空航天博览会的举办时间和展区设置，属于事件公告，没有涉及军工题材的稳定知识构建。"}}

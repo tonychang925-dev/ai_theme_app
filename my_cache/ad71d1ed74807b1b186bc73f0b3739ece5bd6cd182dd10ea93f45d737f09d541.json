@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "1b6cb86911fc", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落简要描述了解放军信息支援部队成立这一具体事件，属于时间性动态，没有提供军工集团的结构、定义或核心构成等静态知识。"}}

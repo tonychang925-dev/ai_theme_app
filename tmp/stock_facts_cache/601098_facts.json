@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "出版业务",
+      "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "发行业务",
+      "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "印刷",
+      "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "印刷物资供应",
+      "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "媒体",
+      "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字教育",
+      "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融服务",
+      "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "出版传媒骨干企业集团",
+      "evidence_span": "拥有\"多介质、全流程\"产业业态的大型出版传媒骨干企业集团"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "出版传媒龙头企业",
+      "evidence_span": "公司是国内出版传媒龙头企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "出版物",
+      "evidence_span": "公司的主要产品为出版物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教材教辅",
+      "evidence_span": "教材教辅主要由湖南省新华书店和新教材公司通过政府采购、直供、代印和向其他出版社提供\"型版\"等方式销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一般图书",
+      "evidence_span": "一般图书主要通过批发、零售、电商等渠道进行销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "文化用品",
+      "evidence_span": "文化用品主要是代理相关生产厂家产品，通过湖南省新华书店门店销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "报纸",
+      "evidence_span": "按客户订单生产（如教材教辅、一般图书、报纸、期刊、一般印刷物、防伪标签等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "期刊",
+      "evidence_span": "按客户订单生产（如教材教辅、一般图书、报纸、期刊、一般印刷物、防伪标签等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印刷物资",
+      "evidence_span": "将图书用纸或社会用纸等印刷物资通过招标方式采购或从市场采购，并按照合同直接向客户销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "广告媒体资源",
+      "evidence_span": "独家运营长沙地铁1-6号线车站平面、LED及3-6号线车厢（含语音）媒体以及武汉地铁2、4、6、7、11号线及阳逻线车站平面、车厢媒体等优质广告媒体资源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "在线教育产品集群",
+      "evidence_span": "通过整合公司旗下数字教育资源，打造在线教育产品集群"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ECO云开放平台",
+      "evidence_span": "天闻数媒以\"平台+数据\"为核心，教学为主要应用，重点建设ECO云开放平台、ECR教育资源云平台、AI课堂、AI评测等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ECR教育资源云平台",
+      "evidence_span": "天闻数媒以\"平台+数据\"为核心，教学为主要应用，重点建设ECO云开放平台、ECR教育资源云平台、AI课堂、AI评测等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI课堂",
+      "evidence_span": "天闻数媒以\"平台+数据\"为核心，教学为主要应用，重点建设ECO云开放平台、ECR教育资源云平台、AI课堂、AI评测等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI评测",
+      "evidence_span": "天闻数媒以\"平台+数据\"为核心，教学为主要应用，重点建设ECO云开放平台、ECR教育资源云平台、AI课堂、AI评测等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "考试阅卷系统",
+      "evidence_span": "中南迅智主要开展教育质量监测考试服务，以试卷、教辅等纸媒为流量入口，重点打造考试阅卷系统、考试测评系统等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "考试测评系统",
+      "evidence_span": "中南迅智主要开展教育质量监测考试服务，以试卷、教辅等纸媒为流量入口，重点打造考试阅卷系统、考试测评系统等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "融合出版",
+      "evidence_span": "融合出版的深度广度进一步提升"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全媒体传播体系",
+      "evidence_span": "加强报纸、期刊、网络、地铁、户外大屏等联动传播，进一步完善全媒体传播体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "湖南省新华书店",
+      "evidence_span": "教材教辅主要由湖南省新华书店和新教材公司通过政府采购、直供、代印和向其他出版社提供\"型版\"等方式销售"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新教材公司",
+      "evidence_span": "教材教辅主要由湖南省新华书店和新教材公司通过政府采购、直供、代印和向其他出版社提供\"型版\"等方式销售"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字教育",
+      "evidence_span": "逐鹿数字教育,扩张预期强烈"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字转型",
+      "evidence_span": "传统业务竞争优势仍存,数字转型效果显现"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "出版业务",
+        "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "发行业务",
+        "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "印刷",
+        "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "印刷物资供应",
+        "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "媒体",
+        "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字教育",
+        "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融服务",
+        "evidence_span": "业务涵盖出版、发行、印刷及印刷物资供应、媒体、数字教育、金融等领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "出版传媒骨干企业集团",
+        "evidence_span": "拥有\"多介质、全流程\"产业业态的大型出版传媒骨干企业集团"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "出版传媒龙头企业",
+        "evidence_span": "公司是国内出版传媒龙头企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "出版物",
+        "evidence_span": "公司的主要产品为出版物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教材教辅",
+        "evidence_span": "教材教辅主要由湖南省新华书店和新教材公司通过政府采购、直供、代印和向其他出版社提供\"型版\"等方式销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一般图书",
+        "evidence_span": "一般图书主要通过批发、零售、电商等渠道进行销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "文化用品",
+        "evidence_span": "文化用品主要是代理相关生产厂家产品，通过湖南省新华书店门店销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "报纸",
+        "evidence_span": "按客户订单生产（如教材教辅、一般图书、报纸、期刊、一般印刷物、防伪标签等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "期刊",
+        "evidence_span": "按客户订单生产（如教材教辅、一般图书、报纸、期刊、一般印刷物、防伪标签等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印刷物资",
+        "evidence_span": "将图书用纸或社会用纸等印刷物资通过招标方式采购或从市场采购，并按照合同直接向客户销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "广告媒体资源",
+        "evidence_span": "独家运营长沙地铁1-6号线车站平面、LED及3-6号线车厢（含语音）媒体以及武汉地铁2、4、6、7、11号线及阳逻线车站平面、车厢媒体等优质广告媒体资源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "在线教育产品集群",
+        "evidence_span": "通过整合公司旗下数字教育资源，打造在线教育产品集群"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ECO云开放平台",
+        "evidence_span": "天闻数媒以\"平台+数据\"为核心，教学为主要应用，重点建设ECO云开放平台、ECR教育资源云平台、AI课堂、AI评测等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ECR教育资源云平台",
+        "evidence_span": "天闻数媒以\"平台+数据\"为核心，教学为主要应用，重点建设ECO云开放平台、ECR教育资源云平台、AI课堂、AI评测等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI课堂",
+        "evidence_span": "天闻数媒以\"平台+数据\"为核心，教学为主要应用，重点建设ECO云开放平台、ECR教育资源云平台、AI课堂、AI评测等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI评测",
+        "evidence_span": "天闻数媒以\"平台+数据\"为核心，教学为主要应用，重点建设ECO云开放平台、ECR教育资源云平台、AI课堂、AI评测等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "考试阅卷系统",
+        "evidence_span": "中南迅智主要开展教育质量监测考试服务，以试卷、教辅等纸媒为流量入口，重点打造考试阅卷系统、考试测评系统等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "考试测评系统",
+        "evidence_span": "中南迅智主要开展教育质量监测考试服务，以试卷、教辅等纸媒为流量入口，重点打造考试阅卷系统、考试测评系统等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "融合出版",
+        "evidence_span": "融合出版的深度广度进一步提升"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全媒体传播体系",
+        "evidence_span": "加强报纸、期刊、网络、地铁、户外大屏等联动传播，进一步完善全媒体传播体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "湖南省新华书店",
+        "evidence_span": "教材教辅主要由湖南省新华书店和新教材公司通过政府采购、直供、代印和向其他出版社提供\"型版\"等方式销售"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新教材公司",
+        "evidence_span": "教材教辅主要由湖南省新华书店和新教材公司通过政府采购、直供、代印和向其他出版社提供\"型版\"等方式销售"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字教育",
+        "evidence_span": "逐鹿数字教育,扩张预期强烈"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字转型",
+        "evidence_span": "传统业务竞争优势仍存,数字转型效果显现"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:12:34"
+}

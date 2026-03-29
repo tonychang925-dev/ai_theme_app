@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "33b52e03ac96", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件性内容（如路透社爆料大基金三期项目、上海微电子研发和交付时间预测），但也提供了静态知识，如光刻机类型（28纳米浸没式）和具体型号（SSA/800-10W），这些信息可能用于半导体设备技术路径的构建。"}}

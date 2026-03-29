@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "景区业务",
+      "evidence_span": "公司经营黄山景区、花山谜窟景区及太平湖景区，主要提供旅游观光和休闲度假等服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "索道业务",
+      "evidence_span": "公司拥有黄山云谷索道、玉屏索道、太平索道及西海观光缆车，主要提供客运观光服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "酒店业务",
+      "evidence_span": "公司拥有各类酒店十余家，主要提供住宿餐饮等服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "徽菜餐饮业务",
+      "evidence_span": "公司依托黄山旅游品牌、资源、资金及人才优势，以“徽商的厨房、家乡的味道”为发展定位，打造了徽文化主题餐饮品牌"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "旅行社业务",
+      "evidence_span": "公司旅行社业务涵盖国内旅游、入境旅游、出境旅游、定制游、会展服务和疗休养等方面"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧旅游业务",
+      "evidence_span": "公司顺应旅游市场和现代信息技术发展，依托黄山景区旅游资源，整合黄山市及周边文旅产业要素，开展旅游目的地智慧旅游建设和运营业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "黄山5A级景区的垄断性旅游企业",
+      "evidence_span": "黄山5A级景区的垄断性旅游企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国旅游景区协会副会长单位",
+      "evidence_span": "公司现为中国旅游景区协会副会长单位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国索道协会副理事长单位",
+      "evidence_span": "公司现为中国索道协会副理事长单位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "安徽省旅行社协会会长单位",
+      "evidence_span": "公司下属的黄山市中国旅行社有限公司是安徽省旅行社协会会长单位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游观光服务",
+      "evidence_span": "主要提供旅游观光和休闲度假等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "休闲度假服务",
+      "evidence_span": "主要提供旅游观光和休闲度假等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客运观光服务",
+      "evidence_span": "主要提供客运观光服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "住宿餐饮服务",
+      "evidence_span": "主要提供住宿餐饮等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "徽菜餐饮服务",
+      "evidence_span": "主要提供徽菜餐饮等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄山旅游官方平台运营",
+      "evidence_span": "主要业务涵盖黄山旅游官方平台运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新媒体运营",
+      "evidence_span": "主要业务涵盖黄山旅游官方平台运营、新媒体运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OTA业务承接",
+      "evidence_span": "主要业务涵盖黄山旅游官方平台运营、新媒体运营、OTA业务承接"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游产品和活动策划",
+      "evidence_span": "主要业务涵盖黄山旅游官方平台运营、新媒体运营、OTA业务承接、旅游产品和活动策划"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游服务接待",
+      "evidence_span": "主要业务涵盖黄山旅游官方平台运营、新媒体运营、OTA业务承接、旅游产品和活动策划、旅游服务接待"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游商品在线销售",
+      "evidence_span": "主要业务涵盖黄山旅游官方平台运营、新媒体运营、OTA业务承接、旅游产品和活动策划、旅游服务接待和旅游商品在线销售等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧景区系统化解决方案",
+      "evidence_span": "加快开发智慧景区系统化解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "黄山景区智慧导览系统",
+      "evidence_span": "加快推进黄山景区智慧导览系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "黄山旅游官方平台智能语音助手",
+      "evidence_span": "链接外部资源，加快推进黄山景区智慧导览系统、黄山旅游官方平台智能语音助手等项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据精准客户画像",
+      "evidence_span": "以黄山旅游官方平台为载体通过大数据进行精准客户画像"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "管理云平台",
+      "evidence_span": "持续推进管理云平台应用深度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "门索合检系统",
+      "evidence_span": "完成并持续优化云谷和太平索道片区门索合检系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "农产品区块链溯源系统",
+      "evidence_span": "以六百里为试点，持续做好农产品区块链溯源系统上线试运行及后续优化工作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京冬奥会",
+      "evidence_span": "圆满完成北京冬奥会滑雪索道托管"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江西灵山索道",
+      "evidence_span": "成功对江西灵山索道、上海世博会、浙江龙游六春湖索道和北京冬奥会滑雪索道等实施了品牌、技术及管理输出"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海世博会",
+      "evidence_span": "成功对江西灵山索道、上海世博会、浙江龙游六春湖索道和北京冬奥会滑雪索道等实施了品牌、技术及管理输出"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江龙游六春湖索道",
+      "evidence_span": "成功对江西灵山索道、上海世博会、浙江龙游六春湖索道和北京冬奥会滑雪索道等实施了品牌、技术及管理输出"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "高铁红利",
+      "evidence_span": "杭黄高铁通车，外延扩张稳步推进"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "旅游+",
+      "evidence_span": "黄山旅游2018-2019年客流+ROE迎来双提升周期，“旅游+”赋能业态升级"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "景区业务",
+        "evidence_span": "公司经营黄山景区、花山谜窟景区及太平湖景区，主要提供旅游观光和休闲度假等服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "索道业务",
+        "evidence_span": "公司拥有黄山云谷索道、玉屏索道、太平索道及西海观光缆车，主要提供客运观光服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "酒店业务",
+        "evidence_span": "公司拥有各类酒店十余家，主要提供住宿餐饮等服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "徽菜餐饮业务",
+        "evidence_span": "公司依托黄山旅游品牌、资源、资金及人才优势，以“徽商的厨房、家乡的味道”为发展定位，打造了徽文化主题餐饮品牌"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "旅行社业务",
+        "evidence_span": "公司旅行社业务涵盖国内旅游、入境旅游、出境旅游、定制游、会展服务和疗休养等方面"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧旅游业务",
+        "evidence_span": "公司顺应旅游市场和现代信息技术发展，依托黄山景区旅游资源，整合黄山市及周边文旅产业要素，开展旅游目的地智慧旅游建设和运营业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "黄山5A级景区的垄断性旅游企业",
+        "evidence_span": "黄山5A级景区的垄断性旅游企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国旅游景区协会副会长单位",
+        "evidence_span": "公司现为中国旅游景区协会副会长单位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国索道协会副理事长单位",
+        "evidence_span": "公司现为中国索道协会副理事长单位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "安徽省旅行社协会会长单位",
+        "evidence_span": "公司下属的黄山市中国旅行社有限公司是安徽省旅行社协会会长单位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游观光服务",
+        "evidence_span": "主要提供旅游观光和休闲度假等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "休闲度假服务",
+        "evidence_span": "主要提供旅游观光和休闲度假等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客运观光服务",
+        "evidence_span": "主要提供客运观光服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "住宿餐饮服务",
+        "evidence_span": "主要提供住宿餐饮等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "徽菜餐饮服务",
+        "evidence_span": "主要提供徽菜餐饮等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄山旅游官方平台运营",
+        "evidence_span": "主要业务涵盖黄山旅游官方平台运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新媒体运营",
+        "evidence_span": "主要业务涵盖黄山旅游官方平台运营、新媒体运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OTA业务承接",
+        "evidence_span": "主要业务涵盖黄山旅游官方平台运营、新媒体运营、OTA业务承接"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游产品和活动策划",
+        "evidence_span": "主要业务涵盖黄山旅游官方平台运营、新媒体运营、OTA业务承接、旅游产品和活动策划"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游服务接待",
+        "evidence_span": "主要业务涵盖黄山旅游官方平台运营、新媒体运营、OTA业务承接、旅游产品和活动策划、旅游服务接待"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游商品在线销售",
+        "evidence_span": "主要业务涵盖黄山旅游官方平台运营、新媒体运营、OTA业务承接、旅游产品和活动策划、旅游服务接待和旅游商品在线销售等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧景区系统化解决方案",
+        "evidence_span": "加快开发智慧景区系统化解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "黄山景区智慧导览系统",
+        "evidence_span": "加快推进黄山景区智慧导览系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "黄山旅游官方平台智能语音助手",
+        "evidence_span": "链接外部资源，加快推进黄山景区智慧导览系统、黄山旅游官方平台智能语音助手等项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据精准客户画像",
+        "evidence_span": "以黄山旅游官方平台为载体通过大数据进行精准客户画像"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "管理云平台",
+        "evidence_span": "持续推进管理云平台应用深度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "门索合检系统",
+        "evidence_span": "完成并持续优化云谷和太平索道片区门索合检系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "农产品区块链溯源系统",
+        "evidence_span": "以六百里为试点，持续做好农产品区块链溯源系统上线试运行及后续优化工作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京冬奥会",
+        "evidence_span": "圆满完成北京冬奥会滑雪索道托管"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江西灵山索道",
+        "evidence_span": "成功对江西灵山索道、上海世博会、浙江龙游六春湖索道和北京冬奥会滑雪索道等实施了品牌、技术及管理输出"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海世博会",
+        "evidence_span": "成功对江西灵山索道、上海世博会、浙江龙游六春湖索道和北京冬奥会滑雪索道等实施了品牌、技术及管理输出"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江龙游六春湖索道",
+        "evidence_span": "成功对江西灵山索道、上海世博会、浙江龙游六春湖索道和北京冬奥会滑雪索道等实施了品牌、技术及管理输出"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "高铁红利",
+        "evidence_span": "杭黄高铁通车，外延扩张稳步推进"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "旅游+",
+        "evidence_span": "黄山旅游2018-2019年客流+ROE迎来双提升周期，“旅游+”赋能业态升级"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:08:44"
+}

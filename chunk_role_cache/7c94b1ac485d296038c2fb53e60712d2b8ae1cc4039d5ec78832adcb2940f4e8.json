@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "400638509b69", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "描述了广东省政府印发特定政策文件这一具体事件，并摘录了其中鼓励发展半导体环节的内容。这是政策发布事件，而非对半导体设备本身的稳定知识说明。"}}

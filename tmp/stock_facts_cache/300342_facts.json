@@ -1,0 +1,304 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "冰箱压缩机零配件",
+      "evidence_span": "公司围绕“冰箱压缩机零配件”和“雷达与航天电子”两大板块开展业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "雷达",
+      "evidence_span": "公司围绕“冰箱压缩机零配件”和“雷达与航天电子”两大板块开展业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航天电子",
+      "evidence_span": "公司围绕“冰箱压缩机零配件”和“雷达与航天电子”两大板块开展业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "冰箱压缩机零部件提供商",
+      "evidence_span": "国内领先的冰箱压缩机零部件提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "冰箱压缩机零配件行业的重要企业",
+      "evidence_span": "成为冰箱压缩机零配件行业的重要企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冰箱压缩机起动器",
+      "evidence_span": "公司核心产品包括起动器、吸气消音器、变频控制器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "吸气消音器",
+      "evidence_span": "公司核心产品包括起动器、吸气消音器、变频控制器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冰箱变频控制器",
+      "evidence_span": "公司核心产品包括起动器、吸气消音器、变频控制器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "雷达射频仿真系统",
+      "evidence_span": "雷达射频仿真系统能够在地面内场生成复杂电磁环境"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "雷达目标模拟器",
+      "evidence_span": "华清瑞达的雷达射频仿真业务包括雷达目标模拟器及射频仿真阵列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频仿真阵列",
+      "evidence_span": "华清瑞达的雷达射频仿真业务包括雷达目标模拟器及射频仿真阵列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超宽带信号捕获与分析系统",
+      "evidence_span": "讯析科技主要从事超宽带多通道信号采集存储回放与实时处理、超宽带实时频谱分析与捕获系统和复杂电磁环境模拟系统的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "恒星敏感器",
+      "evidence_span": "天银星际是国内商业运营的恒星敏感器生产厂商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超视距雷达",
+      "evidence_span": "参股子公司工大雷信主要产品为超视距雷达等新体制雷达"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无功耗起动器技术",
+      "evidence_span": "公司拥有无功耗起动器产品的发明专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "变频控制程序自主研发",
+      "evidence_span": "其核心技术——变频控制程序完全由公司自主研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "雷达信号重构技术",
+      "evidence_span": "华清瑞达在国内较早开展雷达信号重构技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "星敏感器批量化生产",
+      "evidence_span": "天银星际实现了星敏感器的批量化生产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "加西贝拉",
+      "evidence_span": "公司多年来为加西贝拉、尼得科、美芝、万宝、黄石东贝等国内一线压缩机厂商提供优质产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "尼得科",
+      "evidence_span": "公司多年来为加西贝拉、尼得科、美芝、万宝、黄石东贝等国内一线压缩机厂商提供优质产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美芝",
+      "evidence_span": "公司多年来为加西贝拉、尼得科、美芝、万宝、黄石东贝等国内一线压缩机厂商提供优质产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万宝",
+      "evidence_span": "公司多年来为加西贝拉、尼得科、美芝、万宝、黄石东贝等国内一线压缩机厂商提供优质产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "黄石东贝",
+      "evidence_span": "公司多年来为加西贝拉、尼得科、美芝、万宝、黄石东贝等国内一线压缩机厂商提供优质产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军工科研院所",
+      "evidence_span": "主要客户包括军工科研院所及相关行业单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国防军工院所",
+      "evidence_span": "主要客户为国内国防军工院所等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恩布拉科",
+      "evidence_span": "已经成为全球冰箱压缩机生产厂商恩布拉科全球20家战略合作伙伴之一"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "冰箱节能化",
+      "evidence_span": "冰箱节能化趋势的宠儿"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "能效升级",
+      "evidence_span": "受益能效升级高速成长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国防信息化",
+      "evidence_span": "天银机电军民融合双向拓展，国防信息化大平台展翅待飞"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军民融合",
+      "evidence_span": "天银机电军民融合双向拓展，国防信息化大平台展翅待飞"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "冰箱压缩机零配件",
+        "evidence_span": "公司围绕“冰箱压缩机零配件”和“雷达与航天电子”两大板块开展业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "雷达与航天电子",
+        "evidence_span": "公司围绕“冰箱压缩机零配件”和“雷达与航天电子”两大板块开展业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "冰箱压缩机零部件提供商",
+        "evidence_span": "国内领先的冰箱压缩机零部件提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "冰箱压缩机零配件行业的重要企业",
+        "evidence_span": "成为冰箱压缩机零配件行业的重要企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冰箱压缩机起动器",
+        "evidence_span": "公司核心产品包括起动器、吸气消音器、变频控制器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "吸气消音器",
+        "evidence_span": "公司核心产品包括起动器、吸气消音器、变频控制器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冰箱变频控制器",
+        "evidence_span": "公司核心产品包括起动器、吸气消音器、变频控制器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "雷达射频仿真系统",
+        "evidence_span": "雷达射频仿真系统能够在地面内场生成复杂电磁环境"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "雷达目标模拟器",
+        "evidence_span": "华清瑞达的雷达射频仿真业务包括雷达目标模拟器及射频仿真阵列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频仿真阵列",
+        "evidence_span": "华清瑞达的雷达射频仿真业务包括雷达目标模拟器及射频仿真阵列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超宽带信号捕获与分析系统",
+        "evidence_span": "讯析科技主要从事超宽带多通道信号采集存储回放与实时处理、超宽带实时频谱分析与捕获系统和复杂电磁环境模拟系统的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "恒星敏感器",
+        "evidence_span": "天银星际是国内商业运营的恒星敏感器生产厂商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超视距雷达",
+        "evidence_span": "参股子公司工大雷信主要产品为超视距雷达等新体制雷达"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无功耗起动器技术",
+        "evidence_span": "公司拥有无功耗起动器产品的发明专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "变频控制程序自主研发",
+        "evidence_span": "其核心技术——变频控制程序完全由公司自主研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "雷达信号重构技术",
+        "evidence_span": "华清瑞达在国内较早开展雷达信号重构技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "星敏感器批量化生产",
+        "evidence_span": "天银星际实现了星敏感器的批量化生产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "加西贝拉",
+        "evidence_span": "公司多年来为加西贝拉、尼得科、美芝、万宝、黄石东贝等国内一线压缩机厂商提供优质产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "尼得科",
+        "evidence_span": "公司多年来为加西贝拉、尼得科、美芝、万宝、黄石东贝等国内一线压缩机厂商提供优质产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美芝",
+        "evidence_span": "公司多年来为加西贝拉、尼得科、美芝、万宝、黄石东贝等国内一线压缩机厂商提供优质产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万宝",
+        "evidence_span": "公司多年来为加西贝拉、尼得科、美芝、万宝、黄石东贝等国内一线压缩机厂商提供优质产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "黄石东贝",
+        "evidence_span": "公司多年来为加西贝拉、尼得科、美芝、万宝、黄石东贝等国内一线压缩机厂商提供优质产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军工科研院所",
+        "evidence_span": "主要客户包括军工科研院所及相关行业单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国防军工院所",
+        "evidence_span": "主要客户为国内国防军工院所等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恩布拉科",
+        "evidence_span": "已经成为全球冰箱压缩机生产厂商恩布拉科全球20家战略合作伙伴之一"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "冰箱节能化",
+        "evidence_span": "冰箱节能化趋势的宠儿"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "能效升级",
+        "evidence_span": "受益能效升级高速成长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国防信息化",
+        "evidence_span": "天银机电军民融合双向拓展，国防信息化大平台展翅待飞"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军民融合",
+        "evidence_span": "天银机电军民融合双向拓展，国防信息化大平台展翅待飞"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:44:16"
+}

@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电石",
+      "evidence_span": "主要从事电石及其系列延伸产品的生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其系列延伸产品的生产",
+      "evidence_span": "主要从事电石及其系列延伸产品的生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主要从事电石及其系列延伸产品的生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "聚氯乙烯",
+      "evidence_span": "聚氯乙烯、烧碱及其系列延伸产品的生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "烧碱",
+      "evidence_span": "聚氯乙烯、烧碱及其系列延伸产品的生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种树脂生产",
+      "evidence_span": "特种树脂生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电力",
+      "evidence_span": "电力、热力的生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "热力的生产",
+      "evidence_span": "电力、热力的生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "氯碱化工企业",
+      "evidence_span": "从事氯碱、纯碱行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电石",
+      "evidence_span": "主营产品有PVC、E-PVC、烧碱、电石等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚氯乙烯（PVC）",
+      "evidence_span": "主营产品有PVC、E-PVC、烧碱、电石等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "E-PVC",
+      "evidence_span": "主营产品有PVC、E-PVC、烧碱、电石等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烧碱",
+      "evidence_span": "主营产品有PVC、E-PVC、烧碱、电石等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚氯乙烯糊状树脂",
+      "evidence_span": "年生产规模26万吨（含糊树脂4万吨）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "五型PVC",
+      "evidence_span": "五型PVC为大连商品交易所期货交割免检产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "离子膜烧碱采用高电流密度自然循环电解槽",
+      "evidence_span": "离子膜烧碱采用先进的高电流密度自然循环电解槽"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电解槽离子膜采用杜邦全氟离子交换膜",
+      "evidence_span": "电解槽离子膜采用杜邦全氟离子交换膜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "固体烧碱采用煤熔盐降膜蒸发技术",
+      "evidence_span": "固体烧碱采用煤熔盐降膜蒸发技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "聚合装置采用单台108立方米反应釜",
+      "evidence_span": "聚合装置采用单台 108立方米反应釜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "聚合工序采用热水入料工艺技术",
+      "evidence_span": "聚合工序采用热水入料工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超滤反渗透技术",
+      "evidence_span": "采用超滤反渗透技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电石渣制取脱硫剂",
+      "evidence_span": "利用电石渣制取脱硫剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电石炉净化后的一氧化碳烧制白灰及制取蒸汽",
+      "evidence_span": "利用了电石炉净化后的一氧化碳烧制白灰及制取蒸汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大连商品交易所",
+      "evidence_span": "五型PVC为大连商品交易所期货交割免检产品"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电石及其系列延伸产品的生产和销售",
+        "evidence_span": "主要从事电石及其系列延伸产品的生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "聚氯乙烯、烧碱及其系列延伸产品的生产和销售",
+        "evidence_span": "聚氯乙烯、烧碱及其系列延伸产品的生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种树脂生产及销售",
+        "evidence_span": "特种树脂生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电力、热力的生产及销售",
+        "evidence_span": "电力、热力的生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "氯碱化工企业",
+        "evidence_span": "从事氯碱、纯碱行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电石",
+        "evidence_span": "主营产品有PVC、E-PVC、烧碱、电石等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚氯乙烯（PVC）",
+        "evidence_span": "主营产品有PVC、E-PVC、烧碱、电石等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "E-PVC",
+        "evidence_span": "主营产品有PVC、E-PVC、烧碱、电石等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烧碱",
+        "evidence_span": "主营产品有PVC、E-PVC、烧碱、电石等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚氯乙烯糊状树脂",
+        "evidence_span": "年生产规模26万吨（含糊树脂4万吨）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "五型PVC",
+        "evidence_span": "五型PVC为大连商品交易所期货交割免检产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "离子膜烧碱采用高电流密度自然循环电解槽",
+        "evidence_span": "离子膜烧碱采用先进的高电流密度自然循环电解槽"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电解槽离子膜采用杜邦全氟离子交换膜",
+        "evidence_span": "电解槽离子膜采用杜邦全氟离子交换膜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "固体烧碱采用煤熔盐降膜蒸发技术",
+        "evidence_span": "固体烧碱采用煤熔盐降膜蒸发技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "聚合装置采用单台108立方米反应釜",
+        "evidence_span": "聚合装置采用单台 108立方米反应釜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "聚合工序采用热水入料工艺技术",
+        "evidence_span": "聚合工序采用热水入料工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超滤反渗透技术",
+        "evidence_span": "采用超滤反渗透技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电石渣制取脱硫剂",
+        "evidence_span": "利用电石渣制取脱硫剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电石炉净化后的一氧化碳烧制白灰及制取蒸汽",
+        "evidence_span": "利用了电石炉净化后的一氧化碳烧制白灰及制取蒸汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大连商品交易所",
+        "evidence_span": "五型PVC为大连商品交易所期货交割免检产品"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:11:46"
+}

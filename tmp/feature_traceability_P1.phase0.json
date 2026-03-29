@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "phase": "P1.phase0",
+  "generated_at": "2026-02-17T19:20:00Z",
+  "source_files": [
+    "tmp/plan/wbs.md",
+    "tmp/plan/test_traceability_P1.phase0.json",
+    "docs/project_control/PRD.md",
+    "docs/project_control/ACCEPTANCE.md",
+    "docs/project_control/PHASE_CONTRACT_P1.phase0.md",
+    "docs/project_control/FEATURE_SPEC.md"
+  ],
+  "summary": {
+    "total_tasks": 4,
+    "mapped_tasks": 4,
+    "unmapped_tasks": 0,
+    "risk_level": "P0"
+  },
+  "traceability": [
+    {
+      "task_id": "P1.phase0-T01",
+      "requirement_ids": ["PRD-REQ-P1.phase0-001"],
+      "acceptance_ids": ["ACPT-P1.phase0-001"],
+      "test_case_ids": ["TC-P1P0-001"],
+      "test_commands": [
+        "pytest -q database_service/tests/streams/test_phase0_behavior_tests.py -k \"runtime_entry_uses_single_execute_chain\""
+      ]
+    },
+    {
+      "task_id": "P1.phase0-T02",
+      "requirement_ids": ["PRD-REQ-P1.phase0-002"],
+      "acceptance_ids": ["ACPT-P1.phase0-002"],
+      "test_case_ids": ["TC-P1P0-002"],
+      "test_commands": [
+        "pytest -q database_service/tests/streams/test_phase0_behavior_tests.py -k \"decision_envelope_v1_required_fields_validation\""
+      ]
+    },
+    {
+      "task_id": "P1.phase0-T03",
+      "requirement_ids": ["PRD-REQ-P1.phase0-003"],
+      "acceptance_ids": ["ACPT-P1.phase0-003"],
+      "test_case_ids": ["TC-P1P0-003"],
+      "test_commands": [
+        "pytest -q database_service/tests/streams/test_phase0_behavior_tests.py -k \"processing_path_does_not_use_print_calls\""
+      ]
+    },
+    {
+      "task_id": "P1.phase0-T04",
+      "requirement_ids": ["PRD-REQ-P1.phase0-004"],
+      "acceptance_ids": ["ACPT-P1.phase0-004"],
+      "test_case_ids": ["TC-P1P0-004"],
+      "test_commands": [
+        "pytest -q database_service/tests/streams/test_phase0_behavior_tests.py -k \"trace_id_and_payload_version_are_normalized_for_v0_input\"",
+        "pytest -q database_service/tests/streams/test_message_serializer.py",
+        "pytest -q database_service/tests/streams/test_stream_config.py",
+        "pytest database_service/tests/streams -q"
+      ]
+    }
+  ],
+  "gaps": [],
+  "gate_ready": true
+}

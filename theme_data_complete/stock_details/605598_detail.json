@@ -1,0 +1,71 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 322072479.0,
+    "changeCount": -4.49,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:24:29",
+    "detail": "<p><span style=\"font-weight: bold;\">1、主营业务构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20220913171442_76f38f5b732bddfa.dat\" /></span></p>\n<p>资料来源：2021年年度报告</p>\n<p>公司主要的业务类型为地基处理和桩基工程，其中地基处理业务收入占比超过80%。受疫情影响，国内外市场整体出现暂时性萎缩，报告期内各业务类型营业收入和毛利率较上年均有所下降。2021年度公司境内主营业务收入及成本增幅较大，主要由于2020年国内疫情状况较为严峻，对公司当年业绩造成较大压力；但2021年以来，随着国内疫情形势逐步缓解，疫情对公司境内业务的影响减小，业绩有所恢复。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、核心竞争力分析</span></p>\n<p>丰富的项目经验也提高了项目实施中的技术响应能力。经过多年发展，<span style=\"font-weight: bold;\">公司工程业绩遍布境内、东南亚、中东、南亚及拉美地区</span>，涉及机场、港口、公路、铁路、电厂、市政、地产、石油化工、国防工程、围海造地等领域，成功完成了不同国家地区、不同地质条件和不同领域的工程项目，对不同地质条件、土壤土质有了较深的理解，积累了丰富的项目经验，形成了快速的技术响应能力，能够为全球各地的工程项目提供及时、可行的技术解决方案，保障项目的顺利实施。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司发展战略</span></p>\n<p><span style=\"font-weight: bold;\">深度参与&ldquo;一带一路&rdquo;建设继续在国内立足主业，加强业务能力</span>。将集团资金优势与公司海外本土化优势相结合，继续扩大公司在东南亚、中东的竞争实力和影响力，同时对南美、东欧等地区加大投入和市场布局，力争全面打开当地市场，实现新的业绩突破，以实际行动投入&ldquo;一带一路&rdquo;建设。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、公司境外占比</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20220913172531_6a95d6a5616e01b3.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20220913172539_7129434a72983c8f.dat\" /></p>\n<p>资料来源：2021年年度报告</p>\n<p><span style=\"font-weight: bold;\">公司工程项目主要分布在东南亚、中东、南美洲等十余个国家，报告期内公司境外营业收入占比为74.50%，境外收入占比较高。</span></p>\n<p>&nbsp;</p>",
+    "firstLetter": "SHGW",
+    "high": 58.79,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 53.3,
+    "marketValue": 14293536237.96,
+    "name": "上海港湾",
+    "pctChg": -7.68,
+    "price": 53.95,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 19,
+    "recent60Change": 35.08,
+    "recentChange": -6.69,
+    "remark": "公司为全球客户提供集勘察、设计、施工、监测于一体的岩土工程综合服务。",
+    "status": 1,
+    "stockId": "605598",
+    "stockLightspots": [
+      {
+        "bizKey": "30824",
+        "content": "上海港湾专注软土地基领域，业务增速可观",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30824,
+        "stockId": "605598",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30825",
+        "content": "Q3净利润高增长，一带一路充分受益",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30825,
+        "stockId": "605598",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30826",
+        "content": "上海港湾营收增速放缓，汇兑损益提升业绩",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30826,
+        "stockId": "605598",
+        "updateTime": null
+      },
+      {
+        "bizKey": "30827",
+        "content": "国际软地基处理龙头，技术实力领先",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 30827,
+        "stockId": "605598",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:14:26",
+    "vol": 58926.0
+  }
+}

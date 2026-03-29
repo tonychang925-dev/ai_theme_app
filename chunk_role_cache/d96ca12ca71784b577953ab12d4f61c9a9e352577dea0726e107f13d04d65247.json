@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "074e0053d5be", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了四川省发布指导意见的事件，但指导意见内容（如资金支持）可能包含政策导向或发展策略的潜在知识，混合了事件和可能的政策知识。"}}

@@ -1,0 +1,294 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "住宅开发",
+      "evidence_span": "住宅开发探寻蓝海领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物业管理",
+      "evidence_span": "物业管理打造赋能平台"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "仓储物流",
+      "evidence_span": "仓储物流多领域进入行业前列"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业开发",
+      "evidence_span": "万科商业依托印力集团进行全国化布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运营",
+      "evidence_span": "万科商业依托印力集团进行全国化布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "长租公寓",
+      "evidence_span": "较早布局长租业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "地产行业领军企业",
+      "evidence_span": "地产行业领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集中式长租公寓市场领军企业",
+      "evidence_span": "集中式长租公寓市场领军企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社区空间服务",
+      "evidence_span": "社区空间服务收入134.6亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商企和城市空间服务",
+      "evidence_span": "商企和城市空间服务收入87.2亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AIoT及BPaaS解决方案服务",
+      "evidence_span": "AIoT及BPaaS解决方案服务收入18.6亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高标库",
+      "evidence_span": "高标库营业收入20.6亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷库",
+      "evidence_span": "冷库营业收入11.0亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印象城",
+      "evidence_span": "印象城"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印象汇",
+      "evidence_span": "印象汇"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印象里",
+      "evidence_span": "印象里"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印象城MEGA",
+      "evidence_span": "印象城MEGA"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "万科广场",
+      "evidence_span": "万科广场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "泊寓",
+      "evidence_span": "泊寓已分布全国33个城市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保障性租赁住房",
+      "evidence_span": "保障性租赁住房"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人才公寓",
+      "evidence_span": "人才公寓"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "健康驿站",
+      "evidence_span": "健康驿站"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "开放式物管赋能平台",
+      "evidence_span": "利用科技打造开放式物管赋能平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产策、建造、运营一条龙综合服务能力",
+      "evidence_span": "产策、建造、运营一条龙的综合服务能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阳光智博服务",
+      "evidence_span": "收购阳光智博服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福建伯恩物业",
+      "evidence_span": "收购福建伯恩物业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新加坡政府投资公司",
+      "evidence_span": "引入了新加坡政府投资公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "淡马锡",
+      "evidence_span": "淡马锡"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "李宁",
+      "evidence_span": "为李宁下资产提供全周期服务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "住宅开发",
+        "evidence_span": "住宅开发探寻蓝海领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物业管理",
+        "evidence_span": "物业管理打造赋能平台"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "仓储物流",
+        "evidence_span": "仓储物流多领域进入行业前列"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业开发与运营",
+        "evidence_span": "万科商业依托印力集团进行全国化布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "长租公寓",
+        "evidence_span": "较早布局长租业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "地产行业领军企业",
+        "evidence_span": "地产行业领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集中式长租公寓市场领军企业",
+        "evidence_span": "集中式长租公寓市场领军企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社区空间服务",
+        "evidence_span": "社区空间服务收入134.6亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商企和城市空间服务",
+        "evidence_span": "商企和城市空间服务收入87.2亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AIoT及BPaaS解决方案服务",
+        "evidence_span": "AIoT及BPaaS解决方案服务收入18.6亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高标库",
+        "evidence_span": "高标库营业收入20.6亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷库",
+        "evidence_span": "冷库营业收入11.0亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印象城",
+        "evidence_span": "印象城"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印象汇",
+        "evidence_span": "印象汇"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印象里",
+        "evidence_span": "印象里"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印象城MEGA",
+        "evidence_span": "印象城MEGA"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "万科广场",
+        "evidence_span": "万科广场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "泊寓",
+        "evidence_span": "泊寓已分布全国33个城市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保障性租赁住房",
+        "evidence_span": "保障性租赁住房"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人才公寓",
+        "evidence_span": "人才公寓"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "健康驿站",
+        "evidence_span": "健康驿站"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "开放式物管赋能平台",
+        "evidence_span": "利用科技打造开放式物管赋能平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产策、建造、运营一条龙综合服务能力",
+        "evidence_span": "产策、建造、运营一条龙的综合服务能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阳光智博服务",
+        "evidence_span": "收购阳光智博服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福建伯恩物业",
+        "evidence_span": "收购福建伯恩物业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新加坡政府投资公司",
+        "evidence_span": "引入了新加坡政府投资公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "淡马锡",
+        "evidence_span": "淡马锡"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "李宁",
+        "evidence_span": "为李宁下资产提供全周期服务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:40:30"
+}

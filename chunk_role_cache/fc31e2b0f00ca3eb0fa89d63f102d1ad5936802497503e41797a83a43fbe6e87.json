@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "57957389119d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落聚焦于美国出口管控措施及台积电的应对行动，是具体事件报道，缺乏半导体设备的静态定义或机制说明。"}}

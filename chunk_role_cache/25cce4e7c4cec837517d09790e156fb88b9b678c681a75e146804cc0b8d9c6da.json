@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "50b1b0998787", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落纯粹描述具体事件（美国实体清单更新、芯片管制、中方调查），没有提供可沉淀的静态知识，属于新闻动态。"}}

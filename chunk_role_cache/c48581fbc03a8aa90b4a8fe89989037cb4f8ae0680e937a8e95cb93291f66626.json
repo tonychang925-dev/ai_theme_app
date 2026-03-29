@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "2c14f7f42551", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述北方华创的业绩公告，包括具体净利润和同比增长率，是典型的事件性内容，没有提供半导体设备的静态知识。"}}

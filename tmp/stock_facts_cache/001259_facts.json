@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "厨房小家电产品",
+      "evidence_span": "公司主营业务收入主要来源于厨房小家电产品的销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "家居小家电",
+      "evidence_span": "公司销售的家居小家电主要包括香薰加湿器、蒸汽拖把、水暖毯、手持挂烫机和毛球修剪器等产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "非电类产品",
+      "evidence_span": "公司还配套销售手动料理机、各类锅具、刀具等非电类厨具产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电饼铛领域的先驱者和领导者",
+      "evidence_span": "电饼铛领域的先驱者和领导者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "小家电产品研发、设计、生产与销售企业",
+      "evidence_span": "国内最早从事小家电产品研发、设计、生产与销售的企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电饼铛类",
+      "evidence_span": "电饼铛类产品中主要包括电饼铛、薄饼铛"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空气炸锅类",
+      "evidence_span": "空气炸锅类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多功能锅类",
+      "evidence_span": "多功能锅类产品主要包括电火锅、多功能料理锅、烧烤涮锅等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电烧烤类",
+      "evidence_span": "电烧烤类产品主要包括电烧烤盘、烤串机、烧烤架等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绞肉机",
+      "evidence_span": "厨房小家电中的其他产品包括绞肉机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三明治机",
+      "evidence_span": "厨房小家电中的其他产品包括三明治机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电水壶",
+      "evidence_span": "厨房小家电中的其他产品包括电水壶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸煮饭盒",
+      "evidence_span": "厨房小家电中的其他产品包括蒸煮饭盒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "菜馅机",
+      "evidence_span": "厨房小家电中的其他产品包括菜馅机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "养生壶",
+      "evidence_span": "厨房小家电中的其他产品包括养生壶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磨粉机",
+      "evidence_span": "厨房小家电中的其他产品包括磨粉机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "筷子刀具消毒机",
+      "evidence_span": "厨房小家电中的其他产品包括筷子刀具消毒机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多士炉",
+      "evidence_span": "厨房小家电中的其他产品包括多士炉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "香薰加湿器",
+      "evidence_span": "家居小家电主要包括香薰加湿器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸汽拖把",
+      "evidence_span": "家居小家电主要包括蒸汽拖把"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水暖毯",
+      "evidence_span": "家居小家电主要包括水暖毯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手持挂烫机",
+      "evidence_span": "家居小家电主要包括手持挂烫机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "毛球修剪器",
+      "evidence_span": "家居小家电主要包括毛球修剪器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手动料理机",
+      "evidence_span": "配套销售手动料理机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "各类锅具",
+      "evidence_span": "配套销售各类锅具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "刀具",
+      "evidence_span": "配套销售刀具"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东",
+      "evidence_span": "与京东、苏宁易购、唯品会、天猫超市、小米有品等电商自营主体合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苏宁易购",
+      "evidence_span": "与京东、苏宁易购、唯品会、天猫超市、小米有品等电商自营主体合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "唯品会",
+      "evidence_span": "与京东、苏宁易购、唯品会、天猫超市、小米有品等电商自营主体合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天猫超市",
+      "evidence_span": "与京东、苏宁易购、唯品会、天猫超市、小米有品等电商自营主体合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米有品",
+      "evidence_span": "与京东、苏宁易购、唯品会、天猫超市、小米有品等电商自营主体合作"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "厨房小家电产品",
+        "evidence_span": "公司主营业务收入主要来源于厨房小家电产品的销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "家居小家电",
+        "evidence_span": "公司销售的家居小家电主要包括香薰加湿器、蒸汽拖把、水暖毯、手持挂烫机和毛球修剪器等产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "非电类产品",
+        "evidence_span": "公司还配套销售手动料理机、各类锅具、刀具等非电类厨具产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电饼铛领域的先驱者和领导者",
+        "evidence_span": "电饼铛领域的先驱者和领导者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "小家电产品研发、设计、生产与销售企业",
+        "evidence_span": "国内最早从事小家电产品研发、设计、生产与销售的企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电饼铛类",
+        "evidence_span": "电饼铛类产品中主要包括电饼铛、薄饼铛"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空气炸锅类",
+        "evidence_span": "空气炸锅类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多功能锅类",
+        "evidence_span": "多功能锅类产品主要包括电火锅、多功能料理锅、烧烤涮锅等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电烧烤类",
+        "evidence_span": "电烧烤类产品主要包括电烧烤盘、烤串机、烧烤架等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绞肉机",
+        "evidence_span": "厨房小家电中的其他产品包括绞肉机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三明治机",
+        "evidence_span": "厨房小家电中的其他产品包括三明治机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电水壶",
+        "evidence_span": "厨房小家电中的其他产品包括电水壶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸煮饭盒",
+        "evidence_span": "厨房小家电中的其他产品包括蒸煮饭盒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "菜馅机",
+        "evidence_span": "厨房小家电中的其他产品包括菜馅机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "养生壶",
+        "evidence_span": "厨房小家电中的其他产品包括养生壶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磨粉机",
+        "evidence_span": "厨房小家电中的其他产品包括磨粉机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "筷子刀具消毒机",
+        "evidence_span": "厨房小家电中的其他产品包括筷子刀具消毒机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多士炉",
+        "evidence_span": "厨房小家电中的其他产品包括多士炉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "香薰加湿器",
+        "evidence_span": "家居小家电主要包括香薰加湿器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸汽拖把",
+        "evidence_span": "家居小家电主要包括蒸汽拖把"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水暖毯",
+        "evidence_span": "家居小家电主要包括水暖毯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手持挂烫机",
+        "evidence_span": "家居小家电主要包括手持挂烫机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "毛球修剪器",
+        "evidence_span": "家居小家电主要包括毛球修剪器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手动料理机",
+        "evidence_span": "配套销售手动料理机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "各类锅具",
+        "evidence_span": "配套销售各类锅具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "刀具",
+        "evidence_span": "配套销售刀具"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东",
+        "evidence_span": "与京东、苏宁易购、唯品会、天猫超市、小米有品等电商自营主体合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苏宁易购",
+        "evidence_span": "与京东、苏宁易购、唯品会、天猫超市、小米有品等电商自营主体合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "唯品会",
+        "evidence_span": "与京东、苏宁易购、唯品会、天猫超市、小米有品等电商自营主体合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天猫超市",
+        "evidence_span": "与京东、苏宁易购、唯品会、天猫超市、小米有品等电商自营主体合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米有品",
+        "evidence_span": "与京东、苏宁易购、唯品会、天猫超市、小米有品等电商自营主体合作"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:16:05"
+}

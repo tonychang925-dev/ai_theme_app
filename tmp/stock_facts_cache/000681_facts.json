@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "视觉内容交易服务",
+      "evidence_span": "打造全球化视觉内容交易服务平台"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "版权素材平台",
+      "evidence_span": "版权素材第一平台"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字藏品平台",
+      "evidence_span": "元视觉艺术平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "版权内容头部企业",
+      "evidence_span": "版权内容头部企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "平台型公司",
+      "evidence_span": "视觉中国稀缺的平台型公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "图片交易第一平台",
+      "evidence_span": "缔造图片交易第一平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "内容生态基础设施",
+      "evidence_span": "内容生态基础设施"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "图片素材",
+      "evidence_span": "拥有图片素材 4 亿+"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频素材",
+      "evidence_span": "视频素材3000 万"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "音频素材",
+      "evidence_span": "音频素材 35 万"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字藏品",
+      "evidence_span": "元视觉已与超过 41 家合作艺术创作者与机构合作伙伴建立紧密合作关系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "编辑类图片",
+      "evidence_span": "编辑类图片是指用于新闻事件报告，或相关新闻消息的配图"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "创意类图片",
+      "evidence_span": "创意类图片可用于企业宣传推广或者产品服务相关的商业用途"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链技术",
+      "evidence_span": "通过区块链、智能合约技术确保原创者在作品所有权转移的同时获得按照合约约定的“版税”分成"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "机构供应商",
+      "evidence_span": "公司累计签约的版权机构供应商近 300 家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "独立供稿人",
+      "evidence_span": "上游主要包括机构供应商及独立供稿人"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型企业",
+      "evidence_span": "下游需求端方面，除了大型企业、党政媒体等的版权商业需求外"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "党政媒体",
+      "evidence_span": "下游需求端方面，除了大型企业、党政媒体等的版权商业需求外"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中小企业",
+      "evidence_span": "我国有近 4800 万中小企业，具有大量营销需求"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "自媒体行业",
+      "evidence_span": "自媒体行业对图片、音视频等有强烈的刚需"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "图片正版化",
+      "evidence_span": "视觉中国迎接图片正版化时代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "NFT",
+      "evidence_span": "NFT为数字藏品带来充足想象"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "视觉内容交易服务",
+        "evidence_span": "打造全球化视觉内容交易服务平台"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "版权素材平台",
+        "evidence_span": "版权素材第一平台"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字藏品平台",
+        "evidence_span": "元视觉艺术平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "版权内容头部企业",
+        "evidence_span": "版权内容头部企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "平台型公司",
+        "evidence_span": "视觉中国稀缺的平台型公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "图片交易第一平台",
+        "evidence_span": "缔造图片交易第一平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "内容生态基础设施",
+        "evidence_span": "内容生态基础设施"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "图片素材",
+        "evidence_span": "拥有图片素材 4 亿+"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频素材",
+        "evidence_span": "视频素材3000 万"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "音频素材",
+        "evidence_span": "音频素材 35 万"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字藏品",
+        "evidence_span": "元视觉已与超过 41 家合作艺术创作者与机构合作伙伴建立紧密合作关系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "编辑类图片",
+        "evidence_span": "编辑类图片是指用于新闻事件报告，或相关新闻消息的配图"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "创意类图片",
+        "evidence_span": "创意类图片可用于企业宣传推广或者产品服务相关的商业用途"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链技术",
+        "evidence_span": "通过区块链、智能合约技术确保原创者在作品所有权转移的同时获得按照合约约定的“版税”分成"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "机构供应商",
+        "evidence_span": "公司累计签约的版权机构供应商近 300 家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "独立供稿人",
+        "evidence_span": "上游主要包括机构供应商及独立供稿人"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型企业",
+        "evidence_span": "下游需求端方面，除了大型企业、党政媒体等的版权商业需求外"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "党政媒体",
+        "evidence_span": "下游需求端方面，除了大型企业、党政媒体等的版权商业需求外"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中小企业",
+        "evidence_span": "我国有近 4800 万中小企业，具有大量营销需求"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "自媒体行业",
+        "evidence_span": "自媒体行业对图片、音视频等有强烈的刚需"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "图片正版化",
+        "evidence_span": "视觉中国迎接图片正版化时代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "NFT",
+        "evidence_span": "NFT为数字藏品带来充足想象"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:14:41"
+}

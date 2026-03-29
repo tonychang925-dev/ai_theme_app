@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "逆变器",
+      "evidence_span": "逆变器及储能电池"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "储能电池",
+      "evidence_span": "逆变器及储能电池"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "热交换器",
+      "evidence_span": "热交换器及环境电器"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环境电器",
+      "evidence_span": "热交换器及环境电器"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "变频控制器整体解决方案供应商",
+      "evidence_span": "可为变频空调整机企业提供变频控制器整体解决方案的专业供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "逆变器企业",
+      "evidence_span": "逆变器企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能逆变器",
+      "evidence_span": "储能逆变器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微型并网逆变器",
+      "evidence_span": "微型并网逆变器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "组串式逆变器",
+      "evidence_span": "组串式逆变器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "除湿机",
+      "evidence_span": "除湿机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热交换器",
+      "evidence_span": "热交换器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环境电器",
+      "evidence_span": "环境电器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "逆变器产品核心技术",
+      "evidence_span": "保持逆变器产品核心技术行业领先"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏储能",
+      "evidence_span": "光伏储能齐驱并进"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能+微逆双驱动",
+      "evidence_span": "储能+微逆双驱动"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "逆变器及储能电池",
+        "evidence_span": "逆变器及储能电池"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "热交换器及环境电器",
+        "evidence_span": "热交换器及环境电器"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "变频控制器整体解决方案供应商",
+        "evidence_span": "可为变频空调整机企业提供变频控制器整体解决方案的专业供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "逆变器企业",
+        "evidence_span": "逆变器企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能逆变器",
+        "evidence_span": "储能逆变器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微型并网逆变器",
+        "evidence_span": "微型并网逆变器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "组串式逆变器",
+        "evidence_span": "组串式逆变器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "除湿机",
+        "evidence_span": "除湿机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热交换器",
+        "evidence_span": "热交换器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环境电器",
+        "evidence_span": "环境电器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "逆变器产品核心技术",
+        "evidence_span": "保持逆变器产品核心技术行业领先"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏储能",
+        "evidence_span": "光伏储能齐驱并进"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能+微逆双驱动",
+        "evidence_span": "储能+微逆双驱动"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:55:33"
+}

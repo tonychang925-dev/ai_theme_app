@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "b16629dcaa82", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落混有事件（奉贤区发布行动方案）和知识（集成电路配套材料如湿化学品、高纯靶材、电子气体等），边界不清，可能含稳定知识但夹带政策动态。"}}

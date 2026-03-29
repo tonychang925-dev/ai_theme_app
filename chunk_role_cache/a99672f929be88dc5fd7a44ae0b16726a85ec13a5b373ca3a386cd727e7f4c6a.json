@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "e6dff6749f2c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述了国家集成电路产业投资基金三期的成立事件（具体日期和注册资本），属于事件动态，但同时也包含了对基金投资方向（加大对核心技术和关键零部件的投资，注重与国际先进技术的对接和融合）的说明，这些是稳定、本体性的知识，但边界不干净，混有事件元素。"}}

@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂离子电池正极材料",
+      "evidence_span": "公司主营业务主要为锂电池产业链上游的锂离子电池正极材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂离子电池自动化生产设备",
+      "evidence_span": "公司主营业务主要为锂电池产业链上游的锂离子电池正极材料、锂离子电池自动化生产设备"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电材料和锂电设备的综合供应商",
+      "evidence_span": "科恒股份布局锂电材料和锂电设备的综合供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电前端设备龙头",
+      "evidence_span": "科恒股份锂电前端设备龙头，高端正极材料扩产放量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三元材料",
+      "evidence_span": "目前已形成了包括三元材料、钴酸锂、锰酸锂等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钴酸锂",
+      "evidence_span": "目前已形成了包括三元材料、钴酸锂、锰酸锂等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锰酸锂",
+      "evidence_span": "目前已形成了包括三元材料、钴酸锂、锰酸锂等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涂布装备",
+      "evidence_span": "主要产品包括：涂布装备、轧膜装备、分切装备三大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轧膜装备",
+      "evidence_span": "主要产品包括：涂布装备、轧膜装备、分切装备三大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分切装备",
+      "evidence_span": "主要产品包括：涂布装备、轧膜装备、分切装备三大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高精度双层挤压涂布机",
+      "evidence_span": "高精度双层挤压涂布机，其主要应用于锂离子电池正、负极片的涂布作业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高精度超薄微凹逆涂涂布机",
+      "evidence_span": "高精度超薄微凹逆涂涂布机及凹版顺涂涂布机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "凹版顺涂涂布机",
+      "evidence_span": "高精度超薄微凹逆涂涂布机及凹版顺涂涂布机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "辊压分切一体机",
+      "evidence_span": "辊压分切一体机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分切机",
+      "evidence_span": "分切机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池膜电极涂布机",
+      "evidence_span": "可以提供燃料电池膜电极涂布机、水处理RO膜涂膜线、铸膜线等装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水处理RO膜涂膜线",
+      "evidence_span": "可以提供燃料电池膜电极涂布机、水处理RO膜涂膜线、铸膜线等装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铸膜线",
+      "evidence_span": "可以提供燃料电池膜电极涂布机、水处理RO膜涂膜线、铸膜线等装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光分切机",
+      "evidence_span": "新开发出激光分切机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双腔式挤压模头",
+      "evidence_span": "已拥有双腔式挤压模头、气动及电动高速间歇控制阀、高速挤压涂布系统等一系列国家专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "气动及电动高速间歇控制阀",
+      "evidence_span": "已拥有双腔式挤压模头、气动及电动高速间歇控制阀、高速挤压涂布系统等一系列国家专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速挤压涂布系统",
+      "evidence_span": "已拥有双腔式挤压模头、气动及电动高速间歇控制阀、高速挤压涂布系统等一系列国家专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "预弯辊装置",
+      "evidence_span": "采用了预弯辊装置来提高轧机的横向厚度一致性"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动测厚系统配合闭环伺服系统时时辊缝调整机构",
+      "evidence_span": "并采用自动测厚系统配合闭环伺服系统时时辊缝调整机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "飞利浦",
+      "evidence_span": "客户为飞利浦、欧司朗等头部客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧司朗",
+      "evidence_span": "客户为飞利浦、欧司朗等头部客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "昆明贵研",
+      "evidence_span": "产品目前通过昆明贵研和无锡威孚等头部客户的认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "无锡威孚",
+      "evidence_span": "产品目前通过昆明贵研和无锡威孚等头部客户的认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "目前与国内动力电池规模企业均与浩能建立了长期深度合作关系，如：宁德时代、比亚迪、三星、TDK、松下、LG等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "目前与国内动力电池规模企业均与浩能建立了长期深度合作关系，如：宁德时代、比亚迪、三星、TDK、松下、LG等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "目前与国内动力电池规模企业均与浩能建立了长期深度合作关系，如：宁德时代、比亚迪、三星、TDK、松下、LG等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TDK",
+      "evidence_span": "目前与国内动力电池规模企业均与浩能建立了长期深度合作关系，如：宁德时代、比亚迪、三星、TDK、松下、LG等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "松下",
+      "evidence_span": "目前与国内动力电池规模企业均与浩能建立了长期深度合作关系，如：宁德时代、比亚迪、三星、TDK、松下、LG等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LG",
+      "evidence_span": "目前与国内动力电池规模企业均与浩能建立了长期深度合作关系，如：宁德时代、比亚迪、三星、TDK、松下、LG等"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂离子电池正极材料",
+        "evidence_span": "公司主营业务主要为锂电池产业链上游的锂离子电池正极材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂离子电池自动化生产设备",
+        "evidence_span": "公司主营业务主要为锂电池产业链上游的锂离子电池正极材料、锂离子电池自动化生产设备"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电材料和锂电设备的综合供应商",
+        "evidence_span": "科恒股份布局锂电材料和锂电设备的综合供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电前端设备龙头",
+        "evidence_span": "科恒股份锂电前端设备龙头，高端正极材料扩产放量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三元材料",
+        "evidence_span": "目前已形成了包括三元材料、钴酸锂、锰酸锂等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钴酸锂",
+        "evidence_span": "目前已形成了包括三元材料、钴酸锂、锰酸锂等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锰酸锂",
+        "evidence_span": "目前已形成了包括三元材料、钴酸锂、锰酸锂等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涂布装备",
+        "evidence_span": "主要产品包括：涂布装备、轧膜装备、分切装备三大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轧膜装备",
+        "evidence_span": "主要产品包括：涂布装备、轧膜装备、分切装备三大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分切装备",
+        "evidence_span": "主要产品包括：涂布装备、轧膜装备、分切装备三大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高精度双层挤压涂布机",
+        "evidence_span": "高精度双层挤压涂布机，其主要应用于锂离子电池正、负极片的涂布作业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高精度超薄微凹逆涂涂布机",
+        "evidence_span": "高精度超薄微凹逆涂涂布机及凹版顺涂涂布机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "凹版顺涂涂布机",
+        "evidence_span": "高精度超薄微凹逆涂涂布机及凹版顺涂涂布机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "辊压分切一体机",
+        "evidence_span": "辊压分切一体机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分切机",
+        "evidence_span": "分切机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池膜电极涂布机",
+        "evidence_span": "可以提供燃料电池膜电极涂布机、水处理RO膜涂膜线、铸膜线等装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水处理RO膜涂膜线",
+        "evidence_span": "可以提供燃料电池膜电极涂布机、水处理RO膜涂膜线、铸膜线等装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铸膜线",
+        "evidence_span": "可以提供燃料电池膜电极涂布机、水处理RO膜涂膜线、铸膜线等装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光分切机",
+        "evidence_span": "新开发出激光分切机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双腔式挤压模头",
+        "evidence_span": "已拥有双腔式挤压模头、气动及电动高速间歇控制阀、高速挤压涂布系统等一系列国家专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "气动及电动高速间歇控制阀",
+        "evidence_span": "已拥有双腔式挤压模头、气动及电动高速间歇控制阀、高速挤压涂布系统等一系列国家专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速挤压涂布系统",
+        "evidence_span": "已拥有双腔式挤压模头、气动及电动高速间歇控制阀、高速挤压涂布系统等一系列国家专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "预弯辊装置",
+        "evidence_span": "采用了预弯辊装置来提高轧机的横向厚度一致性"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动测厚系统配合闭环伺服系统时时辊缝调整机构",
+        "evidence_span": "并采用自动测厚系统配合闭环伺服系统时时辊缝调整机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "飞利浦",
+        "evidence_span": "客户为飞利浦、欧司朗等头部客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧司朗",
+        "evidence_span": "客户为飞利浦、欧司朗等头部客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "昆明贵研",
+        "evidence_span": "产品目前通过昆明贵研和无锡威孚等头部客户的认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "无锡威孚",
+        "evidence_span": "产品目前通过昆明贵研和无锡威孚等头部客户的认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "目前与国内动力电池规模企业均与浩能建立了长期深度合作关系，如：宁德时代、比亚迪、三星、TDK、松下、LG等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "目前与国内动力电池规模企业均与浩能建立了长期深度合作关系，如：宁德时代、比亚迪、三星、TDK、松下、LG等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "目前与国内动力电池规模企业均与浩能建立了长期深度合作关系，如：宁德时代、比亚迪、三星、TDK、松下、LG等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TDK",
+        "evidence_span": "目前与国内动力电池规模企业均与浩能建立了长期深度合作关系，如：宁德时代、比亚迪、三星、TDK、松下、LG等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "松下",
+        "evidence_span": "目前与国内动力电池规模企业均与浩能建立了长期深度合作关系，如：宁德时代、比亚迪、三星、TDK、松下、LG等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LG",
+        "evidence_span": "目前与国内动力电池规模企业均与浩能建立了长期深度合作关系，如：宁德时代、比亚迪、三星、TDK、松下、LG等"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:43:15"
+}

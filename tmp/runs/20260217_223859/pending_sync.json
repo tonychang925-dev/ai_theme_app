@@ -1,0 +1,15 @@
+{
+  "run_id": "20260217_223859",
+  "phase": "P1.phase1",
+  "pending": [
+    {
+      "type": "fetch_tasks",
+      "args": {
+        "task_prefix": "P1.phase1",
+        "status": "Todo,Doing,In review",
+        "output": "tmp/runs/20260217_223859/preflight_tasks.json"
+      },
+      "reason": "dns_transient"
+    }
+  ]
+}

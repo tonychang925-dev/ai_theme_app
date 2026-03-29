@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "1c669bd1fb8c", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述上海蔬菜和西瓜价格变化，与预制菜题材本体无关，属于市场噪音或无关内容，无信息量用于知识构建。"}}

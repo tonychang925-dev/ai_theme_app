@@ -1,0 +1,544 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "卫生洁具",
+      "evidence_span": "公司产品主要包括卫生洁具、陶瓷砖、岩板和整体厨卫"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "陶瓷砖",
+      "evidence_span": "公司产品主要包括卫生洁具、陶瓷砖、岩板和整体厨卫"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "岩板",
+      "evidence_span": "公司产品主要包括卫生洁具、陶瓷砖、岩板和整体厨卫"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "整体厨卫",
+      "evidence_span": "公司产品主要包括卫生洁具、陶瓷砖、岩板和整体厨卫"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合型卫浴企业",
+      "evidence_span": "成为首家在上交所主板上市的综合型卫浴企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "装配式建筑产业基地企业",
+      "evidence_span": "公司被认定为第一批装配式建筑产业基地的企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "民族卫浴品牌",
+      "evidence_span": "传递民族卫浴企业的匠心精神"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能卫浴",
+      "evidence_span": "智能卫浴的收入为3.39亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能坐便器",
+      "evidence_span": "聚焦智能坐便器、浴室柜、浴室五金等全品类卫浴产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "浴室柜",
+      "evidence_span": "聚焦智能坐便器、浴室柜、浴室五金等全品类卫浴产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "浴室五金",
+      "evidence_span": "聚焦智能坐便器、浴室柜、浴室五金等全品类卫浴产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阳台柜",
+      "evidence_span": "以及阳台柜等配套产品的研发生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED紫外线杀菌智能产品",
+      "evidence_span": "公司研发了LED紫外线杀菌智能产品、免触感应产品和自动消毒产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "免触感应产品",
+      "evidence_span": "公司研发了LED紫外线杀菌智能产品、免触感应产品和自动消毒产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动消毒产品",
+      "evidence_span": "公司研发了LED紫外线杀菌智能产品、免触感应产品和自动消毒产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "监测健康智能产品",
+      "evidence_span": "公司还布局研发了监测健康智能产品、康养适老产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "康养适老产品",
+      "evidence_span": "公司还布局研发了监测健康智能产品、康养适老产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卫生陶瓷",
+      "evidence_span": "卫生洁具包括卫生陶瓷、五金洁具、浴缸、淋浴房和浴室柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "五金洁具",
+      "evidence_span": "卫生洁具包括卫生陶瓷、五金洁具、浴缸、淋浴房和浴室柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "浴缸",
+      "evidence_span": "卫生洁具包括卫生陶瓷、五金洁具、浴缸、淋浴房和浴室柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "淋浴房",
+      "evidence_span": "卫生洁具包括卫生陶瓷、五金洁具、浴缸、淋浴房和浴室柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抛釉砖",
+      "evidence_span": "陶瓷砖包括抛釉砖、抛光砖、仿古砖、内墙砖、景观砖等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抛光砖",
+      "evidence_span": "陶瓷砖包括抛釉砖、抛光砖、仿古砖、内墙砖、景观砖等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仿古砖",
+      "evidence_span": "陶瓷砖包括抛釉砖、抛光砖、仿古砖、内墙砖、景观砖等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内墙砖",
+      "evidence_span": "陶瓷砖包括抛釉砖、抛光砖、仿古砖、内墙砖、景观砖等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "景观砖",
+      "evidence_span": "陶瓷砖包括抛釉砖、抛光砖、仿古砖、内墙砖、景观砖等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整体浴室",
+      "evidence_span": "整体厨卫主要包括整体浴室和整体厨房"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整体厨房",
+      "evidence_span": "整体厨卫主要包括整体浴室和整体厨房"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高硬度纳米自洁釉技术",
+      "evidence_span": "高硬度纳米自洁釉技术处于国内领先水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精陶质卫生陶瓷制造技术",
+      "evidence_span": "精陶质卫生陶瓷制造技术为河北省科技支撑计划项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "紫外线杀菌技术",
+      "evidence_span": "将紫外线杀菌技术、双重水过滤技术、除菌技术、抗菌技术等先进技术应用到产品中"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双重水过滤技术",
+      "evidence_span": "将紫外线杀菌技术、双重水过滤技术、除菌技术、抗菌技术等先进技术应用到产品中"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "除菌技术",
+      "evidence_span": "将紫外线杀菌技术、双重水过滤技术、除菌技术、抗菌技术等先进技术应用到产品中"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗菌技术",
+      "evidence_span": "将紫外线杀菌技术、双重水过滤技术、除菌技术、抗菌技术等先进技术应用到产品中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "居然之家",
+      "evidence_span": "目前公司主要合作的KA卖场包括居然之家、红星美凯龙、月星、欧亚达等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "红星美凯龙",
+      "evidence_span": "目前公司主要合作的KA卖场包括居然之家、红星美凯龙、月星、欧亚达等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "月星",
+      "evidence_span": "目前公司主要合作的KA卖场包括居然之家、红星美凯龙、月星、欧亚达等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧亚达",
+      "evidence_span": "目前公司主要合作的KA卖场包括居然之家、红星美凯龙、月星、欧亚达等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "圣都",
+      "evidence_span": "公司与圣都、华杰东方、方林、都都等头部装企以及欧派优材、业之峰连锁装饰等供应链平台新签订了全国战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华杰东方",
+      "evidence_span": "公司与圣都、华杰东方、方林、都都等头部装企以及欧派优材、业之峰连锁装饰等供应链平台新签订了全国战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "方林",
+      "evidence_span": "公司与圣都、华杰东方、方林、都都等头部装企以及欧派优材、业之峰连锁装饰等供应链平台新签订了全国战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "都都",
+      "evidence_span": "公司与圣都、华杰东方、方林、都都等头部装企以及欧派优材、业之峰连锁装饰等供应链平台新签订了全国战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧派优材",
+      "evidence_span": "公司与圣都、华杰东方、方林、都都等头部装企以及欧派优材、业之峰连锁装饰等供应链平台新签订了全国战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "业之峰连锁装饰",
+      "evidence_span": "公司与圣都、华杰东方、方林、都都等头部装企以及欧派优材、业之峰连锁装饰等供应链平台新签订了全国战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "碧桂园",
+      "evidence_span": "目前，公司主要合作客户包括碧桂园、保利、龙湖、金地、中建八局、中铁建工等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保利",
+      "evidence_span": "目前，公司主要合作客户包括碧桂园、保利、龙湖、金地、中建八局、中铁建工等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "龙湖",
+      "evidence_span": "目前，公司主要合作客户包括碧桂园、保利、龙湖、金地、中建八局、中铁建工等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金地",
+      "evidence_span": "目前，公司主要合作客户包括碧桂园、保利、龙湖、金地、中建八局、中铁建工等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中建八局",
+      "evidence_span": "目前，公司主要合作客户包括碧桂园、保利、龙湖、金地、中建八局、中铁建工等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁建工",
+      "evidence_span": "目前，公司主要合作客户包括碧桂园、保利、龙湖、金地、中建八局、中铁建工等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "整装卫浴",
+      "evidence_span": "整装卫浴B端确定放量"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能卫浴",
+      "evidence_span": "智能和整装卫浴布局助力崛起"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "精装修工程业务",
+      "evidence_span": "受益精装修工程业务持续高增长"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "卫生洁具",
+        "evidence_span": "公司产品主要包括卫生洁具、陶瓷砖、岩板和整体厨卫"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "陶瓷砖",
+        "evidence_span": "公司产品主要包括卫生洁具、陶瓷砖、岩板和整体厨卫"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "岩板",
+        "evidence_span": "公司产品主要包括卫生洁具、陶瓷砖、岩板和整体厨卫"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "整体厨卫",
+        "evidence_span": "公司产品主要包括卫生洁具、陶瓷砖、岩板和整体厨卫"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合型卫浴企业",
+        "evidence_span": "成为首家在上交所主板上市的综合型卫浴企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "装配式建筑产业基地企业",
+        "evidence_span": "公司被认定为第一批装配式建筑产业基地的企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "民族卫浴品牌",
+        "evidence_span": "传递民族卫浴企业的匠心精神"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能卫浴",
+        "evidence_span": "智能卫浴的收入为3.39亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能坐便器",
+        "evidence_span": "聚焦智能坐便器、浴室柜、浴室五金等全品类卫浴产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "浴室柜",
+        "evidence_span": "聚焦智能坐便器、浴室柜、浴室五金等全品类卫浴产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "浴室五金",
+        "evidence_span": "聚焦智能坐便器、浴室柜、浴室五金等全品类卫浴产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阳台柜",
+        "evidence_span": "以及阳台柜等配套产品的研发生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED紫外线杀菌智能产品",
+        "evidence_span": "公司研发了LED紫外线杀菌智能产品、免触感应产品和自动消毒产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "免触感应产品",
+        "evidence_span": "公司研发了LED紫外线杀菌智能产品、免触感应产品和自动消毒产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动消毒产品",
+        "evidence_span": "公司研发了LED紫外线杀菌智能产品、免触感应产品和自动消毒产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "监测健康智能产品",
+        "evidence_span": "公司还布局研发了监测健康智能产品、康养适老产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "康养适老产品",
+        "evidence_span": "公司还布局研发了监测健康智能产品、康养适老产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卫生陶瓷",
+        "evidence_span": "卫生洁具包括卫生陶瓷、五金洁具、浴缸、淋浴房和浴室柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "五金洁具",
+        "evidence_span": "卫生洁具包括卫生陶瓷、五金洁具、浴缸、淋浴房和浴室柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "浴缸",
+        "evidence_span": "卫生洁具包括卫生陶瓷、五金洁具、浴缸、淋浴房和浴室柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "淋浴房",
+        "evidence_span": "卫生洁具包括卫生陶瓷、五金洁具、浴缸、淋浴房和浴室柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "浴室柜",
+        "evidence_span": "卫生洁具包括卫生陶瓷、五金洁具、浴缸、淋浴房和浴室柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抛釉砖",
+        "evidence_span": "陶瓷砖包括抛釉砖、抛光砖、仿古砖、内墙砖、景观砖等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抛光砖",
+        "evidence_span": "陶瓷砖包括抛釉砖、抛光砖、仿古砖、内墙砖、景观砖等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仿古砖",
+        "evidence_span": "陶瓷砖包括抛釉砖、抛光砖、仿古砖、内墙砖、景观砖等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内墙砖",
+        "evidence_span": "陶瓷砖包括抛釉砖、抛光砖、仿古砖、内墙砖、景观砖等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "景观砖",
+        "evidence_span": "陶瓷砖包括抛釉砖、抛光砖、仿古砖、内墙砖、景观砖等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整体浴室",
+        "evidence_span": "整体厨卫主要包括整体浴室和整体厨房"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整体厨房",
+        "evidence_span": "整体厨卫主要包括整体浴室和整体厨房"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高硬度纳米自洁釉技术",
+        "evidence_span": "高硬度纳米自洁釉技术处于国内领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精陶质卫生陶瓷制造技术",
+        "evidence_span": "精陶质卫生陶瓷制造技术为河北省科技支撑计划项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "紫外线杀菌技术",
+        "evidence_span": "将紫外线杀菌技术、双重水过滤技术、除菌技术、抗菌技术等先进技术应用到产品中"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双重水过滤技术",
+        "evidence_span": "将紫外线杀菌技术、双重水过滤技术、除菌技术、抗菌技术等先进技术应用到产品中"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "除菌技术",
+        "evidence_span": "将紫外线杀菌技术、双重水过滤技术、除菌技术、抗菌技术等先进技术应用到产品中"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗菌技术",
+        "evidence_span": "将紫外线杀菌技术、双重水过滤技术、除菌技术、抗菌技术等先进技术应用到产品中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "居然之家",
+        "evidence_span": "目前公司主要合作的KA卖场包括居然之家、红星美凯龙、月星、欧亚达等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "红星美凯龙",
+        "evidence_span": "目前公司主要合作的KA卖场包括居然之家、红星美凯龙、月星、欧亚达等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "月星",
+        "evidence_span": "目前公司主要合作的KA卖场包括居然之家、红星美凯龙、月星、欧亚达等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧亚达",
+        "evidence_span": "目前公司主要合作的KA卖场包括居然之家、红星美凯龙、月星、欧亚达等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "圣都",
+        "evidence_span": "公司与圣都、华杰东方、方林、都都等头部装企以及欧派优材、业之峰连锁装饰等供应链平台新签订了全国战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华杰东方",
+        "evidence_span": "公司与圣都、华杰东方、方林、都都等头部装企以及欧派优材、业之峰连锁装饰等供应链平台新签订了全国战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "方林",
+        "evidence_span": "公司与圣都、华杰东方、方林、都都等头部装企以及欧派优材、业之峰连锁装饰等供应链平台新签订了全国战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "都都",
+        "evidence_span": "公司与圣都、华杰东方、方林、都都等头部装企以及欧派优材、业之峰连锁装饰等供应链平台新签订了全国战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧派优材",
+        "evidence_span": "公司与圣都、华杰东方、方林、都都等头部装企以及欧派优材、业之峰连锁装饰等供应链平台新签订了全国战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "业之峰连锁装饰",
+        "evidence_span": "公司与圣都、华杰东方、方林、都都等头部装企以及欧派优材、业之峰连锁装饰等供应链平台新签订了全国战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "碧桂园",
+        "evidence_span": "目前，公司主要合作客户包括碧桂园、保利、龙湖、金地、中建八局、中铁建工等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保利",
+        "evidence_span": "目前，公司主要合作客户包括碧桂园、保利、龙湖、金地、中建八局、中铁建工等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "龙湖",
+        "evidence_span": "目前，公司主要合作客户包括碧桂园、保利、龙湖、金地、中建八局、中铁建工等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金地",
+        "evidence_span": "目前，公司主要合作客户包括碧桂园、保利、龙湖、金地、中建八局、中铁建工等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中建八局",
+        "evidence_span": "目前，公司主要合作客户包括碧桂园、保利、龙湖、金地、中建八局、中铁建工等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁建工",
+        "evidence_span": "目前，公司主要合作客户包括碧桂园、保利、龙湖、金地、中建八局、中铁建工等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "整装卫浴",
+        "evidence_span": "整装卫浴B端确定放量"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能卫浴",
+        "evidence_span": "智能和整装卫浴布局助力崛起"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "精装修工程业务",
+        "evidence_span": "受益精装修工程业务持续高增长"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T21:07:42"
+}

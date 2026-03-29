@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "6fd925b837e0", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段描述美光通知DDR4停产的事件，但DDR4作为存储技术的一部分，其停产信息可能隐含技术迭代或行业趋势知识，混合了事件和潜在行业知识。"}}

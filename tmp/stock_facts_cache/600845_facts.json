@@ -1,0 +1,449 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业软件",
+      "evidence_span": "公司信息化业务包括工业软件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务业应用",
+      "evidence_span": "公司信息化业务包括工业软件、服务业应用、信息服务三大细分"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息服务",
+      "evidence_span": "公司信息化业务包括工业软件、服务业应用、信息服务三大细分"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化业务",
+      "evidence_span": "自动化业务以自主可控中大型 PLC 为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "机器人业务",
+      "evidence_span": "机器人业务方面自主研发工业机器人"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧交通业务",
+      "evidence_span": "智慧交通业务方面面向城市轨交、地面交通管理系统等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新一代信息基础设施",
+      "evidence_span": "新一代信息基础设施方面为用户提供融合高品质 IDC、云计算、网络安全等服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内工业信息化龙头",
+      "evidence_span": "宝信软件是国内领先工业软件信息化企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "钢铁信息化领军企业",
+      "evidence_span": "钢铁信息化领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工业数字化龙头",
+      "evidence_span": "工业数字化龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业软件产品",
+      "evidence_span": "打造“流程管控+数字智能”融合驱动的新一代工业软件产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "企业智慧治理类软件产品",
+      "evidence_span": "面向集团型、大中型企业提供“企业智慧治理”类软件产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SaaS软件服务",
+      "evidence_span": "面向集团型、大中型企业提供“企业智慧治理”类软件产品和 SaaS 软件服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "平台生态相关产品",
+      "evidence_span": "“平台生态”相关产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能工厂数字化转型解决方案",
+      "evidence_span": "为客户提供智能工厂数字化转型解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装备数智化整体解决方案",
+      "evidence_span": "提供装备数智化整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全生命周期服务",
+      "evidence_span": "提供装备数智化整体解决方案和全生命周期服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业机器人",
+      "evidence_span": "自主研发工业机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全生命周期机器人平台化运营服务",
+      "evidence_span": "提供全生命周期机器人平台化运营服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高品质 IDC",
+      "evidence_span": "为用户提供融合高品质 IDC、云计算、网络安全等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云计算服务",
+      "evidence_span": "为用户提供融合高品质 IDC、云计算、网络安全等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络安全服务",
+      "evidence_span": "为用户提供融合高品质 IDC、云计算、网络安全等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息基础设施综合解决方案",
+      "evidence_span": "提供信息基础设施综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MES软件",
+      "evidence_span": "公司工业软件覆盖 MES、ERP等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ERP软件",
+      "evidence_span": "公司工业软件覆盖 MES、ERP等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自主可控中大型PLC",
+      "evidence_span": "前瞻布局自主可控中大型PLC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全栈国产化工控软硬件产品矩阵",
+      "evidence_span": "具备全栈国产化工控软硬件产品矩阵"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业互联网平台",
+      "evidence_span": "基于工业互联网平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "宝罗机器人云平台",
+      "evidence_span": "基于行业经验和宝罗机器人云平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "宝联登工业互联网平台基数底座",
+      "evidence_span": "基于宝联登工业互联网平台基数底座"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大型PLC的硬件、Runtime和组态软件全部自主知识产权",
+      "evidence_span": "成为国内首家拥有大型PLC的硬件、Runtime 和组态软件全部自主知识产权的公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "钢铁行业",
+      "evidence_span": "主要面向钢铁、有色、化工等制造业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "有色行业",
+      "evidence_span": "主要面向钢铁、有色、化工等制造业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "化工行业",
+      "evidence_span": "主要面向钢铁、有色、化工等制造业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "集团型、大中型企业",
+      "evidence_span": "面向集团型、大中型企业提供“企业智慧治理”类软件产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "3C行业",
+      "evidence_span": "用于 3C、新能源、金属加工等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源行业",
+      "evidence_span": "用于 3C、新能源、金属加工等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金属加工行业",
+      "evidence_span": "用于 3C、新能源、金属加工等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "城市轨交",
+      "evidence_span": "面向城市轨交、地面交通管理系统等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "地面交通管理系统",
+      "evidence_span": "面向城市轨交、地面交通管理系统等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝武集团",
+      "evidence_span": "支持宝武集团“多基地一体化运营”管理体系运行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广西宏旺",
+      "evidence_span": "2024年与广西宏旺、港迪技术等签约合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "港迪技术",
+      "evidence_span": "2024年与广西宏旺、港迪技术等签约合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "核心环节的国产化如大型 PLC、工业机器人、传感器等将面临市场机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业软件",
+        "evidence_span": "公司信息化业务包括工业软件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "服务业应用",
+        "evidence_span": "公司信息化业务包括工业软件、服务业应用、信息服务三大细分"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息服务",
+        "evidence_span": "公司信息化业务包括工业软件、服务业应用、信息服务三大细分"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动化业务",
+        "evidence_span": "自动化业务以自主可控中大型 PLC 为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机器人业务",
+        "evidence_span": "机器人业务方面自主研发工业机器人"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧交通业务",
+        "evidence_span": "智慧交通业务方面面向城市轨交、地面交通管理系统等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新一代信息基础设施",
+        "evidence_span": "新一代信息基础设施方面为用户提供融合高品质 IDC、云计算、网络安全等服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内工业信息化龙头",
+        "evidence_span": "宝信软件是国内领先工业软件信息化企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "钢铁信息化领军企业",
+        "evidence_span": "钢铁信息化领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工业数字化龙头",
+        "evidence_span": "工业数字化龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业软件产品",
+        "evidence_span": "打造“流程管控+数字智能”融合驱动的新一代工业软件产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "企业智慧治理类软件产品",
+        "evidence_span": "面向集团型、大中型企业提供“企业智慧治理”类软件产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SaaS软件服务",
+        "evidence_span": "面向集团型、大中型企业提供“企业智慧治理”类软件产品和 SaaS 软件服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "平台生态相关产品",
+        "evidence_span": "“平台生态”相关产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能工厂数字化转型解决方案",
+        "evidence_span": "为客户提供智能工厂数字化转型解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装备数智化整体解决方案",
+        "evidence_span": "提供装备数智化整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全生命周期服务",
+        "evidence_span": "提供装备数智化整体解决方案和全生命周期服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业机器人",
+        "evidence_span": "自主研发工业机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全生命周期机器人平台化运营服务",
+        "evidence_span": "提供全生命周期机器人平台化运营服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高品质 IDC",
+        "evidence_span": "为用户提供融合高品质 IDC、云计算、网络安全等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云计算服务",
+        "evidence_span": "为用户提供融合高品质 IDC、云计算、网络安全等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络安全服务",
+        "evidence_span": "为用户提供融合高品质 IDC、云计算、网络安全等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息基础设施综合解决方案",
+        "evidence_span": "提供信息基础设施综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MES软件",
+        "evidence_span": "公司工业软件覆盖 MES、ERP等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ERP软件",
+        "evidence_span": "公司工业软件覆盖 MES、ERP等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自主可控中大型PLC",
+        "evidence_span": "前瞻布局自主可控中大型PLC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全栈国产化工控软硬件产品矩阵",
+        "evidence_span": "具备全栈国产化工控软硬件产品矩阵"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业互联网平台",
+        "evidence_span": "基于工业互联网平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "宝罗机器人云平台",
+        "evidence_span": "基于行业经验和宝罗机器人云平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "宝联登工业互联网平台基数底座",
+        "evidence_span": "基于宝联登工业互联网平台基数底座"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大型PLC的硬件、Runtime和组态软件全部自主知识产权",
+        "evidence_span": "成为国内首家拥有大型PLC的硬件、Runtime 和组态软件全部自主知识产权的公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "钢铁行业",
+        "evidence_span": "主要面向钢铁、有色、化工等制造业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "有色行业",
+        "evidence_span": "主要面向钢铁、有色、化工等制造业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "化工行业",
+        "evidence_span": "主要面向钢铁、有色、化工等制造业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "集团型、大中型企业",
+        "evidence_span": "面向集团型、大中型企业提供“企业智慧治理”类软件产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "3C行业",
+        "evidence_span": "用于 3C、新能源、金属加工等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源行业",
+        "evidence_span": "用于 3C、新能源、金属加工等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金属加工行业",
+        "evidence_span": "用于 3C、新能源、金属加工等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "城市轨交",
+        "evidence_span": "面向城市轨交、地面交通管理系统等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "地面交通管理系统",
+        "evidence_span": "面向城市轨交、地面交通管理系统等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝武集团",
+        "evidence_span": "支持宝武集团“多基地一体化运营”管理体系运行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广西宏旺",
+        "evidence_span": "2024年与广西宏旺、港迪技术等签约合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "港迪技术",
+        "evidence_span": "2024年与广西宏旺、港迪技术等签约合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "核心环节的国产化如大型 PLC、工业机器人、传感器等将面临市场机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:30:08"
+}

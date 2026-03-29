@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:43:26", "result": {"span_uid": "12832586f968", "action": "rewrite", "canonical_text": "高通AI芯片采用自研神经处理单元（NPU）技术，具有高内存容量和性价比的特点。", "final_type": "core", "final_role": "AI芯片技术特点", "stability": "high", "reason": "改写后去除了事件化表述，保留了技术特点这一稳定知识，可作为高通AI芯片的核心特征。"}}

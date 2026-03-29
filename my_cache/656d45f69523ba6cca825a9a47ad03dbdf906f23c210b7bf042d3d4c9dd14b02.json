@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "6b21a5843df9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了中国电影总局放宽国产电视剧限制政策的事件，属于政策发布动态，但政策内容（放宽限制）可能涉及影视题材的监管环境知识，因此混合了事件和潜在知识。"}}

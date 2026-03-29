@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:14:55", "result": {"span_uid": "fc9b0d66d7dc", "action": "rewrite", "canonical_text": "阔叶浆需求量年度增长率约为3%，针叶浆需求量年度增长率约为1.3%。", "final_type": "signal", "final_role": "需求增长率", "stability": "medium", "reason": "该片段描述纸浆需求增长率，属于景气变化信息，改写后去除了引用口吻（“根据芬林集团”），使其更稳定、可独立理解。"}}

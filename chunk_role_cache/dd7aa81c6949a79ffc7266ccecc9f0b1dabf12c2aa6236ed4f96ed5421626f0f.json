@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "73fdc36545f8", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落引用Omdia研究报告，提供全球人型机器人出货量预测和复合年增长率数据，这属于市场趋势和统计知识，但可能混有事件性元素（如研究报告发布），因此作为候选知识。"}}

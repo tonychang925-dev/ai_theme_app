@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "财富信用",
+      "evidence_span": "科学梳理并整合了“财富信用”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自营投资",
+      "evidence_span": "科学梳理并整合了“自营投资”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资银行",
+      "evidence_span": "科学梳理并整合了“投资银行”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产管理",
+      "evidence_span": "科学梳理并整合了“资产管理”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "机构业务（研究咨询）",
+      "evidence_span": "科学梳理并整合了“机构业务（研究咨询）”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域性龙头券商",
+      "evidence_span": "坐西北以望天下的区域性龙头券商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国性综合上市券商",
+      "evidence_span": "已成为行业内有一定竞争力和显著区域优势的全国性综合上市券商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中小型区域性券商",
+      "evidence_span": "以经纪业务为主的中小型区域性券商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "经纪业务",
+      "evidence_span": "以经纪业务为主的中小型区域性券商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自营业务",
+      "evidence_span": "公司传统的经纪业务、自营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "投资银行业务",
+      "evidence_span": "公司传统的...投资银行业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产管理业务",
+      "evidence_span": "公司传统的...资产管理业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信用交易业务",
+      "evidence_span": "公司传统的...信用交易业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固定收益业务",
+      "evidence_span": "公司传统的...固定收益业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中小企业融资服务业务",
+      "evidence_span": "公司传统的...中小企业融资服务业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "研究咨询业务",
+      "evidence_span": "公司传统的...研究咨询业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新三板业务",
+      "evidence_span": "新三板战略布局"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化转型",
+      "evidence_span": "积极布局、扎实推进数字化转型与金融科技创新工作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "金融科技",
+      "evidence_span": "积极布局、扎实推进数字化转型与金融科技创新工作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "分享西部经济成长",
+      "evidence_span": "分享西部经济成长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "立足陕西的成长性券商",
+      "evidence_span": "首次覆盖-立足陕西的成长性券商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "陕西区域垄断",
+      "evidence_span": "陕西区域垄断"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新三板业务先发优势",
+      "evidence_span": "新三板业务先发优势明显"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益制度改革",
+      "evidence_span": "受益制度改革"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "财富信用",
+        "evidence_span": "科学梳理并整合了“财富信用”"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自营投资",
+        "evidence_span": "科学梳理并整合了“自营投资”"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资银行",
+        "evidence_span": "科学梳理并整合了“投资银行”"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产管理",
+        "evidence_span": "科学梳理并整合了“资产管理”"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机构业务（研究咨询）",
+        "evidence_span": "科学梳理并整合了“机构业务（研究咨询）”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域性龙头券商",
+        "evidence_span": "坐西北以望天下的区域性龙头券商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国性综合上市券商",
+        "evidence_span": "已成为行业内有一定竞争力和显著区域优势的全国性综合上市券商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中小型区域性券商",
+        "evidence_span": "以经纪业务为主的中小型区域性券商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "经纪业务",
+        "evidence_span": "以经纪业务为主的中小型区域性券商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自营业务",
+        "evidence_span": "公司传统的经纪业务、自营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "投资银行业务",
+        "evidence_span": "公司传统的...投资银行业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产管理业务",
+        "evidence_span": "公司传统的...资产管理业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信用交易业务",
+        "evidence_span": "公司传统的...信用交易业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固定收益业务",
+        "evidence_span": "公司传统的...固定收益业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中小企业融资服务业务",
+        "evidence_span": "公司传统的...中小企业融资服务业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "研究咨询业务",
+        "evidence_span": "公司传统的...研究咨询业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新三板业务",
+        "evidence_span": "新三板战略布局"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化转型",
+        "evidence_span": "积极布局、扎实推进数字化转型与金融科技创新工作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "金融科技",
+        "evidence_span": "积极布局、扎实推进数字化转型与金融科技创新工作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "分享西部经济成长",
+        "evidence_span": "分享西部经济成长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "立足陕西的成长性券商",
+        "evidence_span": "首次覆盖-立足陕西的成长性券商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "陕西区域垄断",
+        "evidence_span": "陕西区域垄断"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新三板业务先发优势",
+        "evidence_span": "新三板业务先发优势明显"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益制度改革",
+        "evidence_span": "受益制度改革"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:09:51"
+}

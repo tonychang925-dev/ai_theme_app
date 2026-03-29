@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "油墨制造",
+      "evidence_span": "传统油墨制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "教育",
+      "evidence_span": "转型为“油墨+教育”双主业发展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "绿色环保油墨研发、生产、销售综合服务商",
+      "evidence_span": "是绿色环保油墨研发、生产、销售综合服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印刷油墨",
+      "evidence_span": "应用于印刷油墨生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中高考复读服务",
+      "evidence_span": "提供中高考复读"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全日制高中教育服务",
+      "evidence_span": "全日制高中"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中职教育服务",
+      "evidence_span": "中职教育服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全封闭培训",
+      "evidence_span": "提供“两季三训”全封闭培训"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "K12课外培训",
+      "evidence_span": "K12课外培训"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "职业资格认证教程",
+      "evidence_span": "提供金融、老师、会计师等职业认证教程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "个性化考证培训服务",
+      "evidence_span": "为学员提供个性化考证培训服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高分子材料研发",
+      "evidence_span": "专注于高分子材料研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "改性植物油研发",
+      "evidence_span": "改性植物油研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI+教育",
+      "evidence_span": "积极布局“AI+教育”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中昊芯英",
+      "evidence_span": "战略投资中昊芯英"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "AI+教育",
+      "evidence_span": "AI+教育有望成为重要应用场景"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "油墨制造",
+        "evidence_span": "传统油墨制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "教育",
+        "evidence_span": "转型为“油墨+教育”双主业发展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "绿色环保油墨研发、生产、销售综合服务商",
+        "evidence_span": "是绿色环保油墨研发、生产、销售综合服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印刷油墨",
+        "evidence_span": "应用于印刷油墨生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中高考复读服务",
+        "evidence_span": "提供中高考复读"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全日制高中教育服务",
+        "evidence_span": "全日制高中"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中职教育服务",
+        "evidence_span": "中职教育服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全封闭培训",
+        "evidence_span": "提供“两季三训”全封闭培训"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "K12课外培训",
+        "evidence_span": "K12课外培训"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "职业资格认证教程",
+        "evidence_span": "提供金融、老师、会计师等职业认证教程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "个性化考证培训服务",
+        "evidence_span": "为学员提供个性化考证培训服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高分子材料研发",
+        "evidence_span": "专注于高分子材料研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "改性植物油研发",
+        "evidence_span": "改性植物油研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI+教育",
+        "evidence_span": "积极布局“AI+教育”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中昊芯英",
+        "evidence_span": "战略投资中昊芯英"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "AI+教育",
+        "evidence_span": "AI+教育有望成为重要应用场景"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:04:35"
+}

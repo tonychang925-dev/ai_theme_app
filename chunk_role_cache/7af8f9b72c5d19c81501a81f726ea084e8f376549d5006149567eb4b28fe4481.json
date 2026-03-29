@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "24debc0dbed0", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段描述了湖南发布政策措施的事件，但政策内容（如补贴金额）可能包含对低空经济支持方式的潜在知识，混合了事件和可能的政策知识。"}}

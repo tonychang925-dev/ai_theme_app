@@ -1,0 +1,29 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "PEEK生产",
+      "evidence_span": "PEEK(聚醚醚酮)生产商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "PEEK生产商",
+      "evidence_span": "PEEK(聚醚醚酮)生产商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "PEEK生产",
+        "evidence_span": "PEEK(聚醚醚酮)生产商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "PEEK生产商",
+        "evidence_span": "PEEK(聚醚醚酮)生产商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:39:23"
+}

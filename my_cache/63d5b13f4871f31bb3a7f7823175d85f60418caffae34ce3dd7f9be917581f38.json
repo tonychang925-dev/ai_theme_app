@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:53:30", "result": {"chunk_id": "b90f51d8cf9a", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述智界新S7开启预售的具体事件，包括预售价和促销权益，属于明确的时间性动态，没有提供关于题材本体的静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "8b23463f2fb6", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到ASML的EUV技术扩展和产品组合，涉及半导体设备的技术路径和核心构成，具有稳定知识价值，但以公司新闻形式呈现，混合了事件性内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "e9e22ae0b065", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了Snap发布第五代Spectacles AR眼镜的事件，包含具体功能如与移动设备协作、应用程序使用等，这些是AR眼镜的应用知识。但以大会事件为背景，混合了事件信息。"}}

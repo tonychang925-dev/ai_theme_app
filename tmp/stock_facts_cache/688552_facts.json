@@ -1,0 +1,134 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "防空预警雷达",
+      "evidence_span": "主营防空预警雷达"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "雷达",
+      "evidence_span": "公司的主营业务收入主要来自雷达及配套装备和雷达零部件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "配套装备",
+      "evidence_span": "公司的主营业务收入主要来自雷达及配套装备和雷达零部件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "雷达零部件",
+      "evidence_span": "公司的主营业务收入主要来自雷达及配套装备和雷达零部件"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级专精特新“小巨人”",
+      "evidence_span": "国家级专精特新“小巨人”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "雷达及配套装备",
+      "evidence_span": "雷达及配套装备的销售收入分别为62,372.90万元、65,263.50万元和89,431.33万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "雷达零部件",
+      "evidence_span": "雷达零部件收入分别为14,497.96万元、13,594.78万元和5,579.23万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "雷达维修器材",
+      "evidence_span": "雷达维修器材的销售收入分别为11,320.73万元、9,350.07万元和760.76万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防空预警雷达模拟设备",
+      "evidence_span": "积极发展防空预警雷达模拟设备、空管雷达等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空管雷达",
+      "evidence_span": "积极发展防空预警雷达模拟设备、空管雷达等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军贸产品",
+      "evidence_span": "公司某型号军贸产品实现销售收入2,888.40万元"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军方客户",
+      "evidence_span": "公司产品和服务的主要客户主要集中在华北地区，因此公司的销售收入主要分布在华北地区"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军工集团",
+      "evidence_span": "公司的客户类型主要为军方客户和军工集团"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "防空预警雷达",
+        "evidence_span": "主营防空预警雷达"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "雷达及配套装备",
+        "evidence_span": "公司的主营业务收入主要来自雷达及配套装备和雷达零部件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "雷达零部件",
+        "evidence_span": "公司的主营业务收入主要来自雷达及配套装备和雷达零部件"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级专精特新“小巨人”",
+        "evidence_span": "国家级专精特新“小巨人”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "雷达及配套装备",
+        "evidence_span": "雷达及配套装备的销售收入分别为62,372.90万元、65,263.50万元和89,431.33万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "雷达零部件",
+        "evidence_span": "雷达零部件收入分别为14,497.96万元、13,594.78万元和5,579.23万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "雷达维修器材",
+        "evidence_span": "雷达维修器材的销售收入分别为11,320.73万元、9,350.07万元和760.76万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防空预警雷达模拟设备",
+        "evidence_span": "积极发展防空预警雷达模拟设备、空管雷达等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空管雷达",
+        "evidence_span": "积极发展防空预警雷达模拟设备、空管雷达等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军贸产品",
+        "evidence_span": "公司某型号军贸产品实现销售收入2,888.40万元"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军方客户",
+        "evidence_span": "公司产品和服务的主要客户主要集中在华北地区，因此公司的销售收入主要分布在华北地区"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军工集团",
+        "evidence_span": "公司的客户类型主要为军方客户和军工集团"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:47:51"
+}

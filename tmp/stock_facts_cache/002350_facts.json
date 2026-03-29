@@ -1,0 +1,799 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "配电设备研发",
+      "evidence_span": "配电设备研发与制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "制造",
+      "evidence_span": "配电设备研发与制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源投资",
+      "evidence_span": "新能源投资与建设"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建设",
+      "evidence_span": "新能源投资与建设"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧能源管理",
+      "evidence_span": "智慧能源管理"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "配电自动化设备开发与生产企业",
+      "evidence_span": "国内最早从事配电自动化设备开发与生产的企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "输配电及控制设备制造企业",
+      "evidence_span": "公司属于输配电及控制设备制造行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "12kV及以下配电及控制设备",
+      "evidence_span": "主营业务为12kV及以下配电及控制设备的研发、生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中低压开关系列产品",
+      "evidence_span": "中低压开关系列产品（中置柜、柱上开关等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配电变压器系列产品",
+      "evidence_span": "配电变压器系列产品（美式箱变、欧式箱变、硅钢变压器以及非晶变压器等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配电网自动化系列产品",
+      "evidence_span": "配电网自动化系列产品（环网柜、重合器、模块化变电站等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配电设备元器件系列产品",
+      "evidence_span": "配电设备元器件系列产品（电缆附件等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "故障定位类系列产品",
+      "evidence_span": "故障定位类系列产品（故障指示器等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力电子系列产品",
+      "evidence_span": "电力电子系列产品（无功补偿、超级电容等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏发电系列产品",
+      "evidence_span": "光伏发电等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电/光伏华式箱变",
+      "evidence_span": "风电/光伏华式箱变"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电/光伏美式箱变",
+      "evidence_span": "风电/光伏美式箱变"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模块化变电站产品",
+      "evidence_span": "模块化变电站产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分布式户外储能一体柜",
+      "evidence_span": "分布式户外储能一体柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "堆叠式家庭储能",
+      "evidence_span": "堆叠式家庭储能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源场站稳定协调控制装置",
+      "evidence_span": "新能源场站稳定协调控制装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池系统",
+      "evidence_span": "燃料电池系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空压机",
+      "evidence_span": "空压机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "控制器",
+      "evidence_span": "控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工商业分布式光伏电站",
+      "evidence_span": "工商业分布式光伏电站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集中式地面电站",
+      "evidence_span": "集中式地面电站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光储充氢项目",
+      "evidence_span": "光储充氢项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合能源服务",
+      "evidence_span": "综合能源服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧综合能源服务",
+      "evidence_span": "智慧综合能源服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电力服务",
+      "evidence_span": "智能电力服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能效管理",
+      "evidence_span": "能效管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配售电",
+      "evidence_span": "配售电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高低压成套设备",
+      "evidence_span": "高低压成套设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机电工程总包",
+      "evidence_span": "机电工程总包"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "35kV可分离连接器",
+      "evidence_span": "35kV可分离连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绝缘件",
+      "evidence_span": "绝缘件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SVG产品",
+      "evidence_span": "SVG产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集中式储能PCS",
+      "evidence_span": "集中式储能PCS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "组串式DC/DC储能PCS",
+      "evidence_span": "组串式DC/DC储能PCS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户用光储一体机",
+      "evidence_span": "户用光储一体机（混合逆变器）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能能量管理软件",
+      "evidence_span": "储能能量管理软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能控制软件",
+      "evidence_span": "储能控制软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池管理软件",
+      "evidence_span": "电池管理软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能云平台软件",
+      "evidence_span": "储能云平台软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能控制器",
+      "evidence_span": "储能控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通讯管理机",
+      "evidence_span": "通讯管理机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BMS",
+      "evidence_span": "BMS（主控、从控、三级）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能效网关",
+      "evidence_span": "能效网关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商用车燃料电池系统",
+      "evidence_span": "商用车燃料电池系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "叉车燃料电池系统",
+      "evidence_span": "叉车燃料电池系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清扫车燃料电池系统",
+      "evidence_span": "清扫车燃料电池系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢燃料电池车用空压机",
+      "evidence_span": "氢燃料电池车用空压机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "配电自动化技术",
+      "evidence_span": "配电自动化技术在行业内处于领先地位"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电池管理技术",
+      "evidence_span": "电池管理技术（BMS一、二、三级）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "储能EMS技术",
+      "evidence_span": "储能EMS技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "储能集装箱技术",
+      "evidence_span": "储能集装箱技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "储能电站集成技术",
+      "evidence_span": "储能电站集成技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微网集成技术",
+      "evidence_span": "微网集成技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氢电集成技术",
+      "evidence_span": "氢电集成技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃料电池系统集成与控制",
+      "evidence_span": "燃料电池系统集成与控制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "离心式空压机总成与控制",
+      "evidence_span": "离心式空压机总成与控制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "气动轴承设计与工艺",
+      "evidence_span": "气动轴承设计与工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电机电磁及结构设计",
+      "evidence_span": "电机电磁及结构设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光伏制氢新型电源系统",
+      "evidence_span": "研发光伏制氢新型电源系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自适应模糊PID控制算法",
+      "evidence_span": "采用自适应模糊PID控制算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无辅热低温冷启动设计",
+      "evidence_span": "采用无辅热低温冷启动设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "1500V高压储能控制系统",
+      "evidence_span": "完成了1500V高压储能控制系统与设备的设计与开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "家庭高压储能控制系统",
+      "evidence_span": "完成了家庭高压储能控制系统与设备的设计开发与应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网公司",
+      "evidence_span": "供应给国家电网公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网公司",
+      "evidence_span": "供应给南方电网公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "轨道交通领域",
+      "evidence_span": "应用于轨道交通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "冶金领域",
+      "evidence_span": "冶金"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石化领域",
+      "evidence_span": "石化"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "煤炭领域",
+      "evidence_span": "煤炭"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "质子汽车科技有限公司",
+      "evidence_span": "与质子汽车科技有限公司签署了燃料电池系统销售合同"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿华通",
+      "evidence_span": "与亿华通签署年度空压机销售框架及价格协议"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "配网智能化",
+      "evidence_span": "受益配网智能化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "配网集约化",
+      "evidence_span": "受益配网集约化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "配电网建设",
+      "evidence_span": "受益配电网建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "农网改造升级",
+      "evidence_span": "受益农网改造升级"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "配电设备研发与制造",
+        "evidence_span": "配电设备研发与制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源投资与建设",
+        "evidence_span": "新能源投资与建设"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧能源管理",
+        "evidence_span": "智慧能源管理"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "配电自动化设备开发与生产企业",
+        "evidence_span": "国内最早从事配电自动化设备开发与生产的企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "输配电及控制设备制造企业",
+        "evidence_span": "公司属于输配电及控制设备制造行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "12kV及以下配电及控制设备",
+        "evidence_span": "主营业务为12kV及以下配电及控制设备的研发、生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中低压开关系列产品",
+        "evidence_span": "中低压开关系列产品（中置柜、柱上开关等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配电变压器系列产品",
+        "evidence_span": "配电变压器系列产品（美式箱变、欧式箱变、硅钢变压器以及非晶变压器等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配电网自动化系列产品",
+        "evidence_span": "配电网自动化系列产品（环网柜、重合器、模块化变电站等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配电设备元器件系列产品",
+        "evidence_span": "配电设备元器件系列产品（电缆附件等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "故障定位类系列产品",
+        "evidence_span": "故障定位类系列产品（故障指示器等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力电子系列产品",
+        "evidence_span": "电力电子系列产品（无功补偿、超级电容等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏发电系列产品",
+        "evidence_span": "光伏发电等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电/光伏华式箱变",
+        "evidence_span": "风电/光伏华式箱变"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电/光伏美式箱变",
+        "evidence_span": "风电/光伏美式箱变"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模块化变电站产品",
+        "evidence_span": "模块化变电站产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分布式户外储能一体柜",
+        "evidence_span": "分布式户外储能一体柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "堆叠式家庭储能",
+        "evidence_span": "堆叠式家庭储能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源场站稳定协调控制装置",
+        "evidence_span": "新能源场站稳定协调控制装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池系统",
+        "evidence_span": "燃料电池系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空压机",
+        "evidence_span": "空压机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "控制器",
+        "evidence_span": "控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工商业分布式光伏电站",
+        "evidence_span": "工商业分布式光伏电站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集中式地面电站",
+        "evidence_span": "集中式地面电站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光储充氢项目",
+        "evidence_span": "光储充氢项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合能源服务",
+        "evidence_span": "综合能源服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧综合能源服务",
+        "evidence_span": "智慧综合能源服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电力服务",
+        "evidence_span": "智能电力服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能效管理",
+        "evidence_span": "能效管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配售电",
+        "evidence_span": "配售电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高低压成套设备",
+        "evidence_span": "高低压成套设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机电工程总包",
+        "evidence_span": "机电工程总包"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "35kV可分离连接器",
+        "evidence_span": "35kV可分离连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绝缘件",
+        "evidence_span": "绝缘件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SVG产品",
+        "evidence_span": "SVG产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集中式储能PCS",
+        "evidence_span": "集中式储能PCS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "组串式DC/DC储能PCS",
+        "evidence_span": "组串式DC/DC储能PCS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户用光储一体机",
+        "evidence_span": "户用光储一体机（混合逆变器）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能能量管理软件",
+        "evidence_span": "储能能量管理软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能控制软件",
+        "evidence_span": "储能控制软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池管理软件",
+        "evidence_span": "电池管理软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能云平台软件",
+        "evidence_span": "储能云平台软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能控制器",
+        "evidence_span": "储能控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通讯管理机",
+        "evidence_span": "通讯管理机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BMS",
+        "evidence_span": "BMS（主控、从控、三级）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能效网关",
+        "evidence_span": "能效网关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商用车燃料电池系统",
+        "evidence_span": "商用车燃料电池系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "叉车燃料电池系统",
+        "evidence_span": "叉车燃料电池系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清扫车燃料电池系统",
+        "evidence_span": "清扫车燃料电池系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢燃料电池车用空压机",
+        "evidence_span": "氢燃料电池车用空压机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "配电自动化技术",
+        "evidence_span": "配电自动化技术在行业内处于领先地位"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电池管理技术",
+        "evidence_span": "电池管理技术（BMS一、二、三级）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "储能EMS技术",
+        "evidence_span": "储能EMS技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "储能集装箱技术",
+        "evidence_span": "储能集装箱技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "储能电站集成技术",
+        "evidence_span": "储能电站集成技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微网集成技术",
+        "evidence_span": "微网集成技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氢电集成技术",
+        "evidence_span": "氢电集成技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃料电池系统集成与控制",
+        "evidence_span": "燃料电池系统集成与控制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "离心式空压机总成与控制",
+        "evidence_span": "离心式空压机总成与控制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "气动轴承设计与工艺",
+        "evidence_span": "气动轴承设计与工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电机电磁及结构设计",
+        "evidence_span": "电机电磁及结构设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光伏制氢新型电源系统",
+        "evidence_span": "研发光伏制氢新型电源系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自适应模糊PID控制算法",
+        "evidence_span": "采用自适应模糊PID控制算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无辅热低温冷启动设计",
+        "evidence_span": "采用无辅热低温冷启动设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "1500V高压储能控制系统",
+        "evidence_span": "完成了1500V高压储能控制系统与设备的设计与开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "家庭高压储能控制系统",
+        "evidence_span": "完成了家庭高压储能控制系统与设备的设计开发与应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网公司",
+        "evidence_span": "供应给国家电网公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网公司",
+        "evidence_span": "供应给南方电网公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "轨道交通领域",
+        "evidence_span": "应用于轨道交通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "冶金领域",
+        "evidence_span": "冶金"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石化领域",
+        "evidence_span": "石化"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "煤炭领域",
+        "evidence_span": "煤炭"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "质子汽车科技有限公司",
+        "evidence_span": "与质子汽车科技有限公司签署了燃料电池系统销售合同"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿华通",
+        "evidence_span": "与亿华通签署年度空压机销售框架及价格协议"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "配网智能化",
+        "evidence_span": "受益配网智能化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "配网集约化",
+        "evidence_span": "受益配网集约化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "配电网建设",
+        "evidence_span": "受益配电网建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "农网改造升级",
+        "evidence_span": "受益农网改造升级"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:10:54"
+}

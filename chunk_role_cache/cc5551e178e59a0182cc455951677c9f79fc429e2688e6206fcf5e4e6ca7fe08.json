@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "13f922635f49", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述广汽集团发布GoMate人形机器人的事件，包含具体发布日期和产品特点（如可变轮足移动结构、核心零部件自研），这些技术细节可能提供有价值的稳定知识，但混合了事件信息，因此归类为candidate_mixed。"}}

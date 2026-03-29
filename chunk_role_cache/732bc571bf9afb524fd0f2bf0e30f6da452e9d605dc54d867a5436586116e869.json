@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "29f52faf917b", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落报告国家集成电路产业投资基金三期的成立和投资方向，这是一个具体的政策或基金事件，虽然涉及半导体设备投资，但未定义题材本身或核心构成，属于事件性内容。"}}

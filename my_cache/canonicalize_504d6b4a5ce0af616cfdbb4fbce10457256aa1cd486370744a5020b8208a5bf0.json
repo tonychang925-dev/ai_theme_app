@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:02:48", "result": {"span_uid": "af2866744d34", "action": "keep", "canonical_text": "华为数字能源包括智能光伏、数据中心能源及关键供电、站点能源、智能电动、智能充电网络、嵌入式电源、数字能源管理平台等。", "final_type": "core", "final_role": "数字能源业务构成", "stability": "high", "reason": "原文直接列出了数字能源业务的组成部分，信息完整、稳定，无需改写即可作为独立知识块。"}}

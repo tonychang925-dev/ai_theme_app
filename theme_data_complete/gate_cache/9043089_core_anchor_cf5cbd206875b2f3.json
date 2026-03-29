@@ -1,0 +1,56 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "Manus",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'AI智能体Manus'，Manus直接对应名称中的核心对象，是事件驱动的直接主体，最适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "Meta",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "Meta可能与AI智能体相关，但题材名称明确指向Manus，Meta不够直接吻合核心语义，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "肖弘",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "肖弘可能是人物或相关方，但题材名称定义的核心是AI智能体Manus，不够直接对应事件对象或核心数据口径。"
+      },
+      {
+        "term": "app",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "app可能是Manus的载体或工具，但题材名称的核心语义是AI智能体本身，app更适合作为辅助识别信息。"
+      },
+      {
+        "term": "网站",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "网站可能与Manus相关，但不够直接贴合AI智能体的核心定义，更适合作为should。"
+      },
+      {
+        "term": "订阅服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "订阅服务可能是Manus的商业模式，但题材名称定义的核心是AI智能体，不够直接对应事件对象或核心数据口径。"
+      },
+      {
+        "term": "token",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "token可能与Manus的生态或技术相关，但题材名称的核心语义是AI智能体，不够直接吻合，更适合作为辅助信息。"
+      },
+      {
+        "term": "虚拟计算机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "虚拟计算机可能与AI智能体的技术基础相关，但题材名称明确指向Manus，不够直接对应核心事件对象。"
+      }
+    ]
+  }
+}

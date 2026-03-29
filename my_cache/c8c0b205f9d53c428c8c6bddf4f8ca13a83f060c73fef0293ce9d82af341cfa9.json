@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "369eebfae380", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了巴黎航展事件，但包含对歼-35A战机的详细技术说明（如设计、布局、作战能力），这些是军工题材的静态知识，可用于本体构建，因此归类为混合候选。"}}

@@ -1,0 +1,548 @@
+{
+  "test_time": "2026-02-20 20:29:37",
+  "test_config": {
+    "sample_size": 30,
+    "model_path": "/Users/admin/Desktop/ai_theme_app/.qwen_cache/models--Qwen--Qwen2.5-0.5B-Instruct/snapshots/7ae557604adf67be50417f59c2c2f167def9a775",
+    "prompt_version": "optimized_v2"
+  },
+  "ground_truth": [
+    {
+      "index": 1,
+      "event_id": "event_20260203110844_57aefe",
+      "title": "稀土永磁相关新闻",
+      "true_theme": "稀土永磁相关新闻"
+    },
+    {
+      "index": 2,
+      "event_id": "event_20260203110809_bf7056",
+      "title": "可控核聚变相关新闻",
+      "true_theme": "可控核聚变相关新闻"
+    },
+    {
+      "index": 3,
+      "event_id": "event_20260203110841_3b95f1",
+      "title": "稀土永磁相关新闻",
+      "true_theme": "稀土永磁相关新闻"
+    },
+    {
+      "index": 4,
+      "event_id": "event_20260203110915_32adf6",
+      "title": "海洋经济相关新闻",
+      "true_theme": "海洋经济相关新闻"
+    },
+    {
+      "index": 5,
+      "event_id": "event_20260203110818_fa28ae",
+      "title": "可控核聚变相关新闻",
+      "true_theme": "可控核聚变相关新闻"
+    },
+    {
+      "index": 6,
+      "event_id": "event_20260203110950_977cbd",
+      "title": "光刻胶相关新闻",
+      "true_theme": "光刻胶相关新闻"
+    },
+    {
+      "index": 7,
+      "event_id": "event_20260203110659_05959e",
+      "title": "AI/AR眼镜相关新闻",
+      "true_theme": "AI/AR眼镜相关新闻"
+    },
+    {
+      "index": 8,
+      "event_id": "event_20260203110926_ea02dd",
+      "title": "海洋经济相关新闻",
+      "true_theme": "海洋经济相关新闻"
+    },
+    {
+      "index": 9,
+      "event_id": "event_20260203110722_2bf943",
+      "title": "AI/AR眼镜相关新闻",
+      "true_theme": "AI/AR眼镜相关新闻"
+    },
+    {
+      "index": 10,
+      "event_id": "event_20260203110735_87ebed",
+      "title": "SpaceX相关新闻",
+      "true_theme": "SpaceX相关新闻"
+    },
+    {
+      "index": 11,
+      "event_id": "event_20260203110928_9bea82",
+      "title": "海洋经济相关新闻",
+      "true_theme": "海洋经济相关新闻"
+    },
+    {
+      "index": 12,
+      "event_id": "event_20260203110745_e24c38",
+      "title": "可控核聚变相关新闻",
+      "true_theme": "可控核聚变相关新闻"
+    },
+    {
+      "index": 13,
+      "event_id": "event_20260203110855_d4335a",
+      "title": "稀土永磁相关新闻",
+      "true_theme": "稀土永磁相关新闻"
+    },
+    {
+      "index": 14,
+      "event_id": "event_20260203111023_c71a0b",
+      "title": "卫星互联相关新闻",
+      "true_theme": "卫星互联相关新闻"
+    },
+    {
+      "index": 15,
+      "event_id": "event_20260203110724_81b438",
+      "title": "SpaceX相关新闻",
+      "true_theme": "SpaceX相关新闻"
+    },
+    {
+      "index": 16,
+      "event_id": "event_20260203110735_8d9e96",
+      "title": "SpaceX相关新闻",
+      "true_theme": "SpaceX相关新闻"
+    },
+    {
+      "index": 17,
+      "event_id": "event_20260203110928_464c72",
+      "title": "光刻胶相关新闻",
+      "true_theme": "光刻胶相关新闻"
+    },
+    {
+      "index": 18,
+      "event_id": "event_20260203110733_8b3829",
+      "title": "SpaceX相关新闻",
+      "true_theme": "SpaceX相关新闻"
+    },
+    {
+      "index": 19,
+      "event_id": "event_20260203111033_aa40d6",
+      "title": "卫星互联相关新闻",
+      "true_theme": "卫星互联相关新闻"
+    },
+    {
+      "index": 20,
+      "event_id": "event_20260203110757_9d3f97",
+      "title": "可控核聚变相关新闻",
+      "true_theme": "可控核聚变相关新闻"
+    },
+    {
+      "index": 21,
+      "event_id": "event_20260203110821_10bc3c",
+      "title": "对日制裁相关新闻",
+      "true_theme": "对日制裁相关新闻"
+    },
+    {
+      "index": 22,
+      "event_id": "event_20260203110853_9a0767",
+      "title": "稀土永磁相关新闻",
+      "true_theme": "稀土永磁相关新闻"
+    },
+    {
+      "index": 23,
+      "event_id": "event_20260203110839_631063",
+      "title": "对日制裁相关新闻",
+      "true_theme": "对日制裁相关新闻"
+    },
+    {
+      "index": 24,
+      "event_id": "event_20260203110712_f82a88",
+      "title": "AI/AR眼镜相关新闻",
+      "true_theme": "AI/AR眼镜相关新闻"
+    },
+    {
+      "index": 25,
+      "event_id": "event_20260203110819_a986a5",
+      "title": "对日制裁相关新闻",
+      "true_theme": "对日制裁相关新闻"
+    },
+    {
+      "index": 26,
+      "event_id": "event_20260203110940_382897",
+      "title": "光刻胶相关新闻",
+      "true_theme": "光刻胶相关新闻"
+    },
+    {
+      "index": 27,
+      "event_id": "event_20260203110918_e0b321",
+      "title": "海洋经济相关新闻",
+      "true_theme": "海洋经济相关新闻"
+    },
+    {
+      "index": 28,
+      "event_id": "event_20260203110828_c10ff8",
+      "title": "对日制裁相关新闻",
+      "true_theme": "对日制裁相关新闻"
+    },
+    {
+      "index": 29,
+      "event_id": "event_20260203111000_5b1de3",
+      "title": "光刻胶相关新闻",
+      "true_theme": "光刻胶相关新闻"
+    },
+    {
+      "index": 30,
+      "event_id": "event_20260203110701_6fd764",
+      "title": "AI/AR眼镜相关新闻",
+      "true_theme": "AI/AR眼镜相关新闻"
+    }
+  ],
+  "clustering_result": [
+    {
+      "theme_name": "题材_1",
+      "size": 30,
+      "purity": 0.13333333333333333,
+      "dominant_theme": "稀土永磁相关新闻",
+      "events": [
+        {
+          "index": 1,
+          "event_id": "event_20260203110844_57aefe",
+          "title": "稀土永磁相关新闻",
+          "true_theme": "稀土永磁相关新闻"
+        },
+        {
+          "index": 2,
+          "event_id": "event_20260203110809_bf7056",
+          "title": "可控核聚变相关新闻",
+          "true_theme": "可控核聚变相关新闻"
+        },
+        {
+          "index": 3,
+          "event_id": "event_20260203110841_3b95f1",
+          "title": "稀土永磁相关新闻",
+          "true_theme": "稀土永磁相关新闻"
+        },
+        {
+          "index": 4,
+          "event_id": "event_20260203110915_32adf6",
+          "title": "海洋经济相关新闻",
+          "true_theme": "海洋经济相关新闻"
+        },
+        {
+          "index": 5,
+          "event_id": "event_20260203110818_fa28ae",
+          "title": "可控核聚变相关新闻",
+          "true_theme": "可控核聚变相关新闻"
+        },
+        {
+          "index": 6,
+          "event_id": "event_20260203110950_977cbd",
+          "title": "光刻胶相关新闻",
+          "true_theme": "光刻胶相关新闻"
+        },
+        {
+          "index": 7,
+          "event_id": "event_20260203110659_05959e",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻"
+        },
+        {
+          "index": 8,
+          "event_id": "event_20260203110926_ea02dd",
+          "title": "海洋经济相关新闻",
+          "true_theme": "海洋经济相关新闻"
+        },
+        {
+          "index": 9,
+          "event_id": "event_20260203110722_2bf943",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻"
+        },
+        {
+          "index": 10,
+          "event_id": "event_20260203110735_87ebed",
+          "title": "SpaceX相关新闻",
+          "true_theme": "SpaceX相关新闻"
+        },
+        {
+          "index": 11,
+          "event_id": "event_20260203110928_9bea82",
+          "title": "海洋经济相关新闻",
+          "true_theme": "海洋经济相关新闻"
+        },
+        {
+          "index": 12,
+          "event_id": "event_20260203110745_e24c38",
+          "title": "可控核聚变相关新闻",
+          "true_theme": "可控核聚变相关新闻"
+        },
+        {
+          "index": 13,
+          "event_id": "event_20260203110855_d4335a",
+          "title": "稀土永磁相关新闻",
+          "true_theme": "稀土永磁相关新闻"
+        },
+        {
+          "index": 14,
+          "event_id": "event_20260203111023_c71a0b",
+          "title": "卫星互联相关新闻",
+          "true_theme": "卫星互联相关新闻"
+        },
+        {
+          "index": 15,
+          "event_id": "event_20260203110724_81b438",
+          "title": "SpaceX相关新闻",
+          "true_theme": "SpaceX相关新闻"
+        },
+        {
+          "index": 16,
+          "event_id": "event_20260203110735_8d9e96",
+          "title": "SpaceX相关新闻",
+          "true_theme": "SpaceX相关新闻"
+        },
+        {
+          "index": 17,
+          "event_id": "event_20260203110928_464c72",
+          "title": "光刻胶相关新闻",
+          "true_theme": "光刻胶相关新闻"
+        },
+        {
+          "index": 18,
+          "event_id": "event_20260203110733_8b3829",
+          "title": "SpaceX相关新闻",
+          "true_theme": "SpaceX相关新闻"
+        },
+        {
+          "index": 19,
+          "event_id": "event_20260203111033_aa40d6",
+          "title": "卫星互联相关新闻",
+          "true_theme": "卫星互联相关新闻"
+        },
+        {
+          "index": 20,
+          "event_id": "event_20260203110757_9d3f97",
+          "title": "可控核聚变相关新闻",
+          "true_theme": "可控核聚变相关新闻"
+        },
+        {
+          "index": 21,
+          "event_id": "event_20260203110821_10bc3c",
+          "title": "对日制裁相关新闻",
+          "true_theme": "对日制裁相关新闻"
+        },
+        {
+          "index": 22,
+          "event_id": "event_20260203110853_9a0767",
+          "title": "稀土永磁相关新闻",
+          "true_theme": "稀土永磁相关新闻"
+        },
+        {
+          "index": 23,
+          "event_id": "event_20260203110839_631063",
+          "title": "对日制裁相关新闻",
+          "true_theme": "对日制裁相关新闻"
+        },
+        {
+          "index": 24,
+          "event_id": "event_20260203110712_f82a88",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻"
+        },
+        {
+          "index": 25,
+          "event_id": "event_20260203110819_a986a5",
+          "title": "对日制裁相关新闻",
+          "true_theme": "对日制裁相关新闻"
+        },
+        {
+          "index": 26,
+          "event_id": "event_20260203110940_382897",
+          "title": "光刻胶相关新闻",
+          "true_theme": "光刻胶相关新闻"
+        },
+        {
+          "index": 27,
+          "event_id": "event_20260203110918_e0b321",
+          "title": "海洋经济相关新闻",
+          "true_theme": "海洋经济相关新闻"
+        },
+        {
+          "index": 28,
+          "event_id": "event_20260203110828_c10ff8",
+          "title": "对日制裁相关新闻",
+          "true_theme": "对日制裁相关新闻"
+        },
+        {
+          "index": 29,
+          "event_id": "event_20260203111000_5b1de3",
+          "title": "光刻胶相关新闻",
+          "true_theme": "光刻胶相关新闻"
+        },
+        {
+          "index": 30,
+          "event_id": "event_20260203110701_6fd764",
+          "title": "AI/AR眼镜相关新闻",
+          "true_theme": "AI/AR眼镜相关新闻"
+        }
+      ]
+    }
+  ],
+  "evaluation": {
+    "total_clusters": 1,
+    "avg_purity": 0.13333333333333333,
+    "overall_purity": 0.13333333333333333,
+    "correctly_clustered": 4,
+    "total_events": 30,
+    "cluster_details": [
+      {
+        "theme_name": "题材_1",
+        "size": 30,
+        "dominant_theme": "稀土永磁相关新闻",
+        "dominant_count": 4,
+        "purity": 0.13333333333333333,
+        "theme_distribution": {
+          "稀土永磁相关新闻": 4,
+          "可控核聚变相关新闻": 4,
+          "海洋经济相关新闻": 4,
+          "光刻胶相关新闻": 4,
+          "AI/AR眼镜相关新闻": 4,
+          "SpaceX相关新闻": 4,
+          "卫星互联相关新闻": 2,
+          "对日制裁相关新闻": 4
+        },
+        "errors": [
+          {
+            "event_id": "event_20260203110809_bf7056",
+            "title": "可控核聚变相关新闻",
+            "true_theme": "可控核聚变相关新闻"
+          },
+          {
+            "event_id": "event_20260203110915_32adf6",
+            "title": "海洋经济相关新闻",
+            "true_theme": "海洋经济相关新闻"
+          },
+          {
+            "event_id": "event_20260203110818_fa28ae",
+            "title": "可控核聚变相关新闻",
+            "true_theme": "可控核聚变相关新闻"
+          },
+          {
+            "event_id": "event_20260203110950_977cbd",
+            "title": "光刻胶相关新闻",
+            "true_theme": "光刻胶相关新闻"
+          },
+          {
+            "event_id": "event_20260203110659_05959e",
+            "title": "AI/AR眼镜相关新闻",
+            "true_theme": "AI/AR眼镜相关新闻"
+          },
+          {
+            "event_id": "event_20260203110926_ea02dd",
+            "title": "海洋经济相关新闻",
+            "true_theme": "海洋经济相关新闻"
+          },
+          {
+            "event_id": "event_20260203110722_2bf943",
+            "title": "AI/AR眼镜相关新闻",
+            "true_theme": "AI/AR眼镜相关新闻"
+          },
+          {
+            "event_id": "event_20260203110735_87ebed",
+            "title": "SpaceX相关新闻",
+            "true_theme": "SpaceX相关新闻"
+          },
+          {
+            "event_id": "event_20260203110928_9bea82",
+            "title": "海洋经济相关新闻",
+            "true_theme": "海洋经济相关新闻"
+          },
+          {
+            "event_id": "event_20260203110745_e24c38",
+            "title": "可控核聚变相关新闻",
+            "true_theme": "可控核聚变相关新闻"
+          },
+          {
+            "event_id": "event_20260203111023_c71a0b",
+            "title": "卫星互联相关新闻",
+            "true_theme": "卫星互联相关新闻"
+          },
+          {
+            "event_id": "event_20260203110724_81b438",
+            "title": "SpaceX相关新闻",
+            "true_theme": "SpaceX相关新闻"
+          },
+          {
+            "event_id": "event_20260203110735_8d9e96",
+            "title": "SpaceX相关新闻",
+            "true_theme": "SpaceX相关新闻"
+          },
+          {
+            "event_id": "event_20260203110928_464c72",
+            "title": "光刻胶相关新闻",
+            "true_theme": "光刻胶相关新闻"
+          },
+          {
+            "event_id": "event_20260203110733_8b3829",
+            "title": "SpaceX相关新闻",
+            "true_theme": "SpaceX相关新闻"
+          },
+          {
+            "event_id": "event_20260203111033_aa40d6",
+            "title": "卫星互联相关新闻",
+            "true_theme": "卫星互联相关新闻"
+          },
+          {
+            "event_id": "event_20260203110757_9d3f97",
+            "title": "可控核聚变相关新闻",
+            "true_theme": "可控核聚变相关新闻"
+          },
+          {
+            "event_id": "event_20260203110821_10bc3c",
+            "title": "对日制裁相关新闻",
+            "true_theme": "对日制裁相关新闻"
+          },
+          {
+            "event_id": "event_20260203110839_631063",
+            "title": "对日制裁相关新闻",
+            "true_theme": "对日制裁相关新闻"
+          },
+          {
+            "event_id": "event_20260203110712_f82a88",
+            "title": "AI/AR眼镜相关新闻",
+            "true_theme": "AI/AR眼镜相关新闻"
+          },
+          {
+            "event_id": "event_20260203110819_a986a5",
+            "title": "对日制裁相关新闻",
+            "true_theme": "对日制裁相关新闻"
+          },
+          {
+            "event_id": "event_20260203110940_382897",
+            "title": "光刻胶相关新闻",
+            "true_theme": "光刻胶相关新闻"
+          },
+          {
+            "event_id": "event_20260203110918_e0b321",
+            "title": "海洋经济相关新闻",
+            "true_theme": "海洋经济相关新闻"
+          },
+          {
+            "event_id": "event_20260203110828_c10ff8",
+            "title": "对日制裁相关新闻",
+            "true_theme": "对日制裁相关新闻"
+          },
+          {
+            "event_id": "event_20260203111000_5b1de3",
+            "title": "光刻胶相关新闻",
+            "true_theme": "光刻胶相关新闻"
+          },
+          {
+            "event_id": "event_20260203110701_6fd764",
+            "title": "AI/AR眼镜相关新闻",
+            "true_theme": "AI/AR眼镜相关新闻"
+          }
+        ]
+      }
+    ]
+  },
+  "optimization": {
+    "previous_clusters": 29,
+    "current_clusters": 1,
+    "reduction": 28,
+    "reduction_percentage": 96.55172413793103
+  },
+  "performance": {
+    "total_time": 37.41408085823059,
+    "total_calls": 29
+  }
+}

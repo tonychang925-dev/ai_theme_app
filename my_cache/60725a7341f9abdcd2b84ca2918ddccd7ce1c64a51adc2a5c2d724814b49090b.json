@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "3398cc08eaad", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落涉及FSD落地中国的背景信息，包括政府支持、监管评估和数据训练申请，可能包含关于FSD在中国市场应用条件的知识，但混合了时间性动态和传闻。"}}

@@ -1,0 +1,264 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电缆",
+      "evidence_span": "公司是集电缆及附件系统、状态检测系统、输变电工程总包三个板块于一体的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "附件系统",
+      "evidence_span": "公司是集电缆及附件系统、状态检测系统、输变电工程总包三个板块于一体的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "状态检测系统",
+      "evidence_span": "公司是集电缆及附件系统、状态检测系统、输变电工程总包三个板块于一体的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "输变电工程总包",
+      "evidence_span": "公司是集电缆及附件系统、状态检测系统、输变电工程总包三个板块于一体的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电线电缆制造的龙头企业",
+      "evidence_span": "公司作为我国电线电缆制造的龙头企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高压、超高压电力电缆相关技术研发的引领者",
+      "evidence_span": "国内高压、超高压电力电缆相关技术研发的引领者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力电缆",
+      "evidence_span": "公司产品主要为电力电缆、装备用电缆、特种电缆、数据电缆、架空线等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装备用电缆",
+      "evidence_span": "公司产品主要为电力电缆、装备用电缆、特种电缆、数据电缆、架空线等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种电缆",
+      "evidence_span": "公司产品主要为电力电缆、装备用电缆、特种电缆、数据电缆、架空线等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据电缆",
+      "evidence_span": "公司产品主要为电力电缆、装备用电缆、特种电缆、数据电缆、架空线等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "架空线",
+      "evidence_span": "公司产品主要为电力电缆、装备用电缆、特种电缆、数据电缆、架空线等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压超高压电缆",
+      "evidence_span": "依托品牌优势巩固高压超高压电缆、海缆产品的行业领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海缆产品",
+      "evidence_span": "依托品牌优势巩固高压超高压电缆、海缆产品的行业领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压超高压电缆附件",
+      "evidence_span": "提升公司高压超高压电缆附件的品牌知名度"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "110Kv-500Kv交联电缆",
+      "evidence_span": "其中 110Kv-500Kv交联电缆、110kv-220kv电缆附件等产品在行业内有绝对的技术领先优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "110kv-220kv电缆附件",
+      "evidence_span": "其中 110Kv-500Kv交联电缆、110kv-220kv电缆附件等产品在行业内有绝对的技术领先优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家级企业技术中心",
+      "evidence_span": "拥有国家级企业技术中心、国家高压超高压电缆工程技术研究中心和博士后科研工作站"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家高压超高压电缆工程技术研究中心",
+      "evidence_span": "拥有国家级企业技术中心、国家高压超高压电缆工程技术研究中心和博士后科研工作站"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "博士后科研工作站",
+      "evidence_span": "拥有国家级企业技术中心、国家高压超高压电缆工程技术研究中心和博士后科研工作站"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国网公司",
+      "evidence_span": "公司客户包括国网公司、南网公司、华电集团、中石油、中石化等国内知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南网公司",
+      "evidence_span": "公司客户包括国网公司、南网公司、华电集团、中石油、中石化等国内知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华电集团",
+      "evidence_span": "公司客户包括国网公司、南网公司、华电集团、中石油、中石化等国内知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "公司客户包括国网公司、南网公司、华电集团、中石油、中石化等国内知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "公司客户包括国网公司、南网公司、华电集团、中石油、中石化等国内知名企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双碳绿色发展",
+      "evidence_span": "紧抓国内国际大循环、双碳绿色发展、新一轮农村电网升级改造、电力物联网建设思路、建设新能源、海上风电等市场机遇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海上风电",
+      "evidence_span": "紧抓国内国际大循环、双碳绿色发展、新一轮农村电网升级改造、电力物联网建设思路、建设新能源、海上风电等市场机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电缆及附件系统",
+        "evidence_span": "公司是集电缆及附件系统、状态检测系统、输变电工程总包三个板块于一体的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "状态检测系统",
+        "evidence_span": "公司是集电缆及附件系统、状态检测系统、输变电工程总包三个板块于一体的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "输变电工程总包",
+        "evidence_span": "公司是集电缆及附件系统、状态检测系统、输变电工程总包三个板块于一体的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电线电缆制造的龙头企业",
+        "evidence_span": "公司作为我国电线电缆制造的龙头企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高压、超高压电力电缆相关技术研发的引领者",
+        "evidence_span": "国内高压、超高压电力电缆相关技术研发的引领者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力电缆",
+        "evidence_span": "公司产品主要为电力电缆、装备用电缆、特种电缆、数据电缆、架空线等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装备用电缆",
+        "evidence_span": "公司产品主要为电力电缆、装备用电缆、特种电缆、数据电缆、架空线等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种电缆",
+        "evidence_span": "公司产品主要为电力电缆、装备用电缆、特种电缆、数据电缆、架空线等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据电缆",
+        "evidence_span": "公司产品主要为电力电缆、装备用电缆、特种电缆、数据电缆、架空线等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "架空线",
+        "evidence_span": "公司产品主要为电力电缆、装备用电缆、特种电缆、数据电缆、架空线等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压超高压电缆",
+        "evidence_span": "依托品牌优势巩固高压超高压电缆、海缆产品的行业领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海缆产品",
+        "evidence_span": "依托品牌优势巩固高压超高压电缆、海缆产品的行业领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压超高压电缆附件",
+        "evidence_span": "提升公司高压超高压电缆附件的品牌知名度"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "110Kv-500Kv交联电缆",
+        "evidence_span": "其中 110Kv-500Kv交联电缆、110kv-220kv电缆附件等产品在行业内有绝对的技术领先优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "110kv-220kv电缆附件",
+        "evidence_span": "其中 110Kv-500Kv交联电缆、110kv-220kv电缆附件等产品在行业内有绝对的技术领先优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家级企业技术中心",
+        "evidence_span": "拥有国家级企业技术中心、国家高压超高压电缆工程技术研究中心和博士后科研工作站"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家高压超高压电缆工程技术研究中心",
+        "evidence_span": "拥有国家级企业技术中心、国家高压超高压电缆工程技术研究中心和博士后科研工作站"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "博士后科研工作站",
+        "evidence_span": "拥有国家级企业技术中心、国家高压超高压电缆工程技术研究中心和博士后科研工作站"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国网公司",
+        "evidence_span": "公司客户包括国网公司、南网公司、华电集团、中石油、中石化等国内知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南网公司",
+        "evidence_span": "公司客户包括国网公司、南网公司、华电集团、中石油、中石化等国内知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华电集团",
+        "evidence_span": "公司客户包括国网公司、南网公司、华电集团、中石油、中石化等国内知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "公司客户包括国网公司、南网公司、华电集团、中石油、中石化等国内知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "公司客户包括国网公司、南网公司、华电集团、中石油、中石化等国内知名企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双碳绿色发展",
+        "evidence_span": "紧抓国内国际大循环、双碳绿色发展、新一轮农村电网升级改造、电力物联网建设思路、建设新能源、海上风电等市场机遇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海上风电",
+        "evidence_span": "紧抓国内国际大循环、双碳绿色发展、新一轮农村电网升级改造、电力物联网建设思路、建设新能源、海上风电等市场机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:21:17"
+}

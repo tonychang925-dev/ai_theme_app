@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "dfc5001e8a9e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落提到工信部印发指导意见，支持卫星通信产业发展，推动终端直连卫星等应用，这涉及政策支持和卫星互联网的应用机制，包含有价值的知识，但以政策发布事件形式呈现。"}}

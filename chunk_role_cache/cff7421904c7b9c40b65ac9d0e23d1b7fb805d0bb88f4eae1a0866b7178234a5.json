@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "f741555fea50", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述Rokid开发者沙龙和全球AI智能眼镜高峰论坛的具体事件，包括日期和参与公司，属于会议和活动动态，不涉及AR眼镜的静态说明。"}}

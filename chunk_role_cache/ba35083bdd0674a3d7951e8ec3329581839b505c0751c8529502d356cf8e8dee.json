@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "ec37b2daafa0", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "描述了美国政府针对台积电、三星、SK海力士中国晶圆厂的具体政策行动（终止VEU地位），是明确的事件性动态，不构成稳定知识。"}}

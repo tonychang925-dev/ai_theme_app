@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车经销业务",
+      "evidence_span": "汽车经销业务：公司汽车经销业务以信达国贸汽车集团及其子公司为主体经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "供应链业务",
+      "evidence_span": "供应链业务：公司深耕供应链市场多年，持续聚焦有色金属和黑色金属贸易"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物联网业务",
+      "evidence_span": "物联网业务：信达物联是国内领先的RFID电子标签、读写设备系列产品研发、制造及提供RFID系统集成解决方案的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光电业务",
+      "evidence_span": "光电业务：信达光电是以研发、设计、制造、销售、服务为一体，从事LED封装和应用产品生产的高科技企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车经销商集团",
+      "evidence_span": "是福建省最具影响力的汽车经销商集团之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "RFID整体解决方案的领先品牌商",
+      "evidence_span": "是国内鞋服零售行业RFID整体解决方案的领先品牌商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "LED封装和应用产品生产的高科技企业",
+      "evidence_span": "从事LED封装和应用产品生产的高科技企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "RFID电子标签",
+      "evidence_span": "RFID电子标签、读写设备系列产品研发、制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "RFID读写设备",
+      "evidence_span": "RFID电子标签、读写设备系列产品研发、制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "RFID系统集成解决方案",
+      "evidence_span": "提供RFID系统集成解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED封装产品",
+      "evidence_span": "从事LED封装和应用产品生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED应用产品",
+      "evidence_span": "从事LED封装和应用产品生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Mini LED显屏",
+      "evidence_span": "开发和量产Mini LED显屏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IR/UV LED产品",
+      "evidence_span": "IR/UV、地铁灯等多款特种用途LED产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地铁灯",
+      "evidence_span": "IR/UV、地铁灯等多款特种用途LED产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交通工程照明项目",
+      "evidence_span": "稳步推进福建、广西、浙江等多地的交通工程照明项目落地、交付"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧城市项目",
+      "evidence_span": "中标多个智慧城市、智能化系统类项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信达全球导览服务运营平台",
+      "evidence_span": "完成“信达全球导览服务运营平台”的搭建并顺利实现多景区上线运营"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "RFID电子标签自研芯片",
+      "evidence_span": "参与的厦门市重大科技专项（电子标签自研芯片项目）已进入产品测试阶段"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "RFID电子标签生产",
+      "evidence_span": "各项技术广泛运用于电子标签生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "RFID整体解决方案",
+      "evidence_span": "各项技术广泛运用于RFID整体解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧城市应用管理",
+      "evidence_span": "各项技术广泛运用于智慧城市应用管理"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奥迪",
+      "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雷克萨斯",
+      "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "凯迪拉克",
+      "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "红旗",
+      "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "林肯",
+      "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰田",
+      "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本田",
+      "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天际",
+      "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "极狐",
+      "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赛力斯",
+      "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福州大学",
+      "evidence_span": "与福州大学等高等院校开展校企合作研发项目"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车经销业务",
+        "evidence_span": "汽车经销业务：公司汽车经销业务以信达国贸汽车集团及其子公司为主体经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "供应链业务",
+        "evidence_span": "供应链业务：公司深耕供应链市场多年，持续聚焦有色金属和黑色金属贸易"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物联网业务",
+        "evidence_span": "物联网业务：信达物联是国内领先的RFID电子标签、读写设备系列产品研发、制造及提供RFID系统集成解决方案的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光电业务",
+        "evidence_span": "光电业务：信达光电是以研发、设计、制造、销售、服务为一体，从事LED封装和应用产品生产的高科技企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车经销商集团",
+        "evidence_span": "是福建省最具影响力的汽车经销商集团之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "RFID整体解决方案的领先品牌商",
+        "evidence_span": "是国内鞋服零售行业RFID整体解决方案的领先品牌商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "LED封装和应用产品生产的高科技企业",
+        "evidence_span": "从事LED封装和应用产品生产的高科技企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "RFID电子标签",
+        "evidence_span": "RFID电子标签、读写设备系列产品研发、制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "RFID读写设备",
+        "evidence_span": "RFID电子标签、读写设备系列产品研发、制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "RFID系统集成解决方案",
+        "evidence_span": "提供RFID系统集成解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED封装产品",
+        "evidence_span": "从事LED封装和应用产品生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED应用产品",
+        "evidence_span": "从事LED封装和应用产品生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Mini LED显屏",
+        "evidence_span": "开发和量产Mini LED显屏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IR/UV LED产品",
+        "evidence_span": "IR/UV、地铁灯等多款特种用途LED产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地铁灯",
+        "evidence_span": "IR/UV、地铁灯等多款特种用途LED产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交通工程照明项目",
+        "evidence_span": "稳步推进福建、广西、浙江等多地的交通工程照明项目落地、交付"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧城市项目",
+        "evidence_span": "中标多个智慧城市、智能化系统类项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信达全球导览服务运营平台",
+        "evidence_span": "完成“信达全球导览服务运营平台”的搭建并顺利实现多景区上线运营"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "RFID电子标签自研芯片",
+        "evidence_span": "参与的厦门市重大科技专项（电子标签自研芯片项目）已进入产品测试阶段"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "RFID电子标签生产",
+        "evidence_span": "各项技术广泛运用于电子标签生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "RFID整体解决方案",
+        "evidence_span": "各项技术广泛运用于RFID整体解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧城市应用管理",
+        "evidence_span": "各项技术广泛运用于智慧城市应用管理"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奥迪",
+        "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雷克萨斯",
+        "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "凯迪拉克",
+        "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "红旗",
+        "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "林肯",
+        "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰田",
+        "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本田",
+        "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天际",
+        "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "极狐",
+        "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赛力斯",
+        "evidence_span": "主要经销包括宝马、奥迪、雷克萨斯、凯迪拉克、红旗、林肯、大众、丰田、本田、天际、极狐、赛力斯等25个品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福州大学",
+        "evidence_span": "与福州大学等高等院校开展校企合作研发项目"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:17:13"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "5d61a41dfa12", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段简要提及浙江印发意见，属于政策发布事件，没有提供任何关于低空经济本身的静态知识或详细内容。"}}

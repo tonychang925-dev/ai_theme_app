@@ -1,0 +1,324 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密零部件",
+      "evidence_span": "主要从事精密零部件和智能装备及工装产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能装备",
+      "evidence_span": "主要从事精密零部件和智能装备及工装产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工装产品",
+      "evidence_span": "主要从事精密零部件和智能装备及工装产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "涡轮增压器核心零部件供应商",
+      "evidence_span": "无锡贝斯特精机股份有限公司是涡轮增压器核心零部件供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精密加工专家",
+      "evidence_span": "精密加工专家，深耕涡轮增压"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡轮增压器精密轴承件",
+      "evidence_span": "涡轮增压器精密轴承件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡轮增压器叶轮",
+      "evidence_span": "涡轮增压器叶轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡轮增压器中间壳",
+      "evidence_span": "涡轮增压器中间壳"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡轮增压器压气机壳",
+      "evidence_span": "涡轮增压器压气机壳"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发动机缸体",
+      "evidence_span": "发动机缸体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纯电动汽车车载充电机组件",
+      "evidence_span": "纯电动汽车车载充电机组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直流变换器组件",
+      "evidence_span": "直流变换器组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "转向节",
+      "evidence_span": "转向节"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢燃料电池汽车空压机叶轮",
+      "evidence_span": "氢燃料电池汽车空压机叶轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空压机压力回收和整流器",
+      "evidence_span": "空压机压力回收和整流器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机壳",
+      "evidence_span": "电机壳"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轴承盖",
+      "evidence_span": "轴承盖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能部件",
+      "evidence_span": "功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "座椅构件",
+      "evidence_span": "座椅构件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连接件",
+      "evidence_span": "连接件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能装备及工装",
+      "evidence_span": "用于汽车、轨道交通等领域的智能装备及工装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞机机身自动化钻铆系统",
+      "evidence_span": "飞机机身自动化钻铆系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生产自动化系统",
+      "evidence_span": "生产自动化系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密加工",
+      "evidence_span": "利用在精密零部件加工领域形成的技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化生产线的柔性加工能力",
+      "evidence_span": "自动化生产线的柔性加工能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "盖瑞特",
+      "evidence_span": "汽车零部件下游客户主要有盖瑞特"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "康明斯",
+      "evidence_span": "汽车零部件下游客户主要有盖瑞特、康明斯等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世",
+      "evidence_span": "成为博世合格供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "涡轮增压器渗透率提升",
+      "evidence_span": "受益于涡轮增压渗透率提升"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "油耗标准趋严",
+      "evidence_span": "受益于油耗标准加速趋严"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国五升国六",
+      "evidence_span": "受益于油耗标准加速趋严和国五升国六"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "高端机床国产替代",
+      "evidence_span": "受益于涡轮增压渗透率提升及高端机床国产替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密零部件",
+        "evidence_span": "主要从事精密零部件和智能装备及工装产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能装备及工装产品",
+        "evidence_span": "主要从事精密零部件和智能装备及工装产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "涡轮增压器核心零部件供应商",
+        "evidence_span": "无锡贝斯特精机股份有限公司是涡轮增压器核心零部件供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精密加工专家",
+        "evidence_span": "精密加工专家，深耕涡轮增压"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡轮增压器精密轴承件",
+        "evidence_span": "涡轮增压器精密轴承件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡轮增压器叶轮",
+        "evidence_span": "涡轮增压器叶轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡轮增压器中间壳",
+        "evidence_span": "涡轮增压器中间壳"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡轮增压器压气机壳",
+        "evidence_span": "涡轮增压器压气机壳"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发动机缸体",
+        "evidence_span": "发动机缸体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纯电动汽车车载充电机组件",
+        "evidence_span": "纯电动汽车车载充电机组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直流变换器组件",
+        "evidence_span": "直流变换器组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "转向节",
+        "evidence_span": "转向节"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢燃料电池汽车空压机叶轮",
+        "evidence_span": "氢燃料电池汽车空压机叶轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空压机压力回收和整流器",
+        "evidence_span": "空压机压力回收和整流器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机壳",
+        "evidence_span": "电机壳"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轴承盖",
+        "evidence_span": "轴承盖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能部件",
+        "evidence_span": "功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "座椅构件",
+        "evidence_span": "座椅构件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连接件",
+        "evidence_span": "连接件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能装备及工装",
+        "evidence_span": "用于汽车、轨道交通等领域的智能装备及工装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞机机身自动化钻铆系统",
+        "evidence_span": "飞机机身自动化钻铆系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生产自动化系统",
+        "evidence_span": "生产自动化系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密加工",
+        "evidence_span": "利用在精密零部件加工领域形成的技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化生产线的柔性加工能力",
+        "evidence_span": "自动化生产线的柔性加工能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "盖瑞特",
+        "evidence_span": "汽车零部件下游客户主要有盖瑞特"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "康明斯",
+        "evidence_span": "汽车零部件下游客户主要有盖瑞特、康明斯等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世",
+        "evidence_span": "成为博世合格供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "涡轮增压器渗透率提升",
+        "evidence_span": "受益于涡轮增压渗透率提升"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "油耗标准趋严",
+        "evidence_span": "受益于油耗标准加速趋严"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国五升国六",
+        "evidence_span": "受益于油耗标准加速趋严和国五升国六"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "高端机床国产替代",
+        "evidence_span": "受益于涡轮增压渗透率提升及高端机床国产替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:24:28"
+}

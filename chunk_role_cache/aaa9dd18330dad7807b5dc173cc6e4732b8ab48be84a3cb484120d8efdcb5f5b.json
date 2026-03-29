@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "033fabda4819", "label": "candidate_mixed", "confidence": 0.6, "ontology_value": "low", "reason": "该段落描述了2024世界动力电池大会的事件，包含日期和展会动态。它提到人形机器人作为固态电池的未来应用场景之一，这提供了关于人形机器人潜在应用领域的知识，但信息较间接且混合在事件描述中，因此是候选混合状态。"}}

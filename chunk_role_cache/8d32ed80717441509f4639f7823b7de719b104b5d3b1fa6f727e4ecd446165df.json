@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:37:23", "result": {"chunk_id": "e4c9b07db26b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述市场监管总局对英伟达公司违反反垄断法的进一步调查事件，涉及具体公司动态和监管进展，属于时间性动态，没有提供国产算力本身的定义、结构或机制等静态知识。"}}

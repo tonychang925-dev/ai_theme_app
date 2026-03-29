@@ -1,0 +1,139 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种纸的研产销",
+      "evidence_span": "公司致力于特种纸的研产销"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特种纸领域领先企业",
+      "evidence_span": "终成为国内特种纸领域领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "食品包装纸生产企业",
+      "evidence_span": "公司已发展成为国内规模较大的食品包装纸、格拉辛纸生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "格拉辛纸生产企业",
+      "evidence_span": "公司已发展成为国内规模较大的食品包装纸、格拉辛纸生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "食品包装纸",
+      "evidence_span": "食品包装纸 78 万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "格拉辛纸",
+      "evidence_span": "格拉辛纸 21 万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "转移印花纸",
+      "evidence_span": "转移印花纸 5 万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "描图纸",
+      "evidence_span": "描图纸 7000 吨"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "康师傅",
+      "evidence_span": "主要为康师傅、统一等面碗系客户供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "统一",
+      "evidence_span": "主要为康师傅、统一等面碗系客户供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Avery Dennison（艾利丹尼森）",
+      "evidence_span": "格拉辛纸主要客户为 Avery Dennison（艾利丹尼森）、冠豪高新等国内外知名标签纸生产企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "冠豪高新",
+      "evidence_span": "格拉辛纸主要客户为 Avery Dennison（艾利丹尼森）、冠豪高新等国内外知名标签纸生产企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "禁塑令政策利好",
+      "evidence_span": "叠加餐饮行业稳步发展和禁塑令政策利好"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种纸的研产销",
+        "evidence_span": "公司致力于特种纸的研产销"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特种纸领域领先企业",
+        "evidence_span": "终成为国内特种纸领域领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "食品包装纸生产企业",
+        "evidence_span": "公司已发展成为国内规模较大的食品包装纸、格拉辛纸生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "格拉辛纸生产企业",
+        "evidence_span": "公司已发展成为国内规模较大的食品包装纸、格拉辛纸生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "食品包装纸",
+        "evidence_span": "食品包装纸 78 万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "格拉辛纸",
+        "evidence_span": "格拉辛纸 21 万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "转移印花纸",
+        "evidence_span": "转移印花纸 5 万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "描图纸",
+        "evidence_span": "描图纸 7000 吨"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "康师傅",
+        "evidence_span": "主要为康师傅、统一等面碗系客户供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "统一",
+        "evidence_span": "主要为康师傅、统一等面碗系客户供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Avery Dennison（艾利丹尼森）",
+        "evidence_span": "格拉辛纸主要客户为 Avery Dennison（艾利丹尼森）、冠豪高新等国内外知名标签纸生产企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "冠豪高新",
+        "evidence_span": "格拉辛纸主要客户为 Avery Dennison（艾利丹尼森）、冠豪高新等国内外知名标签纸生产企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "禁塑令政策利好",
+        "evidence_span": "叠加餐饮行业稳步发展和禁塑令政策利好"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:48:37"
+}

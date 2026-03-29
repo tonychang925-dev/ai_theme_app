@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:24:26", "result": {"span_uid": "84229053e04d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为具体的市场规模数据和增长预测，涉及2024年、2025年、2030年等时间点，属于典型的阶段性信号信息，稳定性低，不适合作为稳定知识块保留。"}}

@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "安保科技",
+      "evidence_span": "主营业务分为安保科技、电源、医疗、电子信息四大产业板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电源",
+      "evidence_span": "主营业务分为安保科技、电源、医疗、电子信息四大产业板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗",
+      "evidence_span": "主营业务分为安保科技、电源、医疗、电子信息四大产业板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子信息",
+      "evidence_span": "主营业务分为安保科技、电源、医疗、电子信息四大产业板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军工资产上市企业",
+      "evidence_span": "是国内首家经国防科工委批准的军工资产上市企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "复杂大型系统规划设计与集成商",
+      "evidence_span": "是复杂大型系统规划设计与集成商、高端产品研发与制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端产品研发与制造商",
+      "evidence_span": "是复杂大型系统规划设计与集成商、高端产品研发与制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧海防项目",
+      "evidence_span": "广东省智慧海防项目作为国家“十四五”试点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军工级电源产品",
+      "evidence_span": "持续在军工级电源产品方面开展技术研发与批生产条件能力建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国产化模块电源",
+      "evidence_span": "深入推进国产化模块电源等产品的技术研发与产业协同"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道交通电源系统",
+      "evidence_span": "在轨道交通和高速公路ETC电源系统细分市场中"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速公路ETC电源系统",
+      "evidence_span": "在轨道交通和高速公路ETC电源系统细分市场中"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗呼吸机",
+      "evidence_span": "公司作为国内最早生产医疗呼吸机、麻醉机的单位之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "麻醉机",
+      "evidence_span": "公司作为国内最早生产医疗呼吸机、麻醉机的单位之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三类医疗器械",
+      "evidence_span": "是中央企业中极少数具备生产三类医疗器械资质的医疗企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国产高端医疗装备器械",
+      "evidence_span": "以国产高端医疗装备器械制造为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化手术室",
+      "evidence_span": "以数字化手术室与洁净工程为辅助"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洁净工程",
+      "evidence_span": "以数字化手术室与洁净工程为辅助"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手术室及ICU整体解决方案",
+      "evidence_span": "逐渐成为国内一流手术室及ICU整体解决方案供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一氧化氮治疗仪",
+      "evidence_span": "顺利完成一氧化氮治疗仪、8200/8300呼吸机注册取证"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "8200/8300呼吸机",
+      "evidence_span": "顺利完成一氧化氮治疗仪、8200/8300呼吸机注册取证"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制冷型红外机芯",
+      "evidence_span": "持续深耕制冷型红外机芯及制冷型红外热像仪研制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制冷型红外热像仪",
+      "evidence_span": "持续深耕制冷型红外机芯及制冷型红外热像仪研制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "红外凝视成像系列产品",
+      "evidence_span": "加速研发红外凝视成像系列产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新一代高速成像硬件电路研制",
+      "evidence_span": "开展了新一代高速成像硬件电路研制"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各大军工集团",
+      "evidence_span": "公司主营电源产品市场已覆盖各大军工集团"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "装备国产化",
+      "evidence_span": "紧抓装备国产化契机，加速自主研发"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "已完成上百种国产化模块电源替代研制"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "安保科技",
+        "evidence_span": "主营业务分为安保科技、电源、医疗、电子信息四大产业板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电源",
+        "evidence_span": "主营业务分为安保科技、电源、医疗、电子信息四大产业板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗",
+        "evidence_span": "主营业务分为安保科技、电源、医疗、电子信息四大产业板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子信息",
+        "evidence_span": "主营业务分为安保科技、电源、医疗、电子信息四大产业板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军工资产上市企业",
+        "evidence_span": "是国内首家经国防科工委批准的军工资产上市企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "复杂大型系统规划设计与集成商",
+        "evidence_span": "是复杂大型系统规划设计与集成商、高端产品研发与制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端产品研发与制造商",
+        "evidence_span": "是复杂大型系统规划设计与集成商、高端产品研发与制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧海防项目",
+        "evidence_span": "广东省智慧海防项目作为国家“十四五”试点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军工级电源产品",
+        "evidence_span": "持续在军工级电源产品方面开展技术研发与批生产条件能力建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国产化模块电源",
+        "evidence_span": "深入推进国产化模块电源等产品的技术研发与产业协同"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道交通电源系统",
+        "evidence_span": "在轨道交通和高速公路ETC电源系统细分市场中"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速公路ETC电源系统",
+        "evidence_span": "在轨道交通和高速公路ETC电源系统细分市场中"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗呼吸机",
+        "evidence_span": "公司作为国内最早生产医疗呼吸机、麻醉机的单位之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "麻醉机",
+        "evidence_span": "公司作为国内最早生产医疗呼吸机、麻醉机的单位之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三类医疗器械",
+        "evidence_span": "是中央企业中极少数具备生产三类医疗器械资质的医疗企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国产高端医疗装备器械",
+        "evidence_span": "以国产高端医疗装备器械制造为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化手术室",
+        "evidence_span": "以数字化手术室与洁净工程为辅助"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洁净工程",
+        "evidence_span": "以数字化手术室与洁净工程为辅助"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手术室及ICU整体解决方案",
+        "evidence_span": "逐渐成为国内一流手术室及ICU整体解决方案供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一氧化氮治疗仪",
+        "evidence_span": "顺利完成一氧化氮治疗仪、8200/8300呼吸机注册取证"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "8200/8300呼吸机",
+        "evidence_span": "顺利完成一氧化氮治疗仪、8200/8300呼吸机注册取证"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制冷型红外机芯",
+        "evidence_span": "持续深耕制冷型红外机芯及制冷型红外热像仪研制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制冷型红外热像仪",
+        "evidence_span": "持续深耕制冷型红外机芯及制冷型红外热像仪研制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "红外凝视成像系列产品",
+        "evidence_span": "加速研发红外凝视成像系列产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新一代高速成像硬件电路研制",
+        "evidence_span": "开展了新一代高速成像硬件电路研制"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各大军工集团",
+        "evidence_span": "公司主营电源产品市场已覆盖各大军工集团"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "装备国产化",
+        "evidence_span": "紧抓装备国产化契机，加速自主研发"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "已完成上百种国产化模块电源替代研制"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:38:36"
+}

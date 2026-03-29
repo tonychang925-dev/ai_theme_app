@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "bfd198ce0f8c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述巴基斯坦列装中国直-10ME攻击直升机及国防部回应，是具体事件和动态声明，不包含静态知识构建内容。"}}

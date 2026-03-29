@@ -1,0 +1,2 @@
+{"span_uid": "63d203ca74f1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段包含全球竞争态势、中国政策支持、产业布局和未来市场规模预测等具体事件和预测信息，属于阶段性变化信号，但内容较杂且依赖具体时间、政策和预测，稳定性低，不适合作为稳定知识块保留。"}
+{"span_uid": "84229053e04d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段为具体的市场规模数据和增长预测，涉及2024年、2025年、2030年等时间点，属于典型的阶段性信号信息，稳定性低，不适合作为稳定知识块保留。"}

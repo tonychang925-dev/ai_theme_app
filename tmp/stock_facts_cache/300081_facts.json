@@ -1,0 +1,514 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字文化创意",
+      "evidence_span": "恒信东方是一家主要从事数字文化创意、内容生产与技术服务的公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "内容生产",
+      "evidence_span": "恒信东方是一家主要从事数字文化创意、内容生产与技术服务的公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务",
+      "evidence_span": "恒信东方是一家主要从事数字文化创意、内容生产与技术服务的公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字创意产品应用",
+      "evidence_span": "业务范围主要包括数字创意产品应用及服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务业务",
+      "evidence_span": "业务范围主要包括数字创意产品应用及服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "互联网视频应用产品",
+      "evidence_span": "业务范围主要包括互联网视频应用产品及服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "算力系统集成",
+      "evidence_span": "业务范围主要包括算力系统集成及技术服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务业务",
+      "evidence_span": "业务范围主要包括算力系统集成及技术服务业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字创意产业公司",
+      "evidence_span": "专注于数字创意产业领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LBE城市新娱乐业务",
+      "evidence_span": "LBE城市新娱乐业务主要为客户提供从创意制作到实施建设的一站式服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VR/CG内容生产及应用",
+      "evidence_span": "公司VR内容生产及应用业务主要涉及VR娱乐和VR教育两个领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI合家欢平台应用产品业务",
+      "evidence_span": "AI合家欢平台应用产品业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云视频监控",
+      "evidence_span": "互联网视频应用主要产品及服务包括以云视频监控和云视频会议为主的智能硬件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云视频会议",
+      "evidence_span": "互联网视频应用主要产品及服务包括以云视频监控和云视频会议为主的智能硬件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视觉算法",
+      "evidence_span": "互联网视频应用主要产品及服务包括视觉算法"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字乡村行业应用平台软件",
+      "evidence_span": "由相关智能硬件所衍生出的数字乡村、数字文旅、森林防火、智慧养老、智慧社区、明厨亮灶等行业应用平台软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字文旅行业应用平台软件",
+      "evidence_span": "由相关智能硬件所衍生出的数字乡村、数字文旅、森林防火、智慧养老、智慧社区、明厨亮灶等行业应用平台软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "森林防火行业应用平台软件",
+      "evidence_span": "由相关智能硬件所衍生出的数字乡村、数字文旅、森林防火、智慧养老、智慧社区、明厨亮灶等行业应用平台软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧养老行业应用平台软件",
+      "evidence_span": "由相关智能硬件所衍生出的数字乡村、数字文旅、森林防火、智慧养老、智慧社区、明厨亮灶等行业应用平台软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧社区行业应用平台软件",
+      "evidence_span": "由相关智能硬件所衍生出的数字乡村、数字文旅、森林防火、智慧养老、智慧社区、明厨亮灶等行业应用平台软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "明厨亮灶行业应用平台软件",
+      "evidence_span": "由相关智能硬件所衍生出的数字乡村、数字文旅、森林防火、智慧养老、智慧社区、明厨亮灶等行业应用平台软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AICC硬件基础设施",
+      "evidence_span": "公司算力系统集成及技术服务包括AICC硬件基础设施和软件平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AICC软件平台",
+      "evidence_span": "公司算力系统集成及技术服务包括AICC硬件基础设施和软件平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VR娱乐产品",
+      "evidence_span": "公司通过将VR技术与VR娱乐内容生产相结合，进行VR娱乐产品的研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VR教育整体解决方案",
+      "evidence_span": "公司推出VR教育整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CG视效服务",
+      "evidence_span": "CG/VR数字影像产品团队承接部分外部CG视效服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "斯泰同学智能硬件",
+      "evidence_span": "面向家庭教育市场的“斯泰同学”智能硬件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "斯泰云教室",
+      "evidence_span": "面向幼儿园渠道的“斯泰云教室”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CG技术",
+      "evidence_span": "恒信东方CG技术构筑护城河"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "VR技术",
+      "evidence_span": "公司团队创建了全套VR互动创制体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视觉数据生产管理平台+CG生产工具集成系统",
+      "evidence_span": "团队自主开发了一整套现代工业化的数字影像创制流程与管理平台——视觉数据生产管理平台+CG生产工具集成系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "UE5流程",
+      "evidence_span": "公司的UE5流程测试和开发已经取得阶段性进展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "项目制片管理系统",
+      "evidence_span": "公司基于shotgrid平台开发的项目制片管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "VR互动创制体系",
+      "evidence_span": "公司团队创建了全套VR互动创制体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能视频云平台",
+      "evidence_span": "安徽赛达在不断提升智能视频云平台性能的基础上"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视觉算法",
+      "evidence_span": "安徽赛达通过布局创新型赛道，逐步完成了视觉算法的自主研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "可信环境基础设施的底层技术",
+      "evidence_span": "公司已经完成基于自有应用型区块链技术的可信环境基础设施的底层技术研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "EverFile",
+      "evidence_span": "推出了 EverFile（去中心化安全存储）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "EverChain",
+      "evidence_span": "EverChain（恒信链底链及周边工具系统）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "EverBaas",
+      "evidence_span": "EverBaas（封装了典型合约的区块链适配服务组件）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "珠海横琴中医药科技创意博物馆项目",
+      "evidence_span": "公司LBE业务包括珠海横琴中医药科技创意博物馆项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京市东城区文商旅融合项目",
+      "evidence_span": "公司LBE业务包括北京市东城区文商旅融合项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "霍尔果斯火天大有文化传媒有限公司",
+      "evidence_span": "公司承制了霍尔果斯火天大有文化传媒有限公司动画番剧《陆小凤》宣传片"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "爱奇艺影业（上海）有限公司",
+      "evidence_span": "包括爱奇艺影业（上海）有限公司《六代钟馗》三维动画制作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苏州叠纸网络科技股份有限公司",
+      "evidence_span": "苏州叠纸网络科技股份有限公司《奇迹暖暖》的部分动画和角色特效解算制作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京百度网讯科技有限公司",
+      "evidence_span": "北京百度网讯科技有限公司多个数字人资产制作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中视实业集团有限公司",
+      "evidence_span": "中视实业集团有限公司央视春晚片头CG部分镜头制作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府客户",
+      "evidence_span": "攻坚农业农村局、林业局、市监局、教育局、民政局等政府客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "行业客户",
+      "evidence_span": "公司重点面向央企和行业头部客户进行拓展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字创意产业",
+      "evidence_span": "专注于数字创意产业领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "VR+影视动漫",
+      "evidence_span": "恒信东方收购东方梦幻，布局VR+影视动漫"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "CG/VR视觉技术",
+      "evidence_span": "卡位CG/VR视觉技术及儿童产业链"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字文化创意",
+        "evidence_span": "恒信东方是一家主要从事数字文化创意、内容生产与技术服务的公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "内容生产与技术服务",
+        "evidence_span": "恒信东方是一家主要从事数字文化创意、内容生产与技术服务的公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字创意产品应用及服务业务",
+        "evidence_span": "业务范围主要包括数字创意产品应用及服务业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "互联网视频应用产品及服务业务",
+        "evidence_span": "业务范围主要包括互联网视频应用产品及服务业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "算力系统集成及技术服务业务",
+        "evidence_span": "业务范围主要包括算力系统集成及技术服务业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字创意产业公司",
+        "evidence_span": "专注于数字创意产业领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LBE城市新娱乐业务",
+        "evidence_span": "LBE城市新娱乐业务主要为客户提供从创意制作到实施建设的一站式服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VR/CG内容生产及应用",
+        "evidence_span": "公司VR内容生产及应用业务主要涉及VR娱乐和VR教育两个领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI合家欢平台应用产品业务",
+        "evidence_span": "AI合家欢平台应用产品业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云视频监控",
+        "evidence_span": "互联网视频应用主要产品及服务包括以云视频监控和云视频会议为主的智能硬件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云视频会议",
+        "evidence_span": "互联网视频应用主要产品及服务包括以云视频监控和云视频会议为主的智能硬件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视觉算法",
+        "evidence_span": "互联网视频应用主要产品及服务包括视觉算法"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字乡村行业应用平台软件",
+        "evidence_span": "由相关智能硬件所衍生出的数字乡村、数字文旅、森林防火、智慧养老、智慧社区、明厨亮灶等行业应用平台软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字文旅行业应用平台软件",
+        "evidence_span": "由相关智能硬件所衍生出的数字乡村、数字文旅、森林防火、智慧养老、智慧社区、明厨亮灶等行业应用平台软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "森林防火行业应用平台软件",
+        "evidence_span": "由相关智能硬件所衍生出的数字乡村、数字文旅、森林防火、智慧养老、智慧社区、明厨亮灶等行业应用平台软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧养老行业应用平台软件",
+        "evidence_span": "由相关智能硬件所衍生出的数字乡村、数字文旅、森林防火、智慧养老、智慧社区、明厨亮灶等行业应用平台软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧社区行业应用平台软件",
+        "evidence_span": "由相关智能硬件所衍生出的数字乡村、数字文旅、森林防火、智慧养老、智慧社区、明厨亮灶等行业应用平台软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "明厨亮灶行业应用平台软件",
+        "evidence_span": "由相关智能硬件所衍生出的数字乡村、数字文旅、森林防火、智慧养老、智慧社区、明厨亮灶等行业应用平台软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AICC硬件基础设施",
+        "evidence_span": "公司算力系统集成及技术服务包括AICC硬件基础设施和软件平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AICC软件平台",
+        "evidence_span": "公司算力系统集成及技术服务包括AICC硬件基础设施和软件平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VR娱乐产品",
+        "evidence_span": "公司通过将VR技术与VR娱乐内容生产相结合，进行VR娱乐产品的研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VR教育整体解决方案",
+        "evidence_span": "公司推出VR教育整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CG视效服务",
+        "evidence_span": "CG/VR数字影像产品团队承接部分外部CG视效服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "斯泰同学智能硬件",
+        "evidence_span": "面向家庭教育市场的“斯泰同学”智能硬件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "斯泰云教室",
+        "evidence_span": "面向幼儿园渠道的“斯泰云教室”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CG技术",
+        "evidence_span": "恒信东方CG技术构筑护城河"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "VR技术",
+        "evidence_span": "公司团队创建了全套VR互动创制体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视觉数据生产管理平台+CG生产工具集成系统",
+        "evidence_span": "团队自主开发了一整套现代工业化的数字影像创制流程与管理平台——视觉数据生产管理平台+CG生产工具集成系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "UE5流程",
+        "evidence_span": "公司的UE5流程测试和开发已经取得阶段性进展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "项目制片管理系统",
+        "evidence_span": "公司基于shotgrid平台开发的项目制片管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "VR互动创制体系",
+        "evidence_span": "公司团队创建了全套VR互动创制体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能视频云平台",
+        "evidence_span": "安徽赛达在不断提升智能视频云平台性能的基础上"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视觉算法",
+        "evidence_span": "安徽赛达通过布局创新型赛道，逐步完成了视觉算法的自主研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "可信环境基础设施的底层技术",
+        "evidence_span": "公司已经完成基于自有应用型区块链技术的可信环境基础设施的底层技术研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "EverFile",
+        "evidence_span": "推出了 EverFile（去中心化安全存储）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "EverChain",
+        "evidence_span": "EverChain（恒信链底链及周边工具系统）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "EverBaas",
+        "evidence_span": "EverBaas（封装了典型合约的区块链适配服务组件）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "珠海横琴中医药科技创意博物馆项目",
+        "evidence_span": "公司LBE业务包括珠海横琴中医药科技创意博物馆项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京市东城区文商旅融合项目",
+        "evidence_span": "公司LBE业务包括北京市东城区文商旅融合项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "霍尔果斯火天大有文化传媒有限公司",
+        "evidence_span": "公司承制了霍尔果斯火天大有文化传媒有限公司动画番剧《陆小凤》宣传片"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "爱奇艺影业（上海）有限公司",
+        "evidence_span": "包括爱奇艺影业（上海）有限公司《六代钟馗》三维动画制作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苏州叠纸网络科技股份有限公司",
+        "evidence_span": "苏州叠纸网络科技股份有限公司《奇迹暖暖》的部分动画和角色特效解算制作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京百度网讯科技有限公司",
+        "evidence_span": "北京百度网讯科技有限公司多个数字人资产制作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中视实业集团有限公司",
+        "evidence_span": "中视实业集团有限公司央视春晚片头CG部分镜头制作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府客户",
+        "evidence_span": "攻坚农业农村局、林业局、市监局、教育局、民政局等政府客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "行业客户",
+        "evidence_span": "公司重点面向央企和行业头部客户进行拓展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字创意产业",
+        "evidence_span": "专注于数字创意产业领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "VR+影视动漫",
+        "evidence_span": "恒信东方收购东方梦幻，布局VR+影视动漫"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "CG/VR视觉技术",
+        "evidence_span": "卡位CG/VR视觉技术及儿童产业链"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:15:00"
+}

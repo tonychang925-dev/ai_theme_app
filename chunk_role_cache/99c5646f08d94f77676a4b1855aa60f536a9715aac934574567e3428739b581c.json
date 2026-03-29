@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "0d4412904db2", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落混合了事件信息（INMO影目科技新品发布会）和潜在知识（智能眼镜市场规模预测数据），市场规模数据可能对AR眼镜题材构建有价值，但整体以事件为主。"}}

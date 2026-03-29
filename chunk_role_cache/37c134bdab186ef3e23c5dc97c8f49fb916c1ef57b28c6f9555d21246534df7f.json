@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "b16629dcaa82", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "核心是奉贤区发布产业发展行动方案这一事件，但方案内容详细列出了重点发展的材料方向（湿化学品、高纯靶材等）和支持的具体技术目标（如6N级靶材），这些信息具有产业知识价值，与事件混杂。"}}

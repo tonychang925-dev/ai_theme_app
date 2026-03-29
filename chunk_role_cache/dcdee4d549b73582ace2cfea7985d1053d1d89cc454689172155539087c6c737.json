@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "b3f370409b64", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了蓝箭鸿擎科技提交卫星星座申请的具体事件，但同时也提供了星座规模（10000颗卫星）和公司关系信息，这些可能对理解卫星互联网星座结构有价值。"}}

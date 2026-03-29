@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:48:17", "result": {"span_uid": "7016f31ab8fc", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品命名策略与市场对标", "stability": "low", "reason": "该片段主要涉及产品命名策略和市场对标姿态，属于主观解读和事件性描述，无法形成稳定、独立的知识块。"}}

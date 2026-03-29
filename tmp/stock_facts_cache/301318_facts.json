@@ -1,0 +1,754 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高清",
+      "evidence_span": "公司的主营业务为高清及超高清视频会议摄像机"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超高清视频会议摄像机",
+      "evidence_span": "公司的主营业务为高清及超高清视频会议摄像机"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "视频会议终端",
+      "evidence_span": "公司的主营业务为...视频会议终端"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "会议麦克风",
+      "evidence_span": "公司的主营业务为...会议麦克风等音视频通讯设备"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "音视频通讯设备及解决方案的主要供应商",
+      "evidence_span": "是我国音视频通讯设备及解决方案的主要供应商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "视频会议行业音视频通讯设备的主要供应商",
+      "evidence_span": "公司已经成为视频会议行业音视频通讯设备的主要供应商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "通讯类专业摄像机龙头企业",
+      "evidence_span": "维海德属于通讯类专业摄像机龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4K超高清云台摄像机",
+      "evidence_span": "专业级摄像机，主要有4K超高清云台摄像机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "带AI能力的高清云台摄像机",
+      "evidence_span": "带AI能力的高清云台摄像机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "箱式摄像机",
+      "evidence_span": "箱式摄像机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "USB摄像机",
+      "evidence_span": "消费级摄像机（USB摄像机）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4K超高清和高清视频会议摄像机",
+      "evidence_span": "USB摄像机，主要有4K超高清和高清视频会议摄像机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4K超高清和高清摄像头（webcam）",
+      "evidence_span": "4K超高清和高清摄像头（webcam）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直播摄像机",
+      "evidence_span": "直播摄像机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教育专用跟踪摄像机",
+      "evidence_span": "教育专用跟踪摄像机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传统H.323/SIP高清视频会议终端",
+      "evidence_span": "传统H.323/SIP高清视频会议终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云视频会议终端",
+      "evidence_span": "云视频会议终端两大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一体化高清视频会议终端",
+      "evidence_span": "一体化高清视频会议终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分体式高清视频会议终端",
+      "evidence_span": "分体式高清视频会议终端等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一体化的安卓会议终端",
+      "evidence_span": "一体化的安卓会议终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分体式的安卓会议主机",
+      "evidence_span": "分体式的安卓会议主机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SIP话机",
+      "evidence_span": "SIP话机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "桌面触屏一体机",
+      "evidence_span": "桌面触屏一体机等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "会议MCU",
+      "evidence_span": "会议MCU"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "会议有/无线麦克风",
+      "evidence_span": "会议有/无线麦克风"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "会议室控制器",
+      "evidence_span": "会议室控制器等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线鹅颈麦克风",
+      "evidence_span": "无线鹅颈麦克风"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "界面麦克风",
+      "evidence_span": "界面麦克风"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "桌面/吸顶可级联阵列麦克风",
+      "evidence_span": "桌面/吸顶可级联阵列麦克风等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能会议麦克风音箱",
+      "evidence_span": "智能会议麦克风音箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线蓝牙麦克风",
+      "evidence_span": "无线蓝牙麦克风"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "USB全向麦克风",
+      "evidence_span": "USB全向麦克风等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "本地扩声专用的全向麦克风",
+      "evidence_span": "本地扩声专用的全向麦克风"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "4K超高清ISP技术",
+      "evidence_span": "主要应用技术有4K超高清ISP技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "结合AI的自动追踪技术",
+      "evidence_span": "结合AI的自动追踪技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "12G-SDI接口输出技术",
+      "evidence_span": "12G-SDI接口输出技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "匹配广播级DanteAV和NDI协议技术",
+      "evidence_span": "匹配广播级DanteAV和NDI协议技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视频图像处理技术（ISP算法等）",
+      "evidence_span": "软件技术方面，公司掌握了视频图像处理技术（ISP算法等）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI深度学习算法",
+      "evidence_span": "AI深度学习算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视频编解码技术",
+      "evidence_span": "视频编解码技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "音频3A算法",
+      "evidence_span": "音频3A算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "音频处理技术",
+      "evidence_span": "音频处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "音频编解码技术",
+      "evidence_span": "音频编解码技术等音视频通讯领域的核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "摄像机全套ISP算法",
+      "evidence_span": "公司拥有摄像机全套ISP算法的核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3A控制算法（自动曝光、自动白平衡、自动聚焦）",
+      "evidence_span": "主要包括3A控制算法（自动曝光、自动白平衡、自动聚焦）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "去马赛克（Demosaic）",
+      "evidence_span": "去马赛克（Demosaic）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "颜色矩阵（CCM）校准",
+      "evidence_span": "颜色矩阵（CCM）校准"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "降噪处理（Noise Reduction）",
+      "evidence_span": "降噪处理（Noise Reduction）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锐化",
+      "evidence_span": "锐化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "宽动态算法技术",
+      "evidence_span": "宽动态等算法技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大型复杂软件系统的开发能力",
+      "evidence_span": "大型复杂软件系统的开发能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "单镜头跟踪",
+      "evidence_span": "实现了单镜头跟踪"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "声源定位",
+      "evidence_span": "声源定位"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动框选",
+      "evidence_span": "自动框选"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "美颜",
+      "evidence_span": "美颜等先进技术和产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于AI的人形检测算法",
+      "evidence_span": "实现了基于AI的人形检测算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多目标跟踪算法",
+      "evidence_span": "多目标跟踪算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云台稳定控制算法",
+      "evidence_span": "云台稳定控制算法等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速硬件设计能力",
+      "evidence_span": "高速硬件设计能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂的光机一体化结构和传动设计",
+      "evidence_span": "复杂的光机一体化结构和传动设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多平台软件开发能力",
+      "evidence_span": "具备了多种平台的软件开发能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "视频会议品牌厂商",
+      "evidence_span": "主要为视频会议品牌厂商...提供视频会议摄像机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "系统集成商",
+      "evidence_span": "主要为...系统集成商...提供视频会议摄像机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "经销商",
+      "evidence_span": "主要为...经销商...提供视频会议摄像机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "最终用户",
+      "evidence_span": "主要为...最终用户等下游客户提供视频会议摄像机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "教育录播品牌厂商",
+      "evidence_span": "上述公司都曾向维海德等视频会议厂商采购教育录播摄像机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "微软",
+      "evidence_span": "云会议生态链（包括微软、ZOOM、腾讯会议、钉钉等）中的主要设备供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ZOOM",
+      "evidence_span": "云会议生态链（包括微软、ZOOM、腾讯会议、钉钉等）中的主要设备供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "腾讯会议",
+      "evidence_span": "云会议生态链（包括微软、ZOOM、腾讯会议、钉钉等）中的主要设备供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "钉钉",
+      "evidence_span": "云会议生态链（包括微软、ZOOM、腾讯会议、钉钉等）中的主要设备供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "移动云视讯",
+      "evidence_span": "此类产品已经和国内多家云视频会议系统进行了深度适配，如移动云视讯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "飞书会议",
+      "evidence_span": "飞书会议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "好视通",
+      "evidence_span": "好视通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "紫荆云",
+      "evidence_span": "紫荆云等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "我国政府在国家战略层面提出了国产替代的战略方向"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高清及超高清视频会议摄像机",
+        "evidence_span": "公司的主营业务为高清及超高清视频会议摄像机"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "视频会议终端",
+        "evidence_span": "公司的主营业务为...视频会议终端"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "会议麦克风",
+        "evidence_span": "公司的主营业务为...会议麦克风等音视频通讯设备"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "音视频通讯设备及解决方案的主要供应商",
+        "evidence_span": "是我国音视频通讯设备及解决方案的主要供应商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "视频会议行业音视频通讯设备的主要供应商",
+        "evidence_span": "公司已经成为视频会议行业音视频通讯设备的主要供应商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "通讯类专业摄像机龙头企业",
+        "evidence_span": "维海德属于通讯类专业摄像机龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4K超高清云台摄像机",
+        "evidence_span": "专业级摄像机，主要有4K超高清云台摄像机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "带AI能力的高清云台摄像机",
+        "evidence_span": "带AI能力的高清云台摄像机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "箱式摄像机",
+        "evidence_span": "箱式摄像机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "USB摄像机",
+        "evidence_span": "消费级摄像机（USB摄像机）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4K超高清和高清视频会议摄像机",
+        "evidence_span": "USB摄像机，主要有4K超高清和高清视频会议摄像机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4K超高清和高清摄像头（webcam）",
+        "evidence_span": "4K超高清和高清摄像头（webcam）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直播摄像机",
+        "evidence_span": "直播摄像机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教育专用跟踪摄像机",
+        "evidence_span": "教育专用跟踪摄像机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传统H.323/SIP高清视频会议终端",
+        "evidence_span": "传统H.323/SIP高清视频会议终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云视频会议终端",
+        "evidence_span": "云视频会议终端两大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一体化高清视频会议终端",
+        "evidence_span": "一体化高清视频会议终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分体式高清视频会议终端",
+        "evidence_span": "分体式高清视频会议终端等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一体化的安卓会议终端",
+        "evidence_span": "一体化的安卓会议终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分体式的安卓会议主机",
+        "evidence_span": "分体式的安卓会议主机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SIP话机",
+        "evidence_span": "SIP话机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "桌面触屏一体机",
+        "evidence_span": "桌面触屏一体机等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "会议MCU",
+        "evidence_span": "会议MCU"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "会议有/无线麦克风",
+        "evidence_span": "会议有/无线麦克风"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "会议室控制器",
+        "evidence_span": "会议室控制器等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线鹅颈麦克风",
+        "evidence_span": "无线鹅颈麦克风"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "界面麦克风",
+        "evidence_span": "界面麦克风"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "桌面/吸顶可级联阵列麦克风",
+        "evidence_span": "桌面/吸顶可级联阵列麦克风等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能会议麦克风音箱",
+        "evidence_span": "智能会议麦克风音箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线蓝牙麦克风",
+        "evidence_span": "无线蓝牙麦克风"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "USB全向麦克风",
+        "evidence_span": "USB全向麦克风等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "本地扩声专用的全向麦克风",
+        "evidence_span": "本地扩声专用的全向麦克风"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "4K超高清ISP技术",
+        "evidence_span": "主要应用技术有4K超高清ISP技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "结合AI的自动追踪技术",
+        "evidence_span": "结合AI的自动追踪技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "12G-SDI接口输出技术",
+        "evidence_span": "12G-SDI接口输出技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "匹配广播级DanteAV和NDI协议技术",
+        "evidence_span": "匹配广播级DanteAV和NDI协议技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视频图像处理技术（ISP算法等）",
+        "evidence_span": "软件技术方面，公司掌握了视频图像处理技术（ISP算法等）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI深度学习算法",
+        "evidence_span": "AI深度学习算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视频编解码技术",
+        "evidence_span": "视频编解码技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "音频3A算法",
+        "evidence_span": "音频3A算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "音频处理技术",
+        "evidence_span": "音频处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "音频编解码技术",
+        "evidence_span": "音频编解码技术等音视频通讯领域的核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "摄像机全套ISP算法",
+        "evidence_span": "公司拥有摄像机全套ISP算法的核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3A控制算法（自动曝光、自动白平衡、自动聚焦）",
+        "evidence_span": "主要包括3A控制算法（自动曝光、自动白平衡、自动聚焦）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "去马赛克（Demosaic）",
+        "evidence_span": "去马赛克（Demosaic）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "颜色矩阵（CCM）校准",
+        "evidence_span": "颜色矩阵（CCM）校准"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "降噪处理（Noise Reduction）",
+        "evidence_span": "降噪处理（Noise Reduction）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锐化",
+        "evidence_span": "锐化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "宽动态算法技术",
+        "evidence_span": "宽动态等算法技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大型复杂软件系统的开发能力",
+        "evidence_span": "大型复杂软件系统的开发能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "单镜头跟踪",
+        "evidence_span": "实现了单镜头跟踪"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "声源定位",
+        "evidence_span": "声源定位"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动框选",
+        "evidence_span": "自动框选"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "美颜",
+        "evidence_span": "美颜等先进技术和产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于AI的人形检测算法",
+        "evidence_span": "实现了基于AI的人形检测算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多目标跟踪算法",
+        "evidence_span": "多目标跟踪算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云台稳定控制算法",
+        "evidence_span": "云台稳定控制算法等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速硬件设计能力",
+        "evidence_span": "高速硬件设计能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂的光机一体化结构和传动设计",
+        "evidence_span": "复杂的光机一体化结构和传动设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多平台软件开发能力",
+        "evidence_span": "具备了多种平台的软件开发能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "视频会议品牌厂商",
+        "evidence_span": "主要为视频会议品牌厂商...提供视频会议摄像机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "系统集成商",
+        "evidence_span": "主要为...系统集成商...提供视频会议摄像机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "经销商",
+        "evidence_span": "主要为...经销商...提供视频会议摄像机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "最终用户",
+        "evidence_span": "主要为...最终用户等下游客户提供视频会议摄像机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "教育录播品牌厂商",
+        "evidence_span": "上述公司都曾向维海德等视频会议厂商采购教育录播摄像机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "微软",
+        "evidence_span": "云会议生态链（包括微软、ZOOM、腾讯会议、钉钉等）中的主要设备供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ZOOM",
+        "evidence_span": "云会议生态链（包括微软、ZOOM、腾讯会议、钉钉等）中的主要设备供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "腾讯会议",
+        "evidence_span": "云会议生态链（包括微软、ZOOM、腾讯会议、钉钉等）中的主要设备供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "钉钉",
+        "evidence_span": "云会议生态链（包括微软、ZOOM、腾讯会议、钉钉等）中的主要设备供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "移动云视讯",
+        "evidence_span": "此类产品已经和国内多家云视频会议系统进行了深度适配，如移动云视讯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "飞书会议",
+        "evidence_span": "飞书会议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "好视通",
+        "evidence_span": "好视通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "紫荆云",
+        "evidence_span": "紫荆云等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "我国政府在国家战略层面提出了国产替代的战略方向"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:20:41"
+}

@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "精细化工",
+      "evidence_span": "聚焦精细化工主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化工新材料",
+      "evidence_span": "公司聚焦以化工新材料为核心的精细化工主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源",
+      "evidence_span": "公司业务主要为化工新材料、新能源等战略新兴业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "天然橡胶",
+      "evidence_span": "公司同时涵盖天然橡胶、贸易分销等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农化业务",
+      "evidence_span": "中化国际深耕农化业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精细化工企业",
+      "evidence_span": "打造具有全球影响力的精细化工企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "橡胶化学品供应商",
+      "evidence_span": "圣奥化学为全球领先的橡胶化学品供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环氧氯丙烷",
+      "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烧碱",
+      "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷、烧碱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二氯苯系列",
+      "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷、烧碱、二氯苯系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硝基氯苯",
+      "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷、烧碱、二氯苯系列、硝基氯苯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氯化苯",
+      "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷、烧碱、二氯苯系列、硝基氯苯、氯化苯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环氧树脂",
+      "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷、烧碱、二氯苯系列、硝基氯苯、氯化苯、环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ABS",
+      "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷、烧碱、二氯苯系列、硝基氯苯、氯化苯、环氧树脂、ABS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防老剂6PPD",
+      "evidence_span": "圣奥化学为全球领先的橡胶化学品供应商，产品包括防老剂6PPD"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中间体RT培司",
+      "evidence_span": "圣奥化学为全球领先的橡胶化学品供应商，产品包括防老剂6PPD以及中间体RT培司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不溶性硫磺",
+      "evidence_span": "圣奥化学为全球领先的橡胶化学品供应商，产品包括防老剂6PPD以及中间体RT培司、不溶性硫磺"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯度TMQ",
+      "evidence_span": "圣奥化学为全球领先的橡胶化学品供应商，产品包括防老剂6PPD以及中间体RT培司、不溶性硫磺、高纯度TMQ"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池",
+      "evidence_span": "积极推进锂电池和正极材料等生产建设项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "正极材料",
+      "evidence_span": "积极推进锂电池和正极材料等生产建设项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三元正极材料",
+      "evidence_span": "宁夏中化1 万吨三元正极材料2019年12月全面投产运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双酚A",
+      "evidence_span": "江苏瑞恒现有双酚A产能24 万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环氧丙烷",
+      "evidence_span": "环氧丙烷采取直接氧化法"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "对位芳纶",
+      "evidence_span": "公司5000吨对位芳纶项目目前生产调试线状态良好"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "间位芳纶",
+      "evidence_span": "芳纶主要分为对位芳纶和间位芳纶"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "甘油法ECH",
+      "evidence_span": "公司现有15万吨甘油法ECH"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双氧水法ECH",
+      "evidence_span": "碳三项目规划15万吨双氧水法ECH"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "直接氧化法",
+      "evidence_span": "环氧丙烷采取直接氧化法"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "中化国际国改重镇发强音"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "精细化工",
+        "evidence_span": "聚焦精细化工主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化工新材料",
+        "evidence_span": "公司聚焦以化工新材料为核心的精细化工主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源",
+        "evidence_span": "公司业务主要为化工新材料、新能源等战略新兴业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "天然橡胶",
+        "evidence_span": "公司同时涵盖天然橡胶、贸易分销等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农化业务",
+        "evidence_span": "中化国际深耕农化业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精细化工企业",
+        "evidence_span": "打造具有全球影响力的精细化工企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "橡胶化学品供应商",
+        "evidence_span": "圣奥化学为全球领先的橡胶化学品供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环氧氯丙烷",
+        "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烧碱",
+        "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷、烧碱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二氯苯系列",
+        "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷、烧碱、二氯苯系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硝基氯苯",
+        "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷、烧碱、二氯苯系列、硝基氯苯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氯化苯",
+        "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷、烧碱、二氯苯系列、硝基氯苯、氯化苯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环氧树脂",
+        "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷、烧碱、二氯苯系列、硝基氯苯、氯化苯、环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ABS",
+        "evidence_span": "扬农集团和ElixPolymers拥有环氧氯丙烷、烧碱、二氯苯系列、硝基氯苯、氯化苯、环氧树脂、ABS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防老剂6PPD",
+        "evidence_span": "圣奥化学为全球领先的橡胶化学品供应商，产品包括防老剂6PPD"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中间体RT培司",
+        "evidence_span": "圣奥化学为全球领先的橡胶化学品供应商，产品包括防老剂6PPD以及中间体RT培司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不溶性硫磺",
+        "evidence_span": "圣奥化学为全球领先的橡胶化学品供应商，产品包括防老剂6PPD以及中间体RT培司、不溶性硫磺"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯度TMQ",
+        "evidence_span": "圣奥化学为全球领先的橡胶化学品供应商，产品包括防老剂6PPD以及中间体RT培司、不溶性硫磺、高纯度TMQ"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池",
+        "evidence_span": "积极推进锂电池和正极材料等生产建设项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "正极材料",
+        "evidence_span": "积极推进锂电池和正极材料等生产建设项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三元正极材料",
+        "evidence_span": "宁夏中化1 万吨三元正极材料2019年12月全面投产运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双酚A",
+        "evidence_span": "江苏瑞恒现有双酚A产能24 万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环氧丙烷",
+        "evidence_span": "环氧丙烷采取直接氧化法"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "对位芳纶",
+        "evidence_span": "公司5000吨对位芳纶项目目前生产调试线状态良好"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "间位芳纶",
+        "evidence_span": "芳纶主要分为对位芳纶和间位芳纶"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "甘油法ECH",
+        "evidence_span": "公司现有15万吨甘油法ECH"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双氧水法ECH",
+        "evidence_span": "碳三项目规划15万吨双氧水法ECH"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "直接氧化法",
+        "evidence_span": "环氧丙烷采取直接氧化法"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "中化国际国改重镇发强音"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:21:09"
+}

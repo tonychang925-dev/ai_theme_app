@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "精纺服饰",
+      "evidence_span": "精纺服饰领域，成立之初始终围绕精纺面料和职业装等展开"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超高分子量聚乙烯纤维",
+      "evidence_span": "超高分子量聚乙烯纤维领域，公司规划建设 3600 吨超高分子量聚乙烯项目"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "毛纺服饰一体化企业",
+      "evidence_span": "南山智尚毛纺服装一体化"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精纺呢绒与职业装领军企业",
+      "evidence_span": "南山智尚精纺呢绒与职业装领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "羊毛面料龙头",
+      "evidence_span": "高端产品巩固羊毛面料龙头地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精纺面料",
+      "evidence_span": "围绕精纺面料和职业装等展开"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "职业装",
+      "evidence_span": "围绕精纺面料和职业装等展开"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OPTIM 全羊毛防水面料",
+      "evidence_span": "自研的 OPTIM 全羊毛防水面料为代表的功能面料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高级定制",
+      "evidence_span": "服饰聚焦高级定制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超高分子量聚乙烯纤维",
+      "evidence_span": "超高分子量聚乙烯纤维领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "UHMWPE 纤维无纬布",
+      "evidence_span": "新增年产 620 吨的 UHMWPE 纤维无纬布产能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MTM+CAD+MES+ERP+3D+5G 系统体系",
+      "evidence_span": "应用好“MTM+CAD+MES+ERP+3D+5G”的前中后台系统体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化工厂-云尚工厂",
+      "evidence_span": "技改项目打造智能化工厂-云尚工厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "B 端客户",
+      "evidence_span": "由过去积累的 B 端客户引流至 C 端"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "推动实现国产替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "精纺服饰",
+        "evidence_span": "精纺服饰领域，成立之初始终围绕精纺面料和职业装等展开"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "超高分子量聚乙烯纤维",
+        "evidence_span": "超高分子量聚乙烯纤维领域，公司规划建设 3600 吨超高分子量聚乙烯项目"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "毛纺服饰一体化企业",
+        "evidence_span": "南山智尚毛纺服装一体化"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精纺呢绒与职业装领军企业",
+        "evidence_span": "南山智尚精纺呢绒与职业装领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "羊毛面料龙头",
+        "evidence_span": "高端产品巩固羊毛面料龙头地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精纺面料",
+        "evidence_span": "围绕精纺面料和职业装等展开"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "职业装",
+        "evidence_span": "围绕精纺面料和职业装等展开"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OPTIM 全羊毛防水面料",
+        "evidence_span": "自研的 OPTIM 全羊毛防水面料为代表的功能面料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高级定制",
+        "evidence_span": "服饰聚焦高级定制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超高分子量聚乙烯纤维",
+        "evidence_span": "超高分子量聚乙烯纤维领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "UHMWPE 纤维无纬布",
+        "evidence_span": "新增年产 620 吨的 UHMWPE 纤维无纬布产能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MTM+CAD+MES+ERP+3D+5G 系统体系",
+        "evidence_span": "应用好“MTM+CAD+MES+ERP+3D+5G”的前中后台系统体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化工厂-云尚工厂",
+        "evidence_span": "技改项目打造智能化工厂-云尚工厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "B 端客户",
+        "evidence_span": "由过去积累的 B 端客户引流至 C 端"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "推动实现国产替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:48:12"
+}

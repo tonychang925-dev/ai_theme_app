@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:44:20", "result": {"chunk_id": "a18d3f8d892d", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述DUSt3R应用上线并登上GitHub热榜的事件，但涉及3D建模技术（只需2张图片生成3D图片），可能包含对裸眼3D有价值的知识，混合了事件信息，需要进一步裁决。"}}

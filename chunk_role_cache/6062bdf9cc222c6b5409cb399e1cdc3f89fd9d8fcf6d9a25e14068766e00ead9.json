@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "e1f4f6897460", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述台积电的厂务工程竞标、CoWoS设备急单和产能扩张计划，是具体公司的订单和扩产事件，没有提供半导体设备题材的静态知识。"}}

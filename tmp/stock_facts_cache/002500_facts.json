@@ -1,0 +1,519 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "财富管理业务",
+      "evidence_span": "财富管理业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "企业金融业务",
+      "evidence_span": "企业金融业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产管理业务",
+      "evidence_span": "资产管理业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "FICC业务",
+      "evidence_span": "FICC业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "权益业务",
+      "evidence_span": "权益业务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "山西省唯一上市证券公司",
+      "evidence_span": "公司作为山西省唯一上市证券公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国有控股证券公司",
+      "evidence_span": "属国有控股性质"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "山西金控核心重要子公司",
+      "evidence_span": "公司作为山西金控核心重要子公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券经纪",
+      "evidence_span": "证券经纪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券自营",
+      "evidence_span": "证券自营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券资产管理",
+      "evidence_span": "证券资产管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券投资咨询",
+      "evidence_span": "证券投资咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "财务顾问",
+      "evidence_span": "与证券交易、证券投资活动有关的财务顾问"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券投资基金代销",
+      "evidence_span": "证券投资基金代销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融资融券",
+      "evidence_span": "融资融券"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "代销金融产品",
+      "evidence_span": "代销金融产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公开募集证券投资基金管理",
+      "evidence_span": "具备公开募集证券投资基金管理业务资格"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "期货业务",
+      "evidence_span": "期货业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "投资银行业务",
+      "evidence_span": "投资银行业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产证券化业务",
+      "evidence_span": "资产证券化（ABS）业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公募REITs业务",
+      "evidence_span": "公募REITs业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新三板业务",
+      "evidence_span": "新三板业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "四板业务",
+      "evidence_span": "四板业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "企业综合服务业务",
+      "evidence_span": "企业综合服务业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公募基金",
+      "evidence_span": "公募基金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固定收益业务",
+      "evidence_span": "固定收益业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品及货币业务",
+      "evidence_span": "商品及货币业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "权益自营",
+      "evidence_span": "权益自营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "衍生品/量化投资",
+      "evidence_span": "衍生品/量化投资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "研究及销售交易业务",
+      "evidence_span": "研究及销售交易业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "私募股权投资",
+      "evidence_span": "私募股权投资（山证投资）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "另类投资",
+      "evidence_span": "另类投资（山证创新）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际业务",
+      "evidence_span": "国际业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金融科技服务",
+      "evidence_span": "主要为本公司提供信息技术服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化转型",
+      "evidence_span": "加快推进数字化转型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "金融科技赋能",
+      "evidence_span": "聚焦科技赋能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据治理体系",
+      "evidence_span": "数据治理体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "技术中台",
+      "evidence_span": "技术中台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据中台",
+      "evidence_span": "数据中台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "业务中台",
+      "evidence_span": "业务中台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "两地三中心系统",
+      "evidence_span": "架构两地三中心系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "私有云及混合云建设",
+      "evidence_span": "大力推进私有云及混合云建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "异地云灾备系统",
+      "evidence_span": "上线异地云灾备系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山西省属大型国企",
+      "evidence_span": "服务了90%以上的省属大型国企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "省内新三板企业",
+      "evidence_span": "近50%的省内新三板企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "省内四板企业",
+      "evidence_span": "近50%的省内四板企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山西股权交易中心晋兴板企业",
+      "evidence_span": "执行完成55家中小企业挂牌山西股权交易中心晋兴板"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "服务实体经济",
+      "evidence_span": "聚焦服务实体经济"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "财富管理转型",
+      "evidence_span": "财富管理转型持续推进"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色金融",
+      "evidence_span": "以绿色金融助力“双碳”目标"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "乡村振兴",
+      "evidence_span": "服务乡村振兴"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "财富管理业务",
+        "evidence_span": "财富管理业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "企业金融业务",
+        "evidence_span": "企业金融业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产管理业务",
+        "evidence_span": "资产管理业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "FICC业务",
+        "evidence_span": "FICC业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "权益业务",
+        "evidence_span": "权益业务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "山西省唯一上市证券公司",
+        "evidence_span": "公司作为山西省唯一上市证券公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国有控股证券公司",
+        "evidence_span": "属国有控股性质"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "山西金控核心重要子公司",
+        "evidence_span": "公司作为山西金控核心重要子公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券经纪",
+        "evidence_span": "证券经纪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券自营",
+        "evidence_span": "证券自营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券资产管理",
+        "evidence_span": "证券资产管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券投资咨询",
+        "evidence_span": "证券投资咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "财务顾问",
+        "evidence_span": "与证券交易、证券投资活动有关的财务顾问"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券投资基金代销",
+        "evidence_span": "证券投资基金代销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融资融券",
+        "evidence_span": "融资融券"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "代销金融产品",
+        "evidence_span": "代销金融产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公开募集证券投资基金管理",
+        "evidence_span": "具备公开募集证券投资基金管理业务资格"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "期货业务",
+        "evidence_span": "期货业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "投资银行业务",
+        "evidence_span": "投资银行业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产证券化业务",
+        "evidence_span": "资产证券化（ABS）业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公募REITs业务",
+        "evidence_span": "公募REITs业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新三板业务",
+        "evidence_span": "新三板业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "四板业务",
+        "evidence_span": "四板业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "企业综合服务业务",
+        "evidence_span": "企业综合服务业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公募基金",
+        "evidence_span": "公募基金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固定收益业务",
+        "evidence_span": "固定收益业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品及货币业务",
+        "evidence_span": "商品及货币业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "权益自营",
+        "evidence_span": "权益自营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "衍生品/量化投资",
+        "evidence_span": "衍生品/量化投资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "研究及销售交易业务",
+        "evidence_span": "研究及销售交易业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "私募股权投资",
+        "evidence_span": "私募股权投资（山证投资）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "另类投资",
+        "evidence_span": "另类投资（山证创新）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际业务",
+        "evidence_span": "国际业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金融科技服务",
+        "evidence_span": "主要为本公司提供信息技术服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化转型",
+        "evidence_span": "加快推进数字化转型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "金融科技赋能",
+        "evidence_span": "聚焦科技赋能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据治理体系",
+        "evidence_span": "数据治理体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "技术中台",
+        "evidence_span": "技术中台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据中台",
+        "evidence_span": "数据中台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "业务中台",
+        "evidence_span": "业务中台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "两地三中心系统",
+        "evidence_span": "架构两地三中心系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "私有云及混合云建设",
+        "evidence_span": "大力推进私有云及混合云建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "异地云灾备系统",
+        "evidence_span": "上线异地云灾备系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山西省属大型国企",
+        "evidence_span": "服务了90%以上的省属大型国企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "省内新三板企业",
+        "evidence_span": "近50%的省内新三板企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "省内四板企业",
+        "evidence_span": "近50%的省内四板企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山西股权交易中心晋兴板企业",
+        "evidence_span": "执行完成55家中小企业挂牌山西股权交易中心晋兴板"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "服务实体经济",
+        "evidence_span": "聚焦服务实体经济"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "财富管理转型",
+        "evidence_span": "财富管理转型持续推进"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色金融",
+        "evidence_span": "以绿色金融助力“双碳”目标"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "乡村振兴",
+        "evidence_span": "服务乡村振兴"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:22:38"
+}

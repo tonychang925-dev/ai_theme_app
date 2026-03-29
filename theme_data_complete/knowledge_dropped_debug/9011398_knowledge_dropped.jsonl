@@ -1,0 +1,14 @@
+{"span_uid": "734a5b246e3a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为具体公司的生产线试运行和产能爬坡计划，属于事件性、预测性信息，无法整理成稳定、可独立成立的知识块，不适合保留。"}
+{"span_uid": "47181450b361", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为具体项目落地和生态建设计划，属于事件性信息，无法整理成稳定、可独立成立的知识块，不适合保留。"}
+{"span_uid": "f1028e2189b3", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述华为特定专利技术细节，属于具体公司事件和预测性信息，无法整理成稳定、可独立成立的题材知识块。"}
+{"span_uid": "bbbce4422977", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段涉及华为与台积电在先进封装领域的比较，属于具体公司事件和主观推测，无法形成稳定、可独立成立的题材知识块。"}
+{"span_uid": "6655a90186ff", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场增长预测", "stability": "low", "reason": "原片段为具体年份的预测数据，属于事件性、时效性强的信息，无法形成稳定知识块。"}
+{"span_uid": "4bef685dc578", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模预测", "stability": "low", "reason": "原片段为封测领域的预测数据，与半导体设备题材相关度较低，且为事件性信息，不适合保留。"}
+{"span_uid": "9530a68cf91e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "行业统计数据", "stability": "low", "reason": "原片段为具体时间点的统计数据，属于事件性信息，无法形成稳定知识块。"}
+{"span_uid": "f43d0efa363f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场增长预测", "stability": "low", "reason": "原片段为具体年份的预测数据，与span_uid 6655a90186ff重复，且为事件性信息，不适合保留。"}
+{"span_uid": "198528ce689c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "设备支出预测", "stability": "low", "reason": "该片段是SEMI对2025-2027年全球晶圆厂设备支出的预测，属于短期趋势信息，稳定性低，不适合作为稳定知识块入库。"}
+{"span_uid": "ad898d737005", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "技术进展事件", "stability": "low", "reason": "该片段是佳能交付首台新型纳米压印光刻机的具体事件，带有新闻口吻和主观表述（如“能耗据称只要十分之一”），无法整理成稳定知识块。"}
+{"span_uid": "e7511f093472", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "地方政策事件", "stability": "low", "reason": "该片段是广东省政府针对东莞的具体政策事件，属于短期催化信息，稳定性低，不适合作为稳定知识块入库。"}
+{"span_uid": "5e089f88ad73", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体的产能预测和事件信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "a8c73778a267", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体的销售额预测数据，属于阶段性变化信息，但无法脱离原新闻上下文形成稳定知识块。"}
+{"span_uid": "7f6fb75b8ae5", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体的研发主体和体制结构描述，涉及事件和预测，无法整理成稳定、可独立成立的知识块。"}

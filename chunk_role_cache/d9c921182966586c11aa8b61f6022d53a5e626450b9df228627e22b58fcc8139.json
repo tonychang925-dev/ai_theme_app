@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "2c14f7f42551", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述北方华创的半年净利润公告，是一个具体公司业绩事件，没有提供半导体设备题材的稳定知识。"}}

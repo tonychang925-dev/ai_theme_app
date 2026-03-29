@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "191fea76114f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落简要报道小鹏汇天飞行汽车的全球公开首飞和工厂竣工计划，属于公司动态和时间推进事件，无静态知识内容。"}}

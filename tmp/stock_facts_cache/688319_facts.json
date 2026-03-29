@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "人用疫苗的研发",
+      "evidence_span": "公司是一家专注于人用疫苗的研发、生产及销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "人用疫苗的生产",
+      "evidence_span": "公司是一家专注于人用疫苗的研发、生产及销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "人用疫苗的销售",
+      "evidence_span": "公司是一家专注于人用疫苗的研发、生产及销售的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专注于人用疫苗的高新技术企业",
+      "evidence_span": "公司是一家专注于人用疫苗的研发、生产及销售的高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "吸附破伤风疫苗",
+      "evidence_span": "实现3个产品上市销售，分别为：吸附破伤风疫苗、Hib结合疫苗和AC结合疫苗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Hib结合疫苗",
+      "evidence_span": "实现3个产品上市销售，分别为：吸附破伤风疫苗、Hib结合疫苗和AC结合疫苗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AC结合疫苗",
+      "evidence_span": "实现3个产品上市销售，分别为：吸附破伤风疫苗、Hib结合疫苗和AC结合疫苗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AC-Hib联合疫苗",
+      "evidence_span": "AC-Hib联合疫苗处于生产注册阶段"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "重组金葡菌疫苗",
+      "evidence_span": "重组金葡菌疫苗处于临床试验Ⅲ期阶段"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "四价流感病毒裂解疫苗（MDCK细胞）",
+      "evidence_span": "四价流感病毒裂解疫苗（MDCK细胞）等多个产品在研"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "A群链球菌疫苗",
+      "evidence_span": "A群链球菌疫苗、口服重组幽门螺杆菌疫苗（大肠杆菌）等多个产品在研"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "口服重组幽门螺杆菌疫苗（大肠杆菌）",
+      "evidence_span": "A群链球菌疫苗、口服重组幽门螺杆菌疫苗（大肠杆菌）等多个产品在研"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多糖蛋白结合技术",
+      "evidence_span": "公司的技术团队已熟练掌握多糖蛋白结合技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基因工程技术",
+      "evidence_span": "公司的技术团队已熟练掌握基因工程技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多肽疫苗技术",
+      "evidence_span": "公司的技术团队已熟练掌握多肽疫苗技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分离纯化技术",
+      "evidence_span": "公司的技术团队已熟练掌握分离纯化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "细菌高密度培养技术",
+      "evidence_span": "公司的技术团队已熟练掌握细菌高密度培养技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "破伤风疫苗脱毒控制技术",
+      "evidence_span": "公司的技术团队已熟练掌握破伤风疫苗脱毒控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "病毒疫苗技术平台",
+      "evidence_span": "公司新建病毒疫苗技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "佐剂技术平台",
+      "evidence_span": "公司新建病毒疫苗技术平台和佐剂技术平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "疾控中心",
+      "evidence_span": "常规疫苗的主要应用场景是疾控中心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "社区卫生服务机构",
+      "evidence_span": "常规疫苗的主要应用场景是疾控中心、社区卫生服务机构等常规接种点"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医院临床场景",
+      "evidence_span": "公司吸附破伤风疫苗、重组金葡菌疫苗还可以应用于医院临床场景"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "破伤风疫苗疾控中心市场",
+      "evidence_span": "国内率先开辟破伤风疫苗疾控中心市场"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "人用疫苗的研发",
+        "evidence_span": "公司是一家专注于人用疫苗的研发、生产及销售的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "人用疫苗的生产",
+        "evidence_span": "公司是一家专注于人用疫苗的研发、生产及销售的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "人用疫苗的销售",
+        "evidence_span": "公司是一家专注于人用疫苗的研发、生产及销售的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专注于人用疫苗的高新技术企业",
+        "evidence_span": "公司是一家专注于人用疫苗的研发、生产及销售的高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "吸附破伤风疫苗",
+        "evidence_span": "实现3个产品上市销售，分别为：吸附破伤风疫苗、Hib结合疫苗和AC结合疫苗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Hib结合疫苗",
+        "evidence_span": "实现3个产品上市销售，分别为：吸附破伤风疫苗、Hib结合疫苗和AC结合疫苗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AC结合疫苗",
+        "evidence_span": "实现3个产品上市销售，分别为：吸附破伤风疫苗、Hib结合疫苗和AC结合疫苗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AC-Hib联合疫苗",
+        "evidence_span": "AC-Hib联合疫苗处于生产注册阶段"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "重组金葡菌疫苗",
+        "evidence_span": "重组金葡菌疫苗处于临床试验Ⅲ期阶段"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "四价流感病毒裂解疫苗（MDCK细胞）",
+        "evidence_span": "四价流感病毒裂解疫苗（MDCK细胞）等多个产品在研"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "A群链球菌疫苗",
+        "evidence_span": "A群链球菌疫苗、口服重组幽门螺杆菌疫苗（大肠杆菌）等多个产品在研"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "口服重组幽门螺杆菌疫苗（大肠杆菌）",
+        "evidence_span": "A群链球菌疫苗、口服重组幽门螺杆菌疫苗（大肠杆菌）等多个产品在研"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多糖蛋白结合技术",
+        "evidence_span": "公司的技术团队已熟练掌握多糖蛋白结合技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基因工程技术",
+        "evidence_span": "公司的技术团队已熟练掌握基因工程技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多肽疫苗技术",
+        "evidence_span": "公司的技术团队已熟练掌握多肽疫苗技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分离纯化技术",
+        "evidence_span": "公司的技术团队已熟练掌握分离纯化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "细菌高密度培养技术",
+        "evidence_span": "公司的技术团队已熟练掌握细菌高密度培养技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "破伤风疫苗脱毒控制技术",
+        "evidence_span": "公司的技术团队已熟练掌握破伤风疫苗脱毒控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "病毒疫苗技术平台",
+        "evidence_span": "公司新建病毒疫苗技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "佐剂技术平台",
+        "evidence_span": "公司新建病毒疫苗技术平台和佐剂技术平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "疾控中心",
+        "evidence_span": "常规疫苗的主要应用场景是疾控中心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "社区卫生服务机构",
+        "evidence_span": "常规疫苗的主要应用场景是疾控中心、社区卫生服务机构等常规接种点"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医院临床场景",
+        "evidence_span": "公司吸附破伤风疫苗、重组金葡菌疫苗还可以应用于医院临床场景"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "破伤风疫苗疾控中心市场",
+        "evidence_span": "国内率先开辟破伤风疫苗疾控中心市场"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:05:23"
+}

@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "规划设计",
+      "evidence_span": "形成了“规划设计、环境建设、环保、生态综合治理及投资发展”的“4+1”业务体系"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环境建设",
+      "evidence_span": "形成了“规划设计、环境建设、环保、生态综合治理及投资发展”的“4+1”业务体系"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保",
+      "evidence_span": "形成了“规划设计、环境建设、环保、生态综合治理及投资发展”的“4+1”业务体系"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态综合治理",
+      "evidence_span": "形成了“规划设计、环境建设、环保、生态综合治理及投资发展”的“4+1”业务体系"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资发展",
+      "evidence_span": "形成了“规划设计、环境建设、环保、生态综合治理及投资发展”的“4+1”业务体系"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "园林绿化公司",
+      "evidence_span": "诚邦股份“设计-施工-养护”一体化的园林绿化公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "生态环境建设企业",
+      "evidence_span": "公司在稳步发展生态环境相关主业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "EPC项目",
+      "evidence_span": "公司承揽项目主要包括EPC项目、PPP项目和一般工程项目等类型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PPP项目",
+      "evidence_span": "公司承揽项目主要包括EPC项目、PPP项目和一般工程项目等类型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一般工程项目",
+      "evidence_span": "公司承揽项目主要包括EPC项目、PPP项目和一般工程项目等类型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城乡污水处理项目",
+      "evidence_span": "公司近几年承接的各城乡污水处理项目都将全面进入运营期"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "矿山尾矿治理",
+      "evidence_span": "加大对矿山尾矿治理、流域综合治理等EOD类项目的研究策划"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "流域综合治理",
+      "evidence_span": "加大对矿山尾矿治理、流域综合治理等EOD类项目的研究策划"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "河湖水污染治理",
+      "evidence_span": "河湖水污染治理、流域治理、矿山尾矿治理等需求逐步增加"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "土壤修复",
+      "evidence_span": "水污染治理、土壤修复、污泥固废和危废治理等环保业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污泥固废和危废治理",
+      "evidence_span": "水污染治理、土壤修复、污泥固废和危废治理等环保业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "设计施工一体化",
+      "evidence_span": "设计施工一体化产业链优势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳中和",
+      "evidence_span": "“2030碳达峰、2060碳中和”的目标"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳达峰",
+      "evidence_span": "“2030碳达峰、2060碳中和”的目标"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新基建",
+      "evidence_span": "通过投资并购方式进入技术含量高且现金流相对较好的“新基建”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "规划设计",
+        "evidence_span": "形成了“规划设计、环境建设、环保、生态综合治理及投资发展”的“4+1”业务体系"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环境建设",
+        "evidence_span": "形成了“规划设计、环境建设、环保、生态综合治理及投资发展”的“4+1”业务体系"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保",
+        "evidence_span": "形成了“规划设计、环境建设、环保、生态综合治理及投资发展”的“4+1”业务体系"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态综合治理",
+        "evidence_span": "形成了“规划设计、环境建设、环保、生态综合治理及投资发展”的“4+1”业务体系"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资发展",
+        "evidence_span": "形成了“规划设计、环境建设、环保、生态综合治理及投资发展”的“4+1”业务体系"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "园林绿化公司",
+        "evidence_span": "诚邦股份“设计-施工-养护”一体化的园林绿化公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "生态环境建设企业",
+        "evidence_span": "公司在稳步发展生态环境相关主业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "EPC项目",
+        "evidence_span": "公司承揽项目主要包括EPC项目、PPP项目和一般工程项目等类型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PPP项目",
+        "evidence_span": "公司承揽项目主要包括EPC项目、PPP项目和一般工程项目等类型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一般工程项目",
+        "evidence_span": "公司承揽项目主要包括EPC项目、PPP项目和一般工程项目等类型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城乡污水处理项目",
+        "evidence_span": "公司近几年承接的各城乡污水处理项目都将全面进入运营期"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "矿山尾矿治理",
+        "evidence_span": "加大对矿山尾矿治理、流域综合治理等EOD类项目的研究策划"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "流域综合治理",
+        "evidence_span": "加大对矿山尾矿治理、流域综合治理等EOD类项目的研究策划"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "河湖水污染治理",
+        "evidence_span": "河湖水污染治理、流域治理、矿山尾矿治理等需求逐步增加"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "土壤修复",
+        "evidence_span": "水污染治理、土壤修复、污泥固废和危废治理等环保业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污泥固废和危废治理",
+        "evidence_span": "水污染治理、土壤修复、污泥固废和危废治理等环保业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "设计施工一体化",
+        "evidence_span": "设计施工一体化产业链优势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳中和",
+        "evidence_span": "“2030碳达峰、2060碳中和”的目标"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳达峰",
+        "evidence_span": "“2030碳达峰、2060碳中和”的目标"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新基建",
+        "evidence_span": "通过投资并购方式进入技术含量高且现金流相对较好的“新基建”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:55:45"
+}

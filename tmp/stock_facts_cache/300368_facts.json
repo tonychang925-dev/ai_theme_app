@@ -1,0 +1,559 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能制造业务",
+      "evidence_span": "公司主营业务主要分为智能制造业务、信息化综合解决方案业务（含系统集成和数据中心）及供应链业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息化综合解决方案业务",
+      "evidence_span": "公司主营业务主要分为智能制造业务、信息化综合解决方案业务（含系统集成和数据中心）及供应链业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "供应链业务",
+      "evidence_span": "公司主营业务主要分为智能制造业务、信息化综合解决方案业务（含系统集成和数据中心）及供应链业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "金融机具厂商",
+      "evidence_span": "专业金融机具厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "现金处理设备及服务提供商",
+      "evidence_span": "现金处理设备及服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "细分产业工业制造企业数字化转型服务商",
+      "evidence_span": "打造“细分产业工业制造企业数字化转型服务商”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "捆钞机",
+      "evidence_span": "主要产品包括系列捆钞机和装订机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装订机",
+      "evidence_span": "主要产品包括系列捆钞机和装订机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自助回单机",
+      "evidence_span": "自助回单机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自助票据机",
+      "evidence_span": "自助票据机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人民币清分包装流水线",
+      "evidence_span": "人民币清分包装流水线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "虚拟柜台",
+      "evidence_span": "虚拟柜台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纸币光密度定量检测仪器",
+      "evidence_span": "纸币光密度定量检测仪器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微型现钞处理中心",
+      "evidence_span": "微型现钞处理中心（Ⅲ-K)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "支付软件",
+      "evidence_span": "支付软件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金刚石砂线电镀流水线",
+      "evidence_span": "加大在金刚石砂线电镀流水线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩票自助终端",
+      "evidence_span": "彩票自助终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新零售自助终端",
+      "evidence_span": "新零售自助终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "政务自助终端",
+      "evidence_span": "政务自助终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "税务自助终端",
+      "evidence_span": "税务自助终端等领域的拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纸质卷宗智能分拣排序解决方案及成套装备",
+      "evidence_span": "纸质卷宗智能分拣排序解决方案及成套装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "文书档案智能管理解决方案及成套装备",
+      "evidence_span": "文书档案智能管理解决方案及成套装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据中心设计、规划咨询服务",
+      "evidence_span": "数据中心设计、规划咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据中心建设管理服务",
+      "evidence_span": "数据中心建设管理服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息化综合解决方案",
+      "evidence_span": "为客户提供信息化综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "设备运营维护及维保服务",
+      "evidence_span": "设备运营维护及维保服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "应用软件开发与设计服务",
+      "evidence_span": "提供相应的应用软件开发与设计服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤炭供应链服务",
+      "evidence_span": "供应链业务主要服务煤炭、焦炭、铁矿石及特定中小民营企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢材供应链服务",
+      "evidence_span": "主营煤炭、钢材业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "图像识别技术",
+      "evidence_span": "围绕图像识别、人工智能技术及定制化智能成套装备等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能技术",
+      "evidence_span": "围绕图像识别、人工智能技术及定制化智能成套装备等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化终端产品的整体设计、精密加工、装配调试及工艺装备",
+      "evidence_span": "掌握了一整套智能化终端产品的整体设计、精密加工、装配调试及工艺装备等方面的核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "软硬件系统集成智能化综合解决方案",
+      "evidence_span": "软硬件系统集成智能化综合解决方案的项目经验"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工商银行",
+      "evidence_span": "国内工行、农行、中行、建行、交行，民生等商业银行总行多种产品的主要供应商与服务商之一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "农业银行",
+      "evidence_span": "国内工行、农行、中行、建行、交行，民生等商业银行总行多种产品的主要供应商与服务商之一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国银行",
+      "evidence_span": "国内工行、农行、中行、建行、交行，民生等商业银行总行多种产品的主要供应商与服务商之一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建设银行",
+      "evidence_span": "国内工行、农行、中行、建行、交行，民生等商业银行总行多种产品的主要供应商与服务商之一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交通银行",
+      "evidence_span": "国内工行、农行、中行、建行、交行，民生等商业银行总行多种产品的主要供应商与服务商之一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "民生银行",
+      "evidence_span": "国内工行、农行、中行、建行、交行，民生等商业银行总行多种产品的主要供应商与服务商之一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中福彩营销中心",
+      "evidence_span": "福彩主要与中福彩营销中心合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "与华为、H3C、浪潮、联想、DELL、IBM等国内外著名厂商建立了紧密的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "H3C",
+      "evidence_span": "与华为、H3C、浪潮、联想、DELL、IBM等国内外著名厂商建立了紧密的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浪潮",
+      "evidence_span": "与华为、H3C、浪潮、联想、DELL、IBM等国内外著名厂商建立了紧密的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联想",
+      "evidence_span": "与华为、H3C、浪潮、联想、DELL、IBM等国内外著名厂商建立了紧密的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "DELL",
+      "evidence_span": "与华为、H3C、浪潮、联想、DELL、IBM等国内外著名厂商建立了紧密的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "IBM",
+      "evidence_span": "与华为、H3C、浪潮、联想、DELL、IBM等国内外著名厂商建立了紧密的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融机构",
+      "evidence_span": "以金融机构、大企业、政府三类客户为核心的优质客户群体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大企业",
+      "evidence_span": "以金融机构、大企业、政府三类客户为核心的优质客户群体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府",
+      "evidence_span": "以金融机构、大企业、政府三类客户为核心的优质客户群体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中建",
+      "evidence_span": "钢材客户合作有中建、中铁等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁",
+      "evidence_span": "钢材客户合作有中建、中铁等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "金融机具智能化",
+      "evidence_span": "金融机具智能化扬帆起航"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信创领域",
+      "evidence_span": "结合国家发展趋势在信创领域取得新突破"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧政务",
+      "evidence_span": "智慧政务主要为公检法、行政审批中心等提供智能业务处理终端设备"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏新能源",
+      "evidence_span": "光伏新能源主要为光伏配件生产企业设计和生产相关制造装备"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能制造业务",
+        "evidence_span": "公司主营业务主要分为智能制造业务、信息化综合解决方案业务（含系统集成和数据中心）及供应链业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息化综合解决方案业务",
+        "evidence_span": "公司主营业务主要分为智能制造业务、信息化综合解决方案业务（含系统集成和数据中心）及供应链业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "供应链业务",
+        "evidence_span": "公司主营业务主要分为智能制造业务、信息化综合解决方案业务（含系统集成和数据中心）及供应链业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "金融机具厂商",
+        "evidence_span": "专业金融机具厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "现金处理设备及服务提供商",
+        "evidence_span": "现金处理设备及服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "细分产业工业制造企业数字化转型服务商",
+        "evidence_span": "打造“细分产业工业制造企业数字化转型服务商”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "捆钞机",
+        "evidence_span": "主要产品包括系列捆钞机和装订机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装订机",
+        "evidence_span": "主要产品包括系列捆钞机和装订机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自助回单机",
+        "evidence_span": "自助回单机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自助票据机",
+        "evidence_span": "自助票据机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人民币清分包装流水线",
+        "evidence_span": "人民币清分包装流水线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "虚拟柜台",
+        "evidence_span": "虚拟柜台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纸币光密度定量检测仪器",
+        "evidence_span": "纸币光密度定量检测仪器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微型现钞处理中心",
+        "evidence_span": "微型现钞处理中心（Ⅲ-K)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "支付软件",
+        "evidence_span": "支付软件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金刚石砂线电镀流水线",
+        "evidence_span": "加大在金刚石砂线电镀流水线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩票自助终端",
+        "evidence_span": "彩票自助终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新零售自助终端",
+        "evidence_span": "新零售自助终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "政务自助终端",
+        "evidence_span": "政务自助终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "税务自助终端",
+        "evidence_span": "税务自助终端等领域的拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纸质卷宗智能分拣排序解决方案及成套装备",
+        "evidence_span": "纸质卷宗智能分拣排序解决方案及成套装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "文书档案智能管理解决方案及成套装备",
+        "evidence_span": "文书档案智能管理解决方案及成套装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据中心设计、规划咨询服务",
+        "evidence_span": "数据中心设计、规划咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据中心建设管理服务",
+        "evidence_span": "数据中心建设管理服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息化综合解决方案",
+        "evidence_span": "为客户提供信息化综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "设备运营维护及维保服务",
+        "evidence_span": "设备运营维护及维保服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "应用软件开发与设计服务",
+        "evidence_span": "提供相应的应用软件开发与设计服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤炭供应链服务",
+        "evidence_span": "供应链业务主要服务煤炭、焦炭、铁矿石及特定中小民营企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢材供应链服务",
+        "evidence_span": "主营煤炭、钢材业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "图像识别技术",
+        "evidence_span": "围绕图像识别、人工智能技术及定制化智能成套装备等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能技术",
+        "evidence_span": "围绕图像识别、人工智能技术及定制化智能成套装备等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化终端产品的整体设计、精密加工、装配调试及工艺装备",
+        "evidence_span": "掌握了一整套智能化终端产品的整体设计、精密加工、装配调试及工艺装备等方面的核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "软硬件系统集成智能化综合解决方案",
+        "evidence_span": "软硬件系统集成智能化综合解决方案的项目经验"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工商银行",
+        "evidence_span": "国内工行、农行、中行、建行、交行，民生等商业银行总行多种产品的主要供应商与服务商之一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "农业银行",
+        "evidence_span": "国内工行、农行、中行、建行、交行，民生等商业银行总行多种产品的主要供应商与服务商之一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国银行",
+        "evidence_span": "国内工行、农行、中行、建行、交行，民生等商业银行总行多种产品的主要供应商与服务商之一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建设银行",
+        "evidence_span": "国内工行、农行、中行、建行、交行，民生等商业银行总行多种产品的主要供应商与服务商之一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交通银行",
+        "evidence_span": "国内工行、农行、中行、建行、交行，民生等商业银行总行多种产品的主要供应商与服务商之一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "民生银行",
+        "evidence_span": "国内工行、农行、中行、建行、交行，民生等商业银行总行多种产品的主要供应商与服务商之一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中福彩营销中心",
+        "evidence_span": "福彩主要与中福彩营销中心合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "与华为、H3C、浪潮、联想、DELL、IBM等国内外著名厂商建立了紧密的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "H3C",
+        "evidence_span": "与华为、H3C、浪潮、联想、DELL、IBM等国内外著名厂商建立了紧密的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浪潮",
+        "evidence_span": "与华为、H3C、浪潮、联想、DELL、IBM等国内外著名厂商建立了紧密的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联想",
+        "evidence_span": "与华为、H3C、浪潮、联想、DELL、IBM等国内外著名厂商建立了紧密的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "DELL",
+        "evidence_span": "与华为、H3C、浪潮、联想、DELL、IBM等国内外著名厂商建立了紧密的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "IBM",
+        "evidence_span": "与华为、H3C、浪潮、联想、DELL、IBM等国内外著名厂商建立了紧密的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融机构",
+        "evidence_span": "以金融机构、大企业、政府三类客户为核心的优质客户群体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大企业",
+        "evidence_span": "以金融机构、大企业、政府三类客户为核心的优质客户群体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府",
+        "evidence_span": "以金融机构、大企业、政府三类客户为核心的优质客户群体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中建",
+        "evidence_span": "钢材客户合作有中建、中铁等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁",
+        "evidence_span": "钢材客户合作有中建、中铁等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "金融机具智能化",
+        "evidence_span": "金融机具智能化扬帆起航"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信创领域",
+        "evidence_span": "结合国家发展趋势在信创领域取得新突破"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧政务",
+        "evidence_span": "智慧政务主要为公检法、行政审批中心等提供智能业务处理终端设备"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏新能源",
+        "evidence_span": "光伏新能源主要为光伏配件生产企业设计和生产相关制造装备"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:02:19"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "ed38333b9e5e", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述市场监管总局对预制菜标准的答复事件，但包含预制菜标准体系、术语分类等具体知识，混合了事件和静态知识。"}}

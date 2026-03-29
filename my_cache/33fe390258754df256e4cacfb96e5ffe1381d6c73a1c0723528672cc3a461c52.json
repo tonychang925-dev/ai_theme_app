@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "50c8fb833271", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "段落描述三星电子HBM4内存的流片和量产计划事件，但包含HBM4的技术信息（如12层堆叠）和时间线，这些可能对HBM技术发展知识构建有价值，因此分类为candidate_mixed。"}}

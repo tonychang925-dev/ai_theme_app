@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:48:24", "result": {"span_uid": "c052d004ce1c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "行业领袖预测", "stability": "low", "reason": "原片段是扎克伯格的主观预测和观点，属于个人看法而非稳定事实，无法形成可独立成立的稳定知识块。"}}

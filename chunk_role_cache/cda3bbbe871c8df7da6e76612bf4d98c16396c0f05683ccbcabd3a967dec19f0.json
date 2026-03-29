@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "623720c5c10c", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落简要描述三星电子导入ASML High NA EUV光刻设备的事件，没有扩展说明技术细节或静态知识，纯属公司动态。"}}

@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "硅橡胶",
+      "evidence_span": "报告期内公司主营业务为硅橡胶及其制品的加工销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其制品的加工销售",
+      "evidence_span": "报告期内公司主营业务为硅橡胶及其制品的加工销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有机硅材料的研发",
+      "evidence_span": "子公司东莞新东方专业从事有机硅材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "子公司东莞新东方专业从事有机硅材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "子公司东莞新东方专业从事有机硅材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高温硅橡胶行业位居前列的生产企业",
+      "evidence_span": "国内高温硅橡胶行业位居前列的生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高新技术企业",
+      "evidence_span": "东莞新东方是高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高温硅橡胶",
+      "evidence_span": "公司主要产品为高温硅橡胶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生胶",
+      "evidence_span": "主要产品包括生胶、混炼胶、液体胶等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "混炼胶",
+      "evidence_span": "主要产品包括生胶、混炼胶、液体胶等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液体胶",
+      "evidence_span": "主要产品包括生胶、混炼胶、液体胶等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅油",
+      "evidence_span": "主要从事高温硅橡胶、液体硅橡胶等有机硅生胶及硅油的研发、生产和销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高温硅橡胶、液体硅橡胶等有机硅生胶及硅油的研发",
+      "evidence_span": "主要从事高温硅橡胶、液体硅橡胶等有机硅生胶及硅油的研发、生产和销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "特种高附加值硅橡胶的开发",
+      "evidence_span": "加大特种高附加值硅橡胶的开发力度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多项专利技术",
+      "evidence_span": "已取得多项专利技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "有机硅下游产品深加工的研发创新",
+      "evidence_span": "提升有机硅下游产品深加工的研发创新能力"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "硅橡胶及其制品的加工销售",
+        "evidence_span": "报告期内公司主营业务为硅橡胶及其制品的加工销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有机硅材料的研发、生产和销售",
+        "evidence_span": "子公司东莞新东方专业从事有机硅材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高温硅橡胶行业位居前列的生产企业",
+        "evidence_span": "国内高温硅橡胶行业位居前列的生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高新技术企业",
+        "evidence_span": "东莞新东方是高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高温硅橡胶",
+        "evidence_span": "公司主要产品为高温硅橡胶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生胶",
+        "evidence_span": "主要产品包括生胶、混炼胶、液体胶等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "混炼胶",
+        "evidence_span": "主要产品包括生胶、混炼胶、液体胶等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液体胶",
+        "evidence_span": "主要产品包括生胶、混炼胶、液体胶等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅油",
+        "evidence_span": "主要从事高温硅橡胶、液体硅橡胶等有机硅生胶及硅油的研发、生产和销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高温硅橡胶、液体硅橡胶等有机硅生胶及硅油的研发",
+        "evidence_span": "主要从事高温硅橡胶、液体硅橡胶等有机硅生胶及硅油的研发、生产和销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "特种高附加值硅橡胶的开发",
+        "evidence_span": "加大特种高附加值硅橡胶的开发力度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多项专利技术",
+        "evidence_span": "已取得多项专利技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "有机硅下游产品深加工的研发创新",
+        "evidence_span": "提升有机硅下游产品深加工的研发创新能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航空、电缆、电子电器、仪表、汽车、建筑、食品加工、医疗器械、日常生活用品、情趣用品等行业",
+        "evidence_span": "被广泛用于航空、电缆、电子电器、仪表、汽车、建筑、食品加工、医疗器械、日常生活用品、情趣用品等行业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:28:26"
+}

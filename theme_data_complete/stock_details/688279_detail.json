@@ -1,0 +1,98 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 193987765.0,
+    "changeCount": -4.48,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、国内 BLDC 电机驱动控制芯片龙头</span></p>\n<p>峰岹科技成立于 2010 年，2022 年成功登陆上交所科创板。公司长期从事 BLDC 电机（直流无刷电机）驱动控制专用芯片的研发、设计与销售业务，产品涵盖电机驱动控制的全部关键芯片，包括电机主控芯片 MCU/ASIC、电机驱动芯片 HVIC、电机专用功率器件MOSFET 等。产品广泛应用于家电、电动工具、计算机及通信设备、运动出行、工业与汽车等领域。</p>\n<p><span style=\"font-weight: bold;\">公司主要产品为电机驱动控制芯片 MCU/HVIC 等</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20221214172431_d4ace6f3fe9b90c1.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">小家电是公司产品最大的下游应用领域</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221214172453_6116a9ab7595ff83.png\" /></span></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、全球 BLDC 电机需求稳步增长，驱动控制芯片市场广阔</span></p>\n<p><span style=\"font-weight: bold;\">2.1、相比传统电机，BLDC 电机效率更高</span></p>\n<p><span style=\"font-weight: bold;\">无刷直流电机（Brushless Direct Current Motor，BLDCM），</span>即无电刷和换向器的电机，又称无换向器电机或同步直流电机。BLDC 电机主要由用永磁材料制造的转子、带有线圈绕组的定子和位置传感器组成。BLDC 电机原理是通过切换 U 相、V 相、W 相三个定子中通电，以变更合成磁通量的方向使之发生旋转，从而产生磁场，并带动转子旋转。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid4_20221214172736_d07c90ba778c2b04.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid6_20221214172744_34c9c28e792d661f.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20221214172805_f0ba536f973d3d03.png\" /></p>\n<p><span style=\"font-weight: bold;\">相比传统电机，BLDC 电机特点鲜明：</span></p>\n<p>在较宽的速度段上较其他传统电机拥有较高的电机效率；</p>\n<p>基于应用场景的不同，可以选择方波、SVPWM、FOC 等各种电机驱动控制方式，实现多样化的控制需求；</p>\n<p>控制用到的参数较多且互为关联，驱动控制算法比较复杂。与其他类型电机相比，其驱动控制算法难度较高；</p>\n<p>具备高可靠性、低振动、高效率、低噪音、节能降耗的性能优势，并可在较宽调速范围内实现响应快、精度高的变速效果，充分契合终端应用领域对节能降耗、智能控制、用户体验等越来越高的要求，BLDC 电机下游应用市场广泛且不断扩展。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20221214172937_e67c24a8b1bc034f.png\" /></p>\n<p><span style=\"font-weight: bold;\">2.2、应用广泛，2027 年全球 BLDC 电机预计 227 亿美元市场规模</span></p>\n<p><span style=\"font-weight: bold;\">BLDC 电机应用广泛。</span>BLDC 电机由于转矩密度高，同样转矩下电机的尺寸较小、重量较轻，很适合移动式产品，如无人机、机器人和电动汽车等领域。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid13_20221214173059_efbd57da585f0f8d.png\" /></p>\n<p><span style=\"font-weight: bold;\">2027 年全球 BLDC 电机市场规模约 272 亿美元。</span>据 Grand View Research 预测，全球 BLDC 电机市场规模将从 2019 年的 163 亿美元，增长到 2022 年的 197 亿美元，增长幅度达到 20.86%，预计到 2027 年 BLDC 全球市场规模将增长到 272 亿美元。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid15_20221214173149_760c2c15753e4f09.png\" /></p>\n<p><span style=\"font-weight: bold;\">2.3、2023 年全球 BLDC 电机驱动控制芯片预计约 278 亿元市场规模</span></p>\n<p><span style=\"font-weight: bold;\">驱动控制芯片是控制 BLDC 电机运行的核心器件。</span>BLDC 电机驱动控制芯片主要由 MCU/ASIC、HVIC、MOSFET 芯片组成，<span style=\"font-weight: bold;\">其中 MCU/ASIC 芯片，</span>属于控制系统大脑，实现电气信号检测、电机驱动控制算法及控制指令生成等；<span style=\"font-weight: bold;\">HVIC，</span>由于主控芯片难以直接驱动大功率的 MOSFET，需要 HVIC 作为驱动芯片，起到高低压隔离和增大驱动能力的功能；<span style=\"font-weight: bold;\">MOSFET，</span>通过开关控制输出电流频率，实现对 BLDC 电机转速或转轴位置的调节。在三大核心器件共同作用下，给 BLDC 电机提供高压、大电流的驱动信号，产生 U、V、W 三相控制电压，使 BLDC 电机按照控制指令工作。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid17_20221214173258_f77a816214b0c8aa.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid18_20221214173302_3a7efdb345c8004f.png\" /></p>\n<p><span style=\"font-weight: bold;\">2023 年全球 BLDC 电机驱动控制芯片预计约 278 亿元市场规模。</span>根据公司公告，以 BLDC 电机全球市场规模、日本电产最近 5 个会计年度平均毛利率、电机驱动控制系列芯片成本占 BLDC 电机成本比例等数据对全球 BLDC 电机驱动控制芯片市场进行测算，2023 年全球 BLDC 电机驱动控制芯片预计约 278 亿元市场规模。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid20_20221214173440_20f16b04f0262da1.png\" /></p>\n<p><span style=\"font-weight: bold;\">国内厂商在 BLDC 电机驱动控制细分领域开始崭露头角。</span>在 BLDC 电机驱动控制芯片领域，2010 年之前全球市场基本被 TI、ST、Infineon 和 ROHM 等国际大厂垄断。2010-2015 年期间，兆易创新、中颖电子和峰岹科技等国内厂商逐渐崭露头角。2015 年至今，国内厂商影响力不断增强，逐渐走向行业竞争前沿，在 BLDC 电机驱动控制细分领域具备了与国际厂商分庭抗衡的实力。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、技术创业，专注电机驱动控制专用芯片研发与销售</span></p>\n<p><span style=\"font-weight: bold;\">核心技术人员均为公司实际控制人或间接股东，核心研发团队稳定。</span>公司核心技术团队分为芯片设计团队、电机驱动架构团队和电机技术团队。芯片设计团队由公司首席执行官 BILEI（毕磊）担任技术牵头人，其在芯片设计领域有超过 20 年的产业化经验；电机驱动架构团队由新加坡国立大学博士、公司首席系统架构官 SOH CHENG SU（苏清赐）博士担任技术牵头人；电机技术团队由公司首席技术官 BI CHAO（毕超）博士担任技术牵头人。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid22_20221214173717_ba872ec3b78b0995.png\" /></p>\n<p><span style=\"font-weight: bold;\">专注于电机驱动控制专用芯片的研发与销售。</span>公司成立以来，一直围绕电机驱动控制领域，在电机主控芯片 MCU/ASIC、电机驱动芯片 HVIC、功率器件 MOSFET 产品线上进行产品延伸开发，在算法硬件化、电机控制器件集成化的方向发展，全产品线的发展版图实现了客户电机全场景应用，公司能够为客户提供从驱动控制芯片产品及驱动控制整体方案到电机系统优化的系统级服务。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid24_20221214173806_fdb45e87ec913065.png\" /></p>\n<p><span style=\"font-weight: bold;\">终端应用不断拓展。</span>公司电机驱动控制专用芯片市场接受程度逐步加深，终端应用不断拓展，使用公司芯片产品的国内外知名厂商数量不断增加，公司市占率不断提升。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid26_20221214173853_da0ec1c8a531c740.png\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、专用 IP 内核完全自主知识产权，产品性价比优势明显</span></p>\n<p><span style=\"font-weight: bold;\">拥有完全自主知识产权的电机控制专用 IP 内核。</span>大多数电机控制芯片厂商采用通用 MCU 芯片，内核架构一般采用 ARM 公司提供的 Cortex M 系列内核。这导致 IP 内核依赖于 ARM 公司的授权，需要支付 IP 授权费用，同时通用 MCU 芯片发展受制于 ARM 授权体系，芯片设计受限于处理器架构的授权，无法对内核进行针对性的修改。<span style=\"font-weight: bold;\">峰岹科技电机主控芯片 MCU 采用双核结构，由公司自主研发的 ME 内核专门承担复杂的电机控制任务，通用 MCU 内核用于处理通信等辅助任务。</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid28_20221214174633_b7b09fecff45867d.png\" /></span></p>\n<p><span style=\"font-weight: bold;\">产品技术性能领先。</span>公司研发的电机控制专用内核采用硬件方式实现电机控制 FOC 算法，6~7&mu;s 即可完成一次 FOC 运算，无感 FOC 控制方案的电周期转速可高达 270000 RPM。采用 ARM 授权内核的芯片产品，其控制算法需通过复杂的软件编程来实现，运算速度主要依赖于 MCU 工作主频，在相同主频下通用内核的算力比算法硬件化的专用内核算力低。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid30_20221214175224_717cc15989023103.png\" /></p>\n<p><span style=\"font-weight: bold;\">专用芯片集成度更高，性价比优势明显。</span>公司电机控制专用芯片已在内部集成了电机驱动控制方案所需外设，如高速运算放大器、比较器、LDO、预驱动，部分芯片还集成 MOSFET，大大减少外围器件，最大程度上精简了控制板，降低元器件所需面积。通用 MCU 集成驱动一般采用合封技术，使得控制系统的可靠性降低，维护成本加大。峰岹科技主控芯片则在单一晶圆上集成了电源、驱动或功率器件，可靠性大大提高，有效降低整体方案成本。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid33_20221214175416_90fec1de96c5064b.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid35_20221214175455_89b001d2d0100375.png\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、服务器、白电市场开始放量，汽车市场提供长期增长动力</span></p>\n<p><span style=\"font-weight: bold;\">小家电市占率高，BLDC 渗透率提升带动驱动芯片需求稳步增长。</span>BLDC 电机拥有节能降耗、较好控制性能、运行平稳等优点，在小家电市场的渗透率不断提升。目前在油烟机、洗碗机、厨余处理器、干衣机、吸尘器、空气净化器中，BLDC 电机的占比仍较小，与渗透率天花板存在较大距离，市场发展空间广阔。公司深耕小家电领域多年，在高速吸尘器、直流变频电扇等多个领域占据行业领先份额，客户遍及飞利浦、美的、科沃斯、电产等国内外一线品牌，多年来一直是公司的第一大收入来源。未来随着 BLDC 电机在小家电领域渗透率的提升和电机国产替代的推进，公司的小家电芯片业务有望保持稳步增长趋势。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid37_20221214175920_33ee8f0c3c4f0e26.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid39_20221214175929_c7a9780b0e17ee29.png\" /></p>\n<p><span style=\"font-weight: bold;\">服务器、白电市场开拓取得较大进展。</span>消费升级背景下，终端市场对电机控制性能提出了更高的要求，不仅限于电机开关或简单变档的控制，还需要电机能够实现高效率、低噪音、多功能的复杂控制任务，例如变频冰箱、变频空调的比例逐年上升，散热风扇对能耗和静音效果的进一步要求等。更高的性能要求对芯片设计公司提出了更高的要求。凭借技术先进、性能优异、高性价比等明显竞争优势，公司电机主控芯片在白色家电和服务器散热器领域不断扩张，2022 中报显示，2022H1散热风扇（应用于服务器等）领域销售收入同比增长 335.43%，已成为公司第二大应用领域；白色家电领域销售收入同比增长 56.44%，上升为公司重要应用领域。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid40_20221214180127_26039de39f1a43ba.png\" /></p>\n<p><span style=\"font-weight: bold;\">汽车电子提供长期成长动力</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid43_20221214180307_4573700ece90c822.png\" /></p>\n<p>BLDC 电机广泛用于汽车应用，如燃油泵、水泵、防抱死制动系统(ABS)、雨刮、冷却风扇等，并为动力转向系统提供额外的扭矩。峰岹科技持续加大汽车电子领域的研发力度，2022H1 公司车规级产品通过 AEC-Q100车规认证。公司亦积极推进汽车电子领域的市场拓展，已进入部分国内主要新能源汽车厂商的配套。公司产品正在整车或配套厂商性能验证阶段，效果良好，未来汽车市场预计将提供公司长期成长动力。</p>\n<p><span style=\"font-weight: bold;\">车规级专用IC通过AEC-Q100认证，正式推向汽车BLDC电机蓝海市场。</span>公司针对车用市场研发设计的车规级BLDC电机控制专用芯片FU6832N1成功通过AEC-Q100认证。FU6832N1检视温度等级为Grade1，芯片工作时TJ(-40&ndash;150&deg;C)，TA(-40&ndash;125&deg;C)，可以广泛应用在车身控制的相关电机控制领域中，包括汽车散热水泵、主动进气格栅、玻璃升降控制、汽车坐垫、座椅通风、汽车升降杆等。FU6832N1芯片内部集成AD、AMP、DAC、LDO、DMA、Driver等，集成ME电机控制内核，包含硬件PI、LPF、MDU、FOC功能模块，可以进行快速高效的运算，电机控制专用芯片高度集成也有效减少外围器件，可以更快完成整体方案设计。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid46_20221214183207_aaa3885fbe28b80e.png\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid44_20221214183155_b1d04a2ba76b5485.png\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、风险提示：</span>下游需求疲软、竞争加剧、原材料涨价、市场开发进度缓慢等风险</p>",
+    "firstLetter": "FTKJ",
+    "high": 204.95,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 191.11,
+    "marketValue": 23478667756.8,
+    "name": "峰岹科技",
+    "pctChg": -2.2,
+    "price": 199.48,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": 14.12,
+    "recentChange": -1.77,
+    "remark": "电机驱动控制专用芯片的研发设计企业，芯片+算法+电机技术为护城河，终端应用不断拓展",
+    "status": 1,
+    "stockId": "688279",
+    "stockLightspots": [
+      {
+        "bizKey": "33094",
+        "content": "家电核芯驱动，汽车引擎加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33094,
+        "stockId": "688279",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33095",
+        "content": "峰岹科技直流无刷电机驱动控制芯片专家",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33095,
+        "stockId": "688279",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33096",
+        "content": "BLDCM驱动控制芯片龙头，服务器、白电客户放量",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33096,
+        "stockId": "688279",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33097",
+        "content": "22Q3消费市场承压，服务器、汽车领域新增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33097,
+        "stockId": "688279",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33098",
+        "content": "峰岹科技看好服务器、汽车等新领域前景",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33098,
+        "stockId": "688279",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33099",
+        "content": "自主知识产权专用ME内核加持，算法硬件化打开各类应用市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33099,
+        "stockId": "688279",
+        "updateTime": null
+      },
+      {
+        "bizKey": "33100",
+        "content": "基于核心算法的全球高性能电机驱动控制芯片领导者，勇攀岹岹BLDC高峰",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 33100,
+        "stockId": "688279",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:53",
+    "vol": 9917.66
+  }
+}

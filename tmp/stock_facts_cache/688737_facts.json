@@ -1,0 +1,334 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "尾气净化催化剂",
+      "evidence_span": "主营天然气、柴油、汽油等燃料机动车尾气净化催化剂（器）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "氢燃料电池电催化剂",
+      "evidence_span": "氢燃料电池电催化剂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "储能",
+      "evidence_span": "储能与动力电池"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "动力电池",
+      "evidence_span": "储能与动力电池"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "尾气处理催化剂国内领先企业",
+      "evidence_span": "尾气处理催化剂国内领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环保催化剂厂商",
+      "evidence_span": "我国领先的环保催化剂厂商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天然气车尾气处理催化剂",
+      "evidence_span": "天然气车尾气处理催化剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "柴油车尾气处理催化剂",
+      "evidence_span": "柴油车尾气处理催化剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽油车尾气处理催化剂",
+      "evidence_span": "汽油车尾气处理催化剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "摩托车尾气处理催化剂",
+      "evidence_span": "摩托车尾气处理催化剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "在用车产品",
+      "evidence_span": "在用车产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能电池产品",
+      "evidence_span": "储能电池产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大圆柱磷酸铁锂电池",
+      "evidence_span": "长寿命大圆柱磷酸铁锂电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电芯模组",
+      "evidence_span": "电芯模组供应商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国六排放标准尾气处理催化剂",
+      "evidence_span": "满足国六排放标准的新一代尾气处理催化剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "柔性生产线",
+      "evidence_span": "部分共用柔性生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "专门生产线",
+      "evidence_span": "采用专门生产线分别进行生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "专线配置",
+      "evidence_span": "天然气车产品和汽油车产品配置了专线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PACK中试线",
+      "evidence_span": "PACK中试线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "10MWH电芯中试线",
+      "evidence_span": "10MWH电芯中试线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电芯量产线",
+      "evidence_span": "电芯量产线正在规划中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "玉柴",
+      "evidence_span": "玉柴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "云内",
+      "evidence_span": "云内"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上柴",
+      "evidence_span": "上柴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "柳机动力",
+      "evidence_span": "柳机动力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小康动力",
+      "evidence_span": "小康动力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "重汽",
+      "evidence_span": "重汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽解放",
+      "evidence_span": "一汽解放"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽福田",
+      "evidence_span": "北汽福田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽",
+      "evidence_span": "一汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风",
+      "evidence_span": "东风"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "青岛能蜂电气有限公司",
+      "evidence_span": "青岛能蜂电气有限公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双碳",
+      "evidence_span": "紧贴双碳大背景"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "尾气净化催化剂",
+        "evidence_span": "主营天然气、柴油、汽油等燃料机动车尾气净化催化剂（器）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "氢燃料电池电催化剂",
+        "evidence_span": "氢燃料电池电催化剂"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "储能与动力电池",
+        "evidence_span": "储能与动力电池"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "尾气处理催化剂国内领先企业",
+        "evidence_span": "尾气处理催化剂国内领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环保催化剂厂商",
+        "evidence_span": "我国领先的环保催化剂厂商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天然气车尾气处理催化剂",
+        "evidence_span": "天然气车尾气处理催化剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "柴油车尾气处理催化剂",
+        "evidence_span": "柴油车尾气处理催化剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽油车尾气处理催化剂",
+        "evidence_span": "汽油车尾气处理催化剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "摩托车尾气处理催化剂",
+        "evidence_span": "摩托车尾气处理催化剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "在用车产品",
+        "evidence_span": "在用车产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能电池产品",
+        "evidence_span": "储能电池产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大圆柱磷酸铁锂电池",
+        "evidence_span": "长寿命大圆柱磷酸铁锂电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电芯模组",
+        "evidence_span": "电芯模组供应商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国六排放标准尾气处理催化剂",
+        "evidence_span": "满足国六排放标准的新一代尾气处理催化剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "柔性生产线",
+        "evidence_span": "部分共用柔性生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "专门生产线",
+        "evidence_span": "采用专门生产线分别进行生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "专线配置",
+        "evidence_span": "天然气车产品和汽油车产品配置了专线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PACK中试线",
+        "evidence_span": "PACK中试线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "10MWH电芯中试线",
+        "evidence_span": "10MWH电芯中试线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电芯量产线",
+        "evidence_span": "电芯量产线正在规划中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "玉柴",
+        "evidence_span": "玉柴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "云内",
+        "evidence_span": "云内"
+      },
+      {
+        "fact_type": "customer",
+        "evidence_span": "上柴",
+        "fact_value": "上柴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "柳机动力",
+        "evidence_span": "柳机动力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小康动力",
+        "evidence_span": "小康动力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "重汽",
+        "evidence_span": "重汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽解放",
+        "evidence_span": "一汽解放"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽福田",
+        "evidence_span": "北汽福田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽",
+        "evidence_span": "一汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风",
+        "evidence_span": "东风"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "青岛能蜂电气有限公司",
+        "evidence_span": "青岛能蜂电气有限公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双碳",
+        "evidence_span": "紧贴双碳大背景"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:42:42"
+}

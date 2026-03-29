@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "益生菌健康食品",
+      "evidence_span": "主营益生菌健康食品及常温乳酸菌系列饮品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "常温乳酸菌系列饮品",
+      "evidence_span": "主营益生菌健康食品及常温乳酸菌系列饮品的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "常温乳酸菌龙头企业",
+      "evidence_span": "均瑶健康作为常温乳酸菌龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球益生菌领跑者",
+      "evidence_span": "进一步强化“全球益生菌领跑者”的发展愿景"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "体内微生态专家",
+      "evidence_span": "进一步明确“做好体内微生态专家”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "味动力常温乳酸菌系列饮品",
+      "evidence_span": "产品主要包括“味动力”常温乳酸菌系列饮品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "青幽爽益生菌乳酸菌饮品",
+      "evidence_span": "“青幽爽”及“畅饮爽”的益生菌乳酸菌饮品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "畅饮爽益生菌乳酸菌饮品",
+      "evidence_span": "“青幽爽”及“畅饮爽”的益生菌乳酸菌饮品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益生菌咀嚼片系列产品",
+      "evidence_span": "益生菌咀嚼片系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益生菌休闲零食系列产品",
+      "evidence_span": "以黑巧及夹心饼干为主益生菌休闲零食系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益生菌固体饮料系列产品",
+      "evidence_span": "以“UE君”及“纤美君”为主的益生菌固体饮料系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "餐后轻体饮品",
+      "evidence_span": "推出了全新产品餐后轻体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "青幽君系列",
+      "evidence_span": "基于明星专利菌株重点打造的“青幽君”、“畅饮君”系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "畅饮君系列",
+      "evidence_span": "基于明星专利菌株重点打造的“青幽君”、“畅饮君”系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纤美君体重管理益生菌",
+      "evidence_span": "整合营销打造出体重管理益生菌爆品纤美君"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "每日博士日化美妆产品",
+      "evidence_span": "日化美妆方向的每日博士"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "百奥吉健康休闲零食",
+      "evidence_span": "健康休闲零食品牌百奥吉"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "常温乳酸菌饮品独特生产工艺",
+      "evidence_span": "积累了常温乳酸菌饮品的独特生产工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "专利菌株",
+      "evidence_span": "通过添加均瑶健康独家核心功能菌株为产品进行赋能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "后生元饮料技术",
+      "evidence_span": "在后生元饮料、活菌产品矩阵方面具有显著的科技壁垒优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "活菌产品矩阵技术",
+      "evidence_span": "在后生元饮料、活菌产品矩阵方面具有显著的科技壁垒优势"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江南大学",
+      "evidence_span": "与江南大学等世界一流学府结成战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东北农业大学",
+      "evidence_span": "与江南大学、东北农业大学等高校签署战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海理工大学",
+      "evidence_span": "与东北农业大学、上海理工大学共建的“益生菌&后生元健康功能食品创新中心”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型乳企",
+      "evidence_span": "重点目标集中在大型乳企、保健品企业、药企等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保健品企业",
+      "evidence_span": "重点目标集中在大型乳企、保健品企业、药企等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "药企",
+      "evidence_span": "重点目标集中在大型乳企、保健品企业、药企等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "益生菌产业链一体化",
+      "evidence_span": "成为国内少有的能够覆盖益生菌产业链上下游一体化运营的企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "益生菌健康食品",
+        "evidence_span": "主营益生菌健康食品及常温乳酸菌系列饮品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "常温乳酸菌系列饮品",
+        "evidence_span": "主营益生菌健康食品及常温乳酸菌系列饮品的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "常温乳酸菌龙头企业",
+        "evidence_span": "均瑶健康作为常温乳酸菌龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球益生菌领跑者",
+        "evidence_span": "进一步强化“全球益生菌领跑者”的发展愿景"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "体内微生态专家",
+        "evidence_span": "进一步明确“做好体内微生态专家”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "味动力常温乳酸菌系列饮品",
+        "evidence_span": "产品主要包括“味动力”常温乳酸菌系列饮品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "青幽爽益生菌乳酸菌饮品",
+        "evidence_span": "“青幽爽”及“畅饮爽”的益生菌乳酸菌饮品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "畅饮爽益生菌乳酸菌饮品",
+        "evidence_span": "“青幽爽”及“畅饮爽”的益生菌乳酸菌饮品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益生菌咀嚼片系列产品",
+        "evidence_span": "益生菌咀嚼片系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益生菌休闲零食系列产品",
+        "evidence_span": "以黑巧及夹心饼干为主益生菌休闲零食系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益生菌固体饮料系列产品",
+        "evidence_span": "以“UE君”及“纤美君”为主的益生菌固体饮料系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "餐后轻体饮品",
+        "evidence_span": "推出了全新产品餐后轻体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "青幽君系列",
+        "evidence_span": "基于明星专利菌株重点打造的“青幽君”、“畅饮君”系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "畅饮君系列",
+        "evidence_span": "基于明星专利菌株重点打造的“青幽君”、“畅饮君”系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纤美君体重管理益生菌",
+        "evidence_span": "整合营销打造出体重管理益生菌爆品纤美君"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "每日博士日化美妆产品",
+        "evidence_span": "日化美妆方向的每日博士"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "百奥吉健康休闲零食",
+        "evidence_span": "健康休闲零食品牌百奥吉"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "常温乳酸菌饮品独特生产工艺",
+        "evidence_span": "积累了常温乳酸菌饮品的独特生产工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "专利菌株",
+        "evidence_span": "通过添加均瑶健康独家核心功能菌株为产品进行赋能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "后生元饮料技术",
+        "evidence_span": "在后生元饮料、活菌产品矩阵方面具有显著的科技壁垒优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "活菌产品矩阵技术",
+        "evidence_span": "在后生元饮料、活菌产品矩阵方面具有显著的科技壁垒优势"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江南大学",
+        "evidence_span": "与江南大学等世界一流学府结成战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东北农业大学",
+        "evidence_span": "与江南大学、东北农业大学等高校签署战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海理工大学",
+        "evidence_span": "与东北农业大学、上海理工大学共建的“益生菌&后生元健康功能食品创新中心”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型乳企",
+        "evidence_span": "重点目标集中在大型乳企、保健品企业、药企等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保健品企业",
+        "evidence_span": "重点目标集中在大型乳企、保健品企业、药企等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "药企",
+        "evidence_span": "重点目标集中在大型乳企、保健品企业、药企等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "益生菌产业链一体化",
+        "evidence_span": "成为国内少有的能够覆盖益生菌产业链上下游一体化运营的企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:22:45"
+}

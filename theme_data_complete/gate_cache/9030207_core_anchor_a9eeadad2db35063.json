@@ -1,0 +1,104 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "导弹",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'导弹'的核心定义，是产业/供应链类题材中最核心的产业对象和产品，最适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "雷达",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为制导方式之一，直接对应导弹的核心技术对象（制导系统），在产业/供应链类题材中能稳定指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "红外",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为制导方式之一，直接对应导弹的核心技术对象（制导系统），在产业/供应链类题材中能稳定指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "惯性",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为制导方式之一，直接对应导弹的核心技术对象（制导系统），在产业/供应链类题材中能稳定指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "地形匹配",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为制导方式之一，直接对应导弹的核心技术对象（制导系统），在产业/供应链类题材中能稳定指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "卫星",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "作为制导方式之一，直接对应导弹的核心技术对象（制导系统），在产业/供应链类题材中能稳定指向关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "战斗部",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'导弹'，核心语义是军事武器技术。战斗部是导弹的核心组成部分，直接决定导弹的打击能力和最终效果，属于产业/供应链类中的关键环节和核心产品部件，能稳定指向导弹产业的技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "制导系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'导弹'，制导系统是导弹实现精准打击的核心技术组件，直接对应导弹的核心性能特点（如精度高、突防能力强），属于产业/供应链类中的关键技术对象和关键环节，能稳定指向导弹产业的技术核心，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "地面",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为发射方式之一，虽与导弹相关，但更偏向具体应用场景而非核心产业对象或技术对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "地下",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为发射方式之一，与导弹相关但非核心产业对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "舰艇",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为发射平台，虽涉及导弹应用，但非导弹本身的核心产业对象或技术对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "水下",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为发射环境，与导弹相关但非核心产业对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "空中",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为发射方式之一，虽与导弹相关，但更偏向应用场景而非核心产业对象，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "歼-10战斗机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽为军事武器，但与题材名称'导弹'定义的核心对象（导弹本身）不够直接吻合，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "03式中程防空导弹",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "题材名称为'导弹'，这是一个具体的导弹型号示例。虽然直接属于导弹范畴，但作为具体型号，其语义范围较窄，更适合作为辅助识别信息来丰富题材内容，而不是作为核心门禁锚点。在产业/供应链类策略下，primary_anchor应优先选择能广泛代表产业对象、技术或环节的术语，因此判为secondary_anchor。"
+      },
+      {
+        "term": "防空导弹",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.0,
+        "reason": "题材名称为'导弹'，防空导弹是导弹的一个子类别。虽然与导弹核心语义相关，但作为子类，其语义不如'导弹'本身直接和广泛，更适合作为辅助识别信息来细化题材。在产业/供应链类策略下，primary_anchor应优先选择能稳定指向整个产业核心的术语，因此判为secondary_anchor。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "3bbf87488e6f", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述了江苏省低空飞行服务中心的开放及其功能，包含静态知识（如一体化管理、服务内容）和动态事件（如正式开放），混合了知识性和事件性内容，可能对理解低空经济基础设施有价值。"}}

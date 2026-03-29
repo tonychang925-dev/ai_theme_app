@@ -1,0 +1,399 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "建材产业",
+      "evidence_span": "形成以建材、地产、医药三大产业集团和金融投资、电子商务集团为核心的经营发展格局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "地产产业",
+      "evidence_span": "形成以建材、地产、医药三大产业集团和金融投资、电子商务集团为核心的经营发展格局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药产业",
+      "evidence_span": "形成以建材、地产、医药三大产业集团和金融投资、电子商务集团为核心的经营发展格局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融投资",
+      "evidence_span": "形成以建材、地产、医药三大产业集团和金融投资、电子商务集团为核心的经营发展格局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子商务",
+      "evidence_span": "形成以建材、地产、医药三大产业集团和金融投资、电子商务集团为核心的经营发展格局"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家重点支持的12家水泥集团之一",
+      "evidence_span": "是国家重点支持的12家水泥集团之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大宗固体废弃物综合利用骨干企业",
+      "evidence_span": "被认定为大宗固废综合利用骨干企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国医药制造业百强企业",
+      "evidence_span": "公司医药产业是“中国医药制造业百强企业”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "装配式建筑产业基地",
+      "evidence_span": "已发展成为“装配式建筑产业基地”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "熟料",
+      "evidence_span": "建材产业以“熟料、水泥产销”为核心经营任务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水泥",
+      "evidence_span": "建材产业以“熟料、水泥产销”为核心经营任务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预拌混凝土",
+      "evidence_span": "建材产业形成集建材制品深加工、预拌混凝土制造、石灰石和砂石骨料开采、熟料生产、水泥生产和各类产品销售于一体的上下游全产业链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石灰石",
+      "evidence_span": "建材产业形成集建材制品深加工、预拌混凝土制造、石灰石和砂石骨料开采、熟料生产、水泥生产和各类产品销售于一体的上下游全产业链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "砂石骨料",
+      "evidence_span": "建材产业形成集建材制品深加工、预拌混凝土制造、石灰石和砂石骨料开采、熟料生产、水泥生产和各类产品销售于一体的上下游全产业链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房地产开发",
+      "evidence_span": "地产产业形成集房地产开发、建筑施工、商业运营、物业服务于一体的产业链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑施工",
+      "evidence_span": "地产产业形成集房地产开发、建筑施工、商业运营、物业服务于一体的产业链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商业运营",
+      "evidence_span": "地产产业形成集房地产开发、建筑施工、商业运营、物业服务于一体的产业链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物业服务",
+      "evidence_span": "地产产业形成集房地产开发、建筑施工、商业运营、物业服务于一体的产业链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "参一胶囊",
+      "evidence_span": "参一胶囊、维生素D2软胶囊等单品在多个省份销量实现同比提升"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维生素D2软胶囊",
+      "evidence_span": "参一胶囊、维生素D2软胶囊等单品在多个省份销量实现同比提升"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连翘苷胶囊",
+      "evidence_span": "一类新药连翘苷胶囊正在进行II期临床试验"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人参皂苷Rg3及其制剂“参一胶囊”",
+      "evidence_span": "人参皂苷Rg3及其制剂“参一胶囊”入选国家“十五”“十一五”“十二五”重点攻关课题试验用药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "T型梁",
+      "evidence_span": "拓展“T型梁、预制涵洞、风力发电塔筒”等高精端、高附加值新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预制涵洞",
+      "evidence_span": "拓展“T型梁、预制涵洞、风力发电塔筒”等高精端、高附加值新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风力发电塔筒",
+      "evidence_span": "拓展“T型梁、预制涵洞、风力发电塔筒”等高精端、高附加值新产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "绿色建材工业互联网平台",
+      "evidence_span": "建立覆盖“采购、生产、销售”全流程的“绿色建材”工业互联网平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生态宜家互联网平台",
+      "evidence_span": "建立具有“形象展示、服务互动与大数据分析”功能的“生态宜家”互联网平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "装配式建筑全产业链",
+      "evidence_span": "形成了装配式建筑全产业链"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "化药研发平台",
+      "evidence_span": "拥有化药、现代中药、保健食品、生物制剂、先进医疗器械五大研发平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "现代中药研发平台",
+      "evidence_span": "拥有化药、现代中药、保健食品、生物制剂、先进医疗器械五大研发平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "保健食品研发平台",
+      "evidence_span": "拥有化药、现代中药、保健食品、生物制剂、先进医疗器械五大研发平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物制剂研发平台",
+      "evidence_span": "拥有化药、现代中药、保健食品、生物制剂、先进医疗器械五大研发平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "先进医疗器械研发平台",
+      "evidence_span": "拥有化药、现代中药、保健食品、生物制剂、先进医疗器械五大研发平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沈白高铁",
+      "evidence_span": "开发沈白高铁、铁科高速、吉黑高速等重点工程项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁科高速",
+      "evidence_span": "开发沈白高铁、铁科高速、吉黑高速等重点工程项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉黑高速",
+      "evidence_span": "开发沈白高铁、铁科高速、吉黑高速等重点工程项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国华风电",
+      "evidence_span": "新签、续签国华风电、九台华能电厂、长春市税务局等5个服务项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "九台华能电厂",
+      "evidence_span": "新签、续签国华风电、九台华能电厂、长春市税务局等5个服务项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长春市税务局",
+      "evidence_span": "新签、续签国华风电、九台华能电厂、长春市税务局等5个服务项目"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "建材产业",
+        "evidence_span": "形成以建材、地产、医药三大产业集团和金融投资、电子商务集团为核心的经营发展格局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "地产产业",
+        "evidence_span": "形成以建材、地产、医药三大产业集团和金融投资、电子商务集团为核心的经营发展格局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药产业",
+        "evidence_span": "形成以建材、地产、医药三大产业集团和金融投资、电子商务集团为核心的经营发展格局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融投资",
+        "evidence_span": "形成以建材、地产、医药三大产业集团和金融投资、电子商务集团为核心的经营发展格局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子商务",
+        "evidence_span": "形成以建材、地产、医药三大产业集团和金融投资、电子商务集团为核心的经营发展格局"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家重点支持的12家水泥集团之一",
+        "evidence_span": "是国家重点支持的12家水泥集团之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大宗固体废弃物综合利用骨干企业",
+        "evidence_span": "被认定为大宗固废综合利用骨干企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国医药制造业百强企业",
+        "evidence_span": "公司医药产业是“中国医药制造业百强企业”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "装配式建筑产业基地",
+        "evidence_span": "已发展成为“装配式建筑产业基地”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "熟料",
+        "evidence_span": "建材产业以“熟料、水泥产销”为核心经营任务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水泥",
+        "evidence_span": "建材产业以“熟料、水泥产销”为核心经营任务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预拌混凝土",
+        "evidence_span": "建材产业形成集建材制品深加工、预拌混凝土制造、石灰石和砂石骨料开采、熟料生产、水泥生产和各类产品销售于一体的上下游全产业链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石灰石",
+        "evidence_span": "建材产业形成集建材制品深加工、预拌混凝土制造、石灰石和砂石骨料开采、熟料生产、水泥生产和各类产品销售于一体的上下游全产业链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "砂石骨料",
+        "evidence_span": "建材产业形成集建材制品深加工、预拌混凝土制造、石灰石和砂石骨料开采、熟料生产、水泥生产和各类产品销售于一体的上下游全产业链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房地产开发",
+        "evidence_span": "地产产业形成集房地产开发、建筑施工、商业运营、物业服务于一体的产业链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑施工",
+        "evidence_span": "地产产业形成集房地产开发、建筑施工、商业运营、物业服务于一体的产业链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商业运营",
+        "evidence_span": "地产产业形成集房地产开发、建筑施工、商业运营、物业服务于一体的产业链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物业服务",
+        "evidence_span": "地产产业形成集房地产开发、建筑施工、商业运营、物业服务于一体的产业链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "参一胶囊",
+        "evidence_span": "参一胶囊、维生素D2软胶囊等单品在多个省份销量实现同比提升"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维生素D2软胶囊",
+        "evidence_span": "参一胶囊、维生素D2软胶囊等单品在多个省份销量实现同比提升"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连翘苷胶囊",
+        "evidence_span": "一类新药连翘苷胶囊正在进行II期临床试验"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人参皂苷Rg3及其制剂“参一胶囊”",
+        "evidence_span": "人参皂苷Rg3及其制剂“参一胶囊”入选国家“十五”“十一五”“十二五”重点攻关课题试验用药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "T型梁",
+        "evidence_span": "拓展“T型梁、预制涵洞、风力发电塔筒”等高精端、高附加值新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预制涵洞",
+        "evidence_span": "拓展“T型梁、预制涵洞、风力发电塔筒”等高精端、高附加值新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风力发电塔筒",
+        "evidence_span": "拓展“T型梁、预制涵洞、风力发电塔筒”等高精端、高附加值新产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "绿色建材工业互联网平台",
+        "evidence_span": "建立覆盖“采购、生产、销售”全流程的“绿色建材”工业互联网平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生态宜家互联网平台",
+        "evidence_span": "建立具有“形象展示、服务互动与大数据分析”功能的“生态宜家”互联网平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "装配式建筑全产业链",
+        "evidence_span": "形成了装配式建筑全产业链"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "化药研发平台",
+        "evidence_span": "拥有化药、现代中药、保健食品、生物制剂、先进医疗器械五大研发平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "现代中药研发平台",
+        "evidence_span": "拥有化药、现代中药、保健食品、生物制剂、先进医疗器械五大研发平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "保健食品研发平台",
+        "evidence_span": "拥有化药、现代中药、保健食品、生物制剂、先进医疗器械五大研发平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物制剂研发平台",
+        "evidence_span": "拥有化药、现代中药、保健食品、生物制剂、先进医疗器械五大研发平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "先进医疗器械研发平台",
+        "evidence_span": "拥有化药、现代中药、保健食品、生物制剂、先进医疗器械五大研发平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沈白高铁",
+        "evidence_span": "开发沈白高铁、铁科高速、吉黑高速等重点工程项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁科高速",
+        "evidence_span": "开发沈白高铁、铁科高速、吉黑高速等重点工程项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉黑高速",
+        "evidence_span": "开发沈白高铁、铁科高速、吉黑高速等重点工程项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国华风电",
+        "evidence_span": "新签、续签国华风电、九台华能电厂、长春市税务局等5个服务项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "九台华能电厂",
+        "evidence_span": "新签、续签国华风电、九台华能电厂、长春市税务局等5个服务项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长春市税务局",
+        "evidence_span": "新签、续签国华风电、九台华能电厂、长春市税务局等5个服务项目"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:44:36"
+}

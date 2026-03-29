@@ -1,0 +1,419 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧能源",
+      "evidence_span": "核心业务覆盖​​智慧能源、智能制造和数智集成​​三大领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能制造",
+      "evidence_span": "核心业务覆盖​​智慧能源、智能制造和数智集成​​三大领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数智集成",
+      "evidence_span": "核心业务覆盖​​智慧能源、智能制造和数智集成​​三大领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国装备制造业的龙头企业",
+      "evidence_span": "上海电气集团股份有限公司（简称上海电气）是中国装备制造业的龙头企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大的煤电装备供应商之一",
+      "evidence_span": "上海电气不仅是全球最大的煤电装备供应商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "核电装备制造龙头企业",
+      "evidence_span": "核电装备制造龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发电设备",
+      "evidence_span": "产品与服务遍布发电设备、输配电、工业机器人、轨道交通、医疗设备等多个行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "输配电",
+      "evidence_span": "产品与服务遍布发电设备、输配电、工业机器人、轨道交通、医疗设备等多个行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业机器人",
+      "evidence_span": "产品与服务遍布发电设备、输配电、工业机器人、轨道交通、医疗设备等多个行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道交通",
+      "evidence_span": "产品与服务遍布发电设备、输配电、工业机器人、轨道交通、医疗设备等多个行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗设备",
+      "evidence_span": "产品与服务遍布发电设备、输配电、工业机器人、轨道交通、医疗设备等多个行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核岛设备",
+      "evidence_span": "已形成从核岛设备（反应堆压力容器、蒸汽发生器、稳压器、堆内构件、控制棒驱动机构、核主泵、核二三级泵、核二三级容器、燃料输送设备等）到常规岛设备（汽轮机、汽轮发电机、辅机等）以及大型铸锻件、核级风机、配套电机、备品备件、机组延寿改造服务等完整的核能装备制造产业链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "常规岛设备",
+      "evidence_span": "已形成从核岛设备（反应堆压力容器、蒸汽发生器、稳压器、堆内构件、控制棒驱动机构、核主泵、核二三级泵、核二三级容器、燃料输送设备等）到常规岛设备（汽轮机、汽轮发电机、辅机等）以及大型铸锻件、核级风机、配套电机、备品备件、机组延寿改造服务等完整的核能装备制造产业链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃煤发电设备",
+      "evidence_span": "在燃煤发电设备领域，上海电气拥有成熟的 10MW-1350MW 等级齐全的产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海上风电机组",
+      "evidence_span": "上海电气开发的“Poseidon”海神平台第三代产品海上 14MW 以及 18MW 级别机组产品样机并网运行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陆上风电机组",
+      "evidence_span": "基于陆上卓越平台，针对沙戈荒中高风速大容量以及中东南地区低风速需求，更大容量 11MW 级别的沙戈荒机型已经开始批量交付，更大单位千瓦扫风面积的 6MW、7MW 级别超低风速产品完成研制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海上风电运维母船",
+      "evidence_span": "上海电气定制的亚洲首制海上风电 SOV 运维母船顺利完成首次风场实效试航"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "异质结电池片",
+      "evidence_span": "围绕先进异质结电池片、市场主流组件等产业链中游"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏组件",
+      "evidence_span": "围绕先进异质结电池片、市场主流组件等产业链中游"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池储能系统",
+      "evidence_span": "锂电池储能领域，上海电气依托储能电池、储能变流器（PCS）、储能系统集成等技术和产品，提供储能微网、工商业储能、电网侧储能、5G 备用电源、光伏共享储能、储能+充电等解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全钒液流电池系统",
+      "evidence_span": "全钒液流电池领域，上海电气以系列电堆、电解液及系统模块化设计制造及工程交付能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压缩空气储能系统",
+      "evidence_span": "压缩空气储能领域，上海电气已掌握从 10MW 至 660MW 等级的压缩空气储能系统集成化装备方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞轮储能系统",
+      "evidence_span": "飞轮储能方面，上海电气拥有独特的感应子构型一体化飞轮储能技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碱性电解槽",
+      "evidence_span": "上海电气自主研发的 Bristack®-Z 系列碱性电解槽的单体制氢规模覆盖 50-3000Nm3/h"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PEM电解槽",
+      "evidence_span": "另一款 Bristack®-P 系列 PEM 电解槽的单体制氢规模覆盖 10-400Nm3/h"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电网解决方案",
+      "evidence_span": "在智能电网系统集成、设备成套、检修服务等方面提供整体解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "极限制造能力",
+      "evidence_span": "流程贯通工艺技术支撑下的极限制造能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集成创新技术",
+      "evidence_span": "集成创新技术支撑下的首台套装备实现能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "二次再热火电技术",
+      "evidence_span": "二次再热火电技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核电技术路线全覆盖",
+      "evidence_span": "技术路线涵盖二代及二代加、三代压水堆（包括华龙一号、国和一号、AP1000 及 CAP1000、EPR 等）、四代核电技术（包括高温气冷堆、钠冷快堆、钍基熔盐堆、铅基快堆），以及核聚变大科学装置，全面覆盖国内现有核电技术路线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "煤电深调峰技术",
+      "evidence_span": "在深调峰、快调节、强支撑、宽负荷、高韧性、低排放等技术指标上均达到国际先进水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效异质结HJT光伏电池技术",
+      "evidence_span": "快速切入高效异质结 HJT 光伏电池及组件领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "0BB异质结电池技术",
+      "evidence_span": "我们自主研发的量产型 0BB 异质结电池全新迭代"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "感应子构型一体化飞轮储能技术",
+      "evidence_span": "飞轮储能方面，上海电气拥有独特的感应子构型一体化飞轮储能技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电解水制氢技术",
+      "evidence_span": "以电解水制氢为产业突破点"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "碳捕集综合利用技术",
+      "evidence_span": "上海电气持续推进碳捕集综合利用技术研发和产业化应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蒙能",
+      "evidence_span": "承接蒙能、华电等国内客户大容量订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华电",
+      "evidence_span": "承接蒙能、华电等国内客户大容量订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本",
+      "evidence_span": "实现向日本、欧洲等发达经济体的批量化交付"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧洲",
+      "evidence_span": "实现向日本、欧洲等发达经济体的批量化交付"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "三代核电重启",
+      "evidence_span": "有望受益于国有企业改革和三代核电重启"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧能源",
+        "evidence_span": "核心业务覆盖​​智慧能源、智能制造和数智集成​​三大领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能制造",
+        "evidence_span": "核心业务覆盖​​智慧能源、智能制造和数智集成​​三大领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数智集成",
+        "evidence_span": "核心业务覆盖​​智慧能源、智能制造和数智集成​​三大领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国装备制造业的龙头企业",
+        "evidence_span": "上海电气集团股份有限公司（简称上海电气）是中国装备制造业的龙头企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大的煤电装备供应商之一",
+        "evidence_span": "上海电气不仅是全球最大的煤电装备供应商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "核电装备制造龙头企业",
+        "evidence_span": "核电装备制造龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发电设备",
+        "evidence_span": "产品与服务遍布发电设备、输配电、工业机器人、轨道交通、医疗设备等多个行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "输配电",
+        "evidence_span": "产品与服务遍布发电设备、输配电、工业机器人、轨道交通、医疗设备等多个行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业机器人",
+        "evidence_span": "产品与服务遍布发电设备、输配电、工业机器人、轨道交通、医疗设备等多个行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道交通",
+        "evidence_span": "产品与服务遍布发电设备、输配电、工业机器人、轨道交通、医疗设备等多个行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗设备",
+        "evidence_span": "产品与服务遍布发电设备、输配电、工业机器人、轨道交通、医疗设备等多个行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核岛设备",
+        "evidence_span": "已形成从核岛设备（反应堆压力容器、蒸汽发生器、稳压器、堆内构件、控制棒驱动机构、核主泵、核二三级泵、核二三级容器、燃料输送设备等）到常规岛设备（汽轮机、汽轮发电机、辅机等）以及大型铸锻件、核级风机、配套电机、备品备件、机组延寿改造服务等完整的核能装备制造产业链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "常规岛设备",
+        "evidence_span": "已形成从核岛设备（反应堆压力容器、蒸汽发生器、稳压器、堆内构件、控制棒驱动机构、核主泵、核二三级泵、核二三级容器、燃料输送设备等）到常规岛设备（汽轮机、汽轮发电机、辅机等）以及大型铸锻件、核级风机、配套电机、备品备件、机组延寿改造服务等完整的核能装备制造产业链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃煤发电设备",
+        "evidence_span": "在燃煤发电设备领域，上海电气拥有成熟的 10MW-1350MW 等级齐全的产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海上风电机组",
+        "evidence_span": "上海电气开发的“Poseidon”海神平台第三代产品海上 14MW 以及 18MW 级别机组产品样机并网运行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陆上风电机组",
+        "evidence_span": "基于陆上卓越平台，针对沙戈荒中高风速大容量以及中东南地区低风速需求，更大容量 11MW 级别的沙戈荒机型已经开始批量交付，更大单位千瓦扫风面积的 6MW、7MW 级别超低风速产品完成研制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海上风电运维母船",
+        "evidence_span": "上海电气定制的亚洲首制海上风电 SOV 运维母船顺利完成首次风场实效试航"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "异质结电池片",
+        "evidence_span": "围绕先进异质结电池片、市场主流组件等产业链中游"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏组件",
+        "evidence_span": "围绕先进异质结电池片、市场主流组件等产业链中游"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池储能系统",
+        "evidence_span": "锂电池储能领域，上海电气依托储能电池、储能变流器（PCS）、储能系统集成等技术和产品，提供储能微网、工商业储能、电网侧储能、5G 备用电源、光伏共享储能、储能+充电等解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全钒液流电池系统",
+        "evidence_span": "全钒液流电池领域，上海电气以系列电堆、电解液及系统模块化设计制造及工程交付能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压缩空气储能系统",
+        "evidence_span": "压缩空气储能领域，上海电气已掌握从 10MW 至 660MW 等级的压缩空气储能系统集成化装备方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞轮储能系统",
+        "evidence_span": "飞轮储能方面，上海电气拥有独特的感应子构型一体化飞轮储能技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碱性电解槽",
+        "evidence_span": "上海电气自主研发的 Bristack®-Z 系列碱性电解槽的单体制氢规模覆盖 50-3000Nm3/h"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PEM电解槽",
+        "evidence_span": "另一款 Bristack®-P 系列 PEM 电解槽的单体制氢规模覆盖 10-400Nm3/h"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电网解决方案",
+        "evidence_span": "在智能电网系统集成、设备成套、检修服务等方面提供整体解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "极限制造能力",
+        "evidence_span": "流程贯通工艺技术支撑下的极限制造能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集成创新技术",
+        "evidence_span": "集成创新技术支撑下的首台套装备实现能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "二次再热火电技术",
+        "evidence_span": "二次再热火电技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核电技术路线全覆盖",
+        "evidence_span": "技术路线涵盖二代及二代加、三代压水堆（包括华龙一号、国和一号、AP1000 及 CAP1000、EPR 等）、四代核电技术（包括高温气冷堆、钠冷快堆、钍基熔盐堆、铅基快堆），以及核聚变大科学装置，全面覆盖国内现有核电技术路线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "煤电深调峰技术",
+        "evidence_span": "在深调峰、快调节、强支撑、宽负荷、高韧性、低排放等技术指标上均达到国际先进水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效异质结HJT光伏电池技术",
+        "evidence_span": "快速切入高效异质结 HJT 光伏电池及组件领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "0BB异质结电池技术",
+        "evidence_span": "我们自主研发的量产型 0BB 异质结电池全新迭代"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "感应子构型一体化飞轮储能技术",
+        "evidence_span": "飞轮储能方面，上海电气拥有独特的感应子构型一体化飞轮储能技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电解水制氢技术",
+        "evidence_span": "以电解水制氢为产业突破点"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "碳捕集综合利用技术",
+        "evidence_span": "上海电气持续推进碳捕集综合利用技术研发和产业化应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蒙能",
+        "evidence_span": "承接蒙能、华电等国内客户大容量订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华电",
+        "evidence_span": "承接蒙能、华电等国内客户大容量订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本",
+        "evidence_span": "实现向日本、欧洲等发达经济体的批量化交付"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧洲",
+        "evidence_span": "实现向日本、欧洲等发达经济体的批量化交付"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "三代核电重启",
+        "evidence_span": "有望受益于国有企业改革和三代核电重启"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:32:43"
+}

@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "调味品",
+      "evidence_span": "聚焦调味品主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "醋",
+      "evidence_span": "围绕“醋、酒、酱”产品战略"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "酒",
+      "evidence_span": "围绕“醋、酒、酱”产品战略"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "酱",
+      "evidence_span": "围绕“醋、酒、酱”产品战略"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "复合调味料",
+      "evidence_span": "健全复合调味料全品类体系"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "制醋企业",
+      "evidence_span": "恒顺已成为目前中国最大的制醋企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "食醋上市企业",
+      "evidence_span": "是唯一的食醋上市企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级农业产业化重点龙头企业",
+      "evidence_span": "国家级农业产业化重点龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国调味品协会会长单位",
+      "evidence_span": "被推选为中国调味品协会会长单位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "香醋",
+      "evidence_span": "主营产品香醋、陈醋采用传统的固态分层发酵工艺"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陈醋",
+      "evidence_span": "主营产品香醋、陈醋采用传统的固态分层发酵工艺"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "料酒",
+      "evidence_span": "恒顺料酒以传统黄酒为基础加入萃取的香辛料调配而成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合调味料",
+      "evidence_span": "复合调味料增长达到预期"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "红烧肉料包",
+      "evidence_span": "红烧肉料包、酸汤肥牛料包销售实现高速增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酸汤肥牛料包",
+      "evidence_span": "红烧肉料包、酸汤肥牛料包销售实现高速增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻火锅系列",
+      "evidence_span": "2023年还将持续推出轻火锅系列、小龙虾系列、冷泡汁等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小龙虾系列",
+      "evidence_span": "2023年还将持续推出轻火锅系列、小龙虾系列、冷泡汁等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷泡汁",
+      "evidence_span": "2023年还将持续推出轻火锅系列、小龙虾系列、冷泡汁等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金优零添加系列",
+      "evidence_span": "围绕“金优零添加”系列产品进行全方位的大单品打造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国潮系列",
+      "evidence_span": "推出了“零添加”系列产品、“国潮系列”产品、“轻”系列产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻系列",
+      "evidence_span": "推出了“零添加”系列产品、“国潮系列”产品、“轻”系列产品等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "固态分层发酵技艺",
+      "evidence_span": "其“固态分层发酵技艺”已被列入首批国家非物质文化遗产保护名录"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双边酿造工艺",
+      "evidence_span": "公司采用国内最先进的双边酿造工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全自动圆盘制曲工艺",
+      "evidence_span": "麦曲生产采用全自动圆盘制曲工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大罐发酵法",
+      "evidence_span": "制酒的前、后酵全部采用大罐发酵法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能制造",
+      "evidence_span": "该项目通过产业链、供应链和智能装备间的互联互通和态势感知"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "消费升级",
+      "evidence_span": "随着消费升级趋势确立"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "行业集中度提升",
+      "evidence_span": "预计未来行业集中度将进一步提升"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "调味品",
+        "evidence_span": "聚焦调味品主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "醋",
+        "evidence_span": "围绕“醋、酒、酱”产品战略"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "酒",
+        "evidence_span": "围绕“醋、酒、酱”产品战略"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "酱",
+        "evidence_span": "围绕“醋、酒、酱”产品战略"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "复合调味料",
+        "evidence_span": "健全复合调味料全品类体系"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "制醋企业",
+        "evidence_span": "恒顺已成为目前中国最大的制醋企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "食醋上市企业",
+        "evidence_span": "是唯一的食醋上市企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级农业产业化重点龙头企业",
+        "evidence_span": "国家级农业产业化重点龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国调味品协会会长单位",
+        "evidence_span": "被推选为中国调味品协会会长单位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "香醋",
+        "evidence_span": "主营产品香醋、陈醋采用传统的固态分层发酵工艺"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陈醋",
+        "evidence_span": "主营产品香醋、陈醋采用传统的固态分层发酵工艺"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "料酒",
+        "evidence_span": "恒顺料酒以传统黄酒为基础加入萃取的香辛料调配而成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合调味料",
+        "evidence_span": "复合调味料增长达到预期"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "红烧肉料包",
+        "evidence_span": "红烧肉料包、酸汤肥牛料包销售实现高速增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酸汤肥牛料包",
+        "evidence_span": "红烧肉料包、酸汤肥牛料包销售实现高速增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻火锅系列",
+        "evidence_span": "2023年还将持续推出轻火锅系列、小龙虾系列、冷泡汁等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小龙虾系列",
+        "evidence_span": "2023年还将持续推出轻火锅系列、小龙虾系列、冷泡汁等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷泡汁",
+        "evidence_span": "2023年还将持续推出轻火锅系列、小龙虾系列、冷泡汁等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金优零添加系列",
+        "evidence_span": "围绕“金优零添加”系列产品进行全方位的大单品打造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国潮系列",
+        "evidence_span": "推出了“零添加”系列产品、“国潮系列”产品、“轻”系列产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻系列",
+        "evidence_span": "推出了“零添加”系列产品、“国潮系列”产品、“轻”系列产品等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "固态分层发酵技艺",
+        "evidence_span": "其“固态分层发酵技艺”已被列入首批国家非物质文化遗产保护名录"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双边酿造工艺",
+        "evidence_span": "公司采用国内最先进的双边酿造工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全自动圆盘制曲工艺",
+        "evidence_span": "麦曲生产采用全自动圆盘制曲工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大罐发酵法",
+        "evidence_span": "制酒的前、后酵全部采用大罐发酵法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能制造",
+        "evidence_span": "该项目通过产业链、供应链和智能装备间的互联互通和态势感知"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "消费升级",
+        "evidence_span": "随着消费升级趋势确立"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "行业集中度提升",
+        "evidence_span": "预计未来行业集中度将进一步提升"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:52:47"
+}

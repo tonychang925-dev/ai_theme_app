@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:54:12", "result": {"chunk_id": "fc716fcbd537", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含静态知识（如机器视觉的定义、市场规模预测、国产替代趋势），但也混合了具体事件（如EnerVerse模型亮相、公司声明）和日期信息。这些内容可能对题材知识构建有价值，但需要进一步裁决以分离事件与稳定知识。"}}

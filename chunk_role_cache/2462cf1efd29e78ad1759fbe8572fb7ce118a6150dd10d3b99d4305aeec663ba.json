@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "9ac4d85d6f99", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落描述了台积电SoIC产能的具体扩充计划和时间节点（2024年底、2025年、2026年），属于明确的事件进展和动态预测，不包含稳定的、可沉淀的静态知识。"}}

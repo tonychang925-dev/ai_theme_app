@@ -1,0 +1,13 @@
+{
+  "result": {
+    "concept": "无题材",
+    "semantic_type": "未定义",
+    "strategy_type": "event_driven",
+    "dimensions": {
+      "信息缺失": [
+        "无题材知识文本",
+        "无已知子类词条"
+      ]
+    }
+  }
+}

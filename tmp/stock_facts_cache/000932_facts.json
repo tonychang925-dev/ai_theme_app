@@ -1,0 +1,554 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "钢材产品的生产",
+      "evidence_span": "公司主营业务为钢材产品的生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营业务为钢材产品的生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大的单体宽厚板生产商",
+      "evidence_span": "全球最大的单体宽厚板生产商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内第二的专业化无缝钢管供应商",
+      "evidence_span": "国内第二的专业化无缝钢管供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中南地区板材龙头",
+      "evidence_span": "华菱钢铁受益于制造业投资复苏的中南地区板材龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "宽厚板",
+      "evidence_span": "产品涵盖宽厚板、热冷轧薄板、线棒材、无缝钢管四大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热冷轧薄板",
+      "evidence_span": "产品涵盖宽厚板、热冷轧薄板、线棒材、无缝钢管四大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线棒材",
+      "evidence_span": "产品涵盖宽厚板、热冷轧薄板、线棒材、无缝钢管四大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无缝钢管",
+      "evidence_span": "产品涵盖宽厚板、热冷轧薄板、线棒材、无缝钢管四大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "品种钢",
+      "evidence_span": "品种钢销量不断提升"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不锈钢复合板",
+      "evidence_span": "华菱湘钢不锈钢复合板供货“世界第一”G3铜陵长江大桥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车用钢",
+      "evidence_span": "汽车用钢先后通过了麦格纳、通用汽车中国、泛亚汽车技术研究中心、上海汽车等重要客户的现场认证审核"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "耐腐蚀耐磨钢",
+      "evidence_span": "华菱涟钢与中车株洲车辆合作研发的耐腐蚀耐磨钢在70吨级敞车上首次成功应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特殊扣套管",
+      "evidence_span": "华菱衡钢特殊扣套管成功应用于我国陆上 9,010米的最深气井"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗硫气密扣油套管",
+      "evidence_span": "抗硫气密扣油套管应用于“深地一号”顺北油气田"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管线管",
+      "evidence_span": "管线管独家供应我国最大超深凝析气田"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高钢级被覆管线管",
+      "evidence_span": "高钢级被覆管线管助力国家重点储气库建成投运"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热成形钢制电池包",
+      "evidence_span": "汽车板公司携手长春华翔、国创中心推出国内首款热成形钢制电池包"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "取向硅钢基料",
+      "evidence_span": "华菱涟钢在取向电工钢基料供应方面已实现普通取向、升级版取向、高磁感取向原料系列牌号全覆盖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Usibor1500高强超轻汽车钢板",
+      "evidence_span": "以强度高达1500MPa的 Usibor1500高强超轻汽车钢板为主打产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Usibor2000",
+      "evidence_span": "Usibor2000批量供应主机厂旗舰车型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "980MPa轻量化底盘和大梁的电动重卡",
+      "evidence_span": "华菱涟钢与三一联合推出全新980MPa轻量化底盘和大梁的电动重卡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "700MPa光伏支架用免涂装高强耐候钢",
+      "evidence_span": "华菱涟钢推出700MPa光伏支架用免涂装高强耐候钢"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管桩用钢",
+      "evidence_span": "为华能苍南 4号海上风电项目供货 2万吨管桩用钢"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "临氢钢",
+      "evidence_span": "华菱湘钢生产的用于石油化工及煤化工行业的临氢钢"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷轧高强厢体用钢",
+      "evidence_span": "华菱涟钢生产的350MPa~1000MPa不同强度等级的冷轧高强厢体用钢"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高强韧耐磨钢",
+      "evidence_span": "用于渣土自卸车及混凝土搅拌车的高强韧耐磨钢"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车板",
+      "evidence_span": "汽车板公司实现与全球优秀的钢铁企业安赛乐米塔尔新技术同步共享、新产品同步上市"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集成产品研发（IPD）为核心的技术研发创新体系",
+      "evidence_span": "加快构建以集成产品研发（IPD）为核心的技术研发创新体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全流程的技术装备",
+      "evidence_span": "拥有炼焦、烧结、炼铁、炼钢、轧钢、钢材深加工等全流程的技术装备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "柔性生产切换能力",
+      "evidence_span": "主要品种间具备较强的柔性生产切换能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超低温压力容器用高锰钢试制",
+      "evidence_span": "华菱涟钢成功试制超低温压力容器用高锰钢并填补国内空白"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "9Ni钢通过美国ABS船级社认证",
+      "evidence_span": "9Ni钢通过美国ABS船级社认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高强度气瓶管迈上1100MPa等级",
+      "evidence_span": "高强度气瓶管迈上1100MPa等级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "第三代冷成形超高强钢和锌镁合金镀层高端汽车板产品",
+      "evidence_span": "引进第三代冷成形超高强钢和锌镁合金镀层高端汽车板产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "世界500强企业",
+      "evidence_span": "公司已与150余家世界500强企业建立了业务联系和战略伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦格纳",
+      "evidence_span": "汽车用钢先后通过了麦格纳、通用汽车中国、泛亚汽车技术研究中心、上海汽车等重要客户的现场认证审核"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通用汽车中国",
+      "evidence_span": "汽车用钢先后通过了麦格纳、通用汽车中国、泛亚汽车技术研究中心、上海汽车等重要客户的现场认证审核"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "泛亚汽车技术研究中心",
+      "evidence_span": "汽车用钢先后通过了麦格纳、通用汽车中国、泛亚汽车技术研究中心、上海汽车等重要客户的现场认证审核"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海汽车",
+      "evidence_span": "汽车用钢先后通过了麦格纳、通用汽车中国、泛亚汽车技术研究中心、上海汽车等重要客户的现场认证审核"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中车株洲车辆",
+      "evidence_span": "华菱涟钢与中车株洲车辆合作研发的耐腐蚀耐磨钢在70吨级敞车上首次成功应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中船集团",
+      "evidence_span": "为世界前三大造船企业中船集团、韩国现代和三星造船的主力供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国现代",
+      "evidence_span": "为世界前三大造船企业中船集团、韩国现代和三星造船的主力供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星造船",
+      "evidence_span": "为世界前三大造船企业中船集团、韩国现代和三星造船的主力供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "卡特彼勒",
+      "evidence_span": "是世界最大工程机械公司卡特彼勒全球最大的中厚板供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中联",
+      "evidence_span": "是国内工程机械巨头中联、三一、徐工主要供货方"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三一",
+      "evidence_span": "是国内工程机械巨头中联、三一、徐工主要供货方"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "徐工",
+      "evidence_span": "是国内工程机械巨头中联、三一、徐工主要供货方"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来汽车",
+      "evidence_span": "Usibor2000AS产品获得蔚来汽车、理想汽车、广汽乘用车等多家知名主机厂商的认证通过"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "理想汽车",
+      "evidence_span": "Usibor2000AS产品获得蔚来汽车、理想汽车、广汽乘用车等多家知名主机厂商的认证通过"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽乘用车",
+      "evidence_span": "Usibor2000AS产品获得蔚来汽车、理想汽车、广汽乘用车等多家知名主机厂商的认证通过"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福特",
+      "evidence_span": "并成为国内首家通过福特全球Q1认证的钢材供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "制造业投资复苏",
+      "evidence_span": "华菱钢铁受益于制造业投资复苏的中南地区板材龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "产品结构升级",
+      "evidence_span": "华菱钢铁“优钢”转“特钢”提升产品结构"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能制造提质增效",
+      "evidence_span": "华菱钢铁智能制造提质增效"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "钢材产品的生产和销售",
+        "evidence_span": "公司主营业务为钢材产品的生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大的单体宽厚板生产商",
+        "evidence_span": "全球最大的单体宽厚板生产商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内第二的专业化无缝钢管供应商",
+        "evidence_span": "国内第二的专业化无缝钢管供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中南地区板材龙头",
+        "evidence_span": "华菱钢铁受益于制造业投资复苏的中南地区板材龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "宽厚板",
+        "evidence_span": "产品涵盖宽厚板、热冷轧薄板、线棒材、无缝钢管四大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热冷轧薄板",
+        "evidence_span": "产品涵盖宽厚板、热冷轧薄板、线棒材、无缝钢管四大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线棒材",
+        "evidence_span": "产品涵盖宽厚板、热冷轧薄板、线棒材、无缝钢管四大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无缝钢管",
+        "evidence_span": "产品涵盖宽厚板、热冷轧薄板、线棒材、无缝钢管四大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "品种钢",
+        "evidence_span": "品种钢销量不断提升"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不锈钢复合板",
+        "evidence_span": "华菱湘钢不锈钢复合板供货“世界第一”G3铜陵长江大桥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车用钢",
+        "evidence_span": "汽车用钢先后通过了麦格纳、通用汽车中国、泛亚汽车技术研究中心、上海汽车等重要客户的现场认证审核"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "耐腐蚀耐磨钢",
+        "evidence_span": "华菱涟钢与中车株洲车辆合作研发的耐腐蚀耐磨钢在70吨级敞车上首次成功应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特殊扣套管",
+        "evidence_span": "华菱衡钢特殊扣套管成功应用于我国陆上 9,010米的最深气井"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗硫气密扣油套管",
+        "evidence_span": "抗硫气密扣油套管应用于“深地一号”顺北油气田"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管线管",
+        "evidence_span": "管线管独家供应我国最大超深凝析气田"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高钢级被覆管线管",
+        "evidence_span": "高钢级被覆管线管助力国家重点储气库建成投运"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热成形钢制电池包",
+        "evidence_span": "汽车板公司携手长春华翔、国创中心推出国内首款热成形钢制电池包"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "取向硅钢基料",
+        "evidence_span": "华菱涟钢在取向电工钢基料供应方面已实现普通取向、升级版取向、高磁感取向原料系列牌号全覆盖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Usibor1500高强超轻汽车钢板",
+        "evidence_span": "以强度高达1500MPa的 Usibor1500高强超轻汽车钢板为主打产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Usibor2000",
+        "evidence_span": "Usibor2000批量供应主机厂旗舰车型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "980MPa轻量化底盘和大梁的电动重卡",
+        "evidence_span": "华菱涟钢与三一联合推出全新980MPa轻量化底盘和大梁的电动重卡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "700MPa光伏支架用免涂装高强耐候钢",
+        "evidence_span": "华菱涟钢推出700MPa光伏支架用免涂装高强耐候钢"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管桩用钢",
+        "evidence_span": "为华能苍南 4号海上风电项目供货 2万吨管桩用钢"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "临氢钢",
+        "evidence_span": "华菱湘钢生产的用于石油化工及煤化工行业的临氢钢"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷轧高强厢体用钢",
+        "evidence_span": "华菱涟钢生产的350MPa~1000MPa不同强度等级的冷轧高强厢体用钢"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高强韧耐磨钢",
+        "evidence_span": "用于渣土自卸车及混凝土搅拌车的高强韧耐磨钢"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车板",
+        "evidence_span": "汽车板公司实现与全球优秀的钢铁企业安赛乐米塔尔新技术同步共享、新产品同步上市"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集成产品研发（IPD）为核心的技术研发创新体系",
+        "evidence_span": "加快构建以集成产品研发（IPD）为核心的技术研发创新体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全流程的技术装备",
+        "evidence_span": "拥有炼焦、烧结、炼铁、炼钢、轧钢、钢材深加工等全流程的技术装备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "柔性生产切换能力",
+        "evidence_span": "主要品种间具备较强的柔性生产切换能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超低温压力容器用高锰钢试制",
+        "evidence_span": "华菱涟钢成功试制超低温压力容器用高锰钢并填补国内空白"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "9Ni钢通过美国ABS船级社认证",
+        "evidence_span": "9Ni钢通过美国ABS船级社认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高强度气瓶管迈上1100MPa等级",
+        "evidence_span": "高强度气瓶管迈上1100MPa等级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "第三代冷成形超高强钢和锌镁合金镀层高端汽车板产品",
+        "evidence_span": "引进第三代冷成形超高强钢和锌镁合金镀层高端汽车板产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "世界500强企业",
+        "evidence_span": "公司已与150余家世界500强企业建立了业务联系和战略伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦格纳",
+        "evidence_span": "汽车用钢先后通过了麦格纳、通用汽车中国、泛亚汽车技术研究中心、上海汽车等重要客户的现场认证审核"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通用汽车中国",
+        "evidence_span": "汽车用钢先后通过了麦格纳、通用汽车中国、泛亚汽车技术研究中心、上海汽车等重要客户的现场认证审核"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "泛亚汽车技术研究中心",
+        "evidence_span": "汽车用钢先后通过了麦格纳、通用汽车中国、泛亚汽车技术研究中心、上海汽车等重要客户的现场认证审核"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海汽车",
+        "evidence_span": "汽车用钢先后通过了麦格纳、通用汽车中国、泛亚汽车技术研究中心、上海汽车等重要客户的现场认证审核"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中车株洲车辆",
+        "evidence_span": "华菱涟钢与中车株洲车辆合作研发的耐腐蚀耐磨钢在70吨级敞车上首次成功应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中船集团",
+        "evidence_span": "为世界前三大造船企业中船集团、韩国现代和三星造船的主力供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国现代",
+        "evidence_span": "为世界前三大造船企业中船集团、韩国现代和三星造船的主力供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星造船",
+        "evidence_span": "为世界前三大造船企业中船集团、韩国现代和三星造船的主力供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "卡特彼勒",
+        "evidence_span": "是世界最大工程机械公司卡特彼勒全球最大的中厚板供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中联",
+        "evidence_span": "是国内工程机械巨头中联、三一、徐工主要供货方"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三一",
+        "evidence_span": "是国内工程机械巨头中联、三一、徐工主要供货方"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "徐工",
+        "evidence_span": "是国内工程机械巨头中联、三一、徐工主要供货方"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来汽车",
+        "evidence_span": "Usibor2000AS产品获得蔚来汽车、理想汽车、广汽乘用车等多家知名主机厂商的认证通过"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "理想汽车",
+        "evidence_span": "Usibor2000AS产品获得蔚来汽车、理想汽车、广汽乘用车等多家知名主机厂商的认证通过"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽乘用车",
+        "evidence_span": "Usibor2000AS产品获得蔚来汽车、理想汽车、广汽乘用车等多家知名主机厂商的认证通过"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福特",
+        "evidence_span": "并成为国内首家通过福特全球Q1认证的钢材供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "制造业投资复苏",
+        "evidence_span": "华菱钢铁受益于制造业投资复苏的中南地区板材龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "产品结构升级",
+        "evidence_span": "华菱钢铁“优钢”转“特钢”提升产品结构"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能制造提质增效",
+        "evidence_span": "华菱钢铁智能制造提质增效"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:55:15"
+}

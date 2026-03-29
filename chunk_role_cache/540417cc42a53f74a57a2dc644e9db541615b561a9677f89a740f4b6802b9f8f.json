@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "544bd79a128e", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落描述台积电的厂务工程竞标、设备急单和产能扩张计划，这是一个具体的时间性动态事件，涉及CoWoS等设备但未解释其技术或应用场景，属于事件流内容。"}}

@@ -1,0 +1,434 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资银行",
+      "evidence_span": "投资银行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "债务",
+      "evidence_span": "债务及结构化融资业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "结构化融资",
+      "evidence_span": "债务及结构化融资业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "财务顾问服务",
+      "evidence_span": "财务顾问服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产管理",
+      "evidence_span": "资产管理分部"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "私募股权",
+      "evidence_span": "私募股权分部"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "财富管理",
+      "evidence_span": "财富管理分部"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中外合资投资银行",
+      "evidence_span": "中国首家中外合资投资银行"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国际化精品投行",
+      "evidence_span": "国际化精品投行"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "差异化龙头券商",
+      "evidence_span": "差异化龙头券商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "A股IPO承销",
+      "evidence_span": "A股IPO项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "港股IPO承销",
+      "evidence_span": "港股IPO项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "A股再融资承销",
+      "evidence_span": "A股再融资项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "港股再融资承销",
+      "evidence_span": "港股再融资及减持项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "境内债券承销",
+      "evidence_span": "境内债券承销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "境外债券承销",
+      "evidence_span": "境外债券承销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产支持证券承销",
+      "evidence_span": "资产支持证券承销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色债券承销",
+      "evidence_span": "绿色债券承销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "并购交易顾问",
+      "evidence_span": "并购业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "债务重组服务",
+      "evidence_span": "债务重组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "跨境并购顾问",
+      "evidence_span": "跨境并购"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "REITs承销",
+      "evidence_span": "REITs"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GDR承销",
+      "evidence_span": "瑞士GDR项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "科技创新债券承销",
+      "evidence_span": "科技创新债券"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可持续发展债券承销",
+      "evidence_span": "可持续发展债券"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "先进的信息技术能力",
+      "evidence_span": "先进的信息技术能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主研发能力",
+      "evidence_span": "自主研发能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米通讯",
+      "evidence_span": "协助小米通讯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广州港股份",
+      "evidence_span": "协助广州港股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国财政部",
+      "evidence_span": "参与中国财政部境外国债发行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海南人民政府",
+      "evidence_span": "协助海南人民政府"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深圳市政府",
+      "evidence_span": "协助深圳市政府"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富力地产",
+      "evidence_span": "协助富力地产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "龙光集团",
+      "evidence_span": "龙光集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "融创地产",
+      "evidence_span": "融创地产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "紫光集团",
+      "evidence_span": "紫光集团债务重组"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "青海省投资集团",
+      "evidence_span": "青海省投资集团债务重组"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "服务国家科技创新",
+      "evidence_span": "服务国家科技创新"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "服务绿色发展战略",
+      "evidence_span": "服务绿色发展战略"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "服务国内国际双循环",
+      "evidence_span": "服务国内国际双循环"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "发展普惠金融",
+      "evidence_span": "发展普惠金融"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "助力健康中国建设",
+      "evidence_span": "助力健康中国建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "服务乡村振兴战略",
+      "evidence_span": "服务乡村振兴战略"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资银行",
+        "evidence_span": "投资银行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "债务及结构化融资",
+        "evidence_span": "债务及结构化融资业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "财务顾问服务",
+        "evidence_span": "财务顾问服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产管理",
+        "evidence_span": "资产管理分部"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "私募股权",
+        "evidence_span": "私募股权分部"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "财富管理",
+        "evidence_span": "财富管理分部"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中外合资投资银行",
+        "evidence_span": "中国首家中外合资投资银行"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国际化精品投行",
+        "evidence_span": "国际化精品投行"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "差异化龙头券商",
+        "evidence_span": "差异化龙头券商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "A股IPO承销",
+        "evidence_span": "A股IPO项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "港股IPO承销",
+        "evidence_span": "港股IPO项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "A股再融资承销",
+        "evidence_span": "A股再融资项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "港股再融资承销",
+        "evidence_span": "港股再融资及减持项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "境内债券承销",
+        "evidence_span": "境内债券承销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "境外债券承销",
+        "evidence_span": "境外债券承销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产支持证券承销",
+        "evidence_span": "资产支持证券承销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色债券承销",
+        "evidence_span": "绿色债券承销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "并购交易顾问",
+        "evidence_span": "并购业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "债务重组服务",
+        "evidence_span": "债务重组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "跨境并购顾问",
+        "evidence_span": "跨境并购"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "REITs承销",
+        "evidence_span": "REITs"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GDR承销",
+        "evidence_span": "瑞士GDR项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "科技创新债券承销",
+        "evidence_span": "科技创新债券"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可持续发展债券承销",
+        "evidence_span": "可持续发展债券"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "先进的信息技术能力",
+        "evidence_span": "先进的信息技术能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主研发能力",
+        "evidence_span": "自主研发能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米通讯",
+        "evidence_span": "协助小米通讯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广州港股份",
+        "evidence_span": "协助广州港股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国财政部",
+        "evidence_span": "参与中国财政部境外国债发行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海南人民政府",
+        "evidence_span": "协助海南人民政府"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深圳市政府",
+        "evidence_span": "协助深圳市政府"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富力地产",
+        "evidence_span": "协助富力地产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "龙光集团",
+        "evidence_span": "龙光集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "融创地产",
+        "evidence_span": "融创地产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "紫光集团",
+        "evidence_span": "紫光集团债务重组"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "青海省投资集团",
+        "evidence_span": "青海省投资集团债务重组"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "服务国家科技创新",
+        "evidence_span": "服务国家科技创新"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "服务绿色发展战略",
+        "evidence_span": "服务绿色发展战略"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "服务国内国际双循环",
+        "evidence_span": "服务国内国际双循环"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "发展普惠金融",
+        "evidence_span": "发展普惠金融"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "助力健康中国建设",
+        "evidence_span": "助力健康中国建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "服务乡村振兴战略",
+        "evidence_span": "服务乡村振兴战略"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:49:10"
+}

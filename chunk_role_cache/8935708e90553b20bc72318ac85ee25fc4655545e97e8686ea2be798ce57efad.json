@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:58:48", "result": {"chunk_id": "31568976ab98", "label": "strict_knowledge", "confidence": 0.96, "ontology_value": "high", "reason": "该段落介绍了ITER、CFETR和CRAFT等国内外可控核聚变项目，包括目标、参与方和技术角色，属于静态的项目说明，没有事件或时间推进信息。"}}

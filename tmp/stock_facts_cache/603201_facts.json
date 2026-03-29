@@ -1,0 +1,404 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车维修保养设备",
+      "evidence_span": "公司主要从事汽车维修保养设备与工具、汽车配套零部件的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工具",
+      "evidence_span": "公司主要从事汽车维修保养设备与工具、汽车配套零部件的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车配套零部件",
+      "evidence_span": "公司主要从事汽车维修保养设备与工具、汽车配套零部件的研发、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "千斤顶制造企业",
+      "evidence_span": "中国最大的千斤顶制造企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车零部件及维保服务整体解决方案提供商",
+      "evidence_span": "致力于成为全球知名的汽车零部件及维保服务整体解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "千斤顶",
+      "evidence_span": "产品包括各类千斤顶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车举升机",
+      "evidence_span": "汽车举升机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "引擎吊机",
+      "evidence_span": "引擎吊机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维修用压机",
+      "evidence_span": "维修用压机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工具箱柜",
+      "evidence_span": "工具箱柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力电池拆装设备",
+      "evidence_span": "动力电池拆装设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轮保设备及工具",
+      "evidence_span": "轮保设备及工具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钣喷工具",
+      "evidence_span": "钣喷工具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车美容工具",
+      "evidence_span": "汽车美容工具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车配套千斤顶",
+      "evidence_span": "汽车配套千斤顶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驻车制动器",
+      "evidence_span": "驻车制动器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "拉索",
+      "evidence_span": "拉索"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "备胎升降器",
+      "evidence_span": "备胎升降器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "拖车钩",
+      "evidence_span": "拖车钩"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "补胎液套装",
+      "evidence_span": "补胎液套装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "存储箱柜",
+      "evidence_span": "存储箱柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车维修设备",
+      "evidence_span": "积极布局新能源汽车维修设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Walmart",
+      "evidence_span": "客户包括Walmart"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Autozone",
+      "evidence_span": "客户包括Autozone"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "AAP",
+      "evidence_span": "客户包括AAP"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Costco",
+      "evidence_span": "Costco"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Lowe’s",
+      "evidence_span": "Lowe’s"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福特汽车",
+      "evidence_span": "福特汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通用汽车",
+      "evidence_span": "通用汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众集团",
+      "evidence_span": "大众集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雷诺",
+      "evidence_span": "雷诺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日产",
+      "evidence_span": "日产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽",
+      "evidence_span": "上汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽",
+      "evidence_span": "北汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽",
+      "evidence_span": "广汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "重汽",
+      "evidence_span": "重汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "吉利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "长城"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞",
+      "evidence_span": "奇瑞"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车维修保养设备与工具",
+        "evidence_span": "公司主要从事汽车维修保养设备与工具、汽车配套零部件的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车配套零部件",
+        "evidence_span": "公司主要从事汽车维修保养设备与工具、汽车配套零部件的研发、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "千斤顶制造企业",
+        "evidence_span": "中国最大的千斤顶制造企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车零部件及维保服务整体解决方案提供商",
+        "evidence_span": "致力于成为全球知名的汽车零部件及维保服务整体解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "千斤顶",
+        "evidence_span": "产品包括各类千斤顶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车举升机",
+        "evidence_span": "汽车举升机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "引擎吊机",
+        "evidence_span": "引擎吊机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维修用压机",
+        "evidence_span": "维修用压机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工具箱柜",
+        "evidence_span": "工具箱柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力电池拆装设备",
+        "evidence_span": "动力电池拆装设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轮保设备及工具",
+        "evidence_span": "轮保设备及工具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钣喷工具",
+        "evidence_span": "钣喷工具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车美容工具",
+        "evidence_span": "汽车美容工具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车配套千斤顶",
+        "evidence_span": "汽车配套千斤顶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驻车制动器",
+        "evidence_span": "驻车制动器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "拉索",
+        "evidence_span": "拉索"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "备胎升降器",
+        "evidence_span": "备胎升降器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "拖车钩",
+        "evidence_span": "拖车钩"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "补胎液套装",
+        "evidence_span": "补胎液套装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "存储箱柜",
+        "evidence_span": "存储箱柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车维修设备",
+        "evidence_span": "积极布局新能源汽车维修设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Walmart",
+        "evidence_span": "客户包括Walmart"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Autozone",
+        "evidence_span": "客户包括Autozone"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "AAP",
+        "evidence_span": "客户包括AAP"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Costco",
+        "evidence_span": "Costco"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Lowe’s",
+        "evidence_span": "Lowe’s"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福特汽车",
+        "evidence_span": "福特汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通用汽车",
+        "evidence_span": "通用汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众集团",
+        "evidence_span": "大众集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雷诺",
+        "evidence_span": "雷诺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日产",
+        "evidence_span": "日产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽",
+        "evidence_span": "上汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽",
+        "evidence_span": "北汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽",
+        "evidence_span": "广汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "重汽",
+        "evidence_span": "重汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "吉利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "长城"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞",
+        "evidence_span": "奇瑞"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:39:55"
+}

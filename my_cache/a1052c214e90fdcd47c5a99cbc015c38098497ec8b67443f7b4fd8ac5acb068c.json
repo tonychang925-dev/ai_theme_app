@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:01:57", "result": {"chunk_id": "e7172a381da7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含华为开发者大赛总决赛和Mate 70系列投产的事件信息，但同时也涉及华为全球开发者数量和供应链计划等静态知识，可能对构建华为开发者生态和产品策略知识有价值，因此归类为候选混合状态。"}}

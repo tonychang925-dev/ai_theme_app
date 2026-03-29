@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:03:01", "result": {"span_uid": "a16bd0a2b403", "action": "rewrite", "canonical_text": "半导体设备涵盖涂胶显影、刻蚀、薄膜沉积、清洗、去胶、离子注入、CMP、封装测试等多个领域。", "final_type": "core", "final_role": "设备领域分类", "stability": "high", "reason": "原片段在事件上下文中，但内容本身是半导体设备的领域分类，改写后去事件化，保留核心分类信息，形成稳定知识块。"}}

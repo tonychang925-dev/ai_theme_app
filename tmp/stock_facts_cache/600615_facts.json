@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车配件镁合金制品",
+      "evidence_span": "现有主营业务为汽车配件镁合金、铝合金制品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车配件铝合金制品",
+      "evidence_span": "现有主营业务为汽车配件镁合金、铝合金制品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "全铝家居定制",
+      "evidence_span": "现有主营业务为全铝家居定制、铝合金市政产品等的设计、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金市政产品",
+      "evidence_span": "现有主营业务为全铝家居定制、铝合金市政产品等的设计、制造和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "镁合金压铸企业",
+      "evidence_span": "公司子公司镁业科技年设计产能为3500吨，处于镁合金压铸行业前列"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车整车厂家的二级供应商",
+      "evidence_span": "镁业科技为汽车整车厂家的二级供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车方向盘骨架",
+      "evidence_span": "生产成汽车方向盘骨架、汽车座椅滑轨、汽车仪表后盖、摩托车零件、手动工具等镁合金、铝合金压铸件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车座椅滑轨",
+      "evidence_span": "生产成汽车方向盘骨架、汽车座椅滑轨、汽车仪表后盖、摩托车零件、手动工具等镁合金、铝合金压铸件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车仪表后盖",
+      "evidence_span": "生产成汽车方向盘骨架、汽车座椅滑轨、汽车仪表后盖、摩托车零件、手动工具等镁合金、铝合金压铸件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "摩托车零件",
+      "evidence_span": "生产成汽车方向盘骨架、汽车座椅滑轨、汽车仪表后盖、摩托车零件、手动工具等镁合金、铝合金压铸件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手动工具",
+      "evidence_span": "生产成汽车方向盘骨架、汽车座椅滑轨、汽车仪表后盖、摩托车零件、手动工具等镁合金、铝合金压铸件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全铝家居办公产品",
+      "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "墙板",
+      "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型隔断屏风",
+      "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家装衣柜",
+      "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "橱柜",
+      "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卫浴柜",
+      "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市政产品",
+      "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全铝复合门",
+      "evidence_span": "其全铝复合门（包括全铝隔音门、铝木门）吸音墙板、吊顶等新产品得以推广应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全铝隔音门",
+      "evidence_span": "其全铝复合门（包括全铝隔音门、铝木门）吸音墙板、吊顶等新产品得以推广应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝木门",
+      "evidence_span": "其全铝复合门（包括全铝隔音门、铝木门）吸音墙板、吊顶等新产品得以推广应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "吸音墙板",
+      "evidence_span": "其全铝复合门（包括全铝隔音门、铝木门）吸音墙板、吊顶等新产品得以推广应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "吊顶",
+      "evidence_span": "其全铝复合门（包括全铝隔音门、铝木门）吸音墙板、吊顶等新产品得以推广应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏太阳能边框及支架",
+      "evidence_span": "积极围绕新能源领域开展相关业务，如：光伏太阳能边框及支架、新能源电池托盘等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源电池托盘",
+      "evidence_span": "积极围绕新能源领域开展相关业务，如：光伏太阳能边框及支架、新能源电池托盘等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "镁合金压铸技术",
+      "evidence_span": "镁业科技自成立至今已累积开发300余款镁铝合金产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铝蜂窝板热压成型技术",
+      "evidence_span": "公司家具生产用铝蜂窝板，是采用高分子环保型热熔胶膜通过热压机高温压制成型"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车轻量化",
+      "evidence_span": "镁合金是最有效的汽车轻量化材料"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车轻量化",
+      "evidence_span": "面对新能源汽车领域变革带来的机遇和挑战，镁业科技将抓住主要客户的新增业务机会，以满足新能源领域轻量化需求"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色环保家居",
+      "evidence_span": "全铝家具产品性能较好，拥有“零甲醛、耐高温、防水防潮、防腐蚀、防虫蛀、不变形、不变色、环保可回收”等优势"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车配件镁合金制品",
+        "evidence_span": "现有主营业务为汽车配件镁合金、铝合金制品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车配件铝合金制品",
+        "evidence_span": "现有主营业务为汽车配件镁合金、铝合金制品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "全铝家居定制",
+        "evidence_span": "现有主营业务为全铝家居定制、铝合金市政产品等的设计、制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金市政产品",
+        "evidence_span": "现有主营业务为全铝家居定制、铝合金市政产品等的设计、制造和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "镁合金压铸企业",
+        "evidence_span": "公司子公司镁业科技年设计产能为3500吨，处于镁合金压铸行业前列"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车整车厂家的二级供应商",
+        "evidence_span": "镁业科技为汽车整车厂家的二级供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车方向盘骨架",
+        "evidence_span": "生产成汽车方向盘骨架、汽车座椅滑轨、汽车仪表后盖、摩托车零件、手动工具等镁合金、铝合金压铸件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车座椅滑轨",
+        "evidence_span": "生产成汽车方向盘骨架、汽车座椅滑轨、汽车仪表后盖、摩托车零件、手动工具等镁合金、铝合金压铸件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车仪表后盖",
+        "evidence_span": "生产成汽车方向盘骨架、汽车座椅滑轨、汽车仪表后盖、摩托车零件、手动工具等镁合金、铝合金压铸件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "摩托车零件",
+        "evidence_span": "生产成汽车方向盘骨架、汽车座椅滑轨、汽车仪表后盖、摩托车零件、手动工具等镁合金、铝合金压铸件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手动工具",
+        "evidence_span": "生产成汽车方向盘骨架、汽车座椅滑轨、汽车仪表后盖、摩托车零件、手动工具等镁合金、铝合金压铸件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全铝家居办公产品",
+        "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "墙板",
+        "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型隔断屏风",
+        "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家装衣柜",
+        "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "橱柜",
+        "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卫浴柜",
+        "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市政产品",
+        "evidence_span": "生产加工成全铝家居办公产品、墙板、新型隔断屏风、家装衣柜、橱柜、卫浴柜以及部分市政产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全铝复合门",
+        "evidence_span": "其全铝复合门（包括全铝隔音门、铝木门）吸音墙板、吊顶等新产品得以推广应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全铝隔音门",
+        "evidence_span": "其全铝复合门（包括全铝隔音门、铝木门）吸音墙板、吊顶等新产品得以推广应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝木门",
+        "evidence_span": "其全铝复合门（包括全铝隔音门、铝木门）吸音墙板、吊顶等新产品得以推广应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "吸音墙板",
+        "evidence_span": "其全铝复合门（包括全铝隔音门、铝木门）吸音墙板、吊顶等新产品得以推广应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "吊顶",
+        "evidence_span": "其全铝复合门（包括全铝隔音门、铝木门）吸音墙板、吊顶等新产品得以推广应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏太阳能边框及支架",
+        "evidence_span": "积极围绕新能源领域开展相关业务，如：光伏太阳能边框及支架、新能源电池托盘等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源电池托盘",
+        "evidence_span": "积极围绕新能源领域开展相关业务，如：光伏太阳能边框及支架、新能源电池托盘等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "镁合金压铸技术",
+        "evidence_span": "镁业科技自成立至今已累积开发300余款镁铝合金产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铝蜂窝板热压成型技术",
+        "evidence_span": "公司家具生产用铝蜂窝板，是采用高分子环保型热熔胶膜通过热压机高温压制成型"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车轻量化",
+        "evidence_span": "镁合金是最有效的汽车轻量化材料"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车轻量化",
+        "evidence_span": "面对新能源汽车领域变革带来的机遇和挑战，镁业科技将抓住主要客户的新增业务机会，以满足新能源领域轻量化需求"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色环保家居",
+        "evidence_span": "全铝家具产品性能较好，拥有“零甲醛、耐高温、防水防潮、防腐蚀、防虫蛀、不变形、不变色、环保可回收”等优势"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:47:18"
+}

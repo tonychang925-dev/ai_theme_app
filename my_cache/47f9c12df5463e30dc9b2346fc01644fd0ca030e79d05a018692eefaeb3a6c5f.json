@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "5380b59a9a5e", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落详细描述中国船舶和中国重工的换股吸收合并交易，包括具体日期、金额、股价等，是一个公司动态事件，没有静态知识。"}}

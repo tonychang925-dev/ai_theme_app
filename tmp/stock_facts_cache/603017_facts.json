@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程设计",
+      "evidence_span": "主要从事建筑专业领域的工程设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程总承包",
+      "evidence_span": "工程总承包业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "项目管理",
+      "evidence_span": "项目管理及工程监理业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程监理",
+      "evidence_span": "项目管理及工程监理业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "江苏省最大的建筑设计企业",
+      "evidence_span": "江苏省最大的建筑设计企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内建筑设计领域第一家IPO上市公司",
+      "evidence_span": "国内建筑设计领域第一家IPO上市公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家装配式建筑产业基地",
+      "evidence_span": "公司成为首批获得认定的“国家装配式建筑产业基地”之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国首批40家全过程工程咨询试点企业",
+      "evidence_span": "公司被住建部选定为全国首批40家全过程工程咨询试点企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装配式设计",
+      "evidence_span": "工程设计（含装配式设计、低碳绿色建筑设计）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低碳绿色建筑设计",
+      "evidence_span": "工程设计（含装配式设计、低碳绿色建筑设计）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑光伏一体化BIPV",
+      "evidence_span": "从事低碳绿色建筑设计、光伏建筑一体化BIPV"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能源管理",
+      "evidence_span": "能源管理、节能改造等业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "节能改造",
+      "evidence_span": "能源管理、节能改造等业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "合同能源管理",
+      "evidence_span": "重点开展节能与安全评估、合同能源管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装配式建筑集成设计一体化解决方案",
+      "evidence_span": "能够提供装配式建筑集成设计一体化的解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑VR技术",
+      "evidence_span": "光辉城市是一家建筑VR技术、智慧城市数字孪生技术提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧城市数字孪生技术",
+      "evidence_span": "光辉城市是一家建筑VR技术、智慧城市数字孪生技术提供商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钢结构技术研究与应用",
+      "evidence_span": "在钢结构技术研究与应用、BIM技术、绿色节能、生态设计应用上处行业领先水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BIM技术",
+      "evidence_span": "在钢结构技术研究与应用、BIM技术、绿色节能、生态设计应用上处行业领先水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "绿色节能",
+      "evidence_span": "在钢结构技术研究与应用、BIM技术、绿色节能、生态设计应用上处行业领先水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生态设计应用",
+      "evidence_span": "在钢结构技术研究与应用、BIM技术、绿色节能、生态设计应用上处行业领先水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "装配式混凝土结构专项设计技术",
+      "evidence_span": "拥有包括装配式混凝土结构、钢结构、木结构、混合结构的专项设计技术与研发成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "装配式钢结构专项设计技术",
+      "evidence_span": "拥有包括装配式混凝土结构、钢结构、木结构、混合结构的专项设计技术与研发成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "装配式木结构专项设计技术",
+      "evidence_span": "拥有包括装配式混凝土结构、钢结构、木结构、混合结构的专项设计技术与研发成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "装配式混合结构专项设计技术",
+      "evidence_span": "拥有包括装配式混凝土结构、钢结构、木结构、混合结构的专项设计技术与研发成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "建筑信息模型技术(BIM)",
+      "evidence_span": "积极应用建筑信息模型技术(BIM)"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "带耗能梁的钢框架与交叉型中心支撑装配式建筑体系",
+      "evidence_span": "自主研发了“带耗能梁的钢框架与交叉型中心支撑装配式建筑体系”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钢管组合柱与双向加劲钢板剪力墙装配式建筑体系",
+      "evidence_span": "“钢管组合柱与双向加劲钢板剪力墙装配式建筑体系”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "交错焊接的填充式剪力墙装配式建筑体系",
+      "evidence_span": "“交错焊接的填充式剪力墙装配式建筑体系”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于AI与RPA技术的财务机器人",
+      "evidence_span": "衡星信息自主研发的基于AI与RPA技术的财务机器人已经上线应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世（中国）",
+      "evidence_span": "博世（中国）上海总部大楼等外资项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天合光能",
+      "evidence_span": "已完成天合光能、当升科技、博世集团、亨通集团、徐州地铁2号线等多个重大节能项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "当升科技",
+      "evidence_span": "已完成天合光能、当升科技、博世集团、亨通集团、徐州地铁2号线等多个重大节能项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世集团",
+      "evidence_span": "已完成天合光能、当升科技、博世集团、亨通集团、徐州地铁2号线等多个重大节能项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亨通集团",
+      "evidence_span": "已完成天合光能、当升科技、博世集团、亨通集团、徐州地铁2号线等多个重大节能项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "徐州地铁2号线",
+      "evidence_span": "已完成天合光能、当升科技、博世集团、亨通集团、徐州地铁2号线等多个重大节能项目"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "装配式建筑",
+      "evidence_span": "装配式钢结构设计应用最成熟广泛"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "建筑VR",
+      "evidence_span": "涉足建筑VR提升估值"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "长三角一体化",
+      "evidence_span": "有望受益长三角一体化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "特色小镇",
+      "evidence_span": "特色小镇打开市场空间"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自贸区建设",
+      "evidence_span": "自贸区建设和科创有望受益"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "科创",
+      "evidence_span": "自贸区建设和科创有望受益"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程设计",
+        "evidence_span": "主要从事建筑专业领域的工程设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程总承包",
+        "evidence_span": "工程总承包业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "项目管理",
+        "evidence_span": "项目管理及工程监理业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程监理",
+        "evidence_span": "项目管理及工程监理业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "江苏省最大的建筑设计企业",
+        "evidence_span": "江苏省最大的建筑设计企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内建筑设计领域第一家IPO上市公司",
+        "evidence_span": "国内建筑设计领域第一家IPO上市公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家装配式建筑产业基地",
+        "evidence_span": "公司成为首批获得认定的“国家装配式建筑产业基地”之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国首批40家全过程工程咨询试点企业",
+        "evidence_span": "公司被住建部选定为全国首批40家全过程工程咨询试点企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装配式设计",
+        "evidence_span": "工程设计（含装配式设计、低碳绿色建筑设计）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低碳绿色建筑设计",
+        "evidence_span": "工程设计（含装配式设计、低碳绿色建筑设计）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑光伏一体化BIPV",
+        "evidence_span": "从事低碳绿色建筑设计、光伏建筑一体化BIPV"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能源管理",
+        "evidence_span": "能源管理、节能改造等业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "节能改造",
+        "evidence_span": "能源管理、节能改造等业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "合同能源管理",
+        "evidence_span": "重点开展节能与安全评估、合同能源管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装配式建筑集成设计一体化解决方案",
+        "evidence_span": "能够提供装配式建筑集成设计一体化的解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑VR技术",
+        "evidence_span": "光辉城市是一家建筑VR技术、智慧城市数字孪生技术提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧城市数字孪生技术",
+        "evidence_span": "光辉城市是一家建筑VR技术、智慧城市数字孪生技术提供商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钢结构技术研究与应用",
+        "evidence_span": "在钢结构技术研究与应用、BIM技术、绿色节能、生态设计应用上处行业领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BIM技术",
+        "evidence_span": "在钢结构技术研究与应用、BIM技术、绿色节能、生态设计应用上处行业领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "绿色节能",
+        "evidence_span": "在钢结构技术研究与应用、BIM技术、绿色节能、生态设计应用上处行业领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生态设计应用",
+        "evidence_span": "在钢结构技术研究与应用、BIM技术、绿色节能、生态设计应用上处行业领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "装配式混凝土结构专项设计技术",
+        "evidence_span": "拥有包括装配式混凝土结构、钢结构、木结构、混合结构的专项设计技术与研发成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "装配式钢结构专项设计技术",
+        "evidence_span": "拥有包括装配式混凝土结构、钢结构、木结构、混合结构的专项设计技术与研发成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "装配式木结构专项设计技术",
+        "evidence_span": "拥有包括装配式混凝土结构、钢结构、木结构、混合结构的专项设计技术与研发成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "装配式混合结构专项设计技术",
+        "evidence_span": "拥有包括装配式混凝土结构、钢结构、木结构、混合结构的专项设计技术与研发成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "建筑信息模型技术(BIM)",
+        "evidence_span": "积极应用建筑信息模型技术(BIM)"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "带耗能梁的钢框架与交叉型中心支撑装配式建筑体系",
+        "evidence_span": "自主研发了“带耗能梁的钢框架与交叉型中心支撑装配式建筑体系”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钢管组合柱与双向加劲钢板剪力墙装配式建筑体系",
+        "evidence_span": "“钢管组合柱与双向加劲钢板剪力墙装配式建筑体系”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "交错焊接的填充式剪力墙装配式建筑体系",
+        "evidence_span": "“交错焊接的填充式剪力墙装配式建筑体系”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于AI与RPA技术的财务机器人",
+        "evidence_span": "衡星信息自主研发的基于AI与RPA技术的财务机器人已经上线应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世（中国）",
+        "evidence_span": "博世（中国）上海总部大楼等外资项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天合光能",
+        "evidence_span": "已完成天合光能、当升科技、博世集团、亨通集团、徐州地铁2号线等多个重大节能项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "当升科技",
+        "evidence_span": "已完成天合光能、当升科技、博世集团、亨通集团、徐州地铁2号线等多个重大节能项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世集团",
+        "evidence_span": "已完成天合光能、当升科技、博世集团、亨通集团、徐州地铁2号线等多个重大节能项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亨通集团",
+        "evidence_span": "已完成天合光能、当升科技、博世集团、亨通集团、徐州地铁2号线等多个重大节能项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "徐州地铁2号线",
+        "evidence_span": "已完成天合光能、当升科技、博世集团、亨通集团、徐州地铁2号线等多个重大节能项目"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "装配式建筑",
+        "evidence_span": "装配式钢结构设计应用最成熟广泛"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "建筑VR",
+        "evidence_span": "涉足建筑VR提升估值"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "长三角一体化",
+        "evidence_span": "有望受益长三角一体化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "特色小镇",
+        "evidence_span": "特色小镇打开市场空间"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自贸区建设",
+        "evidence_span": "自贸区建设和科创有望受益"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "科创",
+        "evidence_span": "自贸区建设和科创有望受益"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:58:46"
+}

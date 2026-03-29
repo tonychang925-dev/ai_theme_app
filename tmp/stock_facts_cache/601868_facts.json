@@ -1,0 +1,519 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "能源电力建设",
+      "evidence_span": "公司以能源电力和基础设施工程建设作为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基础设施工程建设",
+      "evidence_span": "公司以能源电力和基础设施工程建设作为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业制造",
+      "evidence_span": "工业制造、清洁能源投资运营业务构成重要补充"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "清洁能源投资运营",
+      "evidence_span": "工业制造、清洁能源投资运营业务构成重要补充"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球能源电力和基础设施建设领军企业",
+      "evidence_span": "中国能建是全球能源电力和基础设施建设领域领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "能源电力综合服务龙头",
+      "evidence_span": "中国能建能源电力综合服务龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球能源建设巨头",
+      "evidence_span": "全球能源电力建设巨头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "勘测设计及咨询",
+      "evidence_span": "业务涵盖勘测设计及咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程建设",
+      "evidence_span": "业务涵盖勘测设计及咨询、工程建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业制造",
+      "evidence_span": "业务涵盖勘测设计及咨询、工程建设、工业制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清洁能源及环保水务",
+      "evidence_span": "业务涵盖勘测设计及咨询、工程建设、工业制造、清洁能源及环保水务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一站式服务",
+      "evidence_span": "能够为业主提供一站式服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力规划研究",
+      "evidence_span": "承担全国90%以上的电力规划研究"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "咨询评审",
+      "evidence_span": "承担全国90%以上的电力规划研究、咨询评审"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "行业标准制定",
+      "evidence_span": "承担全国90%以上的电力规划研究、咨询评审和行业标准制定"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "火电工程建设",
+      "evidence_span": "具备火电、水电、核电、新能源、输变电等电力工程建设行业的成套资质"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水电工程建设",
+      "evidence_span": "具备火电、水电、核电、新能源、输变电等电力工程建设行业的成套资质"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核电工程建设",
+      "evidence_span": "具备火电、水电、核电、新能源、输变电等电力工程建设行业的成套资质"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源工程建设",
+      "evidence_span": "具备火电、水电、核电、新能源、输变电等电力工程建设行业的成套资质"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "输变电工程建设",
+      "evidence_span": "具备火电、水电、核电、新能源、输变电等电力工程建设行业的成套资质"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公路工程建设",
+      "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "桥梁工程建设",
+      "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁路工程建设",
+      "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机场工程建设",
+      "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "港口工程建设",
+      "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市政工程建设",
+      "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房建工程建设",
+      "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水泥业务",
+      "evidence_span": "公司下属水泥业务公司是国家重点支持的60 家大型水泥企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "民用爆破业务",
+      "evidence_span": "公司民爆业务主要依托下属中国葛洲坝易普力股份有限公司进行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电站辅机",
+      "evidence_span": "可设计、生产、销售、维修电站辅机、电网设备等高端装备产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电网设备",
+      "evidence_span": "可设计、生产、销售、维修电站辅机、电网设备等高端装备产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磨煤机",
+      "evidence_span": "尤其在磨煤机、给煤机、特高压电网装备及百万级核电母线等细分产品的市场占有率高"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "给煤机",
+      "evidence_span": "尤其在磨煤机、给煤机、特高压电网装备及百万级核电母线等细分产品的市场占有率高"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特高压电网装备",
+      "evidence_span": "尤其在磨煤机、给煤机、特高压电网装备及百万级核电母线等细分产品的市场占有率高"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "百万级核电母线",
+      "evidence_span": "尤其在磨煤机、给煤机、特高压电网装备及百万级核电母线等细分产品的市场占有率高"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清洁高效火电",
+      "evidence_span": "公司清洁能源业务包括清洁高效火电、水电、风电、太阳能等电源投资建设与运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水电",
+      "evidence_span": "公司清洁能源业务包括清洁高效火电、水电、风电、太阳能等电源投资建设与运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电",
+      "evidence_span": "公司清洁能源业务包括清洁高效火电、水电、风电、太阳能等电源投资建设与运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "太阳能",
+      "evidence_span": "公司清洁能源业务包括清洁高效火电、水电、风电、太阳能等电源投资建设与运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速公路运营",
+      "evidence_span": "公司于2016年组建高速公路运营管理专业子公司——中国葛洲坝集团公路运营有限公司，对高速公路进行专业管理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全产业链服务能力",
+      "evidence_span": "具有规划、勘测、设计、施工、运营、装备制造和投融资等全产业链服务能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电力勘测业务强",
+      "evidence_span": "电力勘测业务强"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "勘测设计技术领先",
+      "evidence_span": "勘测设计技术领先"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电源、电网工程建设能力卓越",
+      "evidence_span": "电源、电网工程建设能力卓越"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新能源施工迅速发展",
+      "evidence_span": "新能源施工迅速发展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "综合服务能力强",
+      "evidence_span": "综合服务能力强"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双碳战略",
+      "evidence_span": "中国能建领跑双碳战略"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳中和",
+      "evidence_span": "中国能建碳中和央企新贵"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源高景气",
+      "evidence_span": "持续受益新能源高景气"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源业务厚增业绩",
+      "evidence_span": "新能源业务厚增业绩"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "氢能储能产业发展",
+      "evidence_span": "加速氢能储能产业发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "能源电力建设",
+        "evidence_span": "公司以能源电力和基础设施工程建设作为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基础设施工程建设",
+        "evidence_span": "公司以能源电力和基础设施工程建设作为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业制造",
+        "evidence_span": "工业制造、清洁能源投资运营业务构成重要补充"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "清洁能源投资运营",
+        "evidence_span": "工业制造、清洁能源投资运营业务构成重要补充"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球能源电力和基础设施建设领军企业",
+        "evidence_span": "中国能建是全球能源电力和基础设施建设领域领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "能源电力综合服务龙头",
+        "evidence_span": "中国能建能源电力综合服务龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球能源建设巨头",
+        "evidence_span": "全球能源电力建设巨头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "勘测设计及咨询",
+        "evidence_span": "业务涵盖勘测设计及咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程建设",
+        "evidence_span": "业务涵盖勘测设计及咨询、工程建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业制造",
+        "evidence_span": "业务涵盖勘测设计及咨询、工程建设、工业制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清洁能源及环保水务",
+        "evidence_span": "业务涵盖勘测设计及咨询、工程建设、工业制造、清洁能源及环保水务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一站式服务",
+        "evidence_span": "能够为业主提供一站式服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力规划研究",
+        "evidence_span": "承担全国90%以上的电力规划研究"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "咨询评审",
+        "evidence_span": "承担全国90%以上的电力规划研究、咨询评审"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "行业标准制定",
+        "evidence_span": "承担全国90%以上的电力规划研究、咨询评审和行业标准制定"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "火电工程建设",
+        "evidence_span": "具备火电、水电、核电、新能源、输变电等电力工程建设行业的成套资质"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水电工程建设",
+        "evidence_span": "具备火电、水电、核电、新能源、输变电等电力工程建设行业的成套资质"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核电工程建设",
+        "evidence_span": "具备火电、水电、核电、新能源、输变电等电力工程建设行业的成套资质"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源工程建设",
+        "evidence_span": "具备火电、水电、核电、新能源、输变电等电力工程建设行业的成套资质"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "输变电工程建设",
+        "evidence_span": "具备火电、水电、核电、新能源、输变电等电力工程建设行业的成套资质"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公路工程建设",
+        "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "桥梁工程建设",
+        "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁路工程建设",
+        "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机场工程建设",
+        "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "港口工程建设",
+        "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市政工程建设",
+        "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房建工程建设",
+        "evidence_span": "公司在公路、桥梁、铁路、机场、港口、市政、房建等非电基础设施工程上积极拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水泥业务",
+        "evidence_span": "公司下属水泥业务公司是国家重点支持的60 家大型水泥企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "民用爆破业务",
+        "evidence_span": "公司民爆业务主要依托下属中国葛洲坝易普力股份有限公司进行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电站辅机",
+        "evidence_span": "可设计、生产、销售、维修电站辅机、电网设备等高端装备产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电网设备",
+        "evidence_span": "可设计、生产、销售、维修电站辅机、电网设备等高端装备产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磨煤机",
+        "evidence_span": "尤其在磨煤机、给煤机、特高压电网装备及百万级核电母线等细分产品的市场占有率高"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "给煤机",
+        "evidence_span": "尤其在磨煤机、给煤机、特高压电网装备及百万级核电母线等细分产品的市场占有率高"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特高压电网装备",
+        "evidence_span": "尤其在磨煤机、给煤机、特高压电网装备及百万级核电母线等细分产品的市场占有率高"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "百万级核电母线",
+        "evidence_span": "尤其在磨煤机、给煤机、特高压电网装备及百万级核电母线等细分产品的市场占有率高"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清洁高效火电",
+        "evidence_span": "公司清洁能源业务包括清洁高效火电、水电、风电、太阳能等电源投资建设与运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水电",
+        "evidence_span": "公司清洁能源业务包括清洁高效火电、水电、风电、太阳能等电源投资建设与运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电",
+        "evidence_span": "公司清洁能源业务包括清洁高效火电、水电、风电、太阳能等电源投资建设与运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "太阳能",
+        "evidence_span": "公司清洁能源业务包括清洁高效火电、水电、风电、太阳能等电源投资建设与运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速公路运营",
+        "evidence_span": "公司于2016年组建高速公路运营管理专业子公司——中国葛洲坝集团公路运营有限公司，对高速公路进行专业管理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全产业链服务能力",
+        "evidence_span": "具有规划、勘测、设计、施工、运营、装备制造和投融资等全产业链服务能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电力勘测业务强",
+        "evidence_span": "电力勘测业务强"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "勘测设计技术领先",
+        "evidence_span": "勘测设计技术领先"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电源、电网工程建设能力卓越",
+        "evidence_span": "电源、电网工程建设能力卓越"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新能源施工迅速发展",
+        "evidence_span": "新能源施工迅速发展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "综合服务能力强",
+        "evidence_span": "综合服务能力强"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双碳战略",
+        "evidence_span": "中国能建领跑双碳战略"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳中和",
+        "evidence_span": "中国能建碳中和央企新贵"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源高景气",
+        "evidence_span": "持续受益新能源高景气"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源业务厚增业绩",
+        "evidence_span": "新能源业务厚增业绩"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "氢能储能产业发展",
+        "evidence_span": "加速氢能储能产业发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:40:57"
+}

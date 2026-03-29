@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:42:44", "result": {"chunk_id": "4e276cb002a7", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明分销商在电子元器件产业链中的核心价值和作用，包括技术支持、物流、规模优势等，不涉及具体事件或时间性动态，是题材本体的稳定知识。"}}

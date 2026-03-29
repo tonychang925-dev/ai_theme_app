@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:00:58", "result": {"span_uid": "514a611a640a", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文是关于特定公司背景和项目位置的具体事件信息，无法形成脱离原新闻的稳定知识块，且不涉及题材本体或相关稳定知识。"}}

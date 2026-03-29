@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "0c0b1d519b88", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落简要描述特斯拉推出CyberCab和无人驾驶Model Y的事件，属于产品发布动态，没有提供FSD的静态知识。"}}

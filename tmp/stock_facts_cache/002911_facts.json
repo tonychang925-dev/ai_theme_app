@@ -1,0 +1,584 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "燃气供应业务",
+      "evidence_span": "在大力发展燃气供应业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "油品能源服务",
+      "evidence_span": "积极开展油品、氢能、热能、光伏、储能等能源服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "氢能能源服务",
+      "evidence_span": "积极开展油品、氢能、热能、光伏、储能等能源服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "热能能源服务",
+      "evidence_span": "积极开展油品、氢能、热能、光伏、储能等能源服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏能源服务",
+      "evidence_span": "积极开展油品、氢能、热能、光伏、储能等能源服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "储能能源服务",
+      "evidence_span": "积极开展油品、氢能、热能、光伏、储能等能源服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "SOFC固体氧化物燃料电池",
+      "evidence_span": "在SOFC、氢能装备制造研发、管道检测、窑炉热工装备制造与节能减排等方面进行研发及业务规划"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "氢能装备制造研发",
+      "evidence_span": "在SOFC、氢能装备制造研发、管道检测、窑炉热工装备制造与节能减排等方面进行研发及业务规划"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "管道检测",
+      "evidence_span": "在SOFC、氢能装备制造研发、管道检测、窑炉热工装备制造与节能减排等方面进行研发及业务规划"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "窑炉热工装备制造",
+      "evidence_span": "在SOFC、氢能装备制造研发、管道检测、窑炉热工装备制造与节能减排等方面进行研发及业务规划"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "节能减排",
+      "evidence_span": "在SOFC、氢能装备制造研发、管道检测、窑炉热工装备制造与节能减排等方面进行研发及业务规划"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "燃气服务业务",
+      "evidence_span": "公司现已开展燃气服务、储气调峰项目、延伸项目等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "储气调峰业务",
+      "evidence_span": "公司现已开展燃气服务、储气调峰项目、延伸项目等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "延伸业务",
+      "evidence_span": "公司现已开展燃气服务、储气调峰项目、延伸项目等业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市燃气经营企业",
+      "evidence_span": "公司属于颇具实力的城市燃气经营企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "佛山区域燃气龙头",
+      "evidence_span": "佛山区域燃气龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "华南地区具竞争力的燃气公司",
+      "evidence_span": "佛燃能源华南地区具竞争力的燃气公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管道天然气",
+      "evidence_span": "公司深耕燃气业务，在佛山市内，公司拥有统一接收所有进入佛山市地域范围内管道天然气"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "成品油贸易业务",
+      "evidence_span": "元亨仓储依托自身仓储及码头设施、上下游资源网络，开展成品油贸易业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加氢服务",
+      "evidence_span": "2022年上半年合计提供的加氢服务超过1.4万车次"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热力供应服务方案",
+      "evidence_span": "为用户提供优质、便利的热力供应服务方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分布式光伏发电业务",
+      "evidence_span": "稳步推进分布式光伏发电业务发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能节能业务",
+      "evidence_span": "在储能节能业务方面"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SOFC固体氧化物燃料电池",
+      "evidence_span": "SOFC固体氧化物燃料电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陶瓷热工节能装备制造",
+      "evidence_span": "研究高效节能的陶瓷热工节能装备制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管道内检测服务",
+      "evidence_span": "开展管道内检测服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管道外检测服务",
+      "evidence_span": "开展管道外检测服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "撬装天然气制氢设备",
+      "evidence_span": "250Nm³/h撬装天然气制氢设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "隔膜压缩机",
+      "evidence_span": "佛燃天高进行超压超大排量隔膜压缩机领域的研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液驱压缩机",
+      "evidence_span": "康普锐斯开展液驱压缩机的研发制造和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃气服务业务",
+      "evidence_span": "燃气服务业务涵盖工程建设、设计监理、造价咨询等方面"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储气调峰业务",
+      "evidence_span": "储气调峰业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "延伸业务",
+      "evidence_span": "延伸业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SOFC固体氧化物燃料电池",
+      "evidence_span": "SOFC固体氧化物燃料电池"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氢能装备制造研发",
+      "evidence_span": "氢能装备制造研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "窑炉热工装备制造与节能减排",
+      "evidence_span": "窑炉热工装备制造与节能减排"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "管道检测",
+      "evidence_span": "管道检测"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三轴高清漏磁内检测器",
+      "evidence_span": "三轴高清漏磁内检测器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精度几何变形内检测器",
+      "evidence_span": "高精度几何变形内检测器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超埋深管道探测",
+      "evidence_span": "超埋深管道探测"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无示踪线PE管道探测",
+      "evidence_span": "无示踪线PE管道探测"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "杂散电流评价与治理",
+      "evidence_span": "杂散电流评价与治理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "管道防腐层检测与评价技术",
+      "evidence_span": "管道防腐层检测与评价技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PPB级高精度泄露检测装备",
+      "evidence_span": "基于PPB级高精度泄露检测装备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自供电智能阴保桩",
+      "evidence_span": "自供电智能阴保桩"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动力三维陀螺仪",
+      "evidence_span": "自动力三维陀螺仪"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "撬装天然气制氢设备",
+      "evidence_span": "撬装天然气制氢设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "隔膜压缩机",
+      "evidence_span": "隔膜压缩机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "液驱压缩机",
+      "evidence_span": "液驱压缩机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "与中石油、中海油气电等国内上游燃气供应企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中海油气电",
+      "evidence_span": "与中石油、中海油气电等国内上游燃气供应企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "碧辟（中国）",
+      "evidence_span": "碧辟（中国）、切尼尔能源、中化新加坡等国际供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "切尼尔能源",
+      "evidence_span": "碧辟（中国）、切尼尔能源、中化新加坡等国际供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中化新加坡",
+      "evidence_span": "碧辟（中国）、切尼尔能源、中化新加坡等国际供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陶瓷行业头部企业",
+      "evidence_span": "推动与陶瓷行业头部企业开展深度战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "管道公司",
+      "evidence_span": "为管道公司提供综合解决方案"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "清洁能源",
+      "evidence_span": "大力发展清洁能源"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "能源高效利用",
+      "evidence_span": "实现能源高效利用"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "燃气供应业务",
+        "evidence_span": "在大力发展燃气供应业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "油品能源服务",
+        "evidence_span": "积极开展油品、氢能、热能、光伏、储能等能源服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "氢能能源服务",
+        "evidence_span": "积极开展油品、氢能、热能、光伏、储能等能源服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "热能能源服务",
+        "evidence_span": "积极开展油品、氢能、热能、光伏、储能等能源服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏能源服务",
+        "evidence_span": "积极开展油品、氢能、热能、光伏、储能等能源服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "储能能源服务",
+        "evidence_span": "积极开展油品、氢能、热能、光伏、储能等能源服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "SOFC固体氧化物燃料电池",
+        "evidence_span": "在SOFC、氢能装备制造研发、管道检测、窑炉热工装备制造与节能减排等方面进行研发及业务规划"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "氢能装备制造研发",
+        "evidence_span": "在SOFC、氢能装备制造研发、管道检测、窑炉热工装备制造与节能减排等方面进行研发及业务规划"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "管道检测",
+        "evidence_span": "在SOFC、氢能装备制造研发、管道检测、窑炉热工装备制造与节能减排等方面进行研发及业务规划"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "窑炉热工装备制造与节能减排",
+        "evidence_span": "在SOFC、氢能装备制造研发、管道检测、窑炉热工装备制造与节能减排等方面进行研发及业务规划"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "燃气服务业务",
+        "evidence_span": "公司现已开展燃气服务、储气调峰项目、延伸项目等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "储气调峰业务",
+        "evidence_span": "公司现已开展燃气服务、储气调峰项目、延伸项目等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "延伸业务",
+        "evidence_span": "公司现已开展燃气服务、储气调峰项目、延伸项目等业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市燃气经营企业",
+        "evidence_span": "公司属于颇具实力的城市燃气经营企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "佛山区域燃气龙头",
+        "evidence_span": "佛山区域燃气龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "华南地区具竞争力的燃气公司",
+        "evidence_span": "佛燃能源华南地区具竞争力的燃气公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管道天然气",
+        "evidence_span": "公司深耕燃气业务，在佛山市内，公司拥有统一接收所有进入佛山市地域范围内管道天然气"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "成品油贸易业务",
+        "evidence_span": "元亨仓储依托自身仓储及码头设施、上下游资源网络，开展成品油贸易业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加氢服务",
+        "evidence_span": "2022年上半年合计提供的加氢服务超过1.4万车次"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热力供应服务方案",
+        "evidence_span": "为用户提供优质、便利的热力供应服务方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分布式光伏发电业务",
+        "evidence_span": "稳步推进分布式光伏发电业务发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能节能业务",
+        "evidence_span": "在储能节能业务方面"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SOFC固体氧化物燃料电池",
+        "evidence_span": "SOFC固体氧化物燃料电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陶瓷热工节能装备制造",
+        "evidence_span": "研究高效节能的陶瓷热工节能装备制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管道内检测服务",
+        "evidence_span": "开展管道内检测服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管道外检测服务",
+        "evidence_span": "开展管道外检测服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "撬装天然气制氢设备",
+        "evidence_span": "250Nm³/h撬装天然气制氢设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "隔膜压缩机",
+        "evidence_span": "佛燃天高进行超压超大排量隔膜压缩机领域的研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液驱压缩机",
+        "evidence_span": "康普锐斯开展液驱压缩机的研发制造和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃气服务业务",
+        "evidence_span": "燃气服务业务涵盖工程建设、设计监理、造价咨询等方面"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储气调峰业务",
+        "evidence_span": "储气调峰业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "延伸业务",
+        "evidence_span": "延伸业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SOFC固体氧化物燃料电池",
+        "evidence_span": "SOFC固体氧化物燃料电池"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氢能装备制造研发",
+        "evidence_span": "氢能装备制造研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "窑炉热工装备制造与节能减排",
+        "evidence_span": "窑炉热工装备制造与节能减排"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "管道检测",
+        "evidence_span": "管道检测"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三轴高清漏磁内检测器",
+        "evidence_span": "三轴高清漏磁内检测器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精度几何变形内检测器",
+        "evidence_span": "高精度几何变形内检测器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超埋深管道探测",
+        "evidence_span": "超埋深管道探测"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无示踪线PE管道探测",
+        "evidence_span": "无示踪线PE管道探测"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "杂散电流评价与治理",
+        "evidence_span": "杂散电流评价与治理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "管道防腐层检测与评价技术",
+        "evidence_span": "管道防腐层检测与评价技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PPB级高精度泄露检测装备",
+        "evidence_span": "基于PPB级高精度泄露检测装备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自供电智能阴保桩",
+        "evidence_span": "自供电智能阴保桩"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动力三维陀螺仪",
+        "evidence_span": "自动力三维陀螺仪"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "撬装天然气制氢设备",
+        "evidence_span": "撬装天然气制氢设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "隔膜压缩机",
+        "evidence_span": "隔膜压缩机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "液驱压缩机",
+        "evidence_span": "液驱压缩机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "与中石油、中海油气电等国内上游燃气供应企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中海油气电",
+        "evidence_span": "与中石油、中海油气电等国内上游燃气供应企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "碧辟（中国）",
+        "evidence_span": "碧辟（中国）、切尼尔能源、中化新加坡等国际供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "切尼尔能源",
+        "evidence_span": "碧辟（中国）、切尼尔能源、中化新加坡等国际供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中化新加坡",
+        "evidence_span": "碧辟（中国）、切尼尔能源、中化新加坡等国际供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陶瓷行业头部企业",
+        "evidence_span": "推动与陶瓷行业头部企业开展深度战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "管道公司",
+        "evidence_span": "为管道公司提供综合解决方案"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "清洁能源",
+        "evidence_span": "大力发展清洁能源"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "能源高效利用",
+        "evidence_span": "实现能源高效利用"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:26:14"
+}

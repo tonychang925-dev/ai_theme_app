@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "555d07d8ffe1", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明卫星网络的分类（高、中、低轨）、低轨卫星的优势和组网机制，属于静态知识构建，尽管末尾提到Starlink等应用，但整体以解释性内容为主，优先判为strict_knowledge。"}}

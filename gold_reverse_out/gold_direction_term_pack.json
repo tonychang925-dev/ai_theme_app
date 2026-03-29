@@ -1,0 +1,1627 @@
+{
+  "subject_key": "9019807",
+  "subject_name": "卫星互联网",
+  "direction_term_pack": {
+    "航天国家队__航天科工集团": {
+      "group_name": "航天国家队",
+      "direction_name": "航天科工集团",
+      "stock_count": 5,
+      "stocks": [
+        "航天晨光",
+        "航天发展",
+        "航天电器",
+        "航天长峰",
+        "航天科技"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 8
+        },
+        {
+          "term": "main_business",
+          "count": 7
+        },
+        {
+          "term": "industry_role",
+          "count": 6
+        },
+        {
+          "term": "technology",
+          "count": 1
+        },
+        {
+          "term": "benefit_logic",
+          "count": 1
+        }
+      ],
+      "aliases": [
+        "航天科工集团"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [
+        "股票",
+        "制造",
+        "装备",
+        "工程",
+        "核心",
+        "方面",
+        "受益",
+        "逻辑",
+        "角色",
+        "军工",
+        "生产",
+        "自主",
+        "企业",
+        "加速",
+        "核心产品与技术"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "航天国家队__航天科技集团": {
+      "group_name": "航天国家队",
+      "direction_name": "航天科技集团",
+      "stock_count": 8,
+      "stocks": [
+        "航天机电",
+        "航天工程",
+        "中国卫星",
+        "中国卫通",
+        "航天动力",
+        "中天火箭",
+        "航天电子",
+        "航天智装"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 37
+        },
+        {
+          "term": "industry_role",
+          "count": 11
+        },
+        {
+          "term": "main_business",
+          "count": 10
+        },
+        {
+          "term": "technology",
+          "count": 9
+        },
+        {
+          "term": "benefit_logic",
+          "count": 7
+        }
+      ],
+      "aliases": [
+        "航天科技集团",
+        "测控"
+      ],
+      "component_words": [
+        "测控"
+      ],
+      "must_terms": [
+        "股票",
+        "主要",
+        "从事",
+        "研发",
+        "生产",
+        "销售",
+        "核心",
+        "测控",
+        "民用",
+        "制导"
+      ],
+      "strong_terms": [],
+      "should_terms": [
+        "多个",
+        "受益",
+        "逻辑",
+        "角色",
+        "核心产品与技术",
+        "受益逻辑与行业角色"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "卫星本体__卫星分系统": {
+      "group_name": "卫星本体",
+      "direction_name": "卫星分系统",
+      "stock_count": 4,
+      "stocks": [
+        "航天智造",
+        "天银机电",
+        "天奥电子",
+        "佳缘科技"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 18
+        },
+        {
+          "term": "technology",
+          "count": 9
+        },
+        {
+          "term": "industry_role",
+          "count": 7
+        },
+        {
+          "term": "main_business",
+          "count": 6
+        },
+        {
+          "term": "benefit_logic",
+          "count": 5
+        }
+      ],
+      "aliases": [
+        "卫星分系统",
+        "航天"
+      ],
+      "component_words": [
+        "航天"
+      ],
+      "must_terms": [],
+      "strong_terms": [
+        "航天"
+      ],
+      "should_terms": [
+        "股票",
+        "主要",
+        "包括",
+        "电子",
+        "核心",
+        "商业",
+        "受益",
+        "逻辑",
+        "角色",
+        "企业",
+        "军民",
+        "融合",
+        "核心产品与技术",
+        "受益逻辑与行业角色"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "卫星本体__卫星载荷": {
+      "group_name": "卫星本体",
+      "direction_name": "卫星载荷",
+      "stock_count": 8,
+      "stocks": [
+        "航天电子",
+        "臻镭科技",
+        "信科移动",
+        "上海瀚讯",
+        "*ST铖昌",
+        "奥普光电",
+        "航天环宇",
+        "大唐电信"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 51
+        },
+        {
+          "term": "technology",
+          "count": 23
+        },
+        {
+          "term": "main_business",
+          "count": 17
+        },
+        {
+          "term": "benefit_logic",
+          "count": 11
+        },
+        {
+          "term": "industry_role",
+          "count": 7
+        }
+      ],
+      "aliases": [
+        "卫星载荷"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [
+        "股票",
+        "核心",
+        "受益",
+        "逻辑",
+        "角色",
+        "核心产品与技术",
+        "受益逻辑与行业角色",
+        "主要",
+        "研发",
+        "销售",
+        "通信",
+        "集成电路",
+        "企业",
+        "设计"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "卫星本体__部件与材料": {
+      "group_name": "卫星本体",
+      "direction_name": "部件与材料",
+      "stock_count": 12,
+      "stocks": [
+        "光威复材",
+        "国机精工",
+        "宝钛股份",
+        "西部材料",
+        "西部超导",
+        "铂力特",
+        "上海港湾",
+        "华菱线缆",
+        "陕西华达",
+        "神剑股份",
+        "渝三峡A",
+        "电科蓝天"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 14
+        },
+        {
+          "term": "industry_role",
+          "count": 13
+        },
+        {
+          "term": "benefit_logic",
+          "count": 8
+        },
+        {
+          "term": "main_business",
+          "count": 5
+        },
+        {
+          "term": "technology",
+          "count": 2
+        }
+      ],
+      "aliases": [
+        "部件与材料"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "卫星本体__卫星制造": {
+      "group_name": "卫星本体",
+      "direction_name": "卫星制造",
+      "stock_count": 3,
+      "stocks": [
+        "中国卫星",
+        "银河电子",
+        "上海沪工"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 20
+        },
+        {
+          "term": "main_business",
+          "count": 3
+        },
+        {
+          "term": "technology",
+          "count": 3
+        },
+        {
+          "term": "benefit_logic",
+          "count": 3
+        },
+        {
+          "term": "industry_role",
+          "count": 2
+        }
+      ],
+      "aliases": [
+        "卫星制造"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "卫星本体__卫星检测": {
+      "group_name": "卫星本体",
+      "direction_name": "卫星检测",
+      "stock_count": 5,
+      "stocks": [
+        "西测测试",
+        "苏试试验",
+        "北摩高科",
+        "航天智装",
+        "谱尼测试"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 20
+        },
+        {
+          "term": "technology",
+          "count": 13
+        },
+        {
+          "term": "main_business",
+          "count": 7
+        },
+        {
+          "term": "industry_role",
+          "count": 5
+        },
+        {
+          "term": "benefit_logic",
+          "count": 2
+        }
+      ],
+      "aliases": [
+        "卫星检测"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [
+        "股票",
+        "一家",
+        "核心",
+        "受益",
+        "逻辑",
+        "角色",
+        "第三方",
+        "机构",
+        "核心产品与技术",
+        "受益逻辑与行业角色"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "卫星发射__火箭动力": {
+      "group_name": "卫星发射",
+      "direction_name": "火箭动力",
+      "stock_count": 9,
+      "stocks": [
+        "航天动力",
+        "九丰能源",
+        "斯瑞新材",
+        "航天晨光",
+        "富瑞特装",
+        "国机精工",
+        "国科军工",
+        "中衡设计",
+        "大业股份"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 44
+        },
+        {
+          "term": "technology",
+          "count": 19
+        },
+        {
+          "term": "main_business",
+          "count": 17
+        },
+        {
+          "term": "industry_role",
+          "count": 14
+        },
+        {
+          "term": "benefit_logic",
+          "count": 10
+        }
+      ],
+      "aliases": [
+        "火箭动力"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [
+        "股票",
+        "核心",
+        "受益",
+        "逻辑",
+        "角色",
+        "核心产品与技术",
+        "受益逻辑与行业角色",
+        "企业",
+        "拥有",
+        "自主"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "卫星发射__火箭部件": {
+      "group_name": "卫星发射",
+      "direction_name": "火箭部件",
+      "stock_count": 23,
+      "stocks": [
+        "晨曦航空",
+        "赛微电子",
+        "星网宇达",
+        "中航光电",
+        "航天电器",
+        "振华科技",
+        "航宇微",
+        "全信股份",
+        "通达股份",
+        "新雷能",
+        "博云新材",
+        "钢研高纳",
+        "龙溪股份",
+        "德恩精工",
+        "飞沃科技",
+        "再升科技",
+        "通光线缆",
+        "联合精密",
+        "九鼎新材",
+        "中超控股",
+        "中航重机",
+        "江顺科技",
+        "旭升集团"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 84
+        },
+        {
+          "term": "technology",
+          "count": 30
+        },
+        {
+          "term": "main_business",
+          "count": 24
+        },
+        {
+          "term": "industry_role",
+          "count": 17
+        },
+        {
+          "term": "benefit_logic",
+          "count": 12
+        }
+      ],
+      "aliases": [
+        "火箭部件"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "卫星发射__发射服务": {
+      "group_name": "卫星发射",
+      "direction_name": "发射服务",
+      "stock_count": 11,
+      "stocks": [
+        "航天发展",
+        "金风科技",
+        "高华科技",
+        "豪能股份",
+        "招标股份",
+        "广联航空",
+        "航天科技",
+        "万隆光电",
+        "中国一重",
+        "苏州高新",
+        "中集集团"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 16
+        },
+        {
+          "term": "technology",
+          "count": 14
+        },
+        {
+          "term": "benefit_logic",
+          "count": 7
+        },
+        {
+          "term": "main_business",
+          "count": 3
+        },
+        {
+          "term": "industry_role",
+          "count": 2
+        }
+      ],
+      "aliases": [
+        "发射服务"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "卫星发射__电磁轨道": {
+      "group_name": "卫星发射",
+      "direction_name": "电磁轨道",
+      "stock_count": 6,
+      "stocks": [
+        "联创光电",
+        "湘电股份",
+        "王子新材",
+        "振华科技",
+        "江海股份",
+        "江顺科技"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 48
+        },
+        {
+          "term": "technology",
+          "count": 13
+        },
+        {
+          "term": "main_business",
+          "count": 9
+        },
+        {
+          "term": "industry_role",
+          "count": 9
+        },
+        {
+          "term": "benefit_logic",
+          "count": 5
+        }
+      ],
+      "aliases": [
+        "电磁轨道"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [
+        "股票",
+        "核心",
+        "半导体",
+        "受益",
+        "逻辑",
+        "角色",
+        "供应",
+        "核心产品与技术",
+        "受益逻辑与行业角色",
+        "研发",
+        "生产",
+        "家电",
+        "拓展",
+        "新能源",
+        "器件"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "卫星运维__卫星运营": {
+      "group_name": "卫星运维",
+      "direction_name": "卫星运营",
+      "stock_count": 4,
+      "stocks": [
+        "中国卫通",
+        "中科星图",
+        "航天宏图",
+        "三维通信"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 56
+        },
+        {
+          "term": "technology",
+          "count": 30
+        },
+        {
+          "term": "industry_role",
+          "count": 18
+        },
+        {
+          "term": "main_business",
+          "count": 13
+        },
+        {
+          "term": "benefit_logic",
+          "count": 6
+        }
+      ],
+      "aliases": [
+        "卫星运营",
+        "航天"
+      ],
+      "component_words": [
+        "航天"
+      ],
+      "must_terms": [
+        "股票",
+        "核心",
+        "自主",
+        "可控",
+        "拥有",
+        "海洋",
+        "多个",
+        "覆盖",
+        "受益",
+        "逻辑"
+      ],
+      "strong_terms": [
+        "航天"
+      ],
+      "should_terms": [
+        "受益逻辑与行业角色",
+        "龙头",
+        "我国",
+        "企业",
+        "政府",
+        "气象",
+        "作为",
+        "推出",
+        "基础",
+        "软件",
+        "地球",
+        "数据"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "卫星运维__遥感监测": {
+      "group_name": "卫星运维",
+      "direction_name": "遥感监测",
+      "stock_count": 5,
+      "stocks": [
+        "航天宏图",
+        "航宇微",
+        "中科星图",
+        "雷科防务",
+        "城建发展"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 48
+        },
+        {
+          "term": "technology",
+          "count": 27
+        },
+        {
+          "term": "industry_role",
+          "count": 12
+        },
+        {
+          "term": "main_business",
+          "count": 11
+        },
+        {
+          "term": "benefit_logic",
+          "count": 4
+        }
+      ],
+      "aliases": [
+        "遥感监测",
+        "航天",
+        "卫星"
+      ],
+      "component_words": [
+        "航天",
+        "卫星"
+      ],
+      "must_terms": [],
+      "strong_terms": [
+        "航天",
+        "卫星"
+      ],
+      "should_terms": [
+        "股票",
+        "领先",
+        "服务商",
+        "核心",
+        "软件",
+        "研发",
+        "自主",
+        "推出",
+        "信息",
+        "地球",
+        "受益",
+        "逻辑",
+        "角色",
+        "作为",
+        "空天"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "卫星运维__深空开发": {
+      "group_name": "卫星运维",
+      "direction_name": "深空开发",
+      "stock_count": 2,
+      "stocks": [
+        "顺灏股份",
+        "华力创通"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 35
+        },
+        {
+          "term": "technology",
+          "count": 8
+        },
+        {
+          "term": "main_business",
+          "count": 4
+        },
+        {
+          "term": "industry_role",
+          "count": 3
+        },
+        {
+          "term": "benefit_logic",
+          "count": 2
+        }
+      ],
+      "aliases": [
+        "深空开发"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "地面设备__核心网": {
+      "group_name": "地面设备",
+      "direction_name": "核心网",
+      "stock_count": 1,
+      "stocks": [
+        "震有科技"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 7
+        },
+        {
+          "term": "main_business",
+          "count": 2
+        },
+        {
+          "term": "benefit_logic",
+          "count": 2
+        },
+        {
+          "term": "industry_role",
+          "count": 1
+        },
+        {
+          "term": "technology",
+          "count": 1
+        }
+      ],
+      "aliases": [
+        "核心网"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "地面设备__天线": {
+      "group_name": "地面设备",
+      "direction_name": "天线",
+      "stock_count": 6,
+      "stocks": [
+        "通宇通讯",
+        "硕贝德",
+        "盛路通信",
+        "平治信息",
+        "世嘉科技",
+        "信维通信"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 25
+        },
+        {
+          "term": "technology",
+          "count": 10
+        },
+        {
+          "term": "main_business",
+          "count": 7
+        },
+        {
+          "term": "industry_role",
+          "count": 4
+        },
+        {
+          "term": "benefit_logic",
+          "count": 3
+        }
+      ],
+      "aliases": [
+        "天线"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [
+        "股票",
+        "通信",
+        "提供商",
+        "核心",
+        "领先",
+        "5G",
+        "无线",
+        "受益",
+        "逻辑",
+        "角色",
+        "主要",
+        "核心产品与技术",
+        "受益逻辑与行业角色"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "地面设备__信号发射": {
+      "group_name": "地面设备",
+      "direction_name": "信号发射",
+      "stock_count": 1,
+      "stocks": [
+        "天箭科技"
+      ],
+      "fact_type_top": [
+        {
+          "term": "technology",
+          "count": 8
+        },
+        {
+          "term": "main_business",
+          "count": 4
+        },
+        {
+          "term": "product",
+          "count": 3
+        },
+        {
+          "term": "industry_role",
+          "count": 2
+        },
+        {
+          "term": "benefit_logic",
+          "count": 1
+        }
+      ],
+      "aliases": [
+        "信号发射"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "地面设备__卫星测控": {
+      "group_name": "地面设备",
+      "direction_name": "卫星测控",
+      "stock_count": 2,
+      "stocks": [
+        "中科星图",
+        "长江通信"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 23
+        },
+        {
+          "term": "technology",
+          "count": 21
+        },
+        {
+          "term": "main_business",
+          "count": 7
+        },
+        {
+          "term": "industry_role",
+          "count": 7
+        },
+        {
+          "term": "benefit_logic",
+          "count": 2
+        }
+      ],
+      "aliases": [
+        "卫星测控"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "地面设备__通信芯片": {
+      "group_name": "地面设备",
+      "direction_name": "通信芯片",
+      "stock_count": 1,
+      "stocks": [
+        "华力创通"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 35
+        },
+        {
+          "term": "technology",
+          "count": 8
+        },
+        {
+          "term": "main_business",
+          "count": 4
+        },
+        {
+          "term": "industry_role",
+          "count": 3
+        },
+        {
+          "term": "benefit_logic",
+          "count": 2
+        }
+      ],
+      "aliases": [
+        "通信芯片"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "地面设备__导航芯片": {
+      "group_name": "地面设备",
+      "direction_name": "导航芯片",
+      "stock_count": 2,
+      "stocks": [
+        "北斗星通",
+        "海格通信"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 22
+        },
+        {
+          "term": "technology",
+          "count": 6
+        },
+        {
+          "term": "main_business",
+          "count": 5
+        },
+        {
+          "term": "industry_role",
+          "count": 3
+        },
+        {
+          "term": "benefit_logic",
+          "count": 1
+        }
+      ],
+      "aliases": [
+        "导航芯片"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "商业航天__垣信卫星": {
+      "group_name": "商业航天",
+      "direction_name": "垣信卫星",
+      "stock_count": 6,
+      "stocks": [
+        "上海瀚讯",
+        "中国电信",
+        "东方明珠",
+        "亚信安全",
+        "银河电子",
+        "长江通信"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 39
+        },
+        {
+          "term": "technology",
+          "count": 15
+        },
+        {
+          "term": "main_business",
+          "count": 14
+        },
+        {
+          "term": "industry_role",
+          "count": 8
+        },
+        {
+          "term": "benefit_logic",
+          "count": 6
+        }
+      ],
+      "aliases": [
+        "垣信卫星"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [
+        "股票",
+        "核心",
+        "终端",
+        "数字",
+        "受益",
+        "逻辑",
+        "角色",
+        "核心产品与技术",
+        "受益逻辑与行业角色",
+        "中国电信",
+        "通信",
+        "家庭",
+        "网络",
+        "支持",
+        "接入"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "商业航天__蓝箭航天": {
+      "group_name": "商业航天",
+      "direction_name": "蓝箭航天",
+      "stock_count": 11,
+      "stocks": [
+        "金风科技",
+        "鲁信创投",
+        "张江高科",
+        "斯瑞新材",
+        "铂力特",
+        "高华科技",
+        "超捷股份",
+        "航天电器",
+        "国机精工",
+        "通宇通讯",
+        "顶固集创"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 32
+        },
+        {
+          "term": "technology",
+          "count": 15
+        },
+        {
+          "term": "main_business",
+          "count": 8
+        },
+        {
+          "term": "industry_role",
+          "count": 3
+        },
+        {
+          "term": "benefit_logic",
+          "count": 2
+        }
+      ],
+      "aliases": [
+        "蓝箭航天"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "商业航天__其他": {
+      "group_name": "商业航天",
+      "direction_name": "其他",
+      "stock_count": 5,
+      "stocks": [
+        "顺灏股份",
+        "华体科技",
+        "南钢股份",
+        "杭萧钢构",
+        "中衡设计"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 18
+        },
+        {
+          "term": "technology",
+          "count": 18
+        },
+        {
+          "term": "benefit_logic",
+          "count": 8
+        },
+        {
+          "term": "industry_role",
+          "count": 7
+        },
+        {
+          "term": "main_business",
+          "count": 6
+        }
+      ],
+      "aliases": [
+        "其他"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [
+        "股票",
+        "科技",
+        "重点",
+        "成为",
+        "智慧",
+        "核心",
+        "研发",
+        "从事",
+        "受益",
+        "逻辑",
+        "角色",
+        "企业",
+        "城市",
+        "信息",
+        "设计"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "太空算力__电力支持": {
+      "group_name": "太空算力",
+      "direction_name": "电力支持",
+      "stock_count": 2,
+      "stocks": [
+        "乾照光电",
+        "上海港湾"
+      ],
+      "fact_type_top": [
+        {
+          "term": "main_business",
+          "count": 2
+        },
+        {
+          "term": "industry_role",
+          "count": 1
+        },
+        {
+          "term": "product",
+          "count": 1
+        },
+        {
+          "term": "benefit_logic",
+          "count": 1
+        }
+      ],
+      "aliases": [
+        "电力支持"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "太空算力__产品运营": {
+      "group_name": "太空算力",
+      "direction_name": "产品运营",
+      "stock_count": 2,
+      "stocks": [
+        "顺灏股份",
+        "中科星图"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 23
+        },
+        {
+          "term": "technology",
+          "count": 21
+        },
+        {
+          "term": "main_business",
+          "count": 7
+        },
+        {
+          "term": "industry_role",
+          "count": 7
+        },
+        {
+          "term": "benefit_logic",
+          "count": 2
+        }
+      ],
+      "aliases": [
+        "产品运营"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "太空算力__计算芯片": {
+      "group_name": "太空算力",
+      "direction_name": "计算芯片",
+      "stock_count": 2,
+      "stocks": [
+        "四川金顶",
+        "普天科技"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 7
+        },
+        {
+          "term": "benefit_logic",
+          "count": 4
+        },
+        {
+          "term": "main_business",
+          "count": 3
+        },
+        {
+          "term": "technology",
+          "count": 3
+        },
+        {
+          "term": "industry_role",
+          "count": 2
+        }
+      ],
+      "aliases": [
+        "计算芯片"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "航天发射场__海南商业": {
+      "group_name": "航天发射场",
+      "direction_name": "海南商业",
+      "stock_count": 5,
+      "stocks": [
+        "航天动力",
+        "九丰能源",
+        "川仪股份",
+        "海南高速",
+        "中国建筑"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 23
+        },
+        {
+          "term": "main_business",
+          "count": 12
+        },
+        {
+          "term": "industry_role",
+          "count": 8
+        },
+        {
+          "term": "benefit_logic",
+          "count": 6
+        },
+        {
+          "term": "technology",
+          "count": 3
+        }
+      ],
+      "aliases": [
+        "海南商业"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [
+        "股票",
+        "核心",
+        "受益",
+        "逻辑",
+        "角色",
+        "核心产品与技术",
+        "受益逻辑与行业角色",
+        "主要",
+        "运营",
+        "市场",
+        "工业",
+        "企业",
+        "房地产",
+        "开发",
+        "房地产开发"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "航天发射场__文昌": {
+      "group_name": "航天发射场",
+      "direction_name": "文昌",
+      "stock_count": 4,
+      "stocks": [
+        "泰永长征",
+        "金隅集团",
+        "科顺股份",
+        "ST太重"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 13
+        },
+        {
+          "term": "technology",
+          "count": 6
+        },
+        {
+          "term": "main_business",
+          "count": 2
+        },
+        {
+          "term": "industry_role",
+          "count": 2
+        },
+        {
+          "term": "benefit_logic",
+          "count": 1
+        }
+      ],
+      "aliases": [
+        "文昌"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "航天发射场__酒泉": {
+      "group_name": "航天发射场",
+      "direction_name": "酒泉",
+      "stock_count": 6,
+      "stocks": [
+        "利亚德",
+        "麒麟信安",
+        "森源电气",
+        "福达合金",
+        "远东股份",
+        "佳电股份"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 50
+        },
+        {
+          "term": "technology",
+          "count": 25
+        },
+        {
+          "term": "main_business",
+          "count": 19
+        },
+        {
+          "term": "benefit_logic",
+          "count": 13
+        },
+        {
+          "term": "industry_role",
+          "count": 12
+        }
+      ],
+      "aliases": [
+        "酒泉"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [
+        "股票",
+        "核心",
+        "主要",
+        "受益",
+        "逻辑",
+        "角色",
+        "核心产品与技术",
+        "受益逻辑与行业角色",
+        "企业",
+        "包括",
+        "智能",
+        "研发",
+        "成功",
+        "自主",
+        "股份"
+      ],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "航天发射场__太原": {
+      "group_name": "航天发射场",
+      "direction_name": "太原",
+      "stock_count": 3,
+      "stocks": [
+        "邵阳液压",
+        "起帆电缆",
+        "大元泵业"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 17
+        },
+        {
+          "term": "main_business",
+          "count": 4
+        },
+        {
+          "term": "industry_role",
+          "count": 3
+        },
+        {
+          "term": "technology",
+          "count": 3
+        },
+        {
+          "term": "benefit_logic",
+          "count": 3
+        }
+      ],
+      "aliases": [
+        "太原"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "航天发射场__西昌": {
+      "group_name": "航天发射场",
+      "direction_name": "西昌",
+      "stock_count": 3,
+      "stocks": [
+        "法兰泰克",
+        "渝三峡A",
+        "邵阳液压"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 16
+        },
+        {
+          "term": "technology",
+          "count": 6
+        },
+        {
+          "term": "main_business",
+          "count": 4
+        },
+        {
+          "term": "industry_role",
+          "count": 3
+        },
+        {
+          "term": "benefit_logic",
+          "count": 1
+        }
+      ],
+      "aliases": [
+        "西昌"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    },
+    "航天发射场__东方航天港": {
+      "group_name": "航天发射场",
+      "direction_name": "东方航天港",
+      "stock_count": 1,
+      "stocks": [
+        "九丰能源"
+      ],
+      "fact_type_top": [
+        {
+          "term": "product",
+          "count": 4
+        },
+        {
+          "term": "main_business",
+          "count": 3
+        },
+        {
+          "term": "industry_role",
+          "count": 3
+        },
+        {
+          "term": "technology",
+          "count": 3
+        },
+        {
+          "term": "benefit_logic",
+          "count": 1
+        }
+      ],
+      "aliases": [
+        "东方航天港"
+      ],
+      "component_words": [],
+      "must_terms": [],
+      "strong_terms": [],
+      "should_terms": [],
+      "weak_terms": [],
+      "negative_terms": []
+    }
+  }
+}

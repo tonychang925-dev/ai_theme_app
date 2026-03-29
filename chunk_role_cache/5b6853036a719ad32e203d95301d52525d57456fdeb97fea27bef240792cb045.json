@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:47:11", "result": {"chunk_id": "e1f4f6897460", "decision": "drop", "confidence": 0.7, "knowledge_value": "low", "reason": "段落主要描述台积电厂务工程竞标、设备急单和产能预测等短期动态事件，缺乏可沉淀的稳定本体知识。", "knowledge_spans": [], "event_residue": "", "drop_target": "event"}}

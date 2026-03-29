@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭产销",
+      "evidence_span": "公司主营业务为煤炭产销"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤化工",
+      "evidence_span": "公司业务包括煤炭、煤化工、电力热力、建材等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电力热力",
+      "evidence_span": "公司业务包括煤炭、煤化工、电力热力、建材等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建材",
+      "evidence_span": "公司业务包括煤炭、煤化工、电力热力、建材等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "炼焦煤龙头企业",
+      "evidence_span": "山西焦煤炼焦煤龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "炼焦精煤",
+      "evidence_span": "煤炭业务以炼焦精煤主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "焦精煤",
+      "evidence_span": "焦精煤、肥精煤、瘦精煤、气精煤等炼焦精煤产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肥精煤",
+      "evidence_span": "焦精煤、肥精煤、瘦精煤、气精煤等炼焦精煤产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "瘦精煤",
+      "evidence_span": "焦精煤、肥精煤、瘦精煤、气精煤等炼焦精煤产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气精煤",
+      "evidence_span": "焦精煤、肥精煤、瘦精煤、气精煤等炼焦精煤产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "焦炭",
+      "evidence_span": "煤化工业务以焦炭、煤焦油、煤气产销为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤焦油",
+      "evidence_span": "煤化工业务以焦炭、煤焦油、煤气产销为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤气",
+      "evidence_span": "煤化工业务以焦炭、煤焦油、煤气产销为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洗精煤",
+      "evidence_span": "洗精煤销量占据半壁江山"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力",
+      "evidence_span": "电力装机容量达447万千瓦"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热力",
+      "evidence_span": "电力热力业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "长协占比在80%以上",
+      "evidence_span": "公司长协占比在80%以上"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "长协兑现率在90%以上",
+      "evidence_span": "兑现率在90%以上"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国改受益股",
+      "evidence_span": "潜力巨大的国改受益股"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "山西国改核心受益标的",
+      "evidence_span": "山西国改核心受益标的"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "山西国改核心受益者",
+      "evidence_span": "山西国改核心受益者"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭产销",
+        "evidence_span": "公司主营业务为煤炭产销"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤化工",
+        "evidence_span": "公司业务包括煤炭、煤化工、电力热力、建材等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电力热力",
+        "evidence_span": "公司业务包括煤炭、煤化工、电力热力、建材等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "建材",
+        "evidence_span": "公司业务包括煤炭、煤化工、电力热力、建材等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "炼焦煤龙头企业",
+        "evidence_span": "山西焦煤炼焦煤龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "炼焦精煤",
+        "evidence_span": "煤炭业务以炼焦精煤主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "焦精煤",
+        "evidence_span": "焦精煤、肥精煤、瘦精煤、气精煤等炼焦精煤产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肥精煤",
+        "evidence_span": "焦精煤、肥精煤、瘦精煤、气精煤等炼焦精煤产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "瘦精煤",
+        "evidence_span": "焦精煤、肥精煤、瘦精煤、气精煤等炼焦精煤产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气精煤",
+        "evidence_span": "焦精煤、肥精煤、瘦精煤、气精煤等炼焦精煤产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "焦炭",
+        "evidence_span": "煤化工业务以焦炭、煤焦油、煤气产销为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤焦油",
+        "evidence_span": "煤化工业务以焦炭、煤焦油、煤气产销为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤气",
+        "evidence_span": "煤化工业务以焦炭、煤焦油、煤气产销为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洗精煤",
+        "evidence_span": "洗精煤销量占据半壁江山"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力",
+        "evidence_span": "电力装机容量达447万千瓦"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热力",
+        "evidence_span": "电力热力业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "长协占比在80%以上",
+        "evidence_span": "公司长协占比在80%以上"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "长协兑现率在90%以上",
+        "evidence_span": "兑现率在90%以上"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国改受益股",
+        "evidence_span": "潜力巨大的国改受益股"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "山西国改核心受益标的",
+        "evidence_span": "山西国改核心受益标的"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "山西国改核心受益者",
+        "evidence_span": "山西国改核心受益者"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:03:46"
+}

@@ -1,0 +1,274 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车发动机零部件",
+      "evidence_span": "主营发动机零部件的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "军品",
+      "evidence_span": "公司以“追求完美、创造卓越、成就最佳”为理念，实行汽车发动机零部件与军品及民用航空零部件并驾齐驱的业务发展战略"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "民用航空零部件",
+      "evidence_span": "公司以“追求完美、创造卓越、成就最佳”为理念，实行汽车发动机零部件与军品及民用航空零部件并驾齐驱的业务发展战略"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "发动机零部件专业供应商",
+      "evidence_span": "西菱动力发动机部件专业供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空零部件制造企业",
+      "evidence_span": "西菱动力布局航空零部件制造正当时"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "曲轴扭转减振器",
+      "evidence_span": "公司汽车发动机零部件产品主要包括曲轴扭转减振器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连杆总成",
+      "evidence_span": "公司汽车发动机零部件产品主要包括...连杆总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "凸轮轴总成",
+      "evidence_span": "公司汽车发动机零部件产品主要包括...凸轮轴总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡轮增压器",
+      "evidence_span": "公司汽车发动机零部件产品主要包括...涡壳及涡轮增压器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高温合金铸造",
+      "evidence_span": "高温合金生产线采用快速主动充型工艺"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空结构件",
+      "evidence_span": "加工产品类别包括航空结构件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钣金件",
+      "evidence_span": "加工产品类别包括...钣金件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "系统件",
+      "evidence_span": "加工产品类别包括...系统件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轴类件",
+      "evidence_span": "加工产品类别包括...大中小型轴类件等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密铸造",
+      "evidence_span": "公司具有精密铸造、锻造、热处理等特种工艺及加工一体化优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密锻造",
+      "evidence_span": "公司具有精密铸造、锻造、热处理等特种工艺及加工一体化优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "热处理",
+      "evidence_span": "公司具有精密铸造、锻造、热处理等特种工艺及加工一体化优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "快速主动充型工艺",
+      "evidence_span": "高温合金生产线采用快速主动充型工艺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽丰田",
+      "evidence_span": "公司与广汽丰田、一汽丰田、理想汽车、吉利汽车、奇瑞汽车、比亚迪、通用、三菱汽车、通用五菱、长城汽车、康明斯、一汽轿车、江淮、北汽福田、马来西亚宝腾、韩国斗山、舍弗勒等大量知名汽车（或柴油机）建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽丰田",
+      "evidence_span": "公司与广汽丰田、一汽丰田、理想汽车、吉利汽车、奇瑞汽车、比亚迪、通用、三菱汽车、通用五菱、长城汽车、康明斯、一汽轿车、江淮、北汽福田、马来西亚宝腾、韩国斗山、舍弗勒等大量知名汽车（或柴油机）建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "理想汽车",
+      "evidence_span": "公司与广汽丰田、一汽丰田、理想汽车、吉利汽车、奇瑞汽车、比亚迪、通用、三菱汽车、通用五菱、长城汽车、康明斯、一汽轿车、江淮、北汽福田、马来西亚宝腾、韩国斗山、舍弗勒等大量知名汽车（或柴油机）建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利汽车",
+      "evidence_span": "公司与广汽丰田、一汽丰田、理想汽车、吉利汽车、奇瑞汽车、比亚迪、通用、三菱汽车、通用五菱、长城汽车、康明斯、一汽轿车、江淮、北汽福田、马来西亚宝腾、韩国斗山、舍弗勒等大量知名汽车（或柴油机）建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司与广汽丰田、一汽丰田、理想汽车、吉利汽车、奇瑞汽车、比亚迪、通用、三菱汽车、通用五菱、长城汽车、康明斯、一汽轿车、江淮、北汽福田、马来西亚宝腾、韩国斗山、舍弗勒等大量知名汽车（或柴油机）建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城汽车",
+      "evidence_span": "公司与广汽丰田、一汽丰田、理想汽车、吉利汽车、奇瑞汽车、比亚迪、通用、三菱汽车、通用五菱、长城汽车、康明斯、一汽轿车、江淮、北汽福田、马来西亚宝腾、韩国斗山、舍弗勒等大量知名汽车（或柴油机）建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "成飞集团",
+      "evidence_span": "航空零部件市场客户较为集中，收入较为依赖成飞集团及其下属公司业务板块"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "充分受益混动车趋势，涡轮增压器产品实现进口替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "航空装备高景气",
+      "evidence_span": "西菱动力布局航空零部件制造正当时，受益航空装备的高景气"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车发动机零部件",
+        "evidence_span": "主营发动机零部件的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "军品及民用航空零部件",
+        "evidence_span": "公司以“追求完美、创造卓越、成就最佳”为理念，实行汽车发动机零部件与军品及民用航空零部件并驾齐驱的业务发展战略"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "发动机零部件专业供应商",
+        "evidence_span": "西菱动力发动机部件专业供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空零部件制造企业",
+        "evidence_span": "西菱动力布局航空零部件制造正当时"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "曲轴扭转减振器",
+        "evidence_span": "公司汽车发动机零部件产品主要包括曲轴扭转减振器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连杆总成",
+        "evidence_span": "公司汽车发动机零部件产品主要包括...连杆总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "凸轮轴总成",
+        "evidence_span": "公司汽车发动机零部件产品主要包括...凸轮轴总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡轮增压器",
+        "evidence_span": "公司汽车发动机零部件产品主要包括...涡壳及涡轮增压器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高温合金铸造",
+        "evidence_span": "高温合金生产线采用快速主动充型工艺"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空结构件",
+        "evidence_span": "加工产品类别包括航空结构件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钣金件",
+        "evidence_span": "加工产品类别包括...钣金件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "系统件",
+        "evidence_span": "加工产品类别包括...系统件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轴类件",
+        "evidence_span": "加工产品类别包括...大中小型轴类件等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密铸造",
+        "evidence_span": "公司具有精密铸造、锻造、热处理等特种工艺及加工一体化优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密锻造",
+        "evidence_span": "公司具有精密铸造、锻造、热处理等特种工艺及加工一体化优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "热处理",
+        "evidence_span": "公司具有精密铸造、锻造、热处理等特种工艺及加工一体化优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "快速主动充型工艺",
+        "evidence_span": "高温合金生产线采用快速主动充型工艺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽丰田",
+        "evidence_span": "公司与广汽丰田、一汽丰田、理想汽车、吉利汽车、奇瑞汽车、比亚迪、通用、三菱汽车、通用五菱、长城汽车、康明斯、一汽轿车、江淮、北汽福田、马来西亚宝腾、韩国斗山、舍弗勒等大量知名汽车（或柴油机）建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽丰田",
+        "evidence_span": "公司与广汽丰田、一汽丰田、理想汽车、吉利汽车、奇瑞汽车、比亚迪、通用、三菱汽车、通用五菱、长城汽车、康明斯、一汽轿车、江淮、北汽福田、马来西亚宝腾、韩国斗山、舍弗勒等大量知名汽车（或柴油机）建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "理想汽车",
+        "evidence_span": "公司与广汽丰田、一汽丰田、理想汽车、吉利汽车、奇瑞汽车、比亚迪、通用、三菱汽车、通用五菱、长城汽车、康明斯、一汽轿车、江淮、北汽福田、马来西亚宝腾、韩国斗山、舍弗勒等大量知名汽车（或柴油机）建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利汽车",
+        "evidence_span": "公司与广汽丰田、一汽丰田、理想汽车、吉利汽车、奇瑞汽车、比亚迪、通用、三菱汽车、通用五菱、长城汽车、康明斯、一汽轿车、江淮、北汽福田、马来西亚宝腾、韩国斗山、舍弗勒等大量知名汽车（或柴油机）建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司与广汽丰田、一汽丰田、理想汽车、吉利汽车、奇瑞汽车、比亚迪、通用、三菱汽车、通用五菱、长城汽车、康明斯、一汽轿车、江淮、北汽福田、马来西亚宝腾、韩国斗山、舍弗勒等大量知名汽车（或柴油机）建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城汽车",
+        "evidence_span": "公司与广汽丰田、一汽丰田、理想汽车、吉利汽车、奇瑞汽车、比亚迪、通用、三菱汽车、通用五菱、长城汽车、康明斯、一汽轿车、江淮、北汽福田、马来西亚宝腾、韩国斗山、舍弗勒等大量知名汽车（或柴油机）建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "成飞集团",
+        "evidence_span": "航空零部件市场客户较为集中，收入较为依赖成飞集团及其下属公司业务板块"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "充分受益混动车趋势，涡轮增压器产品实现进口替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "航空装备高景气",
+        "evidence_span": "西菱动力布局航空零部件制造正当时，受益航空装备的高景气"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:05:14"
+}

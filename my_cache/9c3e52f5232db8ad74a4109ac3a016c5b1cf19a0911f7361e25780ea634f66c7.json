@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:55:16", "result": {"chunk_id": "2862180a94b2", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含政策发布（事件）和具身智能机器人定义、应用场景（知识），以及华为子公司变更（事件），混合性强。"}}

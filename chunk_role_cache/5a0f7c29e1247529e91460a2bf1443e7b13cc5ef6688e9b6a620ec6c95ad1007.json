@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:44", "result": {"chunk_id": "96b8861b6941", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含EUV光刻机研发、商业公司主导、体制转变等可能的知识点，但混有具体事件如2025年试生产，需要进一步裁决以提取稳定知识。"}}

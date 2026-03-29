@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:43:21", "result": {"chunk_id": "d7294415a1c1", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段包含静态知识（公司成立时间、总部、主营业务），但也明确涉及事件（上市申请受理日期、募资计划）和动态数据（财务表现），混合了知识构建元素和时效性信息。"}}

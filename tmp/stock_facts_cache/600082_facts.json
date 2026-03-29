@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业园区运营",
+      "evidence_span": "主营业务涉及工业园区运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高新技术产业投资",
+      "evidence_span": "主营业务涉及高新技术产业投资"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "孵化服务",
+      "evidence_span": "主营业务涉及孵化服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "贸易",
+      "evidence_span": "主营业务涉及贸易"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工业园区类上市公司",
+      "evidence_span": "工业园区类上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "创业孵化服务",
+      "evidence_span": "以创业孵化服务为基础"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "孵化器及工业园区建设",
+      "evidence_span": "孵化器及工业园区建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "孵化器及工业园区运营",
+      "evidence_span": "孵化器及工业园区运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产业投资",
+      "evidence_span": "产业投资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品批发",
+      "evidence_span": "贸易业务主要为商品批发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "棉花贸易",
+      "evidence_span": "公司开展棉花贸易业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电解铜贸易",
+      "evidence_span": "公司开展电解铜贸易业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融资咨询",
+      "evidence_span": "提供融资咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专利服务",
+      "evidence_span": "提供专利服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "创业导师培训服务",
+      "evidence_span": "提供创业导师培训服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家级孵化器",
+      "evidence_span": "海泰孵化器2005年由国家科技部认定为国家级孵化器"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "创业孵化带动工业地产与产业投资",
+      "evidence_span": "以创业孵化带动工业地产与产业投资"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业园区运营",
+        "evidence_span": "主营业务涉及工业园区运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高新技术产业投资",
+        "evidence_span": "主营业务涉及高新技术产业投资"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "孵化服务",
+        "evidence_span": "主营业务涉及孵化服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "贸易",
+        "evidence_span": "主营业务涉及贸易"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工业园区类上市公司",
+        "evidence_span": "工业园区类上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "创业孵化服务",
+        "evidence_span": "以创业孵化服务为基础"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "孵化器及工业园区建设",
+        "evidence_span": "孵化器及工业园区建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "孵化器及工业园区运营",
+        "evidence_span": "孵化器及工业园区运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产业投资",
+        "evidence_span": "产业投资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品批发",
+        "evidence_span": "贸易业务主要为商品批发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "棉花贸易",
+        "evidence_span": "公司开展棉花贸易业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电解铜贸易",
+        "evidence_span": "公司开展电解铜贸易业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融资咨询",
+        "evidence_span": "提供融资咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专利服务",
+        "evidence_span": "提供专利服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "创业导师培训服务",
+        "evidence_span": "提供创业导师培训服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家级孵化器",
+        "evidence_span": "海泰孵化器2005年由国家科技部认定为国家级孵化器"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "创业孵化带动工业地产与产业投资",
+        "evidence_span": "以创业孵化带动工业地产与产业投资"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:14:25"
+}

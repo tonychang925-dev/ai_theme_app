@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "a0d879e91082", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述了华为测试智能手机低轨卫星互联网连接、预计公测时间的具体事件，属于技术测试类事件，无静态知识内容。"}}

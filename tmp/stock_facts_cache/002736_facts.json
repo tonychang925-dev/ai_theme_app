@@ -1,0 +1,499 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "财富管理",
+      "evidence_span": "财富管理与机构业务，为个人和机构客户提供全价值链财富管理服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "机构业务",
+      "evidence_span": "财富管理与机构业务，为个人和机构客户提供全价值链财富管理服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资银行业务",
+      "evidence_span": "投资银行业务，为机构客户提供包括股票承销保荐、债券承销、并购重组财务顾问、新三板挂牌推荐等金融服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资",
+      "evidence_span": "投资与交易业务，从事权益类、固定收益类、衍生类产品、其他金融产品的交易和做市业务、私募股权及另类投资业务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "交易业务",
+      "evidence_span": "投资与交易业务，从事权益类、固定收益类、衍生类产品、其他金融产品的交易和做市业务、私募股权及另类投资业务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产管理业务",
+      "evidence_span": "资产管理业务，根据客户需求开发资产管理产品并提供相关服务，集合、单一、专项资产管理业务及私募股权基金管理业务等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国性大型综合类证券公司",
+      "evidence_span": "发展壮大成为拥有内地及香港市场证券业务全牌照的全国性大型综合类证券公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "粤港澳大湾区唯一一家本地国资控股的头部券商",
+      "evidence_span": "作为粤港澳大湾区唯一一家本地国资控股的头部券商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券、期货、期权经纪服务",
+      "evidence_span": "包括证券、期货、期权经纪服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融资融券、股票质押式回购、约定购回、行权融资等资本中介服务",
+      "evidence_span": "提供融资融券、股票质押式回购、约定购回、行权融资等资本中介服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "股票承销保荐",
+      "evidence_span": "包括股票承销保荐"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "债券承销",
+      "evidence_span": "债券承销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "并购重组财务顾问",
+      "evidence_span": "并购重组财务顾问"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新三板挂牌推荐",
+      "evidence_span": "新三板挂牌推荐等金融服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "权益类、固定收益类、衍生类产品、其他金融产品的交易和做市业务",
+      "evidence_span": "从事权益类、固定收益类、衍生类产品、其他金融产品的交易和做市业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "私募股权及另类投资业务",
+      "evidence_span": "私募股权及另类投资业务等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集合、单一、专项资产管理业务",
+      "evidence_span": "集合、单一、专项资产管理业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "私募股权基金管理业务",
+      "evidence_span": "私募股权基金管理业务等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公募基金投顾服务",
+      "evidence_span": "公募基金投顾服务品牌“国信鑫智投”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "私人财富服务",
+      "evidence_span": "创新打造私人财富服务品牌“国信鑫私享”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "券结模式港股通ETF",
+      "evidence_span": "上线全市场首只券结模式港股通ETF"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "挂钩黄金远期的收益凭证",
+      "evidence_span": "落地首单挂钩黄金远期的收益凭证"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "行权融资交易",
+      "evidence_span": "完成首笔行权融资（含税）交易等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "金太阳APP6.0",
+      "evidence_span": "发布了金太阳APP6.0"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "极速交易科技平台",
+      "evidence_span": "公司打造了行业领先的极速交易科技平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "算法交易中心",
+      "evidence_span": "建设了算法交易中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全品种量化交易平台",
+      "evidence_span": "建成全品种量化交易平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "上市公司综合服务平台",
+      "evidence_span": "上线了上市公司综合服务平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "衍生品一体化交易平台",
+      "evidence_span": "搭建了衍生品一体化交易平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "企业级投研中台",
+      "evidence_span": "建设企业级投研中台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "研究所智慧研究平台",
+      "evidence_span": "研究所智慧研究平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "综合投资交易平台",
+      "evidence_span": "打造“综合投资交易平台”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能做市交易平台",
+      "evidence_span": "“智能做市交易平台”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一体化场外衍生品平台",
+      "evidence_span": "“一体化场外衍生品平台”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "投行电子底稿",
+      "evidence_span": "推进投行电子底稿"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能文档审核",
+      "evidence_span": "智能文档审核"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "银行流水分析",
+      "evidence_span": "银行流水分析"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字风控新基建",
+      "evidence_span": "构建了数字风控新基建"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云计算大后台",
+      "evidence_span": "以“云计算大后台”建设基础信息基座"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能平台",
+      "evidence_span": "以“人工智能平台”实现智慧大脑全面升级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧数据中台",
+      "evidence_span": "以“智慧数据中台”推动公司数据共享互联"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "风险管理中台",
+      "evidence_span": "以“风险管理中台”输出可信稳定风险API服务体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字员工管理中心",
+      "evidence_span": "以“数字员工管理中心”推进运营管理智慧升级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云原生智能研运一体化平台",
+      "evidence_span": "自主建成数字化技术平台、云原生智能研运一体化平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深圳市、区国企",
+      "evidence_span": "公司累计为深圳市、区国企发行各类债券"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深圳企业特别是科技创新型企业",
+      "evidence_span": "为深圳企业特别是科技创新型企业提供包括股权融资、债权融资、企业上市、并购重组、场外市场等专业服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大湾区企业",
+      "evidence_span": "公司为大湾区企业发行各类债券"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "战略性新兴产业和未来产业企业",
+      "evidence_span": "累计投资13家深圳战略性新兴产业和未来产业企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "粤港澳大湾区",
+      "evidence_span": "作为粤港澳大湾区唯一一家本地国资控股的头部券商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "金融科技",
+      "evidence_span": "领先的金融科技水平"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "财富管理与机构业务",
+        "evidence_span": "财富管理与机构业务，为个人和机构客户提供全价值链财富管理服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资银行业务",
+        "evidence_span": "投资银行业务，为机构客户提供包括股票承销保荐、债券承销、并购重组财务顾问、新三板挂牌推荐等金融服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资与交易业务",
+        "evidence_span": "投资与交易业务，从事权益类、固定收益类、衍生类产品、其他金融产品的交易和做市业务、私募股权及另类投资业务等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产管理业务",
+        "evidence_span": "资产管理业务，根据客户需求开发资产管理产品并提供相关服务，集合、单一、专项资产管理业务及私募股权基金管理业务等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国性大型综合类证券公司",
+        "evidence_span": "发展壮大成为拥有内地及香港市场证券业务全牌照的全国性大型综合类证券公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "粤港澳大湾区唯一一家本地国资控股的头部券商",
+        "evidence_span": "作为粤港澳大湾区唯一一家本地国资控股的头部券商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券、期货、期权经纪服务",
+        "evidence_span": "包括证券、期货、期权经纪服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融资融券、股票质押式回购、约定购回、行权融资等资本中介服务",
+        "evidence_span": "提供融资融券、股票质押式回购、约定购回、行权融资等资本中介服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "股票承销保荐",
+        "evidence_span": "包括股票承销保荐"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "债券承销",
+        "evidence_span": "债券承销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "并购重组财务顾问",
+        "evidence_span": "并购重组财务顾问"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新三板挂牌推荐",
+        "evidence_span": "新三板挂牌推荐等金融服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "权益类、固定收益类、衍生类产品、其他金融产品的交易和做市业务",
+        "evidence_span": "从事权益类、固定收益类、衍生类产品、其他金融产品的交易和做市业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "私募股权及另类投资业务",
+        "evidence_span": "私募股权及另类投资业务等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集合、单一、专项资产管理业务",
+        "evidence_span": "集合、单一、专项资产管理业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "私募股权基金管理业务",
+        "evidence_span": "私募股权基金管理业务等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公募基金投顾服务",
+        "evidence_span": "公募基金投顾服务品牌“国信鑫智投”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "私人财富服务",
+        "evidence_span": "创新打造私人财富服务品牌“国信鑫私享”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "券结模式港股通ETF",
+        "evidence_span": "上线全市场首只券结模式港股通ETF"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "挂钩黄金远期的收益凭证",
+        "evidence_span": "落地首单挂钩黄金远期的收益凭证"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "行权融资交易",
+        "evidence_span": "完成首笔行权融资（含税）交易等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "金太阳APP6.0",
+        "evidence_span": "发布了金太阳APP6.0"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "极速交易科技平台",
+        "evidence_span": "公司打造了行业领先的极速交易科技平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "算法交易中心",
+        "evidence_span": "建设了算法交易中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全品种量化交易平台",
+        "evidence_span": "建成全品种量化交易平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "上市公司综合服务平台",
+        "evidence_span": "上线了上市公司综合服务平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "衍生品一体化交易平台",
+        "evidence_span": "搭建了衍生品一体化交易平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "企业级投研中台",
+        "evidence_span": "建设企业级投研中台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "研究所智慧研究平台",
+        "evidence_span": "研究所智慧研究平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "综合投资交易平台",
+        "evidence_span": "打造“综合投资交易平台”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能做市交易平台",
+        "evidence_span": "“智能做市交易平台”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一体化场外衍生品平台",
+        "evidence_span": "“一体化场外衍生品平台”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "投行电子底稿",
+        "evidence_span": "推进投行电子底稿"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能文档审核",
+        "evidence_span": "智能文档审核"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "银行流水分析",
+        "evidence_span": "银行流水分析"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字风控新基建",
+        "evidence_span": "构建了数字风控新基建"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云计算大后台",
+        "evidence_span": "以“云计算大后台”建设基础信息基座"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能平台",
+        "evidence_span": "以“人工智能平台”实现智慧大脑全面升级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧数据中台",
+        "evidence_span": "以“智慧数据中台”推动公司数据共享互联"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "风险管理中台",
+        "evidence_span": "以“风险管理中台”输出可信稳定风险API服务体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字员工管理中心",
+        "evidence_span": "以“数字员工管理中心”推进运营管理智慧升级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云原生智能研运一体化平台",
+        "evidence_span": "自主建成数字化技术平台、云原生智能研运一体化平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深圳市、区国企",
+        "evidence_span": "公司累计为深圳市、区国企发行各类债券"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深圳企业特别是科技创新型企业",
+        "evidence_span": "为深圳企业特别是科技创新型企业提供包括股权融资、债权融资、企业上市、并购重组、场外市场等专业服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大湾区企业",
+        "evidence_span": "公司为大湾区企业发行各类债券"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "战略性新兴产业和未来产业企业",
+        "evidence_span": "累计投资13家深圳战略性新兴产业和未来产业企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "粤港澳大湾区",
+        "evidence_span": "作为粤港澳大湾区唯一一家本地国资控股的头部券商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "金融科技",
+        "evidence_span": "领先的金融科技水平"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:26:57"
+}

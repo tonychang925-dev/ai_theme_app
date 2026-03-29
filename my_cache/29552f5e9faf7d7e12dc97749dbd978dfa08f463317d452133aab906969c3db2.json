@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "8e487d427fd3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：国产真人恋爱影视游戏《完蛋！我被美女包围了》在2023年10月登顶Steam国区畅销榜首，属于市场表现和动态新闻，没有提供关于影视题材本身的静态知识。"}}

@@ -1,0 +1,194 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "墙布的研发",
+      "evidence_span": "主要从事墙布的研发、设计、生产与销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设计",
+      "evidence_span": "主要从事墙布的研发、设计、生产与销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "主要从事墙布的研发、设计、生产与销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主要从事墙布的研发、设计、生产与销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "窗帘等室内家居装饰用品的研发",
+      "evidence_span": "从事少量窗帘等室内家居装饰用品的研发、生产、销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "室内整体家装工程业务",
+      "evidence_span": "室内整体家装工程业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "墙布行业领导企业",
+      "evidence_span": "国内墙布行业的领导企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "首批从事刺绣工艺墙布研发和生产的企业",
+      "evidence_span": "首批从事刺绣工艺墙布研发和生产的企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专精特新“小巨人”企业",
+      "evidence_span": "入选工信部第二批专精特新“小巨人”企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家知识产权优势企业",
+      "evidence_span": "国家知识产权优势企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "刺绣墙布",
+      "evidence_span": "墙布产品主要包括刺绣墙布和非刺绣墙布两大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非刺绣墙布",
+      "evidence_span": "墙布产品主要包括刺绣墙布和非刺绣墙布两大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "提花墙布",
+      "evidence_span": "非刺绣墙布主要为提花墙布"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印花墙布",
+      "evidence_span": "少量的印花墙布"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精压墙布",
+      "evidence_span": "精压墙布"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水刺无纺墙布",
+      "evidence_span": "水刺无纺墙布"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "窗帘",
+      "evidence_span": "窗帘产品实现收入约 706 万元"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "刺绣工艺墙布研发",
+      "evidence_span": "首批从事刺绣工艺墙布研发和生产的企业之一"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "消费升级",
+      "evidence_span": "受益于消费升级及墙布应用渗透"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "墙布应用渗透",
+      "evidence_span": "受益于消费升级及墙布应用渗透"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "墙布的研发、设计、生产与销售",
+        "evidence_span": "主要从事墙布的研发、设计、生产与销售业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "窗帘等室内家居装饰用品的研发、生产、销售",
+        "evidence_span": "从事少量窗帘等室内家居装饰用品的研发、生产、销售业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "室内整体家装工程业务",
+        "evidence_span": "室内整体家装工程业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "墙布行业领导企业",
+        "evidence_span": "国内墙布行业的领导企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "首批从事刺绣工艺墙布研发和生产的企业",
+        "evidence_span": "首批从事刺绣工艺墙布研发和生产的企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专精特新“小巨人”企业",
+        "evidence_span": "入选工信部第二批专精特新“小巨人”企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家知识产权优势企业",
+        "evidence_span": "国家知识产权优势企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "刺绣墙布",
+        "evidence_span": "墙布产品主要包括刺绣墙布和非刺绣墙布两大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非刺绣墙布",
+        "evidence_span": "墙布产品主要包括刺绣墙布和非刺绣墙布两大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "提花墙布",
+        "evidence_span": "非刺绣墙布主要为提花墙布"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印花墙布",
+        "evidence_span": "少量的印花墙布"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精压墙布",
+        "evidence_span": "精压墙布"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水刺无纺墙布",
+        "evidence_span": "水刺无纺墙布"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "窗帘",
+        "evidence_span": "窗帘产品实现收入约 706 万元"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "刺绣工艺墙布研发",
+        "evidence_span": "首批从事刺绣工艺墙布研发和生产的企业之一"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "消费升级",
+        "evidence_span": "受益于消费升级及墙布应用渗透"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "墙布应用渗透",
+        "evidence_span": "受益于消费升级及墙布应用渗透"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:49:23"
+}

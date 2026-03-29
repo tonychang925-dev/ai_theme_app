@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final", "model": "deepseek-chat", "timestamp": "2026-03-08T11:07:55", "result": {"chunk_id": "33b52e03ac96", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件性内容（如基金项目爆料、光刻机交付预测），但也提到了光刻机研发的具体技术细节（28纳米浸没式光刻机），这些可能对半导体设备知识构建有用，因此混合了事件和知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "80d660d38057", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落主要报道美国商会邮件内容，描述即将出台的出口限制规定（如列入芯片公司、禁止发货、高带宽存储芯片限制），属于具体事件和公告动态。"}}

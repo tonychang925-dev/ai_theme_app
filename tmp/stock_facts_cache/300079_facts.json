@@ -1,0 +1,564 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "传媒科技行业",
+      "evidence_span": "传媒科技行业相关业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息服务行业",
+      "evidence_span": "信息服务行业相关业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "公共安全行业",
+      "evidence_span": "公共安全行业相关业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融科技行业",
+      "evidence_span": "金融科技行业相关业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种需求定制",
+      "evidence_span": "特种需求及其他业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其他行业",
+      "evidence_span": "特种需求及其他业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "视频安全技术及方案最为全面的公司",
+      "evidence_span": "视频安全技术及方案最为全面的公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字电视设备商",
+      "evidence_span": "国内领先的数字电视设备商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "广电融合应用平台商",
+      "evidence_span": "被低估的广电融合应用平台商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "融合网络、融合业务整体解决方案提供商",
+      "evidence_span": "融合网络、融合业务整体解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "广电行业核心技术供应商",
+      "evidence_span": "数码视讯广电行业核心技术供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧广电领导者",
+      "evidence_span": "智慧广电领导者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软件技术服务",
+      "evidence_span": "软件技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "应急广播端到端解决方案",
+      "evidence_span": "应急广播端到端解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "8K/4K超高清视频处理技术",
+      "evidence_span": "8K/4K超高清视频处理技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全媒体平台解决方案",
+      "evidence_span": "全媒体平台解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电视台超高清解决方案",
+      "evidence_span": "电视台超高清解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传统DVB前端平台解决方案",
+      "evidence_span": "传统DVB前端平台解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "千兆入户整体解决方案",
+      "evidence_span": "千兆入户整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能收视终端操作系统解决方案",
+      "evidence_span": "智能收视终端操作系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频编解码",
+      "evidence_span": "视频编解码"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "转码系统",
+      "evidence_span": "转码系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频加密终端",
+      "evidence_span": "视频加密终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4K智能终端产品",
+      "evidence_span": "4K智能终端产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "用户管理、广告、终端认证管理等软件系统",
+      "evidence_span": "用户管理、广告、终端认证管理等软件系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频内容版权保护DRM",
+      "evidence_span": "视频内容版权保护DRM"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传输链路数据保护",
+      "evidence_span": "传输链路数据保护"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "终端安全保护",
+      "evidence_span": "终端安全保护"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字水印追踪",
+      "evidence_span": "数字水印追踪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "应急广播安全保护",
+      "evidence_span": "应急广播安全保护"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G公网传输安全服务",
+      "evidence_span": "5G公网传输安全服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "终端安全架构设计及服务",
+      "evidence_span": "终端安全架构设计及服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三方支付业务",
+      "evidence_span": "第三方支付业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机顶盒",
+      "evidence_span": "终端类产品包含机顶盒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网关",
+      "evidence_span": "网关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "路由器",
+      "evidence_span": "路由器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IPC",
+      "evidence_span": "IPC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CPE",
+      "evidence_span": "CPE"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "8K AVS3编码技术",
+      "evidence_span": "8K AVS3编码技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "8K/4K+5G移动场景采编回传解决方案",
+      "evidence_span": "8K/4K+5G移动场景采编回传解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "8K/4K超高清帧同步解决方案",
+      "evidence_span": "8K/4K超高清帧同步解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超高清编码",
+      "evidence_span": "超高清编码"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基带IP化传输",
+      "evidence_span": "基带IP化传输"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "4K/8K远程制作",
+      "evidence_span": "4K/8K远程制作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云上导播",
+      "evidence_span": "云上导播"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "转码",
+      "evidence_span": "转码"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "公网可信接收调度",
+      "evidence_span": "公网可信接收调度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云直播",
+      "evidence_span": "云直播"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "FTTH与C-DOCSIS技术的统一融合",
+      "evidence_span": "FTTH与C-DOCSIS技术的统一融合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统底层安全架构方案",
+      "evidence_span": "系统底层安全架构方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SRT视频传输协议",
+      "evidence_span": "SRT视频传输协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "中国移动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国联通",
+      "evidence_span": "中国联通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电信",
+      "evidence_span": "中国电信"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "超高清视频落地",
+      "evidence_span": "受益于超高清视频落地"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化替代",
+      "evidence_span": "国产化替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "传媒科技行业",
+        "evidence_span": "传媒科技行业相关业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息服务行业",
+        "evidence_span": "信息服务行业相关业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "公共安全行业",
+        "evidence_span": "公共安全行业相关业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融科技行业",
+        "evidence_span": "金融科技行业相关业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种需求定制及其他行业",
+        "evidence_span": "特种需求及其他业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "视频安全技术及方案最为全面的公司",
+        "evidence_span": "视频安全技术及方案最为全面的公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字电视设备商",
+        "evidence_span": "国内领先的数字电视设备商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "广电融合应用平台商",
+        "evidence_span": "被低估的广电融合应用平台商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "融合网络、融合业务整体解决方案提供商",
+        "evidence_span": "融合网络、融合业务整体解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "广电行业核心技术供应商",
+        "evidence_span": "数码视讯广电行业核心技术供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧广电领导者",
+        "evidence_span": "智慧广电领导者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软件技术服务",
+        "evidence_span": "软件技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "应急广播端到端解决方案",
+        "evidence_span": "应急广播端到端解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "8K/4K超高清视频处理技术",
+        "evidence_span": "8K/4K超高清视频处理技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全媒体平台解决方案",
+        "evidence_span": "全媒体平台解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电视台超高清解决方案",
+        "evidence_span": "电视台超高清解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传统DVB前端平台解决方案",
+        "evidence_span": "传统DVB前端平台解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "千兆入户整体解决方案",
+        "evidence_span": "千兆入户整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能收视终端操作系统解决方案",
+        "evidence_span": "智能收视终端操作系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频编解码",
+        "evidence_span": "视频编解码"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "转码系统",
+        "evidence_span": "转码系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频加密终端",
+        "evidence_span": "视频加密终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4K智能终端产品",
+        "evidence_span": "4K智能终端产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "用户管理、广告、终端认证管理等软件系统",
+        "evidence_span": "用户管理、广告、终端认证管理等软件系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频内容版权保护DRM",
+        "evidence_span": "视频内容版权保护DRM"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传输链路数据保护",
+        "evidence_span": "传输链路数据保护"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "终端安全保护",
+        "evidence_span": "终端安全保护"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字水印追踪",
+        "evidence_span": "数字水印追踪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "应急广播安全保护",
+        "evidence_span": "应急广播安全保护"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G公网传输安全服务",
+        "evidence_span": "5G公网传输安全服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "终端安全架构设计及服务",
+        "evidence_span": "终端安全架构设计及服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三方支付业务",
+        "evidence_span": "第三方支付业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机顶盒",
+        "evidence_span": "终端类产品包含机顶盒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网关",
+        "evidence_span": "网关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "路由器",
+        "evidence_span": "路由器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IPC",
+        "evidence_span": "IPC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CPE",
+        "evidence_span": "CPE"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "8K AVS3编码技术",
+        "evidence_span": "8K AVS3编码技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "8K/4K+5G移动场景采编回传解决方案",
+        "evidence_span": "8K/4K+5G移动场景采编回传解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "8K/4K超高清帧同步解决方案",
+        "evidence_span": "8K/4K超高清帧同步解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超高清编码",
+        "evidence_span": "超高清编码"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基带IP化传输",
+        "evidence_span": "基带IP化传输"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "4K/8K远程制作",
+        "evidence_span": "4K/8K远程制作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云上导播",
+        "evidence_span": "云上导播"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "转码",
+        "evidence_span": "转码"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "公网可信接收调度",
+        "evidence_span": "公网可信接收调度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云直播",
+        "evidence_span": "云直播"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "FTTH与C-DOCSIS技术的统一融合",
+        "evidence_span": "FTTH与C-DOCSIS技术的统一融合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统底层安全架构方案",
+        "evidence_span": "系统底层安全架构方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SRT视频传输协议",
+        "evidence_span": "SRT视频传输协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "中国移动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国联通",
+        "evidence_span": "中国联通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电信",
+        "evidence_span": "中国电信"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "超高清视频落地",
+        "evidence_span": "受益于超高清视频落地"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化替代",
+        "evidence_span": "国产化替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:13:17"
+}

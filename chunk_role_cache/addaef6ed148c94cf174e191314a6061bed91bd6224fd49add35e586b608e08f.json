@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "33b52e03ac96", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件性内容（大基金三期项目爆料、光刻机交付预计时间），但也提供了上海微电子研发28纳米浸没式光刻机的技术信息，这可能构成半导体设备领域的稳定知识，因此属于混合内容。"}}

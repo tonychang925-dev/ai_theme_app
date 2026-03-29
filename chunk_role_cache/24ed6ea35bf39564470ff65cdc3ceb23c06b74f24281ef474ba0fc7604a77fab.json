@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "16ccb8ac82e7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了联盟成立事件，但大量内容涉及联盟的目标、作用和意义（如促进多链融合、技术研究、标准制定），这些可能包含用于题材知识构建的稳定信息（如产业生态和发展方向），尽管以事件为背景。"}}

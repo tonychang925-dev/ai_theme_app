@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭采掘",
+      "evidence_span": "主营业务为煤炭采掘"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "洗选加工",
+      "evidence_span": "主营业务为煤炭采掘、洗选加工"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭销售",
+      "evidence_span": "主营业务为煤炭采掘、洗选加工、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "焦化产品生产",
+      "evidence_span": "主营业务为...焦化产品的生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "焦化产品销售",
+      "evidence_span": "主营业务为...焦化产品的生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商品贸易",
+      "evidence_span": "商品贸易营收达347.57亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "民爆业务",
+      "evidence_span": "民爆业务营收达9.36亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "砂石骨料",
+      "evidence_span": "公司2016年开始布局砂石骨料行业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "华东地区最大的焦煤企业",
+      "evidence_span": "是华东地区品种最齐全、规模最大的焦煤企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "安徽省龙头煤企",
+      "evidence_span": "安徽省龙头煤企"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "煤炭上市平台",
+      "evidence_span": "淮北矿业控股股份有限公司...是淮北矿业(集团)有限责任公司控股的煤炭上市平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "焦煤",
+      "evidence_span": "肥煤、焦煤和瘦煤等稀缺煤种占总储量的80%以上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肥煤",
+      "evidence_span": "肥煤、焦煤和瘦煤等稀缺煤种占总储量的80%以上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "瘦煤",
+      "evidence_span": "肥煤、焦煤和瘦煤等稀缺煤种占总储量的80%以上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑用石子",
+      "evidence_span": "主要生产建筑用石子、石粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石粉",
+      "evidence_span": "主要生产建筑用石子、石粉"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化采掘工作面",
+      "evidence_span": "全国已建成280余个智能化采掘工作面"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "煤焦化一体",
+      "evidence_span": "淮北矿业煤焦化一体已成型"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭采掘",
+        "evidence_span": "主营业务为煤炭采掘"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "洗选加工",
+        "evidence_span": "主营业务为煤炭采掘、洗选加工"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭销售",
+        "evidence_span": "主营业务为煤炭采掘、洗选加工、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "焦化产品生产",
+        "evidence_span": "主营业务为...焦化产品的生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "焦化产品销售",
+        "evidence_span": "主营业务为...焦化产品的生产、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商品贸易",
+        "evidence_span": "商品贸易营收达347.57亿元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "民爆业务",
+        "evidence_span": "民爆业务营收达9.36亿元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "砂石骨料",
+        "evidence_span": "公司2016年开始布局砂石骨料行业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "华东地区最大的焦煤企业",
+        "evidence_span": "是华东地区品种最齐全、规模最大的焦煤企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "安徽省龙头煤企",
+        "evidence_span": "安徽省龙头煤企"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "煤炭上市平台",
+        "evidence_span": "淮北矿业控股股份有限公司...是淮北矿业(集团)有限责任公司控股的煤炭上市平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "焦煤",
+        "evidence_span": "肥煤、焦煤和瘦煤等稀缺煤种占总储量的80%以上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肥煤",
+        "evidence_span": "肥煤、焦煤和瘦煤等稀缺煤种占总储量的80%以上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "瘦煤",
+        "evidence_span": "肥煤、焦煤和瘦煤等稀缺煤种占总储量的80%以上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑用石子",
+        "evidence_span": "主要生产建筑用石子、石粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石粉",
+        "evidence_span": "主要生产建筑用石子、石粉"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化采掘工作面",
+        "evidence_span": "全国已建成280余个智能化采掘工作面"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "煤焦化一体",
+        "evidence_span": "淮北矿业煤焦化一体已成型"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:02:30"
+}

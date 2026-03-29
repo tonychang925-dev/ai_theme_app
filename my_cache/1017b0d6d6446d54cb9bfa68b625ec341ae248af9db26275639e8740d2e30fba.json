@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:46:00", "result": {"chunk_id": "e1001c46db1e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段纯静态说明新凯来的定义、背景、使命和技术路径，包括公司性质、成立时间、控股方和核心技术，没有事件或动态内容，是题材本体的核心知识。"}}

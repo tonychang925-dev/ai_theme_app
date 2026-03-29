@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "bc7d9ca9a523", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述了拜登政府可能实施贸易限制的具体事件，虽然提到东京电子和阿斯麦的产品对芯片行业至关重要，但这主要是事件背景，整体以事件推进为主。"}}

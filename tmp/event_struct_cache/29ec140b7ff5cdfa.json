@@ -1,0 +1,55 @@
+{
+  "event_id": "evt_e25e7dcfb0b0",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "产品发布",
+  "entities": [
+    {
+      "name": "行者X-lens AR骑行镜",
+      "type": "产品",
+      "normalized": "行者X-lens AR骑行镜"
+    },
+    {
+      "name": "OLED微显示屏",
+      "type": "技术",
+      "normalized": "OLED微显示屏"
+    }
+  ],
+  "summary": "行者X-lens AR骑行镜开售，配备OLED微显示屏，支持触控交互，售价699元。",
+  "causal_claim": [
+    "AR眼镜发布",
+    "智能穿戴需求",
+    "AR技术应用"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "AR骑行镜",
+      "OLED微显示屏",
+      "触控交互"
+    ],
+    "normalized_terms": {
+      "行者X-lens AR骑行镜": "行者X-lens AR骑行镜",
+      "OLED微显示屏": "OLED微显示屏"
+    },
+    "evidence_spans": [
+      {
+        "text": "行者X-lens AR骑行镜开售",
+        "start": 15,
+        "end": 26
+      },
+      {
+        "text": "该款骑行镜配备OLED微显示屏，支持触控交互，售价699元。",
+        "start": 27,
+        "end": 58
+      }
+    ],
+    "core_concepts": [
+      "AR眼镜",
+      "产品发布"
+    ]
+  },
+  "severity_score": 0.4,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-09-03T00:00:00Z",
+  "raw_text": "2024年9月3日，近日，行者X-lens AR骑行镜开售，该款骑行镜配备OLED微显示屏，支持触控交互，售价699元。"
+}

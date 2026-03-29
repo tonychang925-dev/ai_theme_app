@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:34", "result": {"chunk_id": "274c3332061e", "decision": "ontology_useful", "confidence": 0.9, "reason": "该段详细列举了与半导体制造设备相关的实体和覆盖领域（如涂胶显影、刻蚀、薄膜沉积、清洗等），直接说明了半导体设备的关键机制和产业链环节，适合用于定义题材本体。"}}

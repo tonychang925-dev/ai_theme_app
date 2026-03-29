@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "71f35549b481", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含两部分：第一部分介绍工信部目录中光刻机的技术参数（如分辨率、套刻精度、支持工艺），这属于静态知识；第二部分描述苹果包下台积电产能的事件。由于混合了知识和事件，适合作为候选混合内容。"}}

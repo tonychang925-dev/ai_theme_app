@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "29727c7344a8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含四川关于预制菜许可范围的政策信息（事件），以及人民财评的泛泛评论，前者涉及预制菜监管知识，但信息较简略，混合了事件和知识。"}}

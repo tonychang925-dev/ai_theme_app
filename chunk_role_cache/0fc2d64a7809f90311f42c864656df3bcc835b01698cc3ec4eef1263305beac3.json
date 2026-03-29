@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "bedb97c622d8", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落列出多个即将举行的会议和活动时间表，纯属事件预告，无题材本体知识。"}}

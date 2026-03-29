@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车用制动盘",
+      "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车用制动毂",
+      "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车用轮毂",
+      "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车用制动钳",
+      "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车制动部件生产企业",
+      "evidence_span": "公司是一家专业从事汽车用制动盘、制动毂等制动部件产品研发、生产与销售的国家高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "OEM配套供应商",
+      "evidence_span": "公司还是国内外各大知名品牌汽车厂以及汽车制动器总成和车桥生产企业的OEM配套供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制动盘",
+      "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制动毂",
+      "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轮毂",
+      "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制动钳",
+      "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车制动盘",
+      "evidence_span": "早在2016年就开始有预见性地布局新能源汽车制动盘领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽车制动器件工程技术研究中心",
+      "evidence_span": "拥有省级“汽车制动器件工程技术研究中心”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CNAS认可的国家级检测中心",
+      "evidence_span": "通过CNAS认可的国家级检测中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽车轻量化底盘铸造车间技改项目",
+      "evidence_span": "汽车轻量化底盘铸造车间技改项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安",
+      "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽新能源",
+      "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽",
+      "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞",
+      "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金龙",
+      "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宇通",
+      "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏汽车",
+      "evidence_span": "为小鹏汽车实现批量供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "理想",
+      "evidence_span": "与理想、蔚来的合作也将有序展开"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "与理想、蔚来的合作也将有序展开"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特斯拉",
+      "evidence_span": "公司的制动盘产品质量完全符合特斯拉标准"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Brembo",
+      "evidence_span": "主要客户有Brembo、PE、GPC(NAPA)、Meritor、Advance、PHCVALEO、BPI、CENTRIC"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "GPC(NAPA)",
+      "evidence_span": "主要客户有Brembo、PE、GPC(NAPA)、Meritor、Advance、PHCVALEO、BPI、CENTRIC"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Meritor",
+      "evidence_span": "主要客户有Brembo、PE、GPC(NAPA)、Meritor、Advance、PHCVALEO、BPI、CENTRIC"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车",
+      "evidence_span": "国内新能源汽车的主要OEM配套供应商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车用制动盘",
+        "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车用制动毂",
+        "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车用轮毂",
+        "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车用制动钳",
+        "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车制动部件生产企业",
+        "evidence_span": "公司是一家专业从事汽车用制动盘、制动毂等制动部件产品研发、生产与销售的国家高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "OEM配套供应商",
+        "evidence_span": "公司还是国内外各大知名品牌汽车厂以及汽车制动器总成和车桥生产企业的OEM配套供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制动盘",
+        "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制动毂",
+        "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轮毂",
+        "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制动钳",
+        "evidence_span": "公司主要从事汽车用制动盘、制动毂、轮毂和制动钳等制动部件产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车制动盘",
+        "evidence_span": "早在2016年就开始有预见性地布局新能源汽车制动盘领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽车制动器件工程技术研究中心",
+        "evidence_span": "拥有省级“汽车制动器件工程技术研究中心”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CNAS认可的国家级检测中心",
+        "evidence_span": "通过CNAS认可的国家级检测中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽车轻量化底盘铸造车间技改项目",
+        "evidence_span": "汽车轻量化底盘铸造车间技改项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安",
+        "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽新能源",
+        "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽",
+        "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞",
+        "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金龙",
+        "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宇通",
+        "evidence_span": "公司与比亚迪、长城、长安、广汽新能源、北汽、吉利、奇瑞、金龙、宇通等整车厂经过多年合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏汽车",
+        "evidence_span": "为小鹏汽车实现批量供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "理想",
+        "evidence_span": "与理想、蔚来的合作也将有序展开"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "与理想、蔚来的合作也将有序展开"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特斯拉",
+        "evidence_span": "公司的制动盘产品质量完全符合特斯拉标准"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Brembo",
+        "evidence_span": "主要客户有Brembo、PE、GPC(NAPA)、Meritor、Advance、PHCVALEO、BPI、CENTRIC"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "GPC(NAPA)",
+        "evidence_span": "主要客户有Brembo、PE、GPC(NAPA)、Meritor、Advance、PHCVALEO、BPI、CENTRIC"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Meritor",
+        "evidence_span": "主要客户有Brembo、PE、GPC(NAPA)、Meritor、Advance、PHCVALEO、BPI、CENTRIC"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车",
+        "evidence_span": "国内新能源汽车的主要OEM配套供应商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:23:35"
+}

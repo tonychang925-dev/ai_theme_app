@@ -2725,6 +2725,7 @@ class RealIntegrationTester:
             if isinstance(data, dict):
                 # 如果是字典格式（包含元数据）
                 events = data.get('events', [])
+                events = self._sanitize_titles_for_realistic_simulation(events)
                 total_events = data.get('total_events', len(events))
                 
                 print(f"✅ 加载成功（字典格式）:")
@@ -2742,6 +2743,7 @@ class RealIntegrationTester:
             elif isinstance(data, list):
                 # 🔥 如果是列表格式（直接是事件列表）
                 events = data
+                events = self._sanitize_titles_for_realistic_simulation(events)
                 total_events = len(events)
                 
                 print(f"✅ 加载成功（列表格式）:")
@@ -2788,10 +2790,40 @@ class RealIntegrationTester:
             import traceback
             traceback.print_exc()
             return None
+
+    def _sanitize_titles_for_realistic_simulation(self, events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """
+        仅用于测试：将明显“题材提示词”标题替换为更真实新闻标题，避免title泄漏导致直接命中。
+        不修改原始数据文件，仅修改内存副本。
+        """
+        sanitized: List[Dict[str, Any]] = []
+        replaced = 0
+
+        for event in events:
+            if not isinstance(event, dict):
+                continue
+
+            item = dict(event)
+            title = str(item.get("title") or "").strip()
+            core = str((item.get("ai_analysis") or {}).get("core_concept") or "").strip()
+
+            if title == "SpaceX相关新闻":
+                item["original_title"] = title
+                item["title"] = "商业航天企业估值大幅上调并推进资本化计划"
+                replaced += 1
+            elif title.endswith("相关新闻") and core:
+                item["original_title"] = title
+                item["title"] = f"{core}进展引发市场关注"
+                replaced += 1
+
+            sanitized.append(item)
+
+        print(f"   🧪 标题去提示词处理完成: 替换 {replaced}/{len(sanitized)} 条")
+        return sanitized
     
     # 修正 test_new_architecture_with_dataset 方法中的事件发布逻辑
 
-    async def test_new_architecture_with_dataset(self, sample_size: int = 10):
+    async def test_new_architecture_with_dataset(self, sample_size: int = 10, return_details: bool = False):
         """使用测试数据集测试新架构 - 包含DecisionExecutor完整流程"""
         print("\n" + "="*80)
         print("🧪 新架构完整工作流测试（包含DecisionExecutor）")
@@ -2814,17 +2846,21 @@ class RealIntegrationTester:
             
             # 2. 筛选测试样本
             print("2. 选择测试样本...")
-            # 简化筛选逻辑，避免重复标题
-            seen_titles = set()
+            # 去重优先使用 event_id，避免同标题不同事件被错误折叠
+            seen_event_keys = set()
             unique_events = []
             
             for event in events:
-                title = event.get('title', '')
-                if title not in seen_titles:
-                    seen_titles.add(title)
+                event_key = (
+                    event.get('event_id')
+                    or event.get('id')
+                    or f"title::{event.get('title', '')}"
+                )
+                if event_key not in seen_event_keys:
+                    seen_event_keys.add(event_key)
                     unique_events.append(event)
             
-            # 按事件类型和AI分析质量筛选
+            # 按事件类型和AI分析质量筛选（全量去重事件，不再截断到前20）
             categorized_events = {
                 'major_with_ai': [],
                 'normal_with_ai': [],
@@ -2832,7 +2868,7 @@ class RealIntegrationTester:
                 'normal_no_ai': []
             }
             
-            for event in unique_events[:20]:  # 只取前20个避免重复
+            for event in unique_events:
                 event_type = event.get('event_type', 'normal')
                 has_ai = 'ai_analysis' in event
                 
@@ -2845,22 +2881,61 @@ class RealIntegrationTester:
                 elif event_type == 'normal' and not has_ai:
                     categorized_events['normal_no_ai'].append(event)
             
-            # 选择测试样本
+            # 选择测试样本：严格受 sample_size 控制，优先 AI 质量并保持 major/normal 平衡
+            requested = max(1, int(sample_size))
+            available = len(unique_events)
+            target = min(requested, available)
+            print(f"   请求样本数: {requested}, 可用去重事件: {available}, 实际取样: {target}")
+
             test_events = []
-            
-            # 优先选择有AI分析的major事件（最多3个）
-            if categorized_events['major_with_ai']:
-                major_samples = categorized_events['major_with_ai'][:min(3, len(categorized_events['major_with_ai']))]
-                test_events.extend(major_samples)
-                print(f"   选择 {len(major_samples)} 个有AI分析的major事件")
-            
-            # 然后添加有AI分析的normal事件（最多3个）
-            if categorized_events['normal_with_ai']:
-                normal_samples = categorized_events['normal_with_ai'][:min(3, len(categorized_events['normal_with_ai']))]
-                test_events.extend(normal_samples)
-                print(f"   选择 {len(normal_samples)} 个有AI分析的normal事件")
-            
-            print(f"   总共选择 {len(test_events)} 个测试事件")
+            selected_ids = set()
+
+            def _append_from(pool, take):
+                appended = 0
+                for ev in pool:
+                    if appended >= take:
+                        break
+                    ev_id = ev.get('event_id') or ev.get('id') or ev.get('title')
+                    if ev_id in selected_ids:
+                        continue
+                    selected_ids.add(ev_id)
+                    test_events.append(ev)
+                    appended += 1
+                return appended
+
+            # 第一轮：有AI样本优先，major/normal 各取一半
+            half = target // 2
+            major_take = min(half, len(categorized_events['major_with_ai']))
+            normal_take = min(target - major_take, len(categorized_events['normal_with_ai']))
+            _append_from(categorized_events['major_with_ai'], major_take)
+            _append_from(categorized_events['normal_with_ai'], normal_take)
+
+            # 第二轮：若不足，继续从有AI池补齐（不区分类型）
+            if len(test_events) < target:
+                need = target - len(test_events)
+                appended = _append_from(categorized_events['major_with_ai'], need)
+                need -= appended
+                if need > 0:
+                    _append_from(categorized_events['normal_with_ai'], need)
+
+            # 第三轮：仍不足，用无AI样本补齐
+            if len(test_events) < target:
+                need = target - len(test_events)
+                appended = _append_from(categorized_events['major_no_ai'], need)
+                need -= appended
+                if need > 0:
+                    _append_from(categorized_events['normal_no_ai'], need)
+
+            # 最后兜底：按 unique_events 顺序补齐（确保严格达到 target）
+            if len(test_events) < target:
+                _append_from(unique_events, target - len(test_events))
+
+            print(
+                f"   选择结果: total={len(test_events)}, "
+                f"major={sum(1 for e in test_events if e.get('event_type') == 'major')}, "
+                f"normal={sum(1 for e in test_events if e.get('event_type') == 'normal')}, "
+                f"with_ai={sum(1 for e in test_events if 'ai_analysis' in e)}"
+            )
             
             # 显示选中的事件详情
             for i, event in enumerate(test_events):
@@ -3031,43 +3106,119 @@ class RealIntegrationTester:
             print(f"   ⏳ 等待{wait_time}秒让系统处理事件...")
             
             decision_details = []  # 存储决策详情
+            create_new_theme_details = []  # 存储新建题材决策详情（TC003证据）
             theme_updates = []     # 存储题材更新
+
+            def _parse_decision_detail(msg_id: str, msg_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+                if 'decision' not in msg_data:
+                    return None
+                try:
+                    decision = json.loads(msg_data['decision'])
+                except Exception:
+                    return None
+
+                decision_type = decision.get('decision_type', 'unknown')
+                action = decision.get('action', 'unknown')
+                event_id = decision.get('event_id', 'unknown')
+                detail = {
+                    'message_id': msg_id,
+                    'decision_type': decision_type,
+                    'action': action,
+                    'event_id': event_id,
+                    'decision_id': decision.get('decision_id'),
+                    'trace_id': decision.get('trace_id'),
+                    'timestamp': decision.get('timestamp')
+                }
+
+                # 匹配审计明细（用于phase2准确率报告）
+                event_payload = decision.get("event_data", {}) or {}
+                ai_payload = decision.get("ai_analysis", {}) or {}
+                match_payload = decision.get("match_result", {}) or {}
+                best_match = match_payload.get("best_match", {}) or {}
+                top_theme = decision.get("theme_data", {}) or {}
+                guardrail = match_payload.get("guardrail", {}) or {}
+                rejected_best = match_payload.get("rejected_best_match", {}) or {}
+
+                detail["event_title"] = event_payload.get("title")
+                detail["event_core_concept"] = ai_payload.get("core_concept")
+                detail["algorithm_used"] = match_payload.get("algorithm_used")
+                detail["match_reason"] = match_payload.get("reason")
+                detail["best_theme_id"] = best_match.get("theme_id") or top_theme.get("id")
+                detail["best_theme_name"] = best_match.get("theme_name") or top_theme.get("name")
+                detail["best_theme_confidence"] = best_match.get("confidence") or top_theme.get("match_confidence")
+                detail["best_theme_matched_keywords"] = best_match.get("matched_keywords", [])
+                detail["guardrail_passed"] = guardrail.get("passed")
+                detail["guardrail_overlap_count"] = guardrail.get("keyword_overlap_count", 0)
+                detail["guardrail_overlap_keywords"] = guardrail.get("keyword_overlap", [])
+                detail["rejected_best_theme_name"] = rejected_best.get("theme_name")
+                detail["rejected_best_theme_confidence"] = rejected_best.get("confidence")
+
+                # Phase3: 透出LLM嵌入式门禁审计字段（若存在）
+                stage1_review = decision.get("llm_stage1_review", {}) or {}
+                stage2_review = decision.get("llm_stage2_review", {}) or {}
+                detail["judge_source"] = decision.get("judge_source")
+                detail["judge_applied"] = decision.get("judge_applied")
+                detail["manual_review_required"] = decision.get("manual_review_required", False)
+                detail["llm_stage1_decision"] = stage1_review.get("decision")
+                detail["llm_stage1_confidence"] = stage1_review.get("confidence")
+                detail["llm_stage1_request_id"] = stage1_review.get("request_id")
+                detail["llm_stage2_decision"] = stage2_review.get("decision")
+                detail["llm_stage2_confidence"] = stage2_review.get("confidence")
+                detail["llm_stage2_request_id"] = stage2_review.get("request_id")
+                return detail
             
             for sec in range(wait_time):
                 if sec % 3 == 0:
                     try:
-                        # 检查决策流详情
-                        decision_messages = await self.redis_client.xrange("stream:events:decision", "-", "+", count=10)
-                        recent_decisions = []
-                        for msg_id, msg_data in decision_messages[-3:]:  # 取最后3条
-                            if 'decision' in msg_data:
-                                try:
-                                    decision = json.loads(msg_data['decision'])
-                                    decision_type = decision.get('decision_type', 'unknown')
-                                    action = decision.get('action', 'unknown')
-                                    event_id = decision.get('event_id', 'unknown')
-                                    recent_decisions.append(f"{decision_type}({action})")
-                                    
-                                    # 存储决策详情用于后续分析
-                                    decision_details.append({
-                                        'decision_type': decision_type,
-                                        'action': action,
-                                        'event_id': event_id,
-                                        'timestamp': decision.get('timestamp')
-                                    })
-                                except Exception as parse_error:
-                                    recent_decisions.append(f"parse_error")
-                        
-                        # 检查题材更新流
+                        # 仅做进度监控，不在等待窗口内抓样本（避免“最近3条”偏差）
+                        decision_count_now = await self.redis_client.xlen("stream:events:decision")
                         theme_updates_count = await self.redis_client.xlen("stream:themes:updates")
-                        
-                        print(f"     第{sec}秒 - 决策流: {len(decision_messages)}条, 题材更新: {theme_updates_count}条")
-                        if recent_decisions:
-                            print(f"         最近决策: {recent_decisions}")
+                        processed = min(int(decision_count_now), len(test_events))
+                        total = max(1, len(test_events))
+                        progress_pct = processed / total * 100
+                        print(
+                            f"     第{sec}秒 - 处理进度: {processed}/{total} ({progress_pct:.1f}%), "
+                            f"决策流: {decision_count_now}条, 题材更新: {theme_updates_count}条"
+                        )
                         
                     except Exception as e:
                         print(f"     第{sec}秒 - 检查失败: {e}")
                 await asyncio.sleep(1)
+
+            # 7.5 处理结束后一次性全量读取决策流（审计基准）
+            print("\n7.5 全量读取决策流（审计基准）...")
+            try:
+                all_decision_messages = await self.redis_client.xrange("stream:events:decision", "-", "+")
+                for msg_id, msg_data in all_decision_messages:
+                    detail = _parse_decision_detail(msg_id, msg_data)
+                    if not detail:
+                        continue
+                    decision_details.append(detail)
+
+                    if detail.get("action") == "create_new_theme":
+                        # 为create链路补齐分类来源证据
+                        try:
+                            decision = json.loads(msg_data.get("decision", "{}"))
+                        except Exception:
+                            decision = {}
+                        complete_theme_data = decision.get("complete_theme_data", {}) or {}
+                        category_info = complete_theme_data.get("category_info", {}) or {}
+                        categories_to_create = (
+                            complete_theme_data.get("database_instructions", {}) or {}
+                        ).get("categories_to_create", []) or []
+
+                        detail["classification_source"] = category_info.get("classification_source")
+                        detail["category_action"] = category_info.get("category_action")
+                        detail["categories_to_create_count"] = len(categories_to_create)
+                        detail["created_category_types"] = [
+                            c.get("category_type")
+                            for c in categories_to_create
+                            if isinstance(c, dict)
+                        ]
+                        create_new_theme_details.append(detail)
+                print(f"   ✅ 决策全量读取完成: {len(all_decision_messages)} 条, 审计明细: {len(decision_details)} 条")
+            except Exception as e:
+                print(f"   ❌ 决策全量读取失败: {e}")
             
             # 8. 检查处理结果
             print("\n8. 检查处理结果...")
@@ -3082,6 +3233,7 @@ class RealIntegrationTester:
             
             print("   📊 Stream状态统计:")
             stream_stats = {}
+            pending_entries_for_validation = []
             for stream_name, description in streams_to_check:
                 try:
                     count = await self.redis_client.xlen(stream_name)
@@ -3104,6 +3256,21 @@ class RealIntegrationTester:
                                     pass
                         if decision_types:
                             print(f"       决策类型分布: {decision_types}")
+                    elif stream_name == "stream:events:pending" and count > 0:
+                        pending_msgs = await self.redis_client.xrange(stream_name, "-", "+", count=min(20, count))
+                        for pmsg_id, pmsg_data in pending_msgs:
+                            event_data_raw = pmsg_data.get("event_data")
+                            trace_id = None
+                            if event_data_raw:
+                                try:
+                                    trace_id = json.loads(event_data_raw).get("trace_id")
+                                except Exception:
+                                    trace_id = None
+                            pending_entries_for_validation.append({
+                                "message_id": pmsg_id,
+                                "decision_id": pmsg_data.get("decision_id"),
+                                "trace_id": trace_id,
+                            })
                     
                     elif stream_name == "stream:themes:updates" and count > 0:
                         # 显示题材更新详情
@@ -3154,6 +3321,70 @@ class RealIntegrationTester:
             except Exception as e:
                 print(f"   ⚠️  获取DecisionExecutor状态失败: {e}")
             
+            # 9.5 T04 验收关键验证（基于真实流程输出）
+            publish_decisions = [d for d in decision_details if d.get("action") == "publish_clustering"]
+            publish_decision_ids = {d.get("decision_id") for d in publish_decisions if d.get("decision_id")}
+            pending_decision_ids = {p.get("decision_id") for p in pending_entries_for_validation if p.get("decision_id")}
+            trace_ready = any(p.get("trace_id") for p in pending_entries_for_validation)
+            matched_pending = bool(publish_decision_ids & pending_decision_ids)
+
+            ack_pending_count = 0
+            ack_pending_ids = set()
+            try:
+                pending_meta = await self.redis_client.xpending("stream:events:decision", "decision_executors")
+                ack_pending_count = int(pending_meta.get("pending", 0))
+                if ack_pending_count > 0:
+                    pending_msgs = await self.redis_client.xpending_range(
+                        "stream:events:decision", "decision_executors", "-", "+", ack_pending_count
+                    )
+                    ack_pending_ids = {m.get("message_id") for m in pending_msgs}
+            except Exception:
+                pass
+
+            publish_msg_ids = {d.get("message_id") for d in publish_decisions if d.get("message_id")}
+            ack_verified = len(publish_msg_ids & ack_pending_ids) == 0
+
+            t04_validation = {
+                "publish_clustering_decision": len(publish_decisions) > 0,
+                "pending_written": len(pending_entries_for_validation) > 0,
+                "pending_matches_publish_decision_id": matched_pending,
+                "pending_trace_id_present": trace_ready,
+                "decision_ack_verified": ack_verified,
+                "decision_executor_pending_count": ack_pending_count,
+            }
+
+            # 9.6 T03 验收关键验证（分类真源复用 + 无上游概念新建）
+            create_actions_count = len(create_new_theme_details)
+            upstream_reuse_count = sum(
+                1
+                for d in create_new_theme_details
+                if d.get("classification_source") == "upstream"
+            )
+            ai_concept_create_count = sum(
+                1
+                for d in create_new_theme_details
+                if d.get("classification_source") == "created_from_ai_keywords"
+            )
+            concept_hierarchy_create_count = sum(
+                1
+                for d in create_new_theme_details
+                if d.get("classification_source") == "created_from_ai_keywords"
+                and d.get("categories_to_create_count", 0) >= 2
+                and d.get("created_category_types")
+                and all(t == "concept" for t in d.get("created_category_types"))
+            )
+
+            t03_validation = {
+                "create_new_theme_decisions": create_actions_count,
+                "classification_source_upstream_count": upstream_reuse_count,
+                "classification_source_ai_keywords_count": ai_concept_create_count,
+                "concept_hierarchy_created_count": concept_hierarchy_create_count,
+                "all_create_decisions_have_classification_source": (
+                    create_actions_count == 0
+                    or (upstream_reuse_count + ai_concept_create_count) == create_actions_count
+                ),
+            }
+
             # 10. 停止所有组件
             print("\n10. 停止所有组件...")
             
@@ -3233,6 +3464,16 @@ class RealIntegrationTester:
                 print("   ✅ 生成标准化决策")
                 print("   ✅ DecisionExecutor成功执行决策")
                 print("   ✅ 生成题材更新")
+                if return_details:
+                    return {
+                        "success": True,
+                        "success_criteria": success_criteria,
+                        "stream_stats": stream_stats,
+                        "decision_details": decision_details,
+                        "create_new_theme_details": create_new_theme_details,
+                        "t04_validation": t04_validation,
+                        "t03_validation": t03_validation,
+                    }
                 return True
             elif success_criteria["events_published"] and success_criteria["decisions_generated"]:
                 print("\n   ⚠️  测试部分成功: 事件处理和决策生成正常")
@@ -3241,18 +3482,53 @@ class RealIntegrationTester:
                     print("      1. DecisionExecutor未能执行决策")
                 if not success_criteria["theme_updates_generated"]:
                     print("      2. 未生成题材更新")
+                if return_details:
+                    return {
+                        "success": True,
+                        "success_criteria": success_criteria,
+                        "stream_stats": stream_stats,
+                        "decision_details": decision_details,
+                        "create_new_theme_details": create_new_theme_details,
+                        "t04_validation": t04_validation,
+                        "t03_validation": t03_validation,
+                    }
                 return True  # 仍视为成功，因为核心流程正常
             elif success_criteria["events_published"]:
                 print("\n   ⚠️  测试部分成功: 事件发布成功但未生成决策")
+                if return_details:
+                    return {
+                        "success": False,
+                        "success_criteria": success_criteria,
+                        "stream_stats": stream_stats,
+                        "decision_details": decision_details,
+                        "create_new_theme_details": create_new_theme_details,
+                        "t04_validation": t04_validation,
+                        "t03_validation": t03_validation,
+                    }
                 return False
             else:
                 print("\n   ❌ 测试失败: 无法发布事件到Redis")
+                if return_details:
+                    return {
+                        "success": False,
+                        "success_criteria": success_criteria,
+                        "stream_stats": stream_stats,
+                        "decision_details": decision_details,
+                        "create_new_theme_details": create_new_theme_details,
+                        "t04_validation": t04_validation,
+                        "t03_validation": t03_validation,
+                    }
                 return False
                 
         except Exception as e:
             print(f"❌ 完整架构测试失败: {e}")
             import traceback
             traceback.print_exc()
+            if return_details:
+                return {
+                    "success": False,
+                    "error": str(e),
+                }
             return False
     
     async def test_rule_based_theme_generation(self, sample_size: int = 5):

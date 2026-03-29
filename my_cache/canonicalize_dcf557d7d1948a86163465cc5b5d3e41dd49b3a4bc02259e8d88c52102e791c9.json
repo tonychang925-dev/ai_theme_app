@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:22:23", "result": {"span_uid": "b97e3d3190fa", "action": "rewrite", "canonical_text": "HBM4内存采用12层堆叠技术，是下一代HBM产品。", "final_type": "core", "final_role": "技术演进与堆叠结构", "stability": "medium", "reason": "该片段描述了HBM4的堆叠层数和技术代际，是定义HBM技术演进和核心结构的知识，但涉及具体产品（HBM4）可能随技术发展变化，稳定性中等。"}}

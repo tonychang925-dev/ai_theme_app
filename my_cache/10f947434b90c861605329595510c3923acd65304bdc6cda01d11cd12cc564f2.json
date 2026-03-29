@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:11", "result": {"chunk_id": "b4a76913d83e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落前半部分描述上纬新材的股权变更事件，属于pure_event；但后半部分'灵巧手是人形机器人的核心零部件'提供了关于灵巧手的静态定义和角色知识，因此整体混合了事件和知识，需要裁决以提取有价值部分。"}}

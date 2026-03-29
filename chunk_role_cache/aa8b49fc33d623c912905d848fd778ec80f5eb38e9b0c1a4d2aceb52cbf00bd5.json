@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "17dea3311135", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述工信部试点扩大增值电信业务开放和推进卫星互联网业务准入制度改革的事件，可能隐含卫星互联网监管和准入机制的知识，混合了政策事件信息。"}}

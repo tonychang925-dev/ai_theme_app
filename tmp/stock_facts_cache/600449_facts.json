@@ -1,0 +1,164 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "水泥生产",
+      "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商品混凝土生产",
+      "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "骨料生产",
+      "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字物流平台",
+      "evidence_span": "其打造的“我找车”数字物流平台已覆盖全国"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数据中心业务",
+      "evidence_span": "并拓展了数据中心等新业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "宁夏地区水泥龙头企业",
+      "evidence_span": "宁夏地区水泥、商品混凝土龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "宁夏地区商品混凝土龙头企业",
+      "evidence_span": "宁夏地区水泥、商品混凝土龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国建材旗下上市公司",
+      "evidence_span": "中国建材旗下上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水泥",
+      "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品混凝土",
+      "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "骨料",
+      "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "“我找车”数字物流平台",
+      "evidence_span": "其打造的“我找车”数字物流平台已覆盖全国"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据中心服务",
+      "evidence_span": "并拓展了数据中心等新业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新二代生产线",
+      "evidence_span": "产能减量置换建设吴忠赛马及青水股份新二代生产线"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "一带一路下看点十足"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "水泥生产与销售",
+        "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商品混凝土生产与销售",
+        "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "骨料生产与销售",
+        "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字物流平台",
+        "evidence_span": "其打造的“我找车”数字物流平台已覆盖全国"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数据中心业务",
+        "evidence_span": "并拓展了数据中心等新业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "宁夏地区水泥龙头企业",
+        "evidence_span": "宁夏地区水泥、商品混凝土龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "宁夏地区商品混凝土龙头企业",
+        "evidence_span": "宁夏地区水泥、商品混凝土龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国建材旗下上市公司",
+        "evidence_span": "中国建材旗下上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水泥",
+        "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品混凝土",
+        "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "骨料",
+        "evidence_span": "核心业务为水泥、商品混凝土和骨料的生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "“我找车”数字物流平台",
+        "evidence_span": "其打造的“我找车”数字物流平台已覆盖全国"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据中心服务",
+        "evidence_span": "并拓展了数据中心等新业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新二代生产线",
+        "evidence_span": "产能减量置换建设吴忠赛马及青水股份新二代生产线"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "一带一路下看点十足"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:16:13"
+}

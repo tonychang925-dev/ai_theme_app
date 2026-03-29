@@ -1,0 +1,72 @@
+{
+  "event_id": "evt_0fcac8abc4a0",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "行业观点",
+  "entities": [
+    {
+      "name": "扎克伯格",
+      "type": "人物",
+      "normalized": "扎克伯格"
+    },
+    {
+      "name": "SPC 黑客松",
+      "type": "组织",
+      "normalized": "SPC黑客松"
+    },
+    {
+      "name": "AR 眼镜",
+      "type": "产品",
+      "normalized": "AR眼镜"
+    },
+    {
+      "name": "VR 头盔",
+      "type": "产品",
+      "normalized": "VR头盔"
+    }
+  ],
+  "summary": "扎克伯格在SPC黑客松活动上分享观点，认为AR眼镜和VR头盔将成为未来计算平台核心，10-15年内普及。",
+  "causal_claim": [
+    "AR眼镜普及",
+    "VR头盔普及",
+    "计算平台变革",
+    "数字互动改变"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "AI",
+      "AR",
+      "VR",
+      "计算平台",
+      "数字互动"
+    ],
+    "normalized_terms": {
+      "扎克伯格": "扎克伯格",
+      "SPC 黑客松": "SPC黑客松",
+      "AR 眼镜": "AR眼镜",
+      "VR 头盔": "VR头盔"
+    },
+    "evidence_spans": [
+      {
+        "text": "扎克伯格在 SPC 黑客松活动上的一场对谈分享，不限于 AI 、AR、创业以及团队管理等经验。",
+        "start": 0,
+        "end": 60
+      },
+      {
+        "text": "扎克伯格认为 AR 眼镜和 VR 头盔将成为未来计算平台的核心，这些设备将在未来 10～15 年内普及，彻底改变人们的数字互动方式。",
+        "start": 60,
+        "end": 130
+      }
+    ],
+    "core_concepts": [
+      "AR眼镜",
+      "VR头盔",
+      "计算平台",
+      "普及"
+    ]
+  },
+  "severity_score": 0.6,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-08-13T00:00:00Z",
+  "raw_text": "2024年8月13日，**近日，扎克伯格在 SPC 黑客松活动上的一场对谈分享，不限于 AI 、AR、创业以及团队管理等经验。扎克伯格认为 AR 眼镜和 VR 头盔将成为未来计算平台的核心，这些设备将在未来 10～15 年内普及，彻底改变人们的数字互动方式。"
+}

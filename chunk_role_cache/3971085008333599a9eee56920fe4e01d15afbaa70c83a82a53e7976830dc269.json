@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "55d6572bfef5", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落描述西门子收到美国取消芯片软件限制的通知事件，并简要介绍西门子EDA业务，属于政策变化和公司信息，但EDA软件属于半导体设计工具，与半导体设备（制造环节）关联较弱，且没有揭示设备知识，因此归为pure_event。"}}

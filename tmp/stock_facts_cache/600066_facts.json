@@ -1,0 +1,529 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "客车产品研发",
+      "evidence_span": "集客车产品研发、制造与销售为一体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "客车制造",
+      "evidence_span": "集客车产品研发、制造与销售为一体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "客车销售",
+      "evidence_span": "集客车产品研发、制造与销售为一体"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球客车龙头",
+      "evidence_span": "全球客车龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大中型客车产销量国内第一",
+      "evidence_span": "宇通客车大中型客车产销量国内第一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大中型客车产销量全球第一",
+      "evidence_span": "宇通客车大中型客车产销量全球第一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大中型客车",
+      "evidence_span": "宇通客车大中型客车产销量国内第一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5米至18米不同长度客车",
+      "evidence_span": "主要产品可满足 5 米至 18 米不同长度的市场需求"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公路客运客车",
+      "evidence_span": "主要用于公路客运"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游客运客车",
+      "evidence_span": "旅游客运"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公交客运客车",
+      "evidence_span": "公交客运"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "团体通勤客车",
+      "evidence_span": "团体通勤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "校车",
+      "evidence_span": "校车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "景区车",
+      "evidence_span": "景区车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机场摆渡车",
+      "evidence_span": "机场摆渡车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动驾驶微循环车",
+      "evidence_span": "自动驾驶微循环车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客车专用车",
+      "evidence_span": "客车专用车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纯电动客车",
+      "evidence_span": "宇通客车6-12米纯电动产品齐全"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "插电式混合动力客车",
+      "evidence_span": "8-12米插申式混合动力产品可覆盖客户不同地域需求"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池客车",
+      "evidence_span": "多场景燃料电池系统技术研究与产业化应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "T7高端商务车",
+      "evidence_span": "T7高端商务车产品研发与升级完善"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能网联客车",
+      "evidence_span": "稳慎推进智能网联客车产品示范运行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载终端",
+      "evidence_span": "车载终端依据法规可实现宇通整车产品全覆盖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "路侧终端",
+      "evidence_span": "路侧终端建立路侧交通基础设施与车辆之间的连接关系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧运营系统",
+      "evidence_span": "为客户提供高性价比的智慧运营系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源一体化解决方案",
+      "evidence_span": "新能源一体化解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动驾驶技术",
+      "evidence_span": "自动驾驶及智能网联关键技术研究与产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能网联关键技术",
+      "evidence_span": "自动驾驶及智能网联关键技术研究与产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多场景燃料电池系统技术",
+      "evidence_span": "多场景燃料电池系统技术研究与产业化应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子电气架构",
+      "evidence_span": "从车端、路端、云端开展电子电气架构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线控底盘",
+      "evidence_span": "线控底盘"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "整车安全",
+      "evidence_span": "整车安全"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "仿真测试",
+      "evidence_span": "仿真测试"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车路协同",
+      "evidence_span": "车路协同"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云控平台",
+      "evidence_span": "云控平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车联网技术",
+      "evidence_span": "车联网技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据技术",
+      "evidence_span": "大数据和SaaS（软件即服务）化应用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SaaS化应用技术",
+      "evidence_span": "大数据和SaaS（软件即服务）化应用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "域集中式电子电气架构",
+      "evidence_span": "结合域集中式电子电气架构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SOA软件平台",
+      "evidence_span": "SOA（面向服务架构）软件平台规划"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能网联云平台技术",
+      "evidence_span": "智能网联云平台技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智联平台",
+      "evidence_span": "公司打造的智联平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "第三代车云通信平台",
+      "evidence_span": "自主研发的第三代车云、路云、云云通信平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "第三代路云通信平台",
+      "evidence_span": "自主研发的第三代车云、路云、云云通信平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "第三代云云通信平台",
+      "evidence_span": "自主研发的第三代车云、路云、云云通信平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据平台",
+      "evidence_span": "自主建设的数据平台集数据采集、存储、计算、服务为一体"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃料电池整车智能热管理技术",
+      "evidence_span": "开发了燃料电池整车智能热管理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氢系统全时域监控",
+      "evidence_span": "优化了氢系统全时域监控"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于大数据的故障预警",
+      "evidence_span": "基于大数据的故障预警"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃料电池系统健康度评估",
+      "evidence_span": "燃料电池系统健康度评估等技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源客车龙头",
+      "evidence_span": "跨越周期、持续成长的新能源客车龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "天然气替代柴油",
+      "evidence_span": "受益于天然气替代柴油的客车龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "客车产品研发",
+        "evidence_span": "集客车产品研发、制造与销售为一体"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "客车制造",
+        "evidence_span": "集客车产品研发、制造与销售为一体"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "客车销售",
+        "evidence_span": "集客车产品研发、制造与销售为一体"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球客车龙头",
+        "evidence_span": "全球客车龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大中型客车产销量国内第一",
+        "evidence_span": "宇通客车大中型客车产销量国内第一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大中型客车产销量全球第一",
+        "evidence_span": "宇通客车大中型客车产销量全球第一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大中型客车",
+        "evidence_span": "宇通客车大中型客车产销量国内第一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5米至18米不同长度客车",
+        "evidence_span": "主要产品可满足 5 米至 18 米不同长度的市场需求"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公路客运客车",
+        "evidence_span": "主要用于公路客运"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游客运客车",
+        "evidence_span": "旅游客运"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公交客运客车",
+        "evidence_span": "公交客运"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "团体通勤客车",
+        "evidence_span": "团体通勤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "校车",
+        "evidence_span": "校车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "景区车",
+        "evidence_span": "景区车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机场摆渡车",
+        "evidence_span": "机场摆渡车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动驾驶微循环车",
+        "evidence_span": "自动驾驶微循环车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客车专用车",
+        "evidence_span": "客车专用车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纯电动客车",
+        "evidence_span": "宇通客车6-12米纯电动产品齐全"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "插电式混合动力客车",
+        "evidence_span": "8-12米插申式混合动力产品可覆盖客户不同地域需求"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池客车",
+        "evidence_span": "多场景燃料电池系统技术研究与产业化应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "T7高端商务车",
+        "evidence_span": "T7高端商务车产品研发与升级完善"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能网联客车",
+        "evidence_span": "稳慎推进智能网联客车产品示范运行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载终端",
+        "evidence_span": "车载终端依据法规可实现宇通整车产品全覆盖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "路侧终端",
+        "evidence_span": "路侧终端建立路侧交通基础设施与车辆之间的连接关系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧运营系统",
+        "evidence_span": "为客户提供高性价比的智慧运营系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源一体化解决方案",
+        "evidence_span": "新能源一体化解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动驾驶技术",
+        "evidence_span": "自动驾驶及智能网联关键技术研究与产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能网联关键技术",
+        "evidence_span": "自动驾驶及智能网联关键技术研究与产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多场景燃料电池系统技术",
+        "evidence_span": "多场景燃料电池系统技术研究与产业化应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子电气架构",
+        "evidence_span": "从车端、路端、云端开展电子电气架构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线控底盘",
+        "evidence_span": "线控底盘"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "整车安全",
+        "evidence_span": "整车安全"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "仿真测试",
+        "evidence_span": "仿真测试"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车路协同",
+        "evidence_span": "车路协同"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云控平台",
+        "evidence_span": "云控平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车联网技术",
+        "evidence_span": "车联网技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据技术",
+        "evidence_span": "大数据和SaaS（软件即服务）化应用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SaaS化应用技术",
+        "evidence_span": "大数据和SaaS（软件即服务）化应用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "域集中式电子电气架构",
+        "evidence_span": "结合域集中式电子电气架构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SOA软件平台",
+        "evidence_span": "SOA（面向服务架构）软件平台规划"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能网联云平台技术",
+        "evidence_span": "智能网联云平台技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智联平台",
+        "evidence_span": "公司打造的智联平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "第三代车云通信平台",
+        "evidence_span": "自主研发的第三代车云、路云、云云通信平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "第三代路云通信平台",
+        "evidence_span": "自主研发的第三代车云、路云、云云通信平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "第三代云云通信平台",
+        "evidence_span": "自主研发的第三代车云、路云、云云通信平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据平台",
+        "evidence_span": "自主建设的数据平台集数据采集、存储、计算、服务为一体"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃料电池整车智能热管理技术",
+        "evidence_span": "开发了燃料电池整车智能热管理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氢系统全时域监控",
+        "evidence_span": "优化了氢系统全时域监控"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于大数据的故障预警",
+        "evidence_span": "基于大数据的故障预警"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃料电池系统健康度评估",
+        "evidence_span": "燃料电池系统健康度评估等技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源客车龙头",
+        "evidence_span": "跨越周期、持续成长的新能源客车龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "天然气替代柴油",
+        "evidence_span": "受益于天然气替代柴油的客车龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:11:31"
+}

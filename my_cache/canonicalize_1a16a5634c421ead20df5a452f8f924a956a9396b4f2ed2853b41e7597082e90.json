@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:59:51", "result": {"span_uid": "0d3bf1e8853c", "action": "rewrite", "canonical_text": "电动自行车的最高设计车速通常不超过25km/h。", "final_type": "core", "final_role": "速度限制规定", "stability": "high", "reason": "原片段是具体标准中的技术参数片段。改写后形成稳定、可独立理解的知识块，定义了电动自行车（两轮车的一种）的关键性能指标，属于核心本体定义。"}}

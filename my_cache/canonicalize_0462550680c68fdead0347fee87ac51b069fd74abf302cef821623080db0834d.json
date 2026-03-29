@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:05", "result": {"span_uid": "7e1ca2b6bfd3", "action": "rewrite", "canonical_text": "特斯拉Autopilot的安全水平显著高于普通驾驶", "final_type": "signal", "final_role": "安全性能比较", "stability": "medium", "reason": "去事件化改写，保留安全比较信息，但具体倍数可能随时间变化"}}

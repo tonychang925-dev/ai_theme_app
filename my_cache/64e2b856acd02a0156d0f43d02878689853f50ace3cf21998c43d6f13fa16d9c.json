@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "063e22a396d4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "包含B-21隐形轰炸机生产加速、资金投入、生产计划等技术和管理细节，可能对军工生产知识有价值，但以美国军方和国会具体事件报道形式呈现，混合了动态信息。"}}

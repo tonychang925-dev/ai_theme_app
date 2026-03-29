@@ -1,0 +1,139 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "影视传媒业务",
+      "evidence_span": "影视传媒业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体育业务",
+      "evidence_span": "体育业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家体育产业示范单位",
+      "evidence_span": "湖北省第一家荣膺“国家体育产业示范单位”称号的上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电视剧制作",
+      "evidence_span": "电视剧剧本"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络剧制作",
+      "evidence_span": "网络剧/网络电影剧本"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "影院投资及管理",
+      "evidence_span": "影院投资及管理业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育版权运营",
+      "evidence_span": "体育版权分销行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育营销",
+      "evidence_span": "体育营销行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "球员经纪业务",
+      "evidence_span": "球员经纪业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精品剧制作",
+      "evidence_span": "坚持“精品剧”的制作思路"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚足联",
+      "evidence_span": "亚足联（AFC）所有相关赛事的全球独家商业权益"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧足联",
+      "evidence_span": "欧足联（UEFA）国家队系列赛事的新媒体独家版权"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "体育国产化",
+      "evidence_span": "国家体育产业示范单位"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "影视传媒业务",
+        "evidence_span": "影视传媒业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体育业务",
+        "evidence_span": "体育业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家体育产业示范单位",
+        "evidence_span": "湖北省第一家荣膺“国家体育产业示范单位”称号的上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电视剧制作",
+        "evidence_span": "电视剧剧本"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络剧制作",
+        "evidence_span": "网络剧/网络电影剧本"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "影院投资及管理",
+        "evidence_span": "影院投资及管理业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育版权运营",
+        "evidence_span": "体育版权分销行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育营销",
+        "evidence_span": "体育营销行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "球员经纪业务",
+        "evidence_span": "球员经纪业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精品剧制作",
+        "evidence_span": "坚持“精品剧”的制作思路"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚足联",
+        "evidence_span": "亚足联（AFC）所有相关赛事的全球独家商业权益"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧足联",
+        "evidence_span": "欧足联（UEFA）国家队系列赛事的新媒体独家版权"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "体育国产化",
+        "evidence_span": "国家体育产业示范单位"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:28:57"
+}

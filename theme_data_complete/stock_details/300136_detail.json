@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 3032734072.42,
+    "changeCount": 0.0,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1、信维通信业务布局及收入结构</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20221027113709_cc11221303dac786.png\" /></p>\n<p>公司是全球领先一站式泛射频提供商，业务涉及&ldquo;天线&mdash;&mdash;射频传输线&mdash;&mdash;射频连接器&mdash;&mdash;射频前端&rdquo;和无线充电。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、公司无线充电业务能够提供从材料到模组一站式解决方案</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20221027134037_428cf89d47c776f9.png\" /></p>\n<p>信维通信在无线充电领域长期耕耘，拥有技术、产能、客户三大优势，有望抢占无线充电行业快速发展的红利。在技术方面，公司深厚的积累。在磁性材料领域，公司可提供铁氧体材料、非晶、纳米晶等多种软磁材料，可从材料端配合客户进行产品开发；在线圈领域，公司具备成熟的精密加工及绕线工艺，可提供不同线圈方案的产品设计；在模组领域，目前公司自主设计的无线充电接收端模组已实现量产，并覆盖了国内外一流大客户群体，产品竞争力显著。目前公司可提供从磁性材料、线圈到模组的一站式无线充电解决方案，在产品的整体定制化设计方面具备突出竞争力，同时产品成本优势显著，可以更好地满足客户需求。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、公司在LDS天线方面位于行业领先地位</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20221027134649_8346d4c1dcb3c9f1.png\" /></p>\n<p>对于5G带来MIMO天线的产业机遇，信维通信持续保持高研发投入，特别是5G天线系统、射频前端等前沿技术研发的投入，先后设计20余款天线产品，包括Sub-6 MIMO天线和5G的毫米波相控阵列天线等。在LDS天线方面，公司作为国内天线的龙头，在LDS天线上拥有丰富的经验，2012年通过收购莱尔德进入国际大客户的供应商，长期为国际知名手机巨头苹果、华为供应天线，目前主要产品包括LTE天线、NFC天线、Wifi天线，产品主要运用于手机、iPad、Macbook等。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、公司射频前端业务</span></p>\n<p>公司旗下瑞强通信是一家集射频器件的研发、设计及销售于一体的公司，可为客户提供天线、PA功率放大器、滤波器等射频器件以及TWS耳机的蓝牙芯片、天线等综合解决方案。与此同时，2017年，信维通信与中电科技集团第55所达成合作协议，信维将以入股德清华莹的方式，与55所在SAW滤波器的研发、生产和销售方面深度合作。目前，信维通信持有德清华莹19.5%的股份。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、公司汽车互联业务</span></p>\n<p>公司已开拓大众、东风本田、奔驰等国内、外多家汽车客户，可为客户提供车载无线充电、车载天线、UWB模组等产品。公司正在加大对汽车客户及其业务的开拓，未来还将根据客户需要提供更多的汽车互联产品。2021 年 5 月，公司正式加入汽车数字连接协会(CarConnectivity Consortium)，加快汽车数字钥匙的推进。随着与客户业务合作的加深，公司会根据客户的需求，在已有产业基础上发挥主营业务优势，积极拓展其他汽车互联等产品。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6、风险提示：</span>手机出货不及预期；新业务及新产品拓展不达预期，宏观经济风险。</p>\n<p>&nbsp;</p>",
+    "firstLetter": "XWTX",
+    "high": 74.84,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 72.02,
+    "marketValue": 70826024301.6,
+    "name": "信维通信",
+    "pctChg": 0.0,
+    "price": 73.2,
+    "recent10BlueCount": 2,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 1,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 143.51,
+    "recentChange": -8.53,
+    "remark": "国内领先、全球知名的一站式泛射频解决方案提供商，产品涵盖天线、滤波器、无线充电、电磁屏蔽等多个品类。",
+    "status": 1,
+    "stockId": "300136",
+    "stockLightspots": [
+      {
+        "bizKey": "1835",
+        "content": "信维通信顺应产业变迁能力强，多产品线爆发，面向5G卡位好！",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1835,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1836",
+        "content": "信维通信“5G”潮平两岸阔，“射频”风正一帆悬",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1836,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1837",
+        "content": "信维通信5G来临，射频龙头厚积薄发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1837,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1838",
+        "content": "精耕射频主业，打造全球领先的一站式泛射频解决方案供应商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1838,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1839",
+        "content": "信维通信深耕泛射频领域，打造一体化解决方案供应商",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1839,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1840",
+        "content": "国内泛射频龙头企业，长期成长动能充足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1840,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1841",
+        "content": "无线充电和5G天线快速增长，射频前端打开广阔空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1841,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1842",
+        "content": "信维通信射频器件领跑者，长期发展动力足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1842,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1843",
+        "content": "瑞声科技、歌尔声学成长路径看信维通信的成长潜力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1843,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1844",
+        "content": "信维通信受益5G趋势带动产品升级，公司有望再一次腾飞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1844,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1845",
+        "content": "全球领先的泛射频解决方案提供商，5G时代加速成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1845,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1846",
+        "content": "十年积淀铸就“泛射频”领域绝对龙头，5G趋势下产业增量尤为可观",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1846,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1847",
+        "content": "信维通信射频龙头崛起之路，无线充电再下一城",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1847,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1848",
+        "content": " 客户及产品线快速扩张,LDS天线切入国际大厂可穿戴设备供应链",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1848,
+        "stockId": "300136",
+        "updateTime": null
+      },
+      {
+        "bizKey": "1849",
+        "content": "主业快速增长，深度布局5G，物联网时代前景广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 1849,
+        "stockId": "300136",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:53",
+    "vol": 411232.06
+  }
+}

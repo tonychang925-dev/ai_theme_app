@@ -1,0 +1,125 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 913489671.0,
+    "changeCount": -4.89,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p>一、公司介绍</p><p>苏州国芯科技股份有限公司（股票代码：688262）是一家成立于2001年、并于2022年在科创板上市的国产芯片设计企业。公司专注于国产自主可控嵌入式CPU技术的研发与产业化，其技术基础涵盖M<em>Core、PowerPC和开源的RISC-V三种指令集，并在此基础上开发了8大系列40余款CPU内核。国芯科技的主要产品和应用围绕三大关键领域展开：在​​信息安全领域​​，提供从“云”到“端”的安全芯片及量子安全芯片；在​​汽车电子和工业控制领域​​，成功实现了包括发动机控制芯片、车身控制芯片以及国内首款汽车安全气囊点火驱动芯片CCL1600B在内的多款产品的国产化替代；在​​边缘计算和网络通信领域​</em>*​，则成功研制了RAID控制芯片等产品。作为国家“核高基”科技重大专项的承担单位，国芯科技曾荣获国家科技进步二等奖等荣誉，致力于在关键领域打破国际垄断，推动高端芯片的自主可控和国产化替代进程。</p><p>二、行业介绍</p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">在嵌入式 CPU IP 授权领域，ARM 占据领先地位，经过数十年的发展，基于 ARM 指令集与 架构已经形成了完善的产业和生态环境，ARM 对于购买其授权的合作伙伴提供了芯片设计及开发 所需的广泛工具和支持，可以将设计人员连接到由兼容 CPU 核心、工具、中间件和应用程序软件 组成的庞大生态系统，能够大大缩短芯片的设计成本并缩短上市时间，尤其在移动终端和可穿戴 设备等部分嵌入式 CPU 市场地位形成了较强的竞争壁垒</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">国际上 SiFive、SYNOPSYS 等公司是近年来 RISC-V CPU 技术的领导型企 业，基于开源 RISC-V 指令系统推出了一系列的嵌入式 CPU 内核，受到行业内高度关注，有望打破 ARM 的垄断地位。Power 指令架构拥有成熟先进的特点，覆盖了从嵌入式、服务器到超级计 算的全产业应用，应用生态较为成熟</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">信息安全领域，随着移动互联网、物联网、人工智能等技术的飞速发展，传统被动防御已 经难以应对全球数字化转型趋势下的网络安全保障需求；特别是进入云计算时代后，政府、企业、 个体均与外部资源有更多的交互、共享和融合，云安全、数据安全等新兴安全领域需求明显上升。</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">汽车电子领域，ARM 架构处理器在智能座舱和 ADAS 系统 SoC 芯片领域占据全球领先市 场份额，但在域控、发动机控制和底盘领域中 PowerPC 架构和 TriCore 架构依然占据较大份额， 同时更多汽车电子芯片厂商开始尝试基于 RISC-V 开发产品，预计未来会逐步占据一定市场份额。 目前，中国汽车芯片国产化率不到 10%，其中以车规级 MCU 为代表的核心芯片自给率更低， 尤其在动力系统、底盘控制和 ADAS 等功能领域 MCU 芯片国产化率比较低，主要被国外芯片厂 商垄断。从需求端看，中国作为全球最大的汽车及新能源汽车增长市场，车规级芯片需求潜力巨 大。</span></p><p>三、核心优势</p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">国芯科技自设立以来，持续专注于国产嵌入式 CPU 的研发与产业化。围绕自主可控 CPU 技 术，</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\">公司已拥有 8 种 40 余款嵌入式 CPU 内核</span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">，在国家重大需求和市场需求关键领域已实现较为 广泛的应用。公司于 2006 年实现国产嵌入式 CPU 累计上百万颗应用，于 2008 年实现累计上千万 颗应用，于 2015 年实现累计上亿颗应用，为国产嵌入式 CPU 产业化应用领先企业之一</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">公司目前基于 RISC-V、PowerPC 和 M*Core 指令架构的 CPU 在国家重大需求领域和信息安 全领域拥有一定的市场份额，</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\">在汽车电子领域实现了批量供货</span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">，凭借自主可控的嵌入式 CPU 内核 及其 SoC 芯片设计平台，公司的嵌入式 CPU 在市场上拥有良好的市场口碑</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">公司的汽车电子芯片产品覆盖面较全，在汽车域控制芯片、辅助驾驶处理芯片、主动降噪专 用 DSP 芯片、动力总成控制芯片、新能源电池管理芯片、线控底盘芯片、车身和网关控制芯片、 车联网安全芯片、仪表及小节点控制芯片、安全气囊芯片、数模混合信号类芯片和智能传感芯片 等 12 条产品线上实现系列化布局</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">公司实现对国外产品的替代，覆盖新能源车和传统乘用车等车型， 目前下游的涵盖整车客户包括比亚迪、奇瑞、吉利、上汽、长安、东风等，在中高端汽车电子芯 片国产化方面处于国内领先地位，并获得了市场的认可和良好的业界口碑。 公司致力于成为国内汽车电子芯片的领先供应商，</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\">将继续加强与埃泰克、弗迪科技、安波福 等数十家 Tier1 模组厂商，与潍柴动力、武汉菱电、奥易克斯等多家发动机 ECU 厂商，和比亚迪、 奇瑞、长安、上汽、东风等众多汽车整机厂商紧密合作</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">公司云安全芯 片集成了多种高速加解密算法，可用于人工智能、云计算和数据中心的可信计算、数字签名、加 解密运算等，已形成可满足市场多种需求的系列化产品类别。主要客户有深信服、信安世纪、格 尔软件、国家电网、中安网脉、吉大正元和中星电子</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">公司在国内较 早开展量子安全芯片及模组产品的研发，开发的终端应用量子安全芯片 A5Q、云和服务器应用量 子安全芯片 CCP907TQ 和量子安全模组产品技术水平国内领先， 可广泛应用于密码机、签名/验 证服务器、安全网关/防火墙等安全设备以及金融、物联网、工业控制、可信计算和国家重大需求 等领域，目前已有客户在小批量使用</span></p><p><span style=\"color: rgb(225, 60, 57); font-size: 14px;\">公司在 Raid 控制芯片领域处于国内领先地位</span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">，是国内极少数拥有 Raid 控制芯片的厂商。Raid 控制芯片是服务器中广泛应用的一个重要芯片产品，主要用于服务器、边缘计算和通用 嵌入式计算中的磁盘阵列管理，长期以来被国外公司垄断，急需实现国产化替代</span></p>",
+    "firstLetter": "GXKJ",
+    "high": 44.18,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 39.59,
+    "marketValue": 15217436059.77,
+    "name": "国芯科技",
+    "pctChg": -10.8,
+    "price": 40.4,
+    "recent10BlueCount": 1,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 2,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 40.86,
+    "recentChange": 11.33,
+    "remark": "公司已拥有 8 种 40 余款嵌入式 CPU 内核，汽车电子领域实现了批量供货",
+    "status": 1,
+    "stockId": "688262",
+    "stockLightspots": [
+      {
+        "bizKey": "32952",
+        "content": "嵌入式CPU二十年磨一剑，放量正当时",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32952,
+        "stockId": "688262",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32953",
+        "content": "引领汽车MCU芯片国产化，受益信息安全芯片硬件化",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32953,
+        "stockId": "688262",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32954",
+        "content": "高毛利率持续，自主芯片业务下游领域不断开拓，22全年高增可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32954,
+        "stockId": "688262",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32955",
+        "content": "国芯科技高毛利率持续，自主芯片业务下游领域不断开拓，22全年高增可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32955,
+        "stockId": "688262",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32956",
+        "content": "加速推进汽车芯片，全年营收利润高增可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32956,
+        "stockId": "688262",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32957",
+        "content": "汽车MCU导入本土主流车企，信息安全高增长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32957,
+        "stockId": "688262",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32958",
+        "content": "汽车MCU出货上车拐点已现，定制业务在手项目充足",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32958,
+        "stockId": "688262",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32959",
+        "content": "受汽车和信创市场拉动，公司业务实现持续增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32959,
+        "stockId": "688262",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32960",
+        "content": "三大领域发力，汽车和信创市场拉动公司步入快速增长期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32960,
+        "stockId": "688262",
+        "updateTime": null
+      },
+      {
+        "bizKey": "32961",
+        "content": "汽车MCU进展超预期，有望带动业绩大幅增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 32961,
+        "stockId": "688262",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 222904.74
+  }
+}

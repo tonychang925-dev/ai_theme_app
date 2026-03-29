@@ -1,0 +1,27 @@
+[
+  {
+    "stock_id": "600850",
+    "file": "theme_data_complete/stock_details/600850_detail.json",
+    "error": "RuntimeError(\"LLM 调用失败，已重试3次: JSONDecodeError('无法解析LLM输出: JSON解析失败，尝试了3种方法: line 1 column 1 (char 0)')\")"
+  },
+  {
+    "stock_id": "603048",
+    "file": "theme_data_complete/stock_details/603048_detail.json",
+    "error": "RuntimeError(\"LLM 调用失败，已重试3次: JSONDecodeError('无法解析LLM输出: JSON解析失败，尝试了3种方法: line 1 column 1 (char 0)')\")"
+  },
+  {
+    "stock_id": "603680",
+    "file": "theme_data_complete/stock_details/603680_detail.json",
+    "error": "RuntimeError(\"LLM 调用失败，已重试3次: JSONDecodeError('无法解析LLM输出: JSON解析失败，尝试了3种方法: line 1 column 1 (char 0)')\")"
+  },
+  {
+    "stock_id": "603987",
+    "file": "theme_data_complete/stock_details/603987_detail.json",
+    "error": "RuntimeError(\"LLM 调用失败，已重试3次: JSONDecodeError('无法解析LLM输出: JSON解析失败，尝试了3种方法: line 1 column 1 (char 0)')\")"
+  },
+  {
+    "stock_id": "688123",
+    "file": "theme_data_complete/stock_details/688123_detail.json",
+    "error": "RuntimeError(\"LLM 调用失败，已重试3次: JSONDecodeError('无法解析LLM输出: JSON解析失败，尝试了3种方法: line 1 column 1 (char 0)')\")"
+  }
+]

@@ -1,0 +1,126 @@
+{
+  "test_time": "2026-02-20 19:33:56",
+  "test_config": {
+    "target_sample_size": 30,
+    "actual_sample_size": 6,
+    "total_pairs_available": 6,
+    "model_path": "/Users/admin/Desktop/ai_theme_app/.qwen_cache/models--Qwen--Qwen2.5-0.5B-Instruct/snapshots/7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "total_pairs": 6,
+  "positive_pairs": 1,
+  "negative_pairs": 5,
+  "accuracy": 0.8333333333333334,
+  "positive_accuracy": 0.0,
+  "negative_accuracy": 1.0,
+  "correct_count": 5,
+  "detailed_results": [
+    {
+      "type": "negative",
+      "expected": false,
+      "decision": false,
+      "correct": true,
+      "event_a": {
+        "id": "event_20260203111035_e585df",
+        "title": "数据中心芯片需求超预期增长进展引发市场关注..."
+      },
+      "event_b": {
+        "id": "event_20260203110851_234ac9",
+        "title": "稀土永磁出口管制优化进展引发市场关注..."
+      },
+      "theme": null,
+      "theme_a": "液冷数据中心",
+      "theme_b": "稀土永磁",
+      "raw_output": "否。"
+    },
+    {
+      "type": "negative",
+      "expected": false,
+      "decision": false,
+      "correct": true,
+      "event_a": {
+        "id": "event_20260203111035_e585df",
+        "title": "数据中心芯片需求超预期增长进展引发市场关注..."
+      },
+      "event_b": {
+        "id": "event_20260203110844_57aefe",
+        "title": "稀土出口管制政策实施进展进展引发市场关注..."
+      },
+      "theme": null,
+      "theme_a": "液冷数据中心",
+      "theme_b": "稀土永磁",
+      "raw_output": "否。"
+    },
+    {
+      "type": "negative",
+      "expected": false,
+      "decision": false,
+      "correct": true,
+      "event_a": {
+        "id": "event_20260203110928_464c72",
+        "title": "日本停止向中国出口光刻胶进展引发市场关注..."
+      },
+      "event_b": {
+        "id": "event_20260203111035_e585df",
+        "title": "数据中心芯片需求超预期增长进展引发市场关注..."
+      },
+      "theme": null,
+      "theme_a": "光刻胶",
+      "theme_b": "液冷数据中心",
+      "raw_output": "否。"
+    },
+    {
+      "type": "positive",
+      "expected": true,
+      "decision": false,
+      "correct": false,
+      "event_a": {
+        "id": "event_20260203110844_57aefe",
+        "title": "稀土出口管制政策实施进展进展引发市场关注..."
+      },
+      "event_b": {
+        "id": "event_20260203110851_234ac9",
+        "title": "稀土永磁出口管制优化进展引发市场关注..."
+      },
+      "theme": "稀土永磁",
+      "theme_a": null,
+      "theme_b": null,
+      "raw_output": "否。"
+    },
+    {
+      "type": "negative",
+      "expected": false,
+      "decision": false,
+      "correct": true,
+      "event_a": {
+        "id": "event_20260203110928_464c72",
+        "title": "日本停止向中国出口光刻胶进展引发市场关注..."
+      },
+      "event_b": {
+        "id": "event_20260203110844_57aefe",
+        "title": "稀土出口管制政策实施进展进展引发市场关注..."
+      },
+      "theme": null,
+      "theme_a": "光刻胶",
+      "theme_b": "稀土永磁",
+      "raw_output": "否。"
+    },
+    {
+      "type": "negative",
+      "expected": false,
+      "decision": false,
+      "correct": true,
+      "event_a": {
+        "id": "event_20260203110928_464c72",
+        "title": "日本停止向中国出口光刻胶进展引发市场关注..."
+      },
+      "event_b": {
+        "id": "event_20260203110851_234ac9",
+        "title": "稀土永磁出口管制优化进展引发市场关注..."
+      },
+      "theme": null,
+      "theme_a": "光刻胶",
+      "theme_b": "稀土永磁",
+      "raw_output": "否。"
+    }
+  ]
+}

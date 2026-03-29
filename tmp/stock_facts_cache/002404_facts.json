@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "丝绸产品生产",
+      "evidence_span": "我国最大的丝绸产品生产和销售企业之一"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "丝绸产品销售",
+      "evidence_span": "我国最大的丝绸产品生产和销售企业之一"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "茧丝绸行业供应链管理",
+      "evidence_span": "开展茧丝绸行业供应链管理及金融服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融服务",
+      "evidence_span": "开展茧丝绸行业供应链管理及金融服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "丝绸全产业链龙头",
+      "evidence_span": "丝绸全产业链龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性丝绸产业体系",
+      "evidence_span": "综合性丝绸产业体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "服装",
+      "evidence_span": "纺织服装类产品以服装、面料、生丝及印染加工为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "面料",
+      "evidence_span": "纺织服装类产品以服装、面料、生丝及印染加工为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生丝",
+      "evidence_span": "纺织服装类产品以服装、面料、生丝及印染加工为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印染加工",
+      "evidence_span": "纺织服装类产品以服装、面料、生丝及印染加工为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密五金部件",
+      "evidence_span": "子公司生产的精密五金部件类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏设施配件",
+      "evidence_span": "光伏设施配件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网上交易平台服务",
+      "evidence_span": "建立全国性的网上交易平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "在线金融服务",
+      "evidence_span": "在线金融"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仓储物流服务",
+      "evidence_span": "仓储物流"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "协同贸易服务",
+      "evidence_span": "协同贸易"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息门户服务",
+      "evidence_span": "信息门户"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融资租赁服务",
+      "evidence_span": "融资租赁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "典当服务",
+      "evidence_span": "典当"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏发电设备配件",
+      "evidence_span": "主营产品为光伏发电设备配件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "丝绸织造技术",
+      "evidence_span": "丝绸织造、服装生产、印染加工等领域都积累了丰富的技术和经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "服装生产技术",
+      "evidence_span": "丝绸织造、服装生产、印染加工等领域都积累了丰富的技术和经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "印染加工技术",
+      "evidence_span": "丝绸织造、服装生产、印染加工等领域都积累了丰富的技术和经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "面料设计能力",
+      "evidence_span": "面料设计、服饰设计和工艺技术研发等方面具备丰富的经验和创新能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "服饰设计能力",
+      "evidence_span": "面料设计、服饰设计和工艺技术研发等方面具备丰富的经验和创新能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工艺技术研发能力",
+      "evidence_span": "面料设计、服饰设计和工艺技术研发等方面具备丰富的经验和创新能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "MASSIMO DUTTI",
+      "evidence_span": "与 MASSIMO DUTTI、EMPORIO ARMANI、PATRIZIA PEPE、MICHAEK KORS、PERRY ELLIS 等众多国际知名品牌服装商都有合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "EMPORIO ARMANI",
+      "evidence_span": "与 MASSIMO DUTTI、EMPORIO ARMANI、PATRIZIA PEPE、MICHAEK KORS、PERRY ELLIS 等众多国际知名品牌服装商都有合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "PATRIZIA PEPE",
+      "evidence_span": "与 MASSIMO DUTTI、EMPORIO ARMANI、PATRIZIA PEPE、MICHAEK KORS、PERRY ELLIS 等众多国际知名品牌服装商都有合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "MICHAEK KORS",
+      "evidence_span": "与 MASSIMO DUTTI、EMPORIO ARMANI、PATRIZIA PEPE、MICHAEK KORS、PERRY ELLIS 等众多国际知名品牌服装商都有合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "PERRY ELLIS",
+      "evidence_span": "与 MASSIMO DUTTI、EMPORIO ARMANI、PATRIZIA PEPE、MICHAEK KORS、PERRY ELLIS 等众多国际知名品牌服装商都有合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宜家集团",
+      "evidence_span": "子公司天欣五金为宜家集团配件全球优先级供应商之一"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色能源市场成长性",
+      "evidence_span": "受益于近年来绿色能源市场的成长性"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "丝绸产品生产",
+        "evidence_span": "我国最大的丝绸产品生产和销售企业之一"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "丝绸产品销售",
+        "evidence_span": "我国最大的丝绸产品生产和销售企业之一"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "茧丝绸行业供应链管理",
+        "evidence_span": "开展茧丝绸行业供应链管理及金融服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融服务",
+        "evidence_span": "开展茧丝绸行业供应链管理及金融服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "丝绸全产业链龙头",
+        "evidence_span": "丝绸全产业链龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性丝绸产业体系",
+        "evidence_span": "综合性丝绸产业体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "服装",
+        "evidence_span": "纺织服装类产品以服装、面料、生丝及印染加工为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "面料",
+        "evidence_span": "纺织服装类产品以服装、面料、生丝及印染加工为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生丝",
+        "evidence_span": "纺织服装类产品以服装、面料、生丝及印染加工为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印染加工",
+        "evidence_span": "纺织服装类产品以服装、面料、生丝及印染加工为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密五金部件",
+        "evidence_span": "子公司生产的精密五金部件类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏设施配件",
+        "evidence_span": "光伏设施配件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网上交易平台服务",
+        "evidence_span": "建立全国性的网上交易平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "在线金融服务",
+        "evidence_span": "在线金融"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仓储物流服务",
+        "evidence_span": "仓储物流"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "协同贸易服务",
+        "evidence_span": "协同贸易"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息门户服务",
+        "evidence_span": "信息门户"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融资租赁服务",
+        "evidence_span": "融资租赁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "典当服务",
+        "evidence_span": "典当"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏发电设备配件",
+        "evidence_span": "主营产品为光伏发电设备配件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "丝绸织造技术",
+        "evidence_span": "丝绸织造、服装生产、印染加工等领域都积累了丰富的技术和经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "服装生产技术",
+        "evidence_span": "丝绸织造、服装生产、印染加工等领域都积累了丰富的技术和经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "印染加工技术",
+        "evidence_span": "丝绸织造、服装生产、印染加工等领域都积累了丰富的技术和经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "面料设计能力",
+        "evidence_span": "面料设计、服饰设计和工艺技术研发等方面具备丰富的经验和创新能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "服饰设计能力",
+        "evidence_span": "面料设计、服饰设计和工艺技术研发等方面具备丰富的经验和创新能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工艺技术研发能力",
+        "evidence_span": "面料设计、服饰设计和工艺技术研发等方面具备丰富的经验和创新能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "MASSIMO DUTTI",
+        "evidence_span": "与 MASSIMO DUTTI、EMPORIO ARMANI、PATRIZIA PEPE、MICHAEK KORS、PERRY ELLIS 等众多国际知名品牌服装商都有合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "EMPORIO ARMANI",
+        "evidence_span": "与 MASSIMO DUTTI、EMPORIO ARMANI、PATRIZIA PEPE、MICHAEK KORS、PERRY ELLIS 等众多国际知名品牌服装商都有合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "PATRIZIA PEPE",
+        "evidence_span": "与 MASSIMO DUTTI、EMPORIO ARMANI、PATRIZIA PEPE、MICHAEK KORS、PERRY ELLIS 等众多国际知名品牌服装商都有合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "MICHAEK KORS",
+        "evidence_span": "与 MASSIMO DUTTI、EMPORIO ARMANI、PATRIZIA PEPE、MICHAEK KORS、PERRY ELLIS 等众多国际知名品牌服装商都有合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "PERRY ELLIS",
+        "evidence_span": "与 MASSIMO DUTTI、EMPORIO ARMANI、PATRIZIA PEPE、MICHAEK KORS、PERRY ELLIS 等众多国际知名品牌服装商都有合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宜家集团",
+        "evidence_span": "子公司天欣五金为宜家集团配件全球优先级供应商之一"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色能源市场成长性",
+        "evidence_span": "受益于近年来绿色能源市场的成长性"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:42:42"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "e8386509cd92", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述中国星网和千帆星座的卫星发射事件，以及朱雀三号火箭的试验进展，包括时间、媒体报道和具体动态，属于新闻和事件更新，没有静态知识内容。"}}

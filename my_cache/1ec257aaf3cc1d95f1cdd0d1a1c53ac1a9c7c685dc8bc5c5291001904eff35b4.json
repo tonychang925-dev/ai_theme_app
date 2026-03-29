@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:42:17", "result": {"chunk_id": "a2aa7941b12f", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落主要静态说明中昊芯英的定义、成立时间、总部、创始人、专注领域、核心产品和技术链，包括芯片架构和计算集群的规格，没有夹杂事件或时间性动态，符合静态知识构建。"}}

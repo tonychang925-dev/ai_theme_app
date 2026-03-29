@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "钡盐",
+      "evidence_span": "公司主要业务是钡盐、锶盐和锰系产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锶盐",
+      "evidence_span": "公司主要业务是钡盐、锶盐和锰系产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锰系产品",
+      "evidence_span": "公司主要业务是钡盐、锶盐和锰系产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无机化工基础材料企业",
+      "evidence_span": "钡盐和锶盐属无机化工基础材料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电子化学材料企业",
+      "evidence_span": "锰系产品属电子化学材料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高新技术企业",
+      "evidence_span": "公司以及子公司大龙锰业、红蝶新材料均为高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专精特新小巨人企业",
+      "evidence_span": "分别为贵州省和重庆市“专精特新”小巨人企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳酸钡",
+      "evidence_span": "钡盐产品主要包括多规格专用型碳酸钡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫酸钡",
+      "evidence_span": "多品种硫酸钡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯碳酸钡",
+      "evidence_span": "高纯碳酸钡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯氯化钡",
+      "evidence_span": "高纯氯化钡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯硝酸钡",
+      "evidence_span": "高纯硝酸钡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢氧化钡",
+      "evidence_span": "氢氧化钡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硝酸钡",
+      "evidence_span": "硝酸钡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳酸锶",
+      "evidence_span": "锶盐产品主要包括碳酸锶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硝酸锶",
+      "evidence_span": "硝酸锶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氯化锶",
+      "evidence_span": "氯化锶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢氧化锶",
+      "evidence_span": "氢氧化锶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯碳酸锶",
+      "evidence_span": "高纯碳酸锶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电解二氧化锰",
+      "evidence_span": "锰系产品主要包括一次电池和锂电池用EMD"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯硫酸锰",
+      "evidence_span": "高纯硫酸锰等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池级碳酸锂",
+      "evidence_span": "提纯加工电池级碳酸锂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫磺",
+      "evidence_span": "副产品硫磺"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫脲",
+      "evidence_span": "硫脲"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫化钠",
+      "evidence_span": "硫化钠的生产、销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天然色素产品",
+      "evidence_span": "天然色素产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "资源综合利用模式",
+      "evidence_span": "形成了具有技术优势和自身特色的钡锶盐和钡锰结合的资源综合利用模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧能源集成系统",
+      "evidence_span": "母公司在国内同行业中首家尝试“智慧能源集成系统”"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源大时代",
+      "evidence_span": "红星发展新能源大时代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "高纯硫酸锰龙头",
+      "evidence_span": "高纯硫酸锰龙头迎来重估"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电池用锰盐发力",
+      "evidence_span": "红星发展电池用锰盐发力"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益三元发展",
+      "evidence_span": "红星发展受益三元发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "钡盐",
+        "evidence_span": "公司主要业务是钡盐、锶盐和锰系产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锶盐",
+        "evidence_span": "公司主要业务是钡盐、锶盐和锰系产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锰系产品",
+        "evidence_span": "公司主要业务是钡盐、锶盐和锰系产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无机化工基础材料企业",
+        "evidence_span": "钡盐和锶盐属无机化工基础材料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电子化学材料企业",
+        "evidence_span": "锰系产品属电子化学材料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高新技术企业",
+        "evidence_span": "公司以及子公司大龙锰业、红蝶新材料均为高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专精特新小巨人企业",
+        "evidence_span": "分别为贵州省和重庆市“专精特新”小巨人企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳酸钡",
+        "evidence_span": "钡盐产品主要包括多规格专用型碳酸钡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫酸钡",
+        "evidence_span": "多品种硫酸钡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯碳酸钡",
+        "evidence_span": "高纯碳酸钡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯氯化钡",
+        "evidence_span": "高纯氯化钡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯硝酸钡",
+        "evidence_span": "高纯硝酸钡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢氧化钡",
+        "evidence_span": "氢氧化钡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硝酸钡",
+        "evidence_span": "硝酸钡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳酸锶",
+        "evidence_span": "锶盐产品主要包括碳酸锶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硝酸锶",
+        "evidence_span": "硝酸锶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氯化锶",
+        "evidence_span": "氯化锶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢氧化锶",
+        "evidence_span": "氢氧化锶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯碳酸锶",
+        "evidence_span": "高纯碳酸锶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电解二氧化锰",
+        "evidence_span": "锰系产品主要包括一次电池和锂电池用EMD"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯硫酸锰",
+        "evidence_span": "高纯硫酸锰等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池级碳酸锂",
+        "evidence_span": "提纯加工电池级碳酸锂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫磺",
+        "evidence_span": "副产品硫磺"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫脲",
+        "evidence_span": "硫脲"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫化钠",
+        "evidence_span": "硫化钠的生产、销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天然色素产品",
+        "evidence_span": "天然色素产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "资源综合利用模式",
+        "evidence_span": "形成了具有技术优势和自身特色的钡锶盐和钡锰结合的资源综合利用模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧能源集成系统",
+        "evidence_span": "母公司在国内同行业中首家尝试“智慧能源集成系统”"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源大时代",
+        "evidence_span": "红星发展新能源大时代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "高纯硫酸锰龙头",
+        "evidence_span": "高纯硫酸锰龙头迎来重估"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电池用锰盐发力",
+        "evidence_span": "红星发展电池用锰盐发力"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益三元发展",
+        "evidence_span": "红星发展受益三元发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:03:36"
+}

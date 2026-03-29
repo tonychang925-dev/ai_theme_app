@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "f5597a582be3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述相关部门将发放卫星互联网牌照的事件，并引用专家观点说明商业运营时间线，这涉及卫星互联网的商业化进程和潜在知识，但混有事件和预测信息。"}}

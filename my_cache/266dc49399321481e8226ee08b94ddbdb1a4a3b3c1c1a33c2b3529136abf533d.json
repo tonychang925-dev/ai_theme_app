@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "aece74785ada", "label": "pure_event", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落描述商务部的出口管制公告，是一个具体政策事件，涉及军工相关实体，但主要是事件性内容，没有静态知识，归类为纯事件。"}}

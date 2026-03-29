@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "412ab548bafe", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述ASML首席执行官在会议上的言论，涉及美国出口限制和公司反击措施，是具体的事件和动态表态，没有提供半导体设备的稳定知识。"}}

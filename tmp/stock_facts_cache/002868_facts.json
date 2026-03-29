@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "动保系列",
+      "evidence_span": "动保系列：目前主要包括兽药原料药、制剂、益生菌以及绿色微生物功能添加剂等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "植保系列",
+      "evidence_span": "植保系列：目前主要包括生物农药、生物肥料和农药制剂等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品添加剂系列",
+      "evidence_span": "食品添加剂系列：目前主要包括生物防腐剂纳他霉素等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "热电服务",
+      "evidence_span": "热电服务：电力生产供应、园区配套热能服务等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "动物饲料添加剂领域杆菌肽细分龙头",
+      "evidence_span": "动物饲料添加剂领域杆菌肽细分龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "微生物发酵行业的高新技术企业",
+      "evidence_span": "公司是一家自成立以来一直专注于微生物发酵行业的高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "杆菌肽锌预混剂",
+      "evidence_span": "杆菌肽锌预混剂（BZN）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "亚甲基水杨酸杆菌肽预混剂",
+      "evidence_span": "亚甲基水杨酸杆菌肽预混剂（MDAB）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "亚甲基水杨酸杆菌肽可溶性粉",
+      "evidence_span": "亚甲基水杨酸杆菌肽可溶性粉（BMC）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫酸黏菌素预混剂",
+      "evidence_span": "硫酸黏菌素预混剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫酸黏菌素可溶性粉",
+      "evidence_span": "硫酸黏菌素可溶性粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫酸黏菌素原料药",
+      "evidence_span": "硫酸黏菌素原料药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄霉素预混剂",
+      "evidence_span": "黄霉素预混剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "混合型饲料添加剂",
+      "evidence_span": "混合型饲料添加剂（枯草芽孢杆菌和地衣芽孢杆菌）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物防腐剂纳他霉素",
+      "evidence_span": "生物防腐剂纳他霉素"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "喷雾干燥技术",
+      "evidence_span": "喷雾干燥技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "湿法制粒技术",
+      "evidence_span": "湿法制粒技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微生物发酵控制技术",
+      "evidence_span": "微生物发酵控制技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "硕腾",
+      "evidence_span": "硕腾"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "M.cassab",
+      "evidence_span": "M.cassab"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "双汇发展",
+      "evidence_span": "双汇发展"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "温氏股份",
+      "evidence_span": "温氏股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "唐人神",
+      "evidence_span": "唐人神"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天康生物",
+      "evidence_span": "天康生物"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "圣农发展",
+      "evidence_span": "圣农发展"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "益生股份",
+      "evidence_span": "益生股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金锣集团",
+      "evidence_span": "金锣集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "桂柳集团",
+      "evidence_span": "桂柳集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福建盼盼食品集团",
+      "evidence_span": "福建盼盼食品集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "正大生物",
+      "evidence_span": "正大生物"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "力诚食品",
+      "evidence_span": "力诚食品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "益客集团",
+      "evidence_span": "益客集团"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "动保系列",
+        "evidence_span": "动保系列：目前主要包括兽药原料药、制剂、益生菌以及绿色微生物功能添加剂等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "植保系列",
+        "evidence_span": "植保系列：目前主要包括生物农药、生物肥料和农药制剂等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品添加剂系列",
+        "evidence_span": "食品添加剂系列：目前主要包括生物防腐剂纳他霉素等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "热电服务",
+        "evidence_span": "热电服务：电力生产供应、园区配套热能服务等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "动物饲料添加剂领域杆菌肽细分龙头",
+        "evidence_span": "动物饲料添加剂领域杆菌肽细分龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "微生物发酵行业的高新技术企业",
+        "evidence_span": "公司是一家自成立以来一直专注于微生物发酵行业的高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "杆菌肽锌预混剂",
+        "evidence_span": "杆菌肽锌预混剂（BZN）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "亚甲基水杨酸杆菌肽预混剂",
+        "evidence_span": "亚甲基水杨酸杆菌肽预混剂（MDAB）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "亚甲基水杨酸杆菌肽可溶性粉",
+        "evidence_span": "亚甲基水杨酸杆菌肽可溶性粉（BMC）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫酸黏菌素预混剂",
+        "evidence_span": "硫酸黏菌素预混剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫酸黏菌素可溶性粉",
+        "evidence_span": "硫酸黏菌素可溶性粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫酸黏菌素原料药",
+        "evidence_span": "硫酸黏菌素原料药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄霉素预混剂",
+        "evidence_span": "黄霉素预混剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "混合型饲料添加剂",
+        "evidence_span": "混合型饲料添加剂（枯草芽孢杆菌和地衣芽孢杆菌）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物防腐剂纳他霉素",
+        "evidence_span": "生物防腐剂纳他霉素"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "喷雾干燥技术",
+        "evidence_span": "喷雾干燥技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "湿法制粒技术",
+        "evidence_span": "湿法制粒技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微生物发酵控制技术",
+        "evidence_span": "微生物发酵控制技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "硕腾",
+        "evidence_span": "硕腾"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "M.cassab",
+        "evidence_span": "M.cassab"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "双汇发展",
+        "evidence_span": "双汇发展"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "温氏股份",
+        "evidence_span": "温氏股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "唐人神",
+        "evidence_span": "唐人神"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天康生物",
+        "evidence_span": "天康生物"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "圣农发展",
+        "evidence_span": "圣农发展"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "益生股份",
+        "evidence_span": "益生股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金锣集团",
+        "evidence_span": "金锣集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "桂柳集团",
+        "evidence_span": "桂柳集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福建盼盼食品集团",
+        "evidence_span": "福建盼盼食品集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "正大生物",
+        "evidence_span": "正大生物"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "力诚食品",
+        "evidence_span": "力诚食品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "益客集团",
+        "evidence_span": "益客集团"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:10:38"
+}

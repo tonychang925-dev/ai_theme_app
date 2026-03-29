@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "小家电代工",
+      "evidence_span": "小家电代工构成公司主要收入来源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车EPS电机",
+      "evidence_span": "汽车零部件主要包括EPS电机和刹车电机"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "小家电代工企业",
+      "evidence_span": "主要从事小家电及汽车EPS电机的设计、制造与销售业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "吸尘器",
+      "evidence_span": "吸尘器代工目前仍是公司最大的收入来源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "头发护理电器",
+      "evidence_span": "头发护理电器自2019年开始快速增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "EPS电机",
+      "evidence_span": "汽车零部件主要包括EPS电机和刹车电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "刹车电机",
+      "evidence_span": "汽车零部件主要包括EPS电机和刹车电机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TTI",
+      "evidence_span": "公司与TTI合作时间已长达15年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Hoover",
+      "evidence_span": "所服务的Hoover、Dirt Devil、Vax等品牌均为欧美知名品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Dirt Devil",
+      "evidence_span": "所服务的Hoover、Dirt Devil、Vax等品牌均为欧美知名品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Vax",
+      "evidence_span": "所服务的Hoover、Dirt Devil、Vax等品牌均为欧美知名品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Revlon",
+      "evidence_span": "头发护理电器包括美发梳与吹风机，主要服务于Revlon、Hot Tools等品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Hot Tools",
+      "evidence_span": "头发护理电器包括美发梳与吹风机，主要服务于Revlon、Hot Tools等品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "采埃孚",
+      "evidence_span": "子公司宁波德昌科技收到采埃孚的《定点通知书》"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "舍弗勒",
+      "evidence_span": "公司与舍弗勒、耐世特等其它Tier1供应商也进行了多款电机型号的研发、试样"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "耐世特",
+      "evidence_span": "公司与舍弗勒、耐世特等其它Tier1供应商也进行了多款电机型号的研发、试样"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "汽车电机迎来国产替代风口"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "小家电代工",
+        "evidence_span": "小家电代工构成公司主要收入来源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车EPS电机",
+        "evidence_span": "汽车零部件主要包括EPS电机和刹车电机"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "小家电代工企业",
+        "evidence_span": "主要从事小家电及汽车EPS电机的设计、制造与销售业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "吸尘器",
+        "evidence_span": "吸尘器代工目前仍是公司最大的收入来源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "头发护理电器",
+        "evidence_span": "头发护理电器自2019年开始快速增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "EPS电机",
+        "evidence_span": "汽车零部件主要包括EPS电机和刹车电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "刹车电机",
+        "evidence_span": "汽车零部件主要包括EPS电机和刹车电机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TTI",
+        "evidence_span": "公司与TTI合作时间已长达15年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Hoover",
+        "evidence_span": "所服务的Hoover、Dirt Devil、Vax等品牌均为欧美知名品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Dirt Devil",
+        "evidence_span": "所服务的Hoover、Dirt Devil、Vax等品牌均为欧美知名品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Vax",
+        "evidence_span": "所服务的Hoover、Dirt Devil、Vax等品牌均为欧美知名品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Revlon",
+        "evidence_span": "头发护理电器包括美发梳与吹风机，主要服务于Revlon、Hot Tools等品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Hot Tools",
+        "evidence_span": "头发护理电器包括美发梳与吹风机，主要服务于Revlon、Hot Tools等品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "采埃孚",
+        "evidence_span": "子公司宁波德昌科技收到采埃孚的《定点通知书》"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "舍弗勒",
+        "evidence_span": "公司与舍弗勒、耐世特等其它Tier1供应商也进行了多款电机型号的研发、试样"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "耐世特",
+        "evidence_span": "公司与舍弗勒、耐世特等其它Tier1供应商也进行了多款电机型号的研发、试样"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "汽车电机迎来国产替代风口"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:24:43"
+}

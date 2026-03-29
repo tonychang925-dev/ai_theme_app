@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "烟机",
+      "evidence_span": "烟机、灶具和消毒柜营收达78.6亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "灶具",
+      "evidence_span": "烟机、灶具和消毒柜营收达78.6亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "消毒柜",
+      "evidence_span": "烟机、灶具和消毒柜营收达78.6亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "一体机",
+      "evidence_span": "一体机为代表的第二品类群"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "洗碗机",
+      "evidence_span": "洗碗机为代表的第三品类"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "集成品类",
+      "evidence_span": "集成品类为代表的第四品类群"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "厨电龙头",
+      "evidence_span": "老板电器为老牌厨电龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端厨电龙头",
+      "evidence_span": "高端厨电龙头地位稳固"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油烟机",
+      "evidence_span": "老板油烟机凭借“双腔”与“算法智能控烟”技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大吸力油烟机",
+      "evidence_span": "首次定义“大吸力油烟机”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烟机",
+      "evidence_span": "老板烟机在KA渠道常年市占率领先"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一体机",
+      "evidence_span": "一体机为代表的第二品类群"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洗碗机",
+      "evidence_span": "洗碗机为代表的第三品类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集成灶",
+      "evidence_span": "集成灶等新兴品类拓展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双腔技术",
+      "evidence_span": "老板油烟机凭借“双腔”与“算法智能控烟”技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "算法智能控烟技术",
+      "evidence_span": "老板油烟机凭借“双腔”与“算法智能控烟”技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "消费升级",
+      "evidence_span": "受益于消费升级带来的高端市场扩张"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "烟机",
+        "evidence_span": "烟机、灶具和消毒柜营收达78.6亿元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "灶具",
+        "evidence_span": "烟机、灶具和消毒柜营收达78.6亿元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "消毒柜",
+        "evidence_span": "烟机、灶具和消毒柜营收达78.6亿元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "一体机",
+        "evidence_span": "一体机为代表的第二品类群"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "洗碗机",
+        "evidence_span": "洗碗机为代表的第三品类"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "集成品类",
+        "evidence_span": "集成品类为代表的第四品类群"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "厨电龙头",
+        "evidence_span": "老板电器为老牌厨电龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端厨电龙头",
+        "evidence_span": "高端厨电龙头地位稳固"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油烟机",
+        "evidence_span": "老板油烟机凭借“双腔”与“算法智能控烟”技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大吸力油烟机",
+        "evidence_span": "首次定义“大吸力油烟机”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烟机",
+        "evidence_span": "老板烟机在KA渠道常年市占率领先"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一体机",
+        "evidence_span": "一体机为代表的第二品类群"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洗碗机",
+        "evidence_span": "洗碗机为代表的第三品类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集成灶",
+        "evidence_span": "集成灶等新兴品类拓展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双腔技术",
+        "evidence_span": "老板油烟机凭借“双腔”与“算法智能控烟”技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "算法智能控烟技术",
+        "evidence_span": "老板油烟机凭借“双腔”与“算法智能控烟”技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "消费升级",
+        "evidence_span": "受益于消费升级带来的高端市场扩张"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:23:28"
+}

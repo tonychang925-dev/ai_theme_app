@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "08505a31d8c2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述公安部、国家互联网信息办公室发布《国家网络身份认证公共服务管理办法（征求意见稿）》并截止征求意见的事件，属于政策发布和时间推进，没有静态说明题材本身的核心知识。"}}

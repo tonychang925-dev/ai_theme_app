@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "0c865e2714ea", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了电影《一闪一闪亮星星》的预售票房事件（9280万）和上映时间，是具体电影的市场动态。"}}

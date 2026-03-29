@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "50b1b0998787", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述美国政府的管制事件和低价芯片冲击市场的新闻，属于具体的时间性动态和事件报道，没有提供关于半导体设备本身结构或技术的稳定知识。"}}

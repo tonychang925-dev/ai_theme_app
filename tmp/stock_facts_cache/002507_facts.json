@@ -1,0 +1,119 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "榨菜",
+      "evidence_span": "榨菜龙头企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "萝卜",
+      "evidence_span": "产线拓展指至萝卜"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "泡菜",
+      "evidence_span": "产线拓展指至萝卜、泡菜"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "酱腌菜",
+      "evidence_span": "其他酱腌菜产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "榨菜龙头企业",
+      "evidence_span": "榨菜龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "调味品龙头",
+      "evidence_span": "以产品多元化打造调味品龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小包装榨菜",
+      "evidence_span": "小包装榨菜销量约占榨菜行业 2/3"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "腌制萝卜",
+      "evidence_span": "腌制萝卜市场基础好"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "泡菜",
+      "evidence_span": "新品泡菜有望接力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化产能",
+      "evidence_span": "新增自动化产能"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全国化渠道",
+      "evidence_span": "全国化渠道建设"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "榨菜",
+        "evidence_span": "榨菜龙头企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "萝卜",
+        "evidence_span": "产线拓展指至萝卜"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "泡菜",
+        "evidence_span": "产线拓展指至萝卜、泡菜"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "酱腌菜",
+        "evidence_span": "其他酱腌菜产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "榨菜龙头企业",
+        "evidence_span": "榨菜龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "调味品龙头",
+        "evidence_span": "以产品多元化打造调味品龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小包装榨菜",
+        "evidence_span": "小包装榨菜销量约占榨菜行业 2/3"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "腌制萝卜",
+        "evidence_span": "腌制萝卜市场基础好"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "泡菜",
+        "evidence_span": "新品泡菜有望接力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化产能",
+        "evidence_span": "新增自动化产能"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全国化渠道",
+        "evidence_span": "全国化渠道建设"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:22:57"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "e6dff6749f2c", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落描述了国家大基金三期在特定日期（2024年5月24日）正式成立这一具体事件，并提及了其注册资本和未来的投资方向。这是典型的动态公告，属于事件推进，没有提供稳定的、可沉淀的静态知识。"}}

@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "测试电源设备制造",
+      "evidence_span": "专注于测试电源设备制造的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "测试系统",
+      "evidence_span": "为多行业提供测试系统及智能制造设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能制造设备",
+      "evidence_span": "为多行业提供测试系统及智能制造设备"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "测试电源领军者",
+      "evidence_span": "专业测试电源领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合型测试装备公司",
+      "evidence_span": "逐步成长为一家国内领先、业界知名的综合型测试装备公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "测试电源",
+      "evidence_span": "以测试电源为基础产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大功率测试电源",
+      "evidence_span": "大功率测试电源守住既有优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小功率测试电源",
+      "evidence_span": "小功率测试电源产品线不断丰富"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "测试系统",
+      "evidence_span": "测试系统，针对新能源汽车主要零部件提供功能和可靠性验证测试"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池电堆测试系统",
+      "evidence_span": "燃料电池电堆测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池发动机测试系统",
+      "evidence_span": "燃料电池发动机测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池DC/DC测试系统",
+      "evidence_span": "燃料电池DC/DC测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池空压机测试系统",
+      "evidence_span": "燃料电池空压机测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池专用直流回馈式电子负载",
+      "evidence_span": "燃料电池专用直流回馈式电子负载"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池氢气循环泵测试系统",
+      "evidence_span": "燃料电池氢气循环泵测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PEM电解槽测试系统",
+      "evidence_span": "PEM电解槽测试系统推出市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碱性电解槽测试产品",
+      "evidence_span": "布局碱性电解槽测试产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IGBT动态测试系统",
+      "evidence_span": "IGBT动态测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IGBT静态测试系统",
+      "evidence_span": "IGBT静态测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功率器件热特性测试系统",
+      "evidence_span": "功率器件热特性测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产线自动化测试工作站",
+      "evidence_span": "产线自动化测试工作站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产线自动化整体解决方案",
+      "evidence_span": "产线自动化整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SIC动静态测试设备",
+      "evidence_span": "SIC动静态测试设备已实现向多个龙头客户的销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功率模块的粗铝线键合设备",
+      "evidence_span": "功率模块的粗铝线键合设备研发工作稳步推进"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高动态性多BUCK变换技术",
+      "evidence_span": "高动态性多BUCK变换技术是大功率DC/DC能量变换的核心技术之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低谐波PWM并网馈能技术",
+      "evidence_span": "低谐波PWM并网馈能技术是大功率AC/DC能量变换的核心技术之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高压级联多电平变换技术",
+      "evidence_span": "高压级联多电平变换技术是利用低压开关器件低损耗、高开关频率的优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于多CPU多机串并联技术",
+      "evidence_span": "基于多CPU多机串并联技术的实现是基于LAN协议的广播式快速通讯方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高可靠功率单元模块化技术",
+      "evidence_span": "高可靠功率单元模块化技术主要体现在大功率电源模盒的抽屉式设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低压大电流脉冲恒流源技术",
+      "evidence_span": "低压大电流脉冲恒流源技术是通过利用电力电子器件线性区工作特点"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电网模拟电源输出电压快速变化技术",
+      "evidence_span": "电网模拟电源输出电压快速变化技术是基于H4全桥逆变平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "实物特性仿真技术",
+      "evidence_span": "实物特性仿真技术是通过软件仿真结合电力电子变换技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "科威尔国产替代东风起"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "测试电源设备制造",
+        "evidence_span": "专注于测试电源设备制造的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "测试系统",
+        "evidence_span": "为多行业提供测试系统及智能制造设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能制造设备",
+        "evidence_span": "为多行业提供测试系统及智能制造设备"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "测试电源领军者",
+        "evidence_span": "专业测试电源领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合型测试装备公司",
+        "evidence_span": "逐步成长为一家国内领先、业界知名的综合型测试装备公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "测试电源",
+        "evidence_span": "以测试电源为基础产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大功率测试电源",
+        "evidence_span": "大功率测试电源守住既有优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小功率测试电源",
+        "evidence_span": "小功率测试电源产品线不断丰富"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "测试系统",
+        "evidence_span": "测试系统，针对新能源汽车主要零部件提供功能和可靠性验证测试"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池电堆测试系统",
+        "evidence_span": "燃料电池电堆测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池发动机测试系统",
+        "evidence_span": "燃料电池发动机测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池DC/DC测试系统",
+        "evidence_span": "燃料电池DC/DC测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池空压机测试系统",
+        "evidence_span": "燃料电池空压机测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池专用直流回馈式电子负载",
+        "evidence_span": "燃料电池专用直流回馈式电子负载"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池氢气循环泵测试系统",
+        "evidence_span": "燃料电池氢气循环泵测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PEM电解槽测试系统",
+        "evidence_span": "PEM电解槽测试系统推出市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碱性电解槽测试产品",
+        "evidence_span": "布局碱性电解槽测试产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IGBT动态测试系统",
+        "evidence_span": "IGBT动态测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IGBT静态测试系统",
+        "evidence_span": "IGBT静态测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功率器件热特性测试系统",
+        "evidence_span": "功率器件热特性测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产线自动化测试工作站",
+        "evidence_span": "产线自动化测试工作站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产线自动化整体解决方案",
+        "evidence_span": "产线自动化整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SIC动静态测试设备",
+        "evidence_span": "SIC动静态测试设备已实现向多个龙头客户的销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功率模块的粗铝线键合设备",
+        "evidence_span": "功率模块的粗铝线键合设备研发工作稳步推进"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高动态性多BUCK变换技术",
+        "evidence_span": "高动态性多BUCK变换技术是大功率DC/DC能量变换的核心技术之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低谐波PWM并网馈能技术",
+        "evidence_span": "低谐波PWM并网馈能技术是大功率AC/DC能量变换的核心技术之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高压级联多电平变换技术",
+        "evidence_span": "高压级联多电平变换技术是利用低压开关器件低损耗、高开关频率的优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于多CPU多机串并联技术",
+        "evidence_span": "基于多CPU多机串并联技术的实现是基于LAN协议的广播式快速通讯方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高可靠功率单元模块化技术",
+        "evidence_span": "高可靠功率单元模块化技术主要体现在大功率电源模盒的抽屉式设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低压大电流脉冲恒流源技术",
+        "evidence_span": "低压大电流脉冲恒流源技术是通过利用电力电子器件线性区工作特点"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电网模拟电源输出电压快速变化技术",
+        "evidence_span": "电网模拟电源输出电压快速变化技术是基于H4全桥逆变平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "实物特性仿真技术",
+        "evidence_span": "实物特性仿真技术是通过软件仿真结合电力电子变换技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "科威尔国产替代东风起"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:47:25"
+}

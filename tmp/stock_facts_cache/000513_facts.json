@@ -1,0 +1,419 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药产品的研发",
+      "evidence_span": "以医药产品的研发、生产及销售为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "以医药产品的研发、生产及销售为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "以医药产品的研发、生产及销售为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "制剂产品",
+      "evidence_span": "产品涵盖制剂产品、原料药和中间体、诊断试剂及设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "原料药",
+      "evidence_span": "产品涵盖制剂产品、原料药和中间体、诊断试剂及设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中间体",
+      "evidence_span": "产品涵盖制剂产品、原料药和中间体、诊断试剂及设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "诊断试剂",
+      "evidence_span": "产品涵盖制剂产品、原料药和中间体、诊断试剂及设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设备",
+      "evidence_span": "产品涵盖制剂产品、原料药和中间体、诊断试剂及设备"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合一体化特色专科药企",
+      "evidence_span": "丽珠集团综合一体化特色专科药企"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专科用药龙头",
+      "evidence_span": "丽珠集团专科用药龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "艾普拉唑肠溶片",
+      "evidence_span": "壹丽安（艾普拉唑肠溶片及注射用艾普拉唑钠）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "注射用艾普拉唑钠",
+      "evidence_span": "壹丽安（艾普拉唑肠溶片及注射用艾普拉唑钠）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丽珠得乐（枸橼酸铋钾）系列产品",
+      "evidence_span": "丽珠得乐（枸橼酸铋钾）系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丽倍乐（雷贝拉唑钠肠溶胶囊）",
+      "evidence_span": "丽倍乐（雷贝拉唑钠肠溶胶囊）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维三联（枸橼酸铋钾片/替硝唑片/克拉霉素片）",
+      "evidence_span": "维三联（枸橼酸铋钾片/替硝唑片/克拉霉素片）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贝依（注射用醋酸亮丙瑞林微球）",
+      "evidence_span": "贝依（注射用醋酸亮丙瑞林微球）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丽申宝（注射用尿促卵泡素）",
+      "evidence_span": "丽申宝（注射用尿促卵泡素）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乐宝得（注射用尿促性素）",
+      "evidence_span": "乐宝得（注射用尿促性素）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丽福康（注射用伏立康唑）",
+      "evidence_span": "丽福康（注射用伏立康唑）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "瑞必乐（马来酸氟伏沙明片）",
+      "evidence_span": "瑞必乐（马来酸氟伏沙明片）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "康尔汀（盐酸哌罗匹隆片）",
+      "evidence_span": "康尔汀（盐酸哌罗匹隆片）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "参芪扶正注射液",
+      "evidence_span": "参芪扶正注射液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗病毒颗粒",
+      "evidence_span": "抗病毒颗粒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "美伐他汀",
+      "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阿卡波糖",
+      "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫酸粘菌素",
+      "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "苯丙氨酸",
+      "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盐酸万古霉素",
+      "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "达托霉素",
+      "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "米尔贝肟",
+      "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "头孢曲松钠",
+      "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肺炎支原体IgM抗体检测试剂（胶体金法）",
+      "evidence_span": "肺炎支原体IgM抗体检测试剂（胶体金法）、人类免疫缺陷病毒抗体诊断试剂盒（酶联免疫法）及抗核抗体检测试剂盒（磁条码免疫荧光法）等诊断试剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人类免疫缺陷病毒抗体诊断试剂盒（酶联免疫法）",
+      "evidence_span": "肺炎支原体IgM抗体检测试剂（胶体金法）、人类免疫缺陷病毒抗体诊断试剂盒（酶联免疫法）及抗核抗体检测试剂盒（磁条码免疫荧光法）等诊断试剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗核抗体检测试剂盒（磁条码免疫荧光法）",
+      "evidence_span": "肺炎支原体IgM抗体检测试剂（胶体金法）、人类免疫缺陷病毒抗体诊断试剂盒（酶联免疫法）及抗核抗体检测试剂盒（磁条码免疫荧光法）等诊断试剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "重组新型冠状病毒融合蛋白疫苗（丽康）",
+      "evidence_span": "重组新型冠状病毒融合蛋白疫苗（丽康）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "注射用重组人绒促性素",
+      "evidence_span": "注射用重组人绒促性素"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "托珠单抗注射液",
+      "evidence_span": "托珠单抗注射液（重组人源化抗人IL-6R单克隆抗体注射液）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "吡虫啉莫昔克丁滴剂",
+      "evidence_span": "吡虫啉莫昔克丁滴剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型冠状病毒（2019-nCoV）抗原检测试剂盒（乳胶法）",
+      "evidence_span": "新型冠状病毒（2019-nCoV）抗原检测试剂盒（乳胶法）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "缓释微球研发平台",
+      "evidence_span": "建立了缓释微球研发平台和生物制品研发平台等特色技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物制品研发平台",
+      "evidence_span": "建立了缓释微球研发平台和生物制品研发平台等特色技术平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "创新转型",
+      "evidence_span": "丽珠集团二次蝶变创新转型"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "精准医疗",
+      "evidence_span": "转型精准医疗"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药产品的研发、生产及销售",
+        "evidence_span": "以医药产品的研发、生产及销售为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "制剂产品",
+        "evidence_span": "产品涵盖制剂产品、原料药和中间体、诊断试剂及设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "原料药和中间体",
+        "evidence_span": "产品涵盖制剂产品、原料药和中间体、诊断试剂及设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "诊断试剂及设备",
+        "evidence_span": "产品涵盖制剂产品、原料药和中间体、诊断试剂及设备"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合一体化特色专科药企",
+        "evidence_span": "丽珠集团综合一体化特色专科药企"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专科用药龙头",
+        "evidence_span": "丽珠集团专科用药龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "艾普拉唑肠溶片",
+        "evidence_span": "壹丽安（艾普拉唑肠溶片及注射用艾普拉唑钠）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "注射用艾普拉唑钠",
+        "evidence_span": "壹丽安（艾普拉唑肠溶片及注射用艾普拉唑钠）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丽珠得乐（枸橼酸铋钾）系列产品",
+        "evidence_span": "丽珠得乐（枸橼酸铋钾）系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丽倍乐（雷贝拉唑钠肠溶胶囊）",
+        "evidence_span": "丽倍乐（雷贝拉唑钠肠溶胶囊）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维三联（枸橼酸铋钾片/替硝唑片/克拉霉素片）",
+        "evidence_span": "维三联（枸橼酸铋钾片/替硝唑片/克拉霉素片）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贝依（注射用醋酸亮丙瑞林微球）",
+        "evidence_span": "贝依（注射用醋酸亮丙瑞林微球）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丽申宝（注射用尿促卵泡素）",
+        "evidence_span": "丽申宝（注射用尿促卵泡素）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乐宝得（注射用尿促性素）",
+        "evidence_span": "乐宝得（注射用尿促性素）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丽福康（注射用伏立康唑）",
+        "evidence_span": "丽福康（注射用伏立康唑）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "瑞必乐（马来酸氟伏沙明片）",
+        "evidence_span": "瑞必乐（马来酸氟伏沙明片）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "康尔汀（盐酸哌罗匹隆片）",
+        "evidence_span": "康尔汀（盐酸哌罗匹隆片）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "参芪扶正注射液",
+        "evidence_span": "参芪扶正注射液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗病毒颗粒",
+        "evidence_span": "抗病毒颗粒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "美伐他汀",
+        "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阿卡波糖",
+        "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫酸粘菌素",
+        "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "苯丙氨酸",
+        "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盐酸万古霉素",
+        "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "达托霉素",
+        "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "米尔贝肟",
+        "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "头孢曲松钠",
+        "evidence_span": "美伐他汀、阿卡波糖、硫酸粘菌素、苯丙氨酸、盐酸万古霉素、达托霉素、米尔贝肟及头孢曲松钠等原料药和中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肺炎支原体IgM抗体检测试剂（胶体金法）",
+        "evidence_span": "肺炎支原体IgM抗体检测试剂（胶体金法）、人类免疫缺陷病毒抗体诊断试剂盒（酶联免疫法）及抗核抗体检测试剂盒（磁条码免疫荧光法）等诊断试剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人类免疫缺陷病毒抗体诊断试剂盒（酶联免疫法）",
+        "evidence_span": "肺炎支原体IgM抗体检测试剂（胶体金法）、人类免疫缺陷病毒抗体诊断试剂盒（酶联免疫法）及抗核抗体检测试剂盒（磁条码免疫荧光法）等诊断试剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗核抗体检测试剂盒（磁条码免疫荧光法）",
+        "evidence_span": "肺炎支原体IgM抗体检测试剂（胶体金法）、人类免疫缺陷病毒抗体诊断试剂盒（酶联免疫法）及抗核抗体检测试剂盒（磁条码免疫荧光法）等诊断试剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "重组新型冠状病毒融合蛋白疫苗（丽康）",
+        "evidence_span": "重组新型冠状病毒融合蛋白疫苗（丽康）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "注射用重组人绒促性素",
+        "evidence_span": "注射用重组人绒促性素"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "托珠单抗注射液",
+        "evidence_span": "托珠单抗注射液（重组人源化抗人IL-6R单克隆抗体注射液）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "吡虫啉莫昔克丁滴剂",
+        "evidence_span": "吡虫啉莫昔克丁滴剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型冠状病毒（2019-nCoV）抗原检测试剂盒（乳胶法）",
+        "evidence_span": "新型冠状病毒（2019-nCoV）抗原检测试剂盒（乳胶法）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "缓释微球研发平台",
+        "evidence_span": "建立了缓释微球研发平台和生物制品研发平台等特色技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物制品研发平台",
+        "evidence_span": "建立了缓释微球研发平台和生物制品研发平台等特色技术平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "创新转型",
+        "evidence_span": "丽珠集团二次蝶变创新转型"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "精准医疗",
+        "evidence_span": "转型精准医疗"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:58:45"
+}

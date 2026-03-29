@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "b54015485dff", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落开头介绍了CoWoS技术的应用（英伟达、AMD芯片采用），这属于稳定知识。但随后迅速转向描述产能紧缺现状、高管表态及未来产能规划等事件性内容。知识与事件混杂，边界不清晰。"}}

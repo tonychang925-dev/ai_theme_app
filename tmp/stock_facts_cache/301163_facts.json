@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端装备关键铸件的研发",
+      "evidence_span": "专业从事高端装备关键铸件的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端装备关键铸件的生产",
+      "evidence_span": "专业从事高端装备关键铸件的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端装备关键铸件的销售",
+      "evidence_span": "专业从事高端装备关键铸件的研发、生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端装备关键铸件生产企业",
+      "evidence_span": "同时在铸铁和铸铝领域拥有核心技术的高端装备关键铸件生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高新技术企业",
+      "evidence_span": "是一家具有自主研发和创新能力的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内外装备制造业关键部件供应商",
+      "evidence_span": "公司是国内外装备制造业关键部件供应商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铸铁件",
+      "evidence_span": "公司主要产品包括铸铁件和铸铝件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铸铝件",
+      "evidence_span": "公司主要产品包括铸铁件和铸铝件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电设备专用件",
+      "evidence_span": "公司产品主要包括风电设备专用件、电力设备专用件、医疗器械专用件、注塑机专用件、泵阀专用件等五大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力设备专用件",
+      "evidence_span": "公司产品主要包括风电设备专用件、电力设备专用件、医疗器械专用件、注塑机专用件、泵阀专用件等五大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗器械专用件",
+      "evidence_span": "公司产品主要包括风电设备专用件、电力设备专用件、医疗器械专用件、注塑机专用件、泵阀专用件等五大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "注塑机专用件",
+      "evidence_span": "公司产品主要包括风电设备专用件、电力设备专用件、医疗器械专用件、注塑机专用件、泵阀专用件等五大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "泵阀专用件",
+      "evidence_span": "公司产品主要包括风电设备专用件、电力设备专用件、医疗器械专用件、注塑机专用件、泵阀专用件等五大类"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "球铁低温材质QT400-18LT零下40度",
+      "evidence_span": "球铁低温材质QT400-18LT 零下40度和高硅固溶铁素体等特殊材质研发取得阶段性成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高硅固溶铁素体",
+      "evidence_span": "球铁低温材质QT400-18LT 零下40度和高硅固溶铁素体等特殊材质研发取得阶段性成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铝件金属型工艺",
+      "evidence_span": "铝件金属型工艺初显成效"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国际先进喂丝球化技术",
+      "evidence_span": "国际先进喂丝球化技术在特大件生产得到应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Enercon",
+      "evidence_span": "公司在风电设备行业主要客户包括Enercon、西门子-歌美飒、金风科技、南高齿、中国中车等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子-歌美飒",
+      "evidence_span": "公司在风电设备行业主要客户包括Enercon、西门子-歌美飒、金风科技、南高齿、中国中车等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金风科技",
+      "evidence_span": "公司在风电设备行业主要客户包括Enercon、西门子-歌美飒、金风科技、南高齿、中国中车等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南高齿",
+      "evidence_span": "公司在风电设备行业主要客户包括Enercon、西门子-歌美飒、金风科技、南高齿、中国中车等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国中车",
+      "evidence_span": "公司在风电设备行业主要客户包括Enercon、西门子-歌美飒、金风科技、南高齿、中国中车等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子医疗",
+      "evidence_span": "公司主要客户还包括医疗器械领域的西门子医疗、东软医疗等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东软医疗",
+      "evidence_span": "公司主要客户还包括医疗器械领域的西门子医疗、东软医疗等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ABB日立",
+      "evidence_span": "电力设备领域的ABB日立、思源电气等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "思源电气",
+      "evidence_span": "电力设备领域的ABB日立、思源电气等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恩格尔",
+      "evidence_span": "注塑机领域的恩格尔、克劳斯玛菲等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "克劳斯玛菲",
+      "evidence_span": "注塑机领域的恩格尔、克劳斯玛菲等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "格兰富",
+      "evidence_span": "泵阀领域的格兰富等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "成功研发高端医疗设备核心部件，实现了高精尖部件的国产替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端装备关键铸件的研发",
+        "evidence_span": "专业从事高端装备关键铸件的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端装备关键铸件的生产",
+        "evidence_span": "专业从事高端装备关键铸件的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端装备关键铸件的销售",
+        "evidence_span": "专业从事高端装备关键铸件的研发、生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端装备关键铸件生产企业",
+        "evidence_span": "同时在铸铁和铸铝领域拥有核心技术的高端装备关键铸件生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高新技术企业",
+        "evidence_span": "是一家具有自主研发和创新能力的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内外装备制造业关键部件供应商",
+        "evidence_span": "公司是国内外装备制造业关键部件供应商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铸铁件",
+        "evidence_span": "公司主要产品包括铸铁件和铸铝件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铸铝件",
+        "evidence_span": "公司主要产品包括铸铁件和铸铝件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电设备专用件",
+        "evidence_span": "公司产品主要包括风电设备专用件、电力设备专用件、医疗器械专用件、注塑机专用件、泵阀专用件等五大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力设备专用件",
+        "evidence_span": "公司产品主要包括风电设备专用件、电力设备专用件、医疗器械专用件、注塑机专用件、泵阀专用件等五大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗器械专用件",
+        "evidence_span": "公司产品主要包括风电设备专用件、电力设备专用件、医疗器械专用件、注塑机专用件、泵阀专用件等五大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "注塑机专用件",
+        "evidence_span": "公司产品主要包括风电设备专用件、电力设备专用件、医疗器械专用件、注塑机专用件、泵阀专用件等五大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "泵阀专用件",
+        "evidence_span": "公司产品主要包括风电设备专用件、电力设备专用件、医疗器械专用件、注塑机专用件、泵阀专用件等五大类"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "球铁低温材质QT400-18LT零下40度",
+        "evidence_span": "球铁低温材质QT400-18LT 零下40度和高硅固溶铁素体等特殊材质研发取得阶段性成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高硅固溶铁素体",
+        "evidence_span": "球铁低温材质QT400-18LT 零下40度和高硅固溶铁素体等特殊材质研发取得阶段性成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铝件金属型工艺",
+        "evidence_span": "铝件金属型工艺初显成效"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国际先进喂丝球化技术",
+        "evidence_span": "国际先进喂丝球化技术在特大件生产得到应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Enercon",
+        "evidence_span": "公司在风电设备行业主要客户包括Enercon、西门子-歌美飒、金风科技、南高齿、中国中车等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子-歌美飒",
+        "evidence_span": "公司在风电设备行业主要客户包括Enercon、西门子-歌美飒、金风科技、南高齿、中国中车等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金风科技",
+        "evidence_span": "公司在风电设备行业主要客户包括Enercon、西门子-歌美飒、金风科技、南高齿、中国中车等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南高齿",
+        "evidence_span": "公司在风电设备行业主要客户包括Enercon、西门子-歌美飒、金风科技、南高齿、中国中车等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国中车",
+        "evidence_span": "公司在风电设备行业主要客户包括Enercon、西门子-歌美飒、金风科技、南高齿、中国中车等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子医疗",
+        "evidence_span": "公司主要客户还包括医疗器械领域的西门子医疗、东软医疗等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东软医疗",
+        "evidence_span": "公司主要客户还包括医疗器械领域的西门子医疗、东软医疗等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ABB日立",
+        "evidence_span": "电力设备领域的ABB日立、思源电气等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "思源电气",
+        "evidence_span": "电力设备领域的ABB日立、思源电气等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恩格尔",
+        "evidence_span": "注塑机领域的恩格尔、克劳斯玛菲等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "克劳斯玛菲",
+        "evidence_span": "注塑机领域的恩格尔、克劳斯玛菲等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "格兰富",
+        "evidence_span": "泵阀领域的格兰富等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "成功研发高端医疗设备核心部件，实现了高精尖部件的国产替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:47:51"
+}

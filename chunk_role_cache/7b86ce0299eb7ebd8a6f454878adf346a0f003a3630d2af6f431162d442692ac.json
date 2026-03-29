@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "a57386554786", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落以华为申请专利的具体事件开头，但随后包含了对该专利技术（如桥接技术、与CoWoS-L的类比）、其预期性能（搭载HBM、通过中间层互连）以及对中国半导体产业战略意义（利用成熟制程+先进封装缩小差距）的说明性知识。知识与具体事件（专利、台湾实体名单）混杂，边界不干净。"}}

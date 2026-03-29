@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:24:22", "result": {"chunk_id": "aba2f731d283", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中美经贸会谈的具体事件，包括时间、参与方和议程，虽然提到稀土是美方关注重点，但整体以事件报道为主，没有提供稀土永磁的静态知识。"}}

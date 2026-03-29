@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "11455ae9e6a8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中国民航局关于C919适航认可审定的表态，属于政策或监管进展的具体事件，无静态知识。"}}

@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药制造业务",
+      "evidence_span": "以医药制造业务为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "内燃机零部件业务",
+      "evidence_span": "内燃机零部件业务与光伏设备业务多元并进"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏设备业务",
+      "evidence_span": "内燃机零部件业务与光伏设备业务多元并进"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "内燃机零部件生产企业",
+      "evidence_span": "公司是专业的内燃机零部件生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "柴油发动机涡轮增压器行业领先者",
+      "evidence_span": "柴油发动机涡轮增压器行业领先者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光伏设备中的“先导”",
+      "evidence_span": "康跃科技转型成为光伏设备中的“先导”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药饮片",
+      "evidence_span": "长江星主要从事中药饮片、药用胶囊的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药用胶囊",
+      "evidence_span": "长江星主要从事中药饮片、药用胶囊的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药批发",
+      "evidence_span": "长江星主要从事中药饮片、药用胶囊的研发、生产和销售以及医药批发等业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡轮增压器",
+      "evidence_span": "康跃（山东）主要从事涡轮增压器产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "层压机",
+      "evidence_span": "羿珩科技主要从事层压机、叠焊机等光伏设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "叠焊机",
+      "evidence_span": "羿珩科技主要从事层压机、叠焊机等光伏设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动层压机",
+      "evidence_span": "主要产品为全自动层压机以及全自动汇流条焊接机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动汇流条焊接机",
+      "evidence_span": "主要产品为全自动层压机以及全自动汇流条焊接机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "KT60S双层通道（DLP）可变截面涡轮增压器",
+      "evidence_span": "KT60S双层通道（DLP）可变截面涡轮增压器被评为国家重点新产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "JP90S分体式非对称涡轮增压器",
+      "evidence_span": "JP90S分体式非对称涡轮增压器被评为国家重点新产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "JK60S可变截面涡轮增压器",
+      "evidence_span": "JK60S可变截面涡轮增压器获得山东省科技进步奖三等奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "J60S防爆涡轮增压器",
+      "evidence_span": "J60S防爆涡轮增压器获得山东省科技进步奖三等奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "JP50S汽油机涡轮增压器",
+      "evidence_span": "JP50S汽油机涡轮增压器获得中国机械工业科学技术奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "油加热层压机",
+      "evidence_span": "相继开发出油加热层压机、BIPV双玻组件专用层压机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BIPV双玻组件专用层压机",
+      "evidence_span": "相继开发出油加热层压机、BIPV双玻组件专用层压机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双层式流水线对接层压机",
+      "evidence_span": "双层式流水线对接层压机、双联动全自动层压机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双联动全自动层压机",
+      "evidence_span": "双层式流水线对接层压机、双联动全自动层压机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三联动式层压机",
+      "evidence_span": "三联动式层压机、全套智能封装设备流水线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全套智能封装设备流水线",
+      "evidence_span": "三联动式层压机、全套智能封装设备流水线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双层三腔全自动层压机",
+      "evidence_span": "双层三腔全自动层压机、全自动汇流条焊接机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大面积层压机",
+      "evidence_span": "全自动汇流条焊接机、大面积层压机等产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "晶科能源",
+      "evidence_span": "与晶科能源、天合光能、阿特斯、晶澳太阳能等主流光伏组件厂商保持长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天合光能",
+      "evidence_span": "与晶科能源、天合光能、阿特斯、晶澳太阳能等主流光伏组件厂商保持长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿特斯",
+      "evidence_span": "与晶科能源、天合光能、阿特斯、晶澳太阳能等主流光伏组件厂商保持长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "晶澳太阳能",
+      "evidence_span": "与晶科能源、天合光能、阿特斯、晶澳太阳能等主流光伏组件厂商保持长期稳定的合作关系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药制造业务",
+        "evidence_span": "以医药制造业务为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "内燃机零部件业务",
+        "evidence_span": "内燃机零部件业务与光伏设备业务多元并进"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏设备业务",
+        "evidence_span": "内燃机零部件业务与光伏设备业务多元并进"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "内燃机零部件生产企业",
+        "evidence_span": "公司是专业的内燃机零部件生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "柴油发动机涡轮增压器行业领先者",
+        "evidence_span": "柴油发动机涡轮增压器行业领先者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光伏设备中的“先导”",
+        "evidence_span": "康跃科技转型成为光伏设备中的“先导”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药饮片",
+        "evidence_span": "长江星主要从事中药饮片、药用胶囊的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药用胶囊",
+        "evidence_span": "长江星主要从事中药饮片、药用胶囊的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药批发",
+        "evidence_span": "长江星主要从事中药饮片、药用胶囊的研发、生产和销售以及医药批发等业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡轮增压器",
+        "evidence_span": "康跃（山东）主要从事涡轮增压器产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "层压机",
+        "evidence_span": "羿珩科技主要从事层压机、叠焊机等光伏设备的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "叠焊机",
+        "evidence_span": "羿珩科技主要从事层压机、叠焊机等光伏设备的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动层压机",
+        "evidence_span": "主要产品为全自动层压机以及全自动汇流条焊接机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动汇流条焊接机",
+        "evidence_span": "主要产品为全自动层压机以及全自动汇流条焊接机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "KT60S双层通道（DLP）可变截面涡轮增压器",
+        "evidence_span": "KT60S双层通道（DLP）可变截面涡轮增压器被评为国家重点新产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "JP90S分体式非对称涡轮增压器",
+        "evidence_span": "JP90S分体式非对称涡轮增压器被评为国家重点新产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "JK60S可变截面涡轮增压器",
+        "evidence_span": "JK60S可变截面涡轮增压器获得山东省科技进步奖三等奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "J60S防爆涡轮增压器",
+        "evidence_span": "J60S防爆涡轮增压器获得山东省科技进步奖三等奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "JP50S汽油机涡轮增压器",
+        "evidence_span": "JP50S汽油机涡轮增压器获得中国机械工业科学技术奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "油加热层压机",
+        "evidence_span": "相继开发出油加热层压机、BIPV双玻组件专用层压机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BIPV双玻组件专用层压机",
+        "evidence_span": "相继开发出油加热层压机、BIPV双玻组件专用层压机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双层式流水线对接层压机",
+        "evidence_span": "双层式流水线对接层压机、双联动全自动层压机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双联动全自动层压机",
+        "evidence_span": "双层式流水线对接层压机、双联动全自动层压机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三联动式层压机",
+        "evidence_span": "三联动式层压机、全套智能封装设备流水线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全套智能封装设备流水线",
+        "evidence_span": "三联动式层压机、全套智能封装设备流水线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双层三腔全自动层压机",
+        "evidence_span": "双层三腔全自动层压机、全自动汇流条焊接机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大面积层压机",
+        "evidence_span": "全自动汇流条焊接机、大面积层压机等产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "晶科能源",
+        "evidence_span": "与晶科能源、天合光能、阿特斯、晶澳太阳能等主流光伏组件厂商保持长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天合光能",
+        "evidence_span": "与晶科能源、天合光能、阿特斯、晶澳太阳能等主流光伏组件厂商保持长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿特斯",
+        "evidence_span": "与晶科能源、天合光能、阿特斯、晶澳太阳能等主流光伏组件厂商保持长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "晶澳太阳能",
+        "evidence_span": "与晶科能源、天合光能、阿特斯、晶澳太阳能等主流光伏组件厂商保持长期稳定的合作关系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:14:44"
+}

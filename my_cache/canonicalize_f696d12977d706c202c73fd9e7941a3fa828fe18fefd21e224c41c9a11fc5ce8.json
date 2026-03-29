@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:52:22", "result": {"span_uid": "352babac36f2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "EUV光刻机研发进展", "stability": "low", "reason": "原文包含模糊表述（2.5家、华为、长春等）、具体时间点（2025试生产）和事件性信息，无法整理成稳定、独立的知识块，且稳定性低，故丢弃。"}}

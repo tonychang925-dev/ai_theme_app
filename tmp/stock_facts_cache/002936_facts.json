@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "政策性科创金融",
+      "evidence_span": "打造政策性科创金融特色银行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "市民金融",
+      "evidence_span": "市民金融战略丰富特色场景"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "乡村金融",
+      "evidence_span": "乡村金融战略坚持服务下沉"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "小微企业园金融",
+      "evidence_span": "小微企业园战略实现全省重点园区对接全覆盖"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "商贸物流银行",
+      "evidence_span": "打造独具特色的“商贸物流银行”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "研发贷",
+      "evidence_span": "全省首推“研发贷”产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专属理财产品",
+      "evidence_span": "推出专属理财产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金融债券",
+      "evidence_span": "发行2023年第一期金融债券"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化转型提升工程",
+      "evidence_span": "按计划实施数字化转型提升工程各项任务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "财富管理平台",
+      "evidence_span": "上线财富管理平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新一代票据系统",
+      "evidence_span": "新一代票据系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "创投公司",
+      "evidence_span": "加大与创投公司开展对接活动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "担保机构",
+      "evidence_span": "加大与担保机构开展对接活动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "知识产权部门",
+      "evidence_span": "加大与知识产权部门开展对接活动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科研机构",
+      "evidence_span": "加大与科研机构开展对接活动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各地市政府",
+      "evidence_span": "主动拜会各地市政府"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双碳战略",
+      "evidence_span": "积极推进“双碳”战略稳步落地"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "政策性科创金融",
+        "evidence_span": "打造政策性科创金融特色银行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "市民金融",
+        "evidence_span": "市民金融战略丰富特色场景"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "乡村金融",
+        "evidence_span": "乡村金融战略坚持服务下沉"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "小微企业园金融",
+        "evidence_span": "小微企业园战略实现全省重点园区对接全覆盖"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "商贸物流银行",
+        "evidence_span": "打造独具特色的“商贸物流银行”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "研发贷",
+        "evidence_span": "全省首推“研发贷”产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专属理财产品",
+        "evidence_span": "推出专属理财产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金融债券",
+        "evidence_span": "发行2023年第一期金融债券"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化转型提升工程",
+        "evidence_span": "按计划实施数字化转型提升工程各项任务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "财富管理平台",
+        "evidence_span": "上线财富管理平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新一代票据系统",
+        "evidence_span": "新一代票据系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "创投公司",
+        "evidence_span": "加大与创投公司开展对接活动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "担保机构",
+        "evidence_span": "加大与担保机构开展对接活动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "知识产权部门",
+        "evidence_span": "加大与知识产权部门开展对接活动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科研机构",
+        "evidence_span": "加大与科研机构开展对接活动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各地市政府",
+        "evidence_span": "主动拜会各地市政府"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双碳战略",
+        "evidence_span": "积极推进“双碳”战略稳步落地"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:47:03"
+}

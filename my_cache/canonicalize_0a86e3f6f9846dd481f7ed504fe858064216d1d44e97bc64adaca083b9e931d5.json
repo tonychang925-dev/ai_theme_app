@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:54:06", "result": {"span_uid": "4dbd525354fa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政策环境概述", "stability": "low", "reason": "该片段提到了具体政策名称如“史上最严限塑令”和《终止塑料污染决议（草案）》，这些是事件性或具体政策表述，无法整理成稳定、可脱离原新闻上下文独立成立的知识块。政策信息可能随时间失效或变化，稳定性低，因此丢弃。"}}

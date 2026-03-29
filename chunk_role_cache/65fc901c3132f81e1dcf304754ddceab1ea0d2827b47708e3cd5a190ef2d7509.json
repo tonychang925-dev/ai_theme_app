@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "03e10a9a9137", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述光引发剂价格变化的市场数据，属于价格动态和行情信息，不包含光刻胶的静态知识，与题材本体构建无关。"}}

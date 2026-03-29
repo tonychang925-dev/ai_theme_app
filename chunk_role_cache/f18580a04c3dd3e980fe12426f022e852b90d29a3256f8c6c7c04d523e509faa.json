@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:49", "result": {"chunk_id": "b54015485dff", "decision": "cross_topic_or_noise", "confidence": 0.9, "reason": "该段落核心内容是关于CoWoS先进封装技术，属于封装题材，与半导体设备题材虽有表面关联，但不应进入当前题材本体构建。"}}

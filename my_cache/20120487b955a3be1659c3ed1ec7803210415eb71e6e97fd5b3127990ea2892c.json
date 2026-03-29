@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "2a8adfae016c", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件（拜登政府撤销许可证），涉及时间（2024年5月8日）和动态行动，属于新闻或政策更新，没有提供关于半导体本身的静态知识。"}}

@@ -1,0 +1,119 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "时尚健康电器的研发",
+      "evidence_span": "始终坚持时尚健康电器的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "时尚健康电器的设计",
+      "evidence_span": "始终坚持时尚健康电器的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "时尚健康电器的制造",
+      "evidence_span": "始终坚持时尚健康电器的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "时尚健康电器的销售",
+      "evidence_span": "始终坚持时尚健康电器的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产按摩椅头部品牌",
+      "evidence_span": "发展成为国产按摩椅头部品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "按摩椅",
+      "evidence_span": "国产按摩椅龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "按摩器具",
+      "evidence_span": "按摩器具龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全价位段产品矩阵",
+      "evidence_span": "搭建起从千元至万元级全价位段产品矩阵"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "先进技术",
+      "evidence_span": "先进技术确保产品竞争力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "BodyFriend",
+      "evidence_span": "深度绑定BodyFriend"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产高端按摩椅龙头",
+      "evidence_span": "国产高端按摩椅龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "时尚健康电器的研发",
+        "evidence_span": "始终坚持时尚健康电器的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "时尚健康电器的设计",
+        "evidence_span": "始终坚持时尚健康电器的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "时尚健康电器的制造",
+        "evidence_span": "始终坚持时尚健康电器的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "时尚健康电器的销售",
+        "evidence_span": "始终坚持时尚健康电器的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产按摩椅头部品牌",
+        "evidence_span": "发展成为国产按摩椅头部品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "按摩椅",
+        "evidence_span": "国产按摩椅龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "按摩器具",
+        "evidence_span": "按摩器具龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全价位段产品矩阵",
+        "evidence_span": "搭建起从千元至万元级全价位段产品矩阵"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "先进技术",
+        "evidence_span": "先进技术确保产品竞争力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "BodyFriend",
+        "evidence_span": "深度绑定BodyFriend"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产高端按摩椅龙头",
+        "evidence_span": "国产高端按摩椅龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:36:06"
+}

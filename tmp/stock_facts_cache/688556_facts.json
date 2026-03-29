@@ -1,0 +1,424 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "切割设备",
+      "evidence_span": "公司主要经营切割设备、轮胎测试设备和金刚线耗材这三大业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轮胎测试设备",
+      "evidence_span": "公司主要经营切割设备、轮胎测试设备和金刚线耗材这三大业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金刚线耗材",
+      "evidence_span": "公司主要经营切割设备、轮胎测试设备和金刚线耗材这三大业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "硅片",
+      "evidence_span": "硅片及切割加工服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "切割加工服务",
+      "evidence_span": "硅片及切割加工服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光伏切割设备+耗材龙头",
+      "evidence_span": "光伏切割设备+耗材龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高硬脆材料切割龙头",
+      "evidence_span": "高硬脆材料切割龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光伏切片方案专家",
+      "evidence_span": "光伏切片方案专家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "截断设备",
+      "evidence_span": "产品覆盖截断、开方、磨面、抛倒及切片设备+金刚线耗材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "开方设备",
+      "evidence_span": "产品覆盖截断、开方、磨面、抛倒及切片设备+金刚线耗材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磨面设备",
+      "evidence_span": "产品覆盖截断、开方、磨面、抛倒及切片设备+金刚线耗材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抛倒设备",
+      "evidence_span": "产品覆盖截断、开方、磨面、抛倒及切片设备+金刚线耗材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "切片设备",
+      "evidence_span": "产品覆盖截断、开方、磨面、抛倒及切片设备+金刚线耗材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金刚线耗材",
+      "evidence_span": "产品覆盖截断、开方、磨面、抛倒及切片设备+金刚线耗材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "切片一体化解决方案",
+      "evidence_span": "实现切片一体化解决方案提供能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅片及切割加工服务",
+      "evidence_span": "硅片及切割加工服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "8英寸半导体切片机",
+      "evidence_span": "8英寸半导体切片机已进入麦斯克生产体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体研磨机",
+      "evidence_span": "半导体研磨机、碳化硅切片机及碳化硅专用金刚线已在客户端试用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳化硅切片机",
+      "evidence_span": "半导体研磨机、碳化硅切片机及碳化硅专用金刚线已在客户端试用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳化硅专用金刚线",
+      "evidence_span": "半导体研磨机、碳化硅切片机及碳化硅专用金刚线已在客户端试用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轮胎测试设备",
+      "evidence_span": "轮胎测试设备及耗材业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蓝宝石切片设备",
+      "evidence_span": "蓝宝石切片设备首次实现700mm晶棒加工"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磁材多线切割机",
+      "evidence_span": "磁材多线切割机在2021年实现批量销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "异质结N型大尺寸120μm硅片半片切割",
+      "evidence_span": "首次实现异质结N型大尺寸120μm硅片半片切割"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "40/38μm线型批量",
+      "evidence_span": "40/38μm线型已实现批量"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "36μm线型逐步推广",
+      "evidence_span": "36μm线型逐步推广中"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "35μm线型及以下研发测试",
+      "evidence_span": "35μm线型及以下开展研发测试"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "切割设备+耗材+工艺技术三轮驱动",
+      "evidence_span": "基于“切割设备+耗材+工艺技术”三轮驱动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "隆基",
+      "evidence_span": "客户覆盖全球光伏硅片产能前十名企业（隆基、中环、晶科、晶澳等）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中环",
+      "evidence_span": "客户覆盖全球光伏硅片产能前十名企业（隆基、中环、晶科、晶澳等）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "晶科",
+      "evidence_span": "客户覆盖全球光伏硅片产能前十名企业（隆基、中环、晶科、晶澳等）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "晶澳",
+      "evidence_span": "客户覆盖全球光伏硅片产能前十名企业（隆基、中环、晶科、晶澳等）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通威",
+      "evidence_span": "已与通威、美科太阳能、京运通、阳光能源等光伏企业建立合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美科太阳能",
+      "evidence_span": "已与通威、美科太阳能、京运通、阳光能源等光伏企业建立合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京运通",
+      "evidence_span": "已与通威、美科太阳能、京运通、阳光能源等光伏企业建立合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阳光能源",
+      "evidence_span": "已与通威、美科太阳能、京运通、阳光能源等光伏企业建立合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦斯克",
+      "evidence_span": "8英寸半导体切片机已进入麦斯克生产体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国固特异",
+      "evidence_span": "客户覆盖全球知名轮胎制造商（美国固特异、法国米其林、德国大陆马牌等）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法国米其林",
+      "evidence_span": "客户覆盖全球知名轮胎制造商（美国固特异、法国米其林、德国大陆马牌等）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国大陆马牌",
+      "evidence_span": "客户覆盖全球知名轮胎制造商（美国固特异、法国米其林、德国大陆马牌等）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "爱康科技",
+      "evidence_span": "与爱康科技建立战略合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "半导体国产化",
+      "evidence_span": "受益半导体国产化加速"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "切割设备",
+        "evidence_span": "公司主要经营切割设备、轮胎测试设备和金刚线耗材这三大业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "轮胎测试设备",
+        "evidence_span": "公司主要经营切割设备、轮胎测试设备和金刚线耗材这三大业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金刚线耗材",
+        "evidence_span": "公司主要经营切割设备、轮胎测试设备和金刚线耗材这三大业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "硅片及切割加工服务",
+        "evidence_span": "硅片及切割加工服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光伏切割设备+耗材龙头",
+        "evidence_span": "光伏切割设备+耗材龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高硬脆材料切割龙头",
+        "evidence_span": "高硬脆材料切割龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光伏切片方案专家",
+        "evidence_span": "光伏切片方案专家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "截断设备",
+        "evidence_span": "产品覆盖截断、开方、磨面、抛倒及切片设备+金刚线耗材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "开方设备",
+        "evidence_span": "产品覆盖截断、开方、磨面、抛倒及切片设备+金刚线耗材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磨面设备",
+        "evidence_span": "产品覆盖截断、开方、磨面、抛倒及切片设备+金刚线耗材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抛倒设备",
+        "evidence_span": "产品覆盖截断、开方、磨面、抛倒及切片设备+金刚线耗材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "切片设备",
+        "evidence_span": "产品覆盖截断、开方、磨面、抛倒及切片设备+金刚线耗材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金刚线耗材",
+        "evidence_span": "产品覆盖截断、开方、磨面、抛倒及切片设备+金刚线耗材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "切片一体化解决方案",
+        "evidence_span": "实现切片一体化解决方案提供能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅片及切割加工服务",
+        "evidence_span": "硅片及切割加工服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "8英寸半导体切片机",
+        "evidence_span": "8英寸半导体切片机已进入麦斯克生产体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体研磨机",
+        "evidence_span": "半导体研磨机、碳化硅切片机及碳化硅专用金刚线已在客户端试用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳化硅切片机",
+        "evidence_span": "半导体研磨机、碳化硅切片机及碳化硅专用金刚线已在客户端试用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳化硅专用金刚线",
+        "evidence_span": "半导体研磨机、碳化硅切片机及碳化硅专用金刚线已在客户端试用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轮胎测试设备",
+        "evidence_span": "轮胎测试设备及耗材业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蓝宝石切片设备",
+        "evidence_span": "蓝宝石切片设备首次实现700mm晶棒加工"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磁材多线切割机",
+        "evidence_span": "磁材多线切割机在2021年实现批量销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "异质结N型大尺寸120μm硅片半片切割",
+        "evidence_span": "首次实现异质结N型大尺寸120μm硅片半片切割"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "40/38μm线型批量",
+        "evidence_span": "40/38μm线型已实现批量"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "36μm线型逐步推广",
+        "evidence_span": "36μm线型逐步推广中"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "35μm线型及以下研发测试",
+        "evidence_span": "35μm线型及以下开展研发测试"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "切割设备+耗材+工艺技术三轮驱动",
+        "evidence_span": "基于“切割设备+耗材+工艺技术”三轮驱动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "隆基",
+        "evidence_span": "客户覆盖全球光伏硅片产能前十名企业（隆基、中环、晶科、晶澳等）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中环",
+        "evidence_span": "客户覆盖全球光伏硅片产能前十名企业（隆基、中环、晶科、晶澳等）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "晶科",
+        "evidence_span": "客户覆盖全球光伏硅片产能前十名企业（隆基、中环、晶科、晶澳等）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "晶澳",
+        "evidence_span": "客户覆盖全球光伏硅片产能前十名企业（隆基、中环、晶科、晶澳等）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通威",
+        "evidence_span": "已与通威、美科太阳能、京运通、阳光能源等光伏企业建立合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美科太阳能",
+        "evidence_span": "已与通威、美科太阳能、京运通、阳光能源等光伏企业建立合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京运通",
+        "evidence_span": "已与通威、美科太阳能、京运通、阳光能源等光伏企业建立合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阳光能源",
+        "evidence_span": "已与通威、美科太阳能、京运通、阳光能源等光伏企业建立合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦斯克",
+        "evidence_span": "8英寸半导体切片机已进入麦斯克生产体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国固特异",
+        "evidence_span": "客户覆盖全球知名轮胎制造商（美国固特异、法国米其林、德国大陆马牌等）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法国米其林",
+        "evidence_span": "客户覆盖全球知名轮胎制造商（美国固特异、法国米其林、德国大陆马牌等）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国大陆马牌",
+        "evidence_span": "客户覆盖全球知名轮胎制造商（美国固特异、法国米其林、德国大陆马牌等）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "爱康科技",
+        "evidence_span": "与爱康科技建立战略合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "半导体国产化",
+        "evidence_span": "受益半导体国产化加速"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:49:12"
+}

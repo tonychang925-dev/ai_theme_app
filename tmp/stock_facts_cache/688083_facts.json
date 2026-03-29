@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "2D CAD",
+      "evidence_span": "公司已形成2D CAD+3D CAD+CAE三大产品线"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "3D CAD",
+      "evidence_span": "公司已形成2D CAD+3D CAD+CAE三大产品线"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "CAE",
+      "evidence_span": "公司已形成2D CAD+3D CAD+CAE三大产品线"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内领先CAD企业",
+      "evidence_span": "国内领先CAD企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产CAx龙头",
+      "evidence_span": "国产CAx龙头扬帆起航"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产CAD领导者",
+      "evidence_span": "国产CAD领导者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ZWCAD",
+      "evidence_span": "公司除推出具备自主核心技术的ZWCAD外"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中望CAD机械版",
+      "evidence_span": "现推出中望CAD机械版和中望CAD建筑版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中望CAD建筑版",
+      "evidence_span": "现推出中望CAD机械版和中望CAD建筑版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中望景园",
+      "evidence_span": "公司还有中望景园、中望模具、中望水暖电、中望结构等行业应用软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中望模具",
+      "evidence_span": "公司还有中望景园、中望模具、中望水暖电、中望结构等行业应用软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中望水暖电",
+      "evidence_span": "公司还有中望景园、中望模具、中望水暖电、中望结构等行业应用软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中望结构",
+      "evidence_span": "公司还有中望景园、中望模具、中望水暖电、中望结构等行业应用软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ZW3D",
+      "evidence_span": "推出三维CAD/CAM一体化软件ZW3D"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ZWMeshWorks",
+      "evidence_span": "结合通用前后处理平台ZWMeshWorks、电磁仿真ZWSim-EM和结构仿真ZWSimStructural为一体的产品矩阵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ZWSim-EM",
+      "evidence_span": "结合通用前后处理平台ZWMeshWorks、电磁仿真ZWSim-EM和结构仿真ZWSimStructural为一体的产品矩阵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ZWSimStructural",
+      "evidence_span": "结合通用前后处理平台ZWMeshWorks、电磁仿真ZWSim-EM和结构仿真ZWSimStructural为一体的产品矩阵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ZWCAD Linux版本",
+      "evidence_span": "公司推出ZWCAD Linux版本"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中望建筑Linux版",
+      "evidence_span": "同时也推出中望建筑Linux版和中望机械Linux版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中望机械Linux版",
+      "evidence_span": "同时也推出中望建筑Linux版和中望机械Linux版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ZW3D Linux版本",
+      "evidence_span": "发布了面向信创市场的ZW3D Linux版本"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主核心技术",
+      "evidence_span": "具备自主核心技术的ZWCAD"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Overdrive几何建模引擎",
+      "evidence_span": "基于Overdrive几何建模引擎推出三维CAD/CAM一体化软件ZW3D"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "跨平台三维软光栅显示技术",
+      "evidence_span": "利用跨平台三维软光栅显示技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高质量曲面建模",
+      "evidence_span": "在高质量曲面建模上取得重要突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "曲线G3高阶连续",
+      "evidence_span": "能够进行曲线G3高阶连续"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "曲面G2/G3连续性支持",
+      "evidence_span": "实现对曲面的G2/G3连续性的支持"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全机床仿真技术",
+      "evidence_span": "全机床仿真技术持续迭代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工业企业",
+      "evidence_span": "客户覆盖工业企业及教育机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "教育机构",
+      "evidence_span": "客户覆盖工业企业及教育机构"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产替代可期"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "2D CAD",
+        "evidence_span": "公司已形成2D CAD+3D CAD+CAE三大产品线"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "3D CAD",
+        "evidence_span": "公司已形成2D CAD+3D CAD+CAE三大产品线"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "CAE",
+        "evidence_span": "公司已形成2D CAD+3D CAD+CAE三大产品线"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内领先CAD企业",
+        "evidence_span": "国内领先CAD企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产CAx龙头",
+        "evidence_span": "国产CAx龙头扬帆起航"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产CAD领导者",
+        "evidence_span": "国产CAD领导者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ZWCAD",
+        "evidence_span": "公司除推出具备自主核心技术的ZWCAD外"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中望CAD机械版",
+        "evidence_span": "现推出中望CAD机械版和中望CAD建筑版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中望CAD建筑版",
+        "evidence_span": "现推出中望CAD机械版和中望CAD建筑版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中望景园",
+        "evidence_span": "公司还有中望景园、中望模具、中望水暖电、中望结构等行业应用软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中望模具",
+        "evidence_span": "公司还有中望景园、中望模具、中望水暖电、中望结构等行业应用软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中望水暖电",
+        "evidence_span": "公司还有中望景园、中望模具、中望水暖电、中望结构等行业应用软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中望结构",
+        "evidence_span": "公司还有中望景园、中望模具、中望水暖电、中望结构等行业应用软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ZW3D",
+        "evidence_span": "推出三维CAD/CAM一体化软件ZW3D"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ZWMeshWorks",
+        "evidence_span": "结合通用前后处理平台ZWMeshWorks、电磁仿真ZWSim-EM和结构仿真ZWSimStructural为一体的产品矩阵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ZWSim-EM",
+        "evidence_span": "结合通用前后处理平台ZWMeshWorks、电磁仿真ZWSim-EM和结构仿真ZWSimStructural为一体的产品矩阵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ZWSimStructural",
+        "evidence_span": "结合通用前后处理平台ZWMeshWorks、电磁仿真ZWSim-EM和结构仿真ZWSimStructural为一体的产品矩阵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ZWCAD Linux版本",
+        "evidence_span": "公司推出ZWCAD Linux版本"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中望建筑Linux版",
+        "evidence_span": "同时也推出中望建筑Linux版和中望机械Linux版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中望机械Linux版",
+        "evidence_span": "同时也推出中望建筑Linux版和中望机械Linux版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ZW3D Linux版本",
+        "evidence_span": "发布了面向信创市场的ZW3D Linux版本"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主核心技术",
+        "evidence_span": "具备自主核心技术的ZWCAD"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Overdrive几何建模引擎",
+        "evidence_span": "基于Overdrive几何建模引擎推出三维CAD/CAM一体化软件ZW3D"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "跨平台三维软光栅显示技术",
+        "evidence_span": "利用跨平台三维软光栅显示技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高质量曲面建模",
+        "evidence_span": "在高质量曲面建模上取得重要突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "曲线G3高阶连续",
+        "evidence_span": "能够进行曲线G3高阶连续"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "曲面G2/G3连续性支持",
+        "evidence_span": "实现对曲面的G2/G3连续性的支持"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全机床仿真技术",
+        "evidence_span": "全机床仿真技术持续迭代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工业企业",
+        "evidence_span": "客户覆盖工业企业及教育机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "教育机构",
+        "evidence_span": "客户覆盖工业企业及教育机构"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产替代可期"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:54:11"
+}

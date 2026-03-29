@@ -1,0 +1,100 @@
+[
+  {
+    "subject_key": "1001",
+    "theme_name": "新能源汽车",
+    "search_text": "新能源汽车 电动车 电池 充电桩 续航",
+    "must_terms": [
+      "新能源",
+      "汽车"
+    ],
+    "should_terms": [
+      "电池",
+      "充电",
+      "续航",
+      "电机"
+    ],
+    "not_terms": [
+      "燃油车",
+      "汽油"
+    ],
+    "strong_terms": [
+      "电动车",
+      "锂电池"
+    ],
+    "weak_terms": [
+      "环保",
+      "零排放"
+    ],
+    "negative_terms": [
+      "排放",
+      "污染"
+    ],
+    "quality": "strong"
+  },
+  {
+    "subject_key": "1002",
+    "theme_name": "人工智能",
+    "search_text": "人工智能 AI 机器学习 深度学习 神经网络",
+    "must_terms": [
+      "人工智能",
+      "AI"
+    ],
+    "should_terms": [
+      "算法",
+      "模型",
+      "训练",
+      "推理"
+    ],
+    "not_terms": [
+      "人工智障",
+      "伪AI"
+    ],
+    "strong_terms": [
+      "深度学习",
+      "神经网络",
+      "大模型"
+    ],
+    "weak_terms": [
+      "智能化",
+      "自动"
+    ],
+    "negative_terms": [
+      "人工",
+      "手动"
+    ],
+    "quality": "strong"
+  },
+  {
+    "subject_key": "1003",
+    "theme_name": "半导体芯片",
+    "search_text": "芯片 半导体 集成电路 晶圆 制程",
+    "must_terms": [
+      "芯片",
+      "半导体"
+    ],
+    "should_terms": [
+      "制程",
+      "工艺",
+      "封装",
+      "设计"
+    ],
+    "not_terms": [
+      "软件",
+      "系统"
+    ],
+    "strong_terms": [
+      "先进制程",
+      "光刻",
+      "晶圆"
+    ],
+    "weak_terms": [
+      "电子",
+      "元器件"
+    ],
+    "negative_terms": [
+      "云计算",
+      "大数据"
+    ],
+    "quality": "strong"
+  }
+]

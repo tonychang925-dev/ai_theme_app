@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "9b0cf47f65ab", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了中办、国办发布的政策意见，包含具体目标（如到2030年建成韧性城市），这属于事件性内容。但同时，它涉及建筑设计领域的核心概念（如韧性城市、城市基础设施建设），可能包含可用于题材本体构建的稳定知识（如韧性城市的设计原则），因此混合了事件和知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:00:28", "result": {"span_uid": "b1d599c70556", "action": "rewrite", "canonical_text": "03式中程防空导弹是一种用于应对约50公里范围内空中威胁的防空武器系统。", "final_type": "related", "final_role": "防空导弹性能", "stability": "medium", "reason": "该片段描述了03式中程防空导弹的性能参数，属于陆军相关武器装备信息，改写后去除了新闻口吻，形成独立知识表达。"}}

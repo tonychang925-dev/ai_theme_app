@@ -1,0 +1,116 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "具身智能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称为'华为机器人'，核心语义指向华为相关的机器人技术。'具身智能'是机器人技术的核心概念，直接对应机器人智能化的技术方向，符合产业/供应链类策略下优先识别技术对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "具身智能机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'华为机器人'中的'机器人'核心对象，且'具身智能机器人'是具体产品形态，符合产业/供应链类策略下优先识别产品对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "华为",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.98,
+        "reason": "直接对应题材名称'华为机器人'中的'华为'核心主体，是产业/供应链类策略下的关键产业主体，适合作为must锚点。"
+      },
+      {
+        "term": "全球具身智能产业创新中心",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "由华为设立，直接关联华为在机器人领域的产业布局，符合产业/供应链类策略下优先识别关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "具身智能机器人产业",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'华为机器人'的核心产业对象，且符合策略类型industry_chain对产业对象的优先识别要求，能稳定指向产业环节，适合作为must锚点。"
+      },
+      {
+        "term": "机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "该术语最直接贴合题材名称'华为机器人'的核心对象，是产业/供应链类的关键产品对象，能强区分题材边界，非常适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "汽车制造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽在应用场景中提及，但题材名称'华为机器人'的核心语义是机器人技术本身，而非特定应用领域。该术语更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "动力电池",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "同'汽车制造'，属于应用场景，与题材名称'华为机器人'的核心语义不够直接吻合，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "地方政策",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "属于发展驱动因素，但题材名称'华为机器人'的核心语义是技术/产业对象，而非政策本身。该术语更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "产业基金",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "同'地方政策'，属于发展驱动因素，与题材名称的核心语义不够直接吻合，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "人形机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "虽与机器人相关，但题材名称'华为机器人'未特指人形机器人，且知识证据中未明确提及。该术语更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "仿生驱动",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "可能属于机器人技术细节，但知识证据中未提及，且与题材名称'华为机器人'的核心语义不够直接吻合，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "脑机接口",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.5,
+        "reason": "可能属于相关技术，但知识证据中未提及，且与题材名称'华为机器人'的核心语义不够直接吻合，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "AI大模型",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.55,
+        "reason": "可能支撑机器人智能，但知识证据中未提及，且题材名称'华为机器人'的核心语义更聚焦机器人实体而非底层AI技术。该术语更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "政策措施",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "虽然题材涉及政策驱动，但题材名称'华为机器人'的核心语义是产业技术对象而非政策本身，该术语与核心定义不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "人形机器人领域",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语与机器人相关，但题材名称'华为机器人'未特指人形机器人，且题材本体中未强调此细分领域，与核心定义不够直接一致，更适合作为should。"
+      },
+      {
+        "term": "人形机器人产业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "同'人形机器人领域'，虽相关但非题材名称核心语义的直接体现，且题材本体未突出此产业细分，更适合作为辅助识别。"
+      },
+      {
+        "term": "新一代人工智能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "该术语在知识上重要，但题材名称'华为机器人'的核心是机器人而非泛人工智能，与核心定义不够直接一致，更适合作为should辅助识别技术背景。"
+      }
+    ]
+  }
+}

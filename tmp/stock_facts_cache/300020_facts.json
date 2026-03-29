@@ -1,0 +1,474 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧城市数字基层政府的社会治理",
+      "evidence_span": "智慧城市数字基层政府的社会治理和服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "智慧城市数字基层政府的社会治理和服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧城市细分领域项目建设",
+      "evidence_span": "智慧城市细分领域项目建设和服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市大脑建设运营服务商",
+      "evidence_span": "坚持“城市大脑建设运营服务商”核心战略定位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银江城市大脑系列化产品",
+      "evidence_span": "通过公司自主研发“银江城市大脑”系列化产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "行业解决方案",
+      "evidence_span": "行业解决方案和整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整体解决方案",
+      "evidence_span": "行业解决方案和整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基层治理平台",
+      "evidence_span": "基层治理平台持续打造标杆案例"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧交管一体化数治服务",
+      "evidence_span": "构建智慧交管一体化数治服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全域交通AI治理产品体系",
+      "evidence_span": "全域交通AI治理产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市级全域交通AI控制系统",
+      "evidence_span": "公司自研城市级全域交通AI控制系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿波在线平台",
+      "evidence_span": "公司自研面向特定路段或特殊任务的“绿波在线平台”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物联网智慧医院解决方案",
+      "evidence_span": "以“物联网智慧医院”等亮点解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基于集成平台的医院质量管理解决方案",
+      "evidence_span": "“基于集成平台的医院质量管理”等亮点解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "急救时间管理系统",
+      "evidence_span": "银江创新产品急救时间管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "设备精细化能效系统",
+      "evidence_span": "设备精细化能效系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "院感监测系统",
+      "evidence_span": "院感监测系统部署突破90家医院"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体检管理系统",
+      "evidence_span": "体检管理系统进入杭州市第一、第四、第六人民医院等多家三甲医院"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据",
+      "evidence_span": "以公司长期积累的大数据、人工智能、物联网等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能",
+      "evidence_span": "以公司长期积累的大数据、人工智能、物联网等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网",
+      "evidence_span": "以公司长期积累的大数据、人工智能、物联网等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字孪生",
+      "evidence_span": "公司研发了城市数字孪生平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI算法模型",
+      "evidence_span": "通过通用支撑系统、数据智能应用、AI算法模型等研发和应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杭州市三墩镇政府",
+      "evidence_span": "针对杭州三墩镇政府对“评村社、抓镇街、促部门”的总体思路"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杭州市留下街道",
+      "evidence_span": "打造出杭州市留下街道、杭州市前进街道、杭州市古荡街道、成都市固驿街道等数字化标杆项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杭州市前进街道",
+      "evidence_span": "打造出杭州市留下街道、杭州市前进街道、杭州市古荡街道、成都市固驿街道等数字化标杆项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杭州市古荡街道",
+      "evidence_span": "打造出杭州市留下街道、杭州市前进街道、杭州市古荡街道、成都市固驿街道等数字化标杆项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "成都市固驿街道",
+      "evidence_span": "打造出杭州市留下街道、杭州市前进街道、杭州市古荡街道、成都市固驿街道等数字化标杆项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杭州市交警支队",
+      "evidence_span": "与杭州市交警支队共同建立了警企联合实验室"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江西吉安市",
+      "evidence_span": "公司参与了江西省吉安市城市大脑的建设"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杭州西湖区三墩镇",
+      "evidence_span": "公司以杭州西湖区三墩镇为基地"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "常州市儿童医院",
+      "evidence_span": "新增经典项目有常州市儿童医院移址新建工程智能化分包工程"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "观山湖大健康医疗综合体",
+      "evidence_span": "观山湖大健康医疗综合体（糖尿病医院、肿瘤医院）智慧医院信息化软件建设项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "四川大学华西医院",
+      "evidence_span": "完成四川大学华西医院、中国人民解放军总医院、北京协和医院、郑州大学第一附属医院、苏州大学附属第一医院等全国多家知名医院POC测试"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国人民解放军总医院",
+      "evidence_span": "完成四川大学华西医院、中国人民解放军总医院、北京协和医院、郑州大学第一附属医院、苏州大学附属第一医院等全国多家知名医院POC测试"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京协和医院",
+      "evidence_span": "完成四川大学华西医院、中国人民解放军总医院、北京协和医院、郑州大学第一附属医院、苏州大学附属第一医院等全国多家知名医院POC测试"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "郑州大学第一附属医院",
+      "evidence_span": "完成四川大学华西医院、中国人民解放军总医院、北京协和医院、郑州大学第一附属医院、苏州大学附属第一医院等全国多家知名医院POC测试"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苏州大学附属第一医院",
+      "evidence_span": "完成四川大学华西医院、中国人民解放军总医院、北京协和医院、郑州大学第一附属医院、苏州大学附属第一医院等全国多家知名医院POC测试"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沈阳市安宁医院",
+      "evidence_span": "陆续中标沈阳市安宁医院、沈阳市口腔医院、沈阳市第七人民医院、沈阳市红十字会医院、沈阳市妇婴医院、沈阳医学院附属第二医院等信息化项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沈阳市口腔医院",
+      "evidence_span": "陆续中标沈阳市安宁医院、沈阳市口腔医院、沈阳市第七人民医院、沈阳市红十字会医院、沈阳市妇婴医院、沈阳医学院附属第二医院等信息化项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沈阳市第七人民医院",
+      "evidence_span": "陆续中标沈阳市安宁医院、沈阳市口腔医院、沈阳市第七人民医院、沈阳市红十字会医院、沈阳市妇婴医院、沈阳医学院附属第二医院等信息化项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沈阳市红十字会医院",
+      "evidence_span": "陆续中标沈阳市安宁医院、沈阳市口腔医院、沈阳市第七人民医院、沈阳市红十字会医院、沈阳市妇婴医院、沈阳医学院附属第二医院等信息化项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沈阳市妇婴医院",
+      "evidence_span": "陆续中标沈阳市安宁医院、沈阳市口腔医院、沈阳市第七人民医院、沈阳市红十字会医院、沈阳市妇婴医院、沈阳医学院附属第二医院等信息化项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沈阳医学院附属第二医院",
+      "evidence_span": "陆续中标沈阳市安宁医院、沈阳市口腔医院、沈阳市第七人民医院、沈阳市红十字会医院、沈阳市妇婴医院、沈阳医学院附属第二医院等信息化项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "公司与华为在医疗物联网业务领域开展更深层次的战略层面合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "埃及卫生部",
+      "evidence_span": "参与埃及卫生部IOT医院ICU急救项目"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧城市",
+      "evidence_span": "全面受益“智慧城市”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧城市数字基层政府的社会治理和服务",
+        "evidence_span": "智慧城市数字基层政府的社会治理和服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧城市细分领域项目建设和服务",
+        "evidence_span": "智慧城市细分领域项目建设和服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市大脑建设运营服务商",
+        "evidence_span": "坚持“城市大脑建设运营服务商”核心战略定位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银江城市大脑系列化产品",
+        "evidence_span": "通过公司自主研发“银江城市大脑”系列化产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "行业解决方案",
+        "evidence_span": "行业解决方案和整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整体解决方案",
+        "evidence_span": "行业解决方案和整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基层治理平台",
+        "evidence_span": "基层治理平台持续打造标杆案例"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧交管一体化数治服务",
+        "evidence_span": "构建智慧交管一体化数治服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全域交通AI治理产品体系",
+        "evidence_span": "全域交通AI治理产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市级全域交通AI控制系统",
+        "evidence_span": "公司自研城市级全域交通AI控制系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿波在线平台",
+        "evidence_span": "公司自研面向特定路段或特殊任务的“绿波在线平台”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物联网智慧医院解决方案",
+        "evidence_span": "以“物联网智慧医院”等亮点解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基于集成平台的医院质量管理解决方案",
+        "evidence_span": "“基于集成平台的医院质量管理”等亮点解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "急救时间管理系统",
+        "evidence_span": "银江创新产品急救时间管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "设备精细化能效系统",
+        "evidence_span": "设备精细化能效系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "院感监测系统",
+        "evidence_span": "院感监测系统部署突破90家医院"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体检管理系统",
+        "evidence_span": "体检管理系统进入杭州市第一、第四、第六人民医院等多家三甲医院"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据",
+        "evidence_span": "以公司长期积累的大数据、人工智能、物联网等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能",
+        "evidence_span": "以公司长期积累的大数据、人工智能、物联网等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网",
+        "evidence_span": "以公司长期积累的大数据、人工智能、物联网等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字孪生",
+        "evidence_span": "公司研发了城市数字孪生平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI算法模型",
+        "evidence_span": "通过通用支撑系统、数据智能应用、AI算法模型等研发和应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杭州市三墩镇政府",
+        "evidence_span": "针对杭州三墩镇政府对“评村社、抓镇街、促部门”的总体思路"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杭州市留下街道",
+        "evidence_span": "打造出杭州市留下街道、杭州市前进街道、杭州市古荡街道、成都市固驿街道等数字化标杆项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杭州市前进街道",
+        "evidence_span": "打造出杭州市留下街道、杭州市前进街道、杭州市古荡街道、成都市固驿街道等数字化标杆项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杭州市古荡街道",
+        "evidence_span": "打造出杭州市留下街道、杭州市前进街道、杭州市古荡街道、成都市固驿街道等数字化标杆项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "成都市固驿街道",
+        "evidence_span": "打造出杭州市留下街道、杭州市前进街道、杭州市古荡街道、成都市固驿街道等数字化标杆项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杭州市交警支队",
+        "evidence_span": "与杭州市交警支队共同建立了警企联合实验室"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江西吉安市",
+        "evidence_span": "公司参与了江西省吉安市城市大脑的建设"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杭州西湖区三墩镇",
+        "evidence_span": "公司以杭州西湖区三墩镇为基地"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "常州市儿童医院",
+        "evidence_span": "新增经典项目有常州市儿童医院移址新建工程智能化分包工程"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "观山湖大健康医疗综合体",
+        "evidence_span": "观山湖大健康医疗综合体（糖尿病医院、肿瘤医院）智慧医院信息化软件建设项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "四川大学华西医院",
+        "evidence_span": "完成四川大学华西医院、中国人民解放军总医院、北京协和医院、郑州大学第一附属医院、苏州大学附属第一医院等全国多家知名医院POC测试"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国人民解放军总医院",
+        "evidence_span": "完成四川大学华西医院、中国人民解放军总医院、北京协和医院、郑州大学第一附属医院、苏州大学附属第一医院等全国多家知名医院POC测试"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京协和医院",
+        "evidence_span": "完成四川大学华西医院、中国人民解放军总医院、北京协和医院、郑州大学第一附属医院、苏州大学附属第一医院等全国多家知名医院POC测试"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "郑州大学第一附属医院",
+        "evidence_span": "完成四川大学华西医院、中国人民解放军总医院、北京协和医院、郑州大学第一附属医院、苏州大学附属第一医院等全国多家知名医院POC测试"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苏州大学附属第一医院",
+        "evidence_span": "完成四川大学华西医院、中国人民解放军总医院、北京协和医院、郑州大学第一附属医院、苏州大学附属第一医院等全国多家知名医院POC测试"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沈阳市安宁医院",
+        "evidence_span": "陆续中标沈阳市安宁医院、沈阳市口腔医院、沈阳市第七人民医院、沈阳市红十字会医院、沈阳市妇婴医院、沈阳医学院附属第二医院等信息化项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沈阳市口腔医院",
+        "evidence_span": "陆续中标沈阳市安宁医院、沈阳市口腔医院、沈阳市第七人民医院、沈阳市红十字会医院、沈阳市妇婴医院、沈阳医学院附属第二医院等信息化项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沈阳市第七人民医院",
+        "evidence_span": "陆续中标沈阳市安宁医院、沈阳市口腔医院、沈阳市第七人民医院、沈阳市红十字会医院、沈阳市妇婴医院、沈阳医学院附属第二医院等信息化项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沈阳市红十字会医院",
+        "evidence_span": "陆续中标沈阳市安宁医院、沈阳市口腔医院、沈阳市第七人民医院、沈阳市红十字会医院、沈阳市妇婴医院、沈阳医学院附属第二医院等信息化项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沈阳市妇婴医院",
+        "evidence_span": "陆续中标沈阳市安宁医院、沈阳市口腔医院、沈阳市第七人民医院、沈阳市红十字会医院、沈阳市妇婴医院、沈阳医学院附属第二医院等信息化项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沈阳医学院附属第二医院",
+        "evidence_span": "陆续中标沈阳市安宁医院、沈阳市口腔医院、沈阳市第七人民医院、沈阳市红十字会医院、沈阳市妇婴医院、沈阳医学院附属第二医院等信息化项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "公司与华为在医疗物联网业务领域开展更深层次的战略层面合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "埃及卫生部",
+        "evidence_span": "参与埃及卫生部IOT医院ICU急救项目"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧城市",
+        "evidence_span": "全面受益“智慧城市”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:43:53"
+}

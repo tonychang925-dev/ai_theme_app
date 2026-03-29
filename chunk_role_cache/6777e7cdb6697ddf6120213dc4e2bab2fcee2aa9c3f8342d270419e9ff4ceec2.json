@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "ba0f22324e1f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了联盟成立大会和北斗短信业务的发布事件，但详细说明了北斗短信的功能（如编辑文字数、定位精度），这些信息可能包含有价值的静态知识（如技术细节），尽管混合了事件内容。"}}

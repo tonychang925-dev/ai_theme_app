@@ -1,0 +1,62 @@
+{
+  "event_id": "evt_a3ad2c134c66",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "产品发布",
+  "entities": [
+    {
+      "name": "Vision SE",
+      "type": "产品",
+      "normalized": "Vision SE"
+    },
+    {
+      "name": "深圳市亿境虚拟现实技术有限公司",
+      "type": "公司",
+      "normalized": "深圳市亿境虚拟现实技术有限公司"
+    },
+    {
+      "name": "中山联合",
+      "type": "公司",
+      "normalized": "中山联合"
+    }
+  ],
+  "summary": "Vision SE头显于2024年7月30日通过新版本3C认证，制造商为深圳市亿境虚拟现实技术有限公司。",
+  "causal_claim": [
+    "3C认证通过",
+    "产品上市",
+    "AR眼镜市场"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "3C认证",
+      "Vision Pro头显",
+      "国产版"
+    ],
+    "normalized_terms": {
+      "Vision SE": "Vision SE",
+      "深圳市亿境虚拟现实技术有限公司": "深圳市亿境虚拟现实技术有限公司",
+      "中山联合": "中山联合"
+    },
+    "evidence_spans": [
+      {
+        "text": "2024年8月15日，有“国产版Vision Pro头显”之称的Vision SE，今年7月30日通过了新版本的3C认证",
+        "start": 0,
+        "end": 60
+      },
+      {
+        "text": "制造商为深圳市亿境虚拟现实技术有限公司，生产厂商为中山联合",
+        "start": 60,
+        "end": 90
+      }
+    ],
+    "core_concepts": [
+      "3C认证",
+      "AR眼镜",
+      "产品发布"
+    ]
+  },
+  "severity_score": 0.6,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-07-30T00:00:00Z",
+  "raw_text": "2024年8月15日，有“国产版Vision Pro头显”之称的Vision SE，今年7月30日通过了新版本的3C认证，制造商为深圳市亿境虚拟现实技术有限公司，生产厂商为中山联合"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:08:31", "result": {"span_uid": "dc8ae8e9acc4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "票房预测", "stability": "low", "reason": "原文本为具体年份（2026年）的票房预测，属于短期、不确定的趋势信息，无法形成稳定、可独立成立的知识块。"}}

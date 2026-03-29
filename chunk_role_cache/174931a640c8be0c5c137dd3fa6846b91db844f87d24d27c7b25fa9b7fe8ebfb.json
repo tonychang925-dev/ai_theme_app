@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "117a16cdce7d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述2024年特斯拉股东大会事件和马斯克推文，聚焦于Optimus可能的新进展，属于公司动态和时间性新闻，无静态知识。"}}

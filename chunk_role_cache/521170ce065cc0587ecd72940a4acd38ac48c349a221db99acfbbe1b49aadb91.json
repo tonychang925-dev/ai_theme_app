@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "8776e60aaab0", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了三星电子宣布发布AR智能眼镜的具体事件，包含时间（2025年1月）和动态计划，没有提供AR眼镜的静态知识。"}}

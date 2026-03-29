@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:46:00", "result": {"chunk_id": "f94726e58362", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述了一个具体事件（第二届湾区半导体产业生态博览会）和新闻发布会，涉及时间、地点和公司亮相，属于动态新闻，没有提供稳定的题材本体知识。"}}

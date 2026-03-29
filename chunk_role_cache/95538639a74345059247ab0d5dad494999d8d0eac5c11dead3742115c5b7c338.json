@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final", "model": "deepseek-chat", "timestamp": "2026-03-08T11:07:55", "result": {"chunk_id": "96b8861b6941", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含事件性内容（如报告发布、体制转变、时间线预测），但也提供了关于EUV光刻机研发、公司角色、资金支持和产业结构的详细信息，这些可能对半导体设备题材的知识构建有价值，因此是混合状态。"}}

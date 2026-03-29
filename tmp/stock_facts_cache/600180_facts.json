@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭供应链业务",
+      "evidence_span": "煤炭供应链业务是公司核心业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "石油化工品供应链业务",
+      "evidence_span": "石油化工品供应链业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "产业互联网平台",
+      "evidence_span": "产业互联网平台建设是公司战略转型发展中的重点工作"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "煤炭供应链管理服务专家",
+      "evidence_span": "中国领先的煤炭供应链管理服务专家"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大宗商品供应链全服务商",
+      "evidence_span": "瑞茂通大宗商品供应链全服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤炭供应链服务",
+      "evidence_span": "煤炭供应链业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石油化工品供应链服务",
+      "evidence_span": "石油化工品供应链业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石脑油采购业务",
+      "evidence_span": "与韩国大林工业公司达成首笔石脑油采购业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "棕榈酸工业油脂进口业务",
+      "evidence_span": "在棕榈酸工业油脂品类上实现进口业务“零”的突破"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物柴油原料进口业务",
+      "evidence_span": "首笔生物柴油原料进口业务成功落地"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资讯服务",
+      "evidence_span": "资讯服务费等收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交易平台服务",
+      "evidence_span": "交易平台服务费收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物流仓储服务",
+      "evidence_span": "物流仓储服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "检测服务",
+      "evidence_span": "检测服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产业互联网平台",
+      "evidence_span": "产业互联网平台建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据应用",
+      "evidence_span": "积极探索大数据、云计算、物联网等科技手段在煤炭供应链领域的应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云计算应用",
+      "evidence_span": "积极探索大数据、云计算、物联网等科技手段在煤炭供应链领域的应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网应用",
+      "evidence_span": "积极探索大数据、云计算、物联网等科技手段在煤炭供应链领域的应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "金融衍生品工具运用能力",
+      "evidence_span": "一流的金融衍生品工具运用能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国大林工业公司",
+      "evidence_span": "与韩国大林工业公司达成首笔石脑油采购业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京海新能源科技股份有限公司",
+      "evidence_span": "与北京海新能源科技股份有限公司达成战略合作伙伴关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "供应链国产化",
+      "evidence_span": "中国领先的煤炭供应链管理服务专家"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭供应链业务",
+        "evidence_span": "煤炭供应链业务是公司核心业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "石油化工品供应链业务",
+        "evidence_span": "石油化工品供应链业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "产业互联网平台",
+        "evidence_span": "产业互联网平台建设是公司战略转型发展中的重点工作"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "煤炭供应链管理服务专家",
+        "evidence_span": "中国领先的煤炭供应链管理服务专家"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大宗商品供应链全服务商",
+        "evidence_span": "瑞茂通大宗商品供应链全服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤炭供应链服务",
+        "evidence_span": "煤炭供应链业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石油化工品供应链服务",
+        "evidence_span": "石油化工品供应链业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石脑油采购业务",
+        "evidence_span": "与韩国大林工业公司达成首笔石脑油采购业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "棕榈酸工业油脂进口业务",
+        "evidence_span": "在棕榈酸工业油脂品类上实现进口业务“零”的突破"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物柴油原料进口业务",
+        "evidence_span": "首笔生物柴油原料进口业务成功落地"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资讯服务",
+        "evidence_span": "资讯服务费等收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交易平台服务",
+        "evidence_span": "交易平台服务费收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物流仓储服务",
+        "evidence_span": "物流仓储服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "检测服务",
+        "evidence_span": "检测服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产业互联网平台",
+        "evidence_span": "产业互联网平台建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据应用",
+        "evidence_span": "积极探索大数据、云计算、物联网等科技手段在煤炭供应链领域的应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云计算应用",
+        "evidence_span": "积极探索大数据、云计算、物联网等科技手段在煤炭供应链领域的应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网应用",
+        "evidence_span": "积极探索大数据、云计算、物联网等科技手段在煤炭供应链领域的应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "金融衍生品工具运用能力",
+        "evidence_span": "一流的金融衍生品工具运用能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国大林工业公司",
+        "evidence_span": "与韩国大林工业公司达成首笔石脑油采购业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京海新能源科技股份有限公司",
+        "evidence_span": "与北京海新能源科技股份有限公司达成战略合作伙伴关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "供应链国产化",
+        "evidence_span": "中国领先的煤炭供应链管理服务专家"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:36:05"
+}

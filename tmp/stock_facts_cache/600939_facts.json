@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "房屋建筑工程",
+      "evidence_span": "公司是以房屋建筑工程、基础设施建设与投资等业务为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基础设施建设",
+      "evidence_span": "公司是以房屋建筑工程、基础设施建设与投资等业务为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资",
+      "evidence_span": "公司是以房屋建筑工程、基础设施建设与投资等业务为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程设计",
+      "evidence_span": "集工程设计、机械制造、建筑材料生产、特许经营、物流配送等服务为一体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "机械制造",
+      "evidence_span": "集工程设计、机械制造、建筑材料生产、特许经营、物流配送等服务为一体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建筑材料生产",
+      "evidence_span": "集工程设计、机械制造、建筑材料生产、特许经营、物流配送等服务为一体"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "建筑工程施工企业",
+      "evidence_span": "公司作为重庆市属国有重点企业和重庆市最大的建筑工程施工企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国有控股上市公司",
+      "evidence_span": "公司是以房屋建筑工程、基础设施建设与投资等业务为主业，集工程设计、机械制造、建筑材料生产、特许经营、物流配送等服务为一体的国有控股上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公共与民用房屋建筑施工",
+      "evidence_span": "公司主要从事的业务包括：公共与民用房屋建筑施工、机电安装工程施工、建筑装修装饰等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机电安装工程施工",
+      "evidence_span": "公司主要从事的业务包括：公共与民用房屋建筑施工、机电安装工程施工、建筑装修装饰等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑装修装饰",
+      "evidence_span": "公司主要从事的业务包括：公共与民用房屋建筑施工、机电安装工程施工、建筑装修装饰等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高等级公路及公路路基、路面、桥梁、水利、港口、隧道等的施工、建设与投资",
+      "evidence_span": "高等级公路及公路路基、路面、桥梁、水利、港口、隧道等的施工、建设与投资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑机械设备、器材、构件、钢结构、建筑材料的生产、销售、物流",
+      "evidence_span": "建筑机械设备、器材、构件、钢结构、建筑材料的生产、销售、物流、工程设计、技术咨询、技术服务等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程设计",
+      "evidence_span": "建筑机械设备、器材、构件、钢结构、建筑材料的生产、销售、物流、工程设计、技术咨询、技术服务等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "技术咨询",
+      "evidence_span": "建筑机械设备、器材、构件、钢结构、建筑材料的生产、销售、物流、工程设计、技术咨询、技术服务等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "技术服务",
+      "evidence_span": "建筑机械设备、器材、构件、钢结构、建筑材料的生产、销售、物流、工程设计、技术咨询、技术服务等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "装配式建筑",
+      "evidence_span": "加强装配式、海绵城市、研发平台建设、施工技术、工程管理等领域研发力度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海绵城市",
+      "evidence_span": "加强装配式、海绵城市、研发平台建设、施工技术、工程管理等领域研发力度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G+智慧建工",
+      "evidence_span": "积极推进“5G+智慧建工”数字化工程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BIM+智能建造关键技术",
+      "evidence_span": "“大溪河特大桥BIM+智能建造关键技术集成应用”获“天工杯”数字交通及智能建造技术应用大赛金奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "节段式预制综合管廊连接施工技术",
+      "evidence_span": "节段式预制综合管廊连接施工技术获第二届工程建造微创新技术大赛一等奖"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "重庆各级政府和国有投资平台公司",
+      "evidence_span": "公司与重庆各级政府和国有投资平台公司有着广阔的战略合作空间"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "成渝地区双城经济圈",
+      "evidence_span": "加快布局成渝地区双城经济圈"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新基建",
+      "evidence_span": "5G基建、高铁、新能源等新基建和地下综合管廊、海绵城市、智慧城市等“两新一重”"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "装配式建筑",
+      "evidence_span": "装配式建筑是建筑行业实现“双碳”目标的主要举措"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "房屋建筑工程",
+        "evidence_span": "公司是以房屋建筑工程、基础设施建设与投资等业务为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基础设施建设与投资",
+        "evidence_span": "公司是以房屋建筑工程、基础设施建设与投资等业务为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程设计",
+        "evidence_span": "集工程设计、机械制造、建筑材料生产、特许经营、物流配送等服务为一体"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机械制造",
+        "evidence_span": "集工程设计、机械制造、建筑材料生产、特许经营、物流配送等服务为一体"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "建筑材料生产",
+        "evidence_span": "集工程设计、机械制造、建筑材料生产、特许经营、物流配送等服务为一体"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "建筑工程施工企业",
+        "evidence_span": "公司作为重庆市属国有重点企业和重庆市最大的建筑工程施工企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国有控股上市公司",
+        "evidence_span": "公司是以房屋建筑工程、基础设施建设与投资等业务为主业，集工程设计、机械制造、建筑材料生产、特许经营、物流配送等服务为一体的国有控股上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公共与民用房屋建筑施工",
+        "evidence_span": "公司主要从事的业务包括：公共与民用房屋建筑施工、机电安装工程施工、建筑装修装饰等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机电安装工程施工",
+        "evidence_span": "公司主要从事的业务包括：公共与民用房屋建筑施工、机电安装工程施工、建筑装修装饰等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑装修装饰",
+        "evidence_span": "公司主要从事的业务包括：公共与民用房屋建筑施工、机电安装工程施工、建筑装修装饰等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高等级公路及公路路基、路面、桥梁、水利、港口、隧道等的施工、建设与投资",
+        "evidence_span": "高等级公路及公路路基、路面、桥梁、水利、港口、隧道等的施工、建设与投资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑机械设备、器材、构件、钢结构、建筑材料的生产、销售、物流",
+        "evidence_span": "建筑机械设备、器材、构件、钢结构、建筑材料的生产、销售、物流、工程设计、技术咨询、技术服务等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程设计",
+        "evidence_span": "建筑机械设备、器材、构件、钢结构、建筑材料的生产、销售、物流、工程设计、技术咨询、技术服务等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "技术咨询",
+        "evidence_span": "建筑机械设备、器材、构件、钢结构、建筑材料的生产、销售、物流、工程设计、技术咨询、技术服务等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "技术服务",
+        "evidence_span": "建筑机械设备、器材、构件、钢结构、建筑材料的生产、销售、物流、工程设计、技术咨询、技术服务等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "装配式建筑",
+        "evidence_span": "加强装配式、海绵城市、研发平台建设、施工技术、工程管理等领域研发力度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海绵城市",
+        "evidence_span": "加强装配式、海绵城市、研发平台建设、施工技术、工程管理等领域研发力度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G+智慧建工",
+        "evidence_span": "积极推进“5G+智慧建工”数字化工程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BIM+智能建造关键技术",
+        "evidence_span": "“大溪河特大桥BIM+智能建造关键技术集成应用”获“天工杯”数字交通及智能建造技术应用大赛金奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "节段式预制综合管廊连接施工技术",
+        "evidence_span": "节段式预制综合管廊连接施工技术获第二届工程建造微创新技术大赛一等奖"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "重庆各级政府和国有投资平台公司",
+        "evidence_span": "公司与重庆各级政府和国有投资平台公司有着广阔的战略合作空间"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "成渝地区双城经济圈",
+        "evidence_span": "加快布局成渝地区双城经济圈"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新基建",
+        "evidence_span": "5G基建、高铁、新能源等新基建和地下综合管廊、海绵城市、智慧城市等“两新一重”"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "装配式建筑",
+        "evidence_span": "装配式建筑是建筑行业实现“双碳”目标的主要举措"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:51:17"
+}

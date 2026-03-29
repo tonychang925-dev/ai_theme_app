@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "08ddc9076102", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述以色列国防部长在形势评估会议上的言论，涉及具体冲突进展、战场状态和时间性动态（如6月13日至24日的冲突），属于新闻事件报道，无静态知识构建价值。"}}

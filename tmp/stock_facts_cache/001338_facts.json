@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "麦芽的研发",
+      "evidence_span": "公司自设立以来始终专注于麦芽的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "麦芽的生产",
+      "evidence_span": "公司自设立以来始终专注于麦芽的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "麦芽的销售",
+      "evidence_span": "公司自设立以来始终专注于麦芽的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "麦芽行业中生产规模最大的企业",
+      "evidence_span": "麦芽行业中生产规模最大、整体装备水平和工艺技术全国领先的企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内规模最大的麦芽制造商",
+      "evidence_span": "是国内规模最大的麦芽制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "麦芽制造领域的龙头企业",
+      "evidence_span": "公司是麦芽制造领域的龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基础大麦麦芽",
+      "evidence_span": "公司产品以基础大麦麦芽为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种麦芽",
+      "evidence_span": "兼顾高端的特种麦芽等多种产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大麦麦芽",
+      "evidence_span": "大麦麦芽始终为公司的核心产品和主要收入来源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小麦麦芽",
+      "evidence_span": "主营业务收入按产品类别可分为两大板块，分别为大麦麦芽、小麦麦芽"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "结晶麦芽",
+      "evidence_span": "已陆续推出结晶麦芽、焦香麦芽、黑麦芽等特种麦芽产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "焦香麦芽",
+      "evidence_span": "已陆续推出结晶麦芽、焦香麦芽、黑麦芽等特种麦芽产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黑麦芽",
+      "evidence_span": "已陆续推出结晶麦芽、焦香麦芽、黑麦芽等特种麦芽产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中高档啤酒麦芽",
+      "evidence_span": "年产13万吨中高档啤酒麦芽项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "省级企业技术中心",
+      "evidence_span": "公司麦芽技术研究院具有省级企业技术中心、省级工程技术研究中心的研发实力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "省级工程技术研究中心",
+      "evidence_span": "公司麦芽技术研究院具有省级企业技术中心、省级工程技术研究中心的研发实力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "中国合格评定国家认可实验室认证",
+      "evidence_span": "中心实验室获得中国合格评定国家认可实验室认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "燕京啤酒",
+      "evidence_span": "与燕京啤酒、珠江啤酒，青岛啤酒的合作达到30年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "珠江啤酒",
+      "evidence_span": "与燕京啤酒、珠江啤酒，青岛啤酒的合作达到30年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "青岛啤酒",
+      "evidence_span": "与燕京啤酒、珠江啤酒，青岛啤酒的合作达到30年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "百威英博",
+      "evidence_span": "与百威英博、嘉士伯的合作超过20年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "嘉士伯",
+      "evidence_span": "与百威英博、嘉士伯的合作超过20年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华润啤酒",
+      "evidence_span": "与华润啤酒、喜力啤酒的合作超过10年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "喜力啤酒",
+      "evidence_span": "与华润啤酒、喜力啤酒的合作超过10年"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "麦芽的研发",
+        "evidence_span": "公司自设立以来始终专注于麦芽的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "麦芽的生产",
+        "evidence_span": "公司自设立以来始终专注于麦芽的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "麦芽的销售",
+        "evidence_span": "公司自设立以来始终专注于麦芽的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "麦芽行业中生产规模最大的企业",
+        "evidence_span": "麦芽行业中生产规模最大、整体装备水平和工艺技术全国领先的企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内规模最大的麦芽制造商",
+        "evidence_span": "是国内规模最大的麦芽制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "麦芽制造领域的龙头企业",
+        "evidence_span": "公司是麦芽制造领域的龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基础大麦麦芽",
+        "evidence_span": "公司产品以基础大麦麦芽为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种麦芽",
+        "evidence_span": "兼顾高端的特种麦芽等多种产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大麦麦芽",
+        "evidence_span": "大麦麦芽始终为公司的核心产品和主要收入来源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小麦麦芽",
+        "evidence_span": "主营业务收入按产品类别可分为两大板块，分别为大麦麦芽、小麦麦芽"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "结晶麦芽",
+        "evidence_span": "已陆续推出结晶麦芽、焦香麦芽、黑麦芽等特种麦芽产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "焦香麦芽",
+        "evidence_span": "已陆续推出结晶麦芽、焦香麦芽、黑麦芽等特种麦芽产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黑麦芽",
+        "evidence_span": "已陆续推出结晶麦芽、焦香麦芽、黑麦芽等特种麦芽产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中高档啤酒麦芽",
+        "evidence_span": "年产13万吨中高档啤酒麦芽项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "省级企业技术中心",
+        "evidence_span": "公司麦芽技术研究院具有省级企业技术中心、省级工程技术研究中心的研发实力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "省级工程技术研究中心",
+        "evidence_span": "公司麦芽技术研究院具有省级企业技术中心、省级工程技术研究中心的研发实力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "中国合格评定国家认可实验室认证",
+        "evidence_span": "中心实验室获得中国合格评定国家认可实验室认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "燕京啤酒",
+        "evidence_span": "与燕京啤酒、珠江啤酒，青岛啤酒的合作达到30年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "珠江啤酒",
+        "evidence_span": "与燕京啤酒、珠江啤酒，青岛啤酒的合作达到30年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "青岛啤酒",
+        "evidence_span": "与燕京啤酒、珠江啤酒，青岛啤酒的合作达到30年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "百威英博",
+        "evidence_span": "与百威英博、嘉士伯的合作超过20年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "嘉士伯",
+        "evidence_span": "与百威英博、嘉士伯的合作超过20年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华润啤酒",
+        "evidence_span": "与华润啤酒、喜力啤酒的合作超过10年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "喜力啤酒",
+        "evidence_span": "与华润啤酒、喜力啤酒的合作超过10年"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:25:14"
+}

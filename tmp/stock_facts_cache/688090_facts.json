@@ -1,0 +1,439 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "机器人",
+      "evidence_span": "公司业务涵盖机器人、工业软件、智能制造领域的研发、设计、制造、应用和销售服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业软件",
+      "evidence_span": "公司业务涵盖机器人、工业软件、智能制造领域的研发、设计、制造、应用和销售服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能制造",
+      "evidence_span": "公司业务涵盖机器人、工业软件、智能制造领域的研发、设计、制造、应用和销售服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级制造业单项冠军示范企业",
+      "evidence_span": "公司获国家工业和信息化部批准入选第七批“国家级制造业单项冠军示范企业”名单"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "机器人智能制造系统整体解决方案供应商",
+      "evidence_span": "构建以数字化、信息化、网络化、智能化技术为主的机器人智能制造系统整体解决方案"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车焊装领域领先企业",
+      "evidence_span": "在自动化程度最高、工业机器人应用最广泛的汽车行业，公司在国内汽车焊装领域处于领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机器人自动化生产线",
+      "evidence_span": "公司为各行业客户提供高质轻量化材料的搅拌摩擦焊智能装备、基于AI的工业机器视觉产品、柔性化智能制造系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车机器人生产线",
+      "evidence_span": "汽车工业事业部向汽车工业领域提供的机器人柔性化智能制造生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池托盘机器人自动化生产线",
+      "evidence_span": "电池托盘机器人自动化生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "两轮车机器人生产线",
+      "evidence_span": "两轮车机器人生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机械重工自动化生产线",
+      "evidence_span": "机械重工自动化生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密电子柔性自动化装配生产线",
+      "evidence_span": "精密电子柔性自动化装配生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电梯机器人生产线",
+      "evidence_span": "电梯机器人生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机器人工作站",
+      "evidence_span": "机器人工作站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "搅拌摩擦焊装备及系统解决方案",
+      "evidence_span": "瑞松科技开发了搅拌摩擦焊装备及系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业软件",
+      "evidence_span": "飞数工业软件专注研发设计类与生产制造类工业软件和平台的开发、销售、服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基于AI的工业机器视觉产品",
+      "evidence_span": "基于AI的工业机器视觉针对汽车行业已经有较为成熟的产品应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机器人配件销售",
+      "evidence_span": "公司基于在机器人与智能装备领域的技术积累，向客户销售各型号焊机及其配套装置"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "搅拌摩擦焊技术",
+      "evidence_span": "瑞松科技开发了搅拌摩擦焊装备及系统解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器人搅拌摩擦焊系统",
+      "evidence_span": "瑞松自主研发的机器人搅拌摩擦焊系统获得欧盟CE认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于AI的工业机器视觉",
+      "evidence_span": "基于AI的工业机器视觉针对汽车行业已经有较为成熟的产品应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化系统控制技术",
+      "evidence_span": "融合了自主研发的智能技术，包括自动化系统控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器人仿真离线应用技术",
+      "evidence_span": "机器人仿真离线应用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "白车身柔性高速智能化总拼技术",
+      "evidence_span": "白车身柔性高速智能化总拼技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "白车身高速输送系统技术",
+      "evidence_span": "白车身高速输送系统技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "在线视觉智能引导定位与监测技术",
+      "evidence_span": "在线视觉智能引导定位与监测技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰田",
+      "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本田",
+      "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽埃安",
+      "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "零跑汽车",
+      "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "马自达",
+      "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽乘用车",
+      "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏汽车",
+      "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日立电梯",
+      "evidence_span": "日立电梯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "五羊本田",
+      "evidence_span": "五羊本田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三一重工",
+      "evidence_span": "三一重工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中联重科",
+      "evidence_span": "中联重科"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中集集团",
+      "evidence_span": "中集集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中船黄埔",
+      "evidence_span": "中船黄埔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西部数据",
+      "evidence_span": "西部数据"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安利",
+      "evidence_span": "安利"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源车高景气",
+      "evidence_span": "瑞松科技受益于新能源车高景气"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "机器人",
+        "evidence_span": "公司业务涵盖机器人、工业软件、智能制造领域的研发、设计、制造、应用和销售服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业软件",
+        "evidence_span": "公司业务涵盖机器人、工业软件、智能制造领域的研发、设计、制造、应用和销售服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能制造",
+        "evidence_span": "公司业务涵盖机器人、工业软件、智能制造领域的研发、设计、制造、应用和销售服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级制造业单项冠军示范企业",
+        "evidence_span": "公司获国家工业和信息化部批准入选第七批“国家级制造业单项冠军示范企业”名单"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "机器人智能制造系统整体解决方案供应商",
+        "evidence_span": "构建以数字化、信息化、网络化、智能化技术为主的机器人智能制造系统整体解决方案"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车焊装领域领先企业",
+        "evidence_span": "在自动化程度最高、工业机器人应用最广泛的汽车行业，公司在国内汽车焊装领域处于领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机器人自动化生产线",
+        "evidence_span": "公司为各行业客户提供高质轻量化材料的搅拌摩擦焊智能装备、基于AI的工业机器视觉产品、柔性化智能制造系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车机器人生产线",
+        "evidence_span": "汽车工业事业部向汽车工业领域提供的机器人柔性化智能制造生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池托盘机器人自动化生产线",
+        "evidence_span": "电池托盘机器人自动化生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "两轮车机器人生产线",
+        "evidence_span": "两轮车机器人生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机械重工自动化生产线",
+        "evidence_span": "机械重工自动化生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密电子柔性自动化装配生产线",
+        "evidence_span": "精密电子柔性自动化装配生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电梯机器人生产线",
+        "evidence_span": "电梯机器人生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机器人工作站",
+        "evidence_span": "机器人工作站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "搅拌摩擦焊装备及系统解决方案",
+        "evidence_span": "瑞松科技开发了搅拌摩擦焊装备及系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业软件",
+        "evidence_span": "飞数工业软件专注研发设计类与生产制造类工业软件和平台的开发、销售、服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基于AI的工业机器视觉产品",
+        "evidence_span": "基于AI的工业机器视觉针对汽车行业已经有较为成熟的产品应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机器人配件销售",
+        "evidence_span": "公司基于在机器人与智能装备领域的技术积累，向客户销售各型号焊机及其配套装置"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "搅拌摩擦焊技术",
+        "evidence_span": "瑞松科技开发了搅拌摩擦焊装备及系统解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器人搅拌摩擦焊系统",
+        "evidence_span": "瑞松自主研发的机器人搅拌摩擦焊系统获得欧盟CE认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于AI的工业机器视觉",
+        "evidence_span": "基于AI的工业机器视觉针对汽车行业已经有较为成熟的产品应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化系统控制技术",
+        "evidence_span": "融合了自主研发的智能技术，包括自动化系统控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器人仿真离线应用技术",
+        "evidence_span": "机器人仿真离线应用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "白车身柔性高速智能化总拼技术",
+        "evidence_span": "白车身柔性高速智能化总拼技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "白车身高速输送系统技术",
+        "evidence_span": "白车身高速输送系统技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "在线视觉智能引导定位与监测技术",
+        "evidence_span": "在线视觉智能引导定位与监测技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰田",
+        "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本田",
+        "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽埃安",
+        "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "零跑汽车",
+        "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "马自达",
+        "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽乘用车",
+        "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏汽车",
+        "evidence_span": "主要客户包括丰田、本田、比亚迪、广汽埃安、零跑汽车、马自达、广汽乘用车、小鹏汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日立电梯",
+        "evidence_span": "日立电梯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "五羊本田",
+        "evidence_span": "五羊本田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三一重工",
+        "evidence_span": "三一重工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中联重科",
+        "evidence_span": "中联重科"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中集集团",
+        "evidence_span": "中集集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中船黄埔",
+        "evidence_span": "中船黄埔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西部数据",
+        "evidence_span": "西部数据"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安利",
+        "evidence_span": "安利"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源车高景气",
+        "evidence_span": "瑞松科技受益于新能源车高景气"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:57:11"
+}

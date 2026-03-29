@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:39:50", "result": {"span_uid": "8c8542bfbdcc", "action": "rewrite", "canonical_text": "特斯拉FSD技术在高速公路上应用端到端神经网络，实现从感知到决策的全程智能化处理。", "final_type": "core", "final_role": "核心技术机制", "stability": "high", "reason": "该片段描述了FSD的核心技术机制，经过改写后成为稳定、可独立理解的知识表达，直接定义了题材的技术构成，因此归类为core。"}}

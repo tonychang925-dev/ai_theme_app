@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:33:07", "result": {"span_uid": "1f24dcafcc65", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含事件性描述（如苹果布局多年、首款苹果MR）和预测性表述（有望开启XR的iPhone时代），属于新闻口吻和主观看法，无法整理成稳定、独立的知识块，因此丢弃。"}}

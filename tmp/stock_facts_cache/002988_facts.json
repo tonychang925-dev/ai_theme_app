@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "建筑用铝型材",
+      "evidence_span": "建筑用铝型材营收占比 43%"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "一般工业用铝型材",
+      "evidence_span": "一般工业用铝型材营收占比 39%"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车轻量化铝型材",
+      "evidence_span": "汽车轻量化铝型材占比大幅提升"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "系统门窗销售",
+      "evidence_span": "系统门窗销售营收占比从 2021 年的 5.39%"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "门窗幕墙安装",
+      "evidence_span": "门窗幕墙安装"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铝型材制造商",
+      "evidence_span": "豪美新材是一家集专业研发、制造、销售于一体的铝型材制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车轻量化铝基新材料企业",
+      "evidence_span": "已成为华南地区具有一定规模的汽车轻量化铝基新材料企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车轻量化铝型材",
+      "evidence_span": "汽车轻量化铝型材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池托架",
+      "evidence_span": "电池托架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防撞梁",
+      "evidence_span": "防撞梁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "副车架",
+      "evidence_span": "副车架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "减震支架",
+      "evidence_span": "减震支架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力托架",
+      "evidence_span": "动力托架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机部件",
+      "evidence_span": "电机部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "系统门窗",
+      "evidence_span": "系统门窗"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CNC",
+      "evidence_span": "CNC"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锯切",
+      "evidence_span": "锯切"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "拉弯",
+      "evidence_span": "拉弯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航天工程",
+      "evidence_span": "航天工程"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "凌云股份",
+      "evidence_span": "凌云股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "吉利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽蓝谷",
+      "evidence_span": "北汽蓝谷"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "长城"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奔驰",
+      "evidence_span": "奔驰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安",
+      "evidence_span": "长安"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "宝马"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰田",
+      "evidence_span": "丰田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本田",
+      "evidence_span": "本田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽",
+      "evidence_span": "广汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏",
+      "evidence_span": "小鹏"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "蔚来"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车零部件一级供应商",
+      "evidence_span": "向 30 多家汽车零部件一级供应商提供铝合金材料和部件"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车轻量化",
+      "evidence_span": "汽车轻量化趋势长期不改"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车",
+      "evidence_span": "新能源汽车销量高增"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "建筑用铝型材",
+        "evidence_span": "建筑用铝型材营收占比 43%"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "一般工业用铝型材",
+        "evidence_span": "一般工业用铝型材营收占比 39%"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车轻量化铝型材",
+        "evidence_span": "汽车轻量化铝型材占比大幅提升"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "系统门窗销售",
+        "evidence_span": "系统门窗销售营收占比从 2021 年的 5.39%"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "门窗幕墙安装",
+        "evidence_span": "门窗幕墙安装"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铝型材制造商",
+        "evidence_span": "豪美新材是一家集专业研发、制造、销售于一体的铝型材制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车轻量化铝基新材料企业",
+        "evidence_span": "已成为华南地区具有一定规模的汽车轻量化铝基新材料企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车轻量化铝型材",
+        "evidence_span": "汽车轻量化铝型材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池托架",
+        "evidence_span": "电池托架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防撞梁",
+        "evidence_span": "防撞梁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "副车架",
+        "evidence_span": "副车架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "减震支架",
+        "evidence_span": "减震支架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力托架",
+        "evidence_span": "动力托架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机部件",
+        "evidence_span": "电机部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "系统门窗",
+        "evidence_span": "系统门窗"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CNC",
+        "evidence_span": "CNC"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锯切",
+        "evidence_span": "锯切"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "拉弯",
+        "evidence_span": "拉弯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航天工程",
+        "evidence_span": "航天工程"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "凌云股份",
+        "evidence_span": "凌云股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "吉利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽蓝谷",
+        "evidence_span": "北汽蓝谷"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "长城"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奔驰",
+        "evidence_span": "奔驰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安",
+        "evidence_span": "长安"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "宝马"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰田",
+        "evidence_span": "丰田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本田",
+        "evidence_span": "本田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽",
+        "evidence_span": "广汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏",
+        "evidence_span": "小鹏"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "蔚来"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车零部件一级供应商",
+        "evidence_span": "向 30 多家汽车零部件一级供应商提供铝合金材料和部件"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车轻量化",
+        "evidence_span": "汽车轻量化趋势长期不改"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车",
+        "evidence_span": "新能源汽车销量高增"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:10:09"
+}

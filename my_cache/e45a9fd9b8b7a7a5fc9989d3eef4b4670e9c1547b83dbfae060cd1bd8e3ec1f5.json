@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "d2dc837b8319", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述政策措施中鼓励发展的半导体设备相关领域（如EDA软件、IP核、光掩模、光刻胶、清洗、刻蚀等设备国产化），这些是静态的产业构成和关键要素说明，没有具体事件或时间动态，适合用于题材本体构建。"}}

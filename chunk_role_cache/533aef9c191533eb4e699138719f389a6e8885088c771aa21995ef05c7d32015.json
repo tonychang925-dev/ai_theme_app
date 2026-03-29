@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "d41f3ab7e86b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述具体事件，包括小鹏汇天和沃飞长空的订单签署、亿航智能的飞行试验以及中国航空工业集团低空经济创新联合体的成立，这些都是时间性动态和公司公告，没有静态知识说明。"}}

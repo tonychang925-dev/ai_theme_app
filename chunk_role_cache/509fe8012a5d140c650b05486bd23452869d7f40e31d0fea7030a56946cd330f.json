@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "6c75d78c5662", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落详细描述美国商务部致函台积电、出口限制措施、相关报道和评论等具体事件动态，主要是事件推进，无稳定知识沉淀。"}}

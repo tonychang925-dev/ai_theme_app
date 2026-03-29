@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药中间体研发",
+      "evidence_span": "公司目前主要从事医药中间体的研发、生产与销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司目前主要从事医药中间体的研发、生产与销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司目前主要从事医药中间体的研发、生产与销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "尿素委托加工销售",
+      "evidence_span": "尿素委托加工销售业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医药中间体供应商",
+      "evidence_span": "公司子公司南松医药是一家专业从事医药中间体系列产品研发、生产和销售的高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氯喹侧链",
+      "evidence_span": "主要产品中氯喹侧链和羟基氯喹侧链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "羟基氯喹侧链",
+      "evidence_span": "主要产品中氯喹侧链和羟基氯喹侧链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗疟疾类药物中间体",
+      "evidence_span": "主要产品为抗疟疾类、孕激素类、营养剂类等品类的药物中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "孕激素类药物中间体",
+      "evidence_span": "主要产品为抗疟疾类、孕激素类、营养剂类等品类的药物中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "营养剂类药物中间体",
+      "evidence_span": "主要产品为抗疟疾类、孕激素类、营养剂类等品类的药物中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二噁烷",
+      "evidence_span": "南松医药的氯喹侧链、羟基氯喹侧链和二噁烷"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "合成路线先进",
+      "evidence_span": "合成路线先进，反应技术成熟"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "反应技术成熟",
+      "evidence_span": "合成路线先进，反应技术成熟"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "印度IPCA制药",
+      "evidence_span": "印度IPCA制药"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "印度Zydus Cadila制药",
+      "evidence_span": "印度Zydus Cadila制药"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海中西三维药业",
+      "evidence_span": "上海中西三维药业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "台湾旭富制药",
+      "evidence_span": "台湾旭富制药"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "芬兰Fermion制药",
+      "evidence_span": "芬兰Fermion制药"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新冠诊疗方案相关",
+      "evidence_span": "磷酸氯喹等相关药品被纳入新冠诊疗方案"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药中间体研发、生产与销售",
+        "evidence_span": "公司目前主要从事医药中间体的研发、生产与销售业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "尿素委托加工销售",
+        "evidence_span": "尿素委托加工销售业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医药中间体供应商",
+        "evidence_span": "公司子公司南松医药是一家专业从事医药中间体系列产品研发、生产和销售的高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氯喹侧链",
+        "evidence_span": "主要产品中氯喹侧链和羟基氯喹侧链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "羟基氯喹侧链",
+        "evidence_span": "主要产品中氯喹侧链和羟基氯喹侧链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗疟疾类药物中间体",
+        "evidence_span": "主要产品为抗疟疾类、孕激素类、营养剂类等品类的药物中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "孕激素类药物中间体",
+        "evidence_span": "主要产品为抗疟疾类、孕激素类、营养剂类等品类的药物中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "营养剂类药物中间体",
+        "evidence_span": "主要产品为抗疟疾类、孕激素类、营养剂类等品类的药物中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二噁烷",
+        "evidence_span": "南松医药的氯喹侧链、羟基氯喹侧链和二噁烷"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "合成路线先进",
+        "evidence_span": "合成路线先进，反应技术成熟"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "反应技术成熟",
+        "evidence_span": "合成路线先进，反应技术成熟"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "印度IPCA制药",
+        "evidence_span": "印度IPCA制药"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "印度Zydus Cadila制药",
+        "evidence_span": "印度Zydus Cadila制药"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海中西三维药业",
+        "evidence_span": "上海中西三维药业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "台湾旭富制药",
+        "evidence_span": "台湾旭富制药"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "芬兰Fermion制药",
+        "evidence_span": "芬兰Fermion制药"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新冠诊疗方案相关",
+        "evidence_span": "磷酸氯喹等相关药品被纳入新冠诊疗方案"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:58:10"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "1fb7e07079fb", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含Autopilot安全行驶里程的数据，可能隐含技术性能知识，但以特斯拉发文的事件形式呈现，混合了事件信息。"}}

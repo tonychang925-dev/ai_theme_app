@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "原液着色纤维的研发",
+      "evidence_span": "公司主要从事符合国家节能环保战略方向的原液着色纤维的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "原液着色纤维的生产",
+      "evidence_span": "公司主要从事符合国家节能环保战略方向的原液着色纤维的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "原液着色纤维的销售",
+      "evidence_span": "公司主要从事符合国家节能环保战略方向的原液着色纤维的研发、生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "差别化有色涤纶长丝企业",
+      "evidence_span": "公司自设立以来，始终专注于差别化有色涤纶长丝领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "切片纺原液着色涤纶长丝细分行业企业",
+      "evidence_span": "在切片纺原液着色涤纶长丝细分行业中排名前三位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "差别化有色涤纶长丝DTY",
+      "evidence_span": "主要产品为差别化有色涤纶长丝DTY、FDY和POY等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "差别化有色涤纶长丝FDY",
+      "evidence_span": "主要产品为差别化有色涤纶长丝DTY、FDY和POY等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "差别化有色涤纶长丝POY",
+      "evidence_span": "主要产品为差别化有色涤纶长丝DTY、FDY和POY等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阻燃纤维",
+      "evidence_span": "包括阻燃纤维、生态环保性纤维及哑铃型、三叶型等不同截面的纤维等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生态环保性纤维",
+      "evidence_span": "包括阻燃纤维、生态环保性纤维及哑铃型、三叶型等不同截面的纤维等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "哑铃型截面纤维",
+      "evidence_span": "包括阻燃纤维、生态环保性纤维及哑铃型、三叶型等不同截面的纤维等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三叶型截面纤维",
+      "evidence_span": "包括阻燃纤维、生态环保性纤维及哑铃型、三叶型等不同截面的纤维等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "原液着色技术",
+      "evidence_span": "公司一直致力于通过原液着色技术提升涤纶长丝的色彩丰富性及生产过程的节能环保性"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "配方技术",
+      "evidence_span": "形成了以配方技术、调色系统及专利生产设备组件技术为核心的技术创新体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "调色系统",
+      "evidence_span": "形成了以配方技术、调色系统及专利生产设备组件技术为核心的技术创新体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "专利生产设备组件技术",
+      "evidence_span": "形成了以配方技术、调色系统及专利生产设备组件技术为核心的技术创新体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "差别化有色涤纶长丝制备工艺技术",
+      "evidence_span": "公司已积累了多项自主研究开发的差别化有色涤纶长丝制备工艺技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色环保",
+      "evidence_span": "公司主要从事符合国家节能环保战略方向的原液着色纤维的研发、生产及销售"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色纤维",
+      "evidence_span": "公司被中国化学纤维工业协会评为“化纤行业'十三五'绿色发展示范企业”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "原液着色纤维的研发",
+        "evidence_span": "公司主要从事符合国家节能环保战略方向的原液着色纤维的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "原液着色纤维的生产",
+        "evidence_span": "公司主要从事符合国家节能环保战略方向的原液着色纤维的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "原液着色纤维的销售",
+        "evidence_span": "公司主要从事符合国家节能环保战略方向的原液着色纤维的研发、生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "差别化有色涤纶长丝企业",
+        "evidence_span": "公司自设立以来，始终专注于差别化有色涤纶长丝领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "切片纺原液着色涤纶长丝细分行业企业",
+        "evidence_span": "在切片纺原液着色涤纶长丝细分行业中排名前三位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "差别化有色涤纶长丝DTY",
+        "evidence_span": "主要产品为差别化有色涤纶长丝DTY、FDY和POY等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "差别化有色涤纶长丝FDY",
+        "evidence_span": "主要产品为差别化有色涤纶长丝DTY、FDY和POY等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "差别化有色涤纶长丝POY",
+        "evidence_span": "主要产品为差别化有色涤纶长丝DTY、FDY和POY等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阻燃纤维",
+        "evidence_span": "包括阻燃纤维、生态环保性纤维及哑铃型、三叶型等不同截面的纤维等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生态环保性纤维",
+        "evidence_span": "包括阻燃纤维、生态环保性纤维及哑铃型、三叶型等不同截面的纤维等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "哑铃型截面纤维",
+        "evidence_span": "包括阻燃纤维、生态环保性纤维及哑铃型、三叶型等不同截面的纤维等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三叶型截面纤维",
+        "evidence_span": "包括阻燃纤维、生态环保性纤维及哑铃型、三叶型等不同截面的纤维等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "原液着色技术",
+        "evidence_span": "公司一直致力于通过原液着色技术提升涤纶长丝的色彩丰富性及生产过程的节能环保性"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "配方技术",
+        "evidence_span": "形成了以配方技术、调色系统及专利生产设备组件技术为核心的技术创新体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "调色系统",
+        "evidence_span": "形成了以配方技术、调色系统及专利生产设备组件技术为核心的技术创新体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "专利生产设备组件技术",
+        "evidence_span": "形成了以配方技术、调色系统及专利生产设备组件技术为核心的技术创新体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "差别化有色涤纶长丝制备工艺技术",
+        "evidence_span": "公司已积累了多项自主研究开发的差别化有色涤纶长丝制备工艺技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色环保",
+        "evidence_span": "公司主要从事符合国家节能环保战略方向的原液着色纤维的研发、生产及销售"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色纤维",
+        "evidence_span": "公司被中国化学纤维工业协会评为“化纤行业'十三五'绿色发展示范企业”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:28:13"
+}

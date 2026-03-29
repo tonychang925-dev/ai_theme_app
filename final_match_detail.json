@@ -1,0 +1,342 @@
+[
+  {
+    "event_id": "evt_022ceac148bd",
+    "gt_theme": "AI/AR眼镜",
+    "gt_subject_key": "9030409",
+    "dynamic_llm_topk": 5,
+    "event_text": "摘要：Meta与Oakley合作开发的智能眼镜产品举行发布会\n事件类型：产品发布\n实体：Meta、Oakley、智能眼镜\n事件要点：智能眼镜发布；AI/AR应用；消费电子增长\n技术词：智能眼镜、发布会、合作、产品发布\n正文：2025年6月20日，Meta与Oakley合作开发的智能眼镜产品于6月20日举行发布会。",
+    "decision": {
+      "verdict": "accept_match",
+      "matched_theme_id": "9030409",
+      "matched_theme_name": "AR眼镜",
+      "confidence": 0.92,
+      "reason": "事件主叙事是Meta与Oakley合作发布智能眼镜产品，核心实体和关键动作直接指向AR眼镜产业链，且候选C1的题材摘要中明确包含事件原文和‘智能眼镜’关键词，与事件主对象和核心实体高度匹配。",
+      "need_new_theme": false,
+      "new_theme_name": "",
+      "new_theme_desc": "",
+      "candidates": [
+        {
+          "subject_key": "9030409",
+          "subject_name": "AR眼镜",
+          "dense_score": 0.7302,
+          "rerank_score": 0.7804,
+          "evidence": {
+            "theme_name_direct_hit": false,
+            "theme_name_hit_terms": [],
+            "theme_name_hit_score": 0,
+            "object_hits": [],
+            "must_hits": [],
+            "strong_hits": [],
+            "should_hits": [
+              "智能眼镜"
+            ],
+            "entity_hits": [],
+            "not_hits": [
+              "发布会"
+            ],
+            "negative_hits": [
+              "发布会"
+            ],
+            "positive_score": 1,
+            "conflict_score": 1,
+            "evidence_summary": {
+              "theme_name_hits": [],
+              "anchor_terms": [],
+              "support_terms": [
+                "智能眼镜"
+              ],
+              "conflict_terms": [
+                "发布会"
+              ]
+            }
+          }
+        },
+        {
+          "subject_key": "9043089",
+          "subject_name": "AI智能体Manus",
+          "dense_score": 0.7152,
+          "rerank_score": 0.7322,
+          "evidence": {
+            "theme_name_direct_hit": false,
+            "theme_name_hit_terms": [],
+            "theme_name_hit_score": 0,
+            "object_hits": [],
+            "must_hits": [],
+            "strong_hits": [],
+            "should_hits": [
+              "Meta"
+            ],
+            "entity_hits": [],
+            "not_hits": [],
+            "negative_hits": [],
+            "positive_score": 1,
+            "conflict_score": 0,
+            "evidence_summary": {
+              "theme_name_hits": [],
+              "anchor_terms": [],
+              "support_terms": [
+                "Meta"
+              ],
+              "conflict_terms": []
+            }
+          }
+        },
+        {
+          "subject_key": "9058849",
+          "subject_name": "高通",
+          "dense_score": 0.6213,
+          "rerank_score": 0.6291,
+          "evidence": {
+            "theme_name_direct_hit": false,
+            "theme_name_hit_terms": [],
+            "theme_name_hit_score": 0,
+            "object_hits": [],
+            "must_hits": [],
+            "strong_hits": [],
+            "should_hits": [],
+            "entity_hits": [],
+            "not_hits": [],
+            "negative_hits": [],
+            "positive_score": 0,
+            "conflict_score": 0,
+            "evidence_summary": {
+              "theme_name_hits": [],
+              "anchor_terms": [],
+              "support_terms": [],
+              "conflict_terms": []
+            }
+          }
+        },
+        {
+          "subject_key": "9055651",
+          "subject_name": "华为九大核心股",
+          "dense_score": 0.5937,
+          "rerank_score": 0.6211,
+          "evidence": {
+            "theme_name_direct_hit": false,
+            "theme_name_hit_terms": [],
+            "theme_name_hit_score": 0,
+            "object_hits": [],
+            "must_hits": [],
+            "strong_hits": [],
+            "should_hits": [],
+            "entity_hits": [],
+            "not_hits": [],
+            "negative_hits": [],
+            "positive_score": 0,
+            "conflict_score": 0,
+            "evidence_summary": {
+              "theme_name_hits": [],
+              "anchor_terms": [],
+              "support_terms": [],
+              "conflict_terms": []
+            }
+          }
+        },
+        {
+          "subject_key": "9051906",
+          "subject_name": "视涯科技IPO",
+          "dense_score": 0.6205,
+          "rerank_score": 0.6078,
+          "evidence": {
+            "theme_name_direct_hit": false,
+            "theme_name_hit_terms": [],
+            "theme_name_hit_score": 0,
+            "object_hits": [],
+            "must_hits": [],
+            "strong_hits": [],
+            "should_hits": [],
+            "entity_hits": [],
+            "not_hits": [],
+            "negative_hits": [],
+            "positive_score": 0,
+            "conflict_score": 0,
+            "evidence_summary": {
+              "theme_name_hits": [],
+              "anchor_terms": [],
+              "support_terms": [],
+              "conflict_terms": []
+            }
+          }
+        }
+      ],
+      "llm_result": {
+        "verdict": "accept_match",
+        "best_candidate": "C1",
+        "best_theme_key": "9030409",
+        "best_theme_name": "AR眼镜",
+        "confidence": 0.92,
+        "reason": "事件主叙事是Meta与Oakley合作发布智能眼镜产品，核心实体和关键动作直接指向AR眼镜产业链，且候选C1的题材摘要中明确包含事件原文和‘智能眼镜’关键词，与事件主对象和核心实体高度匹配。",
+        "new_theme_name": "",
+        "new_theme_desc": ""
+      }
+    }
+  },
+  {
+    "event_id": "evt_8885620c4b8c",
+    "gt_theme": "AI/AR眼镜",
+    "gt_subject_key": "9030409",
+    "dynamic_llm_topk": 5,
+    "event_text": "摘要：Meta与Oakley合作推出运动智能眼镜，挑战运动相机市场。\n事件类型：产品发布\n实体：Meta、Oakley、智能眼镜、运动相机\n事件要点：智能眼镜发布；运动相机竞争；AR/可穿戴设备\n技术词：智能眼镜、运动设计、运动相机、竞争\n正文：2025年6月17日，Meta联手Oakley推出智能眼镜 ，为运动设计挑战运动相机。",
+    "decision": {
+      "verdict": "accept_match",
+      "matched_theme_id": "9030409",
+      "matched_theme_name": "AR眼镜",
+      "confidence": 0.88,
+      "reason": "事件主叙事是Meta与Oakley合作发布为运动设计的智能眼镜，直接对应AR/智能眼镜产业链，且候选C1的题材摘要明确提及该合作与产品。",
+      "need_new_theme": false,
+      "new_theme_name": "",
+      "new_theme_desc": "",
+      "candidates": [
+        {
+          "subject_key": "9030409",
+          "subject_name": "AR眼镜",
+          "dense_score": 0.7274,
+          "rerank_score": 0.7624,
+          "evidence": {
+            "theme_name_direct_hit": false,
+            "theme_name_hit_terms": [],
+            "theme_name_hit_score": 0,
+            "object_hits": [],
+            "must_hits": [],
+            "strong_hits": [],
+            "should_hits": [
+              "智能眼镜"
+            ],
+            "entity_hits": [],
+            "not_hits": [],
+            "negative_hits": [],
+            "positive_score": 1,
+            "conflict_score": 0,
+            "evidence_summary": {
+              "theme_name_hits": [],
+              "anchor_terms": [],
+              "support_terms": [
+                "智能眼镜"
+              ],
+              "conflict_terms": []
+            }
+          }
+        },
+        {
+          "subject_key": "9043089",
+          "subject_name": "AI智能体Manus",
+          "dense_score": 0.7174,
+          "rerank_score": 0.7172,
+          "evidence": {
+            "theme_name_direct_hit": false,
+            "theme_name_hit_terms": [],
+            "theme_name_hit_score": 0,
+            "object_hits": [],
+            "must_hits": [],
+            "strong_hits": [],
+            "should_hits": [
+              "Meta"
+            ],
+            "entity_hits": [],
+            "not_hits": [],
+            "negative_hits": [],
+            "positive_score": 1,
+            "conflict_score": 0,
+            "evidence_summary": {
+              "theme_name_hits": [],
+              "anchor_terms": [],
+              "support_terms": [
+                "Meta"
+              ],
+              "conflict_terms": []
+            }
+          }
+        },
+        {
+          "subject_key": "9035538",
+          "subject_name": "灵巧手",
+          "dense_score": 0.6525,
+          "rerank_score": 0.6575,
+          "evidence": {
+            "theme_name_direct_hit": false,
+            "theme_name_hit_terms": [],
+            "theme_name_hit_score": 0,
+            "object_hits": [],
+            "must_hits": [],
+            "strong_hits": [],
+            "should_hits": [],
+            "entity_hits": [],
+            "not_hits": [],
+            "negative_hits": [],
+            "positive_score": 0,
+            "conflict_score": 0,
+            "evidence_summary": {
+              "theme_name_hits": [],
+              "anchor_terms": [],
+              "support_terms": [],
+              "conflict_terms": []
+            }
+          }
+        },
+        {
+          "subject_key": "9014636",
+          "subject_name": "人形机器人",
+          "dense_score": 0.6434,
+          "rerank_score": 0.6573,
+          "evidence": {
+            "theme_name_direct_hit": false,
+            "theme_name_hit_terms": [],
+            "theme_name_hit_score": 0,
+            "object_hits": [],
+            "must_hits": [],
+            "strong_hits": [],
+            "should_hits": [],
+            "entity_hits": [],
+            "not_hits": [],
+            "negative_hits": [],
+            "positive_score": 0,
+            "conflict_score": 0,
+            "evidence_summary": {
+              "theme_name_hits": [],
+              "anchor_terms": [],
+              "support_terms": [],
+              "conflict_terms": []
+            }
+          }
+        },
+        {
+          "subject_key": "9051906",
+          "subject_name": "视涯科技IPO",
+          "dense_score": 0.6687,
+          "rerank_score": 0.6443,
+          "evidence": {
+            "theme_name_direct_hit": false,
+            "theme_name_hit_terms": [],
+            "theme_name_hit_score": 0,
+            "object_hits": [],
+            "must_hits": [],
+            "strong_hits": [],
+            "should_hits": [],
+            "entity_hits": [],
+            "not_hits": [],
+            "negative_hits": [],
+            "positive_score": 0,
+            "conflict_score": 0,
+            "evidence_summary": {
+              "theme_name_hits": [],
+              "anchor_terms": [],
+              "support_terms": [],
+              "conflict_terms": []
+            }
+          }
+        }
+      ],
+      "llm_result": {
+        "verdict": "accept_match",
+        "best_candidate": "C1",
+        "best_theme_key": "9030409",
+        "best_theme_name": "AR眼镜",
+        "confidence": 0.88,
+        "reason": "事件主叙事是Meta与Oakley合作发布为运动设计的智能眼镜，直接对应AR/智能眼镜产业链，且候选C1的题材摘要明确提及该合作与产品。",
+        "new_theme_name": "",
+        "new_theme_desc": ""
+      }
+    }
+  }
+]

@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "集成电路测试方案开发",
+      "evidence_span": "主营业务包括集成电路测试方案开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "晶圆测试服务",
+      "evidence_span": "主营业务包括...晶圆测试服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "芯片成品测试服务",
+      "evidence_span": "主营业务包括...芯片成品测试服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "集成电路测试相关的配套服务",
+      "evidence_span": "主营业务包括...与集成电路测试相关的配套服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "独立第三方集成电路测试技术服务商",
+      "evidence_span": "利扬芯片是国内知名的独立第三方集成电路测试技术服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "独立测试龙头",
+      "evidence_span": "我国独立测试龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产专业测试领军者",
+      "evidence_span": "国产专业测试领军者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "晶圆测试服务",
+      "evidence_span": "公司主要产品为芯片成品测试及晶圆测试两大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芯片成品测试服务",
+      "evidence_span": "公司主要产品为芯片成品测试及晶圆测试两大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "指纹量产测试解决方案",
+      "evidence_span": "公司率先推出了指纹...量产测试解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "存储量产测试解决方案",
+      "evidence_span": "公司率先推出了...存储...量产测试解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物联网量产测试解决方案",
+      "evidence_span": "公司率先推出了...物联网...量产测试解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频量产测试解决方案",
+      "evidence_span": "公司率先推出了...射频等量产测试解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "12英寸晶圆测试服务",
+      "evidence_span": "主营业务包括集成电路测试方案开发、 12 英寸及 8 英寸晶圆测试服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "8英寸晶圆测试服务",
+      "evidence_span": "主营业务包括集成电路测试方案开发、 12 英寸及 8 英寸晶圆测试服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "条状封装产品自动探针台",
+      "evidence_span": "公司自主研发设计的条状封装产品自动探针台...集成电路专用测试设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3D高频分类机械手",
+      "evidence_span": "公司自主研发设计的...3D 高频分类机械手等集成电路专用测试设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "测试平台选择",
+      "evidence_span": "提供“美食街”模式 的测试平台选择"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "软硬件开发",
+      "evidence_span": "还为客户提供最优测试平台的选择以及相关软硬件开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "5G通讯领域",
+      "evidence_span": "公司的客户范围已覆盖 5G 通讯...等多个领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "传感器领域",
+      "evidence_span": "公司的客户范围已覆盖...传感器...等多个领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "物联网领域",
+      "evidence_span": "公司的客户范围已覆盖...物联网...等多个领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北斗导航领域",
+      "evidence_span": "公司的客户范围已覆盖...北斗导航...等多个领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "区块链领域",
+      "evidence_span": "公司的客户范围已覆盖...区块链...等多个领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工业控制领域",
+      "evidence_span": "公司的客户范围已覆盖...工业控制...等多个领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车电子领域",
+      "evidence_span": "公司的客户范围已覆盖...汽车电子等多个领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产专业测试",
+      "evidence_span": "国产专业测试领军者"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "集成电路测试方案开发",
+        "evidence_span": "主营业务包括集成电路测试方案开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "晶圆测试服务",
+        "evidence_span": "主营业务包括...晶圆测试服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "芯片成品测试服务",
+        "evidence_span": "主营业务包括...芯片成品测试服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "集成电路测试相关的配套服务",
+        "evidence_span": "主营业务包括...与集成电路测试相关的配套服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "独立第三方集成电路测试技术服务商",
+        "evidence_span": "利扬芯片是国内知名的独立第三方集成电路测试技术服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "独立测试龙头",
+        "evidence_span": "我国独立测试龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产专业测试领军者",
+        "evidence_span": "国产专业测试领军者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "晶圆测试服务",
+        "evidence_span": "公司主要产品为芯片成品测试及晶圆测试两大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芯片成品测试服务",
+        "evidence_span": "公司主要产品为芯片成品测试及晶圆测试两大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "指纹量产测试解决方案",
+        "evidence_span": "公司率先推出了指纹...量产测试解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "存储量产测试解决方案",
+        "evidence_span": "公司率先推出了...存储...量产测试解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物联网量产测试解决方案",
+        "evidence_span": "公司率先推出了...物联网...量产测试解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频量产测试解决方案",
+        "evidence_span": "公司率先推出了...射频等量产测试解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "12英寸晶圆测试服务",
+        "evidence_span": "主营业务包括集成电路测试方案开发、 12 英寸及 8 英寸晶圆测试服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "8英寸晶圆测试服务",
+        "evidence_span": "主营业务包括集成电路测试方案开发、 12 英寸及 8 英寸晶圆测试服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "条状封装产品自动探针台",
+        "evidence_span": "公司自主研发设计的条状封装产品自动探针台...集成电路专用测试设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3D高频分类机械手",
+        "evidence_span": "公司自主研发设计的...3D 高频分类机械手等集成电路专用测试设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "测试平台选择",
+        "evidence_span": "提供“美食街”模式 的测试平台选择"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "软硬件开发",
+        "evidence_span": "还为客户提供最优测试平台的选择以及相关软硬件开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "5G通讯领域",
+        "evidence_span": "公司的客户范围已覆盖 5G 通讯...等多个领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "传感器领域",
+        "evidence_span": "公司的客户范围已覆盖...传感器...等多个领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "物联网领域",
+        "evidence_span": "公司的客户范围已覆盖...物联网...等多个领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北斗导航领域",
+        "evidence_span": "公司的客户范围已覆盖...北斗导航...等多个领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "区块链领域",
+        "evidence_span": "公司的客户范围已覆盖...区块链...等多个领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工业控制领域",
+        "evidence_span": "公司的客户范围已覆盖...工业控制...等多个领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车电子领域",
+        "evidence_span": "公司的客户范围已覆盖...汽车电子等多个领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产专业测试",
+        "evidence_span": "国产专业测试领军者"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:16:21"
+}

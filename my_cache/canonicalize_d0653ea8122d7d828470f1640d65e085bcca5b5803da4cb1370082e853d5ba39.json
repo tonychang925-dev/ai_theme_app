@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:05", "result": {"span_uid": "0b89da40a9ff", "action": "rewrite", "canonical_text": "特斯拉FSD的全球市场扩展，包括欧洲和中国，需获得监管批准", "final_type": "signal", "final_role": "市场扩展条件", "stability": "medium", "reason": "去事件化改写，体现商业化进展和监管依赖，但时间表可能变化"}}

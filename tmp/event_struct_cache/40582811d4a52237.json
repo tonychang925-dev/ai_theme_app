@@ -1,0 +1,62 @@
+{
+  "event_id": "evt_42728c0feacb",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "产品发布",
+  "entities": [
+    {
+      "name": "小米",
+      "type": "公司",
+      "normalized": "小米"
+    },
+    {
+      "name": "AI眼镜",
+      "type": "产品",
+      "normalized": "AI眼镜"
+    },
+    {
+      "name": "手机制造巨头",
+      "type": "行业",
+      "normalized": "手机制造行业"
+    }
+  ],
+  "summary": "小米开发出AI眼镜并计划推向市场，预测发货量超百万台。",
+  "causal_claim": [
+    "AI眼镜发布",
+    "增强现实应用",
+    "消费电子创新"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "AI眼镜",
+      "推向市场",
+      "发货量预测"
+    ],
+    "normalized_terms": {
+      "小米": "小米",
+      "AI眼镜": "AI眼镜",
+      "手机制造巨头": "手机制造行业"
+    },
+    "evidence_spans": [
+      {
+        "text": "小米已开发出一款AI眼镜，并将尽快推向市场。",
+        "start": 0,
+        "end": 25
+      },
+      {
+        "text": "小米向上游供应链给出的发货量预测超过百万台。",
+        "start": 60,
+        "end": 90
+      }
+    ],
+    "core_concepts": [
+      "AI眼镜",
+      "产品发布",
+      "供应链预测"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-08-26T00:00:00Z",
+  "raw_text": "2024年8月26日，小米已开发出一款AI眼镜，并将尽快推向市场。这使小米有可能成为首个进入AI眼镜领域的手机制造巨头。据了解，小米向上游供应链给出的发货量预测超过百万台。"
+}

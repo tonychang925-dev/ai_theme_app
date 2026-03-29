@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:56:58", "result": {"chunk_id": "82f1a704bea3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件信息（如美国商务部长会见行业CEO、特朗普政府考虑行政命令、Figure完成C轮融资），但也可能隐含关于机器人产业竞争和融资背景的知识。这些知识可用于构建题材本体，但混合了事件细节，需要进一步裁决。"}}

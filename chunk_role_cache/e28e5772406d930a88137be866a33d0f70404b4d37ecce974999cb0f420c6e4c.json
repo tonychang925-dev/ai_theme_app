@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "cbefe0d77d06", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落清晰描述低轨卫星通信网络的结构（空间段、地面段、用户端），解释各部分功能，是纯静态的机制说明，没有事件或动态信息。"}}

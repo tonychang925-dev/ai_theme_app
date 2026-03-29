@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "4621116ddb7a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述PICO头显产品发布的具体事件，包括日期和泄露信息，属于公司产品动态，不包含静态知识。"}}

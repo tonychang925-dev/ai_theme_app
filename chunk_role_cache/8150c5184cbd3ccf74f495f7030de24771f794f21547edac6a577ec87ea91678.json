@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "96b8861b6941", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段包含具体事件（报告发布、体制转变、领导小组、2025年试生产时间点），但详细描述了半导体产业国产替代的结构变化（如商业公司主导、央企协调、EUV产线进展），这些是核心机制和关键要素，有高价值知识，因此判为candidate_mixed。"}}

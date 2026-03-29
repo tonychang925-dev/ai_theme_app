@@ -1,0 +1,8 @@
+{
+  "phase": "P1.phase0",
+  "run_id": "20260218_100705",
+  "gate_ready": true,
+  "blocking_issues": [],
+  "generated_at": "2026-02-18T02:09:02Z",
+  "decision": "WAITING_ACCEPTANCE"
+}

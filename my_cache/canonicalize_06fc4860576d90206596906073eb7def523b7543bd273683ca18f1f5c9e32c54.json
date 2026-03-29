@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:54:25", "result": {"span_uid": "1c0446a4bf70", "action": "rewrite", "canonical_text": "华为智界S7定位为高能大空间智慧轿跑。", "final_type": "core", "final_role": "车型定位", "stability": "high", "reason": "原文本直接描述车型定位，改写后保持稳定，属于核心知识。"}}

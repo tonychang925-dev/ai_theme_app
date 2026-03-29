@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "83c0471a687b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含多个具体事件，如网翎推出终端设备和中国移动试验卫星项目的中选结果，但同时也涉及卫星互联网终端制造商、服务商和产业链参与者信息，这些可能对理解题材构成有价值。"}}

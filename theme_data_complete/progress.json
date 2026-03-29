@@ -1,0 +1,26 @@
+{
+  "completed": [
+    605007
+  ],
+  "all_themes": [
+    605007
+  ],
+  "last_update": "2026-02-24T12:30:57.936428",
+  "stats": {
+    "total_requests": 9,
+    "success": 0,
+    "failed": 9,
+    "by_type": {
+      "details": 1,
+      "history_p1": 1,
+      "daily": 1,
+      "stocks_2026-02-24": 1,
+      "stocks_2026-02-23": 1,
+      "stocks_2026-02-22": 1,
+      "stocks_2026-02-21": 1,
+      "stocks_2026-02-20": 1,
+      "children": 1
+    }
+  },
+  "completed_all": true
+}

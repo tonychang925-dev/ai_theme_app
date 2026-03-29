@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:58", "result": {"chunk_id": "bc7d9ca9a523", "decision": "related_but_event_only", "confidence": 0.9, "reason": "该段落描述了拜登政府对半导体设备公司（如东京电子和阿斯麦）的贸易限制措施，属于新闻事件和政策动态，虽然涉及半导体设备行业，但核心是事件描述而非定义题材本体的核心环节、关键对象或结构边界。"}}

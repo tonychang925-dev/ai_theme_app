@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "57957389119d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述美国出口管控措施及台积电的暂停供应事件，聚焦具体政策影响和公司行动，属于事件性内容，无稳定知识构建价值。"}}

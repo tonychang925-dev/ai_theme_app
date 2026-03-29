@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:38:06", "result": {"chunk_id": "a08c01e7e41f", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明MSCI公司的定义和核心业务（如指数、风险分析工具、公司治理工具），纯属题材本体知识，无事件或动态内容。"}}

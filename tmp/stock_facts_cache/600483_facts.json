@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "风力发电",
+      "evidence_span": "已形成风力发电、天然气发电、热电联产等多种类电源发电业务组合"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "天然气发电",
+      "evidence_span": "已形成风力发电、天然气发电、热电联产等多种类电源发电业务组合"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "热电联产",
+      "evidence_span": "已形成风力发电、天然气发电、热电联产等多种类电源发电业务组合"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "核电发电业务",
+      "evidence_span": "并参股核电发电业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "供电",
+      "evidence_span": "公司的主营业务主要由供电、供热以及资产重组之前的纺织业务构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "供热",
+      "evidence_span": "公司的主营业务主要由供电、供热以及资产重组之前的纺织业务构成"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "福建省风电运营商龙头",
+      "evidence_span": "福建省风电运营商龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "清洁能源运营商",
+      "evidence_span": "公司清洁能源运营商转型顺利"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海上风电龙头",
+      "evidence_span": "海上风电龙头扬帆起航"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陆上风电",
+      "evidence_span": "陆上风电91.1万千瓦"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海上风电",
+      "evidence_span": "海上风电89.8万千瓦"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热电联产机组",
+      "evidence_span": "公司在福建省内的129.61万千瓦火电机组均为热电联产机组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏发电",
+      "evidence_span": "光伏发电4.02万千瓦"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三峡集团公司",
+      "evidence_span": "公司控股股东福能集团与三峡集团公司签订《项目合作框架协议》"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "福能股份受益于国企改革"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "清洁能源转型",
+      "evidence_span": "成功转型新能源运营商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海上风电",
+      "evidence_span": "海风化电助力能源转型"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "风力发电",
+        "evidence_span": "已形成风力发电、天然气发电、热电联产等多种类电源发电业务组合"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "天然气发电",
+        "evidence_span": "已形成风力发电、天然气发电、热电联产等多种类电源发电业务组合"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "热电联产",
+        "evidence_span": "已形成风力发电、天然气发电、热电联产等多种类电源发电业务组合"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "核电发电业务",
+        "evidence_span": "并参股核电发电业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "供电",
+        "evidence_span": "公司的主营业务主要由供电、供热以及资产重组之前的纺织业务构成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "供热",
+        "evidence_span": "公司的主营业务主要由供电、供热以及资产重组之前的纺织业务构成"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "福建省风电运营商龙头",
+        "evidence_span": "福建省风电运营商龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "清洁能源运营商",
+        "evidence_span": "公司清洁能源运营商转型顺利"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海上风电龙头",
+        "evidence_span": "海上风电龙头扬帆起航"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陆上风电",
+        "evidence_span": "陆上风电91.1万千瓦"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海上风电",
+        "evidence_span": "海上风电89.8万千瓦"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热电联产机组",
+        "evidence_span": "公司在福建省内的129.61万千瓦火电机组均为热电联产机组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏发电",
+        "evidence_span": "光伏发电4.02万千瓦"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三峡集团公司",
+        "evidence_span": "公司控股股东福能集团与三峡集团公司签订《项目合作框架协议》"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "福能股份受益于国企改革"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "清洁能源转型",
+        "evidence_span": "成功转型新能源运营商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海上风电",
+        "evidence_span": "海风化电助力能源转型"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:19:49"
+}

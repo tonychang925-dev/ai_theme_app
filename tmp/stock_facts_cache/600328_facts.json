@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "盐化工",
+      "evidence_span": "公司是一家以盐化工为主的生产企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基础化工产品",
+      "evidence_span": "主营以纯碱、烧碱、PVC、糊树脂、氯化铵为代表的基础化工产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精细化工产品",
+      "evidence_span": "以金属钠、氯酸钠、三氯异氰尿酸等为代表的精细化工产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药保健品",
+      "evidence_span": "公司医药、保健品产业板块规模较小"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "盐化工生产企业",
+      "evidence_span": "公司是一家以盐化工为主的生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "世界最大的金属钠制造商",
+      "evidence_span": "已成为世界最大的金属钠制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内第一大纯碱生产企业",
+      "evidence_span": "公司纯碱产能390万吨，是国内第一大纯碱生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纯碱",
+      "evidence_span": "主营以纯碱、烧碱、PVC、糊树脂、氯化铵为代表的基础化工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烧碱",
+      "evidence_span": "主营以纯碱、烧碱、PVC、糊树脂、氯化铵为代表的基础化工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚氯乙烯树脂(PVC)",
+      "evidence_span": "主营以纯碱、烧碱、PVC、糊树脂、氯化铵为代表的基础化工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "糊树脂",
+      "evidence_span": "主营以纯碱、烧碱、PVC、糊树脂、氯化铵为代表的基础化工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氯化铵",
+      "evidence_span": "主营以纯碱、烧碱、PVC、糊树脂、氯化铵为代表的基础化工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属钠",
+      "evidence_span": "以金属钠、氯酸钠、三氯异氰尿酸等为代表的精细化工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氯酸钠",
+      "evidence_span": "以金属钠、氯酸钠、三氯异氰尿酸等为代表的精细化工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三氯异氰尿酸",
+      "evidence_span": "以金属钠、氯酸钠、三氯异氰尿酸等为代表的精细化工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯钠",
+      "evidence_span": "高纯钠是一种高纯度金属钠成品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复方甘草片",
+      "evidence_span": "主要经营的处方药有苁蓉益肾颗粒和复方甘草片及盐藻系列保健产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "苁蓉益肾颗粒",
+      "evidence_span": "主要经营的处方药有苁蓉益肾颗粒和复方甘草片及盐藻系列保健产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盐藻系列保健产品",
+      "evidence_span": "主要经营的处方药有苁蓉益肾颗粒和复方甘草片及盐藻系列保健产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "金属钠生产工艺",
+      "evidence_span": "金属钠生产工艺采用前“美国杜邦”的先进技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氯酸钠低温真空蒸发结晶技术",
+      "evidence_span": "氯酸钠采用加拿大ERCO公司的成套工艺，采用低温真空蒸发结晶技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "纯碱生产先进技术",
+      "evidence_span": "纯碱生产装置集中选用了国内外先进技术和关键设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "离子膜电解工艺",
+      "evidence_span": "氯碱工艺采用世界最先进的离子膜电解工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微悬浮聚合法技术",
+      "evidence_span": "糊树脂采用国内外先进的微悬浮聚合法技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "盐化工一体化",
+      "evidence_span": "盐化工一体化生产企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "盐化工",
+        "evidence_span": "公司是一家以盐化工为主的生产企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基础化工产品",
+        "evidence_span": "主营以纯碱、烧碱、PVC、糊树脂、氯化铵为代表的基础化工产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精细化工产品",
+        "evidence_span": "以金属钠、氯酸钠、三氯异氰尿酸等为代表的精细化工产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药保健品",
+        "evidence_span": "公司医药、保健品产业板块规模较小"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "盐化工生产企业",
+        "evidence_span": "公司是一家以盐化工为主的生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "世界最大的金属钠制造商",
+        "evidence_span": "已成为世界最大的金属钠制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内第一大纯碱生产企业",
+        "evidence_span": "公司纯碱产能390万吨，是国内第一大纯碱生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纯碱",
+        "evidence_span": "主营以纯碱、烧碱、PVC、糊树脂、氯化铵为代表的基础化工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烧碱",
+        "evidence_span": "主营以纯碱、烧碱、PVC、糊树脂、氯化铵为代表的基础化工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚氯乙烯树脂(PVC)",
+        "evidence_span": "主营以纯碱、烧碱、PVC、糊树脂、氯化铵为代表的基础化工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "糊树脂",
+        "evidence_span": "主营以纯碱、烧碱、PVC、糊树脂、氯化铵为代表的基础化工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氯化铵",
+        "evidence_span": "主营以纯碱、烧碱、PVC、糊树脂、氯化铵为代表的基础化工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属钠",
+        "evidence_span": "以金属钠、氯酸钠、三氯异氰尿酸等为代表的精细化工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氯酸钠",
+        "evidence_span": "以金属钠、氯酸钠、三氯异氰尿酸等为代表的精细化工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三氯异氰尿酸",
+        "evidence_span": "以金属钠、氯酸钠、三氯异氰尿酸等为代表的精细化工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯钠",
+        "evidence_span": "高纯钠是一种高纯度金属钠成品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复方甘草片",
+        "evidence_span": "主要经营的处方药有苁蓉益肾颗粒和复方甘草片及盐藻系列保健产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "苁蓉益肾颗粒",
+        "evidence_span": "主要经营的处方药有苁蓉益肾颗粒和复方甘草片及盐藻系列保健产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盐藻系列保健产品",
+        "evidence_span": "主要经营的处方药有苁蓉益肾颗粒和复方甘草片及盐藻系列保健产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "金属钠生产工艺",
+        "evidence_span": "金属钠生产工艺采用前“美国杜邦”的先进技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氯酸钠低温真空蒸发结晶技术",
+        "evidence_span": "氯酸钠采用加拿大ERCO公司的成套工艺，采用低温真空蒸发结晶技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "纯碱生产先进技术",
+        "evidence_span": "纯碱生产装置集中选用了国内外先进技术和关键设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "离子膜电解工艺",
+        "evidence_span": "氯碱工艺采用世界最先进的离子膜电解工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微悬浮聚合法技术",
+        "evidence_span": "糊树脂采用国内外先进的微悬浮聚合法技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "盐化工一体化",
+        "evidence_span": "盐化工一体化生产企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:56:27"
+}

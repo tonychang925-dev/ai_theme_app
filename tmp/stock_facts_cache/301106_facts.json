@@ -1,0 +1,469 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "液晶专显产品",
+      "evidence_span": "专注于液晶专显产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车载液晶显示产品",
+      "evidence_span": "开始逐步开发车载液晶显示产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "定制化液晶专显的细分行业龙头",
+      "evidence_span": "专注定制化液晶专显的细分行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车电子领域中车载液晶显示屏产品的二级供应商",
+      "evidence_span": "公司是汽车电子领域中车载液晶显示屏产品的二级供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TN型液晶显示屏和模组",
+      "evidence_span": "主要产品为TN型（含HTN型）、STN型、VA型液晶显示屏和模组以及TFT型液晶显示模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "STN型液晶显示屏和模组",
+      "evidence_span": "主要产品为TN型（含HTN型）、STN型、VA型液晶显示屏和模组以及TFT型液晶显示模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VA型液晶显示屏和模组",
+      "evidence_span": "主要产品为TN型（含HTN型）、STN型、VA型液晶显示屏和模组以及TFT型液晶显示模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TFT型液晶显示模组",
+      "evidence_span": "主要产品为TN型（含HTN型）、STN型、VA型液晶显示屏和模组以及TFT型液晶显示模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载大尺寸VA型液晶显示屏",
+      "evidence_span": "车载大尺寸VA型液晶显示屏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "流媒体智能后视镜",
+      "evidence_span": "流媒体智能后视镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电表类液晶显示屏",
+      "evidence_span": "电表类液晶显示屏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "厨房家用电器的液晶显示屏",
+      "evidence_span": "电饭煲、微波炉以及电磁灶等厨房家用电器的液晶显示屏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗设备液晶显示屏",
+      "evidence_span": "血糖仪、血压计等医疗设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "计算器液晶显示产品",
+      "evidence_span": "计算器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精度彩膜贴附技术",
+      "evidence_span": "高精度彩膜贴附技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "息屏一体黑技术",
+      "evidence_span": "息屏一体黑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TFT光学贴合技术",
+      "evidence_span": "TFT光学贴合技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "COG工艺",
+      "evidence_span": "COG即ChiponGlass，是将IC直接邦定在玻璃上的一种工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "COB工艺",
+      "evidence_span": "COB即ChiponBoard，是将IC直接邦定在PCB上的一种工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高对比垂直取向液晶显示技术",
+      "evidence_span": "高对比垂直取向液晶显示"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高信赖液晶显示技术",
+      "evidence_span": "高信赖液晶显示"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "COG点阵电表液晶显示技术",
+      "evidence_span": "COG点阵电表液晶显示"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车载大尺寸液晶显示技术",
+      "evidence_span": "车载大尺寸液晶显示"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "异型液晶显示技术",
+      "evidence_span": "异型液晶显示"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "林洋能源",
+      "evidence_span": "电表类液晶显示屏主要销售给林洋能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "正泰仪器",
+      "evidence_span": "电表类液晶显示屏主要销售给...正泰仪器"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "炬华科技",
+      "evidence_span": "电表类液晶显示屏主要销售给...炬华科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "威奇尔",
+      "evidence_span": "公司产品通过威奇尔...等一级供应商渠道交付"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "伟世通（天宝汽车）",
+      "evidence_span": "公司产品通过...伟世通（天宝汽车）...等一级供应商渠道交付"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天有为",
+      "evidence_span": "公司产品通过...天有为...等一级供应商渠道交付"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新通达",
+      "evidence_span": "公司产品通过...新通达等一级供应商渠道交付"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽集团",
+      "evidence_span": "交付应用于上汽集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利汽车",
+      "evidence_span": "交付应用于...吉利汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安汽车",
+      "evidence_span": "交付应用于...长安汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京汽车",
+      "evidence_span": "交付应用于...北京汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞汽车",
+      "evidence_span": "交付应用于...奇瑞汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风汽车",
+      "evidence_span": "交付应用于...东风汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "松下",
+      "evidence_span": "与日本电饭煲生产制造行业知名企业松下...均保持长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "象印",
+      "evidence_span": "与日本电饭煲生产制造行业知名企业...象印...均保持长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "虎牌",
+      "evidence_span": "与日本电饭煲生产制造行业知名企业...虎牌...均保持长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三菱",
+      "evidence_span": "与日本电饭煲生产制造行业知名企业...三菱...均保持长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东芝",
+      "evidence_span": "与日本电饭煲生产制造行业知名企业...东芝均保持长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "罗氏",
+      "evidence_span": "公司产品应用于罗氏...等主要医疗设备制造商的设备中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "拜耳",
+      "evidence_span": "公司产品应用于...拜耳...等主要医疗设备制造商的设备中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "鱼跃医疗",
+      "evidence_span": "公司产品应用于...鱼跃医疗等主要医疗设备制造商的设备中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Casio",
+      "evidence_span": "主要服务的终端客户为Casio"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "液晶专显产品",
+        "evidence_span": "专注于液晶专显产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车载液晶显示产品",
+        "evidence_span": "开始逐步开发车载液晶显示产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "定制化液晶专显的细分行业龙头",
+        "evidence_span": "专注定制化液晶专显的细分行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车电子领域中车载液晶显示屏产品的二级供应商",
+        "evidence_span": "公司是汽车电子领域中车载液晶显示屏产品的二级供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TN型液晶显示屏和模组",
+        "evidence_span": "主要产品为TN型（含HTN型）、STN型、VA型液晶显示屏和模组以及TFT型液晶显示模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "STN型液晶显示屏和模组",
+        "evidence_span": "主要产品为TN型（含HTN型）、STN型、VA型液晶显示屏和模组以及TFT型液晶显示模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VA型液晶显示屏和模组",
+        "evidence_span": "主要产品为TN型（含HTN型）、STN型、VA型液晶显示屏和模组以及TFT型液晶显示模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TFT型液晶显示模组",
+        "evidence_span": "主要产品为TN型（含HTN型）、STN型、VA型液晶显示屏和模组以及TFT型液晶显示模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载大尺寸VA型液晶显示屏",
+        "evidence_span": "车载大尺寸VA型液晶显示屏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "流媒体智能后视镜",
+        "evidence_span": "流媒体智能后视镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电表类液晶显示屏",
+        "evidence_span": "电表类液晶显示屏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "厨房家用电器的液晶显示屏",
+        "evidence_span": "电饭煲、微波炉以及电磁灶等厨房家用电器的液晶显示屏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗设备液晶显示屏",
+        "evidence_span": "血糖仪、血压计等医疗设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "计算器液晶显示产品",
+        "evidence_span": "计算器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精度彩膜贴附技术",
+        "evidence_span": "高精度彩膜贴附技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "息屏一体黑技术",
+        "evidence_span": "息屏一体黑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TFT光学贴合技术",
+        "evidence_span": "TFT光学贴合技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "COG工艺",
+        "evidence_span": "COG即ChiponGlass，是将IC直接邦定在玻璃上的一种工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "COB工艺",
+        "evidence_span": "COB即ChiponBoard，是将IC直接邦定在PCB上的一种工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高对比垂直取向液晶显示技术",
+        "evidence_span": "高对比垂直取向液晶显示"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高信赖液晶显示技术",
+        "evidence_span": "高信赖液晶显示"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "COG点阵电表液晶显示技术",
+        "evidence_span": "COG点阵电表液晶显示"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车载大尺寸液晶显示技术",
+        "evidence_span": "车载大尺寸液晶显示"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "异型液晶显示技术",
+        "evidence_span": "异型液晶显示"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "林洋能源",
+        "evidence_span": "电表类液晶显示屏主要销售给林洋能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "正泰仪器",
+        "evidence_span": "电表类液晶显示屏主要销售给...正泰仪器"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "炬华科技",
+        "evidence_span": "电表类液晶显示屏主要销售给...炬华科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "威奇尔",
+        "evidence_span": "公司产品通过威奇尔...等一级供应商渠道交付"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "伟世通（天宝汽车）",
+        "evidence_span": "公司产品通过...伟世通（天宝汽车）...等一级供应商渠道交付"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天有为",
+        "evidence_span": "公司产品通过...天有为...等一级供应商渠道交付"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新通达",
+        "evidence_span": "公司产品通过...新通达等一级供应商渠道交付"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽集团",
+        "evidence_span": "交付应用于上汽集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利汽车",
+        "evidence_span": "交付应用于...吉利汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安汽车",
+        "evidence_span": "交付应用于...长安汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京汽车",
+        "evidence_span": "交付应用于...北京汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞汽车",
+        "evidence_span": "交付应用于...奇瑞汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风汽车",
+        "evidence_span": "交付应用于...东风汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "松下",
+        "evidence_span": "与日本电饭煲生产制造行业知名企业松下...均保持长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "象印",
+        "evidence_span": "与日本电饭煲生产制造行业知名企业...象印...均保持长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "虎牌",
+        "evidence_span": "与日本电饭煲生产制造行业知名企业...虎牌...均保持长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三菱",
+        "evidence_span": "与日本电饭煲生产制造行业知名企业...三菱...均保持长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东芝",
+        "evidence_span": "与日本电饭煲生产制造行业知名企业...东芝均保持长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "罗氏",
+        "evidence_span": "公司产品应用于罗氏...等主要医疗设备制造商的设备中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "拜耳",
+        "evidence_span": "公司产品应用于...拜耳...等主要医疗设备制造商的设备中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "鱼跃医疗",
+        "evidence_span": "公司产品应用于...鱼跃医疗等主要医疗设备制造商的设备中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Casio",
+        "evidence_span": "主要服务的终端客户为Casio"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:37:05"
+}

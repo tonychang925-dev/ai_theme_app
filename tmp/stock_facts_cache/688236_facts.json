@@ -1,0 +1,419 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "骨科医疗器械",
+      "evidence_span": "国内领先的骨科医疗器械厂商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "关节假体产品",
+      "evidence_span": "主要产品为关节假体产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "脊柱类植入产品",
+      "evidence_span": "脊柱类植入产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运动医学",
+      "evidence_span": "正式进入运动医学领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "口腔领域",
+      "evidence_span": "正式进入口腔领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产骨科耗材领头羊",
+      "evidence_span": "春立医疗国产骨科耗材领头羊"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "骨科医疗器械厂商",
+      "evidence_span": "国内领先的骨科医疗器械厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性医疗器械企业",
+      "evidence_span": "逐步转型为综合性的医疗器械企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "关节假体产品",
+      "evidence_span": "主要产品为关节假体产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "脊柱类植入产品",
+      "evidence_span": "脊柱类植入产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "标准关节假体",
+      "evidence_span": "标准关节假体包括标准髋关节、膝关节、肩关节和肘关节四类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定制关节假体",
+      "evidence_span": "定制关节假体适用于有关节复原功能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "髋关节产品",
+      "evidence_span": "髋关节"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "膝关节产品",
+      "evidence_span": "膝关节"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肩肘关节产品",
+      "evidence_span": "肩肘关节"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固定平台单髁",
+      "evidence_span": "公司固定平台单髁填补了国内市场没有国产常规单髁假体产品的空白"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不可吸收带线锚钉",
+      "evidence_span": "获得“不可吸收带线锚钉”注册证"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非吸收性外科缝线系列产品",
+      "evidence_span": "非吸收性外科缝线系列产品获批上市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门型钉产品",
+      "evidence_span": "门型钉产品获批上市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "带袢钛板产品",
+      "evidence_span": "带袢钛板产品获批上市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PEEK材料带线锚钉",
+      "evidence_span": "获得PEEK材料带线锚钉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一次性刨削刀头",
+      "evidence_span": "一次性刨削刀头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "界面螺钉",
+      "evidence_span": "界面螺钉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "富血小板血浆制备套装",
+      "evidence_span": "“富血小板血浆制备套装”获得NMPA批准上市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医用离心机",
+      "evidence_span": "“医用离心机”也获得NMPA批准上市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "颌面接骨板系统",
+      "evidence_span": "颌面接骨板系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "正畸颊面管",
+      "evidence_span": "正畸颊面管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "正畸托槽",
+      "evidence_span": "正畸托槽"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "正畸丝产品",
+      "evidence_span": "正畸丝产品获批上市"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低摩擦关节界面技术",
+      "evidence_span": "低摩擦关节界面技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "个性化生物型股骨技术",
+      "evidence_span": "个性化生物型股骨技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "压配式生物髋臼技术",
+      "evidence_span": "压配式生物髋臼技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "髋关节翻修假体填充技术",
+      "evidence_span": "髋关节翻修假体填充技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高抛光解剖胫骨平台技术",
+      "evidence_span": "高抛光解剖胫骨平台技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "优化的股骨髁前髁及髌骨滑车技术",
+      "evidence_span": "优化的股骨髁前髁及髌骨滑车技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "半开放式股骨髁髁间窝技术",
+      "evidence_span": "半开放式股骨髁髁间窝技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多元化平台垫技术",
+      "evidence_span": "多元化平台垫技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "肱骨近端假体设计技术",
+      "evidence_span": "肱骨近端假体设计技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "肱骨远端假体设计技术",
+      "evidence_span": "肱骨远端假体设计技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全自动富血小板血浆制备系统",
+      "evidence_span": "国内首家全自动富血小板血浆制备系统"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产骨科耗材领头羊",
+      "evidence_span": "春立医疗国产骨科耗材领头羊"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "骨科医疗器械",
+        "evidence_span": "国内领先的骨科医疗器械厂商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "关节假体产品",
+        "evidence_span": "主要产品为关节假体产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "脊柱类植入产品",
+        "evidence_span": "脊柱类植入产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "运动医学",
+        "evidence_span": "正式进入运动医学领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "口腔领域",
+        "evidence_span": "正式进入口腔领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产骨科耗材领头羊",
+        "evidence_span": "春立医疗国产骨科耗材领头羊"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "骨科医疗器械厂商",
+        "evidence_span": "国内领先的骨科医疗器械厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性医疗器械企业",
+        "evidence_span": "逐步转型为综合性的医疗器械企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "关节假体产品",
+        "evidence_span": "主要产品为关节假体产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "脊柱类植入产品",
+        "evidence_span": "脊柱类植入产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "标准关节假体",
+        "evidence_span": "标准关节假体包括标准髋关节、膝关节、肩关节和肘关节四类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定制关节假体",
+        "evidence_span": "定制关节假体适用于有关节复原功能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "髋关节产品",
+        "evidence_span": "髋关节"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "膝关节产品",
+        "evidence_span": "膝关节"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肩肘关节产品",
+        "evidence_span": "肩肘关节"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固定平台单髁",
+        "evidence_span": "公司固定平台单髁填补了国内市场没有国产常规单髁假体产品的空白"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不可吸收带线锚钉",
+        "evidence_span": "获得“不可吸收带线锚钉”注册证"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非吸收性外科缝线系列产品",
+        "evidence_span": "非吸收性外科缝线系列产品获批上市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门型钉产品",
+        "evidence_span": "门型钉产品获批上市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "带袢钛板产品",
+        "evidence_span": "带袢钛板产品获批上市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PEEK材料带线锚钉",
+        "evidence_span": "获得PEEK材料带线锚钉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一次性刨削刀头",
+        "evidence_span": "一次性刨削刀头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "界面螺钉",
+        "evidence_span": "界面螺钉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "富血小板血浆制备套装",
+        "evidence_span": "“富血小板血浆制备套装”获得NMPA批准上市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医用离心机",
+        "evidence_span": "“医用离心机”也获得NMPA批准上市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "颌面接骨板系统",
+        "evidence_span": "颌面接骨板系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "正畸颊面管",
+        "evidence_span": "正畸颊面管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "正畸托槽",
+        "evidence_span": "正畸托槽"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "正畸丝产品",
+        "evidence_span": "正畸丝产品获批上市"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低摩擦关节界面技术",
+        "evidence_span": "低摩擦关节界面技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "个性化生物型股骨技术",
+        "evidence_span": "个性化生物型股骨技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "压配式生物髋臼技术",
+        "evidence_span": "压配式生物髋臼技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "髋关节翻修假体填充技术",
+        "evidence_span": "髋关节翻修假体填充技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高抛光解剖胫骨平台技术",
+        "evidence_span": "高抛光解剖胫骨平台技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "优化的股骨髁前髁及髌骨滑车技术",
+        "evidence_span": "优化的股骨髁前髁及髌骨滑车技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "半开放式股骨髁髁间窝技术",
+        "evidence_span": "半开放式股骨髁髁间窝技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多元化平台垫技术",
+        "evidence_span": "多元化平台垫技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "肱骨近端假体设计技术",
+        "evidence_span": "肱骨近端假体设计技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "肱骨远端假体设计技术",
+        "evidence_span": "肱骨远端假体设计技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全自动富血小板血浆制备系统",
+        "evidence_span": "国内首家全自动富血小板血浆制备系统"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产骨科耗材领头羊",
+        "evidence_span": "春立医疗国产骨科耗材领头羊"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:40:23"
+}

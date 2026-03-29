@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_3", "model": "deepseek-chat", "timestamp": "2026-03-08T09:34:22", "result": {"chunk_id": "9a19692dcdbf", "decision": "drop", "confidence": 0.95, "knowledge_value": "low", "reason": "段落主要包含统计数据（如销售收入增长、市场占有率）和预测，这些是signal类型，反映行业动态，但不定义半导体设备本体。没有core或related知识。", "knowledge_spans": [], "event_residue": "", "drop_target": "event"}}

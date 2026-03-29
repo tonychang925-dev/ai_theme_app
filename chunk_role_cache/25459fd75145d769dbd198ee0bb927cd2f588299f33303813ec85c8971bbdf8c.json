@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "0fe2fbbf6ff8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述空天信息产业国际生态大会的举办和计划发布行动方案的事件，但提到了创新推动北斗规模应用、典型应用场景（如低空经济、数字经济）和市场化推广等，可能隐含卫星互联网应用场景和推广策略的知识，混合了事件信息。"}}

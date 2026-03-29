@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 365659927.0,
+    "changeCount": 0.12,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "<p><span style=\"font-weight: bold;\">1.主营业务收入构成</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20230109182848_8df1ef59e506478b.png\" /></p>\n<p><span style=\"font-weight: bold;\">2016年4月，公司收购国网节能公司配电网节能业务，业务范围扩展至配电网节能领域</span>，主要以合同能源管理模式（EMC模式）经营，营业收入依靠资产增长。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.股权结构</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20230109191746_480ba310be0f0434.png\" /></p>\n<p><span style=\"font-weight: bold;\">国网综合能源集团</span>通过重庆川东电力集团有限责任公司持股比例为51.64%，是<span style=\"font-weight: bold;\">公司第一大股东</span>。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.发展历程</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20230109191922_b1a3848ef5ed86f1.png\" /></p>\n<p>信息化是电网自身发展的需要，综合能源服务的核心是以用户为中心的能源服务，是在用户侧实现信息化最主要落地方式。电力市场化改革后，电价的降低使国网利润承压，综合能源业务有望开辟第二主业，增加国网收入来源。</p>\n<p>2013年国网综能公司服务集团成立（前身为国网节能服务有限公司），定位为综合能源服务商，国网区域内共拥有26 个省级综合能源服务公司。国家电网综合能源业务发展快速，2019年营收110亿元（同比+125%），超过年初预定的95亿营收目标。国网对于综合能源业务寄予厚望，计划20年国网综合能源业务营收超过200亿元，25年营收800亿元，30年营收突破3000亿元，成为综合能源服务行业的领导者，作为输配电外的第二主业，助力国网营收增长。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.主营业务内容</span></p>\n<p><span style=\"font-weight: bold;\">电力供应业务</span>：<span style=\"font-weight: bold;\">供电客户区域</span>主要<span style=\"font-weight: bold;\">集中于重庆市涪陵区行政区域</span>。电力来源主要是通过联网线路从国家电网重庆市电力公司、重庆川东电力集团有限责任公司等单位趸购电量。</p>\n<p><span style=\"font-weight: bold;\">配电网节能业务</span>：主要采用<span style=\"font-weight: bold;\">合同能源管理（简称EMC）模式</span>，为用户提供节能诊断、改造等服务，并<span style=\"font-weight: bold;\">以节能效益分享等方式回收投资和获得合理利润</span>。目前电力供应业务按照国家相关规定在营业许可范围从事经营业务，国家正在实施电力体制改革；公司经营的配电网节能业务是为电网节能降损提供节能改造和能效综合治理，属于国家大力支持和提倡的朝阳产业。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5.配网节能业务</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20230109195913_7a395a690e8f094b.png\" /></p>\n<p><span style=\"font-weight: bold;\">配网节能针对线路和设备优化，电网安全和项目获取为关键能力</span>。配电网的损耗主要包括配电线路和电压器损耗两个环节，配电网降损主要体现为更换更为节能的设备和线路，针对电网电路和变压器优化。配电网节能损耗改造对电网建设稳定、计量和传感能力有较高要求，且需不断进行产品升级，行业存在技术壁垒。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">6.已完工项目</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid11_20230109200109_b2d1b8865c39821d.png\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">7.风险提示</span></p>\n<p>税收优惠政策变化风险；配电网节能项目建设不及预期风险；电价持续下降风险</p>",
+    "firstLetter": "FLDL",
+    "high": 12.34,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 11.81,
+    "marketValue": 18592154013.4,
+    "name": "涪陵电力",
+    "pctChg": 0.99,
+    "price": 12.22,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 29.72,
+    "recentChange": -1.61,
+    "remark": "国网综合能源旗下上市平台，主要从事配网节能以及涪陵地区售电业务",
+    "status": 1,
+    "stockId": "600452",
+    "stockLightspots": [
+      {
+        "bizKey": "16019",
+        "content": "涪陵电力国网系新贵，配节能明日之星",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16019,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16020",
+        "content": "涪陵电力国网节能平台，全面受益电改",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16020,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16021",
+        "content": "涪陵电力具备稀缺性与垄断性的国网节能平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16021,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16022",
+        "content": "涪陵电力国网节能平台，业务开启新篇章",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16022,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16023",
+        "content": "涪陵电力驰骋于蓝海的国网节能平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16023,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16024",
+        "content": "涪陵电力将成为国家电网公司节能服务平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16024,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16025",
+        "content": "涪陵电力收购国网系配电节能业务，切入千亿市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16025,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16026",
+        "content": "涪陵电力转型电网节能业务平台，背靠国网发展空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16026,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16027",
+        "content": "涪陵电力拟收购国网配网节能资产，公司发展迎来重大机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16027,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16028",
+        "content": "涪陵电力拟收购国网下属节能资产，节能业务有望保持快速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16028,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16029",
+        "content": "国网节能上市平台，资产注入打开空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16029,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16030",
+        "content": "涪陵电力配电网节能稀缺标的，高壁垒锁定大市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16030,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16031",
+        "content": "涪陵电力拟筹非公开发行，募资收购配电网节能资产",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16031,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16032",
+        "content": "涪陵电力配网节能业绩兑现加速 关注新订单进一步释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16032,
+        "stockId": "600452",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16033",
+        "content": "配网节能唯一上市平台，高壁垒守护千亿市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16033,
+        "stockId": "600452",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:01",
+    "vol": 303072.27
+  }
+}

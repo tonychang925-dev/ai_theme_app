@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:44:00", "result": {"span_uid": "d0a4b4a72bc3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段仅描述了高通计划效仿其他公司的产品发布节奏，属于具体的事件性计划，无法形成稳定、独立的知识块。"}}

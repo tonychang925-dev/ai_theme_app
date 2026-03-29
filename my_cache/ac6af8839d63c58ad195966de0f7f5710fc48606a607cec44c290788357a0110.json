@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:31:44", "result": {"chunk_id": "84898da34be8", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要提供VR、AR、MR的定义和区别，以及苹果MR的基本面介绍，包括技术特点和生态定位，属于静态说明题材本体的核心知识，没有夹杂具体事件。"}}

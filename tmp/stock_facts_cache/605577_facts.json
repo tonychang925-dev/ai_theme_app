@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "图书出版",
+      "evidence_span": "公司主要从事图书、期刊及电子出版物的出版、发行及印刷服务等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "期刊出版",
+      "evidence_span": "公司主要从事图书、期刊及电子出版物的出版、发行及印刷服务等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子出版物出版",
+      "evidence_span": "公司主要从事图书、期刊及电子出版物的出版、发行及印刷服务等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "发行业务",
+      "evidence_span": "公司主要从事图书、期刊及电子出版物的出版、发行及印刷服务等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "印刷服务",
+      "evidence_span": "公司主要从事图书、期刊及电子出版物的出版、发行及印刷服务等业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "出版发行企业",
+      "evidence_span": "我国东北地区出版发行行业的领先企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教材教辅",
+      "evidence_span": "向中小学生提供教材、教辅等学习资料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一般图书",
+      "evidence_span": "公司出版物品种丰富，涵盖社科、教育、文学、科技、艺术等多个细分领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "期刊",
+      "evidence_span": "主要报刊有18种，《格言》成为全国最受青少年喜爱的语言类期刊之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子音像产品",
+      "evidence_span": "从事包括教材教辅、一般图书及电子音像等产品在内的批发、零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字产品",
+      "evidence_span": "从事教材教辅、一般图书、期刊和电子音像产品、数字产品的出版业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印刷品印制服务",
+      "evidence_span": "从事书刊和各类印刷品的印制服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印刷原材料贸易",
+      "evidence_span": "从事印刷原材料的贸易业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字出版业务",
+      "evidence_span": "深度整合数字出版业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字出版融合发展模式",
+      "evidence_span": "加快探索和构建出版融合发展模式"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中小学生",
+      "evidence_span": "向中小学生提供教材、教辅等学习资料"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "出版社",
+      "evidence_span": "公司印刷业务主要服务于各出版社、杂志社及政府部门等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杂志社",
+      "evidence_span": "公司印刷业务主要服务于各出版社、杂志社及政府部门等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府部门",
+      "evidence_span": "公司印刷业务主要服务于各出版社、杂志社及政府部门等"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "图书出版",
+        "evidence_span": "公司主要从事图书、期刊及电子出版物的出版、发行及印刷服务等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "期刊出版",
+        "evidence_span": "公司主要从事图书、期刊及电子出版物的出版、发行及印刷服务等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子出版物出版",
+        "evidence_span": "公司主要从事图书、期刊及电子出版物的出版、发行及印刷服务等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "发行业务",
+        "evidence_span": "公司主要从事图书、期刊及电子出版物的出版、发行及印刷服务等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "印刷服务",
+        "evidence_span": "公司主要从事图书、期刊及电子出版物的出版、发行及印刷服务等业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "出版发行企业",
+        "evidence_span": "我国东北地区出版发行行业的领先企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教材教辅",
+        "evidence_span": "向中小学生提供教材、教辅等学习资料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一般图书",
+        "evidence_span": "公司出版物品种丰富，涵盖社科、教育、文学、科技、艺术等多个细分领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "期刊",
+        "evidence_span": "主要报刊有18种，《格言》成为全国最受青少年喜爱的语言类期刊之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子音像产品",
+        "evidence_span": "从事包括教材教辅、一般图书及电子音像等产品在内的批发、零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字产品",
+        "evidence_span": "从事教材教辅、一般图书、期刊和电子音像产品、数字产品的出版业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印刷品印制服务",
+        "evidence_span": "从事书刊和各类印刷品的印制服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印刷原材料贸易",
+        "evidence_span": "从事印刷原材料的贸易业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字出版业务",
+        "evidence_span": "深度整合数字出版业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字出版融合发展模式",
+        "evidence_span": "加快探索和构建出版融合发展模式"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中小学生",
+        "evidence_span": "向中小学生提供教材、教辅等学习资料"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "出版社",
+        "evidence_span": "公司印刷业务主要服务于各出版社、杂志社及政府部门等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杂志社",
+        "evidence_span": "公司印刷业务主要服务于各出版社、杂志社及政府部门等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府部门",
+        "evidence_span": "公司印刷业务主要服务于各出版社、杂志社及政府部门等"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:25:20"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:05", "result": {"span_uid": "8035041d80a3", "action": "rewrite", "canonical_text": "特斯拉Autopilot自动辅助驾驶功能可实现单次平均安全行驶里程超过1200万公里", "final_type": "signal", "final_role": "安全性能指标", "stability": "high", "reason": "去事件化改写，保留安全行驶数据作为性能信号，但需注意Autopilot与FSD的关联"}}

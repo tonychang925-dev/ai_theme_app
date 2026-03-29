@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:10:23", "result": {"chunk_id": "976b1c90fd23", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述美国政府的具体行动（通知台积电终止VEU地位），涉及政策变化和事件进展，属于时间性动态，没有提供华为芯片链的静态知识。"}}

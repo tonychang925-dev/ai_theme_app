@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "f5b3c48a3acb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含事件性内容（如晶圆厂产能扩张、设备支出上涨的报道）和潜在的有价值知识（如SEMI对全球300mm晶圆厂设备支出的预测数据、中国投资额信息），这些数据可能用于构建半导体设备市场的知识，但混合了新闻动态，因此归为候选混合类。"}}

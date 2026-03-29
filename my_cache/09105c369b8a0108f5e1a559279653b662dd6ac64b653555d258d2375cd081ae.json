@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "8dede643f0a5", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落提到FSD 12.5版本将不再限制驾驶员佩戴太阳镜，这涉及FSD的功能更新（静态知识），但基于马斯克的透露（事件性内容），因此是混合状态，可能含有稳定知识。"}}

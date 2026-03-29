@@ -1,0 +1,464 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "物料搬运装备",
+      "evidence_span": "公司主营业务为高端装备业务（主要包括物料搬运装备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "海上风电装备",
+      "evidence_span": "公司主营业务为高端装备业务（主要包括物料搬运装备、海上风电装备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "船舶配套装备",
+      "evidence_span": "公司主营业务为高端装备业务（主要包括物料搬运装备、海上风电装备、船舶配套装备等业务）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "危废",
+      "evidence_span": "环保业务（主要包括危废及医废处理处置服务、污泥处理处置服务等业务）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医废处理处置服务",
+      "evidence_span": "环保业务（主要包括危废及医废处理处置服务、污泥处理处置服务等业务）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "污泥处理处置服务",
+      "evidence_span": "环保业务（主要包括危废及医废处理处置服务、污泥处理处置服务等业务）"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "船舶舱口盖制造基地",
+      "evidence_span": "全球最专业、最具规模的船舶舱口盖制造基地之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海风桩基领军企业",
+      "evidence_span": "润邦股份海风桩基领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "危废医废处置领域领先企业",
+      "evidence_span": "作为危废医废处置领域的领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "污泥处置领域全产业链龙头企业",
+      "evidence_span": "致力于将绿威环保打造成为污泥处置领域的全产业链龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动式港口起重机",
+      "evidence_span": "公司研发设计的“杰马/GENMA”品牌移动式港口起重机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动式港口无尘料斗",
+      "evidence_span": "移动式港口无尘料斗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气力式卸船机",
+      "evidence_span": "气力式卸船机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "埋刮板卸船机",
+      "evidence_span": "埋刮板卸船机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "堆料机",
+      "evidence_span": "产品主要包括堆料机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "取料机",
+      "evidence_span": "取料机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卸船机",
+      "evidence_span": "卸船机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "输送机",
+      "evidence_span": "输送机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海上风电基础桩",
+      "evidence_span": "公司海上风电装备业务主要产品包括各类海上风电基础桩"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导管架",
+      "evidence_span": "导管架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海上风电安装作业平台",
+      "evidence_span": "海上风电安装作业平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海洋工程起重机",
+      "evidence_span": "海洋工程起重机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "吊离式舱口盖",
+      "evidence_span": "主要包括用于集装箱船的吊离式舱口盖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "折叠式舱口盖",
+      "evidence_span": "用于散货船及多用途船的折叠式舱口盖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "侧滑式舱口盖",
+      "evidence_span": "侧滑式舱口盖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "危废焚烧处置",
+      "evidence_span": "中油环保专注于工业危险废弃物及医疗废弃物减量化、无害化处置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医废处置",
+      "evidence_span": "医废处置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污泥处理处置",
+      "evidence_span": "绿威环保主营业务为市政污泥、一般工业污泥处理处置及资源化利用全产业链服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "污泥深度调理脱水技术",
+      "evidence_span": "绿威环保掌握了“污泥深度调理脱水技术”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "絮凝固化脱水技术",
+      "evidence_span": "“絮凝固化脱水技术”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "真空圆盘干化减量技术",
+      "evidence_span": "“真空圆盘干化减量技术”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "先进燃煤耦合发电技术",
+      "evidence_span": "“先进燃煤耦合发电技术”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "污泥独立焚烧技术",
+      "evidence_span": "“污泥独立焚烧技术”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "芬兰卡哥特科集团",
+      "evidence_span": "公司主要客户和合作伙伴包括芬兰卡哥特科集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丹麦艾法史密斯",
+      "evidence_span": "丹麦艾法史密斯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法国法孚集团",
+      "evidence_span": "法国法孚集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国国民油井",
+      "evidence_span": "美国国民油井"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荷兰GUSTOMSC",
+      "evidence_span": "荷兰GUSTOMSC"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法国Poma",
+      "evidence_span": "法国Poma"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "芬兰美卓",
+      "evidence_span": "芬兰美卓"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿联酋国家气象局",
+      "evidence_span": "阿联酋国家气象局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亨通集团",
+      "evidence_span": "亨通集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华电集团",
+      "evidence_span": "华电集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华能集团",
+      "evidence_span": "华能集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电投集团",
+      "evidence_span": "国家电投集团"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "高端装备与环保双轮驱动",
+      "evidence_span": "高端装备与环保双轮驱动"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "物料搬运装备",
+        "evidence_span": "公司主营业务为高端装备业务（主要包括物料搬运装备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "海上风电装备",
+        "evidence_span": "公司主营业务为高端装备业务（主要包括物料搬运装备、海上风电装备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "船舶配套装备",
+        "evidence_span": "公司主营业务为高端装备业务（主要包括物料搬运装备、海上风电装备、船舶配套装备等业务）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "危废及医废处理处置服务",
+        "evidence_span": "环保业务（主要包括危废及医废处理处置服务、污泥处理处置服务等业务）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "污泥处理处置服务",
+        "evidence_span": "环保业务（主要包括危废及医废处理处置服务、污泥处理处置服务等业务）"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "船舶舱口盖制造基地",
+        "evidence_span": "全球最专业、最具规模的船舶舱口盖制造基地之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海风桩基领军企业",
+        "evidence_span": "润邦股份海风桩基领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "危废医废处置领域领先企业",
+        "evidence_span": "作为危废医废处置领域的领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "污泥处置领域全产业链龙头企业",
+        "evidence_span": "致力于将绿威环保打造成为污泥处置领域的全产业链龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动式港口起重机",
+        "evidence_span": "公司研发设计的“杰马/GENMA”品牌移动式港口起重机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动式港口无尘料斗",
+        "evidence_span": "移动式港口无尘料斗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气力式卸船机",
+        "evidence_span": "气力式卸船机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "埋刮板卸船机",
+        "evidence_span": "埋刮板卸船机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "堆料机",
+        "evidence_span": "产品主要包括堆料机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "取料机",
+        "evidence_span": "取料机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卸船机",
+        "evidence_span": "卸船机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "输送机",
+        "evidence_span": "输送机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海上风电基础桩",
+        "evidence_span": "公司海上风电装备业务主要产品包括各类海上风电基础桩"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导管架",
+        "evidence_span": "导管架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海上风电安装作业平台",
+        "evidence_span": "海上风电安装作业平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海洋工程起重机",
+        "evidence_span": "海洋工程起重机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "吊离式舱口盖",
+        "evidence_span": "主要包括用于集装箱船的吊离式舱口盖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "折叠式舱口盖",
+        "evidence_span": "用于散货船及多用途船的折叠式舱口盖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "侧滑式舱口盖",
+        "evidence_span": "侧滑式舱口盖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "危废焚烧处置",
+        "evidence_span": "中油环保专注于工业危险废弃物及医疗废弃物减量化、无害化处置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医废处置",
+        "evidence_span": "医废处置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污泥处理处置",
+        "evidence_span": "绿威环保主营业务为市政污泥、一般工业污泥处理处置及资源化利用全产业链服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "污泥深度调理脱水技术",
+        "evidence_span": "绿威环保掌握了“污泥深度调理脱水技术”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "絮凝固化脱水技术",
+        "evidence_span": "“絮凝固化脱水技术”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "真空圆盘干化减量技术",
+        "evidence_span": "“真空圆盘干化减量技术”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "先进燃煤耦合发电技术",
+        "evidence_span": "“先进燃煤耦合发电技术”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "污泥独立焚烧技术",
+        "evidence_span": "“污泥独立焚烧技术”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "芬兰卡哥特科集团",
+        "evidence_span": "公司主要客户和合作伙伴包括芬兰卡哥特科集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丹麦艾法史密斯",
+        "evidence_span": "丹麦艾法史密斯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法国法孚集团",
+        "evidence_span": "法国法孚集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国国民油井",
+        "evidence_span": "美国国民油井"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荷兰GUSTOMSC",
+        "evidence_span": "荷兰GUSTOMSC"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法国Poma",
+        "evidence_span": "法国Poma"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "芬兰美卓",
+        "evidence_span": "芬兰美卓"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿联酋国家气象局",
+        "evidence_span": "阿联酋国家气象局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亨通集团",
+        "evidence_span": "亨通集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华电集团",
+        "evidence_span": "华电集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华能集团",
+        "evidence_span": "华能集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电投集团",
+        "evidence_span": "国家电投集团"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "高端装备与环保双轮驱动",
+        "evidence_span": "高端装备与环保双轮驱动"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:16:41"
+}

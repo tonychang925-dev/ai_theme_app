@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "肿瘤精准放射治疗",
+      "evidence_span": "全面拓展肿瘤精准放射治疗细分领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水暖阀门管件业务",
+      "evidence_span": "在水暖阀门管件业务的基础上"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内先进的环保水暖器材供应商",
+      "evidence_span": "国内先进的环保水暖器材供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "肿瘤精准放射治疗连锁专科医院",
+      "evidence_span": "在全国主要城市开设肿瘤精准放射治疗连锁专科医院"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肿瘤精准放射治疗服务",
+      "evidence_span": "为患者提供肿瘤筛查、治疗、康复于一体的综合诊疗服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄铜类有铅、无铅水/暖/燃气阀门和管件",
+      "evidence_span": "从事黄铜类有铅、无铅水/暖/燃气阀门和管件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "紫铜、碳钢类卡压产品",
+      "evidence_span": "少量紫铜、碳钢类卡压产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TRV产品",
+      "evidence_span": "TRV产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分水器",
+      "evidence_span": "分水器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "流体控制设备及器材",
+      "evidence_span": "流体控制设备及器材的研发、制造和销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "肿瘤精准放射治疗设备",
+      "evidence_span": "配置了全球先进的肿瘤精准放射治疗设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "医学影像诊断设备",
+      "evidence_span": "配置了全球先进的医学影像诊断设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家级CNAS测试实验室",
+      "evidence_span": "设有国家级CNAS测试实验室"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "浙江省级高新技术研发中心",
+      "evidence_span": "浙江省级高新技术研发中心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际著名水暖制造（销售）商",
+      "evidence_span": "为国际著名水暖制造（销售）商提供产品和服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧美市场",
+      "evidence_span": "主要销往欧美市场"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "肿瘤精准放射治疗",
+      "evidence_span": "全面拓展肿瘤精准放射治疗细分领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "肿瘤精准放射治疗",
+        "evidence_span": "全面拓展肿瘤精准放射治疗细分领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水暖阀门管件业务",
+        "evidence_span": "在水暖阀门管件业务的基础上"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内先进的环保水暖器材供应商",
+        "evidence_span": "国内先进的环保水暖器材供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "肿瘤精准放射治疗连锁专科医院",
+        "evidence_span": "在全国主要城市开设肿瘤精准放射治疗连锁专科医院"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肿瘤精准放射治疗服务",
+        "evidence_span": "为患者提供肿瘤筛查、治疗、康复于一体的综合诊疗服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄铜类有铅、无铅水/暖/燃气阀门和管件",
+        "evidence_span": "从事黄铜类有铅、无铅水/暖/燃气阀门和管件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "紫铜、碳钢类卡压产品",
+        "evidence_span": "少量紫铜、碳钢类卡压产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TRV产品",
+        "evidence_span": "TRV产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分水器",
+        "evidence_span": "分水器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "流体控制设备及器材",
+        "evidence_span": "流体控制设备及器材的研发、制造和销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "肿瘤精准放射治疗设备",
+        "evidence_span": "配置了全球先进的肿瘤精准放射治疗设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "医学影像诊断设备",
+        "evidence_span": "配置了全球先进的医学影像诊断设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家级CNAS测试实验室",
+        "evidence_span": "设有国家级CNAS测试实验室"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "浙江省级高新技术研发中心",
+        "evidence_span": "浙江省级高新技术研发中心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际著名水暖制造（销售）商",
+        "evidence_span": "为国际著名水暖制造（销售）商提供产品和服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧美市场",
+        "evidence_span": "主要销往欧美市场"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "肿瘤精准放射治疗",
+        "evidence_span": "全面拓展肿瘤精准放射治疗细分领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:41:43"
+}

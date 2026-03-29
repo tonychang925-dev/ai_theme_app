@@ -1,0 +1,324 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "LED背光源的研发",
+      "evidence_span": "公司专业从事LED背光源的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设计",
+      "evidence_span": "公司专业从事LED背光源的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司专业从事LED背光源的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司专业从事LED背光源的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电容式触摸屏主要工序深加工",
+      "evidence_span": "电容式触摸屏主要工序深加工"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源锂电池材料的研发",
+      "evidence_span": "深圳新材料主要从事新能源锂电池材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "LED背光源和电容式触摸屏企业",
+      "evidence_span": "公司专业从事LED背光源的研发、设计、生产和销售以及电容式触摸屏主要工序深加工"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电复合铜箔生产企业",
+      "evidence_span": "投建锂电池复合铜箔项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED背光源",
+      "evidence_span": "主要产品包括LED背光源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电容式触摸屏",
+      "evidence_span": "主要产品包括LED背光源和电容式触摸屏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电复合铜箔",
+      "evidence_span": "2022上半年的主要产品为锂电复合铜箔"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载背光源",
+      "evidence_span": "公司主要生产应用于车载、平板、笔电和智能手机的中小尺寸 LED 背光源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Mini LED背光源",
+      "evidence_span": "公司主要生产应用于车载、平板、笔电和智能手机的中小尺寸 LED 背光源及 Mini LED 背光源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "侧入式LED背光源",
+      "evidence_span": "公司生产的侧入式 LED 背光源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ITO镀膜",
+      "evidence_span": "公司在电容式触摸屏部分的主要加工工序系对玻璃面板进行 ITO 镀膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高阻膜",
+      "evidence_span": "公司对客户提供的 Full In-Cell 触控面板进行镀高阻膜工序加工"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PET复合铜箔",
+      "evidence_span": "公司生产的PET复合铜箔样品正处于客户测试阶段"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Mini LED背光源技术",
+      "evidence_span": "积极对 Mini LED技术进行了研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AMOLED On-Cell镀膜",
+      "evidence_span": "公司自主开发的 AMOLED On-Cell 镀膜产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高阻膜技术",
+      "evidence_span": "公司自主研发的高阻膜技术开始进入规模化量产阶段"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "顶喷式薄化工艺",
+      "evidence_span": "公司自主开发的行业领先的顶喷式薄化工艺在赣州生产基地顺利量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低阻膜技术",
+      "evidence_span": "公司基于车载产品自主开发的具备极低反射率的低阻膜技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磁控溅射",
+      "evidence_span": "PET复合铜箔工艺分为三步法和两步法，两步法的核心工艺包括磁控溅射和水电镀"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水电镀",
+      "evidence_span": "PET复合铜箔工艺分为三步法和两步法，两步法的核心工艺包括磁控溅射和水电镀"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东方",
+      "evidence_span": "已进入京东方、天马、信利、华显光电、德普特、东山精密、立德通讯、深超光电、群创光电、延锋伟世通、航盛电子、创维、台冠等知名企业的供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天马",
+      "evidence_span": "已进入京东方、天马、信利、华显光电、德普特、东山精密、立德通讯、深超光电、群创光电、延锋伟世通、航盛电子、创维、台冠等知名企业的供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司产品被广泛应用于比亚迪、长城、吉利、红旗、上汽集团、奇瑞、长安、本田、丰田、铃木、现代、大众、沃尔沃、标致、雷诺、宾利等汽车品牌智能座舱上"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "公司产品被广泛应用于比亚迪、长城、吉利、红旗、上汽集团、奇瑞、长安、本田、丰田、铃木、现代、大众、沃尔沃、标致、雷诺、宾利等汽车品牌智能座舱上以及华为、荣耀、小米、OPPO、vivo、三星等知名品牌的终端智能手机和平板、笔电上"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "公司与 OPPO、vivo、小米等知名大型终端设备厂商建立深度合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "vivo",
+      "evidence_span": "公司与 OPPO、vivo、小米等知名大型终端设备厂商建立深度合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "公司与 OPPO、vivo、小米等知名大型终端设备厂商建立深度合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "VR/AR显示设备应用",
+      "evidence_span": "产品有在VR/AR显示设备上应用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "车载应用",
+      "evidence_span": "产品可应用车载、VR显示设备等领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "LED背光源的研发、设计、生产和销售",
+        "evidence_span": "公司专业从事LED背光源的研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电容式触摸屏主要工序深加工",
+        "evidence_span": "电容式触摸屏主要工序深加工"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源锂电池材料的研发、生产和销售",
+        "evidence_span": "深圳新材料主要从事新能源锂电池材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "LED背光源和电容式触摸屏企业",
+        "evidence_span": "公司专业从事LED背光源的研发、设计、生产和销售以及电容式触摸屏主要工序深加工"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电复合铜箔生产企业",
+        "evidence_span": "投建锂电池复合铜箔项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED背光源",
+        "evidence_span": "主要产品包括LED背光源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电容式触摸屏",
+        "evidence_span": "主要产品包括LED背光源和电容式触摸屏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电复合铜箔",
+        "evidence_span": "2022上半年的主要产品为锂电复合铜箔"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载背光源",
+        "evidence_span": "公司主要生产应用于车载、平板、笔电和智能手机的中小尺寸 LED 背光源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Mini LED背光源",
+        "evidence_span": "公司主要生产应用于车载、平板、笔电和智能手机的中小尺寸 LED 背光源及 Mini LED 背光源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "侧入式LED背光源",
+        "evidence_span": "公司生产的侧入式 LED 背光源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ITO镀膜",
+        "evidence_span": "公司在电容式触摸屏部分的主要加工工序系对玻璃面板进行 ITO 镀膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高阻膜",
+        "evidence_span": "公司对客户提供的 Full In-Cell 触控面板进行镀高阻膜工序加工"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PET复合铜箔",
+        "evidence_span": "公司生产的PET复合铜箔样品正处于客户测试阶段"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Mini LED背光源技术",
+        "evidence_span": "积极对 Mini LED技术进行了研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AMOLED On-Cell镀膜",
+        "evidence_span": "公司自主开发的 AMOLED On-Cell 镀膜产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高阻膜技术",
+        "evidence_span": "公司自主研发的高阻膜技术开始进入规模化量产阶段"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "顶喷式薄化工艺",
+        "evidence_span": "公司自主开发的行业领先的顶喷式薄化工艺在赣州生产基地顺利量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低阻膜技术",
+        "evidence_span": "公司基于车载产品自主开发的具备极低反射率的低阻膜技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磁控溅射",
+        "evidence_span": "PET复合铜箔工艺分为三步法和两步法，两步法的核心工艺包括磁控溅射和水电镀"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水电镀",
+        "evidence_span": "PET复合铜箔工艺分为三步法和两步法，两步法的核心工艺包括磁控溅射和水电镀"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东方",
+        "evidence_span": "已进入京东方、天马、信利、华显光电、德普特、东山精密、立德通讯、深超光电、群创光电、延锋伟世通、航盛电子、创维、台冠等知名企业的供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天马",
+        "evidence_span": "已进入京东方、天马、信利、华显光电、德普特、东山精密、立德通讯、深超光电、群创光电、延锋伟世通、航盛电子、创维、台冠等知名企业的供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司产品被广泛应用于比亚迪、长城、吉利、红旗、上汽集团、奇瑞、长安、本田、丰田、铃木、现代、大众、沃尔沃、标致、雷诺、宾利等汽车品牌智能座舱上"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "公司产品被广泛应用于比亚迪、长城、吉利、红旗、上汽集团、奇瑞、长安、本田、丰田、铃木、现代、大众、沃尔沃、标致、雷诺、宾利等汽车品牌智能座舱上以及华为、荣耀、小米、OPPO、vivo、三星等知名品牌的终端智能手机和平板、笔电上"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "公司与 OPPO、vivo、小米等知名大型终端设备厂商建立深度合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "vivo",
+        "evidence_span": "公司与 OPPO、vivo、小米等知名大型终端设备厂商建立深度合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "公司与 OPPO、vivo、小米等知名大型终端设备厂商建立深度合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "VR/AR显示设备应用",
+        "evidence_span": "产品有在VR/AR显示设备上应用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "车载应用",
+        "evidence_span": "产品可应用车载、VR显示设备等领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:21:16"
+}

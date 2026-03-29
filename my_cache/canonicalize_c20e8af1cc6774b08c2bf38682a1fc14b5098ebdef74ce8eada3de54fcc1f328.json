@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:08:28", "result": {"span_uid": "1d40136e0c1d", "action": "rewrite", "canonical_text": "B-21隐形轰炸机的生产计划涉及资金投入和产能提升，反映了先进军事装备的研发和制造趋势。", "final_type": "signal", "final_role": "轰炸机生产计划", "stability": "medium", "reason": "原片段包含具体日期、预算和事件细节，改写为去事件化、去新闻口吻的稳定知识，体现军工领域的产能和商业化信号。"}}

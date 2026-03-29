@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "ad9e2086c550", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落包含两个事件：航母舰载机保障体系建立（来自论坛）和火箭军发射导弹（2024年9月25日），但前者涉及军工技术发展（航母舰载机保障体系）的静态知识，可能对题材本体有价值，因此归类为混合候选。"}}

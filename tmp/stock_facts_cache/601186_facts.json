@@ -1,0 +1,264 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程承包",
+      "evidence_span": "公司业务以工程承包为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "勘察",
+      "evidence_span": "勘察、设计与咨询、工业制造、房地产、物流与物资贸易等业务构成辅助"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设计",
+      "evidence_span": "勘察、设计与咨询、工业制造、房地产、物流与物资贸易等业务构成辅助"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "咨询",
+      "evidence_span": "勘察、设计与咨询、工业制造、房地产、物流与物资贸易等业务构成辅助"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业制造",
+      "evidence_span": "工业制造、房地产、物流与物资贸易等业务构成辅助"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产",
+      "evidence_span": "房地产、物流与物资贸易等业务构成辅助"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物流",
+      "evidence_span": "物流与物资贸易等业务构成辅助"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物资贸易",
+      "evidence_span": "物流与物资贸易等业务构成辅助"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "基建龙头",
+      "evidence_span": "中国铁建基建龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "基建“国家队”",
+      "evidence_span": "基建“国家队”转型投资运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工程建设巨头",
+      "evidence_span": "蓄势待发的工程建设巨头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "基建综合龙头",
+      "evidence_span": "低估值基建综合龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高原铁路龙头",
+      "evidence_span": "中国铁建高原铁路龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁路公路工程",
+      "evidence_span": "专业覆盖铁路公路"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市轨道工程",
+      "evidence_span": "城市轨道"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水利水电工程",
+      "evidence_span": "水利水电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "桥梁工程",
+      "evidence_span": "桥梁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房屋建筑工程",
+      "evidence_span": "房屋建筑"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "住宅开发",
+      "evidence_span": "聚焦一、二线城市住宅开发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装备制造",
+      "evidence_span": "公司装备制造板块以铁建重工为主导"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "设计咨询",
+      "evidence_span": "基本形成涵盖设计咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海外投资",
+      "evidence_span": "海外投资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运营服务",
+      "evidence_span": "运营服务协同发展框架"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "涉铁勘察设计",
+      "evidence_span": "涉铁勘察设计行业难度大、壁垒高"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "莫斯科地铁项目",
+      "evidence_span": "以莫斯科地铁项目为例"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "中国铁建订单高涨驰骋一带一路"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "补短板",
+      "evidence_span": "补短板优先受益"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程承包",
+        "evidence_span": "公司业务以工程承包为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "勘察、设计与咨询",
+        "evidence_span": "勘察、设计与咨询、工业制造、房地产、物流与物资贸易等业务构成辅助"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业制造",
+        "evidence_span": "工业制造、房地产、物流与物资贸易等业务构成辅助"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产",
+        "evidence_span": "房地产、物流与物资贸易等业务构成辅助"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物流与物资贸易",
+        "evidence_span": "物流与物资贸易等业务构成辅助"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "基建龙头",
+        "evidence_span": "中国铁建基建龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "基建“国家队”",
+        "evidence_span": "基建“国家队”转型投资运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工程建设巨头",
+        "evidence_span": "蓄势待发的工程建设巨头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "基建综合龙头",
+        "evidence_span": "低估值基建综合龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高原铁路龙头",
+        "evidence_span": "中国铁建高原铁路龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁路公路工程",
+        "evidence_span": "专业覆盖铁路公路"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市轨道工程",
+        "evidence_span": "城市轨道"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水利水电工程",
+        "evidence_span": "水利水电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "桥梁工程",
+        "evidence_span": "桥梁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房屋建筑工程",
+        "evidence_span": "房屋建筑"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "住宅开发",
+        "evidence_span": "聚焦一、二线城市住宅开发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装备制造",
+        "evidence_span": "公司装备制造板块以铁建重工为主导"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "设计咨询",
+        "evidence_span": "基本形成涵盖设计咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海外投资",
+        "evidence_span": "海外投资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运营服务",
+        "evidence_span": "运营服务协同发展框架"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "涉铁勘察设计",
+        "evidence_span": "涉铁勘察设计行业难度大、壁垒高"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "莫斯科地铁项目",
+        "evidence_span": "以莫斯科地铁项目为例"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "中国铁建订单高涨驰骋一带一路"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "补短板",
+        "evidence_span": "补短板优先受益"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:16:30"
+}

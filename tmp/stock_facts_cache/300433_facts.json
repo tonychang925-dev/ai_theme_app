@@ -1,0 +1,439 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "视窗防护玻璃",
+      "evidence_span": "专注于视窗防护玻璃的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "陶瓷",
+      "evidence_span": "拓展陶瓷、蓝宝石等新材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "蓝宝石",
+      "evidence_span": "拓展陶瓷、蓝宝石等新材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金属结构件",
+      "evidence_span": "拓展金属件业务，主要从事消费电子金属结构件研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能终端组装",
+      "evidence_span": "拓展组装业务，2019年公司开始布局智能终端组装业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车电子业务",
+      "evidence_span": "拓展汽车电子业务，2015年开始布局和拓展智能汽车业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏玻璃",
+      "evidence_span": "光伏玻璃业务，2021年10月，成立蓝思新能源，从事光伏玻璃"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球消费电子及智能汽车行业结构与功能组件ODM龙头企业",
+      "evidence_span": "蓝思科技是全球消费电子及智能汽车行业结构与功能组件ODM龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "玻璃盖板龙头",
+      "evidence_span": "玻璃盖板龙头，业务从手机到AIoT、AR/VR、智能汽车组件、光伏玻璃"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "结构件制造企业",
+      "evidence_span": "中游主要包括智能终端外观防护零部件的研发、生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中小尺寸防护玻璃",
+      "evidence_span": "公司主要业务为中小尺寸防护玻璃"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大尺寸防护玻璃",
+      "evidence_span": "第三大业务为大尺寸防护玻璃"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蓝宝石产品",
+      "evidence_span": "拓展陶瓷、蓝宝石等新材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陶瓷产品",
+      "evidence_span": "拓展陶瓷、蓝宝石等新材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属产品",
+      "evidence_span": "拓展金属件业务，主要从事消费电子金属结构件研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载电子玻璃及组件",
+      "evidence_span": "批量生产了包括车载电子玻璃及组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载中控屏",
+      "evidence_span": "车载中控屏（结构与功能零部件及组装）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仪表盘组件",
+      "evidence_span": "仪表盘组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "B柱组件",
+      "evidence_span": "B柱组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大尺寸新型汽车玻璃",
+      "evidence_span": "大尺寸新型汽车玻璃（如天幕、侧窗、挡风等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏玻璃产品",
+      "evidence_span": "主要从事光伏玻璃产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能手机整机组装",
+      "evidence_span": "为小米公司提供智能手机整机组装服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能手表组装",
+      "evidence_span": "2022有望切入手表的组装"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "2D、2.5D和3D系列防护玻璃技术",
+      "evidence_span": "公司已掌握2D、2.5D和3D系列防护玻璃"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "触控模组技术",
+      "evidence_span": "触控模组及其他防护一体化电子产品的精密加工、组装、贴合等核心技术和工艺诀窍"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "蓝宝石长晶技术",
+      "evidence_span": "公司掌握核心长晶技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "陶瓷精密加工技术",
+      "evidence_span": "公司具备成熟的精密陶瓷粉体原材料及胚料制造、烧结、后段加工能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业互联网平台",
+      "evidence_span": "自主研发“蓝思云”工业互联网平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能制造设备",
+      "evidence_span": "自主研发了包括热弯机、精雕、印刷(移印、丝印)、CNC 、激光、镀膜、组装、AGV导航车、四轴六轴机器人等核心设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苹果",
+      "evidence_span": "成为苹果的玻璃盖板首家供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "公司的客户主要为全球消费电子产品行业的各大知名品牌，包括A客户、三星"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "公司的客户主要为全球消费电子产品行业的各大知名品牌，包括小米"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "公司的客户主要为全球消费电子产品行业的各大知名品牌，包括华为"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特斯拉",
+      "evidence_span": "陆续实现对特斯拉、奔驰、宝马、保时捷、蔚来、理想等超过20家汽车行业知名客户的销售"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奔驰",
+      "evidence_span": "陆续实现对特斯拉、奔驰、宝马、保时捷、蔚来、理想等超过20家汽车行业知名客户的销售"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "陆续实现对特斯拉、奔驰、宝马、保时捷、蔚来、理想等超过20家汽车行业知名客户的销售"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保时捷",
+      "evidence_span": "陆续实现对特斯拉、奔驰、宝马、保时捷、蔚来、理想等超过20家汽车行业知名客户的销售"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "陆续实现对特斯拉、奔驰、宝马、保时捷、蔚来、理想等超过20家汽车行业知名客户的销售"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "理想",
+      "evidence_span": "陆续实现对特斯拉、奔驰、宝马、保时捷、蔚来、理想等超过20家汽车行业知名客户的销售"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "玻璃金属一体化平台",
+      "evidence_span": "玻璃金属一体化平台龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "垂直整合",
+      "evidence_span": "垂直整合打开十年增长空间"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "曲面玻璃+蓝宝石双轮驱动",
+      "evidence_span": "蓝思科技曲面玻璃+蓝宝石双轮驱动"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "去金属化趋势",
+      "evidence_span": "蓝思科技去金属化趋势明确"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "视窗防护玻璃",
+        "evidence_span": "专注于视窗防护玻璃的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "陶瓷",
+        "evidence_span": "拓展陶瓷、蓝宝石等新材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "蓝宝石",
+        "evidence_span": "拓展陶瓷、蓝宝石等新材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金属结构件",
+        "evidence_span": "拓展金属件业务，主要从事消费电子金属结构件研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能终端组装",
+        "evidence_span": "拓展组装业务，2019年公司开始布局智能终端组装业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车电子业务",
+        "evidence_span": "拓展汽车电子业务，2015年开始布局和拓展智能汽车业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏玻璃",
+        "evidence_span": "光伏玻璃业务，2021年10月，成立蓝思新能源，从事光伏玻璃"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球消费电子及智能汽车行业结构与功能组件ODM龙头企业",
+        "evidence_span": "蓝思科技是全球消费电子及智能汽车行业结构与功能组件ODM龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "玻璃盖板龙头",
+        "evidence_span": "玻璃盖板龙头，业务从手机到AIoT、AR/VR、智能汽车组件、光伏玻璃"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "结构件制造企业",
+        "evidence_span": "中游主要包括智能终端外观防护零部件的研发、生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中小尺寸防护玻璃",
+        "evidence_span": "公司主要业务为中小尺寸防护玻璃"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大尺寸防护玻璃",
+        "evidence_span": "第三大业务为大尺寸防护玻璃"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蓝宝石产品",
+        "evidence_span": "拓展陶瓷、蓝宝石等新材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陶瓷产品",
+        "evidence_span": "拓展陶瓷、蓝宝石等新材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属产品",
+        "evidence_span": "拓展金属件业务，主要从事消费电子金属结构件研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载电子玻璃及组件",
+        "evidence_span": "批量生产了包括车载电子玻璃及组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载中控屏",
+        "evidence_span": "车载中控屏（结构与功能零部件及组装）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仪表盘组件",
+        "evidence_span": "仪表盘组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "B柱组件",
+        "evidence_span": "B柱组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大尺寸新型汽车玻璃",
+        "evidence_span": "大尺寸新型汽车玻璃（如天幕、侧窗、挡风等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏玻璃产品",
+        "evidence_span": "主要从事光伏玻璃产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能手机整机组装",
+        "evidence_span": "为小米公司提供智能手机整机组装服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能手表组装",
+        "evidence_span": "2022有望切入手表的组装"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "2D、2.5D和3D系列防护玻璃技术",
+        "evidence_span": "公司已掌握2D、2.5D和3D系列防护玻璃"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "触控模组技术",
+        "evidence_span": "触控模组及其他防护一体化电子产品的精密加工、组装、贴合等核心技术和工艺诀窍"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "蓝宝石长晶技术",
+        "evidence_span": "公司掌握核心长晶技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "陶瓷精密加工技术",
+        "evidence_span": "公司具备成熟的精密陶瓷粉体原材料及胚料制造、烧结、后段加工能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业互联网平台",
+        "evidence_span": "自主研发“蓝思云”工业互联网平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能制造设备",
+        "evidence_span": "自主研发了包括热弯机、精雕、印刷(移印、丝印)、CNC 、激光、镀膜、组装、AGV导航车、四轴六轴机器人等核心设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苹果",
+        "evidence_span": "成为苹果的玻璃盖板首家供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "公司的客户主要为全球消费电子产品行业的各大知名品牌，包括A客户、三星"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "公司的客户主要为全球消费电子产品行业的各大知名品牌，包括小米"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "公司的客户主要为全球消费电子产品行业的各大知名品牌，包括华为"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特斯拉",
+        "evidence_span": "陆续实现对特斯拉、奔驰、宝马、保时捷、蔚来、理想等超过20家汽车行业知名客户的销售"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奔驰",
+        "evidence_span": "陆续实现对特斯拉、奔驰、宝马、保时捷、蔚来、理想等超过20家汽车行业知名客户的销售"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "陆续实现对特斯拉、奔驰、宝马、保时捷、蔚来、理想等超过20家汽车行业知名客户的销售"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保时捷",
+        "evidence_span": "陆续实现对特斯拉、奔驰、宝马、保时捷、蔚来、理想等超过20家汽车行业知名客户的销售"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "陆续实现对特斯拉、奔驰、宝马、保时捷、蔚来、理想等超过20家汽车行业知名客户的销售"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "理想",
+        "evidence_span": "陆续实现对特斯拉、奔驰、宝马、保时捷、蔚来、理想等超过20家汽车行业知名客户的销售"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "玻璃金属一体化平台",
+        "evidence_span": "玻璃金属一体化平台龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "垂直整合",
+        "evidence_span": "垂直整合打开十年增长空间"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "曲面玻璃+蓝宝石双轮驱动",
+        "evidence_span": "蓝思科技曲面玻璃+蓝宝石双轮驱动"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "去金属化趋势",
+        "evidence_span": "蓝思科技去金属化趋势明确"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:28:36"
+}

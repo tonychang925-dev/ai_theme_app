@@ -1,0 +1,324 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "生物制品",
+      "evidence_span": "主要业务涵盖生物制品、中成药、化学药"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中成药",
+      "evidence_span": "主要业务涵盖生物制品、中成药、化学药"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化学药",
+      "evidence_span": "主要业务涵盖生物制品、中成药、化学药"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "糖尿病",
+      "evidence_span": "公司致力于糖尿病及其他内分泌领域药物的研究与开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "内分泌治疗领域药物",
+      "evidence_span": "公司致力于糖尿病及其他内分泌领域药物的研究与开发"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "糖尿病生产企业",
+      "evidence_span": "使通化东宝成为专业的糖尿病生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "内分泌领域创新医药研发的探索者和引领者",
+      "evidence_span": "致力于成为“内分泌领域创新医药研发的探索者和引领者”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人胰岛素原料药",
+      "evidence_span": "主要产品包括人胰岛素原料药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人胰岛素注射剂",
+      "evidence_span": "人胰岛素注射剂（注册商标：甘舒霖）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甘精胰岛素原料药",
+      "evidence_span": "甘精胰岛素原料药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甘精胰岛素注射液",
+      "evidence_span": "甘精胰岛素注射液（注册商标：平舒霖）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门冬胰岛素原料药",
+      "evidence_span": "门冬胰岛素原料药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门冬胰岛素注射液",
+      "evidence_span": "门冬胰岛素注射液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门冬胰岛素30注射液",
+      "evidence_span": "门冬胰岛素30注射液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门冬胰岛素50注射液",
+      "evidence_span": "门冬胰岛素50注射液（注册商标：锐舒霖）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镇脑宁胶囊",
+      "evidence_span": "镇脑宁胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "糖尿病相关的医疗器械",
+      "evidence_span": "糖尿病相关的医疗器械等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "瑞格列奈片",
+      "evidence_span": "瑞格列奈片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "利拉鲁肽注射液",
+      "evidence_span": "利拉鲁肽注射液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "恩格列净片",
+      "evidence_span": "恩格列净片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "德谷胰岛素利拉鲁肽注射液",
+      "evidence_span": "德谷胰岛素利拉鲁肽注射液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "依托考昔片",
+      "evidence_span": "依托考昔片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家级企业技术中心",
+      "evidence_span": "拥有国家级企业技术中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家GMP和欧盟GMP认证的生产车间",
+      "evidence_span": "国家GMP和欧盟GMP认证的生产车间"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ISO14001环境体系认证",
+      "evidence_span": "ISO14001环境体系认证企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "胰岛素笔及针的注射系统",
+      "evidence_span": "完善的胰岛素笔及针的注射系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高品质血糖监测系统",
+      "evidence_span": "高品质血糖监测系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "糖尿病全病程一体化管理平台",
+      "evidence_span": "糖尿病全病程一体化管理平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "POCT项目（床旁血糖检测系统）",
+      "evidence_span": "POCT项目（床旁血糖检测系统）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科兴制药",
+      "evidence_span": "公司与科兴制药签署《利拉鲁肽海外市场独家许可合作协议》"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产胰岛素龙头",
+      "evidence_span": "巩固国产胰岛素龙头地位"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产胰岛素对进口产品的替代",
+      "evidence_span": "加速了国产胰岛素对进口产品的替代进程"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "生物制品",
+        "evidence_span": "主要业务涵盖生物制品、中成药、化学药"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中成药",
+        "evidence_span": "主要业务涵盖生物制品、中成药、化学药"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化学药",
+        "evidence_span": "主要业务涵盖生物制品、中成药、化学药"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "糖尿病及内分泌治疗领域药物",
+        "evidence_span": "公司致力于糖尿病及其他内分泌领域药物的研究与开发"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "糖尿病生产企业",
+        "evidence_span": "使通化东宝成为专业的糖尿病生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "内分泌领域创新医药研发的探索者和引领者",
+        "evidence_span": "致力于成为“内分泌领域创新医药研发的探索者和引领者”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人胰岛素原料药",
+        "evidence_span": "主要产品包括人胰岛素原料药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人胰岛素注射剂",
+        "evidence_span": "人胰岛素注射剂（注册商标：甘舒霖）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甘精胰岛素原料药",
+        "evidence_span": "甘精胰岛素原料药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甘精胰岛素注射液",
+        "evidence_span": "甘精胰岛素注射液（注册商标：平舒霖）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门冬胰岛素原料药",
+        "evidence_span": "门冬胰岛素原料药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门冬胰岛素注射液",
+        "evidence_span": "门冬胰岛素注射液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门冬胰岛素30注射液",
+        "evidence_span": "门冬胰岛素30注射液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门冬胰岛素50注射液",
+        "evidence_span": "门冬胰岛素50注射液（注册商标：锐舒霖）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镇脑宁胶囊",
+        "evidence_span": "镇脑宁胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "糖尿病相关的医疗器械",
+        "evidence_span": "糖尿病相关的医疗器械等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "瑞格列奈片",
+        "evidence_span": "瑞格列奈片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "利拉鲁肽注射液",
+        "evidence_span": "利拉鲁肽注射液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "恩格列净片",
+        "evidence_span": "恩格列净片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "德谷胰岛素利拉鲁肽注射液",
+        "evidence_span": "德谷胰岛素利拉鲁肽注射液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "依托考昔片",
+        "evidence_span": "依托考昔片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家级企业技术中心",
+        "evidence_span": "拥有国家级企业技术中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家GMP和欧盟GMP认证的生产车间",
+        "evidence_span": "国家GMP和欧盟GMP认证的生产车间"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ISO14001环境体系认证",
+        "evidence_span": "ISO14001环境体系认证企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "胰岛素笔及针的注射系统",
+        "evidence_span": "完善的胰岛素笔及针的注射系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高品质血糖监测系统",
+        "evidence_span": "高品质血糖监测系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "糖尿病全病程一体化管理平台",
+        "evidence_span": "糖尿病全病程一体化管理平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "POCT项目（床旁血糖检测系统）",
+        "evidence_span": "POCT项目（床旁血糖检测系统）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科兴制药",
+        "evidence_span": "公司与科兴制药签署《利拉鲁肽海外市场独家许可合作协议》"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产胰岛素龙头",
+        "evidence_span": "巩固国产胰岛素龙头地位"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产胰岛素对进口产品的替代",
+        "evidence_span": "加速了国产胰岛素对进口产品的替代进程"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:41:19"
+}

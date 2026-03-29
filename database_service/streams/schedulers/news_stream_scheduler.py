@@ -255,7 +255,7 @@ class ImprovedNewsStreamScheduler:
             
         except Exception as e:
             logger.error(f"获取新闻批次失败: {e}")
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return {
                 "batch_id": batch_id,
                 "error": str(e),
@@ -498,10 +498,10 @@ class ImprovedNewsStreamScheduler:
                 enhanced["content"] = ""
         
         # 调试输出
-        print(f"🔍 增强数据结果:")
-        print(f"   标题: {enhanced.get('title', '')[:30]}...")
-        print(f"   日期: {enhanced.get('publish_date', '无')}")
-        print(f"   时间: {enhanced.get('publish_time', '无')}")
+        logger.info(f"🔍 增强数据结果:")
+        logger.info(f"   标题: {enhanced.get('title', '')[:30]}...")
+        logger.info(f"   日期: {enhanced.get('publish_date', '无')}")
+        logger.info(f"   时间: {enhanced.get('publish_time', '无')}")
         
         return enhanced
     
@@ -706,7 +706,7 @@ class ImprovedNewsStreamScheduler:
             
         except Exception as e:
             logger.error(f"❌ 手动批次执行异常: {e}")
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return {
                 "batch_id": batch_id,
                 "success": False,

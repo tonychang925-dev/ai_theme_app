@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "f7fd8604d0f1", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中共中央政治局会议讨论宏观经济政策，内容泛泛，没有直接涉及预制菜，属于噪音。"}}

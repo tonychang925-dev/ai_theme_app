@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:03:01", "result": {"span_uid": "4bef685dc578", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段主要描述全球封测市场规模预测，属于封装测试领域的趋势信息，与半导体设备题材关联度较低，不适合作为当前题材的知识块。"}}

@@ -1,0 +1,519 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "轨道交通智能系统",
+      "evidence_span": "公司主营业务为轨道交通智能系统和解决方案的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧培训解决方案",
+      "evidence_span": "提供智慧培训解决方案"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能运维解决方案",
+      "evidence_span": "提供智能运维解决方案"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧车辆段解决方案",
+      "evidence_span": "提供智慧车辆段解决方案"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能牵引供电解决方案",
+      "evidence_span": "提供智能牵引供电解决方案"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能货运解决方案",
+      "evidence_span": "提供智能货运解决方案"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "维保服务",
+      "evidence_span": "打造维保服务重点业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "轨道交通智能系统供应商",
+      "evidence_span": "公司作为一家轨道交通智能系统供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级专精特新“小巨人”企业",
+      "evidence_span": "为国家级专精特新“小巨人”企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "列车驾驶仿真培训系统",
+      "evidence_span": "列车驾驶仿真培训系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "调度仿真培训系统",
+      "evidence_span": "调度仿真培训系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车站作业仿真培训系统",
+      "evidence_span": "车站作业仿真培训系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客运乘务仿真培训系统",
+      "evidence_span": "客运乘务仿真培训系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整车实训仿真培训系统",
+      "evidence_span": "整车实训仿真培训系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无人驾驶仿真培训系统",
+      "evidence_span": "无人驾驶仿真培训系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道交通多工种综合实训系统",
+      "evidence_span": "轨道交通多工种综合实训系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "列车在途状态实时监测系统",
+      "evidence_span": "列车在途状态实时监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车辆轨旁智能检测系统",
+      "evidence_span": "车辆轨旁智能检测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车辆健康管理分析系统",
+      "evidence_span": "车辆健康管理分析系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车辆运维业务系统",
+      "evidence_span": "车辆运维业务系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车辆运维智能监控系统",
+      "evidence_span": "车辆运维智能监控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "股道自动化系统",
+      "evidence_span": "股道自动化系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车辆维保系统",
+      "evidence_span": "车辆维保系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "检修作业综合管理系统",
+      "evidence_span": "检修作业综合管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整备信息化系统",
+      "evidence_span": "整备信息化系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "设备信息化管理系统",
+      "evidence_span": "设备信息化管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乘务管理系统",
+      "evidence_span": "乘务管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动驾驶安全防护系统",
+      "evidence_span": "全自动驾驶安全防护系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "检修作业安全连锁监控系统",
+      "evidence_span": "检修作业安全连锁监控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DCC综合管理系统",
+      "evidence_span": "DCC综合管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "列车巡检机器人",
+      "evidence_span": "列车巡检机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能型再生制动能量利用装置",
+      "evidence_span": "储能型再生制动能量利用装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "货运安全检测",
+      "evidence_span": "货运安全检测"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "货运计量",
+      "evidence_span": "货运计量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "货运作业生产",
+      "evidence_span": "货运作业生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "货检作业生产",
+      "evidence_span": "货检作业生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧物流及货物追踪监控",
+      "evidence_span": "智慧物流及货物追踪监控"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字孪生技术",
+      "evidence_span": "采用了先进的数字孪生技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能和大数据技术",
+      "evidence_span": "以人工智能和大数据技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物理传感、图像识别、物联网、机器学习、大数据分析技术",
+      "evidence_span": "通过物理传感、图像识别、物联网、机器学习、大数据分析等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信息化、自动化检测和控制、大数据融合和人工智能算法",
+      "evidence_span": "采用先进的信息化、自动化检测和控制、大数据融合和人工智能算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "测量、传感、控制、通信、信息、电力电子及人工智能技术",
+      "evidence_span": "运用现代先进的测量、传感、控制、通信、信息、电力电子及人工智能等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据分析、物理传感、物联网、图像识别、机器学习、系统集成技术",
+      "evidence_span": "利用大数据分析、物理传感、物联网、图像识别、机器学习、系统集成等技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国铁集团",
+      "evidence_span": "主要客户群体为国铁集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "地方城轨公司",
+      "evidence_span": "主要客户群体为地方城轨公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各轨道交通职业院校",
+      "evidence_span": "主要客户群体为各轨道交通职业院校"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "伊朗",
+      "evidence_span": "服务于伊朗"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "越南",
+      "evidence_span": "服务于越南"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "埃塞俄比亚",
+      "evidence_span": "服务于埃塞俄比亚"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新基建",
+      "evidence_span": "受益“新基建”轨交投资"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "轨交智能化",
+      "evidence_span": "深耕轨交智能化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "轨道交通智能系统",
+        "evidence_span": "公司主营业务为轨道交通智能系统和解决方案的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧培训解决方案",
+        "evidence_span": "提供智慧培训解决方案"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能运维解决方案",
+        "evidence_span": "提供智能运维解决方案"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧车辆段解决方案",
+        "evidence_span": "提供智慧车辆段解决方案"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能牵引供电解决方案",
+        "evidence_span": "提供智能牵引供电解决方案"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能货运解决方案",
+        "evidence_span": "提供智能货运解决方案"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "维保服务",
+        "evidence_span": "打造维保服务重点业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "轨道交通智能系统供应商",
+        "evidence_span": "公司作为一家轨道交通智能系统供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级专精特新“小巨人”企业",
+        "evidence_span": "为国家级专精特新“小巨人”企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "列车驾驶仿真培训系统",
+        "evidence_span": "列车驾驶仿真培训系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "调度仿真培训系统",
+        "evidence_span": "调度仿真培训系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车站作业仿真培训系统",
+        "evidence_span": "车站作业仿真培训系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客运乘务仿真培训系统",
+        "evidence_span": "客运乘务仿真培训系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整车实训仿真培训系统",
+        "evidence_span": "整车实训仿真培训系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无人驾驶仿真培训系统",
+        "evidence_span": "无人驾驶仿真培训系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道交通多工种综合实训系统",
+        "evidence_span": "轨道交通多工种综合实训系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "列车在途状态实时监测系统",
+        "evidence_span": "列车在途状态实时监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车辆轨旁智能检测系统",
+        "evidence_span": "车辆轨旁智能检测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车辆健康管理分析系统",
+        "evidence_span": "车辆健康管理分析系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车辆运维业务系统",
+        "evidence_span": "车辆运维业务系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车辆运维智能监控系统",
+        "evidence_span": "车辆运维智能监控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "股道自动化系统",
+        "evidence_span": "股道自动化系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车辆维保系统",
+        "evidence_span": "车辆维保系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "检修作业综合管理系统",
+        "evidence_span": "检修作业综合管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整备信息化系统",
+        "evidence_span": "整备信息化系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "设备信息化管理系统",
+        "evidence_span": "设备信息化管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乘务管理系统",
+        "evidence_span": "乘务管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动驾驶安全防护系统",
+        "evidence_span": "全自动驾驶安全防护系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "检修作业安全连锁监控系统",
+        "evidence_span": "检修作业安全连锁监控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DCC综合管理系统",
+        "evidence_span": "DCC综合管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "列车巡检机器人",
+        "evidence_span": "列车巡检机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能型再生制动能量利用装置",
+        "evidence_span": "储能型再生制动能量利用装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "货运安全检测",
+        "evidence_span": "货运安全检测"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "货运计量",
+        "evidence_span": "货运计量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "货运作业生产",
+        "evidence_span": "货运作业生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "货检作业生产",
+        "evidence_span": "货检作业生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧物流及货物追踪监控",
+        "evidence_span": "智慧物流及货物追踪监控"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字孪生技术",
+        "evidence_span": "采用了先进的数字孪生技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能和大数据技术",
+        "evidence_span": "以人工智能和大数据技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物理传感、图像识别、物联网、机器学习、大数据分析技术",
+        "evidence_span": "通过物理传感、图像识别、物联网、机器学习、大数据分析等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信息化、自动化检测和控制、大数据融合和人工智能算法",
+        "evidence_span": "采用先进的信息化、自动化检测和控制、大数据融合和人工智能算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "测量、传感、控制、通信、信息、电力电子及人工智能技术",
+        "evidence_span": "运用现代先进的测量、传感、控制、通信、信息、电力电子及人工智能等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据分析、物理传感、物联网、图像识别、机器学习、系统集成技术",
+        "evidence_span": "利用大数据分析、物理传感、物联网、图像识别、机器学习、系统集成等技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国铁集团",
+        "evidence_span": "主要客户群体为国铁集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "地方城轨公司",
+        "evidence_span": "主要客户群体为地方城轨公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各轨道交通职业院校",
+        "evidence_span": "主要客户群体为各轨道交通职业院校"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "伊朗",
+        "evidence_span": "服务于伊朗"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "越南",
+        "evidence_span": "服务于越南"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "埃塞俄比亚",
+        "evidence_span": "服务于埃塞俄比亚"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新基建",
+        "evidence_span": "受益“新基建”轨交投资"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "轨交智能化",
+        "evidence_span": "深耕轨交智能化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:30:50"
+}

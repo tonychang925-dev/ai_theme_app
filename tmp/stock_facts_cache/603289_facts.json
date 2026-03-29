@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "注塑机制造",
+      "evidence_span": "公司是塑料注射成型设备（以下简称注塑机）的制造商和方案解决服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "注塑成型解决方案",
+      "evidence_span": "为下游应用领域提供注塑成型解决方案"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "注塑机供应商",
+      "evidence_span": "公司是中国主要的注塑机供应商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "塑料机械行业企业",
+      "evidence_span": "公司所处的行业为塑料机械行业细分注塑机制造业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肘杆式注塑机",
+      "evidence_span": "包括肘杆式注塑机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二板式注塑机",
+      "evidence_span": "二板式注塑机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全电动注塑机",
+      "evidence_span": "全电动注塑机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多组分注塑机",
+      "evidence_span": "多组分注塑机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大型二板精密多组分注塑机",
+      "evidence_span": "泰瑞大型二板精密多组分注塑机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全电动精密注塑机",
+      "evidence_span": "泰瑞全电动精密注塑机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大型两板对射托盘专用机",
+      "evidence_span": "大型两板对射托盘专用机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化粪池专用机",
+      "evidence_span": "化粪池专用机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管件专用机",
+      "evidence_span": "管件专用机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大型压铸机",
+      "evidence_span": "计划在2023年6月推出首台4500T大型压铸机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超大型压铸机",
+      "evidence_span": "7200吨超大型压铸机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SpinSure-H水平转盘技术",
+      "evidence_span": "SpinSure-H水平转盘技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SpinSure-V独立转盘技术",
+      "evidence_span": "SpinSure-V独立转盘技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MutiMod多色大师技术",
+      "evidence_span": "MutiMod多色大师技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Addshot-E独立电动副射台技术",
+      "evidence_span": "Addshot-E独立电动副射台技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CeSure微发泡技术",
+      "evidence_span": "CeSure微发泡技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "GosSure高光成型",
+      "evidence_span": "GosSure高光成型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "DecoSure模内装饰技术",
+      "evidence_span": "DecoSure模内装饰技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车灯多物料成型技术",
+      "evidence_span": "车灯多物料成型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "功能件多动物料成型技术",
+      "evidence_span": "功能件多动物料成型技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "X-shot超大注射量技术",
+      "evidence_span": "泰瑞独家X-shot超大注射量技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "连续中标新能源汽车领先企业比亚迪大订单"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "高端装备国产替代渐成行业共识"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车",
+      "evidence_span": "受益于下游新能源汽车产业发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "注塑机制造",
+        "evidence_span": "公司是塑料注射成型设备（以下简称注塑机）的制造商和方案解决服务商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "注塑成型解决方案",
+        "evidence_span": "为下游应用领域提供注塑成型解决方案"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "注塑机供应商",
+        "evidence_span": "公司是中国主要的注塑机供应商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "塑料机械行业企业",
+        "evidence_span": "公司所处的行业为塑料机械行业细分注塑机制造业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肘杆式注塑机",
+        "evidence_span": "包括肘杆式注塑机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二板式注塑机",
+        "evidence_span": "二板式注塑机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全电动注塑机",
+        "evidence_span": "全电动注塑机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多组分注塑机",
+        "evidence_span": "多组分注塑机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大型二板精密多组分注塑机",
+        "evidence_span": "泰瑞大型二板精密多组分注塑机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全电动精密注塑机",
+        "evidence_span": "泰瑞全电动精密注塑机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大型两板对射托盘专用机",
+        "evidence_span": "大型两板对射托盘专用机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化粪池专用机",
+        "evidence_span": "化粪池专用机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管件专用机",
+        "evidence_span": "管件专用机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大型压铸机",
+        "evidence_span": "计划在2023年6月推出首台4500T大型压铸机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超大型压铸机",
+        "evidence_span": "7200吨超大型压铸机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SpinSure-H水平转盘技术",
+        "evidence_span": "SpinSure-H水平转盘技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SpinSure-V独立转盘技术",
+        "evidence_span": "SpinSure-V独立转盘技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MutiMod多色大师技术",
+        "evidence_span": "MutiMod多色大师技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Addshot-E独立电动副射台技术",
+        "evidence_span": "Addshot-E独立电动副射台技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CeSure微发泡技术",
+        "evidence_span": "CeSure微发泡技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "GosSure高光成型",
+        "evidence_span": "GosSure高光成型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "DecoSure模内装饰技术",
+        "evidence_span": "DecoSure模内装饰技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车灯多物料成型技术",
+        "evidence_span": "车灯多物料成型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "功能件多动物料成型技术",
+        "evidence_span": "功能件多动物料成型技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "X-shot超大注射量技术",
+        "evidence_span": "泰瑞独家X-shot超大注射量技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "连续中标新能源汽车领先企业比亚迪大订单"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "高端装备国产替代渐成行业共识"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车",
+        "evidence_span": "受益于下游新能源汽车产业发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:52:05"
+}

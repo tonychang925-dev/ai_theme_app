@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:48:24", "result": {"span_uid": "da248983495b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场前景评估", "stability": "low", "reason": "原片段是市场的主观评估和预测，属于观点性信息，不稳定且缺乏事实基础，无法形成可独立成立的稳定知识块。"}}

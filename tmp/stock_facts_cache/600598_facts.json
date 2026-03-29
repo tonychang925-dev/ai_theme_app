@@ -1,0 +1,449 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "耕地发包经营",
+      "evidence_span": "公司主要从事耕地发包经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "谷物种植",
+      "evidence_span": "谷物、豆类、油料等作物的种植及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "谷物、豆类、油料等作物的种植及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "豆类种植",
+      "evidence_span": "谷物、豆类、油料等作物的种植及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "油料作物种植",
+      "evidence_span": "谷物、豆类、油料等作物的种植及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农业技术开发",
+      "evidence_span": "农业技术开发、技术咨询、技术服务及技术转让"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农业技术咨询",
+      "evidence_span": "农业技术开发、技术咨询、技术服务及技术转让"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农业技术服务",
+      "evidence_span": "农业技术开发、技术咨询、技术服务及技术转让"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农业技术转让",
+      "evidence_span": "农业技术开发、技术咨询、技术服务及技术转让"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息处理",
+      "evidence_span": "信息处理和储存支持服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "储存支持服务",
+      "evidence_span": "信息处理和储存支持服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "仓储服务",
+      "evidence_span": "仓储服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产开发经营",
+      "evidence_span": "房地产开发经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品生产经营",
+      "evidence_span": "食品生产经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "粮食收购",
+      "evidence_span": "粮食收购"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "肥料制造",
+      "evidence_span": "肥料制造及销售（仅限分支机构经营）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "牲畜饲养",
+      "evidence_span": "牲畜饲养等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "种植业上市公司",
+      "evidence_span": "是我国目前规模较大、现代化水平较高的种植业上市公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "商品粮生产基地",
+      "evidence_span": "重要的商品粮生产基地"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农业集团",
+      "evidence_span": "以种植水稻、玉米、大豆为主的大型农业集团"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水稻",
+      "evidence_span": "主要生产水稻、玉米、大豆等农产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玉米",
+      "evidence_span": "主要生产水稻、玉米、大豆等农产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大豆",
+      "evidence_span": "主要生产水稻、玉米、大豆等农产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色农产品",
+      "evidence_span": "具有生产绿色、有机农产品得天独厚的地理优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有机农产品",
+      "evidence_span": "具有生产绿色、有机农产品得天独厚的地理优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鲜食玉米",
+      "evidence_span": "新增了鲜食玉米等有机认证品类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端品牌专属基地农产品",
+      "evidence_span": "打造六大作物66.1万亩高端品牌专属基地"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "作物栽培技术",
+      "evidence_span": "掌握了先进的作物栽培技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "良种繁育技术",
+      "evidence_span": "良种繁育技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "施肥施药技术",
+      "evidence_span": "施肥施药技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "病虫草害防治技术",
+      "evidence_span": "病虫草害防治技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "农机应用技术",
+      "evidence_span": "农机应用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "农业经营管理技术",
+      "evidence_span": "农业经营管理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水田插秧自动驾驶技术",
+      "evidence_span": "应用水田插秧自动驾驶"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "本田轨道运输技术",
+      "evidence_span": "本田轨道运输等“十项”节本增效技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "农业物联网管理系统",
+      "evidence_span": "公司已构建了完善的农业物联网管理系统运行体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链技术应用",
+      "evidence_span": "公司继续探索区块链技术应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "测土配方施肥技术",
+      "evidence_span": "测土配方施肥服务体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "病虫害预警服务技术",
+      "evidence_span": "建立了完善的病虫害预警服务体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "气象预测预报服务技术",
+      "evidence_span": "气象预测预报服务体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "科技推广服务技术",
+      "evidence_span": "科技推广服务体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家庭农场",
+      "evidence_span": "家庭农场（农户）通过与农业分公司签订《农业生产承包协议》承包公司耕地"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "农垦改革",
+      "evidence_span": "北大荒受益于农垦改革"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "国企改革初见成效"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "供给侧改革",
+      "evidence_span": "供给侧改革和农垦改革利好公司种植业务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "耕地发包经营",
+        "evidence_span": "公司主要从事耕地发包经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "谷物种植及销售",
+        "evidence_span": "谷物、豆类、油料等作物的种植及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "豆类种植及销售",
+        "evidence_span": "谷物、豆类、油料等作物的种植及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "油料作物种植及销售",
+        "evidence_span": "谷物、豆类、油料等作物的种植及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农业技术开发",
+        "evidence_span": "农业技术开发、技术咨询、技术服务及技术转让"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农业技术咨询",
+        "evidence_span": "农业技术开发、技术咨询、技术服务及技术转让"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农业技术服务",
+        "evidence_span": "农业技术开发、技术咨询、技术服务及技术转让"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农业技术转让",
+        "evidence_span": "农业技术开发、技术咨询、技术服务及技术转让"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息处理和储存支持服务",
+        "evidence_span": "信息处理和储存支持服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "仓储服务",
+        "evidence_span": "仓储服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产开发经营",
+        "evidence_span": "房地产开发经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品生产经营",
+        "evidence_span": "食品生产经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "粮食收购",
+        "evidence_span": "粮食收购"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "肥料制造及销售",
+        "evidence_span": "肥料制造及销售（仅限分支机构经营）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "牲畜饲养",
+        "evidence_span": "牲畜饲养等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "种植业上市公司",
+        "evidence_span": "是我国目前规模较大、现代化水平较高的种植业上市公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "商品粮生产基地",
+        "evidence_span": "重要的商品粮生产基地"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农业集团",
+        "evidence_span": "以种植水稻、玉米、大豆为主的大型农业集团"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水稻",
+        "evidence_span": "主要生产水稻、玉米、大豆等农产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玉米",
+        "evidence_span": "主要生产水稻、玉米、大豆等农产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大豆",
+        "evidence_span": "主要生产水稻、玉米、大豆等农产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色农产品",
+        "evidence_span": "具有生产绿色、有机农产品得天独厚的地理优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有机农产品",
+        "evidence_span": "具有生产绿色、有机农产品得天独厚的地理优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鲜食玉米",
+        "evidence_span": "新增了鲜食玉米等有机认证品类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端品牌专属基地农产品",
+        "evidence_span": "打造六大作物66.1万亩高端品牌专属基地"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "作物栽培技术",
+        "evidence_span": "掌握了先进的作物栽培技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "良种繁育技术",
+        "evidence_span": "良种繁育技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "施肥施药技术",
+        "evidence_span": "施肥施药技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "病虫草害防治技术",
+        "evidence_span": "病虫草害防治技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "农机应用技术",
+        "evidence_span": "农机应用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "农业经营管理技术",
+        "evidence_span": "农业经营管理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水田插秧自动驾驶技术",
+        "evidence_span": "应用水田插秧自动驾驶"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "本田轨道运输技术",
+        "evidence_span": "本田轨道运输等“十项”节本增效技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "农业物联网管理系统",
+        "evidence_span": "公司已构建了完善的农业物联网管理系统运行体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链技术应用",
+        "evidence_span": "公司继续探索区块链技术应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "测土配方施肥技术",
+        "evidence_span": "测土配方施肥服务体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "病虫害预警服务技术",
+        "evidence_span": "建立了完善的病虫害预警服务体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "气象预测预报服务技术",
+        "evidence_span": "气象预测预报服务体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "科技推广服务技术",
+        "evidence_span": "科技推广服务体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家庭农场",
+        "evidence_span": "家庭农场（农户）通过与农业分公司签订《农业生产承包协议》承包公司耕地"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "农垦改革",
+        "evidence_span": "北大荒受益于农垦改革"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "国企改革初见成效"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "供给侧改革",
+        "evidence_span": "供给侧改革和农垦改革利好公司种植业务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:44:32"
+}

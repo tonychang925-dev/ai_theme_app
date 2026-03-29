@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字公安",
+      "evidence_span": "业务涵盖数字公安"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能交通",
+      "evidence_span": "智能交通"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧社区",
+      "evidence_span": "智慧社区"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧派出所",
+      "evidence_span": "智慧派出所"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字政务",
+      "evidence_span": "数字政务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字城管",
+      "evidence_span": "数字城管"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "公安数字化领域华中地区领先的综合服务运营商",
+      "evidence_span": "公安数字化领域华中地区领先的综合服务运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频监控平台",
+      "evidence_span": "视频监控平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精细化交通治理平台",
+      "evidence_span": "精细化交通治理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频图像综合应用平台",
+      "evidence_span": "视频图像综合应用平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "情指勤舆一体化平台",
+      "evidence_span": "情指勤舆一体化平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧社区综合服务平台",
+      "evidence_span": "智慧社区综合服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据中台",
+      "evidence_span": "数据中台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据魔方",
+      "evidence_span": "数据魔方"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视频编解码及协转技术",
+      "evidence_span": "视频编解码及协转技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据处理和挖掘分析技术",
+      "evidence_span": "大数据处理和挖掘分析技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "可视化数据建模技术",
+      "evidence_span": "可视化数据建模技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微服务及分布式集群技术",
+      "evidence_span": "微服务及分布式集群技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "整合的地图服务引擎技术",
+      "evidence_span": "整合的地图服务引擎技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "跨网边界传输技术",
+      "evidence_span": "跨网边界传输技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海量小文件处理技术",
+      "evidence_span": "海量小文件处理技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安",
+      "evidence_span": "为公安、政府行政机构及其他行业用户提供整体解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府行政机构",
+      "evidence_span": "为公安、政府行政机构及其他行业用户提供整体解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交警用户",
+      "evidence_span": "精细化交通治理平台主要服务于交警用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安用户",
+      "evidence_span": "该平台主要服务于公安用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安情报指挥中心",
+      "evidence_span": "主要面向公安情报指挥中心、科信、治安等部门"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科信",
+      "evidence_span": "主要面向公安情报指挥中心、科信、治安等部门"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "治安",
+      "evidence_span": "主要面向公安情报指挥中心、科信、治安等部门"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安、物业、社区、街道办",
+      "evidence_span": "为公安、物业、社区、街道办等部门提供相应的业务支撑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科信、交警、治安等各类警种",
+      "evidence_span": "可运用于科信、交警、治安等各类警种"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "公安信息化",
+      "evidence_span": "专注公安信息化领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字公安",
+        "evidence_span": "业务涵盖数字公安"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能交通",
+        "evidence_span": "智能交通"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧社区",
+        "evidence_span": "智慧社区"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧派出所",
+        "evidence_span": "智慧派出所"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字政务",
+        "evidence_span": "数字政务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字城管",
+        "evidence_span": "数字城管"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "公安数字化领域华中地区领先的综合服务运营商",
+        "evidence_span": "公安数字化领域华中地区领先的综合服务运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频监控平台",
+        "evidence_span": "视频监控平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精细化交通治理平台",
+        "evidence_span": "精细化交通治理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频图像综合应用平台",
+        "evidence_span": "视频图像综合应用平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "情指勤舆一体化平台",
+        "evidence_span": "情指勤舆一体化平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧社区综合服务平台",
+        "evidence_span": "智慧社区综合服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据中台",
+        "evidence_span": "数据中台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据魔方",
+        "evidence_span": "数据魔方"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视频编解码及协转技术",
+        "evidence_span": "视频编解码及协转技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据处理和挖掘分析技术",
+        "evidence_span": "大数据处理和挖掘分析技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "可视化数据建模技术",
+        "evidence_span": "可视化数据建模技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微服务及分布式集群技术",
+        "evidence_span": "微服务及分布式集群技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "整合的地图服务引擎技术",
+        "evidence_span": "整合的地图服务引擎技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "跨网边界传输技术",
+        "evidence_span": "跨网边界传输技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海量小文件处理技术",
+        "evidence_span": "海量小文件处理技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安",
+        "evidence_span": "为公安、政府行政机构及其他行业用户提供整体解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府行政机构",
+        "evidence_span": "为公安、政府行政机构及其他行业用户提供整体解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交警用户",
+        "evidence_span": "精细化交通治理平台主要服务于交警用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安用户",
+        "evidence_span": "该平台主要服务于公安用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安情报指挥中心",
+        "evidence_span": "主要面向公安情报指挥中心、科信、治安等部门"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科信",
+        "evidence_span": "主要面向公安情报指挥中心、科信、治安等部门"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "治安",
+        "evidence_span": "主要面向公安情报指挥中心、科信、治安等部门"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安、物业、社区、街道办",
+        "evidence_span": "为公安、物业、社区、街道办等部门提供相应的业务支撑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科信、交警、治安等各类警种",
+        "evidence_span": "可运用于科信、交警、治安等各类警种"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "公安信息化",
+        "evidence_span": "专注公安信息化领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:42:11"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "3d245e02b013", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落提到低空经济和车路云一体化建设可能催生建筑设计新需求，包含事件性预测，但也涉及建筑设计领域的潜在应用知识，可能对题材构建有价值，因此分类为candidate_mixed。"}}

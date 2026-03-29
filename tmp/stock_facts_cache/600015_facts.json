@@ -1,0 +1,49 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "银行业务",
+      "evidence_span": "全国第五家上市银行"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "上市银行",
+      "evidence_span": "全国第五家上市银行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中小企业金融服务",
+      "evidence_span": "定位 “中小企业金融服务商”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中小企业",
+      "evidence_span": "定位 “中小企业金融服务商”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "银行业务",
+        "evidence_span": "全国第五家上市银行"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "上市银行",
+        "evidence_span": "全国第五家上市银行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中小企业金融服务",
+        "evidence_span": "定位 “中小企业金融服务商”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中小企业",
+        "evidence_span": "定位 “中小企业金融服务商”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:55:00"
+}

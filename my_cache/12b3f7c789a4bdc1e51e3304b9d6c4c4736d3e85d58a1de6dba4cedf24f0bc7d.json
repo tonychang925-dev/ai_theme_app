@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "5f0383fde65b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述中国歼-35A隐形战机在特定日期进行首次场地适应性训练的具体事件，没有提供关于战机本身定义、结构或机制的静态知识，纯属时间性动态。"}}

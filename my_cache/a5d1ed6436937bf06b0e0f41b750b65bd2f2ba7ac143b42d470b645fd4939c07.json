@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "83c89159d322", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落详细描述朝鲜发射弹道导弹及中国辽宁舰训练的具体事件，包含时间、地点、飞行数据等动态信息，没有提供导弹或航母的静态定义或机制知识。"}}

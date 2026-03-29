@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:57:40", "result": {"chunk_id": "43e523ec30a5", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明汽车检测的现状、政策缺失、新能源车检测标准、具体检测项目（如动力电池、电机、电控）和规程细节，无明确事件或时间性动态，纯属题材本体知识。"}}

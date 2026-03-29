@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:15:18", "result": {"chunk_id": "092829e0a4e8", "decision": "drop", "confidence": 0.8, "knowledge_value": "low", "reason": "段落仅包含短期销售数据，属于事件性信息，没有可沉淀为稳定知识的内容。", "knowledge_spans": [], "event_residue": "根据SIA的数据，全球和中国半导体销售额均连续10个月实现同比正增长。", "drop_target": "event"}}

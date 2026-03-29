@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "三片罐生产制造",
+      "evidence_span": "主要业务包括三片罐及两片罐的生产制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "两片罐生产制造",
+      "evidence_span": "主要业务包括三片罐及两片罐的生产制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "灌装服务",
+      "evidence_span": "相关灌装服务等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "金属包装领军企业",
+      "evidence_span": "公司为金属包装领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "金属包装行业龙头",
+      "evidence_span": "我国金属包装行业龙头之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "金属易拉罐制造商",
+      "evidence_span": "国内领先的金属易拉罐制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三片罐",
+      "evidence_span": "三片罐大客户包括蛋白饮料客户如养元饮品、承德露露等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "两片罐",
+      "evidence_span": "两片罐大客户包括王老吉、青岛啤酒、雪花啤酒、百威啤酒、可口可乐等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝瓶",
+      "evidence_span": "铝瓶客户以高端啤酒为主"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "养元集团",
+      "evidence_span": "三片罐大客户如养元集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "承德露露",
+      "evidence_span": "承德露露"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "泰国天丝红牛",
+      "evidence_span": "泰国天丝红牛"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "银鹭",
+      "evidence_span": "银鹭"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "旺旺",
+      "evidence_span": "旺旺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "王老吉",
+      "evidence_span": "两片罐大客户包括王老吉"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "青岛啤酒",
+      "evidence_span": "青岛啤酒"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雪花啤酒",
+      "evidence_span": "雪花啤酒"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "百威啤酒",
+      "evidence_span": "百威啤酒"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "可口可乐",
+      "evidence_span": "可口可乐等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "养元饮品",
+      "evidence_span": "蛋白饮料客户如养元饮品"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "天丝红牛产品持续放量",
+      "evidence_span": "天丝红牛产品持续放量"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海外高盈利产能释放",
+      "evidence_span": "海外高盈利产能释放"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "三片罐生产制造",
+        "evidence_span": "主要业务包括三片罐及两片罐的生产制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "两片罐生产制造",
+        "evidence_span": "主要业务包括三片罐及两片罐的生产制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "灌装服务",
+        "evidence_span": "相关灌装服务等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "金属包装领军企业",
+        "evidence_span": "公司为金属包装领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "金属包装行业龙头",
+        "evidence_span": "我国金属包装行业龙头之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "金属易拉罐制造商",
+        "evidence_span": "国内领先的金属易拉罐制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三片罐",
+        "evidence_span": "三片罐大客户包括蛋白饮料客户如养元饮品、承德露露等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "两片罐",
+        "evidence_span": "两片罐大客户包括王老吉、青岛啤酒、雪花啤酒、百威啤酒、可口可乐等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝瓶",
+        "evidence_span": "铝瓶客户以高端啤酒为主"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "养元集团",
+        "evidence_span": "三片罐大客户如养元集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "承德露露",
+        "evidence_span": "承德露露"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "泰国天丝红牛",
+        "evidence_span": "泰国天丝红牛"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "银鹭",
+        "evidence_span": "银鹭"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "旺旺",
+        "evidence_span": "旺旺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "王老吉",
+        "evidence_span": "两片罐大客户包括王老吉"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "青岛啤酒",
+        "evidence_span": "青岛啤酒"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雪花啤酒",
+        "evidence_span": "雪花啤酒"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "百威啤酒",
+        "evidence_span": "百威啤酒"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "可口可乐",
+        "evidence_span": "可口可乐等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "养元饮品",
+        "evidence_span": "蛋白饮料客户如养元饮品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "泰国天丝红牛",
+        "evidence_span": "功能性饮料客户为泰国客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "王老吉",
+        "evidence_span": "王老吉系最大客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "天丝红牛产品持续放量",
+        "evidence_span": "天丝红牛产品持续放量"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海外高盈利产能释放",
+        "evidence_span": "海外高盈利产能释放"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:28:31"
+}

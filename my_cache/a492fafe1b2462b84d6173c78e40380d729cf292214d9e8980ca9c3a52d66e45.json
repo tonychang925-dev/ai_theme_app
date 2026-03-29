@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:29:44", "result": {"chunk_id": "6e477c75b0f6", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述具体事件：华为数据存储AI SSD新品发布会将于特定时间地点召开，以及余承东透露鸿蒙5.0设备数量突破1000万台。这些是时间性动态和新闻公告，不包含可用于题材本体构建的稳定知识。"}}

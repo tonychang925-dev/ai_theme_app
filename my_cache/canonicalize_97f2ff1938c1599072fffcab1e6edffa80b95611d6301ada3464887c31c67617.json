@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:47:36", "result": {"span_uid": "9a887869ae14", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段主要描述了一次具体事件（2025年SEMICON China展会上的产品发布），包含新闻口吻和事件化表述（如“首次亮相即发布五款重磅产品”、“高调登场”），无法整理成稳定、可独立成立的知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:48:02", "result": {"span_uid": "e59a221b8735", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述Meta的AR眼镜Orion作为原型产品的具体状态和公司表态，属于产品开发进展的事件性信息，无法形成稳定、可独立成立的知识块。"}}

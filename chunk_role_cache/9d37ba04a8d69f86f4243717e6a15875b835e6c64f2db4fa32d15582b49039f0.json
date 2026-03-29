@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:43", "result": {"chunk_id": "d72ac6b579b7", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述阿斯麦的业绩不及预期及其对市场的影响，属于具体事件和新闻动态，不包含半导体设备的定义或核心构成等稳定知识。"}}

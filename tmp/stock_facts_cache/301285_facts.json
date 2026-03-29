@@ -1,0 +1,449 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "连接器",
+      "evidence_span": "公司主营业务为连接器及精密机构件的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密机构件",
+      "evidence_span": "公司主营业务为连接器及精密机构件的研发、生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精密连接器企业",
+      "evidence_span": "主营精密连接器"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高新技术企业",
+      "evidence_span": "公司系专业从事精密连接器的研发、生产及销售的高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡类连接器",
+      "evidence_span": "公司连接器产品主要为卡类连接器、I/O连接器、耳机连接器、电池连接器及其他类连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "I/O连接器",
+      "evidence_span": "公司连接器产品主要为卡类连接器、I/O连接器、耳机连接器、电池连接器及其他类连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "耳机连接器",
+      "evidence_span": "公司连接器产品主要为卡类连接器、I/O连接器、耳机连接器、电池连接器及其他类连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池连接器",
+      "evidence_span": "公司连接器产品主要为卡类连接器、I/O连接器、耳机连接器、电池连接器及其他类连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡座连接器",
+      "evidence_span": "公司的卡类连接器产品主要包括卡座连接器及卡托连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡托连接器",
+      "evidence_span": "公司的卡类连接器产品主要包括卡座连接器及卡托连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Type-C连接器",
+      "evidence_span": "公司的I/O连接器主要包括Type-C、Micro USB、HDMI等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Micro USB连接器",
+      "evidence_span": "公司的I/O连接器主要包括Type-C、Micro USB、HDMI等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HDMI连接器",
+      "evidence_span": "公司的I/O连接器主要包括Type-C、Micro USB、HDMI等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普通耳机座",
+      "evidence_span": "公司目前的耳机连接器产品包括普通耳机座、防水耳机座、耳机座转接头等产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防水耳机座",
+      "evidence_span": "公司目前的耳机连接器产品包括普通耳机座、防水耳机座、耳机座转接头等产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "耳机座转接头",
+      "evidence_span": "公司目前的耳机连接器产品包括普通耳机座、防水耳机座、耳机座转接头等产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "摄像圈支架",
+      "evidence_span": "生产的MIM产品具体包括摄像圈支架、摄像头装饰件、笔记本转轴、智能手表卡扣等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "摄像头装饰件",
+      "evidence_span": "生产的MIM产品具体包括摄像圈支架、摄像头装饰件、笔记本转轴、智能手表卡扣等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "笔记本转轴",
+      "evidence_span": "生产的MIM产品具体包括摄像圈支架、摄像头装饰件、笔记本转轴、智能手表卡扣等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能手表卡扣",
+      "evidence_span": "生产的MIM产品具体包括摄像圈支架、摄像头装饰件、笔记本转轴、智能手表卡扣等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "防水Type-C开发技术",
+      "evidence_span": "包括防水Type-C开发技术、多合一卡座开发技术、全自动多料带一体成型技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多合一卡座开发技术",
+      "evidence_span": "包括防水Type-C开发技术、多合一卡座开发技术、全自动多料带一体成型技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全自动多料带一体成型技术",
+      "evidence_span": "包括防水Type-C开发技术、多合一卡座开发技术、全自动多料带一体成型技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精密端子折弯技术",
+      "evidence_span": "高精密端子折弯技术、深抽引壳开发技术、组装＆检测＆包装一体式自动机技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "深抽引壳开发技术",
+      "evidence_span": "高精密端子折弯技术、深抽引壳开发技术、组装＆检测＆包装一体式自动机技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "组装＆检测＆包装一体式自动机技术",
+      "evidence_span": "高精密端子折弯技术、深抽引壳开发技术、组装＆检测＆包装一体式自动机技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全自动连线点胶技术",
+      "evidence_span": "全自动连线点胶技术、先金属埋入成型后电镀技术、微小端子中间露镍技术及微小型高精密结构MIM技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "先金属埋入成型后电镀技术",
+      "evidence_span": "全自动连线点胶技术、先金属埋入成型后电镀技术、微小端子中间露镍技术及微小型高精密结构MIM技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微小端子中间露镍技术",
+      "evidence_span": "全自动连线点胶技术、先金属埋入成型后电镀技术、微小端子中间露镍技术及微小型高精密结构MIM技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微小型高精密结构MIM技术",
+      "evidence_span": "全自动连线点胶技术、先金属埋入成型后电镀技术、微小端子中间露镍技术及微小型高精密结构MIM技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模具开发",
+      "evidence_span": "以模具开发、冲压、电镀、注塑成型、组装等全工序制造技术为支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "冲压",
+      "evidence_span": "以模具开发、冲压、电镀、注塑成型、组装等全工序制造技术为支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电镀",
+      "evidence_span": "以模具开发、冲压、电镀、注塑成型、组装等全工序制造技术为支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "注塑成型",
+      "evidence_span": "以模具开发、冲压、电镀、注塑成型、组装等全工序制造技术为支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "组装",
+      "evidence_span": "以模具开发、冲压、电镀、注塑成型、组装等全工序制造技术为支撑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "闻泰科技",
+      "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "传音控股",
+      "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "伟创力",
+      "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天珑科技",
+      "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华勤",
+      "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小天才",
+      "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TCL",
+      "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中兴通讯",
+      "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "连接器",
+        "evidence_span": "公司主营业务为连接器及精密机构件的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密机构件",
+        "evidence_span": "公司主营业务为连接器及精密机构件的研发、生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精密连接器企业",
+        "evidence_span": "主营精密连接器"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高新技术企业",
+        "evidence_span": "公司系专业从事精密连接器的研发、生产及销售的高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡类连接器",
+        "evidence_span": "公司连接器产品主要为卡类连接器、I/O连接器、耳机连接器、电池连接器及其他类连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "I/O连接器",
+        "evidence_span": "公司连接器产品主要为卡类连接器、I/O连接器、耳机连接器、电池连接器及其他类连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "耳机连接器",
+        "evidence_span": "公司连接器产品主要为卡类连接器、I/O连接器、耳机连接器、电池连接器及其他类连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池连接器",
+        "evidence_span": "公司连接器产品主要为卡类连接器、I/O连接器、耳机连接器、电池连接器及其他类连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡座连接器",
+        "evidence_span": "公司的卡类连接器产品主要包括卡座连接器及卡托连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡托连接器",
+        "evidence_span": "公司的卡类连接器产品主要包括卡座连接器及卡托连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Type-C连接器",
+        "evidence_span": "公司的I/O连接器主要包括Type-C、Micro USB、HDMI等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Micro USB连接器",
+        "evidence_span": "公司的I/O连接器主要包括Type-C、Micro USB、HDMI等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HDMI连接器",
+        "evidence_span": "公司的I/O连接器主要包括Type-C、Micro USB、HDMI等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普通耳机座",
+        "evidence_span": "公司目前的耳机连接器产品包括普通耳机座、防水耳机座、耳机座转接头等产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防水耳机座",
+        "evidence_span": "公司目前的耳机连接器产品包括普通耳机座、防水耳机座、耳机座转接头等产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "耳机座转接头",
+        "evidence_span": "公司目前的耳机连接器产品包括普通耳机座、防水耳机座、耳机座转接头等产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "摄像圈支架",
+        "evidence_span": "生产的MIM产品具体包括摄像圈支架、摄像头装饰件、笔记本转轴、智能手表卡扣等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "摄像头装饰件",
+        "evidence_span": "生产的MIM产品具体包括摄像圈支架、摄像头装饰件、笔记本转轴、智能手表卡扣等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "笔记本转轴",
+        "evidence_span": "生产的MIM产品具体包括摄像圈支架、摄像头装饰件、笔记本转轴、智能手表卡扣等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能手表卡扣",
+        "evidence_span": "生产的MIM产品具体包括摄像圈支架、摄像头装饰件、笔记本转轴、智能手表卡扣等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "防水Type-C开发技术",
+        "evidence_span": "包括防水Type-C开发技术、多合一卡座开发技术、全自动多料带一体成型技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多合一卡座开发技术",
+        "evidence_span": "包括防水Type-C开发技术、多合一卡座开发技术、全自动多料带一体成型技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全自动多料带一体成型技术",
+        "evidence_span": "包括防水Type-C开发技术、多合一卡座开发技术、全自动多料带一体成型技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精密端子折弯技术",
+        "evidence_span": "高精密端子折弯技术、深抽引壳开发技术、组装＆检测＆包装一体式自动机技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "深抽引壳开发技术",
+        "evidence_span": "高精密端子折弯技术、深抽引壳开发技术、组装＆检测＆包装一体式自动机技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "组装＆检测＆包装一体式自动机技术",
+        "evidence_span": "高精密端子折弯技术、深抽引壳开发技术、组装＆检测＆包装一体式自动机技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全自动连线点胶技术",
+        "evidence_span": "全自动连线点胶技术、先金属埋入成型后电镀技术、微小端子中间露镍技术及微小型高精密结构MIM技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "先金属埋入成型后电镀技术",
+        "evidence_span": "全自动连线点胶技术、先金属埋入成型后电镀技术、微小端子中间露镍技术及微小型高精密结构MIM技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微小端子中间露镍技术",
+        "evidence_span": "全自动连线点胶技术、先金属埋入成型后电镀技术、微小端子中间露镍技术及微小型高精密结构MIM技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微小型高精密结构MIM技术",
+        "evidence_span": "全自动连线点胶技术、先金属埋入成型后电镀技术、微小端子中间露镍技术及微小型高精密结构MIM技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模具开发",
+        "evidence_span": "以模具开发、冲压、电镀、注塑成型、组装等全工序制造技术为支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "冲压",
+        "evidence_span": "以模具开发、冲压、电镀、注塑成型、组装等全工序制造技术为支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电镀",
+        "evidence_span": "以模具开发、冲压、电镀、注塑成型、组装等全工序制造技术为支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "注塑成型",
+        "evidence_span": "以模具开发、冲压、电镀、注塑成型、组装等全工序制造技术为支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "组装",
+        "evidence_span": "以模具开发、冲压、电镀、注塑成型、组装等全工序制造技术为支撑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "闻泰科技",
+        "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "传音控股",
+        "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "伟创力",
+        "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天珑科技",
+        "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华勤",
+        "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小天才",
+        "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TCL",
+        "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中兴通讯",
+        "evidence_span": "公司与闻泰科技、传音控股、小米、伟创力、天珑科技、华勤、小天才、TCL、中兴通讯等国内外知名企业建立了长期稳定的合作关系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:06:18"
+}

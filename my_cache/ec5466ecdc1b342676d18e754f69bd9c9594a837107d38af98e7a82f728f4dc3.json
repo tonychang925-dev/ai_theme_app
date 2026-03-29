@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "092829e0a4e8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含半导体销售额的统计数据（连续10个月同比正增长），可能用于构建市场趋势知识，但混合了事件性描述（根据SIA数据）和时间性动态，因此作为候选知识需要进一步裁决。"}}

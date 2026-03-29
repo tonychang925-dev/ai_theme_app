@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "8a5be9b4545d", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落提供了半导体的定义、核心构成（材料特性、应用领域、产业发展趋势）和静态说明，没有涉及事件、时间推进或动态内容，纯属题材本体知识。"}}

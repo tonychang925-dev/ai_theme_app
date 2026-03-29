@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:23:12", "result": {"span_uid": "cf35634db552", "action": "keep", "canonical_text": "SK海力士在HBM行业中处于领先地位，占据全球HBM市场一半以上的市场份额", "final_type": "related", "final_role": "主要市场参与者", "stability": "high", "reason": "原文本已相对稳定，描述HBM行业中的关键主体及其市场地位，可独立成立作为关联知识"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "39413fbbd077", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落包含两个具体事件：应用材料发布特定季度的财报（事件1）和中微公司起诉美国国防部（事件2）。两者都是明确的、有时间性的动态进展。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "1c7b39dbf7df", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段包含关于SK海力士在HBM市场地位的静态知识，但混合了时间性信息（如'从2014年推出首款HBM后'），可能含有稳定知识，但需要裁决以排除事件成分。"}}

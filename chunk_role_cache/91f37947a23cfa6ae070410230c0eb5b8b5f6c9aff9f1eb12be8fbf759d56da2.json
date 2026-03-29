@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "f82328cc00e2", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段描述了海南文昌卫星超级工厂项目有26家企业签约落地的事件，包含日期和动态信息，属于产业集聚类事件，无静态知识内容。"}}

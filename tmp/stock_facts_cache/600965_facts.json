@@ -1,0 +1,569 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "农林作物种植",
+      "evidence_span": "农林作物种植、销售和生态环保工程服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态环保工程服务",
+      "evidence_span": "农林作物种植、销售和生态环保工程服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "肉牛育种",
+      "evidence_span": "肉牛育种、养殖、屠宰、活牛与牛肉制品销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "肉牛养殖",
+      "evidence_span": "肉牛育种、养殖、屠宰、活牛与牛肉制品销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "肉牛屠宰",
+      "evidence_span": "肉牛育种、养殖、屠宰、活牛与牛肉制品销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "活牛销售",
+      "evidence_span": "肉牛育种、养殖、屠宰、活牛与牛肉制品销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "牛肉制品销售",
+      "evidence_span": "肉牛育种、养殖、屠宰、活牛与牛肉制品销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品研发",
+      "evidence_span": "以牛肉及其他食材为原材料的食品研发、加工制造、销售、代加工和餐饮服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品加工制造",
+      "evidence_span": "以牛肉及其他食材为原材料的食品研发、加工制造、销售、代加工和餐饮服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品销售",
+      "evidence_span": "以牛肉及其他食材为原材料的食品研发、加工制造、销售、代加工和餐饮服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品代加工",
+      "evidence_span": "以牛肉及其他食材为原材料的食品研发、加工制造、销售、代加工和餐饮服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "餐饮服务",
+      "evidence_span": "以牛肉及其他食材为原材料的食品研发、加工制造、销售、代加工和餐饮服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "公墓开发",
+      "evidence_span": "公墓开发、销售和殡葬陵园服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "公墓销售",
+      "evidence_span": "公墓开发、销售和殡葬陵园服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "殡葬陵园服务",
+      "evidence_span": "公墓开发、销售和殡葬陵园服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性农牧食品加工餐饮一体化生产及服务企业",
+      "evidence_span": "公司定位于综合性农牧食品加工餐饮一体化生产及服务企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "A股养牛为主业的上市公司",
+      "evidence_span": "作为国内第一家A股养牛为主业的上市公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "殡葬行业龙头",
+      "evidence_span": "福成股份崛起中的殡葬行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "A股殡葬业第一股",
+      "evidence_span": "集团优质资产注入完成,A股殡葬业第一股诞生"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生鲜肉",
+      "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肉制品",
+      "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乳制品",
+      "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "面食",
+      "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烘焙食品",
+      "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "速食（预制菜）",
+      "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中餐",
+      "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "西餐",
+      "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "各类种植农作物",
+      "evidence_span": "生态农业的主要产品及服务有各类种植农作物、树苗和林木"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "树苗",
+      "evidence_span": "生态农业的主要产品及服务有各类种植农作物、树苗和林木"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "林木",
+      "evidence_span": "生态农业的主要产品及服务有各类种植农作物、树苗和林木"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生态环境修复等环保工程",
+      "evidence_span": "同时承揽承建生态环境修复等环保工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方便菜品（预制菜）",
+      "evidence_span": "自主产品有、方便菜品（预制菜）、面食、烘焙食品、肉制品、乳制品、益生菌粉等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益生菌粉",
+      "evidence_span": "自主产品有、方便菜品（预制菜）、面食、烘焙食品、肉制品、乳制品、益生菌粉等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "牛排系列",
+      "evidence_span": "已形成多个系列市场热销产品，牛排系列、方便菜肴、肉糜类、焖锅类、气调产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方便菜肴",
+      "evidence_span": "已形成多个系列市场热销产品，牛排系列、方便菜肴、肉糜类、焖锅类、气调产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肉糜类",
+      "evidence_span": "已形成多个系列市场热销产品，牛排系列、方便菜肴、肉糜类、焖锅类、气调产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "焖锅类",
+      "evidence_span": "已形成多个系列市场热销产品，牛排系列、方便菜肴、肉糜类、焖锅类、气调产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气调产品",
+      "evidence_span": "已形成多个系列市场热销产品，牛排系列、方便菜肴、肉糜类、焖锅类、气调产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连锁火锅",
+      "evidence_span": "经营以牛肉食材等为特色的连锁火锅、韩式烤肉和烤肉特色自助餐三大品类餐饮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "韩式烤肉",
+      "evidence_span": "经营以牛肉食材等为特色的连锁火锅、韩式烤肉和烤肉特色自助餐三大品类餐饮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烤肉特色自助餐",
+      "evidence_span": "经营以牛肉食材等为特色的连锁火锅、韩式烤肉和烤肉特色自助餐三大品类餐饮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "各类墓位",
+      "evidence_span": "向客户提供各类墓位、殡仪服务和殡仪用品销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "殡仪服务",
+      "evidence_span": "向客户提供各类墓位、殡仪服务和殡仪用品销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "殡仪用品销售",
+      "evidence_span": "向客户提供各类墓位、殡仪服务和殡仪用品销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "性控技术",
+      "evidence_span": "现阶段基础母牛繁殖采用性控技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "王老吉",
+      "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全家连锁",
+      "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宜家",
+      "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦当劳",
+      "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西贝",
+      "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航食",
+      "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东方豪客",
+      "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "绿茶连锁",
+      "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "京津冀一体化",
+      "evidence_span": "受益京津冀一体化的肉牛养殖、餐饮一体化公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "牛肉全产业链龙头",
+      "evidence_span": "福成股份养老安乐概念稀缺标的+牛肉全产业链龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "养老安乐概念稀缺标的",
+      "evidence_span": "福成股份养老安乐概念稀缺标的+牛肉全产业链龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "农林作物种植",
+        "evidence_span": "农林作物种植、销售和生态环保工程服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态环保工程服务",
+        "evidence_span": "农林作物种植、销售和生态环保工程服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "肉牛育种",
+        "evidence_span": "肉牛育种、养殖、屠宰、活牛与牛肉制品销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "肉牛养殖",
+        "evidence_span": "肉牛育种、养殖、屠宰、活牛与牛肉制品销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "肉牛屠宰",
+        "evidence_span": "肉牛育种、养殖、屠宰、活牛与牛肉制品销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "活牛销售",
+        "evidence_span": "肉牛育种、养殖、屠宰、活牛与牛肉制品销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "牛肉制品销售",
+        "evidence_span": "肉牛育种、养殖、屠宰、活牛与牛肉制品销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品研发",
+        "evidence_span": "以牛肉及其他食材为原材料的食品研发、加工制造、销售、代加工和餐饮服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品加工制造",
+        "evidence_span": "以牛肉及其他食材为原材料的食品研发、加工制造、销售、代加工和餐饮服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品销售",
+        "evidence_span": "以牛肉及其他食材为原材料的食品研发、加工制造、销售、代加工和餐饮服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品代加工",
+        "evidence_span": "以牛肉及其他食材为原材料的食品研发、加工制造、销售、代加工和餐饮服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "餐饮服务",
+        "evidence_span": "以牛肉及其他食材为原材料的食品研发、加工制造、销售、代加工和餐饮服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "公墓开发",
+        "evidence_span": "公墓开发、销售和殡葬陵园服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "公墓销售",
+        "evidence_span": "公墓开发、销售和殡葬陵园服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "殡葬陵园服务",
+        "evidence_span": "公墓开发、销售和殡葬陵园服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性农牧食品加工餐饮一体化生产及服务企业",
+        "evidence_span": "公司定位于综合性农牧食品加工餐饮一体化生产及服务企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "A股养牛为主业的上市公司",
+        "evidence_span": "作为国内第一家A股养牛为主业的上市公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "殡葬行业龙头",
+        "evidence_span": "福成股份崛起中的殡葬行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "A股殡葬业第一股",
+        "evidence_span": "集团优质资产注入完成,A股殡葬业第一股诞生"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生鲜肉",
+        "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肉制品",
+        "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乳制品",
+        "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "面食",
+        "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烘焙食品",
+        "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "速食（预制菜）",
+        "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中餐",
+        "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "西餐",
+        "evidence_span": "产品及服务包括生鲜肉、肉制品、乳制品、面食、烘焙食品、速食（预制菜）、中餐、西餐等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "各类种植农作物",
+        "evidence_span": "生态农业的主要产品及服务有各类种植农作物、树苗和林木"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "树苗",
+        "evidence_span": "生态农业的主要产品及服务有各类种植农作物、树苗和林木"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "林木",
+        "evidence_span": "生态农业的主要产品及服务有各类种植农作物、树苗和林木"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生态环境修复等环保工程",
+        "evidence_span": "同时承揽承建生态环境修复等环保工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方便菜品（预制菜）",
+        "evidence_span": "自主产品有、方便菜品（预制菜）、面食、烘焙食品、肉制品、乳制品、益生菌粉等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益生菌粉",
+        "evidence_span": "自主产品有、方便菜品（预制菜）、面食、烘焙食品、肉制品、乳制品、益生菌粉等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "牛排系列",
+        "evidence_span": "已形成多个系列市场热销产品，牛排系列、方便菜肴、肉糜类、焖锅类、气调产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方便菜肴",
+        "evidence_span": "已形成多个系列市场热销产品，牛排系列、方便菜肴、肉糜类、焖锅类、气调产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肉糜类",
+        "evidence_span": "已形成多个系列市场热销产品，牛排系列、方便菜肴、肉糜类、焖锅类、气调产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "焖锅类",
+        "evidence_span": "已形成多个系列市场热销产品，牛排系列、方便菜肴、肉糜类、焖锅类、气调产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气调产品",
+        "evidence_span": "已形成多个系列市场热销产品，牛排系列、方便菜肴、肉糜类、焖锅类、气调产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连锁火锅",
+        "evidence_span": "经营以牛肉食材等为特色的连锁火锅、韩式烤肉和烤肉特色自助餐三大品类餐饮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "韩式烤肉",
+        "evidence_span": "经营以牛肉食材等为特色的连锁火锅、韩式烤肉和烤肉特色自助餐三大品类餐饮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烤肉特色自助餐",
+        "evidence_span": "经营以牛肉食材等为特色的连锁火锅、韩式烤肉和烤肉特色自助餐三大品类餐饮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "各类墓位",
+        "evidence_span": "向客户提供各类墓位、殡仪服务和殡仪用品销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "殡仪服务",
+        "evidence_span": "向客户提供各类墓位、殡仪服务和殡仪用品销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "殡仪用品销售",
+        "evidence_span": "向客户提供各类墓位、殡仪服务和殡仪用品销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "性控技术",
+        "evidence_span": "现阶段基础母牛繁殖采用性控技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "王老吉",
+        "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全家连锁",
+        "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宜家",
+        "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦当劳",
+        "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西贝",
+        "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航食",
+        "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东方豪客",
+        "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "绿茶连锁",
+        "evidence_span": "与王老吉、全家连锁、宜家、麦当劳、西贝、航食、东方豪客、绿茶连锁等众多优质客户建立了长久稳固的合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "京津冀一体化",
+        "evidence_span": "受益京津冀一体化的肉牛养殖、餐饮一体化公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "牛肉全产业链龙头",
+        "evidence_span": "福成股份养老安乐概念稀缺标的+牛肉全产业链龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "养老安乐概念稀缺标的",
+        "evidence_span": "福成股份养老安乐概念稀缺标的+牛肉全产业链龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:54:18"
+}

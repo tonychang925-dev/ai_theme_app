@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "a501711f0935", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含高盛研究部的预测（到2030年3级自动驾驶汽车占全球新车销量的10%），这属于行业知识，但基于事件（2024年9月6日的研究报告），因此是混合内容，可能含有可用于题材构建的稳定知识。"}}

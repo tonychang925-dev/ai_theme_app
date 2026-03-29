@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:57:15", "result": {"span_uid": "37a863b1ce6d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "发动机维护记录", "stability": "low", "reason": "原文仅为单一事件记录（东航完成C919发动机首次更换），无法形成独立、稳定的知识块，且信息过于具体和临时性。"}}

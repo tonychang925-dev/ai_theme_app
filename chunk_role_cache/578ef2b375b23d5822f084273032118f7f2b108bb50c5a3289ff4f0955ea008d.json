@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "10bf3afacf29", "label": "knowledge_like", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落引用政策鼓励发展半导体关键环节项目，如集成电路设计、制造等，这有助于理解半导体设备的应用场景和产业链结构，但基于政策内容，稳定性有限。"}}

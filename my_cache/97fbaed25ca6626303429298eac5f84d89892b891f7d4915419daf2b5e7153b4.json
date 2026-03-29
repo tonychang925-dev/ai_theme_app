@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:46:00", "result": {"chunk_id": "4aff1674681f", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述新凯来的技术替代路径（短期和长期目标），涉及制程和技术布局，是静态说明，没有事件或时间性动态，可用于知识构建。"}}

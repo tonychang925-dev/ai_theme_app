@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "量子保密通信产品",
+      "evidence_span": "主要从事量子保密通信产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "量子计算仪器设备",
+      "evidence_span": "量子计算仪器设备的研发、生产、销售及技术服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "量子信息产业化的开拓者",
+      "evidence_span": "是中国量子信息产业化的开拓者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "量子信息产业化的实践者",
+      "evidence_span": "实践者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "量子信息产业化的引领者",
+      "evidence_span": "引领者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大规模量子保密通信网络设计企业",
+      "evidence_span": "具有大规模量子保密通信网络设计"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大规模量子保密通信网络供货企业",
+      "evidence_span": "供货"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大规模量子保密通信网络部署企业",
+      "evidence_span": "部署全能力的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "QKD产品",
+      "evidence_span": "核心产品为QKD产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "量子保密通信设备",
+      "evidence_span": "提供量子保密通信设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "量子安全应用解决方案",
+      "evidence_span": "提供量子安全应用解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超导量子计算整机解决方案",
+      "evidence_span": "具备提供超导量子计算整机解决方案的能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "量子密钥分发技术",
+      "evidence_span": "量子密钥分发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "量子隐形传态技术",
+      "evidence_span": "量子隐形传态"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政务行业",
+      "evidence_span": "为政务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融行业",
+      "evidence_span": "金融"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电力行业",
+      "evidence_span": "电力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国防行业",
+      "evidence_span": "国防"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "量子通信",
+      "evidence_span": "率先从事量子通信的企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "量子保密通信产品",
+        "evidence_span": "主要从事量子保密通信产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "量子计算仪器设备",
+        "evidence_span": "量子计算仪器设备的研发、生产、销售及技术服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "量子信息产业化的开拓者",
+        "evidence_span": "是中国量子信息产业化的开拓者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "量子信息产业化的实践者",
+        "evidence_span": "实践者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "量子信息产业化的引领者",
+        "evidence_span": "引领者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大规模量子保密通信网络设计企业",
+        "evidence_span": "具有大规模量子保密通信网络设计"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大规模量子保密通信网络供货企业",
+        "evidence_span": "供货"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大规模量子保密通信网络部署企业",
+        "evidence_span": "部署全能力的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "QKD产品",
+        "evidence_span": "核心产品为QKD产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "量子保密通信设备",
+        "evidence_span": "提供量子保密通信设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "量子安全应用解决方案",
+        "evidence_span": "提供量子安全应用解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超导量子计算整机解决方案",
+        "evidence_span": "具备提供超导量子计算整机解决方案的能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "量子密钥分发技术",
+        "evidence_span": "量子密钥分发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "量子隐形传态技术",
+        "evidence_span": "量子隐形传态"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政务行业",
+        "evidence_span": "为政务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融行业",
+        "evidence_span": "金融"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电力行业",
+        "evidence_span": "电力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国防行业",
+        "evidence_span": "国防"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "量子通信",
+        "evidence_span": "率先从事量子通信的企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:35:44"
+}

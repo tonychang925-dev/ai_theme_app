@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "乳制品研发",
+      "evidence_span": "主要从事乳制品和含乳饮料的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "主要从事乳制品和含乳饮料的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主要从事乳制品和含乳饮料的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "含乳饮料研发",
+      "evidence_span": "主要从事乳制品和含乳饮料的研发、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域性城市型乳制品龙头企业",
+      "evidence_span": "燕塘乳业属于区域性城市型乳制品龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "华南地区规模最大的乳制品加工企业之一",
+      "evidence_span": "现已发展成为华南地区规模最大的乳制品加工企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "广东第一家液体乳上市企业",
+      "evidence_span": "作为广东第一家液体乳上市企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国奶业20强企业",
+      "evidence_span": "进入D20企业联盟，跻身中国奶业20强"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "巴氏杀菌奶",
+      "evidence_span": "产品包括巴氏杀菌奶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超高温灭菌奶",
+      "evidence_span": "超高温灭菌奶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酸奶",
+      "evidence_span": "酸奶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "花式奶",
+      "evidence_span": "花式奶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乳酸菌乳饮料",
+      "evidence_span": "乳酸菌乳饮料等乳制品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "富硒娟姗鲜牛奶",
+      "evidence_span": "推出了富硒的娟姗鲜牛奶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "娟姗纯牛奶",
+      "evidence_span": "娟姗鲜牛奶和娟姗纯牛奶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "A2β酪蛋白纯牛奶",
+      "evidence_span": "A2β酪蛋白纯牛奶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "零蔗糖零脂肪老广州酸奶",
+      "evidence_span": "零蔗糖零脂肪老广州酸奶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "零蔗糖鲜奶布丁",
+      "evidence_span": "零蔗糖鲜奶布丁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乐比AD钙酸奶饮品",
+      "evidence_span": "乐比AD钙酸奶饮品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益生君酸奶饮品",
+      "evidence_span": "益生君酸奶饮品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "A2β酪蛋白高品质牛乳",
+      "evidence_span": "A2β酪蛋白高品质牛乳"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低温奶",
+      "evidence_span": "低温奶作为城市乳制品消费市场发展的新趋势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "学生饮用奶",
+      "evidence_span": "国家学生饮用奶计划推广先进企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能工厂生产技术",
+      "evidence_span": "智能工厂生产技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全自动码垛机器人",
+      "evidence_span": "全自动码垛机器人"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化智能立体仓库",
+      "evidence_span": "自动化智能立体仓库"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "前处理中央控制系统",
+      "evidence_span": "前处理中央控制系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工牧一体化全产业链",
+      "evidence_span": "涵盖“饲草种植、奶牛养殖、研发加工、品控检测、冷链配送、立体终端”的特色工牧一体化全产业链"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全产业链可追溯质控管理系统",
+      "evidence_span": "构建起贯穿全产业链的可追溯质控管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "隧道通风设计工艺",
+      "evidence_span": "广东省首家采用隧道通风设计工艺的牧场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广东省内消费者",
+      "evidence_span": "公司在广东省内拥有较高的知名度和市场影响力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "澳门地区终端零售点",
+      "evidence_span": "澳门地区终端零售点扩大至75家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "奶业振兴",
+      "evidence_span": "国家高度重视奶业振兴和发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产乳品质量提升",
+      "evidence_span": "提高国产乳品质量、效益和竞争力"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "乳制品研发、生产与销售",
+        "evidence_span": "主要从事乳制品和含乳饮料的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "含乳饮料研发、生产与销售",
+        "evidence_span": "主要从事乳制品和含乳饮料的研发、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域性城市型乳制品龙头企业",
+        "evidence_span": "燕塘乳业属于区域性城市型乳制品龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "华南地区规模最大的乳制品加工企业之一",
+        "evidence_span": "现已发展成为华南地区规模最大的乳制品加工企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "广东第一家液体乳上市企业",
+        "evidence_span": "作为广东第一家液体乳上市企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国奶业20强企业",
+        "evidence_span": "进入D20企业联盟，跻身中国奶业20强"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "巴氏杀菌奶",
+        "evidence_span": "产品包括巴氏杀菌奶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超高温灭菌奶",
+        "evidence_span": "超高温灭菌奶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酸奶",
+        "evidence_span": "酸奶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "花式奶",
+        "evidence_span": "花式奶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乳酸菌乳饮料",
+        "evidence_span": "乳酸菌乳饮料等乳制品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "富硒娟姗鲜牛奶",
+        "evidence_span": "推出了富硒的娟姗鲜牛奶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "娟姗纯牛奶",
+        "evidence_span": "娟姗鲜牛奶和娟姗纯牛奶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "A2β酪蛋白纯牛奶",
+        "evidence_span": "A2β酪蛋白纯牛奶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "零蔗糖零脂肪老广州酸奶",
+        "evidence_span": "零蔗糖零脂肪老广州酸奶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "零蔗糖鲜奶布丁",
+        "evidence_span": "零蔗糖鲜奶布丁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乐比AD钙酸奶饮品",
+        "evidence_span": "乐比AD钙酸奶饮品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益生君酸奶饮品",
+        "evidence_span": "益生君酸奶饮品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "A2β酪蛋白高品质牛乳",
+        "evidence_span": "A2β酪蛋白高品质牛乳"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低温奶",
+        "evidence_span": "低温奶作为城市乳制品消费市场发展的新趋势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "学生饮用奶",
+        "evidence_span": "国家学生饮用奶计划推广先进企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能工厂生产技术",
+        "evidence_span": "智能工厂生产技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全自动码垛机器人",
+        "evidence_span": "全自动码垛机器人"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化智能立体仓库",
+        "evidence_span": "自动化智能立体仓库"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "前处理中央控制系统",
+        "evidence_span": "前处理中央控制系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工牧一体化全产业链",
+        "evidence_span": "涵盖“饲草种植、奶牛养殖、研发加工、品控检测、冷链配送、立体终端”的特色工牧一体化全产业链"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全产业链可追溯质控管理系统",
+        "evidence_span": "构建起贯穿全产业链的可追溯质控管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "隧道通风设计工艺",
+        "evidence_span": "广东省首家采用隧道通风设计工艺的牧场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广东省内消费者",
+        "evidence_span": "公司在广东省内拥有较高的知名度和市场影响力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "澳门地区终端零售点",
+        "evidence_span": "澳门地区终端零售点扩大至75家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "奶业振兴",
+        "evidence_span": "国家高度重视奶业振兴和发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产乳品质量提升",
+        "evidence_span": "提高国产乳品质量、效益和竞争力"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:23:36"
+}

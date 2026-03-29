@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "71f35549b481", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段包含政策发布（事件性）和光刻机技术参数（知识性），后者如分辨率、套刻精度、工艺支持等是半导体设备的核心静态知识，具有高价值。"}}

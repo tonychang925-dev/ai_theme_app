@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "6ec214d229b5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述华为与中芯国际的专利提交和合作计划，以及三星电子的罢工事件，主要是事件性动态，但提及SAQP技术、DUV光刻机和3纳米制程，可能包含技术路径或设备应用知识，混合了事件和潜在知识。"}}

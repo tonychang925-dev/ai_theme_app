@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "6c75d78c5662", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落详细报道美国商务部对台积电的出口限制措施，包括时间、对象、影响等，是具体政策事件和新闻动态，未提供半导体设备本身的结构或技术知识。"}}

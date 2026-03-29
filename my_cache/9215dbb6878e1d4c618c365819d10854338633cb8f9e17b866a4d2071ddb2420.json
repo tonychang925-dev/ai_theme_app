@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "f1a4ef59ae27", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含技术知识（如'全环绕栅极晶体管(GAA)'的芯片架构描述），但混合了事件信息（如美国政府扩大对俄罗斯的制裁），可能含有可用于题材构建的稳定知识，需要进一步裁决。"}}

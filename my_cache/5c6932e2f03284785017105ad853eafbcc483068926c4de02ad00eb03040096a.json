@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:41:20", "result": {"chunk_id": "fc0a52c9c56a", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落详细描述ISO 3级洁净室的核心技术要求，包括空气过滤系统、温湿度控制、压差梯度和建筑材料等静态知识，无事件或时间性动态。"}}

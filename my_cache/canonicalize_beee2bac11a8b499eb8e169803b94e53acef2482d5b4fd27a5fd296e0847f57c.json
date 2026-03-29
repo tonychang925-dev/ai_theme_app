@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:22:58", "result": {"span_uid": "811db0742cf1", "action": "rewrite", "canonical_text": "HBM由于获利表现佳和需求持续增长，在生产中具有最高优先级。", "final_type": "signal", "final_role": "生产优先级原因", "stability": "medium", "reason": "原文包含具体时间点（今年下半年），改写后去除了时间信息，保留了生产优先级的稳定原因，可作为景气信号。"}}

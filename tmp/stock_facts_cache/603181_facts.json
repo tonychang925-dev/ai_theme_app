@@ -1,0 +1,214 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种表面活性剂",
+      "evidence_span": "皇马科技特种表面活性剂龙头"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新材料树脂",
+      "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有机硅",
+      "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农化助剂",
+      "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "润滑油",
+      "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金属加工液",
+      "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端电子化学品",
+      "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保涂料",
+      "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "聚醚胺",
+      "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特种表面活性剂龙头引领企业",
+      "evidence_span": "特种表面活性剂龙头引领企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚醚单体",
+      "evidence_span": "大品种板块产品主要为聚醚单体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有机硅用聚醚",
+      "evidence_span": "公司生产的有机硅用聚醚主要用于聚氨酯泡沫材料以及建筑密封胶等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印染助剂",
+      "evidence_span": "印染助剂应用板块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涂料应用板块产品",
+      "evidence_span": "公司涂料应用板块产品作为高端涂料产品的上游"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "乙氧基化生产装置",
+      "evidence_span": "公司拥有国内先进的乙氧基化生产装置和氯化装置"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氯化装置",
+      "evidence_span": "公司拥有国内先进的乙氧基化生产装置和氯化装置"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "外循环、喷雾式工艺技术",
+      "evidence_span": "在国内率先引进外循环、喷雾式工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "DCS控制",
+      "evidence_span": "形成DCS控制、MES生产管理、SIS安全仪表系统与ERP、SCM供应链管理系统无缝对接"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MES生产管理",
+      "evidence_span": "形成DCS控制、MES生产管理、SIS安全仪表系统与ERP、SCM供应链管理系统无缝对接"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SIS安全仪表系统",
+      "evidence_span": "形成DCS控制、MES生产管理、SIS安全仪表系统与ERP、SCM供应链管理系统无缝对接"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内外知名精细化工企业",
+      "evidence_span": "下游客户包括国内外知名精细化工企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种表面活性剂",
+        "evidence_span": "皇马科技特种表面活性剂龙头"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新材料树脂",
+        "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有机硅",
+        "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农化助剂",
+        "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "润滑油及金属加工液",
+        "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端电子化学品",
+        "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保涂料",
+        "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "聚醚胺",
+        "evidence_span": "已形成新材料树脂、有机硅、农化助剂、润滑油及金属加工液、高端电子化学品、环保涂料及聚醚胺等十六大板块产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特种表面活性剂龙头引领企业",
+        "evidence_span": "特种表面活性剂龙头引领企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚醚单体",
+        "evidence_span": "大品种板块产品主要为聚醚单体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有机硅用聚醚",
+        "evidence_span": "公司生产的有机硅用聚醚主要用于聚氨酯泡沫材料以及建筑密封胶等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印染助剂",
+        "evidence_span": "印染助剂应用板块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涂料应用板块产品",
+        "evidence_span": "公司涂料应用板块产品作为高端涂料产品的上游"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "乙氧基化生产装置",
+        "evidence_span": "公司拥有国内先进的乙氧基化生产装置和氯化装置"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氯化装置",
+        "evidence_span": "公司拥有国内先进的乙氧基化生产装置和氯化装置"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "外循环、喷雾式工艺技术",
+        "evidence_span": "在国内率先引进外循环、喷雾式工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "DCS控制",
+        "evidence_span": "形成DCS控制、MES生产管理、SIS安全仪表系统与ERP、SCM供应链管理系统无缝对接"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MES生产管理",
+        "evidence_span": "形成DCS控制、MES生产管理、SIS安全仪表系统与ERP、SCM供应链管理系统无缝对接"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SIS安全仪表系统",
+        "evidence_span": "形成DCS控制、MES生产管理、SIS安全仪表系统与ERP、SCM供应链管理系统无缝对接"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内外知名精细化工企业",
+        "evidence_span": "下游客户包括国内外知名精细化工企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:35:20"
+}

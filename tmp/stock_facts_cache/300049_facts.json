@@ -1,0 +1,194 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "自有药品",
+      "evidence_span": "公司业务主要有三大板块，1）自有药品与流通药品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "流通药品",
+      "evidence_span": "公司业务主要有三大板块，1）自有药品与流通药品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "诊断设备",
+      "evidence_span": "2）诊断设备，为法国子公司Echosens的肝纤维化与肝硬化检测设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗服务",
+      "evidence_span": "3）医疗服务，为儿童医院及肝病健康管理相关业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "肝病诊疗龙头企业",
+      "evidence_span": "肝病诊疗龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "肝病诊疗全方位服务的领导者",
+      "evidence_span": "肝病诊疗全方位服务的领导者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "肝纤维化诊断和治疗领先者",
+      "evidence_span": "肝纤维化诊断和治疗领先者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复方鳖甲软肝片",
+      "evidence_span": "自有药品主要是公司独家中药品种复方鳖甲软肝片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FibroScan系列检测设备及相关软件",
+      "evidence_span": "其核心产品为FibroScan系列检测设备及相关软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "儿童医院及肝病健康管理相关业务",
+      "evidence_span": "医疗服务，为儿童医院及肝病健康管理相关业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无创定量检测肝脏硬度及脂肪变",
+      "evidence_span": "是目前全球唯一可实现对肝脏硬度及脂肪变进行无创定量检测的设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "重庆医科大学附属儿童医院",
+      "evidence_span": "与当地知名儿童医院如重庆医科大学附属儿童医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江大学医学院附属儿童医院",
+      "evidence_span": "浙江大学医学院附属儿童医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "复旦大学附属儿科医院",
+      "evidence_span": "复旦大学附属儿科医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "四川大学附属华西第二医院",
+      "evidence_span": "四川大学附属华西第二医院"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "肝病全产业链平台",
+      "evidence_span": "福瑞股份肝病全产业链平台第一家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧医疗",
+      "evidence_span": "智慧医疗标的"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "全产业链布局",
+      "evidence_span": "福瑞股份深耕肝病领域，实现全产业链布局"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "医疗大数据",
+      "evidence_span": "从肝病诊疗到医疗大数据"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "自有药品与流通药品",
+        "evidence_span": "公司业务主要有三大板块，1）自有药品与流通药品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "诊断设备",
+        "evidence_span": "2）诊断设备，为法国子公司Echosens的肝纤维化与肝硬化检测设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗服务",
+        "evidence_span": "3）医疗服务，为儿童医院及肝病健康管理相关业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "肝病诊疗龙头企业",
+        "evidence_span": "肝病诊疗龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "肝病诊疗全方位服务的领导者",
+        "evidence_span": "肝病诊疗全方位服务的领导者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "肝纤维化诊断和治疗领先者",
+        "evidence_span": "肝纤维化诊断和治疗领先者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复方鳖甲软肝片",
+        "evidence_span": "自有药品主要是公司独家中药品种复方鳖甲软肝片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FibroScan系列检测设备及相关软件",
+        "evidence_span": "其核心产品为FibroScan系列检测设备及相关软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "儿童医院及肝病健康管理相关业务",
+        "evidence_span": "医疗服务，为儿童医院及肝病健康管理相关业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无创定量检测肝脏硬度及脂肪变",
+        "evidence_span": "是目前全球唯一可实现对肝脏硬度及脂肪变进行无创定量检测的设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "重庆医科大学附属儿童医院",
+        "evidence_span": "与当地知名儿童医院如重庆医科大学附属儿童医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江大学医学院附属儿童医院",
+        "evidence_span": "浙江大学医学院附属儿童医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "复旦大学附属儿科医院",
+        "evidence_span": "复旦大学附属儿科医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "四川大学附属华西第二医院",
+        "evidence_span": "四川大学附属华西第二医院"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "肝病全产业链平台",
+        "evidence_span": "福瑞股份肝病全产业链平台第一家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧医疗",
+        "evidence_span": "智慧医疗标的"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "全产业链布局",
+        "evidence_span": "福瑞股份深耕肝病领域，实现全产业链布局"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "医疗大数据",
+        "evidence_span": "从肝病诊疗到医疗大数据"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:51:59"
+}

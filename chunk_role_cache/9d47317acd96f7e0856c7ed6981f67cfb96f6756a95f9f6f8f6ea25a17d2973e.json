@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T20:38:08", "result": {"chunk_id": "8a8eb09b5c48", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述2026年2月8日日本众议院选举的具体事件、计票结果、政治动态（如高市早苗继续执政、修宪言论等），以及涉及中日关系紧张的历史背景。内容聚焦于时间性新闻和事件进展，缺乏对'对日制裁'题材本身的静态定义、核心构成或机制说明，因此属于纯事件描述。"}}

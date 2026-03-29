@@ -1,0 +1,324 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "导光结构件",
+      "evidence_span": "从事导光结构件及组件、精密按键开关结构件及 件的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "组件",
+      "evidence_span": "从事导光结构件及组件、精密按键开关结构件及 件的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密按键开关结构件",
+      "evidence_span": "从事导光结构件及组件、精密按键开关结构件及 件的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电子产业企业",
+      "evidence_span": "深耕电子产业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导光膜",
+      "evidence_span": "公司主要产品 为导光膜（LGF）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "背光模组",
+      "evidence_span": "背光模组（LGF/LGP module）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属薄膜开关",
+      "evidence_span": "金属薄膜开关（Metal Dome）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超小型防水轻触开关",
+      "evidence_span": "超小型防水轻触开关（Micro Waterproof Tact Switch）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CCS模组",
+      "evidence_span": "公司已具备量产 CCS 模组的核心能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FPC模组",
+      "evidence_span": "扩产动力电池及储能电池系统用 CCS 及 FPC 模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压连接器",
+      "evidence_span": "信为兴在新能源汽车领域以高压连接器为主"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "导光结构微纳米热压印生产工艺",
+      "evidence_span": "专注于导光结构微纳米热压印生产工艺的自主研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光学微结构设计",
+      "evidence_span": "光学微结构设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微纳米压印模具开发",
+      "evidence_span": "微纳米压印模具开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化制造",
+      "evidence_span": "自动化制造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "FPC研发制造",
+      "evidence_span": "FPC 的研发制造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SMT贴片能力",
+      "evidence_span": "SMT 贴片能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高压系统掌握",
+      "evidence_span": "对高压 系统的掌握"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "传音",
+      "evidence_span": "信为兴直接与传音、华为、荣耀、OPPO、TCL 等厂商供 货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "信为兴直接与传音、华为、荣耀、OPPO、TCL 等厂商供 货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荣耀",
+      "evidence_span": "信为兴直接与传音、华为、荣耀、OPPO、TCL 等厂商供 货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "信为兴直接与传音、华为、荣耀、OPPO、TCL 等厂商供 货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TCL",
+      "evidence_span": "信为兴直接与传音、华为、荣耀、OPPO、TCL 等厂商供 货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "通过闻泰、华勤等公司将产品供应给小米、三星、vivo 等品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "通过闻泰、华勤等公司将产品供应给小米、三星、vivo 等品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "vivo",
+      "evidence_span": "通过闻泰、华勤等公司将产品供应给小米、三星、vivo 等品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "信为兴已与比亚迪、开沃汽车等企业建立稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "开沃汽车",
+      "evidence_span": "信为兴已与比亚迪、开沃汽车等企业建立稳定合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源",
+      "evidence_span": "拓展新能源等新领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "连接器",
+      "evidence_span": "进军连接器领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "动力电池",
+      "evidence_span": "布局动力电池和储能CCS模组"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能",
+      "evidence_span": "布局动力电池和储能CCS模组"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "导光结构件及组件",
+        "evidence_span": "从事导光结构件及组件、精密按键开关结构件及 件的研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密按键开关结构件及组件",
+        "evidence_span": "从事导光结构件及组件、精密按键开关结构件及 件的研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电子产业企业",
+        "evidence_span": "深耕电子产业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导光膜",
+        "evidence_span": "公司主要产品 为导光膜（LGF）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "背光模组",
+        "evidence_span": "背光模组（LGF/LGP module）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属薄膜开关",
+        "evidence_span": "金属薄膜开关（Metal Dome）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超小型防水轻触开关",
+        "evidence_span": "超小型防水轻触开关（Micro Waterproof Tact Switch）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CCS模组",
+        "evidence_span": "公司已具备量产 CCS 模组的核心能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FPC模组",
+        "evidence_span": "扩产动力电池及储能电池系统用 CCS 及 FPC 模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压连接器",
+        "evidence_span": "信为兴在新能源汽车领域以高压连接器为主"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "导光结构微纳米热压印生产工艺",
+        "evidence_span": "专注于导光结构微纳米热压印生产工艺的自主研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光学微结构设计",
+        "evidence_span": "光学微结构设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微纳米压印模具开发",
+        "evidence_span": "微纳米压印模具开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化制造",
+        "evidence_span": "自动化制造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "FPC研发制造",
+        "evidence_span": "FPC 的研发制造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SMT贴片能力",
+        "evidence_span": "SMT 贴片能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高压系统掌握",
+        "evidence_span": "对高压 系统的掌握"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "传音",
+        "evidence_span": "信为兴直接与传音、华为、荣耀、OPPO、TCL 等厂商供 货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "信为兴直接与传音、华为、荣耀、OPPO、TCL 等厂商供 货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荣耀",
+        "evidence_span": "信为兴直接与传音、华为、荣耀、OPPO、TCL 等厂商供 货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "信为兴直接与传音、华为、荣耀、OPPO、TCL 等厂商供 货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TCL",
+        "evidence_span": "信为兴直接与传音、华为、荣耀、OPPO、TCL 等厂商供 货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "通过闻泰、华勤等公司将产品供应给小米、三星、vivo 等品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "通过闻泰、华勤等公司将产品供应给小米、三星、vivo 等品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "vivo",
+        "evidence_span": "通过闻泰、华勤等公司将产品供应给小米、三星、vivo 等品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "信为兴已与比亚迪、开沃汽车等企业建立稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "开沃汽车",
+        "evidence_span": "信为兴已与比亚迪、开沃汽车等企业建立稳定合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源",
+        "evidence_span": "拓展新能源等新领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "连接器",
+        "evidence_span": "进军连接器领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "动力电池",
+        "evidence_span": "布局动力电池和储能CCS模组"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能",
+        "evidence_span": "布局动力电池和储能CCS模组"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:47:02"
+}

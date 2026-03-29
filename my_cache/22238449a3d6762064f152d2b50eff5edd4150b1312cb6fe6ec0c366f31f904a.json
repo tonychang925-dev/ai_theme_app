@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "3ef641f4839b", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述HBM存储市场的静态结构，包括全球DRAM三巨头的垄断地位和具体市占率数据，这些是定义HBM产业链核心构成的关键要素，不涉及事件、政策或时间性动态，属于纯静态说明。"}}

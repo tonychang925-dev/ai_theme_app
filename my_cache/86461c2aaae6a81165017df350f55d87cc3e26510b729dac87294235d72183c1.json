@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:58:46", "result": {"chunk_id": "c6f3b0de99b5", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段描述了新版强制性国家标准《电动自行车安全技术规范》的实施时间（9月1日）和相关部门联合印发的意见，包含政策发布和具体时间推进等事件信息，但同时也涉及电动自行车安全技术规范这一静态知识，因此属于混合状态。"}}

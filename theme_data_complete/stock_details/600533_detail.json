@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 33621294.0,
+    "changeCount": 0.03,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:28:58",
+    "detail": "<p><span style=\"font-weight: bold;\">1.公司主营</span></p>\n<p>2021 年，公司实现营业总收入 32.00 亿元，其中房地产开发营业收入 28.60 亿 元，毛利率 36.46%，，高于行业 整体毛利率水平。与此同时，公司不断壮大其他业务板块规模，积极培育新的利润增长点</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1501_20220915161717_656411a7a5ba56b3.png\" alt=\"\" width=\"674\" height=\"356\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2.主营数据</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1502_20220915161747_519caf63a4bc609b.png\" alt=\"\" width=\"686\" height=\"450\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3.公司深耕南京、无锡&lsquo;苏州</span></p>\n<p>南京、无锡、苏州属于长三角城市群，各方面发展较为完备，居民购买力强，市场韧性较高。南京、无锡、苏州对人口的集聚能力不断增强，常住人口多年来不断上升，公司未来有较为稳定的预期。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1503_20220915162217_a42a6b88cacb4cc0.png\" alt=\"\" width=\"694\" height=\"382\" /></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1504_20220915162226_f17d49ad3c578e88.png\" alt=\"\" width=\"692\" height=\"437\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4.逆周期拿地</span></p>\n<p>2021 年以来公司逆周期拿地积极，补充多处优秀地块</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/1505_20220915162545_25be0ee9d4482fc6.png\" alt=\"\" width=\"920\" height=\"216\" /></p>",
+    "firstLetter": "QXJS",
+    "high": 2.76,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 2.68,
+    "marketValue": 2835000000.0,
+    "name": "栖霞建设",
+    "pctChg": 1.11,
+    "price": 2.73,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -2.5,
+    "recentChange": 4.6,
+    "remark": "集中于江苏省南京、无锡、苏州三市布局房地产项目，品质人居筑造者。",
+    "status": 1,
+    "stockId": "600533",
+    "stockLightspots": [
+      {
+        "bizKey": "16815",
+        "content": "地缘优势明显,高结转稳定业绩",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16815,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16816",
+        "content": "上下游产业链打通的典范,获超额收益",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16816,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16817",
+        "content": "受益城镇化和销售回升,加快项目周转",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16817,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16818",
+        "content": "项目结转较少，投资收益推升公司业绩",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16818,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16819",
+        "content": "业绩稳健，参股河北银行受益京津冀一体化",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16819,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16820",
+        "content": "业绩大幅增长，启动社区互联网服务",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16820,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16821",
+        "content": "栖霞建设业绩高增长，经营有亮点",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16821,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16822",
+        "content": "栖霞建设2015年一季度业绩回顾",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16822,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16823",
+        "content": "栖霞建设2014年业绩回顾",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16823,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16824",
+        "content": "走在荆棘的转型路上",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16824,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16825",
+        "content": "开竣工计划大幅提高",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16825,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16826",
+        "content": "销售加速增长,财务依旧稳健",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16826,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16827",
+        "content": "销售提速、增长确定",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16827,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16828",
+        "content": "产品线定位清晰,增长趋势开始明确",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16828,
+        "stockId": "600533",
+        "updateTime": null
+      },
+      {
+        "bizKey": "16829",
+        "content": "加大保障房建设,投资金融股权",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 16829,
+        "stockId": "600533",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:52",
+    "vol": 123237.0
+  }
+}

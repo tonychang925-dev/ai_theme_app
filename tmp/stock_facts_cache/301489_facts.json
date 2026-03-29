@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "热管理材料",
+      "evidence_span": "公司主要从事研发、生产和销售热管理材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "纳米防护材料",
+      "evidence_span": "公司主要从事研发、生产和销售热管理材料、纳米防护材料等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "消费电子产品系统化散热解决方案提供商",
+      "evidence_span": "是行业内为数不多的能够提供消费电子产品系统化散热解决方案的提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石墨散热片",
+      "evidence_span": "公司主要产品为石墨散热片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导热垫片",
+      "evidence_span": "公司主要产品为石墨散热片、导热垫片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热管",
+      "evidence_span": "公司主要产品为石墨散热片、导热垫片、热管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "均温板",
+      "evidence_span": "公司主要产品为石墨散热片、导热垫片、热管、均温板等热管理材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导热凝胶",
+      "evidence_span": "目前已拥有石墨散热片、均热板、热管、导热垫片、导热凝胶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导热脂",
+      "evidence_span": "目前已拥有石墨散热片、均热板、热管、导热垫片、导热凝胶、导热脂等较为完整的导热材料产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阻燃垫片",
+      "evidence_span": "推出阻燃垫片、气凝胶、云母带等阻燃隔热、绝缘耐温材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气凝胶",
+      "evidence_span": "推出阻燃垫片、气凝胶、云母带等阻燃隔热、绝缘耐温材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云母带",
+      "evidence_span": "推出阻燃垫片、气凝胶、云母带等阻燃隔热、绝缘耐温材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钛合金结构件",
+      "evidence_span": "推出钛合金结构件等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "100μm单层合成石墨",
+      "evidence_span": "目前已量产出100μm单层合成石墨"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高厚度的发泡石墨膜",
+      "evidence_span": "高厚度的发泡石墨膜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "70W低介电常数导热膜",
+      "evidence_span": "70W低介电常数导热膜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高分子共形包覆合成石墨",
+      "evidence_span": "高分子共形包覆合成石墨"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "30W高导热硅胶垫片",
+      "evidence_span": "30W高导热硅胶垫片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "8W-10W导热凝胶",
+      "evidence_span": "8W-10W导热凝胶"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高导热柔性石墨膜的高温烧结技术",
+      "evidence_span": "高导热柔性石墨膜的高温烧结技术及其应用研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高导热绝缘复合材料的涂布定向成型技术",
+      "evidence_span": "高导热绝缘复合材料的涂布定向成型技术及其应用研究"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北美大客户",
+      "evidence_span": "服务的终端品牌有北美大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "服务的终端品牌有北美大客户、小米"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "vivo",
+      "evidence_span": "服务的终端品牌有北美大客户、小米、vivo"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "谷歌",
+      "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ABB",
+      "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "伟创力",
+      "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富士康",
+      "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪、富士康"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华星光电",
+      "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪、富士康、华星光电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深天马",
+      "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪、富士康、华星光电、深天马"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "闻泰通讯",
+      "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪、富士康、华星光电、深天马、闻泰通讯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华勤通讯",
+      "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪、富士康、华星光电、深天马、闻泰通讯、华勤通讯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "龙旗电子",
+      "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪、富士康、华星光电、深天马、闻泰通讯、华勤通讯、龙旗电子等"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "热管理材料",
+        "evidence_span": "公司主要从事研发、生产和销售热管理材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "纳米防护材料",
+        "evidence_span": "公司主要从事研发、生产和销售热管理材料、纳米防护材料等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "消费电子产品系统化散热解决方案提供商",
+        "evidence_span": "是行业内为数不多的能够提供消费电子产品系统化散热解决方案的提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石墨散热片",
+        "evidence_span": "公司主要产品为石墨散热片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导热垫片",
+        "evidence_span": "公司主要产品为石墨散热片、导热垫片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热管",
+        "evidence_span": "公司主要产品为石墨散热片、导热垫片、热管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "均温板",
+        "evidence_span": "公司主要产品为石墨散热片、导热垫片、热管、均温板等热管理材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导热凝胶",
+        "evidence_span": "目前已拥有石墨散热片、均热板、热管、导热垫片、导热凝胶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导热脂",
+        "evidence_span": "目前已拥有石墨散热片、均热板、热管、导热垫片、导热凝胶、导热脂等较为完整的导热材料产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阻燃垫片",
+        "evidence_span": "推出阻燃垫片、气凝胶、云母带等阻燃隔热、绝缘耐温材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气凝胶",
+        "evidence_span": "推出阻燃垫片、气凝胶、云母带等阻燃隔热、绝缘耐温材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云母带",
+        "evidence_span": "推出阻燃垫片、气凝胶、云母带等阻燃隔热、绝缘耐温材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钛合金结构件",
+        "evidence_span": "推出钛合金结构件等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "100μm单层合成石墨",
+        "evidence_span": "目前已量产出100μm单层合成石墨"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高厚度的发泡石墨膜",
+        "evidence_span": "高厚度的发泡石墨膜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "70W低介电常数导热膜",
+        "evidence_span": "70W低介电常数导热膜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高分子共形包覆合成石墨",
+        "evidence_span": "高分子共形包覆合成石墨"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "30W高导热硅胶垫片",
+        "evidence_span": "30W高导热硅胶垫片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "8W-10W导热凝胶",
+        "evidence_span": "8W-10W导热凝胶"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高导热柔性石墨膜的高温烧结技术",
+        "evidence_span": "高导热柔性石墨膜的高温烧结技术及其应用研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高导热绝缘复合材料的涂布定向成型技术",
+        "evidence_span": "高导热绝缘复合材料的涂布定向成型技术及其应用研究"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北美大客户",
+        "evidence_span": "服务的终端品牌有北美大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "服务的终端品牌有北美大客户、小米"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "vivo",
+        "evidence_span": "服务的终端品牌有北美大客户、小米、vivo"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "谷歌",
+        "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ABB",
+        "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "伟创力",
+        "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富士康",
+        "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪、富士康"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华星光电",
+        "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪、富士康、华星光电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深天马",
+        "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪、富士康、华星光电、深天马"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "闻泰通讯",
+        "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪、富士康、华星光电、深天马、闻泰通讯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华勤通讯",
+        "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪、富士康、华星光电、深天马、闻泰通讯、华勤通讯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "龙旗电子",
+        "evidence_span": "服务的终端品牌有北美大客户、小米、vivo、三星、谷歌、ABB、伟创力、比亚迪、富士康、华星光电、深天马、闻泰通讯、华勤通讯、龙旗电子等"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:41:14"
+}

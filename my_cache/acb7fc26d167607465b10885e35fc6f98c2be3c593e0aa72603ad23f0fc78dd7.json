@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:58:46", "result": {"chunk_id": "bd90be370774", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国产电动三轮车在美国受欢迎的视频引发关注，属于趣闻或媒体噪音，与两轮车题材本体构建无关，信息量低。"}}

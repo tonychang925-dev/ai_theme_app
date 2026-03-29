@@ -1,0 +1,389 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药批发业务",
+      "evidence_span": "主要经营医药批发业务、医药零售业务及提供物流服务和医疗服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药零售业务",
+      "evidence_span": "主要经营医药批发业务、医药零售业务及提供物流服务和医疗服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物流服务",
+      "evidence_span": "主要经营医药批发业务、医药零售业务及提供物流服务和医疗服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗服务",
+      "evidence_span": "主要经营医药批发业务、医药零售业务及提供物流服务和医疗服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域性医药流通企业",
+      "evidence_span": "公司是一家国内知名的区域性医药流通企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "黑龙江省最大的医药商业企业",
+      "evidence_span": "是黑龙江省最大的医药商业企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "黑龙江省医药流通行业的龙头企业",
+      "evidence_span": "公司是黑龙江省医药流通行业的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "批零一体化的医药流通企业",
+      "evidence_span": "公司属于批零一体化的医药流通企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中西成药",
+      "evidence_span": "主要销售中西成药、中药饮片、贵细药材等中西药品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药饮片",
+      "evidence_span": "主要销售中西成药、中药饮片、贵细药材等中西药品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贵细药材",
+      "evidence_span": "主要销售中西成药、中药饮片、贵细药材等中西药品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗器械",
+      "evidence_span": "同时销售医疗器械、保健品、日用品、玻璃仪器、化学试剂等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保健品",
+      "evidence_span": "同时销售医疗器械、保健品、日用品、玻璃仪器、化学试剂等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "日用品",
+      "evidence_span": "同时销售医疗器械、保健品、日用品、玻璃仪器、化学试剂等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃仪器",
+      "evidence_span": "同时销售医疗器械、保健品、日用品、玻璃仪器、化学试剂等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化学试剂",
+      "evidence_span": "同时销售医疗器械、保健品、日用品、玻璃仪器、化学试剂等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "处方药",
+      "evidence_span": "向个人客户销售处方药、非处方药及医疗保健品等医药产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非处方药",
+      "evidence_span": "向个人客户销售处方药、非处方药及医疗保健品等医药产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗保健品",
+      "evidence_span": "向个人客户销售处方药、非处方药及医疗保健品等医药产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DTP品种",
+      "evidence_span": "涵盖处方药、DTP品种、非处方药、中药材、中药饮片、滋补保健、医疗器械、日用品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药材",
+      "evidence_span": "涵盖处方药、DTP品种、非处方药、中药材、中药饮片、滋补保健、医疗器械、日用品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "滋补保健",
+      "evidence_span": "涵盖处方药、DTP品种、非处方药、中药材、中药饮片、滋补保健、医疗器械、日用品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药品配送服务",
+      "evidence_span": "针对医疗客户、商业客户开展全方位的药品配送服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物流配送服务",
+      "evidence_span": "提供物流服务和医疗服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗服务",
+      "evidence_span": "提供物流服务和医疗服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "现代化医药物流配送中心",
+      "evidence_span": "由自建的现代化医药物流配送中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全程冷链运输",
+      "evidence_span": "低温商品实现全程冷链运输"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "《药品冷链物流运作规范》国家标准示范企业",
+      "evidence_span": "是黑龙江省首家《药品冷链物流运作规范》国家标准示范企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集中化供应链体系",
+      "evidence_span": "公司医药零售业务采用集中化供应链体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "O2O模式",
+      "evidence_span": "公司O2O模式的推广为公司带来客流和销售业绩的持续增长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公立医疗客户",
+      "evidence_span": "一是医疗客户，包括公立医疗客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "民营医院客户",
+      "evidence_span": "民营医院客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府开办的基层医疗卫生机构",
+      "evidence_span": "政府开办的基层医疗卫生机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医疗终端客户",
+      "evidence_span": "医疗终端客户（如诊所、门诊等）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "药品批发企业",
+      "evidence_span": "二是商业客户（包括药品批发企业、药品零售连锁企业、单体药店）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "药品零售连锁企业",
+      "evidence_span": "药品零售连锁企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "单体药店",
+      "evidence_span": "单体药店"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "个人客户",
+      "evidence_span": "向个人客户销售处方药、非处方药及医疗保健品等医药产品"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药批发业务",
+        "evidence_span": "主要经营医药批发业务、医药零售业务及提供物流服务和医疗服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药零售业务",
+        "evidence_span": "主要经营医药批发业务、医药零售业务及提供物流服务和医疗服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物流服务",
+        "evidence_span": "主要经营医药批发业务、医药零售业务及提供物流服务和医疗服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗服务",
+        "evidence_span": "主要经营医药批发业务、医药零售业务及提供物流服务和医疗服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域性医药流通企业",
+        "evidence_span": "公司是一家国内知名的区域性医药流通企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "黑龙江省最大的医药商业企业",
+        "evidence_span": "是黑龙江省最大的医药商业企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "黑龙江省医药流通行业的龙头企业",
+        "evidence_span": "公司是黑龙江省医药流通行业的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "批零一体化的医药流通企业",
+        "evidence_span": "公司属于批零一体化的医药流通企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中西成药",
+        "evidence_span": "主要销售中西成药、中药饮片、贵细药材等中西药品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药饮片",
+        "evidence_span": "主要销售中西成药、中药饮片、贵细药材等中西药品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贵细药材",
+        "evidence_span": "主要销售中西成药、中药饮片、贵细药材等中西药品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗器械",
+        "evidence_span": "同时销售医疗器械、保健品、日用品、玻璃仪器、化学试剂等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保健品",
+        "evidence_span": "同时销售医疗器械、保健品、日用品、玻璃仪器、化学试剂等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "日用品",
+        "evidence_span": "同时销售医疗器械、保健品、日用品、玻璃仪器、化学试剂等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃仪器",
+        "evidence_span": "同时销售医疗器械、保健品、日用品、玻璃仪器、化学试剂等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化学试剂",
+        "evidence_span": "同时销售医疗器械、保健品、日用品、玻璃仪器、化学试剂等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "处方药",
+        "evidence_span": "向个人客户销售处方药、非处方药及医疗保健品等医药产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非处方药",
+        "evidence_span": "向个人客户销售处方药、非处方药及医疗保健品等医药产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗保健品",
+        "evidence_span": "向个人客户销售处方药、非处方药及医疗保健品等医药产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DTP品种",
+        "evidence_span": "涵盖处方药、DTP品种、非处方药、中药材、中药饮片、滋补保健、医疗器械、日用品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药材",
+        "evidence_span": "涵盖处方药、DTP品种、非处方药、中药材、中药饮片、滋补保健、医疗器械、日用品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "滋补保健",
+        "evidence_span": "涵盖处方药、DTP品种、非处方药、中药材、中药饮片、滋补保健、医疗器械、日用品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药品配送服务",
+        "evidence_span": "针对医疗客户、商业客户开展全方位的药品配送服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物流配送服务",
+        "evidence_span": "提供物流服务和医疗服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗服务",
+        "evidence_span": "提供物流服务和医疗服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "现代化医药物流配送中心",
+        "evidence_span": "由自建的现代化医药物流配送中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全程冷链运输",
+        "evidence_span": "低温商品实现全程冷链运输"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "《药品冷链物流运作规范》国家标准示范企业",
+        "evidence_span": "是黑龙江省首家《药品冷链物流运作规范》国家标准示范企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集中化供应链体系",
+        "evidence_span": "公司医药零售业务采用集中化供应链体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "O2O模式",
+        "evidence_span": "公司O2O模式的推广为公司带来客流和销售业绩的持续增长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公立医疗客户",
+        "evidence_span": "一是医疗客户，包括公立医疗客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "民营医院客户",
+        "evidence_span": "民营医院客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府开办的基层医疗卫生机构",
+        "evidence_span": "政府开办的基层医疗卫生机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医疗终端客户",
+        "evidence_span": "医疗终端客户（如诊所、门诊等）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "药品批发企业",
+        "evidence_span": "二是商业客户（包括药品批发企业、药品零售连锁企业、单体药店）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "药品零售连锁企业",
+        "evidence_span": "药品零售连锁企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "单体药店",
+        "evidence_span": "单体药店"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "个人客户",
+        "evidence_span": "向个人客户销售处方药、非处方药及医疗保健品等医药产品"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:26:48"
+}

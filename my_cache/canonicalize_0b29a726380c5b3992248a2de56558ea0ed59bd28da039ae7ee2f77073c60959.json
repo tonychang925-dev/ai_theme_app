@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:33:29", "result": {"span_uid": "b41b5b171bf0", "action": "rewrite", "canonical_text": "03式中程防空导弹是一种射程约50公里的防空导弹，主要用于应对中距离空中威胁。", "final_type": "related", "final_role": "特定导弹型号的技术参数", "stability": "high", "reason": "原文本包含具体事件信息（日本部署计划），已去事件化改写为稳定技术参数描述，适合作为相关型号知识保留。"}}

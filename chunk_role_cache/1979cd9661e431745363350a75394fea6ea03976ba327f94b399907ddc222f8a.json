@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "e9e6858bf561", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落主要记录了国家发改委主任在记者会上的发言事件（具体日期和场合），内容聚焦于设备更新的市场需求估算（5万亿以上），这是一个具体的事件陈述和市场动态，没有提供稳定的半导体设备本体知识。"}}

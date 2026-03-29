@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "092829e0a4e8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落引用SIA数据描述半导体销售额的增长趋势，属于行业景气数据事件，未涉及半导体设备的具体构成或技术。"}}

@@ -1,0 +1,139 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "水力发电",
+      "evidence_span": "公司网内电源均为水力发电和光伏发电"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏发电",
+      "evidence_span": "公司网内电源均为水力发电和光伏发电"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "输配电",
+      "evidence_span": "公司是集发、输、配、售电一体化经营的电力企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "售电",
+      "evidence_span": "公司是集发、输、配、售电一体化经营的电力企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集发、输、配、售电一体化经营的电力企业",
+      "evidence_span": "公司是集发、输、配、售电一体化经营的电力企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "西昌市综合性小水电企业",
+      "evidence_span": "西昌市综合性小水电企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清洁能源发电",
+      "evidence_span": "清洁能源发电量占全年网内总发电量的100%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力供应",
+      "evidence_span": "拥有独立的供电网络和稳定的用户"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全清洁能源新型电力系统示范点建设",
+      "evidence_span": "全力推进公司全清洁能源新型电力系统示范点建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "配电自动化系统建设",
+      "evidence_span": "推进配电自动化系统建设和城区配网建设改造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化技术应用",
+      "evidence_span": "充分利用营配贯通、营财一体化、配网调控平台等数字化技术应用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "清洁能源",
+      "evidence_span": "清洁能源发电量占全年网内总发电量的100%"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源布局",
+      "evidence_span": "新能源布局加速"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "水力发电",
+        "evidence_span": "公司网内电源均为水力发电和光伏发电"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏发电",
+        "evidence_span": "公司网内电源均为水力发电和光伏发电"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "输配电",
+        "evidence_span": "公司是集发、输、配、售电一体化经营的电力企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "售电",
+        "evidence_span": "公司是集发、输、配、售电一体化经营的电力企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集发、输、配、售电一体化经营的电力企业",
+        "evidence_span": "公司是集发、输、配、售电一体化经营的电力企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "西昌市综合性小水电企业",
+        "evidence_span": "西昌市综合性小水电企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清洁能源发电",
+        "evidence_span": "清洁能源发电量占全年网内总发电量的100%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力供应",
+        "evidence_span": "拥有独立的供电网络和稳定的用户"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全清洁能源新型电力系统示范点建设",
+        "evidence_span": "全力推进公司全清洁能源新型电力系统示范点建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "配电自动化系统建设",
+        "evidence_span": "推进配电自动化系统建设和城区配网建设改造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化技术应用",
+        "evidence_span": "充分利用营配贯通、营财一体化、配网调控平台等数字化技术应用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "清洁能源",
+        "evidence_span": "清洁能源发电量占全年网内总发电量的100%"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源布局",
+        "evidence_span": "新能源布局加速"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:22:31"
+}

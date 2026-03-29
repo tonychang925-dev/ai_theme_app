@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "c22866618820", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落提到了《关于加快经济社会发展全面绿色转型的意见》和《深入实施以人为本的新型城镇化战略五年行动计划》等政策文件，包含事件发布信息，但也涉及清洁能源基地建设、保障性住房、公共基础设施等建筑设计相关领域，可能含有稳定知识，因此分类为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:30:35", "result": {"span_uid": "c05340e2c867", "action": "rewrite", "canonical_text": "华为是全球领先的ICT（信息与通信）基础设施和智能终端提供商，致力于构建万物互联的智能世界。", "final_type": "core", "final_role": "公司定位与愿景", "stability": "high", "reason": "去除了具体年份、员工数量、服务人口等事件化细节，保留了公司核心定位和愿景，形成稳定可独立理解的知识表达。"}}

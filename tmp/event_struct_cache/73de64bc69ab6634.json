@@ -1,0 +1,63 @@
+{
+  "event_id": "evt_57bb826e9ebe",
+  "theme_name": "AI智能体Manus",
+  "event_type": "融资IPO",
+  "entities": [
+    {
+      "name": "蝴蝶效应",
+      "type": "公司",
+      "normalized": "蝴蝶效应"
+    },
+    {
+      "name": "Manus",
+      "type": "产品",
+      "normalized": "Manus"
+    },
+    {
+      "name": "中国",
+      "type": "国家",
+      "normalized": "中国"
+    }
+  ],
+  "summary": "蝴蝶效应计划为智能体产品Manus融资1亿美元，估值15亿美元，资金用于发展中国市场业务。",
+  "causal_claim": [
+    "融资",
+    "资金注入",
+    "AI智能体发展",
+    "中国市场扩张"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "智能体产品",
+      "融资",
+      "国资参与"
+    ],
+    "normalized_terms": {
+      "蝴蝶效应": "蝴蝶效应",
+      "Manus": "Manus",
+      "中国": "中国"
+    },
+    "evidence_spans": [
+      {
+        "text": "智能体产品Manus背后公司蝴蝶效应正在计划新一轮融资，预计融资规模为1亿美元，估值15亿美元。",
+        "start": 0,
+        "end": 60
+      },
+      {
+        "text": "本轮融资将有国资参与，所筹集的资金将主要用于发展中国市场业务。",
+        "start": 60,
+        "end": 90
+      }
+    ],
+    "core_concepts": [
+      "融资",
+      "AI智能体",
+      "中国市场"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.95,
+  "source_weight": 1.2,
+  "timestamp": null,
+  "raw_text": "《科创板日报》记者从知情人士方面了解到，智能体产品Manus背后公司蝴蝶效应正在计划新一轮融资，预计融资规模为1亿美元，估值15亿美元。本轮融资将有国资参与，所筹集的资金将主要用于发展中国市场业务。（新闻来源：科创板日报）"
+}

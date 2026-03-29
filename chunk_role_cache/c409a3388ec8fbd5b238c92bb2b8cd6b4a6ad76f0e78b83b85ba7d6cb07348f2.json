@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "ec37b2daafa0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述美国政府通知台积电终止VEU地位并要求申请许可采购美系设备和材料的事件，涉及政策动态和公司具体操作，属于时间性动态，没有静态知识内容。"}}

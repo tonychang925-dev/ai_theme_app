@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:23:14", "result": {"chunk_id": "0f92f92772f0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述军事专家对滑跃起飞、弹射起飞技术和舰载机飞行员培训的评论，以及福建舰入列的进展，混合了技术知识（起飞技术）和事件动态（入列攻坚），可能对海军装备知识有贡献。"}}

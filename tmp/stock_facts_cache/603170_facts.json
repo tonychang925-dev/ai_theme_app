@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品调味料的研发",
+      "evidence_span": "公司主营食品调味料的研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品调味料的生产",
+      "evidence_span": "公司主营食品调味料的生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品调味料的技术服务",
+      "evidence_span": "公司主营食品调味料的技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合调味料",
+      "evidence_span": "产品主要分为三类：（1）复合调味料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粉体类复合调味料",
+      "evidence_span": "复合调味料：主要包括粉体类复合调味料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酱汁类复合调味料",
+      "evidence_span": "复合调味料：主要包括酱汁类复合调味料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻烹解决方案",
+      "evidence_span": "（2）轻烹解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻烹料理酱包",
+      "evidence_span": "目前主要开发了轻烹料理酱包"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻烹料理汤包",
+      "evidence_span": "目前主要开发了轻烹料理汤包"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "饮品甜点配料",
+      "evidence_span": "（3）饮品甜点配料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "缤纷创意小料",
+      "evidence_span": "包括缤纷创意小料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多款果酱系列",
+      "evidence_span": "多款果酱系列"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "肯德基",
+      "evidence_span": "目前合作的客户有肯德基"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "必胜客",
+      "evidence_span": "目前合作的客户有必胜客"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦当劳",
+      "evidence_span": "目前合作的客户有麦当劳"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德克士",
+      "evidence_span": "目前合作的客户有德克士"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汉堡王",
+      "evidence_span": "目前合作的客户有汉堡王"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "达美乐",
+      "evidence_span": "目前合作的客户有达美乐"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "圣农食品",
+      "evidence_span": "目前合作的客户有圣农食品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "泰森中国",
+      "evidence_span": "目前合作的客户有泰森中国"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "嘉吉",
+      "evidence_span": "目前合作的客户有嘉吉"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "正大食品",
+      "evidence_span": "目前合作的客户有正大食品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "喜茶",
+      "evidence_span": "目前合作的客户有喜茶"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大希地",
+      "evidence_span": "目前合作的客户有大希地"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品调味料的研发",
+        "evidence_span": "公司主营食品调味料的研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品调味料的生产",
+        "evidence_span": "公司主营食品调味料的生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品调味料的技术服务",
+        "evidence_span": "公司主营食品调味料的技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合调味料",
+        "evidence_span": "产品主要分为三类：（1）复合调味料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粉体类复合调味料",
+        "evidence_span": "复合调味料：主要包括粉体类复合调味料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酱汁类复合调味料",
+        "evidence_span": "复合调味料：主要包括酱汁类复合调味料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻烹解决方案",
+        "evidence_span": "（2）轻烹解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻烹料理酱包",
+        "evidence_span": "目前主要开发了轻烹料理酱包"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻烹料理汤包",
+        "evidence_span": "目前主要开发了轻烹料理汤包"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "饮品甜点配料",
+        "evidence_span": "（3）饮品甜点配料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "缤纷创意小料",
+        "evidence_span": "包括缤纷创意小料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多款果酱系列",
+        "evidence_span": "多款果酱系列"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "肯德基",
+        "evidence_span": "目前合作的客户有肯德基"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "必胜客",
+        "evidence_span": "目前合作的客户有必胜客"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦当劳",
+        "evidence_span": "目前合作的客户有麦当劳"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德克士",
+        "evidence_span": "目前合作的客户有德克士"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汉堡王",
+        "evidence_span": "目前合作的客户有汉堡王"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "达美乐",
+        "evidence_span": "目前合作的客户有达美乐"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "圣农食品",
+        "evidence_span": "目前合作的客户有圣农食品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "泰森中国",
+        "evidence_span": "目前合作的客户有泰森中国"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "嘉吉",
+        "evidence_span": "目前合作的客户有嘉吉"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "正大食品",
+        "evidence_span": "目前合作的客户有正大食品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "喜茶",
+        "evidence_span": "目前合作的客户有喜茶"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大希地",
+        "evidence_span": "目前合作的客户有大希地"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:30:36"
+}

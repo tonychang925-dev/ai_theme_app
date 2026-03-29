@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "机械制造业务",
+      "evidence_span": "公司主营业务分为机械制造业务和数字营销业务两部分"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字营销业务",
+      "evidence_span": "公司主营业务分为机械制造业务和数字营销业务两部分"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字营销行业的领先梯队",
+      "evidence_span": "已成功跻身国内数字营销行业的领先梯队"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "民用及商用泵",
+      "evidence_span": "公司机械制造业务主要为民用及商用泵、工业泵、园林机械的研发、制造和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业泵",
+      "evidence_span": "公司机械制造业务主要为民用及商用泵、工业泵、园林机械的研发、制造和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "园林机械",
+      "evidence_span": "公司机械制造业务主要为民用及商用泵、工业泵、园林机械的研发、制造和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字营销服务",
+      "evidence_span": "公司数字营销服务已覆盖营销策略和创意、媒体投放和执行、效果监测和优化、社会化营销、精准营销、流量整合等完整的服务链条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一站式整合数字营销服务",
+      "evidence_span": "为数不多的能够提供一站式整合数字营销服务的机构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化商业转型解决方案",
+      "evidence_span": "为客户提供数字策略和数据、数字创意、数字媒体、数字流量、社会化媒体和娱乐内容营销以及电子商务为一体的“数字化商业转型”解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核心零部件自主研发制造",
+      "evidence_span": "核心零部件自主研发制造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "装备水平在行业处于领先地位",
+      "evidence_span": "公司的装备水平在行业处于领先地位"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "泰坦、方舟、盘古、万鹏等数字化工具",
+      "evidence_span": "利欧数字自主研发了泰坦、方舟、盘古、万鹏等面向不同媒体平台的数字化工具"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LDN-IPFS分布式数字化文件系统",
+      "evidence_span": "利欧数字目前已经搭建起自有的大规模分布式数字化文件系统 LDN-IPFS"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "知识图谱技术",
+      "evidence_span": "通过领先的知识图谱技术对于广告经营过程中沉淀的数字化资产进行结构化语义分析"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "奇思妙想AIGC产品",
+      "evidence_span": "投入研发名为“奇思妙想”的新一代AIGC产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "字节巨量引擎",
+      "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "快手磁力引擎",
+      "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "腾讯广告",
+      "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "百度",
+      "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "今日头条",
+      "evidence_span": "是今日头条、快手、百度、腾讯、360等顶级媒体的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "快手",
+      "evidence_span": "是今日头条、快手、百度、腾讯、360等顶级媒体的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "腾讯",
+      "evidence_span": "是今日头条、快手、百度、腾讯、360等顶级媒体的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "360",
+      "evidence_span": "是今日头条、快手、百度、腾讯、360等顶级媒体的重要合作伙伴"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字营销",
+      "evidence_span": "数字营销王者崛起，流量运营重塑互联网平台价值"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字营销龙头",
+      "evidence_span": "利欧股份数字营销龙头，线下流量整合能力强，将受益于小程序的持续推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "机械制造业务",
+        "evidence_span": "公司主营业务分为机械制造业务和数字营销业务两部分"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字营销业务",
+        "evidence_span": "公司主营业务分为机械制造业务和数字营销业务两部分"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字营销行业的领先梯队",
+        "evidence_span": "已成功跻身国内数字营销行业的领先梯队"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "民用及商用泵",
+        "evidence_span": "公司机械制造业务主要为民用及商用泵、工业泵、园林机械的研发、制造和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业泵",
+        "evidence_span": "公司机械制造业务主要为民用及商用泵、工业泵、园林机械的研发、制造和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "园林机械",
+        "evidence_span": "公司机械制造业务主要为民用及商用泵、工业泵、园林机械的研发、制造和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字营销服务",
+        "evidence_span": "公司数字营销服务已覆盖营销策略和创意、媒体投放和执行、效果监测和优化、社会化营销、精准营销、流量整合等完整的服务链条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一站式整合数字营销服务",
+        "evidence_span": "为数不多的能够提供一站式整合数字营销服务的机构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化商业转型解决方案",
+        "evidence_span": "为客户提供数字策略和数据、数字创意、数字媒体、数字流量、社会化媒体和娱乐内容营销以及电子商务为一体的“数字化商业转型”解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核心零部件自主研发制造",
+        "evidence_span": "核心零部件自主研发制造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "装备水平在行业处于领先地位",
+        "evidence_span": "公司的装备水平在行业处于领先地位"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "泰坦、方舟、盘古、万鹏等数字化工具",
+        "evidence_span": "利欧数字自主研发了泰坦、方舟、盘古、万鹏等面向不同媒体平台的数字化工具"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LDN-IPFS分布式数字化文件系统",
+        "evidence_span": "利欧数字目前已经搭建起自有的大规模分布式数字化文件系统 LDN-IPFS"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "知识图谱技术",
+        "evidence_span": "通过领先的知识图谱技术对于广告经营过程中沉淀的数字化资产进行结构化语义分析"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "奇思妙想AIGC产品",
+        "evidence_span": "投入研发名为“奇思妙想”的新一代AIGC产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "字节巨量引擎",
+        "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "快手磁力引擎",
+        "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "腾讯广告",
+        "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "百度",
+        "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "媒体代理事业群与字节巨量引擎、快手磁力引擎、腾讯广告、百度等多个头部媒体平台以及包括小米、OPPO、华为在内的主流厂商建立了深度的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "今日头条",
+        "evidence_span": "是今日头条、快手、百度、腾讯、360等顶级媒体的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "快手",
+        "evidence_span": "是今日头条、快手、百度、腾讯、360等顶级媒体的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "腾讯",
+        "evidence_span": "是今日头条、快手、百度、腾讯、360等顶级媒体的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "360",
+        "evidence_span": "是今日头条、快手、百度、腾讯、360等顶级媒体的重要合作伙伴"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字营销",
+        "evidence_span": "数字营销王者崛起，流量运营重塑互联网平台价值"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字营销龙头",
+        "evidence_span": "利欧股份数字营销龙头，线下流量整合能力强，将受益于小程序的持续推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:04:54"
+}

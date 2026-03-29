@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "0c137ef2535a", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段纯静态说明HBM的优势和机制（如'更高带宽、更大容量、更低功耗、更小尺寸'、'突破内存带宽与容量瓶颈'），没有事件或时间性内容，是稳定的题材知识。"}}

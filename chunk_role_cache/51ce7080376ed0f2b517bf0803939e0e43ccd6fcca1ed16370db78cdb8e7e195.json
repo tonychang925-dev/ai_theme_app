@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "e05a9de21bf0", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含中国民用航空局发布的低空经济市场规模预测数据（到2025年和2035年），这属于有价值的知识信息，但以数据发布的形式呈现，可能混有事件性元素，需要进一步裁决以提取稳定知识。"}}

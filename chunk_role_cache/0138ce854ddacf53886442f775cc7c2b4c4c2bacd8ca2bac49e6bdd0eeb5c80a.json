@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "8ed63c6bbbca", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报道OpenAI讨论开发人形机器人和众擎机器人推出PM01并开启发售的事件，主要是新闻动态，没有静态知识内容，因此归类为pure_event。"}}

@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高分子材料化学助剂研发",
+      "evidence_span": "公司是一家专业从事高分子材料化学助剂研发、生产及销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高分子材料化学助剂生产",
+      "evidence_span": "公司是一家专业从事高分子材料化学助剂研发、生产及销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高分子材料化学助剂销售",
+      "evidence_span": "公司是一家专业从事高分子材料化学助剂研发、生产及销售的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "聚合物添加剂和解决方案的核心助剂材料供应商",
+      "evidence_span": "为全球高分子材料工业提供聚合物添加剂和解决方案的核心助剂材料供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高分子材料化学助剂高新技术企业",
+      "evidence_span": "公司是一家专业从事高分子材料化学助剂研发、生产及销售的高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "受阻酚类主抗氧剂",
+      "evidence_span": "产品主要为受阻酚类主抗氧剂、亚磷酸酯类辅助抗氧剂等单剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "亚磷酸酯类辅助抗氧剂",
+      "evidence_span": "产品主要为受阻酚类主抗氧剂、亚磷酸酯类辅助抗氧剂等单剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗氧剂单剂产品",
+      "evidence_span": "产品主要为受阻酚类主抗氧剂、亚磷酸酯类辅助抗氧剂等单剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集成助剂产品",
+      "evidence_span": "根据客户的需求成功开发出集成助剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一站式高分子材料助剂解决方案",
+      "evidence_span": "提供一站式高分子材料助剂解决方案及其产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗氧剂全系列产品提供能力",
+      "evidence_span": "公司有能力提供抗氧化剂全系列产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "定制化集成助剂产品",
+      "evidence_span": "根据下游客户的个性化需求提供定制化集成助剂产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无锡抗氧剂1010",
+      "evidence_span": "无锡抗氧剂1010"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗氧剂YFK-1076",
+      "evidence_span": "抗氧剂YFK-1076"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效抗氧剂YFK-300",
+      "evidence_span": "高效抗氧剂YFK-300（即626）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗氧剂YFK-330",
+      "evidence_span": "抗氧剂YFK-330"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高密度聚乙烯管材专用抗氧剂YFK-MM-1#/2#",
+      "evidence_span": "高密度聚乙烯管材专用抗氧剂YFK-MM-1#/2#"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "液体抗氧剂1135",
+      "evidence_span": "液体抗氧剂1135"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗氧剂YFK-4001",
+      "evidence_span": "抗氧剂YFK-4001"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "聚乙烯瓶盖料复合抗氧剂YFK-9305/9306",
+      "evidence_span": "聚乙烯瓶盖料复合抗氧剂YFK-9305/9306"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效复合造粒抗氧剂系列产品",
+      "evidence_span": "高效复合造粒抗氧剂系列产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "从苯酚到烷基酚再到抗氧剂的完整工艺合成链",
+      "evidence_span": "已经成功打通了从苯酚到烷基酚再到抗氧剂的完整工艺合成链"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "关键中间体自给自足",
+      "evidence_span": "实现了关键中间体的自给自足"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "产品客户覆盖中石油、中石化、国家能源集团等国内大部分石化及煤化工企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "产品客户覆盖中石油、中石化、国家能源集团等国内大部分石化及煤化工企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家能源集团",
+      "evidence_span": "产品客户覆盖中石油、中石化、国家能源集团等国内大部分石化及煤化工企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内大部分石化及煤化工企业",
+      "evidence_span": "产品客户覆盖中石油、中石化、国家能源集团等国内大部分石化及煤化工企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高分子材料化学助剂研发",
+        "evidence_span": "公司是一家专业从事高分子材料化学助剂研发、生产及销售的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高分子材料化学助剂生产",
+        "evidence_span": "公司是一家专业从事高分子材料化学助剂研发、生产及销售的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高分子材料化学助剂销售",
+        "evidence_span": "公司是一家专业从事高分子材料化学助剂研发、生产及销售的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "聚合物添加剂和解决方案的核心助剂材料供应商",
+        "evidence_span": "为全球高分子材料工业提供聚合物添加剂和解决方案的核心助剂材料供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高分子材料化学助剂高新技术企业",
+        "evidence_span": "公司是一家专业从事高分子材料化学助剂研发、生产及销售的高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "受阻酚类主抗氧剂",
+        "evidence_span": "产品主要为受阻酚类主抗氧剂、亚磷酸酯类辅助抗氧剂等单剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "亚磷酸酯类辅助抗氧剂",
+        "evidence_span": "产品主要为受阻酚类主抗氧剂、亚磷酸酯类辅助抗氧剂等单剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗氧剂单剂产品",
+        "evidence_span": "产品主要为受阻酚类主抗氧剂、亚磷酸酯类辅助抗氧剂等单剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集成助剂产品",
+        "evidence_span": "根据客户的需求成功开发出集成助剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一站式高分子材料助剂解决方案",
+        "evidence_span": "提供一站式高分子材料助剂解决方案及其产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗氧剂全系列产品提供能力",
+        "evidence_span": "公司有能力提供抗氧化剂全系列产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "定制化集成助剂产品",
+        "evidence_span": "根据下游客户的个性化需求提供定制化集成助剂产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无锡抗氧剂1010",
+        "evidence_span": "无锡抗氧剂1010"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗氧剂YFK-1076",
+        "evidence_span": "抗氧剂YFK-1076"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效抗氧剂YFK-300",
+        "evidence_span": "高效抗氧剂YFK-300（即626）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗氧剂YFK-330",
+        "evidence_span": "抗氧剂YFK-330"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高密度聚乙烯管材专用抗氧剂YFK-MM-1#/2#",
+        "evidence_span": "高密度聚乙烯管材专用抗氧剂YFK-MM-1#/2#"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "液体抗氧剂1135",
+        "evidence_span": "液体抗氧剂1135"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗氧剂YFK-4001",
+        "evidence_span": "抗氧剂YFK-4001"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "聚乙烯瓶盖料复合抗氧剂YFK-9305/9306",
+        "evidence_span": "聚乙烯瓶盖料复合抗氧剂YFK-9305/9306"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效复合造粒抗氧剂系列产品",
+        "evidence_span": "高效复合造粒抗氧剂系列产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "从苯酚到烷基酚再到抗氧剂的完整工艺合成链",
+        "evidence_span": "已经成功打通了从苯酚到烷基酚再到抗氧剂的完整工艺合成链"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "关键中间体自给自足",
+        "evidence_span": "实现了关键中间体的自给自足"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "产品客户覆盖中石油、中石化、国家能源集团等国内大部分石化及煤化工企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "产品客户覆盖中石油、中石化、国家能源集团等国内大部分石化及煤化工企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家能源集团",
+        "evidence_span": "产品客户覆盖中石油、中石化、国家能源集团等国内大部分石化及煤化工企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内大部分石化及煤化工企业",
+        "evidence_span": "产品客户覆盖中石油、中石化、国家能源集团等国内大部分石化及煤化工企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:34:36"
+}

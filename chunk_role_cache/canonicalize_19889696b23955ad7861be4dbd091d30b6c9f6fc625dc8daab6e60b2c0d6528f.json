@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:37:14", "result": {"span_uid": "d96452bc8232", "action": "keep", "canonical_text": "半导体光刻胶的保质期一般为3-6个月。", "final_type": "core", "final_role": "光刻胶保质期特性", "stability": "high", "reason": "原文本已是完整、稳定的知识表达，描述了光刻胶的基本属性，可独立成立。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:24:22", "result": {"chunk_id": "264b4b6b2dbc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含稀土永磁材料在人形机器人中应用的静态知识（如作用、用量），但以北方稀土在互动平台的表示为背景，混有事件元素，具有高本体构建价值。"}}

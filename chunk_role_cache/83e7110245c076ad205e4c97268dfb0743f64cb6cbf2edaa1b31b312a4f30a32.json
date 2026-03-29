@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "29b98f1c9ac6", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落描述广东推动刻蚀机等设备研发的政策动向，涉及国产化替代知识，但以事件形式呈现，因此归类为candidate_mixed。"}}

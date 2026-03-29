@@ -1,0 +1,184 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "PDF阅读",
+      "evidence_span": "PDF编辑器与阅读器产品是PDF最主要的产品形式，自然也是公司的核心产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "编辑器",
+      "evidence_span": "PDF编辑器与阅读器产品是PDF最主要的产品形式，自然也是公司的核心产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "PDF开发平台",
+      "evidence_span": "公司的PDF产品包括四大类，分别是PDF阅读及编辑器、PDF开发平台及工具、企业文档处理解决方案、PDF工具及在线服务产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工具",
+      "evidence_span": "公司的PDF产品包括四大类，分别是PDF阅读及编辑器、PDF开发平台及工具、企业文档处理解决方案、PDF工具及在线服务产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "企业文档处理解决方案",
+      "evidence_span": "公司的PDF产品包括四大类，分别是PDF阅读及编辑器、PDF开发平台及工具、企业文档处理解决方案、PDF工具及在线服务产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "PDF工具",
+      "evidence_span": "公司的PDF产品包括四大类，分别是PDF阅读及编辑器、PDF开发平台及工具、企业文档处理解决方案、PDF工具及在线服务产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "在线服务产品",
+      "evidence_span": "公司的PDF产品包括四大类，分别是PDF阅读及编辑器、PDF开发平台及工具、企业文档处理解决方案、PDF工具及在线服务产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专业PDF软件厂商",
+      "evidence_span": "公司是技术完全自主的专业PDF软件厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国际PDF协会伙伴会员",
+      "evidence_span": "公司是国内唯一一家国际PDF协会伙伴会员"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Foxit PhantomPDF",
+      "evidence_span": "PDF编辑器产品——Foxit PhantomPDF是公司的主打产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Foxit Reader",
+      "evidence_span": "包括Foxit PhantomPDF、Foxit Reader和Foxit PDF Reader Mobile"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Foxit PDF Reader Mobile",
+      "evidence_span": "包括Foxit PhantomPDF、Foxit Reader和Foxit PDF Reader Mobile"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主研发的核心技术体系",
+      "evidence_span": "公司的产品均基于自主研发的核心技术体系而形成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "互联PDF",
+      "evidence_span": "还拥有互联PDF、PDF文档无障碍阅读等创新特色功能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PDF文档无障碍阅读",
+      "evidence_span": "还拥有互联PDF、PDF文档无障碍阅读等创新特色功能"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "机构客户",
+      "evidence_span": "PDF编辑器与阅读器收入以来自于机构客户的收入为主"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "代理商",
+      "evidence_span": "代理商70家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "个人客户",
+      "evidence_span": "个人客户10.24万"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "通用软件国产化主力军",
+      "evidence_span": "具有全球竞争力的文档处理专家，通用软件国产化主力军"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "PDF阅读及编辑器",
+        "evidence_span": "PDF编辑器与阅读器产品是PDF最主要的产品形式，自然也是公司的核心产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "PDF开发平台及工具",
+        "evidence_span": "公司的PDF产品包括四大类，分别是PDF阅读及编辑器、PDF开发平台及工具、企业文档处理解决方案、PDF工具及在线服务产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "企业文档处理解决方案",
+        "evidence_span": "公司的PDF产品包括四大类，分别是PDF阅读及编辑器、PDF开发平台及工具、企业文档处理解决方案、PDF工具及在线服务产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "PDF工具及在线服务产品",
+        "evidence_span": "公司的PDF产品包括四大类，分别是PDF阅读及编辑器、PDF开发平台及工具、企业文档处理解决方案、PDF工具及在线服务产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专业PDF软件厂商",
+        "evidence_span": "公司是技术完全自主的专业PDF软件厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国际PDF协会伙伴会员",
+        "evidence_span": "公司是国内唯一一家国际PDF协会伙伴会员"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Foxit PhantomPDF",
+        "evidence_span": "PDF编辑器产品——Foxit PhantomPDF是公司的主打产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Foxit Reader",
+        "evidence_span": "包括Foxit PhantomPDF、Foxit Reader和Foxit PDF Reader Mobile"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Foxit PDF Reader Mobile",
+        "evidence_span": "包括Foxit PhantomPDF、Foxit Reader和Foxit PDF Reader Mobile"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主研发的核心技术体系",
+        "evidence_span": "公司的产品均基于自主研发的核心技术体系而形成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "互联PDF",
+        "evidence_span": "还拥有互联PDF、PDF文档无障碍阅读等创新特色功能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PDF文档无障碍阅读",
+        "evidence_span": "还拥有互联PDF、PDF文档无障碍阅读等创新特色功能"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "机构客户",
+        "evidence_span": "PDF编辑器与阅读器收入以来自于机构客户的收入为主"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "代理商",
+        "evidence_span": "代理商70家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "个人客户",
+        "evidence_span": "个人客户10.24万"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "通用软件国产化主力军",
+        "evidence_span": "具有全球竞争力的文档处理专家，通用软件国产化主力军"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:58:14"
+}

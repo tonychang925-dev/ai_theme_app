@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "聚丙烯纤维的研发",
+      "evidence_span": "始终专注于聚丙烯纤维的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "始终专注于聚丙烯纤维的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "始终专注于聚丙烯纤维的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "丙纶长丝生产",
+      "evidence_span": "目前国内实际产量较大的丙纶长丝生产厂家"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "碳纤维项目",
+      "evidence_span": "决议筹备实施建设年产1万吨碳纤维及6万吨差别化腈纶项目"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内丙纶长丝龙头",
+      "evidence_span": "国内丙纶长丝龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "丙纶行业龙头企业",
+      "evidence_span": "公司跻身国内丙纶行业龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丙纶长丝",
+      "evidence_span": "丙纶长丝业绩增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "差别化丙纶长丝",
+      "evidence_span": "开发了高强低收缩丝、超细旦丝、异形截面丝，以及抗紫外、抗老化、抗菌、阻燃、远红外、夜光等差别化丙纶长丝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚丙烯BCF纤维",
+      "evidence_span": "已推进多种颜色、多种纤度聚丙烯BCF纤维制备技术研发并实现了BCF的批量规模化生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "细旦加弹丝（DTY）",
+      "evidence_span": "年产1万吨膨体连续长丝（BCF）以及0.5万吨细旦加弹丝（DTY）技术改造项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂离子电池隔膜",
+      "evidence_span": "研发锂电隔膜新材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "原液着色技术",
+      "evidence_span": "公司采用原液着色技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "差别化纤维开发和工艺改进",
+      "evidence_span": "在DTY的差别化纤维开发和工艺持续改进方面已有多年沉淀"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "保障重点领域关键原材料国产化是化纤企业的历史使命"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "聚丙烯纤维的研发、生产和销售",
+        "evidence_span": "始终专注于聚丙烯纤维的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "丙纶长丝生产",
+        "evidence_span": "目前国内实际产量较大的丙纶长丝生产厂家"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "碳纤维项目",
+        "evidence_span": "决议筹备实施建设年产1万吨碳纤维及6万吨差别化腈纶项目"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内丙纶长丝龙头",
+        "evidence_span": "国内丙纶长丝龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "丙纶行业龙头企业",
+        "evidence_span": "公司跻身国内丙纶行业龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丙纶长丝",
+        "evidence_span": "丙纶长丝业绩增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "差别化丙纶长丝",
+        "evidence_span": "开发了高强低收缩丝、超细旦丝、异形截面丝，以及抗紫外、抗老化、抗菌、阻燃、远红外、夜光等差别化丙纶长丝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚丙烯BCF纤维",
+        "evidence_span": "已推进多种颜色、多种纤度聚丙烯BCF纤维制备技术研发并实现了BCF的批量规模化生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "细旦加弹丝（DTY）",
+        "evidence_span": "年产1万吨膨体连续长丝（BCF）以及0.5万吨细旦加弹丝（DTY）技术改造项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂离子电池隔膜",
+        "evidence_span": "研发锂电隔膜新材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "原液着色技术",
+        "evidence_span": "公司采用原液着色技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "差别化纤维开发和工艺改进",
+        "evidence_span": "在DTY的差别化纤维开发和工艺持续改进方面已有多年沉淀"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "保障重点领域关键原材料国产化是化纤企业的历史使命"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:34:59"
+}

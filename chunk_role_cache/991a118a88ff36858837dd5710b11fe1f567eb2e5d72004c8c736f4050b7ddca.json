@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "58888a024ca4", "label": "knowledge_like", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到广东推动刻蚀机等光芯片关键装备研发和国产化替代，这涉及半导体设备（刻蚀机）的关键环节和应用方向（国产化），提供了题材构成和逻辑机制的知识性信息，但以政策事件形式呈现，稳定性较弱。"}}

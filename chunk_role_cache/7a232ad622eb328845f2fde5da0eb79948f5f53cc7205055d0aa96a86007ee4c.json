@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "274c3332061e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "核心是报道美国BIS修订EAR并将实体列入清单的具体事件。但段落后半部分详细列举了受影响的实体类型（设备、材料、EDA、芯片公司等）及其涉及的半导体工艺环节（涂胶显影、刻蚀等），这部分提供了关于半导体产业链构成和关键环节的稳定知识，与事件信息混杂。"}}

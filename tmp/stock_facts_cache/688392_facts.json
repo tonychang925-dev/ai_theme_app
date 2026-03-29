@@ -1,0 +1,469 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "超声波设备",
+      "evidence_span": "是专业提供超声波设备以及自动化解决方案的供应商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化解决方案",
+      "evidence_span": "是专业提供超声波设备以及自动化解决方案的供应商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源动力电池制造领域的自动化解决方案",
+      "evidence_span": "并提供新能源动力电池制造领域的自动化解决方案"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "超声波设备龙头",
+      "evidence_span": "超声波设备龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "超声波焊接设备龙头",
+      "evidence_span": "超声波焊接设备龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "超声波焊接核心设备商",
+      "evidence_span": "超声波焊接核心设备商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "超声波技术平台公司",
+      "evidence_span": "超声波技术平台公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "功率超声领域的超声波工业设备制造商",
+      "evidence_span": "骄成超声是功率超声领域的超声波工业设备制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力电池超声波焊接设备",
+      "evidence_span": "动力电池超声波焊接设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力电池制造自动化系统",
+      "evidence_span": "动力电池制造自动化系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车轮胎超声波裁切设备",
+      "evidence_span": "汽车轮胎超声波裁切设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他领域超声波焊接设备",
+      "evidence_span": "其他领域超声波焊接设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池超声波焊接设备",
+      "evidence_span": "锂电池超声波焊接设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超声波裁切系统",
+      "evidence_span": "超声波裁切系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超声波无纺布焊接设备",
+      "evidence_span": "超声波无纺布焊接设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超声波滚焊机",
+      "evidence_span": "超声波滚焊机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超声波设备相关配件",
+      "evidence_span": "超声波设备相关配件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集成实时质量检测技术的锂电池超声波焊接设备",
+      "evidence_span": "集成实时质量检测技术的锂电池超声波焊接设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "楔杆式超声波焊接设备",
+      "evidence_span": "楔杆式超声波焊接设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "动力电池超声波滚动焊接设备",
+      "evidence_span": "动力电池超声波滚动焊接设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超声波高速滚焊技术",
+      "evidence_span": "超声波高速滚焊技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "积累了宁德时代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪等知名客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "利元亨",
+      "evidence_span": "利元亨"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海目星",
+      "evidence_span": "海目星"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联赢激光",
+      "evidence_span": "联赢激光"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赢合科技",
+      "evidence_span": "赢合科技等整线设备集成商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国轩高科",
+      "evidence_span": "国轩高科"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中创新航",
+      "evidence_span": "中创新航"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿纬锂能",
+      "evidence_span": "亿纬锂能"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蜂巢能源",
+      "evidence_span": "蜂巢能源等公司的动力电池生产线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "固特异",
+      "evidence_span": "固特异"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "优科豪马",
+      "evidence_span": "优科豪马"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "正新",
+      "evidence_span": "正新"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "佳通",
+      "evidence_span": "佳通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中策",
+      "evidence_span": "中策"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "玲珑",
+      "evidence_span": "玲珑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赛轮",
+      "evidence_span": "赛轮等国内外知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "均胜电子",
+      "evidence_span": "均胜电子"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "振华科技",
+      "evidence_span": "振华科技等知名客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "开启国产替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "复合集流体量产",
+      "evidence_span": "有望率先受益复合集流体量产"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "下游应用领域持续拓展",
+      "evidence_span": "受益下游应用领域持续拓展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "泛半导体",
+      "evidence_span": "可奔向泛半导体"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "复合箔设备",
+      "evidence_span": "复合箔设备等打开成长空间"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "龙头电池厂产能扩张",
+      "evidence_span": "充分受益龙头电池厂产能扩张"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "超声波设备",
+        "evidence_span": "是专业提供超声波设备以及自动化解决方案的供应商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动化解决方案",
+        "evidence_span": "是专业提供超声波设备以及自动化解决方案的供应商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源动力电池制造领域的自动化解决方案",
+        "evidence_span": "并提供新能源动力电池制造领域的自动化解决方案"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "超声波设备龙头",
+        "evidence_span": "超声波设备龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "超声波焊接设备龙头",
+        "evidence_span": "超声波焊接设备龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "超声波焊接核心设备商",
+        "evidence_span": "超声波焊接核心设备商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "超声波技术平台公司",
+        "evidence_span": "超声波技术平台公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "功率超声领域的超声波工业设备制造商",
+        "evidence_span": "骄成超声是功率超声领域的超声波工业设备制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力电池超声波焊接设备",
+        "evidence_span": "动力电池超声波焊接设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力电池制造自动化系统",
+        "evidence_span": "动力电池制造自动化系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车轮胎超声波裁切设备",
+        "evidence_span": "汽车轮胎超声波裁切设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他领域超声波焊接设备",
+        "evidence_span": "其他领域超声波焊接设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池超声波焊接设备",
+        "evidence_span": "锂电池超声波焊接设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超声波裁切系统",
+        "evidence_span": "超声波裁切系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超声波无纺布焊接设备",
+        "evidence_span": "超声波无纺布焊接设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超声波滚焊机",
+        "evidence_span": "超声波滚焊机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超声波设备相关配件",
+        "evidence_span": "超声波设备相关配件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集成实时质量检测技术的锂电池超声波焊接设备",
+        "evidence_span": "集成实时质量检测技术的锂电池超声波焊接设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "楔杆式超声波焊接设备",
+        "evidence_span": "楔杆式超声波焊接设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "动力电池超声波滚动焊接设备",
+        "evidence_span": "动力电池超声波滚动焊接设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超声波高速滚焊技术",
+        "evidence_span": "超声波高速滚焊技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "积累了宁德时代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪等知名客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "利元亨",
+        "evidence_span": "利元亨"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海目星",
+        "evidence_span": "海目星"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联赢激光",
+        "evidence_span": "联赢激光"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赢合科技",
+        "evidence_span": "赢合科技等整线设备集成商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国轩高科",
+        "evidence_span": "国轩高科"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中创新航",
+        "evidence_span": "中创新航"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿纬锂能",
+        "evidence_span": "亿纬锂能"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蜂巢能源",
+        "evidence_span": "蜂巢能源等公司的动力电池生产线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "固特异",
+        "evidence_span": "固特异"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "优科豪马",
+        "evidence_span": "优科豪马"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "正新",
+        "evidence_span": "正新"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "佳通",
+        "evidence_span": "佳通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中策",
+        "evidence_span": "中策"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "玲珑",
+        "evidence_span": "玲珑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赛轮",
+        "evidence_span": "赛轮等国内外知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "均胜电子",
+        "evidence_span": "均胜电子"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "振华科技",
+        "evidence_span": "振华科技等知名客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "开启国产替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "复合集流体量产",
+        "evidence_span": "有望率先受益复合集流体量产"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "下游应用领域持续拓展",
+        "evidence_span": "受益下游应用领域持续拓展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "泛半导体",
+        "evidence_span": "可奔向泛半导体"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "复合箔设备",
+        "evidence_span": "复合箔设备等打开成长空间"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "龙头电池厂产能扩张",
+        "evidence_span": "充分受益龙头电池厂产能扩张"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:25:44"
+}

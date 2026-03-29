@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电池负极材料",
+      "evidence_span": "公司主要从事锂电池负极材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型碳材料",
+      "evidence_span": "努力将公司打造成为一流的以碳为基础元素、集研发与生产为一体的新型碳材料制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电负极材料专业供应商",
+      "evidence_span": "国内先进的锂电负极材料专业供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石墨负极材料",
+      "evidence_span": "公司现产品主要是石墨负极材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人造石墨",
+      "evidence_span": "坚持人造石墨与天然石墨并重的技术路线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天然石墨",
+      "evidence_span": "坚持人造石墨与天然石墨并重的技术路线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅碳负极",
+      "evidence_span": "公司已涉及硅碳负极、硬碳负极、B型-二氧化钛、石墨烯等新型碳材料领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硬碳负极",
+      "evidence_span": "公司已涉及硅碳负极、硬碳负极、B型-二氧化钛、石墨烯等新型碳材料领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石墨烯",
+      "evidence_span": "公司已涉及硅碳负极、硬碳负极、B型-二氧化钛、石墨烯等新型碳材料领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锂电池低温低成本石墨负极材料",
+      "evidence_span": "公司自主研发、实施了锂电池低温低成本石墨负极材料的研究和产业化项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "厢式炉石墨化加工工艺",
+      "evidence_span": "结合自身技术优势开发新一代厢式炉石墨化加工工艺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "包括比亚迪（002594）、LG新能源、国轩高科（002074）等多家客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LG新能源",
+      "evidence_span": "包括比亚迪（002594）、LG新能源、国轩高科（002074）等多家客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国轩高科",
+      "evidence_span": "包括比亚迪（002594）、LG新能源、国轩高科（002074）等多家客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国大众",
+      "evidence_span": "公司正在积极接触德国大众、韩国 SKI、日本松下等国际知名锂电池企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国 SKI",
+      "evidence_span": "公司正在积极接触德国大众、韩国 SKI、日本松下等国际知名锂电池企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本松下",
+      "evidence_span": "公司正在积极接触德国大众、韩国 SKI、日本松下等国际知名锂电池企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电池负极材料",
+        "evidence_span": "公司主要从事锂电池负极材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型碳材料",
+        "evidence_span": "努力将公司打造成为一流的以碳为基础元素、集研发与生产为一体的新型碳材料制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电负极材料专业供应商",
+        "evidence_span": "国内先进的锂电负极材料专业供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石墨负极材料",
+        "evidence_span": "公司现产品主要是石墨负极材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人造石墨",
+        "evidence_span": "坚持人造石墨与天然石墨并重的技术路线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天然石墨",
+        "evidence_span": "坚持人造石墨与天然石墨并重的技术路线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅碳负极",
+        "evidence_span": "公司已涉及硅碳负极、硬碳负极、B型-二氧化钛、石墨烯等新型碳材料领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硬碳负极",
+        "evidence_span": "公司已涉及硅碳负极、硬碳负极、B型-二氧化钛、石墨烯等新型碳材料领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石墨烯",
+        "evidence_span": "公司已涉及硅碳负极、硬碳负极、B型-二氧化钛、石墨烯等新型碳材料领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锂电池低温低成本石墨负极材料",
+        "evidence_span": "公司自主研发、实施了锂电池低温低成本石墨负极材料的研究和产业化项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "厢式炉石墨化加工工艺",
+        "evidence_span": "结合自身技术优势开发新一代厢式炉石墨化加工工艺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "包括比亚迪（002594）、LG新能源、国轩高科（002074）等多家客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LG新能源",
+        "evidence_span": "包括比亚迪（002594）、LG新能源、国轩高科（002074）等多家客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国轩高科",
+        "evidence_span": "包括比亚迪（002594）、LG新能源、国轩高科（002074）等多家客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国大众",
+        "evidence_span": "公司正在积极接触德国大众、韩国 SKI、日本松下等国际知名锂电池企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国 SKI",
+        "evidence_span": "公司正在积极接触德国大众、韩国 SKI、日本松下等国际知名锂电池企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本松下",
+        "evidence_span": "公司正在积极接触德国大众、韩国 SKI、日本松下等国际知名锂电池企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:37:31"
+}

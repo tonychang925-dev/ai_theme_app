@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:45:16", "result": {"span_uid": "90560f444329", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "关联企业投资动态", "stability": "low", "reason": "该片段描述了奕瑞科技的具体投资事件和协同关系，属于强事件化信息，无法整理成稳定、可脱离原上下文的知识块。"}}

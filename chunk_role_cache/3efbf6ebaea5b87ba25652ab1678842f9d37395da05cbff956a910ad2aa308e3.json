@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:24:22", "result": {"chunk_id": "00954955d38d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落说明我国稀土开采的配额管理制度和核心机制，是静态知识，但具体提到2024年起配额分配和集团数据，包含时间推进和事件细节，混合了知识和事件。"}}

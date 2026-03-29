@@ -1,0 +1,129 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "烟花出口业务",
+      "evidence_span": "公司的主要业务为烟花出口业务和小额贷款业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "小额贷款业务",
+      "evidence_span": "公司的主要业务为烟花出口业务和小额贷款业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国最大的出口鞭炮烟花公司",
+      "evidence_span": "中国最大的出口鞭炮烟花公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国际烟花行业唯一的上市公司",
+      "evidence_span": "国际烟花行业唯一的上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烟花爆竹出口销售",
+      "evidence_span": "烟花出口业务主要从事烟花爆竹出口销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小额贷款",
+      "evidence_span": "小额贷款业务的经营模式主要为向需要资金的企业或个人发放小额贷款"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国市场",
+      "evidence_span": "业绩主要增长点在于2022年上半年度的美国市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧洲市场",
+      "evidence_span": "欧洲市场逐步从底部复苏"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东南亚市场",
+      "evidence_span": "东南亚市场还比较薄弱"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南美市场",
+      "evidence_span": "南美市场随着国际海运逐渐恢复，也逐步回温"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "互联网金融蓝海",
+      "evidence_span": "ST熊猫开拓互联网金融蓝海"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "转型金控平台",
+      "evidence_span": "积极转型金控平台"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "烟花出口业务",
+        "evidence_span": "公司的主要业务为烟花出口业务和小额贷款业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "小额贷款业务",
+        "evidence_span": "公司的主要业务为烟花出口业务和小额贷款业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国最大的出口鞭炮烟花公司",
+        "evidence_span": "中国最大的出口鞭炮烟花公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国际烟花行业唯一的上市公司",
+        "evidence_span": "国际烟花行业唯一的上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烟花爆竹出口销售",
+        "evidence_span": "烟花出口业务主要从事烟花爆竹出口销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小额贷款",
+        "evidence_span": "小额贷款业务的经营模式主要为向需要资金的企业或个人发放小额贷款"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国市场",
+        "evidence_span": "业绩主要增长点在于2022年上半年度的美国市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧洲市场",
+        "evidence_span": "欧洲市场逐步从底部复苏"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东南亚市场",
+        "evidence_span": "东南亚市场还比较薄弱"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南美市场",
+        "evidence_span": "南美市场随着国际海运逐渐恢复，也逐步回温"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "互联网金融蓝海",
+        "evidence_span": "ST熊猫开拓互联网金融蓝海"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "转型金控平台",
+        "evidence_span": "积极转型金控平台"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:44:47"
+}

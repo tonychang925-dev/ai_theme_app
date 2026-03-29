@@ -1,0 +1,504 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "融合媒体运营平台项目",
+      "evidence_span": "主营业务为融合媒体运营平台项目、移动多媒体软件及服务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "移动多媒体软件",
+      "evidence_span": "主营业务为融合媒体运营平台项目、移动多媒体软件及服务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "主营业务为融合媒体运营平台项目、移动多媒体软件及服务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高新视频技术平台",
+      "evidence_span": "打造高新视频技术平台、AI 视频大数据平台、融合媒体生态系统三大传统业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "AI 视频大数据平台",
+      "evidence_span": "打造高新视频技术平台、AI 视频大数据平台、融合媒体生态系统三大传统业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "融合媒体生态系统",
+      "evidence_span": "打造高新视频技术平台、AI 视频大数据平台、融合媒体生态系统三大传统业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "VR 视频应用平台",
+      "evidence_span": "VR 视频应用平台新兴板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "超高清视频解码以及互联网视频平台运营的龙头企业",
+      "evidence_span": "是国内超高清视频解码以及互联网视频平台运营的 龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "移动互联网多媒体软件领军者",
+      "evidence_span": "移动互联网多媒体软件领军者扬帆起航"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "移动多媒体解决方案龙头",
+      "evidence_span": "网达软件移动多媒体解决方案龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超高清解编码平台",
+      "evidence_span": "超高清解编码平台可以帮助运营商在转播过程中实现实时转码"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融媒体平台",
+      "evidence_span": "融媒体平台助力运营商旗下视频平台提供高效的内容、渠道、平台、经营、 管理一体化的媒体信息生产发布平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频大数据分析平台",
+      "evidence_span": "视频大数据分析平台可以帮助运营商对视频数据资源进行整合分析"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VR 平台",
+      "evidence_span": "VR 平台可以面向个人和企业提供 VR 视频支撑"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超高清视频技术服务",
+      "evidence_span": "为运营商提供传统 4K 视频技术服务，发展为运营商、广电、 华为等提供 8K 超高清视频技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI 视频大数据产品",
+      "evidence_span": "AI 视频大数据产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "元宇宙会议系统",
+      "evidence_span": "未来公司将以元宇宙会议 系统为切入点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融合媒体运营管理平台",
+      "evidence_span": "融媒体运营管理平台通过对视频生产——视频运营——视频分发——视频交互等全生命周期的深度介入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超高清视频解决方案",
+      "evidence_span": "为客户提供技术先进的超高清视频解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大屏解决方案",
+      "evidence_span": "公司高清视频解决方案主要包括大屏解决方案、作手机视频解决方案、视频直播解决方案等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手机视频解决方案",
+      "evidence_span": "公司高清视频解决方案主要包括大屏解决方案、作手机视频解决方案、视频直播解决方案等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频直播解决方案",
+      "evidence_span": "公司高清视频解决方案主要包括大屏解决方案、作手机视频解决方案、视频直播解决方案等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能视频云平台技术",
+      "evidence_span": "智能视频云平台技术，提供支撑百万路级视频流汇聚的软件系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超高清视频解码",
+      "evidence_span": "是国内超高清视频解码以及互联网视频平台运营的 龙头企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "4K 高清转码服务",
+      "evidence_span": "4K 高清转码服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "VR 视频能力平台",
+      "evidence_span": "持续打造 VR 视频能力平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "VR 能力引擎化",
+      "evidence_span": "在元宇宙中实现 VR 能力引擎化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云原生架构技术",
+      "evidence_span": "公司融合媒体生态系统以云原生架构技术构建融媒产品流水线研发体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AVS 技术",
+      "evidence_span": "推动 AVS 技术在 4K/8K 超高清编转码器应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AVS3 音视频信源编码标准",
+      "evidence_span": "提前布局未来可以在 8K/5G 场景应用的音视频信源编码标准 AVS3"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效并行编码架构技术",
+      "evidence_span": "通过高效并行编码架构技术对 AVS2/AVS3 编解码库的优化与性能提升"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "8KAVS3/H265HDR10@50fps 的实时编解码",
+      "evidence_span": "最高支持 8KAVS3/H265HDR10@50fps 的实时编 解码"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HDRVivid 技术标准",
+      "evidence_span": "网达编转码产品已全面支持 UWA 发布的高动态 范围的视频技术标准 HDRVivid"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高并发处理",
+      "evidence_span": "高并发处理、多协议支持、人工智能识别， 实时编转码等技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多协议支持",
+      "evidence_span": "高并发处理、多协议支持、人工智能识别， 实时编转码等技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能识别",
+      "evidence_span": "高并发处理、多协议支持、人工智能识别， 实时编转码等技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "实时编转码",
+      "evidence_span": "高并发处理、多协议支持、人工智能识别， 实时编转码等技术优势"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "移动运营商",
+      "evidence_span": "为移动运营商及旗下视频平台的视频业务提供全生 命周期服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广电",
+      "evidence_span": "为运营商、广电、 华为等提供 8K 超高清视频技术服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "为运营商、广电、 华为等提供 8K 超高清视频技术服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "承建了中国移动云 VR 客户端、VR 视频运营平台、云 VR 视频能力服务等平台项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动（浙江）创新研究院",
+      "evidence_span": "中国移动（浙江）创新研究院与东方卫视合作天宫实验舱直播项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东方卫视",
+      "evidence_span": "中国移动（浙江）创新研究院与东方卫视合作天宫实验舱直播项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "某地市公安",
+      "evidence_span": "某地市公安大脑元宇宙虚拟会商系统 项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "百度希壤",
+      "evidence_span": "百度希壤元宇宙项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国商飞",
+      "evidence_span": "中国商飞工业互联网项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "咪咕视讯",
+      "evidence_span": "公司作为咪咕视讯编转码产品的主要 供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "大视频时代运营商AIGC龙头",
+      "evidence_span": "大视频时代运营商AIGC龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G 超高清与视频智能机遇",
+      "evidence_span": "网达软件迎5G超高清与视频智能机遇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "超高清视频",
+      "evidence_span": "网达软件盈利能力翻倍提升，超高清视频厚积待发"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "融合媒体运营平台项目",
+        "evidence_span": "主营业务为融合媒体运营平台项目、移动多媒体软件及服务等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "移动多媒体软件及服务",
+        "evidence_span": "主营业务为融合媒体运营平台项目、移动多媒体软件及服务等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高新视频技术平台",
+        "evidence_span": "打造高新视频技术平台、AI 视频大数据平台、融合媒体生态系统三大传统业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "AI 视频大数据平台",
+        "evidence_span": "打造高新视频技术平台、AI 视频大数据平台、融合媒体生态系统三大传统业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "融合媒体生态系统",
+        "evidence_span": "打造高新视频技术平台、AI 视频大数据平台、融合媒体生态系统三大传统业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "VR 视频应用平台",
+        "evidence_span": "VR 视频应用平台新兴板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "超高清视频解码以及互联网视频平台运营的龙头企业",
+        "evidence_span": "是国内超高清视频解码以及互联网视频平台运营的 龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "移动互联网多媒体软件领军者",
+        "evidence_span": "移动互联网多媒体软件领军者扬帆起航"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "移动多媒体解决方案龙头",
+        "evidence_span": "网达软件移动多媒体解决方案龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超高清解编码平台",
+        "evidence_span": "超高清解编码平台可以帮助运营商在转播过程中实现实时转码"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融媒体平台",
+        "evidence_span": "融媒体平台助力运营商旗下视频平台提供高效的内容、渠道、平台、经营、 管理一体化的媒体信息生产发布平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频大数据分析平台",
+        "evidence_span": "视频大数据分析平台可以帮助运营商对视频数据资源进行整合分析"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VR 平台",
+        "evidence_span": "VR 平台可以面向个人和企业提供 VR 视频支撑"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超高清视频技术服务",
+        "evidence_span": "为运营商提供传统 4K 视频技术服务，发展为运营商、广电、 华为等提供 8K 超高清视频技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI 视频大数据产品",
+        "evidence_span": "AI 视频大数据产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "元宇宙会议系统",
+        "evidence_span": "未来公司将以元宇宙会议 系统为切入点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融合媒体运营管理平台",
+        "evidence_span": "融媒体运营管理平台通过对视频生产——视频运营——视频分发——视频交互等全生命周期的深度介入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超高清视频解决方案",
+        "evidence_span": "为客户提供技术先进的超高清视频解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大屏解决方案",
+        "evidence_span": "公司高清视频解决方案主要包括大屏解决方案、作手机视频解决方案、视频直播解决方案等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手机视频解决方案",
+        "evidence_span": "公司高清视频解决方案主要包括大屏解决方案、作手机视频解决方案、视频直播解决方案等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频直播解决方案",
+        "evidence_span": "公司高清视频解决方案主要包括大屏解决方案、作手机视频解决方案、视频直播解决方案等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能视频云平台技术",
+        "evidence_span": "智能视频云平台技术，提供支撑百万路级视频流汇聚的软件系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超高清视频解码",
+        "evidence_span": "是国内超高清视频解码以及互联网视频平台运营的 龙头企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "4K 高清转码服务",
+        "evidence_span": "4K 高清转码服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "VR 视频能力平台",
+        "evidence_span": "持续打造 VR 视频能力平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "VR 能力引擎化",
+        "evidence_span": "在元宇宙中实现 VR 能力引擎化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云原生架构技术",
+        "evidence_span": "公司融合媒体生态系统以云原生架构技术构建融媒产品流水线研发体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AVS 技术",
+        "evidence_span": "推动 AVS 技术在 4K/8K 超高清编转码器应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AVS3 音视频信源编码标准",
+        "evidence_span": "提前布局未来可以在 8K/5G 场景应用的音视频信源编码标准 AVS3"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效并行编码架构技术",
+        "evidence_span": "通过高效并行编码架构技术对 AVS2/AVS3 编解码库的优化与性能提升"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "8KAVS3/H265HDR10@50fps 的实时编解码",
+        "evidence_span": "最高支持 8KAVS3/H265HDR10@50fps 的实时编 解码"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HDRVivid 技术标准",
+        "evidence_span": "网达编转码产品已全面支持 UWA 发布的高动态 范围的视频技术标准 HDRVivid"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高并发处理",
+        "evidence_span": "高并发处理、多协议支持、人工智能识别， 实时编转码等技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多协议支持",
+        "evidence_span": "高并发处理、多协议支持、人工智能识别， 实时编转码等技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能识别",
+        "evidence_span": "高并发处理、多协议支持、人工智能识别， 实时编转码等技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "实时编转码",
+        "evidence_span": "高并发处理、多协议支持、人工智能识别， 实时编转码等技术优势"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "移动运营商",
+        "evidence_span": "为移动运营商及旗下视频平台的视频业务提供全生 命周期服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广电",
+        "evidence_span": "为运营商、广电、 华为等提供 8K 超高清视频技术服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "为运营商、广电、 华为等提供 8K 超高清视频技术服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "承建了中国移动云 VR 客户端、VR 视频运营平台、云 VR 视频能力服务等平台项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动（浙江）创新研究院",
+        "evidence_span": "中国移动（浙江）创新研究院与东方卫视合作天宫实验舱直播项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东方卫视",
+        "evidence_span": "中国移动（浙江）创新研究院与东方卫视合作天宫实验舱直播项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "某地市公安",
+        "evidence_span": "某地市公安大脑元宇宙虚拟会商系统 项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "百度希壤",
+        "evidence_span": "百度希壤元宇宙项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国商飞",
+        "evidence_span": "中国商飞工业互联网项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "咪咕视讯",
+        "evidence_span": "公司作为咪咕视讯编转码产品的主要 供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "大视频时代运营商AIGC龙头",
+        "evidence_span": "大视频时代运营商AIGC龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G 超高清与视频智能机遇",
+        "evidence_span": "网达软件迎5G超高清与视频智能机遇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "超高清视频",
+        "evidence_span": "网达软件盈利能力翻倍提升，超高清视频厚积待发"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:37:56"
+}

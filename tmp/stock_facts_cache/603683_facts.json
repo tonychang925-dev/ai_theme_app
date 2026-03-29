@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业胶粘材料",
+      "evidence_span": "主营业务涵盖各类工业胶粘材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子胶粘材料",
+      "evidence_span": "主营业务涵盖...电子胶粘材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "功能性薄膜材料",
+      "evidence_span": "主营业务涵盖...功能性薄膜材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种纸",
+      "evidence_span": "主营业务涵盖...特种纸的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "胶粘解决方案专家",
+      "evidence_span": "定位“中国最具创新和服务能力的胶粘解决方案专家”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "功能性涂层复合材料的生产企业",
+      "evidence_span": "公司是功能性涂层复合材料的生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "美纹纸胶粘带",
+      "evidence_span": "晶华新材国内领先美纹纸胶粘带及胶粘材料制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OCA光学膜胶带",
+      "evidence_span": "年产OCA光学膜胶带2,600万m2"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅胶保护膜",
+      "evidence_span": "硅胶保护膜2,100万m2"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "离型膜",
+      "evidence_span": "离型膜4,000万m2"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车衣膜",
+      "evidence_span": "公司的产品车衣膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压敏胶粘剂",
+      "evidence_span": "在压敏胶粘剂取得了重大突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密涂布技术",
+      "evidence_span": "深耕精密涂布技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "嵌入式研发",
+      "evidence_span": "与客户共建实验室、进行嵌入式研发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建筑装饰",
+      "evidence_span": "下游客户主要包括建筑装饰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车美容和售后",
+      "evidence_span": "下游客户主要包括...汽车美容和售后"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电子编带",
+      "evidence_span": "下游客户主要包括...电子编带"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家用电器",
+      "evidence_span": "下游客户主要包括...家用电器"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大交通",
+      "evidence_span": "下游客户主要包括...大交通等行业的经销商和直销客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车电子新能源",
+      "evidence_span": "下游客户主要包括...汽车电子新能源（动力电池、储能）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电子产品",
+      "evidence_span": "下游客户主要包括...电子产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "车载显示屏",
+      "evidence_span": "下游客户主要包括...车载显示屏等产品配套的模切厂商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "在该类产品上开启了对进口材料的替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业胶粘材料",
+        "evidence_span": "主营业务涵盖各类工业胶粘材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子胶粘材料",
+        "evidence_span": "主营业务涵盖...电子胶粘材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "功能性薄膜材料",
+        "evidence_span": "主营业务涵盖...功能性薄膜材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种纸",
+        "evidence_span": "主营业务涵盖...特种纸的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "胶粘解决方案专家",
+        "evidence_span": "定位“中国最具创新和服务能力的胶粘解决方案专家”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "功能性涂层复合材料的生产企业",
+        "evidence_span": "公司是功能性涂层复合材料的生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "美纹纸胶粘带",
+        "evidence_span": "晶华新材国内领先美纹纸胶粘带及胶粘材料制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OCA光学膜胶带",
+        "evidence_span": "年产OCA光学膜胶带2,600万m2"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅胶保护膜",
+        "evidence_span": "硅胶保护膜2,100万m2"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "离型膜",
+        "evidence_span": "离型膜4,000万m2"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车衣膜",
+        "evidence_span": "公司的产品车衣膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压敏胶粘剂",
+        "evidence_span": "在压敏胶粘剂取得了重大突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密涂布技术",
+        "evidence_span": "深耕精密涂布技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "嵌入式研发",
+        "evidence_span": "与客户共建实验室、进行嵌入式研发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建筑装饰",
+        "evidence_span": "下游客户主要包括建筑装饰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车美容和售后",
+        "evidence_span": "下游客户主要包括...汽车美容和售后"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电子编带",
+        "evidence_span": "下游客户主要包括...电子编带"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家用电器",
+        "evidence_span": "下游客户主要包括...家用电器"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大交通",
+        "evidence_span": "下游客户主要包括...大交通等行业的经销商和直销客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车电子新能源",
+        "evidence_span": "下游客户主要包括...汽车电子新能源（动力电池、储能）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电子产品",
+        "evidence_span": "下游客户主要包括...电子产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "车载显示屏",
+        "evidence_span": "下游客户主要包括...车载显示屏等产品配套的模切厂商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "在该类产品上开启了对进口材料的替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:56:21"
+}

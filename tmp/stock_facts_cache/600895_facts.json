@@ -1,0 +1,164 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产园区开发",
+      "evidence_span": "主营房地产园区开发和运营及产业投资"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运营",
+      "evidence_span": "主营房地产园区开发和运营及产业投资"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "产业投资",
+      "evidence_span": "主营房地产园区开发和运营及产业投资"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "科技投行",
+      "evidence_span": "转型科技投行，完善市场化机制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产业园建造",
+      "evidence_span": "前期建造产业园"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "招商服务",
+      "evidence_span": "招商、管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "REITS通道退出",
+      "evidence_span": "通过REITS通道退出"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直投",
+      "evidence_span": "直投+基金+孵化"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基金投资",
+      "evidence_span": "直投+基金+孵化"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "孵化服务",
+      "evidence_span": "直投+基金+孵化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全周期管理持有物业",
+      "evidence_span": "通过全周期管理持有物业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海驻云信息科技有限公司",
+      "evidence_span": "投资上海驻云信息科技有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海欣吉特生物科技有限公司",
+      "evidence_span": "投资上海欣吉特生物科技有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海登临科技",
+      "evidence_span": "投资上海登临科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南芯半导体",
+      "evidence_span": "完成南芯半导体的投资"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双创龙头标的",
+      "evidence_span": "“双创”龙头标的"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产园区开发和运营",
+        "evidence_span": "主营房地产园区开发和运营及产业投资"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "产业投资",
+        "evidence_span": "主营房地产园区开发和运营及产业投资"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "科技投行",
+        "evidence_span": "转型科技投行，完善市场化机制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产业园建造",
+        "evidence_span": "前期建造产业园"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "招商服务",
+        "evidence_span": "招商、管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "REITS通道退出",
+        "evidence_span": "通过REITS通道退出"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直投",
+        "evidence_span": "直投+基金+孵化"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基金投资",
+        "evidence_span": "直投+基金+孵化"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "孵化服务",
+        "evidence_span": "直投+基金+孵化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全周期管理持有物业",
+        "evidence_span": "通过全周期管理持有物业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海驻云信息科技有限公司",
+        "evidence_span": "投资上海驻云信息科技有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海欣吉特生物科技有限公司",
+        "evidence_span": "投资上海欣吉特生物科技有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海登临科技",
+        "evidence_span": "投资上海登临科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南芯半导体",
+        "evidence_span": "完成南芯半导体的投资"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双创龙头标的",
+        "evidence_span": "“双创”龙头标的"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:47:27"
+}

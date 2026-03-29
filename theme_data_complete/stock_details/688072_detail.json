@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 763118734.0,
+    "changeCount": 3.25,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p>一、公司介绍</p><p>拓荆科技股份有限公司（股票代码：688072）成立于2010年4月，是一家总部位于辽宁沈阳、专注于高端半导体薄膜沉积设备（包括PECVD、ALD、SACVD等）研发、生产和销售的国家级高新技术企业，于2022年在科创板上市。作为国内该领域的龙头企业，其产品广泛应用于28nm及以上制程的集成电路制造和先进封装，多项技术指标达到国际先进水平，并实现了国产替代。公司近年来业绩增长显著，2024年营收达41.03亿元，2025年第一季度营收同比增长50.22%，并持续高强度投入研发（2025年第一季度研发费用占比22.38%），截至2024年已累计申请专利超1200项。在2025年SEMICON China展会上，公司发布了3D IC及先进封装系列新品，标志着其向“技术引领”的战略升级。</p><p>二、行业介绍</p><p><span style=\"color: rgb(0, 0, 0);\">在高端半导体设备中，薄膜沉积设备、光刻设备、刻蚀设备共同构成芯片制造三大核心设备， 决定了芯片制造工艺的先进程度。薄膜沉积设备所沉积的薄膜是芯片结构内的功能材料层，在芯 片制造过程中需求量巨大，且直接影响芯片的性能。由于不同芯片结构所需要的薄膜材料种类不 同、沉积工序不同、性能指标不同，相应产生了巨大的薄膜沉积设备市场，2025 年晶圆制造设备 销售额预计将达到 1108 亿美元，同比增长超过 6%，占总体半导体设备销售额的比例近 90%。而 根据历史年度统计，薄膜沉积设备市场规模约占晶圆制造设备市场的 22%，由此推算，2025 年全 球薄膜沉积设备市场规模约为 244 亿美元</span></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/23/02102b08-bfeb-4b70-a8e1-044268b801eb.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>三、核心优势</p><p><span style=\"color: rgb(0, 0, 0);\">公司通过自主研发，形成了一系列独创性的设计，构建了完善的知识产权体系并取得了多项 自主知识产权。截至报告期末，</span><span style=\"color: rgb(225, 60, 57);\">公司累计申请专利 1783 项（含 PCT），获得授权专利 581 项， 其中发明专利 294 项</span></p><p>公司先后承担了多项国家重大专项/课题，<span style=\"color: rgb(225, 60, 57);\">研发并推出的基于不同平台类型且支持不同工艺型 号的 PECVD、ALD、SACVD、HDPCVD 和 Flowable CVD 薄膜系列设备均已在客户端实现量产</span>， 在半导体薄膜沉积设备领域积累了多项研发及产业化的核心技术，构建了具有设备种类、工艺型 号外延开发能力的研发平台，性能达到了国际同类设备水平，并持续迭代升级产品性能，快速响 应客户先进技术需求</p><p><span style=\"color: rgb(0, 0, 0);\">公司面向国内半导体制造产业的实际需求和产线演进节奏，研制并推出了应用于三维集成领 域的先进键合设备和配套的量检测设备，并积累了多项具有自主知识产权的核心技术。公司未来 将保持高强度的研发投入，持续迭代升级、优化现有设备和工艺，不断推出面向未来发展需求的 新工艺、新设备</span></p><p><span style=\"color: rgb(0, 0, 0);\">公司已与国内下游客户形成了较为稳定的合作关系。</span><span style=\"color: rgb(225, 60, 57);\">公司薄膜系列产品已批量发往国内集成 电路晶圆厂</span><span style=\"color: rgb(0, 0, 0);\">。此外，公司致力于为客户提供三维集成领域全面的技术解决方案，目前应用于三维 集成领域的系列产品研发和产业化已取得重大进展，产品陆续发货至不同的客户端。</span></p>",
+    "firstLetter": "TJKJ",
+    "high": 328.25,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 315.51,
+    "marketValue": 91762093150.0,
+    "name": "拓荆科技",
+    "pctChg": 1.0,
+    "price": 328.25,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 2.9,
+    "recentChange": -6.94,
+    "remark": "产品打破国际薄膜沉积设备厂商对国内市场的垄断；公司是国产半导体薄膜沉积设备龙头",
+    "status": 1,
+    "stockId": "688072",
+    "stockLightspots": [
+      {
+        "bizKey": "31536",
+        "content": "拓荆科技国产薄膜沉积设备龙头，有望进入设备放量期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31536,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31537",
+        "content": "薄膜设备领军者，率先量产受益国产替代窗口期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31537,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31538",
+        "content": "拓荆科技薄膜沉积设备龙头进口替代加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31538,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31539",
+        "content": "中国半导体CVD设备龙头国产化持续放量",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31539,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31540",
+        "content": "薄膜沉积设备冲云破雾，PECVD扬帆起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31540,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31541",
+        "content": "拓荆科技引领薄膜沉积设备进口替代，业绩持续高速增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31541,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31542",
+        "content": "半导体薄膜沉积设备龙头稀缺性凸显，在手订单充沛开启加速成长期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31542,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31543",
+        "content": "拓荆科技薄膜沉积设备拨云见日，国产化先行者如日方升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31543,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31544",
+        "content": "拓荆科技国内CVD设备龙头，深度受益国产替代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31544,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31545",
+        "content": "薄膜沉积设备龙头，引领国产替代大潮崛起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31545,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31546",
+        "content": "拓荆科技国内PECVD设备龙头，受益国产替代加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31546,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31547",
+        "content": "拓荆科技国产薄膜沉积设备龙头，广阔空间加速成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31547,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31548",
+        "content": "薄膜沉积设备龙头公司扬帆起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31548,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31549",
+        "content": "拓荆科技",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31549,
+        "stockId": "688072",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31550",
+        "content": "营收超预期，国产验证提速打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31550,
+        "stockId": "688072",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 23744.14
+  }
+}

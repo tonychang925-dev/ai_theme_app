@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:41:07", "result": {"span_uid": "cc65b5d0ed18", "action": "rewrite", "canonical_text": "烟花消费作为传统节日氛围担当，用于增添喜庆气氛，但需注意安全燃放和环保考量。", "final_type": "related", "final_role": "烟花消费特点", "stability": "high", "reason": "描述了烟花消费的稳定特点和注意事项，形成独立知识块。"}}

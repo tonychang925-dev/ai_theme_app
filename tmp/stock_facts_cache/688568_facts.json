@@ -1,0 +1,649 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字地球行业",
+      "evidence_span": "公司长期专注数字地球行业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种领域",
+      "evidence_span": "特种领域、智慧政府、气象生态、航天测运控、企业能源等板块作为公司业务的基石"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧政府",
+      "evidence_span": "特种领域、智慧政府、气象生态、航天测运控、企业能源等板块作为公司业务的基石"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "气象生态",
+      "evidence_span": "特种领域、智慧政府、气象生态、航天测运控、企业能源等板块作为公司业务的基石"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航天测运控",
+      "evidence_span": "特种领域、智慧政府、气象生态、航天测运控、企业能源等板块作为公司业务的基石"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "企业能源",
+      "evidence_span": "特种领域、智慧政府、气象生态、航天测运控、企业能源等板块作为公司业务的基石"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "线上业务",
+      "evidence_span": "形成以特种领域、智慧政府、气象生态、航天测运控、企业能源、线上业务六大板块业务为核心的GEOVIS数字地球应用软件系列产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字地球产品研发与产业化企业",
+      "evidence_span": "国内最早从事数字地球产品研发与产业化的企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字地球行业领军者",
+      "evidence_span": "数字地球行业领军者迎风起航"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "空天信息领域龙头",
+      "evidence_span": "中科星图空天信息领域龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字地球产品+服务商",
+      "evidence_span": "国内领先的数字地球产品+服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "卫星遥感龙头企业",
+      "evidence_span": "中科星图卫星遥感龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "指控系统核心供应商",
+      "evidence_span": "我国指控系统核心供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字地球领导者",
+      "evidence_span": "中科星图数字地球领导者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVIS数字地球基础软件系列产品",
+      "evidence_span": "陆续推出GEOVIS数字地球基础软件系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVIS数字地球应用软件系列产品",
+      "evidence_span": "形成以特种领域、智慧政府、气象生态、航天测运控、企业能源、线上业务六大板块业务为核心的GEOVIS数字地球应用软件系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软件销售与数据服务",
+      "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "技术开发与服务",
+      "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务、技术开发与服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用设备及系统集成",
+      "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务、技术开发与服务、专用设备及系统集成等业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星图地球数据云",
+      "evidence_span": "星图地球数据云（GEOVISEarthDatacoud）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星图地球今日影像",
+      "evidence_span": "星图地球今日影像（GEOVISDataDaiy）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星图地球",
+      "evidence_span": "星图地球（GEOVISEarth）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星图地球工作室",
+      "evidence_span": "星图地球工作室（GEOVISEarthStudio）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星图地球开发者平台",
+      "evidence_span": "星图地球开发者平台（GEOVISEarthDev）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字地球云原生平台",
+      "evidence_span": "一套支持超算环境的大规模数字地球云原生平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字地球数据云平台",
+      "evidence_span": "数字地球数据云平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVISiFactory空天大数据智能处理平台",
+      "evidence_span": "全新升级的GEOVISiFactory空天大数据智能处理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVISiBrain空天大数据智能解译平台",
+      "evidence_span": "同步升级完成的GEOVISiBrain空天大数据智能解译平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVISiBEST-DB时空数据库",
+      "evidence_span": "GEOVISiBEST-DB时空数据库"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVISiCenter空天大数据共享服务云平台",
+      "evidence_span": "GEOVISiCenter空天大数据共享服务云平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVISiExporer空天大数据可视化平台",
+      "evidence_span": "GEOVISiExporer空天大数据可视化平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVISiRea视景仿真可视化引擎",
+      "evidence_span": "GEOVISiRea视景仿真可视化引擎"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVIS+特种领域中台",
+      "evidence_span": "构建集成特种领域通用数据、调度控制、业务生产服务和试验训练业务于一体的GEOVIS+特种领域中台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVIS+测运控中台",
+      "evidence_span": "构建的GEOVIS+测运控中台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVIS+气象应用中台",
+      "evidence_span": "全新研制的GEOVIS+气象应用中台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVIS+智慧应用中台",
+      "evidence_span": "全新研制的GEOVIS+智慧应用中台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GEOVIS+企业应用中台",
+      "evidence_span": "全新升级的GEOVIS+企业应用中台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字地球相关核心技术",
+      "evidence_span": "持续研发数字地球相关产品和核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "北斗网格引擎",
+      "evidence_span": "一套基于北斗网格引擎的数字地球基础平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化建筑物白模构建技术",
+      "evidence_span": "重点打造了卫星影像的自动化建筑物白模构建技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能匀光匀色技术",
+      "evidence_span": "不同季节的智能匀光匀色技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动精编技术",
+      "evidence_span": "云雪水要素的自动精编技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能镶嵌技术",
+      "evidence_span": "有效绕开建筑物沿着道路中心线的智能镶嵌技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多源影像的空三处理技术",
+      "evidence_span": "基于多源影像的空三处理等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CPU/GPU分布式并行调度能力",
+      "evidence_span": "平台的CPU/GPU分布式并行调度能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "北斗剖分网、六边形网格索引",
+      "evidence_span": "GEOVISiBEST-DB时空数据库基于北斗剖分网、六边形网格索引"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分布式海量影像数据并行切片技术",
+      "evidence_span": "突破分布式海量影像数据并行切片技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BIM与倾斜摄影数据融合技术",
+      "evidence_span": "全面升级了BIM与倾斜摄影数据融合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视频场景虚实融合技术",
+      "evidence_span": "视频场景虚实融合等多源数据融合技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AR视频地图场景联动",
+      "evidence_span": "新增AR视频地图场景联动"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "交互式云渲染能力",
+      "evidence_span": "通过交互式云渲染能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI订正技术",
+      "evidence_span": "引入AI订正技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "北斗网格码相关技术",
+      "evidence_span": "利用北斗网格码相关技术改造既有数据同化和气象数值模式模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云计算的海量实时数据处理技术",
+      "evidence_span": "基于云计算的海量实时数据处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于北斗网格码的数据共享和时空数据分析技术",
+      "evidence_span": "基于北斗网格码的数据共享和时空数据分析等关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "应用上云",
+      "evidence_span": "通过应用上云"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据上云",
+      "evidence_span": "通过数据上云"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "计算上云",
+      "evidence_span": "通过计算上云"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府",
+      "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "企业",
+      "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特种领域",
+      "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众用户",
+      "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自主可控",
+      "evidence_span": "卡位自主可控新赛道的“星空之眼”"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "对标谷歌地球，国内领先的数字地球产品+服务商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字地球行业",
+        "evidence_span": "公司长期专注数字地球行业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种领域",
+        "evidence_span": "特种领域、智慧政府、气象生态、航天测运控、企业能源等板块作为公司业务的基石"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧政府",
+        "evidence_span": "特种领域、智慧政府、气象生态、航天测运控、企业能源等板块作为公司业务的基石"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "气象生态",
+        "evidence_span": "特种领域、智慧政府、气象生态、航天测运控、企业能源等板块作为公司业务的基石"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航天测运控",
+        "evidence_span": "特种领域、智慧政府、气象生态、航天测运控、企业能源等板块作为公司业务的基石"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "企业能源",
+        "evidence_span": "特种领域、智慧政府、气象生态、航天测运控、企业能源等板块作为公司业务的基石"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "线上业务",
+        "evidence_span": "形成以特种领域、智慧政府、气象生态、航天测运控、企业能源、线上业务六大板块业务为核心的GEOVIS数字地球应用软件系列产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字地球产品研发与产业化企业",
+        "evidence_span": "国内最早从事数字地球产品研发与产业化的企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字地球行业领军者",
+        "evidence_span": "数字地球行业领军者迎风起航"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "空天信息领域龙头",
+        "evidence_span": "中科星图空天信息领域龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字地球产品+服务商",
+        "evidence_span": "国内领先的数字地球产品+服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "卫星遥感龙头企业",
+        "evidence_span": "中科星图卫星遥感龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "指控系统核心供应商",
+        "evidence_span": "我国指控系统核心供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字地球领导者",
+        "evidence_span": "中科星图数字地球领导者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVIS数字地球基础软件系列产品",
+        "evidence_span": "陆续推出GEOVIS数字地球基础软件系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVIS数字地球应用软件系列产品",
+        "evidence_span": "形成以特种领域、智慧政府、气象生态、航天测运控、企业能源、线上业务六大板块业务为核心的GEOVIS数字地球应用软件系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软件销售与数据服务",
+        "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "技术开发与服务",
+        "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务、技术开发与服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用设备及系统集成",
+        "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务、技术开发与服务、专用设备及系统集成等业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星图地球数据云",
+        "evidence_span": "星图地球数据云（GEOVISEarthDatacoud）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星图地球今日影像",
+        "evidence_span": "星图地球今日影像（GEOVISDataDaiy）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星图地球",
+        "evidence_span": "星图地球（GEOVISEarth）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星图地球工作室",
+        "evidence_span": "星图地球工作室（GEOVISEarthStudio）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星图地球开发者平台",
+        "evidence_span": "星图地球开发者平台（GEOVISEarthDev）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字地球云原生平台",
+        "evidence_span": "一套支持超算环境的大规模数字地球云原生平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字地球数据云平台",
+        "evidence_span": "数字地球数据云平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVISiFactory空天大数据智能处理平台",
+        "evidence_span": "全新升级的GEOVISiFactory空天大数据智能处理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVISiBrain空天大数据智能解译平台",
+        "evidence_span": "同步升级完成的GEOVISiBrain空天大数据智能解译平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVISiBEST-DB时空数据库",
+        "evidence_span": "GEOVISiBEST-DB时空数据库"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVISiCenter空天大数据共享服务云平台",
+        "evidence_span": "GEOVISiCenter空天大数据共享服务云平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVISiExporer空天大数据可视化平台",
+        "evidence_span": "GEOVISiExporer空天大数据可视化平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVISiRea视景仿真可视化引擎",
+        "evidence_span": "GEOVISiRea视景仿真可视化引擎"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVIS+特种领域中台",
+        "evidence_span": "构建集成特种领域通用数据、调度控制、业务生产服务和试验训练业务于一体的GEOVIS+特种领域中台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVIS+测运控中台",
+        "evidence_span": "构建的GEOVIS+测运控中台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVIS+气象应用中台",
+        "evidence_span": "全新研制的GEOVIS+气象应用中台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVIS+智慧应用中台",
+        "evidence_span": "全新研制的GEOVIS+智慧应用中台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GEOVIS+企业应用中台",
+        "evidence_span": "全新升级的GEOVIS+企业应用中台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字地球相关核心技术",
+        "evidence_span": "持续研发数字地球相关产品和核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "北斗网格引擎",
+        "evidence_span": "一套基于北斗网格引擎的数字地球基础平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化建筑物白模构建技术",
+        "evidence_span": "重点打造了卫星影像的自动化建筑物白模构建技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能匀光匀色技术",
+        "evidence_span": "不同季节的智能匀光匀色技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动精编技术",
+        "evidence_span": "云雪水要素的自动精编技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能镶嵌技术",
+        "evidence_span": "有效绕开建筑物沿着道路中心线的智能镶嵌技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多源影像的空三处理技术",
+        "evidence_span": "基于多源影像的空三处理等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CPU/GPU分布式并行调度能力",
+        "evidence_span": "平台的CPU/GPU分布式并行调度能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "北斗剖分网、六边形网格索引",
+        "evidence_span": "GEOVISiBEST-DB时空数据库基于北斗剖分网、六边形网格索引"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分布式海量影像数据并行切片技术",
+        "evidence_span": "突破分布式海量影像数据并行切片技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BIM与倾斜摄影数据融合技术",
+        "evidence_span": "全面升级了BIM与倾斜摄影数据融合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视频场景虚实融合技术",
+        "evidence_span": "视频场景虚实融合等多源数据融合技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AR视频地图场景联动",
+        "evidence_span": "新增AR视频地图场景联动"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "交互式云渲染能力",
+        "evidence_span": "通过交互式云渲染能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI订正技术",
+        "evidence_span": "引入AI订正技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "北斗网格码相关技术",
+        "evidence_span": "利用北斗网格码相关技术改造既有数据同化和气象数值模式模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云计算的海量实时数据处理技术",
+        "evidence_span": "基于云计算的海量实时数据处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于北斗网格码的数据共享和时空数据分析技术",
+        "evidence_span": "基于北斗网格码的数据共享和时空数据分析等关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "应用上云",
+        "evidence_span": "通过应用上云"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据上云",
+        "evidence_span": "通过数据上云"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "计算上云",
+        "evidence_span": "通过计算上云"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府",
+        "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "企业",
+        "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特种领域",
+        "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众用户",
+        "evidence_span": "为政府、企业、特种领域及大众用户提供软件销售与数据服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自主可控",
+        "evidence_span": "卡位自主可控新赛道的“星空之眼”"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "对标谷歌地球，国内领先的数字地球产品+服务商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:55:14"
+}

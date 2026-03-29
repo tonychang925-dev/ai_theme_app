@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "29b98f1c9ac6", "label": "candidate_mixed", "confidence": 0.6, "ontology_value": "medium", "reason": "该段落提及广东推动刻蚀机等关键装备研发和国产化替代，包含政策导向和静态知识（刻蚀机、光芯片装备），但带有事件性（大力推动），属于混合内容，可能对知识构建有用。"}}

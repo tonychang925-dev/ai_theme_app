@@ -1,0 +1,304 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "衡器业务",
+      "evidence_span": "公司衡器业务全球领先"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能座舱",
+      "evidence_span": "智能座舱及新能源充配电系统贡献收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源充配电系统业务",
+      "evidence_span": "智能座舱及新能源充配电系统贡献收入"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "家用衡器制造商",
+      "evidence_span": "是全球领先、规模最大的家用衡器制造商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车内饰供应商",
+      "evidence_span": "均胜群英则专注于智能豪华高端饰件产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家用健康衡器",
+      "evidence_span": "公司衡器业务划分为家用健康衡器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商用衡器",
+      "evidence_span": "商用衡器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "健康运动信息测量产品",
+      "evidence_span": "健康运动信息测量产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能体脂秤",
+      "evidence_span": "包括括智能体脂秤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能食品营养秤",
+      "evidence_span": "智能食品营养秤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "价格标签秤",
+      "evidence_span": "价格标签秤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能手表",
+      "evidence_span": "智能手表等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车空调出风口系统",
+      "evidence_span": "汽车空调出风口系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "真木真铝饰件",
+      "evidence_span": "真木真铝饰件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡轮增压管",
+      "evidence_span": "涡轮增压管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洗涤器",
+      "evidence_span": "洗涤器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加油及充电小门",
+      "evidence_span": "加油及充电小门"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "后视镜",
+      "evidence_span": "后视镜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能充电桩",
+      "evidence_span": "产品涵盖智能充电桩"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充电插座及线束",
+      "evidence_span": "充电插座及线束"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "随车充电枪",
+      "evidence_span": "随车充电枪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PDU配电箱",
+      "evidence_span": "PDU配电箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BDU电池包断路单元",
+      "evidence_span": "BDU电池包断路单元等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车规级充电桩开发能力",
+      "evidence_span": "具备开发车规级充电桩能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "主要客户已涵盖宝马"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奥迪",
+      "evidence_span": "奥迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特斯拉",
+      "evidence_span": "特斯拉等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奔驰",
+      "evidence_span": "前三家奔驰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众MEB平台",
+      "evidence_span": "公司是大众MEB平台在国内的充电桩独家供应商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "衡器业务",
+        "evidence_span": "公司衡器业务全球领先"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能座舱及新能源充配电系统业务",
+        "evidence_span": "智能座舱及新能源充配电系统贡献收入"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "家用衡器制造商",
+        "evidence_span": "是全球领先、规模最大的家用衡器制造商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车内饰供应商",
+        "evidence_span": "均胜群英则专注于智能豪华高端饰件产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家用健康衡器",
+        "evidence_span": "公司衡器业务划分为家用健康衡器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商用衡器",
+        "evidence_span": "商用衡器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "健康运动信息测量产品",
+        "evidence_span": "健康运动信息测量产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能体脂秤",
+        "evidence_span": "包括括智能体脂秤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能食品营养秤",
+        "evidence_span": "智能食品营养秤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "价格标签秤",
+        "evidence_span": "价格标签秤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能手表",
+        "evidence_span": "智能手表等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车空调出风口系统",
+        "evidence_span": "汽车空调出风口系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "真木真铝饰件",
+        "evidence_span": "真木真铝饰件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡轮增压管",
+        "evidence_span": "涡轮增压管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洗涤器",
+        "evidence_span": "洗涤器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加油及充电小门",
+        "evidence_span": "加油及充电小门"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "后视镜",
+        "evidence_span": "后视镜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能充电桩",
+        "evidence_span": "产品涵盖智能充电桩"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充电插座及线束",
+        "evidence_span": "充电插座及线束"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "随车充电枪",
+        "evidence_span": "随车充电枪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PDU配电箱",
+        "evidence_span": "PDU配电箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BDU电池包断路单元",
+        "evidence_span": "BDU电池包断路单元等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车规级充电桩开发能力",
+        "evidence_span": "具备开发车规级充电桩能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "主要客户已涵盖宝马"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奥迪",
+        "evidence_span": "奥迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特斯拉",
+        "evidence_span": "特斯拉等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奔驰",
+        "evidence_span": "前三家奔驰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众MEB平台",
+        "evidence_span": "公司是大众MEB平台在国内的充电桩独家供应商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:11:25"
+}

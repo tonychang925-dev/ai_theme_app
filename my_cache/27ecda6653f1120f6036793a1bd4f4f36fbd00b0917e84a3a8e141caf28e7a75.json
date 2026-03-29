@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "77af77583a58", "label": "noise", "confidence": 0.85, "ontology_value": "low", "reason": "该段落主要描述百度自动驾驶业务的收支平衡目标，与特斯拉FSD题材本体无关，属于无关内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:00:56", "result": {"chunk_id": "4c439bcd3dfc", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落提供轴承的定义、核心功能（如支承旋转轴、引导运动、承受载荷）和行业地位（如“机械的关节”），是纯静态说明，无事件或时间性内容，直接构建轴承题材的本体知识。"}}

@@ -1,0 +1,369 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空装备",
+      "evidence_span": "公司主要从事航空装备及特种制冷两大业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种制冷",
+      "evidence_span": "公司主要从事航空装备及特种制冷两大业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空机载系统产品供应商",
+      "evidence_span": "公司的航空产品系航空生命保障系统和燃油系统的重要组成部分，属于航空机载系统产品供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "核心部件集成商",
+      "evidence_span": "在航空制造业产业结构中处于第二层核心部件集成商的位置"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空氧气系统研发制造基地",
+      "evidence_span": "公司系国内唯一的航空氧气系统及机载油箱惰性化防护系统专业化研发制造基地"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "机载油箱惰性化防护系统专业化研发制造基地",
+      "evidence_span": "公司系国内唯一的航空氧气系统及机载油箱惰性化防护系统专业化研发制造基地"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "飞机副油箱制造商",
+      "evidence_span": "亦是国内最大的飞机副油箱及国内领先的特种制冷设备制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特种制冷设备制造商",
+      "evidence_span": "亦是国内最大的飞机副油箱及国内领先的特种制冷设备制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空氧气系统",
+      "evidence_span": "涉及涵盖航空氧气系统、机载油箱惰性化防护系统、飞机副油箱等航空产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机载油箱惰性化防护系统",
+      "evidence_span": "涉及涵盖航空氧气系统、机载油箱惰性化防护系统、飞机副油箱等航空产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞机副油箱",
+      "evidence_span": "涉及涵盖航空氧气系统、机载油箱惰性化防护系统、飞机副油箱等航空产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "敏感元件",
+      "evidence_span": "在航空装备领域的主要产品覆盖航空氧气系统、机载油箱惰性化防护系统、飞机副油箱以及敏感元件、氧气地面设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氧气地面设备",
+      "evidence_span": "在航空装备领域的主要产品覆盖航空氧气系统、机载油箱惰性化防护系统、飞机副油箱以及敏感元件、氧气地面设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空间站环控生保系统",
+      "evidence_span": "在航空装备领域的主要产品覆盖航空氧气系统、机载油箱惰性化防护系统、飞机副油箱以及敏感元件、氧气地面设备等及空间站环控生保系统等多型产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军民用特种制冷设备",
+      "evidence_span": "特种制冷业务通过全资子公司天鹅制冷开展，主要涉及军民用特种制冷设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业用特种耐高温空调",
+      "evidence_span": "重点开拓工业用特种耐高温空调、专用车空调等细分市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用车空调",
+      "evidence_span": "重点开拓工业用特种耐高温空调、专用车空调等细分市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空地面保障设备",
+      "evidence_span": "积极开拓航空地面保障设备、地面装备保障、航空发动机配套等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地面装备保障",
+      "evidence_span": "积极开拓航空地面保障设备、地面装备保障、航空发动机配套等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空发动机配套",
+      "evidence_span": "积极开拓航空地面保障设备、地面装备保障、航空发动机配套等领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氧气调节技术",
+      "evidence_span": "处于国际领先水平的氧气调节技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机载分子筛制氧技术",
+      "evidence_span": "国际先进水平的机载分子筛制氧技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机载空气分离制氮技术",
+      "evidence_span": "公司自主研发的机载空气分离制氮技术已达到国内领先水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三维数字化协同设计平台",
+      "evidence_span": "构建了三维数字化协同设计平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机载分子筛制氧浓度调节",
+      "evidence_span": "突破了机载分子筛制氧浓度调节、多床分子筛制氧控制、制氧健康管理与预测技术、肺式呼吸闭环控制技术、氧气系统模块化电控设计技术等关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多床分子筛制氧控制",
+      "evidence_span": "突破了机载分子筛制氧浓度调节、多床分子筛制氧控制、制氧健康管理与预测技术、肺式呼吸闭环控制技术、氧气系统模块化电控设计技术等关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "制氧健康管理与预测技术",
+      "evidence_span": "突破了机载分子筛制氧浓度调节、多床分子筛制氧控制、制氧健康管理与预测技术、肺式呼吸闭环控制技术、氧气系统模块化电控设计技术等关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "肺式呼吸闭环控制技术",
+      "evidence_span": "突破了机载分子筛制氧浓度调节、多床分子筛制氧控制、制氧健康管理与预测技术、肺式呼吸闭环控制技术、氧气系统模块化电控设计技术等关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氧气系统模块化电控设计技术",
+      "evidence_span": "突破了机载分子筛制氧浓度调节、多床分子筛制氧控制、制氧健康管理与预测技术、肺式呼吸闭环控制技术、氧气系统模块化电控设计技术等关键技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内各大主机厂",
+      "evidence_span": "主要为国内各大主机厂、军方提供配套产品和服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军方",
+      "evidence_span": "主要为国内各大主机厂、军方提供配套产品和服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航空工业集团",
+      "evidence_span": "现有客户覆盖航空工业集团、中国兵器工业集团有限公司等主要军工集团下属单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国兵器工业集团有限公司",
+      "evidence_span": "现有客户覆盖航空工业集团、中国兵器工业集团有限公司等主要军工集团下属单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各军种部队与修理厂",
+      "evidence_span": "各军种部队与修理厂以及中国科学院等国家级科研机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国科学院",
+      "evidence_span": "各军种部队与修理厂以及中国科学院等国家级科研机构"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军机换装列装",
+      "evidence_span": "航空机载设备细分领域龙头企业，受益军机换装列装加速"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空装备",
+        "evidence_span": "公司主要从事航空装备及特种制冷两大业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种制冷",
+        "evidence_span": "公司主要从事航空装备及特种制冷两大业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空机载系统产品供应商",
+        "evidence_span": "公司的航空产品系航空生命保障系统和燃油系统的重要组成部分，属于航空机载系统产品供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "核心部件集成商",
+        "evidence_span": "在航空制造业产业结构中处于第二层核心部件集成商的位置"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空氧气系统研发制造基地",
+        "evidence_span": "公司系国内唯一的航空氧气系统及机载油箱惰性化防护系统专业化研发制造基地"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "机载油箱惰性化防护系统专业化研发制造基地",
+        "evidence_span": "公司系国内唯一的航空氧气系统及机载油箱惰性化防护系统专业化研发制造基地"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "飞机副油箱制造商",
+        "evidence_span": "亦是国内最大的飞机副油箱及国内领先的特种制冷设备制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特种制冷设备制造商",
+        "evidence_span": "亦是国内最大的飞机副油箱及国内领先的特种制冷设备制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空氧气系统",
+        "evidence_span": "涉及涵盖航空氧气系统、机载油箱惰性化防护系统、飞机副油箱等航空产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机载油箱惰性化防护系统",
+        "evidence_span": "涉及涵盖航空氧气系统、机载油箱惰性化防护系统、飞机副油箱等航空产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞机副油箱",
+        "evidence_span": "涉及涵盖航空氧气系统、机载油箱惰性化防护系统、飞机副油箱等航空产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "敏感元件",
+        "evidence_span": "在航空装备领域的主要产品覆盖航空氧气系统、机载油箱惰性化防护系统、飞机副油箱以及敏感元件、氧气地面设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氧气地面设备",
+        "evidence_span": "在航空装备领域的主要产品覆盖航空氧气系统、机载油箱惰性化防护系统、飞机副油箱以及敏感元件、氧气地面设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空间站环控生保系统",
+        "evidence_span": "在航空装备领域的主要产品覆盖航空氧气系统、机载油箱惰性化防护系统、飞机副油箱以及敏感元件、氧气地面设备等及空间站环控生保系统等多型产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军民用特种制冷设备",
+        "evidence_span": "特种制冷业务通过全资子公司天鹅制冷开展，主要涉及军民用特种制冷设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业用特种耐高温空调",
+        "evidence_span": "重点开拓工业用特种耐高温空调、专用车空调等细分市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用车空调",
+        "evidence_span": "重点开拓工业用特种耐高温空调、专用车空调等细分市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空地面保障设备",
+        "evidence_span": "积极开拓航空地面保障设备、地面装备保障、航空发动机配套等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地面装备保障",
+        "evidence_span": "积极开拓航空地面保障设备、地面装备保障、航空发动机配套等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空发动机配套",
+        "evidence_span": "积极开拓航空地面保障设备、地面装备保障、航空发动机配套等领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氧气调节技术",
+        "evidence_span": "处于国际领先水平的氧气调节技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机载分子筛制氧技术",
+        "evidence_span": "国际先进水平的机载分子筛制氧技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机载空气分离制氮技术",
+        "evidence_span": "公司自主研发的机载空气分离制氮技术已达到国内领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三维数字化协同设计平台",
+        "evidence_span": "构建了三维数字化协同设计平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机载分子筛制氧浓度调节",
+        "evidence_span": "突破了机载分子筛制氧浓度调节、多床分子筛制氧控制、制氧健康管理与预测技术、肺式呼吸闭环控制技术、氧气系统模块化电控设计技术等关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多床分子筛制氧控制",
+        "evidence_span": "突破了机载分子筛制氧浓度调节、多床分子筛制氧控制、制氧健康管理与预测技术、肺式呼吸闭环控制技术、氧气系统模块化电控设计技术等关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "制氧健康管理与预测技术",
+        "evidence_span": "突破了机载分子筛制氧浓度调节、多床分子筛制氧控制、制氧健康管理与预测技术、肺式呼吸闭环控制技术、氧气系统模块化电控设计技术等关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "肺式呼吸闭环控制技术",
+        "evidence_span": "突破了机载分子筛制氧浓度调节、多床分子筛制氧控制、制氧健康管理与预测技术、肺式呼吸闭环控制技术、氧气系统模块化电控设计技术等关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氧气系统模块化电控设计技术",
+        "evidence_span": "突破了机载分子筛制氧浓度调节、多床分子筛制氧控制、制氧健康管理与预测技术、肺式呼吸闭环控制技术、氧气系统模块化电控设计技术等关键技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内各大主机厂",
+        "evidence_span": "主要为国内各大主机厂、军方提供配套产品和服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军方",
+        "evidence_span": "主要为国内各大主机厂、军方提供配套产品和服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航空工业集团",
+        "evidence_span": "现有客户覆盖航空工业集团、中国兵器工业集团有限公司等主要军工集团下属单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国兵器工业集团有限公司",
+        "evidence_span": "现有客户覆盖航空工业集团、中国兵器工业集团有限公司等主要军工集团下属单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各军种部队与修理厂",
+        "evidence_span": "各军种部队与修理厂以及中国科学院等国家级科研机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国科学院",
+        "evidence_span": "各军种部队与修理厂以及中国科学院等国家级科研机构"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军机换装列装",
+        "evidence_span": "航空机载设备细分领域龙头企业，受益军机换装列装加速"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:02:34"
+}

@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "棉花加工",
+      "evidence_span": "棉花加工、番茄精深加工以及甜菜制糖是公司的三大优势产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "番茄精深加工",
+      "evidence_span": "棉花加工、番茄精深加工以及甜菜制糖是公司的三大优势产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "甜菜制糖",
+      "evidence_span": "棉花加工、番茄精深加工以及甜菜制糖是公司的三大优势产业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新疆地区主要的棉花、番茄和甜菜糖产品供应商",
+      "evidence_span": "公司作为新疆地区主要的棉花、番茄和甜菜糖产品供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新疆林果资源整合者",
+      "evidence_span": "新疆林果资源整合者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "皮棉",
+      "evidence_span": "主要产品为皮棉、棉籽等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "棉籽",
+      "evidence_span": "主要产品为皮棉、棉籽等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "番茄丁",
+      "evidence_span": "大力推广番茄丁、番茄汁、小包装番茄酱等小包装产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "番茄汁",
+      "evidence_span": "大力推广番茄丁、番茄汁、小包装番茄酱等小包装产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小包装番茄酱",
+      "evidence_span": "大力推广番茄丁、番茄汁、小包装番茄酱等小包装产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "白砂糖",
+      "evidence_span": "年产白砂糖5万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "番茄大桶酱",
+      "evidence_span": "公司番茄大桶酱产品主要出口欧洲、中东、非洲、东南亚等国家和地区"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "棉短绒",
+      "evidence_span": "主要产品为棉短绒、棉油、棉粕等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "棉油",
+      "evidence_span": "主要产品为棉短绒、棉油、棉粕等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "棉粕",
+      "evidence_span": "主要产品为棉短绒、棉油、棉粕等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物发酵饲料",
+      "evidence_span": "年产20万吨生物发酵饲料项目已进行试生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧农业综合服务平台",
+      "evidence_span": "全资子公司数字农业构建集种子、种植、管理、采收于一体的“小铁牛”智慧农业综合服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三方检测服务",
+      "evidence_span": "全资子公司冠农检测作为新疆南疆地区首家集环境监测、食品和农产品检测资质于一体的第三方检测机构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "节水技术",
+      "evidence_span": "生产过程中的节水技术达到国内同行业先进水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超大型棉花仓储库安全消防智能预警系统",
+      "evidence_span": "汇锦物流棉花期货交割库建设的超大型棉花仓储库安全消防智能预警系统集成项目成为行业示范科技项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内多家大、中型下游用棉企业",
+      "evidence_span": "公司与国内多家大、中型下游用棉企业结成良好的合作联盟关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧洲、中东、非洲、东南亚等国家和地区",
+      "evidence_span": "公司番茄大桶酱产品主要出口欧洲、中东、非洲、东南亚等国家和地区"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "农业强国",
+      "evidence_span": "2023年中央一号文件《中共中央国务院关于做好2023年全面推进乡村振兴重点工作的意见》提出建设农业强国目标"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "乡村振兴",
+      "evidence_span": "积极助力乡村振兴"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "棉花加工",
+        "evidence_span": "棉花加工、番茄精深加工以及甜菜制糖是公司的三大优势产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "番茄精深加工",
+        "evidence_span": "棉花加工、番茄精深加工以及甜菜制糖是公司的三大优势产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "甜菜制糖",
+        "evidence_span": "棉花加工、番茄精深加工以及甜菜制糖是公司的三大优势产业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新疆地区主要的棉花、番茄和甜菜糖产品供应商",
+        "evidence_span": "公司作为新疆地区主要的棉花、番茄和甜菜糖产品供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新疆林果资源整合者",
+        "evidence_span": "新疆林果资源整合者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "皮棉",
+        "evidence_span": "主要产品为皮棉、棉籽等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "棉籽",
+        "evidence_span": "主要产品为皮棉、棉籽等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "番茄丁",
+        "evidence_span": "大力推广番茄丁、番茄汁、小包装番茄酱等小包装产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "番茄汁",
+        "evidence_span": "大力推广番茄丁、番茄汁、小包装番茄酱等小包装产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小包装番茄酱",
+        "evidence_span": "大力推广番茄丁、番茄汁、小包装番茄酱等小包装产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "白砂糖",
+        "evidence_span": "年产白砂糖5万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "番茄大桶酱",
+        "evidence_span": "公司番茄大桶酱产品主要出口欧洲、中东、非洲、东南亚等国家和地区"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "棉短绒",
+        "evidence_span": "主要产品为棉短绒、棉油、棉粕等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "棉油",
+        "evidence_span": "主要产品为棉短绒、棉油、棉粕等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "棉粕",
+        "evidence_span": "主要产品为棉短绒、棉油、棉粕等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物发酵饲料",
+        "evidence_span": "年产20万吨生物发酵饲料项目已进行试生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧农业综合服务平台",
+        "evidence_span": "全资子公司数字农业构建集种子、种植、管理、采收于一体的“小铁牛”智慧农业综合服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三方检测服务",
+        "evidence_span": "全资子公司冠农检测作为新疆南疆地区首家集环境监测、食品和农产品检测资质于一体的第三方检测机构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "节水技术",
+        "evidence_span": "生产过程中的节水技术达到国内同行业先进水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超大型棉花仓储库安全消防智能预警系统",
+        "evidence_span": "汇锦物流棉花期货交割库建设的超大型棉花仓储库安全消防智能预警系统集成项目成为行业示范科技项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内多家大、中型下游用棉企业",
+        "evidence_span": "公司与国内多家大、中型下游用棉企业结成良好的合作联盟关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧洲、中东、非洲、东南亚等国家和地区",
+        "evidence_span": "公司番茄大桶酱产品主要出口欧洲、中东、非洲、东南亚等国家和地区"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "农业强国",
+        "evidence_span": "2023年中央一号文件《中共中央国务院关于做好2023年全面推进乡村振兴重点工作的意见》提出建设农业强国目标"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "乡村振兴",
+        "evidence_span": "积极助力乡村振兴"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:46:08"
+}

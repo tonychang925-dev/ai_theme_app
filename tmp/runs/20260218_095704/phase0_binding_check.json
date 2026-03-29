@@ -1,0 +1,29 @@
+{
+  "phase_prefix": "P1.phase0",
+  "expected_count": 4,
+  "milestone_phase_count": 2,
+  "present": [
+    "P1.phase0-T03",
+    "P1.phase0-T04"
+  ],
+  "missing": [
+    "P1.phase0-T01",
+    "P1.phase0-T02"
+  ],
+  "unexpected": [],
+  "missing_locations": [
+    {
+      "task_id": "P1.phase0-T01",
+      "status": "Todo",
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）"
+    },
+    {
+      "task_id": "P1.phase0-T02",
+      "status": "Todo",
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）"
+    }
+  ],
+  "ok": false
+}

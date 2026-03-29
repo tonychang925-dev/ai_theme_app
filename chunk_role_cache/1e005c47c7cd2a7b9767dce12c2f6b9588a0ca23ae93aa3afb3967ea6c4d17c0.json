@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "d2dc837b8319", "label": "knowledge_like", "confidence": 0.9, "ontology_value": "high", "reason": "该段落列举了半导体设备的关键环节（如光刻、清洗、刻蚀、离子注入、沉积等）和国产化替代方向，并提到相关材料（如光掩模、电子气体等），直接揭示了题材的核心构成、产业链结构和关键环节，具有稳定的知识价值。"}}

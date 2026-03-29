@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "辗制环形锻件",
+      "evidence_span": "主要从事辗制环形锻件、锻制法兰及其他自由锻件、真空腔体的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锻制法兰",
+      "evidence_span": "主要从事辗制环形锻件、锻制法兰及其他自由锻件、真空腔体的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自由锻件",
+      "evidence_span": "主要从事辗制环形锻件、锻制法兰及其他自由锻件、真空腔体的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "真空腔体",
+      "evidence_span": "主要从事辗制环形锻件、锻制法兰及其他自由锻件、真空腔体的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "风电法兰领军企业",
+      "evidence_span": "风电法兰领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "辗制环形锻件和锻制法兰行业重要供应商",
+      "evidence_span": "作为辗制环形锻件和锻制法兰行业重要供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球海上风电优质锻件厂商",
+      "evidence_span": "全球海上风电优质锻件厂商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电塔筒法兰",
+      "evidence_span": "风电塔筒法兰是公司主要业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海上风电塔筒法兰",
+      "evidence_span": "已量产9MW海上风电塔筒法兰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大直径管道法兰",
+      "evidence_span": "应用于金属压力容器、石化行业的大直径管道法兰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "回转支承套圈",
+      "evidence_span": "用于工程机械的回转支承套圈"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "偏航变桨轴承",
+      "evidence_span": "主要生产偏航变桨轴承与主轴轴承"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主轴轴承",
+      "evidence_span": "主要生产偏航变桨轴承与主轴轴承"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电机组用深加工齿轮",
+      "evidence_span": "风电机组用深加工齿轮新增产销量为10万吨"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "7.0MW及以上风电塔筒法兰制造能力",
+      "evidence_span": "是全球较少能制造7.0MW及以上风电塔筒法兰的企业之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "9MW海上风电塔筒法兰量产能力",
+      "evidence_span": "已量产9MW海上风电塔筒法兰"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "12MW海上风电塔筒法兰批量生产能力",
+      "evidence_span": "即将形成12MW海上风电塔筒法兰的批量生产能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "维斯塔斯",
+      "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通用电气",
+      "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子歌美飒",
+      "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿尔斯通",
+      "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "艾默生",
+      "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星重工",
+      "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国重山",
+      "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金风科技",
+      "evidence_span": "与金风科技、明阳智能、上海电气等国内知名风电主机厂保持深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "明阳智能",
+      "evidence_span": "与金风科技、明阳智能、上海电气等国内知名风电主机厂保持深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海电气",
+      "evidence_span": "与金风科技、明阳智能、上海电气等国内知名风电主机厂保持深度合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "享受国产代替的巨大市场空间"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "辗制环形锻件",
+        "evidence_span": "主要从事辗制环形锻件、锻制法兰及其他自由锻件、真空腔体的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锻制法兰",
+        "evidence_span": "主要从事辗制环形锻件、锻制法兰及其他自由锻件、真空腔体的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自由锻件",
+        "evidence_span": "主要从事辗制环形锻件、锻制法兰及其他自由锻件、真空腔体的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "真空腔体",
+        "evidence_span": "主要从事辗制环形锻件、锻制法兰及其他自由锻件、真空腔体的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "风电法兰领军企业",
+        "evidence_span": "风电法兰领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "辗制环形锻件和锻制法兰行业重要供应商",
+        "evidence_span": "作为辗制环形锻件和锻制法兰行业重要供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球海上风电优质锻件厂商",
+        "evidence_span": "全球海上风电优质锻件厂商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电塔筒法兰",
+        "evidence_span": "风电塔筒法兰是公司主要业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海上风电塔筒法兰",
+        "evidence_span": "已量产9MW海上风电塔筒法兰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大直径管道法兰",
+        "evidence_span": "应用于金属压力容器、石化行业的大直径管道法兰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "回转支承套圈",
+        "evidence_span": "用于工程机械的回转支承套圈"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "偏航变桨轴承",
+        "evidence_span": "主要生产偏航变桨轴承与主轴轴承"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主轴轴承",
+        "evidence_span": "主要生产偏航变桨轴承与主轴轴承"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电机组用深加工齿轮",
+        "evidence_span": "风电机组用深加工齿轮新增产销量为10万吨"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "7.0MW及以上风电塔筒法兰制造能力",
+        "evidence_span": "是全球较少能制造7.0MW及以上风电塔筒法兰的企业之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "9MW海上风电塔筒法兰量产能力",
+        "evidence_span": "已量产9MW海上风电塔筒法兰"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "12MW海上风电塔筒法兰批量生产能力",
+        "evidence_span": "即将形成12MW海上风电塔筒法兰的批量生产能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "维斯塔斯",
+        "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通用电气",
+        "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子歌美飒",
+        "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿尔斯通",
+        "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "艾默生",
+        "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星重工",
+        "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国重山",
+        "evidence_span": "已进入维斯塔斯、通用电气、西门子歌美飒、阿尔斯通、艾默生、三星重工、韩国重山等国外知名厂商的供应商行列"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金风科技",
+        "evidence_span": "与金风科技、明阳智能、上海电气等国内知名风电主机厂保持深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "明阳智能",
+        "evidence_span": "与金风科技、明阳智能、上海电气等国内知名风电主机厂保持深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海电气",
+        "evidence_span": "与金风科技、明阳智能、上海电气等国内知名风电主机厂保持深度合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "享受国产代替的巨大市场空间"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:36:57"
+}

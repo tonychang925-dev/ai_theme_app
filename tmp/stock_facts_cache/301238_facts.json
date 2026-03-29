@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电池材料",
+      "evidence_span": "公司主要从事电池材料以及有机硅等化工新材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有机硅材料",
+      "evidence_span": "公司主要从事电池材料以及有机硅等化工新材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂离子电池电解液龙头供应商",
+      "evidence_span": "锂离子电解液龙头供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂离子电池电解液第一梯队厂商",
+      "evidence_span": "公司作为锂离子电池电解液第一梯队的厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端有机硅材料供应商",
+      "evidence_span": "公司作为国内高端有机硅材料供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂离子电池电解液",
+      "evidence_span": "公司生产的电池材料包括锂离子电池电解液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂离子电池电解液添加剂",
+      "evidence_span": "公司生产的电池材料包括锂离子电池电解液添加剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超级电容器电解液",
+      "evidence_span": "公司生产的电池材料包括超级电容器电解液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅烷偶联剂",
+      "evidence_span": "公司的有机硅产品现阶段主要是硅烷偶联剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锂离子电池电解液及相关材料的制造生产所需的主要核心技术",
+      "evidence_span": "掌握了锂离子电池电解液及相关材料的制造生产所需的主要核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锂盐类添加剂技术",
+      "evidence_span": "目前公司的锂离子电池电解液添加剂以锂盐类添加剂为主"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "固态锂离子电池等新型电池材料布局",
+      "evidence_span": "在固态电池、锂硫电池以及钠离子电池等新型电池材料方面皆存在相应布局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "已与宁德时代、LG新能源等国内外头部电池厂商建立了长期密切的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LG新能源",
+      "evidence_span": "已与宁德时代、LG新能源等国内外头部电池厂商建立了长期密切的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源科技",
+      "evidence_span": "公司已与下游锂离子电池龙头企业宁德时代、 LG新能源 、新能源科技和亿纬锂能等建立了紧密、持续的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿纬锂能",
+      "evidence_span": "公司已与下游锂离子电池龙头企业宁德时代、 LG新能源 、新能源科技和亿纬锂能等建立了紧密、持续的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陶氏化学",
+      "evidence_span": "已获得国际大型化工企业陶氏化学、巴斯夫、欧文斯科宁、迈图高新等公司的认可并进入其供应商序列"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "巴斯夫",
+      "evidence_span": "已获得国际大型化工企业陶氏化学、巴斯夫、欧文斯科宁、迈图高新等公司的认可并进入其供应商序列"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧文斯科宁",
+      "evidence_span": "已获得国际大型化工企业陶氏化学、巴斯夫、欧文斯科宁、迈图高新等公司的认可并进入其供应商序列"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "迈图高新",
+      "evidence_span": "已获得国际大型化工企业陶氏化学、巴斯夫、欧文斯科宁、迈图高新等公司的认可并进入其供应商序列"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电池材料",
+        "evidence_span": "公司主要从事电池材料以及有机硅等化工新材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有机硅材料",
+        "evidence_span": "公司主要从事电池材料以及有机硅等化工新材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂离子电池电解液龙头供应商",
+        "evidence_span": "锂离子电解液龙头供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂离子电池电解液第一梯队厂商",
+        "evidence_span": "公司作为锂离子电池电解液第一梯队的厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端有机硅材料供应商",
+        "evidence_span": "公司作为国内高端有机硅材料供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂离子电池电解液",
+        "evidence_span": "公司生产的电池材料包括锂离子电池电解液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂离子电池电解液添加剂",
+        "evidence_span": "公司生产的电池材料包括锂离子电池电解液添加剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超级电容器电解液",
+        "evidence_span": "公司生产的电池材料包括超级电容器电解液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅烷偶联剂",
+        "evidence_span": "公司的有机硅产品现阶段主要是硅烷偶联剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锂离子电池电解液及相关材料的制造生产所需的主要核心技术",
+        "evidence_span": "掌握了锂离子电池电解液及相关材料的制造生产所需的主要核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锂盐类添加剂技术",
+        "evidence_span": "目前公司的锂离子电池电解液添加剂以锂盐类添加剂为主"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "固态锂离子电池等新型电池材料布局",
+        "evidence_span": "在固态电池、锂硫电池以及钠离子电池等新型电池材料方面皆存在相应布局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "已与宁德时代、LG新能源等国内外头部电池厂商建立了长期密切的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LG新能源",
+        "evidence_span": "已与宁德时代、LG新能源等国内外头部电池厂商建立了长期密切的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源科技",
+        "evidence_span": "公司已与下游锂离子电池龙头企业宁德时代、 LG新能源 、新能源科技和亿纬锂能等建立了紧密、持续的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿纬锂能",
+        "evidence_span": "公司已与下游锂离子电池龙头企业宁德时代、 LG新能源 、新能源科技和亿纬锂能等建立了紧密、持续的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陶氏化学",
+        "evidence_span": "已获得国际大型化工企业陶氏化学、巴斯夫、欧文斯科宁、迈图高新等公司的认可并进入其供应商序列"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "巴斯夫",
+        "evidence_span": "已获得国际大型化工企业陶氏化学、巴斯夫、欧文斯科宁、迈图高新等公司的认可并进入其供应商序列"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧文斯科宁",
+        "evidence_span": "已获得国际大型化工企业陶氏化学、巴斯夫、欧文斯科宁、迈图高新等公司的认可并进入其供应商序列"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "迈图高新",
+        "evidence_span": "已获得国际大型化工企业陶氏化学、巴斯夫、欧文斯科宁、迈图高新等公司的认可并进入其供应商序列"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:59:05"
+}

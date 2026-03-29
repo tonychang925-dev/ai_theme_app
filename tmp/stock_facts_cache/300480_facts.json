@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体封测装备",
+      "evidence_span": "半导体封测装备和安全生产监控装备两大主营业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全生产监控装备",
+      "evidence_span": "半导体封测装备和安全生产监控装备两大主营业务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体划片机国产替代领头羊",
+      "evidence_span": "光力科技半导体划片机国产替代领头羊"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内半导体划片机龙头",
+      "evidence_span": "光力科技国内半导体划片机龙头启航"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "煤矿安全监控领跑者",
+      "evidence_span": "煤矿安全监控领跑者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "划片机",
+      "evidence_span": "半导体封测设备业务包括划片机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "切割周边设备",
+      "evidence_span": "切割周边设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "切割耗材",
+      "evidence_span": "切割耗材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核心零部件空气主轴",
+      "evidence_span": "核心零部件空气主轴"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全监控系统",
+      "evidence_span": "安全监控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "瓦斯抽采监控设备及系统",
+      "evidence_span": "瓦斯抽采监控设备及系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粉尘监测设备",
+      "evidence_span": "粉尘监测设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粉尘监测及治理系统",
+      "evidence_span": "粉尘监测及治理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "矿井火情监控系统",
+      "evidence_span": "矿井火情监控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光氨逃逸",
+      "evidence_span": "激光氨逃逸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光氨检漏",
+      "evidence_span": "激光氨检漏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用配套设备",
+      "evidence_span": "专用配套设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "半导体封装领域先进精密切割技术",
+      "evidence_span": "积累了深厚的半导体封装领域先进精密切割技术经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "加工超薄和超厚半导体器件",
+      "evidence_span": "在加工超薄和超厚半导体器件领域拥有领先优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空气主轴产品",
+      "evidence_span": "英国LPB的空气主轴产品一直处于业界领先地位"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空气承载的主轴定位精度达到了纳米级",
+      "evidence_span": "基于空气承载的主轴定位精度达到了纳米级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密控制系统可以对步进电机实现低至0.1微米的控制精度",
+      "evidence_span": "其自主研发的划片机最关键的精密控制系统可以对步进电机实现低至0.1微米的控制精度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生产软刀",
+      "evidence_span": "ADT公司的生产软刀在业界处于领先地位"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "光力科技半导体划片机国产替代领头羊"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体封测装备",
+        "evidence_span": "半导体封测装备和安全生产监控装备两大主营业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "安全生产监控装备",
+        "evidence_span": "半导体封测装备和安全生产监控装备两大主营业务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体划片机国产替代领头羊",
+        "evidence_span": "光力科技半导体划片机国产替代领头羊"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内半导体划片机龙头",
+        "evidence_span": "光力科技国内半导体划片机龙头启航"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "煤矿安全监控领跑者",
+        "evidence_span": "煤矿安全监控领跑者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "划片机",
+        "evidence_span": "半导体封测设备业务包括划片机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "切割周边设备",
+        "evidence_span": "切割周边设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "切割耗材",
+        "evidence_span": "切割耗材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核心零部件空气主轴",
+        "evidence_span": "核心零部件空气主轴"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全监控系统",
+        "evidence_span": "安全监控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "瓦斯抽采监控设备及系统",
+        "evidence_span": "瓦斯抽采监控设备及系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粉尘监测设备",
+        "evidence_span": "粉尘监测设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粉尘监测及治理系统",
+        "evidence_span": "粉尘监测及治理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "矿井火情监控系统",
+        "evidence_span": "矿井火情监控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光氨逃逸",
+        "evidence_span": "激光氨逃逸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光氨检漏",
+        "evidence_span": "激光氨检漏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用配套设备",
+        "evidence_span": "专用配套设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "半导体封装领域先进精密切割技术",
+        "evidence_span": "积累了深厚的半导体封装领域先进精密切割技术经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "加工超薄和超厚半导体器件",
+        "evidence_span": "在加工超薄和超厚半导体器件领域拥有领先优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空气主轴产品",
+        "evidence_span": "英国LPB的空气主轴产品一直处于业界领先地位"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空气承载的主轴定位精度达到了纳米级",
+        "evidence_span": "基于空气承载的主轴定位精度达到了纳米级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密控制系统可以对步进电机实现低至0.1微米的控制精度",
+        "evidence_span": "其自主研发的划片机最关键的精密控制系统可以对步进电机实现低至0.1微米的控制精度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生产软刀",
+        "evidence_span": "ADT公司的生产软刀在业界处于领先地位"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "光力科技半导体划片机国产替代领头羊"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:49:29"
+}

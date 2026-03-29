@@ -1,0 +1,214 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "收费路桥的投资",
+      "evidence_span": "主营业务为江苏省境内收费路桥的投资、建设、经营及管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建设",
+      "evidence_span": "主营业务为江苏省境内收费路桥的投资、建设、经营及管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "经营",
+      "evidence_span": "主营业务为江苏省境内收费路桥的投资、建设、经营及管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "管理",
+      "evidence_span": "主营业务为江苏省境内收费路桥的投资、建设、经营及管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高速公路沿线的服务区配套经营业务",
+      "evidence_span": "开发高速公路沿线的服务区配套经营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源业务",
+      "evidence_span": "积极探索并发展交通+、新能源业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融业",
+      "evidence_span": "以融促产的金融业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "江苏省唯一的上市路桥公司",
+      "evidence_span": "是江苏省唯一的上市路桥公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "苏南路网主运营商",
+      "evidence_span": "持续巩固公司苏南路网主运营商地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "收费路桥",
+      "evidence_span": "主营业务为江苏省境内收费路桥的投资、建设、经营及管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "服务区配套经营",
+      "evidence_span": "开发高速公路沿线的服务区配套经营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清洁能源发电",
+      "evidence_span": "主营业务为光伏、海上风电等清洁能源发电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房地产开发销售",
+      "evidence_span": "集团房地产开发销售由子公司宁沪置业公司、瀚威公司经营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金融投资",
+      "evidence_span": "持续关注优质金融标的参投机会"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大流量管控系统平台",
+      "evidence_span": "大流量管控系统平台持续升级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云收费系统",
+      "evidence_span": "云收费系统优化提升"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BIM系统",
+      "evidence_span": "BIM系统功能完备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字孪生技术",
+      "evidence_span": "依托数字孪生技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能无人集群技术",
+      "evidence_span": "进一步扩大智能无人集群技术应用规模"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧高速",
+      "evidence_span": "打造智慧高速新亮点"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江苏银行",
+      "evidence_span": "增持江苏银行公司股权"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "交通基建",
+      "evidence_span": "江苏省唯一的交通基建类上市公司"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "收费路桥的投资、建设、经营及管理",
+        "evidence_span": "主营业务为江苏省境内收费路桥的投资、建设、经营及管理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高速公路沿线的服务区配套经营业务",
+        "evidence_span": "开发高速公路沿线的服务区配套经营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源业务",
+        "evidence_span": "积极探索并发展交通+、新能源业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融业",
+        "evidence_span": "以融促产的金融业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "江苏省唯一的上市路桥公司",
+        "evidence_span": "是江苏省唯一的上市路桥公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "苏南路网主运营商",
+        "evidence_span": "持续巩固公司苏南路网主运营商地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "收费路桥",
+        "evidence_span": "主营业务为江苏省境内收费路桥的投资、建设、经营及管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "服务区配套经营",
+        "evidence_span": "开发高速公路沿线的服务区配套经营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清洁能源发电",
+        "evidence_span": "主营业务为光伏、海上风电等清洁能源发电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房地产开发销售",
+        "evidence_span": "集团房地产开发销售由子公司宁沪置业公司、瀚威公司经营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金融投资",
+        "evidence_span": "持续关注优质金融标的参投机会"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大流量管控系统平台",
+        "evidence_span": "大流量管控系统平台持续升级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云收费系统",
+        "evidence_span": "云收费系统优化提升"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BIM系统",
+        "evidence_span": "BIM系统功能完备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字孪生技术",
+        "evidence_span": "依托数字孪生技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能无人集群技术",
+        "evidence_span": "进一步扩大智能无人集群技术应用规模"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧高速",
+        "evidence_span": "打造智慧高速新亮点"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江苏银行",
+        "evidence_span": "增持江苏银行公司股权"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "交通基建",
+        "evidence_span": "江苏省唯一的交通基建类上市公司"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:05:19"
+}

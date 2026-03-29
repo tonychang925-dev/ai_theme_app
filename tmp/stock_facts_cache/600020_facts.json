@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "经营性收费公路的投资",
+      "evidence_span": "主营业务为经营性收费公路的投资"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "经营性收费公路的建设",
+      "evidence_span": "主营业务为经营性收费公路的建设"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "经营性收费公路的运营管理",
+      "evidence_span": "主营业务为经营性收费公路的运营管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "交通运输业",
+      "evidence_span": "主营业务收入主要来源于交通运输业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产业",
+      "evidence_span": "主营业务收入主要来源于房地产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建造服务收入",
+      "evidence_span": "主营业务收入主要来源于建造服务收入"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高速公路运营服务商",
+      "evidence_span": "打造国内一流的高速公路运营服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速公路运营业务",
+      "evidence_span": "高速公路运营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房地产开发销售",
+      "evidence_span": "主要从事房地产开发销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "项目投资",
+      "evidence_span": "主要从事项目投资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "投资管理",
+      "evidence_span": "主要从事投资管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "投资咨询",
+      "evidence_span": "主要从事投资咨询"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化收费技术",
+      "evidence_span": "试点开展自动化收费技术探索应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自助发卡机器人",
+      "evidence_span": "安装全省第一条全车型、全场景的自助发卡机器人"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车道式X光绿色通道快速检测系统",
+      "evidence_span": "建成全省首套车道式X光绿色通道快速检测系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精准控时系统",
+      "evidence_span": "在互通区高杆灯上安装精准控时系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "文旅机构",
+      "evidence_span": "与文旅等机构开展合作"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "经营性收费公路的投资",
+        "evidence_span": "主营业务为经营性收费公路的投资"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "经营性收费公路的建设",
+        "evidence_span": "主营业务为经营性收费公路的建设"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "经营性收费公路的运营管理",
+        "evidence_span": "主营业务为经营性收费公路的运营管理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "交通运输业",
+        "evidence_span": "主营业务收入主要来源于交通运输业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产业",
+        "evidence_span": "主营业务收入主要来源于房地产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "建造服务收入",
+        "evidence_span": "主营业务收入主要来源于建造服务收入"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高速公路运营服务商",
+        "evidence_span": "打造国内一流的高速公路运营服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速公路运营业务",
+        "evidence_span": "高速公路运营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房地产开发销售",
+        "evidence_span": "主要从事房地产开发销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "项目投资",
+        "evidence_span": "主要从事项目投资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "投资管理",
+        "evidence_span": "主要从事投资管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "投资咨询",
+        "evidence_span": "主要从事投资咨询"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化收费技术",
+        "evidence_span": "试点开展自动化收费技术探索应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自助发卡机器人",
+        "evidence_span": "安装全省第一条全车型、全场景的自助发卡机器人"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车道式X光绿色通道快速检测系统",
+        "evidence_span": "建成全省首套车道式X光绿色通道快速检测系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精准控时系统",
+        "evidence_span": "在互通区高杆灯上安装精准控时系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "文旅机构",
+        "evidence_span": "与文旅等机构开展合作"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:57:31"
+}

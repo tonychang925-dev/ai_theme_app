@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "聚苯乙烯的研发",
+      "evidence_span": "公司的主营业务为聚苯乙烯的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "聚苯乙烯的生产",
+      "evidence_span": "公司的主营业务为聚苯乙烯的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "聚苯乙烯的销售",
+      "evidence_span": "公司的主营业务为聚苯乙烯的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "华南地区聚苯乙烯生产规模第二大的公司",
+      "evidence_span": "华南地区聚苯乙烯生产规模第二大的公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "华南地区聚苯乙烯生产龙头之一",
+      "evidence_span": "华南地区聚苯乙烯生产龙头之一星辉环材"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "华南地区最大、全国排名第四的聚苯乙烯高分子新材料生产企业",
+      "evidence_span": "是华南地区最大、全国排名第四的聚苯乙烯高分子新材料生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高抗冲聚苯乙烯",
+      "evidence_span": "公司生产的主要产品“高抗冲聚苯乙烯”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HIPS",
+      "evidence_span": "公司生产的HIPS、GPPS具有较高的品牌认知度"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GPPS",
+      "evidence_span": "公司生产的HIPS、GPPS具有较高的品牌认知度"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "片材级高抗冲聚苯乙烯产品SKH-127",
+      "evidence_span": "推出片材级高抗冲聚苯乙烯产品SKH-127"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "浅蓝色通用型聚苯乙烯SKG-141",
+      "evidence_span": "推出浅蓝色通用型聚苯乙烯SKG-141"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "类纳米原位聚合改性一步法",
+      "evidence_span": "公司开创了独有的生产HIPS的核心技术——类纳米原位聚合改性一步法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "类纳米无机粉体材料改性苯乙烯系树脂的聚合制备方法",
+      "evidence_span": "公司拥有的发明专利“类纳米无机粉体材料改性苯乙烯系树脂的聚合制备方法”荣获中国专利优秀奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一种造粒外润滑剂添加系统与方法",
+      "evidence_span": "“一种造粒外润滑剂添加系统与方法”获得国家知识产权局颁发的发明专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "薄膜蒸发器在聚苯乙烯生产中的应用",
+      "evidence_span": "“薄膜蒸发器在聚苯乙烯生产中的应用”获得国家知识产权局颁发的发明专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效循环冷凝技术",
+      "evidence_span": "高效循环冷凝技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HIPS预聚合串联工艺技术",
+      "evidence_span": "HIPS预聚合串联工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "循环水冷却系统节能技术",
+      "evidence_span": "循环水冷却系统节能技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产品柔性贮存技术",
+      "evidence_span": "产品柔性贮存技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蒙牛",
+      "evidence_span": "公司产品进入蒙牛供应名录，实现向蒙牛等知名企业直接或间接供货"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "尤其是存在“卡脖子”的高端新材料进口替代市场"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "满足下游客户国产替代、产品升级需求"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "聚苯乙烯的研发",
+        "evidence_span": "公司的主营业务为聚苯乙烯的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "聚苯乙烯的生产",
+        "evidence_span": "公司的主营业务为聚苯乙烯的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "聚苯乙烯的销售",
+        "evidence_span": "公司的主营业务为聚苯乙烯的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "华南地区聚苯乙烯生产规模第二大的公司",
+        "evidence_span": "华南地区聚苯乙烯生产规模第二大的公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "华南地区聚苯乙烯生产龙头之一",
+        "evidence_span": "华南地区聚苯乙烯生产龙头之一星辉环材"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "华南地区最大、全国排名第四的聚苯乙烯高分子新材料生产企业",
+        "evidence_span": "是华南地区最大、全国排名第四的聚苯乙烯高分子新材料生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高抗冲聚苯乙烯",
+        "evidence_span": "公司生产的主要产品“高抗冲聚苯乙烯”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HIPS",
+        "evidence_span": "公司生产的HIPS、GPPS具有较高的品牌认知度"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GPPS",
+        "evidence_span": "公司生产的HIPS、GPPS具有较高的品牌认知度"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "片材级高抗冲聚苯乙烯产品SKH-127",
+        "evidence_span": "推出片材级高抗冲聚苯乙烯产品SKH-127"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "浅蓝色通用型聚苯乙烯SKG-141",
+        "evidence_span": "推出浅蓝色通用型聚苯乙烯SKG-141"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "类纳米原位聚合改性一步法",
+        "evidence_span": "公司开创了独有的生产HIPS的核心技术——类纳米原位聚合改性一步法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "类纳米无机粉体材料改性苯乙烯系树脂的聚合制备方法",
+        "evidence_span": "公司拥有的发明专利“类纳米无机粉体材料改性苯乙烯系树脂的聚合制备方法”荣获中国专利优秀奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一种造粒外润滑剂添加系统与方法",
+        "evidence_span": "“一种造粒外润滑剂添加系统与方法”获得国家知识产权局颁发的发明专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "薄膜蒸发器在聚苯乙烯生产中的应用",
+        "evidence_span": "“薄膜蒸发器在聚苯乙烯生产中的应用”获得国家知识产权局颁发的发明专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效循环冷凝技术",
+        "evidence_span": "高效循环冷凝技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HIPS预聚合串联工艺技术",
+        "evidence_span": "HIPS预聚合串联工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "循环水冷却系统节能技术",
+        "evidence_span": "循环水冷却系统节能技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产品柔性贮存技术",
+        "evidence_span": "产品柔性贮存技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蒙牛",
+        "evidence_span": "公司产品进入蒙牛供应名录，实现向蒙牛等知名企业直接或间接供货"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "尤其是存在“卡脖子”的高端新材料进口替代市场"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "满足下游客户国产替代、产品升级需求"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:26:34"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "6d0e8df28541", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落仅提及南京召开座谈会的事件，没有包含任何低空经济的静态知识或混合内容，属于纯事件。"}}

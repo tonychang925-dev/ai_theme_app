@@ -1,0 +1,519 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧口岸业务",
+      "evidence_span": "智慧口岸业务是公司核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能交通",
+      "evidence_span": "公司还拓展至智能交通"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧防疫",
+      "evidence_span": "公司还拓展至智慧防疫"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧边检",
+      "evidence_span": "公司还拓展至智慧边检"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧海关",
+      "evidence_span": "公司还拓展至智慧海关"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧机场",
+      "evidence_span": "公司还拓展至智慧机场"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧口岸先行者",
+      "evidence_span": "智慧口岸的先行者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧口岸细分行业的绝对龙头",
+      "evidence_span": "是智慧口岸细分行业的绝对龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级高新技术企业",
+      "evidence_span": "国家级高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空港口岸信息化整体解决方案",
+      "evidence_span": "空港口岸信息化整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陆路口岸信息化整体解决方案",
+      "evidence_span": "陆路口岸信息化整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海港口岸信息化整体解决方案",
+      "evidence_span": "海港口岸信息化整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息化勤务指挥中心",
+      "evidence_span": "信息化勤务指挥中心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车辆一站式电子验收系统",
+      "evidence_span": "车辆一站式电子验收系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "场景识别与异常行为智能分析行业方案",
+      "evidence_span": "场景识别与异常行为智能分析等行业方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI视觉终端",
+      "evidence_span": "AI视觉终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能机器人",
+      "evidence_span": "智能机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车联网产品",
+      "evidence_span": "车联网产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "身份认证终端产品",
+      "evidence_span": "身份认证终端产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软件产品",
+      "evidence_span": "软件产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "算法+云服务",
+      "evidence_span": "算法+云服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI摄像机",
+      "evidence_span": "AI摄像机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能管理终端",
+      "evidence_span": "智能管理终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能分析终端",
+      "evidence_span": "智能分析终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能预警终端",
+      "evidence_span": "智能预警终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "便携式多功能测速仪",
+      "evidence_span": "便携式多功能测速仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手持式多功能测速仪",
+      "evidence_span": "手持式多功能测速仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动式多功能测速仪",
+      "evidence_span": "移动式多功能测速仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固定式多功能测速仪",
+      "evidence_span": "固定式多功能测速仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "占用公交专用车道抓拍机",
+      "evidence_span": "占用公交专用车道抓拍机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "占用应急专用车道抓拍机",
+      "evidence_span": "占用应急专用车道抓拍机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能交通综合管控平台",
+      "evidence_span": "智能交通综合管控平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频结构化分析平台",
+      "evidence_span": "视频结构化分析平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车辆大数据应用平台",
+      "evidence_span": "车辆大数据应用平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能技术",
+      "evidence_span": "从事人工智能技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据技术",
+      "evidence_span": "大数据技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网技术",
+      "evidence_span": "物联网等新一代信息技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI开放平台",
+      "evidence_span": "AI开放平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能分析算法",
+      "evidence_span": "智能分析算法"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "与华为合作开拓海外市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿曼",
+      "evidence_span": "阿曼"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沙特",
+      "evidence_span": "沙特"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "塞尔维亚",
+      "evidence_span": "塞尔维亚"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "孟加拉",
+      "evidence_span": "孟加拉"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海南自由贸易港",
+      "evidence_span": "参与到海南自由贸易港首批建设项目中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海虹桥机场",
+      "evidence_span": "上海虹桥机场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "云南昆明机场",
+      "evidence_span": "云南昆明机场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "港珠澳大桥珠海公路口岸",
+      "evidence_span": "港珠澳大桥珠海公路口岸"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天府国际机场",
+      "evidence_span": "天府国际机场"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海南自贸港封关",
+      "evidence_span": "海南自贸港封关在即，口岸升级带来新的增量"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "一带一路加速我国口岸升级"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧口岸业务",
+        "evidence_span": "智慧口岸业务是公司核心业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能交通",
+        "evidence_span": "公司还拓展至智能交通"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧防疫",
+        "evidence_span": "公司还拓展至智慧防疫"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧边检",
+        "evidence_span": "公司还拓展至智慧边检"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧海关",
+        "evidence_span": "公司还拓展至智慧海关"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧机场",
+        "evidence_span": "公司还拓展至智慧机场"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧口岸先行者",
+        "evidence_span": "智慧口岸的先行者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧口岸细分行业的绝对龙头",
+        "evidence_span": "是智慧口岸细分行业的绝对龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级高新技术企业",
+        "evidence_span": "国家级高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空港口岸信息化整体解决方案",
+        "evidence_span": "空港口岸信息化整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陆路口岸信息化整体解决方案",
+        "evidence_span": "陆路口岸信息化整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海港口岸信息化整体解决方案",
+        "evidence_span": "海港口岸信息化整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息化勤务指挥中心",
+        "evidence_span": "信息化勤务指挥中心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车辆一站式电子验收系统",
+        "evidence_span": "车辆一站式电子验收系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "场景识别与异常行为智能分析行业方案",
+        "evidence_span": "场景识别与异常行为智能分析等行业方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI视觉终端",
+        "evidence_span": "AI视觉终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能机器人",
+        "evidence_span": "智能机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车联网产品",
+        "evidence_span": "车联网产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "身份认证终端产品",
+        "evidence_span": "身份认证终端产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软件产品",
+        "evidence_span": "软件产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "算法+云服务",
+        "evidence_span": "算法+云服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI摄像机",
+        "evidence_span": "AI摄像机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能管理终端",
+        "evidence_span": "智能管理终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能分析终端",
+        "evidence_span": "智能分析终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能预警终端",
+        "evidence_span": "智能预警终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "便携式多功能测速仪",
+        "evidence_span": "便携式多功能测速仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手持式多功能测速仪",
+        "evidence_span": "手持式多功能测速仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动式多功能测速仪",
+        "evidence_span": "移动式多功能测速仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固定式多功能测速仪",
+        "evidence_span": "固定式多功能测速仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "占用公交专用车道抓拍机",
+        "evidence_span": "占用公交专用车道抓拍机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "占用应急专用车道抓拍机",
+        "evidence_span": "占用应急专用车道抓拍机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能交通综合管控平台",
+        "evidence_span": "智能交通综合管控平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频结构化分析平台",
+        "evidence_span": "视频结构化分析平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车辆大数据应用平台",
+        "evidence_span": "车辆大数据应用平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能技术",
+        "evidence_span": "从事人工智能技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据技术",
+        "evidence_span": "大数据技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网技术",
+        "evidence_span": "物联网等新一代信息技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI开放平台",
+        "evidence_span": "AI开放平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能分析算法",
+        "evidence_span": "智能分析算法"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "与华为合作开拓海外市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿曼",
+        "evidence_span": "阿曼"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沙特",
+        "evidence_span": "沙特"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "塞尔维亚",
+        "evidence_span": "塞尔维亚"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "孟加拉",
+        "evidence_span": "孟加拉"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海南自由贸易港",
+        "evidence_span": "参与到海南自由贸易港首批建设项目中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海虹桥机场",
+        "evidence_span": "上海虹桥机场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "云南昆明机场",
+        "evidence_span": "云南昆明机场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "港珠澳大桥珠海公路口岸",
+        "evidence_span": "港珠澳大桥珠海公路口岸"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天府国际机场",
+        "evidence_span": "天府国际机场"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海南自贸港封关",
+        "evidence_span": "海南自贸港封关在即，口岸升级带来新的增量"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "一带一路加速我国口岸升级"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:11:27"
+}

@@ -1,0 +1,244 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "供电供热",
+      "evidence_span": "公司主营业务为生产经营供电供热"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "发电厂（站）相关技术咨询",
+      "evidence_span": "从事发电厂（站）相关技术咨询和技术服务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务",
+      "evidence_span": "从事发电厂（站）相关技术咨询和技术服务等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "主力调峰电源",
+      "evidence_span": "是所在区域的主力调峰电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃机发电",
+      "evidence_span": "拥有两家燃机发电厂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力生产",
+      "evidence_span": "深南电中山公司将继续开展电力生产业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃机电站建设工程的技术咨询和技术服务",
+      "evidence_span": "不断开拓国内燃机电站建设工程的技术咨询和技术服务业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力营销",
+      "evidence_span": "组织下属两家电厂积极参与电力市场化营销竞争"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "售电业务",
+      "evidence_span": "公司售电业务情况"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电化学储能",
+      "evidence_span": "积累电化学储能、光伏等新能源产业建设及运营经验"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏",
+      "evidence_span": "积累电化学储能、光伏等新能源产业建设及运营经验"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "虚拟电厂平台",
+      "evidence_span": "积极探索虚拟电厂平台等科技项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "独立储能电站",
+      "evidence_span": "独立储能电站的前期工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合能源服务",
+      "evidence_span": "打造为综合能源服务商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "9E型燃气－蒸汽联合循环发电机组",
+      "evidence_span": "共有5套9E型燃气－蒸汽联合循环发电机组"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "储能系统在9E级机组“黑启动”领域应用",
+      "evidence_span": "填补了储能系统在9E级机组“黑启动”领域应用的国内空白"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高新技术企业",
+      "evidence_span": "被深圳市认定管理机构认定为2021年第二批高新技术企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "实用新型专利",
+      "evidence_span": "公司拥有多项自主实用新型专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "软件著作权",
+      "evidence_span": "公司拥有多项自主实用新型专利和软件著作权"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家标准起草",
+      "evidence_span": "联合起草编写国家标准1项"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深圳市虚拟电厂管理中心",
+      "evidence_span": "与深圳市虚拟电厂管理中心签订《虚拟电厂建设合作协议》"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源产业",
+      "evidence_span": "明确聚焦新能源产业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能产业",
+      "evidence_span": "为鼓励储能产业发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双碳",
+      "evidence_span": "为国家“双碳”建设提供了有力支持"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "供电供热",
+        "evidence_span": "公司主营业务为生产经营供电供热"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "发电厂（站）相关技术咨询和技术服务",
+        "evidence_span": "从事发电厂（站）相关技术咨询和技术服务等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "主力调峰电源",
+        "evidence_span": "是所在区域的主力调峰电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃机发电",
+        "evidence_span": "拥有两家燃机发电厂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力生产",
+        "evidence_span": "深南电中山公司将继续开展电力生产业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃机电站建设工程的技术咨询和技术服务",
+        "evidence_span": "不断开拓国内燃机电站建设工程的技术咨询和技术服务业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力营销",
+        "evidence_span": "组织下属两家电厂积极参与电力市场化营销竞争"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "售电业务",
+        "evidence_span": "公司售电业务情况"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电化学储能",
+        "evidence_span": "积累电化学储能、光伏等新能源产业建设及运营经验"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏",
+        "evidence_span": "积累电化学储能、光伏等新能源产业建设及运营经验"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "虚拟电厂平台",
+        "evidence_span": "积极探索虚拟电厂平台等科技项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "独立储能电站",
+        "evidence_span": "独立储能电站的前期工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合能源服务",
+        "evidence_span": "打造为综合能源服务商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "9E型燃气－蒸汽联合循环发电机组",
+        "evidence_span": "共有5套9E型燃气－蒸汽联合循环发电机组"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "储能系统在9E级机组“黑启动”领域应用",
+        "evidence_span": "填补了储能系统在9E级机组“黑启动”领域应用的国内空白"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高新技术企业",
+        "evidence_span": "被深圳市认定管理机构认定为2021年第二批高新技术企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "实用新型专利",
+        "evidence_span": "公司拥有多项自主实用新型专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "软件著作权",
+        "evidence_span": "公司拥有多项自主实用新型专利和软件著作权"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家标准起草",
+        "evidence_span": "联合起草编写国家标准1项"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深圳市虚拟电厂管理中心",
+        "evidence_span": "与深圳市虚拟电厂管理中心签订《虚拟电厂建设合作协议》"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源产业",
+        "evidence_span": "明确聚焦新能源产业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能产业",
+        "evidence_span": "为鼓励储能产业发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双碳",
+        "evidence_span": "为国家“双碳”建设提供了有力支持"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:47:37"
+}

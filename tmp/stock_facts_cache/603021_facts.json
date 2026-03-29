@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "玻璃器皿产品",
+      "evidence_span": "主营业务为研发、生产和销售玻璃器皿产品和玻璃瓶罐"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "玻璃瓶罐",
+      "evidence_span": "主营业务为研发、生产和销售玻璃器皿产品和玻璃瓶罐"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "日用玻璃行业龙头企业",
+      "evidence_span": "国内日用玻璃行业的龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃高脚杯",
+      "evidence_span": "玻璃器皿产品主要以玻璃高脚杯为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无铅水晶玻璃高脚杯",
+      "evidence_span": "无铅水晶玻璃高脚杯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "封焊拉伸高档玻璃高脚杯",
+      "evidence_span": "封焊拉伸高档玻璃高脚杯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酒水饮料瓶",
+      "evidence_span": "酒水饮料瓶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "食品调味品瓶",
+      "evidence_span": "食品调味品瓶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药包装瓶",
+      "evidence_span": "医药包装瓶"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "二次成型工艺",
+      "evidence_span": "采用二次成型工艺生产的无铅水晶玻璃高脚杯"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一次成型工艺",
+      "evidence_span": "采用一次成型工艺生产的玻璃高脚杯"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "瓶罐轻量化技术",
+      "evidence_span": "拥有国内领先的瓶罐轻量化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高档特型瓶制造技术",
+      "evidence_span": "高档特型瓶制造技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦德龙",
+      "evidence_span": "销售渠道包括麦德龙"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃尔玛",
+      "evidence_span": "沃尔玛"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家乐福",
+      "evidence_span": "家乐福"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "好又多",
+      "evidence_span": "好又多"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "张裕",
+      "evidence_span": "为张裕、王朝、长城、拉萨啤酒、石库门等知名企业所用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "王朝",
+      "evidence_span": "为张裕、王朝、长城、拉萨啤酒、石库门等知名企业所用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "为张裕、王朝、长城、拉萨啤酒、石库门等知名企业所用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "拉萨啤酒",
+      "evidence_span": "为张裕、王朝、长城、拉萨啤酒、石库门等知名企业所用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石库门",
+      "evidence_span": "为张裕、王朝、长城、拉萨啤酒、石库门等知名企业所用"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "玻璃器皿产品",
+        "evidence_span": "主营业务为研发、生产和销售玻璃器皿产品和玻璃瓶罐"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "玻璃瓶罐",
+        "evidence_span": "主营业务为研发、生产和销售玻璃器皿产品和玻璃瓶罐"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "日用玻璃行业龙头企业",
+        "evidence_span": "国内日用玻璃行业的龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃高脚杯",
+        "evidence_span": "玻璃器皿产品主要以玻璃高脚杯为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无铅水晶玻璃高脚杯",
+        "evidence_span": "无铅水晶玻璃高脚杯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "封焊拉伸高档玻璃高脚杯",
+        "evidence_span": "封焊拉伸高档玻璃高脚杯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酒水饮料瓶",
+        "evidence_span": "酒水饮料瓶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "食品调味品瓶",
+        "evidence_span": "食品调味品瓶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药包装瓶",
+        "evidence_span": "医药包装瓶"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "二次成型工艺",
+        "evidence_span": "采用二次成型工艺生产的无铅水晶玻璃高脚杯"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一次成型工艺",
+        "evidence_span": "采用一次成型工艺生产的玻璃高脚杯"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "瓶罐轻量化技术",
+        "evidence_span": "拥有国内领先的瓶罐轻量化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高档特型瓶制造技术",
+        "evidence_span": "高档特型瓶制造技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦德龙",
+        "evidence_span": "销售渠道包括麦德龙"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃尔玛",
+        "evidence_span": "沃尔玛"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家乐福",
+        "evidence_span": "家乐福"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "好又多",
+        "evidence_span": "好又多"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "张裕",
+        "evidence_span": "为张裕、王朝、长城、拉萨啤酒、石库门等知名企业所用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "王朝",
+        "evidence_span": "为张裕、王朝、长城、拉萨啤酒、石库门等知名企业所用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "为张裕、王朝、长城、拉萨啤酒、石库门等知名企业所用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "拉萨啤酒",
+        "evidence_span": "为张裕、王朝、长城、拉萨啤酒、石库门等知名企业所用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石库门",
+        "evidence_span": "为张裕、王朝、长城、拉萨啤酒、石库门等知名企业所用"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:59:47"
+}

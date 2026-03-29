@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:22:58", "result": {"span_uid": "d37a3365a510", "action": "rewrite", "canonical_text": "英伟达是HBM市场的最大买家，其采购比重预计将超过70%。", "final_type": "signal", "final_role": "主要买家及采购比重", "stability": "medium", "reason": "原文包含具体时间点和产品名称，改写后去除了事件化信息，保留了稳定的市场角色和趋势信息，可作为景气信号。"}}

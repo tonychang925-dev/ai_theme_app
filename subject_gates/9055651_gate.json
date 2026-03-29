@@ -1,0 +1,73 @@
+{
+  "must": [
+    "云计算基础设施服务",
+    "企业IT解决方案",
+    "汽车",
+    "智能光伏",
+    "数据中心能源及关键供电",
+    "联接产业"
+  ],
+  "should": [
+    "云主机",
+    "云存储",
+    "超算",
+    "内容分发",
+    "金融",
+    "医疗",
+    "站点能源",
+    "智能电动",
+    "智能充电网络",
+    "嵌入式电源",
+    "数字能源管理平台",
+    "AI SSD"
+  ],
+  "not": [
+    "新品发布会",
+    "余承东",
+    "鸿蒙5.0"
+  ],
+  "evidence_refs": [
+    {
+      "term": "云计算基础设施服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "云计算基础设施服务"
+    },
+    {
+      "term": "企业IT解决方案",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "企业IT解决方案"
+    },
+    {
+      "term": "汽车",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "汽车"
+    },
+    {
+      "term": "智能光伏",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "智能光伏"
+    },
+    {
+      "term": "数据中心能源及关键供电",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "数据中心能源及关键供电"
+    },
+    {
+      "term": "联接产业",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "联接产业"
+    }
+  ],
+  "subject_id": "9055651",
+  "quality": "medium",
+  "generated_at": "2026-03-10T19:35:09",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

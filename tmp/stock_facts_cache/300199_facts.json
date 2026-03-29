@@ -1,0 +1,459 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "特色原料药",
+      "evidence_span": "主营产品包括特色原料药"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "注射剂",
+      "evidence_span": "主营产品包括特色原料药、注射剂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "客户定制肽",
+      "evidence_span": "主营产品包括特色原料药、注射剂、客户定制肽"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "固体制剂",
+      "evidence_span": "主营产品包括特色原料药、注射剂、客户定制肽、固体制剂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "药品组合包装类产品",
+      "evidence_span": "主营产品包括特色原料药、注射剂、客户定制肽、固体制剂、药品组合包装类产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗器械产品",
+      "evidence_span": "主营产品包括特色原料药、注射剂、客户定制肽、固体制剂、药品组合包装类产品和医疗器械产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "多肽药物龙头企业",
+      "evidence_span": "国内多肽药物龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级高新技术企业",
+      "evidence_span": "公司是一家专业从事多肽药物研发、生产和销售的国家级高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "多肽特色原料药供应商",
+      "evidence_span": "公司作为多肽制药产业链上一个重要的多肽特色原料药供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "注射用生长抑素",
+      "evidence_span": "注射用生长抑素主要适用于急性食道静脉曲张出血"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "注射用特利加压素",
+      "evidence_span": "注射用特利加压素临床上主要用于食管静脉曲张出血"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "醋酸去氨加压素注射液",
+      "evidence_span": "醋酸去氨加压素注射液广泛应用于预防及控制出血"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "注射用醋酸西曲瑞克",
+      "evidence_span": "注射用醋酸西曲瑞克应用于辅助生育技术中"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "缩宫素注射液",
+      "evidence_span": "缩宫素注射液用于引产、催产、产后及流产后因宫缩乏力或缩复不良而引起的子宫出血"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "依替巴肽注射液",
+      "evidence_span": "依替巴肽注射液用于急性冠状动脉综合征"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡贝缩宫素注射液",
+      "evidence_span": "卡贝缩宫素注射液用于选择性硬膜外或腰麻下剖腹产术后"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "醋酸阿托西班注射液",
+      "evidence_span": "醋酸阿托西班注射液适用于有早产指征的妊娠妇女"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "利拉鲁肽原料药",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "格拉替雷原料药",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阿托西班原料药",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特利加压素原料药",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加尼瑞克原料药",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "去氨加压素原料药",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "亮丙瑞林原料药",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "奥曲肽原料药",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "利拉鲁肽注射液",
+      "evidence_span": "利拉鲁肽注射液获得境内生产药品注册上市许可《受理通知书》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "西格列汀二甲双胍片（Ⅱ）",
+      "evidence_span": "西格列汀二甲双胍片（Ⅱ）按化药4类获批上市并视同通过一致性评价"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维格列汀片",
+      "evidence_span": "维格列汀片按化药4类获批上市并视同通过一致性评价"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "醋酸奥曲肽注射液",
+      "evidence_span": "醋酸奥曲肽注射液按化药4类获批上市并视同通过一致性评价"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特利加压素注射液",
+      "evidence_span": "特利加压素注射液按化药3类获批上市并视同通过一致性评价"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HY3000鼻喷雾剂",
+      "evidence_span": "HY3000鼻喷雾剂在2022年8月取得国家药监局签发的《药物临床试验批准通知书》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HY3001多肽疫苗",
+      "evidence_span": "HY3001多肽疫苗处于临床前研究阶段"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HY3002抗原检测试剂盒",
+      "evidence_span": "HY3002抗原检测试剂盒已向国家药监局器审中心提交境内体外诊断试剂注册申请"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多肽规模化生产核心技术",
+      "evidence_span": "掌握了一系列降低生产成本、提高生产效率、提高产品质量的专有多肽规模化生产核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新型多肽药物开发相关技术",
+      "evidence_span": "掌握了一系列降低生产成本、提高生产效率、提高产品质量的专有多肽规模化生产核心技术以及具有领先优势的新型多肽药物开发相关技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多种剂型的制剂技术平台",
+      "evidence_span": "建立了多种剂型的制剂技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多肽药物产业化体系",
+      "evidence_span": "具有完整、高效的多肽药物产业化体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全自动多肽合成系统",
+      "evidence_span": "公司拥有目前国际上先进的全自动多肽合成系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全自动纯化系统",
+      "evidence_span": "公司拥有目前国际上先进的全自动多肽合成系统、全自动纯化系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品长期销往美国"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧洲",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品长期销往美国、欧洲"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品长期销往美国、欧洲、日本"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品长期销往美国、欧洲、日本、韩国"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "印度",
+      "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品长期销往美国、欧洲、日本、韩国、印度"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "全球多肽药物专利到期",
+      "evidence_span": "受益全球多肽药物专利到期"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "特色原料药",
+        "evidence_span": "主营产品包括特色原料药"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "注射剂",
+        "evidence_span": "主营产品包括特色原料药、注射剂"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "客户定制肽",
+        "evidence_span": "主营产品包括特色原料药、注射剂、客户定制肽"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "固体制剂",
+        "evidence_span": "主营产品包括特色原料药、注射剂、客户定制肽、固体制剂"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "药品组合包装类产品",
+        "evidence_span": "主营产品包括特色原料药、注射剂、客户定制肽、固体制剂、药品组合包装类产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗器械产品",
+        "evidence_span": "主营产品包括特色原料药、注射剂、客户定制肽、固体制剂、药品组合包装类产品和医疗器械产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "多肽药物龙头企业",
+        "evidence_span": "国内多肽药物龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级高新技术企业",
+        "evidence_span": "公司是一家专业从事多肽药物研发、生产和销售的国家级高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "多肽特色原料药供应商",
+        "evidence_span": "公司作为多肽制药产业链上一个重要的多肽特色原料药供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "注射用生长抑素",
+        "evidence_span": "注射用生长抑素主要适用于急性食道静脉曲张出血"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "注射用特利加压素",
+        "evidence_span": "注射用特利加压素临床上主要用于食管静脉曲张出血"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "醋酸去氨加压素注射液",
+        "evidence_span": "醋酸去氨加压素注射液广泛应用于预防及控制出血"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "注射用醋酸西曲瑞克",
+        "evidence_span": "注射用醋酸西曲瑞克应用于辅助生育技术中"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "缩宫素注射液",
+        "evidence_span": "缩宫素注射液用于引产、催产、产后及流产后因宫缩乏力或缩复不良而引起的子宫出血"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "依替巴肽注射液",
+        "evidence_span": "依替巴肽注射液用于急性冠状动脉综合征"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡贝缩宫素注射液",
+        "evidence_span": "卡贝缩宫素注射液用于选择性硬膜外或腰麻下剖腹产术后"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "醋酸阿托西班注射液",
+        "evidence_span": "醋酸阿托西班注射液适用于有早产指征的妊娠妇女"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "利拉鲁肽原料药",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "格拉替雷原料药",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阿托西班原料药",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特利加压素原料药",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加尼瑞克原料药",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "去氨加压素原料药",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "亮丙瑞林原料药",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "奥曲肽原料药",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "利拉鲁肽注射液",
+        "evidence_span": "利拉鲁肽注射液获得境内生产药品注册上市许可《受理通知书》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "西格列汀二甲双胍片（Ⅱ）",
+        "evidence_span": "西格列汀二甲双胍片（Ⅱ）按化药4类获批上市并视同通过一致性评价"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维格列汀片",
+        "evidence_span": "维格列汀片按化药4类获批上市并视同通过一致性评价"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "醋酸奥曲肽注射液",
+        "evidence_span": "醋酸奥曲肽注射液按化药4类获批上市并视同通过一致性评价"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特利加压素注射液",
+        "evidence_span": "特利加压素注射液按化药3类获批上市并视同通过一致性评价"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HY3000鼻喷雾剂",
+        "evidence_span": "HY3000鼻喷雾剂在2022年8月取得国家药监局签发的《药物临床试验批准通知书》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HY3001多肽疫苗",
+        "evidence_span": "HY3001多肽疫苗处于临床前研究阶段"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HY3002抗原检测试剂盒",
+        "evidence_span": "HY3002抗原检测试剂盒已向国家药监局器审中心提交境内体外诊断试剂注册申请"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多肽规模化生产核心技术",
+        "evidence_span": "掌握了一系列降低生产成本、提高生产效率、提高产品质量的专有多肽规模化生产核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新型多肽药物开发相关技术",
+        "evidence_span": "掌握了一系列降低生产成本、提高生产效率、提高产品质量的专有多肽规模化生产核心技术以及具有领先优势的新型多肽药物开发相关技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多种剂型的制剂技术平台",
+        "evidence_span": "建立了多种剂型的制剂技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多肽药物产业化体系",
+        "evidence_span": "具有完整、高效的多肽药物产业化体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全自动多肽合成系统",
+        "evidence_span": "公司拥有目前国际上先进的全自动多肽合成系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全自动纯化系统",
+        "evidence_span": "公司拥有目前国际上先进的全自动多肽合成系统、全自动纯化系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品长期销往美国"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧洲",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品长期销往美国、欧洲"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品长期销往美国、欧洲、日本"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品长期销往美国、欧洲、日本、韩国"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "印度",
+        "evidence_span": "利拉鲁肽、格拉替雷、阿托西班、特利加压素、加尼瑞克、去氨加压素、亮丙瑞林、奥曲肽等原料药产品长期销往美国、欧洲、日本、韩国、印度"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "全球多肽药物专利到期",
+        "evidence_span": "受益全球多肽药物专利到期"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:09:10"
+}

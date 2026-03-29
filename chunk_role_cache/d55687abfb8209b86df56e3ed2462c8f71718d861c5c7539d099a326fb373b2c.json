@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "55d6572bfef5", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述西门子收到美国取消芯片软件限制通知的事件，但包含EDA软件作为半导体设备关键组成部分的静态知识，可能对题材本体构建有价值，但混合了事件信息。"}}

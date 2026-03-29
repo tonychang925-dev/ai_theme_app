@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "0b5a528e34c4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含静态知识（成熟制程对光刻胶的要求中等，国产厂商机遇），但基于预测和事件性描述（2023-2027年产能增长），混合了动态信息，适合作为知识候选。"}}

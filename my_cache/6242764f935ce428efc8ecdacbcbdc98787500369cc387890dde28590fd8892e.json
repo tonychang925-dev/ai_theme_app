@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:00:49", "result": {"chunk_id": "f8d385f690d6", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述小米汽车在特定月份（2025年7月）的交付量数据，属于具体事件或业绩发布，没有提供关于题材本体的静态知识。"}}

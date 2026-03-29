@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "48e948c02016", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "包含高盛分析师对HBM市场规模增长的预测，提供静态知识（市场规模趋势），但基于具体报告和日期，带有事件性元素。"}}

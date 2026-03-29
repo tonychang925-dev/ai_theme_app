@@ -1,0 +1,324 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "AI芯片设计",
+      "evidence_span": "寒武纪是国内稀缺的 A1芯片设计公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "云端智能芯片",
+      "evidence_span": "云端产品线方面，主要为云端智能芯片及加速卡和训练整机"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "加速卡",
+      "evidence_span": "云端产品线方面，主要为云端智能芯片及加速卡和训练整机"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "训练整机",
+      "evidence_span": "云端产品线方面，主要为云端智能芯片及加速卡和训练整机"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "边缘智能芯片",
+      "evidence_span": "边缘产品线指边缘智能芯片及加速卡"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "终端智能处理器IP",
+      "evidence_span": "IP 授权及软件主要包含终端智能处理器 IP 和基础系统软件平台"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基础系统软件平台",
+      "evidence_span": "IP 授权及软件主要包含终端智能处理器 IP 和基础系统软件平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "AI芯片设计公司",
+      "evidence_span": "寒武纪是国内稀缺的 A1芯片设计公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "AI芯片龙头企业",
+      "evidence_span": "云、边、端全面布局的AI芯片龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球AI芯片设计领域先行者",
+      "evidence_span": "寒武纪全球AI芯片设计领域先行者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "AI芯片国产先锋",
+      "evidence_span": "AI芯片国产先锋"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "思元系列芯片",
+      "evidence_span": "推出的产品包括但不限于思元 100、220、270、290 和 370 芯片等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云端智能芯片及加速卡",
+      "evidence_span": "云端产品线方面，主要为云端智能芯片及加速卡和训练整机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "训练整机",
+      "evidence_span": "云端产品线方面，主要为云端智能芯片及加速卡和训练整机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "边缘智能芯片及加速卡",
+      "evidence_span": "边缘产品线指边缘智能芯片及加速卡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "终端智能处理器IP",
+      "evidence_span": "IP 授权及软件主要包含终端智能处理器 IP 和基础系统软件平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基础系统软件平台Cambricon Neuware",
+      "evidence_span": "基础系统软件平台方面公司主要提供统一的平台级基础系统软件Cambricon Neuware"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玄思1000智能加速器整机",
+      "evidence_span": "玄思 1000 智能加速器整机在 2U 机箱内集成了 4 颗思元 290 智能芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玄思1001智能加速器整机",
+      "evidence_span": "2022 年发布的玄思 1001 智能加速器在 2U机箱内集成4张 MLU370-M8 智能加速卡"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Chiplet技术",
+      "evidence_span": "公司首款采用 Chiplet(芯粒)技术的人工智能芯片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "推训一体",
+      "evidence_span": "公司发布了“推训一体”的思元 370"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MLU-Link互联接口",
+      "evidence_span": "MLU-Link 互联接口，实现智能算力在数据中心纵向扩展"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "服务器厂商",
+      "evidence_span": "产品广泛应用于服务器厂商和产业公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "产业公司",
+      "evidence_span": "产品广泛应用于服务器厂商和产业公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "互联网",
+      "evidence_span": "面向互联网、金融、交通、能源、电力和制造等领域的复杂 AI 应用场景"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融",
+      "evidence_span": "面向互联网、金融、交通、能源、电力和制造等领域的复杂 AI 应用场景"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交通",
+      "evidence_span": "面向互联网、金融、交通、能源、电力和制造等领域的复杂 AI 应用场景"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "能源",
+      "evidence_span": "面向互联网、金融、交通、能源、电力和制造等领域的复杂 AI 应用场景"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电力",
+      "evidence_span": "面向互联网、金融、交通、能源、电力和制造等领域的复杂 AI 应用场景"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "制造",
+      "evidence_span": "面向互联网、金融、交通、能源、电力和制造等领域的复杂 AI 应用场景"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "AI芯片国产化",
+      "evidence_span": "AI芯片国产先锋"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "本土芯片供应商(如华为海思、寒武纪等)在国有 AI 芯片政策支持下"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "AI芯片设计",
+        "evidence_span": "寒武纪是国内稀缺的 A1芯片设计公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "云端智能芯片及加速卡",
+        "evidence_span": "云端产品线方面，主要为云端智能芯片及加速卡和训练整机"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "训练整机",
+        "evidence_span": "云端产品线方面，主要为云端智能芯片及加速卡和训练整机"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "边缘智能芯片及加速卡",
+        "evidence_span": "边缘产品线指边缘智能芯片及加速卡"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "终端智能处理器IP",
+        "evidence_span": "IP 授权及软件主要包含终端智能处理器 IP 和基础系统软件平台"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基础系统软件平台",
+        "evidence_span": "IP 授权及软件主要包含终端智能处理器 IP 和基础系统软件平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "AI芯片设计公司",
+        "evidence_span": "寒武纪是国内稀缺的 A1芯片设计公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "AI芯片龙头企业",
+        "evidence_span": "云、边、端全面布局的AI芯片龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球AI芯片设计领域先行者",
+        "evidence_span": "寒武纪全球AI芯片设计领域先行者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "AI芯片国产先锋",
+        "evidence_span": "AI芯片国产先锋"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "思元系列芯片",
+        "evidence_span": "推出的产品包括但不限于思元 100、220、270、290 和 370 芯片等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云端智能芯片及加速卡",
+        "evidence_span": "云端产品线方面，主要为云端智能芯片及加速卡和训练整机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "训练整机",
+        "evidence_span": "云端产品线方面，主要为云端智能芯片及加速卡和训练整机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "边缘智能芯片及加速卡",
+        "evidence_span": "边缘产品线指边缘智能芯片及加速卡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "终端智能处理器IP",
+        "evidence_span": "IP 授权及软件主要包含终端智能处理器 IP 和基础系统软件平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基础系统软件平台Cambricon Neuware",
+        "evidence_span": "基础系统软件平台方面公司主要提供统一的平台级基础系统软件Cambricon Neuware"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玄思1000智能加速器整机",
+        "evidence_span": "玄思 1000 智能加速器整机在 2U 机箱内集成了 4 颗思元 290 智能芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玄思1001智能加速器整机",
+        "evidence_span": "2022 年发布的玄思 1001 智能加速器在 2U机箱内集成4张 MLU370-M8 智能加速卡"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Chiplet技术",
+        "evidence_span": "公司首款采用 Chiplet(芯粒)技术的人工智能芯片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "推训一体",
+        "evidence_span": "公司发布了“推训一体”的思元 370"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MLU-Link互联接口",
+        "evidence_span": "MLU-Link 互联接口，实现智能算力在数据中心纵向扩展"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "服务器厂商",
+        "evidence_span": "产品广泛应用于服务器厂商和产业公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "产业公司",
+        "evidence_span": "产品广泛应用于服务器厂商和产业公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "互联网",
+        "evidence_span": "面向互联网、金融、交通、能源、电力和制造等领域的复杂 AI 应用场景"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融",
+        "evidence_span": "面向互联网、金融、交通、能源、电力和制造等领域的复杂 AI 应用场景"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交通",
+        "evidence_span": "面向互联网、金融、交通、能源、电力和制造等领域的复杂 AI 应用场景"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "能源",
+        "evidence_span": "面向互联网、金融、交通、能源、电力和制造等领域的复杂 AI 应用场景"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电力",
+        "evidence_span": "面向互联网、金融、交通、能源、电力和制造等领域的复杂 AI 应用场景"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "制造",
+        "evidence_span": "面向互联网、金融、交通、能源、电力和制造等领域的复杂 AI 应用场景"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "AI芯片国产化",
+        "evidence_span": "AI芯片国产先锋"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "本土芯片供应商(如华为海思、寒武纪等)在国有 AI 芯片政策支持下"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:43:18"
+}

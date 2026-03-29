@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "274c3332061e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落基于美国出口管制事件，但详细列举了受影响的半导体设备公司（如北方华创、拓荆科技等）和涉及的设备领域（涂胶显影、刻蚀、薄膜沉积、清洗、去胶、离子注入、CMP、封装测试），这些是静态产业链知识，混合了事件信息。"}}

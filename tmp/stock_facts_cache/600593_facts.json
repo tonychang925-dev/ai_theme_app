@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "景区经营",
+      "evidence_span": "公司主要产品或服务为景区经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业运营",
+      "evidence_span": "公司主要产品或服务为...商业运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "会展服务",
+      "evidence_span": "公司主要产品或服务为...会展服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "动物经营",
+      "evidence_span": "公司主要产品或服务为...动物经营"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海洋馆上市公司",
+      "evidence_span": "作为唯一经营海洋馆的A股上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圣亚海洋世界",
+      "evidence_span": "包括圣亚海洋世界"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圣亚极地世界",
+      "evidence_span": "圣亚极地世界"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圣亚珊瑚世界",
+      "evidence_span": "圣亚珊瑚世界"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银河星海",
+      "evidence_span": "银河星海"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "厉害塔",
+      "evidence_span": "厉害塔"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "哈尔滨极地公园海洋馆",
+      "evidence_span": "哈尔滨极地公园海洋馆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "哈尔滨极地公园极地馆",
+      "evidence_span": "哈尔滨极地公园极地馆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "哈尔滨极地公园恐龙馆",
+      "evidence_span": "哈尔滨极地公园恐龙馆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海洋花灯节",
+      "evidence_span": "推出“海洋花灯节”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "企福神店",
+      "evidence_span": "“企福神店”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新春AR烟花秀",
+      "evidence_span": "“新春AR烟花秀”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞鸟乐园",
+      "evidence_span": "新增飞鸟乐园"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "萌宠乐园",
+      "evidence_span": "萌宠乐园"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银河星海企鹅舱",
+      "evidence_span": "银河星海企鹅舱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海洋文化特色课程体系",
+      "evidence_span": "研发设计海洋文化特色课程体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "探班斑海豹产房",
+      "evidence_span": "开展“探班斑海豹产房”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圣亚夜宿营",
+      "evidence_span": "“圣亚夜宿营”系列科普研学活动"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大连蓝色海洋文化博物馆",
+      "evidence_span": "创建“大连蓝色海洋文化博物馆”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海上游大连",
+      "evidence_span": "“海上游大连”等研学产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "极地白鲸水下表演",
+      "evidence_span": "首推极地白鲸水下表演"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "四鲸秀",
+      "evidence_span": "上演世界首创的全新白鲸秀—“四鲸秀”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海洋杂物社",
+      "evidence_span": "落成海洋特色文创产品聚集地“海洋杂物社”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圣亚咖啡文化节",
+      "evidence_span": "举办圣亚咖啡文化节"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "创意市集",
+      "evidence_span": "创意市集等特色活动"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抖音直播业务",
+      "evidence_span": "开拓抖音直播业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圣亚海岸城",
+      "evidence_span": "将营口项目名称由大白鲸世界海岸城变更为圣亚海岸城"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镇江大白鲸项目",
+      "evidence_span": "积极推进镇江项目复工复产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海洋动物繁育技术",
+      "evidence_span": "不断攻克海洋、极地动物繁育技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "斑海豹繁育技术",
+      "evidence_span": "成功繁育国家一级保护动物斑海豹9只"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海洋鱼类繁育技术",
+      "evidence_span": "海洋鱼类繁育技术取得新突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燕子鳐繁育技术",
+      "evidence_span": "燕子鳐首次繁育成功"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "北极狼克隆研究",
+      "evidence_span": "北极狼克隆研究取得重大成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "企鹅饲养繁育技术",
+      "evidence_span": "在企鹅饲养繁育领域，公司被授予国内唯一的“国家级南极企鹅种源繁育基地”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "斑海豹救助和放归技术",
+      "evidence_span": "制定了...《斑海豹救助和放归技术规程》等系列标准和技术规程"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "旅游+亲子",
+      "evidence_span": "畅享“旅游+亲子”市场红利"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海洋主题生态链",
+      "evidence_span": "大白鲸布局海洋主题生态链"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "IP生态",
+      "evidence_span": "大连圣亚大白鲸计划打造IP生态"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "景区经营",
+        "evidence_span": "公司主要产品或服务为景区经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业运营",
+        "evidence_span": "公司主要产品或服务为...商业运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "会展服务",
+        "evidence_span": "公司主要产品或服务为...会展服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "动物经营",
+        "evidence_span": "公司主要产品或服务为...动物经营"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海洋馆上市公司",
+        "evidence_span": "作为唯一经营海洋馆的A股上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圣亚海洋世界",
+        "evidence_span": "包括圣亚海洋世界"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圣亚极地世界",
+        "evidence_span": "圣亚极地世界"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圣亚珊瑚世界",
+        "evidence_span": "圣亚珊瑚世界"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银河星海",
+        "evidence_span": "银河星海"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "厉害塔",
+        "evidence_span": "厉害塔"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "哈尔滨极地公园海洋馆",
+        "evidence_span": "哈尔滨极地公园海洋馆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "哈尔滨极地公园极地馆",
+        "evidence_span": "哈尔滨极地公园极地馆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "哈尔滨极地公园恐龙馆",
+        "evidence_span": "哈尔滨极地公园恐龙馆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海洋花灯节",
+        "evidence_span": "推出“海洋花灯节”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "企福神店",
+        "evidence_span": "“企福神店”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新春AR烟花秀",
+        "evidence_span": "“新春AR烟花秀”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞鸟乐园",
+        "evidence_span": "新增飞鸟乐园"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "萌宠乐园",
+        "evidence_span": "萌宠乐园"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银河星海企鹅舱",
+        "evidence_span": "银河星海企鹅舱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海洋文化特色课程体系",
+        "evidence_span": "研发设计海洋文化特色课程体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "探班斑海豹产房",
+        "evidence_span": "开展“探班斑海豹产房”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圣亚夜宿营",
+        "evidence_span": "“圣亚夜宿营”系列科普研学活动"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大连蓝色海洋文化博物馆",
+        "evidence_span": "创建“大连蓝色海洋文化博物馆”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海上游大连",
+        "evidence_span": "“海上游大连”等研学产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "极地白鲸水下表演",
+        "evidence_span": "首推极地白鲸水下表演"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "四鲸秀",
+        "evidence_span": "上演世界首创的全新白鲸秀—“四鲸秀”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海洋杂物社",
+        "evidence_span": "落成海洋特色文创产品聚集地“海洋杂物社”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圣亚咖啡文化节",
+        "evidence_span": "举办圣亚咖啡文化节"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "创意市集",
+        "evidence_span": "创意市集等特色活动"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抖音直播业务",
+        "evidence_span": "开拓抖音直播业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圣亚海岸城",
+        "evidence_span": "将营口项目名称由大白鲸世界海岸城变更为圣亚海岸城"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镇江大白鲸项目",
+        "evidence_span": "积极推进镇江项目复工复产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海洋动物繁育技术",
+        "evidence_span": "不断攻克海洋、极地动物繁育技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "斑海豹繁育技术",
+        "evidence_span": "成功繁育国家一级保护动物斑海豹9只"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海洋鱼类繁育技术",
+        "evidence_span": "海洋鱼类繁育技术取得新突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燕子鳐繁育技术",
+        "evidence_span": "燕子鳐首次繁育成功"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "北极狼克隆研究",
+        "evidence_span": "北极狼克隆研究取得重大成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "企鹅饲养繁育技术",
+        "evidence_span": "在企鹅饲养繁育领域，公司被授予国内唯一的“国家级南极企鹅种源繁育基地”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "斑海豹救助和放归技术",
+        "evidence_span": "制定了...《斑海豹救助和放归技术规程》等系列标准和技术规程"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "旅游+亲子",
+        "evidence_span": "畅享“旅游+亲子”市场红利"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海洋主题生态链",
+        "evidence_span": "大白鲸布局海洋主题生态链"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "IP生态",
+        "evidence_span": "大连圣亚大白鲸计划打造IP生态"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:43:44"
+}

@@ -4,6 +4,7 @@ Theme Service - 独立服务，提供主题发现功能
 支持聚类分析功能，不依赖候选池（由外部服务管理）
 """
 import asyncio
+import json
 import logging
 from datetime import datetime
 from typing import Dict, List, Any, Optional, Callable
@@ -136,7 +137,7 @@ class ThemeService:
             return False
         
     
-    async def initialize_with_categories_only(self, categories: List[Dict]) -> bool:
+    async def _initialize_with_categories_only_legacy(self, categories: List[Dict]) -> bool:
         """分类优先模式初始化"""
         logger.info("🔄 ThemeService分类优先初始化")
         
@@ -222,7 +223,7 @@ class ThemeService:
         except Exception as e:
             logger.error(f"❌ ThemeService数据驱动初始化异常: {e}")
             import traceback
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return False
     
     async def discover_theme(self, event_data: Dict, **kwargs) -> Dict[str, Any]:
@@ -351,7 +352,7 @@ class ThemeService:
             
         except Exception as e:
             logger.error(f"❌ 主题发现失败: {e}")
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return self._create_error_response(str(e), operation)
     
     async def discover_and_create_theme(self, event_data: Dict, **kwargs) -> Dict[str, Any]:
@@ -515,7 +516,7 @@ class ThemeService:
             
         except Exception as e:
             logger.error(f"❌ 发现并创建主题失败: {e}")
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return self._create_error_response(str(e), operation)
     
     async def trigger_clustering_analysis(self, unmatched_pool: List, 
@@ -597,7 +598,7 @@ class ThemeService:
             
         except Exception as e:
             logger.error(f"❌ 聚类分析失败: {e}")
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return self._create_error_response(str(e), operation)
     
     async def batch_discover_themes(self, events_data: List[Dict], **kwargs) -> Dict[str, Any]:
@@ -861,7 +862,7 @@ class ThemeService:
             
         except Exception as e:
             logger.error(f"❌ 自动创建失败: {e}")
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return self._create_error_response(str(e), operation)
     
     def _get_mock_themes(self) -> List[Dict]:
@@ -1050,11 +1051,11 @@ class ThemeService:
             
         except Exception as e:
             logger.error(f"❌ ThemeService分类专用初始化失败: {e}")
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             self._initialized = False
             return False
 
-    async def discover_category_only(self, event_data: Dict) -> Dict:
+    async def _discover_category_only_legacy(self, event_data: Dict) -> Dict:
         """
         仅进行分类匹配（不匹配具体题材）
         返回分类推断结果，不返回具体题材
@@ -1449,7 +1450,7 @@ class ThemeService:
                         sorted_themes = sorted(themes_list, key=lambda x: x.confidence, reverse=True)
                         best_match = sorted_themes[0]
                         
-                        return {
+                        response = {
                             'status': 'success',
                             'operation': operation,
                             'matched': True,
@@ -1470,6 +1471,8 @@ class ThemeService:
                                 'all_matches_count': len(themes_list)
                             }
                         }
+                        guarded = self._apply_update_guardrails(event_data, themes, response)
+                        return guarded
                     else:
                         # 如果是字典格式
                         sorted_themes = sorted(themes_list, 
@@ -1477,7 +1480,7 @@ class ThemeService:
                                             reverse=True)
                         best_match = sorted_themes[0]
                         
-                        return {
+                        response = {
                             'status': 'success',
                             'operation': operation,
                             'matched': True,
@@ -1498,6 +1501,8 @@ class ThemeService:
                                 'all_matches_count': len(themes_list)
                             }
                         }
+                        guarded = self._apply_update_guardrails(event_data, themes, response)
+                        return guarded
             
             # 未匹配的情况
             return {
@@ -1520,8 +1525,141 @@ class ThemeService:
         except Exception as e:
             logger.error(f"❌ {operation} 失败: {e}")
             import traceback
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return self._create_error_response(str(e), operation)
+
+    def _apply_update_guardrails(self, event_data: Dict, themes: List[Dict], response: Dict[str, Any]) -> Dict[str, Any]:
+        """匹配后业务门禁：阻止纯语义误命中导致的错误update_theme。"""
+        try:
+            if not response.get('matched'):
+                return response
+
+            best_match = response.get('best_match') or {}
+            theme_id = str(best_match.get('theme_id', '') or '')
+            theme_name = str(best_match.get('theme_name', '') or '')
+            matched_keywords = best_match.get('matched_keywords') or []
+            if not isinstance(matched_keywords, list):
+                matched_keywords = []
+
+            event_keywords = self._collect_event_guard_keywords(event_data)
+            theme_keywords = self._extract_theme_guard_keywords(themes, theme_id, theme_name)
+            overlap = sorted(set(event_keywords) & set(theme_keywords))
+
+            ai = event_data.get('ai_analysis', {}) or {}
+            core_concept = str(ai.get('core_concept') or '').strip()
+            concept_hit = bool(core_concept and (core_concept in theme_name or theme_name in core_concept))
+
+            overlap_effective = set(overlap) | set(matched_keywords)
+            guard_passed = bool(overlap_effective) or concept_hit
+
+            response.setdefault('guardrail', {})
+            response['guardrail'].update({
+                'enabled': True,
+                'event_keywords': event_keywords[:20],
+                'theme_keywords': theme_keywords[:20],
+                'keyword_overlap': sorted(overlap_effective)[:20],
+                'keyword_overlap_count': len(overlap_effective),
+                'core_concept': core_concept,
+                'core_concept_name_hit': concept_hit,
+                'passed': guard_passed,
+            })
+
+            if not guard_passed:
+                logger.warning(
+                    "🚫 语义命中被门禁拒绝: event=%s best_theme=%s(%s) reason=no_keyword_overlap_or_concept_hit",
+                    event_data.get('event_id', 'unknown'),
+                    theme_name,
+                    theme_id,
+                )
+                return {
+                    'status': 'success',
+                    'operation': response.get('operation', 'discover_with_themes'),
+                    'matched': False,
+                    'theme_count': 0,
+                    'themes': [],
+                    'best_match': None,
+                    'confidence': 0.0,
+                    'algorithm_used': response.get('algorithm_used', 'guardrail_reject'),
+                    'reason': 'semantic_only_rejected_by_guardrail',
+                    'guardrail': response.get('guardrail', {}),
+                    'processing_info': response.get('processing_info', {}),
+                    'rejected_best_match': best_match,
+                }
+
+            return response
+        except Exception as e:
+            logger.error("应用匹配门禁失败，回退原匹配结果: %s", e)
+            return response
+
+    def _collect_event_guard_keywords(self, event_data: Dict) -> List[str]:
+        ai = event_data.get('ai_analysis', {}) or {}
+        keywords: List[str] = []
+
+        for key in ('industry_keywords', 'event_keywords'):
+            value = ai.get(key, [])
+            if isinstance(value, list):
+                keywords.extend([str(v).strip() for v in value if str(v).strip()])
+
+        core_concept = str(ai.get('core_concept') or '').strip()
+        if core_concept:
+            keywords.append(core_concept)
+
+        raw_keywords = event_data.get('keywords', [])
+        if isinstance(raw_keywords, list):
+            keywords.extend([str(v).strip() for v in raw_keywords if str(v).strip()])
+
+        title = str(event_data.get('title') or '').strip()
+        if title:
+            keywords.append(title)
+
+        dedup: List[str] = []
+        seen = set()
+        for kw in keywords:
+            if not kw or kw in seen:
+                continue
+            seen.add(kw)
+            dedup.append(kw)
+        return dedup
+
+    def _extract_theme_guard_keywords(self, themes: List[Dict], theme_id: str, theme_name: str) -> List[str]:
+        target = None
+        for t in themes:
+            if str(t.get('code', '')) == theme_id or str(t.get('id', '')) == theme_id:
+                target = t
+                break
+        if target is None:
+            for t in themes:
+                if str(t.get('name', '')) == theme_name:
+                    target = t
+                    break
+        if target is None:
+            return []
+
+        keywords: List[str] = []
+        tags = target.get('tags', {})
+        if isinstance(tags, str):
+            try:
+                tags = json.loads(tags)
+            except Exception:
+                tags = {}
+        if isinstance(tags, dict):
+            tag_keywords = tags.get('keywords', [])
+            if isinstance(tag_keywords, list):
+                keywords.extend([str(v).strip() for v in tag_keywords if str(v).strip()])
+
+        for k in ('name', 'level1_category', 'level2_category'):
+            val = str(target.get(k) or '').strip()
+            if val:
+                keywords.append(val)
+
+        dedup: List[str] = []
+        seen = set()
+        for kw in keywords:
+            if not kw or kw in seen:
+                continue
+            seen.add(kw)
+            dedup.append(kw)
+        return dedup
         
     def create_new_theme_by_rules(self, event_data: Dict) -> Optional[Dict]:
         """
@@ -1610,7 +1748,7 @@ class ThemeService:
         except Exception as e:
             logger.error(f"❌ ThemeService生成新题材数据失败: {e}")
             import traceback
-            traceback.print_exc()
+            logger.exception("Unhandled exception")
             return None
 
     def _determine_operations_from_category_info(self, category_info: Dict) -> List[str]:
@@ -1707,9 +1845,9 @@ def get_theme_service(enable_clustering: bool = False) -> ThemeService:
 
 if __name__ == "__main__":
     # 运行测试
-    print("选择测试模式:")
-    print("1. 基础功能测试")
-    print("2. 聚类分析测试")
+    logger.info("选择测试模式:")
+    logger.info("1. 基础功能测试")
+    logger.info("2. 聚类分析测试")
     choice = input("请输入选择 (1/2): ").strip()
     
     if choice == "2":

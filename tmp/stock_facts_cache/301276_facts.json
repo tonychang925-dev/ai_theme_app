@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "童装运营",
+      "evidence_span": "公司是一家中高端童装运营企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "童装研发设计",
+      "evidence_span": "业务涵盖童装的研发设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "品牌运营",
+      "evidence_span": "品牌运营与推广"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "推广",
+      "evidence_span": "品牌运营与推广"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "直营",
+      "evidence_span": "直营与加盟销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "加盟销售",
+      "evidence_span": "直营与加盟销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中高端童装运营企业",
+      "evidence_span": "公司是一家中高端童装运营企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "童装产品",
+      "evidence_span": "公司的主要产品包括自有品牌水孩儿和菲丝路汀、授权品牌暇步士和哈吉斯、国际零售代理品牌EMPORIO ARMANI、HUGO BOSS等的童装产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "男女儿童外套",
+      "evidence_span": "男女儿童外套（礼服、套装、羽绒服、风衣、夹克等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "上衣",
+      "evidence_span": "上衣（T恤、衬衣、马夹、背心、秋衣、毛衣等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "裤类",
+      "evidence_span": "裤类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "裙类",
+      "evidence_span": "裙类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内衣袜子",
+      "evidence_span": "内衣袜子等相关附属产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "唯品会",
+      "evidence_span": "已经在唯品会、天猫、抖音、京东等国内知名电商平台开设店铺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天猫",
+      "evidence_span": "已经在唯品会、天猫、抖音、京东等国内知名电商平台开设店铺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "抖音",
+      "evidence_span": "已经在唯品会、天猫、抖音、京东等国内知名电商平台开设店铺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东",
+      "evidence_span": "已经在唯品会、天猫、抖音、京东等国内知名电商平台开设店铺"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "童装运营",
+        "evidence_span": "公司是一家中高端童装运营企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "童装研发设计",
+        "evidence_span": "业务涵盖童装的研发设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "品牌运营与推广",
+        "evidence_span": "品牌运营与推广"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "直营与加盟销售",
+        "evidence_span": "直营与加盟销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中高端童装运营企业",
+        "evidence_span": "公司是一家中高端童装运营企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "童装产品",
+        "evidence_span": "公司的主要产品包括自有品牌水孩儿和菲丝路汀、授权品牌暇步士和哈吉斯、国际零售代理品牌EMPORIO ARMANI、HUGO BOSS等的童装产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "男女儿童外套",
+        "evidence_span": "男女儿童外套（礼服、套装、羽绒服、风衣、夹克等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "上衣",
+        "evidence_span": "上衣（T恤、衬衣、马夹、背心、秋衣、毛衣等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "裤类",
+        "evidence_span": "裤类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "裙类",
+        "evidence_span": "裙类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内衣袜子",
+        "evidence_span": "内衣袜子等相关附属产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "唯品会",
+        "evidence_span": "已经在唯品会、天猫、抖音、京东等国内知名电商平台开设店铺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天猫",
+        "evidence_span": "已经在唯品会、天猫、抖音、京东等国内知名电商平台开设店铺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "抖音",
+        "evidence_span": "已经在唯品会、天猫、抖音、京东等国内知名电商平台开设店铺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东",
+        "evidence_span": "已经在唯品会、天猫、抖音、京东等国内知名电商平台开设店铺"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:03:33"
+}

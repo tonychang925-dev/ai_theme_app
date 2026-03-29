@@ -1,0 +1,314 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "集中润滑系统",
+      "evidence_span": "公司主要从事集中润滑系统及核心零部件的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "润滑配件",
+      "evidence_span": "公司主营业务收入由集中润滑系统、润滑配件及其他、液压系统及配件、精密加工件组成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "液压系统",
+      "evidence_span": "公司主营业务收入由集中润滑系统、润滑配件及其他、液压系统及配件、精密加工件组成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "配件",
+      "evidence_span": "公司主营业务收入由集中润滑系统、润滑配件及其他、液压系统及配件、精密加工件组成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密加工件",
+      "evidence_span": "公司主营业务收入由集中润滑系统、润滑配件及其他、液压系统及配件、精密加工件组成"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集中润滑系统企业",
+      "evidence_span": "公司主要从事集中润滑系统及核心零部件的研发、生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集中润滑系统",
+      "evidence_span": "公司主要从事集中润滑系统及核心零部件的研发、生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "递进式润滑系统",
+      "evidence_span": "递进式润滑系统为公司主打产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单线系统",
+      "evidence_span": "递进系统和单线系统的平均销售价格出现一定下降"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "润滑配件",
+      "evidence_span": "润滑配件及其他收入包括润滑配件、润滑油脂及劳务收入三块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "润滑油脂",
+      "evidence_span": "润滑配件及其他收入包括润滑配件、润滑油脂及劳务收入三块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液压系统及配件",
+      "evidence_span": "公司新增产品类别液压系统及配件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密加工件",
+      "evidence_span": "精密加工件主要系瑞恩机械和精益创伟所开展的润滑液压系统精密加工和销售业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产品结构设计",
+      "evidence_span": "在产品结构设计、精密加工制造和产品检测等生产环节积累了丰富的制造经验和工艺技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密加工制造",
+      "evidence_span": "在产品结构设计、精密加工制造和产品检测等生产环节积累了丰富的制造经验和工艺技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产品检测",
+      "evidence_span": "在产品结构设计、精密加工制造和产品检测等生产环节积累了丰富的制造经验和工艺技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "定制化生产",
+      "evidence_span": "可根据不同的客户需求进行个性化定制"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金风科技",
+      "evidence_span": "2014年通过了金风科技的集中润滑系统样机首装测试并于2015年开始为金风科技批量供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "远景能源",
+      "evidence_span": "2018年公司成为远景能源的风机集中润滑系统战略供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海电气",
+      "evidence_span": "同时向上海电气、东方电气进行小批量供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东方电气",
+      "evidence_span": "同时向上海电气、东方电气进行小批量供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "维斯塔斯",
+      "evidence_span": "2019年公司通过维斯塔斯等客户样机审核"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国海装",
+      "evidence_span": "对中国海装处于供应爬坡期"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三一重能",
+      "evidence_span": "公司新增实现对三一重能、中国海装、运达股份以及维斯塔斯的批量供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "运达股份",
+      "evidence_span": "公司新增实现对三一重能、中国海装、运达股份以及维斯塔斯的批量供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子",
+      "evidence_span": "目前主要面向金风科技、东方电气、上海电气、西门子等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通用电气",
+      "evidence_span": "公司与维斯塔斯、通用电气实现批量供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子歌美飒",
+      "evidence_span": "与西门子歌美飒、德国Nordex等海外风电客户也已进入产品导入期"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国Nordex",
+      "evidence_span": "与西门子歌美飒、德国Nordex等海外风电客户也已进入产品导入期"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "林肯工业",
+      "evidence_span": "主要外部客户为林肯工业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "零部件国产化",
+      "evidence_span": "得益于风电机组零部件国产化机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "集中润滑系统",
+        "evidence_span": "公司主要从事集中润滑系统及核心零部件的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "润滑配件",
+        "evidence_span": "公司主营业务收入由集中润滑系统、润滑配件及其他、液压系统及配件、精密加工件组成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "液压系统及配件",
+        "evidence_span": "公司主营业务收入由集中润滑系统、润滑配件及其他、液压系统及配件、精密加工件组成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密加工件",
+        "evidence_span": "公司主营业务收入由集中润滑系统、润滑配件及其他、液压系统及配件、精密加工件组成"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集中润滑系统企业",
+        "evidence_span": "公司主要从事集中润滑系统及核心零部件的研发、生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集中润滑系统",
+        "evidence_span": "公司主要从事集中润滑系统及核心零部件的研发、生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "递进式润滑系统",
+        "evidence_span": "递进式润滑系统为公司主打产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单线系统",
+        "evidence_span": "递进系统和单线系统的平均销售价格出现一定下降"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "润滑配件",
+        "evidence_span": "润滑配件及其他收入包括润滑配件、润滑油脂及劳务收入三块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "润滑油脂",
+        "evidence_span": "润滑配件及其他收入包括润滑配件、润滑油脂及劳务收入三块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液压系统及配件",
+        "evidence_span": "公司新增产品类别液压系统及配件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密加工件",
+        "evidence_span": "精密加工件主要系瑞恩机械和精益创伟所开展的润滑液压系统精密加工和销售业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产品结构设计",
+        "evidence_span": "在产品结构设计、精密加工制造和产品检测等生产环节积累了丰富的制造经验和工艺技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密加工制造",
+        "evidence_span": "在产品结构设计、精密加工制造和产品检测等生产环节积累了丰富的制造经验和工艺技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产品检测",
+        "evidence_span": "在产品结构设计、精密加工制造和产品检测等生产环节积累了丰富的制造经验和工艺技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "定制化生产",
+        "evidence_span": "可根据不同的客户需求进行个性化定制"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金风科技",
+        "evidence_span": "2014年通过了金风科技的集中润滑系统样机首装测试并于2015年开始为金风科技批量供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "远景能源",
+        "evidence_span": "2018年公司成为远景能源的风机集中润滑系统战略供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海电气",
+        "evidence_span": "同时向上海电气、东方电气进行小批量供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东方电气",
+        "evidence_span": "同时向上海电气、东方电气进行小批量供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "维斯塔斯",
+        "evidence_span": "2019年公司通过维斯塔斯等客户样机审核"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国海装",
+        "evidence_span": "对中国海装处于供应爬坡期"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三一重能",
+        "evidence_span": "公司新增实现对三一重能、中国海装、运达股份以及维斯塔斯的批量供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "运达股份",
+        "evidence_span": "公司新增实现对三一重能、中国海装、运达股份以及维斯塔斯的批量供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子",
+        "evidence_span": "目前主要面向金风科技、东方电气、上海电气、西门子等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通用电气",
+        "evidence_span": "公司与维斯塔斯、通用电气实现批量供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子歌美飒",
+        "evidence_span": "与西门子歌美飒、德国Nordex等海外风电客户也已进入产品导入期"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国Nordex",
+        "evidence_span": "与西门子歌美飒、德国Nordex等海外风电客户也已进入产品导入期"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "林肯工业",
+        "evidence_span": "主要外部客户为林肯工业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "零部件国产化",
+        "evidence_span": "得益于风电机组零部件国产化机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:38:57"
+}

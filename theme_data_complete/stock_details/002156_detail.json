@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 2737158738.69,
+    "changeCount": 1.15,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><strong>一、公司介绍</strong></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>通富微电是集成电路封装测试服务提供商，是中国集成电路封装测试的领军企业，为全球客户提供设计仿真和封装测试一站式服务。</strong></span>公司的产品、技术、服务全方位涵盖人工智能、高性能计算、大数据存储、显示驱动、5G 等网络通讯、信息终端、消费终端、物联网、汽车电子、工业控制等领域。</p><p><strong>二、委外封测行业竞争格局</strong></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/24/6013215d-19a8-412c-990a-dfd47b77dd8e.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><strong>三、公司封装业务布局</strong></p><p>公司提供齐全的封装类型,包含了框架类封装(SOT/SOP/QFN/DFN/LQFP/TO/IPM 等),基板类封装(WBBGA/WBLGA/FCBGA/FCCSP/FCLGA 等)和圆片类封装(Fan-inWLCSP/Fan-out WLCSP/Cu pillar bump/Solder bump/Gold bump 等)，以及 COG、COF和 SIP 等。同时公司为客户提供全方位的测试平台和工程服务，以支持模拟芯片、数模混合芯片、汽车电子、射频、高性能计算、基带芯片、存储、LCD 驱动芯片、SiP器件、功率模块和 AS1C 等多种产品的测试需求。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/24/ace64ff3-939e-447a-93c8-59aebbb5262c.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>从客户结构来看，公司和头部客户合作较为紧密。<span style=\"color: rgb(207, 19, 34);\"><strong>公司持续强化和 AMD的合作，公司是 AMD 最大的封测供应商，占其订单总数的80%以上。</strong></span>公司来自于第一大客户的收入节节攀升，2023 年达到 132 亿元，同比增长 13.97%。公司第一大客户收入占比也逐年提升，从 2018年的 42.97%提升至 2023 年的59.38%。</p>",
+    "firstLetter": "TFWD",
+    "high": 49.8,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 48.05,
+    "marketValue": 73618626201.12,
+    "name": "通富微电",
+    "pctChg": 2.37,
+    "price": 49.66,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 5,
+    "recent60Change": 33.1,
+    "recentChange": -4.61,
+    "remark": "集成电路封装测试服务提供商，深度绑定AMD",
+    "status": 1,
+    "stockId": "002156",
+    "stockLightspots": [
+      {
+        "bizKey": "36556",
+        "content": "国产封测领军企业，大客户赋能加速成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36556,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36557",
+        "content": "通富微电半导体封测领先企业，优质客户铺平未来发展之路",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36557,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36558",
+        "content": "通富微电处理器芯片稳增长，汽车电子战略布局待爆发",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36558,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36559",
+        "content": "通富微电收购AMD封测资产，剑指百亿营收",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36559,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36560",
+        "content": "通富微电先进封测领导厂商，充分受益AMD新品放量和封测市场增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36560,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36561",
+        "content": "通富微电值得关注的封装企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36561,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36562",
+        "content": "国内半导体封测巨头，受益优质客户及行业景气",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36562,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36563",
+        "content": "通富微电与AMD共成长，与中国芯共奋进",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36563,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36564",
+        "content": "高性能计算赋能未来成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36564,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36565",
+        "content": "通富微电专业化封测布局，AMD加持与合肥放量可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36565,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36566",
+        "content": "通富微电受益于行业回暖与大客户拉动，封测巨头迎发展良机",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36566,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36567",
+        "content": "通富微电进击的半导体封测龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36567,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36568",
+        "content": "通富微电整合并购谋定而后动，封测巨头乘势而为",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36568,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36569",
+        "content": "通富微电被低估的隐形封测巨头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36569,
+        "stockId": "002156",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36570",
+        "content": "通富微电公司深度报告-借助产业东风，有望实现跨越式发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36570,
+        "stockId": "002156",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:53",
+    "vol": 558158.09
+  }
+}

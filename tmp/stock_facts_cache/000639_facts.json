@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "食用植物油",
+      "evidence_span": "主要产品为食用植物油、运动营养品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运动营养品",
+      "evidence_span": "主要产品为食用植物油、运动营养品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "玉米胚芽油生产基地",
+      "evidence_span": "中国最大的玉米胚芽油生产基地"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "玉米油生产企业",
+      "evidence_span": "公司是国内领先的拥有全产业链控制条件的玉米油生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "运动营养及体重管理公司",
+      "evidence_span": "Iovate为全球最大的运动营养及体重管理公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鲜胚玉米胚芽油",
+      "evidence_span": "主产品为“西王”牌鲜胚玉米胚芽油及玉米胚芽油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玉米胚芽油",
+      "evidence_span": "主产品为“西王”牌鲜胚玉米胚芽油及玉米胚芽油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "菜籽油",
+      "evidence_span": "产品还涉及菜籽油、葵花籽油、花生油等多个健康油种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "葵花籽油",
+      "evidence_span": "产品还涉及菜籽油、葵花籽油、花生油等多个健康油种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "花生油",
+      "evidence_span": "产品还涉及菜籽油、葵花籽油、花生油等多个健康油种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保健玉米油",
+      "evidence_span": "西王健字号玉米油于2011年取得了国家食品药品监督管理局颁发的国产保健食品批准证书"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MuscleTech",
+      "evidence_span": "Iovate公司现有MuscleTech、Six Star、Hydroxycut、PurelyInspired等重点品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Six Star",
+      "evidence_span": "Iovate公司现有MuscleTech、Six Star、Hydroxycut、PurelyInspired等重点品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Hydroxycut",
+      "evidence_span": "Iovate公司现有MuscleTech、Six Star、Hydroxycut、PurelyInspired等重点品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PurelyInspired",
+      "evidence_span": "Iovate公司现有MuscleTech、Six Star、Hydroxycut、PurelyInspired等重点品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蛋白棒",
+      "evidence_span": "研发35g白金脆壳蛋白棒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肌酸产品",
+      "evidence_span": "高性能100g、400g肌酸产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蛋白粉",
+      "evidence_span": "推出NitroTech 8lbs装用于承接电商大促期间流量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "增肌粉",
+      "evidence_span": "联动高达IP推出联名5lbs蛋白粉＆7lbs增肌粉产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锌镁肌酸粉",
+      "evidence_span": "在锌镁肌酸粉基础上增加多规格纯肌酸粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "左旋肉碱液",
+      "evidence_span": "主要是左旋肉碱液为主不同规格及包装形式的产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电解质粉",
+      "evidence_span": "如电解质粉、骨胶原钙片和提升精力的植物甾醇片等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "骨胶原钙片",
+      "evidence_span": "如电解质粉、骨胶原钙片和提升精力的植物甾醇片等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "植物甾醇片",
+      "evidence_span": "如电解质粉、骨胶原钙片和提升精力的植物甾醇片等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "六重保鲜工艺",
+      "evidence_span": "自主研发的国家发明专利鲜胚玉米胚芽油“六重保鲜工艺”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "酶法脱胶新技术",
+      "evidence_span": "成功研发应用的酶法脱胶新技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "GNC",
+      "evidence_span": "通过专业渠道零售连锁店（GNC和维生素专柜）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Sportlife",
+      "evidence_span": "专业渠道批发分销商（Sportlife、DNA、Muscle Foods USA、EURpac）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "DNA",
+      "evidence_span": "专业渠道批发分销商（Sportlife、DNA、Muscle Foods USA、EURpac）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Muscle Foods USA",
+      "evidence_span": "专业渠道批发分销商（Sportlife、DNA、Muscle Foods USA、EURpac）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "EURpac",
+      "evidence_span": "专业渠道批发分销商（Sportlife、DNA、Muscle Foods USA、EURpac）"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "健康食品",
+      "evidence_span": "西王食品健康食品旗舰，边际改善再出发"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "运动营养",
+      "evidence_span": "西王食品收购海外领先保健品牌，跨入运动营养及体重管理市场"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "体重管理",
+      "evidence_span": "西王食品收购海外领先保健品牌，跨入运动营养及体重管理市场"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "食用植物油",
+        "evidence_span": "主要产品为食用植物油、运动营养品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "运动营养品",
+        "evidence_span": "主要产品为食用植物油、运动营养品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "玉米胚芽油生产基地",
+        "evidence_span": "中国最大的玉米胚芽油生产基地"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "玉米油生产企业",
+        "evidence_span": "公司是国内领先的拥有全产业链控制条件的玉米油生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "运动营养及体重管理公司",
+        "evidence_span": "Iovate为全球最大的运动营养及体重管理公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鲜胚玉米胚芽油",
+        "evidence_span": "主产品为“西王”牌鲜胚玉米胚芽油及玉米胚芽油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玉米胚芽油",
+        "evidence_span": "主产品为“西王”牌鲜胚玉米胚芽油及玉米胚芽油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "菜籽油",
+        "evidence_span": "产品还涉及菜籽油、葵花籽油、花生油等多个健康油种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "葵花籽油",
+        "evidence_span": "产品还涉及菜籽油、葵花籽油、花生油等多个健康油种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "花生油",
+        "evidence_span": "产品还涉及菜籽油、葵花籽油、花生油等多个健康油种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保健玉米油",
+        "evidence_span": "西王健字号玉米油于2011年取得了国家食品药品监督管理局颁发的国产保健食品批准证书"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MuscleTech",
+        "evidence_span": "Iovate公司现有MuscleTech、Six Star、Hydroxycut、PurelyInspired等重点品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Six Star",
+        "evidence_span": "Iovate公司现有MuscleTech、Six Star、Hydroxycut、PurelyInspired等重点品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Hydroxycut",
+        "evidence_span": "Iovate公司现有MuscleTech、Six Star、Hydroxycut、PurelyInspired等重点品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PurelyInspired",
+        "evidence_span": "Iovate公司现有MuscleTech、Six Star、Hydroxycut、PurelyInspired等重点品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蛋白棒",
+        "evidence_span": "研发35g白金脆壳蛋白棒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肌酸产品",
+        "evidence_span": "高性能100g、400g肌酸产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蛋白粉",
+        "evidence_span": "推出NitroTech 8lbs装用于承接电商大促期间流量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "增肌粉",
+        "evidence_span": "联动高达IP推出联名5lbs蛋白粉＆7lbs增肌粉产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锌镁肌酸粉",
+        "evidence_span": "在锌镁肌酸粉基础上增加多规格纯肌酸粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "左旋肉碱液",
+        "evidence_span": "主要是左旋肉碱液为主不同规格及包装形式的产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电解质粉",
+        "evidence_span": "如电解质粉、骨胶原钙片和提升精力的植物甾醇片等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "骨胶原钙片",
+        "evidence_span": "如电解质粉、骨胶原钙片和提升精力的植物甾醇片等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "植物甾醇片",
+        "evidence_span": "如电解质粉、骨胶原钙片和提升精力的植物甾醇片等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "六重保鲜工艺",
+        "evidence_span": "自主研发的国家发明专利鲜胚玉米胚芽油“六重保鲜工艺”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "酶法脱胶新技术",
+        "evidence_span": "成功研发应用的酶法脱胶新技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "GNC",
+        "evidence_span": "通过专业渠道零售连锁店（GNC和维生素专柜）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Sportlife",
+        "evidence_span": "专业渠道批发分销商（Sportlife、DNA、Muscle Foods USA、EURpac）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "DNA",
+        "evidence_span": "专业渠道批发分销商（Sportlife、DNA、Muscle Foods USA、EURpac）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Muscle Foods USA",
+        "evidence_span": "专业渠道批发分销商（Sportlife、DNA、Muscle Foods USA、EURpac）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "EURpac",
+        "evidence_span": "专业渠道批发分销商（Sportlife、DNA、Muscle Foods USA、EURpac）"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "健康食品",
+        "evidence_span": "西王食品健康食品旗舰，边际改善再出发"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "运动营养",
+        "evidence_span": "西王食品收购海外领先保健品牌，跨入运动营养及体重管理市场"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "体重管理",
+        "evidence_span": "西王食品收购海外领先保健品牌，跨入运动营养及体重管理市场"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:12:23"
+}

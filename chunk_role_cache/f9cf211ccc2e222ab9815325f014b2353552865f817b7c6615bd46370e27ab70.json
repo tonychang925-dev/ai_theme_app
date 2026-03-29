@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "a7ebc2267c06", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落混合了长江存储的扩产事件、市场份额预测（事件性）与关于其推进设备国产替代、工艺差异（存储vs逻辑）、在蚀刻和沉积工艺突破等具有潜在知识价值的信息。边界不干净，但包含值得沉淀的产业知识。"}}

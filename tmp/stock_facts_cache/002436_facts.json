@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "传统PCB业务",
+      "evidence_span": "主业聚焦 PCB 业务和半导体业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体业务",
+      "evidence_span": "主业聚焦 PCB 业务和半导体业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "IC载板供应商",
+      "evidence_span": "国内领先的IC载板、半导体测试板供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体测试板供应商",
+      "evidence_span": "国内领先的IC载板、半导体测试板供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "PCB样板领导者",
+      "evidence_span": "PCB样板领导者，发力IC测试板和载板业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传统高多层PCB板",
+      "evidence_span": "涵盖传统高多层PCB 板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软硬结合板",
+      "evidence_span": "软硬结合板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高密度互连HDI板",
+      "evidence_span": "高密度互连 HD| 板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "类载板(SLP)",
+      "evidence_span": "类载板(SLP)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ATE半导体测试板",
+      "evidence_span": "ATE半导体测试板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "封装基板",
+      "evidence_span": "封装基板(含CSP 封装基板和 FCBGA封装基板)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CSP封装基板",
+      "evidence_span": "CSP 封装基板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FCBGA封装基板",
+      "evidence_span": "FCBGA封装基板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IC封装基板",
+      "evidence_span": "半导体业务产品包含IC封装基板和半导体测试板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体测试板",
+      "evidence_span": "半导体业务产品包含IC封装基板和半导体测试板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "测试负载版",
+      "evidence_span": "类型包括测试负载版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "探针卡",
+      "evidence_span": "探针卡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "老化板",
+      "evidence_span": "老化板"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CAD设计销售",
+      "evidence_span": "公司PCB 业务采用 CAD设计销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SMT表面贴装一站式服务",
+      "evidence_span": "SMT表面贴装一站式服务的模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "快速制造平台",
+      "evidence_span": "建立起强大的快速制造平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "IC载板国产替代",
+      "evidence_span": "IC载板国产替代加速"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "传统PCB业务",
+        "evidence_span": "主业聚焦 PCB 业务和半导体业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体业务",
+        "evidence_span": "主业聚焦 PCB 业务和半导体业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "IC载板供应商",
+        "evidence_span": "国内领先的IC载板、半导体测试板供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体测试板供应商",
+        "evidence_span": "国内领先的IC载板、半导体测试板供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "PCB样板领导者",
+        "evidence_span": "PCB样板领导者，发力IC测试板和载板业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传统高多层PCB板",
+        "evidence_span": "涵盖传统高多层PCB 板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软硬结合板",
+        "evidence_span": "软硬结合板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高密度互连HDI板",
+        "evidence_span": "高密度互连 HD| 板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "类载板(SLP)",
+        "evidence_span": "类载板(SLP)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ATE半导体测试板",
+        "evidence_span": "ATE半导体测试板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "封装基板",
+        "evidence_span": "封装基板(含CSP 封装基板和 FCBGA封装基板)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CSP封装基板",
+        "evidence_span": "CSP 封装基板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FCBGA封装基板",
+        "evidence_span": "FCBGA封装基板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IC封装基板",
+        "evidence_span": "半导体业务产品包含IC封装基板和半导体测试板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体测试板",
+        "evidence_span": "半导体业务产品包含IC封装基板和半导体测试板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "测试负载版",
+        "evidence_span": "类型包括测试负载版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "探针卡",
+        "evidence_span": "探针卡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "老化板",
+        "evidence_span": "老化板"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CAD设计销售",
+        "evidence_span": "公司PCB 业务采用 CAD设计销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SMT表面贴装一站式服务",
+        "evidence_span": "SMT表面贴装一站式服务的模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "快速制造平台",
+        "evidence_span": "建立起强大的快速制造平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "IC载板国产替代",
+        "evidence_span": "IC载板国产替代加速"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:49:34"
+}

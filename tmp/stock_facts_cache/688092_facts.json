@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能切割设备",
+      "evidence_span": "公司的主营业务是为客户提供智能切割设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能切割解决方案",
+      "evidence_span": "为客户提供稳定高效、一体化的智能切割解决方案"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能切割行业领军企业",
+      "evidence_span": "智能切割行业领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级专精特新“小巨人”企业",
+      "evidence_span": "公司被认定为国家级第四批专精特新“小巨人”企业称号"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级高新技术企业",
+      "evidence_span": "爱科科技和丰云信息国家级高新技术企业资格复审通过"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单层智能切割设备",
+      "evidence_span": "单层智能切割设备系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多层智能切割设备",
+      "evidence_span": "多层智能切割设备系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光模切机",
+      "evidence_span": "激光模切机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "柔性刀片模切机",
+      "evidence_span": "柔性刀片模切机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光切割设备",
+      "evidence_span": "激光切割设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能切割数控工业软件系统",
+      "evidence_span": "研发出自主的智能切割数控工业软件系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密运动控制技术",
+      "evidence_span": "精密运动控制技术领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CAD/CAM技术",
+      "evidence_span": "CAD/CAM技术领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "切割制造技术",
+      "evidence_span": "切割制造技术领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器视觉技术",
+      "evidence_span": "机器视觉技术领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "企业数字平台技术",
+      "evidence_span": "企业数字平台技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "总线开发技术",
+      "evidence_span": "总线开发技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光切割技术",
+      "evidence_span": "激光切割技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3D打印数字压痕技术",
+      "evidence_span": "3D打印数字压痕控制技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "进口替代的推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能切割设备",
+        "evidence_span": "公司的主营业务是为客户提供智能切割设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能切割解决方案",
+        "evidence_span": "为客户提供稳定高效、一体化的智能切割解决方案"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能切割行业领军企业",
+        "evidence_span": "智能切割行业领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级专精特新“小巨人”企业",
+        "evidence_span": "公司被认定为国家级第四批专精特新“小巨人”企业称号"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级高新技术企业",
+        "evidence_span": "爱科科技和丰云信息国家级高新技术企业资格复审通过"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单层智能切割设备",
+        "evidence_span": "单层智能切割设备系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多层智能切割设备",
+        "evidence_span": "多层智能切割设备系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光模切机",
+        "evidence_span": "激光模切机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "柔性刀片模切机",
+        "evidence_span": "柔性刀片模切机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光切割设备",
+        "evidence_span": "激光切割设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能切割数控工业软件系统",
+        "evidence_span": "研发出自主的智能切割数控工业软件系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密运动控制技术",
+        "evidence_span": "精密运动控制技术领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CAD/CAM技术",
+        "evidence_span": "CAD/CAM技术领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "切割制造技术",
+        "evidence_span": "切割制造技术领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器视觉技术",
+        "evidence_span": "机器视觉技术领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "企业数字平台技术",
+        "evidence_span": "企业数字平台技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "总线开发技术",
+        "evidence_span": "总线开发技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光切割技术",
+        "evidence_span": "激光切割技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3D打印数字压痕技术",
+        "evidence_span": "3D打印数字压痕控制技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "进口替代的推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:57:44"
+}

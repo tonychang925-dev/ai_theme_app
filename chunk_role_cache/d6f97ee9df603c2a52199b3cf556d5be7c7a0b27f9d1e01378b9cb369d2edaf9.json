@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "a28f3befddde", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落报告安徽省低空经济发展有限公司成立的具体事件，包括成立时间、注册资本、经营范围、股东信息等公司动态，无题材本体静态知识，属于纯事件。"}}

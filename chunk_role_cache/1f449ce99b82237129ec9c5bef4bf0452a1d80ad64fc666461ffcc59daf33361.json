@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "319c1f9e8bc8", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件（上海微电子申请专利），涉及公司动态和时间性信息（2023年10月27日），主要用于新闻或事件报道，不包含可用于题材本体构建的稳定知识。"}}

@@ -1,0 +1,449 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药包装业务",
+      "evidence_span": "医药包装业务：公司作为国内医药包装龙头企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "互联网数字营销业务",
+      "evidence_span": "互联网数字营销业务：公司于 2018 年收购领凯科技 70%股权进入互联网数字营销行业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "印刷包装供应链业务",
+      "evidence_span": "印刷包装供应链业务：公司2019年5月收购北京金印联70%股权，后者专业从事印刷包装供应链服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医药包装龙头企业",
+      "evidence_span": "公司是医药包装领先企业，行业稳定增长，公司龙头效应明显"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内领先的医药包装供应商",
+      "evidence_span": "国内领先的医药包装供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药折叠纸盒",
+      "evidence_span": "在医药折叠纸盒等次级包装领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中高端铝管",
+      "evidence_span": "在中高端铝管等药品初级包装领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药品说明书",
+      "evidence_span": "预计年产标准医药包装折叠纸盒 50 亿标准只、药品说明书 20 亿张"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "标签及其他配套材料",
+      "evidence_span": "标签及其他配套材料 10 亿个"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药用铝管",
+      "evidence_span": "药用铝管 3.5亿支"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "互联网精准营销服务",
+      "evidence_span": "领凯科技利用自身整合数字营销平台的优势，为各大头部客户提供优质的推广服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印刷包装供应链服务",
+      "evidence_span": "专注为印刷包装企业提供专业供应链解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保材料及器材",
+      "evidence_span": "主营产品为印刷包装企业需要的各类环保材料及器材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "区块链药品溯源业务",
+      "evidence_span": "公司已着手布局区块链进行药品朔源业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全自动包装生产线",
+      "evidence_span": "公司是最早在国内建立全自动包装生产线的企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "广告定向技术",
+      "evidence_span": "公司通过本身过硬的广告定向技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链技术",
+      "evidence_span": "初步搭建了区块链技术在药品、疫苗领域的模拟应用场景"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "拜耳医药",
+      "evidence_span": "公司与拜耳医药，强生，诺华制药，赛诺菲，武田药品等世界 500 强的在华药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "强生",
+      "evidence_span": "公司与拜耳医药，强生，诺华制药，赛诺菲，武田药品等世界 500 强的在华药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "诺华制药",
+      "evidence_span": "公司与拜耳医药，强生，诺华制药，赛诺菲，武田药品等世界 500 强的在华药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赛诺菲",
+      "evidence_span": "公司与拜耳医药，强生，诺华制药，赛诺菲，武田药品等世界 500 强的在华药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "武田药品",
+      "evidence_span": "公司与拜耳医药，强生，诺华制药，赛诺菲，武田药品等世界 500 强的在华药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中生集团",
+      "evidence_span": "及中生集团、齐鲁制药、恒瑞医疗等国内知名药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "齐鲁制药",
+      "evidence_span": "及中生集团、齐鲁制药、恒瑞医疗等国内知名药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恒瑞医疗",
+      "evidence_span": "及中生集团、齐鲁制药、恒瑞医疗等国内知名药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西安杨森",
+      "evidence_span": "包括西安杨森、中美史克、诺华制药、拜耳医药、华润三九、兴齐眼药等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中美史克",
+      "evidence_span": "包括西安杨森、中美史克、诺华制药、拜耳医药、华润三九、兴齐眼药等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华润三九",
+      "evidence_span": "包括西安杨森、中美史克、诺华制药、拜耳医药、华润三九、兴齐眼药等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "兴齐眼药",
+      "evidence_span": "包括西安杨森、中美史克、诺华制药、拜耳医药、华润三九、兴齐眼药等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里巴巴",
+      "evidence_span": "领凯科技近几年通过为阿里巴巴、百度等知名互联网头部客户提供推广和精准广告投放业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "百度",
+      "evidence_span": "领凯科技近几年通过为阿里巴巴、百度等知名互联网头部客户提供推广和精准广告投放业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里系",
+      "evidence_span": "如阿里系(淘宝、支付宝、淘宝特价版)"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "猿辅导",
+      "evidence_span": "在线教育(猿辅导、高途)"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高途",
+      "evidence_span": "在线教育(猿辅导、高途)"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "搜狐",
+      "evidence_span": "视频 APP(搜狐、优酷)"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "优酷",
+      "evidence_span": "视频 APP(搜狐、优酷)"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "快手",
+      "evidence_span": "短视频(快手、刷宝)"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "刷宝",
+      "evidence_span": "短视频(快手、刷宝)"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "抖音",
+      "evidence_span": "为抖音、拼多多等新型互联网公司提供精准营销服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "拼多多",
+      "evidence_span": "为抖音、拼多多等新型互联网公司提供精准营销服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美团系",
+      "evidence_span": "后续公司与阿里系、百度系、美团系等都有一定程度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧莱雅",
+      "evidence_span": "国际化妆品巨头欧莱雅、国内医美龙头贝泰妮、三星电子等均是公司消费品业务的重要客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "贝泰妮",
+      "evidence_span": "国际化妆品巨头欧莱雅、国内医美龙头贝泰妮、三星电子等均是公司消费品业务的重要客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星电子",
+      "evidence_span": "国际化妆品巨头欧莱雅、国内医美龙头贝泰妮、三星电子等均是公司消费品业务的重要客户"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药包装业务",
+        "evidence_span": "医药包装业务：公司作为国内医药包装龙头企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "互联网数字营销业务",
+        "evidence_span": "互联网数字营销业务：公司于 2018 年收购领凯科技 70%股权进入互联网数字营销行业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "印刷包装供应链业务",
+        "evidence_span": "印刷包装供应链业务：公司2019年5月收购北京金印联70%股权，后者专业从事印刷包装供应链服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医药包装龙头企业",
+        "evidence_span": "公司是医药包装领先企业，行业稳定增长，公司龙头效应明显"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内领先的医药包装供应商",
+        "evidence_span": "国内领先的医药包装供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药折叠纸盒",
+        "evidence_span": "在医药折叠纸盒等次级包装领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中高端铝管",
+        "evidence_span": "在中高端铝管等药品初级包装领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药品说明书",
+        "evidence_span": "预计年产标准医药包装折叠纸盒 50 亿标准只、药品说明书 20 亿张"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "标签及其他配套材料",
+        "evidence_span": "标签及其他配套材料 10 亿个"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药用铝管",
+        "evidence_span": "药用铝管 3.5亿支"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "互联网精准营销服务",
+        "evidence_span": "领凯科技利用自身整合数字营销平台的优势，为各大头部客户提供优质的推广服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印刷包装供应链服务",
+        "evidence_span": "专注为印刷包装企业提供专业供应链解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保材料及器材",
+        "evidence_span": "主营产品为印刷包装企业需要的各类环保材料及器材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "区块链药品溯源业务",
+        "evidence_span": "公司已着手布局区块链进行药品朔源业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全自动包装生产线",
+        "evidence_span": "公司是最早在国内建立全自动包装生产线的企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "广告定向技术",
+        "evidence_span": "公司通过本身过硬的广告定向技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链技术",
+        "evidence_span": "初步搭建了区块链技术在药品、疫苗领域的模拟应用场景"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "拜耳医药",
+        "evidence_span": "公司与拜耳医药，强生，诺华制药，赛诺菲，武田药品等世界 500 强的在华药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "强生",
+        "evidence_span": "公司与拜耳医药，强生，诺华制药，赛诺菲，武田药品等世界 500 强的在华药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "诺华制药",
+        "evidence_span": "公司与拜耳医药，强生，诺华制药，赛诺菲，武田药品等世界 500 强的在华药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赛诺菲",
+        "evidence_span": "公司与拜耳医药，强生，诺华制药，赛诺菲，武田药品等世界 500 强的在华药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "武田药品",
+        "evidence_span": "公司与拜耳医药，强生，诺华制药，赛诺菲，武田药品等世界 500 强的在华药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中生集团",
+        "evidence_span": "及中生集团、齐鲁制药、恒瑞医疗等国内知名药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "齐鲁制药",
+        "evidence_span": "及中生集团、齐鲁制药、恒瑞医疗等国内知名药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恒瑞医疗",
+        "evidence_span": "及中生集团、齐鲁制药、恒瑞医疗等国内知名药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西安杨森",
+        "evidence_span": "包括西安杨森、中美史克、诺华制药、拜耳医药、华润三九、兴齐眼药等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中美史克",
+        "evidence_span": "包括西安杨森、中美史克、诺华制药、拜耳医药、华润三九、兴齐眼药等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华润三九",
+        "evidence_span": "包括西安杨森、中美史克、诺华制药、拜耳医药、华润三九、兴齐眼药等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "兴齐眼药",
+        "evidence_span": "包括西安杨森、中美史克、诺华制药、拜耳医药、华润三九、兴齐眼药等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里巴巴",
+        "evidence_span": "领凯科技近几年通过为阿里巴巴、百度等知名互联网头部客户提供推广和精准广告投放业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "百度",
+        "evidence_span": "领凯科技近几年通过为阿里巴巴、百度等知名互联网头部客户提供推广和精准广告投放业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里系",
+        "evidence_span": "如阿里系(淘宝、支付宝、淘宝特价版)"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "猿辅导",
+        "evidence_span": "在线教育(猿辅导、高途)"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高途",
+        "evidence_span": "在线教育(猿辅导、高途)"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "搜狐",
+        "evidence_span": "视频 APP(搜狐、优酷)"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "优酷",
+        "evidence_span": "视频 APP(搜狐、优酷)"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "快手",
+        "evidence_span": "短视频(快手、刷宝)"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "刷宝",
+        "evidence_span": "短视频(快手、刷宝)"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "抖音",
+        "evidence_span": "为抖音、拼多多等新型互联网公司提供精准营销服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "拼多多",
+        "evidence_span": "为抖音、拼多多等新型互联网公司提供精准营销服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美团系",
+        "evidence_span": "后续公司与阿里系、百度系、美团系等都有一定程度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧莱雅",
+        "evidence_span": "国际化妆品巨头欧莱雅、国内医美龙头贝泰妮、三星电子等均是公司消费品业务的重要客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "贝泰妮",
+        "evidence_span": "国际化妆品巨头欧莱雅、国内医美龙头贝泰妮、三星电子等均是公司消费品业务的重要客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星电子",
+        "evidence_span": "国际化妆品巨头欧莱雅、国内医美龙头贝泰妮、三星电子等均是公司消费品业务的重要客户"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:44:21"
+}

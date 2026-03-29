@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:16:15", "result": {"span_uid": "e9df0bd55a54", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产业基金设立", "stability": "low", "reason": "原文为具体事件（筹备设立总规模20亿元的卫星产业子基金），无法脱离原新闻上下文形成稳定、独立的知识表达，且信息过于具体和临时性。"}}

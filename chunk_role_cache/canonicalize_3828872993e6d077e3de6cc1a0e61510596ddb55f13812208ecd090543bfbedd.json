@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:37:38", "result": {"span_uid": "353540b3eb0a", "action": "rewrite", "canonical_text": "国内半导体光刻胶国产化率极低，供应不稳定性催化自主可控需求。", "final_type": "signal", "final_role": "国产化现状与需求驱动", "stability": "medium", "reason": "原文为现状描述，已去新闻口吻改写为稳定知识，体现产业供需变化和政策催化信号。"}}

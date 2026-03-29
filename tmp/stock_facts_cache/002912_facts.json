@@ -1,0 +1,469 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "网络可视化基础架构",
+      "evidence_span": "现主营网络可视化基础架构"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "网络内容安全",
+      "evidence_span": "现主营网络可视化基础架构、网络内容安全"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大数据运营",
+      "evidence_span": "现主营网络可视化基础架构、网络内容安全、大数据运营等安全产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "网络可视化龙头",
+      "evidence_span": "中新赛克网络可视化龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "网络可视化领军企业",
+      "evidence_span": "网络可视化领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "网络安全领域卖铲者",
+      "evidence_span": "网络安全领域”卖铲者“"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "宽带网产品",
+      "evidence_span": "宽带网产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动网产品",
+      "evidence_span": "移动网产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络内容安全产品",
+      "evidence_span": "网络内容安全产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大数据运营产品",
+      "evidence_span": "大数据运营产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业互联网安全产品",
+      "evidence_span": "工业互联网安全产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "400G接口单板",
+      "evidence_span": "推出了400G接口单板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电磁安全智能临检一体化设备",
+      "evidence_span": "研发了电磁安全智能临检一体化设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络态势分析系统",
+      "evidence_span": "升级了网络态势分析系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "疫情通行大数据分析系统",
+      "evidence_span": "研发了疫情通行大数据分析系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运营商网络流量的质量监测系统",
+      "evidence_span": "研发了运营商网络流量的质量监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物联网和车联网安全监测系统",
+      "evidence_span": "研发了物联网和车联网安全监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视联网业务分析系统",
+      "evidence_span": "升级优化了视联网业务分析系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电信网+互联网诈骗防范分析系统",
+      "evidence_span": "升级优化了电信网+互联网诈骗防范分析系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OceanMind5.0版本",
+      "evidence_span": "正式发布OceanMind5.0版本"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "企业运营健康洞察系统",
+      "evidence_span": "推出了企业运营健康洞察系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "企业运营健康管控系统",
+      "evidence_span": "企业运营健康管控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "企业运营健康审计系统",
+      "evidence_span": "企业运营健康审计系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星河安全管理中心",
+      "evidence_span": "研发了星河安全管理中心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星河安全分析设备",
+      "evidence_span": "星河安全分析设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星河隐盾网关",
+      "evidence_span": "星河隐盾网关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星河工业主机卫士",
+      "evidence_span": "星河工业主机卫士"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星河工业防火墙",
+      "evidence_span": "星河工业防火墙"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新一代自主可控的宽带网产品",
+      "evidence_span": "研发推出新一代自主可控的宽带网产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电磁空间信号分析",
+      "evidence_span": "电磁空间信号分析领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "频谱采集",
+      "evidence_span": "频谱采集"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分层解析",
+      "evidence_span": "分层解析"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据提取",
+      "evidence_span": "数据提取"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据汇聚接入",
+      "evidence_span": "数据汇聚接入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据标准化治理",
+      "evidence_span": "数据标准化治理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据分析挖掘",
+      "evidence_span": "数据分析挖掘"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据业务呈现",
+      "evidence_span": "数据业务呈现"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据采集",
+      "evidence_span": "数据采集"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "边缘计算",
+      "evidence_span": "边缘计算"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "零信任",
+      "evidence_span": "零信任"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据分析",
+      "evidence_span": "大数据分析"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "运营商",
+      "evidence_span": "主要应用于运营商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政企部门",
+      "evidence_span": "主要应用于运营商和政企部门"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府部门",
+      "evidence_span": "主要应用于政府部门"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "企事业单位",
+      "evidence_span": "主要应用于政府部门、企事业单位"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "全面满足了国产化需求"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "网络可视化基础架构",
+        "evidence_span": "现主营网络可视化基础架构"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "网络内容安全",
+        "evidence_span": "现主营网络可视化基础架构、网络内容安全"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大数据运营",
+        "evidence_span": "现主营网络可视化基础架构、网络内容安全、大数据运营等安全产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "网络可视化龙头",
+        "evidence_span": "中新赛克网络可视化龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "网络可视化领军企业",
+        "evidence_span": "网络可视化领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "网络安全领域卖铲者",
+        "evidence_span": "网络安全领域”卖铲者“"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "宽带网产品",
+        "evidence_span": "宽带网产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动网产品",
+        "evidence_span": "移动网产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络内容安全产品",
+        "evidence_span": "网络内容安全产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大数据运营产品",
+        "evidence_span": "大数据运营产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业互联网安全产品",
+        "evidence_span": "工业互联网安全产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "400G接口单板",
+        "evidence_span": "推出了400G接口单板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电磁安全智能临检一体化设备",
+        "evidence_span": "研发了电磁安全智能临检一体化设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络态势分析系统",
+        "evidence_span": "升级了网络态势分析系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "疫情通行大数据分析系统",
+        "evidence_span": "研发了疫情通行大数据分析系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运营商网络流量的质量监测系统",
+        "evidence_span": "研发了运营商网络流量的质量监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物联网和车联网安全监测系统",
+        "evidence_span": "研发了物联网和车联网安全监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视联网业务分析系统",
+        "evidence_span": "升级优化了视联网业务分析系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电信网+互联网诈骗防范分析系统",
+        "evidence_span": "升级优化了电信网+互联网诈骗防范分析系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OceanMind5.0版本",
+        "evidence_span": "正式发布OceanMind5.0版本"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "企业运营健康洞察系统",
+        "evidence_span": "推出了企业运营健康洞察系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "企业运营健康管控系统",
+        "evidence_span": "企业运营健康管控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "企业运营健康审计系统",
+        "evidence_span": "企业运营健康审计系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星河安全管理中心",
+        "evidence_span": "研发了星河安全管理中心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星河安全分析设备",
+        "evidence_span": "星河安全分析设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星河隐盾网关",
+        "evidence_span": "星河隐盾网关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星河工业主机卫士",
+        "evidence_span": "星河工业主机卫士"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星河工业防火墙",
+        "evidence_span": "星河工业防火墙"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新一代自主可控的宽带网产品",
+        "evidence_span": "研发推出新一代自主可控的宽带网产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电磁空间信号分析",
+        "evidence_span": "电磁空间信号分析领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "频谱采集",
+        "evidence_span": "频谱采集"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分层解析",
+        "evidence_span": "分层解析"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据提取",
+        "evidence_span": "数据提取"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据汇聚接入",
+        "evidence_span": "数据汇聚接入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据标准化治理",
+        "evidence_span": "数据标准化治理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据分析挖掘",
+        "evidence_span": "数据分析挖掘"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据业务呈现",
+        "evidence_span": "数据业务呈现"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据采集",
+        "evidence_span": "数据采集"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "边缘计算",
+        "evidence_span": "边缘计算"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "零信任",
+        "evidence_span": "零信任"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据分析",
+        "evidence_span": "大数据分析"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "运营商",
+        "evidence_span": "主要应用于运营商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政企部门",
+        "evidence_span": "主要应用于运营商和政企部门"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府部门",
+        "evidence_span": "主要应用于政府部门"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "企事业单位",
+        "evidence_span": "主要应用于政府部门、企事业单位"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "全面满足了国产化需求"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:27:26"
+}

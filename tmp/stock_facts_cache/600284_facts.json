@@ -1,0 +1,184 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "建筑工程施工",
+      "evidence_span": "建筑工程施工业务为公司营收主要来源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基础设施项目投资",
+      "evidence_span": "基础设施项目投资业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "园区开发",
+      "evidence_span": "园区开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "沥青砼",
+      "evidence_span": "沥青砼及相关产品生产销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "相关产品生产销售",
+      "evidence_span": "沥青砼及相关产品生产销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保业务",
+      "evidence_span": "环保业务五个部分"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "浦东新区基建市场排头兵",
+      "evidence_span": "为浦东新区基建市场排头兵"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合型投资建设商",
+      "evidence_span": "综合型投资建设商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "沥青混合料供应",
+      "evidence_span": "沥青混合料供应"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保产品供应",
+      "evidence_span": "环保产品供应"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿化工程",
+      "evidence_span": "绿化工程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "市政公用工程施工总承包",
+      "evidence_span": "市政公用工程施工总承包"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "桥梁工程专业承",
+      "evidence_span": "桥梁工程专业承"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "建筑工程施工总承",
+      "evidence_span": "建筑工程施工总承"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "公路工程施工总承包",
+      "evidence_span": "公路工程施工总承包"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "城市规划设计",
+      "evidence_span": "城市规划设计"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "长三角一体化",
+      "evidence_span": "长三角一体化释放行业中长期红利"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "上海自贸区建设",
+      "evidence_span": "拥抱长三角一体化及上海自贸区建设"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "建筑工程施工",
+        "evidence_span": "建筑工程施工业务为公司营收主要来源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基础设施项目投资",
+        "evidence_span": "基础设施项目投资业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "园区开发",
+        "evidence_span": "园区开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "沥青砼及相关产品生产销售",
+        "evidence_span": "沥青砼及相关产品生产销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保业务",
+        "evidence_span": "环保业务五个部分"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "浦东新区基建市场排头兵",
+        "evidence_span": "为浦东新区基建市场排头兵"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合型投资建设商",
+        "evidence_span": "综合型投资建设商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "沥青混合料供应",
+        "evidence_span": "沥青混合料供应"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保产品供应",
+        "evidence_span": "环保产品供应"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿化工程",
+        "evidence_span": "绿化工程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "市政公用工程施工总承包",
+        "evidence_span": "市政公用工程施工总承包"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "桥梁工程专业承",
+        "evidence_span": "桥梁工程专业承"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "建筑工程施工总承",
+        "evidence_span": "建筑工程施工总承"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "公路工程施工总承包",
+        "evidence_span": "公路工程施工总承包"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "城市规划设计",
+        "evidence_span": "城市规划设计"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "长三角一体化",
+        "evidence_span": "长三角一体化释放行业中长期红利"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "上海自贸区建设",
+        "evidence_span": "拥抱长三角一体化及上海自贸区建设"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:50:05"
+}

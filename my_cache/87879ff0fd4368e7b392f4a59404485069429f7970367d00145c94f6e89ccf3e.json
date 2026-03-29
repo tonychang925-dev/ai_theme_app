@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "f1f316754115", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落基于SEMI报告提供半导体制造设备销售额预测数据，包含行业趋势知识，对题材构建有价值，但以报告发布事件形式呈现，混合了景气数据。"}}

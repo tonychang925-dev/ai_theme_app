@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:23:29", "result": {"chunk_id": "c0dfa8fe8b38", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含市场规模预测和增长数据，这些是静态知识元素，但同时也涉及时间性动态（如2024年、2025年、2030年）和事件性描述（如中国增速远超全球），因此混合了知识和事件信息，适合作为候选知识进一步裁决。"}}

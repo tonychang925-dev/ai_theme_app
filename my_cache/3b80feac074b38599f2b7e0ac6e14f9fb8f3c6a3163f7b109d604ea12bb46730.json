@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "81ca5f9fcc01", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含SK海力士对HBM需求和供应的预测，这涉及市场动态和事件性信息，但同时也隐含了HBM市场供需关系的知识，可能对题材本体构建有价值，因此分类为candidate_mixed。"}}

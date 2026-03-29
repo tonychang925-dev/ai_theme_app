@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "农副产品批发交易市场业务",
+      "evidence_span": "农副产品批发交易市场业务占比为42.24%"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生鲜食材配送业务",
+      "evidence_span": "生鲜食材配送业务（配菜业务）占比为39.82%"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "豆制品生产加工业务",
+      "evidence_span": "豆制品生产加工领域的业务占比为5.84%"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专业农副产品服务商",
+      "evidence_span": "集农副产品采购、加工、检验及流通服务于一体的专业农副产品服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农批市场专业运营公司",
+      "evidence_span": "作为以农产品批发市场运营为主要业务的专业市场运营公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "店面/摊位租赁",
+      "evidence_span": "店面/摊位租赁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交易管理",
+      "evidence_span": "交易管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市场配套服务",
+      "evidence_span": "提供其他市场配套服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蔬菜集采和配送",
+      "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肉品集采和配送",
+      "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粮油集采和配送",
+      "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他农副产品集采和配送",
+      "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "豆制品研发",
+      "evidence_span": "雪顶豆制品主要从事豆制品的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "豆制品生产",
+      "evidence_span": "雪顶豆制品主要从事豆制品的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "豆制品销售",
+      "evidence_span": "雪顶豆制品主要从事豆制品的研发、生产和销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一卡通系统",
+      "evidence_span": "打造下属市场“一卡通”，该系统集交易、结算、质量追溯、信息处理、大数据分析、市场管理、资产管理等于一体"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "农产品批发市场线上APP平台",
+      "evidence_span": "公司正在建设中的农产品批发市场线上APP平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ERP建设",
+      "evidence_span": "公司在配送业务上已全面完成ERP建设"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各大单位",
+      "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "机关食堂",
+      "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "酒店",
+      "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧农批",
+      "evidence_span": "以“智慧农批”为核心"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "农副产品批发交易市场业务",
+        "evidence_span": "农副产品批发交易市场业务占比为42.24%"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生鲜食材配送业务",
+        "evidence_span": "生鲜食材配送业务（配菜业务）占比为39.82%"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "豆制品生产加工业务",
+        "evidence_span": "豆制品生产加工领域的业务占比为5.84%"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专业农副产品服务商",
+        "evidence_span": "集农副产品采购、加工、检验及流通服务于一体的专业农副产品服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农批市场专业运营公司",
+        "evidence_span": "作为以农产品批发市场运营为主要业务的专业市场运营公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "店面/摊位租赁",
+        "evidence_span": "店面/摊位租赁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交易管理",
+        "evidence_span": "交易管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市场配套服务",
+        "evidence_span": "提供其他市场配套服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蔬菜集采和配送",
+        "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肉品集采和配送",
+        "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粮油集采和配送",
+        "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他农副产品集采和配送",
+        "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "豆制品研发",
+        "evidence_span": "雪顶豆制品主要从事豆制品的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "豆制品生产",
+        "evidence_span": "雪顶豆制品主要从事豆制品的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "豆制品销售",
+        "evidence_span": "雪顶豆制品主要从事豆制品的研发、生产和销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一卡通系统",
+        "evidence_span": "打造下属市场“一卡通”，该系统集交易、结算、质量追溯、信息处理、大数据分析、市场管理、资产管理等于一体"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "农产品批发市场线上APP平台",
+        "evidence_span": "公司正在建设中的农产品批发市场线上APP平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ERP建设",
+        "evidence_span": "公司在配送业务上已全面完成ERP建设"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各大单位",
+        "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "机关食堂",
+        "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "酒店",
+        "evidence_span": "为各大单位、机关食堂、酒店提供蔬菜、肉品、粮油以及其他农副产品的集采和配送服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧农批",
+        "evidence_span": "以“智慧农批”为核心"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:23:23"
+}

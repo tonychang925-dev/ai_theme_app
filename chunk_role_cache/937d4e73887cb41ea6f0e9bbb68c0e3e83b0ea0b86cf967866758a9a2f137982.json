@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "33b52e03ac96", "label": "knowledge_like", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含事件爆料（大基金三期）和公司研发进展（上海微电子光刻机），但后者直接指出了半导体设备的关键技术（28纳米浸没式光刻机）和国产化方向，对题材的技术路径和应用场景有揭示作用。"}}

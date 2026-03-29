@@ -1,0 +1,224 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体封装智能制造装备",
+      "evidence_span": "主要从事应用于半导体封装及塑料挤出成型领域的智能制造装备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "塑料挤出成型智能制造装备",
+      "evidence_span": "主要从事应用于半导体封装及塑料挤出成型领域的智能制造装备的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体封装设备及模具国产品牌供应商",
+      "evidence_span": "作为国内为数不多的半导体封装设备及模具国产品牌供应商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内半导体封装及塑料挤出成型智能制造装备领域知名企业",
+      "evidence_span": "已成为国内半导体封装及塑料挤出成型智能制造装备领域知名企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体全自动塑料封装设备",
+      "evidence_span": "半导体封装设备产品主要为半导体全自动塑料封装设备、半导体全自动切筋成型设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体全自动切筋成型设备",
+      "evidence_span": "半导体封装设备产品主要为半导体全自动塑料封装设备、半导体全自动切筋成型设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体封装设备及模具",
+      "evidence_span": "目前公司主要产品为应用于半导体封装及塑料挤出成型领域的智能制造装备，具体为半导体封装设备及模具、塑料挤出成型模具、挤出成型装置及下游设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "塑料挤出成型模具",
+      "evidence_span": "目前公司主要产品为应用于半导体封装及塑料挤出成型领域的智能制造装备，具体为半导体封装设备及模具、塑料挤出成型模具、挤出成型装置及下游设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "挤出成型装置及下游设备",
+      "evidence_span": "目前公司主要产品为应用于半导体封装及塑料挤出成型领域的智能制造装备，具体为半导体封装设备及模具、塑料挤出成型模具、挤出成型装置及下游设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "动态PID压力控制",
+      "evidence_span": "公司利用已掌握的相关技术开发了动态PID压力控制、自动封装设备实时注塑压力曲线监控、高温状态下不同材料变形同步调节机构等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动封装设备实时注塑压力曲线监控",
+      "evidence_span": "公司利用已掌握的相关技术开发了动态PID压力控制、自动封装设备实时注塑压力曲线监控、高温状态下不同材料变形同步调节机构等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高温状态下不同材料变形同步调节机构",
+      "evidence_span": "公司利用已掌握的相关技术开发了动态PID压力控制、自动封装设备实时注塑压力曲线监控、高温状态下不同材料变形同步调节机构等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多腔高速挤出成型",
+      "evidence_span": "掌握了基于Weissenberg-Robinowitsch修正的PowerLaw非牛顿流体模型、多腔高速挤出成型、共挤成型等多项塑料挤出成型核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "共挤成型",
+      "evidence_span": "掌握了基于Weissenberg-Robinowitsch修正的PowerLaw非牛顿流体模型、多腔高速挤出成型、共挤成型等多项塑料挤出成型核心技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通富微电",
+      "evidence_span": "已成为国内前三、全球前十的通富微电、华天科技、长电科技等头部半导体封装企业的供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华天科技",
+      "evidence_span": "已成为国内前三、全球前十的通富微电、华天科技、长电科技等头部半导体封装企业的供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长电科技",
+      "evidence_span": "已成为国内前三、全球前十的通富微电、华天科技、长电科技等头部半导体封装企业的供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国ProfineGmbH",
+      "evidence_span": "服务于德国ProfineGmbH、美国EasternWhoesaeFenceLLC、比利时DeceuninckNV等众多全球著名品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国EasternWhoesaeFenceLLC",
+      "evidence_span": "服务于德国ProfineGmbH、美国EasternWhoesaeFenceLLC、比利时DeceuninckNV等众多全球著名品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比利时DeceuninckNV",
+      "evidence_span": "服务于德国ProfineGmbH、美国EasternWhoesaeFenceLLC、比利时DeceuninckNV等众多全球著名品牌"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "半导体塑料封装装备自主可控",
+      "evidence_span": "公司目标是实现我国在半导体塑料封装装备领域的自主可控"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体封装智能制造装备",
+        "evidence_span": "主要从事应用于半导体封装及塑料挤出成型领域的智能制造装备的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "塑料挤出成型智能制造装备",
+        "evidence_span": "主要从事应用于半导体封装及塑料挤出成型领域的智能制造装备的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体封装设备及模具国产品牌供应商",
+        "evidence_span": "作为国内为数不多的半导体封装设备及模具国产品牌供应商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内半导体封装及塑料挤出成型智能制造装备领域知名企业",
+        "evidence_span": "已成为国内半导体封装及塑料挤出成型智能制造装备领域知名企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体全自动塑料封装设备",
+        "evidence_span": "半导体封装设备产品主要为半导体全自动塑料封装设备、半导体全自动切筋成型设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体全自动切筋成型设备",
+        "evidence_span": "半导体封装设备产品主要为半导体全自动塑料封装设备、半导体全自动切筋成型设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体封装设备及模具",
+        "evidence_span": "目前公司主要产品为应用于半导体封装及塑料挤出成型领域的智能制造装备，具体为半导体封装设备及模具、塑料挤出成型模具、挤出成型装置及下游设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "塑料挤出成型模具",
+        "evidence_span": "目前公司主要产品为应用于半导体封装及塑料挤出成型领域的智能制造装备，具体为半导体封装设备及模具、塑料挤出成型模具、挤出成型装置及下游设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "挤出成型装置及下游设备",
+        "evidence_span": "目前公司主要产品为应用于半导体封装及塑料挤出成型领域的智能制造装备，具体为半导体封装设备及模具、塑料挤出成型模具、挤出成型装置及下游设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "动态PID压力控制",
+        "evidence_span": "公司利用已掌握的相关技术开发了动态PID压力控制、自动封装设备实时注塑压力曲线监控、高温状态下不同材料变形同步调节机构等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动封装设备实时注塑压力曲线监控",
+        "evidence_span": "公司利用已掌握的相关技术开发了动态PID压力控制、自动封装设备实时注塑压力曲线监控、高温状态下不同材料变形同步调节机构等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高温状态下不同材料变形同步调节机构",
+        "evidence_span": "公司利用已掌握的相关技术开发了动态PID压力控制、自动封装设备实时注塑压力曲线监控、高温状态下不同材料变形同步调节机构等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于Weissenberg-Robinowitsch修正的PowerLaw非牛顿流体模型",
+        "evidence_span": "掌握了基于Weissenberg-Robinowitsch修正的PowerLaw非牛顿流体模型、多腔高速挤出成型、共挤成型等多项塑料挤出成型核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多腔高速挤出成型",
+        "evidence_span": "掌握了基于Weissenberg-Robinowitsch修正的PowerLaw非牛顿流体模型、多腔高速挤出成型、共挤成型等多项塑料挤出成型核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "共挤成型",
+        "evidence_span": "掌握了基于Weissenberg-Robinowitsch修正的PowerLaw非牛顿流体模型、多腔高速挤出成型、共挤成型等多项塑料挤出成型核心技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通富微电",
+        "evidence_span": "已成为国内前三、全球前十的通富微电、华天科技、长电科技等头部半导体封装企业的供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华天科技",
+        "evidence_span": "已成为国内前三、全球前十的通富微电、华天科技、长电科技等头部半导体封装企业的供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长电科技",
+        "evidence_span": "已成为国内前三、全球前十的通富微电、华天科技、长电科技等头部半导体封装企业的供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国ProfineGmbH",
+        "evidence_span": "服务于德国ProfineGmbH、美国EasternWhoesaeFenceLLC、比利时DeceuninckNV等众多全球著名品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国EasternWhoesaeFenceLLC",
+        "evidence_span": "服务于德国ProfineGmbH、美国EasternWhoesaeFenceLLC、比利时DeceuninckNV等众多全球著名品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比利时DeceuninckNV",
+        "evidence_span": "服务于德国ProfineGmbH、美国EasternWhoesaeFenceLLC、比利时DeceuninckNV等众多全球著名品牌"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "半导体塑料封装装备自主可控",
+        "evidence_span": "公司目标是实现我国在半导体塑料封装装备领域的自主可控"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:31:34"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "d566722b8ce4", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落明确预告特斯拉Robotaxi的发布时间，是具体的事件公告，不包含FSD的稳定知识。"}}

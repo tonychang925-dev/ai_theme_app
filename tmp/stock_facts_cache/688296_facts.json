@@ -1,0 +1,449 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧水务建设",
+      "evidence_span": "公司为国内智慧水务建设龙头"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水务信息化整体解决方案",
+      "evidence_span": "公司提供水务信息化整体解决方案"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "供水领域服务",
+      "evidence_span": "公司重点服务供水"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "排水领域服务",
+      "evidence_span": "公司重点服务排水"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水利领域服务",
+      "evidence_span": "公司重点服务水利"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农饮水领域服务",
+      "evidence_span": "公司重点服务农饮水领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧水务建设龙头",
+      "evidence_span": "公司为国内智慧水务建设龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "水务信息化整体解决方案提供商",
+      "evidence_span": "逐步成为国内少数几家水务领域信息化建设的整体解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能感传终端硬件",
+      "evidence_span": "提供涵盖智能感传终端硬件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水务管理系统软件",
+      "evidence_span": "水务管理系统软件的整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能遥测终端",
+      "evidence_span": "具体产品包括智能遥测终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物联户表远程采集传输模块",
+      "evidence_span": "物联户表远程采集传输模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "渗漏预警仪",
+      "evidence_span": "渗漏预警仪等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水务物联网平台",
+      "evidence_span": "主要产品包括水务物联网平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网格化管理平台",
+      "evidence_span": "网格化管理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生产调度系统",
+      "evidence_span": "生产调度系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "计量管理系统",
+      "evidence_span": "计量管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分区控漏系统",
+      "evidence_span": "分区控漏系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "渗漏预警云平台",
+      "evidence_span": "渗漏预警云平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "在线水力模型",
+      "evidence_span": "在线水力模型等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "供水管网漏损管理系统",
+      "evidence_span": "基于数据与业务联动的供水管网漏损管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水务系统软件",
+      "evidence_span": "公司水务软件客户"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "系统集成服务",
+      "evidence_span": "公司水务管理系统、系统集成服务收入持续高增长"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网技术",
+      "evidence_span": "综合运用物联网"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据技术",
+      "evidence_span": "大数据"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "边缘计算技术",
+      "evidence_span": "边缘计算等新一代信息技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水务数据采集技术",
+      "evidence_span": "水务数据采集"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水务数据传输技术",
+      "evidence_span": "传输"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水务数据存储技术",
+      "evidence_span": "存储"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水务数据处理技术",
+      "evidence_span": "处理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水务数据智能分析技术",
+      "evidence_span": "智能分析为核心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据积累和治理技术",
+      "evidence_span": "数据的积累和治理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "业务中台建设技术",
+      "evidence_span": "业务中台的建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "业务软件融合分析能力",
+      "evidence_span": "业务软件的全面性和融合分析能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "软件驱动的全产业链整合能力",
+      "evidence_span": "软件驱动的全产业链整合能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "爆漏实时预警与定位技术",
+      "evidence_span": "爆漏实时预警与定位技术方面达到国际先进水平"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "水务企业客户",
+      "evidence_span": "服务水务企业超过600家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "水务局",
+      "evidence_span": "承担多地水务局项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内规模排名前12的水务企业",
+      "evidence_span": "国内规模排名前12的水务企业中，已有9家为公司水务软件客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "绍兴水务",
+      "evidence_span": "公司与绍兴水务、清华大学合作开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "清华大学",
+      "evidence_span": "公司与绍兴水务、清华大学合作开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "嘉源环境",
+      "evidence_span": "公司与嘉源环境合计出资1000万元"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "水务信息化",
+      "evidence_span": "水务信息化高景气"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧水务",
+      "evidence_span": "智慧水务行业加速落地"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧水务建设",
+        "evidence_span": "公司为国内智慧水务建设龙头"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水务信息化整体解决方案",
+        "evidence_span": "公司提供水务信息化整体解决方案"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "供水领域服务",
+        "evidence_span": "公司重点服务供水"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "排水领域服务",
+        "evidence_span": "公司重点服务排水"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水利领域服务",
+        "evidence_span": "公司重点服务水利"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农饮水领域服务",
+        "evidence_span": "公司重点服务农饮水领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧水务建设龙头",
+        "evidence_span": "公司为国内智慧水务建设龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "水务信息化整体解决方案提供商",
+        "evidence_span": "逐步成为国内少数几家水务领域信息化建设的整体解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能感传终端硬件",
+        "evidence_span": "提供涵盖智能感传终端硬件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水务管理系统软件",
+        "evidence_span": "水务管理系统软件的整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能遥测终端",
+        "evidence_span": "具体产品包括智能遥测终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物联户表远程采集传输模块",
+        "evidence_span": "物联户表远程采集传输模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "渗漏预警仪",
+        "evidence_span": "渗漏预警仪等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水务物联网平台",
+        "evidence_span": "主要产品包括水务物联网平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网格化管理平台",
+        "evidence_span": "网格化管理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生产调度系统",
+        "evidence_span": "生产调度系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "计量管理系统",
+        "evidence_span": "计量管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分区控漏系统",
+        "evidence_span": "分区控漏系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "渗漏预警云平台",
+        "evidence_span": "渗漏预警云平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "在线水力模型",
+        "evidence_span": "在线水力模型等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "供水管网漏损管理系统",
+        "evidence_span": "基于数据与业务联动的供水管网漏损管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水务系统软件",
+        "evidence_span": "公司水务软件客户"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "系统集成服务",
+        "evidence_span": "公司水务管理系统、系统集成服务收入持续高增长"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网技术",
+        "evidence_span": "综合运用物联网"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据技术",
+        "evidence_span": "大数据"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "边缘计算技术",
+        "evidence_span": "边缘计算等新一代信息技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水务数据采集技术",
+        "evidence_span": "水务数据采集"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水务数据传输技术",
+        "evidence_span": "传输"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水务数据存储技术",
+        "evidence_span": "存储"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水务数据处理技术",
+        "evidence_span": "处理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水务数据智能分析技术",
+        "evidence_span": "智能分析为核心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据积累和治理技术",
+        "evidence_span": "数据的积累和治理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "业务中台建设技术",
+        "evidence_span": "业务中台的建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "业务软件融合分析能力",
+        "evidence_span": "业务软件的全面性和融合分析能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "软件驱动的全产业链整合能力",
+        "evidence_span": "软件驱动的全产业链整合能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "爆漏实时预警与定位技术",
+        "evidence_span": "爆漏实时预警与定位技术方面达到国际先进水平"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "水务企业客户",
+        "evidence_span": "服务水务企业超过600家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "水务局",
+        "evidence_span": "承担多地水务局项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内规模排名前12的水务企业",
+        "evidence_span": "国内规模排名前12的水务企业中，已有9家为公司水务软件客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "绍兴水务",
+        "evidence_span": "公司与绍兴水务、清华大学合作开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "清华大学",
+        "evidence_span": "公司与绍兴水务、清华大学合作开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "嘉源环境",
+        "evidence_span": "公司与嘉源环境合计出资1000万元"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "水务信息化",
+        "evidence_span": "水务信息化高景气"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧水务",
+        "evidence_span": "智慧水务行业加速落地"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:01:04"
+}

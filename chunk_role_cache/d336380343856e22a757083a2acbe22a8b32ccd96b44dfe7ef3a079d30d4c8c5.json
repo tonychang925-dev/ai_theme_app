@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "b649780512b9", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述上海市经信委主任在论坛上的发言，涉及人形机器人相关政策制定、关键技术攻关和行动计划。这包含政策支持和产业发展目标等静态知识，但以事件形式呈现，因此分类为candidate_mixed。"}}

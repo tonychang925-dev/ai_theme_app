@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:10:23", "result": {"chunk_id": "6e6391dd91cb", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述华为取得专利的具体事件，包括日期、专利号，属于公司公告，没有解释技术内容或提供静态知识。"}}

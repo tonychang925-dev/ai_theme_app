@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "5eb6b78041e9", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段解释了台积电CoWoS先进封装技术的应用场景（AI及高性能芯片）和关键客户（英伟达、AMD），并提及产能状况，提供了半导体设备中先进封装环节的知识性信息，但以事件形式呈现，稳定性较弱。"}}

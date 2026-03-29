@@ -1,0 +1,139 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "百货业",
+      "evidence_span": "公司从事以百货业为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超市",
+      "evidence_span": "超市为辅的连锁零售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电器",
+      "evidence_span": "电器为辅的连锁零售业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域性企业",
+      "evidence_span": "甘、青、宁三省区的区域性企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "连锁零售企业",
+      "evidence_span": "甘肃省内最大的连锁零售企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品销售",
+      "evidence_span": "商品销售收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "租金收入",
+      "evidence_span": "功能商户的租金收入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全渠道数字化运营",
+      "evidence_span": "完成公司全渠道数字化运营发展组织的搭建"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线上商城",
+      "evidence_span": "总店线上商城实现百货商品销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抖音直播",
+      "evidence_span": "兰州国芳百货抖音直播间粉丝突破5.5万人"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "VIP高质顾客",
+      "evidence_span": "邀请五十余名VIP高质顾客"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "茅台",
+      "evidence_span": "国芳集团作为茅台在西北地区特许的KA渠道商之一"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "消费复苏",
+      "evidence_span": "消费复苏乘势而上"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "百货业",
+        "evidence_span": "公司从事以百货业为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "超市",
+        "evidence_span": "超市为辅的连锁零售业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电器",
+        "evidence_span": "电器为辅的连锁零售业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域性企业",
+        "evidence_span": "甘、青、宁三省区的区域性企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "连锁零售企业",
+        "evidence_span": "甘肃省内最大的连锁零售企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品销售",
+        "evidence_span": "商品销售收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "租金收入",
+        "evidence_span": "功能商户的租金收入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全渠道数字化运营",
+        "evidence_span": "完成公司全渠道数字化运营发展组织的搭建"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线上商城",
+        "evidence_span": "总店线上商城实现百货商品销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抖音直播",
+        "evidence_span": "兰州国芳百货抖音直播间粉丝突破5.5万人"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "VIP高质顾客",
+        "evidence_span": "邀请五十余名VIP高质顾客"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "茅台",
+        "evidence_span": "国芳集团作为茅台在西北地区特许的KA渠道商之一"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "消费复苏",
+        "evidence_span": "消费复苏乘势而上"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:11:23"
+}

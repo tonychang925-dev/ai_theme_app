@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:46:00", "result": {"chunk_id": "46ef770a58dc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含静态知识（如国产化目标、技术路径猜想），但混合了时间性内容（如2025年、2030年目标、量产时间表），可能涉及事件或计划，需进一步裁决以分离知识部分。"}}

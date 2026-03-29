@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-theme-app.local/schemas/prd_validation_report.schema.json",
+  "title": "PRD Validation Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "phase", "checked_at", "checks", "gate_ready"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0" },
+    "phase": { "type": "string", "minLength": 1 },
+    "checked_at": { "type": "string", "format": "date-time" },
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "passed", "severity"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "id_uniqueness",
+              "requirement_verifiable",
+              "traceability_complete",
+              "conflict_resolution_recorded",
+              "schema_valid"
+            ]
+          },
+          "passed": { "type": "boolean" },
+          "severity": { "type": "string", "enum": ["info", "warn", "error"] },
+          "details": { "type": "string" }
+        }
+      }
+    },
+    "gate_ready": { "type": "boolean" }
+  }
+}

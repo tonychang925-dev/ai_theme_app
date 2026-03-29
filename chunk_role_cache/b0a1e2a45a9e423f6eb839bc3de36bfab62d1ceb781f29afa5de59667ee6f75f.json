@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:58:48", "result": {"chunk_id": "ea3f1daaa9cf", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含券商观点，涉及技术突破、政策落地和招投标加速等事件性信息，但也隐含了核聚变技术工程化与商业化的知识，可能对题材本体构建有价值，但混合了事件元素。"}}

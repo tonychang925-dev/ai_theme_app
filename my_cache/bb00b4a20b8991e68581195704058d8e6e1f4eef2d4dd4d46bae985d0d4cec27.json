@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "7d40cbe2b13b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落混合了事件（奉贤区发布行动方案、项目落地）和潜在知识（集成电路配套材料方向如湿化学品、高纯靶材、电子气体、半导体封装材料，以及先进制程材料如6N级以上高纯靶材、G3级以上高纯试剂、深紫外光刻胶），这些知识可能对半导体材料领域构建有价值，但以政策事件形式呈现。"}}

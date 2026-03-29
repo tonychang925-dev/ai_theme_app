@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 280613628.0,
+    "changeCount": 0.01,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:13",
+    "detail": "\n\t\t\t\t　　一、本集团经营情况分析\n<br>　　2023年一季度，本集团坚持稳中求进工作总基调，以价值创造为核心，持续深化结构调整、提升发展质效，推动经营高质量发展。\n<br>　　报告期内，本集团利润总额78.65亿元，同比增加3.19亿元，增长4.23%；归属于上市公司股东的净利润58.54亿元，同比增加2.28亿元，增长4.05%。\n<br>　　报告期末，本集团资产总额40,291.17亿元，比上年末增加1,289.50亿元，增长3.31%；贷款总额23,529.88亿元，比上年末增加800.15亿元，增长3.52%。本集团负债总额37,205.29亿元，比上年末增加1,436.84亿元，增长4.02%；存款总额21,823.49亿元，比上年末增加1,184.75亿元，增长5.74%。\n<br>　　报告期末，本集团不良贷款率1.73%，比上年末下降0.02个百分点；拨备覆盖率162.21%，比上年末提高2.33个百分点；贷款拨备率2.81%，比上年末提高0.01个百分点。\t\t\t\t<span style=\"display: inline-block;width: 42px;\"></span>\n\t\t\t\t<a class=\"less fr\" href=\"javascript:void(0)\" style=\"position:absolute;right:0;bottom:0;\"></a>\n\t\t\t",
+    "firstLetter": "HXYH",
+    "high": 6.77,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 6.72,
+    "marketValue": 107107468589.64,
+    "name": "华夏银行",
+    "pctChg": 0.15,
+    "price": 6.74,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 0,
+    "recent60Change": -3.44,
+    "recentChange": 6.31,
+    "remark": "全国第五家上市银行",
+    "status": 1,
+    "stockId": "600015",
+    "stockLightspots": [
+      {
+        "bizKey": "11955",
+        "content": "混合所有制的样板,改革激活潜力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11955,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11956",
+        "content": "华夏银行资产质量稳定，业绩维持高位",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11956,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11957",
+        "content": "华夏银行不良包袱逐步出清，期待信用卡业务发力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11957,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11958",
+        "content": "华夏银行定位 “中小企业金融服务商”，险资入定位 “中小企业金融服务商”，险资入",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11958,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11959",
+        "content": "华夏银行自上而下，迎改革新局面",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11959,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11960",
+        "content": "华夏银行存量风险处置初见成效，拨备反哺业绩略超预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11960,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11961",
+        "content": "华夏银行管理层落定，锐意改革展蓝图",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11961,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11962",
+        "content": "经营改善,后发优势渐显",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11962,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11963",
+        "content": "华夏银行营收高增持续，不良压力仍存",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11963,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11964",
+        "content": "华夏银行资产质量未现改善，资本金亟待补充",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11964,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11965",
+        "content": "盈利增长超预期,预计14年资产规模增速或有所放缓",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11965,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11966",
+        "content": "盈利增长符合预期,净息差环比有所回升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11966,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11967",
+        "content": "成本控制力提升,业务结构优化",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11967,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11968",
+        "content": "业绩增长略超市场预期,净息差持续提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11968,
+        "stockId": "600015",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11969",
+        "content": "加强成本管理维持业绩稳中略升，资产质量主要指标相对平稳",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11969,
+        "stockId": "600015",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:01",
+    "vol": 416335.99
+  }
+}

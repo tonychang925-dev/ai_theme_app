@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "白银冶炼",
+      "evidence_span": "主营业务是以白银冶炼和深加工为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "白银深加工",
+      "evidence_span": "主营业务是以白银冶炼和深加工为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铅冶炼",
+      "evidence_span": "配套铅冶炼"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有价金属综合回收",
+      "evidence_span": "并综合回收金、铋、锑、锌、铜、铟、钯等有价金属"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "白银行业龙头",
+      "evidence_span": "国内白银行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "白银冶炼龙头",
+      "evidence_span": "国内白银冶炼龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国领先白银冶炼企业",
+      "evidence_span": "全国领先白银冶炼企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "白银清洁冶炼的领先者",
+      "evidence_span": "白银清洁冶炼的领先者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "白银清洁回收领域的领先企业",
+      "evidence_span": "白银清洁回收领域的领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "白银冶炼第一股",
+      "evidence_span": "白银冶炼第一股"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "白银清洁生产企业",
+      "evidence_span": "白银清洁生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "白银产业综合服务商",
+      "evidence_span": "致力于成为全球领先的白银产业综合服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "白银",
+      "evidence_span": "公司的主要产品是白银"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电铅",
+      "evidence_span": "公司的主要产品是白银和电铅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄金",
+      "evidence_span": "生产黄金420公斤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氧化锌",
+      "evidence_span": "生产氧化锌4,351吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫酸",
+      "evidence_span": "生产硫酸51,515.17吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粗铋",
+      "evidence_span": "生产粗铋1,984.95吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯银",
+      "evidence_span": "高纯银"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯硝酸银",
+      "evidence_span": "高纯硝酸银"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纳米银粉",
+      "evidence_span": "纳米银粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子银浆",
+      "evidence_span": "电子银浆"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "清洁无砷炼银技术",
+      "evidence_span": "公司独创全球领先的清洁无砷炼银技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "液态渣直接还原节能改造与余热发电工程",
+      "evidence_span": "液态渣直接还原节能改造与余热发电工程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效分离/提纯技术",
+      "evidence_span": "高效分离/提纯"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "节能环保清洁生产技术",
+      "evidence_span": "节能环保清洁生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多金属复杂伴生资源综合利用技术",
+      "evidence_span": "多金属复杂伴生资源综合利用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "冶炼无害化处理技术",
+      "evidence_span": "冶炼无害化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化处理技术",
+      "evidence_span": "自动化处理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "有色多金属复杂资源回收技术",
+      "evidence_span": "有色多金属复杂资源回收"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "再生金属循环利用技术",
+      "evidence_span": "再生金属循环利用技术开发"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "白银冶炼",
+        "evidence_span": "主营业务是以白银冶炼和深加工为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "白银深加工",
+        "evidence_span": "主营业务是以白银冶炼和深加工为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铅冶炼",
+        "evidence_span": "配套铅冶炼"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有价金属综合回收",
+        "evidence_span": "并综合回收金、铋、锑、锌、铜、铟、钯等有价金属"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "白银行业龙头",
+        "evidence_span": "国内白银行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "白银冶炼龙头",
+        "evidence_span": "国内白银冶炼龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国领先白银冶炼企业",
+        "evidence_span": "全国领先白银冶炼企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "白银清洁冶炼的领先者",
+        "evidence_span": "白银清洁冶炼的领先者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "白银清洁回收领域的领先企业",
+        "evidence_span": "白银清洁回收领域的领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "白银冶炼第一股",
+        "evidence_span": "白银冶炼第一股"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "白银清洁生产企业",
+        "evidence_span": "白银清洁生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "白银产业综合服务商",
+        "evidence_span": "致力于成为全球领先的白银产业综合服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "白银",
+        "evidence_span": "公司的主要产品是白银"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电铅",
+        "evidence_span": "公司的主要产品是白银和电铅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄金",
+        "evidence_span": "生产黄金420公斤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氧化锌",
+        "evidence_span": "生产氧化锌4,351吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫酸",
+        "evidence_span": "生产硫酸51,515.17吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粗铋",
+        "evidence_span": "生产粗铋1,984.95吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯银",
+        "evidence_span": "高纯银"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯硝酸银",
+        "evidence_span": "高纯硝酸银"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纳米银粉",
+        "evidence_span": "纳米银粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子银浆",
+        "evidence_span": "电子银浆"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "清洁无砷炼银技术",
+        "evidence_span": "公司独创全球领先的清洁无砷炼银技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "液态渣直接还原节能改造与余热发电工程",
+        "evidence_span": "液态渣直接还原节能改造与余热发电工程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效分离/提纯技术",
+        "evidence_span": "高效分离/提纯"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "节能环保清洁生产技术",
+        "evidence_span": "节能环保清洁生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多金属复杂伴生资源综合利用技术",
+        "evidence_span": "多金属复杂伴生资源综合利用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "冶炼无害化处理技术",
+        "evidence_span": "冶炼无害化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化处理技术",
+        "evidence_span": "自动化处理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "有色多金属复杂资源回收技术",
+        "evidence_span": "有色多金属复杂资源回收"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "再生金属循环利用技术",
+        "evidence_span": "再生金属循环利用技术开发"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:19:19"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:53:12", "result": {"span_uid": "4890d402b886", "action": "keep", "canonical_text": "华卓精科拥有198项专利，其中包含148项发明专利和5项美国专利，其中162项与清华大学共有，享有独占实施权。", "final_type": "related", "final_role": "专利储备情况", "stability": "high", "reason": "该片段描述了公司的专利储备，是与题材高度相关的稳定知识，可独立成立。"}}

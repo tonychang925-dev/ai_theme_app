@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final", "model": "deepseek-chat", "timestamp": "2026-03-08T11:07:55", "result": {"chunk_id": "092829e0a4e8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述全球和中国半导体销售额连续增长的数据，属于市场景气数据事件，没有涉及半导体设备本身的静态知识。"}}

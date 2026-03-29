@@ -1,0 +1,449 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "手机显示",
+      "evidence_span": "将手机显示、车载显示作为核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车载显示",
+      "evidence_span": "将手机显示、车载显示作为核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "IT显示",
+      "evidence_span": "将IT显示作为快速增长的关键业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业品显示",
+      "evidence_span": "将工业品、横向细分市场、非显、生态拓展等作为增值业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能穿戴显示",
+      "evidence_span": "智能穿戴业务继续保持刚性OLED领先优势"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中小尺寸显示领域的领先企业",
+      "evidence_span": "作为中小尺寸显示领域的领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "液晶显示器及模块制造商",
+      "evidence_span": "国内规模最大的液晶显示器及模块制造商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LTPS产品",
+      "evidence_span": "LTPS产品面对严峻市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OLED产品",
+      "evidence_span": "OLED产品性能达到国内领先水平"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "柔性AMOLED产品",
+      "evidence_span": "实现首批柔性AMOLED产品出货国际品牌客户"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载显示模组",
+      "evidence_span": "车载显示模组入选国家第七批制造业单项冠军产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载LTPS产品",
+      "evidence_span": "车载LTPS产品销售额同比翻番"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载mini-LED产品",
+      "evidence_span": "车载mini-LED产品进入量产阶段"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LTPS IT显示产品",
+      "evidence_span": "LTPS IT显示产品出货量同比增长48%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "刚性OLED产品",
+      "evidence_span": "智能穿戴业务继续保持刚性OLED领先优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客制化显示解决方案",
+      "evidence_span": "为客户提供全方位的客制化显示解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LTPS技术",
+      "evidence_span": "LTPS则凭借成熟的供应链体系、较高性能等优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AMOLED技术",
+      "evidence_span": "AMOLED则凭借更省电、多种形态、更轻薄等优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "折叠技术",
+      "evidence_span": "重点研发折叠、HTD、CFOT、MLP、屏下摄像头等先进技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HTD技术",
+      "evidence_span": "重点研发折叠、HTD、CFOT、MLP、屏下摄像头等先进技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CFOT技术",
+      "evidence_span": "重点研发折叠、HTD、CFOT、MLP、屏下摄像头等先进技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MLP技术",
+      "evidence_span": "重点研发折叠、HTD、CFOT、MLP、屏下摄像头等先进技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "屏下摄像头技术",
+      "evidence_span": "重点研发折叠、HTD、CFOT、MLP、屏下摄像头等先进技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "2160Hz超高频PWM调光双曲屏",
+      "evidence_span": "2160Hz超高频PWM调光双曲屏助力客户手机产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "In-cell主动笔技术",
+      "evidence_span": "In-cell主动笔技术创新性地实现了手机、平板、笔记本电脑屏幕的多终端一笔联动"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "折叠屏光学指纹识别解决方案",
+      "evidence_span": "折叠屏光学指纹识别解决方案，可支持全屏识别"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LCDCUP全面屏解决方案",
+      "evidence_span": "LCDCUP全面屏解决方案搭配极致窄边框技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车载Mini-LED技术",
+      "evidence_span": "根据市场和客户需求聚焦车载Mini-LED"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "可调隐私显示技术",
+      "evidence_span": "可调隐私显示技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BaldrSys抬头显示技术",
+      "evidence_span": "BaldrSys抬头显示技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "INVISIBLE隐藏式显示技术",
+      "evidence_span": "沉浸式座舱体验的INVISIBLE隐藏式显示技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Micro-LED技术",
+      "evidence_span": "在Micro-LED、Mini-LED、AMOLED、LTPS领域的最新成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "液晶天线技术",
+      "evidence_span": "稳步推进在液晶天线、微流控、面板级封装、智能调光、大面积指纹识别、柔性传感器等领域开展技术开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "面板级封装技术",
+      "evidence_span": "稳步推进在液晶天线、微流控、面板级封装、智能调光、大面积指纹识别、柔性传感器等领域开展技术开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "行业主流品牌客户",
+      "evidence_span": "实现与行业主流品牌客户的深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球主流品牌车厂",
+      "evidence_span": "客户资源涵盖了中系、欧系、美系、日系、韩系等各大车厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国自主品牌Top10车厂",
+      "evidence_span": "实现国际主流客户和中国自主品牌Top10全覆盖"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "世界500强行业客户",
+      "evidence_span": "大部分都是世界500强行业客户及其他知名品牌专业客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "产品品质上荣获OPPO、vivo、小米、ResMed、佛吉亚、松下等客户奖项"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "vivo",
+      "evidence_span": "产品品质上荣获OPPO、vivo、小米、ResMed、佛吉亚、松下等客户奖项"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "产品品质上荣获OPPO、vivo、小米、ResMed、佛吉亚、松下等客户奖项"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益全面屏带动涨价潮",
+      "evidence_span": "受益全面屏带动涨价潮"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益手机屏幕创新",
+      "evidence_span": "受益手机屏幕创新"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益Notch屏带动模组ASP提升",
+      "evidence_span": "受益Notch屏带动模组ASP提升"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "手机显示",
+        "evidence_span": "将手机显示、车载显示作为核心业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车载显示",
+        "evidence_span": "将手机显示、车载显示作为核心业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "IT显示",
+        "evidence_span": "将IT显示作为快速增长的关键业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业品显示",
+        "evidence_span": "将工业品、横向细分市场、非显、生态拓展等作为增值业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能穿戴显示",
+        "evidence_span": "智能穿戴业务继续保持刚性OLED领先优势"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中小尺寸显示领域的领先企业",
+        "evidence_span": "作为中小尺寸显示领域的领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "液晶显示器及模块制造商",
+        "evidence_span": "国内规模最大的液晶显示器及模块制造商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LTPS产品",
+        "evidence_span": "LTPS产品面对严峻市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OLED产品",
+        "evidence_span": "OLED产品性能达到国内领先水平"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "柔性AMOLED产品",
+        "evidence_span": "实现首批柔性AMOLED产品出货国际品牌客户"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载显示模组",
+        "evidence_span": "车载显示模组入选国家第七批制造业单项冠军产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载LTPS产品",
+        "evidence_span": "车载LTPS产品销售额同比翻番"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载mini-LED产品",
+        "evidence_span": "车载mini-LED产品进入量产阶段"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LTPS IT显示产品",
+        "evidence_span": "LTPS IT显示产品出货量同比增长48%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "刚性OLED产品",
+        "evidence_span": "智能穿戴业务继续保持刚性OLED领先优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客制化显示解决方案",
+        "evidence_span": "为客户提供全方位的客制化显示解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LTPS技术",
+        "evidence_span": "LTPS则凭借成熟的供应链体系、较高性能等优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AMOLED技术",
+        "evidence_span": "AMOLED则凭借更省电、多种形态、更轻薄等优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "折叠技术",
+        "evidence_span": "重点研发折叠、HTD、CFOT、MLP、屏下摄像头等先进技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HTD技术",
+        "evidence_span": "重点研发折叠、HTD、CFOT、MLP、屏下摄像头等先进技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CFOT技术",
+        "evidence_span": "重点研发折叠、HTD、CFOT、MLP、屏下摄像头等先进技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MLP技术",
+        "evidence_span": "重点研发折叠、HTD、CFOT、MLP、屏下摄像头等先进技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "屏下摄像头技术",
+        "evidence_span": "重点研发折叠、HTD、CFOT、MLP、屏下摄像头等先进技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "2160Hz超高频PWM调光双曲屏",
+        "evidence_span": "2160Hz超高频PWM调光双曲屏助力客户手机产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "In-cell主动笔技术",
+        "evidence_span": "In-cell主动笔技术创新性地实现了手机、平板、笔记本电脑屏幕的多终端一笔联动"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "折叠屏光学指纹识别解决方案",
+        "evidence_span": "折叠屏光学指纹识别解决方案，可支持全屏识别"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LCDCUP全面屏解决方案",
+        "evidence_span": "LCDCUP全面屏解决方案搭配极致窄边框技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车载Mini-LED技术",
+        "evidence_span": "根据市场和客户需求聚焦车载Mini-LED"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "可调隐私显示技术",
+        "evidence_span": "可调隐私显示技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BaldrSys抬头显示技术",
+        "evidence_span": "BaldrSys抬头显示技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "INVISIBLE隐藏式显示技术",
+        "evidence_span": "沉浸式座舱体验的INVISIBLE隐藏式显示技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Micro-LED技术",
+        "evidence_span": "在Micro-LED、Mini-LED、AMOLED、LTPS领域的最新成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "液晶天线技术",
+        "evidence_span": "稳步推进在液晶天线、微流控、面板级封装、智能调光、大面积指纹识别、柔性传感器等领域开展技术开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "面板级封装技术",
+        "evidence_span": "稳步推进在液晶天线、微流控、面板级封装、智能调光、大面积指纹识别、柔性传感器等领域开展技术开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "行业主流品牌客户",
+        "evidence_span": "实现与行业主流品牌客户的深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球主流品牌车厂",
+        "evidence_span": "客户资源涵盖了中系、欧系、美系、日系、韩系等各大车厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国自主品牌Top10车厂",
+        "evidence_span": "实现国际主流客户和中国自主品牌Top10全覆盖"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "世界500强行业客户",
+        "evidence_span": "大部分都是世界500强行业客户及其他知名品牌专业客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "产品品质上荣获OPPO、vivo、小米、ResMed、佛吉亚、松下等客户奖项"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "vivo",
+        "evidence_span": "产品品质上荣获OPPO、vivo、小米、ResMed、佛吉亚、松下等客户奖项"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "产品品质上荣获OPPO、vivo、小米、ResMed、佛吉亚、松下等客户奖项"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益全面屏带动涨价潮",
+        "evidence_span": "受益全面屏带动涨价潮"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益手机屏幕创新",
+        "evidence_span": "受益手机屏幕创新"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益Notch屏带动模组ASP提升",
+        "evidence_span": "受益Notch屏带动模组ASP提升"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:49:50"
+}

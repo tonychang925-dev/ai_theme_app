@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "体育户外消费品",
+      "evidence_span": "从事体育户外、家居生活、健康护理等消费品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "家居生活消费品",
+      "evidence_span": "从事体育户外、家居生活、健康护理等消费品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "健康护理消费品",
+      "evidence_span": "从事体育户外、家居生活、健康护理等消费品的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "消费品整体解决方案供应商",
+      "evidence_span": "成为全球领先的消费品整体解决方案供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育用品",
+      "evidence_span": "主要产品包括体育用品、户外休闲用品、家用电动工具、室内家居用品、个人护理用品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户外休闲用品",
+      "evidence_span": "主要产品包括体育用品、户外休闲用品、家用电动工具、室内家居用品、个人护理用品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家用电动工具",
+      "evidence_span": "主要产品包括体育用品、户外休闲用品、家用电动工具、室内家居用品、个人护理用品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "室内家居用品",
+      "evidence_span": "主要产品包括体育用品、户外休闲用品、家用电动工具、室内家居用品、个人护理用品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "个人护理用品",
+      "evidence_span": "主要产品包括体育用品、户外休闲用品、家用电动工具、室内家居用品、个人护理用品等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产品设计",
+      "evidence_span": "以产品设计、精密模具设计开发、多工艺多制程整合及智能制造为核心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密模具设计开发",
+      "evidence_span": "以产品设计、精密模具设计开发、多工艺多制程整合及智能制造为核心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多工艺多制程整合",
+      "evidence_span": "以产品设计、精密模具设计开发、多工艺多制程整合及智能制造为核心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能制造",
+      "evidence_span": "以产品设计、精密模具设计开发、多工艺多制程整合及智能制造为核心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "迪卡侬",
+      "evidence_span": "已与迪卡侬、宜家、Wagner、YETI等全球领先跨国企业建立长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宜家",
+      "evidence_span": "已与迪卡侬、宜家、Wagner、YETI等全球领先跨国企业建立长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Wagner",
+      "evidence_span": "已与迪卡侬、宜家、Wagner、YETI等全球领先跨国企业建立长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "YETI",
+      "evidence_span": "已与迪卡侬、宜家、Wagner、YETI等全球领先跨国企业建立长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Helen of Troy Limited",
+      "evidence_span": "进一步拓展了 Helen of Troy Limited 等新客户"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "体育户外消费品",
+        "evidence_span": "从事体育户外、家居生活、健康护理等消费品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "家居生活消费品",
+        "evidence_span": "从事体育户外、家居生活、健康护理等消费品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "健康护理消费品",
+        "evidence_span": "从事体育户外、家居生活、健康护理等消费品的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "消费品整体解决方案供应商",
+        "evidence_span": "成为全球领先的消费品整体解决方案供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育用品",
+        "evidence_span": "主要产品包括体育用品、户外休闲用品、家用电动工具、室内家居用品、个人护理用品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户外休闲用品",
+        "evidence_span": "主要产品包括体育用品、户外休闲用品、家用电动工具、室内家居用品、个人护理用品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家用电动工具",
+        "evidence_span": "主要产品包括体育用品、户外休闲用品、家用电动工具、室内家居用品、个人护理用品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "室内家居用品",
+        "evidence_span": "主要产品包括体育用品、户外休闲用品、家用电动工具、室内家居用品、个人护理用品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "个人护理用品",
+        "evidence_span": "主要产品包括体育用品、户外休闲用品、家用电动工具、室内家居用品、个人护理用品等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产品设计",
+        "evidence_span": "以产品设计、精密模具设计开发、多工艺多制程整合及智能制造为核心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密模具设计开发",
+        "evidence_span": "以产品设计、精密模具设计开发、多工艺多制程整合及智能制造为核心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多工艺多制程整合",
+        "evidence_span": "以产品设计、精密模具设计开发、多工艺多制程整合及智能制造为核心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能制造",
+        "evidence_span": "以产品设计、精密模具设计开发、多工艺多制程整合及智能制造为核心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "迪卡侬",
+        "evidence_span": "已与迪卡侬、宜家、Wagner、YETI等全球领先跨国企业建立长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宜家",
+        "evidence_span": "已与迪卡侬、宜家、Wagner、YETI等全球领先跨国企业建立长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Wagner",
+        "evidence_span": "已与迪卡侬、宜家、Wagner、YETI等全球领先跨国企业建立长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "YETI",
+        "evidence_span": "已与迪卡侬、宜家、Wagner、YETI等全球领先跨国企业建立长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Helen of Troy Limited",
+        "evidence_span": "进一步拓展了 Helen of Troy Limited 等新客户"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:26:10"
+}

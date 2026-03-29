@@ -1,0 +1,489 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能装备整体解决方案",
+      "evidence_span": "公司产品主要包括智能装备整体解决方案和新能源汽车电驱动系统产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源汽车电驱动系统产品",
+      "evidence_span": "公司产品主要包括智能装备整体解决方案和新能源汽车电驱动系统产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车等先进制造领域智能装备和新能源汽车电机电控零部件产品的主流供应商",
+      "evidence_span": "是知名的汽车等先进制造领域智能装备和新能源汽车电机电控零部件产品的主流供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车白车身智能连接生产线",
+      "evidence_span": "公司智能装备整体解决方案主要包括汽车白车身智能连接生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车动力总成智能装测生产线",
+      "evidence_span": "汽车动力总成智能装测生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力电池智能装测生产线",
+      "evidence_span": "动力电池智能装测生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车电驱动系统",
+      "evidence_span": "新能源汽车电驱动系统是新能源汽车的核心部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机",
+      "evidence_span": "公司拥有包含电机、电机控制器、集成式电驱动系统在内的完整的新能源电驱动系统产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机控制器",
+      "evidence_span": "公司拥有包含电机、电机控制器、集成式电驱动系统在内的完整的新能源电驱动系统产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集成式电驱动系统",
+      "evidence_span": "公司拥有包含电机、电机控制器、集成式电驱动系统在内的完整的新能源电驱动系统产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "混合动力汽车电驱动系统",
+      "evidence_span": "公司的新能源电驱动产品包括电机、电机控制器、集成式电驱动系统和混合动力汽车电驱动系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池智能装测生产线",
+      "evidence_span": "公司前瞻布局燃料电池智能装测生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "白车身智能连接生产线核心设备和技术",
+      "evidence_span": "白车身智能连接生产线核心设备和技术由公司自主研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复合材料智能连接与监控系统",
+      "evidence_span": "包括复合材料智能连接与监控系统、滚边与智能监测系统和机器人激光焊接系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "滚边与智能监测系统",
+      "evidence_span": "包括复合材料智能连接与监控系统、滚边与智能监测系统和机器人激光焊接系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器人激光焊接系统",
+      "evidence_span": "包括复合材料智能连接与监控系统、滚边与智能监测系统和机器人激光焊接系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车身门盖机器人柔性滚边技术",
+      "evidence_span": "公司还自主研发车身门盖机器人柔性滚边技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器人柔性总拼技术",
+      "evidence_span": "机器人柔性总拼技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铝合金闭合件包边成型全套解决方案",
+      "evidence_span": "开发铝合金闭合件包边成型全套解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能铆接与监控系统",
+      "evidence_span": "公司自主开发智能铆接与监控系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "流钻拧紧（FDS）",
+      "evidence_span": "应用于流钻拧紧（FDS）、自冲铆接（SPR）两大轻量化关键连接技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自冲铆接（SPR）",
+      "evidence_span": "应用于流钻拧紧（FDS）、自冲铆接（SPR）两大轻量化关键连接技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电芯包胶技术",
+      "evidence_span": "公司研发的关键技术有电芯包胶技术、锂电池结构胶及导热胶自动涂布技术、电芯自动叠片技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锂电池结构胶及导热胶自动涂布技术",
+      "evidence_span": "公司研发的关键技术有电芯包胶技术、锂电池结构胶及导热胶自动涂布技术、电芯自动叠片技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电芯自动叠片技术",
+      "evidence_span": "公司研发的关键技术有电芯包胶技术、锂电池结构胶及导热胶自动涂布技术、电芯自动叠片技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氢燃料电池电堆自动堆叠技术",
+      "evidence_span": "公司自主研发氢燃料电池电堆自动堆叠技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "捷豹路虎",
+      "evidence_span": "客户包括捷豹路虎、特斯拉、大众变速器、宁德时代等整车厂、零部件厂与电池厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特斯拉",
+      "evidence_span": "客户包括捷豹路虎、特斯拉、大众变速器、宁德时代等整车厂、零部件厂与电池厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众变速器",
+      "evidence_span": "客户包括捷豹路虎、特斯拉、大众变速器、宁德时代等整车厂、零部件厂与电池厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "客户包括捷豹路虎、特斯拉、大众变速器、宁德时代等整车厂、零部件厂与电池厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来汽车",
+      "evidence_span": "目前已获得英国捷豹路虎、特斯拉、蔚来汽车、上汽大众等轻量化车身智能连接生产线订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽大众",
+      "evidence_span": "目前已获得英国捷豹路虎、特斯拉、蔚来汽车、上汽大众等轻量化车身智能连接生产线订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安汽车",
+      "evidence_span": "客户包括长安汽车、北汽集团、广汽集团、上汽变速器、青山工业等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽集团",
+      "evidence_span": "客户包括长安汽车、北汽集团、广汽集团、上汽变速器、青山工业等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽集团",
+      "evidence_span": "客户包括长安汽车、北汽集团、广汽集团、上汽变速器、青山工业等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽变速器",
+      "evidence_span": "客户包括长安汽车、北汽集团、广汽集团、上汽变速器、青山工业等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "青山工业",
+      "evidence_span": "客户包括长安汽车、北汽集团、广汽集团、上汽变速器、青山工业等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京奔驰",
+      "evidence_span": "公司产品已成功配套于宁德时代、北京奔驰、上汽通用等企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用",
+      "evidence_span": "公司产品已成功配套于宁德时代、北京奔驰、上汽通用等企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安徽明天氢能科技股份有限公司",
+      "evidence_span": "公司目前已承接安徽明天氢能科技股份有限公司、浙江氢途科技有限公司燃料电池智能装测生产线项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江氢途科技有限公司",
+      "evidence_span": "公司目前已承接安徽明天氢能科技股份有限公司、浙江氢途科技有限公司燃料电池智能装测生产线项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风本田",
+      "evidence_span": "主要应用于东风本田、广汽本田、VINFAST、江淮汽车、奇瑞汽车、江铃新能源等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽本田",
+      "evidence_span": "主要应用于东风本田、广汽本田、VINFAST、江淮汽车、奇瑞汽车、江铃新能源等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "VINFAST",
+      "evidence_span": "主要应用于东风本田、广汽本田、VINFAST、江淮汽车、奇瑞汽车、江铃新能源等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江淮汽车",
+      "evidence_span": "主要应用于东风本田、广汽本田、VINFAST、江淮汽车、奇瑞汽车、江铃新能源等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞汽车",
+      "evidence_span": "主要应用于东风本田、广汽本田、VINFAST、江淮汽车、奇瑞汽车、江铃新能源等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江铃新能源",
+      "evidence_span": "主要应用于东风本田、广汽本田、VINFAST、江淮汽车、奇瑞汽车、江铃新能源等客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车行业发展",
+      "evidence_span": "受益新能源汽车行业发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能装备整体解决方案",
+        "evidence_span": "公司产品主要包括智能装备整体解决方案和新能源汽车电驱动系统产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源汽车电驱动系统产品",
+        "evidence_span": "公司产品主要包括智能装备整体解决方案和新能源汽车电驱动系统产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车等先进制造领域智能装备和新能源汽车电机电控零部件产品的主流供应商",
+        "evidence_span": "是知名的汽车等先进制造领域智能装备和新能源汽车电机电控零部件产品的主流供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车白车身智能连接生产线",
+        "evidence_span": "公司智能装备整体解决方案主要包括汽车白车身智能连接生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车动力总成智能装测生产线",
+        "evidence_span": "汽车动力总成智能装测生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力电池智能装测生产线",
+        "evidence_span": "动力电池智能装测生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车电驱动系统",
+        "evidence_span": "新能源汽车电驱动系统是新能源汽车的核心部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机",
+        "evidence_span": "公司拥有包含电机、电机控制器、集成式电驱动系统在内的完整的新能源电驱动系统产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机控制器",
+        "evidence_span": "公司拥有包含电机、电机控制器、集成式电驱动系统在内的完整的新能源电驱动系统产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集成式电驱动系统",
+        "evidence_span": "公司拥有包含电机、电机控制器、集成式电驱动系统在内的完整的新能源电驱动系统产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "混合动力汽车电驱动系统",
+        "evidence_span": "公司的新能源电驱动产品包括电机、电机控制器、集成式电驱动系统和混合动力汽车电驱动系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池智能装测生产线",
+        "evidence_span": "公司前瞻布局燃料电池智能装测生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "白车身智能连接生产线核心设备和技术",
+        "evidence_span": "白车身智能连接生产线核心设备和技术由公司自主研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复合材料智能连接与监控系统",
+        "evidence_span": "包括复合材料智能连接与监控系统、滚边与智能监测系统和机器人激光焊接系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "滚边与智能监测系统",
+        "evidence_span": "包括复合材料智能连接与监控系统、滚边与智能监测系统和机器人激光焊接系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器人激光焊接系统",
+        "evidence_span": "包括复合材料智能连接与监控系统、滚边与智能监测系统和机器人激光焊接系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车身门盖机器人柔性滚边技术",
+        "evidence_span": "公司还自主研发车身门盖机器人柔性滚边技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器人柔性总拼技术",
+        "evidence_span": "机器人柔性总拼技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铝合金闭合件包边成型全套解决方案",
+        "evidence_span": "开发铝合金闭合件包边成型全套解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能铆接与监控系统",
+        "evidence_span": "公司自主开发智能铆接与监控系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "流钻拧紧（FDS）",
+        "evidence_span": "应用于流钻拧紧（FDS）、自冲铆接（SPR）两大轻量化关键连接技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自冲铆接（SPR）",
+        "evidence_span": "应用于流钻拧紧（FDS）、自冲铆接（SPR）两大轻量化关键连接技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电芯包胶技术",
+        "evidence_span": "公司研发的关键技术有电芯包胶技术、锂电池结构胶及导热胶自动涂布技术、电芯自动叠片技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锂电池结构胶及导热胶自动涂布技术",
+        "evidence_span": "公司研发的关键技术有电芯包胶技术、锂电池结构胶及导热胶自动涂布技术、电芯自动叠片技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电芯自动叠片技术",
+        "evidence_span": "公司研发的关键技术有电芯包胶技术、锂电池结构胶及导热胶自动涂布技术、电芯自动叠片技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氢燃料电池电堆自动堆叠技术",
+        "evidence_span": "公司自主研发氢燃料电池电堆自动堆叠技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "捷豹路虎",
+        "evidence_span": "客户包括捷豹路虎、特斯拉、大众变速器、宁德时代等整车厂、零部件厂与电池厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特斯拉",
+        "evidence_span": "客户包括捷豹路虎、特斯拉、大众变速器、宁德时代等整车厂、零部件厂与电池厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众变速器",
+        "evidence_span": "客户包括捷豹路虎、特斯拉、大众变速器、宁德时代等整车厂、零部件厂与电池厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "客户包括捷豹路虎、特斯拉、大众变速器、宁德时代等整车厂、零部件厂与电池厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来汽车",
+        "evidence_span": "目前已获得英国捷豹路虎、特斯拉、蔚来汽车、上汽大众等轻量化车身智能连接生产线订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽大众",
+        "evidence_span": "目前已获得英国捷豹路虎、特斯拉、蔚来汽车、上汽大众等轻量化车身智能连接生产线订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安汽车",
+        "evidence_span": "客户包括长安汽车、北汽集团、广汽集团、上汽变速器、青山工业等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽集团",
+        "evidence_span": "客户包括长安汽车、北汽集团、广汽集团、上汽变速器、青山工业等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽集团",
+        "evidence_span": "客户包括长安汽车、北汽集团、广汽集团、上汽变速器、青山工业等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽变速器",
+        "evidence_span": "客户包括长安汽车、北汽集团、广汽集团、上汽变速器、青山工业等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "青山工业",
+        "evidence_span": "客户包括长安汽车、北汽集团、广汽集团、上汽变速器、青山工业等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京奔驰",
+        "evidence_span": "公司产品已成功配套于宁德时代、北京奔驰、上汽通用等企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用",
+        "evidence_span": "公司产品已成功配套于宁德时代、北京奔驰、上汽通用等企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安徽明天氢能科技股份有限公司",
+        "evidence_span": "公司目前已承接安徽明天氢能科技股份有限公司、浙江氢途科技有限公司燃料电池智能装测生产线项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江氢途科技有限公司",
+        "evidence_span": "公司目前已承接安徽明天氢能科技股份有限公司、浙江氢途科技有限公司燃料电池智能装测生产线项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风本田",
+        "evidence_span": "主要应用于东风本田、广汽本田、VINFAST、江淮汽车、奇瑞汽车、江铃新能源等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽本田",
+        "evidence_span": "主要应用于东风本田、广汽本田、VINFAST、江淮汽车、奇瑞汽车、江铃新能源等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "VINFAST",
+        "evidence_span": "主要应用于东风本田、广汽本田、VINFAST、江淮汽车、奇瑞汽车、江铃新能源等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江淮汽车",
+        "evidence_span": "主要应用于东风本田、广汽本田、VINFAST、江淮汽车、奇瑞汽车、江铃新能源等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞汽车",
+        "evidence_span": "主要应用于东风本田、广汽本田、VINFAST、江淮汽车、奇瑞汽车、江铃新能源等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江铃新能源",
+        "evidence_span": "主要应用于东风本田、广汽本田、VINFAST、江淮汽车、奇瑞汽车、江铃新能源等客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车行业发展",
+        "evidence_span": "受益新能源汽车行业发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:22:29"
+}

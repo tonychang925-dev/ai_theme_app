@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:59:51", "result": {"span_uid": "9f2fb4dd794a", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "政策实施意见", "stability": "medium", "reason": "原片段描述具体部门联合印发政策意见的事件，属于新闻口吻的阶段性政策催化信息。虽然可归类为signal，但无法改写为稳定、可脱离原上下文独立成立的知识表达（如具体部门、文件名称依赖事件细节），因此丢弃。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:43:18", "result": {"chunk_id": "51d5373323be", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落提供了液冷数据中心的定义、与传统风冷的区别、液冷技术的基本原理、液冷服务器的解释以及技术分类（直接冷却和间接冷却），属于纯静态说明，无事件内容。"}}

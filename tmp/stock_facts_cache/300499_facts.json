@@ -1,0 +1,514 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "热管理设备",
+      "evidence_span": "专注于热管理设备及控制系统产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "控制系统产品",
+      "evidence_span": "专注于热管理设备及控制系统产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业热管理整体解决方案",
+      "evidence_span": "发展成为工业热管理整体解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "热管理领先企业",
+      "evidence_span": "高澜股份是国内热管理领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "纯水冷却设备龙头",
+      "evidence_span": "高澜股份国内纯水冷却设备龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新能源热管理“小巨人”",
+      "evidence_span": "新能源热管理“小巨人”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全场景热管理的纯水冷却设备龙头企业",
+      "evidence_span": "聚焦全场景热管理的纯水冷却设备龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纯水冷却设备",
+      "evidence_span": "纯水冷却设备龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "服务器液冷板",
+      "evidence_span": "产品涵盖服务器液冷板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "流体连接部件",
+      "evidence_span": "流体连接部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "歧管(Manifold)",
+      "evidence_span": "歧管(Manifold)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷量分配单元(CDU)",
+      "evidence_span": "多种型号的冷量分配单元(CDU)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "浸没腔体(TANK)",
+      "evidence_span": "多尺寸和不同功率的浸没腔体(TANK)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "流体输送单元",
+      "evidence_span": "流体输送单元等核心部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷板式热管理解决方案",
+      "evidence_span": "提供冷板式为基础的多种热管理解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "浸没式热管理解决方案",
+      "evidence_span": "浸没式为基础的多种热管理解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定点浸没液冷系统",
+      "evidence_span": "自主开发定点浸没液冷系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "泵驱两相液冷系统",
+      "evidence_span": "泵驱两相液冷系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液冷设计及拟工业软件",
+      "evidence_span": "液冷设计及拟工业软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷板式液冷设备",
+      "evidence_span": "冷板式液冷设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "浸没式液冷技术",
+      "evidence_span": "自主研发的浸没式液冷技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "散热架构设计",
+      "evidence_span": "具备从散热架构设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "设备集成",
+      "evidence_span": "设备集成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统调试与运维",
+      "evidence_span": "系统调试与运维的一站式综合解决能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "主要客户包括国家电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "南方电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "许继电气",
+      "evidence_span": "许继电气"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海电气",
+      "evidence_span": "上海电气"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特变电工",
+      "evidence_span": "特变电工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中电普瑞",
+      "evidence_span": "中电普瑞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东方电气",
+      "evidence_span": "东方电气"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家管网",
+      "evidence_span": "国家管网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "宁德时代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "字节跳动",
+      "evidence_span": "字节跳动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里巴巴",
+      "evidence_span": "阿里巴巴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "腾讯",
+      "evidence_span": "腾讯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万国数据",
+      "evidence_span": "万国数据"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浪潮",
+      "evidence_span": "浪潮"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中兴",
+      "evidence_span": "中兴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "世纪互联",
+      "evidence_span": "世纪互联"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "GE",
+      "evidence_span": "GE"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Siemens",
+      "evidence_span": "Siemens"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ABB",
+      "evidence_span": "ABB"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西安西电",
+      "evidence_span": "西安西电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三峡新能源",
+      "evidence_span": "三峡新能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日立能源",
+      "evidence_span": "日立能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新华三",
+      "evidence_span": "新华三"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数据中心液冷",
+      "evidence_span": "数据中心液冷打造第二成长曲线"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源热管理",
+      "evidence_span": "新能源热管理“小巨人”"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能业务",
+      "evidence_span": "加速布局储能业务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "充电桩业务",
+      "evidence_span": "充电桩业务发展可期"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "热管理设备及控制系统产品",
+        "evidence_span": "专注于热管理设备及控制系统产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业热管理整体解决方案",
+        "evidence_span": "发展成为工业热管理整体解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "热管理领先企业",
+        "evidence_span": "高澜股份是国内热管理领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "纯水冷却设备龙头",
+        "evidence_span": "高澜股份国内纯水冷却设备龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新能源热管理“小巨人”",
+        "evidence_span": "新能源热管理“小巨人”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全场景热管理的纯水冷却设备龙头企业",
+        "evidence_span": "聚焦全场景热管理的纯水冷却设备龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纯水冷却设备",
+        "evidence_span": "纯水冷却设备龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "服务器液冷板",
+        "evidence_span": "产品涵盖服务器液冷板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "流体连接部件",
+        "evidence_span": "流体连接部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "歧管(Manifold)",
+        "evidence_span": "歧管(Manifold)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷量分配单元(CDU)",
+        "evidence_span": "多种型号的冷量分配单元(CDU)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "浸没腔体(TANK)",
+        "evidence_span": "多尺寸和不同功率的浸没腔体(TANK)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "流体输送单元",
+        "evidence_span": "流体输送单元等核心部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷板式热管理解决方案",
+        "evidence_span": "提供冷板式为基础的多种热管理解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "浸没式热管理解决方案",
+        "evidence_span": "浸没式为基础的多种热管理解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定点浸没液冷系统",
+        "evidence_span": "自主开发定点浸没液冷系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "泵驱两相液冷系统",
+        "evidence_span": "泵驱两相液冷系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液冷设计及拟工业软件",
+        "evidence_span": "液冷设计及拟工业软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷板式液冷设备",
+        "evidence_span": "冷板式液冷设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "浸没式液冷技术",
+        "evidence_span": "自主研发的浸没式液冷技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "散热架构设计",
+        "evidence_span": "具备从散热架构设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "设备集成",
+        "evidence_span": "设备集成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统调试与运维",
+        "evidence_span": "系统调试与运维的一站式综合解决能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "主要客户包括国家电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "南方电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "许继电气",
+        "evidence_span": "许继电气"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海电气",
+        "evidence_span": "上海电气"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特变电工",
+        "evidence_span": "特变电工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中电普瑞",
+        "evidence_span": "中电普瑞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东方电气",
+        "evidence_span": "东方电气"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家管网",
+        "evidence_span": "国家管网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "宁德时代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "字节跳动",
+        "evidence_span": "字节跳动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里巴巴",
+        "evidence_span": "阿里巴巴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "腾讯",
+        "evidence_span": "腾讯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万国数据",
+        "evidence_span": "万国数据"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浪潮",
+        "evidence_span": "浪潮"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中兴",
+        "evidence_span": "中兴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "世纪互联",
+        "evidence_span": "世纪互联"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "GE",
+        "evidence_span": "GE"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Siemens",
+        "evidence_span": "Siemens"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ABB",
+        "evidence_span": "ABB"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西安西电",
+        "evidence_span": "西安西电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三峡新能源",
+        "evidence_span": "三峡新能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日立能源",
+        "evidence_span": "日立能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新华三",
+        "evidence_span": "新华三"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数据中心液冷",
+        "evidence_span": "数据中心液冷打造第二成长曲线"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源热管理",
+        "evidence_span": "新能源热管理“小巨人”"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能业务",
+        "evidence_span": "加速布局储能业务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "充电桩业务",
+        "evidence_span": "充电桩业务发展可期"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:55:09"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:04:23", "result": {"span_uid": "134f278ad989", "action": "rewrite", "canonical_text": "自对准多重图案化(SAQP)技术可用于在深紫外光刻机(DUV)上实现3纳米级制程芯片的生产。", "final_type": "related", "final_role": "半导体制造技术", "stability": "high", "reason": "候选片段包含具体公司动作和计划，改写后保留技术机制和可行性，形成稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final", "model": "deepseek-chat", "timestamp": "2026-03-08T11:07:55", "result": {"chunk_id": "2c14f7f42551", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述北方华创的业绩公告，包括具体净利润和同比增长数据，属于公司动态事件，无静态知识构建价值。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:37:38", "result": {"span_uid": "4a0cf30d6bb8", "action": "rewrite", "canonical_text": "成熟制程相对于先进制程工艺节点更低，对光刻胶的要求中等，国产光刻胶厂商有望抓住机遇进入供应链。", "final_type": "signal", "final_role": "国产化机遇", "stability": "medium", "reason": "原文基于预测和事件性表述，已去新闻口吻改写为稳定知识，体现产业节奏变化和商业化推进信号。"}}

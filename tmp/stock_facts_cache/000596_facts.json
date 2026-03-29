@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "酒类业务",
+      "evidence_span": "公司主营酒类业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "年份原浆系列",
+      "evidence_span": "古井贡酒主打年份原浆系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "浓香型白酒",
+      "evidence_span": "古井贡酒原有的浓香型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "古香型白酒",
+      "evidence_span": "年三十系列的古香型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清香型白酒",
+      "evidence_span": "黄鹤楼酒的清香型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "明绿香型白酒",
+      "evidence_span": "明光酒的明绿香型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "古8及以上产品",
+      "evidence_span": "古8及以上产品营收占比持续提升"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "古26",
+      "evidence_span": "高端形象产品古26"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "古7",
+      "evidence_span": "次高端战略单品古7"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "古8",
+      "evidence_span": "次高端战略单品古8"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "古16",
+      "evidence_span": "次高端战略单品古16"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "古20",
+      "evidence_span": "次高端战略单品古20"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "献礼版",
+      "evidence_span": "中端百元战略单品献礼版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "古5",
+      "evidence_span": "中端百元战略单品古5"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "年30",
+      "evidence_span": "战略性大单品年30"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "徽酒龙头",
+      "evidence_span": "地产酒徽酒龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "地产酒龙头",
+      "evidence_span": "安徽地产酒龙头"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产品结构梯次升级",
+      "evidence_span": "有序实现产品结构梯次升级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三品四香战略",
+      "evidence_span": "推出三品四香战略"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "产品结构升级",
+      "evidence_span": "产品结构升级带来增量机会"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "次高端战略",
+      "evidence_span": "次高端战略的带动下"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "全国化",
+      "evidence_span": "次高端与全国化并进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "酒类业务",
+        "evidence_span": "公司主营酒类业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "年份原浆系列",
+        "evidence_span": "古井贡酒主打年份原浆系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "浓香型白酒",
+        "evidence_span": "古井贡酒原有的浓香型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "古香型白酒",
+        "evidence_span": "年三十系列的古香型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清香型白酒",
+        "evidence_span": "黄鹤楼酒的清香型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "明绿香型白酒",
+        "evidence_span": "明光酒的明绿香型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "古8及以上产品",
+        "evidence_span": "古8及以上产品营收占比持续提升"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "古26",
+        "evidence_span": "高端形象产品古26"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "古7",
+        "evidence_span": "次高端战略单品古7"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "古8",
+        "evidence_span": "次高端战略单品古8"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "古16",
+        "evidence_span": "次高端战略单品古16"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "古20",
+        "evidence_span": "次高端战略单品古20"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "献礼版",
+        "evidence_span": "中端百元战略单品献礼版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "古5",
+        "evidence_span": "中端百元战略单品古5"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "年30",
+        "evidence_span": "战略性大单品年30"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "徽酒龙头",
+        "evidence_span": "地产酒徽酒龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "地产酒龙头",
+        "evidence_span": "安徽地产酒龙头"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产品结构梯次升级",
+        "evidence_span": "有序实现产品结构梯次升级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三品四香战略",
+        "evidence_span": "推出三品四香战略"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "产品结构升级",
+        "evidence_span": "产品结构升级带来增量机会"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "次高端战略",
+        "evidence_span": "次高端战略的带动下"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "全国化",
+        "evidence_span": "次高端与全国化并进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:05:47"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "cc685cdc1c8f", "label": "knowledge_like", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落涉及集成电路大基金三期项目和上海微电子光刻机研发进展，提供了国产半导体设备发展的关键方向和具体技术目标，有助于理解题材应用场景和产业链环节，但以新闻爆料形式呈现，稳定性一般。"}}

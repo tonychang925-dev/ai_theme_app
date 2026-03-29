@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "中小尺寸液晶显示模组",
+      "evidence_span": "公司主要产品为中小尺寸液晶显示模组"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "摄像头模组",
+      "evidence_span": "公司主要产品为中小尺寸液晶显示模组、摄像头模组"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "液晶显示模组龙头",
+      "evidence_span": "液晶显示模组龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内中小尺寸液晶显示模组重要供应商",
+      "evidence_span": "国内中小尺寸液晶显示模组重要供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中小尺寸液晶显示模组",
+      "evidence_span": "公司主要产品为中小尺寸液晶显示模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "摄像头模组",
+      "evidence_span": "公司主要产品为中小尺寸液晶显示模组、摄像头模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物识别模组",
+      "evidence_span": "生物识别模组已量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物识别摄像头模组",
+      "evidence_span": "推出生物识别摄像头模组等产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "主要客户为华为"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "主要客户为华为、OPPO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "vivo",
+      "evidence_span": "主要客户为华为、OPPO、vivo"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联想",
+      "evidence_span": "主要客户为华为、OPPO、vivo、联想"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TCL",
+      "evidence_span": "主要客户为华为、OPPO、vivo、联想、TCL"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "主要客户为华为、OPPO、vivo、联想、TCL、三星"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚马逊",
+      "evidence_span": "主要客户为华为、OPPO、vivo、联想、TCL、三星、亚马逊"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "MOTO",
+      "evidence_span": "主要客户为华为、OPPO、vivo、联想、TCL、三星、亚马逊、MOTO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海康威视",
+      "evidence_span": "主要客户为华为、OPPO、vivo、联想、TCL、三星、亚马逊、MOTO、海康威视"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "伟易达",
+      "evidence_span": "主要客户为华为、OPPO、vivo、联想、TCL、三星、亚马逊、MOTO、海康威视、伟易达"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "闻泰",
+      "evidence_span": "摄像头模组客户包括华为、三星、闻泰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华勤",
+      "evidence_span": "摄像头模组客户包括华为、三星、闻泰、华勤"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "传音",
+      "evidence_span": "摄像头模组客户包括华为、三星、闻泰、华勤、传音"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东方",
+      "evidence_span": "公司面板客户主要为京东方"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "群创光电",
+      "evidence_span": "公司面板客户主要为京东方、群创光电等"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "中小尺寸液晶显示模组",
+        "evidence_span": "公司主要产品为中小尺寸液晶显示模组"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "摄像头模组",
+        "evidence_span": "公司主要产品为中小尺寸液晶显示模组、摄像头模组"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "液晶显示模组龙头",
+        "evidence_span": "液晶显示模组龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内中小尺寸液晶显示模组重要供应商",
+        "evidence_span": "国内中小尺寸液晶显示模组重要供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中小尺寸液晶显示模组",
+        "evidence_span": "公司主要产品为中小尺寸液晶显示模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "摄像头模组",
+        "evidence_span": "公司主要产品为中小尺寸液晶显示模组、摄像头模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物识别模组",
+        "evidence_span": "生物识别模组已量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物识别摄像头模组",
+        "evidence_span": "推出生物识别摄像头模组等产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "主要客户为华为"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "主要客户为华为、OPPO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "vivo",
+        "evidence_span": "主要客户为华为、OPPO、vivo"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联想",
+        "evidence_span": "主要客户为华为、OPPO、vivo、联想"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TCL",
+        "evidence_span": "主要客户为华为、OPPO、vivo、联想、TCL"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "主要客户为华为、OPPO、vivo、联想、TCL、三星"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚马逊",
+        "evidence_span": "主要客户为华为、OPPO、vivo、联想、TCL、三星、亚马逊"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "MOTO",
+        "evidence_span": "主要客户为华为、OPPO、vivo、联想、TCL、三星、亚马逊、MOTO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海康威视",
+        "evidence_span": "主要客户为华为、OPPO、vivo、联想、TCL、三星、亚马逊、MOTO、海康威视"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "伟易达",
+        "evidence_span": "主要客户为华为、OPPO、vivo、联想、TCL、三星、亚马逊、MOTO、海康威视、伟易达"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "闻泰",
+        "evidence_span": "摄像头模组客户包括华为、三星、闻泰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华勤",
+        "evidence_span": "摄像头模组客户包括华为、三星、闻泰、华勤"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "传音",
+        "evidence_span": "摄像头模组客户包括华为、三星、闻泰、华勤、传音"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东方",
+        "evidence_span": "公司面板客户主要为京东方"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "群创光电",
+        "evidence_span": "公司面板客户主要为京东方、群创光电等"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:03:11"
+}

@@ -1,0 +1,434 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "体外诊断试剂",
+      "evidence_span": "公司主要从事体外诊断试剂和诊断仪器的研发、生产、销售和服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "诊断仪器",
+      "evidence_span": "公司主要从事体外诊断试剂和诊断仪器的研发、生产、销售和服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "急危重症信息化解决方案",
+      "evidence_span": "公司急危重症信息化解决方案主要包括信息化软件产品、配套硬件和认证咨询服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "第三方医学检验服务",
+      "evidence_span": "公司下辖武汉明志和广东明志两大医学检验所，为医疗机构等客户提供第三方医学检验服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "POCT产品供应商",
+      "evidence_span": "国内领先的POCT产品供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "体外诊断综合解决方案供应商",
+      "evidence_span": "公司已发展成为中国领先的体外诊断综合解决方案供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分子诊断产品线",
+      "evidence_span": "分子诊断产品线主要包括病原体核酸检测产品和药物代谢基因检测产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "免疫诊断产品线",
+      "evidence_span": "公司免疫诊断产品线主要包括免疫层析技术平台、免疫荧光技术平台和化学发光技术平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "血气诊断产品线",
+      "evidence_span": "公司获批国产卡包一体式湿式血气分析仪PT1000"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "凝血诊断产品线",
+      "evidence_span": "全自动凝血分析仪CL3000系公司凝血产品线首款获证产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新冠核酸检测试剂",
+      "evidence_span": "公司新冠核酸检测试剂研发成功"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新冠抗原检测试剂盒",
+      "evidence_span": "新冠抗原检测试剂盒（胶体金法）取得NMPA颁发的《医疗器械注册证》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动核酸工作站E-AutoNAT",
+      "evidence_span": "公司合作研发推出全自动核酸工作站E-AutoNAT"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化学发光免疫分析仪CF10",
+      "evidence_span": "公司推出化学发光免疫分析仪CF10"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动化学发光免疫分析平台CP800",
+      "evidence_span": "公司全自动化学发光免疫分析平台CP800获批"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动荧光免疫分析仪AFT3000",
+      "evidence_span": "公司获批了全自动荧光免疫分析仪AFT3000"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "干式荧光免疫分析仪QFT9000Pro",
+      "evidence_span": "公司获批了干式荧光免疫分析仪QFT9000Pro"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动荧光免疫分析仪AFT6000",
+      "evidence_span": "公司获批了全自动荧光免疫分析仪AFT6000"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "血气分析仪PT1000",
+      "evidence_span": "公司获批国产卡包一体式湿式血气分析仪PT1000"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动凝血分析仪CL3000",
+      "evidence_span": "全自动凝血分析仪CL3000系公司凝血产品线首款获证产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "急危重症信息化软件产品",
+      "evidence_span": "信息化软件产品主要包括提供胸痛中心、卒中中心、创伤中心、上消化道出血中心、ICU及区域急救协同平台等信息系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "急危重症配套硬件",
+      "evidence_span": "配套硬件主要提供搭配信息系统使用的PDA、电子手环、移动心电图机、体外诊断仪器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "急危重症认证咨询服务",
+      "evidence_span": "认证咨询服务主要包括为不同等级医院在各急救中心建设中涉及到的救治流程、资源配置、会议组织、数据管理、标识标牌、网络医院建设等方面提供咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三方医学检验服务",
+      "evidence_span": "公司下辖武汉明志和广东明志两大医学检验所，为医疗机构等客户提供第三方医学检验服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多重抗体标记技术",
+      "evidence_span": "逐步掌握了多重抗体标记技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "化学发光免疫技术",
+      "evidence_span": "逐步掌握了化学发光免疫技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电化学技术",
+      "evidence_span": "逐步掌握了电化学技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微流控技术",
+      "evidence_span": "逐步掌握了微流控技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂运动机械的时序控制技术",
+      "evidence_span": "逐步掌握了复杂运动机械的时序控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磁分离及清洗技术",
+      "evidence_span": "逐步掌握了磁分离及清洗技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精度信号采集及数据处理技术",
+      "evidence_span": "逐步掌握了高精度信号采集及数据处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精确温控技术",
+      "evidence_span": "逐步掌握了精确温控技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多重荧光PCR技术",
+      "evidence_span": "逐步掌握了多重荧光PCR技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "免疫层析技术平台",
+      "evidence_span": "公司免疫诊断产品线主要包括免疫层析技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "免疫荧光技术平台",
+      "evidence_span": "公司免疫诊断产品线主要包括免疫荧光技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "化学发光技术平台",
+      "evidence_span": "公司免疫诊断产品线主要包括化学发光技术平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医疗机构",
+      "evidence_span": "为医疗机构提供创新、领先医疗服务产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "二级以上医院",
+      "evidence_span": "主要定位于大型等级医院急危重症相关临床科室"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "二级及以下等级医院",
+      "evidence_span": "主要定位于二级及以下等级医院、基层医院检验科"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "基层医疗机构",
+      "evidence_span": "既能满足基层医疗机构、床旁快速检测、个人自测的需要"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧盟",
+      "evidence_span": "公司产品在境外同样适用医疗器械监管制度。欧盟地区和美国为公司的主要出口区域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国",
+      "evidence_span": "公司产品在境外同样适用医疗器械监管制度。欧盟地区和美国为公司的主要出口区域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "公司获批国产卡包一体式湿式血气分析仪PT1000，真正实现高精尖领域进口替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "体外诊断试剂和诊断仪器",
+        "evidence_span": "公司主要从事体外诊断试剂和诊断仪器的研发、生产、销售和服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "急危重症信息化解决方案",
+        "evidence_span": "公司急危重症信息化解决方案主要包括信息化软件产品、配套硬件和认证咨询服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "第三方医学检验服务",
+        "evidence_span": "公司下辖武汉明志和广东明志两大医学检验所，为医疗机构等客户提供第三方医学检验服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "POCT产品供应商",
+        "evidence_span": "国内领先的POCT产品供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "体外诊断综合解决方案供应商",
+        "evidence_span": "公司已发展成为中国领先的体外诊断综合解决方案供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分子诊断产品线",
+        "evidence_span": "分子诊断产品线主要包括病原体核酸检测产品和药物代谢基因检测产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "免疫诊断产品线",
+        "evidence_span": "公司免疫诊断产品线主要包括免疫层析技术平台、免疫荧光技术平台和化学发光技术平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "血气诊断产品线",
+        "evidence_span": "公司获批国产卡包一体式湿式血气分析仪PT1000"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "凝血诊断产品线",
+        "evidence_span": "全自动凝血分析仪CL3000系公司凝血产品线首款获证产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新冠核酸检测试剂",
+        "evidence_span": "公司新冠核酸检测试剂研发成功"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新冠抗原检测试剂盒",
+        "evidence_span": "新冠抗原检测试剂盒（胶体金法）取得NMPA颁发的《医疗器械注册证》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动核酸工作站E-AutoNAT",
+        "evidence_span": "公司合作研发推出全自动核酸工作站E-AutoNAT"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化学发光免疫分析仪CF10",
+        "evidence_span": "公司推出化学发光免疫分析仪CF10"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动化学发光免疫分析平台CP800",
+        "evidence_span": "公司全自动化学发光免疫分析平台CP800获批"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动荧光免疫分析仪AFT3000",
+        "evidence_span": "公司获批了全自动荧光免疫分析仪AFT3000"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "干式荧光免疫分析仪QFT9000Pro",
+        "evidence_span": "公司获批了干式荧光免疫分析仪QFT9000Pro"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动荧光免疫分析仪AFT6000",
+        "evidence_span": "公司获批了全自动荧光免疫分析仪AFT6000"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "血气分析仪PT1000",
+        "evidence_span": "公司获批国产卡包一体式湿式血气分析仪PT1000"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动凝血分析仪CL3000",
+        "evidence_span": "全自动凝血分析仪CL3000系公司凝血产品线首款获证产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "急危重症信息化软件产品",
+        "evidence_span": "信息化软件产品主要包括提供胸痛中心、卒中中心、创伤中心、上消化道出血中心、ICU及区域急救协同平台等信息系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "急危重症配套硬件",
+        "evidence_span": "配套硬件主要提供搭配信息系统使用的PDA、电子手环、移动心电图机、体外诊断仪器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "急危重症认证咨询服务",
+        "evidence_span": "认证咨询服务主要包括为不同等级医院在各急救中心建设中涉及到的救治流程、资源配置、会议组织、数据管理、标识标牌、网络医院建设等方面提供咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三方医学检验服务",
+        "evidence_span": "公司下辖武汉明志和广东明志两大医学检验所，为医疗机构等客户提供第三方医学检验服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多重抗体标记技术",
+        "evidence_span": "逐步掌握了多重抗体标记技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "化学发光免疫技术",
+        "evidence_span": "逐步掌握了化学发光免疫技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电化学技术",
+        "evidence_span": "逐步掌握了电化学技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微流控技术",
+        "evidence_span": "逐步掌握了微流控技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂运动机械的时序控制技术",
+        "evidence_span": "逐步掌握了复杂运动机械的时序控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磁分离及清洗技术",
+        "evidence_span": "逐步掌握了磁分离及清洗技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精度信号采集及数据处理技术",
+        "evidence_span": "逐步掌握了高精度信号采集及数据处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精确温控技术",
+        "evidence_span": "逐步掌握了精确温控技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多重荧光PCR技术",
+        "evidence_span": "逐步掌握了多重荧光PCR技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "免疫层析技术平台",
+        "evidence_span": "公司免疫诊断产品线主要包括免疫层析技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "免疫荧光技术平台",
+        "evidence_span": "公司免疫诊断产品线主要包括免疫荧光技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "化学发光技术平台",
+        "evidence_span": "公司免疫诊断产品线主要包括化学发光技术平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医疗机构",
+        "evidence_span": "为医疗机构提供创新、领先医疗服务产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "二级以上医院",
+        "evidence_span": "主要定位于大型等级医院急危重症相关临床科室"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "二级及以下等级医院",
+        "evidence_span": "主要定位于二级及以下等级医院、基层医院检验科"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "基层医疗机构",
+        "evidence_span": "既能满足基层医疗机构、床旁快速检测、个人自测的需要"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧盟",
+        "evidence_span": "公司产品在境外同样适用医疗器械监管制度。欧盟地区和美国为公司的主要出口区域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国",
+        "evidence_span": "公司产品在境外同样适用医疗器械监管制度。欧盟地区和美国为公司的主要出口区域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "公司获批国产卡包一体式湿式血气分析仪PT1000，真正实现高精尖领域进口替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:45:19"
+}

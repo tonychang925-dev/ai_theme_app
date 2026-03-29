@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "火力发电",
+      "evidence_span": "主营业务为投资、建设、运营管理以电力生产为主的能源项目，公司电力业务以燃煤发电和供热为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "供热",
+      "evidence_span": "主营业务为投资、建设、运营管理以电力生产为主的能源项目，公司电力业务以燃煤发电和供热为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源发电",
+      "evidence_span": "新增风电、光伏等新能源发电业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "综合能源服务",
+      "evidence_span": "同时涉及综合能源服务、煤矿等项目投资"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "火力发电企业",
+      "evidence_span": "北京地区最大的火力发电企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "京津冀区域电力龙头",
+      "evidence_span": "京能电力成长性优异的京津冀区域电力龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力",
+      "evidence_span": "产品为电力和热力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热力",
+      "evidence_span": "产品为电力和热力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "售电服务",
+      "evidence_span": "主力电源所在蒙西、山西、京津唐区域实体化运营三家售电公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿电交易",
+      "evidence_span": "完成绿电（新能源）交易电量约15亿千瓦时"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "供热改造",
+      "evidence_span": "先后开展7项供热改造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "灵活性改造",
+      "evidence_span": "6项灵活性改造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "节能降耗技术改造",
+      "evidence_span": "20项节能降耗技术改造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "煤电灵活性改造配置新能源项目开发",
+      "evidence_span": "快速推动煤电灵活性改造配置新能源项目开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "煤电数字化运营体系",
+      "evidence_span": "加快构建煤电数字化运营体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京津唐电网",
+      "evidence_span": "主要向京津唐电网、蒙西电网、山西电网、豫北电网供电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蒙西电网",
+      "evidence_span": "主要向京津唐电网、蒙西电网、山西电网、豫北电网供电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山西电网",
+      "evidence_span": "主要向京津唐电网、蒙西电网、山西电网、豫北电网供电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "豫北电网",
+      "evidence_span": "主要向京津唐电网、蒙西电网、山西电网、豫北电网供电"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "能源保供",
+      "evidence_span": "为党和国家一系列大事要事提供了坚强可靠的能源保障"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色转型",
+      "evidence_span": "公司绿色转型初见成效"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "火力发电",
+        "evidence_span": "主营业务为投资、建设、运营管理以电力生产为主的能源项目，公司电力业务以燃煤发电和供热为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "供热",
+        "evidence_span": "主营业务为投资、建设、运营管理以电力生产为主的能源项目，公司电力业务以燃煤发电和供热为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源发电",
+        "evidence_span": "新增风电、光伏等新能源发电业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "综合能源服务",
+        "evidence_span": "同时涉及综合能源服务、煤矿等项目投资"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "火力发电企业",
+        "evidence_span": "北京地区最大的火力发电企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "京津冀区域电力龙头",
+        "evidence_span": "京能电力成长性优异的京津冀区域电力龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力",
+        "evidence_span": "产品为电力和热力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热力",
+        "evidence_span": "产品为电力和热力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "售电服务",
+        "evidence_span": "主力电源所在蒙西、山西、京津唐区域实体化运营三家售电公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿电交易",
+        "evidence_span": "完成绿电（新能源）交易电量约15亿千瓦时"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "供热改造",
+        "evidence_span": "先后开展7项供热改造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "灵活性改造",
+        "evidence_span": "6项灵活性改造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "节能降耗技术改造",
+        "evidence_span": "20项节能降耗技术改造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "煤电灵活性改造配置新能源项目开发",
+        "evidence_span": "快速推动煤电灵活性改造配置新能源项目开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "煤电数字化运营体系",
+        "evidence_span": "加快构建煤电数字化运营体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京津唐电网",
+        "evidence_span": "主要向京津唐电网、蒙西电网、山西电网、豫北电网供电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蒙西电网",
+        "evidence_span": "主要向京津唐电网、蒙西电网、山西电网、豫北电网供电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山西电网",
+        "evidence_span": "主要向京津唐电网、蒙西电网、山西电网、豫北电网供电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "豫北电网",
+        "evidence_span": "主要向京津唐电网、蒙西电网、山西电网、豫北电网供电"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "能源保供",
+        "evidence_span": "为党和国家一系列大事要事提供了坚强可靠的能源保障"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色转型",
+        "evidence_span": "公司绿色转型初见成效"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:41:09"
+}

@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "模拟芯片研发",
+      "evidence_span": "本公司报告期内继续致力于模拟芯片的研发及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "本公司报告期内继续致力于模拟芯片的研发及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电源管理芯片",
+      "evidence_span": "主要通过高性能、高可靠性的电源管理芯片为客户提供高效的电源管理方案"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能组网延时管理单元",
+      "evidence_span": "积极研发和推广智能组网延时管理单元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信号链芯片",
+      "evidence_span": "积极研发和推广智能组网延时管理单元、信号链芯片等其他类别产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "模拟芯片设计厂商",
+      "evidence_span": "国内领先的模拟芯片设计厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "消费电子领域电源管理芯片的主要供应商",
+      "evidence_span": "消费电子领域电源管理芯片的主要供应商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "Fabless经营模式",
+      "evidence_span": "公司采用集成电路行业典型的Fabless经营模式"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电源管理芯片",
+      "evidence_span": "公司的主要产品为电源管理芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电源转换芯片",
+      "evidence_span": "公司主要的电源转换芯片及电源防护芯片产品的性能指标"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电源防护芯片",
+      "evidence_span": "公司主要的电源转换芯片及电源防护芯片产品的性能指标"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能组网延时管理单元",
+      "evidence_span": "子公司垦拓微的智能组网延时管理单元销售收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信号链芯片",
+      "evidence_span": "积极研发和推广智能组网延时管理单元、信号链芯片等其他类别产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低功耗DCDC",
+      "evidence_span": "快速推出多款低功耗DCDC及高压高效率DCDC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压高效率DCDC",
+      "evidence_span": "快速推出多款低功耗DCDC及高压高效率DCDC"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低功耗低噪声模拟工艺",
+      "evidence_span": "分别采用最新低功耗低噪声模拟工艺和高压高可靠性BCD工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高压高可靠性BCD工艺",
+      "evidence_span": "分别采用最新低功耗低噪声模拟工艺和高压高可靠性BCD工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电源管理芯片低噪声、高效能、微型化及集成化技术",
+      "evidence_span": "围绕电源管理芯片低噪声、高效能、微型化及集成化等发展趋势形成了丰富的核心技术和功能模块IP"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "形成了包括三星、小米、海尔等在内的优质终端客户群"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "形成了包括三星、小米、海尔等在内的优质终端客户群"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海尔",
+      "evidence_span": "形成了包括三星、小米、海尔等在内的优质终端客户群"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LG",
+      "evidence_span": "并通过小米、LG等主流消费电子品牌供应商认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "已进入比亚迪供应链"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产电源管理芯片供应商",
+      "evidence_span": "是主要的国产电源管理芯片供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "进口替代效应明显增强"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "模拟芯片研发及销售",
+        "evidence_span": "本公司报告期内继续致力于模拟芯片的研发及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电源管理芯片",
+        "evidence_span": "主要通过高性能、高可靠性的电源管理芯片为客户提供高效的电源管理方案"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能组网延时管理单元",
+        "evidence_span": "积极研发和推广智能组网延时管理单元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信号链芯片",
+        "evidence_span": "积极研发和推广智能组网延时管理单元、信号链芯片等其他类别产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "模拟芯片设计厂商",
+        "evidence_span": "国内领先的模拟芯片设计厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "消费电子领域电源管理芯片的主要供应商",
+        "evidence_span": "消费电子领域电源管理芯片的主要供应商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "Fabless经营模式",
+        "evidence_span": "公司采用集成电路行业典型的Fabless经营模式"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电源管理芯片",
+        "evidence_span": "公司的主要产品为电源管理芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电源转换芯片",
+        "evidence_span": "公司主要的电源转换芯片及电源防护芯片产品的性能指标"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电源防护芯片",
+        "evidence_span": "公司主要的电源转换芯片及电源防护芯片产品的性能指标"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能组网延时管理单元",
+        "evidence_span": "子公司垦拓微的智能组网延时管理单元销售收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信号链芯片",
+        "evidence_span": "积极研发和推广智能组网延时管理单元、信号链芯片等其他类别产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低功耗DCDC",
+        "evidence_span": "快速推出多款低功耗DCDC及高压高效率DCDC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压高效率DCDC",
+        "evidence_span": "快速推出多款低功耗DCDC及高压高效率DCDC"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低功耗低噪声模拟工艺",
+        "evidence_span": "分别采用最新低功耗低噪声模拟工艺和高压高可靠性BCD工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高压高可靠性BCD工艺",
+        "evidence_span": "分别采用最新低功耗低噪声模拟工艺和高压高可靠性BCD工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电源管理芯片低噪声、高效能、微型化及集成化技术",
+        "evidence_span": "围绕电源管理芯片低噪声、高效能、微型化及集成化等发展趋势形成了丰富的核心技术和功能模块IP"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "形成了包括三星、小米、海尔等在内的优质终端客户群"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "形成了包括三星、小米、海尔等在内的优质终端客户群"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海尔",
+        "evidence_span": "形成了包括三星、小米、海尔等在内的优质终端客户群"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LG",
+        "evidence_span": "并通过小米、LG等主流消费电子品牌供应商认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "已进入比亚迪供应链"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产电源管理芯片供应商",
+        "evidence_span": "是主要的国产电源管理芯片供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "进口替代效应明显增强"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:07:13"
+}

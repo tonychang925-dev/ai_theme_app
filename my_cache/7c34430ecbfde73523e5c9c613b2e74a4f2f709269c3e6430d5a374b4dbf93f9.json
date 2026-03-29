@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:07:58", "result": {"chunk_id": "694569677354", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含静态知识（如春节档的定义、时长、影片类型），但混合了具体事件信息（2026年春节档的官宣影片、票房预测），因此属于候选混合状态，需要进一步裁决以提取稳定知识。"}}

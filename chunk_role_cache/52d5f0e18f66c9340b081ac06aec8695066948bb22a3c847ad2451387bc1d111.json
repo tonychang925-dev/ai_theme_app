@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "2c4b924a98fb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落混合了事件和潜在知识：前半部分工信部会议内容涉及低空产业的顶层谋划、重点任务等，可能包含有价值的知识（如产业体系、技术赋能），但以会议部署形式呈现；后半部分为多个具体事件（如订单、预售、平台成立）。整体需进一步裁决以提取静态知识。"}}

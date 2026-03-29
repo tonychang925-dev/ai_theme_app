@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:47:57", "result": {"span_uid": "048e22e4fe1e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "文本仅为名词短语'韧性城市'，无法形成独立完整的知识表达，且缺乏上下文支撑，不适合作为稳定知识块入库。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "e77f396b18f4", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落描述2025世界机器人大会的举办时间和活动安排，是具体事件信息，无题材本体知识，属于纯事件。"}}

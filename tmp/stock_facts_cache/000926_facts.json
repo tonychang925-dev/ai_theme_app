@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产",
+      "evidence_span": "公司主要专注于房地产和金属制品两大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金属制品",
+      "evidence_span": "公司主要专注于房地产和金属制品两大业务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市更新与幸福生活服务商",
+      "evidence_span": "公司以做好“城市更新与幸福生活服务商”为己任"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "三旧改造和城市更新标杆企业",
+      "evidence_span": "作为湖北省的“三旧”改造和城市更新标杆企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "住宅地产",
+      "evidence_span": "开发产品以住宅地产为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商业地产",
+      "evidence_span": "商业地产、工业地产为辅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业地产",
+      "evidence_span": "商业地产、工业地产为辅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "子午轮胎钢帘线",
+      "evidence_span": "产品以子午轮胎钢帘线为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢丝",
+      "evidence_span": "钢丝、钢丝绳及钢绞线等金属丝绳制品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢丝绳",
+      "evidence_span": "钢丝、钢丝绳及钢绞线等金属丝绳制品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢绞线",
+      "evidence_span": "钢丝、钢丝绳及钢绞线等金属丝绳制品"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "城中村改造",
+      "evidence_span": "主要通过“城中村改造”和“旧城改造”以及城市更新开发模式展开"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "旧城改造",
+      "evidence_span": "主要通过“城中村改造”和“旧城改造”以及城市更新开发模式展开"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "城市更新",
+      "evidence_span": "主要通过“城中村改造”和“旧城改造”以及城市更新开发模式展开"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产",
+        "evidence_span": "公司主要专注于房地产和金属制品两大业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金属制品",
+        "evidence_span": "公司主要专注于房地产和金属制品两大业务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市更新与幸福生活服务商",
+        "evidence_span": "公司以做好“城市更新与幸福生活服务商”为己任"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "三旧改造和城市更新标杆企业",
+        "evidence_span": "作为湖北省的“三旧”改造和城市更新标杆企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "住宅地产",
+        "evidence_span": "开发产品以住宅地产为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商业地产",
+        "evidence_span": "商业地产、工业地产为辅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业地产",
+        "evidence_span": "商业地产、工业地产为辅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "子午轮胎钢帘线",
+        "evidence_span": "产品以子午轮胎钢帘线为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢丝",
+        "evidence_span": "钢丝、钢丝绳及钢绞线等金属丝绳制品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢丝绳",
+        "evidence_span": "钢丝、钢丝绳及钢绞线等金属丝绳制品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢绞线",
+        "evidence_span": "钢丝、钢丝绳及钢绞线等金属丝绳制品"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "城中村改造",
+        "evidence_span": "主要通过“城中村改造”和“旧城改造”以及城市更新开发模式展开"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "旧城改造",
+        "evidence_span": "主要通过“城中村改造”和“旧城改造”以及城市更新开发模式展开"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "城市更新",
+        "evidence_span": "主要通过“城中村改造”和“旧城改造”以及城市更新开发模式展开"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:48:09"
+}

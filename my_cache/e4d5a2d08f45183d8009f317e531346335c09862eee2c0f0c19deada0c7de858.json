@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "dd12dad0942b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含事件信息（如特斯拉社交媒体发布、FSD V13版本推出、马斯克预测），但也涉及自动驾驶技术进展和未来服务计划，可能含有可用于题材知识构建的元素，但混合了事件内容。"}}

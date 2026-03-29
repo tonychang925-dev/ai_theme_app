@@ -1,0 +1,314 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车内饰件材料",
+      "evidence_span": "公司主营业务为汽车内饰件材料及产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "产品的研发",
+      "evidence_span": "公司主营业务为汽车内饰件材料及产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主营业务为汽车内饰件材料及产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营业务为汽车内饰件材料及产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车地毯",
+      "evidence_span": "主要产品包括汽车地毯和汽车脚垫两大类"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车脚垫",
+      "evidence_span": "主要产品包括汽车地毯和汽车脚垫两大类"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车内饰件企业",
+      "evidence_span": "公司主营为汽车内饰件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车地毯",
+      "evidence_span": "主要产品包括汽车地毯和汽车脚垫两大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车脚垫",
+      "evidence_span": "主要产品包括汽车地毯和汽车脚垫两大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "簇绒地毯",
+      "evidence_span": "公司汽车地毯根据生产工艺可分为簇绒地毯和针刺地毯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "针刺地毯",
+      "evidence_span": "公司汽车地毯根据生产工艺可分为簇绒地毯和针刺地毯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BCF纱线",
+      "evidence_span": "形成了“BCF纱线—汽车地毯—汽车脚垫”多品类发展的一体化业务格局"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产品研发",
+      "evidence_span": "公司注重技术研发和创新"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "材料开发与应用",
+      "evidence_span": "在产品研发、材料开发与应用、设备配置和生产工艺等方面积累了丰富经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生产工艺",
+      "evidence_span": "在产品研发、材料开发与应用、设备配置和生产工艺等方面积累了丰富经验"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧拓集团",
+      "evidence_span": "公司汽车地毯产品主要销售给欧拓集团、富晟集团、泰弗斯、依蒂尔、佛吉亚、吉兴集团等整车厂一级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富晟集团",
+      "evidence_span": "公司汽车地毯产品主要销售给欧拓集团、富晟集团、泰弗斯、依蒂尔、佛吉亚、吉兴集团等整车厂一级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "泰弗斯",
+      "evidence_span": "公司汽车地毯产品主要销售给欧拓集团、富晟集团、泰弗斯、依蒂尔、佛吉亚、吉兴集团等整车厂一级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "依蒂尔",
+      "evidence_span": "公司汽车地毯产品主要销售给欧拓集团、富晟集团、泰弗斯、依蒂尔、佛吉亚、吉兴集团等整车厂一级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "佛吉亚",
+      "evidence_span": "公司汽车地毯产品主要销售给欧拓集团、富晟集团、泰弗斯、依蒂尔、佛吉亚、吉兴集团等整车厂一级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉兴集团",
+      "evidence_span": "公司汽车地毯产品主要销售给欧拓集团、富晟集团、泰弗斯、依蒂尔、佛吉亚、吉兴集团等整车厂一级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽大众",
+      "evidence_span": "公司主要作为一级供应商将产品销售给一汽大众、沃尔沃等国内整车厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃尔沃",
+      "evidence_span": "公司主要作为一级供应商将产品销售给一汽大众、沃尔沃等国内整车厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "MAJESTIC",
+      "evidence_span": "部分汽车脚垫产品直接销售给MAJESTIC、DEBA等国外客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "DEBA",
+      "evidence_span": "部分汽车脚垫产品直接销售给MAJESTIC、DEBA等国外客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "已成为宝马、奥迪、奔驰、沃尔沃、红旗等多家知名汽车品牌的汽车地毯二级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奥迪",
+      "evidence_span": "已成为宝马、奥迪、奔驰、沃尔沃、红旗等多家知名汽车品牌的汽车地毯二级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奔驰",
+      "evidence_span": "已成为宝马、奥迪、奔驰、沃尔沃、红旗等多家知名汽车品牌的汽车地毯二级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "红旗",
+      "evidence_span": "已成为宝马、奥迪、奔驰、沃尔沃、红旗等多家知名汽车品牌的汽车地毯二级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "别克",
+      "evidence_span": "奥迪、沃尔沃、别克、蔚来等多家知名汽车品牌的汽车脚垫一级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "奥迪、沃尔沃、别克、蔚来等多家知名汽车品牌的汽车脚垫一级供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "伴随汽车产业转型升级和国产化等发展机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车内饰件材料及产品的研发、生产和销售",
+        "evidence_span": "公司主营业务为汽车内饰件材料及产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车地毯",
+        "evidence_span": "主要产品包括汽车地毯和汽车脚垫两大类"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车脚垫",
+        "evidence_span": "主要产品包括汽车地毯和汽车脚垫两大类"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车内饰件企业",
+        "evidence_span": "公司主营为汽车内饰件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车地毯",
+        "evidence_span": "主要产品包括汽车地毯和汽车脚垫两大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车脚垫",
+        "evidence_span": "主要产品包括汽车地毯和汽车脚垫两大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "簇绒地毯",
+        "evidence_span": "公司汽车地毯根据生产工艺可分为簇绒地毯和针刺地毯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "针刺地毯",
+        "evidence_span": "公司汽车地毯根据生产工艺可分为簇绒地毯和针刺地毯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BCF纱线",
+        "evidence_span": "形成了“BCF纱线—汽车地毯—汽车脚垫”多品类发展的一体化业务格局"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产品研发",
+        "evidence_span": "公司注重技术研发和创新"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "材料开发与应用",
+        "evidence_span": "在产品研发、材料开发与应用、设备配置和生产工艺等方面积累了丰富经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生产工艺",
+        "evidence_span": "在产品研发、材料开发与应用、设备配置和生产工艺等方面积累了丰富经验"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧拓集团",
+        "evidence_span": "公司汽车地毯产品主要销售给欧拓集团、富晟集团、泰弗斯、依蒂尔、佛吉亚、吉兴集团等整车厂一级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富晟集团",
+        "evidence_span": "公司汽车地毯产品主要销售给欧拓集团、富晟集团、泰弗斯、依蒂尔、佛吉亚、吉兴集团等整车厂一级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "泰弗斯",
+        "evidence_span": "公司汽车地毯产品主要销售给欧拓集团、富晟集团、泰弗斯、依蒂尔、佛吉亚、吉兴集团等整车厂一级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "依蒂尔",
+        "evidence_span": "公司汽车地毯产品主要销售给欧拓集团、富晟集团、泰弗斯、依蒂尔、佛吉亚、吉兴集团等整车厂一级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "佛吉亚",
+        "evidence_span": "公司汽车地毯产品主要销售给欧拓集团、富晟集团、泰弗斯、依蒂尔、佛吉亚、吉兴集团等整车厂一级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉兴集团",
+        "evidence_span": "公司汽车地毯产品主要销售给欧拓集团、富晟集团、泰弗斯、依蒂尔、佛吉亚、吉兴集团等整车厂一级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽大众",
+        "evidence_span": "公司主要作为一级供应商将产品销售给一汽大众、沃尔沃等国内整车厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃尔沃",
+        "evidence_span": "公司主要作为一级供应商将产品销售给一汽大众、沃尔沃等国内整车厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "MAJESTIC",
+        "evidence_span": "部分汽车脚垫产品直接销售给MAJESTIC、DEBA等国外客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "DEBA",
+        "evidence_span": "部分汽车脚垫产品直接销售给MAJESTIC、DEBA等国外客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "已成为宝马、奥迪、奔驰、沃尔沃、红旗等多家知名汽车品牌的汽车地毯二级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奥迪",
+        "evidence_span": "已成为宝马、奥迪、奔驰、沃尔沃、红旗等多家知名汽车品牌的汽车地毯二级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奔驰",
+        "evidence_span": "已成为宝马、奥迪、奔驰、沃尔沃、红旗等多家知名汽车品牌的汽车地毯二级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "红旗",
+        "evidence_span": "已成为宝马、奥迪、奔驰、沃尔沃、红旗等多家知名汽车品牌的汽车地毯二级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "别克",
+        "evidence_span": "奥迪、沃尔沃、别克、蔚来等多家知名汽车品牌的汽车脚垫一级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "奥迪、沃尔沃、别克、蔚来等多家知名汽车品牌的汽车脚垫一级供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "伴随汽车产业转型升级和国产化等发展机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:16:43"
+}

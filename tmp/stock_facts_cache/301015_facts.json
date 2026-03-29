@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药产品品牌运营",
+      "evidence_span": "主营业务是提供医药产品生产企业营销综合服务，包括提供医药产品的品牌运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药产品批发配送",
+      "evidence_span": "主营业务是提供医药产品生产企业营销综合服务，包括提供医药产品的批发配送"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药产品零售服务",
+      "evidence_span": "主营业务是提供医药产品生产企业营销综合服务，包括提供医药产品的零售服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医药品牌运营企业",
+      "evidence_span": "深耕医药品牌运营"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "创新药商业化平台",
+      "evidence_span": "创新药商业化新选择"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "品牌运营服务",
+      "evidence_span": "提供医药产品的品牌运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "批发配送服务",
+      "evidence_span": "提供医药产品的批发配送"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "零售服务",
+      "evidence_span": "提供医药产品的零售服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "营销综合解决方案",
+      "evidence_span": "为品牌医药生产企业提供产品营销的综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全渠道解决方案",
+      "evidence_span": "为上游企业提供全渠道解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全周期、多品类、多渠道服务能力",
+      "evidence_span": "具备了为品牌运营提供全周期、多品类、多渠道的服务能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全数据平台客户管理",
+      "evidence_span": "基于品牌运营、全数据平台客户管理、长期运营三大核心能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "长期运营能力",
+      "evidence_span": "基于品牌运营、全数据平台客户管理、长期运营三大核心能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "武田制药",
+      "evidence_span": "合作的厂商包括武田制药"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "迈兰制药",
+      "evidence_span": "合作的厂商包括迈兰制药"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安斯泰来",
+      "evidence_span": "合作的厂商包括安斯泰来"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "罗氏制药",
+      "evidence_span": "合作的厂商包括罗氏制药"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海谊众",
+      "evidence_span": "合作的厂商包括上海谊众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "巨子生物",
+      "evidence_span": "合作的厂商包括巨子生物"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "辉瑞制药",
+      "evidence_span": "新增运营品牌辉瑞制药的希舒美"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "CSL Behring",
+      "evidence_span": "CSL Behring 的安博美"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "创新药商业化",
+      "evidence_span": "创新药商业化新选择"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药产品品牌运营",
+        "evidence_span": "主营业务是提供医药产品生产企业营销综合服务，包括提供医药产品的品牌运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药产品批发配送",
+        "evidence_span": "主营业务是提供医药产品生产企业营销综合服务，包括提供医药产品的批发配送"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药产品零售服务",
+        "evidence_span": "主营业务是提供医药产品生产企业营销综合服务，包括提供医药产品的零售服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医药品牌运营企业",
+        "evidence_span": "深耕医药品牌运营"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "创新药商业化平台",
+        "evidence_span": "创新药商业化新选择"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "品牌运营服务",
+        "evidence_span": "提供医药产品的品牌运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "批发配送服务",
+        "evidence_span": "提供医药产品的批发配送"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "零售服务",
+        "evidence_span": "提供医药产品的零售服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "营销综合解决方案",
+        "evidence_span": "为品牌医药生产企业提供产品营销的综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全渠道解决方案",
+        "evidence_span": "为上游企业提供全渠道解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全周期、多品类、多渠道服务能力",
+        "evidence_span": "具备了为品牌运营提供全周期、多品类、多渠道的服务能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全数据平台客户管理",
+        "evidence_span": "基于品牌运营、全数据平台客户管理、长期运营三大核心能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "长期运营能力",
+        "evidence_span": "基于品牌运营、全数据平台客户管理、长期运营三大核心能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "武田制药",
+        "evidence_span": "合作的厂商包括武田制药"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "迈兰制药",
+        "evidence_span": "合作的厂商包括迈兰制药"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安斯泰来",
+        "evidence_span": "合作的厂商包括安斯泰来"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "罗氏制药",
+        "evidence_span": "合作的厂商包括罗氏制药"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海谊众",
+        "evidence_span": "合作的厂商包括上海谊众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "巨子生物",
+        "evidence_span": "合作的厂商包括巨子生物"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "辉瑞制药",
+        "evidence_span": "新增运营品牌辉瑞制药的希舒美"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "CSL Behring",
+        "evidence_span": "CSL Behring 的安博美"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "创新药商业化",
+        "evidence_span": "创新药商业化新选择"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:18:43"
+}

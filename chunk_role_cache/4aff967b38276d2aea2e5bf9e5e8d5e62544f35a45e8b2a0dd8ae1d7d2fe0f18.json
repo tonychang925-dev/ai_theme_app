@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "1444c49b5204", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述小米开发AI眼镜并计划推向市场的事件，以及另一家公司完成融资的动态，属于公司产品发布和融资新闻，不涉及AR眼镜的静态定义或核心构成。"}}

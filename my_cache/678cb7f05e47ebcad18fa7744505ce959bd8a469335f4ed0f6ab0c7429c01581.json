@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "d6e201385aec", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落提到SK海力士、三星、美光考虑在HBM4和HBM5中引入Hybrid Bonding等先进封装技术，这包含HBM产品的技术知识（封装技术），但以报告和事件形式呈现，混合了事件信息。"}}

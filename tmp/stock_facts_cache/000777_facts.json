@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业用阀门的研发",
+      "evidence_span": "主要业务为工业用阀门的研发、生产、销售及服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "主要业务为工业用阀门的研发、生产、销售及服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主要业务为工业用阀门的研发、生产、销售及服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "主要业务为工业用阀门的研发、生产、销售及服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "阀门行业的龙头企业",
+      "evidence_span": "阀门行业的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端阀门制造企业",
+      "evidence_span": "旗下高端阀门制造企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "闸阀",
+      "evidence_span": "主要产品种类包括闸阀"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "截止阀",
+      "evidence_span": "主要产品种类包括闸阀、截止阀"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "止回阀",
+      "evidence_span": "主要产品种类包括闸阀、截止阀、止回阀"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "球阀",
+      "evidence_span": "主要产品种类包括闸阀、截止阀、止回阀、球阀"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蝶阀",
+      "evidence_span": "主要产品种类包括闸阀、截止阀、止回阀、球阀、蝶阀"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "调节阀",
+      "evidence_span": "主要产品种类包括闸阀、截止阀、止回阀、球阀、蝶阀、调节阀"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "隔膜阀",
+      "evidence_span": "主要产品种类包括闸阀、截止阀、止回阀、球阀、蝶阀、调节阀、隔膜阀等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核电阀门",
+      "evidence_span": "核电阀门业务回暖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核电站用关键阀门",
+      "evidence_span": "公司核电站用关键阀门具备二代、三代核电机组阀门成套供货能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核燃料真空阀",
+      "evidence_span": "核燃料真空阀及浓缩铀生产四大类国产化关键阀门"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石油化工关键阀门",
+      "evidence_span": "石油化工关键阀门具备百万吨乙烯、千万吨炼油阀门成套供货能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超（超）临界火电机组阀门",
+      "evidence_span": "具备超（超）临界火电机组阀门成套供货能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超大口径蝶阀",
+      "evidence_span": "珠江三角洲水资源配置工程超大口径蝶阀项目完成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高温高压阀门",
+      "evidence_span": "中标中科院低碳燃气轮机试验装置高温高压阀门"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "二代、三代核电机组阀门成套供货能力",
+      "evidence_span": "公司核电站用关键阀门具备二代、三代核电机组阀门成套供货能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "四代核电机组关键阀门供货能力",
+      "evidence_span": "四代核电机组关键阀门供货能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核燃料真空阀及浓缩铀生产四大类国产化关键阀门总体性能达到或超过进口产品水平",
+      "evidence_span": "核燃料真空阀及浓缩铀生产四大类国产化关键阀门总体性能达到或超过进口产品水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "百万吨乙烯、千万吨炼油阀门成套供货能力",
+      "evidence_span": "石油化工关键阀门具备百万吨乙烯、千万吨炼油阀门成套供货能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "加氢装置高压阀门、乙烯装置高温高压阀门等关键阀门性能达到国际先进水平",
+      "evidence_span": "加氢装置高压阀门、乙烯装置高温高压阀门等关键阀门性能达到国际先进水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超（超）临界火电机组阀门成套供货能力",
+      "evidence_span": "具备超（超）临界火电机组阀门成套供货能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "“华龙一号”核一级稳压器快速卸压阀居国际领先水平",
+      "evidence_span": "“华龙一号”核一级稳压器快速卸压阀居国际领先水平"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "入围中石化和中石油的年度框架"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "入围中石化和中石油的年度框架"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "KOC",
+      "evidence_span": "成功获得KOC和KNPC合格供应商资格认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "KNPC",
+      "evidence_span": "成功获得KOC和KNPC合格供应商资格认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中科院",
+      "evidence_span": "中标中科院低碳燃气轮机试验装置高温高压阀门"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "核电重启",
+      "evidence_span": "核电重启带来两方面影响"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "核电国产化",
+      "evidence_span": "核电市场受到国家政策、国产化替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "关键阀门国产化",
+      "evidence_span": "关键阀门国产化推动业绩增长"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业用阀门的研发、生产、销售及服务",
+        "evidence_span": "主要业务为工业用阀门的研发、生产、销售及服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "阀门行业的龙头企业",
+        "evidence_span": "阀门行业的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端阀门制造企业",
+        "evidence_span": "旗下高端阀门制造企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "闸阀",
+        "evidence_span": "主要产品种类包括闸阀"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "截止阀",
+        "evidence_span": "主要产品种类包括闸阀、截止阀"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "止回阀",
+        "evidence_span": "主要产品种类包括闸阀、截止阀、止回阀"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "球阀",
+        "evidence_span": "主要产品种类包括闸阀、截止阀、止回阀、球阀"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蝶阀",
+        "evidence_span": "主要产品种类包括闸阀、截止阀、止回阀、球阀、蝶阀"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "调节阀",
+        "evidence_span": "主要产品种类包括闸阀、截止阀、止回阀、球阀、蝶阀、调节阀"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "隔膜阀",
+        "evidence_span": "主要产品种类包括闸阀、截止阀、止回阀、球阀、蝶阀、调节阀、隔膜阀等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核电阀门",
+        "evidence_span": "核电阀门业务回暖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核电站用关键阀门",
+        "evidence_span": "公司核电站用关键阀门具备二代、三代核电机组阀门成套供货能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核燃料真空阀",
+        "evidence_span": "核燃料真空阀及浓缩铀生产四大类国产化关键阀门"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石油化工关键阀门",
+        "evidence_span": "石油化工关键阀门具备百万吨乙烯、千万吨炼油阀门成套供货能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超（超）临界火电机组阀门",
+        "evidence_span": "具备超（超）临界火电机组阀门成套供货能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超大口径蝶阀",
+        "evidence_span": "珠江三角洲水资源配置工程超大口径蝶阀项目完成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高温高压阀门",
+        "evidence_span": "中标中科院低碳燃气轮机试验装置高温高压阀门"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "二代、三代核电机组阀门成套供货能力",
+        "evidence_span": "公司核电站用关键阀门具备二代、三代核电机组阀门成套供货能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "四代核电机组关键阀门供货能力",
+        "evidence_span": "四代核电机组关键阀门供货能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核燃料真空阀及浓缩铀生产四大类国产化关键阀门总体性能达到或超过进口产品水平",
+        "evidence_span": "核燃料真空阀及浓缩铀生产四大类国产化关键阀门总体性能达到或超过进口产品水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "百万吨乙烯、千万吨炼油阀门成套供货能力",
+        "evidence_span": "石油化工关键阀门具备百万吨乙烯、千万吨炼油阀门成套供货能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "加氢装置高压阀门、乙烯装置高温高压阀门等关键阀门性能达到国际先进水平",
+        "evidence_span": "加氢装置高压阀门、乙烯装置高温高压阀门等关键阀门性能达到国际先进水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超（超）临界火电机组阀门成套供货能力",
+        "evidence_span": "具备超（超）临界火电机组阀门成套供货能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "“华龙一号”核一级稳压器快速卸压阀居国际领先水平",
+        "evidence_span": "“华龙一号”核一级稳压器快速卸压阀居国际领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核二级主蒸汽隔离阀、CAP1400系列关键阀门、安全壳延伸功能地坑阀等产品居国际先进水平",
+        "evidence_span": "核二级主蒸汽隔离阀、CAP1400系列关键阀门、安全壳延伸功能地坑阀等产品居国际先进水平"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "入围中石化和中石油的年度框架"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "入围中石化和中石油的年度框架"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "KOC",
+        "evidence_span": "成功获得KOC和KNPC合格供应商资格认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "KNPC",
+        "evidence_span": "成功获得KOC和KNPC合格供应商资格认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中科院",
+        "evidence_span": "中标中科院低碳燃气轮机试验装置高温高压阀门"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "核电重启",
+        "evidence_span": "核电重启带来两方面影响"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "核电国产化",
+        "evidence_span": "核电市场受到国家政策、国产化替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "关键阀门国产化",
+        "evidence_span": "关键阀门国产化推动业绩增长"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:30:36"
+}

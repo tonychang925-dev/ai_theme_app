@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能电网设备制造",
+      "evidence_span": "智能电网设备制造是公司长期专注的主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源产业运营",
+      "evidence_span": "形成“智能电网设备制造+新能源产业运营”双轮驱动业务格局"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中压预制式电缆附件龙头企业",
+      "evidence_span": "国内中压预制式电缆附件龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "能源互联网系统解决方案提供商",
+      "evidence_span": "公司致力于成为先进的能源互联网系统解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中压配电柜",
+      "evidence_span": "主要产品包括中压配电柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预制式电缆附件",
+      "evidence_span": "主要产品包括...预制式电缆附件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高低压成套设备",
+      "evidence_span": "主要产品包括...高低压成套设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "箱式变电站",
+      "evidence_span": "主要产品包括...箱式变电站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一二次融合成套柱上开关",
+      "evidence_span": "一二次融合成套柱上开关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一二次融合成套环网箱",
+      "evidence_span": "一二次融合成套环网箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预制舱式模块化智能变电站",
+      "evidence_span": "预制舱式模块化智能变电站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏电站持有运营",
+      "evidence_span": "光伏电站持有运营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏电站EPC业务",
+      "evidence_span": "光伏电站EPC业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充电桩生产销售",
+      "evidence_span": "充电桩的生产销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充电站投资运营",
+      "evidence_span": "充电站的投资运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能系统解决方案",
+      "evidence_span": "为客户提供储能系统及光储充一体化解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "C-GIS环网柜自主研发",
+      "evidence_span": "自主研发了C-GIS环网柜并在国内率先推出"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电气化铁路单芯电缆专用组合式电缆护层保护器",
+      "evidence_span": "在国内首先成功开发电气化铁路单芯电缆专用组合式电缆护层保护器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "110kv高压电缆附件",
+      "evidence_span": "研究开发出110kv高压电缆附件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "服务客户主要面向国家电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "服务客户主要面向...南方电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国铁集团",
+      "evidence_span": "服务客户主要面向...国铁集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "城市轨道交通",
+      "evidence_span": "服务客户主要面向...城市轨道交通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工矿企业",
+      "evidence_span": "服务客户主要面向...工矿企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内大型能源企业",
+      "evidence_span": "客户主要为国内大型能源企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工商业高耗能企业",
+      "evidence_span": "客户主要为...工商业高耗能企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能配网",
+      "evidence_span": "积极布局智能配网"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源物流车运营",
+      "evidence_span": "进军新能源物流车运营"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能",
+      "evidence_span": "大力开拓光伏EPC、储能等新能源业务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能电网设备制造",
+        "evidence_span": "智能电网设备制造是公司长期专注的主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源产业运营",
+        "evidence_span": "形成“智能电网设备制造+新能源产业运营”双轮驱动业务格局"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中压预制式电缆附件龙头企业",
+        "evidence_span": "国内中压预制式电缆附件龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "能源互联网系统解决方案提供商",
+        "evidence_span": "公司致力于成为先进的能源互联网系统解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中压配电柜",
+        "evidence_span": "主要产品包括中压配电柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预制式电缆附件",
+        "evidence_span": "主要产品包括...预制式电缆附件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高低压成套设备",
+        "evidence_span": "主要产品包括...高低压成套设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "箱式变电站",
+        "evidence_span": "主要产品包括...箱式变电站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一二次融合成套柱上开关",
+        "evidence_span": "一二次融合成套柱上开关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一二次融合成套环网箱",
+        "evidence_span": "一二次融合成套环网箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预制舱式模块化智能变电站",
+        "evidence_span": "预制舱式模块化智能变电站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏电站持有运营",
+        "evidence_span": "光伏电站持有运营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏电站EPC业务",
+        "evidence_span": "光伏电站EPC业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充电桩生产销售",
+        "evidence_span": "充电桩的生产销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充电站投资运营",
+        "evidence_span": "充电站的投资运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能系统解决方案",
+        "evidence_span": "为客户提供储能系统及光储充一体化解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "C-GIS环网柜自主研发",
+        "evidence_span": "自主研发了C-GIS环网柜并在国内率先推出"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电气化铁路单芯电缆专用组合式电缆护层保护器",
+        "evidence_span": "在国内首先成功开发电气化铁路单芯电缆专用组合式电缆护层保护器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "110kv高压电缆附件",
+        "evidence_span": "研究开发出110kv高压电缆附件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "服务客户主要面向国家电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "服务客户主要面向...南方电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国铁集团",
+        "evidence_span": "服务客户主要面向...国铁集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "城市轨道交通",
+        "evidence_span": "服务客户主要面向...城市轨道交通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工矿企业",
+        "evidence_span": "服务客户主要面向...工矿企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内大型能源企业",
+        "evidence_span": "客户主要为国内大型能源企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工商业高耗能企业",
+        "evidence_span": "客户主要为...工商业高耗能企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能配网",
+        "evidence_span": "积极布局智能配网"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源物流车运营",
+        "evidence_span": "进军新能源物流车运营"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能",
+        "evidence_span": "大力开拓光伏EPC、储能等新能源业务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:06:49"
+}

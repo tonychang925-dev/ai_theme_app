@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "94981e319733", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了英伟达和AMD计划在2026年初上调GPU价格的具体事件，属于市场动态或价格变化，不涉及半导体设备题材的定义、构成或边界等知识性内容。"}}

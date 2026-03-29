@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "f586d6b85b40", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述奉贤区发布产业发展行动方案，提及支持发展深紫外光刻胶等材料，包含政策导向和国产替代的知识，但以政策发布事件形式呈现，混合了事件信息，可能对题材知识构建有价值。"}}

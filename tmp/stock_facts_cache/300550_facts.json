@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗信息系统",
+      "evidence_span": "公司主营业务主要囊括医疗信息系统与数字化场景应用两大类"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字化场景应用",
+      "evidence_span": "公司主营业务主要囊括医疗信息系统与数字化场景应用两大类"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医疗信息化整体解决方案提供商",
+      "evidence_span": "公司的核心定位主要是医疗信息化整体解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "EMR起家的厂商",
+      "evidence_span": "作为EMR起家的厂商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子病历系统",
+      "evidence_span": "具体包括电子病历系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医护工作站系统",
+      "evidence_span": "医护工作站系统等医院核心生产系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息集成平台",
+      "evidence_span": "用于统一协调、整合、交换全院数据的信息集成平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "临床数据中心",
+      "evidence_span": "临床数据中心等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管理应用系统",
+      "evidence_span": "管理应用系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医院核心业务一体化系统",
+      "evidence_span": "公司推出针对大型综合医院的新一代产品——医院核心业务一体化系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "区域卫生云平台解决方案",
+      "evidence_span": "公司区域级产品主要是区域卫生云平台解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医院运营控制系统",
+      "evidence_span": "涵盖医院运营控制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "远程协同医疗系统",
+      "evidence_span": "远程协同医疗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一体化手术室系统",
+      "evidence_span": "一体化手术室"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化病房系统",
+      "evidence_span": "数字化病房等系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云系统",
+      "evidence_span": "该产品为云系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "B/S技术",
+      "evidence_span": "采用B/S、SOA、H5等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SOA技术",
+      "evidence_span": "采用B/S、SOA、H5等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "H5技术",
+      "evidence_span": "采用B/S、SOA、H5等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "医疗文档管理的结构化",
+      "evidence_span": "可完全实现医疗文档管理的结构化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "医嘱闭环管理",
+      "evidence_span": "支持多种临床功能和医嘱闭环管理"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "解放军总后卫生部",
+      "evidence_span": "和仁于2011年成为解放军总后卫生部“军队新一代医院疗养院信息系统”合作开发单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全军150余家医院",
+      "evidence_span": "当前其EMR系统已应用于全军150余家医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "湘雅医院",
+      "evidence_span": "成功案例还包括湘雅医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "同济医院",
+      "evidence_span": "同济医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙二医院",
+      "evidence_span": "浙二医院等大型综合医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江西省妇幼保健院",
+      "evidence_span": "公司相继承接如江西省妇幼保健院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陕西中医药大学第二附属医院",
+      "evidence_span": "陕西中医药大学第二附属医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "邵逸夫医院",
+      "evidence_span": "邵逸夫医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广西国际壮医医院",
+      "evidence_span": "广西国际壮医医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江西省儿童医院红谷滩新院",
+      "evidence_span": "江西省儿童医院红谷滩新院"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "医疗信息化",
+      "evidence_span": "医疗信息化已成为国家医卫政策的关键发力点"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗信息系统",
+        "evidence_span": "公司主营业务主要囊括医疗信息系统与数字化场景应用两大类"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字化场景应用",
+        "evidence_span": "公司主营业务主要囊括医疗信息系统与数字化场景应用两大类"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医疗信息化整体解决方案提供商",
+        "evidence_span": "公司的核心定位主要是医疗信息化整体解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "EMR起家的厂商",
+        "evidence_span": "作为EMR起家的厂商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子病历系统",
+        "evidence_span": "具体包括电子病历系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医护工作站系统",
+        "evidence_span": "医护工作站系统等医院核心生产系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息集成平台",
+        "evidence_span": "用于统一协调、整合、交换全院数据的信息集成平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "临床数据中心",
+        "evidence_span": "临床数据中心等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管理应用系统",
+        "evidence_span": "管理应用系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医院核心业务一体化系统",
+        "evidence_span": "公司推出针对大型综合医院的新一代产品——医院核心业务一体化系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "区域卫生云平台解决方案",
+        "evidence_span": "公司区域级产品主要是区域卫生云平台解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医院运营控制系统",
+        "evidence_span": "涵盖医院运营控制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "远程协同医疗系统",
+        "evidence_span": "远程协同医疗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一体化手术室系统",
+        "evidence_span": "一体化手术室"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化病房系统",
+        "evidence_span": "数字化病房等系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云系统",
+        "evidence_span": "该产品为云系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "B/S技术",
+        "evidence_span": "采用B/S、SOA、H5等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SOA技术",
+        "evidence_span": "采用B/S、SOA、H5等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "H5技术",
+        "evidence_span": "采用B/S、SOA、H5等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "医疗文档管理的结构化",
+        "evidence_span": "可完全实现医疗文档管理的结构化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "医嘱闭环管理",
+        "evidence_span": "支持多种临床功能和医嘱闭环管理"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "解放军总后卫生部",
+        "evidence_span": "和仁于2011年成为解放军总后卫生部“军队新一代医院疗养院信息系统”合作开发单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全军150余家医院",
+        "evidence_span": "当前其EMR系统已应用于全军150余家医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "湘雅医院",
+        "evidence_span": "成功案例还包括湘雅医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "同济医院",
+        "evidence_span": "同济医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙二医院",
+        "evidence_span": "浙二医院等大型综合医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江西省妇幼保健院",
+        "evidence_span": "公司相继承接如江西省妇幼保健院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陕西中医药大学第二附属医院",
+        "evidence_span": "陕西中医药大学第二附属医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "邵逸夫医院",
+        "evidence_span": "邵逸夫医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广西国际壮医医院",
+        "evidence_span": "广西国际壮医医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江西省儿童医院红谷滩新院",
+        "evidence_span": "江西省儿童医院红谷滩新院"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "医疗信息化",
+        "evidence_span": "医疗信息化已成为国家医卫政策的关键发力点"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:14:22"
+}

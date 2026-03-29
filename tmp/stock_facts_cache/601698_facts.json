@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "卫星空间段运营服务",
+      "evidence_span": "公司主营卫星空间段运营服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "卫星通信广播",
+      "evidence_span": "主要应用于卫星通信广播"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内卫星通信运营核心龙头",
+      "evidence_span": "国内卫星通信运营核心龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "我国唯一商用卫星电信运营企业",
+      "evidence_span": "我国唯一商用卫星电信运营企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高轨卫星互联网国家队",
+      "evidence_span": "高轨卫星互联网国家队"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "我国高轨卫星互联网运营商",
+      "evidence_span": "我国高轨卫星互联网运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "世界第六大固定卫星通信运营商",
+      "evidence_span": "世界第六大固定卫星通信运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "亚洲第二大固定通信卫星运营商",
+      "evidence_span": "亚洲第二大、世界第六大固定通信卫星运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "广播电视及通信传输服务",
+      "evidence_span": "提供自主可控、安全稳定的广播电视及通信传输服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海洋通信服务系统",
+      "evidence_span": "拥有自主可控的海洋通信服务系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "互联网接入",
+      "evidence_span": "互联网接入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络语音",
+      "evidence_span": "网络语音"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多媒体广播",
+      "evidence_span": "多媒体广播"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频会议",
+      "evidence_span": "视频会议"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空宽带服务",
+      "evidence_span": "成功实施航空宽带服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机载Ka高通量卫星综合信息服务业务",
+      "evidence_span": "机载Ka高通量卫星综合信息服务业务取得突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主可控商用通信广播卫星资源",
+      "evidence_span": "拥有自主可控商用通信广播卫星资源"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "C、Ku、Ka等多个主流通信频段覆盖",
+      "evidence_span": "覆盖C、Ku、和Ka等多个主流通信频段"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Ka频段大容量宽带卫星",
+      "evidence_span": "中星26号卫星将实现Ka频段大容量宽带卫星"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "印尼电信",
+      "evidence_span": "印尼电信"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中央电视台",
+      "evidence_span": "中央电视台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "中国移动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广电总局无线电台管理局",
+      "evidence_span": "广电总局无线电台管理局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "四川航空",
+      "evidence_span": "与四川航空合作运营协议的签署"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山东航空",
+      "evidence_span": "与山东航空签署合作框架协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国航",
+      "evidence_span": "加速推进与国航的项目进展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "卫星互联网",
+      "evidence_span": "卫星互联网促发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "高通量卫星带来业务新空间",
+      "evidence_span": "高通量卫星带来业务新空间"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "卫星空间段运营服务",
+        "evidence_span": "公司主营卫星空间段运营服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "卫星通信广播",
+        "evidence_span": "主要应用于卫星通信广播"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内卫星通信运营核心龙头",
+        "evidence_span": "国内卫星通信运营核心龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "我国唯一商用卫星电信运营企业",
+        "evidence_span": "我国唯一商用卫星电信运营企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高轨卫星互联网国家队",
+        "evidence_span": "高轨卫星互联网国家队"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "我国高轨卫星互联网运营商",
+        "evidence_span": "我国高轨卫星互联网运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "世界第六大固定卫星通信运营商",
+        "evidence_span": "世界第六大固定卫星通信运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "亚洲第二大固定通信卫星运营商",
+        "evidence_span": "亚洲第二大、世界第六大固定通信卫星运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "广播电视及通信传输服务",
+        "evidence_span": "提供自主可控、安全稳定的广播电视及通信传输服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海洋通信服务系统",
+        "evidence_span": "拥有自主可控的海洋通信服务系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "互联网接入",
+        "evidence_span": "互联网接入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络语音",
+        "evidence_span": "网络语音"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多媒体广播",
+        "evidence_span": "多媒体广播"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频会议",
+        "evidence_span": "视频会议"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空宽带服务",
+        "evidence_span": "成功实施航空宽带服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机载Ka高通量卫星综合信息服务业务",
+        "evidence_span": "机载Ka高通量卫星综合信息服务业务取得突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主可控商用通信广播卫星资源",
+        "evidence_span": "拥有自主可控商用通信广播卫星资源"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "C、Ku、Ka等多个主流通信频段覆盖",
+        "evidence_span": "覆盖C、Ku、和Ka等多个主流通信频段"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Ka频段大容量宽带卫星",
+        "evidence_span": "中星26号卫星将实现Ka频段大容量宽带卫星"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "印尼电信",
+        "evidence_span": "印尼电信"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中央电视台",
+        "evidence_span": "中央电视台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "中国移动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广电总局无线电台管理局",
+        "evidence_span": "广电总局无线电台管理局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "四川航空",
+        "evidence_span": "与四川航空合作运营协议的签署"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山东航空",
+        "evidence_span": "与山东航空签署合作框架协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国航",
+        "evidence_span": "加速推进与国航的项目进展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "卫星互联网",
+        "evidence_span": "卫星互联网促发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "高通量卫星带来业务新空间",
+        "evidence_span": "高通量卫星带来业务新空间"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:31:41"
+}

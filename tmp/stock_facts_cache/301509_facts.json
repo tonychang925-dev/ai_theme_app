@@ -1,0 +1,439 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "小分子CDMO服务",
+      "evidence_span": "公司是一家面向全球生命科技领域客户的小分子 CDMO服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药CDMO服务",
+      "evidence_span": "公司 2023年度医药 CDMO服务取得较好增长"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农药CDMO服务",
+      "evidence_span": "2023年度农药CDMO服务实现收入25,668.98万元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特殊化学品业务",
+      "evidence_span": "2023年度特殊化学品业务收入规模基本稳定"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "小分子CDMO服务商",
+      "evidence_span": "公司是一家面向全球生命科技领域客户的小分子 CDMO服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小分子药物中间体",
+      "evidence_span": "提供小分子药物中间体以及少量原料药的定制研发生产服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "原料药",
+      "evidence_span": "提供小分子药物中间体以及少量原料药的定制研发生产服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "含氟类产品",
+      "evidence_span": "公司含氟类产品主要包括三氟甲氧基或三氟甲基的苯类中间体、氟代芳环类中间体等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非含氟类产品",
+      "evidence_span": "公司的非含氟类产品品种众多，主要包括了含氮杂环系列、氨的脂肪族有机衍生物、羧酸及其衍生物、烯烃类、非氟卤代苯类、酚类、酮类、异氰酸酯类等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农药中间体",
+      "evidence_span": "公司还提供从产品试验到商业化应用所需的农药中间体和部分特殊化学品的配套研发与生产服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特殊化学品",
+      "evidence_span": "公司还提供从产品试验到商业化应用所需的农药中间体和部分特殊化学品的配套研发与生产服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氟化反应",
+      "evidence_span": "公司掌握包括氟化反应、氯化反应、光气化反应、硼酸化反应、低温反应、手性合成等多种技术能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氯化反应",
+      "evidence_span": "公司掌握包括氟化反应、氯化反应、光气化反应、硼酸化反应、低温反应、手性合成等多种技术能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光气化反应",
+      "evidence_span": "公司掌握包括氟化反应、氯化反应、光气化反应、硼酸化反应、低温反应、手性合成等多种技术能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硼酸化反应",
+      "evidence_span": "公司掌握包括氟化反应、氯化反应、光气化反应、硼酸化反应、低温反应、手性合成等多种技术能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低温反应",
+      "evidence_span": "公司掌握包括氟化反应、氯化反应、光气化反应、硼酸化反应、低温反应、手性合成等多种技术能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "手性合成",
+      "evidence_span": "公司掌握包括氟化反应、氯化反应、光气化反应、硼酸化反应、低温反应、手性合成等多种技术能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氟化氢氟化",
+      "evidence_span": "公司的氟化氢氟化、氟化钾氟化、四氟化硫氟化、特殊氟化剂氟化（如氟化氢吡啶、氟化氢三乙胺等）以及电解氟化等特色工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氟化钾氟化",
+      "evidence_span": "公司的氟化氢氟化、氟化钾氟化、四氟化硫氟化、特殊氟化剂氟化（如氟化氢吡啶、氟化氢三乙胺等）以及电解氟化等特色工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "四氟化硫氟化",
+      "evidence_span": "公司的氟化氢氟化、氟化钾氟化、四氟化硫氟化、特殊氟化剂氟化（如氟化氢吡啶、氟化氢三乙胺等）以及电解氟化等特色工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "特殊氟化剂氟化",
+      "evidence_span": "公司的氟化氢氟化、氟化钾氟化、四氟化硫氟化、特殊氟化剂氟化（如氟化氢吡啶、氟化氢三乙胺等）以及电解氟化等特色工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电解氟化",
+      "evidence_span": "公司的氟化氢氟化、氟化钾氟化、四氟化硫氟化、特殊氟化剂氟化（如氟化氢吡啶、氟化氢三乙胺等）以及电解氟化等特色工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "加氢",
+      "evidence_span": "在氟化、氯化、加氢、光气化、低温、Grignard、Hofmann重排、Suzuki偶联、Skraup喹啉合成、Van Leusen等化学反应方面具有突出优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Grignard",
+      "evidence_span": "在氟化、氯化、加氢、光气化、低温、Grignard、Hofmann重排、Suzuki偶联、Skraup喹啉合成、Van Leusen等化学反应方面具有突出优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Hofmann重排",
+      "evidence_span": "在氟化、氯化、加氢、光气化、低温、Grignard、Hofmann重排、Suzuki偶联、Skraup喹啉合成、Van Leusen等化学反应方面具有突出优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Suzuki偶联",
+      "evidence_span": "在氟化、氯化、加氢、光气化、低温、Grignard、Hofmann重排、Suzuki偶联、Skraup喹啉合成、Van Leusen等化学反应方面具有突出优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Skraup喹啉合成",
+      "evidence_span": "在氟化、氯化、加氢、光气化、低温、Grignard、Hofmann重排、Suzuki偶联、Skraup喹啉合成、Van Leusen等化学反应方面具有突出优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Van Leusen",
+      "evidence_span": "在氟化、氯化、加氢、光气化、低温、Grignard、Hofmann重排、Suzuki偶联、Skraup喹啉合成、Van Leusen等化学反应方面具有突出优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "酰胺化",
+      "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "重氮化",
+      "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "卤甲基化",
+      "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硝化",
+      "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磺化",
+      "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Dieckmann反应",
+      "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Heck反应",
+      "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Friedel-Crafts反应",
+      "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Michael加成",
+      "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Ullmann反应",
+      "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连续流反应",
+      "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氟气氟化",
+      "evidence_span": "目前已进入小试阶段的氟气氟化及部分特殊氟化装置投产后"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球原研药厂",
+      "evidence_span": "为全球原研药厂的新药研发项目提供小分子药物中间体以及少量原料药的定制研发生产服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际大型药企",
+      "evidence_span": "公司客户既有多家国际大型药企，也有一大批特色治疗领域的欧美创新药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧美创新药企",
+      "evidence_span": "公司客户既有多家国际大型药企，也有一大批特色治疗领域的欧美创新药企"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "小分子CDMO服务",
+        "evidence_span": "公司是一家面向全球生命科技领域客户的小分子 CDMO服务商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药CDMO服务",
+        "evidence_span": "公司 2023年度医药 CDMO服务取得较好增长"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农药CDMO服务",
+        "evidence_span": "2023年度农药CDMO服务实现收入25,668.98万元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特殊化学品业务",
+        "evidence_span": "2023年度特殊化学品业务收入规模基本稳定"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "小分子CDMO服务商",
+        "evidence_span": "公司是一家面向全球生命科技领域客户的小分子 CDMO服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小分子药物中间体",
+        "evidence_span": "提供小分子药物中间体以及少量原料药的定制研发生产服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "原料药",
+        "evidence_span": "提供小分子药物中间体以及少量原料药的定制研发生产服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "含氟类产品",
+        "evidence_span": "公司含氟类产品主要包括三氟甲氧基或三氟甲基的苯类中间体、氟代芳环类中间体等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非含氟类产品",
+        "evidence_span": "公司的非含氟类产品品种众多，主要包括了含氮杂环系列、氨的脂肪族有机衍生物、羧酸及其衍生物、烯烃类、非氟卤代苯类、酚类、酮类、异氰酸酯类等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农药中间体",
+        "evidence_span": "公司还提供从产品试验到商业化应用所需的农药中间体和部分特殊化学品的配套研发与生产服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特殊化学品",
+        "evidence_span": "公司还提供从产品试验到商业化应用所需的农药中间体和部分特殊化学品的配套研发与生产服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氟化反应",
+        "evidence_span": "公司掌握包括氟化反应、氯化反应、光气化反应、硼酸化反应、低温反应、手性合成等多种技术能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氯化反应",
+        "evidence_span": "公司掌握包括氟化反应、氯化反应、光气化反应、硼酸化反应、低温反应、手性合成等多种技术能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光气化反应",
+        "evidence_span": "公司掌握包括氟化反应、氯化反应、光气化反应、硼酸化反应、低温反应、手性合成等多种技术能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硼酸化反应",
+        "evidence_span": "公司掌握包括氟化反应、氯化反应、光气化反应、硼酸化反应、低温反应、手性合成等多种技术能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低温反应",
+        "evidence_span": "公司掌握包括氟化反应、氯化反应、光气化反应、硼酸化反应、低温反应、手性合成等多种技术能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "手性合成",
+        "evidence_span": "公司掌握包括氟化反应、氯化反应、光气化反应、硼酸化反应、低温反应、手性合成等多种技术能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氟化氢氟化",
+        "evidence_span": "公司的氟化氢氟化、氟化钾氟化、四氟化硫氟化、特殊氟化剂氟化（如氟化氢吡啶、氟化氢三乙胺等）以及电解氟化等特色工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氟化钾氟化",
+        "evidence_span": "公司的氟化氢氟化、氟化钾氟化、四氟化硫氟化、特殊氟化剂氟化（如氟化氢吡啶、氟化氢三乙胺等）以及电解氟化等特色工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "四氟化硫氟化",
+        "evidence_span": "公司的氟化氢氟化、氟化钾氟化、四氟化硫氟化、特殊氟化剂氟化（如氟化氢吡啶、氟化氢三乙胺等）以及电解氟化等特色工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "特殊氟化剂氟化",
+        "evidence_span": "公司的氟化氢氟化、氟化钾氟化、四氟化硫氟化、特殊氟化剂氟化（如氟化氢吡啶、氟化氢三乙胺等）以及电解氟化等特色工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电解氟化",
+        "evidence_span": "公司的氟化氢氟化、氟化钾氟化、四氟化硫氟化、特殊氟化剂氟化（如氟化氢吡啶、氟化氢三乙胺等）以及电解氟化等特色工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "加氢",
+        "evidence_span": "在氟化、氯化、加氢、光气化、低温、Grignard、Hofmann重排、Suzuki偶联、Skraup喹啉合成、Van Leusen等化学反应方面具有突出优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Grignard",
+        "evidence_span": "在氟化、氯化、加氢、光气化、低温、Grignard、Hofmann重排、Suzuki偶联、Skraup喹啉合成、Van Leusen等化学反应方面具有突出优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Hofmann重排",
+        "evidence_span": "在氟化、氯化、加氢、光气化、低温、Grignard、Hofmann重排、Suzuki偶联、Skraup喹啉合成、Van Leusen等化学反应方面具有突出优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Suzuki偶联",
+        "evidence_span": "在氟化、氯化、加氢、光气化、低温、Grignard、Hofmann重排、Suzuki偶联、Skraup喹啉合成、Van Leusen等化学反应方面具有突出优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Skraup喹啉合成",
+        "evidence_span": "在氟化、氯化、加氢、光气化、低温、Grignard、Hofmann重排、Suzuki偶联、Skraup喹啉合成、Van Leusen等化学反应方面具有突出优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Van Leusen",
+        "evidence_span": "在氟化、氯化、加氢、光气化、低温、Grignard、Hofmann重排、Suzuki偶联、Skraup喹啉合成、Van Leusen等化学反应方面具有突出优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "酰胺化",
+        "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "重氮化",
+        "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "卤甲基化",
+        "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硝化",
+        "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磺化",
+        "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Dieckmann反应",
+        "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Heck反应",
+        "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Friedel-Crafts反应",
+        "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Michael加成",
+        "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Ullmann反应",
+        "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连续流反应",
+        "evidence_span": "还可完成酰胺化、重氮化、卤甲基化、硝化、磺化、Dieckmann反应、Heck反应、Friedel-Crafts反应、Michael加成、Ullmann反应、手性合成、连续流反应等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氟气氟化",
+        "evidence_span": "目前已进入小试阶段的氟气氟化及部分特殊氟化装置投产后"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球原研药厂",
+        "evidence_span": "为全球原研药厂的新药研发项目提供小分子药物中间体以及少量原料药的定制研发生产服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际大型药企",
+        "evidence_span": "公司客户既有多家国际大型药企，也有一大批特色治疗领域的欧美创新药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧美创新药企",
+        "evidence_span": "公司客户既有多家国际大型药企，也有一大批特色治疗领域的欧美创新药企"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:44:02"
+}

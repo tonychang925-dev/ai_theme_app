@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "a584e176050a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "内容是特朗普关于芯片关税的言论，属于政治人物的政策主张或声明，是具体的事件性信息，不具备稳定、可沉淀的知识属性。"}}

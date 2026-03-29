@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:38:06", "result": {"chunk_id": "ed749f7c15f0", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落以A股纳入为例，解释MSCI指数如何影响市场，包含一般性机制（如定期审核、公布结果、生效日调仓），这属于静态知识；但提及具体例子（如A股纳入）和影响过程，可能隐含事件背景，因此混合了知识和潜在事件元素，应标为candidate_mixed。"}}

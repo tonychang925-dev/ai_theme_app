@@ -1,0 +1,444 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高精度北斗",
+      "evidence_span": "公司主要产品为基于北斗及其他卫星导航系统的实时高精度定位芯片、模块、接收机等数据采集设备终端和高精度北斗/GNSS应用系统解决方案"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "GNSS模块",
+      "evidence_span": "公司主要产品为基于北斗及其他卫星导航系统的实时高精度定位芯片、模块、接收机等数据采集设备终端和高精度北斗/GNSS应用系统解决方案"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "GNSS应用系统解决方案",
+      "evidence_span": "公司主要产品为基于北斗及其他卫星导航系统的实时高精度定位芯片、模块、接收机等数据采集设备终端和高精度北斗/GNSS应用系统解决方案"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级专精特新“小巨人”企业",
+      "evidence_span": "司南导航是完全自主掌握高精度北斗/GNSS模块核心技术并成功实现规模化市场应用的国家级专精特新“小巨人”企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高精度GNSS板卡/模块产品领域国内领先企业",
+      "evidence_span": "高精度GNSS板卡/模块产品领域市占率国内居前"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高精度北斗/GNSS芯片",
+      "evidence_span": "公司主要产品为基于北斗及其他卫星导航系统的实时高精度定位芯片、模块、接收机等数据采集设备终端和高精度北斗/GNSS应用系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高精度GNSS接收机",
+      "evidence_span": "公司主要产品为基于北斗及其他卫星导航系统的实时高精度定位芯片、模块、接收机等数据采集设备终端和高精度北斗/GNSS应用系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据采集设备",
+      "evidence_span": "公司主要产品为基于北斗及其他卫星导航系统的实时高精度定位芯片、模块、接收机等数据采集设备终端和高精度北斗/GNSS应用系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "K803G高精度RTK定位模块",
+      "evidence_span": "基于具有完全自主知识产权的QuantumIII开发的的K803G与K823G高精度RTK定位模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "K823G高精度RTK定位模块",
+      "evidence_span": "基于具有完全自主知识产权的QuantumIII开发的的K803G与K823G高精度RTK定位模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "M100X组合导航接收机",
+      "evidence_span": "报告期内公司先后推出M100X组合导航接收机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Z30室内外定位便携式终端",
+      "evidence_span": "Z30室内外定位便携式终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AG502北斗农机自动驾驶系统",
+      "evidence_span": "AG502北斗农机自动驾驶系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光RTK接收机",
+      "evidence_span": "激光RTK接收机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "XT100平地引导系统",
+      "evidence_span": "XT100平地引导系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地基增强系统",
+      "evidence_span": "数据应用及系统解决方案主要涵盖地基增强系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "形变与安全监测系统",
+      "evidence_span": "形变与安全监测"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动驾驶与辅助驾驶系统",
+      "evidence_span": "自动驾驶与辅助驾驶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农机自动驾驶系统",
+      "evidence_span": "农机自动驾驶系统系以高精度GNSS接收机作为高精度导航定位的核心设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字施工系统",
+      "evidence_span": "公司数字施工系统可安装在挖掘机、推土机、平地机等工程机械上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "K8系列北斗高精度定位/定向模块",
+      "evidence_span": "推出的K8系列北斗高精度定位/定向模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车规级模块K802",
+      "evidence_span": "公司开发车规级模块K802"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "M900组合导航接收机",
+      "evidence_span": "司南导航M900组合导航接收机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精度算法",
+      "evidence_span": "公司在高精度算法、专用芯片和核心板卡/模块等方面持续投入实现了进口替代"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "专用芯片",
+      "evidence_span": "公司在高精度算法、专用芯片和核心板卡/模块等方面持续投入实现了进口替代"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Quantum-Ⅰ高精度北斗/GNSS芯片",
+      "evidence_span": "公司先后自主研发设计Quantum-Ⅰ、Quantum-Ⅱ、Quantum-Ⅲ三代高精度北斗/GNSS芯片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Quantum-Ⅱ高精度北斗/GNSS芯片",
+      "evidence_span": "公司先后自主研发设计Quantum-Ⅰ、Quantum-Ⅱ、Quantum-Ⅲ三代高精度北斗/GNSS芯片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Quantum-Ⅲ高精度北斗/GNSS芯片",
+      "evidence_span": "公司先后自主研发设计Quantum-Ⅰ、Quantum-Ⅱ、Quantum-Ⅲ三代高精度北斗/GNSS芯片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Quantum-IV基带射频一体化高精度芯片",
+      "evidence_span": "公司最新研制的新一代基带射频一体化高精度芯片Quantum-IV目前已研制成功"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "K5系列北斗高精度定位/定向核心板卡/模块",
+      "evidence_span": "基于各代专用芯片研制具有完全自主知识产权的K5、K7、K8各系列北斗高精度定位/定向核心板卡/模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "K7系列北斗高精度定位/定向核心板卡/模块",
+      "evidence_span": "基于各代专用芯片研制具有完全自主知识产权的K5、K7、K8各系列北斗高精度定位/定向核心板卡/模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "K8系列北斗高精度定位/定向核心板卡/模块",
+      "evidence_span": "基于各代专用芯片研制具有完全自主知识产权的K5、K7、K8各系列北斗高精度定位/定向核心板卡/模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能融合算法",
+      "evidence_span": "内置完全自主知识产权智能融合算法"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方导航",
+      "evidence_span": "公司产品现已被南方导航、国家电网、中国移动、上汽集团、千寻位置等业界知名企业购置使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "公司产品现已被南方导航、国家电网、中国移动、上汽集团、千寻位置等业界知名企业购置使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "公司产品现已被南方导航、国家电网、中国移动、上汽集团、千寻位置等业界知名企业购置使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽集团",
+      "evidence_span": "公司产品现已被南方导航、国家电网、中国移动、上汽集团、千寻位置等业界知名企业购置使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "千寻位置",
+      "evidence_span": "公司产品现已被南方导航、国家电网、中国移动、上汽集团、千寻位置等业界知名企业购置使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "清华大学",
+      "evidence_span": "公司产品还被清华大学、武汉大学、上海交通大学、同济大学、华东师范大学等国内多家知名院所进行产业化前期科研使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "武汉大学",
+      "evidence_span": "公司产品还被清华大学、武汉大学、上海交通大学、同济大学、华东师范大学等国内多家知名院所进行产业化前期科研使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海交通大学",
+      "evidence_span": "公司产品还被清华大学、武汉大学、上海交通大学、同济大学、华东师范大学等国内多家知名院所进行产业化前期科研使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "同济大学",
+      "evidence_span": "公司产品还被清华大学、武汉大学、上海交通大学、同济大学、华东师范大学等国内多家知名院所进行产业化前期科研使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华东师范大学",
+      "evidence_span": "公司产品还被清华大学、武汉大学、上海交通大学、同济大学、华东师范大学等国内多家知名院所进行产业化前期科研使用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "公司在高精度算法、专用芯片和核心板卡/模块等方面持续投入实现了进口替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高精度北斗/GNSS模块",
+        "evidence_span": "公司主要产品为基于北斗及其他卫星导航系统的实时高精度定位芯片、模块、接收机等数据采集设备终端和高精度北斗/GNSS应用系统解决方案"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高精度北斗/GNSS应用系统解决方案",
+        "evidence_span": "公司主要产品为基于北斗及其他卫星导航系统的实时高精度定位芯片、模块、接收机等数据采集设备终端和高精度北斗/GNSS应用系统解决方案"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级专精特新“小巨人”企业",
+        "evidence_span": "司南导航是完全自主掌握高精度北斗/GNSS模块核心技术并成功实现规模化市场应用的国家级专精特新“小巨人”企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高精度GNSS板卡/模块产品领域国内领先企业",
+        "evidence_span": "高精度GNSS板卡/模块产品领域市占率国内居前"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高精度北斗/GNSS芯片",
+        "evidence_span": "公司主要产品为基于北斗及其他卫星导航系统的实时高精度定位芯片、模块、接收机等数据采集设备终端和高精度北斗/GNSS应用系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高精度GNSS接收机",
+        "evidence_span": "公司主要产品为基于北斗及其他卫星导航系统的实时高精度定位芯片、模块、接收机等数据采集设备终端和高精度北斗/GNSS应用系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据采集设备",
+        "evidence_span": "公司主要产品为基于北斗及其他卫星导航系统的实时高精度定位芯片、模块、接收机等数据采集设备终端和高精度北斗/GNSS应用系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "K803G高精度RTK定位模块",
+        "evidence_span": "基于具有完全自主知识产权的QuantumIII开发的的K803G与K823G高精度RTK定位模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "K823G高精度RTK定位模块",
+        "evidence_span": "基于具有完全自主知识产权的QuantumIII开发的的K803G与K823G高精度RTK定位模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "M100X组合导航接收机",
+        "evidence_span": "报告期内公司先后推出M100X组合导航接收机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Z30室内外定位便携式终端",
+        "evidence_span": "Z30室内外定位便携式终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AG502北斗农机自动驾驶系统",
+        "evidence_span": "AG502北斗农机自动驾驶系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光RTK接收机",
+        "evidence_span": "激光RTK接收机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "XT100平地引导系统",
+        "evidence_span": "XT100平地引导系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地基增强系统",
+        "evidence_span": "数据应用及系统解决方案主要涵盖地基增强系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "形变与安全监测系统",
+        "evidence_span": "形变与安全监测"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动驾驶与辅助驾驶系统",
+        "evidence_span": "自动驾驶与辅助驾驶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农机自动驾驶系统",
+        "evidence_span": "农机自动驾驶系统系以高精度GNSS接收机作为高精度导航定位的核心设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字施工系统",
+        "evidence_span": "公司数字施工系统可安装在挖掘机、推土机、平地机等工程机械上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "K8系列北斗高精度定位/定向模块",
+        "evidence_span": "推出的K8系列北斗高精度定位/定向模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车规级模块K802",
+        "evidence_span": "公司开发车规级模块K802"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "M900组合导航接收机",
+        "evidence_span": "司南导航M900组合导航接收机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精度算法",
+        "evidence_span": "公司在高精度算法、专用芯片和核心板卡/模块等方面持续投入实现了进口替代"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "专用芯片",
+        "evidence_span": "公司在高精度算法、专用芯片和核心板卡/模块等方面持续投入实现了进口替代"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Quantum-Ⅰ高精度北斗/GNSS芯片",
+        "evidence_span": "公司先后自主研发设计Quantum-Ⅰ、Quantum-Ⅱ、Quantum-Ⅲ三代高精度北斗/GNSS芯片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Quantum-Ⅱ高精度北斗/GNSS芯片",
+        "evidence_span": "公司先后自主研发设计Quantum-Ⅰ、Quantum-Ⅱ、Quantum-Ⅲ三代高精度北斗/GNSS芯片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Quantum-Ⅲ高精度北斗/GNSS芯片",
+        "evidence_span": "公司先后自主研发设计Quantum-Ⅰ、Quantum-Ⅱ、Quantum-Ⅲ三代高精度北斗/GNSS芯片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Quantum-IV基带射频一体化高精度芯片",
+        "evidence_span": "公司最新研制的新一代基带射频一体化高精度芯片Quantum-IV目前已研制成功"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "K5系列北斗高精度定位/定向核心板卡/模块",
+        "evidence_span": "基于各代专用芯片研制具有完全自主知识产权的K5、K7、K8各系列北斗高精度定位/定向核心板卡/模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "K7系列北斗高精度定位/定向核心板卡/模块",
+        "evidence_span": "基于各代专用芯片研制具有完全自主知识产权的K5、K7、K8各系列北斗高精度定位/定向核心板卡/模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "K8系列北斗高精度定位/定向核心板卡/模块",
+        "evidence_span": "基于各代专用芯片研制具有完全自主知识产权的K5、K7、K8各系列北斗高精度定位/定向核心板卡/模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能融合算法",
+        "evidence_span": "内置完全自主知识产权智能融合算法"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方导航",
+        "evidence_span": "公司产品现已被南方导航、国家电网、中国移动、上汽集团、千寻位置等业界知名企业购置使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "公司产品现已被南方导航、国家电网、中国移动、上汽集团、千寻位置等业界知名企业购置使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "公司产品现已被南方导航、国家电网、中国移动、上汽集团、千寻位置等业界知名企业购置使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽集团",
+        "evidence_span": "公司产品现已被南方导航、国家电网、中国移动、上汽集团、千寻位置等业界知名企业购置使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "千寻位置",
+        "evidence_span": "公司产品现已被南方导航、国家电网、中国移动、上汽集团、千寻位置等业界知名企业购置使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "清华大学",
+        "evidence_span": "公司产品还被清华大学、武汉大学、上海交通大学、同济大学、华东师范大学等国内多家知名院所进行产业化前期科研使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "武汉大学",
+        "evidence_span": "公司产品还被清华大学、武汉大学、上海交通大学、同济大学、华东师范大学等国内多家知名院所进行产业化前期科研使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海交通大学",
+        "evidence_span": "公司产品还被清华大学、武汉大学、上海交通大学、同济大学、华东师范大学等国内多家知名院所进行产业化前期科研使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "同济大学",
+        "evidence_span": "公司产品还被清华大学、武汉大学、上海交通大学、同济大学、华东师范大学等国内多家知名院所进行产业化前期科研使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华东师范大学",
+        "evidence_span": "公司产品还被清华大学、武汉大学、上海交通大学、同济大学、华东师范大学等国内多家知名院所进行产业化前期科研使用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "公司在高精度算法、专用芯片和核心板卡/模块等方面持续投入实现了进口替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:05:30"
+}

@@ -1,0 +1,439 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能缆网业务",
+      "evidence_span": "智能缆网业务作为公司核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能电池业务",
+      "evidence_span": "智能电池业务主要产品包括18650型、21700型圆柱锂电池以及软包锂电池"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧机场业务",
+      "evidence_span": "智慧机场业务涉及助航灯光、空管工程等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电缆领域的领先企业",
+      "evidence_span": "公司是国内电缆领域的领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "线缆龙头",
+      "evidence_span": "线缆龙头老树发新枝"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "三元锂电龙头",
+      "evidence_span": "远东股份三元锂电龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色建筑缆线",
+      "evidence_span": "绿色建筑缆线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能制造缆线",
+      "evidence_span": "智能制造缆线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电网缆线",
+      "evidence_span": "智能电网缆线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清洁能源缆线",
+      "evidence_span": "清洁能源缆线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能交通缆线",
+      "evidence_span": "智能交通缆线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字通讯缆线",
+      "evidence_span": "数字通讯缆线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "18650型圆柱锂电池",
+      "evidence_span": "18650型圆柱电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "21700型圆柱锂电池",
+      "evidence_span": "21700型圆柱电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三元软包电池",
+      "evidence_span": "三元软包电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸铁锂电池",
+      "evidence_span": "磷酸铁锂电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高精度6微米锂电铜箔",
+      "evidence_span": "高精度6微米和4.5微米超薄锂电铜箔两种主要产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4.5微米超薄锂电铜箔",
+      "evidence_span": "高精度6微米和4.5微米超薄锂电铜箔两种主要产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4.0微米超薄铜箔",
+      "evidence_span": "4.0微米超薄铜箔已研发成功"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "助航灯光",
+      "evidence_span": "助航灯光"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空管工程",
+      "evidence_span": "空管工程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "4.5微米超薄锂电铜箔自主研发",
+      "evidence_span": "持续深入高抗拉、高延展的4.5微米铜箔自主研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双面光4.5微米铜箔小试和中试试制",
+      "evidence_span": "双面光4.5微米铜箔小试和中试试制成功"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "4.0微米超薄铜箔研发",
+      "evidence_span": "4.0微米超薄铜箔已研发成功"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电网系",
+      "evidence_span": "电网系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁系",
+      "evidence_span": "中铁系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中建系",
+      "evidence_span": "中建系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子",
+      "evidence_span": "西门子"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金风科技",
+      "evidence_span": "金风科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "GE",
+      "evidence_span": "GE"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小牛电动",
+      "evidence_span": "小牛电动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "纳恩博",
+      "evidence_span": "纳恩博"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁锚",
+      "evidence_span": "铁锚"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京首都国际机场",
+      "evidence_span": "北京首都国际机场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "马尔代夫维拉纳国际机场",
+      "evidence_span": "马尔代夫维拉纳国际机场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "批量供货宁德时代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长虹三杰",
+      "evidence_span": "长虹三杰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海四达",
+      "evidence_span": "海四达"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏",
+      "evidence_span": "在光伏、风电、特高压等新兴领域有望实现快速增长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "风电",
+      "evidence_span": "在光伏、风电、特高压等新兴领域有望实现快速增长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "特高压",
+      "evidence_span": "在光伏、风电、特高压等新兴领域有望实现快速增长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "三元锂电",
+      "evidence_span": "远东股份三元锂电龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "能源互联网",
+      "evidence_span": "能源互联网全产业链布局"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能缆网业务",
+        "evidence_span": "智能缆网业务作为公司核心业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能电池业务",
+        "evidence_span": "智能电池业务主要产品包括18650型、21700型圆柱锂电池以及软包锂电池"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧机场业务",
+        "evidence_span": "智慧机场业务涉及助航灯光、空管工程等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电缆领域的领先企业",
+        "evidence_span": "公司是国内电缆领域的领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "线缆龙头",
+        "evidence_span": "线缆龙头老树发新枝"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "三元锂电龙头",
+        "evidence_span": "远东股份三元锂电龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色建筑缆线",
+        "evidence_span": "绿色建筑缆线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能制造缆线",
+        "evidence_span": "智能制造缆线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电网缆线",
+        "evidence_span": "智能电网缆线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清洁能源缆线",
+        "evidence_span": "清洁能源缆线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能交通缆线",
+        "evidence_span": "智能交通缆线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字通讯缆线",
+        "evidence_span": "数字通讯缆线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "18650型圆柱锂电池",
+        "evidence_span": "18650型圆柱电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "21700型圆柱锂电池",
+        "evidence_span": "21700型圆柱电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三元软包电池",
+        "evidence_span": "三元软包电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸铁锂电池",
+        "evidence_span": "磷酸铁锂电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高精度6微米锂电铜箔",
+        "evidence_span": "高精度6微米和4.5微米超薄锂电铜箔两种主要产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4.5微米超薄锂电铜箔",
+        "evidence_span": "高精度6微米和4.5微米超薄锂电铜箔两种主要产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4.0微米超薄铜箔",
+        "evidence_span": "4.0微米超薄铜箔已研发成功"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "助航灯光",
+        "evidence_span": "助航灯光"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空管工程",
+        "evidence_span": "空管工程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "4.5微米超薄锂电铜箔自主研发",
+        "evidence_span": "持续深入高抗拉、高延展的4.5微米铜箔自主研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双面光4.5微米铜箔小试和中试试制",
+        "evidence_span": "双面光4.5微米铜箔小试和中试试制成功"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "4.0微米超薄铜箔研发",
+        "evidence_span": "4.0微米超薄铜箔已研发成功"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电网系",
+        "evidence_span": "电网系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁系",
+        "evidence_span": "中铁系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中建系",
+        "evidence_span": "中建系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子",
+        "evidence_span": "西门子"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金风科技",
+        "evidence_span": "金风科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "GE",
+        "evidence_span": "GE"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小牛电动",
+        "evidence_span": "小牛电动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "纳恩博",
+        "evidence_span": "纳恩博"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁锚",
+        "evidence_span": "铁锚"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京首都国际机场",
+        "evidence_span": "北京首都国际机场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "马尔代夫维拉纳国际机场",
+        "evidence_span": "马尔代夫维拉纳国际机场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "批量供货宁德时代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长虹三杰",
+        "evidence_span": "长虹三杰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海四达",
+        "evidence_span": "海四达"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏",
+        "evidence_span": "在光伏、风电、特高压等新兴领域有望实现快速增长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "风电",
+        "evidence_span": "在光伏、风电、特高压等新兴领域有望实现快速增长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "特高压",
+        "evidence_span": "在光伏、风电、特高压等新兴领域有望实现快速增长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "三元锂电",
+        "evidence_span": "远东股份三元锂电龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "能源互联网",
+        "evidence_span": "能源互联网全产业链布局"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:42:08"
+}

@@ -1,0 +1,324 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "文旅业务",
+      "evidence_span": "公司主要从事文旅业务及传媒业务的经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "传媒业务",
+      "evidence_span": "公司主要从事文旅业务及传媒业务的经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "景区开发",
+      "evidence_span": "包括景区开发与经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "经营",
+      "evidence_span": "包括景区开发与经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "产业园开发",
+      "evidence_span": "产业园开发与经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "广播频率广告业务经营",
+      "evidence_span": "广播频率广告业务经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "手机音",
+      "evidence_span": "手机音/视频服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "视频服务",
+      "evidence_span": "手机音/视频服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "流量营销服务",
+      "evidence_span": "流量营销服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "游戏运营",
+      "evidence_span": "游戏运营与开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "开发",
+      "evidence_span": "游戏运营与开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车联网服务",
+      "evidence_span": "车联网服务等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "文旅综合服务提供商",
+      "evidence_span": "努力打造文旅综合服务提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "写字楼租赁",
+      "evidence_span": "主要为公司总部和海南文旅办公使用及对外招商出租"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一站式商务服务",
+      "evidence_span": "为来琼投资企业提供一站式商务服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "森林实景沉浸式夜游项目",
+      "evidence_span": "大型森林实景沉浸式夜游项目“三亚凤凰岭-山海奇幻夜”成功运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农旅文综合体",
+      "evidence_span": "打造集现代农业、亲子研学、文化旅游等为一体的农旅文综合体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "广播频率广告经营",
+      "evidence_span": "劲曲调频（HIT FM）北京FM88.7、上海FM87.9、广州FM88.5频率广告的独家经营权"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手机音/视频运营支撑服务",
+      "evidence_span": "向手机电视牌照方提供内容集成、包装策划、内容技术性筛选、内容二次制作、平台适配等一系列运营管理服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "流量营销服务",
+      "evidence_span": "通过深耕相关媒体广告资源进行业务拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动游戏研发",
+      "evidence_span": "主要从事移动游戏的研发、发行和运营为基础的文化创意业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能汽车数字化解决方案",
+      "evidence_span": "为汽车主机厂提供智能汽车数字化解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载交互系统开发",
+      "evidence_span": "包括车载交互系统开发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车主运营和服务",
+      "evidence_span": "以人工智能为基础、以大数据分析为核心的车主运营和服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电商运营服务",
+      "evidence_span": "覆盖车主全生命周期的电商运营服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "互联网精准营销服务",
+      "evidence_span": "覆盖售前、售中、售后各阶段的互联网精准营销服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能化呼叫中心解决方案",
+      "evidence_span": "智能化呼叫中心解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载智能硬件生产",
+      "evidence_span": "车载智能硬件生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧交通智能设备",
+      "evidence_span": "提供超级传感器、麦克风超声波雷达、车载计算机、GPS定位仪等智能设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "语音技术",
+      "evidence_span": "车音智能原生的语音技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车主机厂",
+      "evidence_span": "为汽车主机厂提供智能汽车数字化解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用",
+      "evidence_span": "并应用于上汽通用多款车型"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海南自贸港建设",
+      "evidence_span": "在海南自由贸易港建设中找准自身定位"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "文旅业务",
+        "evidence_span": "公司主要从事文旅业务及传媒业务的经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "传媒业务",
+        "evidence_span": "公司主要从事文旅业务及传媒业务的经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "景区开发与经营",
+        "evidence_span": "包括景区开发与经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "产业园开发与经营",
+        "evidence_span": "产业园开发与经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "广播频率广告业务经营",
+        "evidence_span": "广播频率广告业务经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "手机音/视频服务",
+        "evidence_span": "手机音/视频服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "流量营销服务",
+        "evidence_span": "流量营销服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "游戏运营与开发",
+        "evidence_span": "游戏运营与开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车联网服务",
+        "evidence_span": "车联网服务等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "文旅综合服务提供商",
+        "evidence_span": "努力打造文旅综合服务提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "写字楼租赁",
+        "evidence_span": "主要为公司总部和海南文旅办公使用及对外招商出租"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一站式商务服务",
+        "evidence_span": "为来琼投资企业提供一站式商务服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "森林实景沉浸式夜游项目",
+        "evidence_span": "大型森林实景沉浸式夜游项目“三亚凤凰岭-山海奇幻夜”成功运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农旅文综合体",
+        "evidence_span": "打造集现代农业、亲子研学、文化旅游等为一体的农旅文综合体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "广播频率广告经营",
+        "evidence_span": "劲曲调频（HIT FM）北京FM88.7、上海FM87.9、广州FM88.5频率广告的独家经营权"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手机音/视频运营支撑服务",
+        "evidence_span": "向手机电视牌照方提供内容集成、包装策划、内容技术性筛选、内容二次制作、平台适配等一系列运营管理服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "流量营销服务",
+        "evidence_span": "通过深耕相关媒体广告资源进行业务拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动游戏研发",
+        "evidence_span": "主要从事移动游戏的研发、发行和运营为基础的文化创意业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能汽车数字化解决方案",
+        "evidence_span": "为汽车主机厂提供智能汽车数字化解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载交互系统开发",
+        "evidence_span": "包括车载交互系统开发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车主运营和服务",
+        "evidence_span": "以人工智能为基础、以大数据分析为核心的车主运营和服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电商运营服务",
+        "evidence_span": "覆盖车主全生命周期的电商运营服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "互联网精准营销服务",
+        "evidence_span": "覆盖售前、售中、售后各阶段的互联网精准营销服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能化呼叫中心解决方案",
+        "evidence_span": "智能化呼叫中心解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载智能硬件生产",
+        "evidence_span": "车载智能硬件生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧交通智能设备",
+        "evidence_span": "提供超级传感器、麦克风超声波雷达、车载计算机、GPS定位仪等智能设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "语音技术",
+        "evidence_span": "车音智能原生的语音技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车主机厂",
+        "evidence_span": "为汽车主机厂提供智能汽车数字化解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用",
+        "evidence_span": "并应用于上汽通用多款车型"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海南自贸港建设",
+        "evidence_span": "在海南自由贸易港建设中找准自身定位"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:32:41"
+}

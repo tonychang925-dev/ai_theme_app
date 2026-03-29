@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "9f655a1a3b77", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到苹果、Meta等大厂布局智能眼镜产品，并提及产品发布计划，可能隐含行业趋势或厂商策略等有价值知识，但混合了具体事件信息（如Meta可能在9月发布AR眼镜），因此判为候选混合状态。"}}

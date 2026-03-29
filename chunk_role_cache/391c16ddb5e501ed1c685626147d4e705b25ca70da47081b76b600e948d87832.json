@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "bbf767cbade5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落可能含有有价值的知识（国内半导体光刻胶国产化率低、自主可控需求），但表述涉及现状评估（极低、不稳定性），可能隐含时间性或事件性信息，需要进一步裁决以分离稳定知识部分。"}}

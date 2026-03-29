@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "efe6070f6751", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述三星电子在2纳米工艺中采用BSPDN技术的事件，包括性能改进数据，但技术细节（如面积减少、性能提升）可能对半导体工艺知识构建有价值，因此分类为candidate_mixed。"}}

@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "奶茶饮料产品的研发",
+      "evidence_span": "公司主营业务为奶茶饮料产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "奶茶饮料产品的生产",
+      "evidence_span": "公司主营业务为奶茶饮料产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "奶茶饮料产品的销售",
+      "evidence_span": "公司主营业务为奶茶饮料产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "冲泡业务",
+      "evidence_span": "分为冲泡与即饮两大产品板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "即饮业务",
+      "evidence_span": "分为冲泡与即饮两大产品板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "奶茶专家",
+      "evidence_span": "便将自身定位为“奶茶专家”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "杯装冲泡奶茶市场份额第一",
+      "evidence_span": "连续11年杯装冲泡奶茶市场份额保持第一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "冲泡奶茶行业绝对龙头",
+      "evidence_span": "香飘飘冲泡奶茶行业绝对龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "香飘飘品牌奶茶（固体+液体）",
+      "evidence_span": "主要产品为“香飘飘”品牌奶茶（固体+液体）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MECO蜜谷品牌果汁茶",
+      "evidence_span": "主要产品为“香飘飘”品牌奶茶（固体+液体）、“MECO蜜谷”品牌果汁茶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "兰芳园品牌即饮产品",
+      "evidence_span": "主要产品为“香飘飘”品牌奶茶（固体+液体）、“MECO蜜谷”品牌果汁茶和“兰芳园”品牌即饮产品。"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "香飘飘经典系列",
+      "evidence_span": "固体冲泡类，主要包括“香飘飘”经典系列、好料系列、牛乳茶等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "香飘飘好料系列",
+      "evidence_span": "固体冲泡类，主要包括“香飘飘”经典系列、好料系列、牛乳茶等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "香飘飘牛乳茶系列",
+      "evidence_span": "固体冲泡类，主要包括“香飘飘”经典系列、好料系列、牛乳茶等系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MECO果汁茶",
+      "evidence_span": "即饮饮料类，主要包括“MECO”果汁茶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "香飘飘瓶装牛乳茶",
+      "evidence_span": "即饮饮料类，主要包括“MECO”果汁茶、“香飘飘”瓶装牛乳茶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "兰芳园液体饮料",
+      "evidence_span": "即饮饮料类，主要包括“MECO”果汁茶、“香飘飘”瓶装牛乳茶、“兰芳园”液体饮料等。"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芝芝/生椰牛乳茶",
+      "evidence_span": "新推出了芝芝/生椰牛乳茶、珍珠牛乳茶等去植脂末健康新品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "珍珠牛乳茶",
+      "evidence_span": "新推出了芝芝/生椰牛乳茶、珍珠牛乳茶等去植脂末健康新品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Meco果汁茶荔枝百香口味",
+      "evidence_span": "Meco果汁茶推出“荔枝百香”“芒果芭乐”“有梅有鸭”等新口味"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Meco果汁茶芒果芭乐口味",
+      "evidence_span": "Meco果汁茶推出“荔枝百香”“芒果芭乐”“有梅有鸭”等新口味"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Meco果汁茶有梅有鸭口味",
+      "evidence_span": "Meco果汁茶推出“荔枝百香”“芒果芭乐”“有梅有鸭”等新口味"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "兰芳园瓶装冻柠茶",
+      "evidence_span": "兰芳园品牌创新推出瓶装冻柠茶产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "香飘飘瓶装牛乳茶系列（黑乌龙、大红袍、鸭屎香）",
+      "evidence_span": "香飘飘品牌创新推出瓶装牛乳茶系列产品（包括黑乌龙、大红袍、鸭屎香三个口味）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "联名款燕麦奶茶（鸭屎香、铁观音风味）",
+      "evidence_span": "已联合推出“鸭屎香”“铁观音”两款风味"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MECO杯装果汁茶（桃桃红柚、泰式青柠、樱桃莓莓、红石榴白葡萄）",
+      "evidence_span": "在原有“桃桃红柚”“泰式青柠”“樱桃莓莓”“红石榴白葡萄”四个口味的基础上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "瓶装果汁茶有梅有鸭",
+      "evidence_span": "推出了瓶装果汁茶“有梅有鸭”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "UHT无菌灌装技术",
+      "evidence_span": "公司采用UHT无菌灌装技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高阻隔材料杯型",
+      "evidence_span": "率先采用高阻隔材料杯型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "先进萃取技术",
+      "evidence_span": "使用先进萃取技术以及差异化的配方"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双轮驱动",
+      "evidence_span": "坚持“双轮驱动”战略"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进军即饮液体奶茶领域",
+      "evidence_span": "香飘飘杯装奶茶龙头进军即饮液体奶茶领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "奶茶饮料产品的研发",
+        "evidence_span": "公司主营业务为奶茶饮料产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "奶茶饮料产品的生产",
+        "evidence_span": "公司主营业务为奶茶饮料产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "奶茶饮料产品的销售",
+        "evidence_span": "公司主营业务为奶茶饮料产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "冲泡业务",
+        "evidence_span": "分为冲泡与即饮两大产品板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "即饮业务",
+        "evidence_span": "分为冲泡与即饮两大产品板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "奶茶专家",
+        "evidence_span": "便将自身定位为“奶茶专家”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "杯装冲泡奶茶市场份额第一",
+        "evidence_span": "连续11年杯装冲泡奶茶市场份额保持第一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "冲泡奶茶行业绝对龙头",
+        "evidence_span": "香飘飘冲泡奶茶行业绝对龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "香飘飘品牌奶茶（固体+液体）",
+        "evidence_span": "主要产品为“香飘飘”品牌奶茶（固体+液体）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MECO蜜谷品牌果汁茶",
+        "evidence_span": "主要产品为“香飘飘”品牌奶茶（固体+液体）、“MECO蜜谷”品牌果汁茶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "兰芳园品牌即饮产品",
+        "evidence_span": "主要产品为“香飘飘”品牌奶茶（固体+液体）、“MECO蜜谷”品牌果汁茶和“兰芳园”品牌即饮产品。"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "香飘飘经典系列",
+        "evidence_span": "固体冲泡类，主要包括“香飘飘”经典系列、好料系列、牛乳茶等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "香飘飘好料系列",
+        "evidence_span": "固体冲泡类，主要包括“香飘飘”经典系列、好料系列、牛乳茶等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "香飘飘牛乳茶系列",
+        "evidence_span": "固体冲泡类，主要包括“香飘飘”经典系列、好料系列、牛乳茶等系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MECO果汁茶",
+        "evidence_span": "即饮饮料类，主要包括“MECO”果汁茶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "香飘飘瓶装牛乳茶",
+        "evidence_span": "即饮饮料类，主要包括“MECO”果汁茶、“香飘飘”瓶装牛乳茶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "兰芳园液体饮料",
+        "evidence_span": "即饮饮料类，主要包括“MECO”果汁茶、“香飘飘”瓶装牛乳茶、“兰芳园”液体饮料等。"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芝芝/生椰牛乳茶",
+        "evidence_span": "新推出了芝芝/生椰牛乳茶、珍珠牛乳茶等去植脂末健康新品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "珍珠牛乳茶",
+        "evidence_span": "新推出了芝芝/生椰牛乳茶、珍珠牛乳茶等去植脂末健康新品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Meco果汁茶荔枝百香口味",
+        "evidence_span": "Meco果汁茶推出“荔枝百香”“芒果芭乐”“有梅有鸭”等新口味"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Meco果汁茶芒果芭乐口味",
+        "evidence_span": "Meco果汁茶推出“荔枝百香”“芒果芭乐”“有梅有鸭”等新口味"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Meco果汁茶有梅有鸭口味",
+        "evidence_span": "Meco果汁茶推出“荔枝百香”“芒果芭乐”“有梅有鸭”等新口味"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "兰芳园瓶装冻柠茶",
+        "evidence_span": "兰芳园品牌创新推出瓶装冻柠茶产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "香飘飘瓶装牛乳茶系列（黑乌龙、大红袍、鸭屎香）",
+        "evidence_span": "香飘飘品牌创新推出瓶装牛乳茶系列产品（包括黑乌龙、大红袍、鸭屎香三个口味）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "联名款燕麦奶茶（鸭屎香、铁观音风味）",
+        "evidence_span": "已联合推出“鸭屎香”“铁观音”两款风味"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MECO杯装果汁茶（桃桃红柚、泰式青柠、樱桃莓莓、红石榴白葡萄）",
+        "evidence_span": "在原有“桃桃红柚”“泰式青柠”“樱桃莓莓”“红石榴白葡萄”四个口味的基础上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "瓶装果汁茶有梅有鸭",
+        "evidence_span": "推出了瓶装果汁茶“有梅有鸭”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "UHT无菌灌装技术",
+        "evidence_span": "公司采用UHT无菌灌装技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高阻隔材料杯型",
+        "evidence_span": "率先采用高阻隔材料杯型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "先进萃取技术",
+        "evidence_span": "使用先进萃取技术以及差异化的配方"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双轮驱动",
+        "evidence_span": "坚持“双轮驱动”战略"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进军即饮液体奶茶领域",
+        "evidence_span": "香飘飘杯装奶茶龙头进军即饮液体奶茶领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:59:31"
+}

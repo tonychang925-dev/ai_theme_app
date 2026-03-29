@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "21277cb3c5df", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含国防时报的社交媒体内容和中国六代机研发的传闻事件，后者可能隐含军工技术进展知识，但信息不明确，因此归类为混合候选。"}}

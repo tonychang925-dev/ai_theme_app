@@ -1,0 +1,206 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "ISO 3级洁净室",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称的核心定义，是题材最核心的标识，能稳定指向产业对象和技术标准，适合作为must中的核心锚点。"
+      },
+      {
+        "term": "空气中悬浮颗粒浓度",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是ISO 3级洁净室的核心控制指标之一，直接体现其技术标准本质，能稳定指向技术对象和关键环节，适合作为must。"
+      },
+      {
+        "term": "垂直单向流（层流）设计",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是ISO 3级洁净室的关键技术要求，直接关联其核心设计原理，能稳定指向技术对象和关键环节，适合作为must。"
+      },
+      {
+        "term": "空气过滤系统使用超高效过滤器（ULPA）",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是洁净室空气处理的核心技术组件，直接支撑其洁净度标准，能稳定指向技术对象和关键环节，适合作为must。"
+      },
+      {
+        "term": "半导体制造",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是ISO 3级洁净室的核心应用场景之一，能稳定指向产业对象和关键环节，直接贴合题材名称的应用语义，适合作为must。"
+      },
+      {
+        "term": "ISO 14644-1",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "ISO 14644-1是定义ISO 3级洁净室的国际标准，直接对应题材名称中的'ISO'和'级'所指向的标准体系，是洁净室技术的核心依据和定义来源，最适合作为must锚点。"
+      },
+      {
+        "term": "垂直单向流",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "垂直单向流（层流）是ISO 3级洁净室的关键技术设计，直接对应洁净室的核心气流控制要求，属于技术对象和关键环节，最适合作为must锚点。"
+      },
+      {
+        "term": "超高效过滤器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "超高效过滤器（ULPA）是ISO 3级洁净室空气过滤系统的核心设备，直接对应洁净室的高效过滤技术要求，属于技术对象和关键环节，最适合作为must锚点。"
+      },
+      {
+        "term": "ULPA",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "ULPA（超高效过滤器）是ISO 3级洁净室实现核心洁净度指标的关键技术设备，直接对应题材名称中的‘洁净室’技术标准要求，能稳定指向产业中的技术对象，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "浮游菌≤1CFU/m³",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是洁净室在生物医疗应用中的关键指标，虽重要但与题材名称定义的核心语义（ISO 3级洁净室）不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "活性炭纤维过滤器以吸附气态分子污染物",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是洁净室在特定应用（如半导体制造）中的附加技术，虽相关但与题材名称定义的核心语义不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "建筑材料采用防静电、低发尘的金属夹芯板",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是洁净室建筑材料的细节要求，虽重要但更偏向具体实施细节，与题材名称的核心语义不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "地面使用环氧树脂自流平或PVC卷材",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是洁净室地面材料的细节要求，虽相关但更偏向具体实施细节，与题材名称的核心语义不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "表面电阻≤10^9Ω",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是洁净室防静电性能的细节指标，虽相关但更偏向具体技术参数，与题材名称的核心语义不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "先进封装工艺",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是洁净室在半导体领域的应用场景，虽相关但更偏向具体工艺环节，与题材名称定义的核心语义不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "3D封装",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语是洁净室在先进封装中的具体应用，虽相关但更偏向细分技术，与题材名称的核心语义不够直接一致，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "Chiplet集成",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "Chiplet集成是ISO 3级洁净室在半导体封装领域的具体应用场景之一，属于下游应用环节。虽然与洁净室技术相关，但并非洁净室本身的核心技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "生物制药与医疗",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "生物制药与医疗是ISO 3级洁净室的重要应用领域，属于下游产业应用。虽然体现了洁净室的应用价值，但并非洁净室技术本身的核心对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "基因治疗",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "基因治疗是ISO 3级洁净室在医疗领域的具体应用场景，属于下游应用环节。虽然与洁净室技术相关，但并非洁净室本身的核心技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "细胞治疗",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "细胞治疗是ISO 3级洁净室在医疗领域的具体应用场景，属于下游应用环节。虽然与洁净室技术相关，但并非洁净室本身的核心技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "CAR-T细胞制备",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "CAR-T细胞制备是ISO 3级洁净室在医疗领域的具体应用场景，属于下游应用环节。虽然与洁净室技术相关，但并非洁净室本身的核心技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "mRNA疫苗灌装",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "mRNA疫苗灌装是ISO 3级洁净室在医疗领域的具体应用场景，属于下游应用环节。虽然与洁净室技术相关，但并非洁净室本身的核心技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "高端医疗器械制造",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "高端医疗器械制造是ISO 3级洁净室的重要应用领域，属于下游产业应用。虽然体现了洁净室的应用价值，但并非洁净室技术本身的核心对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "植入式芯片",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "植入式芯片是ISO 3级洁净室在医疗器械制造中的具体应用场景，属于下游应用环节。虽然与洁净室技术相关，但并非洁净室本身的核心技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "精密手术器械组装",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "精密手术器械组装是ISO 3级洁净室在医疗器械制造中的具体应用场景，属于下游应用环节。虽然与洁净室技术相关，但并非洁净室本身的核心技术对象或关键环节，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "活性炭纤维过滤器",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "该过滤器是洁净室空气处理系统的组成部分，用于吸附气态污染物，与洁净室相关，但更偏向特定应用（如半导体）的辅助技术，不如ULPA直接核心，适合作为should。"
+      },
+      {
+        "term": "防静电金属夹芯板",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为建筑材料，它支持洁净室的低发尘和防静电要求，是技术实现的一环，但非最核心的技术标准对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "环氧树脂自流平",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "地面材料的一种，用于洁净室建设，属于材料对象，但通用性较强，不直接体现ISO 3级洁净室的独特技术标准，适合作为should。"
+      },
+      {
+        "term": "PVC卷材",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "类似环氧树脂自流平，是洁净室地面材料选项，相关但非核心技术对象，更适合作为should。"
+      },
+      {
+        "term": "7nm制程",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "是ISO 3级洁净室在半导体制造中的应用场景，指向具体产业环节，但更偏向应用而非洁净室本身的技术标准，适合作为should。"
+      },
+      {
+        "term": "光刻",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "洁净室在半导体制造中的关键工序之一，属于应用场景，非洁净室技术核心，适合作为should。"
+      },
+      {
+        "term": "蚀刻",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "类似光刻，是半导体制造工序，应用相关，但非洁净室技术标准直接对象，适合作为should。"
+      },
+      {
+        "term": "离子注入",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "洁净室在半导体制造中的应用环节，指向产业对象，但不够直接贴合题材名称的核心技术语义，适合作为should。"
+      }
+    ]
+  }
+}

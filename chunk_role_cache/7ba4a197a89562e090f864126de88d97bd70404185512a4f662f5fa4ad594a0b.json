@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T12:19:46", "result": {"chunk_id": "50b1b0998787", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述美国政府将实体列入黑名单和加大芯片管制的事件，以及美成熟制程芯片冲击中国市场的事件，属于纯事件性动态，未包含可用于题材本体构建的稳定知识。"}}

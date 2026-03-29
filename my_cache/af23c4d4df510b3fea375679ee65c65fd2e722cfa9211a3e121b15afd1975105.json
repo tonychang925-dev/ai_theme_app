@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:31:43", "result": {"chunk_id": "e788a3eb2cc4", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要报告防空警报、领空关闭和官员声明等实时事件，与导弹题材的稳定知识构建无关，属于纯事件。"}}

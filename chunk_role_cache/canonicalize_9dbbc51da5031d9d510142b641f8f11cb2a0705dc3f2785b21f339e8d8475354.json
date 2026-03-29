@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:16:15", "result": {"span_uid": "012d8b24c72f", "action": "rewrite", "canonical_text": "民用卫星互联网终端设备包括卫星上网机等产品，用于提供卫星上网服务。", "final_type": "core", "final_role": "终端设备构成", "stability": "high", "reason": "原文包含具体公司、产品名称和售价，去事件化改写后，保留终端设备作为卫星互联网组成部分的稳定知识，属于核心构成。"}}

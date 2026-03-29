@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "5d02ecbef394", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含波士顿动力Atlas人形机器人的静态知识（如电动化、全自动工作、依赖机器学习算法），但混合了事件信息（4月份宣布、上周三发布视频）和上海市的公告事件，因此作为知识候选需要进一步裁决。"}}

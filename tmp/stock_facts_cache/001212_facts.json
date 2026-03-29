@@ -1,0 +1,394 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "人造石英石装饰材料研发",
+      "evidence_span": "公司是一家专业从事人造石英石装饰材料研发、生产、销售和服务的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司是一家专业从事人造石英石装饰材料研发、生产、销售和服务的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司是一家专业从事人造石英石装饰材料研发、生产、销售和服务的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "公司是一家专业从事人造石英石装饰材料研发、生产、销售和服务的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "硅晶新材料研发开发制造一体化项目",
+      "evidence_span": "公司拟投资 10亿元人民币，在当地建设硅晶新材料研发开发制造一体化项目"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "人造石英石面材制造企业",
+      "evidence_span": "中国最具规模的人造石英石面材制造企业与出口基地之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级高新技术企业",
+      "evidence_span": "公司是一家专业从事人造石英石装饰材料研发、生产、销售和服务的国家级高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "A股主板上市的人造石英石企业",
+      "evidence_span": "公司在深圳证券交易所正式挂牌上市，成为中国首家A股主板上市的人造石英石企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人造石英石板材",
+      "evidence_span": "公司主要产品是人造石英石板材和人造石英石台面"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人造石英石台面",
+      "evidence_span": "公司主要产品是人造石英石板材和人造石英石台面"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "岩板",
+      "evidence_span": "公司不断完善产品矩阵，推出了岩板、岗石产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "岗石",
+      "evidence_span": "公司不断完善产品矩阵，推出了岩板、岗石产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "范思哲品牌岩板产品",
+      "evidence_span": "并在中国区域独家代理销售尺寸为163.5cm×323cm，厚度为12mm和20mm的范思哲品牌岩板产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "真空振压工艺",
+      "evidence_span": "当前世界主流的以“真空振压”方式生产人造石英石的“Bretonstone工艺”即为意大利Breton公司发明"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化生产线工艺技术",
+      "evidence_span": "借助先进的自动生产线工艺技术和持续的产品创新"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "索菲亚",
+      "evidence_span": "公司主要客户包括：索菲亚（002572）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧派家居",
+      "evidence_span": "欧派家居（603833）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "尚品宅配",
+      "evidence_span": "尚品宅配（300616）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金牌厨柜",
+      "evidence_span": "金牌厨柜（603180）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "志邦家居",
+      "evidence_span": "志邦家居（603801）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博洛尼",
+      "evidence_span": "博洛尼"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科勒中国",
+      "evidence_span": "科勒中国"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "曲美家居",
+      "evidence_span": "曲美家居（603818）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "皮阿诺",
+      "evidence_span": "皮阿诺（002853）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "好莱客",
+      "evidence_span": "好莱客（603898）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "我乐家居",
+      "evidence_span": "我乐家居（603326）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "顾家家居",
+      "evidence_span": "顾家家居（603816）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德尔未来",
+      "evidence_span": "德尔未来（002631）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "老板电器",
+      "evidence_span": "老板电器（002508）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国建筑",
+      "evidence_span": "中国建筑（601668）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝鹰股份",
+      "evidence_span": "宝鹰股份（002047）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "首开股份",
+      "evidence_span": "首开股份（600376）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "方太集团",
+      "evidence_span": "方太集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国杜邦",
+      "evidence_span": "美国杜邦"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LG集团",
+      "evidence_span": "LG集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "乐天集团",
+      "evidence_span": "乐天集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万科集团",
+      "evidence_span": "并进入万科集团、金茂集团等知名企业的供应商体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金茂集团",
+      "evidence_span": "并进入万科集团、金茂集团等知名企业的供应商体系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色建材",
+      "evidence_span": "人造石英石中的石英填料可以通过综合利用尾矿或建筑垃圾的方式生产，符合“减量化、再利用、资源化”的循环经济理念"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "力争部分细分产品实现进口替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "人造石英石装饰材料研发、生产、销售和服务",
+        "evidence_span": "公司是一家专业从事人造石英石装饰材料研发、生产、销售和服务的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "硅晶新材料研发开发制造一体化项目",
+        "evidence_span": "公司拟投资 10亿元人民币，在当地建设硅晶新材料研发开发制造一体化项目"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "人造石英石面材制造企业",
+        "evidence_span": "中国最具规模的人造石英石面材制造企业与出口基地之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级高新技术企业",
+        "evidence_span": "公司是一家专业从事人造石英石装饰材料研发、生产、销售和服务的国家级高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "A股主板上市的人造石英石企业",
+        "evidence_span": "公司在深圳证券交易所正式挂牌上市，成为中国首家A股主板上市的人造石英石企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人造石英石板材",
+        "evidence_span": "公司主要产品是人造石英石板材和人造石英石台面"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人造石英石台面",
+        "evidence_span": "公司主要产品是人造石英石板材和人造石英石台面"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "岩板",
+        "evidence_span": "公司不断完善产品矩阵，推出了岩板、岗石产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "岗石",
+        "evidence_span": "公司不断完善产品矩阵，推出了岩板、岗石产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "范思哲品牌岩板产品",
+        "evidence_span": "并在中国区域独家代理销售尺寸为163.5cm×323cm，厚度为12mm和20mm的范思哲品牌岩板产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "真空振压工艺",
+        "evidence_span": "当前世界主流的以“真空振压”方式生产人造石英石的“Bretonstone工艺”即为意大利Breton公司发明"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化生产线工艺技术",
+        "evidence_span": "借助先进的自动生产线工艺技术和持续的产品创新"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "索菲亚",
+        "evidence_span": "公司主要客户包括：索菲亚（002572）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧派家居",
+        "evidence_span": "欧派家居（603833）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "尚品宅配",
+        "evidence_span": "尚品宅配（300616）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金牌厨柜",
+        "evidence_span": "金牌厨柜（603180）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "志邦家居",
+        "evidence_span": "志邦家居（603801）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博洛尼",
+        "evidence_span": "博洛尼"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科勒中国",
+        "evidence_span": "科勒中国"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "曲美家居",
+        "evidence_span": "曲美家居（603818）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "皮阿诺",
+        "evidence_span": "皮阿诺（002853）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "好莱客",
+        "evidence_span": "好莱客（603898）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "我乐家居",
+        "evidence_span": "我乐家居（603326）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "顾家家居",
+        "evidence_span": "顾家家居（603816）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德尔未来",
+        "evidence_span": "德尔未来（002631）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "老板电器",
+        "evidence_span": "老板电器（002508）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国建筑",
+        "evidence_span": "中国建筑（601668）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝鹰股份",
+        "evidence_span": "宝鹰股份（002047）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "首开股份",
+        "evidence_span": "首开股份（600376）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "方太集团",
+        "evidence_span": "方太集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国杜邦",
+        "evidence_span": "美国杜邦"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LG集团",
+        "evidence_span": "LG集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "乐天集团",
+        "evidence_span": "乐天集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万科集团",
+        "evidence_span": "并进入万科集团、金茂集团等知名企业的供应商体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金茂集团",
+        "evidence_span": "并进入万科集团、金茂集团等知名企业的供应商体系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色建材",
+        "evidence_span": "人造石英石中的石英填料可以通过综合利用尾矿或建筑垃圾的方式生产，符合“减量化、再利用、资源化”的循环经济理念"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "力争部分细分产品实现进口替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:09:27"
+}

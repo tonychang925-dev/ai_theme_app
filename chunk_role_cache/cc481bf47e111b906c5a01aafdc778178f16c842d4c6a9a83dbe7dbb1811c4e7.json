@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "2d05f6a2516b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述苏州将召开低空经济发展推进大会并发布政策举措等具体事件，包括揭牌、签约、推介等动态活动，没有提供静态的题材定义或结构知识。"}}

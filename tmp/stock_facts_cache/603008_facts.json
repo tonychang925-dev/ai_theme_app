@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "床垫",
+      "evidence_span": "床垫业务占比超一半"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "软床",
+      "evidence_span": "软床及配套品占3成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "沙发",
+      "evidence_span": "沙发（14%）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "酒店家具",
+      "evidence_span": "酒店家具（3%）"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "床垫行业龙头",
+      "evidence_span": "喜临门床垫行业领军品牌"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "床垫品牌龙头",
+      "evidence_span": "喜临门处于床垫品牌龙头地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "床垫",
+      "evidence_span": "公司产品以床垫、床为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "床",
+      "evidence_span": "公司产品以床垫、床为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "沙发",
+      "evidence_span": "外延发展沙发及其配套客卧家具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配套客卧家具",
+      "evidence_span": "外延发展沙发及其配套客卧家具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能床垫",
+      "evidence_span": "公司SMARTWave智能床垫"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "睡眠空间解决方案",
+      "evidence_span": "横向打造睡眠空间"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大睡眠场景解决方案",
+      "evidence_span": "拓展大睡眠场景解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全睡眠方案",
+      "evidence_span": "打造全睡眠方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能家居方案",
+      "evidence_span": "将智能方案布局至酒店渠道场景"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双核抗菌除螨科技",
+      "evidence_span": "公司床垫主打独有的双核抗菌除螨科技"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "零甲醛技术",
+      "evidence_span": "零甲醛技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铂金净面因子技术",
+      "evidence_span": "铂金净面因子（零甲醛）技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空气弹簧软硬调节系统",
+      "evidence_span": "空气弹簧软硬调节系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双传感带睡姿识别系统",
+      "evidence_span": "双传感带睡姿识别系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能盒控制系统",
+      "evidence_span": "智能盒控制系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国杜邦",
+      "evidence_span": "公司联合美国杜邦Intellifresh技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "瑞士Sanitized",
+      "evidence_span": "公司与瑞士Sanitized合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国科学院",
+      "evidence_span": "公司与中国科学院共同开发的除甲醛催化剂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "公司成为华为HiLink生态合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华住集团",
+      "evidence_span": "公司与华住集团、涂鸦智能达成三方战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "涂鸦智能",
+      "evidence_span": "公司与华住集团、涂鸦智能达成三方战略合作协议"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "睡眠经济",
+      "evidence_span": "响应睡眠经济需求"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能家居",
+      "evidence_span": "进军智能家居领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "床垫",
+        "evidence_span": "床垫业务占比超一半"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "软床",
+        "evidence_span": "软床及配套品占3成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "沙发",
+        "evidence_span": "沙发（14%）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "酒店家具",
+        "evidence_span": "酒店家具（3%）"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "床垫行业龙头",
+        "evidence_span": "喜临门床垫行业领军品牌"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "床垫品牌龙头",
+        "evidence_span": "喜临门处于床垫品牌龙头地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "床垫",
+        "evidence_span": "公司产品以床垫、床为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "床",
+        "evidence_span": "公司产品以床垫、床为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "沙发",
+        "evidence_span": "外延发展沙发及其配套客卧家具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配套客卧家具",
+        "evidence_span": "外延发展沙发及其配套客卧家具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能床垫",
+        "evidence_span": "公司SMARTWave智能床垫"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "睡眠空间解决方案",
+        "evidence_span": "横向打造睡眠空间"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大睡眠场景解决方案",
+        "evidence_span": "拓展大睡眠场景解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全睡眠方案",
+        "evidence_span": "打造全睡眠方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能家居方案",
+        "evidence_span": "将智能方案布局至酒店渠道场景"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双核抗菌除螨科技",
+        "evidence_span": "公司床垫主打独有的双核抗菌除螨科技"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "零甲醛技术",
+        "evidence_span": "零甲醛技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铂金净面因子技术",
+        "evidence_span": "铂金净面因子（零甲醛）技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空气弹簧软硬调节系统",
+        "evidence_span": "空气弹簧软硬调节系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双传感带睡姿识别系统",
+        "evidence_span": "双传感带睡姿识别系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能盒控制系统",
+        "evidence_span": "智能盒控制系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国杜邦",
+        "evidence_span": "公司联合美国杜邦Intellifresh技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "瑞士Sanitized",
+        "evidence_span": "公司与瑞士Sanitized合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国科学院",
+        "evidence_span": "公司与中国科学院共同开发的除甲醛催化剂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "公司成为华为HiLink生态合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华住集团",
+        "evidence_span": "公司与华住集团、涂鸦智能达成三方战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "涂鸦智能",
+        "evidence_span": "公司与华住集团、涂鸦智能达成三方战略合作协议"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "睡眠经济",
+        "evidence_span": "响应睡眠经济需求"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能家居",
+        "evidence_span": "进军智能家居领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:51:46"
+}

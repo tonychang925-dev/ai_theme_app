@@ -1,0 +1,11 @@
+{"span_uid": "1b12d43b7e97", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "技术专利事件", "stability": "low", "reason": "该片段仅描述英伟达公开一项具体专利的事件，属于单一事件信息，无法形成稳定、可独立理解的知识块。"}
+{"span_uid": "72de1b5e3750", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业合作事件", "stability": "low", "reason": "该片段描述Meta与EssilorLuxottica合作的具体事件，包括产品价格和计划，属于新闻事件，无法形成稳定知识块。"}
+{"span_uid": "d91587dd8397", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业战略事件", "stability": "low", "reason": "该片段描述鸿海与Porotech合作的具体事件，包括产线计划和量产时间，属于新闻事件，无法形成稳定知识块。"}
+{"span_uid": "78e046151ab3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品发布事件", "stability": "low", "reason": "该片段描述INMO影目科技新品发布会的具体事件，属于新闻事件，无法形成稳定知识块。"}
+{"span_uid": "bb927af6b0e8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述苹果公司可能重启AR眼镜计划的具体事件，包含爆料、代号、调研等新闻细节，属于企业研发动向的事件性信息，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "e59a221b8735", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述Meta的AR眼镜Orion作为原型产品的具体状态和公司表态，属于产品开发进展的事件性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "c7fab1a71cd9", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特定产品Vision SE通过3C认证的具体制造商信息，属于产品认证和供应链的事件性细节，无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "c052d004ce1c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "行业领袖预测", "stability": "low", "reason": "原片段是扎克伯格的主观预测和观点，属于个人看法而非稳定事实，无法形成可独立成立的稳定知识块。"}
+{"span_uid": "562f825de9ca", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品开发动态", "stability": "low", "reason": "原片段是苹果公司具体的产品开发计划和预测，属于事件性信息，不稳定且依赖具体时间点，无法形成可独立成立的稳定知识块。"}
+{"span_uid": "15afb2ab6726", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场概念兴起", "stability": "low", "reason": "原片段描述特定产品在社交网站走红和市场概念兴起，是短期事件和趋势，不稳定且依赖具体情境，无法形成可独立成立的稳定知识块。"}
+{"span_uid": "da248983495b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场前景评估", "stability": "low", "reason": "原片段是市场的主观评估和预测，属于观点性信息，不稳定且缺乏事实基础，无法形成可独立成立的稳定知识块。"}

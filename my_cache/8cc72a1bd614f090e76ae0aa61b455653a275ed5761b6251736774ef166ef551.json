@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:00:49", "result": {"chunk_id": "16d12e772fc0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落引用雷军微博互动，涉及大定和生产量的具体问答，是时间性动态事件，无题材本体知识。"}}

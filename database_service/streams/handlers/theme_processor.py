@@ -581,6 +581,18 @@ class ThemeProcessor:
             
             # 3. 根据匹配结果构建决策
             if service_match_result.get('matched', False):
+                if not self._has_usable_theme_in_match_result(service_match_result):
+                    logger.warning("   ⚠️  分类内匹配结果缺少有效theme_id，降级为未匹配")
+                    return self._build_decision(
+                        decision_type=DecisionType.NO_MATCH_IN_CATEGORY,
+                        event_data=event_data,
+                        stream_type=stream_type,
+                        category_info=category_info,
+                        match_result=service_match_result,
+                        confidence=category_confidence,
+                        reason="match_result_missing_theme_id",
+                        themes_in_category_count=len(themes_in_category)
+                    )
                 # 匹配成功
                 return self._build_decision(
                     decision_type=DecisionType.MATCH_SUCCESS_IN_CATEGORY,
@@ -681,6 +693,17 @@ class ThemeProcessor:
                                 match_data = full_match_result
                             
                             if match_data.get('matched', False):
+                                if not self._has_usable_theme_in_match_result(match_data):
+                                    logger.warning("   ⚠️  全量匹配结果缺少有效theme_id，降级为未匹配")
+                                    return self._build_decision(
+                                        decision_type=DecisionType.NO_MATCH_AFTER_FALLBACK,
+                                        event_data=event_data,
+                                        stream_type=stream_type,
+                                        match_result=match_data,
+                                        confidence=0,
+                                        reason="match_result_missing_theme_id",
+                                        source="theme_service_full_match_invalid"
+                                    )
                                 return self._build_decision(
                                     decision_type=DecisionType.MATCH_SUCCESS_FALLBACK,
                                     event_data=event_data,
@@ -714,6 +737,17 @@ class ThemeProcessor:
                 response_data = result
             
             if response_data.get('matched', False):
+                if not self._has_usable_theme_in_match_result(response_data):
+                    logger.warning("   ⚠️  fallback discover_theme结果缺少有效theme_id，降级为未匹配")
+                    return self._build_decision(
+                        decision_type=DecisionType.NO_MATCH_AFTER_FALLBACK,
+                        event_data=event_data,
+                        stream_type=stream_type,
+                        match_result=response_data,
+                        confidence=0,
+                        reason="match_result_missing_theme_id",
+                        source="fallback_match_invalid"
+                    )
                 # 全量匹配成功
                 return self._build_decision(
                     decision_type=DecisionType.MATCH_SUCCESS_FALLBACK,
@@ -817,7 +851,8 @@ class ThemeProcessor:
     def _build_decision(self, decision_type: str, **kwargs) -> Dict:
         """构建统一格式的决策 - 修复版"""
         try:
-            event_data = kwargs.get('event_data', {})
+            raw_event_data = kwargs.get('event_data', {}) or {}
+            event_data = dict(raw_event_data)
             stream_type = kwargs.get('stream_type', 'normal')
             
             logger.info(f"🔧 构建决策: {decision_type}, 事件类型: {stream_type}")
@@ -831,11 +866,19 @@ class ThemeProcessor:
             # 2. 构建基础决策
             import time
             
+            decision_id = f"decision_{int(time.time())}_{hash(str(kwargs))}"
+            event_id = event_data.get("event_id", "unknown")
+            trace_id = event_data.get("trace_id") or f"trace_{event_id}"
+            event_data.setdefault("trace_id", trace_id)
+            event_data.setdefault("decision_id", decision_id)
+
             decision = {
-                "decision_id": f"decision_{int(time.time())}_{hash(str(kwargs))}",
+                "decision_id": decision_id,
                 "decision_type": decision_type,
                 "action": action,
-                "event_id": event_data.get("event_id", "unknown"),
+                "event_id": event_id,
+                "trace_id": trace_id,
+                "payload_version": "v1",
                 "event_type": stream_type,
                 "event_title": event_data.get('title', '')[:100],
                 "timestamp": datetime.now().isoformat(),
@@ -1083,7 +1126,7 @@ class ThemeProcessor:
             )
             return error_decision
 
-    def _get_action_for_decision_type(self, decision_type: str, stream_type: str) -> str:
+    def _get_action_for_decision_type_legacy(self, decision_type: str, stream_type: str) -> str:
         """根据决策类型获取动作 - 修复版"""
         # 注意：decision_type是字符串常量，不是DecisionType类的属性
         
@@ -1182,6 +1225,26 @@ class ThemeProcessor:
             reason=f"处理错误: {error_msg}",
             source="error_handler"
         )
+
+    def _has_usable_theme_in_match_result(self, match_result: Dict[str, Any]) -> bool:
+        """判断匹配结果是否包含可执行theme_id。"""
+        if not isinstance(match_result, dict):
+            return False
+
+        best_match = match_result.get("best_match", {})
+        if isinstance(best_match, dict):
+            if best_match.get("theme_id") or best_match.get("id"):
+                return True
+
+        themes = match_result.get("themes", [])
+        if isinstance(themes, list) and themes:
+            first = themes[0]
+            if isinstance(first, dict):
+                if first.get("theme_id") or first.get("id"):
+                    return True
+            elif hasattr(first, "theme_id") and getattr(first, "theme_id"):
+                return True
+        return False
     
     # ==================== 核心匹配方法（保持原有结构） ====================
     
@@ -1611,26 +1674,26 @@ class ThemeProcessor:
     
     def print_stats(self):
         """打印统计信息 - 保持原有结构"""
-        print("\n" + "=" * 60)
-        print("📊 ThemeProcessor统计信息")
-        print("=" * 60)
-        print(f"运行模式: {'分类优先' if self.enable_classification_first else '传统'}")
-        print(f"运行时间: {self.stats['started_at']}")
-        print(f"总处理事件: {self.stats['total_processed']}")
-        print(f"  Normal: {self.stats['by_stream']['normal']}")
-        print(f"  Major: {self.stats['by_stream']['major']}")
-        print(f"匹配结果:")
-        print(f"  匹配成功: {self.stats['by_outcome']['matched']}")
-        print(f"  进入pending: {self.stats['by_outcome']['pending']}")
-        print(f"  处理错误: {self.stats['by_outcome']['error']}")
+        logger.info("\n" + "=" * 60)
+        logger.info("📊 ThemeProcessor统计信息")
+        logger.info("=" * 60)
+        logger.info(f"运行模式: {'分类优先' if self.enable_classification_first else '传统'}")
+        logger.info(f"运行时间: {self.stats['started_at']}")
+        logger.info(f"总处理事件: {self.stats['total_processed']}")
+        logger.info(f"  Normal: {self.stats['by_stream']['normal']}")
+        logger.info(f"  Major: {self.stats['by_stream']['major']}")
+        logger.info(f"匹配结果:")
+        logger.info(f"  匹配成功: {self.stats['by_outcome']['matched']}")
+        logger.info(f"  进入pending: {self.stats['by_outcome']['pending']}")
+        logger.info(f"  处理错误: {self.stats['by_outcome']['error']}")
         
         if self.enable_classification_first:
-            print(f"分类统计:")
-            print(f"  分类推断次数: {self.classification_stats['category_inferences']}")
-            print(f"  分类匹配成功: {self.classification_stats['category_matched']}")
-            print(f"  分类匹配失败: {self.classification_stats['category_not_matched']}")
-            print(f"  按分类加载题材数: {self.classification_stats['themes_loaded_by_category']}")
-            print(f"  缓存命中率: {self.classification_stats['category_cache_hits']}/"
+            logger.info(f"分类统计:")
+            logger.info(f"  分类推断次数: {self.classification_stats['category_inferences']}")
+            logger.info(f"  分类匹配成功: {self.classification_stats['category_matched']}")
+            logger.info(f"  分类匹配失败: {self.classification_stats['category_not_matched']}")
+            logger.info(f"  按分类加载题材数: {self.classification_stats['themes_loaded_by_category']}")
+            logger.info(f"  缓存命中率: {self.classification_stats['category_cache_hits']}/"
                 f"{self.classification_stats['category_cache_hits'] + self.classification_stats['category_cache_misses']}")
         
-        print("=" * 60)
+        logger.info("=" * 60)

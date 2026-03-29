@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "eea017fa59ec", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述南航和国航接收C919飞机的预告和订购信息，是具体的事件和新闻动态。"}}

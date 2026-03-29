@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:43:21", "result": {"chunk_id": "950f3cd60d25", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "medium", "reason": "该段分析公司的风险和挑战，如亏损、现金流和行业竞争，属于静态评估，不涉及具体事件或时间性动态，可用于知识构建。"}}

@@ -1,0 +1,379 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "中高档服装的设计研发",
+      "evidence_span": "公司主要业务为中高档服装的设计研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中高档服装的生产制造",
+      "evidence_span": "公司主要业务为中高档服装的生产制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中高档服装的品牌营销",
+      "evidence_span": "公司主要业务为中高档服装的品牌营销"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中高档服装的终端销售",
+      "evidence_span": "公司主要业务为中高档服装的终端销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端女装品牌企业",
+      "evidence_span": "维格娜丝-国内领先高端女装品牌企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端女装品牌",
+      "evidence_span": "外延扩张迅速的高端女装品牌"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "品牌女装企业",
+      "evidence_span": "定位高端的品牌女装企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TEENIE WEENIE",
+      "evidence_span": "旗下拥有多个自有品牌，包括：中高端定位的新复古学院风格的标志性品牌TEENIE WEENIE"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VGRASS",
+      "evidence_span": "旗下拥有多个自有品牌，包括：中国高端女装领导品牌VGRASS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "元先",
+      "evidence_span": "旗下拥有多个自有品牌，包括：具有中国文化元素特征的高端精品品牌元先"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "女装",
+      "evidence_span": "TEENIE WEENIE品牌产品线包括女装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "男装",
+      "evidence_span": "TEENIE WEENIE品牌产品线包括男装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "童装",
+      "evidence_span": "TEENIE WEENIE品牌产品线包括童装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配饰",
+      "evidence_span": "TEENIE WEENIE品牌产品线包括配饰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IP授权产品",
+      "evidence_span": "TEENIE WEENIE品牌产品线包括IP授权产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连衣裙",
+      "evidence_span": "VGRASS品牌聚焦于连衣裙"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端场合装",
+      "evidence_span": "VGRASS品牌打造具有中国文化元素的高端场合装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端工艺品",
+      "evidence_span": "元先品牌产品线包括高端工艺品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高级定制场合服饰",
+      "evidence_span": "元先品牌产品线包括高级定制场合服饰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国潮文创礼品",
+      "evidence_span": "元先品牌产品线包括国潮文创礼品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高尔夫系列产品",
+      "evidence_span": "TEENIE WEENIE推出高尔夫系列产品品牌TEENIE WEENIE GOLF"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鞋履品类",
+      "evidence_span": "今年新推出的TEENIE WEENIE鞋履品类"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主研发设计",
+      "evidence_span": "VGRASS品牌坚持自主研发设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主研发独特面料花型",
+      "evidence_span": "VGRASS品牌自主研发独特面料花型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "传统云锦工艺",
+      "evidence_span": "VGRASS品牌使用传统云锦工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "苏绣工艺",
+      "evidence_span": "VGRASS品牌加入苏绣工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钉珠工艺",
+      "evidence_span": "VGRASS品牌加入钉珠工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "手工工艺",
+      "evidence_span": "VGRASS品牌加入重工手工工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云锦织造技艺",
+      "evidence_span": "公司旗下的南京云锦研究所是国内唯一的云锦专业研究机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Z世代消费群体",
+      "evidence_span": "TEENIE WEENIE面向Z世代消费群体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "儿童",
+      "evidence_span": "TEENIE WEENIE面向儿童"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国女性",
+      "evidence_span": "VGRASS品牌为中国女性带来舒适自在的穿着体验"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内外高净值人群",
+      "evidence_span": "元先品牌面向国内外高净值人群"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "抖音电商标杆企业",
+      "evidence_span": "锦泓集团抖音电商标杆企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "收购Teenie Weenie",
+      "evidence_span": "锦泓集团拟收购Teenie Weenie"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "打造国际化的时尚集团",
+      "evidence_span": "锦泓集团拟收购Teenie Weenie，打造“国际化的时尚集团”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "中高档服装的设计研发",
+        "evidence_span": "公司主要业务为中高档服装的设计研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中高档服装的生产制造",
+        "evidence_span": "公司主要业务为中高档服装的生产制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中高档服装的品牌营销",
+        "evidence_span": "公司主要业务为中高档服装的品牌营销"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中高档服装的终端销售",
+        "evidence_span": "公司主要业务为中高档服装的终端销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端女装品牌企业",
+        "evidence_span": "维格娜丝-国内领先高端女装品牌企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端女装品牌",
+        "evidence_span": "外延扩张迅速的高端女装品牌"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端女装品牌",
+        "evidence_span": "维格娜丝注重精细化运营,业绩稳健增长的高端女装品牌"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端女装品牌",
+        "evidence_span": "经营稳健、市场地位快速攀升的高端女装品牌"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "品牌女装企业",
+        "evidence_span": "定位高端的品牌女装企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TEENIE WEENIE",
+        "evidence_span": "旗下拥有多个自有品牌，包括：中高端定位的新复古学院风格的标志性品牌TEENIE WEENIE"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VGRASS",
+        "evidence_span": "旗下拥有多个自有品牌，包括：中国高端女装领导品牌VGRASS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "元先",
+        "evidence_span": "旗下拥有多个自有品牌，包括：具有中国文化元素特征的高端精品品牌元先"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "女装",
+        "evidence_span": "TEENIE WEENIE品牌产品线包括女装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "男装",
+        "evidence_span": "TEENIE WEENIE品牌产品线包括男装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "童装",
+        "evidence_span": "TEENIE WEENIE品牌产品线包括童装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配饰",
+        "evidence_span": "TEENIE WEENIE品牌产品线包括配饰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IP授权产品",
+        "evidence_span": "TEENIE WEENIE品牌产品线包括IP授权产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连衣裙",
+        "evidence_span": "VGRASS品牌聚焦于连衣裙"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端场合装",
+        "evidence_span": "VGRASS品牌打造具有中国文化元素的高端场合装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端工艺品",
+        "evidence_span": "元先品牌产品线包括高端工艺品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高级定制场合服饰",
+        "evidence_span": "元先品牌产品线包括高级定制场合服饰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国潮文创礼品",
+        "evidence_span": "元先品牌产品线包括国潮文创礼品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高尔夫系列产品",
+        "evidence_span": "TEENIE WEENIE推出高尔夫系列产品品牌TEENIE WEENIE GOLF"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鞋履品类",
+        "evidence_span": "今年新推出的TEENIE WEENIE鞋履品类"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主研发设计",
+        "evidence_span": "VGRASS品牌坚持自主研发设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主研发独特面料花型",
+        "evidence_span": "VGRASS品牌自主研发独特面料花型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "传统云锦工艺",
+        "evidence_span": "VGRASS品牌使用传统云锦工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "苏绣工艺",
+        "evidence_span": "VGRASS品牌加入苏绣工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钉珠工艺",
+        "evidence_span": "VGRASS品牌加入钉珠工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "手工工艺",
+        "evidence_span": "VGRASS品牌加入重工手工工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云锦织造技艺",
+        "evidence_span": "公司旗下的南京云锦研究所是国内唯一的云锦专业研究机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Z世代消费群体",
+        "evidence_span": "TEENIE WEENIE面向Z世代消费群体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "儿童",
+        "evidence_span": "TEENIE WEENIE面向儿童"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国女性",
+        "evidence_span": "VGRASS品牌为中国女性带来舒适自在的穿着体验"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内外高净值人群",
+        "evidence_span": "元先品牌面向国内外高净值人群"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "抖音电商标杆企业",
+        "evidence_span": "锦泓集团抖音电商标杆企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "收购Teenie Weenie",
+        "evidence_span": "锦泓集团拟收购Teenie Weenie"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "打造国际化的时尚集团",
+        "evidence_span": "锦泓集团拟收购Teenie Weenie，打造“国际化的时尚集团”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:30:43"
+}

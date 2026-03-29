@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "sample_size": 6,
+  "generated_at": "2026-02-19T16:27:20.147559",
+  "summary": {
+    "total_decisions": 3,
+    "update_theme_decisions": 0,
+    "create_new_theme_decisions": 0,
+    "create_source_upstream_count": 0,
+    "create_source_ai_keywords_count": 0,
+    "update_mapping_accuracy_rule": 0.0,
+    "update_mapping_accurate_count": 0,
+    "update_mapping_total_count": 0
+  },
+  "stream_stats": {
+    "stream:events:major": 3,
+    "stream:events:normal": 3,
+    "stream:events:pending": 3,
+    "stream:events:decision": 6,
+    "stream:themes:updates": 3,
+    "stream:dead:letter": 0
+  },
+  "success_criteria": {
+    "events_published": true,
+    "decisions_generated": true,
+    "theme_updates_generated": true,
+    "processor_working": true,
+    "executor_working": true
+  },
+  "t03_validation": {
+    "create_new_theme_decisions": 0,
+    "classification_source_upstream_count": 0,
+    "classification_source_ai_keywords_count": 0,
+    "concept_hierarchy_created_count": 0,
+    "all_create_decisions_have_classification_source": true
+  },
+  "t04_validation": {
+    "publish_clustering_decision": true,
+    "pending_written": true,
+    "pending_matches_publish_decision_id": true,
+    "pending_trace_id_present": true,
+    "decision_ack_verified": true,
+    "decision_executor_pending_count": 0
+  },
+  "update_theme_mappings": [],
+  "create_new_theme_details": []
+}

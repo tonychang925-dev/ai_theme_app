@@ -1,0 +1,224 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "沙发等家具产品的研究",
+      "evidence_span": "公司主要从事沙发等家具产品的研究、设计、生产和销售服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设计",
+      "evidence_span": "公司主要从事沙发等家具产品的研究、设计、生产和销售服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主要从事沙发等家具产品的研究、设计、生产和销售服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售服务",
+      "evidence_span": "公司主要从事沙发等家具产品的研究、设计、生产和销售服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "功能沙发",
+      "evidence_span": "公司快速切入海外功能沙发市场"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "固定沙发",
+      "evidence_span": "公司主要产品为功能沙发和固定沙发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "板式家具",
+      "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "软体家具行业",
+      "evidence_span": "具体细分行业为软体家具行业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "功能沙发主要出口商",
+      "evidence_span": "是国内功能沙发主要出口商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "功能沙发领域的卓越出口商",
+      "evidence_span": "功能沙发领域的卓越出口商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手动功能沙发",
+      "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动功能沙发",
+      "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "扶手推背沙发",
+      "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "老人椅",
+      "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固定沙发",
+      "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "板式家具",
+      "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化打样技术",
+      "evidence_span": "公司生产管理水平、研发涉及能力、数字化打样技术、产品质量等均处于行业内较为领先的水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能制造柔性化生产",
+      "evidence_span": "公司在初步实现智能制造柔性化生产的基础上"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能仓储系统",
+      "evidence_span": "公司智能仓储系统已投入使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国外大中型家居批发商和零售商",
+      "evidence_span": "公司的主要客户为国外大中型家居批发商和零售商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内家居企业",
+      "evidence_span": "公司与国内家居企业开展ODM业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各类电商品牌客户",
+      "evidence_span": "公司主要客户群体为国内家居企业、各类电商品牌客户等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国家级绿色工厂",
+      "evidence_span": "国家级绿色工厂"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "沙发等家具产品的研究、设计、生产和销售服务",
+        "evidence_span": "公司主要从事沙发等家具产品的研究、设计、生产和销售服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "功能沙发",
+        "evidence_span": "公司快速切入海外功能沙发市场"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "固定沙发",
+        "evidence_span": "公司主要产品为功能沙发和固定沙发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "板式家具",
+        "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "软体家具行业",
+        "evidence_span": "具体细分行业为软体家具行业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "功能沙发主要出口商",
+        "evidence_span": "是国内功能沙发主要出口商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "功能沙发领域的卓越出口商",
+        "evidence_span": "功能沙发领域的卓越出口商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手动功能沙发",
+        "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动功能沙发",
+        "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "扶手推背沙发",
+        "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "老人椅",
+        "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固定沙发",
+        "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "板式家具",
+        "evidence_span": "目前产品主要包括手动功能沙发、电动功能沙发、扶手推背沙发、老人椅等功能性沙发，固定沙发及板式家具等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化打样技术",
+        "evidence_span": "公司生产管理水平、研发涉及能力、数字化打样技术、产品质量等均处于行业内较为领先的水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能制造柔性化生产",
+        "evidence_span": "公司在初步实现智能制造柔性化生产的基础上"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能仓储系统",
+        "evidence_span": "公司智能仓储系统已投入使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国外大中型家居批发商和零售商",
+        "evidence_span": "公司的主要客户为国外大中型家居批发商和零售商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内家居企业",
+        "evidence_span": "公司与国内家居企业开展ODM业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各类电商品牌客户",
+        "evidence_span": "公司主要客户群体为国内家居企业、各类电商品牌客户等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国家级绿色工厂",
+        "evidence_span": "国家级绿色工厂"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:58:36"
+}

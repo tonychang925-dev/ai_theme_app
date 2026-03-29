@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "10df11fc108a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述厦门市出台预制菜监管措施，包含政策事件（如印发出台新规），但也涉及预制菜标准制定、食品安全监管和添加剂规定等有价值知识，混合了事件和知识。"}}

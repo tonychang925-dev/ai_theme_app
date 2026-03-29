@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "多肽合成试剂",
+      "evidence_span": "多肽合成试剂类产品销售收入占比均在71.00%以上"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "通用型分子砌块",
+      "evidence_span": "通用型分子砌块作为公司主营业务收入的重要组成部分"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "蛋白质试剂",
+      "evidence_span": "发行人蛋白质试剂业务营业收入亦保持了较快的增长"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "多肽合成试剂研产公司",
+      "evidence_span": "全球少有具备全系列多肽合成试剂研产能力的公司之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "离子型缩合试剂",
+      "evidence_span": "离子型缩合试剂占主营业务收入的比例在37.00%以上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳二亚胺型缩合试剂",
+      "evidence_span": "碳二亚胺型缩合试剂销售收入增速为109.70%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手性消旋抑制试剂",
+      "evidence_span": "手性消旋抑制试剂销售收入增速分别为91.12%和149.27%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保护试剂",
+      "evidence_span": "保护试剂类产品销售收入稳步增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通用型分子砌块",
+      "evidence_span": "通用型分子砌块作为公司主营业务收入的重要组成部分"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蛋白质试剂",
+      "evidence_span": "发行人蛋白质试剂业务营业收入亦保持了较快的增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "脂质体与脂质纳米粒药用试剂",
+      "evidence_span": "其他产品主要为脂质体与脂质纳米粒药用试剂等新型产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全系列多肽合成试剂研产能力",
+      "evidence_span": "全球少有具备全系列多肽合成试剂研产能力的公司之一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "药明康德",
+      "evidence_span": "已与多家CRO、CDMO领域的知名客户如药明康德"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "凯莱英",
+      "evidence_span": "凯莱英"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "康龙化成",
+      "evidence_span": "康龙化成"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博腾股份",
+      "evidence_span": "博腾股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Bachem AG",
+      "evidence_span": "Bachem AG"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Lonza",
+      "evidence_span": "Lonza"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Thermo Fisher",
+      "evidence_span": "Thermo Fisher"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赛默飞",
+      "evidence_span": "赛默飞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赛诺菲",
+      "evidence_span": "赛诺菲"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "多肽合成试剂",
+      "evidence_span": "磷正离子型和脲正离子型多肽合成试剂国内市占率第一"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "多肽合成试剂",
+        "evidence_span": "多肽合成试剂类产品销售收入占比均在71.00%以上"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "通用型分子砌块",
+        "evidence_span": "通用型分子砌块作为公司主营业务收入的重要组成部分"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "蛋白质试剂",
+        "evidence_span": "发行人蛋白质试剂业务营业收入亦保持了较快的增长"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "多肽合成试剂研产公司",
+        "evidence_span": "全球少有具备全系列多肽合成试剂研产能力的公司之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "离子型缩合试剂",
+        "evidence_span": "离子型缩合试剂占主营业务收入的比例在37.00%以上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳二亚胺型缩合试剂",
+        "evidence_span": "碳二亚胺型缩合试剂销售收入增速为109.70%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手性消旋抑制试剂",
+        "evidence_span": "手性消旋抑制试剂销售收入增速分别为91.12%和149.27%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保护试剂",
+        "evidence_span": "保护试剂类产品销售收入稳步增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通用型分子砌块",
+        "evidence_span": "通用型分子砌块作为公司主营业务收入的重要组成部分"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蛋白质试剂",
+        "evidence_span": "发行人蛋白质试剂业务营业收入亦保持了较快的增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "脂质体与脂质纳米粒药用试剂",
+        "evidence_span": "其他产品主要为脂质体与脂质纳米粒药用试剂等新型产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全系列多肽合成试剂研产能力",
+        "evidence_span": "全球少有具备全系列多肽合成试剂研产能力的公司之一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "药明康德",
+        "evidence_span": "已与多家CRO、CDMO领域的知名客户如药明康德"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "凯莱英",
+        "evidence_span": "凯莱英"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "康龙化成",
+        "evidence_span": "康龙化成"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博腾股份",
+        "evidence_span": "博腾股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Bachem AG",
+        "evidence_span": "Bachem AG"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Lonza",
+        "evidence_span": "Lonza"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Thermo Fisher",
+        "evidence_span": "Thermo Fisher"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赛默飞",
+        "evidence_span": "赛默飞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赛诺菲",
+        "evidence_span": "赛诺菲"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "多肽合成试剂",
+        "evidence_span": "磷正离子型和脲正离子型多肽合成试剂国内市占率第一"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:35:26"
+}

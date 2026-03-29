@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "典当业务",
+      "evidence_span": "深耕典当、担保等老业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "担保业务",
+      "evidence_span": "深耕典当、担保等老业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "融资租赁业务",
+      "evidence_span": "租赁首位战略的压舱石作用日益凸显"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特殊资产业务",
+      "evidence_span": "特殊资产打造成新的利润源逐步显效"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "类金融投资业务",
+      "evidence_span": "类金融投资业务投资机会减少"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "金融控股集团",
+      "evidence_span": "香溢融通“一主两翼”格局的金融控股集团"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "金融服务商",
+      "evidence_span": "致力于打造“服务-赋能”为核心的金融服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "产业赋能商",
+      "evidence_span": "致力于打造“服务-赋能”为核心的金融服务商和产业赋能商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "典当贷款",
+      "evidence_span": "典当贷款发生额较去年同期下降30%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程保函担保",
+      "evidence_span": "非融资担保业务以工程保函担保业务为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "香溢贷担保",
+      "evidence_span": "融资担保业务主要以香溢贷担保业务为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "售后回租",
+      "evidence_span": "承接的租赁业务以售后回租模式为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "间接资金收益业务",
+      "evidence_span": "间接资金收益业务通过设立或参与券商资管计划、私募基金、有限合伙企业等模式为融资需求方提供定制化融资方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资本市场投资业务",
+      "evidence_span": "资本市场投资业务通过发行设立或参与基金等形式直接或间接参与一二级市场股票投资、债券投资以及资产证券化等创新产品投资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他股权投资业务",
+      "evidence_span": "其他股权投资业务以财务投资为目的，直接或间接方式参与投资非上市公司股权"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特殊资产收购",
+      "evidence_span": "特殊资产业务运作主要以设立合伙企业方式间接收购、直接参与公开挂拍收购或直接协议转让方式收购地方AMC公司或其他民营主体持有的债权资产包"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全面风险管理体系",
+      "evidence_span": "公司已经构建了全面风险管理体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中小微企业",
+      "evidence_span": "公司典当业务面向广大有融资需求的中小微企业和个人客户群"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "个人客户群",
+      "evidence_span": "公司典当业务面向广大有融资需求的中小微企业和个人客户群"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建筑企业",
+      "evidence_span": "主要面向浙江省内的二级资质以上的建筑企业提供担保服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "零售商户",
+      "evidence_span": "为浙江省内持有烟草专卖许可证的零售商户在银行申请贷款提供担保"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府平台",
+      "evidence_span": "目标客户为政府平台、大中型国企等强主体单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大中型国企",
+      "evidence_span": "目标客户为政府平台、大中型国企等强主体单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "资产运营单位",
+      "evidence_span": "分布式光伏电站、船舶运输等资产运营单位"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "金改对民营金融推进",
+      "evidence_span": "短期受益于金改对民营金融推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "典当业务",
+        "evidence_span": "深耕典当、担保等老业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "担保业务",
+        "evidence_span": "深耕典当、担保等老业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "融资租赁业务",
+        "evidence_span": "租赁首位战略的压舱石作用日益凸显"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特殊资产业务",
+        "evidence_span": "特殊资产打造成新的利润源逐步显效"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "类金融投资业务",
+        "evidence_span": "类金融投资业务投资机会减少"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "金融控股集团",
+        "evidence_span": "香溢融通“一主两翼”格局的金融控股集团"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "金融服务商",
+        "evidence_span": "致力于打造“服务-赋能”为核心的金融服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "产业赋能商",
+        "evidence_span": "致力于打造“服务-赋能”为核心的金融服务商和产业赋能商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "典当贷款",
+        "evidence_span": "典当贷款发生额较去年同期下降30%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程保函担保",
+        "evidence_span": "非融资担保业务以工程保函担保业务为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "香溢贷担保",
+        "evidence_span": "融资担保业务主要以香溢贷担保业务为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "售后回租",
+        "evidence_span": "承接的租赁业务以售后回租模式为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "间接资金收益业务",
+        "evidence_span": "间接资金收益业务通过设立或参与券商资管计划、私募基金、有限合伙企业等模式为融资需求方提供定制化融资方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资本市场投资业务",
+        "evidence_span": "资本市场投资业务通过发行设立或参与基金等形式直接或间接参与一二级市场股票投资、债券投资以及资产证券化等创新产品投资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他股权投资业务",
+        "evidence_span": "其他股权投资业务以财务投资为目的，直接或间接方式参与投资非上市公司股权"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特殊资产收购",
+        "evidence_span": "特殊资产业务运作主要以设立合伙企业方式间接收购、直接参与公开挂拍收购或直接协议转让方式收购地方AMC公司或其他民营主体持有的债权资产包"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全面风险管理体系",
+        "evidence_span": "公司已经构建了全面风险管理体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中小微企业",
+        "evidence_span": "公司典当业务面向广大有融资需求的中小微企业和个人客户群"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "个人客户群",
+        "evidence_span": "公司典当业务面向广大有融资需求的中小微企业和个人客户群"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建筑企业",
+        "evidence_span": "主要面向浙江省内的二级资质以上的建筑企业提供担保服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "零售商户",
+        "evidence_span": "为浙江省内持有烟草专卖许可证的零售商户在银行申请贷款提供担保"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府平台",
+        "evidence_span": "目标客户为政府平台、大中型国企等强主体单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大中型国企",
+        "evidence_span": "目标客户为政府平台、大中型国企等强主体单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "资产运营单位",
+        "evidence_span": "分布式光伏电站、船舶运输等资产运营单位"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "金改对民营金融推进",
+        "evidence_span": "短期受益于金改对民营金融推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:27:19"
+}

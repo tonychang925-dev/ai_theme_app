@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:34:19", "result": {"span_uid": "4d26b753b92a", "action": "rewrite", "canonical_text": "工业领域需要加快推进网络安全保障体系和能力建设。", "final_type": "related", "final_role": "工业网络安全建设要求", "stability": "medium", "reason": "原文本为具体官员表态，改写为去事件化、可独立成立的知识表达，属于关联领域的要求信息。"}}

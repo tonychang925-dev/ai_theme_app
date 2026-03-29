@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "便利超市的连锁经营",
+      "evidence_span": "公司主营业务为便利超市的连锁经营"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "便利超市业态领军企业",
+      "evidence_span": "便利超市业态领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "西南便利店龙头",
+      "evidence_span": "西南便利店龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内便利店零售龙头",
+      "evidence_span": "红旗连锁国内便利店零售龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国A股市场首家便利连锁超市上市企业",
+      "evidence_span": "为中国A股市场首家便利连锁超市上市企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "便利超市零售业态",
+      "evidence_span": "以面向住宅、学校、商务、娱乐等商圈的便利超市零售业态为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品销售",
+      "evidence_span": "经营食品、烟酒、日用百货等商品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "增值服务",
+      "evidence_span": "不断提高增值服务质量，大力拓展增值服务内容"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "便民服务平台",
+      "evidence_span": "在全国同行中率先打造多功能便民服务平台建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "红旗云大数据平台",
+      "evidence_span": "通过红旗云大数据平台，实时商品销售数据监测"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧供应链体系",
+      "evidence_span": "搭建智慧供应链体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信息化管理系统",
+      "evidence_span": "公司建立了一套适合自身的信息化管理系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上千家供货商",
+      "evidence_span": "公司与上千家供货商建立了良好的互利双赢的商业合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "四川省及成都市",
+      "evidence_span": "是四川省及成都市“重要生活必需品应急保供重点联系企业”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "便利超市的连锁经营",
+        "evidence_span": "公司主营业务为便利超市的连锁经营"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "便利超市业态领军企业",
+        "evidence_span": "便利超市业态领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "西南便利店龙头",
+        "evidence_span": "西南便利店龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内便利店零售龙头",
+        "evidence_span": "红旗连锁国内便利店零售龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国A股市场首家便利连锁超市上市企业",
+        "evidence_span": "为中国A股市场首家便利连锁超市上市企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "便利超市零售业态",
+        "evidence_span": "以面向住宅、学校、商务、娱乐等商圈的便利超市零售业态为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品销售",
+        "evidence_span": "经营食品、烟酒、日用百货等商品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "增值服务",
+        "evidence_span": "不断提高增值服务质量，大力拓展增值服务内容"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "便民服务平台",
+        "evidence_span": "在全国同行中率先打造多功能便民服务平台建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "红旗云大数据平台",
+        "evidence_span": "通过红旗云大数据平台，实时商品销售数据监测"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧供应链体系",
+        "evidence_span": "搭建智慧供应链体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信息化管理系统",
+        "evidence_span": "公司建立了一套适合自身的信息化管理系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上千家供货商",
+        "evidence_span": "公司与上千家供货商建立了良好的互利双赢的商业合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "四川省及成都市",
+        "evidence_span": "是四川省及成都市“重要生活必需品应急保供重点联系企业”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:14:32"
+}

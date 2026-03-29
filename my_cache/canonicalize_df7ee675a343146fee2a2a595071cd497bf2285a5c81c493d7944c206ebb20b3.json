@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:21:45", "result": {"span_uid": "cc30c7af173f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "技术进展", "stability": "low", "reason": "片段描述具体厂商在特定时间点对HBM4技术的兴趣和准备，属于事件性、进展性信息，无法形成稳定、可独立成立的知识块。"}}

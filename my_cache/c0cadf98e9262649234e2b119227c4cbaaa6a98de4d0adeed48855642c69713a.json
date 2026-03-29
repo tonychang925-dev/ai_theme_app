@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:31:44", "result": {"chunk_id": "fedc89eaea76", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落混合了事件（Meta AR眼镜原型展示和苹果Vision Pro量产计划）和潜在知识（苹果MR产品信息），后者可能对题材构建有用，但需裁决以区分事件。"}}

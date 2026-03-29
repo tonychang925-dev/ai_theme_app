@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:00:49", "result": {"chunk_id": "9e4520517e41", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述工信部在特定日期（2025年7月18日）的新闻发布会内容，涉及政策发布和行业动态，属于事件性信息，与小米汽车本体知识无关。"}}

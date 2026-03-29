@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "88bec9b4339c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落是人民空军发布歼35A将亮相航展的消息，属于公告性事件，没有提供战机或航展的静态说明。"}}

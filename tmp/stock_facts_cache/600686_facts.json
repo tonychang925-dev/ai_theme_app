@@ -1,0 +1,504 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "客车产品的生产",
+      "evidence_span": "公司主营客车产品的生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营客车产品的生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大",
+      "evidence_span": "以大、中、轻型客车的制造与销售为主导产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中",
+      "evidence_span": "以大、中、轻型客车的制造与销售为主导产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轻型客车的制造",
+      "evidence_span": "以大、中、轻型客车的制造与销售为主导产业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "客车行业领先企业",
+      "evidence_span": "成为全球客车行业领先企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大、中、轻型客车",
+      "evidence_span": "主要产品包括大、中、轻型客车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车",
+      "evidence_span": "实现新能源汽车销售2.48万辆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢燃料电池系统",
+      "evidence_span": "推出全新氢燃料电池系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能网联汽车",
+      "evidence_span": "在新能源汽车、智能网联汽车、关键零部件等领域强化科技创新"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池客车",
+      "evidence_span": "燃料电池客车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池物流车",
+      "evidence_span": "燃料电池物流车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池渣土车",
+      "evidence_span": "燃料电池渣土车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢燃料考斯特",
+      "evidence_span": "氢燃料考斯特"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纯电动团体公路客车",
+      "evidence_span": "纯电动团体公路客车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "增程式混合动力冷链物流车",
+      "evidence_span": "增程式混合动力冷链物流车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃气物流车",
+      "evidence_span": "燃气物流车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "流动服务车",
+      "evidence_span": "流动服务车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清澜低入口城市客车",
+      "evidence_span": "清澜低入口城市客车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "龙耀6纯电动轻型客车",
+      "evidence_span": "龙耀6纯电动轻型客车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "九座睿星商务车",
+      "evidence_span": "九座睿星商务车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能线控底盘",
+      "evidence_span": "智能线控底盘"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新一代医疗采血车",
+      "evidence_span": "新一代医疗采血车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧校园巴士",
+      "evidence_span": "智慧校园巴士"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城乡客运无站立区组合产品",
+      "evidence_span": "城乡客运无站立区组合产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无障碍微循环智慧公交",
+      "evidence_span": "无障碍微循环智慧公交"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客车散件出口业务",
+      "evidence_span": "加快客车散件出口业务发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用车",
+      "evidence_span": "专用车等细分市场实现了增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端商务车",
+      "evidence_span": "高端商务车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机场摆渡车",
+      "evidence_span": "机场摆渡车"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MTV整车电池一体化技术",
+      "evidence_span": "MTV整车电池一体化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃料电池动力系统技术",
+      "evidence_span": "燃料电池动力系统技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能网联及自动驾驶技术",
+      "evidence_span": "智能网联及自动驾驶技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "商用车滑板式线控底盘技术",
+      "evidence_span": "商用车滑板式线控底盘技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "整车VCU电动控制技术",
+      "evidence_span": "整车VCU电动控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新能源公路客车被动安全性能提升",
+      "evidence_span": "新能源公路客车被动安全性能提升"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大功率高性能电机控制系统集成技术",
+      "evidence_span": "大功率高性能电机控制系统集成技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动驾驶编队中的协同规划和控制技术",
+      "evidence_span": "突破自动驾驶编队中的协同规划和控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高压部件与动力电池六合一集成技术",
+      "evidence_span": "深入开发高压部件与动力电池六合一集成技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "商用车系列化电驱桥技术",
+      "evidence_span": "商用车系列化电驱桥技术研究与产品开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃料电池技术系统集成技术",
+      "evidence_span": "燃料电池技术系统集成技术研究与产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能网联及自动驾驶关键技术",
+      "evidence_span": "智能网联及自动驾驶关键技术研究与产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车路协同技术",
+      "evidence_span": "公司以车路协同技术为核心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G+无人驾驶车辆综合解决方案",
+      "evidence_span": "5G+无人驾驶车辆综合解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "L4级别自动驾驶",
+      "evidence_span": "实现了福建省首条L4级别自动驾驶开放道路公交线的落地运营"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "采埃孚",
+      "evidence_span": "与具有国际先进水平的零部件企业采埃孚、宝钢股份、宁德时代、玉柴股份等战略合作伙伴不断深化合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝钢股份",
+      "evidence_span": "与具有国际先进水平的零部件企业采埃孚、宝钢股份、宁德时代、玉柴股份等战略合作伙伴不断深化合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "与具有国际先进水平的零部件企业采埃孚、宝钢股份、宁德时代、玉柴股份等战略合作伙伴不断深化合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "玉柴股份",
+      "evidence_span": "与具有国际先进水平的零部件企业采埃孚、宝钢股份、宁德时代、玉柴股份等战略合作伙伴不断深化合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源化",
+      "evidence_span": "受益三龙整合、新能源化，或迎增长机会"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "受益国企改革,迎来经营效率加速改善良机"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "客车产品的生产和销售",
+        "evidence_span": "公司主营客车产品的生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大、中、轻型客车的制造与销售",
+        "evidence_span": "以大、中、轻型客车的制造与销售为主导产业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "客车行业领先企业",
+        "evidence_span": "成为全球客车行业领先企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大、中、轻型客车",
+        "evidence_span": "主要产品包括大、中、轻型客车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车",
+        "evidence_span": "实现新能源汽车销售2.48万辆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢燃料电池系统",
+        "evidence_span": "推出全新氢燃料电池系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能网联汽车",
+        "evidence_span": "在新能源汽车、智能网联汽车、关键零部件等领域强化科技创新"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池客车",
+        "evidence_span": "燃料电池客车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池物流车",
+        "evidence_span": "燃料电池物流车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池渣土车",
+        "evidence_span": "燃料电池渣土车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢燃料考斯特",
+        "evidence_span": "氢燃料考斯特"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纯电动团体公路客车",
+        "evidence_span": "纯电动团体公路客车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "增程式混合动力冷链物流车",
+        "evidence_span": "增程式混合动力冷链物流车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃气物流车",
+        "evidence_span": "燃气物流车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "流动服务车",
+        "evidence_span": "流动服务车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清澜低入口城市客车",
+        "evidence_span": "清澜低入口城市客车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "龙耀6纯电动轻型客车",
+        "evidence_span": "龙耀6纯电动轻型客车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "九座睿星商务车",
+        "evidence_span": "九座睿星商务车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能线控底盘",
+        "evidence_span": "智能线控底盘"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新一代医疗采血车",
+        "evidence_span": "新一代医疗采血车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧校园巴士",
+        "evidence_span": "智慧校园巴士"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城乡客运无站立区组合产品",
+        "evidence_span": "城乡客运无站立区组合产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无障碍微循环智慧公交",
+        "evidence_span": "无障碍微循环智慧公交"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客车散件出口业务",
+        "evidence_span": "加快客车散件出口业务发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用车",
+        "evidence_span": "专用车等细分市场实现了增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端商务车",
+        "evidence_span": "高端商务车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机场摆渡车",
+        "evidence_span": "机场摆渡车"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MTV整车电池一体化技术",
+        "evidence_span": "MTV整车电池一体化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃料电池动力系统技术",
+        "evidence_span": "燃料电池动力系统技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能网联及自动驾驶技术",
+        "evidence_span": "智能网联及自动驾驶技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "商用车滑板式线控底盘技术",
+        "evidence_span": "商用车滑板式线控底盘技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "整车VCU电动控制技术",
+        "evidence_span": "整车VCU电动控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新能源公路客车被动安全性能提升",
+        "evidence_span": "新能源公路客车被动安全性能提升"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大功率高性能电机控制系统集成技术",
+        "evidence_span": "大功率高性能电机控制系统集成技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动驾驶编队中的协同规划和控制技术",
+        "evidence_span": "突破自动驾驶编队中的协同规划和控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高压部件与动力电池六合一集成技术",
+        "evidence_span": "深入开发高压部件与动力电池六合一集成技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "商用车系列化电驱桥技术",
+        "evidence_span": "商用车系列化电驱桥技术研究与产品开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃料电池技术系统集成技术",
+        "evidence_span": "燃料电池技术系统集成技术研究与产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能网联及自动驾驶关键技术",
+        "evidence_span": "智能网联及自动驾驶关键技术研究与产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车路协同技术",
+        "evidence_span": "公司以车路协同技术为核心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G+无人驾驶车辆综合解决方案",
+        "evidence_span": "5G+无人驾驶车辆综合解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "L4级别自动驾驶",
+        "evidence_span": "实现了福建省首条L4级别自动驾驶开放道路公交线的落地运营"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "采埃孚",
+        "evidence_span": "与具有国际先进水平的零部件企业采埃孚、宝钢股份、宁德时代、玉柴股份等战略合作伙伴不断深化合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝钢股份",
+        "evidence_span": "与具有国际先进水平的零部件企业采埃孚、宝钢股份、宁德时代、玉柴股份等战略合作伙伴不断深化合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "与具有国际先进水平的零部件企业采埃孚、宝钢股份、宁德时代、玉柴股份等战略合作伙伴不断深化合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "玉柴股份",
+        "evidence_span": "与具有国际先进水平的零部件企业采埃孚、宝钢股份、宁德时代、玉柴股份等战略合作伙伴不断深化合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源化",
+        "evidence_span": "受益三龙整合、新能源化，或迎增长机会"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "受益国企改革,迎来经营效率加速改善良机"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:01:06"
+}

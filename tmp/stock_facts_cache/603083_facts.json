@@ -1,0 +1,519 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电信",
+      "evidence_span": "主营业务是电信、数通和企业网络的终端设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数通",
+      "evidence_span": "主营业务是电信、数通和企业网络的终端设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "企业网络的终端设备",
+      "evidence_span": "主营业务是电信、数通和企业网络的终端设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高速光模块产品",
+      "evidence_span": "高速光模块产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "ICT终端设备厂商",
+      "evidence_span": "专注于家庭、企业及工业应用类 ICT 终端设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高速光模块厂商",
+      "evidence_span": "全球率先开发800G/1.6T光模块的厂商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "5G小基站合作伙伴",
+      "evidence_span": "世界领先通信设备商的核心5G 小基站合作伙伴"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光纤接入产品PON",
+      "evidence_span": "光纤接入产品PON(GPON,EPON)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光纤接入产品10G GPON",
+      "evidence_span": "光纤接入产品10GGPON"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光纤接入产品25G/50G GPON",
+      "evidence_span": "25G/50GGPON"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SFU",
+      "evidence_span": "SFU"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HGW",
+      "evidence_span": "HGW"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铜线接入产品",
+      "evidence_span": "铜线接入产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "企业及运营商级WLAN产品",
+      "evidence_span": "企业及运营商级WLAN产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AP产品",
+      "evidence_span": "AP产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家用无线互联产品",
+      "evidence_span": "家用无线互联产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Wi-Fi Mesh家庭网关产品",
+      "evidence_span": "Wi-FiMesh家庭网关产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G FWACPE",
+      "evidence_span": "5GFWACPE"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动通信小基站",
+      "evidence_span": "移动通信小基站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "25G边缘网关",
+      "evidence_span": "25G边缘网关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "用于5G部署的边缘DU产品",
+      "evidence_span": "用于5G部署的边缘DU产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业AP",
+      "evidence_span": "工业AP"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AR系列路由器",
+      "evidence_span": "AR系列路由器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "以太网交换机",
+      "evidence_span": "以太网交换机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物联网网关",
+      "evidence_span": "物联网网关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速光模块",
+      "evidence_span": "高速光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "400G QSFP112 DR4/DR4+",
+      "evidence_span": "400G QSFP112 DR4/DR4+新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "800G OSFP DR8/DR8+",
+      "evidence_span": "800G OSFP DR8/DR8+硅光新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "400G QSFP-DD FR4/LR4",
+      "evidence_span": "400G QSFP-DD FR4/LR4 产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "800G OSFP 2×FR4/2×LR4",
+      "evidence_span": "800G OSFP2×FR4/2×LR4硅光新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "1.6T OSFP DR8/DR8+",
+      "evidence_span": "1.6T OSFP DR8/DR8+硅光新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "800G LPO产品",
+      "evidence_span": "800G LPO 产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "1.6T LPO/LRO产品",
+      "evidence_span": "1.6T LPO 和 LRO 产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Wi-Fi 7网关产品",
+      "evidence_span": "Wi-Fi 7 和万兆网关产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Open Wi-Fi架构室外AP产品",
+      "evidence_span": "Open Wi-Fi 架构的室外 AP 产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "25G GPON产品",
+      "evidence_span": "25G GPON 产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "50G GPON产品",
+      "evidence_span": "50GGPON 产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "800G/1.6T光模块开发",
+      "evidence_span": "全球率先开发800G/1.6T光模块的厂商之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "400G/800G/1.6T高速光模块研发生产",
+      "evidence_span": "研发和生产全面聚焦 400G/800G/1.6T 等高速光模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硅光产品量产",
+      "evidence_span": "400G QSFP112 DR4/DR4+、800G OSFP DR8/DR8+等多款硅光产品实现量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "800G及400G系列产品量产",
+      "evidence_span": "800G 及 400G 系列产品在多地量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "1.6T OSFP光模块原型开发",
+      "evidence_span": "新一代 1.6T OSFP 光模块完成原型开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于3nm DSP的1.6T光模块开发",
+      "evidence_span": "基于3nm DSP的新一代1.6T OSFP DR8/DR8+硅光新产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LPO产品开发",
+      "evidence_span": "推进 800G LPO 产品开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "25G GPON技术研发",
+      "evidence_span": "完成 25G GPON 技术研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Wi-Fi 7和万兆网关商用",
+      "evidence_span": "Wi-Fi 7 和万兆网关产品成功商用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Open Wi-Fi架构部署",
+      "evidence_span": "Open Wi-Fi 架构的室外 AP 产品在多个应用场景实现批量部署"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "4/5G双模式小基站平台",
+      "evidence_span": "支持 4/5G 双模式"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北美大客户",
+      "evidence_span": "通过某北美大客户 400G 生产制造工艺审核"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本和韩国运营商",
+      "evidence_span": "小基站市场比较发达的日本和韩国地区，公司已经形成稳定的供货渠道"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "世界领先通信设备商",
+      "evidence_span": "世界领先通信设备商的核心5G 小基站合作伙伴"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "AI算力中心和数据中心高速互联",
+      "evidence_span": "以满足 AI 算力中心和数据中心的高速互联需求"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电信、数通和企业网络的终端设备",
+        "evidence_span": "主营业务是电信、数通和企业网络的终端设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高速光模块产品",
+        "evidence_span": "高速光模块产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "ICT终端设备厂商",
+        "evidence_span": "专注于家庭、企业及工业应用类 ICT 终端设备的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高速光模块厂商",
+        "evidence_span": "全球率先开发800G/1.6T光模块的厂商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "5G小基站合作伙伴",
+        "evidence_span": "世界领先通信设备商的核心5G 小基站合作伙伴"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光纤接入产品PON",
+        "evidence_span": "光纤接入产品PON(GPON,EPON)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光纤接入产品10G GPON",
+        "evidence_span": "光纤接入产品10GGPON"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光纤接入产品25G/50G GPON",
+        "evidence_span": "25G/50GGPON"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SFU",
+        "evidence_span": "SFU"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HGW",
+        "evidence_span": "HGW"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铜线接入产品",
+        "evidence_span": "铜线接入产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "企业及运营商级WLAN产品",
+        "evidence_span": "企业及运营商级WLAN产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AP产品",
+        "evidence_span": "AP产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家用无线互联产品",
+        "evidence_span": "家用无线互联产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Wi-Fi Mesh家庭网关产品",
+        "evidence_span": "Wi-FiMesh家庭网关产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G FWACPE",
+        "evidence_span": "5GFWACPE"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动通信小基站",
+        "evidence_span": "移动通信小基站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "25G边缘网关",
+        "evidence_span": "25G边缘网关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "用于5G部署的边缘DU产品",
+        "evidence_span": "用于5G部署的边缘DU产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业AP",
+        "evidence_span": "工业AP"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AR系列路由器",
+        "evidence_span": "AR系列路由器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "以太网交换机",
+        "evidence_span": "以太网交换机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物联网网关",
+        "evidence_span": "物联网网关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速光模块",
+        "evidence_span": "高速光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "400G QSFP112 DR4/DR4+",
+        "evidence_span": "400G QSFP112 DR4/DR4+新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "800G OSFP DR8/DR8+",
+        "evidence_span": "800G OSFP DR8/DR8+硅光新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "400G QSFP-DD FR4/LR4",
+        "evidence_span": "400G QSFP-DD FR4/LR4 产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "800G OSFP 2×FR4/2×LR4",
+        "evidence_span": "800G OSFP2×FR4/2×LR4硅光新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "1.6T OSFP DR8/DR8+",
+        "evidence_span": "1.6T OSFP DR8/DR8+硅光新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "800G LPO产品",
+        "evidence_span": "800G LPO 产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "1.6T LPO/LRO产品",
+        "evidence_span": "1.6T LPO 和 LRO 产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Wi-Fi 7网关产品",
+        "evidence_span": "Wi-Fi 7 和万兆网关产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Open Wi-Fi架构室外AP产品",
+        "evidence_span": "Open Wi-Fi 架构的室外 AP 产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "25G GPON产品",
+        "evidence_span": "25G GPON 产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "50G GPON产品",
+        "evidence_span": "50GGPON 产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "800G/1.6T光模块开发",
+        "evidence_span": "全球率先开发800G/1.6T光模块的厂商之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "400G/800G/1.6T高速光模块研发生产",
+        "evidence_span": "研发和生产全面聚焦 400G/800G/1.6T 等高速光模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硅光产品量产",
+        "evidence_span": "400G QSFP112 DR4/DR4+、800G OSFP DR8/DR8+等多款硅光产品实现量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "800G及400G系列产品量产",
+        "evidence_span": "800G 及 400G 系列产品在多地量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "1.6T OSFP光模块原型开发",
+        "evidence_span": "新一代 1.6T OSFP 光模块完成原型开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于3nm DSP的1.6T光模块开发",
+        "evidence_span": "基于3nm DSP的新一代1.6T OSFP DR8/DR8+硅光新产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LPO产品开发",
+        "evidence_span": "推进 800G LPO 产品开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "25G GPON技术研发",
+        "evidence_span": "完成 25G GPON 技术研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Wi-Fi 7和万兆网关商用",
+        "evidence_span": "Wi-Fi 7 和万兆网关产品成功商用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Open Wi-Fi架构部署",
+        "evidence_span": "Open Wi-Fi 架构的室外 AP 产品在多个应用场景实现批量部署"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "4/5G双模式小基站平台",
+        "evidence_span": "支持 4/5G 双模式"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北美大客户",
+        "evidence_span": "通过某北美大客户 400G 生产制造工艺审核"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本和韩国运营商",
+        "evidence_span": "小基站市场比较发达的日本和韩国地区，公司已经形成稳定的供货渠道"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "世界领先通信设备商",
+        "evidence_span": "世界领先通信设备商的核心5G 小基站合作伙伴"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "AI算力中心和数据中心高速互联",
+        "evidence_span": "以满足 AI 算力中心和数据中心的高速互联需求"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:18:33"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "2dcdb540b0c5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述美国公司提出337条款申请的具体法律事件，涉及半导体器件，但与光刻胶本体知识无关，属于纯事件动态。"}}

@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "大型发电厂开发",
+      "evidence_span": "公司主要在中国全国范围内开发、建设和经营管理大型发电厂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建设",
+      "evidence_span": "公司主要在中国全国范围内开发、建设和经营管理大型发电厂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "经营管理",
+      "evidence_span": "公司主要在中国全国范围内开发、建设和经营管理大型发电厂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "火电业务",
+      "evidence_span": "火电为主，新能源增速较快"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源业务",
+      "evidence_span": "火电为基，新能源业务快速扩张"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "风电业务",
+      "evidence_span": "风电、光伏装机及发电量行业领先"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏业务",
+      "evidence_span": "风电、光伏装机及发电量行业领先"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国最大的上市发电公司之一",
+      "evidence_span": "是中国最大的上市发电公司之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合电力运营商",
+      "evidence_span": "华能国际（600011）属于综合电力运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "火电行业龙头",
+      "evidence_span": "公司火电装机规模大"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "风电运营商",
+      "evidence_span": "于所选13家风电运营商中排名第4"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光伏运营商",
+      "evidence_span": "在所选12家光伏运营商中排名第6"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "火电装机",
+      "evidence_span": "火电装机量10,436万千瓦"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电装机",
+      "evidence_span": "风电1,054万千瓦"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏装机",
+      "evidence_span": "光伏331万千瓦"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发电量",
+      "evidence_span": "发电量4,573亿千瓦时"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电发电量",
+      "evidence_span": "风电发电量208.34亿千瓦时"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏发电量",
+      "evidence_span": "光伏发电量境内市占率为1.1%"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "火电灵活性改造",
+      "evidence_span": "灵活性改造持续推进"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "能源转型",
+      "evidence_span": "顺应“双碳”目标，积极推进新能源转型"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源转型",
+      "evidence_span": "向清洁能源转型，“十四五”再造新华能"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "大型发电厂开发、建设和经营管理",
+        "evidence_span": "公司主要在中国全国范围内开发、建设和经营管理大型发电厂"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "火电业务",
+        "evidence_span": "火电为主，新能源增速较快"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源业务",
+        "evidence_span": "火电为基，新能源业务快速扩张"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "风电业务",
+        "evidence_span": "风电、光伏装机及发电量行业领先"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏业务",
+        "evidence_span": "风电、光伏装机及发电量行业领先"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国最大的上市发电公司之一",
+        "evidence_span": "是中国最大的上市发电公司之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合电力运营商",
+        "evidence_span": "华能国际（600011）属于综合电力运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "火电行业龙头",
+        "evidence_span": "公司火电装机规模大"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "风电运营商",
+        "evidence_span": "于所选13家风电运营商中排名第4"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光伏运营商",
+        "evidence_span": "在所选12家光伏运营商中排名第6"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "火电装机",
+        "evidence_span": "火电装机量10,436万千瓦"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电装机",
+        "evidence_span": "风电1,054万千瓦"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏装机",
+        "evidence_span": "光伏331万千瓦"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发电量",
+        "evidence_span": "发电量4,573亿千瓦时"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电发电量",
+        "evidence_span": "风电发电量208.34亿千瓦时"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏发电量",
+        "evidence_span": "光伏发电量境内市占率为1.1%"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "火电灵活性改造",
+        "evidence_span": "灵活性改造持续推进"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "能源转型",
+        "evidence_span": "顺应“双碳”目标，积极推进新能源转型"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源转型",
+        "evidence_span": "向清洁能源转型，“十四五”再造新华能"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:54:34"
+}

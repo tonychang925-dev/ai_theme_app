@@ -1,0 +1,116 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 36061136.88,
+    "changeCount": 0.09,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、营业收入构成</span></p>\n<p><span style=\"font-weight: bold;\"><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid0_20220923162455_95b58120103de669.png\" /></span></p>\n<p>资料来自：2022年半年度报告</p>\n<p>公司主营客车制造业，占营业收入100%，22年年中营业收入同比减少15.87%，产品主要是整车，占比90.55%，销售来源主要集中在国内，占比88.66%。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、核心竞争力分析</span></p>\n<p>（1）、公司引进德国凯斯鲍尔技术，进行技术合作，经过消化吸收再创新，形成自主掌握的客车全承载，底盘全桁架核心技术，并获得国家发明专利。</p>\n<p>（2）、公司是国内较早研发和批量生产运营新能源客车的整车企业，具有新能源客车研发及生产优势。现已形成集10-12米纯电动公交客车，12米纯电动旅游和通勤客车、12米增程式电动公交客车、10-12米油电混合动力城市客车于一体的产品平台。</p>\n<p>（3）、公司拥有国家电动客车整车系统集成工程技术研究中心、国家级企业技术中心、国家级博士后科研工作站，拥有雄厚而专业的研发实力。</p>\n<p>（4）、公司拥有现代化的生产车间和科学合理的U型生产线，先进的TPS生产管理体系，以及高效高精度的生产设备，保障了公司产品品质。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、与比亚迪合作进军动力电池</span></p>\n<p><span style=\"font-weight: bold;\">在全球新能源产业高速发展之际，为应对市场挑战，安徽安凯汽车股份有限公司与安徽江淮汽车集团股份有限公司、弗迪电池有限公司（比亚迪子公司）和浙储能源集团有限公司，本着平等自愿、互利共赢、共同发展和优势互补的原则，就动力电池的合作事宜， 经友好协商达成共识于2022年9月6日签署了《合资框架协议》。</span></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+    "firstLetter": "AKKC",
+    "high": 4.98,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 4.91,
+    "marketValue": 4584831906.8,
+    "name": "安凯客车",
+    "pctChg": 1.84,
+    "price": 4.97,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": -5.87,
+    "recentChange": 2.26,
+    "remark": "安徽国资委旗下的专业客车公司。与弗迪电池（比亚迪子公司）、浙储能源集团有限公司开展动力电池的合作。",
+    "status": 1,
+    "stockId": "000868",
+    "stockLightspots": [
+      {
+        "bizKey": "53366",
+        "content": "新班子、新战略、新能源带来新机会",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 53366,
+        "stockId": "000868",
+        "updateTime": null
+      },
+      {
+        "bizKey": "53367",
+        "content": "高端客车市场领导者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 53367,
+        "stockId": "000868",
+        "updateTime": null
+      },
+      {
+        "bizKey": "53368",
+        "content": "业绩符合预期,进军LNG清洁能源市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 53368,
+        "stockId": "000868",
+        "updateTime": null
+      },
+      {
+        "bizKey": "53369",
+        "content": "业绩拐点论逐步得以验证",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 53369,
+        "stockId": "000868",
+        "updateTime": null
+      },
+      {
+        "bizKey": "53370",
+        "content": "出口订单的确认有望拉动公司业绩增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 53370,
+        "stockId": "000868",
+        "updateTime": null
+      },
+      {
+        "bizKey": "53371",
+        "content": "出口+新能源“双引擎”驱动业绩增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 53371,
+        "stockId": "000868",
+        "updateTime": null
+      },
+      {
+        "bizKey": "53372",
+        "content": "投资收益大幅度下滑拖累业绩",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 53372,
+        "stockId": "000868",
+        "updateTime": null
+      },
+      {
+        "bizKey": "53373",
+        "content": "新能源提供持续发展动力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 53373,
+        "stockId": "000868",
+        "updateTime": null
+      },
+      {
+        "bizKey": "53374",
+        "content": "安凯客车国企改革提升公司治理水平",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 53374,
+        "stockId": "000868",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 72734.04
+  }
+}

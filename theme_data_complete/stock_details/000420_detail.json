@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 250565069.56,
+    "changeCount": 0.15,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>公司主要从事粘胶纤维的生产和研发，产品包括粘胶长丝和粘胶短纤，在粘胶长丝领域处于龙头地位。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2902_20220929173151_7adcfeef065b8fe7.png\" alt=\"\" width=\"453\" height=\"286\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、主营数据</span></p>\n<p>粘胶长丝和粘胶短纤构成的粘胶纤维业务目前仍是公司的主要收入和利润来源，连续五年占比75%以上，其中以粘胶长丝为主要产品。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2901_20220929173054_4b5a7bdd69234b4b.png\" alt=\"\" width=\"421\" height=\"280\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、转型碳纤维</span></p>\n<p>碳纤维当前发展势头良好，公司正积极向碳纤维领域拓展。公司现已布局参股公司吉林凯美克及吉林宝旌从事碳纤维业务，其中全资子公司凯美克以1K、3K小丝束为主，目前年产600吨小丝束碳纤维生产线已全部建成达产；吉林宝旌具备25-50K大丝束的研发、生产、销售能力，产能为8000吨/年，目前合计持股49%。</p>",
+    "firstLetter": "JLHX",
+    "high": 4.62,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 4.48,
+    "marketValue": 10941964126.35,
+    "name": "吉林化纤",
+    "pctChg": 3.37,
+    "price": 4.6,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 7,
+    "recent60Change": 13.58,
+    "recentChange": -4.56,
+    "remark": "粘胶长丝主业地位稳固，碳纤维领域扬帆起航",
+    "status": 1,
+    "stockId": "000420",
+    "stockLightspots": [
+      {
+        "bizKey": "36365",
+        "content": "吉林化纤粘胶长丝主业地位稳固，碳纤维领域扬帆起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36365,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36366",
+        "content": "吉林化纤粘胶长丝绝对龙头，拥抱国产碳纤维大时代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36366,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36367",
+        "content": "吉林化纤粘胶长丝趋势向好，定增加码主业，切入碳纤维打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36367,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36368",
+        "content": "碳纤维行业前景广阔，大丝束龙头未来可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36368,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36369",
+        "content": "Q4业绩承压，碳纤维复材项目放量在即",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36369,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36370",
+        "content": "吉林化纤单三季度归母净利润同比+24.39%，盈利能力有所改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36370,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36371",
+        "content": "粘胶长丝业绩大增，持续整合碳纤维产业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36371,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36372",
+        "content": "通过收购延伸碳纤维产业链，未来定位全球纤维材料龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36372,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36373",
+        "content": "大力发展碳纤维，目标营收百亿",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36373,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36374",
+        "content": "碳纤维业务有望步入快速放量阶段，未来发展空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36374,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36375",
+        "content": "碳纤维复材项目陆续投产，第二成长曲线逐渐发力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36375,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36376",
+        "content": "22Q3归母净利润同比+115.72%，碳纤维一体化布局，未来空间可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36376,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36377",
+        "content": "吉林化纤单季度盈利转正，碳纤维放量在即迎景气风口",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36377,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36378",
+        "content": "疫情影响成本抬升业绩承压，碳纤维进展顺利未来可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36378,
+        "stockId": "000420",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36379",
+        "content": "碳纤维复材项目进展顺利，有望注入优质资产扩充大丝束产能",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36379,
+        "stockId": "000420",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:53",
+    "vol": 550361.28
+  }
+}

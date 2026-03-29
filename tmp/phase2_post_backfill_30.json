@@ -1,0 +1,403 @@
+{
+  "success": true,
+  "success_criteria": {
+    "events_published": true,
+    "decisions_generated": true,
+    "theme_updates_generated": true,
+    "processor_working": true,
+    "executor_working": true
+  },
+  "stream_stats": {
+    "stream:events:major": 15,
+    "stream:events:normal": 15,
+    "stream:events:pending": 1,
+    "stream:events:decision": 30,
+    "stream:themes:updates": 29,
+    "stream:dead:letter": 0
+  },
+  "decision_details": [
+    {
+      "message_id": "1771476057253-0",
+      "decision_type": "match_success_fallback",
+      "action": "update_theme",
+      "event_id": "event_20260203110821_10bc3c",
+      "decision_id": "decision_1771476057_-8901869589306725239",
+      "trace_id": "trace_event_20260203110821_10bc3c",
+      "timestamp": "2026-02-19T12:40:57.252470"
+    },
+    {
+      "message_id": "1771476057779-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110828_c10ff8",
+      "decision_id": "decision_1771476057_-257497638550239313",
+      "trace_id": "trace_event_20260203110828_c10ff8",
+      "timestamp": "2026-02-19T12:40:57.766018",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476058290-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110839_631063",
+      "decision_id": "decision_1771476058_591850296531952272",
+      "trace_id": "trace_event_20260203110839_631063",
+      "timestamp": "2026-02-19T12:40:58.285944",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476057253-0",
+      "decision_type": "match_success_fallback",
+      "action": "update_theme",
+      "event_id": "event_20260203110821_10bc3c",
+      "decision_id": "decision_1771476057_-8901869589306725239",
+      "trace_id": "trace_event_20260203110821_10bc3c",
+      "timestamp": "2026-02-19T12:40:57.252470"
+    },
+    {
+      "message_id": "1771476057779-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110828_c10ff8",
+      "decision_id": "decision_1771476057_-257497638550239313",
+      "trace_id": "trace_event_20260203110828_c10ff8",
+      "timestamp": "2026-02-19T12:40:57.766018",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476058290-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110839_631063",
+      "decision_id": "decision_1771476058_591850296531952272",
+      "trace_id": "trace_event_20260203110839_631063",
+      "timestamp": "2026-02-19T12:40:58.285944",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476057253-0",
+      "decision_type": "match_success_fallback",
+      "action": "update_theme",
+      "event_id": "event_20260203110821_10bc3c",
+      "decision_id": "decision_1771476057_-8901869589306725239",
+      "trace_id": "trace_event_20260203110821_10bc3c",
+      "timestamp": "2026-02-19T12:40:57.252470"
+    },
+    {
+      "message_id": "1771476057779-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110828_c10ff8",
+      "decision_id": "decision_1771476057_-257497638550239313",
+      "trace_id": "trace_event_20260203110828_c10ff8",
+      "timestamp": "2026-02-19T12:40:57.766018",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476058290-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110839_631063",
+      "decision_id": "decision_1771476058_591850296531952272",
+      "trace_id": "trace_event_20260203110839_631063",
+      "timestamp": "2026-02-19T12:40:58.285944",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476057253-0",
+      "decision_type": "match_success_fallback",
+      "action": "update_theme",
+      "event_id": "event_20260203110821_10bc3c",
+      "decision_id": "decision_1771476057_-8901869589306725239",
+      "trace_id": "trace_event_20260203110821_10bc3c",
+      "timestamp": "2026-02-19T12:40:57.252470"
+    },
+    {
+      "message_id": "1771476057779-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110828_c10ff8",
+      "decision_id": "decision_1771476057_-257497638550239313",
+      "trace_id": "trace_event_20260203110828_c10ff8",
+      "timestamp": "2026-02-19T12:40:57.766018",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476058290-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110839_631063",
+      "decision_id": "decision_1771476058_591850296531952272",
+      "trace_id": "trace_event_20260203110839_631063",
+      "timestamp": "2026-02-19T12:40:58.285944",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476057253-0",
+      "decision_type": "match_success_fallback",
+      "action": "update_theme",
+      "event_id": "event_20260203110821_10bc3c",
+      "decision_id": "decision_1771476057_-8901869589306725239",
+      "trace_id": "trace_event_20260203110821_10bc3c",
+      "timestamp": "2026-02-19T12:40:57.252470"
+    },
+    {
+      "message_id": "1771476057779-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110828_c10ff8",
+      "decision_id": "decision_1771476057_-257497638550239313",
+      "trace_id": "trace_event_20260203110828_c10ff8",
+      "timestamp": "2026-02-19T12:40:57.766018",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476058290-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110839_631063",
+      "decision_id": "decision_1771476058_591850296531952272",
+      "trace_id": "trace_event_20260203110839_631063",
+      "timestamp": "2026-02-19T12:40:58.285944",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    }
+  ],
+  "create_new_theme_details": [
+    {
+      "message_id": "1771476057779-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110828_c10ff8",
+      "decision_id": "decision_1771476057_-257497638550239313",
+      "trace_id": "trace_event_20260203110828_c10ff8",
+      "timestamp": "2026-02-19T12:40:57.766018",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476058290-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110839_631063",
+      "decision_id": "decision_1771476058_591850296531952272",
+      "trace_id": "trace_event_20260203110839_631063",
+      "timestamp": "2026-02-19T12:40:58.285944",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476057779-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110828_c10ff8",
+      "decision_id": "decision_1771476057_-257497638550239313",
+      "trace_id": "trace_event_20260203110828_c10ff8",
+      "timestamp": "2026-02-19T12:40:57.766018",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476058290-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110839_631063",
+      "decision_id": "decision_1771476058_591850296531952272",
+      "trace_id": "trace_event_20260203110839_631063",
+      "timestamp": "2026-02-19T12:40:58.285944",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476057779-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110828_c10ff8",
+      "decision_id": "decision_1771476057_-257497638550239313",
+      "trace_id": "trace_event_20260203110828_c10ff8",
+      "timestamp": "2026-02-19T12:40:57.766018",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476058290-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110839_631063",
+      "decision_id": "decision_1771476058_591850296531952272",
+      "trace_id": "trace_event_20260203110839_631063",
+      "timestamp": "2026-02-19T12:40:58.285944",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476057779-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110828_c10ff8",
+      "decision_id": "decision_1771476057_-257497638550239313",
+      "trace_id": "trace_event_20260203110828_c10ff8",
+      "timestamp": "2026-02-19T12:40:57.766018",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476058290-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110839_631063",
+      "decision_id": "decision_1771476058_591850296531952272",
+      "trace_id": "trace_event_20260203110839_631063",
+      "timestamp": "2026-02-19T12:40:58.285944",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476057779-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110828_c10ff8",
+      "decision_id": "decision_1771476057_-257497638550239313",
+      "trace_id": "trace_event_20260203110828_c10ff8",
+      "timestamp": "2026-02-19T12:40:57.766018",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    },
+    {
+      "message_id": "1771476058290-0",
+      "decision_type": "no_match_after_fallback",
+      "action": "create_new_theme",
+      "event_id": "event_20260203110839_631063",
+      "decision_id": "decision_1771476058_591850296531952272",
+      "trace_id": "trace_event_20260203110839_631063",
+      "timestamp": "2026-02-19T12:40:58.285944",
+      "classification_source": "created_from_ai_keywords",
+      "category_action": "create_both",
+      "categories_to_create_count": 2,
+      "created_category_types": [
+        "concept",
+        "concept"
+      ]
+    }
+  ],
+  "t04_validation": {
+    "publish_clustering_decision": false,
+    "pending_written": true,
+    "pending_matches_publish_decision_id": false,
+    "pending_trace_id_present": true,
+    "decision_ack_verified": true,
+    "decision_executor_pending_count": 0
+  },
+  "t03_validation": {
+    "create_new_theme_decisions": 10,
+    "classification_source_upstream_count": 0,
+    "classification_source_ai_keywords_count": 10,
+    "concept_hierarchy_created_count": 10,
+    "all_create_decisions_have_classification_source": true
+  },
+  "wall_time_sec": 35.92793917655945
+}

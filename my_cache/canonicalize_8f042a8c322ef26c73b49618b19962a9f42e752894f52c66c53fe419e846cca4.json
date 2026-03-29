@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:35:16", "result": {"span_uid": "baf54bb3eefc", "action": "rewrite", "canonical_text": "空客在中国本土的生产有助于利用中国稳定、高效且成本优势明显的供应链体系，从而增强其全球供应链的抗风险能力。", "final_type": "related", "final_role": "供应链优势", "stability": "medium", "reason": "原文包含事件背景，但核心信息相对稳定，可改写为关联知识，描述空客利用中国供应链的优势。"}}

@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子元器件保税仓储",
+      "evidence_span": "公司主营业务是以电子元器件保税仓储为基础"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "一体化供应链物流服务",
+      "evidence_span": "为电子信息产业供应链中的原料供应、采购与生产环节提供一体化供应链物流服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "第三方物流企业",
+      "evidence_span": "公司作为提供仓配一体化服务的第三方物流企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电子信息产业链物流服务商",
+      "evidence_span": "长江三角地区电子信息产业链中不可或缺的物流服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保税仓储管理",
+      "evidence_span": "进出口货物保税仓储管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配送方案设计与实施",
+      "evidence_span": "配送方案设计与实施"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "货运代理",
+      "evidence_span": "货运代理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "进出口通关报检",
+      "evidence_span": "进出口通关报检"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VMI模式",
+      "evidence_span": "VMI模式是客户将库存交由公司进行仓储及运输管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "散件组装KD模式",
+      "evidence_span": "散件组装KD模式则是针对在海外设厂或委托代工的客户"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客供料模式",
+      "evidence_span": "客供料模式为品牌商进行集中采购"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分拨中心业务",
+      "evidence_span": "分拨中心(DC)负责分类、包装、保管、流通加工、信息处理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电商物流业务",
+      "evidence_span": "布局电商物流业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "售后物流",
+      "evidence_span": "新宁物流为客户提供客服备件的入库、存储、出库、系统操作、打包、发运等操作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软件服务",
+      "evidence_span": "新宁物流提供软件服务和智能仓服务，其中软件服务涉及WMS、WCS、TMS等系统的需求调研、开发与维护等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能仓服务",
+      "evidence_span": "智能仓服务包括自动/半自动贴标流水线、智能仓集成及维护保养等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "咨询服务",
+      "evidence_span": "物流方案、软件方案、智能化方案的咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卫星定位运营服务",
+      "evidence_span": "公司全资子公司深圳市亿程物联科技有限公司向多行业商业用户和政府机关提供卫星定位运营服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能仓储",
+      "evidence_span": "在仓储物流数字化和智能化领域优势明显"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G智能技术",
+      "evidence_span": "合肥二期智能仓，应用了当前最先进的5G智能技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物流系统集成能力",
+      "evidence_span": "优秀的物流与供应链管理集成能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联想",
+      "evidence_span": "客户涵盖了联想、仁宝、华硕、海尔等众多知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "仁宝",
+      "evidence_span": "客户涵盖了联想、仁宝、华硕、海尔等众多知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华硕",
+      "evidence_span": "客户涵盖了联想、仁宝、华硕、海尔等众多知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海尔",
+      "evidence_span": "客户涵盖了联想、仁宝、华硕、海尔等众多知名企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能物流",
+      "evidence_span": "新宁物流打造智能物流平台"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子元器件保税仓储",
+        "evidence_span": "公司主营业务是以电子元器件保税仓储为基础"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "一体化供应链物流服务",
+        "evidence_span": "为电子信息产业供应链中的原料供应、采购与生产环节提供一体化供应链物流服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "第三方物流企业",
+        "evidence_span": "公司作为提供仓配一体化服务的第三方物流企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电子信息产业链物流服务商",
+        "evidence_span": "长江三角地区电子信息产业链中不可或缺的物流服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保税仓储管理",
+        "evidence_span": "进出口货物保税仓储管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配送方案设计与实施",
+        "evidence_span": "配送方案设计与实施"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "货运代理",
+        "evidence_span": "货运代理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "进出口通关报检",
+        "evidence_span": "进出口通关报检"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VMI模式",
+        "evidence_span": "VMI模式是客户将库存交由公司进行仓储及运输管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "散件组装KD模式",
+        "evidence_span": "散件组装KD模式则是针对在海外设厂或委托代工的客户"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客供料模式",
+        "evidence_span": "客供料模式为品牌商进行集中采购"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分拨中心业务",
+        "evidence_span": "分拨中心(DC)负责分类、包装、保管、流通加工、信息处理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电商物流业务",
+        "evidence_span": "布局电商物流业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "售后物流",
+        "evidence_span": "新宁物流为客户提供客服备件的入库、存储、出库、系统操作、打包、发运等操作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软件服务",
+        "evidence_span": "新宁物流提供软件服务和智能仓服务，其中软件服务涉及WMS、WCS、TMS等系统的需求调研、开发与维护等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能仓服务",
+        "evidence_span": "智能仓服务包括自动/半自动贴标流水线、智能仓集成及维护保养等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "咨询服务",
+        "evidence_span": "物流方案、软件方案、智能化方案的咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卫星定位运营服务",
+        "evidence_span": "公司全资子公司深圳市亿程物联科技有限公司向多行业商业用户和政府机关提供卫星定位运营服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能仓储",
+        "evidence_span": "在仓储物流数字化和智能化领域优势明显"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G智能技术",
+        "evidence_span": "合肥二期智能仓，应用了当前最先进的5G智能技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物流系统集成能力",
+        "evidence_span": "优秀的物流与供应链管理集成能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联想",
+        "evidence_span": "客户涵盖了联想、仁宝、华硕、海尔等众多知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "仁宝",
+        "evidence_span": "客户涵盖了联想、仁宝、华硕、海尔等众多知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华硕",
+        "evidence_span": "客户涵盖了联想、仁宝、华硕、海尔等众多知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海尔",
+        "evidence_span": "客户涵盖了联想、仁宝、华硕、海尔等众多知名企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能物流",
+        "evidence_span": "新宁物流打造智能物流平台"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:40:14"
+}

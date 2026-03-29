@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂离子电池生产线后处理系统设计",
+      "evidence_span": "始终致力于各类可充电电池，特别是锂离子电池的后处理系统的设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂离子电池生产线后处理系统研发",
+      "evidence_span": "始终致力于各类可充电电池，特别是锂离子电池的后处理系统的研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂离子电池生产线后处理系统生产",
+      "evidence_span": "始终致力于各类可充电电池，特别是锂离子电池的后处理系统的生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂离子电池生产线后处理系统销售",
+      "evidence_span": "始终致力于各类可充电电池，特别是锂离子电池的后处理系统的销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新能源锂电池化成分容成套生产设备系统集成商",
+      "evidence_span": "是全球一流的集销售、研发、制造、服务为一体的新能源锂电池化成分容成套生产设备系统集成商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电池后段处理系统设备及方案提供商",
+      "evidence_span": "杭可科技是一家面向全球化的锂电池后段处理系统设备及方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂离子电池生产线后处理系统整体解决方案提供商",
+      "evidence_span": "形成了锂离子电池生产线后处理系统整体的解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池充放电设备",
+      "evidence_span": "公司的主要产品有各类电池充放电设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "测试设备",
+      "evidence_span": "公司的主要产品有各类电池充放电设备、测试设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物流设备",
+      "evidence_span": "公司的主要产品有各类电池充放电设备、测试设备、物流设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配套软件系统",
+      "evidence_span": "公司的主要产品有各类电池充放电设备、测试设备、物流设备及相应配套软件系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充放电设备",
+      "evidence_span": "公司主要产品为充放电设备和内阻测试仪等其他设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内阻测试仪",
+      "evidence_span": "公司主要产品为充放电设备和内阻测试仪等其他设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圆柱电池充放电设备",
+      "evidence_span": "充放电设备分为圆柱电池充放电设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软包/聚合物电池充放电设备",
+      "evidence_span": "充放电设备分为圆柱电池充放电设备、软包/聚合物电池充放电设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方形电池充放电设备",
+      "evidence_span": "充放电设备分为圆柱电池充放电设备、软包/聚合物电池充放电设备、方形电池充放电设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4680大圆柱电池水冷一体充放电机",
+      "evidence_span": "研发出了一代4680圆柱设备的样机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方形锂电池分容一体机",
+      "evidence_span": "方形锂电池分容一体机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BOX型空压夹具机",
+      "evidence_span": "BOX型空压夹具机开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化电源技术",
+      "evidence_span": "公司的核心技术包括数字化电源技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高频PWM变流技术",
+      "evidence_span": "公司的核心技术包括数字化电源技术、高频PWM变流技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全自动校准技术",
+      "evidence_span": "公司的核心技术包括数字化电源技术、高频PWM变流技术、全自动校准技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高温加压充放电技术",
+      "evidence_span": "公司的核心技术包括数字化电源技术、高频PWM变流技术、全自动校准技术、高温加压充放电技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精度线性充放电技术",
+      "evidence_span": "公司的核心技术包括数字化电源技术、高频PWM变流技术、全自动校准技术、高温加压充放电技术、高精度线性充放电技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高频SPWM/SVPWM变流技术",
+      "evidence_span": "公司的核心技术包括数字化电源技术、高频PWM变流技术、全自动校准技术、高温加压充放电技术、高精度线性充放电技术、高频SPWM/SVPWM变流技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "能量回收技术",
+      "evidence_span": "公司的核心技术包括数字化电源技术、高频PWM变流技术、全自动校准技术、高温加压充放电技术、高精度线性充放电技术、高频SPWM/SVPWM变流技术、能量回收技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国SK",
+      "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国三星",
+      "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国LG",
+      "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本索尼（现为日本村田）",
+      "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿纬锂能",
+      "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国轩高科",
+      "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欣旺达",
+      "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "远景动力",
+      "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天津力神",
+      "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本松下",
+      "evidence_span": "与日本松下、丰田等客户开展合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰田",
+      "evidence_span": "与日本松下、丰田等客户开展合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电动化大趋势",
+      "evidence_span": "受益电动化大趋势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "下游产能扩张",
+      "evidence_span": "受益于下游产能扩张"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "全球锂电扩产浪潮",
+      "evidence_span": "受益全球锂电扩产浪潮"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂离子电池生产线后处理系统设计",
+        "evidence_span": "始终致力于各类可充电电池，特别是锂离子电池的后处理系统的设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂离子电池生产线后处理系统研发",
+        "evidence_span": "始终致力于各类可充电电池，特别是锂离子电池的后处理系统的研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂离子电池生产线后处理系统生产",
+        "evidence_span": "始终致力于各类可充电电池，特别是锂离子电池的后处理系统的生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂离子电池生产线后处理系统销售",
+        "evidence_span": "始终致力于各类可充电电池，特别是锂离子电池的后处理系统的销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新能源锂电池化成分容成套生产设备系统集成商",
+        "evidence_span": "是全球一流的集销售、研发、制造、服务为一体的新能源锂电池化成分容成套生产设备系统集成商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电池后段处理系统设备及方案提供商",
+        "evidence_span": "杭可科技是一家面向全球化的锂电池后段处理系统设备及方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂离子电池生产线后处理系统整体解决方案提供商",
+        "evidence_span": "形成了锂离子电池生产线后处理系统整体的解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池充放电设备",
+        "evidence_span": "公司的主要产品有各类电池充放电设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "测试设备",
+        "evidence_span": "公司的主要产品有各类电池充放电设备、测试设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物流设备",
+        "evidence_span": "公司的主要产品有各类电池充放电设备、测试设备、物流设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配套软件系统",
+        "evidence_span": "公司的主要产品有各类电池充放电设备、测试设备、物流设备及相应配套软件系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充放电设备",
+        "evidence_span": "公司主要产品为充放电设备和内阻测试仪等其他设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内阻测试仪",
+        "evidence_span": "公司主要产品为充放电设备和内阻测试仪等其他设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圆柱电池充放电设备",
+        "evidence_span": "充放电设备分为圆柱电池充放电设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软包/聚合物电池充放电设备",
+        "evidence_span": "充放电设备分为圆柱电池充放电设备、软包/聚合物电池充放电设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方形电池充放电设备",
+        "evidence_span": "充放电设备分为圆柱电池充放电设备、软包/聚合物电池充放电设备、方形电池充放电设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4680大圆柱电池水冷一体充放电机",
+        "evidence_span": "研发出了一代4680圆柱设备的样机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方形锂电池分容一体机",
+        "evidence_span": "方形锂电池分容一体机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BOX型空压夹具机",
+        "evidence_span": "BOX型空压夹具机开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化电源技术",
+        "evidence_span": "公司的核心技术包括数字化电源技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高频PWM变流技术",
+        "evidence_span": "公司的核心技术包括数字化电源技术、高频PWM变流技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全自动校准技术",
+        "evidence_span": "公司的核心技术包括数字化电源技术、高频PWM变流技术、全自动校准技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高温加压充放电技术",
+        "evidence_span": "公司的核心技术包括数字化电源技术、高频PWM变流技术、全自动校准技术、高温加压充放电技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精度线性充放电技术",
+        "evidence_span": "公司的核心技术包括数字化电源技术、高频PWM变流技术、全自动校准技术、高温加压充放电技术、高精度线性充放电技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高频SPWM/SVPWM变流技术",
+        "evidence_span": "公司的核心技术包括数字化电源技术、高频PWM变流技术、全自动校准技术、高温加压充放电技术、高精度线性充放电技术、高频SPWM/SVPWM变流技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "能量回收技术",
+        "evidence_span": "公司的核心技术包括数字化电源技术、高频PWM变流技术、全自动校准技术、高温加压充放电技术、高精度线性充放电技术、高频SPWM/SVPWM变流技术、能量回收技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国SK",
+        "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国三星",
+        "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国LG",
+        "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本索尼（现为日本村田）",
+        "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿纬锂能",
+        "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国轩高科",
+        "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欣旺达",
+        "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "远景动力",
+        "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津力神",
+        "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "公司为韩国SK、韩国三星、韩国LG、日本索尼（现为日本村田）、亿纬锂能、比亚迪、国轩高科、欣旺达、远景动力、天津力神、宁德时代等国内外知名锂离子电池制造商配套供应各类锂离子电池生产线后处理系统设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本松下",
+        "evidence_span": "与日本松下、丰田等客户开展合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰田",
+        "evidence_span": "与日本松下、丰田等客户开展合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电动化大趋势",
+        "evidence_span": "受益电动化大趋势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "下游产能扩张",
+        "evidence_span": "受益于下游产能扩张"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "全球锂电扩产浪潮",
+        "evidence_span": "受益全球锂电扩产浪潮"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:31:06"
+}

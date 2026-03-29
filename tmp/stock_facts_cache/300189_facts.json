@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "杂交水稻种子的选育",
+      "evidence_span": "公司以杂交水稻种子的选育、制种、销售和技术服务为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "制种",
+      "evidence_span": "公司以杂交水稻种子的选育、制种、销售和技术服务为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司以杂交水稻种子的选育、制种、销售和技术服务为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务",
+      "evidence_span": "公司以杂交水稻种子的选育、制种、销售和技术服务为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水稻",
+      "evidence_span": "从事水稻、玉米、油料、蔬菜等农作物品种创新、生产、销售和技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "玉米",
+      "evidence_span": "从事水稻、玉米、油料、蔬菜等农作物品种创新、生产、销售和技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "油料",
+      "evidence_span": "从事水稻、玉米、油料、蔬菜等农作物品种创新、生产、销售和技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "蔬菜等农作物品种创新",
+      "evidence_span": "从事水稻、玉米、油料、蔬菜等农作物品种创新、生产、销售和技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "从事水稻、玉米、油料、蔬菜等农作物品种创新、生产、销售和技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农药",
+      "evidence_span": "以及农药、化肥的销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化肥的销售",
+      "evidence_span": "以及农药、化肥的销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农作物种业",
+      "evidence_span": "坚持“农作物种业+水产种业”双轮驱动"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水产种业",
+      "evidence_span": "坚持“农作物种业+水产种业”双轮驱动"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "育繁推一体化企业",
+      "evidence_span": "是首批获农业部颁证的农作物种子“育繁推一体化”企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农业产业化国家重点龙头企业",
+      "evidence_span": "公司被国家农业农村部等八部委审定为农业产业化国家重点龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海南省农业产业化重点龙头企业",
+      "evidence_span": "公司被海南省农业农村厅审定为海南省农业产业化重点龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海南省“专精特新”中小企业",
+      "evidence_span": "公司被海南省工信厅认定为海南省“专精特新”中小企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海南省高新技术种子企业",
+      "evidence_span": "公司被海南省科学技术厅认定为海南省高新技术种子企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国种业骨干企业",
+      "evidence_span": "公司被中国种子协会认定为中国种业骨干企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家火炬计划重点高新技术企业",
+      "evidence_span": "公司被科技部火炬高技术产业开发中心评选为国家火炬计划重点高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农作物种子",
+      "evidence_span": "公司主要产品为农作物种子"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "杂交水稻种子",
+      "evidence_span": "包括杂交水稻种子"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玉米种子",
+      "evidence_span": "玉米种子"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油菜种子",
+      "evidence_span": "油菜种子"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蔬菜瓜果种子",
+      "evidence_span": "蔬菜瓜果种子等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能稻米",
+      "evidence_span": "开发功能稻米业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色健康米粉、米线",
+      "evidence_span": "培育绿色健康米粉、米线等附加产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "舒糖米",
+      "evidence_span": "功能稻糖尿病人专用米--舒糖米"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一站式粮食生产供应链管理服务",
+      "evidence_span": "完善、推广“一站式粮食生产供应链管理服务”经营模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "杂交水稻制种超高产的方法",
+      "evidence_span": "公司杂交水稻制种发明专利《杂交水稻制种超高产的方法》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "杂交水稻制种方法",
+      "evidence_span": "另一项杂交水稻制种发明专利《杂交水稻制种方法》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "化学杀雄杂交油菜种子生产技术",
+      "evidence_span": "公司采用化学杀雄杂交油菜种子生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "甘蓝型油菜化学杀雄杂交种子生产技术规程",
+      "evidence_span": "起草地方标准《甘蓝型油菜化学杀雄杂交种子生产技术规程》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SPT技术",
+      "evidence_span": "SPT技术即将再获四项专利授予"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家庭农场、农民合作社、种粮大户等新型农业经营主体",
+      "evidence_span": "为纳入项目管理的家庭农场、农民合作社、种粮大户等新型农业经营主体提供土地流转、农资采购、技术服务、农产品销售"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "种源自主可控",
+      "evidence_span": "种源自主可控关乎国家核心利益"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "种业振兴",
+      "evidence_span": "种业振兴既是保障国家粮食安全与主要农产品有效供给的核心要素"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "杂交水稻种子的选育、制种、销售和技术服务",
+        "evidence_span": "公司以杂交水稻种子的选育、制种、销售和技术服务为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水稻、玉米、油料、蔬菜等农作物品种创新、生产、销售和技术服务",
+        "evidence_span": "从事水稻、玉米、油料、蔬菜等农作物品种创新、生产、销售和技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农药、化肥的销售",
+        "evidence_span": "以及农药、化肥的销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农作物种业",
+        "evidence_span": "坚持“农作物种业+水产种业”双轮驱动"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水产种业",
+        "evidence_span": "坚持“农作物种业+水产种业”双轮驱动"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "育繁推一体化企业",
+        "evidence_span": "是首批获农业部颁证的农作物种子“育繁推一体化”企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农业产业化国家重点龙头企业",
+        "evidence_span": "公司被国家农业农村部等八部委审定为农业产业化国家重点龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海南省农业产业化重点龙头企业",
+        "evidence_span": "公司被海南省农业农村厅审定为海南省农业产业化重点龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海南省“专精特新”中小企业",
+        "evidence_span": "公司被海南省工信厅认定为海南省“专精特新”中小企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海南省高新技术种子企业",
+        "evidence_span": "公司被海南省科学技术厅认定为海南省高新技术种子企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国种业骨干企业",
+        "evidence_span": "公司被中国种子协会认定为中国种业骨干企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家火炬计划重点高新技术企业",
+        "evidence_span": "公司被科技部火炬高技术产业开发中心评选为国家火炬计划重点高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农作物种子",
+        "evidence_span": "公司主要产品为农作物种子"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "杂交水稻种子",
+        "evidence_span": "包括杂交水稻种子"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玉米种子",
+        "evidence_span": "玉米种子"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油菜种子",
+        "evidence_span": "油菜种子"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蔬菜瓜果种子",
+        "evidence_span": "蔬菜瓜果种子等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能稻米",
+        "evidence_span": "开发功能稻米业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色健康米粉、米线",
+        "evidence_span": "培育绿色健康米粉、米线等附加产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "舒糖米",
+        "evidence_span": "功能稻糖尿病人专用米--舒糖米"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一站式粮食生产供应链管理服务",
+        "evidence_span": "完善、推广“一站式粮食生产供应链管理服务”经营模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "杂交水稻制种超高产的方法",
+        "evidence_span": "公司杂交水稻制种发明专利《杂交水稻制种超高产的方法》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "杂交水稻制种方法",
+        "evidence_span": "另一项杂交水稻制种发明专利《杂交水稻制种方法》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "化学杀雄杂交油菜种子生产技术",
+        "evidence_span": "公司采用化学杀雄杂交油菜种子生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "甘蓝型油菜化学杀雄杂交种子生产技术规程",
+        "evidence_span": "起草地方标准《甘蓝型油菜化学杀雄杂交种子生产技术规程》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SPT技术",
+        "evidence_span": "SPT技术即将再获四项专利授予"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家庭农场、农民合作社、种粮大户等新型农业经营主体",
+        "evidence_span": "为纳入项目管理的家庭农场、农民合作社、种粮大户等新型农业经营主体提供土地流转、农资采购、技术服务、农产品销售"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "种源自主可控",
+        "evidence_span": "种源自主可控关乎国家核心利益"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "种业振兴",
+        "evidence_span": "种业振兴既是保障国家粮食安全与主要农产品有效供给的核心要素"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:04:06"
+}

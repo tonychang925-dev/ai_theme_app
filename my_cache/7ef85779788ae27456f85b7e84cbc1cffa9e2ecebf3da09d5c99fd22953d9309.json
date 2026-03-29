@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:58:46", "result": {"chunk_id": "42d86324acaa", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段描述了市场监管总局等部门联合发布公告加强电动自行车产品准入要求，以及修订后的强制性国家标准实施时间（11月1日），包含政策发布和时间性事件，但也涉及行业规范管理这一知识元素。"}}

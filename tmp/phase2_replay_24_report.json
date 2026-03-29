@@ -1,0 +1,148 @@
+{
+  "generated_at": "2026-02-19T15:34:10.389259",
+  "sample_size": 24,
+  "result": {
+    "success": false,
+    "success_criteria": {
+      "events_published": true,
+      "decisions_generated": false,
+      "theme_updates_generated": false,
+      "processor_working": true,
+      "executor_working": true
+    },
+    "stream_stats": {
+      "stream:events:major": 0,
+      "stream:events:normal": 0,
+      "stream:events:pending": 0,
+      "stream:events:decision": 0,
+      "stream:themes:updates": 0,
+      "stream:dead:letter": 0
+    },
+    "decision_details": [
+      {
+        "message_id": "1771485896089-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110839_631063",
+        "decision_id": "decision_1771485896_5867929383425289578",
+        "trace_id": "trace_event_20260203110839_631063",
+        "timestamp": "2026-02-19T15:24:56.086194"
+      },
+      {
+        "message_id": "1771485897455-0",
+        "decision_type": "match_success_in_category",
+        "action": "update_theme",
+        "event_id": "event_20260203110754_fc4062",
+        "decision_id": "decision_1771485897_8684748523070342172",
+        "trace_id": "trace_event_20260203110754_fc4062",
+        "timestamp": "2026-02-19T15:24:57.454135"
+      },
+      {
+        "message_id": "1771485899320-0",
+        "decision_type": "match_success_in_category",
+        "action": "update_theme",
+        "event_id": "event_20260203110757_2dad4d",
+        "decision_id": "decision_1771485899_-7245721463479537657",
+        "trace_id": "trace_event_20260203110757_2dad4d",
+        "timestamp": "2026-02-19T15:24:59.311132"
+      },
+      {
+        "message_id": "1771485896089-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110839_631063",
+        "decision_id": "decision_1771485896_5867929383425289578",
+        "trace_id": "trace_event_20260203110839_631063",
+        "timestamp": "2026-02-19T15:24:56.086194"
+      },
+      {
+        "message_id": "1771485897455-0",
+        "decision_type": "match_success_in_category",
+        "action": "update_theme",
+        "event_id": "event_20260203110754_fc4062",
+        "decision_id": "decision_1771485897_8684748523070342172",
+        "trace_id": "trace_event_20260203110754_fc4062",
+        "timestamp": "2026-02-19T15:24:57.454135"
+      },
+      {
+        "message_id": "1771485899320-0",
+        "decision_type": "match_success_in_category",
+        "action": "update_theme",
+        "event_id": "event_20260203110757_2dad4d",
+        "decision_id": "decision_1771485899_-7245721463479537657",
+        "trace_id": "trace_event_20260203110757_2dad4d",
+        "timestamp": "2026-02-19T15:24:59.311132"
+      },
+      {
+        "message_id": "1771485896089-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110839_631063",
+        "decision_id": "decision_1771485896_5867929383425289578",
+        "trace_id": "trace_event_20260203110839_631063",
+        "timestamp": "2026-02-19T15:24:56.086194"
+      },
+      {
+        "message_id": "1771485897455-0",
+        "decision_type": "match_success_in_category",
+        "action": "update_theme",
+        "event_id": "event_20260203110754_fc4062",
+        "decision_id": "decision_1771485897_8684748523070342172",
+        "trace_id": "trace_event_20260203110754_fc4062",
+        "timestamp": "2026-02-19T15:24:57.454135"
+      },
+      {
+        "message_id": "1771485899320-0",
+        "decision_type": "match_success_in_category",
+        "action": "update_theme",
+        "event_id": "event_20260203110757_2dad4d",
+        "decision_id": "decision_1771485899_-7245721463479537657",
+        "trace_id": "trace_event_20260203110757_2dad4d",
+        "timestamp": "2026-02-19T15:24:59.311132"
+      },
+      {
+        "message_id": "1771485896089-0",
+        "decision_type": "match_success_fallback",
+        "action": "update_theme",
+        "event_id": "event_20260203110839_631063",
+        "decision_id": "decision_1771485896_5867929383425289578",
+        "trace_id": "trace_event_20260203110839_631063",
+        "timestamp": "2026-02-19T15:24:56.086194"
+      },
+      {
+        "message_id": "1771485897455-0",
+        "decision_type": "match_success_in_category",
+        "action": "update_theme",
+        "event_id": "event_20260203110754_fc4062",
+        "decision_id": "decision_1771485897_8684748523070342172",
+        "trace_id": "trace_event_20260203110754_fc4062",
+        "timestamp": "2026-02-19T15:24:57.454135"
+      },
+      {
+        "message_id": "1771485899320-0",
+        "decision_type": "match_success_in_category",
+        "action": "update_theme",
+        "event_id": "event_20260203110757_2dad4d",
+        "decision_id": "decision_1771485899_-7245721463479537657",
+        "trace_id": "trace_event_20260203110757_2dad4d",
+        "timestamp": "2026-02-19T15:24:59.311132"
+      }
+    ],
+    "create_new_theme_details": [],
+    "t04_validation": {
+      "publish_clustering_decision": false,
+      "pending_written": false,
+      "pending_matches_publish_decision_id": false,
+      "pending_trace_id_present": false,
+      "decision_ack_verified": true,
+      "decision_executor_pending_count": 0
+    },
+    "t03_validation": {
+      "create_new_theme_decisions": 0,
+      "classification_source_upstream_count": 0,
+      "classification_source_ai_keywords_count": 0,
+      "concept_hierarchy_created_count": 0,
+      "all_create_decisions_have_classification_source": true
+    }
+  }
+}

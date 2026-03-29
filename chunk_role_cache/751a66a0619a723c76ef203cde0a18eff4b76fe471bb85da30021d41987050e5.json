@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "06ef944174cc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述内蒙古政策发布事件，但包含具体改革目标（如到2027年管理体系完善），可能隐含低空空域管理知识，混合了事件和潜在知识。"}}

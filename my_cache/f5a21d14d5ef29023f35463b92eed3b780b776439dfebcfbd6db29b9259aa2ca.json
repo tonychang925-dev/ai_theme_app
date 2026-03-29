@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "d94a93ed453c", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述上海合作组织国防部长会议在青岛举行及防长到会情况，是具体会议事件，无陆军定义、结构或机制等知识。"}}

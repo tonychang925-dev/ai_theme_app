@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "农业综合服务",
+      "evidence_span": "农业综合服务业务主要由公司下属惠多利、浙农爱普、浙农金泰、石原金牛等公司负责运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车商贸服务",
+      "evidence_span": "汽车商贸服务业务主要由公司下属金昌汽车、金诚汽车公司负责运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药生产销售",
+      "evidence_span": "公司新设了浙江华通医药集团有限公司整体承接医药生产销售业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国供销社系统城乡商贸服务业龙头企业",
+      "evidence_span": "是全国供销社系统城乡商贸服务业龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "浙江省供销社服务“三农”的最重要抓手",
+      "evidence_span": "公司是浙江省供销社服务“三农”的最重要抓手"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化肥",
+      "evidence_span": "代理经销优质高效农资商品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农药",
+      "evidence_span": "代理经销优质高效农资商品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整车销售",
+      "evidence_span": "建设集整车销售、零配件、售后服务、信息反馈四位一体的汽车销售企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "零配件",
+      "evidence_span": "建设集整车销售、零配件、售后服务、信息反馈四位一体的汽车销售企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "售后服务",
+      "evidence_span": "建设集整车销售、零配件、售后服务、信息反馈四位一体的汽车销售企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药品批发",
+      "evidence_span": "公司医药业务集药品批发、药品零售、中药生产销售、医药物流、医疗服务为一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药品零售",
+      "evidence_span": "公司医药业务集药品批发、药品零售、中药生产销售、医药物流、医疗服务为一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药生产销售",
+      "evidence_span": "公司医药业务集药品批发、药品零售、中药生产销售、医药物流、医疗服务为一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药物流",
+      "evidence_span": "公司医药业务集药品批发、药品零售、中药生产销售、医药物流、医疗服务为一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗服务",
+      "evidence_span": "公司医药业务集药品批发、药品零售、中药生产销售、医药物流、医疗服务为一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三方医药物流",
+      "evidence_span": "全新拓展第三方医药物流业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药配方颗粒",
+      "evidence_span": "完成了大量中药配方颗粒标准验证和工艺质量研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "测土配方",
+      "evidence_span": "通过测土配方、植保飞防等手段参与精准农业推广"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "植保飞防",
+      "evidence_span": "通过测土配方、植保飞防等手段参与精准农业推广"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧农资平台",
+      "evidence_span": "建设智慧农资平台，发展线上服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "经典名方研制",
+      "evidence_span": "开展了经典名方研制"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "基层经销商",
+      "evidence_span": "向基层经销商、种植大户、专业合作社提供全程化综合服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "种植大户",
+      "evidence_span": "向基层经销商、种植大户、专业合作社提供全程化综合服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "专业合作社",
+      "evidence_span": "向基层经销商、种植大户、专业合作社提供全程化综合服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "MINI",
+      "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奥迪",
+      "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "凯迪拉克",
+      "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "别克",
+      "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "庆铃",
+      "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽大通",
+      "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "中药配方颗粒",
+      "evidence_span": "浙农股份中药配方颗粒政策风口，“一机两翼”，腾飞在即"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "农业综合服务",
+        "evidence_span": "农业综合服务业务主要由公司下属惠多利、浙农爱普、浙农金泰、石原金牛等公司负责运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车商贸服务",
+        "evidence_span": "汽车商贸服务业务主要由公司下属金昌汽车、金诚汽车公司负责运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药生产销售",
+        "evidence_span": "公司新设了浙江华通医药集团有限公司整体承接医药生产销售业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国供销社系统城乡商贸服务业龙头企业",
+        "evidence_span": "是全国供销社系统城乡商贸服务业龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "浙江省供销社服务“三农”的最重要抓手",
+        "evidence_span": "公司是浙江省供销社服务“三农”的最重要抓手"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化肥",
+        "evidence_span": "代理经销优质高效农资商品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农药",
+        "evidence_span": "代理经销优质高效农资商品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整车销售",
+        "evidence_span": "建设集整车销售、零配件、售后服务、信息反馈四位一体的汽车销售企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "零配件",
+        "evidence_span": "建设集整车销售、零配件、售后服务、信息反馈四位一体的汽车销售企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "售后服务",
+        "evidence_span": "建设集整车销售、零配件、售后服务、信息反馈四位一体的汽车销售企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药品批发",
+        "evidence_span": "公司医药业务集药品批发、药品零售、中药生产销售、医药物流、医疗服务为一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药品零售",
+        "evidence_span": "公司医药业务集药品批发、药品零售、中药生产销售、医药物流、医疗服务为一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药生产销售",
+        "evidence_span": "公司医药业务集药品批发、药品零售、中药生产销售、医药物流、医疗服务为一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药物流",
+        "evidence_span": "公司医药业务集药品批发、药品零售、中药生产销售、医药物流、医疗服务为一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗服务",
+        "evidence_span": "公司医药业务集药品批发、药品零售、中药生产销售、医药物流、医疗服务为一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三方医药物流",
+        "evidence_span": "全新拓展第三方医药物流业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药配方颗粒",
+        "evidence_span": "完成了大量中药配方颗粒标准验证和工艺质量研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "测土配方",
+        "evidence_span": "通过测土配方、植保飞防等手段参与精准农业推广"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "植保飞防",
+        "evidence_span": "通过测土配方、植保飞防等手段参与精准农业推广"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧农资平台",
+        "evidence_span": "建设智慧农资平台，发展线上服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "经典名方研制",
+        "evidence_span": "开展了经典名方研制"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "基层经销商",
+        "evidence_span": "向基层经销商、种植大户、专业合作社提供全程化综合服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "种植大户",
+        "evidence_span": "向基层经销商、种植大户、专业合作社提供全程化综合服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "专业合作社",
+        "evidence_span": "向基层经销商、种植大户、专业合作社提供全程化综合服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "MINI",
+        "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奥迪",
+        "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "凯迪拉克",
+        "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "别克",
+        "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "庆铃",
+        "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽大通",
+        "evidence_span": "取得了宝马、MINI、奥迪、凯迪拉克、别克、庆铃、上汽大通等著名品牌的区域经销权"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "中药配方颗粒",
+        "evidence_span": "浙农股份中药配方颗粒政策风口，“一机两翼”，腾飞在即"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:30:51"
+}

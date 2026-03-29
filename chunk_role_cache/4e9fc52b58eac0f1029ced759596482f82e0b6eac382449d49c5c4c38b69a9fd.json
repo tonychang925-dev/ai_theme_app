@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "b54015485dff", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述了台积电CoWoS先进封装技术的应用（如被英伟达、AMD采用）和产能状况，这提供了关于封装技术作为半导体设备一部分的稳定知识；但也混合了需求激增、产能紧缺和台积电总裁表态等事件性内容。"}}

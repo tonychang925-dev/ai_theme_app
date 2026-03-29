@@ -1,0 +1,519 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电力线载波通信芯片",
+      "evidence_span": "主要从事电力线载波通信芯片、智能电网设备及智慧消防产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能电网设备",
+      "evidence_span": "主要从事电力线载波通信芯片、智能电网设备及智慧消防产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧消防产品",
+      "evidence_span": "主要从事电力线载波通信芯片、智能电网设备及智慧消防产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能电网的设备供应商和解决方案提供商",
+      "evidence_span": "公司作为智能电网的设备供应商和解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "载波通信模块提供商",
+      "evidence_span": "鼎信通讯高毛利率的载波通信模块提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "窄带载波通信芯片",
+      "evidence_span": "公司拥有窄带载波、宽带载波（HPLC）、微功率无线、载波＆微功率无线双模等通信芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "宽带载波（HPLC）通信芯片",
+      "evidence_span": "公司拥有窄带载波、宽带载波（HPLC）、微功率无线、载波＆微功率无线双模等通信芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微功率无线通信芯片",
+      "evidence_span": "公司拥有窄带载波、宽带载波（HPLC）、微功率无线、载波＆微功率无线双模等通信芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "载波＆微功率无线双模通信芯片",
+      "evidence_span": "公司拥有窄带载波、宽带载波（HPLC）、微功率无线、载波＆微功率无线双模等通信芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "采集通信模块",
+      "evidence_span": "采集通信模块、采集通信系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "采集通信系统",
+      "evidence_span": "采集通信模块、采集通信系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电能计量产品",
+      "evidence_span": "公司拥有各种电压等级、各种精度等级、各种接线形式、各种电流规格、各种费控形式、各种电源类型的电能计量产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低压集抄集中器",
+      "evidence_span": "公司拥有低压集抄集中器、专变采集终端、配变终端、智能融合终端、能源控制器、量测终端和台区各类监控终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专变采集终端",
+      "evidence_span": "公司拥有低压集抄集中器、专变采集终端、配变终端、智能融合终端、能源控制器、量测终端和台区各类监控终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配变终端",
+      "evidence_span": "公司拥有低压集抄集中器、专变采集终端、配变终端、智能融合终端、能源控制器、量测终端和台区各类监控终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能融合终端",
+      "evidence_span": "公司拥有低压集抄集中器、专变采集终端、配变终端、智能融合终端、能源控制器、量测终端和台区各类监控终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能源控制器",
+      "evidence_span": "公司拥有低压集抄集中器、专变采集终端、配变终端、智能融合终端、能源控制器、量测终端和台区各类监控终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "量测终端",
+      "evidence_span": "公司拥有低压集抄集中器、专变采集终端、配变终端、智能融合终端、能源控制器、量测终端和台区各类监控终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TTU",
+      "evidence_span": "包括 TTU、LTU、融合终端等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LTU",
+      "evidence_span": "包括 TTU、LTU、融合终端等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融合终端",
+      "evidence_span": "包括 TTU、LTU、融合终端等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FTU",
+      "evidence_span": "公司拥有 FTU、DTU 等配电监测终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DTU",
+      "evidence_span": "公司拥有 FTU、DTU 等配电监测终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基于中压载波的一二次深度融合产品",
+      "evidence_span": "基于中压载波的一二次深度融合产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低压智能开关",
+      "evidence_span": "低压智能开关、故障指示器等可靠产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "故障指示器",
+      "evidence_span": "低压智能开关、故障指示器等可靠产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "火灾报警产品",
+      "evidence_span": "公司更新火灾报警、电气火灾、防火门监控产品等 100 余款产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电气火灾产品",
+      "evidence_span": "公司更新火灾报警、电气火灾、防火门监控产品等 100 余款产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防火门监控产品",
+      "evidence_span": "公司更新火灾报警、电气火灾、防火门监控产品等 100 余款产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多端柔性互联的能量路由器",
+      "evidence_span": "包括多端柔性互联的能量路由器、实现低压台区柔性互联的交直流微网变流器 PCS、实现台区内互济的柔性直流互济装置 FVR、台区三相不平衡治理装置 AUC、台区无功调控及谐波治理装置 SVG 等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交直流微网变流器 PCS",
+      "evidence_span": "包括多端柔性互联的能量路由器、实现低压台区柔性互联的交直流微网变流器 PCS、实现台区内互济的柔性直流互济装置 FVR、台区三相不平衡治理装置 AUC、台区无功调控及谐波治理装置 SVG 等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "柔性直流互济装置 FVR",
+      "evidence_span": "包括多端柔性互联的能量路由器、实现低压台区柔性互联的交直流微网变流器 PCS、实现台区内互济的柔性直流互济装置 FVR、台区三相不平衡治理装置 AUC、台区无功调控及谐波治理装置 SVG 等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "台区三相不平衡治理装置 AUC",
+      "evidence_span": "包括多端柔性互联的能量路由器、实现低压台区柔性互联的交直流微网变流器 PCS、实现台区内互济的柔性直流互济装置 FVR、台区三相不平衡治理装置 AUC、台区无功调控及谐波治理装置 SVG 等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "台区无功调控及谐波治理装置 SVG",
+      "evidence_span": "包括多端柔性互联的能量路由器、实现低压台区柔性互联的交直流微网变流器 PCS、实现台区内互济的柔性直流互济装置 FVR、台区三相不平衡治理装置 AUC、台区无功调控及谐波治理装置 SVG 等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏协议转换器",
+      "evidence_span": "包括光伏协议转换器、光伏接口转换器、物联网表光伏模组、直通直控型光伏逆变器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏接口转换器",
+      "evidence_span": "包括光伏协议转换器、光伏接口转换器、物联网表光伏模组、直通直控型光伏逆变器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物联网表光伏模组",
+      "evidence_span": "包括光伏协议转换器、光伏接口转换器、物联网表光伏模组、直通直控型光伏逆变器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直通直控型光伏逆变器",
+      "evidence_span": "包括光伏协议转换器、光伏接口转换器、物联网表光伏模组、直通直控型光伏逆变器等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电力线载波通信技术",
+      "evidence_span": "专注载波通信技术,搭乘电力物联网东风"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "芯片、方案、应用开发的垂直整合",
+      "evidence_span": "形成了芯片、方案、应用开发的垂直整合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核心部件的制造自我控制",
+      "evidence_span": "并将核心部件的制造自我控制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电力电子柔性直流技术",
+      "evidence_span": "公司推出了基于电力电子柔性直流技术的新能源系列产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "用电信息采集的技术优势",
+      "evidence_span": "依托用电信息采集的技术优势"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网公司",
+      "evidence_span": "是国家电网公司、南方电网公司及各省级电力公司等客户的核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网公司",
+      "evidence_span": "是国家电网公司、南方电网公司及各省级电力公司等客户的核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各省级电力公司",
+      "evidence_span": "是国家电网公司、南方电网公司及各省级电力公司等客户的核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金茂",
+      "evidence_span": "新签约金茂、泰康集团、中建五局、中铁建设等优质房企、总包单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "泰康集团",
+      "evidence_span": "新签约金茂、泰康集团、中建五局、中铁建设等优质房企、总包单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中建五局",
+      "evidence_span": "新签约金茂、泰康集团、中建五局、中铁建设等优质房企、总包单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁建设",
+      "evidence_span": "新签约金茂、泰康集团、中建五局、中铁建设等优质房企、总包单位"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电力物联网",
+      "evidence_span": "专注载波通信技术,搭乘电力物联网东风"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电力线载波通信芯片",
+        "evidence_span": "主要从事电力线载波通信芯片、智能电网设备及智慧消防产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能电网设备",
+        "evidence_span": "主要从事电力线载波通信芯片、智能电网设备及智慧消防产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧消防产品",
+        "evidence_span": "主要从事电力线载波通信芯片、智能电网设备及智慧消防产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能电网的设备供应商和解决方案提供商",
+        "evidence_span": "公司作为智能电网的设备供应商和解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "载波通信模块提供商",
+        "evidence_span": "鼎信通讯高毛利率的载波通信模块提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "窄带载波通信芯片",
+        "evidence_span": "公司拥有窄带载波、宽带载波（HPLC）、微功率无线、载波＆微功率无线双模等通信芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "宽带载波（HPLC）通信芯片",
+        "evidence_span": "公司拥有窄带载波、宽带载波（HPLC）、微功率无线、载波＆微功率无线双模等通信芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微功率无线通信芯片",
+        "evidence_span": "公司拥有窄带载波、宽带载波（HPLC）、微功率无线、载波＆微功率无线双模等通信芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "载波＆微功率无线双模通信芯片",
+        "evidence_span": "公司拥有窄带载波、宽带载波（HPLC）、微功率无线、载波＆微功率无线双模等通信芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "采集通信模块",
+        "evidence_span": "采集通信模块、采集通信系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "采集通信系统",
+        "evidence_span": "采集通信模块、采集通信系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电能计量产品",
+        "evidence_span": "公司拥有各种电压等级、各种精度等级、各种接线形式、各种电流规格、各种费控形式、各种电源类型的电能计量产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低压集抄集中器",
+        "evidence_span": "公司拥有低压集抄集中器、专变采集终端、配变终端、智能融合终端、能源控制器、量测终端和台区各类监控终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专变采集终端",
+        "evidence_span": "公司拥有低压集抄集中器、专变采集终端、配变终端、智能融合终端、能源控制器、量测终端和台区各类监控终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配变终端",
+        "evidence_span": "公司拥有低压集抄集中器、专变采集终端、配变终端、智能融合终端、能源控制器、量测终端和台区各类监控终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能融合终端",
+        "evidence_span": "公司拥有低压集抄集中器、专变采集终端、配变终端、智能融合终端、能源控制器、量测终端和台区各类监控终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能源控制器",
+        "evidence_span": "公司拥有低压集抄集中器、专变采集终端、配变终端、智能融合终端、能源控制器、量测终端和台区各类监控终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "量测终端",
+        "evidence_span": "公司拥有低压集抄集中器、专变采集终端、配变终端、智能融合终端、能源控制器、量测终端和台区各类监控终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TTU",
+        "evidence_span": "包括 TTU、LTU、融合终端等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LTU",
+        "evidence_span": "包括 TTU、LTU、融合终端等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融合终端",
+        "evidence_span": "包括 TTU、LTU、融合终端等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FTU",
+        "evidence_span": "公司拥有 FTU、DTU 等配电监测终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DTU",
+        "evidence_span": "公司拥有 FTU、DTU 等配电监测终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基于中压载波的一二次深度融合产品",
+        "evidence_span": "基于中压载波的一二次深度融合产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低压智能开关",
+        "evidence_span": "低压智能开关、故障指示器等可靠产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "故障指示器",
+        "evidence_span": "低压智能开关、故障指示器等可靠产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "火灾报警产品",
+        "evidence_span": "公司更新火灾报警、电气火灾、防火门监控产品等 100 余款产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电气火灾产品",
+        "evidence_span": "公司更新火灾报警、电气火灾、防火门监控产品等 100 余款产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防火门监控产品",
+        "evidence_span": "公司更新火灾报警、电气火灾、防火门监控产品等 100 余款产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多端柔性互联的能量路由器",
+        "evidence_span": "包括多端柔性互联的能量路由器、实现低压台区柔性互联的交直流微网变流器 PCS、实现台区内互济的柔性直流互济装置 FVR、台区三相不平衡治理装置 AUC、台区无功调控及谐波治理装置 SVG 等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交直流微网变流器 PCS",
+        "evidence_span": "包括多端柔性互联的能量路由器、实现低压台区柔性互联的交直流微网变流器 PCS、实现台区内互济的柔性直流互济装置 FVR、台区三相不平衡治理装置 AUC、台区无功调控及谐波治理装置 SVG 等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "柔性直流互济装置 FVR",
+        "evidence_span": "包括多端柔性互联的能量路由器、实现低压台区柔性互联的交直流微网变流器 PCS、实现台区内互济的柔性直流互济装置 FVR、台区三相不平衡治理装置 AUC、台区无功调控及谐波治理装置 SVG 等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "台区三相不平衡治理装置 AUC",
+        "evidence_span": "包括多端柔性互联的能量路由器、实现低压台区柔性互联的交直流微网变流器 PCS、实现台区内互济的柔性直流互济装置 FVR、台区三相不平衡治理装置 AUC、台区无功调控及谐波治理装置 SVG 等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "台区无功调控及谐波治理装置 SVG",
+        "evidence_span": "包括多端柔性互联的能量路由器、实现低压台区柔性互联的交直流微网变流器 PCS、实现台区内互济的柔性直流互济装置 FVR、台区三相不平衡治理装置 AUC、台区无功调控及谐波治理装置 SVG 等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏协议转换器",
+        "evidence_span": "包括光伏协议转换器、光伏接口转换器、物联网表光伏模组、直通直控型光伏逆变器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏接口转换器",
+        "evidence_span": "包括光伏协议转换器、光伏接口转换器、物联网表光伏模组、直通直控型光伏逆变器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物联网表光伏模组",
+        "evidence_span": "包括光伏协议转换器、光伏接口转换器、物联网表光伏模组、直通直控型光伏逆变器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直通直控型光伏逆变器",
+        "evidence_span": "包括光伏协议转换器、光伏接口转换器、物联网表光伏模组、直通直控型光伏逆变器等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电力线载波通信技术",
+        "evidence_span": "专注载波通信技术,搭乘电力物联网东风"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "芯片、方案、应用开发的垂直整合",
+        "evidence_span": "形成了芯片、方案、应用开发的垂直整合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核心部件的制造自我控制",
+        "evidence_span": "并将核心部件的制造自我控制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电力电子柔性直流技术",
+        "evidence_span": "公司推出了基于电力电子柔性直流技术的新能源系列产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "用电信息采集的技术优势",
+        "evidence_span": "依托用电信息采集的技术优势"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网公司",
+        "evidence_span": "是国家电网公司、南方电网公司及各省级电力公司等客户的核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网公司",
+        "evidence_span": "是国家电网公司、南方电网公司及各省级电力公司等客户的核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各省级电力公司",
+        "evidence_span": "是国家电网公司、南方电网公司及各省级电力公司等客户的核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金茂",
+        "evidence_span": "新签约金茂、泰康集团、中建五局、中铁建设等优质房企、总包单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "泰康集团",
+        "evidence_span": "新签约金茂、泰康集团、中建五局、中铁建设等优质房企、总包单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中建五局",
+        "evidence_span": "新签约金茂、泰康集团、中建五局、中铁建设等优质房企、总包单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁建设",
+        "evidence_span": "新签约金茂、泰康集团、中建五局、中铁建设等优质房企、总包单位"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电力物联网",
+        "evidence_span": "专注载波通信技术,搭乘电力物联网东风"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:22:46"
+}

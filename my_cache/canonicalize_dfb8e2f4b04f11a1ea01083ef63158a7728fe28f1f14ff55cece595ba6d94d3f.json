@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:18:14", "result": {"span_uid": "719dd3830d65", "action": "rewrite", "canonical_text": "半导体设备领域涵盖涂胶显影、刻蚀、薄膜沉积、清洗、去胶、离子注入、CMP、封装测试等关键环节。", "final_type": "core", "final_role": "关键环节构成", "stability": "high", "reason": "原片段为事件中的企业列表，但上下文揭示了半导体设备的关键环节，改写为稳定、独立的本体知识。"}}

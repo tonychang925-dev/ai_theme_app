@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "8b23463f2fb6", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落涉及ASML对EUV技术扩展的预期，包含静态知识（EUV技术、光刻产品组合），但以公司声明形式呈现，带有事件性（预计），可能混有动态信息。"}}

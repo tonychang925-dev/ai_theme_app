@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:43", "result": {"chunk_id": "29b98f1c9ac6", "label": "candidate_mixed", "confidence": 0.6, "ontology_value": "medium", "reason": "段落提及广东推动刻蚀机等光芯片关键装备研发和国产化替代，包含政策导向（事件元素）和装备类型（知识元素），可能隐含设备发展信息，需裁决。"}}

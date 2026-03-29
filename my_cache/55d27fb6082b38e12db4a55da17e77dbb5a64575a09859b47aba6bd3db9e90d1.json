@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:57:40", "result": {"chunk_id": "eeb16b3a1be2", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落混合了事件（如规程批准发布阶段和东莞检测站涨价事件）和潜在知识（如新能源汽车检测规程的进展），可能含有对题材有用的信息，但需进一步裁决以分离事件和静态知识。"}}

@@ -1,0 +1,529 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能装备产业",
+      "evidence_span": "已形成四大产业方向，分别为以汽车智能装备及散料输送设备为主的智能装备产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电池循环产业",
+      "evidence_span": "以锂电池回收及循环利用为主的锂电池循环产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "循环装备产业",
+      "evidence_span": "以再生资源加工装备及报废汽车回收再利用业务为主的循环装备产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "重工机械产业",
+      "evidence_span": "以风电铸件业务为主的重工机械产业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车智能装备供应商",
+      "evidence_span": "少数技术实力雄厚、生产规模较大的汽车智能装备供应商已在国际竞争中崭露头角"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电池回收循环利用企业",
+      "evidence_span": "专注于锂电池回收、梯次利用及再生利用"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "报废汽车回收拆解企业",
+      "evidence_span": "报废汽车回收再利用业务以子公司宁波回收为核心开展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "风电铸件供应商",
+      "evidence_span": "重工机械业务为重工装备铸件的研发、生产及销售，为风力发电、塑料机械、船舶动力等下游行业提供铸件产品配套"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车总装生产线系统",
+      "evidence_span": "产品包括以柔性输送系统、自动化装备系统、智能检测系统、智能物流系统为核心的汽车总装生产线系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车涂装生产线系统",
+      "evidence_span": "以工艺设备、输送设备及电控系统、智能中控系统为核心的汽车涂装生产线系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车身自动化储存系统",
+      "evidence_span": "车身自动化储存系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "远程故障诊断分析与预测维修",
+      "evidence_span": "远程故障诊断分析与预测维修"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "散料输送设备",
+      "evidence_span": "散料输送设备业务以公司全资子公司铜陵天奇开展，主要产品为各类带式输送设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池梯次利用产品与服务",
+      "evidence_span": "天奇新动力专注于锂电池梯次利用产品与服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫酸钴",
+      "evidence_span": "其主要产品包括硫酸钴"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氧化钴",
+      "evidence_span": "氧化钴"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫酸锰",
+      "evidence_span": "硫酸锰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫酸镍",
+      "evidence_span": "硫酸镍"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢氧化亚镍",
+      "evidence_span": "氢氧化亚镍"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳酸锂",
+      "evidence_span": "碳酸锂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池级磷酸铁",
+      "evidence_span": "电池级磷酸铁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "废钢加工设备",
+      "evidence_span": "业务涵盖废钢加工设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "报废汽车拆解设备",
+      "evidence_span": "报废汽车拆解设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池破碎设备",
+      "evidence_span": "锂电池破碎设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷石膏综合处理装备",
+      "evidence_span": "磷石膏综合处理装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "报废汽车回收拆解业务",
+      "evidence_span": "报废汽车回收再利用业务以子公司宁波回收为核心开展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大型风力发电机组用轮毂",
+      "evidence_span": "主要产品为大型风力发电机组用轮毂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "底座",
+      "evidence_span": "底座"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轴承座",
+      "evidence_span": "轴承座"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "行星架",
+      "evidence_span": "行星架"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "废旧锂电池物理破碎绿色环保工艺技术解决方案",
+      "evidence_span": "成功研发废旧锂电池物理破碎绿色环保工艺技术解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磷酸铁锂电池全组分回收技术",
+      "evidence_span": "该项目采用国内领先的磷酸铁锂电池全组分回收技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "湿法冶炼短流程一步浸出再生技术",
+      "evidence_span": "采用湿法冶炼短流程一步浸出再生技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "理想",
+      "evidence_span": "主要客户包括理想"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特斯拉",
+      "evidence_span": "特斯拉"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "蔚来"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "宝马"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安",
+      "evidence_span": "长安"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本田",
+      "evidence_span": "本田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰田",
+      "evidence_span": "丰田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "GE能源",
+      "evidence_span": "主要客户包括GE能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恩德能源",
+      "evidence_span": "恩德能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "远景能源",
+      "evidence_span": "远景能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东科技",
+      "evidence_span": "公司与京东科技展开战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽集团",
+      "evidence_span": "公司与一汽集团将围绕《汽车产品生产者责任延伸试点实施方案》开展报废汽车回收拆解、汽车核心零部件再制造、动力电池回收综合利用等领域的全方位深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "爱驰汽车有限公司",
+      "evidence_span": "公司与爱驰汽车有限公司、参股公司万高（上海）汽车科技有限公司三方共同签署《战略合作框架协议》"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "斯泰兰蒂斯（上海）汽车有限公司",
+      "evidence_span": "公司与斯泰兰蒂斯（上海）汽车有限公司签署长期服务协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Stellantis集团",
+      "evidence_span": "公司与Stellantis集团签署备忘录"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蜂巢能源",
+      "evidence_span": "公司与蜂巢能源签署《动力电池回收利用湿法冶金项目合资协议书》"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车行业发展",
+      "evidence_span": "受益新能源汽车行业发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "锂电池回收",
+      "evidence_span": "深耕锂电回收"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能装备产业",
+        "evidence_span": "已形成四大产业方向，分别为以汽车智能装备及散料输送设备为主的智能装备产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电池循环产业",
+        "evidence_span": "以锂电池回收及循环利用为主的锂电池循环产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "循环装备产业",
+        "evidence_span": "以再生资源加工装备及报废汽车回收再利用业务为主的循环装备产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "重工机械产业",
+        "evidence_span": "以风电铸件业务为主的重工机械产业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车智能装备供应商",
+        "evidence_span": "少数技术实力雄厚、生产规模较大的汽车智能装备供应商已在国际竞争中崭露头角"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电池回收循环利用企业",
+        "evidence_span": "专注于锂电池回收、梯次利用及再生利用"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "报废汽车回收拆解企业",
+        "evidence_span": "报废汽车回收再利用业务以子公司宁波回收为核心开展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "风电铸件供应商",
+        "evidence_span": "重工机械业务为重工装备铸件的研发、生产及销售，为风力发电、塑料机械、船舶动力等下游行业提供铸件产品配套"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车总装生产线系统",
+        "evidence_span": "产品包括以柔性输送系统、自动化装备系统、智能检测系统、智能物流系统为核心的汽车总装生产线系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车涂装生产线系统",
+        "evidence_span": "以工艺设备、输送设备及电控系统、智能中控系统为核心的汽车涂装生产线系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车身自动化储存系统",
+        "evidence_span": "车身自动化储存系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "远程故障诊断分析与预测维修",
+        "evidence_span": "远程故障诊断分析与预测维修"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "散料输送设备",
+        "evidence_span": "散料输送设备业务以公司全资子公司铜陵天奇开展，主要产品为各类带式输送设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池梯次利用产品与服务",
+        "evidence_span": "天奇新动力专注于锂电池梯次利用产品与服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫酸钴",
+        "evidence_span": "其主要产品包括硫酸钴"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氧化钴",
+        "evidence_span": "氧化钴"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫酸锰",
+        "evidence_span": "硫酸锰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫酸镍",
+        "evidence_span": "硫酸镍"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢氧化亚镍",
+        "evidence_span": "氢氧化亚镍"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳酸锂",
+        "evidence_span": "碳酸锂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池级磷酸铁",
+        "evidence_span": "电池级磷酸铁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "废钢加工设备",
+        "evidence_span": "业务涵盖废钢加工设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "报废汽车拆解设备",
+        "evidence_span": "报废汽车拆解设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池破碎设备",
+        "evidence_span": "锂电池破碎设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷石膏综合处理装备",
+        "evidence_span": "磷石膏综合处理装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "报废汽车回收拆解业务",
+        "evidence_span": "报废汽车回收再利用业务以子公司宁波回收为核心开展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大型风力发电机组用轮毂",
+        "evidence_span": "主要产品为大型风力发电机组用轮毂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "底座",
+        "evidence_span": "底座"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轴承座",
+        "evidence_span": "轴承座"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "行星架",
+        "evidence_span": "行星架"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "废旧锂电池物理破碎绿色环保工艺技术解决方案",
+        "evidence_span": "成功研发废旧锂电池物理破碎绿色环保工艺技术解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磷酸铁锂电池全组分回收技术",
+        "evidence_span": "该项目采用国内领先的磷酸铁锂电池全组分回收技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "湿法冶炼短流程一步浸出再生技术",
+        "evidence_span": "采用湿法冶炼短流程一步浸出再生技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "理想",
+        "evidence_span": "主要客户包括理想"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特斯拉",
+        "evidence_span": "特斯拉"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "蔚来"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "宝马"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安",
+        "evidence_span": "长安"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本田",
+        "evidence_span": "本田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰田",
+        "evidence_span": "丰田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "GE能源",
+        "evidence_span": "主要客户包括GE能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恩德能源",
+        "evidence_span": "恩德能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "远景能源",
+        "evidence_span": "远景能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东科技",
+        "evidence_span": "公司与京东科技展开战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽集团",
+        "evidence_span": "公司与一汽集团将围绕《汽车产品生产者责任延伸试点实施方案》开展报废汽车回收拆解、汽车核心零部件再制造、动力电池回收综合利用等领域的全方位深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "爱驰汽车有限公司",
+        "evidence_span": "公司与爱驰汽车有限公司、参股公司万高（上海）汽车科技有限公司三方共同签署《战略合作框架协议》"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "斯泰兰蒂斯（上海）汽车有限公司",
+        "evidence_span": "公司与斯泰兰蒂斯（上海）汽车有限公司签署长期服务协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Stellantis集团",
+        "evidence_span": "公司与Stellantis集团签署备忘录"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蜂巢能源",
+        "evidence_span": "公司与蜂巢能源签署《动力电池回收利用湿法冶金项目合资协议书》"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车行业发展",
+        "evidence_span": "受益新能源汽车行业发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "锂电池回收",
+        "evidence_span": "深耕锂电回收"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:31:39"
+}

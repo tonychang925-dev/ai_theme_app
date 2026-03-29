@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "饲料业务",
+      "evidence_span": "公司主营业务包括饲料业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "禽链一体化业务",
+      "evidence_span": "公司主营业务包括...禽链一体化业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生猪养殖业务",
+      "evidence_span": "公司主营业务包括...生猪养殖业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品业务",
+      "evidence_span": "公司主营业务包括...食品业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农牧综合龙头",
+      "evidence_span": "新希望农牧综合龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "禽业龙头",
+      "evidence_span": "新希望禽业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "饲料龙头",
+      "evidence_span": "新希望饲料龙头地位稳固"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "禽饲料",
+      "evidence_span": "公司的饲料产品主要包括禽饲料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "猪饲料",
+      "evidence_span": "公司的饲料产品主要包括...猪饲料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水产料",
+      "evidence_span": "公司的饲料产品主要包括...水产料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "祖代种猪",
+      "evidence_span": "产出祖代...种猪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "父母代种猪",
+      "evidence_span": "产出...父母代种猪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仔猪",
+      "evidence_span": "产出...仔猪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生鲜禽肉分割产品",
+      "evidence_span": "最终产出生鲜禽肉分割产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "猪肉白条",
+      "evidence_span": "主要产出供给终端消费市场的猪肉白条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分割品",
+      "evidence_span": "主要产出供给终端消费市场的...分割品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肉制品",
+      "evidence_span": "主要产出供给终端消费市场的...肉制品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预制菜",
+      "evidence_span": "主要产出供给终端消费市场的...预制菜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "白羽肉鸡",
+      "evidence_span": "公司的禽产业板块包括白羽肉鸡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "白羽肉鸭",
+      "evidence_span": "公司的禽产业板块包括...白羽肉鸭"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海波尔外三元杂交种猪架构",
+      "evidence_span": "公司现已建立起以海波尔外三元杂交为主...的双系种猪架构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PIC五元配套系种猪架构",
+      "evidence_span": "公司现已建立起以...PIC五元配套系为辅的双系种猪架构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "集团客户",
+      "evidence_span": "公司加大了对集团...客户的开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "规模客户",
+      "evidence_span": "公司加大了对...规模客户的开发"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "饲料业务",
+        "evidence_span": "公司主营业务包括饲料业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "禽链一体化业务",
+        "evidence_span": "公司主营业务包括...禽链一体化业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生猪养殖业务",
+        "evidence_span": "公司主营业务包括...生猪养殖业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品业务",
+        "evidence_span": "公司主营业务包括...食品业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农牧综合龙头",
+        "evidence_span": "新希望农牧综合龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "禽业龙头",
+        "evidence_span": "新希望禽业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "饲料龙头",
+        "evidence_span": "新希望饲料龙头地位稳固"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "禽饲料",
+        "evidence_span": "公司的饲料产品主要包括禽饲料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "猪饲料",
+        "evidence_span": "公司的饲料产品主要包括...猪饲料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水产料",
+        "evidence_span": "公司的饲料产品主要包括...水产料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "祖代种猪",
+        "evidence_span": "产出祖代...种猪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "父母代种猪",
+        "evidence_span": "产出...父母代种猪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仔猪",
+        "evidence_span": "产出...仔猪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生鲜禽肉分割产品",
+        "evidence_span": "最终产出生鲜禽肉分割产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "猪肉白条",
+        "evidence_span": "主要产出供给终端消费市场的猪肉白条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分割品",
+        "evidence_span": "主要产出供给终端消费市场的...分割品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肉制品",
+        "evidence_span": "主要产出供给终端消费市场的...肉制品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预制菜",
+        "evidence_span": "主要产出供给终端消费市场的...预制菜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "白羽肉鸡",
+        "evidence_span": "公司的禽产业板块包括白羽肉鸡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "白羽肉鸭",
+        "evidence_span": "公司的禽产业板块包括...白羽肉鸭"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海波尔外三元杂交种猪架构",
+        "evidence_span": "公司现已建立起以海波尔外三元杂交为主...的双系种猪架构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PIC五元配套系种猪架构",
+        "evidence_span": "公司现已建立起以...PIC五元配套系为辅的双系种猪架构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "集团客户",
+        "evidence_span": "公司加大了对集团...客户的开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "规模客户",
+        "evidence_span": "公司加大了对...规模客户的开发"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:43:15"
+}

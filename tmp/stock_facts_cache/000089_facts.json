@@ -1,0 +1,479 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空主业",
+      "evidence_span": "主要经营航空主业以及航空主业延伸出的非航空业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空物流业务",
+      "evidence_span": "非航空业务包括航空物流业务和航空增值业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空增值业务",
+      "evidence_span": "非航空业务包括航空物流业务和航空增值业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "深圳宝安国际机场的运营管理机构",
+      "evidence_span": "公司为深圳宝安国际机场的运营管理机构"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高品质创新型国际航空枢纽",
+      "evidence_span": "深圳机场被赋予打造高品质创新型国际航空枢纽和高水平空港型国家物流枢纽的新使命"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高水平空港型国家物流枢纽",
+      "evidence_span": "深圳机场被赋予打造高品质创新型国际航空枢纽和高水平空港型国家物流枢纽的新使命"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空地面保障及航空地面代理服务",
+      "evidence_span": "提供的航空地面保障及航空地面代理服务业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空货物过站处理服务",
+      "evidence_span": "航空物流业务是指依托于航空主业延伸出的物流增值服务，主要包括航空货物过站处理服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空物流园租赁与管理业务",
+      "evidence_span": "航空物流业务是指依托于航空主业延伸出的物流增值服务，主要包括航空货物过站处理服务、航空物流园租赁与管理业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空货运代理服务业务",
+      "evidence_span": "航空物流业务是指依托于航空主业延伸出的物流增值服务，主要包括航空货物过站处理服务、航空物流园租赁与管理业务、航空货运代理服务业务等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机场航站楼内广告业务",
+      "evidence_span": "航空增值业务是指依托于航空主业延伸出的商业服务业务，主要包括机场航站楼内广告业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航站楼商业及物业租赁业务",
+      "evidence_span": "航空增值业务是指依托于航空主业延伸出的商业服务业务，主要包括机场航站楼内广告业务、航站楼商业及物业租赁业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "两舱服务业务",
+      "evidence_span": "航空增值业务是指依托于航空主业延伸出的商业服务业务，主要包括机场航站楼内广告业务、航站楼商业及物业租赁业务、两舱服务业务等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空轨联运产品",
+      "evidence_span": "上线“空轨联运”机票+地铁票一键式购票产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空铁联运产品",
+      "evidence_span": "“空铁联运”覆盖12个城市22个站点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "首乘特惠产品",
+      "evidence_span": "创新推出“首乘特惠”、“航空+会展”等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空+会展产品",
+      "evidence_span": "创新推出“首乘特惠”、“航空+会展”等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "行李门到门服务",
+      "evidence_span": "面向进港旅客推出“行李门到门”服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "深爱全程服务品牌",
+      "evidence_span": "大力推广“深爱全程”服务品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一站式全流程爱心服务",
+      "evidence_span": "一站式全流程爱心服务入选国务院国资委品牌建设典型案例"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空行李智能六面消毒机",
+      "evidence_span": "自主创新研制航空行李智能六面消毒机并在业内推广使用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际及地区航班第三方代理服务",
+      "evidence_span": "拓展国际及地区航班第三方代理服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "设备租赁服务",
+      "evidence_span": "开展设备租赁、保险销售等增值服务项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保险销售服务",
+      "evidence_span": "开展设备租赁、保险销售等增值服务项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化转型",
+      "evidence_span": "行业内率先全面推进“数字化转型”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧机场建设",
+      "evidence_span": "加快“智慧机场”建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "旅客全流程自助规模化应用",
+      "evidence_span": "深圳机场已实现旅客全流程自助规模化应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "行李全流程跟踪全覆盖",
+      "evidence_span": "深圳机场已实现旅客全流程自助规模化应用和行李全流程跟踪全覆盖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无接触式智能安检通道",
+      "evidence_span": "建设无接触式智能安检通道"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子身份证一码通关",
+      "evidence_span": "业内率先试点电子身份证“一码通关”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航空箱CT项目",
+      "evidence_span": "全球首个航空箱CT项目完成符合性测试"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子雾化产品白名单差异化安检模式",
+      "evidence_span": "全国首创电子雾化产品“白名单”差异化安检模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航空货运短途驳运安保链项目",
+      "evidence_span": "全国首家试点航空货运短途驳运安保链项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航空货物按件级别实时轨迹跟踪查询",
+      "evidence_span": "全国首创航空货物“按件级别”实时轨迹跟踪查询"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "顺丰",
+      "evidence_span": "吸引顺丰、UPS、DHL、FedEx等国内国际货运巨头集聚"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "UPS",
+      "evidence_span": "吸引顺丰、UPS、DHL、FedEx等国内国际货运巨头集聚"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "DHL",
+      "evidence_span": "吸引顺丰、UPS、DHL、FedEx等国内国际货运巨头集聚"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "FedEx",
+      "evidence_span": "吸引顺丰、UPS、DHL、FedEx等国内国际货运巨头集聚"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "卡塔尔航空",
+      "evidence_span": "引进卡塔尔航空、新加坡航空等世界一流航空公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新加坡航空",
+      "evidence_span": "引进卡塔尔航空、新加坡航空等世界一流航空公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "云途",
+      "evidence_span": "与顺丰、DHL、云途、菜鸟等签署战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "菜鸟",
+      "evidence_span": "与顺丰、DHL、云途、菜鸟等签署战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深航",
+      "evidence_span": "携手深航、南航"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南航",
+      "evidence_span": "携手深航、南航"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "粤港澳大湾区世界级机场群",
+      "evidence_span": "深圳机场粤港澳大湾区世界级机场群加速建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "粤港澳大湾区",
+      "evidence_span": "公司抢抓粤港澳大湾区及深圳先行示范区重大战略机遇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "深圳先行示范区",
+      "evidence_span": "公司抢抓粤港澳大湾区及深圳先行示范区重大战略机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空主业",
+        "evidence_span": "主要经营航空主业以及航空主业延伸出的非航空业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空物流业务",
+        "evidence_span": "非航空业务包括航空物流业务和航空增值业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空增值业务",
+        "evidence_span": "非航空业务包括航空物流业务和航空增值业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "深圳宝安国际机场的运营管理机构",
+        "evidence_span": "公司为深圳宝安国际机场的运营管理机构"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高品质创新型国际航空枢纽",
+        "evidence_span": "深圳机场被赋予打造高品质创新型国际航空枢纽和高水平空港型国家物流枢纽的新使命"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高水平空港型国家物流枢纽",
+        "evidence_span": "深圳机场被赋予打造高品质创新型国际航空枢纽和高水平空港型国家物流枢纽的新使命"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空地面保障及航空地面代理服务",
+        "evidence_span": "提供的航空地面保障及航空地面代理服务业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空货物过站处理服务",
+        "evidence_span": "航空物流业务是指依托于航空主业延伸出的物流增值服务，主要包括航空货物过站处理服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空物流园租赁与管理业务",
+        "evidence_span": "航空物流业务是指依托于航空主业延伸出的物流增值服务，主要包括航空货物过站处理服务、航空物流园租赁与管理业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空货运代理服务业务",
+        "evidence_span": "航空物流业务是指依托于航空主业延伸出的物流增值服务，主要包括航空货物过站处理服务、航空物流园租赁与管理业务、航空货运代理服务业务等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机场航站楼内广告业务",
+        "evidence_span": "航空增值业务是指依托于航空主业延伸出的商业服务业务，主要包括机场航站楼内广告业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航站楼商业及物业租赁业务",
+        "evidence_span": "航空增值业务是指依托于航空主业延伸出的商业服务业务，主要包括机场航站楼内广告业务、航站楼商业及物业租赁业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "两舱服务业务",
+        "evidence_span": "航空增值业务是指依托于航空主业延伸出的商业服务业务，主要包括机场航站楼内广告业务、航站楼商业及物业租赁业务、两舱服务业务等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空轨联运产品",
+        "evidence_span": "上线“空轨联运”机票+地铁票一键式购票产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空铁联运产品",
+        "evidence_span": "“空铁联运”覆盖12个城市22个站点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "首乘特惠产品",
+        "evidence_span": "创新推出“首乘特惠”、“航空+会展”等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空+会展产品",
+        "evidence_span": "创新推出“首乘特惠”、“航空+会展”等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "行李门到门服务",
+        "evidence_span": "面向进港旅客推出“行李门到门”服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "深爱全程服务品牌",
+        "evidence_span": "大力推广“深爱全程”服务品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一站式全流程爱心服务",
+        "evidence_span": "一站式全流程爱心服务入选国务院国资委品牌建设典型案例"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空行李智能六面消毒机",
+        "evidence_span": "自主创新研制航空行李智能六面消毒机并在业内推广使用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际及地区航班第三方代理服务",
+        "evidence_span": "拓展国际及地区航班第三方代理服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "设备租赁服务",
+        "evidence_span": "开展设备租赁、保险销售等增值服务项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保险销售服务",
+        "evidence_span": "开展设备租赁、保险销售等增值服务项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化转型",
+        "evidence_span": "行业内率先全面推进“数字化转型”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧机场建设",
+        "evidence_span": "加快“智慧机场”建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "旅客全流程自助规模化应用",
+        "evidence_span": "深圳机场已实现旅客全流程自助规模化应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "行李全流程跟踪全覆盖",
+        "evidence_span": "深圳机场已实现旅客全流程自助规模化应用和行李全流程跟踪全覆盖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无接触式智能安检通道",
+        "evidence_span": "建设无接触式智能安检通道"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子身份证一码通关",
+        "evidence_span": "业内率先试点电子身份证“一码通关”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航空箱CT项目",
+        "evidence_span": "全球首个航空箱CT项目完成符合性测试"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子雾化产品白名单差异化安检模式",
+        "evidence_span": "全国首创电子雾化产品“白名单”差异化安检模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航空货运短途驳运安保链项目",
+        "evidence_span": "全国首家试点航空货运短途驳运安保链项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航空货物按件级别实时轨迹跟踪查询",
+        "evidence_span": "全国首创航空货物“按件级别”实时轨迹跟踪查询"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "顺丰",
+        "evidence_span": "吸引顺丰、UPS、DHL、FedEx等国内国际货运巨头集聚"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "UPS",
+        "evidence_span": "吸引顺丰、UPS、DHL、FedEx等国内国际货运巨头集聚"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "DHL",
+        "evidence_span": "吸引顺丰、UPS、DHL、FedEx等国内国际货运巨头集聚"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "FedEx",
+        "evidence_span": "吸引顺丰、UPS、DHL、FedEx等国内国际货运巨头集聚"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "卡塔尔航空",
+        "evidence_span": "引进卡塔尔航空、新加坡航空等世界一流航空公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新加坡航空",
+        "evidence_span": "引进卡塔尔航空、新加坡航空等世界一流航空公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "云途",
+        "evidence_span": "与顺丰、DHL、云途、菜鸟等签署战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "菜鸟",
+        "evidence_span": "与顺丰、DHL、云途、菜鸟等签署战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深航",
+        "evidence_span": "携手深航、南航"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南航",
+        "evidence_span": "携手深航、南航"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "粤港澳大湾区世界级机场群",
+        "evidence_span": "深圳机场粤港澳大湾区世界级机场群加速建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "粤港澳大湾区",
+        "evidence_span": "公司抢抓粤港澳大湾区及深圳先行示范区重大战略机遇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "深圳先行示范区",
+        "evidence_span": "公司抢抓粤港澳大湾区及深圳先行示范区重大战略机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:52:30"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:01:57", "result": {"chunk_id": "50cfd9d7e150", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述余承东在微博透露鸿蒙智行智界新S7和Mate发布的事件，是纯粹的公司公告和时间性动态，不包含可用于题材本体构建的稳定知识。"}}

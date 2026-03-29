@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "e3444ce131b2", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落明确描述第二届全国低空经济产业创新博览会的开幕，这是一个具体的事件，包含日期和地点，属于时间性动态。"}}

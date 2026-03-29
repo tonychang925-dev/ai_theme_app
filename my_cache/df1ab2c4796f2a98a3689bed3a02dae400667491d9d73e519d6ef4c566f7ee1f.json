@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "605490f7c651", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体的事件：官方考虑发行债务用于水利基建，并提及可能的时间细节（本月宣布）。这属于政策或财政动态，与建筑设计题材的静态知识无关，主要用于事件报道。"}}

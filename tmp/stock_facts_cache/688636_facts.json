@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "军用嵌入式计算机",
+      "evidence_span": "军用嵌入式计算机-现代军事体系的大脑"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "机载嵌入式计算机",
+      "evidence_span": "公司机载嵌入式计算机收入超六成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "弹载嵌入式计算机",
+      "evidence_span": "弹载嵌入式计算机主要用于导弹的导引头和飞行控制系统"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车载嵌入式计算机",
+      "evidence_span": "车载领域，主要应用于车载电子信息系统中伺服控制，观瞄仪，综合管理，发射控制，显控装置等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "舰载嵌入式计算机",
+      "evidence_span": "舰载领域，主要应用于舰载电子系统中的雷达与电子对抗系统"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用嵌入式计算机龙头",
+      "evidence_span": "智明达军用嵌入式计算机龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用嵌入式计算机板卡",
+      "evidence_span": "其形态呈现为软硬一体的板卡或机箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机载嵌入式计算机",
+      "evidence_span": "公司机载嵌入式计算机收入超六成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "弹载嵌入式计算机",
+      "evidence_span": "弹载嵌入式计算机主要用于导弹的导引头和飞行控制系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载嵌入式计算机",
+      "evidence_span": "车载领域，主要应用于车载电子信息系统中伺服控制，观瞄仪，综合管理，发射控制，显控装置等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "舰载嵌入式计算机",
+      "evidence_span": "舰载领域，主要应用于舰载电子系统中的雷达与电子对抗系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "嵌入式计算机软件开发",
+      "evidence_span": "公司业务的核心在于软件开发"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国防信息化",
+      "evidence_span": "智明达-“嵌入”军工行业，深耕国防信息化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "弹载领域需求爆发",
+      "evidence_span": "受益弹载领域需求爆发"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "军用嵌入式计算机",
+        "evidence_span": "军用嵌入式计算机-现代军事体系的大脑"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机载嵌入式计算机",
+        "evidence_span": "公司机载嵌入式计算机收入超六成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "弹载嵌入式计算机",
+        "evidence_span": "弹载嵌入式计算机主要用于导弹的导引头和飞行控制系统"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车载嵌入式计算机",
+        "evidence_span": "车载领域，主要应用于车载电子信息系统中伺服控制，观瞄仪，综合管理，发射控制，显控装置等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "舰载嵌入式计算机",
+        "evidence_span": "舰载领域，主要应用于舰载电子系统中的雷达与电子对抗系统"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用嵌入式计算机龙头",
+        "evidence_span": "智明达军用嵌入式计算机龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用嵌入式计算机板卡",
+        "evidence_span": "其形态呈现为软硬一体的板卡或机箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机载嵌入式计算机",
+        "evidence_span": "公司机载嵌入式计算机收入超六成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "弹载嵌入式计算机",
+        "evidence_span": "弹载嵌入式计算机主要用于导弹的导引头和飞行控制系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载嵌入式计算机",
+        "evidence_span": "车载领域，主要应用于车载电子信息系统中伺服控制，观瞄仪，综合管理，发射控制，显控装置等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "舰载嵌入式计算机",
+        "evidence_span": "舰载领域，主要应用于舰载电子系统中的雷达与电子对抗系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "嵌入式计算机软件开发",
+        "evidence_span": "公司业务的核心在于软件开发"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国防信息化",
+        "evidence_span": "智明达-“嵌入”军工行业，深耕国防信息化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "弹载领域需求爆发",
+        "evidence_span": "受益弹载领域需求爆发"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:25:29"
+}

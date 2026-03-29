@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "d8f80fc739cc", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了江城产业投资基金的揭牌事件，涉及投资规模和聚焦领域，属于政策或产业动态，没有涉及半导体本体的定义或核心构成。"}}

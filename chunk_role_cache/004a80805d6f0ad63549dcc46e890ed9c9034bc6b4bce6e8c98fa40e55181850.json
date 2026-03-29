@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_3", "model": "deepseek-chat", "timestamp": "2026-03-08T09:33:12", "result": {"chunk_id": "33b52e03ac96", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件性内容（如路透社爆料大基金三期项目、上海微电子研发和交付光刻机的预计时间），但同时也提供了潜在知识，例如光刻机技术细节（28纳米浸没式光刻机、SSA/800-10W型号）和国产化进展，这些信息可能用于构建半导体设备题材的知识。因此，它混合了事件和知识，应归类为candidate_mixed。"}}

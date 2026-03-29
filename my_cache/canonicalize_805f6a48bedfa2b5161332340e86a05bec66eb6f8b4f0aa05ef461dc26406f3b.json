@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:15:04", "result": {"span_uid": "1ffe6bc63dee", "action": "rewrite", "canonical_text": "全球商品浆产能预计在2022年至2024年间新增1626万吨", "final_type": "signal", "final_role": "产能扩张趋势", "stability": "medium", "reason": "原文包含具体预测数据和时间范围，但去除了新闻口吻和事件化表述，保留了产能变化的稳定事实，可作为景气信号。"}}

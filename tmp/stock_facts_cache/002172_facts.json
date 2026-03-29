@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗服务业务",
+      "evidence_span": "公司的医疗服务业务已形成医、康、养护联动发展模式"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药流通业务",
+      "evidence_span": "江苏澳洋医药物流有限公司为公司下属现代医药流通企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "非公立医院",
+      "evidence_span": "被艾力彼医院管理研究中心重磅发布的非公立医院 100 强榜单评为第 32 名"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "华东地区大型单体医药物流企业",
+      "evidence_span": "江苏澳洋医药物流有限公司为公司下属现代医药流通企业，为华东地区大型单体医药物流企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药品配送",
+      "evidence_span": "向下游客户配送药品、器械等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "器械配送",
+      "evidence_span": "向下游客户配送药品、器械等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仓储物流服务",
+      "evidence_span": "满足每年约 20 到 25 个亿的仓储物流服务需要"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "医、康、养护联动发展模式",
+      "evidence_span": "公司的医疗服务业务已形成医、康、养护联动发展模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "现代化智能营运设备",
+      "evidence_span": "其配置的现代化智能营运设备及高科技医疗诊疗器械"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高科技医疗诊疗器械",
+      "evidence_span": "其配置的现代化智能营运设备及高科技医疗诊疗器械"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "肿瘤学科建设",
+      "evidence_span": "澳洋医院加强肿瘤学科建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信息化医疗平台建设",
+      "evidence_span": "务实推进信息化医疗平台建设与业务拓展"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "下游客户",
+      "evidence_span": "累计下游客户 8000 余家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "大健康产业",
+      "evidence_span": "公司实现全面转型大健康产业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗服务业务",
+        "evidence_span": "公司的医疗服务业务已形成医、康、养护联动发展模式"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药流通业务",
+        "evidence_span": "江苏澳洋医药物流有限公司为公司下属现代医药流通企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "非公立医院",
+        "evidence_span": "被艾力彼医院管理研究中心重磅发布的非公立医院 100 强榜单评为第 32 名"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "华东地区大型单体医药物流企业",
+        "evidence_span": "江苏澳洋医药物流有限公司为公司下属现代医药流通企业，为华东地区大型单体医药物流企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药品配送",
+        "evidence_span": "向下游客户配送药品、器械等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "器械配送",
+        "evidence_span": "向下游客户配送药品、器械等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仓储物流服务",
+        "evidence_span": "满足每年约 20 到 25 个亿的仓储物流服务需要"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "医、康、养护联动发展模式",
+        "evidence_span": "公司的医疗服务业务已形成医、康、养护联动发展模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "现代化智能营运设备",
+        "evidence_span": "其配置的现代化智能营运设备及高科技医疗诊疗器械"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高科技医疗诊疗器械",
+        "evidence_span": "其配置的现代化智能营运设备及高科技医疗诊疗器械"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "肿瘤学科建设",
+        "evidence_span": "澳洋医院加强肿瘤学科建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信息化医疗平台建设",
+        "evidence_span": "务实推进信息化医疗平台建设与业务拓展"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "下游客户",
+        "evidence_span": "累计下游客户 8000 余家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "大健康产业",
+        "evidence_span": "公司实现全面转型大健康产业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:16:32"
+}

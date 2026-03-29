@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "6faec2618d37", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落描述SK海力士开发DDR5 DRAM的具体事件，包括工艺、性能改进和量产计划，但其中包含技术细节（如10纳米级工艺、速度提升）可能对存储技术知识构建有价值，因此分类为candidate_mixed。"}}

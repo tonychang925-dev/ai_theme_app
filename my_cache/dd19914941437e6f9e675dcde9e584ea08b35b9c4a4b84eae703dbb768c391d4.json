@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "a8989b784c6e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了美国政府计划打造海基载核巡航导弹原型的事件，包含具体时间（3年内）和部署细节，属于动态事件。但同时提供了关于SLCM-N系统部署在弗吉尼亚级攻击潜艇上的静态知识，可能对军工题材的武器系统构成有参考价值，因此归类为混合候选。"}}

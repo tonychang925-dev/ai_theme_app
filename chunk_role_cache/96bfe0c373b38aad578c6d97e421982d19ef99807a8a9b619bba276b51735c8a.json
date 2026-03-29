@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "5cb2011876f6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "内容为在特定展会/论坛上，行业协会人士引述数据对市场（全球封测、先进封装）做出的预测和公布的统计数据（国产设备销售预期）。这属于在特定时间点发布的行业动态和预测信息，而非稳定的本体知识。"}}

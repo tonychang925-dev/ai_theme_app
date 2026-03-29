@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:58:48", "result": {"chunk_id": "f1fa4d8a38a9", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落描述了中国聚变能源有限公司在工博会的亮相事件（日期、公司成立、展示），属于公司动态，但同时也提到了核能发展一般规律（实验堆-示范堆-商用堆）、技术路线和HL-4装置计划，这些涉及核聚变发展的静态知识框架。"}}

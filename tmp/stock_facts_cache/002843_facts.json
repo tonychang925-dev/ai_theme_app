@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "锯切业务",
+      "evidence_span": "确立了“锯切+电源”双主业发展格局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电源业务",
+      "evidence_span": "确立了“锯切+电源”双主业发展格局"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锯切行业细分领域的领军企业",
+      "evidence_span": "是锯切行业细分领域的领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "制造业单项冠军示范企业",
+      "evidence_span": "认定为第七批制造业单项冠军示范企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "硬质合金产业集群龙头企业",
+      "evidence_span": "获评“湖南省硬质合金产业集群龙头企业”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电源行业的领先企业",
+      "evidence_span": "是电源行业的领先企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双金属带锯条",
+      "evidence_span": "锯切业务产品以双金属带锯条为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速钢带锯条",
+      "evidence_span": "涵盖高速钢带锯条和硬质合金带锯条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硬质合金带锯条",
+      "evidence_span": "涵盖高速钢带锯条和硬质合金带锯条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消费电子电源",
+      "evidence_span": "公司电源业务主要包括消费电子电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源智能光伏/储能电源",
+      "evidence_span": "公司电源业务主要包括消费电子电源、新能源智能光伏/储能电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据中心电源",
+      "evidence_span": "另包含一部分数据中心电源、站点能源电源业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "站点能源电源",
+      "evidence_span": "另包含一部分数据中心电源、站点能源电源业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手机充电器及适配器",
+      "evidence_span": "如手机充电器及适配器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏优化器",
+      "evidence_span": "新能源智能光伏/储能电源业务主要包含光伏优化器、光伏逆变器、储能变流器等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏逆变器",
+      "evidence_span": "新能源智能光伏/储能电源业务主要包含光伏优化器、光伏逆变器、储能变流器等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能变流器",
+      "evidence_span": "新能源智能光伏/储能电源业务主要包含光伏优化器、光伏逆变器、储能变流器等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "服务器电源模块产品",
+      "evidence_span": "数据中心电源业务主要为服务器电源模块产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户用直流充电桩",
+      "evidence_span": "站点能源业务主要为户用直流充电桩和快充充电电源模块产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "快充充电电源模块产品",
+      "evidence_span": "站点能源业务主要为户用直流充电桩和快充充电电源模块产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双金属带锯条生产工艺",
+      "evidence_span": "公司是掌握双金属带锯条生产工艺并实现规模化生产的业内领先企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硬质合金带锯条规模生产",
+      "evidence_span": "实现硬质合金带锯条规模生产与进口替代的国内企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国航天中国运载火箭技术研究院",
+      "evidence_span": "系中国航天中国运载火箭技术研究院认可的硬质合金带锯条合格供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球一线品牌客户",
+      "evidence_span": "与全球一线品牌客户长期保持合作和供应关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "实现硬质合金带锯条规模生产与进口替代的国内企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "锯切业务",
+        "evidence_span": "确立了“锯切+电源”双主业发展格局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电源业务",
+        "evidence_span": "确立了“锯切+电源”双主业发展格局"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锯切行业细分领域的领军企业",
+        "evidence_span": "是锯切行业细分领域的领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "制造业单项冠军示范企业",
+        "evidence_span": "认定为第七批制造业单项冠军示范企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "硬质合金产业集群龙头企业",
+        "evidence_span": "获评“湖南省硬质合金产业集群龙头企业”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电源行业的领先企业",
+        "evidence_span": "是电源行业的领先企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双金属带锯条",
+        "evidence_span": "锯切业务产品以双金属带锯条为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速钢带锯条",
+        "evidence_span": "涵盖高速钢带锯条和硬质合金带锯条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硬质合金带锯条",
+        "evidence_span": "涵盖高速钢带锯条和硬质合金带锯条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消费电子电源",
+        "evidence_span": "公司电源业务主要包括消费电子电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源智能光伏/储能电源",
+        "evidence_span": "公司电源业务主要包括消费电子电源、新能源智能光伏/储能电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据中心电源",
+        "evidence_span": "另包含一部分数据中心电源、站点能源电源业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "站点能源电源",
+        "evidence_span": "另包含一部分数据中心电源、站点能源电源业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手机充电器及适配器",
+        "evidence_span": "如手机充电器及适配器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏优化器",
+        "evidence_span": "新能源智能光伏/储能电源业务主要包含光伏优化器、光伏逆变器、储能变流器等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏逆变器",
+        "evidence_span": "新能源智能光伏/储能电源业务主要包含光伏优化器、光伏逆变器、储能变流器等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能变流器",
+        "evidence_span": "新能源智能光伏/储能电源业务主要包含光伏优化器、光伏逆变器、储能变流器等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "服务器电源模块产品",
+        "evidence_span": "数据中心电源业务主要为服务器电源模块产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户用直流充电桩",
+        "evidence_span": "站点能源业务主要为户用直流充电桩和快充充电电源模块产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "快充充电电源模块产品",
+        "evidence_span": "站点能源业务主要为户用直流充电桩和快充充电电源模块产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双金属带锯条生产工艺",
+        "evidence_span": "公司是掌握双金属带锯条生产工艺并实现规模化生产的业内领先企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硬质合金带锯条规模生产",
+        "evidence_span": "实现硬质合金带锯条规模生产与进口替代的国内企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国航天中国运载火箭技术研究院",
+        "evidence_span": "系中国航天中国运载火箭技术研究院认可的硬质合金带锯条合格供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球一线品牌客户",
+        "evidence_span": "与全球一线品牌客户长期保持合作和供应关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "实现硬质合金带锯条规模生产与进口替代的国内企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:02:24"
+}

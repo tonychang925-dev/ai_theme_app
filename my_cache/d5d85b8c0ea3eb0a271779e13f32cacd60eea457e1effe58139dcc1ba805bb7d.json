@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "f181d1cdaaaa", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述俄罗斯安-24客机失联事件，与C919大飞机题材本体无关，属于无关内容，无信息量用于知识构建。"}}

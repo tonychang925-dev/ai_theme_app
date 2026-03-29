@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "b16629dcaa82", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述奉贤区发布产业发展行动方案的事件，但内容涉及湿化学品、高纯靶材、电子气体、光刻胶等集成电路配套材料的静态知识，可能对半导体设备题材的知识构建有价值，但混合了政策事件。"}}

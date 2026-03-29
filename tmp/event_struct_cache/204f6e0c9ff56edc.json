@@ -1,0 +1,50 @@
+{
+  "event_id": "evt_f97d1687c25b",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "技术突破",
+  "entities": [
+    {
+      "name": "国家统计局",
+      "type": "组织",
+      "normalized": "国家统计局"
+    },
+    {
+      "name": "虚拟现实设备",
+      "type": "产品",
+      "normalized": "虚拟现实设备"
+    }
+  ],
+  "summary": "国家统计局数据显示7月虚拟现实设备产量同比增长55.7%",
+  "causal_claim": [
+    "产量增长",
+    "需求上升",
+    "行业扩张"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "虚拟现实设备",
+      "产量增长"
+    ],
+    "normalized_terms": {
+      "国家统计局": "国家统计局",
+      "虚拟现实设备": "虚拟现实设备"
+    },
+    "evidence_spans": [
+      {
+        "text": "国家统计局：7月虚拟现实设备产品产量增长55.7%",
+        "start": 0,
+        "end": 30
+      }
+    ],
+    "core_concepts": [
+      "产量",
+      "增长",
+      "虚拟现实"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": null,
+  "raw_text": "国家统计局：7月虚拟现实设备产品产量增长55.7%"
+}

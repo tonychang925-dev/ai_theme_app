@@ -1,0 +1,21 @@
+{
+  "phase": "P1.phase0",
+  "run_id": "20260218_093305",
+  "generated_at": "2026-02-18T01:41:36Z",
+  "checks": {
+    "phase0_pytest_behavior": 0,
+    "phase0_pytest_message_serializer": 0,
+    "phase0_pytest_stream_config": 0,
+    "phase0_pytest_streams": 0,
+    "phase0_required_functions_rg": 0,
+    "phase0_no_print_scan": 0,
+    "phase0_contract_fields_rg": 0
+  },
+  "all_required_commands_passed": true,
+  "closeout_gate": {
+    "passed": false,
+    "blocking_issues": [
+      "milestone fetch missing expected phase tasks: P1.phase0-T01, P1.phase0-T02"
+    ]
+  }
+}

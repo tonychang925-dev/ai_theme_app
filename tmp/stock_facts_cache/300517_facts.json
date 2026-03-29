@@ -1,0 +1,459 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "桥梁钢结构制造",
+      "evidence_span": "公司主要业务为桥梁钢结构制造与安装"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "桥梁钢结构安装",
+      "evidence_span": "公司主要业务为桥梁钢结构制造与安装"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "桥梁钢结构工艺设计",
+      "evidence_span": "业务范围包含桥梁钢结构的制作、安装、技术研究、工艺设计和技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "桥梁钢结构技术服务",
+      "evidence_span": "业务范围包含桥梁钢结构的制作、安装、技术研究、工艺设计和技术服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "桥梁钢结构工程专业承包商",
+      "evidence_span": "桥梁钢结构领域知名的专业承包商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "桥梁钢结构施工行业第二梯队企业",
+      "evidence_span": "是我国桥梁钢结构施工行业的第二梯队"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢箱梁",
+      "evidence_span": "公司业务主要采用钢箱梁、钢桁架、钢箱拱桥结构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢桁架",
+      "evidence_span": "公司业务主要采用钢箱梁、钢桁架、钢箱拱桥结构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢箱拱桥结构",
+      "evidence_span": "公司业务主要采用钢箱梁、钢桁架、钢箱拱桥结构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢桁拱桥结构",
+      "evidence_span": "钢桁拱桥结构、钢管拱桥结构、悬索桥、斜拉桥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢管拱桥结构",
+      "evidence_span": "钢桁拱桥结构、钢管拱桥结构、悬索桥、斜拉桥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "悬索桥",
+      "evidence_span": "钢桁拱桥结构、钢管拱桥结构、悬索桥、斜拉桥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "斜拉桥",
+      "evidence_span": "钢桁拱桥结构、钢管拱桥结构、悬索桥、斜拉桥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装配式钢混组合梁",
+      "evidence_span": "装配式钢混组合梁等钢结构形式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超厚桥梁板智能可调摇摆横向焊接技术",
+      "evidence_span": "超厚桥梁板智能可调摇摆横向焊接技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "架桥机在连续式工字组合梁工地安装中的应用研究",
+      "evidence_span": "架桥机在连续式工字组合梁工地安装中的应用研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一种基于龙门吊机的内湖梁式钢桥安装法",
+      "evidence_span": "一种基于龙门吊机的内湖梁式钢桥安装法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "单跨槽形梁桥单片钢槽梁整体吊装的施工方法",
+      "evidence_span": "单跨槽形梁桥单片钢槽梁整体吊装的施工方法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "跨铁路桥梁门式墩制造安装技术",
+      "evidence_span": "跨铁路桥梁门式墩制造安装技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BIM建筑信息模型技术",
+      "evidence_span": "BIM建筑信息模型技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "跨公路交通线超高层超宽变截面钢梁的顶推架设方法",
+      "evidence_span": "跨公路交通线超高层超宽变截面钢梁的顶推架设方法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "波纹腹板埋弧熔透焊接工艺技术",
+      "evidence_span": "波纹腹板埋弧熔透焊接工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超高变高钢箱梁全匹配制造工艺技术",
+      "evidence_span": "超高变高钢箱梁全匹配制造工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "异型景观桥V字钢构墩梁制造工艺技术",
+      "evidence_span": "异型景观桥V字钢构墩梁制造工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "脉冲激光清洗钢表面锈蚀工艺技术",
+      "evidence_span": "脉冲激光清洗钢表面锈蚀工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多股异型六面钢箱拱制造安装施工技术",
+      "evidence_span": "多股异型六面钢箱拱制造安装施工技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "装配式钢桥H型钢梁先孔长线法制造拼装技术",
+      "evidence_span": "装配式钢桥H型钢梁先孔长线法制造拼装技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "单幅双榀装配式H型钢梁快速自动定位组拼技术",
+      "evidence_span": "单幅双榀装配式H型钢梁快速自动定位组拼技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "单侧腹板超长钢箱梁吊装挠度变形控制技术",
+      "evidence_span": "单侧腹板超长钢箱梁吊装挠度变形控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "整孔H型钢梁曲线大纵坡梁上运梁技术",
+      "evidence_span": "整孔H型钢梁曲线大纵坡梁上运梁技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钢箱梁封闭内表面喷涂面底合一冷喷锌涂料施工技术研究",
+      "evidence_span": "钢箱梁封闭内表面喷涂面底合一冷喷锌涂料施工技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水性环保油漆施工技术研究",
+      "evidence_span": "水性环保油漆施工技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "焊接钢桥结构免二次抛丸直接喷涂环氧类底漆技术研究",
+      "evidence_span": "焊接钢桥结构免二次抛丸直接喷涂环氧类底漆技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连续钢叠梁大纵坡、长距离顶推技术",
+      "evidence_span": "连续钢叠梁大纵坡、长距离顶推技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大跨度钢管混凝土拱桥主梁先孔长线法拼装架设技术",
+      "evidence_span": "大跨度钢管混凝土拱桥主梁先孔长线法拼装架设技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大吨位钢箱塔环口栓接定位安装技术",
+      "evidence_span": "大吨位钢箱塔环口栓接定位安装技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大跨度钢桁拱桥大节段拼装施工工艺技术",
+      "evidence_span": "大跨度钢桁拱桥大节段拼装施工工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大跨度公路双层两用钢桁拱桥施工技术",
+      "evidence_span": "大跨度公路双层两用钢桁拱桥施工技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ERP管理系统",
+      "evidence_span": "公司积极尝试并使用ERP管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "EMCat设备智能管理系统",
+      "evidence_span": "通过EMCat设备智能管理系统的使用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三维建模软件",
+      "evidence_span": "通过三维建模软件的使用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "装配式建筑",
+      "evidence_span": "近些年来，国家大力推广装配式建筑"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "交通强国建设",
+      "evidence_span": "加快推进交通强国建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "基础设施补短板",
+      "evidence_span": "迎来了基础设施补短板加快推进期"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "钢结构桥梁等绿色交通基础建设大力推广",
+      "evidence_span": "钢结构桥梁等绿色交通基础建设大力推广期"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "桥梁钢结构制造",
+        "evidence_span": "公司主要业务为桥梁钢结构制造与安装"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "桥梁钢结构安装",
+        "evidence_span": "公司主要业务为桥梁钢结构制造与安装"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "桥梁钢结构工艺设计",
+        "evidence_span": "业务范围包含桥梁钢结构的制作、安装、技术研究、工艺设计和技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "桥梁钢结构技术服务",
+        "evidence_span": "业务范围包含桥梁钢结构的制作、安装、技术研究、工艺设计和技术服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "桥梁钢结构工程专业承包商",
+        "evidence_span": "桥梁钢结构领域知名的专业承包商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "桥梁钢结构施工行业第二梯队企业",
+        "evidence_span": "是我国桥梁钢结构施工行业的第二梯队"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢箱梁",
+        "evidence_span": "公司业务主要采用钢箱梁、钢桁架、钢箱拱桥结构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢桁架",
+        "evidence_span": "公司业务主要采用钢箱梁、钢桁架、钢箱拱桥结构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢箱拱桥结构",
+        "evidence_span": "公司业务主要采用钢箱梁、钢桁架、钢箱拱桥结构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢桁拱桥结构",
+        "evidence_span": "钢桁拱桥结构、钢管拱桥结构、悬索桥、斜拉桥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢管拱桥结构",
+        "evidence_span": "钢桁拱桥结构、钢管拱桥结构、悬索桥、斜拉桥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "悬索桥",
+        "evidence_span": "钢桁拱桥结构、钢管拱桥结构、悬索桥、斜拉桥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "斜拉桥",
+        "evidence_span": "钢桁拱桥结构、钢管拱桥结构、悬索桥、斜拉桥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装配式钢混组合梁",
+        "evidence_span": "装配式钢混组合梁等钢结构形式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超厚桥梁板智能可调摇摆横向焊接技术",
+        "evidence_span": "超厚桥梁板智能可调摇摆横向焊接技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "架桥机在连续式工字组合梁工地安装中的应用研究",
+        "evidence_span": "架桥机在连续式工字组合梁工地安装中的应用研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一种基于龙门吊机的内湖梁式钢桥安装法",
+        "evidence_span": "一种基于龙门吊机的内湖梁式钢桥安装法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "单跨槽形梁桥单片钢槽梁整体吊装的施工方法",
+        "evidence_span": "单跨槽形梁桥单片钢槽梁整体吊装的施工方法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "跨铁路桥梁门式墩制造安装技术",
+        "evidence_span": "跨铁路桥梁门式墩制造安装技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BIM建筑信息模型技术",
+        "evidence_span": "BIM建筑信息模型技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "跨公路交通线超高层超宽变截面钢梁的顶推架设方法",
+        "evidence_span": "跨公路交通线超高层超宽变截面钢梁的顶推架设方法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "波纹腹板埋弧熔透焊接工艺技术",
+        "evidence_span": "波纹腹板埋弧熔透焊接工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超高变高钢箱梁全匹配制造工艺技术",
+        "evidence_span": "超高变高钢箱梁全匹配制造工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "异型景观桥V字钢构墩梁制造工艺技术",
+        "evidence_span": "异型景观桥V字钢构墩梁制造工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "脉冲激光清洗钢表面锈蚀工艺技术",
+        "evidence_span": "脉冲激光清洗钢表面锈蚀工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多股异型六面钢箱拱制造安装施工技术",
+        "evidence_span": "多股异型六面钢箱拱制造安装施工技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "装配式钢桥H型钢梁先孔长线法制造拼装技术",
+        "evidence_span": "装配式钢桥H型钢梁先孔长线法制造拼装技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "单幅双榀装配式H型钢梁快速自动定位组拼技术",
+        "evidence_span": "单幅双榀装配式H型钢梁快速自动定位组拼技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "单侧腹板超长钢箱梁吊装挠度变形控制技术",
+        "evidence_span": "单侧腹板超长钢箱梁吊装挠度变形控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "整孔H型钢梁曲线大纵坡梁上运梁技术",
+        "evidence_span": "整孔H型钢梁曲线大纵坡梁上运梁技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钢箱梁封闭内表面喷涂面底合一冷喷锌涂料施工技术研究",
+        "evidence_span": "钢箱梁封闭内表面喷涂面底合一冷喷锌涂料施工技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水性环保油漆施工技术研究",
+        "evidence_span": "水性环保油漆施工技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "焊接钢桥结构免二次抛丸直接喷涂环氧类底漆技术研究",
+        "evidence_span": "焊接钢桥结构免二次抛丸直接喷涂环氧类底漆技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连续钢叠梁大纵坡、长距离顶推技术",
+        "evidence_span": "连续钢叠梁大纵坡、长距离顶推技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大跨度钢管混凝土拱桥主梁先孔长线法拼装架设技术",
+        "evidence_span": "大跨度钢管混凝土拱桥主梁先孔长线法拼装架设技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大吨位钢箱塔环口栓接定位安装技术",
+        "evidence_span": "大吨位钢箱塔环口栓接定位安装技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大跨度钢桁拱桥大节段拼装施工工艺技术",
+        "evidence_span": "大跨度钢桁拱桥大节段拼装施工工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大跨度公路双层两用钢桁拱桥施工技术",
+        "evidence_span": "大跨度公路双层两用钢桁拱桥施工技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ERP管理系统",
+        "evidence_span": "公司积极尝试并使用ERP管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "EMCat设备智能管理系统",
+        "evidence_span": "通过EMCat设备智能管理系统的使用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三维建模软件",
+        "evidence_span": "通过三维建模软件的使用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "装配式建筑",
+        "evidence_span": "近些年来，国家大力推广装配式建筑"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "交通强国建设",
+        "evidence_span": "加快推进交通强国建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "基础设施补短板",
+        "evidence_span": "迎来了基础设施补短板加快推进期"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "钢结构桥梁等绿色交通基础建设大力推广",
+        "evidence_span": "钢结构桥梁等绿色交通基础建设大力推广期"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:05:50"
+}

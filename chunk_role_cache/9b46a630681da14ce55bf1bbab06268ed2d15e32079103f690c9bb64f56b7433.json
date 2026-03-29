@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "1eaa631cb533", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段提及《安徽省人形机器人产业发展行动计划（2024—2027年）》公开征求意见。这涉及政策制定，可能包含产业发展方向、目标等静态知识，但以事件形式呈现，因此分类为candidate_mixed。"}}

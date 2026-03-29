@@ -1,0 +1,389 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "通信服务业务",
+      "evidence_span": "公司报告期内主要业务包括通信服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息化软件服务业务",
+      "evidence_span": "公司报告期内主要业务包括...信息化软件服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字营销业务",
+      "evidence_span": "公司报告期内主要业务包括...数字营销业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "边缘计算业务",
+      "evidence_span": "公司报告期内主要业务包括...边缘计算业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "渠道销售业务",
+      "evidence_span": "公司报告期内主要业务包括...渠道销售业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "第三方通信网络管理服务提供商",
+      "evidence_span": "第三方通信网络管理服务提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信网络建设服务",
+      "evidence_span": "通信网络建设服务主要是通过通信网络工程建设、施工集成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信网络维护服务",
+      "evidence_span": "通信网络维护服务主要是提供通信网络机房环境、基站设备、传输线路及附属设施的运行管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信网络优化服务",
+      "evidence_span": "通信网络优化服务主要是采集多维网络数据，结合业务种类及优化需求进行综合数据分析"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公安信息化产品",
+      "evidence_span": "公司已围绕相关领域开发出AR眼镜、智慧电子门牌、****通信系统、智慧社区管理平台、垃圾分类智能监控系统、人口信息管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧社区产品",
+      "evidence_span": "已经开发具有自主知识产权以及可复制可推广的标准化产品，如电子门牌、电子门禁、基于物联网的视频动态感知垃圾分类智能监管平台、智慧社区警务平台、智慧社区安防平台等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字乡村产品",
+      "evidence_span": "公司利用数字化技术，搭载物联网感知设备、溯源系统，将农业产、供、销全过程的感知及可控"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字营销服务",
+      "evidence_span": "数字营销业务主要以巨量引擎、磁力金牛等数字化营销服务平台的代理业务为基础"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "边缘计算终端及网关",
+      "evidence_span": "目前已开发出成熟的边缘计算终端及网关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "边缘计算服务器",
+      "evidence_span": "目前已开发出成熟的...边缘计算服务器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI智能视觉检测",
+      "evidence_span": "目前已开发出成熟的...AI智能视觉检测"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "miniPC",
+      "evidence_span": "目前已开发出成熟的...miniPC等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "通信网络代维（外包）甲级资质",
+      "evidence_span": "拥有通信网络代维（外包）甲级资质"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "通信工程总承包一级资质",
+      "evidence_span": "通信工程总承包一级资质"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CMMI 5认证",
+      "evidence_span": "CMMI 5认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "通信行业服务支撑管理系统",
+      "evidence_span": "研发出通信行业服务支撑管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "通信传输系统信息化应用平台",
+      "evidence_span": "通信传输系统信息化应用平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光网监测云平台",
+      "evidence_span": "光网监测云平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "网优测试数据管理平台",
+      "evidence_span": "网优测试数据管理平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "动环监控平台",
+      "evidence_span": "动环监控平台等多款通信网络管理服务专用系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "为电信运营商（中国移动、中国联通、中国电信）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国联通",
+      "evidence_span": "为电信运营商（中国移动、中国联通、中国电信）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电信",
+      "evidence_span": "为电信运营商（中国移动、中国联通、中国电信）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为公司",
+      "evidence_span": "通信设备商（华为公司、中兴通讯等）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中兴通讯",
+      "evidence_span": "通信设备商（华为公司、中兴通讯等）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广电网络",
+      "evidence_span": "广电网络等提供通信网络建设、维护、优化服务业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安",
+      "evidence_span": "以公安、司法、军队、社区等优质客户为核心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "司法",
+      "evidence_span": "以公安、司法、军队、社区等优质客户为核心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军队",
+      "evidence_span": "以公安、司法、军队、社区等优质客户为核心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "社区",
+      "evidence_span": "以公安、司法、军队、社区等优质客户为核心"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G市场",
+      "evidence_span": "收购广州欧康，积极布局5G市场"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信息安全新兴业务",
+      "evidence_span": "与安司源签订战略协议，探索信息安全新兴业务方向"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自组网业务",
+      "evidence_span": "自组网业务取得新突破"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "通信服务业务",
+        "evidence_span": "公司报告期内主要业务包括通信服务业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息化软件服务业务",
+        "evidence_span": "公司报告期内主要业务包括...信息化软件服务业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字营销业务",
+        "evidence_span": "公司报告期内主要业务包括...数字营销业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "边缘计算业务",
+        "evidence_span": "公司报告期内主要业务包括...边缘计算业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "渠道销售业务",
+        "evidence_span": "公司报告期内主要业务包括...渠道销售业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "第三方通信网络管理服务提供商",
+        "evidence_span": "第三方通信网络管理服务提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信网络建设服务",
+        "evidence_span": "通信网络建设服务主要是通过通信网络工程建设、施工集成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信网络维护服务",
+        "evidence_span": "通信网络维护服务主要是提供通信网络机房环境、基站设备、传输线路及附属设施的运行管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信网络优化服务",
+        "evidence_span": "通信网络优化服务主要是采集多维网络数据，结合业务种类及优化需求进行综合数据分析"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公安信息化产品",
+        "evidence_span": "公司已围绕相关领域开发出AR眼镜、智慧电子门牌、****通信系统、智慧社区管理平台、垃圾分类智能监控系统、人口信息管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧社区产品",
+        "evidence_span": "已经开发具有自主知识产权以及可复制可推广的标准化产品，如电子门牌、电子门禁、基于物联网的视频动态感知垃圾分类智能监管平台、智慧社区警务平台、智慧社区安防平台等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字乡村产品",
+        "evidence_span": "公司利用数字化技术，搭载物联网感知设备、溯源系统，将农业产、供、销全过程的感知及可控"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字营销服务",
+        "evidence_span": "数字营销业务主要以巨量引擎、磁力金牛等数字化营销服务平台的代理业务为基础"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "边缘计算终端及网关",
+        "evidence_span": "目前已开发出成熟的边缘计算终端及网关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "边缘计算服务器",
+        "evidence_span": "目前已开发出成熟的...边缘计算服务器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI智能视觉检测",
+        "evidence_span": "目前已开发出成熟的...AI智能视觉检测"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "miniPC",
+        "evidence_span": "目前已开发出成熟的...miniPC等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "通信网络代维（外包）甲级资质",
+        "evidence_span": "拥有通信网络代维（外包）甲级资质"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "通信工程总承包一级资质",
+        "evidence_span": "通信工程总承包一级资质"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CMMI 5认证",
+        "evidence_span": "CMMI 5认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "通信行业服务支撑管理系统",
+        "evidence_span": "研发出通信行业服务支撑管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "通信传输系统信息化应用平台",
+        "evidence_span": "通信传输系统信息化应用平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光网监测云平台",
+        "evidence_span": "光网监测云平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "网优测试数据管理平台",
+        "evidence_span": "网优测试数据管理平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "动环监控平台",
+        "evidence_span": "动环监控平台等多款通信网络管理服务专用系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "为电信运营商（中国移动、中国联通、中国电信）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国联通",
+        "evidence_span": "为电信运营商（中国移动、中国联通、中国电信）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电信",
+        "evidence_span": "为电信运营商（中国移动、中国联通、中国电信）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为公司",
+        "evidence_span": "通信设备商（华为公司、中兴通讯等）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中兴通讯",
+        "evidence_span": "通信设备商（华为公司、中兴通讯等）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广电网络",
+        "evidence_span": "广电网络等提供通信网络建设、维护、优化服务业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安",
+        "evidence_span": "以公安、司法、军队、社区等优质客户为核心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "司法",
+        "evidence_span": "以公安、司法、军队、社区等优质客户为核心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军队",
+        "evidence_span": "以公安、司法、军队、社区等优质客户为核心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "社区",
+        "evidence_span": "以公安、司法、军队、社区等优质客户为核心"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G市场",
+        "evidence_span": "收购广州欧康，积极布局5G市场"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信息安全新兴业务",
+        "evidence_span": "与安司源签订战略协议，探索信息安全新兴业务方向"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自组网业务",
+        "evidence_span": "自组网业务取得新突破"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:19:25"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:42:44", "result": {"chunk_id": "8bd42df63d87", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含海外分销商市场的静态知识（如历史背景、集中度趋势），但混合了具体事件信息（如2021年营收数据、公司上市细节），需要进一步裁决以分离知识部分。"}}

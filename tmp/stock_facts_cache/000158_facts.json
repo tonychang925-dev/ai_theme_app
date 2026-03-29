@@ -1,0 +1,559 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "软件业务",
+      "evidence_span": "公司拥有软件、纺织双主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "纺织业务",
+      "evidence_span": "公司拥有软件、纺织双主业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新型智慧城市的专家",
+      "evidence_span": "新型智慧城市的专家"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "我国智慧城市建设领域领先的解决方案提供商",
+      "evidence_span": "我国智慧城市建设领域领先的解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新一代IT技术和解决方案的综合服务商",
+      "evidence_span": "北明软件是一家新一代IT技术和解决方案的综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国城市数据资产赋能者",
+      "evidence_span": "作为中国城市数据资产赋能者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市智慧化、数字化转型践行者",
+      "evidence_span": "城市智慧化、数字化转型践行者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软件开发",
+      "evidence_span": "软件业务包括软件开发、软件服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软件服务",
+      "evidence_span": "软件业务包括软件开发、软件服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能化安装工程服务",
+      "evidence_span": "智能化安装工程服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信设备零售",
+      "evidence_span": "通信设备零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "计算机应用电子设备制造",
+      "evidence_span": "计算机应用电子设备制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保技术开发服务",
+      "evidence_span": "环保技术开发服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保技术咨询、交流服务",
+      "evidence_span": "环保技术咨询、交流服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保技术转让服务",
+      "evidence_span": "环保技术转让服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信系统设备制造",
+      "evidence_span": "通信系统设备制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息系统集成服务",
+      "evidence_span": "信息系统集成服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纯棉纱、布",
+      "evidence_span": "纺织业务包括纯棉纱、布和涤棉纱、布的生产销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涤棉纱、布",
+      "evidence_span": "纺织业务包括纯棉纱、布和涤棉纱、布的生产销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保型纱线",
+      "evidence_span": "主导产品有环保型纱线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能型面料",
+      "evidence_span": "功能型面料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高档品牌服装",
+      "evidence_span": "高档品牌服装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家纺",
+      "evidence_span": "家纺"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产业用纺织品",
+      "evidence_span": "产业用纺织品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市运营中心",
+      "evidence_span": "推出城市运营中心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "互联网+监管",
+      "evidence_span": "互联网+监管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "应急指挥系统",
+      "evidence_span": "应急指挥系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能客服机器人",
+      "evidence_span": "智能客服机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧政务",
+      "evidence_span": "形成了智慧政务、智慧园区、智慧交通、智慧教育、智慧医疗、智慧电力等系列解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧园区",
+      "evidence_span": "形成了智慧政务、智慧园区、智慧交通、智慧教育、智慧医疗、智慧电力等系列解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧交通",
+      "evidence_span": "形成了智慧政务、智慧园区、智慧交通、智慧教育、智慧医疗、智慧电力等系列解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧教育",
+      "evidence_span": "形成了智慧政务、智慧园区、智慧交通、智慧教育、智慧医疗、智慧电力等系列解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧医疗",
+      "evidence_span": "形成了智慧政务、智慧园区、智慧交通、智慧教育、智慧医疗、智慧电力等系列解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧电力",
+      "evidence_span": "形成了智慧政务、智慧园区、智慧交通、智慧教育、智慧医疗、智慧电力等系列解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ODR在线矛盾纠纷多元化解平台",
+      "evidence_span": "ODR在线矛盾纠纷多元化解平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业互联网平台",
+      "evidence_span": "通过工业互联网平台为企业在生产经营活动中的各个环节提供服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "常山云数据中心",
+      "evidence_span": "常山云数据中心项目二期"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纺织品分拣中心",
+      "evidence_span": "纺织品分拣中心项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷链物流产业园",
+      "evidence_span": "合作建设石家庄冷链物流产业园"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能",
+      "evidence_span": "积极推动人工智能、物联网、区块链等新一代信息技术与业务的深度融合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网",
+      "evidence_span": "积极推动人工智能、物联网、区块链等新一代信息技术与业务的深度融合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链",
+      "evidence_span": "积极推动人工智能、物联网、区块链等新一代信息技术与业务的深度融合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据分析技术",
+      "evidence_span": "融合人工智能和大数据分析技术的互联网+司法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "鲲鹏架构",
+      "evidence_span": "全国首个采用全鲲鹏架构的智慧城市"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为技术有限公司",
+      "evidence_span": "软件业务与华为技术有限公司在智慧城市、央国企数字化转型、金融信创、国产化自主可控、能源、交通、教育等多行业多业态进行联合方案打造与拓展"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "腾讯",
+      "evidence_span": "公司的内在价值也深化了与腾讯的战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海水星",
+      "evidence_span": "着力加强与上海水星等品牌客户的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三枪",
+      "evidence_span": "与三枪等终端品牌客户和际华3543等国内知名针织服装企业建立了深度合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "际华3543",
+      "evidence_span": "与三枪等终端品牌客户和际华3543等国内知名针织服装企业建立了深度合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国供销冷链物流股份有限公司",
+      "evidence_span": "公司与中国供销冷链物流股份有限公司、石家庄市第二棉麻有限公司共同签署了《中国供销常山北明冷链物流项目投资合作协议》"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧城市",
+      "evidence_span": "新型智慧城市的专家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化自主可控",
+      "evidence_span": "金融信创、国产化自主可控"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "工业互联网",
+      "evidence_span": "通过工业互联网平台为企业在生产经营活动中的各个环节提供服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数据中心",
+      "evidence_span": "常山云数据中心项目二期"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "冷链物流",
+      "evidence_span": "合作建设石家庄冷链物流产业园"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "软件业务",
+        "evidence_span": "公司拥有软件、纺织双主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "纺织业务",
+        "evidence_span": "公司拥有软件、纺织双主业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新型智慧城市的专家",
+        "evidence_span": "新型智慧城市的专家"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "我国智慧城市建设领域领先的解决方案提供商",
+        "evidence_span": "我国智慧城市建设领域领先的解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新一代IT技术和解决方案的综合服务商",
+        "evidence_span": "北明软件是一家新一代IT技术和解决方案的综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国城市数据资产赋能者",
+        "evidence_span": "作为中国城市数据资产赋能者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市智慧化、数字化转型践行者",
+        "evidence_span": "城市智慧化、数字化转型践行者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软件开发",
+        "evidence_span": "软件业务包括软件开发、软件服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软件服务",
+        "evidence_span": "软件业务包括软件开发、软件服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能化安装工程服务",
+        "evidence_span": "智能化安装工程服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信设备零售",
+        "evidence_span": "通信设备零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "计算机应用电子设备制造",
+        "evidence_span": "计算机应用电子设备制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保技术开发服务",
+        "evidence_span": "环保技术开发服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保技术咨询、交流服务",
+        "evidence_span": "环保技术咨询、交流服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保技术转让服务",
+        "evidence_span": "环保技术转让服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信系统设备制造",
+        "evidence_span": "通信系统设备制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息系统集成服务",
+        "evidence_span": "信息系统集成服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纯棉纱、布",
+        "evidence_span": "纺织业务包括纯棉纱、布和涤棉纱、布的生产销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涤棉纱、布",
+        "evidence_span": "纺织业务包括纯棉纱、布和涤棉纱、布的生产销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保型纱线",
+        "evidence_span": "主导产品有环保型纱线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能型面料",
+        "evidence_span": "功能型面料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高档品牌服装",
+        "evidence_span": "高档品牌服装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家纺",
+        "evidence_span": "家纺"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产业用纺织品",
+        "evidence_span": "产业用纺织品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市运营中心",
+        "evidence_span": "推出城市运营中心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "互联网+监管",
+        "evidence_span": "互联网+监管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "应急指挥系统",
+        "evidence_span": "应急指挥系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能客服机器人",
+        "evidence_span": "智能客服机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧政务",
+        "evidence_span": "形成了智慧政务、智慧园区、智慧交通、智慧教育、智慧医疗、智慧电力等系列解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧园区",
+        "evidence_span": "形成了智慧政务、智慧园区、智慧交通、智慧教育、智慧医疗、智慧电力等系列解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧交通",
+        "evidence_span": "形成了智慧政务、智慧园区、智慧交通、智慧教育、智慧医疗、智慧电力等系列解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧教育",
+        "evidence_span": "形成了智慧政务、智慧园区、智慧交通、智慧教育、智慧医疗、智慧电力等系列解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧医疗",
+        "evidence_span": "形成了智慧政务、智慧园区、智慧交通、智慧教育、智慧医疗、智慧电力等系列解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧电力",
+        "evidence_span": "形成了智慧政务、智慧园区、智慧交通、智慧教育、智慧医疗、智慧电力等系列解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ODR在线矛盾纠纷多元化解平台",
+        "evidence_span": "ODR在线矛盾纠纷多元化解平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业互联网平台",
+        "evidence_span": "通过工业互联网平台为企业在生产经营活动中的各个环节提供服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "常山云数据中心",
+        "evidence_span": "常山云数据中心项目二期"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纺织品分拣中心",
+        "evidence_span": "纺织品分拣中心项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷链物流产业园",
+        "evidence_span": "合作建设石家庄冷链物流产业园"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能",
+        "evidence_span": "积极推动人工智能、物联网、区块链等新一代信息技术与业务的深度融合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网",
+        "evidence_span": "积极推动人工智能、物联网、区块链等新一代信息技术与业务的深度融合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链",
+        "evidence_span": "积极推动人工智能、物联网、区块链等新一代信息技术与业务的深度融合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据分析技术",
+        "evidence_span": "融合人工智能和大数据分析技术的互联网+司法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "鲲鹏架构",
+        "evidence_span": "全国首个采用全鲲鹏架构的智慧城市"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为技术有限公司",
+        "evidence_span": "软件业务与华为技术有限公司在智慧城市、央国企数字化转型、金融信创、国产化自主可控、能源、交通、教育等多行业多业态进行联合方案打造与拓展"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "腾讯",
+        "evidence_span": "公司的内在价值也深化了与腾讯的战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海水星",
+        "evidence_span": "着力加强与上海水星等品牌客户的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三枪",
+        "evidence_span": "与三枪等终端品牌客户和际华3543等国内知名针织服装企业建立了深度合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "际华3543",
+        "evidence_span": "与三枪等终端品牌客户和际华3543等国内知名针织服装企业建立了深度合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国供销冷链物流股份有限公司",
+        "evidence_span": "公司与中国供销冷链物流股份有限公司、石家庄市第二棉麻有限公司共同签署了《中国供销常山北明冷链物流项目投资合作协议》"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧城市",
+        "evidence_span": "新型智慧城市的专家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化自主可控",
+        "evidence_span": "金融信创、国产化自主可控"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "工业互联网",
+        "evidence_span": "通过工业互联网平台为企业在生产经营活动中的各个环节提供服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数据中心",
+        "evidence_span": "常山云数据中心项目二期"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "冷链物流",
+        "evidence_span": "合作建设石家庄冷链物流产业园"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:55:01"
+}

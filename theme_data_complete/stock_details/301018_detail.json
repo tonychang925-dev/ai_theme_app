@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1498979319.17,
+    "changeCount": 5.54,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:10",
+    "detail": "<p><strong>一、公司介绍</strong></p><p>公司成立于 2000年，经历三个十年发展，企业定位逐步从单机设备销售横向拓展至整体解决方案，并进一步发展成为环境调控整体垂直解决方案商。</p><p>公司成立初期主营以专用性空调为代表的空气环境调节设备,前期先后中标长江三峡工程空调设备、北京首都国际机场飞机地面空调设备项目;2014年，公司二基地建成投产，主要生产机房精密空调，为数据中心和机房业务客户提供房间级、行级、机柜级、芯片级解决方案，合作华为、阿里巴巴、腾讯等大客户;2021 年公司于创业板上市，打造数字能环垂直一体化解决方案，目标成为数据服务产业环境、工业工艺产研环境、专业特种应用环境、高端公建室内环境四大领域专家。</p><p><strong>二、公司数据中心温控业务</strong></p><p><span style=\"color: rgb(207, 19, 34);\"><strong>公司早在 2011 年开始研究数据中心液冷散热技术，并搭建了国内较早的商用液冷微模块数据中心。作为在工业、特种等领域具备整体垂直解决方案基因的温控厂商，公司在数据中心液冷领域也建立了包括冷板、Manifold、快速接头、预制化管网、液冷机柜、CDU、外部冷源等具有竞争力和性价比的端到端全链条解决方案和产品。</strong></span></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/f88dfde5-fccf-4dd5-b3ae-770bccb4e484.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>公司作为工业特种空调领域龙头，自2011年切入数据中心业务以来，在传统风冷产品及解决方案上积累了成熟的经验，2018年开始应用液冷技术，较早提出风液同源大液冷系统产品，以“高效、节能、可靠”为核心优势，直击A| 数据中心高热密度散热痛点，风液协同将数据中心 PUE 值降至 1.15 以下，采用环保工质与智能变频技术，较传统风冷方案节能 30%以上，同时全栈覆盖从芯片级到机房级的散热需求，支持单机柜最高 150kW 散热。</p><p>公司基于多年项目经验积累，开发数据中心垂直一体化解决方案，涵盖用能规划、系统设计、设备定制、集成实施、调试验收、智慧总控、智能运维七大环节，在保障功能的基础上，提升制冷散热性能、节约项目整体能耗。除了自研自产高质量设备外，施工端，公司提出以“工厂”代替“工人”的理念，全过程BIM 精细化施工，采用工厂预制方案，将负责的现场工程转化为有序、标准、高效、全过程品控的工厂化实施;运维端，公司打造园区综合能源管理平台，适用于大规模集群数据中心园区整体能耗管控及智能运维。</p>",
+    "firstLetter": "SLHJ",
+    "high": 100.8,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 93.39,
+    "marketValue": 24822704221.2,
+    "name": "申菱环境",
+    "pctChg": 5.94,
+    "price": 98.84,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 1,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 87.09,
+    "recentChange": 50.85,
+    "remark": "工业特种空调领域龙头，深度布局数据中心液冷业务",
+    "status": 1,
+    "stockId": "301018",
+    "stockLightspots": [
+      {
+        "bizKey": "11038",
+        "content": "以数据服务为核，开启热储温控新篇章",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11038,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11039",
+        "content": "申菱环境—人工环境调控专家，产能扩张开启高成长之路",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11039,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11040",
+        "content": "申菱环境传统主业稳健，把握产业趋势延展业务边界",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11040,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11041",
+        "content": "申菱环境深耕专用性空调领域，引领行业技术发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11041,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11042",
+        "content": "申菱环境华为温控核心供应商，受益双碳政策加速发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11042,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11043",
+        "content": "申菱环境成立热储科技公司，发力欧洲及全球光储热市场",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11043,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11044",
+        "content": "申菱环境上半年各版块业务表现亮眼，液冷产品实现翻倍以上增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11044,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11045",
+        "content": "申菱环境一季度业绩表现亮眼，盈利能力环比改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11045,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11046",
+        "content": "申菱环境股权激励落地，彰显长期发展信心",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11046,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11047",
+        "content": "申菱环境工业空调和特种空调拉动，营收盈利高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11047,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11048",
+        "content": "申菱环境数据服务空调和工业空调拉动收入高增长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11048,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11049",
+        "content": "申菱环境拟向特定对象发行股票，加大液冷规模化生产能力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11049,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11050",
+        "content": "营收业绩高速增长，毛利率持续改善",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11050,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11051",
+        "content": "申菱环境在手订单充足，盈利能力持续上行",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11051,
+        "stockId": "301018",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11052",
+        "content": "申菱环境一季度业绩大幅增长，产能释放驱动业绩高增可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11052,
+        "stockId": "301018",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:03",
+    "vol": 154325.21
+  }
+}

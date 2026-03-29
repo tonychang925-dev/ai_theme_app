@@ -1,0 +1,439 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "景观照明整体规划",
+      "evidence_span": "主营业务为景观照明整体规划和深化设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "景观照明工程施工",
+      "evidence_span": "景观照明工程的施工"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "远程集控管理",
+      "evidence_span": "远程集控管理等景观照明其他服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设计咨询",
+      "evidence_span": "形成设计咨询、城市更新、城市运维、文化创意、节能环保、数字科技的六大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市更新",
+      "evidence_span": "形成设计咨询、城市更新、城市运维、文化创意、节能环保、数字科技的六大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市运维",
+      "evidence_span": "形成设计咨询、城市更新、城市运维、文化创意、节能环保、数字科技的六大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "文化创意",
+      "evidence_span": "形成设计咨询、城市更新、城市运维、文化创意、节能环保、数字科技的六大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "节能环保",
+      "evidence_span": "形成设计咨询、城市更新、城市运维、文化创意、节能环保、数字科技的六大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字科技",
+      "evidence_span": "形成设计咨询、城市更新、城市运维、文化创意、节能环保、数字科技的六大业务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市景观照明整体解决方案提供商",
+      "evidence_span": "国内领先的城市景观照明整体解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "景观照明设计",
+      "evidence_span": "景观照明整体规划和深化设计"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "景观照明工程",
+      "evidence_span": "景观照明工程的施工"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "远程集控管理服务",
+      "evidence_span": "远程集控管理等景观照明其他服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "沉浸式主题夜游项目",
+      "evidence_span": "首个沉浸式主题夜游项目“荷风夜拾光”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧文旅系统",
+      "evidence_span": "实现罗曼的智慧文旅系统与 HOLOVIS 的虚拟交互技术深度融合"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能控制系统",
+      "evidence_span": "不断完善智能控制系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "太阳能发电技术服务",
+      "evidence_span": "太阳能发电技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风力发电技术服务",
+      "evidence_span": "风力发电技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能技术服务",
+      "evidence_span": "储能技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集中式快速充电站",
+      "evidence_span": "集中式快速充电站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "景观灯光项目投资建设运营",
+      "evidence_span": "景观灯光项目的投资、建设、运营"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AR/VR技术",
+      "evidence_span": "以AR/VR 等先进技术，赋能艺术设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "虚拟现实技术",
+      "evidence_span": "依托战略合作伙伴在虚拟现实技术领域的领先优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "运动捕捉",
+      "evidence_span": "重点研发在运动捕捉、空间定位、面部识别、云渲染等前沿技术的集成能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空间定位",
+      "evidence_span": "重点研发在运动捕捉、空间定位、面部识别、云渲染等前沿技术的集成能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "面部识别",
+      "evidence_span": "重点研发在运动捕捉、空间定位、面部识别、云渲染等前沿技术的集成能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云渲染",
+      "evidence_span": "重点研发在运动捕捉、空间定位、面部识别、云渲染等前沿技术的集成能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "XR技术",
+      "evidence_span": "公司不断推进 XR 技术在 C 端应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "远程控制技术",
+      "evidence_span": "全资子公司嘉广聚智能是国内较早从事景观灯光远程控制技术研究的企业之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网单灯管理系统",
+      "evidence_span": "达到物联网单灯管理系统、照明能耗辅助决策系统和运维管理系统分组科学"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "照明能耗辅助决策系统",
+      "evidence_span": "达到物联网单灯管理系统、照明能耗辅助决策系统和运维管理系统分组科学"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "运维管理系统",
+      "evidence_span": "达到物联网单灯管理系统、照明能耗辅助决策系统和运维管理系统分组科学"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3D MAPPING崖壁投影秀",
+      "evidence_span": "青龙山上的 3D MAPPING 崖壁投影秀"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "虚拟交互技术",
+      "evidence_span": "国际先进虚拟交互技术赋能公司科技内核"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大连市政府",
+      "evidence_span": "共同推进大连市政府“绿电点亮大连”综合开发建设项目"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "节能化",
+      "evidence_span": "进一步明确了城市照明建设在节能化、智能化等科技热点趋势中大方向"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能化",
+      "evidence_span": "进一步明确了城市照明建设在节能化、智能化等科技热点趋势中大方向"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色低碳",
+      "evidence_span": "创造绿色低碳的城市光环境"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧城市",
+      "evidence_span": "以满足智慧城市建设的各种功能性支点需求"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "夜间经济",
+      "evidence_span": "城市景观照明的建设和推进，是实现夜间经济繁荣的桥梁"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "文旅融合",
+      "evidence_span": "文旅融合进一步激发城市活力"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "乡村振兴",
+      "evidence_span": "公司以文化创意服务乡村振兴的首个标杆项目"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新基建",
+      "evidence_span": "将极大地助力 5G 网络、城市数字化及车路协同等领域的“新基建”推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "景观照明整体规划",
+        "evidence_span": "主营业务为景观照明整体规划和深化设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "景观照明工程施工",
+        "evidence_span": "景观照明工程的施工"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "远程集控管理",
+        "evidence_span": "远程集控管理等景观照明其他服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "设计咨询",
+        "evidence_span": "形成设计咨询、城市更新、城市运维、文化创意、节能环保、数字科技的六大业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市更新",
+        "evidence_span": "形成设计咨询、城市更新、城市运维、文化创意、节能环保、数字科技的六大业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市运维",
+        "evidence_span": "形成设计咨询、城市更新、城市运维、文化创意、节能环保、数字科技的六大业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "文化创意",
+        "evidence_span": "形成设计咨询、城市更新、城市运维、文化创意、节能环保、数字科技的六大业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "节能环保",
+        "evidence_span": "形成设计咨询、城市更新、城市运维、文化创意、节能环保、数字科技的六大业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字科技",
+        "evidence_span": "形成设计咨询、城市更新、城市运维、文化创意、节能环保、数字科技的六大业务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市景观照明整体解决方案提供商",
+        "evidence_span": "国内领先的城市景观照明整体解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "景观照明设计",
+        "evidence_span": "景观照明整体规划和深化设计"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "景观照明工程",
+        "evidence_span": "景观照明工程的施工"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "远程集控管理服务",
+        "evidence_span": "远程集控管理等景观照明其他服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "沉浸式主题夜游项目",
+        "evidence_span": "首个沉浸式主题夜游项目“荷风夜拾光”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧文旅系统",
+        "evidence_span": "实现罗曼的智慧文旅系统与 HOLOVIS 的虚拟交互技术深度融合"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能控制系统",
+        "evidence_span": "不断完善智能控制系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "太阳能发电技术服务",
+        "evidence_span": "太阳能发电技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风力发电技术服务",
+        "evidence_span": "风力发电技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能技术服务",
+        "evidence_span": "储能技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集中式快速充电站",
+        "evidence_span": "集中式快速充电站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "景观灯光项目投资建设运营",
+        "evidence_span": "景观灯光项目的投资、建设、运营"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AR/VR技术",
+        "evidence_span": "以AR/VR 等先进技术，赋能艺术设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "虚拟现实技术",
+        "evidence_span": "依托战略合作伙伴在虚拟现实技术领域的领先优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "运动捕捉",
+        "evidence_span": "重点研发在运动捕捉、空间定位、面部识别、云渲染等前沿技术的集成能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空间定位",
+        "evidence_span": "重点研发在运动捕捉、空间定位、面部识别、云渲染等前沿技术的集成能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "面部识别",
+        "evidence_span": "重点研发在运动捕捉、空间定位、面部识别、云渲染等前沿技术的集成能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云渲染",
+        "evidence_span": "重点研发在运动捕捉、空间定位、面部识别、云渲染等前沿技术的集成能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "XR技术",
+        "evidence_span": "公司不断推进 XR 技术在 C 端应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "远程控制技术",
+        "evidence_span": "全资子公司嘉广聚智能是国内较早从事景观灯光远程控制技术研究的企业之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网单灯管理系统",
+        "evidence_span": "达到物联网单灯管理系统、照明能耗辅助决策系统和运维管理系统分组科学"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "照明能耗辅助决策系统",
+        "evidence_span": "达到物联网单灯管理系统、照明能耗辅助决策系统和运维管理系统分组科学"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "运维管理系统",
+        "evidence_span": "达到物联网单灯管理系统、照明能耗辅助决策系统和运维管理系统分组科学"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3D MAPPING崖壁投影秀",
+        "evidence_span": "青龙山上的 3D MAPPING 崖壁投影秀"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "虚拟交互技术",
+        "evidence_span": "国际先进虚拟交互技术赋能公司科技内核"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大连市政府",
+        "evidence_span": "共同推进大连市政府“绿电点亮大连”综合开发建设项目"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "节能化",
+        "evidence_span": "进一步明确了城市照明建设在节能化、智能化等科技热点趋势中大方向"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能化",
+        "evidence_span": "进一步明确了城市照明建设在节能化、智能化等科技热点趋势中大方向"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色低碳",
+        "evidence_span": "创造绿色低碳的城市光环境"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧城市",
+        "evidence_span": "以满足智慧城市建设的各种功能性支点需求"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "夜间经济",
+        "evidence_span": "城市景观照明的建设和推进，是实现夜间经济繁荣的桥梁"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "文旅融合",
+        "evidence_span": "文旅融合进一步激发城市活力"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "乡村振兴",
+        "evidence_span": "公司以文化创意服务乡村振兴的首个标杆项目"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新基建",
+        "evidence_span": "将极大地助力 5G 网络、城市数字化及车路协同等领域的“新基建”推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:17:55"
+}

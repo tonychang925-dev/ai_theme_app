@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "陶瓷业务",
+      "evidence_span": "公司主营业务主要为陶瓷业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "家瓷",
+      "evidence_span": "主要经营家瓷、定制瓷、酒店瓷、陶瓷酒瓶等陶瓷用品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "定制瓷",
+      "evidence_span": "主要经营家瓷、定制瓷、酒店瓷、陶瓷酒瓶等陶瓷用品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "酒店瓷",
+      "evidence_span": "主要经营家瓷、定制瓷、酒店瓷、陶瓷酒瓶等陶瓷用品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "陶瓷酒瓶",
+      "evidence_span": "主要经营家瓷、定制瓷、酒店瓷、陶瓷酒瓶等陶瓷用品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专业化、高品质日用瓷供应商",
+      "evidence_span": "专业化、高品质日用瓷供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "日用陶瓷制品制造企业",
+      "evidence_span": "公司属于“307陶瓷制品制造”中的“3074日用陶瓷制品制造”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "餐具",
+      "evidence_span": "公司产品涵盖餐具、茶具、咖啡器皿、陈列瓷、艺术收藏瓷、陶瓷酒瓶、酒店用品等陶瓷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "茶具",
+      "evidence_span": "公司产品涵盖餐具、茶具、咖啡器皿、陈列瓷、艺术收藏瓷、陶瓷酒瓶、酒店用品等陶瓷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "咖啡器皿",
+      "evidence_span": "公司产品涵盖餐具、茶具、咖啡器皿、陈列瓷、艺术收藏瓷、陶瓷酒瓶、酒店用品等陶瓷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陈列瓷",
+      "evidence_span": "公司产品涵盖餐具、茶具、咖啡器皿、陈列瓷、艺术收藏瓷、陶瓷酒瓶、酒店用品等陶瓷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "艺术收藏瓷",
+      "evidence_span": "公司产品涵盖餐具、茶具、咖啡器皿、陈列瓷、艺术收藏瓷、陶瓷酒瓶、酒店用品等陶瓷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酒店用品",
+      "evidence_span": "公司产品涵盖餐具、茶具、咖啡器皿、陈列瓷、艺术收藏瓷、陶瓷酒瓶、酒店用品等陶瓷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不锈钢家居用品",
+      "evidence_span": "陶瓷以及不锈钢、水晶及玻璃等家居用品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水晶家居用品",
+      "evidence_span": "陶瓷以及不锈钢、水晶及玻璃等家居用品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃家居用品",
+      "evidence_span": "陶瓷以及不锈钢、水晶及玻璃等家居用品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电器配件产品",
+      "evidence_span": "为电器行业和家居行业提供电器配件产品及配套产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配套产品",
+      "evidence_span": "为电器行业和家居行业提供电器配件产品及配套产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "色土结合色釉工艺",
+      "evidence_span": "在工艺上开发色土结合色釉"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "喷釉工艺",
+      "evidence_span": "结合喷釉等工艺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英国Tesco",
+      "evidence_span": "包括英国Tesco，美国沃尔玛，美国Costco，澳洲HAG等知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国沃尔玛",
+      "evidence_span": "包括英国Tesco，美国沃尔玛，美国Costco，澳洲HAG等知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国Costco",
+      "evidence_span": "包括英国Tesco，美国沃尔玛，美国Costco，澳洲HAG等知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "澳洲HAG",
+      "evidence_span": "包括英国Tesco，美国沃尔玛，美国Costco，澳洲HAG等知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雀巢（中国）",
+      "evidence_span": "公司客户覆盖雀巢（中国）、京东、万豪、喜来登、洲际、海尔等知名企业集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东",
+      "evidence_span": "公司客户覆盖雀巢（中国）、京东、万豪、喜来登、洲际、海尔等知名企业集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万豪",
+      "evidence_span": "公司客户覆盖雀巢（中国）、京东、万豪、喜来登、洲际、海尔等知名企业集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "喜来登",
+      "evidence_span": "公司客户覆盖雀巢（中国）、京东、万豪、喜来登、洲际、海尔等知名企业集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "洲际",
+      "evidence_span": "公司客户覆盖雀巢（中国）、京东、万豪、喜来登、洲际、海尔等知名企业集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海尔",
+      "evidence_span": "公司客户覆盖雀巢（中国）、京东、万豪、喜来登、洲际、海尔等知名企业集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新宝电器",
+      "evidence_span": "合作的品牌企业有海尔、新宝电器、欧派、金牌厨柜、索菲亚等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧派",
+      "evidence_span": "合作的品牌企业有海尔、新宝电器、欧派、金牌厨柜、索菲亚等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金牌厨柜",
+      "evidence_span": "合作的品牌企业有海尔、新宝电器、欧派、金牌厨柜、索菲亚等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "索菲亚",
+      "evidence_span": "合作的品牌企业有海尔、新宝电器、欧派、金牌厨柜、索菲亚等"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "陶瓷业务",
+        "evidence_span": "公司主营业务主要为陶瓷业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "家瓷",
+        "evidence_span": "主要经营家瓷、定制瓷、酒店瓷、陶瓷酒瓶等陶瓷用品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "定制瓷",
+        "evidence_span": "主要经营家瓷、定制瓷、酒店瓷、陶瓷酒瓶等陶瓷用品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "酒店瓷",
+        "evidence_span": "主要经营家瓷、定制瓷、酒店瓷、陶瓷酒瓶等陶瓷用品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "陶瓷酒瓶",
+        "evidence_span": "主要经营家瓷、定制瓷、酒店瓷、陶瓷酒瓶等陶瓷用品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专业化、高品质日用瓷供应商",
+        "evidence_span": "专业化、高品质日用瓷供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "日用陶瓷制品制造企业",
+        "evidence_span": "公司属于“307陶瓷制品制造”中的“3074日用陶瓷制品制造”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "餐具",
+        "evidence_span": "公司产品涵盖餐具、茶具、咖啡器皿、陈列瓷、艺术收藏瓷、陶瓷酒瓶、酒店用品等陶瓷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "茶具",
+        "evidence_span": "公司产品涵盖餐具、茶具、咖啡器皿、陈列瓷、艺术收藏瓷、陶瓷酒瓶、酒店用品等陶瓷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "咖啡器皿",
+        "evidence_span": "公司产品涵盖餐具、茶具、咖啡器皿、陈列瓷、艺术收藏瓷、陶瓷酒瓶、酒店用品等陶瓷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陈列瓷",
+        "evidence_span": "公司产品涵盖餐具、茶具、咖啡器皿、陈列瓷、艺术收藏瓷、陶瓷酒瓶、酒店用品等陶瓷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "艺术收藏瓷",
+        "evidence_span": "公司产品涵盖餐具、茶具、咖啡器皿、陈列瓷、艺术收藏瓷、陶瓷酒瓶、酒店用品等陶瓷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酒店用品",
+        "evidence_span": "公司产品涵盖餐具、茶具、咖啡器皿、陈列瓷、艺术收藏瓷、陶瓷酒瓶、酒店用品等陶瓷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不锈钢家居用品",
+        "evidence_span": "陶瓷以及不锈钢、水晶及玻璃等家居用品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水晶家居用品",
+        "evidence_span": "陶瓷以及不锈钢、水晶及玻璃等家居用品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃家居用品",
+        "evidence_span": "陶瓷以及不锈钢、水晶及玻璃等家居用品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电器配件产品",
+        "evidence_span": "为电器行业和家居行业提供电器配件产品及配套产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配套产品",
+        "evidence_span": "为电器行业和家居行业提供电器配件产品及配套产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "色土结合色釉工艺",
+        "evidence_span": "在工艺上开发色土结合色釉"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "喷釉工艺",
+        "evidence_span": "结合喷釉等工艺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英国Tesco",
+        "evidence_span": "包括英国Tesco，美国沃尔玛，美国Costco，澳洲HAG等知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国沃尔玛",
+        "evidence_span": "包括英国Tesco，美国沃尔玛，美国Costco，澳洲HAG等知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国Costco",
+        "evidence_span": "包括英国Tesco，美国沃尔玛，美国Costco，澳洲HAG等知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "澳洲HAG",
+        "evidence_span": "包括英国Tesco，美国沃尔玛，美国Costco，澳洲HAG等知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雀巢（中国）",
+        "evidence_span": "公司客户覆盖雀巢（中国）、京东、万豪、喜来登、洲际、海尔等知名企业集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东",
+        "evidence_span": "公司客户覆盖雀巢（中国）、京东、万豪、喜来登、洲际、海尔等知名企业集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万豪",
+        "evidence_span": "公司客户覆盖雀巢（中国）、京东、万豪、喜来登、洲际、海尔等知名企业集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "喜来登",
+        "evidence_span": "公司客户覆盖雀巢（中国）、京东、万豪、喜来登、洲际、海尔等知名企业集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "洲际",
+        "evidence_span": "公司客户覆盖雀巢（中国）、京东、万豪、喜来登、洲际、海尔等知名企业集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海尔",
+        "evidence_span": "公司客户覆盖雀巢（中国）、京东、万豪、喜来登、洲际、海尔等知名企业集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新宝电器",
+        "evidence_span": "合作的品牌企业有海尔、新宝电器、欧派、金牌厨柜、索菲亚等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧派",
+        "evidence_span": "合作的品牌企业有海尔、新宝电器、欧派、金牌厨柜、索菲亚等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金牌厨柜",
+        "evidence_span": "合作的品牌企业有海尔、新宝电器、欧派、金牌厨柜、索菲亚等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "索菲亚",
+        "evidence_span": "合作的品牌企业有海尔、新宝电器、欧派、金牌厨柜、索菲亚等"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:47:40"
+}

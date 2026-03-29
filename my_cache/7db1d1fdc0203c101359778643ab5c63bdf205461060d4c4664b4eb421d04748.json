@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "838630ebb29b", "label": "noise", "confidence": 0.8, "ontology_value": "low", "reason": "该段落仅引用媒体标题，内容泛泛，没有具体信息，与预制菜无关，属于噪音。"}}

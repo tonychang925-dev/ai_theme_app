@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "通信技术服务业务",
+      "evidence_span": "形成“四轮驱动”的业务格局，即通信技术服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息化产品集成运营业务",
+      "evidence_span": "形成“四轮驱动”的业务格局，即...信息化产品集成运营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "国际业务",
+      "evidence_span": "形成“四轮驱动”的业务格局，即...国际业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资业务",
+      "evidence_span": "形成“四轮驱动”的业务格局，即...投资业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "通信网络技术服务商",
+      "evidence_span": "国内领先的通信网络技术服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "通信及信息技术服务商",
+      "evidence_span": "国内领先的通信及信息技术服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧食堂系列产品",
+      "evidence_span": "公司自主研发的智慧食堂系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FTTX全过程服务",
+      "evidence_span": "业务主要为FTTX（包括FTTB、FTTH、FBTS等工程）的规划、勘察、设备采购、建设和运维为一体的全过程服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信工程施工服务",
+      "evidence_span": "以及通信工程施工服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "公司主要客户包括中国移动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电信",
+      "evidence_span": "公司主要客户包括...中国电信"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国联通",
+      "evidence_span": "公司主要客户包括...中国联通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国广电",
+      "evidence_span": "公司主要客户包括...中国广电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "菲律宾本地主流通信运营商",
+      "evidence_span": "服务于菲律宾本地主流通信运营商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "菲律宾本地主流通信制造商",
+      "evidence_span": "服务于菲律宾本地主流通信运营商、制造商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "通信技术服务业务",
+        "evidence_span": "形成“四轮驱动”的业务格局，即通信技术服务业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息化产品集成运营业务",
+        "evidence_span": "形成“四轮驱动”的业务格局，即...信息化产品集成运营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "国际业务",
+        "evidence_span": "形成“四轮驱动”的业务格局，即...国际业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资业务",
+        "evidence_span": "形成“四轮驱动”的业务格局，即...投资业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "通信网络技术服务商",
+        "evidence_span": "国内领先的通信网络技术服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "通信及信息技术服务商",
+        "evidence_span": "国内领先的通信及信息技术服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧食堂系列产品",
+        "evidence_span": "公司自主研发的智慧食堂系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FTTX全过程服务",
+        "evidence_span": "业务主要为FTTX（包括FTTB、FTTH、FBTS等工程）的规划、勘察、设备采购、建设和运维为一体的全过程服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信工程施工服务",
+        "evidence_span": "以及通信工程施工服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "公司主要客户包括中国移动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电信",
+        "evidence_span": "公司主要客户包括...中国电信"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国联通",
+        "evidence_span": "公司主要客户包括...中国联通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国广电",
+        "evidence_span": "公司主要客户包括...中国广电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "菲律宾本地主流通信运营商",
+        "evidence_span": "服务于菲律宾本地主流通信运营商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "菲律宾本地主流通信制造商",
+        "evidence_span": "服务于菲律宾本地主流通信运营商、制造商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:29:14"
+}

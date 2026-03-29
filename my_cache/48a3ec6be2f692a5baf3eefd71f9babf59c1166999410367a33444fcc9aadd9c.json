@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:42:08", "result": {"chunk_id": "6b0a1dc2c90c", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含高通AI芯片的静态知识（如NPU技术、内存架构、产品规格、市场定位等），可用于题材本体构建，但同时也混合了具体事件（如产品发布、股价变化、财报数据、时间性动态），因此优先归类为candidate_mixed而非strict_knowledge。"}}

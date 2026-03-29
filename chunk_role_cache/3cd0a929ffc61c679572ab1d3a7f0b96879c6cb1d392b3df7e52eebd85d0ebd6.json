@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "71f35549b481", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含两部分：1. 工信部目录更新事件，其中详细列出了光刻机的技术参数（分辨率、套刻精度、支持工艺），这些参数属于有价值的稳定知识。2. 苹果包下台积电产能的事件动态。两部分混杂，知识边界不干净，故判为candidate_mixed。"}}

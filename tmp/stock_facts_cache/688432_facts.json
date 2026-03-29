@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体硅材料研发",
+      "evidence_span": "公司主营业务为半导体硅材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体硅材料生产",
+      "evidence_span": "公司主营业务为半导体硅材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体硅材料销售",
+      "evidence_span": "公司主营业务为半导体硅材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内半导体材料龙头企业",
+      "evidence_span": "国内半导体材料龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内刻蚀单晶硅龙头",
+      "evidence_span": "国内刻蚀单晶硅龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内领先的半导体硅材料企业",
+      "evidence_span": "国内领先的半导体硅材料企业有研硅"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "世界一流刻蚀设备厂商核心供应商",
+      "evidence_span": "成为世界一流刻蚀设备厂商核心供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体硅抛光片",
+      "evidence_span": "主要产品包括半导体硅抛光片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "刻蚀设备用硅材料",
+      "evidence_span": "主要产品包括半导体硅抛光片、刻蚀设备用硅材料、半导体区熔硅单晶等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体区熔硅单晶",
+      "evidence_span": "主要产品包括半导体硅抛光片、刻蚀设备用硅材料、半导体区熔硅单晶等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "8英寸半导体硅抛光片",
+      "evidence_span": "能够稳定量产8英寸半导体硅抛光片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "区熔硅单晶",
+      "evidence_span": "有研硅是国内为数不多能够生产区熔硅单晶的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功率半导体用8英寸重掺抛光片",
+      "evidence_span": "功率半导体用8英寸重掺抛光片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字集成电路用8英寸低微缺陷硅抛光片",
+      "evidence_span": "数字集成电路用8英寸低微缺陷硅抛光片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IGBT用8英寸轻掺杂硅抛光片",
+      "evidence_span": "IGBT用8英寸轻掺杂硅抛光片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SOI用8英寸硅抛光片",
+      "evidence_span": "SOI用8英寸硅抛光片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低缺陷低电阻大尺寸材料",
+      "evidence_span": "低缺陷低电阻大尺寸材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高电阻电极用硅材料",
+      "evidence_span": "高电阻电极用硅材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "19英寸直径硅材料",
+      "evidence_span": "19英寸直径硅材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "8英寸硅片产业化",
+      "evidence_span": "在国内率先实现6英寸、8英寸硅片的产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "12英寸硅片技术突破",
+      "evidence_span": "12英寸硅片的技术突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集成电路刻蚀设备用硅材料产业化",
+      "evidence_span": "实现集成电路刻蚀设备用硅材料产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大尺寸硅材料热场设计",
+      "evidence_span": "掌握大尺寸硅材料热场设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大尺寸硅材料工艺开发",
+      "evidence_span": "掌握大尺寸硅材料热场设计、工艺开发、缺陷控制、精密加工技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大尺寸硅材料缺陷控制",
+      "evidence_span": "掌握大尺寸硅材料热场设计、工艺开发、缺陷控制、精密加工技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大尺寸硅材料精密加工技术",
+      "evidence_span": "掌握大尺寸硅材料热场设计、工艺开发、缺陷控制、精密加工技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华润微",
+      "evidence_span": "与华润微、士兰微、华微电子、中芯国际、客户B、日本CoorsTek、客户C、韩国Hana等主要芯片制造及刻蚀设备部件制造企业保持长期稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "士兰微",
+      "evidence_span": "与华润微、士兰微、华微电子、中芯国际、客户B、日本CoorsTek、客户C、韩国Hana等主要芯片制造及刻蚀设备部件制造企业保持长期稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华微电子",
+      "evidence_span": "与华润微、士兰微、华微电子、中芯国际、客户B、日本CoorsTek、客户C、韩国Hana等主要芯片制造及刻蚀设备部件制造企业保持长期稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中芯国际",
+      "evidence_span": "与华润微、士兰微、华微电子、中芯国际、客户B、日本CoorsTek、客户C、韩国Hana等主要芯片制造及刻蚀设备部件制造企业保持长期稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本CoorsTek",
+      "evidence_span": "与华润微、士兰微、华微电子、中芯国际、客户B、日本CoorsTek、客户C、韩国Hana等主要芯片制造及刻蚀设备部件制造企业保持长期稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国Hana",
+      "evidence_span": "与华润微、士兰微、华微电子、中芯国际、客户B、日本CoorsTek、客户C、韩国Hana等主要芯片制造及刻蚀设备部件制造企业保持长期稳定合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "半导体硅片产品国产化",
+      "evidence_span": "实现了半导体硅片产品的国产化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体硅材料研发",
+        "evidence_span": "公司主营业务为半导体硅材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体硅材料生产",
+        "evidence_span": "公司主营业务为半导体硅材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体硅材料销售",
+        "evidence_span": "公司主营业务为半导体硅材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内半导体材料龙头企业",
+        "evidence_span": "国内半导体材料龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内刻蚀单晶硅龙头",
+        "evidence_span": "国内刻蚀单晶硅龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内领先的半导体硅材料企业",
+        "evidence_span": "国内领先的半导体硅材料企业有研硅"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "世界一流刻蚀设备厂商核心供应商",
+        "evidence_span": "成为世界一流刻蚀设备厂商核心供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体硅抛光片",
+        "evidence_span": "主要产品包括半导体硅抛光片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "刻蚀设备用硅材料",
+        "evidence_span": "主要产品包括半导体硅抛光片、刻蚀设备用硅材料、半导体区熔硅单晶等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体区熔硅单晶",
+        "evidence_span": "主要产品包括半导体硅抛光片、刻蚀设备用硅材料、半导体区熔硅单晶等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "8英寸半导体硅抛光片",
+        "evidence_span": "能够稳定量产8英寸半导体硅抛光片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "区熔硅单晶",
+        "evidence_span": "有研硅是国内为数不多能够生产区熔硅单晶的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功率半导体用8英寸重掺抛光片",
+        "evidence_span": "功率半导体用8英寸重掺抛光片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字集成电路用8英寸低微缺陷硅抛光片",
+        "evidence_span": "数字集成电路用8英寸低微缺陷硅抛光片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IGBT用8英寸轻掺杂硅抛光片",
+        "evidence_span": "IGBT用8英寸轻掺杂硅抛光片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SOI用8英寸硅抛光片",
+        "evidence_span": "SOI用8英寸硅抛光片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低缺陷低电阻大尺寸材料",
+        "evidence_span": "低缺陷低电阻大尺寸材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高电阻电极用硅材料",
+        "evidence_span": "高电阻电极用硅材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "19英寸直径硅材料",
+        "evidence_span": "19英寸直径硅材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "8英寸硅片产业化",
+        "evidence_span": "在国内率先实现6英寸、8英寸硅片的产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "12英寸硅片技术突破",
+        "evidence_span": "12英寸硅片的技术突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集成电路刻蚀设备用硅材料产业化",
+        "evidence_span": "实现集成电路刻蚀设备用硅材料产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大尺寸硅材料热场设计",
+        "evidence_span": "掌握大尺寸硅材料热场设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大尺寸硅材料工艺开发",
+        "evidence_span": "掌握大尺寸硅材料热场设计、工艺开发、缺陷控制、精密加工技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大尺寸硅材料缺陷控制",
+        "evidence_span": "掌握大尺寸硅材料热场设计、工艺开发、缺陷控制、精密加工技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大尺寸硅材料精密加工技术",
+        "evidence_span": "掌握大尺寸硅材料热场设计、工艺开发、缺陷控制、精密加工技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华润微",
+        "evidence_span": "与华润微、士兰微、华微电子、中芯国际、客户B、日本CoorsTek、客户C、韩国Hana等主要芯片制造及刻蚀设备部件制造企业保持长期稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "士兰微",
+        "evidence_span": "与华润微、士兰微、华微电子、中芯国际、客户B、日本CoorsTek、客户C、韩国Hana等主要芯片制造及刻蚀设备部件制造企业保持长期稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华微电子",
+        "evidence_span": "与华润微、士兰微、华微电子、中芯国际、客户B、日本CoorsTek、客户C、韩国Hana等主要芯片制造及刻蚀设备部件制造企业保持长期稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中芯国际",
+        "evidence_span": "与华润微、士兰微、华微电子、中芯国际、客户B、日本CoorsTek、客户C、韩国Hana等主要芯片制造及刻蚀设备部件制造企业保持长期稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本CoorsTek",
+        "evidence_span": "与华润微、士兰微、华微电子、中芯国际、客户B、日本CoorsTek、客户C、韩国Hana等主要芯片制造及刻蚀设备部件制造企业保持长期稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国Hana",
+        "evidence_span": "与华润微、士兰微、华微电子、中芯国际、客户B、日本CoorsTek、客户C、韩国Hana等主要芯片制造及刻蚀设备部件制造企业保持长期稳定合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "半导体硅片产品国产化",
+        "evidence_span": "实现了半导体硅片产品的国产化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:34:10"
+}

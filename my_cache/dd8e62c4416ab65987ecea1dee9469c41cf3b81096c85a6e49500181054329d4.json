@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:41:18", "result": {"chunk_id": "09b873425135", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含蜜雪冰城收购鲜啤福鹿家股权的事件信息，但也提供了产品价格和定位等有价值的知识，这些可用于题材本体构建，但混合了事件动态，需要进一步裁决。"}}

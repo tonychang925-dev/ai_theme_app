@@ -1,0 +1,399 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保水处理系统设备",
+      "evidence_span": "主要从事环保水处理系统设备和氢燃料电池发动机系统的研发、设计和集成业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "氢燃料电池发动机系统",
+      "evidence_span": "主要从事环保水处理系统设备和氢燃料电池发动机系统的研发、设计和集成业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能电站设备",
+      "evidence_span": "为电力企业提供智能电站设备的研发、设计和系统集成服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高新技术企业",
+      "evidence_span": "以具有自主知识产权的专利技术和专有技术为支撑的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家专精特新‘小巨人’企业",
+      "evidence_span": "公司是“国家专精特新‘小巨人’企业”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "浙江省隐形冠军企业",
+      "evidence_span": "和“浙江省隐形冠军企业”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "凝结水精处理系统设备",
+      "evidence_span": "主要产品为凝结水精处理系统设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "除盐水处理系统设备",
+      "evidence_span": "除盐水处理（含海水淡化）系统设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污水处理系统设备",
+      "evidence_span": "污水处理系统设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢燃料电池发动机系统",
+      "evidence_span": "氢燃料电池发动机系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海水淡化系统设备",
+      "evidence_span": "海水淡化系统设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化学加药",
+      "evidence_span": "化学加药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水汽取样",
+      "evidence_span": "水汽取样"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水网控制",
+      "evidence_span": "水网控制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高塔法凝结水精处理系统",
+      "evidence_span": "公司提供的高塔法凝结水精处理系统设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "热膜耦合海水淡化技术",
+      "evidence_span": "开发出热膜耦合海水淡化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低铂膜电极技术",
+      "evidence_span": "掌握了低铂膜电极技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "膜电极高效涂敷工艺",
+      "evidence_span": "膜电极高效涂敷工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "五合一和七合一膜电极精准装配技术",
+      "evidence_span": "五合一和七合一膜电极精准装配技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高性能双极板涂层技术",
+      "evidence_span": "高性能双极板涂层技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电堆设计和制造技术",
+      "evidence_span": "电堆设计和制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电堆叠堆工艺",
+      "evidence_span": "电堆叠堆工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃料电池低温保存与启动技术",
+      "evidence_span": "燃料电池低温保存与启动技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃料电池系统的设计与集成技术",
+      "evidence_span": "燃料电池系统的设计与集成技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统冗余控制技术",
+      "evidence_span": "系统冗余控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统容错报错高可靠性控制",
+      "evidence_span": "系统容错报错高可靠性控制"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中核集团",
+      "evidence_span": "成功为中核集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中广核集团",
+      "evidence_span": "中广核集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华能集团",
+      "evidence_span": "华能集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大唐集团",
+      "evidence_span": "大唐集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华电集团",
+      "evidence_span": "华电集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家能源集团",
+      "evidence_span": "国家能源集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国电投集团",
+      "evidence_span": "国电投集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "郑州新大方重工科技有限公司",
+      "evidence_span": "与郑州新大方重工科技有限公司签署了《大宗机电产品购销合同》"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "厦门金龙旅行车有限公司",
+      "evidence_span": "厦门金龙旅行车有限公司8.5米公交车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "厦门金龙联合汽车工业有限公司",
+      "evidence_span": "厦门金龙联合汽车工业有限公司8.5米公交车"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "核电水处理",
+      "evidence_span": "能源保供下核电、火电水处理有望复苏"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "火电水处理",
+      "evidence_span": "能源保供下核电、火电水处理有望复苏"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "氢燃料电池",
+      "evidence_span": "二度创业布局氢燃料电池"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保水处理系统设备",
+        "evidence_span": "主要从事环保水处理系统设备和氢燃料电池发动机系统的研发、设计和集成业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "氢燃料电池发动机系统",
+        "evidence_span": "主要从事环保水处理系统设备和氢燃料电池发动机系统的研发、设计和集成业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能电站设备",
+        "evidence_span": "为电力企业提供智能电站设备的研发、设计和系统集成服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高新技术企业",
+        "evidence_span": "以具有自主知识产权的专利技术和专有技术为支撑的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家专精特新‘小巨人’企业",
+        "evidence_span": "公司是“国家专精特新‘小巨人’企业”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "浙江省隐形冠军企业",
+        "evidence_span": "和“浙江省隐形冠军企业”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "凝结水精处理系统设备",
+        "evidence_span": "主要产品为凝结水精处理系统设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "除盐水处理系统设备",
+        "evidence_span": "除盐水处理（含海水淡化）系统设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污水处理系统设备",
+        "evidence_span": "污水处理系统设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢燃料电池发动机系统",
+        "evidence_span": "氢燃料电池发动机系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海水淡化系统设备",
+        "evidence_span": "海水淡化系统设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化学加药",
+        "evidence_span": "化学加药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水汽取样",
+        "evidence_span": "水汽取样"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水网控制",
+        "evidence_span": "水网控制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高塔法凝结水精处理系统",
+        "evidence_span": "公司提供的高塔法凝结水精处理系统设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "热膜耦合海水淡化技术",
+        "evidence_span": "开发出热膜耦合海水淡化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低铂膜电极技术",
+        "evidence_span": "掌握了低铂膜电极技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "膜电极高效涂敷工艺",
+        "evidence_span": "膜电极高效涂敷工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "五合一和七合一膜电极精准装配技术",
+        "evidence_span": "五合一和七合一膜电极精准装配技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高性能双极板涂层技术",
+        "evidence_span": "高性能双极板涂层技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电堆设计和制造技术",
+        "evidence_span": "电堆设计和制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电堆叠堆工艺",
+        "evidence_span": "电堆叠堆工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃料电池低温保存与启动技术",
+        "evidence_span": "燃料电池低温保存与启动技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃料电池系统的设计与集成技术",
+        "evidence_span": "燃料电池系统的设计与集成技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统冗余控制技术",
+        "evidence_span": "系统冗余控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统容错报错高可靠性控制",
+        "evidence_span": "系统容错报错高可靠性控制"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中核集团",
+        "evidence_span": "成功为中核集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中广核集团",
+        "evidence_span": "中广核集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华能集团",
+        "evidence_span": "华能集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大唐集团",
+        "evidence_span": "大唐集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华电集团",
+        "evidence_span": "华电集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家能源集团",
+        "evidence_span": "国家能源集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国电投集团",
+        "evidence_span": "国电投集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "郑州新大方重工科技有限公司",
+        "evidence_span": "与郑州新大方重工科技有限公司签署了《大宗机电产品购销合同》"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "厦门金龙旅行车有限公司",
+        "evidence_span": "厦门金龙旅行车有限公司8.5米公交车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "厦门金龙联合汽车工业有限公司",
+        "evidence_span": "厦门金龙联合汽车工业有限公司8.5米公交车"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "核电水处理",
+        "evidence_span": "能源保供下核电、火电水处理有望复苏"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "火电水处理",
+        "evidence_span": "能源保供下核电、火电水处理有望复苏"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "氢燃料电池",
+        "evidence_span": "二度创业布局氢燃料电池"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:52:19"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "a43fa2305dd9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了国务院常务会议审议通过《网络数据安全管理条例（草案）》等事件，包含政策出台和会议动态，属于事件信息。同时，它涉及网络数据安全管理这一安全防护与监管题材的核心构成（如法规制定），可能含有可用于题材本体构建的稳定知识（如法规名称和目的），因此混合了事件和知识。"}}

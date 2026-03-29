@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:09:24", "result": {"span_uid": "844bbfefd6b3", "action": "rewrite", "canonical_text": "通用航空装备创新应用实施方案（2024-2030年）发布，涉及无人机、卫星互联网等军工新兴投资领域。", "final_type": "signal", "final_role": "通用航空政策规划", "stability": "medium", "reason": "去新闻口吻改写，保留政策规划及涉及领域信息，作为军工领域政策催化信号。"}}

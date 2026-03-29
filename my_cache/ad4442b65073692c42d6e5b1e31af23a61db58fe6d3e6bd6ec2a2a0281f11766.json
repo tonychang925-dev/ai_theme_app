@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "c6fa402abf71", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含事件信息（发动机获颁型号合格证），但也提供了关于我国民用涡轴发动机能力的知识，可能对军工产业链构建有价值。"}}

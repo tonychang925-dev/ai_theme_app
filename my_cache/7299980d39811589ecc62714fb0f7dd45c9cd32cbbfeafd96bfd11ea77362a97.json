@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "aed9059f8345", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段详细描述了以伊冲突中的具体事件，如导弹发射、伤亡、设施破坏、核设施袭击等，完全是时间性动态新闻，不提供军工集团的静态知识或核心构成。"}}

@@ -1,0 +1,68 @@
+{
+  "event_id": "evt_3b71a6391aad",
+  "theme_name": "液冷数据中心",
+  "event_type": "技术突破",
+  "entities": [
+    {
+      "name": "英伟达",
+      "type": "公司",
+      "normalized": "英伟达"
+    },
+    {
+      "name": "AI新平台Rubin",
+      "type": "产品",
+      "normalized": "Rubin AI平台"
+    },
+    {
+      "name": "下一代Feynman平台",
+      "type": "产品",
+      "normalized": "Feynman平台"
+    },
+    {
+      "name": "微通道水冷板（MLCP）",
+      "type": "技术",
+      "normalized": "微通道水冷板技术"
+    }
+  ],
+  "summary": "英伟达要求供应商开发微通道水冷板技术，以应对AI平台高功耗散热需求。",
+  "causal_claim": [
+    "高功耗AI平台",
+    "散热需求升级",
+    "液冷技术突破"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "微通道水冷板（MLCP）",
+      "散热方案",
+      "功耗2000W以上"
+    ],
+    "normalized_terms": {
+      "英伟达": "英伟达",
+      "AI新平台Rubin": "Rubin AI平台",
+      "下一代Feynman平台": "Feynman平台",
+      "微通道水冷板（MLCP）": "微通道水冷板技术"
+    },
+    "evidence_spans": [
+      {
+        "text": "由于AI新平台Rubin与下一代Feynman平台功耗或高达2000W以上，现有散热方案无法应对",
+        "start": 0,
+        "end": 50
+      },
+      {
+        "text": "消息称英伟达要求供应商开发全新“微通道水冷板（MLCP）”技术，单价是现有散热方案的三至五倍。",
+        "start": 50,
+        "end": 100
+      }
+    ],
+    "core_concepts": [
+      "液冷散热",
+      "AI功耗",
+      "技术升级"
+    ]
+  },
+  "severity_score": 0.8,
+  "confidence": 0.9,
+  "source_weight": 1.2,
+  "timestamp": null,
+  "raw_text": "《科创板日报》15日讯，由于AI新平台Rubin与下一代Feynman平台功耗或高达2000W以上，现有散热方案无法应对，消息称英伟达要求供应商开发全新“微通道水冷板（MLCP）”技术，单价是现有散热方案的三至五倍。 （新闻来源：科创板日报）"
+}

@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "图书出版",
+      "evidence_span": "主要从事图书的出版和发行等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "期刊出版",
+      "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "报纸出版",
+      "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "音像制品出版",
+      "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子出版物出版",
+      "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "图书发行",
+      "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "印刷",
+      "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物资贸易",
+      "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字阅读",
+      "evidence_span": "逐步向数字阅读、在线教育、文化创意、投资金融等领域拓展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "在线教育",
+      "evidence_span": "逐步向数字阅读、在线教育、文化创意、投资金融等领域拓展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "文化创意",
+      "evidence_span": "逐步向数字阅读、在线教育、文化创意、投资金融等领域拓展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资金融",
+      "evidence_span": "逐步向数字阅读、在线教育、文化创意、投资金融等领域拓展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "湖北省文化产业龙头企业",
+      "evidence_span": "具有湖北国资背景的湖北省文化产业龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内领先出版集团",
+      "evidence_span": "长江传媒国内领先出版集团"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一般图书",
+      "evidence_span": "出版业务主要为一般图书的出版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教材教辅",
+      "evidence_span": "教材教辅的出版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "报刊",
+      "evidence_span": "报刊的出版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "图书批发",
+      "evidence_span": "发行业务主要为图书、报刊、电子音像制品、数码产品的批发、零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "图书零售",
+      "evidence_span": "发行业务主要为图书、报刊、电子音像制品、数码产品的批发、零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "图书印刷",
+      "evidence_span": "印刷业务主要为图书、报刊印刷和纸质包装品印刷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "报刊印刷",
+      "evidence_span": "印刷业务主要为图书、报刊印刷和纸质包装品印刷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纸质包装品印刷",
+      "evidence_span": "印刷业务主要为图书、报刊印刷和纸质包装品印刷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印刷物资贸易",
+      "evidence_span": "物资贸易业务主要为印刷物资自主采购和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "幼教产品",
+      "evidence_span": "推进幼教、职教、素质教育产品线建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "职教产品",
+      "evidence_span": "推进幼教、职教、素质教育产品线建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "素质教育产品",
+      "evidence_span": "推进幼教、职教、素质教育产品线建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "K12教育服务平台",
+      "evidence_span": "打造“K12”教育服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "课后服务",
+      "evidence_span": "以课后服务助力“教育强省”建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字资产管理平台",
+      "evidence_span": "长江传媒数字资产管理平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全渠道运营格局",
+      "evidence_span": "打造“线下实体门店+线上网店”“书店+微店”全渠道运营格局"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新媒体矩阵",
+      "evidence_span": "打造新媒体矩阵、电商矩阵"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电商矩阵",
+      "evidence_span": "打造新媒体矩阵、电商矩阵"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "湖北省新华书店集团",
+      "evidence_span": "公司所属湖北省新华书店集团"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字教育",
+      "evidence_span": "幼教+数字教育"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字出版",
+      "evidence_span": "长江传媒深入布局教育行业，打通数字出版全产业链"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "图书出版",
+        "evidence_span": "主要从事图书的出版和发行等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "期刊出版",
+        "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "报纸出版",
+        "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "音像制品出版",
+        "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子出版物出版",
+        "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "图书发行",
+        "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "印刷",
+        "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物资贸易",
+        "evidence_span": "以图书、期刊、报纸、音像制品、电子出版物的出版、发行、印制、物资贸易为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字阅读",
+        "evidence_span": "逐步向数字阅读、在线教育、文化创意、投资金融等领域拓展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "在线教育",
+        "evidence_span": "逐步向数字阅读、在线教育、文化创意、投资金融等领域拓展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "文化创意",
+        "evidence_span": "逐步向数字阅读、在线教育、文化创意、投资金融等领域拓展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资金融",
+        "evidence_span": "逐步向数字阅读、在线教育、文化创意、投资金融等领域拓展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "湖北省文化产业龙头企业",
+        "evidence_span": "具有湖北国资背景的湖北省文化产业龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内领先出版集团",
+        "evidence_span": "长江传媒国内领先出版集团"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一般图书",
+        "evidence_span": "出版业务主要为一般图书的出版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教材教辅",
+        "evidence_span": "教材教辅的出版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "报刊",
+        "evidence_span": "报刊的出版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "图书批发",
+        "evidence_span": "发行业务主要为图书、报刊、电子音像制品、数码产品的批发、零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "图书零售",
+        "evidence_span": "发行业务主要为图书、报刊、电子音像制品、数码产品的批发、零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "图书印刷",
+        "evidence_span": "印刷业务主要为图书、报刊印刷和纸质包装品印刷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "报刊印刷",
+        "evidence_span": "印刷业务主要为图书、报刊印刷和纸质包装品印刷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纸质包装品印刷",
+        "evidence_span": "印刷业务主要为图书、报刊印刷和纸质包装品印刷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印刷物资贸易",
+        "evidence_span": "物资贸易业务主要为印刷物资自主采购和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "幼教产品",
+        "evidence_span": "推进幼教、职教、素质教育产品线建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "职教产品",
+        "evidence_span": "推进幼教、职教、素质教育产品线建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "素质教育产品",
+        "evidence_span": "推进幼教、职教、素质教育产品线建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "K12教育服务平台",
+        "evidence_span": "打造“K12”教育服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "课后服务",
+        "evidence_span": "以课后服务助力“教育强省”建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字资产管理平台",
+        "evidence_span": "长江传媒数字资产管理平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全渠道运营格局",
+        "evidence_span": "打造“线下实体门店+线上网店”“书店+微店”全渠道运营格局"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新媒体矩阵",
+        "evidence_span": "打造新媒体矩阵、电商矩阵"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电商矩阵",
+        "evidence_span": "打造新媒体矩阵、电商矩阵"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "湖北省新华书店集团",
+        "evidence_span": "公司所属湖北省新华书店集团"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字教育",
+        "evidence_span": "幼教+数字教育"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字出版",
+        "evidence_span": "长江传媒深入布局教育行业，打通数字出版全产业链"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:13:57"
+}

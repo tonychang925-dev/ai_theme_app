@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:10:23", "result": {"chunk_id": "bb35bab0a3fc", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了中国多个行业协会在特定日期发布声明的具体事件，涉及建议谨慎采购美国芯片，属于时间性动态和新闻，没有提供华为芯片链的静态知识。"}}

@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "数据智能行业应用",
+      "evidence_span": "公司现形成了三大业务板块：数据智能行业应用、智能软硬件产品、数据智能平台运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能软硬件产品",
+      "evidence_span": "公司现形成了三大业务板块：数据智能行业应用、智能软硬件产品、数据智能平台运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数据智能平台运营",
+      "evidence_span": "公司现形成了三大业务板块：数据智能行业应用、智能软硬件产品、数据智能平台运营"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "BMS供应商",
+      "evidence_span": "BMS供应商属产业链中游"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "领先的行业应用软件供应商",
+      "evidence_span": "深耕电信及电力行业，领先的行业应用软件供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "政府行业软件供应商",
+      "evidence_span": "科大国创政府行业软件供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内领先的行业解决方案供应商",
+      "evidence_span": "科大国创国内领先的行业解决方案供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数据智能整体解决方案提供商",
+      "evidence_span": "数据智能整体解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BMS",
+      "evidence_span": "以BMS(电池管理系统)为主的智慧能源业务为增长核心的业务布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能BMS",
+      "evidence_span": "推出AI能力开放平台、领先的智能BMS和高可信软件分析系统等新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PACK系列",
+      "evidence_span": "已实现动力总成系统过渡产品PACK系列量产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BEMS",
+      "evidence_span": "推出创新BEMS产品：一款BMS融合部分EMS（能源管理系统）功能的创新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型光储充一体化示范工程",
+      "evidence_span": "公司自主研发的“新型光储充一体化示范工程”已经在国创新能产业园运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "辅助驾驶系统FCS100",
+      "evidence_span": "公司自主研发的辅助驾驶系统FCS100已经在相关客户装车测试"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高级辅助驾驶（ADAS）",
+      "evidence_span": "主要面向智能汽车提供高级辅助驾驶（ADAS）和自动驾驶系统（ADS）产品的研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动驾驶系统（ADS）",
+      "evidence_span": "主要面向智能汽车提供高级辅助驾驶（ADAS）和自动驾驶系统（ADS）产品的研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动驾驶域控制器（ADS）",
+      "evidence_span": "加快推进自动驾驶域控制器（ADS）的研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电信运营支撑系统软件",
+      "evidence_span": "国内最早从事电信运营支撑系统软件开发的公司之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力企业管控软件",
+      "evidence_span": "2002年开始开发电力企业管控软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子运维系统",
+      "evidence_span": "中标“中国电信集团公司电子运维系统”这一集团总部核心OSS生产系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "政府大数据深度集成平台",
+      "evidence_span": "打造政府大数据深度集成平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI能力开放平台",
+      "evidence_span": "推出AI能力开放平台、领先的智能BMS和高可信软件分析系统等新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高可信软件分析系统",
+      "evidence_span": "推出AI能力开放平台、领先的智能BMS和高可信软件分析系统等新产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BMS技术",
+      "evidence_span": "公司基于已积累的BMS技术，融合开展集BMS、PDU、DC/DC、OBC功能的智能控制器研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "直流级联电力电子技术",
+      "evidence_span": "BEMS将直流级联电力电子技术与BMS技术充分融合"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞",
+      "evidence_span": "公司BMS产品已在奇瑞多款新能源车型中应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉麦",
+      "evidence_span": "公司客户包括奇瑞、吉麦、御捷汽车等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "御捷汽车",
+      "evidence_span": "公司客户包括奇瑞、吉麦、御捷汽车等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "开沃汽车",
+      "evidence_span": "客户包括开沃汽车、瑞浦新能、赣锋锂电等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "瑞浦新能",
+      "evidence_span": "客户包括开沃汽车、瑞浦新能、赣锋锂电等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赣锋锂电",
+      "evidence_span": "客户包括开沃汽车、瑞浦新能、赣锋锂电等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电信",
+      "evidence_span": "成为中国电信的核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪通号",
+      "evidence_span": "子公司国创新能与比亚迪通号签署战略合作协议"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能网联+智慧能源",
+      "evidence_span": "“智能网联+智慧能源”双智战略全面推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "数据智能行业应用",
+        "evidence_span": "公司现形成了三大业务板块：数据智能行业应用、智能软硬件产品、数据智能平台运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能软硬件产品",
+        "evidence_span": "公司现形成了三大业务板块：数据智能行业应用、智能软硬件产品、数据智能平台运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数据智能平台运营",
+        "evidence_span": "公司现形成了三大业务板块：数据智能行业应用、智能软硬件产品、数据智能平台运营"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "BMS供应商",
+        "evidence_span": "BMS供应商属产业链中游"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "领先的行业应用软件供应商",
+        "evidence_span": "深耕电信及电力行业，领先的行业应用软件供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "政府行业软件供应商",
+        "evidence_span": "科大国创政府行业软件供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内领先的行业解决方案供应商",
+        "evidence_span": "科大国创国内领先的行业解决方案供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数据智能整体解决方案提供商",
+        "evidence_span": "数据智能整体解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BMS",
+        "evidence_span": "以BMS(电池管理系统)为主的智慧能源业务为增长核心的业务布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能BMS",
+        "evidence_span": "推出AI能力开放平台、领先的智能BMS和高可信软件分析系统等新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PACK系列",
+        "evidence_span": "已实现动力总成系统过渡产品PACK系列量产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BEMS",
+        "evidence_span": "推出创新BEMS产品：一款BMS融合部分EMS（能源管理系统）功能的创新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型光储充一体化示范工程",
+        "evidence_span": "公司自主研发的“新型光储充一体化示范工程”已经在国创新能产业园运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "辅助驾驶系统FCS100",
+        "evidence_span": "公司自主研发的辅助驾驶系统FCS100已经在相关客户装车测试"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高级辅助驾驶（ADAS）",
+        "evidence_span": "主要面向智能汽车提供高级辅助驾驶（ADAS）和自动驾驶系统（ADS）产品的研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动驾驶系统（ADS）",
+        "evidence_span": "主要面向智能汽车提供高级辅助驾驶（ADAS）和自动驾驶系统（ADS）产品的研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动驾驶域控制器（ADS）",
+        "evidence_span": "加快推进自动驾驶域控制器（ADS）的研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电信运营支撑系统软件",
+        "evidence_span": "国内最早从事电信运营支撑系统软件开发的公司之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力企业管控软件",
+        "evidence_span": "2002年开始开发电力企业管控软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子运维系统",
+        "evidence_span": "中标“中国电信集团公司电子运维系统”这一集团总部核心OSS生产系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "政府大数据深度集成平台",
+        "evidence_span": "打造政府大数据深度集成平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI能力开放平台",
+        "evidence_span": "推出AI能力开放平台、领先的智能BMS和高可信软件分析系统等新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高可信软件分析系统",
+        "evidence_span": "推出AI能力开放平台、领先的智能BMS和高可信软件分析系统等新产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BMS技术",
+        "evidence_span": "公司基于已积累的BMS技术，融合开展集BMS、PDU、DC/DC、OBC功能的智能控制器研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "直流级联电力电子技术",
+        "evidence_span": "BEMS将直流级联电力电子技术与BMS技术充分融合"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞",
+        "evidence_span": "公司BMS产品已在奇瑞多款新能源车型中应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉麦",
+        "evidence_span": "公司客户包括奇瑞、吉麦、御捷汽车等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "御捷汽车",
+        "evidence_span": "公司客户包括奇瑞、吉麦、御捷汽车等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "开沃汽车",
+        "evidence_span": "客户包括开沃汽车、瑞浦新能、赣锋锂电等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "瑞浦新能",
+        "evidence_span": "客户包括开沃汽车、瑞浦新能、赣锋锂电等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赣锋锂电",
+        "evidence_span": "客户包括开沃汽车、瑞浦新能、赣锋锂电等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电信",
+        "evidence_span": "成为中国电信的核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪通号",
+        "evidence_span": "子公司国创新能与比亚迪通号签署战略合作协议"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能网联+智慧能源",
+        "evidence_span": "“智能网联+智慧能源”双智战略全面推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:07:56"
+}

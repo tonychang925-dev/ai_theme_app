@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子材料",
+      "evidence_span": "公司主营业务包括电子材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "绿色光固化材料",
+      "evidence_span": "公司主营业务包括...绿色光固化材料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光刻胶专用电子化学品企业",
+      "evidence_span": "公司是国内少数布局光刻胶专用电子化学品的企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球光刻胶产业链中重要一环",
+      "evidence_span": "成为全球光刻胶产业链中重要一环"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PCB光刻胶专用电子化学品",
+      "evidence_span": "PCB光刻胶专用电子化学品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LCD光刻胶专用电子化学品",
+      "evidence_span": "LCD光刻胶专用电子化学品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体光刻胶专用电子化学品",
+      "evidence_span": "半导体光刻胶专用电子化学品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OLED有机材料",
+      "evidence_span": "OLED有机材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光引发剂",
+      "evidence_span": "光刻胶光引发剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光刻胶树脂",
+      "evidence_span": "光刻胶树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单体",
+      "evidence_span": "单体（活性稀释剂）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "添加剂",
+      "evidence_span": "其他助剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色感光材料",
+      "evidence_span": "绿色感光材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "单体功能性评价技术",
+      "evidence_span": "公司具有单体功能性评价技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "特殊纯化技术",
+      "evidence_span": "特殊纯化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ppb级金属离子含量分析测试技术",
+      "evidence_span": "ppb级金属离子含量分析测试技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长兴化学",
+      "evidence_span": "公司主要客户包括长兴化学"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "旭化成",
+      "evidence_span": "旭化成"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "昭和电工",
+      "evidence_span": "昭和电工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "住友化学",
+      "evidence_span": "住友化学"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "JSR",
+      "evidence_span": "JSR"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TOK",
+      "evidence_span": "TOK"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三菱化学",
+      "evidence_span": "三菱化学"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LGC",
+      "evidence_span": "LGC"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星SDI",
+      "evidence_span": "三星SDI"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "进口替代浪潮受益者"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子材料",
+        "evidence_span": "公司主营业务包括电子材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "绿色光固化材料",
+        "evidence_span": "公司主营业务包括...绿色光固化材料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光刻胶专用电子化学品企业",
+        "evidence_span": "公司是国内少数布局光刻胶专用电子化学品的企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球光刻胶产业链中重要一环",
+        "evidence_span": "成为全球光刻胶产业链中重要一环"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PCB光刻胶专用电子化学品",
+        "evidence_span": "PCB光刻胶专用电子化学品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LCD光刻胶专用电子化学品",
+        "evidence_span": "LCD光刻胶专用电子化学品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体光刻胶专用电子化学品",
+        "evidence_span": "半导体光刻胶专用电子化学品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OLED有机材料",
+        "evidence_span": "OLED有机材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光引发剂",
+        "evidence_span": "光刻胶光引发剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光刻胶树脂",
+        "evidence_span": "光刻胶树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单体",
+        "evidence_span": "单体（活性稀释剂）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "添加剂",
+        "evidence_span": "其他助剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色感光材料",
+        "evidence_span": "绿色感光材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "单体功能性评价技术",
+        "evidence_span": "公司具有单体功能性评价技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "特殊纯化技术",
+        "evidence_span": "特殊纯化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ppb级金属离子含量分析测试技术",
+        "evidence_span": "ppb级金属离子含量分析测试技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长兴化学",
+        "evidence_span": "公司主要客户包括长兴化学"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "旭化成",
+        "evidence_span": "旭化成"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "昭和电工",
+        "evidence_span": "昭和电工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "住友化学",
+        "evidence_span": "住友化学"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "JSR",
+        "evidence_span": "JSR"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TOK",
+        "evidence_span": "TOK"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三菱化学",
+        "evidence_span": "三菱化学"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LGC",
+        "evidence_span": "LGC"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星SDI",
+        "evidence_span": "三星SDI"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "进口替代浪潮受益者"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:24:55"
+}

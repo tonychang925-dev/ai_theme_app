@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "铸造工艺材料",
+      "evidence_span": "公司主营业务专注于研发、生产、销售功能新材料，包括铸造工艺材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "丙烯酸等其他化工新材料",
+      "evidence_span": "包括铸造工艺材料和丙烯酸等其他化工新材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种酚醛树脂",
+      "evidence_span": "特种酚醛树脂和金属变质剂系列新材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金属变质剂系列新材料",
+      "evidence_span": "特种酚醛树脂和金属变质剂系列新材料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铸造造型材料行业高新技术企业",
+      "evidence_span": "铸造用粘结剂为主的铸造造型材料行业高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内铸造造型材料领先企业",
+      "evidence_span": "国内铸造造型材料领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铸造用树脂粘结剂行业龙头",
+      "evidence_span": "兴业股份铸造用树脂粘结剂行业龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铸造用树脂",
+      "evidence_span": "公司主要产品分为铸造工艺材料主要有铸造用树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固化剂",
+      "evidence_span": "铸造用树脂和固化剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涂料",
+      "evidence_span": "涂料、冒口、过滤器和辅助材料五大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冒口",
+      "evidence_span": "涂料、冒口、过滤器和辅助材料五大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "过滤器",
+      "evidence_span": "涂料、冒口、过滤器和辅助材料五大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "辅助材料",
+      "evidence_span": "涂料、冒口、过滤器和辅助材料五大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "球化剂",
+      "evidence_span": "金属变质剂系列新材料主要有球化剂、孕育剂和蠕化剂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "孕育剂",
+      "evidence_span": "金属变质剂系列新材料主要有球化剂、孕育剂和蠕化剂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蠕化剂",
+      "evidence_span": "金属变质剂系列新材料主要有球化剂、孕育剂和蠕化剂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丙烯酸",
+      "evidence_span": "其他化工新材料丙烯酸、浸渍树脂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "浸渍树脂",
+      "evidence_span": "其他化工新材料丙烯酸、浸渍树脂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种酚醛树脂",
+      "evidence_span": "以及特种酚醛树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自硬呋喃树脂",
+      "evidence_span": "自硬呋喃树脂、冷芯盒树脂、碱性酚醛树脂、覆膜砂用酚醛树脂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷芯盒树脂",
+      "evidence_span": "自硬呋喃树脂、冷芯盒树脂、碱性酚醛树脂、覆膜砂用酚醛树脂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碱性酚醛树脂",
+      "evidence_span": "自硬呋喃树脂、冷芯盒树脂、碱性酚醛树脂、覆膜砂用酚醛树脂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "覆膜砂用酚醛树脂",
+      "evidence_span": "自硬呋喃树脂、冷芯盒树脂、碱性酚醛树脂、覆膜砂用酚醛树脂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级酚醛树脂",
+      "evidence_span": "公司研发成功了电子级酚醛树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高活性低味自硬呋喃树脂",
+      "evidence_span": "高活性低味自硬呋喃树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LTM-6B冷芯盒脱模剂",
+      "evidence_span": "LTM-6B冷芯盒脱模剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轮胎酚醛树脂",
+      "evidence_span": "轮胎酚醛树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "干粉涂料",
+      "evidence_span": "干粉涂料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非锆质铸钢涂料",
+      "evidence_span": "非锆质铸钢涂料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "熔合型球化剂包芯线",
+      "evidence_span": "熔合型球化剂包芯线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物基材料开发技术",
+      "evidence_span": "完成生物基材料开发技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大型风电铸件用水基涂料的研发",
+      "evidence_span": "大型风电铸件用水基涂料的研发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽铸造",
+      "evidence_span": "一汽铸造"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "潍柴动力",
+      "evidence_span": "潍柴动力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风汽车",
+      "evidence_span": "东风汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广西柳工",
+      "evidence_span": "广西柳工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广西玉柴",
+      "evidence_span": "广西玉柴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中船海洋",
+      "evidence_span": "中船海洋"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉鑫科技",
+      "evidence_span": "吉鑫科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日月股份",
+      "evidence_span": "日月股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大阪涂科",
+      "evidence_span": "大阪涂科"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "C919大飞机刹车片用浸渍树脂的合格供应商",
+      "evidence_span": "公司是C919大飞机刹车片用浸渍树脂的合格供应商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "铸造工艺材料",
+        "evidence_span": "公司主营业务专注于研发、生产、销售功能新材料，包括铸造工艺材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "丙烯酸等其他化工新材料",
+        "evidence_span": "包括铸造工艺材料和丙烯酸等其他化工新材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种酚醛树脂",
+        "evidence_span": "特种酚醛树脂和金属变质剂系列新材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金属变质剂系列新材料",
+        "evidence_span": "特种酚醛树脂和金属变质剂系列新材料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铸造造型材料行业高新技术企业",
+        "evidence_span": "铸造用粘结剂为主的铸造造型材料行业高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内铸造造型材料领先企业",
+        "evidence_span": "国内铸造造型材料领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铸造用树脂粘结剂行业龙头",
+        "evidence_span": "兴业股份铸造用树脂粘结剂行业龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铸造用树脂",
+        "evidence_span": "公司主要产品分为铸造工艺材料主要有铸造用树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固化剂",
+        "evidence_span": "铸造用树脂和固化剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涂料",
+        "evidence_span": "涂料、冒口、过滤器和辅助材料五大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冒口",
+        "evidence_span": "涂料、冒口、过滤器和辅助材料五大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "过滤器",
+        "evidence_span": "涂料、冒口、过滤器和辅助材料五大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "辅助材料",
+        "evidence_span": "涂料、冒口、过滤器和辅助材料五大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "球化剂",
+        "evidence_span": "金属变质剂系列新材料主要有球化剂、孕育剂和蠕化剂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "孕育剂",
+        "evidence_span": "金属变质剂系列新材料主要有球化剂、孕育剂和蠕化剂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蠕化剂",
+        "evidence_span": "金属变质剂系列新材料主要有球化剂、孕育剂和蠕化剂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丙烯酸",
+        "evidence_span": "其他化工新材料丙烯酸、浸渍树脂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "浸渍树脂",
+        "evidence_span": "其他化工新材料丙烯酸、浸渍树脂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种酚醛树脂",
+        "evidence_span": "以及特种酚醛树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自硬呋喃树脂",
+        "evidence_span": "自硬呋喃树脂、冷芯盒树脂、碱性酚醛树脂、覆膜砂用酚醛树脂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷芯盒树脂",
+        "evidence_span": "自硬呋喃树脂、冷芯盒树脂、碱性酚醛树脂、覆膜砂用酚醛树脂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碱性酚醛树脂",
+        "evidence_span": "自硬呋喃树脂、冷芯盒树脂、碱性酚醛树脂、覆膜砂用酚醛树脂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "覆膜砂用酚醛树脂",
+        "evidence_span": "自硬呋喃树脂、冷芯盒树脂、碱性酚醛树脂、覆膜砂用酚醛树脂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级酚醛树脂",
+        "evidence_span": "公司研发成功了电子级酚醛树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高活性低味自硬呋喃树脂",
+        "evidence_span": "高活性低味自硬呋喃树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LTM-6B冷芯盒脱模剂",
+        "evidence_span": "LTM-6B冷芯盒脱模剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轮胎酚醛树脂",
+        "evidence_span": "轮胎酚醛树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "干粉涂料",
+        "evidence_span": "干粉涂料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非锆质铸钢涂料",
+        "evidence_span": "非锆质铸钢涂料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "熔合型球化剂包芯线",
+        "evidence_span": "熔合型球化剂包芯线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物基材料开发技术",
+        "evidence_span": "完成生物基材料开发技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大型风电铸件用水基涂料的研发",
+        "evidence_span": "大型风电铸件用水基涂料的研发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽铸造",
+        "evidence_span": "一汽铸造"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "潍柴动力",
+        "evidence_span": "潍柴动力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风汽车",
+        "evidence_span": "东风汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广西柳工",
+        "evidence_span": "广西柳工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广西玉柴",
+        "evidence_span": "广西玉柴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中船海洋",
+        "evidence_span": "中船海洋"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉鑫科技",
+        "evidence_span": "吉鑫科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日月股份",
+        "evidence_span": "日月股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大阪涂科",
+        "evidence_span": "大阪涂科"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "C919大飞机刹车片用浸渍树脂的合格供应商",
+        "evidence_span": "公司是C919大飞机刹车片用浸渍树脂的合格供应商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:28:57"
+}

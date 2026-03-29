@@ -1,0 +1,354 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "核心精密零组件",
+      "evidence_span": "公司是一家专注于核心精密零组件的研发、设计、制造及销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源汽车三电系统",
+      "evidence_span": "公司聚焦新能源汽车三电、智能驾驶、汽车轻量化领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车轻量化",
+      "evidence_span": "公司聚焦新能源汽车三电、智能驾驶、汽车轻量化领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能驾驶",
+      "evidence_span": "公司聚焦新能源汽车三电、智能驾驶、汽车轻量化领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "换向器",
+      "evidence_span": "公司主要产品包括新能源汽车零组件、换向器、集电环、通信及消费领域产品、气控组件、高强弹性零件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "集电环",
+      "evidence_span": "公司主要产品包括新能源汽车零组件、换向器、集电环、通信及消费领域产品、气控组件、高强弹性零件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "通信",
+      "evidence_span": "公司主要产品包括新能源汽车零组件、换向器、集电环、通信及消费领域产品、气控组件、高强弹性零件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "消费领域产品",
+      "evidence_span": "公司主要产品包括新能源汽车零组件、换向器、集电环、通信及消费领域产品、气控组件、高强弹性零件"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "换向器龙头企业",
+      "evidence_span": "公司是换向器龙头企业，换向器产销量全球第一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精密零组件一体化解决方案供应商",
+      "evidence_span": "公司战略定位：成为具有全球竞争力的精密零组件一体化解决方案供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车动力电池包组件",
+      "evidence_span": "公司新能源汽车零组件包括新能源汽车动力电池包组件（cell frame、busbar等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驱动电机连接器",
+      "evidence_span": "公司新能源汽车零组件包括新能源汽车动力电池包组件（cell frame、busbar等）、驱动电机连接器、电控系统逆变器零组件以及汽车轻量化零件等新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电控系统逆变器零组件",
+      "evidence_span": "公司新能源汽车零组件包括新能源汽车动力电池包组件（cell frame、busbar等）、驱动电机连接器、电控系统逆变器零组件以及汽车轻量化零件等新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车轻量化零件",
+      "evidence_span": "公司新能源汽车零组件包括新能源汽车动力电池包组件（cell frame、busbar等）、驱动电机连接器、电控系统逆变器零组件以及汽车轻量化零件等新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气控组件",
+      "evidence_span": "公司主要产品包括新能源汽车零组件、换向器、集电环、通信及消费领域产品、气控组件、高强弹性零件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高强弹性零件",
+      "evidence_span": "公司主要产品包括新能源汽车零组件、换向器、集电环、通信及消费领域产品、气控组件、高强弹性零件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密冲压技术",
+      "evidence_span": "已熟练掌握了精密冲压技术、精密塑料成型技术、光纤激光焊接技术、材料表面处理技术、智能装备、自动检测和验证等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密塑料成型技术",
+      "evidence_span": "已熟练掌握了精密冲压技术、精密塑料成型技术、光纤激光焊接技术、材料表面处理技术、智能装备、自动检测和验证等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光纤激光焊接技术",
+      "evidence_span": "已熟练掌握了精密冲压技术、精密塑料成型技术、光纤激光焊接技术、材料表面处理技术、智能装备、自动检测和验证等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "材料表面处理技术",
+      "evidence_span": "已熟练掌握了精密冲压技术、精密塑料成型技术、光纤激光焊接技术、材料表面处理技术、智能装备、自动检测和验证等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能装备",
+      "evidence_span": "已熟练掌握了精密冲压技术、精密塑料成型技术、光纤激光焊接技术、材料表面处理技术、智能装备、自动检测和验证等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动检测和验证",
+      "evidence_span": "已熟练掌握了精密冲压技术、精密塑料成型技术、光纤激光焊接技术、材料表面处理技术、智能装备、自动检测和验证等核心技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "戴姆勒",
+      "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰田汽车",
+      "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国博世",
+      "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本电装",
+      "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "采埃孚",
+      "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "马勒",
+      "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法雷奥",
+      "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万宝至",
+      "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大陆",
+      "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博格华纳",
+      "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "埃贝赫",
+      "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "并重点发展进口替代、填补国内技术空白的新产品和技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "填补国内技术空白",
+      "evidence_span": "并重点发展进口替代、填补国内技术空白的新产品和技术"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "核心精密零组件",
+        "evidence_span": "公司是一家专注于核心精密零组件的研发、设计、制造及销售的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源汽车三电系统",
+        "evidence_span": "公司聚焦新能源汽车三电、智能驾驶、汽车轻量化领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车轻量化",
+        "evidence_span": "公司聚焦新能源汽车三电、智能驾驶、汽车轻量化领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能驾驶",
+        "evidence_span": "公司聚焦新能源汽车三电、智能驾驶、汽车轻量化领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "换向器",
+        "evidence_span": "公司主要产品包括新能源汽车零组件、换向器、集电环、通信及消费领域产品、气控组件、高强弹性零件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "集电环",
+        "evidence_span": "公司主要产品包括新能源汽车零组件、换向器、集电环、通信及消费领域产品、气控组件、高强弹性零件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "通信及消费领域产品",
+        "evidence_span": "公司主要产品包括新能源汽车零组件、换向器、集电环、通信及消费领域产品、气控组件、高强弹性零件"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "换向器龙头企业",
+        "evidence_span": "公司是换向器龙头企业，换向器产销量全球第一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精密零组件一体化解决方案供应商",
+        "evidence_span": "公司战略定位：成为具有全球竞争力的精密零组件一体化解决方案供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车动力电池包组件",
+        "evidence_span": "公司新能源汽车零组件包括新能源汽车动力电池包组件（cell frame、busbar等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驱动电机连接器",
+        "evidence_span": "公司新能源汽车零组件包括新能源汽车动力电池包组件（cell frame、busbar等）、驱动电机连接器、电控系统逆变器零组件以及汽车轻量化零件等新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电控系统逆变器零组件",
+        "evidence_span": "公司新能源汽车零组件包括新能源汽车动力电池包组件（cell frame、busbar等）、驱动电机连接器、电控系统逆变器零组件以及汽车轻量化零件等新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车轻量化零件",
+        "evidence_span": "公司新能源汽车零组件包括新能源汽车动力电池包组件（cell frame、busbar等）、驱动电机连接器、电控系统逆变器零组件以及汽车轻量化零件等新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气控组件",
+        "evidence_span": "公司主要产品包括新能源汽车零组件、换向器、集电环、通信及消费领域产品、气控组件、高强弹性零件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高强弹性零件",
+        "evidence_span": "公司主要产品包括新能源汽车零组件、换向器、集电环、通信及消费领域产品、气控组件、高强弹性零件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密冲压技术",
+        "evidence_span": "已熟练掌握了精密冲压技术、精密塑料成型技术、光纤激光焊接技术、材料表面处理技术、智能装备、自动检测和验证等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密塑料成型技术",
+        "evidence_span": "已熟练掌握了精密冲压技术、精密塑料成型技术、光纤激光焊接技术、材料表面处理技术、智能装备、自动检测和验证等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光纤激光焊接技术",
+        "evidence_span": "已熟练掌握了精密冲压技术、精密塑料成型技术、光纤激光焊接技术、材料表面处理技术、智能装备、自动检测和验证等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "材料表面处理技术",
+        "evidence_span": "已熟练掌握了精密冲压技术、精密塑料成型技术、光纤激光焊接技术、材料表面处理技术、智能装备、自动检测和验证等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能装备",
+        "evidence_span": "已熟练掌握了精密冲压技术、精密塑料成型技术、光纤激光焊接技术、材料表面处理技术、智能装备、自动检测和验证等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动检测和验证",
+        "evidence_span": "已熟练掌握了精密冲压技术、精密塑料成型技术、光纤激光焊接技术、材料表面处理技术、智能装备、自动检测和验证等核心技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "戴姆勒",
+        "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰田汽车",
+        "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国博世",
+        "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本电装",
+        "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "采埃孚",
+        "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "马勒",
+        "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法雷奥",
+        "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万宝至",
+        "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大陆",
+        "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博格华纳",
+        "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "埃贝赫",
+        "evidence_span": "公司拥有戴姆勒、丰田汽车、德国博世、日本电装、采埃孚、马勒、法雷奥、万宝至、大陆、博格华纳、埃贝赫等全球知名客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "并重点发展进口替代、填补国内技术空白的新产品和技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "填补国内技术空白",
+        "evidence_span": "并重点发展进口替代、填补国内技术空白的新产品和技术"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:53:34"
+}

@@ -1,0 +1,474 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能卡的设计",
+      "evidence_span": "主要从事智能卡的设计、研发、生产、销售和服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "研发",
+      "evidence_span": "主要从事智能卡的设计、研发、生产、销售和服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "主要从事智能卡的设计、研发、生产、销售和服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主要从事智能卡的设计、研发、生产、销售和服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "主要从事智能卡的设计、研发、生产、销售和服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能终端",
+      "evidence_span": "智能终端实现收入1.17亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "软件",
+      "evidence_span": "软件及服务业务实现收入4.77亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务业务",
+      "evidence_span": "软件及服务业务实现收入4.77亿元"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能卡行业领军者",
+      "evidence_span": "智能卡行业领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最具规模的智能卡生产企业之一",
+      "evidence_span": "是目前全球最具规模的智能卡生产企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性智能卡和智能终端生产商",
+      "evidence_span": "综合性智能卡和智能终端生产商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金融IC卡",
+      "evidence_span": "主要产品为以金融社保卡、标准银行IC卡等为代表的金融IC卡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非金融IC卡",
+      "evidence_span": "以通信卡、交通卡等为代表的非金融IC卡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡品的个人化等数据服务",
+      "evidence_span": "以及相关卡品的个人化等数据服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自助发卡设备",
+      "evidence_span": "产品种类由自助发卡设备向政务服务一体机、智能政务服务工作台、政务智慧小屋一体化解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "政务服务一体机",
+      "evidence_span": "产品种类由自助发卡设备向政务服务一体机、智能政务服务工作台、政务智慧小屋一体化解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能政务服务工作台",
+      "evidence_span": "产品种类由自助发卡设备向政务服务一体机、智能政务服务工作台、政务智慧小屋一体化解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "政务智慧小屋一体化解决方案",
+      "evidence_span": "产品种类由自助发卡设备向政务服务一体机、智能政务服务工作台、政务智慧小屋一体化解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高附加值耗材",
+      "evidence_span": "高附加值耗材销售收入保持较快增长态势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字人民币硬钱包",
+      "evidence_span": "公司首家推出了双离线交易功能的数字人民币硬钱包"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可视卡硬钱包",
+      "evidence_span": "研发生产的“可视卡硬钱包”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加载健康码的可视卡硬钱包",
+      "evidence_span": "加载健康码的可视卡硬钱包"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "受理端产品",
+      "evidence_span": "提供了多种形态的硬钱包、受理端产品和系统平台及应用解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "系统平台及应用解决方案",
+      "evidence_span": "提供了多种形态的硬钱包、受理端产品和系统平台及应用解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普通SIM卡",
+      "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物联网卡",
+      "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "NFC国密卡",
+      "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "eSIM卡",
+      "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三代金融社保卡产品",
+      "evidence_span": "公司第三代金融社保卡产品已大批量商用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子档案系统",
+      "evidence_span": "养老保险全国统筹信息化建设项目电子档案系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "业务档案一体化管理平台",
+      "evidence_span": "业务档案一体化管理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人事人才“一站式”综合服务管理系统",
+      "evidence_span": "基于互联网技术的人事人才“一站式”综合服务管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社保卡综合应用服务管理平台",
+      "evidence_span": "社保卡综合应用服务管理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人社考务综合指挥调度平台",
+      "evidence_span": "人社考务综合指挥调度平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国际领先的智能卡生产线",
+      "evidence_span": "公司拥有国际领先的智能卡生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字人民币相关技术研究与产品开发",
+      "evidence_span": "国内较早从事数字人民币相关技术研究与产品开发的企业之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双离线交易功能",
+      "evidence_span": "首家推出了双离线交易功能的数字人民币硬钱包"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工商银行",
+      "evidence_span": "取得了工商银行、建设银行、农业银行、中国银行等众多商业银行总行、省分行自助制卡设备的招标入围"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建设银行",
+      "evidence_span": "取得了工商银行、建设银行、农业银行、中国银行等众多商业银行总行、省分行自助制卡设备的招标入围"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "农业银行",
+      "evidence_span": "取得了工商银行、建设银行、农业银行、中国银行等众多商业银行总行、省分行自助制卡设备的招标入围"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国银行",
+      "evidence_span": "取得了工商银行、建设银行、农业银行、中国银行等众多商业银行总行、省分行自助制卡设备的招标入围"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广东省多个地市",
+      "evidence_span": "广东省多个地市的商事一体机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "湖北省“店小二”政务自助服务体系建设试点宜昌项目",
+      "evidence_span": "作为湖北省“店小二”政务自助服务体系建设试点宜昌项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国联通",
+      "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电信",
+      "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "2022年北京冬奥会",
+      "evidence_span": "为多家运营机构、多个试点项目特别是2022年北京冬奥会提供了多种形态的硬钱包、受理端产品和系统平台及应用解决方案"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字人民币持续推广",
+      "evidence_span": "受益于数字人民币持续推广未来可期"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化替代",
+      "evidence_span": "公司抓住国产化替代的市场趋势"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能卡的设计、研发、生产、销售和服务",
+        "evidence_span": "主要从事智能卡的设计、研发、生产、销售和服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能终端",
+        "evidence_span": "智能终端实现收入1.17亿元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "软件及服务业务",
+        "evidence_span": "软件及服务业务实现收入4.77亿元"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能卡行业领军者",
+        "evidence_span": "智能卡行业领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最具规模的智能卡生产企业之一",
+        "evidence_span": "是目前全球最具规模的智能卡生产企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性智能卡和智能终端生产商",
+        "evidence_span": "综合性智能卡和智能终端生产商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金融IC卡",
+        "evidence_span": "主要产品为以金融社保卡、标准银行IC卡等为代表的金融IC卡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非金融IC卡",
+        "evidence_span": "以通信卡、交通卡等为代表的非金融IC卡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡品的个人化等数据服务",
+        "evidence_span": "以及相关卡品的个人化等数据服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自助发卡设备",
+        "evidence_span": "产品种类由自助发卡设备向政务服务一体机、智能政务服务工作台、政务智慧小屋一体化解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "政务服务一体机",
+        "evidence_span": "产品种类由自助发卡设备向政务服务一体机、智能政务服务工作台、政务智慧小屋一体化解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能政务服务工作台",
+        "evidence_span": "产品种类由自助发卡设备向政务服务一体机、智能政务服务工作台、政务智慧小屋一体化解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "政务智慧小屋一体化解决方案",
+        "evidence_span": "产品种类由自助发卡设备向政务服务一体机、智能政务服务工作台、政务智慧小屋一体化解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高附加值耗材",
+        "evidence_span": "高附加值耗材销售收入保持较快增长态势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字人民币硬钱包",
+        "evidence_span": "公司首家推出了双离线交易功能的数字人民币硬钱包"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可视卡硬钱包",
+        "evidence_span": "研发生产的“可视卡硬钱包”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加载健康码的可视卡硬钱包",
+        "evidence_span": "加载健康码的可视卡硬钱包"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "受理端产品",
+        "evidence_span": "提供了多种形态的硬钱包、受理端产品和系统平台及应用解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "系统平台及应用解决方案",
+        "evidence_span": "提供了多种形态的硬钱包、受理端产品和系统平台及应用解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普通SIM卡",
+        "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物联网卡",
+        "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "NFC国密卡",
+        "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "eSIM卡",
+        "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三代金融社保卡产品",
+        "evidence_span": "公司第三代金融社保卡产品已大批量商用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子档案系统",
+        "evidence_span": "养老保险全国统筹信息化建设项目电子档案系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "业务档案一体化管理平台",
+        "evidence_span": "业务档案一体化管理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人事人才“一站式”综合服务管理系统",
+        "evidence_span": "基于互联网技术的人事人才“一站式”综合服务管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社保卡综合应用服务管理平台",
+        "evidence_span": "社保卡综合应用服务管理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人社考务综合指挥调度平台",
+        "evidence_span": "人社考务综合指挥调度平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国际领先的智能卡生产线",
+        "evidence_span": "公司拥有国际领先的智能卡生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字人民币相关技术研究与产品开发",
+        "evidence_span": "国内较早从事数字人民币相关技术研究与产品开发的企业之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双离线交易功能",
+        "evidence_span": "首家推出了双离线交易功能的数字人民币硬钱包"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工商银行",
+        "evidence_span": "取得了工商银行、建设银行、农业银行、中国银行等众多商业银行总行、省分行自助制卡设备的招标入围"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建设银行",
+        "evidence_span": "取得了工商银行、建设银行、农业银行、中国银行等众多商业银行总行、省分行自助制卡设备的招标入围"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "农业银行",
+        "evidence_span": "取得了工商银行、建设银行、农业银行、中国银行等众多商业银行总行、省分行自助制卡设备的招标入围"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国银行",
+        "evidence_span": "取得了工商银行、建设银行、农业银行、中国银行等众多商业银行总行、省分行自助制卡设备的招标入围"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广东省多个地市",
+        "evidence_span": "广东省多个地市的商事一体机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "湖北省“店小二”政务自助服务体系建设试点宜昌项目",
+        "evidence_span": "作为湖北省“店小二”政务自助服务体系建设试点宜昌项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国联通",
+        "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电信",
+        "evidence_span": "符合中国移动、中国联通、中国电信要求的普通SIM卡、物联网卡、NFC国密卡、eSIM卡等产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "2022年北京冬奥会",
+        "evidence_span": "为多家运营机构、多个试点项目特别是2022年北京冬奥会提供了多种形态的硬钱包、受理端产品和系统平台及应用解决方案"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字人民币持续推广",
+        "evidence_span": "受益于数字人民币持续推广未来可期"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化替代",
+        "evidence_span": "公司抓住国产化替代的市场趋势"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:33:56"
+}

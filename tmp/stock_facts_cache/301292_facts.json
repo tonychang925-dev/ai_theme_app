@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "碳酸酯系列产品",
+      "evidence_span": "公司主要经营碳酸酯系列产品、丙二醇以及异丙醇等产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "丙二醇",
+      "evidence_span": "公司主要经营碳酸酯系列产品、丙二醇以及异丙醇等产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "异丙醇",
+      "evidence_span": "公司主要经营碳酸酯系列产品、丙二醇以及异丙醇等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池电解液溶剂",
+      "evidence_span": "碳酸酯系列产品作为锂电池电解液溶剂主要应用于新能源汽车动力电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丙二醇",
+      "evidence_span": "丙二醇作为无毒、环保保湿剂广泛应用于食品、药品、化妆品领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "异丙醇",
+      "evidence_span": "异丙醇作为新兴消毒剂是乙醇等传统医用消杀用品的优质替代品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级碳酸乙烯酯",
+      "evidence_span": "将异丙醇生产装置改建为电子级碳酸乙烯酯生产装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一缩二丙二醇",
+      "evidence_span": "其他产品核算的系一缩二丙二醇、异丙醚等生产碳酸酯系列产品和异丙醇产品时所生产的副产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "己二醇",
+      "evidence_span": "其他产品核算的系一缩二丙二醇、异丙醚等生产碳酸酯系列产品和异丙醇产品时所生产的副产品以及己二醇、戊二醇、丁二醇等产品收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "戊二醇",
+      "evidence_span": "其他产品核算的系一缩二丙二醇、异丙醚等生产碳酸酯系列产品和异丙醇产品时所生产的副产品以及己二醇、戊二醇、丁二醇等产品收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丁二醇",
+      "evidence_span": "其他产品核算的系一缩二丙二醇、异丙醚等生产碳酸酯系列产品和异丙醇产品时所生产的副产品以及己二醇、戊二醇、丁二醇等产品收入"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天赐材料",
+      "evidence_span": "电解液溶剂产品的下游客户主要为天赐材料、比亚迪、国泰华荣等国内知名的生产型企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "电解液溶剂产品的下游客户主要为天赐材料、比亚迪、国泰华荣等国内知名的生产型企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国泰华荣",
+      "evidence_span": "电解液溶剂产品的下游客户主要为天赐材料、比亚迪、国泰华荣等国内知名的生产型企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杉杉新材料",
+      "evidence_span": "公司电解液溶剂产品的下游客户如天赐材料、比亚迪、国泰华荣、杉杉新材料、金光高科都属于华东和华南地区的客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金光高科",
+      "evidence_span": "公司电解液溶剂产品的下游客户如天赐材料、比亚迪、国泰华荣、杉杉新材料、金光高科都属于华东和华南地区的客户"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "碳酸酯系列产品",
+        "evidence_span": "公司主要经营碳酸酯系列产品、丙二醇以及异丙醇等产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "丙二醇",
+        "evidence_span": "公司主要经营碳酸酯系列产品、丙二醇以及异丙醇等产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "异丙醇",
+        "evidence_span": "公司主要经营碳酸酯系列产品、丙二醇以及异丙醇等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池电解液溶剂",
+        "evidence_span": "碳酸酯系列产品作为锂电池电解液溶剂主要应用于新能源汽车动力电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丙二醇",
+        "evidence_span": "丙二醇作为无毒、环保保湿剂广泛应用于食品、药品、化妆品领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "异丙醇",
+        "evidence_span": "异丙醇作为新兴消毒剂是乙醇等传统医用消杀用品的优质替代品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级碳酸乙烯酯",
+        "evidence_span": "将异丙醇生产装置改建为电子级碳酸乙烯酯生产装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一缩二丙二醇",
+        "evidence_span": "其他产品核算的系一缩二丙二醇、异丙醚等生产碳酸酯系列产品和异丙醇产品时所生产的副产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "己二醇",
+        "evidence_span": "其他产品核算的系一缩二丙二醇、异丙醚等生产碳酸酯系列产品和异丙醇产品时所生产的副产品以及己二醇、戊二醇、丁二醇等产品收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "戊二醇",
+        "evidence_span": "其他产品核算的系一缩二丙二醇、异丙醚等生产碳酸酯系列产品和异丙醇产品时所生产的副产品以及己二醇、戊二醇、丁二醇等产品收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丁二醇",
+        "evidence_span": "其他产品核算的系一缩二丙二醇、异丙醚等生产碳酸酯系列产品和异丙醇产品时所生产的副产品以及己二醇、戊二醇、丁二醇等产品收入"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天赐材料",
+        "evidence_span": "电解液溶剂产品的下游客户主要为天赐材料、比亚迪、国泰华荣等国内知名的生产型企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "电解液溶剂产品的下游客户主要为天赐材料、比亚迪、国泰华荣等国内知名的生产型企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国泰华荣",
+        "evidence_span": "电解液溶剂产品的下游客户主要为天赐材料、比亚迪、国泰华荣等国内知名的生产型企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杉杉新材料",
+        "evidence_span": "公司电解液溶剂产品的下游客户如天赐材料、比亚迪、国泰华荣、杉杉新材料、金光高科都属于华东和华南地区的客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金光高科",
+        "evidence_span": "公司电解液溶剂产品的下游客户如天赐材料、比亚迪、国泰华荣、杉杉新材料、金光高科都属于华东和华南地区的客户"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:07:24"
+}

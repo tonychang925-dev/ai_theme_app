@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "193823a813a5", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含以军摧毁伊朗导弹发射器、导弹数量和防空能力等数据，可能隐含军事能力或装备知识，但以冲突事件报道形式呈现，混合事件信息，需进一步裁决以确定知识价值。"}}

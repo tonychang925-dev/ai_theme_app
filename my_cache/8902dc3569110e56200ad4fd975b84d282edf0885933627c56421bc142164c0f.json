@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:55:16", "result": {"chunk_id": "c51b38eb9b17", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述柯力传感和拓斯达公司的具体动态，如给华为送样、提供产品等公司公告和业务进展，属于时间性事件，没有提供稳定的题材本体知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "05858f3acdf0", "label": "candidate_mixed", "confidence": 0.6, "ontology_value": "medium", "reason": "段落混合了公司业绩公告（事件）和High-NA EUV光刻机的技术信息（如用于2纳米以下制程），后者可能含有静态知识，但整体以事件报道为主。"}}

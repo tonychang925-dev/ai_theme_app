@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "9ea221c1ed50", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段简要描述三星电子导入ASML光刻设备的具体事件，属于公司动态和技术更新，不提供半导体设备的稳定定义或构成信息。"}}

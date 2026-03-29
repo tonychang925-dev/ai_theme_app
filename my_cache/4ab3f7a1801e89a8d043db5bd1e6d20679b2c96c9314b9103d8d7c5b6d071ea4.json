@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "966903a0d07f", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落报告泰国陆军第二军区在社交媒体上发布的关于边境冲突的警告，这是一个具体的事件性公告，没有涉及陆军的结构、机制或稳定知识。"}}

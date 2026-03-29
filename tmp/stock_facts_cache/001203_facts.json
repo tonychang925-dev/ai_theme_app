@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "铁矿石采选",
+      "evidence_span": "是国内规模较大的铁矿石采选企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "球团加工",
+      "evidence_span": "深耕球团加工"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂矿资源投资开发",
+      "evidence_span": "公司投资参与锂资源"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "独立铁矿采选企业",
+      "evidence_span": "在独立铁矿采选企业中具有较大的储量优势"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铁矿龙头",
+      "evidence_span": "铁矿龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁精粉",
+      "evidence_span": "铁精粉产能500万吨/年"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "球团",
+      "evidence_span": "球团产能270万吨/年"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机制砂石",
+      "evidence_span": "机制砂石是指由原生岩石矿山资源经机械破碎、筛分、整形等工艺加工制成的砂石颗粒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳酸锂",
+      "evidence_span": "4万吨/年碳酸锂采选冶及管道输送"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸铁锂正极材料",
+      "evidence_span": "16万吨磷酸铁锂正极材料生产基地"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池",
+      "evidence_span": "20GWH锂电池生产项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "地下开采",
+      "evidence_span": "公司铁矿的开采方式为地下开采"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "破碎筛分",
+      "evidence_span": "通过破碎筛分、磨矿、选矿后最终得到铁精粉产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磨矿",
+      "evidence_span": "通过破碎筛分、磨矿、选矿后最终得到铁精粉产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "选矿",
+      "evidence_span": "通过破碎筛分、磨矿、选矿后最终得到铁精粉产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "球团生产工艺",
+      "evidence_span": "先后经干燥、碾磨、配料、混合、造球、筛分、干燥、预热、焙烧、冷却等工序制作而成"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "当地钢铁企业",
+      "evidence_span": "就近销售给当地钢铁企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "高炉炼铁中球团矿占比提升",
+      "evidence_span": "提高高炉炼铁中球团矿的占比成未来趋势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "锂矿领域切入",
+      "evidence_span": "切入锂矿领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "铁矿石采选",
+        "evidence_span": "是国内规模较大的铁矿石采选企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "球团加工",
+        "evidence_span": "深耕球团加工"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂矿资源投资开发",
+        "evidence_span": "公司投资参与锂资源"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "独立铁矿采选企业",
+        "evidence_span": "在独立铁矿采选企业中具有较大的储量优势"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铁矿龙头",
+        "evidence_span": "铁矿龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁精粉",
+        "evidence_span": "铁精粉产能500万吨/年"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "球团",
+        "evidence_span": "球团产能270万吨/年"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机制砂石",
+        "evidence_span": "机制砂石是指由原生岩石矿山资源经机械破碎、筛分、整形等工艺加工制成的砂石颗粒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳酸锂",
+        "evidence_span": "4万吨/年碳酸锂采选冶及管道输送"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸铁锂正极材料",
+        "evidence_span": "16万吨磷酸铁锂正极材料生产基地"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池",
+        "evidence_span": "20GWH锂电池生产项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "地下开采",
+        "evidence_span": "公司铁矿的开采方式为地下开采"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "破碎筛分",
+        "evidence_span": "通过破碎筛分、磨矿、选矿后最终得到铁精粉产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磨矿",
+        "evidence_span": "通过破碎筛分、磨矿、选矿后最终得到铁精粉产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "选矿",
+        "evidence_span": "通过破碎筛分、磨矿、选矿后最终得到铁精粉产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "球团生产工艺",
+        "evidence_span": "先后经干燥、碾磨、配料、混合、造球、筛分、干燥、预热、焙烧、冷却等工序制作而成"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "当地钢铁企业",
+        "evidence_span": "就近销售给当地钢铁企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "高炉炼铁中球团矿占比提升",
+        "evidence_span": "提高高炉炼铁中球团矿的占比成未来趋势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "锂矿领域切入",
+        "evidence_span": "切入锂矿领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:06:10"
+}

@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "给排水阀门产品",
+      "evidence_span": "公司是专业从事给排水阀门产品的设计研发、生产制造和销售服务的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车零配件",
+      "evidence_span": "汽车零配件：全资子公司莱州伟隆募投项目建设的两条铸造自动生产线投产，已为汽车、农机企业承接铸造高质量铸件加工产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "军工材料",
+      "evidence_span": "军工材料：2016 年 12 月，公司取得中央军委装备发展部核发的《装备承制单位注册证书》，成为第三类装备承制单位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "给排水阀供应商",
+      "evidence_span": "伟隆股份国内优秀的给排水阀供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高新技术企业",
+      "evidence_span": "公司是专业从事给排水阀门产品的设计研发、生产制造和销售服务的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "装备承制单位",
+      "evidence_span": "成为第三类装备承制单位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "闸阀",
+      "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蝶阀",
+      "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "止回阀",
+      "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "调节阀",
+      "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "球阀",
+      "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "偏心阀",
+      "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "截止阀",
+      "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "排气阀",
+      "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消防减压阀",
+      "evidence_span": "公司 2021 年研发的新产品“消防减压阀”为国内首家通过 UL 认证"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消防闸阀",
+      "evidence_span": "公司向 ARAMCO 沙特阿美公司申请的消防闸阀、消防栓、雨淋阀等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消防栓",
+      "evidence_span": "公司向 ARAMCO 沙特阿美公司申请的消防闸阀、消防栓、雨淋阀等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "雨淋阀",
+      "evidence_span": "公司向 ARAMCO 沙特阿美公司申请的消防闸阀、消防栓、雨淋阀等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铸造高质量铸件加工产品",
+      "evidence_span": "已为汽车、农机企业承接铸造高质量铸件加工产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "不停水加装闸门技术工艺",
+      "evidence_span": "公司研发的不停水加装闸门技术工艺于 2011 年经中国水协科技委管道技术部专家组现场评审认为技术先进、实用性强、为国内首创，达到国际先进水平"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ARAMCO 沙特阿美公司",
+      "evidence_span": "公司向 ARAMCO 沙特阿美公司申请的消防闸阀、消防栓、雨淋阀等产品，先后通过了 ARAMCO 供应资格审核认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车企业",
+      "evidence_span": "已为汽车、农机企业承接铸造高质量铸件加工产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "农机企业",
+      "evidence_span": "已为汽车、农机企业承接铸造高质量铸件加工产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海军舰艇装备",
+      "evidence_span": "为部分海军舰艇装备、军事基地、造船厂等单位提供生产装备、生活设施配套所需的阀门产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军事基地",
+      "evidence_span": "为部分海军舰艇装备、军事基地、造船厂等单位提供生产装备、生活设施配套所需的阀门产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "造船厂",
+      "evidence_span": "为部分海军舰艇装备、军事基地、造船厂等单位提供生产装备、生活设施配套所需的阀门产品"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "主打海外市场",
+      "evidence_span": "伟隆股份国内优秀的给排水阀供应商，主打海外市场"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "给排水阀门产品",
+        "evidence_span": "公司是专业从事给排水阀门产品的设计研发、生产制造和销售服务的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车零配件",
+        "evidence_span": "汽车零配件：全资子公司莱州伟隆募投项目建设的两条铸造自动生产线投产，已为汽车、农机企业承接铸造高质量铸件加工产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "军工材料",
+        "evidence_span": "军工材料：2016 年 12 月，公司取得中央军委装备发展部核发的《装备承制单位注册证书》，成为第三类装备承制单位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "给排水阀供应商",
+        "evidence_span": "伟隆股份国内优秀的给排水阀供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高新技术企业",
+        "evidence_span": "公司是专业从事给排水阀门产品的设计研发、生产制造和销售服务的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "装备承制单位",
+        "evidence_span": "成为第三类装备承制单位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "闸阀",
+        "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蝶阀",
+        "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "止回阀",
+        "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "调节阀",
+        "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "球阀",
+        "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "偏心阀",
+        "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "截止阀",
+        "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "排气阀",
+        "evidence_span": "包括闸阀、蝶阀、止回阀、调节阀、球阀、偏心阀、截止阀、排气阀等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消防减压阀",
+        "evidence_span": "公司 2021 年研发的新产品“消防减压阀”为国内首家通过 UL 认证"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消防闸阀",
+        "evidence_span": "公司向 ARAMCO 沙特阿美公司申请的消防闸阀、消防栓、雨淋阀等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消防栓",
+        "evidence_span": "公司向 ARAMCO 沙特阿美公司申请的消防闸阀、消防栓、雨淋阀等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "雨淋阀",
+        "evidence_span": "公司向 ARAMCO 沙特阿美公司申请的消防闸阀、消防栓、雨淋阀等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铸造高质量铸件加工产品",
+        "evidence_span": "已为汽车、农机企业承接铸造高质量铸件加工产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "不停水加装闸门技术工艺",
+        "evidence_span": "公司研发的不停水加装闸门技术工艺于 2011 年经中国水协科技委管道技术部专家组现场评审认为技术先进、实用性强、为国内首创，达到国际先进水平"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ARAMCO 沙特阿美公司",
+        "evidence_span": "公司向 ARAMCO 沙特阿美公司申请的消防闸阀、消防栓、雨淋阀等产品，先后通过了 ARAMCO 供应资格审核认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车企业",
+        "evidence_span": "已为汽车、农机企业承接铸造高质量铸件加工产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "农机企业",
+        "evidence_span": "已为汽车、农机企业承接铸造高质量铸件加工产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海军舰艇装备",
+        "evidence_span": "为部分海军舰艇装备、军事基地、造船厂等单位提供生产装备、生活设施配套所需的阀门产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军事基地",
+        "evidence_span": "为部分海军舰艇装备、军事基地、造船厂等单位提供生产装备、生活设施配套所需的阀门产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "造船厂",
+        "evidence_span": "为部分海军舰艇装备、军事基地、造船厂等单位提供生产装备、生活设施配套所需的阀门产品"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "主打海外市场",
+        "evidence_span": "伟隆股份国内优秀的给排水阀供应商，主打海外市场"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:12:28"
+}

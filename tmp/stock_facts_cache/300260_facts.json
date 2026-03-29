@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高洁净材料",
+      "evidence_span": "一直从事以高纯不锈钢为母材的高洁净材料的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体设备零部件",
+      "evidence_span": "半导体设备零部件作为半导体设备的基础"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高洁净材料领先者",
+      "evidence_span": "高洁净材料领先者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体洁净组件供应商",
+      "evidence_span": "新莱应材半导体洁净组件供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体设备关键材料执掌者",
+      "evidence_span": "新莱应材半导体设备关键材料执掌者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体设备的“卖铲者”",
+      "evidence_span": "半导体设备的“卖铲者”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "真空室（腔体）",
+      "evidence_span": "主营产品为真空室（腔体）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "泵",
+      "evidence_span": "主营产品为真空室（腔体）、泵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阀",
+      "evidence_span": "主营产品为真空室（腔体）、泵、阀"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "法兰",
+      "evidence_span": "主营产品为真空室（腔体）、泵、阀、法兰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管道",
+      "evidence_span": "主营产品为真空室（腔体）、泵、阀、法兰、管道"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管件",
+      "evidence_span": "主营产品为真空室（腔体）、泵、阀、法兰、管道和管件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高洁净流体管路系统",
+      "evidence_span": "属于高洁净流体管路系统和超高真空系统的关键组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超高真空系统",
+      "evidence_span": "属于高洁净流体管路系统和超高真空系统的关键组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体管阀",
+      "evidence_span": "新莱应材半导体管阀等核心零部件供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "刻蚀设备核心部件",
+      "evidence_span": "新莱应材刻蚀设备核心部件供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气体系统",
+      "evidence_span": "募投气体系统打开空间"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高洁净材料研发",
+      "evidence_span": "一直从事以高纯不锈钢为母材的高洁净材料的研发、生产与销售"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国应用材料",
+      "evidence_span": "公司客户包含美国应用材料"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北方华创",
+      "evidence_span": "公司客户包含美国应用材料、北方华创"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中微公司",
+      "evidence_span": "公司客户包含美国应用材料、北方华创、中微公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长江存储",
+      "evidence_span": "长江存储、合肥长鑫等国内领先存储器晶圆制造厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合肥长鑫",
+      "evidence_span": "长江存储、合肥长鑫等国内领先存储器晶圆制造厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雀巢集团",
+      "evidence_span": "公司与全球最大的食品制造商雀巢集团已经深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三元乳业",
+      "evidence_span": "与国内乳制品知名企业三元乳业、完达山乳业已经成为战略合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "完达山乳业",
+      "evidence_span": "与国内乳制品知名企业三元乳业、完达山乳业已经成为战略合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东富龙",
+      "evidence_span": "国内前二的制药机械企业东富龙与楚天科技已经与公司深度合作近二十年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "楚天科技",
+      "evidence_span": "国内前二的制药机械企业东富龙与楚天科技已经与公司深度合作近二十年"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "半导体国产替代",
+      "evidence_span": "半导体国产替代助力腾飞"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代先行者",
+      "evidence_span": "新莱应材半导体洁净组件供应商，国产替代先行者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "半导体设备国产化",
+      "evidence_span": "新莱应材受益半导体设备国产化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高洁净材料",
+        "evidence_span": "一直从事以高纯不锈钢为母材的高洁净材料的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体设备零部件",
+        "evidence_span": "半导体设备零部件作为半导体设备的基础"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高洁净材料领先者",
+        "evidence_span": "高洁净材料领先者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体洁净组件供应商",
+        "evidence_span": "新莱应材半导体洁净组件供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体设备关键材料执掌者",
+        "evidence_span": "新莱应材半导体设备关键材料执掌者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体设备的“卖铲者”",
+        "evidence_span": "半导体设备的“卖铲者”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "真空室（腔体）",
+        "evidence_span": "主营产品为真空室（腔体）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "泵",
+        "evidence_span": "主营产品为真空室（腔体）、泵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阀",
+        "evidence_span": "主营产品为真空室（腔体）、泵、阀"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "法兰",
+        "evidence_span": "主营产品为真空室（腔体）、泵、阀、法兰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管道",
+        "evidence_span": "主营产品为真空室（腔体）、泵、阀、法兰、管道"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管件",
+        "evidence_span": "主营产品为真空室（腔体）、泵、阀、法兰、管道和管件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高洁净流体管路系统",
+        "evidence_span": "属于高洁净流体管路系统和超高真空系统的关键组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超高真空系统",
+        "evidence_span": "属于高洁净流体管路系统和超高真空系统的关键组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体管阀",
+        "evidence_span": "新莱应材半导体管阀等核心零部件供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "刻蚀设备核心部件",
+        "evidence_span": "新莱应材刻蚀设备核心部件供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气体系统",
+        "evidence_span": "募投气体系统打开空间"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高洁净材料研发",
+        "evidence_span": "一直从事以高纯不锈钢为母材的高洁净材料的研发、生产与销售"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国应用材料",
+        "evidence_span": "公司客户包含美国应用材料"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北方华创",
+        "evidence_span": "公司客户包含美国应用材料、北方华创"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中微公司",
+        "evidence_span": "公司客户包含美国应用材料、北方华创、中微公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长江存储",
+        "evidence_span": "长江存储、合肥长鑫等国内领先存储器晶圆制造厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合肥长鑫",
+        "evidence_span": "长江存储、合肥长鑫等国内领先存储器晶圆制造厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雀巢集团",
+        "evidence_span": "公司与全球最大的食品制造商雀巢集团已经深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三元乳业",
+        "evidence_span": "与国内乳制品知名企业三元乳业、完达山乳业已经成为战略合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "完达山乳业",
+        "evidence_span": "与国内乳制品知名企业三元乳业、完达山乳业已经成为战略合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东富龙",
+        "evidence_span": "国内前二的制药机械企业东富龙与楚天科技已经与公司深度合作近二十年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "楚天科技",
+        "evidence_span": "国内前二的制药机械企业东富龙与楚天科技已经与公司深度合作近二十年"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "半导体国产替代",
+        "evidence_span": "半导体国产替代助力腾飞"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代先行者",
+        "evidence_span": "新莱应材半导体洁净组件供应商，国产替代先行者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "半导体设备国产化",
+        "evidence_span": "新莱应材受益半导体设备国产化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:23:59"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "412ab548bafe", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述了ASML CEO在特定会议上的具体言论和表态，属于单一的人物发言事件，不包含可沉淀的稳定知识。"}}

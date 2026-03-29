@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:58", "result": {"span_uid": "b2a9f77f02c1", "action": "rewrite", "canonical_text": "机器人系统具备推理与执行能力，并且能够理解物理世界。", "final_type": "core", "final_role": "机器人系统核心能力", "stability": "medium", "reason": "原文是预测性表述，去新闻口吻改写为稳定知识，直接定义机器人系统的核心特征，适合作为题材本体知识。"}}

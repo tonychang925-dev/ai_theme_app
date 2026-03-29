@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:39:14", "result": {"span_uid": "1ca5556907b8", "action": "keep", "canonical_text": "MSCI（明晟）是一家美国公司，为全球投资界提供关键决策支持工具，包括指数、组合风险与业绩分析工具以及公司治理工具。", "final_type": "core", "final_role": "MSCI公司简介", "stability": "high", "reason": "该片段提供了MSCI公司的基本定义和核心业务，是题材的本体知识，信息稳定且可独立理解。"}}

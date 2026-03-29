@@ -1,0 +1,274 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业模块设计",
+      "evidence_span": "公司专注于工业模块的设计和制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "制造",
+      "evidence_span": "公司专注于工业模块的设计和制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程服务",
+      "evidence_span": "公司具有全产业链环节服务能力，可根据业主的需求提供包括工程总承包、工程设计、工程采购、工程施工以及工程维保等在内的各类工程服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大型工业模块设计和制造企业",
+      "evidence_span": "公司是国内少数具备大型工业模块设计和制造能力的企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "具备EPFC全产业链及一体化服务能力的企业",
+      "evidence_span": "国内少数具备大型工业模块设计和制造以及“设计-采购-模块化-施工”的全产业链及一体化服务能力的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工艺模块",
+      "evidence_span": "公司主要产品为工艺模块、管廊模块以及管道预制件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管廊模块",
+      "evidence_span": "公司主要产品为工艺模块、管廊模块以及管道预制件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管道预制件",
+      "evidence_span": "公司主要产品为工艺模块、管廊模块以及管道预制件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程总承包",
+      "evidence_span": "工程总承包是指受业主委托，按照工程总承包合同的约定，对工程项目的工程设计、采购、施工、试运行等全过程实行总承包"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程设计",
+      "evidence_span": "工程设计是在项目前期策划工作的基础上，根据已经确定的商业目标和技术路线开展用于项目实施的设计和技术服务工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程采购",
+      "evidence_span": "工程采购是指公司根据业主工程项目的特点及需求，为其提供工程材料和设备的定制化选型服务及采购"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程施工",
+      "evidence_span": "公司工程施工业务主要涵盖石油化工工程施工总承包、机电工程施工总承包、钢结构工程专业承包以及施工劳务等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程维保",
+      "evidence_span": "公司工程维保业务主要包括业主厂区内指定设备和系统的检修、维护、修复工作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大型工业模块设计能力",
+      "evidence_span": "公司是国内少数具备大型工业模块设计能力的企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模块化制造技术",
+      "evidence_span": "公司自设立以来一直将模块化制造技术的研发和应用作为提升公司核心竞争力的关键"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "焊接反变形控制技术",
+      "evidence_span": "在模块制造阶段涉及焊接反变形控制技术、模块分层施工技术、模块高精度预拼装和分离技术、模块吊装技术等多项制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模块分层施工技术",
+      "evidence_span": "在模块制造阶段涉及焊接反变形控制技术、模块分层施工技术、模块高精度预拼装和分离技术、模块吊装技术等多项制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模块高精度预拼装和分离技术",
+      "evidence_span": "在模块制造阶段涉及焊接反变形控制技术、模块分层施工技术、模块高精度预拼装和分离技术、模块吊装技术等多项制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模块吊装技术",
+      "evidence_span": "在模块制造阶段涉及焊接反变形控制技术、模块分层施工技术、模块高精度预拼装和分离技术、模块吊装技术等多项制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ERP+PCMS管理系统",
+      "evidence_span": "公司基于工业模块项目的特点，以 ERP+PCMS（生产条件监控系统）管理系统为支撑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "巴斯夫",
+      "evidence_span": "凭借优秀的项目业绩，公司取得巴斯夫、霍尼韦尔、科思创、陶氏化学、液化空气、英威达等客户的高度认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "霍尼韦尔",
+      "evidence_span": "凭借优秀的项目业绩，公司取得巴斯夫、霍尼韦尔、科思创、陶氏化学、液化空气、英威达等客户的高度认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科思创",
+      "evidence_span": "凭借优秀的项目业绩，公司取得巴斯夫、霍尼韦尔、科思创、陶氏化学、液化空气、英威达等客户的高度认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陶氏化学",
+      "evidence_span": "凭借优秀的项目业绩，公司取得巴斯夫、霍尼韦尔、科思创、陶氏化学、液化空气、英威达等客户的高度认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "液化空气",
+      "evidence_span": "凭借优秀的项目业绩，公司取得巴斯夫、霍尼韦尔、科思创、陶氏化学、液化空气、英威达等客户的高度认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英威达",
+      "evidence_span": "凭借优秀的项目业绩，公司取得巴斯夫、霍尼韦尔、科思创、陶氏化学、液化空气、英威达等客户的高度认可"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能建造",
+      "evidence_span": "利柏特工业模块制造领军者，卡位智能建造大趋势"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业模块设计和制造",
+        "evidence_span": "公司专注于工业模块的设计和制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程服务",
+        "evidence_span": "公司具有全产业链环节服务能力，可根据业主的需求提供包括工程总承包、工程设计、工程采购、工程施工以及工程维保等在内的各类工程服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大型工业模块设计和制造企业",
+        "evidence_span": "公司是国内少数具备大型工业模块设计和制造能力的企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "具备EPFC全产业链及一体化服务能力的企业",
+        "evidence_span": "国内少数具备大型工业模块设计和制造以及“设计-采购-模块化-施工”的全产业链及一体化服务能力的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工艺模块",
+        "evidence_span": "公司主要产品为工艺模块、管廊模块以及管道预制件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管廊模块",
+        "evidence_span": "公司主要产品为工艺模块、管廊模块以及管道预制件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管道预制件",
+        "evidence_span": "公司主要产品为工艺模块、管廊模块以及管道预制件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程总承包",
+        "evidence_span": "工程总承包是指受业主委托，按照工程总承包合同的约定，对工程项目的工程设计、采购、施工、试运行等全过程实行总承包"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程设计",
+        "evidence_span": "工程设计是在项目前期策划工作的基础上，根据已经确定的商业目标和技术路线开展用于项目实施的设计和技术服务工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程采购",
+        "evidence_span": "工程采购是指公司根据业主工程项目的特点及需求，为其提供工程材料和设备的定制化选型服务及采购"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程施工",
+        "evidence_span": "公司工程施工业务主要涵盖石油化工工程施工总承包、机电工程施工总承包、钢结构工程专业承包以及施工劳务等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程维保",
+        "evidence_span": "公司工程维保业务主要包括业主厂区内指定设备和系统的检修、维护、修复工作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大型工业模块设计能力",
+        "evidence_span": "公司是国内少数具备大型工业模块设计能力的企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模块化制造技术",
+        "evidence_span": "公司自设立以来一直将模块化制造技术的研发和应用作为提升公司核心竞争力的关键"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "焊接反变形控制技术",
+        "evidence_span": "在模块制造阶段涉及焊接反变形控制技术、模块分层施工技术、模块高精度预拼装和分离技术、模块吊装技术等多项制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模块分层施工技术",
+        "evidence_span": "在模块制造阶段涉及焊接反变形控制技术、模块分层施工技术、模块高精度预拼装和分离技术、模块吊装技术等多项制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模块高精度预拼装和分离技术",
+        "evidence_span": "在模块制造阶段涉及焊接反变形控制技术、模块分层施工技术、模块高精度预拼装和分离技术、模块吊装技术等多项制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模块吊装技术",
+        "evidence_span": "在模块制造阶段涉及焊接反变形控制技术、模块分层施工技术、模块高精度预拼装和分离技术、模块吊装技术等多项制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ERP+PCMS管理系统",
+        "evidence_span": "公司基于工业模块项目的特点，以 ERP+PCMS（生产条件监控系统）管理系统为支撑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "巴斯夫",
+        "evidence_span": "凭借优秀的项目业绩，公司取得巴斯夫、霍尼韦尔、科思创、陶氏化学、液化空气、英威达等客户的高度认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "霍尼韦尔",
+        "evidence_span": "凭借优秀的项目业绩，公司取得巴斯夫、霍尼韦尔、科思创、陶氏化学、液化空气、英威达等客户的高度认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科思创",
+        "evidence_span": "凭借优秀的项目业绩，公司取得巴斯夫、霍尼韦尔、科思创、陶氏化学、液化空气、英威达等客户的高度认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陶氏化学",
+        "evidence_span": "凭借优秀的项目业绩，公司取得巴斯夫、霍尼韦尔、科思创、陶氏化学、液化空气、英威达等客户的高度认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "液化空气",
+        "evidence_span": "凭借优秀的项目业绩，公司取得巴斯夫、霍尼韦尔、科思创、陶氏化学、液化空气、英威达等客户的高度认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英威达",
+        "evidence_span": "凭借优秀的项目业绩，公司取得巴斯夫、霍尼韦尔、科思创、陶氏化学、液化空气、英威达等客户的高度认可"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能建造",
+        "evidence_span": "利柏特工业模块制造领军者，卡位智能建造大趋势"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:00:47"
+}

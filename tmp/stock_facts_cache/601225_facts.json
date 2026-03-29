@@ -1,0 +1,59 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭采掘",
+      "evidence_span": "公司业务有煤炭采掘、铁路运输等，其中煤炭采掘是公司最核心的业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铁路运输",
+      "evidence_span": "公司业务有煤炭采掘、铁路运输等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "优质动力煤",
+      "evidence_span": "所产煤区90%以上的煤炭储量煤质优良，属特低灰、特低磷、特低硫、中高发热量的优质动力煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气化煤",
+      "evidence_span": "所产煤区90%以上的煤炭储量煤质优良，属特低灰、特低磷、特低硫、中高发热量的优质动力煤、气化煤和理想的化工用煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化工用煤",
+      "evidence_span": "所产煤区90%以上的煤炭储量煤质优良，属特低灰、特低磷、特低硫、中高发热量的优质动力煤、气化煤和理想的化工用煤"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭采掘",
+        "evidence_span": "公司业务有煤炭采掘、铁路运输等，其中煤炭采掘是公司最核心的业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铁路运输",
+        "evidence_span": "公司业务有煤炭采掘、铁路运输等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "优质动力煤",
+        "evidence_span": "所产煤区90%以上的煤炭储量煤质优良，属特低灰、特低磷、特低硫、中高发热量的优质动力煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气化煤",
+        "evidence_span": "所产煤区90%以上的煤炭储量煤质优良，属特低灰、特低磷、特低硫、中高发热量的优质动力煤、气化煤和理想的化工用煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化工用煤",
+        "evidence_span": "所产煤区90%以上的煤炭储量煤质优良，属特低灰、特低磷、特低硫、中高发热量的优质动力煤、气化煤和理想的化工用煤"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:18:18"
+}

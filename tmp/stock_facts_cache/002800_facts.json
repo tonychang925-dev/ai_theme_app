@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "第三方物流服务",
+      "evidence_span": "公司以第三方物流服务为起点"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "供应链管理",
+      "evidence_span": "业务已扩展到供应链管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物流园区经营",
+      "evidence_span": "业务已扩展到物流园区经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "多式联运",
+      "evidence_span": "业务已扩展到多式联运"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空货运",
+      "evidence_span": "业务已扩展到航空货运"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "国际物流",
+      "evidence_span": "以国际物流为拓展方向"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新疆第三方物流龙头",
+      "evidence_span": "天顺股份新疆第三方物流龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "疆内综合性第三方物流龙头",
+      "evidence_span": "天顺股份疆内综合性第三方物流龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新疆综合物流服务龙头",
+      "evidence_span": "天顺股份新疆综合物流服务龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "疆内大宗货物物流企业中的领先地位",
+      "evidence_span": "牢牢占据疆内大宗货物物流企业中的领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合性供应链服务",
+      "evidence_span": "提供综合性供应链服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际航空货运",
+      "evidence_span": "大力拓展航空、国际公铁联运等业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际铁路业务",
+      "evidence_span": "推进中欧（亚）班列高质量开行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多式联运服务",
+      "evidence_span": "以多式联运中心集货平台开展国际货运班列运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "进出口电商全链条服务",
+      "evidence_span": "将进出口电商全链条服务纳入业务体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公路出口新模式",
+      "evidence_span": "推行“多点装货、集中运抵、集中施封、集中查验”的公路出口新模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧物流",
+      "evidence_span": "以智慧物流为核心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "钢铁行业",
+      "evidence_span": "业务领域已涉及钢铁"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源行业",
+      "evidence_span": "业务领域已涉及新能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "水泥行业",
+      "evidence_span": "业务领域已涉及水泥"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电力行业",
+      "evidence_span": "业务领域已涉及电力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "疆内外众多上市公司",
+      "evidence_span": "为疆内外众多上市公司提供供应链管理服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "知名企业",
+      "evidence_span": "为知名企业提供供应链管理服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "紧跟国家“一带一路”倡议"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "第三方物流服务",
+        "evidence_span": "公司以第三方物流服务为起点"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "供应链管理",
+        "evidence_span": "业务已扩展到供应链管理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物流园区经营",
+        "evidence_span": "业务已扩展到物流园区经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "多式联运",
+        "evidence_span": "业务已扩展到多式联运"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空货运",
+        "evidence_span": "业务已扩展到航空货运"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "国际物流",
+        "evidence_span": "以国际物流为拓展方向"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新疆第三方物流龙头",
+        "evidence_span": "天顺股份新疆第三方物流龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "疆内综合性第三方物流龙头",
+        "evidence_span": "天顺股份疆内综合性第三方物流龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新疆综合物流服务龙头",
+        "evidence_span": "天顺股份新疆综合物流服务龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "疆内大宗货物物流企业中的领先地位",
+        "evidence_span": "牢牢占据疆内大宗货物物流企业中的领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合性供应链服务",
+        "evidence_span": "提供综合性供应链服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际航空货运",
+        "evidence_span": "大力拓展航空、国际公铁联运等业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际铁路业务",
+        "evidence_span": "推进中欧（亚）班列高质量开行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多式联运服务",
+        "evidence_span": "以多式联运中心集货平台开展国际货运班列运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "进出口电商全链条服务",
+        "evidence_span": "将进出口电商全链条服务纳入业务体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公路出口新模式",
+        "evidence_span": "推行“多点装货、集中运抵、集中施封、集中查验”的公路出口新模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧物流",
+        "evidence_span": "以智慧物流为核心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "钢铁行业",
+        "evidence_span": "业务领域已涉及钢铁"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源行业",
+        "evidence_span": "业务领域已涉及新能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "水泥行业",
+        "evidence_span": "业务领域已涉及水泥"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电力行业",
+        "evidence_span": "业务领域已涉及电力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "疆内外众多上市公司",
+        "evidence_span": "为疆内外众多上市公司提供供应链管理服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "知名企业",
+        "evidence_span": "为知名企业提供供应链管理服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "紧跟国家“一带一路”倡议"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:45:01"
+}

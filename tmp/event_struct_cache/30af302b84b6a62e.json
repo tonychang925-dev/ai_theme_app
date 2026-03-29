@@ -1,0 +1,55 @@
+{
+  "event_id": "evt_27197cd4632a",
+  "theme_name": "SpaceX",
+  "event_type": "融资IPO",
+  "entities": [
+    {
+      "name": "SpaceX",
+      "type": "公司",
+      "normalized": "SpaceX"
+    },
+    {
+      "name": "约翰森",
+      "type": "人物",
+      "normalized": "约翰森"
+    }
+  ],
+  "summary": "SpaceX向员工通报正为明年IPO做准备，估值约8000亿美元。",
+  "causal_claim": [
+    "IPO准备",
+    "估值提升",
+    "航天题材"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "首次公开募股",
+      "IPO",
+      "估值"
+    ],
+    "normalized_terms": {
+      "SpaceX": "SpaceX",
+      "约翰森": "约翰森"
+    },
+    "evidence_spans": [
+      {
+        "text": "SpaceX已正式向员工通报，公司正在为明年可能进行的首次公开募股(IPO)做准备",
+        "start": 0,
+        "end": 50
+      },
+      {
+        "text": "SpaceX的整体估值约为8000亿美元",
+        "start": 80,
+        "end": 100
+      }
+    ],
+    "core_concepts": [
+      "IPO",
+      "估值"
+    ]
+  },
+  "severity_score": 0.8,
+  "confidence": 0.95,
+  "source_weight": 1.2,
+  "timestamp": "2025-12-13T00:00:00Z",
+  "raw_text": "2025年12月13日，SpaceX已正式向员工通报，公司正在为明年可能进行的首次公开募股(IPO)做准备，这一表态证实了近期的市场传闻。知情人士透露，约翰森在备忘录中披露了最新的内部股票定价为每股421美元，这意味着SpaceX的整体估值约为8000亿美元，显著高于今年早些时候约4000亿美元的估值水平。（新闻来源：财联社）"
+}

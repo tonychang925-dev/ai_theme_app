@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏组件设备",
+      "evidence_span": "老业务：光伏组件设备+港口物流。包括：光伏自动化生产线、层压机、串焊机等相关设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "港口物流自动化设备",
+      "evidence_span": "老业务：光伏组件设备+港口物流。包括：光伏自动化生产线、层压机、串焊机等相关设备，以及港口物流自动化相关设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "HJT电池片设备",
+      "evidence_span": "新业务：HJT+TOPCon+PERC电池片设备。包括：HJT设备（PECVD）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "TOPCon电池片设备",
+      "evidence_span": "新业务：HJT+TOPCon+PERC电池片设备。包括：TOPCON设备（PECVD）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "PERC电池片设备",
+      "evidence_span": "新业务：HJT+TOPCon+PERC电池片设备。包括：PERC设备（自动化、检测相关）"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光伏组件设备龙头",
+      "evidence_span": "组件设备龙头，布局电池片领域打开成长空间"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光伏异质结电池设备新星",
+      "evidence_span": "光伏异质结电池设备新星，组件设备龙头将二次腾飞"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏自动化生产线",
+      "evidence_span": "包括：光伏自动化生产线、层压机、串焊机等相关设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "层压机",
+      "evidence_span": "包括：光伏自动化生产线、层压机、串焊机等相关设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "串焊机",
+      "evidence_span": "包括：光伏自动化生产线、层压机、串焊机等相关设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "港口物流自动化设备",
+      "evidence_span": "以及港口物流自动化相关设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HJT设备",
+      "evidence_span": "包括：HJT设备（PECVD）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TOPCon设备",
+      "evidence_span": "包括：TOPCON设备（PECVD）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PERC设备",
+      "evidence_span": "包括：PERC设备（自动化、检测相关）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HJT用PECVD设备",
+      "evidence_span": "用于HJT用PECVD设备研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管式PECVD设备",
+      "evidence_span": "公司与中科院宁波材料所团队合作开发量产型管式PECVD设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HJT设备研发",
+      "evidence_span": "公司HJT项目与德国H2GEMINI进行合作研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HJT用PECVD设备研发",
+      "evidence_span": "用于HJT用PECVD设备研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HJT中试线",
+      "evidence_span": "建HJT/TOPCon中试线，加速研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TOPCon中试线",
+      "evidence_span": "建HJT/TOPCon中试线，加速研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "转换效率25%以上高效电池工艺和装备技术",
+      "evidence_span": "转换效率25%以上高效电池工艺和装备技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双面微晶HJT",
+      "evidence_span": "包括：双面微晶HJT，TOPCON，新的金属化方案等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新的金属化方案",
+      "evidence_span": "包括：双面微晶HJT，TOPCON，新的金属化方案等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "少银化无银化组件技术和装备",
+      "evidence_span": "和少银化无银化组件技术和装备等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "量产型管式PECVD设备开发",
+      "evidence_span": "公司与中科院宁波材料所团队合作开发量产型管式PECVD设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HJT薄片化高效组件封装技术",
+      "evidence_span": "并积极布局下一代新型HJT薄片化高效组件封装技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电池+组件一体化厂商",
+      "evidence_span": "公司客户多为电池+组件一体化厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "晶澳",
+      "evidence_span": "公司TOPCon用管式PECVD样机已送往晶澳、东方日升、晶科等客户试用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东方日升",
+      "evidence_span": "公司TOPCon用管式PECVD样机已送往晶澳、东方日升、晶科等客户试用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "晶科",
+      "evidence_span": "公司TOPCon用管式PECVD样机已送往晶澳、东方日升、晶科等客户试用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏HJT",
+      "evidence_span": "光伏HJT+TOPCon设备新星"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏TOPCon",
+      "evidence_span": "光伏HJT+TOPCon设备新星"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏组件设备",
+        "evidence_span": "老业务：光伏组件设备+港口物流。包括：光伏自动化生产线、层压机、串焊机等相关设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "港口物流自动化设备",
+        "evidence_span": "老业务：光伏组件设备+港口物流。包括：光伏自动化生产线、层压机、串焊机等相关设备，以及港口物流自动化相关设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "HJT电池片设备",
+        "evidence_span": "新业务：HJT+TOPCon+PERC电池片设备。包括：HJT设备（PECVD）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "TOPCon电池片设备",
+        "evidence_span": "新业务：HJT+TOPCon+PERC电池片设备。包括：TOPCON设备（PECVD）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "PERC电池片设备",
+        "evidence_span": "新业务：HJT+TOPCon+PERC电池片设备。包括：PERC设备（自动化、检测相关）"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光伏组件设备龙头",
+        "evidence_span": "组件设备龙头，布局电池片领域打开成长空间"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光伏异质结电池设备新星",
+        "evidence_span": "光伏异质结电池设备新星，组件设备龙头将二次腾飞"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏自动化生产线",
+        "evidence_span": "包括：光伏自动化生产线、层压机、串焊机等相关设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "层压机",
+        "evidence_span": "包括：光伏自动化生产线、层压机、串焊机等相关设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "串焊机",
+        "evidence_span": "包括：光伏自动化生产线、层压机、串焊机等相关设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "港口物流自动化设备",
+        "evidence_span": "以及港口物流自动化相关设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HJT设备",
+        "evidence_span": "包括：HJT设备（PECVD）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TOPCon设备",
+        "evidence_span": "包括：TOPCON设备（PECVD）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PERC设备",
+        "evidence_span": "包括：PERC设备（自动化、检测相关）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HJT用PECVD设备",
+        "evidence_span": "用于HJT用PECVD设备研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管式PECVD设备",
+        "evidence_span": "公司与中科院宁波材料所团队合作开发量产型管式PECVD设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HJT设备研发",
+        "evidence_span": "公司HJT项目与德国H2GEMINI进行合作研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HJT用PECVD设备研发",
+        "evidence_span": "用于HJT用PECVD设备研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HJT中试线",
+        "evidence_span": "建HJT/TOPCon中试线，加速研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TOPCon中试线",
+        "evidence_span": "建HJT/TOPCon中试线，加速研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "转换效率25%以上高效电池工艺和装备技术",
+        "evidence_span": "转换效率25%以上高效电池工艺和装备技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双面微晶HJT",
+        "evidence_span": "包括：双面微晶HJT，TOPCON，新的金属化方案等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新的金属化方案",
+        "evidence_span": "包括：双面微晶HJT，TOPCON，新的金属化方案等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "少银化无银化组件技术和装备",
+        "evidence_span": "和少银化无银化组件技术和装备等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "量产型管式PECVD设备开发",
+        "evidence_span": "公司与中科院宁波材料所团队合作开发量产型管式PECVD设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HJT薄片化高效组件封装技术",
+        "evidence_span": "并积极布局下一代新型HJT薄片化高效组件封装技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电池+组件一体化厂商",
+        "evidence_span": "公司客户多为电池+组件一体化厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "晶澳",
+        "evidence_span": "公司TOPCon用管式PECVD样机已送往晶澳、东方日升、晶科等客户试用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东方日升",
+        "evidence_span": "公司TOPCon用管式PECVD样机已送往晶澳、东方日升、晶科等客户试用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "晶科",
+        "evidence_span": "公司TOPCon用管式PECVD样机已送往晶澳、东方日升、晶科等客户试用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏HJT",
+        "evidence_span": "光伏HJT+TOPCon设备新星"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏TOPCon",
+        "evidence_span": "光伏HJT+TOPCon设备新星"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:19:12"
+}

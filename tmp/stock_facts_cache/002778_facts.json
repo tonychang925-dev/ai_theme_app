@@ -1,0 +1,559 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "润滑油业务",
+      "evidence_span": "继续实行润滑油业务和环保业务双主业运行模式"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保业务",
+      "evidence_span": "继续实行润滑油业务和环保业务双主业运行模式"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "民营润滑油企业",
+      "evidence_span": "民营润滑油企业中为数不多的能够实现生产过程全自动化的企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工业润滑油生产商",
+      "evidence_span": "中晟高科国内领先的工业润滑油生产商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "润滑综合解决方案提供商",
+      "evidence_span": "致力于成为润滑综合解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域环境综合治理服务商",
+      "evidence_span": "以“区域环境综合治理服务商”为基础"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业润滑油",
+      "evidence_span": "公司产品涵盖了工业润滑油大部分品种及车用润滑油部分品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车用润滑油",
+      "evidence_span": "公司产品涵盖了工业润滑油大部分品种及车用润滑油部分品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "变压器油",
+      "evidence_span": "公司变压器油的主要客户有钱江电气、河南天力、奥克斯等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内燃机油",
+      "evidence_span": "内燃机油、液压油、齿轮油等产品的客户有徐工集团、萍钢、江苏舜天等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液压油",
+      "evidence_span": "内燃机油、液压油、齿轮油等产品的客户有徐工集团、萍钢、江苏舜天等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "齿轮油",
+      "evidence_span": "内燃机油、液压油、齿轮油等产品的客户有徐工集团、萍钢、江苏舜天等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种溶剂",
+      "evidence_span": "特种溶剂的客户有瓦克化学、道康宁、南通迪爱生色料有限公司等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防析氢变压器油",
+      "evidence_span": "如开发防析氢变压器油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防滴漏液力传动油",
+      "evidence_span": "防滴漏液力传动油使传动设备在极端气候条件下仍具有很强的传动性能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保主轴油",
+      "evidence_span": "环保主轴油的开发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保型全合成制管液",
+      "evidence_span": "环保型全合成制管液同时满足工件防锈要求、表面清洁和国家环保要求"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风能专用润滑冷却系列产品",
+      "evidence_span": "积极开发风能、储能、智能电网等专用润滑冷却系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能专用润滑冷却系列产品",
+      "evidence_span": "积极开发风能、储能、智能电网等专用润滑冷却系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电网专用润滑冷却系列产品",
+      "evidence_span": "积极开发风能、储能、智能电网等专用润滑冷却系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污水处理设施委托运营服务",
+      "evidence_span": "提供污水处理设施委托运营服务收取运营服务费收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环境工程EPC服务",
+      "evidence_span": "提供环境工程EPC服务获得工程服务收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "土壤修复服务",
+      "evidence_span": "提供土壤修复服务获得土壤修复服务费收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环境咨询服务",
+      "evidence_span": "提供环境咨询服务收取咨询服务费收入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "柔性生产",
+      "evidence_span": "所谓“柔性生产”即通过生产自动化和管理信息化相融合的生产方式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "DCS分散控制系统",
+      "evidence_span": "公司先后投资购买了DCS（DistributedControlSystem）分散控制系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "气动脉冲调合系统",
+      "evidence_span": "气动脉冲调合系统等自动化控制系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MES生产执行系统",
+      "evidence_span": "建设一套具有国际水准，能适应企业特点的MES(生产执行系统)系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SMB系统",
+      "evidence_span": "生产过程采用SMB、ABB、DDU、球扫系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ABB系统",
+      "evidence_span": "生产过程采用SMB、ABB、DDU、球扫系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "DDU系统",
+      "evidence_span": "生产过程采用SMB、ABB、DDU、球扫系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "球扫系统",
+      "evidence_span": "生产过程采用SMB、ABB、DDU、球扫系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "脉冲搅拌技术",
+      "evidence_span": "同时还采用国内较先进的脉冲搅拌技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "二维码分拣技术",
+      "evidence_span": "在灌装生产线中，采用二维码分拣技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ABB机器人码垛",
+      "evidence_span": "采用ABB机器人进行码垛"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一体化垃圾压滤液处理技术",
+      "evidence_span": "核心技术包括一体化垃圾压滤液处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高COD工业废水处理技术",
+      "evidence_span": "高COD工业废水以及电镀络合废水电芬顿工艺处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电镀络合废水电芬顿工艺处理技术",
+      "evidence_span": "高COD工业废水以及电镀络合废水电芬顿工艺处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "排井式可渗透反应墙修复系统",
+      "evidence_span": "针对地下水污染的排井式可渗透反应墙修复系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "钱江电气",
+      "evidence_span": "公司变压器油的主要客户有钱江电气、河南天力、奥克斯等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "河南天力",
+      "evidence_span": "公司变压器油的主要客户有钱江电气、河南天力、奥克斯等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奥克斯",
+      "evidence_span": "公司变压器油的主要客户有钱江电气、河南天力、奥克斯等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "徐工集团",
+      "evidence_span": "内燃机油、液压油、齿轮油等产品的客户有徐工集团、萍钢、江苏舜天等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "萍钢",
+      "evidence_span": "内燃机油、液压油、齿轮油等产品的客户有徐工集团、萍钢、江苏舜天等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江苏舜天",
+      "evidence_span": "内燃机油、液压油、齿轮油等产品的客户有徐工集团、萍钢、江苏舜天等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝钢集团",
+      "evidence_span": "宝钢集团、沙钢集团、攀钢集团、山河智能、正大富通等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沙钢集团",
+      "evidence_span": "宝钢集团、沙钢集团、攀钢集团、山河智能、正大富通等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "攀钢集团",
+      "evidence_span": "宝钢集团、沙钢集团、攀钢集团、山河智能、正大富通等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山河智能",
+      "evidence_span": "宝钢集团、沙钢集团、攀钢集团、山河智能、正大富通等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "正大富通",
+      "evidence_span": "宝钢集团、沙钢集团、攀钢集团、山河智能、正大富通等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "瓦克化学",
+      "evidence_span": "特种溶剂的客户有瓦克化学、道康宁、南通迪爱生色料有限公司等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "道康宁",
+      "evidence_span": "特种溶剂的客户有瓦克化学、道康宁、南通迪爱生色料有限公司等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南通迪爱生色料有限公司",
+      "evidence_span": "特种溶剂的客户有瓦克化学、道康宁、南通迪爱生色料有限公司等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海DIC油墨有限公司",
+      "evidence_span": "上海DIC油墨有限公司等著名跨国企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "抓好装备用润滑油进口替代市场"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "润滑油业务",
+        "evidence_span": "继续实行润滑油业务和环保业务双主业运行模式"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保业务",
+        "evidence_span": "继续实行润滑油业务和环保业务双主业运行模式"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "民营润滑油企业",
+        "evidence_span": "民营润滑油企业中为数不多的能够实现生产过程全自动化的企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工业润滑油生产商",
+        "evidence_span": "中晟高科国内领先的工业润滑油生产商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "润滑综合解决方案提供商",
+        "evidence_span": "致力于成为润滑综合解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域环境综合治理服务商",
+        "evidence_span": "以“区域环境综合治理服务商”为基础"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业润滑油",
+        "evidence_span": "公司产品涵盖了工业润滑油大部分品种及车用润滑油部分品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车用润滑油",
+        "evidence_span": "公司产品涵盖了工业润滑油大部分品种及车用润滑油部分品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "变压器油",
+        "evidence_span": "公司变压器油的主要客户有钱江电气、河南天力、奥克斯等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内燃机油",
+        "evidence_span": "内燃机油、液压油、齿轮油等产品的客户有徐工集团、萍钢、江苏舜天等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液压油",
+        "evidence_span": "内燃机油、液压油、齿轮油等产品的客户有徐工集团、萍钢、江苏舜天等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "齿轮油",
+        "evidence_span": "内燃机油、液压油、齿轮油等产品的客户有徐工集团、萍钢、江苏舜天等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种溶剂",
+        "evidence_span": "特种溶剂的客户有瓦克化学、道康宁、南通迪爱生色料有限公司等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防析氢变压器油",
+        "evidence_span": "如开发防析氢变压器油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防滴漏液力传动油",
+        "evidence_span": "防滴漏液力传动油使传动设备在极端气候条件下仍具有很强的传动性能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保主轴油",
+        "evidence_span": "环保主轴油的开发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保型全合成制管液",
+        "evidence_span": "环保型全合成制管液同时满足工件防锈要求、表面清洁和国家环保要求"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风能专用润滑冷却系列产品",
+        "evidence_span": "积极开发风能、储能、智能电网等专用润滑冷却系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能专用润滑冷却系列产品",
+        "evidence_span": "积极开发风能、储能、智能电网等专用润滑冷却系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电网专用润滑冷却系列产品",
+        "evidence_span": "积极开发风能、储能、智能电网等专用润滑冷却系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污水处理设施委托运营服务",
+        "evidence_span": "提供污水处理设施委托运营服务收取运营服务费收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环境工程EPC服务",
+        "evidence_span": "提供环境工程EPC服务获得工程服务收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "土壤修复服务",
+        "evidence_span": "提供土壤修复服务获得土壤修复服务费收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环境咨询服务",
+        "evidence_span": "提供环境咨询服务收取咨询服务费收入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "柔性生产",
+        "evidence_span": "所谓“柔性生产”即通过生产自动化和管理信息化相融合的生产方式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "DCS分散控制系统",
+        "evidence_span": "公司先后投资购买了DCS（DistributedControlSystem）分散控制系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "气动脉冲调合系统",
+        "evidence_span": "气动脉冲调合系统等自动化控制系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MES生产执行系统",
+        "evidence_span": "建设一套具有国际水准，能适应企业特点的MES(生产执行系统)系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SMB系统",
+        "evidence_span": "生产过程采用SMB、ABB、DDU、球扫系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ABB系统",
+        "evidence_span": "生产过程采用SMB、ABB、DDU、球扫系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "DDU系统",
+        "evidence_span": "生产过程采用SMB、ABB、DDU、球扫系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "球扫系统",
+        "evidence_span": "生产过程采用SMB、ABB、DDU、球扫系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "脉冲搅拌技术",
+        "evidence_span": "同时还采用国内较先进的脉冲搅拌技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "二维码分拣技术",
+        "evidence_span": "在灌装生产线中，采用二维码分拣技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ABB机器人码垛",
+        "evidence_span": "采用ABB机器人进行码垛"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一体化垃圾压滤液处理技术",
+        "evidence_span": "核心技术包括一体化垃圾压滤液处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高COD工业废水处理技术",
+        "evidence_span": "高COD工业废水以及电镀络合废水电芬顿工艺处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电镀络合废水电芬顿工艺处理技术",
+        "evidence_span": "高COD工业废水以及电镀络合废水电芬顿工艺处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "排井式可渗透反应墙修复系统",
+        "evidence_span": "针对地下水污染的排井式可渗透反应墙修复系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "钱江电气",
+        "evidence_span": "公司变压器油的主要客户有钱江电气、河南天力、奥克斯等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "河南天力",
+        "evidence_span": "公司变压器油的主要客户有钱江电气、河南天力、奥克斯等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奥克斯",
+        "evidence_span": "公司变压器油的主要客户有钱江电气、河南天力、奥克斯等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "徐工集团",
+        "evidence_span": "内燃机油、液压油、齿轮油等产品的客户有徐工集团、萍钢、江苏舜天等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "萍钢",
+        "evidence_span": "内燃机油、液压油、齿轮油等产品的客户有徐工集团、萍钢、江苏舜天等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江苏舜天",
+        "evidence_span": "内燃机油、液压油、齿轮油等产品的客户有徐工集团、萍钢、江苏舜天等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝钢集团",
+        "evidence_span": "宝钢集团、沙钢集团、攀钢集团、山河智能、正大富通等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沙钢集团",
+        "evidence_span": "宝钢集团、沙钢集团、攀钢集团、山河智能、正大富通等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "攀钢集团",
+        "evidence_span": "宝钢集团、沙钢集团、攀钢集团、山河智能、正大富通等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山河智能",
+        "evidence_span": "宝钢集团、沙钢集团、攀钢集团、山河智能、正大富通等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "正大富通",
+        "evidence_span": "宝钢集团、沙钢集团、攀钢集团、山河智能、正大富通等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "瓦克化学",
+        "evidence_span": "特种溶剂的客户有瓦克化学、道康宁、南通迪爱生色料有限公司等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "道康宁",
+        "evidence_span": "特种溶剂的客户有瓦克化学、道康宁、南通迪爱生色料有限公司等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南通迪爱生色料有限公司",
+        "evidence_span": "特种溶剂的客户有瓦克化学、道康宁、南通迪爱生色料有限公司等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海DIC油墨有限公司",
+        "evidence_span": "上海DIC油墨有限公司等著名跨国企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "抓好装备用润滑油进口替代市场"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:37:43"
+}

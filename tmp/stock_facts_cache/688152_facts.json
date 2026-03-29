@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "操作系统产品研发",
+      "evidence_span": "主要从事操作系统产品研发及技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务",
+      "evidence_span": "主要从事操作系统产品研发及技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息安全产品",
+      "evidence_span": "发展信息安全、云计算等产品及服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务业务",
+      "evidence_span": "发展信息安全、云计算等产品及服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "云计算产品",
+      "evidence_span": "发展信息安全、云计算等产品及服务业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "基础平台软件产品和服务的供应商",
+      "evidence_span": "国内专业的基础平台软件产品和服务的供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产操作系统产业化推广企业",
+      "evidence_span": "少数几家将国产操作系统成功进行产业化推广的企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "麒麟信安操作系统",
+      "evidence_span": "麒麟信安操作系统是公司基于开源Linux技术开发的高安全、高可信、高可用和可定制的国产操作系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "服务器操作系统",
+      "evidence_span": "麒麟信安服务器操作系统是公司主推产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "桌面操作系统",
+      "evidence_span": "细分为服务器操作系统、桌面操作系统、专用操作系统模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用操作系统模块",
+      "evidence_span": "细分为服务器操作系统、桌面操作系统、专用操作系统模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "麒麟信安安全存储系统",
+      "evidence_span": "形成了麒麟信安安全存储系统、麒麟信安电子文档安全管理系统两大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "麒麟信安电子文档安全管理系统",
+      "evidence_span": "形成了麒麟信安安全存储系统、麒麟信安电子文档安全管理系统两大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "麒麟信安云桌面系统",
+      "evidence_span": "先后推出麒麟信安云桌面系统、超融合一体机、轻量级云平台等核心产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超融合一体机",
+      "evidence_span": "先后推出麒麟信安云桌面系统、超融合一体机、轻量级云平台等核心产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻量级云平台",
+      "evidence_span": "先后推出麒麟信安云桌面系统、超融合一体机、轻量级云平台等核心产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "技术开发服务",
+      "evidence_span": "技术开发服务主要是公司依靠掌握的核心技术根据客户的要求向其提供的研发服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "操作系统版本构建技术",
+      "evidence_span": "掌握操作系统版本构建技术、操作系统安全技术、操作系统工控属性实现技术等关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "操作系统安全技术",
+      "evidence_span": "掌握操作系统版本构建技术、操作系统安全技术、操作系统工控属性实现技术等关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "操作系统工控属性实现技术",
+      "evidence_span": "掌握操作系统版本构建技术、操作系统安全技术、操作系统工控属性实现技术等关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "桌面虚拟化技术",
+      "evidence_span": "通过自主研发桌面虚拟化和服务器虚拟化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "服务器虚拟化技术",
+      "evidence_span": "通过自主研发桌面虚拟化和服务器虚拟化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "虚拟化技术",
+      "evidence_span": "重点研究虚拟化技术、超融合分布式存储、“一云多芯”异构融合管理等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超融合分布式存储",
+      "evidence_span": "重点研究虚拟化技术、超融合分布式存储、“一云多芯”异构融合管理等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "“一云多芯”异构融合管理",
+      "evidence_span": "重点研究虚拟化技术、超融合分布式存储、“一云多芯”异构融合管理等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "NAS安全存储技术",
+      "evidence_span": "数据安全存储产品所采用的NAS安全存储技术、云平台安全存储技术等具有独创性"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云平台安全存储技术",
+      "evidence_span": "数据安全存储产品所采用的NAS安全存储技术、云平台安全存储技术等具有独创性"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国防",
+      "evidence_span": "为国防、电力、政务等具有信息安全刚性需求的关键行业，提供自主可控、安全高效的产品和服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电力",
+      "evidence_span": "为国防、电力、政务等具有信息安全刚性需求的关键行业，提供自主可控、安全高效的产品和服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政务",
+      "evidence_span": "为国防、电力、政务等具有信息安全刚性需求的关键行业，提供自主可控、安全高效的产品和服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化安全应用",
+      "evidence_span": "致力于推进国产化安全应用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产自主创新",
+      "evidence_span": "在国产自主创新的大背景下"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "操作系统产品研发及技术服务",
+        "evidence_span": "主要从事操作系统产品研发及技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息安全产品及服务业务",
+        "evidence_span": "发展信息安全、云计算等产品及服务业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "云计算产品及服务业务",
+        "evidence_span": "发展信息安全、云计算等产品及服务业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "基础平台软件产品和服务的供应商",
+        "evidence_span": "国内专业的基础平台软件产品和服务的供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产操作系统产业化推广企业",
+        "evidence_span": "少数几家将国产操作系统成功进行产业化推广的企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "麒麟信安操作系统",
+        "evidence_span": "麒麟信安操作系统是公司基于开源Linux技术开发的高安全、高可信、高可用和可定制的国产操作系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "服务器操作系统",
+        "evidence_span": "麒麟信安服务器操作系统是公司主推产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "桌面操作系统",
+        "evidence_span": "细分为服务器操作系统、桌面操作系统、专用操作系统模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用操作系统模块",
+        "evidence_span": "细分为服务器操作系统、桌面操作系统、专用操作系统模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "麒麟信安安全存储系统",
+        "evidence_span": "形成了麒麟信安安全存储系统、麒麟信安电子文档安全管理系统两大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "麒麟信安电子文档安全管理系统",
+        "evidence_span": "形成了麒麟信安安全存储系统、麒麟信安电子文档安全管理系统两大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "麒麟信安云桌面系统",
+        "evidence_span": "先后推出麒麟信安云桌面系统、超融合一体机、轻量级云平台等核心产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超融合一体机",
+        "evidence_span": "先后推出麒麟信安云桌面系统、超融合一体机、轻量级云平台等核心产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻量级云平台",
+        "evidence_span": "先后推出麒麟信安云桌面系统、超融合一体机、轻量级云平台等核心产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "技术开发服务",
+        "evidence_span": "技术开发服务主要是公司依靠掌握的核心技术根据客户的要求向其提供的研发服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "操作系统版本构建技术",
+        "evidence_span": "掌握操作系统版本构建技术、操作系统安全技术、操作系统工控属性实现技术等关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "操作系统安全技术",
+        "evidence_span": "掌握操作系统版本构建技术、操作系统安全技术、操作系统工控属性实现技术等关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "操作系统工控属性实现技术",
+        "evidence_span": "掌握操作系统版本构建技术、操作系统安全技术、操作系统工控属性实现技术等关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "桌面虚拟化技术",
+        "evidence_span": "通过自主研发桌面虚拟化和服务器虚拟化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "服务器虚拟化技术",
+        "evidence_span": "通过自主研发桌面虚拟化和服务器虚拟化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "虚拟化技术",
+        "evidence_span": "重点研究虚拟化技术、超融合分布式存储、“一云多芯”异构融合管理等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超融合分布式存储",
+        "evidence_span": "重点研究虚拟化技术、超融合分布式存储、“一云多芯”异构融合管理等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "“一云多芯”异构融合管理",
+        "evidence_span": "重点研究虚拟化技术、超融合分布式存储、“一云多芯”异构融合管理等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "NAS安全存储技术",
+        "evidence_span": "数据安全存储产品所采用的NAS安全存储技术、云平台安全存储技术等具有独创性"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云平台安全存储技术",
+        "evidence_span": "数据安全存储产品所采用的NAS安全存储技术、云平台安全存储技术等具有独创性"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国防",
+        "evidence_span": "为国防、电力、政务等具有信息安全刚性需求的关键行业，提供自主可控、安全高效的产品和服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电力",
+        "evidence_span": "为国防、电力、政务等具有信息安全刚性需求的关键行业，提供自主可控、安全高效的产品和服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政务",
+        "evidence_span": "为国防、电力、政务等具有信息安全刚性需求的关键行业，提供自主可控、安全高效的产品和服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化安全应用",
+        "evidence_span": "致力于推进国产化安全应用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产自主创新",
+        "evidence_span": "在国产自主创新的大背景下"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:18:54"
+}

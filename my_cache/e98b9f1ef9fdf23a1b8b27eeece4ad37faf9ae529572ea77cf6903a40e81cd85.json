@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "f8057d3fa250", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中国国际进口博览会开幕及中国航空工业集团签署采购协议的具体事件，包含日期和金额细节，是典型的商业动态，无静态知识内容。"}}

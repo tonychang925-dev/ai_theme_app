@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:38:15", "result": {"chunk_id": "8b23463f2fb6", "decision": "drop", "confidence": 0.7, "knowledge_value": "low", "reason": "段落仅为公司动态和产品组合扩展，无具体半导体设备知识，属于事件性内容。", "knowledge_spans": [], "event_residue": "ASML：预计公司有能力将EUV技术扩展到下一个十年 并扩展多功能整体光刻产品组合", "drop_target": "event"}}

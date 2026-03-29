@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "8ba7626a7df4", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了埃夫特公司投资建设机器人超级工厂的公告事件，包含日期、投资金额和产能计划，主要聚焦于公司动态和项目细节，没有提供关于人形机器人本身的静态知识，因此是纯事件。"}}

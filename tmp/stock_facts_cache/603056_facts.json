@@ -1,0 +1,109 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "快运",
+      "evidence_span": "深耕快运行业20多年"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大件快递",
+      "evidence_span": "布局大件快递业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "零担快运第一品牌",
+      "evidence_span": "零担快运第一品牌"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "直营制快运企业",
+      "evidence_span": "坚持以直营为主的经营模式"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大件运输领域领军者",
+      "evidence_span": "大件运输领域领军者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大件快递",
+      "evidence_span": "布局大件快递业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "快运服务",
+      "evidence_span": "深耕快运行业20多年"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能语音应答技术",
+      "evidence_span": "智能语音应答技术应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东物流",
+      "evidence_span": "京东物流整合落地"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "协同京东物流",
+      "evidence_span": "协同京东物流"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "快运",
+        "evidence_span": "深耕快运行业20多年"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大件快递",
+        "evidence_span": "布局大件快递业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "零担快运第一品牌",
+        "evidence_span": "零担快运第一品牌"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "直营制快运企业",
+        "evidence_span": "坚持以直营为主的经营模式"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大件运输领域领军者",
+        "evidence_span": "大件运输领域领军者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大件快递",
+        "evidence_span": "布局大件快递业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "快运服务",
+        "evidence_span": "深耕快运行业20多年"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能语音应答技术",
+        "evidence_span": "智能语音应答技术应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东物流",
+        "evidence_span": "京东物流整合落地"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "协同京东物流",
+        "evidence_span": "协同京东物流"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:14:17"
+}

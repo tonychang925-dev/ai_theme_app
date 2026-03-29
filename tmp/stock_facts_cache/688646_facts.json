@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密激光加工智能装备研发",
+      "evidence_span": "公司主营业务为精密激光加工智能装备研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密激光加工智能装备设计",
+      "evidence_span": "公司主营业务为精密激光加工智能装备研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密激光加工智能装备生产",
+      "evidence_span": "公司主营业务为精密激光加工智能装备研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密激光加工智能装备销售",
+      "evidence_span": "公司主营业务为精密激光加工智能装备研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电设备供应商",
+      "evidence_span": "公司产品主要应用于下游锂电池制造等行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池电芯自动装配线",
+      "evidence_span": "主要产品包括锂电池电芯自动装配线、模组/PACK自动装配线等自动化产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模组/PACK自动装配线",
+      "evidence_span": "主要产品包括锂电池电芯自动装配线、模组/PACK自动装配线等自动化产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化产线",
+      "evidence_span": "主要产品包括锂电池电芯自动装配线、模组/PACK自动装配线等自动化产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密激光加工智能化专机",
+      "evidence_span": "主要产品包括锂电池电芯自动装配线、模组/PACK自动装配线等自动化产线及各类精密激光加工智能化专机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圆柱全极耳电芯自动装配线",
+      "evidence_span": "圆柱全极耳电芯自动装配线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方形电芯自动装配线",
+      "evidence_span": "方形电芯自动装配线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模组装配线",
+      "evidence_span": "可细分为模组装配线、PACK装配线、模组PACK装配线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PACK装配线",
+      "evidence_span": "可细分为模组装配线、PACK装配线、模组PACK装配线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模组PACK装配线",
+      "evidence_span": "可细分为模组装配线、PACK装配线、模组PACK装配线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圆柱全极耳电芯专机",
+      "evidence_span": "圆柱全极耳电芯专机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方形电芯装配专机",
+      "evidence_span": "方形电芯装配专机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模组/PACK装配专机",
+      "evidence_span": "模组/PACK装配专机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "密封钉激光焊接机",
+      "evidence_span": "密封钉激光焊接机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汇流排焊接机",
+      "evidence_span": "汇流排焊接机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "改造与增值服务",
+      "evidence_span": "改造与增值服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "圆柱全极耳自动化产线技术",
+      "evidence_span": "公司技术优势领先的圆柱全极耳自动化产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "圆柱全极耳电芯装配线技术",
+      "evidence_span": "公司核心技术产品圆柱电芯装配线具有很强的市场竞争优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "密封钉激光焊接技术",
+      "evidence_span": "密封钉激光焊接机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汇流排焊接技术",
+      "evidence_span": "汇流排焊接机为公司技术含量较高的核心设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国轩高科",
+      "evidence_span": "向国轩高科交付8条、1条圆柱电芯装配线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "向宁德时代交付1条、12条圆柱电芯装配线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江美大",
+      "evidence_span": "主要客户为浙江美大、火星人等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "火星人",
+      "evidence_span": "主要客户为浙江美大、火星人等"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密激光加工智能装备研发",
+        "evidence_span": "公司主营业务为精密激光加工智能装备研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密激光加工智能装备设计",
+        "evidence_span": "公司主营业务为精密激光加工智能装备研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密激光加工智能装备生产",
+        "evidence_span": "公司主营业务为精密激光加工智能装备研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密激光加工智能装备销售",
+        "evidence_span": "公司主营业务为精密激光加工智能装备研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电设备供应商",
+        "evidence_span": "公司产品主要应用于下游锂电池制造等行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池电芯自动装配线",
+        "evidence_span": "主要产品包括锂电池电芯自动装配线、模组/PACK自动装配线等自动化产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模组/PACK自动装配线",
+        "evidence_span": "主要产品包括锂电池电芯自动装配线、模组/PACK自动装配线等自动化产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化产线",
+        "evidence_span": "主要产品包括锂电池电芯自动装配线、模组/PACK自动装配线等自动化产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密激光加工智能化专机",
+        "evidence_span": "主要产品包括锂电池电芯自动装配线、模组/PACK自动装配线等自动化产线及各类精密激光加工智能化专机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圆柱全极耳电芯自动装配线",
+        "evidence_span": "圆柱全极耳电芯自动装配线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方形电芯自动装配线",
+        "evidence_span": "方形电芯自动装配线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模组装配线",
+        "evidence_span": "可细分为模组装配线、PACK装配线、模组PACK装配线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PACK装配线",
+        "evidence_span": "可细分为模组装配线、PACK装配线、模组PACK装配线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模组PACK装配线",
+        "evidence_span": "可细分为模组装配线、PACK装配线、模组PACK装配线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圆柱全极耳电芯专机",
+        "evidence_span": "圆柱全极耳电芯专机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方形电芯装配专机",
+        "evidence_span": "方形电芯装配专机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模组/PACK装配专机",
+        "evidence_span": "模组/PACK装配专机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "密封钉激光焊接机",
+        "evidence_span": "密封钉激光焊接机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汇流排焊接机",
+        "evidence_span": "汇流排焊接机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "改造与增值服务",
+        "evidence_span": "改造与增值服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "圆柱全极耳自动化产线技术",
+        "evidence_span": "公司技术优势领先的圆柱全极耳自动化产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "圆柱全极耳电芯装配线技术",
+        "evidence_span": "公司核心技术产品圆柱电芯装配线具有很强的市场竞争优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "密封钉激光焊接技术",
+        "evidence_span": "密封钉激光焊接机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汇流排焊接技术",
+        "evidence_span": "汇流排焊接机为公司技术含量较高的核心设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国轩高科",
+        "evidence_span": "向国轩高科交付8条、1条圆柱电芯装配线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "向宁德时代交付1条、12条圆柱电芯装配线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江美大",
+        "evidence_span": "主要客户为浙江美大、火星人等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "火星人",
+        "evidence_span": "主要客户为浙江美大、火星人等"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:26:26"
+}

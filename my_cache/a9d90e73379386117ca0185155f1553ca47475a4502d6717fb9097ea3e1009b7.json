@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "82de60129fc2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报告档期总票房突破55亿元、观影人次和影片排名的事件，包含具体数据和预测，是市场表现动态，无静态知识。"}}

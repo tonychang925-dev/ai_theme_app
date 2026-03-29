@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 35077381.89,
+    "changeCount": 0.0,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:01",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>公司主营业务为商业零售、酒店管理与服务，<a href=\"iwin://cmd=openf5&amp;stockcode=880060.bak\" data-stock-code=\"880060\" data-market-code=\"1\">综合</a>投资，深耕湖南市场，湖南地区营收占比100%。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2001_20220920161943_16223230539e2aaf.png\" alt=\"\" width=\"885\" height=\"327\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2，主营数据</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2003_20220920162610_c61677678ce76105.png\" alt=\"\" width=\"639\" height=\"165\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、核心竞争力</span></p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2002_20220920162322_7c623121599654e6.png\" alt=\"\" width=\"921\" height=\"234\" /></p>",
+    "firstLetter": "TCKG",
+    "high": 6.58,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 6.46,
+    "marketValue": 3549594737.15,
+    "name": "通程控股",
+    "pctChg": 0.0,
+    "price": 6.53,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 1,
+    "recent60Change": 2.19,
+    "recentChange": 0.0,
+    "remark": "公司主要经营商业零售和酒店旅游，深耕湖南市场，湖南地区营收占比100%。",
+    "status": 1,
+    "stockId": "000419",
+    "stockLightspots": [
+      {
+        "bizKey": "51838",
+        "content": "通程控股产业+金融布局深入， 三大预期差待修复",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51838,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51839",
+        "content": "管理转型持续进行,2013业绩有望高成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51839,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51840",
+        "content": "资产重估显价值",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51840,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51841",
+        "content": "通程控股业绩符合预期，典当业务发展迅速，国企改革进程或提速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51841,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51842",
+        "content": "通程控股净利同比持平，金服平台初步形成",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51842,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51843",
+        "content": "通程控股收入增2.17，资产重估溢价高",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51843,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51844",
+        "content": "业绩略低于预期,2013年零售板块收入或将提速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51844,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51845",
+        "content": "财务费用大幅减少带来盈利能力提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51845,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51846",
+        "content": "营收增速由负转正，综合金融平台有望发力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51846,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51847",
+        "content": "通程控股业绩符合预期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51847,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51848",
+        "content": "通程控股金融服务发展迅猛，关注国企改革",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51848,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51849",
+        "content": "通程控股人工、租金上升导致业绩下滑，期待国企改革加速金融布局进程企改革加速金融布局进程",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51849,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51850",
+        "content": "典当业务快速增长,酒店业务下滑",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51850,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51851",
+        "content": "业绩低于预期,温泉酒店难扭亏",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51851,
+        "stockId": "000419",
+        "updateTime": null
+      },
+      {
+        "bizKey": "51852",
+        "content": "“金改”概念刺激股价提升,主业暂无显著利好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 51852,
+        "stockId": "000419",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 53895.61
+  }
+}

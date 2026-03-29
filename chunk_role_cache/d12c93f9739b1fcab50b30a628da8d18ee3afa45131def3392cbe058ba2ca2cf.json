@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "412ab548bafe", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落报道了ASML首席执行官在会议上的言论，包括对美国限制出口的看法和预计反击措施，这是基于具体会议的事件性内容，没有提供稳定的知识信息。"}}

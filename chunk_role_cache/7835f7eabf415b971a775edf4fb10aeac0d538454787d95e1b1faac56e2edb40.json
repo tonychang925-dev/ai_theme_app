@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "092829e0a4e8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落引用SIA数据描述全球和中国半导体销售额的同比增长趋势，属于市场景气数据报告，是事件性内容，没有涉及半导体设备本身的静态知识。"}}

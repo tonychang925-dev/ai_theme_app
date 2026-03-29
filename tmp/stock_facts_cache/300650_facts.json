@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体分销业务",
+      "evidence_span": "公司主营业务为以半导体分销业务为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业照明业务",
+      "evidence_span": "以商业照明业务为辅"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体分销商",
+      "evidence_span": "博思达是业内知名的半导体分销商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "商业照明整体解决方案服务商",
+      "evidence_span": "作为专注于光影营造的商业照明整体解决方案服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "照明器具",
+      "evidence_span": "主要产品包括照明器具、LED显示屏和光电标识等主要三大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED显示屏",
+      "evidence_span": "主要产品包括照明器具、LED显示屏和光电标识等主要三大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光电标识",
+      "evidence_span": "主要产品包括照明器具、LED显示屏和光电标识等主要三大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频前端芯片",
+      "evidence_span": "以手机的射频前端芯片为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功率放大器",
+      "evidence_span": "包括功率放大器(PA)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双工器",
+      "evidence_span": "双工器(Duplexer和Diplexer)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频开关",
+      "evidence_span": "射频开关(Switch)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "滤波器",
+      "evidence_span": "滤波器(Filter)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低噪放大器",
+      "evidence_span": "低噪放大器(LNA)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运动传感器",
+      "evidence_span": "博思达代理的产品还包括各种运动传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频图像处理器",
+      "evidence_span": "视频图像处理器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "图像传感器",
+      "evidence_span": "图像传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安防主芯片",
+      "evidence_span": "安防主芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载音效DSP处理器",
+      "evidence_span": "车载音效DSP处理器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导航",
+      "evidence_span": "导航"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MCU",
+      "evidence_span": "MCU"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TWS耳机主芯片",
+      "evidence_span": "TWS耳机主芯片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "柔性化制造体系",
+      "evidence_span": "建立集设备柔性、工艺柔性、产品柔性、生产能力柔性和扩展柔性于一体的柔性化制造体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米集团",
+      "evidence_span": "长期合作的手机品牌企业和大型手机ODM企业有小米集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "OPPO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华勤通讯",
+      "evidence_span": "华勤通讯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "闻泰科技",
+      "evidence_span": "闻泰科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TCL",
+      "evidence_span": "与TCL、创维、广州视源、海康、BYD等知名企业有厚实的合作基础"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "创维",
+      "evidence_span": "与TCL、创维、广州视源、海康、BYD等知名企业有厚实的合作基础"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广州视源",
+      "evidence_span": "与TCL、创维、广州视源、海康、BYD等知名企业有厚实的合作基础"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海康",
+      "evidence_span": "与TCL、创维、广州视源、海康、BYD等知名企业有厚实的合作基础"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "BYD",
+      "evidence_span": "与TCL、创维、广州视源、海康、BYD等知名企业有厚实的合作基础"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "半导体产业的国产替代进程由原先的政府推动已经升级为产业链自发驱动"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体分销业务",
+        "evidence_span": "公司主营业务为以半导体分销业务为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业照明业务",
+        "evidence_span": "以商业照明业务为辅"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体分销商",
+        "evidence_span": "博思达是业内知名的半导体分销商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "商业照明整体解决方案服务商",
+        "evidence_span": "作为专注于光影营造的商业照明整体解决方案服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "照明器具",
+        "evidence_span": "主要产品包括照明器具、LED显示屏和光电标识等主要三大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED显示屏",
+        "evidence_span": "主要产品包括照明器具、LED显示屏和光电标识等主要三大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光电标识",
+        "evidence_span": "主要产品包括照明器具、LED显示屏和光电标识等主要三大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频前端芯片",
+        "evidence_span": "以手机的射频前端芯片为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功率放大器",
+        "evidence_span": "包括功率放大器(PA)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双工器",
+        "evidence_span": "双工器(Duplexer和Diplexer)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频开关",
+        "evidence_span": "射频开关(Switch)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "滤波器",
+        "evidence_span": "滤波器(Filter)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低噪放大器",
+        "evidence_span": "低噪放大器(LNA)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运动传感器",
+        "evidence_span": "博思达代理的产品还包括各种运动传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频图像处理器",
+        "evidence_span": "视频图像处理器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "图像传感器",
+        "evidence_span": "图像传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安防主芯片",
+        "evidence_span": "安防主芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载音效DSP处理器",
+        "evidence_span": "车载音效DSP处理器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导航",
+        "evidence_span": "导航"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MCU",
+        "evidence_span": "MCU"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TWS耳机主芯片",
+        "evidence_span": "TWS耳机主芯片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "柔性化制造体系",
+        "evidence_span": "建立集设备柔性、工艺柔性、产品柔性、生产能力柔性和扩展柔性于一体的柔性化制造体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米集团",
+        "evidence_span": "长期合作的手机品牌企业和大型手机ODM企业有小米集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "OPPO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华勤通讯",
+        "evidence_span": "华勤通讯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "闻泰科技",
+        "evidence_span": "闻泰科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TCL",
+        "evidence_span": "与TCL、创维、广州视源、海康、BYD等知名企业有厚实的合作基础"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "创维",
+        "evidence_span": "与TCL、创维、广州视源、海康、BYD等知名企业有厚实的合作基础"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广州视源",
+        "evidence_span": "与TCL、创维、广州视源、海康、BYD等知名企业有厚实的合作基础"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海康",
+        "evidence_span": "与TCL、创维、广州视源、海康、BYD等知名企业有厚实的合作基础"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "BYD",
+        "evidence_span": "与TCL、创维、广州视源、海康、BYD等知名企业有厚实的合作基础"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "半导体产业的国产替代进程由原先的政府推动已经升级为产业链自发驱动"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:42:13"
+}

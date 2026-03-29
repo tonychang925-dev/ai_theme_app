@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "db0c5bd87a6e", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段纯静态说明HBM的定义、应用和结构（如'应用于CPU/GPU的新型内存芯片'、'将很多个DDR芯片堆叠在一起'），没有事件或时间性动态，直接用于题材本体构建。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "939feec115cf", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了苹果公司可能重启AR眼镜计划的事件，包含具体时间、代号和调研活动，属于动态新闻。但同时也提到了对智能眼镜产品的调研，可能隐含AR眼镜市场或技术知识，因此混合了事件和潜在知识。"}}

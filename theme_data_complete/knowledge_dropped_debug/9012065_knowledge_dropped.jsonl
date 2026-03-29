@@ -1,0 +1,5 @@
+{"span_uid": "b551e5f954f5", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "机器人部队作战应用", "stability": "low", "reason": "该片段是具体战争事件（俄军被俘），高度依赖新闻上下文，无法形成稳定、独立的知识表达，不适合入库。"}
+{"span_uid": "b9d9e08225fa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "无人装备协同作战", "stability": "low", "reason": "该片段是具体战争事件（迫使投降），高度依赖新闻上下文，无法形成稳定、独立的知识表达，不适合入库。"}
+{"span_uid": "eef52f3f8186", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体冲突事件中的攻击规模，属于一次性事件信息，无法形成稳定、可独立成立的军工题材知识块。"}
+{"span_uid": "fb18097bdc3e", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体冲突事件中的军事损耗评估，属于一次性事件信息，无法形成稳定、可独立成立的军工题材知识块。"}
+{"span_uid": "c3aaff1db383", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "片段为具体公司合同事件，无法形成稳定、可独立理解的军工题材知识块。"}

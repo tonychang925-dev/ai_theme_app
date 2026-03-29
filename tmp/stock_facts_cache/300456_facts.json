@@ -1,0 +1,459 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "MEMS工艺开发",
+      "evidence_span": "主营业务分为MEMS工艺开发、MEMS代工制造、氮化镓外延材料和功率器件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "MEMS代工制造",
+      "evidence_span": "主营业务分为MEMS工艺开发、MEMS代工制造、氮化镓外延材料和功率器件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "氮化镓外延材料",
+      "evidence_span": "主营业务分为MEMS工艺开发、MEMS代工制造、氮化镓外延材料和功率器件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "功率器件",
+      "evidence_span": "主营业务分为MEMS工艺开发、MEMS代工制造、氮化镓外延材料和功率器件"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "MEMS纯代工厂商",
+      "evidence_span": "转型为MEMS技术开发服务和纯代工厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "MEMS代工龙头",
+      "evidence_span": "收购瑞典Silex转型成为全球MEMS纯代工领域龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MEMS硅基麦克风",
+      "evidence_span": "MEMS产品包括消费电子领域的硅基麦克风"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "惯性传感器",
+      "evidence_span": "工业生产领域的惯性传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微镜",
+      "evidence_span": "汽车和光通信领域的微镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微流控/芯片实验室",
+      "evidence_span": "生物医学领域的微流控/芯片实验室"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频芯片",
+      "evidence_span": "无线通信领域的射频芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅光子",
+      "evidence_span": "光通信领域的硅光子等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MEMS惯性器件",
+      "evidence_span": "代表性产品包括新型MEMS惯性器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MEMS硅光器件",
+      "evidence_span": "MEMS硅光器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MEMS医学器件",
+      "evidence_span": "新型MEMS医学器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医学压力传感器",
+      "evidence_span": "传统医学压力传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MEMS麦克风",
+      "evidence_span": "涵盖MEMS麦克风"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子烟开关",
+      "evidence_span": "电子烟开关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频滤波器",
+      "evidence_span": "射频滤波器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BAW滤波器",
+      "evidence_span": "公司布局BAW滤波器领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GaN功率器件",
+      "evidence_span": "主要产品包括功率器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GaN外延材料",
+      "evidence_span": "负责提供氮化镓外延材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SilVia TSV",
+      "evidence_span": "熟练掌握SilVia TSV"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MetVia TSV",
+      "evidence_span": "MetVia TSV"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MetVia TGV",
+      "evidence_span": "MetVia TGV等国际领先的核心工艺模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "压电材料",
+      "evidence_span": "掌握压电材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磁性材料MagMEMS",
+      "evidence_span": "磁性材料MagMEMS"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "聚合物材料Polymer",
+      "evidence_span": "聚合物材料Polymer等业内领先技术的核心模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锆钛酸铅压电陶瓷薄膜微系统器件",
+      "evidence_span": "开发基于锆钛酸铅压电陶瓷薄膜微系统器件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "8英寸GaN-on-Si外延技术",
+      "evidence_span": "掌握业界领先的8英寸GaN-on-Si"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "6英寸GaN-on-SiC外延技术",
+      "evidence_span": "6英寸GaN-on-SiC外延技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球DNA/RNA测序仪龙头",
+      "evidence_span": "包括全球DNA/RNA测序仪龙头"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "光刻机巨头",
+      "evidence_span": "光刻机巨头"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新型超声设备巨头",
+      "evidence_span": "新型超声设备巨头"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "网络通信和应用巨头",
+      "evidence_span": "网络通信和应用巨头"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工业和消费细分行业的领先企业",
+      "evidence_span": "工业和消费细分行业的领先企业等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "AR/VR客户",
+      "evidence_span": "来自AR/VR客户贡献"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "硅光子领域新兴公司",
+      "evidence_span": "和硅光子领域新兴公司开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球领先的高端光刻机厂商",
+      "evidence_span": "公司是全球领先的高端光刻机厂商核心部件供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球主流DNA测序厂商",
+      "evidence_span": "产品已成功导入全球主流DNA测序厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通用微",
+      "evidence_span": "和通用微战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "武汉敏声",
+      "evidence_span": "与武汉敏声签署射频滤波器8英寸晶圆代工战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际知名激光雷达厂商",
+      "evidence_span": "与国际知名激光雷达厂商及其子公司签署战略合作框架协议"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "未来国产替代空间大"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "MEMS代工自主可控",
+      "evidence_span": "MEMS代工自主可控重要性将愈发凸显"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "MEMS工艺开发",
+        "evidence_span": "主营业务分为MEMS工艺开发、MEMS代工制造、氮化镓外延材料和功率器件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "MEMS代工制造",
+        "evidence_span": "主营业务分为MEMS工艺开发、MEMS代工制造、氮化镓外延材料和功率器件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "氮化镓外延材料",
+        "evidence_span": "主营业务分为MEMS工艺开发、MEMS代工制造、氮化镓外延材料和功率器件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "功率器件",
+        "evidence_span": "主营业务分为MEMS工艺开发、MEMS代工制造、氮化镓外延材料和功率器件"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "MEMS纯代工厂商",
+        "evidence_span": "转型为MEMS技术开发服务和纯代工厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "MEMS代工龙头",
+        "evidence_span": "收购瑞典Silex转型成为全球MEMS纯代工领域龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MEMS硅基麦克风",
+        "evidence_span": "MEMS产品包括消费电子领域的硅基麦克风"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "惯性传感器",
+        "evidence_span": "工业生产领域的惯性传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微镜",
+        "evidence_span": "汽车和光通信领域的微镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微流控/芯片实验室",
+        "evidence_span": "生物医学领域的微流控/芯片实验室"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频芯片",
+        "evidence_span": "无线通信领域的射频芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅光子",
+        "evidence_span": "光通信领域的硅光子等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MEMS惯性器件",
+        "evidence_span": "代表性产品包括新型MEMS惯性器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MEMS硅光器件",
+        "evidence_span": "MEMS硅光器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MEMS医学器件",
+        "evidence_span": "新型MEMS医学器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医学压力传感器",
+        "evidence_span": "传统医学压力传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MEMS麦克风",
+        "evidence_span": "涵盖MEMS麦克风"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子烟开关",
+        "evidence_span": "电子烟开关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频滤波器",
+        "evidence_span": "射频滤波器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BAW滤波器",
+        "evidence_span": "公司布局BAW滤波器领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GaN功率器件",
+        "evidence_span": "主要产品包括功率器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GaN外延材料",
+        "evidence_span": "负责提供氮化镓外延材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SilVia TSV",
+        "evidence_span": "熟练掌握SilVia TSV"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MetVia TSV",
+        "evidence_span": "MetVia TSV"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MetVia TGV",
+        "evidence_span": "MetVia TGV等国际领先的核心工艺模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "压电材料",
+        "evidence_span": "掌握压电材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磁性材料MagMEMS",
+        "evidence_span": "磁性材料MagMEMS"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "聚合物材料Polymer",
+        "evidence_span": "聚合物材料Polymer等业内领先技术的核心模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锆钛酸铅压电陶瓷薄膜微系统器件",
+        "evidence_span": "开发基于锆钛酸铅压电陶瓷薄膜微系统器件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "8英寸GaN-on-Si外延技术",
+        "evidence_span": "掌握业界领先的8英寸GaN-on-Si"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "6英寸GaN-on-SiC外延技术",
+        "evidence_span": "6英寸GaN-on-SiC外延技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球DNA/RNA测序仪龙头",
+        "evidence_span": "包括全球DNA/RNA测序仪龙头"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "光刻机巨头",
+        "evidence_span": "光刻机巨头"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新型超声设备巨头",
+        "evidence_span": "新型超声设备巨头"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "网络通信和应用巨头",
+        "evidence_span": "网络通信和应用巨头"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工业和消费细分行业的领先企业",
+        "evidence_span": "工业和消费细分行业的领先企业等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "AR/VR客户",
+        "evidence_span": "来自AR/VR客户贡献"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "硅光子领域新兴公司",
+        "evidence_span": "和硅光子领域新兴公司开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球领先的高端光刻机厂商",
+        "evidence_span": "公司是全球领先的高端光刻机厂商核心部件供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球主流DNA测序厂商",
+        "evidence_span": "产品已成功导入全球主流DNA测序厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通用微",
+        "evidence_span": "和通用微战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "武汉敏声",
+        "evidence_span": "与武汉敏声签署射频滤波器8英寸晶圆代工战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际知名激光雷达厂商",
+        "evidence_span": "与国际知名激光雷达厂商及其子公司签署战略合作框架协议"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "未来国产替代空间大"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "MEMS代工自主可控",
+        "evidence_span": "MEMS代工自主可控重要性将愈发凸显"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:37:50"
+}

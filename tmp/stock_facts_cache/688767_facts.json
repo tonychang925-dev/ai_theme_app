@@ -1,0 +1,344 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "体外诊断试剂",
+      "evidence_span": "专业从事体外诊断试剂、原料和仪器的研发、制造、销售和服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体外诊断原料",
+      "evidence_span": "专业从事体外诊断试剂、原料和仪器的研发、制造、销售和服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体外诊断仪器",
+      "evidence_span": "专业从事体外诊断试剂、原料和仪器的研发、制造、销售和服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "POCT诊断试剂生产厂商",
+      "evidence_span": "是全球POCT诊断试剂品种较为齐全的生产厂商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家高新技术企业",
+      "evidence_span": "国家高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生殖健康检测系列",
+      "evidence_span": "生殖健康检测系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药物滥用（毒品）检测系列",
+      "evidence_span": "药物滥用（毒品）检测系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传染病检测系列",
+      "evidence_span": "传染病检测系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肿瘤标志物检测系列",
+      "evidence_span": "肿瘤标志物检测系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "心肌标志物检测系列",
+      "evidence_span": "心肌标志物检测系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新冠抗体检测试剂",
+      "evidence_span": "新冠肺炎抗体检测试剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新冠抗原检测产品",
+      "evidence_span": "新冠抗原检测产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "梅毒螺旋体抗体/HIV抗体/乙型肝炎病毒表面抗原/丙型肝炎病毒抗体联合检测试剂",
+      "evidence_span": "梅毒螺旋体抗体/HIV抗体/乙型肝炎病毒表面抗原/丙型肝炎病毒抗体联合检测试剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大麻检测试剂",
+      "evidence_span": "大麻检测试剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "沙眼衣原体/淋球菌抗原联合检测试剂",
+      "evidence_span": "沙眼衣原体/淋球菌抗原联合检测试剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "样本前处理及检测仪器设备",
+      "evidence_span": "样本前处理及检测仪器设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "毛发检测相关试剂及设备",
+      "evidence_span": "毛发为样本的新检测相关试剂及设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "快速免疫诊断产品技术平台",
+      "evidence_span": "搭建了快速免疫诊断产品技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物核心原料技术平台",
+      "evidence_span": "搭建了生物核心原料技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化生产工艺技术平台",
+      "evidence_span": "自动化生产工艺技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基因重组蛋白表达技术",
+      "evidence_span": "搭建基因重组蛋白表达技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "胶体金技术",
+      "evidence_span": "在胶体金领域的技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "单克隆抗体技术",
+      "evidence_span": "单克隆抗体"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗原偶联技术",
+      "evidence_span": "抗原偶联技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "荧光免疫法",
+      "evidence_span": "荧光免疫法产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军队",
+      "evidence_span": "军队"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "警察",
+      "evidence_span": "警察"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "司法系统",
+      "evidence_span": "司法系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OTC系统",
+      "evidence_span": "OTC系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "第三方检测机构",
+      "evidence_span": "第三方检测机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公检法部门",
+      "evidence_span": "公检法部门"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "当地知名医疗器械商",
+      "evidence_span": "当地知名医疗器械商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "完成进口替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "体外诊断试剂",
+        "evidence_span": "专业从事体外诊断试剂、原料和仪器的研发、制造、销售和服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体外诊断原料",
+        "evidence_span": "专业从事体外诊断试剂、原料和仪器的研发、制造、销售和服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体外诊断仪器",
+        "evidence_span": "专业从事体外诊断试剂、原料和仪器的研发、制造、销售和服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "POCT诊断试剂生产厂商",
+        "evidence_span": "是全球POCT诊断试剂品种较为齐全的生产厂商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家高新技术企业",
+        "evidence_span": "国家高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生殖健康检测系列",
+        "evidence_span": "生殖健康检测系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药物滥用（毒品）检测系列",
+        "evidence_span": "药物滥用（毒品）检测系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传染病检测系列",
+        "evidence_span": "传染病检测系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肿瘤标志物检测系列",
+        "evidence_span": "肿瘤标志物检测系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "心肌标志物检测系列",
+        "evidence_span": "心肌标志物检测系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新冠抗体检测试剂",
+        "evidence_span": "新冠肺炎抗体检测试剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新冠抗原检测产品",
+        "evidence_span": "新冠抗原检测产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "梅毒螺旋体抗体/HIV抗体/乙型肝炎病毒表面抗原/丙型肝炎病毒抗体联合检测试剂",
+        "evidence_span": "梅毒螺旋体抗体/HIV抗体/乙型肝炎病毒表面抗原/丙型肝炎病毒抗体联合检测试剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大麻检测试剂",
+        "evidence_span": "大麻检测试剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "沙眼衣原体/淋球菌抗原联合检测试剂",
+        "evidence_span": "沙眼衣原体/淋球菌抗原联合检测试剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "样本前处理及检测仪器设备",
+        "evidence_span": "样本前处理及检测仪器设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "毛发检测相关试剂及设备",
+        "evidence_span": "毛发为样本的新检测相关试剂及设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "快速免疫诊断产品技术平台",
+        "evidence_span": "搭建了快速免疫诊断产品技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物核心原料技术平台",
+        "evidence_span": "搭建了生物核心原料技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化生产工艺技术平台",
+        "evidence_span": "自动化生产工艺技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基因重组蛋白表达技术",
+        "evidence_span": "搭建基因重组蛋白表达技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "胶体金技术",
+        "evidence_span": "在胶体金领域的技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "单克隆抗体技术",
+        "evidence_span": "单克隆抗体"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基因重组蛋白表达技术",
+        "evidence_span": "基因重组蛋白表达"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗原偶联技术",
+        "evidence_span": "抗原偶联技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "荧光免疫法",
+        "evidence_span": "荧光免疫法产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军队",
+        "evidence_span": "军队"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "警察",
+        "evidence_span": "警察"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "司法系统",
+        "evidence_span": "司法系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OTC系统",
+        "evidence_span": "OTC系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "第三方检测机构",
+        "evidence_span": "第三方检测机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公检法部门",
+        "evidence_span": "公检法部门"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "当地知名医疗器械商",
+        "evidence_span": "当地知名医疗器械商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "完成进口替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:43:42"
+}

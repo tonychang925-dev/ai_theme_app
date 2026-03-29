@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "4b3620f7daaf", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了半导体设计环节的静态知识，包括定义、特点、流程、全球和国内产业格局，虽然提及了政策支持和趋势，但主要是结构性说明，没有具体事件或时间性动态。"}}

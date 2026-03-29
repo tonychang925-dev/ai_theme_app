@@ -1,0 +1,129 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "集成电路封装测试服务",
+      "evidence_span": "集成电路封装测试服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集成电路封装测试领军企业",
+      "evidence_span": "中国集成电路封装测试的领军企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "框架类封装",
+      "evidence_span": "框架类封装(SOT/SOP/QFN/DFN/LQFP/TO/IPM 等)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基板类封装",
+      "evidence_span": "基板类封装(WBBGA/WBLGA/FCBGA/FCCSP/FCLGA 等)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圆片类封装",
+      "evidence_span": "圆片类封装(Fan-inWLCSP/Fan-out WLCSP/Cu pillar bump/Solder bump/Gold bump 等)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "COG",
+      "evidence_span": "COG"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "COF",
+      "evidence_span": "COF"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SIP",
+      "evidence_span": "SIP"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "设计仿真和封装测试一站式服务",
+      "evidence_span": "提供设计仿真和封装测试一站式服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "测试平台和工程服务",
+      "evidence_span": "提供全方位的测试平台和工程服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "AMD",
+      "evidence_span": "持续强化和 AMD的合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产封测领军",
+      "evidence_span": "国产封测领军企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "集成电路封装测试服务",
+        "evidence_span": "集成电路封装测试服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集成电路封装测试领军企业",
+        "evidence_span": "中国集成电路封装测试的领军企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "框架类封装",
+        "evidence_span": "框架类封装(SOT/SOP/QFN/DFN/LQFP/TO/IPM 等)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基板类封装",
+        "evidence_span": "基板类封装(WBBGA/WBLGA/FCBGA/FCCSP/FCLGA 等)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圆片类封装",
+        "evidence_span": "圆片类封装(Fan-inWLCSP/Fan-out WLCSP/Cu pillar bump/Solder bump/Gold bump 等)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "COG",
+        "evidence_span": "COG"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "COF",
+        "evidence_span": "COF"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SIP",
+        "evidence_span": "SIP"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "设计仿真和封装测试一站式服务",
+        "evidence_span": "提供设计仿真和封装测试一站式服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "测试平台和工程服务",
+        "evidence_span": "提供全方位的测试平台和工程服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "AMD",
+        "evidence_span": "持续强化和 AMD的合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产封测领军",
+        "evidence_span": "国产封测领军企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:12:30"
+}

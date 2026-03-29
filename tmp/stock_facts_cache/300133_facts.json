@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电视剧",
+      "evidence_span": "公司电视剧项目创新题材、深化立意、强化品质"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电影",
+      "evidence_span": "公司电影业务厚积薄发，持续打造出工业化电影标杆作品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "科技版权运营",
+      "evidence_span": "科技版权子公司业绩持续增长，打造了完整的版权运营管理平台"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "国际业务",
+      "evidence_span": "国际业务进一步提升了影视版权营销能力"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "动画业务",
+      "evidence_span": "动画业务通过国内外合作开发，正逐步打造形成了六个 IP系列"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "内容新业务",
+      "evidence_span": "内容新业务从0到1探索了元宇宙数字藏品、视频彩铃等具有高潜力的业务方向"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全网剧龙头",
+      "evidence_span": "全网剧的产能规模稳居全行业第一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性娱乐传媒集团",
+      "evidence_span": "打造互联网时代全球一流的综合娱乐传媒集团"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "头部内容生产平台",
+      "evidence_span": "公司已成为集成的、稳定的、高产出的头部内容生产平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电视剧",
+      "evidence_span": "公司电视剧项目创新题材、深化立意、强化品质"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电影",
+      "evidence_span": "公司电影业务厚积薄发，持续打造出工业化电影标杆作品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动画电影",
+      "evidence_span": "公司 2022年上映动画电影 2部"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动画剧集",
+      "evidence_span": "动画剧集2部"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "元宇宙数字藏品",
+      "evidence_span": "内容新业务从0到1探索了元宇宙数字藏品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频彩铃",
+      "evidence_span": "内容新业务从0到1探索了视频彩铃"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "版权运营管理平台",
+      "evidence_span": "打造了完整的版权运营管理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "影视节目译制服务",
+      "evidence_span": "公司不仅能承揽本公司的译制工作，也可为行业其他公司提供优质的译制服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "专业化、数字化、平台化强中台赋能系统",
+      "evidence_span": "公司已建立起业内领先的专业化、数字化、平台化强中台赋能系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据分析工具",
+      "evidence_span": "通过强大的大数据分析工具"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "虚拟拍摄技术应用",
+      "evidence_span": "以虚拟拍摄技术应用和先进后期制作技术应用提升制作品质"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "先进后期制作技术应用",
+      "evidence_span": "以虚拟拍摄技术应用和先进后期制作技术应用提升制作品质"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AIGC应用",
+      "evidence_span": "公司积极将 AIGC应用于内容创意、内容制作、内容宣发等影视生产全链路"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Netflix",
+      "evidence_span": "与 Netflix、迪士尼、亚马逊、爱奇艺、芒果TV等国际国内顶级传媒集团开展深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "迪士尼",
+      "evidence_span": "与 Netflix、迪士尼、亚马逊、爱奇艺、芒果TV等国际国内顶级传媒集团开展深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚马逊",
+      "evidence_span": "与 Netflix、迪士尼、亚马逊、爱奇艺、芒果TV等国际国内顶级传媒集团开展深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "爱奇艺",
+      "evidence_span": "与 Netflix、迪士尼、亚马逊、爱奇艺、芒果TV等国际国内顶级传媒集团开展深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "芒果TV",
+      "evidence_span": "与 Netflix、迪士尼、亚马逊、爱奇艺、芒果TV等国际国内顶级传媒集团开展深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "优酷",
+      "evidence_span": "系列古装剧《与君初相识》《恰似故人归》成为优酷首个热度值过万剧集"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "华流出海",
+      "evidence_span": "公司的核心战略：内容为王、产业为基、华流出海"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电视剧",
+        "evidence_span": "公司电视剧项目创新题材、深化立意、强化品质"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电影",
+        "evidence_span": "公司电影业务厚积薄发，持续打造出工业化电影标杆作品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "科技版权运营",
+        "evidence_span": "科技版权子公司业绩持续增长，打造了完整的版权运营管理平台"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "国际业务",
+        "evidence_span": "国际业务进一步提升了影视版权营销能力"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "动画业务",
+        "evidence_span": "动画业务通过国内外合作开发，正逐步打造形成了六个 IP系列"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "内容新业务",
+        "evidence_span": "内容新业务从0到1探索了元宇宙数字藏品、视频彩铃等具有高潜力的业务方向"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全网剧龙头",
+        "evidence_span": "全网剧的产能规模稳居全行业第一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性娱乐传媒集团",
+        "evidence_span": "打造互联网时代全球一流的综合娱乐传媒集团"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "头部内容生产平台",
+        "evidence_span": "公司已成为集成的、稳定的、高产出的头部内容生产平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电视剧",
+        "evidence_span": "公司电视剧项目创新题材、深化立意、强化品质"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电影",
+        "evidence_span": "公司电影业务厚积薄发，持续打造出工业化电影标杆作品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动画电影",
+        "evidence_span": "公司 2022年上映动画电影 2部"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动画剧集",
+        "evidence_span": "动画剧集2部"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "元宇宙数字藏品",
+        "evidence_span": "内容新业务从0到1探索了元宇宙数字藏品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频彩铃",
+        "evidence_span": "内容新业务从0到1探索了视频彩铃"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "版权运营管理平台",
+        "evidence_span": "打造了完整的版权运营管理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "影视节目译制服务",
+        "evidence_span": "公司不仅能承揽本公司的译制工作，也可为行业其他公司提供优质的译制服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "专业化、数字化、平台化强中台赋能系统",
+        "evidence_span": "公司已建立起业内领先的专业化、数字化、平台化强中台赋能系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据分析工具",
+        "evidence_span": "通过强大的大数据分析工具"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "虚拟拍摄技术应用",
+        "evidence_span": "以虚拟拍摄技术应用和先进后期制作技术应用提升制作品质"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "先进后期制作技术应用",
+        "evidence_span": "以虚拟拍摄技术应用和先进后期制作技术应用提升制作品质"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AIGC应用",
+        "evidence_span": "公司积极将 AIGC应用于内容创意、内容制作、内容宣发等影视生产全链路"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Netflix",
+        "evidence_span": "与 Netflix、迪士尼、亚马逊、爱奇艺、芒果TV等国际国内顶级传媒集团开展深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "迪士尼",
+        "evidence_span": "与 Netflix、迪士尼、亚马逊、爱奇艺、芒果TV等国际国内顶级传媒集团开展深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚马逊",
+        "evidence_span": "与 Netflix、迪士尼、亚马逊、爱奇艺、芒果TV等国际国内顶级传媒集团开展深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "爱奇艺",
+        "evidence_span": "与 Netflix、迪士尼、亚马逊、爱奇艺、芒果TV等国际国内顶级传媒集团开展深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "芒果TV",
+        "evidence_span": "与 Netflix、迪士尼、亚马逊、爱奇艺、芒果TV等国际国内顶级传媒集团开展深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "优酷",
+        "evidence_span": "系列古装剧《与君初相识》《恰似故人归》成为优酷首个热度值过万剧集"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "华流出海",
+        "evidence_span": "公司的核心战略：内容为王、产业为基、华流出海"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:45:30"
+}

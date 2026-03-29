@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:58", "result": {"chunk_id": "96b8861b6941", "decision": "related_but_event_only", "confidence": 0.85, "reason": "该段落聚焦于中国EUV光刻机研发的进展、资金支持、体制转变和试生产时间表，属于行业动态和单项进展描述，未直接说明半导体设备题材的本体要素如核心环节、关键机制或结构边界。"}}

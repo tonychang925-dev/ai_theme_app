@@ -1,0 +1,459 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧城市应用软件",
+      "evidence_span": "数字政通是市占率领先的智慧城市应用软件及解决方案提供商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "解决方案",
+      "evidence_span": "数字政通是市占率领先的智慧城市应用软件及解决方案提供商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字城管",
+      "evidence_span": "数字城管。公司传统核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "市域社会治理",
+      "evidence_span": "市域社会治理。作为社会治理重要领域深受国家重视"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "地下管线",
+      "evidence_span": "地下管线。横向：业务布局延伸至地下"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市运营",
+      "evidence_span": "城市运营。城市运营业务的现金流相比单纯的项目建设具有更强的确定性、持续性"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字城管龙头",
+      "evidence_span": "公司是数字城管IT领域龙头，市占率达70%"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧城市应用软件及解决方案提供商",
+      "evidence_span": "数字政通是市占率领先的智慧城市应用软件及解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化城市管理信息系统",
+      "evidence_span": "数字化城市管理信息系统：基于城市电子政务专网、无线通讯网"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智信平台",
+      "evidence_span": "智信1.0：以“智能手机”为载体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智云平台",
+      "evidence_span": "智云平台（智慧城市网格综合管理平台）：基于云架构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网格化+基层治理",
+      "evidence_span": "网格化+基层治理：以北京市东城区为例"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网格化+智慧执法",
+      "evidence_span": "网格化+智慧执法：构建集感知、分析、服务、指挥、监察“五位一体”的智慧执法产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网格化+智慧市政",
+      "evidence_span": "网格化+智慧市政：包括智慧市政综合监管平台及智慧路灯、智慧排水、智慧道桥、智能井盖等专业子系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网格化+智慧安监",
+      "evidence_span": "网格化+智慧安监：进一步完善升级智慧化安全生产监管系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频智能分析系统",
+      "evidence_span": "视频智能分析系统：游商摊贩、暴露垃圾、车辆管控等日常管理事件为目标"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "未戴口罩人员识别算法",
+      "evidence_span": "未戴口罩人员识别算法：以街道、小区出入口、车站等公共场所为重点应用场景"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网格化社区疫情防控系统",
+      "evidence_span": "网格化社区疫情防控系统在全国各地上线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市综合管理服务平台",
+      "evidence_span": "数字城管的3.0：城市综合管理服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地下管线探测",
+      "evidence_span": "收购地下管线探测施工龙头金迪管线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "漏水探测技术",
+      "evidence_span": "金迪科技、科仪分别致力于漏水探测技术和仪器的开发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市政管网监测设备",
+      "evidence_span": "市政管网监测设备研发制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管线智能检测普查",
+      "evidence_span": "在管线智能检测普查和修复技术方面不断突破"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管线修复技术",
+      "evidence_span": "在管线智能检测普查和修复技术方面不断突破"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市运营服务",
+      "evidence_span": "公司城市运营服务主要对接城市的服务外包业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载智能识别采集模式",
+      "evidence_span": "构建了全新的车载智能识别的采集模式"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI算法智能识别视频问题场景",
+      "evidence_span": "运用AI算法智能识别无照游商、出店经营、乱堆物料、违规撑伞、沿街晾晒、非法广告、暴露垃圾、机动车违停等上百种问题场景"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI算法智能识别12345热线数据",
+      "evidence_span": "基于12345政务服务热线大数据，运用AI算法智能识别民生诉求话题、责任主体、敏感词、热词以及情感词等关键内容"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "统一时空信息管理技术",
+      "evidence_span": "公司采用了统一时空信息管理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空间网格技术",
+      "evidence_span": "运用空间网格技术、地理编码技术、嵌入式地理信息引擎技术及WebGIS技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "地理编码技术",
+      "evidence_span": "运用空间网格技术、地理编码技术、嵌入式地理信息引擎技术及WebGIS技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "嵌入式地理信息引擎技术",
+      "evidence_span": "运用空间网格技术、地理编码技术、嵌入式地理信息引擎技术及WebGIS技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "WebGIS技术",
+      "evidence_span": "运用空间网格技术、地理编码技术、嵌入式地理信息引擎技术及WebGIS技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云计算技术",
+      "evidence_span": "基于云计算技术打造的新一代智信云平台推出"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链技术",
+      "evidence_span": "通过区块链技术加持，实现疫情采集数据实时上链"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI识别技术",
+      "evidence_span": "实现AI识别技术+高效采集工具的有机结合"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京市东城区",
+      "evidence_span": "以北京市东城区为例"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "四川、河南、浙江、湖南等多地城市",
+      "evidence_span": "实现了与四川、河南、浙江、湖南等多地城市数字城管平台的联网工作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宜宾",
+      "evidence_span": "以公司中标的宜宾智慧城乡基层治理项目为例"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "淄博、文昌、徐州、青岛、赤峰、温州等多地",
+      "evidence_span": "2020年公司已中标淄博、文昌、徐州、青岛、赤峰、温州等多地信息采集等服务外包项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海徐汇区、深圳坪山区、北京东城区",
+      "evidence_span": "目前相关技术和产品也已经在上海徐汇区、深圳坪山区、北京东城区等多个典型项目上得到应用推广"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧城市建设",
+      "evidence_span": "国内数字城管龙头深耕智慧城市建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一网统管",
+      "evidence_span": "助力实现“一网统管”"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "公司是数字城管IT领域龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧城市应用软件及解决方案",
+        "evidence_span": "数字政通是市占率领先的智慧城市应用软件及解决方案提供商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字城管",
+        "evidence_span": "数字城管。公司传统核心业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "市域社会治理",
+        "evidence_span": "市域社会治理。作为社会治理重要领域深受国家重视"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "地下管线",
+        "evidence_span": "地下管线。横向：业务布局延伸至地下"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市运营",
+        "evidence_span": "城市运营。城市运营业务的现金流相比单纯的项目建设具有更强的确定性、持续性"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字城管龙头",
+        "evidence_span": "公司是数字城管IT领域龙头，市占率达70%"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧城市应用软件及解决方案提供商",
+        "evidence_span": "数字政通是市占率领先的智慧城市应用软件及解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化城市管理信息系统",
+        "evidence_span": "数字化城市管理信息系统：基于城市电子政务专网、无线通讯网"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智信平台",
+        "evidence_span": "智信1.0：以“智能手机”为载体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智云平台",
+        "evidence_span": "智云平台（智慧城市网格综合管理平台）：基于云架构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网格化+基层治理",
+        "evidence_span": "网格化+基层治理：以北京市东城区为例"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网格化+智慧执法",
+        "evidence_span": "网格化+智慧执法：构建集感知、分析、服务、指挥、监察“五位一体”的智慧执法产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网格化+智慧市政",
+        "evidence_span": "网格化+智慧市政：包括智慧市政综合监管平台及智慧路灯、智慧排水、智慧道桥、智能井盖等专业子系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网格化+智慧安监",
+        "evidence_span": "网格化+智慧安监：进一步完善升级智慧化安全生产监管系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频智能分析系统",
+        "evidence_span": "视频智能分析系统：游商摊贩、暴露垃圾、车辆管控等日常管理事件为目标"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "未戴口罩人员识别算法",
+        "evidence_span": "未戴口罩人员识别算法：以街道、小区出入口、车站等公共场所为重点应用场景"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网格化社区疫情防控系统",
+        "evidence_span": "网格化社区疫情防控系统在全国各地上线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市综合管理服务平台",
+        "evidence_span": "数字城管的3.0：城市综合管理服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地下管线探测",
+        "evidence_span": "收购地下管线探测施工龙头金迪管线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "漏水探测技术",
+        "evidence_span": "金迪科技、科仪分别致力于漏水探测技术和仪器的开发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市政管网监测设备",
+        "evidence_span": "市政管网监测设备研发制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管线智能检测普查",
+        "evidence_span": "在管线智能检测普查和修复技术方面不断突破"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管线修复技术",
+        "evidence_span": "在管线智能检测普查和修复技术方面不断突破"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市运营服务",
+        "evidence_span": "公司城市运营服务主要对接城市的服务外包业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载智能识别采集模式",
+        "evidence_span": "构建了全新的车载智能识别的采集模式"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI算法智能识别视频问题场景",
+        "evidence_span": "运用AI算法智能识别无照游商、出店经营、乱堆物料、违规撑伞、沿街晾晒、非法广告、暴露垃圾、机动车违停等上百种问题场景"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI算法智能识别12345热线数据",
+        "evidence_span": "基于12345政务服务热线大数据，运用AI算法智能识别民生诉求话题、责任主体、敏感词、热词以及情感词等关键内容"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "统一时空信息管理技术",
+        "evidence_span": "公司采用了统一时空信息管理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空间网格技术",
+        "evidence_span": "运用空间网格技术、地理编码技术、嵌入式地理信息引擎技术及WebGIS技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "地理编码技术",
+        "evidence_span": "运用空间网格技术、地理编码技术、嵌入式地理信息引擎技术及WebGIS技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "嵌入式地理信息引擎技术",
+        "evidence_span": "运用空间网格技术、地理编码技术、嵌入式地理信息引擎技术及WebGIS技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "WebGIS技术",
+        "evidence_span": "运用空间网格技术、地理编码技术、嵌入式地理信息引擎技术及WebGIS技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云计算技术",
+        "evidence_span": "基于云计算技术打造的新一代智信云平台推出"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链技术",
+        "evidence_span": "通过区块链技术加持，实现疫情采集数据实时上链"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI识别技术",
+        "evidence_span": "实现AI识别技术+高效采集工具的有机结合"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京市东城区",
+        "evidence_span": "以北京市东城区为例"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杭州、福州、太原、沈阳、昆明、长沙、宁波、宝鸡、青岛、临沂、攀枝花等试点城市",
+        "evidence_span": "公司积极参与杭州、福州、太原、沈阳、昆明、长沙、宁波、宝鸡、青岛、临沂、攀枝花等试点城市的平台升级改造工作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "四川、河南、浙江、湖南等多地城市",
+        "evidence_span": "实现了与四川、河南、浙江、湖南等多地城市数字城管平台的联网工作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宜宾",
+        "evidence_span": "以公司中标的宜宾智慧城乡基层治理项目为例"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津、成都、合肥、石家庄、乌鲁木齐、银川、西宁等多个省会、直辖市近130个城市",
+        "evidence_span": "公司城市运营大数据中心信息采集服务部业务覆盖天津、成都、合肥、石家庄、乌鲁木齐、银川、西宁等多个省会、直辖市近130个城市"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "淄博、文昌、徐州、青岛、赤峰、温州等多地",
+        "evidence_span": "2020年公司已中标淄博、文昌、徐州、青岛、赤峰、温州等多地信息采集等服务外包项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津、沈阳、杭州、合肥、郑州、乌鲁木齐、西宁、无锡、洛阳、青岛、岳阳、苏州、淄博、雅安、济宁、东营等近百个城市",
+        "evidence_span": "目前相关技术和产品已经在天津、沈阳、杭州、合肥、郑州、乌鲁木齐、西宁、无锡、洛阳、青岛、岳阳、苏州、淄博、雅安、济宁、东营等近百个城市得到应用推广"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海徐汇区、深圳坪山区、北京东城区",
+        "evidence_span": "目前相关技术和产品也已经在上海徐汇区、深圳坪山区、北京东城区等多个典型项目上得到应用推广"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧城市建设",
+        "evidence_span": "国内数字城管龙头深耕智慧城市建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一网统管",
+        "evidence_span": "助力实现“一网统管”"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "公司是数字城管IT领域龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:11:45"
+}

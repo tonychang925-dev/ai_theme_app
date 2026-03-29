@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "50b1b0998787", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "纯粹是两条具体事件的简短陈述：美国将实体拉入黑名单并加大芯片管制，以及中国对美成熟制程芯片启动调查。没有提供稳定的背景知识或解释，属于动态新闻。"}}

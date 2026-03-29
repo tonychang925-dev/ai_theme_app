@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:10:23", "result": {"chunk_id": "d530397cce3f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含华为昇腾AI云服务的静态技术说明（如超节点配置、算力规模），但也混合了事件信息（在WAIC亮相、数据中心上线和应用案例），可能含有可用于题材构建的知识，但需要进一步裁决。"}}

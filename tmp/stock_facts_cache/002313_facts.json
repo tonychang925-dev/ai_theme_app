@@ -1,0 +1,419 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "无线通信模组业务",
+      "evidence_span": "主营业务是无线通信模组业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "通信设备业务",
+      "evidence_span": "主营业务是无线通信模组业务、通信设备业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "通信工程服务业务",
+      "evidence_span": "主营业务是无线通信模组业务、通信设备业务、通信工程服务业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "人工智能物联网服务提供商",
+      "evidence_span": "行业领先的人工智能物联网服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "ODN龙头",
+      "evidence_span": "领跑国内ODN领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线通信模组",
+      "evidence_span": "主要产品是无线通信模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信基础设备",
+      "evidence_span": "主要产品是无线通信模组、通信基础设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信工程服务",
+      "evidence_span": "主要产品是无线通信模组、通信基础设备、通信工程服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光配线产品",
+      "evidence_span": "通信设备产品主要包含光配线产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线站点",
+      "evidence_span": "通信设备产品主要包含光配线产品、无线站点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据中心",
+      "evidence_span": "通信设备产品主要包含光配线产品、无线站点、数据中心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能产品",
+      "evidence_span": "通信设备产品主要包含光配线产品、无线站点、数据中心、储能产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能箱变",
+      "evidence_span": "推出了储能箱变"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工商业储能",
+      "evidence_span": "推出了储能箱变、工商业储能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池柜",
+      "evidence_span": "推出了储能箱变、工商业储能、电池柜等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防爆机柜",
+      "evidence_span": "新推出了防爆机柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液冷机柜",
+      "evidence_span": "新推出了防爆机柜、液冷机柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "站点叠光",
+      "evidence_span": "新推出了防爆机柜、液冷机柜、站点叠光"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能机柜",
+      "evidence_span": "新推出了防爆机柜、液冷机柜、站点叠光和储能机柜等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信站点及站点能源解决方案",
+      "evidence_span": "为客户提供通信站点及站点能源解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据中心解决方案",
+      "evidence_span": "为客户提供通信站点及站点能源解决方案、数据中心解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全光网络解决方案",
+      "evidence_span": "为客户提供通信站点及站点能源解决方案、数据中心解决方案、全光网络解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能备电方案",
+      "evidence_span": "为客户提供通信站点及站点能源解决方案、数据中心解决方案、全光网络解决方案、储能备电方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G模组",
+      "evidence_span": "5G 模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LTE-A模组",
+      "evidence_span": "LTE-A 模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能模组",
+      "evidence_span": "智能模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4G模组",
+      "evidence_span": "4G 模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LPWA模组",
+      "evidence_span": "LPWA 模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GNSS模组",
+      "evidence_span": "GNSS 模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车规模组",
+      "evidence_span": "车规模组"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G技术",
+      "evidence_span": "积极投身 5G 技术的研发与应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "防爆机柜自主研发",
+      "evidence_span": "公司自主研发的防爆机柜是行业首创"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电信运营商",
+      "evidence_span": "主要客户为电信运营商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "行业政企客户",
+      "evidence_span": "主要客户为电信运营商及行业政企客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三大运营商",
+      "evidence_span": "客户已涵盖三大运营商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国铁塔",
+      "evidence_span": "客户已涵盖三大运营商和中国铁塔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "爱立信",
+      "evidence_span": "客户已涵盖三大运营商和中国铁塔以及爱立信等国内外主设备商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里巴巴",
+      "evidence_span": "增加阿里巴巴等云计算及 AI 基础设施提供商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球知名汽车厂商",
+      "evidence_span": "车规模组产品已成功进入全球多家知名汽车厂商供应链"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "物联网",
+      "evidence_span": "物联网重剑锋芒初露"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "推出基于国产芯片研发的高性价比 LTE Cat.6 模组"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "无线通信模组业务",
+        "evidence_span": "主营业务是无线通信模组业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "通信设备业务",
+        "evidence_span": "主营业务是无线通信模组业务、通信设备业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "通信工程服务业务",
+        "evidence_span": "主营业务是无线通信模组业务、通信设备业务、通信工程服务业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "人工智能物联网服务提供商",
+        "evidence_span": "行业领先的人工智能物联网服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "ODN龙头",
+        "evidence_span": "领跑国内ODN领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线通信模组",
+        "evidence_span": "主要产品是无线通信模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信基础设备",
+        "evidence_span": "主要产品是无线通信模组、通信基础设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信工程服务",
+        "evidence_span": "主要产品是无线通信模组、通信基础设备、通信工程服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光配线产品",
+        "evidence_span": "通信设备产品主要包含光配线产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线站点",
+        "evidence_span": "通信设备产品主要包含光配线产品、无线站点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据中心",
+        "evidence_span": "通信设备产品主要包含光配线产品、无线站点、数据中心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能产品",
+        "evidence_span": "通信设备产品主要包含光配线产品、无线站点、数据中心、储能产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能箱变",
+        "evidence_span": "推出了储能箱变"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工商业储能",
+        "evidence_span": "推出了储能箱变、工商业储能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池柜",
+        "evidence_span": "推出了储能箱变、工商业储能、电池柜等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防爆机柜",
+        "evidence_span": "新推出了防爆机柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液冷机柜",
+        "evidence_span": "新推出了防爆机柜、液冷机柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "站点叠光",
+        "evidence_span": "新推出了防爆机柜、液冷机柜、站点叠光"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能机柜",
+        "evidence_span": "新推出了防爆机柜、液冷机柜、站点叠光和储能机柜等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信站点及站点能源解决方案",
+        "evidence_span": "为客户提供通信站点及站点能源解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据中心解决方案",
+        "evidence_span": "为客户提供通信站点及站点能源解决方案、数据中心解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全光网络解决方案",
+        "evidence_span": "为客户提供通信站点及站点能源解决方案、数据中心解决方案、全光网络解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能备电方案",
+        "evidence_span": "为客户提供通信站点及站点能源解决方案、数据中心解决方案、全光网络解决方案、储能备电方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G模组",
+        "evidence_span": "5G 模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LTE-A模组",
+        "evidence_span": "LTE-A 模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能模组",
+        "evidence_span": "智能模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4G模组",
+        "evidence_span": "4G 模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LPWA模组",
+        "evidence_span": "LPWA 模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GNSS模组",
+        "evidence_span": "GNSS 模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车规模组",
+        "evidence_span": "车规模组"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G技术",
+        "evidence_span": "积极投身 5G 技术的研发与应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "防爆机柜自主研发",
+        "evidence_span": "公司自主研发的防爆机柜是行业首创"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电信运营商",
+        "evidence_span": "主要客户为电信运营商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "行业政企客户",
+        "evidence_span": "主要客户为电信运营商及行业政企客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三大运营商",
+        "evidence_span": "客户已涵盖三大运营商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国铁塔",
+        "evidence_span": "客户已涵盖三大运营商和中国铁塔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "爱立信",
+        "evidence_span": "客户已涵盖三大运营商和中国铁塔以及爱立信等国内外主设备商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里巴巴",
+        "evidence_span": "增加阿里巴巴等云计算及 AI 基础设施提供商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球知名汽车厂商",
+        "evidence_span": "车规模组产品已成功进入全球多家知名汽车厂商供应链"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "物联网",
+        "evidence_span": "物联网重剑锋芒初露"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "推出基于国产芯片研发的高性价比 LTE Cat.6 模组"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:04:45"
+}

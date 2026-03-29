@@ -1,0 +1,40 @@
+{
+  "scope": "phase:第一阶段",
+  "run_id": "20260217_181500",
+  "version": "1.1",
+  "generated_at": "2026-02-17T10:15:00Z",
+  "phase_code": "P1.phase0",
+  "source_docs": [
+    "docs/project_control/PRD.md",
+    "docs/project_control/ACCEPTANCE.md",
+    "docs/project_control/PLAN_WBS.md"
+  ],
+  "milestones": [
+    {
+      "key": "P1.phase0",
+      "name": "P1.phase0 - 运行时收敛与契约冻结",
+      "phase": "phase 0",
+      "summary": "收敛链路与契约，清理重复定义并补充追踪证据。"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "P1.phase0-T01",
+      "name": "冻结第一阶段唯一运行时链路与入口清单",
+      "priority": "P0",
+      "estimate": 1,
+      "depends_on": [],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P1.phase0"
+    },
+    {
+      "id": "P1.phase0-T02",
+      "name": "定义DecisionEnvelope v1字段与dual-read兼容策略",
+      "priority": "P0",
+      "estimate": 1,
+      "depends_on": ["P1.phase0-T01"],
+      "dod_checklist": ["文档更新", "代码审查"],
+      "milestone_key": "P1.phase0"
+    }
+  ]
+}

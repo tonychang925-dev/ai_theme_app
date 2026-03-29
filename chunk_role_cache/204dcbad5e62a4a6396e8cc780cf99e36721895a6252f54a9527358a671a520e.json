@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "8bbfdad47760", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述台积电的股价表现、历史新高、市值以及具体财季的业绩数据（如净利润、营业收入、每股盈余），这些都是具体的事件性动态和市场表现，没有涉及半导体设备的稳定知识构建。"}}

@@ -1,0 +1,364 @@
+{
+  "tasks": [
+    {
+      "id": "3067bab0-ee1d-818f-b3cc-eda9bba5a0fb",
+      "name": "P1.phase0-T04 trace_id与payload_version全链路贯通方案评审",
+      "status": "done",
+      "priority": "P1",
+      "estimate": 1,
+      "dod_checklist": [
+        "文档更新",
+        "代码审查"
+      ],
+      "test_evidence": "P1.phase0 run 20260217_165458: pytest streams passed; contract checks passed; tc=TC-P1P0-001~004",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase0-T04-trace_id-payload_version-3067bab0ee1d818fb3cceda9bba5a0fb",
+      "last_edited": "2026-02-17T09:07:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-8137-aaab-d1ac95960be9",
+      "name": "P1.phase0-T03 清理重复函数定义并建立静态扫描门禁",
+      "status": "done",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "单元测试",
+        "代码审查"
+      ],
+      "test_evidence": "P1.phase0 run 20260217_165458: pytest streams passed; contract checks passed; tc=TC-P1P0-001~004",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase0-T03-3067bab0ee1d8137aaabd1ac95960be9",
+      "last_edited": "2026-02-17T09:06:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-8166-b844-ff94f09245ae",
+      "name": "P1.phase4-T04 第一阶段收口复盘与下一阶段输入清单",
+      "status": "Todo",
+      "priority": "P1",
+      "estimate": 1,
+      "dod_checklist": [
+        "文档更新",
+        "代码审查"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase4-T04-3067bab0ee1d8166b844ff94f09245ae",
+      "last_edited": "2026-02-17T03:43:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-81ed-9532-e69db259b7b9",
+      "name": "P1.phase4-T03 发布SLO门禁接入 死信率积压时长一致率real_call_ratio",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "集成测试",
+        "文档更新"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase4-T03-SLO-real_call_ratio-3067bab0ee1d81ed9532e69db259b7b9",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-81f2-b574-dd948929d19e",
+      "name": "P1.phase4-T02 回放一致性与故障演练脚本验证",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 2,
+      "dod_checklist": [
+        "集成测试",
+        "性能测试"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase4-T02-3067bab0ee1d81f2b574dd948929d19e",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-8125-93b8-fd5500f2ad37",
+      "name": "P1.phase4-T01 pending durable cleanup规则与回滚线定义",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "文档更新",
+        "代码审查"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase4-T01-pending-durable-cleanup-3067bab0ee1d812593b8fd5500f2ad37",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-8179-a889-ffe7de99d5f8",
+      "name": "P1.phase3-T04 成本时延与real_call_ratio门禁配置",
+      "status": "Todo",
+      "priority": "P1",
+      "estimate": 1,
+      "dod_checklist": [
+        "性能测试",
+        "文档更新"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase3-T04-real_call_ratio-3067bab0ee1d8179a889ffe7de99d5f8",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-8197-9114-f144c59e7cf1",
+      "name": "P1.phase3-T03 第12章验证体系落地 10%灰度三方评估真实DeepSeek",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 2,
+      "dod_checklist": [
+        "集成测试",
+        "文档更新"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase3-T03-12-10-DeepSeek-3067bab0ee1d81979114f144c59e7cf1",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-8135-a3de-f00a16d9706b",
+      "name": "P1.phase3-T02 裁判shadow接入与超时回退",
+      "status": "Todo",
+      "priority": "P1",
+      "estimate": 2,
+      "dod_checklist": [
+        "单元测试",
+        "集成测试"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase3-T02-shadow-3067bab0ee1d8135a3def00a16d9706b",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-8136-ae0e-c5bb452aa9b6",
+      "name": "P1.phase3-T01 定义二阶段LLM裁判触发条件与回退策略",
+      "status": "Todo",
+      "priority": "P1",
+      "estimate": 1,
+      "dod_checklist": [
+        "文档更新",
+        "代码审查"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase3-T01-LLM-3067bab0ee1d8136ae0ec5bb452aa9b6",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-81ed-a28d-dc996322aa58",
+      "name": "P1.phase2-T05 76案例AB对比并输出分类一致性报告",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 2,
+      "dod_checklist": [
+        "集成测试",
+        "文档更新"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": null,
+      "phase": null,
+      "url": "https://www.notion.so/P1-phase2-T05-76-AB-3067bab0ee1d81eda28ddc996322aa58",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-819b-a852-fdefb0cb79c6",
+      "name": "P1.phase2-T04 更新ADR 分类真源复用策略并完成评审归档",
+      "status": "Todo",
+      "priority": "P1",
+      "estimate": 1,
+      "dod_checklist": [
+        "文档更新",
+        "代码审查"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase2-T04-ADR-3067bab0ee1d819ba852fdefb0cb79c6",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-8171-bbcf-cd7ba8577dcf",
+      "name": "P1.phase2-T03 关键优化 移除generate_theme_data_only二次_match_categories推断",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "单元测试",
+        "代码审查"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase2-T03-generate_theme_data_only-_match_categories-3067bab0ee1d8171bbcfcd7ba8577dcf",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-816a-afd3-f4fe3a072adf",
+      "name": "P1.phase2-T02 候选窗口治理与候选爆炸比监控",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 2,
+      "dod_checklist": [
+        "单元测试",
+        "性能测试"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase2-T02-3067bab0ee1d816aafd3f4fe3a072adf",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-816a-8a98-f5f90f1a5ede",
+      "name": "P1.phase2-T01 动态阈值profile与三段分层策略实现",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 2,
+      "dod_checklist": [
+        "单元测试",
+        "代码审查"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase2-T01-profile-3067bab0ee1d816a8a98f5f90f1a5ede",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-8110-a290-f86481b82c50",
+      "name": "P1.phase1-T05 阶段验收报告与ADR追踪链接更新",
+      "status": "Todo",
+      "priority": "P1",
+      "estimate": 1,
+      "dod_checklist": [
+        "文档更新",
+        "代码审查"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase1-T05-ADR-3067bab0ee1d8110a290f86481b82c50",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-81b1-8788-da9ccaac7903",
+      "name": "P1.phase1-T04 严格schema解析替代弱降级策略",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "单元测试",
+        "集成测试"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase1-T04-schema-3067bab0ee1d81b18788da9ccaac7903",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-81b2-939d-c5edb50e0050",
+      "name": "P1.phase1-T03 unknown action/operation fail-fast与dead-letter",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "集成测试",
+        "代码审查"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase1-T03-unknown-action-operation-fail-fast-dead-letter-3067bab0ee1d81b2939dc5edb50e0050",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-815e-a09f-fa91beeb1158",
+      "name": "P1.phase1-T02 幂等键规则与duplicate-skip执行门禁",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "单元测试",
+        "文档更新"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase1-T02-duplicate-skip-3067bab0ee1d815ea09ffa91beeb1158",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-81ab-b8c5-f68ae8cafff0",
+      "name": "P1.phase1-T01 收敛决策路由逻辑并移除重复入口",
+      "status": "Todo",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "单元测试",
+        "代码审查"
+      ],
+      "test_evidence": "",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase1-T01-3067bab0ee1d81abb8c5f68ae8cafff0",
+      "last_edited": "2026-02-13T10:18:00.000Z"
+    }
+  ]
+}

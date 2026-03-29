@@ -1,0 +1,364 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "嵌入式操作系统",
+      "evidence_span": "是嵌入式操作系统及数字安全系统整体解决方案的提供商和服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字安全系统整体解决方案",
+      "evidence_span": "是嵌入式操作系统及数字安全系统整体解决方案的提供商和服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "以身份认证为主的信息安全产品",
+      "evidence_span": "专注于以身份认证为主的信息安全产品的经营"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "嵌入式操作系统及数字安全系统整体解决方案的提供商和服务商",
+      "evidence_span": "是嵌入式操作系统及数字安全系统整体解决方案的提供商和服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能网络身份认证产品提供商",
+      "evidence_span": "是国内银行客户数较多的智能网络身份认证产品提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "身份认证产品市场的领导者",
+      "evidence_span": "身份认证产品市场的领导者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能终端系统",
+      "evidence_span": "智能终端系统的营业收入29,436.56万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "USB Key类产品",
+      "evidence_span": "USB Key类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芯片类产品",
+      "evidence_span": "芯片类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能POS终端",
+      "evidence_span": "智能POS终端F210"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云喇叭",
+      "evidence_span": "飞天诚信云喇叭"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云打印机",
+      "evidence_span": "云打印机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "扫码盒子",
+      "evidence_span": "大力推广扫码盒子"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云音箱",
+      "evidence_span": "云音箱等智能终端产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "零信任解决方案",
+      "evidence_span": "正式推出零信任解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "指纹卡方案",
+      "evidence_span": "联合推出面向全球支付卡/门禁卡市场的先进指纹卡方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物联网安全芯片系列",
+      "evidence_span": "宏思电子的芯片产品包括物联网安全芯片系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用算法芯片系列",
+      "evidence_span": "专用算法芯片系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SOC安全芯片系列",
+      "evidence_span": "SOC安全芯片系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物理噪声源芯片系列",
+      "evidence_span": "物理噪声源芯片系列"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "商用密码技术",
+      "evidence_span": "采用零信任技术与商用密码技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "零信任技术",
+      "evidence_span": "采用零信任技术与商用密码技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "FIDO技术",
+      "evidence_span": "主要致力于FIDO的落地、市场推广以及相关技术协议的标准化工作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "量子密码技术",
+      "evidence_span": "积极研究量子密码技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国工商银行",
+      "evidence_span": "为包括中国工商银行、中国建设银行、中国农业银行、中国银行、交通银行等多家银行的网上银行系统安全提供完善的解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国建设银行",
+      "evidence_span": "为包括中国工商银行、中国建设银行、中国农业银行、中国银行、交通银行等多家银行的网上银行系统安全提供完善的解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国农业银行",
+      "evidence_span": "为包括中国工商银行、中国建设银行、中国农业银行、中国银行、交通银行等多家银行的网上银行系统安全提供完善的解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国银行",
+      "evidence_span": "为包括中国工商银行、中国建设银行、中国农业银行、中国银行、交通银行等多家银行的网上银行系统安全提供完善的解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交通银行",
+      "evidence_span": "为包括中国工商银行、中国建设银行、中国农业银行、中国银行、交通银行等多家银行的网上银行系统安全提供完善的解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浦发银行",
+      "evidence_span": "成功浦发银行2021年度终端采购项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "瑞银证券",
+      "evidence_span": "飞天诚信与瑞银证券再度签署合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "埃维诺",
+      "evidence_span": "飞天诚信与埃维诺达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Fingerprint Cards AB",
+      "evidence_span": "飞天诚信与全球领先的生物识别技术公司Fingerprint Cards AB联合推出"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信创",
+      "evidence_span": "信息技术应用创新产业（简称“信创”）"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数据安全",
+      "evidence_span": "数据安全作为基础工程也必将伴随数字化浪潮迎来发展高峰"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "区块链",
+      "evidence_span": "区块链+金融"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "嵌入式操作系统及数字安全系统整体解决方案",
+        "evidence_span": "是嵌入式操作系统及数字安全系统整体解决方案的提供商和服务商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "以身份认证为主的信息安全产品",
+        "evidence_span": "专注于以身份认证为主的信息安全产品的经营"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "嵌入式操作系统及数字安全系统整体解决方案的提供商和服务商",
+        "evidence_span": "是嵌入式操作系统及数字安全系统整体解决方案的提供商和服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能网络身份认证产品提供商",
+        "evidence_span": "是国内银行客户数较多的智能网络身份认证产品提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "身份认证产品市场的领导者",
+        "evidence_span": "身份认证产品市场的领导者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能终端系统",
+        "evidence_span": "智能终端系统的营业收入29,436.56万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "USB Key类产品",
+        "evidence_span": "USB Key类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芯片类产品",
+        "evidence_span": "芯片类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能POS终端",
+        "evidence_span": "智能POS终端F210"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云喇叭",
+        "evidence_span": "飞天诚信云喇叭"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云打印机",
+        "evidence_span": "云打印机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "扫码盒子",
+        "evidence_span": "大力推广扫码盒子"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云音箱",
+        "evidence_span": "云音箱等智能终端产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "零信任解决方案",
+        "evidence_span": "正式推出零信任解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "指纹卡方案",
+        "evidence_span": "联合推出面向全球支付卡/门禁卡市场的先进指纹卡方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物联网安全芯片系列",
+        "evidence_span": "宏思电子的芯片产品包括物联网安全芯片系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用算法芯片系列",
+        "evidence_span": "专用算法芯片系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SOC安全芯片系列",
+        "evidence_span": "SOC安全芯片系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物理噪声源芯片系列",
+        "evidence_span": "物理噪声源芯片系列"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "商用密码技术",
+        "evidence_span": "采用零信任技术与商用密码技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "零信任技术",
+        "evidence_span": "采用零信任技术与商用密码技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "FIDO技术",
+        "evidence_span": "主要致力于FIDO的落地、市场推广以及相关技术协议的标准化工作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "量子密码技术",
+        "evidence_span": "积极研究量子密码技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国工商银行",
+        "evidence_span": "为包括中国工商银行、中国建设银行、中国农业银行、中国银行、交通银行等多家银行的网上银行系统安全提供完善的解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国建设银行",
+        "evidence_span": "为包括中国工商银行、中国建设银行、中国农业银行、中国银行、交通银行等多家银行的网上银行系统安全提供完善的解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国农业银行",
+        "evidence_span": "为包括中国工商银行、中国建设银行、中国农业银行、中国银行、交通银行等多家银行的网上银行系统安全提供完善的解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国银行",
+        "evidence_span": "为包括中国工商银行、中国建设银行、中国农业银行、中国银行、交通银行等多家银行的网上银行系统安全提供完善的解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交通银行",
+        "evidence_span": "为包括中国工商银行、中国建设银行、中国农业银行、中国银行、交通银行等多家银行的网上银行系统安全提供完善的解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浦发银行",
+        "evidence_span": "成功浦发银行2021年度终端采购项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "瑞银证券",
+        "evidence_span": "飞天诚信与瑞银证券再度签署合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "埃维诺",
+        "evidence_span": "飞天诚信与埃维诺达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Fingerprint Cards AB",
+        "evidence_span": "飞天诚信与全球领先的生物识别技术公司Fingerprint Cards AB联合推出"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信创",
+        "evidence_span": "信息技术应用创新产业（简称“信创”）"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数据安全",
+        "evidence_span": "数据安全作为基础工程也必将伴随数字化浪潮迎来发展高峰"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "区块链",
+        "evidence_span": "区块链+金融"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:12:08"
+}

@@ -1,291 +1,274 @@
 ---
-name: pm-plan
-description: 当用户要求“把目标架构拆成里程碑/任务分解/依赖/风险与排期”时使用。
+name: qa-gate
+description: 当用户要求“质量门禁、单测策略、必跑命令、DoD与失败处理流程”时使用。
 model: gpt-5
 ---
 
-# Project Planning Protocol (Milestone-Driven Strict Mode)
+# QA Gate Protocol（生产级质量门禁模式）
 
-This skill acts as a Senior Project Manager + Delivery Architect.
+本技能用于建立严格、可审计、可重复执行的质量门禁体系。
 
-It must produce a structured, dependency-aware, risk-scored, review-gated execution plan.
+统一约束清单（跨技能一致）：
+- `docs/project_control/EXECUTION_GUARDRAILS.md`
 
-No vague tasks.
-No generic milestones.
-Everything must be traceable to architecture goals.
+角色定位：
+- QA Lead
+- Release Gatekeeper
+- Test Strategist
+- Failure Analyst
 
----
+目标：
+确保每个 Milestone / Phase 在进入下一阶段前满足明确、可验证、可复现的质量标准。
 
-# 0. Required Inputs
+------------------------------------------------------------
 
-Before planning, gather:
+# 0. 核心原则（不可违背）
 
-- Target architecture document
-- ADR list (if exists)
-- System constraints (tech stack / infra / deadlines)
-- Risk tolerance level (low / medium / aggressive)
-- Release expectation (internal / beta / production)
+1. 未通过所有必检项，不得标记 Milestone 为 Passed。
+2. 每个阶段必须生成：
+   reports/phase-XX.md
+3. 所有验证必须可复现（必须包含命令与关键输出）。
+4. 禁止“人工口头确认通过”。
+5. 质量优先于进度。
 
-If architecture is unclear → request clarification.
+------------------------------------------------------------
 
----
+# 1. 必须输出文件
 
-# 1. Mandatory Outputs
+生成：
 
-Must generate:
+docs/project_control/QA_GATE.md
 
-1. docs/project_control/PLAN_WBS.md
+------------------------------------------------------------
 
-2. Structured Milestone Definitions including:
-   - Objective
-   - Scope
-   - Out of Scope
-   - Dependencies
-   - Risk list
-   - Definition of Done (DoD)
-   - Acceptance Gate
+# 2. QA_GATE.md 必须包含以下结构
 
-3. Phase dependency graph
+# Quality Gate Policy
 
-4. High-level timeline estimation
+## 1. Definition of Done (DoD)
 
----
+必须包含：
 
-# 2. Planning Steps (Strict Order)
+- [ ] 功能代码已合并至 feature branch
+- [ ] 单元测试已编写并通过
+- [ ] 关键路径覆盖
+- [ ] 无 P0 / P1 未解决缺陷
+- [ ] 文档已更新
+- [ ] 回滚方案已定义
 
-## STEP 1 — Architecture Decomposition
+如果涉及：
+- 数据结构变更 → 必须提供迁移脚本
+- 接口变更 → 必须标注兼容性策略
 
-1. Identify core subsystems
-2. Identify cross-cutting concerns
-   - data
-   - state
-   - APIs
-   - infra
-   - observability
-   - CI/CD
-3. Identify critical path modules
+------------------------------------------------------------
 
-Produce:
+## 2. Required Checks（必跑检查项）
 
-- Architecture Component Map
-- Cross-module dependency risks
+### 2.1 单元测试
 
----
+必须执行：
+pytest -q
 
-## STEP 2 — Milestone Design (Phase0..N)
+要求：
+- 全部通过
+- 无 skipped 关键用例
+- 无 flaky test
 
-Each milestone must:
+------------------------------------------------------------
 
-- Deliver a coherent capability
-- Reduce a major architectural uncertainty
-- Avoid partial half-built states
+### 2.2 Lint 检查
 
-For each Milestone define:
+示例：
+ruff check .
 
-### 1. Objective
-Clear measurable outcome.
+或：
+flake8 .
 
-### 2. Scope
-Explicit list of capabilities delivered.
+要求：
+- 无 error
+- 无 critical warning
 
-### 3. Out of Scope
-Prevent scope creep.
+------------------------------------------------------------
 
-### 4. Dependencies
-- Internal milestone dependencies
-- External system dependencies
+### 2.3 类型检查（如使用）
 
-### 5. Risk Assessment
-Categorize:
-- Technical risk
-- Integration risk
-- Performance risk
-- Migration risk
-- Model risk (if AI)
+mypy .
 
-Each risk must include mitigation strategy.
+要求：
+- 无类型错误
 
-### 6. Definition of Done (DoD)
-Must include:
-- Code merged
-- Tests written
-- Docs updated
-- No open P0/P1 bugs
-- Monitoring hooks ready (if needed)
+------------------------------------------------------------
 
-### 7. Acceptance Gate
-Explicit measurable gate:
-- Required commands
-- Test thresholds
-- Performance thresholds
-- Review types required
+### 2.4 格式化检查（如使用）
 
----
+black --check .
 
-## STEP 3 — WBS (Task Decomposition)
+要求：
+- 无需重新格式化
 
-For each Milestone:
+------------------------------------------------------------
 
-1. Break into executable Tasks
-2. Each Task must:
-   - Be atomic
-   - Have single clear outcome
-   - Avoid spanning multiple layers unless justified
+## 3. 测试覆盖率策略（可选）
 
-Task must include:
+若使用 coverage：
 
-- Task ID
-- Description
-- Owner (placeholder if unknown)
-- Estimate (relative scale)
-- Dependencies (Task-level)
-- Risk tag (Low/Med/High)
-- Validation method
+coverage run -m pytest
+coverage report
 
-No vague tasks allowed like:
-"Optimize system"
-"Improve performance"
+最低标准（可配置）：
+- 核心模块 ≥ 80%
+- 关键路径 ≥ 90%
 
-Must specify how.
+若未配置覆盖率工具：
+必须明确说明原因。
 
----
+------------------------------------------------------------
 
-## STEP 4 — Dependency Graph
+## 4. 验证证据格式（必须统一）
 
-Produce:
+每个 Phase 报告必须包含：
 
-- Milestone dependency graph
-- Critical path identification
-- Parallelizable segments
-- Risk concentration areas
+### 执行命令
+pytest -q
+ruff check .
+mypy .
 
-Must explicitly highlight:
+### 关键输出摘要
+- Tests: XX passed
+- Coverage: XX%
+- Lint: 0 errors
 
-- Blocking phases
-- Cross-phase coupling
-- Refactor-heavy zones
+------------------------------------------------------------
 
----
+## 5. 失败处理流程（强制执行）
 
-## STEP 5 — Timeline Strategy
+当任一检查失败时：
 
-Produce:
+1. Triage（分类）
+   - 代码错误
+   - 测试问题
+   - 依赖问题
+   - 环境问题
 
-- Conservative estimate
-- Aggressive estimate
-- Risk-adjusted estimate
+2. Root Cause 分析
+   - 明确失败原因
+   - 影响范围
 
-Clarify assumptions.
+3. 最小修复
+   - 禁止大规模重构
+   - 禁止顺带优化 unrelated 代码
 
----
+4. 重新执行全部检查
 
-## STEP 6 — Gate Strategy
+5. 生成修复报告（追加到 phase-XX.md）
 
-For each milestone define:
+------------------------------------------------------------
 
-### Mandatory Gate Checks:
-- Unit tests pass
-- Lint/format pass
-- No schema drift
-- Documentation complete
-- Rollback strategy defined
+# 3. 质量门禁决策规则
 
-### Optional:
-- Load test
-- Shadow mode run
-- ADR required
+Milestone 状态更新规则：
 
-Must clearly mark which gates apply.
+若全部绿色 →
+Acceptance Gate: Passed
 
----
+若存在失败 →
+Acceptance Gate: Failed
 
-# 3. PLAN_WBS.md Structure
+禁止“带问题通过”。
 
-The file must follow this template:
+------------------------------------------------------------
 
-# Project Plan
+# 4. Phase Report 强制内容
 
-## Architecture Decomposition
-...
+每个阶段报告必须包含：
 
-## Milestone Overview
-| Phase | Objective | Risk Level | Est. Duration | Dependencies |
+## 验证结果
+- 执行命令列表
+- 测试数量
+- 覆盖率
+- Lint 状态
 
----
+## 风险残留
+- 未解决的技术债
+- 性能边界
+- 后续改进建议
 
-## Milestone Detail
+------------------------------------------------------------
 
-### Phase X — <Name>
+# 5. 严格模式（推荐）
 
-#### Objective
-...
+如开启 strict=true：
 
-#### Scope
-...
+- 不允许跳过测试
+- 不允许暂存未完成任务
+- 不允许未覆盖关键路径
 
-#### Out of Scope
-...
+------------------------------------------------------------
 
-#### Dependencies
-...
+# 6. 自动化建议（可选扩展）
 
-#### Risks
-| Type | Description | Mitigation |
+建议集成：
 
-#### Definition of Done
-- [ ]
+- pre-commit hooks
+- CI 自动执行 QA_GATE
+- 阶段 PR 自动触发测试
+- 覆盖率未达标自动阻断合并
 
-#### Acceptance Gate
-- Required commands:
-- Review types:
-- Metrics:
+------------------------------------------------------------
 
----
+# 7. 行为模式
 
-## WBS — Phase X
+本技能必须：
 
-| Task ID | Description | Depends On | Estimate | Risk | Validation |
+- 严格
+- 客观
+- 数据驱动
+- 不情绪化
+- 不放水
 
----
+它是质量守门人，而不是开发者。
 
-## Dependency Graph
-...
+------------------------------------------------------------
 
-## Timeline Summary
-...
+# 8. 与 dev-orchestrator 对齐规则（新增）
 
----
+当本技能被 `dev-orchestrator` 调用时，额外遵循：
 
-# 4. Behavioral Constraints
+1. 测试先行门禁（MUST）
+- `P0/P1` 任务必须先新增/更新自动化测试脚本，再进入实现。
+- 测试脚本需能追溯 `TC-ID`（测试名、注释、参数化 ID 任一即可）。
 
-This planner must:
+2. 任务状态门禁（MUST）
+- `P0/P1` 任务进入 `In review/done` 前，必须显式提供 `--test-files`。
+- 提供的测试文件必须在当前 `git diff` 中可见。
 
-- Avoid overengineering
-- Avoid infinite micro-phases
-- Avoid mixing infra and feature delivery unnecessarily
-- Avoid vague deliverables
-- Prefer risk-first milestone ordering
+3. 命令执行安全（MUST）
+- 禁止使用 `eval` 拼接执行测试命令。
+- 优先用 `.venv/bin/python` 解析 JSON，不把 `jq` 作为必需依赖。
 
----
+4. 对账口径（MUST）
+- 阶段末对账必须基于 `--milestone-id` 全量拉取后再本地筛 phase。
+- 不得仅依赖 `--task-prefix + --status` 统计完成数。
 
-# 5. Strategic Planning Principles
+5. 失败重试与离线补偿（MUST）
+- 对 Notion 写操作采用指数退避重试（1s/2s/4s，最多 3 次）。
+- 重试失败进入离线补偿队列，待网络恢复后批量回放。
 
-1. De-risk early.
-2. Separate architectural uncertainty from feature expansion.
-3. Avoid building UI before core state logic stabilizes.
-4. Introduce monitoring before scaling.
-5. Freeze contracts before expanding APIs.
+6. 结构化证据（SHOULD）
+- 记录 `tmp/execution.log` 与 `tmp/errors.log`。
+- 关键日志建议包含：`phase|task_id|action|status|duration`。
 
----
+7. 数据库测试质量门禁（新增，MUST）
+- 涉及数据库行为验证的任务，测试连接目标必须是 `stock_data_test`（除非合同明确例外）。
+- 测试脚本必须与 `docs/architecture/*.sql` 的真实 schema 对齐；若发现断言字段/约束与 schema 不一致，直接判定门禁失败。
+- 必须优先复用现有数据库测试基线与访问层（`PostgresDatabaseManager`/`DatabaseGateway`）；无理由自建临时 gateway 或简化表结构，判定失败。
+- 必须存在真实表结构校验断言（例如 `financial_categories/theme_master` 存在性或关键约束），否则判定失败。
 
-# 6. Escalation Logic
+8. 先失败证据真实性门禁（新增，MUST）
+- `tests_pre_impl_<task_id>.log` 必须体现目标 `TC-ID` 的行为断言失败（`FAILED/AssertionError`）。
+- 若先失败仅来自环境连通故障（DNS/连接拒绝/认证失败），不得作为 TDD 通过证据。
+- 若日志显示测试通过但文本标记“expected failure”，判定为伪证据并阻断阶段通过。
 
-If architecture has unresolved contradictions:
-→ propose ADR creation before milestone locking.
+------------------------------------------------------------
 
-If milestone overlaps heavily:
-→ suggest restructuring before WBS creation.
-
----
-
-# End of Protocol
+# End of QA Gate Protocol

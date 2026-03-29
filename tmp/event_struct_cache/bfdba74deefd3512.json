@@ -1,0 +1,109 @@
+{
+  "event_id": "evt_81fb97375238",
+  "theme_name": "AI智能体Manus",
+  "event_type": "融资IPO",
+  "entities": [
+    {
+      "name": "Manus AI",
+      "type": "公司",
+      "normalized": "Manus AI"
+    },
+    {
+      "name": "蝴蝶效应",
+      "type": "公司",
+      "normalized": "蝴蝶效应"
+    },
+    {
+      "name": "美国",
+      "type": "国家",
+      "normalized": "美国"
+    },
+    {
+      "name": "北京",
+      "type": "地点",
+      "normalized": "北京"
+    },
+    {
+      "name": "腾讯",
+      "type": "公司",
+      "normalized": "腾讯"
+    },
+    {
+      "name": "红杉资本中国",
+      "type": "组织",
+      "normalized": "红杉资本中国"
+    },
+    {
+      "name": "真格基金",
+      "type": "组织",
+      "normalized": "真格基金"
+    },
+    {
+      "name": "Anthropic",
+      "type": "公司",
+      "normalized": "Anthropic"
+    },
+    {
+      "name": "Claude AI",
+      "type": "技术",
+      "normalized": "Claude AI"
+    }
+  ],
+  "summary": "Manus AI正以至少5亿美元估值进行新一轮融资，由腾讯和红杉资本中国领投，可能向更多用户开放。",
+  "causal_claim": [
+    "融资",
+    "估值增长",
+    "AI智能体扩张"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "融资",
+      "估值",
+      "AI模型",
+      "Claude AI"
+    ],
+    "normalized_terms": {
+      "Manus AI": "Manus AI",
+      "蝴蝶效应": "蝴蝶效应",
+      "美国": "美国",
+      "北京": "北京",
+      "腾讯": "腾讯",
+      "红杉资本中国": "红杉资本中国",
+      "真格基金": "真格基金",
+      "Anthropic": "Anthropic",
+      "Claude AI": "Claude AI"
+    },
+    "evidence_spans": [
+      {
+        "text": "Manus AI的团队正在与包括美国风投机构在内的潜在投资者进行谈判，计划以至少5亿美元(约合37.5亿人民币)的估值进行新一轮融资，这一估值比之前的估值增长了约五倍。",
+        "start": 0,
+        "end": 100
+      },
+      {
+        "text": "此轮融资由中国科技巨头腾讯和红杉资本中国领投，真格基金作为现有投资者参与，后者自2023年公司创立以来便是其早期支持者。",
+        "start": 150,
+        "end": 220
+      },
+      {
+        "text": "Manus使用Anthropic的Claude AI模型等工具，平均每项任务需向Anthropic支付2美元。",
+        "start": 220,
+        "end": 280
+      },
+      {
+        "text": "新一轮融资可能使Manus向更多用户开放。",
+        "start": 280,
+        "end": 310
+      }
+    ],
+    "core_concepts": [
+      "融资",
+      "AI智能体",
+      "估值增长"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.2,
+  "timestamp": null,
+  "raw_text": "据The Information报道，三位知情人士透露，Manus AI的团队正在与包括美国风投机构在内的潜在投资者进行谈判，计划以至少5亿美元(约合37.5亿人民币)的估值进行新一轮融资，这一估值比之前的估值增长了约五倍。Manus的开发者是蝴蝶效应(Butterfly Effect)。据知情人士透露，这家主要团队位于北京的公司近期通过线上和线下方式与部分美国投资者接洽，本轮融资规模可能达到数千万美元。据一位知情人士和另一位了解内情的人士透露，蝴蝶效应去年底以约1亿美元估值(包含所筹资金在内)完成一轮融资。此轮融资由中国科技巨头腾讯和红杉资本中国领投，真格基金作为现有投资者参与，后者自2023年公司创立以来便是其早期支持者。报道称，Manus使用Anthropic的Claude AI模型等工具，平均每项任务需向Anthropic支付2美元。新一轮融资可能使Manus向更多用户开放。(新闻来源：财经网)"
+}

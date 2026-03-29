@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "晶体生长设备的研发",
+      "evidence_span": "公司主营业务为晶体生长设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主营业务为晶体生长设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营业务为晶体生长设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售相关配套产品",
+      "evidence_span": "同时销售相关配套产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "提供技术服务",
+      "evidence_span": "及提供技术服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体级单晶硅炉国内供应商",
+      "evidence_span": "半导体级单晶硅炉国内供应商中市占率较为领先"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体级单晶硅炉",
+      "evidence_span": "主要产品包含半导体级单晶硅炉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳化硅单晶炉",
+      "evidence_span": "碳化硅单晶炉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蓝宝石单晶炉",
+      "evidence_span": "蓝宝石单晶炉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配套产品",
+      "evidence_span": "配套产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "技术服务",
+      "evidence_span": "技术服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高温高真空晶体生长设备技术",
+      "evidence_span": "基于高温高真空晶体生长设备的技术同源性"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海新昇",
+      "evidence_span": "公司与上海新昇、金瑞泓、神工股份签署销售合同"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金瑞泓",
+      "evidence_span": "公司与上海新昇、金瑞泓、神工股份签署销售合同"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "神工股份",
+      "evidence_span": "公司与上海新昇、金瑞泓、神工股份签署销售合同"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三安光电",
+      "evidence_span": "公司主营业务收入主要来源于三安光电及神工股份"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "半导体设备国产化",
+      "evidence_span": "上游设备及材料端国产化率不断提升"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "晶体生长设备的研发、生产和销售",
+        "evidence_span": "公司主营业务为晶体生长设备的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "销售相关配套产品",
+        "evidence_span": "同时销售相关配套产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "提供技术服务",
+        "evidence_span": "及提供技术服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体级单晶硅炉国内供应商",
+        "evidence_span": "半导体级单晶硅炉国内供应商中市占率较为领先"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体级单晶硅炉",
+        "evidence_span": "主要产品包含半导体级单晶硅炉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳化硅单晶炉",
+        "evidence_span": "碳化硅单晶炉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蓝宝石单晶炉",
+        "evidence_span": "蓝宝石单晶炉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配套产品",
+        "evidence_span": "配套产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "技术服务",
+        "evidence_span": "技术服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高温高真空晶体生长设备技术",
+        "evidence_span": "基于高温高真空晶体生长设备的技术同源性"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海新昇",
+        "evidence_span": "公司与上海新昇、金瑞泓、神工股份签署销售合同"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金瑞泓",
+        "evidence_span": "公司与上海新昇、金瑞泓、神工股份签署销售合同"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "神工股份",
+        "evidence_span": "公司与上海新昇、金瑞泓、神工股份签署销售合同"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三安光电",
+        "evidence_span": "公司主营业务收入主要来源于三安光电及神工股份"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "半导体设备国产化",
+        "evidence_span": "上游设备及材料端国产化率不断提升"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:36:39"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "367ef0ac14f6", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述美国政府发布的具体关税政策调整事件，包括日期和具体关税变化，属于明确的时间性动态，没有提供半导体题材的静态知识。"}}

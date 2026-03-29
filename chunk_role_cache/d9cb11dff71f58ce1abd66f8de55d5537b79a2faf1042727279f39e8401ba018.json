@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "71f35549b481", "label": "knowledge_like", "confidence": 0.85, "ontology_value": "medium", "reason": "段落第一部分直接列出光刻机类型（氟化氪和氟化氩光刻机）及其技术参数（分辨率、套刻精度、工艺支持），揭示了半导体设备中光刻环节的关键技术细节，有助于理解设备构成；第二部分为苹果包下台积电产能的新闻，属于pure_event，但整体以知识性内容为主。"}}

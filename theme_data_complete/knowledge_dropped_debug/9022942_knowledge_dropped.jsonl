@@ -1,0 +1,4 @@
+{"span_uid": "673e29466997", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品线规划", "stability": "low", "reason": "该片段是关于苹果智能眼镜产品线规划的具体事件和预测信息，包括平价版Vision Pro和第二代Vision Pro的研发，属于阶段性进展，但信息不稳定且依赖具体新闻来源，无法形成独立稳定的知识块。"}
+{"span_uid": "bac579fc9dcc", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模预测", "stability": "low", "reason": "该片段是关于MR市场规模的具体预测数据，包括到2025年的市场规模和复合增速，属于阶段性预测信息，但数据不稳定且依赖具体研报，无法形成独立稳定的知识块。"}
+{"span_uid": "136775343603", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "竞争对手动态与量产信息", "stability": "low", "reason": "该片段包含Meta的AR眼镜原型展示和苹果Vision Pro量产的具体事件信息，属于阶段性进展和竞争对手动态，但信息不稳定且依赖具体新闻事件，无法形成独立稳定的知识块。"}
+{"span_uid": "1f24dcafcc65", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段包含事件性描述（如苹果布局多年、首款苹果MR）和预测性表述（有望开启XR的iPhone时代），属于新闻口吻和主观看法，无法整理成稳定、独立的知识块，因此丢弃。"}

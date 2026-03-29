@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:43:18", "result": {"chunk_id": "9d35c38ca398", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了热交换环节的功能、核心部件（如CDU、管路与连接器）及其参数，属于液冷数据中心架构的静态技术说明，无事件内容。"}}

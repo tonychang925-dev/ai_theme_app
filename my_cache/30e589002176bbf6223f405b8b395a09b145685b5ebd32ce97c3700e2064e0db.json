@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "05a10497df0b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "描述美光在投资者会议上关于HBM供应谈判和财务预测的具体事件，属于公司动态公告。"}}

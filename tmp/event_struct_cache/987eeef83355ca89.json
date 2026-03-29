@@ -1,0 +1,85 @@
+{
+  "event_id": "evt_54eb340a2f1c",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "订单合作",
+  "entities": [
+    {
+      "name": "谷歌",
+      "type": "公司",
+      "normalized": "谷歌"
+    },
+    {
+      "name": "XREAL",
+      "type": "公司",
+      "normalized": "XREAL"
+    },
+    {
+      "name": "立讯精密",
+      "type": "公司",
+      "normalized": "立讯精密"
+    },
+    {
+      "name": "龙旗科技",
+      "type": "公司",
+      "normalized": "龙旗科技"
+    },
+    {
+      "name": "XREAL One",
+      "type": "产品",
+      "normalized": "XREAL One"
+    },
+    {
+      "name": "X1",
+      "type": "技术",
+      "normalized": "X1"
+    }
+  ],
+  "summary": "谷歌与XREAL在Android XR发布会上达成战略合作，XREAL发布新品搭载自研芯片X1。",
+  "causal_claim": [
+    "战略合作",
+    "产业链整合",
+    "AR眼镜发展"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "Android XR",
+      "空间计算芯片",
+      "自研芯片"
+    ],
+    "normalized_terms": {
+      "谷歌": "谷歌",
+      "XREAL": "XREAL",
+      "立讯精密": "立讯精密",
+      "龙旗科技": "龙旗科技",
+      "XREAL One": "XREAL One",
+      "X1": "X1"
+    },
+    "evidence_spans": [
+      {
+        "text": "2024年12月13日，在Android XR发布会上，谷歌与国内消费级AR眼镜厂商XREAL达成了战略合作。",
+        "start": 0,
+        "end": 70
+      },
+      {
+        "text": "XREAL的产业链伙伴包括立讯精密、龙旗科技等。",
+        "start": 71,
+        "end": 100
+      },
+      {
+        "text": "上周，XREAL刚刚发布了全新一代产品XREAL One，首次搭载了XREAL自研的空间计算芯片——X1。",
+        "start": 101,
+        "end": 160
+      }
+    ],
+    "core_concepts": [
+      "战略合作",
+      "AR眼镜",
+      "自研芯片"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.95,
+  "source_weight": 1.2,
+  "timestamp": "2024-12-13T00:00:00Z",
+  "raw_text": "2024年12月13日，在Android XR发布会上，谷歌与国内消费级AR眼镜厂商XREAL达成了战略合作。《科创板日报》记者获悉，XREAL的产业链伙伴包括立讯精密、龙旗科技等。上周，XREAL刚刚发布了全新一代产品XREAL One，首次搭载了XREAL自研的空间计算芯片——X1。"
+}

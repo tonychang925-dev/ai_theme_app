@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源发电",
+      "evidence_span": "新能源发电业务是公司的核心业务之一"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "屋顶分布式光伏",
+      "evidence_span": "大力向屋顶分布式光伏、电站开发-建设-出售、资产管理、基金业务等四个全新业务板块拓展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电站开发-建设-出售",
+      "evidence_span": "大力向屋顶分布式光伏、电站开发-建设-出售、资产管理、基金业务等四个全新业务板块拓展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产管理",
+      "evidence_span": "大力向屋顶分布式光伏、电站开发-建设-出售、资产管理、基金业务等四个全新业务板块拓展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基金业务",
+      "evidence_span": "大力向屋顶分布式光伏、电站开发-建设-出售、资产管理、基金业务等四个全新业务板块拓展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "民营风电供应商",
+      "evidence_span": "嘉泽新能规模领先的民营风电供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新能源企业",
+      "evidence_span": "集风力、光伏发电、智能微电网的于一体的新能源企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电",
+      "evidence_span": "公司通过风电、光伏发电、源网荷储智能微电网零碳园区、储能电站、抽水蓄能等多种类型电站的开发、建设、运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏发电",
+      "evidence_span": "公司通过风电、光伏发电、源网荷储智能微电网零碳园区、储能电站、抽水蓄能等多种类型电站的开发、建设、运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能微电网",
+      "evidence_span": "公司通过风电、光伏发电、源网荷储智能微电网零碳园区、储能电站、抽水蓄能等多种类型电站的开发、建设、运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能电站",
+      "evidence_span": "公司通过风电、光伏发电、源网荷储智能微电网零碳园区、储能电站、抽水蓄能等多种类型电站的开发、建设、运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抽水蓄能",
+      "evidence_span": "公司通过风电、光伏发电、源网荷储智能微电网零碳园区、储能电站、抽水蓄能等多种类型电站的开发、建设、运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "屋顶分布式光伏解决方案",
+      "evidence_span": "专注于工商业领域提供分布式解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产管理综合解决方案",
+      "evidence_span": "提供“全生命周期、全业务范围、全供应链条”的资产管理综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力交易托管服务",
+      "evidence_span": "为新能源项目提供专业化电力交易托管服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "节能用电方案",
+      "evidence_span": "为用户提供低成本、低风险、低碳排的节能用电方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产业投资与项目开发一体化推进模式",
+      "evidence_span": "产业投资与项目开发一体化推进的模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "渠道合作开发模式",
+      "evidence_span": "针对屋顶分布式光伏项目，公司主要采用渠道合作开发的模式"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中车集团",
+      "evidence_span": "继续实施与中车集团、金风科技的既定战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金风科技",
+      "evidence_span": "继续实施与中车集团、金风科技的既定战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京京能清洁能源电力股份有限公司",
+      "evidence_span": "与北京京能清洁能源电力股份有限公司签署了《关于宁夏泽华新能源有限公司股权转让协议》"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型央企、国企、知名新能源民营企业、产业基金",
+      "evidence_span": "与十几家国内大型央企、国企、知名新能源民营企业、产业基金等建立了良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电建集团",
+      "evidence_span": "与大型央企中车集团、中国电建集团、保利集团等共同组建的两只基金"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保利集团",
+      "evidence_span": "与大型央企中车集团、中国电建集团、保利集团等共同组建的两只基金"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "普洛斯",
+      "evidence_span": "与普洛斯共同拟发起设立的“中国风能收益基金”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国电投",
+      "evidence_span": "与国电投共同发起设立的“电投嘉泽清能股权投资基金”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源发电",
+        "evidence_span": "新能源发电业务是公司的核心业务之一"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "屋顶分布式光伏",
+        "evidence_span": "大力向屋顶分布式光伏、电站开发-建设-出售、资产管理、基金业务等四个全新业务板块拓展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电站开发-建设-出售",
+        "evidence_span": "大力向屋顶分布式光伏、电站开发-建设-出售、资产管理、基金业务等四个全新业务板块拓展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产管理",
+        "evidence_span": "大力向屋顶分布式光伏、电站开发-建设-出售、资产管理、基金业务等四个全新业务板块拓展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基金业务",
+        "evidence_span": "大力向屋顶分布式光伏、电站开发-建设-出售、资产管理、基金业务等四个全新业务板块拓展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "民营风电供应商",
+        "evidence_span": "嘉泽新能规模领先的民营风电供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新能源企业",
+        "evidence_span": "集风力、光伏发电、智能微电网的于一体的新能源企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电",
+        "evidence_span": "公司通过风电、光伏发电、源网荷储智能微电网零碳园区、储能电站、抽水蓄能等多种类型电站的开发、建设、运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏发电",
+        "evidence_span": "公司通过风电、光伏发电、源网荷储智能微电网零碳园区、储能电站、抽水蓄能等多种类型电站的开发、建设、运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能微电网",
+        "evidence_span": "公司通过风电、光伏发电、源网荷储智能微电网零碳园区、储能电站、抽水蓄能等多种类型电站的开发、建设、运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能电站",
+        "evidence_span": "公司通过风电、光伏发电、源网荷储智能微电网零碳园区、储能电站、抽水蓄能等多种类型电站的开发、建设、运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抽水蓄能",
+        "evidence_span": "公司通过风电、光伏发电、源网荷储智能微电网零碳园区、储能电站、抽水蓄能等多种类型电站的开发、建设、运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "屋顶分布式光伏解决方案",
+        "evidence_span": "专注于工商业领域提供分布式解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产管理综合解决方案",
+        "evidence_span": "提供“全生命周期、全业务范围、全供应链条”的资产管理综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力交易托管服务",
+        "evidence_span": "为新能源项目提供专业化电力交易托管服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "节能用电方案",
+        "evidence_span": "为用户提供低成本、低风险、低碳排的节能用电方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产业投资与项目开发一体化推进模式",
+        "evidence_span": "产业投资与项目开发一体化推进的模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "渠道合作开发模式",
+        "evidence_span": "针对屋顶分布式光伏项目，公司主要采用渠道合作开发的模式"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中车集团",
+        "evidence_span": "继续实施与中车集团、金风科技的既定战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金风科技",
+        "evidence_span": "继续实施与中车集团、金风科技的既定战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京京能清洁能源电力股份有限公司",
+        "evidence_span": "与北京京能清洁能源电力股份有限公司签署了《关于宁夏泽华新能源有限公司股权转让协议》"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型央企、国企、知名新能源民营企业、产业基金",
+        "evidence_span": "与十几家国内大型央企、国企、知名新能源民营企业、产业基金等建立了良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电建集团",
+        "evidence_span": "与大型央企中车集团、中国电建集团、保利集团等共同组建的两只基金"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保利集团",
+        "evidence_span": "与大型央企中车集团、中国电建集团、保利集团等共同组建的两只基金"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "普洛斯",
+        "evidence_span": "与普洛斯共同拟发起设立的“中国风能收益基金”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国电投",
+        "evidence_span": "与国电投共同发起设立的“电投嘉泽清能股权投资基金”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:28:58"
+}

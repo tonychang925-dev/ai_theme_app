@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "光电侦察设备",
+      "evidence_span": "公司主营业务为光电侦察设备和军用机器人系统的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "军用机器人系统",
+      "evidence_span": "公司主营业务为光电侦察设备和军用机器人系统的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军工领域特种装备研发与制造的国家级高新技术企业",
+      "evidence_span": "军工领域特种装备研发与制造的国家级高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家军用机器人系统整机和核心上游部件重要供应商",
+      "evidence_span": "逐渐成长为国家军用机器人系统整机和核心上游部件重要供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无人机光电吊舱",
+      "evidence_span": "主要产品包括多个型号系列的无人机光电吊舱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手持光电侦察设备",
+      "evidence_span": "主要产品包括多个型号系列的手持光电侦察设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单兵夜视镜",
+      "evidence_span": "主要产品包括多个型号系列的单兵夜视镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手持穿墙雷达",
+      "evidence_span": "主要产品包括多个型号系列的手持穿墙雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "排爆机器人",
+      "evidence_span": "主要产品包括多个型号系列的排爆机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多用途机器人",
+      "evidence_span": "主要产品包括多个型号系列的多用途机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "便携式侦察机器人",
+      "evidence_span": "主要产品包括多个型号系列的便携式侦察机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光电压制/对抗产品",
+      "evidence_span": "光电侦察设备业务主要包括光电压制/对抗产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "侦察机器人",
+      "evidence_span": "机器人系统业务主要包括侦察机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用无人车",
+      "evidence_span": "机器人系统业务主要包括军用无人车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机器人组件/部件",
+      "evidence_span": "机器人系统业务主要包括机器人组件/部件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模拟训练系统",
+      "evidence_span": "系列化遥控武器站以及模拟训练系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂系统总体研制能力",
+      "evidence_span": "通过自主研发具备了复杂系统总体研制能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光电侦察设备核心技术群",
+      "evidence_span": "突破并构建了光电侦察设备、军用机器人领域涉及的七大核心技术群"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "军用机器人核心技术群",
+      "evidence_span": "突破并构建了光电侦察设备、军用机器人领域涉及的七大核心技术群"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一线部队",
+      "evidence_span": "以总体单位身份研发的多款型号产品成功列装一线部队"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "光电侦察设备",
+        "evidence_span": "公司主营业务为光电侦察设备和军用机器人系统的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "军用机器人系统",
+        "evidence_span": "公司主营业务为光电侦察设备和军用机器人系统的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军工领域特种装备研发与制造的国家级高新技术企业",
+        "evidence_span": "军工领域特种装备研发与制造的国家级高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家军用机器人系统整机和核心上游部件重要供应商",
+        "evidence_span": "逐渐成长为国家军用机器人系统整机和核心上游部件重要供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无人机光电吊舱",
+        "evidence_span": "主要产品包括多个型号系列的无人机光电吊舱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手持光电侦察设备",
+        "evidence_span": "主要产品包括多个型号系列的手持光电侦察设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单兵夜视镜",
+        "evidence_span": "主要产品包括多个型号系列的单兵夜视镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手持穿墙雷达",
+        "evidence_span": "主要产品包括多个型号系列的手持穿墙雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "排爆机器人",
+        "evidence_span": "主要产品包括多个型号系列的排爆机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多用途机器人",
+        "evidence_span": "主要产品包括多个型号系列的多用途机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "便携式侦察机器人",
+        "evidence_span": "主要产品包括多个型号系列的便携式侦察机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光电压制/对抗产品",
+        "evidence_span": "光电侦察设备业务主要包括光电压制/对抗产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "侦察机器人",
+        "evidence_span": "机器人系统业务主要包括侦察机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用无人车",
+        "evidence_span": "机器人系统业务主要包括军用无人车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机器人组件/部件",
+        "evidence_span": "机器人系统业务主要包括机器人组件/部件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模拟训练系统",
+        "evidence_span": "系列化遥控武器站以及模拟训练系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂系统总体研制能力",
+        "evidence_span": "通过自主研发具备了复杂系统总体研制能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光电侦察设备核心技术群",
+        "evidence_span": "突破并构建了光电侦察设备、军用机器人领域涉及的七大核心技术群"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "军用机器人核心技术群",
+        "evidence_span": "突破并构建了光电侦察设备、军用机器人领域涉及的七大核心技术群"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一线部队",
+        "evidence_span": "以总体单位身份研发的多款型号产品成功列装一线部队"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:54:46"
+}

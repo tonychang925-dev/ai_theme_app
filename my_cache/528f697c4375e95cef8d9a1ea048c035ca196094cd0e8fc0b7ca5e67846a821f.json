@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "18fb93f4cae6", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到上海设定'设计之都'建设目标的事件，但涉及城市设计和发展规划，可能包含设计理念或城市设计知识，因此混合了事件和潜在知识。"}}

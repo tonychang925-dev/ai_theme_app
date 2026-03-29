@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "氢氧化钾",
+      "evidence_span": "公司主要产品包括氢氧化钾"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "盐酸",
+      "evidence_span": "公司主要产品包括氢氧化钾、盐酸"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "次氯酸钠",
+      "evidence_span": "公司主要产品包括氢氧化钾、盐酸、次氯酸钠"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "聚合氯化铝",
+      "evidence_span": "公司主要产品包括氢氧化钾、盐酸、次氯酸钠、聚合氯化铝"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "液氯",
+      "evidence_span": "公司主要产品包括氢氧化钾、盐酸、次氯酸钠、聚合氯化铝以及液氯等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "氢氧化钾生产企业",
+      "evidence_span": "系国内较早使用离子膜电解技术的氢氧化钾生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专精特新小巨人企业",
+      "evidence_span": "公司被国家工信部评定为“专精特新小巨人”企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级绿色工厂",
+      "evidence_span": "报告期内被认定为国家级绿色工厂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级氢氧化钾",
+      "evidence_span": "已具备了电子级氢氧化钾与电子级盐酸的量产能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级盐酸",
+      "evidence_span": "已具备了电子级氢氧化钾与电子级盐酸的量产能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端片状氢氧化钾",
+      "evidence_span": "高端片状氢氧化钾获评工信部制造业“单项冠军”产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "食品级氢氧化钾",
+      "evidence_span": "覆盖工业级、食品级、试剂级与电子级多种质量等级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "试剂级氢氧化钾",
+      "evidence_span": "覆盖工业级、食品级、试剂级与电子级多种质量等级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "湿电子化学品",
+      "evidence_span": "湿电子化学品作为公司未来重点发展的产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "离子膜电解技术",
+      "evidence_span": "系国内较早使用离子膜电解技术的氢氧化钾生产企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钾碱制片技术",
+      "evidence_span": "实现了钾碱制片技术的自主掌握"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子级低钠氢氧化钾技术",
+      "evidence_span": "公司是国内首家自主开发电子级低钠氢氧化钾技术及成套装置的企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "气体纯化技术",
+      "evidence_span": "公司是国内首家采用气体纯化技术生产电子级盐酸的企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "存储国产化",
+      "evidence_span": "国内芯片及配套产业国产化进程逐步加速"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国内芯片及配套产业国产化进程逐步加速"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "氢氧化钾",
+        "evidence_span": "公司主要产品包括氢氧化钾"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "盐酸",
+        "evidence_span": "公司主要产品包括氢氧化钾、盐酸"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "次氯酸钠",
+        "evidence_span": "公司主要产品包括氢氧化钾、盐酸、次氯酸钠"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "聚合氯化铝",
+        "evidence_span": "公司主要产品包括氢氧化钾、盐酸、次氯酸钠、聚合氯化铝"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "液氯",
+        "evidence_span": "公司主要产品包括氢氧化钾、盐酸、次氯酸钠、聚合氯化铝以及液氯等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "氢氧化钾生产企业",
+        "evidence_span": "系国内较早使用离子膜电解技术的氢氧化钾生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专精特新小巨人企业",
+        "evidence_span": "公司被国家工信部评定为“专精特新小巨人”企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级绿色工厂",
+        "evidence_span": "报告期内被认定为国家级绿色工厂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级氢氧化钾",
+        "evidence_span": "已具备了电子级氢氧化钾与电子级盐酸的量产能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级盐酸",
+        "evidence_span": "已具备了电子级氢氧化钾与电子级盐酸的量产能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端片状氢氧化钾",
+        "evidence_span": "高端片状氢氧化钾获评工信部制造业“单项冠军”产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "食品级氢氧化钾",
+        "evidence_span": "覆盖工业级、食品级、试剂级与电子级多种质量等级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "试剂级氢氧化钾",
+        "evidence_span": "覆盖工业级、食品级、试剂级与电子级多种质量等级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "湿电子化学品",
+        "evidence_span": "湿电子化学品作为公司未来重点发展的产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "离子膜电解技术",
+        "evidence_span": "系国内较早使用离子膜电解技术的氢氧化钾生产企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钾碱制片技术",
+        "evidence_span": "实现了钾碱制片技术的自主掌握"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子级低钠氢氧化钾技术",
+        "evidence_span": "公司是国内首家自主开发电子级低钠氢氧化钾技术及成套装置的企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "气体纯化技术",
+        "evidence_span": "公司是国内首家采用气体纯化技术生产电子级盐酸的企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "存储国产化",
+        "evidence_span": "国内芯片及配套产业国产化进程逐步加速"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国内芯片及配套产业国产化进程逐步加速"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:00:32"
+}

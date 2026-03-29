@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "塑料助剂业务",
+      "evidence_span": "报告期公司和公司的全资子公司临沂瑞丰从事的主要业务为：塑料助剂业务和生物可降解材料业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生物可降解材料业务",
+      "evidence_span": "报告期公司和公司的全资子公司临沂瑞丰从事的主要业务为：塑料助剂业务和生物可降解材料业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "PVC助剂行业的龙头企业之一",
+      "evidence_span": "公司作为PVC助剂行业的龙头企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "PVC加工助剂和除CPE之外的抗冲改性剂综合产能最高的企业之一",
+      "evidence_span": "国内PVC加工助剂和除CPE之外的抗冲改性剂综合产能最高的企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ACR加工助剂和抗冲改性剂",
+      "evidence_span": "公司主要从事ACR加工助剂和抗冲改性剂、MBS抗冲改性剂、MC抗冲改性剂的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MBS抗冲改性剂",
+      "evidence_span": "公司主要从事ACR加工助剂和抗冲改性剂、MBS抗冲改性剂、MC抗冲改性剂的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MC抗冲改性剂",
+      "evidence_span": "公司主要从事ACR加工助剂和抗冲改性剂、MBS抗冲改性剂、MC抗冲改性剂的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PC/ABS增韧改性剂（MBSGM系列产品）",
+      "evidence_span": "公司开发的工程塑料助剂相关产品主要有PC/ABS增韧改性剂（MBSGM系列产品）、ABS高胶粉、ASA高胶粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ABS高胶粉",
+      "evidence_span": "公司开发的工程塑料助剂相关产品主要有PC/ABS增韧改性剂（MBSGM系列产品）、ABS高胶粉、ASA高胶粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ASA高胶粉",
+      "evidence_span": "公司开发的工程塑料助剂相关产品主要有PC/ABS增韧改性剂（MBSGM系列产品）、ABS高胶粉、ASA高胶粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可降解高分子材料PBAT",
+      "evidence_span": "公司年产6万吨可降解高分子材料PBAT项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物基降解材料PLA",
+      "evidence_span": "对生物基降解材料PLA进行研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "塑料助剂行业经验",
+      "evidence_span": "通过多年塑料助剂行业经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "持续的科研创新",
+      "evidence_span": "经过持续的科研创新"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "技术改造",
+      "evidence_span": "公司已对原厂区现有的年产3万吨MBS生产线进行了技术改造"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "可降解塑料",
+      "evidence_span": "瑞丰高材PVC助剂龙头切入可降解塑料千亿级赛道"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "塑料助剂业务",
+        "evidence_span": "报告期公司和公司的全资子公司临沂瑞丰从事的主要业务为：塑料助剂业务和生物可降解材料业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生物可降解材料业务",
+        "evidence_span": "报告期公司和公司的全资子公司临沂瑞丰从事的主要业务为：塑料助剂业务和生物可降解材料业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "PVC助剂行业的龙头企业之一",
+        "evidence_span": "公司作为PVC助剂行业的龙头企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "PVC加工助剂和除CPE之外的抗冲改性剂综合产能最高的企业之一",
+        "evidence_span": "国内PVC加工助剂和除CPE之外的抗冲改性剂综合产能最高的企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ACR加工助剂和抗冲改性剂",
+        "evidence_span": "公司主要从事ACR加工助剂和抗冲改性剂、MBS抗冲改性剂、MC抗冲改性剂的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MBS抗冲改性剂",
+        "evidence_span": "公司主要从事ACR加工助剂和抗冲改性剂、MBS抗冲改性剂、MC抗冲改性剂的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MC抗冲改性剂",
+        "evidence_span": "公司主要从事ACR加工助剂和抗冲改性剂、MBS抗冲改性剂、MC抗冲改性剂的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PC/ABS增韧改性剂（MBSGM系列产品）",
+        "evidence_span": "公司开发的工程塑料助剂相关产品主要有PC/ABS增韧改性剂（MBSGM系列产品）、ABS高胶粉、ASA高胶粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ABS高胶粉",
+        "evidence_span": "公司开发的工程塑料助剂相关产品主要有PC/ABS增韧改性剂（MBSGM系列产品）、ABS高胶粉、ASA高胶粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ASA高胶粉",
+        "evidence_span": "公司开发的工程塑料助剂相关产品主要有PC/ABS增韧改性剂（MBSGM系列产品）、ABS高胶粉、ASA高胶粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可降解高分子材料PBAT",
+        "evidence_span": "公司年产6万吨可降解高分子材料PBAT项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物基降解材料PLA",
+        "evidence_span": "对生物基降解材料PLA进行研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "塑料助剂行业经验",
+        "evidence_span": "通过多年塑料助剂行业经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "持续的科研创新",
+        "evidence_span": "经过持续的科研创新"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "技术改造",
+        "evidence_span": "公司已对原厂区现有的年产3万吨MBS生产线进行了技术改造"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "可降解塑料",
+        "evidence_span": "瑞丰高材PVC助剂龙头切入可降解塑料千亿级赛道"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:21:05"
+}

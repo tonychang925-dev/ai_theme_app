@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "38677f5b673b", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到国家标准的局部修订，这是一个具体事件（标准更新）。但它直接关联建筑设计规范，可能包含设计标准或要求等稳定知识，因此混合了事件和潜在知识。"}}

@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "收费公路业务",
+      "evidence_span": "公司主营业务为经营收费公路"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商贸物流业务",
+      "evidence_span": "商贸物流业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "广西区内唯一一家经营收费公路的上市公司",
+      "evidence_span": "五洲交通是广西区内唯一一家经营收费公路的上市公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "东兴口岸目前规模最大的物流公司",
+      "evidence_span": "东兴口岸目前规模最大的物流公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通行费收入",
+      "evidence_span": "通行费收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物流园区经营",
+      "evidence_span": "物流园区经营工作迈上新台阶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全程代理电子产品国际货运业务",
+      "evidence_span": "以全程代理电子产品国际货运业务为突破口"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "报关物流一体化业务",
+      "evidence_span": "开展报关物流一体化业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "代理报关",
+      "evidence_span": "代理报关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "代为监管货物",
+      "evidence_span": "代为监管货物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际运输",
+      "evidence_span": "国际运输"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际货运代理",
+      "evidence_span": "国际货运代理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仓储",
+      "evidence_span": "仓储"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商贸",
+      "evidence_span": "商贸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "供应链式综合物流服务",
+      "evidence_span": "形成供应链式综合物流服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷链",
+      "evidence_span": "冷链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电商",
+      "evidence_span": "电商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧园区基础功能建设",
+      "evidence_span": "完成智慧园区基础功能建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "一带一路"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "东盟",
+      "evidence_span": "东盟"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "人民币升值",
+      "evidence_span": "受益人民币升值"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "收费公路业务",
+        "evidence_span": "公司主营业务为经营收费公路"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商贸物流业务",
+        "evidence_span": "商贸物流业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "广西区内唯一一家经营收费公路的上市公司",
+        "evidence_span": "五洲交通是广西区内唯一一家经营收费公路的上市公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "东兴口岸目前规模最大的物流公司",
+        "evidence_span": "东兴口岸目前规模最大的物流公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通行费收入",
+        "evidence_span": "通行费收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物流园区经营",
+        "evidence_span": "物流园区经营工作迈上新台阶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全程代理电子产品国际货运业务",
+        "evidence_span": "以全程代理电子产品国际货运业务为突破口"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "报关物流一体化业务",
+        "evidence_span": "开展报关物流一体化业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "代理报关",
+        "evidence_span": "代理报关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "代为监管货物",
+        "evidence_span": "代为监管货物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际运输",
+        "evidence_span": "国际运输"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际货运代理",
+        "evidence_span": "国际货运代理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仓储",
+        "evidence_span": "仓储"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商贸",
+        "evidence_span": "商贸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "供应链式综合物流服务",
+        "evidence_span": "形成供应链式综合物流服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷链",
+        "evidence_span": "冷链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电商",
+        "evidence_span": "电商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧园区基础功能建设",
+        "evidence_span": "完成智慧园区基础功能建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "一带一路"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "东盟",
+        "evidence_span": "东盟"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "人民币升值",
+        "evidence_span": "受益人民币升值"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:03:59"
+}

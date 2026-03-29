@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "祖代蛋种鸡养殖",
+      "evidence_span": "祖代和父母代蛋种鸡养殖"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "父母代蛋种鸡养殖",
+      "evidence_span": "祖代和父母代蛋种鸡养殖"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "蛋鸡养殖工程技术研发",
+      "evidence_span": "蛋鸡养殖工程技术研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "种蛋孵化",
+      "evidence_span": "种蛋孵化"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "雏鸡销售",
+      "evidence_span": "雏鸡销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "蛋鸡制种企业",
+      "evidence_span": "科技型蛋鸡制种企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "蛋种鸡龙头",
+      "evidence_span": "蛋种鸡龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "生物安全第一品牌",
+      "evidence_span": "中国蛋鸡产业生物安全第一品牌"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "蛋鸡企业上市第一股",
+      "evidence_span": "中国蛋鸡企业上市第一股"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "蛋雏鸡行业龙头",
+      "evidence_span": "国内蛋雏鸡行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "动物福利领导者",
+      "evidence_span": "动物福利领导者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品代蛋雏鸡",
+      "evidence_span": "商品代蛋雏鸡为公司最主要收入来源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品代育成鸡",
+      "evidence_span": "商品代育成鸡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海兰褐蛋种鸡",
+      "evidence_span": "海兰褐"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海兰白蛋种鸡",
+      "evidence_span": "海兰白"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海兰灰蛋种鸡",
+      "evidence_span": "海兰灰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海兰粉蛋种鸡",
+      "evidence_span": "海兰粉"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集中养殖分散孵化模式",
+      "evidence_span": "集中养殖，分散孵化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高标准生物安全体系",
+      "evidence_span": "高标准生物安全体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "正大集团",
+      "evidence_span": "正大集团为公司第二大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京大北农集团",
+      "evidence_span": "北京大北农集团入股"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "养殖无抗化",
+      "evidence_span": "养殖无抗化成为大势所趋"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "祖代蛋种鸡养殖",
+        "evidence_span": "祖代和父母代蛋种鸡养殖"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "父母代蛋种鸡养殖",
+        "evidence_span": "祖代和父母代蛋种鸡养殖"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "蛋鸡养殖工程技术研发",
+        "evidence_span": "蛋鸡养殖工程技术研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "种蛋孵化",
+        "evidence_span": "种蛋孵化"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "雏鸡销售",
+        "evidence_span": "雏鸡销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "蛋鸡制种企业",
+        "evidence_span": "科技型蛋鸡制种企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "蛋种鸡龙头",
+        "evidence_span": "蛋种鸡龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "生物安全第一品牌",
+        "evidence_span": "中国蛋鸡产业生物安全第一品牌"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "蛋鸡企业上市第一股",
+        "evidence_span": "中国蛋鸡企业上市第一股"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "蛋雏鸡行业龙头",
+        "evidence_span": "国内蛋雏鸡行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "动物福利领导者",
+        "evidence_span": "动物福利领导者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品代蛋雏鸡",
+        "evidence_span": "商品代蛋雏鸡为公司最主要收入来源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品代育成鸡",
+        "evidence_span": "商品代育成鸡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海兰褐蛋种鸡",
+        "evidence_span": "海兰褐"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海兰白蛋种鸡",
+        "evidence_span": "海兰白"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海兰灰蛋种鸡",
+        "evidence_span": "海兰灰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海兰粉蛋种鸡",
+        "evidence_span": "海兰粉"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集中养殖分散孵化模式",
+        "evidence_span": "集中养殖，分散孵化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高标准生物安全体系",
+        "evidence_span": "高标准生物安全体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "正大集团",
+        "evidence_span": "正大集团为公司第二大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京大北农集团",
+        "evidence_span": "北京大北农集团入股"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "养殖无抗化",
+        "evidence_span": "养殖无抗化成为大势所趋"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:07:21"
+}

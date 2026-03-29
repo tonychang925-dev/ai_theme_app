@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "274c3332061e", "label": "knowledge_like", "confidence": 0.85, "ontology_value": "high", "reason": "该段落虽然基于出口管制事件，但详细列举了与半导体设备相关的实体和涵盖的领域（如涂胶显影、刻蚀、薄膜沉积、清洗等），直接揭示了半导体设备的关键环节和主要对象，对理解题材构成有重要帮助。"}}

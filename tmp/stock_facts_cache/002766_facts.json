@@ -1,0 +1,634 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "CID系统研发生产销售",
+      "evidence_span": "专业从事CID系统的研发、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车联网硬件",
+      "evidence_span": "向客户提供专业车联网硬件及软件服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "软件服务",
+      "evidence_span": "向客户提供专业车联网硬件及软件服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动驾驶开发",
+      "evidence_span": "自动驾驶开发"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "硬件提供商",
+      "evidence_span": "索菱股份旗下上海三旗、上海航盛作为“硬件提供商”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "软件提供商",
+      "evidence_span": "武汉英卡作为“软件提供商”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能网联软硬件核心技术研发企业",
+      "evidence_span": "以智能网联软硬件核心技术研发为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TBOX系统",
+      "evidence_span": "TBOX系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载信息娱乐系统",
+      "evidence_span": "车载信息娱乐系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能驾舱系统",
+      "evidence_span": "智能驾舱系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能驾驶系统",
+      "evidence_span": "智能驾驶系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信模块",
+      "evidence_span": "各通信模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能硬件嵌入式软件",
+      "evidence_span": "智能硬件嵌入式软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云端软件平台",
+      "evidence_span": "云端软件平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车联网平台",
+      "evidence_span": "车联网平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源监控平台",
+      "evidence_span": "新能源监控平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大数据分析平台",
+      "evidence_span": "大数据分析"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车电子高端制造",
+      "evidence_span": "汽车电子高端制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消费电子高端制造",
+      "evidence_span": "消费电子高端制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载信息终端系统CID",
+      "evidence_span": "公司整体以车载信息终端系统CID为中心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能计算系统（域控制器）",
+      "evidence_span": "打造智能计算系统（域控制器）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车联网应用平台",
+      "evidence_span": "拥有车联网应用平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动驾驶平台",
+      "evidence_span": "自动驾驶平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载产品有线和无线Carplay",
+      "evidence_span": "车载产品有线和无线Carplay"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Android Auto功能和认证",
+      "evidence_span": "Android Auto功能和认证"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客车产品中控平台",
+      "evidence_span": "客车产品中控平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OTA平台",
+      "evidence_span": "OTA平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三方开放接口平台",
+      "evidence_span": "第三方开放接口平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工智能计算平台",
+      "evidence_span": "人工智能计算平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能网联软硬件核心技术",
+      "evidence_span": "以智能网联软硬件核心技术研发为核心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "图像仿生智能算法",
+      "evidence_span": "公司自主研发的图像仿生智能算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "语音仿生智能算法",
+      "evidence_span": "语音仿生智能算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密注塑",
+      "evidence_span": "精密注塑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "贴片SMT",
+      "evidence_span": "贴片SMT"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "总装",
+      "evidence_span": "总装"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SMT生产线",
+      "evidence_span": "先进的SMT"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全自动液晶仪表生产线",
+      "evidence_span": "全自动液晶仪表生产线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽集团",
+      "evidence_span": "上汽集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽三菱",
+      "evidence_span": "广汽三菱"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽丰田",
+      "evidence_span": "广汽丰田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽乘用车",
+      "evidence_span": "广汽乘用车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "瑞江罐车",
+      "evidence_span": "瑞江罐车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福特汽车",
+      "evidence_span": "福特汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赶脚租车",
+      "evidence_span": "赶脚租车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宇通客车",
+      "evidence_span": "宇通客车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苏州金龙",
+      "evidence_span": "苏州金龙"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "厦门金龙",
+      "evidence_span": "厦门金龙"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江淮汽车",
+      "evidence_span": "江淮汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金旅客车",
+      "evidence_span": "金旅客车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中通客车",
+      "evidence_span": "中通客车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安凯客车",
+      "evidence_span": "安凯客车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "青年尼奥普兰",
+      "evidence_span": "青年尼奥普兰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风汽车",
+      "evidence_span": "东风汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风柳汽",
+      "evidence_span": "东风柳汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽福田",
+      "evidence_span": "北汽福田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北奔重卡",
+      "evidence_span": "北奔重卡"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国重汽",
+      "evidence_span": "中国重汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "DENSOR",
+      "evidence_span": "DENSOR"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "HARMAN",
+      "evidence_span": "HARMAN"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Epsilon",
+      "evidence_span": "Epsilon"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Nakamich",
+      "evidence_span": "Nakamich"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "BAK",
+      "evidence_span": "BAK"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产自主汽车崛起",
+      "evidence_span": "借力国产自主汽车崛起东风"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "CID系统研发生产销售",
+        "evidence_span": "专业从事CID系统的研发、生产、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车联网硬件及软件服务",
+        "evidence_span": "向客户提供专业车联网硬件及软件服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动驾驶开发",
+        "evidence_span": "自动驾驶开发"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "硬件提供商",
+        "evidence_span": "索菱股份旗下上海三旗、上海航盛作为“硬件提供商”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "软件提供商",
+        "evidence_span": "武汉英卡作为“软件提供商”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能网联软硬件核心技术研发企业",
+        "evidence_span": "以智能网联软硬件核心技术研发为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TBOX系统",
+        "evidence_span": "TBOX系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载信息娱乐系统",
+        "evidence_span": "车载信息娱乐系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能驾舱系统",
+        "evidence_span": "智能驾舱系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能驾驶系统",
+        "evidence_span": "智能驾驶系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信模块",
+        "evidence_span": "各通信模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能硬件嵌入式软件",
+        "evidence_span": "智能硬件嵌入式软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云端软件平台",
+        "evidence_span": "云端软件平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车联网平台",
+        "evidence_span": "车联网平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源监控平台",
+        "evidence_span": "新能源监控平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大数据分析平台",
+        "evidence_span": "大数据分析"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车电子高端制造",
+        "evidence_span": "汽车电子高端制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消费电子高端制造",
+        "evidence_span": "消费电子高端制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载信息终端系统CID",
+        "evidence_span": "公司整体以车载信息终端系统CID为中心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能计算系统（域控制器）",
+        "evidence_span": "打造智能计算系统（域控制器）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车联网应用平台",
+        "evidence_span": "拥有车联网应用平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动驾驶平台",
+        "evidence_span": "自动驾驶平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载产品有线和无线Carplay",
+        "evidence_span": "车载产品有线和无线Carplay"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Android Auto功能和认证",
+        "evidence_span": "Android Auto功能和认证"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客车产品中控平台",
+        "evidence_span": "客车产品中控平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OTA平台",
+        "evidence_span": "OTA平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三方开放接口平台",
+        "evidence_span": "第三方开放接口平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工智能计算平台",
+        "evidence_span": "人工智能计算平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能网联软硬件核心技术",
+        "evidence_span": "以智能网联软硬件核心技术研发为核心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "图像仿生智能算法",
+        "evidence_span": "公司自主研发的图像仿生智能算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "语音仿生智能算法",
+        "evidence_span": "语音仿生智能算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密注塑",
+        "evidence_span": "精密注塑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "贴片SMT",
+        "evidence_span": "贴片SMT"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "总装",
+        "evidence_span": "总装"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SMT生产线",
+        "evidence_span": "先进的SMT"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全自动液晶仪表生产线",
+        "evidence_span": "全自动液晶仪表生产线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽集团",
+        "evidence_span": "上汽集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽三菱",
+        "evidence_span": "广汽三菱"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽丰田",
+        "evidence_span": "广汽丰田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽乘用车",
+        "evidence_span": "广汽乘用车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "瑞江罐车",
+        "evidence_span": "瑞江罐车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福特汽车",
+        "evidence_span": "福特汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赶脚租车",
+        "evidence_span": "赶脚租车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宇通客车",
+        "evidence_span": "宇通客车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苏州金龙",
+        "evidence_span": "苏州金龙"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "厦门金龙",
+        "evidence_span": "厦门金龙"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江淮汽车",
+        "evidence_span": "江淮汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金旅客车",
+        "evidence_span": "金旅客车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中通客车",
+        "evidence_span": "中通客车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安凯客车",
+        "evidence_span": "安凯客车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "青年尼奥普兰",
+        "evidence_span": "青年尼奥普兰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风汽车",
+        "evidence_span": "东风汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风柳汽",
+        "evidence_span": "东风柳汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽福田",
+        "evidence_span": "北汽福田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北奔重卡",
+        "evidence_span": "北奔重卡"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国重汽",
+        "evidence_span": "中国重汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "DENSOR",
+        "evidence_span": "DENSOR"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "HARMAN",
+        "evidence_span": "HARMAN"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Epsilon",
+        "evidence_span": "Epsilon"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Nakamich",
+        "evidence_span": "Nakamich"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "BAK",
+        "evidence_span": "BAK"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产自主汽车崛起",
+        "evidence_span": "借力国产自主汽车崛起东风"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:32:25"
+}

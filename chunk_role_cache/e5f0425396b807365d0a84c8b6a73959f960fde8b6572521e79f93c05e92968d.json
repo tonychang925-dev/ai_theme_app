@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "d2dc837b8319", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要静态说明广州开发区的政策措施，包括EDA软件、IP核、半导体材料（如光掩模、光刻胶）和设备（如光刻、刻蚀）的国产化支持，这些是半导体设备产业链的核心构成和关键要素，没有具体事件或时间动态。"}}

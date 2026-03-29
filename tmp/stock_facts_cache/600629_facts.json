@@ -1,0 +1,479 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程设计咨询",
+      "evidence_span": "以工程设计咨询为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程总承包服务",
+      "evidence_span": "设计、采购、施工一体化(EPC)工程总承包服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工程设计咨询企业",
+      "evidence_span": "以工程设计咨询为核心"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集成服务商",
+      "evidence_span": "为城乡建设提供高品质综合解决方案的集成服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "规划设计咨询服务",
+      "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑设计咨询服务",
+      "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水利设计咨询服务",
+      "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市政设计咨询服务",
+      "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风景园林设计咨询服务",
+      "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "室内装饰设计咨询服务",
+      "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "岩土设计咨询服务",
+      "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑声学设计咨询服务",
+      "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全过程工程咨询服务",
+      "evidence_span": "发展涵盖投资决策、工程建设、运营等环节的全过程工程咨询服务模式"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑师负责制服务",
+      "evidence_span": "在民用建筑工程项目中推行建筑师负责制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色低碳咨询业务",
+      "evidence_span": "围绕设计咨询主业开拓绿色低碳咨询业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字孪生业务",
+      "evidence_span": "以自有核心产品持续推进“数字孪生”和“智慧赋能”两大业务板块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧赋能业务",
+      "evidence_span": "以自有核心产品持续推进“数字孪生”和“智慧赋能”两大业务板块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超高层建筑设计服务",
+      "evidence_span": "长期深耕超高层建筑"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗康养建筑设计服务",
+      "evidence_span": "医疗康养建筑"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机场交通建筑设计服务",
+      "evidence_span": "机场交通建筑"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨交与立体城市（TOD）设计服务",
+      "evidence_span": "轨交与立体城市（TOD）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育建筑设计服务",
+      "evidence_span": "体育建筑"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公共文化建筑设计服务",
+      "evidence_span": "公共文化建筑"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据中心建筑设计服务",
+      "evidence_span": "数据中心建筑"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "历史保护建筑设计服务",
+      "evidence_span": "历史保护建筑"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市景观设计服务",
+      "evidence_span": "城市景观"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水务水利工程设计服务",
+      "evidence_span": "水务水利工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市更新设计服务",
+      "evidence_span": "城市更新"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BIM技术",
+      "evidence_span": "BIM技术在工程全生命周期的集成应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CIM技术",
+      "evidence_span": "BIM、CIM、GIS等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "GIS技术",
+      "evidence_span": "BIM、CIM、GIS等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字孪生技术",
+      "evidence_span": "BIM、数字孪生、元宇宙等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ArctronArcOS系列产品",
+      "evidence_span": "子公司华建数创研发自主可控的ArctronArcOS系列产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "建筑级数字底座产品BuidingArcBase",
+      "evidence_span": "基于ArctronArcOS研发了建筑级数字底座产品BuidingArcBase"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "城市级数字底座产品CityArcBase",
+      "evidence_span": "城市级数字底座产品CityArcBase"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国银行股份有限公司上海市分行",
+      "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国交建长三角区域总部",
+      "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海港城开发（集团）有限公司",
+      "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海交通大学中英国际低碳学院",
+      "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海建科集团股份有限公司",
+      "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海市房地产科学研究院",
+      "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海推进科技创新中心建设办公室",
+      "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "华建集团国企改革催生增量市场，国企改革激发活力"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "长三角一体化",
+      "evidence_span": "华建集团长三角一体化催生增量市场"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "建筑工业4.0",
+      "evidence_span": "建筑工业4.0引领者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "PPP",
+      "evidence_span": "PPP与建筑工业化三重受益"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "建筑工业化",
+      "evidence_span": "PPP与建筑工业化三重受益"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程设计咨询",
+        "evidence_span": "以工程设计咨询为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程总承包服务",
+        "evidence_span": "设计、采购、施工一体化(EPC)工程总承包服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工程设计咨询企业",
+        "evidence_span": "以工程设计咨询为核心"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集成服务商",
+        "evidence_span": "为城乡建设提供高品质综合解决方案的集成服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "规划设计咨询服务",
+        "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑设计咨询服务",
+        "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水利设计咨询服务",
+        "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市政设计咨询服务",
+        "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风景园林设计咨询服务",
+        "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "室内装饰设计咨询服务",
+        "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "岩土设计咨询服务",
+        "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑声学设计咨询服务",
+        "evidence_span": "规划、建筑、水利、市政、风景园林、室内装饰、岩土、建筑声学等各类设计咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全过程工程咨询服务",
+        "evidence_span": "发展涵盖投资决策、工程建设、运营等环节的全过程工程咨询服务模式"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑师负责制服务",
+        "evidence_span": "在民用建筑工程项目中推行建筑师负责制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色低碳咨询业务",
+        "evidence_span": "围绕设计咨询主业开拓绿色低碳咨询业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字孪生业务",
+        "evidence_span": "以自有核心产品持续推进“数字孪生”和“智慧赋能”两大业务板块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧赋能业务",
+        "evidence_span": "以自有核心产品持续推进“数字孪生”和“智慧赋能”两大业务板块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超高层建筑设计服务",
+        "evidence_span": "长期深耕超高层建筑"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗康养建筑设计服务",
+        "evidence_span": "医疗康养建筑"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机场交通建筑设计服务",
+        "evidence_span": "机场交通建筑"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨交与立体城市（TOD）设计服务",
+        "evidence_span": "轨交与立体城市（TOD）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育建筑设计服务",
+        "evidence_span": "体育建筑"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公共文化建筑设计服务",
+        "evidence_span": "公共文化建筑"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据中心建筑设计服务",
+        "evidence_span": "数据中心建筑"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "历史保护建筑设计服务",
+        "evidence_span": "历史保护建筑"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市景观设计服务",
+        "evidence_span": "城市景观"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水务水利工程设计服务",
+        "evidence_span": "水务水利工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市更新设计服务",
+        "evidence_span": "城市更新"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BIM技术",
+        "evidence_span": "BIM技术在工程全生命周期的集成应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CIM技术",
+        "evidence_span": "BIM、CIM、GIS等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "GIS技术",
+        "evidence_span": "BIM、CIM、GIS等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字孪生技术",
+        "evidence_span": "BIM、数字孪生、元宇宙等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ArctronArcOS系列产品",
+        "evidence_span": "子公司华建数创研发自主可控的ArctronArcOS系列产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "建筑级数字底座产品BuidingArcBase",
+        "evidence_span": "基于ArctronArcOS研发了建筑级数字底座产品BuidingArcBase"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "城市级数字底座产品CityArcBase",
+        "evidence_span": "城市级数字底座产品CityArcBase"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国银行股份有限公司上海市分行",
+        "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国交建长三角区域总部",
+        "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海港城开发（集团）有限公司",
+        "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海交通大学中英国际低碳学院",
+        "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海建科集团股份有限公司",
+        "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海市房地产科学研究院",
+        "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海推进科技创新中心建设办公室",
+        "evidence_span": "公司分别与中国银行股份有限公司上海市分行、中国交建长三角区域总部、上海港城开发（集团）有限公司、上海交通大学中英国际低碳学院、上海建科集团股份有限公司、上海市房地产科学研究院、上海推进科技创新中心建设办公室等多家单位签订战略协议"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "华建集团国企改革催生增量市场，国企改革激发活力"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "长三角一体化",
+        "evidence_span": "华建集团长三角一体化催生增量市场"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "建筑工业4.0",
+        "evidence_span": "建筑工业4.0引领者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "PPP",
+        "evidence_span": "PPP与建筑工业化三重受益"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "建筑工业化",
+        "evidence_span": "PPP与建筑工业化三重受益"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:51:01"
+}

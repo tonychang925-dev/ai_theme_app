@@ -1,0 +1,80 @@
+{
+  "event_id": "evt_3ac2b10446fd",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "产品发布",
+  "entities": [
+    {
+      "name": "字节跳动",
+      "type": "公司",
+      "normalized": "字节跳动"
+    },
+    {
+      "name": "PICO",
+      "type": "公司",
+      "normalized": "PICO"
+    },
+    {
+      "name": "PICO 4S",
+      "type": "产品",
+      "normalized": "PICO 4S"
+    },
+    {
+      "name": "AR",
+      "type": "技术",
+      "normalized": "AR"
+    },
+    {
+      "name": "XR",
+      "type": "技术",
+      "normalized": "XR"
+    }
+  ],
+  "summary": "字节跳动旗下PICO确认下一代头显产品将于2024年8月20日在国内发布。",
+  "causal_claim": [
+    "产品发布",
+    "XR/AR技术推广",
+    "消费电子市场增长"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "XR头显",
+      "AR",
+      "下一代头显",
+      "便携包配件"
+    ],
+    "normalized_terms": {
+      "字节跳动": "字节跳动",
+      "PICO": "PICO",
+      "PICO 4S": "PICO 4S",
+      "AR": "AR",
+      "XR": "XR"
+    },
+    "evidence_spans": [
+      {
+        "text": "字节跳动旗下XR头显厂商PICO已经确认，其下一代头显产品将于2024年8月20日在国内发布。",
+        "start": 0,
+        "end": 60
+      },
+      {
+        "text": "据外媒消息，几天前，PICO下一代头显的及其官方便携包配件的多个官方渲染图被泄露。",
+        "start": 60,
+        "end": 110
+      },
+      {
+        "text": "这些图片从多个角度展示了PICO 4S和官方便携包配件（AR是XR的一个子集）",
+        "start": 110,
+        "end": 160
+      }
+    ],
+    "core_concepts": [
+      "产品发布",
+      "XR头显",
+      "AR技术"
+    ]
+  },
+  "severity_score": 0.6,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-08-14T00:00:00Z",
+  "raw_text": "2024年8月14日，**字节跳动旗下XR头显厂商PICO已经确认，其下一代头显产品将于2024年8月20日在国内发布。据外媒消息，几天前，PICO下一代头显的及其官方便携包配件的多个官方渲染图被泄露。这些图片从多个角度展示了PICO 4S和官方便携包配件（AR是XR的一个子集）"
+}

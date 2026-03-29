@@ -1,0 +1,274 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "人事管理",
+      "evidence_span": "人事管理、人才派遣、薪酬福利、招聘及灵活用工和业务外包五项主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "人才派遣",
+      "evidence_span": "人事管理、人才派遣、薪酬福利、招聘及灵活用工和业务外包五项主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "薪酬福利",
+      "evidence_span": "人事管理、人才派遣、薪酬福利、招聘及灵活用工和业务外包五项主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "招聘",
+      "evidence_span": "人事管理、人才派遣、薪酬福利、招聘及灵活用工和业务外包五项主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "灵活用工",
+      "evidence_span": "人事管理、人才派遣、薪酬福利、招聘及灵活用工和业务外包五项主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "业务外包",
+      "evidence_span": "人事管理、人才派遣、薪酬福利、招聘及灵活用工和业务外包五项主营业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性人力资源解决方案供应商",
+      "evidence_span": "国内领先的综合性人力资源解决方案供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人力资源外包服务",
+      "evidence_span": "人力资源外包服务：灵活用工、劳务派遣、人事代理等外包服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人才获取服务",
+      "evidence_span": "人才获取服务：线上招聘、招聘流程外包（RPO）、猎头等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他人力资源服务",
+      "evidence_span": "其他人力资源服务：人力资源信息管理系统（HRIS）、企业内部培训、员工健康管理及人力资源咨询等服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人力资源服务信息化平台",
+      "evidence_span": "自主研发了行业领先的人力资源服务及管理IT综合解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云平台（FSGPLUS）",
+      "evidence_span": "持续打造了云平台（FSGPLUS）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "聚合力行业委托交易平台",
+      "evidence_span": "聚合力行业委托交易平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "业务后援服务平台（BBC）",
+      "evidence_span": "业务后援服务平台（BBC）三大生态平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "企业人力资源SaaS平台HRight（简人力）",
+      "evidence_span": "自主研发了企业人力资源SaaS平台HRight（简人力）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Ctalent HCM系统",
+      "evidence_span": "Ctalent HCM系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SAP ERP系统",
+      "evidence_span": "引入了SAP ERP系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浦发银行",
+      "evidence_span": "前五大客户分别为浦发银行、延长石油、健和中国、交通银行及上汽通用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "延长石油",
+      "evidence_span": "前五大客户分别为浦发银行、延长石油、健和中国、交通银行及上汽通用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "健和中国",
+      "evidence_span": "前五大客户分别为浦发银行、延长石油、健和中国、交通银行及上汽通用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交通银行",
+      "evidence_span": "前五大客户分别为浦发银行、延长石油、健和中国、交通银行及上汽通用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用",
+      "evidence_span": "前五大客户分别为浦发银行、延长石油、健和中国、交通银行及上汽通用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "外资客户",
+      "evidence_span": "外资客户占据较大比重"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "央国企",
+      "evidence_span": "加速央国企、民营头部企业、政府和事业单位等新客户的开拓"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "民营头部企业",
+      "evidence_span": "加速央国企、民营头部企业、政府和事业单位等新客户的开拓"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府和事业单位",
+      "evidence_span": "加速央国企、民营头部企业、政府和事业单位等新客户的开拓"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "国企改革和体育振兴大行情可能助力涅槃重生"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "人事管理",
+        "evidence_span": "人事管理、人才派遣、薪酬福利、招聘及灵活用工和业务外包五项主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "人才派遣",
+        "evidence_span": "人事管理、人才派遣、薪酬福利、招聘及灵活用工和业务外包五项主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "薪酬福利",
+        "evidence_span": "人事管理、人才派遣、薪酬福利、招聘及灵活用工和业务外包五项主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "招聘及灵活用工",
+        "evidence_span": "人事管理、人才派遣、薪酬福利、招聘及灵活用工和业务外包五项主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "业务外包",
+        "evidence_span": "人事管理、人才派遣、薪酬福利、招聘及灵活用工和业务外包五项主营业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性人力资源解决方案供应商",
+        "evidence_span": "国内领先的综合性人力资源解决方案供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人力资源外包服务",
+        "evidence_span": "人力资源外包服务：灵活用工、劳务派遣、人事代理等外包服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人才获取服务",
+        "evidence_span": "人才获取服务：线上招聘、招聘流程外包（RPO）、猎头等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他人力资源服务",
+        "evidence_span": "其他人力资源服务：人力资源信息管理系统（HRIS）、企业内部培训、员工健康管理及人力资源咨询等服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人力资源服务信息化平台",
+        "evidence_span": "自主研发了行业领先的人力资源服务及管理IT综合解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云平台（FSGPLUS）",
+        "evidence_span": "持续打造了云平台（FSGPLUS）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "聚合力行业委托交易平台",
+        "evidence_span": "聚合力行业委托交易平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "业务后援服务平台（BBC）",
+        "evidence_span": "业务后援服务平台（BBC）三大生态平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "企业人力资源SaaS平台HRight（简人力）",
+        "evidence_span": "自主研发了企业人力资源SaaS平台HRight（简人力）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Ctalent HCM系统",
+        "evidence_span": "Ctalent HCM系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SAP ERP系统",
+        "evidence_span": "引入了SAP ERP系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浦发银行",
+        "evidence_span": "前五大客户分别为浦发银行、延长石油、健和中国、交通银行及上汽通用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "延长石油",
+        "evidence_span": "前五大客户分别为浦发银行、延长石油、健和中国、交通银行及上汽通用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "健和中国",
+        "evidence_span": "前五大客户分别为浦发银行、延长石油、健和中国、交通银行及上汽通用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交通银行",
+        "evidence_span": "前五大客户分别为浦发银行、延长石油、健和中国、交通银行及上汽通用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用",
+        "evidence_span": "前五大客户分别为浦发银行、延长石油、健和中国、交通银行及上汽通用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "外资客户",
+        "evidence_span": "外资客户占据较大比重"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "央国企",
+        "evidence_span": "加速央国企、民营头部企业、政府和事业单位等新客户的开拓"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "民营头部企业",
+        "evidence_span": "加速央国企、民营头部企业、政府和事业单位等新客户的开拓"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府和事业单位",
+        "evidence_span": "加速央国企、民营头部企业、政府和事业单位等新客户的开拓"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "国企改革和体育振兴大行情可能助力涅槃重生"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:55:13"
+}

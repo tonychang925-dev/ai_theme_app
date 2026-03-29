@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "a36f1228c1b5", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到了低空经济的应用新业态（分体式飞行汽车城际通勤+城内摆渡），这是有价值的静态知识，但混合在北京市方案征求意见的事件中，因此属于候选混合状态。"}}

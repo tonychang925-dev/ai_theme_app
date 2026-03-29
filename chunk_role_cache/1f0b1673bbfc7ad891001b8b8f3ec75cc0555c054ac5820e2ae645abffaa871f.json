@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "5cd74805c904", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段以行业沙龙事件为背景，但核心内容涉及eVTOL领域的技术知识（电池安全性和轻量化），对题材本体构建有较高价值，混合了事件和知识。"}}

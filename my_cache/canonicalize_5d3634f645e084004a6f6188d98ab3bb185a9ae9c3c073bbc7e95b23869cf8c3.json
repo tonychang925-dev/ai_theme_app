@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:14:55", "result": {"span_uid": "63f9e6844579", "action": "rewrite", "canonical_text": "Arauco和Paracel公司合计有306万吨阔叶浆产能投产。", "final_type": "signal", "final_role": "新增产能数据", "stability": "high", "reason": "该片段描述具体公司的新增产能，属于产能变化信息，改写后去除了具体时间（2022年），使其更稳定、可独立理解。"}}

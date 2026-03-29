@@ -1,0 +1,94 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车客运",
+      "evidence_span": "公司目前业务包括汽车客运"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车场站的商业开发",
+      "evidence_span": "汽车场站的商业开发与经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "经营",
+      "evidence_span": "汽车场站的商业开发与经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车综合服务",
+      "evidence_span": "汽车综合服务等业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海南道路客运龙头",
+      "evidence_span": "海汽集团海南道路客运龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海南省内道路客运领跑者",
+      "evidence_span": "海汽集团海南省内道路客运领跑者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海南省客运龙头企业",
+      "evidence_span": "海汽集团海南省客运龙头企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "离岛免税增长红利",
+      "evidence_span": "享离岛免税增长红利"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "免税赛道",
+      "evidence_span": "深度布局免税赛道"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车客运",
+        "evidence_span": "公司目前业务包括汽车客运"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车场站的商业开发与经营",
+        "evidence_span": "汽车场站的商业开发与经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车综合服务",
+        "evidence_span": "汽车综合服务等业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海南道路客运龙头",
+        "evidence_span": "海汽集团海南道路客运龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海南省内道路客运领跑者",
+        "evidence_span": "海汽集团海南省内道路客运领跑者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海南省客运龙头企业",
+        "evidence_span": "海汽集团海南省客运龙头企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "离岛免税增长红利",
+        "evidence_span": "享离岛免税增长红利"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "免税赛道",
+        "evidence_span": "深度布局免税赛道"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:15:26"
+}

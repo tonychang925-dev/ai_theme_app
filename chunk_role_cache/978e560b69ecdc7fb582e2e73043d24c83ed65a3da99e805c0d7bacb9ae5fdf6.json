@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "0319c83aa726", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落简要描述了微电子公司公布专利的事件，没有提供专利的具体技术细节或对半导体设备知识的深入说明，属于事件性内容。"}}

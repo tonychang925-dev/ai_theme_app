@@ -1,0 +1,629 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电缆业务",
+      "evidence_span": "公司所经营主要业务为电缆业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电磁线业务",
+      "evidence_span": "公司所经营主要业务为电磁线业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "类金融业务",
+      "evidence_span": "公司所经营主要业务为类金融业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端特种电缆研发、制造及销售企业",
+      "evidence_span": "专业从事高端特种电缆研发、制造及销售的国家高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种电缆",
+      "evidence_span": "公司特种电缆产品可分为绿色能源产品线、工业自动化产品线、高端装备制造产品线、智慧城市建筑产品线及智能电网产品线五大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色能源产品线",
+      "evidence_span": "公司特种电缆产品可分为绿色能源产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业自动化产品线",
+      "evidence_span": "公司特种电缆产品可分为工业自动化产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端装备制造产品线",
+      "evidence_span": "公司特种电缆产品可分为高端装备制造产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧城市建筑产品线",
+      "evidence_span": "公司特种电缆产品可分为智慧城市建筑产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电网产品线",
+      "evidence_span": "公司特种电缆产品可分为智能电网产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纸绝缘漆包换位导线",
+      "evidence_span": "纸绝缘漆包换位导线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "薄膜烧结铜扁线",
+      "evidence_span": "薄膜烧结铜扁线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纸包扁铜线及纸绝缘组合导线",
+      "evidence_span": "纸包扁铜线及纸绝缘组合导线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "漆包铜扁、圆线",
+      "evidence_span": "漆包铜扁、圆线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃丝包漆包铜扁线",
+      "evidence_span": "玻璃丝包漆包铜扁线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃丝包薄膜及云母带绕包铜扁线",
+      "evidence_span": "玻璃丝包薄膜及云母带绕包铜扁线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铜排",
+      "evidence_span": "铜排"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电利兹绕组线",
+      "evidence_span": "风电利兹绕组线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车电机专用扁型电磁线",
+      "evidence_span": "新能源汽车电机专用扁型电磁线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动车组、客车线缆",
+      "evidence_span": "动车组、客车线缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业信息自动化产品线",
+      "evidence_span": "工业信息自动化产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光电复合自动化自动装备电缆",
+      "evidence_span": "光电复合自动化自动装备电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化智能工厂5G电缆",
+      "evidence_span": "数字化智能工厂5G电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电用电缆",
+      "evidence_span": "风电用电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏专用电缆",
+      "evidence_span": "光伏专用电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车用电缆",
+      "evidence_span": "新能源汽车等绿色能源项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城轨、地铁接触网、直流配电电缆",
+      "evidence_span": "140公里以下城轨、地铁接触网、直流配电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高铁接触网、机车车辆电缆系统",
+      "evidence_span": "300公里高铁接触网、机车车辆电缆系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "港机光电复合拖令系统",
+      "evidence_span": "港机光电复合拖令系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "近海域岸电系统及船用电气化配电系统",
+      "evidence_span": "近海域岸电系统及船用电气化配电系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中低压电线电缆",
+      "evidence_span": "为国家电网及多家省市电力公司配套中低压电线电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业机器人电缆",
+      "evidence_span": "工业机器人电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业拖链电缆",
+      "evidence_span": "工业拖链电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光电复合自动化装备移动软电缆",
+      "evidence_span": "光电复合自动化装备移动软电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁路机车车辆电缆",
+      "evidence_span": "铁路机车车辆电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阻燃B1级环保电缆",
+      "evidence_span": "阻燃B1级环保电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防火电缆",
+      "evidence_span": "防火电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G基站电缆",
+      "evidence_span": "5G基站电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "矿物绝缘电缆",
+      "evidence_span": "矿物绝缘电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不良资产清收处置服务",
+      "evidence_span": "不良资产清收处置服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "上海市企业技术中心",
+      "evidence_span": "企业技术中心被认定为“上海市企业技术中心”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国际标准生产",
+      "evidence_span": "公司可按国际标准（IEC）和发达国家标准（UL、ANSI、BS、VDE、CSA、JIS）进行生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "UL认证",
+      "evidence_span": "公司相关产品通过了UL认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TUV认证",
+      "evidence_span": "公司相关产品通过了TUV认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CE认证",
+      "evidence_span": "公司相关产品通过了CE认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "22163机车认证",
+      "evidence_span": "公司相关产品通过了22163机车认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CQC电动车电缆认证",
+      "evidence_span": "公司相关产品通过了CQC电动车电缆认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "德凯充电桩电缆认证",
+      "evidence_span": "公司相关产品通过了德凯充电桩电缆认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源汽车厂家",
+      "evidence_span": "产品主要供应新能源汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高铁电机制造商",
+      "evidence_span": "产品主要供应高铁电机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "核电站电机制造商",
+      "evidence_span": "产品主要供应核电站电机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "风电电机制造商",
+      "evidence_span": "产品主要供应风电电机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型油浸变压器厂家",
+      "evidence_span": "产品主要供应大型油浸变压器"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "干式变压器厂家",
+      "evidence_span": "产品主要供应干式变压器"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电抗器厂家",
+      "evidence_span": "产品主要供应电抗器"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "轨道交通牵引电机制造商",
+      "evidence_span": "产品主要供应轨道交通牵引电机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "机车厂家",
+      "evidence_span": "产品主要供应机车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "为国家电网及多家省市电力公司配套中低压电线电缆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "省市电力公司",
+      "evidence_span": "为国家电网及多家省市电力公司配套中低压电线电缆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "湘潭电机",
+      "evidence_span": "产品已经稳定进入如湘潭电机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中车永济",
+      "evidence_span": "产品已经稳定进入如中车永济"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "AMC业务",
+      "evidence_span": "摩恩电气AMC业务已稳步开展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电缆业务",
+        "evidence_span": "公司所经营主要业务为电缆业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电磁线业务",
+        "evidence_span": "公司所经营主要业务为电磁线业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "类金融业务",
+        "evidence_span": "公司所经营主要业务为类金融业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端特种电缆研发、制造及销售企业",
+        "evidence_span": "专业从事高端特种电缆研发、制造及销售的国家高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种电缆",
+        "evidence_span": "公司特种电缆产品可分为绿色能源产品线、工业自动化产品线、高端装备制造产品线、智慧城市建筑产品线及智能电网产品线五大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色能源产品线",
+        "evidence_span": "公司特种电缆产品可分为绿色能源产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业自动化产品线",
+        "evidence_span": "公司特种电缆产品可分为工业自动化产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端装备制造产品线",
+        "evidence_span": "公司特种电缆产品可分为高端装备制造产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧城市建筑产品线",
+        "evidence_span": "公司特种电缆产品可分为智慧城市建筑产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电网产品线",
+        "evidence_span": "公司特种电缆产品可分为智能电网产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纸绝缘漆包换位导线",
+        "evidence_span": "纸绝缘漆包换位导线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "薄膜烧结铜扁线",
+        "evidence_span": "薄膜烧结铜扁线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纸包扁铜线及纸绝缘组合导线",
+        "evidence_span": "纸包扁铜线及纸绝缘组合导线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "漆包铜扁、圆线",
+        "evidence_span": "漆包铜扁、圆线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃丝包漆包铜扁线",
+        "evidence_span": "玻璃丝包漆包铜扁线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃丝包薄膜及云母带绕包铜扁线",
+        "evidence_span": "玻璃丝包薄膜及云母带绕包铜扁线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铜排",
+        "evidence_span": "铜排"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电利兹绕组线",
+        "evidence_span": "风电利兹绕组线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车电机专用扁型电磁线",
+        "evidence_span": "新能源汽车电机专用扁型电磁线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动车组、客车线缆",
+        "evidence_span": "动车组、客车线缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业信息自动化产品线",
+        "evidence_span": "工业信息自动化产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光电复合自动化自动装备电缆",
+        "evidence_span": "光电复合自动化自动装备电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化智能工厂5G电缆",
+        "evidence_span": "数字化智能工厂5G电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电用电缆",
+        "evidence_span": "风电用电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏专用电缆",
+        "evidence_span": "光伏专用电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车用电缆",
+        "evidence_span": "新能源汽车等绿色能源项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城轨、地铁接触网、直流配电电缆",
+        "evidence_span": "140公里以下城轨、地铁接触网、直流配电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高铁接触网、机车车辆电缆系统",
+        "evidence_span": "300公里高铁接触网、机车车辆电缆系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "港机光电复合拖令系统",
+        "evidence_span": "港机光电复合拖令系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "近海域岸电系统及船用电气化配电系统",
+        "evidence_span": "近海域岸电系统及船用电气化配电系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中低压电线电缆",
+        "evidence_span": "为国家电网及多家省市电力公司配套中低压电线电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业机器人电缆",
+        "evidence_span": "工业机器人电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业拖链电缆",
+        "evidence_span": "工业拖链电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光电复合自动化装备移动软电缆",
+        "evidence_span": "光电复合自动化装备移动软电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁路机车车辆电缆",
+        "evidence_span": "铁路机车车辆电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阻燃B1级环保电缆",
+        "evidence_span": "阻燃B1级环保电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防火电缆",
+        "evidence_span": "防火电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G基站电缆",
+        "evidence_span": "5G基站电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "矿物绝缘电缆",
+        "evidence_span": "矿物绝缘电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不良资产清收处置服务",
+        "evidence_span": "不良资产清收处置服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "上海市企业技术中心",
+        "evidence_span": "企业技术中心被认定为“上海市企业技术中心”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国际标准生产",
+        "evidence_span": "公司可按国际标准（IEC）和发达国家标准（UL、ANSI、BS、VDE、CSA、JIS）进行生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "UL认证",
+        "evidence_span": "公司相关产品通过了UL认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TUV认证",
+        "evidence_span": "公司相关产品通过了TUV认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CE认证",
+        "evidence_span": "公司相关产品通过了CE认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "22163机车认证",
+        "evidence_span": "公司相关产品通过了22163机车认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CQC电动车电缆认证",
+        "evidence_span": "公司相关产品通过了CQC电动车电缆认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "德凯充电桩电缆认证",
+        "evidence_span": "公司相关产品通过了德凯充电桩电缆认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源汽车厂家",
+        "evidence_span": "产品主要供应新能源汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高铁电机制造商",
+        "evidence_span": "产品主要供应高铁电机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "核电站电机制造商",
+        "evidence_span": "产品主要供应核电站电机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "风电电机制造商",
+        "evidence_span": "产品主要供应风电电机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型油浸变压器厂家",
+        "evidence_span": "产品主要供应大型油浸变压器"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "干式变压器厂家",
+        "evidence_span": "产品主要供应干式变压器"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电抗器厂家",
+        "evidence_span": "产品主要供应电抗器"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "轨道交通牵引电机制造商",
+        "evidence_span": "产品主要供应轨道交通牵引电机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "机车厂家",
+        "evidence_span": "产品主要供应机车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "为国家电网及多家省市电力公司配套中低压电线电缆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "省市电力公司",
+        "evidence_span": "为国家电网及多家省市电力公司配套中低压电线电缆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "湘潭电机",
+        "evidence_span": "产品已经稳定进入如湘潭电机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中车永济",
+        "evidence_span": "产品已经稳定进入如中车永济"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "AMC业务",
+        "evidence_span": "摩恩电气AMC业务已稳步开展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:56:33"
+}

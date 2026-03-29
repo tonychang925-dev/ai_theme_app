@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:00:58", "result": {"span_uid": "77cccb23201a", "action": "keep", "canonical_text": "核聚变作为太阳与恒星的能源机制，目前尚未在地球上实现商业化应用。", "final_type": "core", "final_role": "能源机制与商业化状态", "stability": "high", "reason": "原文直接描述了核聚变的本质机制和当前商业化状态，是稳定、可独立成立的知识表达，无需改写。"}}

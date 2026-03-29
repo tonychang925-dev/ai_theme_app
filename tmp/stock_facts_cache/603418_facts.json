@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金汽车零部件的设计",
+      "evidence_span": "主营业务是铝合金汽车零部件的设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金汽车零部件的开发",
+      "evidence_span": "主营业务是铝合金汽车零部件的设计、开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金汽车零部件的生产",
+      "evidence_span": "主营业务是铝合金汽车零部件的设计、开发、生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金汽车零部件的销售",
+      "evidence_span": "主营业务是铝合金汽车零部件的设计、开发、生产、销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新能源汽车铝合金轻量化零部件的先行者",
+      "evidence_span": "友升股份是国内新能源汽车铝合金轻量化零部件的先行者之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门槛梁系列",
+      "evidence_span": "主要产品为汽车车身结构零部件，可分为保险杠系列、门槛梁系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保险杠系列",
+      "evidence_span": "主要产品为汽车车身结构零部件，可分为保险杠系列、门槛梁系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "副车架系列",
+      "evidence_span": "主要产品为汽车车身结构零部件，可分为保险杠系列、门槛梁系列、副车架系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池托盘系列",
+      "evidence_span": "主要产品为汽车车身结构零部件，可分为保险杠系列、门槛梁系列、副车架系列、电池托盘系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "减震系列",
+      "evidence_span": "主要产品为汽车车身结构零部件，可分为保险杠系列、门槛梁系列、副车架系列、电池托盘系列、减震系列等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铝合金材料配方的研发",
+      "evidence_span": "依托发展早期在铝合金材料配方的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "挤压工艺制造经验",
+      "evidence_span": "依托发展早期在铝合金材料配方的研发、挤压和机加工等领域积累的丰富工艺制造经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机加工工艺制造经验",
+      "evidence_span": "依托发展早期在铝合金材料配方的研发、挤压和机加工等领域积累的丰富工艺制造经验"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特斯拉",
+      "evidence_span": "已与全球领先的主要新能源汽车整车厂商特斯拉"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽集团",
+      "evidence_span": "已与全球领先的主要新能源汽车整车厂商特斯拉、广汽集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来汽车",
+      "evidence_span": "已与全球领先的主要新能源汽车整车厂商特斯拉、广汽集团、蔚来汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏汽车",
+      "evidence_span": "已与全球领先的主要新能源汽车整车厂商特斯拉、广汽集团、蔚来汽车、小鹏汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赛力斯",
+      "evidence_span": "已与全球领先的主要新能源汽车整车厂商特斯拉、广汽集团、蔚来汽车、小鹏汽车、赛力斯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米汽车",
+      "evidence_span": "已与全球领先的主要新能源汽车整车厂商特斯拉、广汽集团、蔚来汽车、小鹏汽车、赛力斯、小米汽车等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "电池托盘产品2023年开始批量供应宁德时代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃尔沃",
+      "evidence_span": "电池托盘产品2023年开始批量供应宁德时代、2024年批量供应沃尔沃"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "斯特兰蒂斯",
+      "evidence_span": "墨西哥一期生产基地已正式投产，服务于沃尔沃、特斯拉和斯特兰蒂斯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽新能源",
+      "evidence_span": "主要供应特斯拉、广汽集团、蔚来汽车、北汽新能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利集团",
+      "evidence_span": "主要供应特斯拉、广汽集团、蔚来汽车、北汽新能源、吉利集团"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车的加速渗透",
+      "evidence_span": "有望受益于新能源汽车的加速渗透"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "轻量化趋势的持续推进",
+      "evidence_span": "有望受益于新能源汽车的加速渗透及轻量化趋势的持续推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金汽车零部件的设计",
+        "evidence_span": "主营业务是铝合金汽车零部件的设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金汽车零部件的开发",
+        "evidence_span": "主营业务是铝合金汽车零部件的设计、开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金汽车零部件的生产",
+        "evidence_span": "主营业务是铝合金汽车零部件的设计、开发、生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金汽车零部件的销售",
+        "evidence_span": "主营业务是铝合金汽车零部件的设计、开发、生产、销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新能源汽车铝合金轻量化零部件的先行者",
+        "evidence_span": "友升股份是国内新能源汽车铝合金轻量化零部件的先行者之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门槛梁系列",
+        "evidence_span": "主要产品为汽车车身结构零部件，可分为保险杠系列、门槛梁系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保险杠系列",
+        "evidence_span": "主要产品为汽车车身结构零部件，可分为保险杠系列、门槛梁系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "副车架系列",
+        "evidence_span": "主要产品为汽车车身结构零部件，可分为保险杠系列、门槛梁系列、副车架系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池托盘系列",
+        "evidence_span": "主要产品为汽车车身结构零部件，可分为保险杠系列、门槛梁系列、副车架系列、电池托盘系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "减震系列",
+        "evidence_span": "主要产品为汽车车身结构零部件，可分为保险杠系列、门槛梁系列、副车架系列、电池托盘系列、减震系列等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铝合金材料配方的研发",
+        "evidence_span": "依托发展早期在铝合金材料配方的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "挤压工艺制造经验",
+        "evidence_span": "依托发展早期在铝合金材料配方的研发、挤压和机加工等领域积累的丰富工艺制造经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机加工工艺制造经验",
+        "evidence_span": "依托发展早期在铝合金材料配方的研发、挤压和机加工等领域积累的丰富工艺制造经验"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特斯拉",
+        "evidence_span": "已与全球领先的主要新能源汽车整车厂商特斯拉"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽集团",
+        "evidence_span": "已与全球领先的主要新能源汽车整车厂商特斯拉、广汽集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来汽车",
+        "evidence_span": "已与全球领先的主要新能源汽车整车厂商特斯拉、广汽集团、蔚来汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏汽车",
+        "evidence_span": "已与全球领先的主要新能源汽车整车厂商特斯拉、广汽集团、蔚来汽车、小鹏汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赛力斯",
+        "evidence_span": "已与全球领先的主要新能源汽车整车厂商特斯拉、广汽集团、蔚来汽车、小鹏汽车、赛力斯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米汽车",
+        "evidence_span": "已与全球领先的主要新能源汽车整车厂商特斯拉、广汽集团、蔚来汽车、小鹏汽车、赛力斯、小米汽车等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "电池托盘产品2023年开始批量供应宁德时代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃尔沃",
+        "evidence_span": "电池托盘产品2023年开始批量供应宁德时代、2024年批量供应沃尔沃"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "斯特兰蒂斯",
+        "evidence_span": "墨西哥一期生产基地已正式投产，服务于沃尔沃、特斯拉和斯特兰蒂斯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽新能源",
+        "evidence_span": "主要供应特斯拉、广汽集团、蔚来汽车、北汽新能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利集团",
+        "evidence_span": "主要供应特斯拉、广汽集团、蔚来汽车、北汽新能源、吉利集团"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车的加速渗透",
+        "evidence_span": "有望受益于新能源汽车的加速渗透"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "轻量化趋势的持续推进",
+        "evidence_span": "有望受益于新能源汽车的加速渗透及轻量化趋势的持续推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:21:15"
+}

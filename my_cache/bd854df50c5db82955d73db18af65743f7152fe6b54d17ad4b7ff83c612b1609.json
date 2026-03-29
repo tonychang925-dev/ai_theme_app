@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "4f4d74eeafca", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含招标事件（2024年10月15日），但后半部分提供了江西省军工控股集团的历史背景、企业结构和上市企业信息，这些是静态的军工产业知识，可能对题材本体构建有价值，因此归类为混合候选。"}}

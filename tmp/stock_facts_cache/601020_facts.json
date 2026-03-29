@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "有色金属勘探",
+      "evidence_span": "主要从事有色金属勘探、采矿、选矿及贸易业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有色金属采矿",
+      "evidence_span": "主要从事有色金属勘探、采矿、选矿及贸易业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有色金属选矿",
+      "evidence_span": "主要从事有色金属勘探、采矿、选矿及贸易业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有色金属贸易",
+      "evidence_span": "主要从事有色金属勘探、采矿、选矿及贸易业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "跨国集团矿业公司",
+      "evidence_span": "从一家区域公司发展成为一家跨国集团矿业公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锑精矿生产企业",
+      "evidence_span": "公司将成为全球重要的锑精矿生产企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铅",
+      "evidence_span": "主营产品包括铅、锌、铜、锑、银、黄金等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锌",
+      "evidence_span": "主营产品包括铅、锌、铜、锑、银、黄金等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铜",
+      "evidence_span": "主营产品包括铅、锌、铜、锑、银、黄金等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锑",
+      "evidence_span": "主营产品包括铅、锌、铜、锑、银、黄金等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银",
+      "evidence_span": "主营产品包括铅、锌、铜、锑、银、黄金等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄金",
+      "evidence_span": "主营产品包括铅、锌、铜、锑、银、黄金等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锑精矿",
+      "evidence_span": "年产锑精矿 16万金属吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金锭",
+      "evidence_span": "金锭 22金属吨"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海拔3500米以上矿业开发能力",
+      "evidence_span": "公司是国内少有的在海拔 3500 米以上具备矿业开发能力的企业之一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "塔吉克斯坦国有企业塔铝金业",
+      "evidence_span": "成功收购了塔吉克斯坦国有企业“塔铝金业”50%权益"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "埃塞俄比亚提格雷资源私人有限公司",
+      "evidence_span": "埃塞俄比亚提格雷资源私人有限公司 70%股权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "贵州亚太矿业有限公司",
+      "evidence_span": "贵州亚太矿业有限公司40%股权"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "有色金属勘探",
+        "evidence_span": "主要从事有色金属勘探、采矿、选矿及贸易业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有色金属采矿",
+        "evidence_span": "主要从事有色金属勘探、采矿、选矿及贸易业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有色金属选矿",
+        "evidence_span": "主要从事有色金属勘探、采矿、选矿及贸易业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有色金属贸易",
+        "evidence_span": "主要从事有色金属勘探、采矿、选矿及贸易业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "跨国集团矿业公司",
+        "evidence_span": "从一家区域公司发展成为一家跨国集团矿业公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锑精矿生产企业",
+        "evidence_span": "公司将成为全球重要的锑精矿生产企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铅",
+        "evidence_span": "主营产品包括铅、锌、铜、锑、银、黄金等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锌",
+        "evidence_span": "主营产品包括铅、锌、铜、锑、银、黄金等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铜",
+        "evidence_span": "主营产品包括铅、锌、铜、锑、银、黄金等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锑",
+        "evidence_span": "主营产品包括铅、锌、铜、锑、银、黄金等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银",
+        "evidence_span": "主营产品包括铅、锌、铜、锑、银、黄金等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄金",
+        "evidence_span": "主营产品包括铅、锌、铜、锑、银、黄金等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锑精矿",
+        "evidence_span": "年产锑精矿 16万金属吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金锭",
+        "evidence_span": "金锭 22金属吨"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海拔3500米以上矿业开发能力",
+        "evidence_span": "公司是国内少有的在海拔 3500 米以上具备矿业开发能力的企业之一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "塔吉克斯坦国有企业塔铝金业",
+        "evidence_span": "成功收购了塔吉克斯坦国有企业“塔铝金业”50%权益"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "埃塞俄比亚提格雷资源私人有限公司",
+        "evidence_span": "埃塞俄比亚提格雷资源私人有限公司 70%股权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "贵州亚太矿业有限公司",
+        "evidence_span": "贵州亚太矿业有限公司40%股权"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:09:16"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "96b8861b6941", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含事件性信息（如报告发布、体制转变、euv产线试生产时间），但也涉及半导体设备领域的稳定知识，如EUV光刻机的研发主体（华为、长春、ICRD）、商业公司主导的国产替代模式、协调机制等，这些对题材本体构建有价值。"}}

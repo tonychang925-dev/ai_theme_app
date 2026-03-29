@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1472721061.72,
+    "changeCount": 1.53,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p><br></p><p><strong>一、公司简介</strong></p><p> 浙江水晶光电科技股份有限公司的主营业务是从事光学影像、薄膜光学面板、汽车电子（AR+）、反光材料等领域相关产品的研发、生产和销售。公司的主要产品是光学元器件、薄膜光学面板、半导体光学、3D模组、车载光学整机模组、车载光学元膜、反光织物。</p><p><strong>二、公司主要产品线 及行业概况</strong></p><p><strong> 综述：</strong>➢ 光学老兵，多元产业布局。水晶光电成立于 2002 年，作为光学细分领域的龙头企业，下游布局设计手机、AR 眼镜等消费电子和智能车，致力于成为全球卓越的一站式光学解决方案专家。目前公司已构建光学元器件、薄膜光学面板、半导体光学、汽车电子（AR+）、反光材料五大业务板块，2024 年营收占比分别为 45.94%/39.38%/2.06%/4.78%/6.27%，产品矩阵布局完善，静待下游放量。<br>➢ 消费电子为压舱石，微棱镜+滤光片助力成长。受益于消费电子市场复苏，及苹果等客户端侧 AI 创新趋势，微棱镜及滤光片等核心器件有望迎来增长。公司微棱镜业务于 23 年 6 月成功实现量产，伴随大客户在 AI 手机上增长放量，叠加机种的累加效应，微棱镜市场空间仍存在一定增量。<br>➢ 伴随着华为强势回归，安卓系加大对手机摄像头的创新力度，预计旋涂滤光片的渗透率有望提升。公司滤光片业务进展迅速，根据潮电智库数据，23 年全球手机滤光片的市场份额上水晶占据第一，达 21%。过去几年在安卓客户端推广涂覆滤光片产品，并且保持较高的份额。此外，大客户对旋涂环节要求较高，前期国内供应商难以切入；而公司与大客户在微棱镜项目有较好合作经验，其旋涂滤光片有望于 25 年切入大客户供应链、逐步攫取份额。<br>➢ 汽车+AR 眼镜前期布局，静待收获。根据 ICV TAnK 数据，全球乘用车市场的 HUD 渗透率有望于 2027 年超过 45%，其中，AR-HUD 更具优势、市场空间广阔。公司通过 AR-HUD 切入车载光学，目前产品年出货量突破几十万量级、市场占有率位于行业前列。从定点转量产节奏上来看，公司 2025~2027 年每个季度都将有转量产的定点，其中包含部分利润水平较好的海外客户转量产的订<br>单。<br>➢ AI 加持下，AR 眼镜有望迎来硬件创新+销量增长的双拐点，我们认为 AR眼镜是 AI 重要的载体，公司从 2010 年开始布局，与全球肖特、Lumus 和DigiLens 展开相关的战略合作。公司目前在 AR 的显示（阵列、衍射和体全息等光波导技术路线）、显示匹配的光机元器件和光学传感元器件均有业务和研发<br>布局，且有望于 25 年建成一条反射光波导的量产线，为营收贡献增量。</p><p><strong>1、光学器件</strong></p><p><strong> </strong>分产品看，光学元器件为公司的主要业务来源，2024 年光学元器件业务实现营收 28.84 亿元，同比+17.92%，营收占比达 45.94%；薄膜光学面板业务 24年实现营收 24.72 亿元，同比+33.69%，营收占比达 39.38%，仅次于光学元器件业务，经过近三年的布局与业务推动，该业务已发展成为公司经营新“压舱石”；车载光电及 AR/VR 业务 24 年增速放缓，实现营收 3.00 亿元，同比+3.04%；反光材料业务高速成长，2024 年实现营收 3.94 亿元，同比+37.17%；半导体光学业务因窄带产品抓住国内安卓系大客户的量产机会，实现销售业绩翻番，市占率大幅上升，24 年实现营收 1.29 亿元，同比+19.50%。<br></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/62bc1f2d-b633-41d5-9d0d-325ed30563dc.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><strong>2、消费电子</strong></p><p>立足于红外截止滤光片，积极推动涂布滤光片<br>光学滤光片包括红外截止滤光片和生物识别滤光片（即窄带滤光片）。<strong>红外截止滤光片（IRCF）是一种用于过滤红外波段的滤镜，</strong>利用精密光电镀膜技术在白玻璃、蓝玻璃或树脂片等光学基片上交替镀上高低折射率的光学膜层，从而实现可见光区(400-600nm)高透，近红外区(700-1100nm)截止或反射，使感光芯片能够模拟人眼的视觉范围成像，消除红外光对成像的影响，是高性能摄像头的必备组件。<br>窄带滤光片与 IRCF 的透过频段相反，仅允许特定频段红外光通过。<br>根据使用的光学基材不同，IRCF 可主要划分为白玻璃 IRCF、蓝玻璃 IRCF 和树脂 IRCF。其中，相较于普通白玻璃 IRCF，蓝玻璃 IRCF 通过膜层截止和蓝玻璃吸收红外光，可有效改善摄影成像中的色偏、眩光、鬼影等问题；树脂 IRCF（较于玻璃 IRCF）具有更薄、韧性更强的特点，并且能够较好的解决低角度光偏移问题，但树脂材质的透光率弱于蓝玻璃，且随着摄像头像素进一步增加，树脂材质会因滤光片尺寸增大而发生场曲形变，影响成像质量。根据工艺流程不同，IRCF 可划分为 IRCF 组件和 IRCF 单品。<br></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/85abeb3a-0e5f-44d6-8b91-d21297f144b9.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>智能手机摄像头技术的不断创新升级，手机 IRCF 的出货量将呈增长趋势，伴随着华为手机在国内市场的强势回归，安卓系终端加大对手机摄像头的创新力度，预计旋涂滤光片的升级趋势会越来越明显，渗透率有望提升。<br><span style=\"color: rgb(225, 60, 57);\"><strong>全球 IRCF 厂商主要集中在国内，CR3 超过 50%。其中龙头厂商包括水晶光电、东田微和五方光电等，其中，水晶光电、五方光电等为全球玻璃 IRCF 的主要供应商，下游客户涵盖苹果和头部安卓厂商。</strong></span></p><p>水晶光电滤光片业务进展迅速，为 IRCF 的领军企业。水晶已完成吸收反射复合型滤光片量产，其在国内先进高端安卓手机应用已经逐渐走向成熟中，基本占据绝对领先优势。<br><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/c4f3afc7-4aee-4d1b-864a-ef3f09035198.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/c8acb8b4-5cec-46c7-8d69-eb777b39a4e6.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><br></p><p>3<strong> 汽车电子</strong></p><p>HUD 赛道高速增长，进入 AR 时间</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/3095122b-1e93-44fe-9763-da3f4ef6efaa.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><br></p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/12e51509-54b1-4883-82b4-b3f60a023edd.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p><strong>4 AR：AI 催化，眼镜加速渗透</strong></p><p>AR 市场规模逐年递增，国内市场发展迅猛。根据亿欧智库数据，2023 年全球和中国 AR 设备出货量达 50 万台和 24 万台，预计 2026-2027 年两者实现倍数增长，2027 年将分别突破 1500 万台和 750 万台。预计 2023 年至 2027 年全球 AR 设备出货量复合增长率为 135.9%，中国复合增长率为 138.6%，中国 AR产业发展迅速，出货量占全球的比例逐年增加，有望成为全球单一最大市场。<br>2023 年 9 月，雷朋联合 Meta 推出 Ray-Ban 智能眼镜，该产品在刚推出时也具备语音助手功能，但 24 年 Meta AI 的加入让这一产品成为炙手可热的 AI 硬件；根据 VR 陀螺数据，截至 24 年 10 月，该眼镜已在全球销售超 100 万副。我们认为这一产品的成功主要来源于佩戴舒适性的提升和对应用场景覆盖度的增加。<br>Ray-Ban 眼镜的成功为行业提供了一条 AI 落地硬件的全新思路，也验证了市场需求，由于 Ray-Ban 的 AI 功能无法进入中国，国内 AI 眼镜行业有一定市场空缺，因此近期国内各软硬件大厂纷纷开始布局和评估 AI 眼镜项目。<br><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/992d14ae-5f8e-4f03-8d6b-92123e02d339.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>光波导方案体积小重量轻，接近普通眼镜的形态，透光率高，EyeBox 更大，是消费级 AR 的终极方案，具备在 C 端放量的潜力。光波导方案技术要求较高，优势明确，有望成为未来主流方案。光波导 AR 眼镜包括显示模组、波导片和耦合器三部分，显示模组发出的光线通过耦入器件进入光波导，在波导内以全反射的形式向前传播，最后通过耦出器件耦出光波导进入人眼成像。按照耦入耦出器件的不同，光波导可分为几何光波导和衍射光波导，其中几何光波导以阵列光波导为主导，衍射光波导又分为表面浮雕光栅光波导（SRG）和体全息光波导（VHG）。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/a007ff3d-1a77-4171-ac3a-d498c7b81831.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>公司持续深化 AR 光学行业布局。公司从 2010 年开始布局 AR 技术，持续深化反射光波导、体全息光波导等前沿 AR 技术布局，分别与全球领先玻璃厂商肖特，反射光波导方案商 Lumus 和体全息衍射光波导方案商 DigiLens 展开合作。公司 2016 年投资入股 Lumus，2018 年与肖特合资成立子公司晶特光学，2019年宣布与 DigiLens 合作。</p><p>掌握体全息光栅光波导技术，DigiLens 在 AR 行业高速发展。DigiLens 致力于开发用于支持新型增强 AR 显示器的全息波导。DigiLens 的核心产品是全息波导镜片，这种镜片包含一层薄膜、激光蚀刻的光聚合物，以及嵌入带有镜面光学的微型全息图。其 T-REx（透明分辨率扩展器）固态摆动技术使波导分辨率翻倍。<br></p><p><strong>三、核心竞争力</strong></p><p>公司多年以来深耕光学元器件业务，在相关下游产品市场上，已建立了稳固的竞争优势。主要产品包括红外截止滤光片、吸收反射复合型滤光片、微棱镜等。行业上，伴随着端侧 AI、折叠屏、潜望式长焦镜头等技术潮流涌现，手机行业开始释放回暖信号。公司微棱镜业务于 23 年 6 月成功实现量产，伴随大<br>客户在 AI 手机上增长放量，叠加机种的累加效应，微棱镜的市场空间仍在增长；吸收反射复合型滤光已顺利导入国内全部主流终端；大客户手机标配旋涂滤光片，公司 25 年有望切入大客户供应链，逐步获取市场份额。</p><p><strong>.</strong></p>",
+    "firstLetter": "SJGD",
+    "high": 28.63,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 26.3,
+    "marketValue": 36865660178.71,
+    "name": "水晶光电",
+    "pctChg": 5.77,
+    "price": 28.04,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 1,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 22.13,
+    "recentChange": 17.67,
+    "remark": "国内老牌光学加工龙头，稳固手机业务发力汽车+AR新业务。业绩有望伴随新业务放量带来机遇。",
+    "status": 1,
+    "stockId": "002273",
+    "stockLightspots": [
+      {
+        "bizKey": "38983",
+        "content": "滤光业务稳健发展，生物识别引领潮流",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38983,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38984",
+        "content": "聚焦3D成像，打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38984,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38985",
+        "content": "焦3D成像，打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38985,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38986",
+        "content": "水晶光电双摄驱动量价提升，人脸识别打开新空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38986,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38987",
+        "content": "老牌光学龙头，汽车电子+AR驱动新成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38987,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38988",
+        "content": "水晶光电光学部件重回高增长，虚拟显示布局加速",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38988,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38989",
+        "content": "水晶光电攫取光学新机遇，开启第二轮成长曲线",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38989,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38990",
+        "content": "传统产品焕发新动力,新产品储备值得期待",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38990,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38991",
+        "content": "水晶光电“研发富配”构筑护城河，光学龙头迎5G新机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38991,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38992",
+        "content": "水晶光电积极布局新业务，攫取光学创新带来的新机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38992,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38993",
+        "content": "广泛布局全面覆盖，消费电子前景利好",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38993,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38994",
+        "content": "契合行业创新方向,战略调整稳中求进",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38994,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38995",
+        "content": "行业龙头,更上层楼",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38995,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38996",
+        "content": "水晶光电手机光学新品迭出，汽车电子&AR开启新成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38996,
+        "stockId": "002273",
+        "updateTime": null
+      },
+      {
+        "bizKey": "38997",
+        "content": "水晶光电光学细分赛道优质企业，持续受益终端光学创新",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 38997,
+        "stockId": "002273",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:53",
+    "vol": 534411.65
+  }
+}

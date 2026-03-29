@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "维生素",
+      "evidence_span": "公司围绕医药食品、特种化学品领域深入布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "香精香料",
+      "evidence_span": "公司围绕医药食品、特种化学品领域深入布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药",
+      "evidence_span": "公司围绕医药食品、特种化学品领域深入布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铬盐",
+      "evidence_span": "公司围绕医药食品、特种化学品领域深入布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "皮革化学品",
+      "evidence_span": "公司围绕医药食品、特种化学品领域深入布局"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大的维生素K3供应商",
+      "evidence_span": "全球最大的维生素K3供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球皮革化学品的主流供应商",
+      "evidence_span": "全球皮革化学品的主流供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球专业的维生素、香精香料、铬盐产品供应商",
+      "evidence_span": "已经成为全球专业的维生素、香精香料、铬盐产品供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "知名的皮革化学产品供应商",
+      "evidence_span": "知名的皮革化学产品供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球知名的维生素及铬盐生产企业",
+      "evidence_span": "公司现已成为全球知名的维生素及铬盐生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维生素K3",
+      "evidence_span": "已建立形成维生素K3、维生素B1、维生素B3和维生素B5四大维生素产品的产业平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维生素B1",
+      "evidence_span": "已建立形成维生素K3、维生素B1、维生素B3和维生素B5四大维生素产品的产业平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维生素B3",
+      "evidence_span": "已建立形成维生素K3、维生素B1、维生素B3和维生素B5四大维生素产品的产业平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维生素B5",
+      "evidence_span": "已建立形成维生素K3、维生素B1、维生素B3和维生素B5四大维生素产品的产业平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "对苯二酚",
+      "evidence_span": "该项目生产的对苯二酚已正式销往国内多家主流丙烯酸生产商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "香兰素",
+      "evidence_span": "香兰素及乙基香兰素已正式销往欧美主要食品及日化客户"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乙基香兰素",
+      "evidence_span": "香兰素及乙基香兰素已正式销往欧美主要食品及日化客户"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碘造影剂原料药",
+      "evidence_span": "新增的“年产 400 吨碘造影剂原料药项目”已于2020年下半年正式建成投产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "重铬酸钠",
+      "evidence_span": "公司铬盐板块产品主要包括重铬酸钠、铬鞣剂、铬酸酐等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铬鞣剂",
+      "evidence_span": "公司铬盐板块产品主要包括重铬酸钠、铬鞣剂、铬酸酐等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铬酸酐",
+      "evidence_span": "公司铬盐板块产品主要包括重铬酸钠、铬鞣剂、铬酸酐等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加脂剂",
+      "evidence_span": "包括铬鞣剂、加脂剂、复鞣剂、助剂等全系列化学品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复鞣剂",
+      "evidence_span": "包括铬鞣剂、加脂剂、复鞣剂、助剂等全系列化学品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "助剂",
+      "evidence_span": "包括铬鞣剂、加脂剂、复鞣剂、助剂等全系列化学品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三级技术创新机制",
+      "evidence_span": "公司已搭建形成集团研究院、事业部研发中心、基地技术中心的三级技术创新机制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "院士工作站",
+      "evidence_span": "形成了院士工作站、博士后创新实践基地、省级企业研究院、省级企业技术中心、省级研究开发中心等多个技术创新平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "博士后创新实践基地",
+      "evidence_span": "形成了院士工作站、博士后创新实践基地、省级企业研究院、省级企业技术中心、省级研究开发中心等多个技术创新平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "省级企业研究院",
+      "evidence_span": "形成了院士工作站、博士后创新实践基地、省级企业研究院、省级企业技术中心、省级研究开发中心等多个技术创新平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "省级企业技术中心",
+      "evidence_span": "形成了院士工作站、博士后创新实践基地、省级企业研究院、省级企业技术中心、省级研究开发中心等多个技术创新平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "省级研究开发中心",
+      "evidence_span": "形成了院士工作站、博士后创新实践基地、省级企业研究院、省级企业技术中心、省级研究开发中心等多个技术创新平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内多家主流丙烯酸生产商",
+      "evidence_span": "该项目生产的对苯二酚已正式销往国内多家主流丙烯酸生产商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧美主要食品及日化客户",
+      "evidence_span": "香兰素及乙基香兰素已正式销往欧美主要食品及日化客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能领域",
+      "evidence_span": "铬盐产业链相关产品亦可应用于“铁铬液流电池”等储能领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "维生素",
+        "evidence_span": "公司围绕医药食品、特种化学品领域深入布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "香精香料",
+        "evidence_span": "公司围绕医药食品、特种化学品领域深入布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药",
+        "evidence_span": "公司围绕医药食品、特种化学品领域深入布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铬盐",
+        "evidence_span": "公司围绕医药食品、特种化学品领域深入布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "皮革化学品",
+        "evidence_span": "公司围绕医药食品、特种化学品领域深入布局"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大的维生素K3供应商",
+        "evidence_span": "全球最大的维生素K3供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球皮革化学品的主流供应商",
+        "evidence_span": "全球皮革化学品的主流供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球专业的维生素、香精香料、铬盐产品供应商",
+        "evidence_span": "已经成为全球专业的维生素、香精香料、铬盐产品供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "知名的皮革化学产品供应商",
+        "evidence_span": "知名的皮革化学产品供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球知名的维生素及铬盐生产企业",
+        "evidence_span": "公司现已成为全球知名的维生素及铬盐生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维生素K3",
+        "evidence_span": "已建立形成维生素K3、维生素B1、维生素B3和维生素B5四大维生素产品的产业平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维生素B1",
+        "evidence_span": "已建立形成维生素K3、维生素B1、维生素B3和维生素B5四大维生素产品的产业平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维生素B3",
+        "evidence_span": "已建立形成维生素K3、维生素B1、维生素B3和维生素B5四大维生素产品的产业平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维生素B5",
+        "evidence_span": "已建立形成维生素K3、维生素B1、维生素B3和维生素B5四大维生素产品的产业平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "对苯二酚",
+        "evidence_span": "该项目生产的对苯二酚已正式销往国内多家主流丙烯酸生产商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "香兰素",
+        "evidence_span": "香兰素及乙基香兰素已正式销往欧美主要食品及日化客户"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乙基香兰素",
+        "evidence_span": "香兰素及乙基香兰素已正式销往欧美主要食品及日化客户"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碘造影剂原料药",
+        "evidence_span": "新增的“年产 400 吨碘造影剂原料药项目”已于2020年下半年正式建成投产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "重铬酸钠",
+        "evidence_span": "公司铬盐板块产品主要包括重铬酸钠、铬鞣剂、铬酸酐等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铬鞣剂",
+        "evidence_span": "公司铬盐板块产品主要包括重铬酸钠、铬鞣剂、铬酸酐等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铬酸酐",
+        "evidence_span": "公司铬盐板块产品主要包括重铬酸钠、铬鞣剂、铬酸酐等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加脂剂",
+        "evidence_span": "包括铬鞣剂、加脂剂、复鞣剂、助剂等全系列化学品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复鞣剂",
+        "evidence_span": "包括铬鞣剂、加脂剂、复鞣剂、助剂等全系列化学品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "助剂",
+        "evidence_span": "包括铬鞣剂、加脂剂、复鞣剂、助剂等全系列化学品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三级技术创新机制",
+        "evidence_span": "公司已搭建形成集团研究院、事业部研发中心、基地技术中心的三级技术创新机制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "院士工作站",
+        "evidence_span": "形成了院士工作站、博士后创新实践基地、省级企业研究院、省级企业技术中心、省级研究开发中心等多个技术创新平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "博士后创新实践基地",
+        "evidence_span": "形成了院士工作站、博士后创新实践基地、省级企业研究院、省级企业技术中心、省级研究开发中心等多个技术创新平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "省级企业研究院",
+        "evidence_span": "形成了院士工作站、博士后创新实践基地、省级企业研究院、省级企业技术中心、省级研究开发中心等多个技术创新平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "省级企业技术中心",
+        "evidence_span": "形成了院士工作站、博士后创新实践基地、省级企业研究院、省级企业技术中心、省级研究开发中心等多个技术创新平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "省级研究开发中心",
+        "evidence_span": "形成了院士工作站、博士后创新实践基地、省级企业研究院、省级企业技术中心、省级研究开发中心等多个技术创新平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内多家主流丙烯酸生产商",
+        "evidence_span": "该项目生产的对苯二酚已正式销往国内多家主流丙烯酸生产商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧美主要食品及日化客户",
+        "evidence_span": "香兰素及乙基香兰素已正式销往欧美主要食品及日化客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能领域",
+        "evidence_span": "铬盐产业链相关产品亦可应用于“铁铬液流电池”等储能领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:36:39"
+}

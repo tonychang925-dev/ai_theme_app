@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "2ffcc779f6a8", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段描述特斯拉上线高级智能召唤功能的事件，但详细说明了功能适用车辆、操作方式和OTA更新机制，这些技术细节可能用于题材知识构建，尽管混合了事件发布信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:33:47", "result": {"span_uid": "7027c2fc0815", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "法规对产业影响的描述", "stability": "low", "reason": "原文是机构对《网络数据安全管理条例》发布后产业影响的预测性描述，包含主观看法和事件性信息，无法整理成稳定、独立的知识块。"}}

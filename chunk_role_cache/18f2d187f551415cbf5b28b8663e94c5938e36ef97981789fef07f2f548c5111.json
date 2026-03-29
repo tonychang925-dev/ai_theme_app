@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "9e45b2678495", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述了台积电将于特定时间点（9月底前）引进首台High-NA EUV光刻机这一具体事件，并提及价格信息，属于单一动态事件报道。"}}

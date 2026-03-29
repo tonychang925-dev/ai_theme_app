@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "bf897a830b7f", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述以色列防空警报、伊朗领空关闭和官员威胁回应，是具体安全事件和实时动态，纯属新闻报告，无陆军本体知识。"}}

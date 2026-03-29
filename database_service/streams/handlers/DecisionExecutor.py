@@ -1,6 +1,7 @@
 # database_service/streams/handlers/DecisionExecutor.py - 修复版（纯执行器）
 
 import asyncio
+import hashlib
 import json
 import logging
 import os
@@ -46,6 +47,7 @@ class DecisionExecutor:
             "started_at": None,
             "decisions_received": 0,
             "decisions_executed": 0,
+            "decisions_deduplicated": 0,
             "decisions_failed": 0,
             "themes_created": 0,
             "themes_updated": 0,
@@ -126,11 +128,18 @@ class DecisionExecutor:
         """处理单个决策 - 修复版"""
         try:
             # 解析决策数据（保持原有逻辑）
-            decision = self._parse_decision_data(message_data)
+            raw_decision = self._parse_decision_data(message_data)
+            decision, contract_error = self._normalize_and_validate_decision_envelope(
+                raw_decision,
+                message_id
+            )
             
             if not decision:
+                reason = contract_error or "ERR_CONTRACT_PARSE: 无法解析决策数据"
                 await self._move_to_dead_letter(
-                    message_id, message_data, "无法解析决策数据"
+                    message_id,
+                    message_data,
+                    reason
                 )
                 return
             
@@ -140,10 +149,20 @@ class DecisionExecutor:
             decision_id = decision.get('decision_id', message_id)
             
             logger.info(f"🎯 执行决策: {action} (事件: {event_id})")
-            
+
             # 更新统计
             self.stats["decisions_received"] += 1
             self.stats["by_action_type"][action] = self.stats["by_action_type"].get(action, 0) + 1
+
+            # 执行级幂等去重：同一idempotency_key只执行一次
+            idempotency_key = decision.get("idempotency_key")
+            if await self._should_skip_duplicate_execution(idempotency_key, message_id):
+                await self.redis.xack(self.decision_stream, self.consumer_group, message_id)
+                self.stats["decisions_deduplicated"] += 1
+                logger.info(
+                    f"⏭️ 跳过重复决策执行: action={action}, idempotency_key={idempotency_key}"
+                )
+                return
             
             # 🔥 修复：统一路由执行（更简洁）
             try:
@@ -847,6 +866,84 @@ class DecisionExecutor:
         except Exception as e:
             logger.warning(f"解析决策数据失败: {e}")
             return None
+
+    async def _should_skip_duplicate_execution(self, idempotency_key: Optional[str], message_id: str) -> bool:
+        """基于 Redis NX 锁判断该决策是否重复执行。"""
+        if not idempotency_key:
+            return False
+
+        lock_key = f"decision_executor:idempotency:{idempotency_key}"
+        try:
+            # NX: key不存在才写入，返回True表示首个执行；否则为重复
+            first_seen = await self.redis.set(lock_key, message_id, ex=86400, nx=True)
+            return not bool(first_seen)
+        except Exception as e:
+            # 幂等检查异常不阻断主流程，但记录告警便于排查
+            logger.warning(f"幂等锁检查失败，按非重复继续执行: {e}")
+            return False
+
+    def _normalize_and_validate_decision_envelope(
+        self,
+        decision: Optional[Dict],
+        message_id: str
+    ) -> tuple[Optional[Dict], Optional[str]]:
+        """
+        v0/v1 dual-read 归一化，并校验 DecisionEnvelope v1 必填字段。
+        """
+        if not decision or not isinstance(decision, dict):
+            return None, "ERR_CONTRACT_PARSE: 决策对象为空或类型非法"
+
+        normalized = dict(decision)
+
+        # dual-read: 兼容旧结构，统一归一为 payload 字段
+        payload = normalized.get("payload")
+        if payload is None:
+            legacy_payload = {}
+            for legacy_key in ["event_data", "theme_data", "data"]:
+                legacy_val = normalized.get(legacy_key)
+                if isinstance(legacy_val, dict):
+                    legacy_payload[legacy_key] = legacy_val
+            payload = legacy_payload if legacy_payload else {}
+        normalized["payload"] = payload
+
+        # v0/v1 统一版本字段
+        payload_version = normalized.get("payload_version") or normalized.get("version")
+        normalized["payload_version"] = payload_version or "v0"
+
+        # 兜底字段：保证链路最小可追踪能力
+        normalized.setdefault("decision_id", message_id)
+        if not normalized.get("trace_id"):
+            normalized["trace_id"] = f"trace_{message_id.replace('-', '_')}"
+
+        if not normalized.get("idempotency_key"):
+            payload_hash = hashlib.sha256(
+                json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8")
+            ).hexdigest()[:16]
+            normalized["idempotency_key"] = (
+                f"{normalized.get('event_id', 'unknown')}:"
+                f"{normalized.get('action', 'unknown')}:sha256_{payload_hash}"
+            )
+
+        required_fields = [
+            "decision_id",
+            "event_id",
+            "action",
+            "payload_version",
+            "trace_id",
+            "idempotency_key",
+            "payload",
+        ]
+        missing = [
+            field for field in required_fields
+            if field not in normalized or normalized.get(field) in (None, "")
+        ]
+        if missing:
+            return None, f"ERR_CONTRACT_V1_MISSING_FIELDS: {','.join(missing)}"
+
+        if not isinstance(normalized.get("payload"), dict):
+            return None, "ERR_CONTRACT_V1_INVALID_PAYLOAD: payload必须为object"
+
+        return normalized, None
     
     def _extract_event_id(self, event_id_str: str) -> int:
         """提取整数事件ID - 保持原有逻辑"""
@@ -940,30 +1037,30 @@ class DecisionExecutor:
     
     def print_stats(self):
         """打印统计信息 - 优化版"""
-        print("\n" + "="*60)
-        print("📊 DecisionExecutor统计信息（修复版）")
-        print("="*60)
-        print(f"运行时间: {self.stats['started_at']}")
-        print(f"决策接收: {self.stats['decisions_received']}")
-        print(f"决策执行: {self.stats['decisions_executed']}")
-        print(f"决策失败: {self.stats['decisions_failed']}")
-        print(f"主题创建: {self.stats['themes_created']}")
-        print(f"主题更新: {self.stats['themes_updated']}")
-        print(f"映射创建: {self.stats['mappings_created']}")
-        print(f"聚类处理: {self.stats['clusters_processed']}")
-        print(f"执行错误: {self.stats['execution_errors']}")
-        print(f"验证错误: {self.stats['validation_errors']}")
+        logger.info("\n" + "="*60)
+        logger.info("📊 DecisionExecutor统计信息（修复版）")
+        logger.info("="*60)
+        logger.info(f"运行时间: {self.stats['started_at']}")
+        logger.info(f"决策接收: {self.stats['decisions_received']}")
+        logger.info(f"决策执行: {self.stats['decisions_executed']}")
+        logger.info(f"决策失败: {self.stats['decisions_failed']}")
+        logger.info(f"主题创建: {self.stats['themes_created']}")
+        logger.info(f"主题更新: {self.stats['themes_updated']}")
+        logger.info(f"映射创建: {self.stats['mappings_created']}")
+        logger.info(f"聚类处理: {self.stats['clusters_processed']}")
+        logger.info(f"执行错误: {self.stats['execution_errors']}")
+        logger.info(f"验证错误: {self.stats['validation_errors']}")
         
         if self.stats['by_action_type']:
-            print("\n决策类型分布:")
+            logger.info("\n决策类型分布:")
             for action_type, count in self.stats['by_action_type'].items():
-                print(f"  {action_type}: {count}")
+                logger.info(f"  {action_type}: {count}")
         
         # 错误详情（如果有）
         if self.execution_context['error_details']:
             recent_errors = self.execution_context['error_details'][-3:]  # 最近3个错误
-            print(f"\n最近错误 ({len(recent_errors)}个):")
+            logger.info(f"\n最近错误 ({len(recent_errors)}个):")
             for error in recent_errors:
-                print(f"  {error['time']} - {error['action']}: {error['error'][:100]}")
+                logger.info(f"  {error['time']} - {error['action']}: {error['error'][:100]}")
         
-        print("="*60)
+        logger.info("="*60)

@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "磷化工",
+      "evidence_span": "聚焦磷化工主营业务发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源材料业务",
+      "evidence_span": "新能源材料业务方面"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大的工业一铵生产企业",
+      "evidence_span": "公司作为全球最大的工业一铵生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "饲料级磷酸氢钙行业头部企业",
+      "evidence_span": "公司作为饲料级磷酸氢钙行业头部企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内基础磷肥及部分精细磷酸盐细分行业的主要生产企业",
+      "evidence_span": "公司作为国内基础磷肥及部分精细磷酸盐细分行业的主要生产企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业级磷酸一铵",
+      "evidence_span": "传统核心产品工业级磷酸一铵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "饲料级磷酸氢钙",
+      "evidence_span": "传统核心产品饲料级磷酸氢钙"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肥料级磷酸一铵",
+      "evidence_span": "肥料级磷酸一铵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合肥",
+      "evidence_span": "复合肥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸铁（锂）",
+      "evidence_span": "积极推进德阿、攀枝花基地磷酸铁（锂）重大项目建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷矿采选",
+      "evidence_span": "磷矿采选"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷石膏建材",
+      "evidence_span": "磷石膏建材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端精细磷酸盐产品",
+      "evidence_span": "部分高端精细磷酸盐产品研发卓有成效"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄腐酸功能性复合肥",
+      "evidence_span": "优势产品黄腐酸功能性复合肥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚谷氨酸肥",
+      "evidence_span": "持续推出了附加值更高的聚谷氨酸肥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液体肥",
+      "evidence_span": "液体肥等新品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻质石膏墙板",
+      "evidence_span": "公司轻质石膏墙板获得了全国首张《中国绿色建材产品认证证书》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硫-磷-钛循环经济清洁生产技术",
+      "evidence_span": "硫-磷-钛循环经济清洁生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硫-磷-钛-铁-锂-钙多资源循环经济产业技术",
+      "evidence_span": "硫-磷-钛-铁-锂-钙多资源循环经济产业技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分段除杂技术",
+      "evidence_span": "充分运用分段除杂技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磷石膏净化装置",
+      "evidence_span": "在行业内率先建成工业化的磷石膏净化装置"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "牧原股份",
+      "evidence_span": "直接向牧原股份销售"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "温氏股份",
+      "evidence_span": "温氏股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海大集团",
+      "evidence_span": "海大集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新希望六和",
+      "evidence_span": "新希望六和"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "磷酸铁锂头部企业",
+      "evidence_span": "公司工业级磷酸一铵向磷酸铁锂头部企业销售占比持续提升"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "磷化工行业景气度持续提升",
+      "evidence_span": "受益于磷化工行业景气度持续提升"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "磷化工",
+        "evidence_span": "聚焦磷化工主营业务发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源材料业务",
+        "evidence_span": "新能源材料业务方面"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大的工业一铵生产企业",
+        "evidence_span": "公司作为全球最大的工业一铵生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "饲料级磷酸氢钙行业头部企业",
+        "evidence_span": "公司作为饲料级磷酸氢钙行业头部企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内基础磷肥及部分精细磷酸盐细分行业的主要生产企业",
+        "evidence_span": "公司作为国内基础磷肥及部分精细磷酸盐细分行业的主要生产企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业级磷酸一铵",
+        "evidence_span": "传统核心产品工业级磷酸一铵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "饲料级磷酸氢钙",
+        "evidence_span": "传统核心产品饲料级磷酸氢钙"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肥料级磷酸一铵",
+        "evidence_span": "肥料级磷酸一铵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合肥",
+        "evidence_span": "复合肥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸铁（锂）",
+        "evidence_span": "积极推进德阿、攀枝花基地磷酸铁（锂）重大项目建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷矿采选",
+        "evidence_span": "磷矿采选"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷石膏建材",
+        "evidence_span": "磷石膏建材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端精细磷酸盐产品",
+        "evidence_span": "部分高端精细磷酸盐产品研发卓有成效"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄腐酸功能性复合肥",
+        "evidence_span": "优势产品黄腐酸功能性复合肥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚谷氨酸肥",
+        "evidence_span": "持续推出了附加值更高的聚谷氨酸肥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液体肥",
+        "evidence_span": "液体肥等新品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻质石膏墙板",
+        "evidence_span": "公司轻质石膏墙板获得了全国首张《中国绿色建材产品认证证书》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硫-磷-钛循环经济清洁生产技术",
+        "evidence_span": "硫-磷-钛循环经济清洁生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硫-磷-钛-铁-锂-钙多资源循环经济产业技术",
+        "evidence_span": "硫-磷-钛-铁-锂-钙多资源循环经济产业技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分段除杂技术",
+        "evidence_span": "充分运用分段除杂技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磷石膏净化装置",
+        "evidence_span": "在行业内率先建成工业化的磷石膏净化装置"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "牧原股份",
+        "evidence_span": "直接向牧原股份销售"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "温氏股份",
+        "evidence_span": "温氏股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海大集团",
+        "evidence_span": "海大集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新希望六和",
+        "evidence_span": "新希望六和"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "磷酸铁锂头部企业",
+        "evidence_span": "公司工业级磷酸一铵向磷酸铁锂头部企业销售占比持续提升"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "磷化工行业景气度持续提升",
+        "evidence_span": "受益于磷化工行业景气度持续提升"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:03:55"
+}

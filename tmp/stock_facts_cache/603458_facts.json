@@ -1,0 +1,479 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程咨询",
+      "evidence_span": "本集团主营业务为工程咨询与工程承包业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程承包",
+      "evidence_span": "本集团主营业务为工程咨询与工程承包业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "公路行业工程咨询",
+      "evidence_span": "核心业务是公路行业工程咨询与工程承包业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "公路行业工程承包",
+      "evidence_span": "核心业务是公路行业工程咨询与工程承包业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "贵州勘察设计龙头",
+      "evidence_span": "贵州勘察设计龙头，乘风起航"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中西部设计咨询龙头",
+      "evidence_span": "勘设股份中西部设计咨询龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "西南工程技术服务龙头",
+      "evidence_span": "勘设股份西南工程技术服务龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工程技术综合服务企业",
+      "evidence_span": "建成为国际知名、国内一流的工程技术综合服务企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "勘察设计",
+      "evidence_span": "工程咨询业务包括勘察设计、工程监理、检验检测及其他工程咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程监理",
+      "evidence_span": "工程咨询业务包括勘察设计、工程监理、检验检测及其他工程咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "检验检测",
+      "evidence_span": "工程咨询业务包括勘察设计、工程监理、检验检测及其他工程咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "项目管理",
+      "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "规划研究",
+      "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预工可研究",
+      "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "节能评估",
+      "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地灾安全技术评价",
+      "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社会风险评估",
+      "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全评估",
+      "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工可咨询",
+      "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "项目后评估",
+      "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程总承包",
+      "evidence_span": "本集团可提供公路、建筑、市政公用、港口与航道等类别的工程总承包及工程施工服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程施工服务",
+      "evidence_span": "本集团可提供公路、建筑、市政公用、港口与航道等类别的工程总承包及工程施工服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车充（换）电设备制造和运营",
+      "evidence_span": "并涉足电动汽车充（换）电设备制造和运营、新能源、智能制造、新基建等多个新领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源",
+      "evidence_span": "并涉足电动汽车充（换）电设备制造和运营、新能源、智能制造、新基建等多个新领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能制造",
+      "evidence_span": "并涉足电动汽车充（换）电设备制造和运营、新能源、智能制造、新基建等多个新领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新基建",
+      "evidence_span": "并涉足电动汽车充（换）电设备制造和运营、新能源、智能制造、新基建等多个新领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工程设计综合资质甲级",
+      "evidence_span": "公司成功获得了工程设计综合资质甲级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工程勘察综合资质甲级",
+      "evidence_span": "集团现拥有工程勘察综合资质甲级和工程设计综合资质甲级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "山区特殊桥梁核心技术",
+      "evidence_span": "掌握山区特殊桥梁、复杂环境下隧道、地质勘察、生态环保、洞库式数据中心等多项核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂环境下隧道核心技术",
+      "evidence_span": "掌握山区特殊桥梁、复杂环境下隧道、地质勘察、生态环保、洞库式数据中心等多项核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "地质勘察核心技术",
+      "evidence_span": "掌握山区特殊桥梁、复杂环境下隧道、地质勘察、生态环保、洞库式数据中心等多项核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生态环保核心技术",
+      "evidence_span": "掌握山区特殊桥梁、复杂环境下隧道、地质勘察、生态环保、洞库式数据中心等多项核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "洞库式数据中心核心技术",
+      "evidence_span": "掌握山区特殊桥梁、复杂环境下隧道、地质勘察、生态环保、洞库式数据中心等多项核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "千米级桥梁独立勘察设计能力",
+      "evidence_span": "具备“千米级”桥梁、“万米级”隧道的独立勘察设计能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "万米级隧道独立勘察设计能力",
+      "evidence_span": "具备“千米级”桥梁、“万米级”隧道的独立勘察设计能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "省级交通气象联网平台",
+      "evidence_span": "自行研发了国内领先的省级交通气象联网平台、交通气象精细化预报系统、桥梁健康监测系统、边坡监测云平台以及企业信息化平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "交通气象精细化预报系统",
+      "evidence_span": "自行研发了国内领先的省级交通气象联网平台、交通气象精细化预报系统、桥梁健康监测系统、边坡监测云平台以及企业信息化平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "桥梁健康监测系统",
+      "evidence_span": "自行研发了国内领先的省级交通气象联网平台、交通气象精细化预报系统、桥梁健康监测系统、边坡监测云平台以及企业信息化平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "边坡监测云平台",
+      "evidence_span": "自行研发了国内领先的省级交通气象联网平台、交通气象精细化预报系统、桥梁健康监测系统、边坡监测云平台以及企业信息化平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "企业信息化平台",
+      "evidence_span": "自行研发了国内领先的省级交通气象联网平台、交通气象精细化预报系统、桥梁健康监测系统、边坡监测云平台以及企业信息化平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "与中石油达成战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "贵阳产控",
+      "evidence_span": "公司与贵阳产控和贵阳市物流有限公司签署协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "贵阳市物流有限公司",
+      "evidence_span": "公司与贵阳产控和贵阳市物流有限公司签署协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中化学建设投资集团有限公司",
+      "evidence_span": "与中化学建设投资集团有限公司合资成立中化学环境科技发展有限公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "西南省份补短板",
+      "evidence_span": "勘设股份受益于西南省份补短板"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "基建补短板",
+      "evidence_span": "有望受益于基建补短板"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路业务",
+      "evidence_span": "勘设股份再获海外大单，一带一路业务值得期待"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程咨询",
+        "evidence_span": "本集团主营业务为工程咨询与工程承包业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程承包",
+        "evidence_span": "本集团主营业务为工程咨询与工程承包业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "公路行业工程咨询",
+        "evidence_span": "核心业务是公路行业工程咨询与工程承包业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "公路行业工程承包",
+        "evidence_span": "核心业务是公路行业工程咨询与工程承包业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "贵州勘察设计龙头",
+        "evidence_span": "贵州勘察设计龙头，乘风起航"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中西部设计咨询龙头",
+        "evidence_span": "勘设股份中西部设计咨询龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "西南工程技术服务龙头",
+        "evidence_span": "勘设股份西南工程技术服务龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工程技术综合服务企业",
+        "evidence_span": "建成为国际知名、国内一流的工程技术综合服务企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "勘察设计",
+        "evidence_span": "工程咨询业务包括勘察设计、工程监理、检验检测及其他工程咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程监理",
+        "evidence_span": "工程咨询业务包括勘察设计、工程监理、检验检测及其他工程咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "检验检测",
+        "evidence_span": "工程咨询业务包括勘察设计、工程监理、检验检测及其他工程咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "项目管理",
+        "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "规划研究",
+        "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预工可研究",
+        "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "节能评估",
+        "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地灾安全技术评价",
+        "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社会风险评估",
+        "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全评估",
+        "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工可咨询",
+        "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "项目后评估",
+        "evidence_span": "本集团还可提供项目管理、规划研究、预工可研究、节能评估、地灾安全技术评价、社会风险评估、安全评估、工可咨询、项目后评估等其他工程咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程总承包",
+        "evidence_span": "本集团可提供公路、建筑、市政公用、港口与航道等类别的工程总承包及工程施工服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程施工服务",
+        "evidence_span": "本集团可提供公路、建筑、市政公用、港口与航道等类别的工程总承包及工程施工服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车充（换）电设备制造和运营",
+        "evidence_span": "并涉足电动汽车充（换）电设备制造和运营、新能源、智能制造、新基建等多个新领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源",
+        "evidence_span": "并涉足电动汽车充（换）电设备制造和运营、新能源、智能制造、新基建等多个新领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能制造",
+        "evidence_span": "并涉足电动汽车充（换）电设备制造和运营、新能源、智能制造、新基建等多个新领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新基建",
+        "evidence_span": "并涉足电动汽车充（换）电设备制造和运营、新能源、智能制造、新基建等多个新领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工程设计综合资质甲级",
+        "evidence_span": "公司成功获得了工程设计综合资质甲级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工程勘察综合资质甲级",
+        "evidence_span": "集团现拥有工程勘察综合资质甲级和工程设计综合资质甲级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "山区特殊桥梁核心技术",
+        "evidence_span": "掌握山区特殊桥梁、复杂环境下隧道、地质勘察、生态环保、洞库式数据中心等多项核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂环境下隧道核心技术",
+        "evidence_span": "掌握山区特殊桥梁、复杂环境下隧道、地质勘察、生态环保、洞库式数据中心等多项核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "地质勘察核心技术",
+        "evidence_span": "掌握山区特殊桥梁、复杂环境下隧道、地质勘察、生态环保、洞库式数据中心等多项核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生态环保核心技术",
+        "evidence_span": "掌握山区特殊桥梁、复杂环境下隧道、地质勘察、生态环保、洞库式数据中心等多项核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "洞库式数据中心核心技术",
+        "evidence_span": "掌握山区特殊桥梁、复杂环境下隧道、地质勘察、生态环保、洞库式数据中心等多项核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "千米级桥梁独立勘察设计能力",
+        "evidence_span": "具备“千米级”桥梁、“万米级”隧道的独立勘察设计能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "万米级隧道独立勘察设计能力",
+        "evidence_span": "具备“千米级”桥梁、“万米级”隧道的独立勘察设计能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "省级交通气象联网平台",
+        "evidence_span": "自行研发了国内领先的省级交通气象联网平台、交通气象精细化预报系统、桥梁健康监测系统、边坡监测云平台以及企业信息化平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "交通气象精细化预报系统",
+        "evidence_span": "自行研发了国内领先的省级交通气象联网平台、交通气象精细化预报系统、桥梁健康监测系统、边坡监测云平台以及企业信息化平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "桥梁健康监测系统",
+        "evidence_span": "自行研发了国内领先的省级交通气象联网平台、交通气象精细化预报系统、桥梁健康监测系统、边坡监测云平台以及企业信息化平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "边坡监测云平台",
+        "evidence_span": "自行研发了国内领先的省级交通气象联网平台、交通气象精细化预报系统、桥梁健康监测系统、边坡监测云平台以及企业信息化平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "企业信息化平台",
+        "evidence_span": "自行研发了国内领先的省级交通气象联网平台、交通气象精细化预报系统、桥梁健康监测系统、边坡监测云平台以及企业信息化平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "与中石油达成战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "贵阳产控",
+        "evidence_span": "公司与贵阳产控和贵阳市物流有限公司签署协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "贵阳市物流有限公司",
+        "evidence_span": "公司与贵阳产控和贵阳市物流有限公司签署协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中化学建设投资集团有限公司",
+        "evidence_span": "与中化学建设投资集团有限公司合资成立中化学环境科技发展有限公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "西南省份补短板",
+        "evidence_span": "勘设股份受益于西南省份补短板"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "基建补短板",
+        "evidence_span": "有望受益于基建补短板"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路业务",
+        "evidence_span": "勘设股份再获海外大单，一带一路业务值得期待"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:25:14"
+}

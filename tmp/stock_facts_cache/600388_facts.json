@@ -1,0 +1,264 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "大气污染治理",
+      "evidence_span": "成就国内大气污染治理龙头"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水污染治理",
+      "evidence_span": "业务涵盖大气污染治理、水污染治理、固危废处置、生态修复及保护等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "固危废处置",
+      "evidence_span": "业务涵盖大气污染治理、水污染治理、固危废处置、生态修复及保护等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态修复",
+      "evidence_span": "业务涵盖大气污染治理、水污染治理、固危废处置、生态修复及保护等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "保护",
+      "evidence_span": "业务涵盖大气污染治理、水污染治理、固危废处置、生态修复及保护等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保设备制造",
+      "evidence_span": "2021年公司营业收入 92%来自于环保设备制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "项目运营",
+      "evidence_span": "7%来自于项目运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "土壤修复",
+      "evidence_span": "土壤修复贡献 1%"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源产业",
+      "evidence_span": "强力开拓新能源产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "储能",
+      "evidence_span": "在储能、材料、新能源装备、清洁能源等领域积极探索"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "材料",
+      "evidence_span": "在储能、材料、新能源装备、清洁能源等领域积极探索"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源装备",
+      "evidence_span": "在储能、材料、新能源装备、清洁能源等领域积极探索"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "清洁能源",
+      "evidence_span": "在储能、材料、新能源装备、清洁能源等领域积极探索"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大气污染治理龙头",
+      "evidence_span": "成就国内大气污染治理龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大的大气污染治理设备研发制造企业",
+      "evidence_span": "全球最大的大气污染治理设备研发制造企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环境综合服务商",
+      "evidence_span": "转型环境综合服务商初见成效"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保设备",
+      "evidence_span": "环保设备贡献超 9 成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "干式超净技术",
+      "evidence_span": "ST龙净干式超净技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏/风电电站 EPC 工程建设及运维",
+      "evidence_span": "光伏/风电电站 EPC 工程建设及运维"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "膜法盐湖提锂技术",
+      "evidence_span": "膜法盐湖提锂技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "干式超净技术",
+      "evidence_span": "ST龙净干式超净技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "碳捕集及碳减排技术",
+      "evidence_span": "碳捕集及碳减排技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "膜法盐湖提锂技术",
+      "evidence_span": "膜法盐湖提锂技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "紫金矿业",
+      "evidence_span": "紫金矿业入主"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "环保标准趋严、龙头企业受益",
+      "evidence_span": "环保标准趋严、龙头企业受益"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "非电领域蓝海",
+      "evidence_span": "享非电领域蓝海"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "大气污染治理",
+        "evidence_span": "成就国内大气污染治理龙头"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水污染治理",
+        "evidence_span": "业务涵盖大气污染治理、水污染治理、固危废处置、生态修复及保护等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "固危废处置",
+        "evidence_span": "业务涵盖大气污染治理、水污染治理、固危废处置、生态修复及保护等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态修复及保护",
+        "evidence_span": "业务涵盖大气污染治理、水污染治理、固危废处置、生态修复及保护等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保设备制造",
+        "evidence_span": "2021年公司营业收入 92%来自于环保设备制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "项目运营",
+        "evidence_span": "7%来自于项目运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "土壤修复",
+        "evidence_span": "土壤修复贡献 1%"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源产业",
+        "evidence_span": "强力开拓新能源产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "储能",
+        "evidence_span": "在储能、材料、新能源装备、清洁能源等领域积极探索"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "材料",
+        "evidence_span": "在储能、材料、新能源装备、清洁能源等领域积极探索"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源装备",
+        "evidence_span": "在储能、材料、新能源装备、清洁能源等领域积极探索"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "清洁能源",
+        "evidence_span": "在储能、材料、新能源装备、清洁能源等领域积极探索"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大气污染治理龙头",
+        "evidence_span": "成就国内大气污染治理龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大的大气污染治理设备研发制造企业",
+        "evidence_span": "全球最大的大气污染治理设备研发制造企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环境综合服务商",
+        "evidence_span": "转型环境综合服务商初见成效"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保设备",
+        "evidence_span": "环保设备贡献超 9 成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "干式超净技术",
+        "evidence_span": "ST龙净干式超净技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏/风电电站 EPC 工程建设及运维",
+        "evidence_span": "光伏/风电电站 EPC 工程建设及运维"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "膜法盐湖提锂技术",
+        "evidence_span": "膜法盐湖提锂技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "干式超净技术",
+        "evidence_span": "ST龙净干式超净技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "碳捕集及碳减排技术",
+        "evidence_span": "碳捕集及碳减排技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "膜法盐湖提锂技术",
+        "evidence_span": "膜法盐湖提锂技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "紫金矿业",
+        "evidence_span": "紫金矿业入主"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "环保标准趋严、龙头企业受益",
+        "evidence_span": "环保标准趋严、龙头企业受益"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "非电领域蓝海",
+        "evidence_span": "享非电领域蓝海"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:06:44"
+}

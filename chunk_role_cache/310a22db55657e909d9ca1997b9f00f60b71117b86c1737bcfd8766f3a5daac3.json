@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "343ee3f5608a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了电动垂直起降航空器在远海石油平台物资运输的具体事件（首次实现、飞行任务），包含明确的时间动态和事件进展，属于事件性内容。但同时，它也涉及低空物流场景应用的知识（如海上物资补给模式），可能对题材本体构建有价值，因此归类为混合候选。"}}

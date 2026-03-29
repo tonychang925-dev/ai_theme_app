@@ -1,0 +1,439 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "轮胎产品的研发",
+      "evidence_span": "公司的主营业务为轮胎产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轮胎产品的生产",
+      "evidence_span": "公司的主营业务为轮胎产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轮胎产品的销售",
+      "evidence_span": "公司的主营业务为轮胎产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "轮胎制造企业",
+      "evidence_span": "双星轮胎作为全球知名的轮胎制造企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "载重全钢子午胎系列",
+      "evidence_span": "公司的轮胎产品主要是载重全钢子午胎系列和乘用半钢子午胎系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乘用半钢子午胎系列",
+      "evidence_span": "公司的轮胎产品主要是载重全钢子午胎系列和乘用半钢子午胎系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡客车专用轮胎",
+      "evidence_span": "开发卡客车专用轮胎、轿车安全轮胎等高端、高差异化技术及产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轿车安全轮胎",
+      "evidence_span": "开发卡客车专用轮胎、轿车安全轮胎等高端、高差异化技术及产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡客车胎",
+      "evidence_span": "主要生产卡客车胎、乘用车胎和巨型矿山胎等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乘用车胎",
+      "evidence_span": "主要生产卡客车胎、乘用车胎和巨型矿山胎等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "巨型矿山胎",
+      "evidence_span": "主要生产卡客车胎、乘用车胎和巨型矿山胎等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "NEWBUSTAR（新双星）品牌轮胎",
+      "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DOUBLESTAR（双星）品牌轮胎",
+      "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DONGFENG（东风）品牌轮胎",
+      "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CROSSLEADER（克劳力达）品牌轮胎",
+      "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "KUMKANG（金刚狼）品牌轮胎",
+      "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "KINBLI（劲倍力）品牌轮胎",
+      "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AOSEN（奥森）品牌轮胎",
+      "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金刚胎体安全轮胎",
+      "evidence_span": "其金刚胎体安全轮胎、超耐磨轮胎、防火轮胎、巨型矿山胎等拥有核心专利技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超耐磨轮胎",
+      "evidence_span": "其金刚胎体安全轮胎、超耐磨轮胎、防火轮胎、巨型矿山胎等拥有核心专利技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防火轮胎",
+      "evidence_span": "其金刚胎体安全轮胎、超耐磨轮胎、防火轮胎、巨型矿山胎等拥有核心专利技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "欧盟标签3A轮胎产品",
+      "evidence_span": "公司自主研发的欧盟标签3A轮胎产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "“狂野大师”系列产品耐刮、耐撞、耐刺扎轮胎",
+      "evidence_span": "“狂野大师”系列产品耐刮、耐撞、耐刺扎轮胎"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "宽基轮胎",
+      "evidence_span": "宽基轮胎"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低滚阻卡客车轮胎",
+      "evidence_span": "低滚阻卡客车轮胎"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军胎",
+      "evidence_span": "军胎、矿山胎、彩色胎等产品在行业内处于领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "矿山胎",
+      "evidence_span": "军胎、矿山胎、彩色胎等产品在行业内处于领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩色胎",
+      "evidence_span": "军胎、矿山胎、彩色胎等产品在行业内处于领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "“稀土金”轮胎",
+      "evidence_span": "公司研发的“稀土金”轮胎和“全防爆”安全轮胎上市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "“全防爆”安全轮胎",
+      "evidence_span": "公司研发的“稀土金”轮胎和“全防爆”安全轮胎上市"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AAA轮胎开发技术",
+      "evidence_span": "AAA轮胎开发技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "防火轮胎技术",
+      "evidence_span": "防火轮胎技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "巨型矿山轮胎技术",
+      "evidence_span": "巨型矿山轮胎技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "稀土金TBR轮胎低滚阻技术",
+      "evidence_span": "稀土金TBR轮胎低滚阻技术/PCR轮胎低滚阻技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PCR轮胎低滚阻技术",
+      "evidence_span": "稀土金TBR轮胎低滚阻技术/PCR轮胎低滚阻技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超强耐载全钢载重技术",
+      "evidence_span": "超强耐载全钢载重技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "宽基胎结构技术",
+      "evidence_span": "宽基胎结构技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "防爆技术",
+      "evidence_span": "防爆技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "绿色轮胎配方技术",
+      "evidence_span": "绿色轮胎配方技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗湿滑安全轮胎技术",
+      "evidence_span": "抗湿滑安全轮胎技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国一汽",
+      "evidence_span": "是中国一汽、中国重汽等几十家国内著名汽车厂家的主要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国重汽",
+      "evidence_span": "是中国一汽、中国重汽等几十家国内著名汽车厂家的主要供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "民族品牌",
+      "evidence_span": "青岛双星民族品牌重新起航"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "轮胎产品的研发",
+        "evidence_span": "公司的主营业务为轮胎产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "轮胎产品的生产",
+        "evidence_span": "公司的主营业务为轮胎产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "轮胎产品的销售",
+        "evidence_span": "公司的主营业务为轮胎产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "轮胎制造企业",
+        "evidence_span": "双星轮胎作为全球知名的轮胎制造企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "载重全钢子午胎系列",
+        "evidence_span": "公司的轮胎产品主要是载重全钢子午胎系列和乘用半钢子午胎系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乘用半钢子午胎系列",
+        "evidence_span": "公司的轮胎产品主要是载重全钢子午胎系列和乘用半钢子午胎系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡客车专用轮胎",
+        "evidence_span": "开发卡客车专用轮胎、轿车安全轮胎等高端、高差异化技术及产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轿车安全轮胎",
+        "evidence_span": "开发卡客车专用轮胎、轿车安全轮胎等高端、高差异化技术及产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡客车胎",
+        "evidence_span": "主要生产卡客车胎、乘用车胎和巨型矿山胎等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乘用车胎",
+        "evidence_span": "主要生产卡客车胎、乘用车胎和巨型矿山胎等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "巨型矿山胎",
+        "evidence_span": "主要生产卡客车胎、乘用车胎和巨型矿山胎等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "NEWBUSTAR（新双星）品牌轮胎",
+        "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DOUBLESTAR（双星）品牌轮胎",
+        "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DONGFENG（东风）品牌轮胎",
+        "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CROSSLEADER（克劳力达）品牌轮胎",
+        "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "KUMKANG（金刚狼）品牌轮胎",
+        "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "KINBLI（劲倍力）品牌轮胎",
+        "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AOSEN（奥森）品牌轮胎",
+        "evidence_span": "旗下拥有NEWBUSTAR（新双星）、DOUBLESTAR（双星）、DONGFENG（东风）、CROSSLEADER（克劳力达）、KUMKANG（金刚狼）、KINBLI（劲倍力）、AOSEN（奥森）等知名轮胎品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金刚胎体安全轮胎",
+        "evidence_span": "其金刚胎体安全轮胎、超耐磨轮胎、防火轮胎、巨型矿山胎等拥有核心专利技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超耐磨轮胎",
+        "evidence_span": "其金刚胎体安全轮胎、超耐磨轮胎、防火轮胎、巨型矿山胎等拥有核心专利技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防火轮胎",
+        "evidence_span": "其金刚胎体安全轮胎、超耐磨轮胎、防火轮胎、巨型矿山胎等拥有核心专利技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "欧盟标签3A轮胎产品",
+        "evidence_span": "公司自主研发的欧盟标签3A轮胎产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "“狂野大师”系列产品耐刮、耐撞、耐刺扎轮胎",
+        "evidence_span": "“狂野大师”系列产品耐刮、耐撞、耐刺扎轮胎"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "宽基轮胎",
+        "evidence_span": "宽基轮胎"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低滚阻卡客车轮胎",
+        "evidence_span": "低滚阻卡客车轮胎"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军胎",
+        "evidence_span": "军胎、矿山胎、彩色胎等产品在行业内处于领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "矿山胎",
+        "evidence_span": "军胎、矿山胎、彩色胎等产品在行业内处于领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩色胎",
+        "evidence_span": "军胎、矿山胎、彩色胎等产品在行业内处于领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "“稀土金”轮胎",
+        "evidence_span": "公司研发的“稀土金”轮胎和“全防爆”安全轮胎上市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "“全防爆”安全轮胎",
+        "evidence_span": "公司研发的“稀土金”轮胎和“全防爆”安全轮胎上市"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AAA轮胎开发技术",
+        "evidence_span": "AAA轮胎开发技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "防火轮胎技术",
+        "evidence_span": "防火轮胎技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "巨型矿山轮胎技术",
+        "evidence_span": "巨型矿山轮胎技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "稀土金TBR轮胎低滚阻技术",
+        "evidence_span": "稀土金TBR轮胎低滚阻技术/PCR轮胎低滚阻技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PCR轮胎低滚阻技术",
+        "evidence_span": "稀土金TBR轮胎低滚阻技术/PCR轮胎低滚阻技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超强耐载全钢载重技术",
+        "evidence_span": "超强耐载全钢载重技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "宽基胎结构技术",
+        "evidence_span": "宽基胎结构技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "防爆技术",
+        "evidence_span": "防爆技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "绿色轮胎配方技术",
+        "evidence_span": "绿色轮胎配方技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗湿滑安全轮胎技术",
+        "evidence_span": "抗湿滑安全轮胎技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国一汽",
+        "evidence_span": "是中国一汽、中国重汽等几十家国内著名汽车厂家的主要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国重汽",
+        "evidence_span": "是中国一汽、中国重汽等几十家国内著名汽车厂家的主要供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "民族品牌",
+        "evidence_span": "青岛双星民族品牌重新起航"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:07:23"
+}

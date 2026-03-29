@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:31:43", "result": {"chunk_id": "40f98ededfe9", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述澳大利亚政府采购“标准”防空导弹的具体事件，包括时间、金额和目的，属于政策发布和采购动态，不包含导弹题材的静态知识。"}}

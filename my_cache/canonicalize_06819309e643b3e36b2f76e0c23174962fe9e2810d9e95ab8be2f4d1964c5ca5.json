@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:54:25", "result": {"span_uid": "7e2970dabb8e", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品价值主张", "stability": "low", "reason": "原文本为口号式表述（“带来全新的智慧出行体验”），缺乏具体事实支撑，无法形成稳定知识块，适合丢弃。"}}

@@ -1,0 +1,399 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车被动安全系统",
+      "evidence_span": "国内领先的汽车被动安全系统一级供应商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车安全带总成",
+      "evidence_span": "公司的传统业务包括汽车安全带总成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特殊座椅安全装置",
+      "evidence_span": "特殊座椅安全装臵主要应用于特殊座椅的行驶安全"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全气囊",
+      "evidence_span": "公司新业务包括安全气囊和方向盘"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "方向盘",
+      "evidence_span": "公司新业务包括安全气囊和方向盘"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车被动安全系统一级供应商",
+      "evidence_span": "国内领先的汽车被动安全系统一级供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车被动安全领域自主品牌上市公司",
+      "evidence_span": "成为国内唯一一家汽车被动安全领域自主品牌的上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车安全带总成",
+      "evidence_span": "公司的传统业务包括汽车安全带总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特殊座椅安全装置",
+      "evidence_span": "特殊座椅安全装臵主要应用于特殊座椅的行驶安全"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全气囊",
+      "evidence_span": "公司新业务包括安全气囊和方向盘"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方向盘",
+      "evidence_span": "公司新业务包括安全气囊和方向盘"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双边预紧安全带",
+      "evidence_span": "公司开始研发双边预紧安全带"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预警限力安全带",
+      "evidence_span": "从普通安全带拓展到预警限力安全带"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动安全带",
+      "evidence_span": "以及之后待拓展的电动安全带"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集成主被动的可逆预紧式安全带总成",
+      "evidence_span": "公司新一代安全带总成，即应用于智能驾驶、集成主被动的可逆预紧式安全带总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预紧限力停止式安全带总成",
+      "evidence_span": "预紧限力停止式安全带总成已经获得德国大众的认可"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机式安全带",
+      "evidence_span": "公司目前正在研发电机式安全带"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能方向盘",
+      "evidence_span": "智能方向盘中添加辅助预热、离手感应等功能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "预张紧限力安全带技术",
+      "evidence_span": "公司不断突破预张紧限力安全带和主动安全带技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "主动安全带技术",
+      "evidence_span": "公司不断突破预张紧限力安全带和主动安全带技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "气囊批量生产技术",
+      "evidence_span": "实现了气囊、方向盘批量生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "方向盘批量生产技术",
+      "evidence_span": "实现了气囊、方向盘批量生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电机式安全带技术",
+      "evidence_span": "电机式安全带技术壁垒在于利用 ADAS 收集危险信号、横摆角信号、车速信号等数据，建立碰撞模型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "主要客户覆盖吉利、奇瑞、长安、长城、一汽、北汽等主流主机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞",
+      "evidence_span": "主要客户覆盖吉利、奇瑞、长安、长城、一汽、北汽等主流主机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安",
+      "evidence_span": "主要客户覆盖吉利、奇瑞、长安、长城、一汽、北汽等主流主机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "主要客户覆盖吉利、奇瑞、长安、长城、一汽、北汽等主流主机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽",
+      "evidence_span": "主要客户覆盖吉利、奇瑞、长安、长城、一汽、北汽等主流主机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽",
+      "evidence_span": "主要客户覆盖吉利、奇瑞、长安、长城、一汽、北汽等主流主机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "IMMI",
+      "evidence_span": "主要客户为IMMI和Q&rsquo;straint"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Q'straint",
+      "evidence_span": "主要客户为IMMI和Q&rsquo;straint"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用五菱",
+      "evidence_span": "目前公司已与吉利、上汽通用五菱、奇瑞、北汽福田、合众以及威马等客户进行项目开发合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽福田",
+      "evidence_span": "目前公司已与吉利、上汽通用五菱、奇瑞、北汽福田、合众以及威马等客户进行项目开发合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合众",
+      "evidence_span": "目前公司已与吉利、上汽通用五菱、奇瑞、北汽福田、合众以及威马等客户进行项目开发合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "威马",
+      "evidence_span": "目前公司已与吉利、上汽通用五菱、奇瑞、北汽福田、合众以及威马等客户进行项目开发合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "五菱宏光MINI",
+      "evidence_span": "目前已经为五菱宏光MINI、奇瑞QQ冰淇淋车型配套供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞QQ冰淇淋",
+      "evidence_span": "目前已经为五菱宏光MINI、奇瑞QQ冰淇淋车型配套供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国大众",
+      "evidence_span": "预紧卷收器产品得到德国大众认可"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "优质的汽车零部件企业迎来了“国产替代”机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车被动安全系统",
+        "evidence_span": "国内领先的汽车被动安全系统一级供应商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车安全带总成",
+        "evidence_span": "公司的传统业务包括汽车安全带总成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特殊座椅安全装置",
+        "evidence_span": "特殊座椅安全装臵主要应用于特殊座椅的行驶安全"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "安全气囊",
+        "evidence_span": "公司新业务包括安全气囊和方向盘"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "方向盘",
+        "evidence_span": "公司新业务包括安全气囊和方向盘"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车被动安全系统一级供应商",
+        "evidence_span": "国内领先的汽车被动安全系统一级供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车被动安全领域自主品牌上市公司",
+        "evidence_span": "成为国内唯一一家汽车被动安全领域自主品牌的上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车安全带总成",
+        "evidence_span": "公司的传统业务包括汽车安全带总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特殊座椅安全装置",
+        "evidence_span": "特殊座椅安全装臵主要应用于特殊座椅的行驶安全"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全气囊",
+        "evidence_span": "公司新业务包括安全气囊和方向盘"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方向盘",
+        "evidence_span": "公司新业务包括安全气囊和方向盘"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双边预紧安全带",
+        "evidence_span": "公司开始研发双边预紧安全带"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预警限力安全带",
+        "evidence_span": "从普通安全带拓展到预警限力安全带"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动安全带",
+        "evidence_span": "以及之后待拓展的电动安全带"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集成主被动的可逆预紧式安全带总成",
+        "evidence_span": "公司新一代安全带总成，即应用于智能驾驶、集成主被动的可逆预紧式安全带总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预紧限力停止式安全带总成",
+        "evidence_span": "预紧限力停止式安全带总成已经获得德国大众的认可"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机式安全带",
+        "evidence_span": "公司目前正在研发电机式安全带"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能方向盘",
+        "evidence_span": "智能方向盘中添加辅助预热、离手感应等功能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "预张紧限力安全带技术",
+        "evidence_span": "公司不断突破预张紧限力安全带和主动安全带技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "主动安全带技术",
+        "evidence_span": "公司不断突破预张紧限力安全带和主动安全带技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "气囊批量生产技术",
+        "evidence_span": "实现了气囊、方向盘批量生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "方向盘批量生产技术",
+        "evidence_span": "实现了气囊、方向盘批量生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电机式安全带技术",
+        "evidence_span": "电机式安全带技术壁垒在于利用 ADAS 收集危险信号、横摆角信号、车速信号等数据，建立碰撞模型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "主要客户覆盖吉利、奇瑞、长安、长城、一汽、北汽等主流主机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞",
+        "evidence_span": "主要客户覆盖吉利、奇瑞、长安、长城、一汽、北汽等主流主机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安",
+        "evidence_span": "主要客户覆盖吉利、奇瑞、长安、长城、一汽、北汽等主流主机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "主要客户覆盖吉利、奇瑞、长安、长城、一汽、北汽等主流主机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽",
+        "evidence_span": "主要客户覆盖吉利、奇瑞、长安、长城、一汽、北汽等主流主机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽",
+        "evidence_span": "主要客户覆盖吉利、奇瑞、长安、长城、一汽、北汽等主流主机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "IMMI",
+        "evidence_span": "主要客户为IMMI和Q&rsquo;straint"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Q'straint",
+        "evidence_span": "主要客户为IMMI和Q&rsquo;straint"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用五菱",
+        "evidence_span": "目前公司已与吉利、上汽通用五菱、奇瑞、北汽福田、合众以及威马等客户进行项目开发合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽福田",
+        "evidence_span": "目前公司已与吉利、上汽通用五菱、奇瑞、北汽福田、合众以及威马等客户进行项目开发合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合众",
+        "evidence_span": "目前公司已与吉利、上汽通用五菱、奇瑞、北汽福田、合众以及威马等客户进行项目开发合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "威马",
+        "evidence_span": "目前公司已与吉利、上汽通用五菱、奇瑞、北汽福田、合众以及威马等客户进行项目开发合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "五菱宏光MINI",
+        "evidence_span": "目前已经为五菱宏光MINI、奇瑞QQ冰淇淋车型配套供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞QQ冰淇淋",
+        "evidence_span": "目前已经为五菱宏光MINI、奇瑞QQ冰淇淋车型配套供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国大众",
+        "evidence_span": "预紧卷收器产品得到德国大众认可"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "优质的汽车零部件企业迎来了“国产替代”机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:39:41"
+}

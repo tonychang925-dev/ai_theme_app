@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "互联网数字阅读平台服务",
+      "evidence_span": "公司主营业务为互联网数字阅读平台服务、版权产品等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "版权产品",
+      "evidence_span": "公司主营业务为互联网数字阅读平台服务、版权产品等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字阅读平台",
+      "evidence_span": "公司运营的数字阅读平台已积累庞大的用户规模"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字阅读行业领先者",
+      "evidence_span": "逐步成为数字阅读行业的领先者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字阅读产品",
+      "evidence_span": "面向互联网用户发行数字阅读产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商业化增值服务",
+      "evidence_span": "为各类客户提供多样的商业化增值服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IP衍生收益",
+      "evidence_span": "向阅读、影视、动漫等各类文化娱乐类客户输出其内容价值和IP价值，从而获取版权及衍生收益"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字图书",
+      "evidence_span": "对数字图书内容进行编辑制作和聚合管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有声内容",
+      "evidence_span": "《原则：应对变化中的世界秩序》、《逆龄大脑：保持大脑年轻敏锐的新科学》、《纳瓦尔宝典》等10余万小时有声内容"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "原创网络文学作品",
+      "evidence_span": "公司原创网络文学作品《大明第一狂士》入选中国小说学会“2022年度好小说”榜单"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动漫",
+      "evidence_span": "公司IP改编的动漫《独步逍遥》、《绝世武魂》、《逆天至尊》、《元龙》等在腾讯多个动漫平台同步更新"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "短剧",
+      "evidence_span": "由公司IP改编或原创的短剧作品《爱在午夜降临前》、《ido，跟我恋爱吧》、《我的西装新娘》等多部短剧作品陆续在抖音上线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "个性化推荐",
+      "evidence_span": "数字阅读平台已经实现了个性化推荐、智能审核和TTS等人工智能相关的产品和服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能审核",
+      "evidence_span": "数字阅读平台已经实现了个性化推荐、智能审核和TTS等人工智能相关的产品和服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TTS系统",
+      "evidence_span": "数字阅读平台已经实现了个性化推荐、智能审核和TTS等人工智能相关的产品和服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能技术",
+      "evidence_span": "将人工智能技术融入公司数字阅读平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "互联网用户",
+      "evidence_span": "面向互联网用户发行数字阅读产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "文化娱乐类客户",
+      "evidence_span": "向阅读、影视、动漫等各类文化娱乐类客户输出其内容价值和IP价值"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "出版公司",
+      "evidence_span": "已经和上千家出版公司、文学网站等建立了良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "文学网站",
+      "evidence_span": "已经和上千家出版公司、文学网站等建立了良好合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字阅读",
+      "evidence_span": "公司持续专注于数字阅读领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "AIGC",
+      "evidence_span": "加大人工智能技术研发投入，推动AIGC在数字阅读平台的深化应用"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "互联网数字阅读平台服务",
+        "evidence_span": "公司主营业务为互联网数字阅读平台服务、版权产品等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "版权产品",
+        "evidence_span": "公司主营业务为互联网数字阅读平台服务、版权产品等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字阅读平台",
+        "evidence_span": "公司运营的数字阅读平台已积累庞大的用户规模"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字阅读行业领先者",
+        "evidence_span": "逐步成为数字阅读行业的领先者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字阅读产品",
+        "evidence_span": "面向互联网用户发行数字阅读产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商业化增值服务",
+        "evidence_span": "为各类客户提供多样的商业化增值服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IP衍生收益",
+        "evidence_span": "向阅读、影视、动漫等各类文化娱乐类客户输出其内容价值和IP价值，从而获取版权及衍生收益"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字图书",
+        "evidence_span": "对数字图书内容进行编辑制作和聚合管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有声内容",
+        "evidence_span": "《原则：应对变化中的世界秩序》、《逆龄大脑：保持大脑年轻敏锐的新科学》、《纳瓦尔宝典》等10余万小时有声内容"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "原创网络文学作品",
+        "evidence_span": "公司原创网络文学作品《大明第一狂士》入选中国小说学会“2022年度好小说”榜单"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动漫",
+        "evidence_span": "公司IP改编的动漫《独步逍遥》、《绝世武魂》、《逆天至尊》、《元龙》等在腾讯多个动漫平台同步更新"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "短剧",
+        "evidence_span": "由公司IP改编或原创的短剧作品《爱在午夜降临前》、《ido，跟我恋爱吧》、《我的西装新娘》等多部短剧作品陆续在抖音上线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "个性化推荐",
+        "evidence_span": "数字阅读平台已经实现了个性化推荐、智能审核和TTS等人工智能相关的产品和服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能审核",
+        "evidence_span": "数字阅读平台已经实现了个性化推荐、智能审核和TTS等人工智能相关的产品和服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TTS系统",
+        "evidence_span": "数字阅读平台已经实现了个性化推荐、智能审核和TTS等人工智能相关的产品和服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能技术",
+        "evidence_span": "将人工智能技术融入公司数字阅读平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "互联网用户",
+        "evidence_span": "面向互联网用户发行数字阅读产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "文化娱乐类客户",
+        "evidence_span": "向阅读、影视、动漫等各类文化娱乐类客户输出其内容价值和IP价值"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "出版公司",
+        "evidence_span": "已经和上千家出版公司、文学网站等建立了良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "文学网站",
+        "evidence_span": "已经和上千家出版公司、文学网站等建立了良好合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字阅读",
+        "evidence_span": "公司持续专注于数字阅读领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "AIGC",
+        "evidence_span": "加大人工智能技术研发投入，推动AIGC在数字阅读平台的深化应用"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:31:41"
+}

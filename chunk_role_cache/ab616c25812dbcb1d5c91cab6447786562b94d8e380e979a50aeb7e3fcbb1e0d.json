@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "274c3332061e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落混合了事件（美国修订EAR、添加实体清单）和知识（列举受影响的半导体设备、材料、EDA公司领域，提供了产业链结构信息），边界不清，但包含值得沉淀的实体清单影响范围知识。"}}

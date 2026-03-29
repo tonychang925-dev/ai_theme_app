@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "康复医疗器械研发",
+      "evidence_span": "致力于康复医疗器械研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "康复医疗器械生产",
+      "evidence_span": "致力于康复医疗器械生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "康复医疗器械销售",
+      "evidence_span": "致力于康复医疗器械销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "康复医疗器械服务",
+      "evidence_span": "致力于康复医疗器械服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "康复器械领域的综合性产品制造和服务供应商",
+      "evidence_span": "公司作为康复器械领域的综合性产品制造和服务供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "康复医疗器械行业内的研发引领型企业",
+      "evidence_span": "作为中国康复医疗器械行业内的研发引领型企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "康复医疗器械供应商",
+      "evidence_span": "公司作为康复医疗行业内康复医疗器械供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "康复医疗服务方案提供商",
+      "evidence_span": "公司作为康复医疗行业内康复医疗服务方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "康复医疗器械产品",
+      "evidence_span": "提供康复医疗器械产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一体化临床康复解决方案",
+      "evidence_span": "提供一体化临床康复解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专业技术支持服务",
+      "evidence_span": "提供专业技术支持服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全领域的康复医疗器械产品",
+      "evidence_span": "提供全领域的康复医疗器械产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合物理治疗系统",
+      "evidence_span": "推出综合物理治疗系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物反馈助力电刺激仪",
+      "evidence_span": "推出生物反馈助力电刺激仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能关节运动功能训练组合",
+      "evidence_span": "推出智能关节运动功能训练组合"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盆底功能磁刺激治疗仪",
+      "evidence_span": "推出盆底功能磁刺激治疗仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压电式冲击波治疗仪",
+      "evidence_span": "推出压电式冲击波治疗仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "间歇充气加压防治系统",
+      "evidence_span": "推出间歇充气加压防治系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医用红外热像仪",
+      "evidence_span": "推出医用红外热像仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能矫正镜",
+      "evidence_span": "推出智能矫正镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天轨步态减重平衡训练系统",
+      "evidence_span": "推出天轨步态减重平衡训练系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ICU重症康复解决方案",
+      "evidence_span": "制定ICU重症康复解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "呼吸康复解决方案",
+      "evidence_span": "制定呼吸康复解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "平衡评估训练系统",
+      "evidence_span": "平衡评估训练系统入选第八批优秀国产医疗设备产品目录"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "四肢联动康复系统",
+      "evidence_span": "四肢联动康复系统入选第八批优秀国产医疗设备产品目录"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "认知障碍康复评估训练系统",
+      "evidence_span": "认知障碍康复评估训练系统入选第八批优秀国产医疗设备产品目录"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "康复医疗设备工业互联网云平台",
+      "evidence_span": "康复医疗设备工业互联网云平台通过河南省专家团考核验收"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能传感器技术",
+      "evidence_span": "利用智能传感器技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网技术",
+      "evidence_span": "利用物联网技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "肌骨超声冲击波技术",
+      "evidence_span": "研发出了肌骨超声冲击波技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "聚焦式冲击波技术",
+      "evidence_span": "完成聚焦式冲击波技术的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新型磁疗康复设备关键技术",
+      "evidence_span": "在研项目为新型磁疗康复设备关键技术及产业化"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医疗机构",
+      "evidence_span": "主要客户为医疗机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "养老机构",
+      "evidence_span": "为养老机构提供系列康复产品及整体解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "残疾人康复中心",
+      "evidence_span": "为残疾人康复中心提供系列康复产品及整体解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福利院",
+      "evidence_span": "为福利院提供系列康复产品及整体解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "教育系统",
+      "evidence_span": "为教育系统提供系列康复产品及整体解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家庭",
+      "evidence_span": "为家庭提供系列康复产品及整体解决方案"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "康复养老行业",
+      "evidence_span": "把握康复养老行业机遇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "康养基建",
+      "evidence_span": "康养基建浪潮初涌"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "康复政策支持",
+      "evidence_span": "康复政策支持下公司长期发展潜力"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "康复政策红利",
+      "evidence_span": "顺应康复政策红利"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "康复医疗器械研发",
+        "evidence_span": "致力于康复医疗器械研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "康复医疗器械生产",
+        "evidence_span": "致力于康复医疗器械生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "康复医疗器械销售",
+        "evidence_span": "致力于康复医疗器械销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "康复医疗器械服务",
+        "evidence_span": "致力于康复医疗器械服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "康复器械领域的综合性产品制造和服务供应商",
+        "evidence_span": "公司作为康复器械领域的综合性产品制造和服务供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "康复医疗器械行业内的研发引领型企业",
+        "evidence_span": "作为中国康复医疗器械行业内的研发引领型企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "康复医疗器械供应商",
+        "evidence_span": "公司作为康复医疗行业内康复医疗器械供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "康复医疗服务方案提供商",
+        "evidence_span": "公司作为康复医疗行业内康复医疗服务方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "康复医疗器械产品",
+        "evidence_span": "提供康复医疗器械产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一体化临床康复解决方案",
+        "evidence_span": "提供一体化临床康复解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专业技术支持服务",
+        "evidence_span": "提供专业技术支持服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全领域的康复医疗器械产品",
+        "evidence_span": "提供全领域的康复医疗器械产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合物理治疗系统",
+        "evidence_span": "推出综合物理治疗系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物反馈助力电刺激仪",
+        "evidence_span": "推出生物反馈助力电刺激仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能关节运动功能训练组合",
+        "evidence_span": "推出智能关节运动功能训练组合"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盆底功能磁刺激治疗仪",
+        "evidence_span": "推出盆底功能磁刺激治疗仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压电式冲击波治疗仪",
+        "evidence_span": "推出压电式冲击波治疗仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "间歇充气加压防治系统",
+        "evidence_span": "推出间歇充气加压防治系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医用红外热像仪",
+        "evidence_span": "推出医用红外热像仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能矫正镜",
+        "evidence_span": "推出智能矫正镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天轨步态减重平衡训练系统",
+        "evidence_span": "推出天轨步态减重平衡训练系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ICU重症康复解决方案",
+        "evidence_span": "制定ICU重症康复解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "呼吸康复解决方案",
+        "evidence_span": "制定呼吸康复解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "平衡评估训练系统",
+        "evidence_span": "平衡评估训练系统入选第八批优秀国产医疗设备产品目录"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "四肢联动康复系统",
+        "evidence_span": "四肢联动康复系统入选第八批优秀国产医疗设备产品目录"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "认知障碍康复评估训练系统",
+        "evidence_span": "认知障碍康复评估训练系统入选第八批优秀国产医疗设备产品目录"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "康复医疗设备工业互联网云平台",
+        "evidence_span": "康复医疗设备工业互联网云平台通过河南省专家团考核验收"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能传感器技术",
+        "evidence_span": "利用智能传感器技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网技术",
+        "evidence_span": "利用物联网技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "肌骨超声冲击波技术",
+        "evidence_span": "研发出了肌骨超声冲击波技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "聚焦式冲击波技术",
+        "evidence_span": "完成聚焦式冲击波技术的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新型磁疗康复设备关键技术",
+        "evidence_span": "在研项目为新型磁疗康复设备关键技术及产业化"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医疗机构",
+        "evidence_span": "主要客户为医疗机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "养老机构",
+        "evidence_span": "为养老机构提供系列康复产品及整体解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "残疾人康复中心",
+        "evidence_span": "为残疾人康复中心提供系列康复产品及整体解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福利院",
+        "evidence_span": "为福利院提供系列康复产品及整体解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "教育系统",
+        "evidence_span": "为教育系统提供系列康复产品及整体解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家庭",
+        "evidence_span": "为家庭提供系列康复产品及整体解决方案"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "康复养老行业",
+        "evidence_span": "把握康复养老行业机遇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "康养基建",
+        "evidence_span": "康养基建浪潮初涌"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "康复政策支持",
+        "evidence_span": "康复政策支持下公司长期发展潜力"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "康复政策红利",
+        "evidence_span": "顺应康复政策红利"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:22:41"
+}

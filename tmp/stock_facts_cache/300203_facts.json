@@ -1,0 +1,314 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "仪器",
+      "evidence_span": "仪器、相关软件及耗材"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "相关软件",
+      "evidence_span": "仪器、相关软件及耗材"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "耗材",
+      "evidence_span": "仪器、相关软件及耗材"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环境治理装备",
+      "evidence_span": "环境治理装备及工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程",
+      "evidence_span": "环境治理装备及工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运营",
+      "evidence_span": "运营、检测、咨询服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "检测",
+      "evidence_span": "运营、检测、咨询服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "咨询服务",
+      "evidence_span": "运营、检测、咨询服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内高端分析仪器的领军企业",
+      "evidence_span": "国内高端分析仪器的领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "平台型科学仪器企业",
+      "evidence_span": "公司现已成为平台型科学仪器企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产仪器先行者",
+      "evidence_span": "国产仪器先行者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仪器",
+      "evidence_span": "仪器、相关软件及耗材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "相关软件及耗材",
+      "evidence_span": "仪器、相关软件及耗材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环境治理装备及工程",
+      "evidence_span": "环境治理装备及工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运营、检测、咨询服务",
+      "evidence_span": "运营、检测、咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "便携式GC-MS",
+      "evidence_span": "推出了国内首台商用便携式GC-MS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ICP-MS",
+      "evidence_span": "推出ICP-MS率先实现国产替代"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三重四极杆质谱联用仪",
+      "evidence_span": "推出国内首台商用三重四极杆质谱联用仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "质谱仪",
+      "evidence_span": "质谱仪领域主攻ICP-MS、GC/LC-MS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光谱仪",
+      "evidence_span": "质谱、光谱、气相色谱、样品前处理等细分仪器领域广泛布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气相色谱仪",
+      "evidence_span": "质谱、光谱、气相色谱、样品前处理等细分仪器领域广泛布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "样品前处理仪器",
+      "evidence_span": "质谱、光谱、气相色谱、样品前处理等细分仪器领域广泛布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GC-MS",
+      "evidence_span": "质谱仪领域主攻ICP-MS、GC/LC-MS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LC-MS",
+      "evidence_span": "质谱仪领域主攻ICP-MS、GC/LC-MS"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ICP-MS技术",
+      "evidence_span": "推出ICP-MS率先实现国产替代"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "GC-MS技术",
+      "evidence_span": "推出了国内首台商用便携式GC-MS"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三重四极杆质谱联用技术",
+      "evidence_span": "推出国内首台商用三重四极杆质谱联用仪"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "四极杆质量分析器自研",
+      "evidence_span": "实现三大主要质量分析器（四极杆、飞行时间、离子阱）的自研"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "飞行时间质量分析器自研",
+      "evidence_span": "实现三大主要质量分析器（四极杆、飞行时间、离子阱）的自研"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "离子阱质量分析器自研",
+      "evidence_span": "实现三大主要质量分析器（四极杆、飞行时间、离子阱）的自研"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三重四极杆串联质谱技术",
+      "evidence_span": "三重四极杆、四极杆-飞行时间等串联质谱仪的研发突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "四极杆-飞行时间串联质谱技术",
+      "evidence_span": "三重四极杆、四极杆-飞行时间等串联质谱仪的研发突破"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "推出ICP-MS率先实现国产替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "仪器、相关软件及耗材",
+        "evidence_span": "仪器、相关软件及耗材"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环境治理装备及工程",
+        "evidence_span": "环境治理装备及工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "运营、检测、咨询服务",
+        "evidence_span": "运营、检测、咨询服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内高端分析仪器的领军企业",
+        "evidence_span": "国内高端分析仪器的领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "平台型科学仪器企业",
+        "evidence_span": "公司现已成为平台型科学仪器企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产仪器先行者",
+        "evidence_span": "国产仪器先行者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仪器",
+        "evidence_span": "仪器、相关软件及耗材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "相关软件及耗材",
+        "evidence_span": "仪器、相关软件及耗材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环境治理装备及工程",
+        "evidence_span": "环境治理装备及工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运营、检测、咨询服务",
+        "evidence_span": "运营、检测、咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "便携式GC-MS",
+        "evidence_span": "推出了国内首台商用便携式GC-MS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ICP-MS",
+        "evidence_span": "推出ICP-MS率先实现国产替代"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三重四极杆质谱联用仪",
+        "evidence_span": "推出国内首台商用三重四极杆质谱联用仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "质谱仪",
+        "evidence_span": "质谱仪领域主攻ICP-MS、GC/LC-MS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光谱仪",
+        "evidence_span": "质谱、光谱、气相色谱、样品前处理等细分仪器领域广泛布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气相色谱仪",
+        "evidence_span": "质谱、光谱、气相色谱、样品前处理等细分仪器领域广泛布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "样品前处理仪器",
+        "evidence_span": "质谱、光谱、气相色谱、样品前处理等细分仪器领域广泛布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GC-MS",
+        "evidence_span": "质谱仪领域主攻ICP-MS、GC/LC-MS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LC-MS",
+        "evidence_span": "质谱仪领域主攻ICP-MS、GC/LC-MS"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ICP-MS技术",
+        "evidence_span": "推出ICP-MS率先实现国产替代"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "GC-MS技术",
+        "evidence_span": "推出了国内首台商用便携式GC-MS"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三重四极杆质谱联用技术",
+        "evidence_span": "推出国内首台商用三重四极杆质谱联用仪"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "四极杆质量分析器自研",
+        "evidence_span": "实现三大主要质量分析器（四极杆、飞行时间、离子阱）的自研"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "飞行时间质量分析器自研",
+        "evidence_span": "实现三大主要质量分析器（四极杆、飞行时间、离子阱）的自研"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "离子阱质量分析器自研",
+        "evidence_span": "实现三大主要质量分析器（四极杆、飞行时间、离子阱）的自研"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三重四极杆串联质谱技术",
+        "evidence_span": "三重四极杆、四极杆-飞行时间等串联质谱仪的研发突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "四极杆-飞行时间串联质谱技术",
+        "evidence_span": "三重四极杆、四极杆-飞行时间等串联质谱仪的研发突破"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "推出ICP-MS率先实现国产替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:11:25"
+}

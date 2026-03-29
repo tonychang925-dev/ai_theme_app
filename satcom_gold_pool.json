@@ -1,0 +1,375 @@
+{
+  "subject_key": "9019807",
+  "subject_name": "卫星互联网",
+  "version": "2026-03-28",
+  "direction_groups": [
+    {
+      "group_name": "航天国家队",
+      "directions": [
+        {
+          "direction_name": "航天科工集团",
+          "stocks": [
+            {"stock_id": "600501", "stock_name": "航天晨光"},
+            {"stock_id": "000547", "stock_name": "航天发展"},
+            {"stock_id": "002025", "stock_name": "航天电器"},
+            {"stock_id": "600805", "stock_name": "航天长峰"},
+            {"stock_id": "000901", "stock_name": "航天科技"}
+          ]
+        },
+        {
+          "direction_name": "航天科技集团",
+          "stocks": [
+            {"stock_id": "600151", "stock_name": "航天机电"},
+            {"stock_id": "603698", "stock_name": "航天工程"},
+            {"stock_id": "600118", "stock_name": "中国卫星"},
+            {"stock_id": "601698", "stock_name": "中国卫通"},
+            {"stock_id": "600343", "stock_name": "航天动力"},
+            {"stock_id": "003009", "stock_name": "中天火箭"},
+            {"stock_id": "600879", "stock_name": "航天电子"},
+            {"stock_id": "300455", "stock_name": "航天智装"}
+          ]
+        }
+      ]
+    },
+    {
+      "group_name": "卫星本体",
+      "directions": [
+        {
+          "direction_name": "卫星分系统",
+          "stocks": [
+            {"stock_id": "300446", "stock_name": "航天智造"},
+            {"stock_id": "300342", "stock_name": "天银机电"},
+            {"stock_id": "002935", "stock_name": "天奥电子"},
+            {"stock_id": "301117", "stock_name": "佳缘科技"}
+          ]
+        },
+        {
+          "direction_name": "卫星载荷",
+          "stocks": [
+            {"stock_id": "600879", "stock_name": "航天电子"},
+            {"stock_id": "688270", "stock_name": "臻镭科技"},
+            {"stock_id": "688387", "stock_name": "信科移动"},
+            {"stock_id": "300762", "stock_name": "上海瀚讯"},
+            {"stock_id": "001270", "stock_name": "*ST铖昌"},
+            {"stock_id": "002338", "stock_name": "奥普光电"},
+            {"stock_id": "688523", "stock_name": "航天环宇"},
+            {"stock_id": "600198", "stock_name": "大唐电信"}
+          ]
+        },
+        {
+          "direction_name": "部件与材料",
+           "stocks": [
+            {"stock_id": "300699", "stock_name": "光威复材"},
+            {"stock_id": "002046", "stock_name": "国机精工"},
+            {"stock_id": "600456", "stock_name": "宝钛股份"},
+            {"stock_id": "002149", "stock_name": "西部材料"},
+            {"stock_id": "688122", "stock_name": "西部超导"},
+            {"stock_id": "688333", "stock_name": "铂力特"},
+            {"stock_id": "605598", "stock_name": "上海港湾"},
+            {"stock_id": "001208", "stock_name": "华菱线缆"},
+            {"stock_id": "301517", "stock_name": "陕西华达"},
+            {"stock_id": "002361", "stock_name": "神剑股份"},
+            {"stock_id": "000565", "stock_name": "渝三峡A"},
+            {"stock_id": "688818", "stock_name": "电科蓝天"}
+          ]
+        },
+        {
+          "direction_name": "卫星制造",
+          "stocks": [
+            {"stock_id": "600118", "stock_name": "中国卫星"},
+            {"stock_id": "002519", "stock_name": "银河电子"},
+            {"stock_id": "603131", "stock_name": "上海沪工"}
+          ]
+        },
+        {
+          "direction_name": "卫星检测",
+          "stocks": [
+            {"stock_id": "301306", "stock_name": "西测测试"},
+            {"stock_id": "300416", "stock_name": "苏试试验"},
+            {"stock_id": "002985", "stock_name": "北摩高科"},
+            {"stock_id": "300455", "stock_name": "航天智装"},
+            {"stock_id": "300887", "stock_name": "谱尼测试"}
+          ]
+        }
+      ]
+    },
+    {
+      "group_name": "卫星发射",
+      "directions": [
+        {
+          "direction_name": "火箭动力",
+          "stocks": [
+            {"stock_id": "600343", "stock_name": "航天动力"},
+            {"stock_id": "605090", "stock_name": "九丰能源"},
+            {"stock_id": "688102", "stock_name": "斯瑞新材"},
+            {"stock_id": "600501", "stock_name": "航天晨光"},
+            {"stock_id": "300228", "stock_name": "富瑞特装"},
+            {"stock_id": "002046", "stock_name": "国机精工"},
+            {"stock_id": "688543", "stock_name": "国科军工"},
+            {"stock_id": "603017", "stock_name": "中衡设计"},
+            {"stock_id": "603278", "stock_name": "大业股份"}
+          ]
+        },
+        {
+          "direction_name": "火箭部件",
+          "stocks": [
+            {"stock_id": "300581", "stock_name": "晨曦航空"},
+            {"stock_id": "300456", "stock_name": "赛微电子"},
+            {"stock_id": "002829", "stock_name": "星网宇达"},
+            {"stock_id": "002179", "stock_name": "中航光电"},
+            {"stock_id": "002025", "stock_name": "航天电器"},
+            {"stock_id": "000733", "stock_name": "振华科技"},
+            {"stock_id": "300053", "stock_name": "航宇微"},
+            {"stock_id": "300447", "stock_name": "全信股份"},
+            {"stock_id": "002560", "stock_name": "通达股份"},
+            {"stock_id": "300593", "stock_name": "新雷能"},
+            {"stock_id": "002297", "stock_name": "博云新材"},
+            {"stock_id": "300034", "stock_name": "钢研高纳"},
+            {"stock_id": "600592", "stock_name": "龙溪股份"},
+            {"stock_id": "300780", "stock_name": "德恩精工"},
+            {"stock_id": "301232", "stock_name": "飞沃科技"},
+            {"stock_id": "603601", "stock_name": "再升科技"},
+            {"stock_id": "300265", "stock_name": "通光线缆"},
+            {"stock_id": "001268", "stock_name": "联合精密"},
+            {"stock_id": "002201", "stock_name": "九鼎新材"},
+            {"stock_id": "002471", "stock_name": "中超控股"},
+            {"stock_id": "600765", "stock_name": "中航重机"},
+            {"stock_id": "001400", "stock_name": "江顺科技"},
+            {"stock_id": "603305", "stock_name": "旭升集团"}
+          ]
+        },
+        {
+          "direction_name": "发射服务",
+          "stocks": [
+            {"stock_id": "000547", "stock_name": "航天发展"},
+            {"stock_id": "002202", "stock_name": "金风科技"},
+            {"stock_id": "688539", "stock_name": "高华科技"},
+            {"stock_id": "603809", "stock_name": "豪能股份"},
+            {"stock_id": "301136", "stock_name": "招标股份"},
+            {"stock_id": "300900", "stock_name": "广联航空"},
+            {"stock_id": "000901", "stock_name": "航天科技"},
+            {"stock_id": "300710", "stock_name": "万隆光电"},
+            {"stock_id": "601106", "stock_name": "中国一重"},
+            {"stock_id": "600736", "stock_name": "苏州高新"},
+            {"stock_id": "000039", "stock_name": "中集集团"}
+          ]
+        },
+        {
+          "direction_name": "电磁轨道",
+          "stocks": [
+            {"stock_id": "600363", "stock_name": "联创光电"},
+            {"stock_id": "600416", "stock_name": "湘电股份"},
+            {"stock_id": "002735", "stock_name": "王子新材"},
+            {"stock_id": "000733", "stock_name": "振华科技"},
+            {"stock_id": "002484", "stock_name": "江海股份"},
+            {"stock_id": "001400", "stock_name": "江顺科技"}
+          ]
+        }
+      ]
+    },
+    {
+      "group_name": "卫星运维",
+      "directions": [
+        {
+          "direction_name": "卫星运营",
+          "stocks": [
+            {"stock_id": "601698", "stock_name": "中国卫通"},
+            {"stock_id": "688568", "stock_name": "中科星图"},
+            {"stock_id": "688066", "stock_name": "航天宏图"},
+            {"stock_id": "002115", "stock_name": "三维通信"}
+          ]
+        },
+        {
+          "direction_name": "遥感监测",
+          "stocks": [
+            {"stock_id": "688066", "stock_name": "航天宏图"},
+            {"stock_id": "300053", "stock_name": "航宇微"},
+            {"stock_id": "688568", "stock_name": "中科星图"},
+            {"stock_id": "002413", "stock_name": "雷科防务"},
+            {"stock_id": "600266", "stock_name": "城建发展"}
+          ]
+        },
+        {
+          "direction_name": "深空开发",
+          "stocks": [
+            {"stock_id": "002565", "stock_name": "顺灏股份"},
+            {"stock_id": "300045", "stock_name": "华力创通"}
+          ]
+        }
+      ]
+    },
+    {
+      "group_name": "地面设备",
+      "directions": [
+        {
+          "direction_name": "核心网",
+          "stocks": [
+            {"stock_id": "688418", "stock_name": "震有科技"}
+          ]
+        },
+        {
+          "direction_name": "天线",
+          "stocks": [
+            {"stock_id": "002792", "stock_name": "通宇通讯"},
+            {"stock_id": "300322", "stock_name": "硕贝德"},
+            {"stock_id": "002446", "stock_name": "盛路通信"},
+            {"stock_id": "300571", "stock_name": "平治信息"},
+            {"stock_id": "002796", "stock_name": "世嘉科技"},
+            {"stock_id": "300136", "stock_name": "信维通信"}
+          ]
+        },
+        {
+          "direction_name": "信号发射",
+          "stocks": [
+            {"stock_id": "002977", "stock_name": "天箭科技"}
+          ]
+        },
+        {
+          "direction_name": "卫星测控",
+          "stocks": [
+            {"stock_id": "688568", "stock_name": "中科星图"},
+            {"stock_id": "600345", "stock_name": "长江通信"}
+          ]
+        },
+        {
+          "direction_name": "通信芯片",
+          "stocks": [
+            {"stock_id": "300045", "stock_name": "华力创通"}
+          ]
+        },
+        {
+          "direction_name": "导航芯片",
+          "stocks": [
+            {"stock_id": "002151", "stock_name": "北斗星通"},
+            {"stock_id": "002465", "stock_name": "海格通信"}
+          ]
+        }
+      ]
+    },
+    {
+      "group_name": "商业航天",
+      "directions": [
+        {
+          "direction_name": "垣信卫星",
+          "stocks": [
+            {"stock_id": "300762", "stock_name": "上海瀚讯"},
+            {"stock_id": "601728", "stock_name": "中国电信"},
+            {"stock_id": "600637", "stock_name": "东方明珠"},
+            {"stock_id": "688225", "stock_name": "亚信安全"},
+            {"stock_id": "002519", "stock_name": "银河电子"},
+            {"stock_id": "600345", "stock_name": "长江通信"}
+          ]
+        },
+        {
+          "direction_name": "蓝箭航天",
+          "stocks": [
+            {"stock_id": "002202", "stock_name": "金风科技"},
+            {"stock_id": "600783", "stock_name": "鲁信创投"},
+            {"stock_id": "600895", "stock_name": "张江高科"},
+            {"stock_id": "688102", "stock_name": "斯瑞新材"},
+            {"stock_id": "688333", "stock_name": "铂力特"},
+            {"stock_id": "688539", "stock_name": "高华科技"},
+            {"stock_id": "301005", "stock_name": "超捷股份"},
+            {"stock_id": "002025", "stock_name": "航天电器"},
+            {"stock_id": "002046", "stock_name": "国机精工"},
+            {"stock_id": "002792", "stock_name": "通宇通讯"},
+            {"stock_id": "300749", "stock_name": "顶固集创"}
+          ]
+        },
+        {
+          "direction_name": "其他",
+          "stocks": [
+            {"stock_id": "002565", "stock_name": "顺灏股份"},
+            {"stock_id": "603679", "stock_name": "华体科技"},
+            {"stock_id": "600282", "stock_name": "南钢股份"},
+            {"stock_id": "600477", "stock_name": "杭萧钢构"},
+            {"stock_id": "603017", "stock_name": "中衡设计"}
+          ]
+        }
+      ]
+    },
+    {
+      "group_name": "太空算力",
+      "directions": [
+        {
+          "direction_name": "电力支持",
+          "stocks": [
+            {"stock_id": "300102", "stock_name": "乾照光电"},
+            {"stock_id": "605598", "stock_name": "上海港湾"}
+          ]
+        },
+        {
+          "direction_name": "产品运营",
+          "stocks": [
+            {"stock_id": "002565", "stock_name": "顺灏股份"},
+            {"stock_id": "688568", "stock_name": "中科星图"}
+          ]
+        },
+        {
+          "direction_name": "计算芯片",
+          "stocks": [
+            {"stock_id": "600678", "stock_name": "四川金顶"},
+            {"stock_id": "002544", "stock_name": "普天科技"}
+          ]
+        }
+      ]
+    },
+    {
+      "group_name": "航天发射场",
+      "directions": [
+        {
+          "direction_name": "海南商业",
+          "stocks": [
+            {"stock_id": "600343", "stock_name": "航天动力"},
+            {"stock_id": "605090", "stock_name": "九丰能源"},
+            {"stock_id": "603100", "stock_name": "川仪股份"},
+            {"stock_id": "000886", "stock_name": "海南高速"},
+            {"stock_id": "601668", "stock_name": "中国建筑"}
+          ]
+        },
+        {
+          "direction_name": "文昌",
+          "stocks": [
+            {"stock_id": "002927", "stock_name": "泰永长征"},
+            {"stock_id": "601992", "stock_name": "金隅集团"},
+            {"stock_id": "300737", "stock_name": "科顺股份"},
+            {"stock_id": "600169", "stock_name": "ST太重"}
+          ]
+        },
+        {
+          "direction_name": "酒泉",
+          "stocks": [
+            {"stock_id": "300296", "stock_name": "利亚德"},
+            {"stock_id": "688152", "stock_name": "麒麟信安"},
+            {"stock_id": "002358", "stock_name": "森源电气"},
+            {"stock_id": "603045", "stock_name": "福达合金"},
+            {"stock_id": "600869", "stock_name": "远东股份"},
+            {"stock_id": "000922", "stock_name": "佳电股份"}
+          ]
+        },
+        {
+          "direction_name": "太原",
+          "stocks": [
+            {"stock_id": "301079", "stock_name": "邵阳液压"},
+            {"stock_id": "605222", "stock_name": "起帆电缆"},
+            {"stock_id": "603757", "stock_name": "大元泵业"}
+          ]
+        },
+        {
+          "direction_name": "西昌",
+          "stocks": [
+            {"stock_id": "603966", "stock_name": "法兰泰克"},
+            {"stock_id": "000565", "stock_name": "渝三峡A"},
+            {"stock_id": "301079", "stock_name": "邵阳液压"}
+          ]
+        },
+        {
+          "direction_name": "东方航天港",
+          "stocks": [
+            {"stock_id": "605090", "stock_name": "九丰能源"}
+          ]
+        }
+      ]
+    }
+  ]
+}

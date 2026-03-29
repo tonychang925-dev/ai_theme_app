@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "新鲜乳品",
+      "evidence_span": "公司主要从事新鲜乳品与烘焙食品的研发、生产、销售及连锁经营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "烘焙食品",
+      "evidence_span": "公司主要从事新鲜乳品与烘焙食品的研发、生产、销售及连锁经营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "连锁经营",
+      "evidence_span": "公司主要从事新鲜乳品与烘焙食品的研发、生产、销售及连锁经营业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农业产业化国家重点龙头企业",
+      "evidence_span": "农业产业化国家重点龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市型乳企",
+      "evidence_span": "城市型乳企更加接近消费市场，产品以冷链短保的巴氏杀菌乳为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低温鲜牛奶",
+      "evidence_span": "推出了公司高端产品“澳瑞”子品牌低温鲜牛奶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "调制乳系列产品",
+      "evidence_span": "上新了调制乳系列产品（椰奶、香蕉奶、巧克力奶）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "堡系列产品",
+      "evidence_span": "上新了堡系列的产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热奶",
+      "evidence_span": "开发了热属性早餐奶产品“热奶”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "温酸奶",
+      "evidence_span": "可适度加热的“温酸奶”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "常温酸奶",
+      "evidence_span": "保持菌种活性的系列常温酸奶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "原味酸奶",
+      "evidence_span": "追求口味纯正的“原味酸奶”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地中海风味酸奶",
+      "evidence_span": "“地中海风味酸奶”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "真鲜蛋奶",
+      "evidence_span": "融合鸡蛋营养成分的“真鲜蛋奶”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鲜奶吐司",
+      "evidence_span": "“鲜奶吐司”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特浓牛奶吐司",
+      "evidence_span": "“特浓牛奶吐司”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "羊皮卷",
+      "evidence_span": "“羊皮卷”等创新烘焙产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "罐子蛋糕",
+      "evidence_span": "探索出了罐子蛋糕在抖音店铺上的实现盈利模式"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷冻面团",
+      "evidence_span": "公司的冷冻面团实现了技术的突破"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预成型冷冻面团",
+      "evidence_span": "预成型冷冻面团和预烘烤冷冻面团生产线在常州工厂正式落地"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预烘烤冷冻面团",
+      "evidence_span": "预成型冷冻面团和预烘烤冷冻面团生产线在常州工厂正式落地"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "真空混料系统",
+      "evidence_span": "采用了真空混料系统和在线混料技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "在线混料技术",
+      "evidence_span": "采用了真空混料系统和在线混料技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "原位清洁系统",
+      "evidence_span": "升级了乳品生产的原位清洁系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全混合日粮技术",
+      "evidence_span": "通过采取全混合日粮、生物遗传性控冻精等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物遗传性控冻精技术",
+      "evidence_span": "通过采取全混合日粮、生物遗传性控冻精等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "功能性乳酸菌靶向筛选及产业化应用关键技术",
+      "evidence_span": "《功能性乳酸菌靶向筛选及产业化应用关键技术》"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南京苏果超市",
+      "evidence_span": "与南京苏果超市等连锁企业进行了联名开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "和善园",
+      "evidence_span": "现产品已进驻和善园、中饮、华古系统以及当家的早餐连锁系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中饮",
+      "evidence_span": "现产品已进驻和善园、中饮、华古系统以及当家的早餐连锁系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华古系统",
+      "evidence_span": "现产品已进驻和善园、中饮、华古系统以及当家的早餐连锁系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "当家的早餐连锁系统",
+      "evidence_span": "现产品已进驻和善园、中饮、华古系统以及当家的早餐连锁系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "无锡苏南教育集团",
+      "evidence_span": "已经和无锡苏南教育集团达成合作"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "新鲜乳品",
+        "evidence_span": "公司主要从事新鲜乳品与烘焙食品的研发、生产、销售及连锁经营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "烘焙食品",
+        "evidence_span": "公司主要从事新鲜乳品与烘焙食品的研发、生产、销售及连锁经营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "连锁经营",
+        "evidence_span": "公司主要从事新鲜乳品与烘焙食品的研发、生产、销售及连锁经营业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农业产业化国家重点龙头企业",
+        "evidence_span": "农业产业化国家重点龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市型乳企",
+        "evidence_span": "城市型乳企更加接近消费市场，产品以冷链短保的巴氏杀菌乳为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低温鲜牛奶",
+        "evidence_span": "推出了公司高端产品“澳瑞”子品牌低温鲜牛奶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "调制乳系列产品",
+        "evidence_span": "上新了调制乳系列产品（椰奶、香蕉奶、巧克力奶）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "堡系列产品",
+        "evidence_span": "上新了堡系列的产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热奶",
+        "evidence_span": "开发了热属性早餐奶产品“热奶”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "温酸奶",
+        "evidence_span": "可适度加热的“温酸奶”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "常温酸奶",
+        "evidence_span": "保持菌种活性的系列常温酸奶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "原味酸奶",
+        "evidence_span": "追求口味纯正的“原味酸奶”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地中海风味酸奶",
+        "evidence_span": "“地中海风味酸奶”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "真鲜蛋奶",
+        "evidence_span": "融合鸡蛋营养成分的“真鲜蛋奶”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鲜奶吐司",
+        "evidence_span": "“鲜奶吐司”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特浓牛奶吐司",
+        "evidence_span": "“特浓牛奶吐司”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "羊皮卷",
+        "evidence_span": "“羊皮卷”等创新烘焙产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "罐子蛋糕",
+        "evidence_span": "探索出了罐子蛋糕在抖音店铺上的实现盈利模式"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷冻面团",
+        "evidence_span": "公司的冷冻面团实现了技术的突破"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预成型冷冻面团",
+        "evidence_span": "预成型冷冻面团和预烘烤冷冻面团生产线在常州工厂正式落地"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预烘烤冷冻面团",
+        "evidence_span": "预成型冷冻面团和预烘烤冷冻面团生产线在常州工厂正式落地"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "真空混料系统",
+        "evidence_span": "采用了真空混料系统和在线混料技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "在线混料技术",
+        "evidence_span": "采用了真空混料系统和在线混料技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "原位清洁系统",
+        "evidence_span": "升级了乳品生产的原位清洁系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全混合日粮技术",
+        "evidence_span": "通过采取全混合日粮、生物遗传性控冻精等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物遗传性控冻精技术",
+        "evidence_span": "通过采取全混合日粮、生物遗传性控冻精等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "功能性乳酸菌靶向筛选及产业化应用关键技术",
+        "evidence_span": "《功能性乳酸菌靶向筛选及产业化应用关键技术》"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南京苏果超市",
+        "evidence_span": "与南京苏果超市等连锁企业进行了联名开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "和善园",
+        "evidence_span": "现产品已进驻和善园、中饮、华古系统以及当家的早餐连锁系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中饮",
+        "evidence_span": "现产品已进驻和善园、中饮、华古系统以及当家的早餐连锁系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华古系统",
+        "evidence_span": "现产品已进驻和善园、中饮、华古系统以及当家的早餐连锁系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "当家的早餐连锁系统",
+        "evidence_span": "现产品已进驻和善园、中饮、华古系统以及当家的早餐连锁系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "无锡苏南教育集团",
+        "evidence_span": "已经和无锡苏南教育集团达成合作"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:03:42"
+}

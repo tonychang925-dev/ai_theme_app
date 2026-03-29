@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:48:17", "result": {"span_uid": "d41f6b6cced2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "量产时间规划", "stability": "low", "reason": "该片段基于业内传闻描述量产时间表，属于不确定的事件性信息，无法形成稳定、独立的知识块。"}}

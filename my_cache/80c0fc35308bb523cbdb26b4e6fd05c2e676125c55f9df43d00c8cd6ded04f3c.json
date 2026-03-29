@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "d1f9d3f77c5b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述台积电德国厂动土和董事长谈成本上升的具体事件，属于公司动态和潜在价格变化，没有提供半导体题材的静态知识。"}}

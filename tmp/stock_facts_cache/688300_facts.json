@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "硅微粉的研发",
+      "evidence_span": "公司主营业务为硅微粉的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "硅微粉的生产",
+      "evidence_span": "公司主营业务为硅微粉的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "硅微粉的销售",
+      "evidence_span": "公司主营业务为硅微粉的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内硅微粉龙头企业",
+      "evidence_span": "国内硅微粉龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电子级硅微粉的研发生产企业",
+      "evidence_span": "公司专注于电子级硅微粉的研发生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "结晶硅微粉",
+      "evidence_span": "核心硅微粉产品包括结晶硅微粉、熔融硅微粉、球形硅微粉三大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "熔融硅微粉",
+      "evidence_span": "核心硅微粉产品包括结晶硅微粉、熔融硅微粉、球形硅微粉三大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "球形硅微粉",
+      "evidence_span": "核心硅微粉产品包括结晶硅微粉、熔融硅微粉、球形硅微粉三大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "球形氧化铝粉",
+      "evidence_span": "公司紧抓业务拓展良机适时生产推出氧化铝粉体材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物理法制备球形硅微粉工艺技术",
+      "evidence_span": "公司早在2006年就开始积极研究物理法制备球形硅微粉工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "火焰法制备电子级球形硅微粉",
+      "evidence_span": "公司攻克了火焰法制备电子级球形硅微粉过程中的粘壁、积炭、粘聚等一系列的技术难题"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "球形硅微粉的量产",
+      "evidence_span": "2012年，公司实现球形硅微粉的量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "球形生产工艺",
+      "evidence_span": "公司掌握的球形生产工艺可以用来生产球形氧化铝粉"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "硅微粉龙头引领国产替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "半导体行业发展",
+      "evidence_span": "国内硅微粉龙头，受益半导体行业发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电子材料国产化",
+      "evidence_span": "联瑞新材受益于电子材料国产化的硅微粉龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "硅微粉的研发",
+        "evidence_span": "公司主营业务为硅微粉的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "硅微粉的生产",
+        "evidence_span": "公司主营业务为硅微粉的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "硅微粉的销售",
+        "evidence_span": "公司主营业务为硅微粉的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内硅微粉龙头企业",
+        "evidence_span": "国内硅微粉龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电子级硅微粉的研发生产企业",
+        "evidence_span": "公司专注于电子级硅微粉的研发生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "结晶硅微粉",
+        "evidence_span": "核心硅微粉产品包括结晶硅微粉、熔融硅微粉、球形硅微粉三大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "熔融硅微粉",
+        "evidence_span": "核心硅微粉产品包括结晶硅微粉、熔融硅微粉、球形硅微粉三大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "球形硅微粉",
+        "evidence_span": "核心硅微粉产品包括结晶硅微粉、熔融硅微粉、球形硅微粉三大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "球形氧化铝粉",
+        "evidence_span": "公司紧抓业务拓展良机适时生产推出氧化铝粉体材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物理法制备球形硅微粉工艺技术",
+        "evidence_span": "公司早在2006年就开始积极研究物理法制备球形硅微粉工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "火焰法制备电子级球形硅微粉",
+        "evidence_span": "公司攻克了火焰法制备电子级球形硅微粉过程中的粘壁、积炭、粘聚等一系列的技术难题"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "球形硅微粉的量产",
+        "evidence_span": "2012年，公司实现球形硅微粉的量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "球形生产工艺",
+        "evidence_span": "公司掌握的球形生产工艺可以用来生产球形氧化铝粉"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "硅微粉龙头引领国产替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "半导体行业发展",
+        "evidence_span": "国内硅微粉龙头，受益半导体行业发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电子材料国产化",
+        "evidence_span": "联瑞新材受益于电子材料国产化的硅微粉龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:02:12"
+}

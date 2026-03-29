@@ -337,9 +337,7 @@ class ClusteringListener:
             logger.info(f"✅ 聚类处理完成: 处理 {len(batch_to_process)} 事件")
             
         except Exception as e:
-            logger.error(f"聚类处理失败: {e}")
-            import traceback
-            traceback.print_exc()
+            logger.exception(f"聚类处理失败: {e}")
     
     async def _read_all_pending_messages(self) -> List[Dict]:
         """读取pending流中的所有消息（修复消费者组问题）"""
@@ -666,16 +664,15 @@ class ClusteringListener:
         self.print_stats()
     
     def print_stats(self):
-        """打印统计信息"""
-        print("\n" + "="*60)
-        print("📊 ClusteringListener统计信息")
-        print("="*60)
-        print(f"运行时间: {self.stats['started_at']}")
-        print(f"触发信号接收: {self.stats['triggers_received']}")
-        print(f"批次处理: {self.stats['batches_processed']}")
-        print(f"簇形成: {self.stats['clusters_formed']}")
-        print(f"题材创建: {self.stats['themes_created']}")
-        print("="*60)
+        """输出统计信息（结构化日志，避免生产路径print）。"""
+        logger.info("============================================================")
+        logger.info("ClusteringListener统计信息")
+        logger.info("运行时间: %s", self.stats["started_at"])
+        logger.info("触发信号接收: %s", self.stats["triggers_received"])
+        logger.info("批次处理: %s", self.stats["batches_processed"])
+        logger.info("簇形成: %s", self.stats["clusters_formed"])
+        logger.info("题材创建: %s", self.stats["themes_created"])
+        logger.info("============================================================")
 
     async def get_status(self):
         """获取组件状态"""

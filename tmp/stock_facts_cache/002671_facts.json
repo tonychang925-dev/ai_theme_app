@@ -1,0 +1,314 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "预应力钢筒混凝土管（PCCP）等混凝土管道的生产",
+      "evidence_span": "公司的主要业务为预应力钢筒混凝土管（PCCP）等混凝土管道的生产、销售、安装及售后服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司的主要业务为预应力钢筒混凝土管（PCCP）等混凝土管道的生产、销售、安装及售后服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安装",
+      "evidence_span": "公司的主要业务为预应力钢筒混凝土管（PCCP）等混凝土管道的生产、销售、安装及售后服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "售后服务",
+      "evidence_span": "公司的主要业务为预应力钢筒混凝土管（PCCP）等混凝土管道的生产、销售、安装及售后服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金属管件的研发",
+      "evidence_span": "金属管件的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "金属管件的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "钢管（包括3PE防腐钢管",
+      "evidence_span": "继续开拓钢管（包括3PE防腐钢管、不锈钢管）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "不锈钢管）",
+      "evidence_span": "继续开拓钢管（包括3PE防腐钢管、不锈钢管）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "地下管网全生命周期管理服务",
+      "evidence_span": "地下管网全生命周期管理服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "PCCP骨干供应商",
+      "evidence_span": "国内为数不多的PCCP骨干供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "PCCP行业龙头企业",
+      "evidence_span": "现已成为国内建材行业生产用于国家大型水利工程建设、跨流域调水工程建设的预应力钢筒混凝土管系列产品的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端金属压力管件主要生产厂商",
+      "evidence_span": "新峰管业是国内高端金属压力管件主要生产厂商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "石油化工和核电领域所需高端金属管件的骨干供应商",
+      "evidence_span": "是我国石油化工和核电领域所需高端金属管件的骨干供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预应力钢筒混凝土管（PCCP）",
+      "evidence_span": "预应力钢筒混凝土管（PCCP）等混凝土管道"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "顶进施工法用预应力钢筒混凝土管（JPCCP）",
+      "evidence_span": "顶进施工法用预应力钢筒混凝土管（JPCCP）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢筋混凝土排水管（RCP）",
+      "evidence_span": "钢筋混凝土排水管（RCP）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "顶进施工法用钢筋混凝土排水管（DRCP）",
+      "evidence_span": "顶进施工法用钢筋混凝土排水管（DRCP）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属管件（弯头、三通、四通等）",
+      "evidence_span": "金属管件主要产品包括弯头、三通、四通、180°、90°、45°弯头、异径管、翻边短节、管封头、锻制式承插系列等管件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3PE防腐钢管",
+      "evidence_span": "3PE防腐钢管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地下管网全生命周期管理服务（检测、监测及非开挖修复工程）",
+      "evidence_span": "地下管网全生命周期管理服务，主要包括提供给水、排水管道的检测、监测及非开挖修复工程等服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高压临氢管件制造技术",
+      "evidence_span": "国内少数几家掌握高压临氢管件制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核级管件制造技术",
+      "evidence_span": "取得国家核安全局核发的《民用核安全设备制造许可证》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "管道设计软件（依据美国水工协会标准AWWA C304）",
+      "evidence_span": "依据美国水工协会标准AWWA C304自主开发的管道设计软件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "成型加工、热处理技术、表面处理（不锈钢铁素体污染清除工艺）和综合性能测试核心技术",
+      "evidence_span": "在成型加工、热处理技术、表面处理（不锈钢铁素体污染清除工艺）和综合性能测试方面形成了自己的核心技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "成为中石油、中石化、中海油、中核和中广核等大型国有企业所需压力管道配件的骨干供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "成为中石油、中石化、中海油、中核和中广核等大型国有企业所需压力管道配件的骨干供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中海油",
+      "evidence_span": "成为中石油、中石化、中海油、中核和中广核等大型国有企业所需压力管道配件的骨干供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中核",
+      "evidence_span": "成为中石油、中石化、中海油、中核和中广核等大型国有企业所需压力管道配件的骨干供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中广核",
+      "evidence_span": "成为中石油、中石化、中海油、中核和中广核等大型国有企业所需压力管道配件的骨干供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恒力石化（大连）炼化有限公司",
+      "evidence_span": "恒力石化（大连）炼化有限公司/2000万吨/年炼化一体化项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中化二建集团有限公司",
+      "evidence_span": "中化二建集团有限公司/恒逸（文莱）PMB石油化工项目"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "水利投资",
+      "evidence_span": "龙泉股份水利投资加码，业绩爆发力显现"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "核电管件",
+      "evidence_span": "龙泉股份以水为本，PCCP、核电管件、铁路轨道、污泥处理多点开花"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "预应力钢筒混凝土管（PCCP）等混凝土管道的生产、销售、安装及售后服务",
+        "evidence_span": "公司的主要业务为预应力钢筒混凝土管（PCCP）等混凝土管道的生产、销售、安装及售后服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金属管件的研发、生产与销售",
+        "evidence_span": "金属管件的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "钢管（包括3PE防腐钢管、不锈钢管）",
+        "evidence_span": "继续开拓钢管（包括3PE防腐钢管、不锈钢管）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "地下管网全生命周期管理服务",
+        "evidence_span": "地下管网全生命周期管理服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "PCCP骨干供应商",
+        "evidence_span": "国内为数不多的PCCP骨干供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "PCCP行业龙头企业",
+        "evidence_span": "现已成为国内建材行业生产用于国家大型水利工程建设、跨流域调水工程建设的预应力钢筒混凝土管系列产品的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端金属压力管件主要生产厂商",
+        "evidence_span": "新峰管业是国内高端金属压力管件主要生产厂商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "石油化工和核电领域所需高端金属管件的骨干供应商",
+        "evidence_span": "是我国石油化工和核电领域所需高端金属管件的骨干供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预应力钢筒混凝土管（PCCP）",
+        "evidence_span": "预应力钢筒混凝土管（PCCP）等混凝土管道"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "顶进施工法用预应力钢筒混凝土管（JPCCP）",
+        "evidence_span": "顶进施工法用预应力钢筒混凝土管（JPCCP）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢筋混凝土排水管（RCP）",
+        "evidence_span": "钢筋混凝土排水管（RCP）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "顶进施工法用钢筋混凝土排水管（DRCP）",
+        "evidence_span": "顶进施工法用钢筋混凝土排水管（DRCP）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属管件（弯头、三通、四通等）",
+        "evidence_span": "金属管件主要产品包括弯头、三通、四通、180°、90°、45°弯头、异径管、翻边短节、管封头、锻制式承插系列等管件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3PE防腐钢管",
+        "evidence_span": "3PE防腐钢管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地下管网全生命周期管理服务（检测、监测及非开挖修复工程）",
+        "evidence_span": "地下管网全生命周期管理服务，主要包括提供给水、排水管道的检测、监测及非开挖修复工程等服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高压临氢管件制造技术",
+        "evidence_span": "国内少数几家掌握高压临氢管件制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核级管件制造技术",
+        "evidence_span": "取得国家核安全局核发的《民用核安全设备制造许可证》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "管道设计软件（依据美国水工协会标准AWWA C304）",
+        "evidence_span": "依据美国水工协会标准AWWA C304自主开发的管道设计软件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "成型加工、热处理技术、表面处理（不锈钢铁素体污染清除工艺）和综合性能测试核心技术",
+        "evidence_span": "在成型加工、热处理技术、表面处理（不锈钢铁素体污染清除工艺）和综合性能测试方面形成了自己的核心技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "成为中石油、中石化、中海油、中核和中广核等大型国有企业所需压力管道配件的骨干供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "成为中石油、中石化、中海油、中核和中广核等大型国有企业所需压力管道配件的骨干供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中海油",
+        "evidence_span": "成为中石油、中石化、中海油、中核和中广核等大型国有企业所需压力管道配件的骨干供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中核",
+        "evidence_span": "成为中石油、中石化、中海油、中核和中广核等大型国有企业所需压力管道配件的骨干供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中广核",
+        "evidence_span": "成为中石油、中石化、中海油、中核和中广核等大型国有企业所需压力管道配件的骨干供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恒力石化（大连）炼化有限公司",
+        "evidence_span": "恒力石化（大连）炼化有限公司/2000万吨/年炼化一体化项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中化二建集团有限公司",
+        "evidence_span": "中化二建集团有限公司/恒逸（文莱）PMB石油化工项目"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "水利投资",
+        "evidence_span": "龙泉股份水利投资加码，业绩爆发力显现"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "核电管件",
+        "evidence_span": "龙泉股份以水为本，PCCP、核电管件、铁路轨道、污泥处理多点开花"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:09:07"
+}

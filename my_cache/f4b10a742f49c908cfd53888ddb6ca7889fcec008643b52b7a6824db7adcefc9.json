@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:38:04", "result": {"chunk_id": "59b33e662258", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含大量静态知识（如产业规模、进口依存度、仪器仪表定义），但夹杂事件信息（如2023年营收数据、设备更新改造行动），具有高知识价值但非纯静态，应优先标为候选混合状态。"}}

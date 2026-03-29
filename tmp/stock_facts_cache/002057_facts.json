@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "磁性材料",
+      "evidence_span": "公司业务覆盖磁性材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "检验检测",
+      "evidence_span": "公司业务覆盖...检验检测"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金属制品",
+      "evidence_span": "公司业务覆盖...金属制品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有机化工",
+      "evidence_span": "公司业务覆盖...有机化工"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "装备制造",
+      "evidence_span": "公司业务覆盖...装备制造五大领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "永磁器件生产商",
+      "evidence_span": "国内前列的永磁器件生产商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大基建权威检测机构",
+      "evidence_span": "大基建权威检测机构"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "四氧化三锰全球主要生产商",
+      "evidence_span": "公司系四氧化三锰全球主要生产商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软磁材料",
+      "evidence_span": "主要产品有软磁材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "四氧化三锰",
+      "evidence_span": "主要产品有...四氧化三锰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "永磁器件",
+      "evidence_span": "主要产品有...永磁器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢丝产品",
+      "evidence_span": "主要产品有...钢丝产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有机产品",
+      "evidence_span": "主要产品有...有机产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "永磁铁氧体器件",
+      "evidence_span": "永磁铁氧体器件 20,000 吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软磁器件",
+      "evidence_span": "软磁器件 5,000 吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "稀土永磁器件",
+      "evidence_span": "稀土永磁器件 2,000 吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属制品",
+      "evidence_span": "金属制品 70,000 吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "检测服务",
+      "evidence_span": "检验检测"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "四氧化三锰制备技术",
+      "evidence_span": "公司在四氧化三锰制备技术上投入大量研发力量"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低成本四氧化三锰关键技术",
+      "evidence_span": "低成本四氧化三锰关键技术研究及产业化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新材料",
+      "evidence_span": "新材料业内领先"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "磁性材料",
+        "evidence_span": "公司业务覆盖磁性材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "检验检测",
+        "evidence_span": "公司业务覆盖...检验检测"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金属制品",
+        "evidence_span": "公司业务覆盖...金属制品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有机化工",
+        "evidence_span": "公司业务覆盖...有机化工"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "装备制造",
+        "evidence_span": "公司业务覆盖...装备制造五大领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "永磁器件生产商",
+        "evidence_span": "国内前列的永磁器件生产商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大基建权威检测机构",
+        "evidence_span": "大基建权威检测机构"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "四氧化三锰全球主要生产商",
+        "evidence_span": "公司系四氧化三锰全球主要生产商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软磁材料",
+        "evidence_span": "主要产品有软磁材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "四氧化三锰",
+        "evidence_span": "主要产品有...四氧化三锰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "永磁器件",
+        "evidence_span": "主要产品有...永磁器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢丝产品",
+        "evidence_span": "主要产品有...钢丝产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有机产品",
+        "evidence_span": "主要产品有...有机产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "永磁铁氧体器件",
+        "evidence_span": "永磁铁氧体器件 20,000 吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软磁器件",
+        "evidence_span": "软磁器件 5,000 吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "稀土永磁器件",
+        "evidence_span": "稀土永磁器件 2,000 吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属制品",
+        "evidence_span": "金属制品 70,000 吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "检测服务",
+        "evidence_span": "检验检测"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "四氧化三锰制备技术",
+        "evidence_span": "公司在四氧化三锰制备技术上投入大量研发力量"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低成本四氧化三锰关键技术",
+        "evidence_span": "低成本四氧化三锰关键技术研究及产业化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新材料",
+        "evidence_span": "新材料业内领先"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:39:27"
+}

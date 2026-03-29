@@ -1,0 +1,399 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程承包",
+      "evidence_span": "业务覆盖工程承包与勘察设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "勘察设计",
+      "evidence_span": "业务覆盖工程承包与勘察设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电力投资运营",
+      "evidence_span": "业务覆盖...电力投资运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产开发",
+      "evidence_span": "业务覆盖...房地产开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设备制造",
+      "evidence_span": "业务覆盖...设备制造与租赁"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "租赁",
+      "evidence_span": "业务覆盖...设备制造与租赁"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "水利水电建设龙头企业",
+      "evidence_span": "我国水利水电建设的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "水电行业龙头",
+      "evidence_span": "中国电建作为水电行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新能源行业领军企业",
+      "evidence_span": "新能源行业领军企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水电站规划设计",
+      "evidence_span": "承担了我国 80%以上大中型水电站的规划设计任务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水电站建设",
+      "evidence_span": "承担了...65%以上的建设任务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电建设业务",
+      "evidence_span": "积极拓展风电...等新能源建设业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏建设业务",
+      "evidence_span": "积极拓展...光伏等新能源建设业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "太阳能光伏发电项目",
+      "evidence_span": "太阳能光伏发电项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电项目",
+      "evidence_span": "风电项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海上风电 EPC 总承包项目",
+      "evidence_span": "山东能源 500MW 海上风电 EPC 总承包项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抽水蓄能项目",
+      "evidence_span": "抽水蓄能方面"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水电勘测设计业务",
+      "evidence_span": "承担了我国 80%以上的河流及水电站的勘测设计业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风光发电工程勘测设计任务",
+      "evidence_span": "承担了我国 65%以上的风光发电工程的勘测、规划、设计任务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水电运营",
+      "evidence_span": "水电装机量达 685.54 万千瓦"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电运营",
+      "evidence_span": "风电装机容量 733.55 万千瓦"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "太阳能光伏运营",
+      "evidence_span": "太阳能光伏装机 176.8 万千瓦"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清洁低碳能源项目开发运营",
+      "evidence_span": "主营清洁低碳能源项目的开发和运营管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陆上风电项目开发投资建设",
+      "evidence_span": "参与了我国陆上风电...项目的开发投资建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏发电项目开发投资建设",
+      "evidence_span": "参与了我国...光伏发电...项目的开发投资建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海上风电项目开发投资建设",
+      "evidence_span": "参与了我国...海上风电项目的开发投资建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水电工程勘察设计技术",
+      "evidence_span": "拥有完整的水电...工程的勘察设计技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "火电工程勘察设计技术",
+      "evidence_span": "拥有完整的...火电...工程的勘察设计技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "风电工程勘察设计技术",
+      "evidence_span": "拥有完整的...风电...工程的勘察设计技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "太阳能发电工程勘察设计技术",
+      "evidence_span": "拥有完整的...太阳能发电工程的勘察设计技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "清洁能源",
+      "evidence_span": "清洁能源订单全面发力"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双碳",
+      "evidence_span": "锚定“双碳”风浪尖"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源建设",
+      "evidence_span": "新能源建设雾海扬帆"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "能源结构转型",
+      "evidence_span": "能源结构转型迎发展新机"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "投建营一体化",
+      "evidence_span": "投建营一体化打开价值重估空间"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "水风光储全面发展",
+      "evidence_span": "水风光储全面发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿电运营",
+      "evidence_span": "绿电运营迎来重估"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿电建造",
+      "evidence_span": "中国电建绿电建造/运营商独占领先优势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能",
+      "evidence_span": "中国电建储能风光水具全球领先优势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "一带一路“系列研究之中国电建"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程承包与勘察设计",
+        "evidence_span": "业务覆盖工程承包与勘察设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电力投资运营",
+        "evidence_span": "业务覆盖...电力投资运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产开发",
+        "evidence_span": "业务覆盖...房地产开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "设备制造与租赁",
+        "evidence_span": "业务覆盖...设备制造与租赁"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "水利水电建设龙头企业",
+        "evidence_span": "我国水利水电建设的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "水电行业龙头",
+        "evidence_span": "中国电建作为水电行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新能源行业领军企业",
+        "evidence_span": "新能源行业领军企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水电站规划设计",
+        "evidence_span": "承担了我国 80%以上大中型水电站的规划设计任务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水电站建设",
+        "evidence_span": "承担了...65%以上的建设任务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电建设业务",
+        "evidence_span": "积极拓展风电...等新能源建设业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏建设业务",
+        "evidence_span": "积极拓展...光伏等新能源建设业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "太阳能光伏发电项目",
+        "evidence_span": "太阳能光伏发电项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电项目",
+        "evidence_span": "风电项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海上风电 EPC 总承包项目",
+        "evidence_span": "山东能源 500MW 海上风电 EPC 总承包项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抽水蓄能项目",
+        "evidence_span": "抽水蓄能方面"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水电勘测设计业务",
+        "evidence_span": "承担了我国 80%以上的河流及水电站的勘测设计业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风光发电工程勘测设计任务",
+        "evidence_span": "承担了我国 65%以上的风光发电工程的勘测、规划、设计任务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水电运营",
+        "evidence_span": "水电装机量达 685.54 万千瓦"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电运营",
+        "evidence_span": "风电装机容量 733.55 万千瓦"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "太阳能光伏运营",
+        "evidence_span": "太阳能光伏装机 176.8 万千瓦"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清洁低碳能源项目开发运营",
+        "evidence_span": "主营清洁低碳能源项目的开发和运营管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陆上风电项目开发投资建设",
+        "evidence_span": "参与了我国陆上风电...项目的开发投资建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏发电项目开发投资建设",
+        "evidence_span": "参与了我国...光伏发电...项目的开发投资建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海上风电项目开发投资建设",
+        "evidence_span": "参与了我国...海上风电项目的开发投资建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水电工程勘察设计技术",
+        "evidence_span": "拥有完整的水电...工程的勘察设计技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "火电工程勘察设计技术",
+        "evidence_span": "拥有完整的...火电...工程的勘察设计技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "风电工程勘察设计技术",
+        "evidence_span": "拥有完整的...风电...工程的勘察设计技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "太阳能发电工程勘察设计技术",
+        "evidence_span": "拥有完整的...太阳能发电工程的勘察设计技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "清洁能源",
+        "evidence_span": "清洁能源订单全面发力"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双碳",
+        "evidence_span": "锚定“双碳”风浪尖"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源建设",
+        "evidence_span": "新能源建设雾海扬帆"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "能源结构转型",
+        "evidence_span": "能源结构转型迎发展新机"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "投建营一体化",
+        "evidence_span": "投建营一体化打开价值重估空间"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "水风光储全面发展",
+        "evidence_span": "水风光储全面发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿电运营",
+        "evidence_span": "绿电运营迎来重估"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿电建造",
+        "evidence_span": "中国电建绿电建造/运营商独占领先优势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能",
+        "evidence_span": "中国电建储能风光水具全球领先优势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "一带一路“系列研究之中国电建"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:30:24"
+}

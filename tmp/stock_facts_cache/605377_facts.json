@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "装饰原纸的研发",
+      "evidence_span": "公司主要从事特种纸细分领域之一的装饰原纸的研发、生产和销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主要从事特种纸细分领域之一的装饰原纸的研发、生产和销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要从事特种纸细分领域之一的装饰原纸的研发、生产和销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "木浆贸易",
+      "evidence_span": "公司主要从事可印刷和素色装饰原纸的研产销以及木浆贸易业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "装饰原纸行业龙头企业",
+      "evidence_span": "作为国内装饰原纸行业龙头企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级高新技术企业",
+      "evidence_span": "公司是国家级高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高性能纸基材料一站式整体解决方案供应商",
+      "evidence_span": "致力于成为高性能纸基材料“一站式”整体解决方案供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可印刷装饰原纸",
+      "evidence_span": "公司主要从事可印刷和素色装饰原纸的研产销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "素色装饰原纸",
+      "evidence_span": "公司主要从事可印刷和素色装饰原纸的研产销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中高端装饰原纸",
+      "evidence_span": "公司专注中高端装饰原纸市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能装饰原纸一站式整体解决方案",
+      "evidence_span": "致力于为客户提供高性能装饰原纸“一站式”整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定制化产品",
+      "evidence_span": "可为客户提供400余种定制化产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智造+服务经营模式",
+      "evidence_span": "践行“智造+服务”的经营模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "定制化生产",
+      "evidence_span": "实现“定制化生产”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "耐燃素色纸开发",
+      "evidence_span": "公司目前有耐燃素色纸开发项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高耐晒高印刷性能装饰原纸项目",
+      "evidence_span": "高耐晒高印刷性能装饰原纸项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低定量高强度低透气度素色纸的开发",
+      "evidence_span": "低定量高强度低透气度素色纸的开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化管理平台",
+      "evidence_span": "公司依托数字化管理平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "以纸代塑",
+      "evidence_span": "叠加“以纸代塑”的政策背景"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "装饰原纸的研发、生产和销售",
+        "evidence_span": "公司主要从事特种纸细分领域之一的装饰原纸的研发、生产和销售业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "木浆贸易",
+        "evidence_span": "公司主要从事可印刷和素色装饰原纸的研产销以及木浆贸易业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "装饰原纸行业龙头企业",
+        "evidence_span": "作为国内装饰原纸行业龙头企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级高新技术企业",
+        "evidence_span": "公司是国家级高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高性能纸基材料一站式整体解决方案供应商",
+        "evidence_span": "致力于成为高性能纸基材料“一站式”整体解决方案供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可印刷装饰原纸",
+        "evidence_span": "公司主要从事可印刷和素色装饰原纸的研产销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "素色装饰原纸",
+        "evidence_span": "公司主要从事可印刷和素色装饰原纸的研产销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中高端装饰原纸",
+        "evidence_span": "公司专注中高端装饰原纸市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能装饰原纸一站式整体解决方案",
+        "evidence_span": "致力于为客户提供高性能装饰原纸“一站式”整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定制化产品",
+        "evidence_span": "可为客户提供400余种定制化产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智造+服务经营模式",
+        "evidence_span": "践行“智造+服务”的经营模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "定制化生产",
+        "evidence_span": "实现“定制化生产”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "耐燃素色纸开发",
+        "evidence_span": "公司目前有耐燃素色纸开发项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高耐晒高印刷性能装饰原纸项目",
+        "evidence_span": "高耐晒高印刷性能装饰原纸项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低定量高强度低透气度素色纸的开发",
+        "evidence_span": "低定量高强度低透气度素色纸的开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化管理平台",
+        "evidence_span": "公司依托数字化管理平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "以纸代塑",
+        "evidence_span": "叠加“以纸代塑”的政策背景"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:21:19"
+}

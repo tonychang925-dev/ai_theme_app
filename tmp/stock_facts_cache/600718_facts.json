@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗健康",
+      "evidence_span": "在医疗健康及社会保障领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能汽车互联",
+      "evidence_span": "在智能汽车互联领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧城市",
+      "evidence_span": "作为智慧城市的赋能者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "IT解决方案提供商",
+      "evidence_span": "领先的“大健康、智能汽车、智慧城市”领域IT解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "Tier1厂商",
+      "evidence_span": "作为行业领先的Tier1厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车基础软件供应商",
+      "evidence_span": "东软睿驰凭借NeuSAR位列智能汽车基础软件供应商市场竞争力榜单第一名"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧医疗信息化解决方案",
+      "evidence_span": "东软智慧医疗业务在全国31个省级行政区实现业务落地"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医保信息系统",
+      "evidence_span": "公司持续保持医保信息系统市场份额第一的领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧人社解决方案",
+      "evidence_span": "东软智慧人社解决方案荣获“2022数字政府方案案例创新奖”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医学影像设备",
+      "evidence_span": "东软医疗作为医学影像解决方案及服务的领先提供商，拥有CT、MRI(磁共振)、DSA(血管机)、GXR(X线)、US(超声)、PET/CT等医学影像设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能座舱产品",
+      "evidence_span": "公司拥有智能座舱等系列产品，主要包括IVI车载信息娱乐系统、智能座舱域控制器、T-Box/5GBox、全液晶仪表、全球导航解决方案OneCoreGo、增强现实抬头显示系统AR-HUD等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车路协同解决方案",
+      "evidence_span": "东软拥有完整的车路协同解决方案及端到端C-V2X车联网产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车基础软件NeuSAR",
+      "evidence_span": "东软睿驰自主研发的汽车基础软件产品NeuSAR持续获得市场认可"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动驾驶域控制器",
+      "evidence_span": "东软睿驰已推出了L3/L4级别新一代自动驾驶中央计算平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧城市解决方案",
+      "evidence_span": "东软持续推动信息技术与城市发展的深度融合，驱动以数据要素为核心的新型智慧城市建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据分析",
+      "evidence_span": "2022年所获授权发明专利，主要分布在大数据分析、人工智能、区块链、平台软件、汽车电子、网络安全等领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能",
+      "evidence_span": "2022年所获授权发明专利，主要分布在大数据分析、人工智能、区块链、平台软件、汽车电子、网络安全等领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链",
+      "evidence_span": "2022年所获授权发明专利，主要分布在大数据分析、人工智能、区块链、平台软件、汽车电子、网络安全等领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云原生技术架构",
+      "evidence_span": "公司统一云原生技术架构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "C-V2X车联网技术",
+      "evidence_span": "作为C-V2X标准的重要制定者及产业化推动者"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司获得了比亚迪、吉利、一汽、长城、奇瑞等众多车厂的定点订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "公司获得了比亚迪、吉利、一汽、长城、奇瑞等众多车厂的定点订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽",
+      "evidence_span": "公司获得了比亚迪、吉利、一汽、长城、奇瑞等众多车厂的定点订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "公司获得了比亚迪、吉利、一汽、长城、奇瑞等众多车厂的定点订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞",
+      "evidence_span": "公司获得了比亚迪、吉利、一汽、长城、奇瑞等众多车厂的定点订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本田",
+      "evidence_span": "NeuSAR已在本田、广汽、长安、岚图、吉利等众多车厂得到应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽",
+      "evidence_span": "NeuSAR已在本田、广汽、长安、岚图、吉利等众多车厂得到应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安",
+      "evidence_span": "NeuSAR已在本田、广汽、长安、岚图、吉利等众多车厂得到应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "岚图",
+      "evidence_span": "NeuSAR已在本田、广汽、长安、岚图、吉利等众多车厂得到应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "郑州大学第一附属医院",
+      "evidence_span": "公司签约郑州大学第一附属医院、中国医科大学附属第四医院、洛阳市中心医院、武汉市金银潭医院等30余个千万级项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "东软集中日志存储系统服务于中国移动面向“东数西算”的云计算基础设施"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字经济",
+      "evidence_span": "持续驱动以数据要素为核心的新型智慧城市建设，推动信创应用进程，并加速“数字经济”布局"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "软件国产化",
+      "evidence_span": "围绕软件国产化构建技术合作生态"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗健康",
+        "evidence_span": "在医疗健康及社会保障领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能汽车互联",
+        "evidence_span": "在智能汽车互联领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧城市",
+        "evidence_span": "作为智慧城市的赋能者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "IT解决方案提供商",
+        "evidence_span": "领先的“大健康、智能汽车、智慧城市”领域IT解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "Tier1厂商",
+        "evidence_span": "作为行业领先的Tier1厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车基础软件供应商",
+        "evidence_span": "东软睿驰凭借NeuSAR位列智能汽车基础软件供应商市场竞争力榜单第一名"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧医疗信息化解决方案",
+        "evidence_span": "东软智慧医疗业务在全国31个省级行政区实现业务落地"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医保信息系统",
+        "evidence_span": "公司持续保持医保信息系统市场份额第一的领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧人社解决方案",
+        "evidence_span": "东软智慧人社解决方案荣获“2022数字政府方案案例创新奖”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医学影像设备",
+        "evidence_span": "东软医疗作为医学影像解决方案及服务的领先提供商，拥有CT、MRI(磁共振)、DSA(血管机)、GXR(X线)、US(超声)、PET/CT等医学影像设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能座舱产品",
+        "evidence_span": "公司拥有智能座舱等系列产品，主要包括IVI车载信息娱乐系统、智能座舱域控制器、T-Box/5GBox、全液晶仪表、全球导航解决方案OneCoreGo、增强现实抬头显示系统AR-HUD等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车路协同解决方案",
+        "evidence_span": "东软拥有完整的车路协同解决方案及端到端C-V2X车联网产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车基础软件NeuSAR",
+        "evidence_span": "东软睿驰自主研发的汽车基础软件产品NeuSAR持续获得市场认可"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动驾驶域控制器",
+        "evidence_span": "东软睿驰已推出了L3/L4级别新一代自动驾驶中央计算平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧城市解决方案",
+        "evidence_span": "东软持续推动信息技术与城市发展的深度融合，驱动以数据要素为核心的新型智慧城市建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据分析",
+        "evidence_span": "2022年所获授权发明专利，主要分布在大数据分析、人工智能、区块链、平台软件、汽车电子、网络安全等领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能",
+        "evidence_span": "2022年所获授权发明专利，主要分布在大数据分析、人工智能、区块链、平台软件、汽车电子、网络安全等领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链",
+        "evidence_span": "2022年所获授权发明专利，主要分布在大数据分析、人工智能、区块链、平台软件、汽车电子、网络安全等领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云原生技术架构",
+        "evidence_span": "公司统一云原生技术架构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "C-V2X车联网技术",
+        "evidence_span": "作为C-V2X标准的重要制定者及产业化推动者"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司获得了比亚迪、吉利、一汽、长城、奇瑞等众多车厂的定点订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "公司获得了比亚迪、吉利、一汽、长城、奇瑞等众多车厂的定点订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽",
+        "evidence_span": "公司获得了比亚迪、吉利、一汽、长城、奇瑞等众多车厂的定点订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "公司获得了比亚迪、吉利、一汽、长城、奇瑞等众多车厂的定点订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞",
+        "evidence_span": "公司获得了比亚迪、吉利、一汽、长城、奇瑞等众多车厂的定点订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本田",
+        "evidence_span": "NeuSAR已在本田、广汽、长安、岚图、吉利等众多车厂得到应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽",
+        "evidence_span": "NeuSAR已在本田、广汽、长安、岚图、吉利等众多车厂得到应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安",
+        "evidence_span": "NeuSAR已在本田、广汽、长安、岚图、吉利等众多车厂得到应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "岚图",
+        "evidence_span": "NeuSAR已在本田、广汽、长安、岚图、吉利等众多车厂得到应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "郑州大学第一附属医院",
+        "evidence_span": "公司签约郑州大学第一附属医院、中国医科大学附属第四医院、洛阳市中心医院、武汉市金银潭医院等30余个千万级项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "东软集中日志存储系统服务于中国移动面向“东数西算”的云计算基础设施"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字经济",
+        "evidence_span": "持续驱动以数据要素为核心的新型智慧城市建设，推动信创应用进程，并加速“数字经济”布局"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "软件国产化",
+        "evidence_span": "围绕软件国产化构建技术合作生态"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:08:11"
+}

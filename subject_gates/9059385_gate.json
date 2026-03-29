@@ -1,0 +1,51 @@
+{
+  "must": [
+    "MSCI指数",
+    "MSCI全球标准指数",
+    "MSCI新兴市场指数",
+    "MSCI全球所有国家指数"
+  ],
+  "should": [
+    "业绩基准",
+    "投资标的",
+    "分析工具",
+    "资产配置",
+    "策略回验",
+    "风险分析",
+    "被动投资",
+    "MSCI中国A股指数"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "MSCI指数",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MSCI指数"
+    },
+    {
+      "term": "MSCI全球标准指数",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MSCI全球标准指数"
+    },
+    {
+      "term": "MSCI新兴市场指数",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MSCI新兴市场指数"
+    },
+    {
+      "term": "MSCI全球所有国家指数",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "MSCI全球所有国家指数"
+    }
+  ],
+  "subject_id": "9059385",
+  "quality": "strong",
+  "generated_at": "2026-03-10T12:33:44",
+  "semantic_type": "全球投资基准与工具",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

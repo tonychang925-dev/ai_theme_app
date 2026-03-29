@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "e62d1a864f72", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "low", "reason": "该段落描述了行者X-lens AR骑行镜开售事件，包含产品特性和售价，这些是AR眼镜的市场应用知识。但以销售事件为主，混合了事件信息，且知识价值相对较低。"}}

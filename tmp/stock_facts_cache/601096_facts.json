@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "输电线路铁塔的研发",
+      "evidence_span": "主要从事输电线路铁塔的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "主要从事输电线路铁塔的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主要从事输电线路铁塔的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "钢结构产品配套",
+      "evidence_span": "国内知名的钢结构产品配套供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内输电线路铁塔制造行业的“国家队”",
+      "evidence_span": "宏盛华源是国内输电线路铁塔制造行业的“国家队”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "输电线路铁塔供应商",
+      "evidence_span": "国内规模最大的输电线路铁塔供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特高压铁塔供应商",
+      "evidence_span": "业绩优良的特高压铁塔供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全系列电压等级的输电线路铁塔",
+      "evidence_span": "主要产品为全系列电压等级的输电线路铁塔"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "角钢塔",
+      "evidence_span": "包括角钢塔、钢管塔、钢管杆、变电构支架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢管塔",
+      "evidence_span": "包括角钢塔、钢管塔、钢管杆、变电构支架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢管杆",
+      "evidence_span": "包括角钢塔、钢管塔、钢管杆、变电构支架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "变电构支架",
+      "evidence_span": "包括角钢塔、钢管塔、钢管杆、变电构支架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通讯塔",
+      "evidence_span": "及通讯塔、钢构件、热浸镀锌防腐业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢构件",
+      "evidence_span": "及通讯塔、钢构件、热浸镀锌防腐业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热浸镀锌防腐业务",
+      "evidence_span": "及通讯塔、钢构件、热浸镀锌防腐业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发电厂间冷塔",
+      "evidence_span": "拓展发电厂间冷塔市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "螺旋锚基础",
+      "evidence_span": "铁塔螺旋锚基础实验示范项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "特高压铁塔生产的核心技术",
+      "evidence_span": "掌握了特高压铁塔生产的核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能制造",
+      "evidence_span": "加快智能制造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "单机数字化和关键工序自动化生产",
+      "evidence_span": "基本实现单机数字化和关键工序自动化生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "镀锌生产线自动化改造",
+      "evidence_span": "完成镀锌生产线自动化改造"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "巩固国家电网传统市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "提升南方电网市场份额"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "发电工程",
+      "evidence_span": "提升发电工程市场份额"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "用户工程",
+      "evidence_span": "提升用户工程市场份额"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "特高压建设",
+      "evidence_span": "特高压线路网络的构建也势必带动配套高电压等级输电线路铁塔的市场需求"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新型电力系统建设",
+      "evidence_span": "新型电力系统建设方面"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电网建设",
+      "evidence_span": "全力支撑电网建设"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "输电线路铁塔的研发、生产和销售",
+        "evidence_span": "主要从事输电线路铁塔的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "钢结构产品配套",
+        "evidence_span": "国内知名的钢结构产品配套供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内输电线路铁塔制造行业的“国家队”",
+        "evidence_span": "宏盛华源是国内输电线路铁塔制造行业的“国家队”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "输电线路铁塔供应商",
+        "evidence_span": "国内规模最大的输电线路铁塔供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特高压铁塔供应商",
+        "evidence_span": "业绩优良的特高压铁塔供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全系列电压等级的输电线路铁塔",
+        "evidence_span": "主要产品为全系列电压等级的输电线路铁塔"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "角钢塔",
+        "evidence_span": "包括角钢塔、钢管塔、钢管杆、变电构支架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢管塔",
+        "evidence_span": "包括角钢塔、钢管塔、钢管杆、变电构支架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢管杆",
+        "evidence_span": "包括角钢塔、钢管塔、钢管杆、变电构支架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "变电构支架",
+        "evidence_span": "包括角钢塔、钢管塔、钢管杆、变电构支架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通讯塔",
+        "evidence_span": "及通讯塔、钢构件、热浸镀锌防腐业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢构件",
+        "evidence_span": "及通讯塔、钢构件、热浸镀锌防腐业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热浸镀锌防腐业务",
+        "evidence_span": "及通讯塔、钢构件、热浸镀锌防腐业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发电厂间冷塔",
+        "evidence_span": "拓展发电厂间冷塔市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "螺旋锚基础",
+        "evidence_span": "铁塔螺旋锚基础实验示范项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "特高压铁塔生产的核心技术",
+        "evidence_span": "掌握了特高压铁塔生产的核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能制造",
+        "evidence_span": "加快智能制造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "单机数字化和关键工序自动化生产",
+        "evidence_span": "基本实现单机数字化和关键工序自动化生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "镀锌生产线自动化改造",
+        "evidence_span": "完成镀锌生产线自动化改造"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "巩固国家电网传统市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "提升南方电网市场份额"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "发电工程",
+        "evidence_span": "提升发电工程市场份额"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "用户工程",
+        "evidence_span": "提升用户工程市场份额"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "特高压建设",
+        "evidence_span": "特高压线路网络的构建也势必带动配套高电压等级输电线路铁塔的市场需求"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新型电力系统建设",
+        "evidence_span": "新型电力系统建设方面"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电网建设",
+        "evidence_span": "全力支撑电网建设"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:11:52"
+}

@@ -1,0 +1,439 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "日用餐厨具",
+      "evidence_span": "公司定位日用餐厨具行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "筷子",
+      "evidence_span": "主营产品为筷子、砧板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "砧板",
+      "evidence_span": "主营产品为筷子、砧板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "勺铲",
+      "evidence_span": "拥有筷子、砧板、勺铲、签类和其他餐厨具5个大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "签类",
+      "evidence_span": "拥有筷子、砧板、勺铲、签类和其他餐厨具5个大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他餐厨具",
+      "evidence_span": "拥有筷子、砧板、勺铲、签类和其他餐厨具5个大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锅具",
+      "evidence_span": "围绕厨房场景积极拓展锅具、陶瓷等新品类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陶瓷",
+      "evidence_span": "围绕厨房场景积极拓展锅具、陶瓷等新品类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能砧板",
+      "evidence_span": "2022年的智能砧板、国潮系列产品、可杀菌消毒的便携餐具等产品深受消费者喜爱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国潮系列产品",
+      "evidence_span": "2022年的智能砧板、国潮系列产品、可杀菌消毒的便携餐具等产品深受消费者喜爱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可杀菌消毒的便携餐具",
+      "evidence_span": "2022年的智能砧板、国潮系列产品、可杀菌消毒的便携餐具等产品深受消费者喜爱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "竹条",
+      "evidence_span": "公司主要生产竹条、竹签、竹炭等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "竹签",
+      "evidence_span": "公司主要生产竹条、竹签、竹炭等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "竹炭",
+      "evidence_span": "公司主要生产竹条、竹签、竹炭等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可降解一次性餐具",
+      "evidence_span": "专注开发可降解一次性餐具"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "日用餐厨具供应商",
+      "evidence_span": "公司是一家领先的日用餐厨具供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农业产业化国家重点龙头企业",
+      "evidence_span": "荣获“农业产业化国家重点龙头企业”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家林业重点龙头企业",
+      "evidence_span": "荣获“国家林业重点龙头企业”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国竹产业龙头企业",
+      "evidence_span": "荣获“中国竹产业龙头企业”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多材质双色注塑工艺",
+      "evidence_span": "拥有自主知识产权的“多材质双色注塑工艺”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多材质包胶工艺",
+      "evidence_span": "拥有自主知识产权的“多材质包胶工艺”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "植物纤维注塑工艺",
+      "evidence_span": "拥有自主知识产权的“植物纤维注塑工艺”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无缝锻造模具工艺",
+      "evidence_span": "拥有自主知识产权的“无缝锻造模具工艺”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "筷子无胶拼接工艺",
+      "evidence_span": "拥有自主知识产权的“筷子无胶拼接工艺”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "竹材综合利用技术",
+      "evidence_span": "成功研发竹材综合利用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "植物纤维复合材料",
+      "evidence_span": "成功开发出植物纤维复合材料、抗菌复合材料、抗菌不锈钢材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗菌复合材料",
+      "evidence_span": "成功开发出植物纤维复合材料、抗菌复合材料、抗菌不锈钢材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗菌不锈钢材料",
+      "evidence_span": "成功开发出植物纤维复合材料、抗菌复合材料、抗菌不锈钢材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动组装机",
+      "evidence_span": "已成功研发出“自动组装机”、“自动抛光机”、“自动包装机”、“自动激光雕刻机”等一系列自动化设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动抛光机",
+      "evidence_span": "已成功研发出“自动组装机”、“自动抛光机”、“自动包装机”、“自动激光雕刻机”等一系列自动化设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动包装机",
+      "evidence_span": "已成功研发出“自动组装机”、“自动抛光机”、“自动包装机”、“自动激光雕刻机”等一系列自动化设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动激光雕刻机",
+      "evidence_span": "已成功研发出“自动组装机”、“自动抛光机”、“自动包装机”、“自动激光雕刻机”等一系列自动化设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "双立人",
+      "evidence_span": "公司与双立人、宜家仍保持良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宜家",
+      "evidence_span": "公司与双立人、宜家仍保持良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海底捞",
+      "evidence_span": "定制业务聚焦大客户，与海底捞、双立人、宜家建立良好合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大润发",
+      "evidence_span": "线下业务公司与国内主流商超包括大润发、沃尔玛、物美、家乐福、永辉等达成战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃尔玛",
+      "evidence_span": "线下业务公司与国内主流商超包括大润发、沃尔玛、物美、家乐福、永辉等达成战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "物美",
+      "evidence_span": "线下业务公司与国内主流商超包括大润发、沃尔玛、物美、家乐福、永辉等达成战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家乐福",
+      "evidence_span": "线下业务公司与国内主流商超包括大润发、沃尔玛、物美、家乐福、永辉等达成战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "永辉",
+      "evidence_span": "线下业务公司与国内主流商超包括大润发、沃尔玛、物美、家乐福、永辉等达成战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国沃尔玛",
+      "evidence_span": "公司已与美国沃尔玛、英国沃尔玛等全球性的商超建立战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英国沃尔玛",
+      "evidence_span": "公司已与美国沃尔玛、英国沃尔玛等全球性的商超建立战略合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "以竹代塑",
+      "evidence_span": "中国政府与国际竹藤组织共同发起“以竹代塑”倡议"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "日用餐厨具",
+        "evidence_span": "公司定位日用餐厨具行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "筷子",
+        "evidence_span": "主营产品为筷子、砧板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "砧板",
+        "evidence_span": "主营产品为筷子、砧板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "勺铲",
+        "evidence_span": "拥有筷子、砧板、勺铲、签类和其他餐厨具5个大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "签类",
+        "evidence_span": "拥有筷子、砧板、勺铲、签类和其他餐厨具5个大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他餐厨具",
+        "evidence_span": "拥有筷子、砧板、勺铲、签类和其他餐厨具5个大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锅具",
+        "evidence_span": "围绕厨房场景积极拓展锅具、陶瓷等新品类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陶瓷",
+        "evidence_span": "围绕厨房场景积极拓展锅具、陶瓷等新品类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能砧板",
+        "evidence_span": "2022年的智能砧板、国潮系列产品、可杀菌消毒的便携餐具等产品深受消费者喜爱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国潮系列产品",
+        "evidence_span": "2022年的智能砧板、国潮系列产品、可杀菌消毒的便携餐具等产品深受消费者喜爱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可杀菌消毒的便携餐具",
+        "evidence_span": "2022年的智能砧板、国潮系列产品、可杀菌消毒的便携餐具等产品深受消费者喜爱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "竹条",
+        "evidence_span": "公司主要生产竹条、竹签、竹炭等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "竹签",
+        "evidence_span": "公司主要生产竹条、竹签、竹炭等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "竹炭",
+        "evidence_span": "公司主要生产竹条、竹签、竹炭等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可降解一次性餐具",
+        "evidence_span": "专注开发可降解一次性餐具"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "日用餐厨具供应商",
+        "evidence_span": "公司是一家领先的日用餐厨具供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农业产业化国家重点龙头企业",
+        "evidence_span": "荣获“农业产业化国家重点龙头企业”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家林业重点龙头企业",
+        "evidence_span": "荣获“国家林业重点龙头企业”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国竹产业龙头企业",
+        "evidence_span": "荣获“中国竹产业龙头企业”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多材质双色注塑工艺",
+        "evidence_span": "拥有自主知识产权的“多材质双色注塑工艺”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多材质包胶工艺",
+        "evidence_span": "拥有自主知识产权的“多材质包胶工艺”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "植物纤维注塑工艺",
+        "evidence_span": "拥有自主知识产权的“植物纤维注塑工艺”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无缝锻造模具工艺",
+        "evidence_span": "拥有自主知识产权的“无缝锻造模具工艺”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "筷子无胶拼接工艺",
+        "evidence_span": "拥有自主知识产权的“筷子无胶拼接工艺”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "竹材综合利用技术",
+        "evidence_span": "成功研发竹材综合利用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "植物纤维复合材料",
+        "evidence_span": "成功开发出植物纤维复合材料、抗菌复合材料、抗菌不锈钢材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗菌复合材料",
+        "evidence_span": "成功开发出植物纤维复合材料、抗菌复合材料、抗菌不锈钢材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗菌不锈钢材料",
+        "evidence_span": "成功开发出植物纤维复合材料、抗菌复合材料、抗菌不锈钢材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动组装机",
+        "evidence_span": "已成功研发出“自动组装机”、“自动抛光机”、“自动包装机”、“自动激光雕刻机”等一系列自动化设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动抛光机",
+        "evidence_span": "已成功研发出“自动组装机”、“自动抛光机”、“自动包装机”、“自动激光雕刻机”等一系列自动化设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动包装机",
+        "evidence_span": "已成功研发出“自动组装机”、“自动抛光机”、“自动包装机”、“自动激光雕刻机”等一系列自动化设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动激光雕刻机",
+        "evidence_span": "已成功研发出“自动组装机”、“自动抛光机”、“自动包装机”、“自动激光雕刻机”等一系列自动化设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "双立人",
+        "evidence_span": "公司与双立人、宜家仍保持良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宜家",
+        "evidence_span": "公司与双立人、宜家仍保持良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海底捞",
+        "evidence_span": "定制业务聚焦大客户，与海底捞、双立人、宜家建立良好合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大润发",
+        "evidence_span": "线下业务公司与国内主流商超包括大润发、沃尔玛、物美、家乐福、永辉等达成战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃尔玛",
+        "evidence_span": "线下业务公司与国内主流商超包括大润发、沃尔玛、物美、家乐福、永辉等达成战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "物美",
+        "evidence_span": "线下业务公司与国内主流商超包括大润发、沃尔玛、物美、家乐福、永辉等达成战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家乐福",
+        "evidence_span": "线下业务公司与国内主流商超包括大润发、沃尔玛、物美、家乐福、永辉等达成战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "永辉",
+        "evidence_span": "线下业务公司与国内主流商超包括大润发、沃尔玛、物美、家乐福、永辉等达成战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国沃尔玛",
+        "evidence_span": "公司已与美国沃尔玛、英国沃尔玛等全球性的商超建立战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英国沃尔玛",
+        "evidence_span": "公司已与美国沃尔玛、英国沃尔玛等全球性的商超建立战略合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "以竹代塑",
+        "evidence_span": "中国政府与国际竹藤组织共同发起“以竹代塑”倡议"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:08:46"
+}

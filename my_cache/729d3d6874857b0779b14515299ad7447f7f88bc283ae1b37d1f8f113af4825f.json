@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "f56e577dcdcb", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件（合同签订），但也提到了军工采购和招标节奏的恢复信号，可能隐含行业知识，需要进一步裁决。"}}

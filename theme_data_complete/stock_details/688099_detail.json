@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 1239660116.0,
+    "changeCount": 1.46,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p>一、公司介绍</p><p>晶晨股份（股票代码：688099）成立于2003年，总部位于上海，是一家专注于​<strong>​智能终端系统级芯片（SoC）​</strong>​ 设计的无晶圆半导体企业，于2019年成为科创板首批上市企业并正计划在香港联交所实现\"A+H\"双重上市 。公司以其在​<strong>​超高清音视频编解码、AI算力集成和低功耗设计​</strong>​方面的核心技术著称，产品线覆盖智能机顶盒、智能电视、AIoT（如智能音箱、智能家居）及汽车电子等众多领域，全球芯片累计出货量已超​<strong>​10亿颗​</strong>​，按2024年收入计，其家庭智能终端SoC芯片市场份额位居中国大陆第一、全球第二 。近年来，公司业绩增长显著，2025年上半年实现营业收入33.30亿元，净利润同比增长37.12%，这主要得益于AIoT和Wi-Fi 6芯片的强劲需求，其自主研发的端侧AI算力芯片出货量已突破900万颗 。公司持续高强度投入研发（近三年年研发费用超10亿元），并通过收购芯迈微等策略积极布局5G通信和智能汽车等新赛道，致力于成为\"AIoT+万物智联\"时代的平台型芯片供应商 。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/28/05c42990-153a-4e0f-96fd-a1fa8feb115e.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>二、行业介绍</p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">全球智能机顶盒出货量平稳，智能机顶盒成为国内新主流。据中金企信国际咨询， 2022 年全球智能机顶盒出货量高达 1.49 亿台，2020-2022 年复合增长率为 13.72%；2023 年，受全球经济下行、地缘政治冲突等不利因素的影响，出货量短期下降至 1.36 亿台，同 比下降 8.95%，但随着全球宏观经济企稳以及“智能换机潮”稳步推进，预计到 2027 年， 全球智能机顶盒出货量将达到 1.79 亿台，2023-2027 年 CAGR 为 7.1%，全球智能机顶盒 市场仍有较大增长空间。从产品结构来看， 2022 年我国机顶盒出货量达 0.75 亿台，其中 OTTTV、IPTV、DVB 顶盒占比分别为 43.9%、34.2%、21.9%，智能机顶盒主导国内市场。</span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">智能音箱为 AIoT 领域的重要切入点。智能音箱作为音频类智能终端领域的重要产 品之一，是目前 AI 音视频系统终端领域发展较为成熟的产品，具有较大的市场规模。 智能音箱连接技术主要包括：蓝牙、Wi-Fi、NFC、DLNA 和 Airplay 等。目前主要科技 厂商如阿里巴巴、百度、华为、小米均在智能音箱有所布局。经过几年的快速普及，智 能音箱的整体渗透率极高，尝鲜红利消退，行业一直处于高集中度，TOP3 品牌占据行 业 95%以上的份额，高集中度下行业缺乏竞争与创新，导致消费者换新需求低迷，市场 规模逐渐缩小。头部企业还需要在硬件、内容、服务等方面需要做出较大变革，在硬件 端，大屏、便携（内置电池）需要快速发展，而基于屏幕，更多的内容生态及服务功能 运用到智能音箱，用户黏性需要不断增强</span></p><p>三、核心优势</p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">音视频 SoC 国内基本盘稳定，海外市场加速发力。（1）智能机顶盒芯 片：</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\"><strong>公司为国内智能机顶盒芯片龙头厂商</strong></span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">。公司基于新一代 ARM V9 架 构和自主研发边缘 AI 能力的 6nm 商用芯片流片成功，并已获得首批商 用订单；8K 芯片在国内运营商的首次商用批量招标中斩获 100%的份 额。（2）智能电视芯片：与全球主流电视生态系统深度合作，</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\"><strong>产品已导 入 TCL、创维、海信等知名厂商，</strong></span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">受益于下游终端产品出海，海外份额 有望持续增长。（3）AI 音视频芯片：广泛应用于智能家居等众多消费类 电子领域，产品已通过 Google 的 EDLA 企业级生态认证，未来芯片的 应用领域还将进一步扩充。 </span></p><p><span style=\"color: rgb(0, 0, 0); font-size: 14px;\"> Wi-Fi 芯片发展迅速，汽车电子芯片开启新增长。（1）Wi-Fi 芯片：</span><span style=\"color: rgb(207, 19, 34); font-size: 14px;\"><strong>公 司 Wi-Fi 芯片发展迅速，W 系列全年销量首次突破 1000 万颗,达到近 1400 万颗</strong></span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">。W 系列自 2020 年上市以来,累计销量超过 3000 万颗。三模 组合新产品（Wi-Fi 6＋BT 5.4.＋802.15.4）进展顺利，将驱动公司 Wi-Fi 业务步入快速增长通道。（2）汽车电子芯片：</span><span style=\"color: rgb(225, 60, 57); font-size: 14px;\"><strong>汽车电子芯片已进入宝马、 林肯、Jeep、沃尔沃等知名车企，并成功量产、商用</strong></span><span style=\"color: rgb(0, 0, 0); font-size: 14px;\">。部分产品已通过 车规认证，将带来更多客户群体和新的增量</span></p>",
+    "firstLetter": "JCGF",
+    "high": 97.2,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 91.55,
+    "marketValue": 39707493993.64,
+    "name": "晶晨股份",
+    "pctChg": 1.55,
+    "price": 95.74,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 1,
+    "recent365LimitUpCount": 0,
+    "recent60Change": 7.54,
+    "recentChange": 9.3,
+    "remark": "公司为国内智能机顶盒芯片龙头厂商，公 司 Wi-Fi 芯片发展迅速，W 系列全年销量首次突破 1000 万颗,达到近 1400 万颗",
+    "status": 1,
+    "stockId": "688099",
+    "stockLightspots": [
+      {
+        "bizKey": "31752",
+        "content": "立足“硬”技术，开拓“芯”未来",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31752,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31753",
+        "content": "晶晨股份音视频编解码SoC芯片领跑者，新应用空间广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31753,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31754",
+        "content": "晶晨股份多媒体智能SoC龙头，开启新征程",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31754,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31755",
+        "content": "晶晨股份深耕音视频基本盘，新领域延伸拓展边界",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31755,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31756",
+        "content": "五大业务多向布局，AIoT引领创新增量",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31756,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31757",
+        "content": "多媒体智能终端SoC领导者，卡位智能家居核心业务",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31757,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31758",
+        "content": "晶晨股份国内领先的SoC芯片设计公司",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31758,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31759",
+        "content": "晶晨股份泛音视频SoC龙头，多维布局加速成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31759,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31760",
+        "content": "晶晨股份智能音视频龙头，多产品布局打开成长空间",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31760,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31761",
+        "content": "全球智能终端SoC芯片龙头的崛起",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31761,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31762",
+        "content": "晶晨股份中国多媒体终端SoC龙头，三大动力驱动成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31762,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31763",
+        "content": "晶晨股份数字芯片技术领先，音视频SoC份额提升",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31763,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31764",
+        "content": "多媒体SoC芯片全球龙头，迎5G时代“芯”机遇",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31764,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31765",
+        "content": "晶晨股份多媒体终端SoC龙头，扬帆全球蓝海",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31765,
+        "stockId": "688099",
+        "updateTime": null
+      },
+      {
+        "bizKey": "31766",
+        "content": "晶晨股份传统业务全球化拓展、格局向好，卡位多媒体核心芯片向多品类、新终端拓展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 31766,
+        "stockId": "688099",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:02",
+    "vol": 131406.12
+  }
+}

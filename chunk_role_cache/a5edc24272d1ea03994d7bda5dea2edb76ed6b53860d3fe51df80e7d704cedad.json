@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:24:22", "result": {"chunk_id": "b6ad115b968a", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明稀土永磁材料的类型、应用领域和市场份额，包括钕铁硼永磁材料的分类、应用场景（如风力发电机、新能源汽车等）和钐钴磁性材料的占比及用途。内容纯属定义、构成和关键要素，不涉及任何事件、时间动态或新闻信息，完全符合题材本体构建的稳定知识要求。"}}

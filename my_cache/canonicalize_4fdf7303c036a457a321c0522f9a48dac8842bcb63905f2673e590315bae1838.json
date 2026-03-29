@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:32:56", "result": {"span_uid": "f3e21e77d93b", "action": "keep", "canonical_text": "VR指虚拟现实，通过创建完全虚拟的环境，将用户完全沉浸到一个与真实世界分离的虚拟环境中。", "final_type": "core", "final_role": "VR技术定义", "stability": "high", "reason": "该片段直接定义了VR技术，是苹果MR题材的基础技术概念，信息稳定且可独立理解，无需改写。"}}

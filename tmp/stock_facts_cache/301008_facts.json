@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "流体电磁阀研发生产",
+      "evidence_span": "主营业务为流体电磁阀、传感器及其他电器配件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "传感器研发生产",
+      "evidence_span": "主营业务为流体电磁阀、传感器及其他电器配件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电器配件研发生产",
+      "evidence_span": "主营业务为流体电磁阀、传感器及其他电器配件的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "磁感控制产品专业制造企业",
+      "evidence_span": "公司作为磁感控制产品专业制造企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "洗衣机阀主要生产商",
+      "evidence_span": "公司是国内洗衣机阀的主要生产商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "流体电磁阀",
+      "evidence_span": "主要产品包括流体电磁阀、模块化组件及水位传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模块化组件",
+      "evidence_span": "主要产品包括流体电磁阀、模块化组件及水位传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水位传感器",
+      "evidence_span": "主要产品包括流体电磁阀、模块化组件及水位传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洗衣机进水阀",
+      "evidence_span": "公司在洗衣机进水阀领域取得了一定的竞争优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "净水器模块化组件",
+      "evidence_span": "公司的净水器模块化组件产品已批量供货"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动投放模块",
+      "evidence_span": "公司针对客户的洗衣机自动投放需求开发了自动投放模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子水泵",
+      "evidence_span": "公司计划通过本次募投项目投产电子水泵产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模块化组件研发能力",
+      "evidence_span": "公司已开始开发智能马桶相关组件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "带流量计电磁阀设计",
+      "evidence_span": "公司设计的带流量计电磁阀通过采用霍尔效应或磁阻感应脉冲来达到精准识别并控制水流量的目的"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海尔集团",
+      "evidence_span": "已与下游知名家电企业海尔集团、美的集团、海信集团、松下集团、TCL集团、西门子等建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美的集团",
+      "evidence_span": "已与下游知名家电企业海尔集团、美的集团、海信集团、松下集团、TCL集团、西门子等建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海信集团",
+      "evidence_span": "已与下游知名家电企业海尔集团、美的集团、海信集团、松下集团、TCL集团、西门子等建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "松下集团",
+      "evidence_span": "已与下游知名家电企业海尔集团、美的集团、海信集团、松下集团、TCL集团、西门子等建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TCL集团",
+      "evidence_span": "已与下游知名家电企业海尔集团、美的集团、海信集团、松下集团、TCL集团、西门子等建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子",
+      "evidence_span": "已与下游知名家电企业海尔集团、美的集团、海信集团、松下集团、TCL集团、西门子等建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Vestel",
+      "evidence_span": "土耳其客户Vestel同比增长82.25%"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "流体电磁阀研发生产",
+        "evidence_span": "主营业务为流体电磁阀、传感器及其他电器配件的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "传感器研发生产",
+        "evidence_span": "主营业务为流体电磁阀、传感器及其他电器配件的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电器配件研发生产",
+        "evidence_span": "主营业务为流体电磁阀、传感器及其他电器配件的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "磁感控制产品专业制造企业",
+        "evidence_span": "公司作为磁感控制产品专业制造企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "洗衣机阀主要生产商",
+        "evidence_span": "公司是国内洗衣机阀的主要生产商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "流体电磁阀",
+        "evidence_span": "主要产品包括流体电磁阀、模块化组件及水位传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模块化组件",
+        "evidence_span": "主要产品包括流体电磁阀、模块化组件及水位传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水位传感器",
+        "evidence_span": "主要产品包括流体电磁阀、模块化组件及水位传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洗衣机进水阀",
+        "evidence_span": "公司在洗衣机进水阀领域取得了一定的竞争优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "净水器模块化组件",
+        "evidence_span": "公司的净水器模块化组件产品已批量供货"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动投放模块",
+        "evidence_span": "公司针对客户的洗衣机自动投放需求开发了自动投放模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子水泵",
+        "evidence_span": "公司计划通过本次募投项目投产电子水泵产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模块化组件研发能力",
+        "evidence_span": "公司已开始开发智能马桶相关组件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "带流量计电磁阀设计",
+        "evidence_span": "公司设计的带流量计电磁阀通过采用霍尔效应或磁阻感应脉冲来达到精准识别并控制水流量的目的"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海尔集团",
+        "evidence_span": "已与下游知名家电企业海尔集团、美的集团、海信集团、松下集团、TCL集团、西门子等建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美的集团",
+        "evidence_span": "已与下游知名家电企业海尔集团、美的集团、海信集团、松下集团、TCL集团、西门子等建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海信集团",
+        "evidence_span": "已与下游知名家电企业海尔集团、美的集团、海信集团、松下集团、TCL集团、西门子等建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "松下集团",
+        "evidence_span": "已与下游知名家电企业海尔集团、美的集团、海信集团、松下集团、TCL集团、西门子等建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TCL集团",
+        "evidence_span": "已与下游知名家电企业海尔集团、美的集团、海信集团、松下集团、TCL集团、西门子等建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子",
+        "evidence_span": "已与下游知名家电企业海尔集团、美的集团、海信集团、松下集团、TCL集团、西门子等建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Vestel",
+        "evidence_span": "土耳其客户Vestel同比增长82.25%"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:15:38"
+}

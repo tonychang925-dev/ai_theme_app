@@ -1,0 +1,129 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业零售",
+      "evidence_span": "主营包括商业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产业",
+      "evidence_span": "主营包括...房地产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "旅游饮食服务",
+      "evidence_span": "主营包括...旅游饮食服务等行业的公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "理财投资",
+      "evidence_span": "坚持以商业零售、理财投资为主"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "宁波本土的商业零售品牌",
+      "evidence_span": "作为宁波本土的商业零售品牌“宁波二百”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄金珠宝",
+      "evidence_span": "坚持以“黄金珠宝、床上用品、滋补品”三张名片为经营方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "床上用品",
+      "evidence_span": "坚持以“黄金珠宝、床上用品、滋补品”三张名片为经营方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "滋补品",
+      "evidence_span": "坚持以“黄金珠宝、床上用品、滋补品”三张名片为经营方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "明牌珠宝批发业务",
+      "evidence_span": "开拓“明牌珠宝”批发业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄金类商品",
+      "evidence_span": "自营模式下分为两类：一类为黄金类商品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普通商品",
+      "evidence_span": "另一类为普通商品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "甬派",
+      "evidence_span": "与宁波市本土企业“甬派”开展联合营销模式"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业零售",
+        "evidence_span": "主营包括商业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产业",
+        "evidence_span": "主营包括...房地产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "旅游饮食服务",
+        "evidence_span": "主营包括...旅游饮食服务等行业的公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "理财投资",
+        "evidence_span": "坚持以商业零售、理财投资为主"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "宁波本土的商业零售品牌",
+        "evidence_span": "作为宁波本土的商业零售品牌“宁波二百”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄金珠宝",
+        "evidence_span": "坚持以“黄金珠宝、床上用品、滋补品”三张名片为经营方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "床上用品",
+        "evidence_span": "坚持以“黄金珠宝、床上用品、滋补品”三张名片为经营方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "滋补品",
+        "evidence_span": "坚持以“黄金珠宝、床上用品、滋补品”三张名片为经营方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "明牌珠宝批发业务",
+        "evidence_span": "开拓“明牌珠宝”批发业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄金类商品",
+        "evidence_span": "自营模式下分为两类：一类为黄金类商品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普通商品",
+        "evidence_span": "另一类为普通商品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "甬派",
+        "evidence_span": "与宁波市本土企业“甬派”开展联合营销模式"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:38:52"
+}

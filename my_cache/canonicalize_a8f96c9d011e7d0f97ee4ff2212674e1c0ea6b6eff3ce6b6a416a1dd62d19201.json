@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:53:12", "result": {"span_uid": "bb068a823cf5", "action": "keep", "canonical_text": "华卓精科在亦庄建成4.5万平米研发制造基地，配备万级洁净间及光学实验室。", "final_type": "related", "final_role": "研发制造设施", "stability": "high", "reason": "该片段描述了公司的量产设施条件，是与题材高度相关的稳定知识，可独立成立。"}}

@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "钢铁产品",
+      "evidence_span": "公司钢铁产品分为板材、棒材、线材、型材四大类"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "钒钛产品",
+      "evidence_span": "公司在钒钛钢铁冶炼和钒产品生产技术方面处于世界领先地位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "棒材、冷热轧板材的深加工企业",
+      "evidence_span": "国内品种规格最全的棒材、冷热轧板材的深加工企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "板材",
+      "evidence_span": "公司钢铁产品分为板材、棒材、线材、型材四大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "棒材",
+      "evidence_span": "公司钢铁产品分为板材、棒材、线材、型材四大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线材",
+      "evidence_span": "公司钢铁产品分为板材、棒材、线材、型材四大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "型材",
+      "evidence_span": "公司钢铁产品分为板材、棒材、线材、型材四大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷轧薄板",
+      "evidence_span": "冷轧薄板、高强螺纹钢筋、管线钢等品牌产品在国内外享有盛誉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高强螺纹钢筋",
+      "evidence_span": "冷轧薄板、高强螺纹钢筋、管线钢等品牌产品在国内外享有盛誉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管线钢",
+      "evidence_span": "冷轧薄板、高强螺纹钢筋、管线钢等品牌产品在国内外享有盛誉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车板",
+      "evidence_span": "汽车板、家电板、管线钢、核电用钢及高强抗震建材打入国内外高端市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家电板",
+      "evidence_span": "汽车板、家电板、管线钢、核电用钢及高强抗震建材打入国内外高端市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核电用钢",
+      "evidence_span": "汽车板、家电板、管线钢、核电用钢及高强抗震建材打入国内外高端市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高强抗震建材",
+      "evidence_span": "汽车板、家电板、管线钢、核电用钢及高强抗震建材打入国内外高端市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "五氧化二钒",
+      "evidence_span": "主要产品有五氧化二钒（片剂、粉剂）、氧化钒、钒铁、氮化钒铁、钒铝合金等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氧化钒",
+      "evidence_span": "主要产品有五氧化二钒（片剂、粉剂）、氧化钒、钒铁、氮化钒铁、钒铝合金等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钒铁",
+      "evidence_span": "主要产品有五氧化二钒（片剂、粉剂）、氧化钒、钒铁、氮化钒铁、钒铝合金等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氮化钒铁",
+      "evidence_span": "主要产品有五氧化二钒（片剂、粉剂）、氧化钒、钒铁、氮化钒铁、钒铝合金等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钒铝合金",
+      "evidence_span": "主要产品有五氧化二钒（片剂、粉剂）、氧化钒、钒铁、氮化钒铁、钒铝合金等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钒电池电解液",
+      "evidence_span": "成功研发了99.9%能源级氧化钒、钒电池电解液、金属钒、钛合金粉末等一系列高端钒钛产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属钒",
+      "evidence_span": "成功研发了99.9%能源级氧化钒、钒电池电解液、金属钒、钛合金粉末等一系列高端钒钛产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钛合金粉末",
+      "evidence_span": "成功研发了99.9%能源级氧化钒、钒电池电解液、金属钒、钛合金粉末等一系列高端钒钛产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车用高强钢AHSS980-BT",
+      "evidence_span": "汽车用高强钢AHSS980-BT替代进口"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直径42毫米含钒特钢",
+      "evidence_span": "自主研发的直径42毫米含钒特钢成功填补国内空白"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯钒材料",
+      "evidence_span": "高纯钒材料入选工业和信息化部、中国工业经济联合会发布的第七批制造业单项冠军企业（产品）名单"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁基材料新能源用钢",
+      "evidence_span": "加大铁基材料新能源用钢、军工用钢、核电用钢等系列新产品研发及投入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军工用钢",
+      "evidence_span": "加大铁基材料新能源用钢、军工用钢、核电用钢等系列新产品研发及投入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钒钛钢铁冶炼技术",
+      "evidence_span": "公司在钒钛钢铁冶炼和钒产品生产技术方面处于世界领先地位"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钒产品生产技术",
+      "evidence_span": "公司在钒钛钢铁冶炼和钒产品生产技术方面处于世界领先地位"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "熔剂性球团生产及高比例球团冶炼技术",
+      "evidence_span": "“熔剂性球团生产及高比例球团冶炼技术”入选中国科协2022年“科创中国”“先导技术榜”榜单"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "转炉底吹氧底喷粉新技术",
+      "evidence_span": "实现国内首台套转炉底吹氧底喷粉新技术的示范应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视觉AI检测技术",
+      "evidence_span": "推动视觉AI检测技术应用、5G技术产线应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G技术产线应用",
+      "evidence_span": "推动视觉AI检测技术应用、5G技术产线应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "高端产品直供宝马、东风、通用五菱等知名汽车主机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风",
+      "evidence_span": "高端产品直供宝马、东风、通用五菱等知名汽车主机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通用五菱",
+      "evidence_span": "高端产品直供宝马、东风、通用五菱等知名汽车主机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中核嘉华",
+      "evidence_span": "以及中核嘉华、大庆石油、中国平煤、中铝宁夏等行业头部企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大庆石油",
+      "evidence_span": "以及中核嘉华、大庆石油、中国平煤、中铝宁夏等行业头部企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国平煤",
+      "evidence_span": "以及中核嘉华、大庆石油、中国平煤、中铝宁夏等行业头部企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铝宁夏",
+      "evidence_span": "以及中核嘉华、大庆石油、中国平煤、中铝宁夏等行业头部企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "供给侧改革受益",
+      "evidence_span": "供给侧改革助腾飞"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "钢铁行业去产能优先受益",
+      "evidence_span": "钢铁行业去产能优先受益标的"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "钢铁产品",
+        "evidence_span": "公司钢铁产品分为板材、棒材、线材、型材四大类"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "钒钛产品",
+        "evidence_span": "公司在钒钛钢铁冶炼和钒产品生产技术方面处于世界领先地位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "棒材、冷热轧板材的深加工企业",
+        "evidence_span": "国内品种规格最全的棒材、冷热轧板材的深加工企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "板材",
+        "evidence_span": "公司钢铁产品分为板材、棒材、线材、型材四大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "棒材",
+        "evidence_span": "公司钢铁产品分为板材、棒材、线材、型材四大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线材",
+        "evidence_span": "公司钢铁产品分为板材、棒材、线材、型材四大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "型材",
+        "evidence_span": "公司钢铁产品分为板材、棒材、线材、型材四大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷轧薄板",
+        "evidence_span": "冷轧薄板、高强螺纹钢筋、管线钢等品牌产品在国内外享有盛誉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高强螺纹钢筋",
+        "evidence_span": "冷轧薄板、高强螺纹钢筋、管线钢等品牌产品在国内外享有盛誉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管线钢",
+        "evidence_span": "冷轧薄板、高强螺纹钢筋、管线钢等品牌产品在国内外享有盛誉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车板",
+        "evidence_span": "汽车板、家电板、管线钢、核电用钢及高强抗震建材打入国内外高端市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家电板",
+        "evidence_span": "汽车板、家电板、管线钢、核电用钢及高强抗震建材打入国内外高端市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核电用钢",
+        "evidence_span": "汽车板、家电板、管线钢、核电用钢及高强抗震建材打入国内外高端市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高强抗震建材",
+        "evidence_span": "汽车板、家电板、管线钢、核电用钢及高强抗震建材打入国内外高端市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "五氧化二钒",
+        "evidence_span": "主要产品有五氧化二钒（片剂、粉剂）、氧化钒、钒铁、氮化钒铁、钒铝合金等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氧化钒",
+        "evidence_span": "主要产品有五氧化二钒（片剂、粉剂）、氧化钒、钒铁、氮化钒铁、钒铝合金等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钒铁",
+        "evidence_span": "主要产品有五氧化二钒（片剂、粉剂）、氧化钒、钒铁、氮化钒铁、钒铝合金等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氮化钒铁",
+        "evidence_span": "主要产品有五氧化二钒（片剂、粉剂）、氧化钒、钒铁、氮化钒铁、钒铝合金等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钒铝合金",
+        "evidence_span": "主要产品有五氧化二钒（片剂、粉剂）、氧化钒、钒铁、氮化钒铁、钒铝合金等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钒电池电解液",
+        "evidence_span": "成功研发了99.9%能源级氧化钒、钒电池电解液、金属钒、钛合金粉末等一系列高端钒钛产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属钒",
+        "evidence_span": "成功研发了99.9%能源级氧化钒、钒电池电解液、金属钒、钛合金粉末等一系列高端钒钛产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钛合金粉末",
+        "evidence_span": "成功研发了99.9%能源级氧化钒、钒电池电解液、金属钒、钛合金粉末等一系列高端钒钛产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车用高强钢AHSS980-BT",
+        "evidence_span": "汽车用高强钢AHSS980-BT替代进口"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直径42毫米含钒特钢",
+        "evidence_span": "自主研发的直径42毫米含钒特钢成功填补国内空白"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯钒材料",
+        "evidence_span": "高纯钒材料入选工业和信息化部、中国工业经济联合会发布的第七批制造业单项冠军企业（产品）名单"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁基材料新能源用钢",
+        "evidence_span": "加大铁基材料新能源用钢、军工用钢、核电用钢等系列新产品研发及投入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军工用钢",
+        "evidence_span": "加大铁基材料新能源用钢、军工用钢、核电用钢等系列新产品研发及投入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钒钛钢铁冶炼技术",
+        "evidence_span": "公司在钒钛钢铁冶炼和钒产品生产技术方面处于世界领先地位"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钒产品生产技术",
+        "evidence_span": "公司在钒钛钢铁冶炼和钒产品生产技术方面处于世界领先地位"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "熔剂性球团生产及高比例球团冶炼技术",
+        "evidence_span": "“熔剂性球团生产及高比例球团冶炼技术”入选中国科协2022年“科创中国”“先导技术榜”榜单"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "转炉底吹氧底喷粉新技术",
+        "evidence_span": "实现国内首台套转炉底吹氧底喷粉新技术的示范应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视觉AI检测技术",
+        "evidence_span": "推动视觉AI检测技术应用、5G技术产线应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G技术产线应用",
+        "evidence_span": "推动视觉AI检测技术应用、5G技术产线应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "高端产品直供宝马、东风、通用五菱等知名汽车主机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风",
+        "evidence_span": "高端产品直供宝马、东风、通用五菱等知名汽车主机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通用五菱",
+        "evidence_span": "高端产品直供宝马、东风、通用五菱等知名汽车主机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中核嘉华",
+        "evidence_span": "以及中核嘉华、大庆石油、中国平煤、中铝宁夏等行业头部企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大庆石油",
+        "evidence_span": "以及中核嘉华、大庆石油、中国平煤、中铝宁夏等行业头部企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国平煤",
+        "evidence_span": "以及中核嘉华、大庆石油、中国平煤、中铝宁夏等行业头部企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铝宁夏",
+        "evidence_span": "以及中核嘉华、大庆石油、中国平煤、中铝宁夏等行业头部企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "供给侧改革受益",
+        "evidence_span": "供给侧改革助腾飞"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "钢铁行业去产能优先受益",
+        "evidence_span": "钢铁行业去产能优先受益标的"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:18:23"
+}

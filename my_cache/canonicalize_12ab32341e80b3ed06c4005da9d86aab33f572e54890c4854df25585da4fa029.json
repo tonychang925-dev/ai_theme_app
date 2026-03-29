@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:14:22", "result": {"span_uid": "ffe6398ebf25", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "纸浆价格历史水平", "stability": "medium", "reason": "该片段仅提及进口针叶浆和阔叶浆周均价处于历史100%分位，但缺乏具体价格数值和上下文，无法形成独立、完整的知识表达，且属于短期价格信号，稳定性不足，因此丢弃。"}}

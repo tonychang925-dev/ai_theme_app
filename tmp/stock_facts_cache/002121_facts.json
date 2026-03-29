@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能电网业务",
+      "evidence_span": "主要从事智能电网、新能源业务及综合能源服务三大业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源业务",
+      "evidence_span": "主要从事智能电网、新能源业务及综合能源服务三大业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "综合能源服务",
+      "evidence_span": "主要从事智能电网、新能源业务及综合能源服务三大业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "能源领域的综合服务商",
+      "evidence_span": "公司是国内领先的能源领域的综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家重点高新技术企业",
+      "evidence_span": "国家重点高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "标准仪器仪表",
+      "evidence_span": "主要包括标准仪器仪表、智能电表和智能配电网一二次产品和设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电表",
+      "evidence_span": "主要包括标准仪器仪表、智能电表和智能配电网一二次产品和设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能配电网一二次产品和设备",
+      "evidence_span": "主要包括标准仪器仪表、智能电表和智能配电网一二次产品和设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能量型储能系统",
+      "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功率型储能系统",
+      "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "室内型储能系统",
+      "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "室外分布式储能系统",
+      "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动储能系统",
+      "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能双向变流器PCS",
+      "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光储一体变流器",
+      "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中压变流系统",
+      "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BMS电池管理系统",
+      "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "EMS能量管理系统",
+      "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能系统建设及运维服务",
+      "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源电动汽车充电设施",
+      "evidence_span": "公司新能源汽车充电及运营业务涵盖全系列新能源电动汽车充电设施的自主研发、生产、销售及售后服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充电运营平台",
+      "evidence_span": "公司基于云架构构建的充电运营平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合能源服务",
+      "evidence_span": "通过综合能源（电、冷、热、气）为客户提供综合服务（节能、储能、多能互补、能源保障、能源增值等）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精度量测技术",
+      "evidence_span": "核心技术是高精度量测技术、电力系统保护控制技术和—二次融合技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电力系统保护控制技术",
+      "evidence_span": "核心技术是高精度量测技术、电力系统保护控制技术和—二次融合技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "—二次融合技术",
+      "evidence_span": "核心技术是高精度量测技术、电力系统保护控制技术和—二次融合技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "是国家电网和南方电网的主流供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "是国家电网和南方电网的主流供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美洲知名能源企业",
+      "evidence_span": "与美洲知名能源企业签订了合计755MWh集装箱式电池储能系统供货合同"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能",
+      "evidence_span": "有望受益于储能、新能源汽车行业发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车",
+      "evidence_span": "有望受益于储能、新能源汽车行业发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能电网业务",
+        "evidence_span": "主要从事智能电网、新能源业务及综合能源服务三大业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源业务",
+        "evidence_span": "主要从事智能电网、新能源业务及综合能源服务三大业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "综合能源服务",
+        "evidence_span": "主要从事智能电网、新能源业务及综合能源服务三大业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "能源领域的综合服务商",
+        "evidence_span": "公司是国内领先的能源领域的综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家重点高新技术企业",
+        "evidence_span": "国家重点高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "标准仪器仪表",
+        "evidence_span": "主要包括标准仪器仪表、智能电表和智能配电网一二次产品和设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电表",
+        "evidence_span": "主要包括标准仪器仪表、智能电表和智能配电网一二次产品和设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能配电网一二次产品和设备",
+        "evidence_span": "主要包括标准仪器仪表、智能电表和智能配电网一二次产品和设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能量型储能系统",
+        "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功率型储能系统",
+        "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "室内型储能系统",
+        "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "室外分布式储能系统",
+        "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动储能系统",
+        "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能双向变流器PCS",
+        "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光储一体变流器",
+        "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中压变流系统",
+        "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BMS电池管理系统",
+        "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "EMS能量管理系统",
+        "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能系统建设及运维服务",
+        "evidence_span": "公司储能业务主要产品包括能量型储能系统、功率型储能系统、室内型储能系统、室外分布式储能系统、移动储能系统、储能双向变流器PCS、光储一体变流器、中压变流系统、BMS电池管理系统、EMS能量管理系统、储能系统建设及运维服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源电动汽车充电设施",
+        "evidence_span": "公司新能源汽车充电及运营业务涵盖全系列新能源电动汽车充电设施的自主研发、生产、销售及售后服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充电运营平台",
+        "evidence_span": "公司基于云架构构建的充电运营平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合能源服务",
+        "evidence_span": "通过综合能源（电、冷、热、气）为客户提供综合服务（节能、储能、多能互补、能源保障、能源增值等）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精度量测技术",
+        "evidence_span": "核心技术是高精度量测技术、电力系统保护控制技术和—二次融合技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电力系统保护控制技术",
+        "evidence_span": "核心技术是高精度量测技术、电力系统保护控制技术和—二次融合技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "—二次融合技术",
+        "evidence_span": "核心技术是高精度量测技术、电力系统保护控制技术和—二次融合技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "是国家电网和南方电网的主流供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "是国家电网和南方电网的主流供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美洲知名能源企业",
+        "evidence_span": "与美洲知名能源企业签订了合计755MWh集装箱式电池储能系统供货合同"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能",
+        "evidence_span": "有望受益于储能、新能源汽车行业发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车",
+        "evidence_span": "有望受益于储能、新能源汽车行业发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:03:56"
+}

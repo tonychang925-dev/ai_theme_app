@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 2652864506.83,
+    "changeCount": 0.09,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:30:14",
+    "detail": "<p>1公司介绍</p><p>从零部件到整机组装，智能化生产赋能创新选代。公司提供从核心零部件、模组到系统组装的一体化智造解决方案，<span style=\"color: rgb(225, 60, 57);\"><strong>产品主要涵盖消费电子、汽车、通信、工业及医疗等领域</strong></span>。针对当下汽车产业向新能源和智能化转型，手机行业向折叠屏等创新形态迈进，以及AI眼镜等新兴消费电子产品井喷的大背景下。公司始终遵循“三个五年”既定计划，一方面，持续夯实消费电子业务基本盘，在横向的开拓中提升产品、业务覆盖面广度，开拓新客户新产品;另一方面，充分借助通讯业务、汽车业务两大落脚点，推动公司多元化发展，在产业协同深度的探寻中实现核心能力的持续突破。公司深度绑定大客户，2024年第一大客户营收占比为 70.74%。</p><p><img src=\"https://super-data-middle-platform.oss-cn-beijing.aliyuncs.com/image/2025/09/22/8405c9ff-a240-4e25-8588-902fc832528a.png\" alt=\"\" data-href=\"\" style=\"\"/></p><p>2公司亮点</p><p><strong>消费电子:苹果业务稳健成长，非A 消费电子业务快速扩张</strong>。上半年消费电子业务营收 978 亿，同比增长 14.3%。其中，苹果 CQ2 由于iPhone和 Mac 超预期取得高个位数营收利润表现，而立讯苹果业务叠加自身alpha，可看到 25H1 联营企业投资收益达到13.5 亿其中 Q2 8.2 亿YoY40.7%，显示立臻 iPhone 组装份额和盈利能力仍在持续提升;而立铠 25H1 345 亿收入(YoY-2.7%)盈利 8.1亿(YoY114.8%)，显示去年被 Vision Pro 拖累的盈利能力得到明显修复。在非 A 层面，公司不仅成功导入多个新产品项目，更在多个前沿产品领域，如ARNR、消费级3D 打印、机器人等新兴领域持续与客户加深合作，并在7月初完成对闻泰 ODM 主体股权资产的整合。</p><p><strong>通讯业务受益 Al 算力驱动获得高速成长</strong>。公司上半年通讯互联业务营收111 亿，同比增长 48.65%，其中首次披露业绩占比超过 10%的 A| 算力业务主体东莞立讯技术 25H1 收入65.5亿、净利润达8.25 亿，主要业务为电连接、光模块、电源和热管理，其业务增速及高盈利能力值得关注。而通讯另一增长动能来自子公司汇聚科技，其上半年数据中心电线(主要为 MPO 光通信)和 A| 服务器业务营收分别为 9.4 亿港元和 25.6 亿港元同比大增 67%和 318%，且未来高增长趋势值得期待。</p><p><strong>汽车业务强劲增长，新品持续推进和菜尼并购顺利完成</strong>。上半年汽车业务营收 87 亿，同比增长 82.07%，在高压、高速线束方面持续发力，2024年获得多个新项目定点，并在2025年陆续实现量产;汽车连接器方面，高压产品稳定供货，低压、高速产品在主流车厂项目中也取得突破;智能驾舱和智能辅助驾驶领域，除了EMS模式项目，自主研发的产品也获得了头部客户定点，预计在 2025 年第四季度实现批量供货;2024年新布局的智能底盘产品线，预计在 2025年实现营收的0到1突破;动力系统已实现批量稳定供货，并在 2025 年启动 JDM 合作模式。公司最新于 7月已完成对莱尼线束线缆资产的并购，且在立讯协同下，莱尼25H1在多年来首次实现盈利，盈利节奏好于此前预期。</p>",
+    "firstLetter": "LXJM",
+    "high": 51.49,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 50.57,
+    "marketValue": 370128014784.4,
+    "name": "立讯精密",
+    "pctChg": 0.18,
+    "price": 50.89,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": -10.33,
+    "recentChange": -1.55,
+    "remark": "消费电子稳健增长，通讯、汽车业务高增长打开第二曲线",
+    "status": 1,
+    "stockId": "002475",
+    "stockLightspots": [
+      {
+        "bizKey": "36631",
+        "content": "5G+AI时代的精密制造平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36631,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36632",
+        "content": "立讯精密万物互联科技新时代，精密制造平台大放异彩",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36632,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36633",
+        "content": "立讯精密无边界扩张的消费电子龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36633,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36634",
+        "content": "立讯精密无边界扩张的消费电子巨头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36634,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36635",
+        "content": "汽车赛道新成长，精密制造龙头再启航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36635,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36636",
+        "content": "立讯精密立足互联解决方案，搭建精密制造大平台",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36636,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36637",
+        "content": "矩阵式创新铸造平台式成长新引擎，深耕5G版图分飨新兴产业重构红利",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36637,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36638",
+        "content": "精密制造龙头，全方位构建核心竞争力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36638,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36639",
+        "content": "立讯精密精密制造龙头扬帆起航",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36639,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36640",
+        "content": "立讯精密建设精密制造平台企业，致力于多领域可持续发展",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36640,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36641",
+        "content": "立讯精密优势突出的精密制造平台，看好长线成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36641,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36642",
+        "content": "多领域前瞻性布局，精密制造巨头茁壮成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36642,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36643",
+        "content": "立讯精密AR/VR加速消费电子成长，汽车时代新平台成立",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36643,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36644",
+        "content": "立讯精密多面发力，打造精密制造龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36644,
+        "stockId": "002475",
+        "updateTime": null
+      },
+      {
+        "bizKey": "36645",
+        "content": "横向零组件产品扩张，纵向器件向整机工程发力",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 36645,
+        "stockId": "002475",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:11:53",
+    "vol": 519262.19
+  }
+}

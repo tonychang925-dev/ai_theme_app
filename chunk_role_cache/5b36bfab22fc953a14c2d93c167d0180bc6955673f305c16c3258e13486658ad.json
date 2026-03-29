@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "db8062a8721a", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述“交个朋友”淘宝直播间销售“空中的士”EH216-S的具体事件，包括价格、定金支付等市场动态，没有涉及低空经济的静态知识。"}}

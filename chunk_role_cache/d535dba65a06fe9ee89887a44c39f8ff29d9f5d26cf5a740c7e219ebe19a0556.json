@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T12:19:46", "result": {"chunk_id": "05858f3acdf0", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落前半部分为北方华创和中微公司的财务公告事件，后半部分涉及三星引进High-NA EUV光刻机的技术知识（如设备功能、制程需求），混合了事件和潜在知识。"}}

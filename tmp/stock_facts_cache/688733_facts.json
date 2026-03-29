@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电池涂覆材料",
+      "evidence_span": "主要产品包括锂电池涂覆材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子通信功能填充材料",
+      "evidence_span": "主要产品包括...电子通信功能填充材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "低烟无卤阻燃材料",
+      "evidence_span": "主要产品包括...低烟无卤阻燃材料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球锂电池用勃姆石最大供应商",
+      "evidence_span": "壹石通全球锂电池用勃姆石最大供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "勃姆石龙头企业",
+      "evidence_span": "勃姆石龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无机新材料小巨人",
+      "evidence_span": "壹石通无机新材料小巨人"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电涂覆材料及电子通信填充材料领军企业",
+      "evidence_span": "壹石通锂电涂覆材料及电子通信填充材料领军企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "勃姆石",
+      "evidence_span": "勃姆石产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯二氧化硅",
+      "evidence_span": "主营高纯二氧化硅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导热用球形氧化铝",
+      "evidence_span": "新增年产9800吨导热用球形氧化铝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "亚微米高纯氧化铝",
+      "evidence_span": "5000吨锂电池涂覆及电子陶瓷用亚微米高纯氧化铝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芯片封装用Low-α射线球形氧化铝",
+      "evidence_span": "200吨芯片封装用Low-α射线球形氧化铝"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Low-α金属氧化物粉体制备技术",
+      "evidence_span": "公司采用特有的Low-α金属氧化物粉体制备技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "流化床气流粉碎技术",
+      "evidence_span": "流化床气流粉碎技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "宁德时代勃姆石产品的核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "璞泰来",
+      "evidence_span": "宁德时代配套的锂电池隔膜涂覆生产商璞泰来"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星SDI",
+      "evidence_span": "公司已进入三星SDI...等多家国内外锂电池制造企业的供应商体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源科技（ATL）",
+      "evidence_span": "公司已进入...新能源科技（ATL）...等多家国内外锂电池制造企业的供应商体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国轩高科",
+      "evidence_span": "公司已进入...国轩高科...等多家国内外锂电池制造企业的供应商体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天津力神",
+      "evidence_span": "公司已进入...天津力神...等多家国内外锂电池制造企业的供应商体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欣旺达",
+      "evidence_span": "公司已进入...欣旺达...等多家国内外锂电池制造企业的供应商体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赣锋锂业",
+      "evidence_span": "公司已进入...赣锋锂业...等多家国内外锂电池制造企业的供应商体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本雅都玛公司",
+      "evidence_span": "为日本雅都玛公司解决芯片封装问题"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于锂电及电子",
+      "evidence_span": "受益于锂电及电子"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益新能源汽车高速发展",
+      "evidence_span": "受益新能源汽车高速发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电池涂覆材料",
+        "evidence_span": "主要产品包括锂电池涂覆材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子通信功能填充材料",
+        "evidence_span": "主要产品包括...电子通信功能填充材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "低烟无卤阻燃材料",
+        "evidence_span": "主要产品包括...低烟无卤阻燃材料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球锂电池用勃姆石最大供应商",
+        "evidence_span": "壹石通全球锂电池用勃姆石最大供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "勃姆石龙头企业",
+        "evidence_span": "勃姆石龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无机新材料小巨人",
+        "evidence_span": "壹石通无机新材料小巨人"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电涂覆材料及电子通信填充材料领军企业",
+        "evidence_span": "壹石通锂电涂覆材料及电子通信填充材料领军企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "勃姆石",
+        "evidence_span": "勃姆石产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯二氧化硅",
+        "evidence_span": "主营高纯二氧化硅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导热用球形氧化铝",
+        "evidence_span": "新增年产9800吨导热用球形氧化铝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "亚微米高纯氧化铝",
+        "evidence_span": "5000吨锂电池涂覆及电子陶瓷用亚微米高纯氧化铝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芯片封装用Low-α射线球形氧化铝",
+        "evidence_span": "200吨芯片封装用Low-α射线球形氧化铝"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Low-α金属氧化物粉体制备技术",
+        "evidence_span": "公司采用特有的Low-α金属氧化物粉体制备技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "流化床气流粉碎技术",
+        "evidence_span": "流化床气流粉碎技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "宁德时代勃姆石产品的核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "璞泰来",
+        "evidence_span": "宁德时代配套的锂电池隔膜涂覆生产商璞泰来"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星SDI",
+        "evidence_span": "公司已进入三星SDI...等多家国内外锂电池制造企业的供应商体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源科技（ATL）",
+        "evidence_span": "公司已进入...新能源科技（ATL）...等多家国内外锂电池制造企业的供应商体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国轩高科",
+        "evidence_span": "公司已进入...国轩高科...等多家国内外锂电池制造企业的供应商体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津力神",
+        "evidence_span": "公司已进入...天津力神...等多家国内外锂电池制造企业的供应商体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欣旺达",
+        "evidence_span": "公司已进入...欣旺达...等多家国内外锂电池制造企业的供应商体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赣锋锂业",
+        "evidence_span": "公司已进入...赣锋锂业...等多家国内外锂电池制造企业的供应商体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本雅都玛公司",
+        "evidence_span": "为日本雅都玛公司解决芯片封装问题"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于锂电及电子",
+        "evidence_span": "受益于锂电及电子"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益新能源汽车高速发展",
+        "evidence_span": "受益新能源汽车高速发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:41:51"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "44b4beeeff61", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了优必选公司发布的新技术（热插拔自主换电系统），包含具体事件（宣布引入）和日期，但同时也提供了关于人形机器人技术能力的静态知识（3分钟自主换电、7*24小时工作能力），这些知识可能用于题材本体构建，因此归类为混合候选。"}}

@@ -1,0 +1,304 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "化肥生产加工",
+      "evidence_span": "主营业务为化肥(含氮肥、磷肥、钾肥)、肥料（含复合肥料、复混肥料、有机肥料及微生物肥料）、化学制品（含精制磷酸、磷酸盐）、化学原料的生产加工和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主营业务为化肥(含氮肥、磷肥、钾肥)、肥料（含复合肥料、复混肥料、有机肥料及微生物肥料）、化学制品（含精制磷酸、磷酸盐）、化学原料的生产加工和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "肥料生产加工",
+      "evidence_span": "主营业务为化肥(含氮肥、磷肥、钾肥)、肥料（含复合肥料、复混肥料、有机肥料及微生物肥料）、化学制品（含精制磷酸、磷酸盐）、化学原料的生产加工和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化学制品生产加工",
+      "evidence_span": "主营业务为化肥(含氮肥、磷肥、钾肥)、肥料（含复合肥料、复混肥料、有机肥料及微生物肥料）、化学制品（含精制磷酸、磷酸盐）、化学原料的生产加工和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化学原料生产加工",
+      "evidence_span": "主营业务为化肥(含氮肥、磷肥、钾肥)、肥料（含复合肥料、复混肥料、有机肥料及微生物肥料）、化学制品（含精制磷酸、磷酸盐）、化学原料的生产加工和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "磷复肥和磷化工一体化专业制造的大型企业",
+      "evidence_span": "公司是华东地区磷复肥和磷化工一体化专业制造的大型企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家重点发展的大型磷复肥生产骨干企业",
+      "evidence_span": "是国家重点发展的大型磷复肥生产骨干企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸二铵",
+      "evidence_span": "公司主要产品为磷酸二铵、磷酸一铵、复合肥、尿素等肥料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸一铵",
+      "evidence_span": "公司主要产品为磷酸二铵、磷酸一铵、复合肥、尿素等肥料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合肥",
+      "evidence_span": "公司主要产品为磷酸二铵、磷酸一铵、复合肥、尿素等肥料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "尿素",
+      "evidence_span": "公司主要产品为磷酸二铵、磷酸一铵、复合肥、尿素等肥料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水溶肥",
+      "evidence_span": "完成水溶肥装置建设并投产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精制磷酸",
+      "evidence_span": "精制磷酸应用于电池原料行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级双氧水",
+      "evidence_span": "完成子公司国泰化工“2万吨/年电子级双氧水(UP-1)”项目前期技术调研"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池级精制磷酸",
+      "evidence_span": "用于湖北徽阳新材料有限公司“28万吨/年电池级精制磷酸项目”建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高档阻燃剂",
+      "evidence_span": "以及5万吨高档阻燃剂的生产能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "普莱昂4代工艺",
+      "evidence_span": "目前拥有普莱昂4代、R-P工艺等三套湿法磷酸生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "R-P工艺",
+      "evidence_span": "目前拥有普莱昂4代、R-P工艺等三套湿法磷酸生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "湿法磷酸生产线",
+      "evidence_span": "目前拥有普莱昂4代、R-P工艺等三套湿法磷酸生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "DAP生产线",
+      "evidence_span": "多套DAP、MAP、NPK生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MAP生产线",
+      "evidence_span": "多套DAP、MAP、NPK生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "NPK生产线",
+      "evidence_span": "多套DAP、MAP、NPK生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "控失性复合肥生产技术",
+      "evidence_span": "产学研合作研究控失性复合肥生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "萃取净化法湿法磷酸净化",
+      "evidence_span": "公司“萃取净化法”湿法磷酸净化及磷酸盐装置是国家科技支撑计划工业化示范项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一步法二水-半水法磷酸工艺",
+      "evidence_span": "“一步法二水-半水法磷酸工艺”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大宗工业固废磷石膏资源化利用技术",
+      "evidence_span": "“大宗工业固废磷石膏资源化利用技术”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低品位磷矿资源化利用及高效浸提制磷酸技术",
+      "evidence_span": "“低品位磷矿资源化利用及高效浸提制磷酸技术”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新型减施增效复合肥产品开发",
+      "evidence_span": "“新型减施增效复合肥产品开发”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磷矿伴生超低碘资源回收利用技术",
+      "evidence_span": "“磷矿伴生超低碘资源回收利用技术”"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "有望受益国企改革"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "化肥生产加工和销售",
+        "evidence_span": "主营业务为化肥(含氮肥、磷肥、钾肥)、肥料（含复合肥料、复混肥料、有机肥料及微生物肥料）、化学制品（含精制磷酸、磷酸盐）、化学原料的生产加工和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "肥料生产加工和销售",
+        "evidence_span": "主营业务为化肥(含氮肥、磷肥、钾肥)、肥料（含复合肥料、复混肥料、有机肥料及微生物肥料）、化学制品（含精制磷酸、磷酸盐）、化学原料的生产加工和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化学制品生产加工和销售",
+        "evidence_span": "主营业务为化肥(含氮肥、磷肥、钾肥)、肥料（含复合肥料、复混肥料、有机肥料及微生物肥料）、化学制品（含精制磷酸、磷酸盐）、化学原料的生产加工和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化学原料生产加工和销售",
+        "evidence_span": "主营业务为化肥(含氮肥、磷肥、钾肥)、肥料（含复合肥料、复混肥料、有机肥料及微生物肥料）、化学制品（含精制磷酸、磷酸盐）、化学原料的生产加工和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "磷复肥和磷化工一体化专业制造的大型企业",
+        "evidence_span": "公司是华东地区磷复肥和磷化工一体化专业制造的大型企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家重点发展的大型磷复肥生产骨干企业",
+        "evidence_span": "是国家重点发展的大型磷复肥生产骨干企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸二铵",
+        "evidence_span": "公司主要产品为磷酸二铵、磷酸一铵、复合肥、尿素等肥料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸一铵",
+        "evidence_span": "公司主要产品为磷酸二铵、磷酸一铵、复合肥、尿素等肥料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合肥",
+        "evidence_span": "公司主要产品为磷酸二铵、磷酸一铵、复合肥、尿素等肥料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "尿素",
+        "evidence_span": "公司主要产品为磷酸二铵、磷酸一铵、复合肥、尿素等肥料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水溶肥",
+        "evidence_span": "完成水溶肥装置建设并投产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精制磷酸",
+        "evidence_span": "精制磷酸应用于电池原料行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级双氧水",
+        "evidence_span": "完成子公司国泰化工“2万吨/年电子级双氧水(UP-1)”项目前期技术调研"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池级精制磷酸",
+        "evidence_span": "用于湖北徽阳新材料有限公司“28万吨/年电池级精制磷酸项目”建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高档阻燃剂",
+        "evidence_span": "以及5万吨高档阻燃剂的生产能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "普莱昂4代工艺",
+        "evidence_span": "目前拥有普莱昂4代、R-P工艺等三套湿法磷酸生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "R-P工艺",
+        "evidence_span": "目前拥有普莱昂4代、R-P工艺等三套湿法磷酸生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "湿法磷酸生产线",
+        "evidence_span": "目前拥有普莱昂4代、R-P工艺等三套湿法磷酸生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "DAP生产线",
+        "evidence_span": "多套DAP、MAP、NPK生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MAP生产线",
+        "evidence_span": "多套DAP、MAP、NPK生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "NPK生产线",
+        "evidence_span": "多套DAP、MAP、NPK生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "控失性复合肥生产技术",
+        "evidence_span": "产学研合作研究控失性复合肥生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "萃取净化法湿法磷酸净化",
+        "evidence_span": "公司“萃取净化法”湿法磷酸净化及磷酸盐装置是国家科技支撑计划工业化示范项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一步法二水-半水法磷酸工艺",
+        "evidence_span": "“一步法二水-半水法磷酸工艺”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大宗工业固废磷石膏资源化利用技术",
+        "evidence_span": "“大宗工业固废磷石膏资源化利用技术”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低品位磷矿资源化利用及高效浸提制磷酸技术",
+        "evidence_span": "“低品位磷矿资源化利用及高效浸提制磷酸技术”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新型减施增效复合肥产品开发",
+        "evidence_span": "“新型减施增效复合肥产品开发”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磷矿伴生超低碘资源回收利用技术",
+        "evidence_span": "“磷矿伴生超低碘资源回收利用技术”"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "有望受益国企改革"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:17:23"
+}

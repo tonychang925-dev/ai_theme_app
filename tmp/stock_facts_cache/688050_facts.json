@@ -1,0 +1,404 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "眼科医疗器械产品的自主研发",
+      "evidence_span": "公司主要从事眼科医疗器械产品的自主研发、生产、销售及相关服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主要从事眼科医疗器械产品的自主研发、生产、销售及相关服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要从事眼科医疗器械产品的自主研发、生产、销售及相关服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "相关服务",
+      "evidence_span": "公司主要从事眼科医疗器械产品的自主研发、生产、销售及相关服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "手术领域",
+      "evidence_span": "主营业务覆盖手术和视光两大领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "视光领域",
+      "evidence_span": "主营业务覆盖手术和视光两大领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "眼科医疗器械提供商",
+      "evidence_span": "产品领先的眼科器械提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "眼科平台型企业",
+      "evidence_span": "眼科平台型企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "眼科创新医疗器械平台公司",
+      "evidence_span": "爱博医疗眼科创新医疗器械平台公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产中高端人工晶状体领导者",
+      "evidence_span": "爱博医疗是国产中高端人工晶状体领导者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产中高端人工晶状体标杆企业",
+      "evidence_span": "是名副其实的国产中高端人工晶状体标杆企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普诺明系列人工晶状体",
+      "evidence_span": "手术领域的核心产品为普诺明系列人工晶状体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普诺特系列预装式人工晶状体",
+      "evidence_span": "普诺特系列预装式人工晶状体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "利尔美系列手术配套产品",
+      "evidence_span": "利尔美系列手术配套产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普诺瞳系列角膜塑形镜",
+      "evidence_span": "视光领域核心产品为普诺瞳系列角膜塑形镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镜片护理液",
+      "evidence_span": "相关的镜片护理液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冲洗液",
+      "evidence_span": "冲洗液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "护理仪",
+      "evidence_span": "护理仪等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩色软性接触镜（彩瞳）",
+      "evidence_span": "正在拓展彩色软性接触镜（彩瞳）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "离焦镜",
+      "evidence_span": "离焦镜业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清睐硬性角膜接触镜冲洗液",
+      "evidence_span": "2021年清睐硬性角膜接触镜冲洗液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SurfacePLUS等离子镜片护理仪",
+      "evidence_span": "SurfacePLUS等离子镜片护理仪正式上市销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "曦明多功能硬性接触镜护理液",
+      "evidence_span": "2022年曦明多功能硬性接触镜护理液获批上市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硬性接触镜酶清洁剂",
+      "evidence_span": "在研项目中还有硬性接触镜酶清洁剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硬性接触镜润滑液",
+      "evidence_span": "硬性接触镜润滑液等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "材料制备",
+      "evidence_span": "自主掌握了材料制备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光学与结构设计",
+      "evidence_span": "光学与结构设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工艺制造",
+      "evidence_span": "工艺制造在内的核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工晶状体光学设计技术",
+      "evidence_span": "爱博医疗人工晶状体光学设计技术领先国产厂商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "非球面衍射型多焦人工晶状体",
+      "evidence_span": "公司非球面衍射型多焦人工晶状体通过国家药监局技术审评中心创新医疗器械特别审查程序"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大景深EDOF人工晶状体",
+      "evidence_span": "大景深EDOF人工晶状体"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "非球面三焦散光矫正人工晶状体",
+      "evidence_span": "非球面三焦散光矫正人工晶状体均进入临床试验阶段"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自制氟硅丙烯酸酯材料",
+      "evidence_span": "自制氟硅丙烯酸酯材料的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "OK镜原材料合成",
+      "evidence_span": "掌握OK镜原材料合成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "OK镜加工工艺",
+      "evidence_span": "OK镜加工工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "配套护理技术",
+      "evidence_span": "配套护理三种技术的厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国",
+      "evidence_span": "出口至德国"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法国",
+      "evidence_span": "法国"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荷兰",
+      "evidence_span": "荷兰等国家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "加速进口替代进程"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "打破国际厂商在高端人工晶状体领域的垄断"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "眼科医疗器械产品的自主研发、生产、销售及相关服务",
+        "evidence_span": "公司主要从事眼科医疗器械产品的自主研发、生产、销售及相关服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "手术领域",
+        "evidence_span": "主营业务覆盖手术和视光两大领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "视光领域",
+        "evidence_span": "主营业务覆盖手术和视光两大领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "眼科医疗器械提供商",
+        "evidence_span": "产品领先的眼科器械提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "眼科平台型企业",
+        "evidence_span": "眼科平台型企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "眼科创新医疗器械平台公司",
+        "evidence_span": "爱博医疗眼科创新医疗器械平台公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产中高端人工晶状体领导者",
+        "evidence_span": "爱博医疗是国产中高端人工晶状体领导者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产中高端人工晶状体标杆企业",
+        "evidence_span": "是名副其实的国产中高端人工晶状体标杆企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普诺明系列人工晶状体",
+        "evidence_span": "手术领域的核心产品为普诺明系列人工晶状体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普诺特系列预装式人工晶状体",
+        "evidence_span": "普诺特系列预装式人工晶状体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "利尔美系列手术配套产品",
+        "evidence_span": "利尔美系列手术配套产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普诺瞳系列角膜塑形镜",
+        "evidence_span": "视光领域核心产品为普诺瞳系列角膜塑形镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镜片护理液",
+        "evidence_span": "相关的镜片护理液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冲洗液",
+        "evidence_span": "冲洗液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "护理仪",
+        "evidence_span": "护理仪等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩色软性接触镜（彩瞳）",
+        "evidence_span": "正在拓展彩色软性接触镜（彩瞳）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "离焦镜",
+        "evidence_span": "离焦镜业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清睐硬性角膜接触镜冲洗液",
+        "evidence_span": "2021年清睐硬性角膜接触镜冲洗液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SurfacePLUS等离子镜片护理仪",
+        "evidence_span": "SurfacePLUS等离子镜片护理仪正式上市销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "曦明多功能硬性接触镜护理液",
+        "evidence_span": "2022年曦明多功能硬性接触镜护理液获批上市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硬性接触镜酶清洁剂",
+        "evidence_span": "在研项目中还有硬性接触镜酶清洁剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硬性接触镜润滑液",
+        "evidence_span": "硬性接触镜润滑液等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "材料制备",
+        "evidence_span": "自主掌握了材料制备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光学与结构设计",
+        "evidence_span": "光学与结构设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工艺制造",
+        "evidence_span": "工艺制造在内的核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工晶状体光学设计技术",
+        "evidence_span": "爱博医疗人工晶状体光学设计技术领先国产厂商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "非球面衍射型多焦人工晶状体",
+        "evidence_span": "公司非球面衍射型多焦人工晶状体通过国家药监局技术审评中心创新医疗器械特别审查程序"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大景深EDOF人工晶状体",
+        "evidence_span": "大景深EDOF人工晶状体"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "非球面三焦散光矫正人工晶状体",
+        "evidence_span": "非球面三焦散光矫正人工晶状体均进入临床试验阶段"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自制氟硅丙烯酸酯材料",
+        "evidence_span": "自制氟硅丙烯酸酯材料的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "OK镜原材料合成",
+        "evidence_span": "掌握OK镜原材料合成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "OK镜加工工艺",
+        "evidence_span": "OK镜加工工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "配套护理技术",
+        "evidence_span": "配套护理三种技术的厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国",
+        "evidence_span": "出口至德国"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法国",
+        "evidence_span": "法国"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荷兰",
+        "evidence_span": "荷兰等国家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "加速进口替代进程"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "打破国际厂商在高端人工晶状体领域的垄断"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:46:14"
+}

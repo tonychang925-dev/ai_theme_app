@@ -1,0 +1,62 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 235811327.0,
+    "changeCount": -4.36,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:48",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司介绍</span><br />英方软件专注于数据复制，是国内市场少数同时掌握动态文件字节级、数据库语义级和卷层块级数据复制技术的高新技术企业之一，是上海市科技小巨人企业、上海市&ldquo;专精特新&rdquo;中小企业，在企业业务连续性及数据复制管理领域处于领先地位。公司构造了&ldquo;容灾+备份+云灾备+大数据&rdquo;四大数据复制产品系列。相关产品覆盖了容灾、备份、云灾备、数据库同步、数据迁移等经典应用场景，同时也推广到了智能灾备管理、数据副本管理、数据流管理、大数据收集分发、数据跟随等更多应用领域。根据IDC统计，2021年国内数据复制与保护的纯软件市场中，前五大供应商分别为Veritas、DELL、英方软件、Commvault和华为，市场占有率分别为16.0%、13.1%、10.2%、8.5%和8.3%。<br /><br /><span style=\"font-weight: bold;\">2、公司业绩介绍</span><br />营业收入方面，公司2018-2021年、2022Q1-Q3分别实现营业收入约0.64、1.02、1.29、1.60以及1.14亿元，2018-2021年复合增速约为25.74%；归母净利润方面，公司2018-2021年、2022Q1-Q3分别实现归母净利润约-0.09、0.18、0.41、0.34以及0.06亿元，2018-2021年复合增速约为47.84%。2022年上半年受上海地区疫情影响，公司业务的拓展及实施都受到较大的影响，在上海地区解封之后，存在对之前疫情期间延宕业务的补偿性拓展和实施，受此影响营业收入与归母净利润在2022年7-9月有较大幅度反弹。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid1_20230119164536_4b1fe58f2cbf2efb.png\" /><br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid3_20230119164543_c26e96ac16dc0283.png\" /><br />公司主营业务产品主要包括软件产品、软硬件一体机产品及软件相关服务。其中软件产品是公司的主要收入来源，从产品结构来看，软件产品收入占比最高，软硬件一体机产品收入占比有所下降。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid5_20230119164622_624f72197908fb63.png\" /><br />公司2018-2022年前三季度的毛利率分别为71.48%、79.29%、86.79%、85.63%、84.21%；2018-2022前三季度的净利率分别为-14.85%、17.84%、31.57%、5.42%，2022年前三季度净利率有所下滑主要系2022年公司的研发人员和销售人员数量和人均薪酬均高于上年同期，销售费用和研发费用中职工薪酬增高所致。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid7_20230119164725_5a3b87b6a29eb381.png\" /><br /><br /><span style=\"font-weight: bold;\">3、灾备行业景气高，公司核心产品覆盖面广阔</span><br />国内数字经济蓬勃发展，各行业数字化转型升级进度加快，数据安全和业务连续性作为数字经济发展的重要基础，也得到了越来越多的重视。根据《中国灾备行业白皮书（2021）》的数据，2012年我国灾备行业市场规模为60.3亿元，2022年将达到329.1亿元，复合增速约为18.50%。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid9_20230119165045_13effedc610710a0.png\" /><br />公司在灾备领域拥有数据实时复制软件、块设备复制与恢复管理软件、持续数据保护与恢复软件、高可用灾备管理软件以及海量数据灾备管理软件多系列产品满足客户需求。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid10_20230119165201_db3a814ffb824661.png\" /><br /><br /><span style=\"font-weight: bold;\">4、大数据产品有望成第二增长点</span><br />IDC预测中国大数据市场总量有望在2024年超过200亿美元。根据《2021中国大数据产业发展白皮书》数据，2020年中国大数据产业规模达6388亿元，同比增长18.6%，到2023年产业规模将超过10000亿元。<br /><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/blobid12_20230119165542_bd1dea79d5d1257c.png\" /><br />公司的大数据产品系列可满足用户读写分离、异构数据库传输、脱敏、分发等需求，为用户的大数据分析传输实时、安全、可靠的数据。<br /><br /><span style=\"font-weight: bold;\">5、风险提示</span><br />研发人员流失与核心技术泄密风险；研发决策风险。</p>",
+    "firstLetter": "YFRJ",
+    "high": 61.98,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 54.7,
+    "marketValue": 5050080000.0,
+    "name": "英方软件",
+    "pctChg": -7.21,
+    "price": 56.12,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 1,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 1.12,
+    "recentChange": -9.35,
+    "remark": "数据复制行业领头羊",
+    "status": 1,
+    "stockId": "688435",
+    "stockLightspots": [
+      {
+        "bizKey": "34024",
+        "content": "英方软件数据复制领军，展翅大数据时代",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34024,
+        "stockId": "688435",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34025",
+        "content": "国产数据复制软件龙头企业",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34025,
+        "stockId": "688435",
+        "updateTime": null
+      },
+      {
+        "bizKey": "34026",
+        "content": "数字经济黑马，数据复制行业龙头",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 34026,
+        "stockId": "688435",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:09:26",
+    "vol": 41790.3
+  }
+}

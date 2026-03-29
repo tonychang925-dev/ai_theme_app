@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "d2dc837b8319", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细列举了半导体产业链的关键环节，如EDA软件、IP核、光掩模、电子气体、光刻胶、抛光材料、高纯靶材，以及光刻、清洗、刻蚀、离子注入、沉积等设备，这些是半导体设备领域的核心构成和稳定知识。"}}

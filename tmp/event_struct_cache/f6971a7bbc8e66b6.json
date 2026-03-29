@@ -1,0 +1,93 @@
+{
+  "event_id": "evt_2e7b711e5e71",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "产品发布",
+  "entities": [
+    {
+      "name": "INMO影目科技",
+      "type": "公司",
+      "normalized": "INMO影目科技"
+    },
+    {
+      "name": "成都",
+      "type": "地点",
+      "normalized": "成都"
+    },
+    {
+      "name": "INMO Air3",
+      "type": "产品",
+      "normalized": "INMO Air3"
+    },
+    {
+      "name": "INMO Go2",
+      "type": "产品",
+      "normalized": "INMO Go2"
+    },
+    {
+      "name": "贝哲斯",
+      "type": "组织",
+      "normalized": "贝哲斯"
+    },
+    {
+      "name": "智能眼镜",
+      "type": "产品",
+      "normalized": "智能眼镜"
+    },
+    {
+      "name": "AR眼镜",
+      "type": "产品",
+      "normalized": "AR眼镜"
+    }
+  ],
+  "summary": "INMO影目科技将在成都举办新品发布会，预计发布INMO Air3和INMO Go2两款AR眼镜。",
+  "causal_claim": [
+    "新品发布",
+    "AR眼镜市场增长",
+    "智能穿戴题材"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "新品发布会",
+      "AR眼镜",
+      "智能眼镜",
+      "市场规模",
+      "年复合增速"
+    ],
+    "normalized_terms": {
+      "INMO影目科技": "INMO影目科技",
+      "成都": "成都",
+      "INMO Air3": "INMO Air3",
+      "INMO Go2": "INMO Go2",
+      "贝哲斯": "贝哲斯",
+      "智能眼镜": "智能眼镜",
+      "AR眼镜": "AR眼镜"
+    },
+    "evidence_spans": [
+      {
+        "text": "智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会",
+        "start": 20,
+        "end": 70
+      },
+      {
+        "text": "届时或将发布INMO Air3、INMO Go2两款AR眼镜",
+        "start": 71,
+        "end": 100
+      },
+      {
+        "text": "预计到2029年，智能眼镜市场规模将达到1067.78亿元，期间年复合增速高达18.56%",
+        "start": 101,
+        "end": 150
+      }
+    ],
+    "core_concepts": [
+      "AR眼镜",
+      "新品发布",
+      "市场预测"
+    ]
+  },
+  "severity_score": 0.6,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-11-27T00:00:00Z",
+  "raw_text": "2024年11月27日，消息面上，智能眼镜厂商INMO影目科技将于11月29日在成都举办INMO2024新品发布会。有行业媒体报道称，届时或将发布INMO Air3、INMO Go2两款AR眼镜。根据贝哲斯智能眼镜市场研究报告显示，预计到2029年，智能眼镜市场规模将达到1067.78亿元，期间年复合增速高达18.56%。"
+}

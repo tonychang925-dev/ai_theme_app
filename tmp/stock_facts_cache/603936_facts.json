@@ -1,0 +1,569 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端印制电路板生产",
+      "evidence_span": "以高端印制电路板生产为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "PCB业务",
+      "evidence_span": "PCB事业群"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "解决方案业务",
+      "evidence_span": "解决方案事业群"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "民营电路板制造商",
+      "evidence_span": "民营电路板制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "解决方案提供商",
+      "evidence_span": "解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "PCB客制化方案解决商",
+      "evidence_span": "转型PCB客制化方案解决商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HDI板",
+      "evidence_span": "HDI(高密度互连)板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高多层板",
+      "evidence_span": "高多层"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微波高频板",
+      "evidence_span": "微波高频"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "厚铜板",
+      "evidence_span": "厚铜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属基/芯板",
+      "evidence_span": "金属基/芯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软板",
+      "evidence_span": "软板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软硬结合板",
+      "evidence_span": "软硬结合板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陶瓷衬板",
+      "evidence_span": "陶瓷衬板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微波无源器件",
+      "evidence_span": "微波无源器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车电子装联",
+      "evidence_span": "新能源汽车电子装联"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AMB陶瓷衬板",
+      "evidence_span": "AMB陶瓷衬板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DBC基板",
+      "evidence_span": "DBC基板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DPC基板",
+      "evidence_span": "DPC基板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IGBT衬板",
+      "evidence_span": "IGBT衬板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PCBA一站式服务",
+      "evidence_span": "PCBA一站式服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "隔离器",
+      "evidence_span": "隔离器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环形器",
+      "evidence_span": "环形器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功分器",
+      "evidence_span": "功分器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电阻器",
+      "evidence_span": "电阻器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电桥",
+      "evidence_span": "电桥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "螺旋电感",
+      "evidence_span": "螺旋电感"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AMB生产工艺",
+      "evidence_span": "AMB生产工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "DBC生产工艺",
+      "evidence_span": "DBC生产工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "DPC生产工艺",
+      "evidence_span": "DPC生产工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "强弱电一体化PCB技术方案",
+      "evidence_span": "强弱电一体化PCB的技术方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "薄膜多层电路技术",
+      "evidence_span": "薄膜多层电路技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微组装工艺技术",
+      "evidence_span": "微组装工艺技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星电子",
+      "evidence_span": "三星电子"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "歌尔股份",
+      "evidence_span": "歌尔股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苹果",
+      "evidence_span": "苹果"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为电声供应链",
+      "evidence_span": "华为电声供应链"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美的",
+      "evidence_span": "美的"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "格力",
+      "evidence_span": "格力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TCL",
+      "evidence_span": "TCL"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奥克斯",
+      "evidence_span": "奥克斯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "小米"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英凡蒂",
+      "evidence_span": "英凡蒂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "造车新势力",
+      "evidence_span": "造车新势力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航天二院",
+      "evidence_span": "航天二院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南瑞集团",
+      "evidence_span": "南瑞集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航空体系",
+      "evidence_span": "航空体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中车体系",
+      "evidence_span": "中车体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "振华科技",
+      "evidence_span": "振华科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国电南瑞",
+      "evidence_span": "国电南瑞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪半导体",
+      "evidence_span": "比亚迪半导体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏",
+      "evidence_span": "小鹏"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中天鹏宇",
+      "evidence_span": "中天鹏宇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "存储国产化",
+      "evidence_span": "国内稀缺AMB陶瓷衬板厂商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国内领先的AMB、DBC、DPC生产工艺"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端印制电路板生产",
+        "evidence_span": "以高端印制电路板生产为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "PCB业务",
+        "evidence_span": "PCB事业群"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "解决方案业务",
+        "evidence_span": "解决方案事业群"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "民营电路板制造商",
+        "evidence_span": "民营电路板制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "解决方案提供商",
+        "evidence_span": "解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "PCB客制化方案解决商",
+        "evidence_span": "转型PCB客制化方案解决商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HDI板",
+        "evidence_span": "HDI(高密度互连)板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高多层板",
+        "evidence_span": "高多层"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微波高频板",
+        "evidence_span": "微波高频"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "厚铜板",
+        "evidence_span": "厚铜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属基/芯板",
+        "evidence_span": "金属基/芯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软板",
+        "evidence_span": "软板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软硬结合板",
+        "evidence_span": "软硬结合板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陶瓷衬板",
+        "evidence_span": "陶瓷衬板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微波无源器件",
+        "evidence_span": "微波无源器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车电子装联",
+        "evidence_span": "新能源汽车电子装联"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AMB陶瓷衬板",
+        "evidence_span": "AMB陶瓷衬板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DBC基板",
+        "evidence_span": "DBC基板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DPC基板",
+        "evidence_span": "DPC基板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IGBT衬板",
+        "evidence_span": "IGBT衬板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PCBA一站式服务",
+        "evidence_span": "PCBA一站式服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "隔离器",
+        "evidence_span": "隔离器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环形器",
+        "evidence_span": "环形器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功分器",
+        "evidence_span": "功分器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电阻器",
+        "evidence_span": "电阻器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电桥",
+        "evidence_span": "电桥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "螺旋电感",
+        "evidence_span": "螺旋电感"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AMB生产工艺",
+        "evidence_span": "AMB生产工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "DBC生产工艺",
+        "evidence_span": "DBC生产工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "DPC生产工艺",
+        "evidence_span": "DPC生产工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "强弱电一体化PCB技术方案",
+        "evidence_span": "强弱电一体化PCB的技术方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "薄膜多层电路技术",
+        "evidence_span": "薄膜多层电路技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微组装工艺技术",
+        "evidence_span": "微组装工艺技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星电子",
+        "evidence_span": "三星电子"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "歌尔股份",
+        "evidence_span": "歌尔股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苹果",
+        "evidence_span": "苹果"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为电声供应链",
+        "evidence_span": "华为电声供应链"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美的",
+        "evidence_span": "美的"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "格力",
+        "evidence_span": "格力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TCL",
+        "evidence_span": "TCL"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奥克斯",
+        "evidence_span": "奥克斯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "小米"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英凡蒂",
+        "evidence_span": "英凡蒂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "造车新势力",
+        "evidence_span": "造车新势力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航天二院",
+        "evidence_span": "航天二院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南瑞集团",
+        "evidence_span": "南瑞集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航空体系",
+        "evidence_span": "航空体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中车体系",
+        "evidence_span": "中车体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "振华科技",
+        "evidence_span": "振华科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国电南瑞",
+        "evidence_span": "国电南瑞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪半导体",
+        "evidence_span": "比亚迪半导体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏",
+        "evidence_span": "小鹏"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中天鹏宇",
+        "evidence_span": "中天鹏宇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "存储国产化",
+        "evidence_span": "国内稀缺AMB陶瓷衬板厂商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国内领先的AMB、DBC、DPC生产工艺"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:31:15"
+}

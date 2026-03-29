@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "51657f844d00", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含关于半导体产业国产替代的结构性知识（如体制转变、商业公司主导、央企协调），但混合了事件信息（如euv产线最快2025试生产、特定领导负责）和时间性动态，可能含有可用于题材本体构建的稳定知识，但需要进一步裁决以分离事件部分。"}}

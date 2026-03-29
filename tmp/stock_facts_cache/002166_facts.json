@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "天然甜味剂",
+      "evidence_span": "天然甜味剂作为公司主打的核心品种"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业大麻提取物",
+      "evidence_span": "工业大麻提取物为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "茶叶提取物",
+      "evidence_span": "茶叶提取物为核心"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "植物提取行业龙头",
+      "evidence_span": "植物提取行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球天然甜味剂供应商前三",
+      "evidence_span": "产能及年度销量居全球天然甜味剂供应商前三"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甜叶菊提取物",
+      "evidence_span": "主要产品为甜叶菊提取物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "罗汉果提取物",
+      "evidence_span": "主要产品为甜叶菊提取物及罗汉果提取物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业大麻提取物",
+      "evidence_span": "工业大麻提取物为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "茶叶提取物",
+      "evidence_span": "茶叶提取物为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医用CBD",
+      "evidence_span": "主要产品为医用CBD"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CBG",
+      "evidence_span": "主要产品为医用CBD、CBG"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CBN",
+      "evidence_span": "主要产品为医用CBD、CBG、CBN"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水溶性CBD",
+      "evidence_span": "水溶性CBD"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全谱油",
+      "evidence_span": "全谱油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "广谱油",
+      "evidence_span": "广谱油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CBD纳米乳液",
+      "evidence_span": "CBD纳米乳液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "脱THC产品",
+      "evidence_span": "脱THC产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "300多种天然植物成分的核心提取技术",
+      "evidence_span": "已掌握300多种天然植物成分的核心提取技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微生物合成制法",
+      "evidence_span": "布局微生物合成制法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "合成生物工艺技术路线",
+      "evidence_span": "拟新增合成生物工艺技术路线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "芬美意",
+      "evidence_span": "与国际著名香精香料公司芬美意签订了为期五年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球60多个国家和地区",
+      "evidence_span": "远销美国、欧洲、韩国、日本等全球60多个国家和地区"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "减糖潮",
+      "evidence_span": "减糖潮涌顺势起"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "美国联邦层面cannabis合法化",
+      "evidence_span": "美国联邦层面cannabis合法化加速推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "天然甜味剂",
+        "evidence_span": "天然甜味剂作为公司主打的核心品种"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业大麻提取物",
+        "evidence_span": "工业大麻提取物为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "茶叶提取物",
+        "evidence_span": "茶叶提取物为核心"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "植物提取行业龙头",
+        "evidence_span": "植物提取行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球天然甜味剂供应商前三",
+        "evidence_span": "产能及年度销量居全球天然甜味剂供应商前三"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甜叶菊提取物",
+        "evidence_span": "主要产品为甜叶菊提取物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "罗汉果提取物",
+        "evidence_span": "主要产品为甜叶菊提取物及罗汉果提取物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业大麻提取物",
+        "evidence_span": "工业大麻提取物为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "茶叶提取物",
+        "evidence_span": "茶叶提取物为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医用CBD",
+        "evidence_span": "主要产品为医用CBD"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CBG",
+        "evidence_span": "主要产品为医用CBD、CBG"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CBN",
+        "evidence_span": "主要产品为医用CBD、CBG、CBN"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水溶性CBD",
+        "evidence_span": "水溶性CBD"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全谱油",
+        "evidence_span": "全谱油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "广谱油",
+        "evidence_span": "广谱油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CBD纳米乳液",
+        "evidence_span": "CBD纳米乳液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "脱THC产品",
+        "evidence_span": "脱THC产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "300多种天然植物成分的核心提取技术",
+        "evidence_span": "已掌握300多种天然植物成分的核心提取技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微生物合成制法",
+        "evidence_span": "布局微生物合成制法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "合成生物工艺技术路线",
+        "evidence_span": "拟新增合成生物工艺技术路线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "芬美意",
+        "evidence_span": "与国际著名香精香料公司芬美意签订了为期五年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球60多个国家和地区",
+        "evidence_span": "远销美国、欧洲、韩国、日本等全球60多个国家和地区"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "减糖潮",
+        "evidence_span": "减糖潮涌顺势起"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "美国联邦层面cannabis合法化",
+        "evidence_span": "美国联邦层面cannabis合法化加速推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:14:53"
+}

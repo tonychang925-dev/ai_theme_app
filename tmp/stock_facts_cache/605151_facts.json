@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车零部件制造",
+      "evidence_span": "深耕汽车零部件制造和汽车物流服务两大主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车物流服务",
+      "evidence_span": "深耕汽车零部件制造和汽车物流服务两大主营业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车全产业链服务供应商",
+      "evidence_span": "公司作为一家覆盖从产前至售后的汽车全产业链服务供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "第三方汽车物流服务供应商",
+      "evidence_span": "公司作为第三方汽车物流服务供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "包覆件",
+      "evidence_span": "汽车零部件制造业务的主要产品为包覆件和涂装件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涂装件",
+      "evidence_span": "汽车零部件制造业务的主要产品为包覆件和涂装件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整车仓储及运营服务",
+      "evidence_span": "汽车物流业务主要包括整车仓储及运营服务、汽车零部件仓储及运营服务、零部件运输服务和整车运输服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车零部件仓储及运营服务",
+      "evidence_span": "汽车物流业务主要包括整车仓储及运营服务、汽车零部件仓储及运营服务、零部件运输服务和整车运输服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "零部件运输服务",
+      "evidence_span": "汽车物流业务主要包括整车仓储及运营服务、汽车零部件仓储及运营服务、零部件运输服务和整车运输服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整车运输服务",
+      "evidence_span": "汽车物流业务主要包括整车仓储及运营服务、汽车零部件仓储及运营服务、零部件运输服务和整车运输服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "麻纤维座椅背板",
+      "evidence_span": "零部件产品除包覆件和涂装件外，还拓展了麻纤维座椅背板、音乐头枕等车身附件和功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "音乐头枕",
+      "evidence_span": "零部件产品除包覆件和涂装件外，还拓展了麻纤维座椅背板、音乐头枕等车身附件和功能部件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "同步开发能力",
+      "evidence_span": "公司已具备与高端整车厂商进行同步开发的能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来汽车",
+      "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "理想汽车",
+      "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏汽车",
+      "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "领克汽车",
+      "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "智己汽车",
+      "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "飞凡汽车",
+      "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天际汽车",
+      "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合众新能源",
+      "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞新能源",
+      "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽集团",
+      "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用",
+      "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安吉物流",
+      "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽集团",
+      "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽商贸",
+      "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "风神物流",
+      "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽物流",
+      "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京奔驰",
+      "evidence_span": "在公司客户群中丰富了北京奔驰、蔚来汽车等豪华汽车品牌"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车业务",
+      "evidence_span": "集中优势资源开拓新能源汽车增量业务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车零部件制造",
+        "evidence_span": "深耕汽车零部件制造和汽车物流服务两大主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车物流服务",
+        "evidence_span": "深耕汽车零部件制造和汽车物流服务两大主营业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车全产业链服务供应商",
+        "evidence_span": "公司作为一家覆盖从产前至售后的汽车全产业链服务供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "第三方汽车物流服务供应商",
+        "evidence_span": "公司作为第三方汽车物流服务供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "包覆件",
+        "evidence_span": "汽车零部件制造业务的主要产品为包覆件和涂装件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涂装件",
+        "evidence_span": "汽车零部件制造业务的主要产品为包覆件和涂装件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整车仓储及运营服务",
+        "evidence_span": "汽车物流业务主要包括整车仓储及运营服务、汽车零部件仓储及运营服务、零部件运输服务和整车运输服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车零部件仓储及运营服务",
+        "evidence_span": "汽车物流业务主要包括整车仓储及运营服务、汽车零部件仓储及运营服务、零部件运输服务和整车运输服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "零部件运输服务",
+        "evidence_span": "汽车物流业务主要包括整车仓储及运营服务、汽车零部件仓储及运营服务、零部件运输服务和整车运输服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整车运输服务",
+        "evidence_span": "汽车物流业务主要包括整车仓储及运营服务、汽车零部件仓储及运营服务、零部件运输服务和整车运输服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "麻纤维座椅背板",
+        "evidence_span": "零部件产品除包覆件和涂装件外，还拓展了麻纤维座椅背板、音乐头枕等车身附件和功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "音乐头枕",
+        "evidence_span": "零部件产品除包覆件和涂装件外，还拓展了麻纤维座椅背板、音乐头枕等车身附件和功能部件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "同步开发能力",
+        "evidence_span": "公司已具备与高端整车厂商进行同步开发的能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来汽车",
+        "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "理想汽车",
+        "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏汽车",
+        "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "领克汽车",
+        "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "智己汽车",
+        "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "飞凡汽车",
+        "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天际汽车",
+        "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合众新能源",
+        "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞新能源",
+        "evidence_span": "零部件产品及物流服务已覆盖比亚迪、蔚来汽车、理想汽车、小鹏汽车、领克汽车、智己汽车、飞凡汽车、天际汽车、合众新能源、奇瑞新能源等主要电动汽车品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽集团",
+        "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用",
+        "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安吉物流",
+        "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽集团",
+        "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽商贸",
+        "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "风神物流",
+        "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽物流",
+        "evidence_span": "与上汽集团、上汽通用、安吉物流、广汽集团、广汽商贸、风神物流、一汽物流等主流车企及其核心供应商保持了稳定的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京奔驰",
+        "evidence_span": "在公司客户群中丰富了北京奔驰、蔚来汽车等豪华汽车品牌"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车业务",
+        "evidence_span": "集中优势资源开拓新能源汽车增量业务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:58:11"
+}

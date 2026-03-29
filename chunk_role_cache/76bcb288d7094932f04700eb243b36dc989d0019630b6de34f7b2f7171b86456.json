@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "8bbfdad47760", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述台积电的股价表现、业绩数据和市场预期，属于具体公司动态和事件性内容，没有提供关于半导体设备本身的静态知识。"}}

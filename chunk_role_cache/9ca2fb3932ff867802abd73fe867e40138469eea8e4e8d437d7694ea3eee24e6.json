@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "3c33a936b2e8", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述首届中国具身智能大会将在上海举办的事件，有具体时间（2024年3月30日），是纯粹的事件公告，无静态知识内容。"}}

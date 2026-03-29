@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:43:21", "result": {"chunk_id": "37dd4449a1c2", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "low", "reason": "该段包含静态知识（董事长关联信息），但提到'奕瑞科技2025年宣布投资'这一具体事件，混合了知识性和事件性内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:43", "result": {"chunk_id": "5cb2011876f6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件信息（如中国电子展开幕、协会人员发言），但提供了半导体设备销售收入数据、市场占有率预测以及全球封测市场规模数据，这些统计信息具有知识价值，因此属于混合内容。"}}

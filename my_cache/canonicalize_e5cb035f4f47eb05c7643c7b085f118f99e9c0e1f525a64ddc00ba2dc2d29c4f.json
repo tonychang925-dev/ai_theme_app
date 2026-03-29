@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:33:08", "result": {"span_uid": "5e00f321ff53", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "网络攻击事件", "stability": "low", "reason": "该片段描述具体事件（伊朗遭遇境外网络攻击），属于新闻性事件，无法整理成稳定、可脱离上下文的知识块。"}}

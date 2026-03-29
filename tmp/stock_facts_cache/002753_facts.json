@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高品质炭黑产品",
+      "evidence_span": "致力于高品质炭黑产品、煤焦油精细加工产品、新材料产品的研发和生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤焦油精细加工产品",
+      "evidence_span": "致力于高品质炭黑产品、煤焦油精细加工产品、新材料产品的研发和生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新材料产品",
+      "evidence_span": "致力于高品质炭黑产品、煤焦油精细加工产品、新材料产品的研发和生产"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "炭黑及煤焦油加工产品生产企业",
+      "evidence_span": "国内领先炭黑及煤焦油加工产品生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高新技术企业",
+      "evidence_span": "公司是一家对煤焦油深入研发及应用的高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "炭黑产品",
+      "evidence_span": "主营高品质炭黑、煤焦油精细加工"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤焦油加工产品",
+      "evidence_span": "主营高品质炭黑、煤焦油精细加工"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导电炭黑",
+      "evidence_span": "公司自主研发的煤焦油基导电炭黑生产技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业萘",
+      "evidence_span": "提取工业萘、洗油、轻油、沥青等化工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洗油",
+      "evidence_span": "提取工业萘、洗油、轻油、沥青等化工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻油",
+      "evidence_span": "提取工业萘、洗油、轻油、沥青等化工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "沥青",
+      "evidence_span": "提取工业萘、洗油、轻油、沥青等化工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种炭黑",
+      "evidence_span": "煤焦油精细加工及特种炭黑综合利用项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能导电炭黑",
+      "evidence_span": "公司自主研发的高性能导电炭黑产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "煤焦油基导电炭黑生产技术",
+      "evidence_span": "公司自主研发的煤焦油基导电炭黑生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "煤焦油深加工",
+      "evidence_span": "专注于煤焦油深加工产业链的不断延伸和高效利用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "循环经济产业模式",
+      "evidence_span": "通过“煤焦油加工+炭黑生产+尾气发电+精细化工新材料”的有机结合形成可持续循环的产业模式"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "普利司通",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "住友",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩泰",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赛轮",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中策",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通用",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "佳通",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "双钱集团",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "锦湖轮胎",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "耐克森",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "固铂",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "玲珑",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "卡莱",
+      "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高品质炭黑产品",
+        "evidence_span": "致力于高品质炭黑产品、煤焦油精细加工产品、新材料产品的研发和生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤焦油精细加工产品",
+        "evidence_span": "致力于高品质炭黑产品、煤焦油精细加工产品、新材料产品的研发和生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新材料产品",
+        "evidence_span": "致力于高品质炭黑产品、煤焦油精细加工产品、新材料产品的研发和生产"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "炭黑及煤焦油加工产品生产企业",
+        "evidence_span": "国内领先炭黑及煤焦油加工产品生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高新技术企业",
+        "evidence_span": "公司是一家对煤焦油深入研发及应用的高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "炭黑产品",
+        "evidence_span": "主营高品质炭黑、煤焦油精细加工"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤焦油加工产品",
+        "evidence_span": "主营高品质炭黑、煤焦油精细加工"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导电炭黑",
+        "evidence_span": "公司自主研发的煤焦油基导电炭黑生产技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业萘",
+        "evidence_span": "提取工业萘、洗油、轻油、沥青等化工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洗油",
+        "evidence_span": "提取工业萘、洗油、轻油、沥青等化工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻油",
+        "evidence_span": "提取工业萘、洗油、轻油、沥青等化工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "沥青",
+        "evidence_span": "提取工业萘、洗油、轻油、沥青等化工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种炭黑",
+        "evidence_span": "煤焦油精细加工及特种炭黑综合利用项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能导电炭黑",
+        "evidence_span": "公司自主研发的高性能导电炭黑产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "煤焦油基导电炭黑生产技术",
+        "evidence_span": "公司自主研发的煤焦油基导电炭黑生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "煤焦油深加工",
+        "evidence_span": "专注于煤焦油深加工产业链的不断延伸和高效利用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "循环经济产业模式",
+        "evidence_span": "通过“煤焦油加工+炭黑生产+尾气发电+精细化工新材料”的有机结合形成可持续循环的产业模式"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "普利司通",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "住友",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩泰",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赛轮",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中策",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通用",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "佳通",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "双钱集团",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "锦湖轮胎",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "耐克森",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "固铂",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "玲珑",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "卡莱",
+        "evidence_span": "公司与普利司通、住友、韩泰、赛轮、中策、通用、佳通、双钱集团、锦湖轮胎、耐克森、固铂、玲珑、卡莱等国内外知名轮胎企业保持了良好稳定的合作关系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:29:46"
+}

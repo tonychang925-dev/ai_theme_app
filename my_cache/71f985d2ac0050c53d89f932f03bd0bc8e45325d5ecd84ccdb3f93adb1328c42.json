@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "671581f038cc", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述军事演习的具体事件，包括日期和目的，属于动态新闻，而非静态知识。"}}

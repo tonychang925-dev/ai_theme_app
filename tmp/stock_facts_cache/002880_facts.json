@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "血液制品",
+      "evidence_span": "以血液制品为核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "疫苗",
+      "evidence_span": "积极拓展包括疫苗、基因工程产品在内的其他生物医药业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基因工程产品",
+      "evidence_span": "积极拓展包括疫苗、基因工程产品在内的其他生物医药业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "血液制品企业",
+      "evidence_span": "公司是一家从事生物制品研发、生产及销售的国家高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国有纯血制品企业",
+      "evidence_span": "卫光生物国有纯血制品企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人血白蛋白",
+      "evidence_span": "公司主要产品为血液制品，包括人血白蛋白、免疫球蛋白、凝血因子3大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "免疫球蛋白",
+      "evidence_span": "公司主要产品为血液制品，包括人血白蛋白、免疫球蛋白、凝血因子3大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "凝血因子",
+      "evidence_span": "公司主要产品为血液制品，包括人血白蛋白、免疫球蛋白、凝血因子3大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "静注人免疫球蛋白（pH4）",
+      "evidence_span": "人血白蛋白、静注人免疫球蛋白（pH4）等主要产品的收获率与合格率处于全国领先水平"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人凝血因子Ⅷ",
+      "evidence_span": "人凝血因子Ⅷ上市许可申请（NDA）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型静注人免疫球蛋白",
+      "evidence_span": "新型静注人免疫球蛋白临床试验申请（IND）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人纤维蛋白粘合剂",
+      "evidence_span": "人纤维蛋白粘合剂已开展中试研究"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冻干人用狂犬病疫苗（鸡胚细胞）",
+      "evidence_span": "冻干人用狂犬病疫苗（鸡胚细胞）项目按技术审批要求开展补充研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "血液制品生产线技术改造",
+      "evidence_span": "血液制品生产线技术改造项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗新型冠状病毒治疗性抗体研发",
+      "evidence_span": "抗新型冠状病毒治疗性抗体研发及应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医生",
+      "evidence_span": "产品质量赢得广大医生、患者以及市场的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "患者",
+      "evidence_span": "产品质量赢得广大医生、患者以及市场的认可"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "生物医药",
+      "evidence_span": "全球平台化生物医药新锐"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "血液制品",
+        "evidence_span": "以血液制品为核心业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "疫苗",
+        "evidence_span": "积极拓展包括疫苗、基因工程产品在内的其他生物医药业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基因工程产品",
+        "evidence_span": "积极拓展包括疫苗、基因工程产品在内的其他生物医药业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "血液制品企业",
+        "evidence_span": "公司是一家从事生物制品研发、生产及销售的国家高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国有纯血制品企业",
+        "evidence_span": "卫光生物国有纯血制品企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人血白蛋白",
+        "evidence_span": "公司主要产品为血液制品，包括人血白蛋白、免疫球蛋白、凝血因子3大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "免疫球蛋白",
+        "evidence_span": "公司主要产品为血液制品，包括人血白蛋白、免疫球蛋白、凝血因子3大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "凝血因子",
+        "evidence_span": "公司主要产品为血液制品，包括人血白蛋白、免疫球蛋白、凝血因子3大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "静注人免疫球蛋白（pH4）",
+        "evidence_span": "人血白蛋白、静注人免疫球蛋白（pH4）等主要产品的收获率与合格率处于全国领先水平"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人凝血因子Ⅷ",
+        "evidence_span": "人凝血因子Ⅷ上市许可申请（NDA）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型静注人免疫球蛋白",
+        "evidence_span": "新型静注人免疫球蛋白临床试验申请（IND）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人纤维蛋白粘合剂",
+        "evidence_span": "人纤维蛋白粘合剂已开展中试研究"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冻干人用狂犬病疫苗（鸡胚细胞）",
+        "evidence_span": "冻干人用狂犬病疫苗（鸡胚细胞）项目按技术审批要求开展补充研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "血液制品生产线技术改造",
+        "evidence_span": "血液制品生产线技术改造项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗新型冠状病毒治疗性抗体研发",
+        "evidence_span": "抗新型冠状病毒治疗性抗体研发及应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医生",
+        "evidence_span": "产品质量赢得广大医生、患者以及市场的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "患者",
+        "evidence_span": "产品质量赢得广大医生、患者以及市场的认可"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "生物医药",
+        "evidence_span": "全球平台化生物医药新锐"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:13:04"
+}

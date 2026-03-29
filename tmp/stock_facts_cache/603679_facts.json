@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "道路照明",
+      "evidence_span": "深耕道路照明领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧路灯",
+      "evidence_span": "重点发展并逐步成为以智慧路灯为代表的新基建运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "道路照明领域企业",
+      "evidence_span": "深耕道路照明领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧路灯先行者",
+      "evidence_span": "智慧路灯先行者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "5G站址资源运营者",
+      "evidence_span": "5G站址资源运营者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧路灯",
+      "evidence_span": "重点发展并逐步成为以智慧路灯为代表的新基建运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传统路灯",
+      "evidence_span": "传统路灯毛利率22.47%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED信息发布屏",
+      "evidence_span": "LED信息发布屏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充电桩",
+      "evidence_span": "充电桩"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能综合运营管理平台",
+      "evidence_span": "形成智能综合运营管理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "“路灯宝”智慧路灯管理平台",
+      "evidence_span": "研发打造了“路灯宝”智慧路灯管理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "“视泊车”停车管理系统",
+      "evidence_span": "“视泊车”停车管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "“安易充”充电桩",
+      "evidence_span": "“安易充”适用于小区、商场等非机动车停车充电场景"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "“五湖四海”综合运用管理平台",
+      "evidence_span": "“五湖四海”综合运用管理平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LED研发",
+      "evidence_span": "LED研发部负责跟踪LED行业的技术发展趋势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能控制产品研发",
+      "evidence_span": "智能控制产品研发部"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "路灯智能化管理",
+      "evidence_span": "智能控制部从事路灯智能化管理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧家居系统设计与开发",
+      "evidence_span": "智慧家居系统的设计与开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能技术",
+      "evidence_span": "结合人工智能技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "地方政府",
+      "evidence_span": "公司与地方政府合作建设智慧城市"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "腾讯",
+      "evidence_span": "联手腾讯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联想",
+      "evidence_span": "与联想、腾讯等互联网公司合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G新基建",
+      "evidence_span": "5G新基建"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧城市",
+      "evidence_span": "智慧城市"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "道路照明",
+        "evidence_span": "深耕道路照明领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧路灯",
+        "evidence_span": "重点发展并逐步成为以智慧路灯为代表的新基建运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "道路照明领域企业",
+        "evidence_span": "深耕道路照明领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧路灯先行者",
+        "evidence_span": "智慧路灯先行者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "5G站址资源运营者",
+        "evidence_span": "5G站址资源运营者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧路灯",
+        "evidence_span": "重点发展并逐步成为以智慧路灯为代表的新基建运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传统路灯",
+        "evidence_span": "传统路灯毛利率22.47%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED信息发布屏",
+        "evidence_span": "LED信息发布屏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充电桩",
+        "evidence_span": "充电桩"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能综合运营管理平台",
+        "evidence_span": "形成智能综合运营管理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "“路灯宝”智慧路灯管理平台",
+        "evidence_span": "研发打造了“路灯宝”智慧路灯管理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "“视泊车”停车管理系统",
+        "evidence_span": "“视泊车”停车管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "“安易充”充电桩",
+        "evidence_span": "“安易充”适用于小区、商场等非机动车停车充电场景"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "“五湖四海”综合运用管理平台",
+        "evidence_span": "“五湖四海”综合运用管理平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LED研发",
+        "evidence_span": "LED研发部负责跟踪LED行业的技术发展趋势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能控制产品研发",
+        "evidence_span": "智能控制产品研发部"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "路灯智能化管理",
+        "evidence_span": "智能控制部从事路灯智能化管理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧家居系统设计与开发",
+        "evidence_span": "智慧家居系统的设计与开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能技术",
+        "evidence_span": "结合人工智能技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "地方政府",
+        "evidence_span": "公司与地方政府合作建设智慧城市"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "腾讯",
+        "evidence_span": "联手腾讯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联想",
+        "evidence_span": "与联想、腾讯等互联网公司合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G新基建",
+        "evidence_span": "5G新基建"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧城市",
+        "evidence_span": "智慧城市"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:47:07"
+}

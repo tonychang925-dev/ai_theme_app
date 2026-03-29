@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:01:57", "result": {"chunk_id": "47e72183bffb", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含鸿蒙5.0设备数量突破1000万台的事件信息，但同时也涉及鸿蒙生态系统的关键门槛这一静态知识，可能对构建华为生态系统知识有价值，因此归类为候选混合状态。"}}

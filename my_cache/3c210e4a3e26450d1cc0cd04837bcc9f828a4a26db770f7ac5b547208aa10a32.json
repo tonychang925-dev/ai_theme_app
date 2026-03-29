@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "0169e12a468c", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落报告了上海电影和中国电影在第三季度的具体财务数据（净利润和同比增长），属于公司业绩公告，是典型的事件性内容，不涉及影视题材的静态知识构建。"}}

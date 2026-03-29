@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:45:44", "result": {"chunk_id": "52289854eaa7", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要提供可回收火箭导航技术的静态知识，包括定义、核心构成、各阶段导航挑战与技术，这些是题材本体的稳定知识。但段落末尾包含具体事件（2024年6月的飞行试验）和技术实践信息，混合了事件动态，因此优先分类为candidate_mixed而非strict_knowledge。"}}

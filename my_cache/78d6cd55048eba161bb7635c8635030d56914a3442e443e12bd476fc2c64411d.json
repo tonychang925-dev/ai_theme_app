@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "f61ea3b0ff18", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了AI服务器增长推动HBM需求提升，并引用具体季度数据说明存储市场规模变化，包含静态知识（HBM需求与存储市场关系）和事件性数据（2024年二季度数据），因此属于混合内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:46:43", "result": {"chunk_id": "818d4800520e", "decision": "drop", "confidence": 0.8, "knowledge_value": "low", "reason": "段落仅提及公司合作和研发动态，缺乏具体可沉淀的知识细节（如技术规格、功能等），属于事件信息。", "knowledge_spans": [], "event_residue": "三星、谷歌、高通强强联手，正研发一款混合现实智能眼镜", "drop_target": "event"}}

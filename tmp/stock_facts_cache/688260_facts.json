@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密电子零部件",
+      "evidence_span": "公司主要从事光学领域零部件及汽车电子、光电半导体等领域产品的研发、设计、生产制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车电子",
+      "evidence_span": "公司主要从事光学领域零部件及汽车电子、光电半导体等领域产品的研发、设计、生产制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光电半导体",
+      "evidence_span": "公司主要从事光学领域零部件及汽车电子、光电半导体等领域产品的研发、设计、生产制造和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精密电子零部件产研骨干企业",
+      "evidence_span": "国内精密电子零部件产研骨干企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "摄像头光学模组CCM",
+      "evidence_span": "公司主要生产精密零部件，主要产品为摄像头光学模组CCM和音圈马达VCM中的精密电子零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "音圈马达VCM",
+      "evidence_span": "公司主要生产精密零部件，主要产品为摄像头光学模组CCM和音圈马达VCM中的精密电子零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车电子转向系统控制器",
+      "evidence_span": "汽车电子是公司正在积极拓展的领域，目前汽车产品主要涉及汽车电子转向系统，汽车门窗系统和车身稳定系统，公司主要产品为各系统的控制器部分"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车门窗系统控制器",
+      "evidence_span": "汽车电子是公司正在积极拓展的领域，目前汽车产品主要涉及汽车电子转向系统，汽车门窗系统和车身稳定系统，公司主要产品为各系统的控制器部分"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车身稳定系统控制器",
+      "evidence_span": "汽车电子是公司正在积极拓展的领域，目前汽车产品主要涉及汽车电子转向系统，汽车门窗系统和车身稳定系统，公司主要产品为各系统的控制器部分"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高导热陶瓷电子线路基板",
+      "evidence_span": "2020年公司开始采用DPC技术研发成功“高导热陶瓷电子线路基板”，目前该产品已经正式量产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "引线框架",
+      "evidence_span": "公司的引线框架产品，目前开始批量供货阶段，并在稳步增量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模具",
+      "evidence_span": "公司现销售的模具主要为精密注塑模具及精密冲压模具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电镀加工服务",
+      "evidence_span": "为部分客户提供精密电子零部件的电镀加工服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "DPC技术",
+      "evidence_span": "2020年公司开始采用DPC（DirectPatedCopper，直接镀铜陶瓷基板）技术研发成功“高导热陶瓷电子线路基板”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密模具开发",
+      "evidence_span": "产品研发和模具开发是精密电子零部件制造过程中的重要环节，也是体现公司竞争优势与行业地位的最根本因素"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化装备研制",
+      "evidence_span": "依托冲压、电镀、注塑、SMT、芯片封装测试、组装等先进工艺，及配套的自动化装备研制能力和产品创新能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "捷太格特",
+      "evidence_span": "报告期内，公司已经实现汽车电子批量量产的供货，主要客户为捷太格特、三井金属、京西重工、万向精工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三井金属",
+      "evidence_span": "报告期内，公司已经实现汽车电子批量量产的供货，主要客户为捷太格特、三井金属、京西重工、万向精工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京西重工",
+      "evidence_span": "报告期内，公司已经实现汽车电子批量量产的供货，主要客户为捷太格特、三井金属、京西重工、万向精工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万向精工",
+      "evidence_span": "报告期内，公司已经实现汽车电子批量量产的供货，主要客户为捷太格特、三井金属、京西重工、万向精工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三安光电",
+      "evidence_span": "在报告期内，公司的陶瓷基板产品也实现了量产供货，主要客户为三安光电、穗晶光电、成都集佳、杰生半导体、睿熙科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "穗晶光电",
+      "evidence_span": "在报告期内，公司的陶瓷基板产品也实现了量产供货，主要客户为三安光电、穗晶光电、成都集佳、杰生半导体、睿熙科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "成都集佳",
+      "evidence_span": "在报告期内，公司的陶瓷基板产品也实现了量产供货，主要客户为三安光电、穗晶光电、成都集佳、杰生半导体、睿熙科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杰生半导体",
+      "evidence_span": "在报告期内，公司的陶瓷基板产品也实现了量产供货，主要客户为三安光电、穗晶光电、成都集佳、杰生半导体、睿熙科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "睿熙科技",
+      "evidence_span": "在报告期内，公司的陶瓷基板产品也实现了量产供货，主要客户为三安光电、穗晶光电、成都集佳、杰生半导体、睿熙科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丘钛科技",
+      "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "舜宇光学",
+      "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧菲光",
+      "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星电机",
+      "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新思考",
+      "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中蓝光电",
+      "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TDK集团",
+      "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浩泽电子",
+      "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三美集团",
+      "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密电子零部件",
+        "evidence_span": "公司主要从事光学领域零部件及汽车电子、光电半导体等领域产品的研发、设计、生产制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车电子",
+        "evidence_span": "公司主要从事光学领域零部件及汽车电子、光电半导体等领域产品的研发、设计、生产制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光电半导体",
+        "evidence_span": "公司主要从事光学领域零部件及汽车电子、光电半导体等领域产品的研发、设计、生产制造和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精密电子零部件产研骨干企业",
+        "evidence_span": "国内精密电子零部件产研骨干企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "摄像头光学模组CCM",
+        "evidence_span": "公司主要生产精密零部件，主要产品为摄像头光学模组CCM和音圈马达VCM中的精密电子零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "音圈马达VCM",
+        "evidence_span": "公司主要生产精密零部件，主要产品为摄像头光学模组CCM和音圈马达VCM中的精密电子零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车电子转向系统控制器",
+        "evidence_span": "汽车电子是公司正在积极拓展的领域，目前汽车产品主要涉及汽车电子转向系统，汽车门窗系统和车身稳定系统，公司主要产品为各系统的控制器部分"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车门窗系统控制器",
+        "evidence_span": "汽车电子是公司正在积极拓展的领域，目前汽车产品主要涉及汽车电子转向系统，汽车门窗系统和车身稳定系统，公司主要产品为各系统的控制器部分"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车身稳定系统控制器",
+        "evidence_span": "汽车电子是公司正在积极拓展的领域，目前汽车产品主要涉及汽车电子转向系统，汽车门窗系统和车身稳定系统，公司主要产品为各系统的控制器部分"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高导热陶瓷电子线路基板",
+        "evidence_span": "2020年公司开始采用DPC技术研发成功“高导热陶瓷电子线路基板”，目前该产品已经正式量产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "引线框架",
+        "evidence_span": "公司的引线框架产品，目前开始批量供货阶段，并在稳步增量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模具",
+        "evidence_span": "公司现销售的模具主要为精密注塑模具及精密冲压模具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电镀加工服务",
+        "evidence_span": "为部分客户提供精密电子零部件的电镀加工服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "DPC技术",
+        "evidence_span": "2020年公司开始采用DPC（DirectPatedCopper，直接镀铜陶瓷基板）技术研发成功“高导热陶瓷电子线路基板”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密模具开发",
+        "evidence_span": "产品研发和模具开发是精密电子零部件制造过程中的重要环节，也是体现公司竞争优势与行业地位的最根本因素"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化装备研制",
+        "evidence_span": "依托冲压、电镀、注塑、SMT、芯片封装测试、组装等先进工艺，及配套的自动化装备研制能力和产品创新能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "捷太格特",
+        "evidence_span": "报告期内，公司已经实现汽车电子批量量产的供货，主要客户为捷太格特、三井金属、京西重工、万向精工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三井金属",
+        "evidence_span": "报告期内，公司已经实现汽车电子批量量产的供货，主要客户为捷太格特、三井金属、京西重工、万向精工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京西重工",
+        "evidence_span": "报告期内，公司已经实现汽车电子批量量产的供货，主要客户为捷太格特、三井金属、京西重工、万向精工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万向精工",
+        "evidence_span": "报告期内，公司已经实现汽车电子批量量产的供货，主要客户为捷太格特、三井金属、京西重工、万向精工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三安光电",
+        "evidence_span": "在报告期内，公司的陶瓷基板产品也实现了量产供货，主要客户为三安光电、穗晶光电、成都集佳、杰生半导体、睿熙科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "穗晶光电",
+        "evidence_span": "在报告期内，公司的陶瓷基板产品也实现了量产供货，主要客户为三安光电、穗晶光电、成都集佳、杰生半导体、睿熙科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "成都集佳",
+        "evidence_span": "在报告期内，公司的陶瓷基板产品也实现了量产供货，主要客户为三安光电、穗晶光电、成都集佳、杰生半导体、睿熙科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杰生半导体",
+        "evidence_span": "在报告期内，公司的陶瓷基板产品也实现了量产供货，主要客户为三安光电、穗晶光电、成都集佳、杰生半导体、睿熙科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "睿熙科技",
+        "evidence_span": "在报告期内，公司的陶瓷基板产品也实现了量产供货，主要客户为三安光电、穗晶光电、成都集佳、杰生半导体、睿熙科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丘钛科技",
+        "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "舜宇光学",
+        "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧菲光",
+        "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星电机",
+        "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新思考",
+        "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中蓝光电",
+        "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TDK集团",
+        "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浩泽电子",
+        "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三美集团",
+        "evidence_span": "公司与丘钛科技、舜宇光学、欧菲光、三星电机、新思考、中蓝光电、TDK集团、浩泽电子、三美集团等"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:44:41"
+}

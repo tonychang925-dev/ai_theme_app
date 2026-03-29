@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高纯溅射靶材",
+      "evidence_span": "公司专注于高纯溅射靶材的研发、生产和销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体精密零部件",
+      "evidence_span": "目前公司主营业务为超高纯金属溅射靶材和半导体精密零部件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "第三代半导体材料",
+      "evidence_span": "2022年，公司开始布局第三代半导体材料业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体溅射靶材制造商",
+      "evidence_span": "公司已成为全球领先的半导体溅射靶材制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体材料龙头",
+      "evidence_span": "江丰电子脱颖而出的半导体材料龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝靶",
+      "evidence_span": "主要包括铝靶、钛靶及钛环、钽靶及钽环等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钛靶及钛环",
+      "evidence_span": "主要包括铝靶、钛靶及钛环、钽靶及钽环等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钽靶及钽环",
+      "evidence_span": "主要包括铝靶、钛靶及钛环、钽靶及钽环等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "匀气盘",
+      "evidence_span": "2023 年，公司的匀气盘(Shower head)、硅电极等核心功能零部件迅速放量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅电极",
+      "evidence_span": "2023 年，公司的匀气盘(Shower head)、硅电极等核心功能零部件迅速放量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "设备制造零部件",
+      "evidence_span": "公司生产的精密零部件包括设备制造零部件和工艺消耗零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工艺消耗零部件",
+      "evidence_span": "公司生产的精密零部件包括设备制造零部件和工艺消耗零部件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高纯金属靶材研发",
+      "evidence_span": "公司专注于高纯溅射靶材的研发、生产和销售业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "半导体精密零部件制造工艺",
+      "evidence_span": "2017 年，公司开始持续投入研发半导体精密零部件制造工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "金属材料、精密机械制造、表面处理和焊接技术",
+      "evidence_span": "半导体设备零部件业务与靶材业务在金属材料、精密机械制造、表面处理和焊接等技术上相通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "台积电",
+      "evidence_span": "已成为台积电、中芯国际、SK 海力士、联华电子等全球知名芯片制造企业的核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中芯国际",
+      "evidence_span": "已成为台积电、中芯国际、SK 海力士、联华电子等全球知名芯片制造企业的核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "SK 海力士",
+      "evidence_span": "已成为台积电、中芯国际、SK 海力士、联华电子等全球知名芯片制造企业的核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联华电子",
+      "evidence_span": "已成为台积电、中芯国际、SK 海力士、联华电子等全球知名芯片制造企业的核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "晶圆制造商",
+      "evidence_span": "零部件产品既出售给晶圆制造商可作为设备使用耗材"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "半导体设备厂商",
+      "evidence_span": "出售给半导体设备厂商用于设备的生产"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "江丰电子高纯溅射靶材龙头，国产替代推动市占率提升"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "产业链自主可控",
+      "evidence_span": "助力产业链自主可控"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高纯溅射靶材",
+        "evidence_span": "公司专注于高纯溅射靶材的研发、生产和销售业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体精密零部件",
+        "evidence_span": "目前公司主营业务为超高纯金属溅射靶材和半导体精密零部件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "第三代半导体材料",
+        "evidence_span": "2022年，公司开始布局第三代半导体材料业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体溅射靶材制造商",
+        "evidence_span": "公司已成为全球领先的半导体溅射靶材制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体材料龙头",
+        "evidence_span": "江丰电子脱颖而出的半导体材料龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝靶",
+        "evidence_span": "主要包括铝靶、钛靶及钛环、钽靶及钽环等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钛靶及钛环",
+        "evidence_span": "主要包括铝靶、钛靶及钛环、钽靶及钽环等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钽靶及钽环",
+        "evidence_span": "主要包括铝靶、钛靶及钛环、钽靶及钽环等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "匀气盘",
+        "evidence_span": "2023 年，公司的匀气盘(Shower head)、硅电极等核心功能零部件迅速放量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅电极",
+        "evidence_span": "2023 年，公司的匀气盘(Shower head)、硅电极等核心功能零部件迅速放量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "设备制造零部件",
+        "evidence_span": "公司生产的精密零部件包括设备制造零部件和工艺消耗零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工艺消耗零部件",
+        "evidence_span": "公司生产的精密零部件包括设备制造零部件和工艺消耗零部件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高纯金属靶材研发",
+        "evidence_span": "公司专注于高纯溅射靶材的研发、生产和销售业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "半导体精密零部件制造工艺",
+        "evidence_span": "2017 年，公司开始持续投入研发半导体精密零部件制造工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "金属材料、精密机械制造、表面处理和焊接技术",
+        "evidence_span": "半导体设备零部件业务与靶材业务在金属材料、精密机械制造、表面处理和焊接等技术上相通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "台积电",
+        "evidence_span": "已成为台积电、中芯国际、SK 海力士、联华电子等全球知名芯片制造企业的核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中芯国际",
+        "evidence_span": "已成为台积电、中芯国际、SK 海力士、联华电子等全球知名芯片制造企业的核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "SK 海力士",
+        "evidence_span": "已成为台积电、中芯国际、SK 海力士、联华电子等全球知名芯片制造企业的核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联华电子",
+        "evidence_span": "已成为台积电、中芯国际、SK 海力士、联华电子等全球知名芯片制造企业的核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "晶圆制造商",
+        "evidence_span": "零部件产品既出售给晶圆制造商可作为设备使用耗材"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "半导体设备厂商",
+        "evidence_span": "出售给半导体设备厂商用于设备的生产"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "江丰电子高纯溅射靶材龙头，国产替代推动市占率提升"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "产业链自主可控",
+        "evidence_span": "助力产业链自主可控"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:48:50"
+}

@@ -1,0 +1,244 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂离子电池材料",
+      "evidence_span": "主要产品为锂离子电池材料、日化材料及特种化学品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "日化材料",
+      "evidence_span": "主要产品为锂离子电池材料、日化材料及特种化学品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种化学品",
+      "evidence_span": "主要产品为锂离子电池材料、日化材料及特种化学品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球电解液龙头",
+      "evidence_span": "全球电解液龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂离子电池电解液",
+      "evidence_span": "公司生产的锂离子电池材料主要为锂离子电池电解液和正极材料磷酸铁锂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "正极材料磷酸铁锂",
+      "evidence_span": "公司生产的锂离子电池材料主要为锂离子电池电解液和正极材料磷酸铁锂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "六氟磷酸锂",
+      "evidence_span": "包括六氟磷酸锂、新型电解质、添加剂、磷酸铁以及锂辉石精矿等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型电解质",
+      "evidence_span": "包括六氟磷酸锂、新型电解质、添加剂、磷酸铁以及锂辉石精矿等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "添加剂",
+      "evidence_span": "包括六氟磷酸锂、新型电解质、添加剂、磷酸铁以及锂辉石精矿等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸铁",
+      "evidence_span": "包括六氟磷酸锂、新型电解质、添加剂、磷酸铁以及锂辉石精矿等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂辉石精矿",
+      "evidence_span": "包括六氟磷酸锂、新型电解质、添加剂、磷酸铁以及锂辉石精矿等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "表面活性剂",
+      "evidence_span": "公司生产的日化材料及特种化学品主要有表面活性剂、硅油、水溶性聚合物、阳离子调理剂、有机硅及橡胶助剂材料等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅油",
+      "evidence_span": "公司生产的日化材料及特种化学品主要有表面活性剂、硅油、水溶性聚合物、阳离子调理剂、有机硅及橡胶助剂材料等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水溶性聚合物",
+      "evidence_span": "公司生产的日化材料及特种化学品主要有表面活性剂、硅油、水溶性聚合物、阳离子调理剂、有机硅及橡胶助剂材料等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阳离子调理剂",
+      "evidence_span": "公司生产的日化材料及特种化学品主要有表面活性剂、硅油、水溶性聚合物、阳离子调理剂、有机硅及橡胶助剂材料等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有机硅及橡胶助剂材料",
+      "evidence_span": "公司生产的日化材料及特种化学品主要有表面活性剂、硅油、水溶性聚合物、阳离子调理剂、有机硅及橡胶助剂材料等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂离子电池粘结剂",
+      "evidence_span": "正式发布锂离子电池粘结剂和PACK/模组用胶粘剂的新技术与新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PACK/模组用胶粘剂",
+      "evidence_span": "正式发布锂离子电池粘结剂和PACK/模组用胶粘剂的新技术与新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂离子电池用胶类产品",
+      "evidence_span": "打通公司在锂离子电池用胶类产品的产品及业务线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "液体六氟磷酸锂工艺技术",
+      "evidence_span": "公司拥有行业内领先的液体六氟磷酸锂工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新型锂盐LiFSI",
+      "evidence_span": "天赐材料凭借新型锂盐LiFSI、正极材料的持续放量"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一体化构筑成本壁垒",
+      "evidence_span": "一体化构筑成本壁垒"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "纵向一体化布局获成本优势",
+      "evidence_span": "纵向一体化布局获成本优势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "添加剂技术驱动电解液附加值提升",
+      "evidence_span": "添加剂技术驱动电解液附加值提升"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂离子电池材料",
+        "evidence_span": "主要产品为锂离子电池材料、日化材料及特种化学品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "日化材料及特种化学品",
+        "evidence_span": "主要产品为锂离子电池材料、日化材料及特种化学品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球电解液龙头",
+        "evidence_span": "全球电解液龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂离子电池电解液",
+        "evidence_span": "公司生产的锂离子电池材料主要为锂离子电池电解液和正极材料磷酸铁锂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "正极材料磷酸铁锂",
+        "evidence_span": "公司生产的锂离子电池材料主要为锂离子电池电解液和正极材料磷酸铁锂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "六氟磷酸锂",
+        "evidence_span": "包括六氟磷酸锂、新型电解质、添加剂、磷酸铁以及锂辉石精矿等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型电解质",
+        "evidence_span": "包括六氟磷酸锂、新型电解质、添加剂、磷酸铁以及锂辉石精矿等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "添加剂",
+        "evidence_span": "包括六氟磷酸锂、新型电解质、添加剂、磷酸铁以及锂辉石精矿等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸铁",
+        "evidence_span": "包括六氟磷酸锂、新型电解质、添加剂、磷酸铁以及锂辉石精矿等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂辉石精矿",
+        "evidence_span": "包括六氟磷酸锂、新型电解质、添加剂、磷酸铁以及锂辉石精矿等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "表面活性剂",
+        "evidence_span": "公司生产的日化材料及特种化学品主要有表面活性剂、硅油、水溶性聚合物、阳离子调理剂、有机硅及橡胶助剂材料等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅油",
+        "evidence_span": "公司生产的日化材料及特种化学品主要有表面活性剂、硅油、水溶性聚合物、阳离子调理剂、有机硅及橡胶助剂材料等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水溶性聚合物",
+        "evidence_span": "公司生产的日化材料及特种化学品主要有表面活性剂、硅油、水溶性聚合物、阳离子调理剂、有机硅及橡胶助剂材料等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阳离子调理剂",
+        "evidence_span": "公司生产的日化材料及特种化学品主要有表面活性剂、硅油、水溶性聚合物、阳离子调理剂、有机硅及橡胶助剂材料等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有机硅及橡胶助剂材料",
+        "evidence_span": "公司生产的日化材料及特种化学品主要有表面活性剂、硅油、水溶性聚合物、阳离子调理剂、有机硅及橡胶助剂材料等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂离子电池粘结剂",
+        "evidence_span": "正式发布锂离子电池粘结剂和PACK/模组用胶粘剂的新技术与新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PACK/模组用胶粘剂",
+        "evidence_span": "正式发布锂离子电池粘结剂和PACK/模组用胶粘剂的新技术与新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂离子电池用胶类产品",
+        "evidence_span": "打通公司在锂离子电池用胶类产品的产品及业务线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "液体六氟磷酸锂工艺技术",
+        "evidence_span": "公司拥有行业内领先的液体六氟磷酸锂工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新型锂盐LiFSI",
+        "evidence_span": "天赐材料凭借新型锂盐LiFSI、正极材料的持续放量"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一体化构筑成本壁垒",
+        "evidence_span": "一体化构筑成本壁垒"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "纵向一体化布局获成本优势",
+        "evidence_span": "纵向一体化布局获成本优势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "添加剂技术驱动电解液附加值提升",
+        "evidence_span": "添加剂技术驱动电解液附加值提升"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:17:13"
+}

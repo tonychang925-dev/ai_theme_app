@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "ccc6ba4bd69c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述台积电预计从ASML接收光刻机的具体事件，是时间点明确的进展动态，无稳定知识。"}}

@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "碳纳米管生产",
+      "evidence_span": "中国最大的碳纳米管生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "碳纳米管生产企业",
+      "evidence_span": "中国最大的碳纳米管生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "行业标准制定人",
+      "evidence_span": "成长为行业标准制定人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳纳米管",
+      "evidence_span": "主营产品碳纳米管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳纳米管导电浆料",
+      "evidence_span": "碳纳米管导电浆料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纳米碳材",
+      "evidence_span": "年产300吨纳米碳材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导电母粒",
+      "evidence_span": "2000吨导电母粒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导电浆料",
+      "evidence_span": "8000吨导电浆料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳纳米管复合产品",
+      "evidence_span": "碳纳米管复合产品生产项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "碳纳米管管径和管长控制方法",
+      "evidence_span": "碳纳米管管径和管长的控制方法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "催化剂制备研发",
+      "evidence_span": "催化剂的制备研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "碳纳米管积碳生长研发",
+      "evidence_span": "碳纳米管积碳生长研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "碳纳米管应用研发",
+      "evidence_span": "碳纳米管应用研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "纳米管复合产品技术",
+      "evidence_span": "具有自主知识产权的纳米管复合产品的技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司客户涵盖比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ATL（新能源科技）",
+      "evidence_span": "ATL（新能源科技）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "CATL（宁德时代）",
+      "evidence_span": "CATL（宁德时代）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天津力神",
+      "evidence_span": "天津力神"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "孚能科技",
+      "evidence_span": "孚能科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欣旺达",
+      "evidence_span": "欣旺达"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "珠海光宇",
+      "evidence_span": "珠海光宇"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿纬锂能",
+      "evidence_span": "亿纬锂能"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "卡耐新能源",
+      "evidence_span": "卡耐新能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中航锂电",
+      "evidence_span": "中航锂电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万向",
+      "evidence_span": "万向"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "导电剂国产替代",
+      "evidence_span": "改变了中国导电剂依赖进口的局面"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "碳纳米管生产",
+        "evidence_span": "中国最大的碳纳米管生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "碳纳米管生产企业",
+        "evidence_span": "中国最大的碳纳米管生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "行业标准制定人",
+        "evidence_span": "成长为行业标准制定人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳纳米管",
+        "evidence_span": "主营产品碳纳米管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳纳米管导电浆料",
+        "evidence_span": "碳纳米管导电浆料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纳米碳材",
+        "evidence_span": "年产300吨纳米碳材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导电母粒",
+        "evidence_span": "2000吨导电母粒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导电浆料",
+        "evidence_span": "8000吨导电浆料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳纳米管复合产品",
+        "evidence_span": "碳纳米管复合产品生产项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "碳纳米管管径和管长控制方法",
+        "evidence_span": "碳纳米管管径和管长的控制方法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "催化剂制备研发",
+        "evidence_span": "催化剂的制备研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "碳纳米管积碳生长研发",
+        "evidence_span": "碳纳米管积碳生长研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "碳纳米管应用研发",
+        "evidence_span": "碳纳米管应用研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "纳米管复合产品技术",
+        "evidence_span": "具有自主知识产权的纳米管复合产品的技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司客户涵盖比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ATL（新能源科技）",
+        "evidence_span": "ATL（新能源科技）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "CATL（宁德时代）",
+        "evidence_span": "CATL（宁德时代）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津力神",
+        "evidence_span": "天津力神"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "孚能科技",
+        "evidence_span": "孚能科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欣旺达",
+        "evidence_span": "欣旺达"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "珠海光宇",
+        "evidence_span": "珠海光宇"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿纬锂能",
+        "evidence_span": "亿纬锂能"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "卡耐新能源",
+        "evidence_span": "卡耐新能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中航锂电",
+        "evidence_span": "中航锂电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万向",
+        "evidence_span": "万向"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "导电剂国产替代",
+        "evidence_span": "改变了中国导电剂依赖进口的局面"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:01:25"
+}

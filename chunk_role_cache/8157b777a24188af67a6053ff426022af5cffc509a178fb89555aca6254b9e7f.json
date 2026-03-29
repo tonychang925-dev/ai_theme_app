@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "8b9859f749b0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述了台积电SoIC产能的具体扩充计划和时间线，包括产能数字和增长目标，属于具体事件动态，不涉及半导体设备题材的定义或构成知识。"}}

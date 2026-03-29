@@ -1,0 +1,439 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "碳纤维",
+      "evidence_span": "公司是国内率先实现干喷湿纺技术的碳纤维企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高性能碳纤维",
+      "evidence_span": "西宁年产万吨高性能碳纤维及配套原丝项目"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "小丝束碳纤维",
+      "evidence_span": "公司主打小丝束碳纤维"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内T700、T800级小丝束碳纤维龙头",
+      "evidence_span": "国内T700、T800级小丝束碳纤维龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产碳纤维产业化领先者",
+      "evidence_span": "国产碳纤维产业化领先者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "干喷湿纺碳纤维领军者",
+      "evidence_span": "中复神鹰干喷湿纺碳纤维领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "民用碳纤维龙头",
+      "evidence_span": "中复神鹰民用碳纤维龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "T300级碳纤维",
+      "evidence_span": "系统掌握了碳纤维T300级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "T700级碳纤维",
+      "evidence_span": "系统掌握了碳纤维T700级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "T800级碳纤维",
+      "evidence_span": "系统掌握了碳纤维T800级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "M30级碳纤维",
+      "evidence_span": "系统掌握了碳纤维M30级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "M35级碳纤维",
+      "evidence_span": "系统掌握了碳纤维M35级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "M40级碳纤维",
+      "evidence_span": "系统掌握了碳纤维M40级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "T1000级碳纤维",
+      "evidence_span": "系统掌握了碳纤维T1000级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SYT45碳纤维",
+      "evidence_span": "SYT45（T300级）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SYT45S碳纤维",
+      "evidence_span": "SYT45S（T700级）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SYT49S碳纤维",
+      "evidence_span": "SYT49S（T700级）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SYT55碳纤维",
+      "evidence_span": "SYT55（T800级）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "QZ6026碳纤维",
+      "evidence_span": "QZ6026（T1000G级）碳纤维"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压力容器用碳纤维",
+      "evidence_span": "公司压力容器用碳纤维产品牌号以T700的SYT49和T800的SYT55为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空预浸料",
+      "evidence_span": "航空预浸料生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高模预浸料",
+      "evidence_span": "高模预浸料生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "干喷湿纺技术",
+      "evidence_span": "公司是国内率先实现干喷湿纺技术的碳纤维企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "T300级千吨级技术",
+      "evidence_span": "系统掌握了碳纤维T300级千吨级技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "T700级千吨级技术",
+      "evidence_span": "系统掌握了碳纤维T700级千吨级技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "T800级千吨级技术",
+      "evidence_span": "系统掌握了碳纤维T800级千吨级技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "M30级千吨级技术",
+      "evidence_span": "系统掌握了碳纤维M30级千吨级技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "M35级千吨级技术",
+      "evidence_span": "系统掌握了碳纤维M35级千吨级技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "M40级百吨级技术",
+      "evidence_span": "系统掌握了碳纤维M40级百吨级技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "T1000级百吨级技术",
+      "evidence_span": "系统掌握了碳纤维T1000级百吨级技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天鸟高新",
+      "evidence_span": "在下游客户天鸟高新的加持下"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中材科技",
+      "evidence_span": "完成中材科技的压力容器产品型式认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国富氢能",
+      "evidence_span": "完成国富氢能的压力容器产品型式认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "斯林达",
+      "evidence_span": "完成斯林达的压力容器产品型式认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "弗吉亚",
+      "evidence_span": "与弗吉亚签署战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "彼欧新能源",
+      "evidence_span": "与彼欧新能源签署战略合作协议"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "中复神鹰民用碳纤维先行者，技术创新引领国产替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "航空航天",
+      "evidence_span": "募资项目发力航空航天领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "风电",
+      "evidence_span": "风电、航空、储能等下游应用高景气"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能",
+      "evidence_span": "风电、航空、储能等下游应用高景气"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳碳复材",
+      "evidence_span": "碳碳复材、压力容器、体育休闲、航空航天、风电叶片等领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "压力容器",
+      "evidence_span": "碳碳复材、压力容器、体育休闲、航空航天、风电叶片等领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "体育休闲",
+      "evidence_span": "碳碳复材、压力容器、体育休闲、航空航天、风电叶片等领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "碳纤维",
+        "evidence_span": "公司是国内率先实现干喷湿纺技术的碳纤维企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高性能碳纤维",
+        "evidence_span": "西宁年产万吨高性能碳纤维及配套原丝项目"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "小丝束碳纤维",
+        "evidence_span": "公司主打小丝束碳纤维"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内T700、T800级小丝束碳纤维龙头",
+        "evidence_span": "国内T700、T800级小丝束碳纤维龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产碳纤维产业化领先者",
+        "evidence_span": "国产碳纤维产业化领先者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "干喷湿纺碳纤维领军者",
+        "evidence_span": "中复神鹰干喷湿纺碳纤维领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "民用碳纤维龙头",
+        "evidence_span": "中复神鹰民用碳纤维龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "T300级碳纤维",
+        "evidence_span": "系统掌握了碳纤维T300级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "T700级碳纤维",
+        "evidence_span": "系统掌握了碳纤维T700级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "T800级碳纤维",
+        "evidence_span": "系统掌握了碳纤维T800级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "M30级碳纤维",
+        "evidence_span": "系统掌握了碳纤维M30级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "M35级碳纤维",
+        "evidence_span": "系统掌握了碳纤维M35级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "M40级碳纤维",
+        "evidence_span": "系统掌握了碳纤维M40级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "T1000级碳纤维",
+        "evidence_span": "系统掌握了碳纤维T1000级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SYT45碳纤维",
+        "evidence_span": "SYT45（T300级）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SYT45S碳纤维",
+        "evidence_span": "SYT45S（T700级）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SYT49S碳纤维",
+        "evidence_span": "SYT49S（T700级）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SYT55碳纤维",
+        "evidence_span": "SYT55（T800级）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "QZ6026碳纤维",
+        "evidence_span": "QZ6026（T1000G级）碳纤维"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压力容器用碳纤维",
+        "evidence_span": "公司压力容器用碳纤维产品牌号以T700的SYT49和T800的SYT55为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空预浸料",
+        "evidence_span": "航空预浸料生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高模预浸料",
+        "evidence_span": "高模预浸料生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "干喷湿纺技术",
+        "evidence_span": "公司是国内率先实现干喷湿纺技术的碳纤维企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "T300级千吨级技术",
+        "evidence_span": "系统掌握了碳纤维T300级千吨级技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "T700级千吨级技术",
+        "evidence_span": "系统掌握了碳纤维T700级千吨级技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "T800级千吨级技术",
+        "evidence_span": "系统掌握了碳纤维T800级千吨级技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "M30级千吨级技术",
+        "evidence_span": "系统掌握了碳纤维M30级千吨级技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "M35级千吨级技术",
+        "evidence_span": "系统掌握了碳纤维M35级千吨级技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "M40级百吨级技术",
+        "evidence_span": "系统掌握了碳纤维M40级百吨级技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "T1000级百吨级技术",
+        "evidence_span": "系统掌握了碳纤维T1000级百吨级技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天鸟高新",
+        "evidence_span": "在下游客户天鸟高新的加持下"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中材科技",
+        "evidence_span": "完成中材科技的压力容器产品型式认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国富氢能",
+        "evidence_span": "完成国富氢能的压力容器产品型式认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "斯林达",
+        "evidence_span": "完成斯林达的压力容器产品型式认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "弗吉亚",
+        "evidence_span": "与弗吉亚签署战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "彼欧新能源",
+        "evidence_span": "与彼欧新能源签署战略合作协议"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "中复神鹰民用碳纤维先行者，技术创新引领国产替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "航空航天",
+        "evidence_span": "募资项目发力航空航天领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "风电",
+        "evidence_span": "风电、航空、储能等下游应用高景气"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能",
+        "evidence_span": "风电、航空、储能等下游应用高景气"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳碳复材",
+        "evidence_span": "碳碳复材、压力容器、体育休闲、航空航天、风电叶片等领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "压力容器",
+        "evidence_span": "碳碳复材、压力容器、体育休闲、航空航天、风电叶片等领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "体育休闲",
+        "evidence_span": "碳碳复材、压力容器、体育休闲、航空航天、风电叶片等领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:59:56"
+}

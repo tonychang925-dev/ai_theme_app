@@ -1,0 +1,99 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产业务",
+      "evidence_span": "公司从事的主要业务为房地产业务和建筑施工业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建筑施工业务",
+      "evidence_span": "公司从事的主要业务为房地产业务和建筑施工业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "房地产开发公司",
+      "evidence_span": "北京市优秀的房地产开发公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "顺义区属国有控股房地产上市企业",
+      "evidence_span": "作为顺义区属国有控股房地产上市企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "住宅",
+      "evidence_span": "主要以住宅和商业为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商业",
+      "evidence_span": "主要以住宅和商业为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房屋建设",
+      "evidence_span": "主要以房屋建设为主"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "建筑施工总承包一级资质",
+      "evidence_span": "大龙顺发公司具备建筑施工总承包一级资质"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "年施工100万平方米的能力",
+      "evidence_span": "具备年施工100万平方米的能力"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产业务",
+        "evidence_span": "公司从事的主要业务为房地产业务和建筑施工业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "建筑施工业务",
+        "evidence_span": "公司从事的主要业务为房地产业务和建筑施工业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "房地产开发公司",
+        "evidence_span": "北京市优秀的房地产开发公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "顺义区属国有控股房地产上市企业",
+        "evidence_span": "作为顺义区属国有控股房地产上市企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "住宅",
+        "evidence_span": "主要以住宅和商业为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商业",
+        "evidence_span": "主要以住宅和商业为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房屋建设",
+        "evidence_span": "主要以房屋建设为主"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "建筑施工总承包一级资质",
+        "evidence_span": "大龙顺发公司具备建筑施工总承包一级资质"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "年施工100万平方米的能力",
+        "evidence_span": "具备年施工100万平方米的能力"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:33:08"
+}

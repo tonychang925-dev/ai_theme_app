@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "8670e6d05fa9", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落详细描述美国商务部致函台积电停止向中国大陆供应特定芯片的具体事件，包括时间、措施、影响和各方反应，属于新闻动态，不提供半导体设备本身定义或构成的知识。"}}

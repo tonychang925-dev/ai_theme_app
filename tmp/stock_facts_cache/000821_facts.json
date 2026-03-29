@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏组件设备",
+      "evidence_span": "光伏组件设备（组件流水线、层压机等）市占率龙头领先"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "瓦楞包装机械设备",
+      "evidence_span": "瓦楞包装机械设备龙头企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "3C自动化",
+      "evidence_span": "进入工业自动化领域，主要产品有锂电池 PACK 线、槟榔自动上料点卤设备等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车零部件铸造",
+      "evidence_span": "主要向汽车整车或汽车配套厂商提供汽车零部件铸造产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光伏组件设备龙头企业",
+      "evidence_span": "光伏组件设备龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "瓦楞包装机械设备龙头企业",
+      "evidence_span": "瓦楞包装机械设备龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "纸制品包装机械设备第一家上市公司",
+      "evidence_span": "纸制品包装机械设备第一家上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏组件流水线",
+      "evidence_span": "组件流水线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "层压机",
+      "evidence_span": "层压机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TOPCon设备",
+      "evidence_span": "重点布局 TOPCon（PECVD+PVD 二合一设备）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HJT设备",
+      "evidence_span": "HJT（清洗制绒设备）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钙钛矿设备",
+      "evidence_span": "钙钛矿设备（团簇型多腔蒸镀设备等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "瓦楞纸板生产线",
+      "evidence_span": "瓦楞纸板生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能水性印刷",
+      "evidence_span": "智能水性印刷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数码印刷",
+      "evidence_span": "数码印刷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能工厂全场景解决方案",
+      "evidence_span": "智能工厂全场景解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池 PACK 线",
+      "evidence_span": "锂电池 PACK 线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "槟榔自动上料点卤设备",
+      "evidence_span": "槟榔自动上料点卤设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车零部件铸造产品",
+      "evidence_span": "汽车零部件铸造产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TOPCon镀膜设备研发",
+      "evidence_span": "致力于核心环节镀膜设备研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HJT清洗制绒设备",
+      "evidence_span": "推出清洗制绒设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钙钛矿团簇型多腔蒸镀设备",
+      "evidence_span": "团簇型多腔蒸镀设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "隆基",
+      "evidence_span": "客户覆盖隆基"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天合",
+      "evidence_span": "天合"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "晶澳",
+      "evidence_span": "晶澳"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "REC",
+      "evidence_span": "REC"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏产业升级",
+      "evidence_span": "政策加码光伏产业升级"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏组件设备",
+        "evidence_span": "光伏组件设备（组件流水线、层压机等）市占率龙头领先"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "瓦楞包装机械设备",
+        "evidence_span": "瓦楞包装机械设备龙头企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "3C自动化",
+        "evidence_span": "进入工业自动化领域，主要产品有锂电池 PACK 线、槟榔自动上料点卤设备等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车零部件铸造",
+        "evidence_span": "主要向汽车整车或汽车配套厂商提供汽车零部件铸造产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光伏组件设备龙头企业",
+        "evidence_span": "光伏组件设备龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "瓦楞包装机械设备龙头企业",
+        "evidence_span": "瓦楞包装机械设备龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "纸制品包装机械设备第一家上市公司",
+        "evidence_span": "纸制品包装机械设备第一家上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏组件流水线",
+        "evidence_span": "组件流水线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "层压机",
+        "evidence_span": "层压机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TOPCon设备",
+        "evidence_span": "重点布局 TOPCon（PECVD+PVD 二合一设备）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HJT设备",
+        "evidence_span": "HJT（清洗制绒设备）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钙钛矿设备",
+        "evidence_span": "钙钛矿设备（团簇型多腔蒸镀设备等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "瓦楞纸板生产线",
+        "evidence_span": "瓦楞纸板生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能水性印刷",
+        "evidence_span": "智能水性印刷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数码印刷",
+        "evidence_span": "数码印刷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能工厂全场景解决方案",
+        "evidence_span": "智能工厂全场景解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池 PACK 线",
+        "evidence_span": "锂电池 PACK 线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "槟榔自动上料点卤设备",
+        "evidence_span": "槟榔自动上料点卤设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车零部件铸造产品",
+        "evidence_span": "汽车零部件铸造产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TOPCon镀膜设备研发",
+        "evidence_span": "致力于核心环节镀膜设备研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HJT清洗制绒设备",
+        "evidence_span": "推出清洗制绒设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钙钛矿团簇型多腔蒸镀设备",
+        "evidence_span": "团簇型多腔蒸镀设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "隆基",
+        "evidence_span": "客户覆盖隆基"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天合",
+        "evidence_span": "天合"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "晶澳",
+        "evidence_span": "晶澳"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "REC",
+        "evidence_span": "REC"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏产业升级",
+        "evidence_span": "政策加码光伏产业升级"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:38:44"
+}

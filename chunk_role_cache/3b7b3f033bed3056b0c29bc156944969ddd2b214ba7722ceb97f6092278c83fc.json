@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "8b23463f2fb6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含ASML对EUV技术扩展的预计，这涉及半导体设备的技术知识（如EUV技术、产品组合），但以公司声明形式呈现，带有事件性质，因此归类为candidate_mixed。"}}

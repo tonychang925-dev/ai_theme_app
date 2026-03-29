@@ -1,0 +1,67 @@
+{
+  "event_id": "evt_ef92d6a9d05f",
+  "theme_name": "液冷数据中心",
+  "event_type": "行业观点",
+  "entities": [
+    {
+      "name": "中信建投",
+      "type": "公司",
+      "normalized": "中信建投"
+    },
+    {
+      "name": "英伟达",
+      "type": "公司",
+      "normalized": "英伟达"
+    },
+    {
+      "name": "AI芯片",
+      "type": "产品",
+      "normalized": "AI芯片"
+    },
+    {
+      "name": "液冷",
+      "type": "技术",
+      "normalized": "液冷"
+    }
+  ],
+  "summary": "中信建投研报预测2025年英伟达AI芯片液冷渗透提升，液冷市场规模将增长。",
+  "causal_claim": [
+    "AI芯片液冷渗透提升",
+    "单芯片功耗提升",
+    "液冷市场规模增长"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "AI芯片液冷渗透",
+      "单芯片功耗提升",
+      "液冷市场规模"
+    ],
+    "normalized_terms": {
+      "中信建投": "中信建投",
+      "英伟达": "英伟达",
+      "AI芯片": "AI芯片",
+      "液冷": "液冷"
+    },
+    "evidence_spans": [
+      {
+        "text": "2025年是英伟达AI芯片液冷渗透大幅提升的一年",
+        "start": 10,
+        "end": 40
+      },
+      {
+        "text": "随着单芯片功耗的提升，后续液冷市场规模将明显增长",
+        "start": 41,
+        "end": 70
+      }
+    ],
+    "core_concepts": [
+      "液冷渗透",
+      "市场规模增长"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.2,
+  "timestamp": null,
+  "raw_text": "中信建投研报指出，2025年是英伟达AI芯片液冷渗透大幅提升的一年，同时随着单芯片功耗的提升，后续液冷市场规模将明显增长。（新闻来源：财联社）"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "2c27863b8e66", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落引用发改委的表述，说明我国低空经济的发展基础和阶段，这涉及题材的本体知识（如发展阶段），但以官方表态的形式出现，可能包含事件性内容，适合作为候选混合知识。"}}

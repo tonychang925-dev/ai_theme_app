@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "化学原料药",
+      "evidence_span": "公司主要从事化学原料药及其制剂产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化学药品制剂",
+      "evidence_span": "公司主要从事化学原料药及其制剂产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中间体",
+      "evidence_span": "同时兼营中间体业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "化学原料药供应商",
+      "evidence_span": "公司作为格列齐特、盐酸二甲双胍、盐酸罗哌卡因及单硝酸异山梨酯原料药的重要供应商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "化学药品生产企业",
+      "evidence_span": "致力于成为国内领先、具有国际竞争力的化学药品生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "格列齐特原料药",
+      "evidence_span": "原料药产品主要包括格列齐特、盐酸二甲双胍、盐酸罗哌卡因、单硝酸异山梨酯等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盐酸二甲双胍原料药",
+      "evidence_span": "原料药产品主要包括格列齐特、盐酸二甲双胍、盐酸罗哌卡因、单硝酸异山梨酯等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盐酸罗哌卡因原料药",
+      "evidence_span": "原料药产品主要包括格列齐特、盐酸二甲双胍、盐酸罗哌卡因、单硝酸异山梨酯等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单硝酸异山梨酯原料药",
+      "evidence_span": "原料药产品主要包括格列齐特、盐酸二甲双胍、盐酸罗哌卡因、单硝酸异山梨酯等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盐酸氟西汀分散片",
+      "evidence_span": "化学药品制剂产品主要包括盐酸氟西汀分散片、单硝酸异山梨酯缓释片以及单硝酸异山梨酯片等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单硝酸异山梨酯缓释片",
+      "evidence_span": "化学药品制剂产品主要包括盐酸氟西汀分散片、单硝酸异山梨酯缓释片以及单硝酸异山梨酯片等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单硝酸异山梨酯片",
+      "evidence_span": "化学药品制剂产品主要包括盐酸氟西汀分散片、单硝酸异山梨酯缓释片以及单硝酸异山梨酯片等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OR10127中间体",
+      "evidence_span": "公司中间体为根据客户需求定制的化工中间体产品，主要为OR10127以及OR10154"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OR10154中间体",
+      "evidence_span": "公司中间体为根据客户需求定制的化工中间体产品，主要为OR10127以及OR10154"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "化学原料药合成技术",
+      "evidence_span": "持续研究化学原料药合成技术和化学药品制剂技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "化学药品制剂技术",
+      "evidence_span": "持续研究化学原料药合成技术和化学药品制剂技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山东鲁抗医药集团赛特有限责任公司",
+      "evidence_span": "公司格列齐特主要客户山东鲁抗医药集团赛特有限责任公司、石家庄四药有限公司等未中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石家庄四药有限公司",
+      "evidence_span": "公司格列齐特主要客户山东鲁抗医药集团赛特有限责任公司、石家庄四药有限公司等未中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天津君安生物制药有限公司",
+      "evidence_span": "天津君安生物制药有限公司等客户中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山东齐都药业有限公司",
+      "evidence_span": "盐酸二甲双胍主要客户山东齐都药业有限公司、江苏祥瑞药业有限公司等未中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江苏祥瑞药业有限公司",
+      "evidence_span": "盐酸二甲双胍主要客户山东齐都药业有限公司、江苏祥瑞药业有限公司等未中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "重庆科瑞制药（集团）有限公司",
+      "evidence_span": "重庆科瑞制药（集团）有限公司、蓬莱诺康药业有限公司等客户中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蓬莱诺康药业有限公司",
+      "evidence_span": "重庆科瑞制药（集团）有限公司、蓬莱诺康药业有限公司等客户中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京红林制药有限公司",
+      "evidence_span": "公司单硝酸异山梨酯主要客户山东鲁抗医药集团赛特有限责任公司、北京红林制药有限公司等客户未中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "珠海润都制药股份有限公司",
+      "evidence_span": "珠海润都制药股份有限公司、乐普药业股份有限公司等客户中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "乐普药业股份有限公司",
+      "evidence_span": "珠海润都制药股份有限公司、乐普药业股份有限公司等客户中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "人福医药集团股份有限公司",
+      "evidence_span": "公司盐酸罗哌卡因主要客户人福医药集团股份有限公司、河北一品制药股份有限公司等客户未中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "河北一品制药股份有限公司",
+      "evidence_span": "公司盐酸罗哌卡因主要客户人福医药集团股份有限公司、河北一品制药股份有限公司等客户未中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江苏恒瑞医药股份有限公司",
+      "evidence_span": "江苏恒瑞医药股份有限公司、石家庄四药有限公司等客户中标"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "原料药+制剂一体化",
+      "evidence_span": "积极发展“原料药+制剂”一体化发展战略"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "化学原料药",
+        "evidence_span": "公司主要从事化学原料药及其制剂产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化学药品制剂",
+        "evidence_span": "公司主要从事化学原料药及其制剂产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中间体",
+        "evidence_span": "同时兼营中间体业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "化学原料药供应商",
+        "evidence_span": "公司作为格列齐特、盐酸二甲双胍、盐酸罗哌卡因及单硝酸异山梨酯原料药的重要供应商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "化学药品生产企业",
+        "evidence_span": "致力于成为国内领先、具有国际竞争力的化学药品生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "格列齐特原料药",
+        "evidence_span": "原料药产品主要包括格列齐特、盐酸二甲双胍、盐酸罗哌卡因、单硝酸异山梨酯等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盐酸二甲双胍原料药",
+        "evidence_span": "原料药产品主要包括格列齐特、盐酸二甲双胍、盐酸罗哌卡因、单硝酸异山梨酯等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盐酸罗哌卡因原料药",
+        "evidence_span": "原料药产品主要包括格列齐特、盐酸二甲双胍、盐酸罗哌卡因、单硝酸异山梨酯等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单硝酸异山梨酯原料药",
+        "evidence_span": "原料药产品主要包括格列齐特、盐酸二甲双胍、盐酸罗哌卡因、单硝酸异山梨酯等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盐酸氟西汀分散片",
+        "evidence_span": "化学药品制剂产品主要包括盐酸氟西汀分散片、单硝酸异山梨酯缓释片以及单硝酸异山梨酯片等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单硝酸异山梨酯缓释片",
+        "evidence_span": "化学药品制剂产品主要包括盐酸氟西汀分散片、单硝酸异山梨酯缓释片以及单硝酸异山梨酯片等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单硝酸异山梨酯片",
+        "evidence_span": "化学药品制剂产品主要包括盐酸氟西汀分散片、单硝酸异山梨酯缓释片以及单硝酸异山梨酯片等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OR10127中间体",
+        "evidence_span": "公司中间体为根据客户需求定制的化工中间体产品，主要为OR10127以及OR10154"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OR10154中间体",
+        "evidence_span": "公司中间体为根据客户需求定制的化工中间体产品，主要为OR10127以及OR10154"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "化学原料药合成技术",
+        "evidence_span": "持续研究化学原料药合成技术和化学药品制剂技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "化学药品制剂技术",
+        "evidence_span": "持续研究化学原料药合成技术和化学药品制剂技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山东鲁抗医药集团赛特有限责任公司",
+        "evidence_span": "公司格列齐特主要客户山东鲁抗医药集团赛特有限责任公司、石家庄四药有限公司等未中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石家庄四药有限公司",
+        "evidence_span": "公司格列齐特主要客户山东鲁抗医药集团赛特有限责任公司、石家庄四药有限公司等未中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津君安生物制药有限公司",
+        "evidence_span": "天津君安生物制药有限公司等客户中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山东齐都药业有限公司",
+        "evidence_span": "盐酸二甲双胍主要客户山东齐都药业有限公司、江苏祥瑞药业有限公司等未中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江苏祥瑞药业有限公司",
+        "evidence_span": "盐酸二甲双胍主要客户山东齐都药业有限公司、江苏祥瑞药业有限公司等未中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "重庆科瑞制药（集团）有限公司",
+        "evidence_span": "重庆科瑞制药（集团）有限公司、蓬莱诺康药业有限公司等客户中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蓬莱诺康药业有限公司",
+        "evidence_span": "重庆科瑞制药（集团）有限公司、蓬莱诺康药业有限公司等客户中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京红林制药有限公司",
+        "evidence_span": "公司单硝酸异山梨酯主要客户山东鲁抗医药集团赛特有限责任公司、北京红林制药有限公司等客户未中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "珠海润都制药股份有限公司",
+        "evidence_span": "珠海润都制药股份有限公司、乐普药业股份有限公司等客户中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "乐普药业股份有限公司",
+        "evidence_span": "珠海润都制药股份有限公司、乐普药业股份有限公司等客户中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "人福医药集团股份有限公司",
+        "evidence_span": "公司盐酸罗哌卡因主要客户人福医药集团股份有限公司、河北一品制药股份有限公司等客户未中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "河北一品制药股份有限公司",
+        "evidence_span": "公司盐酸罗哌卡因主要客户人福医药集团股份有限公司、河北一品制药股份有限公司等客户未中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江苏恒瑞医药股份有限公司",
+        "evidence_span": "江苏恒瑞医药股份有限公司、石家庄四药有限公司等客户中标"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "原料药+制剂一体化",
+        "evidence_span": "积极发展“原料药+制剂”一体化发展战略"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:04:32"
+}

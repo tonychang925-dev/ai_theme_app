@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "884c40bc5b94", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：中芯国际测试国产DUV光刻机，包含明确的时间（2025年9月24日）和新闻来源（英国金融时报），属于动态新闻，没有提供静态的半导体知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "b2d33e577a7a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了上海印发的政策方案，其中包含创建国家人形机器人制造业创新中心和应用场景等静态知识，但整体以政策发布事件为主，混合了事件和知识，适合作为候选知识进一步裁决。"}}

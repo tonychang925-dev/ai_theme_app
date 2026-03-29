@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:52:22", "result": {"span_uid": "3eff3ae786cc", "action": "keep", "canonical_text": "东京电子和阿斯麦等公司是关键的半导体设备供应商，其产品（芯片生产设备）对整个芯片行业至关重要。", "final_type": "related", "final_role": "关键设备供应商作用", "stability": "high", "reason": "原文已相对稳定，描述半导体产业链中的关键设备供应商角色，适合作为关联知识保留，仅微调以更独立。"}}

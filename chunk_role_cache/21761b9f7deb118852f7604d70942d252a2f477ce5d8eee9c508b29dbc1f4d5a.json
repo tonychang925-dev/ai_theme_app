@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "b07bc3eaba08", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含Vision SE产品认证、虚拟现实设备产量增长数据以及多家公司产品发布计划，可能隐含市场动态或技术进展知识，但混合了具体事件和统计数据，需要进一步裁决。"}}

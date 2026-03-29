@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "6ec214d229b5", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落描述华为与中芯国际的专利和合作事件，但提到了SAQP技术和DUV光刻机用于3纳米制程，可能包含半导体设备技术路径或应用场景的候选知识。"}}

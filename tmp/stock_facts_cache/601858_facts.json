@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "图书出版业务",
+      "evidence_span": "公司的主要业务包括图书出版业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "期刊业务",
+      "evidence_span": "公司的主要业务包括...期刊业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "出版物进出口业务",
+      "evidence_span": "公司的主要业务包括...出版物进出口业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "知识服务业务",
+      "evidence_span": "公司的主要业务包括...知识服务业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性科技出版机构",
+      "evidence_span": "国内学科分布最全、出版规模最大的综合性科技出版机构"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "科技出版龙头",
+      "evidence_span": "科技出版龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新中国科技出版的“国家队”",
+      "evidence_span": "作为新中国科技出版的“国家队”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中央级出版机构",
+      "evidence_span": "公司作为中央级出版机构"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级的科技期刊出版基地",
+      "evidence_span": "公司作为国家级的科技期刊出版基地"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "图书",
+      "evidence_span": "公司年出版新书超过 3000 种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "科技期刊",
+      "evidence_span": "公司年出版期刊超过 500 种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "出版物进出口",
+      "evidence_span": "主要从事图书、期刊及相关数字出版物的进出口业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专业学科知识库",
+      "evidence_span": "专业学科知识库"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字教育云服务",
+      "evidence_span": "数字教育云服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗健康大数据",
+      "evidence_span": "医疗健康大数据"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "期刊融合平台",
+      "evidence_span": "期刊融合平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "科学文库",
+      "evidence_span": "科学文库"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "科学智库",
+      "evidence_span": "科学智库"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中国生物志库",
+      "evidence_span": "中国生物志库"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中科云教育平台",
+      "evidence_span": "中科云教育平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中科医库",
+      "evidence_span": "中科医库"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SciEngine 平台",
+      "evidence_span": "SciEngine 平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SciEngine 全流程数字出版与知识服务平台",
+      "evidence_span": "投资开发了 SciEngine 全流程数字出版与知识服务平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SciCloud 期刊同行评议系统",
+      "evidence_span": "SciCloud 期刊同行评议系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "COAJ 中国科技期刊开放获取平台",
+      "evidence_span": "COAJ 中国科技期刊开放获取平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高校",
+      "evidence_span": "主要读者和客户为高校"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科研人员及科研机构",
+      "evidence_span": "主要读者和客户为...科研人员及科研机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "图书馆",
+      "evidence_span": "主要读者和客户为...图书馆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "专业人士",
+      "evidence_span": "主要读者和客户为...专业人士"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "境外大型出版机构",
+      "evidence_span": "供应商则多为境外大型出版机构"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字出版与知识服务",
+      "evidence_span": "积极发展数字出版与知识服务新业务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "科技出版业大发展",
+      "evidence_span": "长期受益于我国科技出版业大发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "图书出版业务",
+        "evidence_span": "公司的主要业务包括图书出版业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "期刊业务",
+        "evidence_span": "公司的主要业务包括...期刊业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "出版物进出口业务",
+        "evidence_span": "公司的主要业务包括...出版物进出口业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "知识服务业务",
+        "evidence_span": "公司的主要业务包括...知识服务业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性科技出版机构",
+        "evidence_span": "国内学科分布最全、出版规模最大的综合性科技出版机构"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "科技出版龙头",
+        "evidence_span": "科技出版龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新中国科技出版的“国家队”",
+        "evidence_span": "作为新中国科技出版的“国家队”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中央级出版机构",
+        "evidence_span": "公司作为中央级出版机构"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级的科技期刊出版基地",
+        "evidence_span": "公司作为国家级的科技期刊出版基地"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "图书",
+        "evidence_span": "公司年出版新书超过 3000 种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "科技期刊",
+        "evidence_span": "公司年出版期刊超过 500 种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "出版物进出口",
+        "evidence_span": "主要从事图书、期刊及相关数字出版物的进出口业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专业学科知识库",
+        "evidence_span": "专业学科知识库"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字教育云服务",
+        "evidence_span": "数字教育云服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗健康大数据",
+        "evidence_span": "医疗健康大数据"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "期刊融合平台",
+        "evidence_span": "期刊融合平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "科学文库",
+        "evidence_span": "科学文库"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "科学智库",
+        "evidence_span": "科学智库"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中国生物志库",
+        "evidence_span": "中国生物志库"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中科云教育平台",
+        "evidence_span": "中科云教育平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中科医库",
+        "evidence_span": "中科医库"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SciEngine 平台",
+        "evidence_span": "SciEngine 平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SciEngine 全流程数字出版与知识服务平台",
+        "evidence_span": "投资开发了 SciEngine 全流程数字出版与知识服务平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SciCloud 期刊同行评议系统",
+        "evidence_span": "SciCloud 期刊同行评议系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "COAJ 中国科技期刊开放获取平台",
+        "evidence_span": "COAJ 中国科技期刊开放获取平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高校",
+        "evidence_span": "主要读者和客户为高校"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科研人员及科研机构",
+        "evidence_span": "主要读者和客户为...科研人员及科研机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "图书馆",
+        "evidence_span": "主要读者和客户为...图书馆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "专业人士",
+        "evidence_span": "主要读者和客户为...专业人士"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "境外大型出版机构",
+        "evidence_span": "供应商则多为境外大型出版机构"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字出版与知识服务",
+        "evidence_span": "积极发展数字出版与知识服务新业务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "科技出版业大发展",
+        "evidence_span": "长期受益于我国科技出版业大发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:39:56"
+}

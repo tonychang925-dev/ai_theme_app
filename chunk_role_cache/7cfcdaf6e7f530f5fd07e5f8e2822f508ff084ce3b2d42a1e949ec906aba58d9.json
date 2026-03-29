@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:43:18", "result": {"chunk_id": "cfe7c7dd6ff2", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落解释了冷源环节的功能、技术方案与部件（如自然冷却系统和机械冷却系统），属于液冷数据中心架构的静态知识，无事件信息。"}}

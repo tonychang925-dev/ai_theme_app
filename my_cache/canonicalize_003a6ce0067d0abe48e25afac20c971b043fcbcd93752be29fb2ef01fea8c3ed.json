@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:45:16", "result": {"span_uid": "b090884c6200", "action": "keep", "canonical_text": "视涯科技累计申请专利超过400项，体现了其技术密集型属性。", "final_type": "signal", "final_role": "专利积累", "stability": "high", "reason": "该片段展示了公司的技术积累和研发实力，是稳定的知识表达，可独立成立。"}}

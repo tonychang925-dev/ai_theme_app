@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "9035b7b5134f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述安徽“皖事通”APP实现国家网络身份认证的具体事件，包括日期和认证变化，属于时间性动态，没有提供静态的题材定义、结构或机制等知识。"}}

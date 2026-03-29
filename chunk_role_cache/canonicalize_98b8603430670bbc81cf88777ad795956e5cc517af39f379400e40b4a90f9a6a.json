@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:25:32", "result": {"span_uid": "6abb39d87db7", "action": "keep", "canonical_text": "稀土产业链主要由上游的稀土资源开采、中游的稀土材料制备和下游的应用领域构成。", "final_type": "core", "final_role": "产业链结构", "stability": "high", "reason": "该片段定义了稀土产业链的基本结构，是题材的核心组成部分，稳定且可独立理解。"}}

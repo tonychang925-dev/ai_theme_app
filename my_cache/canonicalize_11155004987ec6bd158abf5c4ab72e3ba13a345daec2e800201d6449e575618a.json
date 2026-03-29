@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:41:07", "result": {"span_uid": "1464a90d7712", "action": "keep", "canonical_text": "春节五大消费品类包括白酒、旅游、礼盒、电影和烟花，这些品类既保留了传统年味，又不断涌现新趋势。", "final_type": "core", "final_role": "品类构成", "stability": "high", "reason": "直接定义了题材的本体构成，是稳定、可独立理解的知识表达。"}}

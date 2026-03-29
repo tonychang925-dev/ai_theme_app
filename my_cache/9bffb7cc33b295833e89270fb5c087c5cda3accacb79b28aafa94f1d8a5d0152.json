@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:31:43", "result": {"chunk_id": "063bfeba4576", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含导弹类型（如“海巴尔”多弹头弹道导弹、“泥石”远程超重型导弹）和特性（两级固体推进）等潜在知识，但混合了伊朗对以色列行动的具体事件和时间信息，属于候选混合状态。"}}

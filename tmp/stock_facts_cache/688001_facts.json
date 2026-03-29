@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "平板显示检测",
+      "evidence_span": "平板显示检测设备领军企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体检测",
+      "evidence_span": "战略布局半导体检测领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能穿戴组装检测",
+      "evidence_span": "智能穿戴组装和检测业务的稳步增长"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源汽车电子检测",
+      "evidence_span": "新能源车检测业务顺利获得美国以及国内多家造车新势力新能源汽车企业的认可"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "检测设备与整线检测系统解决方案提供商",
+      "evidence_span": "国内领先的检测设备与整线检测系统解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "面板与半导体检测设备企业",
+      "evidence_span": "华兴源创领先的面板与半导体检测设备企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国际化FPD&IC检测/测试设备供应商",
+      "evidence_span": "国际化FPD&IC检测/测试设备供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "平板显示检测设备",
+      "evidence_span": "平板显示检测设备领军企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体测试设备",
+      "evidence_span": "多种标准半导体测试设备产品得到客户认可"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Micro-OLED系列检测设备",
+      "evidence_span": "Micro-OLED系列检测设备在报告期内获得终端客户批量订单"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SOC测试机",
+      "evidence_span": "SOC测试机已推出两代机型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频专用测试机",
+      "evidence_span": "射频专用测试机在硬件性能上已经可以满足射频开关(Switch)、低噪放大器（LNA）、功率放大器（PA）、滤波器（Fiter）、射频调谐（Tuner）所有5G、4G、3G射频前端芯片的测试"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SIP先进封装模块测试系统",
+      "evidence_span": "公司的SIP先进封装模块测试系统持续获得客户订单"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可穿戴电子产品检测及组装设备",
+      "evidence_span": "华兴欧立通经过多年合作，成功进入其供应商体系并持续供应可穿戴电子产品的检测及组装设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车测试设备",
+      "evidence_span": "新能源车检测业务顺利获得美国以及国内多家造车新势力新能源汽车企业的认可"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信号和图像算法",
+      "evidence_span": "在信号和图像算法等领域积累了多项自主核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MiniLED、Micro-LED及Micro-OLED等新一代显示检测技术",
+      "evidence_span": "MiniLED、Micro-LED及Micro-OLED等新一代显示检测技术储备不断增加"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ATE架构和PXIE架构测试机开发",
+      "evidence_span": "公司是全球为数不多的同时开发ATE架构和PXIE架构两个大类测试机的厂商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Sub-6G射频矢量信号收发板卡",
+      "evidence_span": "成为了国内首家拥有自主研发Sub-6G射频矢量信号收发板卡的厂商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "支持并测128Site系统模块测试机",
+      "evidence_span": "成为了国内首家拥有支持并测128Site系统模块测试机加配套分选机解决方案的厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苹果",
+      "evidence_span": "苹果公司建立了严格的供应商遴选体系，华兴欧立通经过多年合作，成功进入其供应商体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东方",
+      "evidence_span": "京东方等国内厂家于近期启动了逐步对现有OLED产线触控制程的升级迭代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国最大电动车厂商",
+      "evidence_span": "已经成为美国最大电动车厂商的指定供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内造车新势力新能源汽车企业",
+      "evidence_span": "新能源车检测业务顺利获得美国以及国内多家造车新势力新能源汽车企业的认可"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产替代大有可为"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "存储国产化",
+      "evidence_span": "半导体产业链国产替代大趋势不可阻挡"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "平板显示检测",
+        "evidence_span": "平板显示检测设备领军企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体检测",
+        "evidence_span": "战略布局半导体检测领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能穿戴组装检测",
+        "evidence_span": "智能穿戴组装和检测业务的稳步增长"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源汽车电子检测",
+        "evidence_span": "新能源车检测业务顺利获得美国以及国内多家造车新势力新能源汽车企业的认可"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "检测设备与整线检测系统解决方案提供商",
+        "evidence_span": "国内领先的检测设备与整线检测系统解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "面板与半导体检测设备企业",
+        "evidence_span": "华兴源创领先的面板与半导体检测设备企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国际化FPD&IC检测/测试设备供应商",
+        "evidence_span": "国际化FPD&IC检测/测试设备供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "平板显示检测设备",
+        "evidence_span": "平板显示检测设备领军企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体测试设备",
+        "evidence_span": "多种标准半导体测试设备产品得到客户认可"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Micro-OLED系列检测设备",
+        "evidence_span": "Micro-OLED系列检测设备在报告期内获得终端客户批量订单"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SOC测试机",
+        "evidence_span": "SOC测试机已推出两代机型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频专用测试机",
+        "evidence_span": "射频专用测试机在硬件性能上已经可以满足射频开关(Switch)、低噪放大器（LNA）、功率放大器（PA）、滤波器（Fiter）、射频调谐（Tuner）所有5G、4G、3G射频前端芯片的测试"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SIP先进封装模块测试系统",
+        "evidence_span": "公司的SIP先进封装模块测试系统持续获得客户订单"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可穿戴电子产品检测及组装设备",
+        "evidence_span": "华兴欧立通经过多年合作，成功进入其供应商体系并持续供应可穿戴电子产品的检测及组装设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车测试设备",
+        "evidence_span": "新能源车检测业务顺利获得美国以及国内多家造车新势力新能源汽车企业的认可"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信号和图像算法",
+        "evidence_span": "在信号和图像算法等领域积累了多项自主核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MiniLED、Micro-LED及Micro-OLED等新一代显示检测技术",
+        "evidence_span": "MiniLED、Micro-LED及Micro-OLED等新一代显示检测技术储备不断增加"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ATE架构和PXIE架构测试机开发",
+        "evidence_span": "公司是全球为数不多的同时开发ATE架构和PXIE架构两个大类测试机的厂商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Sub-6G射频矢量信号收发板卡",
+        "evidence_span": "成为了国内首家拥有自主研发Sub-6G射频矢量信号收发板卡的厂商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "支持并测128Site系统模块测试机",
+        "evidence_span": "成为了国内首家拥有支持并测128Site系统模块测试机加配套分选机解决方案的厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苹果",
+        "evidence_span": "苹果公司建立了严格的供应商遴选体系，华兴欧立通经过多年合作，成功进入其供应商体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东方",
+        "evidence_span": "京东方等国内厂家于近期启动了逐步对现有OLED产线触控制程的升级迭代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国最大电动车厂商",
+        "evidence_span": "已经成为美国最大电动车厂商的指定供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内造车新势力新能源汽车企业",
+        "evidence_span": "新能源车检测业务顺利获得美国以及国内多家造车新势力新能源汽车企业的认可"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产替代大有可为"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "存储国产化",
+        "evidence_span": "半导体产业链国产替代大趋势不可阻挡"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:28:12"
+}

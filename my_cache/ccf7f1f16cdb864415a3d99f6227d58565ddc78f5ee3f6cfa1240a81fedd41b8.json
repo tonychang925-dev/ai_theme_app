@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "90163a49d5c3", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段简要报道伊朗和以色列宣布正式停火的事件，是纯新闻动态，无稳定知识内容。"}}

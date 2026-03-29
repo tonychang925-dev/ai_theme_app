@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "65dd38f4a994", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述美国政府的管制行动和中国的调查回应，属于具体政策事件和市场动态，不提供半导体设备本身的结构或定义信息，仅适合作为事件参考。"}}

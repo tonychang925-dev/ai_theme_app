@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:53:24", "result": {"chunk_id": "eea3d3460564", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含包装产业的静态定义和核心构成（如产业链、材料分类），但混有2023年全球市场规模和增长率等具体数据，这些数据具有时间性，可能随事件变化，因此优先判为candidate_mixed而非strict_knowledge。"}}

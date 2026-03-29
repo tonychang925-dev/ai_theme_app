@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "913144d7f932", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "明确描述了美国国际贸易委员会（ITC）就特定半导体设备案件发布终裁结果（有限排除令、禁止令、保证金）这一具体的法律/监管事件，是典型的事件公告。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "2a6dfb92b85c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了伊朗将定位系统从GPS迁移至北斗导航系统的事件，包含具体日期和动态信息，属于事件性质。但同时也提到了北斗系统的架构、精度、覆盖优势等静态知识，这些信息对卫星互联网题材有潜在知识价值，因此归类为混合候选。"}}

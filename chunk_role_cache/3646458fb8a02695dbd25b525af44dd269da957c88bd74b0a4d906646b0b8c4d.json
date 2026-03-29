@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "2c14f7f42551", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落描述了北方华创发布的特定时间（上半年）的财务业绩公告，这是一个具体的事件，没有提供稳定的、可沉淀的行业知识。"}}

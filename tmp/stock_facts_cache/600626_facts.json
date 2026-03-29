@@ -1,0 +1,314 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车内饰",
+      "evidence_span": "主要业务包括汽车内饰及声学元件、纺织新材料和进出口贸易"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "声学元件",
+      "evidence_span": "主要业务包括汽车内饰及声学元件、纺织新材料和进出口贸易"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "纺织新材料",
+      "evidence_span": "主要业务包括汽车内饰及声学元件、纺织新材料和进出口贸易"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "进出口贸易",
+      "evidence_span": "主要业务包括汽车内饰及声学元件、纺织新材料和进出口贸易"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车零部件一配套供应商",
+      "evidence_span": "公司作为汽车零部件一配套供应商的实际销量不达预期"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车内饰供应商",
+      "evidence_span": "整车厂倾向于与汽车内饰供应商建立深度合作关系"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "纺织贸易业务供应链集成商",
+      "evidence_span": "公司致力于打造成为纺织贸易业务供应链集成商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地板系统产品",
+      "evidence_span": "主要产品包括：地板系统产品，包括地毯及配件垫"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "声学元件产品",
+      "evidence_span": "声学元件产品，主要指在汽车内部起到隔音作用的绝缘件产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软饰小件产品",
+      "evidence_span": "软饰小件产品，指的是安装在汽车驾驶舱、车厢、后备箱等各部位的内饰、软饰部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纺织复合涂层材料",
+      "evidence_span": "该业务主要系纺织复合涂层材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "篷布及膜结构产品",
+      "evidence_span": "申达科宝系较早进入篷布及膜结构产品市场的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TPU涂层布产品",
+      "evidence_span": "TPU涂层布产品的市场拓展力度也已初显成效"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产业用涂层织物",
+      "evidence_span": "产业用涂层织物是目前行业最大的出口产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "柔性复合性材料产品",
+      "evidence_span": "着力于符合高强轻质、功能、环保要求的柔性复合性材料产品的开发研究"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "土工合成材料",
+      "evidence_span": "多个种类自主研发的土工合成材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽车纺织内饰及声学技术研发中心",
+      "evidence_span": "逐步配齐、提升公司“汽车纺织内饰及声学技术研发中心”的研发能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3D平台",
+      "evidence_span": "报告期内还完成了3D平台的开发建设"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通用",
+      "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福特",
+      "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "捷豹路虎",
+      "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "戴姆勒",
+      "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "斯特兰蒂斯",
+      "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰田",
+      "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本田",
+      "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃尔沃",
+      "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "上海国企改革",
+      "evidence_span": "受益上海国企改革落地"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车内饰及声学元件",
+        "evidence_span": "主要业务包括汽车内饰及声学元件、纺织新材料和进出口贸易"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "纺织新材料",
+        "evidence_span": "主要业务包括汽车内饰及声学元件、纺织新材料和进出口贸易"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "进出口贸易",
+        "evidence_span": "主要业务包括汽车内饰及声学元件、纺织新材料和进出口贸易"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车零部件一配套供应商",
+        "evidence_span": "公司作为汽车零部件一配套供应商的实际销量不达预期"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车内饰供应商",
+        "evidence_span": "整车厂倾向于与汽车内饰供应商建立深度合作关系"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "纺织贸易业务供应链集成商",
+        "evidence_span": "公司致力于打造成为纺织贸易业务供应链集成商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地板系统产品",
+        "evidence_span": "主要产品包括：地板系统产品，包括地毯及配件垫"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "声学元件产品",
+        "evidence_span": "声学元件产品，主要指在汽车内部起到隔音作用的绝缘件产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软饰小件产品",
+        "evidence_span": "软饰小件产品，指的是安装在汽车驾驶舱、车厢、后备箱等各部位的内饰、软饰部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纺织复合涂层材料",
+        "evidence_span": "该业务主要系纺织复合涂层材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "篷布及膜结构产品",
+        "evidence_span": "申达科宝系较早进入篷布及膜结构产品市场的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TPU涂层布产品",
+        "evidence_span": "TPU涂层布产品的市场拓展力度也已初显成效"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产业用涂层织物",
+        "evidence_span": "产业用涂层织物是目前行业最大的出口产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "柔性复合性材料产品",
+        "evidence_span": "着力于符合高强轻质、功能、环保要求的柔性复合性材料产品的开发研究"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "土工合成材料",
+        "evidence_span": "多个种类自主研发的土工合成材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽车纺织内饰及声学技术研发中心",
+        "evidence_span": "逐步配齐、提升公司“汽车纺织内饰及声学技术研发中心”的研发能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3D平台",
+        "evidence_span": "报告期内还完成了3D平台的开发建设"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通用",
+        "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福特",
+        "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "捷豹路虎",
+        "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "戴姆勒",
+        "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "斯特兰蒂斯",
+        "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰田",
+        "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本田",
+        "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃尔沃",
+        "evidence_span": "主要客户为通用、福特、捷豹路虎、戴姆勒、斯特兰蒂斯、丰田、本田、大众、宝马、吉利、比亚迪、沃尔沃等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "上海国企改革",
+        "evidence_span": "受益上海国企改革落地"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:49:57"
+}

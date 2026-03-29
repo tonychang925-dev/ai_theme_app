@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "171fb51a7d0b", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落包含全球和我国光刻胶市场规模数据及增长趋势，具有潜在知识价值（如市场规模信息），但以报告发布和预测形式呈现，混合了事件元素。"}}

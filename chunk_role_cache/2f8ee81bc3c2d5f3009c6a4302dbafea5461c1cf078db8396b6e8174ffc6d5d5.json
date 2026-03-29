@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "6dda347a2ee6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落前半部分描述翼型设计作为航空工业基础，并发布中国翼型谱系及数据库，这包含静态知识（如关键技术定义），但后半部分提到多个博览会和大会，混合了事件信息。整体可能含有有价值的知识，但需进一步裁决。"}}

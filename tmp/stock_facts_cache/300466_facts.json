@@ -1,0 +1,459 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能装备",
+      "evidence_span": "拓展优化智能装备、自动化、信息技术三大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化",
+      "evidence_span": "拓展优化智能装备、自动化、信息技术三大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息技术",
+      "evidence_span": "拓展优化智能装备、自动化、信息技术三大业务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字化和自动化解决方案服务商",
+      "evidence_span": "公司围绕“数字化和自动化解决方案服务商”战略目标"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家智能制造系统解决方案供应商联盟理事单位",
+      "evidence_span": "公司是国家智能制造系统解决方案供应商联盟理事单位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "江苏省智能制造领军服务机构",
+      "evidence_span": "江苏省智能制造领军服务机构"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "江苏省中小企业数字化智能化改造升级优秀服务商",
+      "evidence_span": "江苏省中小企业数字化智能化改造升级优秀服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "江苏省服务型制造示范企业",
+      "evidence_span": "江苏省服务型制造示范企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "计量检测产品",
+      "evidence_span": "计量检测产品用于散状物料在工业生产过程的重量与品质检测"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "包装码垛产品",
+      "evidence_span": "包装码垛产品用于各类物料的自动计量、填充、封装、产品搬运、装箱和拆码垛作业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能物料搬运仓储装备",
+      "evidence_span": "智能物料搬运仓储装备产品用于包装完成的产品转运到仓库并在仓库进行缓存及后续的发运工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机器人采制化系统",
+      "evidence_span": "产品包括机器人采制化系统、机器人包装码垛系统、AGV移动搬运机器人、喷涂机器人、搬运机器人、云联智能计量设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机器人包装码垛系统",
+      "evidence_span": "产品包括机器人采制化系统、机器人包装码垛系统、AGV移动搬运机器人、喷涂机器人、搬运机器人、云联智能计量设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AGV移动搬运机器人",
+      "evidence_span": "产品包括机器人采制化系统、机器人包装码垛系统、AGV移动搬运机器人、喷涂机器人、搬运机器人、云联智能计量设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "喷涂机器人",
+      "evidence_span": "产品包括机器人采制化系统、机器人包装码垛系统、AGV移动搬运机器人、喷涂机器人、搬运机器人、云联智能计量设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "搬运机器人",
+      "evidence_span": "产品包括机器人采制化系统、机器人包装码垛系统、AGV移动搬运机器人、喷涂机器人、搬运机器人、云联智能计量设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云联智能计量设备",
+      "evidence_span": "产品包括机器人采制化系统、机器人包装码垛系统、AGV移动搬运机器人、喷涂机器人、搬运机器人、云联智能计量设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模块式重卡换电站",
+      "evidence_span": "公司自主研发的模块式重卡换电站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模块型双侧重卡换电站",
+      "evidence_span": "“模块型双侧重卡换电站”主要特点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业互联网平台",
+      "evidence_span": "赛摩工业互联网平台是面向制造业企业数字化、网络化、智能化的需求"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "危化品装卸车AI视频智能分析系统",
+      "evidence_span": "开发了危化品装卸车AI视频智能分析系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化工安全生产信息化管理平台",
+      "evidence_span": "“化工安全生产信息化管理平台”也在江苏、山东、河南、内蒙、福建等省份推广应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能工厂信息业务",
+      "evidence_span": "智能工厂信息业务整合了工厂信息化中各核心系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产业链协同制造平台",
+      "evidence_span": "提供了产业链协同制造平台（SRM）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "供应商制造云平台",
+      "evidence_span": "供应商制造云平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云MES",
+      "evidence_span": "云MES"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云WMS",
+      "evidence_span": "云WMS"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精度皮带秤的称重准确度达到了世界最高的0.2级",
+      "evidence_span": "公司智能装备业务产品高精度皮带秤的称重准确度达到了世界最高的0.2级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器人全自动制样系统",
+      "evidence_span": "机器人全自动制样系统荣获中国专利优秀奖"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿纬锂能",
+      "evidence_span": "与亿纬锂能（300014.SZ）及其控股子公司陆续签订锂电仓储及物流类项目合同"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海汉势新能源科技公司",
+      "evidence_span": "与新能源先进企业上海汉势新能源科技公司共同成立合资公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山西建投",
+      "evidence_span": "利用前期深度参与山西建投、徐工集团、太原重工、中联重科等智能工厂规划设计"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "徐工集团",
+      "evidence_span": "利用前期深度参与山西建投、徐工集团、太原重工、中联重科等智能工厂规划设计"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "太原重工",
+      "evidence_span": "利用前期深度参与山西建投、徐工集团、太原重工、中联重科等智能工厂规划设计"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中联重科",
+      "evidence_span": "利用前期深度参与山西建投、徐工集团、太原重工、中联重科等智能工厂规划设计"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中机第一设计研究院",
+      "evidence_span": "与中机第一设计研究院（央企）签署了关于太原重工数字化智能化建设项目共五个标段合同"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蒙牛乳业",
+      "evidence_span": "签订“蒙牛乳业工厂生乳样品自动采集和自动送样系统项目”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城集团",
+      "evidence_span": "公司先后与长城集团、零跑汽车金华工厂、比亚迪弗迪工厂签订信息化项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "零跑汽车金华工厂",
+      "evidence_span": "公司先后与长城集团、零跑汽车金华工厂、比亚迪弗迪工厂签订信息化项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪弗迪工厂",
+      "evidence_span": "公司先后与长城集团、零跑汽车金华工厂、比亚迪弗迪工厂签订信息化项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "四川金顶（集团）股份有限公司",
+      "evidence_span": "公司与四川金顶（集团）股份有限公司基于四川金顶集团在矿山领域的应用场景就智慧矿山签订战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "凌容新能源科技（上海）股份有限公司",
+      "evidence_span": "公司与凌容新能源科技（上海）股份有限公司就超级电容在汽车，电动自行车的应用达成战略合作协议"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "制造业数字化、智能化",
+      "evidence_span": "形成制造业数字化、智能化在未来几年最大、最可持续的巨大发展空间"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源",
+      "evidence_span": "积极拓展新能源市场"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳达峰、碳中和",
+      "evidence_span": "随着我国碳达峰、碳中和目标的提出"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能装备",
+        "evidence_span": "拓展优化智能装备、自动化、信息技术三大业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动化",
+        "evidence_span": "拓展优化智能装备、自动化、信息技术三大业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息技术",
+        "evidence_span": "拓展优化智能装备、自动化、信息技术三大业务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字化和自动化解决方案服务商",
+        "evidence_span": "公司围绕“数字化和自动化解决方案服务商”战略目标"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家智能制造系统解决方案供应商联盟理事单位",
+        "evidence_span": "公司是国家智能制造系统解决方案供应商联盟理事单位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "江苏省智能制造领军服务机构",
+        "evidence_span": "江苏省智能制造领军服务机构"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "江苏省中小企业数字化智能化改造升级优秀服务商",
+        "evidence_span": "江苏省中小企业数字化智能化改造升级优秀服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "江苏省服务型制造示范企业",
+        "evidence_span": "江苏省服务型制造示范企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "计量检测产品",
+        "evidence_span": "计量检测产品用于散状物料在工业生产过程的重量与品质检测"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "包装码垛产品",
+        "evidence_span": "包装码垛产品用于各类物料的自动计量、填充、封装、产品搬运、装箱和拆码垛作业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能物料搬运仓储装备",
+        "evidence_span": "智能物料搬运仓储装备产品用于包装完成的产品转运到仓库并在仓库进行缓存及后续的发运工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机器人采制化系统",
+        "evidence_span": "产品包括机器人采制化系统、机器人包装码垛系统、AGV移动搬运机器人、喷涂机器人、搬运机器人、云联智能计量设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机器人包装码垛系统",
+        "evidence_span": "产品包括机器人采制化系统、机器人包装码垛系统、AGV移动搬运机器人、喷涂机器人、搬运机器人、云联智能计量设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AGV移动搬运机器人",
+        "evidence_span": "产品包括机器人采制化系统、机器人包装码垛系统、AGV移动搬运机器人、喷涂机器人、搬运机器人、云联智能计量设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "喷涂机器人",
+        "evidence_span": "产品包括机器人采制化系统、机器人包装码垛系统、AGV移动搬运机器人、喷涂机器人、搬运机器人、云联智能计量设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "搬运机器人",
+        "evidence_span": "产品包括机器人采制化系统、机器人包装码垛系统、AGV移动搬运机器人、喷涂机器人、搬运机器人、云联智能计量设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云联智能计量设备",
+        "evidence_span": "产品包括机器人采制化系统、机器人包装码垛系统、AGV移动搬运机器人、喷涂机器人、搬运机器人、云联智能计量设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模块式重卡换电站",
+        "evidence_span": "公司自主研发的模块式重卡换电站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模块型双侧重卡换电站",
+        "evidence_span": "“模块型双侧重卡换电站”主要特点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业互联网平台",
+        "evidence_span": "赛摩工业互联网平台是面向制造业企业数字化、网络化、智能化的需求"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "危化品装卸车AI视频智能分析系统",
+        "evidence_span": "开发了危化品装卸车AI视频智能分析系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化工安全生产信息化管理平台",
+        "evidence_span": "“化工安全生产信息化管理平台”也在江苏、山东、河南、内蒙、福建等省份推广应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能工厂信息业务",
+        "evidence_span": "智能工厂信息业务整合了工厂信息化中各核心系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产业链协同制造平台",
+        "evidence_span": "提供了产业链协同制造平台（SRM）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "供应商制造云平台",
+        "evidence_span": "供应商制造云平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云MES",
+        "evidence_span": "云MES"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云WMS",
+        "evidence_span": "云WMS"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精度皮带秤的称重准确度达到了世界最高的0.2级",
+        "evidence_span": "公司智能装备业务产品高精度皮带秤的称重准确度达到了世界最高的0.2级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器人全自动制样系统",
+        "evidence_span": "机器人全自动制样系统荣获中国专利优秀奖"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿纬锂能",
+        "evidence_span": "与亿纬锂能（300014.SZ）及其控股子公司陆续签订锂电仓储及物流类项目合同"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海汉势新能源科技公司",
+        "evidence_span": "与新能源先进企业上海汉势新能源科技公司共同成立合资公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山西建投",
+        "evidence_span": "利用前期深度参与山西建投、徐工集团、太原重工、中联重科等智能工厂规划设计"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "徐工集团",
+        "evidence_span": "利用前期深度参与山西建投、徐工集团、太原重工、中联重科等智能工厂规划设计"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "太原重工",
+        "evidence_span": "利用前期深度参与山西建投、徐工集团、太原重工、中联重科等智能工厂规划设计"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中联重科",
+        "evidence_span": "利用前期深度参与山西建投、徐工集团、太原重工、中联重科等智能工厂规划设计"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中机第一设计研究院",
+        "evidence_span": "与中机第一设计研究院（央企）签署了关于太原重工数字化智能化建设项目共五个标段合同"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蒙牛乳业",
+        "evidence_span": "签订“蒙牛乳业工厂生乳样品自动采集和自动送样系统项目”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城集团",
+        "evidence_span": "公司先后与长城集团、零跑汽车金华工厂、比亚迪弗迪工厂签订信息化项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "零跑汽车金华工厂",
+        "evidence_span": "公司先后与长城集团、零跑汽车金华工厂、比亚迪弗迪工厂签订信息化项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪弗迪工厂",
+        "evidence_span": "公司先后与长城集团、零跑汽车金华工厂、比亚迪弗迪工厂签订信息化项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "四川金顶（集团）股份有限公司",
+        "evidence_span": "公司与四川金顶（集团）股份有限公司基于四川金顶集团在矿山领域的应用场景就智慧矿山签订战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "凌容新能源科技（上海）股份有限公司",
+        "evidence_span": "公司与凌容新能源科技（上海）股份有限公司就超级电容在汽车，电动自行车的应用达成战略合作协议"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "制造业数字化、智能化",
+        "evidence_span": "形成制造业数字化、智能化在未来几年最大、最可持续的巨大发展空间"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源",
+        "evidence_span": "积极拓展新能源市场"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳达峰、碳中和",
+        "evidence_span": "随着我国碳达峰、碳中和目标的提出"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:44:13"
+}

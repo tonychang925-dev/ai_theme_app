@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "b134ab116370", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落涉及马斯克公司和大模型开源，与影视题材本体无关，属于无关内容或噪音。"}}

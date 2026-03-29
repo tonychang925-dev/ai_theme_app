@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "d9437858c5b3", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "high", "reason": "该段落描述国家发展改革委召开专题会议的事件，但内容涉及低空经济高质量发展的原则要求、安全监管机制、产业规范等政策性知识，对题材本体构建有较高价值，尽管混合事件信息，仍归类为混合候选。"}}

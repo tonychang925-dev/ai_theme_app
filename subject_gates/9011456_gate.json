@@ -1,0 +1,73 @@
+{
+  "must": [
+    "创意产生",
+    "内容制作",
+    "版权运营",
+    "市场分发",
+    "动漫",
+    "影视院线"
+  ],
+  "should": [
+    "衍生产品开发",
+    "5G",
+    "AI",
+    "VR",
+    "鼓励剧本创作",
+    "支持拍摄取景",
+    "推动出口",
+    "提供资金资助",
+    "建设产业园区",
+    "艺人经纪",
+    "微短剧",
+    "技术创新"
+  ],
+  "not": [
+    "南京照相馆",
+    "国务院新闻办公室",
+    "中外记者见面会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "创意产生",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "创意产生"
+    },
+    {
+      "term": "内容制作",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "内容制作"
+    },
+    {
+      "term": "版权运营",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "版权运营"
+    },
+    {
+      "term": "市场分发",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "市场分发"
+    },
+    {
+      "term": "动漫",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "动漫"
+    },
+    {
+      "term": "影视院线",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "影视院线"
+    }
+  ],
+  "subject_id": "9011456",
+  "quality": "medium",
+  "generated_at": "2026-03-10T12:15:41",
+  "semantic_type": "产业链/供应链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

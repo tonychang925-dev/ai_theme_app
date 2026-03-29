@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "TDI生产",
+      "evidence_span": "我国首家规模生产TDI的公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "离子膜烧碱生产",
+      "evidence_span": "沧州大化烧碱产能为16万吨"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "聚碳酸酯生产",
+      "evidence_span": "公司聚碳酸酯（简称PC）产能10万吨"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "TDI生产厂家",
+      "evidence_span": "我国首家规模生产TDI的公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "聚碳酸酯生产企业",
+      "evidence_span": "公司聚碳酸酯（简称PC）产能10万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TDI",
+      "evidence_span": "规模生产TDI"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "离子膜烧碱",
+      "evidence_span": "沧州大化烧碱产能为16万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚碳酸酯",
+      "evidence_span": "公司聚碳酸酯（简称PC）产能10万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "共聚硅PC",
+      "evidence_span": "连续生产法生产共聚硅PC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高分子量溴化PC",
+      "evidence_span": "连续生产法生产...高分子量溴化PC"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连续生产法",
+      "evidence_span": "国内第一家连续生产法生产共聚硅PC、高分子量溴化PC的企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天津用户",
+      "evidence_span": "开发了天津...等周边区域多个用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "黄骅用户",
+      "evidence_span": "开发了...黄骅...等周边区域多个用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "霸州用户",
+      "evidence_span": "开发了...霸州等周边区域多个用户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "TDI产业链完整",
+      "evidence_span": "TDI产业链完整"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "TDI生产",
+        "evidence_span": "我国首家规模生产TDI的公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "离子膜烧碱生产",
+        "evidence_span": "沧州大化烧碱产能为16万吨"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "聚碳酸酯生产",
+        "evidence_span": "公司聚碳酸酯（简称PC）产能10万吨"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "TDI生产厂家",
+        "evidence_span": "我国首家规模生产TDI的公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "聚碳酸酯生产企业",
+        "evidence_span": "公司聚碳酸酯（简称PC）产能10万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TDI",
+        "evidence_span": "规模生产TDI"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "离子膜烧碱",
+        "evidence_span": "沧州大化烧碱产能为16万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚碳酸酯",
+        "evidence_span": "公司聚碳酸酯（简称PC）产能10万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "共聚硅PC",
+        "evidence_span": "连续生产法生产共聚硅PC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高分子量溴化PC",
+        "evidence_span": "连续生产法生产...高分子量溴化PC"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连续生产法",
+        "evidence_span": "国内第一家连续生产法生产共聚硅PC、高分子量溴化PC的企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津用户",
+        "evidence_span": "开发了天津...等周边区域多个用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "黄骅用户",
+        "evidence_span": "开发了...黄骅...等周边区域多个用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "霸州用户",
+        "evidence_span": "开发了...霸州等周边区域多个用户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "TDI产业链完整",
+        "evidence_span": "TDI产业链完整"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:41:45"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "7e83f791f4cd", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述了财政部和住房城乡建设部印发的资金管理办法，属于政策发布事件，但也涉及保障性安居工程资金管理，可能对建筑设计领域的政策环境知识有价值，因此分类为candidate_mixed。"}}

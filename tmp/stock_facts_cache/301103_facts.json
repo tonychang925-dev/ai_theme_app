@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "眼科专科诊疗服务",
+      "evidence_span": "公司主营业务为面向眼病患者提供眼科专科诊疗服务和视光服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "视光服务",
+      "evidence_span": "公司主营业务为面向眼病患者提供眼科专科诊疗服务和视光服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "白内障诊疗服务",
+      "evidence_span": "诊疗服务项目包括白内障、青光眼、玻璃体视网膜病变等常见致盲性眼病"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "青光眼诊疗服务",
+      "evidence_span": "诊疗服务项目包括白内障、青光眼、玻璃体视网膜病变等常见致盲性眼病"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃体视网膜病变诊疗服务",
+      "evidence_span": "诊疗服务项目包括白内障、青光眼、玻璃体视网膜病变等常见致盲性眼病"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "干眼诊疗服务",
+      "evidence_span": "诊疗服务项目包括白内障、青光眼、玻璃体视网膜病变等常见致盲性眼病以及干眼、中医等特色诊疗服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中医诊疗服务",
+      "evidence_span": "诊疗服务项目包括白内障、青光眼、玻璃体视网膜病变等常见致盲性眼病以及干眼、中医等特色诊疗服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "屈光不正手术矫正服务",
+      "evidence_span": "屈光不正手术矫正服务、白内障诊疗服务为该项业务收入的主要来源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光学矫正服务",
+      "evidence_span": "光学矫正即视光服务，是矫正屈光不正的重要手段"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视功能训练服务",
+      "evidence_span": "针对屈光不正开展光学矫正、屈光不正手术及视功能训练等眼科专科诊疗服务和视光服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "框架眼镜验配服务",
+      "evidence_span": "光学矫正即视光服务，是矫正屈光不正的重要手段，包括框架眼镜、角膜接触镜的验配等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "角膜接触镜验配服务",
+      "evidence_span": "光学矫正即视光服务，是矫正屈光不正的重要手段，包括框架眼镜、角膜接触镜的验配等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防蓝光护目镜验配销售服务",
+      "evidence_span": "疫情期间增加了防蓝光护目镜等低单价产品的验配销售服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "白内障超声乳化手术",
+      "evidence_span": "何伟及其团队创业初期就开展白内障超声乳化手术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视网膜激光光凝术",
+      "evidence_span": "何伟及其团队创业初期就开展视网膜激光光凝术（即眼底激光技术）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "玻璃体切割技术",
+      "evidence_span": "何伟及其团队创业初期就开展视网膜激光光凝术（即眼底激光技术）、玻璃体切割技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微脉冲激光治疗技术",
+      "evidence_span": "此后又先后导入微脉冲激光治疗技术、抗VEGF玻璃体腔注射技术以及微创玻切等手术技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗VEGF玻璃体腔注射技术",
+      "evidence_span": "此后又先后导入微脉冲激光治疗技术、抗VEGF玻璃体腔注射技术以及微创玻切等手术技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微创玻切手术技术",
+      "evidence_span": "此后又先后导入微脉冲激光治疗技术、抗VEGF玻璃体腔注射技术以及微创玻切等手术技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "选择性小梁成型术",
+      "evidence_span": "先后开展了选择性小梁成型术（SLT）、引流物植入术、白内障摘除联合房角分离术、光纤导管引导下的小管切开术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "引流物植入术",
+      "evidence_span": "先后开展了选择性小梁成型术（SLT）、引流物植入术、白内障摘除联合房角分离术、光纤导管引导下的小管切开术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "白内障摘除联合房角分离术",
+      "evidence_span": "先后开展了选择性小梁成型术（SLT）、引流物植入术、白内障摘除联合房角分离术、光纤导管引导下的小管切开术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光纤导管引导下的小管切开术",
+      "evidence_span": "先后开展了选择性小梁成型术（SLT）、引流物植入术、白内障摘除联合房角分离术、光纤导管引导下的小管切开术等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "眼科医疗服务机构",
+      "evidence_span": "立足辽宁的眼科医疗服务机构"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域眼科龙头",
+      "evidence_span": "区域眼科龙头，三级医疗服务模式成熟，布局全国重点城市"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "青少年近视防控",
+      "evidence_span": "视光服务收入的快速增长一方面受到青少年近视防控需求的增加影响"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "眼科专科诊疗服务",
+        "evidence_span": "公司主营业务为面向眼病患者提供眼科专科诊疗服务和视光服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "视光服务",
+        "evidence_span": "公司主营业务为面向眼病患者提供眼科专科诊疗服务和视光服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "白内障诊疗服务",
+        "evidence_span": "诊疗服务项目包括白内障、青光眼、玻璃体视网膜病变等常见致盲性眼病"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "青光眼诊疗服务",
+        "evidence_span": "诊疗服务项目包括白内障、青光眼、玻璃体视网膜病变等常见致盲性眼病"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃体视网膜病变诊疗服务",
+        "evidence_span": "诊疗服务项目包括白内障、青光眼、玻璃体视网膜病变等常见致盲性眼病"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "干眼诊疗服务",
+        "evidence_span": "诊疗服务项目包括白内障、青光眼、玻璃体视网膜病变等常见致盲性眼病以及干眼、中医等特色诊疗服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中医诊疗服务",
+        "evidence_span": "诊疗服务项目包括白内障、青光眼、玻璃体视网膜病变等常见致盲性眼病以及干眼、中医等特色诊疗服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "屈光不正手术矫正服务",
+        "evidence_span": "屈光不正手术矫正服务、白内障诊疗服务为该项业务收入的主要来源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光学矫正服务",
+        "evidence_span": "光学矫正即视光服务，是矫正屈光不正的重要手段"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视功能训练服务",
+        "evidence_span": "针对屈光不正开展光学矫正、屈光不正手术及视功能训练等眼科专科诊疗服务和视光服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "框架眼镜验配服务",
+        "evidence_span": "光学矫正即视光服务，是矫正屈光不正的重要手段，包括框架眼镜、角膜接触镜的验配等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "角膜接触镜验配服务",
+        "evidence_span": "光学矫正即视光服务，是矫正屈光不正的重要手段，包括框架眼镜、角膜接触镜的验配等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防蓝光护目镜验配销售服务",
+        "evidence_span": "疫情期间增加了防蓝光护目镜等低单价产品的验配销售服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "白内障超声乳化手术",
+        "evidence_span": "何伟及其团队创业初期就开展白内障超声乳化手术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视网膜激光光凝术",
+        "evidence_span": "何伟及其团队创业初期就开展视网膜激光光凝术（即眼底激光技术）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "玻璃体切割技术",
+        "evidence_span": "何伟及其团队创业初期就开展视网膜激光光凝术（即眼底激光技术）、玻璃体切割技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微脉冲激光治疗技术",
+        "evidence_span": "此后又先后导入微脉冲激光治疗技术、抗VEGF玻璃体腔注射技术以及微创玻切等手术技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗VEGF玻璃体腔注射技术",
+        "evidence_span": "此后又先后导入微脉冲激光治疗技术、抗VEGF玻璃体腔注射技术以及微创玻切等手术技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微创玻切手术技术",
+        "evidence_span": "此后又先后导入微脉冲激光治疗技术、抗VEGF玻璃体腔注射技术以及微创玻切等手术技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "选择性小梁成型术",
+        "evidence_span": "先后开展了选择性小梁成型术（SLT）、引流物植入术、白内障摘除联合房角分离术、光纤导管引导下的小管切开术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "引流物植入术",
+        "evidence_span": "先后开展了选择性小梁成型术（SLT）、引流物植入术、白内障摘除联合房角分离术、光纤导管引导下的小管切开术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "白内障摘除联合房角分离术",
+        "evidence_span": "先后开展了选择性小梁成型术（SLT）、引流物植入术、白内障摘除联合房角分离术、光纤导管引导下的小管切开术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光纤导管引导下的小管切开术",
+        "evidence_span": "先后开展了选择性小梁成型术（SLT）、引流物植入术、白内障摘除联合房角分离术、光纤导管引导下的小管切开术等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "眼科医疗服务机构",
+        "evidence_span": "立足辽宁的眼科医疗服务机构"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域眼科龙头",
+        "evidence_span": "区域眼科龙头，三级医疗服务模式成熟，布局全国重点城市"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "青少年近视防控",
+        "evidence_span": "视光服务收入的快速增长一方面受到青少年近视防控需求的增加影响"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:35:58"
+}

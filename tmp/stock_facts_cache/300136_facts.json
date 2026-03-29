@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "天线",
+      "evidence_span": "业务涉及“天线——射频传输线——射频连接器——射频前端”和无线充电"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "射频传输线",
+      "evidence_span": "业务涉及“天线——射频传输线——射频连接器——射频前端”和无线充电"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "射频连接器",
+      "evidence_span": "业务涉及“天线——射频传输线——射频连接器——射频前端”和无线充电"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "射频前端",
+      "evidence_span": "业务涉及“天线——射频传输线——射频连接器——射频前端”和无线充电"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "无线充电",
+      "evidence_span": "业务涉及“天线——射频传输线——射频连接器——射频前端”和无线充电"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "一站式泛射频解决方案提供商",
+      "evidence_span": "公司是全球领先一站式泛射频提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内天线的龙头",
+      "evidence_span": "公司作为国内天线的龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线充电接收端模组",
+      "evidence_span": "公司自主设计的无线充电接收端模组已实现量产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LTE天线",
+      "evidence_span": "目前主要产品包括LTE天线、NFC天线、Wifi天线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "NFC天线",
+      "evidence_span": "目前主要产品包括LTE天线、NFC天线、Wifi天线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Wifi天线",
+      "evidence_span": "目前主要产品包括LTE天线、NFC天线、Wifi天线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天线",
+      "evidence_span": "可为客户提供天线、PA功率放大器、滤波器等射频器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PA功率放大器",
+      "evidence_span": "可为客户提供天线、PA功率放大器、滤波器等射频器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "滤波器",
+      "evidence_span": "可为客户提供天线、PA功率放大器、滤波器等射频器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TWS耳机的蓝牙芯片",
+      "evidence_span": "TWS耳机的蓝牙芯片、天线等综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载无线充电",
+      "evidence_span": "可为客户提供车载无线充电、车载天线、UWB模组等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载天线",
+      "evidence_span": "可为客户提供车载无线充电、车载天线、UWB模组等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "UWB模组",
+      "evidence_span": "可为客户提供车载无线充电、车载天线、UWB模组等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铁氧体材料",
+      "evidence_span": "公司可提供铁氧体材料、非晶、纳米晶等多种软磁材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "非晶软磁材料",
+      "evidence_span": "公司可提供铁氧体材料、非晶、纳米晶等多种软磁材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "纳米晶软磁材料",
+      "evidence_span": "公司可提供铁氧体材料、非晶、纳米晶等多种软磁材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密加工及绕线工艺",
+      "evidence_span": "公司具备成熟的精密加工及绕线工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G天线系统研发",
+      "evidence_span": "特别是5G天线系统、射频前端等前沿技术研发的投入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "射频前端研发",
+      "evidence_span": "特别是5G天线系统、射频前端等前沿技术研发的投入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Sub-6 MIMO天线设计",
+      "evidence_span": "包括Sub-6 MIMO天线和5G的毫米波相控阵列天线等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G毫米波相控阵列天线设计",
+      "evidence_span": "包括Sub-6 MIMO天线和5G的毫米波相控阵列天线等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LDS天线经验",
+      "evidence_span": "在LDS天线上拥有丰富的经验"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苹果",
+      "evidence_span": "长期为国际知名手机巨头苹果、华为供应天线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "长期为国际知名手机巨头苹果、华为供应天线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "公司已开拓大众、东风本田、奔驰等国内、外多家汽车客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风本田",
+      "evidence_span": "公司已开拓大众、东风本田、奔驰等国内、外多家汽车客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奔驰",
+      "evidence_span": "公司已开拓大众、东风本田、奔驰等国内、外多家汽车客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G",
+      "evidence_span": "信维通信受益5G趋势带动产品升级"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "天线",
+        "evidence_span": "业务涉及“天线——射频传输线——射频连接器——射频前端”和无线充电"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "射频传输线",
+        "evidence_span": "业务涉及“天线——射频传输线——射频连接器——射频前端”和无线充电"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "射频连接器",
+        "evidence_span": "业务涉及“天线——射频传输线——射频连接器——射频前端”和无线充电"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "射频前端",
+        "evidence_span": "业务涉及“天线——射频传输线——射频连接器——射频前端”和无线充电"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "无线充电",
+        "evidence_span": "业务涉及“天线——射频传输线——射频连接器——射频前端”和无线充电"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "一站式泛射频解决方案提供商",
+        "evidence_span": "公司是全球领先一站式泛射频提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内天线的龙头",
+        "evidence_span": "公司作为国内天线的龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线充电接收端模组",
+        "evidence_span": "公司自主设计的无线充电接收端模组已实现量产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LTE天线",
+        "evidence_span": "目前主要产品包括LTE天线、NFC天线、Wifi天线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "NFC天线",
+        "evidence_span": "目前主要产品包括LTE天线、NFC天线、Wifi天线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Wifi天线",
+        "evidence_span": "目前主要产品包括LTE天线、NFC天线、Wifi天线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天线",
+        "evidence_span": "可为客户提供天线、PA功率放大器、滤波器等射频器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PA功率放大器",
+        "evidence_span": "可为客户提供天线、PA功率放大器、滤波器等射频器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "滤波器",
+        "evidence_span": "可为客户提供天线、PA功率放大器、滤波器等射频器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TWS耳机的蓝牙芯片",
+        "evidence_span": "TWS耳机的蓝牙芯片、天线等综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载无线充电",
+        "evidence_span": "可为客户提供车载无线充电、车载天线、UWB模组等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载天线",
+        "evidence_span": "可为客户提供车载无线充电、车载天线、UWB模组等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "UWB模组",
+        "evidence_span": "可为客户提供车载无线充电、车载天线、UWB模组等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铁氧体材料",
+        "evidence_span": "公司可提供铁氧体材料、非晶、纳米晶等多种软磁材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "非晶软磁材料",
+        "evidence_span": "公司可提供铁氧体材料、非晶、纳米晶等多种软磁材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "纳米晶软磁材料",
+        "evidence_span": "公司可提供铁氧体材料、非晶、纳米晶等多种软磁材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密加工及绕线工艺",
+        "evidence_span": "公司具备成熟的精密加工及绕线工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G天线系统研发",
+        "evidence_span": "特别是5G天线系统、射频前端等前沿技术研发的投入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "射频前端研发",
+        "evidence_span": "特别是5G天线系统、射频前端等前沿技术研发的投入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Sub-6 MIMO天线设计",
+        "evidence_span": "包括Sub-6 MIMO天线和5G的毫米波相控阵列天线等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G毫米波相控阵列天线设计",
+        "evidence_span": "包括Sub-6 MIMO天线和5G的毫米波相控阵列天线等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LDS天线经验",
+        "evidence_span": "在LDS天线上拥有丰富的经验"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苹果",
+        "evidence_span": "长期为国际知名手机巨头苹果、华为供应天线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "长期为国际知名手机巨头苹果、华为供应天线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "公司已开拓大众、东风本田、奔驰等国内、外多家汽车客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风本田",
+        "evidence_span": "公司已开拓大众、东风本田、奔驰等国内、外多家汽车客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奔驰",
+        "evidence_span": "公司已开拓大众、东风本田、奔驰等国内、外多家汽车客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G",
+        "evidence_span": "信维通信受益5G趋势带动产品升级"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:48:56"
+}

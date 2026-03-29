@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:46:00", "result": {"chunk_id": "e89424053c17", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段混合了事件（如美国政府通知、SEMICON China 2025展会）和静态知识（如新凯来公司背景、产品技术细节、市场格局），包含可用于题材本体构建的稳定知识（如产品命名、技术对标），但夹杂事件信息，需进一步裁决。"}}

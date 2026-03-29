@@ -1,0 +1,274 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "旅游业务",
+      "evidence_span": "公司旗下凯撒旅游作为中国领先的旅游综合服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航食",
+      "evidence_span": "公司旗下凯撒易食致力于成为国内领先的健康品味生活服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铁路配餐业务",
+      "evidence_span": "公司旗下凯撒易食致力于成为国内领先的健康品味生活服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "目的地业务",
+      "evidence_span": "作为公司创新业务尝试，公司持续推进对新消费业态的创新探索"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "旅游综合服务商",
+      "evidence_span": "凯撒旅游作为中国领先的旅游综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "健康品味生活服务商",
+      "evidence_span": "公司旗下凯撒易食致力于成为国内领先的健康品味生活服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空配餐企业",
+      "evidence_span": "凯撒易食在航空领域跻身国内航食前列"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高铁配餐服务供应商",
+      "evidence_span": "作为中国卓越的高铁配餐服务供应商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自主开发旅游产品",
+      "evidence_span": "公司拥有超过 20,000种服务于不同人群的自主开发旅游产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "私人定制服务",
+      "evidence_span": "着重打造“明智优选”私人定制服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "康养旅居产品",
+      "evidence_span": "康养旅居产品更加注重生态环境、社交氛围、舒适程度及健康服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全球签证服务",
+      "evidence_span": "全面恢复了全球酒店订房服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空配餐",
+      "evidence_span": "凯撒易食在航空领域跻身国内航食前列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁路配餐",
+      "evidence_span": "作为中国卓越的高铁配餐服务供应商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社会化团餐",
+      "evidence_span": "凯撒易食的社会化餐饮转型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热带果汁饮料",
+      "evidence_span": "深化热带果汁饮料的品牌和产品升级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育赛事票务及保障服务",
+      "evidence_span": "凯撒旅游为2021-2024年，中国国家队票务及赛事保障服务独家供应商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航空级食品安全标准",
+      "evidence_span": "凯撒易食致力于以航空级食品安全标准和品质服务切入场景"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "中央厨房模式",
+      "evidence_span": "2022年公司开启中央厨房模式化的新拓展"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内外近百家航空公司",
+      "evidence_span": "服务国内外近百家航空公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "多家铁路局",
+      "evidence_span": "为多家铁路局提供高品质的餐饮服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海南环岛线路",
+      "evidence_span": "目前为海南环岛线路独家铁路配餐服务商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国体育代表团",
+      "evidence_span": "凯撒体育作为2021-2024中国体育代表团票务及赛时保障服务独家供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国赛艇协会",
+      "evidence_span": "2022年凯撒体育获得中国赛艇协会出行供应商业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方航空",
+      "evidence_span": "新增与南方航空达成果蔬汁产品供应合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "免税发展红利",
+      "evidence_span": "ST凯撒携手中出服分享免税发展红利"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海南自贸港建设",
+      "evidence_span": "公司在紧抓自贸港建设有力契机"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "旅游业务",
+        "evidence_span": "公司旗下凯撒旅游作为中国领先的旅游综合服务商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航食、铁路配餐业务",
+        "evidence_span": "公司旗下凯撒易食致力于成为国内领先的健康品味生活服务商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "目的地业务",
+        "evidence_span": "作为公司创新业务尝试，公司持续推进对新消费业态的创新探索"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "旅游综合服务商",
+        "evidence_span": "凯撒旅游作为中国领先的旅游综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "健康品味生活服务商",
+        "evidence_span": "公司旗下凯撒易食致力于成为国内领先的健康品味生活服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空配餐企业",
+        "evidence_span": "凯撒易食在航空领域跻身国内航食前列"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高铁配餐服务供应商",
+        "evidence_span": "作为中国卓越的高铁配餐服务供应商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自主开发旅游产品",
+        "evidence_span": "公司拥有超过 20,000种服务于不同人群的自主开发旅游产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "私人定制服务",
+        "evidence_span": "着重打造“明智优选”私人定制服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "康养旅居产品",
+        "evidence_span": "康养旅居产品更加注重生态环境、社交氛围、舒适程度及健康服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全球签证服务",
+        "evidence_span": "全面恢复了全球酒店订房服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空配餐",
+        "evidence_span": "凯撒易食在航空领域跻身国内航食前列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁路配餐",
+        "evidence_span": "作为中国卓越的高铁配餐服务供应商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社会化团餐",
+        "evidence_span": "凯撒易食的社会化餐饮转型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热带果汁饮料",
+        "evidence_span": "深化热带果汁饮料的品牌和产品升级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育赛事票务及保障服务",
+        "evidence_span": "凯撒旅游为2021-2024年，中国国家队票务及赛事保障服务独家供应商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航空级食品安全标准",
+        "evidence_span": "凯撒易食致力于以航空级食品安全标准和品质服务切入场景"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "中央厨房模式",
+        "evidence_span": "2022年公司开启中央厨房模式化的新拓展"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内外近百家航空公司",
+        "evidence_span": "服务国内外近百家航空公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "多家铁路局",
+        "evidence_span": "为多家铁路局提供高品质的餐饮服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海南环岛线路",
+        "evidence_span": "目前为海南环岛线路独家铁路配餐服务商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国体育代表团",
+        "evidence_span": "凯撒体育作为2021-2024中国体育代表团票务及赛时保障服务独家供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国赛艇协会",
+        "evidence_span": "2022年凯撒体育获得中国赛艇协会出行供应商业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方航空",
+        "evidence_span": "新增与南方航空达成果蔬汁产品供应合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "免税发展红利",
+        "evidence_span": "ST凯撒携手中出服分享免税发展红利"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海南自贸港建设",
+        "evidence_span": "公司在紧抓自贸港建设有力契机"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:33:10"
+}

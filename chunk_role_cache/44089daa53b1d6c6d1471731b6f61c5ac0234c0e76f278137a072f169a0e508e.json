@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "6c75d78c5662", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "详细报道了美国商务部对台积电发出特定出口限制信函这一具体事件，包含时间、主体、措施、影响范围及各方反应，是典型的事件动态，无稳定知识沉淀。"}}

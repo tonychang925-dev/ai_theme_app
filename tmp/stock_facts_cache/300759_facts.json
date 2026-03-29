@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "实验室服务",
+      "evidence_span": "实验室服务板块是公司主要收入与利润来源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "CMC（小分子CDMO）服务",
+      "evidence_span": "CMC（小分子CDMO）服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "临床研究服务",
+      "evidence_span": "临床研究服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大分子＆CGT",
+      "evidence_span": "大分子＆CGT四大业务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "生命科学研发服务企业",
+      "evidence_span": "康龙化成是国际领先的生命科学研发服务企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "临床前CRO服务商",
+      "evidence_span": "公司是全球前三的临床前CRO服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一体化药物研究、开发及生产CRO+CDMO解决方案",
+      "evidence_span": "提供一体化药物研究、开发及生产CRO+CDMO解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "实验室化学服务",
+      "evidence_span": "实验室化学业务涵盖合成化学、药物化学以及分离分析等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物科学服务",
+      "evidence_span": "生物科学服务内容丰富，覆盖药物发现全流程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药物开发阶段的化学、制剂工艺开发及小批量生产等服务",
+      "evidence_span": "CMC（小分子CDMO）服务主要向制药企业提供药物开发阶段的化学、制剂工艺开发及小批量生产等服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "合成化学",
+      "evidence_span": "合成化学主要是设计并合成特定结构的化合物"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "药物化学",
+      "evidence_span": "药物化学主要是结合蛋白质组学、生物科学和生物信息学技术进行活性化合物和化合物库的设计与合成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分离分析服务",
+      "evidence_span": "研发分析分离团队基于各类先进仪器，为药物化学、合成化学等部门提供专业的手性、非手性分析，以及分离和纯化服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "体内外药物代谢及药代动力学",
+      "evidence_span": "生物科学服务板块包括体内外药物代谢及药代动力学"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "体外生物学",
+      "evidence_span": "体外生物学业务范围涵盖药物靶点验证、苗头化合物发现、从苗头化合物到先导化合物的过渡、先导化合物优化，以及临床前候选化合物选择"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "体内药理学",
+      "evidence_span": "体内药理学"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "药物安全性评价",
+      "evidence_span": "药物安全性评价"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "临床I期-III期工艺研发及生产",
+      "evidence_span": "目前已覆盖临床I期-III期工艺研发及生产需求"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "实验室服务",
+        "evidence_span": "实验室服务板块是公司主要收入与利润来源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "CMC（小分子CDMO）服务",
+        "evidence_span": "CMC（小分子CDMO）服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "临床研究服务",
+        "evidence_span": "临床研究服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大分子＆CGT",
+        "evidence_span": "大分子＆CGT四大业务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "生命科学研发服务企业",
+        "evidence_span": "康龙化成是国际领先的生命科学研发服务企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "临床前CRO服务商",
+        "evidence_span": "公司是全球前三的临床前CRO服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一体化药物研究、开发及生产CRO+CDMO解决方案",
+        "evidence_span": "提供一体化药物研究、开发及生产CRO+CDMO解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "实验室化学服务",
+        "evidence_span": "实验室化学业务涵盖合成化学、药物化学以及分离分析等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物科学服务",
+        "evidence_span": "生物科学服务内容丰富，覆盖药物发现全流程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药物开发阶段的化学、制剂工艺开发及小批量生产等服务",
+        "evidence_span": "CMC（小分子CDMO）服务主要向制药企业提供药物开发阶段的化学、制剂工艺开发及小批量生产等服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "合成化学",
+        "evidence_span": "合成化学主要是设计并合成特定结构的化合物"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "药物化学",
+        "evidence_span": "药物化学主要是结合蛋白质组学、生物科学和生物信息学技术进行活性化合物和化合物库的设计与合成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分离分析服务",
+        "evidence_span": "研发分析分离团队基于各类先进仪器，为药物化学、合成化学等部门提供专业的手性、非手性分析，以及分离和纯化服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "体内外药物代谢及药代动力学",
+        "evidence_span": "生物科学服务板块包括体内外药物代谢及药代动力学"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "体外生物学",
+        "evidence_span": "体外生物学业务范围涵盖药物靶点验证、苗头化合物发现、从苗头化合物到先导化合物的过渡、先导化合物优化，以及临床前候选化合物选择"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "体内药理学",
+        "evidence_span": "体内药理学"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "药物安全性评价",
+        "evidence_span": "药物安全性评价"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "临床I期-III期工艺研发及生产",
+        "evidence_span": "目前已覆盖临床I期-III期工艺研发及生产需求"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:13:15"
+}

@@ -1,0 +1,94 @@
+{
+  "event_id": "evt_55a6e6fe864c",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "技术突破",
+  "entities": [
+    {
+      "name": "苹果公司",
+      "type": "公司",
+      "normalized": "苹果"
+    },
+    {
+      "name": "马克·古尔曼",
+      "type": "人物",
+      "normalized": "马克·古尔曼"
+    },
+    {
+      "name": "Meta公司",
+      "type": "公司",
+      "normalized": "Meta"
+    },
+    {
+      "name": "阿特拉斯",
+      "type": "产品",
+      "normalized": "阿特拉斯"
+    },
+    {
+      "name": "智能眼镜",
+      "type": "产品",
+      "normalized": "智能眼镜"
+    },
+    {
+      "name": "增强现实",
+      "type": "技术",
+      "normalized": "AR"
+    }
+  ],
+  "summary": "苹果重启AR眼镜计划，代号阿特拉斯，调研智能眼镜市场，准备跟随Meta进军该领域。",
+  "causal_claim": [
+    "AR眼镜计划重启",
+    "智能眼镜市场调研",
+    "AR/VR技术发展",
+    "消费电子创新"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "增强现实",
+      "AR眼镜",
+      "智能眼镜",
+      "调研",
+      "计划"
+    ],
+    "normalized_terms": {
+      "苹果公司": "苹果",
+      "马克·古尔曼": "马克·古尔曼",
+      "Meta公司": "Meta",
+      "阿特拉斯": "阿特拉斯",
+      "智能眼镜": "智能眼镜",
+      "增强现实": "AR"
+    },
+    "evidence_spans": [
+      {
+        "text": "苹果公司可能已经重启其轻量级增强现实（AR）眼镜计划",
+        "start": 0,
+        "end": 30
+      },
+      {
+        "text": "苹果公司内部已经悄然启动了代号为“阿特拉斯”（Atlas）的计划",
+        "start": 60,
+        "end": 100
+      },
+      {
+        "text": "对目前市场上现有的智能眼镜产品进行调研",
+        "start": 100,
+        "end": 130
+      },
+      {
+        "text": "为跟随Meta公司进军智能眼镜领域做好准备",
+        "start": 130,
+        "end": 160
+      }
+    ],
+    "core_concepts": [
+      "AR眼镜",
+      "智能眼镜",
+      "市场调研",
+      "技术计划"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-11-05T00:00:00Z",
+  "raw_text": "2024年11月5日,苹果公司可能已经重启其轻量级增强现实（AR）眼镜计划。知名科技记者马克·古尔曼（Mark Gurman）爆料称，苹果公司内部已经悄然启动了代号为“阿特拉斯”（Atlas）的计划，对目前市场上现有的智能眼镜产品进行调研，为跟随Meta公司进军智能眼镜领域做好准备。"
+}

@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "行业数字化解决方案",
+      "evidence_span": "公司主要业务包括：行业数字化解决方案"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "应用软件开发平台（aPaaS）的开发",
+      "evidence_span": "公司主要业务包括：行业数字化解决方案、应用软件开发平台（aPaaS）的开发、服务与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "公司主要业务包括：行业数字化解决方案、应用软件开发平台（aPaaS）的开发、服务与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要业务包括：行业数字化解决方案、应用软件开发平台（aPaaS）的开发、服务与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "行业数字化解决方案服务商",
+      "evidence_span": "行业数字化解决方案服务商+标准、通用基础软件产品供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "标准、通用基础软件产品供应商",
+      "evidence_span": "行业数字化解决方案服务商+标准、通用基础软件产品供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家鼓励的重点软件企业",
+      "evidence_span": "公司是国家发改委等5部委联合认定的国家鼓励的重点软件企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电力信息化领域参与程度最深、参与面最广的供应商之一",
+      "evidence_span": "公司作为国内电力信息化领域参与程度最深、参与面最广的供应商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力行业数字化解决方案",
+      "evidence_span": "行业数字化解决方案，主要集中于电力行业的生产、安全、基建、营销和调度等业务领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电场生产运行管理系统",
+      "evidence_span": "风电场生产运行管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源HSE管理系统",
+      "evidence_span": "新能源HSE管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电集控中心远程集中监控系统",
+      "evidence_span": "风电集控中心远程集中监控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电EAM系统",
+      "evidence_span": "风电EAM系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充电桩智能监控系统",
+      "evidence_span": "充电桩智能监控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充电桩一体化运维系统",
+      "evidence_span": "充电桩一体化运维系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道交通数字化服务",
+      "evidence_span": "在轨道交通领域，公司主要为高铁和城轨客户提供数字化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石化企业安全管理信息系统（HSE）",
+      "evidence_span": "石化企业安全管理信息系统（HSE）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "危化品安全生产管理平台",
+      "evidence_span": "危化品安全生产管理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻骑兵低代码开发平台",
+      "evidence_span": "轻骑兵低代码开发平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "知识图谱一体化平台",
+      "evidence_span": "知识图谱一体化平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能运维平台（AIOps）",
+      "evidence_span": "智能运维平台（AIOps）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低代码开发平台技术",
+      "evidence_span": "专注于低代码开发平台等标准、通用基础软件的研发和推广"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云原生架构",
+      "evidence_span": "以云原生、模型驱动、前后端分离、安全开放等架构与设计理念"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模型驱动架构",
+      "evidence_span": "以云原生、模型驱动、前后端分离、安全开放等架构与设计理念"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "前后端分离架构",
+      "evidence_span": "以云原生、模型驱动、前后端分离、安全开放等架构与设计理念"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "可视化设计器",
+      "evidence_span": "基于可视化设计器、预置的丰富图形化组件和平台服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "UI可视化技术",
+      "evidence_span": "专利布局在UI可视化、代码解析、运行时引擎等关键技术点"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "代码解析技术",
+      "evidence_span": "专利布局在UI可视化、代码解析、运行时引擎等关键技术点"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "运行时引擎技术",
+      "evidence_span": "专利布局在UI可视化、代码解析、运行时引擎等关键技术点"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全栈国产化兼容适配方案",
+      "evidence_span": "形成了从服务器、操作系统、数据库到中间件的全栈兼容适配方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "主要客户为国家电网、南方电网、五大发电集团等特大型能源企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "主要客户为国家电网、南方电网、五大发电集团等特大型能源企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "五大发电集团",
+      "evidence_span": "主要客户为国家电网、南方电网、五大发电集团等特大型能源企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国铁集团",
+      "evidence_span": "与国铁集团、中国中铁、中国铁建、中国物流、北京地铁等集团开展合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国中铁",
+      "evidence_span": "与国铁集团、中国中铁、中国铁建、中国物流、北京地铁等集团开展合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国铁建",
+      "evidence_span": "与国铁集团、中国中铁、中国铁建、中国物流、北京地铁等集团开展合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "主要服务于中石化、中石油、中海油、中化国际等央企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "主要服务于中石化、中石油、中海油、中化国际等央企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中海油",
+      "evidence_span": "主要服务于中石化、中石油、中海油、中化国际等央企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华能信息",
+      "evidence_span": "客户包括华能信息、航天二院、华中科技、河北联通、重工集团、中泰证券、浪潮集团等行业领军企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航天二院",
+      "evidence_span": "客户包括华能信息、航天二院、华中科技、河北联通、重工集团、中泰证券、浪潮集团等行业领军企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浪潮集团",
+      "evidence_span": "客户包括华能信息、航天二院、华中科技、河北联通、重工集团、中泰证券、浪潮集团等行业领军企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化自主可控",
+      "evidence_span": "满足客户自身对于建设自主可控软件的需求"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "行业数字化解决方案",
+        "evidence_span": "公司主要业务包括：行业数字化解决方案"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "应用软件开发平台（aPaaS）的开发、服务与销售",
+        "evidence_span": "公司主要业务包括：行业数字化解决方案、应用软件开发平台（aPaaS）的开发、服务与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "行业数字化解决方案服务商",
+        "evidence_span": "行业数字化解决方案服务商+标准、通用基础软件产品供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "标准、通用基础软件产品供应商",
+        "evidence_span": "行业数字化解决方案服务商+标准、通用基础软件产品供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家鼓励的重点软件企业",
+        "evidence_span": "公司是国家发改委等5部委联合认定的国家鼓励的重点软件企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电力信息化领域参与程度最深、参与面最广的供应商之一",
+        "evidence_span": "公司作为国内电力信息化领域参与程度最深、参与面最广的供应商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力行业数字化解决方案",
+        "evidence_span": "行业数字化解决方案，主要集中于电力行业的生产、安全、基建、营销和调度等业务领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电场生产运行管理系统",
+        "evidence_span": "风电场生产运行管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源HSE管理系统",
+        "evidence_span": "新能源HSE管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电集控中心远程集中监控系统",
+        "evidence_span": "风电集控中心远程集中监控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电EAM系统",
+        "evidence_span": "风电EAM系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充电桩智能监控系统",
+        "evidence_span": "充电桩智能监控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充电桩一体化运维系统",
+        "evidence_span": "充电桩一体化运维系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道交通数字化服务",
+        "evidence_span": "在轨道交通领域，公司主要为高铁和城轨客户提供数字化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石化企业安全管理信息系统（HSE）",
+        "evidence_span": "石化企业安全管理信息系统（HSE）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "危化品安全生产管理平台",
+        "evidence_span": "危化品安全生产管理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻骑兵低代码开发平台",
+        "evidence_span": "轻骑兵低代码开发平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "知识图谱一体化平台",
+        "evidence_span": "知识图谱一体化平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能运维平台（AIOps）",
+        "evidence_span": "智能运维平台（AIOps）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低代码开发平台技术",
+        "evidence_span": "专注于低代码开发平台等标准、通用基础软件的研发和推广"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云原生架构",
+        "evidence_span": "以云原生、模型驱动、前后端分离、安全开放等架构与设计理念"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模型驱动架构",
+        "evidence_span": "以云原生、模型驱动、前后端分离、安全开放等架构与设计理念"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "前后端分离架构",
+        "evidence_span": "以云原生、模型驱动、前后端分离、安全开放等架构与设计理念"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "可视化设计器",
+        "evidence_span": "基于可视化设计器、预置的丰富图形化组件和平台服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "UI可视化技术",
+        "evidence_span": "专利布局在UI可视化、代码解析、运行时引擎等关键技术点"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "代码解析技术",
+        "evidence_span": "专利布局在UI可视化、代码解析、运行时引擎等关键技术点"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "运行时引擎技术",
+        "evidence_span": "专利布局在UI可视化、代码解析、运行时引擎等关键技术点"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全栈国产化兼容适配方案",
+        "evidence_span": "形成了从服务器、操作系统、数据库到中间件的全栈兼容适配方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "主要客户为国家电网、南方电网、五大发电集团等特大型能源企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "主要客户为国家电网、南方电网、五大发电集团等特大型能源企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "五大发电集团",
+        "evidence_span": "主要客户为国家电网、南方电网、五大发电集团等特大型能源企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国铁集团",
+        "evidence_span": "与国铁集团、中国中铁、中国铁建、中国物流、北京地铁等集团开展合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国中铁",
+        "evidence_span": "与国铁集团、中国中铁、中国铁建、中国物流、北京地铁等集团开展合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国铁建",
+        "evidence_span": "与国铁集团、中国中铁、中国铁建、中国物流、北京地铁等集团开展合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "主要服务于中石化、中石油、中海油、中化国际等央企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "主要服务于中石化、中石油、中海油、中化国际等央企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中海油",
+        "evidence_span": "主要服务于中石化、中石油、中海油、中化国际等央企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华能信息",
+        "evidence_span": "客户包括华能信息、航天二院、华中科技、河北联通、重工集团、中泰证券、浪潮集团等行业领军企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航天二院",
+        "evidence_span": "客户包括华能信息、航天二院、华中科技、河北联通、重工集团、中泰证券、浪潮集团等行业领军企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浪潮集团",
+        "evidence_span": "客户包括华能信息、航天二院、华中科技、河北联通、重工集团、中泰证券、浪潮集团等行业领军企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化自主可控",
+        "evidence_span": "满足客户自身对于建设自主可控软件的需求"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:25:49"
+}

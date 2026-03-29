@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "集装箱多式联运综合物流服务",
+      "evidence_span": "主营业务为集装箱多式联运综合物流服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "海运业务",
+      "evidence_span": "海运业务营业收入81.82亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铁路业务",
+      "evidence_span": "铁路业务营业收入2.33亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "公路业务",
+      "evidence_span": "公路业务营业收入7.60亿元"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "内贸集装箱物流服务商",
+      "evidence_span": "转型为国内领先的内贸集装箱物流服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "民营多式联运龙头",
+      "evidence_span": "安通控股民营多式联运龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内内贸集装箱物流企业前三甲",
+      "evidence_span": "位居国内内贸集装箱物流企业前三甲"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集装箱全程物流解决方案",
+      "evidence_span": "致力于为客户提供绿色、经济、高效、安全的集装箱全程物流解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内贸精品航线",
+      "evidence_span": "2022年公司升级了内贸精品航线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内贸合作航线产品“FAX2”",
+      "evidence_span": "推出升级版的内贸合作航线产品“FAX2”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中国-美西航线",
+      "evidence_span": "主要用于经营中国-美西航线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中国-欧洲航线",
+      "evidence_span": "主要用于经营中国-欧洲航线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公路运输的“点对点”高效传递与中转服务",
+      "evidence_span": "实现公路运输的“点对点”高效传递与中转服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁路集装箱下水多式联运新模式",
+      "evidence_span": "合力为客户提供铁路集装箱下水多式联运新模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字智能科技驱动",
+      "evidence_span": "以数字智能科技驱动"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "综合物流信息化平台",
+      "evidence_span": "搭建了综合物流信息化平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信息系统管理集成平台",
+      "evidence_span": "定制开发了集“集装箱管理系统、船舶管理系统、财务系统、人力资源系统及电子交易平台”为一体的信息系统管理集成平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海泛亚航运有限公司",
+      "evidence_span": "与具有央企背景的上海泛亚航运有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大连信风海运有限公司",
+      "evidence_span": "国内领先的民营船公司大连信风海运有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中联航运",
+      "evidence_span": "公司主要通过与中联航运以联营合作的方式布局外贸业务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "多式联运",
+      "evidence_span": "安通控股多式联运护城河凸显"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "集装箱多式联运综合物流服务",
+        "evidence_span": "主营业务为集装箱多式联运综合物流服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "海运业务",
+        "evidence_span": "海运业务营业收入81.82亿元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铁路业务",
+        "evidence_span": "铁路业务营业收入2.33亿元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "公路业务",
+        "evidence_span": "公路业务营业收入7.60亿元"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "内贸集装箱物流服务商",
+        "evidence_span": "转型为国内领先的内贸集装箱物流服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "民营多式联运龙头",
+        "evidence_span": "安通控股民营多式联运龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内内贸集装箱物流企业前三甲",
+        "evidence_span": "位居国内内贸集装箱物流企业前三甲"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集装箱全程物流解决方案",
+        "evidence_span": "致力于为客户提供绿色、经济、高效、安全的集装箱全程物流解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内贸精品航线",
+        "evidence_span": "2022年公司升级了内贸精品航线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内贸合作航线产品“FAX2”",
+        "evidence_span": "推出升级版的内贸合作航线产品“FAX2”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中国-美西航线",
+        "evidence_span": "主要用于经营中国-美西航线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中国-欧洲航线",
+        "evidence_span": "主要用于经营中国-欧洲航线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公路运输的“点对点”高效传递与中转服务",
+        "evidence_span": "实现公路运输的“点对点”高效传递与中转服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁路集装箱下水多式联运新模式",
+        "evidence_span": "合力为客户提供铁路集装箱下水多式联运新模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字智能科技驱动",
+        "evidence_span": "以数字智能科技驱动"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "综合物流信息化平台",
+        "evidence_span": "搭建了综合物流信息化平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信息系统管理集成平台",
+        "evidence_span": "定制开发了集“集装箱管理系统、船舶管理系统、财务系统、人力资源系统及电子交易平台”为一体的信息系统管理集成平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海泛亚航运有限公司",
+        "evidence_span": "与具有央企背景的上海泛亚航运有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大连信风海运有限公司",
+        "evidence_span": "国内领先的民营船公司大连信风海运有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中联航运",
+        "evidence_span": "公司主要通过与中联航运以联营合作的方式布局外贸业务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "多式联运",
+        "evidence_span": "安通控股多式联运护城河凸显"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:35:37"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "dc1b56b6ef4d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述低空经济展览会的具体事件，包括时间、地点和活动内容，是新闻性动态，不提供静态的题材核心知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:15:17", "result": {"span_uid": "02cb8ab13234", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "星座部署进展", "stability": "low", "reason": "原文是具体的星座部署进展事件，包含具体时间、数量和预测，属于阶段性变化信息，但过于具体且依赖新闻上下文，无法形成稳定独立的知识块。"}}

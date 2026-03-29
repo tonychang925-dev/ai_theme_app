@@ -1,0 +1,364 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "网络安全产品",
+      "evidence_span": "公司的核心业务为网络安全产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字信任",
+      "evidence_span": "数字信任及身份安全产品体系"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "身份安全产品",
+      "evidence_span": "数字信任及身份安全产品体系"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "端点安全产品",
+      "evidence_span": "端点安全产品体系"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "云网边安全产品",
+      "evidence_span": "云网边安全产品体系"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "云网虚拟化软件",
+      "evidence_span": "云网虚拟化基础软件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "网络安全服务",
+      "evidence_span": "网络安全服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国网络安全软件领域的领跑者",
+      "evidence_span": "中国网络安全软件领域的领跑者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "身份和数字信任软件市场排名第一",
+      "evidence_span": "公司在中国身份和数字信任软件市场份额中排名第一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "IAM矩阵领导者象限",
+      "evidence_span": "公司位居IAM矩阵领导者象限"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国网络安全电信行业市占率第一",
+      "evidence_span": "公司位居中国网络安全电信行业市占率第一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "身份识别与访问控制产品",
+      "evidence_span": "身份识别与访问控制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据安全产品",
+      "evidence_span": "数据安全相关的产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "终端安全产品",
+      "evidence_span": "终端安全"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云安全产品",
+      "evidence_span": "云安全"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高级威胁治理产品",
+      "evidence_span": "高级威胁治理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "边界安全产品",
+      "evidence_span": "边界安全产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云态势感知",
+      "evidence_span": "云态势感知"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "XDR解决方案",
+      "evidence_span": "XDR解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全中台",
+      "evidence_span": "安全中台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "零信任访问控制网关系统",
+      "evidence_span": "零信任访问控制网关系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "统一端点安全框架",
+      "evidence_span": "统一端点安全框架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "威胁情报服务",
+      "evidence_span": "威胁情报服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "身份统一用户管理技术",
+      "evidence_span": "身份统一用户管理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于数字身份的授权管理技术",
+      "evidence_span": "基于数字身份的授权管理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "访问控制技术",
+      "evidence_span": "访问控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "增强认证技术",
+      "evidence_span": "增强认证技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化审计分析",
+      "evidence_span": "智能化审计分析"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "威胁情报及大数据技术",
+      "evidence_span": "威胁情报及大数据技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云化与多租户化平台",
+      "evidence_span": "云化与多租户化的平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能联动安全平台",
+      "evidence_span": "智能联动安全平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "中国移动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国联通",
+      "evidence_span": "中国联通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电信",
+      "evidence_span": "中国电信"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国务院办公厅电子政务办公室",
+      "evidence_span": "国务院办公厅电子政务办公室"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "网络安全国产化",
+      "evidence_span": "中国网络安全软件领域的领跑者"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "网络安全产品",
+        "evidence_span": "公司的核心业务为网络安全产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字信任及身份安全产品",
+        "evidence_span": "数字信任及身份安全产品体系"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "端点安全产品",
+        "evidence_span": "端点安全产品体系"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "云网边安全产品",
+        "evidence_span": "云网边安全产品体系"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "云网虚拟化软件",
+        "evidence_span": "云网虚拟化基础软件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "网络安全服务",
+        "evidence_span": "网络安全服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国网络安全软件领域的领跑者",
+        "evidence_span": "中国网络安全软件领域的领跑者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "身份和数字信任软件市场排名第一",
+        "evidence_span": "公司在中国身份和数字信任软件市场份额中排名第一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "IAM矩阵领导者象限",
+        "evidence_span": "公司位居IAM矩阵领导者象限"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国网络安全电信行业市占率第一",
+        "evidence_span": "公司位居中国网络安全电信行业市占率第一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "身份识别与访问控制产品",
+        "evidence_span": "身份识别与访问控制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据安全产品",
+        "evidence_span": "数据安全相关的产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "终端安全产品",
+        "evidence_span": "终端安全"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云安全产品",
+        "evidence_span": "云安全"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高级威胁治理产品",
+        "evidence_span": "高级威胁治理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "边界安全产品",
+        "evidence_span": "边界安全产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云态势感知",
+        "evidence_span": "云态势感知"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "XDR解决方案",
+        "evidence_span": "XDR解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全中台",
+        "evidence_span": "安全中台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "零信任访问控制网关系统",
+        "evidence_span": "零信任访问控制网关系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "统一端点安全框架",
+        "evidence_span": "统一端点安全框架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "威胁情报服务",
+        "evidence_span": "威胁情报服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "身份统一用户管理技术",
+        "evidence_span": "身份统一用户管理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于数字身份的授权管理技术",
+        "evidence_span": "基于数字身份的授权管理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "访问控制技术",
+        "evidence_span": "访问控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "增强认证技术",
+        "evidence_span": "增强认证技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化审计分析",
+        "evidence_span": "智能化审计分析"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "威胁情报及大数据技术",
+        "evidence_span": "威胁情报及大数据技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云化与多租户化平台",
+        "evidence_span": "云化与多租户化的平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能联动安全平台",
+        "evidence_span": "智能联动安全平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "中国移动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国联通",
+        "evidence_span": "中国联通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电信",
+        "evidence_span": "中国电信"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国务院办公厅电子政务办公室",
+        "evidence_span": "国务院办公厅电子政务办公室"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "网络安全国产化",
+        "evidence_span": "中国网络安全软件领域的领跑者"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:37:16"
+}

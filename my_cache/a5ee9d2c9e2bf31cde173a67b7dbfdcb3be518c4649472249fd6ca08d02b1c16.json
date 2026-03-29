@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:41:20", "result": {"chunk_id": "1cadb43a170a", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明ISO 3级洁净室的定义、核心标准、颗粒浓度、动态验证、气流组织和换气次数等关键要素，纯属题材本体知识，无事件或动态内容。"}}

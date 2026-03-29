@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:43", "result": {"chunk_id": "e1f4f6897460", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述台积电厂务工程竞标、CoWoS设备急单和产能扩张等动态事件，但提及CoWoS月产能数据（如2024年底4万片、2025年6万片）和订单能见度至2029年A10世代，可能隐含半导体设备需求或技术趋势的稳定知识，混合事件信息。"}}

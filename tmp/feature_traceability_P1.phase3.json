@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "phase": "P1.phase3",
+  "generated_at": "2026-02-19T18:10:00Z",
+  "source_files": [
+    "docs/project_control/PHASE_CONTRACT_P1.phase3.md",
+    "docs/project_control/ACCEPTANCE.md",
+    "docs/project_control/prd_p1.md",
+    "docs/project_control/PLAN_WBS.md",
+    "docs/project_control/TEST_CASE_SPEC.md",
+    "docs/project_control/FEATURE_SPEC_P1.phase3.md"
+  ],
+  "summary": {
+    "total_tasks": 4,
+    "mapped_tasks": 4,
+    "unmapped_tasks": 0,
+    "risk_level": "P0"
+  },
+  "traceability": [
+    {
+      "task_id": "P1.phase3-T01",
+      "requirement_ids": [
+        "PRD-REQ-P1.phase3-001",
+        "PRD-REQ-P1.phase3-002",
+        "PRD-REQ-P1.phase3-003"
+      ],
+      "acceptance_ids": [
+        "ACC-P1-P3-01",
+        "ACC-P1-P3-02"
+      ],
+      "test_case_ids": [
+        "TC-P1-P3-IT-001",
+        "TC-P1-P3-ET-001"
+      ],
+      "test_commands": [
+        ".venv/bin/python -m pytest -q database_service/tests/streams/test_phase3_behavior_tests.py -k \"llm_final_judge_routing\"",
+        ".venv/bin/python -m pytest -q database_service/tests/streams/test_phase3_behavior_tests.py -k \"arbiter_timeout_fallback\""
+      ]
+    },
+    {
+      "task_id": "P1.phase3-T02",
+      "requirement_ids": [
+        "PRD-REQ-P1.phase3-003",
+        "PRD-REQ-P1.phase3-008",
+        "PRD-REQ-P1.phase3-009"
+      ],
+      "acceptance_ids": [
+        "ACC-P1-P3-02",
+        "ACC-P1-P3-03"
+      ],
+      "test_case_ids": [
+        "TC-P1-P3-IT-001",
+        "TC-P1-P3-ET-001",
+        "TC-P1-P3-ET-002"
+      ],
+      "test_commands": [
+        ".venv/bin/python -m pytest -q database_service/tests/streams/test_phase3_behavior_tests.py -k \"arbiter_timeout_fallback or model_unavailable_circuit_breaker\""
+      ]
+    },
+    {
+      "task_id": "P1.phase3-T03",
+      "requirement_ids": [
+        "PRD-REQ-P1.phase3-004",
+        "PRD-REQ-P1.phase3-005",
+        "PRD-REQ-P1.phase3-006",
+        "PRD-REQ-P1.phase3-010"
+      ],
+      "acceptance_ids": [
+        "ACC-P1-P3-01"
+      ],
+      "test_case_ids": [
+        "TC-P1-P3-ST-001",
+        "TC-P1-P3-RT-001"
+      ],
+      "test_commands": [
+        ".venv/bin/python -m pytest -q database_service/tests/streams/test_phase3_behavior_tests.py -k \"llm_final_judge_gate\"",
+        ".venv/bin/python -m pytest -q database_service/tests/streams/test_phase3_behavior_tests.py -k \"final_judge_report_regression\""
+      ]
+    },
+    {
+      "task_id": "P1.phase3-T04",
+      "requirement_ids": [
+        "PRD-REQ-P1.phase3-006",
+        "PRD-REQ-P1.phase3-008",
+        "PRD-REQ-P1.phase3-009"
+      ],
+      "acceptance_ids": [
+        "ACC-P1-P3-02",
+        "ACC-P1-P3-03"
+      ],
+      "test_case_ids": [
+        "TC-P1-P3-PT-001",
+        "TC-P1-P3-ET-002",
+        "TC-P1-P3-RT-001"
+      ],
+      "test_commands": [
+        ".venv/bin/python -m pytest -q database_service/tests/streams/test_phase3_behavior_tests.py -k \"arbiter_latency_budget\"",
+        ".venv/bin/python -m pytest -q database_service/tests/streams/test_phase3_behavior_tests.py -k \"model_unavailable_circuit_breaker or final_judge_report_regression\""
+      ]
+    }
+  ],
+  "gaps": [],
+  "gate_ready": true
+}

@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "奶酪",
+      "evidence_span": "公司业务主要包括奶酪、液奶和贸易业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "液奶",
+      "evidence_span": "公司业务主要包括奶酪、液奶和贸易业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "贸易业务",
+      "evidence_span": "公司业务主要包括奶酪、液奶和贸易业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "奶酪龙头",
+      "evidence_span": "妙可蓝多奶酪黑马横空出世，未来龙头初具雏形"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产奶酪先行者",
+      "evidence_span": "国产奶酪先行者，紧紧抓住成长窗口"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "奶酪棒",
+      "evidence_span": "2018年推出拳头产品“妙可蓝多”奶酪棒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手撕成人奶酪",
+      "evidence_span": "零食奶酪，包括奶酪棒、手撕成人奶酪、杯装奶酪等直接食用奶酪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "杯装奶酪",
+      "evidence_span": "零食奶酪，包括奶酪棒、手撕成人奶酪、杯装奶酪等直接食用奶酪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "餐饮端奶酪",
+      "evidence_span": "餐饮端奶酪，用作餐桌菜品的主料或者辅料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业端奶酪",
+      "evidence_span": "工业端奶酪，作为各种食品的生产辅料"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "C端消费者",
+      "evidence_span": "面向C端消费者"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "B端餐饮企业",
+      "evidence_span": "餐饮（B端餐饮企业）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "B端食品加工企业",
+      "evidence_span": "B端食品加工企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "乳制品消费升级",
+      "evidence_span": "乘乳制品消费升级之东风"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "奶酪",
+        "evidence_span": "公司业务主要包括奶酪、液奶和贸易业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "液奶",
+        "evidence_span": "公司业务主要包括奶酪、液奶和贸易业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "贸易业务",
+        "evidence_span": "公司业务主要包括奶酪、液奶和贸易业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "奶酪龙头",
+        "evidence_span": "妙可蓝多奶酪黑马横空出世，未来龙头初具雏形"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产奶酪先行者",
+        "evidence_span": "国产奶酪先行者，紧紧抓住成长窗口"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "奶酪棒",
+        "evidence_span": "2018年推出拳头产品“妙可蓝多”奶酪棒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手撕成人奶酪",
+        "evidence_span": "零食奶酪，包括奶酪棒、手撕成人奶酪、杯装奶酪等直接食用奶酪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "杯装奶酪",
+        "evidence_span": "零食奶酪，包括奶酪棒、手撕成人奶酪、杯装奶酪等直接食用奶酪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "餐饮端奶酪",
+        "evidence_span": "餐饮端奶酪，用作餐桌菜品的主料或者辅料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业端奶酪",
+        "evidence_span": "工业端奶酪，作为各种食品的生产辅料"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "C端消费者",
+        "evidence_span": "面向C端消费者"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "B端餐饮企业",
+        "evidence_span": "餐饮（B端餐饮企业）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "B端食品加工企业",
+        "evidence_span": "B端食品加工企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "乳制品消费升级",
+        "evidence_span": "乘乳制品消费升级之东风"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:44:54"
+}

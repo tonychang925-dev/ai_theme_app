@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "fd30b4b71481", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落引用SEMI报告，预测半导体制造设备的全球销售额和增长趋势，这概括了市场规模和前景，有助于理解题材的影响机制和行业结构，但基于时间性数据，稳定性不如严格定义。"}}

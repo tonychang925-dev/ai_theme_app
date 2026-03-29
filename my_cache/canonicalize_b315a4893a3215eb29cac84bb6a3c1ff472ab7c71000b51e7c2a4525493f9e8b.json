@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:51:28", "result": {"span_uid": "cfb3e1624b10", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "受制裁材料及EDA公司", "stability": "low", "reason": "原文为具体事件中受制裁公司列表，涉及具体实体和制裁动作，无法整理成稳定、可独立成立的知识块。"}}

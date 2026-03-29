@@ -1,0 +1,104 @@
+{
+  "phase": "P1.phase0",
+  "generated_at": "2026-02-17T15:20:00",
+  "source_files": {
+    "wbs": "tmp/plan/wbs.md",
+    "acceptance": "docs/project_control/ACCEPTANCE.md",
+    "contract": "docs/project_control/PHASE_CONTRACT_P1.phase0.md",
+    "test_case_spec": "docs/project_control/TEST_CASE_SPEC_P1.phase0.md"
+  },
+  "summary": {
+    "wbs_task_count": 4,
+    "test_case_count": 4,
+    "unmapped_wbs_tasks": 0,
+    "unmapped_acceptance_items": 0
+  },
+  "traceability": [
+    {
+      "wbs_task_id": "P1.phase0-T01",
+      "wbs_task_name": "冻结第一阶段唯一运行时链路与入口清单",
+      "risk_level": "P0",
+      "acceptance_refs": ["ACC-P1-P0-01"],
+      "test_cases": [
+        {
+          "id": "TC-P1P0-001",
+          "level": "IT",
+          "type": "功能测试",
+          "priority": "P0",
+          "spec_ref": "docs/project_control/TEST_CASE_SPEC_P1.phase0.md#tc-p1p0-001",
+          "command": "pytest -q database_service/tests/streams/test_phase0_behavior_tests.py -k \"runtime_entry_uses_single_execute_chain\"",
+          "expected": "pass"
+        }
+      ],
+      "coverage": {
+        "positive": true,
+        "negative_or_boundary": true
+      }
+    },
+    {
+      "wbs_task_id": "P1.phase0-T02",
+      "wbs_task_name": "定义DecisionEnvelope v1字段与dual-read兼容策略",
+      "risk_level": "P0",
+      "acceptance_refs": ["ACC-P1-P0-02"],
+      "test_cases": [
+        {
+          "id": "TC-P1P0-002",
+          "level": "IT",
+          "type": "契约测试",
+          "priority": "P0",
+          "spec_ref": "docs/project_control/TEST_CASE_SPEC_P1.phase0.md#tc-p1p0-002",
+          "command": "pytest -q database_service/tests/streams/test_phase0_behavior_tests.py -k \"decision_envelope_v1_required_fields_validation\"",
+          "expected": "pass"
+        }
+      ],
+      "coverage": {
+        "positive": true,
+        "negative_or_boundary": true
+      }
+    },
+    {
+      "wbs_task_id": "P1.phase0-T03",
+      "wbs_task_name": "清理重复函数定义并建立静态扫描门禁",
+      "risk_level": "P0",
+      "acceptance_refs": ["ACC-P1-P0-01"],
+      "test_cases": [
+        {
+          "id": "TC-P1P0-003",
+          "level": "ST",
+          "type": "异常测试",
+          "priority": "P0",
+          "spec_ref": "docs/project_control/TEST_CASE_SPEC_P1.phase0.md#tc-p1p0-003",
+          "command": "pytest -q database_service/tests/streams/test_phase0_behavior_tests.py -k \"processing_path_does_not_use_print_calls\"",
+          "expected": "pass"
+        }
+      ],
+      "coverage": {
+        "positive": true,
+        "negative_or_boundary": true
+      }
+    },
+    {
+      "wbs_task_id": "P1.phase0-T04",
+      "wbs_task_name": "trace_id与payload_version全链路贯通方案评审",
+      "risk_level": "P1",
+      "acceptance_refs": ["ACC-P1-P0-03"],
+      "test_cases": [
+        {
+          "id": "TC-P1P0-004",
+          "level": "IT",
+          "type": "集成测试",
+          "priority": "P1",
+          "spec_ref": "docs/project_control/TEST_CASE_SPEC_P1.phase0.md#tc-p1p0-004",
+          "command": "pytest -q database_service/tests/streams/test_phase0_behavior_tests.py -k \"trace_id_and_payload_version_are_normalized_for_v0_input\"",
+          "expected": "pass"
+        }
+      ],
+      "coverage": {
+        "positive": true,
+        "negative_or_boundary": true
+      }
+    }
+  ],
+  "gaps": [],
+  "gate_ready": true
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:12:54", "result": {"chunk_id": "18c46bf33265", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含静态知识（如纸浆价格历史分位、全球纸浆市场供应因素），但混合了事件信息（如俄乌冲突、物流扰动、停产减产、具体日期数据、供应商报价、产能落地计划），需要进一步裁决以提取稳定知识。"}}

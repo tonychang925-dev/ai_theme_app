@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药制造",
+      "evidence_span": "公司经营的主要产业包括医药制造及医药流通产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药流通",
+      "evidence_span": "公司经营的主要产业包括医药制造及医药流通产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "司法IVD技术服务",
+      "evidence_span": "公司经营的主要产业包括医药制造及医药流通产业、分子医学影像中心和肿瘤放疗中心及肿瘤远程医疗技术服务、司法IVD（体外诊断）技术服务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "分子医学影像中心",
+      "evidence_span": "公司经营的主要产业包括医药制造及医药流通产业、分子医学影像中心和肿瘤放疗中心及肿瘤远程医疗技术服务、司法IVD（体外诊断）技术服务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "肿瘤放疗中心",
+      "evidence_span": "公司经营的主要产业包括医药制造及医药流通产业、分子医学影像中心和肿瘤放疗中心及肿瘤远程医疗技术服务、司法IVD（体外诊断）技术服务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "肿瘤远程医疗技术服务",
+      "evidence_span": "公司经营的主要产业包括医药制造及医药流通产业、分子医学影像中心和肿瘤放疗中心及肿瘤远程医疗技术服务、司法IVD（体外诊断）技术服务等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "珍珠明目滴眼液",
+      "evidence_span": "国发制药厂目前生产的剂型包括滴眼剂、片剂、颗粒剂、散剂、酒剂等。其主要产品有“海宝”牌珍珠明目滴眼液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "胃肠宁颗粒",
+      "evidence_span": "国发制药厂目前生产的剂型包括滴眼剂、片剂、颗粒剂、散剂、酒剂等。其主要产品有“海宝”牌珍珠明目滴眼液、珍珠末、珍珠层粉、胃肠宁颗粒等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药饮片",
+      "evidence_span": "中药饮片厂主要经营中药饮片的生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DNA检测设备",
+      "evidence_span": "高盛生物主要产品包括DNA检测设备、试剂及耗材等法医DNA鉴定产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DNA检测试剂耗材",
+      "evidence_span": "高盛生物主要产品包括DNA检测设备、试剂及耗材等法医DNA鉴定产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DNA检测服务",
+      "evidence_span": "全资子公司高盛生物主要产品服务包括DNA检测设备及试剂耗材的生产和销售，以及DNA检测服务等技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超微量DNA自动提取检测工作站",
+      "evidence_span": "自主研发生产的“超微量DNA自动提取检测工作站”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医学影像设备",
+      "evidence_span": "北京香雅以外购大型医疗设备（如：PET-CT、CT、MRI、DR等大型医学影像设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "放疗设备",
+      "evidence_span": "伽玛刀、直线加速器等大型放疗设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超微量DNA自动提取检测工作站技术",
+      "evidence_span": "自主研发生产的“超微量DNA自动提取检测工作站”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "法医DNA检测全产业链技术",
+      "evidence_span": "现已形成集设备研发、耗材生产、技术服务、司法鉴定四大业务为一体，具备群体高通量测序核心技术和精细刻画精准识别刑侦技术的高新技术生物企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广东省各级公安单位",
+      "evidence_span": "常年服务于广东省各级公安单位的DNA实验室"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北部湾地区三甲、二甲以上医院",
+      "evidence_span": "与北部湾地区三甲、二甲以上医院建立了稳定的长期良好合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "是DNA鉴定检测领域实现国产替代的精细自动化装备之一"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药制造",
+        "evidence_span": "公司经营的主要产业包括医药制造及医药流通产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药流通",
+        "evidence_span": "公司经营的主要产业包括医药制造及医药流通产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "司法IVD技术服务",
+        "evidence_span": "公司经营的主要产业包括医药制造及医药流通产业、分子医学影像中心和肿瘤放疗中心及肿瘤远程医疗技术服务、司法IVD（体外诊断）技术服务等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "分子医学影像中心",
+        "evidence_span": "公司经营的主要产业包括医药制造及医药流通产业、分子医学影像中心和肿瘤放疗中心及肿瘤远程医疗技术服务、司法IVD（体外诊断）技术服务等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "肿瘤放疗中心",
+        "evidence_span": "公司经营的主要产业包括医药制造及医药流通产业、分子医学影像中心和肿瘤放疗中心及肿瘤远程医疗技术服务、司法IVD（体外诊断）技术服务等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "肿瘤远程医疗技术服务",
+        "evidence_span": "公司经营的主要产业包括医药制造及医药流通产业、分子医学影像中心和肿瘤放疗中心及肿瘤远程医疗技术服务、司法IVD（体外诊断）技术服务等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "珍珠明目滴眼液",
+        "evidence_span": "国发制药厂目前生产的剂型包括滴眼剂、片剂、颗粒剂、散剂、酒剂等。其主要产品有“海宝”牌珍珠明目滴眼液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "胃肠宁颗粒",
+        "evidence_span": "国发制药厂目前生产的剂型包括滴眼剂、片剂、颗粒剂、散剂、酒剂等。其主要产品有“海宝”牌珍珠明目滴眼液、珍珠末、珍珠层粉、胃肠宁颗粒等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药饮片",
+        "evidence_span": "中药饮片厂主要经营中药饮片的生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DNA检测设备",
+        "evidence_span": "高盛生物主要产品包括DNA检测设备、试剂及耗材等法医DNA鉴定产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DNA检测试剂耗材",
+        "evidence_span": "高盛生物主要产品包括DNA检测设备、试剂及耗材等法医DNA鉴定产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DNA检测服务",
+        "evidence_span": "全资子公司高盛生物主要产品服务包括DNA检测设备及试剂耗材的生产和销售，以及DNA检测服务等技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超微量DNA自动提取检测工作站",
+        "evidence_span": "自主研发生产的“超微量DNA自动提取检测工作站”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医学影像设备",
+        "evidence_span": "北京香雅以外购大型医疗设备（如：PET-CT、CT、MRI、DR等大型医学影像设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "放疗设备",
+        "evidence_span": "伽玛刀、直线加速器等大型放疗设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超微量DNA自动提取检测工作站技术",
+        "evidence_span": "自主研发生产的“超微量DNA自动提取检测工作站”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "法医DNA检测全产业链技术",
+        "evidence_span": "现已形成集设备研发、耗材生产、技术服务、司法鉴定四大业务为一体，具备群体高通量测序核心技术和精细刻画精准识别刑侦技术的高新技术生物企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广东省各级公安单位",
+        "evidence_span": "常年服务于广东省各级公安单位的DNA实验室"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北部湾地区三甲、二甲以上医院",
+        "evidence_span": "与北部湾地区三甲、二甲以上医院建立了稳定的长期良好合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "是DNA鉴定检测领域实现国产替代的精细自动化装备之一"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:30:01"
+}

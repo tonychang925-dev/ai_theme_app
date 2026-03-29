@@ -1,0 +1,214 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高性能模拟",
+      "evidence_span": "公司主营业务为高性能模拟及数模混合芯片研发和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数模混合芯片研发",
+      "evidence_span": "公司主营业务为高性能模拟及数模混合芯片研发和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营业务为高性能模拟及数模混合芯片研发和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线充电芯片",
+      "evidence_span": "主要产品为无线充电芯片及LED照明驱动芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED照明驱动芯片",
+      "evidence_span": "主要产品为无线充电芯片及LED照明驱动芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TX-PCBA产品",
+      "evidence_span": "公司销售的TX-PCBA产品系根据客户需求，基于自主设计的无线充电发射端方案制造生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通用驱动芯片",
+      "evidence_span": "包括通用驱动芯片和智能驱动芯片两大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能驱动芯片",
+      "evidence_span": "包括通用驱动芯片和智能驱动芯片两大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中测后晶圆",
+      "evidence_span": "公司销售的中测后晶圆系刻有公司设计版图的产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无线充电接收端和发射端全系列功率段产品开发能力",
+      "evidence_span": "已成为国内少有的具备同时开发无线充电接收端和发射端全系列功率段产品能力的芯片设计企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "1~100W的系列化功率覆盖",
+      "evidence_span": "公司产品已经形成了1~100W的系列化功率覆盖"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "品牌A",
+      "evidence_span": "公司以品牌A为市场突破点"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欣旺达",
+      "evidence_span": "相继开拓了欣旺达、龙旗、华勤、荣耀、鼎桥、传音等知名终端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "龙旗",
+      "evidence_span": "相继开拓了欣旺达、龙旗、华勤、荣耀、鼎桥、传音等知名终端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华勤",
+      "evidence_span": "相继开拓了欣旺达、龙旗、华勤、荣耀、鼎桥、传音等知名终端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荣耀",
+      "evidence_span": "相继开拓了欣旺达、龙旗、华勤、荣耀、鼎桥、传音等知名终端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "鼎桥",
+      "evidence_span": "相继开拓了欣旺达、龙旗、华勤、荣耀、鼎桥、传音等知名终端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "传音",
+      "evidence_span": "相继开拓了欣旺达、龙旗、华勤、荣耀、鼎桥、传音等知名终端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东方",
+      "evidence_span": "正在与京东方、上海铂星（吉利集团子公司）等下游客户进行技术沟通、产品验证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海铂星（吉利集团子公司）",
+      "evidence_span": "正在与京东方、上海铂星（吉利集团子公司）等下游客户进行技术沟通、产品验证"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产芯片",
+      "evidence_span": "加快了国内终端厂商对国产芯片的验证和使用"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高性能模拟及数模混合芯片研发和销售",
+        "evidence_span": "公司主营业务为高性能模拟及数模混合芯片研发和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线充电芯片",
+        "evidence_span": "主要产品为无线充电芯片及LED照明驱动芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED照明驱动芯片",
+        "evidence_span": "主要产品为无线充电芯片及LED照明驱动芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TX-PCBA产品",
+        "evidence_span": "公司销售的TX-PCBA产品系根据客户需求，基于自主设计的无线充电发射端方案制造生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通用驱动芯片",
+        "evidence_span": "包括通用驱动芯片和智能驱动芯片两大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能驱动芯片",
+        "evidence_span": "包括通用驱动芯片和智能驱动芯片两大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中测后晶圆",
+        "evidence_span": "公司销售的中测后晶圆系刻有公司设计版图的产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无线充电接收端和发射端全系列功率段产品开发能力",
+        "evidence_span": "已成为国内少有的具备同时开发无线充电接收端和发射端全系列功率段产品能力的芯片设计企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "1~100W的系列化功率覆盖",
+        "evidence_span": "公司产品已经形成了1~100W的系列化功率覆盖"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "品牌A",
+        "evidence_span": "公司以品牌A为市场突破点"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欣旺达",
+        "evidence_span": "相继开拓了欣旺达、龙旗、华勤、荣耀、鼎桥、传音等知名终端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "龙旗",
+        "evidence_span": "相继开拓了欣旺达、龙旗、华勤、荣耀、鼎桥、传音等知名终端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华勤",
+        "evidence_span": "相继开拓了欣旺达、龙旗、华勤、荣耀、鼎桥、传音等知名终端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荣耀",
+        "evidence_span": "相继开拓了欣旺达、龙旗、华勤、荣耀、鼎桥、传音等知名终端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "鼎桥",
+        "evidence_span": "相继开拓了欣旺达、龙旗、华勤、荣耀、鼎桥、传音等知名终端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "传音",
+        "evidence_span": "相继开拓了欣旺达、龙旗、华勤、荣耀、鼎桥、传音等知名终端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东方",
+        "evidence_span": "正在与京东方、上海铂星（吉利集团子公司）等下游客户进行技术沟通、产品验证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海铂星（吉利集团子公司）",
+        "evidence_span": "正在与京东方、上海铂星（吉利集团子公司）等下游客户进行技术沟通、产品验证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "DIXON TECHNOLOGIES(INDIA)LIMITED",
+        "evidence_span": "成功开拓印度知名生产厂商DIXON TECHNOLOGIES(INDIA)LIMITED"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产芯片",
+        "evidence_span": "加快了国内终端厂商对国产芯片的验证和使用"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:36:11"
+}

@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "维生素",
+      "evidence_span": "公司主营业务所处的行业未发生变化，公司现主要产品属于维生素行业及生物保鲜剂行业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生物保鲜剂",
+      "evidence_span": "公司主营业务所处的行业未发生变化，公司现主要产品属于维生素行业及生物保鲜剂行业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球生物素主要供应商",
+      "evidence_span": "公司作为国内最早从事生物素的企业之一，是全球生物素、叶酸主要供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球叶酸主要供应商",
+      "evidence_span": "公司作为国内最早从事生物素的企业之一，是全球生物素、叶酸主要供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "生物保鲜剂国家标准主要起草单位",
+      "evidence_span": "是生物保鲜剂国家标准的主要起草单位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "浙江省食品添加剂行业龙头企业",
+      "evidence_span": "子公司新银象被评为浙江省食品添加剂行业龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级专精特新“小巨人”企业",
+      "evidence_span": "获得国家级专精特新“小巨人”企业称号"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物素",
+      "evidence_span": "公司主要产品为生物素、叶酸等维生素类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "叶酸",
+      "evidence_span": "公司主要产品为生物素、叶酸等维生素类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乳酸链球菌素",
+      "evidence_span": "乳酸链球菌素、纳他霉素、聚赖氨酸等生物保鲜剂类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纳他霉素",
+      "evidence_span": "乳酸链球菌素、纳他霉素、聚赖氨酸等生物保鲜剂类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚赖氨酸",
+      "evidence_span": "乳酸链球菌素、纳他霉素、聚赖氨酸等生物保鲜剂类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清洁标签产品",
+      "evidence_span": "清洁标签产品市场拓展取得显著成果"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TG酶",
+      "evidence_span": "清洁标签、TG酶等第三梯队产品市场培育成果显现"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蔗糖发酵物",
+      "evidence_span": "公司加快蔗糖发酵物（固态调味料）等食品配料的开发与生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物素手性内酯专利技术",
+      "evidence_span": "拥有生物素手性内酯专利技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "化学酶法合成生物素中间体内酯方法",
+      "evidence_span": "化学酶法合成生物素中间体内酯方法等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连续流催化工艺",
+      "evidence_span": "选用更加环保安全的连续流催化等新工艺路线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球跨国企业集团",
+      "evidence_span": "公司与诸多全球跨国企业集团以及国内知名饲料及养殖企业开展深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内知名饲料及养殖企业",
+      "evidence_span": "公司与诸多全球跨国企业集团以及国内知名饲料及养殖企业开展深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内外大型食品、饮料制造企业",
+      "evidence_span": "在生物保鲜剂领域，公司与国内外大型食品、饮料制造企业建立了稳定合作关系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "维生素",
+        "evidence_span": "公司主营业务所处的行业未发生变化，公司现主要产品属于维生素行业及生物保鲜剂行业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生物保鲜剂",
+        "evidence_span": "公司主营业务所处的行业未发生变化，公司现主要产品属于维生素行业及生物保鲜剂行业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球生物素主要供应商",
+        "evidence_span": "公司作为国内最早从事生物素的企业之一，是全球生物素、叶酸主要供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球叶酸主要供应商",
+        "evidence_span": "公司作为国内最早从事生物素的企业之一，是全球生物素、叶酸主要供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "生物保鲜剂国家标准主要起草单位",
+        "evidence_span": "是生物保鲜剂国家标准的主要起草单位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "浙江省食品添加剂行业龙头企业",
+        "evidence_span": "子公司新银象被评为浙江省食品添加剂行业龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级专精特新“小巨人”企业",
+        "evidence_span": "获得国家级专精特新“小巨人”企业称号"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物素",
+        "evidence_span": "公司主要产品为生物素、叶酸等维生素类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "叶酸",
+        "evidence_span": "公司主要产品为生物素、叶酸等维生素类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乳酸链球菌素",
+        "evidence_span": "乳酸链球菌素、纳他霉素、聚赖氨酸等生物保鲜剂类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纳他霉素",
+        "evidence_span": "乳酸链球菌素、纳他霉素、聚赖氨酸等生物保鲜剂类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚赖氨酸",
+        "evidence_span": "乳酸链球菌素、纳他霉素、聚赖氨酸等生物保鲜剂类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清洁标签产品",
+        "evidence_span": "清洁标签产品市场拓展取得显著成果"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TG酶",
+        "evidence_span": "清洁标签、TG酶等第三梯队产品市场培育成果显现"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蔗糖发酵物",
+        "evidence_span": "公司加快蔗糖发酵物（固态调味料）等食品配料的开发与生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物素手性内酯专利技术",
+        "evidence_span": "拥有生物素手性内酯专利技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "化学酶法合成生物素中间体内酯方法",
+        "evidence_span": "化学酶法合成生物素中间体内酯方法等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连续流催化工艺",
+        "evidence_span": "选用更加环保安全的连续流催化等新工艺路线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球跨国企业集团",
+        "evidence_span": "公司与诸多全球跨国企业集团以及国内知名饲料及养殖企业开展深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内知名饲料及养殖企业",
+        "evidence_span": "公司与诸多全球跨国企业集团以及国内知名饲料及养殖企业开展深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内外大型食品、饮料制造企业",
+        "evidence_span": "在生物保鲜剂领域，公司与国内外大型食品、饮料制造企业建立了稳定合作关系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:17:32"
+}

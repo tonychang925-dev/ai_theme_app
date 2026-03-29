@@ -1,0 +1,604 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "国产自主可控嵌入式CPU技术的研发",
+      "evidence_span": "专注于国产自主可控嵌入式CPU技术的研发与产业化"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "产业化",
+      "evidence_span": "专注于国产自主可控嵌入式CPU技术的研发与产业化"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息安全领域",
+      "evidence_span": "在信息安全领域，提供从“云”到“端”的安全芯片及量子安全芯片"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车电子",
+      "evidence_span": "在汽车电子和工业控制领域，成功实现了包括发动机控制芯片、车身控制芯片以及国内首款汽车安全气囊点火驱动芯片CCL1600B在内的多款产品的国产化替代"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业控制领域",
+      "evidence_span": "在汽车电子和工业控制领域，成功实现了包括发动机控制芯片、车身控制芯片以及国内首款汽车安全气囊点火驱动芯片CCL1600B在内的多款产品的国产化替代"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "边缘计算",
+      "evidence_span": "在边缘计算和网络通信领域，则成功研制了RAID控制芯片等产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "网络通信领域",
+      "evidence_span": "在边缘计算和网络通信领域，则成功研制了RAID控制芯片等产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产芯片设计企业",
+      "evidence_span": "国产芯片设计企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家“核高基”科技重大专项的承担单位",
+      "evidence_span": "国家“核高基”科技重大专项的承担单位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产嵌入式CPU产业化应用领先企业",
+      "evidence_span": "为国产嵌入式CPU产业化应用领先企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内汽车电子芯片的领先供应商",
+      "evidence_span": "致力于成为国内汽车电子芯片的领先供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "嵌入式CPU内核",
+      "evidence_span": "开发了8大系列40余款CPU内核"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全芯片",
+      "evidence_span": "提供从“云”到“端”的安全芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "量子安全芯片",
+      "evidence_span": "量子安全芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发动机控制芯片",
+      "evidence_span": "发动机控制芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车身控制芯片",
+      "evidence_span": "车身控制芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车安全气囊点火驱动芯片CCL1600B",
+      "evidence_span": "国内首款汽车安全气囊点火驱动芯片CCL1600B"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "RAID控制芯片",
+      "evidence_span": "成功研制了RAID控制芯片等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车域控制芯片",
+      "evidence_span": "汽车域控制芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "辅助驾驶处理芯片",
+      "evidence_span": "辅助驾驶处理芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主动降噪专用DSP芯片",
+      "evidence_span": "主动降噪专用DSP芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力总成控制芯片",
+      "evidence_span": "动力总成控制芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源电池管理芯片",
+      "evidence_span": "新能源电池管理芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线控底盘芯片",
+      "evidence_span": "线控底盘芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车身和网关控制芯片",
+      "evidence_span": "车身和网关控制芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车联网安全芯片",
+      "evidence_span": "车联网安全芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仪表及小节点控制芯片",
+      "evidence_span": "仪表及小节点控制芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全气囊芯片",
+      "evidence_span": "安全气囊芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数模混合信号类芯片",
+      "evidence_span": "数模混合信号类芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能传感芯片",
+      "evidence_span": "智能传感芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云安全芯片",
+      "evidence_span": "云安全芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "量子安全芯片A5Q",
+      "evidence_span": "终端应用量子安全芯片A5Q"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "量子安全芯片CCP907TQ",
+      "evidence_span": "云和服务器应用量子安全芯片CCP907TQ"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "量子安全模组产品",
+      "evidence_span": "量子安全模组产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MCore指令集技术",
+      "evidence_span": "技术基础涵盖MCore"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PowerPC指令集技术",
+      "evidence_span": "PowerPC"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "RISC-V指令集技术",
+      "evidence_span": "开源的RISC-V三种指令集"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SoC芯片设计平台",
+      "evidence_span": "SoC芯片设计平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速加解密算法",
+      "evidence_span": "集成了多种高速加解密算法"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "整车客户包括比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞",
+      "evidence_span": "奇瑞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "吉利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽",
+      "evidence_span": "上汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安",
+      "evidence_span": "长安"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风",
+      "evidence_span": "东风"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "埃泰克",
+      "evidence_span": "埃泰克"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "弗迪科技",
+      "evidence_span": "弗迪科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安波福",
+      "evidence_span": "安波福"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "潍柴动力",
+      "evidence_span": "潍柴动力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "武汉菱电",
+      "evidence_span": "武汉菱电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奥易克斯",
+      "evidence_span": "奥易克斯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深信服",
+      "evidence_span": "深信服"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "信安世纪",
+      "evidence_span": "信安世纪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "格尔软件",
+      "evidence_span": "格尔软件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "国家电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中安网脉",
+      "evidence_span": "中安网脉"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉大正元",
+      "evidence_span": "吉大正元"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中星电子",
+      "evidence_span": "中星电子"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化替代",
+      "evidence_span": "推动高端芯片的自主可控和国产化替代进程"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车MCU芯片国产化",
+      "evidence_span": "引领汽车MCU芯片国产化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信息安全芯片硬件化",
+      "evidence_span": "受益信息安全芯片硬件化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "国产自主可控嵌入式CPU技术的研发与产业化",
+        "evidence_span": "专注于国产自主可控嵌入式CPU技术的研发与产业化"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息安全领域",
+        "evidence_span": "在信息安全领域，提供从“云”到“端”的安全芯片及量子安全芯片"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车电子和工业控制领域",
+        "evidence_span": "在汽车电子和工业控制领域，成功实现了包括发动机控制芯片、车身控制芯片以及国内首款汽车安全气囊点火驱动芯片CCL1600B在内的多款产品的国产化替代"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "边缘计算和网络通信领域",
+        "evidence_span": "在边缘计算和网络通信领域，则成功研制了RAID控制芯片等产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产芯片设计企业",
+        "evidence_span": "国产芯片设计企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家“核高基”科技重大专项的承担单位",
+        "evidence_span": "国家“核高基”科技重大专项的承担单位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产嵌入式CPU产业化应用领先企业",
+        "evidence_span": "为国产嵌入式CPU产业化应用领先企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内汽车电子芯片的领先供应商",
+        "evidence_span": "致力于成为国内汽车电子芯片的领先供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "嵌入式CPU内核",
+        "evidence_span": "开发了8大系列40余款CPU内核"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全芯片",
+        "evidence_span": "提供从“云”到“端”的安全芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "量子安全芯片",
+        "evidence_span": "量子安全芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发动机控制芯片",
+        "evidence_span": "发动机控制芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车身控制芯片",
+        "evidence_span": "车身控制芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车安全气囊点火驱动芯片CCL1600B",
+        "evidence_span": "国内首款汽车安全气囊点火驱动芯片CCL1600B"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "RAID控制芯片",
+        "evidence_span": "成功研制了RAID控制芯片等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车域控制芯片",
+        "evidence_span": "汽车域控制芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "辅助驾驶处理芯片",
+        "evidence_span": "辅助驾驶处理芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主动降噪专用DSP芯片",
+        "evidence_span": "主动降噪专用DSP芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力总成控制芯片",
+        "evidence_span": "动力总成控制芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源电池管理芯片",
+        "evidence_span": "新能源电池管理芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线控底盘芯片",
+        "evidence_span": "线控底盘芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车身和网关控制芯片",
+        "evidence_span": "车身和网关控制芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车联网安全芯片",
+        "evidence_span": "车联网安全芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仪表及小节点控制芯片",
+        "evidence_span": "仪表及小节点控制芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全气囊芯片",
+        "evidence_span": "安全气囊芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数模混合信号类芯片",
+        "evidence_span": "数模混合信号类芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能传感芯片",
+        "evidence_span": "智能传感芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云安全芯片",
+        "evidence_span": "云安全芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "量子安全芯片A5Q",
+        "evidence_span": "终端应用量子安全芯片A5Q"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "量子安全芯片CCP907TQ",
+        "evidence_span": "云和服务器应用量子安全芯片CCP907TQ"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "量子安全模组产品",
+        "evidence_span": "量子安全模组产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MCore指令集技术",
+        "evidence_span": "技术基础涵盖MCore"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PowerPC指令集技术",
+        "evidence_span": "PowerPC"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "RISC-V指令集技术",
+        "evidence_span": "开源的RISC-V三种指令集"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SoC芯片设计平台",
+        "evidence_span": "SoC芯片设计平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速加解密算法",
+        "evidence_span": "集成了多种高速加解密算法"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "整车客户包括比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞",
+        "evidence_span": "奇瑞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "吉利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽",
+        "evidence_span": "上汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安",
+        "evidence_span": "长安"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风",
+        "evidence_span": "东风"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "埃泰克",
+        "evidence_span": "埃泰克"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "弗迪科技",
+        "evidence_span": "弗迪科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安波福",
+        "evidence_span": "安波福"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "潍柴动力",
+        "evidence_span": "潍柴动力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "武汉菱电",
+        "evidence_span": "武汉菱电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奥易克斯",
+        "evidence_span": "奥易克斯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深信服",
+        "evidence_span": "深信服"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "信安世纪",
+        "evidence_span": "信安世纪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "格尔软件",
+        "evidence_span": "格尔软件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "国家电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中安网脉",
+        "evidence_span": "中安网脉"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉大正元",
+        "evidence_span": "吉大正元"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中星电子",
+        "evidence_span": "中星电子"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化替代",
+        "evidence_span": "推动高端芯片的自主可控和国产化替代进程"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车MCU芯片国产化",
+        "evidence_span": "引领汽车MCU芯片国产化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信息安全芯片硬件化",
+        "evidence_span": "受益信息安全芯片硬件化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:46:53"
+}

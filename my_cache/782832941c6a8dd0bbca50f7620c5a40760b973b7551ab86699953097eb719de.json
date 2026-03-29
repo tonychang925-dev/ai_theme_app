@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "6bbf19a91640", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述住房城乡建设部负责人关于房屋养老金账户的说明，这是一个具体事件（政策解释）。但它涉及建筑维护资金机制，可能包含建筑设计中的维护或财务知识，因此混合了事件和潜在知识。"}}

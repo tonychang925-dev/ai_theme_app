@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:31:43", "result": {"chunk_id": "1f7603457673", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述伊朗军方计划打击美军基地、使用导弹数量的言论，以及美国国防官员关于导弹防御系统参与以色列防空行动的消息，属于具体事件和新闻动态，不包含导弹题材的静态知识。"}}

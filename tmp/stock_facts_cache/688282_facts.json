@@ -1,0 +1,489 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "惯性导航系统研发",
+      "evidence_span": "公司专注于惯性导航系统和核心部件等产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "惯性导航系统生产",
+      "evidence_span": "公司专注于惯性导航系统和核心部件等产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "惯性导航系统销售",
+      "evidence_span": "公司专注于惯性导航系统和核心部件等产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "惯性导航系统核心部件研发",
+      "evidence_span": "公司主要从事惯性导航系统及其核心部件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "惯性导航系统核心部件生产",
+      "evidence_span": "公司主要从事惯性导航系统及其核心部件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "惯性导航系统核心部件销售",
+      "evidence_span": "公司主要从事惯性导航系统及其核心部件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "导航",
+      "evidence_span": "基于自有技术为客户提供导航、制导与控制系统相关技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "制导",
+      "evidence_span": "基于自有技术为客户提供导航、制导与控制系统相关技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "控制系统相关技术服务",
+      "evidence_span": "基于自有技术为客户提供导航、制导与控制系统相关技术服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "惯性导航系统主要供货单位",
+      "evidence_span": "成为陆军和空军多型现役、定型装备中惯性导航系统的主要供货单位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "远程制导弹药惯性导航系统领域先进企业",
+      "evidence_span": "在远程制导弹药用惯性导航系统领域具有先进水平"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "惯性导航系统",
+      "evidence_span": "公司的主要产品及服务包括惯性导航系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "惯性导航系统核心部件",
+      "evidence_span": "公司的主要产品及服务包括惯性导航系统核心部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他零部件",
+      "evidence_span": "公司的主要产品及服务包括其他零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "技术服务",
+      "evidence_span": "公司的主要产品及服务包括技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "远程制导弹药惯性导航系统",
+      "evidence_span": "基于公司核心技术生产的惯性导航系统已批量用于远程制导弹药等武器装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "**51型惯性导航系统",
+      "evidence_span": "主要销售的为军方已定型的**51型和**51A型惯性导航系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "**51A型惯性导航系统",
+      "evidence_span": "主要销售的为军方已定型的**51型和**51A型惯性导航系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无人机导航产品",
+      "evidence_span": "研发出适用于无人机、智能采煤机等各种应用场景的定位导航产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能采煤机导航产品",
+      "evidence_span": "研发出适用于无人机、智能采煤机等各种应用场景的定位导航产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DH-201J惯性测量系统",
+      "evidence_span": "DH-201J惯性测量系统已批量交付航天某公司"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光纤陀螺惯性导航系统温度标定技术",
+      "evidence_span": "解决了光纤陀螺惯性导航系统温度标定"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统误差精确建模与补偿技术",
+      "evidence_span": "系统误差精确建模与补偿"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光纤陀螺惯性导航系统参数稳定性技术",
+      "evidence_span": "光纤陀螺惯性导航系统参数稳定性"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "动态传递对准技术",
+      "evidence_span": "动态传递对准"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "方位装订对准技术",
+      "evidence_span": "方位装订对准"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高动态惯性/卫星（GNSS）组合导航技术",
+      "evidence_span": "高动态惯性/卫星（GNSS）组合导航"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高动态载体导航控制技术",
+      "evidence_span": "公司自主研发的高动态载体导航控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多种传感器误差精确建模与补偿技术",
+      "evidence_span": "多种传感器误差精确建模与补偿技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "动基座快速传递对准技术",
+      "evidence_span": "动基座快速传递对准技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SINS/GNSS多源信息融合技术",
+      "evidence_span": "SINS/GNSS多源信息融合技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂环境下载体导航抗干扰技术",
+      "evidence_span": "复杂环境下载体导航抗干扰技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三轴光纤陀螺及IF电路、导航计算机的一体化新型架构设计",
+      "evidence_span": "采用三轴光纤陀螺及IF电路、导航计算机的一体化新型架构设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光纤陀螺仪产品系列化与产品化",
+      "evidence_span": "完成公司自研光纤陀螺仪产品的系列化与产品化工作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "远程制导弹药一体化制导组件高集成化设计",
+      "evidence_span": "远程制导弹药一体化制导组件完成了高集成化设计工作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于非线性和智能控制等制导控制新算法",
+      "evidence_span": "公司的制导控制算法技术采用基于非线性和智能控制等制导控制新算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新型小体积传动结构舵机设计",
+      "evidence_span": "公司拓展并设计了新型小体积传动结构舵机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "弹载控制系统设计",
+      "evidence_span": "公司拓展并设计了弹载控制系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "前视红外导引头技术",
+      "evidence_span": "新研发的前视红外导引头采用基于符合特征的稳定目标识别与深度融合神经网络目标检测与识别技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光纤陀螺仪温度补偿技术",
+      "evidence_span": "公司深入开展光纤陀螺仪温度补偿技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大过载、高动态环境下微型组合导航装置",
+      "evidence_span": "公司积极拓展大过载、高动态环境下具备空中对准能力的微型组合导航装置"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "小型MEMS惯性导航系统的动基座传递对准技术",
+      "evidence_span": "公司开发了适用于小型MEMS惯性导航系统的动基座传递对准技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陆军",
+      "evidence_span": "成为陆军和空军多型现役、定型装备中惯性导航系统的主要供货单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "空军",
+      "evidence_span": "成为陆军和空军多型现役、定型装备中惯性导航系统的主要供货单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各军兵种",
+      "evidence_span": "持续参与各军兵种新型武器弹药的研发配套工作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "兵器集团",
+      "evidence_span": "公司第一大客户为兵器集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航天某院",
+      "evidence_span": "共同参与航天某院的“慧眼行动”项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航天某公司",
+      "evidence_span": "DH-201J惯性测量系统已批量交付航天某公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化替代",
+      "evidence_span": "国产化替代需求强烈"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "惯性导航系统研发",
+        "evidence_span": "公司专注于惯性导航系统和核心部件等产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "惯性导航系统生产",
+        "evidence_span": "公司专注于惯性导航系统和核心部件等产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "惯性导航系统销售",
+        "evidence_span": "公司专注于惯性导航系统和核心部件等产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "惯性导航系统核心部件研发",
+        "evidence_span": "公司主要从事惯性导航系统及其核心部件的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "惯性导航系统核心部件生产",
+        "evidence_span": "公司主要从事惯性导航系统及其核心部件的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "惯性导航系统核心部件销售",
+        "evidence_span": "公司主要从事惯性导航系统及其核心部件的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "导航、制导与控制系统相关技术服务",
+        "evidence_span": "基于自有技术为客户提供导航、制导与控制系统相关技术服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "惯性导航系统主要供货单位",
+        "evidence_span": "成为陆军和空军多型现役、定型装备中惯性导航系统的主要供货单位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "远程制导弹药惯性导航系统领域先进企业",
+        "evidence_span": "在远程制导弹药用惯性导航系统领域具有先进水平"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "惯性导航系统",
+        "evidence_span": "公司的主要产品及服务包括惯性导航系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "惯性导航系统核心部件",
+        "evidence_span": "公司的主要产品及服务包括惯性导航系统核心部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他零部件",
+        "evidence_span": "公司的主要产品及服务包括其他零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "技术服务",
+        "evidence_span": "公司的主要产品及服务包括技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "远程制导弹药惯性导航系统",
+        "evidence_span": "基于公司核心技术生产的惯性导航系统已批量用于远程制导弹药等武器装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "**51型惯性导航系统",
+        "evidence_span": "主要销售的为军方已定型的**51型和**51A型惯性导航系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "**51A型惯性导航系统",
+        "evidence_span": "主要销售的为军方已定型的**51型和**51A型惯性导航系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无人机导航产品",
+        "evidence_span": "研发出适用于无人机、智能采煤机等各种应用场景的定位导航产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能采煤机导航产品",
+        "evidence_span": "研发出适用于无人机、智能采煤机等各种应用场景的定位导航产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DH-201J惯性测量系统",
+        "evidence_span": "DH-201J惯性测量系统已批量交付航天某公司"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光纤陀螺惯性导航系统温度标定技术",
+        "evidence_span": "解决了光纤陀螺惯性导航系统温度标定"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统误差精确建模与补偿技术",
+        "evidence_span": "系统误差精确建模与补偿"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光纤陀螺惯性导航系统参数稳定性技术",
+        "evidence_span": "光纤陀螺惯性导航系统参数稳定性"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "动态传递对准技术",
+        "evidence_span": "动态传递对准"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "方位装订对准技术",
+        "evidence_span": "方位装订对准"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高动态惯性/卫星（GNSS）组合导航技术",
+        "evidence_span": "高动态惯性/卫星（GNSS）组合导航"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高动态载体导航控制技术",
+        "evidence_span": "公司自主研发的高动态载体导航控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多种传感器误差精确建模与补偿技术",
+        "evidence_span": "多种传感器误差精确建模与补偿技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "动基座快速传递对准技术",
+        "evidence_span": "动基座快速传递对准技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SINS/GNSS多源信息融合技术",
+        "evidence_span": "SINS/GNSS多源信息融合技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂环境下载体导航抗干扰技术",
+        "evidence_span": "复杂环境下载体导航抗干扰技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三轴光纤陀螺及IF电路、导航计算机的一体化新型架构设计",
+        "evidence_span": "采用三轴光纤陀螺及IF电路、导航计算机的一体化新型架构设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光纤陀螺仪产品系列化与产品化",
+        "evidence_span": "完成公司自研光纤陀螺仪产品的系列化与产品化工作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "远程制导弹药一体化制导组件高集成化设计",
+        "evidence_span": "远程制导弹药一体化制导组件完成了高集成化设计工作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于非线性和智能控制等制导控制新算法",
+        "evidence_span": "公司的制导控制算法技术采用基于非线性和智能控制等制导控制新算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新型小体积传动结构舵机设计",
+        "evidence_span": "公司拓展并设计了新型小体积传动结构舵机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "弹载控制系统设计",
+        "evidence_span": "公司拓展并设计了弹载控制系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "前视红外导引头技术",
+        "evidence_span": "新研发的前视红外导引头采用基于符合特征的稳定目标识别与深度融合神经网络目标检测与识别技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光纤陀螺仪温度补偿技术",
+        "evidence_span": "公司深入开展光纤陀螺仪温度补偿技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大过载、高动态环境下微型组合导航装置",
+        "evidence_span": "公司积极拓展大过载、高动态环境下具备空中对准能力的微型组合导航装置"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "小型MEMS惯性导航系统的动基座传递对准技术",
+        "evidence_span": "公司开发了适用于小型MEMS惯性导航系统的动基座传递对准技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陆军",
+        "evidence_span": "成为陆军和空军多型现役、定型装备中惯性导航系统的主要供货单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "空军",
+        "evidence_span": "成为陆军和空军多型现役、定型装备中惯性导航系统的主要供货单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各军兵种",
+        "evidence_span": "持续参与各军兵种新型武器弹药的研发配套工作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "兵器集团",
+        "evidence_span": "公司第一大客户为兵器集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航天某院",
+        "evidence_span": "共同参与航天某院的“慧眼行动”项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航天某公司",
+        "evidence_span": "DH-201J惯性测量系统已批量交付航天某公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化替代",
+        "evidence_span": "国产化替代需求强烈"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:53:36"
+}

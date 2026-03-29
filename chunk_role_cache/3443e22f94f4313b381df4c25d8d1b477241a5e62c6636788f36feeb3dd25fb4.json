@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:58:48", "result": {"chunk_id": "c2b4029c113f", "label": "strict_knowledge", "confidence": 0.99, "ontology_value": "high", "reason": "该段落定义了可控核聚变的概念，并详细说明了其约束方式（磁约束、惯性约束和重力约束），属于纯静态知识，无事件信息。"}}

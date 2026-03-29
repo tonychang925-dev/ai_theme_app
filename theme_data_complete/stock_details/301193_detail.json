@@ -1,0 +1,170 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "amount": 172757384.4,
+    "changeCount": -0.08,
+    "createBy": "1",
+    "createTime": "2024-07-05 11:29:47",
+    "detail": "<p><span style=\"font-weight: bold;\">1、公司主营</span></p>\n<p>家联科技主要从事塑料制品及生物全降解制品的研发、生产与销售。公司主要产品包括餐饮具、耐用性家居用品等多种产品，广泛应 用于家居、快消、餐饮、航空等领域，主要的客户包括海外的亚马逊、宜家、沃尔玛、好市多，国内客户包 括蜜雪冰城、奈雪的茶、盒马等。&nbsp;</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2101_20221021162347_7e9527ddfa7e90fa.png\" alt=\"\" width=\"1312\" height=\"557\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">2、主营数据</span></p>\n<p>2021 年公司总营收 12.34 亿元，其中塑料制品占比 86.44%，生物全降解材料制品占比 7.44%，纸制品及其他占比 6.11%</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2102_20221021162538_de7ec14510cf8d99.png\" alt=\"\" width=\"670\" height=\"514\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">3、降解材料PLA（聚乳酸）布局</span></p>\n<p>公司目前在聚乳酸材料改性领域取得了国内领先地位，获得多项以聚乳酸为基础的改性生物降解材料制品相关专利并已开展规模化生产。</p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">4、布局其他潜力材料</span></p>\n<p>家联科技亦积极拓展 PLA 以外的全降解材料的应用。<span style=\"font-weight: bold;\">家得宝</span>主营纸制品、植物淀粉类包装容器研发、制造、销售，在环保餐具领 域深耕多年，与目前家联科技主要的拓展方向即全生物降解塑料方向有所不同。公司通过本次收购，公司可 以快速切入植物纤维类型的环保材料，加快在全降解产品领域的全面布局。</p>\n<p><img src=\"https://cdn.upchinaproduct.com/theme/driveLogicImgs/2104_20221021163341_2a433172802aecd3.png\" alt=\"\" width=\"1345\" height=\"266\" /></p>\n<p>&nbsp;</p>\n<p><span style=\"font-weight: bold;\">5、风险提示</span></p>\n<p>原材料价格大幅波动，技术路径发生重大变化公司未跟随，终端需求疲软。</p>",
+    "firstLetter": "JLKJ",
+    "high": 27.91,
+    "importance": 1,
+    "isDone": null,
+    "isSelf": null,
+    "low": 26.39,
+    "marketValue": 5273723745.5,
+    "name": "家联科技",
+    "pctChg": -0.3,
+    "price": 26.94,
+    "recent10BlueCount": 0,
+    "recent10RedCount": 0,
+    "recent10YellowCount": 0,
+    "recent365LimitUpCount": 2,
+    "recent60Change": 34.3,
+    "recentChange": 13.05,
+    "remark": "塑料制品龙头，战略布局降解材料",
+    "status": 1,
+    "stockId": "301193",
+    "stockLightspots": [
+      {
+        "bizKey": "11544",
+        "content": "家联科技塑料制品龙头，战略布局降解材料",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11544,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11545",
+        "content": "家联科技塑料制品龙头，可降解赛道优质掘金者",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11545,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11546",
+        "content": "全降解产品优势领先，内外销共驱成长",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11546,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11547",
+        "content": "家联科技高端塑料制品龙头，生物降解塑料打开新发展极",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11547,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11548",
+        "content": "家联科技积淀深厚行业领先，产能扩张助力业绩释放",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11548,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11549",
+        "content": "全降解制品厚积薄发，内外销并举成长可期",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11549,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11550",
+        "content": "家联科技塑料餐具优质制造商，生物降解制品前景广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11550,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11551",
+        "content": "家联科技塑料餐饮具出口高景气，家联科技优势再梳理",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11551,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11552",
+        "content": "家联科技三季度业绩超预期，降解材料产能储备充足长期增长无虞",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11552,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11553",
+        "content": "家联科技营收净利均超预期，可降解制品前景广阔",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11553,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11554",
+        "content": "家联科技产能储备充足，迎接内外需共振",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11554,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11555",
+        "content": "家联科技内外销需求旺盛，盈利能力持续修复",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11555,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11556",
+        "content": "家联科技拟投建甘蔗可降解制品项目，巩固环保餐具优势",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11556,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11557",
+        "content": "家联科技拟发行转债建设甘蔗渣项目，夯实产能优势",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11557,
+        "stockId": "301193",
+        "updateTime": null
+      },
+      {
+        "bizKey": "11558",
+        "content": "家联科技22Q3收入延续高增，归母净利率达11.0%",
+        "createTime": "2023-03-04 17:04:51",
+        "detail": null,
+        "lightspotId": 11558,
+        "stockId": "301193",
+        "updateTime": null
+      }
+    ],
+    "updateBy": null,
+    "updateTime": "2026-02-24 13:07:03",
+    "vol": 63720.68
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "55d6572bfef5", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落混有事件（西门子收到取消限制通知）和知识（西门子EDA是全球三大EDA公司之一），边界不清，可能含稳定知识但夹带事件动态。"}}

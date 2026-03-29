@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "edaf4fc579b3", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落主要描述特斯拉发布会事件（时间、地点、机器人跳舞），是具体的时间性动态，没有静态知识内容。"}}

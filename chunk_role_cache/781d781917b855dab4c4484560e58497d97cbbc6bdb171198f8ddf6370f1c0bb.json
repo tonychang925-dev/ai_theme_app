@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:24:22", "result": {"chunk_id": "eac5c6a7f43f", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述包钢股份公告的稀土精矿价格调整事件，类似chunk_id 0c1456a1b26b，包含具体日期、价格和环比变化，属于公司动态。"}}

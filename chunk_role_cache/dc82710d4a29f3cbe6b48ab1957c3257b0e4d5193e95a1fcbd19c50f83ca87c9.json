@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "69143b15a8a0", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到北京市发布的《北京具身智能科技创新与产业培育行动计划》，涉及政策事件，但内容包含推动具身智能机器人应用等可能用于题材知识构建的稳定信息，因此归类为candidate_mixed。"}}

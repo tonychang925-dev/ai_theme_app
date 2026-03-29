@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "4d47da5296ea", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落涉及国家广电总局的发布会内容，提到了行业产量和质量共识，可能隐含政策或行业结构知识，但混合了具体时间、事件和作品示例，需要进一步裁决。"}}

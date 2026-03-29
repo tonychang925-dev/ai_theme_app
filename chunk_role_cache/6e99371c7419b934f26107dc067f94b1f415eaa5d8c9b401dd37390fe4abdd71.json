@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "39413fbbd077", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落包含应用材料的财报发布和中微公司的法律诉讼，两者都是具体事件或新闻，没有提供半导体设备的稳定知识。"}}

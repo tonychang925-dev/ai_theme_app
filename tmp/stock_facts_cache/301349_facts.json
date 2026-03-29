@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "负极包覆材料",
+      "evidence_span": "公司目前以负极包覆材料为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "沥青基碳纤维",
+      "evidence_span": "制成沥青基碳纤维"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "负极包覆材料行业领先企业",
+      "evidence_span": "公司为负极包覆材料行业领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "碳基新型材料供应商",
+      "evidence_span": "致力于打造成打造碳基新型材料供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "负极包覆材料",
+      "evidence_span": "产品主要有两大应用领域，一是作为负极包覆材料用于锂电池负极材料的生产加工"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "沥青基碳纤维",
+      "evidence_span": "制成沥青基碳纤维"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "橡胶增塑剂",
+      "evidence_span": "会产生副产品橡胶增塑剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "裂解萘馏分",
+      "evidence_span": "副产品裂解耐馏分自行对外销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳纤维可纺沥青",
+      "evidence_span": "实现碳纤维可纺沥青营收"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高温包覆材料",
+      "evidence_span": "高温产品享受技术溢价"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "贝特瑞",
+      "evidence_span": "公司与贝特瑞、杉杉、江西紫宸（璞泰来）、凯金能源合作历史长达5-10年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杉杉",
+      "evidence_span": "公司与贝特瑞、杉杉、江西紫宸（璞泰来）、凯金能源合作历史长达5-10年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江西紫宸（璞泰来）",
+      "evidence_span": "公司与贝特瑞、杉杉、江西紫宸（璞泰来）、凯金能源合作历史长达5-10年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "凯金能源",
+      "evidence_span": "公司与贝特瑞、杉杉、江西紫宸（璞泰来）、凯金能源合作历史长达5-10年"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "快充技术推广",
+      "evidence_span": "受益快充技术推广"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "负极包覆材料",
+        "evidence_span": "公司目前以负极包覆材料为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "沥青基碳纤维",
+        "evidence_span": "制成沥青基碳纤维"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "负极包覆材料行业领先企业",
+        "evidence_span": "公司为负极包覆材料行业领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "碳基新型材料供应商",
+        "evidence_span": "致力于打造成打造碳基新型材料供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "负极包覆材料",
+        "evidence_span": "产品主要有两大应用领域，一是作为负极包覆材料用于锂电池负极材料的生产加工"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "沥青基碳纤维",
+        "evidence_span": "制成沥青基碳纤维"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "橡胶增塑剂",
+        "evidence_span": "会产生副产品橡胶增塑剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "裂解萘馏分",
+        "evidence_span": "副产品裂解耐馏分自行对外销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳纤维可纺沥青",
+        "evidence_span": "实现碳纤维可纺沥青营收"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高温包覆材料",
+        "evidence_span": "高温产品享受技术溢价"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "贝特瑞",
+        "evidence_span": "公司与贝特瑞、杉杉、江西紫宸（璞泰来）、凯金能源合作历史长达5-10年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杉杉",
+        "evidence_span": "公司与贝特瑞、杉杉、江西紫宸（璞泰来）、凯金能源合作历史长达5-10年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江西紫宸（璞泰来）",
+        "evidence_span": "公司与贝特瑞、杉杉、江西紫宸（璞泰来）、凯金能源合作历史长达5-10年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "凯金能源",
+        "evidence_span": "公司与贝特瑞、杉杉、江西紫宸（璞泰来）、凯金能源合作历史长达5-10年"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "快充技术推广",
+        "evidence_span": "受益快充技术推广"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:27:28"
+}

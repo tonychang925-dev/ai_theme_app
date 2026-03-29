@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:00:44", "result": {"span_uid": "39fbb496f3fc", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特定事件中伊朗弹道导弹发射器和导弹的具体损毁数量，属于一次性事件信息，无法形成稳定、可独立理解的题材知识块。"}}

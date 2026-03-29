@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "bca926ccea5e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了1X Technologies发布双足人形机器人原型NEO Beta的事件，包含日期和公司动态。但同时，它提供了关于该机器人的功能特点（胜任多种家务任务，如整理餐具、递送物品、泡咖啡），这些是可用于人形机器人题材本体构建的稳定知识，因此混合了事件和知识。"}}

@@ -1,0 +1,99 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "城商行业务",
+      "evidence_span": "坚守城商行市场定位"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "两岸金融业务",
+      "evidence_span": "厦门银行深耕“两岸金融”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "台商业务",
+      "evidence_span": "全国首家成立台商业务部的银行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中小业务",
+      "evidence_span": "聚焦中小"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "台资背景银行",
+      "evidence_span": "台资背景"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城商行",
+      "evidence_span": "坚守城商行市场定位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贷款及垫款",
+      "evidence_span": "贷款及垫款总额2,024.53亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "吸收存款",
+      "evidence_span": "吸收存款总额1,993.25亿元"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "两岸金融",
+      "evidence_span": "厦门银行深耕“两岸金融”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "城商行业务",
+        "evidence_span": "坚守城商行市场定位"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "两岸金融业务",
+        "evidence_span": "厦门银行深耕“两岸金融”"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "台商业务",
+        "evidence_span": "全国首家成立台商业务部的银行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中小业务",
+        "evidence_span": "聚焦中小"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "台资背景银行",
+        "evidence_span": "台资背景"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城商行",
+        "evidence_span": "坚守城商行市场定位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贷款及垫款",
+        "evidence_span": "贷款及垫款总额2,024.53亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "吸收存款",
+        "evidence_span": "吸收存款总额1,993.25亿元"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "两岸金融",
+        "evidence_span": "厦门银行深耕“两岸金融”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:16:41"
+}

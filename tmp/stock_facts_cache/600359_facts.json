@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "乳制品加工",
+      "evidence_span": "公司主要发展产业包括：乳制品加工、种业以及甘草深加工产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "种业",
+      "evidence_span": "公司主要发展产业包括：乳制品加工、种业以及甘草深加工产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "甘草深加工产业",
+      "evidence_span": "公司主要发展产业包括：乳制品加工、种业以及甘草深加工产业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "液态奶生产企业",
+      "evidence_span": "新疆较大的液态奶、皮棉及种子生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "皮棉生产企业",
+      "evidence_span": "新疆较大的液态奶、皮棉及种子生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "种子生产企业",
+      "evidence_span": "新疆较大的液态奶、皮棉及种子生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液态奶",
+      "evidence_span": "液态奶采用以销定产生产模式"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "奶粉",
+      "evidence_span": "奶粉采用以销定产生产模式与存货生产模式相结合"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "棉种",
+      "evidence_span": "特别是棉种行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "皮棉",
+      "evidence_span": "皮棉作为棉种加工副产品而产生"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甘草浸膏",
+      "evidence_span": "新农甘草的主要产品为甘草浸膏、甘草浸膏粉、甘草酸单铵盐、甘草霜、甘草酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甘草浸膏粉",
+      "evidence_span": "新农甘草的主要产品为甘草浸膏、甘草浸膏粉、甘草酸单铵盐、甘草霜、甘草酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甘草酸单铵盐",
+      "evidence_span": "新农甘草的主要产品为甘草浸膏、甘草浸膏粉、甘草酸单铵盐、甘草霜、甘草酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甘草霜",
+      "evidence_span": "新农甘草的主要产品为甘草浸膏、甘草浸膏粉、甘草酸单铵盐、甘草霜、甘草酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甘草酸",
+      "evidence_span": "新农甘草的主要产品为甘草浸膏、甘草浸膏粉、甘草酸单铵盐、甘草霜、甘草酸"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "巴氏杀菌产品技术",
+      "evidence_span": "围绕巴氏杀菌产品、低温酸奶等产品进行产品升级的高端化发展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低温酸奶技术",
+      "evidence_span": "围绕巴氏杀菌产品、低温酸奶等产品进行产品升级的高端化发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "农业产业化",
+      "evidence_span": "公司依托区域农业产业资源优势，以农业产业化为导向"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "乳制品加工",
+        "evidence_span": "公司主要发展产业包括：乳制品加工、种业以及甘草深加工产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "种业",
+        "evidence_span": "公司主要发展产业包括：乳制品加工、种业以及甘草深加工产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "甘草深加工产业",
+        "evidence_span": "公司主要发展产业包括：乳制品加工、种业以及甘草深加工产业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "液态奶生产企业",
+        "evidence_span": "新疆较大的液态奶、皮棉及种子生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "皮棉生产企业",
+        "evidence_span": "新疆较大的液态奶、皮棉及种子生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "种子生产企业",
+        "evidence_span": "新疆较大的液态奶、皮棉及种子生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液态奶",
+        "evidence_span": "液态奶采用以销定产生产模式"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "奶粉",
+        "evidence_span": "奶粉采用以销定产生产模式与存货生产模式相结合"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "棉种",
+        "evidence_span": "特别是棉种行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "皮棉",
+        "evidence_span": "皮棉作为棉种加工副产品而产生"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甘草浸膏",
+        "evidence_span": "新农甘草的主要产品为甘草浸膏、甘草浸膏粉、甘草酸单铵盐、甘草霜、甘草酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甘草浸膏粉",
+        "evidence_span": "新农甘草的主要产品为甘草浸膏、甘草浸膏粉、甘草酸单铵盐、甘草霜、甘草酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甘草酸单铵盐",
+        "evidence_span": "新农甘草的主要产品为甘草浸膏、甘草浸膏粉、甘草酸单铵盐、甘草霜、甘草酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甘草霜",
+        "evidence_span": "新农甘草的主要产品为甘草浸膏、甘草浸膏粉、甘草酸单铵盐、甘草霜、甘草酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甘草酸",
+        "evidence_span": "新农甘草的主要产品为甘草浸膏、甘草浸膏粉、甘草酸单铵盐、甘草霜、甘草酸"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "巴氏杀菌产品技术",
+        "evidence_span": "围绕巴氏杀菌产品、低温酸奶等产品进行产品升级的高端化发展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低温酸奶技术",
+        "evidence_span": "围绕巴氏杀菌产品、低温酸奶等产品进行产品升级的高端化发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "农业产业化",
+        "evidence_span": "公司依托区域农业产业资源优势，以农业产业化为导向"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:02:28"
+}

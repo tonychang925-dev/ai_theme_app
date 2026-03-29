@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药产业链",
+      "evidence_span": "公司已建立了较完善的医药产业链"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电材料产业",
+      "evidence_span": "公司加速布局锂电池材料产业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "甲硝唑原料药生产企业",
+      "evidence_span": "国内最大的甲硝唑原料药生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "硝基咪唑类抗菌原料药及中间体主要供应商",
+      "evidence_span": "成为全球硝基咪唑类抗菌原料药及中间体的主要供应商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "抗疱疹病毒原料药及中间体主要供应商",
+      "evidence_span": "抗疱疹病毒原料药及中间体的主要供应商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "青霉素类抗菌药物中间体主要供应商",
+      "evidence_span": "青霉素类抗菌药物中间体的主要供应商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "六氟磷酸锂生产企业",
+      "evidence_span": "公司是国内最早工业化批量生产六氟磷酸锂的企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甲硝唑原料药",
+      "evidence_span": "甲硝唑原料药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "2-甲基-5-硝基咪唑",
+      "evidence_span": "2-甲基-5-硝基咪唑"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乙二醛",
+      "evidence_span": "乙二醛"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乙醛酸",
+      "evidence_span": "乙醛酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鸟嘌呤",
+      "evidence_span": "鸟嘌呤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "六氟磷酸锂",
+      "evidence_span": "六氟磷酸锂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阿昔洛韦原料药",
+      "evidence_span": "年产1000吨阿昔洛韦原料药项目建成投产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "替硝唑原料药",
+      "evidence_span": "替硝唑原料药取得原料药备案登记号"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甲硝唑栓",
+      "evidence_span": "甲硝唑栓通过GMP符合性检查"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双泰唑栓",
+      "evidence_span": "双泰唑栓通过GMP符合性检查"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工牛黄甲硝唑胶囊",
+      "evidence_span": "人工牛黄甲硝唑胶囊通过GMP符合性检查"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氟化工艺",
+      "evidence_span": "拥有成熟的氟化工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氢化工艺",
+      "evidence_span": "氢化工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "烷基化工艺",
+      "evidence_span": "烷基化工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硝化工艺",
+      "evidence_span": "硝化工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氧化工艺",
+      "evidence_span": "氧化工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高温反应技术",
+      "evidence_span": "高温反应（500-600摄氏度）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低温结晶技术",
+      "evidence_span": "低温结晶（零下40-50摄氏度）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "成为比亚迪等行业领先企业的合格供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联邦制药",
+      "evidence_span": "与联邦制药等国内知名制药企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国药集团",
+      "evidence_span": "国药集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石药集团",
+      "evidence_span": "石药集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "哈药集团",
+      "evidence_span": "哈药集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "普洛药业",
+      "evidence_span": "普洛药业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科伦药业",
+      "evidence_span": "科伦药业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赛诺菲",
+      "evidence_span": "赛诺菲等国际知名企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "百特",
+      "evidence_span": "百特"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "索尔维",
+      "evidence_span": "索尔维"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药产业链",
+        "evidence_span": "公司已建立了较完善的医药产业链"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电材料产业",
+        "evidence_span": "公司加速布局锂电池材料产业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "甲硝唑原料药生产企业",
+        "evidence_span": "国内最大的甲硝唑原料药生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "硝基咪唑类抗菌原料药及中间体主要供应商",
+        "evidence_span": "成为全球硝基咪唑类抗菌原料药及中间体的主要供应商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "抗疱疹病毒原料药及中间体主要供应商",
+        "evidence_span": "抗疱疹病毒原料药及中间体的主要供应商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "青霉素类抗菌药物中间体主要供应商",
+        "evidence_span": "青霉素类抗菌药物中间体的主要供应商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "六氟磷酸锂生产企业",
+        "evidence_span": "公司是国内最早工业化批量生产六氟磷酸锂的企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甲硝唑原料药",
+        "evidence_span": "甲硝唑原料药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "2-甲基-5-硝基咪唑",
+        "evidence_span": "2-甲基-5-硝基咪唑"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乙二醛",
+        "evidence_span": "乙二醛"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乙醛酸",
+        "evidence_span": "乙醛酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鸟嘌呤",
+        "evidence_span": "鸟嘌呤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "六氟磷酸锂",
+        "evidence_span": "六氟磷酸锂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阿昔洛韦原料药",
+        "evidence_span": "年产1000吨阿昔洛韦原料药项目建成投产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "替硝唑原料药",
+        "evidence_span": "替硝唑原料药取得原料药备案登记号"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甲硝唑栓",
+        "evidence_span": "甲硝唑栓通过GMP符合性检查"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双泰唑栓",
+        "evidence_span": "双泰唑栓通过GMP符合性检查"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工牛黄甲硝唑胶囊",
+        "evidence_span": "人工牛黄甲硝唑胶囊通过GMP符合性检查"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氟化工艺",
+        "evidence_span": "拥有成熟的氟化工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氢化工艺",
+        "evidence_span": "氢化工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "烷基化工艺",
+        "evidence_span": "烷基化工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硝化工艺",
+        "evidence_span": "硝化工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氧化工艺",
+        "evidence_span": "氧化工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高温反应技术",
+        "evidence_span": "高温反应（500-600摄氏度）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低温结晶技术",
+        "evidence_span": "低温结晶（零下40-50摄氏度）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "成为比亚迪等行业领先企业的合格供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联邦制药",
+        "evidence_span": "与联邦制药等国内知名制药企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国药集团",
+        "evidence_span": "国药集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石药集团",
+        "evidence_span": "石药集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "哈药集团",
+        "evidence_span": "哈药集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "普洛药业",
+        "evidence_span": "普洛药业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科伦药业",
+        "evidence_span": "科伦药业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赛诺菲",
+        "evidence_span": "赛诺菲等国际知名企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "百特",
+        "evidence_span": "百特"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "索尔维",
+        "evidence_span": "索尔维"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:59:57"
+}

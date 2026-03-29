@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:39:54", "result": {"chunk_id": "c57e2b46de9e", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态定义了春节五大消费的核心品类（白酒、旅游、礼盒、电影和烟花），并概括了其特点（保留传统年味、涌现新趋势），不包含任何事件、时间或动态信息，是纯静态说明题材本身。"}}

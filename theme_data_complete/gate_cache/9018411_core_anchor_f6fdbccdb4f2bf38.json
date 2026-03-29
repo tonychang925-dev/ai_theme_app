@@ -1,0 +1,128 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "原树脂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'光刻胶'，核心语义是光刻胶本身及其直接构成要素。原树脂是光刻胶的关键原材料，属于上游核心材料对象，能稳定指向产业对象，符合industry_chain策略类型下优先识别材料对象的要求，适合作为must锚点。"
+      },
+      {
+        "term": "单体",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "单体是光刻胶生产的关键原材料之一，属于上游核心材料对象，直接贴合题材名称'光刻胶'的构成要素，能稳定指向产业对象，符合industry_chain策略，适合作为must锚点。"
+      },
+      {
+        "term": "感光剂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "感光剂是光刻胶的核心成分，决定其光敏特性，属于上游关键材料对象，直接对应题材名称'光刻胶'的核心含义，能稳定指向技术对象，符合industry_chain策略，适合作为must锚点。"
+      },
+      {
+        "term": "溶剂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "溶剂是光刻胶配方中的关键组成部分，属于上游材料对象，直接贴合题材名称'光刻胶'的构成要素，能稳定指向产业对象，符合industry_chain策略，适合作为must锚点。"
+      },
+      {
+        "term": "光敏聚酰亚胺PSPI",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "光敏聚酰亚胺PSPI是光刻胶的一种子类产品，直接属于光刻胶范畴，贴合题材名称'光刻胶'的核心语义，能稳定指向产品对象，符合industry_chain策略，适合作为must锚点。"
+      },
+      {
+        "term": "半导体光刻胶",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "半导体光刻胶是光刻胶的核心应用类型之一，直接对应题材名称'光刻胶'，属于关键产品对象，能稳定指向产业对象，符合industry_chain策略，是最适合作为must锚点的术语之一。"
+      },
+      {
+        "term": "PCB光刻胶",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "PCB光刻胶是光刻胶的一种子类产品，直接属于光刻胶范畴，贴合题材名称'光刻胶'的核心语义，能稳定指向产品对象，符合industry_chain策略，适合作为must锚点。"
+      },
+      {
+        "term": "LCD光刻胶",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "LCD光刻胶是光刻胶的一种子类产品，直接属于光刻胶范畴，贴合题材名称'光刻胶'的核心语义，能稳定指向产品对象，符合industry_chain策略，适合作为must锚点。"
+      },
+      {
+        "term": "光刻胶",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'光刻胶'，是题材最核心的定义对象，能稳定指向产业中的关键材料对象，符合industry_chain策略类型下优先识别材料对象的要求，最适合作为must锚点。"
+      },
+      {
+        "term": "光刻环节",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接指向光刻胶的核心应用环节'光刻环节'，是产业链中的关键环节，符合题材名称定义的核心语义（光刻胶在光刻环节使用），且能稳定识别产业关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "光刻",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语是'光刻环节'的简写，同样直接对应光刻胶的核心应用工艺，是产业链中的关键技术对象，符合题材名称的核心语义，能有效识别产业关键环节，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "无掩膜深紫外光刻技术",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是光刻胶应用的相关技术路径，虽与光刻胶相关，但更偏向于光刻工艺技术，而非光刻胶本身或其直接构成要素。与题材名称'光刻胶'的核心语义不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "深紫外微型发光二极管（micro-LED）阵列作为光源",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是光刻胶应用的光源技术，属于技术路径的一部分，与光刻胶相关但非其核心构成。与题材名称'光刻胶'的核心语义不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "光引发剂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "光引发剂是光刻胶配方中的一种成分，但与题材名称'光刻胶'的核心语义不够直接吻合（未在给定维度中明确列出，且可能与其他光敏材料共享）。虽相关，但更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "高端光刻胶树脂",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语是光刻胶的一种原材料，但与'原树脂'类似但更具体。考虑到primary_anchor已包含'原树脂'，且需控制数量精炼，此术语虽相关但更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "G线",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是光刻胶的一种类型（基于曝光波长分类），虽与题材相关，但更偏向具体技术参数或子类，不如'光刻胶'、'光刻环节'等直接贴合题材名称定义的核心材料对象和关键环节，更适合作为should辅助识别。"
+      },
+      {
+        "term": "I线",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是光刻胶的一种类型，与G线类似，属于具体技术分类，与题材名称的核心语义（光刻胶整体）不够直接一致，更适合作为should辅助信息。"
+      },
+      {
+        "term": "KrF",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是光刻胶的一种类型（深紫外光刻胶的一种），虽在知识上重要，但更偏向细分技术路径，不符合primary_anchor应优先覆盖核心产业对象/关键环节的标准，适合作为should。"
+      },
+      {
+        "term": "ArF",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是光刻胶的一种类型，属于具体技术子类，与题材名称定义的核心材料对象和关键环节不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "EUV",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语是光刻胶的一种类型（极紫外光刻胶），属于先进技术子类，虽相关但更偏向细分领域，不如核心术语直接贴合题材名称，适合作为should。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:05", "result": {"span_uid": "6e0702bce9a9", "action": "rewrite", "canonical_text": "特斯拉FSD具备静止起步、停车和倒车等基础驾驶功能", "final_type": "core", "final_role": "基础驾驶功能", "stability": "high", "reason": "去事件化改写，保留FSD功能描述，形成稳定知识"}}

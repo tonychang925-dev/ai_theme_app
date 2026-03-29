@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "96b8861b6941", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落虽涉及事件流（如报告、政策转变、时间线），但直接揭示了半导体设备的关键环节（EUV光刻机）、国产替代的主导方（商业公司、央企）和技术进展（试生产时间），对理解题材的结构和受益方向有稳定帮助。"}}

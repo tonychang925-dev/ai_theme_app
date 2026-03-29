@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:03:01", "result": {"span_uid": "b82f3971cb4f", "action": "rewrite", "canonical_text": "国产半导体设备销售收入预计增长，市场占有率提升，反映国产化进程加速。", "final_type": "signal", "final_role": "国产设备景气信号", "stability": "medium", "reason": "原片段为具体预测数据，改写后去事件化和具体数值，保留增长趋势和占有率变化作为景气信号，形成相对稳定的知识表达。"}}

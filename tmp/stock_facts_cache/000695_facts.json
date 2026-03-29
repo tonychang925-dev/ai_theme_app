@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "包装印刷",
+      "evidence_span": "报告期内公司从事的主要业务为包装印刷和出版物印刷"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "出版物印刷",
+      "evidence_span": "报告期内公司从事的主要业务为包装印刷和出版物印刷"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "包装印刷综合服务提供商",
+      "evidence_span": "海顺印业是一家以快速消费品行业为核心业务领域的包装印刷综合服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专业书刊印刷生产服务企业",
+      "evidence_span": "新华印务作为专业书刊印刷生产服务企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "食品包装",
+      "evidence_span": "海顺印业主要产品涵盖食品包装、药品包装、精装礼品包盒、环保提袋、艺术品复制及艺术品衍生品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药品包装",
+      "evidence_span": "海顺印业主要产品涵盖食品包装、药品包装、精装礼品包盒、环保提袋、艺术品复制及艺术品衍生品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精装礼品包盒",
+      "evidence_span": "海顺印业主要产品涵盖食品包装、药品包装、精装礼品包盒、环保提袋、艺术品复制及艺术品衍生品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保提袋",
+      "evidence_span": "海顺印业主要产品涵盖食品包装、药品包装、精装礼品包盒、环保提袋、艺术品复制及艺术品衍生品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "艺术品复制",
+      "evidence_span": "海顺印业主要产品涵盖食品包装、药品包装、精装礼品包盒、环保提袋、艺术品复制及艺术品衍生品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "艺术品衍生品",
+      "evidence_span": "海顺印业主要产品涵盖食品包装、药品包装、精装礼品包盒、环保提袋、艺术品复制及艺术品衍生品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教材印刷加工",
+      "evidence_span": "产品主要侧重于教材、教辅和书刊印刷加工"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教辅印刷加工",
+      "evidence_span": "产品主要侧重于教材、教辅和书刊印刷加工"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "书刊印刷加工",
+      "evidence_span": "产品主要侧重于教材、教辅和书刊印刷加工"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "色彩管理系统",
+      "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复制技法",
+      "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "图像数据的采集输入系统",
+      "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "材料开发",
+      "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "图像处理系统",
+      "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "图片存储管理系统",
+      "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工艺研发",
+      "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "防伪印刷",
+      "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "出版服务云平台",
+      "evidence_span": "新华印务使用盛通股份打造的“出版服务云平台”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国市场",
+      "evidence_span": "开拓了韩国、欧美等海外市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧美市场",
+      "evidence_span": "开拓了韩国、欧美等海外市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内知名企业",
+      "evidence_span": "与部分国内、国际知名企业建立了合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际知名企业",
+      "evidence_span": "与部分国内、国际知名企业建立了合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天津市各大出版社",
+      "evidence_span": "与天津市各大出版社保持了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内众多知名出版社",
+      "evidence_span": "与国内众多知名出版社建立并保持了牢固的长期合作关系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "包装印刷",
+        "evidence_span": "报告期内公司从事的主要业务为包装印刷和出版物印刷"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "出版物印刷",
+        "evidence_span": "报告期内公司从事的主要业务为包装印刷和出版物印刷"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "包装印刷综合服务提供商",
+        "evidence_span": "海顺印业是一家以快速消费品行业为核心业务领域的包装印刷综合服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专业书刊印刷生产服务企业",
+        "evidence_span": "新华印务作为专业书刊印刷生产服务企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "食品包装",
+        "evidence_span": "海顺印业主要产品涵盖食品包装、药品包装、精装礼品包盒、环保提袋、艺术品复制及艺术品衍生品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药品包装",
+        "evidence_span": "海顺印业主要产品涵盖食品包装、药品包装、精装礼品包盒、环保提袋、艺术品复制及艺术品衍生品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精装礼品包盒",
+        "evidence_span": "海顺印业主要产品涵盖食品包装、药品包装、精装礼品包盒、环保提袋、艺术品复制及艺术品衍生品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保提袋",
+        "evidence_span": "海顺印业主要产品涵盖食品包装、药品包装、精装礼品包盒、环保提袋、艺术品复制及艺术品衍生品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "艺术品复制",
+        "evidence_span": "海顺印业主要产品涵盖食品包装、药品包装、精装礼品包盒、环保提袋、艺术品复制及艺术品衍生品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "艺术品衍生品",
+        "evidence_span": "海顺印业主要产品涵盖食品包装、药品包装、精装礼品包盒、环保提袋、艺术品复制及艺术品衍生品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教材印刷加工",
+        "evidence_span": "产品主要侧重于教材、教辅和书刊印刷加工"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教辅印刷加工",
+        "evidence_span": "产品主要侧重于教材、教辅和书刊印刷加工"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "书刊印刷加工",
+        "evidence_span": "产品主要侧重于教材、教辅和书刊印刷加工"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "色彩管理系统",
+        "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复制技法",
+        "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "图像数据的采集输入系统",
+        "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "材料开发",
+        "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "图像处理系统",
+        "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "图片存储管理系统",
+        "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工艺研发",
+        "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "防伪印刷",
+        "evidence_span": "海顺印业目前掌握了色彩管理系统、复制技法、图像数据的采集输入系统、材料开发、图像处理系统、图片存储管理系统、工艺研发和防伪印刷等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "出版服务云平台",
+        "evidence_span": "新华印务使用盛通股份打造的“出版服务云平台”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国市场",
+        "evidence_span": "开拓了韩国、欧美等海外市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧美市场",
+        "evidence_span": "开拓了韩国、欧美等海外市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内知名企业",
+        "evidence_span": "与部分国内、国际知名企业建立了合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际知名企业",
+        "evidence_span": "与部分国内、国际知名企业建立了合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津市各大出版社",
+        "evidence_span": "与天津市各大出版社保持了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内众多知名出版社",
+        "evidence_span": "与国内众多知名出版社建立并保持了牢固的长期合作关系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:16:10"
+}

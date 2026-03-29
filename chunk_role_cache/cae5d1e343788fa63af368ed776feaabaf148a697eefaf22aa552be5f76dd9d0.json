@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "ec37b2daafa0", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述了美国政府撤销台积电、三星和SK海力士中国晶圆厂的VEU地位，需申请许可采购美系设备和材料的具体政策事件，属于监管进展，不提供半导体设备题材的稳定知识。"}}

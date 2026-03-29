@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final", "model": "deepseek-chat", "timestamp": "2026-03-08T11:07:55", "result": {"chunk_id": "6ec214d229b5", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述华为与中芯国际的专利提交和合作事件，但包含SAQP技术、DUV光刻机生产3纳米芯片等关键技术知识，混合事件信息，需进一步裁决。"}}

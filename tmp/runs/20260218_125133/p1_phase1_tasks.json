@@ -1,0 +1,94 @@
+{
+  "tasks": [
+    {
+      "id": "3067bab0-ee1d-8110-a290-f86481b82c50",
+      "name": "P1.phase1-T05 阶段验收报告与ADR追踪链接更新",
+      "status": "done",
+      "priority": "P1",
+      "estimate": 1,
+      "dod_checklist": [
+        "文档更新",
+        "代码审查"
+      ],
+      "test_evidence": "phase1 deliverables verified: report+ADR linked; behavior tests passed",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase1-T05-ADR-3067bab0ee1d8110a290f86481b82c50",
+      "last_edited": "2026-02-18T03:45:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-815e-a09f-fa91beeb1158",
+      "name": "P1.phase1-T02 幂等键规则与duplicate-skip执行门禁",
+      "status": "done",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "单元测试",
+        "文档更新"
+      ],
+      "test_evidence": "phase1 behavior tests passed: pytest -q database_service/tests/streams/test_phase1_behavior_tests.py (5 passed)",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase1-T02-duplicate-skip-3067bab0ee1d815ea09ffa91beeb1158",
+      "last_edited": "2026-02-18T03:45:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-81ab-b8c5-f68ae8cafff0",
+      "name": "P1.phase1-T01 收敛决策路由逻辑并移除重复入口",
+      "status": "done",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "单元测试",
+        "代码审查"
+      ],
+      "test_evidence": "phase1 behavior tests passed: pytest -q database_service/tests/streams/test_phase1_behavior_tests.py (5 passed)",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase1-T01-3067bab0ee1d81abb8c5f68ae8cafff0",
+      "last_edited": "2026-02-18T03:45:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-81b1-8788-da9ccaac7903",
+      "name": "P1.phase1-T04 严格schema解析替代弱降级策略",
+      "status": "done",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "单元测试",
+        "集成测试"
+      ],
+      "test_evidence": "phase1 behavior tests passed: pytest -q database_service/tests/streams/test_phase1_behavior_tests.py (5 passed)",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase1-T04-schema-3067bab0ee1d81b18788da9ccaac7903",
+      "last_edited": "2026-02-18T03:45:00.000Z"
+    },
+    {
+      "id": "3067bab0-ee1d-81b2-939d-c5edb50e0050",
+      "name": "P1.phase1-T03 unknown action/operation fail-fast与dead-letter",
+      "status": "done",
+      "priority": "P0",
+      "estimate": 1,
+      "dod_checklist": [
+        "集成测试",
+        "代码审查"
+      ],
+      "test_evidence": "phase1 behavior tests passed: pytest -q database_service/tests/streams/test_phase1_behavior_tests.py (5 passed)",
+      "dependencies": [],
+      "milestone_id": "3067bab0-ee1d-8184-84a6-d3e06f82506a",
+      "milestone_name": "P1 - 第一阶段WBS执行计划（含第12章验证体系）",
+      "phase": "phase 0",
+      "url": "https://www.notion.so/P1-phase1-T03-unknown-action-operation-fail-fast-dead-letter-3067bab0ee1d81b2939dc5edb50e0050",
+      "last_edited": "2026-02-18T03:45:00.000Z"
+    }
+  ]
+}

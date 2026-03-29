@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:19:15", "result": {"span_uid": "7f6fb75b8ae5", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体的研发主体和体制结构描述，涉及事件和预测，无法整理成稳定、可独立成立的知识块。"}}

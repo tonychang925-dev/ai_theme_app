@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "5cb2011876f6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要提供半导体设备销售收入、市场占有率等行业景气数据和预测，属于事件性统计信息，没有揭示题材本身的结构或技术细节。"}}

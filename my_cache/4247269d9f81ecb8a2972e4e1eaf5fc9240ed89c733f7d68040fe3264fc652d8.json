@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "02412c871294", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述中方对美军工企业采取反制措施和东部战区演习的具体事件，包括日期（2024年10月14日）和动态军事行动，属于新闻性内容，不涉及静态知识。"}}

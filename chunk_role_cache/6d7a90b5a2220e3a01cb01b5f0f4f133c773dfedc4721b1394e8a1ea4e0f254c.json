@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "47f4d8b55a00", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述河南省政府的实施方案，包含低空经济产业链、发展目标、基础设施等静态知识，但以政策发布和具体规划形式呈现，混合事件信息，需要裁决以提取核心知识。"}}

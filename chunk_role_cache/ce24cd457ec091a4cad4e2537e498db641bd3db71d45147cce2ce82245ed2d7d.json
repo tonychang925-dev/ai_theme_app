@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "414ed7695f9b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落是北方华创的公告，报告前三季度净利润预计增长，这是具体事件和公司公告，没有稳定知识。"}}

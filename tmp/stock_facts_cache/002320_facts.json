@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "客滚运输业务",
+      "evidence_span": "设立以来专注于客滚运输业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "客滚轮渡港口服务业务",
+      "evidence_span": "新增客滚轮渡港口服务业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "琼州海峡客滚输运龙头",
+      "evidence_span": "海峡股份：琼州海峡客滚输运龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海南规模最大的客滚航运企业",
+      "evidence_span": "公司目前是海南规模最大的客滚航运企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海口-海安客滚运输航线",
+      "evidence_span": "公司运营海口-海安、海口-北海两条客滚运输航线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海口-北海客滚运输航线",
+      "evidence_span": "公司运营海口-海安、海口-北海两条客滚运输航线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海口（三亚）-西沙旅游客运航线",
+      "evidence_span": "及海口（三亚）-西沙旅游客运航线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新海港轮渡港口服务",
+      "evidence_span": "现运营新海港和秀英港轮渡港口服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "秀英港轮渡港口服务",
+      "evidence_span": "现运营新海港和秀英港轮渡港口服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客运代理",
+      "evidence_span": "收入来源主要包括客运代理、商铺租金、广告费、停车费等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商铺租金",
+      "evidence_span": "收入来源主要包括客运代理、商铺租金、广告费、停车费等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "广告费",
+      "evidence_span": "收入来源主要包括客运代理、商铺租金、广告费、停车费等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "停车费",
+      "evidence_span": "收入来源主要包括客运代理、商铺租金、广告费、停车费等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "离岛免税提货点场地租赁",
+      "evidence_span": "码头内设有离岛免税提货点，以提供场地租赁的方式收取固定租金"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "粤海铁路轮渡公司",
+      "evidence_span": "分别由公司以及粤海铁路轮渡公司经营"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海南自贸港建设",
+      "evidence_span": "将受益于海南自贸港建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "港航一体化",
+      "evidence_span": "港航一体化为公司发展带来新篇章"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "客滚运输业务",
+        "evidence_span": "设立以来专注于客滚运输业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "客滚轮渡港口服务业务",
+        "evidence_span": "新增客滚轮渡港口服务业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "琼州海峡客滚输运龙头",
+        "evidence_span": "海峡股份：琼州海峡客滚输运龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海南规模最大的客滚航运企业",
+        "evidence_span": "公司目前是海南规模最大的客滚航运企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海口-海安客滚运输航线",
+        "evidence_span": "公司运营海口-海安、海口-北海两条客滚运输航线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海口-北海客滚运输航线",
+        "evidence_span": "公司运营海口-海安、海口-北海两条客滚运输航线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海口（三亚）-西沙旅游客运航线",
+        "evidence_span": "及海口（三亚）-西沙旅游客运航线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新海港轮渡港口服务",
+        "evidence_span": "现运营新海港和秀英港轮渡港口服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "秀英港轮渡港口服务",
+        "evidence_span": "现运营新海港和秀英港轮渡港口服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客运代理",
+        "evidence_span": "收入来源主要包括客运代理、商铺租金、广告费、停车费等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商铺租金",
+        "evidence_span": "收入来源主要包括客运代理、商铺租金、广告费、停车费等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "广告费",
+        "evidence_span": "收入来源主要包括客运代理、商铺租金、广告费、停车费等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "停车费",
+        "evidence_span": "收入来源主要包括客运代理、商铺租金、广告费、停车费等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "离岛免税提货点场地租赁",
+        "evidence_span": "码头内设有离岛免税提货点，以提供场地租赁的方式收取固定租金"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "粤海铁路轮渡公司",
+        "evidence_span": "分别由公司以及粤海铁路轮渡公司经营"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海南自贸港建设",
+        "evidence_span": "将受益于海南自贸港建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "港航一体化",
+        "evidence_span": "港航一体化为公司发展带来新篇章"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:05:08"
+}

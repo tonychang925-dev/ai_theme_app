@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "无线通信芯片设计",
+      "evidence_span": "专注于无线通信芯片"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超大规模芯片设计",
+      "evidence_span": "超大规模芯片设计的平台型企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "通信基带芯片供应商",
+      "evidence_span": "翱捷科技国内领先的通信基带芯片供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无线通信平台型芯片企业",
+      "evidence_span": "国内稀缺的无线通信平台型芯片企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蜂窝基带芯片",
+      "evidence_span": "主要产品包括蜂窝基带芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非蜂窝物联网芯片",
+      "evidence_span": "非蜂窝物联网芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芯片定制服务",
+      "evidence_span": "芯片定制服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体IP授权业务",
+      "evidence_span": "半导体IP授权业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4G八核智能手机芯片",
+      "evidence_span": "4G八核智能手机芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G手机芯片",
+      "evidence_span": "5G手机芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Cat.1bis基带芯片",
+      "evidence_span": "Cat.1bis细分赛道"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Cat.4基带芯片",
+      "evidence_span": "Cat.4出货量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Cat.7基带芯片",
+      "evidence_span": "Cat.7新一代产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云端大型推理芯片",
+      "evidence_span": "云端大型推理芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "训练芯片",
+      "evidence_span": "训练芯片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全制式蜂窝基带技术",
+      "evidence_span": "全制式蜂窝基带技术（覆盖2G至5G）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多协议非蜂窝物联网芯片技术",
+      "evidence_span": "多协议非蜂窝物联网芯片（如Wi-Fi、蓝牙、LoRa）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "6nm 5G八核芯片设计",
+      "evidence_span": "首颗6nm 5G八核芯片"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中兴",
+      "evidence_span": "服务模组供应商中兴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "移远",
+      "evidence_span": "移远"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美的",
+      "evidence_span": "国内白电龙头美的"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "小米"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "OPPO等手机厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "商汤",
+      "evidence_span": "人工智能算法企业商汤"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "AIoT",
+      "evidence_span": "下游AIoT步入黄金十年"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "低空经济",
+      "evidence_span": "布局AI与低空经济等新兴场景"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "无线通信芯片设计",
+        "evidence_span": "专注于无线通信芯片"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "超大规模芯片设计",
+        "evidence_span": "超大规模芯片设计的平台型企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "通信基带芯片供应商",
+        "evidence_span": "翱捷科技国内领先的通信基带芯片供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无线通信平台型芯片企业",
+        "evidence_span": "国内稀缺的无线通信平台型芯片企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蜂窝基带芯片",
+        "evidence_span": "主要产品包括蜂窝基带芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非蜂窝物联网芯片",
+        "evidence_span": "非蜂窝物联网芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芯片定制服务",
+        "evidence_span": "芯片定制服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体IP授权业务",
+        "evidence_span": "半导体IP授权业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4G八核智能手机芯片",
+        "evidence_span": "4G八核智能手机芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G手机芯片",
+        "evidence_span": "5G手机芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Cat.1bis基带芯片",
+        "evidence_span": "Cat.1bis细分赛道"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Cat.4基带芯片",
+        "evidence_span": "Cat.4出货量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Cat.7基带芯片",
+        "evidence_span": "Cat.7新一代产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云端大型推理芯片",
+        "evidence_span": "云端大型推理芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "训练芯片",
+        "evidence_span": "训练芯片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全制式蜂窝基带技术",
+        "evidence_span": "全制式蜂窝基带技术（覆盖2G至5G）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多协议非蜂窝物联网芯片技术",
+        "evidence_span": "多协议非蜂窝物联网芯片（如Wi-Fi、蓝牙、LoRa）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "6nm 5G八核芯片设计",
+        "evidence_span": "首颗6nm 5G八核芯片"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中兴",
+        "evidence_span": "服务模组供应商中兴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "移远",
+        "evidence_span": "移远"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美的",
+        "evidence_span": "国内白电龙头美的"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "小米"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "OPPO等手机厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "商汤",
+        "evidence_span": "人工智能算法企业商汤"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "AIoT",
+        "evidence_span": "下游AIoT步入黄金十年"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "低空经济",
+        "evidence_span": "布局AI与低空经济等新兴场景"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:36:26"
+}

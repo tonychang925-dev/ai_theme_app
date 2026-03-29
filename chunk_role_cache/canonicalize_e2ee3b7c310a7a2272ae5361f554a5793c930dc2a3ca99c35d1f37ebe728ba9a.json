@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:03:34", "result": {"span_uid": "da3c6fa4e38b", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "公司技术计划", "stability": "low", "reason": "该片段为ASML公司的具体技术扩展计划，属于事件性、公司层面的信息，稳定性低，且无法整理成独立、稳定的知识表达。"}}

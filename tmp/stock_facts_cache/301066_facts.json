@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "丝绸文化创意品",
+      "evidence_span": "专业从事丝绸相关产品的研发设计、生产与销售。公司主要产品按照客户群体和是否具备终端消费品牌可分为丝绸文化创意品（自有终端品牌）和丝绸纺织制品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "丝绸纺织制品",
+      "evidence_span": "专业从事丝绸相关产品的研发设计、生产与销售。公司主要产品按照客户群体和是否具备终端消费品牌可分为丝绸文化创意品（自有终端品牌）和丝绸纺织制品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "丝绸文化创意品企业",
+      "evidence_span": "专业从事丝绸相关产品的研发设计、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "丝绸纺织制品企业",
+      "evidence_span": "专业从事丝绸相关产品的研发设计、生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丝巾",
+      "evidence_span": "丝绸文化创意品主要包括丝巾、组合套装、家纺、品牌服装、围巾、丝绸工艺品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "组合套装",
+      "evidence_span": "丝绸文化创意品主要包括丝巾、组合套装、家纺、品牌服装、围巾、丝绸工艺品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家纺",
+      "evidence_span": "丝绸文化创意品主要包括丝巾、组合套装、家纺、品牌服装、围巾、丝绸工艺品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "品牌服装",
+      "evidence_span": "丝绸文化创意品主要包括丝巾、组合套装、家纺、品牌服装、围巾、丝绸工艺品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "围巾",
+      "evidence_span": "丝绸文化创意品主要包括丝巾、组合套装、家纺、品牌服装、围巾、丝绸工艺品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丝绸工艺品",
+      "evidence_span": "丝绸文化创意品主要包括丝巾、组合套装、家纺、品牌服装、围巾、丝绸工艺品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丝绸面料",
+      "evidence_span": "丝绸纺织制品主要包括丝绸面料、贴牌服装以及公司凭借工艺优势向客户提供的数码印花加工服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贴牌服装",
+      "evidence_span": "丝绸纺织制品主要包括丝绸面料、贴牌服装以及公司凭借工艺优势向客户提供的数码印花加工服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数码印花加工服务",
+      "evidence_span": "丝绸纺织制品主要包括丝绸面料、贴牌服装以及公司凭借工艺优势向客户提供的数码印花加工服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双面数码印花工艺",
+      "evidence_span": "公司耗时多年研发的双面数码印花工艺，是丝绸行业软件与硬件结合的代表成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超薄丝织面料研发技术",
+      "evidence_span": "公司已经成为全球少数掌握“超薄丝织面料”研发技术的企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "丝绸面料免水洗印染关键技术",
+      "evidence_span": "公司立项研发项目“丝绸面料免水洗印染关键技术研发及产业化应用”被列入2021年度浙江省重点研发计划"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "去除绢本古画图像中绢纹的技术",
+      "evidence_span": "研发的去除绢本古画图像中绢纹的技术可有效消除绢本古画图像电子文档中的绢纹"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "鄂尔多斯",
+      "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "歌力思",
+      "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "朗姿股份",
+      "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "爱慕股份",
+      "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "锦泓集团",
+      "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雅莹集团",
+      "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安正时尚",
+      "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "丝绸文化创意",
+      "evidence_span": "将中国传统丝绸文化与创意设计、数码印花生产工艺相结合"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "丝绸+概念跨界融合",
+      "evidence_span": "推出了“丝绸+”概念产品，将丝绸与其他跨界产品相结合"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "丝绸文化创意品",
+        "evidence_span": "专业从事丝绸相关产品的研发设计、生产与销售。公司主要产品按照客户群体和是否具备终端消费品牌可分为丝绸文化创意品（自有终端品牌）和丝绸纺织制品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "丝绸纺织制品",
+        "evidence_span": "专业从事丝绸相关产品的研发设计、生产与销售。公司主要产品按照客户群体和是否具备终端消费品牌可分为丝绸文化创意品（自有终端品牌）和丝绸纺织制品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "丝绸文化创意品企业",
+        "evidence_span": "专业从事丝绸相关产品的研发设计、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "丝绸纺织制品企业",
+        "evidence_span": "专业从事丝绸相关产品的研发设计、生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丝巾",
+        "evidence_span": "丝绸文化创意品主要包括丝巾、组合套装、家纺、品牌服装、围巾、丝绸工艺品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "组合套装",
+        "evidence_span": "丝绸文化创意品主要包括丝巾、组合套装、家纺、品牌服装、围巾、丝绸工艺品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家纺",
+        "evidence_span": "丝绸文化创意品主要包括丝巾、组合套装、家纺、品牌服装、围巾、丝绸工艺品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "品牌服装",
+        "evidence_span": "丝绸文化创意品主要包括丝巾、组合套装、家纺、品牌服装、围巾、丝绸工艺品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "围巾",
+        "evidence_span": "丝绸文化创意品主要包括丝巾、组合套装、家纺、品牌服装、围巾、丝绸工艺品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丝绸工艺品",
+        "evidence_span": "丝绸文化创意品主要包括丝巾、组合套装、家纺、品牌服装、围巾、丝绸工艺品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丝绸面料",
+        "evidence_span": "丝绸纺织制品主要包括丝绸面料、贴牌服装以及公司凭借工艺优势向客户提供的数码印花加工服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贴牌服装",
+        "evidence_span": "丝绸纺织制品主要包括丝绸面料、贴牌服装以及公司凭借工艺优势向客户提供的数码印花加工服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数码印花加工服务",
+        "evidence_span": "丝绸纺织制品主要包括丝绸面料、贴牌服装以及公司凭借工艺优势向客户提供的数码印花加工服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双面数码印花工艺",
+        "evidence_span": "公司耗时多年研发的双面数码印花工艺，是丝绸行业软件与硬件结合的代表成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超薄丝织面料研发技术",
+        "evidence_span": "公司已经成为全球少数掌握“超薄丝织面料”研发技术的企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "丝绸面料免水洗印染关键技术",
+        "evidence_span": "公司立项研发项目“丝绸面料免水洗印染关键技术研发及产业化应用”被列入2021年度浙江省重点研发计划"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "去除绢本古画图像中绢纹的技术",
+        "evidence_span": "研发的去除绢本古画图像中绢纹的技术可有效消除绢本古画图像电子文档中的绢纹"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "鄂尔多斯",
+        "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "歌力思",
+        "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "朗姿股份",
+        "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "爱慕股份",
+        "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "锦泓集团",
+        "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雅莹集团",
+        "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安正时尚",
+        "evidence_span": "目前公司已与多家知名女装品牌企业建立了稳定的合作关系，如鄂尔多斯、歌力思、朗姿股份、爱慕股份、锦泓集团、雅莹集团、安正时尚等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "丝绸文化创意",
+        "evidence_span": "将中国传统丝绸文化与创意设计、数码印花生产工艺相结合"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "丝绸+概念跨界融合",
+        "evidence_span": "推出了“丝绸+”概念产品，将丝绸与其他跨界产品相结合"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:30:17"
+}

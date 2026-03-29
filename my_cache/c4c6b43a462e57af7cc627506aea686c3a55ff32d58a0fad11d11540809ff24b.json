@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "8b2355fb6dd8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述台积电试产2nm和苹果作为客户的具体事件，涉及技术进展但以新闻形式呈现，没有静态说明半导体定义或机制。"}}

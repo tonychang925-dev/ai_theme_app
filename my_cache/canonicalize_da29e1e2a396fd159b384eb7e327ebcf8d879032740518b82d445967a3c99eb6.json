@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:49:02", "result": {"span_uid": "2380d44ac931", "action": "keep", "canonical_text": "建筑设计行业是智力密集型行业，主要输出设计成果，对后端施工运维和总投资具有重大影响。", "final_type": "core", "final_role": "行业基本特性", "stability": "high", "reason": "原文直接定义建筑设计行业的本质属性和核心作用，是稳定、独立成立的本体知识。"}}

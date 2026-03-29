@@ -1,0 +1,32 @@
+{
+  "run_id": "20260218_094608",
+  "phase": "P1.phase0",
+  "mode": "autopilot",
+  "generated_at": "2026-02-18T01:47:47Z",
+  "checks": {
+    "token_verify": {
+      "ok": true,
+      "token_fingerprint": "ntn_...B7li",
+      "user_type": "bot",
+      "name": "AI-agent sync",
+      "error": null,
+      "note": null
+    },
+    "network_fetch_tasks": {
+      "ok": true,
+      "task_prefix": "P1.phase0",
+      "status_filter": "Todo,Doing,In review",
+      "tasks_count": 0,
+      "output": "tmp/runs/20260218_094608/preflight_tasks.json",
+      "error": null,
+      "failed_by_output": false
+    }
+  },
+  "gate_ready": true,
+  "transient_network_error": false,
+  "require_network_escalation_once": false,
+  "next_action": "continue",
+  "blocking_issues": [],
+  "allow_offline": false,
+  "mode_note": "local_aggregate"
+}

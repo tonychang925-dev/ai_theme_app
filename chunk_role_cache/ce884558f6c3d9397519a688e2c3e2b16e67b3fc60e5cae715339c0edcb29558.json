@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "f5b3c48a3acb", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含全球晶圆厂设备支出的预测数据（稳定知识），但也涉及设备开支持续上涨和赛道企业迎来发展红利（事件/动态），边界不清，混有知识和事件。"}}

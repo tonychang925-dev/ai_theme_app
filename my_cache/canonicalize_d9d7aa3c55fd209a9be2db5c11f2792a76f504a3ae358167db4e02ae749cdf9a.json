@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:14:22", "result": {"span_uid": "de2069e131c3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "纸浆供应影响因素", "stability": "low", "reason": "该片段提到全球纸浆市场受俄乌冲突、物流扰动、停产减产等影响导致供应形势严峻，但这是短期、事件驱动的描述，缺乏稳定性和独立性，不适合作为可入库的知识块。"}}

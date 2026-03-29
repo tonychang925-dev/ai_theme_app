@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "548999b1cc8b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了中芯国际港股在国庆假期期间的股价涨幅，这是一个具体的市场表现事件，不包含静态知识。"}}

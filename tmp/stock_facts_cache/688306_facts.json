@@ -1,0 +1,564 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "成套装配",
+      "evidence_span": "主要从事成套装配与检测智能制造装备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "检测智能制造装备",
+      "evidence_span": "主要从事成套装配与检测智能制造装备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业机器人",
+      "evidence_span": "工业机器人及工业数字化智能软件的研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业数字化智能软件",
+      "evidence_span": "工业机器人及工业数字化智能软件的研发"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球化智能制造装备供应商",
+      "evidence_span": "公司作为全球化的智能制造装备供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线控制动系统智能装备",
+      "evidence_span": "线控制动系统智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线控转向系统智能装备",
+      "evidence_span": "线控转向系统智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4D毫米波/毫米波雷达智能装备",
+      "evidence_span": "4D毫米波/毫米波雷达和激光雷达智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光雷达智能装备",
+      "evidence_span": "4D毫米波/毫米波雷达和激光雷达智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能电驱系统智能装备",
+      "evidence_span": "高性能电驱系统智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热管理系统智能装备",
+      "evidence_span": "热管理系统智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力电子智能装备",
+      "evidence_span": "电力电子智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池智能装备",
+      "evidence_span": "电池智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BMS智能装备",
+      "evidence_span": "BMS智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗健康智能装备",
+      "evidence_span": "医疗健康智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消费品智能装备",
+      "evidence_span": "消费品智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传统动力汽车动力总成系统智能装备",
+      "evidence_span": "传统动力汽车动力总成系统、汽车安全系统、汽车零部件智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车安全系统智能装备",
+      "evidence_span": "传统动力汽车动力总成系统、汽车安全系统、汽车零部件智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车零部件智能装备",
+      "evidence_span": "传统动力汽车动力总成系统、汽车安全系统、汽车零部件智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业机电智能装备",
+      "evidence_span": "工业机电智能装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "piaAMR工业机器人",
+      "evidence_span": "piaAMR工业机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业数字化智能工厂服务",
+      "evidence_span": "工业数字化智能工厂服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器视觉智能检测技术",
+      "evidence_span": "围绕机器视觉智能检测技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磁悬浮传输系统",
+      "evidence_span": "线控制动项目采用了磁悬浮传输系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光导航",
+      "evidence_span": "piaAMR机器人应用有激光导航、视觉系统等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视觉系统",
+      "evidence_span": "piaAMR机器人应用有激光导航、视觉系统等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BMS全参数模拟仿真测试",
+      "evidence_span": "自主研发出BMS全参数模拟仿真测试、BMS综合性能测试等核心专利技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BMS综合性能测试",
+      "evidence_span": "自主研发出BMS全参数模拟仿真测试、BMS综合性能测试等核心专利技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能辅助决策工业软件piaAI",
+      "evidence_span": "运用自研人工智能辅助决策工业软件piaAI"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球知名整车厂",
+      "evidence_span": "陆续为全球知名整车厂和汽车零部件头部企业成功交付"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车零部件头部企业",
+      "evidence_span": "陆续为全球知名整车厂和汽车零部件头部企业成功交付"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球汽车零部件Tier1供应商",
+      "evidence_span": "已与全球汽车零部件Tier1供应商达成超亿元人民币的线控制动项目订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "产线产品将上车国内造车新势力蔚来"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏",
+      "evidence_span": "产线产品最终将上车小鹏、蔚来、极氪、奔驰等知名高端新车型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "极氪",
+      "evidence_span": "产线产品最终将上车小鹏、蔚来、极氪、奔驰等知名高端新车型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奔驰",
+      "evidence_span": "产线产品最终将上车小鹏、蔚来、极氪、奔驰等知名高端新车型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "图达通",
+      "evidence_span": "已成功实现图达通超远距离高精度激光雷达装配与检测产线的交付"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "广泛应用于宝马、奔驰、吉利、Fisker等高端车型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "广泛应用于宝马、奔驰、吉利、Fisker等高端车型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Fisker",
+      "evidence_span": "广泛应用于宝马、奔驰、吉利、Fisker等高端车型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保时捷",
+      "evidence_span": "保时捷Taycan的高压升压模块装配产线由公司承接和交付"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电池头部企业",
+      "evidence_span": "公司已服务中国电池头部企业实现在欧美地区的智能装备产线落地"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "RomeoPower",
+      "evidence_span": "在前期为RomeoPower、戴姆勒、Vamet等提供多条动力电池模组装配与检测产线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "戴姆勒",
+      "evidence_span": "在前期为RomeoPower、戴姆勒、Vamet等提供多条动力电池模组装配与检测产线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Vamet",
+      "evidence_span": "在前期为RomeoPower、戴姆勒、Vamet等提供多条动力电池模组装配与检测产线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "越南著名车企",
+      "evidence_span": "已经完成越南著名车企的电池模组及电池包智能装配与检测产线的交付"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "世界光学巨头客户",
+      "evidence_span": "公司与世界光学巨头客户就其全球首条医疗眼科类智能生产示范线达成了合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝洁集团",
+      "evidence_span": "公司与宝洁集团、西门子、LAMY等形成了长期的战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子",
+      "evidence_span": "公司与宝洁集团、西门子、LAMY等形成了长期的战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LAMY",
+      "evidence_span": "公司与宝洁集团、西门子、LAMY等形成了长期的战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美的集团",
+      "evidence_span": "与西门子、美的集团、罗森伯格、ETI、泰科电子、ABB等建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "罗森伯格",
+      "evidence_span": "与西门子、美的集团、罗森伯格、ETI、泰科电子、ABB等建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ETI",
+      "evidence_span": "与西门子、美的集团、罗森伯格、ETI、泰科电子、ABB等建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "泰科电子",
+      "evidence_span": "与西门子、美的集团、罗森伯格、ETI、泰科电子、ABB等建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ABB",
+      "evidence_span": "与西门子、美的集团、罗森伯格、ETI、泰科电子、ABB等建立了稳定的合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "极大地推动国内医疗器械企业实行进口替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "成套装配与检测智能制造装备",
+        "evidence_span": "主要从事成套装配与检测智能制造装备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业机器人",
+        "evidence_span": "工业机器人及工业数字化智能软件的研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业数字化智能软件",
+        "evidence_span": "工业机器人及工业数字化智能软件的研发"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球化智能制造装备供应商",
+        "evidence_span": "公司作为全球化的智能制造装备供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线控制动系统智能装备",
+        "evidence_span": "线控制动系统智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线控转向系统智能装备",
+        "evidence_span": "线控转向系统智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4D毫米波/毫米波雷达智能装备",
+        "evidence_span": "4D毫米波/毫米波雷达和激光雷达智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光雷达智能装备",
+        "evidence_span": "4D毫米波/毫米波雷达和激光雷达智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能电驱系统智能装备",
+        "evidence_span": "高性能电驱系统智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热管理系统智能装备",
+        "evidence_span": "热管理系统智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力电子智能装备",
+        "evidence_span": "电力电子智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池智能装备",
+        "evidence_span": "电池智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BMS智能装备",
+        "evidence_span": "BMS智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗健康智能装备",
+        "evidence_span": "医疗健康智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消费品智能装备",
+        "evidence_span": "消费品智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传统动力汽车动力总成系统智能装备",
+        "evidence_span": "传统动力汽车动力总成系统、汽车安全系统、汽车零部件智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车安全系统智能装备",
+        "evidence_span": "传统动力汽车动力总成系统、汽车安全系统、汽车零部件智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车零部件智能装备",
+        "evidence_span": "传统动力汽车动力总成系统、汽车安全系统、汽车零部件智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业机电智能装备",
+        "evidence_span": "工业机电智能装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "piaAMR工业机器人",
+        "evidence_span": "piaAMR工业机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业数字化智能工厂服务",
+        "evidence_span": "工业数字化智能工厂服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器视觉智能检测技术",
+        "evidence_span": "围绕机器视觉智能检测技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磁悬浮传输系统",
+        "evidence_span": "线控制动项目采用了磁悬浮传输系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光导航",
+        "evidence_span": "piaAMR机器人应用有激光导航、视觉系统等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视觉系统",
+        "evidence_span": "piaAMR机器人应用有激光导航、视觉系统等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BMS全参数模拟仿真测试",
+        "evidence_span": "自主研发出BMS全参数模拟仿真测试、BMS综合性能测试等核心专利技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BMS综合性能测试",
+        "evidence_span": "自主研发出BMS全参数模拟仿真测试、BMS综合性能测试等核心专利技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能辅助决策工业软件piaAI",
+        "evidence_span": "运用自研人工智能辅助决策工业软件piaAI"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球知名整车厂",
+        "evidence_span": "陆续为全球知名整车厂和汽车零部件头部企业成功交付"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车零部件头部企业",
+        "evidence_span": "陆续为全球知名整车厂和汽车零部件头部企业成功交付"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球汽车零部件Tier1供应商",
+        "evidence_span": "已与全球汽车零部件Tier1供应商达成超亿元人民币的线控制动项目订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "产线产品将上车国内造车新势力蔚来"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏",
+        "evidence_span": "产线产品最终将上车小鹏、蔚来、极氪、奔驰等知名高端新车型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "极氪",
+        "evidence_span": "产线产品最终将上车小鹏、蔚来、极氪、奔驰等知名高端新车型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奔驰",
+        "evidence_span": "产线产品最终将上车小鹏、蔚来、极氪、奔驰等知名高端新车型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "图达通",
+        "evidence_span": "已成功实现图达通超远距离高精度激光雷达装配与检测产线的交付"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "广泛应用于宝马、奔驰、吉利、Fisker等高端车型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "广泛应用于宝马、奔驰、吉利、Fisker等高端车型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Fisker",
+        "evidence_span": "广泛应用于宝马、奔驰、吉利、Fisker等高端车型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保时捷",
+        "evidence_span": "保时捷Taycan的高压升压模块装配产线由公司承接和交付"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电池头部企业",
+        "evidence_span": "公司已服务中国电池头部企业实现在欧美地区的智能装备产线落地"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "RomeoPower",
+        "evidence_span": "在前期为RomeoPower、戴姆勒、Vamet等提供多条动力电池模组装配与检测产线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "戴姆勒",
+        "evidence_span": "在前期为RomeoPower、戴姆勒、Vamet等提供多条动力电池模组装配与检测产线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Vamet",
+        "evidence_span": "在前期为RomeoPower、戴姆勒、Vamet等提供多条动力电池模组装配与检测产线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "越南著名车企",
+        "evidence_span": "已经完成越南著名车企的电池模组及电池包智能装配与检测产线的交付"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "世界光学巨头客户",
+        "evidence_span": "公司与世界光学巨头客户就其全球首条医疗眼科类智能生产示范线达成了合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝洁集团",
+        "evidence_span": "公司与宝洁集团、西门子、LAMY等形成了长期的战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子",
+        "evidence_span": "公司与宝洁集团、西门子、LAMY等形成了长期的战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LAMY",
+        "evidence_span": "公司与宝洁集团、西门子、LAMY等形成了长期的战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美的集团",
+        "evidence_span": "与西门子、美的集团、罗森伯格、ETI、泰科电子、ABB等建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "罗森伯格",
+        "evidence_span": "与西门子、美的集团、罗森伯格、ETI、泰科电子、ABB等建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ETI",
+        "evidence_span": "与西门子、美的集团、罗森伯格、ETI、泰科电子、ABB等建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "泰科电子",
+        "evidence_span": "与西门子、美的集团、罗森伯格、ETI、泰科电子、ABB等建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ABB",
+        "evidence_span": "与西门子、美的集团、罗森伯格、ETI、泰科电子、ABB等建立了稳定的合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "极大地推动国内医疗器械企业实行进口替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:03:51"
+}

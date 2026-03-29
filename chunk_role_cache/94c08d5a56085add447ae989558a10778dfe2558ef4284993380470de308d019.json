@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_3", "model": "deepseek-chat", "timestamp": "2026-03-08T09:33:12", "result": {"chunk_id": "a584e176050a", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述特朗普关于芯片和半导体关税的具体言论事件，属于政策动态，不包含半导体设备的静态知识。"}}

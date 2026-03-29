@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:24:22", "result": {"chunk_id": "9bc5557f36e1", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述券商研报对固态电池发展拉动稀有金属需求的预测，属于具体事件或市场分析，不涉及稀土永磁的静态定义或核心构成，且带有事件动态性质。"}}

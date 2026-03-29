@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:18:46", "result": {"span_uid": "198528ce689c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "设备支出预测", "stability": "low", "reason": "该片段是SEMI对2025-2027年全球晶圆厂设备支出的预测，属于短期趋势信息，稳定性低，不适合作为稳定知识块入库。"}}

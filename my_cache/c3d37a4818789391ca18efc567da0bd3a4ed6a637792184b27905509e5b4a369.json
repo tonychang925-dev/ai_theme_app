@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:38:06", "result": {"chunk_id": "9daac5c56148", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明MSCI国家和地区指数的例子和功能（如美国指数、中国指数、A股指数），属于题材本体知识，无事件信息。"}}

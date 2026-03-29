@@ -1,0 +1,399 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能语音",
+      "evidence_span": "专业从事智能语音及语言技术研究"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "语言技术研究",
+      "evidence_span": "专业从事智能语音及语言技术研究"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "软件",
+      "evidence_span": "软件及芯片产品开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "芯片产品开发",
+      "evidence_span": "软件及芯片产品开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "语音信息服务",
+      "evidence_span": "语音信息服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子政务系统集成",
+      "evidence_span": "电子政务系统集成"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级骨干软件企业",
+      "evidence_span": "国家级骨干软件企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "人工智能开放创新平台",
+      "evidence_span": "首批国家人工智能开放创新平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "讯飞开放平台",
+      "evidence_span": "讯飞开放平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "因材施教整体解决方案",
+      "evidence_span": "因材施教整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧课堂",
+      "evidence_span": "智慧课堂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新高考综合解决方案",
+      "evidence_span": "新高考综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "区域教育云",
+      "evidence_span": "区域教育云"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教育大数据平台",
+      "evidence_span": "教育大数据平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "校内大数据精准教学",
+      "evidence_span": "校内大数据精准教学"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "英语听说教考平台",
+      "evidence_span": "英语听说教考平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国家通用语言学习平台",
+      "evidence_span": "国家通用语言学习平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能评卷系统",
+      "evidence_span": "智能评卷系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "英语听说智能模拟测试系统",
+      "evidence_span": "英语听说智能模拟测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工智能学习机",
+      "evidence_span": "人工智能学习机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "个性化学习手册",
+      "evidence_span": "个性化学习手册"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双师课堂",
+      "evidence_span": "双师课堂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "语音合成技术",
+      "evidence_span": "语音合成领域技术水平全球领先"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "深度学习中文连续语音识别系统",
+      "evidence_span": "基于深度学习的中文连续语音识别系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "开发者",
+      "evidence_span": "为开发者提供一站式人工智能解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "消费者",
+      "evidence_span": "消费者"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "智慧教育",
+      "evidence_span": "智慧教育"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "智慧城市",
+      "evidence_span": "智慧城市"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "智慧司法",
+      "evidence_span": "智慧司法"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "智能服务",
+      "evidence_span": "智能服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "智能汽车",
+      "evidence_span": "智能汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "智慧医疗",
+      "evidence_span": "智慧医疗"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "运营商",
+      "evidence_span": "运营商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "G端客户",
+      "evidence_span": "G 端业务主要以市县区等区域建设为主体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "B端客户",
+      "evidence_span": "B 端业务主要以学校建设为主体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "C端客户",
+      "evidence_span": "C 端业务主要以家长用户群自主购买为主"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧教育",
+      "evidence_span": "智慧教育深度受益"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "人工智能语音龙头",
+      "evidence_span": "全球人工智能语音龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "AI开放平台",
+      "evidence_span": "持续受益AI开放平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "人工智能发展",
+      "evidence_span": "人工智能发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能语音及语言技术研究",
+        "evidence_span": "专业从事智能语音及语言技术研究"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "软件及芯片产品开发",
+        "evidence_span": "软件及芯片产品开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "语音信息服务",
+        "evidence_span": "语音信息服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子政务系统集成",
+        "evidence_span": "电子政务系统集成"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级骨干软件企业",
+        "evidence_span": "国家级骨干软件企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "人工智能开放创新平台",
+        "evidence_span": "首批国家人工智能开放创新平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "讯飞开放平台",
+        "evidence_span": "讯飞开放平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "因材施教整体解决方案",
+        "evidence_span": "因材施教整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧课堂",
+        "evidence_span": "智慧课堂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新高考综合解决方案",
+        "evidence_span": "新高考综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "区域教育云",
+        "evidence_span": "区域教育云"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教育大数据平台",
+        "evidence_span": "教育大数据平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "校内大数据精准教学",
+        "evidence_span": "校内大数据精准教学"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "英语听说教考平台",
+        "evidence_span": "英语听说教考平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国家通用语言学习平台",
+        "evidence_span": "国家通用语言学习平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能评卷系统",
+        "evidence_span": "智能评卷系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "英语听说智能模拟测试系统",
+        "evidence_span": "英语听说智能模拟测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工智能学习机",
+        "evidence_span": "人工智能学习机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "个性化学习手册",
+        "evidence_span": "个性化学习手册"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双师课堂",
+        "evidence_span": "双师课堂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "语音合成技术",
+        "evidence_span": "语音合成领域技术水平全球领先"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "深度学习中文连续语音识别系统",
+        "evidence_span": "基于深度学习的中文连续语音识别系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "开发者",
+        "evidence_span": "为开发者提供一站式人工智能解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "消费者",
+        "evidence_span": "消费者"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "智慧教育",
+        "evidence_span": "智慧教育"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "智慧城市",
+        "evidence_span": "智慧城市"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "智慧司法",
+        "evidence_span": "智慧司法"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "智能服务",
+        "evidence_span": "智能服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "智能汽车",
+        "evidence_span": "智能汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "智慧医疗",
+        "evidence_span": "智慧医疗"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "运营商",
+        "evidence_span": "运营商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "G端客户",
+        "evidence_span": "G 端业务主要以市县区等区域建设为主体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "B端客户",
+        "evidence_span": "B 端业务主要以学校建设为主体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "C端客户",
+        "evidence_span": "C 端业务主要以家长用户群自主购买为主"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧教育",
+        "evidence_span": "智慧教育深度受益"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "人工智能语音龙头",
+        "evidence_span": "全球人工智能语音龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "AI开放平台",
+        "evidence_span": "持续受益AI开放平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "人工智能发展",
+        "evidence_span": "人工智能发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:33:38"
+}

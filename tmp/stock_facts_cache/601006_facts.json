@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "铁路煤炭运输",
+      "evidence_span": "大秦铁路是国铁集团旗下唯一铁路煤炭运输上市平台"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "货运业务",
+      "evidence_span": "货运业务贡献大秦铁路主要营业收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "客运业务",
+      "evidence_span": "兼营西安局客运业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铁路煤炭运输上市平台",
+      "evidence_span": "大秦铁路是国铁集团旗下唯一铁路煤炭运输上市平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "西煤东运战略通道",
+      "evidence_span": "大秦铁路西煤东运战略通道"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铁路货运龙头",
+      "evidence_span": "大秦铁路低估值铁路货运龙头标的"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤炭运输服务",
+      "evidence_span": "承担着山西、陕西、内蒙古西部煤炭外运的重任"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客运服务",
+      "evidence_span": "担当开行数列始发终到太原、大同的客列"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "重载铁路",
+      "evidence_span": "大秦线作为国内首条重载铁路"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "2万吨重载列车",
+      "evidence_span": "大秦线上开行的货列分为2万吨重载"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "1.5万吨重载列车",
+      "evidence_span": "大秦线上开行的货列分为...1.5万吨重载"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "1万吨重载列车",
+      "evidence_span": "大秦线上开行的货列分为...1万吨重载"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东南沿海地区",
+      "evidence_span": "下水后大多数发运东南沿海地区"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日韩等东亚地区",
+      "evidence_span": "部分出口日韩等东亚地区"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天津、辽宁、河北等地",
+      "evidence_span": "其余则运往天津、辽宁、河北等地"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "铁路煤炭运输",
+        "evidence_span": "大秦铁路是国铁集团旗下唯一铁路煤炭运输上市平台"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "货运业务",
+        "evidence_span": "货运业务贡献大秦铁路主要营业收入"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "客运业务",
+        "evidence_span": "兼营西安局客运业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铁路煤炭运输上市平台",
+        "evidence_span": "大秦铁路是国铁集团旗下唯一铁路煤炭运输上市平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "西煤东运战略通道",
+        "evidence_span": "大秦铁路西煤东运战略通道"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铁路货运龙头",
+        "evidence_span": "大秦铁路低估值铁路货运龙头标的"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤炭运输服务",
+        "evidence_span": "承担着山西、陕西、内蒙古西部煤炭外运的重任"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客运服务",
+        "evidence_span": "担当开行数列始发终到太原、大同的客列"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "重载铁路",
+        "evidence_span": "大秦线作为国内首条重载铁路"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "2万吨重载列车",
+        "evidence_span": "大秦线上开行的货列分为2万吨重载"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "1.5万吨重载列车",
+        "evidence_span": "大秦线上开行的货列分为...1.5万吨重载"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "1万吨重载列车",
+        "evidence_span": "大秦线上开行的货列分为...1万吨重载"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东南沿海地区",
+        "evidence_span": "下水后大多数发运东南沿海地区"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日韩等东亚地区",
+        "evidence_span": "部分出口日韩等东亚地区"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津、辽宁、河北等地",
+        "evidence_span": "其余则运往天津、辽宁、河北等地"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:05:25"
+}

@@ -1,0 +1,47 @@
+{
+  "evt_57bb826e9ebe": [
+    {
+      "root_subject_key": "9043089",
+      "root_subject_name": "AI智能体Manus",
+      "stage1_theme_score": 0.91,
+      "directions": [
+        {
+          "subject_key": "9043089",
+          "subject_name": "AI智能体Manus",
+          "aliases": ["Manus"],
+          "keywords": ["智能体", "Manus", "AI智能体"],
+          "component_words": ["AI智能体", "代理应用"],
+          "negative_seeds": ["导弹"],
+          "reason": "蝴蝶效应计划为智能体产品Manus融资1亿美元",
+          "semantic_type": "未定义",
+          "strategy_type": "event_driven",
+          "level": 1
+        },
+        {
+          "subject_key": "9043090",
+          "subject_name": "虚拟机技术",
+          "aliases": [],
+          "keywords": ["虚拟机", "云环境"],
+          "component_words": ["虚拟机", "云容器"],
+          "negative_seeds": [],
+          "reason": "Manus相关技术分支",
+          "semantic_type": "技术分支",
+          "strategy_type": "branch",
+          "level": 2
+        },
+        {
+          "subject_key": "9043091",
+          "subject_name": "供货预期",
+          "aliases": [],
+          "keywords": ["供货", "配套", "供应链"],
+          "component_words": ["配套", "供货"],
+          "negative_seeds": [],
+          "reason": "Manus相关配套预期",
+          "semantic_type": "供应链分支",
+          "strategy_type": "branch",
+          "level": 2
+        }
+      ]
+    }
+  ]
+}

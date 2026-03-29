@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "跨境化工物流供应链服务",
+      "evidence_span": "公司主营跨境化工物流供应链服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "仓储堆存",
+      "evidence_span": "仓储堆存"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "道路运输",
+      "evidence_span": "道路运输"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "危化品跨境运输龙头企业",
+      "evidence_span": "危化品跨境运输龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "跨境化工物流服务企业",
+      "evidence_span": "成长中的跨境化工物流服务企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中小化工企业跨境出口的一体化服务平台",
+      "evidence_span": "中小化工企业跨境出口的一体化服务平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "世界货物运输联盟成员（危化品）",
+      "evidence_span": "公司是世界货物运输联盟成员（危化品）"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国际物流供应商联盟成员",
+      "evidence_span": "国际物流供应商联盟成员"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国化工物流行业百强（综合服务类第9名）",
+      "evidence_span": "获得“2019 年-2020 年全国化工物流行业百强”称号（综合服务类第 9 名）"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "AAAAA级物流企业",
+      "evidence_span": "顺利通过了 AAAAA 级物流企业的现场评估"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "跨境化工物流供应链服务",
+      "evidence_span": "提供三类服务，1）跨境化工物流供应链服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仓储堆存服务",
+      "evidence_span": "仓储堆存"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "道路运输服务",
+      "evidence_span": "道路运输"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "危险品、化工品生产企业",
+      "evidence_span": "为危险品、化工品生产企业提供进出口物流服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中小化工企业",
+      "evidence_span": "中小化工企业跨境出口的一体化服务平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益欧洲能源危机带动国内危化出口预期",
+      "evidence_span": "受益欧洲能源危机带动国内危化出口预期"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "跨境化工物流供应链服务",
+        "evidence_span": "公司主营跨境化工物流供应链服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "仓储堆存",
+        "evidence_span": "仓储堆存"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "道路运输",
+        "evidence_span": "道路运输"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "危化品跨境运输龙头企业",
+        "evidence_span": "危化品跨境运输龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "跨境化工物流服务企业",
+        "evidence_span": "成长中的跨境化工物流服务企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中小化工企业跨境出口的一体化服务平台",
+        "evidence_span": "中小化工企业跨境出口的一体化服务平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "世界货物运输联盟成员（危化品）",
+        "evidence_span": "公司是世界货物运输联盟成员（危化品）"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国际物流供应商联盟成员",
+        "evidence_span": "国际物流供应商联盟成员"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国化工物流行业百强（综合服务类第9名）",
+        "evidence_span": "获得“2019 年-2020 年全国化工物流行业百强”称号（综合服务类第 9 名）"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "AAAAA级物流企业",
+        "evidence_span": "顺利通过了 AAAAA 级物流企业的现场评估"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "跨境化工物流供应链服务",
+        "evidence_span": "提供三类服务，1）跨境化工物流供应链服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仓储堆存服务",
+        "evidence_span": "仓储堆存"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "道路运输服务",
+        "evidence_span": "道路运输"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "危险品、化工品生产企业",
+        "evidence_span": "为危险品、化工品生产企业提供进出口物流服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中小化工企业",
+        "evidence_span": "中小化工企业跨境出口的一体化服务平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益欧洲能源危机带动国内危化出口预期",
+        "evidence_span": "受益欧洲能源危机带动国内危化出口预期"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:11:41"
+}

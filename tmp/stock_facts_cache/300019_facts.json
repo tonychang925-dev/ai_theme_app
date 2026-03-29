@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "有机硅密封胶",
+      "evidence_span": "主要从事有机硅密封胶等新材料的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "硅烷偶联剂",
+      "evidence_span": "主要从事有机硅密封胶等新材料的研发、生产及销售，目前产品包括有机硅密封胶、硅烷偶联剂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "硅碳负极材料",
+      "evidence_span": "5 万吨/年锂电池用硅碳负极材料及专用粘合剂项目"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "有机硅密封胶行业龙头企业",
+      "evidence_span": "硅宝科技是有机硅密封胶行业龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "有机硅室温胶产业链的制品阶段",
+      "evidence_span": "公司的有机硅密封胶产品处于有机硅室温胶产业链的制品阶段"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有机硅密封胶",
+      "evidence_span": "主要从事有机硅密封胶等新材料的研发、生产及销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅烷偶联剂",
+      "evidence_span": "目前产品包括有机硅密封胶、硅烷偶联剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑类用胶",
+      "evidence_span": "建筑类用胶是公司营业收入的主要来源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏组件密封胶",
+      "evidence_span": "光伏组件密封胶需求快速增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车胶",
+      "evidence_span": "汽车胶需求和市场规模"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源车动力电池胶",
+      "evidence_span": "新能源车动力电池胶需求量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池用硅碳负极材料",
+      "evidence_span": "5 万吨/年锂电池用硅碳负极材料及专用粘合剂项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用粘合剂",
+      "evidence_span": "5 万吨/年锂电池用硅碳负极材料及专用粘合剂项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "室温硫化硅橡胶",
+      "evidence_span": "为硅橡胶中的室温硫化硅橡胶"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "碧桂园",
+      "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保利",
+      "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "绿地",
+      "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华润",
+      "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "龙湖",
+      "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "世茂",
+      "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万达",
+      "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "星河",
+      "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万科采筑平台",
+      "evidence_span": "成为万科采筑平台有机硅密封胶行业的严选高级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中建",
+      "evidence_span": "与国内大型幕墙公司如中建、江河、方大、远大等开展深入合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江河",
+      "evidence_span": "与国内大型幕墙公司如中建、江河、方大、远大等开展深入合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "方大",
+      "evidence_span": "与国内大型幕墙公司如中建、江河、方大、远大等开展深入合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "远大",
+      "evidence_span": "与国内大型幕墙公司如中建、江河、方大、远大等开展深入合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南玻",
+      "evidence_span": "加深与国内大型玻璃加工企业如南玻、台玻、信义、耀皮、旗滨等的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "台玻",
+      "evidence_span": "加深与国内大型玻璃加工企业如南玻、台玻、信义、耀皮、旗滨等的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "信义",
+      "evidence_span": "加深与国内大型玻璃加工企业如南玻、台玻、信义、耀皮、旗滨等的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "耀皮",
+      "evidence_span": "加深与国内大型玻璃加工企业如南玻、台玻、信义、耀皮、旗滨等的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "旗滨",
+      "evidence_span": "加深与国内大型玻璃加工企业如南玻、台玻、信义、耀皮、旗滨等的合作"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "有机硅密封胶",
+        "evidence_span": "主要从事有机硅密封胶等新材料的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "硅烷偶联剂",
+        "evidence_span": "主要从事有机硅密封胶等新材料的研发、生产及销售，目前产品包括有机硅密封胶、硅烷偶联剂"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "硅碳负极材料",
+        "evidence_span": "5 万吨/年锂电池用硅碳负极材料及专用粘合剂项目"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "有机硅密封胶行业龙头企业",
+        "evidence_span": "硅宝科技是有机硅密封胶行业龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "有机硅室温胶产业链的制品阶段",
+        "evidence_span": "公司的有机硅密封胶产品处于有机硅室温胶产业链的制品阶段"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有机硅密封胶",
+        "evidence_span": "主要从事有机硅密封胶等新材料的研发、生产及销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅烷偶联剂",
+        "evidence_span": "目前产品包括有机硅密封胶、硅烷偶联剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑类用胶",
+        "evidence_span": "建筑类用胶是公司营业收入的主要来源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏组件密封胶",
+        "evidence_span": "光伏组件密封胶需求快速增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车胶",
+        "evidence_span": "汽车胶需求和市场规模"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源车动力电池胶",
+        "evidence_span": "新能源车动力电池胶需求量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池用硅碳负极材料",
+        "evidence_span": "5 万吨/年锂电池用硅碳负极材料及专用粘合剂项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用粘合剂",
+        "evidence_span": "5 万吨/年锂电池用硅碳负极材料及专用粘合剂项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "室温硫化硅橡胶",
+        "evidence_span": "为硅橡胶中的室温硫化硅橡胶"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "碧桂园",
+        "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保利",
+        "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "绿地",
+        "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华润",
+        "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "龙湖",
+        "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "世茂",
+        "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万达",
+        "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "星河",
+        "evidence_span": "成功入围碧桂园、保利、绿地、华润、龙湖、世茂、万达、星河等百强房地产品牌库"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万科采筑平台",
+        "evidence_span": "成为万科采筑平台有机硅密封胶行业的严选高级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中建",
+        "evidence_span": "与国内大型幕墙公司如中建、江河、方大、远大等开展深入合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江河",
+        "evidence_span": "与国内大型幕墙公司如中建、江河、方大、远大等开展深入合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "方大",
+        "evidence_span": "与国内大型幕墙公司如中建、江河、方大、远大等开展深入合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "远大",
+        "evidence_span": "与国内大型幕墙公司如中建、江河、方大、远大等开展深入合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南玻",
+        "evidence_span": "加深与国内大型玻璃加工企业如南玻、台玻、信义、耀皮、旗滨等的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "台玻",
+        "evidence_span": "加深与国内大型玻璃加工企业如南玻、台玻、信义、耀皮、旗滨等的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "信义",
+        "evidence_span": "加深与国内大型玻璃加工企业如南玻、台玻、信义、耀皮、旗滨等的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "耀皮",
+        "evidence_span": "加深与国内大型玻璃加工企业如南玻、台玻、信义、耀皮、旗滨等的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "旗滨",
+        "evidence_span": "加深与国内大型玻璃加工企业如南玻、台玻、信义、耀皮、旗滨等的合作"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:42:17"
+}

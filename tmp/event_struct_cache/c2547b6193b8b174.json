@@ -1,0 +1,80 @@
+{
+  "event_id": "evt_725deb758c97",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "会议论坛",
+  "entities": [
+    {
+      "name": "Meta",
+      "type": "公司",
+      "normalized": "Meta"
+    },
+    {
+      "name": "马克·扎克伯格",
+      "type": "人物",
+      "normalized": "马克·扎克伯格"
+    },
+    {
+      "name": "混合现实",
+      "type": "技术",
+      "normalized": "混合现实"
+    },
+    {
+      "name": "人工智能",
+      "type": "技术",
+      "normalized": "人工智能"
+    },
+    {
+      "name": "可穿戴设备",
+      "type": "产品",
+      "normalized": "可穿戴设备"
+    }
+  ],
+  "summary": "Meta Connect 2024开发者大会将举行，CEO扎克伯格将分享MR、AI和可穿戴设备进展。",
+  "causal_claim": [
+    "开发者大会",
+    "技术分享",
+    "AI/AR眼镜题材"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "混合现实(MR)",
+      "人工智能(AI)",
+      "可穿戴设备"
+    ],
+    "normalized_terms": {
+      "Meta": "Meta",
+      "马克·扎克伯格": "马克·扎克伯格",
+      "混合现实": "混合现实",
+      "人工智能": "人工智能",
+      "可穿戴设备": "可穿戴设备"
+    },
+    "evidence_spans": [
+      {
+        "text": "Meta Connect 2024年度开发者大会将于今夜举行",
+        "start": 0,
+        "end": 25
+      },
+      {
+        "text": "公司CEO马克·扎克伯格将于当地时间上午10点发表主题演讲",
+        "start": 40,
+        "end": 70
+      },
+      {
+        "text": "分享有关混合现实(MR)、人工智能(AI)，以及可穿戴设备的最新进展",
+        "start": 70,
+        "end": 110
+      }
+    ],
+    "core_concepts": [
+      "开发者大会",
+      "混合现实",
+      "人工智能",
+      "可穿戴设备"
+    ]
+  },
+  "severity_score": 0.6,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-09-25T00:00:00Z",
+  "raw_text": "2024年9月25日，Meta Connect 2024年度开发者大会将于今夜举行，据Meta官网贴出议程显示，公司CEO马克·扎克伯格将于当地时间上午10点（北京时间9月26日凌晨1点）发表主题演讲，并分享有关混合现实(MR)、人工智能(AI)，以及可穿戴设备的最新进展。"
+}

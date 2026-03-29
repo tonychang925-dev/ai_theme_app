@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "26159ec7b9c5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了马斯克在会议上提出的'火星链'概念，这是一个具体的事件动态（会议和概念发布），虽然涉及卫星互联网应用，但主要是新闻性内容，而非静态知识说明。"}}

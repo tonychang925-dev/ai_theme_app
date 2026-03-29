@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "da3a3f431e12", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落报告了Counterpoint发布的全球晶圆代工产业在特定季度的营收增长数据，属于市场动态事件，信息具有时效性，非稳定知识。"}}

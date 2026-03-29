@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "口服固体制剂药用辅料生产供应",
+      "evidence_span": "国内排名前列的口服固体制剂药用辅料生产供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "口服固体制剂药用辅料生产供应商",
+      "evidence_span": "国内排名前列的口服固体制剂药用辅料生产供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国药用辅料领跑者",
+      "evidence_span": "树立了中国药用辅料领跑者的形象"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "填充剂",
+      "evidence_span": "产品涵盖填充剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黏合剂",
+      "evidence_span": "黏合剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "崩解剂",
+      "evidence_span": "崩解剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "润滑剂",
+      "evidence_span": "润滑剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "包衣材料",
+      "evidence_span": "包衣材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微晶纤维素",
+      "evidence_span": "主要产品包括微晶纤维素"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "羟丙甲纤维素",
+      "evidence_span": "羟丙甲纤维素"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低取代羟丙纤维素",
+      "evidence_span": "低取代羟丙纤维素"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "羧甲淀粉钠",
+      "evidence_span": "羧甲淀粉钠"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硬脂酸镁",
+      "evidence_span": "硬脂酸镁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纤维素及其衍生物",
+      "evidence_span": "纤维素及其衍生物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "淀粉及衍生物",
+      "evidence_span": "淀粉及衍生物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无机盐类",
+      "evidence_span": "无机盐类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交联羧甲纤维素钠",
+      "evidence_span": "交联羧甲纤维素钠"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "倍他环糊精",
+      "evidence_span": "倍他环糊精"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保健品",
+      "evidence_span": "保健品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "植物胶囊",
+      "evidence_span": "植物胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "注射用辅料",
+      "evidence_span": "注射用辅料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预混辅料",
+      "evidence_span": "预混辅料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交联聚维酮",
+      "evidence_span": "交联聚维酮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "缓控释材料",
+      "evidence_span": "缓控释材料"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "开拓药业",
+      "evidence_span": "正在合作的有开拓药业的普克鲁胺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "君实生物",
+      "evidence_span": "君实生物在研口服药"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "进口替代对于公司业绩增长做出较大贡献"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "行业集中度提升",
+      "evidence_span": "辅料行业集中度持续提升"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "口服固体制剂药用辅料生产供应",
+        "evidence_span": "国内排名前列的口服固体制剂药用辅料生产供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "口服固体制剂药用辅料生产供应商",
+        "evidence_span": "国内排名前列的口服固体制剂药用辅料生产供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国药用辅料领跑者",
+        "evidence_span": "树立了中国药用辅料领跑者的形象"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "填充剂",
+        "evidence_span": "产品涵盖填充剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黏合剂",
+        "evidence_span": "黏合剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "崩解剂",
+        "evidence_span": "崩解剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "润滑剂",
+        "evidence_span": "润滑剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "包衣材料",
+        "evidence_span": "包衣材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微晶纤维素",
+        "evidence_span": "主要产品包括微晶纤维素"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "羟丙甲纤维素",
+        "evidence_span": "羟丙甲纤维素"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低取代羟丙纤维素",
+        "evidence_span": "低取代羟丙纤维素"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "羧甲淀粉钠",
+        "evidence_span": "羧甲淀粉钠"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硬脂酸镁",
+        "evidence_span": "硬脂酸镁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纤维素及其衍生物",
+        "evidence_span": "纤维素及其衍生物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "淀粉及衍生物",
+        "evidence_span": "淀粉及衍生物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无机盐类",
+        "evidence_span": "无机盐类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交联羧甲纤维素钠",
+        "evidence_span": "交联羧甲纤维素钠"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "倍他环糊精",
+        "evidence_span": "倍他环糊精"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保健品",
+        "evidence_span": "保健品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "植物胶囊",
+        "evidence_span": "植物胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "注射用辅料",
+        "evidence_span": "注射用辅料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预混辅料",
+        "evidence_span": "预混辅料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交联聚维酮",
+        "evidence_span": "交联聚维酮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "缓控释材料",
+        "evidence_span": "缓控释材料"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "开拓药业",
+        "evidence_span": "正在合作的有开拓药业的普克鲁胺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "君实生物",
+        "evidence_span": "君实生物在研口服药"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "进口替代对于公司业绩增长做出较大贡献"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "行业集中度提升",
+        "evidence_span": "辅料行业集中度持续提升"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:35:20"
+}
