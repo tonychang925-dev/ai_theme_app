@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:14:22", "result": {"span_uid": "4aa77fd90ccb", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "中国纸浆库存变化", "stability": "medium", "reason": "该片段提到国内多个港口和地区纸浆库存环比下降2.2%，但这是具体时间点的库存变化数据，属于短期信号，缺乏稳定性和独立性，不适合作为可入库的知识块。"}}

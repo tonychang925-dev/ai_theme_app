@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "1ff161c7596b", "label": "knowledge_like", "confidence": 0.85, "ontology_value": "medium", "reason": "该段在事件背景下（美国出口管制）列举了涉及半导体设备的具体公司和技术领域（如涂胶显影、刻蚀、薄膜沉积等），这些内容有助于理解半导体设备的关键环节和主要对象，但基于事件驱动，稳定性较弱。"}}

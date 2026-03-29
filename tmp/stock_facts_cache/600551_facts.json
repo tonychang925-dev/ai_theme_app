@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "图书出版",
+      "evidence_span": "主要经营图书、期刊、全媒体出版策划经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "期刊出版",
+      "evidence_span": "主要经营图书、期刊、全媒体出版策划经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "教材代理发行",
+      "evidence_span": "主要包括教材的代理发行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "一般图书编辑出版",
+      "evidence_span": "一般图书、期刊、电子出版物、音像制品、数字出版物、教辅的编辑出版"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字出版",
+      "evidence_span": "数字出版技术研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "在线教育",
+      "evidence_span": "在线教育、知识服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "印刷复制",
+      "evidence_span": "印刷复制、传媒科技研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "文化产品贸易",
+      "evidence_span": "文化产品贸易业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资业务",
+      "evidence_span": "投资业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "教育培训",
+      "evidence_span": "教育培训等业务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "出版企业",
+      "evidence_span": "全国率先以出版业务整体上市"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国有出版企业",
+      "evidence_span": "我国具有出版资质的出版社均为国有企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教材",
+      "evidence_span": "教材的代理发行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教辅",
+      "evidence_span": "教辅的编辑出版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主题出版物",
+      "evidence_span": "推出一批唱响主旋律、弘扬正能量、传播好声音的精品主题出版物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字出版物",
+      "evidence_span": "数字出版物、教辅的编辑出版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有声书",
+      "evidence_span": "《觉醒年代》有声书等11个项目入选并包揽省首届有声读书精品工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "课后服务课程",
+      "evidence_span": "提供丰富的素质教育领域课后服务课程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印刷服务",
+      "evidence_span": "教材、教辅、一般图书、报刊、票据、包装品等的印刷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纸张贸易",
+      "evidence_span": "纸张、印刷设备及相关文化产品的采购贸易"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "股权投资",
+      "evidence_span": "股权投资"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字出版技术",
+      "evidence_span": "数字出版技术研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI智能陪练钢琴书",
+      "evidence_span": "“AI智能陪练钢琴书”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "沉浸式有声书",
+      "evidence_span": "沉浸式有声书“蝼蚁之城”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧作业融合出版平台",
+      "evidence_span": "运用大数据技术的“智慧作业融合出版平台”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G+MEC虚拟专网技术应用印刷融合创新",
+      "evidence_span": "“5G+MEC虚拟专网技术应用印刷融合创新”入选科技创新成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新闻出版知识服务知识元提取",
+      "evidence_span": "《新闻出版知识服务知识元提取》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新闻出版知识服务知识本体构建",
+      "evidence_span": "《新闻出版知识服务知识本体构建》两项国家标准"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合肥市教育局",
+      "evidence_span": "中标合肥市教育局双新改革示范区专题培训"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亳州市教育局",
+      "evidence_span": "公司组织编写的大阅读活动方案被亳州市教育局采纳"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "人民出版社",
+      "evidence_span": "加强对接人民出版社、中央文献出版社等主题出版单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中央文献出版社",
+      "evidence_span": "加强对接人民出版社、中央文献出版社等主题出版单位"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新媒体转型",
+      "evidence_span": "幼教蓝海扬帆，加速新媒体转型"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字化转型",
+      "evidence_span": "传统出版国企加速向新媒体融合发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "图书出版",
+        "evidence_span": "主要经营图书、期刊、全媒体出版策划经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "期刊出版",
+        "evidence_span": "主要经营图书、期刊、全媒体出版策划经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "教材代理发行",
+        "evidence_span": "主要包括教材的代理发行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "一般图书编辑出版",
+        "evidence_span": "一般图书、期刊、电子出版物、音像制品、数字出版物、教辅的编辑出版"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字出版",
+        "evidence_span": "数字出版技术研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "在线教育",
+        "evidence_span": "在线教育、知识服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "印刷复制",
+        "evidence_span": "印刷复制、传媒科技研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "文化产品贸易",
+        "evidence_span": "文化产品贸易业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资业务",
+        "evidence_span": "投资业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "教育培训",
+        "evidence_span": "教育培训等业务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "出版企业",
+        "evidence_span": "全国率先以出版业务整体上市"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国有出版企业",
+        "evidence_span": "我国具有出版资质的出版社均为国有企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教材",
+        "evidence_span": "教材的代理发行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教辅",
+        "evidence_span": "教辅的编辑出版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主题出版物",
+        "evidence_span": "推出一批唱响主旋律、弘扬正能量、传播好声音的精品主题出版物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字出版物",
+        "evidence_span": "数字出版物、教辅的编辑出版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有声书",
+        "evidence_span": "《觉醒年代》有声书等11个项目入选并包揽省首届有声读书精品工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "课后服务课程",
+        "evidence_span": "提供丰富的素质教育领域课后服务课程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印刷服务",
+        "evidence_span": "教材、教辅、一般图书、报刊、票据、包装品等的印刷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纸张贸易",
+        "evidence_span": "纸张、印刷设备及相关文化产品的采购贸易"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "股权投资",
+        "evidence_span": "股权投资"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字出版技术",
+        "evidence_span": "数字出版技术研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI智能陪练钢琴书",
+        "evidence_span": "“AI智能陪练钢琴书”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "沉浸式有声书",
+        "evidence_span": "沉浸式有声书“蝼蚁之城”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧作业融合出版平台",
+        "evidence_span": "运用大数据技术的“智慧作业融合出版平台”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G+MEC虚拟专网技术应用印刷融合创新",
+        "evidence_span": "“5G+MEC虚拟专网技术应用印刷融合创新”入选科技创新成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新闻出版知识服务知识元提取",
+        "evidence_span": "《新闻出版知识服务知识元提取》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新闻出版知识服务知识本体构建",
+        "evidence_span": "《新闻出版知识服务知识本体构建》两项国家标准"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合肥市教育局",
+        "evidence_span": "中标合肥市教育局双新改革示范区专题培训"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亳州市教育局",
+        "evidence_span": "公司组织编写的大阅读活动方案被亳州市教育局采纳"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "人民出版社",
+        "evidence_span": "加强对接人民出版社、中央文献出版社等主题出版单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中央文献出版社",
+        "evidence_span": "加强对接人民出版社、中央文献出版社等主题出版单位"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新媒体转型",
+        "evidence_span": "幼教蓝海扬帆，加速新媒体转型"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字化转型",
+        "evidence_span": "传统出版国企加速向新媒体融合发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:35:38"
+}

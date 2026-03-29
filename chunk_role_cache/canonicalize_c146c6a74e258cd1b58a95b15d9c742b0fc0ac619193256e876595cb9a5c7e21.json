@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:04:23", "result": {"span_uid": "ef671596ec39", "action": "rewrite", "canonical_text": "集成电路大基金三期项目规模为3000亿元。上海微电子正在研发28纳米浸没式光刻机。", "final_type": "signal", "final_role": "资金支持与设备研发进展", "stability": "medium", "reason": "候选片段包含爆料、消息和具体时间预测，改写后保留资金规模和研发方向，形成可独立成立的信号知识。"}}

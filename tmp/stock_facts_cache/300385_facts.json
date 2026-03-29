@@ -1,0 +1,384 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "烟气净化",
+      "evidence_span": "烟气净化与灰渣处理业务是公司的传统业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "灰渣处理业务",
+      "evidence_span": "烟气净化与灰渣处理业务是公司的传统业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "危废处置业务",
+      "evidence_span": "公司危废处置相关业务既包括对危险废弃物的焚烧、物化和填埋处置，又包括危废处置设备的设计、生产、销售及安装"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资源化业务",
+      "evidence_span": "积极向资源化业务领域进军"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "垃圾焚烧发电行业尾气处理设备的供应商",
+      "evidence_span": "公司作为垃圾焚烧发电行业尾气处理设备的供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "危废处置设备的供应商",
+      "evidence_span": "公司作为危废处置设备的供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "危废处置运营服务的提供商",
+      "evidence_span": "危废处置运营服务的提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环境工程系统装备成套商",
+      "evidence_span": "成为一流的环境工程系统装备成套商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环境治理整体方案提供商",
+      "evidence_span": "环境治理整体方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "资源化环境产业投资商",
+      "evidence_span": "资源化环境产业投资商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烟气净化系统设备",
+      "evidence_span": "主要产品是烟气净化和灰渣处理系统设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "灰渣处理系统设备",
+      "evidence_span": "主要产品是烟气净化和灰渣处理系统设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "危废处置设备",
+      "evidence_span": "危废处置设备的设计、生产、销售及安装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烟气脱硫系统",
+      "evidence_span": "烟气脱硫系统采购合同"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气力输送系统",
+      "evidence_span": "气力输送已成功应用于兰州宝航新能源材料有限公司10万吨负极材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业污泥/灰渣熔融资源化成套处置技术",
+      "evidence_span": "工业污泥/灰渣熔融资源化"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市政污泥焚烧成套处置技术",
+      "evidence_span": "市政污泥焚烧"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有机垃圾资源化成套处置技术",
+      "evidence_span": "有机垃圾资源化"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高氯/高盐废物焚烧成套处置技术",
+      "evidence_span": "高氯/高盐废物焚烧"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "土壤修复成套处置技术",
+      "evidence_span": "土壤修复"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "干法工艺技术",
+      "evidence_span": "提供“干法、半干法、湿法、SCR”等多种组合工艺技术的整体解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "半干法工艺技术",
+      "evidence_span": "提供“干法、半干法、湿法、SCR”等多种组合工艺技术的整体解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "湿法工艺技术",
+      "evidence_span": "提供“干法、半干法、湿法、SCR”等多种组合工艺技术的整体解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SCR工艺技术",
+      "evidence_span": "提供“干法、半干法、湿法、SCR”等多种组合工艺技术的整体解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锂电池各工艺段烟气处理工艺",
+      "evidence_span": "深入研究并掌握了锂电池各工艺段烟气处理工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "碳素行业烟气处理技术",
+      "evidence_span": "碳素行业烟气处理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钙法脱硫技术",
+      "evidence_span": "钙法脱硫等技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安徽中汇发新材料有限公司",
+      "evidence_span": "安徽中汇发新材料有限公司35万吨/年轻烃裂解制苯乙烯项目设备买卖合同"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "四川海创尚纬新能源科技有限公司",
+      "evidence_span": "四川海创尚纬新能源科技有限公司年产 10万吨动力储能电池负极材料一体化项目烟气脱硫系统采购合同"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "兰州宝航新能源材料有限公司",
+      "evidence_span": "气力输送已成功应用于兰州宝航新能源材料有限公司10万吨负极材料"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝钢炼钢厂",
+      "evidence_span": "宝钢炼钢厂二次除尘C1-C9气力输灰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "马钢炼铁厂",
+      "evidence_span": "马钢炼铁厂 1#2#烧结机头气力输送"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福建嘉越",
+      "evidence_span": "顺利推进福建嘉越含铜冶炼项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "常林环保",
+      "evidence_span": "成功签订了常林环保含铜蚀刻液综合利用项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天源环保",
+      "evidence_span": "与天源环保签署了孟州市污泥与固体化废物资源化利用项目烟气净化系统设备供货及安装采购合同"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "垃圾焚烧发电",
+      "evidence_span": "受益垃圾发电大发展的烟气净化龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "垃圾焚烧烟气治理",
+      "evidence_span": "垃圾焚烧烟气治理龙头,受益垃圾焚烧行业高景气与提标改造"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "危废处置",
+      "evidence_span": "雪浪环境长三角危废龙头初现雏形"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "烟气净化与灰渣处理业务",
+        "evidence_span": "烟气净化与灰渣处理业务是公司的传统业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "危废处置业务",
+        "evidence_span": "公司危废处置相关业务既包括对危险废弃物的焚烧、物化和填埋处置，又包括危废处置设备的设计、生产、销售及安装"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资源化业务",
+        "evidence_span": "积极向资源化业务领域进军"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "垃圾焚烧发电行业尾气处理设备的供应商",
+        "evidence_span": "公司作为垃圾焚烧发电行业尾气处理设备的供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "危废处置设备的供应商",
+        "evidence_span": "公司作为危废处置设备的供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "危废处置运营服务的提供商",
+        "evidence_span": "危废处置运营服务的提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环境工程系统装备成套商",
+        "evidence_span": "成为一流的环境工程系统装备成套商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环境治理整体方案提供商",
+        "evidence_span": "环境治理整体方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "资源化环境产业投资商",
+        "evidence_span": "资源化环境产业投资商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烟气净化系统设备",
+        "evidence_span": "主要产品是烟气净化和灰渣处理系统设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "灰渣处理系统设备",
+        "evidence_span": "主要产品是烟气净化和灰渣处理系统设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "危废处置设备",
+        "evidence_span": "危废处置设备的设计、生产、销售及安装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烟气脱硫系统",
+        "evidence_span": "烟气脱硫系统采购合同"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气力输送系统",
+        "evidence_span": "气力输送已成功应用于兰州宝航新能源材料有限公司10万吨负极材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业污泥/灰渣熔融资源化成套处置技术",
+        "evidence_span": "工业污泥/灰渣熔融资源化"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市政污泥焚烧成套处置技术",
+        "evidence_span": "市政污泥焚烧"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有机垃圾资源化成套处置技术",
+        "evidence_span": "有机垃圾资源化"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高氯/高盐废物焚烧成套处置技术",
+        "evidence_span": "高氯/高盐废物焚烧"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "土壤修复成套处置技术",
+        "evidence_span": "土壤修复"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "干法工艺技术",
+        "evidence_span": "提供“干法、半干法、湿法、SCR”等多种组合工艺技术的整体解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "半干法工艺技术",
+        "evidence_span": "提供“干法、半干法、湿法、SCR”等多种组合工艺技术的整体解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "湿法工艺技术",
+        "evidence_span": "提供“干法、半干法、湿法、SCR”等多种组合工艺技术的整体解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SCR工艺技术",
+        "evidence_span": "提供“干法、半干法、湿法、SCR”等多种组合工艺技术的整体解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锂电池各工艺段烟气处理工艺",
+        "evidence_span": "深入研究并掌握了锂电池各工艺段烟气处理工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "碳素行业烟气处理技术",
+        "evidence_span": "碳素行业烟气处理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钙法脱硫技术",
+        "evidence_span": "钙法脱硫等技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安徽中汇发新材料有限公司",
+        "evidence_span": "安徽中汇发新材料有限公司35万吨/年轻烃裂解制苯乙烯项目设备买卖合同"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "四川海创尚纬新能源科技有限公司",
+        "evidence_span": "四川海创尚纬新能源科技有限公司年产 10万吨动力储能电池负极材料一体化项目烟气脱硫系统采购合同"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "兰州宝航新能源材料有限公司",
+        "evidence_span": "气力输送已成功应用于兰州宝航新能源材料有限公司10万吨负极材料"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝钢炼钢厂",
+        "evidence_span": "宝钢炼钢厂二次除尘C1-C9气力输灰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "马钢炼铁厂",
+        "evidence_span": "马钢炼铁厂 1#2#烧结机头气力输送"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福建嘉越",
+        "evidence_span": "顺利推进福建嘉越含铜冶炼项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "常林环保",
+        "evidence_span": "成功签订了常林环保含铜蚀刻液综合利用项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天源环保",
+        "evidence_span": "与天源环保签署了孟州市污泥与固体化废物资源化利用项目烟气净化系统设备供货及安装采购合同"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "垃圾焚烧发电",
+        "evidence_span": "受益垃圾发电大发展的烟气净化龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "垃圾焚烧烟气治理",
+        "evidence_span": "垃圾焚烧烟气治理龙头,受益垃圾焚烧行业高景气与提标改造"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "危废处置",
+        "evidence_span": "雪浪环境长三角危废龙头初现雏形"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:11:06"
+}

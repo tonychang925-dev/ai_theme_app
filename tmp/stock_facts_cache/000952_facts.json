@@ -1,0 +1,314 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "维生素原料产品的研发",
+      "evidence_span": "主营维生素原料产品的研发、生产和销售等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "主营维生素原料产品的研发、生产和销售等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主营维生素原料产品的研发、生产和销售等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药制剂业务",
+      "evidence_span": "加快医药制剂业务布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药商业配送",
+      "evidence_span": "加大对医药商业配送和市场分销业务的投入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "市场分销业务",
+      "evidence_span": "加大对医药商业配送和市场分销业务的投入"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球主要的维生素B2产品供应商",
+      "evidence_span": "公司是全球主要的维生素B2产品供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "维生素行业稳定的原材料供应商和合作伙伴",
+      "evidence_span": "使公司成为了维生素行业稳定的原材料供应商和合作伙伴"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "湖北省生物产业龙头",
+      "evidence_span": "明确湖北省生物产业龙头地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维生素B2",
+      "evidence_span": "主要生产维生素B2、B6以及医药制剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维生素B6",
+      "evidence_span": "主要生产维生素B2、B6以及医药制剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药制剂产品",
+      "evidence_span": "主要生产维生素B2、B6以及医药制剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "原料系列产品",
+      "evidence_span": "公司主要产品分为原料系列产品、制剂系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制剂系列产品",
+      "evidence_span": "公司主要产品分为原料系列产品、制剂系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药级核黄素",
+      "evidence_span": "原料系列产品为医药级、食品级、98%饲料级、80%饲料级核黄素及核黄素磷酸钠"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "食品级核黄素",
+      "evidence_span": "原料系列产品为医药级、食品级、98%饲料级、80%饲料级核黄素及核黄素磷酸钠"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "98%饲料级核黄素",
+      "evidence_span": "原料系列产品为医药级、食品级、98%饲料级、80%饲料级核黄素及核黄素磷酸钠"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "80%饲料级核黄素",
+      "evidence_span": "原料系列产品为医药级、食品级、98%饲料级、80%饲料级核黄素及核黄素磷酸钠"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核黄素磷酸钠",
+      "evidence_span": "原料系列产品为医药级、食品级、98%饲料级、80%饲料级核黄素及核黄素磷酸钠"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "口服固体制剂",
+      "evidence_span": "制剂系列产品为口服固体制剂和大输液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大输液",
+      "evidence_span": "制剂系列产品为口服固体制剂和大输液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非布司他原料药",
+      "evidence_span": "完成非布司他原料药、非布司他片、辅酶Q10软胶囊等新产品开发立项工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非布司他片",
+      "evidence_span": "完成非布司他原料药、非布司他片、辅酶Q10软胶囊等新产品开发立项工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "辅酶Q10软胶囊",
+      "evidence_span": "完成非布司他原料药、非布司他片、辅酶Q10软胶囊等新产品开发立项工作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物发酵技术",
+      "evidence_span": "公司以生物发酵技术为立足之本"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业菌种定向选育",
+      "evidence_span": "集成工业菌种定向选育、生物分离纯化、药物制剂开发等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物分离纯化",
+      "evidence_span": "集成工业菌种定向选育、生物分离纯化、药物制剂开发等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "药物制剂开发",
+      "evidence_span": "集成工业菌种定向选育、生物分离纯化、药物制剂开发等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "VB2发酵工艺优化",
+      "evidence_span": "VB2工艺升级，糖连消技术在发酵车间推行应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "耐热菌株稳产核黄素",
+      "evidence_span": "耐热菌株稳产核黄素项目立项将实现高温季节VB2稳产高产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国药控股湖北有限公司",
+      "evidence_span": "2022年公司与国药控股湖北有限公司继续开展深度战略合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "广济药业维生素B2景气上行，国企改革存预期"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "维生素原料产品的研发、生产和销售",
+        "evidence_span": "主营维生素原料产品的研发、生产和销售等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药制剂业务",
+        "evidence_span": "加快医药制剂业务布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药商业配送和市场分销业务",
+        "evidence_span": "加大对医药商业配送和市场分销业务的投入"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球主要的维生素B2产品供应商",
+        "evidence_span": "公司是全球主要的维生素B2产品供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "维生素行业稳定的原材料供应商和合作伙伴",
+        "evidence_span": "使公司成为了维生素行业稳定的原材料供应商和合作伙伴"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "湖北省生物产业龙头",
+        "evidence_span": "明确湖北省生物产业龙头地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维生素B2",
+        "evidence_span": "主要生产维生素B2、B6以及医药制剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维生素B6",
+        "evidence_span": "主要生产维生素B2、B6以及医药制剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药制剂产品",
+        "evidence_span": "主要生产维生素B2、B6以及医药制剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "原料系列产品",
+        "evidence_span": "公司主要产品分为原料系列产品、制剂系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制剂系列产品",
+        "evidence_span": "公司主要产品分为原料系列产品、制剂系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药级核黄素",
+        "evidence_span": "原料系列产品为医药级、食品级、98%饲料级、80%饲料级核黄素及核黄素磷酸钠"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "食品级核黄素",
+        "evidence_span": "原料系列产品为医药级、食品级、98%饲料级、80%饲料级核黄素及核黄素磷酸钠"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "98%饲料级核黄素",
+        "evidence_span": "原料系列产品为医药级、食品级、98%饲料级、80%饲料级核黄素及核黄素磷酸钠"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "80%饲料级核黄素",
+        "evidence_span": "原料系列产品为医药级、食品级、98%饲料级、80%饲料级核黄素及核黄素磷酸钠"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核黄素磷酸钠",
+        "evidence_span": "原料系列产品为医药级、食品级、98%饲料级、80%饲料级核黄素及核黄素磷酸钠"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "口服固体制剂",
+        "evidence_span": "制剂系列产品为口服固体制剂和大输液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大输液",
+        "evidence_span": "制剂系列产品为口服固体制剂和大输液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非布司他原料药",
+        "evidence_span": "完成非布司他原料药、非布司他片、辅酶Q10软胶囊等新产品开发立项工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非布司他片",
+        "evidence_span": "完成非布司他原料药、非布司他片、辅酶Q10软胶囊等新产品开发立项工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "辅酶Q10软胶囊",
+        "evidence_span": "完成非布司他原料药、非布司他片、辅酶Q10软胶囊等新产品开发立项工作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物发酵技术",
+        "evidence_span": "公司以生物发酵技术为立足之本"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业菌种定向选育",
+        "evidence_span": "集成工业菌种定向选育、生物分离纯化、药物制剂开发等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物分离纯化",
+        "evidence_span": "集成工业菌种定向选育、生物分离纯化、药物制剂开发等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "药物制剂开发",
+        "evidence_span": "集成工业菌种定向选育、生物分离纯化、药物制剂开发等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "VB2发酵工艺优化",
+        "evidence_span": "VB2工艺升级，糖连消技术在发酵车间推行应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "耐热菌株稳产核黄素",
+        "evidence_span": "耐热菌株稳产核黄素项目立项将实现高温季节VB2稳产高产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国药控股湖北有限公司",
+        "evidence_span": "2022年公司与国药控股湖北有限公司继续开展深度战略合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "广济药业维生素B2景气上行，国企改革存预期"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:57:52"
+}

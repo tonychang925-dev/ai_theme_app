@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:11", "result": {"chunk_id": "0973033ca595", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了优必选公司的订单数据、交付预测以及智元机器人、宇树科技的中标信息，属于具体的商业事件和业绩动态，没有提供灵巧手的静态说明。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:42:17", "result": {"chunk_id": "62e006876409", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落详细描述了天普股份的股份转让、增资和实控人变更等具体事件，包括日期和复牌信息，属于公司公告和动态，没有涉及中昊芯英的静态定义或核心构成。"}}

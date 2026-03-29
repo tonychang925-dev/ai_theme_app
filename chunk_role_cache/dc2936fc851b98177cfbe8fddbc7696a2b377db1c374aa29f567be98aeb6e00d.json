@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "33b52e03ac96", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落混合了集成电路大基金三期项目的事件爆料和上海微电子光刻机研发进展，后者提到了具体技术（28纳米浸没式光刻机）和交付时间，可能包含对国产光刻机技术路径的候选知识。"}}

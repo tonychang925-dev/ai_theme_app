@@ -1,0 +1,609 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "建筑施工业务",
+      "evidence_span": "建筑施工是上海建工传统优势业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设计咨询业务",
+      "evidence_span": "设计咨询业务和建材工业业务为支撑"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建材工业业务",
+      "evidence_span": "建材工业业务为支撑"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "房产开发业务",
+      "evidence_span": "房产开发业务和城市建设投资业务为两翼"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市建设投资业务",
+      "evidence_span": "房产开发业务和城市建设投资业务为两翼"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市更新业务",
+      "evidence_span": "重点拓展城市更新业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态环境业务",
+      "evidence_span": "重点拓展生态环境业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水利水务业务",
+      "evidence_span": "重点拓展水利水务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业化建造业务",
+      "evidence_span": "重点拓展工业化建造业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建筑服务业",
+      "evidence_span": "重点拓展建筑服务业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新基建领域",
+      "evidence_span": "重点拓展新基建领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "建筑业龙头企业",
+      "evidence_span": "具有一系列行业高等级资质的建筑业龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国建筑行业先行者和排头兵",
+      "evidence_span": "上海建工是中国建筑行业先行者和排头兵"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大250家工程承包商",
+      "evidence_span": "位列《工程新闻记录（ENR）》全球最大250家工程承包商第7位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国第三大预拌混凝土供应商",
+      "evidence_span": "是中国第三大预拌混凝土供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "建筑全生命周期服务商",
+      "evidence_span": "转型发展“建筑全生命周期服务商”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品混凝土",
+      "evidence_span": "主要产品涉及商品混凝土及预制构件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预制构件",
+      "evidence_span": "主要产品涉及商品混凝土及预制构件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢结构",
+      "evidence_span": "主要产品涉及商品混凝土及预制构件、钢结构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中央空调",
+      "evidence_span": "主要产品涉及商品混凝土及预制构件、钢结构、中央空调等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房地产开发建设",
+      "evidence_span": "房产开发业务包含房地产开发建设、销售、租赁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物业管理服务",
+      "evidence_span": "房产开发业务包含房地产开发建设、销售、租赁以及物业管理等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑修缮改建",
+      "evidence_span": "城市更新业务重点拓展建筑修缮改建"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "历史地区保护性开发",
+      "evidence_span": "历史地区保护性开发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市基础设施改建与提升",
+      "evidence_span": "城市基础设施改建与提升"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "园林景观",
+      "evidence_span": "生态环境业务重点拓展园林景观"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "土壤修复",
+      "evidence_span": "土壤修复"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "流域治理",
+      "evidence_span": "流域治理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "废弃物处理",
+      "evidence_span": "废弃物处理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "噪声与光污染防治",
+      "evidence_span": "噪声与光污染防治"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水利工程",
+      "evidence_span": "水利水务业务重点拓展水利工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海绵城市与内涝防控",
+      "evidence_span": "海绵城市与内涝防控"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "原水与供水系统",
+      "evidence_span": "原水与供水系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污水排放系统",
+      "evidence_span": "污水排放系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污水收集与处理",
+      "evidence_span": "污水收集与处理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污泥处理",
+      "evidence_span": "污泥处理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中水回用",
+      "evidence_span": "中水回用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧水务",
+      "evidence_span": "智慧水务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市政管网综合修复改造",
+      "evidence_span": "市政管网综合修复改造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装配式住宅",
+      "evidence_span": "重点拓展装配式、钢结构住宅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢结构住宅",
+      "evidence_span": "重点拓展装配式、钢结构住宅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预制装配式交通基础设施",
+      "evidence_span": "预制装配式交通基础设施"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑运营维护",
+      "evidence_span": "建筑服务业重点拓展建筑运营维护"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑电商",
+      "evidence_span": "建筑电商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融资租赁",
+      "evidence_span": "融资租赁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧城市",
+      "evidence_span": "新基建领域重点拓展智慧城市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型交通设施",
+      "evidence_span": "新型交通设施"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型能源设施",
+      "evidence_span": "新型能源设施"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新材料与装备配套",
+      "evidence_span": "新材料与装备配套"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3D打印科技试验楼",
+      "evidence_span": "自主研发设计制造了国内首个可居住、可交付使用的3D打印科技试验楼"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "山形建筑工业化建造技术",
+      "evidence_span": "世博文化公园双子山创新应用“山形”建筑工业化建造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "预制装配率突破90%",
+      "evidence_span": "乌鲁木齐东进场高架道路预制装配率突破90%"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "地下工程全装配超大尺寸双面叠合墙新型结构体系",
+      "evidence_span": "研发的地下工程全装配超大尺寸双面叠合墙新型结构体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "UHPC连接免套筒直锚短搭接技术",
+      "evidence_span": "“UHPC连接免套筒直锚短搭接”技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字孪生技术",
+      "evidence_span": "开展基于数字孪生技术的固废厂站类智慧运维"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化建造技术",
+      "evidence_span": "应用数字化建造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BIM应用",
+      "evidence_span": "推进数字化工程应用与BIM应用延伸相结合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "天网系统",
+      "evidence_span": "开发了基于数字化的“天网”系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "劳务实名制与智能门禁系统",
+      "evidence_span": "劳务实名制与智能门禁系统"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "长三角一体化",
+      "evidence_span": "全方位受益长三角一体化推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "建筑施工业务",
+        "evidence_span": "建筑施工是上海建工传统优势业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "设计咨询业务",
+        "evidence_span": "设计咨询业务和建材工业业务为支撑"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "建材工业业务",
+        "evidence_span": "建材工业业务为支撑"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "房产开发业务",
+        "evidence_span": "房产开发业务和城市建设投资业务为两翼"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市建设投资业务",
+        "evidence_span": "房产开发业务和城市建设投资业务为两翼"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市更新业务",
+        "evidence_span": "重点拓展城市更新业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态环境业务",
+        "evidence_span": "重点拓展生态环境业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水利水务业务",
+        "evidence_span": "重点拓展水利水务业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业化建造业务",
+        "evidence_span": "重点拓展工业化建造业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "建筑服务业",
+        "evidence_span": "重点拓展建筑服务业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新基建领域",
+        "evidence_span": "重点拓展新基建领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "建筑业龙头企业",
+        "evidence_span": "具有一系列行业高等级资质的建筑业龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国建筑行业先行者和排头兵",
+        "evidence_span": "上海建工是中国建筑行业先行者和排头兵"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大250家工程承包商",
+        "evidence_span": "位列《工程新闻记录（ENR）》全球最大250家工程承包商第7位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国第三大预拌混凝土供应商",
+        "evidence_span": "是中国第三大预拌混凝土供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "建筑全生命周期服务商",
+        "evidence_span": "转型发展“建筑全生命周期服务商”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品混凝土",
+        "evidence_span": "主要产品涉及商品混凝土及预制构件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预制构件",
+        "evidence_span": "主要产品涉及商品混凝土及预制构件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢结构",
+        "evidence_span": "主要产品涉及商品混凝土及预制构件、钢结构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中央空调",
+        "evidence_span": "主要产品涉及商品混凝土及预制构件、钢结构、中央空调等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房地产开发建设",
+        "evidence_span": "房产开发业务包含房地产开发建设、销售、租赁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物业管理服务",
+        "evidence_span": "房产开发业务包含房地产开发建设、销售、租赁以及物业管理等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑修缮改建",
+        "evidence_span": "城市更新业务重点拓展建筑修缮改建"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "历史地区保护性开发",
+        "evidence_span": "历史地区保护性开发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市基础设施改建与提升",
+        "evidence_span": "城市基础设施改建与提升"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "园林景观",
+        "evidence_span": "生态环境业务重点拓展园林景观"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "土壤修复",
+        "evidence_span": "土壤修复"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "流域治理",
+        "evidence_span": "流域治理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "废弃物处理",
+        "evidence_span": "废弃物处理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "噪声与光污染防治",
+        "evidence_span": "噪声与光污染防治"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水利工程",
+        "evidence_span": "水利水务业务重点拓展水利工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海绵城市与内涝防控",
+        "evidence_span": "海绵城市与内涝防控"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "原水与供水系统",
+        "evidence_span": "原水与供水系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污水排放系统",
+        "evidence_span": "污水排放系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污水收集与处理",
+        "evidence_span": "污水收集与处理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污泥处理",
+        "evidence_span": "污泥处理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中水回用",
+        "evidence_span": "中水回用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧水务",
+        "evidence_span": "智慧水务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市政管网综合修复改造",
+        "evidence_span": "市政管网综合修复改造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装配式住宅",
+        "evidence_span": "重点拓展装配式、钢结构住宅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢结构住宅",
+        "evidence_span": "重点拓展装配式、钢结构住宅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预制装配式交通基础设施",
+        "evidence_span": "预制装配式交通基础设施"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑运营维护",
+        "evidence_span": "建筑服务业重点拓展建筑运营维护"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑电商",
+        "evidence_span": "建筑电商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融资租赁",
+        "evidence_span": "融资租赁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧城市",
+        "evidence_span": "新基建领域重点拓展智慧城市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型交通设施",
+        "evidence_span": "新型交通设施"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型能源设施",
+        "evidence_span": "新型能源设施"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新材料与装备配套",
+        "evidence_span": "新材料与装备配套"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3D打印科技试验楼",
+        "evidence_span": "自主研发设计制造了国内首个可居住、可交付使用的3D打印科技试验楼"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "山形建筑工业化建造技术",
+        "evidence_span": "世博文化公园双子山创新应用“山形”建筑工业化建造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "预制装配率突破90%",
+        "evidence_span": "乌鲁木齐东进场高架道路预制装配率突破90%"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "地下工程全装配超大尺寸双面叠合墙新型结构体系",
+        "evidence_span": "研发的地下工程全装配超大尺寸双面叠合墙新型结构体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "UHPC连接免套筒直锚短搭接技术",
+        "evidence_span": "“UHPC连接免套筒直锚短搭接”技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字孪生技术",
+        "evidence_span": "开展基于数字孪生技术的固废厂站类智慧运维"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化建造技术",
+        "evidence_span": "应用数字化建造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BIM应用",
+        "evidence_span": "推进数字化工程应用与BIM应用延伸相结合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "天网系统",
+        "evidence_span": "开发了基于数字化的“天网”系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "劳务实名制与智能门禁系统",
+        "evidence_span": "劳务实名制与智能门禁系统"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "长三角一体化",
+        "evidence_span": "全方位受益长三角一体化推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:34:20"
+}

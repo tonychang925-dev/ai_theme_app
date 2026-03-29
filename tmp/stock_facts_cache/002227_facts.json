@@ -1,0 +1,479 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电力自动化电源业务",
+      "evidence_span": "公司主要业务分为电力自动化电源业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电动汽车充电业务",
+      "evidence_span": "电动汽车充电业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电能质量治理业务",
+      "evidence_span": "电能质量治理业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电力自动化电源细分行业的龙头企业",
+      "evidence_span": "是电力自动化电源细分行业的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内唯一核安全级高频开关电源供应商",
+      "evidence_span": "奥特迅也是国内目前唯一核安全级高频开关电源供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电动汽车充电国家标准及行业标准的制定者",
+      "evidence_span": "公司是电动汽车充电国家标准及行业标准的制定者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "深圳最大的公共充电运营商",
+      "evidence_span": "公司是深圳最大的公共充电运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国唯一拥有成熟的兆瓦级充电堆运行经验的设备供应商",
+      "evidence_span": "也是全国唯一拥有成熟的兆瓦级充电堆运行经验的设备供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力自动化电源",
+      "evidence_span": "电力自动化电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核安全级电源",
+      "evidence_span": "核安全级电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特高压输电用取能电源",
+      "evidence_span": "特高压输电用取能电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车交流充电桩",
+      "evidence_span": "奥特迅开发的电动汽车交流充电桩"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车非车载充电机",
+      "evidence_span": "电动汽车非车载充电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车智能充放电机",
+      "evidence_span": "电动汽车智能充放电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车柔性充电堆",
+      "evidence_span": "电动汽车柔性充电堆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "紧凑型景观组合电气柜",
+      "evidence_span": "紧凑型景观组合电气柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分布式储能",
+      "evidence_span": "分布式储能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力用直流守护电源系统",
+      "evidence_span": "电力用直流守护电源系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压直挂式电池储能系统",
+      "evidence_span": "高压直挂式电池储能系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低压分布式储能系统",
+      "evidence_span": "低压分布式储能系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交/直流微电网系统集成",
+      "evidence_span": "交/直流微电网系统集成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电能质量产品",
+      "evidence_span": "以电能质量产品为基础"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种电源产品",
+      "evidence_span": "特种电源产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能变流器",
+      "evidence_span": "储能变流器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能系统",
+      "evidence_span": "储能系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力电子变压器",
+      "evidence_span": "电力电子变压器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微电网",
+      "evidence_span": "微电网"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力用直流和交流一体化不间断电源系统",
+      "evidence_span": "电力用直流和交流一体化不间断电源系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核安全级直流电源系统",
+      "evidence_span": "核安全级直流电源系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车矩阵式柔性充电堆",
+      "evidence_span": "电动汽车矩阵式柔性充电堆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "27.5kV大功率铁路功率融通装置",
+      "evidence_span": "27.5kV大功率铁路功率融通装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压取能电源",
+      "evidence_span": "高压取能电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "欧标充电堆产品",
+      "evidence_span": "公司的欧标充电堆产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高频开关技术",
+      "evidence_span": "首创将高频开关技术引入直流操作电源"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电动汽车大功率充电技术",
+      "evidence_span": "奥特迅是国内最早开展大功率充电技术研究的企业之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于电动汽车柔性充电堆的ChaoJi充电系统",
+      "evidence_span": "已经成功研制了基于电动汽车柔性充电堆的ChaoJi充电系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电动汽车与电网双向互动技术",
+      "evidence_span": "持续开展电动汽车与电网双向互动技术的研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于CHB-DAB的电力电子变压器",
+      "evidence_span": "完成了基于CHB-DAB的电力电子变压器的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "30kW高频隔离型充放电模块（V2G）",
+      "evidence_span": "30kW高频隔离型充放电模块（V2G）的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "蓄电池分组管理技术",
+      "evidence_span": "通过引入蓄电池分组管理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "充电模块高、低电压穿越技术",
+      "evidence_span": "充电模块高、低电压穿越技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "功率融合动态分配",
+      "evidence_span": "具有“功率融合 动态分配”特点"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "奥特迅交付的变电站充电装置累计市场占有率连续多年稳坐国网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "南网双第一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽埃安",
+      "evidence_span": "成功与广汽埃安纯电动汽车进行了大功率实车充电实验"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车",
+      "evidence_span": "奥特迅受益于新能源汽车和核电行业的快速发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "核电行业",
+      "evidence_span": "奥特迅受益于新能源汽车和核电行业的快速发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电力自动化电源业务",
+        "evidence_span": "公司主要业务分为电力自动化电源业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电动汽车充电业务",
+        "evidence_span": "电动汽车充电业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电能质量治理业务",
+        "evidence_span": "电能质量治理业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电力自动化电源细分行业的龙头企业",
+        "evidence_span": "是电力自动化电源细分行业的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内唯一核安全级高频开关电源供应商",
+        "evidence_span": "奥特迅也是国内目前唯一核安全级高频开关电源供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电动汽车充电国家标准及行业标准的制定者",
+        "evidence_span": "公司是电动汽车充电国家标准及行业标准的制定者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "深圳最大的公共充电运营商",
+        "evidence_span": "公司是深圳最大的公共充电运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国唯一拥有成熟的兆瓦级充电堆运行经验的设备供应商",
+        "evidence_span": "也是全国唯一拥有成熟的兆瓦级充电堆运行经验的设备供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力自动化电源",
+        "evidence_span": "电力自动化电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核安全级电源",
+        "evidence_span": "核安全级电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特高压输电用取能电源",
+        "evidence_span": "特高压输电用取能电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车交流充电桩",
+        "evidence_span": "奥特迅开发的电动汽车交流充电桩"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车非车载充电机",
+        "evidence_span": "电动汽车非车载充电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车智能充放电机",
+        "evidence_span": "电动汽车智能充放电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车柔性充电堆",
+        "evidence_span": "电动汽车柔性充电堆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "紧凑型景观组合电气柜",
+        "evidence_span": "紧凑型景观组合电气柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分布式储能",
+        "evidence_span": "分布式储能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力用直流守护电源系统",
+        "evidence_span": "电力用直流守护电源系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压直挂式电池储能系统",
+        "evidence_span": "高压直挂式电池储能系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低压分布式储能系统",
+        "evidence_span": "低压分布式储能系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交/直流微电网系统集成",
+        "evidence_span": "交/直流微电网系统集成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电能质量产品",
+        "evidence_span": "以电能质量产品为基础"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种电源产品",
+        "evidence_span": "特种电源产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能变流器",
+        "evidence_span": "储能变流器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能系统",
+        "evidence_span": "储能系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力电子变压器",
+        "evidence_span": "电力电子变压器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微电网",
+        "evidence_span": "微电网"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力用直流和交流一体化不间断电源系统",
+        "evidence_span": "电力用直流和交流一体化不间断电源系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核安全级直流电源系统",
+        "evidence_span": "核安全级直流电源系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车矩阵式柔性充电堆",
+        "evidence_span": "电动汽车矩阵式柔性充电堆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "27.5kV大功率铁路功率融通装置",
+        "evidence_span": "27.5kV大功率铁路功率融通装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压取能电源",
+        "evidence_span": "高压取能电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "欧标充电堆产品",
+        "evidence_span": "公司的欧标充电堆产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高频开关技术",
+        "evidence_span": "首创将高频开关技术引入直流操作电源"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电动汽车大功率充电技术",
+        "evidence_span": "奥特迅是国内最早开展大功率充电技术研究的企业之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于电动汽车柔性充电堆的ChaoJi充电系统",
+        "evidence_span": "已经成功研制了基于电动汽车柔性充电堆的ChaoJi充电系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电动汽车与电网双向互动技术",
+        "evidence_span": "持续开展电动汽车与电网双向互动技术的研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于CHB-DAB的电力电子变压器",
+        "evidence_span": "完成了基于CHB-DAB的电力电子变压器的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "30kW高频隔离型充放电模块（V2G）",
+        "evidence_span": "30kW高频隔离型充放电模块（V2G）的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "蓄电池分组管理技术",
+        "evidence_span": "通过引入蓄电池分组管理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "充电模块高、低电压穿越技术",
+        "evidence_span": "充电模块高、低电压穿越技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "功率融合动态分配",
+        "evidence_span": "具有“功率融合 动态分配”特点"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "奥特迅交付的变电站充电装置累计市场占有率连续多年稳坐国网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "南网双第一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽埃安",
+        "evidence_span": "成功与广汽埃安纯电动汽车进行了大功率实车充电实验"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车",
+        "evidence_span": "奥特迅受益于新能源汽车和核电行业的快速发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "核电行业",
+        "evidence_span": "奥特迅受益于新能源汽车和核电行业的快速发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:32:20"
+}

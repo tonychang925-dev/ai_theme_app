@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "美妆代运营",
+      "evidence_span": "丽人丽妆资深化妆品代运营龙头"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化妆品电商零售服务",
+      "evidence_span": "丽人丽妆行业领先的化妆品电商零售服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "美妆代运营龙头",
+      "evidence_span": "丽人丽妆美妆代运营龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "头部美妆服务商",
+      "evidence_span": "丽人丽妆头部美妆服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "美妆TP龙头",
+      "evidence_span": "丽人丽妆美妆TP龙头尽享赛道红利"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "店铺运营",
+      "evidence_span": "为品牌提供店铺运营、仓储物流、营销推广等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仓储物流",
+      "evidence_span": "为品牌提供店铺运营、仓储物流、营销推广等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "营销推广",
+      "evidence_span": "为品牌提供店铺运营、仓储物流、营销推广等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全链路生态服务",
+      "evidence_span": "提供全链路生态服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "IT服务",
+      "evidence_span": "较早布局IT服务、营销、仓储物流等核心服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雪花秀",
+      "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雅漾",
+      "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "后",
+      "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "施华蔻",
+      "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "芙丽芳丝",
+      "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奥伦纳素",
+      "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "馥绿德雅",
+      "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际美妆品牌",
+      "evidence_span": "国际美妆品牌客户基本已被头部美妆服务商瓜分"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "城野医生",
+      "evidence_span": "公司已在抖音平台开拓了包括城野医生、三谷、乐扣乐扣等34家店铺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三谷",
+      "evidence_span": "公司已在抖音平台开拓了包括城野医生、三谷、乐扣乐扣等34家店铺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "乐扣乐扣",
+      "evidence_span": "公司已在抖音平台开拓了包括城野医生、三谷、乐扣乐扣等34家店铺"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电商+美妆尽享行业红利",
+      "evidence_span": "数据赋能行业，电商+美妆尽享行业红利"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "美妆代运营",
+        "evidence_span": "丽人丽妆资深化妆品代运营龙头"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化妆品电商零售服务",
+        "evidence_span": "丽人丽妆行业领先的化妆品电商零售服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "美妆代运营龙头",
+        "evidence_span": "丽人丽妆美妆代运营龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "头部美妆服务商",
+        "evidence_span": "丽人丽妆头部美妆服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "美妆TP龙头",
+        "evidence_span": "丽人丽妆美妆TP龙头尽享赛道红利"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "店铺运营",
+        "evidence_span": "为品牌提供店铺运营、仓储物流、营销推广等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仓储物流",
+        "evidence_span": "为品牌提供店铺运营、仓储物流、营销推广等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "营销推广",
+        "evidence_span": "为品牌提供店铺运营、仓储物流、营销推广等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全链路生态服务",
+        "evidence_span": "提供全链路生态服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "IT服务",
+        "evidence_span": "较早布局IT服务、营销、仓储物流等核心服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雪花秀",
+        "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雅漾",
+        "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "后",
+        "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "施华蔻",
+        "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "芙丽芳丝",
+        "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奥伦纳素",
+        "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "馥绿德雅",
+        "evidence_span": "公司与雪花秀、雅漾、后、施华蔻、芙丽芳丝、奥伦纳素、馥绿德雅等60多个品牌达成合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际美妆品牌",
+        "evidence_span": "国际美妆品牌客户基本已被头部美妆服务商瓜分"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "城野医生",
+        "evidence_span": "公司已在抖音平台开拓了包括城野医生、三谷、乐扣乐扣等34家店铺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三谷",
+        "evidence_span": "公司已在抖音平台开拓了包括城野医生、三谷、乐扣乐扣等34家店铺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "乐扣乐扣",
+        "evidence_span": "公司已在抖音平台开拓了包括城野医生、三谷、乐扣乐扣等34家店铺"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电商+美妆尽享行业红利",
+        "evidence_span": "数据赋能行业，电商+美妆尽享行业红利"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:56:52"
+}

@@ -1,0 +1,51 @@
+{
+  "event_id": "evt_8aaea9a45e83",
+  "theme_name": "SpaceX",
+  "event_type": "政策",
+  "entities": [
+    {
+      "name": "白宫",
+      "type": "组织",
+      "normalized": "白宫"
+    },
+    {
+      "name": "SpaceX",
+      "type": "公司",
+      "normalized": "SpaceX"
+    }
+  ],
+  "summary": "白宫考虑划拨联邦野生动物保护用地给SpaceX扩建火箭发射与生产基地",
+  "causal_claim": [
+    "用地划拨",
+    "产能扩张",
+    "航天基建"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "火箭发射",
+      "生产基地",
+      "联邦野生动物保护用地"
+    ],
+    "normalized_terms": {
+      "白宫": "白宫",
+      "SpaceX": "SpaceX"
+    },
+    "evidence_spans": [
+      {
+        "text": "白宫考虑将部分联邦野生动物保护用地划拨给SpaceX用于扩建火箭发射与生产基地",
+        "start": 0,
+        "end": 50
+      }
+    ],
+    "core_concepts": [
+      "用地划拨",
+      "扩建",
+      "航天"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.2,
+  "timestamp": "2025-12-25T00:00:00Z",
+  "raw_text": "2025年12月25日，据报道，白宫考虑将部分联邦野生动物保护用地划拨给SpaceX用于扩建火箭发射与生产基地。（新闻来源：财联社）"
+}

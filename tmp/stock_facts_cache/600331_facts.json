@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "有色金属锌冶炼",
+      "evidence_span": "公司本部有色基地主营锌锭、锌合金制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "磷化工产品生产",
+      "evidence_span": "公司本部磷化工基地主营磷化工产品生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "天然气化工",
+      "evidence_span": "公司控股子公司绵竹川润主营天然气化工"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锌冶炼企业",
+      "evidence_span": "公司本部有色基地主营锌锭、锌合金制造"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "磷化工企业",
+      "evidence_span": "公司本部磷化工基地主营磷化工产品生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "合成氨生产企业",
+      "evidence_span": "公司控股子公司绵竹川润主营合成氨（液氨）产品的生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锌锭",
+      "evidence_span": "公司本部有色基地主营锌锭、锌合金制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锌合金",
+      "evidence_span": "公司本部有色基地主营锌锭、锌合金制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸盐系列产品",
+      "evidence_span": "主要产品包括磷酸盐系列产品、复合肥等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合肥",
+      "evidence_span": "主要产品包括磷酸盐系列产品、复合肥等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业级磷酸一铵",
+      "evidence_span": "工业级磷酸一铵还是生产新能源电池、灭火剂、阻燃剂的原材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "合成氨（液氨）",
+      "evidence_span": "公司控股子公司绵竹川润主营合成氨（液氨）产品的生产和销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "冶化结合循环经济产业链",
+      "evidence_span": "构建锌冶炼→尾气→磷、硫→化工产品的循环经济产业链"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高含量水溶性磷铵生产技术",
+      "evidence_span": "公司拥有国家发明专利的高含量水溶性磷铵生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磷石膏资源化综合利用关键技术",
+      "evidence_span": "公司拥有磷石膏堆存技术和资源化综合利用关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "中低品位磷矿的利用技术",
+      "evidence_span": "公司拥有磷化工清洁生产技术、热能梯级利用技术、中低品位磷矿的利用技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型钢厂",
+      "evidence_span": "锌合金得到了众多大型钢厂的肯定与认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德阳地区磷铵企业",
+      "evidence_span": "为德阳地区4家磷铵企业最大的供应商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "有色金属锌冶炼",
+        "evidence_span": "公司本部有色基地主营锌锭、锌合金制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "磷化工产品生产",
+        "evidence_span": "公司本部磷化工基地主营磷化工产品生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "天然气化工",
+        "evidence_span": "公司控股子公司绵竹川润主营天然气化工"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锌冶炼企业",
+        "evidence_span": "公司本部有色基地主营锌锭、锌合金制造"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "磷化工企业",
+        "evidence_span": "公司本部磷化工基地主营磷化工产品生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "合成氨生产企业",
+        "evidence_span": "公司控股子公司绵竹川润主营合成氨（液氨）产品的生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锌锭",
+        "evidence_span": "公司本部有色基地主营锌锭、锌合金制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锌合金",
+        "evidence_span": "公司本部有色基地主营锌锭、锌合金制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸盐系列产品",
+        "evidence_span": "主要产品包括磷酸盐系列产品、复合肥等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合肥",
+        "evidence_span": "主要产品包括磷酸盐系列产品、复合肥等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业级磷酸一铵",
+        "evidence_span": "工业级磷酸一铵还是生产新能源电池、灭火剂、阻燃剂的原材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "合成氨（液氨）",
+        "evidence_span": "公司控股子公司绵竹川润主营合成氨（液氨）产品的生产和销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "冶化结合循环经济产业链",
+        "evidence_span": "构建锌冶炼→尾气→磷、硫→化工产品的循环经济产业链"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高含量水溶性磷铵生产技术",
+        "evidence_span": "公司拥有国家发明专利的高含量水溶性磷铵生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磷石膏资源化综合利用关键技术",
+        "evidence_span": "公司拥有磷石膏堆存技术和资源化综合利用关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "中低品位磷矿的利用技术",
+        "evidence_span": "公司拥有磷化工清洁生产技术、热能梯级利用技术、中低品位磷矿的利用技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型钢厂",
+        "evidence_span": "锌合金得到了众多大型钢厂的肯定与认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德阳地区磷铵企业",
+        "evidence_span": "为德阳地区4家磷铵企业最大的供应商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:57:49"
+}

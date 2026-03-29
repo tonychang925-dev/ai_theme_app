@@ -1,0 +1,234 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "化学药品原料药制造",
+      "evidence_span": "公司所属行业为医药制造业中的“化学药品原料药制造（C2710）”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化学药品制剂制造",
+      "evidence_span": "公司所属行业为医药制造业中的“化学药品制剂制造（C2720）”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化学药品原料药",
+      "evidence_span": "公司主要从事化学药品原料药及制剂的研发、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "制剂的研发",
+      "evidence_span": "公司主要从事化学药品原料药及制剂的研发、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主要从事化学药品原料药及制剂的研发、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要从事化学药品原料药及制剂的研发、生产、销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "制药企业",
+      "evidence_span": "集科研、生产、销售于一体的制药企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗贫血用药",
+      "evidence_span": "形成了以抗贫血用药、治疗精神障碍用药、原料药为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "治疗精神障碍用药",
+      "evidence_span": "形成了以抗贫血用药、治疗精神障碍用药、原料药为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "原料药",
+      "evidence_span": "形成了以抗贫血用药、治疗精神障碍用药、原料药为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "心脑血管疾病治疗药物",
+      "evidence_span": "以心脑血管疾病治疗药物和抗肿瘤治疗用药为辅助的产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗肿瘤治疗用药",
+      "evidence_span": "以心脑血管疾病治疗药物和抗肿瘤治疗用药为辅助的产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益源生（复方硫酸亚铁叶酸片）",
+      "evidence_span": "公司主要核心产品益源生（复方硫酸亚铁叶酸片）属于抗贫血用药中的化学药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可同（利培酮口崩片）",
+      "evidence_span": "可同（利培酮口崩片）市场竞争情况"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "草酸艾司西酞普兰片",
+      "evidence_span": "草酸艾司西酞普兰片市场竞争情况"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阿魏酸钠原料药",
+      "evidence_span": "阿魏酸钠原料药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "富马酸亚铁原料药",
+      "evidence_span": "富马酸亚铁原料药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫酸亚铁原料药",
+      "evidence_span": "硫酸亚铁原料药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "瑞香素胶囊",
+      "evidence_span": "可保证瑞香素胶囊原料药供应"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无菌原料药生产技术",
+      "evidence_span": "公司是国内少数生产阿魏酸钠无菌原料药的企业之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "原料药制剂一体化",
+      "evidence_span": "原料药+制剂一体化优势突出"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "惠氏制药有限公司",
+      "evidence_span": "包括惠氏制药有限公司的善存"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杭州民生药业集团",
+      "evidence_span": "杭州民生药业集团生产的21金维他"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产替代作用显著"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "化学药品原料药制造",
+        "evidence_span": "公司所属行业为医药制造业中的“化学药品原料药制造（C2710）”"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化学药品制剂制造",
+        "evidence_span": "公司所属行业为医药制造业中的“化学药品制剂制造（C2720）”"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化学药品原料药及制剂的研发、生产、销售",
+        "evidence_span": "公司主要从事化学药品原料药及制剂的研发、生产、销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "制药企业",
+        "evidence_span": "集科研、生产、销售于一体的制药企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗贫血用药",
+        "evidence_span": "形成了以抗贫血用药、治疗精神障碍用药、原料药为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "治疗精神障碍用药",
+        "evidence_span": "形成了以抗贫血用药、治疗精神障碍用药、原料药为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "原料药",
+        "evidence_span": "形成了以抗贫血用药、治疗精神障碍用药、原料药为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "心脑血管疾病治疗药物",
+        "evidence_span": "以心脑血管疾病治疗药物和抗肿瘤治疗用药为辅助的产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗肿瘤治疗用药",
+        "evidence_span": "以心脑血管疾病治疗药物和抗肿瘤治疗用药为辅助的产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益源生（复方硫酸亚铁叶酸片）",
+        "evidence_span": "公司主要核心产品益源生（复方硫酸亚铁叶酸片）属于抗贫血用药中的化学药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可同（利培酮口崩片）",
+        "evidence_span": "可同（利培酮口崩片）市场竞争情况"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "草酸艾司西酞普兰片",
+        "evidence_span": "草酸艾司西酞普兰片市场竞争情况"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阿魏酸钠原料药",
+        "evidence_span": "阿魏酸钠原料药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "富马酸亚铁原料药",
+        "evidence_span": "富马酸亚铁原料药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫酸亚铁原料药",
+        "evidence_span": "硫酸亚铁原料药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "瑞香素胶囊",
+        "evidence_span": "可保证瑞香素胶囊原料药供应"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无菌原料药生产技术",
+        "evidence_span": "公司是国内少数生产阿魏酸钠无菌原料药的企业之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "原料药制剂一体化",
+        "evidence_span": "原料药+制剂一体化优势突出"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "惠氏制药有限公司",
+        "evidence_span": "包括惠氏制药有限公司的善存"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杭州民生药业集团",
+        "evidence_span": "杭州民生药业集团生产的21金维他"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产替代作用显著"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:41:22"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:00:49", "result": {"chunk_id": "b8e4567b0759", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落描述小米集团在特定季度（2024年第三季度）的财务业绩，属于公司公告事件，没有涉及小米汽车的本体知识。"}}

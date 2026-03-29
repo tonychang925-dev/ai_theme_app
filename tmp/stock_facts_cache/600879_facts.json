@@ -1,0 +1,364 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "航天电子",
+      "evidence_span": "主要从事航天电子、无人系统及高端智能装备、电线电缆等产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "无人系统",
+      "evidence_span": "主要从事航天电子、无人系统及高端智能装备、电线电缆等产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端智能装备",
+      "evidence_span": "主要从事航天电子、无人系统及高端智能装备、电线电缆等产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电线电缆",
+      "evidence_span": "主要从事航天电子、无人系统及高端智能装备、电线电缆等产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航天电子行业领军企业",
+      "evidence_span": "公司为航天电子行业领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航天九院旗下唯一上市平台",
+      "evidence_span": "航天电子作为航天九院旗下唯一上市平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "测控通信",
+      "evidence_span": "航天电子产品主要包括测控通信、惯性导航、机电组件和集成电路"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "惯性导航",
+      "evidence_span": "航天电子产品主要包括测控通信、惯性导航、机电组件和集成电路"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机电组件",
+      "evidence_span": "航天电子产品主要包括测控通信、惯性导航、机电组件和集成电路"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集成电路",
+      "evidence_span": "航天电子产品主要包括测控通信、惯性导航、机电组件和集成电路"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无人机系统",
+      "evidence_span": "无人系统及高端智能装备主要包括无人机系统、精确制导产品系统、智能感知、特种电机、高端智能装备等系统及服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精确制导产品系统",
+      "evidence_span": "无人系统及高端智能装备主要包括无人机系统、精确制导产品系统、智能感知、特种电机、高端智能装备等系统及服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能感知",
+      "evidence_span": "无人系统及高端智能装备主要包括无人机系统、精确制导产品系统、智能感知、特种电机、高端智能装备等系统及服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种电机",
+      "evidence_span": "无人系统及高端智能装备主要包括无人机系统、精确制导产品系统、智能感知、特种电机、高端智能装备等系统及服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端智能装备",
+      "evidence_span": "无人系统及高端智能装备主要包括无人机系统、精确制导产品系统、智能感知、特种电机、高端智能装备等系统及服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "民用导线",
+      "evidence_span": "电线电缆产品主要包括民用导线、电缆及军用特种电缆产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电缆",
+      "evidence_span": "电线电缆产品主要包括民用导线、电缆及军用特种电缆产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用特种电缆产品",
+      "evidence_span": "电线电缆产品主要包括民用导线、电缆及军用特种电缆产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无人飞行器",
+      "evidence_span": "公司的无人系统主要包括无人飞行器、无人车辆、无人舰船、无人潜器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无人车辆",
+      "evidence_span": "公司的无人系统主要包括无人飞行器、无人车辆、无人舰船、无人潜器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无人舰船",
+      "evidence_span": "公司的无人系统主要包括无人飞行器、无人车辆、无人舰船、无人潜器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无人潜器",
+      "evidence_span": "公司的无人系统主要包括无人飞行器、无人车辆、无人舰船、无人潜器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞鸿无人机",
+      "evidence_span": "飞鸿无人机产品系列丰富"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞腾系列精确制导炸弹",
+      "evidence_span": "飞腾系列产品具有小型化、高精度、低成本、智能化等优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集成电路设计",
+      "evidence_span": "时代民芯目前已形成集集成电路设计、制造（不包括晶圆加工）、封装、测试为一体的产业链"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集成电路制造",
+      "evidence_span": "时代民芯目前已形成集集成电路设计、制造（不包括晶圆加工）、封装、测试为一体的产业链"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集成电路封装",
+      "evidence_span": "时代民芯目前已形成集集成电路设计、制造（不包括晶圆加工）、封装、测试为一体的产业链"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集成电路测试",
+      "evidence_span": "时代民芯目前已形成集集成电路设计、制造（不包括晶圆加工）、封装、测试为一体的产业链"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陆军",
+      "evidence_span": "近距无人机在陆军占据主体地位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "空军",
+      "evidence_span": "目前正往空军等其他兵种进行拓展"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "10多个国家",
+      "evidence_span": "飞鸿产品远销10多个国家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军民融合",
+      "evidence_span": "军民融合潜力巨大"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "航天改革",
+      "evidence_span": "受益于航天改革和发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "航天产业发展",
+      "evidence_span": "受益航天产业发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "受益于国企改革推进"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "院所改制",
+      "evidence_span": "有望受益于院所改制"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "航天电子",
+        "evidence_span": "主要从事航天电子、无人系统及高端智能装备、电线电缆等产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "无人系统及高端智能装备",
+        "evidence_span": "主要从事航天电子、无人系统及高端智能装备、电线电缆等产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电线电缆",
+        "evidence_span": "主要从事航天电子、无人系统及高端智能装备、电线电缆等产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航天电子行业领军企业",
+        "evidence_span": "公司为航天电子行业领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航天九院旗下唯一上市平台",
+        "evidence_span": "航天电子作为航天九院旗下唯一上市平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "测控通信",
+        "evidence_span": "航天电子产品主要包括测控通信、惯性导航、机电组件和集成电路"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "惯性导航",
+        "evidence_span": "航天电子产品主要包括测控通信、惯性导航、机电组件和集成电路"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机电组件",
+        "evidence_span": "航天电子产品主要包括测控通信、惯性导航、机电组件和集成电路"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集成电路",
+        "evidence_span": "航天电子产品主要包括测控通信、惯性导航、机电组件和集成电路"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无人机系统",
+        "evidence_span": "无人系统及高端智能装备主要包括无人机系统、精确制导产品系统、智能感知、特种电机、高端智能装备等系统及服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精确制导产品系统",
+        "evidence_span": "无人系统及高端智能装备主要包括无人机系统、精确制导产品系统、智能感知、特种电机、高端智能装备等系统及服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能感知",
+        "evidence_span": "无人系统及高端智能装备主要包括无人机系统、精确制导产品系统、智能感知、特种电机、高端智能装备等系统及服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种电机",
+        "evidence_span": "无人系统及高端智能装备主要包括无人机系统、精确制导产品系统、智能感知、特种电机、高端智能装备等系统及服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端智能装备",
+        "evidence_span": "无人系统及高端智能装备主要包括无人机系统、精确制导产品系统、智能感知、特种电机、高端智能装备等系统及服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "民用导线",
+        "evidence_span": "电线电缆产品主要包括民用导线、电缆及军用特种电缆产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电缆",
+        "evidence_span": "电线电缆产品主要包括民用导线、电缆及军用特种电缆产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用特种电缆产品",
+        "evidence_span": "电线电缆产品主要包括民用导线、电缆及军用特种电缆产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无人飞行器",
+        "evidence_span": "公司的无人系统主要包括无人飞行器、无人车辆、无人舰船、无人潜器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无人车辆",
+        "evidence_span": "公司的无人系统主要包括无人飞行器、无人车辆、无人舰船、无人潜器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无人舰船",
+        "evidence_span": "公司的无人系统主要包括无人飞行器、无人车辆、无人舰船、无人潜器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无人潜器",
+        "evidence_span": "公司的无人系统主要包括无人飞行器、无人车辆、无人舰船、无人潜器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞鸿无人机",
+        "evidence_span": "飞鸿无人机产品系列丰富"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞腾系列精确制导炸弹",
+        "evidence_span": "飞腾系列产品具有小型化、高精度、低成本、智能化等优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集成电路设计",
+        "evidence_span": "时代民芯目前已形成集集成电路设计、制造（不包括晶圆加工）、封装、测试为一体的产业链"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集成电路制造",
+        "evidence_span": "时代民芯目前已形成集集成电路设计、制造（不包括晶圆加工）、封装、测试为一体的产业链"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集成电路封装",
+        "evidence_span": "时代民芯目前已形成集集成电路设计、制造（不包括晶圆加工）、封装、测试为一体的产业链"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集成电路测试",
+        "evidence_span": "时代民芯目前已形成集集成电路设计、制造（不包括晶圆加工）、封装、测试为一体的产业链"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陆军",
+        "evidence_span": "近距无人机在陆军占据主体地位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "空军",
+        "evidence_span": "目前正往空军等其他兵种进行拓展"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "10多个国家",
+        "evidence_span": "飞鸿产品远销10多个国家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军民融合",
+        "evidence_span": "军民融合潜力巨大"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "航天改革",
+        "evidence_span": "受益于航天改革和发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "航天产业发展",
+        "evidence_span": "受益航天产业发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "受益于国企改革推进"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "院所改制",
+        "evidence_span": "有望受益于院所改制"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:43:17"
+}

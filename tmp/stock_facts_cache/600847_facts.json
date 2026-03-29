@@ -1,0 +1,99 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "铅酸电池产品研发",
+      "evidence_span": "主要从事铅酸电池产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铅酸电池产品生产",
+      "evidence_span": "主要从事铅酸电池产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铅酸电池产品销售",
+      "evidence_span": "主要从事铅酸电池产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铅酸蓄电池行业上市公司",
+      "evidence_span": "中国铅酸蓄电池行业首家上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铅酸电池产品",
+      "evidence_span": "主要从事铅酸电池产品的研发、生产及销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "起动启停电池",
+      "evidence_span": "公司主要产品属于起动启停电池领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车生产厂商",
+      "evidence_span": "下游客户主要包括汽车生产厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "轻型电动车厂商",
+      "evidence_span": "下游客户主要包括汽车生产厂商以及轻型电动车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "储能电池厂商",
+      "evidence_span": "下游客户主要包括汽车生产厂商以及轻型电动车、储能电池厂商等"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "铅酸电池产品研发",
+        "evidence_span": "主要从事铅酸电池产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铅酸电池产品生产",
+        "evidence_span": "主要从事铅酸电池产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铅酸电池产品销售",
+        "evidence_span": "主要从事铅酸电池产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铅酸蓄电池行业上市公司",
+        "evidence_span": "中国铅酸蓄电池行业首家上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铅酸电池产品",
+        "evidence_span": "主要从事铅酸电池产品的研发、生产及销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "起动启停电池",
+        "evidence_span": "公司主要产品属于起动启停电池领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车生产厂商",
+        "evidence_span": "下游客户主要包括汽车生产厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "轻型电动车厂商",
+        "evidence_span": "下游客户主要包括汽车生产厂商以及轻型电动车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "储能电池厂商",
+        "evidence_span": "下游客户主要包括汽车生产厂商以及轻型电动车、储能电池厂商等"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:30:21"
+}

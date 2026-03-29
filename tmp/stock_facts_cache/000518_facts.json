@@ -1,0 +1,144 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "生物医药制品生产",
+      "evidence_span": "公司主要从事生物医药制品、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要从事生物医药制品、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "园林绿化工程业务",
+      "evidence_span": "以及园林绿化工程业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "生物医药研发、生产和销售企业",
+      "evidence_span": "北京四环系国内最早从事生物医药研发、生产和销售的企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家高新技术企业",
+      "evidence_span": "为国家高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "德路生（注射用重组人白介素-2）",
+      "evidence_span": "德路生（注射用重组人白介素-2）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新德路生（重组人白介素-2注射液）",
+      "evidence_span": "新德路生（重组人白介素-2注射液）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "欣粒生（重组人粒细胞刺激因子注射液）",
+      "evidence_span": "欣粒生（重组人粒细胞刺激因子注射液）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环尔博（重组人促红素注射液）",
+      "evidence_span": "环尔博（重组人促红素注射液）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "EPO注射液",
+      "evidence_span": "主要产品EPO注射液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "注射用白介素-2",
+      "evidence_span": "注射用白介素-2"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5项发明专利",
+      "evidence_span": "拥有5项发明专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3项新药证书",
+      "evidence_span": "3项新药证书"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医院终端",
+      "evidence_span": "实现对医院终端销售"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "生物医药制品生产和销售",
+        "evidence_span": "公司主要从事生物医药制品、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "园林绿化工程业务",
+        "evidence_span": "以及园林绿化工程业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "生物医药研发、生产和销售企业",
+        "evidence_span": "北京四环系国内最早从事生物医药研发、生产和销售的企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家高新技术企业",
+        "evidence_span": "为国家高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "德路生（注射用重组人白介素-2）",
+        "evidence_span": "德路生（注射用重组人白介素-2）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新德路生（重组人白介素-2注射液）",
+        "evidence_span": "新德路生（重组人白介素-2注射液）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "欣粒生（重组人粒细胞刺激因子注射液）",
+        "evidence_span": "欣粒生（重组人粒细胞刺激因子注射液）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环尔博（重组人促红素注射液）",
+        "evidence_span": "环尔博（重组人促红素注射液）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "EPO注射液",
+        "evidence_span": "主要产品EPO注射液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "注射用白介素-2",
+        "evidence_span": "注射用白介素-2"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5项发明专利",
+        "evidence_span": "拥有5项发明专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3项新药证书",
+        "evidence_span": "3项新药证书"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医院终端",
+        "evidence_span": "实现对医院终端销售"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:59:14"
+}

@@ -1,0 +1,119 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "数据通信",
+      "evidence_span": "数据通信"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "绿色出行",
+      "evidence_span": "绿色出行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源业务",
+      "evidence_span": "新能源业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数据中心、通信电源领先",
+      "evidence_span": "数据中心、通信电源领先"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "私人定制的能效管理服务商",
+      "evidence_span": "私人定制的能效管理服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G电源产品",
+      "evidence_span": "供货铁塔5G电源产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "BAT",
+      "evidence_span": "BAT的共同选择"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁塔",
+      "evidence_span": "供货铁塔5G电源产品"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G建设",
+      "evidence_span": "5G建设推动公司增长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G时代",
+      "evidence_span": "5G时代再铸辉煌"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源",
+      "evidence_span": "5G与新能源双轮驱动"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "数据通信",
+        "evidence_span": "数据通信"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "绿色出行",
+        "evidence_span": "绿色出行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源业务",
+        "evidence_span": "新能源业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数据中心、通信电源领先",
+        "evidence_span": "数据中心、通信电源领先"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "私人定制的能效管理服务商",
+        "evidence_span": "私人定制的能效管理服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G电源产品",
+        "evidence_span": "供货铁塔5G电源产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "BAT",
+        "evidence_span": "BAT的共同选择"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁塔",
+        "evidence_span": "供货铁塔5G电源产品"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G建设",
+        "evidence_span": "5G建设推动公司增长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G时代",
+        "evidence_span": "5G时代再铸辉煌"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源",
+        "evidence_span": "5G与新能源双轮驱动"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:08:42"
+}

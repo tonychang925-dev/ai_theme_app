@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:08:31", "result": {"span_uid": "a4d53b6ad420", "action": "rewrite", "canonical_text": "春节档通常指春节期间（约9天）的电影放映档期", "final_type": "core", "final_role": "档期时间定义", "stability": "high", "reason": "原文本包含具体日期（2026年2月17日-25日），需去事件化改写为稳定知识。春节档的时间范围是核心定义要素。"}}

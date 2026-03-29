@@ -1,0 +1,419 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "物联网解决方案",
+      "evidence_span": "是专注于物联网解决方案的国家高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "无线传感网络综合解决方案",
+      "evidence_span": "专注于为各行业提供无线传感网络综合解决方案"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "低压用电业务",
+      "evidence_span": "低压用电业务主要包括"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "低压配电智慧物联业务",
+      "evidence_span": "低压配电智慧物联业务主要包括"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中压配电智慧物联业务",
+      "evidence_span": "中压配电智慧物联业务主要包括"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "输变电智慧物联业务",
+      "evidence_span": "输变电智慧物联业务主要包括"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "公用计量业务",
+      "evidence_span": "公用计量业务主要包括"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "场域网专家",
+      "evidence_span": "成为受人尊重的场域网专家"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "物联网解决方案提供商",
+      "evidence_span": "专注于物联网解决方案的国家高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电能表",
+      "evidence_span": "电力计量产品（工商业、居民用单、三相智能电能表等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "用电信息采集设备",
+      "evidence_span": "用电信息采集设备（能源控制器，集中器，专变终端，采集器，通信单元等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "用电信息采集本地通信解决方案",
+      "evidence_span": "用电信息采集本地通信解决方案（双模MESH网络）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "边缘物联代理",
+      "evidence_span": "边缘物联代理（智能融合终端，汇聚网关）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能端设备",
+      "evidence_span": "智能端设备（动环类传感器，安防类传感器，智能断路器，智能在线监测装置，智能换相开关等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多模通信单元",
+      "evidence_span": "多模通信单元（多模感知通信头端单元，多模感知通信尾端单元，传感器低功耗无线模组等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低压配电智慧物联多模感知通信解决方案",
+      "evidence_span": "低压配电智慧物联多模感知通信解决方案（多模感知MESH网络+星型网）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一二次融合产品",
+      "evidence_span": "一二次融合产品（一二次融合柱上断路器，一二次融合环网箱）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二次智能配电自动化设备",
+      "evidence_span": "二次智能配电自动化设备（FTU，DTU，故障指示器，速断器，电能量采集终端等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中压配电智慧物联多模感知通信解决方案",
+      "evidence_span": "中压配电智慧物联多模感知通信解决方案（多模MESH网+星型网）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "采集终端",
+      "evidence_span": "采集终端（变电站各类主辅设备运行状态感知传感器，运行环境感知传感器，人员作业行为感知传感器，智能联动装置；输电线路导线温度、微气象、故障电流等状态实时感知传感器，雷电、覆冰、舞动、倾斜等自然灾害全景感知传感器以及缆道内电缆接地环流、电缆局放、接头温度等监测装置）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "输变电智慧物联通信解决方案",
+      "evidence_span": "输变电智慧物联通信解决方案（多模树状网络+星型网）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能表计",
+      "evidence_span": "以智能表计（NB-IoT、Lora、LCFDA、IC卡）、智能网关为智慧水务云平台基础"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧水务云平台",
+      "evidence_span": "物联网平台为智慧水务云平台核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧燃气云平台",
+      "evidence_span": "物联网平台为智慧燃气云平台核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超声波燃气计量模组",
+      "evidence_span": "超声波燃气计量模组研发项目正式立项"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "场域网通信芯片",
+      "evidence_span": "聚焦场域网通信芯片、模组、开发板和边缘网关等产品的研发和设计"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "场域网通信模组",
+      "evidence_span": "聚焦场域网通信芯片、模组、开发板和边缘网关等产品的研发和设计"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "场域网边缘网关",
+      "evidence_span": "聚焦场域网通信芯片、模组、开发板和边缘网关等产品的研发和设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MuCoFAN物联场域感知网技术",
+      "evidence_span": "形成了拥有自主知识产权的MuCoFAN物联场域感知网技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微功率无线自组织网络CFDA技术",
+      "evidence_span": "形成了拥有自主知识产权的微功率无线自组织网络CFDA技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低功耗微功率无线自组织网络L-CFDA技术",
+      "evidence_span": "研发出低功耗微功率无线自组织网络L-CFDA技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MuCoFAN场域网通信技术",
+      "evidence_span": "MuCoFAN场域网通信技术是融合HPLC、微功率无线、LoRa、Zigbee、RS-485等多种通信方式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "嵌入式MCU无线通信",
+      "evidence_span": "在嵌入式MCU无线通信、场域网等领域拥有较多的技术积淀和创新能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Mesh组网",
+      "evidence_span": "基于半导体技术，硬件平台、软件协议栈、低功耗计算、边缘计算，以及 Mesh 组网等无线通信技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网公司",
+      "evidence_span": "在国家电网公司和南方电网公司组织的电能表和用电信息采集类产品集中招标采购中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网公司",
+      "evidence_span": "在国家电网公司和南方电网公司组织的电能表和用电信息采集类产品集中招标采购中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电力公司",
+      "evidence_span": "公司主要收入来源于电力公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字化",
+      "evidence_span": "数字化是国家未来重点发展的方向，是国家的重大战略"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "物联网",
+      "evidence_span": "物联网已经成为现代社会中重要的一部分"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新型电力系统建设",
+      "evidence_span": "全面加快新型电力系统建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧城市",
+      "evidence_span": "智慧城市建设，将是十四五期间新的风口"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "物联网解决方案",
+        "evidence_span": "是专注于物联网解决方案的国家高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "无线传感网络综合解决方案",
+        "evidence_span": "专注于为各行业提供无线传感网络综合解决方案"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "低压用电业务",
+        "evidence_span": "低压用电业务主要包括"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "低压配电智慧物联业务",
+        "evidence_span": "低压配电智慧物联业务主要包括"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中压配电智慧物联业务",
+        "evidence_span": "中压配电智慧物联业务主要包括"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "输变电智慧物联业务",
+        "evidence_span": "输变电智慧物联业务主要包括"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "公用计量业务",
+        "evidence_span": "公用计量业务主要包括"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "场域网专家",
+        "evidence_span": "成为受人尊重的场域网专家"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "物联网解决方案提供商",
+        "evidence_span": "专注于物联网解决方案的国家高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电能表",
+        "evidence_span": "电力计量产品（工商业、居民用单、三相智能电能表等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "用电信息采集设备",
+        "evidence_span": "用电信息采集设备（能源控制器，集中器，专变终端，采集器，通信单元等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "用电信息采集本地通信解决方案",
+        "evidence_span": "用电信息采集本地通信解决方案（双模MESH网络）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "边缘物联代理",
+        "evidence_span": "边缘物联代理（智能融合终端，汇聚网关）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能端设备",
+        "evidence_span": "智能端设备（动环类传感器，安防类传感器，智能断路器，智能在线监测装置，智能换相开关等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多模通信单元",
+        "evidence_span": "多模通信单元（多模感知通信头端单元，多模感知通信尾端单元，传感器低功耗无线模组等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低压配电智慧物联多模感知通信解决方案",
+        "evidence_span": "低压配电智慧物联多模感知通信解决方案（多模感知MESH网络+星型网）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一二次融合产品",
+        "evidence_span": "一二次融合产品（一二次融合柱上断路器，一二次融合环网箱）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二次智能配电自动化设备",
+        "evidence_span": "二次智能配电自动化设备（FTU，DTU，故障指示器，速断器，电能量采集终端等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中压配电智慧物联多模感知通信解决方案",
+        "evidence_span": "中压配电智慧物联多模感知通信解决方案（多模MESH网+星型网）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "采集终端",
+        "evidence_span": "采集终端（变电站各类主辅设备运行状态感知传感器，运行环境感知传感器，人员作业行为感知传感器，智能联动装置；输电线路导线温度、微气象、故障电流等状态实时感知传感器，雷电、覆冰、舞动、倾斜等自然灾害全景感知传感器以及缆道内电缆接地环流、电缆局放、接头温度等监测装置）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "输变电智慧物联通信解决方案",
+        "evidence_span": "输变电智慧物联通信解决方案（多模树状网络+星型网）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能表计",
+        "evidence_span": "以智能表计（NB-IoT、Lora、LCFDA、IC卡）、智能网关为智慧水务云平台基础"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧水务云平台",
+        "evidence_span": "物联网平台为智慧水务云平台核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧燃气云平台",
+        "evidence_span": "物联网平台为智慧燃气云平台核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超声波燃气计量模组",
+        "evidence_span": "超声波燃气计量模组研发项目正式立项"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "场域网通信芯片",
+        "evidence_span": "聚焦场域网通信芯片、模组、开发板和边缘网关等产品的研发和设计"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "场域网通信模组",
+        "evidence_span": "聚焦场域网通信芯片、模组、开发板和边缘网关等产品的研发和设计"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "场域网边缘网关",
+        "evidence_span": "聚焦场域网通信芯片、模组、开发板和边缘网关等产品的研发和设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MuCoFAN物联场域感知网技术",
+        "evidence_span": "形成了拥有自主知识产权的MuCoFAN物联场域感知网技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微功率无线自组织网络CFDA技术",
+        "evidence_span": "形成了拥有自主知识产权的微功率无线自组织网络CFDA技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低功耗微功率无线自组织网络L-CFDA技术",
+        "evidence_span": "研发出低功耗微功率无线自组织网络L-CFDA技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MuCoFAN场域网通信技术",
+        "evidence_span": "MuCoFAN场域网通信技术是融合HPLC、微功率无线、LoRa、Zigbee、RS-485等多种通信方式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "嵌入式MCU无线通信",
+        "evidence_span": "在嵌入式MCU无线通信、场域网等领域拥有较多的技术积淀和创新能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Mesh组网",
+        "evidence_span": "基于半导体技术，硬件平台、软件协议栈、低功耗计算、边缘计算，以及 Mesh 组网等无线通信技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网公司",
+        "evidence_span": "在国家电网公司和南方电网公司组织的电能表和用电信息采集类产品集中招标采购中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网公司",
+        "evidence_span": "在国家电网公司和南方电网公司组织的电能表和用电信息采集类产品集中招标采购中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电力公司",
+        "evidence_span": "公司主要收入来源于电力公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字化",
+        "evidence_span": "数字化是国家未来重点发展的方向，是国家的重大战略"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "物联网",
+        "evidence_span": "物联网已经成为现代社会中重要的一部分"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新型电力系统建设",
+        "evidence_span": "全面加快新型电力系统建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧城市",
+        "evidence_span": "智慧城市建设，将是十四五期间新的风口"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:03:26"
+}

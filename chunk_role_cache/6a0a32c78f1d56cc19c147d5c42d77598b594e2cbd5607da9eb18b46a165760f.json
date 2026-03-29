@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "916ebdfeb589", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述美国对芯片制程实施出口管控及台积电暂停供应的具体事件，聚焦于政策影响和公司行动，是时间性动态，不涉及半导体设备本体知识。"}}

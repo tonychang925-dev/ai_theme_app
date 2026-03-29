@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "04b3d4ad0340", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述上海发放服务消费券的具体事件，涉及财政资金投入和时间点，属于政策动态，与预制菜本体知识无关，不包含可用于题材构建的稳定知识。"}}

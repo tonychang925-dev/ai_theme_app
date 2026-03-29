@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "c915257eb8ca", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提到上海市委宣传部、市委网信办推出支持互联网优质内容创作的举措，涉及政策扶持和行业生态，可能包含影视内容创作的知识，但混合了具体政策发布事件。"}}

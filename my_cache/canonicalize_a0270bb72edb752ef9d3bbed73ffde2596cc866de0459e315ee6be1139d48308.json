@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:22:58", "result": {"span_uid": "878ee815c359", "action": "rewrite", "canonical_text": "HBM3e中12hi产品的比重预计将提升至40%。", "final_type": "signal", "final_role": "产品结构变化", "stability": "medium", "reason": "原文包含具体年份（2025年），改写后去除了时间点，保留了产品结构变化的趋势信息，可作为景气信号。"}}

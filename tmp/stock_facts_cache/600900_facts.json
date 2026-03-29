@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "大型水电运营",
+      "evidence_span": "公司以大型水电运营为主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水电开发",
+      "evidence_span": "云川公司主营业务为水电开发、建设、投资、运营和管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水电建设",
+      "evidence_span": "云川公司主营业务为水电开发、建设、投资、运营和管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水电投资",
+      "evidence_span": "云川公司主营业务为水电开发、建设、投资、运营和管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水电运营",
+      "evidence_span": "云川公司主营业务为水电开发、建设、投资、运营和管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水电管理",
+      "evidence_span": "云川公司主营业务为水电开发、建设、投资、运营和管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源业务",
+      "evidence_span": "公司目前开展新能源的主要方向"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "配售电业务",
+      "evidence_span": "路德斯主要从事配售电、次级输电和发电业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "次级输电业务",
+      "evidence_span": "路德斯主要从事配售电、次级输电和发电业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "发电业务",
+      "evidence_span": "路德斯主要从事配售电、次级输电和发电业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球水电行业领导者",
+      "evidence_span": "全球水电行业领导者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大的水电上市公司",
+      "evidence_span": "为全球最大的水电上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水电",
+      "evidence_span": "公司以大型水电运营为主营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏电站",
+      "evidence_span": "小羊窝光伏电站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配售电服务",
+      "evidence_span": "路德斯主要从事配售电、次级输电和发电业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "次级输电服务",
+      "evidence_span": "路德斯主要从事配售电、次级输电和发电业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发电服务",
+      "evidence_span": "路德斯主要从事配售电、次级输电和发电业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水风光一体化",
+      "evidence_span": "大力拓展水风光一体化"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "秘鲁第一大配电公司路德斯",
+      "evidence_span": "公司完成秘鲁第一大配电公司路德斯（LDS）83.64%股权的收购"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "水风光一体化",
+      "evidence_span": "大力拓展水风光一体化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "大型水电运营",
+        "evidence_span": "公司以大型水电运营为主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水电开发",
+        "evidence_span": "云川公司主营业务为水电开发、建设、投资、运营和管理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水电建设",
+        "evidence_span": "云川公司主营业务为水电开发、建设、投资、运营和管理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水电投资",
+        "evidence_span": "云川公司主营业务为水电开发、建设、投资、运营和管理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水电运营",
+        "evidence_span": "云川公司主营业务为水电开发、建设、投资、运营和管理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水电管理",
+        "evidence_span": "云川公司主营业务为水电开发、建设、投资、运营和管理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源业务",
+        "evidence_span": "公司目前开展新能源的主要方向"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "配售电业务",
+        "evidence_span": "路德斯主要从事配售电、次级输电和发电业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "次级输电业务",
+        "evidence_span": "路德斯主要从事配售电、次级输电和发电业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "发电业务",
+        "evidence_span": "路德斯主要从事配售电、次级输电和发电业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球水电行业领导者",
+        "evidence_span": "全球水电行业领导者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大的水电上市公司",
+        "evidence_span": "为全球最大的水电上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水电",
+        "evidence_span": "公司以大型水电运营为主营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏电站",
+        "evidence_span": "小羊窝光伏电站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配售电服务",
+        "evidence_span": "路德斯主要从事配售电、次级输电和发电业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "次级输电服务",
+        "evidence_span": "路德斯主要从事配售电、次级输电和发电业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发电服务",
+        "evidence_span": "路德斯主要从事配售电、次级输电和发电业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水风光一体化",
+        "evidence_span": "大力拓展水风光一体化"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "秘鲁第一大配电公司路德斯",
+        "evidence_span": "公司完成秘鲁第一大配电公司路德斯（LDS）83.64%股权的收购"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "水风光一体化",
+        "evidence_span": "大力拓展水风光一体化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:48:13"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:58:48", "result": {"chunk_id": "3db7e3b4ad30", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落详细报告中国核电的投资公告事件（日期、金额、参与方），是公司财务和合作动态，纯事件性内容，未涉及可控核聚变的技术或知识要素。"}}

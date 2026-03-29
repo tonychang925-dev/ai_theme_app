@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "fe0e5cb6259a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个国际联合声明事件（美英等10国支持6G原则），包含具体日期（2024年2月27日）和事件细节，主要涉及政策动态，而非卫星互联网的静态知识。"}}

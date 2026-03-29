@@ -1,0 +1,264 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能手机铝制中框结构件材料",
+      "evidence_span": "智能手机铝制中框结构件材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "平板电脑外壳材料",
+      "evidence_span": "平板电脑外壳材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "笔记本电脑盖板",
+      "evidence_span": "笔记本电脑盖板、底板、键盘材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "底板",
+      "evidence_span": "笔记本电脑盖板、底板、键盘材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "键盘材料",
+      "evidence_span": "笔记本电脑盖板、底板、键盘材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "穿戴产品",
+      "evidence_span": "穿戴产品、手机卡托、按键、铰链等铝制结构件材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "手机卡托",
+      "evidence_span": "穿戴产品、手机卡托、按键、铰链等铝制结构件材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "按键",
+      "evidence_span": "穿戴产品、手机卡托、按键、铰链等铝制结构件材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铰链等铝制结构件材料",
+      "evidence_span": "穿戴产品、手机卡托、按键、铰链等铝制结构件材料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "消费电子产品铝制结构件材料细分行业的专业厂家和核心企业",
+      "evidence_span": "消费电子产品铝制结构件材料细分行业的专业厂家和核心企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "美国苹果公司全球前200位供应商之一",
+      "evidence_span": "美国苹果公司全球前200位供应商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "韩国三星系列产品在国内的主力供应商",
+      "evidence_span": "韩国三星系列产品在国内的主力供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝合金材料",
+      "evidence_span": "铝合金材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "7系铝合金材料",
+      "evidence_span": "7系铝合金材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "6系铝合金材料",
+      "evidence_span": "6系铝合金材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "7系可阳极氧化处理消费电子产品铝型材",
+      "evidence_span": "7系可阳极氧化处理消费电子产品铝型材"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高品质铝合金的配比技术",
+      "evidence_span": "高品质铝合金的配比技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高品质圆铸锭的铸造技术",
+      "evidence_span": "高品质圆铸锭的铸造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精度铝合金的挤压技术",
+      "evidence_span": "高精度铝合金的挤压技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化生产关键技术",
+      "evidence_span": "自动化生产关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "7系铝合金材料的研发和生产供应",
+      "evidence_span": "研发和生产供应7系可阳极氧化处理消费电子产品铝型材"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "三星品牌S系列手机、折叠屏手机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苹果",
+      "evidence_span": "苹果中高端笔记本电脑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "谷歌",
+      "evidence_span": "谷歌等品牌智能手机和折叠屏手机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联想",
+      "evidence_span": "联想等品牌笔记本电脑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雷蛇",
+      "evidence_span": "雷蛇等品牌笔记本电脑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "小米等品牌产品"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "折叠屏手机",
+      "evidence_span": "折叠屏手机等高端手机畅销"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能手机铝制中框结构件材料",
+        "evidence_span": "智能手机铝制中框结构件材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "平板电脑外壳材料",
+        "evidence_span": "平板电脑外壳材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "笔记本电脑盖板、底板、键盘材料",
+        "evidence_span": "笔记本电脑盖板、底板、键盘材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "穿戴产品、手机卡托、按键、铰链等铝制结构件材料",
+        "evidence_span": "穿戴产品、手机卡托、按键、铰链等铝制结构件材料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "消费电子产品铝制结构件材料细分行业的专业厂家和核心企业",
+        "evidence_span": "消费电子产品铝制结构件材料细分行业的专业厂家和核心企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "美国苹果公司全球前200位供应商之一",
+        "evidence_span": "美国苹果公司全球前200位供应商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "韩国三星系列产品在国内的主力供应商",
+        "evidence_span": "韩国三星系列产品在国内的主力供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝合金材料",
+        "evidence_span": "铝合金材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "7系铝合金材料",
+        "evidence_span": "7系铝合金材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "6系铝合金材料",
+        "evidence_span": "6系铝合金材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "7系可阳极氧化处理消费电子产品铝型材",
+        "evidence_span": "7系可阳极氧化处理消费电子产品铝型材"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高品质铝合金的配比技术",
+        "evidence_span": "高品质铝合金的配比技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高品质圆铸锭的铸造技术",
+        "evidence_span": "高品质圆铸锭的铸造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精度铝合金的挤压技术",
+        "evidence_span": "高精度铝合金的挤压技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化生产关键技术",
+        "evidence_span": "自动化生产关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "7系铝合金材料的研发和生产供应",
+        "evidence_span": "研发和生产供应7系可阳极氧化处理消费电子产品铝型材"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "三星品牌S系列手机、折叠屏手机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苹果",
+        "evidence_span": "苹果中高端笔记本电脑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "谷歌",
+        "evidence_span": "谷歌等品牌智能手机和折叠屏手机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联想",
+        "evidence_span": "联想等品牌笔记本电脑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雷蛇",
+        "evidence_span": "雷蛇等品牌笔记本电脑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "小米等品牌产品"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "折叠屏手机",
+        "evidence_span": "折叠屏手机等高端手机畅销"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:57:04"
+}

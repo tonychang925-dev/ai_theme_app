@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "ef277563369a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落前半部分介绍新型无掩膜深紫外光刻技术，包含技术原理和特点（如micro-LED阵列作为光源），具有静态知识价值；后半部分提到光谷企业产品突破和验证，属于事件信息。整体混合了知识和事件。"}}

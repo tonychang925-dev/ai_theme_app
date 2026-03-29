@@ -1,0 +1,469 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "动力电子控制",
+      "evidence_span": "公司产品涉及动力电子控制"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车身电子控制",
+      "evidence_span": "公司产品涉及...车身电子控制"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源系统控制",
+      "evidence_span": "公司产品涉及...新能源系统控制等领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车电子电器零部件领域领跑者",
+      "evidence_span": "秉承“国内汽车电子电器零部件领域领跑者”的使命"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级专精特新‘小巨人’企业",
+      "evidence_span": "被评定为“国家级专精特新‘小巨人’企业”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子油门踏板总成",
+      "evidence_span": "主要产品包括电子油门踏板总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "换挡控制器",
+      "evidence_span": "主要产品包括...换挡控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低温启动装置",
+      "evidence_span": "主要产品包括低温启动装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子节气门",
+      "evidence_span": "主要产品包括...电子节气门"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电磁螺线管",
+      "evidence_span": "主要产品包括电磁螺线管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "尿素加热管",
+      "evidence_span": "主要产品包括...尿素加热管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车用空调控制器",
+      "evidence_span": "主要产品包括车用空调控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车内后视镜",
+      "evidence_span": "主要产品包括汽车内后视镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整车控制器",
+      "evidence_span": "主要产品包括...整车控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多合一控制器",
+      "evidence_span": "主要产品包括...多合一控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池管理系统",
+      "evidence_span": "主要产品包括...电池管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用车辆电源系统",
+      "evidence_span": "主要产品包括...专用车辆电源系统等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门窗控制器",
+      "evidence_span": "公司生产的汽车门窗控制器产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线束",
+      "evidence_span": "主要产品包括...线束"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电致变色后视镜",
+      "evidence_span": "依托子公司银座海亚生产的电致变色后视镜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子换挡器",
+      "evidence_span": "公司研发的电子换挡器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "旋钮式换挡器",
+      "evidence_span": "已经研发并量产的电子换挡器主要有：旋钮式换挡器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子排挡",
+      "evidence_span": "已经研发并量产的电子换挡器主要有：...电子排挡"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "按键式换挡器",
+      "evidence_span": "已经研发并量产的电子换挡器主要有：...按键式换挡器等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "格栅加热器",
+      "evidence_span": "公司生产的低温启动产品主要有：格栅加热器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "火焰预热装置",
+      "evidence_span": "公司生产的低温启动产品主要有：...火焰预热装置"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃油加热器",
+      "evidence_span": "公司生产的低温启动产品主要有：燃油加热器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电热塞",
+      "evidence_span": "公司生产的低温启动产品主要有：...电热塞"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三合一产品",
+      "evidence_span": "公司已经成功开发和销售了三合一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "四合一产品",
+      "evidence_span": "公司已经成功开发和销售了...四合一等多合一产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽红旗",
+      "evidence_span": "获得一汽红旗...等知名车企的新项目开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安汽车",
+      "evidence_span": "获得...长安汽车...等知名车企的新项目开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽奔腾",
+      "evidence_span": "获得...一汽奔腾...等知名车企的新项目开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽解放",
+      "evidence_span": "获得...一汽解放...等知名车企的新项目开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风商用车",
+      "evidence_span": "获得...东风商用车等知名车企的新项目开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "获得比亚迪...等定点项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "造车新势力头部车企",
+      "evidence_span": "获得...造车新势力头部车企等定点项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "洛必德",
+      "evidence_span": "公司与洛必德签订战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "玉柴",
+      "evidence_span": "与玉柴...等国内主要柴油机厂商建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "潍柴",
+      "evidence_span": "与...潍柴...等国内主要柴油机厂商建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南京依维柯发动机",
+      "evidence_span": "与...南京依维柯发动机等国内主要柴油机厂商建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风贝洱",
+      "evidence_span": "主要为东风贝洱配套供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国贝洱公司",
+      "evidence_span": "生产过程也已得到德国贝洱公司认可并开始批量供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陕汽集团",
+      "evidence_span": "产品已通过陕汽集团在黑河的试验"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中联重工",
+      "evidence_span": "该产品已进入中联重工和陕汽集团等厂家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "汽车零部件国产替代进口的趋势也随之加深"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "动力电子控制",
+        "evidence_span": "公司产品涉及动力电子控制"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车身电子控制",
+        "evidence_span": "公司产品涉及...车身电子控制"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源系统控制",
+        "evidence_span": "公司产品涉及...新能源系统控制等领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车电子电器零部件领域领跑者",
+        "evidence_span": "秉承“国内汽车电子电器零部件领域领跑者”的使命"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级专精特新‘小巨人’企业",
+        "evidence_span": "被评定为“国家级专精特新‘小巨人’企业”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子油门踏板总成",
+        "evidence_span": "主要产品包括电子油门踏板总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "换挡控制器",
+        "evidence_span": "主要产品包括...换挡控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低温启动装置",
+        "evidence_span": "主要产品包括低温启动装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子节气门",
+        "evidence_span": "主要产品包括...电子节气门"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电磁螺线管",
+        "evidence_span": "主要产品包括电磁螺线管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "尿素加热管",
+        "evidence_span": "主要产品包括...尿素加热管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车用空调控制器",
+        "evidence_span": "主要产品包括车用空调控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车内后视镜",
+        "evidence_span": "主要产品包括汽车内后视镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整车控制器",
+        "evidence_span": "主要产品包括...整车控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多合一控制器",
+        "evidence_span": "主要产品包括...多合一控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池管理系统",
+        "evidence_span": "主要产品包括...电池管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用车辆电源系统",
+        "evidence_span": "主要产品包括...专用车辆电源系统等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门窗控制器",
+        "evidence_span": "公司生产的汽车门窗控制器产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线束",
+        "evidence_span": "主要产品包括...线束"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电致变色后视镜",
+        "evidence_span": "依托子公司银座海亚生产的电致变色后视镜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子换挡器",
+        "evidence_span": "公司研发的电子换挡器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "旋钮式换挡器",
+        "evidence_span": "已经研发并量产的电子换挡器主要有：旋钮式换挡器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子排挡",
+        "evidence_span": "已经研发并量产的电子换挡器主要有：...电子排挡"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "按键式换挡器",
+        "evidence_span": "已经研发并量产的电子换挡器主要有：...按键式换挡器等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "格栅加热器",
+        "evidence_span": "公司生产的低温启动产品主要有：格栅加热器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "火焰预热装置",
+        "evidence_span": "公司生产的低温启动产品主要有：...火焰预热装置"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃油加热器",
+        "evidence_span": "公司生产的低温启动产品主要有：燃油加热器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电热塞",
+        "evidence_span": "公司生产的低温启动产品主要有：...电热塞"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三合一产品",
+        "evidence_span": "公司已经成功开发和销售了三合一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "四合一产品",
+        "evidence_span": "公司已经成功开发和销售了...四合一等多合一产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽红旗",
+        "evidence_span": "获得一汽红旗...等知名车企的新项目开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安汽车",
+        "evidence_span": "获得...长安汽车...等知名车企的新项目开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽奔腾",
+        "evidence_span": "获得...一汽奔腾...等知名车企的新项目开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽解放",
+        "evidence_span": "获得...一汽解放...等知名车企的新项目开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风商用车",
+        "evidence_span": "获得...东风商用车等知名车企的新项目开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "获得比亚迪...等定点项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "造车新势力头部车企",
+        "evidence_span": "获得...造车新势力头部车企等定点项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "洛必德",
+        "evidence_span": "公司与洛必德签订战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "玉柴",
+        "evidence_span": "与玉柴...等国内主要柴油机厂商建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "潍柴",
+        "evidence_span": "与...潍柴...等国内主要柴油机厂商建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南京依维柯发动机",
+        "evidence_span": "与...南京依维柯发动机等国内主要柴油机厂商建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风贝洱",
+        "evidence_span": "主要为东风贝洱配套供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国贝洱公司",
+        "evidence_span": "生产过程也已得到德国贝洱公司认可并开始批量供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陕汽集团",
+        "evidence_span": "产品已通过陕汽集团在黑河的试验"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中联重工",
+        "evidence_span": "该产品已进入中联重工和陕汽集团等厂家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "汽车零部件国产替代进口的趋势也随之加深"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:25:54"
+}

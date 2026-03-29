@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "57957389119d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述美国出口管控措施、台积电通知客户等具体事件进展，以事件报道为主，无显著稳定知识内容。"}}

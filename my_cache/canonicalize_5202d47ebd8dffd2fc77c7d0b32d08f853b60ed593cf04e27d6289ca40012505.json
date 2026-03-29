@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:56:36", "result": {"span_uid": "5db662b1933f", "action": "rewrite", "canonical_text": "北京市计划推动具身智能机器人的智能、高效和规模化应用。", "final_type": "signal", "final_role": "地方政策规划", "stability": "medium", "reason": "该片段涉及具体政策规划，属于阶段性变化信息，但包含具体机构名称和文件细节，改写后保留政策方向作为景气信号，稳定性中等。"}}

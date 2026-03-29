@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "39af8f740811", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "主要描述德国计划采购国防物资、提高国防开支等具体政策动态和时间性事件，属于新闻报告，无稳定知识内容。"}}

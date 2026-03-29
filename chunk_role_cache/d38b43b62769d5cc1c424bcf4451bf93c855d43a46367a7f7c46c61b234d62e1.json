@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "689b70bbb090", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述2024年特斯拉股东大会的宣传视频内容，展示Optimus机器人的功能（如搬运、分拣、行走等）。它混合了事件（股东大会）和机器人能力的静态知识，可能对题材本体构建有价值，因此分类为candidate_mixed。"}}

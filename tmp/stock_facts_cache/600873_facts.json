@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "玉米深加工",
+      "evidence_span": "公司是玉米深加工行业龙头"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品味觉性状优化产品",
+      "evidence_span": "专注于利用生物发酵技术进行研发、生产和销售食品味觉性状优化产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "动物营养氨基酸",
+      "evidence_span": "专注于利用生物发酵技术进行研发、生产和销售动物营养氨基酸"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "人类医用氨基酸",
+      "evidence_span": "专注于利用生物发酵技术进行研发、生产和销售人类医用氨基酸"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "胶体多糖类产品",
+      "evidence_span": "专注于利用生物发酵技术进行研发、生产和销售胶体多糖类产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "玉米深加工行业龙头",
+      "evidence_span": "公司是玉米深加工行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "味精行业寡头之一",
+      "evidence_span": "味精行业寡头之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球赖氨酸龙头",
+      "evidence_span": "全球赖氨酸龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球苏氨酸龙头",
+      "evidence_span": "全球苏氨酸龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "生物科技公司",
+      "evidence_span": "生物科技公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "味精",
+      "evidence_span": "从味精产品起家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "苏氨酸",
+      "evidence_span": "通辽一期苏氨酸项目成功投产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "赖氨酸",
+      "evidence_span": "吉林白城年产40万吨的赖氨酸项目按期投产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄原胶",
+      "evidence_span": "黄原胶项目正式在新疆建成投产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "食品级黄原胶",
+      "evidence_span": "按照用途可以分为食品级黄原胶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石油级黄原胶",
+      "evidence_span": "按照用途可以分为石油级黄原胶"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物发酵技术",
+      "evidence_span": "专注于利用生物发酵技术进行研发、生产和销售"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "饲料禁抗政策",
+      "evidence_span": "国内将于2020年7月1日正式推行饲料禁抗政策"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "玉米深加工",
+        "evidence_span": "公司是玉米深加工行业龙头"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品味觉性状优化产品",
+        "evidence_span": "专注于利用生物发酵技术进行研发、生产和销售食品味觉性状优化产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "动物营养氨基酸",
+        "evidence_span": "专注于利用生物发酵技术进行研发、生产和销售动物营养氨基酸"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "人类医用氨基酸",
+        "evidence_span": "专注于利用生物发酵技术进行研发、生产和销售人类医用氨基酸"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "胶体多糖类产品",
+        "evidence_span": "专注于利用生物发酵技术进行研发、生产和销售胶体多糖类产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "玉米深加工行业龙头",
+        "evidence_span": "公司是玉米深加工行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "味精行业寡头之一",
+        "evidence_span": "味精行业寡头之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球赖氨酸龙头",
+        "evidence_span": "全球赖氨酸龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球苏氨酸龙头",
+        "evidence_span": "全球苏氨酸龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "生物科技公司",
+        "evidence_span": "生物科技公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "味精",
+        "evidence_span": "从味精产品起家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "苏氨酸",
+        "evidence_span": "通辽一期苏氨酸项目成功投产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "赖氨酸",
+        "evidence_span": "吉林白城年产40万吨的赖氨酸项目按期投产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄原胶",
+        "evidence_span": "黄原胶项目正式在新疆建成投产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "食品级黄原胶",
+        "evidence_span": "按照用途可以分为食品级黄原胶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石油级黄原胶",
+        "evidence_span": "按照用途可以分为石油级黄原胶"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物发酵技术",
+        "evidence_span": "专注于利用生物发酵技术进行研发、生产和销售"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "饲料禁抗政策",
+        "evidence_span": "国内将于2020年7月1日正式推行饲料禁抗政策"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:42:30"
+}

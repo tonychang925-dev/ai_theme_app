@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "7d732a7e3c8e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述东航C919在暑运期间的航班运营数据，包括航班班次、旅客运输量和客座率，属于具体的时间性动态和事件信息，不包含静态知识。"}}

@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "体外诊断试剂",
+      "evidence_span": "专注于体外诊断试剂、配套检测仪器等体外诊断产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "配套检测仪器",
+      "evidence_span": "专注于体外诊断试剂、配套检测仪器等体外诊断产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体外检测服务",
+      "evidence_span": "并拓展到体外检测服务领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "体外诊断产品的高新技术企业",
+      "evidence_span": "专注于体外诊断试剂、配套检测仪器等体外诊断产品的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "疾病预防控制核酸类检测产品的主要供应商",
+      "evidence_span": "公司是国内疾病预防控制核酸类检测产品的主要供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核酸分子检测试剂",
+      "evidence_span": "公司具有核酸分子检测试剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多重荧光定量PCR",
+      "evidence_span": "多重荧光定量PCR"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "干化学试剂",
+      "evidence_span": "干化学等现代生物学技术平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HPV检测试剂",
+      "evidence_span": "在HPV检测方面，公司HPV检测试剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阴道炎联合检测试剂盒",
+      "evidence_span": "阴道炎联合检测试剂盒（干化学酶法）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "细菌性阴道病检测试剂盒",
+      "evidence_span": "细菌性阴道病检测试剂盒（干化学酶法）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甲型/乙型流感病毒抗原检测试剂盒",
+      "evidence_span": "甲型/乙型流感病毒抗原检测试剂盒（胶体金法）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阴道炎自动检测工作站",
+      "evidence_span": "阴道炎自动检测工作站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多功能全自动革兰氏染色仪",
+      "evidence_span": "多功能全自动革兰氏染色仪"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多重荧光定量PCR技术平台",
+      "evidence_span": "多重荧光定量PCR技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "干化学技术平台",
+      "evidence_span": "干化学技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化控制及检测平台",
+      "evidence_span": "自动化控制及检测平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "熔解曲线分析技术",
+      "evidence_span": "熔解曲线分析技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多通道熔解曲线分析技术",
+      "evidence_span": "多通道熔解曲线分析技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HPV定量检测技术",
+      "evidence_span": "HPV定量检测技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "诊断试剂冻干技术",
+      "evidence_span": "诊断试剂冻干技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "地级市疾控中心",
+      "evidence_span": "客户遍及300多家地级市疾控中心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "临床客户",
+      "evidence_span": "5,000多家临床客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "第三方检测机构",
+      "evidence_span": "第三方检测机构"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "分子诊断国产替代",
+      "evidence_span": "新冠诊断试剂外的其它分子诊断产品的国产替代也持续加速"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "体外诊断试剂",
+        "evidence_span": "专注于体外诊断试剂、配套检测仪器等体外诊断产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "配套检测仪器",
+        "evidence_span": "专注于体外诊断试剂、配套检测仪器等体外诊断产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体外检测服务",
+        "evidence_span": "并拓展到体外检测服务领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "体外诊断产品的高新技术企业",
+        "evidence_span": "专注于体外诊断试剂、配套检测仪器等体外诊断产品的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "疾病预防控制核酸类检测产品的主要供应商",
+        "evidence_span": "公司是国内疾病预防控制核酸类检测产品的主要供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核酸分子检测试剂",
+        "evidence_span": "公司具有核酸分子检测试剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多重荧光定量PCR",
+        "evidence_span": "多重荧光定量PCR"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "干化学试剂",
+        "evidence_span": "干化学等现代生物学技术平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HPV检测试剂",
+        "evidence_span": "在HPV检测方面，公司HPV检测试剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阴道炎联合检测试剂盒",
+        "evidence_span": "阴道炎联合检测试剂盒（干化学酶法）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "细菌性阴道病检测试剂盒",
+        "evidence_span": "细菌性阴道病检测试剂盒（干化学酶法）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甲型/乙型流感病毒抗原检测试剂盒",
+        "evidence_span": "甲型/乙型流感病毒抗原检测试剂盒（胶体金法）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阴道炎自动检测工作站",
+        "evidence_span": "阴道炎自动检测工作站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多功能全自动革兰氏染色仪",
+        "evidence_span": "多功能全自动革兰氏染色仪"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多重荧光定量PCR技术平台",
+        "evidence_span": "多重荧光定量PCR技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "干化学技术平台",
+        "evidence_span": "干化学技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化控制及检测平台",
+        "evidence_span": "自动化控制及检测平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "熔解曲线分析技术",
+        "evidence_span": "熔解曲线分析技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多通道熔解曲线分析技术",
+        "evidence_span": "多通道熔解曲线分析技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HPV定量检测技术",
+        "evidence_span": "HPV定量检测技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "诊断试剂冻干技术",
+        "evidence_span": "诊断试剂冻干技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "地级市疾控中心",
+        "evidence_span": "客户遍及300多家地级市疾控中心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "临床客户",
+        "evidence_span": "5,000多家临床客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "第三方检测机构",
+        "evidence_span": "第三方检测机构"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "分子诊断国产替代",
+        "evidence_span": "新冠诊断试剂外的其它分子诊断产品的国产替代也持续加速"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:27:12"
+}

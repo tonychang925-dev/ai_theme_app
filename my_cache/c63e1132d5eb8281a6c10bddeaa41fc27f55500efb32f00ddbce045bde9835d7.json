@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "8bbfdad47760", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述台积电的具体业绩、股价表现和市场动态，包含明确的时间（第三财季）和事件信息（业绩超预期、股价创新高），属于公司动态和市场表现，无静态知识构建价值。"}}

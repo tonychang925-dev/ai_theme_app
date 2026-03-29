@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "33b52e03ac96", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落混合了路透社爆料集成电路大基金三期项目的事件和上海微电子研发28纳米浸没式光刻机、预计交付的事件，但后者也包含了技术研发方向（28纳米浸没式光刻机）的知识，边界不干净，知识混有事件元素。"}}

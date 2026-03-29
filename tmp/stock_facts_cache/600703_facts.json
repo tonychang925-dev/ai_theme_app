@@ -1,0 +1,514 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "LED芯片",
+      "evidence_span": "三安光电是国内 LED 芯片龙头企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化合物半导体材料",
+      "evidence_span": "公司主要从事化合物半导体材料与器件的研发与应用"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "器件",
+      "evidence_span": "公司主要从事化合物半导体材料与器件的研发与应用"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "LED芯片龙头企业",
+      "evidence_span": "三安光电是国内 LED 芯片龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "化合物半导体公司",
+      "evidence_span": "也是国内最大的化合物半导体公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED芯片",
+      "evidence_span": "三安光电是国内 LED 芯片龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化合物半导体外延片",
+      "evidence_span": "外延片、芯片为核心主业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化合物半导体芯片",
+      "evidence_span": "外延片、芯片为核心主业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MiniLED背光解决方案",
+      "evidence_span": "电视、笔记本Mini LED 背光解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频产品",
+      "evidence_span": "公司产品覆盖2G-5G手机PA、WiFi等应用领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PA功放",
+      "evidence_span": "公司代工产品（PA 功放、L NA 低噪放等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LNA低噪放",
+      "evidence_span": "公司代工产品（PA 功放、L NA 低噪放等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SAW滤波器",
+      "evidence_span": "滤波器有SAW、TC-SAW、双工器、四工器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TC-SAW滤波器",
+      "evidence_span": "滤波器有SAW、TC-SAW、双工器、四工器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双工器",
+      "evidence_span": "滤波器有SAW、TC-SAW、双工器、四工器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "四工器",
+      "evidence_span": "滤波器有SAW、TC-SAW、双工器、四工器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳化硅二极管",
+      "evidence_span": "公司产品主要为高功率密度碳化硅二极管、MOSFET"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳化硅MOSFET",
+      "evidence_span": "公司产品主要为高功率密度碳化硅二极管、MOSFET"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微波射频技术平台",
+      "evidence_span": "形成了微波射频、电力电子、光通讯三大技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电力电子技术平台",
+      "evidence_span": "形成了微波射频、电力电子、光通讯三大技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光通讯技术平台",
+      "evidence_span": "形成了微波射频、电力电子、光通讯三大技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "垂直结构制成",
+      "evidence_span": "以垂直结构和倒装制成产品为主"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "倒装制成",
+      "evidence_span": "以垂直结构和倒装制成产品为主"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "S004",
+      "evidence_span": "已与S004、A006 等国际大客户进入深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "A006",
+      "evidence_span": "已与S004、A006 等国际大客户进入深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TCL",
+      "evidence_span": "公司与TCL、H002、华星等客户的电视、笔记本Mini LED 背光解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "H002",
+      "evidence_span": "公司与TCL、H002、华星等客户的电视、笔记本Mini LED 背光解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华星",
+      "evidence_span": "公司与TCL、H002、华星等客户的电视、笔记本Mini LED 背光解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "应用于手机终端客户包含三星、荣耀、传音、VIVO、MOTO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荣耀",
+      "evidence_span": "应用于手机终端客户包含三星、荣耀、传音、VIVO、MOTO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "传音",
+      "evidence_span": "应用于手机终端客户包含三星、荣耀、传音、VIVO、MOTO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "VIVO",
+      "evidence_span": "应用于手机终端客户包含三星、荣耀、传音、VIVO、MOTO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "MOTO",
+      "evidence_span": "应用于手机终端客户包含三星、荣耀、传音、VIVO、MOTO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "移远",
+      "evidence_span": "通讯模块大厂移远、广和通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广和通",
+      "evidence_span": "通讯模块大厂移远、广和通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "维谛",
+      "evidence_span": "在PFC 电源的标杆客户有维谛、比特、长城等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比特",
+      "evidence_span": "在PFC 电源的标杆客户有维谛、比特、长城等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "在PFC 电源的标杆客户有维谛、比特、长城等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阳光电源",
+      "evidence_span": "光伏逆变器阳光电源、古瑞瓦特、固德威、科士达等国内前20 大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "古瑞瓦特",
+      "evidence_span": "光伏逆变器阳光电源、古瑞瓦特、固德威、科士达等国内前20 大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "固德威",
+      "evidence_span": "光伏逆变器阳光电源、古瑞瓦特、固德威、科士达等国内前20 大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科士达",
+      "evidence_span": "光伏逆变器阳光电源、古瑞瓦特、固德威、科士达等国内前20 大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "威迈斯",
+      "evidence_span": "在车载充电机领域有威迈斯、弗迪动力（比亚迪）等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "弗迪动力",
+      "evidence_span": "在车载充电机领域有威迈斯、弗迪动力（比亚迪）等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "格力",
+      "evidence_span": "在家电领域格力、长虹等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长虹",
+      "evidence_span": "在家电领域格力、长虹等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英飞源",
+      "evidence_span": "在充电桩及UPS 英飞源、科华、英威腾、嘉盛等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科华",
+      "evidence_span": "在充电桩及UPS 英飞源、科华、英威腾、嘉盛等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英威腾",
+      "evidence_span": "在充电桩及UPS 英飞源、科华、英威腾、嘉盛等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "嘉盛",
+      "evidence_span": "在充电桩及UPS 英飞源、科华、英威腾、嘉盛等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化合物半导体制造平台",
+      "evidence_span": "三安光电国产化合物半导体制造平台蓄势待发"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "LED芯片",
+        "evidence_span": "三安光电是国内 LED 芯片龙头企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化合物半导体材料与器件",
+        "evidence_span": "公司主要从事化合物半导体材料与器件的研发与应用"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "LED芯片龙头企业",
+        "evidence_span": "三安光电是国内 LED 芯片龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "化合物半导体公司",
+        "evidence_span": "也是国内最大的化合物半导体公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED芯片",
+        "evidence_span": "三安光电是国内 LED 芯片龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化合物半导体外延片",
+        "evidence_span": "外延片、芯片为核心主业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化合物半导体芯片",
+        "evidence_span": "外延片、芯片为核心主业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MiniLED背光解决方案",
+        "evidence_span": "电视、笔记本Mini LED 背光解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频产品",
+        "evidence_span": "公司产品覆盖2G-5G手机PA、WiFi等应用领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PA功放",
+        "evidence_span": "公司代工产品（PA 功放、L NA 低噪放等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LNA低噪放",
+        "evidence_span": "公司代工产品（PA 功放、L NA 低噪放等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SAW滤波器",
+        "evidence_span": "滤波器有SAW、TC-SAW、双工器、四工器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TC-SAW滤波器",
+        "evidence_span": "滤波器有SAW、TC-SAW、双工器、四工器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双工器",
+        "evidence_span": "滤波器有SAW、TC-SAW、双工器、四工器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "四工器",
+        "evidence_span": "滤波器有SAW、TC-SAW、双工器、四工器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳化硅二极管",
+        "evidence_span": "公司产品主要为高功率密度碳化硅二极管、MOSFET"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳化硅MOSFET",
+        "evidence_span": "公司产品主要为高功率密度碳化硅二极管、MOSFET"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微波射频技术平台",
+        "evidence_span": "形成了微波射频、电力电子、光通讯三大技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电力电子技术平台",
+        "evidence_span": "形成了微波射频、电力电子、光通讯三大技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光通讯技术平台",
+        "evidence_span": "形成了微波射频、电力电子、光通讯三大技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "垂直结构制成",
+        "evidence_span": "以垂直结构和倒装制成产品为主"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "倒装制成",
+        "evidence_span": "以垂直结构和倒装制成产品为主"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "S004",
+        "evidence_span": "已与S004、A006 等国际大客户进入深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "A006",
+        "evidence_span": "已与S004、A006 等国际大客户进入深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TCL",
+        "evidence_span": "公司与TCL、H002、华星等客户的电视、笔记本Mini LED 背光解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "H002",
+        "evidence_span": "公司与TCL、H002、华星等客户的电视、笔记本Mini LED 背光解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华星",
+        "evidence_span": "公司与TCL、H002、华星等客户的电视、笔记本Mini LED 背光解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "应用于手机终端客户包含三星、荣耀、传音、VIVO、MOTO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荣耀",
+        "evidence_span": "应用于手机终端客户包含三星、荣耀、传音、VIVO、MOTO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "传音",
+        "evidence_span": "应用于手机终端客户包含三星、荣耀、传音、VIVO、MOTO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "VIVO",
+        "evidence_span": "应用于手机终端客户包含三星、荣耀、传音、VIVO、MOTO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "MOTO",
+        "evidence_span": "应用于手机终端客户包含三星、荣耀、传音、VIVO、MOTO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "移远",
+        "evidence_span": "通讯模块大厂移远、广和通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广和通",
+        "evidence_span": "通讯模块大厂移远、广和通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "维谛",
+        "evidence_span": "在PFC 电源的标杆客户有维谛、比特、长城等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比特",
+        "evidence_span": "在PFC 电源的标杆客户有维谛、比特、长城等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "在PFC 电源的标杆客户有维谛、比特、长城等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阳光电源",
+        "evidence_span": "光伏逆变器阳光电源、古瑞瓦特、固德威、科士达等国内前20 大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "古瑞瓦特",
+        "evidence_span": "光伏逆变器阳光电源、古瑞瓦特、固德威、科士达等国内前20 大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "固德威",
+        "evidence_span": "光伏逆变器阳光电源、古瑞瓦特、固德威、科士达等国内前20 大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科士达",
+        "evidence_span": "光伏逆变器阳光电源、古瑞瓦特、固德威、科士达等国内前20 大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "威迈斯",
+        "evidence_span": "在车载充电机领域有威迈斯、弗迪动力（比亚迪）等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "弗迪动力",
+        "evidence_span": "在车载充电机领域有威迈斯、弗迪动力（比亚迪）等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "格力",
+        "evidence_span": "在家电领域格力、长虹等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长虹",
+        "evidence_span": "在家电领域格力、长虹等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英飞源",
+        "evidence_span": "在充电桩及UPS 英飞源、科华、英威腾、嘉盛等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科华",
+        "evidence_span": "在充电桩及UPS 英飞源、科华、英威腾、嘉盛等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英威腾",
+        "evidence_span": "在充电桩及UPS 英飞源、科华、英威腾、嘉盛等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "嘉盛",
+        "evidence_span": "在充电桩及UPS 英飞源、科华、英威腾、嘉盛等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化合物半导体制造平台",
+        "evidence_span": "三安光电国产化合物半导体制造平台蓄势待发"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:05:02"
+}

@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "有色金属采选",
+      "evidence_span": "公司主要业务为有色金属采选"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业硫酸生产",
+      "evidence_span": "公司主要业务为有色金属采选、工业硫酸生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "相关产品贸易",
+      "evidence_span": "公司主要业务为有色金属采选、工业硫酸生产及相关产品贸易"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "有色金属采选企业",
+      "evidence_span": "以锌、铅、铜为主要品种的有色金属采选企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锌资源龙头",
+      "evidence_span": "国城矿业低估的锌资源龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铅锌矿弹性龙头",
+      "evidence_span": "国城矿业被低估的铅锌矿弹性龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锌精矿",
+      "evidence_span": "主要产品为锌精矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铅精矿",
+      "evidence_span": "主要产品为锌精矿、铅精矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银精矿",
+      "evidence_span": "主要产品为锌精矿、铅精矿、银精矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铜精矿",
+      "evidence_span": "主要产品为锌精矿、铅精矿、银精矿、铜精矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫精矿",
+      "evidence_span": "主要产品为锌精矿、铅精矿、银精矿、铜精矿、硫精矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫铁粉",
+      "evidence_span": "主要产品为锌精矿、铅精矿、银精矿、铜精矿、硫精矿、硫铁粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业硫酸",
+      "evidence_span": "主要产品为锌精矿、铅精矿、银精矿、铜精矿、硫精矿、硫铁粉、工业硫酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "次铁精矿",
+      "evidence_span": "主要产品为锌精矿、铅精矿、银精矿、铜精矿、硫精矿、硫铁粉、工业硫酸、次铁精矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂辉石矿",
+      "evidence_span": "其主要产品为锂辉石矿"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "浮选法",
+      "evidence_span": "生产工艺采用目前有色金属矿选矿最有效的浮选法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "接触法",
+      "evidence_span": "临河新海的生产工艺为接触法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光电干选抛废系统",
+      "evidence_span": "宇邦矿业建有光电干选抛废系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "当地冶炼公司",
+      "evidence_span": "将主要产品铅锌矿销往长期合作的当地冶炼公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "有色金属贸易企业",
+      "evidence_span": "将主要产品铅锌矿销往长期合作的当地冶炼公司及相关有色金属贸易企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "临河新海",
+      "evidence_span": "部分硫精矿则销往临河新海用于生产硫酸"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益锌价上涨",
+      "evidence_span": "国城矿业少铅多锌，受益锌价上涨"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "有色金属采选",
+        "evidence_span": "公司主要业务为有色金属采选"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业硫酸生产",
+        "evidence_span": "公司主要业务为有色金属采选、工业硫酸生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "相关产品贸易",
+        "evidence_span": "公司主要业务为有色金属采选、工业硫酸生产及相关产品贸易"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "有色金属采选企业",
+        "evidence_span": "以锌、铅、铜为主要品种的有色金属采选企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锌资源龙头",
+        "evidence_span": "国城矿业低估的锌资源龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铅锌矿弹性龙头",
+        "evidence_span": "国城矿业被低估的铅锌矿弹性龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锌精矿",
+        "evidence_span": "主要产品为锌精矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铅精矿",
+        "evidence_span": "主要产品为锌精矿、铅精矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银精矿",
+        "evidence_span": "主要产品为锌精矿、铅精矿、银精矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铜精矿",
+        "evidence_span": "主要产品为锌精矿、铅精矿、银精矿、铜精矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫精矿",
+        "evidence_span": "主要产品为锌精矿、铅精矿、银精矿、铜精矿、硫精矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫铁粉",
+        "evidence_span": "主要产品为锌精矿、铅精矿、银精矿、铜精矿、硫精矿、硫铁粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业硫酸",
+        "evidence_span": "主要产品为锌精矿、铅精矿、银精矿、铜精矿、硫精矿、硫铁粉、工业硫酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "次铁精矿",
+        "evidence_span": "主要产品为锌精矿、铅精矿、银精矿、铜精矿、硫精矿、硫铁粉、工业硫酸、次铁精矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂辉石矿",
+        "evidence_span": "其主要产品为锂辉石矿"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "浮选法",
+        "evidence_span": "生产工艺采用目前有色金属矿选矿最有效的浮选法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "接触法",
+        "evidence_span": "临河新海的生产工艺为接触法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光电干选抛废系统",
+        "evidence_span": "宇邦矿业建有光电干选抛废系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "当地冶炼公司",
+        "evidence_span": "将主要产品铅锌矿销往长期合作的当地冶炼公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "有色金属贸易企业",
+        "evidence_span": "将主要产品铅锌矿销往长期合作的当地冶炼公司及相关有色金属贸易企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "临河新海",
+        "evidence_span": "部分硫精矿则销往临河新海用于生产硫酸"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益锌价上涨",
+        "evidence_span": "国城矿业少铅多锌，受益锌价上涨"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:15:37"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:46:00", "result": {"chunk_id": "347a6e97f565", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段列出新凯来的核心合作伙伴及其角色，如华为、中芯国际和中科院体系，是静态的合作伙伴关系说明，没有事件或动态信息，是稳定的知识内容。"}}

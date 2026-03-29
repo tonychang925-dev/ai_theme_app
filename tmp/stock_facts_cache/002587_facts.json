@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融科技",
+      "evidence_span": "金融科技、LED显示和智慧照明三大事业群"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "LED显示",
+      "evidence_span": "金融科技、LED显示和智慧照明三大事业群"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧照明",
+      "evidence_span": "金融科技、LED显示和智慧照明三大事业群"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "LED应用及金融科技综合解决方案提供商",
+      "evidence_span": "全球技术领先的LED应用及金融科技综合解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧银行解决方案提供商",
+      "evidence_span": "公司是最早一批智慧银行解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED显示屏",
+      "evidence_span": "LED显示产品主要用于体育赛事、媒体广告、演艺租赁、交通、指挥中心等领域的LED显示屏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧银行系统",
+      "evidence_span": "包括智慧银行系统、智能服务机器人、智能信息管控平台等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能服务机器人",
+      "evidence_span": "包括智慧银行系统、智能服务机器人、智能信息管控平台等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能信息管控平台",
+      "evidence_span": "包括智慧银行系统、智能服务机器人、智能信息管控平台等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市景观亮化工程",
+      "evidence_span": "智慧照明业务主要是城市景观亮化工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED视频显示系统",
+      "evidence_span": "LED视频显示系统贡献了40.2%的毛利"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能景观亮化工程",
+      "evidence_span": "智能景观亮化工程贡献25.5%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网点智能化集成与设备",
+      "evidence_span": "网点智能化集成与设备贡献23.7%"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Mini LED显示屏技术",
+      "evidence_span": "公司Mini LED显示屏的技术处于行业领先地位"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "小间距LED技术",
+      "evidence_span": "技术能力涵盖小间距、MiniLED等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MiniLED技术",
+      "evidence_span": "技术能力涵盖小间距、MiniLED等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MicroLED研发",
+      "evidence_span": "MicroLED也在持续研发中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建设银行",
+      "evidence_span": "成功为建设银行、工商银行和中国银行等各大银行实施完成了多个重点智慧银行项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工商银行",
+      "evidence_span": "成功为建设银行、工商银行和中国银行等各大银行实施完成了多个重点智慧银行项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国银行",
+      "evidence_span": "成功为建设银行、工商银行和中国银行等各大银行实施完成了多个重点智慧银行项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电信",
+      "evidence_span": "已为中国电信建设近160家智慧营业厅"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海浦东机场",
+      "evidence_span": "公司产品成功应用于上海浦东机场、伦敦希斯罗机场、香港国际机场等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "伦敦希斯罗机场",
+      "evidence_span": "公司产品成功应用于上海浦东机场、伦敦希斯罗机场、香港国际机场等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "香港国际机场",
+      "evidence_span": "公司产品成功应用于上海浦东机场、伦敦希斯罗机场、香港国际机场等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "世界杯LED显示系统供应商",
+      "evidence_span": "成功入选三届世界杯LED显示系统供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中央电视台财经频道",
+      "evidence_span": "为中央电视台财经频道和香港NOW TV打造了高端LED显示屏"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "香港NOW TV",
+      "evidence_span": "为中央电视台财经频道和香港NOW TV打造了高端LED显示屏"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电影科学技术研究所",
+      "evidence_span": "奥拓电子已率先与中国电影科学技术研究所联合组建“LED屏电影播放系统联合实验室”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融科技",
+        "evidence_span": "金融科技、LED显示和智慧照明三大事业群"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "LED显示",
+        "evidence_span": "金融科技、LED显示和智慧照明三大事业群"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧照明",
+        "evidence_span": "金融科技、LED显示和智慧照明三大事业群"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "LED应用及金融科技综合解决方案提供商",
+        "evidence_span": "全球技术领先的LED应用及金融科技综合解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧银行解决方案提供商",
+        "evidence_span": "公司是最早一批智慧银行解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED显示屏",
+        "evidence_span": "LED显示产品主要用于体育赛事、媒体广告、演艺租赁、交通、指挥中心等领域的LED显示屏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧银行系统",
+        "evidence_span": "包括智慧银行系统、智能服务机器人、智能信息管控平台等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能服务机器人",
+        "evidence_span": "包括智慧银行系统、智能服务机器人、智能信息管控平台等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能信息管控平台",
+        "evidence_span": "包括智慧银行系统、智能服务机器人、智能信息管控平台等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市景观亮化工程",
+        "evidence_span": "智慧照明业务主要是城市景观亮化工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED视频显示系统",
+        "evidence_span": "LED视频显示系统贡献了40.2%的毛利"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能景观亮化工程",
+        "evidence_span": "智能景观亮化工程贡献25.5%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网点智能化集成与设备",
+        "evidence_span": "网点智能化集成与设备贡献23.7%"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Mini LED显示屏技术",
+        "evidence_span": "公司Mini LED显示屏的技术处于行业领先地位"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "小间距LED技术",
+        "evidence_span": "技术能力涵盖小间距、MiniLED等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MiniLED技术",
+        "evidence_span": "技术能力涵盖小间距、MiniLED等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MicroLED研发",
+        "evidence_span": "MicroLED也在持续研发中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建设银行",
+        "evidence_span": "成功为建设银行、工商银行和中国银行等各大银行实施完成了多个重点智慧银行项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工商银行",
+        "evidence_span": "成功为建设银行、工商银行和中国银行等各大银行实施完成了多个重点智慧银行项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国银行",
+        "evidence_span": "成功为建设银行、工商银行和中国银行等各大银行实施完成了多个重点智慧银行项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电信",
+        "evidence_span": "已为中国电信建设近160家智慧营业厅"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海浦东机场",
+        "evidence_span": "公司产品成功应用于上海浦东机场、伦敦希斯罗机场、香港国际机场等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "伦敦希斯罗机场",
+        "evidence_span": "公司产品成功应用于上海浦东机场、伦敦希斯罗机场、香港国际机场等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "香港国际机场",
+        "evidence_span": "公司产品成功应用于上海浦东机场、伦敦希斯罗机场、香港国际机场等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "世界杯LED显示系统供应商",
+        "evidence_span": "成功入选三届世界杯LED显示系统供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中央电视台财经频道",
+        "evidence_span": "为中央电视台财经频道和香港NOW TV打造了高端LED显示屏"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "香港NOW TV",
+        "evidence_span": "为中央电视台财经频道和香港NOW TV打造了高端LED显示屏"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电影科学技术研究所",
+        "evidence_span": "奥拓电子已率先与中国电影科学技术研究所联合组建“LED屏电影播放系统联合实验室”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:42:49"
+}

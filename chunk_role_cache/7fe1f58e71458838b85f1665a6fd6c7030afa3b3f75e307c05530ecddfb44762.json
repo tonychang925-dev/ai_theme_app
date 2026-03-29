@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:43", "result": {"chunk_id": "ccc6ba4bd69c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落报告台积电预计从ASML接收高数值孔径极紫外光刻机的具体事件，涉及公司动态和时间点，纯事件性质。"}}

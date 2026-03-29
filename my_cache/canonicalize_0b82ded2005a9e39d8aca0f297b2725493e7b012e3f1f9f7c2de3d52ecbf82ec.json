@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:29:00", "result": {"span_uid": "b04d02b569ef", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "内容创作扶持政策", "stability": "medium", "reason": "该片段仅为一条具体政策事件，缺乏详细内容和稳定知识表达，不适合作为知识块入库。"}}

@@ -1,0 +1,84 @@
+{
+  "event_id": "evt_2fa0acb5f34a",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "产品发布",
+  "entities": [
+    {
+      "name": "三星",
+      "type": "公司",
+      "normalized": "三星"
+    },
+    {
+      "name": "Infinite",
+      "type": "产品",
+      "normalized": "Infinite"
+    },
+    {
+      "name": "扩展现实（XR）",
+      "type": "技术",
+      "normalized": "XR"
+    },
+    {
+      "name": "Galaxy Unpacked",
+      "type": "产品",
+      "normalized": "Galaxy Unpacked"
+    },
+    {
+      "name": "三星电子",
+      "type": "公司",
+      "normalized": "三星电子"
+    }
+  ],
+  "summary": "三星推进Infinite XR项目，计划2025年1月展示，第三季度发售并出货数万台。",
+  "causal_claim": [
+    "XR设备发布",
+    "产能扩张",
+    "AI/AR眼镜市场增长"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "扩展现实（XR）",
+      "XR设备",
+      "生产计划"
+    ],
+    "normalized_terms": {
+      "三星": "三星",
+      "Infinite": "Infinite",
+      "扩展现实（XR）": "XR",
+      "Galaxy Unpacked": "Galaxy Unpacked",
+      "三星电子": "三星电子"
+    },
+    "evidence_spans": [
+      {
+        "text": "三星内部正积极推进名为Infinite的扩展现实（XR）项目",
+        "start": 0,
+        "end": 30
+      },
+      {
+        "text": "计划在明年1月召开的Galaxy Unpacked发布会上公开展示",
+        "start": 30,
+        "end": 60
+      },
+      {
+        "text": "会在2025年第三季度正式发售",
+        "start": 60,
+        "end": 80
+      },
+      {
+        "text": "三星电子已制定了XR设备的生产计划，预计在明年第三季度和第四季度分别出货2万至3万台以上",
+        "start": 80,
+        "end": 130
+      }
+    ],
+    "core_concepts": [
+      "XR项目",
+      "产品发布",
+      "产能计划"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-12-10T00:00:00Z",
+  "raw_text": "2024年12月10日，10日讯，三星内部正积极推进名为Infinite的扩展现实（XR）项目，计划在明年1月召开的Galaxy Unpacked发布会上公开展示，并会在2025年第三季度正式发售。三星电子已制定了XR设备的生产计划，预计在明年第三季度和第四季度分别出货2万至3万台以上。"
+}

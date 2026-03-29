@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:31:43", "result": {"chunk_id": "59d04b950706", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述特朗普关于伊朗可能攻击美国的言论和美国的回应威胁，属于具体事件和新闻动态，不包含导弹题材的静态知识。"}}

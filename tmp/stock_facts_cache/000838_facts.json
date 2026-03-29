@@ -1,0 +1,99 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产",
+      "evidence_span": "公司从事的主要业务为房地产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业废水零排放",
+      "evidence_span": "华陆环保主营业务包括工业废水零排放"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水务EPC项目工程投资",
+      "evidence_span": "华陆环保主营业务包括...水务EPC项目工程投资"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化工资源品再生利用",
+      "evidence_span": "华陆环保主营业务包括...化工资源品再生利用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "府系产品线",
+      "evidence_span": "建立了府系/阅系产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阅系产品线",
+      "evidence_span": "建立了府系/阅系产品线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "危险废弃物处理资格",
+      "evidence_span": "重庆瀚渝公司具备11大类37种危险废弃物处理资格"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "环境工程（水污染防治工程）专项设计甲级资质",
+      "evidence_span": "华陆环保公司拥有...环境工程（水污染防治工程）专项设计甲级资质"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "环境工程专业总承包二级资质",
+      "evidence_span": "华陆环保公司拥有...环境工程专业总承包二级资质"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产",
+        "evidence_span": "公司从事的主要业务为房地产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业废水零排放",
+        "evidence_span": "华陆环保主营业务包括工业废水零排放"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水务EPC项目工程投资",
+        "evidence_span": "华陆环保主营业务包括...水务EPC项目工程投资"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化工资源品再生利用",
+        "evidence_span": "华陆环保主营业务包括...化工资源品再生利用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "府系产品线",
+        "evidence_span": "建立了府系/阅系产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阅系产品线",
+        "evidence_span": "建立了府系/阅系产品线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "危险废弃物处理资格",
+        "evidence_span": "重庆瀚渝公司具备11大类37种危险废弃物处理资格"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "环境工程（水污染防治工程）专项设计甲级资质",
+        "evidence_span": "华陆环保公司拥有...环境工程（水污染防治工程）专项设计甲级资质"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "环境工程专业总承包二级资质",
+        "evidence_span": "华陆环保公司拥有...环境工程专业总承包二级资质"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:40:35"
+}

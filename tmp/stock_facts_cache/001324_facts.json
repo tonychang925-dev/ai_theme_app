@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "轨交车辆内饰产品",
+      "evidence_span": "公司的主营业务收入主要来源于轨交车辆内饰产品和建筑装饰产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建筑装饰产品",
+      "evidence_span": "公司的主营业务收入主要来源于轨交车辆内饰产品和建筑装饰产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "检修业务",
+      "evidence_span": "检修业务及备品备件主要包括向客户提供动车组产品模块检修和销售动车组、城轨地铁车辆备品备件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "备品备件",
+      "evidence_span": "检修业务及备品备件主要包括向客户提供动车组产品模块检修和销售动车组、城轨地铁车辆备品备件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车载乘客信息系统",
+      "evidence_span": "车载乘客信息系统包括境外和境内业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "三明治复合材料产品先行企业",
+      "evidence_span": "国内三明治复合材料产品先行企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城轨地铁车辆配套产品",
+      "evidence_span": "城轨地铁车辆配套产品主要包括地板、座椅、立罩板、侧顶板、侧墙板、间壁、扶手、中顶板和其他内装产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动车组车辆配套产品",
+      "evidence_span": "动车组车辆配套产品主要包括地板、间壁、中顶板和其他内装模块产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑外墙产品",
+      "evidence_span": "建筑装饰产品以建筑外墙产品和电梯装饰产品为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电梯装饰产品",
+      "evidence_span": "建筑装饰产品以建筑外墙产品和电梯装饰产品为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑内装产品",
+      "evidence_span": "2022年度公司配套杭州西站建筑内装项目，使得建筑内装产品的销售收入大幅增加"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝蜂窝板",
+      "evidence_span": "建筑装饰产品可进一步分类为铝蜂窝板、石材蜂窝板、不锈钢蜂窝板和铝单板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石材蜂窝板",
+      "evidence_span": "建筑装饰产品可进一步分类为铝蜂窝板、石材蜂窝板、不锈钢蜂窝板和铝单板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不锈钢蜂窝板",
+      "evidence_span": "建筑装饰产品可进一步分类为铝蜂窝板、石材蜂窝板、不锈钢蜂窝板和铝单板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝单板",
+      "evidence_span": "建筑装饰产品可进一步分类为铝蜂窝板、石材蜂窝板、不锈钢蜂窝板和铝单板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动车组产品模块检修",
+      "evidence_span": "检修业务系主要向青岛四方庞巴迪和中车长春客户提供动车组产品模块四、五级检修"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动车组备品备件",
+      "evidence_span": "备品备件主要为向境内外客户销售动车组、城轨地铁车辆的备品备件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城轨地铁车辆备品备件",
+      "evidence_span": "备品备件主要为向境内外客户销售动车组、城轨地铁车辆的备品备件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载乘客信息系统",
+      "evidence_span": "车载乘客信息系统包括境外和境内业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国中车",
+      "evidence_span": "公司城轨地铁车辆内饰产品主要客户为中国中车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿尔斯通",
+      "evidence_span": "公司动车组地板产品的销售客户主要为阿尔斯通和庞巴迪等境外知名轨交车辆制造企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "庞巴迪",
+      "evidence_span": "公司动车组地板产品的销售客户主要为阿尔斯通和庞巴迪等境外知名轨交车辆制造企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "青岛四方庞巴迪",
+      "evidence_span": "检修业务系主要向青岛四方庞巴迪和中车长春客户提供动车组产品模块四、五级检修"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中车长春",
+      "evidence_span": "检修业务系主要向青岛四方庞巴迪和中车长春客户提供动车组产品模块四、五级检修"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合肥中车",
+      "evidence_span": "境内业务为子公司泰弗思向中国中车提供新造地铁车辆的显示、广播、控制等系统及备品备件"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "轨交车辆内饰产品",
+        "evidence_span": "公司的主营业务收入主要来源于轨交车辆内饰产品和建筑装饰产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "建筑装饰产品",
+        "evidence_span": "公司的主营业务收入主要来源于轨交车辆内饰产品和建筑装饰产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "检修业务及备品备件",
+        "evidence_span": "检修业务及备品备件主要包括向客户提供动车组产品模块检修和销售动车组、城轨地铁车辆备品备件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车载乘客信息系统",
+        "evidence_span": "车载乘客信息系统包括境外和境内业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "三明治复合材料产品先行企业",
+        "evidence_span": "国内三明治复合材料产品先行企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城轨地铁车辆配套产品",
+        "evidence_span": "城轨地铁车辆配套产品主要包括地板、座椅、立罩板、侧顶板、侧墙板、间壁、扶手、中顶板和其他内装产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动车组车辆配套产品",
+        "evidence_span": "动车组车辆配套产品主要包括地板、间壁、中顶板和其他内装模块产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑外墙产品",
+        "evidence_span": "建筑装饰产品以建筑外墙产品和电梯装饰产品为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电梯装饰产品",
+        "evidence_span": "建筑装饰产品以建筑外墙产品和电梯装饰产品为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑内装产品",
+        "evidence_span": "2022年度公司配套杭州西站建筑内装项目，使得建筑内装产品的销售收入大幅增加"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝蜂窝板",
+        "evidence_span": "建筑装饰产品可进一步分类为铝蜂窝板、石材蜂窝板、不锈钢蜂窝板和铝单板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石材蜂窝板",
+        "evidence_span": "建筑装饰产品可进一步分类为铝蜂窝板、石材蜂窝板、不锈钢蜂窝板和铝单板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不锈钢蜂窝板",
+        "evidence_span": "建筑装饰产品可进一步分类为铝蜂窝板、石材蜂窝板、不锈钢蜂窝板和铝单板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝单板",
+        "evidence_span": "建筑装饰产品可进一步分类为铝蜂窝板、石材蜂窝板、不锈钢蜂窝板和铝单板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动车组产品模块检修",
+        "evidence_span": "检修业务系主要向青岛四方庞巴迪和中车长春客户提供动车组产品模块四、五级检修"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动车组备品备件",
+        "evidence_span": "备品备件主要为向境内外客户销售动车组、城轨地铁车辆的备品备件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城轨地铁车辆备品备件",
+        "evidence_span": "备品备件主要为向境内外客户销售动车组、城轨地铁车辆的备品备件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载乘客信息系统",
+        "evidence_span": "车载乘客信息系统包括境外和境内业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国中车",
+        "evidence_span": "公司城轨地铁车辆内饰产品主要客户为中国中车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿尔斯通",
+        "evidence_span": "公司动车组地板产品的销售客户主要为阿尔斯通和庞巴迪等境外知名轨交车辆制造企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "庞巴迪",
+        "evidence_span": "公司动车组地板产品的销售客户主要为阿尔斯通和庞巴迪等境外知名轨交车辆制造企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "青岛四方庞巴迪",
+        "evidence_span": "检修业务系主要向青岛四方庞巴迪和中车长春客户提供动车组产品模块四、五级检修"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中车长春",
+        "evidence_span": "检修业务系主要向青岛四方庞巴迪和中车长春客户提供动车组产品模块四、五级检修"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合肥中车",
+        "evidence_span": "境内业务为子公司泰弗思向中国中车提供新造地铁车辆的显示、广播、控制等系统及备品备件"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:23:12"
+}

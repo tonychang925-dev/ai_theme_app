@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:53:30", "result": {"chunk_id": "17cb31b20187", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落混合了事件信息（如上市时间、发布会）和潜在的有价值知识（如车型定位、搭载技术、设计特点），这些知识可能用于构建华为智界的本体，但需要进一步裁决以分离事件部分。"}}

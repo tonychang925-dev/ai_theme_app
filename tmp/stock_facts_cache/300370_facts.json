@@ -1,0 +1,629 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化",
+      "evidence_span": "公司的主营业务聚焦于自动化、油气服务、智慧产业行业和领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "油气服务",
+      "evidence_span": "公司的主营业务聚焦于自动化、油气服务、智慧产业行业和领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧产业",
+      "evidence_span": "公司的主营业务聚焦于自动化、油气服务、智慧产业行业和领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工业自动控制系统装置制造企业",
+      "evidence_span": "公司从事的行业属于工业自动控制系统装置制造行业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "自动化控制产品供应商",
+      "evidence_span": "公司是国内领先的自动化控制产品供应商和应用场景整体解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧解决方案提供商",
+      "evidence_span": "公司是国内领先的自动化控制产品、智慧解决方案和服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "油气田自动化控制领域国内领先企业",
+      "evidence_span": "形成了在油气田自动化控制领域的国内领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "E-IIP工业互联网平台",
+      "evidence_span": "公司拥有 E- IIP（EtrolIntelligenceInformationPlatform）工业互联网平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能安全SIS系统",
+      "evidence_span": "功能安全 SIS系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模块化RTU",
+      "evidence_span": "模块化RTU"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一体化RTU",
+      "evidence_span": "一体化RTU"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "行业专用控制器",
+      "evidence_span": "行业专用控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "扩展I/O",
+      "evidence_span": "扩展 I/O"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传感器及仪表",
+      "evidence_span": "传感器及仪表"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业智能穿戴",
+      "evidence_span": "工业智能穿戴等自主核心技术产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油气生产物联网井场解决方案",
+      "evidence_span": "具备油气生产物联网井场解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油气生产物联网站场解决方案",
+      "evidence_span": "油气生产物联网站场解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油气管道业务解决方案",
+      "evidence_span": "油气管道业务解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油罐车安防调度系统",
+      "evidence_span": "油罐车安防调度系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能巡检系统",
+      "evidence_span": "智能巡检系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高低压配电柜整装撬装",
+      "evidence_span": "高低压配电柜整装撬装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能工厂行业整体解决方案",
+      "evidence_span": "智能工厂等行业整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "边缘计算引擎IIoTEngine",
+      "evidence_span": "推出了边缘计算引擎 IIoTEngine"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油田云边协同解决方案",
+      "evidence_span": "油田云边协同解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "采油井智能间开控制方案",
+      "evidence_span": "采油井智能间开控制方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油水井云、边、端协同方案",
+      "evidence_span": "油水井云、边、端协同方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油气田应用资源管理解决方案",
+      "evidence_span": "油气田应用资源管理解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油井智能间开系统解决方案",
+      "evidence_span": "油井智能间开系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定向井技术服务",
+      "evidence_span": "公司油气业务服务业务涵盖定向井技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "含油污染物治理技术服务",
+      "evidence_span": "含油污染物治理技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油田化学品生产及技术服务",
+      "evidence_span": "油田化学品生产及技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "增产增注技术服务",
+      "evidence_span": "增产增注技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公共安全产品及装备",
+      "evidence_span": "公共安全产品及装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油气田地面工程建设",
+      "evidence_span": "油气田地面工程建设等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能建筑解决方案",
+      "evidence_span": "在智能建筑、智能安防、智能交通、智慧农业、智慧园区等领域为客户提供成熟、完整、智能的应用场景智能化产品、整体解决方案和技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能安防解决方案",
+      "evidence_span": "在智能建筑、智能安防、智能交通、智慧农业、智慧园区等领域为客户提供成熟、完整、智能的应用场景智能化产品、整体解决方案和技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能交通解决方案",
+      "evidence_span": "在智能建筑、智能安防、智能交通、智慧农业、智慧园区等领域为客户提供成熟、完整、智能的应用场景智能化产品、整体解决方案和技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧农业解决方案",
+      "evidence_span": "在智能建筑、智能安防、智能交通、智慧农业、智慧园区等领域为客户提供成熟、完整、智能的应用场景智能化产品、整体解决方案和技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧园区解决方案",
+      "evidence_span": "在智能建筑、智能安防、智能交通、智慧农业、智慧园区等领域为客户提供成熟、完整、智能的应用场景智能化产品、整体解决方案和技术服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业控制技术",
+      "evidence_span": "在工业控制技术尤其是数据采集、传输、控制上积累了一些专利及独有的非专利技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业互联网技术",
+      "evidence_span": "公司继续推进工业互联网、工控安全、智能制造相关的技术、产品和应用场景方案的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工控安全技术",
+      "evidence_span": "公司继续推进工业互联网、工控安全、智能制造相关的技术、产品和应用场景方案的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "边缘计算技术",
+      "evidence_span": "在边缘计算技术、智能制造技术、先进钻井工具、油田环保技术、油田应急救援设备上的持续研发投入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能制造技术",
+      "evidence_span": "在边缘计算技术、智能制造技术、先进钻井工具、油田环保技术、油田应急救援设备上的持续研发投入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "先进钻井工具技术",
+      "evidence_span": "在边缘计算技术、智能制造技术、先进钻井工具、油田环保技术、油田应急救援设备上的持续研发投入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "油田环保技术",
+      "evidence_span": "在边缘计算技术、智能制造技术、先进钻井工具、油田环保技术、油田应急救援设备上的持续研发投入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "油田应急救援设备技术",
+      "evidence_span": "在边缘计算技术、智能制造技术、先进钻井工具、油田环保技术、油田应急救援设备上的持续研发投入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云边协同技术",
+      "evidence_span": "云边协同、行业智能、主流产品元器件全国产化等取得了关键性技术突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "主流产品元器件全国产化技术",
+      "evidence_span": "云边协同、行业智能、主流产品元器件全国产化等取得了关键性技术突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "功能安全产品RockE50技术",
+      "evidence_span": "报告期内公司已完成功能安全产品RockE50第二阶段的小批量试制和 TüV认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大点数通用PLC产品UTC1000技术",
+      "evidence_span": "报告期内公司完成了大点数通用PLC产品UTC1000二期的研发工作、样机测试工作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能RTUL721技术",
+      "evidence_span": "报告期内公司完成了智能RTUL721的小批量试制以及现场的应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电量RTUSU306全国产元器件替代技术",
+      "evidence_span": "报告期内公司完成了电量RTUSU306全国产元器件的替代的研发工作、样机测试工作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "EIIP工业PaaS云平台技术",
+      "evidence_span": "报告期内公司完成了EIIP工业PaaS云平台第四期的研发开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "NB-IoT无线仪表技术",
+      "evidence_span": "报告期内公司还进行了无线智能仪表的研发升级工作，完成了NB-IoT无线仪表的研发、测试和小批量试制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工控安全态势感知技术",
+      "evidence_span": "目前关于此课题申报的“宜宾市工控安全态势感知工程技术研究中心”获批"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "公司在自动化、油气服务领域的主要客户为中石油、中石化、中海油、延长油田等油田公司及其下属公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "公司在自动化、油气服务领域的主要客户为中石油、中石化、中海油、延长油田等油田公司及其下属公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中海油",
+      "evidence_span": "公司在自动化、油气服务领域的主要客户为中石油、中石化、中海油、延长油田等油田公司及其下属公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "延长油田",
+      "evidence_span": "公司在自动化、油气服务领域的主要客户为中石油、中石化、中海油、延长油田等油田公司及其下属公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产自动化设备替代进口",
+      "evidence_span": "国产自动化设备替代进口的趋势促进行业发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "工业控制系统自主可控",
+      "evidence_span": "实现流程行业工控系统自主、可控愈发迫切"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动化",
+        "evidence_span": "公司的主营业务聚焦于自动化、油气服务、智慧产业行业和领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "油气服务",
+        "evidence_span": "公司的主营业务聚焦于自动化、油气服务、智慧产业行业和领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧产业",
+        "evidence_span": "公司的主营业务聚焦于自动化、油气服务、智慧产业行业和领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工业自动控制系统装置制造企业",
+        "evidence_span": "公司从事的行业属于工业自动控制系统装置制造行业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "自动化控制产品供应商",
+        "evidence_span": "公司是国内领先的自动化控制产品供应商和应用场景整体解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧解决方案提供商",
+        "evidence_span": "公司是国内领先的自动化控制产品、智慧解决方案和服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "油气田自动化控制领域国内领先企业",
+        "evidence_span": "形成了在油气田自动化控制领域的国内领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "E-IIP工业互联网平台",
+        "evidence_span": "公司拥有 E- IIP（EtrolIntelligenceInformationPlatform）工业互联网平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能安全SIS系统",
+        "evidence_span": "功能安全 SIS系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模块化RTU",
+        "evidence_span": "模块化RTU"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一体化RTU",
+        "evidence_span": "一体化RTU"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "行业专用控制器",
+        "evidence_span": "行业专用控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "扩展I/O",
+        "evidence_span": "扩展 I/O"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传感器及仪表",
+        "evidence_span": "传感器及仪表"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业智能穿戴",
+        "evidence_span": "工业智能穿戴等自主核心技术产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油气生产物联网井场解决方案",
+        "evidence_span": "具备油气生产物联网井场解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油气生产物联网站场解决方案",
+        "evidence_span": "油气生产物联网站场解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油气管道业务解决方案",
+        "evidence_span": "油气管道业务解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油罐车安防调度系统",
+        "evidence_span": "油罐车安防调度系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能巡检系统",
+        "evidence_span": "智能巡检系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高低压配电柜整装撬装",
+        "evidence_span": "高低压配电柜整装撬装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能工厂行业整体解决方案",
+        "evidence_span": "智能工厂等行业整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "边缘计算引擎IIoTEngine",
+        "evidence_span": "推出了边缘计算引擎 IIoTEngine"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油田云边协同解决方案",
+        "evidence_span": "油田云边协同解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "采油井智能间开控制方案",
+        "evidence_span": "采油井智能间开控制方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油水井云、边、端协同方案",
+        "evidence_span": "油水井云、边、端协同方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油气田应用资源管理解决方案",
+        "evidence_span": "油气田应用资源管理解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油井智能间开系统解决方案",
+        "evidence_span": "油井智能间开系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定向井技术服务",
+        "evidence_span": "公司油气业务服务业务涵盖定向井技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "含油污染物治理技术服务",
+        "evidence_span": "含油污染物治理技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油田化学品生产及技术服务",
+        "evidence_span": "油田化学品生产及技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "增产增注技术服务",
+        "evidence_span": "增产增注技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公共安全产品及装备",
+        "evidence_span": "公共安全产品及装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油气田地面工程建设",
+        "evidence_span": "油气田地面工程建设等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能建筑解决方案",
+        "evidence_span": "在智能建筑、智能安防、智能交通、智慧农业、智慧园区等领域为客户提供成熟、完整、智能的应用场景智能化产品、整体解决方案和技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能安防解决方案",
+        "evidence_span": "在智能建筑、智能安防、智能交通、智慧农业、智慧园区等领域为客户提供成熟、完整、智能的应用场景智能化产品、整体解决方案和技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能交通解决方案",
+        "evidence_span": "在智能建筑、智能安防、智能交通、智慧农业、智慧园区等领域为客户提供成熟、完整、智能的应用场景智能化产品、整体解决方案和技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧农业解决方案",
+        "evidence_span": "在智能建筑、智能安防、智能交通、智慧农业、智慧园区等领域为客户提供成熟、完整、智能的应用场景智能化产品、整体解决方案和技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧园区解决方案",
+        "evidence_span": "在智能建筑、智能安防、智能交通、智慧农业、智慧园区等领域为客户提供成熟、完整、智能的应用场景智能化产品、整体解决方案和技术服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业控制技术",
+        "evidence_span": "在工业控制技术尤其是数据采集、传输、控制上积累了一些专利及独有的非专利技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业互联网技术",
+        "evidence_span": "公司继续推进工业互联网、工控安全、智能制造相关的技术、产品和应用场景方案的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工控安全技术",
+        "evidence_span": "公司继续推进工业互联网、工控安全、智能制造相关的技术、产品和应用场景方案的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "边缘计算技术",
+        "evidence_span": "在边缘计算技术、智能制造技术、先进钻井工具、油田环保技术、油田应急救援设备上的持续研发投入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能制造技术",
+        "evidence_span": "在边缘计算技术、智能制造技术、先进钻井工具、油田环保技术、油田应急救援设备上的持续研发投入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "先进钻井工具技术",
+        "evidence_span": "在边缘计算技术、智能制造技术、先进钻井工具、油田环保技术、油田应急救援设备上的持续研发投入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "油田环保技术",
+        "evidence_span": "在边缘计算技术、智能制造技术、先进钻井工具、油田环保技术、油田应急救援设备上的持续研发投入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "油田应急救援设备技术",
+        "evidence_span": "在边缘计算技术、智能制造技术、先进钻井工具、油田环保技术、油田应急救援设备上的持续研发投入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云边协同技术",
+        "evidence_span": "云边协同、行业智能、主流产品元器件全国产化等取得了关键性技术突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "主流产品元器件全国产化技术",
+        "evidence_span": "云边协同、行业智能、主流产品元器件全国产化等取得了关键性技术突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "功能安全产品RockE50技术",
+        "evidence_span": "报告期内公司已完成功能安全产品RockE50第二阶段的小批量试制和 TüV认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大点数通用PLC产品UTC1000技术",
+        "evidence_span": "报告期内公司完成了大点数通用PLC产品UTC1000二期的研发工作、样机测试工作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能RTUL721技术",
+        "evidence_span": "报告期内公司完成了智能RTUL721的小批量试制以及现场的应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电量RTUSU306全国产元器件替代技术",
+        "evidence_span": "报告期内公司完成了电量RTUSU306全国产元器件的替代的研发工作、样机测试工作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "EIIP工业PaaS云平台技术",
+        "evidence_span": "报告期内公司完成了EIIP工业PaaS云平台第四期的研发开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "NB-IoT无线仪表技术",
+        "evidence_span": "报告期内公司还进行了无线智能仪表的研发升级工作，完成了NB-IoT无线仪表的研发、测试和小批量试制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工控安全态势感知技术",
+        "evidence_span": "目前关于此课题申报的“宜宾市工控安全态势感知工程技术研究中心”获批"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "公司在自动化、油气服务领域的主要客户为中石油、中石化、中海油、延长油田等油田公司及其下属公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "公司在自动化、油气服务领域的主要客户为中石油、中石化、中海油、延长油田等油田公司及其下属公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中海油",
+        "evidence_span": "公司在自动化、油气服务领域的主要客户为中石油、中石化、中海油、延长油田等油田公司及其下属公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "延长油田",
+        "evidence_span": "公司在自动化、油气服务领域的主要客户为中石油、中石化、中海油、延长油田等油田公司及其下属公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产自动化设备替代进口",
+        "evidence_span": "国产自动化设备替代进口的趋势促进行业发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "工业控制系统自主可控",
+        "evidence_span": "实现流程行业工控系统自主、可控愈发迫切"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:05:13"
+}

@@ -1,0 +1,274 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "钢铁主业",
+      "evidence_span": "钢铁主业与多元产业呈现“两翼齐飞”新发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程建设",
+      "evidence_span": "以工程建设与服务、冶金贸易、循环经济、新材料四大产业为重点"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "以工程建设与服务、冶金贸易、循环经济、新材料四大产业为重点"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "冶金贸易",
+      "evidence_span": "以工程建设与服务、冶金贸易、循环经济、新材料四大产业为重点"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "循环经济",
+      "evidence_span": "以工程建设与服务、冶金贸易、循环经济、新材料四大产业为重点"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新材料",
+      "evidence_span": "以工程建设与服务、冶金贸易、循环经济、新材料四大产业为重点"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物流",
+      "evidence_span": "做强物流及和医养两大特色产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医养",
+      "evidence_span": "做强物流及和医养两大特色产业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "华南、西南地区特大型钢铁联合企业",
+      "evidence_span": "我国华南、西南地区特大型的钢铁联合企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "首个“云上钢厂”",
+      "evidence_span": "我国首个“云上钢厂”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中厚板",
+      "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连轧中型材",
+      "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速线材",
+      "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小型材",
+      "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热轧宽带钢",
+      "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷轧板",
+      "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热镀锌卷板",
+      "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "型材",
+      "evidence_span": "公司产品结构以型材、钢坯为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢坯",
+      "evidence_span": "公司产品结构以型材、钢坯为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷轧钢带",
+      "evidence_span": "其余冷轧钢带、热轧钢带、镀锌钢带产量分别为"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热轧钢带",
+      "evidence_span": "其余冷轧钢带、热轧钢带、镀锌钢带产量分别为"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镀锌钢带",
+      "evidence_span": "其余冷轧钢带、热轧钢带、镀锌钢带产量分别为"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "粤港澳大湾区建设",
+      "evidence_span": "粤港澳大湾区建设增强区位优势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "华南、西南供需错配",
+      "evidence_span": "受益于华南、西南供需错配的龙头标的"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "“2+26”限产利好广西本地钢企",
+      "evidence_span": "柳钢股份“2+26”限产利好广西本地钢企"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "防城港项目",
+      "evidence_span": "防城港项目或存接手可能性"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "“一带一路”",
+      "evidence_span": "柳钢股份乘“一带一路”东风"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "钢铁主业",
+        "evidence_span": "钢铁主业与多元产业呈现“两翼齐飞”新发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程建设与服务",
+        "evidence_span": "以工程建设与服务、冶金贸易、循环经济、新材料四大产业为重点"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "冶金贸易",
+        "evidence_span": "以工程建设与服务、冶金贸易、循环经济、新材料四大产业为重点"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "循环经济",
+        "evidence_span": "以工程建设与服务、冶金贸易、循环经济、新材料四大产业为重点"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新材料",
+        "evidence_span": "以工程建设与服务、冶金贸易、循环经济、新材料四大产业为重点"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物流",
+        "evidence_span": "做强物流及和医养两大特色产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医养",
+        "evidence_span": "做强物流及和医养两大特色产业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "华南、西南地区特大型钢铁联合企业",
+        "evidence_span": "我国华南、西南地区特大型的钢铁联合企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "首个“云上钢厂”",
+        "evidence_span": "我国首个“云上钢厂”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中厚板",
+        "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连轧中型材",
+        "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速线材",
+        "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小型材",
+        "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热轧宽带钢",
+        "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷轧板",
+        "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热镀锌卷板",
+        "evidence_span": "主要产品涵盖中厚板、连轧中型材、高速线材、小型材、热轧宽带钢、冷轧板、热镀锌卷板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "型材",
+        "evidence_span": "公司产品结构以型材、钢坯为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢坯",
+        "evidence_span": "公司产品结构以型材、钢坯为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷轧钢带",
+        "evidence_span": "其余冷轧钢带、热轧钢带、镀锌钢带产量分别为"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热轧钢带",
+        "evidence_span": "其余冷轧钢带、热轧钢带、镀锌钢带产量分别为"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镀锌钢带",
+        "evidence_span": "其余冷轧钢带、热轧钢带、镀锌钢带产量分别为"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "粤港澳大湾区建设",
+        "evidence_span": "粤港澳大湾区建设增强区位优势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "华南、西南供需错配",
+        "evidence_span": "受益于华南、西南供需错配的龙头标的"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "“2+26”限产利好广西本地钢企",
+        "evidence_span": "柳钢股份“2+26”限产利好广西本地钢企"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "防城港项目",
+        "evidence_span": "防城港项目或存接手可能性"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "“一带一路”",
+        "evidence_span": "柳钢股份乘“一带一路”东风"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:04:35"
+}

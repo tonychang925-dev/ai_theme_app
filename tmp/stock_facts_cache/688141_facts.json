@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电源管理芯片",
+      "evidence_span": "公司以电源管理芯片为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信号链芯片",
+      "evidence_span": "电源管理芯片和信号链芯片全面发展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "虚拟IDM模拟芯片企业",
+      "evidence_span": "国内领先的虚拟IDM模式模拟芯片企业杰华特"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电源管理领军企业",
+      "evidence_span": "国内电源管理的领军企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AC-DC芯片",
+      "evidence_span": "AC-DC芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DC-DC芯片",
+      "evidence_span": "DC-DC芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线性电源芯片",
+      "evidence_span": "线性电源芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池管理芯片",
+      "evidence_span": "电池管理芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "检测芯片",
+      "evidence_span": "检测芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "接口芯片",
+      "evidence_span": "接口芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "转换器芯片",
+      "evidence_span": "转换器芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电表智能调压芯片",
+      "evidence_span": "智能电表智能调压芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "快充高频GaN控制和驱动器",
+      "evidence_span": "快充高频GaN控制和驱动器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "100V大电流降压控制器芯片",
+      "evidence_span": "100V大电流降压控制器芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能功率级模块",
+      "evidence_span": "智能功率级模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电源配电和保护芯片",
+      "evidence_span": "电源配电和保护芯片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "0.18微米7至55V中低压BCD工艺",
+      "evidence_span": "0.18微米的7至55V中低压BCD工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "0.18微米10至200V高压BCD工艺",
+      "evidence_span": "0.18微米的10至200V高压BCD工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "0.35微米10至700V超高压BCD工艺",
+      "evidence_span": "0.35微米的10至700V超高压BCD工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "同步整流系列产品技术",
+      "evidence_span": "同步整流系列产品技术先进"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高频SR系列同步整流产品",
+      "evidence_span": "高频SR系列同步整流产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "去纹波芯片",
+      "evidence_span": "去纹波芯片"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "仁宝电脑",
+      "evidence_span": "仁宝电脑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "纬创股份",
+      "evidence_span": "纬创股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英业达",
+      "evidence_span": "英业达"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "戴尔",
+      "evidence_span": "戴尔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "惠普",
+      "evidence_span": "惠普"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "小米"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "高端电源国产化",
+      "evidence_span": "把握高端电源国产化机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电源管理芯片",
+        "evidence_span": "公司以电源管理芯片为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信号链芯片",
+        "evidence_span": "电源管理芯片和信号链芯片全面发展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "虚拟IDM模拟芯片企业",
+        "evidence_span": "国内领先的虚拟IDM模式模拟芯片企业杰华特"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电源管理领军企业",
+        "evidence_span": "国内电源管理的领军企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AC-DC芯片",
+        "evidence_span": "AC-DC芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DC-DC芯片",
+        "evidence_span": "DC-DC芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线性电源芯片",
+        "evidence_span": "线性电源芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池管理芯片",
+        "evidence_span": "电池管理芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "检测芯片",
+        "evidence_span": "检测芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "接口芯片",
+        "evidence_span": "接口芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "转换器芯片",
+        "evidence_span": "转换器芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电表智能调压芯片",
+        "evidence_span": "智能电表智能调压芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "快充高频GaN控制和驱动器",
+        "evidence_span": "快充高频GaN控制和驱动器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "100V大电流降压控制器芯片",
+        "evidence_span": "100V大电流降压控制器芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能功率级模块",
+        "evidence_span": "智能功率级模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电源配电和保护芯片",
+        "evidence_span": "电源配电和保护芯片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "0.18微米7至55V中低压BCD工艺",
+        "evidence_span": "0.18微米的7至55V中低压BCD工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "0.18微米10至200V高压BCD工艺",
+        "evidence_span": "0.18微米的10至200V高压BCD工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "0.35微米10至700V超高压BCD工艺",
+        "evidence_span": "0.35微米的10至700V超高压BCD工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "同步整流系列产品技术",
+        "evidence_span": "同步整流系列产品技术先进"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高频SR系列同步整流产品",
+        "evidence_span": "高频SR系列同步整流产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "去纹波芯片",
+        "evidence_span": "去纹波芯片"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "仁宝电脑",
+        "evidence_span": "仁宝电脑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "纬创股份",
+        "evidence_span": "纬创股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英业达",
+        "evidence_span": "英业达"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "戴尔",
+        "evidence_span": "戴尔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "惠普",
+        "evidence_span": "惠普"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "小米"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "高端电源国产化",
+        "evidence_span": "把握高端电源国产化机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:17:02"
+}

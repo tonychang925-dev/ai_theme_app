@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:52:22", "result": {"span_uid": "b347451ef5af", "action": "keep", "canonical_text": "全环绕栅极晶体管是一种尖端芯片架构，能够提升半导体性能。", "final_type": "core", "final_role": "芯片架构技术定义", "stability": "high", "reason": "原文直接定义半导体技术（GAA架构），是稳定、独立的本体知识，适合作为核心知识保留，仅简化表达。"}}

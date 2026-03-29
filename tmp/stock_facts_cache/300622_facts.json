@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "眼镜零售连锁经营",
+      "evidence_span": "公司是一家专业从事眼镜零售连锁经营企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "视觉健康解决方案",
+      "evidence_span": "为消费者提供时尚化、个性化的眼镜产品和专业的视觉健康解决方案"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "眼镜零售行业首家上市的头部企业",
+      "evidence_span": "公司作为眼镜零售行业首家上市的头部企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内眼镜零售行业规模较大、直营门店数量领先的跨区域经营企业",
+      "evidence_span": "目前已经成为国内眼镜零售行业规模较大、直营门店数量领先的跨区域经营企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光学眼镜及验配服务",
+      "evidence_span": "销售光学眼镜及验配服务（镜架、镜片和验配服务）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "成镜系列产品",
+      "evidence_span": "成镜系列产品（太阳镜、老花镜等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "隐形眼镜系列产品",
+      "evidence_span": "隐形眼镜系列产品（软、硬性隐形眼镜、护理液）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "眼健康周边产品",
+      "evidence_span": "眼健康周边产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一站式服务",
+      "evidence_span": "为消费者提供从引导挑选合适的眼镜产品、验光配镜、佩戴调试、售后服务与回访的一站式服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗场景下的视光服务",
+      "evidence_span": "医疗场景下的视光服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视觉健康档案",
+      "evidence_span": "为每位消费者建立视觉健康档案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "循证跟踪服务",
+      "evidence_span": "持续进行循证跟踪服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "儿童青少年近视防控型镜片",
+      "evidence_span": "儿童青少年近视防控型镜片（缓解儿童青少年近视加深）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗疲劳型镜片",
+      "evidence_span": "抗疲劳型镜片（缓解因长时间近距离用眼或使用数码设备出现的眼睛不适）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "成人渐进镜片",
+      "evidence_span": "成人渐进镜片（为中老年佩戴者提供更宽广的视觉效果）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "离焦镜片",
+      "evidence_span": "离焦镜片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "角膜塑形镜",
+      "evidence_span": "角膜塑形镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视觉训练产品",
+      "evidence_span": "视觉训练产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能眼镜",
+      "evidence_span": "智能眼镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光波导AR眼镜",
+      "evidence_span": "光波导AR眼镜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化赋能信息平台及应用系统",
+      "evidence_span": "公司通过数字化赋能信息平台及应用系统的建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ERP企业资源管理系统",
+      "evidence_span": "ERP企业资源管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "OMS订单管理系统",
+      "evidence_span": "OMS订单管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "WMS物流仓储管理系统",
+      "evidence_span": "WMS物流仓储管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "敏捷高效的柔性供应链体系",
+      "evidence_span": "构建、完善了敏捷高效的柔性供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山姆",
+      "evidence_span": "与山姆、华润、天虹等大型商超机构建立稳固合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华润",
+      "evidence_span": "与山姆、华润、天虹等大型商超机构建立稳固合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天虹",
+      "evidence_span": "与山姆、华润、天虹等大型商超机构建立稳固合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公立医院",
+      "evidence_span": "携手公立医院及社康机构有序推进综合视光服务新模式"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "社康机构",
+      "evidence_span": "携手公立医院及社康机构有序推进综合视光服务新模式"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "公司是华为智能眼镜产品的线上配镜指定合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雷鸟创新",
+      "evidence_span": "公司与雷鸟创新达成战略合作并成立联合实验室"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ROKID",
+      "evidence_span": "公司与ROKID达成更深层次的资源共享合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "近视防控",
+      "evidence_span": "青少年近视高发化、低龄化的发展趋势催生了近视防控镜片的巨大需求"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "AR与VR",
+      "evidence_span": "专注于产业互联网与数字经济，眼视光产业上下游、智能穿戴设备（AR与VR等）的投资机会"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "眼镜零售连锁经营",
+        "evidence_span": "公司是一家专业从事眼镜零售连锁经营企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "视觉健康解决方案",
+        "evidence_span": "为消费者提供时尚化、个性化的眼镜产品和专业的视觉健康解决方案"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "眼镜零售行业首家上市的头部企业",
+        "evidence_span": "公司作为眼镜零售行业首家上市的头部企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内眼镜零售行业规模较大、直营门店数量领先的跨区域经营企业",
+        "evidence_span": "目前已经成为国内眼镜零售行业规模较大、直营门店数量领先的跨区域经营企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光学眼镜及验配服务",
+        "evidence_span": "销售光学眼镜及验配服务（镜架、镜片和验配服务）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "成镜系列产品",
+        "evidence_span": "成镜系列产品（太阳镜、老花镜等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "隐形眼镜系列产品",
+        "evidence_span": "隐形眼镜系列产品（软、硬性隐形眼镜、护理液）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "眼健康周边产品",
+        "evidence_span": "眼健康周边产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一站式服务",
+        "evidence_span": "为消费者提供从引导挑选合适的眼镜产品、验光配镜、佩戴调试、售后服务与回访的一站式服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗场景下的视光服务",
+        "evidence_span": "医疗场景下的视光服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视觉健康档案",
+        "evidence_span": "为每位消费者建立视觉健康档案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "循证跟踪服务",
+        "evidence_span": "持续进行循证跟踪服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "儿童青少年近视防控型镜片",
+        "evidence_span": "儿童青少年近视防控型镜片（缓解儿童青少年近视加深）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗疲劳型镜片",
+        "evidence_span": "抗疲劳型镜片（缓解因长时间近距离用眼或使用数码设备出现的眼睛不适）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "成人渐进镜片",
+        "evidence_span": "成人渐进镜片（为中老年佩戴者提供更宽广的视觉效果）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "离焦镜片",
+        "evidence_span": "离焦镜片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "角膜塑形镜",
+        "evidence_span": "角膜塑形镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视觉训练产品",
+        "evidence_span": "视觉训练产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能眼镜",
+        "evidence_span": "智能眼镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光波导AR眼镜",
+        "evidence_span": "光波导AR眼镜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化赋能信息平台及应用系统",
+        "evidence_span": "公司通过数字化赋能信息平台及应用系统的建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ERP企业资源管理系统",
+        "evidence_span": "ERP企业资源管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "OMS订单管理系统",
+        "evidence_span": "OMS订单管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "WMS物流仓储管理系统",
+        "evidence_span": "WMS物流仓储管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "敏捷高效的柔性供应链体系",
+        "evidence_span": "构建、完善了敏捷高效的柔性供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山姆",
+        "evidence_span": "与山姆、华润、天虹等大型商超机构建立稳固合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华润",
+        "evidence_span": "与山姆、华润、天虹等大型商超机构建立稳固合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天虹",
+        "evidence_span": "与山姆、华润、天虹等大型商超机构建立稳固合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公立医院",
+        "evidence_span": "携手公立医院及社康机构有序推进综合视光服务新模式"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "社康机构",
+        "evidence_span": "携手公立医院及社康机构有序推进综合视光服务新模式"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "公司是华为智能眼镜产品的线上配镜指定合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雷鸟创新",
+        "evidence_span": "公司与雷鸟创新达成战略合作并成立联合实验室"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ROKID",
+        "evidence_span": "公司与ROKID达成更深层次的资源共享合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "近视防控",
+        "evidence_span": "青少年近视高发化、低龄化的发展趋势催生了近视防控镜片的巨大需求"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "AR与VR",
+        "evidence_span": "专注于产业互联网与数字经济，眼视光产业上下游、智能穿戴设备（AR与VR等）的投资机会"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:38:36"
+}

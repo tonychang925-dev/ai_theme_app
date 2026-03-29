@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:41:55", "result": {"span_uid": "02e7f2a24abd", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业竞争动态", "stability": "low", "reason": "该片段内容较为笼统和主观（如“各显其能”、“不断提升自身竞争力”），缺乏具体、稳定的知识信息，难以形成独立的知识块。"}}

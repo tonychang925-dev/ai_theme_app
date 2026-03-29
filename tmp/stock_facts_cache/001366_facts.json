@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "饲料的研发",
+      "evidence_span": "公司主营业务为饲料的研发、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主营业务为饲料的研发、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营业务为饲料的研发、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "猪饲料",
+      "evidence_span": "公司的主要产品为猪用饲料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国性饲料供应商",
+      "evidence_span": "发展成为集研发、生产、销售、服务为一体的全国性饲料供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "饲料加工企业",
+      "evidence_span": "公司所处行业归属于农副食品加工业（C13）中的饲料加工（C132）行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "猪用饲料",
+      "evidence_span": "公司的主要产品为猪用饲料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预混料",
+      "evidence_span": "包括预混料、浓缩料、配合料等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "浓缩料",
+      "evidence_span": "包括预混料、浓缩料、配合料等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配合料",
+      "evidence_span": "包括预混料、浓缩料、配合料等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教槽料",
+      "evidence_span": "主要为客户提供优质教槽料、乳猪料等高端幼小猪营养产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乳猪料",
+      "evidence_span": "主要为客户提供优质教槽料、乳猪料等高端幼小猪营养产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物发酵饲料",
+      "evidence_span": "主要为客户提供优质教槽料、乳猪料等高端幼小猪营养产品及生物发酵饲料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蛋鸡饲料",
+      "evidence_span": "主要为鸡开口料和鸡花料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鸡开口料",
+      "evidence_span": "主要为鸡开口料和鸡花料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鸡花料",
+      "evidence_span": "主要为鸡开口料和鸡花料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物发酵饲料技术",
+      "evidence_span": "继续加大幼小动物营养和生物发酵饲料技术投入及产品创新"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核心配方技术",
+      "evidence_span": "充分利用已掌握的核心配方技术、生产工艺等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生产工艺",
+      "evidence_span": "充分利用已掌握的核心配方技术、生产工艺等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "替代抗生素技术",
+      "evidence_span": "在抗击非洲猪瘟、替代抗生素技术、营养技术、配方技术、检测技术方面拥有自身技术特点及优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "营养技术",
+      "evidence_span": "在抗击非洲猪瘟、替代抗生素技术、营养技术、配方技术、检测技术方面拥有自身技术特点及优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "配方技术",
+      "evidence_span": "在抗击非洲猪瘟、替代抗生素技术、营养技术、配方技术、检测技术方面拥有自身技术特点及优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "检测技术",
+      "evidence_span": "在抗击非洲猪瘟、替代抗生素技术、营养技术、配方技术、检测技术方面拥有自身技术特点及优势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "生物饲料",
+      "evidence_span": "“禁抗令”促进生物饲料迅猛发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "饲料的研发、生产、销售",
+        "evidence_span": "公司主营业务为饲料的研发、生产、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "猪饲料",
+        "evidence_span": "公司的主要产品为猪用饲料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国性饲料供应商",
+        "evidence_span": "发展成为集研发、生产、销售、服务为一体的全国性饲料供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "饲料加工企业",
+        "evidence_span": "公司所处行业归属于农副食品加工业（C13）中的饲料加工（C132）行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "猪用饲料",
+        "evidence_span": "公司的主要产品为猪用饲料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预混料",
+        "evidence_span": "包括预混料、浓缩料、配合料等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "浓缩料",
+        "evidence_span": "包括预混料、浓缩料、配合料等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配合料",
+        "evidence_span": "包括预混料、浓缩料、配合料等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教槽料",
+        "evidence_span": "主要为客户提供优质教槽料、乳猪料等高端幼小猪营养产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乳猪料",
+        "evidence_span": "主要为客户提供优质教槽料、乳猪料等高端幼小猪营养产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物发酵饲料",
+        "evidence_span": "主要为客户提供优质教槽料、乳猪料等高端幼小猪营养产品及生物发酵饲料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蛋鸡饲料",
+        "evidence_span": "主要为鸡开口料和鸡花料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鸡开口料",
+        "evidence_span": "主要为鸡开口料和鸡花料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鸡花料",
+        "evidence_span": "主要为鸡开口料和鸡花料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物发酵饲料技术",
+        "evidence_span": "继续加大幼小动物营养和生物发酵饲料技术投入及产品创新"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核心配方技术",
+        "evidence_span": "充分利用已掌握的核心配方技术、生产工艺等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生产工艺",
+        "evidence_span": "充分利用已掌握的核心配方技术、生产工艺等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "替代抗生素技术",
+        "evidence_span": "在抗击非洲猪瘟、替代抗生素技术、营养技术、配方技术、检测技术方面拥有自身技术特点及优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "营养技术",
+        "evidence_span": "在抗击非洲猪瘟、替代抗生素技术、营养技术、配方技术、检测技术方面拥有自身技术特点及优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "配方技术",
+        "evidence_span": "在抗击非洲猪瘟、替代抗生素技术、营养技术、配方技术、检测技术方面拥有自身技术特点及优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "检测技术",
+        "evidence_span": "在抗击非洲猪瘟、替代抗生素技术、营养技术、配方技术、检测技术方面拥有自身技术特点及优势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "生物饲料",
+        "evidence_span": "“禁抗令”促进生物饲料迅猛发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:25:41"
+}

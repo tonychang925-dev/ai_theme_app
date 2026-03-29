@@ -1,0 +1,99 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "出境游批发业务",
+      "evidence_span": "出境游批发业务收入为89.92亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "出境游零售业务",
+      "evidence_span": "出境游零售业务收入为23.58亿元"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "出境旅游运营商",
+      "evidence_span": "国内领先的大型出境旅游运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "旅游批发商",
+      "evidence_span": "全国最大的旅游批发商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "出境游资源整合者",
+      "evidence_span": "众信旅游出境游资源整合者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "出境游批发",
+      "evidence_span": "出境游批发业务收入为89.92亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "出境游零售",
+      "evidence_span": "出境游零售业务收入为23.58亿元"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里巴巴",
+      "evidence_span": "与阿里巴巴达成战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国中免集团",
+      "evidence_span": "与中国中免集团达成战略合作"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "出境游批发业务",
+        "evidence_span": "出境游批发业务收入为89.92亿元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "出境游零售业务",
+        "evidence_span": "出境游零售业务收入为23.58亿元"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "出境旅游运营商",
+        "evidence_span": "国内领先的大型出境旅游运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "旅游批发商",
+        "evidence_span": "全国最大的旅游批发商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "出境游资源整合者",
+        "evidence_span": "众信旅游出境游资源整合者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "出境游批发",
+        "evidence_span": "出境游批发业务收入为89.92亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "出境游零售",
+        "evidence_span": "出境游零售业务收入为23.58亿元"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里巴巴",
+        "evidence_span": "与阿里巴巴达成战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国中免集团",
+        "evidence_span": "与中国中免集团达成战略合作"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:16:18"
+}

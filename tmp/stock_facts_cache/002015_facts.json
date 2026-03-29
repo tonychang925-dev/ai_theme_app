@@ -1,0 +1,499 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "清洁能源运营",
+      "evidence_span": "主要从事清洁能源运营、移动能源运营和综合能源服务三大板块业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "移动能源运营",
+      "evidence_span": "主要从事清洁能源运营、移动能源运营和综合能源服务三大板块业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "综合能源服务",
+      "evidence_span": "主要从事清洁能源运营、移动能源运营和综合能源服务三大板块业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "清洁能源综合服务商",
+      "evidence_span": "协鑫能科是国内领先的清洁能源综合服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃机热电联产机组运营",
+      "evidence_span": "公司业务主要有燃机热电联产机组、燃煤热电联产机组、风电、生物质发电和垃圾发电的运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃煤热电联产机组运营",
+      "evidence_span": "公司业务主要有燃机热电联产机组、燃煤热电联产机组、风电、生物质发电和垃圾发电的运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电运营",
+      "evidence_span": "公司业务主要有燃机热电联产机组、燃煤热电联产机组、风电、生物质发电和垃圾发电的运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物质发电运营",
+      "evidence_span": "公司业务主要有燃机热电联产机组、燃煤热电联产机组、风电、生物质发电和垃圾发电的运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "垃圾发电运营",
+      "evidence_span": "公司业务主要有燃机热电联产机组、燃煤热电联产机组、风电、生物质发电和垃圾发电的运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车补能服务",
+      "evidence_span": "提供电动汽车补能服务、电池全生命周期管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池全生命周期管理",
+      "evidence_span": "提供电动汽车补能服务、电池全生命周期管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧储能解决方案",
+      "evidence_span": "提供以智慧储能、智能配电、数字化能源、区块链售电、碳资产管理与金融等技术为依托的解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能配电解决方案",
+      "evidence_span": "提供以智慧储能、智能配电、数字化能源、区块链售电、碳资产管理与金融等技术为依托的解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化能源解决方案",
+      "evidence_span": "提供以智慧储能、智能配电、数字化能源、区块链售电、碳资产管理与金融等技术为依托的解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "区块链售电解决方案",
+      "evidence_span": "提供以智慧储能、智能配电、数字化能源、区块链售电、碳资产管理与金融等技术为依托的解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳资产管理与金融解决方案",
+      "evidence_span": "提供以智慧储能、智能配电、数字化能源、区块链售电、碳资产管理与金融等技术为依托的解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "换电站",
+      "evidence_span": "公司已建成乘用车换电站11座，商用车换电站5座"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充电场站",
+      "evidence_span": "建成乘用车换电站18座，商用车换电站12座，商用车充电场站1座"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市场化交易服务",
+      "evidence_span": "公司2022年上半年市场化交易服务电量93亿KWh"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配电项目",
+      "evidence_span": "配电项目累计投产容量1091MVA"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳资产管理服务",
+      "evidence_span": "全面开展了碳资产管理、碳资产金融、绿电、绿证交易等碳中和服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿电交易服务",
+      "evidence_span": "全面开展了碳资产管理、碳资产金融、绿电、绿证交易等碳中和服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿证交易服务",
+      "evidence_span": "全面开展了碳资产管理、碳资产金融、绿电、绿证交易等碳中和服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能项目",
+      "evidence_span": "已投运储能、分布式能源、微网等能源服务项目超30项"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分布式能源项目",
+      "evidence_span": "已投运储能、分布式能源、微网等能源服务项目超30项"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微网项目",
+      "evidence_span": "已投运储能、分布式能源、微网等能源服务项目超30项"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PaaS和SaaS一体化数字换电云平台",
+      "evidence_span": "公司已构建业内第一个PaaS和SaaS一体化数字换电云平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电网公司",
+      "evidence_span": "为电网公司、工业园区和城市提供电、热、冷等能源产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工业园区",
+      "evidence_span": "为电网公司、工业园区和城市提供电、热、冷等能源产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "城市",
+      "evidence_span": "为电网公司、工业园区和城市提供电、热、冷等能源产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福田",
+      "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三一",
+      "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风",
+      "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "货拉拉",
+      "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "地上铁",
+      "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "乌鲁木齐甘泉堡经开区政府",
+      "evidence_span": "公司已与乌鲁木齐甘泉堡经开区政府签订了合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "T3出行",
+      "evidence_span": "公司与货拉拉、T3出行、地上铁等开展合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国十九冶",
+      "evidence_span": "公司已与中国十九冶、国网江苏电动汽车、趣链科技、西井科技等换电生态行业龙头结盟"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国网江苏电动汽车",
+      "evidence_span": "公司已与中国十九冶、国网江苏电动汽车、趣链科技、西井科技等换电生态行业龙头结盟"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "趣链科技",
+      "evidence_span": "公司已与中国十九冶、国网江苏电动汽车、趣链科技、西井科技等换电生态行业龙头结盟"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西井科技",
+      "evidence_span": "公司已与中国十九冶、国网江苏电动汽车、趣链科技、西井科技等换电生态行业龙头结盟"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞汽车",
+      "evidence_span": "公司已与奇瑞汽车、东风汽车和合众汽车等乘用车企业、吉利商用车、福田商用车和三一重卡等商用车企业确立换电领域长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合众汽车",
+      "evidence_span": "公司已与奇瑞汽车、东风汽车和合众汽车等乘用车企业、吉利商用车、福田商用车和三一重卡等商用车企业确立换电领域长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利商用车",
+      "evidence_span": "公司已与奇瑞汽车、东风汽车和合众汽车等乘用车企业、吉利商用车、福田商用车和三一重卡等商用车企业确立换电领域长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福田商用车",
+      "evidence_span": "公司已与奇瑞汽车、东风汽车和合众汽车等乘用车企业、吉利商用车、福田商用车和三一重卡等商用车企业确立换电领域长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三一重卡",
+      "evidence_span": "公司已与奇瑞汽车、东风汽车和合众汽车等乘用车企业、吉利商用车、福田商用车和三一重卡等商用车企业确立换电领域长期战略合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳中和",
+      "evidence_span": "协鑫能科碳中和下新能源运营与综合能源服务双线拓展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "清洁能源运营",
+        "evidence_span": "主要从事清洁能源运营、移动能源运营和综合能源服务三大板块业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "移动能源运营",
+        "evidence_span": "主要从事清洁能源运营、移动能源运营和综合能源服务三大板块业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "综合能源服务",
+        "evidence_span": "主要从事清洁能源运营、移动能源运营和综合能源服务三大板块业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "清洁能源综合服务商",
+        "evidence_span": "协鑫能科是国内领先的清洁能源综合服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃机热电联产机组运营",
+        "evidence_span": "公司业务主要有燃机热电联产机组、燃煤热电联产机组、风电、生物质发电和垃圾发电的运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃煤热电联产机组运营",
+        "evidence_span": "公司业务主要有燃机热电联产机组、燃煤热电联产机组、风电、生物质发电和垃圾发电的运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电运营",
+        "evidence_span": "公司业务主要有燃机热电联产机组、燃煤热电联产机组、风电、生物质发电和垃圾发电的运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物质发电运营",
+        "evidence_span": "公司业务主要有燃机热电联产机组、燃煤热电联产机组、风电、生物质发电和垃圾发电的运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "垃圾发电运营",
+        "evidence_span": "公司业务主要有燃机热电联产机组、燃煤热电联产机组、风电、生物质发电和垃圾发电的运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车补能服务",
+        "evidence_span": "提供电动汽车补能服务、电池全生命周期管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池全生命周期管理",
+        "evidence_span": "提供电动汽车补能服务、电池全生命周期管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧储能解决方案",
+        "evidence_span": "提供以智慧储能、智能配电、数字化能源、区块链售电、碳资产管理与金融等技术为依托的解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能配电解决方案",
+        "evidence_span": "提供以智慧储能、智能配电、数字化能源、区块链售电、碳资产管理与金融等技术为依托的解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化能源解决方案",
+        "evidence_span": "提供以智慧储能、智能配电、数字化能源、区块链售电、碳资产管理与金融等技术为依托的解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "区块链售电解决方案",
+        "evidence_span": "提供以智慧储能、智能配电、数字化能源、区块链售电、碳资产管理与金融等技术为依托的解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳资产管理与金融解决方案",
+        "evidence_span": "提供以智慧储能、智能配电、数字化能源、区块链售电、碳资产管理与金融等技术为依托的解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "换电站",
+        "evidence_span": "公司已建成乘用车换电站11座，商用车换电站5座"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充电场站",
+        "evidence_span": "建成乘用车换电站18座，商用车换电站12座，商用车充电场站1座"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市场化交易服务",
+        "evidence_span": "公司2022年上半年市场化交易服务电量93亿KWh"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配电项目",
+        "evidence_span": "配电项目累计投产容量1091MVA"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳资产管理服务",
+        "evidence_span": "全面开展了碳资产管理、碳资产金融、绿电、绿证交易等碳中和服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿电交易服务",
+        "evidence_span": "全面开展了碳资产管理、碳资产金融、绿电、绿证交易等碳中和服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿证交易服务",
+        "evidence_span": "全面开展了碳资产管理、碳资产金融、绿电、绿证交易等碳中和服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能项目",
+        "evidence_span": "已投运储能、分布式能源、微网等能源服务项目超30项"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分布式能源项目",
+        "evidence_span": "已投运储能、分布式能源、微网等能源服务项目超30项"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微网项目",
+        "evidence_span": "已投运储能、分布式能源、微网等能源服务项目超30项"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PaaS和SaaS一体化数字换电云平台",
+        "evidence_span": "公司已构建业内第一个PaaS和SaaS一体化数字换电云平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电网公司",
+        "evidence_span": "为电网公司、工业园区和城市提供电、热、冷等能源产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工业园区",
+        "evidence_span": "为电网公司、工业园区和城市提供电、热、冷等能源产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "城市",
+        "evidence_span": "为电网公司、工业园区和城市提供电、热、冷等能源产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福田",
+        "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三一",
+        "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风",
+        "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "货拉拉",
+        "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "地上铁",
+        "evidence_span": "携手吉利、福田、三一、东风、货拉拉、宁德时代、地上铁等整车生产、出行平台、电池制造、物流行业等头部企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "乌鲁木齐甘泉堡经开区政府",
+        "evidence_span": "公司已与乌鲁木齐甘泉堡经开区政府签订了合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "T3出行",
+        "evidence_span": "公司与货拉拉、T3出行、地上铁等开展合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国十九冶",
+        "evidence_span": "公司已与中国十九冶、国网江苏电动汽车、趣链科技、西井科技等换电生态行业龙头结盟"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国网江苏电动汽车",
+        "evidence_span": "公司已与中国十九冶、国网江苏电动汽车、趣链科技、西井科技等换电生态行业龙头结盟"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "趣链科技",
+        "evidence_span": "公司已与中国十九冶、国网江苏电动汽车、趣链科技、西井科技等换电生态行业龙头结盟"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西井科技",
+        "evidence_span": "公司已与中国十九冶、国网江苏电动汽车、趣链科技、西井科技等换电生态行业龙头结盟"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞汽车",
+        "evidence_span": "公司已与奇瑞汽车、东风汽车和合众汽车等乘用车企业、吉利商用车、福田商用车和三一重卡等商用车企业确立换电领域长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合众汽车",
+        "evidence_span": "公司已与奇瑞汽车、东风汽车和合众汽车等乘用车企业、吉利商用车、福田商用车和三一重卡等商用车企业确立换电领域长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利商用车",
+        "evidence_span": "公司已与奇瑞汽车、东风汽车和合众汽车等乘用车企业、吉利商用车、福田商用车和三一重卡等商用车企业确立换电领域长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福田商用车",
+        "evidence_span": "公司已与奇瑞汽车、东风汽车和合众汽车等乘用车企业、吉利商用车、福田商用车和三一重卡等商用车企业确立换电领域长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三一重卡",
+        "evidence_span": "公司已与奇瑞汽车、东风汽车和合众汽车等乘用车企业、吉利商用车、福田商用车和三一重卡等商用车企业确立换电领域长期战略合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳中和",
+        "evidence_span": "协鑫能科碳中和下新能源运营与综合能源服务双线拓展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:33:16"
+}

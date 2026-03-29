@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "c113b3fa609c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落简要提及美国签署25亿美元合同用于空间感知系统的事件，属于公司或政府动态，没有涉及军工题材的稳定知识构建。"}}

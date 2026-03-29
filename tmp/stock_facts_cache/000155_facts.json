@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源发电",
+      "evidence_span": "新能源发电+锂电储能"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电储能",
+      "evidence_span": "新能源发电+锂电储能"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "垃圾焚烧发电",
+      "evidence_span": "主营业务新增垃圾焚烧发电项目的投资运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环卫一体化",
+      "evidence_span": "环卫一体化"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保设备销售",
+      "evidence_span": "环保设备的销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "四川能投唯一上市平台",
+      "evidence_span": "四川能投唯一上市平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "绿电区域龙头",
+      "evidence_span": "川能动力绿电区域龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂矿一体化稀缺标的",
+      "evidence_span": "锂矿一体化稀缺标的"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电",
+      "evidence_span": "风电投产921.8MW"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏发电",
+      "evidence_span": "光伏发电投产22.43MW"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂矿采选",
+      "evidence_span": "锂矿采选105万吨/年"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂精矿",
+      "evidence_span": "锂精矿18万吨/年"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池级碳酸锂",
+      "evidence_span": "电池级碳酸锂2.5万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池级氢氧化锂",
+      "evidence_span": "电池级氢氧化锂2万吨/年"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "垃圾焚烧发电项目",
+      "evidence_span": "垃圾焚烧发电项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环卫项目",
+      "evidence_span": "环卫项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保设备",
+      "evidence_span": "环保设备销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "风电运维",
+      "evidence_span": "风电运维的优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "主动故障监测系统",
+      "evidence_span": "建立主动故障监测系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "风功率预测系统",
+      "evidence_span": "自主打造风功率预测系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东方电气",
+      "evidence_span": "向东方电气发行股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "明永投资",
+      "evidence_span": "向明永投资发行股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "四川路桥",
+      "evidence_span": "拟转让5%至四川路桥"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿纬锂能",
+      "evidence_span": "亿纬锂能"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蜂巢能源",
+      "evidence_span": "蜂巢能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源发电",
+      "evidence_span": "新能源发电"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "锂电储能",
+      "evidence_span": "锂电储能"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "锂矿一体化",
+      "evidence_span": "锂矿一体化稀缺标的"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源发电",
+        "evidence_span": "新能源发电+锂电储能"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电储能",
+        "evidence_span": "新能源发电+锂电储能"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "垃圾焚烧发电",
+        "evidence_span": "主营业务新增垃圾焚烧发电项目的投资运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环卫一体化",
+        "evidence_span": "环卫一体化"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保设备销售",
+        "evidence_span": "环保设备的销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "四川能投唯一上市平台",
+        "evidence_span": "四川能投唯一上市平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "绿电区域龙头",
+        "evidence_span": "川能动力绿电区域龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂矿一体化稀缺标的",
+        "evidence_span": "锂矿一体化稀缺标的"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电",
+        "evidence_span": "风电投产921.8MW"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏发电",
+        "evidence_span": "光伏发电投产22.43MW"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂矿采选",
+        "evidence_span": "锂矿采选105万吨/年"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂精矿",
+        "evidence_span": "锂精矿18万吨/年"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池级碳酸锂",
+        "evidence_span": "电池级碳酸锂2.5万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池级氢氧化锂",
+        "evidence_span": "电池级氢氧化锂2万吨/年"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "垃圾焚烧发电项目",
+        "evidence_span": "垃圾焚烧发电项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环卫项目",
+        "evidence_span": "环卫项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保设备",
+        "evidence_span": "环保设备销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "风电运维",
+        "evidence_span": "风电运维的优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "主动故障监测系统",
+        "evidence_span": "建立主动故障监测系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "风功率预测系统",
+        "evidence_span": "自主打造风功率预测系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东方电气",
+        "evidence_span": "向东方电气发行股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "明永投资",
+        "evidence_span": "向明永投资发行股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "四川路桥",
+        "evidence_span": "拟转让5%至四川路桥"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿纬锂能",
+        "evidence_span": "亿纬锂能"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蜂巢能源",
+        "evidence_span": "蜂巢能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源发电",
+        "evidence_span": "新能源发电"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "锂电储能",
+        "evidence_span": "锂电储能"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "锂矿一体化",
+        "evidence_span": "锂矿一体化稀缺标的"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:54:03"
+}

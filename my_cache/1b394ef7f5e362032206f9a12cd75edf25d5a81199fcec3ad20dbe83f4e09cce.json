@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "4b847603e628", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述一个具体事件：美国官员前往荷兰和日本要求对华半导体行业施加新限制，涉及政策动态和外交行动，没有提供关于半导体本体的静态知识。"}}

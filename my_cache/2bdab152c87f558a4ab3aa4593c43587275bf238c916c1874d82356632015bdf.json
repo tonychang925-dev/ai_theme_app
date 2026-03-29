@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "cc836bc44a7b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落提及无人机'蜂群'、机器'狼群'协同作战演习和无人化作战模式，可能包含有价值的军事技术知识，但以陆军首次披露的事件形式呈现，混合了动态信息。"}}

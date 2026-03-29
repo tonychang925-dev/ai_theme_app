@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "7d367948828f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了日本部署中程防空导弹的事件，包含具体日期和动态，但同时也提供了关于与那国岛的地理位置、历史部署和03式导弹用途的静态知识，这些知识可能对陆军题材（如防空系统、军事部署）有价值，因此属于混合内容。"}}

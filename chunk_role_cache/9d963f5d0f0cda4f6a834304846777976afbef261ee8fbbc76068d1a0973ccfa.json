@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "274c3332061e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了美国出口管制事件，但列举了涉及半导体制造设备的公司（如北方华创、拓荆科技等）和设备类型（涂胶显影、刻蚀、薄膜沉积等），这些信息具有知识价值，与事件混合。"}}

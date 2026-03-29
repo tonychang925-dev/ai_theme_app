@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "零售业",
+      "evidence_span": "公司目前的主营业务为零售业、农产品交易市场两大类主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农产品交易市场",
+      "evidence_span": "公司目前的主营业务为零售业、农产品交易市场两大类主业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "安徽区域市场的零售龙头企业",
+      "evidence_span": "作为安徽区域市场的零售龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "安徽省唯一的商业上市公司",
+      "evidence_span": "安徽省唯一的商业上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "百货",
+      "evidence_span": "公司零售业包括百货、家电、超市连锁、电子商务等细分业态"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家电",
+      "evidence_span": "公司零售业包括百货、家电、超市连锁、电子商务等细分业态"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超市连锁",
+      "evidence_span": "公司零售业包括百货、家电、超市连锁、电子商务等细分业态"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子商务",
+      "evidence_span": "公司零售业包括百货、家电、超市连锁、电子商务等细分业态"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农产品批发市场",
+      "evidence_span": "周谷堆农产品批发市场为综合型农产品批发市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "联销",
+      "evidence_span": "公司百货零售业务的经营模式主要包括联销、经销和物业出租"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "经销",
+      "evidence_span": "公司百货零售业务的经营模式主要包括联销、经销和物业出租"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物业出租",
+      "evidence_span": "公司百货零售业务的经营模式主要包括联销、经销和物业出租"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "摊位出租",
+      "evidence_span": "公司农产品交易市场的业务经营模式主要包括摊位出租、交易佣金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交易佣金",
+      "evidence_span": "公司农产品交易市场的业务经营模式主要包括摊位出租、交易佣金"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化运营体系",
+      "evidence_span": "更大力度创新数字化运营体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧商业升级项目",
+      "evidence_span": "全力推进智慧商业升级项目开发及结算服务共享平台建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "结算服务共享平台",
+      "evidence_span": "全力推进智慧商业升级项目开发及结算服务共享平台建设"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "贵州茅台酒",
+      "evidence_span": "荣获“贵州茅台酒2022年度优秀渠道商奖”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "零售业",
+        "evidence_span": "公司目前的主营业务为零售业、农产品交易市场两大类主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农产品交易市场",
+        "evidence_span": "公司目前的主营业务为零售业、农产品交易市场两大类主业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "安徽区域市场的零售龙头企业",
+        "evidence_span": "作为安徽区域市场的零售龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "安徽省唯一的商业上市公司",
+        "evidence_span": "安徽省唯一的商业上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "百货",
+        "evidence_span": "公司零售业包括百货、家电、超市连锁、电子商务等细分业态"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家电",
+        "evidence_span": "公司零售业包括百货、家电、超市连锁、电子商务等细分业态"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超市连锁",
+        "evidence_span": "公司零售业包括百货、家电、超市连锁、电子商务等细分业态"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子商务",
+        "evidence_span": "公司零售业包括百货、家电、超市连锁、电子商务等细分业态"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农产品批发市场",
+        "evidence_span": "周谷堆农产品批发市场为综合型农产品批发市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "联销",
+        "evidence_span": "公司百货零售业务的经营模式主要包括联销、经销和物业出租"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "经销",
+        "evidence_span": "公司百货零售业务的经营模式主要包括联销、经销和物业出租"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物业出租",
+        "evidence_span": "公司百货零售业务的经营模式主要包括联销、经销和物业出租"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "摊位出租",
+        "evidence_span": "公司农产品交易市场的业务经营模式主要包括摊位出租、交易佣金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交易佣金",
+        "evidence_span": "公司农产品交易市场的业务经营模式主要包括摊位出租、交易佣金"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化运营体系",
+        "evidence_span": "更大力度创新数字化运营体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧商业升级项目",
+        "evidence_span": "全力推进智慧商业升级项目开发及结算服务共享平台建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "结算服务共享平台",
+        "evidence_span": "全力推进智慧商业升级项目开发及结算服务共享平台建设"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "贵州茅台酒",
+        "evidence_span": "荣获“贵州茅台酒2022年度优秀渠道商奖”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:56:31"
+}

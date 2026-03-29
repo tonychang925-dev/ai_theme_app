@@ -1,0 +1,77 @@
+{
+  "must": [
+    "液冷数据中心",
+    "浸没式液冷技术",
+    "冷板式液冷技术",
+    "热捕获",
+    "热交换",
+    "冷源"
+  ],
+  "should": [
+    "直接冷却",
+    "间接冷却",
+    "相变",
+    "非相变",
+    "金属腔体贴合芯片表面",
+    "硬管",
+    "软管",
+    "闭式冷却塔",
+    "干冷器",
+    "冷水机组",
+    "冷却塔",
+    "间接蒸发冷却"
+  ],
+  "not": [
+    "星际之门",
+    "GPU集群",
+    "META营收",
+    "微软净利润",
+    "OpenAI技术",
+    "研究团队",
+    "焦耳杂志"
+  ],
+  "evidence_refs": [
+    {
+      "term": "液冷数据中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "液冷数据中心"
+    },
+    {
+      "term": "浸没式液冷技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "浸没式液冷技术"
+    },
+    {
+      "term": "冷板式液冷技术",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "冷板式液冷技术"
+    },
+    {
+      "term": "热捕获",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "热捕获"
+    },
+    {
+      "term": "热交换",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "热交换"
+    },
+    {
+      "term": "冷源",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "冷源"
+    }
+  ],
+  "subject_id": "9024880",
+  "quality": "medium",
+  "generated_at": "2026-03-13T11:49:40",
+  "semantic_type": "技术架构与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

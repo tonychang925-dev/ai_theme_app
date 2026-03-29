@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:08:31", "result": {"span_uid": "7b2eb85d5885", "action": "rewrite", "canonical_text": "春节档影片通常涵盖武侠、谍战、喜剧、科幻、动画等多种类型", "final_type": "core", "final_role": "影片类型构成", "stability": "medium", "reason": "原文本提及具体数量（6部）和“已官宣”等事件性表述，需去新闻口吻改写。影片类型构成是春节档本体的重要组成部分。"}}

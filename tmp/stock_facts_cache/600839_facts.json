@@ -1,0 +1,414 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "综合家电",
+      "evidence_span": "一家集综合家电、IT数码、新能源电池等业务为一体的全球化科技企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "IT数码",
+      "evidence_span": "一家集综合家电、IT数码、新能源电池等业务为一体的全球化科技企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源电池",
+      "evidence_span": "一家集综合家电、IT数码、新能源电池等业务为一体的全球化科技企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电视业务",
+      "evidence_span": "一、家用电器业务\n1、电视业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "冰箱",
+      "evidence_span": "2、冰箱/冰柜业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "冰柜业务",
+      "evidence_span": "2、冰箱/冰柜业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "空调业务",
+      "evidence_span": "3、空调业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "洗衣机业务",
+      "evidence_span": "4、洗衣机业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "ICT综合服务业务",
+      "evidence_span": "二、ICT综合服务业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球化科技企业",
+      "evidence_span": "一家集综合家电、IT数码、新能源电池等业务为一体的全球化科技企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电视",
+      "evidence_span": "电视业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AITV",
+      "evidence_span": "推出了全球首款AITV--Q10TMAX"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OLED系列旗舰机型",
+      "evidence_span": "全面推出OLED系列旗舰机型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属无边框全尺寸产品矩阵",
+      "evidence_span": "金属无边框全尺寸产品矩阵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冰箱",
+      "evidence_span": "冰箱(柜)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冰柜",
+      "evidence_span": "冰箱(柜)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空调",
+      "evidence_span": "空调业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洗衣机",
+      "evidence_span": "洗衣机业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "厨卫及小家电",
+      "evidence_span": "厨卫及小家电等业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PC业务",
+      "evidence_span": "PC业务取得领先市场份额"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字智能综合服务平台",
+      "evidence_span": "持续构筑数字智能综合服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智算中心基础设施",
+      "evidence_span": "在智算中心基础设施、本地架构、云计算、人工智能、数据治理、安全等多个业务领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "本地架构",
+      "evidence_span": "在智算中心基础设施、本地架构、云计算、人工智能、数据治理、安全等多个业务领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云计算",
+      "evidence_span": "在智算中心基础设施、本地架构、云计算、人工智能、数据治理、安全等多个业务领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工智能",
+      "evidence_span": "在智算中心基础设施、本地架构、云计算、人工智能、数据治理、安全等多个业务领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据治理",
+      "evidence_span": "在智算中心基础设施、本地架构、云计算、人工智能、数据治理、安全等多个业务领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全",
+      "evidence_span": "在智算中心基础设施、本地架构、云计算、人工智能、数据治理、安全等多个业务领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云应用",
+      "evidence_span": "在云应用、元字宙、安全、低空经济等战略性领域持续布局和发力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "元字宙",
+      "evidence_span": "在云应用、元字宙、安全、低空经济等战略性领域持续布局和发力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低空经济",
+      "evidence_span": "在云应用、元字宙、安全、低空经济等战略性领域持续布局和发力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI技术与电视的融合创新",
+      "evidence_span": "在AI技术与电视的融合创新"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MiniLED背光为核心的画质提升技术",
+      "evidence_span": "以MiniLED背光为核心的画质提升技术方面走在前列"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "长虹云帆AI大模型平台",
+      "evidence_span": "长虹云帆AI大模型平台四川首家成功备案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "沧海智能体系统",
+      "evidence_span": "搭载沧海智能体系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G+工业互联网技术",
+      "evidence_span": "依托“5G+工业互联网”技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于工业互联网平台的智慧显示终端智能工厂",
+      "evidence_span": "“基于工业互联网平台的智慧显示终端智能工厂”成功入选工业和信息化部公布的卓越级智能工厂(第一批)项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化技术赋能",
+      "evidence_span": "通过智能化技术赋能与高端功能升级双轮驱动"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能家居",
+      "evidence_span": "四川长虹战略转型智能家居"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军民融合",
+      "evidence_span": "军民融合提升估值空间"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "人工智能概念",
+      "evidence_span": "人工智能概念下的股价反弹机会"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "互联网＋",
+      "evidence_span": "互联网＋风吹黑电"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "综合家电",
+        "evidence_span": "一家集综合家电、IT数码、新能源电池等业务为一体的全球化科技企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "IT数码",
+        "evidence_span": "一家集综合家电、IT数码、新能源电池等业务为一体的全球化科技企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源电池",
+        "evidence_span": "一家集综合家电、IT数码、新能源电池等业务为一体的全球化科技企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电视业务",
+        "evidence_span": "一、家用电器业务\n1、电视业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "冰箱/冰柜业务",
+        "evidence_span": "2、冰箱/冰柜业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "空调业务",
+        "evidence_span": "3、空调业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "洗衣机业务",
+        "evidence_span": "4、洗衣机业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "ICT综合服务业务",
+        "evidence_span": "二、ICT综合服务业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球化科技企业",
+        "evidence_span": "一家集综合家电、IT数码、新能源电池等业务为一体的全球化科技企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电视",
+        "evidence_span": "电视业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AITV",
+        "evidence_span": "推出了全球首款AITV--Q10TMAX"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OLED系列旗舰机型",
+        "evidence_span": "全面推出OLED系列旗舰机型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属无边框全尺寸产品矩阵",
+        "evidence_span": "金属无边框全尺寸产品矩阵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冰箱",
+        "evidence_span": "冰箱(柜)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冰柜",
+        "evidence_span": "冰箱(柜)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空调",
+        "evidence_span": "空调业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洗衣机",
+        "evidence_span": "洗衣机业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "厨卫及小家电",
+        "evidence_span": "厨卫及小家电等业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PC业务",
+        "evidence_span": "PC业务取得领先市场份额"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字智能综合服务平台",
+        "evidence_span": "持续构筑数字智能综合服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智算中心基础设施",
+        "evidence_span": "在智算中心基础设施、本地架构、云计算、人工智能、数据治理、安全等多个业务领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "本地架构",
+        "evidence_span": "在智算中心基础设施、本地架构、云计算、人工智能、数据治理、安全等多个业务领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云计算",
+        "evidence_span": "在智算中心基础设施、本地架构、云计算、人工智能、数据治理、安全等多个业务领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工智能",
+        "evidence_span": "在智算中心基础设施、本地架构、云计算、人工智能、数据治理、安全等多个业务领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据治理",
+        "evidence_span": "在智算中心基础设施、本地架构、云计算、人工智能、数据治理、安全等多个业务领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全",
+        "evidence_span": "在智算中心基础设施、本地架构、云计算、人工智能、数据治理、安全等多个业务领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云应用",
+        "evidence_span": "在云应用、元字宙、安全、低空经济等战略性领域持续布局和发力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "元字宙",
+        "evidence_span": "在云应用、元字宙、安全、低空经济等战略性领域持续布局和发力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低空经济",
+        "evidence_span": "在云应用、元字宙、安全、低空经济等战略性领域持续布局和发力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI技术与电视的融合创新",
+        "evidence_span": "在AI技术与电视的融合创新"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MiniLED背光为核心的画质提升技术",
+        "evidence_span": "以MiniLED背光为核心的画质提升技术方面走在前列"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "长虹云帆AI大模型平台",
+        "evidence_span": "长虹云帆AI大模型平台四川首家成功备案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "沧海智能体系统",
+        "evidence_span": "搭载沧海智能体系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G+工业互联网技术",
+        "evidence_span": "依托“5G+工业互联网”技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于工业互联网平台的智慧显示终端智能工厂",
+        "evidence_span": "“基于工业互联网平台的智慧显示终端智能工厂”成功入选工业和信息化部公布的卓越级智能工厂(第一批)项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化技术赋能",
+        "evidence_span": "通过智能化技术赋能与高端功能升级双轮驱动"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能家居",
+        "evidence_span": "四川长虹战略转型智能家居"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军民融合",
+        "evidence_span": "军民融合提升估值空间"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "人工智能概念",
+        "evidence_span": "人工智能概念下的股价反弹机会"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "互联网＋",
+        "evidence_span": "互联网＋风吹黑电"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:29:15"
+}

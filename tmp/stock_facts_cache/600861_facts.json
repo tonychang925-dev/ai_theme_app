@@ -1,0 +1,164 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "人事管理服务",
+      "evidence_span": "人事管理服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "薪酬福利服务",
+      "evidence_span": "薪酬福利服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "业务外包服务",
+      "evidence_span": "业务外包服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "招聘",
+      "evidence_span": "招聘及灵活用工服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "灵活用工服务",
+      "evidence_span": "招聘及灵活用工服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "人力资源服务企业",
+      "evidence_span": "人力资源公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "人服机构",
+      "evidence_span": "人服机构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一站式服务",
+      "evidence_span": "一站式服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "招聘服务",
+      "evidence_span": "招聘服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "在线招聘",
+      "evidence_span": "在线招聘"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "RPO（招聘流程外包）",
+      "evidence_span": "RPO（招聘流程外包）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "猎头",
+      "evidence_span": "猎头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "灵活用工",
+      "evidence_span": "灵活用工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中大型客户",
+      "evidence_span": "中大型客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "资产置换转型人力资源服务",
+      "evidence_span": "资产置换转型人力资源服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企背景",
+      "evidence_span": "国企背景"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "人事管理服务",
+        "evidence_span": "人事管理服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "薪酬福利服务",
+        "evidence_span": "薪酬福利服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "业务外包服务",
+        "evidence_span": "业务外包服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "招聘及灵活用工服务",
+        "evidence_span": "招聘及灵活用工服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "人力资源服务企业",
+        "evidence_span": "人力资源公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "人服机构",
+        "evidence_span": "人服机构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一站式服务",
+        "evidence_span": "一站式服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "招聘服务",
+        "evidence_span": "招聘服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "在线招聘",
+        "evidence_span": "在线招聘"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "RPO（招聘流程外包）",
+        "evidence_span": "RPO（招聘流程外包）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "猎头",
+        "evidence_span": "猎头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "灵活用工",
+        "evidence_span": "灵活用工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中大型客户",
+        "evidence_span": "中大型客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "资产置换转型人力资源服务",
+        "evidence_span": "资产置换转型人力资源服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企背景",
+        "evidence_span": "国企背景"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:39:08"
+}

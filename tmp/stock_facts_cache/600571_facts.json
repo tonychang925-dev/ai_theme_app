@@ -1,0 +1,539 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融科技业务服务",
+      "evidence_span": "公司主要从事金融科技业务服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融软件板块",
+      "evidence_span": "公司已形成四大成熟的业务板块：金融软件板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融科技运营板块",
+      "evidence_span": "金融科技运营板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融设备板块",
+      "evidence_span": "金融设备板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融科技服务板块",
+      "evidence_span": "金融科技服务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "金融IT服务商",
+      "evidence_span": "公司为金融IT服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全业态金融科技服务商",
+      "evidence_span": "助推公司从金融IT服务商转型为全业态金融科技服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专业解决方案和产品",
+      "evidence_span": "提供基于端到端的专业解决方案和产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化运营解决方案",
+      "evidence_span": "重点推出数字化运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化营销解决方案",
+      "evidence_span": "数字化营销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化风控解决方案",
+      "evidence_span": "数字化风控"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化管理解决方案",
+      "evidence_span": "数字化管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化产业金融解决方案",
+      "evidence_span": "数字化产业金融"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能终端及信息安全解决方案",
+      "evidence_span": "智能终端及信息安全"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集中运营产品",
+      "evidence_span": "集中运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "远程银行产品",
+      "evidence_span": "远程银行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全面风险产品",
+      "evidence_span": "全面风险"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信用风险产品",
+      "evidence_span": "信用风险"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "操作风险产品",
+      "evidence_span": "操作风险"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能审计产品",
+      "evidence_span": "智能审计"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "流动性风险产品",
+      "evidence_span": "流动性风险"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "票据类OCR产品",
+      "evidence_span": "研发出了票据类OCR产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非结构化数据搜索引擎产品",
+      "evidence_span": "非结构化数据搜索引擎产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "流程总线产品",
+      "evidence_span": "流程总线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能客服产品",
+      "evidence_span": "智能客服"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加密机产品",
+      "evidence_span": "加密机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "境内同城支付清算系统",
+      "evidence_span": "境内同城支付清算系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "跨境支付清算系统",
+      "evidence_span": "跨境支付清算系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自然语言处理能力",
+      "evidence_span": "围绕自然语言处理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "图像识别能力",
+      "evidence_span": "图像识别"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "知识图谱能力",
+      "evidence_span": "知识图谱"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI定制化建模能力",
+      "evidence_span": "AI定制化建模"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智语图灵平台",
+      "evidence_span": "形成了智语图灵平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器学习平台",
+      "evidence_span": "机器学习平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "金融大数据基础平台",
+      "evidence_span": "金融大数据基础平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "金融大数据平台工具集",
+      "evidence_span": "金融大数据平台工具集"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国人民银行",
+      "evidence_span": "为中国人民银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三大政策性银行",
+      "evidence_span": "三大政策性银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "六大国有商业银行",
+      "evidence_span": "六大国有商业银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "十二家全国股份制银行",
+      "evidence_span": "十二家全国股份制银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "二十余家外资银行",
+      "evidence_span": "二十余家外资银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "数百家城市商业银行",
+      "evidence_span": "数百家城市商业银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "农村信用社",
+      "evidence_span": "农村信用社"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "民营银行",
+      "evidence_span": "民营银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保险等金融客户",
+      "evidence_span": "保险等金融客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "平安银行",
+      "evidence_span": "与平安银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工商银行",
+      "evidence_span": "工商银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建信融通",
+      "evidence_span": "建信融通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国银行",
+      "evidence_span": "中国银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "昆仑银行",
+      "evidence_span": "昆仑银行为公司客户之一"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信创",
+      "evidence_span": "公司进一步加码信创工作布局"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "推进国产化系统的试点建设项目"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自主可控",
+      "evidence_span": "在自主可控的战略目标下"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融科技业务服务",
+        "evidence_span": "公司主要从事金融科技业务服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融软件板块",
+        "evidence_span": "公司已形成四大成熟的业务板块：金融软件板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融科技运营板块",
+        "evidence_span": "金融科技运营板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融设备板块",
+        "evidence_span": "金融设备板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融科技服务板块",
+        "evidence_span": "金融科技服务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "金融IT服务商",
+        "evidence_span": "公司为金融IT服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全业态金融科技服务商",
+        "evidence_span": "助推公司从金融IT服务商转型为全业态金融科技服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专业解决方案和产品",
+        "evidence_span": "提供基于端到端的专业解决方案和产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化运营解决方案",
+        "evidence_span": "重点推出数字化运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化营销解决方案",
+        "evidence_span": "数字化营销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化风控解决方案",
+        "evidence_span": "数字化风控"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化管理解决方案",
+        "evidence_span": "数字化管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化产业金融解决方案",
+        "evidence_span": "数字化产业金融"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能终端及信息安全解决方案",
+        "evidence_span": "智能终端及信息安全"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集中运营产品",
+        "evidence_span": "集中运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "远程银行产品",
+        "evidence_span": "远程银行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全面风险产品",
+        "evidence_span": "全面风险"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信用风险产品",
+        "evidence_span": "信用风险"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "操作风险产品",
+        "evidence_span": "操作风险"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能审计产品",
+        "evidence_span": "智能审计"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "流动性风险产品",
+        "evidence_span": "流动性风险"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "票据类OCR产品",
+        "evidence_span": "研发出了票据类OCR产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非结构化数据搜索引擎产品",
+        "evidence_span": "非结构化数据搜索引擎产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "流程总线产品",
+        "evidence_span": "流程总线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能客服产品",
+        "evidence_span": "智能客服"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加密机产品",
+        "evidence_span": "加密机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "境内同城支付清算系统",
+        "evidence_span": "境内同城支付清算系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "跨境支付清算系统",
+        "evidence_span": "跨境支付清算系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自然语言处理能力",
+        "evidence_span": "围绕自然语言处理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "图像识别能力",
+        "evidence_span": "图像识别"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "知识图谱能力",
+        "evidence_span": "知识图谱"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI定制化建模能力",
+        "evidence_span": "AI定制化建模"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智语图灵平台",
+        "evidence_span": "形成了智语图灵平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器学习平台",
+        "evidence_span": "机器学习平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "金融大数据基础平台",
+        "evidence_span": "金融大数据基础平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "金融大数据平台工具集",
+        "evidence_span": "金融大数据平台工具集"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国人民银行",
+        "evidence_span": "为中国人民银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三大政策性银行",
+        "evidence_span": "三大政策性银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "六大国有商业银行",
+        "evidence_span": "六大国有商业银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "十二家全国股份制银行",
+        "evidence_span": "十二家全国股份制银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "二十余家外资银行",
+        "evidence_span": "二十余家外资银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "数百家城市商业银行",
+        "evidence_span": "数百家城市商业银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "农村信用社",
+        "evidence_span": "农村信用社"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "民营银行",
+        "evidence_span": "民营银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保险等金融客户",
+        "evidence_span": "保险等金融客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "平安银行",
+        "evidence_span": "与平安银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工商银行",
+        "evidence_span": "工商银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建信融通",
+        "evidence_span": "建信融通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国银行",
+        "evidence_span": "中国银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "昆仑银行",
+        "evidence_span": "昆仑银行为公司客户之一"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信创",
+        "evidence_span": "公司进一步加码信创工作布局"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "推进国产化系统的试点建设项目"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自主可控",
+        "evidence_span": "在自主可控的战略目标下"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:39:31"
+}

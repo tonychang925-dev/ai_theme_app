@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "96b8861b6941", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含事件性内容（如报告发布、体制转变、领导小组负责、2025年试生产时间线），但也提供了有价值的静态知识，如EUV光刻机研发状态、关键公司角色、产业主导结构变化等，这些信息对半导体设备题材知识构建有较高价值。"}}

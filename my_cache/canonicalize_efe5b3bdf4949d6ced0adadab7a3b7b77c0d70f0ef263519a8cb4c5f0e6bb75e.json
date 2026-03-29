@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:18:46", "result": {"span_uid": "e1070f17cbb5", "action": "keep", "canonical_text": "High-NA EUV光刻机是用于2纳米及以下先进制程的关键设备。", "final_type": "core", "final_role": "先进制程关键设备", "stability": "high", "reason": "该片段描述了High-NA EUV光刻机在半导体设备中的核心功能，属于稳定的技术规格信息，可脱离原新闻上下文独立成立。"}}

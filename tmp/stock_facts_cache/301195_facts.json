@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能矿山信息系统",
+      "evidence_span": "专业从事智能矿山相关信息系统的开发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧矿山方案解决",
+      "evidence_span": "发展为以通信技术为内核的智慧矿山方案解决商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧矿山方案解决商",
+      "evidence_span": "发展为以通信技术为内核的智慧矿山方案解决商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能矿山信息系统供应商",
+      "evidence_span": "专业化的智能矿山信息系统供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧矿山专精企业",
+      "evidence_span": "智慧矿山专精企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能矿山通信系统",
+      "evidence_span": "公司智能矿山通信系统产品主要是基于通信技术、计算机技术及电气防爆技术等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤矿井下一体化通信系统",
+      "evidence_span": "公司智能矿山通信系统产品主要为煤矿井下一体化通信系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全矿井图像监控系统",
+      "evidence_span": "全矿井图像监控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "矿用煤流智能集控系统",
+      "evidence_span": "矿用煤流智能集控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "采煤工作面智能化配套",
+      "evidence_span": "采煤工作面智能化配套"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "矿用无线通信系统",
+      "evidence_span": "独立提供其中矿用无线通信系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "矿用广播通讯系统",
+      "evidence_span": "矿用广播通讯系统等矿山通信子系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "软硬件一体化产品",
+      "evidence_span": "该等设备均为包含自主开发的嵌入式软件的软硬件一体化产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "通信技术",
+      "evidence_span": "公司于通信领域起家"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "计算机技术",
+      "evidence_span": "基于通信技术、计算机技术及电气防爆技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电气防爆技术",
+      "evidence_span": "基于通信技术、计算机技术及电气防爆技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多网融合调度通信",
+      "evidence_span": "能够实现多网融合调度通信"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧矿山",
+      "evidence_span": "深耕智慧矿山十年"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "煤矿智能化",
+      "evidence_span": "享煤炭信息化红利"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能矿山信息系统",
+        "evidence_span": "专业从事智能矿山相关信息系统的开发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧矿山方案解决",
+        "evidence_span": "发展为以通信技术为内核的智慧矿山方案解决商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧矿山方案解决商",
+        "evidence_span": "发展为以通信技术为内核的智慧矿山方案解决商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能矿山信息系统供应商",
+        "evidence_span": "专业化的智能矿山信息系统供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧矿山专精企业",
+        "evidence_span": "智慧矿山专精企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能矿山通信系统",
+        "evidence_span": "公司智能矿山通信系统产品主要是基于通信技术、计算机技术及电气防爆技术等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤矿井下一体化通信系统",
+        "evidence_span": "公司智能矿山通信系统产品主要为煤矿井下一体化通信系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全矿井图像监控系统",
+        "evidence_span": "全矿井图像监控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "矿用煤流智能集控系统",
+        "evidence_span": "矿用煤流智能集控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "采煤工作面智能化配套",
+        "evidence_span": "采煤工作面智能化配套"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "矿用无线通信系统",
+        "evidence_span": "独立提供其中矿用无线通信系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "矿用广播通讯系统",
+        "evidence_span": "矿用广播通讯系统等矿山通信子系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "软硬件一体化产品",
+        "evidence_span": "该等设备均为包含自主开发的嵌入式软件的软硬件一体化产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "通信技术",
+        "evidence_span": "公司于通信领域起家"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "计算机技术",
+        "evidence_span": "基于通信技术、计算机技术及电气防爆技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电气防爆技术",
+        "evidence_span": "基于通信技术、计算机技术及电气防爆技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多网融合调度通信",
+        "evidence_span": "能够实现多网融合调度通信"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧矿山",
+        "evidence_span": "深耕智慧矿山十年"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "煤矿智能化",
+        "evidence_span": "享煤炭信息化红利"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:50:47"
+}

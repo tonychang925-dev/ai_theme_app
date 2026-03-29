@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:49:02", "result": {"span_uid": "dd743ec41268", "action": "keep", "canonical_text": "设计企业的业务规模、行业地位和市场份额提升主要依赖于设计技术水平、输出结果质量、客户认可和市场扩张能力等方面的优势。", "final_type": "related", "final_role": "企业竞争要素", "stability": "high", "reason": "原文描述设计企业的竞争优势要素，是稳定、独立成立的相关知识，与建筑设计题材高度相关。"}}

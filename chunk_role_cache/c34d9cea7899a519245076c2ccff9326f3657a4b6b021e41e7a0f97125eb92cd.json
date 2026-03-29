@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:59:52", "result": {"chunk_id": "25faa33b1567", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件（深圳的海洋工业增加值目标），包含时间（2025年6月26日）和数值目标，属于地方政策或规划动态，而非深海经济的核心构成或机制说明。"}}

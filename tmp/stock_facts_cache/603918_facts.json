@@ -1,0 +1,424 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧场景解决方案",
+      "evidence_span": "公司的主营业务主要包括智慧场景解决方案、智慧建筑解决方案和大数据及云平台服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧建筑解决方案",
+      "evidence_span": "公司的主营业务主要包括智慧场景解决方案、智慧建筑解决方案和大数据及云平台服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大数据",
+      "evidence_span": "公司的主营业务主要包括智慧场景解决方案、智慧建筑解决方案和大数据及云平台服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "云平台服务",
+      "evidence_span": "公司的主营业务主要包括智慧场景解决方案、智慧建筑解决方案和大数据及云平台服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧空间信息化解决方案及服务专业提供商",
+      "evidence_span": "成为国内智慧空间信息化解决方案及服务专业提供商中的领先企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "会议空间解决方案",
+      "evidence_span": "会议空间解决方案是为小型、中型、大型会议、远程协作会议、多功能会议等以“会议沟通”为主要需求的应用场景所提供的解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教育空间解决方案",
+      "evidence_span": "教育空间解决方案围绕“互联网+”核心理念，以云计算、物联网、IaaS/PaaS/SaaS为技术支撑，云服务为终端展现，构建一个智慧教育综合平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "指挥空间解决方案",
+      "evidence_span": "指挥中心空间解决方案是为协调不同区域与部门，实现信息汇聚、统一指挥、快速反应、联合行动等功能而设计的完全智能化、可视化、数字化、协同化的综合指挥调度整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "展示空间解决方案",
+      "evidence_span": "展示空间解决方案是提供具有科技感、体验感、互动性、高度智能化、数字化的多媒体交互/商业展示解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合空间管理解决方案",
+      "evidence_span": "综合空间管理解决方案基于移动互联网空间服务体系，结合大数据、云计算等前沿技术，以Space365、信息屏、导引看板等软硬件为载体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧办公建筑解决方案",
+      "evidence_span": "智慧办公建筑解决方案为各类企事业单位提供与其业务信息化高度融合的定制化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧工厂建筑解决方案",
+      "evidence_span": "智慧工厂建筑解决方案主要服务于智能制造大背景下的智慧园区/厂区管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧家居建筑解决方案",
+      "evidence_span": "智慧家居解决方案是指利用物联网技术、网络通信技术、安全防范技术、自动控制技术、音视频技术将家居生活有关的设施进行集成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基于云平台的行业定制服务",
+      "evidence_span": "基于云平台的行业定制服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人民法院移动执行平台",
+      "evidence_span": "人民法院移动执行平台：持续赋能智慧法院，实现全国法院全覆盖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "执行集约化智能辅助办案系统",
+      "evidence_span": "公司“执行集约化智能辅助办案系统”在河北省保定中院的应用荣获2022年度最高人民法院重大科技创新成果一等奖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "终本案件智能核查系统",
+      "evidence_span": "终本案件智能核查系统利用人工智能、区块链存证、智能合约等技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Space365空间管理平台",
+      "evidence_span": "Space365空间管理平台：在数字化转型的大背景下，Space365继续推进面向园区级别空间物联网管理升级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云视频会议及通讯平台—易享Heyshare",
+      "evidence_span": "云视频会议及通讯平台—易享Heyshare：易享Heyshare是公司自研的企业级云视频SaaS服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多元解纷系统",
+      "evidence_span": "公司多元金融解纷系统充分利用人工智能、区块链等先进技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纠纷多元治理平台",
+      "evidence_span": "公司与蚂蚁集团签署了关于建设“纠纷多元治理平台”、“蚂蚁链多元纠纷治理平台”等多份技术合作协议"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蚂蚁链多元纠纷治理平台",
+      "evidence_span": "公司与蚂蚁集团签署了关于建设“纠纷多元治理平台”、“蚂蚁链多元纠纷治理平台”等多份技术合作协议"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全流程司法可信子系统",
+      "evidence_span": "公司依托国家网信办试点课题，推进全流程司法可信子系统的应用落地"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "IT+AV+软件融合能力",
+      "evidence_span": "不断提升“IT+AV+软件”的融合能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能技术",
+      "evidence_span": "已在执行、诉讼服务和智能庭审三大业务方向上拥有人工智能的行业应用解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链技术",
+      "evidence_span": "公司多元金融解纷系统充分利用人工智能、区块链等先进技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云视频核心技术",
+      "evidence_span": "公司持续加大云视频核心技术的研发和投入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "纯国产生态的云视频协同系统",
+      "evidence_span": "加大基于纯国产生态的云视频协同系统和音视频AI分析技术方向的研发投入"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政务行业",
+      "evidence_span": "公司聚焦政务、法治、教育、企业和金融等优势行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法治行业",
+      "evidence_span": "公司聚焦政务、法治、教育、企业和金融等优势行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "教育行业",
+      "evidence_span": "公司聚焦政务、法治、教育、企业和金融等优势行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "企业客户",
+      "evidence_span": "公司聚焦政务、法治、教育、企业和金融等优势行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融行业",
+      "evidence_span": "公司聚焦政务、法治、教育、企业和金融等优势行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蚂蚁集团",
+      "evidence_span": "公司与蚂蚁集团保持着长期且良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "字节跳动",
+      "evidence_span": "为以字节跳动、三一重工、浙江大学为代表的老客户进一步扩容增值"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三一重工",
+      "evidence_span": "为以字节跳动、三一重工、浙江大学为代表的老客户进一步扩容增值"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江大学",
+      "evidence_span": "为以字节跳动、三一重工、浙江大学为代表的老客户进一步扩容增值"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国传媒大学",
+      "evidence_span": "中国传媒大学、长鑫存储等不同行业客户开始对空间、设备的数字化转型提出更多要求"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长鑫存储",
+      "evidence_span": "中国传媒大学、长鑫存储等不同行业客户开始对空间、设备的数字化转型提出更多要求"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字化",
+      "evidence_span": "紧抓数字化、智能化、自主化等重大战略发展机遇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能化",
+      "evidence_span": "紧抓数字化、智能化、自主化等重大战略发展机遇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自主化",
+      "evidence_span": "紧抓数字化、智能化、自主化等重大战略发展机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧场景解决方案",
+        "evidence_span": "公司的主营业务主要包括智慧场景解决方案、智慧建筑解决方案和大数据及云平台服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧建筑解决方案",
+        "evidence_span": "公司的主营业务主要包括智慧场景解决方案、智慧建筑解决方案和大数据及云平台服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大数据及云平台服务",
+        "evidence_span": "公司的主营业务主要包括智慧场景解决方案、智慧建筑解决方案和大数据及云平台服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧空间信息化解决方案及服务专业提供商",
+        "evidence_span": "成为国内智慧空间信息化解决方案及服务专业提供商中的领先企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "会议空间解决方案",
+        "evidence_span": "会议空间解决方案是为小型、中型、大型会议、远程协作会议、多功能会议等以“会议沟通”为主要需求的应用场景所提供的解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教育空间解决方案",
+        "evidence_span": "教育空间解决方案围绕“互联网+”核心理念，以云计算、物联网、IaaS/PaaS/SaaS为技术支撑，云服务为终端展现，构建一个智慧教育综合平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "指挥空间解决方案",
+        "evidence_span": "指挥中心空间解决方案是为协调不同区域与部门，实现信息汇聚、统一指挥、快速反应、联合行动等功能而设计的完全智能化、可视化、数字化、协同化的综合指挥调度整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "展示空间解决方案",
+        "evidence_span": "展示空间解决方案是提供具有科技感、体验感、互动性、高度智能化、数字化的多媒体交互/商业展示解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合空间管理解决方案",
+        "evidence_span": "综合空间管理解决方案基于移动互联网空间服务体系，结合大数据、云计算等前沿技术，以Space365、信息屏、导引看板等软硬件为载体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧办公建筑解决方案",
+        "evidence_span": "智慧办公建筑解决方案为各类企事业单位提供与其业务信息化高度融合的定制化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧工厂建筑解决方案",
+        "evidence_span": "智慧工厂建筑解决方案主要服务于智能制造大背景下的智慧园区/厂区管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧家居建筑解决方案",
+        "evidence_span": "智慧家居解决方案是指利用物联网技术、网络通信技术、安全防范技术、自动控制技术、音视频技术将家居生活有关的设施进行集成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基于云平台的行业定制服务",
+        "evidence_span": "基于云平台的行业定制服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人民法院移动执行平台",
+        "evidence_span": "人民法院移动执行平台：持续赋能智慧法院，实现全国法院全覆盖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "执行集约化智能辅助办案系统",
+        "evidence_span": "公司“执行集约化智能辅助办案系统”在河北省保定中院的应用荣获2022年度最高人民法院重大科技创新成果一等奖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "终本案件智能核查系统",
+        "evidence_span": "终本案件智能核查系统利用人工智能、区块链存证、智能合约等技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Space365空间管理平台",
+        "evidence_span": "Space365空间管理平台：在数字化转型的大背景下，Space365继续推进面向园区级别空间物联网管理升级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云视频会议及通讯平台—易享Heyshare",
+        "evidence_span": "云视频会议及通讯平台—易享Heyshare：易享Heyshare是公司自研的企业级云视频SaaS服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多元解纷系统",
+        "evidence_span": "公司多元金融解纷系统充分利用人工智能、区块链等先进技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纠纷多元治理平台",
+        "evidence_span": "公司与蚂蚁集团签署了关于建设“纠纷多元治理平台”、“蚂蚁链多元纠纷治理平台”等多份技术合作协议"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蚂蚁链多元纠纷治理平台",
+        "evidence_span": "公司与蚂蚁集团签署了关于建设“纠纷多元治理平台”、“蚂蚁链多元纠纷治理平台”等多份技术合作协议"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全流程司法可信子系统",
+        "evidence_span": "公司依托国家网信办试点课题，推进全流程司法可信子系统的应用落地"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "IT+AV+软件融合能力",
+        "evidence_span": "不断提升“IT+AV+软件”的融合能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能技术",
+        "evidence_span": "已在执行、诉讼服务和智能庭审三大业务方向上拥有人工智能的行业应用解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链技术",
+        "evidence_span": "公司多元金融解纷系统充分利用人工智能、区块链等先进技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云视频核心技术",
+        "evidence_span": "公司持续加大云视频核心技术的研发和投入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "纯国产生态的云视频协同系统",
+        "evidence_span": "加大基于纯国产生态的云视频协同系统和音视频AI分析技术方向的研发投入"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政务行业",
+        "evidence_span": "公司聚焦政务、法治、教育、企业和金融等优势行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法治行业",
+        "evidence_span": "公司聚焦政务、法治、教育、企业和金融等优势行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "教育行业",
+        "evidence_span": "公司聚焦政务、法治、教育、企业和金融等优势行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "企业客户",
+        "evidence_span": "公司聚焦政务、法治、教育、企业和金融等优势行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融行业",
+        "evidence_span": "公司聚焦政务、法治、教育、企业和金融等优势行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蚂蚁集团",
+        "evidence_span": "公司与蚂蚁集团保持着长期且良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "字节跳动",
+        "evidence_span": "为以字节跳动、三一重工、浙江大学为代表的老客户进一步扩容增值"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三一重工",
+        "evidence_span": "为以字节跳动、三一重工、浙江大学为代表的老客户进一步扩容增值"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江大学",
+        "evidence_span": "为以字节跳动、三一重工、浙江大学为代表的老客户进一步扩容增值"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国传媒大学",
+        "evidence_span": "中国传媒大学、长鑫存储等不同行业客户开始对空间、设备的数字化转型提出更多要求"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长鑫存储",
+        "evidence_span": "中国传媒大学、长鑫存储等不同行业客户开始对空间、设备的数字化转型提出更多要求"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字化",
+        "evidence_span": "紧抓数字化、智能化、自主化等重大战略发展机遇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能化",
+        "evidence_span": "紧抓数字化、智能化、自主化等重大战略发展机遇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自主化",
+        "evidence_span": "紧抓数字化、智能化、自主化等重大战略发展机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:27:49"
+}

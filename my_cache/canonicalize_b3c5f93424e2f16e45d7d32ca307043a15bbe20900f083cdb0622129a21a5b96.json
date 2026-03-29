@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:01:26", "result": {"span_uid": "6181b021b0d4", "action": "rewrite", "canonical_text": "小米汽车的生产合作企业包括北汽集团。", "final_type": "related", "final_role": "生产合作方", "stability": "medium", "reason": "该片段涉及生产合作信息，改写后去除了事件口吻和具体时间，保留了核心合作方，作为相关主体信息。"}}

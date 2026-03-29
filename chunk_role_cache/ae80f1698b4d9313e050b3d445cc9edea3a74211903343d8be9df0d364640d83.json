@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "91c066b01eed", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "段落描述北京具身智能机器人创新中心升级为国家级中心的事件，属于政策或机构动态，没有提供人形机器人的核心构成或机制等静态知识。"}}

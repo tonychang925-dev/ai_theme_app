@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:53:19", "result": {"chunk_id": "522ee6412627", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落包含大量静态知识，如SpaceX的定义、核心业务、产品、发展历程和行业地位，这些是严格的题材知识。但同时也夹杂了事件信息，如土地转让考虑、马斯克回应传闻、估值和IPO计划等，因此归类为混合候选，需要进一步裁决以提取纯知识部分。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "0776771c4170", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述了云天励飞战略投资闪极科技并推出AI拍摄眼镜的事件，是简短的公司动态，没有提供AR眼镜的静态知识或混合有价值信息。"}}

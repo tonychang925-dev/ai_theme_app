@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "ec37b2daafa0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述美国政府通知台积电终止VEU地位并要求申请许可的事件，涉及政策变化和监管进展，属于时间性动态，没有提供半导体设备的稳定知识。"}}

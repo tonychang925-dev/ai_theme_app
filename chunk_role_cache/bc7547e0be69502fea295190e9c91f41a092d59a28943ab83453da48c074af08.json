@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "bbc757497e4d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含马斯克对Optimus机器人未来价值的预测，涉及机器人项目发展和大规模应用前景，这提供了关于人形机器人行业趋势和潜力的知识，但以事件形式（马斯克表态）呈现，因此属于混合候选。"}}

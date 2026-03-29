@@ -1,0 +1,414 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "手机为核心的智能终端设计",
+      "evidence_span": "公司主要从事以手机为核心的智能终端的设计、研发、生产、销售和品牌运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "研发",
+      "evidence_span": "公司主要从事以手机为核心的智能终端的设计、研发、生产、销售和品牌运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主要从事以手机为核心的智能终端的设计、研发、生产、销售和品牌运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要从事以手机为核心的智能终端的设计、研发、生产、销售和品牌运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "品牌运营",
+      "evidence_span": "公司主要从事以手机为核心的智能终端的设计、研发、生产、销售和品牌运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "移动互联网产品",
+      "evidence_span": "提供移动互联网产品及服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "提供移动互联网产品及服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数码配件",
+      "evidence_span": "数码配件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "家用电器",
+      "evidence_span": "家用电器"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球新兴市场智能终端产品和移动互联服务提供者",
+      "evidence_span": "全球新兴市场消费者最喜爱的智能终端产品和移动互联服务提供者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "非洲手机之王",
+      "evidence_span": "非洲手机之王"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新兴市场手机龙头",
+      "evidence_span": "新兴市场手机龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TECNO品牌手机",
+      "evidence_span": "TECNO"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "itel品牌手机",
+      "evidence_span": "itel"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Infinix品牌手机",
+      "evidence_span": "Infinix"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能机",
+      "evidence_span": "功能机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能机",
+      "evidence_span": "智能机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "音乐类应用Boomplay",
+      "evidence_span": "音乐类应用Boomplay"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新闻聚合类应用Scooper",
+      "evidence_span": "新闻聚合类应用Scooper"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合内容分发应用Phoenix",
+      "evidence_span": "综合内容分发应用Phoenix"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数码配件品牌oraimo",
+      "evidence_span": "数码配件品牌oraimo"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家用电器品牌Syinix",
+      "evidence_span": "家用电器品牌Syinix"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "售后服务品牌Carcare",
+      "evidence_span": "售后服务品牌Carcare"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "深肤色拍照技术",
+      "evidence_span": "深肤色拍照技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硬件新材料应用创新",
+      "evidence_span": "硬件新材料应用创新"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据用户行为分析",
+      "evidence_span": "大数据用户行为分析"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "OS系统及移动互联网产品服务",
+      "evidence_span": "OS系统及移动互联网产品服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于Android系统平台二次开发、深度定制的智能终端操作系统",
+      "evidence_span": "基于Android系统平台二次开发、深度定制的智能终端操作系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HiOS",
+      "evidence_span": "HiOS"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "itelOS",
+      "evidence_span": "itelOS"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "XOS",
+      "evidence_span": "XOS"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低成本高压快充技术",
+      "evidence_span": "低成本高压快充技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超长待机",
+      "evidence_span": "超长待机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "防汗液USB端口",
+      "evidence_span": "防汗液USB端口"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "非洲市场",
+      "evidence_span": "非洲市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南亚市场",
+      "evidence_span": "南亚市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东南亚市场",
+      "evidence_span": "东南亚"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中东市场",
+      "evidence_span": "中东"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "拉美市场",
+      "evidence_span": "拉美"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "网易",
+      "evidence_span": "网易"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "腾讯",
+      "evidence_span": "腾讯"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新兴市场",
+      "evidence_span": "新兴市场"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "非洲之王",
+      "evidence_span": "非洲之王"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "手机为核心的智能终端设计、研发、生产、销售和品牌运营",
+        "evidence_span": "公司主要从事以手机为核心的智能终端的设计、研发、生产、销售和品牌运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "移动互联网产品及服务",
+        "evidence_span": "提供移动互联网产品及服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数码配件",
+        "evidence_span": "数码配件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "家用电器",
+        "evidence_span": "家用电器"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球新兴市场智能终端产品和移动互联服务提供者",
+        "evidence_span": "全球新兴市场消费者最喜爱的智能终端产品和移动互联服务提供者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "非洲手机之王",
+        "evidence_span": "非洲手机之王"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新兴市场手机龙头",
+        "evidence_span": "新兴市场手机龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TECNO品牌手机",
+        "evidence_span": "TECNO"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "itel品牌手机",
+        "evidence_span": "itel"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Infinix品牌手机",
+        "evidence_span": "Infinix"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能机",
+        "evidence_span": "功能机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能机",
+        "evidence_span": "智能机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "音乐类应用Boomplay",
+        "evidence_span": "音乐类应用Boomplay"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新闻聚合类应用Scooper",
+        "evidence_span": "新闻聚合类应用Scooper"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合内容分发应用Phoenix",
+        "evidence_span": "综合内容分发应用Phoenix"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数码配件品牌oraimo",
+        "evidence_span": "数码配件品牌oraimo"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家用电器品牌Syinix",
+        "evidence_span": "家用电器品牌Syinix"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "售后服务品牌Carcare",
+        "evidence_span": "售后服务品牌Carcare"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "深肤色拍照技术",
+        "evidence_span": "深肤色拍照技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硬件新材料应用创新",
+        "evidence_span": "硬件新材料应用创新"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据用户行为分析",
+        "evidence_span": "大数据用户行为分析"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "OS系统及移动互联网产品服务",
+        "evidence_span": "OS系统及移动互联网产品服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于Android系统平台二次开发、深度定制的智能终端操作系统",
+        "evidence_span": "基于Android系统平台二次开发、深度定制的智能终端操作系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HiOS",
+        "evidence_span": "HiOS"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "itelOS",
+        "evidence_span": "itelOS"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "XOS",
+        "evidence_span": "XOS"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低成本高压快充技术",
+        "evidence_span": "低成本高压快充技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超长待机",
+        "evidence_span": "超长待机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "防汗液USB端口",
+        "evidence_span": "防汗液USB端口"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "非洲市场",
+        "evidence_span": "非洲市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南亚市场",
+        "evidence_span": "南亚市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东南亚市场",
+        "evidence_span": "东南亚"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中东市场",
+        "evidence_span": "中东"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "拉美市场",
+        "evidence_span": "拉美"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "网易",
+        "evidence_span": "网易"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "腾讯",
+        "evidence_span": "腾讯"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新兴市场",
+        "evidence_span": "新兴市场"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "非洲之王",
+        "evidence_span": "非洲之王"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:40:14"
+}

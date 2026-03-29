@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能装备制造",
+      "evidence_span": "已经形成了智能装备制造、可再生能源、综合智慧能源三大业务格局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "可再生能源",
+      "evidence_span": "已经形成了智能装备制造、可再生能源、综合智慧能源三大业务格局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "综合智慧能源",
+      "evidence_span": "已经形成了智能装备制造、可再生能源、综合智慧能源三大业务格局"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合智慧能源成套解决方案供应商",
+      "evidence_span": "成为具有较强竞争能力的综合智慧能源成套解决方案供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "东北地区民营新能源投资建设运营龙头企业",
+      "evidence_span": "公司目前已经成为东北地区民营新能源投资建设运营龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "黑龙江地区民营生物质热电联供龙头企业",
+      "evidence_span": "公司作为黑龙江地区民营生物质热电联供龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电气成套设备",
+      "evidence_span": "主要提供成套智能电气装备和综合智慧能源解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合智慧能源解决方案",
+      "evidence_span": "主要提供成套智能电气装备和综合智慧能源解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低压配电柜",
+      "evidence_span": "低压配电柜、开关柜是配电系统中的重要组成部分"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压智能电气成套设备",
+      "evidence_span": "公司的高压智能电气成套设备主要应用于6～35kV高压配电系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力电子产品",
+      "evidence_span": "公司电力电子产品主要应用于电网电力系统、地铁城铁电力贯通线及牵引变电站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "变压器",
+      "evidence_span": "变压器在三相交流电力系统中起到电压变换和电能传输的作用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能设备",
+      "evidence_span": "公司生产储能设备已有近30年历史"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电",
+      "evidence_span": "截止2022年末，公司已建设、投资、运营风电、光伏、生物质电站等可再生发电站超过1,500MW"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏",
+      "evidence_span": "截止2022年末，公司已建设、投资、运营风电、光伏、生物质电站等可再生发电站超过1,500MW"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物质电站",
+      "evidence_span": "截止2022年末，公司已建设、投资、运营风电、光伏、生物质电站等可再生发电站超过1,500MW"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物质热电联产",
+      "evidence_span": "通过向农民或经纪人有偿收购的农作物秸秆、林业废弃物等生物质为原料，生产热力、电力等可再生能源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分散式风电供暖",
+      "evidence_span": "公司积极布局生物质热电联产之外的其他综合智慧能源解决方案。报告期内，公司申报的300MW风力发电清洁能源供暖示范项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能",
+      "evidence_span": "公司积极布局生物质热电联产之外的其他综合智慧能源解决方案。报告期内，公司获得了泰来独立储能电站200MW/400MWh智慧能源项目备案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业蒸汽",
+      "evidence_span": "公司积极布局生物质热电联产之外的其他综合智慧能源解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业制冷",
+      "evidence_span": "公司积极布局生物质热电联产之外的其他综合智慧能源解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污水处理",
+      "evidence_span": "公司积极布局生物质热电联产之外的其他综合智慧能源解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效直燃热电联产技术",
+      "evidence_span": "推广应用以生物质为原料的高效直燃热电联产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "“零碳”清洁供暖技术",
+      "evidence_span": "推广应用以生物质为原料的高效直燃热电联产技术、“零碳”清洁供暖技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网公司",
+      "evidence_span": "公司多年来一直是国家电网公司集采供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "罗克韦尔自动化",
+      "evidence_span": "相继与罗克韦尔自动化、西门子、施耐德、ABB公司等国际智能电气制造商建立了稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子",
+      "evidence_span": "相继与罗克韦尔自动化、西门子、施耐德、ABB公司等国际智能电气制造商建立了稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "施耐德",
+      "evidence_span": "相继与罗克韦尔自动化、西门子、施耐德、ABB公司等国际智能电气制造商建立了稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ABB公司",
+      "evidence_span": "相继与罗克韦尔自动化、西门子、施耐德、ABB公司等国际智能电气制造商建立了稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电投集团",
+      "evidence_span": "公司综合能源业务板块将联手国家电投集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海融和元储能源有限公司",
+      "evidence_span": "与上海融和元储能源有限公司签署了《战略合作框架协议》"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源",
+      "evidence_span": "持续拓展新能源发电、储能、充电桩领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能",
+      "evidence_span": "持续拓展新能源发电、储能、充电桩领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "充电桩",
+      "evidence_span": "持续拓展新能源发电、储能、充电桩领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能装备制造",
+        "evidence_span": "已经形成了智能装备制造、可再生能源、综合智慧能源三大业务格局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "可再生能源",
+        "evidence_span": "已经形成了智能装备制造、可再生能源、综合智慧能源三大业务格局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "综合智慧能源",
+        "evidence_span": "已经形成了智能装备制造、可再生能源、综合智慧能源三大业务格局"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合智慧能源成套解决方案供应商",
+        "evidence_span": "成为具有较强竞争能力的综合智慧能源成套解决方案供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "东北地区民营新能源投资建设运营龙头企业",
+        "evidence_span": "公司目前已经成为东北地区民营新能源投资建设运营龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "黑龙江地区民营生物质热电联供龙头企业",
+        "evidence_span": "公司作为黑龙江地区民营生物质热电联供龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电气成套设备",
+        "evidence_span": "主要提供成套智能电气装备和综合智慧能源解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合智慧能源解决方案",
+        "evidence_span": "主要提供成套智能电气装备和综合智慧能源解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低压配电柜",
+        "evidence_span": "低压配电柜、开关柜是配电系统中的重要组成部分"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压智能电气成套设备",
+        "evidence_span": "公司的高压智能电气成套设备主要应用于6～35kV高压配电系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力电子产品",
+        "evidence_span": "公司电力电子产品主要应用于电网电力系统、地铁城铁电力贯通线及牵引变电站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "变压器",
+        "evidence_span": "变压器在三相交流电力系统中起到电压变换和电能传输的作用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能设备",
+        "evidence_span": "公司生产储能设备已有近30年历史"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电",
+        "evidence_span": "截止2022年末，公司已建设、投资、运营风电、光伏、生物质电站等可再生发电站超过1,500MW"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏",
+        "evidence_span": "截止2022年末，公司已建设、投资、运营风电、光伏、生物质电站等可再生发电站超过1,500MW"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物质电站",
+        "evidence_span": "截止2022年末，公司已建设、投资、运营风电、光伏、生物质电站等可再生发电站超过1,500MW"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物质热电联产",
+        "evidence_span": "通过向农民或经纪人有偿收购的农作物秸秆、林业废弃物等生物质为原料，生产热力、电力等可再生能源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分散式风电供暖",
+        "evidence_span": "公司积极布局生物质热电联产之外的其他综合智慧能源解决方案。报告期内，公司申报的300MW风力发电清洁能源供暖示范项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能",
+        "evidence_span": "公司积极布局生物质热电联产之外的其他综合智慧能源解决方案。报告期内，公司获得了泰来独立储能电站200MW/400MWh智慧能源项目备案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业蒸汽",
+        "evidence_span": "公司积极布局生物质热电联产之外的其他综合智慧能源解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业制冷",
+        "evidence_span": "公司积极布局生物质热电联产之外的其他综合智慧能源解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污水处理",
+        "evidence_span": "公司积极布局生物质热电联产之外的其他综合智慧能源解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效直燃热电联产技术",
+        "evidence_span": "推广应用以生物质为原料的高效直燃热电联产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "“零碳”清洁供暖技术",
+        "evidence_span": "推广应用以生物质为原料的高效直燃热电联产技术、“零碳”清洁供暖技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网公司",
+        "evidence_span": "公司多年来一直是国家电网公司集采供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "罗克韦尔自动化",
+        "evidence_span": "相继与罗克韦尔自动化、西门子、施耐德、ABB公司等国际智能电气制造商建立了稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子",
+        "evidence_span": "相继与罗克韦尔自动化、西门子、施耐德、ABB公司等国际智能电气制造商建立了稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "施耐德",
+        "evidence_span": "相继与罗克韦尔自动化、西门子、施耐德、ABB公司等国际智能电气制造商建立了稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ABB公司",
+        "evidence_span": "相继与罗克韦尔自动化、西门子、施耐德、ABB公司等国际智能电气制造商建立了稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电投集团",
+        "evidence_span": "公司综合能源业务板块将联手国家电投集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海融和元储能源有限公司",
+        "evidence_span": "与上海融和元储能源有限公司签署了《战略合作框架协议》"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源",
+        "evidence_span": "持续拓展新能源发电、储能、充电桩领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能",
+        "evidence_span": "持续拓展新能源发电、储能、充电桩领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "充电桩",
+        "evidence_span": "持续拓展新能源发电、储能、充电桩领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:47:46"
+}

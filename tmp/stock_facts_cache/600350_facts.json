@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "交通基础设施的投资运营",
+      "evidence_span": "公司主要从事交通基础设施的投资运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高速公路产业链上相关行业的股权投资",
+      "evidence_span": "高速公路产业链上、价值链上相关行业、金融、环保等领域的股权投资"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "收费路桥运营",
+      "evidence_span": "收费路桥运营作为公司的核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资运营",
+      "evidence_span": "公司利润主要来源于收费路桥运营、投资运营两大业务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "基础设施投资建设运营服务商",
+      "evidence_span": "中国一流的基础设施投资建设运营服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速公路通行服务",
+      "evidence_span": "为过往车辆提供通行服务并按照政府收费标准收取车辆通行费"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速公路运营管理服务",
+      "evidence_span": "受托管理其他企业所属高速公路资产，为其提供优质的运营管理服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁路运输",
+      "evidence_span": "铁路运输收入20.42亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高铁轨道板",
+      "evidence_span": "铁建装备公司持续加强高铁轨道板技术研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络货运服务",
+      "evidence_span": "成功获得交通运输部网络货运牌照"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧环保产业",
+      "evidence_span": "以智慧环保产业为核心产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧收费站",
+      "evidence_span": "建成有效融合5项前沿技术的崮山智慧收费站"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化运营服务",
+      "evidence_span": "数字化运营服务实现4个山东省内首创"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能工厂",
+      "evidence_span": "智能工厂2022年6月28日建成投产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧高速",
+      "evidence_span": "以智慧高速为依托"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山东高速集团",
+      "evidence_span": "受托管理山东高速集团所属的路桥资产"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "山东高速受益国企改革+新政出台双重利好"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企混改",
+      "evidence_span": "山东高速受益于国企混改"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "交通基础设施的投资运营",
+        "evidence_span": "公司主要从事交通基础设施的投资运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高速公路产业链上相关行业的股权投资",
+        "evidence_span": "高速公路产业链上、价值链上相关行业、金融、环保等领域的股权投资"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "收费路桥运营",
+        "evidence_span": "收费路桥运营作为公司的核心业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资运营",
+        "evidence_span": "公司利润主要来源于收费路桥运营、投资运营两大业务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "基础设施投资建设运营服务商",
+        "evidence_span": "中国一流的基础设施投资建设运营服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速公路通行服务",
+        "evidence_span": "为过往车辆提供通行服务并按照政府收费标准收取车辆通行费"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速公路运营管理服务",
+        "evidence_span": "受托管理其他企业所属高速公路资产，为其提供优质的运营管理服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁路运输",
+        "evidence_span": "铁路运输收入20.42亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高铁轨道板",
+        "evidence_span": "铁建装备公司持续加强高铁轨道板技术研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络货运服务",
+        "evidence_span": "成功获得交通运输部网络货运牌照"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧环保产业",
+        "evidence_span": "以智慧环保产业为核心产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧收费站",
+        "evidence_span": "建成有效融合5项前沿技术的崮山智慧收费站"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化运营服务",
+        "evidence_span": "数字化运营服务实现4个山东省内首创"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能工厂",
+        "evidence_span": "智能工厂2022年6月28日建成投产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧高速",
+        "evidence_span": "以智慧高速为依托"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山东高速集团",
+        "evidence_span": "受托管理山东高速集团所属的路桥资产"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "山东高速受益国企改革+新政出台双重利好"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企混改",
+        "evidence_span": "山东高速受益于国企混改"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:59:25"
+}

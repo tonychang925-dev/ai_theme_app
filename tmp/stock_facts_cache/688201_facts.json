@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息安全产品",
+      "evidence_span": "公司是科技创新型的信息安全产品和解决方案提供商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息安全解决方案",
+      "evidence_span": "公司是科技创新型的信息安全产品和解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "信息安全产品和解决方案提供商",
+      "evidence_span": "公司是科技创新型的信息安全产品和解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "商用密码领域的领先企业",
+      "evidence_span": "公司已成为国内商用密码领域的领先企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "身份安全产品",
+      "evidence_span": "公司形成了身份安全、通信安全、数据安全、移动安全、云安全和平台安全六大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信安全产品",
+      "evidence_span": "公司形成了身份安全、通信安全、数据安全、移动安全、云安全和平台安全六大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据安全产品",
+      "evidence_span": "公司形成了身份安全、通信安全、数据安全、移动安全、云安全和平台安全六大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动安全产品",
+      "evidence_span": "公司形成了身份安全、通信安全、数据安全、移动安全、云安全和平台安全六大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云安全产品",
+      "evidence_span": "公司形成了身份安全、通信安全、数据安全、移动安全、云安全和平台安全六大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "平台安全产品",
+      "evidence_span": "公司形成了身份安全、通信安全、数据安全、移动安全、云安全和平台安全六大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证书认证系统",
+      "evidence_span": "公司的证书认证系统(NetCert)广泛应用于金融、交通、能源、烟草等重点领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "统一身份认证管理系统",
+      "evidence_span": "公司身份安全产品主要包括:证书认证系统(NetCert)、统一身份认证管理系统(NetAuth)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动态密码系统",
+      "evidence_span": "公司身份安全产品主要包括:证书认证系统(NetCert)、统一身份认证管理系统(NetAuth)、动态密码系统(NetPass)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "统一安全管理及运维审计平台",
+      "evidence_span": "公司身份安全产品主要包括:证书认证系统(NetCert)、统一身份认证管理系统(NetAuth)、动态密码系统(NetPass)、统一安全管理及运维审计平台(NetFort)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "V2X-SDK车联网终端安全中间件",
+      "evidence_span": "已于2021年上半年发布车联网新产品“V2X-SDK车联网终端安全中间件”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "密码技术",
+      "evidence_span": "公司以密码技术为基础支撑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融领域",
+      "evidence_span": "公司的产品应用于金融、政府、企业等重要领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府领域",
+      "evidence_span": "公司的产品应用于金融、政府、企业等重要领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "企业领域",
+      "evidence_span": "公司的产品应用于金融、政府、企业等重要领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国工商银行",
+      "evidence_span": "中国工商银行、中国农业银行、交通银行和中国建设银行均使用公司的证书认证系统(NetCert)"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国农业银行",
+      "evidence_span": "中国工商银行、中国农业银行、交通银行和中国建设银行均使用公司的证书认证系统(NetCert)"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交通银行",
+      "evidence_span": "中国工商银行、中国农业银行、交通银行和中国建设银行均使用公司的证书认证系统(NetCert)"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国建设银行",
+      "evidence_span": "中国工商银行、中国农业银行、交通银行和中国建设银行均使用公司的证书认证系统(NetCert)"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京银行",
+      "evidence_span": "公司已于2021年中标北京银行“数字货币项目SSL网关及签名验签服务器、数字人民币新增”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深圳金融科技研究院",
+      "evidence_span": "公司已于2021年中标北京银行“数字货币项目SSL网关及签名验签服务器、数字人民币新增”以及深圳金融科技研究院“2020年第二批安全设备采购项目”"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字货币",
+      "evidence_span": "信安世纪金融安全领军，数字货币与行业信创的显著受益者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "行业信创",
+      "evidence_span": "信安世纪金融安全领军，数字货币与行业信创的显著受益者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产密码改造",
+      "evidence_span": "要求金融和重要领域在2022年底前落实并完成国产密码改造工作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "密码算法国产化",
+      "evidence_span": "进一步推动密码算法的国产化进程"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息安全产品",
+        "evidence_span": "公司是科技创新型的信息安全产品和解决方案提供商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息安全解决方案",
+        "evidence_span": "公司是科技创新型的信息安全产品和解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "信息安全产品和解决方案提供商",
+        "evidence_span": "公司是科技创新型的信息安全产品和解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "商用密码领域的领先企业",
+        "evidence_span": "公司已成为国内商用密码领域的领先企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "身份安全产品",
+        "evidence_span": "公司形成了身份安全、通信安全、数据安全、移动安全、云安全和平台安全六大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信安全产品",
+        "evidence_span": "公司形成了身份安全、通信安全、数据安全、移动安全、云安全和平台安全六大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据安全产品",
+        "evidence_span": "公司形成了身份安全、通信安全、数据安全、移动安全、云安全和平台安全六大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动安全产品",
+        "evidence_span": "公司形成了身份安全、通信安全、数据安全、移动安全、云安全和平台安全六大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云安全产品",
+        "evidence_span": "公司形成了身份安全、通信安全、数据安全、移动安全、云安全和平台安全六大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "平台安全产品",
+        "evidence_span": "公司形成了身份安全、通信安全、数据安全、移动安全、云安全和平台安全六大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证书认证系统",
+        "evidence_span": "公司的证书认证系统(NetCert)广泛应用于金融、交通、能源、烟草等重点领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "统一身份认证管理系统",
+        "evidence_span": "公司身份安全产品主要包括:证书认证系统(NetCert)、统一身份认证管理系统(NetAuth)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动态密码系统",
+        "evidence_span": "公司身份安全产品主要包括:证书认证系统(NetCert)、统一身份认证管理系统(NetAuth)、动态密码系统(NetPass)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "统一安全管理及运维审计平台",
+        "evidence_span": "公司身份安全产品主要包括:证书认证系统(NetCert)、统一身份认证管理系统(NetAuth)、动态密码系统(NetPass)、统一安全管理及运维审计平台(NetFort)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "V2X-SDK车联网终端安全中间件",
+        "evidence_span": "已于2021年上半年发布车联网新产品“V2X-SDK车联网终端安全中间件”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "密码技术",
+        "evidence_span": "公司以密码技术为基础支撑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融领域",
+        "evidence_span": "公司的产品应用于金融、政府、企业等重要领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府领域",
+        "evidence_span": "公司的产品应用于金融、政府、企业等重要领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "企业领域",
+        "evidence_span": "公司的产品应用于金融、政府、企业等重要领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国工商银行",
+        "evidence_span": "中国工商银行、中国农业银行、交通银行和中国建设银行均使用公司的证书认证系统(NetCert)"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国农业银行",
+        "evidence_span": "中国工商银行、中国农业银行、交通银行和中国建设银行均使用公司的证书认证系统(NetCert)"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交通银行",
+        "evidence_span": "中国工商银行、中国农业银行、交通银行和中国建设银行均使用公司的证书认证系统(NetCert)"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国建设银行",
+        "evidence_span": "中国工商银行、中国农业银行、交通银行和中国建设银行均使用公司的证书认证系统(NetCert)"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京银行",
+        "evidence_span": "公司已于2021年中标北京银行“数字货币项目SSL网关及签名验签服务器、数字人民币新增”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深圳金融科技研究院",
+        "evidence_span": "公司已于2021年中标北京银行“数字货币项目SSL网关及签名验签服务器、数字人民币新增”以及深圳金融科技研究院“2020年第二批安全设备采购项目”"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字货币",
+        "evidence_span": "信安世纪金融安全领军，数字货币与行业信创的显著受益者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "行业信创",
+        "evidence_span": "信安世纪金融安全领军，数字货币与行业信创的显著受益者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产密码改造",
+        "evidence_span": "要求金融和重要领域在2022年底前落实并完成国产密码改造工作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "密码算法国产化",
+        "evidence_span": "进一步推动密码算法的国产化进程"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:34:45"
+}

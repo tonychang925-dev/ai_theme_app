@@ -1,0 +1,374 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂离子电池专用设备",
+      "evidence_span": "主要从事锂离子电池专用设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电池自动化装备",
+      "evidence_span": "公司主要为客户提供锂电池自动化装备与服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "公司主要为客户提供锂电池自动化装备与服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子烟业务",
+      "evidence_span": "公司主要为客户提供锂电池自动化装备与服务以及电子烟业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电池专用生产设备制造商",
+      "evidence_span": "领先的锂电池专用生产设备制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电设备整线方案供应商",
+      "evidence_span": "赢合科技锂电设备整线方案供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电智能生产整线方案提供商",
+      "evidence_span": "赢合科技领先的锂电智能生产整线方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涂布机",
+      "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "辊压机",
+      "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分切机",
+      "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制片机",
+      "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卷绕机",
+      "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "叠片机",
+      "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "组装线",
+      "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子烟",
+      "evidence_span": "为客户提供电子烟、烟弹、雾化器及其他电子烟配件等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烟弹",
+      "evidence_span": "为客户提供电子烟、烟弹、雾化器及其他电子烟配件等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "雾化器",
+      "evidence_span": "为客户提供电子烟、烟弹、雾化器及其他电子烟配件等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子烟配件",
+      "evidence_span": "为客户提供电子烟、烟弹、雾化器及其他电子烟配件等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "涂布辊压分条一体机",
+      "evidence_span": "成功推出了涂布辊压分条一体机、激光模切卷绕一体机、激光模切叠片一体机等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光模切卷绕一体机",
+      "evidence_span": "成功推出了涂布辊压分条一体机、激光模切卷绕一体机、激光模切叠片一体机等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光模切叠片一体机",
+      "evidence_span": "成功推出了涂布辊压分条一体机、激光模切卷绕一体机、激光模切叠片一体机等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "1500宽幅辊分一体机",
+      "evidence_span": "成功研发出1500宽幅辊分一体机、24ppm高速大圆柱激光卷绕一体机、短刀电芯装配线以及满足半固态电池需求的复合集流体涂布及辊压设备等创新产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "24ppm高速大圆柱激光卷绕一体机",
+      "evidence_span": "成功研发出1500宽幅辊分一体机、24ppm高速大圆柱激光卷绕一体机、短刀电芯装配线以及满足半固态电池需求的复合集流体涂布及辊压设备等创新产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "短刀电芯装配线",
+      "evidence_span": "成功研发出1500宽幅辊分一体机、24ppm高速大圆柱激光卷绕一体机、短刀电芯装配线以及满足半固态电池需求的复合集流体涂布及辊压设备等创新产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复合集流体涂布及辊压设备",
+      "evidence_span": "成功研发出1500宽幅辊分一体机、24ppm高速大圆柱激光卷绕一体机、短刀电芯装配线以及满足半固态电池需求的复合集流体涂布及辊压设备等创新产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "公司核心产品已供应包括宁德时代、比亚迪、LG新能源、德国大众等国内外一流电池企业及车企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司核心产品已供应包括宁德时代、比亚迪、LG新能源、德国大众等国内外一流电池企业及车企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LG新能源",
+      "evidence_span": "公司核心产品已供应包括宁德时代、比亚迪、LG新能源、德国大众等国内外一流电池企业及车企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国大众",
+      "evidence_span": "公司核心产品已供应包括宁德时代、比亚迪、LG新能源、德国大众等国内外一流电池企业及车企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欣旺达",
+      "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蜂巢能源",
+      "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国轩高科",
+      "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿纬锂能",
+      "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "鹏辉能源",
+      "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ACC",
+      "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "动力电池产能扩建",
+      "evidence_span": "赢合科技设备竞争力显著提升，充分受益动力电池产能扩建"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂离子电池专用设备",
+        "evidence_span": "主要从事锂离子电池专用设备的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电池自动化装备与服务",
+        "evidence_span": "公司主要为客户提供锂电池自动化装备与服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子烟业务",
+        "evidence_span": "公司主要为客户提供锂电池自动化装备与服务以及电子烟业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电池专用生产设备制造商",
+        "evidence_span": "领先的锂电池专用生产设备制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电设备整线方案供应商",
+        "evidence_span": "赢合科技锂电设备整线方案供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电智能生产整线方案提供商",
+        "evidence_span": "赢合科技领先的锂电智能生产整线方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涂布机",
+        "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "辊压机",
+        "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分切机",
+        "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制片机",
+        "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卷绕机",
+        "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "叠片机",
+        "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "组装线",
+        "evidence_span": "公司的涂布机、辊压机、分切机、制片机、卷绕机、叠片机、组装线等系列核心设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子烟",
+        "evidence_span": "为客户提供电子烟、烟弹、雾化器及其他电子烟配件等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烟弹",
+        "evidence_span": "为客户提供电子烟、烟弹、雾化器及其他电子烟配件等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "雾化器",
+        "evidence_span": "为客户提供电子烟、烟弹、雾化器及其他电子烟配件等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子烟配件",
+        "evidence_span": "为客户提供电子烟、烟弹、雾化器及其他电子烟配件等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "涂布辊压分条一体机",
+        "evidence_span": "成功推出了涂布辊压分条一体机、激光模切卷绕一体机、激光模切叠片一体机等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光模切卷绕一体机",
+        "evidence_span": "成功推出了涂布辊压分条一体机、激光模切卷绕一体机、激光模切叠片一体机等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光模切叠片一体机",
+        "evidence_span": "成功推出了涂布辊压分条一体机、激光模切卷绕一体机、激光模切叠片一体机等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "1500宽幅辊分一体机",
+        "evidence_span": "成功研发出1500宽幅辊分一体机、24ppm高速大圆柱激光卷绕一体机、短刀电芯装配线以及满足半固态电池需求的复合集流体涂布及辊压设备等创新产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "24ppm高速大圆柱激光卷绕一体机",
+        "evidence_span": "成功研发出1500宽幅辊分一体机、24ppm高速大圆柱激光卷绕一体机、短刀电芯装配线以及满足半固态电池需求的复合集流体涂布及辊压设备等创新产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "短刀电芯装配线",
+        "evidence_span": "成功研发出1500宽幅辊分一体机、24ppm高速大圆柱激光卷绕一体机、短刀电芯装配线以及满足半固态电池需求的复合集流体涂布及辊压设备等创新产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复合集流体涂布及辊压设备",
+        "evidence_span": "成功研发出1500宽幅辊分一体机、24ppm高速大圆柱激光卷绕一体机、短刀电芯装配线以及满足半固态电池需求的复合集流体涂布及辊压设备等创新产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "公司核心产品已供应包括宁德时代、比亚迪、LG新能源、德国大众等国内外一流电池企业及车企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司核心产品已供应包括宁德时代、比亚迪、LG新能源、德国大众等国内外一流电池企业及车企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LG新能源",
+        "evidence_span": "公司核心产品已供应包括宁德时代、比亚迪、LG新能源、德国大众等国内外一流电池企业及车企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国大众",
+        "evidence_span": "公司核心产品已供应包括宁德时代、比亚迪、LG新能源、德国大众等国内外一流电池企业及车企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欣旺达",
+        "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蜂巢能源",
+        "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国轩高科",
+        "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿纬锂能",
+        "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "鹏辉能源",
+        "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ACC",
+        "evidence_span": "期间收获了来自宁德时代、比亚迪、欣旺达、蜂巢能源、国轩高科、亿纬锂能、鹏辉能源、LG新能源、大众、ACC等国内外一线客户的订单"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "动力电池产能扩建",
+        "evidence_span": "赢合科技设备竞争力显著提升，充分受益动力电池产能扩建"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:39:19"
+}

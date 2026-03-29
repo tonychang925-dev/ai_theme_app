@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:15:46", "result": {"span_uid": "eb3488314db8", "action": "rewrite", "canonical_text": "卫星互联网业务准入制度改革正在有序推进，以扩大增值电信业务开放。", "final_type": "signal", "final_role": "政策改革", "stability": "high", "reason": "原文提及具体部门，改写后保留政策改革方向和目标，使其更稳定、可脱离原新闻上下文独立成立。"}}

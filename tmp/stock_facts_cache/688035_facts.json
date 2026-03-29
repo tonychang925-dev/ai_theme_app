@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子封装材料",
+      "evidence_span": "公司是国家集成电路产业基金重点布局的电子封装材料生产企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "集成电路封装材料",
+      "evidence_span": "集成电路封装材料属于零级、一级及二级封装范畴"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能终端封装材料",
+      "evidence_span": "智能终端封装材料属于二级和三级封装范畴"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源应用材料",
+      "evidence_span": "新能源应用材料属于三级封装范畴"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电子封装材料生产企业",
+      "evidence_span": "公司是国家集成电路产业基金重点布局的电子封装材料生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芯片固晶导电胶",
+      "evidence_span": "芯片固晶材料包括芯片固晶导电胶、绝缘胶及固晶膜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芯片固晶绝缘胶",
+      "evidence_span": "芯片固晶材料包括芯片固晶导电胶、绝缘胶及固晶膜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芯片固晶膜",
+      "evidence_span": "芯片固晶材料包括芯片固晶导电胶、绝缘胶及固晶膜等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导热垫片",
+      "evidence_span": "导热界面材料主要为导热垫片、导热泥、导热膏等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导热泥",
+      "evidence_span": "导热界面材料主要为导热垫片、导热泥、导热膏等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导热膏",
+      "evidence_span": "导热界面材料主要为导热垫片、导热泥、导热膏等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "晶圆UV膜",
+      "evidence_span": "公司的晶圆UV膜产品从制胶、基材膜到涂覆均拥有完全自主知识产权"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力电池封装材料",
+      "evidence_span": "新能源应用材料是主要应用于新能源汽车动力电池、光伏组件的封装材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏组件封装材料",
+      "evidence_span": "新能源应用材料是主要应用于新能源汽车动力电池、光伏组件的封装材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车制造用材料",
+      "evidence_span": "在汽车制造领域，汽车制造用材料能够锁紧咬合金属螺纹"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高铁用粘接材料",
+      "evidence_span": "在轨道交通领域，高铁用粘接材料以其优良的粘接性"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "晶圆固定",
+      "evidence_span": "为集成电路封装提供晶圆固定、导电、导热、保护及提高芯片使用可靠性的综合性产品解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "导电",
+      "evidence_span": "为集成电路封装提供晶圆固定、导电、导热、保护及提高芯片使用可靠性的综合性产品解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "导热",
+      "evidence_span": "为集成电路封装提供晶圆固定、导电、导热、保护及提高芯片使用可靠性的综合性产品解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "保护",
+      "evidence_span": "为集成电路封装提供晶圆固定、导电、导热、保护及提高芯片使用可靠性的综合性产品解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "提高芯片使用可靠性",
+      "evidence_span": "为集成电路封装提供晶圆固定、导电、导热、保护及提高芯片使用可靠性的综合性产品解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "结构粘接",
+      "evidence_span": "提供结构粘接、导电、导热、密封、保护、材料成型、防水、防尘、电磁屏蔽等复合性功能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "密封",
+      "evidence_span": "提供结构粘接、导电、导热、密封、保护、材料成型、防水、防尘、电磁屏蔽等复合性功能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "材料成型",
+      "evidence_span": "提供结构粘接、导电、导热、密封、保护、材料成型、防水、防尘、电磁屏蔽等复合性功能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "防水",
+      "evidence_span": "提供结构粘接、导电、导热、密封、保护、材料成型、防水、防尘、电磁屏蔽等复合性功能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "防尘",
+      "evidence_span": "提供结构粘接、导电、导热、密封、保护、材料成型、防水、防尘、电磁屏蔽等复合性功能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电磁屏蔽",
+      "evidence_span": "提供结构粘接、导电、导热、密封、保护、材料成型、防水、防尘、电磁屏蔽等复合性功能"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华天科技",
+      "evidence_span": "已在华天科技、长电科技、日月新等国内多家知名集成电路封测企业通过产品认证并批量供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长电科技",
+      "evidence_span": "已在华天科技、长电科技、日月新等国内多家知名集成电路封测企业通过产品认证并批量供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日月新",
+      "evidence_span": "已在华天科技、长电科技、日月新等国内多家知名集成电路封测企业通过产品认证并批量供货"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "集成电路国产化",
+      "evidence_span": "集成电路国产化持续验证，新能源景气推动业绩高增"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子封装材料",
+        "evidence_span": "公司是国家集成电路产业基金重点布局的电子封装材料生产企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "集成电路封装材料",
+        "evidence_span": "集成电路封装材料属于零级、一级及二级封装范畴"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能终端封装材料",
+        "evidence_span": "智能终端封装材料属于二级和三级封装范畴"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源应用材料",
+        "evidence_span": "新能源应用材料属于三级封装范畴"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电子封装材料生产企业",
+        "evidence_span": "公司是国家集成电路产业基金重点布局的电子封装材料生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芯片固晶导电胶",
+        "evidence_span": "芯片固晶材料包括芯片固晶导电胶、绝缘胶及固晶膜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芯片固晶绝缘胶",
+        "evidence_span": "芯片固晶材料包括芯片固晶导电胶、绝缘胶及固晶膜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芯片固晶膜",
+        "evidence_span": "芯片固晶材料包括芯片固晶导电胶、绝缘胶及固晶膜等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导热垫片",
+        "evidence_span": "导热界面材料主要为导热垫片、导热泥、导热膏等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导热泥",
+        "evidence_span": "导热界面材料主要为导热垫片、导热泥、导热膏等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导热膏",
+        "evidence_span": "导热界面材料主要为导热垫片、导热泥、导热膏等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "晶圆UV膜",
+        "evidence_span": "公司的晶圆UV膜产品从制胶、基材膜到涂覆均拥有完全自主知识产权"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力电池封装材料",
+        "evidence_span": "新能源应用材料是主要应用于新能源汽车动力电池、光伏组件的封装材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏组件封装材料",
+        "evidence_span": "新能源应用材料是主要应用于新能源汽车动力电池、光伏组件的封装材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车制造用材料",
+        "evidence_span": "在汽车制造领域，汽车制造用材料能够锁紧咬合金属螺纹"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高铁用粘接材料",
+        "evidence_span": "在轨道交通领域，高铁用粘接材料以其优良的粘接性"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "晶圆固定",
+        "evidence_span": "为集成电路封装提供晶圆固定、导电、导热、保护及提高芯片使用可靠性的综合性产品解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "导电",
+        "evidence_span": "为集成电路封装提供晶圆固定、导电、导热、保护及提高芯片使用可靠性的综合性产品解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "导热",
+        "evidence_span": "为集成电路封装提供晶圆固定、导电、导热、保护及提高芯片使用可靠性的综合性产品解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "保护",
+        "evidence_span": "为集成电路封装提供晶圆固定、导电、导热、保护及提高芯片使用可靠性的综合性产品解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "提高芯片使用可靠性",
+        "evidence_span": "为集成电路封装提供晶圆固定、导电、导热、保护及提高芯片使用可靠性的综合性产品解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "结构粘接",
+        "evidence_span": "提供结构粘接、导电、导热、密封、保护、材料成型、防水、防尘、电磁屏蔽等复合性功能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "密封",
+        "evidence_span": "提供结构粘接、导电、导热、密封、保护、材料成型、防水、防尘、电磁屏蔽等复合性功能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "材料成型",
+        "evidence_span": "提供结构粘接、导电、导热、密封、保护、材料成型、防水、防尘、电磁屏蔽等复合性功能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "防水",
+        "evidence_span": "提供结构粘接、导电、导热、密封、保护、材料成型、防水、防尘、电磁屏蔽等复合性功能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "防尘",
+        "evidence_span": "提供结构粘接、导电、导热、密封、保护、材料成型、防水、防尘、电磁屏蔽等复合性功能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电磁屏蔽",
+        "evidence_span": "提供结构粘接、导电、导热、密封、保护、材料成型、防水、防尘、电磁屏蔽等复合性功能"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华天科技",
+        "evidence_span": "已在华天科技、长电科技、日月新等国内多家知名集成电路封测企业通过产品认证并批量供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长电科技",
+        "evidence_span": "已在华天科技、长电科技、日月新等国内多家知名集成电路封测企业通过产品认证并批量供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日月新",
+        "evidence_span": "已在华天科技、长电科技、日月新等国内多家知名集成电路封测企业通过产品认证并批量供货"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "集成电路国产化",
+        "evidence_span": "集成电路国产化持续验证，新能源景气推动业绩高增"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:39:13"
+}

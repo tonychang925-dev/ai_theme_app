@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "百货业态",
+      "evidence_span": "百货业态积极推进朝阳店、新世界店业态调整"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "家电业态",
+      "evidence_span": "家电业态深化与品牌合作"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超市业态",
+      "evidence_span": "超市业态关闭了持续亏损的文化宫店"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车业态",
+      "evidence_span": "汽车业态持续做好吉利品牌汽车销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子商务",
+      "evidence_span": "主营业态涉及百货、家电、超市、汽车、电子商务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中华老字号商店",
+      "evidence_span": "国家商务部评选的“中华老字号商店”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国金鼎百货店",
+      "evidence_span": "“全国金鼎百货店”双荣誉称号的商业企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域性商业龙头企业",
+      "evidence_span": "争取建设成为具有较强竞争力和价值创造力的区域性商业龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "百货零售",
+      "evidence_span": "主要从事商业零售业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家电销售",
+      "evidence_span": "家电业态收入占比56.02%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超市商品零售",
+      "evidence_span": "超市业态收入占比14.88%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车销售",
+      "evidence_span": "汽车业态收入占比9.95%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线上销售",
+      "evidence_span": "电商占比0.50%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "珠宝首饰零售",
+      "evidence_span": "珠宝首饰零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化妆品零售",
+      "evidence_span": "化妆品零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车整车销售",
+      "evidence_span": "新能源汽车整车销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化营销",
+      "evidence_span": "以数字化营销和数据化运营为两大抓手"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线上线下融合",
+      "evidence_span": "构建百货、家电、超市线上线下融合的全渠道运营体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美的",
+      "evidence_span": "并获得美的、小天鹅冰洗等品牌对线上运营项目授权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小天鹅冰洗",
+      "evidence_span": "并获得美的、小天鹅冰洗等品牌对线上运营项目授权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利品牌汽车",
+      "evidence_span": "汽车业态持续做好吉利品牌汽车销售"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "百货业态",
+        "evidence_span": "百货业态积极推进朝阳店、新世界店业态调整"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "家电业态",
+        "evidence_span": "家电业态深化与品牌合作"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "超市业态",
+        "evidence_span": "超市业态关闭了持续亏损的文化宫店"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车业态",
+        "evidence_span": "汽车业态持续做好吉利品牌汽车销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子商务",
+        "evidence_span": "主营业态涉及百货、家电、超市、汽车、电子商务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中华老字号商店",
+        "evidence_span": "国家商务部评选的“中华老字号商店”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国金鼎百货店",
+        "evidence_span": "“全国金鼎百货店”双荣誉称号的商业企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域性商业龙头企业",
+        "evidence_span": "争取建设成为具有较强竞争力和价值创造力的区域性商业龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "百货零售",
+        "evidence_span": "主要从事商业零售业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家电销售",
+        "evidence_span": "家电业态收入占比56.02%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超市商品零售",
+        "evidence_span": "超市业态收入占比14.88%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车销售",
+        "evidence_span": "汽车业态收入占比9.95%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线上销售",
+        "evidence_span": "电商占比0.50%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "珠宝首饰零售",
+        "evidence_span": "珠宝首饰零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化妆品零售",
+        "evidence_span": "化妆品零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车整车销售",
+        "evidence_span": "新能源汽车整车销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化营销",
+        "evidence_span": "以数字化营销和数据化运营为两大抓手"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线上线下融合",
+        "evidence_span": "构建百货、家电、超市线上线下融合的全渠道运营体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美的",
+        "evidence_span": "并获得美的、小天鹅冰洗等品牌对线上运营项目授权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小天鹅冰洗",
+        "evidence_span": "并获得美的、小天鹅冰洗等品牌对线上运营项目授权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利品牌汽车",
+        "evidence_span": "汽车业态持续做好吉利品牌汽车销售"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:05:45"
+}

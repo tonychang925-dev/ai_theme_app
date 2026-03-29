@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "婴幼儿配方乳粉",
+      "evidence_span": "主要产品包括婴幼儿/成人配方乳粉"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "成人配方乳粉",
+      "evidence_span": "主要产品包括婴幼儿/成人配方乳粉"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "婴幼儿零辅食",
+      "evidence_span": "婴幼儿零辅食"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "奶基营养品",
+      "evidence_span": "奶基营养品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "含乳饮料",
+      "evidence_span": "含乳饮料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "母婴奶粉企业",
+      "evidence_span": "深耕母婴奶粉行业30年"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产奶企",
+      "evidence_span": "国产奶企有飞鹤、君乐宝、伊利、贝因美等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "爱加系列",
+      "evidence_span": "“爱加”系列定位高端奶粉市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可睿欣系列",
+      "evidence_span": "“可睿欣”主要针对过敏体制宝宝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "菁爱系列",
+      "evidence_span": "婴幼儿有“爱加”、“可睿欣”、“菁爱”、“红爱”等多个系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "红爱系列",
+      "evidence_span": "婴幼儿有“爱加”、“可睿欣”、“菁爱”、“红爱”等多个系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "爱加有机A2",
+      "evidence_span": "爱加有机A2婴幼儿配方乳粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "爱加宝护盖",
+      "evidence_span": "爱加宝护盖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "美妈冠",
+      "evidence_span": "美妈冠"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "火星宝贝系列",
+      "evidence_span": "火星宝贝系列包括乐护、优选、智颖、可益高等多款产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特配奶粉",
+      "evidence_span": "特配奶粉针对0-6月早产/低出生体重婴儿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "去乳糖专利工艺奶粉",
+      "evidence_span": "公司有去乳糖专利工艺，可以有效缓解腹泻，修复肠道"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "孕妈奶粉",
+      "evidence_span": "成人奶粉包括孕妈奶粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生命伴侣",
+      "evidence_span": "“生命伴侣”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "豆奶粉",
+      "evidence_span": "豆奶粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冠军宝贝营养米糊",
+      "evidence_span": "“冠军宝贝”营养米糊荣获妈妈口碑之选年度人气辅食"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "去乳糖专利工艺",
+      "evidence_span": "公司有去乳糖专利工艺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "经销商",
+      "evidence_span": "经销商是公司最主要的销售渠道"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天猫",
+      "evidence_span": "天猫、京东、拼多多、官方商城等传统电商平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东",
+      "evidence_span": "天猫、京东、拼多多、官方商城等传统电商平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "拼多多",
+      "evidence_span": "天猫、京东、拼多多、官方商城等传统电商平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小红书",
+      "evidence_span": "小红书、抖音、快手等新兴电商平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "抖音",
+      "evidence_span": "小红书、抖音、快手等新兴电商平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "快手",
+      "evidence_span": "小红书、抖音、快手等新兴电商平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新国标叠加二次注册",
+      "evidence_span": "新国标叠加二次注册，挑战机遇并存，行业加速洗牌"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "婴幼儿配方乳粉",
+        "evidence_span": "主要产品包括婴幼儿/成人配方乳粉"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "成人配方乳粉",
+        "evidence_span": "主要产品包括婴幼儿/成人配方乳粉"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "婴幼儿零辅食",
+        "evidence_span": "婴幼儿零辅食"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "奶基营养品",
+        "evidence_span": "奶基营养品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "含乳饮料",
+        "evidence_span": "含乳饮料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "母婴奶粉企业",
+        "evidence_span": "深耕母婴奶粉行业30年"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产奶企",
+        "evidence_span": "国产奶企有飞鹤、君乐宝、伊利、贝因美等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "爱加系列",
+        "evidence_span": "“爱加”系列定位高端奶粉市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可睿欣系列",
+        "evidence_span": "“可睿欣”主要针对过敏体制宝宝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "菁爱系列",
+        "evidence_span": "婴幼儿有“爱加”、“可睿欣”、“菁爱”、“红爱”等多个系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "红爱系列",
+        "evidence_span": "婴幼儿有“爱加”、“可睿欣”、“菁爱”、“红爱”等多个系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "爱加有机A2",
+        "evidence_span": "爱加有机A2婴幼儿配方乳粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "爱加宝护盖",
+        "evidence_span": "爱加宝护盖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "美妈冠",
+        "evidence_span": "美妈冠"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "火星宝贝系列",
+        "evidence_span": "火星宝贝系列包括乐护、优选、智颖、可益高等多款产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特配奶粉",
+        "evidence_span": "特配奶粉针对0-6月早产/低出生体重婴儿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "去乳糖专利工艺奶粉",
+        "evidence_span": "公司有去乳糖专利工艺，可以有效缓解腹泻，修复肠道"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "孕妈奶粉",
+        "evidence_span": "成人奶粉包括孕妈奶粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生命伴侣",
+        "evidence_span": "“生命伴侣”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "豆奶粉",
+        "evidence_span": "豆奶粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冠军宝贝营养米糊",
+        "evidence_span": "“冠军宝贝”营养米糊荣获妈妈口碑之选年度人气辅食"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "去乳糖专利工艺",
+        "evidence_span": "公司有去乳糖专利工艺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "经销商",
+        "evidence_span": "经销商是公司最主要的销售渠道"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天猫",
+        "evidence_span": "天猫、京东、拼多多、官方商城等传统电商平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东",
+        "evidence_span": "天猫、京东、拼多多、官方商城等传统电商平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "拼多多",
+        "evidence_span": "天猫、京东、拼多多、官方商城等传统电商平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小红书",
+        "evidence_span": "小红书、抖音、快手等新兴电商平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "抖音",
+        "evidence_span": "小红书、抖音、快手等新兴电商平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "快手",
+        "evidence_span": "小红书、抖音、快手等新兴电商平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新国标叠加二次注册",
+        "evidence_span": "新国标叠加二次注册，挑战机遇并存，行业加速洗牌"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:38:53"
+}

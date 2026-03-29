@@ -1,0 +1,184 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高速公路投资",
+      "evidence_span": "本集团的主要业务为投资、建设、经营和管理高速公路"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建设",
+      "evidence_span": "本集团的主要业务为投资、建设、经营和管理高速公路"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "经营",
+      "evidence_span": "本集团的主要业务为投资、建设、经营和管理高速公路"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "管理",
+      "evidence_span": "本集团的主要业务为投资、建设、经营和管理高速公路"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "绿色能源",
+      "evidence_span": "培育发展以“充电、电池银行+换电、氢能源”为主的绿色能源第二主业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "四川省投资、建设、营运高速公路的主要企业之一",
+      "evidence_span": "是四川省投资、建设、营运高速公路的主要企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "四川省内唯一的公路基建类A+H股上市公司",
+      "evidence_span": "本公司作为四川省内唯一的公路基建类A+H股上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车辆通行费收入",
+      "evidence_span": "车辆通行费收入约人民币311,886.08万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建造服务收入",
+      "evidence_span": "建造服务收入约人民币409,452.79万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能源销售收入",
+      "evidence_span": "能源销售收入约人民币186,132.22万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "服务区经营、沿线广告收入",
+      "evidence_span": "服务区经营、沿线广告收入约人民币5,617.69万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BT/PPP工程项目收入",
+      "evidence_span": "BT/PPP工程项目收入约人民币22,800.90万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融资租赁收入",
+      "evidence_span": "融资租赁收入约人民币15,436.01万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品销售收入",
+      "evidence_span": "商品销售收入35,503.44万元"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能建造",
+      "evidence_span": "加大“智能建造、智慧高速、数字孪生”等项目科创力度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧高速",
+      "evidence_span": "加大“智能建造、智慧高速、数字孪生”等项目科创力度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字孪生",
+      "evidence_span": "加大“智能建造、智慧高速、数字孪生”等项目科创力度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "充换电智慧能源管理平台",
+      "evidence_span": "着力打造充换电智慧能源管理平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "地方国企改革是主要看点"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高速公路投资、建设、经营和管理",
+        "evidence_span": "本集团的主要业务为投资、建设、经营和管理高速公路"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "绿色能源",
+        "evidence_span": "培育发展以“充电、电池银行+换电、氢能源”为主的绿色能源第二主业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "四川省投资、建设、营运高速公路的主要企业之一",
+        "evidence_span": "是四川省投资、建设、营运高速公路的主要企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "四川省内唯一的公路基建类A+H股上市公司",
+        "evidence_span": "本公司作为四川省内唯一的公路基建类A+H股上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车辆通行费收入",
+        "evidence_span": "车辆通行费收入约人民币311,886.08万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建造服务收入",
+        "evidence_span": "建造服务收入约人民币409,452.79万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能源销售收入",
+        "evidence_span": "能源销售收入约人民币186,132.22万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "服务区经营、沿线广告收入",
+        "evidence_span": "服务区经营、沿线广告收入约人民币5,617.69万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BT/PPP工程项目收入",
+        "evidence_span": "BT/PPP工程项目收入约人民币22,800.90万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融资租赁收入",
+        "evidence_span": "融资租赁收入约人民币15,436.01万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品销售收入",
+        "evidence_span": "商品销售收入35,503.44万元"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能建造",
+        "evidence_span": "加大“智能建造、智慧高速、数字孪生”等项目科创力度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧高速",
+        "evidence_span": "加大“智能建造、智慧高速、数字孪生”等项目科创力度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字孪生",
+        "evidence_span": "加大“智能建造、智慧高速、数字孪生”等项目科创力度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "充换电智慧能源管理平台",
+        "evidence_span": "着力打造充换电智慧能源管理平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "地方国企改革是主要看点"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:13:12"
+}

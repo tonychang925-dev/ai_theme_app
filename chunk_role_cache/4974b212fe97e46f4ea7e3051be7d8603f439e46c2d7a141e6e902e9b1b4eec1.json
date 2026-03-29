@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:43", "result": {"chunk_id": "b54015485dff", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落开头介绍台积电CoWoS先进封装技术及其应用（如英伟达、AMD芯片采用），这属于半导体设备的静态知识；但后半部分描述产能紧缺、需求强劲和未来产能计划等事件信息。由于混合了知识和事件，应标为candidate_mixed。"}}

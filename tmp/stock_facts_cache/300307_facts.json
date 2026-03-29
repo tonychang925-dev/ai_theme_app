@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "针织机械",
+      "evidence_span": "公司主要从事针织机械的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能针织机械设备",
+      "evidence_span": "公司主要产品为智能针织机械设备"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电脑针织机械领域领先企业",
+      "evidence_span": "我国电脑针织机械领域领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "针织设备提供商",
+      "evidence_span": "公司是针织设备提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高新技术企业",
+      "evidence_span": "高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电脑横机",
+      "evidence_span": "销售电脑横机21,000余台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一线成型电脑横机",
+      "evidence_span": "公司研发的一线成型电脑横机获得国内首台（套）产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "各类针距电脑横机",
+      "evidence_span": "拥有行业最齐全的各类针距电脑横机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制版软件",
+      "evidence_span": "在制版软件方面，公司将进一步优化设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一线成型技术",
+      "evidence_span": "以一线成型技术为核心，开发战略性创新产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "起底装置",
+      "evidence_span": "掌握了电脑针织横机的起底装置"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "沉降片技术",
+      "evidence_span": "沉降片技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "沉降片三角控制技术",
+      "evidence_span": "沉降片三角控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机头快速回转",
+      "evidence_span": "机头快速回转"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无拉力编织",
+      "evidence_span": "无拉力编织等核心技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "针织企业",
+      "evidence_span": "主要销售对象为下游针织企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "毛衫企业",
+      "evidence_span": "主要包括生产毛衫"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "围巾企业",
+      "evidence_span": "围巾"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "帽子企业",
+      "evidence_span": "帽子"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "飞织鞋企业",
+      "evidence_span": "飞织鞋等针织类产品的企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "针织机械",
+        "evidence_span": "公司主要从事针织机械的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能针织机械设备",
+        "evidence_span": "公司主要产品为智能针织机械设备"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电脑针织机械领域领先企业",
+        "evidence_span": "我国电脑针织机械领域领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "针织设备提供商",
+        "evidence_span": "公司是针织设备提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高新技术企业",
+        "evidence_span": "高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电脑横机",
+        "evidence_span": "销售电脑横机21,000余台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一线成型电脑横机",
+        "evidence_span": "公司研发的一线成型电脑横机获得国内首台（套）产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "各类针距电脑横机",
+        "evidence_span": "拥有行业最齐全的各类针距电脑横机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制版软件",
+        "evidence_span": "在制版软件方面，公司将进一步优化设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一线成型技术",
+        "evidence_span": "以一线成型技术为核心，开发战略性创新产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "起底装置",
+        "evidence_span": "掌握了电脑针织横机的起底装置"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "沉降片技术",
+        "evidence_span": "沉降片技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "沉降片三角控制技术",
+        "evidence_span": "沉降片三角控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机头快速回转",
+        "evidence_span": "机头快速回转"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无拉力编织",
+        "evidence_span": "无拉力编织等核心技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "针织企业",
+        "evidence_span": "主要销售对象为下游针织企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "毛衫企业",
+        "evidence_span": "主要包括生产毛衫"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "围巾企业",
+        "evidence_span": "围巾"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "帽子企业",
+        "evidence_span": "帽子"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "飞织鞋企业",
+        "evidence_span": "飞织鞋等针织类产品的企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:34:22"
+}

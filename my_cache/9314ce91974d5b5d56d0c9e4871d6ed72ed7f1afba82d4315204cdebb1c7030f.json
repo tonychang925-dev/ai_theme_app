@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:31:43", "result": {"chunk_id": "dd0938602e76", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含导弹数量、类型（弹道导弹）和性能（防空能力）等潜在知识，但混合了以军摧毁伊朗导弹的具体事件信息，需要进一步裁决以提取稳定知识。"}}

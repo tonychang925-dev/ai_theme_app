@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车安全",
+      "evidence_span": "现有汽车安全、汽车电子两大事业部"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车电子",
+      "evidence_span": "现有汽车安全、汽车电子两大事业部"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能座舱",
+      "evidence_span": "以汽车智能座舱、智能驾驶、新能源管理、汽车安全等系统研发与制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能驾驶",
+      "evidence_span": "以汽车智能座舱、智能驾驶、新能源管理、汽车安全等系统研发与制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源管理",
+      "evidence_span": "以汽车智能座舱、智能驾驶、新能源管理、汽车安全等系统研发与制造"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球第二大汽车安全业务供应商",
+      "evidence_span": "成为全球第二大汽车安全业务供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车智能与安全科技领导者",
+      "evidence_span": "全球汽车智能与安全科技领导者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全气囊",
+      "evidence_span": "汽车安全主要以安全气囊、安全带、方向盘等产品为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全带",
+      "evidence_span": "汽车安全主要以安全气囊、安全带、方向盘等产品为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方向盘",
+      "evidence_span": "汽车安全主要以安全气囊、安全带、方向盘等产品为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压充配电系统",
+      "evidence_span": "新能源管理业务涵盖了高压充配电系统、电池管理系统等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池管理系统",
+      "evidence_span": "新能源管理业务涵盖了高压充配电系统、电池管理系统等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光雷达",
+      "evidence_span": "智能驾驶涵盖激光雷达、中央计算单元解决方案和域控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中央计算单元解决方案",
+      "evidence_span": "智能驾驶涵盖激光雷达、中央计算单元解决方案和域控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "域控制器",
+      "evidence_span": "智能驾驶涵盖激光雷达、中央计算单元解决方案和域控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "L2/L2+及以上等级自动驾驶控制器",
+      "evidence_span": "L2/L2+及以上等级自动驾驶控制器的研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "座舱域控制器",
+      "evidence_span": "智能座舱业务涵盖座舱域控制器、HMI等产品的研发与制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HMI",
+      "evidence_span": "智能座舱业务涵盖座舱域控制器、HMI等产品的研发与制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空调控制系统",
+      "evidence_span": "德国普瑞的产品分为空调控制系统、驾驶员控制系统、传感器、电控单元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驾驶员控制系统",
+      "evidence_span": "德国普瑞的产品分为空调控制系统、驾驶员控制系统、传感器、电控单元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传感器",
+      "evidence_span": "德国普瑞的产品分为空调控制系统、驾驶员控制系统、传感器、电控单元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电控单元",
+      "evidence_span": "德国普瑞的产品分为空调控制系统、驾驶员控制系统、传感器、电控单元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车动力控制系统",
+      "evidence_span": "新能源汽车动力控制系统等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能座舱软硬件产品",
+      "evidence_span": "普瑞与均联智行发力智能座舱软硬件产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "座舱域控制器研发生产",
+      "evidence_span": "均联智行为公司旗下专注于座舱域控制器研发生产的主体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "下游客户覆盖大众、宝马、保时捷、奔驰等中高端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "下游客户覆盖大众、宝马、保时捷、奔驰等中高端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保时捷",
+      "evidence_span": "下游客户覆盖大众、宝马、保时捷、奔驰等中高端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奔驰",
+      "evidence_span": "下游客户覆盖大众、宝马、保时捷、奔驰等中高端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "均联智行与华为签署合作协议"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "无人驾驶的受益者",
+      "evidence_span": "均胜电子无人驾驶的受益者"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车安全",
+        "evidence_span": "现有汽车安全、汽车电子两大事业部"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车电子",
+        "evidence_span": "现有汽车安全、汽车电子两大事业部"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能座舱",
+        "evidence_span": "以汽车智能座舱、智能驾驶、新能源管理、汽车安全等系统研发与制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能驾驶",
+        "evidence_span": "以汽车智能座舱、智能驾驶、新能源管理、汽车安全等系统研发与制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源管理",
+        "evidence_span": "以汽车智能座舱、智能驾驶、新能源管理、汽车安全等系统研发与制造"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球第二大汽车安全业务供应商",
+        "evidence_span": "成为全球第二大汽车安全业务供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车智能与安全科技领导者",
+        "evidence_span": "全球汽车智能与安全科技领导者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全气囊",
+        "evidence_span": "汽车安全主要以安全气囊、安全带、方向盘等产品为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全带",
+        "evidence_span": "汽车安全主要以安全气囊、安全带、方向盘等产品为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方向盘",
+        "evidence_span": "汽车安全主要以安全气囊、安全带、方向盘等产品为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压充配电系统",
+        "evidence_span": "新能源管理业务涵盖了高压充配电系统、电池管理系统等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池管理系统",
+        "evidence_span": "新能源管理业务涵盖了高压充配电系统、电池管理系统等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光雷达",
+        "evidence_span": "智能驾驶涵盖激光雷达、中央计算单元解决方案和域控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中央计算单元解决方案",
+        "evidence_span": "智能驾驶涵盖激光雷达、中央计算单元解决方案和域控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "域控制器",
+        "evidence_span": "智能驾驶涵盖激光雷达、中央计算单元解决方案和域控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "L2/L2+及以上等级自动驾驶控制器",
+        "evidence_span": "L2/L2+及以上等级自动驾驶控制器的研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "座舱域控制器",
+        "evidence_span": "智能座舱业务涵盖座舱域控制器、HMI等产品的研发与制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HMI",
+        "evidence_span": "智能座舱业务涵盖座舱域控制器、HMI等产品的研发与制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空调控制系统",
+        "evidence_span": "德国普瑞的产品分为空调控制系统、驾驶员控制系统、传感器、电控单元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驾驶员控制系统",
+        "evidence_span": "德国普瑞的产品分为空调控制系统、驾驶员控制系统、传感器、电控单元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传感器",
+        "evidence_span": "德国普瑞的产品分为空调控制系统、驾驶员控制系统、传感器、电控单元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电控单元",
+        "evidence_span": "德国普瑞的产品分为空调控制系统、驾驶员控制系统、传感器、电控单元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车动力控制系统",
+        "evidence_span": "新能源汽车动力控制系统等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能座舱软硬件产品",
+        "evidence_span": "普瑞与均联智行发力智能座舱软硬件产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "座舱域控制器研发生产",
+        "evidence_span": "均联智行为公司旗下专注于座舱域控制器研发生产的主体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "下游客户覆盖大众、宝马、保时捷、奔驰等中高端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "下游客户覆盖大众、宝马、保时捷、奔驰等中高端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保时捷",
+        "evidence_span": "下游客户覆盖大众、宝马、保时捷、奔驰等中高端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奔驰",
+        "evidence_span": "下游客户覆盖大众、宝马、保时捷、奔驰等中高端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "均联智行与华为签署合作协议"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "无人驾驶的受益者",
+        "evidence_span": "均胜电子无人驾驶的受益者"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:03:54"
+}

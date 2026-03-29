@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:04:06", "result": {"span_uid": "f591d814a781", "action": "keep", "canonical_text": "氟化氩光刻机具有65纳米以下的分辨率和8纳米以下的套刻精度，能够支持28纳米工艺芯片的量产。", "final_type": "core", "final_role": "光刻机技术参数", "stability": "high", "reason": "文本本身是稳定、独立的技术参数描述，直接定义半导体设备中光刻机的关键性能，无需改写。"}}

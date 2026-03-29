@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T21:22:09", "result": {"span_uid": "dbcc8a7e5470", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "票房预测范围", "stability": "low", "reason": "原文本是2026年春节档的票房预测（78-90亿元），属于事件化、预测性信息，且具体数值不稳定，无法整理成稳定、可脱离原新闻上下文独立成立的知识块。"}}

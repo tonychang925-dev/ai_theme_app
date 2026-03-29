@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:03:34", "result": {"span_uid": "ef6e210ae56c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "销售预测", "stability": "low", "reason": "该片段为对2024年国产半导体设备销售收入的预测，属于短期、不确定的预测信息，稳定性低，不适合作为稳定知识块入库。"}}

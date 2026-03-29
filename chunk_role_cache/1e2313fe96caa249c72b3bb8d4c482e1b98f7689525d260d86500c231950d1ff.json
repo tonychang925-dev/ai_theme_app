@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_3", "model": "deepseek-chat", "timestamp": "2026-03-08T09:33:12", "result": {"chunk_id": "d2dc837b8319", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落以政策发布事件开头，但详细列举了半导体产业链的关键环节（如EDA软件、IP核、光掩模、光刻胶、清洗设备等），这些是静态知识，可用于构建题材本体，但混合了事件信息。"}}

@@ -1,0 +1,399 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字安全",
+      "evidence_span": "三六零网络安全为核"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "政企安全",
+      "evidence_span": "发力政企扩展新边界"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "互联网业务",
+      "evidence_span": "互联网业务是公司“互联网+安全”双轮驱动商业模式的重要组成部分"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能硬件",
+      "evidence_span": "智能硬件业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "人工智能",
+      "evidence_span": "公司也在人工智能等新兴领域持续布局"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国最大的互联网安全公司",
+      "evidence_span": "中国最大的互联网安全公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大的数字安全公司",
+      "evidence_span": "作为全球最大的数字安全公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字安全领军企业",
+      "evidence_span": "360作为中国数字安全的领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "搜索引擎公司",
+      "evidence_span": "拥有搜索引擎的公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PC安全产品",
+      "evidence_span": "PC安全产品市场持续排名第一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "360浏览器",
+      "evidence_span": "360浏览器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "360安全卫士",
+      "evidence_span": "360安全卫士"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "360搜索",
+      "evidence_span": "360搜索"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "360杀毒",
+      "evidence_span": "360杀毒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "互联网广告及服务",
+      "evidence_span": "互联网广告及服务业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "游戏",
+      "evidence_span": "以游戏为代表的互联网增值业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能硬件产品",
+      "evidence_span": "智能硬件产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "360企业安全云",
+      "evidence_span": "360企业安全云"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SaaS商店",
+      "evidence_span": "SaaS商店"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "360视觉云",
+      "evidence_span": "公司发布360视觉云产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "360新搜索",
+      "evidence_span": "360新搜索"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字助理",
+      "evidence_span": "数字助理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "苏打办公",
+      "evidence_span": "苏打办公"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能营销",
+      "evidence_span": "智能营销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全大脑整体解决方案",
+      "evidence_span": "安全大脑整体解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云查杀技术",
+      "evidence_span": "全球首创云查杀技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "安全大数据",
+      "evidence_span": "收获全球最大规模的安全大数据"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全网视野",
+      "evidence_span": "建立全网视野"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "看见高级威胁能力",
+      "evidence_span": "炼就“看见”全球和全网安全态势的能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大语言模型",
+      "evidence_span": "在大语言模型发展上坚定“两翼齐飞”的战略"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI框架安全监测平台",
+      "evidence_span": "AI框架安全监测平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中央部委",
+      "evidence_span": "90%的中央部委"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "央企",
+      "evidence_span": "80%央企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型金融机构",
+      "evidence_span": "95%大型金融机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "运营商",
+      "evidence_span": "100%的运营商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中小企业",
+      "evidence_span": "上百万家中小企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安机关",
+      "evidence_span": "全国公安机关"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字安全",
+      "evidence_span": "数字安全一个都不能少"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "解决国家“看见”高级威胁的卡脖子难题"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字安全",
+        "evidence_span": "三六零网络安全为核"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "政企安全",
+        "evidence_span": "发力政企扩展新边界"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "互联网业务",
+        "evidence_span": "互联网业务是公司“互联网+安全”双轮驱动商业模式的重要组成部分"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能硬件",
+        "evidence_span": "智能硬件业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "人工智能",
+        "evidence_span": "公司也在人工智能等新兴领域持续布局"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国最大的互联网安全公司",
+        "evidence_span": "中国最大的互联网安全公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大的数字安全公司",
+        "evidence_span": "作为全球最大的数字安全公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字安全领军企业",
+        "evidence_span": "360作为中国数字安全的领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "搜索引擎公司",
+        "evidence_span": "拥有搜索引擎的公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PC安全产品",
+        "evidence_span": "PC安全产品市场持续排名第一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "360浏览器",
+        "evidence_span": "360浏览器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "360安全卫士",
+        "evidence_span": "360安全卫士"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "360搜索",
+        "evidence_span": "360搜索"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "360杀毒",
+        "evidence_span": "360杀毒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "互联网广告及服务",
+        "evidence_span": "互联网广告及服务业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "游戏",
+        "evidence_span": "以游戏为代表的互联网增值业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能硬件产品",
+        "evidence_span": "智能硬件产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "360企业安全云",
+        "evidence_span": "360企业安全云"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SaaS商店",
+        "evidence_span": "SaaS商店"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "360视觉云",
+        "evidence_span": "公司发布360视觉云产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "360新搜索",
+        "evidence_span": "360新搜索"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字助理",
+        "evidence_span": "数字助理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "苏打办公",
+        "evidence_span": "苏打办公"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能营销",
+        "evidence_span": "智能营销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全大脑整体解决方案",
+        "evidence_span": "安全大脑整体解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云查杀技术",
+        "evidence_span": "全球首创云查杀技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "安全大数据",
+        "evidence_span": "收获全球最大规模的安全大数据"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全网视野",
+        "evidence_span": "建立全网视野"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "看见高级威胁能力",
+        "evidence_span": "炼就“看见”全球和全网安全态势的能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大语言模型",
+        "evidence_span": "在大语言模型发展上坚定“两翼齐飞”的战略"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI框架安全监测平台",
+        "evidence_span": "AI框架安全监测平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中央部委",
+        "evidence_span": "90%的中央部委"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "央企",
+        "evidence_span": "80%央企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型金融机构",
+        "evidence_span": "95%大型金融机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "运营商",
+        "evidence_span": "100%的运营商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中小企业",
+        "evidence_span": "上百万家中小企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安机关",
+        "evidence_span": "全国公安机关"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字安全",
+        "evidence_span": "数字安全一个都不能少"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "解决国家“看见”高级威胁的卡脖子难题"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:22:22"
+}

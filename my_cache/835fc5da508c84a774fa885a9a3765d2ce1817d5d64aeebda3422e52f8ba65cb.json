@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "706ae3eff862", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含全球加强网络安全措施的静态知识（如指数报告内容），但混合了联合国报告发布的事件信息，需进一步裁决。"}}

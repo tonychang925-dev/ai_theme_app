@@ -1,0 +1,379 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "钢制车轮业务",
+      "evidence_span": "公司主要业务及经营模式具体情况如下：1、钢制车轮业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车联网运营服务",
+      "evidence_span": "2、车联网运营服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车钢制车轮上市企业",
+      "evidence_span": "作为国内首家钢制车轮上市企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "车联网服务运营商",
+      "evidence_span": "已成为国内领先的车联网服务运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "解决方案提供商",
+      "evidence_span": "已成为国内领先的...解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乘用车仿铝车轮",
+      "evidence_span": "主要产品包括乘用车仿铝车轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乘用车车轮",
+      "evidence_span": "乘用车车轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车车轮",
+      "evidence_span": "新能源汽车车轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商用车无内胎轻量化车轮",
+      "evidence_span": "商用车无内胎轻量化车轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻卡无内胎车轮",
+      "evidence_span": "轻卡无内胎车轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻卡型钢车轮",
+      "evidence_span": "轻卡型钢车轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商用车型钢车轮",
+      "evidence_span": "商用车型钢车轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农林机械车轮",
+      "evidence_span": "农林机械车轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "联络中心（TSP）服务",
+      "evidence_span": "联络中心（TSP）服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车联网解决方案",
+      "evidence_span": "研发、设计个性化的车联网解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家级汽车轮辋检测中心",
+      "evidence_span": "公司现拥有国家级汽车轮辋检测中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "山东省省级技术中心",
+      "evidence_span": "山东省省级技术中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "山东省博士后创新实践基地",
+      "evidence_span": "山东省博士后创新实践基地"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "兴民—北航交通车轮先进技术研发中心",
+      "evidence_span": "兴民—北航交通车轮先进技术研发中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "首钢—兴民钢圈联合实验室",
+      "evidence_span": "首钢—兴民钢圈联合实验室"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家级第三方汽车轮辋检测资质",
+      "evidence_span": "具有国家级第三方汽车轮辋检测资质"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福田汽车",
+      "evidence_span": "目前是福田汽车...的一级供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安汽车",
+      "evidence_span": "长安汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京汽车",
+      "evidence_span": "北京汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福特/林肯",
+      "evidence_span": "九五智驾与福特/林肯...保持良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保时捷",
+      "evidence_span": "保时捷"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本田",
+      "evidence_span": "本田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马/劳斯莱斯",
+      "evidence_span": "宝马/劳斯莱斯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宾利",
+      "evidence_span": "宾利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽",
+      "evidence_span": "北汽"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能网联汽车",
+      "evidence_span": "布局智能网联汽车硬件及数据服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "车联网",
+      "evidence_span": "持续发力车联网"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "大数据服务平台",
+      "evidence_span": "打造大数据服务平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能控制",
+      "evidence_span": "全面切入...智能控制领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源车联网平台",
+      "evidence_span": "深度布局新能源车联网平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国家大数据战略",
+      "evidence_span": "受益国家大数据战略"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "钢制车轮业务",
+        "evidence_span": "公司主要业务及经营模式具体情况如下：1、钢制车轮业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车联网运营服务",
+        "evidence_span": "2、车联网运营服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车钢制车轮上市企业",
+        "evidence_span": "作为国内首家钢制车轮上市企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "车联网服务运营商",
+        "evidence_span": "已成为国内领先的车联网服务运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "解决方案提供商",
+        "evidence_span": "已成为国内领先的...解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乘用车仿铝车轮",
+        "evidence_span": "主要产品包括乘用车仿铝车轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乘用车车轮",
+        "evidence_span": "乘用车车轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车车轮",
+        "evidence_span": "新能源汽车车轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商用车无内胎轻量化车轮",
+        "evidence_span": "商用车无内胎轻量化车轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻卡无内胎车轮",
+        "evidence_span": "轻卡无内胎车轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻卡型钢车轮",
+        "evidence_span": "轻卡型钢车轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商用车型钢车轮",
+        "evidence_span": "商用车型钢车轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农林机械车轮",
+        "evidence_span": "农林机械车轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "联络中心（TSP）服务",
+        "evidence_span": "联络中心（TSP）服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车联网解决方案",
+        "evidence_span": "研发、设计个性化的车联网解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家级汽车轮辋检测中心",
+        "evidence_span": "公司现拥有国家级汽车轮辋检测中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "山东省省级技术中心",
+        "evidence_span": "山东省省级技术中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "山东省博士后创新实践基地",
+        "evidence_span": "山东省博士后创新实践基地"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "兴民—北航交通车轮先进技术研发中心",
+        "evidence_span": "兴民—北航交通车轮先进技术研发中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "首钢—兴民钢圈联合实验室",
+        "evidence_span": "首钢—兴民钢圈联合实验室"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家级第三方汽车轮辋检测资质",
+        "evidence_span": "具有国家级第三方汽车轮辋检测资质"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福田汽车",
+        "evidence_span": "目前是福田汽车...的一级供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安汽车",
+        "evidence_span": "长安汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京汽车",
+        "evidence_span": "北京汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福特/林肯",
+        "evidence_span": "九五智驾与福特/林肯...保持良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保时捷",
+        "evidence_span": "保时捷"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本田",
+        "evidence_span": "本田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马/劳斯莱斯",
+        "evidence_span": "宝马/劳斯莱斯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宾利",
+        "evidence_span": "宾利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽",
+        "evidence_span": "北汽"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能网联汽车",
+        "evidence_span": "布局智能网联汽车硬件及数据服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "车联网",
+        "evidence_span": "持续发力车联网"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "大数据服务平台",
+        "evidence_span": "打造大数据服务平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能控制",
+        "evidence_span": "全面切入...智能控制领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源车联网平台",
+        "evidence_span": "深度布局新能源车联网平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国家大数据战略",
+        "evidence_span": "受益国家大数据战略"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:11:33"
+}

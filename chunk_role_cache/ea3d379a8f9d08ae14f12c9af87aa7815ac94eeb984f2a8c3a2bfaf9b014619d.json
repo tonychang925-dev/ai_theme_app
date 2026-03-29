@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T12:19:46", "result": {"chunk_id": "400638509b69", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述广东省政府印发政策文件的事件，但其中提到了鼓励发展集成电路设计、制造、封装测试、材料等半导体关键环节，这提供了关于半导体产业链环节的静态知识，尽管混合了政策发布信息。"}}

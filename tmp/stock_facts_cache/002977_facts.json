@@ -1,0 +1,204 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高波段",
+      "evidence_span": "公司是一家专业从事高波段、大功率固态微波前端研发、生产和销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大功率固态微波前端研发",
+      "evidence_span": "公司是一家专业从事高波段、大功率固态微波前端研发、生产和销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大功率固态微波前端生产",
+      "evidence_span": "公司是一家专业从事高波段、大功率固态微波前端研发、生产和销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大功率固态微波前端销售",
+      "evidence_span": "公司是一家专业从事高波段、大功率固态微波前端研发、生产和销售的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高波段、大功率固态微波前端产品研发、生产、销售企业",
+      "evidence_span": "公司是国内较早专注于高波段、大功率固态微波前端产品的研发、生产、销售以及进行产业化推广应用的民营企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国防军工科研生产单位关键部件、分系统配套供应商",
+      "evidence_span": "公司自成立以来一直为国防军工科研生产单位提供关键部件、分系统配套业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "弹载固态发射机",
+      "evidence_span": "公司当前主要代表产品为弹载固态发射机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型相控阵产品",
+      "evidence_span": "公司当前主要代表产品为弹载固态发射机、新型相控阵产品及其他固态发射机产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他固态发射机产品",
+      "evidence_span": "公司当前主要代表产品为弹载固态发射机、新型相控阵产品及其他固态发射机产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空间合成技术",
+      "evidence_span": "公司拥有空间合成技术、高速脉冲调制技术、大功率发射组件散热技术、新型相控阵等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速脉冲调制技术",
+      "evidence_span": "公司拥有空间合成技术、高速脉冲调制技术、大功率发射组件散热技术、新型相控阵等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大功率发射组件散热技术",
+      "evidence_span": "公司拥有空间合成技术、高速脉冲调制技术、大功率发射组件散热技术、新型相控阵等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新型相控阵技术",
+      "evidence_span": "公司拥有空间合成技术、高速脉冲调制技术、大功率发射组件散热技术、新型相控阵等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速砷化镓发射机调制器技术",
+      "evidence_span": "高速砷化镓发射机调制器技术、高速氮化镓发射机调制器技术、带隔离连续波及脉冲调制器技术、大型相控阵天线阵仿真设计技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速氮化镓发射机调制器技术",
+      "evidence_span": "高速砷化镓发射机调制器技术、高速氮化镓发射机调制器技术、带隔离连续波及脉冲调制器技术、大型相控阵天线阵仿真设计技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "带隔离连续波及脉冲调制器技术",
+      "evidence_span": "高速砷化镓发射机调制器技术、高速氮化镓发射机调制器技术、带隔离连续波及脉冲调制器技术、大型相控阵天线阵仿真设计技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大型相控阵天线阵仿真设计技术",
+      "evidence_span": "高速砷化镓发射机调制器技术、高速氮化镓发射机调制器技术、带隔离连续波及脉冲调制器技术、大型相控阵天线阵仿真设计技术等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国防军工科研生产单位",
+      "evidence_span": "公司自成立以来一直为国防军工科研生产单位提供关键部件、分系统配套业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国有大型军工单位",
+      "evidence_span": "公司目前主营的弹载固态发射机主要客户一为国有大型军工单位"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "在精确制导、侦测、卫星通信等武器装备的性能提升、国产化、航天工程应用等方面做出了重大贡献"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高波段、大功率固态微波前端研发",
+        "evidence_span": "公司是一家专业从事高波段、大功率固态微波前端研发、生产和销售的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高波段、大功率固态微波前端生产",
+        "evidence_span": "公司是一家专业从事高波段、大功率固态微波前端研发、生产和销售的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高波段、大功率固态微波前端销售",
+        "evidence_span": "公司是一家专业从事高波段、大功率固态微波前端研发、生产和销售的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高波段、大功率固态微波前端产品研发、生产、销售企业",
+        "evidence_span": "公司是国内较早专注于高波段、大功率固态微波前端产品的研发、生产、销售以及进行产业化推广应用的民营企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国防军工科研生产单位关键部件、分系统配套供应商",
+        "evidence_span": "公司自成立以来一直为国防军工科研生产单位提供关键部件、分系统配套业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "弹载固态发射机",
+        "evidence_span": "公司当前主要代表产品为弹载固态发射机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型相控阵产品",
+        "evidence_span": "公司当前主要代表产品为弹载固态发射机、新型相控阵产品及其他固态发射机产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他固态发射机产品",
+        "evidence_span": "公司当前主要代表产品为弹载固态发射机、新型相控阵产品及其他固态发射机产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空间合成技术",
+        "evidence_span": "公司拥有空间合成技术、高速脉冲调制技术、大功率发射组件散热技术、新型相控阵等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速脉冲调制技术",
+        "evidence_span": "公司拥有空间合成技术、高速脉冲调制技术、大功率发射组件散热技术、新型相控阵等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大功率发射组件散热技术",
+        "evidence_span": "公司拥有空间合成技术、高速脉冲调制技术、大功率发射组件散热技术、新型相控阵等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新型相控阵技术",
+        "evidence_span": "公司拥有空间合成技术、高速脉冲调制技术、大功率发射组件散热技术、新型相控阵等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速砷化镓发射机调制器技术",
+        "evidence_span": "高速砷化镓发射机调制器技术、高速氮化镓发射机调制器技术、带隔离连续波及脉冲调制器技术、大型相控阵天线阵仿真设计技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速氮化镓发射机调制器技术",
+        "evidence_span": "高速砷化镓发射机调制器技术、高速氮化镓发射机调制器技术、带隔离连续波及脉冲调制器技术、大型相控阵天线阵仿真设计技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "带隔离连续波及脉冲调制器技术",
+        "evidence_span": "高速砷化镓发射机调制器技术、高速氮化镓发射机调制器技术、带隔离连续波及脉冲调制器技术、大型相控阵天线阵仿真设计技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大型相控阵天线阵仿真设计技术",
+        "evidence_span": "高速砷化镓发射机调制器技术、高速氮化镓发射机调制器技术、带隔离连续波及脉冲调制器技术、大型相控阵天线阵仿真设计技术等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国防军工科研生产单位",
+        "evidence_span": "公司自成立以来一直为国防军工科研生产单位提供关键部件、分系统配套业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国有大型军工单位",
+        "evidence_span": "公司目前主营的弹载固态发射机主要客户一为国有大型军工单位"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "在精确制导、侦测、卫星通信等武器装备的性能提升、国产化、航天工程应用等方面做出了重大贡献"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:04:39"
+}

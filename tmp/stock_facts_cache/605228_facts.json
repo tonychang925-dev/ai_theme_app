@@ -1,0 +1,784 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车非金属部件",
+      "evidence_span": "公司主营业务为汽车非金属部件及模具的研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "模具的研发",
+      "evidence_span": "公司主营业务为汽车非金属部件及模具的研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "模具的生产",
+      "evidence_span": "公司主营业务为汽车非金属部件及模具的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "模具的销售",
+      "evidence_span": "公司主营业务为汽车非金属部件及模具的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车非金属零部件及模具行业企业",
+      "evidence_span": "在汽车非金属零部件及模具行业具有较高的市场知名度和行业地位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "一级供应商",
+      "evidence_span": "知名整车厂的一级供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "合格供应商",
+      "evidence_span": "国内外知名汽车零部件企业的合格供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车动力系统零部件",
+      "evidence_span": "主要产品包括汽车动力系统零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "饰件系统零部件",
+      "evidence_span": "主要产品包括汽车动力系统零部件、饰件系统零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模具类产品",
+      "evidence_span": "主要产品包括汽车动力系统零部件、饰件系统零部件和模具类产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "进气系统",
+      "evidence_span": "动力系统零部件包括进气系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "润滑系统",
+      "evidence_span": "动力系统零部件包括进气系统、润滑系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "正时系统",
+      "evidence_span": "动力系统零部件包括进气系统、润滑系统、正时系统等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门护板类",
+      "evidence_span": "饰件系统零部件包括门护板类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仪表板类",
+      "evidence_span": "饰件系统零部件包括门护板类、仪表板类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车身饰件",
+      "evidence_span": "饰件系统零部件包括门护板类、仪表板类、车身饰件等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PC车窗",
+      "evidence_span": "生产的PC车窗可替代石英玻璃材质产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车智能进入系统产品",
+      "evidence_span": "开发汽车智能进入系统产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "进气歧管",
+      "evidence_span": "动力系统零部件（如进气歧管）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油底壳",
+      "evidence_span": "先后推出了进气歧管、油底壳"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集油缓冲器",
+      "evidence_span": "先后推出了进气歧管、油底壳、集油缓冲器等塑化改造产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光学镜片",
+      "evidence_span": "光学镜片生产基地建设项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "反射镜",
+      "evidence_span": "年产1030万套反射镜及透镜等光学镜片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "透镜",
+      "evidence_span": "年产1030万套反射镜及透镜等光学镜片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HUD反射镜",
+      "evidence_span": "公司生产的HUD反射镜产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车HUD自由曲面反射镜",
+      "evidence_span": "汽车HUD自由曲面反射镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光雷达透镜",
+      "evidence_span": "激光雷达透镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "毫米波雷达透镜",
+      "evidence_span": "毫米波雷达透镜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "注塑成型工艺",
+      "evidence_span": "注塑成型工艺成熟"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "转盘旋转双色注塑",
+      "evidence_span": "拥有转盘旋转双色"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水平对射双色注塑",
+      "evidence_span": "水平对射等在内的多类型双色注塑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低压注塑",
+      "evidence_span": "低压注塑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "气辅注塑",
+      "evidence_span": "气辅注塑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高光注塑",
+      "evidence_span": "高光注塑等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "热板焊接",
+      "evidence_span": "热板焊接"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "热铆焊接",
+      "evidence_span": "热铆焊接"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超声波焊接",
+      "evidence_span": "超声波焊接"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光焊接",
+      "evidence_span": "激光焊接等先进焊接工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PC表面硬质光学级涂层技术",
+      "evidence_span": "开发出PC表面硬质光学级涂层技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "同步开发能力",
+      "evidence_span": "具有同步开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模块化供货能力",
+      "evidence_span": "模块化供货能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "支付级双目3D人脸识别算法",
+      "evidence_span": "支付级双目3D人脸识别算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SOC车规级芯片",
+      "evidence_span": "SOC车规级芯片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电吸电开智能门锁技术",
+      "evidence_span": "电吸电开智能门锁技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽车智能进入系统技术",
+      "evidence_span": "研发汽车智能进入系统技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氢能流体管理系统技术",
+      "evidence_span": "氢能流体管理系统技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "小功率电机电控系统",
+      "evidence_span": "小功率电机电控系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用",
+      "evidence_span": "上汽通用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽-大众",
+      "evidence_span": "一汽-大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用五菱",
+      "evidence_span": "上汽通用五菱"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日产",
+      "evidence_span": "日产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "宝马"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来汽车",
+      "evidence_span": "蔚来汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三菱",
+      "evidence_span": "三菱"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京现代",
+      "evidence_span": "北京现代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽大众",
+      "evidence_span": "上汽大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利控股",
+      "evidence_span": "吉利控股"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽集团",
+      "evidence_span": "广汽集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞捷豹路虎",
+      "evidence_span": "奇瑞捷豹路虎"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风公司",
+      "evidence_span": "东风公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城汽车",
+      "evidence_span": "长城汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "延锋汽车饰件",
+      "evidence_span": "延锋汽车饰件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "佛吉亚",
+      "evidence_span": "佛吉亚"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "李尔",
+      "evidence_span": "李尔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恩坦华",
+      "evidence_span": "恩坦华"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "理想汽车",
+      "evidence_span": "理想汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风岚图",
+      "evidence_span": "东风岚图"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰田",
+      "evidence_span": "丰田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "stellantis",
+      "evidence_span": "stellantis"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "A客户",
+      "evidence_span": "A客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车电动化",
+      "evidence_span": "围绕汽车电动化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车智能化",
+      "evidence_span": "汽车智能化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车网联化",
+      "evidence_span": "网联化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车共享化",
+      "evidence_span": "共享化新四化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车轻量化",
+      "evidence_span": "汽车轻量化发展趋势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "以塑代钢",
+      "evidence_span": "以塑代钢"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "以塑代铝",
+      "evidence_span": "以塑代铝"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车",
+      "evidence_span": "积极开拓新能源汽车领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车非金属部件及模具的研发",
+        "evidence_span": "公司主营业务为汽车非金属部件及模具的研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车非金属部件及模具的生产",
+        "evidence_span": "公司主营业务为汽车非金属部件及模具的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车非金属部件及模具的销售",
+        "evidence_span": "公司主营业务为汽车非金属部件及模具的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车非金属零部件及模具行业企业",
+        "evidence_span": "在汽车非金属零部件及模具行业具有较高的市场知名度和行业地位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "一级供应商",
+        "evidence_span": "知名整车厂的一级供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "合格供应商",
+        "evidence_span": "国内外知名汽车零部件企业的合格供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车动力系统零部件",
+        "evidence_span": "主要产品包括汽车动力系统零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "饰件系统零部件",
+        "evidence_span": "主要产品包括汽车动力系统零部件、饰件系统零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模具类产品",
+        "evidence_span": "主要产品包括汽车动力系统零部件、饰件系统零部件和模具类产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "进气系统",
+        "evidence_span": "动力系统零部件包括进气系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "润滑系统",
+        "evidence_span": "动力系统零部件包括进气系统、润滑系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "正时系统",
+        "evidence_span": "动力系统零部件包括进气系统、润滑系统、正时系统等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门护板类",
+        "evidence_span": "饰件系统零部件包括门护板类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仪表板类",
+        "evidence_span": "饰件系统零部件包括门护板类、仪表板类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车身饰件",
+        "evidence_span": "饰件系统零部件包括门护板类、仪表板类、车身饰件等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PC车窗",
+        "evidence_span": "生产的PC车窗可替代石英玻璃材质产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车智能进入系统产品",
+        "evidence_span": "开发汽车智能进入系统产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "进气歧管",
+        "evidence_span": "动力系统零部件（如进气歧管）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油底壳",
+        "evidence_span": "先后推出了进气歧管、油底壳"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集油缓冲器",
+        "evidence_span": "先后推出了进气歧管、油底壳、集油缓冲器等塑化改造产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光学镜片",
+        "evidence_span": "光学镜片生产基地建设项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "反射镜",
+        "evidence_span": "年产1030万套反射镜及透镜等光学镜片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "透镜",
+        "evidence_span": "年产1030万套反射镜及透镜等光学镜片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HUD反射镜",
+        "evidence_span": "公司生产的HUD反射镜产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车HUD自由曲面反射镜",
+        "evidence_span": "汽车HUD自由曲面反射镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光雷达透镜",
+        "evidence_span": "激光雷达透镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "毫米波雷达透镜",
+        "evidence_span": "毫米波雷达透镜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "注塑成型工艺",
+        "evidence_span": "注塑成型工艺成熟"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "转盘旋转双色注塑",
+        "evidence_span": "拥有转盘旋转双色"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水平对射双色注塑",
+        "evidence_span": "水平对射等在内的多类型双色注塑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低压注塑",
+        "evidence_span": "低压注塑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "气辅注塑",
+        "evidence_span": "气辅注塑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高光注塑",
+        "evidence_span": "高光注塑等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "热板焊接",
+        "evidence_span": "热板焊接"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "热铆焊接",
+        "evidence_span": "热铆焊接"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超声波焊接",
+        "evidence_span": "超声波焊接"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光焊接",
+        "evidence_span": "激光焊接等先进焊接工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PC表面硬质光学级涂层技术",
+        "evidence_span": "开发出PC表面硬质光学级涂层技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "同步开发能力",
+        "evidence_span": "具有同步开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模块化供货能力",
+        "evidence_span": "模块化供货能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "支付级双目3D人脸识别算法",
+        "evidence_span": "支付级双目3D人脸识别算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SOC车规级芯片",
+        "evidence_span": "SOC车规级芯片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电吸电开智能门锁技术",
+        "evidence_span": "电吸电开智能门锁技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽车智能进入系统技术",
+        "evidence_span": "研发汽车智能进入系统技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氢能流体管理系统技术",
+        "evidence_span": "氢能流体管理系统技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "小功率电机电控系统",
+        "evidence_span": "小功率电机电控系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用",
+        "evidence_span": "上汽通用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽-大众",
+        "evidence_span": "一汽-大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用五菱",
+        "evidence_span": "上汽通用五菱"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日产",
+        "evidence_span": "日产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "宝马"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来汽车",
+        "evidence_span": "蔚来汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三菱",
+        "evidence_span": "三菱"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京现代",
+        "evidence_span": "北京现代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽大众",
+        "evidence_span": "上汽大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利控股",
+        "evidence_span": "吉利控股"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽集团",
+        "evidence_span": "广汽集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞捷豹路虎",
+        "evidence_span": "奇瑞捷豹路虎"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风公司",
+        "evidence_span": "东风公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城汽车",
+        "evidence_span": "长城汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "延锋汽车饰件",
+        "evidence_span": "延锋汽车饰件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "佛吉亚",
+        "evidence_span": "佛吉亚"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "李尔",
+        "evidence_span": "李尔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恩坦华",
+        "evidence_span": "恩坦华"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "理想汽车",
+        "evidence_span": "理想汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风岚图",
+        "evidence_span": "东风岚图"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰田",
+        "evidence_span": "丰田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "stellantis",
+        "evidence_span": "stellantis"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "A客户",
+        "evidence_span": "A客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车电动化",
+        "evidence_span": "围绕汽车电动化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车智能化",
+        "evidence_span": "汽车智能化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车网联化",
+        "evidence_span": "网联化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车共享化",
+        "evidence_span": "共享化新四化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车轻量化",
+        "evidence_span": "汽车轻量化发展趋势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "以塑代钢",
+        "evidence_span": "以塑代钢"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "以塑代铝",
+        "evidence_span": "以塑代铝"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车",
+        "evidence_span": "积极开拓新能源汽车领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:12:29"
+}

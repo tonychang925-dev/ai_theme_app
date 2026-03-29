@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "9a19692dcdbf", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落混合了事件（中国电子展开幕、分论坛发言）和知识（引用统计数据如上半年销售收入增长、全年预测、市场占有率），边界不清，但包含值得沉淀的行业增长数据。"}}

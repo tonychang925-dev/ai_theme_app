@@ -1,0 +1,554 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "被动电子元器件",
+      "evidence_span": "主营业务被动电子元器件和半导体分立器件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体分立器件",
+      "evidence_span": "主营业务被动电子元器件和半导体分立器件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型电子元器件",
+      "evidence_span": "高压真空开关管为代表的新型电子元器件等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用电子元器件大本营",
+      "evidence_span": "振华科技军用电子元器件大本营"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特种电子元器件龙头",
+      "evidence_span": "特种电子元器件龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用片式电阻器龙头企业",
+      "evidence_span": "振华云科内军用片式电阻器龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用 IGBT 主要供应商",
+      "evidence_span": "振华科技是军用 IGBT 主要供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用钽电容核心供应商",
+      "evidence_span": "振华新云为我国军用钽电容核心供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用片式电感器的主力生产厂家",
+      "evidence_span": "振华富是国内军用片式电感器的主力生产厂家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "片式钽电容器",
+      "evidence_span": "片式钽电容器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "片式电阻器",
+      "evidence_span": "片式电阻器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "片式电感器",
+      "evidence_span": "片式电感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "片式二极管",
+      "evidence_span": "片式二极管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三极管",
+      "evidence_span": "三极管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "厚膜混合集成电路",
+      "evidence_span": "厚膜混合集成电路"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压真空开关管",
+      "evidence_span": "高压真空开关管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝电容器",
+      "evidence_span": "铝电容器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "真空开关管",
+      "evidence_span": "真空开关管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钽电容器",
+      "evidence_span": "钽电容器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "薄膜电容器",
+      "evidence_span": "薄膜电容器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "瓷介电容器",
+      "evidence_span": "瓷介电容器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种变压器",
+      "evidence_span": "特种变压器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有机聚合物钽电容",
+      "evidence_span": "有机聚合物钽电容"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压高 Q 射频陶瓷电容",
+      "evidence_span": "高压高 Q 射频陶瓷电容"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芯片电容",
+      "evidence_span": "芯片电容"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磁珠",
+      "evidence_span": "磁珠"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LTCC 滤波器",
+      "evidence_span": "LTCC 滤波器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电源滤波器",
+      "evidence_span": "电源滤波器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "变压器",
+      "evidence_span": "变压器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频片式陷波器",
+      "evidence_span": "射频片式陷波器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型磁性元件",
+      "evidence_span": "新型磁性元件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IGBT 芯片",
+      "evidence_span": "IGBT 芯片产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "片式厚膜固定电阻器",
+      "evidence_span": "片式厚膜固定电阻器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子材料",
+      "evidence_span": "电子材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保护元件",
+      "evidence_span": "保护元件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陶瓷材料",
+      "evidence_span": "陶瓷材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阻容元件",
+      "evidence_span": "阻容元件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双 85（温湿度）系列片式钽电容器关键技术",
+      "evidence_span": "攻克双 85（温湿度）系列片式钽电容器等产品关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "第 6 代 IGBT 产品国产化",
+      "evidence_span": "已实现第 6 代 IGBT 产品国产化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "650V/50A IGBT 产品小批量量产",
+      "evidence_span": "650V/50A和 1200V/100A 产品已实现小批量量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "1200V/100A IGBT 产品小批量量产",
+      "evidence_span": "650V/50A和 1200V/100A 产品已实现小批量量产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军方",
+      "evidence_span": "供应军方的资质"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航空",
+      "evidence_span": "应用于航空、航天、舰船、兵器、电子对抗等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航天",
+      "evidence_span": "应用于航空、航天、舰船、兵器、电子对抗等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "舰船",
+      "evidence_span": "应用于航空、航天、舰船、兵器、电子对抗等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "兵器",
+      "evidence_span": "应用于航空、航天、舰船、兵器、电子对抗等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电子对抗",
+      "evidence_span": "应用于航空、航天、舰船、兵器、电子对抗等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "飞机",
+      "evidence_span": "应用于飞机、导弹、卫星、神舟飞船、月球探测器等产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "导弹",
+      "evidence_span": "应用于飞机、导弹、卫星、神舟飞船、月球探测器等产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "卫星",
+      "evidence_span": "应用于飞机、导弹、卫星、神舟飞船、月球探测器等产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "神舟飞船",
+      "evidence_span": "应用于飞机、导弹、卫星、神舟飞船、月球探测器等产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "月球探测器",
+      "evidence_span": "应用于飞机、导弹、卫星、神舟飞船、月球探测器等产品"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "目前逐步开始国产替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自主可控",
+      "evidence_span": "勇当自主可控科创先锋"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "被动电子元器件",
+        "evidence_span": "主营业务被动电子元器件和半导体分立器件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体分立器件",
+        "evidence_span": "主营业务被动电子元器件和半导体分立器件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型电子元器件",
+        "evidence_span": "高压真空开关管为代表的新型电子元器件等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用电子元器件大本营",
+        "evidence_span": "振华科技军用电子元器件大本营"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特种电子元器件龙头",
+        "evidence_span": "特种电子元器件龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用片式电阻器龙头企业",
+        "evidence_span": "振华云科内军用片式电阻器龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用 IGBT 主要供应商",
+        "evidence_span": "振华科技是军用 IGBT 主要供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用钽电容核心供应商",
+        "evidence_span": "振华新云为我国军用钽电容核心供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用片式电感器的主力生产厂家",
+        "evidence_span": "振华富是国内军用片式电感器的主力生产厂家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "片式钽电容器",
+        "evidence_span": "片式钽电容器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "片式电阻器",
+        "evidence_span": "片式电阻器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "片式电感器",
+        "evidence_span": "片式电感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "片式二极管",
+        "evidence_span": "片式二极管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三极管",
+        "evidence_span": "三极管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "厚膜混合集成电路",
+        "evidence_span": "厚膜混合集成电路"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压真空开关管",
+        "evidence_span": "高压真空开关管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝电容器",
+        "evidence_span": "铝电容器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "真空开关管",
+        "evidence_span": "真空开关管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钽电容器",
+        "evidence_span": "钽电容器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝电容器",
+        "evidence_span": "铝电容器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "薄膜电容器",
+        "evidence_span": "薄膜电容器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "瓷介电容器",
+        "evidence_span": "瓷介电容器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种变压器",
+        "evidence_span": "特种变压器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有机聚合物钽电容",
+        "evidence_span": "有机聚合物钽电容"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压高 Q 射频陶瓷电容",
+        "evidence_span": "高压高 Q 射频陶瓷电容"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芯片电容",
+        "evidence_span": "芯片电容"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磁珠",
+        "evidence_span": "磁珠"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LTCC 滤波器",
+        "evidence_span": "LTCC 滤波器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电源滤波器",
+        "evidence_span": "电源滤波器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "变压器",
+        "evidence_span": "变压器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频片式陷波器",
+        "evidence_span": "射频片式陷波器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型磁性元件",
+        "evidence_span": "新型磁性元件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IGBT 芯片",
+        "evidence_span": "IGBT 芯片产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "片式厚膜固定电阻器",
+        "evidence_span": "片式厚膜固定电阻器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子材料",
+        "evidence_span": "电子材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保护元件",
+        "evidence_span": "保护元件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陶瓷材料",
+        "evidence_span": "陶瓷材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阻容元件",
+        "evidence_span": "阻容元件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双 85（温湿度）系列片式钽电容器关键技术",
+        "evidence_span": "攻克双 85（温湿度）系列片式钽电容器等产品关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "第 6 代 IGBT 产品国产化",
+        "evidence_span": "已实现第 6 代 IGBT 产品国产化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "650V/50A IGBT 产品小批量量产",
+        "evidence_span": "650V/50A和 1200V/100A 产品已实现小批量量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "1200V/100A IGBT 产品小批量量产",
+        "evidence_span": "650V/50A和 1200V/100A 产品已实现小批量量产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军方",
+        "evidence_span": "供应军方的资质"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航空",
+        "evidence_span": "应用于航空、航天、舰船、兵器、电子对抗等"
+      },
+      {
+        "fact_type": "customer",
+        "evidence_span": "应用于航空、航天、舰船、兵器、电子对抗等",
+        "fact_value": "航天"
+      },
+      {
+        "fact_type": "customer",
+        "evidence_span": "应用于航空、航天、舰船、兵器、电子对抗等",
+        "fact_value": "舰船"
+      },
+      {
+        "fact_type": "customer",
+        "evidence_span": "应用于航空、航天、舰船、兵器、电子对抗等",
+        "fact_value": "兵器"
+      },
+      {
+        "fact_type": "customer",
+        "evidence_span": "应用于航空、航天、舰船、兵器、电子对抗等",
+        "fact_value": "电子对抗"
+      },
+      {
+        "fact_type": "customer",
+        "evidence_span": "应用于飞机、导弹、卫星、神舟飞船、月球探测器等产品",
+        "fact_value": "飞机"
+      },
+      {
+        "fact_type": "customer",
+        "evidence_span": "应用于飞机、导弹、卫星、神舟飞船、月球探测器等产品",
+        "fact_value": "导弹"
+      },
+      {
+        "fact_type": "customer",
+        "evidence_span": "应用于飞机、导弹、卫星、神舟飞船、月球探测器等产品",
+        "fact_value": "卫星"
+      },
+      {
+        "fact_type": "customer",
+        "evidence_span": "应用于飞机、导弹、卫星、神舟飞船、月球探测器等产品",
+        "fact_value": "神舟飞船"
+      },
+      {
+        "fact_type": "customer",
+        "evidence_span": "应用于飞机、导弹、卫星、神舟飞船、月球探测器等产品",
+        "fact_value": "月球探测器"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "目前逐步开始国产替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自主可控",
+        "evidence_span": "勇当自主可控科创先锋"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:23:06"
+}

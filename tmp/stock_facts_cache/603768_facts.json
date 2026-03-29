@@ -1,0 +1,404 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车冲压",
+      "evidence_span": "公司主要产品为汽车冲压以及焊接零部件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "焊接零部件",
+      "evidence_span": "公司主要产品为汽车冲压以及焊接零部件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车身冲压",
+      "evidence_span": "公司汽车零部件业务主要分为车身冲压及焊接零部件、底盘冲压及焊接零部件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "底盘冲压",
+      "evidence_span": "公司汽车零部件业务主要分为车身冲压及焊接零部件、底盘冲压及焊接零部件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轻量化材料为核心的车身结构件",
+      "evidence_span": "公司未来 3-5 年经营主线拟逐步转型为以轻量化材料为核心的车身结构件和轻量化底盘业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轻量化底盘业务",
+      "evidence_span": "公司未来 3-5 年经营主线拟逐步转型为以轻量化材料为核心的车身结构件和轻量化底盘业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车冲压及焊接零部件专业生产厂商",
+      "evidence_span": "常青股份汽车冲压及焊接零部件专业生产厂商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驾驶室总成",
+      "evidence_span": "车身冲压具体包括：驾驶室总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发舱总成",
+      "evidence_span": "发舱总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "四门两盖总成",
+      "evidence_span": "四门两盖总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "侧围总成",
+      "evidence_span": "侧围总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ABC 柱总成",
+      "evidence_span": "ABC 柱总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轮罩总成",
+      "evidence_span": "轮罩总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "前围总成",
+      "evidence_span": "前围总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "顶盖总成",
+      "evidence_span": "顶盖总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "底板总成",
+      "evidence_span": "底板总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保险杠总成",
+      "evidence_span": "保险杠总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第一横梁总成",
+      "evidence_span": "底盘冲压具体包括：第一横梁总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发动机支撑梁总成",
+      "evidence_span": "发动机支撑梁总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三横梁总成",
+      "evidence_span": "第三横梁总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纵梁",
+      "evidence_span": "纵梁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纵梁加固板总成",
+      "evidence_span": "纵梁加固板总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第五横梁总成",
+      "evidence_span": "第五横梁总成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一体化压铸工艺",
+      "evidence_span": "公司技术中心深度研究一体化压铸工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "压铸铝合金成型工艺",
+      "evidence_span": "持续突破压铸、锻造、挤压三大铝合金成型工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锻造铝合金成型工艺",
+      "evidence_span": "持续突破压铸、锻造、挤压三大铝合金成型工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "挤压铝合金成型工艺",
+      "evidence_span": "持续突破压铸、锻造、挤压三大铝合金成型工艺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江淮",
+      "evidence_span": "2021 年前五大客户为江淮"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞",
+      "evidence_span": "奇瑞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "众合",
+      "evidence_span": "众合"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "戴姆勒",
+      "evidence_span": "戴姆勒"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江淮新能源",
+      "evidence_span": "主要的新能源汽车品牌包括江淮新能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪新能源",
+      "evidence_span": "比亚迪（唐新能源、宋 MAX、E3、秦新能源、汉新能源）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞新能源",
+      "evidence_span": "奇瑞新能源（大蚂蚁、艾瑞泽 E、星图追风）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合众",
+      "evidence_span": "合众（哪吒 V、哪吒 U、哪吒 NO1）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众安徽",
+      "evidence_span": "大众安徽和蔚来汽车进行接触洽谈"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来汽车",
+      "evidence_span": "大众安徽和蔚来汽车进行接触洽谈"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一体化压铸",
+      "evidence_span": "转型一体化压铸及轻量化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "轻量化",
+      "evidence_span": "转型一体化压铸及轻量化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车冲压及焊接零部件",
+        "evidence_span": "公司主要产品为汽车冲压以及焊接零部件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车身冲压及焊接零部件",
+        "evidence_span": "公司汽车零部件业务主要分为车身冲压及焊接零部件、底盘冲压及焊接零部件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "底盘冲压及焊接零部件",
+        "evidence_span": "公司汽车零部件业务主要分为车身冲压及焊接零部件、底盘冲压及焊接零部件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "轻量化材料为核心的车身结构件",
+        "evidence_span": "公司未来 3-5 年经营主线拟逐步转型为以轻量化材料为核心的车身结构件和轻量化底盘业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "轻量化底盘业务",
+        "evidence_span": "公司未来 3-5 年经营主线拟逐步转型为以轻量化材料为核心的车身结构件和轻量化底盘业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车冲压及焊接零部件专业生产厂商",
+        "evidence_span": "常青股份汽车冲压及焊接零部件专业生产厂商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驾驶室总成",
+        "evidence_span": "车身冲压具体包括：驾驶室总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发舱总成",
+        "evidence_span": "发舱总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "四门两盖总成",
+        "evidence_span": "四门两盖总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "侧围总成",
+        "evidence_span": "侧围总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ABC 柱总成",
+        "evidence_span": "ABC 柱总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轮罩总成",
+        "evidence_span": "轮罩总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "前围总成",
+        "evidence_span": "前围总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "顶盖总成",
+        "evidence_span": "顶盖总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "底板总成",
+        "evidence_span": "底板总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保险杠总成",
+        "evidence_span": "保险杠总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第一横梁总成",
+        "evidence_span": "底盘冲压具体包括：第一横梁总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发动机支撑梁总成",
+        "evidence_span": "发动机支撑梁总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三横梁总成",
+        "evidence_span": "第三横梁总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纵梁",
+        "evidence_span": "纵梁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纵梁加固板总成",
+        "evidence_span": "纵梁加固板总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第五横梁总成",
+        "evidence_span": "第五横梁总成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一体化压铸工艺",
+        "evidence_span": "公司技术中心深度研究一体化压铸工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "压铸铝合金成型工艺",
+        "evidence_span": "持续突破压铸、锻造、挤压三大铝合金成型工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锻造铝合金成型工艺",
+        "evidence_span": "持续突破压铸、锻造、挤压三大铝合金成型工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "挤压铝合金成型工艺",
+        "evidence_span": "持续突破压铸、锻造、挤压三大铝合金成型工艺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江淮",
+        "evidence_span": "2021 年前五大客户为江淮"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞",
+        "evidence_span": "奇瑞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "众合",
+        "evidence_span": "众合"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "戴姆勒",
+        "evidence_span": "戴姆勒"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江淮新能源",
+        "evidence_span": "主要的新能源汽车品牌包括江淮新能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪新能源",
+        "evidence_span": "比亚迪（唐新能源、宋 MAX、E3、秦新能源、汉新能源）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞新能源",
+        "evidence_span": "奇瑞新能源（大蚂蚁、艾瑞泽 E、星图追风）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合众",
+        "evidence_span": "合众（哪吒 V、哪吒 U、哪吒 NO1）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众安徽",
+        "evidence_span": "大众安徽和蔚来汽车进行接触洽谈"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来汽车",
+        "evidence_span": "大众安徽和蔚来汽车进行接触洽谈"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一体化压铸",
+        "evidence_span": "转型一体化压铸及轻量化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "轻量化",
+        "evidence_span": "转型一体化压铸及轻量化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:10:17"
+}

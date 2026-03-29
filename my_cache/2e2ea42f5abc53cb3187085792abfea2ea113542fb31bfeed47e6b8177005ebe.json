@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "274c3332061e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含事件信息（美国商务部修订条例、将实体列入清单），但也列出了涉及的半导体设备公司和技术领域（如涂胶显影、刻蚀、薄膜沉积等），这些是半导体设备产业链的静态知识，混合了事件，需要裁决以提取有价值知识。"}}

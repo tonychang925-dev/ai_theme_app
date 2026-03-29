@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "纤维素",
+      "evidence_span": "公司构建了以硝化棉系列产品为核心的纤维素及其衍生物产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其衍生物产业",
+      "evidence_span": "公司构建了以硝化棉系列产品为核心的纤维素及其衍生物产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保器材",
+      "evidence_span": "以活性炭为基础的环保器材及核生化防护装备制造产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "核生化防护装备制造产业",
+      "evidence_span": "以活性炭为基础的环保器材及核生化防护装备制造产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "渣浆泵制造产业",
+      "evidence_span": "以渣浆泵为核心的渣浆泵制造产业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "硝化棉制造商",
+      "evidence_span": "已成长为行业内产品型谱最全、产品延伸最完整的硝化棉制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "核生化防护企业",
+      "evidence_span": "防化装备研究院是国内唯一的核生化防护企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "防毒面具生产基地",
+      "evidence_span": "我国最大的防毒面具生产基地"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特种工业泵研发制造企业",
+      "evidence_span": "公司拥有40多年的特种工业泵研发和制造经验"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硝化棉产品",
+      "evidence_span": "硝化棉系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "活性炭产品",
+      "evidence_span": "活性炭产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "催化剂产品",
+      "evidence_span": "以活性炭为载体的催化剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防毒面具",
+      "evidence_span": "防毒面具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "渣浆泵",
+      "evidence_span": "渣浆泵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种工业泵",
+      "evidence_span": "特种工业泵系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烟气脱硫用泵",
+      "evidence_span": "烟气脱硫用泵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷复肥用泵",
+      "evidence_span": "磷复肥用泵"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硝化棉自动包装",
+      "evidence_span": "硝化棉自动包装等项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高纯净度含能棉制备及应用技术",
+      "evidence_span": "推动高纯净度含能棉制备及应用技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "陶瓷泵研发",
+      "evidence_span": "陶瓷泵研发综合管理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新型高耐磨耐腐蚀特殊材料及铸造技术",
+      "evidence_span": "新型高耐磨耐腐蚀特殊材料及铸造技术开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿克苏·诺贝尔集团",
+      "evidence_span": "阿克苏·诺贝尔集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宣伟集团",
+      "evidence_span": "宣伟集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "朗盛集团",
+      "evidence_span": "朗盛集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "DIC集团",
+      "evidence_span": "DIC集团"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军工防化行业增长",
+      "evidence_span": "军工防化行业将增长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳中和碳达峰",
+      "evidence_span": "国内明确提出“碳中和”和“碳达峰”时间进度表"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "纤维素及其衍生物产业",
+        "evidence_span": "公司构建了以硝化棉系列产品为核心的纤维素及其衍生物产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保器材及核生化防护装备制造产业",
+        "evidence_span": "以活性炭为基础的环保器材及核生化防护装备制造产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "渣浆泵制造产业",
+        "evidence_span": "以渣浆泵为核心的渣浆泵制造产业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "硝化棉制造商",
+        "evidence_span": "已成长为行业内产品型谱最全、产品延伸最完整的硝化棉制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "核生化防护企业",
+        "evidence_span": "防化装备研究院是国内唯一的核生化防护企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "防毒面具生产基地",
+        "evidence_span": "我国最大的防毒面具生产基地"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特种工业泵研发制造企业",
+        "evidence_span": "公司拥有40多年的特种工业泵研发和制造经验"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硝化棉产品",
+        "evidence_span": "硝化棉系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "活性炭产品",
+        "evidence_span": "活性炭产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "催化剂产品",
+        "evidence_span": "以活性炭为载体的催化剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防毒面具",
+        "evidence_span": "防毒面具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "渣浆泵",
+        "evidence_span": "渣浆泵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种工业泵",
+        "evidence_span": "特种工业泵系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烟气脱硫用泵",
+        "evidence_span": "烟气脱硫用泵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷复肥用泵",
+        "evidence_span": "磷复肥用泵"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硝化棉自动包装",
+        "evidence_span": "硝化棉自动包装等项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高纯净度含能棉制备及应用技术",
+        "evidence_span": "推动高纯净度含能棉制备及应用技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "陶瓷泵研发",
+        "evidence_span": "陶瓷泵研发综合管理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新型高耐磨耐腐蚀特殊材料及铸造技术",
+        "evidence_span": "新型高耐磨耐腐蚀特殊材料及铸造技术开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿克苏·诺贝尔集团",
+        "evidence_span": "阿克苏·诺贝尔集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宣伟集团",
+        "evidence_span": "宣伟集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "朗盛集团",
+        "evidence_span": "朗盛集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "DIC集团",
+        "evidence_span": "DIC集团"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军工防化行业增长",
+        "evidence_span": "军工防化行业将增长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳中和碳达峰",
+        "evidence_span": "国内明确提出“碳中和”和“碳达峰”时间进度表"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:39:25"
+}

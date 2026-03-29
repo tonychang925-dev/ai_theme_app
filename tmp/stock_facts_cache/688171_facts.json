@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电力配电网信息安全",
+      "evidence_span": "公司专注于电力配电网信息安全领域的技术研发创新"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业互联网信息安全",
+      "evidence_span": "工业互联网信息安全领域的技术创新型企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电力信息系统安全服务供应商",
+      "evidence_span": "国内领先的电力信息系统安全服务供应商纬德信息"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电力配电网信息安全领域重要的供应商",
+      "evidence_span": "已成为电力配电网信息安全领域重要的供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能安全设备",
+      "evidence_span": "公司智能安全设备主要包括智能安全网关、无线通信及其他智能设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能安全网关",
+      "evidence_span": "智能安全网关是公司成熟的核心业务产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线通信产品",
+      "evidence_span": "无线通信产品采用高防护、多接口、低功耗、信号增益等硬件设计"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "态势感知产品",
+      "evidence_span": "公司态势感知产品主要部署于电力监控系统局域网内部各级调度中心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息安全云平台",
+      "evidence_span": "打造了全系列信息安全云平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多业务运维保障云平台",
+      "evidence_span": "多业务运维保障云平台提供针对多种应用任何距离内的高可用性服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据安全管理展示平台",
+      "evidence_span": "数据安全管理展示平台基于业务系统进行大数据分析和可视化处理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "测试验证及攻防演练平台",
+      "evidence_span": "推出了具有开创性的测试验证及攻防演练平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息技术服务",
+      "evidence_span": "公司的信息技术服务主要是根据客户需求，依托公司在电力行业多年的项目经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业安全通信技术",
+      "evidence_span": "积累了一系列工业安全通信及加密技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业数据安全管理技术",
+      "evidence_span": "公司目前已形成了工业安全通信、工业数据安全管理等一系列核心技术储备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "嵌入式软件",
+      "evidence_span": "公司自主研发了智能安全设备中的嵌入式软件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "公司客户包括国家电网、南方电网、北京科锐、长园深瑞、许继电气等众多业内知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "公司客户包括国家电网、南方电网、北京科锐、长园深瑞、许继电气等众多业内知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电力设备提供商",
+      "evidence_span": "终端客户主要包括电网公司和电力设备提供商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信息安全产品国产化",
+      "evidence_span": "推动信息安全产品国产化并适配国产自主可控操作系统"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电力配电网信息安全",
+        "evidence_span": "公司专注于电力配电网信息安全领域的技术研发创新"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业互联网信息安全",
+        "evidence_span": "工业互联网信息安全领域的技术创新型企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电力信息系统安全服务供应商",
+        "evidence_span": "国内领先的电力信息系统安全服务供应商纬德信息"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电力配电网信息安全领域重要的供应商",
+        "evidence_span": "已成为电力配电网信息安全领域重要的供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能安全设备",
+        "evidence_span": "公司智能安全设备主要包括智能安全网关、无线通信及其他智能设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能安全网关",
+        "evidence_span": "智能安全网关是公司成熟的核心业务产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线通信产品",
+        "evidence_span": "无线通信产品采用高防护、多接口、低功耗、信号增益等硬件设计"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "态势感知产品",
+        "evidence_span": "公司态势感知产品主要部署于电力监控系统局域网内部各级调度中心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息安全云平台",
+        "evidence_span": "打造了全系列信息安全云平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多业务运维保障云平台",
+        "evidence_span": "多业务运维保障云平台提供针对多种应用任何距离内的高可用性服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据安全管理展示平台",
+        "evidence_span": "数据安全管理展示平台基于业务系统进行大数据分析和可视化处理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "测试验证及攻防演练平台",
+        "evidence_span": "推出了具有开创性的测试验证及攻防演练平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息技术服务",
+        "evidence_span": "公司的信息技术服务主要是根据客户需求，依托公司在电力行业多年的项目经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业安全通信技术",
+        "evidence_span": "积累了一系列工业安全通信及加密技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业数据安全管理技术",
+        "evidence_span": "公司目前已形成了工业安全通信、工业数据安全管理等一系列核心技术储备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "嵌入式软件",
+        "evidence_span": "公司自主研发了智能安全设备中的嵌入式软件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "公司客户包括国家电网、南方电网、北京科锐、长园深瑞、许继电气等众多业内知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "公司客户包括国家电网、南方电网、北京科锐、长园深瑞、许继电气等众多业内知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电力设备提供商",
+        "evidence_span": "终端客户主要包括电网公司和电力设备提供商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信息安全产品国产化",
+        "evidence_span": "推动信息安全产品国产化并适配国产自主可控操作系统"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:25:04"
+}

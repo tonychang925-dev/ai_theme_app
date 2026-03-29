@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "54acd80be64f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落提到中央经济工作会议和国务院政府工作报告将低空经济列为战略性新兴行业和新增长引擎，这涉及政策定位和战略重要性知识，但以会议和报告事件形式呈现，需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "9a19692dcdbf", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "与chunk_id 5cb2011876f6 内容高度相似，报道在特定展会上的发言，公布具体的统计数据（上半年销售收入、全年预测、市占率）。属于特定时间点的行业动态和数据发布事件。"}}

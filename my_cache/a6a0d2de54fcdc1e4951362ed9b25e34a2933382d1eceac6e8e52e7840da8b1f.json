@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "2fb807f94541", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述朝鲜青年报名参军或复队的具体事件，涉及时间（2024年10月14日-15日）和动态行为，属于新闻性内容，不包含静态的军工题材知识。"}}

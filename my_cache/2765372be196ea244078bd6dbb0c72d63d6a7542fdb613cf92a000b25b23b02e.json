@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "2440f9008595", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含事件信息（如2025世界人工智能大会、特斯拉出席、监管审核和未来计划），但同时也涉及特斯拉Robotaxi的技术架构（视觉架构、神经网络训练、跨区域部署）和系统落地计划，这些可能用于题材本体知识构建，但混合了事件内容。"}}

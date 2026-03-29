@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "赛事活动",
+      "evidence_span": "公司坚持聚焦大型赛事活动的打造与运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体育传播",
+      "evidence_span": "公司以国家队运动员经纪为核心，以客户需求为中心，逐步形成了体育经纪、体育公关、体育资源整合、体育广告与新媒体四大业务板块共同发展的模式"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体育教培",
+      "evidence_span": "公司围绕体育职业教育、体育职业培训和体育技能培训等领域着手进行整体业务布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体育彩票",
+      "evidence_span": "公司主要涉及体育彩票系统集成、产品印制、终端设备销售及维护业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体育空间",
+      "evidence_span": "作为国内覆盖地域最广的一站式体育空间运营商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字科技",
+      "evidence_span": "公司凭借优异的产品设计、技术研发、市场开发和运营等能力，已逐步成为“十四五”体育信息化发展规划落地实施的重要依托力量"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "体育总局控股的唯一一家主板上市公司",
+      "evidence_span": "是体育总局为实际控制人的唯一一家A股主板上市公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "一站式体育空间运营商",
+      "evidence_span": "作为国内覆盖地域最广的一站式体育空间运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "赛事运营服务",
+      "evidence_span": "完成了 2021 年北京半程马拉松和 2021 年首届淮安全程马拉松比赛的赛事运营工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "票务运营服务",
+      "evidence_span": "圆满完成了 2021 年第十四届全国运动会独家票务运营工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育经纪服务",
+      "evidence_span": "签约了任子威、张雨霏、汪顺等多位世界冠军级别运动员"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育公关服务",
+      "evidence_span": "完成了第 35 届奥林匹克日活动、中华广场舞大赛等大型活动"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育职业教育",
+      "evidence_span": "公司下属扬州中体职业技术学院已被所辖省级单位列入“十四五”发展规划"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育彩票系统集成",
+      "evidence_span": "公司主要涉及体育彩票系统集成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育彩票产品印制",
+      "evidence_span": "公司主要涉及体育彩票产品印制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育空间一站式服务",
+      "evidence_span": "致力于为客户提供集“咨询、设计、融资、建设、运营”于一体的一站式服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "赛事活动一体化智能监管平台",
+      "evidence_span": "公司完成了“赛事活动一体化智能监管平台”的研究和一期建设工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "场馆运营管理平台",
+      "evidence_span": "公司自主开发的场馆运营管理平台中体云馆已经在多个场馆上线运营"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "体育信息化技术",
+      "evidence_span": "已逐步成为“十四五”体育信息化发展规划落地实施的重要依托力量"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京马拉松",
+      "evidence_span": "公司再次获得“北京马拉松”赛事商业权益开发及运营的独家授权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南京马拉松比赛",
+      "evidence_span": "获得“2021-2023 年南京马拉松比赛”运营权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "成都世界大学生运动会",
+      "evidence_span": "积极拓展并达成了“成都世界大学生运动会制服管理咨询服务”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "总局冬运中心",
+      "evidence_span": "保障和助力总局冬运中心冬奥会部分参赛项目的科学训练服务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "赛事活动",
+        "evidence_span": "公司坚持聚焦大型赛事活动的打造与运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体育传播",
+        "evidence_span": "公司以国家队运动员经纪为核心，以客户需求为中心，逐步形成了体育经纪、体育公关、体育资源整合、体育广告与新媒体四大业务板块共同发展的模式"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体育教培",
+        "evidence_span": "公司围绕体育职业教育、体育职业培训和体育技能培训等领域着手进行整体业务布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体育彩票",
+        "evidence_span": "公司主要涉及体育彩票系统集成、产品印制、终端设备销售及维护业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体育空间",
+        "evidence_span": "作为国内覆盖地域最广的一站式体育空间运营商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字科技",
+        "evidence_span": "公司凭借优异的产品设计、技术研发、市场开发和运营等能力，已逐步成为“十四五”体育信息化发展规划落地实施的重要依托力量"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "体育总局控股的唯一一家主板上市公司",
+        "evidence_span": "是体育总局为实际控制人的唯一一家A股主板上市公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "一站式体育空间运营商",
+        "evidence_span": "作为国内覆盖地域最广的一站式体育空间运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "赛事运营服务",
+        "evidence_span": "完成了 2021 年北京半程马拉松和 2021 年首届淮安全程马拉松比赛的赛事运营工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "票务运营服务",
+        "evidence_span": "圆满完成了 2021 年第十四届全国运动会独家票务运营工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育经纪服务",
+        "evidence_span": "签约了任子威、张雨霏、汪顺等多位世界冠军级别运动员"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育公关服务",
+        "evidence_span": "完成了第 35 届奥林匹克日活动、中华广场舞大赛等大型活动"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育职业教育",
+        "evidence_span": "公司下属扬州中体职业技术学院已被所辖省级单位列入“十四五”发展规划"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育彩票系统集成",
+        "evidence_span": "公司主要涉及体育彩票系统集成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育彩票产品印制",
+        "evidence_span": "公司主要涉及体育彩票产品印制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育空间一站式服务",
+        "evidence_span": "致力于为客户提供集“咨询、设计、融资、建设、运营”于一体的一站式服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "赛事活动一体化智能监管平台",
+        "evidence_span": "公司完成了“赛事活动一体化智能监管平台”的研究和一期建设工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "场馆运营管理平台",
+        "evidence_span": "公司自主开发的场馆运营管理平台中体云馆已经在多个场馆上线运营"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "体育信息化技术",
+        "evidence_span": "已逐步成为“十四五”体育信息化发展规划落地实施的重要依托力量"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京马拉松",
+        "evidence_span": "公司再次获得“北京马拉松”赛事商业权益开发及运营的独家授权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南京马拉松比赛",
+        "evidence_span": "获得“2021-2023 年南京马拉松比赛”运营权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "成都世界大学生运动会",
+        "evidence_span": "积极拓展并达成了“成都世界大学生运动会制服管理咨询服务”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "总局冬运中心",
+        "evidence_span": "保障和助力总局冬运中心冬奥会部分参赛项目的科学训练服务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:32:56"
+}

@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "流体机械相关业务",
+      "evidence_span": "公司主要从事流体机械相关业务和塑料管材业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "塑料管材业务",
+      "evidence_span": "公司主要从事流体机械相关业务和塑料管材业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "流体机械产品成套装备系统解决方案供应商",
+      "evidence_span": "环境公司作为流体机械产品成套装备系统解决方案供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内首家专业生产新型塑料管材的上市公司",
+      "evidence_span": "国内首家专业生产新型塑料管材的上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保设备及工程成套",
+      "evidence_span": "流体机械相关业务主要包括环保设备及工程成套"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制冷相关试验装置",
+      "evidence_span": "制冷相关试验装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "过滤分离机械成套一体化装备",
+      "evidence_span": "过滤分离机械成套一体化装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种阀门及阀门试验装置与技术服务",
+      "evidence_span": "特种阀门及阀门试验装置与技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能化海洋钻井岸基支持泥浆站",
+      "evidence_span": "智能化海洋钻井岸基支持泥浆站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种泵及泵组试验装置",
+      "evidence_span": "特种泵及泵组试验装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机械密封",
+      "evidence_span": "机械密封"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "喷射设备",
+      "evidence_span": "喷射设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种风机及压缩机等非标流体机械设备",
+      "evidence_span": "特种风机及压缩机等非标流体机械设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "科技展陈装备",
+      "evidence_span": "科技展陈装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "塑料管材",
+      "evidence_span": "塑料管材的研发、生产、销售业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氢能储供系统高压差大可调比减压阀关键技术",
+      "evidence_span": "氢能储供系统高压差大可调比减压阀关键技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高压氢气储存与加注关键装备及部件研发",
+      "evidence_span": "高压氢气储存与加注关键装备及部件研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "90MPa氢气隔膜压缩机开发",
+      "evidence_span": "90MPa氢气隔膜压缩机开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超低温介质泵用机械密封关键技术",
+      "evidence_span": "超低温介质泵用机械密封关键技术研究与典型产品研制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效智能化农产品产地预冷设备研发",
+      "evidence_span": "高效智能化农产品产地预冷设备研发与应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "绿色工质压缩机检测装备精准测控与用能计量评价技术",
+      "evidence_span": "开发了绿色工质压缩机检测装备精准测控与用能计量评价技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高刚度PE双壁波纹管",
+      "evidence_span": "高刚度PE双壁波纹管"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高导热地源热泵管",
+      "evidence_span": "高导热地源热泵管"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "GJPE-1型改性增强聚氯乙烯双壁波纹管",
+      "evidence_span": "GJPE-1型改性增强聚氯乙烯双壁波纹管"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "GJPVC-1型高强度钢带螺旋PE波纹管",
+      "evidence_span": "GJPVC-1型高强度钢带螺旋PE波纹管"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国流动科技馆",
+      "evidence_span": "中标中国流动科技馆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安徽省科技馆新馆",
+      "evidence_span": "安徽省科技馆新馆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大港油田安全培训项目",
+      "evidence_span": "大港油田安全培训项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿尔山市科技馆",
+      "evidence_span": "阿尔山市科技馆"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "氢能产业发展",
+      "evidence_span": "助力我国氢能产业发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化设备及部件",
+      "evidence_span": "研制加氢站高压高频严密切断球阀、氢能储供系统减压阀、加氢站90MPa液驱式压缩机等国产化设备及部件"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "流体机械相关业务",
+        "evidence_span": "公司主要从事流体机械相关业务和塑料管材业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "塑料管材业务",
+        "evidence_span": "公司主要从事流体机械相关业务和塑料管材业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "流体机械产品成套装备系统解决方案供应商",
+        "evidence_span": "环境公司作为流体机械产品成套装备系统解决方案供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内首家专业生产新型塑料管材的上市公司",
+        "evidence_span": "国内首家专业生产新型塑料管材的上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保设备及工程成套",
+        "evidence_span": "流体机械相关业务主要包括环保设备及工程成套"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制冷相关试验装置",
+        "evidence_span": "制冷相关试验装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "过滤分离机械成套一体化装备",
+        "evidence_span": "过滤分离机械成套一体化装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种阀门及阀门试验装置与技术服务",
+        "evidence_span": "特种阀门及阀门试验装置与技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能化海洋钻井岸基支持泥浆站",
+        "evidence_span": "智能化海洋钻井岸基支持泥浆站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种泵及泵组试验装置",
+        "evidence_span": "特种泵及泵组试验装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机械密封",
+        "evidence_span": "机械密封"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "喷射设备",
+        "evidence_span": "喷射设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种风机及压缩机等非标流体机械设备",
+        "evidence_span": "特种风机及压缩机等非标流体机械设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "科技展陈装备",
+        "evidence_span": "科技展陈装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "塑料管材",
+        "evidence_span": "塑料管材的研发、生产、销售业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氢能储供系统高压差大可调比减压阀关键技术",
+        "evidence_span": "氢能储供系统高压差大可调比减压阀关键技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高压氢气储存与加注关键装备及部件研发",
+        "evidence_span": "高压氢气储存与加注关键装备及部件研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "90MPa氢气隔膜压缩机开发",
+        "evidence_span": "90MPa氢气隔膜压缩机开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超低温介质泵用机械密封关键技术",
+        "evidence_span": "超低温介质泵用机械密封关键技术研究与典型产品研制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效智能化农产品产地预冷设备研发",
+        "evidence_span": "高效智能化农产品产地预冷设备研发与应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "绿色工质压缩机检测装备精准测控与用能计量评价技术",
+        "evidence_span": "开发了绿色工质压缩机检测装备精准测控与用能计量评价技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高刚度PE双壁波纹管",
+        "evidence_span": "高刚度PE双壁波纹管"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高导热地源热泵管",
+        "evidence_span": "高导热地源热泵管"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "GJPE-1型改性增强聚氯乙烯双壁波纹管",
+        "evidence_span": "GJPE-1型改性增强聚氯乙烯双壁波纹管"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "GJPVC-1型高强度钢带螺旋PE波纹管",
+        "evidence_span": "GJPVC-1型高强度钢带螺旋PE波纹管"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国流动科技馆",
+        "evidence_span": "中标中国流动科技馆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安徽省科技馆新馆",
+        "evidence_span": "安徽省科技馆新馆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大港油田安全培训项目",
+        "evidence_span": "大港油田安全培训项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿尔山市科技馆",
+        "evidence_span": "阿尔山市科技馆"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "氢能产业发展",
+        "evidence_span": "助力我国氢能产业发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化设备及部件",
+        "evidence_span": "研制加氢站高压高频严密切断球阀、氢能储供系统减压阀、加氢站90MPa液驱式压缩机等国产化设备及部件"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:15:06"
+}

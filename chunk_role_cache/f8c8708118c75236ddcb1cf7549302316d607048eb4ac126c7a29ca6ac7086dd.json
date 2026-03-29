@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "ed87387f36e3", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了成都低空飞行服务有限责任公司完成工商注册和苏州探索出台低空“交规”的事件，包含日期和动态。但同时，它涉及低空交通管理服务平台建设、飞行监管等低空经济的运行机制和法规体系，具有一定的知识价值。由于混合了事件和静态知识，优先标为candidate_mixed。"}}

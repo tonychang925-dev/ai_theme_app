@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "5a2cf68659c4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提到佳能交付新型纳米压印光刻机及其能耗特点，可能包含技术路径或设备类型的知识，但以事件形式报道，需要进一步裁决。"}}

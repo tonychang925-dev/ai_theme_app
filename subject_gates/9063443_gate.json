@@ -1,0 +1,51 @@
+{
+  "must": [
+    "白酒消费",
+    "春节旅游消费",
+    "礼盒消费",
+    "电影"
+  ],
+  "should": [
+    "高端礼盒",
+    "次高端宴席用酒",
+    "低度酒",
+    "保健酒",
+    "坚果水果礼盒",
+    "健康滋补礼盒",
+    "非遗工艺礼盒",
+    "国内冰雪"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "白酒消费",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "白酒消费"
+    },
+    {
+      "term": "春节旅游消费",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "春节旅游消费"
+    },
+    {
+      "term": "礼盒消费",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "礼盒消费"
+    },
+    {
+      "term": "电影",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电影"
+    }
+  ],
+  "subject_id": "9063443",
+  "quality": "strong",
+  "generated_at": "2026-03-10T12:38:51",
+  "semantic_type": "节庆消费事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

@@ -1,0 +1,224 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种车辆（全地形车）制造",
+      "evidence_span": "公司的主营业务是特种车辆（全地形车）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司的主营业务是特种车辆（全地形车）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农业机械制造",
+      "evidence_span": "公司的主营业务是...农业机械"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "消防机械制造",
+      "evidence_span": "公司的主营业务是...消防机械"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "摩托车制造",
+      "evidence_span": "公司的主营业务是...摩托车"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "小型机械装备制造公司",
+      "evidence_span": "中国机械工业集团旗下小型机械装备制造公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全地形车制造企业",
+      "evidence_span": "公司是我国最早制造全地形车的企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "150-1100CC系列化的全地形车",
+      "evidence_span": "公司主要产品有150-1100CC系列化的全地形车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手扶式插秧机",
+      "evidence_span": "产品主要有手扶式插秧机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速插秧机",
+      "evidence_span": "产品主要有...高速插秧机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "森林消防泵系列",
+      "evidence_span": "公司主要产品有森林消防泵系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全地形消防车系列",
+      "evidence_span": "公司主要产品有...全地形消防车系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风力灭火机",
+      "evidence_span": "公司主要产品有...风力灭火机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油锯",
+      "evidence_span": "公司主要产品有...油锯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "割灌机",
+      "evidence_span": "公司主要产品有...割灌机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压细水雾灭火机",
+      "evidence_span": "公司主要产品有...高压细水雾灭火机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中等排量的踏板摩托车",
+      "evidence_span": "公司产品以中等排量的踏板摩托车为主"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "小型动力及配套机械的生产制造",
+      "evidence_span": "公司有多年小型动力及配套机械的生产制造历史"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "小型机械装备制造经验",
+      "evidence_span": "具有较为丰富的小型机械装备制造经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "专业生产线和柔性生产线组成的生产制造系统",
+      "evidence_span": "公司拥有多条专业生产线和柔性生产线组成的国内一流的生产制造系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全地形车关键零部件技术",
+      "evidence_span": "主要产品关键零部件技术...达到国内领先水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "排放控制技术",
+      "evidence_span": "主要产品...排放控制技术等达到国内领先水平"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种车辆（全地形车）制造和销售",
+        "evidence_span": "公司的主营业务是特种车辆（全地形车）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农业机械制造和销售",
+        "evidence_span": "公司的主营业务是...农业机械"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "消防机械制造和销售",
+        "evidence_span": "公司的主营业务是...消防机械"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "摩托车制造和销售",
+        "evidence_span": "公司的主营业务是...摩托车"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "小型机械装备制造公司",
+        "evidence_span": "中国机械工业集团旗下小型机械装备制造公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全地形车制造企业",
+        "evidence_span": "公司是我国最早制造全地形车的企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "150-1100CC系列化的全地形车",
+        "evidence_span": "公司主要产品有150-1100CC系列化的全地形车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手扶式插秧机",
+        "evidence_span": "产品主要有手扶式插秧机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速插秧机",
+        "evidence_span": "产品主要有...高速插秧机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "森林消防泵系列",
+        "evidence_span": "公司主要产品有森林消防泵系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全地形消防车系列",
+        "evidence_span": "公司主要产品有...全地形消防车系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风力灭火机",
+        "evidence_span": "公司主要产品有...风力灭火机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油锯",
+        "evidence_span": "公司主要产品有...油锯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "割灌机",
+        "evidence_span": "公司主要产品有...割灌机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压细水雾灭火机",
+        "evidence_span": "公司主要产品有...高压细水雾灭火机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中等排量的踏板摩托车",
+        "evidence_span": "公司产品以中等排量的踏板摩托车为主"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "小型动力及配套机械的生产制造",
+        "evidence_span": "公司有多年小型动力及配套机械的生产制造历史"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "小型机械装备制造经验",
+        "evidence_span": "具有较为丰富的小型机械装备制造经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "专业生产线和柔性生产线组成的生产制造系统",
+        "evidence_span": "公司拥有多条专业生产线和柔性生产线组成的国内一流的生产制造系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全地形车关键零部件技术",
+        "evidence_span": "主要产品关键零部件技术...达到国内领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "排放控制技术",
+        "evidence_span": "主要产品...排放控制技术等达到国内领先水平"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:16:58"
+}

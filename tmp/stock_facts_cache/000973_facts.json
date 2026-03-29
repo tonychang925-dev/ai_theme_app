@@ -1,0 +1,274 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高分子新材料",
+      "evidence_span": "公司主要从事各类先进高分子新材料的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高分子功能薄膜",
+      "evidence_span": "紧紧围绕“高分子功能薄膜与复合材料”产业发展定位"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "复合材料",
+      "evidence_span": "紧紧围绕“高分子功能薄膜与复合材料”产业发展定位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国唯一的BOPA(双向拉伸尼龙)薄膜生产基地",
+      "evidence_span": "全国唯一的BOPA(双向拉伸尼龙)薄膜生产基地"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "细分市场的领军企业",
+      "evidence_span": "是细分市场的领军企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "偏光膜",
+      "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粗化电工膜",
+      "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超薄型电容膜",
+      "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全型电容器用金属化膜",
+      "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "透气膜",
+      "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无孔透湿膜",
+      "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合塑料编织材料",
+      "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电隔膜",
+      "evidence_span": "锂电隔膜湿法龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力锂电池隔膜",
+      "evidence_span": "动力锂电池隔膜、铝塑膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝塑膜",
+      "evidence_span": "动力锂电池隔膜、铝塑膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏背板材料",
+      "evidence_span": "光伏背板材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "离子交换膜",
+      "evidence_span": "离子交换膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医用包装及医疗防护材料",
+      "evidence_span": "医用包装及医疗防护材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高功能农用棚膜",
+      "evidence_span": "高功能农用棚膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可降解高分子膜材料",
+      "evidence_span": "可降解高分子膜材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防渗膜",
+      "evidence_span": "防渗膜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家认定企业技术中心",
+      "evidence_span": "公司及控股子公司拥有国家认定企业技术中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "广东省塑料工程技术研究开发中心",
+      "evidence_span": "广东省塑料工程技术研究开发中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "广东省偏光片工程技术研究中心",
+      "evidence_span": "广东省偏光片工程技术研究中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "广东省阻隔功能产品工程技术研究中心",
+      "evidence_span": "广东省阻隔功能产品工程技术研究中心"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新材料转型",
+      "evidence_span": "新材料转型蓄势待发"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "向新能源、新材料和节能环保产业转型",
+      "evidence_span": "向新能源、新材料和节能环保产业转型"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高分子新材料",
+        "evidence_span": "公司主要从事各类先进高分子新材料的生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高分子功能薄膜与复合材料",
+        "evidence_span": "紧紧围绕“高分子功能薄膜与复合材料”产业发展定位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国唯一的BOPA(双向拉伸尼龙)薄膜生产基地",
+        "evidence_span": "全国唯一的BOPA(双向拉伸尼龙)薄膜生产基地"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "细分市场的领军企业",
+        "evidence_span": "是细分市场的领军企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "偏光膜",
+        "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粗化电工膜",
+        "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超薄型电容膜",
+        "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全型电容器用金属化膜",
+        "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "透气膜",
+        "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无孔透湿膜",
+        "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合塑料编织材料",
+        "evidence_span": "偏光膜、粗化电工膜、超薄型电容膜、安全型电容器用金属化膜、透气膜、无孔透湿膜、复合塑料编织材料等多种差异化产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电隔膜",
+        "evidence_span": "锂电隔膜湿法龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力锂电池隔膜",
+        "evidence_span": "动力锂电池隔膜、铝塑膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝塑膜",
+        "evidence_span": "动力锂电池隔膜、铝塑膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏背板材料",
+        "evidence_span": "光伏背板材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "离子交换膜",
+        "evidence_span": "离子交换膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医用包装及医疗防护材料",
+        "evidence_span": "医用包装及医疗防护材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高功能农用棚膜",
+        "evidence_span": "高功能农用棚膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可降解高分子膜材料",
+        "evidence_span": "可降解高分子膜材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防渗膜",
+        "evidence_span": "防渗膜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家认定企业技术中心",
+        "evidence_span": "公司及控股子公司拥有国家认定企业技术中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "广东省塑料工程技术研究开发中心",
+        "evidence_span": "广东省塑料工程技术研究开发中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "广东省偏光片工程技术研究中心",
+        "evidence_span": "广东省偏光片工程技术研究中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "广东省阻隔功能产品工程技术研究中心",
+        "evidence_span": "广东省阻隔功能产品工程技术研究中心"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新材料转型",
+        "evidence_span": "新材料转型蓄势待发"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "向新能源、新材料和节能环保产业转型",
+        "evidence_span": "向新能源、新材料和节能环保产业转型"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:02:31"
+}

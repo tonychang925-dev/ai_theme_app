@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "57957389119d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落聚焦美国出口管控措施的实施及其对台积电的影响，以事件描述为主，缺乏稳定的知识内容。"}}

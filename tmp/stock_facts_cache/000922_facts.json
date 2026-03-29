@@ -1,0 +1,139 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电机研发",
+      "evidence_span": "主要从事电机研发、 生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电机生产",
+      "evidence_span": "主要从事电机研发、 生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电机销售",
+      "evidence_span": "主要从事电机研发、 生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特种电机研制先行者",
+      "evidence_span": "特种电机研制先行者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "我国特种电机的创始厂和主导厂",
+      "evidence_span": "我国特种电机的创始厂和主导厂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防爆电机",
+      "evidence_span": "主要产品包括防爆电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普通电机",
+      "evidence_span": "普通电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核用电机",
+      "evidence_span": "核用电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "起重冶金电机",
+      "evidence_span": "起重冶金电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主氦风机",
+      "evidence_span": "主氦风机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "主氦风机量化配套生产能力",
+      "evidence_span": "率先具备量化配套生产主氦风机能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华能石岛湾核电站",
+      "evidence_span": "首批主氦风机已交付华能石岛湾核电站项目"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于四代核电高温气冷堆商业化进程",
+      "evidence_span": "受益于四代核电高温气冷堆商业化进程"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电机研发",
+        "evidence_span": "主要从事电机研发、 生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电机生产",
+        "evidence_span": "主要从事电机研发、 生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电机销售",
+        "evidence_span": "主要从事电机研发、 生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特种电机研制先行者",
+        "evidence_span": "特种电机研制先行者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "我国特种电机的创始厂和主导厂",
+        "evidence_span": "我国特种电机的创始厂和主导厂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防爆电机",
+        "evidence_span": "主要产品包括防爆电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普通电机",
+        "evidence_span": "普通电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核用电机",
+        "evidence_span": "核用电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "起重冶金电机",
+        "evidence_span": "起重冶金电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主氦风机",
+        "evidence_span": "主氦风机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "主氦风机量化配套生产能力",
+        "evidence_span": "率先具备量化配套生产主氦风机能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华能石岛湾核电站",
+        "evidence_span": "首批主氦风机已交付华能石岛湾核电站项目"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于四代核电高温气冷堆商业化进程",
+        "evidence_span": "受益于四代核电高温气冷堆商业化进程"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:47:53"
+}

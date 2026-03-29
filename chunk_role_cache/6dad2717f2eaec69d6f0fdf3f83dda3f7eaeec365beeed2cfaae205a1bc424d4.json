@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "da3a3f431e12", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落提供全球晶圆代工产业的营收增长数据，属于行业景气数据，是事件性内容，没有揭示半导体设备题材的核心知识。"}}

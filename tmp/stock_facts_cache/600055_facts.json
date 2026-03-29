@@ -1,0 +1,509 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "大型医学影像设备研发",
+      "evidence_span": "公司主营业务为大型医学影像设备的研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大型医学影像设备生产制造",
+      "evidence_span": "公司主营业务为大型医学影像设备的...生产制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大型医学影像设备销售",
+      "evidence_span": "公司主营业务为大型医学影像设备的...销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大型医学影像设备售后服务",
+      "evidence_span": "公司主营业务为大型医学影像设备的...售后服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医用X射线诊断设备全国领先企业",
+      "evidence_span": "医用X射线诊断设备和医学影像技术处于全国领先地位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医学影像技术全国领先企业",
+      "evidence_span": "医用X射线诊断设备和医学影像技术处于全国领先地位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "DR行业龙头企业",
+      "evidence_span": "公司为国内DR行业龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "胃肠机行业领先企业",
+      "evidence_span": "公司胃肠机销售处于国内市场第一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "移动DR行业领先企业",
+      "evidence_span": "公司移动DR销售处于国内市场第三"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "DSA国产品牌行业领先企业",
+      "evidence_span": "公司为国产品牌行业领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "CT主流生产厂家",
+      "evidence_span": "公司CT销售超过市场平均增速，成为主流生产厂家"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "超导MRI国产品牌前三",
+      "evidence_span": "公司超导MRI系列产品销售位于国产品牌前三"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字X射线摄影系统（DR）",
+      "evidence_span": "包括数字X射线摄影系统（DR）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磁共振成像系统（MRI）",
+      "evidence_span": "磁共振成像系统（MRI）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "X射线计算机断层扫描成像系统（CT）",
+      "evidence_span": "X射线计算机断层扫描成像系统（CT）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "血管介入治疗系统（DSA）",
+      "evidence_span": "血管介入治疗系统（DSA）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医用诊断X射线机（DRF）",
+      "evidence_span": "医用诊断X射线机（DRF）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动式DR（MDR）",
+      "evidence_span": "移动式DR（MDR）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字乳腺机（DM）",
+      "evidence_span": "数字乳腺机（DM）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全幅DR数字摄影系统",
+      "evidence_span": "取得...全幅DR数字摄影系统NMPA注册证书"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "1.5T无液氦超导MRI成像系统",
+      "evidence_span": "取得1.5T无液氦超导MRI成像系统...NMPA注册证书"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "32排CT",
+      "evidence_span": "公司取得包括32排CT...等多张产品注册证书"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "50kW移动DR",
+      "evidence_span": "50kW移动DR...取证上市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "经济型16排CT",
+      "evidence_span": "基于经济型16排CT...公司CT产品销量同比增加300%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大孔径超导MRI",
+      "evidence_span": "随着公司大孔径...超导MRI的陆续上市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无液氦超导MRI",
+      "evidence_span": "随着公司...无液氦超导MRI的陆续上市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乳腺机",
+      "evidence_span": "作为细分产品，移动DR、乳腺机市场同比略有增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "胃肠机",
+      "evidence_span": "胃肠机市场同比变动不大"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载CT",
+      "evidence_span": "同时实现车载（客车、货车）CT的销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方舱CT",
+      "evidence_span": "公司安排了方舱CT...的现货储备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合杂交型DSA",
+      "evidence_span": "研制复合杂交型DSA"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "经济型DSA",
+      "evidence_span": "采用国产核心部件研制经济型DSA"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全身CBCT",
+      "evidence_span": "公司正在加快...全身CBCT等高端DR的布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "带乳腺断层功能的数字乳腺机",
+      "evidence_span": "公司正在研制带乳腺断层功能的新款产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CBCT-DR",
+      "evidence_span": "正在研制CBCT-DR"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "带断层DRF",
+      "evidence_span": "拟开发...带断层DRF...等新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "带断层数字乳腺机",
+      "evidence_span": "拟开发...带断层数字乳腺机等新产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "1.2米全幅平板探测器技术",
+      "evidence_span": "配置目前全球领先的1.2米全幅平板探测器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全脊柱或全下肢一次摄影成像技术",
+      "evidence_span": "一次曝光即可实现全脊柱或全下肢成像"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "液态金属轴承球管技术",
+      "evidence_span": "实现了业内最新技术的“液态金属轴承”球管的升级应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "32排32层全新结构探测器设计",
+      "evidence_span": "完成了32排32层全新结构探测器的设计并投产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低剂量动态透视技术",
+      "evidence_span": "进一步完善低剂量动态透视技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "窄缝拼接技术",
+      "evidence_span": "窄缝拼接技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "图像融合技术",
+      "evidence_span": "图像融合技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "虚拟限束器技术",
+      "evidence_span": "虚拟限束器等功能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超导核心部件自主研发",
+      "evidence_span": "公司布局超导核心部件的自主研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无液氦超导MRI技术",
+      "evidence_span": "公司引领推出全球首台1.5T无液氦超导MRI"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "DSA和MRI新品上市，强化影像国产替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "医疗新基建",
+      "evidence_span": "医疗新基建拉动医疗设备市场扩容"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "老龄化",
+      "evidence_span": "老龄化加速推动医疗资源配置需求释放"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "大型医学影像设备研发",
+        "evidence_span": "公司主营业务为大型医学影像设备的研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大型医学影像设备生产制造",
+        "evidence_span": "公司主营业务为大型医学影像设备的...生产制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大型医学影像设备销售",
+        "evidence_span": "公司主营业务为大型医学影像设备的...销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大型医学影像设备售后服务",
+        "evidence_span": "公司主营业务为大型医学影像设备的...售后服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医用X射线诊断设备全国领先企业",
+        "evidence_span": "医用X射线诊断设备和医学影像技术处于全国领先地位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医学影像技术全国领先企业",
+        "evidence_span": "医用X射线诊断设备和医学影像技术处于全国领先地位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "DR行业龙头企业",
+        "evidence_span": "公司为国内DR行业龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "胃肠机行业领先企业",
+        "evidence_span": "公司胃肠机销售处于国内市场第一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "移动DR行业领先企业",
+        "evidence_span": "公司移动DR销售处于国内市场第三"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "DSA国产品牌行业领先企业",
+        "evidence_span": "公司为国产品牌行业领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "CT主流生产厂家",
+        "evidence_span": "公司CT销售超过市场平均增速，成为主流生产厂家"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "超导MRI国产品牌前三",
+        "evidence_span": "公司超导MRI系列产品销售位于国产品牌前三"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字X射线摄影系统（DR）",
+        "evidence_span": "包括数字X射线摄影系统（DR）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磁共振成像系统（MRI）",
+        "evidence_span": "磁共振成像系统（MRI）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "X射线计算机断层扫描成像系统（CT）",
+        "evidence_span": "X射线计算机断层扫描成像系统（CT）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "血管介入治疗系统（DSA）",
+        "evidence_span": "血管介入治疗系统（DSA）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医用诊断X射线机（DRF）",
+        "evidence_span": "医用诊断X射线机（DRF）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动式DR（MDR）",
+        "evidence_span": "移动式DR（MDR）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字乳腺机（DM）",
+        "evidence_span": "数字乳腺机（DM）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全幅DR数字摄影系统",
+        "evidence_span": "取得...全幅DR数字摄影系统NMPA注册证书"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "1.5T无液氦超导MRI成像系统",
+        "evidence_span": "取得1.5T无液氦超导MRI成像系统...NMPA注册证书"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "32排CT",
+        "evidence_span": "公司取得包括32排CT...等多张产品注册证书"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "50kW移动DR",
+        "evidence_span": "50kW移动DR...取证上市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "经济型16排CT",
+        "evidence_span": "基于经济型16排CT...公司CT产品销量同比增加300%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大孔径超导MRI",
+        "evidence_span": "随着公司大孔径...超导MRI的陆续上市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无液氦超导MRI",
+        "evidence_span": "随着公司...无液氦超导MRI的陆续上市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乳腺机",
+        "evidence_span": "作为细分产品，移动DR、乳腺机市场同比略有增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "胃肠机",
+        "evidence_span": "胃肠机市场同比变动不大"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载CT",
+        "evidence_span": "同时实现车载（客车、货车）CT的销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方舱CT",
+        "evidence_span": "公司安排了方舱CT...的现货储备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合杂交型DSA",
+        "evidence_span": "研制复合杂交型DSA"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "经济型DSA",
+        "evidence_span": "采用国产核心部件研制经济型DSA"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全身CBCT",
+        "evidence_span": "公司正在加快...全身CBCT等高端DR的布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "带乳腺断层功能的数字乳腺机",
+        "evidence_span": "公司正在研制带乳腺断层功能的新款产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CBCT-DR",
+        "evidence_span": "正在研制CBCT-DR"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "带断层DRF",
+        "evidence_span": "拟开发...带断层DRF...等新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "带断层数字乳腺机",
+        "evidence_span": "拟开发...带断层数字乳腺机等新产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "1.2米全幅平板探测器技术",
+        "evidence_span": "配置目前全球领先的1.2米全幅平板探测器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全脊柱或全下肢一次摄影成像技术",
+        "evidence_span": "一次曝光即可实现全脊柱或全下肢成像"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "液态金属轴承球管技术",
+        "evidence_span": "实现了业内最新技术的“液态金属轴承”球管的升级应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "32排32层全新结构探测器设计",
+        "evidence_span": "完成了32排32层全新结构探测器的设计并投产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低剂量动态透视技术",
+        "evidence_span": "进一步完善低剂量动态透视技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "窄缝拼接技术",
+        "evidence_span": "窄缝拼接技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "图像融合技术",
+        "evidence_span": "图像融合技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "虚拟限束器技术",
+        "evidence_span": "虚拟限束器等功能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超导核心部件自主研发",
+        "evidence_span": "公司布局超导核心部件的自主研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无液氦超导MRI技术",
+        "evidence_span": "公司引领推出全球首台1.5T无液氦超导MRI"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "DSA和MRI新品上市，强化影像国产替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "医疗新基建",
+        "evidence_span": "医疗新基建拉动医疗设备市场扩容"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "老龄化",
+        "evidence_span": "老龄化加速推动医疗资源配置需求释放"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:09:50"
+}

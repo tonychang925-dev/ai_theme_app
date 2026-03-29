@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "2c443040386a", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段在事件背景下（展会论坛）提供了半导体设备销售收入、市场占有率数据和封测市场规模预测，这些内容有助于理解行业结构和关键指标，但基于时间性报告，稳定性有限。"}}

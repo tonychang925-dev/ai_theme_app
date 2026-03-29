@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车零部件设计",
+      "evidence_span": "公司主营业务为汽车零部件的设计、开发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车零部件开发",
+      "evidence_span": "公司主营业务为汽车零部件的设计、开发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车零部件生产",
+      "evidence_span": "公司主营业务为汽车零部件的设计、开发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车零部件销售",
+      "evidence_span": "公司主营业务为汽车零部件的设计、开发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车零部件制造企业",
+      "evidence_span": "公司主营业务为汽车零部件的设计、开发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "一级配套供应商",
+      "evidence_span": "公司主要作为一级配套供应商直接为整车厂供应汽车零部件"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "二三级配套供应商",
+      "evidence_span": "同时亦作为二三级配套供应商与知名汽车零部件供应商华域汽车和李尔等厂商建立了业务合作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "塑料件",
+      "evidence_span": "公司主要产品为塑料件、金属件及配套模具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属件",
+      "evidence_span": "公司主要产品为塑料件、金属件及配套模具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配套模具",
+      "evidence_span": "公司主要产品为塑料件、金属件及配套模具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "立柱护板",
+      "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "座椅件",
+      "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机舱件",
+      "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "出风口",
+      "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车内照明部件",
+      "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "副仪表盘",
+      "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门板",
+      "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "外饰件",
+      "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小型冲压件",
+      "evidence_span": "金属件产品以小型冲压件为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冲焊件",
+      "evidence_span": "包含部分冲焊件和少量制动总成、换挡总成、新能源汽车专用零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制动总成",
+      "evidence_span": "包含部分冲焊件和少量制动总成、换挡总成、新能源汽车专用零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "换挡总成",
+      "evidence_span": "包含部分冲焊件和少量制动总成、换挡总成、新能源汽车专用零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车专用零部件",
+      "evidence_span": "包含部分冲焊件和少量制动总成、换挡总成、新能源汽车专用零部件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风汽车",
+      "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用",
+      "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利集团",
+      "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃尔沃品牌",
+      "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽丰田",
+      "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风本田",
+      "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华晨宝马",
+      "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京奔驰",
+      "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华域汽车",
+      "evidence_span": "与知名汽车零部件供应商华域汽车和李尔等厂商建立了业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "李尔",
+      "evidence_span": "与知名汽车零部件供应商华域汽车和李尔等厂商建立了业务合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车专用零部件",
+      "evidence_span": "积极发展新能源汽车专用零部件业务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车零部件设计",
+        "evidence_span": "公司主营业务为汽车零部件的设计、开发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车零部件开发",
+        "evidence_span": "公司主营业务为汽车零部件的设计、开发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车零部件生产",
+        "evidence_span": "公司主营业务为汽车零部件的设计、开发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车零部件销售",
+        "evidence_span": "公司主营业务为汽车零部件的设计、开发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车零部件制造企业",
+        "evidence_span": "公司主营业务为汽车零部件的设计、开发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "一级配套供应商",
+        "evidence_span": "公司主要作为一级配套供应商直接为整车厂供应汽车零部件"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "二三级配套供应商",
+        "evidence_span": "同时亦作为二三级配套供应商与知名汽车零部件供应商华域汽车和李尔等厂商建立了业务合作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "塑料件",
+        "evidence_span": "公司主要产品为塑料件、金属件及配套模具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属件",
+        "evidence_span": "公司主要产品为塑料件、金属件及配套模具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配套模具",
+        "evidence_span": "公司主要产品为塑料件、金属件及配套模具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "立柱护板",
+        "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "座椅件",
+        "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机舱件",
+        "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "出风口",
+        "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车内照明部件",
+        "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "副仪表盘",
+        "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门板",
+        "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "外饰件",
+        "evidence_span": "公司塑料件产品主要涵盖立柱护板、座椅件、机舱件、出风口、车内照明部件、副仪表盘、门板及其他外饰件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小型冲压件",
+        "evidence_span": "金属件产品以小型冲压件为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冲焊件",
+        "evidence_span": "包含部分冲焊件和少量制动总成、换挡总成、新能源汽车专用零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制动总成",
+        "evidence_span": "包含部分冲焊件和少量制动总成、换挡总成、新能源汽车专用零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "换挡总成",
+        "evidence_span": "包含部分冲焊件和少量制动总成、换挡总成、新能源汽车专用零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车专用零部件",
+        "evidence_span": "包含部分冲焊件和少量制动总成、换挡总成、新能源汽车专用零部件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风汽车",
+        "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用",
+        "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利集团",
+        "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃尔沃品牌",
+        "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽丰田",
+        "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风本田",
+        "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华晨宝马",
+        "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京奔驰",
+        "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "主要包括东风汽车、上汽通用、吉利集团（含沃尔沃品牌）、广汽丰田、东风本田、华晨宝马、北京奔驰、比亚迪等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华域汽车",
+        "evidence_span": "与知名汽车零部件供应商华域汽车和李尔等厂商建立了业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "李尔",
+        "evidence_span": "与知名汽车零部件供应商华域汽车和李尔等厂商建立了业务合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车专用零部件",
+        "evidence_span": "积极发展新能源汽车专用零部件业务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:18:33"
+}

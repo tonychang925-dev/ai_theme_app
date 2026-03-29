@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "ec37b2daafa0", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述了美国政府通知台积电终止VEU地位以及三星和SK海力士授权被撤销的具体事件，属于政策动态，没有稳定知识沉淀。"}}

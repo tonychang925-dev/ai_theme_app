@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "33b52e03ac96", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落包含两个具体的事件爆料/消息：一是路透社爆料大基金三期规模，二是关于上海微电子28nm光刻机交付时间的市场消息。两者都是典型的、带有时间预期的动态信息或传闻，属于事件范畴。"}}

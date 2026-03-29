@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "热电业务",
+      "evidence_span": "公司主营业务是热电业务和证券业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "证券业务",
+      "evidence_span": "公司主营业务是热电业务和证券业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "热电联产企业",
+      "evidence_span": "公司拥有哈尔滨市较大规模的热电联产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国有控股企业",
+      "evidence_span": "公司作为国有控股企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力",
+      "evidence_span": "主要产品是电力、蒸汽和集中供热"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸汽",
+      "evidence_span": "主要产品是电力、蒸汽和集中供热"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集中供热",
+      "evidence_span": "主要产品是电力、蒸汽和集中供热"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券经纪",
+      "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券承销与保荐",
+      "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券投资咨询",
+      "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券自营",
+      "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券资产管理",
+      "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融资融券",
+      "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券投资基金代销",
+      "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "代销金融产品",
+      "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "另类投资业务",
+      "evidence_span": "通过其全资子公司江海证券投资（上海）有限公司从事另类投资业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "私募基金业务",
+      "evidence_span": "通过其全资子公司江海证券创业投资（上海）有限公司从事私募基金业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IB业务",
+      "evidence_span": "通过其参股子公司江海汇鑫期货有限公司从事 IB 业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "热电联产运行",
+      "evidence_span": "热电厂有四台130吨蒸汽锅炉配套3台12MW汽轮发电机组热电联产运行"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽-水换热器转化",
+      "evidence_span": "蒸汽少部分供蒸汽用户，大部分通过汽-水换热器转化为高温热水用于集中供热"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "管网换热站自动控制",
+      "evidence_span": "公司分公司供热公司和子公司太平供热公司的管网换热站运行基本实现自动控制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "换热站无人值守",
+      "evidence_span": "换热站无人值守"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "热用户",
+      "evidence_span": "向热用户进行集中供热"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蒸汽用户",
+      "evidence_span": "蒸汽少部分供蒸汽用户"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "热电业务",
+        "evidence_span": "公司主营业务是热电业务和证券业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "证券业务",
+        "evidence_span": "公司主营业务是热电业务和证券业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "热电联产企业",
+        "evidence_span": "公司拥有哈尔滨市较大规模的热电联产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国有控股企业",
+        "evidence_span": "公司作为国有控股企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力",
+        "evidence_span": "主要产品是电力、蒸汽和集中供热"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸汽",
+        "evidence_span": "主要产品是电力、蒸汽和集中供热"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集中供热",
+        "evidence_span": "主要产品是电力、蒸汽和集中供热"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券经纪",
+        "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券承销与保荐",
+        "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券投资咨询",
+        "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券自营",
+        "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券资产管理",
+        "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融资融券",
+        "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券投资基金代销",
+        "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "代销金融产品",
+        "evidence_span": "拥有证券经纪、证券承销与保荐、证券投资咨询、证券自营、证券资产管理、融资融券、证券投资基金代销以及代销金融产品等业务资格"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "另类投资业务",
+        "evidence_span": "通过其全资子公司江海证券投资（上海）有限公司从事另类投资业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "私募基金业务",
+        "evidence_span": "通过其全资子公司江海证券创业投资（上海）有限公司从事私募基金业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IB业务",
+        "evidence_span": "通过其参股子公司江海汇鑫期货有限公司从事 IB 业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "热电联产运行",
+        "evidence_span": "热电厂有四台130吨蒸汽锅炉配套3台12MW汽轮发电机组热电联产运行"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽-水换热器转化",
+        "evidence_span": "蒸汽少部分供蒸汽用户，大部分通过汽-水换热器转化为高温热水用于集中供热"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "管网换热站自动控制",
+        "evidence_span": "公司分公司供热公司和子公司太平供热公司的管网换热站运行基本实现自动控制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "换热站无人值守",
+        "evidence_span": "换热站无人值守"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "热用户",
+        "evidence_span": "向热用户进行集中供热"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蒸汽用户",
+        "evidence_span": "蒸汽少部分供蒸汽用户"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:40:27"
+}

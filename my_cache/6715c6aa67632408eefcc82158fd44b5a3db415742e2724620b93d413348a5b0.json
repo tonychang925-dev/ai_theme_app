@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:38:06", "result": {"chunk_id": "e131d41056db", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态列举MSCI细分市场指数的类型（如行业指数、风格指数、因子指数、主题指数），纯属知识构建。"}}

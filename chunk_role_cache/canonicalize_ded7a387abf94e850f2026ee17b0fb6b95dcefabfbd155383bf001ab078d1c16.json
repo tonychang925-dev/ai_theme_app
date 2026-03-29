@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:16:15", "result": {"span_uid": "3172e40cf24f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "试验项目中标", "stability": "low", "reason": "原文为具体事件（中国移动试验卫星试制项目的中选结果公布及中标公司），无法脱离原新闻上下文形成稳定、独立的知识表达，且信息过于具体和临时性。"}}

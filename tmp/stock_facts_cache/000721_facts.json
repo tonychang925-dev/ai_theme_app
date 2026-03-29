@@ -1,0 +1,419 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "餐饮服务",
+      "evidence_span": "餐饮服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品工业",
+      "evidence_span": "食品工业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "凉菜",
+      "evidence_span": "凉菜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热菜",
+      "evidence_span": "热菜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "牛羊肉泡馍",
+      "evidence_span": "牛羊肉泡馍"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "葫芦头泡馍",
+      "evidence_span": "葫芦头泡馍"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水饺",
+      "evidence_span": "水饺"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烤鸭",
+      "evidence_span": "烤鸭"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涮锅",
+      "evidence_span": "涮锅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地方特色菜肴",
+      "evidence_span": "地方特色菜肴"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精品陕菜",
+      "evidence_span": "精品陕菜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小吃",
+      "evidence_span": "小吃"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清真食品",
+      "evidence_span": "清真食品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粤菜",
+      "evidence_span": "粤菜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "川菜",
+      "evidence_span": "川菜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "淮扬菜",
+      "evidence_span": "淮扬菜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鲁菜",
+      "evidence_span": "鲁菜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "糕点烘焙类食品",
+      "evidence_span": "糕点烘焙类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肉制品类食品",
+      "evidence_span": "肉制品类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "速冻食品类食品",
+      "evidence_span": "速冻食品类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方便食品类食品",
+      "evidence_span": "方便食品类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半成品类食品",
+      "evidence_span": "半成品类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "饮品酿造类食品",
+      "evidence_span": "饮品酿造类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陕西特色蒸碗",
+      "evidence_span": "陕西特色蒸碗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方便宴席",
+      "evidence_span": "方便宴席"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄桂稠酒",
+      "evidence_span": "黄桂稠酒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酱卤制品",
+      "evidence_span": "酱卤制品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中秋月饼",
+      "evidence_span": "中秋月饼"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "端午粽子",
+      "evidence_span": "端午粽子"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特色糕点",
+      "evidence_span": "特色糕点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "速冻水饺",
+      "evidence_span": "速冻水饺"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "五一大包",
+      "evidence_span": "五一大包"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "袋装方便牛羊肉泡馍",
+      "evidence_span": "袋装方便牛羊肉泡馍"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "腊（酱）牛羊肉",
+      "evidence_span": "腊（酱）牛羊肉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预制菜",
+      "evidence_span": "预制菜"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国首家上市餐饮企业",
+      "evidence_span": "全国首家上市餐饮企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "西安城市的一个重要窗口和旅游名片",
+      "evidence_span": "西安城市的一个重要窗口和旅游名片"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中华老字号企业",
+      "evidence_span": "被国家商务部认定为“中华老字号”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "牛羊肉泡馍制作技艺",
+      "evidence_span": "牛羊肉泡馍制作技艺被列入国家级非物质文化遗产名录"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一体化中央厨房研发、加工、配送优势",
+      "evidence_span": "依托现有一体化中央厨房研发、加工、配送优势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "受益于丝绸之路建设和国企改革"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "餐饮服务",
+        "evidence_span": "餐饮服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品工业",
+        "evidence_span": "食品工业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "凉菜",
+        "evidence_span": "凉菜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热菜",
+        "evidence_span": "热菜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "牛羊肉泡馍",
+        "evidence_span": "牛羊肉泡馍"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "葫芦头泡馍",
+        "evidence_span": "葫芦头泡馍"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水饺",
+        "evidence_span": "水饺"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烤鸭",
+        "evidence_span": "烤鸭"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涮锅",
+        "evidence_span": "涮锅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地方特色菜肴",
+        "evidence_span": "地方特色菜肴"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精品陕菜",
+        "evidence_span": "精品陕菜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小吃",
+        "evidence_span": "小吃"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清真食品",
+        "evidence_span": "清真食品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粤菜",
+        "evidence_span": "粤菜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "川菜",
+        "evidence_span": "川菜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "淮扬菜",
+        "evidence_span": "淮扬菜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鲁菜",
+        "evidence_span": "鲁菜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "糕点烘焙类食品",
+        "evidence_span": "糕点烘焙类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肉制品类食品",
+        "evidence_span": "肉制品类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "速冻食品类食品",
+        "evidence_span": "速冻食品类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方便食品类食品",
+        "evidence_span": "方便食品类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半成品类食品",
+        "evidence_span": "半成品类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "饮品酿造类食品",
+        "evidence_span": "饮品酿造类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陕西特色蒸碗",
+        "evidence_span": "陕西特色蒸碗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方便宴席",
+        "evidence_span": "方便宴席"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄桂稠酒",
+        "evidence_span": "黄桂稠酒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酱卤制品",
+        "evidence_span": "酱卤制品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中秋月饼",
+        "evidence_span": "中秋月饼"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "端午粽子",
+        "evidence_span": "端午粽子"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特色糕点",
+        "evidence_span": "特色糕点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "速冻水饺",
+        "evidence_span": "速冻水饺"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "五一大包",
+        "evidence_span": "五一大包"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "袋装方便牛羊肉泡馍",
+        "evidence_span": "袋装方便牛羊肉泡馍"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "腊（酱）牛羊肉",
+        "evidence_span": "腊（酱）牛羊肉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预制菜",
+        "evidence_span": "预制菜"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国首家上市餐饮企业",
+        "evidence_span": "全国首家上市餐饮企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "西安城市的一个重要窗口和旅游名片",
+        "evidence_span": "西安城市的一个重要窗口和旅游名片"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中华老字号企业",
+        "evidence_span": "被国家商务部认定为“中华老字号”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "牛羊肉泡馍制作技艺",
+        "evidence_span": "牛羊肉泡馍制作技艺被列入国家级非物质文化遗产名录"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一体化中央厨房研发、加工、配送优势",
+        "evidence_span": "依托现有一体化中央厨房研发、加工、配送优势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "受益于丝绸之路建设和国企改革"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:21:06"
+}

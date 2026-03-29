@@ -1,0 +1,68 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "灵巧手",
+        "anchor_level": "primary_anchor",
+        "confidence": 1.0,
+        "reason": "该术语直接对应题材名称'灵巧手'的核心定义，是分析师手工命名的首要语义约束，且属于题材本体中'关键零部件'维度的核心对象，最适合作为最终gate的must锚点。"
+      },
+      {
+        "term": "机器人硬件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材本体中'关键零部件'维度，灵巧手属于机器人硬件的核心组成部分，且策略类型为industry_chain要求优先识别技术对象/关键环节，因此适合作为must锚点。"
+      },
+      {
+        "term": "人形机器人",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语是灵巧手的主要应用载体，题材本体中灵巧手被定义为'人形机器人的核心零部件'，且策略类型为industry_chain要求识别关键环节/产品，因此适合作为must锚点。"
+      },
+      {
+        "term": "机器人系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接出现在原始知识证据和题材本体concept中，灵巧手是机器人系统的关键组成部分，且策略类型为industry_chain要求识别技术对象/关键环节，因此适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "工业人形机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语与人形机器人相关，但题材名称'灵巧手'的核心语义更聚焦于关键零部件而非整体机器人类型，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "商用人形机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语与人形机器人应用场景相关，但题材名称'灵巧手'的核心语义更聚焦于关键零部件而非商业应用分类，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "智元机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语为具体公司名称，虽可能涉及灵巧手技术，但题材名称'灵巧手'的核心语义是技术对象而非企业主体，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "宇树科技",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语为具体公司名称，虽可能涉及灵巧手技术，但题材名称'灵巧手'的核心语义是技术对象而非企业主体，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "人形双足机器人",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语描述机器人形态，但题材名称'灵巧手'的核心语义更聚焦于关键零部件而非整体机器人结构，因此更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "机器人软件",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "该术语与机器人系统相关，但题材名称'灵巧手'的核心语义更聚焦于硬件零部件，且题材本体中未强调软件维度，因此更适合作为辅助识别信息进入should。"
+      }
+    ]
+  }
+}

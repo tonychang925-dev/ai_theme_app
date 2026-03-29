@@ -1,0 +1,214 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "过敏性疾病诊断",
+      "evidence_span": "专业从事过敏性疾病诊断及治疗产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "治疗产品的研发",
+      "evidence_span": "专业从事过敏性疾病诊断及治疗产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "专业从事过敏性疾病诊断及治疗产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "专业从事过敏性疾病诊断及治疗产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "干细胞",
+      "evidence_span": "逐步推动在干细胞、天然药物、医学人工智能等其他领域的研发工作"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "天然药物",
+      "evidence_span": "逐步推动在干细胞、天然药物、医学人工智能等其他领域的研发工作"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医学人工智能等其他领域的研发工作",
+      "evidence_span": "逐步推动在干细胞、天然药物、医学人工智能等其他领域的研发工作"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内脱敏诊疗市场领先地位",
+      "evidence_span": "在国内脱敏诊疗市场占据领先地位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内脱敏治疗绝对龙头",
+      "evidence_span": "国内脱敏治疗绝对龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内舌下脱敏龙头企业",
+      "evidence_span": "国内舌下脱敏龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内尘螨脱敏治疗药物龙头企业",
+      "evidence_span": "国内尘螨脱敏治疗药物龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "市场首家变应原脱敏治疗药物企业",
+      "evidence_span": "市场首家变应原脱敏治疗药物企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粉尘螨滴剂",
+      "evidence_span": "粉尘螨滴剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄花蒿花粉变应原舌下滴剂",
+      "evidence_span": "黄花蒿花粉变应原舌下滴剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粉尘螨皮肤点刺诊断试剂盒",
+      "evidence_span": "粉尘螨皮肤点刺诊断试剂盒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "屋尘螨皮肤点刺诊断试剂盒",
+      "evidence_span": "屋尘螨皮肤点刺诊断试剂盒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "舌下脱敏治疗产品",
+      "evidence_span": "舌下脱敏治疗产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒿属花粉舌下免疫治疗药物",
+      "evidence_span": "蒿属花粉舌下免疫治疗药物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "点刺检测产品",
+      "evidence_span": "多款点刺检测产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "舌下脱敏治疗",
+      "evidence_span": "舌下脱敏治疗"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "舌下含服变应原脱敏制剂",
+      "evidence_span": "舌下含服变应原脱敏制剂"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "脱敏治疗蓝海赛道",
+      "evidence_span": "脱敏治疗蓝海赛道"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "消费升级与医生认可度提升",
+      "evidence_span": "消费升级与医生认可度提升"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "过敏性疾病诊断及治疗产品的研发、生产和销售",
+        "evidence_span": "专业从事过敏性疾病诊断及治疗产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "干细胞、天然药物、医学人工智能等其他领域的研发工作",
+        "evidence_span": "逐步推动在干细胞、天然药物、医学人工智能等其他领域的研发工作"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内脱敏诊疗市场领先地位",
+        "evidence_span": "在国内脱敏诊疗市场占据领先地位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内脱敏治疗绝对龙头",
+        "evidence_span": "国内脱敏治疗绝对龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内舌下脱敏龙头企业",
+        "evidence_span": "国内舌下脱敏龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内尘螨脱敏治疗药物龙头企业",
+        "evidence_span": "国内尘螨脱敏治疗药物龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "市场首家变应原脱敏治疗药物企业",
+        "evidence_span": "市场首家变应原脱敏治疗药物企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粉尘螨滴剂",
+        "evidence_span": "粉尘螨滴剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄花蒿花粉变应原舌下滴剂",
+        "evidence_span": "黄花蒿花粉变应原舌下滴剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粉尘螨皮肤点刺诊断试剂盒",
+        "evidence_span": "粉尘螨皮肤点刺诊断试剂盒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "屋尘螨皮肤点刺诊断试剂盒",
+        "evidence_span": "屋尘螨皮肤点刺诊断试剂盒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "舌下脱敏治疗产品",
+        "evidence_span": "舌下脱敏治疗产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒿属花粉舌下免疫治疗药物",
+        "evidence_span": "蒿属花粉舌下免疫治疗药物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "点刺检测产品",
+        "evidence_span": "多款点刺检测产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "舌下脱敏治疗",
+        "evidence_span": "舌下脱敏治疗"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "舌下含服变应原脱敏制剂",
+        "evidence_span": "舌下含服变应原脱敏制剂"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "脱敏治疗蓝海赛道",
+        "evidence_span": "脱敏治疗蓝海赛道"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "消费升级与医生认可度提升",
+        "evidence_span": "消费升级与医生认可度提升"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:58:39"
+}

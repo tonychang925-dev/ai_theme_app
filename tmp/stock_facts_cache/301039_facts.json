@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "半挂车",
+      "evidence_span": "中集车辆主要业务为半挂车与专用车上装"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "专用车上装",
+      "evidence_span": "中集车辆主要业务为半挂车与专用车上装"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球半挂车龙头",
+      "evidence_span": "是该领域的全球龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集平半挂车",
+      "evidence_span": "公司半挂车主要产品包括集平半挂车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仓栏半挂车",
+      "evidence_span": "仓栏半挂车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "罐式半挂车",
+      "evidence_span": "罐式半挂车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷藏半挂车",
+      "evidence_span": "冷藏半挂车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "厢式半挂车",
+      "evidence_span": "厢式半挂车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自卸车翻斗车身",
+      "evidence_span": "公司专用车上装产品主要包括自卸车翻斗车身"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "混凝土搅拌筒",
+      "evidence_span": "混凝土搅拌筒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷藏车厢体",
+      "evidence_span": "冷藏车厢体"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高强度耐磨钢核心工艺",
+      "evidence_span": "掌握高强度耐磨钢核心工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "轻量化技术",
+      "evidence_span": "等轻量化技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "轻量化优势显著",
+      "evidence_span": "渣土车、冷厢车和罐车轻量化优势显著"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源产品研发创新",
+      "evidence_span": "积极推进新能源产品研发创新"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "半挂车",
+        "evidence_span": "中集车辆主要业务为半挂车与专用车上装"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "专用车上装",
+        "evidence_span": "中集车辆主要业务为半挂车与专用车上装"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球半挂车龙头",
+        "evidence_span": "是该领域的全球龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集平半挂车",
+        "evidence_span": "公司半挂车主要产品包括集平半挂车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仓栏半挂车",
+        "evidence_span": "仓栏半挂车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "罐式半挂车",
+        "evidence_span": "罐式半挂车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷藏半挂车",
+        "evidence_span": "冷藏半挂车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "厢式半挂车",
+        "evidence_span": "厢式半挂车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自卸车翻斗车身",
+        "evidence_span": "公司专用车上装产品主要包括自卸车翻斗车身"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "混凝土搅拌筒",
+        "evidence_span": "混凝土搅拌筒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷藏车厢体",
+        "evidence_span": "冷藏车厢体"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高强度耐磨钢核心工艺",
+        "evidence_span": "掌握高强度耐磨钢核心工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "轻量化技术",
+        "evidence_span": "等轻量化技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "轻量化优势显著",
+        "evidence_span": "渣土车、冷厢车和罐车轻量化优势显著"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源产品研发创新",
+        "evidence_span": "积极推进新能源产品研发创新"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:23:45"
+}

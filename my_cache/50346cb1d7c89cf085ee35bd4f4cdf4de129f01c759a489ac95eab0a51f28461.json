@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:38:06", "result": {"chunk_id": "8e3ec6c1be20", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落主要静态说明MSCI指数的定义、核心构成（如全球投资标准、资金引导作用、工具箱功能）和关键要素（如MSCI中国指数、新兴市场指数），不包含具体事件、时间推进或动态信息，纯属题材本体知识。"}}

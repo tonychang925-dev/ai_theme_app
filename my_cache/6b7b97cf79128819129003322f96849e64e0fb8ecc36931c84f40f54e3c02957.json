@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "554bdfce918a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述SK海力士董事长崔泰源的言论和英伟达要求提前HBM4供货时间的事件，属于公司动态和合作新闻，无静态知识。"}}

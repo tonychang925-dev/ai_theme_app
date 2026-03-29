@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "64921dcb00e2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了国务院总理参观调研2024世界机器人博览会并发表讲话的事件，包含日期和政策动态，没有提供关于人形机器人本身的定义、结构或机制等静态知识，因此是纯事件。"}}

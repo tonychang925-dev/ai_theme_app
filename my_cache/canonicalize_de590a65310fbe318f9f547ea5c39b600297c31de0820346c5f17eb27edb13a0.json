@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:18:46", "result": {"span_uid": "ad898d737005", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "技术进展事件", "stability": "low", "reason": "该片段是佳能交付首台新型纳米压印光刻机的具体事件，带有新闻口吻和主观表述（如“能耗据称只要十分之一”），无法整理成稳定知识块。"}}

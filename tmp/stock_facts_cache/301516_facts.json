@@ -1,0 +1,459 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "通信电源",
+      "evidence_span": "公司的业务涵盖了通信电源、新能源电源、工控电源和其他电源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源电源",
+      "evidence_span": "公司的业务涵盖了通信电源、新能源电源、工控电源和其他电源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工控电源",
+      "evidence_span": "公司的业务涵盖了通信电源、新能源电源、工控电源和其他电源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其他电源",
+      "evidence_span": "公司的业务涵盖了通信电源、新能源电源、工控电源和其他电源"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电源解决方案供应商",
+      "evidence_span": "公司致力于成为全球领先的电源解决方案供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基站电源",
+      "evidence_span": "类型覆盖满足全球安规认证要求的基站电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "POE电源",
+      "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CPCI电源",
+      "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线产品电源",
+      "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源、无线产品电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "服务器电源",
+      "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源、无线产品电源、服务器电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "系统电源",
+      "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源、无线产品电源、服务器电源、系统电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光网络电源",
+      "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源、无线产品电源、服务器电源、系统电源、光网络电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "嵌入式电源",
+      "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源、无线产品电源、服务器电源、系统电源、光网络电源、嵌入式电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直流远供电源",
+      "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源、无线产品电源、服务器电源、系统电源、光网络电源、嵌入式电源、直流远供电源等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载充电机",
+      "evidence_span": "主要产品包括车载充电机（OBC）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载DC/DC转换器",
+      "evidence_span": "主要产品包括车载充电机（OBC）、车载DC/DC转换器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双向车载充电机",
+      "evidence_span": "主要产品包括车载充电机（OBC）、车载DC/DC转换器、双向车载充电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "助力转向电源",
+      "evidence_span": "主要产品包括车载充电机（OBC）、车载DC/DC转换器、双向车载充电机、助力转向电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载电源集成产品",
+      "evidence_span": "主要产品包括车载充电机（OBC）、车载DC/DC转换器、双向车载充电机、助力转向电源、车载电源集成产品（CDU）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢燃料电池DC/DC变换器",
+      "evidence_span": "主要产品包括车载充电机（OBC）、车载DC/DC转换器、双向车载充电机、助力转向电源、车载电源集成产品（CDU）、氢燃料电池DC/DC变换器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "便携式充电机",
+      "evidence_span": "主要产品包括便携式充电机、交流充电桩、直流充电桩及其核心功率模块等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交流充电桩",
+      "evidence_span": "主要产品包括便携式充电机、交流充电桩、直流充电桩及其核心功率模块等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直流充电桩",
+      "evidence_span": "主要产品包括便携式充电机、交流充电桩、直流充电桩及其核心功率模块等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AC/DC导轨电源",
+      "evidence_span": "公司的工控电源主要包括AC/DC导轨电源、DC/DC导轨电源、UPS导轨电源等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DC/DC导轨电源",
+      "evidence_span": "公司的工控电源主要包括AC/DC导轨电源、DC/DC导轨电源、UPS导轨电源等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "UPS导轨电源",
+      "evidence_span": "公司的工控电源主要包括AC/DC导轨电源、DC/DC导轨电源、UPS导轨电源等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模块电源",
+      "evidence_span": "公司其他电源产品主要包括模块电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏/储能电源",
+      "evidence_span": "公司其他电源产品主要包括模块电源，以及光伏/储能电源、特种电源、激光电源和轨道交通电源等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种电源",
+      "evidence_span": "公司其他电源产品主要包括模块电源，以及光伏/储能电源、特种电源、激光电源和轨道交通电源等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光电源",
+      "evidence_span": "公司其他电源产品主要包括模块电源，以及光伏/储能电源、特种电源、激光电源和轨道交通电源等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道交通电源",
+      "evidence_span": "公司其他电源产品主要包括模块电源，以及光伏/储能电源、特种电源、激光电源和轨道交通电源等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电力电子转换技术平台",
+      "evidence_span": "公司建立了电力电子转换、软件控制、结构工艺等先进技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "软件控制技术平台",
+      "evidence_span": "公司建立了电力电子转换、软件控制、结构工艺等先进技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "结构工艺技术平台",
+      "evidence_span": "公司建立了电力电子转换、软件控制、结构工艺等先进技术平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中兴",
+      "evidence_span": "在通信领域，公司客户以国内外大型通信设备厂商客户为主，包括S客户、中兴、爱立信、诺基亚、新华三等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "爱立信",
+      "evidence_span": "在通信领域，公司客户以国内外大型通信设备厂商客户为主，包括S客户、中兴、爱立信、诺基亚、新华三等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "诺基亚",
+      "evidence_span": "在通信领域，公司客户以国内外大型通信设备厂商客户为主，包括S客户、中兴、爱立信、诺基亚、新华三等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新华三",
+      "evidence_span": "在通信领域，公司客户以国内外大型通信设备厂商客户为主，包括S客户、中兴、爱立信、诺基亚、新华三等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汇川技术",
+      "evidence_span": "在新能源领域，公司拥有汇川技术、英威腾、蓝海华腾、吉利、比亚迪等国内知名新能源汽车集成厂商和整车厂商客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英威腾",
+      "evidence_span": "在新能源领域，公司拥有汇川技术、英威腾、蓝海华腾、吉利、比亚迪等国内知名新能源汽车集成厂商和整车厂商客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蓝海华腾",
+      "evidence_span": "在新能源领域，公司拥有汇川技术、英威腾、蓝海华腾、吉利、比亚迪等国内知名新能源汽车集成厂商和整车厂商客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "在新能源领域，公司拥有汇川技术、英威腾、蓝海华腾、吉利、比亚迪等国内知名新能源汽车集成厂商和整车厂商客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "在新能源领域，公司拥有汇川技术、英威腾、蓝海华腾、吉利、比亚迪等国内知名新能源汽车集成厂商和整车厂商客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "魏德米勒",
+      "evidence_span": "在工控领域，公司与国际领先的工业联接解决方案供应商魏德米勒等客户建立了良好的长期合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "后续将持续深耕服务器电源国产替代市场"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "通信电源",
+        "evidence_span": "公司的业务涵盖了通信电源、新能源电源、工控电源和其他电源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源电源",
+        "evidence_span": "公司的业务涵盖了通信电源、新能源电源、工控电源和其他电源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工控电源",
+        "evidence_span": "公司的业务涵盖了通信电源、新能源电源、工控电源和其他电源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "其他电源",
+        "evidence_span": "公司的业务涵盖了通信电源、新能源电源、工控电源和其他电源"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电源解决方案供应商",
+        "evidence_span": "公司致力于成为全球领先的电源解决方案供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基站电源",
+        "evidence_span": "类型覆盖满足全球安规认证要求的基站电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "POE电源",
+        "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CPCI电源",
+        "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线产品电源",
+        "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源、无线产品电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "服务器电源",
+        "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源、无线产品电源、服务器电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "系统电源",
+        "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源、无线产品电源、服务器电源、系统电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光网络电源",
+        "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源、无线产品电源、服务器电源、系统电源、光网络电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "嵌入式电源",
+        "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源、无线产品电源、服务器电源、系统电源、光网络电源、嵌入式电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直流远供电源",
+        "evidence_span": "类型覆盖满足全球安规认证要求的基站电源、POE电源、CPCI电源、无线产品电源、服务器电源、系统电源、光网络电源、嵌入式电源、直流远供电源等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载充电机",
+        "evidence_span": "主要产品包括车载充电机（OBC）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载DC/DC转换器",
+        "evidence_span": "主要产品包括车载充电机（OBC）、车载DC/DC转换器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双向车载充电机",
+        "evidence_span": "主要产品包括车载充电机（OBC）、车载DC/DC转换器、双向车载充电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "助力转向电源",
+        "evidence_span": "主要产品包括车载充电机（OBC）、车载DC/DC转换器、双向车载充电机、助力转向电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载电源集成产品",
+        "evidence_span": "主要产品包括车载充电机（OBC）、车载DC/DC转换器、双向车载充电机、助力转向电源、车载电源集成产品（CDU）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢燃料电池DC/DC变换器",
+        "evidence_span": "主要产品包括车载充电机（OBC）、车载DC/DC转换器、双向车载充电机、助力转向电源、车载电源集成产品（CDU）、氢燃料电池DC/DC变换器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "便携式充电机",
+        "evidence_span": "主要产品包括便携式充电机、交流充电桩、直流充电桩及其核心功率模块等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交流充电桩",
+        "evidence_span": "主要产品包括便携式充电机、交流充电桩、直流充电桩及其核心功率模块等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直流充电桩",
+        "evidence_span": "主要产品包括便携式充电机、交流充电桩、直流充电桩及其核心功率模块等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AC/DC导轨电源",
+        "evidence_span": "公司的工控电源主要包括AC/DC导轨电源、DC/DC导轨电源、UPS导轨电源等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DC/DC导轨电源",
+        "evidence_span": "公司的工控电源主要包括AC/DC导轨电源、DC/DC导轨电源、UPS导轨电源等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "UPS导轨电源",
+        "evidence_span": "公司的工控电源主要包括AC/DC导轨电源、DC/DC导轨电源、UPS导轨电源等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模块电源",
+        "evidence_span": "公司其他电源产品主要包括模块电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏/储能电源",
+        "evidence_span": "公司其他电源产品主要包括模块电源，以及光伏/储能电源、特种电源、激光电源和轨道交通电源等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种电源",
+        "evidence_span": "公司其他电源产品主要包括模块电源，以及光伏/储能电源、特种电源、激光电源和轨道交通电源等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光电源",
+        "evidence_span": "公司其他电源产品主要包括模块电源，以及光伏/储能电源、特种电源、激光电源和轨道交通电源等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道交通电源",
+        "evidence_span": "公司其他电源产品主要包括模块电源，以及光伏/储能电源、特种电源、激光电源和轨道交通电源等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电力电子转换技术平台",
+        "evidence_span": "公司建立了电力电子转换、软件控制、结构工艺等先进技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "软件控制技术平台",
+        "evidence_span": "公司建立了电力电子转换、软件控制、结构工艺等先进技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "结构工艺技术平台",
+        "evidence_span": "公司建立了电力电子转换、软件控制、结构工艺等先进技术平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中兴",
+        "evidence_span": "在通信领域，公司客户以国内外大型通信设备厂商客户为主，包括S客户、中兴、爱立信、诺基亚、新华三等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "爱立信",
+        "evidence_span": "在通信领域，公司客户以国内外大型通信设备厂商客户为主，包括S客户、中兴、爱立信、诺基亚、新华三等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "诺基亚",
+        "evidence_span": "在通信领域，公司客户以国内外大型通信设备厂商客户为主，包括S客户、中兴、爱立信、诺基亚、新华三等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新华三",
+        "evidence_span": "在通信领域，公司客户以国内外大型通信设备厂商客户为主，包括S客户、中兴、爱立信、诺基亚、新华三等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汇川技术",
+        "evidence_span": "在新能源领域，公司拥有汇川技术、英威腾、蓝海华腾、吉利、比亚迪等国内知名新能源汽车集成厂商和整车厂商客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英威腾",
+        "evidence_span": "在新能源领域，公司拥有汇川技术、英威腾、蓝海华腾、吉利、比亚迪等国内知名新能源汽车集成厂商和整车厂商客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蓝海华腾",
+        "evidence_span": "在新能源领域，公司拥有汇川技术、英威腾、蓝海华腾、吉利、比亚迪等国内知名新能源汽车集成厂商和整车厂商客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "在新能源领域，公司拥有汇川技术、英威腾、蓝海华腾、吉利、比亚迪等国内知名新能源汽车集成厂商和整车厂商客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "在新能源领域，公司拥有汇川技术、英威腾、蓝海华腾、吉利、比亚迪等国内知名新能源汽车集成厂商和整车厂商客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "魏德米勒",
+        "evidence_span": "在工控领域，公司与国际领先的工业联接解决方案供应商魏德米勒等客户建立了良好的长期合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "后续将持续深耕服务器电源国产替代市场"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:46:19"
+}

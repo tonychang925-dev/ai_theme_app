@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:38:44", "result": {"chunk_id": "a501711f0935", "decision": "drop", "confidence": 0.7, "knowledge_value": "low", "reason": "段落主要讨论高盛对自动驾驶汽车普及的预测，这是外部机构观点，不直接涉及特斯拉FSD的具体知识，属于噪音。", "knowledge_spans": [], "event_residue": "", "drop_target": "noise"}}

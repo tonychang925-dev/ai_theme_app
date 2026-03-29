@@ -1,0 +1,139 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "番茄制品生产销售",
+      "evidence_span": "公司作为兵团从事番茄制品生产销售的农业产业化龙头企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "番茄红素保健品",
+      "evidence_span": "重点开发和推广了高附加值的番茄红素保健品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "小罐产品",
+      "evidence_span": "着手布局了小罐产品的生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农业产业化龙头企业",
+      "evidence_span": "公司作为兵团从事番茄制品生产销售的农业产业化龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大包装番茄酱",
+      "evidence_span": "大包装番茄酱业务遵循提质增效的原则"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "番茄红素保健品",
+      "evidence_span": "重点开发和推广了高附加值的番茄红素保健品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小罐酱",
+      "evidence_span": "小罐酱4500吨"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "博士后科研工作站",
+      "evidence_span": "公司被国家人事部正式批准设立“博士后科研工作站”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家级企业技术中心",
+      "evidence_span": "公司的企业技术中心通过国家级企业技术中心的评定"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家农产品加工技术研发专业中心",
+      "evidence_span": "被认定为国家农产品加工技术研发专业中心唯一的蔬菜加工专业分中心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧洲食品组织",
+      "evidence_span": "番茄制品通过了欧洲食品组织BCS认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国汉斯公司",
+      "evidence_span": "美国汉斯公司考核认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亨氏公司",
+      "evidence_span": "亨氏公司非转基因品种认证"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "番茄制品生产销售",
+        "evidence_span": "公司作为兵团从事番茄制品生产销售的农业产业化龙头企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "番茄红素保健品",
+        "evidence_span": "重点开发和推广了高附加值的番茄红素保健品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "小罐产品",
+        "evidence_span": "着手布局了小罐产品的生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农业产业化龙头企业",
+        "evidence_span": "公司作为兵团从事番茄制品生产销售的农业产业化龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大包装番茄酱",
+        "evidence_span": "大包装番茄酱业务遵循提质增效的原则"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "番茄红素保健品",
+        "evidence_span": "重点开发和推广了高附加值的番茄红素保健品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小罐酱",
+        "evidence_span": "小罐酱4500吨"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "博士后科研工作站",
+        "evidence_span": "公司被国家人事部正式批准设立“博士后科研工作站”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家级企业技术中心",
+        "evidence_span": "公司的企业技术中心通过国家级企业技术中心的评定"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家农产品加工技术研发专业中心",
+        "evidence_span": "被认定为国家农产品加工技术研发专业中心唯一的蔬菜加工专业分中心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧洲食品组织",
+        "evidence_span": "番茄制品通过了欧洲食品组织BCS认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国汉斯公司",
+        "evidence_span": "美国汉斯公司考核认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亨氏公司",
+        "evidence_span": "亨氏公司非转基因品种认证"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:01:57"
+}

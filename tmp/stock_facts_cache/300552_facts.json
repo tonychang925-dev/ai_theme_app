@@ -1,0 +1,439 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "动态称重",
+      "evidence_span": "动态称重是公司立身之本"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "专用短程通信（ETC）",
+      "evidence_span": "专用短程通信（ETC）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "激光产品",
+      "evidence_span": "激光产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能交通领域的领军者",
+      "evidence_span": "作为我国智能交通领域的领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "动态称重市占率行业第一",
+      "evidence_span": "动态称重市占率行业第一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "ETC头部厂商",
+      "evidence_span": "ETC头部厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能交通领先服务商",
+      "evidence_span": "万集科技智能交通领先服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "超限检测设备龙头",
+      "evidence_span": "超限检测设备龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "计重收费系统",
+      "evidence_span": "计重收费系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超限检测系统",
+      "evidence_span": "超限检测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非现场执法系统",
+      "evidence_span": "非现场执法系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "治超系统",
+      "evidence_span": "治超系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ETC路侧单元",
+      "evidence_span": "ETC路侧单元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "前装ETC",
+      "evidence_span": "前装ETC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市应用路侧天线",
+      "evidence_span": "城市应用路侧天线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能双模识别一体机",
+      "evidence_span": "智能双模识别一体机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ETC智能网关",
+      "evidence_span": "ETC智能网关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交通用激光雷达",
+      "evidence_span": "交通用激光雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能装备用激光雷达",
+      "evidence_span": "智能装备用激光雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "面向精准感知多线激光雷达",
+      "evidence_span": "面向精准感知多线激光雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车规级8线和16线局部视场激光雷达",
+      "evidence_span": "车规级8线和16线局部视场激光雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全视场16线和32线激光雷达",
+      "evidence_span": "全视场16线和32线激光雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "128线转镜式车载激光雷达",
+      "evidence_span": "128线转镜式车载激光雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MEMS车载激光雷达",
+      "evidence_span": "MEMS车载激光雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅基全固态激光雷达",
+      "evidence_span": "硅基全固态激光雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "路侧32线和64线激光雷达",
+      "evidence_span": "路侧32线和64线激光雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "WLR-732R三维激光雷达",
+      "evidence_span": "WLR-732R是为车路协同路基感知应用定制的三维激光雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "WLR-732L激光雷达",
+      "evidence_span": "WLR-732L则拥有360度扫描角度和32线垂直视场疏密分布"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "WLR-712高精度导航雷达",
+      "evidence_span": "WLR-712高精度导航雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "WLR-718防撞雷达",
+      "evidence_span": "WLR-718防撞雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "WLR-716自然导航雷达",
+      "evidence_span": "WLR-716自然导航雷达"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字动态称重技术",
+      "evidence_span": "加速引领数字动态称重技术走向国际前沿"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机械式激光雷达",
+      "evidence_span": "机械式激光雷达"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "半固态激光雷达",
+      "evidence_span": "半固态激光雷达"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "纯固态激光雷达",
+      "evidence_span": "纯固态激光雷达"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宇通",
+      "evidence_span": "其已跟宇通和东风就车载激光雷达有商用合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风",
+      "evidence_span": "其已跟宇通和东风就车载激光雷达有商用合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "近60家汽车主机厂",
+      "evidence_span": "公司目前已经获得近60家汽车主机的前装ETC定点"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿嘉和",
+      "evidence_span": "包括亿嘉和、优必选、上海高仙等多家国内知名移动机器人企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "优必选",
+      "evidence_span": "包括亿嘉和、优必选、上海高仙等多家国内知名移动机器人企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海高仙",
+      "evidence_span": "包括亿嘉和、优必选、上海高仙等多家国内知名移动机器人企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益非现场执法推进",
+      "evidence_span": "受益非现场执法推进"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于车、路两侧的智能网联规模化部署红利",
+      "evidence_span": "公司智能网联业务也有望受益于车、路两侧的智能网联规模化部署红利"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "动态称重",
+        "evidence_span": "动态称重是公司立身之本"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "专用短程通信（ETC）",
+        "evidence_span": "专用短程通信（ETC）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "激光产品",
+        "evidence_span": "激光产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能交通领域的领军者",
+        "evidence_span": "作为我国智能交通领域的领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "动态称重市占率行业第一",
+        "evidence_span": "动态称重市占率行业第一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "ETC头部厂商",
+        "evidence_span": "ETC头部厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能交通领先服务商",
+        "evidence_span": "万集科技智能交通领先服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "超限检测设备龙头",
+        "evidence_span": "超限检测设备龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "计重收费系统",
+        "evidence_span": "计重收费系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超限检测系统",
+        "evidence_span": "超限检测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非现场执法系统",
+        "evidence_span": "非现场执法系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "治超系统",
+        "evidence_span": "治超系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ETC路侧单元",
+        "evidence_span": "ETC路侧单元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "前装ETC",
+        "evidence_span": "前装ETC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市应用路侧天线",
+        "evidence_span": "城市应用路侧天线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能双模识别一体机",
+        "evidence_span": "智能双模识别一体机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ETC智能网关",
+        "evidence_span": "ETC智能网关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交通用激光雷达",
+        "evidence_span": "交通用激光雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能装备用激光雷达",
+        "evidence_span": "智能装备用激光雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "面向精准感知多线激光雷达",
+        "evidence_span": "面向精准感知多线激光雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车规级8线和16线局部视场激光雷达",
+        "evidence_span": "车规级8线和16线局部视场激光雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全视场16线和32线激光雷达",
+        "evidence_span": "全视场16线和32线激光雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "128线转镜式车载激光雷达",
+        "evidence_span": "128线转镜式车载激光雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MEMS车载激光雷达",
+        "evidence_span": "MEMS车载激光雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅基全固态激光雷达",
+        "evidence_span": "硅基全固态激光雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "路侧32线和64线激光雷达",
+        "evidence_span": "路侧32线和64线激光雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "WLR-732R三维激光雷达",
+        "evidence_span": "WLR-732R是为车路协同路基感知应用定制的三维激光雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "WLR-732L激光雷达",
+        "evidence_span": "WLR-732L则拥有360度扫描角度和32线垂直视场疏密分布"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "WLR-712高精度导航雷达",
+        "evidence_span": "WLR-712高精度导航雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "WLR-718防撞雷达",
+        "evidence_span": "WLR-718防撞雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "WLR-716自然导航雷达",
+        "evidence_span": "WLR-716自然导航雷达"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字动态称重技术",
+        "evidence_span": "加速引领数字动态称重技术走向国际前沿"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机械式激光雷达",
+        "evidence_span": "机械式激光雷达"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "半固态激光雷达",
+        "evidence_span": "半固态激光雷达"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "纯固态激光雷达",
+        "evidence_span": "纯固态激光雷达"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宇通",
+        "evidence_span": "其已跟宇通和东风就车载激光雷达有商用合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风",
+        "evidence_span": "其已跟宇通和东风就车载激光雷达有商用合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "近60家汽车主机厂",
+        "evidence_span": "公司目前已经获得近60家汽车主机的前装ETC定点"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿嘉和",
+        "evidence_span": "包括亿嘉和、优必选、上海高仙等多家国内知名移动机器人企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "优必选",
+        "evidence_span": "包括亿嘉和、优必选、上海高仙等多家国内知名移动机器人企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海高仙",
+        "evidence_span": "包括亿嘉和、优必选、上海高仙等多家国内知名移动机器人企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益非现场执法推进",
+        "evidence_span": "受益非现场执法推进"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于车、路两侧的智能网联规模化部署红利",
+        "evidence_span": "公司智能网联业务也有望受益于车、路两侧的智能网联规模化部署红利"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:16:53"
+}

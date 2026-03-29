@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "913144d7f932", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落报告美国国际贸易委员会的终裁事件，包括日期、调查编码、侵权认定和措施，属于监管进展动态，无静态知识说明。"}}

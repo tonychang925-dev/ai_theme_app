@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市燃气供应",
+      "evidence_span": "专注于城市燃气供应"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市集中供热",
+      "evidence_span": "专注于城市集中供热的公用事业服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "CNG汽车加气",
+      "evidence_span": "业务包括CNG汽车加气"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "居民生活用气",
+      "evidence_span": "业务包括居民生活用气"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工商业客户用气",
+      "evidence_span": "业务包括工商业客户用气"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "燃气供应管网建设",
+      "evidence_span": "覆盖燃气供应管网建设"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "燃气市场开发的设备安装",
+      "evidence_span": "围绕燃气市场开发的设备安装"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "公用事业服务商",
+      "evidence_span": "专注于城市燃气供应、城市集中供热的公用事业服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天然气销售",
+      "evidence_span": "公司实现天然气销售收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "供热业务",
+      "evidence_span": "供热业务收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天然气设施设备安装",
+      "evidence_span": "天然气设施设备安装业务收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分布式能源供热系统",
+      "evidence_span": "采用分布式能源供热系统向用户终端直接供热"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制冷空调服务",
+      "evidence_span": "对商业用户供应制冷空调服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SCADA系统",
+      "evidence_span": "建立了SCADA系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "GIS管网系统",
+      "evidence_span": "GIS管网系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "管网巡检系统",
+      "evidence_span": "管网巡检系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "入户安检系统",
+      "evidence_span": "入户安检系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "客户化综合服务平台",
+      "evidence_span": "客户化综合服务平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧加气综合管理平台",
+      "evidence_span": "智慧加气综合管理平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油销售新疆分公司",
+      "evidence_span": "中石油销售新疆分公司是公司的主要天然气供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "中石化是公司的主要天然气供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "庆华能源",
+      "evidence_span": "庆华能源是公司的主要天然气供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双碳",
+      "evidence_span": "天然气作为清洁稳定的低碳能源，是实现“双碳”目标的重要力量"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市燃气供应",
+        "evidence_span": "专注于城市燃气供应"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市集中供热",
+        "evidence_span": "专注于城市集中供热的公用事业服务商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "CNG汽车加气",
+        "evidence_span": "业务包括CNG汽车加气"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "居民生活用气",
+        "evidence_span": "业务包括居民生活用气"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工商业客户用气",
+        "evidence_span": "业务包括工商业客户用气"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "燃气供应管网建设",
+        "evidence_span": "覆盖燃气供应管网建设"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "燃气市场开发的设备安装",
+        "evidence_span": "围绕燃气市场开发的设备安装"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "公用事业服务商",
+        "evidence_span": "专注于城市燃气供应、城市集中供热的公用事业服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天然气销售",
+        "evidence_span": "公司实现天然气销售收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "供热业务",
+        "evidence_span": "供热业务收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天然气设施设备安装",
+        "evidence_span": "天然气设施设备安装业务收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分布式能源供热系统",
+        "evidence_span": "采用分布式能源供热系统向用户终端直接供热"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制冷空调服务",
+        "evidence_span": "对商业用户供应制冷空调服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SCADA系统",
+        "evidence_span": "建立了SCADA系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "GIS管网系统",
+        "evidence_span": "GIS管网系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "管网巡检系统",
+        "evidence_span": "管网巡检系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "入户安检系统",
+        "evidence_span": "入户安检系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "客户化综合服务平台",
+        "evidence_span": "客户化综合服务平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧加气综合管理平台",
+        "evidence_span": "智慧加气综合管理平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油销售新疆分公司",
+        "evidence_span": "中石油销售新疆分公司是公司的主要天然气供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "中石化是公司的主要天然气供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "庆华能源",
+        "evidence_span": "庆华能源是公司的主要天然气供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双碳",
+        "evidence_span": "天然气作为清洁稳定的低碳能源，是实现“双碳”目标的重要力量"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:57:24"
+}

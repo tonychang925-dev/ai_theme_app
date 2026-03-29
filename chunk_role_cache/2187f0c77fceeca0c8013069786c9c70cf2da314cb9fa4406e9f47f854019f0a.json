@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "61418279b312", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含多个事件（如试点城市信息、政策通知、产业目标），但涉及eVTOL试点、空域管理和经济发展路线，可能含有低空经济实施和规模的知识，混合了事件和潜在知识。"}}

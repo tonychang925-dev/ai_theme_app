@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:43:18", "result": {"chunk_id": "dd1fe52af084", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述OpenAI披露'星际之门'项目这一具体事件，包括时间、目标和采用直抵芯片液冷技术，属于动态新闻，没有提供稳定的题材定义或结构知识。"}}

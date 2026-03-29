@@ -1,0 +1,499 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "冷链物流",
+      "evidence_span": "服务于冷链物流"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中央空调",
+      "evidence_span": "中央空调"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "余热回收",
+      "evidence_span": "余热回收"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "集中供暖",
+      "evidence_span": "集中供暖"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "燃煤锅炉节能改造",
+      "evidence_span": "燃煤锅炉节能改造产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "碳捕集",
+      "evidence_span": "积极拓展碳捕集/封存/利用"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "封存",
+      "evidence_span": "积极拓展碳捕集/封存/利用"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "利用",
+      "evidence_span": "积极拓展碳捕集/封存/利用"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "氢能",
+      "evidence_span": "氢能等新领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国工商业制冷行业领军企业",
+      "evidence_span": "中国工商业制冷行业的领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大型工商制冷压缩器的龙头企业",
+      "evidence_span": "大型工商制冷压缩器的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "吸收式大温差换热领域的开拓者与领跑者",
+      "evidence_span": "吸收式大温差换热领域的开拓者与领跑者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制冷压缩机",
+      "evidence_span": "起家于制冷压缩机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷冻冷藏压缩机",
+      "evidence_span": "冷冻冷藏压缩机需求增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "螺杆压缩机",
+      "evidence_span": "螺杆压缩机应用范围最广"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业余热利用设备",
+      "evidence_span": "冰轮环境工业余热利用设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大温差换热设备",
+      "evidence_span": "大温差换热"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "余热回收设备",
+      "evidence_span": "余热回收"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "余热锅炉",
+      "evidence_span": "余热锅炉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "余热发电设备",
+      "evidence_span": "余热发电设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热泵产品",
+      "evidence_span": "拥有各类热泵产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CCUS设备",
+      "evidence_span": "冰轮环境的CCUS设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CO2增压和液化装置",
+      "evidence_span": "CO2增压和液化装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢能压缩机",
+      "evidence_span": "冰轮环境氢能压缩机产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加氢站隔膜压缩机",
+      "evidence_span": "加氢站隔膜压缩机的研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空气压缩机",
+      "evidence_span": "开发10 余种型号空气压缩机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢燃料电池空气压缩机",
+      "evidence_span": "氢燃料电池空气压缩机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢气循环泵",
+      "evidence_span": "氢气循环泵"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "制冷压缩机“全压力、宽温区、多工质”核心技术",
+      "evidence_span": "掌握制冷压缩机“全压力、宽温区、多工质”的核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "NH3/CO2复叠式制冷技术",
+      "evidence_span": "NH3/CO2复叠式制冷技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于吸收式换热的热电联产集中供热技术",
+      "evidence_span": "基于吸收式换热的热电联产集中供热技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "烟气余热深度回收技术",
+      "evidence_span": "烟气余热深度回收技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业余热回收技术",
+      "evidence_span": "工业余热回收技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MVR机械式蒸汽再压缩技术",
+      "evidence_span": "MVR机械式蒸汽再压缩技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大温差吸收式换热技术",
+      "evidence_span": "大温差吸收式换热技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "余热深度回收技术",
+      "evidence_span": "余热深度回收技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于喷淋换热的燃煤烟气余热深度回收与消白技术",
+      "evidence_span": "基于喷淋换热的燃煤烟气余热深度回收与消白技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电厂用超低压吸收式热泵技术",
+      "evidence_span": "电厂用超低压吸收式热泵技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于低品位余热利用的大温差长输供热技术",
+      "evidence_span": "基于低品位余热利用的大温差长输供热技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氢气液化的大型氦气压缩机关键技术",
+      "evidence_span": "突破氢气液化的大型氦气压缩机关键技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新疆敦华石油",
+      "evidence_span": "新疆敦华石油"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天津联博化工",
+      "evidence_span": "天津联博化工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁夏德大气体",
+      "evidence_span": "宁夏德大气体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陕西国华锦界能源",
+      "evidence_span": "陕西国华锦界能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "河南心连心深冷能源",
+      "evidence_span": "河南心连心深冷能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长庆油田",
+      "evidence_span": "长庆油田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "主流燃料电池厂商",
+      "evidence_span": "主流燃料电池厂商批量订单"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "冷链发展",
+      "evidence_span": "受益于冷链发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳中和",
+      "evidence_span": "“碳中和”的背景下"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双碳",
+      "evidence_span": "“双碳”背景下"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "冷链物流",
+        "evidence_span": "服务于冷链物流"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中央空调",
+        "evidence_span": "中央空调"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "余热回收",
+        "evidence_span": "余热回收"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "集中供暖",
+        "evidence_span": "集中供暖"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "燃煤锅炉节能改造",
+        "evidence_span": "燃煤锅炉节能改造产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "碳捕集/封存/利用",
+        "evidence_span": "积极拓展碳捕集/封存/利用"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "氢能",
+        "evidence_span": "氢能等新领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国工商业制冷行业领军企业",
+        "evidence_span": "中国工商业制冷行业的领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大型工商制冷压缩器的龙头企业",
+        "evidence_span": "大型工商制冷压缩器的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "吸收式大温差换热领域的开拓者与领跑者",
+        "evidence_span": "吸收式大温差换热领域的开拓者与领跑者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制冷压缩机",
+        "evidence_span": "起家于制冷压缩机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷冻冷藏压缩机",
+        "evidence_span": "冷冻冷藏压缩机需求增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "螺杆压缩机",
+        "evidence_span": "螺杆压缩机应用范围最广"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业余热利用设备",
+        "evidence_span": "冰轮环境工业余热利用设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大温差换热设备",
+        "evidence_span": "大温差换热"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "余热回收设备",
+        "evidence_span": "余热回收"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "余热锅炉",
+        "evidence_span": "余热锅炉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "余热发电设备",
+        "evidence_span": "余热发电设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热泵产品",
+        "evidence_span": "拥有各类热泵产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CCUS设备",
+        "evidence_span": "冰轮环境的CCUS设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CO2增压和液化装置",
+        "evidence_span": "CO2增压和液化装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢能压缩机",
+        "evidence_span": "冰轮环境氢能压缩机产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加氢站隔膜压缩机",
+        "evidence_span": "加氢站隔膜压缩机的研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空气压缩机",
+        "evidence_span": "开发10 余种型号空气压缩机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢燃料电池空气压缩机",
+        "evidence_span": "氢燃料电池空气压缩机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢气循环泵",
+        "evidence_span": "氢气循环泵"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "制冷压缩机“全压力、宽温区、多工质”核心技术",
+        "evidence_span": "掌握制冷压缩机“全压力、宽温区、多工质”的核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "NH3/CO2复叠式制冷技术",
+        "evidence_span": "NH3/CO2复叠式制冷技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于吸收式换热的热电联产集中供热技术",
+        "evidence_span": "基于吸收式换热的热电联产集中供热技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "烟气余热深度回收技术",
+        "evidence_span": "烟气余热深度回收技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业余热回收技术",
+        "evidence_span": "工业余热回收技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MVR机械式蒸汽再压缩技术",
+        "evidence_span": "MVR机械式蒸汽再压缩技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大温差吸收式换热技术",
+        "evidence_span": "大温差吸收式换热技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "余热深度回收技术",
+        "evidence_span": "余热深度回收技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于喷淋换热的燃煤烟气余热深度回收与消白技术",
+        "evidence_span": "基于喷淋换热的燃煤烟气余热深度回收与消白技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电厂用超低压吸收式热泵技术",
+        "evidence_span": "电厂用超低压吸收式热泵技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于低品位余热利用的大温差长输供热技术",
+        "evidence_span": "基于低品位余热利用的大温差长输供热技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氢气液化的大型氦气压缩机关键技术",
+        "evidence_span": "突破氢气液化的大型氦气压缩机关键技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新疆敦华石油",
+        "evidence_span": "新疆敦华石油"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津联博化工",
+        "evidence_span": "天津联博化工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁夏德大气体",
+        "evidence_span": "宁夏德大气体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陕西国华锦界能源",
+        "evidence_span": "陕西国华锦界能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "河南心连心深冷能源",
+        "evidence_span": "河南心连心深冷能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长庆油田",
+        "evidence_span": "长庆油田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "主流燃料电池厂商",
+        "evidence_span": "主流燃料电池厂商批量订单"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "冷链发展",
+        "evidence_span": "受益于冷链发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳中和",
+        "evidence_span": "“碳中和”的背景下"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双碳",
+        "evidence_span": "“双碳”背景下"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:37:07"
+}

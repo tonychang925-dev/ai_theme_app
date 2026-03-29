@@ -1,0 +1,234 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态工程施工",
+      "evidence_span": "公司目前主要的业务有生态工程施工"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "景观设计",
+      "evidence_span": "公司目前主要的业务有生态工程施工、景观设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "科教文旅",
+      "evidence_span": "公司目前主要的业务有生态工程施工、景观设计、科教文旅"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "园林养护",
+      "evidence_span": "公司目前主要的业务有生态工程施工、景观设计、科教文旅、园林养护"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "绿化苗木种植",
+      "evidence_span": "公司目前主要的业务有生态工程施工、景观设计、科教文旅、园林养护、绿化苗木种植"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "风景园林设计",
+      "evidence_span": "公司风景园林设计业务以风景园林学、建筑学、城市规划学为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态环境建设",
+      "evidence_span": "已形成集生态景观规划与设计、生态环境建设与治理、景观养护、文旅运营为一体的生态产业链"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "治理",
+      "evidence_span": "已形成集生态景观规划与设计、生态环境建设与治理、景观养护、文旅运营为一体的生态产业链"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "文旅运营",
+      "evidence_span": "已形成集生态景观规划与设计、生态环境建设与治理、景观养护、文旅运营为一体的生态产业链"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "园林工程企业",
+      "evidence_span": "ST花王领先的园林工程企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "生态环境综合服务商",
+      "evidence_span": "努力成为一家优秀的生态环境综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "建筑设计公司",
+      "evidence_span": "中维国际已迅速成长为西南地区绿色建筑领域最具竞争力和创造力之一的建筑设计公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "园林景观设计服务",
+      "evidence_span": "公司向客户提供以整体性解决方案为核心的风景园林设计服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生态工程施工",
+      "evidence_span": "公司工程施工业务是以园林绿化工程交付为目标"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色建筑设计",
+      "evidence_span": "公司在建筑设计领域深耕绿色建筑设计"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧园林",
+      "evidence_span": "花王农科作为公司转型升级的平台和载体，将智慧园林、户外运动、生态科技等有机融合"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "景观主题公园",
+      "evidence_span": "打造具有新时代特色的景观主题公园——哈畔公园"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "极限运动",
+      "evidence_span": "哈畔公园以极限运动为载体"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "绿色建筑技术方案",
+      "evidence_span": "通过可实施的绿色建筑技术方案，赋能低碳建筑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI智能园林",
+      "evidence_span": "向下利用AI智能园林、养护，逐步取代传统工艺"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳中和",
+      "evidence_span": "碳中和生态文明建设叠加作用加速生态景观行业发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色转型",
+      "evidence_span": "加快发展方式绿色转型"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "乡村振兴",
+      "evidence_span": "乡村振兴战略蕴含巨大发展潜力"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态工程施工",
+        "evidence_span": "公司目前主要的业务有生态工程施工"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "景观设计",
+        "evidence_span": "公司目前主要的业务有生态工程施工、景观设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "科教文旅",
+        "evidence_span": "公司目前主要的业务有生态工程施工、景观设计、科教文旅"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "园林养护",
+        "evidence_span": "公司目前主要的业务有生态工程施工、景观设计、科教文旅、园林养护"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "绿化苗木种植",
+        "evidence_span": "公司目前主要的业务有生态工程施工、景观设计、科教文旅、园林养护、绿化苗木种植"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "风景园林设计",
+        "evidence_span": "公司风景园林设计业务以风景园林学、建筑学、城市规划学为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态环境建设与治理",
+        "evidence_span": "已形成集生态景观规划与设计、生态环境建设与治理、景观养护、文旅运营为一体的生态产业链"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "文旅运营",
+        "evidence_span": "已形成集生态景观规划与设计、生态环境建设与治理、景观养护、文旅运营为一体的生态产业链"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "园林工程企业",
+        "evidence_span": "ST花王领先的园林工程企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "生态环境综合服务商",
+        "evidence_span": "努力成为一家优秀的生态环境综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "建筑设计公司",
+        "evidence_span": "中维国际已迅速成长为西南地区绿色建筑领域最具竞争力和创造力之一的建筑设计公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "园林景观设计服务",
+        "evidence_span": "公司向客户提供以整体性解决方案为核心的风景园林设计服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生态工程施工",
+        "evidence_span": "公司工程施工业务是以园林绿化工程交付为目标"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色建筑设计",
+        "evidence_span": "公司在建筑设计领域深耕绿色建筑设计"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧园林",
+        "evidence_span": "花王农科作为公司转型升级的平台和载体，将智慧园林、户外运动、生态科技等有机融合"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "景观主题公园",
+        "evidence_span": "打造具有新时代特色的景观主题公园——哈畔公园"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "极限运动",
+        "evidence_span": "哈畔公园以极限运动为载体"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "绿色建筑技术方案",
+        "evidence_span": "通过可实施的绿色建筑技术方案，赋能低碳建筑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI智能园林",
+        "evidence_span": "向下利用AI智能园林、养护，逐步取代传统工艺"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳中和",
+        "evidence_span": "碳中和生态文明建设叠加作用加速生态景观行业发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色转型",
+        "evidence_span": "加快发展方式绿色转型"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "乡村振兴",
+        "evidence_span": "乡村振兴战略蕴含巨大发展潜力"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:51:16"
+}

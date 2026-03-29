@@ -1,0 +1,74 @@
+{
+  "event_id": "evt_408fd2742695",
+  "theme_name": "AI/AR眼镜",
+  "event_type": "产品发布",
+  "entities": [
+    {
+      "name": "星纪魅族",
+      "type": "公司",
+      "normalized": "星纪魅族"
+    },
+    {
+      "name": "AR智能眼镜StarV View",
+      "type": "产品",
+      "normalized": "AR智能眼镜StarV View"
+    },
+    {
+      "name": "魅族商城",
+      "type": "组织",
+      "normalized": "魅族商城"
+    },
+    {
+      "name": "京东",
+      "type": "公司",
+      "normalized": "京东"
+    },
+    {
+      "name": "天猫",
+      "type": "公司",
+      "normalized": "天猫"
+    }
+  ],
+  "summary": "星纪魅族发布AR智能眼镜StarV View，支持6米188英寸巨幕，预售价2499元",
+  "causal_claim": [
+    "AR眼镜发布",
+    "沉浸观影体验",
+    "消费电子增长"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "AR智能眼镜",
+      "6米188英寸巨幕",
+      "沉浸观影体验"
+    ],
+    "normalized_terms": {
+      "星纪魅族": "星纪魅族",
+      "AR智能眼镜StarV View": "AR智能眼镜StarV View",
+      "魅族商城": "魅族商城",
+      "京东": "京东",
+      "天猫": "天猫"
+    },
+    "evidence_spans": [
+      {
+        "text": "2024年9月6日，星纪魅族AR智能眼镜StarV View正式发布",
+        "start": 0,
+        "end": 30
+      },
+      {
+        "text": "StarV View可实现6米188英寸巨幕，模拟黄金观影位置，在家就能享受电影院级沉浸观影体验",
+        "start": 60,
+        "end": 110
+      }
+    ],
+    "core_concepts": [
+      "AR眼镜",
+      "巨幕显示",
+      "预售"
+    ]
+  },
+  "severity_score": 0.6,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": "2024-09-06T00:00:00Z",
+  "raw_text": "2024年9月6日，星纪魅族AR智能眼镜StarV View正式发布，目前新品已在魅族商城、京东、天猫等官方渠道开启预售，预售价2499元。StarV View可实现6米188英寸巨幕，模拟黄金观影位置，在家就能享受电影院级沉浸观影体验"
+}

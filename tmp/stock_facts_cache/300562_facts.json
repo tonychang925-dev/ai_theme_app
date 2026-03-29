@@ -1,0 +1,384 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "健康 IoT 业务",
+      "evidence_span": "健康 IoT 业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字健康服务业务",
+      "evidence_span": "数字健康服务业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "健康物联网（IoT）与远程健康管理整体解决方案提供商",
+      "evidence_span": "为客户提供健康物联网（IoT）与远程健康管理整体解决方案"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "世界级健康 IoT 及数字健康服务提供商",
+      "evidence_span": "致力于成为世界级健康 IoT 及数字健康服务提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电子血压计",
+      "evidence_span": "智能电子血压计"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子健康秤",
+      "evidence_span": "电子健康秤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "脂肪测量仪",
+      "evidence_span": "脂肪测量仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "心贴",
+      "evidence_span": "心贴"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手环",
+      "evidence_span": "手环"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能手表",
+      "evidence_span": "智能手表"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TWS 耳机",
+      "evidence_span": "TWS 耳机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能货架",
+      "evidence_span": "智能货架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化健康管理解决方案",
+      "evidence_span": "数字化健康管理解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "校园数字化体育教学管理业务",
+      "evidence_span": "校园数字化体育教学管理业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "心脏健康管理业务",
+      "evidence_span": "心脏健康管理业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硬件、传感、算法、嵌入式软件的研发能力",
+      "evidence_span": "硬件、传感、算法、嵌入式软件的研发能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多 PD光机结构",
+      "evidence_span": "多 PD光机结构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多光谱光学结构",
+      "evidence_span": "多光谱光学结构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "传感器 Fresnel纹路设计及仿真",
+      "evidence_span": "传感器 Fresnel纹路设计及仿真"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光机皮肤模型设计及仿真",
+      "evidence_span": "光机皮肤模型设计及仿真"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高性能多参数生理传感器",
+      "evidence_span": "高性能多参数生理传感器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "跨平台多生理参数信号仿真",
+      "evidence_span": "跨平台多生理参数信号仿真"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "医疗级生理传感器设计",
+      "evidence_span": "医疗级生理传感器设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主物联网操作系统",
+      "evidence_span": "自主物联网操作系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字疗法 3D 模型",
+      "evidence_span": "数字疗法 3D 模型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "乐心AI 健康大脑",
+      "evidence_span": "乐心AI 健康大脑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据平台",
+      "evidence_span": "大数据平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能诊断平台",
+      "evidence_span": "智能诊断平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "解决方案研发平台",
+      "evidence_span": "解决方案研发平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能干预平台",
+      "evidence_span": "智能干预平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "伟伦",
+      "evidence_span": "伟伦"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "WITHINGS",
+      "evidence_span": "WITHINGS"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博朗",
+      "evidence_span": "博朗"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "飞利浦",
+      "evidence_span": "飞利浦"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "库珀（Cooper）有氧大健康产业有限公司",
+      "evidence_span": "与库珀（Cooper）有氧大健康产业有限公司进行深度战略合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "健康 IoT",
+      "evidence_span": "健康 IoT"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字健康服务",
+      "evidence_span": "数字健康服务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "健康 IoT 业务",
+        "evidence_span": "健康 IoT 业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字健康服务业务",
+        "evidence_span": "数字健康服务业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "健康物联网（IoT）与远程健康管理整体解决方案提供商",
+        "evidence_span": "为客户提供健康物联网（IoT）与远程健康管理整体解决方案"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "世界级健康 IoT 及数字健康服务提供商",
+        "evidence_span": "致力于成为世界级健康 IoT 及数字健康服务提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电子血压计",
+        "evidence_span": "智能电子血压计"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子健康秤",
+        "evidence_span": "电子健康秤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "脂肪测量仪",
+        "evidence_span": "脂肪测量仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "心贴",
+        "evidence_span": "心贴"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手环",
+        "evidence_span": "手环"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能手表",
+        "evidence_span": "智能手表"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TWS 耳机",
+        "evidence_span": "TWS 耳机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能货架",
+        "evidence_span": "智能货架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化健康管理解决方案",
+        "evidence_span": "数字化健康管理解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "校园数字化体育教学管理业务",
+        "evidence_span": "校园数字化体育教学管理业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "心脏健康管理业务",
+        "evidence_span": "心脏健康管理业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硬件、传感、算法、嵌入式软件的研发能力",
+        "evidence_span": "硬件、传感、算法、嵌入式软件的研发能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多 PD光机结构",
+        "evidence_span": "多 PD光机结构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多光谱光学结构",
+        "evidence_span": "多光谱光学结构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "传感器 Fresnel纹路设计及仿真",
+        "evidence_span": "传感器 Fresnel纹路设计及仿真"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光机皮肤模型设计及仿真",
+        "evidence_span": "光机皮肤模型设计及仿真"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高性能多参数生理传感器",
+        "evidence_span": "高性能多参数生理传感器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "跨平台多生理参数信号仿真",
+        "evidence_span": "跨平台多生理参数信号仿真"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "医疗级生理传感器设计",
+        "evidence_span": "医疗级生理传感器设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主物联网操作系统",
+        "evidence_span": "自主物联网操作系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字疗法 3D 模型",
+        "evidence_span": "数字疗法 3D 模型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "乐心AI 健康大脑",
+        "evidence_span": "乐心AI 健康大脑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据平台",
+        "evidence_span": "大数据平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能诊断平台",
+        "evidence_span": "智能诊断平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "解决方案研发平台",
+        "evidence_span": "解决方案研发平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能干预平台",
+        "evidence_span": "智能干预平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "伟伦",
+        "evidence_span": "伟伦"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "WITHINGS",
+        "evidence_span": "WITHINGS"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博朗",
+        "evidence_span": "博朗"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "飞利浦",
+        "evidence_span": "飞利浦"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "库珀（Cooper）有氧大健康产业有限公司",
+        "evidence_span": "与库珀（Cooper）有氧大健康产业有限公司进行深度战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新加坡 SportMedicineClinic 首席医生 Dr.Chook",
+        "evidence_span": "与新加坡 SportMedicineClinic 首席医生 Dr.Chook 试验远程慢病管理与运动干预合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "健康 IoT",
+        "evidence_span": "健康 IoT"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字健康服务",
+        "evidence_span": "数字健康服务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:20:29"
+}

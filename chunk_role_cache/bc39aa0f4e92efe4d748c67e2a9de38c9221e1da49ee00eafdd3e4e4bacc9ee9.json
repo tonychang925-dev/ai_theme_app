@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "e1f4f6897460", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述台积电的厂务工程竞标、设备急单和产能扩张计划，主要是事件性动态，但提及CoWoS（先进封装技术）和产能数据，可能隐含技术应用或产业链环节知识，需要进一步裁决。"}}

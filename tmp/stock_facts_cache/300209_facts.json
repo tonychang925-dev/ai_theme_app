@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "跨境电商出口业务",
+      "evidence_span": "跨境电商出口业务是公司当前的唯一核心主业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "跨境电商出口企业",
+      "evidence_span": "公司已转型为以B2C业务模式为主的跨境电商出口企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "跨境电商行业领军骨干企业",
+      "evidence_span": "深圳有棵树已成为行业的领军骨干企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3C电子产品",
+      "evidence_span": "将中国制造的3C电子、户外家居、童装玩具、车载用品等高性价比产品销往海外"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户外家居",
+      "evidence_span": "将中国制造的3C电子、户外家居、童装玩具、车载用品等高性价比产品销往海外"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "童装玩具",
+      "evidence_span": "将中国制造的3C电子、户外家居、童装玩具、车载用品等高性价比产品销往海外"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载用品",
+      "evidence_span": "将中国制造的3C电子、户外家居、童装玩具、车载用品等高性价比产品销往海外"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家居用品及建材",
+      "evidence_span": "公司产品类型广泛，主要包括3C电子产品、生活用品类、家居用品及建材、体育用品及玩具、航模配件及汽摩配件、服装鞋包类等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育用品及玩具",
+      "evidence_span": "公司产品类型广泛，主要包括3C电子产品、生活用品类、家居用品及建材、体育用品及玩具、航模配件及汽摩配件、服装鞋包类等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航模配件及汽摩配件",
+      "evidence_span": "公司产品类型广泛，主要包括3C电子产品、生活用品类、家居用品及建材、体育用品及玩具、航模配件及汽摩配件、服装鞋包类等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "服装鞋包类",
+      "evidence_span": "公司产品类型广泛，主要包括3C电子产品、生活用品类、家居用品及建材、体育用品及玩具、航模配件及汽摩配件、服装鞋包类等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "IT大数据智慧云系统",
+      "evidence_span": "已率先集成跨境电商的IT大数据智慧云系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Amazon",
+      "evidence_span": "主要依托Amazon、AliExpress、Shopee等第三方综合性电商平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "AliExpress",
+      "evidence_span": "主要依托Amazon、AliExpress、Shopee等第三方综合性电商平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Shopee",
+      "evidence_span": "主要依托Amazon、AliExpress、Shopee等第三方综合性电商平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Lazada",
+      "evidence_span": "也在积极发力Shopee、Lazada等新兴平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "拼多多海外版Temu",
+      "evidence_span": "在尝试拓展如拼多多海外版Temu等新生平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "跨境电商",
+      "evidence_span": "有棵树收购有棵树，享跨境出口兴起之红利"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "跨境电商出口业务",
+        "evidence_span": "跨境电商出口业务是公司当前的唯一核心主业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "跨境电商出口企业",
+        "evidence_span": "公司已转型为以B2C业务模式为主的跨境电商出口企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "跨境电商行业领军骨干企业",
+        "evidence_span": "深圳有棵树已成为行业的领军骨干企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3C电子产品",
+        "evidence_span": "将中国制造的3C电子、户外家居、童装玩具、车载用品等高性价比产品销往海外"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户外家居",
+        "evidence_span": "将中国制造的3C电子、户外家居、童装玩具、车载用品等高性价比产品销往海外"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "童装玩具",
+        "evidence_span": "将中国制造的3C电子、户外家居、童装玩具、车载用品等高性价比产品销往海外"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载用品",
+        "evidence_span": "将中国制造的3C电子、户外家居、童装玩具、车载用品等高性价比产品销往海外"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家居用品及建材",
+        "evidence_span": "公司产品类型广泛，主要包括3C电子产品、生活用品类、家居用品及建材、体育用品及玩具、航模配件及汽摩配件、服装鞋包类等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育用品及玩具",
+        "evidence_span": "公司产品类型广泛，主要包括3C电子产品、生活用品类、家居用品及建材、体育用品及玩具、航模配件及汽摩配件、服装鞋包类等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航模配件及汽摩配件",
+        "evidence_span": "公司产品类型广泛，主要包括3C电子产品、生活用品类、家居用品及建材、体育用品及玩具、航模配件及汽摩配件、服装鞋包类等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "服装鞋包类",
+        "evidence_span": "公司产品类型广泛，主要包括3C电子产品、生活用品类、家居用品及建材、体育用品及玩具、航模配件及汽摩配件、服装鞋包类等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "IT大数据智慧云系统",
+        "evidence_span": "已率先集成跨境电商的IT大数据智慧云系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Amazon",
+        "evidence_span": "主要依托Amazon、AliExpress、Shopee等第三方综合性电商平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "AliExpress",
+        "evidence_span": "主要依托Amazon、AliExpress、Shopee等第三方综合性电商平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Shopee",
+        "evidence_span": "主要依托Amazon、AliExpress、Shopee等第三方综合性电商平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Lazada",
+        "evidence_span": "也在积极发力Shopee、Lazada等新兴平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "拼多多海外版Temu",
+        "evidence_span": "在尝试拓展如拼多多海外版Temu等新生平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "跨境电商",
+        "evidence_span": "有棵树收购有棵树，享跨境出口兴起之红利"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:14:15"
+}

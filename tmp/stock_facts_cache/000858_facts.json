@@ -1,0 +1,69 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "浓香型白酒",
+      "evidence_span": "五粮液是中国浓香型白酒的典型代表与著名民族品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "五粮液普五",
+      "evidence_span": "高端白酒市场份额主要被五粮液普五、贵州茅台飞天茅台和泸州老窖的国窖1573占据"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第八代五粮液",
+      "evidence_span": "公司对第八代五粮液等产品进行价格上调"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端白酒龙头企业",
+      "evidence_span": "高端白酒行业龙头企业产品格局相对稳定，龙头企业地位难破"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "浓香型白酒典型代表",
+      "evidence_span": "五粮液是中国浓香型白酒的典型代表与著名民族品牌"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "高端白酒市场扩容",
+      "evidence_span": "高端白酒市场扩容趋势已逐渐形成"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "浓香型白酒",
+        "evidence_span": "五粮液是中国浓香型白酒的典型代表与著名民族品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "五粮液普五",
+        "evidence_span": "高端白酒市场份额主要被五粮液普五、贵州茅台飞天茅台和泸州老窖的国窖1573占据"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第八代五粮液",
+        "evidence_span": "公司对第八代五粮液等产品进行价格上调"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端白酒龙头企业",
+        "evidence_span": "高端白酒行业龙头企业产品格局相对稳定，龙头企业地位难破"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "浓香型白酒典型代表",
+        "evidence_span": "五粮液是中国浓香型白酒的典型代表与著名民族品牌"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "高端白酒市场扩容",
+        "evidence_span": "高端白酒市场扩容趋势已逐渐形成"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:41:15"
+}

@@ -1,0 +1,479 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "研发",
+      "evidence_span": "本集团现有主要业务包括研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "整车",
+      "evidence_span": "本集团现有主要业务包括整车"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "零部件",
+      "evidence_span": "本集团现有主要业务包括零部件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商贸服务",
+      "evidence_span": "本集团现有主要业务包括商贸服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融",
+      "evidence_span": "本集团现有主要业务包括金融"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "出行",
+      "evidence_span": "本集团现有主要业务包括出行"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车集团",
+      "evidence_span": "国内产业链最为完整、产业布局最为优化的汽车集团之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乘用车",
+      "evidence_span": "乘用车主要通过子公司广汽乘用车、广汽埃安和合营公司广汽本田、广汽丰田、广汽三菱生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "摩托车",
+      "evidence_span": "摩托车通过合营公司五羊本田生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车销售",
+      "evidence_span": "开展汽车销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物流",
+      "evidence_span": "开展物流"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际贸易",
+      "evidence_span": "开展国际贸易"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二手车",
+      "evidence_span": "开展二手车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "废旧汽车拆解",
+      "evidence_span": "开展废旧汽车拆解"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资源再生",
+      "evidence_span": "开展资源再生"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配套服务",
+      "evidence_span": "开展配套服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化",
+      "evidence_span": "开展数字化"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动出行",
+      "evidence_span": "开展移动出行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发动机",
+      "evidence_span": "主要包括发动机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "变速器",
+      "evidence_span": "主要包括变速器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "座椅",
+      "evidence_span": "主要包括座椅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微电机",
+      "evidence_span": "主要包括微电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "换挡器",
+      "evidence_span": "主要包括换挡器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电控",
+      "evidence_span": "主要包括电控"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内外饰",
+      "evidence_span": "主要包括内外饰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金融投资",
+      "evidence_span": "开展金融投资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保险",
+      "evidence_span": "开展保险"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保险经纪",
+      "evidence_span": "开展保险经纪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融资租赁",
+      "evidence_span": "开展融资租赁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车信贷",
+      "evidence_span": "开展汽车信贷"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "GMC混动系统",
+      "evidence_span": "广汽自主高性能GMC混动系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "GEP3.0纯电汽车专属平台",
+      "evidence_span": "领先的纯电汽车专属平台GEP3.0"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三合一电驱系统",
+      "evidence_span": "深度集成“三合一”电驱系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "四合一集成电驱系统",
+      "evidence_span": "两档双电机“四合一”集成电驱系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海绵硅负极片电池技术",
+      "evidence_span": "自主研发了海绵硅负极片电池技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超倍速电池技术",
+      "evidence_span": "自主研发了超倍速电池技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "弹匣电池系统安全技术",
+      "evidence_span": "自主研发了弹匣电池系统安全技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钜浪混动模块化架构",
+      "evidence_span": "打造了钜浪混动模块化架构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ADiGO PILOT智能驾驶系统",
+      "evidence_span": "自主研发了ADiGO PILOT智能驾驶系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "星灵架构",
+      "evidence_span": "车云一体化集中计算电子电气架构“星灵架构”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽本田",
+      "evidence_span": "合营公司广汽本田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽丰田",
+      "evidence_span": "合营公司广汽丰田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽三菱",
+      "evidence_span": "合营公司广汽三菱"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "五羊本田",
+      "evidence_span": "合营公司五羊本田"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车",
+      "evidence_span": "新能源汽车大时代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能网联",
+      "evidence_span": "智能网联"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色低碳",
+      "evidence_span": "绿色低碳"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "研发",
+        "evidence_span": "本集团现有主要业务包括研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "整车",
+        "evidence_span": "本集团现有主要业务包括整车"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "零部件",
+        "evidence_span": "本集团现有主要业务包括零部件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商贸服务",
+        "evidence_span": "本集团现有主要业务包括商贸服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融",
+        "evidence_span": "本集团现有主要业务包括金融"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "出行",
+        "evidence_span": "本集团现有主要业务包括出行"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车集团",
+        "evidence_span": "国内产业链最为完整、产业布局最为优化的汽车集团之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乘用车",
+        "evidence_span": "乘用车主要通过子公司广汽乘用车、广汽埃安和合营公司广汽本田、广汽丰田、广汽三菱生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "摩托车",
+        "evidence_span": "摩托车通过合营公司五羊本田生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车销售",
+        "evidence_span": "开展汽车销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物流",
+        "evidence_span": "开展物流"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际贸易",
+        "evidence_span": "开展国际贸易"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二手车",
+        "evidence_span": "开展二手车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "废旧汽车拆解",
+        "evidence_span": "开展废旧汽车拆解"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资源再生",
+        "evidence_span": "开展资源再生"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配套服务",
+        "evidence_span": "开展配套服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化",
+        "evidence_span": "开展数字化"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动出行",
+        "evidence_span": "开展移动出行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发动机",
+        "evidence_span": "主要包括发动机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "变速器",
+        "evidence_span": "主要包括变速器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "座椅",
+        "evidence_span": "主要包括座椅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微电机",
+        "evidence_span": "主要包括微电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "换挡器",
+        "evidence_span": "主要包括换挡器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电控",
+        "evidence_span": "主要包括电控"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内外饰",
+        "evidence_span": "主要包括内外饰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金融投资",
+        "evidence_span": "开展金融投资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保险",
+        "evidence_span": "开展保险"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保险经纪",
+        "evidence_span": "开展保险经纪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融资租赁",
+        "evidence_span": "开展融资租赁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车信贷",
+        "evidence_span": "开展汽车信贷"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "GMC混动系统",
+        "evidence_span": "广汽自主高性能GMC混动系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "GEP3.0纯电汽车专属平台",
+        "evidence_span": "领先的纯电汽车专属平台GEP3.0"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三合一电驱系统",
+        "evidence_span": "深度集成“三合一”电驱系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "四合一集成电驱系统",
+        "evidence_span": "两档双电机“四合一”集成电驱系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海绵硅负极片电池技术",
+        "evidence_span": "自主研发了海绵硅负极片电池技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超倍速电池技术",
+        "evidence_span": "自主研发了超倍速电池技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "弹匣电池系统安全技术",
+        "evidence_span": "自主研发了弹匣电池系统安全技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钜浪混动模块化架构",
+        "evidence_span": "打造了钜浪混动模块化架构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ADiGO PILOT智能驾驶系统",
+        "evidence_span": "自主研发了ADiGO PILOT智能驾驶系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "星灵架构",
+        "evidence_span": "车云一体化集中计算电子电气架构“星灵架构”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽本田",
+        "evidence_span": "合营公司广汽本田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽丰田",
+        "evidence_span": "合营公司广汽丰田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽三菱",
+        "evidence_span": "合营公司广汽三菱"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "五羊本田",
+        "evidence_span": "合营公司五羊本田"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车",
+        "evidence_span": "新能源汽车大时代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能网联",
+        "evidence_span": "智能网联"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色低碳",
+        "evidence_span": "绿色低碳"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:20:27"
+}

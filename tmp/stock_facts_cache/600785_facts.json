@@ -1,0 +1,139 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业零售",
+      "evidence_span": "公司主要从事商业零售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物流",
+      "evidence_span": "公司主要从事商业零售、物流和商业物业出租业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业物业出租",
+      "evidence_span": "公司主要从事商业零售、物流和商业物业出租业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "百货商场",
+      "evidence_span": "零售业务主要涉及百货商场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "购物中心",
+      "evidence_span": "零售业务主要涉及百货商场、购物中心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超市连锁",
+      "evidence_span": "零售业务主要涉及百货商场、购物中心、超市连锁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电器及通信连锁",
+      "evidence_span": "零售业务主要涉及百货商场、购物中心、超市连锁、电器及通信连锁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物流配送",
+      "evidence_span": "物流配送半径达800公里"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "宁夏乃至西北地区最大的大型商业集团",
+      "evidence_span": "公司是宁夏乃至西北地区最大的大型商业集团"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SAP-EWM 仓库管理系统",
+      "evidence_span": "功能完善的SAP-EWM 仓库管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TMS车辆管理系统",
+      "evidence_span": "TMS车辆管理系统为物流提供了灵活的模块化仓储和流程控制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线上线下融合发展",
+      "evidence_span": "公司积极加快线上线下融合发展步伐"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多点平台系统",
+      "evidence_span": "以多点平台系统为主导"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业零售",
+        "evidence_span": "公司主要从事商业零售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物流",
+        "evidence_span": "公司主要从事商业零售、物流和商业物业出租业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业物业出租",
+        "evidence_span": "公司主要从事商业零售、物流和商业物业出租业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "百货商场",
+        "evidence_span": "零售业务主要涉及百货商场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "购物中心",
+        "evidence_span": "零售业务主要涉及百货商场、购物中心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超市连锁",
+        "evidence_span": "零售业务主要涉及百货商场、购物中心、超市连锁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电器及通信连锁",
+        "evidence_span": "零售业务主要涉及百货商场、购物中心、超市连锁、电器及通信连锁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物流配送",
+        "evidence_span": "物流配送半径达800公里"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "宁夏乃至西北地区最大的大型商业集团",
+        "evidence_span": "公司是宁夏乃至西北地区最大的大型商业集团"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SAP-EWM 仓库管理系统",
+        "evidence_span": "功能完善的SAP-EWM 仓库管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TMS车辆管理系统",
+        "evidence_span": "TMS车辆管理系统为物流提供了灵活的模块化仓储和流程控制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线上线下融合发展",
+        "evidence_span": "公司积极加快线上线下融合发展步伐"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多点平台系统",
+        "evidence_span": "以多点平台系统为主导"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:17:55"
+}

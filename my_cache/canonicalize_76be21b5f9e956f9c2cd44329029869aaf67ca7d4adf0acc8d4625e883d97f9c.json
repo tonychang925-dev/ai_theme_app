@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:41:07", "result": {"span_uid": "a2ea7de6c265", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "电影档期趋势", "stability": "low", "reason": "包含具体年份和影片名称，是事件性信息，无法整理成稳定知识块。"}}

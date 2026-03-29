@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "水泥建材业务",
+      "evidence_span": "公司多年来主要专注于从事水泥熟料、水泥、特种水泥、混凝土、骨料等建材产品的生产制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水泥窑协同环保处置业务",
+      "evidence_span": "水泥窑协同处置环保业务成为公司重要新业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光储新能源业务",
+      "evidence_span": "公司正在向与基础设施产业链相关的“光伏+储能”、智慧物流等业务拓展升级"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "华东地区大型水泥生产企业",
+      "evidence_span": "华东地区大型水泥生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家重点支持水泥工业结构调整大型企业",
+      "evidence_span": "公司被列入重点支持企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水泥熟料",
+      "evidence_span": "公司多年来主要专注于从事水泥熟料、水泥、特种水泥、混凝土、骨料等建材产品的生产制造和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水泥",
+      "evidence_span": "公司多年来主要专注于从事水泥熟料、水泥、特种水泥、混凝土、骨料等建材产品的生产制造和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种水泥",
+      "evidence_span": "公司多年来主要专注于从事水泥熟料、水泥、特种水泥、混凝土、骨料等建材产品的生产制造和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "混凝土",
+      "evidence_span": "公司多年来主要专注于从事水泥熟料、水泥、特种水泥、混凝土、骨料等建材产品的生产制造和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "骨料",
+      "evidence_span": "公司多年来主要专注于从事水泥熟料、水泥、特种水泥、混凝土、骨料等建材产品的生产制造和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水泥窑协同处置危固废服务",
+      "evidence_span": "利用水泥窑协同处置危废、固废是符合国家产业支持政策的创新型环保产业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏发电及储能项目",
+      "evidence_span": "公司通过布局光伏发电及储能等可再生能源与节能低碳技术措施"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新型干法水泥工艺",
+      "evidence_span": "公司是国内最早投入新型干法水泥工艺生产与研究的企业之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "余热发电系统",
+      "evidence_span": "各熟料生产线均配备了余热发电系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低碳燃烧和脱硝技术",
+      "evidence_span": "掌握和具备了低碳燃烧和脱硝等环保与节能技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水泥窑协同处置系统",
+      "evidence_span": "多条生产线配备了水泥窑协同处置系统"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "长三角高景气受益者",
+      "evidence_span": "上峰水泥长三角高景气的受益者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "华东水泥龙头",
+      "evidence_span": "上峰水泥量价齐升的华东水泥龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "水泥建材业务",
+        "evidence_span": "公司多年来主要专注于从事水泥熟料、水泥、特种水泥、混凝土、骨料等建材产品的生产制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水泥窑协同环保处置业务",
+        "evidence_span": "水泥窑协同处置环保业务成为公司重要新业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光储新能源业务",
+        "evidence_span": "公司正在向与基础设施产业链相关的“光伏+储能”、智慧物流等业务拓展升级"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "华东地区大型水泥生产企业",
+        "evidence_span": "华东地区大型水泥生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家重点支持水泥工业结构调整大型企业",
+        "evidence_span": "公司被列入重点支持企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水泥熟料",
+        "evidence_span": "公司多年来主要专注于从事水泥熟料、水泥、特种水泥、混凝土、骨料等建材产品的生产制造和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水泥",
+        "evidence_span": "公司多年来主要专注于从事水泥熟料、水泥、特种水泥、混凝土、骨料等建材产品的生产制造和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种水泥",
+        "evidence_span": "公司多年来主要专注于从事水泥熟料、水泥、特种水泥、混凝土、骨料等建材产品的生产制造和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "混凝土",
+        "evidence_span": "公司多年来主要专注于从事水泥熟料、水泥、特种水泥、混凝土、骨料等建材产品的生产制造和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "骨料",
+        "evidence_span": "公司多年来主要专注于从事水泥熟料、水泥、特种水泥、混凝土、骨料等建材产品的生产制造和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水泥窑协同处置危固废服务",
+        "evidence_span": "利用水泥窑协同处置危废、固废是符合国家产业支持政策的创新型环保产业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏发电及储能项目",
+        "evidence_span": "公司通过布局光伏发电及储能等可再生能源与节能低碳技术措施"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新型干法水泥工艺",
+        "evidence_span": "公司是国内最早投入新型干法水泥工艺生产与研究的企业之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "余热发电系统",
+        "evidence_span": "各熟料生产线均配备了余热发电系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低碳燃烧和脱硝技术",
+        "evidence_span": "掌握和具备了低碳燃烧和脱硝等环保与节能技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水泥窑协同处置系统",
+        "evidence_span": "多条生产线配备了水泥窑协同处置系统"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "长三角高景气受益者",
+        "evidence_span": "上峰水泥长三角高景气的受益者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "华东水泥龙头",
+        "evidence_span": "上峰水泥量价齐升的华东水泥龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:13:32"
+}

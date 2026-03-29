@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "349dd9dfe4e3", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述天津公布房屋养老金管理办法征求意见稿的政策事件，但关联建筑维护和资金管理，可能包含建筑设计相关的维护或管理知识，因此混合了事件和知识。"}}

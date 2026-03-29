@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "信创整机业务",
+      "evidence_span": "公司的信创整机业务呈现出稳步增长的态势"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务器产品",
+      "evidence_span": "服务器产品方面"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "终端产品",
+      "evidence_span": "终端产品方面"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "AI产品",
+      "evidence_span": "AI产品方面"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "文印产品",
+      "evidence_span": "文印产品方面"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "系统装备",
+      "evidence_span": "系统装备方面"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "信创龙头",
+      "evidence_span": "信创龙头腾飞在即"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "自主可控信息平台唯一标的",
+      "evidence_span": "中国长城拥有完整自主可控信息平台的唯一标的"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞腾5000C",
+      "evidence_span": "飞腾5000C"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鲲鹏产品",
+      "evidence_span": "鲲鹏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海光产品",
+      "evidence_span": "海光"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞腾D3000产品",
+      "evidence_span": "飞腾D3000产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "兆芯产品",
+      "evidence_span": "兆芯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "龙芯产品",
+      "evidence_span": "龙芯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "长城擎天GF7280V5-训推一体机型",
+      "evidence_span": "长城擎天GF7280V5-训推一体机型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "长城擎天GF7290V5-高端训练机型",
+      "evidence_span": "长城擎天GF7290V5-高端训练机型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烽火2500系列文印产品",
+      "evidence_span": "烽火2500系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烽火3300系列文印产品",
+      "evidence_span": "3300系列等文印产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信系统样机",
+      "evidence_span": "某通信系统样机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用通信系统天线",
+      "evidence_span": "专用通信系统天线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加固全彩夜视仪",
+      "evidence_span": "加固全彩夜视仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池组",
+      "evidence_span": "电池组"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "百亿规模参数大模型训练能力",
+      "evidence_span": "百亿规模参数大模型训练能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能算力集群资源调度",
+      "evidence_span": "支持智能算力集群的资源调度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "百卡集群调优和交付能力",
+      "evidence_span": "具备百卡集群调优和交付能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信号调试技术",
+      "evidence_span": "信号调试等关键技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "飞腾",
+      "evidence_span": "联合飞腾构建生态圈"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自主可控",
+      "evidence_span": "自主可控整机平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信创",
+      "evidence_span": "信创龙头腾飞在即"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "整机国产化为支点，加速全环节替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "信创整机业务",
+        "evidence_span": "公司的信创整机业务呈现出稳步增长的态势"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "服务器产品",
+        "evidence_span": "服务器产品方面"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "终端产品",
+        "evidence_span": "终端产品方面"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "AI产品",
+        "evidence_span": "AI产品方面"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "文印产品",
+        "evidence_span": "文印产品方面"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "系统装备",
+        "evidence_span": "系统装备方面"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "信创龙头",
+        "evidence_span": "信创龙头腾飞在即"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "自主可控信息平台唯一标的",
+        "evidence_span": "中国长城拥有完整自主可控信息平台的唯一标的"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞腾5000C",
+        "evidence_span": "飞腾5000C"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鲲鹏产品",
+        "evidence_span": "鲲鹏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海光产品",
+        "evidence_span": "海光"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞腾D3000产品",
+        "evidence_span": "飞腾D3000产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "兆芯产品",
+        "evidence_span": "兆芯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "龙芯产品",
+        "evidence_span": "龙芯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "长城擎天GF7280V5-训推一体机型",
+        "evidence_span": "长城擎天GF7280V5-训推一体机型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "长城擎天GF7290V5-高端训练机型",
+        "evidence_span": "长城擎天GF7290V5-高端训练机型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烽火2500系列文印产品",
+        "evidence_span": "烽火2500系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烽火3300系列文印产品",
+        "evidence_span": "3300系列等文印产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信系统样机",
+        "evidence_span": "某通信系统样机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用通信系统天线",
+        "evidence_span": "专用通信系统天线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加固全彩夜视仪",
+        "evidence_span": "加固全彩夜视仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池组",
+        "evidence_span": "电池组"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "百亿规模参数大模型训练能力",
+        "evidence_span": "百亿规模参数大模型训练能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能算力集群资源调度",
+        "evidence_span": "支持智能算力集群的资源调度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "百卡集群调优和交付能力",
+        "evidence_span": "具备百卡集群调优和交付能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信号调试技术",
+        "evidence_span": "信号调试等关键技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "飞腾",
+        "evidence_span": "联合飞腾构建生态圈"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自主可控",
+        "evidence_span": "自主可控整机平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信创",
+        "evidence_span": "信创龙头腾飞在即"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "整机国产化为支点，加速全环节替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:50:21"
+}

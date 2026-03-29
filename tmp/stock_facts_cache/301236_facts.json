@@ -1,0 +1,484 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "软件",
+      "evidence_span": "软通动力是一家拥有深厚行业积累和全面技术实力的软件与信息技术服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息技术服务",
+      "evidence_span": "软通动力是一家拥有深厚行业积累和全面技术实力的软件与信息技术服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字化创新业务服务",
+      "evidence_span": "提供端到端的数字化创新业务服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "通用技术服务",
+      "evidence_span": "提供端到端的数字化创新业务服务、通用技术服务和数字化运营服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字化运营服务",
+      "evidence_span": "提供端到端的数字化创新业务服务、通用技术服务和数字化运营服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "软件与信息技术服务商",
+      "evidence_span": "软通动力是一家拥有深厚行业积累和全面技术实力的软件与信息技术服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "华为鸿蒙核心合作伙伴",
+      "evidence_span": "华为鸿蒙核心合作伙伴"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字咨询服务",
+      "evidence_span": "数字化创新业务服务包括数字咨询服务、数字技术服务和数字解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字技术服务",
+      "evidence_span": "数字化创新业务服务包括数字咨询服务、数字技术服务和数字解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字解决方案",
+      "evidence_span": "数字化创新业务服务包括数字咨询服务、数字技术服务和数字解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云智能服务",
+      "evidence_span": "云智能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信创产品",
+      "evidence_span": "公司提供信创产品和全栈技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "开源欧拉发行版",
+      "evidence_span": "持续推出开源欧拉、开源鸿蒙、开源高斯的行业发行版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "开源鸿蒙发行版",
+      "evidence_span": "持续推出开源欧拉、开源鸿蒙、开源高斯的行业发行版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "开源高斯发行版",
+      "evidence_span": "持续推出开源欧拉、开源鸿蒙、开源高斯的行业发行版"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SwanLinkOS操作系统",
+      "evidence_span": "打造了业内首个具备跨指令集的操作系统SwanLinkOS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业互联网平台产品",
+      "evidence_span": "形成了“工业元字宙平台”“工业物联网平台”“工业大数据平台”“生产制造执行平台”“工业云平台”五大核心平台产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "系统集成服务",
+      "evidence_span": "系统集成服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "训推一体化平台",
+      "evidence_span": "基于昇腾 A| 推出了训推一体化平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云计算技术",
+      "evidence_span": "数字技术服务以云计算、大数据、物联网、人工智能等创新数字技术为导向"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据技术",
+      "evidence_span": "数字技术服务以云计算、大数据、物联网、人工智能等创新数字技术为导向"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网技术",
+      "evidence_span": "数字技术服务以云计算、大数据、物联网、人工智能等创新数字技术为导向"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能技术",
+      "evidence_span": "数字技术服务以云计算、大数据、物联网、人工智能等创新数字技术为导向"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "跨指令集操作系统技术",
+      "evidence_span": "打造了业内首个具备跨指令集的操作系统SwanLinkOS"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多芯片架构支持技术",
+      "evidence_span": "覆盖多芯片架构(ARM 架构，LoongArch 架构，X86 架构)的发行版厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通讯设备行业客户",
+      "evidence_span": "为通讯设备、互联网服务、金融、高科技与制造等多个行业客户提供端到端的数字化创新业务服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "互联网服务行业客户",
+      "evidence_span": "为通讯设备、互联网服务、金融、高科技与制造等多个行业客户提供端到端的数字化创新业务服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融行业客户",
+      "evidence_span": "为通讯设备、互联网服务、金融、高科技与制造等多个行业客户提供端到端的数字化创新业务服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高科技与制造行业客户",
+      "evidence_span": "为通讯设备、互联网服务、金融、高科技与制造等多个行业客户提供端到端的数字化创新业务服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "世界500强企业",
+      "evidence_span": "超过 230 家客户为世界 500 强或中国 500 强企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国500强企业",
+      "evidence_span": "超过 230 家客户为世界 500 强或中国 500 强企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "携手华为，扛起国产操作系统新旗帜"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "利亚德",
+      "evidence_span": "与利亚德，亚略特，视美泰等龙头企业达成战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚略特",
+      "evidence_span": "与利亚德，亚略特，视美泰等龙头企业达成战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "视美泰",
+      "evidence_span": "与利亚德，亚略特，视美泰等龙头企业达成战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电力电网行业客户",
+      "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石油行业客户",
+      "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "化工行业客户",
+      "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "生物医药行业客户",
+      "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "机械制造行业客户",
+      "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电气装备行业客户",
+      "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "先进电子行业客户",
+      "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车及零部件行业客户",
+      "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "央国企",
+      "evidence_span": "基于软通信创实施方法论赋能央国企与实体产业国产化与产业创新"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "实体产业",
+      "evidence_span": "基于软通信创实施方法论赋能央国企与实体产业国产化与产业创新"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产操作系统",
+      "evidence_span": "发布开源欧拉服务器操作系统，引领国产操作系统新发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信创生态",
+      "evidence_span": "软通动力围绕华为布局信创生态，聚焦新兴产业发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "基于软通信创实施方法论赋能央国企与实体产业国产化与产业创新"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "软件与信息技术服务",
+        "evidence_span": "软通动力是一家拥有深厚行业积累和全面技术实力的软件与信息技术服务商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字化创新业务服务",
+        "evidence_span": "提供端到端的数字化创新业务服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "通用技术服务",
+        "evidence_span": "提供端到端的数字化创新业务服务、通用技术服务和数字化运营服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字化运营服务",
+        "evidence_span": "提供端到端的数字化创新业务服务、通用技术服务和数字化运营服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "软件与信息技术服务商",
+        "evidence_span": "软通动力是一家拥有深厚行业积累和全面技术实力的软件与信息技术服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "华为鸿蒙核心合作伙伴",
+        "evidence_span": "华为鸿蒙核心合作伙伴"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字咨询服务",
+        "evidence_span": "数字化创新业务服务包括数字咨询服务、数字技术服务和数字解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字技术服务",
+        "evidence_span": "数字化创新业务服务包括数字咨询服务、数字技术服务和数字解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字解决方案",
+        "evidence_span": "数字化创新业务服务包括数字咨询服务、数字技术服务和数字解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云智能服务",
+        "evidence_span": "云智能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信创产品",
+        "evidence_span": "公司提供信创产品和全栈技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "开源欧拉发行版",
+        "evidence_span": "持续推出开源欧拉、开源鸿蒙、开源高斯的行业发行版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "开源鸿蒙发行版",
+        "evidence_span": "持续推出开源欧拉、开源鸿蒙、开源高斯的行业发行版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "开源高斯发行版",
+        "evidence_span": "持续推出开源欧拉、开源鸿蒙、开源高斯的行业发行版"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SwanLinkOS操作系统",
+        "evidence_span": "打造了业内首个具备跨指令集的操作系统SwanLinkOS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业互联网平台产品",
+        "evidence_span": "形成了“工业元字宙平台”“工业物联网平台”“工业大数据平台”“生产制造执行平台”“工业云平台”五大核心平台产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "系统集成服务",
+        "evidence_span": "系统集成服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "训推一体化平台",
+        "evidence_span": "基于昇腾 A| 推出了训推一体化平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云计算技术",
+        "evidence_span": "数字技术服务以云计算、大数据、物联网、人工智能等创新数字技术为导向"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据技术",
+        "evidence_span": "数字技术服务以云计算、大数据、物联网、人工智能等创新数字技术为导向"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网技术",
+        "evidence_span": "数字技术服务以云计算、大数据、物联网、人工智能等创新数字技术为导向"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能技术",
+        "evidence_span": "数字技术服务以云计算、大数据、物联网、人工智能等创新数字技术为导向"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "跨指令集操作系统技术",
+        "evidence_span": "打造了业内首个具备跨指令集的操作系统SwanLinkOS"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多芯片架构支持技术",
+        "evidence_span": "覆盖多芯片架构(ARM 架构，LoongArch 架构，X86 架构)的发行版厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通讯设备行业客户",
+        "evidence_span": "为通讯设备、互联网服务、金融、高科技与制造等多个行业客户提供端到端的数字化创新业务服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "互联网服务行业客户",
+        "evidence_span": "为通讯设备、互联网服务、金融、高科技与制造等多个行业客户提供端到端的数字化创新业务服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融行业客户",
+        "evidence_span": "为通讯设备、互联网服务、金融、高科技与制造等多个行业客户提供端到端的数字化创新业务服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高科技与制造行业客户",
+        "evidence_span": "为通讯设备、互联网服务、金融、高科技与制造等多个行业客户提供端到端的数字化创新业务服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "世界500强企业",
+        "evidence_span": "超过 230 家客户为世界 500 强或中国 500 强企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国500强企业",
+        "evidence_span": "超过 230 家客户为世界 500 强或中国 500 强企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "携手华为，扛起国产操作系统新旗帜"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "利亚德",
+        "evidence_span": "与利亚德，亚略特，视美泰等龙头企业达成战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚略特",
+        "evidence_span": "与利亚德，亚略特，视美泰等龙头企业达成战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "视美泰",
+        "evidence_span": "与利亚德，亚略特，视美泰等龙头企业达成战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电力电网行业客户",
+        "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石油行业客户",
+        "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "化工行业客户",
+        "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "生物医药行业客户",
+        "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "机械制造行业客户",
+        "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电气装备行业客户",
+        "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "先进电子行业客户",
+        "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车及零部件行业客户",
+        "evidence_span": "为电力电网、石油、化工、生物医药、机械制造、电气装备、先进电子、汽车及零部件在内的八大重点行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "央国企",
+        "evidence_span": "基于软通信创实施方法论赋能央国企与实体产业国产化与产业创新"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "实体产业",
+        "evidence_span": "基于软通信创实施方法论赋能央国企与实体产业国产化与产业创新"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产操作系统",
+        "evidence_span": "发布开源欧拉服务器操作系统，引领国产操作系统新发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信创生态",
+        "evidence_span": "软通动力围绕华为布局信创生态，聚焦新兴产业发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "基于软通信创实施方法论赋能央国企与实体产业国产化与产业创新"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:58:24"
+}

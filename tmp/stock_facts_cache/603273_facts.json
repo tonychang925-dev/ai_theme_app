@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化成套装备",
+      "evidence_span": "公司从事自动化成套装备及机械装备配套产品的研发、设计、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "机械装备配套产品",
+      "evidence_span": "公司从事自动化成套装备及机械装备配套产品的研发、设计、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "蒸压加气混凝土装备制造龙头企业",
+      "evidence_span": "公司已成为蒸压加气混凝土装备制造的龙头企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸压加气混凝土成套装备",
+      "evidence_span": "主要为生产蒸压加气混凝土制品的绿色环保建材企业提供成套生产装备及自动化整线解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化整线解决方案",
+      "evidence_span": "主要为生产蒸压加气混凝土制品的绿色环保建材企业提供成套生产装备及自动化整线解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动臂",
+      "evidence_span": "公司生产的动臂、车架、斗杆、挖斗、监测设备、制氢设备部件等机械装备配套产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车架",
+      "evidence_span": "公司生产的动臂、车架、斗杆、挖斗、监测设备、制氢设备部件等机械装备配套产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "斗杆",
+      "evidence_span": "公司生产的动臂、车架、斗杆、挖斗、监测设备、制氢设备部件等机械装备配套产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "挖斗",
+      "evidence_span": "公司生产的动臂、车架、斗杆、挖斗、监测设备、制氢设备部件等机械装备配套产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "监测设备",
+      "evidence_span": "公司生产的动臂、车架、斗杆、挖斗、监测设备、制氢设备部件等机械装备配套产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制氢设备部件",
+      "evidence_span": "公司生产的动臂、车架、斗杆、挖斗、监测设备、制氢设备部件等机械装备配套产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "湿分掰系统",
+      "evidence_span": "完成了湿分掰系统的整体研发和带料试产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生产线数字化工厂平台",
+      "evidence_span": "公司研发了蒸压加气混凝土生产线数字化工厂平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化智能系统",
+      "evidence_span": "公司的蒸压加气混凝土装备采用自动化智能系统和自主开发软件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国建材集团",
+      "evidence_span": "公司已与中国建材集团、信发集团、富春集团等大型公司建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "信发集团",
+      "evidence_span": "公司已与中国建材集团、信发集团、富春集团等大型公司建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富春集团",
+      "evidence_span": "公司已与中国建材集团、信发集团、富春集团等大型公司建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小松",
+      "evidence_span": "公司为小松、现代、杰西博、卡哥特科、同方威视等国内外知名装备制造商供应配套结构件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "现代",
+      "evidence_span": "公司为小松、现代、杰西博、卡哥特科、同方威视等国内外知名装备制造商供应配套结构件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杰西博",
+      "evidence_span": "公司为小松、现代、杰西博、卡哥特科、同方威视等国内外知名装备制造商供应配套结构件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "卡哥特科",
+      "evidence_span": "公司为小松、现代、杰西博、卡哥特科、同方威视等国内外知名装备制造商供应配套结构件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "同方威视",
+      "evidence_span": "公司为小松、现代、杰西博、卡哥特科、同方威视等国内外知名装备制造商供应配套结构件"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色建筑",
+      "evidence_span": "产品可广泛应用于绿色建筑/建材、装配式建筑、工程机械、港口机械、安检装备及机场地勤装备等多种行业和相关领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "装配式建筑",
+      "evidence_span": "产品可广泛应用于绿色建筑/建材、装配式建筑、工程机械、港口机械、安检装备及机场地勤装备等多种行业和相关领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动化成套装备",
+        "evidence_span": "公司从事自动化成套装备及机械装备配套产品的研发、设计、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机械装备配套产品",
+        "evidence_span": "公司从事自动化成套装备及机械装备配套产品的研发、设计、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "蒸压加气混凝土装备制造龙头企业",
+        "evidence_span": "公司已成为蒸压加气混凝土装备制造的龙头企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸压加气混凝土成套装备",
+        "evidence_span": "主要为生产蒸压加气混凝土制品的绿色环保建材企业提供成套生产装备及自动化整线解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化整线解决方案",
+        "evidence_span": "主要为生产蒸压加气混凝土制品的绿色环保建材企业提供成套生产装备及自动化整线解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动臂",
+        "evidence_span": "公司生产的动臂、车架、斗杆、挖斗、监测设备、制氢设备部件等机械装备配套产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车架",
+        "evidence_span": "公司生产的动臂、车架、斗杆、挖斗、监测设备、制氢设备部件等机械装备配套产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "斗杆",
+        "evidence_span": "公司生产的动臂、车架、斗杆、挖斗、监测设备、制氢设备部件等机械装备配套产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "挖斗",
+        "evidence_span": "公司生产的动臂、车架、斗杆、挖斗、监测设备、制氢设备部件等机械装备配套产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "监测设备",
+        "evidence_span": "公司生产的动臂、车架、斗杆、挖斗、监测设备、制氢设备部件等机械装备配套产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制氢设备部件",
+        "evidence_span": "公司生产的动臂、车架、斗杆、挖斗、监测设备、制氢设备部件等机械装备配套产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "湿分掰系统",
+        "evidence_span": "完成了湿分掰系统的整体研发和带料试产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生产线数字化工厂平台",
+        "evidence_span": "公司研发了蒸压加气混凝土生产线数字化工厂平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化智能系统",
+        "evidence_span": "公司的蒸压加气混凝土装备采用自动化智能系统和自主开发软件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国建材集团",
+        "evidence_span": "公司已与中国建材集团、信发集团、富春集团等大型公司建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "信发集团",
+        "evidence_span": "公司已与中国建材集团、信发集团、富春集团等大型公司建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富春集团",
+        "evidence_span": "公司已与中国建材集团、信发集团、富春集团等大型公司建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小松",
+        "evidence_span": "公司为小松、现代、杰西博、卡哥特科、同方威视等国内外知名装备制造商供应配套结构件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "现代",
+        "evidence_span": "公司为小松、现代、杰西博、卡哥特科、同方威视等国内外知名装备制造商供应配套结构件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杰西博",
+        "evidence_span": "公司为小松、现代、杰西博、卡哥特科、同方威视等国内外知名装备制造商供应配套结构件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "卡哥特科",
+        "evidence_span": "公司为小松、现代、杰西博、卡哥特科、同方威视等国内外知名装备制造商供应配套结构件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "同方威视",
+        "evidence_span": "公司为小松、现代、杰西博、卡哥特科、同方威视等国内外知名装备制造商供应配套结构件"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色建筑",
+        "evidence_span": "产品可广泛应用于绿色建筑/建材、装配式建筑、工程机械、港口机械、安检装备及机场地勤装备等多种行业和相关领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "装配式建筑",
+        "evidence_span": "产品可广泛应用于绿色建筑/建材、装配式建筑、工程机械、港口机械、安检装备及机场地勤装备等多种行业和相关领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:50:03"
+}

@@ -1,0 +1,659 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子支付IT方案",
+      "evidence_span": "公司是一家电子支付IT方案商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电子支付IT方案商",
+      "evidence_span": "公司是一家电子支付IT方案商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "商户收单业务产业链支付IT服务商",
+      "evidence_span": "商户收单业务产业链上下游的主要参与者为...支付IT服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "支付应用软件",
+      "evidence_span": "包括支付应用软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "行业特色应用软件",
+      "evidence_span": "行业特色应用软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自助终端",
+      "evidence_span": "自助终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "POS终端",
+      "evidence_span": "POS终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "扫码设备",
+      "evidence_span": "扫码设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云音箱",
+      "evidence_span": "云音箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能收银机",
+      "evidence_span": "智能收银机（含刷脸）设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商户端支付解决方案",
+      "evidence_span": "商户端支付解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银行端网控器",
+      "evidence_span": "银行端网控器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制卡设备",
+      "evidence_span": "制卡设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "即时发卡系统",
+      "evidence_span": "公司开发了即时发卡系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4G扫码设备",
+      "evidence_span": "大力推广4G扫码设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "4G数字人民币双码牌云音箱",
+      "evidence_span": "4G数字人民币双码牌云音箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云打印机",
+      "evidence_span": "云打印机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型智能收银机",
+      "evidence_span": "新型智能收银机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字人民币受理设备",
+      "evidence_span": "数字人民币受理设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能POS",
+      "evidence_span": "智能POS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "收银ERP系统",
+      "evidence_span": "迭代和完善收银ERP系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧食堂系统",
+      "evidence_span": "智慧食堂系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专业市场支付平台",
+      "evidence_span": "专业市场支付平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "搭载鸿蒙系统的云打印机",
+      "evidence_span": "搭载鸿蒙系统的云打印机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "搭载鸿蒙系统的收银机",
+      "evidence_span": "收银机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "搭载鸿蒙系统的智能POS",
+      "evidence_span": "智能POS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商户BMP系统升级改造",
+      "evidence_span": "商户BMP系统升级改造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字人民币受理终端",
+      "evidence_span": "研制或升级数字人民币受理终端"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多态化支付处理技术",
+      "evidence_span": "多态化支付处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "金融级数据安全处理技术",
+      "evidence_span": "金融级数据安全处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化的统一对账和差错处理技术",
+      "evidence_span": "智能化的统一对账和差错处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂环境下的系统集成技术",
+      "evidence_span": "复杂环境下的系统集成技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云BMP平台",
+      "evidence_span": "建成了云BMP平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "商户及终端服务支撑平台",
+      "evidence_span": "商户及终端服务支撑平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网云推送平台",
+      "evidence_span": "物联网云推送平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "鸿蒙系统应用原子化单内核或双内核",
+      "evidence_span": "基于鸿蒙系统应用原子化单内核或双内核的扫码终端、云音箱等自主硬件产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "农业银行",
+      "evidence_span": "公司客户主要为农业银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建设银行",
+      "evidence_span": "其他客户还有建设银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国银行",
+      "evidence_span": "中国银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工商银行",
+      "evidence_span": "工商银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交通银行",
+      "evidence_span": "交通银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "邮储银行",
+      "evidence_span": "邮储银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浦发银行",
+      "evidence_span": "浦发银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国银联",
+      "evidence_span": "中国银联"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "中石化"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "得力",
+      "evidence_span": "得力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国铁路总公司",
+      "evidence_span": "中国铁路总公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万达广场",
+      "evidence_span": "万达广场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "永辉超市",
+      "evidence_span": "永辉超市"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "甘肃烟草",
+      "evidence_span": "甘肃烟草"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "四川烟草",
+      "evidence_span": "四川烟草"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方医科大学南方医院",
+      "evidence_span": "南方医科大学南方医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华中科技大学同济医学院附属协和医院",
+      "evidence_span": "华中科技大学同济医学院附属协和医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南部战区陆军总院",
+      "evidence_span": "南部战区陆军总院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "秦始皇帝陵博物院",
+      "evidence_span": "秦始皇帝陵博物院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "青海省高院",
+      "evidence_span": "青海省高院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江苏地市车管所",
+      "evidence_span": "江苏地市车管所"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "骏途网",
+      "evidence_span": "骏途网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "嵊泗县交通局",
+      "evidence_span": "嵊泗县交通局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "湛江徐闻港",
+      "evidence_span": "湛江徐闻港"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "周大福",
+      "evidence_span": "周大福"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "义乌副食品批发市场",
+      "evidence_span": "义乌副食品批发市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海南免税店",
+      "evidence_span": "海南免税店"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深开鸿",
+      "evidence_span": "已经与深开鸿等开源基金会相关单位合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字人民币受理环境建设",
+      "evidence_span": "参与数字人民币受理环境建设工作"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子支付IT方案",
+        "evidence_span": "公司是一家电子支付IT方案商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电子支付IT方案商",
+        "evidence_span": "公司是一家电子支付IT方案商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "商户收单业务产业链支付IT服务商",
+        "evidence_span": "商户收单业务产业链上下游的主要参与者为...支付IT服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "支付应用软件",
+        "evidence_span": "包括支付应用软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "行业特色应用软件",
+        "evidence_span": "行业特色应用软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自助终端",
+        "evidence_span": "自助终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "POS终端",
+        "evidence_span": "POS终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "扫码设备",
+        "evidence_span": "扫码设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云音箱",
+        "evidence_span": "云音箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能收银机",
+        "evidence_span": "智能收银机（含刷脸）设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商户端支付解决方案",
+        "evidence_span": "商户端支付解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银行端网控器",
+        "evidence_span": "银行端网控器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制卡设备",
+        "evidence_span": "制卡设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "即时发卡系统",
+        "evidence_span": "公司开发了即时发卡系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4G扫码设备",
+        "evidence_span": "大力推广4G扫码设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "4G数字人民币双码牌云音箱",
+        "evidence_span": "4G数字人民币双码牌云音箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云打印机",
+        "evidence_span": "云打印机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型智能收银机",
+        "evidence_span": "新型智能收银机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字人民币受理设备",
+        "evidence_span": "数字人民币受理设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能POS",
+        "evidence_span": "智能POS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "收银ERP系统",
+        "evidence_span": "迭代和完善收银ERP系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧食堂系统",
+        "evidence_span": "智慧食堂系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专业市场支付平台",
+        "evidence_span": "专业市场支付平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "搭载鸿蒙系统的云打印机",
+        "evidence_span": "搭载鸿蒙系统的云打印机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "搭载鸿蒙系统的收银机",
+        "evidence_span": "收银机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "搭载鸿蒙系统的智能POS",
+        "evidence_span": "智能POS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商户BMP系统升级改造",
+        "evidence_span": "商户BMP系统升级改造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字人民币受理终端",
+        "evidence_span": "研制或升级数字人民币受理终端"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多态化支付处理技术",
+        "evidence_span": "多态化支付处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "金融级数据安全处理技术",
+        "evidence_span": "金融级数据安全处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化的统一对账和差错处理技术",
+        "evidence_span": "智能化的统一对账和差错处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂环境下的系统集成技术",
+        "evidence_span": "复杂环境下的系统集成技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云BMP平台",
+        "evidence_span": "建成了云BMP平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "商户及终端服务支撑平台",
+        "evidence_span": "商户及终端服务支撑平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网云推送平台",
+        "evidence_span": "物联网云推送平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "鸿蒙系统应用原子化单内核或双内核",
+        "evidence_span": "基于鸿蒙系统应用原子化单内核或双内核的扫码终端、云音箱等自主硬件产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "农业银行",
+        "evidence_span": "公司客户主要为农业银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建设银行",
+        "evidence_span": "其他客户还有建设银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国银行",
+        "evidence_span": "中国银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工商银行",
+        "evidence_span": "工商银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交通银行",
+        "evidence_span": "交通银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "邮储银行",
+        "evidence_span": "邮储银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浦发银行",
+        "evidence_span": "浦发银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国银联",
+        "evidence_span": "中国银联"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "中石化"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "得力",
+        "evidence_span": "得力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国铁路总公司",
+        "evidence_span": "中国铁路总公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万达广场",
+        "evidence_span": "万达广场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "永辉超市",
+        "evidence_span": "永辉超市"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "甘肃烟草",
+        "evidence_span": "甘肃烟草"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "四川烟草",
+        "evidence_span": "四川烟草"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方医科大学南方医院",
+        "evidence_span": "南方医科大学南方医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华中科技大学同济医学院附属协和医院",
+        "evidence_span": "华中科技大学同济医学院附属协和医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南部战区陆军总院",
+        "evidence_span": "南部战区陆军总院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "秦始皇帝陵博物院",
+        "evidence_span": "秦始皇帝陵博物院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "青海省高院",
+        "evidence_span": "青海省高院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江苏地市车管所",
+        "evidence_span": "江苏地市车管所"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "骏途网",
+        "evidence_span": "骏途网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "嵊泗县交通局",
+        "evidence_span": "嵊泗县交通局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "湛江徐闻港",
+        "evidence_span": "湛江徐闻港"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "周大福",
+        "evidence_span": "周大福"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "义乌副食品批发市场",
+        "evidence_span": "义乌副食品批发市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海南免税店",
+        "evidence_span": "海南免税店"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深开鸿",
+        "evidence_span": "已经与深开鸿等开源基金会相关单位合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字人民币受理环境建设",
+        "evidence_span": "参与数字人民币受理环境建设工作"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:52:19"
+}

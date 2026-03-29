@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "f36d4893e8ff", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落总结半导体设备厂商第三季度业绩表现，包括净利润数据和公司案例，属于市场或财务事件，无题材本体构建知识。"}}

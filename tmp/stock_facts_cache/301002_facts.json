@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "中",
+      "evidence_span": "一直专注于中、大功率LED驱动电源的研发、生产、销售与服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大功率LED驱动电源的研发",
+      "evidence_span": "一直专注于中、大功率LED驱动电源的研发、生产、销售与服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "一直专注于中、大功率LED驱动电源的研发、生产、销售与服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "一直专注于中、大功率LED驱动电源的研发、生产、销售与服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "一直专注于中、大功率LED驱动电源的研发、生产、销售与服务业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "独立的LED驱动电源企业",
+      "evidence_span": "第二类是独立的LED驱动电源企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内最具竞争力的大功率LED驱动电源品牌之一",
+      "evidence_span": "是国内最具竞争力的大功率LED驱动电源品牌之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "植物照明驱动电源",
+      "evidence_span": "公司LED驱动电源产品分为植物照明驱动电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户外LED驱动电源",
+      "evidence_span": "户外LED驱动电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业LED驱动电源",
+      "evidence_span": "工业LED驱动电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "景观等LED驱动电源产品",
+      "evidence_span": "以及其他景观等LED驱动电源产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LED驱动电源的恒功率驱动技术",
+      "evidence_span": "自主掌握LED驱动电源的恒功率驱动技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多功能的调光技术",
+      "evidence_span": "多功能的调光技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "雷击浪涌抑制技术",
+      "evidence_span": "雷击浪涌抑制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "可编程技术",
+      "evidence_span": "可编程技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联域光电",
+      "evidence_span": "客户联域光电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "得邦照明",
+      "evidence_span": "得邦照明"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "民爆光电",
+      "evidence_span": "民爆光电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "霍迪科技",
+      "evidence_span": "霍迪科技"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "植物照明带来业绩爆发",
+      "evidence_span": "植物照明带来业绩爆发"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "中、大功率LED驱动电源的研发、生产、销售与服务",
+        "evidence_span": "一直专注于中、大功率LED驱动电源的研发、生产、销售与服务业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "独立的LED驱动电源企业",
+        "evidence_span": "第二类是独立的LED驱动电源企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内最具竞争力的大功率LED驱动电源品牌之一",
+        "evidence_span": "是国内最具竞争力的大功率LED驱动电源品牌之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "植物照明驱动电源",
+        "evidence_span": "公司LED驱动电源产品分为植物照明驱动电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户外LED驱动电源",
+        "evidence_span": "户外LED驱动电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业LED驱动电源",
+        "evidence_span": "工业LED驱动电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "景观等LED驱动电源产品",
+        "evidence_span": "以及其他景观等LED驱动电源产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LED驱动电源的恒功率驱动技术",
+        "evidence_span": "自主掌握LED驱动电源的恒功率驱动技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多功能的调光技术",
+        "evidence_span": "多功能的调光技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "雷击浪涌抑制技术",
+        "evidence_span": "雷击浪涌抑制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "可编程技术",
+        "evidence_span": "可编程技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联域光电",
+        "evidence_span": "客户联域光电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "得邦照明",
+        "evidence_span": "得邦照明"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "民爆光电",
+        "evidence_span": "民爆光电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "霍迪科技",
+        "evidence_span": "霍迪科技"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "植物照明带来业绩爆发",
+        "evidence_span": "植物照明带来业绩爆发"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:13:30"
+}

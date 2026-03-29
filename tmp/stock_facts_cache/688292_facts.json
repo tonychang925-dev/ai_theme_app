@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "网络智能化解决方案",
+      "evidence_span": "主要从事网络智能化及信息安全防护解决方案的设计实施"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息安全防护解决方案",
+      "evidence_span": "主要从事网络智能化及信息安全防护解决方案的设计实施"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "网络可视化领域全产业链垂直一体化发展的企业",
+      "evidence_span": "公司属于网络可视化领域全产业链垂直一体化发展的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能采集管理系统",
+      "evidence_span": "主要产品包括智能采集管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能化应用系统",
+      "evidence_span": "主要产品包括智能采集管理系统、智能化应用系统为代表的网络智能化解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "互联网信息安全防护系统",
+      "evidence_span": "主要产品包括互联网信息安全防护系统、异常流量监测防护系统为代表的信息安全防护解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "异常流量监测防护系统",
+      "evidence_span": "主要产品包括互联网信息安全防护系统、异常流量监测防护系统为代表的信息安全防护解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硬件DPI系统",
+      "evidence_span": "主要包括硬件DPI系统以及软件DPI系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软件DPI系统",
+      "evidence_span": "主要包括硬件DPI系统以及软件DPI系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能DPI探针设备",
+      "evidence_span": "公司自产高性能DPI探针设备主要产品列示如下"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据合成和内容还原系统",
+      "evidence_span": "主要包括数据合成和内容还原系统、网络深度可视化分析系统等多款应用产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络深度可视化分析系统",
+      "evidence_span": "主要包括数据合成和内容还原系统、网络深度可视化分析系统等多款应用产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "互联网缓存及CDN产品",
+      "evidence_span": "具体包括互联网缓存及CDN产品、核心网信令及中间件应用软件产品、分布式存储系统等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核心网信令及中间件应用软件产品",
+      "evidence_span": "具体包括互联网缓存及CDN产品、核心网信令及中间件应用软件产品、分布式存储系统等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分布式存储系统",
+      "evidence_span": "具体包括互联网缓存及CDN产品、核心网信令及中间件应用软件产品、分布式存储系统等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "DPI技术",
+      "evidence_span": "通过持续研发掌握了以DPI技术（即深度包检测技术）为核心的一系列自主知识产权"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硬件DPI技术",
+      "evidence_span": "采用基于FPGA专用芯片，并结合ATCA、CLOS等专用硬件架构的硬件DPI技术路径"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "FPGA技术",
+      "evidence_span": "基于大规模可编程芯片（FPGA）技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ATCA硬件架构",
+      "evidence_span": "采用ATCA等专用硬件架构所实现的智能化采集管理平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "嵌入式DPI引擎",
+      "evidence_span": "嵌入式DPI引擎产品是在HDS2000软件设计基础上，抽象并提炼出实现高性能规则匹配的DPI识别引擎模块"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "产品已广泛部署于中国移动、中国联通、中国电信等主要国内电信运营商的骨干网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国联通",
+      "evidence_span": "产品已广泛部署于中国移动、中国联通、中国电信等主要国内电信运营商的骨干网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电信",
+      "evidence_span": "产品已广泛部署于中国移动、中国联通、中国电信等主要国内电信运营商的骨干网"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "网络智能化解决方案",
+        "evidence_span": "主要从事网络智能化及信息安全防护解决方案的设计实施"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息安全防护解决方案",
+        "evidence_span": "主要从事网络智能化及信息安全防护解决方案的设计实施"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "网络可视化领域全产业链垂直一体化发展的企业",
+        "evidence_span": "公司属于网络可视化领域全产业链垂直一体化发展的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能采集管理系统",
+        "evidence_span": "主要产品包括智能采集管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能化应用系统",
+        "evidence_span": "主要产品包括智能采集管理系统、智能化应用系统为代表的网络智能化解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "互联网信息安全防护系统",
+        "evidence_span": "主要产品包括互联网信息安全防护系统、异常流量监测防护系统为代表的信息安全防护解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "异常流量监测防护系统",
+        "evidence_span": "主要产品包括互联网信息安全防护系统、异常流量监测防护系统为代表的信息安全防护解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硬件DPI系统",
+        "evidence_span": "主要包括硬件DPI系统以及软件DPI系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软件DPI系统",
+        "evidence_span": "主要包括硬件DPI系统以及软件DPI系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能DPI探针设备",
+        "evidence_span": "公司自产高性能DPI探针设备主要产品列示如下"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据合成和内容还原系统",
+        "evidence_span": "主要包括数据合成和内容还原系统、网络深度可视化分析系统等多款应用产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络深度可视化分析系统",
+        "evidence_span": "主要包括数据合成和内容还原系统、网络深度可视化分析系统等多款应用产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "互联网缓存及CDN产品",
+        "evidence_span": "具体包括互联网缓存及CDN产品、核心网信令及中间件应用软件产品、分布式存储系统等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核心网信令及中间件应用软件产品",
+        "evidence_span": "具体包括互联网缓存及CDN产品、核心网信令及中间件应用软件产品、分布式存储系统等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分布式存储系统",
+        "evidence_span": "具体包括互联网缓存及CDN产品、核心网信令及中间件应用软件产品、分布式存储系统等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "DPI技术",
+        "evidence_span": "通过持续研发掌握了以DPI技术（即深度包检测技术）为核心的一系列自主知识产权"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硬件DPI技术",
+        "evidence_span": "采用基于FPGA专用芯片，并结合ATCA、CLOS等专用硬件架构的硬件DPI技术路径"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "FPGA技术",
+        "evidence_span": "基于大规模可编程芯片（FPGA）技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ATCA硬件架构",
+        "evidence_span": "采用ATCA等专用硬件架构所实现的智能化采集管理平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "嵌入式DPI引擎",
+        "evidence_span": "嵌入式DPI引擎产品是在HDS2000软件设计基础上，抽象并提炼出实现高性能规则匹配的DPI识别引擎模块"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "产品已广泛部署于中国移动、中国联通、中国电信等主要国内电信运营商的骨干网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国联通",
+        "evidence_span": "产品已广泛部署于中国移动、中国联通、中国电信等主要国内电信运营商的骨干网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电信",
+        "evidence_span": "产品已广泛部署于中国移动、中国联通、中国电信等主要国内电信运营商的骨干网"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:58:43"
+}

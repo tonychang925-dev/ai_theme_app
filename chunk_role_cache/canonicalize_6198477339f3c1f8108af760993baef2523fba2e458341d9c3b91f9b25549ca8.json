@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:16:15", "result": {"span_uid": "6d9f965ec92b", "action": "rewrite", "canonical_text": "中国西部卫星产业园作为高标准卫星产业链示范载体，用于支持卫星产业发展。", "final_type": "related", "final_role": "产业园区载体", "stability": "high", "reason": "原文包含具体时间（9月即将投用），去事件化改写后，保留产业园作为产业链示范载体的稳定信息，属于关联环节。"}}

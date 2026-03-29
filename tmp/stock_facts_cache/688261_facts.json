@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高压超级结MOSFET",
+      "evidence_span": "公司超级结MOSFET销售规模国内领先"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中低压屏蔽栅MOSFET",
+      "evidence_span": "公司产品亦涵盖中低压屏蔽栅MOSFET"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超级硅MOSFET",
+      "evidence_span": "公司产品亦涵盖...超级硅MOSFET"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "TGBT产品",
+      "evidence_span": "公司产品亦涵盖...TGBT产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高压超级结MOSFET领域国内龙头企业",
+      "evidence_span": "公司在高压超级结MOSFET领域...是该领域国内龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高性能功率器件龙头",
+      "evidence_span": "东微半导高性能功率器件龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端功率器件领先设计企业",
+      "evidence_span": "东微半导高端功率器件领先设计企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中高压功率器件创新者",
+      "evidence_span": "中高压功率器件创新者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压超级结MOSFET产品",
+      "evidence_span": "公司高压超级结MOSFET产品以销售封装完毕的成品器件为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "晶圆销售",
+      "evidence_span": "有少量晶圆销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高压超级结MOSFET技术优势",
+      "evidence_span": "公司在高压超级结MOSFET领域具有技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "创新IGBT结构",
+      "evidence_span": "创新IGBT结构拓宽产品线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "批量出货给比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英搏尔",
+      "evidence_span": "批量出货给...英搏尔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁城科技",
+      "evidence_span": "批量出货给...铁城科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英威腾",
+      "evidence_span": "批量出货给...英威腾"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "昱能科技",
+      "evidence_span": "批量出货给昱能科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "禾迈股份",
+      "evidence_span": "批量出货给...禾迈股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "洛伦兹",
+      "evidence_span": "批量出货给...洛伦兹"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "批量出货给...宁德时代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "爱士惟",
+      "evidence_span": "给爱士惟...送测认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "古瑞瓦特",
+      "evidence_span": "给...古瑞瓦特...送测认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "锦浪科技",
+      "evidence_span": "给...锦浪科技...送测认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "维谛技术",
+      "evidence_span": "批量出货给维谛技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国长城",
+      "evidence_span": "批量出货给...中国长城"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高斯宝",
+      "evidence_span": "批量出货给...高斯宝"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产超级结MOSFET龙头",
+      "evidence_span": "东微半导国产超级结MOSFET龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化渗透提升",
+      "evidence_span": "率先受益国产化渗透提升"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高压超级结MOSFET",
+        "evidence_span": "公司超级结MOSFET销售规模国内领先"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中低压屏蔽栅MOSFET",
+        "evidence_span": "公司产品亦涵盖中低压屏蔽栅MOSFET"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "超级硅MOSFET",
+        "evidence_span": "公司产品亦涵盖...超级硅MOSFET"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "TGBT产品",
+        "evidence_span": "公司产品亦涵盖...TGBT产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高压超级结MOSFET领域国内龙头企业",
+        "evidence_span": "公司在高压超级结MOSFET领域...是该领域国内龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高性能功率器件龙头",
+        "evidence_span": "东微半导高性能功率器件龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端功率器件领先设计企业",
+        "evidence_span": "东微半导高端功率器件领先设计企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中高压功率器件创新者",
+        "evidence_span": "中高压功率器件创新者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压超级结MOSFET产品",
+        "evidence_span": "公司高压超级结MOSFET产品以销售封装完毕的成品器件为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "晶圆销售",
+        "evidence_span": "有少量晶圆销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高压超级结MOSFET技术优势",
+        "evidence_span": "公司在高压超级结MOSFET领域具有技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "创新IGBT结构",
+        "evidence_span": "创新IGBT结构拓宽产品线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "批量出货给比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英搏尔",
+        "evidence_span": "批量出货给...英搏尔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁城科技",
+        "evidence_span": "批量出货给...铁城科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英威腾",
+        "evidence_span": "批量出货给...英威腾"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "昱能科技",
+        "evidence_span": "批量出货给昱能科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "禾迈股份",
+        "evidence_span": "批量出货给...禾迈股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "洛伦兹",
+        "evidence_span": "批量出货给...洛伦兹"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "批量出货给...宁德时代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "爱士惟",
+        "evidence_span": "给爱士惟...送测认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "古瑞瓦特",
+        "evidence_span": "给...古瑞瓦特...送测认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "锦浪科技",
+        "evidence_span": "给...锦浪科技...送测认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "维谛技术",
+        "evidence_span": "批量出货给维谛技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国长城",
+        "evidence_span": "批量出货给...中国长城"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高斯宝",
+        "evidence_span": "批量出货给...高斯宝"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产超级结MOSFET龙头",
+        "evidence_span": "东微半导国产超级结MOSFET龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化渗透提升",
+        "evidence_span": "率先受益国产化渗透提升"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:45:27"
+}

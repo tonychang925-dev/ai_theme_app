@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "d9fdaff78393", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "low", "reason": "该段落描述央媒发声和淘宝跨界合作的事件，提到了中国打造低轨卫星互联网与星链竞争，可能隐含竞争态势知识，但主要焦点是事件和营销活动，知识价值较低。"}}

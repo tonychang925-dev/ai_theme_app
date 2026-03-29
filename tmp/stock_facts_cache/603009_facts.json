@@ -1,0 +1,559 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "底盘零部件业务",
+      "evidence_span": "公司主要业务包括底盘零部件业务、铝合金轻量化业务、空调压缩机业务三大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金轻量化业务",
+      "evidence_span": "公司主要业务包括底盘零部件业务、铝合金轻量化业务、空调压缩机业务三大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "空调压缩机业务",
+      "evidence_span": "公司主要业务包括底盘零部件业务、铝合金轻量化业务、空调压缩机业务三大板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车转向器零部件与减震器零部件的高新技术企业",
+      "evidence_span": "专业生产汽车转向器零部件与减震器零部件的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "转向器齿条和减震器活塞杆的龙头",
+      "evidence_span": "转向器齿条和减震器活塞杆的龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内转向器和减震配件的领军企业",
+      "evidence_span": "国内转向器和减震配件的领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "领先的转向器齿条及减震器活塞杆供应商",
+      "evidence_span": "领先的转向器齿条及减震器活塞杆供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内最大的商用车压缩机主机厂供应商",
+      "evidence_span": "为国内最大的商用车压缩机主机厂供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "转向器齿条",
+      "evidence_span": "转向器齿条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "减震器活塞杆",
+      "evidence_span": "减震器活塞杆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高精密类零部件产品",
+      "evidence_span": "高精密类零部件产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CDC控制阀壳体",
+      "evidence_span": "CDC控制阀壳体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IPB智能集成刹车系统的核心零部件Fange",
+      "evidence_span": "博世IPB智能集成刹车系统的核心零部件Fange项目开发及量产工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集成阀岛",
+      "evidence_span": "集成阀岛"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池包连接块",
+      "evidence_span": "电池包连接块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Yoke类件",
+      "evidence_span": "Yoke类件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车空调压缩机",
+      "evidence_span": "汽车空调系统关键零部件压缩机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整车集成式热管理系统",
+      "evidence_span": "整车集成式热管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双齿齿条批量供货",
+      "evidence_span": "完成了双齿齿条的批量供货"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "可变速比（VGR）齿条开发",
+      "evidence_span": "开发了可变速比（VGR）齿条"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "交叉孔减震杆开发",
+      "evidence_span": "交叉孔减震杆"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "主动减震活塞杆开发",
+      "evidence_span": "主动减震活塞杆"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铝合金产品全工序生产制造能力",
+      "evidence_span": "拥有从原材料锯切、锻造、T6热处理、清洗、荧光渗透探伤、机械加工等铝合金产品全工序生产制造能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电动涡旋压缩机NVH性能提升",
+      "evidence_span": "极大地提升了压缩机单体的NVH性能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "GEV80系列大排量电动涡旋压缩机批量生产",
+      "evidence_span": "GEV80系列压缩机的批量生产，填补了大排量电动涡旋压缩机的市场空白"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "第四代电动压缩机GEH27、GEH46量产",
+      "evidence_span": "新开发的第四代电动压缩机GEH27、GEH46实现量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "800V大冷量高电压平台压缩机开发",
+      "evidence_span": "开发800V大冷量高电压平台的压缩机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "二氧化碳压缩机研究开发",
+      "evidence_span": "二氧化碳压缩机已着手研究开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城蜂巢",
+      "evidence_span": "长城蜂巢"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利启航",
+      "evidence_span": "吉利启航"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中汽智创",
+      "evidence_span": "中汽智创"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恒隆",
+      "evidence_span": "恒隆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "耐世特",
+      "evidence_span": "耐世特"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "捷泰格特",
+      "evidence_span": "捷泰格特"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安底盘",
+      "evidence_span": "长安底盘"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "采埃孚（ZF）",
+      "evidence_span": "采埃孚（ZF）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蒂森克虏伯（TKP）",
+      "evidence_span": "蒂森克虏伯（TKP）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万都",
+      "evidence_span": "万都"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华域车身",
+      "evidence_span": "华域车身"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "徐工",
+      "evidence_span": "徐工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福田",
+      "evidence_span": "福田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽奔腾",
+      "evidence_span": "一汽奔腾"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江淮",
+      "evidence_span": "江淮"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽大通",
+      "evidence_span": "上汽大通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京盒子",
+      "evidence_span": "北京盒子"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "柳汽",
+      "evidence_span": "柳汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国重汽",
+      "evidence_span": "中国重汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "长城"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世",
+      "evidence_span": "博世"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三一",
+      "evidence_span": "公司与三一达成合作开发整车集成式热管理系统"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车轻量化",
+      "evidence_span": "铝合金轻量化业务，其中核心铝锻技术能力的应用方向即为新能源汽车轻量化方向"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车零部件轻量化",
+      "evidence_span": "汽车零部件趋向于轻量化发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车零部件电子化",
+      "evidence_span": "汽车零部件将向电子化发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车零部件集成化、模块化",
+      "evidence_span": "汽车零部件将向系统化研发、模块化制造、集成化供货发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "底盘零部件业务",
+        "evidence_span": "公司主要业务包括底盘零部件业务、铝合金轻量化业务、空调压缩机业务三大板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金轻量化业务",
+        "evidence_span": "公司主要业务包括底盘零部件业务、铝合金轻量化业务、空调压缩机业务三大板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "空调压缩机业务",
+        "evidence_span": "公司主要业务包括底盘零部件业务、铝合金轻量化业务、空调压缩机业务三大板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车转向器零部件与减震器零部件的高新技术企业",
+        "evidence_span": "专业生产汽车转向器零部件与减震器零部件的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "转向器齿条和减震器活塞杆的龙头",
+        "evidence_span": "转向器齿条和减震器活塞杆的龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内转向器和减震配件的领军企业",
+        "evidence_span": "国内转向器和减震配件的领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "领先的转向器齿条及减震器活塞杆供应商",
+        "evidence_span": "领先的转向器齿条及减震器活塞杆供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内最大的商用车压缩机主机厂供应商",
+        "evidence_span": "为国内最大的商用车压缩机主机厂供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "转向器齿条",
+        "evidence_span": "转向器齿条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "减震器活塞杆",
+        "evidence_span": "减震器活塞杆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高精密类零部件产品",
+        "evidence_span": "高精密类零部件产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CDC控制阀壳体",
+        "evidence_span": "CDC控制阀壳体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IPB智能集成刹车系统的核心零部件Fange",
+        "evidence_span": "博世IPB智能集成刹车系统的核心零部件Fange项目开发及量产工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集成阀岛",
+        "evidence_span": "集成阀岛"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池包连接块",
+        "evidence_span": "电池包连接块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Yoke类件",
+        "evidence_span": "Yoke类件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车空调压缩机",
+        "evidence_span": "汽车空调系统关键零部件压缩机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整车集成式热管理系统",
+        "evidence_span": "整车集成式热管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双齿齿条批量供货",
+        "evidence_span": "完成了双齿齿条的批量供货"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "可变速比（VGR）齿条开发",
+        "evidence_span": "开发了可变速比（VGR）齿条"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "交叉孔减震杆开发",
+        "evidence_span": "交叉孔减震杆"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "主动减震活塞杆开发",
+        "evidence_span": "主动减震活塞杆"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铝合金产品全工序生产制造能力",
+        "evidence_span": "拥有从原材料锯切、锻造、T6热处理、清洗、荧光渗透探伤、机械加工等铝合金产品全工序生产制造能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电动涡旋压缩机NVH性能提升",
+        "evidence_span": "极大地提升了压缩机单体的NVH性能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "GEV80系列大排量电动涡旋压缩机批量生产",
+        "evidence_span": "GEV80系列压缩机的批量生产，填补了大排量电动涡旋压缩机的市场空白"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "第四代电动压缩机GEH27、GEH46量产",
+        "evidence_span": "新开发的第四代电动压缩机GEH27、GEH46实现量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "800V大冷量高电压平台压缩机开发",
+        "evidence_span": "开发800V大冷量高电压平台的压缩机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "二氧化碳压缩机研究开发",
+        "evidence_span": "二氧化碳压缩机已着手研究开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城蜂巢",
+        "evidence_span": "长城蜂巢"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利启航",
+        "evidence_span": "吉利启航"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中汽智创",
+        "evidence_span": "中汽智创"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恒隆",
+        "evidence_span": "恒隆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "耐世特",
+        "evidence_span": "耐世特"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "捷泰格特",
+        "evidence_span": "捷泰格特"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安底盘",
+        "evidence_span": "长安底盘"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "采埃孚（ZF）",
+        "evidence_span": "采埃孚（ZF）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蒂森克虏伯（TKP）",
+        "evidence_span": "蒂森克虏伯（TKP）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万都",
+        "evidence_span": "万都"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华域车身",
+        "evidence_span": "华域车身"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "徐工",
+        "evidence_span": "徐工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福田",
+        "evidence_span": "福田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽奔腾",
+        "evidence_span": "一汽奔腾"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江淮",
+        "evidence_span": "江淮"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽大通",
+        "evidence_span": "上汽大通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京盒子",
+        "evidence_span": "北京盒子"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "柳汽",
+        "evidence_span": "柳汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国重汽",
+        "evidence_span": "中国重汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "长城"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世",
+        "evidence_span": "博世"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三一",
+        "evidence_span": "公司与三一达成合作开发整车集成式热管理系统"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车轻量化",
+        "evidence_span": "铝合金轻量化业务，其中核心铝锻技术能力的应用方向即为新能源汽车轻量化方向"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车零部件轻量化",
+        "evidence_span": "汽车零部件趋向于轻量化发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车零部件电子化",
+        "evidence_span": "汽车零部件将向电子化发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车零部件集成化、模块化",
+        "evidence_span": "汽车零部件将向系统化研发、模块化制造、集成化供货发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:56:55"
+}

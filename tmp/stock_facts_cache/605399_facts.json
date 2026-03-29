@@ -1,0 +1,469 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "功能性硅烷基础原料",
+      "evidence_span": "公司专注于功能性硅烷基础原料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "功能性硅烷中间体",
+      "evidence_span": "公司专注于功能性硅烷基础原料，中间体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "功能性硅烷下游产品",
+      "evidence_span": "公司专注于功能性硅烷基础原料，中间体，下游产品研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种有机硅材料",
+      "evidence_span": "年产2.3万吨特种有机硅材料项目"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "硅基新材料",
+      "evidence_span": "13.5万吨硅基新材料及2.5万吨钛、钴基新材料项目"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "钛基新材料",
+      "evidence_span": "13.5万吨硅基新材料及2.5万吨钛、钴基新材料项目"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "钴基新材料",
+      "evidence_span": "13.5万吨硅基新材料及2.5万吨钛、钴基新材料项目"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "功能性硅烷行业领先企业",
+      "evidence_span": "国内功能性硅烷行业领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "硅细分领域领跑者",
+      "evidence_span": "硅细分领域领跑者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "功能性硅烷平台企业",
+      "evidence_span": "功能性硅烷平台初显成效"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "硅烷一体化龙头",
+      "evidence_span": "硅烷一体化龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "气凝胶赛道的优胜者",
+      "evidence_span": "气凝胶赛道的优胜者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氨基硅烷",
+      "evidence_span": "氨基硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环氧硅烷",
+      "evidence_span": "环氧硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烷基硅烷",
+      "evidence_span": "烷基硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "含氢硅烷",
+      "evidence_span": "含氢硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氯丙基硅烷",
+      "evidence_span": "氯丙基硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "含硫硅烷",
+      "evidence_span": "含硫硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "原硅酸酯",
+      "evidence_span": "原硅酸酯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甲基丙烯酰氧基硅烷",
+      "evidence_span": "甲基丙烯酰氧基硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乙烯基硅烷",
+      "evidence_span": "乙烯基硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三氯氢硅",
+      "evidence_span": "基础原料主要包括三氯氢硅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "四氯化硅",
+      "evidence_span": "基础原料主要包括三氯氢硅和四氯化硅等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3-氯丙基三氯硅烷",
+      "evidence_span": "中间体产品主要包括3-氯丙基三氯硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3-氯丙基三甲氧基硅烷",
+      "evidence_span": "中间体产品主要包括3-氯丙基三甲氧基硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3-氯丙基三乙氧基硅烷",
+      "evidence_span": "中间体产品主要包括3-氯丙基三乙氧基硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三甲氧基硅烷",
+      "evidence_span": "中间体产品主要包括三甲氧基硅烷等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乙烯基三丁酮肟基硅烷",
+      "evidence_span": "增加乙烯基三丁酮肟基硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甲基三丁酮肟基硅烷",
+      "evidence_span": "甲基三丁酮肟基硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乙烯基三乙酰氧基硅烷",
+      "evidence_span": "乙烯基三乙酰氧基硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3-辛酰基硫代丙基三乙氧基硅烷",
+      "evidence_span": "3-辛酰基硫代丙基三乙氧基硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "辛基三氯硅烷",
+      "evidence_span": "辛基三氯硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "六甲基二硅氮烷",
+      "evidence_span": "六甲基二硅氮烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甲基硅酸",
+      "evidence_span": "甲基硅酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甲基苯基二氯硅烷",
+      "evidence_span": "甲基苯基二氯硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "苯基三氯硅烷",
+      "evidence_span": "苯基三氯硅烷"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气凝胶",
+      "evidence_span": "气凝胶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水性防水剂",
+      "evidence_span": "水性防水剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅烷聚合物",
+      "evidence_span": "硅烷聚合物"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氢气循环工艺",
+      "evidence_span": "实现了氢气循环"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HCl封闭循环工艺",
+      "evidence_span": "HCl封闭循环工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "干法工艺",
+      "evidence_span": "公司创新性地使用干法工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自净化技术",
+      "evidence_span": "采用自净化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效酯化技术",
+      "evidence_span": "高效酯化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动监测技术",
+      "evidence_span": "自动监测等关键技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "功能性硅烷产业向国内转移",
+      "evidence_span": "借功能性硅烷产业向国内转移之东风"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "功能性硅烷基础原料",
+        "evidence_span": "公司专注于功能性硅烷基础原料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "功能性硅烷中间体",
+        "evidence_span": "公司专注于功能性硅烷基础原料，中间体"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "功能性硅烷下游产品",
+        "evidence_span": "公司专注于功能性硅烷基础原料，中间体，下游产品研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种有机硅材料",
+        "evidence_span": "年产2.3万吨特种有机硅材料项目"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "硅基新材料",
+        "evidence_span": "13.5万吨硅基新材料及2.5万吨钛、钴基新材料项目"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "钛基新材料",
+        "evidence_span": "13.5万吨硅基新材料及2.5万吨钛、钴基新材料项目"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "钴基新材料",
+        "evidence_span": "13.5万吨硅基新材料及2.5万吨钛、钴基新材料项目"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "功能性硅烷行业领先企业",
+        "evidence_span": "国内功能性硅烷行业领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "硅细分领域领跑者",
+        "evidence_span": "硅细分领域领跑者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "功能性硅烷平台企业",
+        "evidence_span": "功能性硅烷平台初显成效"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "硅烷一体化龙头",
+        "evidence_span": "硅烷一体化龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "气凝胶赛道的优胜者",
+        "evidence_span": "气凝胶赛道的优胜者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氨基硅烷",
+        "evidence_span": "氨基硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环氧硅烷",
+        "evidence_span": "环氧硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烷基硅烷",
+        "evidence_span": "烷基硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "含氢硅烷",
+        "evidence_span": "含氢硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氯丙基硅烷",
+        "evidence_span": "氯丙基硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "含硫硅烷",
+        "evidence_span": "含硫硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "原硅酸酯",
+        "evidence_span": "原硅酸酯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甲基丙烯酰氧基硅烷",
+        "evidence_span": "甲基丙烯酰氧基硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乙烯基硅烷",
+        "evidence_span": "乙烯基硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三氯氢硅",
+        "evidence_span": "基础原料主要包括三氯氢硅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "四氯化硅",
+        "evidence_span": "基础原料主要包括三氯氢硅和四氯化硅等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3-氯丙基三氯硅烷",
+        "evidence_span": "中间体产品主要包括3-氯丙基三氯硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3-氯丙基三甲氧基硅烷",
+        "evidence_span": "中间体产品主要包括3-氯丙基三甲氧基硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3-氯丙基三乙氧基硅烷",
+        "evidence_span": "中间体产品主要包括3-氯丙基三乙氧基硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三甲氧基硅烷",
+        "evidence_span": "中间体产品主要包括三甲氧基硅烷等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乙烯基三丁酮肟基硅烷",
+        "evidence_span": "增加乙烯基三丁酮肟基硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甲基三丁酮肟基硅烷",
+        "evidence_span": "甲基三丁酮肟基硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乙烯基三乙酰氧基硅烷",
+        "evidence_span": "乙烯基三乙酰氧基硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3-辛酰基硫代丙基三乙氧基硅烷",
+        "evidence_span": "3-辛酰基硫代丙基三乙氧基硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "辛基三氯硅烷",
+        "evidence_span": "辛基三氯硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "六甲基二硅氮烷",
+        "evidence_span": "六甲基二硅氮烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甲基硅酸",
+        "evidence_span": "甲基硅酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甲基苯基二氯硅烷",
+        "evidence_span": "甲基苯基二氯硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "苯基三氯硅烷",
+        "evidence_span": "苯基三氯硅烷"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气凝胶",
+        "evidence_span": "气凝胶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水性防水剂",
+        "evidence_span": "水性防水剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅烷聚合物",
+        "evidence_span": "硅烷聚合物"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氢气循环工艺",
+        "evidence_span": "实现了氢气循环"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HCl封闭循环工艺",
+        "evidence_span": "HCl封闭循环工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "干法工艺",
+        "evidence_span": "公司创新性地使用干法工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自净化技术",
+        "evidence_span": "采用自净化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效酯化技术",
+        "evidence_span": "高效酯化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动监测技术",
+        "evidence_span": "自动监测等关键技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "功能性硅烷产业向国内转移",
+        "evidence_span": "借功能性硅烷产业向国内转移之东风"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:23:59"
+}

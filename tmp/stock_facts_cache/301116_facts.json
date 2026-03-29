@@ -1,0 +1,304 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "禽类屠宰",
+      "evidence_span": "禽类屠宰及加工（以下简称“屠宰板块”）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "加工",
+      "evidence_span": "禽类屠宰及加工（以下简称“屠宰板块”）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "饲料生产",
+      "evidence_span": "饲料生产及销售（以下简称“饲料板块”）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "饲料生产及销售（以下简称“饲料板块”）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商品代禽苗孵化",
+      "evidence_span": "商品代禽苗孵化及销售（以下简称“种禽板块”）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "熟食",
+      "evidence_span": "熟食及调理品的生产与销售（以下简称“调熟板块”）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "调理品的生产",
+      "evidence_span": "熟食及调理品的生产与销售（以下简称“调熟板块”）"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国大型禽类食品龙头企业",
+      "evidence_span": "中国大型禽类食品龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国大型农牧食品企业",
+      "evidence_span": "中国大型农牧食品企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农业产业化国家重点龙头企业",
+      "evidence_span": "农业产业化国家重点龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鸭产品",
+      "evidence_span": "鸭产品主要包括鸭脖、鸭头、鸭胸、鸭翅、鸭腿、鸭掌、鸭胗、及鸭血等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鸡产品",
+      "evidence_span": "鸡产品主要包括鸡胸、鸡腿、鸡翅和鸡爪等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鸭饲料",
+      "evidence_span": "主要产品包括鸭饲料、鸡饲料以及少部分猪饲料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鸡饲料",
+      "evidence_span": "主要产品包括鸭饲料、鸡饲料以及少部分猪饲料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品代鸭苗",
+      "evidence_span": "主要产品包括商品代鸭苗和鸡苗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品代鸡苗",
+      "evidence_span": "主要产品包括商品代鸭苗和鸡苗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "休闲卤制食品",
+      "evidence_span": "主要产品包括鸭脖、鸭锁骨、鸭掌、鸭翅等休闲卤制食品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "调理品",
+      "evidence_span": "调理品业务主要为生产及销售调理品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧养殖",
+      "evidence_span": "在智慧养殖、遗传育种、现代装备、安全回溯体系建设、畜禽养殖污染控制、水禽产业技术体系建设等方面均取得了丰硕成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "遗传育种",
+      "evidence_span": "在智慧养殖、遗传育种、现代装备、安全回溯体系建设、畜禽养殖污染控制、水禽产业技术体系建设等方面均取得了丰硕成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "安全回溯体系建设",
+      "evidence_span": "在智慧养殖、遗传育种、现代装备、安全回溯体系建设、畜禽养殖污染控制、水禽产业技术体系建设等方面均取得了丰硕成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "畜禽养殖污染控制",
+      "evidence_span": "在智慧养殖、遗传育种、现代装备、安全回溯体系建设、畜禽养殖污染控制、水禽产业技术体系建设等方面均取得了丰硕成果"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水禽产业技术体系建设",
+      "evidence_span": "在智慧养殖、遗传育种、现代装备、安全回溯体系建设、畜禽养殖污染控制、水禽产业技术体系建设等方面均取得了丰硕成果"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "叮咚买菜",
+      "evidence_span": "成为叮咚买菜、盒马鲜生等新零售的主打产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "盒马鲜生",
+      "evidence_span": "成为叮咚买菜、盒马鲜生等新零售的主打产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海底捞",
+      "evidence_span": "海底捞、必胜客等大型餐饮的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "必胜客",
+      "evidence_span": "海底捞、必胜客等大型餐饮的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安井",
+      "evidence_span": "满足安井、双汇、周黑鸭、绝味等知名品牌的大量稳定需求"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "双汇",
+      "evidence_span": "满足安井、双汇、周黑鸭、绝味等知名品牌的大量稳定需求"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "周黑鸭",
+      "evidence_span": "满足安井、双汇、周黑鸭、绝味等知名品牌的大量稳定需求"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "绝味",
+      "evidence_span": "满足安井、双汇、周黑鸭、绝味等知名品牌的大量稳定需求"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "禽类屠宰及加工",
+        "evidence_span": "禽类屠宰及加工（以下简称“屠宰板块”）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "饲料生产及销售",
+        "evidence_span": "饲料生产及销售（以下简称“饲料板块”）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商品代禽苗孵化及销售",
+        "evidence_span": "商品代禽苗孵化及销售（以下简称“种禽板块”）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "熟食及调理品的生产与销售",
+        "evidence_span": "熟食及调理品的生产与销售（以下简称“调熟板块”）"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国大型禽类食品龙头企业",
+        "evidence_span": "中国大型禽类食品龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国大型农牧食品企业",
+        "evidence_span": "中国大型农牧食品企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农业产业化国家重点龙头企业",
+        "evidence_span": "农业产业化国家重点龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鸭产品",
+        "evidence_span": "鸭产品主要包括鸭脖、鸭头、鸭胸、鸭翅、鸭腿、鸭掌、鸭胗、及鸭血等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鸡产品",
+        "evidence_span": "鸡产品主要包括鸡胸、鸡腿、鸡翅和鸡爪等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鸭饲料",
+        "evidence_span": "主要产品包括鸭饲料、鸡饲料以及少部分猪饲料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鸡饲料",
+        "evidence_span": "主要产品包括鸭饲料、鸡饲料以及少部分猪饲料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品代鸭苗",
+        "evidence_span": "主要产品包括商品代鸭苗和鸡苗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品代鸡苗",
+        "evidence_span": "主要产品包括商品代鸭苗和鸡苗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "休闲卤制食品",
+        "evidence_span": "主要产品包括鸭脖、鸭锁骨、鸭掌、鸭翅等休闲卤制食品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "调理品",
+        "evidence_span": "调理品业务主要为生产及销售调理品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧养殖",
+        "evidence_span": "在智慧养殖、遗传育种、现代装备、安全回溯体系建设、畜禽养殖污染控制、水禽产业技术体系建设等方面均取得了丰硕成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "遗传育种",
+        "evidence_span": "在智慧养殖、遗传育种、现代装备、安全回溯体系建设、畜禽养殖污染控制、水禽产业技术体系建设等方面均取得了丰硕成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "安全回溯体系建设",
+        "evidence_span": "在智慧养殖、遗传育种、现代装备、安全回溯体系建设、畜禽养殖污染控制、水禽产业技术体系建设等方面均取得了丰硕成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "畜禽养殖污染控制",
+        "evidence_span": "在智慧养殖、遗传育种、现代装备、安全回溯体系建设、畜禽养殖污染控制、水禽产业技术体系建设等方面均取得了丰硕成果"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水禽产业技术体系建设",
+        "evidence_span": "在智慧养殖、遗传育种、现代装备、安全回溯体系建设、畜禽养殖污染控制、水禽产业技术体系建设等方面均取得了丰硕成果"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "叮咚买菜",
+        "evidence_span": "成为叮咚买菜、盒马鲜生等新零售的主打产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "盒马鲜生",
+        "evidence_span": "成为叮咚买菜、盒马鲜生等新零售的主打产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海底捞",
+        "evidence_span": "海底捞、必胜客等大型餐饮的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "必胜客",
+        "evidence_span": "海底捞、必胜客等大型餐饮的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安井",
+        "evidence_span": "满足安井、双汇、周黑鸭、绝味等知名品牌的大量稳定需求"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "双汇",
+        "evidence_span": "满足安井、双汇、周黑鸭、绝味等知名品牌的大量稳定需求"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "周黑鸭",
+        "evidence_span": "满足安井、双汇、周黑鸭、绝味等知名品牌的大量稳定需求"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "绝味",
+        "evidence_span": "满足安井、双汇、周黑鸭、绝味等知名品牌的大量稳定需求"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:38:25"
+}

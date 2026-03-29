@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "94fe92d9d96a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段详细描述股权转让、要约收购和公司控制权变更事件，包含具体日期和财务细节，与人形机器人题材关联较弱（仅通过智元机器人间接相关），主要是公司公告和交易动态，因此归类为纯事件。"}}

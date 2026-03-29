@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "8b23463f2fb6", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落包含ASML对EUV技术扩展的预计，这涉及稳定知识（EUV技术、产品组合），但以事件形式（预计）呈现，边界不清，混有知识和事件元素。"}}

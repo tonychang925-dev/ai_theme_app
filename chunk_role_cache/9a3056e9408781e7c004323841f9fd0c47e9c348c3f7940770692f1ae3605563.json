@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "3939924a7511", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段描述了内蒙古拟组建公司的计划，这是一个具体的事件或动态进展，没有提供稳定的题材本体知识。"}}

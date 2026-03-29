@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "b387cc2058d1", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件（Meta与Oakley合作开发的智能眼镜产品发布会），包含明确的时间（2025年6月20日）和动态信息，没有提供关于AR眼镜的静态知识。"}}

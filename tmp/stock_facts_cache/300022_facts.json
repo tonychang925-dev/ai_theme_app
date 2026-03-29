@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "农机连锁销售服务",
+      "evidence_span": "农机连锁销售服务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端特色农机研发制造",
+      "evidence_span": "高端特色农机研发制造板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "农机连锁销售龙头企业",
+      "evidence_span": "国内农机连锁销售龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "免耕指夹式精量施肥播种机",
+      "evidence_span": "免耕指夹式精量施肥播种机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "免耕气吸式精量施肥播种机",
+      "evidence_span": "免耕气吸、气吹式精量施肥播种机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "免耕气吹式精量施肥播种机",
+      "evidence_span": "免耕气吸、气吹式精量施肥播种机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多功能精密播种机",
+      "evidence_span": "多功能精密播种机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "深松整地机",
+      "evidence_span": "深松整地机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圆盘耙地机",
+      "evidence_span": "圆盘耙地机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保护性耕作系列产品",
+      "evidence_span": "保护性耕作系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "康达牌免耕播种机",
+      "evidence_span": "康达牌免耕播种机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "深松整地联合作业机",
+      "evidence_span": "深松整地联合作业机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全程机械化整体解决方案",
+      "evidence_span": "为终端用户提供全程机械化整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "设施农业成套设备",
+      "evidence_span": "设施农业、冷链烘干、林果业、畜牧业以及智慧农业等所需的各类成套设备和整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷链烘干成套设备",
+      "evidence_span": "设施农业、冷链烘干、林果业、畜牧业以及智慧农业等所需的各类成套设备和整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "林果业成套设备",
+      "evidence_span": "设施农业、冷链烘干、林果业、畜牧业以及智慧农业等所需的各类成套设备和整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "畜牧业成套设备",
+      "evidence_span": "设施农业、冷链烘干、林果业、畜牧业以及智慧农业等所需的各类成套设备和整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧农业成套设备",
+      "evidence_span": "设施农业、冷链烘干、林果业、畜牧业以及智慧农业等所需的各类成套设备和整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二手机业务",
+      "evidence_span": "二手机业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农事服务业务",
+      "evidence_span": "农事服务业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "终端用户",
+      "evidence_span": "直接销售给终端用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "二级经销商",
+      "evidence_span": "销售给下属二级经销商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "授权代理一级经销商",
+      "evidence_span": "直接销售给授权代理一级经销商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "农机购置补贴政策",
+      "evidence_span": "农机购置补贴政策是党中央、国务院出台的一项长期重要的强农惠农富农政策"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "保护性耕作行动计划",
+      "evidence_span": "农业农村部、财政部共同启动实施东北黑土地保护性耕作行动计划"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "农机连锁销售服务",
+        "evidence_span": "农机连锁销售服务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端特色农机研发制造",
+        "evidence_span": "高端特色农机研发制造板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "农机连锁销售龙头企业",
+        "evidence_span": "国内农机连锁销售龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "免耕指夹式精量施肥播种机",
+        "evidence_span": "免耕指夹式精量施肥播种机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "免耕气吸式精量施肥播种机",
+        "evidence_span": "免耕气吸、气吹式精量施肥播种机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "免耕气吹式精量施肥播种机",
+        "evidence_span": "免耕气吸、气吹式精量施肥播种机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多功能精密播种机",
+        "evidence_span": "多功能精密播种机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "深松整地机",
+        "evidence_span": "深松整地机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圆盘耙地机",
+        "evidence_span": "圆盘耙地机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保护性耕作系列产品",
+        "evidence_span": "保护性耕作系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "康达牌免耕播种机",
+        "evidence_span": "康达牌免耕播种机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "深松整地联合作业机",
+        "evidence_span": "深松整地联合作业机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全程机械化整体解决方案",
+        "evidence_span": "为终端用户提供全程机械化整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "设施农业成套设备",
+        "evidence_span": "设施农业、冷链烘干、林果业、畜牧业以及智慧农业等所需的各类成套设备和整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷链烘干成套设备",
+        "evidence_span": "设施农业、冷链烘干、林果业、畜牧业以及智慧农业等所需的各类成套设备和整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "林果业成套设备",
+        "evidence_span": "设施农业、冷链烘干、林果业、畜牧业以及智慧农业等所需的各类成套设备和整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "畜牧业成套设备",
+        "evidence_span": "设施农业、冷链烘干、林果业、畜牧业以及智慧农业等所需的各类成套设备和整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧农业成套设备",
+        "evidence_span": "设施农业、冷链烘干、林果业、畜牧业以及智慧农业等所需的各类成套设备和整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二手机业务",
+        "evidence_span": "二手机业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农事服务业务",
+        "evidence_span": "农事服务业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "终端用户",
+        "evidence_span": "直接销售给终端用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "二级经销商",
+        "evidence_span": "销售给下属二级经销商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "授权代理一级经销商",
+        "evidence_span": "直接销售给授权代理一级经销商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "农机购置补贴政策",
+        "evidence_span": "农机购置补贴政策是党中央、国务院出台的一项长期重要的强农惠农富农政策"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "保护性耕作行动计划",
+        "evidence_span": "农业农村部、财政部共同启动实施东北黑土地保护性耕作行动计划"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:44:39"
+}

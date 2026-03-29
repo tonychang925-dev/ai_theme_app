@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:49", "result": {"chunk_id": "5a2cf68659c4", "decision": "ontology_useful", "confidence": 0.8, "reason": "该段落提到了纳米压印光刻机这一关键设备，并涉及能耗特性，有助于说明半导体设备的核心环节和关键机制。"}}

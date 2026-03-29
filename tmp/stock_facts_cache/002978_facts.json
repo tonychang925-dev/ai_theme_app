@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "铁矿石的开采",
+      "evidence_span": "主营铁矿石的开采、洗选、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "洗选",
+      "evidence_span": "主营铁矿石的开采、洗选、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主营铁矿石的开采、洗选、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "钒钛磁铁矿资源综合利用",
+      "evidence_span": "公司是一家以先进技术对多金属共伴生矿进行采选的钒钛资源综合利用循环经济企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "钒钛磁铁矿采选企业",
+      "evidence_span": "公司是国内主要的钒钛磁铁矿采选企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "钛精矿供应商及龙头企业",
+      "evidence_span": "公司是国内重要的钛精矿供应商及龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钛精矿",
+      "evidence_span": "公司主要产品为钛精矿和钒钛铁精矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钒钛铁精矿",
+      "evidence_span": "公司主要产品为钛精矿和钒钛铁精矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能源级钛（合金）材料",
+      "evidence_span": "拟投建“年产6万吨能源级钛（合金）材料全产业链项目”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸铁",
+      "evidence_span": "拟投建“年产5万吨磷酸铁项目”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钒钛磁铁矿资源综合利用的关键技术",
+      "evidence_span": "公司已掌握了钒钛磁铁矿资源综合利用的关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无外力管道输送技术",
+      "evidence_span": "通过公司自主研发的无外力管道输送技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化智能矿山",
+      "evidence_span": "全力打造数字化智能矿山"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "钛矿龙头",
+      "evidence_span": "钛矿龙头，扬帆起航"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "钛资源龙头",
+      "evidence_span": "安宁股份具有产业链定价权的钛资源龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "铁矿石的开采、洗选、销售",
+        "evidence_span": "主营铁矿石的开采、洗选、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "钒钛磁铁矿资源综合利用",
+        "evidence_span": "公司是一家以先进技术对多金属共伴生矿进行采选的钒钛资源综合利用循环经济企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "钒钛磁铁矿采选企业",
+        "evidence_span": "公司是国内主要的钒钛磁铁矿采选企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "钛精矿供应商及龙头企业",
+        "evidence_span": "公司是国内重要的钛精矿供应商及龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钛精矿",
+        "evidence_span": "公司主要产品为钛精矿和钒钛铁精矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钒钛铁精矿",
+        "evidence_span": "公司主要产品为钛精矿和钒钛铁精矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能源级钛（合金）材料",
+        "evidence_span": "拟投建“年产6万吨能源级钛（合金）材料全产业链项目”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸铁",
+        "evidence_span": "拟投建“年产5万吨磷酸铁项目”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钒钛磁铁矿资源综合利用的关键技术",
+        "evidence_span": "公司已掌握了钒钛磁铁矿资源综合利用的关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无外力管道输送技术",
+        "evidence_span": "通过公司自主研发的无外力管道输送技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化智能矿山",
+        "evidence_span": "全力打造数字化智能矿山"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "钛矿龙头",
+        "evidence_span": "钛矿龙头，扬帆起航"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "钛资源龙头",
+        "evidence_span": "安宁股份具有产业链定价权的钛资源龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:05:06"
+}

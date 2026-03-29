@@ -1,0 +1,379 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "轴承保持架",
+      "evidence_span": "主营轴承保持架"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车精密零部件",
+      "evidence_span": "主营轴承保持架、汽车精密零部件"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级专精特新“小巨人”",
+      "evidence_span": "国家级专精特新“小巨人”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轴承保持架",
+      "evidence_span": "主要产品是轴承保持架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车精密零部件",
+      "evidence_span": "主要产品是轴承保持架、汽车精密零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轴承配件",
+      "evidence_span": "主要产品是轴承保持架、汽车精密零部件和轴承配件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电系列主轴、齿轮箱轴承保持架",
+      "evidence_span": "创新研发了风电系列主轴、齿轮箱轴承保持架制造新技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "变速箱零件",
+      "evidence_span": "变速箱零件前期研发实现量产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门锁零件",
+      "evidence_span": "门锁零件、座椅零件实现量产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "座椅零件",
+      "evidence_span": "门锁零件、座椅零件实现量产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝转子总成",
+      "evidence_span": "开发形成铝转子总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳纤维转子总成",
+      "evidence_span": "碳纤维转子总成、永磁转子总成、定转子总成等新能源电驱动系统总成部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "永磁转子总成",
+      "evidence_span": "碳纤维转子总成、永磁转子总成、定转子总成等新能源电驱动系统总成部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定转子总成",
+      "evidence_span": "碳纤维转子总成、永磁转子总成、定转子总成等新能源电驱动系统总成部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢能源0.075mm双极板",
+      "evidence_span": "前期布局氢能源0.075mm双极板成功研发应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乳突板",
+      "evidence_span": "在制氢领域布局关键性零部件乳突板"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密冲压技术",
+      "evidence_span": "立足精密冲压技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模具设计能力",
+      "evidence_span": "模具设计能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数控精密机加工",
+      "evidence_span": "数控精密机加工"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密铸造",
+      "evidence_span": "精密铸造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新能源汽车用轻量化、高性能电机铝转子生产制造技术",
+      "evidence_span": "拥有“新能源汽车用轻量化、高性能电机铝转子生产制造技术”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "斯凯孚（SKF）",
+      "evidence_span": "与斯凯孚（SKF）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恩斯克（NSK）",
+      "evidence_span": "恩斯克（NSK）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "舍弗勒（Schaeffer）",
+      "evidence_span": "舍弗勒（Schaeffer）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁姆肯（Timken）",
+      "evidence_span": "铁姆肯（Timken）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "捷太格特（JTEKT）",
+      "evidence_span": "捷太格特（JTEKT）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江天马轴承",
+      "evidence_span": "浙江天马轴承"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "瓦房店轴承集团",
+      "evidence_span": "瓦房店轴承集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "公司与长城、蔚来等主流汽车厂商合作多年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "公司与长城、蔚来等主流汽车厂商合作多年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博格华纳",
+      "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博泽（Brose）",
+      "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "采埃孚",
+      "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "爱信",
+      "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法雷奥（Vaeo）",
+      "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "翰昂",
+      "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦格纳（MAGNA）",
+      "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "轴承保持架",
+        "evidence_span": "主营轴承保持架"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车精密零部件",
+        "evidence_span": "主营轴承保持架、汽车精密零部件"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级专精特新“小巨人”",
+        "evidence_span": "国家级专精特新“小巨人”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轴承保持架",
+        "evidence_span": "主要产品是轴承保持架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车精密零部件",
+        "evidence_span": "主要产品是轴承保持架、汽车精密零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轴承配件",
+        "evidence_span": "主要产品是轴承保持架、汽车精密零部件和轴承配件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电系列主轴、齿轮箱轴承保持架",
+        "evidence_span": "创新研发了风电系列主轴、齿轮箱轴承保持架制造新技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "变速箱零件",
+        "evidence_span": "变速箱零件前期研发实现量产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门锁零件",
+        "evidence_span": "门锁零件、座椅零件实现量产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "座椅零件",
+        "evidence_span": "门锁零件、座椅零件实现量产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝转子总成",
+        "evidence_span": "开发形成铝转子总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳纤维转子总成",
+        "evidence_span": "碳纤维转子总成、永磁转子总成、定转子总成等新能源电驱动系统总成部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "永磁转子总成",
+        "evidence_span": "碳纤维转子总成、永磁转子总成、定转子总成等新能源电驱动系统总成部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定转子总成",
+        "evidence_span": "碳纤维转子总成、永磁转子总成、定转子总成等新能源电驱动系统总成部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢能源0.075mm双极板",
+        "evidence_span": "前期布局氢能源0.075mm双极板成功研发应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乳突板",
+        "evidence_span": "在制氢领域布局关键性零部件乳突板"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密冲压技术",
+        "evidence_span": "立足精密冲压技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模具设计能力",
+        "evidence_span": "模具设计能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数控精密机加工",
+        "evidence_span": "数控精密机加工"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密铸造",
+        "evidence_span": "精密铸造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新能源汽车用轻量化、高性能电机铝转子生产制造技术",
+        "evidence_span": "拥有“新能源汽车用轻量化、高性能电机铝转子生产制造技术”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "斯凯孚（SKF）",
+        "evidence_span": "与斯凯孚（SKF）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恩斯克（NSK）",
+        "evidence_span": "恩斯克（NSK）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "舍弗勒（Schaeffer）",
+        "evidence_span": "舍弗勒（Schaeffer）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁姆肯（Timken）",
+        "evidence_span": "铁姆肯（Timken）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "捷太格特（JTEKT）",
+        "evidence_span": "捷太格特（JTEKT）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江天马轴承",
+        "evidence_span": "浙江天马轴承"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "瓦房店轴承集团",
+        "evidence_span": "瓦房店轴承集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "公司与长城、蔚来等主流汽车厂商合作多年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "公司与长城、蔚来等主流汽车厂商合作多年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博格华纳",
+        "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博泽（Brose）",
+        "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "采埃孚",
+        "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "爱信",
+        "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法雷奥（Vaeo）",
+        "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "翰昂",
+        "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦格纳（MAGNA）",
+        "evidence_span": "博格华纳、博泽（Brose）、采埃孚、爱信、法雷奥（Vaeo）、翰昂、麦格纳（MAGNA）、舍弗勒（Schaeffer）成为公司的重要合作伙伴"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:49:01"
+}

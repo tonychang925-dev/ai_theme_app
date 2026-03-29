@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "f3ca5764d212", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落描述特斯拉宣布发布会的事件（时间、名称、马斯克期望），是具体的时间性动态，没有静态知识内容。"}}

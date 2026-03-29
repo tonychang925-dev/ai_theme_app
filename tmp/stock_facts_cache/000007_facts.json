@@ -1,0 +1,134 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "物业租赁",
+      "evidence_span": "公司主要业务由物业租赁及管理、汽车销售及服务、杀菌卫生产品及日常用品贸易组成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "管理",
+      "evidence_span": "公司主要业务由物业租赁及管理、汽车销售及服务、杀菌卫生产品及日常用品贸易组成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车销售",
+      "evidence_span": "公司主要业务由物业租赁及管理、汽车销售及服务、杀菌卫生产品及日常用品贸易组成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "公司主要业务由物业租赁及管理、汽车销售及服务、杀菌卫生产品及日常用品贸易组成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "杀菌卫生产品",
+      "evidence_span": "公司主要业务由物业租赁及管理、汽车销售及服务、杀菌卫生产品及日常用品贸易组成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "日常用品贸易",
+      "evidence_span": "公司主要业务由物业租赁及管理、汽车销售及服务、杀菌卫生产品及日常用品贸易组成"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "物业管理与租赁企业",
+      "evidence_span": "公司所属的房地产行业主要包括物业管理与租赁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物业管理",
+      "evidence_span": "物业租赁及管理是公司老牌业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车销售",
+      "evidence_span": "从事新车销售、零配件销售、车辆售后维修、保养及其他相应的服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "杀菌纸巾类产品",
+      "evidence_span": "主要从事杀菌纸巾类产品及日常用品的贸易"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "纳米胶囊零度分解技术",
+      "evidence_span": "拥有日本 eleten株式会社世界专利技术的授权（纳米胶囊零度分解技术、干式生活杀菌纸巾）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海通用汽车公司",
+      "evidence_span": "新城福德为上海通用汽车公司授权的别克品牌经销商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "钽铌铀稀贵战略金属资源",
+      "evidence_span": "有望成国内首个拥有钽铌铀稀贵战略金属资源的上市企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "高端装备制造政策红利",
+      "evidence_span": "涉马国100平方公里钽铌探矿权,望受益高端装备制造政策红利"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "物业租赁及管理",
+        "evidence_span": "公司主要业务由物业租赁及管理、汽车销售及服务、杀菌卫生产品及日常用品贸易组成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车销售及服务",
+        "evidence_span": "公司主要业务由物业租赁及管理、汽车销售及服务、杀菌卫生产品及日常用品贸易组成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "杀菌卫生产品及日常用品贸易",
+        "evidence_span": "公司主要业务由物业租赁及管理、汽车销售及服务、杀菌卫生产品及日常用品贸易组成"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "物业管理与租赁企业",
+        "evidence_span": "公司所属的房地产行业主要包括物业管理与租赁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物业管理",
+        "evidence_span": "物业租赁及管理是公司老牌业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车销售",
+        "evidence_span": "从事新车销售、零配件销售、车辆售后维修、保养及其他相应的服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "杀菌纸巾类产品",
+        "evidence_span": "主要从事杀菌纸巾类产品及日常用品的贸易"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "纳米胶囊零度分解技术",
+        "evidence_span": "拥有日本 eleten株式会社世界专利技术的授权（纳米胶囊零度分解技术、干式生活杀菌纸巾）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海通用汽车公司",
+        "evidence_span": "新城福德为上海通用汽车公司授权的别克品牌经销商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "钽铌铀稀贵战略金属资源",
+        "evidence_span": "有望成国内首个拥有钽铌铀稀贵战略金属资源的上市企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "高端装备制造政策红利",
+        "evidence_span": "涉马国100平方公里钽铌探矿权,望受益高端装备制造政策红利"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:40:54"
+}

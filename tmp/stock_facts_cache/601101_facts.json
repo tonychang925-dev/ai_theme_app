@@ -1,0 +1,174 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭生产",
+      "evidence_span": "公司主营业务为煤炭生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营业务为煤炭生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "甲醇的生产",
+      "evidence_span": "甲醇的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铁路专用线运输",
+      "evidence_span": "铁路专用线运输"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "煤炭开采和洗选业企业",
+      "evidence_span": "公司所处行业为采矿业，属于煤炭开采和洗选业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内五大无烟煤生产基地之一",
+      "evidence_span": "国内五大无烟煤生产基地"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "最大的无烟煤出口企业之一",
+      "evidence_span": "最大的无烟煤出口企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤炭",
+      "evidence_span": "主要产品为煤炭"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甲醇",
+      "evidence_span": "主要产品为煤炭和甲醇"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力煤",
+      "evidence_span": "主要产品为动力煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低硫低磷环保煤",
+      "evidence_span": "内蒙动力煤产品是低硫、低磷的环保煤种"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化开采技术",
+      "evidence_span": "高家梁煤矿稳定应用智能化开采技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧矿山建设",
+      "evidence_span": "红庆梁煤矿已开展智能化矿山建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "掘锚一体机技术",
+      "evidence_span": "探索在复杂顶板、大强度支护的条件下应用掘锚一体机技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万利矿区高家梁煤矿",
+      "evidence_span": "主要为万利矿区高家梁煤矿提供煤炭铁路运输服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "王家塔煤矿",
+      "evidence_span": "王家塔煤矿提供煤炭铁路运输服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革受益标的",
+      "evidence_span": "昊华能源高现金、低负债国企改革受益标的"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭生产与销售",
+        "evidence_span": "公司主营业务为煤炭生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "甲醇的生产与销售",
+        "evidence_span": "甲醇的生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铁路专用线运输",
+        "evidence_span": "铁路专用线运输"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "煤炭开采和洗选业企业",
+        "evidence_span": "公司所处行业为采矿业，属于煤炭开采和洗选业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内五大无烟煤生产基地之一",
+        "evidence_span": "国内五大无烟煤生产基地"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "最大的无烟煤出口企业之一",
+        "evidence_span": "最大的无烟煤出口企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤炭",
+        "evidence_span": "主要产品为煤炭"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甲醇",
+        "evidence_span": "主要产品为煤炭和甲醇"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力煤",
+        "evidence_span": "主要产品为动力煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低硫低磷环保煤",
+        "evidence_span": "内蒙动力煤产品是低硫、低磷的环保煤种"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化开采技术",
+        "evidence_span": "高家梁煤矿稳定应用智能化开采技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧矿山建设",
+        "evidence_span": "红庆梁煤矿已开展智能化矿山建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "掘锚一体机技术",
+        "evidence_span": "探索在复杂顶板、大强度支护的条件下应用掘锚一体机技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万利矿区高家梁煤矿",
+        "evidence_span": "主要为万利矿区高家梁煤矿提供煤炭铁路运输服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "王家塔煤矿",
+        "evidence_span": "王家塔煤矿提供煤炭铁路运输服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革受益标的",
+        "evidence_span": "昊华能源高现金、低负债国企改革受益标的"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:12:52"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "f36d4893e8ff", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落包含半导体设备厂商的业绩数据（如净利润增长），这涉及行业景气信息，可能沉淀为知识，但以季度事件形式呈现，因此归类为candidate_mixed。"}}

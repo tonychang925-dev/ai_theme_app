@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能终端系统级芯片（SoC）设计",
+      "evidence_span": "专注于智能终端系统级芯片（SoC）设计的无晶圆半导体企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内智能机顶盒芯片龙头厂商",
+      "evidence_span": "公司为国内智能机顶盒芯片龙头厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无晶圆半导体企业",
+      "evidence_span": "无晶圆半导体企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "平台型芯片供应商",
+      "evidence_span": "致力于成为\"AIoT+万物智联\"时代的平台型芯片供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能机顶盒芯片",
+      "evidence_span": "智能机顶盒芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电视芯片",
+      "evidence_span": "智能电视芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI音视频芯片",
+      "evidence_span": "AI音视频芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Wi-Fi芯片",
+      "evidence_span": "Wi-Fi芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车电子芯片",
+      "evidence_span": "汽车电子芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "端侧AI算力芯片",
+      "evidence_span": "端侧AI算力芯片出货量已突破900万颗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三模组合新产品（Wi-Fi 6＋BT 5.4.＋802.15.4）",
+      "evidence_span": "三模组合新产品（Wi-Fi 6＋BT 5.4.＋802.15.4）进展顺利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超高清音视频编解码",
+      "evidence_span": "超高清音视频编解码"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI算力集成",
+      "evidence_span": "AI算力集成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低功耗设计",
+      "evidence_span": "低功耗设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于ARM V9架构和自主研发边缘AI能力的6nm商用芯片",
+      "evidence_span": "基于新一代ARM V9架构和自主研发边缘AI能力的6nm商用芯片流片成功"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "8K芯片",
+      "evidence_span": "8K芯片在国内运营商的首次商用批量招标中斩获100%的份额"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TCL",
+      "evidence_span": "产品已导入TCL"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "创维",
+      "evidence_span": "产品已导入创维"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海信",
+      "evidence_span": "产品已导入海信"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Google",
+      "evidence_span": "产品已通过Google的EDLA企业级生态认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "汽车电子芯片已进入宝马"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "林肯",
+      "evidence_span": "汽车电子芯片已进入林肯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Jeep",
+      "evidence_span": "汽车电子芯片已进入Jeep"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃尔沃",
+      "evidence_span": "汽车电子芯片已进入沃尔沃"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能终端系统级芯片（SoC）设计",
+        "evidence_span": "专注于智能终端系统级芯片（SoC）设计的无晶圆半导体企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内智能机顶盒芯片龙头厂商",
+        "evidence_span": "公司为国内智能机顶盒芯片龙头厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无晶圆半导体企业",
+        "evidence_span": "无晶圆半导体企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "平台型芯片供应商",
+        "evidence_span": "致力于成为\"AIoT+万物智联\"时代的平台型芯片供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能机顶盒芯片",
+        "evidence_span": "智能机顶盒芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电视芯片",
+        "evidence_span": "智能电视芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI音视频芯片",
+        "evidence_span": "AI音视频芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Wi-Fi芯片",
+        "evidence_span": "Wi-Fi芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车电子芯片",
+        "evidence_span": "汽车电子芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "端侧AI算力芯片",
+        "evidence_span": "端侧AI算力芯片出货量已突破900万颗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三模组合新产品（Wi-Fi 6＋BT 5.4.＋802.15.4）",
+        "evidence_span": "三模组合新产品（Wi-Fi 6＋BT 5.4.＋802.15.4）进展顺利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超高清音视频编解码",
+        "evidence_span": "超高清音视频编解码"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI算力集成",
+        "evidence_span": "AI算力集成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低功耗设计",
+        "evidence_span": "低功耗设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于ARM V9架构和自主研发边缘AI能力的6nm商用芯片",
+        "evidence_span": "基于新一代ARM V9架构和自主研发边缘AI能力的6nm商用芯片流片成功"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "8K芯片",
+        "evidence_span": "8K芯片在国内运营商的首次商用批量招标中斩获100%的份额"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TCL",
+        "evidence_span": "产品已导入TCL"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "创维",
+        "evidence_span": "产品已导入创维"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海信",
+        "evidence_span": "产品已导入海信"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Google",
+        "evidence_span": "产品已通过Google的EDLA企业级生态认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "汽车电子芯片已进入宝马"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "林肯",
+        "evidence_span": "汽车电子芯片已进入林肯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Jeep",
+        "evidence_span": "汽车电子芯片已进入Jeep"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃尔沃",
+        "evidence_span": "汽车电子芯片已进入沃尔沃"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:00:13"
+}

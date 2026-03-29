@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:48:24", "result": {"span_uid": "562f825de9ca", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品开发动态", "stability": "low", "reason": "原片段是苹果公司具体的产品开发计划和预测，属于事件性信息，不稳定且依赖具体时间点，无法形成可独立成立的稳定知识块。"}}

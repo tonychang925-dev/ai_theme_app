@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "302cdf4b6006", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到巴基斯坦列装直-10ME攻击直升机的事件，但涉及中国装备分享的国防部回应，可能隐含装备发展或国际合作的知识，对陆军题材（如武器系统）有一定价值，但混合了事件信息。"}}

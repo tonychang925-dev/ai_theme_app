@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "2004d57a42f4", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落描述工信部官员在新闻发布会上的表态，涉及推动人形机器人等未来产业创新发展的政策方向，这提供了政策支持和行业发展趋势的知识，但以事件形式呈现，因此属于混合候选，知识价值高。"}}

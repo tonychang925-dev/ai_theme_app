@@ -1,0 +1,49 @@
+{
+  "event_id": "evt_0787c6aa8014",
+  "theme_name": "可控核聚变",
+  "event_type": "市场预测",
+  "entities": [
+    {
+      "name": "国际能源署",
+      "type": "组织",
+      "normalized": "国际能源署"
+    },
+    {
+      "name": "全球",
+      "type": "地点",
+      "normalized": "全球"
+    }
+  ],
+  "summary": "国际能源署预测2030年全球核聚变市场规模接近5000亿美元",
+  "causal_claim": [
+    "市场规模预测",
+    "核聚变发展",
+    "能源投资"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "核聚变",
+      "市场规模"
+    ],
+    "normalized_terms": {
+      "国际能源署": "国际能源署",
+      "全球": "全球"
+    },
+    "evidence_spans": [
+      {
+        "text": "国际能源署预测，到 2030年，全球核聚变市场规模有望接近5000亿美元(3.5万亿元人民币)。",
+        "start": 0,
+        "end": 70
+      }
+    ],
+    "core_concepts": [
+      "核聚变",
+      "市场预测"
+    ]
+  },
+  "severity_score": 0.6,
+  "confidence": 0.9,
+  "source_weight": 1.2,
+  "timestamp": null,
+  "raw_text": "国际能源署预测，到 2030年，全球核聚变市场规模有望接近5000亿美元(3.5万亿元人民币)。（新闻来源：财联社）"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final", "model": "deepseek-chat", "timestamp": "2026-03-08T11:07:55", "result": {"chunk_id": "f36d4893e8ff", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落总结设备厂商的季度业绩表现，包括净利润数据和公司案例，属于市场表现事件，无本体知识。"}}

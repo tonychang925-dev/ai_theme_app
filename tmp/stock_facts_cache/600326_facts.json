@@ -1,0 +1,264 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程承包",
+      "evidence_span": "公司主营业务为工程承包"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水泥",
+      "evidence_span": "公司主营业务为工程承包，水泥及水泥制品生产销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水泥制品生产销售",
+      "evidence_span": "公司主营业务为工程承包，水泥及水泥制品生产销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "沥青",
+      "evidence_span": "公司主营业务为工程承包，水泥及水泥制品生产销售，沥青及沥青制品生产销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "沥青制品生产销售",
+      "evidence_span": "公司主营业务为工程承包，水泥及水泥制品生产销售，沥青及沥青制品生产销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "矿产品加工",
+      "evidence_span": "公司主营业务为工程承包，水泥及水泥制品生产销售，沥青及沥青制品生产销售，矿产品加工与销售等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营业务为工程承包，水泥及水泥制品生产销售，沥青及沥青制品生产销售，矿产品加工与销售等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "西藏地区最大的公路桥梁施工企业",
+      "evidence_span": "西藏地区最大的公路桥梁施工企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "西藏重点工程建设本土主力军",
+      "evidence_span": "公司发挥着西藏重点工程建设本土主力军的作用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公路工程",
+      "evidence_span": "主要承揽建筑施工工程，包括公路、市政、桥梁、铁路、水利等施工业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "桥梁工程",
+      "evidence_span": "主要承揽建筑施工工程，包括公路、市政、桥梁、铁路、水利等施工业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房屋建筑工程",
+      "evidence_span": "主要承揽建筑施工工程，包括公路、市政、桥梁、铁路、水利等施工业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市政公用工程",
+      "evidence_span": "主要承揽建筑施工工程，包括公路、市政、桥梁、铁路、水利等施工业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁路工程",
+      "evidence_span": "主要承揽建筑施工工程，包括公路、市政、桥梁、铁路、水利等施工业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水利工程",
+      "evidence_span": "主要承揽建筑施工工程，包括公路、市政、桥梁、铁路、水利等施工业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水泥",
+      "evidence_span": "公司建材业主要经营模式是以水泥及水泥制品为主的建材生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水泥制品",
+      "evidence_span": "公司建材业主要经营模式是以水泥及水泥制品为主的建材生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "沥青混凝土",
+      "evidence_span": "控股1家沥青混凝土制造企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "监理工程",
+      "evidence_span": "市政公用工程监理甲级、房屋建筑工程监理甲级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "环保降温路面（凉顶铺装）",
+      "evidence_span": "发展环保降温路面（凉顶铺装）、精钢路面、彩色沥青路面等新材料路面的研发与运用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精钢路面",
+      "evidence_span": "发展环保降温路面（凉顶铺装）、精钢路面、彩色沥青路面等新材料路面的研发与运用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "彩色沥青路面",
+      "evidence_span": "发展环保降温路面（凉顶铺装）、精钢路面、彩色沥青路面等新材料路面的研发与运用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业固废及建筑装修垃圾类建筑材料",
+      "evidence_span": "对工业固废及建筑装修垃圾类建筑材料进行研发推广"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低碱特种水泥",
+      "evidence_span": "加大低碱、低热等特种水泥的研发和市场推广工作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低热特种水泥",
+      "evidence_span": "加大低碱、低热等特种水泥的研发和市场推广工作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电建",
+      "evidence_span": "公司以6.44元/股的价格，认购中国电建非公开发行的66,770,186股股票"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "川藏铁路建设",
+      "evidence_span": "川藏铁路建设有望大幅拉动西藏水泥需求"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程承包",
+        "evidence_span": "公司主营业务为工程承包"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水泥及水泥制品生产销售",
+        "evidence_span": "公司主营业务为工程承包，水泥及水泥制品生产销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "沥青及沥青制品生产销售",
+        "evidence_span": "公司主营业务为工程承包，水泥及水泥制品生产销售，沥青及沥青制品生产销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "矿产品加工与销售",
+        "evidence_span": "公司主营业务为工程承包，水泥及水泥制品生产销售，沥青及沥青制品生产销售，矿产品加工与销售等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "西藏地区最大的公路桥梁施工企业",
+        "evidence_span": "西藏地区最大的公路桥梁施工企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "西藏重点工程建设本土主力军",
+        "evidence_span": "公司发挥着西藏重点工程建设本土主力军的作用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公路工程",
+        "evidence_span": "主要承揽建筑施工工程，包括公路、市政、桥梁、铁路、水利等施工业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "桥梁工程",
+        "evidence_span": "主要承揽建筑施工工程，包括公路、市政、桥梁、铁路、水利等施工业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房屋建筑工程",
+        "evidence_span": "主要承揽建筑施工工程，包括公路、市政、桥梁、铁路、水利等施工业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市政公用工程",
+        "evidence_span": "主要承揽建筑施工工程，包括公路、市政、桥梁、铁路、水利等施工业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁路工程",
+        "evidence_span": "主要承揽建筑施工工程，包括公路、市政、桥梁、铁路、水利等施工业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水利工程",
+        "evidence_span": "主要承揽建筑施工工程，包括公路、市政、桥梁、铁路、水利等施工业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水泥",
+        "evidence_span": "公司建材业主要经营模式是以水泥及水泥制品为主的建材生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水泥制品",
+        "evidence_span": "公司建材业主要经营模式是以水泥及水泥制品为主的建材生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "沥青混凝土",
+        "evidence_span": "控股1家沥青混凝土制造企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "监理工程",
+        "evidence_span": "市政公用工程监理甲级、房屋建筑工程监理甲级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "环保降温路面（凉顶铺装）",
+        "evidence_span": "发展环保降温路面（凉顶铺装）、精钢路面、彩色沥青路面等新材料路面的研发与运用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精钢路面",
+        "evidence_span": "发展环保降温路面（凉顶铺装）、精钢路面、彩色沥青路面等新材料路面的研发与运用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "彩色沥青路面",
+        "evidence_span": "发展环保降温路面（凉顶铺装）、精钢路面、彩色沥青路面等新材料路面的研发与运用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业固废及建筑装修垃圾类建筑材料",
+        "evidence_span": "对工业固废及建筑装修垃圾类建筑材料进行研发推广"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低碱特种水泥",
+        "evidence_span": "加大低碱、低热等特种水泥的研发和市场推广工作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低热特种水泥",
+        "evidence_span": "加大低碱、低热等特种水泥的研发和市场推广工作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电建",
+        "evidence_span": "公司以6.44元/股的价格，认购中国电建非公开发行的66,770,186股股票"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "川藏铁路建设",
+        "evidence_span": "川藏铁路建设有望大幅拉动西藏水泥需求"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:55:52"
+}

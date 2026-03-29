@@ -1,0 +1,164 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电源",
+      "evidence_span": "公司主营业务为电源及相关产品、高性能特种合金材料制品等军工业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "相关产品",
+      "evidence_span": "公司主营业务为电源及相关产品、高性能特种合金材料制品等军工业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高性能特种合金材料制品",
+      "evidence_span": "公司主营业务为电源及相关产品、高性能特种合金材料制品等军工业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特种电源供应商",
+      "evidence_span": "升华电源是国内领先的特种电源供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军工企业",
+      "evidence_span": "汇集资源，集中精力聚焦发展军工产业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模块电源系统",
+      "evidence_span": "升华电源以模块电源系统和定制电源系统两大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定制电源系统",
+      "evidence_span": "升华电源以模块电源系统和定制电源系统两大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钨合金预制破片",
+      "evidence_span": "沈阳含能主要承担各种规格钨合金预制破片的研发及制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非晶合金复合体",
+      "evidence_span": "产品为非晶合金复合体"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效率、高可靠性、高功率密度电源技术",
+      "evidence_span": "升华电源专业从事高效率、高可靠性、高功率密度电源产品的开发设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "非晶合金材料技术",
+      "evidence_span": "沈阳非晶主要从事非晶合金材料研发、制造、销售等业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内知名军工企业",
+      "evidence_span": "主要客户涵盖国内知名军工企业、军工科研院所、军工厂等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军工科研院所",
+      "evidence_span": "主要客户涵盖国内知名军工企业、军工科研院所、军工厂等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军工厂",
+      "evidence_span": "主要客户涵盖国内知名军工企业、军工科研院所、军工厂等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军方",
+      "evidence_span": "产品性能良好，获得军方认可"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军工转型",
+      "evidence_span": "甘化科工出清低效资产，加速军工转型"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电源及相关产品",
+        "evidence_span": "公司主营业务为电源及相关产品、高性能特种合金材料制品等军工业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高性能特种合金材料制品",
+        "evidence_span": "公司主营业务为电源及相关产品、高性能特种合金材料制品等军工业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特种电源供应商",
+        "evidence_span": "升华电源是国内领先的特种电源供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军工企业",
+        "evidence_span": "汇集资源，集中精力聚焦发展军工产业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模块电源系统",
+        "evidence_span": "升华电源以模块电源系统和定制电源系统两大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定制电源系统",
+        "evidence_span": "升华电源以模块电源系统和定制电源系统两大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钨合金预制破片",
+        "evidence_span": "沈阳含能主要承担各种规格钨合金预制破片的研发及制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非晶合金复合体",
+        "evidence_span": "产品为非晶合金复合体"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效率、高可靠性、高功率密度电源技术",
+        "evidence_span": "升华电源专业从事高效率、高可靠性、高功率密度电源产品的开发设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "非晶合金材料技术",
+        "evidence_span": "沈阳非晶主要从事非晶合金材料研发、制造、销售等业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内知名军工企业",
+        "evidence_span": "主要客户涵盖国内知名军工企业、军工科研院所、军工厂等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军工科研院所",
+        "evidence_span": "主要客户涵盖国内知名军工企业、军工科研院所、军工厂等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军工厂",
+        "evidence_span": "主要客户涵盖国内知名军工企业、军工科研院所、军工厂等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军方",
+        "evidence_span": "产品性能良好，获得军方认可"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军工转型",
+        "evidence_span": "甘化科工出清低效资产，加速军工转型"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:04:22"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "264f74cc6e0d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述杭州园林中标一个具体建筑工程设计项目的公司动态，包括金额和项目名称，属于典型的商业事件或公告，未提供建筑设计领域的通用知识。"}}

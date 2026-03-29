@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "磁性元器件",
+      "evidence_span": "公司主营产品为磁性元器件、特种变压器和电源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种变压器",
+      "evidence_span": "公司主营产品为磁性元器件、特种变压器和电源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电源",
+      "evidence_span": "公司主营产品为磁性元器件、特种变压器和电源"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内磁性元器件头部企业",
+      "evidence_span": "国内磁性元器件头部企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "磁性元器件和电源行业专业供应商",
+      "evidence_span": "国内磁性元器件和电源行业具有领先竞争优势和品牌影响力的专业供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磁性元器件",
+      "evidence_span": "主要产品分为磁性元器件、电源、特种变压器三大类别"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电源",
+      "evidence_span": "主要产品分为磁性元器件、电源、特种变压器三大类别"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种变压器",
+      "evidence_span": "主要产品分为磁性元器件、电源、特种变压器三大类别"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏及储能磁性器件",
+      "evidence_span": "基本涵盖了光伏及储能、新能源汽车电子和消费类电子领域的全系列磁性器件产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车电子磁性器件",
+      "evidence_span": "基本涵盖了光伏及储能、新能源汽车电子和消费类电子领域的全系列磁性器件产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消费类电子磁性器件",
+      "evidence_span": "基本涵盖了光伏及储能、新能源汽车电子和消费类电子领域的全系列磁性器件产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磁性元器件生产",
+      "evidence_span": "公司以磁性元器件生产为基础"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电源产品开发",
+      "evidence_span": "以电源产品和车载磁性器件同步开发为特色"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车载磁性器件开发",
+      "evidence_span": "以电源产品和车载磁性器件同步开发为特色"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "组件灌封",
+      "evidence_span": "集磁性元器件、电源类产品的生产及组件灌封、组装技术于一体的解决方案提供者"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "组装技术",
+      "evidence_span": "集磁性元器件、电源类产品的生产及组件灌封、组装技术于一体的解决方案提供者"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新能源汽车车规级电磁元件设计平台",
+      "evidence_span": "构建起新能源汽车车规级的电磁元件设计平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G通信网能机械+智能管理",
+      "evidence_span": "5G通信网能机械+智能管理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低成本导热绝缘材料",
+      "evidence_span": "低成本导热绝缘材料"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "已与华为、阳光电源、FIMER(ABB)、施耐德集团、ABB集团等多家世界500强企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阳光电源",
+      "evidence_span": "已与华为、阳光电源、FIMER(ABB)、施耐德集团、ABB集团等多家世界500强企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "FIMER(ABB)",
+      "evidence_span": "已与华为、阳光电源、FIMER(ABB)、施耐德集团、ABB集团等多家世界500强企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "施耐德集团",
+      "evidence_span": "已与华为、阳光电源、FIMER(ABB)、施耐德集团、ABB集团等多家世界500强企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ABB集团",
+      "evidence_span": "已与华为、阳光电源、FIMER(ABB)、施耐德集团、ABB集团等多家世界500强企业建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源",
+      "evidence_span": "新能源需求旺盛，磁性元器件龙头扬帆起航"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏",
+      "evidence_span": "扩充光伏业务产能从而满足下游需求的持续高景气"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "磁性元器件",
+        "evidence_span": "公司主营产品为磁性元器件、特种变压器和电源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种变压器",
+        "evidence_span": "公司主营产品为磁性元器件、特种变压器和电源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电源",
+        "evidence_span": "公司主营产品为磁性元器件、特种变压器和电源"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内磁性元器件头部企业",
+        "evidence_span": "国内磁性元器件头部企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "磁性元器件和电源行业专业供应商",
+        "evidence_span": "国内磁性元器件和电源行业具有领先竞争优势和品牌影响力的专业供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磁性元器件",
+        "evidence_span": "主要产品分为磁性元器件、电源、特种变压器三大类别"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电源",
+        "evidence_span": "主要产品分为磁性元器件、电源、特种变压器三大类别"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种变压器",
+        "evidence_span": "主要产品分为磁性元器件、电源、特种变压器三大类别"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏及储能磁性器件",
+        "evidence_span": "基本涵盖了光伏及储能、新能源汽车电子和消费类电子领域的全系列磁性器件产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车电子磁性器件",
+        "evidence_span": "基本涵盖了光伏及储能、新能源汽车电子和消费类电子领域的全系列磁性器件产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消费类电子磁性器件",
+        "evidence_span": "基本涵盖了光伏及储能、新能源汽车电子和消费类电子领域的全系列磁性器件产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磁性元器件生产",
+        "evidence_span": "公司以磁性元器件生产为基础"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电源产品开发",
+        "evidence_span": "以电源产品和车载磁性器件同步开发为特色"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车载磁性器件开发",
+        "evidence_span": "以电源产品和车载磁性器件同步开发为特色"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "组件灌封",
+        "evidence_span": "集磁性元器件、电源类产品的生产及组件灌封、组装技术于一体的解决方案提供者"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "组装技术",
+        "evidence_span": "集磁性元器件、电源类产品的生产及组件灌封、组装技术于一体的解决方案提供者"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新能源汽车车规级电磁元件设计平台",
+        "evidence_span": "构建起新能源汽车车规级的电磁元件设计平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G通信网能机械+智能管理",
+        "evidence_span": "5G通信网能机械+智能管理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低成本导热绝缘材料",
+        "evidence_span": "低成本导热绝缘材料"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "已与华为、阳光电源、FIMER(ABB)、施耐德集团、ABB集团等多家世界500强企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阳光电源",
+        "evidence_span": "已与华为、阳光电源、FIMER(ABB)、施耐德集团、ABB集团等多家世界500强企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "FIMER(ABB)",
+        "evidence_span": "已与华为、阳光电源、FIMER(ABB)、施耐德集团、ABB集团等多家世界500强企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "施耐德集团",
+        "evidence_span": "已与华为、阳光电源、FIMER(ABB)、施耐德集团、ABB集团等多家世界500强企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ABB集团",
+        "evidence_span": "已与华为、阳光电源、FIMER(ABB)、施耐德集团、ABB集团等多家世界500强企业建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源",
+        "evidence_span": "新能源需求旺盛，磁性元器件龙头扬帆起航"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏",
+        "evidence_span": "扩充光伏业务产能从而满足下游需求的持续高景气"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:14:46"
+}

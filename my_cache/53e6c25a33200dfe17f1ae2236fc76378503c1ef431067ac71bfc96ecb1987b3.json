@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "8206465313a4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了特斯拉在世界计算大会的参与和展示，包括FSD技术的性能信息（如安全性能领先），可能含有有价值的静态知识，但混合了事件背景和宣传性内容。"}}

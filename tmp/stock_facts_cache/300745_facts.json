@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源汽车车载电源",
+      "evidence_span": "欣锐科技专注于新能源汽车车载电源的研发、生产、销售和技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "燃料电池业务",
+      "evidence_span": "2021年开拓燃料电池业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "车载电源优质供应商",
+      "evidence_span": "车载电源优质供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新能源汽车电源总成龙头",
+      "evidence_span": "欣锐科技新能源汽车电源总成龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "车载电源管理专家",
+      "evidence_span": "欣锐科技车载电源管理专家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载DC/DC变换器",
+      "evidence_span": "产品包括车载 DC/DC 变换器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载充电机（OBC）",
+      "evidence_span": "产品包括车载充电机（OBC）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载电源集成产品",
+      "evidence_span": "产品包括车载电源集成产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池产品",
+      "evidence_span": "燃料电池产品营收贡献超过 OBC 和 DC/DC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三合一电源系统",
+      "evidence_span": "OBC 与 DCDC 与 PDU 的三合一电源系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车载电源原创性核心技术",
+      "evidence_span": "拥有车载电源原创性核心技术的全部自主知识产权"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高压快充",
+      "evidence_span": "高压快充具备市场优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "碳化硅电源方案",
+      "evidence_span": "欣锐科技碳化硅电源方案行业领先"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "板集成路线",
+      "evidence_span": "公司放弃了磁集成方案，坚决走板集成路线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司的主要客户有比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏",
+      "evidence_span": "公司的主要客户有小鹏"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "极氪",
+      "evidence_span": "公司的主要客户有极氪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "公司的主要客户有吉利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "公司的主要客户有长城"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本田",
+      "evidence_span": "公司的主要客户有本田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "现代",
+      "evidence_span": "公司的主要客户有现代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽新能源",
+      "evidence_span": "公司的产品主要配套北汽新能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "威马汽车",
+      "evidence_span": "公司的产品主要配套威马汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风本田",
+      "evidence_span": "公司的产品主要配套东风本田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽本田",
+      "evidence_span": "公司的产品主要配套广汽本田"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳化硅",
+      "evidence_span": "欣锐科技乘碳化硅风而起"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "800V平台",
+      "evidence_span": "欣锐科技受益于800V平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "SiC应用",
+      "evidence_span": "欣锐科技受益于SiC应用"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源汽车车载电源",
+        "evidence_span": "欣锐科技专注于新能源汽车车载电源的研发、生产、销售和技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "燃料电池业务",
+        "evidence_span": "2021年开拓燃料电池业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "车载电源优质供应商",
+        "evidence_span": "车载电源优质供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新能源汽车电源总成龙头",
+        "evidence_span": "欣锐科技新能源汽车电源总成龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "车载电源管理专家",
+        "evidence_span": "欣锐科技车载电源管理专家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载DC/DC变换器",
+        "evidence_span": "产品包括车载 DC/DC 变换器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载充电机（OBC）",
+        "evidence_span": "产品包括车载充电机（OBC）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载电源集成产品",
+        "evidence_span": "产品包括车载电源集成产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池产品",
+        "evidence_span": "燃料电池产品营收贡献超过 OBC 和 DC/DC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三合一电源系统",
+        "evidence_span": "OBC 与 DCDC 与 PDU 的三合一电源系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车载电源原创性核心技术",
+        "evidence_span": "拥有车载电源原创性核心技术的全部自主知识产权"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高压快充",
+        "evidence_span": "高压快充具备市场优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "碳化硅电源方案",
+        "evidence_span": "欣锐科技碳化硅电源方案行业领先"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "板集成路线",
+        "evidence_span": "公司放弃了磁集成方案，坚决走板集成路线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司的主要客户有比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏",
+        "evidence_span": "公司的主要客户有小鹏"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "极氪",
+        "evidence_span": "公司的主要客户有极氪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "公司的主要客户有吉利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "公司的主要客户有长城"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本田",
+        "evidence_span": "公司的主要客户有本田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "现代",
+        "evidence_span": "公司的主要客户有现代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽新能源",
+        "evidence_span": "公司的产品主要配套北汽新能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "威马汽车",
+        "evidence_span": "公司的产品主要配套威马汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风本田",
+        "evidence_span": "公司的产品主要配套东风本田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽本田",
+        "evidence_span": "公司的产品主要配套广汽本田"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳化硅",
+        "evidence_span": "欣锐科技乘碳化硅风而起"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "800V平台",
+        "evidence_span": "欣锐科技受益于800V平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "SiC应用",
+        "evidence_span": "欣锐科技受益于SiC应用"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:08:05"
+}

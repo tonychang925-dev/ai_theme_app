@@ -1,0 +1,49 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产开发",
+      "evidence_span": "西安高新区下属国有房企"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国有房企",
+      "evidence_span": "西安高新区下属国有房企"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "西安高新区下属企业",
+      "evidence_span": "西安高新区下属国有房企"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益韩国三星落户",
+      "evidence_span": "受益韩国三星落户"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产开发",
+        "evidence_span": "西安高新区下属国有房企"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国有房企",
+        "evidence_span": "西安高新区下属国有房企"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "西安高新区下属企业",
+        "evidence_span": "西安高新区下属国有房企"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益韩国三星落户",
+        "evidence_span": "受益韩国三星落户"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:55:19"
+}

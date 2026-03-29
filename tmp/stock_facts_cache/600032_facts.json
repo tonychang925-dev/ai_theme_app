@@ -1,0 +1,89 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "水力发电",
+      "evidence_span": "主营业务为水力发电"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "风力发电",
+      "evidence_span": "主营业务发展为水力发电、风力发电、光伏发电等可再生能源发电业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏发电",
+      "evidence_span": "主营业务发展为水力发电、风力发电、光伏发电等可再生能源发电业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合型能源企业",
+      "evidence_span": "综合型能源企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏发电",
+      "evidence_span": "公司主要从事光伏、水电和风力发电业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水力发电",
+      "evidence_span": "公司主要从事光伏、水电和风力发电业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风力发电",
+      "evidence_span": "公司主要从事光伏、水电和风力发电业务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "清洁能源",
+      "evidence_span": "专注于水能、风能、太阳能等清洁能源领域的开发建设与运营"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "水力发电",
+        "evidence_span": "主营业务为水力发电"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "风力发电",
+        "evidence_span": "主营业务发展为水力发电、风力发电、光伏发电等可再生能源发电业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏发电",
+        "evidence_span": "主营业务发展为水力发电、风力发电、光伏发电等可再生能源发电业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合型能源企业",
+        "evidence_span": "综合型能源企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏发电",
+        "evidence_span": "公司主要从事光伏、水电和风力发电业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水力发电",
+        "evidence_span": "公司主要从事光伏、水电和风力发电业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风力发电",
+        "evidence_span": "公司主要从事光伏、水电和风力发电业务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "清洁能源",
+        "evidence_span": "专注于水能、风能、太阳能等清洁能源领域的开发建设与运营"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:06:19"
+}

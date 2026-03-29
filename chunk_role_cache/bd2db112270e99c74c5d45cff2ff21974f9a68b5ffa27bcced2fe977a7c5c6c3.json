@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "80d660d38057", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述美国可能出台新出口限制的事件，包括时间点和潜在影响，属于纯粹的政策动态新闻，没有涉及半导体设备本身的知识内容。"}}

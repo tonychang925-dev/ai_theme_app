@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "货物贸易",
+      "evidence_span": "公司从事的业务主要由货物贸易、现代物流和大健康产业构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "现代物流",
+      "evidence_span": "公司从事的业务主要由货物贸易、现代物流和大健康产业构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大健康产业",
+      "evidence_span": "公司从事的业务主要由货物贸易、现代物流和大健康产业构成"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "纺织服装进出口企业",
+      "evidence_span": "东方创业是国内最大的纺织服装等产品的进出口企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "上海外贸行业的主力军",
+      "evidence_span": "是上海外贸行业的主力军"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "毛衫行业OEM+ODM能力国内领先的企业",
+      "evidence_span": "力争成为毛衫行业OEM+ODM能力国内领先的企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医疗设备与服务整合提供商",
+      "evidence_span": "作为业内知名的医疗设备与服务整合提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "毛衫生产制造",
+      "evidence_span": "聚焦于打造毛衫生产制造的核心能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "毛衫ODM能力",
+      "evidence_span": "切实提升毛衫ODM能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内衣全流程数字化管理系统",
+      "evidence_span": "内衣全流程数字化管理系统上线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "梭织面料自主研发",
+      "evidence_span": "围绕梭织面料自主研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "出口ODM供应链体系",
+      "evidence_span": "形成快速反应的出口ODM供应链体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "快消品",
+      "evidence_span": "康健公司经营的快消品、医药、农化及农产品三大板块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药",
+      "evidence_span": "康健公司经营的快消品、医药、农化及农产品三大板块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "农化及农产品",
+      "evidence_span": "康健公司经营的快消品、医药、农化及农产品三大板块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "进口直采品类业务",
+      "evidence_span": "进口直采品类业务初见成效"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷冻肉类等动物蛋白产品的境外直采",
+      "evidence_span": "深耕冷冻肉类等动物蛋白产品的境外直采"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合物流服务",
+      "evidence_span": "大力推动综合物流服务能力建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航运业务",
+      "evidence_span": "综合物流和航运业务是公司物流业务的重要组成部分"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中欧班列",
+      "evidence_span": "开拓了从上海始发的“中欧班列”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗设备招标代理",
+      "evidence_span": "上海东松的核心业务集医疗设备招标代理、设备代理进口、销售渠道管理、供应链管理于一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "设备代理进口",
+      "evidence_span": "上海东松的核心业务集医疗设备招标代理、设备代理进口、销售渠道管理、供应链管理于一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "销售渠道管理",
+      "evidence_span": "上海东松的核心业务集医疗设备招标代理、设备代理进口、销售渠道管理、供应链管理于一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "供应链管理",
+      "evidence_span": "上海东松的核心业务集医疗设备招标代理、设备代理进口、销售渠道管理、供应链管理于一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中医肛肠科特色诊疗",
+      "evidence_span": "该院以中医肛肠科为特色科室"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "毛衫研发中心",
+      "evidence_span": "在上海松江打造了毛衫研发中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化设计服装打样中心",
+      "evidence_span": "依托公司自建的智能化设计服装打样中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "7×24服务体系",
+      "evidence_span": "东方物流打造“7×24”服务体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "非洲市场",
+      "evidence_span": "重点瞄准非洲市场进行深耕"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "世界植物蛋白奶的知名企业",
+      "evidence_span": "成功牵手世界植物蛋白奶的知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海乃至全国的医疗机构",
+      "evidence_span": "为上海乃至全国的医疗机构提供招标、进口、物流、安装和维保的一条龙服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "外贸股多概念共振",
+      "evidence_span": "外贸股多概念共振"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "货物贸易",
+        "evidence_span": "公司从事的业务主要由货物贸易、现代物流和大健康产业构成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "现代物流",
+        "evidence_span": "公司从事的业务主要由货物贸易、现代物流和大健康产业构成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大健康产业",
+        "evidence_span": "公司从事的业务主要由货物贸易、现代物流和大健康产业构成"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "纺织服装进出口企业",
+        "evidence_span": "东方创业是国内最大的纺织服装等产品的进出口企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "上海外贸行业的主力军",
+        "evidence_span": "是上海外贸行业的主力军"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "毛衫行业OEM+ODM能力国内领先的企业",
+        "evidence_span": "力争成为毛衫行业OEM+ODM能力国内领先的企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医疗设备与服务整合提供商",
+        "evidence_span": "作为业内知名的医疗设备与服务整合提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "毛衫生产制造",
+        "evidence_span": "聚焦于打造毛衫生产制造的核心能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "毛衫ODM能力",
+        "evidence_span": "切实提升毛衫ODM能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内衣全流程数字化管理系统",
+        "evidence_span": "内衣全流程数字化管理系统上线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "梭织面料自主研发",
+        "evidence_span": "围绕梭织面料自主研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "出口ODM供应链体系",
+        "evidence_span": "形成快速反应的出口ODM供应链体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "快消品",
+        "evidence_span": "康健公司经营的快消品、医药、农化及农产品三大板块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药",
+        "evidence_span": "康健公司经营的快消品、医药、农化及农产品三大板块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "农化及农产品",
+        "evidence_span": "康健公司经营的快消品、医药、农化及农产品三大板块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "进口直采品类业务",
+        "evidence_span": "进口直采品类业务初见成效"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷冻肉类等动物蛋白产品的境外直采",
+        "evidence_span": "深耕冷冻肉类等动物蛋白产品的境外直采"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合物流服务",
+        "evidence_span": "大力推动综合物流服务能力建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航运业务",
+        "evidence_span": "综合物流和航运业务是公司物流业务的重要组成部分"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中欧班列",
+        "evidence_span": "开拓了从上海始发的“中欧班列”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗设备招标代理",
+        "evidence_span": "上海东松的核心业务集医疗设备招标代理、设备代理进口、销售渠道管理、供应链管理于一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "设备代理进口",
+        "evidence_span": "上海东松的核心业务集医疗设备招标代理、设备代理进口、销售渠道管理、供应链管理于一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "销售渠道管理",
+        "evidence_span": "上海东松的核心业务集医疗设备招标代理、设备代理进口、销售渠道管理、供应链管理于一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "供应链管理",
+        "evidence_span": "上海东松的核心业务集医疗设备招标代理、设备代理进口、销售渠道管理、供应链管理于一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中医肛肠科特色诊疗",
+        "evidence_span": "该院以中医肛肠科为特色科室"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "毛衫研发中心",
+        "evidence_span": "在上海松江打造了毛衫研发中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化设计服装打样中心",
+        "evidence_span": "依托公司自建的智能化设计服装打样中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "7×24服务体系",
+        "evidence_span": "东方物流打造“7×24”服务体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "非洲市场",
+        "evidence_span": "重点瞄准非洲市场进行深耕"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "世界植物蛋白奶的知名企业",
+        "evidence_span": "成功牵手世界植物蛋白奶的知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海乃至全国的医疗机构",
+        "evidence_span": "为上海乃至全国的医疗机构提供招标、进口、物流、安装和维保的一条龙服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "外贸股多概念共振",
+        "evidence_span": "外贸股多概念共振"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:49:18"
+}

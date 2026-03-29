@@ -1,0 +1,224 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高性能",
+      "evidence_span": "公司主要从事高性能、环保锌锰电池的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保锌锰电池的研发",
+      "evidence_span": "公司主要从事高性能、环保锌锰电池的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主要从事高性能、环保锌锰电池的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要从事高性能、环保锌锰电池的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "碱性电池生产企业",
+      "evidence_span": "公司是我国大规模的碱性电池生产企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锌锰电池制造和出口商",
+      "evidence_span": "公司是国内知名的锌锰电池制造和出口商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LR03、LR6、LR14、LR20、6LR61系列碱性电池",
+      "evidence_span": "公司产品包括LR03、LR6、LR14、LR20、6LR61系列碱性电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "R03、R6、R14、R20、6F22系列碳性电池",
+      "evidence_span": "及R03、R6、R14、R20、6F22系列碳性电池"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高稳定大电流碱性电池技术",
+      "evidence_span": "高稳定大电流碱性电池技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "碱性电池缓蚀剂技术",
+      "evidence_span": "碱性电池缓蚀剂技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大容量碱性电池",
+      "evidence_span": "大容量碱性电池"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "专用于碱性电池密封圈的改性尼龙610材料技术",
+      "evidence_span": "专用于碱性电池密封圈的改性尼龙610材料技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "表面修饰的炭黑粉体技术",
+      "evidence_span": "表面修饰的炭黑粉体技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多层多道真空吸液技术",
+      "evidence_span": "多层多道真空吸液技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "隔膜纸在线卷纸成型技术",
+      "evidence_span": "隔膜纸在线卷纸成型技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电池在线称重技术",
+      "evidence_span": "电池在线称重技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "乐购",
+      "evidence_span": "乐购"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家乐福",
+      "evidence_span": "家乐福"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦德龙",
+      "evidence_span": "麦德龙"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "迪卡侬",
+      "evidence_span": "迪卡侬"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "松下",
+      "evidence_span": "松下"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "飞利浦",
+      "evidence_span": "飞利浦"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "三星"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高性能、环保锌锰电池的研发、生产和销售",
+        "evidence_span": "公司主要从事高性能、环保锌锰电池的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "碱性电池生产企业",
+        "evidence_span": "公司是我国大规模的碱性电池生产企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锌锰电池制造和出口商",
+        "evidence_span": "公司是国内知名的锌锰电池制造和出口商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LR03、LR6、LR14、LR20、6LR61系列碱性电池",
+        "evidence_span": "公司产品包括LR03、LR6、LR14、LR20、6LR61系列碱性电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "R03、R6、R14、R20、6F22系列碳性电池",
+        "evidence_span": "及R03、R6、R14、R20、6F22系列碳性电池"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高稳定大电流碱性电池技术",
+        "evidence_span": "高稳定大电流碱性电池技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "碱性电池缓蚀剂技术",
+        "evidence_span": "碱性电池缓蚀剂技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大容量碱性电池",
+        "evidence_span": "大容量碱性电池"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "专用于碱性电池密封圈的改性尼龙610材料技术",
+        "evidence_span": "专用于碱性电池密封圈的改性尼龙610材料技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "表面修饰的炭黑粉体技术",
+        "evidence_span": "表面修饰的炭黑粉体技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多层多道真空吸液技术",
+        "evidence_span": "多层多道真空吸液技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "隔膜纸在线卷纸成型技术",
+        "evidence_span": "隔膜纸在线卷纸成型技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电池在线称重技术",
+        "evidence_span": "电池在线称重技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "乐购",
+        "evidence_span": "乐购"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家乐福",
+        "evidence_span": "家乐福"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦德龙",
+        "evidence_span": "麦德龙"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "迪卡侬",
+        "evidence_span": "迪卡侬"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "松下",
+        "evidence_span": "松下"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "飞利浦",
+        "evidence_span": "飞利浦"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "三星"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:21:54"
+}

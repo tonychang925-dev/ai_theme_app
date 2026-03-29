@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "d72ac6b579b7", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述阿斯麦业绩不及预期这一具体事件，并提及对半导体板块和纳指的影响，属于新闻动态，没有涉及半导体设备的静态知识。"}}

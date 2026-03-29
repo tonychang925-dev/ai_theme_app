@@ -1,0 +1,244 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端光通信收发模块的研发",
+      "evidence_span": "公司主营业务集高端光通信收发模块的研发、设计、封装、测试和销售于一体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设计",
+      "evidence_span": "公司主营业务集高端光通信收发模块的研发、设计、封装、测试和销售于一体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "封装",
+      "evidence_span": "公司主营业务集高端光通信收发模块的研发、设计、封装、测试和销售于一体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "测试",
+      "evidence_span": "公司主营业务集高端光通信收发模块的研发、设计、封装、测试和销售于一体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营业务集高端光通信收发模块的研发、设计、封装、测试和销售于一体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "接入网光模块",
+      "evidence_span": "接入网光模块和光组件生产及销售，由控股子公司成都储翰开展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光组件生产",
+      "evidence_span": "接入网光模块和光组件生产及销售，由控股子公司成都储翰开展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球领先的光模块供应商",
+      "evidence_span": "全球领先的光模块供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数通光模块龙头",
+      "evidence_span": "公司为全球市占率领先的数通光模块龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "100G高速光模块",
+      "evidence_span": "为云数据中心客户提供 100G、200G、400G和 800G 等高速光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "200G高速光模块",
+      "evidence_span": "为云数据中心客户提供 100G、200G、400G和 800G 等高速光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "400G高速光模块",
+      "evidence_span": "为云数据中心客户提供 100G、200G、400G和 800G 等高速光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "800G高速光模块",
+      "evidence_span": "为云数据中心客户提供 100G、200G、400G和 800G 等高速光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G前传光模块",
+      "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G中传光模块",
+      "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G回传光模块",
+      "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "骨干网传输光模块",
+      "evidence_span": "应用于骨干网和核心网传输光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核心网传输光模块",
+      "evidence_span": "应用于骨干网和核心网传输光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "1.6T光模块",
+      "evidence_span": "在 2023 年推出 1.6T 光模块产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LPO产品",
+      "evidence_span": "公司已发布相关产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硅光技术",
+      "evidence_span": "公司较早自研布局硅光技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LPO技术",
+      "evidence_span": "LPO 通过线性直驱技术替换传统的DSP"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CPO技术",
+      "evidence_span": "公司高度重视 CPO 技术，正在积极进行相关核心技术预研"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "云数据中心客户",
+      "evidence_span": "为云数据中心客户提供 100G、200G、400G和 800G 等高速光模块"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电信设备商客户",
+      "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "AI算力设施建设",
+      "evidence_span": "卡位 AI 算力设施建设浪潮"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端光通信收发模块的研发、设计、封装、测试和销售",
+        "evidence_span": "公司主营业务集高端光通信收发模块的研发、设计、封装、测试和销售于一体"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "接入网光模块和光组件生产及销售",
+        "evidence_span": "接入网光模块和光组件生产及销售，由控股子公司成都储翰开展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球领先的光模块供应商",
+        "evidence_span": "全球领先的光模块供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数通光模块龙头",
+        "evidence_span": "公司为全球市占率领先的数通光模块龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "100G高速光模块",
+        "evidence_span": "为云数据中心客户提供 100G、200G、400G和 800G 等高速光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "200G高速光模块",
+        "evidence_span": "为云数据中心客户提供 100G、200G、400G和 800G 等高速光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "400G高速光模块",
+        "evidence_span": "为云数据中心客户提供 100G、200G、400G和 800G 等高速光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "800G高速光模块",
+        "evidence_span": "为云数据中心客户提供 100G、200G、400G和 800G 等高速光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G前传光模块",
+        "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G中传光模块",
+        "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G回传光模块",
+        "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "骨干网传输光模块",
+        "evidence_span": "应用于骨干网和核心网传输光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核心网传输光模块",
+        "evidence_span": "应用于骨干网和核心网传输光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "1.6T光模块",
+        "evidence_span": "在 2023 年推出 1.6T 光模块产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LPO产品",
+        "evidence_span": "公司已发布相关产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硅光技术",
+        "evidence_span": "公司较早自研布局硅光技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LPO技术",
+        "evidence_span": "LPO 通过线性直驱技术替换传统的DSP"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CPO技术",
+        "evidence_span": "公司高度重视 CPO 技术，正在积极进行相关核心技术预研"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "云数据中心客户",
+        "evidence_span": "为云数据中心客户提供 100G、200G、400G和 800G 等高速光模块"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电信设备商客户",
+        "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "AI算力设施建设",
+        "evidence_span": "卡位 AI 算力设施建设浪潮"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:35:06"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "bbd8ed30bcf7", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落报告了电影《解密》在特定时间点（8月13日16时39分）的票房突破事件（3亿），是具体电影的市场表现动态。"}}

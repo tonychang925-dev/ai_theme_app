@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:19:15", "result": {"span_uid": "a8c73778a267", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段是具体的销售额预测数据，属于阶段性变化信息，但无法脱离原新闻上下文形成稳定知识块。"}}

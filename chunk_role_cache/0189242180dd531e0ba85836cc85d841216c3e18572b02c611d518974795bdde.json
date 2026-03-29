@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "b4dfc9f0ed9d", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提供了全球晶圆厂设备支出的预测数据，并指出半导体设备赛道企业迎来发展红利，这有助于理解半导体设备行业的增长趋势和关键环节，但基于预测数据，稳定性较弱。"}}

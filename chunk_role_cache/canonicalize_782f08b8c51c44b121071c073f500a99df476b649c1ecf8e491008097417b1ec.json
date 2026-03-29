@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:37:14", "result": {"span_uid": "cd5a8e5a3ea1", "action": "rewrite", "canonical_text": "深紫外光刻胶是光刻胶的一种类型，通常需要配套试剂使用，属于先进制程集成电路配套材料。", "final_type": "core", "final_role": "光刻胶类型与配套", "stability": "high", "reason": "原文本为名词短语，改写为完整知识表达，去除了政策背景和事件信息，保留了光刻胶类型和配套关系的稳定知识。"}}

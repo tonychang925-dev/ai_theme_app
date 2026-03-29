@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "b82ef662fa48", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要描述NAND Flash市场价格预测、涨价原因和厂商减产策略等市场动态和事件，没有提供HBM存储的静态知识。"}}

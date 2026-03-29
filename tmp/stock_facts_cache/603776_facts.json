@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "系统销售",
+      "evidence_span": "系统销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "系统运营",
+      "evidence_span": "系统运营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "共享出行",
+      "evidence_span": "共享出行业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧生活",
+      "evidence_span": "智慧生活业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "公共自行车运营商",
+      "evidence_span": "国内最大的公共自行车运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "公共自行车领域第一股",
+      "evidence_span": "公共自行车领域第一股"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "有桩共享自行车领域龙头",
+      "evidence_span": "有桩共享自行车领域龙头地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公共自行车系统",
+      "evidence_span": "公共自行车系统的设备投入、系统建设与安装调试"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公共自行车",
+      "evidence_span": "公共自行车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公共助力自行车",
+      "evidence_span": "公共助力自行车（电动自行车）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车",
+      "evidence_span": "电动汽车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网约车",
+      "evidence_span": "网约车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "共享出行服务",
+      "evidence_span": "共享出行服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各地政府部门",
+      "evidence_span": "各地政府部门"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府相关企事业单位",
+      "evidence_span": "政府相关企事业单位"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "有桩模式",
+      "evidence_span": "有桩模式先驱者"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "系统销售",
+        "evidence_span": "系统销售业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "系统运营",
+        "evidence_span": "系统运营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "共享出行",
+        "evidence_span": "共享出行业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧生活",
+        "evidence_span": "智慧生活业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "公共自行车运营商",
+        "evidence_span": "国内最大的公共自行车运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "公共自行车领域第一股",
+        "evidence_span": "公共自行车领域第一股"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "有桩共享自行车领域龙头",
+        "evidence_span": "有桩共享自行车领域龙头地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公共自行车系统",
+        "evidence_span": "公共自行车系统的设备投入、系统建设与安装调试"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公共自行车",
+        "evidence_span": "公共自行车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公共助力自行车",
+        "evidence_span": "公共助力自行车（电动自行车）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车",
+        "evidence_span": "电动汽车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网约车",
+        "evidence_span": "网约车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "共享出行服务",
+        "evidence_span": "共享出行服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各地政府部门",
+        "evidence_span": "各地政府部门"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府相关企事业单位",
+        "evidence_span": "政府相关企事业单位"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "有桩模式",
+        "evidence_span": "有桩模式先驱者"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:11:34"
+}

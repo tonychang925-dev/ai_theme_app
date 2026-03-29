@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "459a0bdeeb94", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述英伟达在SiGGRAPH大会上宣布提供人形机器人开发服务的事件，是具体的公司动态和新闻公告，没有涉及人形机器人本体的静态知识。"}}

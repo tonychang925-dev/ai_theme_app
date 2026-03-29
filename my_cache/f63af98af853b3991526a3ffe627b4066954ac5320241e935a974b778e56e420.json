@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "256f8a3c11c8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含关于HBM生产优先级和需求增长的静态知识，但混合了时间性动态（如'今年下半年'、'至年底'）和事件信息（如'三大原厂开始提高先进制程的投片'），可能含有可用于题材本体构建的稳定知识，但需要进一步裁决。"}}

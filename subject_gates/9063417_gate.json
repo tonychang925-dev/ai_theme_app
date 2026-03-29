@@ -1,0 +1,41 @@
+{
+  "must": [
+    "春节档",
+    "春节期间（约9天）",
+    "电影放映档期"
+  ],
+  "should": [
+    "武侠",
+    "谍战",
+    "喜剧",
+    "科幻",
+    "动画"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "春节档",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "春节档"
+    },
+    {
+      "term": "春节期间（约9天）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "春节期间（约9天）"
+    },
+    {
+      "term": "电影放映档期",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电影放映档期"
+    }
+  ],
+  "subject_id": "9063417",
+  "quality": "medium",
+  "generated_at": "2026-03-10T10:00:19",
+  "semantic_type": "节庆消费事件",
+  "strategy_type": "event_driven",
+  "source_type": 1
+}

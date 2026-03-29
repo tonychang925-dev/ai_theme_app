@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:24:22", "result": {"chunk_id": "33a90026904b", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细定义稀土永磁的概念、分类、组成和性能比较，是纯静态说明，无事件信息。"}}

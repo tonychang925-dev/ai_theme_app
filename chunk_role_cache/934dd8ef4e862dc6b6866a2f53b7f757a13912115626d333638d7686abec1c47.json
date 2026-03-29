@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "5a2cf68659c4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述佳能交付首台新型纳米压印光刻机的事件，但提到了技术特性（能耗只要十分之一），这可能包含有价值的技术知识（如光刻机类型和能效），混合了事件信息，因此归为候选混合类。"}}

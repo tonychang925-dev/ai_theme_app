@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:46:00", "result": {"chunk_id": "22b6ff381dd5", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段描述新凯来的供应链整合，包括设备生态和关键供应商，是静态的供应链结构说明，没有事件或时间性动态，可用于知识构建。"}}

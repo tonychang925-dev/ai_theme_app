@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "2c7c7e6c0581", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段描述了HBM供应短缺的现状和原因（如AI需求），包含有价值的市场知识，但混合了具体事件（如'2024年和2025年库存售罄'）和时间性动态（如'持续今年一整年'），处于知识候选状态。"}}

@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "畜禽屠宰业务",
+      "evidence_span": "公司以畜禽屠宰业务为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "饲料加工",
+      "evidence_span": "覆盖“饲料加工、畜禽养殖、畜禽屠宰加工、肉制品深加工”四大环节"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "畜禽养殖",
+      "evidence_span": "覆盖“饲料加工、畜禽养殖、畜禽屠宰加工、肉制品深加工”四大环节"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "肉制品深加工",
+      "evidence_span": "覆盖“饲料加工、畜禽养殖、畜禽屠宰加工、肉制品深加工”四大环节"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "浙江省规模化畜禽屠宰龙头企业",
+      "evidence_span": "作为浙江省规模化畜禽屠宰龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "浙江区域屠宰龙头",
+      "evidence_span": "公司是浙江区域屠宰龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "最大的猪肉鸡肉生产与销售企业",
+      "evidence_span": "同时也是最大的猪肉鸡肉生产与销售企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "保供企业",
+      "evidence_span": "公司作为保供企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "饲料",
+      "evidence_span": "对外销售的产品主要包括饲料、生鲜猪肉、生鲜禽肉、金华火腿等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生鲜猪肉",
+      "evidence_span": "对外销售的产品主要包括饲料、生鲜猪肉、生鲜禽肉、金华火腿等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生鲜禽肉",
+      "evidence_span": "对外销售的产品主要包括饲料、生鲜猪肉、生鲜禽肉、金华火腿等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金华火腿",
+      "evidence_span": "对外销售的产品主要包括饲料、生鲜猪肉、生鲜禽肉、金华火腿等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "土香肠产品",
+      "evidence_span": "积极探索新产品如土香肠产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高档生猪火腿",
+      "evidence_span": "未来计划生产深加工的高档生猪火腿"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "100%自繁自养模式",
+      "evidence_span": "生猪养殖采取 100%自繁自养模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "楼房养殖",
+      "evidence_span": "目前公司为100%楼房养殖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "控温控湿火腿生产线",
+      "evidence_span": "该套设备可使火腿生产全过程实现控温控湿"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江苏兴化市政府",
+      "evidence_span": "与江苏兴化市政府签订总投资额20亿元的“兴化生猪全产业链一体化建设项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "梨树县人民政府",
+      "evidence_span": "与梨树县人民政府签署的《梨树华统农业产业链建设项目合作框架协议》"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "产业链一体化经营",
+      "evidence_span": "全力打造产业链一体化经营模式"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "生猪后周期",
+      "evidence_span": "屠宰主业受益生猪后周期"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "畜禽屠宰业务",
+        "evidence_span": "公司以畜禽屠宰业务为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "饲料加工",
+        "evidence_span": "覆盖“饲料加工、畜禽养殖、畜禽屠宰加工、肉制品深加工”四大环节"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "畜禽养殖",
+        "evidence_span": "覆盖“饲料加工、畜禽养殖、畜禽屠宰加工、肉制品深加工”四大环节"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "肉制品深加工",
+        "evidence_span": "覆盖“饲料加工、畜禽养殖、畜禽屠宰加工、肉制品深加工”四大环节"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "浙江省规模化畜禽屠宰龙头企业",
+        "evidence_span": "作为浙江省规模化畜禽屠宰龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "浙江区域屠宰龙头",
+        "evidence_span": "公司是浙江区域屠宰龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "最大的猪肉鸡肉生产与销售企业",
+        "evidence_span": "同时也是最大的猪肉鸡肉生产与销售企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "保供企业",
+        "evidence_span": "公司作为保供企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "饲料",
+        "evidence_span": "对外销售的产品主要包括饲料、生鲜猪肉、生鲜禽肉、金华火腿等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生鲜猪肉",
+        "evidence_span": "对外销售的产品主要包括饲料、生鲜猪肉、生鲜禽肉、金华火腿等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生鲜禽肉",
+        "evidence_span": "对外销售的产品主要包括饲料、生鲜猪肉、生鲜禽肉、金华火腿等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金华火腿",
+        "evidence_span": "对外销售的产品主要包括饲料、生鲜猪肉、生鲜禽肉、金华火腿等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "土香肠产品",
+        "evidence_span": "积极探索新产品如土香肠产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高档生猪火腿",
+        "evidence_span": "未来计划生产深加工的高档生猪火腿"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "100%自繁自养模式",
+        "evidence_span": "生猪养殖采取 100%自繁自养模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "楼房养殖",
+        "evidence_span": "目前公司为100%楼房养殖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "控温控湿火腿生产线",
+        "evidence_span": "该套设备可使火腿生产全过程实现控温控湿"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江苏兴化市政府",
+        "evidence_span": "与江苏兴化市政府签订总投资额20亿元的“兴化生猪全产业链一体化建设项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "梨树县人民政府",
+        "evidence_span": "与梨树县人民政府签署的《梨树华统农业产业链建设项目合作框架协议》"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "产业链一体化经营",
+        "evidence_span": "全力打造产业链一体化经营模式"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "生猪后周期",
+        "evidence_span": "屠宰主业受益生猪后周期"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:01:33"
+}

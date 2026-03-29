@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "dff18f55cc3d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落前半部分描述《网络暴力信息治理规定》施行的立法事件，属于政策出台；后半部分描述奇安信股权转让的公司动态事件。同时，它涉及网络暴力治理这一安全防护与监管题材的关键要素（如法规内容和影响），可能含有稳定知识（如立法目的和首部专门性立法的信息），因此混合了事件和知识。"}}

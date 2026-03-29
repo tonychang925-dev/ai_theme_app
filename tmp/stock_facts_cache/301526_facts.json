@@ -1,0 +1,449 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "玻璃纤维",
+      "evidence_span": "公司是一家致力于玻璃纤维及其制品研发、生产、销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其制品研发",
+      "evidence_span": "公司是一家致力于玻璃纤维及其制品研发、生产、销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司是一家致力于玻璃纤维及其制品研发、生产、销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司是一家致力于玻璃纤维及其制品研发、生产、销售的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "玻璃纤维厂商",
+      "evidence_span": "云南国资委所属云天化集团旗下的玻璃纤维厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最主要的风电纱及织物供应商之一",
+      "evidence_span": "公司已成为全球最主要的风电纱及织物供应商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电纱及织物",
+      "evidence_span": "风电纱及织物全球市占率超25%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高模、超高模产品",
+      "evidence_span": "高模、超高模产品产量居全球领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚氨酯风电专用纱及织物",
+      "evidence_span": "聚氨酯风电专用纱及织物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能短切纤维",
+      "evidence_span": "高性能短切纤维"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热塑长纤",
+      "evidence_span": "热塑长纤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "异形玻纤",
+      "evidence_span": "异形玻纤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高模及低介电等功能化异形玻纤产品",
+      "evidence_span": "高模及低介电等功能化异形玻纤产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低气泡细纱",
+      "evidence_span": "低气泡细纱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纤维直径可达3.7μm的超细纱及织物",
+      "evidence_span": "纤维直径可达3.7μm的超细纱及织物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G用低介电玻璃纤维",
+      "evidence_span": "5G用低介电玻璃纤维"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端绝缘玻璃纤维产品",
+      "evidence_span": "高端绝缘玻璃纤维产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光缆加强芯用玻璃纤维产品",
+      "evidence_span": "光缆加强芯用玻璃纤维产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无硼无氟环保型ECT玻纤",
+      "evidence_span": "无硼无氟环保型ECT玻纤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车轻量化零部件用热塑性玻纤",
+      "evidence_span": "汽车轻量化零部件用热塑性玻纤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G高频通信低介电低损耗玻纤",
+      "evidence_span": "5G高频通信低介电低损耗玻纤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "耐化学腐蚀玻纤",
+      "evidence_span": "耐化学腐蚀玻纤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特高压电力绝缘制品用玻纤",
+      "evidence_span": "特高压电力绝缘制品用玻纤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热塑性风电叶片用玻璃纤维",
+      "evidence_span": "热塑性风电叶片用玻璃纤维"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TMPRO和TMⅡ",
+      "evidence_span": "TMPRO和TMⅡ各项性能全面优化升级并实现量产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超高模TMⅢ玻璃纤维",
+      "evidence_span": "超高模TMⅢ玻璃纤维模量突破99GPa"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热塑短切和热塑长纤产品",
+      "evidence_span": "热塑短切和热塑长纤产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LDK",
+      "evidence_span": "LDK国产替代并实现量产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Low CTE玻璃",
+      "evidence_span": "Low CTE玻璃配方改善"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车先进复合材料",
+      "evidence_span": "汽车先进复合材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚氨酯建筑节能门窗",
+      "evidence_span": "聚氨酯建筑节能门窗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻纤增强聚氨酯光伏组件边框",
+      "evidence_span": "玻纤增强聚氨酯光伏组件边框"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高模拉挤片材应用技术",
+      "evidence_span": "高模拉挤片材已在90米以上风电叶片上得到应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "聚氨酯风电叶片专用纱及织物技术",
+      "evidence_span": "聚氨酯风电专用纱及织物，已率先在全聚氨酯风电叶片中使用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低气泡细纱、超细纱及织物开发技术",
+      "evidence_span": "成功开发了低气泡细纱、纤维直径可达3.7μm的超细纱及织物等优势产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G用低介电玻璃纤维批量生产技术",
+      "evidence_span": "5G用低介电玻璃纤维已实现批量生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高端绝缘玻璃纤维开发技术",
+      "evidence_span": "成功开发出高端绝缘玻璃纤维产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "细直径、适合高速拉挤工艺的光缆加强芯用玻璃纤维技术",
+      "evidence_span": "细直径、适合高速拉挤工艺的光缆加强芯用玻璃纤维产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "热塑性风电叶片用玻璃纤维及其应用工艺开发",
+      "evidence_span": "完成热塑性风电叶片用玻璃纤维及其应用工艺开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高稳定性全纱拉挤成型技术、高效率表面处理技术及自动化型材加工、涂装技术",
+      "evidence_span": "设计开发出高稳定性全纱拉挤成型技术、高效率表面处理技术及自动化型材加工、涂装技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科思创聚合物（中国）有限公司",
+      "evidence_span": "公司与科思创聚合物（中国）有限公司联合研发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杜邦",
+      "evidence_span": "公司长期服务于杜邦"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "巴斯夫",
+      "evidence_span": "巴斯夫"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金发科技",
+      "evidence_span": "金发科技"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "LDK国产替代并实现量产"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "玻璃纤维及其制品研发、生产、销售",
+        "evidence_span": "公司是一家致力于玻璃纤维及其制品研发、生产、销售的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "玻璃纤维厂商",
+        "evidence_span": "云南国资委所属云天化集团旗下的玻璃纤维厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最主要的风电纱及织物供应商之一",
+        "evidence_span": "公司已成为全球最主要的风电纱及织物供应商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电纱及织物",
+        "evidence_span": "风电纱及织物全球市占率超25%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高模、超高模产品",
+        "evidence_span": "高模、超高模产品产量居全球领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚氨酯风电专用纱及织物",
+        "evidence_span": "聚氨酯风电专用纱及织物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能短切纤维",
+        "evidence_span": "高性能短切纤维"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热塑长纤",
+        "evidence_span": "热塑长纤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "异形玻纤",
+        "evidence_span": "异形玻纤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高模及低介电等功能化异形玻纤产品",
+        "evidence_span": "高模及低介电等功能化异形玻纤产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低气泡细纱",
+        "evidence_span": "低气泡细纱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纤维直径可达3.7μm的超细纱及织物",
+        "evidence_span": "纤维直径可达3.7μm的超细纱及织物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G用低介电玻璃纤维",
+        "evidence_span": "5G用低介电玻璃纤维"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端绝缘玻璃纤维产品",
+        "evidence_span": "高端绝缘玻璃纤维产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光缆加强芯用玻璃纤维产品",
+        "evidence_span": "光缆加强芯用玻璃纤维产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无硼无氟环保型ECT玻纤",
+        "evidence_span": "无硼无氟环保型ECT玻纤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车轻量化零部件用热塑性玻纤",
+        "evidence_span": "汽车轻量化零部件用热塑性玻纤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G高频通信低介电低损耗玻纤",
+        "evidence_span": "5G高频通信低介电低损耗玻纤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "耐化学腐蚀玻纤",
+        "evidence_span": "耐化学腐蚀玻纤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特高压电力绝缘制品用玻纤",
+        "evidence_span": "特高压电力绝缘制品用玻纤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热塑性风电叶片用玻璃纤维",
+        "evidence_span": "热塑性风电叶片用玻璃纤维"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TMPRO和TMⅡ",
+        "evidence_span": "TMPRO和TMⅡ各项性能全面优化升级并实现量产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超高模TMⅢ玻璃纤维",
+        "evidence_span": "超高模TMⅢ玻璃纤维模量突破99GPa"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热塑短切和热塑长纤产品",
+        "evidence_span": "热塑短切和热塑长纤产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LDK",
+        "evidence_span": "LDK国产替代并实现量产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Low CTE玻璃",
+        "evidence_span": "Low CTE玻璃配方改善"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车先进复合材料",
+        "evidence_span": "汽车先进复合材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚氨酯建筑节能门窗",
+        "evidence_span": "聚氨酯建筑节能门窗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻纤增强聚氨酯光伏组件边框",
+        "evidence_span": "玻纤增强聚氨酯光伏组件边框"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "池窑设计、节能燃烧、玻璃配方与纤维成型、铂金材料改性与漏板设计加工、浸润剂关键原料与表面处理等玻纤生产全流程工艺技术",
+        "evidence_span": "已掌握池窑设计、节能燃烧、玻璃配方与纤维成型、铂金材料改性与漏板设计加工、浸润剂关键原料与表面处理等玻纤生产全流程工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高模拉挤片材应用技术",
+        "evidence_span": "高模拉挤片材已在90米以上风电叶片上得到应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "聚氨酯风电叶片专用纱及织物技术",
+        "evidence_span": "聚氨酯风电专用纱及织物，已率先在全聚氨酯风电叶片中使用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低气泡细纱、超细纱及织物开发技术",
+        "evidence_span": "成功开发了低气泡细纱、纤维直径可达3.7μm的超细纱及织物等优势产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G用低介电玻璃纤维批量生产技术",
+        "evidence_span": "5G用低介电玻璃纤维已实现批量生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高端绝缘玻璃纤维开发技术",
+        "evidence_span": "成功开发出高端绝缘玻璃纤维产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "细直径、适合高速拉挤工艺的光缆加强芯用玻璃纤维技术",
+        "evidence_span": "细直径、适合高速拉挤工艺的光缆加强芯用玻璃纤维产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "热塑性风电叶片用玻璃纤维及其应用工艺开发",
+        "evidence_span": "完成热塑性风电叶片用玻璃纤维及其应用工艺开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高稳定性全纱拉挤成型技术、高效率表面处理技术及自动化型材加工、涂装技术",
+        "evidence_span": "设计开发出高稳定性全纱拉挤成型技术、高效率表面处理技术及自动化型材加工、涂装技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科思创聚合物（中国）有限公司",
+        "evidence_span": "公司与科思创聚合物（中国）有限公司联合研发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杜邦",
+        "evidence_span": "公司长期服务于杜邦"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "巴斯夫",
+        "evidence_span": "巴斯夫"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金发科技",
+        "evidence_span": "金发科技"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "LDK国产替代并实现量产"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:47:25"
+}

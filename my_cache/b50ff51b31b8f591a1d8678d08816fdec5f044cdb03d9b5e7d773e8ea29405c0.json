@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "a57386554786", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含华为专利技术的静态说明（如四芯片封装设计、桥接技术、HBM集成等），这些是半导体设备领域的知识，但同时也涉及事件信息（华为申请专利、可能用于昇腾910D芯片、与NVIDIA比较），因此属于混合内容，需要进一步裁决以提取稳定知识。"}}

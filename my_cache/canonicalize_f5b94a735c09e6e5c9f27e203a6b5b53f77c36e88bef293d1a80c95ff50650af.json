@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:14:55", "result": {"span_uid": "efb75897d3ae", "action": "keep", "canonical_text": "2020年全球商品浆需求量为5880万吨，其中针叶浆需求量为2580万吨，阔叶浆需求量为3300万吨。", "final_type": "signal", "final_role": "历史需求数据", "stability": "high", "reason": "该片段提供全球纸浆需求的基础数据，属于市场规模信息，相对稳定且可独立成立，无需改写。"}}

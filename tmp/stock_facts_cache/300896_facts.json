@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗美容生物医用材料",
+      "evidence_span": "国内最早开展医疗美容生物医用材料自主研发与应用的企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医美行业",
+      "evidence_span": "聚焦医美行业进行深度战略布局"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内最大透明质酸皮肤填充剂供应商",
+      "evidence_span": "爱美客国内最大透明质酸皮肤填充剂供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医美龙头",
+      "evidence_span": "医美龙头标杆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "透明质酸皮肤填充剂",
+      "evidence_span": "国内最大的透明质酸皮肤填充剂供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "溶液类注射产品",
+      "evidence_span": "溶液类注射产品贡献主要营收"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "凝胶类注射产品",
+      "evidence_span": "凝胶类注射产品随着21年濡白天使推出增速逐步上升"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化妆品",
+      "evidence_span": "化妆品和面部埋植线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "面部埋植线",
+      "evidence_span": "化妆品和面部埋植线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "嗨体1.5（颈纹针）",
+      "evidence_span": "嗨体1.5（颈纹针）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "嗨体2.5",
+      "evidence_span": "嗨体2.5"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "嗨体1.0（熊猫针）",
+      "evidence_span": "嗨体1.0（熊猫针）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冭活泡泡针",
+      "evidence_span": "冭活泡泡针"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "濡白天使",
+      "evidence_span": "濡白天使为爱美客旗下首款再生类注射剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "紧恋",
+      "evidence_span": "一款面部埋植线产品紧恋"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主研发和创新",
+      "evidence_span": "坚持自主研发和创新"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "医美市场扩容红利",
+      "evidence_span": "尽享医美市场扩容红利"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产品牌市占率成长性显著"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗美容生物医用材料",
+        "evidence_span": "国内最早开展医疗美容生物医用材料自主研发与应用的企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医美行业",
+        "evidence_span": "聚焦医美行业进行深度战略布局"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内最大透明质酸皮肤填充剂供应商",
+        "evidence_span": "爱美客国内最大透明质酸皮肤填充剂供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医美龙头",
+        "evidence_span": "医美龙头标杆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "透明质酸皮肤填充剂",
+        "evidence_span": "国内最大的透明质酸皮肤填充剂供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "溶液类注射产品",
+        "evidence_span": "溶液类注射产品贡献主要营收"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "凝胶类注射产品",
+        "evidence_span": "凝胶类注射产品随着21年濡白天使推出增速逐步上升"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化妆品",
+        "evidence_span": "化妆品和面部埋植线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "面部埋植线",
+        "evidence_span": "化妆品和面部埋植线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "嗨体1.5（颈纹针）",
+        "evidence_span": "嗨体1.5（颈纹针）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "嗨体2.5",
+        "evidence_span": "嗨体2.5"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "嗨体1.0（熊猫针）",
+        "evidence_span": "嗨体1.0（熊猫针）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冭活泡泡针",
+        "evidence_span": "冭活泡泡针"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "濡白天使",
+        "evidence_span": "濡白天使为爱美客旗下首款再生类注射剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "紧恋",
+        "evidence_span": "一款面部埋植线产品紧恋"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主研发和创新",
+        "evidence_span": "坚持自主研发和创新"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "医美市场扩容红利",
+        "evidence_span": "尽享医美市场扩容红利"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产品牌市占率成长性显著"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:40:57"
+}

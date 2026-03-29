@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "a682a6c0d7c7", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了中国民营航天企业蓝箭航天完成IPO上市辅导的具体事件，包括时间、进展和媒体报道，属于公司动态和资本化进程，没有提供卫星互联网的静态知识。"}}

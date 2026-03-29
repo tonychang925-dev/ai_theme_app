@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:31:44", "result": {"chunk_id": "ac4ac154883d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落混合了事件（Vision Pro通过中国3C认证）和潜在知识（市场规模预测和复合增速），后者可能对题材构建有价值，但需进一步裁决以分离事件部分。"}}

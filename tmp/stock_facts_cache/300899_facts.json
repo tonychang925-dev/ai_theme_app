@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业流体特种分离业务",
+      "evidence_span": "公司创立以来始终专注于工业流体特种分离业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "膜分离技术应用整体解决方案",
+      "evidence_span": "为客户提供包括清洁生产技术方案设计与实施、膜分离装备集成、运营技术支持和售后服务在内的定制化膜分离技术应用整体解决方案"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "膜分离技术整体解决方案的提供商",
+      "evidence_span": "公司作为膜分离技术整体解决方案的提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环保技术型企业",
+      "evidence_span": "作为环保技术型企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "膜分离系统集成装置",
+      "evidence_span": "实物载体主要体现为向客户提供的膜分离系统集成装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "零部件的更换和维护服务",
+      "evidence_span": "向使用膜法清洁生产工艺的客户提供零部件的更换和维护服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碱回收循环使用技术方案",
+      "evidence_span": "公司提供的碱回收循环使用技术方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半纤维素回收技术方案",
+      "evidence_span": "半纤维素回收技术方案可分离、回收生产过程中半纤维素"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酸回收循环使用技术方案",
+      "evidence_span": "公司的酸回收循环使用技术方案将生产工艺中未利用的酸进行回收"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纯水装置",
+      "evidence_span": "公司使用纯水装置对生物制药行业的原水进行处理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污水处理技术方案",
+      "evidence_span": "公司的污水处理技术方案可取代传统活性污泥法处理方法"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "副产品回收再利用技术方案",
+      "evidence_span": "包括副产品回收再利用技术方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工艺排放液的水回收系统",
+      "evidence_span": "工艺排放液的水回收系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高浓盐水处理技术解决方案",
+      "evidence_span": "公司提供高浓盐水处理技术解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "膜分离应用技术",
+      "evidence_span": "依托众多自主研发的膜分离应用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "膜分离技术",
+      "evidence_span": "公司主要从事膜分离技术的研究与开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "结晶技术",
+      "evidence_span": "通过膜分离技术和结晶技术的结合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "蒸发结晶技术",
+      "evidence_span": "并通过膜分离技术和蒸发结晶技术使废水达到最大限度的回收利用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "KX高浓度盐水浓缩装置",
+      "evidence_span": "公司自主研发的“KX高浓度盐水浓缩装置”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "KX工业废碱综合利用系统",
+      "evidence_span": "“KX工业废碱综合利用系统”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "粘胶工业废碱高效回用及浓缩液回收系统",
+      "evidence_span": "“粘胶工业废碱高效回用及浓缩液回收系统”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "24000t/d印染废水热能回收及处理系统",
+      "evidence_span": "“24000t/d印染废水热能回收及处理系统”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "纸浆行业",
+      "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "化纤行业",
+      "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "生物制药行业",
+      "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "纺织印染行业",
+      "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "化工行业",
+      "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石油化工行业",
+      "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "煤化工行业",
+      "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色低碳发展",
+      "evidence_span": "推动绿色低碳发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "工业废水处理",
+      "evidence_span": "工业废水处理作为生态污染治理中的一项"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "清洁生产",
+      "evidence_span": "帮助工业企业实现清洁生产"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色产业转型",
+      "evidence_span": "完成绿色产业转型工作"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业流体特种分离业务",
+        "evidence_span": "公司创立以来始终专注于工业流体特种分离业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "膜分离技术应用整体解决方案",
+        "evidence_span": "为客户提供包括清洁生产技术方案设计与实施、膜分离装备集成、运营技术支持和售后服务在内的定制化膜分离技术应用整体解决方案"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "膜分离技术整体解决方案的提供商",
+        "evidence_span": "公司作为膜分离技术整体解决方案的提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环保技术型企业",
+        "evidence_span": "作为环保技术型企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "膜分离系统集成装置",
+        "evidence_span": "实物载体主要体现为向客户提供的膜分离系统集成装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "零部件的更换和维护服务",
+        "evidence_span": "向使用膜法清洁生产工艺的客户提供零部件的更换和维护服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碱回收循环使用技术方案",
+        "evidence_span": "公司提供的碱回收循环使用技术方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半纤维素回收技术方案",
+        "evidence_span": "半纤维素回收技术方案可分离、回收生产过程中半纤维素"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酸回收循环使用技术方案",
+        "evidence_span": "公司的酸回收循环使用技术方案将生产工艺中未利用的酸进行回收"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纯水装置",
+        "evidence_span": "公司使用纯水装置对生物制药行业的原水进行处理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污水处理技术方案",
+        "evidence_span": "公司的污水处理技术方案可取代传统活性污泥法处理方法"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "副产品回收再利用技术方案",
+        "evidence_span": "包括副产品回收再利用技术方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工艺排放液的水回收系统",
+        "evidence_span": "工艺排放液的水回收系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高浓盐水处理技术解决方案",
+        "evidence_span": "公司提供高浓盐水处理技术解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "膜分离应用技术",
+        "evidence_span": "依托众多自主研发的膜分离应用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "膜分离技术",
+        "evidence_span": "公司主要从事膜分离技术的研究与开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "结晶技术",
+        "evidence_span": "通过膜分离技术和结晶技术的结合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "蒸发结晶技术",
+        "evidence_span": "并通过膜分离技术和蒸发结晶技术使废水达到最大限度的回收利用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "KX高浓度盐水浓缩装置",
+        "evidence_span": "公司自主研发的“KX高浓度盐水浓缩装置”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "KX工业废碱综合利用系统",
+        "evidence_span": "“KX工业废碱综合利用系统”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "粘胶工业废碱高效回用及浓缩液回收系统",
+        "evidence_span": "“粘胶工业废碱高效回用及浓缩液回收系统”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "24000t/d印染废水热能回收及处理系统",
+        "evidence_span": "“24000t/d印染废水热能回收及处理系统”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "纸浆行业",
+        "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "化纤行业",
+        "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "生物制药行业",
+        "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "纺织印染行业",
+        "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "化工行业",
+        "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石油化工行业",
+        "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "煤化工行业",
+        "evidence_span": "纸浆、化纤、生物制药、纺织印染、化工、石油化工和煤化工等行业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色低碳发展",
+        "evidence_span": "推动绿色低碳发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "工业废水处理",
+        "evidence_span": "工业废水处理作为生态污染治理中的一项"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "清洁生产",
+        "evidence_span": "帮助工业企业实现清洁生产"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色产业转型",
+        "evidence_span": "完成绿色产业转型工作"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:42:55"
+}

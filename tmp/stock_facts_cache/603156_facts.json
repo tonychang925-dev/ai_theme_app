@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "植物蛋白饮料的研发",
+      "evidence_span": "公司的主营业务是主要以核桃仁为原料的植物蛋白饮料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司的主营业务是主要以核桃仁为原料的植物蛋白饮料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司的主营业务是主要以核桃仁为原料的植物蛋白饮料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "核桃饮品产业",
+      "evidence_span": "持续做大做强核桃饮品产业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "核桃蛋白饮品品类的领军者",
+      "evidence_span": "公司作为核桃蛋白饮品品类的领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "核桃乳饮料产销量最大的企业",
+      "evidence_span": "是我国核桃乳饮料产销量最大的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "六个核桃系列",
+      "evidence_span": "公司产品主要包括六个核桃系列和植物奶产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "植物奶产品",
+      "evidence_span": "公司产品主要包括六个核桃系列和植物奶产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "六个核桃精品系列",
+      "evidence_span": "六个核桃精品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "六个核桃养生系列",
+      "evidence_span": "六个核桃养生系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "六个核桃五星级系列",
+      "evidence_span": "六个核桃五星级系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "六个核桃2430",
+      "evidence_span": "六个核桃2430"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "六个核桃无糖高钙",
+      "evidence_span": "六个核桃无糖高钙"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "六个核桃易智成长",
+      "evidence_span": "六个核桃易智成长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "养元植物奶",
+      "evidence_span": "养元植物奶产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核桃乳",
+      "evidence_span": "核桃乳饮料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核桃大豆乳",
+      "evidence_span": "核桃大豆乳"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核桃花生露",
+      "evidence_span": "核桃花生露"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核桃杏仁露",
+      "evidence_span": "核桃杏仁露"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5-3-28生产工艺",
+      "evidence_span": "公司核桃乳的生产工艺是“5-3-28”工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全核桃CET冷萃技术",
+      "evidence_span": "全核桃CET冷萃技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全核桃CET冷萃工艺",
+      "evidence_span": "独创的“全核桃CET冷萃工艺”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "五重细化研磨工艺",
+      "evidence_span": "“五重细化研磨”工艺"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "植物蛋白饮料",
+      "evidence_span": "植物蛋白饮料行业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "核桃乳",
+      "evidence_span": "核桃乳饮料"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "植物蛋白饮料的研发、生产和销售",
+        "evidence_span": "公司的主营业务是主要以核桃仁为原料的植物蛋白饮料的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "核桃饮品产业",
+        "evidence_span": "持续做大做强核桃饮品产业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "核桃蛋白饮品品类的领军者",
+        "evidence_span": "公司作为核桃蛋白饮品品类的领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "核桃乳饮料产销量最大的企业",
+        "evidence_span": "是我国核桃乳饮料产销量最大的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "六个核桃系列",
+        "evidence_span": "公司产品主要包括六个核桃系列和植物奶产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "植物奶产品",
+        "evidence_span": "公司产品主要包括六个核桃系列和植物奶产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "六个核桃精品系列",
+        "evidence_span": "六个核桃精品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "六个核桃养生系列",
+        "evidence_span": "六个核桃养生系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "六个核桃五星级系列",
+        "evidence_span": "六个核桃五星级系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "六个核桃2430",
+        "evidence_span": "六个核桃2430"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "六个核桃无糖高钙",
+        "evidence_span": "六个核桃无糖高钙"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "六个核桃易智成长",
+        "evidence_span": "六个核桃易智成长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "养元植物奶",
+        "evidence_span": "养元植物奶产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核桃乳",
+        "evidence_span": "核桃乳饮料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核桃大豆乳",
+        "evidence_span": "核桃大豆乳"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核桃花生露",
+        "evidence_span": "核桃花生露"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核桃杏仁露",
+        "evidence_span": "核桃杏仁露"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5-3-28生产工艺",
+        "evidence_span": "公司核桃乳的生产工艺是“5-3-28”工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全核桃CET冷萃技术",
+        "evidence_span": "全核桃CET冷萃技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全核桃CET冷萃工艺",
+        "evidence_span": "独创的“全核桃CET冷萃工艺”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "五重细化研磨工艺",
+        "evidence_span": "“五重细化研磨”工艺"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "植物蛋白饮料",
+        "evidence_span": "植物蛋白饮料行业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "核桃乳",
+        "evidence_span": "核桃乳饮料"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:26:55"
+}

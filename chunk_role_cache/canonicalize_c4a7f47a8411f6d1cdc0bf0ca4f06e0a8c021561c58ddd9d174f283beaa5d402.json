@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:03:34", "result": {"span_uid": "7a465d1f8aaa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "设备引进事件", "stability": "low", "reason": "该片段描述了三星电子从ASML引进High-NA EUV光刻机的具体事件和时间点，属于新闻性、事件性信息，稳定性低，不适合作为稳定知识块。"}}

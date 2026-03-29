@@ -1,0 +1,274 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "光模块解决方案",
+      "evidence_span": "是一家领先的光模块解决方案与服务提供商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务",
+      "evidence_span": "是一家领先的光模块解决方案与服务提供商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高性能光模块的研发",
+      "evidence_span": "公司专注于高性能光模块的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司专注于高性能光模块的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司专注于高性能光模块的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光模块解决方案与服务提供商",
+      "evidence_span": "是一家领先的光模块解决方案与服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产光模块头部供应商",
+      "evidence_span": "新易盛国产光模块头部供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能光模块",
+      "evidence_span": "专注于研发、生产和销售多种类的高性能光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光器件",
+      "evidence_span": "专注于研发、生产和销售多种类的高性能光模块和光器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "100G光模块",
+      "evidence_span": "为云数据中心客户提供 100G、200G、400G、800G及1.6T光模块产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "200G光模块",
+      "evidence_span": "为云数据中心客户提供 100G、200G、400G、800G及1.6T光模块产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "400G光模块",
+      "evidence_span": "为云数据中心客户提供 100G、200G、400G、800G及1.6T光模块产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "800G光模块",
+      "evidence_span": "为云数据中心客户提供 100G、200G、400G、800G及1.6T光模块产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "1.6T光模块",
+      "evidence_span": "为云数据中心客户提供 100G、200G、400G、800G及1.6T光模块产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G前传光模块",
+      "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G中传光模块",
+      "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G回传光模块",
+      "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城域网传输光模块解决方案",
+      "evidence_span": "应用于城域网、骨干网和核心网传输的光模块解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "骨干网传输光模块解决方案",
+      "evidence_span": "应用于城域网、骨干网和核心网传输的光模块解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核心网传输光模块解决方案",
+      "evidence_span": "应用于城域网、骨干网和核心网传输的光模块解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定制化光模块",
+      "evidence_span": "新易盛专注于定制化光模块生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自研硅光芯片的模块研发",
+      "evidence_span": "公司自研硅光芯片的模块研发推进顺利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "云数据中心客户",
+      "evidence_span": "为云数据中心客户提供 100G、200G、400G、800G及1.6T光模块产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电信设备商客户",
+      "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海外云客户",
+      "evidence_span": "新易盛国产光模块头部供应商，海外云客户突破带动业绩高增长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "以太网客户",
+      "evidence_span": "受益于海外以太网客户 800G 需求的加速放量"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G",
+      "evidence_span": "业绩承压因素消除，有望抓住5G/数通新机遇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数通",
+      "evidence_span": "业绩承压因素消除，有望抓住5G/数通新机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "光模块解决方案与服务",
+        "evidence_span": "是一家领先的光模块解决方案与服务提供商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高性能光模块的研发、生产和销售",
+        "evidence_span": "公司专注于高性能光模块的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光模块解决方案与服务提供商",
+        "evidence_span": "是一家领先的光模块解决方案与服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产光模块头部供应商",
+        "evidence_span": "新易盛国产光模块头部供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能光模块",
+        "evidence_span": "专注于研发、生产和销售多种类的高性能光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光器件",
+        "evidence_span": "专注于研发、生产和销售多种类的高性能光模块和光器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "100G光模块",
+        "evidence_span": "为云数据中心客户提供 100G、200G、400G、800G及1.6T光模块产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "200G光模块",
+        "evidence_span": "为云数据中心客户提供 100G、200G、400G、800G及1.6T光模块产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "400G光模块",
+        "evidence_span": "为云数据中心客户提供 100G、200G、400G、800G及1.6T光模块产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "800G光模块",
+        "evidence_span": "为云数据中心客户提供 100G、200G、400G、800G及1.6T光模块产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "1.6T光模块",
+        "evidence_span": "为云数据中心客户提供 100G、200G、400G、800G及1.6T光模块产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G前传光模块",
+        "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G中传光模块",
+        "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G回传光模块",
+        "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城域网传输光模块解决方案",
+        "evidence_span": "应用于城域网、骨干网和核心网传输的光模块解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "骨干网传输光模块解决方案",
+        "evidence_span": "应用于城域网、骨干网和核心网传输的光模块解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核心网传输光模块解决方案",
+        "evidence_span": "应用于城域网、骨干网和核心网传输的光模块解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定制化光模块",
+        "evidence_span": "新易盛专注于定制化光模块生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自研硅光芯片的模块研发",
+        "evidence_span": "公司自研硅光芯片的模块研发推进顺利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "云数据中心客户",
+        "evidence_span": "为云数据中心客户提供 100G、200G、400G、800G及1.6T光模块产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电信设备商客户",
+        "evidence_span": "为电信设备商客户提供 5G 前传、中传和回传光模块"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海外云客户",
+        "evidence_span": "新易盛国产光模块头部供应商，海外云客户突破带动业绩高增长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "以太网客户",
+        "evidence_span": "受益于海外以太网客户 800G 需求的加速放量"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G",
+        "evidence_span": "业绩承压因素消除，有望抓住5G/数通新机遇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数通",
+        "evidence_span": "业绩承压因素消除，有望抓住5G/数通新机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:57:34"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:53:19", "result": {"chunk_id": "421f6010b3fc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了SpaceX建造Gigabay车间以加速星舰生产的事件，但同时也包含了关于星舰产能目标的潜在知识，可能对题材本体构建有价值，因此归类为混合候选。"}}

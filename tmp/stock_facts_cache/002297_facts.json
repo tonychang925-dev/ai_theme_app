@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空机轮刹车系统",
+      "evidence_span": "公司主要是从事航空机轮刹车系统及刹车材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "刹车材料",
+      "evidence_span": "公司主要是从事航空机轮刹车系统及刹车材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航天用碳",
+      "evidence_span": "公司主要是从事航天用碳/碳复合材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "碳复合材料",
+      "evidence_span": "公司主要是从事航天用碳/碳复合材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高性能硬质合金",
+      "evidence_span": "公司主要是从事高性能硬质合金"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "稀有金属粉体材料",
+      "evidence_span": "公司主要是从事稀有金属粉体材料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "粉末冶金龙头",
+      "evidence_span": "粉末冶金龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "粉末冶金新材料的领军企业",
+      "evidence_span": "粉末冶金新材料的领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内固体火箭发动机用碳/碳复合材料的重要研制、生产基地",
+      "evidence_span": "公司是国内固体火箭发动机用碳/碳复合材料的重要研制、生产基地"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞机机轮刹车系统",
+      "evidence_span": "飞机机轮刹车系统是飞机上一个具有独立功能的重要系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空用碳/碳刹车产品",
+      "evidence_span": "在航空用碳/碳刹车产品方面"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粉末冶金航空刹车副",
+      "evidence_span": "公司先后开发出三叉戟、波音737系列等多种粉末冶金航空刹车副"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无人机粉末冶金刹车副",
+      "evidence_span": "公司开发了多款无人机粉末冶金刹车副"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航天发动机用碳/碳复合材料产品",
+      "evidence_span": "提供多个型号航天发动机用碳/碳复合材料产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳/碳喉衬材料",
+      "evidence_span": "所研发的碳/碳喉衬材料已成功应用于我国的“快舟系列”商业航天固体运载火箭上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能超细/纳米硬质合金棒材",
+      "evidence_span": "主要产品为高性能超细/纳米硬质合金棒材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能硬质合金模具材料",
+      "evidence_span": "主要产品为高性能硬质合金模具材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能特粗晶工程与矿用硬质合金",
+      "evidence_span": "主要产品为高性能特粗晶工程与矿用硬质合金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精深加工硬质合金成品（零/部件）",
+      "evidence_span": "主要产品为精深加工硬质合金成品（零/部件）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳化钽",
+      "evidence_span": "主要产品分为碳化钽"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳化铬",
+      "evidence_span": "主要产品分为碳化铬"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳化钒",
+      "evidence_span": "主要产品分为碳化钒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳化钛",
+      "evidence_span": "主要产品分为碳化钛"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钨钛固溶体",
+      "evidence_span": "主要产品分为钨钛固溶体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钽铌固溶体",
+      "evidence_span": "主要产品分为钽铌固溶体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钨钛钽固溶体",
+      "evidence_span": "主要产品分为钨钛钽固溶体"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "炭/炭复合材料和粉末冶金材料的制备技术",
+      "evidence_span": "拥有国内领先的炭/炭复合材料和粉末冶金材料的制备技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高性能纳米/超细晶硬质合金制备技术",
+      "evidence_span": "拥有具有自主知识产权的“高性能纳米/超细晶硬质合金制备技术”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高性能特粗晶硬质合金制备技术",
+      "evidence_span": "拥有具有自主知识产权的“高性能特粗晶硬质合金制备技术”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "C919大型飞机",
+      "evidence_span": "公司的碳刹车产品技术被成功应用于C919大型飞机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航天系统内多家单位",
+      "evidence_span": "公司与航天系统内多家单位建立了长期的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "多家航天企业",
+      "evidence_span": "为多家航天企业提供炭/炭喉衬产品配套"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产大飞机",
+      "evidence_span": "把握国产大飞机发展契机"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "关键零部件、新材料将实现进口替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自主可控",
+      "evidence_span": "关键零部件、新材料将实现自主可控"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空机轮刹车系统及刹车材料",
+        "evidence_span": "公司主要是从事航空机轮刹车系统及刹车材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航天用碳/碳复合材料",
+        "evidence_span": "公司主要是从事航天用碳/碳复合材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高性能硬质合金",
+        "evidence_span": "公司主要是从事高性能硬质合金"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "稀有金属粉体材料",
+        "evidence_span": "公司主要是从事稀有金属粉体材料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "粉末冶金龙头",
+        "evidence_span": "粉末冶金龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "粉末冶金新材料的领军企业",
+        "evidence_span": "粉末冶金新材料的领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内固体火箭发动机用碳/碳复合材料的重要研制、生产基地",
+        "evidence_span": "公司是国内固体火箭发动机用碳/碳复合材料的重要研制、生产基地"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞机机轮刹车系统",
+        "evidence_span": "飞机机轮刹车系统是飞机上一个具有独立功能的重要系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空用碳/碳刹车产品",
+        "evidence_span": "在航空用碳/碳刹车产品方面"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粉末冶金航空刹车副",
+        "evidence_span": "公司先后开发出三叉戟、波音737系列等多种粉末冶金航空刹车副"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无人机粉末冶金刹车副",
+        "evidence_span": "公司开发了多款无人机粉末冶金刹车副"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航天发动机用碳/碳复合材料产品",
+        "evidence_span": "提供多个型号航天发动机用碳/碳复合材料产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳/碳喉衬材料",
+        "evidence_span": "所研发的碳/碳喉衬材料已成功应用于我国的“快舟系列”商业航天固体运载火箭上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能超细/纳米硬质合金棒材",
+        "evidence_span": "主要产品为高性能超细/纳米硬质合金棒材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能硬质合金模具材料",
+        "evidence_span": "主要产品为高性能硬质合金模具材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能特粗晶工程与矿用硬质合金",
+        "evidence_span": "主要产品为高性能特粗晶工程与矿用硬质合金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精深加工硬质合金成品（零/部件）",
+        "evidence_span": "主要产品为精深加工硬质合金成品（零/部件）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳化钽",
+        "evidence_span": "主要产品分为碳化钽"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳化铬",
+        "evidence_span": "主要产品分为碳化铬"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳化钒",
+        "evidence_span": "主要产品分为碳化钒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳化钛",
+        "evidence_span": "主要产品分为碳化钛"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钨钛固溶体",
+        "evidence_span": "主要产品分为钨钛固溶体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钽铌固溶体",
+        "evidence_span": "主要产品分为钽铌固溶体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钨钛钽固溶体",
+        "evidence_span": "主要产品分为钨钛钽固溶体"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "炭/炭复合材料和粉末冶金材料的制备技术",
+        "evidence_span": "拥有国内领先的炭/炭复合材料和粉末冶金材料的制备技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高性能纳米/超细晶硬质合金制备技术",
+        "evidence_span": "拥有具有自主知识产权的“高性能纳米/超细晶硬质合金制备技术”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高性能特粗晶硬质合金制备技术",
+        "evidence_span": "拥有具有自主知识产权的“高性能特粗晶硬质合金制备技术”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "C919大型飞机",
+        "evidence_span": "公司的碳刹车产品技术被成功应用于C919大型飞机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航天系统内多家单位",
+        "evidence_span": "公司与航天系统内多家单位建立了长期的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "多家航天企业",
+        "evidence_span": "为多家航天企业提供炭/炭喉衬产品配套"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产大飞机",
+        "evidence_span": "把握国产大飞机发展契机"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "关键零部件、新材料将实现进口替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自主可控",
+        "evidence_span": "关键零部件、新材料将实现自主可控"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:02:24"
+}

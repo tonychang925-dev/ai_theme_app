@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "给排水管材研发制造销售",
+      "evidence_span": "公司主营业务主要由给排水管材研发制造销售、管道修复、管道工程服务、管网投资运营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "管道修复",
+      "evidence_span": "公司主营业务主要由给排水管材研发制造销售、管道修复、管道工程服务、管网投资运营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "管道工程服务",
+      "evidence_span": "公司主营业务主要由给排水管材研发制造销售、管道修复、管道工程服务、管网投资运营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "管网投资运营业务",
+      "evidence_span": "公司主营业务主要由给排水管材研发制造销售、管道修复、管道工程服务、管网投资运营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源汽车业务",
+      "evidence_span": "公司主营业务主要由给排水管材研发制造销售、管道修复、管道工程服务、管网投资运营业务，以及新能源汽车业务两部分构成"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内最大的高密度聚乙烯（HDPE）缠绕结构壁管供应商",
+      "evidence_span": "是国内最大的高密度聚乙烯（HDPE）缠绕结构壁管（克拉管）供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "埋地排水管网综合服务商",
+      "evidence_span": "成为了集管材研发、制造、管道修复、管道工程服务、管网投资运营为一体的埋地排水管网综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "福建省新能源汽车动力总成的领军企业",
+      "evidence_span": "福建万润是福建省新能源汽车动力总成的领军企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "克拉管",
+      "evidence_span": "克拉管产品是公司的主打产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢骨架管",
+      "evidence_span": "钢骨架管全称为钢骨架聚乙烯塑料复合管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PE实壁管",
+      "evidence_span": "PE实壁管主要采用PE80及PE100原材料制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连续缠绕玻璃纤维增强管",
+      "evidence_span": "连读缠绕玻璃纤维增强管是以玻璃纤维及其制品为增强材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚酯增强复合顶管",
+      "evidence_span": "聚酯增强复合顶管以环氧树脂或不饱和聚酯树脂为基体材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市政管网普查、检测、运维服务",
+      "evidence_span": "纳川水务公司主要从事市政管网普查、检测、运维服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非开挖修复及微顶管工程",
+      "evidence_span": "纳川水务公司主要从事市政管网普查、检测、运维服务、非开挖修复及微顶管工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "带DAT变速器的电驱动系统总成",
+      "evidence_span": "带DAT变速器的电驱动系统总成，主要应用于新能源环卫车、专用车、客车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程机械电驱动系统总成",
+      "evidence_span": "工程机械电驱动系统总成，主要应用于各种新能源工程机械"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "带FAST-AMT变速器的电驱动系统总成",
+      "evidence_span": "带FAST-AMT变速器的电驱动系统总成，主要应用于新能源卡车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环卫车电驱动系统总成",
+      "evidence_span": "环卫车电驱动系统总成，主要应用于各种新能源环卫车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环卫单发系统总成",
+      "evidence_span": "环卫单发系统总成，主要应用于燃油底盘，上装需带副发环卫车"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核电专用HDPE管道及配件开发",
+      "evidence_span": "公司继续以结合实际核电项目进行核电专用HDPE管道及配件开发为重点"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大口径厚壁HDPE管道及管件研发",
+      "evidence_span": "大口径厚壁 HDPE管道及管件研发投入占比增加"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CAP1400/CAP1000核电厂厂用水系统大口径HDPE管道管件国产化研制",
+      "evidence_span": "公司完成CAP1400/CAP1000核电厂厂用水系统大口径HDPE管道管件国产化研制任务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双胶圈HDPE缠绕结构壁管开发与应用",
+      "evidence_span": "双胶圈HDPE缠绕结构壁管开发与应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "给水用钢骨架塑料复合管材性能优化研究与应用",
+      "evidence_span": "给水用钢骨架塑料复合管材性能优化研究与应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "DAT变速器",
+      "evidence_span": "福建万润具备核心竞争力的DAT变速器非常适用低速重载工况的环卫底盘"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "太平洋建设",
+      "evidence_span": "力争与太平洋建设、天津电建、山东电建、中交、中电建、中能建等目标战略客户形成长期战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天津电建",
+      "evidence_span": "力争与太平洋建设、天津电建、山东电建、中交、中电建、中能建等目标战略客户形成长期战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山东电建",
+      "evidence_span": "力争与太平洋建设、天津电建、山东电建、中交、中电建、中能建等目标战略客户形成长期战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中交",
+      "evidence_span": "力争与太平洋建设、天津电建、山东电建、中交、中电建、中能建等目标战略客户形成长期战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中电建",
+      "evidence_span": "力争与太平洋建设、天津电建、山东电建、中交、中电建、中能建等目标战略客户形成长期战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中能建",
+      "evidence_span": "力争与太平洋建设、天津电建、山东电建、中交、中电建、中能建等目标战略客户形成长期战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三一",
+      "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "徐工",
+      "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中联",
+      "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博雷顿",
+      "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "晋工",
+      "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中集",
+      "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "常林",
+      "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新型城镇化建设",
+      "evidence_span": "持续受益新型城镇化建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "长江大保护",
+      "evidence_span": "积极拓展长江大保护业务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车",
+      "evidence_span": "纳川股份战略进军新能源汽车领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "给排水管材研发制造销售",
+        "evidence_span": "公司主营业务主要由给排水管材研发制造销售、管道修复、管道工程服务、管网投资运营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "管道修复",
+        "evidence_span": "公司主营业务主要由给排水管材研发制造销售、管道修复、管道工程服务、管网投资运营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "管道工程服务",
+        "evidence_span": "公司主营业务主要由给排水管材研发制造销售、管道修复、管道工程服务、管网投资运营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "管网投资运营业务",
+        "evidence_span": "公司主营业务主要由给排水管材研发制造销售、管道修复、管道工程服务、管网投资运营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源汽车业务",
+        "evidence_span": "公司主营业务主要由给排水管材研发制造销售、管道修复、管道工程服务、管网投资运营业务，以及新能源汽车业务两部分构成"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内最大的高密度聚乙烯（HDPE）缠绕结构壁管供应商",
+        "evidence_span": "是国内最大的高密度聚乙烯（HDPE）缠绕结构壁管（克拉管）供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "埋地排水管网综合服务商",
+        "evidence_span": "成为了集管材研发、制造、管道修复、管道工程服务、管网投资运营为一体的埋地排水管网综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "福建省新能源汽车动力总成的领军企业",
+        "evidence_span": "福建万润是福建省新能源汽车动力总成的领军企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "克拉管",
+        "evidence_span": "克拉管产品是公司的主打产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢骨架管",
+        "evidence_span": "钢骨架管全称为钢骨架聚乙烯塑料复合管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PE实壁管",
+        "evidence_span": "PE实壁管主要采用PE80及PE100原材料制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连续缠绕玻璃纤维增强管",
+        "evidence_span": "连读缠绕玻璃纤维增强管是以玻璃纤维及其制品为增强材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚酯增强复合顶管",
+        "evidence_span": "聚酯增强复合顶管以环氧树脂或不饱和聚酯树脂为基体材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市政管网普查、检测、运维服务",
+        "evidence_span": "纳川水务公司主要从事市政管网普查、检测、运维服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非开挖修复及微顶管工程",
+        "evidence_span": "纳川水务公司主要从事市政管网普查、检测、运维服务、非开挖修复及微顶管工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "带DAT变速器的电驱动系统总成",
+        "evidence_span": "带DAT变速器的电驱动系统总成，主要应用于新能源环卫车、专用车、客车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程机械电驱动系统总成",
+        "evidence_span": "工程机械电驱动系统总成，主要应用于各种新能源工程机械"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "带FAST-AMT变速器的电驱动系统总成",
+        "evidence_span": "带FAST-AMT变速器的电驱动系统总成，主要应用于新能源卡车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环卫车电驱动系统总成",
+        "evidence_span": "环卫车电驱动系统总成，主要应用于各种新能源环卫车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环卫单发系统总成",
+        "evidence_span": "环卫单发系统总成，主要应用于燃油底盘，上装需带副发环卫车"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核电专用HDPE管道及配件开发",
+        "evidence_span": "公司继续以结合实际核电项目进行核电专用HDPE管道及配件开发为重点"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大口径厚壁HDPE管道及管件研发",
+        "evidence_span": "大口径厚壁 HDPE管道及管件研发投入占比增加"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CAP1400/CAP1000核电厂厂用水系统大口径HDPE管道管件国产化研制",
+        "evidence_span": "公司完成CAP1400/CAP1000核电厂厂用水系统大口径HDPE管道管件国产化研制任务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双胶圈HDPE缠绕结构壁管开发与应用",
+        "evidence_span": "双胶圈HDPE缠绕结构壁管开发与应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "给水用钢骨架塑料复合管材性能优化研究与应用",
+        "evidence_span": "给水用钢骨架塑料复合管材性能优化研究与应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "DAT变速器",
+        "evidence_span": "福建万润具备核心竞争力的DAT变速器非常适用低速重载工况的环卫底盘"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "太平洋建设",
+        "evidence_span": "力争与太平洋建设、天津电建、山东电建、中交、中电建、中能建等目标战略客户形成长期战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津电建",
+        "evidence_span": "力争与太平洋建设、天津电建、山东电建、中交、中电建、中能建等目标战略客户形成长期战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山东电建",
+        "evidence_span": "力争与太平洋建设、天津电建、山东电建、中交、中电建、中能建等目标战略客户形成长期战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中交",
+        "evidence_span": "力争与太平洋建设、天津电建、山东电建、中交、中电建、中能建等目标战略客户形成长期战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中电建",
+        "evidence_span": "力争与太平洋建设、天津电建、山东电建、中交、中电建、中能建等目标战略客户形成长期战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中能建",
+        "evidence_span": "力争与太平洋建设、天津电建、山东电建、中交、中电建、中能建等目标战略客户形成长期战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三一",
+        "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "徐工",
+        "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中联",
+        "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博雷顿",
+        "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "晋工",
+        "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中集",
+        "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "常林",
+        "evidence_span": "福建万润已经配套三一、徐工、中联、博雷顿、晋工、中集、常林等行业知名企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新型城镇化建设",
+        "evidence_span": "持续受益新型城镇化建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "长江大保护",
+        "evidence_span": "积极拓展长江大保护业务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车",
+        "evidence_span": "纳川股份战略进军新能源汽车领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:07:17"
+}

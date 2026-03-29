@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "低温鲜奶",
+      "evidence_span": "旗帜鲜明做大鲜奶这一高势能品类"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端特色低温酸奶",
+      "evidence_span": "重点发展低温鲜奶与高端特色低温酸奶"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "区域性低温酸奶",
+      "evidence_span": "区域性低温酸奶及常温奶"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "常温奶",
+      "evidence_span": "区域性低温酸奶及常温奶"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "泛全国化低温奶龙头",
+      "evidence_span": "三轮并购跃升为泛全国化低温奶龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域性乳企",
+      "evidence_span": "鲜奶则以区域性乳企为主，如华东的光明、北京三元、西南新乳业均在其主要市场占据优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "24小时鲜奶",
+      "evidence_span": "包括“24小时”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "唯品鲜奶",
+      "evidence_span": "“唯品”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "澳特兰鲜奶",
+      "evidence_span": "“澳特兰”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "今日鲜奶铺",
+      "evidence_span": "“今日鲜奶铺”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "活润酸奶",
+      "evidence_span": "“活润”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "初心酸奶",
+      "evidence_span": "“初心”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超巴奶技术",
+      "evidence_span": "新国标拟定认可“超巴奶”技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "消费升级",
+      "evidence_span": "低温奶在新鲜度、潜在功能性方面更优，是消费升级重要载体"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "低温鲜奶",
+        "evidence_span": "旗帜鲜明做大鲜奶这一高势能品类"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端特色低温酸奶",
+        "evidence_span": "重点发展低温鲜奶与高端特色低温酸奶"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "区域性低温酸奶",
+        "evidence_span": "区域性低温酸奶及常温奶"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "常温奶",
+        "evidence_span": "区域性低温酸奶及常温奶"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "泛全国化低温奶龙头",
+        "evidence_span": "三轮并购跃升为泛全国化低温奶龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域性乳企",
+        "evidence_span": "鲜奶则以区域性乳企为主，如华东的光明、北京三元、西南新乳业均在其主要市场占据优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "24小时鲜奶",
+        "evidence_span": "包括“24小时”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "唯品鲜奶",
+        "evidence_span": "“唯品”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "澳特兰鲜奶",
+        "evidence_span": "“澳特兰”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "今日鲜奶铺",
+        "evidence_span": "“今日鲜奶铺”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "活润酸奶",
+        "evidence_span": "“活润”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "初心酸奶",
+        "evidence_span": "“初心”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超巴奶技术",
+        "evidence_span": "新国标拟定认可“超巴奶”技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "消费升级",
+        "evidence_span": "低温奶在新鲜度、潜在功能性方面更优，是消费升级重要载体"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:50:50"
+}

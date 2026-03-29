@@ -1,0 +1,549 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "消费电子自动化设备",
+      "evidence_span": "消费电子是公司的核心业务领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源自动化设备",
+      "evidence_span": "新能源是公司的重要战略业务领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体自动化设备",
+      "evidence_span": "半导体领域是公司战略拓展的重点方向"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "核心零部件",
+      "evidence_span": "公司核心零部件包括工业机器人、视觉系统、特种镜头、直驱电机系统等软硬件产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能化生产解决方案企业",
+      "evidence_span": "国内智能化生产解决方案领域行业领军企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工业自动化设备制造商",
+      "evidence_span": "博众精工领先的工业自动化设备制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "3C自动化龙头",
+      "evidence_span": "国内3C自动化龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化设备",
+      "evidence_span": "主要从事自动化设备、自动化柔性生产线、自动化关键零部件以及工装夹（治）具等产品的研发、设计、生产、销售及技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化柔性生产线",
+      "evidence_span": "主要从事自动化设备、自动化柔性生产线、自动化关键零部件以及工装夹（治）具等产品的研发、设计、生产、销售及技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化关键零部件",
+      "evidence_span": "主要从事自动化设备、自动化柔性生产线、自动化关键零部件以及工装夹（治）具等产品的研发、设计、生产、销售及技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工装夹（治）具",
+      "evidence_span": "主要从事自动化设备、自动化柔性生产线、自动化关键零部件以及工装夹（治）具等产品的研发、设计、生产、销售及技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能工厂的整体解决方案",
+      "evidence_span": "亦可为客户提供智能工厂的整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密组装设备",
+      "evidence_span": "主要为客户提供精密组装设备（线）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密量测设备",
+      "evidence_span": "精密量测设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密Bonding设备",
+      "evidence_span": "精密Bonding设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密检测设备",
+      "evidence_span": "精密检测设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "注液机",
+      "evidence_span": "注液机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速切叠一体机",
+      "evidence_span": "高速切叠一体机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电芯装配专机",
+      "evidence_span": "电芯装配专机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能充换电站",
+      "evidence_span": "智能充换电站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车零部件生产设备",
+      "evidence_span": "汽车零部件生产设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高精度共晶机",
+      "evidence_span": "高精度共晶机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芯片外观检测AOI设备",
+      "evidence_span": "芯片外观检测AOI设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业机器人",
+      "evidence_span": "工业机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视觉系统",
+      "evidence_span": "视觉系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种镜头",
+      "evidence_span": "特种镜头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直驱电机系统",
+      "evidence_span": "直驱电机系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "柔性模块化生产线技术",
+      "evidence_span": "全新推出覆盖整个FATP段的柔性模块化生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精度UV油墨在线打印工艺",
+      "evidence_span": "成功自主研发了高精度UV油墨在线打印工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多片叠技术",
+      "evidence_span": "采用多片叠技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "换电机器人主动纠偏技术",
+      "evidence_span": "自主研发成功换电机器人主动纠偏技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新能源扁线电机转子生产线技术",
+      "evidence_span": "成功推出新能源扁线电机转子生产线设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精度拾取贴合系统",
+      "evidence_span": "高精度拾取贴合系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效共晶加热系统",
+      "evidence_span": "高效共晶加热系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "wafer供料系统",
+      "evidence_span": "wafer供料系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "2D+3D相结合光学算法模式",
+      "evidence_span": "利用2D+3D相结合光学算法模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业机器人速度前瞻算法",
+      "evidence_span": "公司机器人产品线推出了工业机器人速度前瞻算法"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "宁德时代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蜂巢能源",
+      "evidence_span": "蜂巢能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽蓝谷",
+      "evidence_span": "北汽蓝谷"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利汽车",
+      "evidence_span": "吉利汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "协鑫能科",
+      "evidence_span": "协鑫能科"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风汽车",
+      "evidence_span": "东风汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽集团",
+      "evidence_span": "上汽集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽集团",
+      "evidence_span": "广汽集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来汽车",
+      "evidence_span": "蔚来汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蒂森克虏伯",
+      "evidence_span": "蒂森克虏伯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电装",
+      "evidence_span": "电装"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世",
+      "evidence_span": "博世"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "方正电机",
+      "evidence_span": "方正电机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "巴斯夫",
+      "evidence_span": "巴斯夫"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子",
+      "evidence_span": "西门子"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "土耳其J.S公司",
+      "evidence_span": "土耳其J.S公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "半导体等高端装备领域国产替代加速"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "消费电子自动化设备",
+        "evidence_span": "消费电子是公司的核心业务领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源自动化设备",
+        "evidence_span": "新能源是公司的重要战略业务领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体自动化设备",
+        "evidence_span": "半导体领域是公司战略拓展的重点方向"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "核心零部件",
+        "evidence_span": "公司核心零部件包括工业机器人、视觉系统、特种镜头、直驱电机系统等软硬件产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能化生产解决方案企业",
+        "evidence_span": "国内智能化生产解决方案领域行业领军企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工业自动化设备制造商",
+        "evidence_span": "博众精工领先的工业自动化设备制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "3C自动化龙头",
+        "evidence_span": "国内3C自动化龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化设备",
+        "evidence_span": "主要从事自动化设备、自动化柔性生产线、自动化关键零部件以及工装夹（治）具等产品的研发、设计、生产、销售及技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化柔性生产线",
+        "evidence_span": "主要从事自动化设备、自动化柔性生产线、自动化关键零部件以及工装夹（治）具等产品的研发、设计、生产、销售及技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化关键零部件",
+        "evidence_span": "主要从事自动化设备、自动化柔性生产线、自动化关键零部件以及工装夹（治）具等产品的研发、设计、生产、销售及技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工装夹（治）具",
+        "evidence_span": "主要从事自动化设备、自动化柔性生产线、自动化关键零部件以及工装夹（治）具等产品的研发、设计、生产、销售及技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能工厂的整体解决方案",
+        "evidence_span": "亦可为客户提供智能工厂的整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密组装设备",
+        "evidence_span": "主要为客户提供精密组装设备（线）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密量测设备",
+        "evidence_span": "精密量测设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密Bonding设备",
+        "evidence_span": "精密Bonding设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密检测设备",
+        "evidence_span": "精密检测设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "注液机",
+        "evidence_span": "注液机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速切叠一体机",
+        "evidence_span": "高速切叠一体机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电芯装配专机",
+        "evidence_span": "电芯装配专机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能充换电站",
+        "evidence_span": "智能充换电站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车零部件生产设备",
+        "evidence_span": "汽车零部件生产设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高精度共晶机",
+        "evidence_span": "高精度共晶机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芯片外观检测AOI设备",
+        "evidence_span": "芯片外观检测AOI设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业机器人",
+        "evidence_span": "工业机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视觉系统",
+        "evidence_span": "视觉系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种镜头",
+        "evidence_span": "特种镜头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直驱电机系统",
+        "evidence_span": "直驱电机系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "柔性模块化生产线技术",
+        "evidence_span": "全新推出覆盖整个FATP段的柔性模块化生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精度UV油墨在线打印工艺",
+        "evidence_span": "成功自主研发了高精度UV油墨在线打印工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多片叠技术",
+        "evidence_span": "采用多片叠技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "换电机器人主动纠偏技术",
+        "evidence_span": "自主研发成功换电机器人主动纠偏技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新能源扁线电机转子生产线技术",
+        "evidence_span": "成功推出新能源扁线电机转子生产线设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精度拾取贴合系统",
+        "evidence_span": "高精度拾取贴合系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效共晶加热系统",
+        "evidence_span": "高效共晶加热系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "wafer供料系统",
+        "evidence_span": "wafer供料系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "2D+3D相结合光学算法模式",
+        "evidence_span": "利用2D+3D相结合光学算法模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业机器人速度前瞻算法",
+        "evidence_span": "公司机器人产品线推出了工业机器人速度前瞻算法"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "宁德时代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蜂巢能源",
+        "evidence_span": "蜂巢能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽蓝谷",
+        "evidence_span": "北汽蓝谷"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利汽车",
+        "evidence_span": "吉利汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "协鑫能科",
+        "evidence_span": "协鑫能科"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风汽车",
+        "evidence_span": "东风汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽集团",
+        "evidence_span": "上汽集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽集团",
+        "evidence_span": "广汽集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来汽车",
+        "evidence_span": "蔚来汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蒂森克虏伯",
+        "evidence_span": "蒂森克虏伯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电装",
+        "evidence_span": "电装"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世",
+        "evidence_span": "博世"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "方正电机",
+        "evidence_span": "方正电机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "巴斯夫",
+        "evidence_span": "巴斯夫"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子",
+        "evidence_span": "西门子"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "土耳其J.S公司",
+        "evidence_span": "土耳其J.S公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "半导体等高端装备领域国产替代加速"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:59:34"
+}

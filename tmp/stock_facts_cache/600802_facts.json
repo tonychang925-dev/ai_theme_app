@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "水泥",
+      "evidence_span": "公司主要从事水泥及熟料的生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "熟料的生产",
+      "evidence_span": "公司主要从事水泥及熟料的生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要从事水泥及熟料的生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "福建省水泥行业传统龙头企业",
+      "evidence_span": "公司为福建省水泥行业传统龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "福建省最大的水泥生产企业",
+      "evidence_span": "福建省最大的水泥生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "各等级硅酸盐水泥",
+      "evidence_span": "生产的产品主要有“建福”和“炼石”两个品牌的各等级硅酸盐水泥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核电水泥",
+      "evidence_span": "已取得核电水泥生产许可"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海工水泥",
+      "evidence_span": "稳步推进海工水泥生产取证工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装修水泥",
+      "evidence_span": "加速开发装修水泥"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "散免蒸压特种水泥",
+      "evidence_span": "散免蒸压特种水泥等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新材料、新技术、新装备创新应用",
+      "evidence_span": "推进新材料、新技术、新装备创新应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "节能降碳",
+      "evidence_span": "持续推动节能降碳"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化转型",
+      "evidence_span": "公司稳步推进数字化转型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能物流系统",
+      "evidence_span": "持续完善优化智能物流系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "安环管理数字化项目",
+      "evidence_span": "推动实施顺昌炼石安环管理数字化项目"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海西建设",
+      "evidence_span": "畅享海西建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自贸区建设",
+      "evidence_span": "自贸区建设和与华润水泥的合作将成为今年看点"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "水泥及熟料的生产及销售",
+        "evidence_span": "公司主要从事水泥及熟料的生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "福建省水泥行业传统龙头企业",
+        "evidence_span": "公司为福建省水泥行业传统龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "福建省最大的水泥生产企业",
+        "evidence_span": "福建省最大的水泥生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "各等级硅酸盐水泥",
+        "evidence_span": "生产的产品主要有“建福”和“炼石”两个品牌的各等级硅酸盐水泥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核电水泥",
+        "evidence_span": "已取得核电水泥生产许可"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海工水泥",
+        "evidence_span": "稳步推进海工水泥生产取证工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装修水泥",
+        "evidence_span": "加速开发装修水泥"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "散免蒸压特种水泥",
+        "evidence_span": "散免蒸压特种水泥等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新材料、新技术、新装备创新应用",
+        "evidence_span": "推进新材料、新技术、新装备创新应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "节能降碳",
+        "evidence_span": "持续推动节能降碳"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化转型",
+        "evidence_span": "公司稳步推进数字化转型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能物流系统",
+        "evidence_span": "持续完善优化智能物流系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "安环管理数字化项目",
+        "evidence_span": "推动实施顺昌炼石安环管理数字化项目"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海西建设",
+        "evidence_span": "畅享海西建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自贸区建设",
+        "evidence_span": "自贸区建设和与华润水泥的合作将成为今年看点"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:19:23"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "bcd82bdb2094", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述国务院台办发言人就日本历史罪责发表的言论，这是一个具体的事件性声明，没有提供关于陆军本身的静态知识或机制，与题材本体构建关联较弱。"}}

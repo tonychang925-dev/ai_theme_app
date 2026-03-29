@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:39:32", "result": {"span_uid": "742521327ec0", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体公司CEO的申请和承诺行为，属于事件性信息，无法形成稳定、可独立成立的知识块。"}}

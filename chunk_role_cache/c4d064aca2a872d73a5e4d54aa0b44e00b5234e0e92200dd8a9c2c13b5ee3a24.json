@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final", "model": "deepseek-chat", "timestamp": "2026-03-08T11:07:55", "result": {"chunk_id": "71f35549b481", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含两部分：第一部分涉及政策文件《首台（套）重大技术装备推广应用指导目录》，其中列出了光刻机类型和技术参数（如分辨率、套刻精度、支持工艺），这提供了半导体设备（光刻机）的静态知识；第二部分是苹果包下台积电产能的事件新闻。混合了知识和事件，需进一步裁决。"}}

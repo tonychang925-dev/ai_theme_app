@@ -1,0 +1,519 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "基因修饰动物模型的研发",
+      "evidence_span": "公司主要从事基因修饰动物模型的研发、生产、销售及相关技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基因修饰动物模型的生产",
+      "evidence_span": "公司主要从事基因修饰动物模型的研发、生产、销售及相关技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基因修饰动物模型的销售",
+      "evidence_span": "公司主要从事基因修饰动物模型的研发、生产、销售及相关技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基因修饰动物模型的技术服务",
+      "evidence_span": "公司主要从事基因修饰动物模型的研发、生产、销售及相关技术服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "实验动物培育企业",
+      "evidence_span": "首家A股上市的实验动物培育企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "基因修饰模式动物的生命科学上游特色龙头",
+      "evidence_span": "南模生物深耕基因修饰模式动物的生命科学上游特色龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "模式动物龙头",
+      "evidence_span": "南模生物模式动物龙头，技术领先的“活试剂”供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基因修饰动物模型",
+      "evidence_span": "公司主要从事基因修饰动物模型的研发、生产、销售及相关技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基因修饰小鼠模型",
+      "evidence_span": "公司生产的基因修饰动物模型主要指基因修饰小鼠模型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定制化模型",
+      "evidence_span": "为客户提供了超过6,600种的定制化模型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "标准化模型",
+      "evidence_span": "自主研发标准化模型超过8,600余种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人源化基因修饰模型",
+      "evidence_span": "拥有PD-1、PD-L1、CTLA-4、CD47、CD24、ACE2、PCSK9、ANGPTL3等热门靶点人源化模型572种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双靶点人源化小鼠",
+      "evidence_span": "针对双抗药物开发新上线CD3EDG、HER2等双靶点人源化小鼠60余种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ADC药物靶点人源化小鼠",
+      "evidence_span": "针对ADC类药物开发新上线TROP2、NECTIN4等ADC药物靶点人源化小鼠20余种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "重度免疫缺陷小鼠模型",
+      "evidence_span": "推出了M-NSG-IL2、M-NSG-IL15、M-NSG-IL3/CSF2等新一代重度免疫缺陷小鼠模型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人源化肿瘤细胞系",
+      "evidence_span": "配套研发了30余种人源化肿瘤细胞系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CDX肿瘤模型",
+      "evidence_span": "推出了100余种CDX肿瘤模型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "疾病模型",
+      "evidence_span": "推出了炎症性肠病、多发性硬化症、银屑病等疾病模型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药效评价及表型分析服务",
+      "evidence_span": "药效评价及表型分析服务收入同比增长35.36%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药理药效学研究服务",
+      "evidence_span": "计划利用中营健现有的房屋土地等资源建成具有基因修饰小鼠模型的研发、标准化模型的供应、药理药效学研究服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "辅助生殖繁育业务",
+      "evidence_span": "需向客户交付动物模型的业务（主要包括定制化模型、标准化模型、辅助生殖繁育业务等）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CRISPR/Cas基因编辑技术",
+      "evidence_span": "提升CRISPR/Cas和ES细胞打靶技术操作细节"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ES细胞打靶技术",
+      "evidence_span": "提升CRISPR/Cas和ES细胞打靶技术操作细节"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基因修饰动物模型研发体系",
+      "evidence_span": "建立了完善的基因修饰动物模型研发体系和核心技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基因修饰小鼠研发技术平台",
+      "evidence_span": "公司已建立成熟的基因修饰小鼠研发技术平台、大小鼠表型分析平台、大小鼠饲养繁育平台、药理药效学服务平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大小鼠表型分析平台",
+      "evidence_span": "公司已建立成熟的基因修饰小鼠研发技术平台、大小鼠表型分析平台、大小鼠饲养繁育平台、药理药效学服务平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大小鼠饲养繁育平台",
+      "evidence_span": "公司已建立成熟的基因修饰小鼠研发技术平台、大小鼠表型分析平台、大小鼠饲养繁育平台、药理药效学服务平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "药理药效学服务平台",
+      "evidence_span": "公司已建立成熟的基因修饰小鼠研发技术平台、大小鼠表型分析平台、大小鼠饲养繁育平台、药理药效学服务平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "斑马鱼研究技术平台",
+      "evidence_span": "斑马鱼研究技术平台、线虫研究技术平台、分子与细胞生物学技术平台及新建立的模型验证平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线虫研究技术平台",
+      "evidence_span": "斑马鱼研究技术平台、线虫研究技术平台、分子与细胞生物学技术平台及新建立的模型验证平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分子与细胞生物学技术平台",
+      "evidence_span": "斑马鱼研究技术平台、线虫研究技术平台、分子与细胞生物学技术平台及新建立的模型验证平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模型验证平台",
+      "evidence_span": "斑马鱼研究技术平台、线虫研究技术平台、分子与细胞生物学技术平台及新建立的模型验证平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国科学院",
+      "evidence_span": "公司长期与中国科学院、复旦大学、上海交通大学、清华大学、北京大学等著名科所院校"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "复旦大学",
+      "evidence_span": "公司长期与中国科学院、复旦大学、上海交通大学、清华大学、北京大学等著名科所院校"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海交通大学",
+      "evidence_span": "公司长期与中国科学院、复旦大学、上海交通大学、清华大学、北京大学等著名科所院校"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "清华大学",
+      "evidence_span": "公司长期与中国科学院、复旦大学、上海交通大学、清华大学、北京大学等著名科所院校"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京大学",
+      "evidence_span": "公司长期与中国科学院、复旦大学、上海交通大学、清华大学、北京大学等著名科所院校"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "瑞金医院",
+      "evidence_span": "以及瑞金医院、仁济医院、中山医院、华山医院等知名医院等优质客户资源建立了良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "仁济医院",
+      "evidence_span": "以及瑞金医院、仁济医院、中山医院、华山医院等知名医院等优质客户资源建立了良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中山医院",
+      "evidence_span": "以及瑞金医院、仁济医院、中山医院、华山医院等知名医院等优质客户资源建立了良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华山医院",
+      "evidence_span": "以及瑞金医院、仁济医院、中山医院、华山医院等知名医院等优质客户资源建立了良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "百济神州",
+      "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "信达生物",
+      "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石药集团",
+      "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恒瑞医药",
+      "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中美冠科",
+      "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "康龙化成",
+      "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "药明康德",
+      "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "药明生物",
+      "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球排名前十的制药厂商",
+      "evidence_span": "获得了全球排名前十的制药厂商的订单"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "生命科学上游",
+      "evidence_span": "南模生物深耕基因修饰模式动物的生命科学上游特色龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "基因修饰动物模型的研发",
+        "evidence_span": "公司主要从事基因修饰动物模型的研发、生产、销售及相关技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基因修饰动物模型的生产",
+        "evidence_span": "公司主要从事基因修饰动物模型的研发、生产、销售及相关技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基因修饰动物模型的销售",
+        "evidence_span": "公司主要从事基因修饰动物模型的研发、生产、销售及相关技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基因修饰动物模型的技术服务",
+        "evidence_span": "公司主要从事基因修饰动物模型的研发、生产、销售及相关技术服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "实验动物培育企业",
+        "evidence_span": "首家A股上市的实验动物培育企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "基因修饰模式动物的生命科学上游特色龙头",
+        "evidence_span": "南模生物深耕基因修饰模式动物的生命科学上游特色龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "模式动物龙头",
+        "evidence_span": "南模生物模式动物龙头，技术领先的“活试剂”供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基因修饰动物模型",
+        "evidence_span": "公司主要从事基因修饰动物模型的研发、生产、销售及相关技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基因修饰小鼠模型",
+        "evidence_span": "公司生产的基因修饰动物模型主要指基因修饰小鼠模型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定制化模型",
+        "evidence_span": "为客户提供了超过6,600种的定制化模型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "标准化模型",
+        "evidence_span": "自主研发标准化模型超过8,600余种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人源化基因修饰模型",
+        "evidence_span": "拥有PD-1、PD-L1、CTLA-4、CD47、CD24、ACE2、PCSK9、ANGPTL3等热门靶点人源化模型572种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双靶点人源化小鼠",
+        "evidence_span": "针对双抗药物开发新上线CD3EDG、HER2等双靶点人源化小鼠60余种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ADC药物靶点人源化小鼠",
+        "evidence_span": "针对ADC类药物开发新上线TROP2、NECTIN4等ADC药物靶点人源化小鼠20余种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "重度免疫缺陷小鼠模型",
+        "evidence_span": "推出了M-NSG-IL2、M-NSG-IL15、M-NSG-IL3/CSF2等新一代重度免疫缺陷小鼠模型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人源化肿瘤细胞系",
+        "evidence_span": "配套研发了30余种人源化肿瘤细胞系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CDX肿瘤模型",
+        "evidence_span": "推出了100余种CDX肿瘤模型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "疾病模型",
+        "evidence_span": "推出了炎症性肠病、多发性硬化症、银屑病等疾病模型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药效评价及表型分析服务",
+        "evidence_span": "药效评价及表型分析服务收入同比增长35.36%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药理药效学研究服务",
+        "evidence_span": "计划利用中营健现有的房屋土地等资源建成具有基因修饰小鼠模型的研发、标准化模型的供应、药理药效学研究服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "辅助生殖繁育业务",
+        "evidence_span": "需向客户交付动物模型的业务（主要包括定制化模型、标准化模型、辅助生殖繁育业务等）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CRISPR/Cas基因编辑技术",
+        "evidence_span": "提升CRISPR/Cas和ES细胞打靶技术操作细节"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ES细胞打靶技术",
+        "evidence_span": "提升CRISPR/Cas和ES细胞打靶技术操作细节"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基因修饰动物模型研发体系",
+        "evidence_span": "建立了完善的基因修饰动物模型研发体系和核心技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基因修饰小鼠研发技术平台",
+        "evidence_span": "公司已建立成熟的基因修饰小鼠研发技术平台、大小鼠表型分析平台、大小鼠饲养繁育平台、药理药效学服务平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大小鼠表型分析平台",
+        "evidence_span": "公司已建立成熟的基因修饰小鼠研发技术平台、大小鼠表型分析平台、大小鼠饲养繁育平台、药理药效学服务平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大小鼠饲养繁育平台",
+        "evidence_span": "公司已建立成熟的基因修饰小鼠研发技术平台、大小鼠表型分析平台、大小鼠饲养繁育平台、药理药效学服务平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "药理药效学服务平台",
+        "evidence_span": "公司已建立成熟的基因修饰小鼠研发技术平台、大小鼠表型分析平台、大小鼠饲养繁育平台、药理药效学服务平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "斑马鱼研究技术平台",
+        "evidence_span": "斑马鱼研究技术平台、线虫研究技术平台、分子与细胞生物学技术平台及新建立的模型验证平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线虫研究技术平台",
+        "evidence_span": "斑马鱼研究技术平台、线虫研究技术平台、分子与细胞生物学技术平台及新建立的模型验证平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分子与细胞生物学技术平台",
+        "evidence_span": "斑马鱼研究技术平台、线虫研究技术平台、分子与细胞生物学技术平台及新建立的模型验证平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模型验证平台",
+        "evidence_span": "斑马鱼研究技术平台、线虫研究技术平台、分子与细胞生物学技术平台及新建立的模型验证平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国科学院",
+        "evidence_span": "公司长期与中国科学院、复旦大学、上海交通大学、清华大学、北京大学等著名科所院校"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "复旦大学",
+        "evidence_span": "公司长期与中国科学院、复旦大学、上海交通大学、清华大学、北京大学等著名科所院校"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海交通大学",
+        "evidence_span": "公司长期与中国科学院、复旦大学、上海交通大学、清华大学、北京大学等著名科所院校"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "清华大学",
+        "evidence_span": "公司长期与中国科学院、复旦大学、上海交通大学、清华大学、北京大学等著名科所院校"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京大学",
+        "evidence_span": "公司长期与中国科学院、复旦大学、上海交通大学、清华大学、北京大学等著名科所院校"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "瑞金医院",
+        "evidence_span": "以及瑞金医院、仁济医院、中山医院、华山医院等知名医院等优质客户资源建立了良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "仁济医院",
+        "evidence_span": "以及瑞金医院、仁济医院、中山医院、华山医院等知名医院等优质客户资源建立了良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中山医院",
+        "evidence_span": "以及瑞金医院、仁济医院、中山医院、华山医院等知名医院等优质客户资源建立了良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华山医院",
+        "evidence_span": "以及瑞金医院、仁济医院、中山医院、华山医院等知名医院等优质客户资源建立了良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "百济神州",
+        "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "信达生物",
+        "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石药集团",
+        "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恒瑞医药",
+        "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中美冠科",
+        "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "康龙化成",
+        "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "药明康德",
+        "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "药明生物",
+        "evidence_span": "公司工业客户中包含例如百济神州、信达生物、石药集团、恒瑞医药、中美冠科、康龙化成、药明康德、药明生物等已上市的创新药企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球排名前十的制药厂商",
+        "evidence_span": "获得了全球排名前十的制药厂商的订单"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "生命科学上游",
+        "evidence_span": "南模生物深耕基因修饰模式动物的生命科学上游特色龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:48:40"
+}

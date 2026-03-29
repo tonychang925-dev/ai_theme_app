@@ -1,0 +1,569 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空机载设备研制",
+      "evidence_span": "主要业务包括航空机载设备研制"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空维修",
+      "evidence_span": "主要业务包括航空维修"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "测控",
+      "evidence_span": "主要业务包括测控及地面保障设备研制"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "地面保障设备研制",
+      "evidence_span": "主要业务包括测控及地面保障设备研制"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "复材制造",
+      "evidence_span": "主要业务包括复材制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能制造解决方案提供",
+      "evidence_span": "主要业务包括智能制造解决方案提供"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空航天和防务领域的综合性服务商",
+      "evidence_span": "公司是航空航天和防务领域的综合性服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "直升机抗坠毁座椅细分市场领先者",
+      "evidence_span": "公司作为直升机抗坠毁座椅细分市场领先者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空航天及防务领域综合性系统设备和解决方案供应商",
+      "evidence_span": "公司是航空航天及防务领域综合性系统设备和解决方案供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "原始设计制造商",
+      "evidence_span": "是原始设计制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "原始设备制造商",
+      "evidence_span": "原始设备制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "持续维修服务商",
+      "evidence_span": "持续维修服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空座椅",
+      "evidence_span": "核心产品与服务主要包括：航空座椅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空导航设备",
+      "evidence_span": "核心产品与服务主要包括：航空导航设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "厨卫系统设备",
+      "evidence_span": "核心产品与服务主要包括：厨卫系统设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞机内饰",
+      "evidence_span": "核心产品与服务主要包括：飞机内饰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客舱照明",
+      "evidence_span": "核心产品与服务主要包括：客舱照明"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防护装甲",
+      "evidence_span": "核心产品与服务主要包括：防护装甲"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "测试设备",
+      "evidence_span": "核心产品与服务主要包括：测试设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地面保障设备",
+      "evidence_span": "核心产品与服务主要包括：地面保障设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模拟训练装备",
+      "evidence_span": "核心产品与服务主要包括：模拟训练装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能工具管理系统",
+      "evidence_span": "核心产品与服务主要包括：智能工具管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能技术解决方案",
+      "evidence_span": "核心产品与服务主要包括：智能技术解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直升机抗坠毁座椅",
+      "evidence_span": "公司航空座椅产品包括直升机抗坠毁座椅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞机驾驶员和乘员座椅",
+      "evidence_span": "公司航空座椅产品包括飞机驾驶员和乘员座椅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空厨卫系统",
+      "evidence_span": "客舱设备包括航空厨卫系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "照明系统",
+      "evidence_span": "客舱设备包括照明系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客舱娱乐系统",
+      "evidence_span": "客舱设备包括客舱娱乐系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整机内饰及解决方案",
+      "evidence_span": "客舱设备包括整机内饰及解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线电高度表",
+      "evidence_span": "导航设备包括无线电高度表"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线电罗盘",
+      "evidence_span": "导航设备包括无线电罗盘"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多模组合导航设备",
+      "evidence_span": "导航设备包括多模组合导航设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "图示导航系统",
+      "evidence_span": "导航设备包括图示导航系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直升机模拟对抗训练系统",
+      "evidence_span": "公司拥有直升机模拟对抗训练系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空部件维修服务",
+      "evidence_span": "公司主要从事航空部件维修服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化测试设备",
+      "evidence_span": "测控产品主要包括自动化测试设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "振动监测与健康管理设备",
+      "evidence_span": "测控产品主要包括振动监测与健康管理设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "总装集成测试平台",
+      "evidence_span": "测控产品主要包括总装集成测试平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整机线缆测试系统",
+      "evidence_span": "测控产品主要包括整机线缆测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视觉测量系统",
+      "evidence_span": "测控产品主要包括视觉测量系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞机原位测试设备",
+      "evidence_span": "地面保障设备主要包括飞机原位测试设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直升机伴随保障系统",
+      "evidence_span": "地面保障设备主要包括直升机伴随保障系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地面电源拖动系统",
+      "evidence_span": "地面保障设备主要包括地面电源拖动系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防务模拟训练",
+      "evidence_span": "仿真模拟训练设备领域产品主要包括防务模拟训练"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装备操作仿真模拟训练系统",
+      "evidence_span": "仿真模拟训练设备领域产品主要包括装备操作仿真模拟训练系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能库房",
+      "evidence_span": "分别推出了基于 RFID 等物联网技术的智能库房"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "企业科研管理信息系统",
+      "evidence_span": "分别推出了基于 RFID 等物联网技术的企业科研管理信息系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空复合材料结构件",
+      "evidence_span": "主要从事关键航空材料的研发、试验和生产业务，该公司前期将主要开展航空复合材料结构件研制生产和加工制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运输机航空内饰板",
+      "evidence_span": "交付产品包括有运输机航空内饰板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空座椅椅盆",
+      "evidence_span": "交付产品包括有航空座椅椅盆"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "客舱整体设计与工程实施能力",
+      "evidence_span": "具备飞机客舱一级系统设备的总包能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "空客",
+      "evidence_span": "部件维修能力覆盖了包括空客"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "波音",
+      "evidence_span": "部件维修能力覆盖了包括波音"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "巴航工业",
+      "evidence_span": "部件维修能力覆盖了包括巴航工业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中航工业",
+      "evidence_span": "部件维修能力覆盖了包括中航工业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "航空机载设备自主可控",
+      "evidence_span": "航空机载设备尤其是核心部件技术的自主可控是行业发展的必然方向"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空机载设备研制",
+        "evidence_span": "主要业务包括航空机载设备研制"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空维修",
+        "evidence_span": "主要业务包括航空维修"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "测控及地面保障设备研制",
+        "evidence_span": "主要业务包括测控及地面保障设备研制"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "复材制造",
+        "evidence_span": "主要业务包括复材制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能制造解决方案提供",
+        "evidence_span": "主要业务包括智能制造解决方案提供"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空航天和防务领域的综合性服务商",
+        "evidence_span": "公司是航空航天和防务领域的综合性服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "直升机抗坠毁座椅细分市场领先者",
+        "evidence_span": "公司作为直升机抗坠毁座椅细分市场领先者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空航天及防务领域综合性系统设备和解决方案供应商",
+        "evidence_span": "公司是航空航天及防务领域综合性系统设备和解决方案供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "原始设计制造商",
+        "evidence_span": "是原始设计制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "原始设备制造商",
+        "evidence_span": "原始设备制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "持续维修服务商",
+        "evidence_span": "持续维修服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空座椅",
+        "evidence_span": "核心产品与服务主要包括：航空座椅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空导航设备",
+        "evidence_span": "核心产品与服务主要包括：航空导航设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "厨卫系统设备",
+        "evidence_span": "核心产品与服务主要包括：厨卫系统设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞机内饰",
+        "evidence_span": "核心产品与服务主要包括：飞机内饰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客舱照明",
+        "evidence_span": "核心产品与服务主要包括：客舱照明"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防护装甲",
+        "evidence_span": "核心产品与服务主要包括：防护装甲"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "测试设备",
+        "evidence_span": "核心产品与服务主要包括：测试设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地面保障设备",
+        "evidence_span": "核心产品与服务主要包括：地面保障设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模拟训练装备",
+        "evidence_span": "核心产品与服务主要包括：模拟训练装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能工具管理系统",
+        "evidence_span": "核心产品与服务主要包括：智能工具管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能技术解决方案",
+        "evidence_span": "核心产品与服务主要包括：智能技术解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直升机抗坠毁座椅",
+        "evidence_span": "公司航空座椅产品包括直升机抗坠毁座椅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞机驾驶员和乘员座椅",
+        "evidence_span": "公司航空座椅产品包括飞机驾驶员和乘员座椅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空厨卫系统",
+        "evidence_span": "客舱设备包括航空厨卫系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "照明系统",
+        "evidence_span": "客舱设备包括照明系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客舱娱乐系统",
+        "evidence_span": "客舱设备包括客舱娱乐系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整机内饰及解决方案",
+        "evidence_span": "客舱设备包括整机内饰及解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线电高度表",
+        "evidence_span": "导航设备包括无线电高度表"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线电罗盘",
+        "evidence_span": "导航设备包括无线电罗盘"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多模组合导航设备",
+        "evidence_span": "导航设备包括多模组合导航设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "图示导航系统",
+        "evidence_span": "导航设备包括图示导航系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直升机模拟对抗训练系统",
+        "evidence_span": "公司拥有直升机模拟对抗训练系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空部件维修服务",
+        "evidence_span": "公司主要从事航空部件维修服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化测试设备",
+        "evidence_span": "测控产品主要包括自动化测试设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "振动监测与健康管理设备",
+        "evidence_span": "测控产品主要包括振动监测与健康管理设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "总装集成测试平台",
+        "evidence_span": "测控产品主要包括总装集成测试平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整机线缆测试系统",
+        "evidence_span": "测控产品主要包括整机线缆测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视觉测量系统",
+        "evidence_span": "测控产品主要包括视觉测量系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞机原位测试设备",
+        "evidence_span": "地面保障设备主要包括飞机原位测试设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直升机伴随保障系统",
+        "evidence_span": "地面保障设备主要包括直升机伴随保障系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地面电源拖动系统",
+        "evidence_span": "地面保障设备主要包括地面电源拖动系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防务模拟训练",
+        "evidence_span": "仿真模拟训练设备领域产品主要包括防务模拟训练"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装备操作仿真模拟训练系统",
+        "evidence_span": "仿真模拟训练设备领域产品主要包括装备操作仿真模拟训练系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能工具管理系统",
+        "evidence_span": "分别推出了基于 RFID 等物联网技术的智能工具管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能库房",
+        "evidence_span": "分别推出了基于 RFID 等物联网技术的智能库房"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "企业科研管理信息系统",
+        "evidence_span": "分别推出了基于 RFID 等物联网技术的企业科研管理信息系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空复合材料结构件",
+        "evidence_span": "主要从事关键航空材料的研发、试验和生产业务，该公司前期将主要开展航空复合材料结构件研制生产和加工制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运输机航空内饰板",
+        "evidence_span": "交付产品包括有运输机航空内饰板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空座椅椅盆",
+        "evidence_span": "交付产品包括有航空座椅椅盆"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "客舱整体设计与工程实施能力",
+        "evidence_span": "具备飞机客舱一级系统设备的总包能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "空客",
+        "evidence_span": "部件维修能力覆盖了包括空客"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "波音",
+        "evidence_span": "部件维修能力覆盖了包括波音"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "巴航工业",
+        "evidence_span": "部件维修能力覆盖了包括巴航工业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中航工业",
+        "evidence_span": "部件维修能力覆盖了包括中航工业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "航空机载设备自主可控",
+        "evidence_span": "航空机载设备尤其是核心部件技术的自主可控是行业发展的必然方向"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:02:39"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:11", "result": {"chunk_id": "6c90764bc7b8", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了汉威科技的具体动态（开发触觉传感器），属于公司公告或技术进展，是事件性信息，不包含稳定的题材知识。"}}

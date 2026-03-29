@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "d2dc837b8319", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落基于政策发布事件，但详细列举了半导体设备的关键组成部分（如EDA软件、光掩模、光刻胶、清洗设备等），这些是静态知识，可用于构建题材本体，因此混合了事件和知识。"}}

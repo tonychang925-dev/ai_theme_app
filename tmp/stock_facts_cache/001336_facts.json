@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "废气恶臭治理设备",
+      "evidence_span": "主营业务为废气恶臭治理设备的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水处理设备销售",
+      "evidence_span": "水处理设备销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设备维修服务",
+      "evidence_span": "设备维修服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "废气恶臭治理系统解决方案服务商",
+      "evidence_span": "废气恶臭治理系统解决方案服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物除臭设备",
+      "evidence_span": "生物除臭设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "离子除臭设备",
+      "evidence_span": "离子除臭设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他工艺除臭设备",
+      "evidence_span": "其他工艺除臭设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "离心机",
+      "evidence_span": "离心机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鼓风机",
+      "evidence_span": "鼓风机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "刮泥机",
+      "evidence_span": "刮泥机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水泵",
+      "evidence_span": "水泵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阀门",
+      "evidence_span": "阀门"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物除臭技术",
+      "evidence_span": "生物除臭技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "离子除臭技术",
+      "evidence_span": "离子除臭技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "耦合工艺技术",
+      "evidence_span": "耦合工艺技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "市政污水处理厂",
+      "evidence_span": "主要服务于市政污水处理厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "餐厨垃圾处理厂",
+      "evidence_span": "餐厨垃圾处理厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "养殖屠宰",
+      "evidence_span": "养殖屠宰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石油炼化",
+      "evidence_span": "石油炼化"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医药化工",
+      "evidence_span": "医药化工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "乳制品",
+      "evidence_span": "乳制品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "食品加工",
+      "evidence_span": "食品加工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "喷涂",
+      "evidence_span": "喷涂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "纺织印染",
+      "evidence_span": "纺织印染"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "酿酒",
+      "evidence_span": "酿酒"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "废气恶臭治理设备",
+        "evidence_span": "主营业务为废气恶臭治理设备的研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水处理设备销售",
+        "evidence_span": "水处理设备销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "设备维修服务",
+        "evidence_span": "设备维修服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "废气恶臭治理系统解决方案服务商",
+        "evidence_span": "废气恶臭治理系统解决方案服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物除臭设备",
+        "evidence_span": "生物除臭设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "离子除臭设备",
+        "evidence_span": "离子除臭设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他工艺除臭设备",
+        "evidence_span": "其他工艺除臭设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "离心机",
+        "evidence_span": "离心机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鼓风机",
+        "evidence_span": "鼓风机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "刮泥机",
+        "evidence_span": "刮泥机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水泵",
+        "evidence_span": "水泵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阀门",
+        "evidence_span": "阀门"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物除臭技术",
+        "evidence_span": "生物除臭技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "离子除臭技术",
+        "evidence_span": "离子除臭技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "耦合工艺技术",
+        "evidence_span": "耦合工艺技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "市政污水处理厂",
+        "evidence_span": "主要服务于市政污水处理厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "餐厨垃圾处理厂",
+        "evidence_span": "餐厨垃圾处理厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "养殖屠宰",
+        "evidence_span": "养殖屠宰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石油炼化",
+        "evidence_span": "石油炼化"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医药化工",
+        "evidence_span": "医药化工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "乳制品",
+        "evidence_span": "乳制品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "食品加工",
+        "evidence_span": "食品加工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "喷涂",
+        "evidence_span": "喷涂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "纺织印染",
+        "evidence_span": "纺织印染"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "酿酒",
+        "evidence_span": "酿酒"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:24:42"
+}

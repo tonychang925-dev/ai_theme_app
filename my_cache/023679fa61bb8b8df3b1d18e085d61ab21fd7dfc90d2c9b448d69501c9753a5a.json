@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "5cb78d6d6e59", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落主要描述SK海力士股价涨幅的市场表现事件，是纯事件性动态，没有提供HBM存储的静态知识。"}}

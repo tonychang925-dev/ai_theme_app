@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "石膏板",
+      "evidence_span": "公司聚焦石膏板主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "系统解决方案",
+      "evidence_span": "公司聚焦石膏板主业并延伸至系统解决方案"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "防水系统",
+      "evidence_span": "防水系统"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "涂料粉料砂浆系统",
+      "evidence_span": "涂料粉料砂浆系统"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大的石膏板产业集团",
+      "evidence_span": "公司是全球最大的石膏板产业集团"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国最大的新型建材产业集团",
+      "evidence_span": "中国最大的新型建材产业集团"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "防水行业上市公司中的唯一央企",
+      "evidence_span": "公司是防水行业上市公司中的唯一央企"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石膏板龙骨万能板矿棉板“全屋装配”室内系统",
+      "evidence_span": "石膏板龙骨万能板矿棉板“全屋装配”室内系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金邦板装饰保温节能一体化外墙系统",
+      "evidence_span": "金邦板装饰保温节能一体化外墙系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防水系统",
+      "evidence_span": "防水系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涂料粉料砂浆系统",
+      "evidence_span": "涂料粉料砂浆系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "“龙牌”石膏板",
+      "evidence_span": "“龙牌”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "“泰山”石膏板",
+      "evidence_span": "“泰山”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "“梦牌”系列产品",
+      "evidence_span": "“梦牌”系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "龙骨",
+      "evidence_span": "龙骨"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "五百强房企",
+      "evidence_span": "从五百强房企防水材料首选率来看"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "石膏板",
+        "evidence_span": "公司聚焦石膏板主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "系统解决方案",
+        "evidence_span": "公司聚焦石膏板主业并延伸至系统解决方案"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "防水系统",
+        "evidence_span": "防水系统"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "涂料粉料砂浆系统",
+        "evidence_span": "涂料粉料砂浆系统"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大的石膏板产业集团",
+        "evidence_span": "公司是全球最大的石膏板产业集团"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国最大的新型建材产业集团",
+        "evidence_span": "中国最大的新型建材产业集团"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "防水行业上市公司中的唯一央企",
+        "evidence_span": "公司是防水行业上市公司中的唯一央企"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石膏板龙骨万能板矿棉板“全屋装配”室内系统",
+        "evidence_span": "石膏板龙骨万能板矿棉板“全屋装配”室内系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金邦板装饰保温节能一体化外墙系统",
+        "evidence_span": "金邦板装饰保温节能一体化外墙系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防水系统",
+        "evidence_span": "防水系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涂料粉料砂浆系统",
+        "evidence_span": "涂料粉料砂浆系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "“龙牌”石膏板",
+        "evidence_span": "“龙牌”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "“泰山”石膏板",
+        "evidence_span": "“泰山”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "“梦牌”系列产品",
+        "evidence_span": "“梦牌”系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "龙骨",
+        "evidence_span": "龙骨"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "五百强房企",
+        "evidence_span": "从五百强房企防水材料首选率来看"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:31:43"
+}

@@ -1,0 +1,344 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "有色金属采选",
+      "evidence_span": "公司主营业务为有色金属采选与冶炼"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "冶炼",
+      "evidence_span": "公司主营业务为有色金属采选与冶炼"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水力发电",
+      "evidence_span": "公司主营业务为水力发电"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铅锌矿的开采",
+      "evidence_span": "铅锌矿的开采"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "选矿",
+      "evidence_span": "选矿"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铅锌金属的冶炼",
+      "evidence_span": "铅锌金属的冶炼"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "附属产品的提炼",
+      "evidence_span": "附属产品的提炼"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铅锌行业上市公司",
+      "evidence_span": "公司在有色金属铅锌行业上市公司中"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锌锭",
+      "evidence_span": "主要产品为锌锭"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锌合金",
+      "evidence_span": "锌合金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力",
+      "evidence_span": "电力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铅精矿",
+      "evidence_span": "铅精矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锗精矿",
+      "evidence_span": "锗精矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银精矿",
+      "evidence_span": "银精矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镉锭",
+      "evidence_span": "镉锭"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超精细锌粉",
+      "evidence_span": "超精细锌粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫酸",
+      "evidence_span": "硫酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "副产物铅渣",
+      "evidence_span": "副产物铅渣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铜精矿",
+      "evidence_span": "铜精矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锌水",
+      "evidence_span": "锌锭（锌水）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氧化锌粉",
+      "evidence_span": "产出氧化锌粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高氯粉",
+      "evidence_span": "高氯粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸汽",
+      "evidence_span": "蒸汽"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "次氧化锌",
+      "evidence_span": "次氧化锌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "亚硫酸锌",
+      "evidence_span": "亚硫酸锌"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "湿法冶炼技术",
+      "evidence_span": "公司锌厂利用湿法冶炼技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "喷吹锌粉技术",
+      "evidence_span": "喷吹锌粉技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锌渣综合回收系统技术",
+      "evidence_span": "锌渣综合回收系统技术的改造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氧化锌粉脱氟氯技术",
+      "evidence_span": "氧化锌粉脱氟氯技术的改造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "从锌冶炼渣中制取铁的技术",
+      "evidence_span": "从锌冶炼渣中制取铁的技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锅炉低氮燃烧技术",
+      "evidence_span": "锅炉低氮燃烧技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "提高沸腾炉炉床能力的技术",
+      "evidence_span": "提高沸腾炉炉床能力的技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "提高碱洗铜渣脱氯率的技术",
+      "evidence_span": "提高碱洗铜渣脱氯率的技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "降低制酸尾气排放的技术",
+      "evidence_span": "降低制酸尾气排放的技术研究"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "有色金属采选与冶炼",
+        "evidence_span": "公司主营业务为有色金属采选与冶炼"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水力发电",
+        "evidence_span": "公司主营业务为水力发电"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铅锌矿的开采",
+        "evidence_span": "铅锌矿的开采"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "选矿",
+        "evidence_span": "选矿"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铅锌金属的冶炼",
+        "evidence_span": "铅锌金属的冶炼"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "附属产品的提炼",
+        "evidence_span": "附属产品的提炼"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铅锌行业上市公司",
+        "evidence_span": "公司在有色金属铅锌行业上市公司中"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锌锭",
+        "evidence_span": "主要产品为锌锭"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锌合金",
+        "evidence_span": "锌合金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力",
+        "evidence_span": "电力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铅精矿",
+        "evidence_span": "铅精矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锗精矿",
+        "evidence_span": "锗精矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银精矿",
+        "evidence_span": "银精矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镉锭",
+        "evidence_span": "镉锭"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超精细锌粉",
+        "evidence_span": "超精细锌粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫酸",
+        "evidence_span": "硫酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "副产物铅渣",
+        "evidence_span": "副产物铅渣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铜精矿",
+        "evidence_span": "铜精矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锌水",
+        "evidence_span": "锌锭（锌水）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氧化锌粉",
+        "evidence_span": "产出氧化锌粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高氯粉",
+        "evidence_span": "高氯粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸汽",
+        "evidence_span": "蒸汽"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "次氧化锌",
+        "evidence_span": "次氧化锌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "亚硫酸锌",
+        "evidence_span": "亚硫酸锌"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "湿法冶炼技术",
+        "evidence_span": "公司锌厂利用湿法冶炼技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "喷吹锌粉技术",
+        "evidence_span": "喷吹锌粉技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锌渣综合回收系统技术",
+        "evidence_span": "锌渣综合回收系统技术的改造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氧化锌粉脱氟氯技术",
+        "evidence_span": "氧化锌粉脱氟氯技术的改造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "从锌冶炼渣中制取铁的技术",
+        "evidence_span": "从锌冶炼渣中制取铁的技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锅炉低氮燃烧技术",
+        "evidence_span": "锅炉低氮燃烧技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "提高沸腾炉炉床能力的技术",
+        "evidence_span": "提高沸腾炉炉床能力的技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "提高碱洗铜渣脱氯率的技术",
+        "evidence_span": "提高碱洗铜渣脱氯率的技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "降低制酸尾气排放的技术",
+        "evidence_span": "降低制酸尾气排放的技术研究"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:02:43"
+}

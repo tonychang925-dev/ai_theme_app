@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "水电",
+      "evidence_span": "清洁能源业务以水电和生物质能发电为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生物质能发电",
+      "evidence_span": "清洁能源业务以水电和生物质能发电为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态纸餐具",
+      "evidence_span": "生态纸餐具业务空间广阔"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源汽车零部件",
+      "evidence_span": "新能源汽车零部件发展趋势良好"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "清洁能源优质企业",
+      "evidence_span": "清洁能源优质企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "清洁可再生能源发电的服务商",
+      "evidence_span": "聚焦清洁可再生能源发电的服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水电发电",
+      "evidence_span": "水电发电量22.75亿千瓦时"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物质能发电",
+      "evidence_span": "生物质能发电量20.53亿千瓦时"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纸餐具",
+      "evidence_span": "纸餐具产能居亚洲第一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生态植物纤维制品",
+      "evidence_span": "新丰年产6.8万吨生态植物纤维制品一期项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "本色消费类用纸",
+      "evidence_span": "本色消费类用纸主要为原纸（半成品）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源重卡变速箱",
+      "evidence_span": "新能源重卡变速箱实现销售量6.000台左右"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双电机轴产品",
+      "evidence_span": "双电机轴产品正式进入比亚迪供应体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "双电机轴产品正式进入比亚迪供应体系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳中和、碳达峰",
+      "evidence_span": "碳中和、碳达峰政策推进过程中"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "限塑令推广",
+      "evidence_span": "有望受益于限塑令推广"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "水电",
+        "evidence_span": "清洁能源业务以水电和生物质能发电为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生物质能发电",
+        "evidence_span": "清洁能源业务以水电和生物质能发电为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态纸餐具",
+        "evidence_span": "生态纸餐具业务空间广阔"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源汽车零部件",
+        "evidence_span": "新能源汽车零部件发展趋势良好"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "清洁能源优质企业",
+        "evidence_span": "清洁能源优质企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "清洁可再生能源发电的服务商",
+        "evidence_span": "聚焦清洁可再生能源发电的服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水电发电",
+        "evidence_span": "水电发电量22.75亿千瓦时"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物质能发电",
+        "evidence_span": "生物质能发电量20.53亿千瓦时"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纸餐具",
+        "evidence_span": "纸餐具产能居亚洲第一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生态植物纤维制品",
+        "evidence_span": "新丰年产6.8万吨生态植物纤维制品一期项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "本色消费类用纸",
+        "evidence_span": "本色消费类用纸主要为原纸（半成品）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源重卡变速箱",
+        "evidence_span": "新能源重卡变速箱实现销售量6.000台左右"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双电机轴产品",
+        "evidence_span": "双电机轴产品正式进入比亚迪供应体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "双电机轴产品正式进入比亚迪供应体系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳中和、碳达峰",
+        "evidence_span": "碳中和、碳达峰政策推进过程中"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "限塑令推广",
+        "evidence_span": "有望受益于限塑令推广"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:08:09"
+}

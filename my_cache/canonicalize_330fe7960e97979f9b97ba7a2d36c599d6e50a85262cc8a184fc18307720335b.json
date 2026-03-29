@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:49:02", "result": {"span_uid": "b540384828c0", "action": "rewrite", "canonical_text": "建筑设计方法和技术不断提升，例如BIM技术和各类计算模拟软件工具的应用。", "final_type": "related", "final_role": "设计技术工具", "stability": "medium", "reason": "原文描述建筑设计中的技术应用，是关联技术信息，改写后去除了时间性表述，使其更稳定。"}}

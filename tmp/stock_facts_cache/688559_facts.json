@@ -1,0 +1,484 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "动力电池激光",
+      "evidence_span": "公司主要产品包括动力电池激光及自动化设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化设备",
+      "evidence_span": "公司主要产品包括动力电池激光及自动化设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "3C消费类电子激光",
+      "evidence_span": "公司主要产品包括3C消费类电子激光及自动化设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "钣金激光切割设备",
+      "evidence_span": "公司主要产品包括钣金激光切割设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏激光",
+      "evidence_span": "公司主要产品包括光伏激光及自动化设备"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "激光自动化设备领军者",
+      "evidence_span": "激光自动化设备领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "平台型激光设备加工商",
+      "evidence_span": "海目星领先的平台型激光设备加工商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "激光锂电设备双轮驱动",
+      "evidence_span": "激光锂电设备双轮驱动"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专用设备制造商",
+      "evidence_span": "激光应用为主的专用设备制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速激光制片机",
+      "evidence_span": "高速激光制片机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光裁断一体机",
+      "evidence_span": "激光裁断一体机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光切割分条一体机",
+      "evidence_span": "激光切割分条一体机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光清洗机",
+      "evidence_span": "激光清洗机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贴边滚焊机",
+      "evidence_span": "贴边滚焊机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电芯装配线",
+      "evidence_span": "电芯装配线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电芯干燥线",
+      "evidence_span": "电芯干燥线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光打标设备",
+      "evidence_span": "通用及高精密激光打标设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光焊接设备",
+      "evidence_span": "激光焊接设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光切割设备",
+      "evidence_span": "激光切割设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PCBA除胶、点胶设备",
+      "evidence_span": "PCBA除胶、点胶设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3C电池装配与PACK自动化设备",
+      "evidence_span": "3C电池装配与PACK自动化设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钣金激光切板机",
+      "evidence_span": "钣金激光切板机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钣金激光管材切割机",
+      "evidence_span": "钣金激光管材切割机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动激光开槽设备",
+      "evidence_span": "全自动激光开槽设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动激光掺杂设备",
+      "evidence_span": "全自动激光掺杂设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动无损激光划裂设备",
+      "evidence_span": "全自动无损激光划裂设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Topcon激光微损设备",
+      "evidence_span": "主要产品为Topcon激光微损设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光极耳切割技术",
+      "evidence_span": "激光极耳切割技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光焊接工艺",
+      "evidence_span": "激光焊接工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模块化设计",
+      "evidence_span": "采用模块化设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "兼容各种极片的规格尺寸",
+      "evidence_span": "兼容各种极片的规格尺寸"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "适应更薄基材",
+      "evidence_span": "适应更薄基材"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "兼容卷绕和叠片工艺",
+      "evidence_span": "兼容卷绕和叠片工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "粉尘及毛刺解决方案",
+      "evidence_span": "提供有效的粉尘及毛刺解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "4680大圆柱电池激光切割技术",
+      "evidence_span": "4680大圆柱电池激光切割技术分析"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "与宁德时代深入合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中创新航",
+      "evidence_span": "与中创新航深入合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特斯拉",
+      "evidence_span": "与特斯拉深入合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ATL",
+      "evidence_span": "宁德时代、ATL、力神、中创新航、蜂巢能源等企业量产应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "力神",
+      "evidence_span": "宁德时代、ATL、力神、中创新航、蜂巢能源等企业量产应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蜂巢能源",
+      "evidence_span": "宁德时代、ATL、力神、中创新航、蜂巢能源等企业量产应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "CATL",
+      "evidence_span": "客户覆盖CATL、中航锂电、长城汽车、蜂巢能源、亿纬锂能等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中航锂电",
+      "evidence_span": "客户覆盖CATL、中航锂电、长城汽车、蜂巢能源、亿纬锂能等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城汽车",
+      "evidence_span": "客户覆盖CATL、中航锂电、长城汽车、蜂巢能源、亿纬锂能等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿纬锂能",
+      "evidence_span": "客户覆盖CATL、中航锂电、长城汽车、蜂巢能源、亿纬锂能等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "晶科能源",
+      "evidence_span": "公司光伏业务获得晶科能源10.67亿元中标通知"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益电池厂扩张红利",
+      "evidence_span": "受益电池厂扩张红利"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于特斯拉4680电池技术的发展",
+      "evidence_span": "有望充分受益于特斯拉4680电池技术的发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "动力电池激光及自动化设备",
+        "evidence_span": "公司主要产品包括动力电池激光及自动化设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "3C消费类电子激光及自动化设备",
+        "evidence_span": "公司主要产品包括3C消费类电子激光及自动化设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "钣金激光切割设备",
+        "evidence_span": "公司主要产品包括钣金激光切割设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏激光及自动化设备",
+        "evidence_span": "公司主要产品包括光伏激光及自动化设备"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "激光自动化设备领军者",
+        "evidence_span": "激光自动化设备领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "平台型激光设备加工商",
+        "evidence_span": "海目星领先的平台型激光设备加工商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "激光锂电设备双轮驱动",
+        "evidence_span": "激光锂电设备双轮驱动"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专用设备制造商",
+        "evidence_span": "激光应用为主的专用设备制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速激光制片机",
+        "evidence_span": "高速激光制片机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光裁断一体机",
+        "evidence_span": "激光裁断一体机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光切割分条一体机",
+        "evidence_span": "激光切割分条一体机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光清洗机",
+        "evidence_span": "激光清洗机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贴边滚焊机",
+        "evidence_span": "贴边滚焊机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电芯装配线",
+        "evidence_span": "电芯装配线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电芯干燥线",
+        "evidence_span": "电芯干燥线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光打标设备",
+        "evidence_span": "通用及高精密激光打标设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光焊接设备",
+        "evidence_span": "激光焊接设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光切割设备",
+        "evidence_span": "激光切割设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PCBA除胶、点胶设备",
+        "evidence_span": "PCBA除胶、点胶设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3C电池装配与PACK自动化设备",
+        "evidence_span": "3C电池装配与PACK自动化设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钣金激光切板机",
+        "evidence_span": "钣金激光切板机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钣金激光管材切割机",
+        "evidence_span": "钣金激光管材切割机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动激光开槽设备",
+        "evidence_span": "全自动激光开槽设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动激光掺杂设备",
+        "evidence_span": "全自动激光掺杂设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动无损激光划裂设备",
+        "evidence_span": "全自动无损激光划裂设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Topcon激光微损设备",
+        "evidence_span": "主要产品为Topcon激光微损设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光极耳切割技术",
+        "evidence_span": "激光极耳切割技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光焊接工艺",
+        "evidence_span": "激光焊接工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模块化设计",
+        "evidence_span": "采用模块化设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "兼容各种极片的规格尺寸",
+        "evidence_span": "兼容各种极片的规格尺寸"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "适应更薄基材",
+        "evidence_span": "适应更薄基材"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "兼容卷绕和叠片工艺",
+        "evidence_span": "兼容卷绕和叠片工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "粉尘及毛刺解决方案",
+        "evidence_span": "提供有效的粉尘及毛刺解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "4680大圆柱电池激光切割技术",
+        "evidence_span": "4680大圆柱电池激光切割技术分析"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "与宁德时代深入合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中创新航",
+        "evidence_span": "与中创新航深入合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特斯拉",
+        "evidence_span": "与特斯拉深入合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ATL",
+        "evidence_span": "宁德时代、ATL、力神、中创新航、蜂巢能源等企业量产应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "力神",
+        "evidence_span": "宁德时代、ATL、力神、中创新航、蜂巢能源等企业量产应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蜂巢能源",
+        "evidence_span": "宁德时代、ATL、力神、中创新航、蜂巢能源等企业量产应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "CATL",
+        "evidence_span": "客户覆盖CATL、中航锂电、长城汽车、蜂巢能源、亿纬锂能等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中航锂电",
+        "evidence_span": "客户覆盖CATL、中航锂电、长城汽车、蜂巢能源、亿纬锂能等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城汽车",
+        "evidence_span": "客户覆盖CATL、中航锂电、长城汽车、蜂巢能源、亿纬锂能等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿纬锂能",
+        "evidence_span": "客户覆盖CATL、中航锂电、长城汽车、蜂巢能源、亿纬锂能等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "晶科能源",
+        "evidence_span": "公司光伏业务获得晶科能源10.67亿元中标通知"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益电池厂扩张红利",
+        "evidence_span": "受益电池厂扩张红利"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于特斯拉4680电池技术的发展",
+        "evidence_span": "有望充分受益于特斯拉4680电池技术的发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:50:35"
+}

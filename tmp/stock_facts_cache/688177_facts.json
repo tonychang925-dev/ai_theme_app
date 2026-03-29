@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "创新药研发",
+      "evidence_span": "主营创新药和生物类似药的研产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生物类似药研发",
+      "evidence_span": "主营创新药和生物类似药的研产"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "创新型生物制药企业",
+      "evidence_span": "是一家以创新药和生物类似药研发为核心的创新型生物制药企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阿达木单抗注射液",
+      "evidence_span": "格乐立（通用名：阿达木单抗注射液）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贝伐珠单抗注射液",
+      "evidence_span": "普贝希（通用名：贝伐珠单抗注射液）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "托珠单抗注射液",
+      "evidence_span": "施瑞立（通用名：托珠单抗注射液）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双特异性中和抗体",
+      "evidence_span": "BAT2022是由公司自主研发的双特异性中和抗体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗体药物偶联物",
+      "evidence_span": "BAT8006是公司开发的靶向叶酸受体α（FRα）的抗体药物偶联物（ADC）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "巴替非班",
+      "evidence_span": "BAT2094（巴替非班）目前处于国内上市申请阶段"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "戈利木单抗",
+      "evidence_span": "BAT2506（戈利木单抗）目前处于全球III期临床研究阶段"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乌司奴单抗注射液",
+      "evidence_span": "BAT2206（乌司奴单抗）目前正在开展治疗斑块状银屑病的全球III期临床研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新一代ADC技术平台",
+      "evidence_span": "随着公司新一代ADC技术平台搭建完毕"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "可剪切连接子",
+      "evidence_span": "通过公司自主研发的可剪切连接子"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "百济神州有限公司",
+      "evidence_span": "与百济神州有限公司签署授权、分销、供货协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "CipaGufFZLLC",
+      "evidence_span": "与CipaGufFZLLC开展授权许可及商业化合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "BiommSA",
+      "evidence_span": "与BiommSA开展授权许可及商业化合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "SandozAG",
+      "evidence_span": "与SandozAG开展授权许可及商业化合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Pharmapark LLC",
+      "evidence_span": "与Pharmapark LLC先后就BAT2206和BAT2506达成合作"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "创新药研发",
+        "evidence_span": "主营创新药和生物类似药的研产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生物类似药研发",
+        "evidence_span": "主营创新药和生物类似药的研产"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "创新型生物制药企业",
+        "evidence_span": "是一家以创新药和生物类似药研发为核心的创新型生物制药企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阿达木单抗注射液",
+        "evidence_span": "格乐立（通用名：阿达木单抗注射液）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贝伐珠单抗注射液",
+        "evidence_span": "普贝希（通用名：贝伐珠单抗注射液）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "托珠单抗注射液",
+        "evidence_span": "施瑞立（通用名：托珠单抗注射液）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双特异性中和抗体",
+        "evidence_span": "BAT2022是由公司自主研发的双特异性中和抗体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗体药物偶联物",
+        "evidence_span": "BAT8006是公司开发的靶向叶酸受体α（FRα）的抗体药物偶联物（ADC）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "巴替非班",
+        "evidence_span": "BAT2094（巴替非班）目前处于国内上市申请阶段"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "戈利木单抗",
+        "evidence_span": "BAT2506（戈利木单抗）目前处于全球III期临床研究阶段"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乌司奴单抗注射液",
+        "evidence_span": "BAT2206（乌司奴单抗）目前正在开展治疗斑块状银屑病的全球III期临床研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新一代ADC技术平台",
+        "evidence_span": "随着公司新一代ADC技术平台搭建完毕"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "可剪切连接子",
+        "evidence_span": "通过公司自主研发的可剪切连接子"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "百济神州有限公司",
+        "evidence_span": "与百济神州有限公司签署授权、分销、供货协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "CipaGufFZLLC",
+        "evidence_span": "与CipaGufFZLLC开展授权许可及商业化合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "BiommSA",
+        "evidence_span": "与BiommSA开展授权许可及商业化合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "SandozAG",
+        "evidence_span": "与SandozAG开展授权许可及商业化合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Biogen International GmbH",
+        "evidence_span": "百奥泰与Biogen International GmbH于2021年4月签署授权许可与商业化协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Hikma Pharmaceuticals USA Inc.",
+        "evidence_span": "与Hikma Pharmaceuticals USA Inc.签署授权许可与商业化协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Pharmapark LLC",
+        "evidence_span": "与Pharmapark LLC先后就BAT2206和BAT2506达成合作"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:31:01"
+}

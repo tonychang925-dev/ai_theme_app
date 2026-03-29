@@ -1,0 +1,139 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "酵母",
+      "evidence_span": "公司围绕酵母主业进行多元化"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "健康食品配料",
+      "evidence_span": "聚焦酵母、健康食品配料、营养保健食品、生物新技术、新型健康包材实现五大产业布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "营养保健食品",
+      "evidence_span": "聚焦酵母、健康食品配料、营养保健食品、生物新技术、新型健康包材实现五大产业布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生物新技术",
+      "evidence_span": "聚焦酵母、健康食品配料、营养保健食品、生物新技术、新型健康包材实现五大产业布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型健康包材",
+      "evidence_span": "聚焦酵母、健康食品配料、营养保健食品、生物新技术、新型健康包材实现五大产业布局"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "酵母龙头",
+      "evidence_span": "产销规模国内第一全球第二的酵母龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球第二",
+      "evidence_span": "安琪成为全球第二"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酵母系列",
+      "evidence_span": "酵母系列收入占比约75%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "包装",
+      "evidence_span": "2021年公司包装、奶制品、制糖收入分别占比3.93%、0.59%和9.84%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "奶制品",
+      "evidence_span": "2021年公司包装、奶制品、制糖收入分别占比3.93%、0.59%和9.84%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制糖",
+      "evidence_span": "2021年公司包装、奶制品、制糖收入分别占比3.93%、0.59%和9.84%"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "食品厂",
+      "evidence_span": "酵母产品多销向食品厂、面包厂等B端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "面包厂",
+      "evidence_span": "酵母产品多销向食品厂、面包厂等B端客户"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "酵母",
+        "evidence_span": "公司围绕酵母主业进行多元化"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "健康食品配料",
+        "evidence_span": "聚焦酵母、健康食品配料、营养保健食品、生物新技术、新型健康包材实现五大产业布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "营养保健食品",
+        "evidence_span": "聚焦酵母、健康食品配料、营养保健食品、生物新技术、新型健康包材实现五大产业布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生物新技术",
+        "evidence_span": "聚焦酵母、健康食品配料、营养保健食品、生物新技术、新型健康包材实现五大产业布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型健康包材",
+        "evidence_span": "聚焦酵母、健康食品配料、营养保健食品、生物新技术、新型健康包材实现五大产业布局"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "酵母龙头",
+        "evidence_span": "产销规模国内第一全球第二的酵母龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球第二",
+        "evidence_span": "安琪成为全球第二"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酵母系列",
+        "evidence_span": "酵母系列收入占比约75%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "包装",
+        "evidence_span": "2021年公司包装、奶制品、制糖收入分别占比3.93%、0.59%和9.84%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "奶制品",
+        "evidence_span": "2021年公司包装、奶制品、制糖收入分别占比3.93%、0.59%和9.84%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制糖",
+        "evidence_span": "2021年公司包装、奶制品、制糖收入分别占比3.93%、0.59%和9.84%"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "食品厂",
+        "evidence_span": "酵母产品多销向食品厂、面包厂等B端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "面包厂",
+        "evidence_span": "酵母产品多销向食品厂、面包厂等B端客户"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:51:30"
+}

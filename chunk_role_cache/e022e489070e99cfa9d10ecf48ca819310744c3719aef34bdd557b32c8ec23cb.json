@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "88d69722eac4", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述国资委关于央企在卫星导航等领域使用创新产品的政策声明，属于政策动态，没有提供卫星互联网的静态知识。"}}

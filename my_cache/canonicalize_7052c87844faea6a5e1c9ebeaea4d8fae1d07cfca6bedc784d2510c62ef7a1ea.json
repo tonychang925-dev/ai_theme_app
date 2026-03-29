@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:36:05", "result": {"span_uid": "2adda6138d86", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述具体事件（中国航空工业集团参展巴黎航展），属于新闻事件报道，无法整理成稳定、可独立成立的知识块。"}}

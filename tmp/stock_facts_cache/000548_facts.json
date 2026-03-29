@@ -1,0 +1,124 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高速公路建设运营",
+      "evidence_span": "公司主营业务为高速公路建设运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产管理",
+      "evidence_span": "公司主营业务为资产管理和物业服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物业服务",
+      "evidence_span": "公司主营业务为资产管理和物业服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "酒店投资经营",
+      "evidence_span": "公司主营业务为酒店投资经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市综合体投资开发",
+      "evidence_span": "公司主营业务为城市综合体投资开发"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高速公路企业",
+      "evidence_span": "高速公路企业通行费收入因此受到影响"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "长沙绕南高速收费经营权",
+      "evidence_span": "公司拥有长沙绕南高速100%收费经营权"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物业服务",
+      "evidence_span": "资产管理和物业服务板块是公司经营收入来源之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酒店经营",
+      "evidence_span": "公司创立了“君逸”品牌开展酒店投资经营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "住宅地产开发",
+      "evidence_span": "业务主要集中在住宅地产开发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商业地产运作",
+      "evidence_span": "业务主要集中在商业地产运作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "业主和客户",
+      "evidence_span": "为业主和客户提供“全生命周期+全生活场景”等各类增值服务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高速公路建设运营",
+        "evidence_span": "公司主营业务为高速公路建设运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产管理和物业服务",
+        "evidence_span": "公司主营业务为资产管理和物业服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "酒店投资经营",
+        "evidence_span": "公司主营业务为酒店投资经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市综合体投资开发",
+        "evidence_span": "公司主营业务为城市综合体投资开发"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高速公路企业",
+        "evidence_span": "高速公路企业通行费收入因此受到影响"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "长沙绕南高速收费经营权",
+        "evidence_span": "公司拥有长沙绕南高速100%收费经营权"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物业服务",
+        "evidence_span": "资产管理和物业服务板块是公司经营收入来源之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酒店经营",
+        "evidence_span": "公司创立了“君逸”品牌开展酒店投资经营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "住宅地产开发",
+        "evidence_span": "业务主要集中在住宅地产开发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商业地产运作",
+        "evidence_span": "业务主要集中在商业地产运作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "业主和客户",
+        "evidence_span": "为业主和客户提供“全生命周期+全生活场景”等各类增值服务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:01:22"
+}

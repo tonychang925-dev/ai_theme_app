@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:04:06", "result": {"span_uid": "707a571a3a47", "action": "rewrite", "canonical_text": "东京电子和阿斯麦是关键的半导体设备供应商，其产品对芯片行业至关重要。", "final_type": "related", "final_role": "关键设备供应商", "stability": "high", "reason": "去事件化改写，移除政治背景和引用口吻，保留供应商重要性作为稳定知识。"}}

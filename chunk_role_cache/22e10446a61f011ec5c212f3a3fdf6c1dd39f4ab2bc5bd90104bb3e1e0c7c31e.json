@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "390df2d84bc3", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含静态知识（光刻胶保质期一般为3-6个月），但也涉及事件信息（日本断供导致供应紧张），因此属于混合内容，可能含有可用于题材本体构建的知识。"}}

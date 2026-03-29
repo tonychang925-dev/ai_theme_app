@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "fdc2d08c5a7f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：OpenAI CEO在美联储会议上发表关于AI破解身份验证的言论，属于时间性动态，没有提供静态的安全防护知识。"}}

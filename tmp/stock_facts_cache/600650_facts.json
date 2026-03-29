@@ -1,0 +1,559 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "客运业务",
+      "evidence_span": "以客运业和物流业为核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物流业务",
+      "evidence_span": "以客运业和物流业为核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车辆营运",
+      "evidence_span": "主要经营包括车辆营运和低温物流业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "低温物流业务",
+      "evidence_span": "主要经营包括车辆营运和低温物流业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "国际货代业务",
+      "evidence_span": "参股的锦海捷亚主要经营国际货代业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "仓储业务",
+      "evidence_span": "参股的上海浦东国际机场货运站有限公司经营仓储业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食品冷链业务",
+      "evidence_span": "食品冷链业务：多措并举推进提质增效"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "预制菜业务",
+      "evidence_span": "预制菜业务：聚焦菜品的研发、品控及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "上海国资委控股企业",
+      "evidence_span": "上海国资委控股企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性大型客运服务企业",
+      "evidence_span": "锦江汽车公司是上海市综合性大型客运服务企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "一级国际货运代理企业",
+      "evidence_span": "公司是经国家商务部、交通部、海关总署、民航总局批准的一级国际货运代理企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大小客车租赁",
+      "evidence_span": "以大小客车租赁、国宾接待、旅游长途客运、出租汽车、汽贸汽修、驾驶培训为主营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国宾接待",
+      "evidence_span": "以大小客车租赁、国宾接待、旅游长途客运、出租汽车、汽贸汽修、驾驶培训为主营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游长途客运",
+      "evidence_span": "以大小客车租赁、国宾接待、旅游长途客运、出租汽车、汽贸汽修、驾驶培训为主营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "出租汽车",
+      "evidence_span": "以大小客车租赁、国宾接待、旅游长途客运、出租汽车、汽贸汽修、驾驶培训为主营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽贸汽修",
+      "evidence_span": "以大小客车租赁、国宾接待、旅游长途客运、出租汽车、汽贸汽修、驾驶培训为主营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驾驶培训",
+      "evidence_span": "以大小客车租赁、国宾接待、旅游长途客运、出租汽车、汽贸汽修、驾驶培训为主营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "进口清关",
+      "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "干线运输",
+      "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷藏配送",
+      "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "销售代理",
+      "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仓配一体化服务",
+      "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中高端预制菜产品",
+      "evidence_span": "打造以“锦大师”品牌为核心的中高端预制菜产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海运进出口",
+      "evidence_span": "已发展成为以海运、空运进出口为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空运进出口",
+      "evidence_span": "已发展成为以海运、空运进出口为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "长江内支线船代",
+      "evidence_span": "集长江内支线船代、大件运输、铁水联运、铁海联运等多种业务为一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大件运输",
+      "evidence_span": "集长江内支线船代、大件运输、铁水联运、铁海联运等多种业务为一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁水联运",
+      "evidence_span": "集长江内支线船代、大件运输、铁水联运、铁海联运等多种业务为一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁海联运",
+      "evidence_span": "集长江内支线船代、大件运输、铁水联运、铁海联运等多种业务为一体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁路运输",
+      "evidence_span": "公司开发中欧、中亚、中俄的铁路运输业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多式联运",
+      "evidence_span": "开展江、海、河、铁等多式联运业务创新"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷链物流",
+      "evidence_span": "冷链物流方面，公司通过内部业务协同"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网约车",
+      "evidence_span": "推进网约车资质申办"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锦江出行平台",
+      "evidence_span": "开发锦江出行平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线上租车业务",
+      "evidence_span": "拓展线上租车业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "淮阳狮子头",
+      "evidence_span": "淮阳狮子头、老上海酱鸭、松仁玉米、本帮糖醋里脊、翡翠黑鱼片、干烧大虾等产品深受市场认可"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "老上海酱鸭",
+      "evidence_span": "淮阳狮子头、老上海酱鸭、松仁玉米、本帮糖醋里脊、翡翠黑鱼片、干烧大虾等产品深受市场认可"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "松仁玉米",
+      "evidence_span": "淮阳狮子头、老上海酱鸭、松仁玉米、本帮糖醋里脊、翡翠黑鱼片、干烧大虾等产品深受市场认可"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "本帮糖醋里脊",
+      "evidence_span": "淮阳狮子头、老上海酱鸭、松仁玉米、本帮糖醋里脊、翡翠黑鱼片、干烧大虾等产品深受市场认可"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "翡翠黑鱼片",
+      "evidence_span": "淮阳狮子头、老上海酱鸭、松仁玉米、本帮糖醋里脊、翡翠黑鱼片、干烧大虾等产品深受市场认可"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "干烧大虾",
+      "evidence_span": "淮阳狮子头、老上海酱鸭、松仁玉米、本帮糖醋里脊、翡翠黑鱼片、干烧大虾等产品深受市场认可"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化综合服务平台",
+      "evidence_span": "2023年重点推进数字化综合服务平台建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化冷库",
+      "evidence_span": "公司计划建设智能化冷库和智慧冷链物流平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧冷链物流平台",
+      "evidence_span": "公司计划建设智能化冷库和智慧冷链物流平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁隧道",
+      "evidence_span": "公司与中铁隧道、中铁科工、铁建重工等大型客户建立了地铁工程件运输服务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁科工",
+      "evidence_span": "公司与中铁隧道、中铁科工、铁建重工等大型客户建立了地铁工程件运输服务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁建重工",
+      "evidence_span": "公司与中铁隧道、中铁科工、铁建重工等大型客户建立了地铁工程件运输服务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "连锁餐饮",
+      "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "商超",
+      "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "饮料",
+      "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新零售",
+      "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奥乐齐",
+      "evidence_span": "进驻奥乐齐、第一食品等50余家商超门店"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "第一食品",
+      "evidence_span": "进驻奥乐齐、第一食品等50余家商超门店"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "锦江在线主业维持平稳，迪士尼叠加国改迎来良机"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "迪士尼",
+      "evidence_span": "迪士尼是公司发展重要契机"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "客运业务",
+        "evidence_span": "以客运业和物流业为核心业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物流业务",
+        "evidence_span": "以客运业和物流业为核心业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车辆营运",
+        "evidence_span": "主要经营包括车辆营运和低温物流业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "低温物流业务",
+        "evidence_span": "主要经营包括车辆营运和低温物流业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "国际货代业务",
+        "evidence_span": "参股的锦海捷亚主要经营国际货代业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "仓储业务",
+        "evidence_span": "参股的上海浦东国际机场货运站有限公司经营仓储业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食品冷链业务",
+        "evidence_span": "食品冷链业务：多措并举推进提质增效"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "预制菜业务",
+        "evidence_span": "预制菜业务：聚焦菜品的研发、品控及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "上海国资委控股企业",
+        "evidence_span": "上海国资委控股企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性大型客运服务企业",
+        "evidence_span": "锦江汽车公司是上海市综合性大型客运服务企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "一级国际货运代理企业",
+        "evidence_span": "公司是经国家商务部、交通部、海关总署、民航总局批准的一级国际货运代理企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大小客车租赁",
+        "evidence_span": "以大小客车租赁、国宾接待、旅游长途客运、出租汽车、汽贸汽修、驾驶培训为主营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国宾接待",
+        "evidence_span": "以大小客车租赁、国宾接待、旅游长途客运、出租汽车、汽贸汽修、驾驶培训为主营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游长途客运",
+        "evidence_span": "以大小客车租赁、国宾接待、旅游长途客运、出租汽车、汽贸汽修、驾驶培训为主营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "出租汽车",
+        "evidence_span": "以大小客车租赁、国宾接待、旅游长途客运、出租汽车、汽贸汽修、驾驶培训为主营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽贸汽修",
+        "evidence_span": "以大小客车租赁、国宾接待、旅游长途客运、出租汽车、汽贸汽修、驾驶培训为主营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驾驶培训",
+        "evidence_span": "以大小客车租赁、国宾接待、旅游长途客运、出租汽车、汽贸汽修、驾驶培训为主营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "进口清关",
+        "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "干线运输",
+        "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷藏配送",
+        "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "销售代理",
+        "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仓配一体化服务",
+        "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中高端预制菜产品",
+        "evidence_span": "打造以“锦大师”品牌为核心的中高端预制菜产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海运进出口",
+        "evidence_span": "已发展成为以海运、空运进出口为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空运进出口",
+        "evidence_span": "已发展成为以海运、空运进出口为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "长江内支线船代",
+        "evidence_span": "集长江内支线船代、大件运输、铁水联运、铁海联运等多种业务为一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大件运输",
+        "evidence_span": "集长江内支线船代、大件运输、铁水联运、铁海联运等多种业务为一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁水联运",
+        "evidence_span": "集长江内支线船代、大件运输、铁水联运、铁海联运等多种业务为一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁海联运",
+        "evidence_span": "集长江内支线船代、大件运输、铁水联运、铁海联运等多种业务为一体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁路运输",
+        "evidence_span": "公司开发中欧、中亚、中俄的铁路运输业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多式联运",
+        "evidence_span": "开展江、海、河、铁等多式联运业务创新"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷链物流",
+        "evidence_span": "冷链物流方面，公司通过内部业务协同"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网约车",
+        "evidence_span": "推进网约车资质申办"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锦江出行平台",
+        "evidence_span": "开发锦江出行平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线上租车业务",
+        "evidence_span": "拓展线上租车业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "淮阳狮子头",
+        "evidence_span": "淮阳狮子头、老上海酱鸭、松仁玉米、本帮糖醋里脊、翡翠黑鱼片、干烧大虾等产品深受市场认可"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "老上海酱鸭",
+        "evidence_span": "淮阳狮子头、老上海酱鸭、松仁玉米、本帮糖醋里脊、翡翠黑鱼片、干烧大虾等产品深受市场认可"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "松仁玉米",
+        "evidence_span": "淮阳狮子头、老上海酱鸭、松仁玉米、本帮糖醋里脊、翡翠黑鱼片、干烧大虾等产品深受市场认可"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "本帮糖醋里脊",
+        "evidence_span": "淮阳狮子头、老上海酱鸭、松仁玉米、本帮糖醋里脊、翡翠黑鱼片、干烧大虾等产品深受市场认可"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "翡翠黑鱼片",
+        "evidence_span": "淮阳狮子头、老上海酱鸭、松仁玉米、本帮糖醋里脊、翡翠黑鱼片、干烧大虾等产品深受市场认可"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "干烧大虾",
+        "evidence_span": "淮阳狮子头、老上海酱鸭、松仁玉米、本帮糖醋里脊、翡翠黑鱼片、干烧大虾等产品深受市场认可"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化综合服务平台",
+        "evidence_span": "2023年重点推进数字化综合服务平台建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化冷库",
+        "evidence_span": "公司计划建设智能化冷库和智慧冷链物流平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧冷链物流平台",
+        "evidence_span": "公司计划建设智能化冷库和智慧冷链物流平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁隧道",
+        "evidence_span": "公司与中铁隧道、中铁科工、铁建重工等大型客户建立了地铁工程件运输服务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁科工",
+        "evidence_span": "公司与中铁隧道、中铁科工、铁建重工等大型客户建立了地铁工程件运输服务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁建重工",
+        "evidence_span": "公司与中铁隧道、中铁科工、铁建重工等大型客户建立了地铁工程件运输服务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "连锁餐饮",
+        "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "商超",
+        "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "饮料",
+        "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新零售",
+        "evidence_span": "为连锁餐饮、商超、饮料、新零售等行业的客户提供进口清关、干线运输、冷藏配送、销售代理等一站式仓配一体化服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奥乐齐",
+        "evidence_span": "进驻奥乐齐、第一食品等50余家商超门店"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "第一食品",
+        "evidence_span": "进驻奥乐齐、第一食品等50余家商超门店"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "锦江在线主业维持平稳，迪士尼叠加国改迎来良机"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "迪士尼",
+        "evidence_span": "迪士尼是公司发展重要契机"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:53:30"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:33:29", "result": {"span_uid": "b08c094b6f57", "action": "rewrite", "canonical_text": "“泥石”导弹是一种采用两级固体推进技术的远程超重型弹道导弹。", "final_type": "related", "final_role": "特定导弹型号的推进技术", "stability": "high", "reason": "原文本包含具体使用事件，已去事件化改写为稳定技术特征描述，保留了推进方式和导弹类型的关键信息。"}}

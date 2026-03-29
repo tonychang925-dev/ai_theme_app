@@ -1,0 +1,399 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "化学电源",
+      "evidence_span": "公司主要从事化学电源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源储能",
+      "evidence_span": "新能源储能"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "燃料电池",
+      "evidence_span": "燃料电池"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "钠离子电池",
+      "evidence_span": "钠离子电池"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铅酸锂电龙头企业",
+      "evidence_span": "铅酸锂电龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "蓄电池行业外向型企业的领导性力量",
+      "evidence_span": "成长为中国蓄电池行业外向型企业的领导性力量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阀控式密封铅酸蓄电池",
+      "evidence_span": "主要产品涵盖阀控式密封铅酸蓄电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂离子电池",
+      "evidence_span": "锂离子电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池",
+      "evidence_span": "燃料电池三大品类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钠离子电池",
+      "evidence_span": "另外公司布局钠离子电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AGM系列铅酸蓄电池",
+      "evidence_span": "铅酸蓄电池涵盖 AGM 和胶体两大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "胶体系列铅酸蓄电池",
+      "evidence_span": "铅酸蓄电池涵盖 AGM 和胶体两大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸铁锂电池",
+      "evidence_span": "锂离子电池产品涵盖磷酸铁锂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钴酸锂电池",
+      "evidence_span": "钴酸锂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锰酸锂电池",
+      "evidence_span": "锰酸锂三大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池系统",
+      "evidence_span": "燃料电池系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池电堆",
+      "evidence_span": "燃料电池电堆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "膜电极",
+      "evidence_span": "膜电极"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃料电池发动机系统",
+      "evidence_span": "燃料电池发动机系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "314Ah长寿命标配系列储能产品",
+      "evidence_span": "314Ah 长寿命标配系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "580AH大容量长寿命系列储能产品",
+      "evidence_span": "580AH 大容量长寿命系列的储能产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "348Ah选代升级产品",
+      "evidence_span": "348Ah 选代升级产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高功率锂电产品",
+      "evidence_span": "公司高功率锂电产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电 UPS 系列",
+      "evidence_span": "锂电 UPS 系列"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CTB 技术",
+      "evidence_span": "针对性开发了\"CTB 技术(c1letobattery)"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高压化成/分容工艺",
+      "evidence_span": "采用高压化成/分容工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电芯单体设计容量 360AH",
+      "evidence_span": "电芯单体设计容量 360AH"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "单体短路保护结构",
+      "evidence_span": "采用了单体短路保护结构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通讯行业客户",
+      "evidence_span": "为通讯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电动交通工具行业客户",
+      "evidence_span": "电动交通工具"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "储能行业客户",
+      "evidence_span": "储能"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电力行业客户",
+      "evidence_span": "电力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "UPS行业客户",
+      "evidence_span": "UPS"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "IDC 数据中心行业客户",
+      "evidence_span": "IDC 数据中心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雄韬氢雄",
+      "evidence_span": "雄韬氢雄"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内知名乘用车车企",
+      "evidence_span": "与国内知名乘用车车企联合开发合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内知名车企",
+      "evidence_span": "主要同国内知名车企进行合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "UPS厂家",
+      "evidence_span": "为各大 UPS 厂家首选品牌"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "深度受益AI浪潮数据中心业务",
+      "evidence_span": "深度受益AI浪潮数据中心业务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "化学电源",
+        "evidence_span": "公司主要从事化学电源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源储能",
+        "evidence_span": "新能源储能"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "燃料电池",
+        "evidence_span": "燃料电池"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "钠离子电池",
+        "evidence_span": "钠离子电池"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铅酸锂电龙头企业",
+        "evidence_span": "铅酸锂电龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "蓄电池行业外向型企业的领导性力量",
+        "evidence_span": "成长为中国蓄电池行业外向型企业的领导性力量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阀控式密封铅酸蓄电池",
+        "evidence_span": "主要产品涵盖阀控式密封铅酸蓄电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂离子电池",
+        "evidence_span": "锂离子电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池",
+        "evidence_span": "燃料电池三大品类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钠离子电池",
+        "evidence_span": "另外公司布局钠离子电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AGM系列铅酸蓄电池",
+        "evidence_span": "铅酸蓄电池涵盖 AGM 和胶体两大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "胶体系列铅酸蓄电池",
+        "evidence_span": "铅酸蓄电池涵盖 AGM 和胶体两大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸铁锂电池",
+        "evidence_span": "锂离子电池产品涵盖磷酸铁锂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钴酸锂电池",
+        "evidence_span": "钴酸锂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锰酸锂电池",
+        "evidence_span": "锰酸锂三大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池系统",
+        "evidence_span": "燃料电池系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池电堆",
+        "evidence_span": "燃料电池电堆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "膜电极",
+        "evidence_span": "膜电极"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃料电池发动机系统",
+        "evidence_span": "燃料电池发动机系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "314Ah长寿命标配系列储能产品",
+        "evidence_span": "314Ah 长寿命标配系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "580AH大容量长寿命系列储能产品",
+        "evidence_span": "580AH 大容量长寿命系列的储能产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "348Ah选代升级产品",
+        "evidence_span": "348Ah 选代升级产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高功率锂电产品",
+        "evidence_span": "公司高功率锂电产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电 UPS 系列",
+        "evidence_span": "锂电 UPS 系列"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CTB 技术",
+        "evidence_span": "针对性开发了\"CTB 技术(c1letobattery)"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高压化成/分容工艺",
+        "evidence_span": "采用高压化成/分容工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电芯单体设计容量 360AH",
+        "evidence_span": "电芯单体设计容量 360AH"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "单体短路保护结构",
+        "evidence_span": "采用了单体短路保护结构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通讯行业客户",
+        "evidence_span": "为通讯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电动交通工具行业客户",
+        "evidence_span": "电动交通工具"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "储能行业客户",
+        "evidence_span": "储能"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电力行业客户",
+        "evidence_span": "电力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "UPS行业客户",
+        "evidence_span": "UPS"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "IDC 数据中心行业客户",
+        "evidence_span": "IDC 数据中心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雄韬氢雄",
+        "evidence_span": "雄韬氢雄"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内知名乘用车车企",
+        "evidence_span": "与国内知名乘用车车企联合开发合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内知名车企",
+        "evidence_span": "主要同国内知名车企进行合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "UPS厂家",
+        "evidence_span": "为各大 UPS 厂家首选品牌"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "深度受益AI浪潮数据中心业务",
+        "evidence_span": "深度受益AI浪潮数据中心业务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:24:37"
+}

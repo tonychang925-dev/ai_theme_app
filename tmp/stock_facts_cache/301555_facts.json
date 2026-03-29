@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种配方改性环氧树脂系列产品的研发",
+      "evidence_span": "公司主营业务为特种配方改性环氧树脂系列产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主营业务为特种配方改性环氧树脂系列产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营业务为特种配方改性环氧树脂系列产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "风电叶片用环氧树脂",
+      "evidence_span": "主要包括风电叶片用环氧树脂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型复合材料用环氧树脂",
+      "evidence_span": "新型复合材料用环氧树脂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子电气绝缘封装用环氧树脂",
+      "evidence_span": "电子电气绝缘封装用环氧树脂"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特种配方改性环氧树脂生产商",
+      "evidence_span": "公司属于制造业大类中的“化学原料和化学制品业”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电叶片用环氧树脂",
+      "evidence_span": "风电叶片用环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "真空灌注树脂",
+      "evidence_span": "风电叶片用环氧树脂系列产品主要包括真空灌注树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手糊树脂",
+      "evidence_span": "手糊树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模具树脂",
+      "evidence_span": "模具树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型复合材料用环氧树脂",
+      "evidence_span": "新型复合材料用环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阻燃复合材料用环氧树脂",
+      "evidence_span": "阻燃复合材料用环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预浸料用环氧树脂",
+      "evidence_span": "预浸料用环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "拉挤工艺用环氧树脂",
+      "evidence_span": "拉挤工艺用环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "缠绕工艺用环氧树脂",
+      "evidence_span": "缠绕工艺用环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "快速固化 RTM环氧树脂",
+      "evidence_span": "快速固化 RTM环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通用型真空灌注及手糊用环氧树脂",
+      "evidence_span": "通用型真空灌注及手糊用环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子电气绝缘封装用环氧树脂",
+      "evidence_span": "电子电气绝缘封装用环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED封装用环氧树脂",
+      "evidence_span": "LED封装用环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防水绝缘灌封用环氧树脂",
+      "evidence_span": "防水绝缘灌封用环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子元器件胶粘剂",
+      "evidence_span": "电子元器件胶粘剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "特种配方改性环氧树脂配方",
+      "evidence_span": "已积累大量核心技术和工艺配方"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产品持续创新和工艺创新能力",
+      "evidence_span": "具有较强的产品持续创新和工艺创新能力"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "风电叶片用环氧树脂市占率国内居前",
+      "evidence_span": "风电叶片用环氧树脂市占率国内居前"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种配方改性环氧树脂系列产品的研发、生产和销售",
+        "evidence_span": "公司主营业务为特种配方改性环氧树脂系列产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "风电叶片用环氧树脂",
+        "evidence_span": "主要包括风电叶片用环氧树脂"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型复合材料用环氧树脂",
+        "evidence_span": "新型复合材料用环氧树脂"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子电气绝缘封装用环氧树脂",
+        "evidence_span": "电子电气绝缘封装用环氧树脂"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特种配方改性环氧树脂生产商",
+        "evidence_span": "公司属于制造业大类中的“化学原料和化学制品业”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电叶片用环氧树脂",
+        "evidence_span": "风电叶片用环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "真空灌注树脂",
+        "evidence_span": "风电叶片用环氧树脂系列产品主要包括真空灌注树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手糊树脂",
+        "evidence_span": "手糊树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模具树脂",
+        "evidence_span": "模具树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型复合材料用环氧树脂",
+        "evidence_span": "新型复合材料用环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阻燃复合材料用环氧树脂",
+        "evidence_span": "阻燃复合材料用环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预浸料用环氧树脂",
+        "evidence_span": "预浸料用环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "拉挤工艺用环氧树脂",
+        "evidence_span": "拉挤工艺用环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "缠绕工艺用环氧树脂",
+        "evidence_span": "缠绕工艺用环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "快速固化 RTM环氧树脂",
+        "evidence_span": "快速固化 RTM环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通用型真空灌注及手糊用环氧树脂",
+        "evidence_span": "通用型真空灌注及手糊用环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子电气绝缘封装用环氧树脂",
+        "evidence_span": "电子电气绝缘封装用环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED封装用环氧树脂",
+        "evidence_span": "LED封装用环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防水绝缘灌封用环氧树脂",
+        "evidence_span": "防水绝缘灌封用环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子元器件胶粘剂",
+        "evidence_span": "电子元器件胶粘剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "特种配方改性环氧树脂配方",
+        "evidence_span": "已积累大量核心技术和工艺配方"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产品持续创新和工艺创新能力",
+        "evidence_span": "具有较强的产品持续创新和工艺创新能力"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "风电叶片用环氧树脂市占率国内居前",
+        "evidence_span": "风电叶片用环氧树脂市占率国内居前"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:51:42"
+}

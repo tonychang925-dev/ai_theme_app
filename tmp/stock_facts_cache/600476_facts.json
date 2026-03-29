@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "平台运营类业务",
+      "evidence_span": "平台运营类业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "软件开发业务",
+      "evidence_span": "软件开发业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "系统集成类业务",
+      "evidence_span": "统集成类业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "代理产品类业务",
+      "evidence_span": "代理产品类业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国邮政下属的软件和信息服务公司",
+      "evidence_span": "中国邮政下属的软件和信息服务公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车管平台",
+      "evidence_span": "车管平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物资平台",
+      "evidence_span": "物资平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚合支付平台",
+      "evidence_span": "聚合支付平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集邮选题项目",
+      "evidence_span": "集邮选题"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "邮政政务平台二期项目",
+      "evidence_span": "邮政政务平台二期"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普惠金融项目",
+      "evidence_span": "普惠金融项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中平迁移项目",
+      "evidence_span": "中平迁移项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化中心局项目",
+      "evidence_span": "数字化中心局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国际商业渠道项目",
+      "evidence_span": "国际商业渠道"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "同城运营项目",
+      "evidence_span": "同城运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能安防软硬件一体化解决方案",
+      "evidence_span": "智能安防加快向软硬件一体化解决方案转型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国产化核心IT设备及高端设备的维保服务",
+      "evidence_span": "国产化核心IT设备及高端设备的维保服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国产信创产品销售",
+      "evidence_span": "国产信创产品销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "北斗车载终端产品",
+      "evidence_span": "北斗车载终端产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IDC一体化建设解决方案",
+      "evidence_span": "IDC一体化建设解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据中台",
+      "evidence_span": "数据中台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "研发运维一体化平台",
+      "evidence_span": "研发运维一体化平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能闪存",
+      "evidence_span": "高性能闪存"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CMMI5软件能力成熟度模型认证",
+      "evidence_span": "CMMI5软件能力成熟度模型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ISO9001质量体系认证",
+      "evidence_span": "ISO9001质量体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ISO14001环境体系认证",
+      "evidence_span": "ISO14001环境体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ISO27001信息安全管理资质认证",
+      "evidence_span": "ISO27001信息安全管理资质"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ISO22301业务连续性管理体系认证",
+      "evidence_span": "ISO22301业务连续性管理体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ISO20000信息技术服务管理体系认证",
+      "evidence_span": "ISO20000信息技术服务管理体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ISO45001职业健康安全管理体系认证",
+      "evidence_span": "ISO45001职业健康安全管理体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国重汽",
+      "evidence_span": "中国重汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽解放",
+      "evidence_span": "一汽解放"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "突出国产替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "平台运营类业务",
+        "evidence_span": "平台运营类业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "软件开发业务",
+        "evidence_span": "软件开发业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "系统集成类业务",
+        "evidence_span": "统集成类业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "代理产品类业务",
+        "evidence_span": "代理产品类业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国邮政下属的软件和信息服务公司",
+        "evidence_span": "中国邮政下属的软件和信息服务公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车管平台",
+        "evidence_span": "车管平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物资平台",
+        "evidence_span": "物资平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚合支付平台",
+        "evidence_span": "聚合支付平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集邮选题项目",
+        "evidence_span": "集邮选题"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "邮政政务平台二期项目",
+        "evidence_span": "邮政政务平台二期"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普惠金融项目",
+        "evidence_span": "普惠金融项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中平迁移项目",
+        "evidence_span": "中平迁移项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化中心局项目",
+        "evidence_span": "数字化中心局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国际商业渠道项目",
+        "evidence_span": "国际商业渠道"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "同城运营项目",
+        "evidence_span": "同城运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能安防软硬件一体化解决方案",
+        "evidence_span": "智能安防加快向软硬件一体化解决方案转型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国产化核心IT设备及高端设备的维保服务",
+        "evidence_span": "国产化核心IT设备及高端设备的维保服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国产信创产品销售",
+        "evidence_span": "国产信创产品销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "北斗车载终端产品",
+        "evidence_span": "北斗车载终端产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IDC一体化建设解决方案",
+        "evidence_span": "IDC一体化建设解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据中台",
+        "evidence_span": "数据中台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "研发运维一体化平台",
+        "evidence_span": "研发运维一体化平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能闪存",
+        "evidence_span": "高性能闪存"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CMMI5软件能力成熟度模型认证",
+        "evidence_span": "CMMI5软件能力成熟度模型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ISO9001质量体系认证",
+        "evidence_span": "ISO9001质量体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ISO14001环境体系认证",
+        "evidence_span": "ISO14001环境体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ISO27001信息安全管理资质认证",
+        "evidence_span": "ISO27001信息安全管理资质"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ISO22301业务连续性管理体系认证",
+        "evidence_span": "ISO22301业务连续性管理体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ISO20000信息技术服务管理体系认证",
+        "evidence_span": "ISO20000信息技术服务管理体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ISO45001职业健康安全管理体系认证",
+        "evidence_span": "ISO45001职业健康安全管理体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国重汽",
+        "evidence_span": "中国重汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽解放",
+        "evidence_span": "一汽解放"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "突出国产替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:17:59"
+}

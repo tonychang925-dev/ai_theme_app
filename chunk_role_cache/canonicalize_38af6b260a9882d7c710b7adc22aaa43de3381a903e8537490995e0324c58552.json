@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:48:02", "result": {"span_uid": "946f2af3671a", "action": "rewrite", "canonical_text": "AR眼镜可配备OLED微显示屏并支持触控交互。", "final_type": "related", "final_role": "显示与交互技术", "stability": "medium", "reason": "该片段提到了OLED微显示屏和触控交互技术，去除了具体产品名称和售价，保留了通用技术特征，但信息较简略，稳定性中等。"}}

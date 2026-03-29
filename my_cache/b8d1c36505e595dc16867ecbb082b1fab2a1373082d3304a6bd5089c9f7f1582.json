@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "158ac1dee181", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含2024年中国电影票房数据、市场表现分析和具体影片票房信息，这些可能隐含影视市场的结构或趋势知识，但混合了时间性事件（如截至日期、年度比较），需要进一步裁决以提取稳定知识。"}}

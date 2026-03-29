@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T21:22:09", "result": {"span_uid": "695012405876", "action": "keep", "canonical_text": "春节档电影涵盖武侠、谍战、喜剧、科幻、动画等多元类型。", "final_type": "core", "final_role": "常见电影类型", "stability": "medium", "reason": "原文本直接描述了春节档电影的类型构成，是题材本体的重要组成部分。无需改写，已是一个相对完整、可独立理解的知识表达，但类型可能随年份变化，稳定性中等。"}}

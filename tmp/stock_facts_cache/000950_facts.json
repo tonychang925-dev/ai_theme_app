@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药商业",
+      "evidence_span": "公司现阶段主要从事医药商业、仓储物流、医药工业和研发等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "仓储物流",
+      "evidence_span": "公司现阶段主要从事医药商业、仓储物流、医药工业和研发等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药工业",
+      "evidence_span": "公司现阶段主要从事医药商业、仓储物流、医药工业和研发等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药研发",
+      "evidence_span": "公司现阶段主要从事医药商业、仓储物流、医药工业和研发等业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国三家经营特殊药品的全国性批发企业之一",
+      "evidence_span": "中国三家经营特殊药品的全国性批发企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国第二大麻精药品批发商",
+      "evidence_span": "是全国第二大麻精药品批发商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "供应链综合服务商",
+      "evidence_span": "逐步向“供应链综合服务商”转型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药品",
+      "evidence_span": "主营医药商业，涵盖药品、医疗器械、中药饮片、保健产品的医院纯销、商业批发、零售连锁、终端配送、仓储物流及供应链增值服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗器械",
+      "evidence_span": "主营医药商业，涵盖药品、医疗器械、中药饮片、保健产品的医院纯销、商业批发、零售连锁、终端配送、仓储物流及供应链增值服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药饮片",
+      "evidence_span": "主营医药商业，涵盖药品、医疗器械、中药饮片、保健产品的医院纯销、商业批发、零售连锁、终端配送、仓储物流及供应链增值服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保健产品",
+      "evidence_span": "主营医药商业，涵盖药品、医疗器械、中药饮片、保健产品的医院纯销、商业批发、零售连锁、终端配送、仓储物流及供应链增值服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "麻醉药品",
+      "evidence_span": "主要经营麻醉药品、第一类精神药品、第二类精神药品、药品类易制毒化学品单方制剂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第一类精神药品",
+      "evidence_span": "主要经营麻醉药品、第一类精神药品、第二类精神药品、药品类易制毒化学品单方制剂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第二类精神药品",
+      "evidence_span": "主要经营麻醉药品、第一类精神药品、第二类精神药品、药品类易制毒化学品单方制剂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药品类易制毒化学品单方制剂",
+      "evidence_span": "主要经营麻醉药品、第一类精神药品、第二类精神药品、药品类易制毒化学品单方制剂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药配方颗粒",
+      "evidence_span": "公司下属参股子公司重庆医药集团九隆现代中药有限公司，是一家中药配方颗粒生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三方医药物流",
+      "evidence_span": "同时开展第三方医药物流及药品进口保税业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药品进口保税业务",
+      "evidence_span": "同时开展第三方医药物流及药品进口保税业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "院内物流服务",
+      "evidence_span": "与各大医院开展医药物流延伸服务（院内物流——Supply Process＆ Distribution）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三方储配服务",
+      "evidence_span": "并逐步开展第三方储配业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药电商平台",
+      "evidence_span": "自建医药电商“重药云商”平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SPD供应链项目",
+      "evidence_span": "持续推进SPD供应链项目建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化系统",
+      "evidence_span": "公司高度重视并持续投入数字化建设，充分利用信息化手段，建设财务苍穹系统、审计预警系统，批零业务ERP系统、物流WMS系统等经营管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化物流技术",
+      "evidence_span": "公司借助互联网、物联网、大数据等高新技术和智能化物流技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "70000余家医疗机构",
+      "evidence_span": "为70000余家医疗机构提供医药批发服务和标准化、专业化、个性化与增值化的综合药事服务解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "14000余家国内外供应商",
+      "evidence_span": "与14000余家国内外供应商保持紧密合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "多家世界500强医药企业",
+      "evidence_span": "与多家世界500强医药企业保持长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "多家国家工信部排名前100强药品生产企业",
+      "evidence_span": "与多家国家工信部排名前100强药品生产企业建立长期良好合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际知名医疗器械生产商",
+      "evidence_span": "与国际知名医疗器械生产商建立长期稳定的商业配送关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "强生",
+      "evidence_span": "且是强生在安徽省唯一战略经销商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中元汇吉",
+      "evidence_span": "同时与中元汇吉签署战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内5家知名企业",
+      "evidence_span": "公司与国内5家知名企业是战略合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企混改",
+      "evidence_span": "重药控股2019H1业绩增长强劲，国企混改启动"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "医药流通",
+      "evidence_span": "重药控股集团优质资产注入，全面转型医药流通"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药商业",
+        "evidence_span": "公司现阶段主要从事医药商业、仓储物流、医药工业和研发等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "仓储物流",
+        "evidence_span": "公司现阶段主要从事医药商业、仓储物流、医药工业和研发等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药工业",
+        "evidence_span": "公司现阶段主要从事医药商业、仓储物流、医药工业和研发等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药研发",
+        "evidence_span": "公司现阶段主要从事医药商业、仓储物流、医药工业和研发等业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国三家经营特殊药品的全国性批发企业之一",
+        "evidence_span": "中国三家经营特殊药品的全国性批发企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国第二大麻精药品批发商",
+        "evidence_span": "是全国第二大麻精药品批发商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "供应链综合服务商",
+        "evidence_span": "逐步向“供应链综合服务商”转型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药品",
+        "evidence_span": "主营医药商业，涵盖药品、医疗器械、中药饮片、保健产品的医院纯销、商业批发、零售连锁、终端配送、仓储物流及供应链增值服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗器械",
+        "evidence_span": "主营医药商业，涵盖药品、医疗器械、中药饮片、保健产品的医院纯销、商业批发、零售连锁、终端配送、仓储物流及供应链增值服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药饮片",
+        "evidence_span": "主营医药商业，涵盖药品、医疗器械、中药饮片、保健产品的医院纯销、商业批发、零售连锁、终端配送、仓储物流及供应链增值服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保健产品",
+        "evidence_span": "主营医药商业，涵盖药品、医疗器械、中药饮片、保健产品的医院纯销、商业批发、零售连锁、终端配送、仓储物流及供应链增值服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "麻醉药品",
+        "evidence_span": "主要经营麻醉药品、第一类精神药品、第二类精神药品、药品类易制毒化学品单方制剂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第一类精神药品",
+        "evidence_span": "主要经营麻醉药品、第一类精神药品、第二类精神药品、药品类易制毒化学品单方制剂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第二类精神药品",
+        "evidence_span": "主要经营麻醉药品、第一类精神药品、第二类精神药品、药品类易制毒化学品单方制剂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药品类易制毒化学品单方制剂",
+        "evidence_span": "主要经营麻醉药品、第一类精神药品、第二类精神药品、药品类易制毒化学品单方制剂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药配方颗粒",
+        "evidence_span": "公司下属参股子公司重庆医药集团九隆现代中药有限公司，是一家中药配方颗粒生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三方医药物流",
+        "evidence_span": "同时开展第三方医药物流及药品进口保税业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药品进口保税业务",
+        "evidence_span": "同时开展第三方医药物流及药品进口保税业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "院内物流服务",
+        "evidence_span": "与各大医院开展医药物流延伸服务（院内物流——Supply Process＆ Distribution）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三方储配服务",
+        "evidence_span": "并逐步开展第三方储配业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药电商平台",
+        "evidence_span": "自建医药电商“重药云商”平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SPD供应链项目",
+        "evidence_span": "持续推进SPD供应链项目建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化系统",
+        "evidence_span": "公司高度重视并持续投入数字化建设，充分利用信息化手段，建设财务苍穹系统、审计预警系统，批零业务ERP系统、物流WMS系统等经营管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化物流技术",
+        "evidence_span": "公司借助互联网、物联网、大数据等高新技术和智能化物流技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "70000余家医疗机构",
+        "evidence_span": "为70000余家医疗机构提供医药批发服务和标准化、专业化、个性化与增值化的综合药事服务解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "14000余家国内外供应商",
+        "evidence_span": "与14000余家国内外供应商保持紧密合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "多家世界500强医药企业",
+        "evidence_span": "与多家世界500强医药企业保持长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "多家国家工信部排名前100强药品生产企业",
+        "evidence_span": "与多家国家工信部排名前100强药品生产企业建立长期良好合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际知名医疗器械生产商",
+        "evidence_span": "与国际知名医疗器械生产商建立长期稳定的商业配送关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "强生",
+        "evidence_span": "且是强生在安徽省唯一战略经销商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中元汇吉",
+        "evidence_span": "同时与中元汇吉签署战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内5家知名企业",
+        "evidence_span": "公司与国内5家知名企业是战略合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企混改",
+        "evidence_span": "重药控股2019H1业绩增长强劲，国企混改启动"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "医药流通",
+        "evidence_span": "重药控股集团优质资产注入，全面转型医药流通"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:57:19"
+}

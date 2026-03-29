@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "072b59224f31", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细列出FSD软件开发的路线图细节，如版本更新、功能实现和技术进展，可能提供有价值的静态知识，但关联到时间性计划。"}}

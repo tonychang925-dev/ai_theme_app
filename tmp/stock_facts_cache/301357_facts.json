@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "军用车辆配套装备",
+      "evidence_span": "主要从事以非金属复合材料的性能研究、工艺结构设计和应用技术为核心的军用车辆配套装备的研发、设计、生产和销售业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用车辆非金属复合材料配套装备企业",
+      "evidence_span": "国内较早进入军用车辆非金属复合材料配套装备领域的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用车辆人机环系统内饰",
+      "evidence_span": "军用车辆人机环系统内饰为公司目前阶段最主要产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合材料弹药箱",
+      "evidence_span": "公司的弹药装备产品目前主要包括复合材料弹药箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合材料油箱",
+      "evidence_span": "公司的军用车辆辅助类产品目前主要包括复合材料油箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发动机防雨罩",
+      "evidence_span": "公司的军用车辆辅助类产品目前主要包括复合材料油箱、发动机防雨罩"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轮式车挡泥板",
+      "evidence_span": "公司的军用车辆辅助类产品目前主要包括复合材料油箱、发动机防雨罩、轮式车挡泥板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "坦克隔热板",
+      "evidence_span": "公司的军用车辆辅助类产品目前主要包括复合材料油箱、发动机防雨罩、轮式车挡泥板和坦克隔热板等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "炮塔外罩",
+      "evidence_span": "目前主要包括炮塔外罩、防弹门等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防弹门",
+      "evidence_span": "目前主要包括炮塔外罩、防弹门等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合材料天线罩",
+      "evidence_span": "公司产品目前主要为各类复合材料天线罩、反射面"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "反射面",
+      "evidence_span": "公司产品目前主要为各类复合材料天线罩、反射面"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "真空导入工艺",
+      "evidence_span": "真空导入工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "预浸料真空袋压成型工艺",
+      "evidence_span": "预浸料真空袋压成型工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "预浸料模压工艺",
+      "evidence_span": "预浸料模压工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "在线浸渍模压工艺",
+      "evidence_span": "在线浸渍模压工艺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军方",
+      "evidence_span": "军方是军工行业的最终和唯一用户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军民融合",
+      "evidence_span": "军民融合上升为国家战略"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "军用车辆配套装备",
+        "evidence_span": "主要从事以非金属复合材料的性能研究、工艺结构设计和应用技术为核心的军用车辆配套装备的研发、设计、生产和销售业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用车辆非金属复合材料配套装备企业",
+        "evidence_span": "国内较早进入军用车辆非金属复合材料配套装备领域的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用车辆人机环系统内饰",
+        "evidence_span": "军用车辆人机环系统内饰为公司目前阶段最主要产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合材料弹药箱",
+        "evidence_span": "公司的弹药装备产品目前主要包括复合材料弹药箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合材料油箱",
+        "evidence_span": "公司的军用车辆辅助类产品目前主要包括复合材料油箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发动机防雨罩",
+        "evidence_span": "公司的军用车辆辅助类产品目前主要包括复合材料油箱、发动机防雨罩"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轮式车挡泥板",
+        "evidence_span": "公司的军用车辆辅助类产品目前主要包括复合材料油箱、发动机防雨罩、轮式车挡泥板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "坦克隔热板",
+        "evidence_span": "公司的军用车辆辅助类产品目前主要包括复合材料油箱、发动机防雨罩、轮式车挡泥板和坦克隔热板等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "炮塔外罩",
+        "evidence_span": "目前主要包括炮塔外罩、防弹门等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防弹门",
+        "evidence_span": "目前主要包括炮塔外罩、防弹门等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合材料天线罩",
+        "evidence_span": "公司产品目前主要为各类复合材料天线罩、反射面"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "反射面",
+        "evidence_span": "公司产品目前主要为各类复合材料天线罩、反射面"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "真空导入工艺",
+        "evidence_span": "真空导入工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "预浸料真空袋压成型工艺",
+        "evidence_span": "预浸料真空袋压成型工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "预浸料模压工艺",
+        "evidence_span": "预浸料模压工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "在线浸渍模压工艺",
+        "evidence_span": "在线浸渍模压工艺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军方",
+        "evidence_span": "军方是军工行业的最终和唯一用户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军民融合",
+        "evidence_span": "军民融合上升为国家战略"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:30:09"
+}

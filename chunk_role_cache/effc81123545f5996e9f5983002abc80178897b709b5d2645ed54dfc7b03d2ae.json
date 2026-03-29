@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "e53f25645b2c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述紫光展锐的上市辅导备案事件，属于公司动态，与光刻胶题材本体知识无关，不包含静态说明。"}}

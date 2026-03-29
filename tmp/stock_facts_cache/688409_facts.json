@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体设备零部件",
+      "evidence_span": "半导体设备零部件行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体设备零部件龙头",
+      "evidence_span": "是国内半导体设备零部件龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球少数能够量产用于7nm制程的精密零部件厂商",
+      "evidence_span": "是全球少数能够量产用于7nm制程的精密零部件厂商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工艺零部件",
+      "evidence_span": "形成了包括工艺零部、结构零部件、模组产品和气体管路四大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "结构零部件",
+      "evidence_span": "形成了包括工艺零部、结构零部件、模组产品和气体管路四大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模组产品",
+      "evidence_span": "形成了包括工艺零部、结构零部件、模组产品和气体管路四大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气体管路",
+      "evidence_span": "形成了包括工艺零部、结构零部件、模组产品和气体管路四大类产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密机械制造技术",
+      "evidence_span": "掌握了精密机械制造技术、表面处理特种工艺技术以及焊接核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "表面处理特种工艺技术",
+      "evidence_span": "掌握了精密机械制造技术、表面处理特种工艺技术以及焊接核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "焊接核心技术",
+      "evidence_span": "掌握了精密机械制造技术、表面处理特种工艺技术以及焊接核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "化学清洗",
+      "evidence_span": "公司表面处理特种工艺主要包括化学清洗、电化学抛光、阳极氧化、刷镀镍等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电化学抛光",
+      "evidence_span": "公司表面处理特种工艺主要包括化学清洗、电化学抛光、阳极氧化、刷镀镍等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "阳极氧化",
+      "evidence_span": "公司表面处理特种工艺主要包括化学清洗、电化学抛光、阳极氧化、刷镀镍等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "刷镀镍",
+      "evidence_span": "公司表面处理特种工艺主要包括化学清洗、电化学抛光、阳极氧化、刷镀镍等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "客户A",
+      "evidence_span": "覆盖客户A、东京电子、日立高新、ASMI等国际知名半导体设备厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东京电子",
+      "evidence_span": "覆盖客户A、东京电子、日立高新、ASMI等国际知名半导体设备厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日立高新",
+      "evidence_span": "覆盖客户A、东京电子、日立高新、ASMI等国际知名半导体设备厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ASMI",
+      "evidence_span": "覆盖客户A、东京电子、日立高新、ASMI等国际知名半导体设备厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北方华创",
+      "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "屹唐股份",
+      "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中微公司",
+      "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "拓荆科技",
+      "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华海清科",
+      "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "芯源微",
+      "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中科信装备",
+      "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "凯世通",
+      "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "国产化赋能长期增长动力"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "受益国产替代加速"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体设备零部件",
+        "evidence_span": "半导体设备零部件行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体设备零部件龙头",
+        "evidence_span": "是国内半导体设备零部件龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球少数能够量产用于7nm制程的精密零部件厂商",
+        "evidence_span": "是全球少数能够量产用于7nm制程的精密零部件厂商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工艺零部件",
+        "evidence_span": "形成了包括工艺零部、结构零部件、模组产品和气体管路四大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "结构零部件",
+        "evidence_span": "形成了包括工艺零部、结构零部件、模组产品和气体管路四大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模组产品",
+        "evidence_span": "形成了包括工艺零部、结构零部件、模组产品和气体管路四大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气体管路",
+        "evidence_span": "形成了包括工艺零部、结构零部件、模组产品和气体管路四大类产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密机械制造技术",
+        "evidence_span": "掌握了精密机械制造技术、表面处理特种工艺技术以及焊接核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "表面处理特种工艺技术",
+        "evidence_span": "掌握了精密机械制造技术、表面处理特种工艺技术以及焊接核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "焊接核心技术",
+        "evidence_span": "掌握了精密机械制造技术、表面处理特种工艺技术以及焊接核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "化学清洗",
+        "evidence_span": "公司表面处理特种工艺主要包括化学清洗、电化学抛光、阳极氧化、刷镀镍等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电化学抛光",
+        "evidence_span": "公司表面处理特种工艺主要包括化学清洗、电化学抛光、阳极氧化、刷镀镍等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "阳极氧化",
+        "evidence_span": "公司表面处理特种工艺主要包括化学清洗、电化学抛光、阳极氧化、刷镀镍等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "刷镀镍",
+        "evidence_span": "公司表面处理特种工艺主要包括化学清洗、电化学抛光、阳极氧化、刷镀镍等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "客户A",
+        "evidence_span": "覆盖客户A、东京电子、日立高新、ASMI等国际知名半导体设备厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东京电子",
+        "evidence_span": "覆盖客户A、东京电子、日立高新、ASMI等国际知名半导体设备厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日立高新",
+        "evidence_span": "覆盖客户A、东京电子、日立高新、ASMI等国际知名半导体设备厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ASMI",
+        "evidence_span": "覆盖客户A、东京电子、日立高新、ASMI等国际知名半导体设备厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北方华创",
+        "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "屹唐股份",
+        "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中微公司",
+        "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "拓荆科技",
+        "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华海清科",
+        "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "芯源微",
+        "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中科信装备",
+        "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "凯世通",
+        "evidence_span": "同时导入北方华创、屹唐股份、中微公司、拓荆科技、华海清科、芯源微、中科信装备、凯世通等国内主流半导体设备厂商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "国产化赋能长期增长动力"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "受益国产替代加速"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:29:52"
+}

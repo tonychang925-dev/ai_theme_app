@@ -1,0 +1,384 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "整合营销",
+      "evidence_span": "整合营销、酒店及景区三大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "酒店",
+      "evidence_span": "整合营销、酒店及景区三大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "景区经营",
+      "evidence_span": "整合营销、酒店及景区三大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "旅行社业务",
+      "evidence_span": "旅行社业务是公司发展的奠基之石"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "IT产品销售",
+      "evidence_span": "公司IT产品销售与技术服务业务主要为IT分销与系统集成服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务",
+      "evidence_span": "公司IT产品销售与技术服务业务主要为IT分销与系统集成服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国际化文化旅游综合运营商",
+      "evidence_span": "国际化文化旅游综合运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合旅游目的地",
+      "evidence_span": "打造综合性旅游目的地"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "小镇运营商",
+      "evidence_span": "中国最成功的小镇运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乌镇景区",
+      "evidence_span": "乌镇景区"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "古北水镇景区",
+      "evidence_span": "古北水镇景区"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "山水酒店",
+      "evidence_span": "山水酒店"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涵唐酒店",
+      "evidence_span": "自有品牌“涵唐酒店”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "遨游互联网旅游服务平台",
+      "evidence_span": "互联网旅游服务平台“遨游”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "耀悦高端定制化旅游服务",
+      "evidence_span": "高端定制化旅游服务品牌“耀悦”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "会议管理",
+      "evidence_span": "会议管理业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公关传播",
+      "evidence_span": "公关传播业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育营销",
+      "evidence_span": "体育营销业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "博览展览",
+      "evidence_span": "博览展览业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IT分销",
+      "evidence_span": "IT分销与系统集成服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "系统集成服务",
+      "evidence_span": "IT分销与系统集成服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定制游",
+      "evidence_span": "定制游"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "周边游",
+      "evidence_span": "周边游"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乡村游",
+      "evidence_span": "乡村游"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房车游",
+      "evidence_span": "房车游"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "红色旅游",
+      "evidence_span": "红色旅游"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "研学服务",
+      "evidence_span": "提供研学服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "康养旅游产品",
+      "evidence_span": "康养旅游产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "IT技术产品",
+      "evidence_span": "IT技术产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "冬奥会",
+      "evidence_span": "为冬奥会提供票务筹划、现场执行等服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "迪拜世博会中国馆",
+      "evidence_span": "为迪拜世博会中国馆及荷兰世园会中国园提供运营服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荷兰世园会中国园",
+      "evidence_span": "为迪拜世博会中国馆及荷兰世园会中国园提供运营服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "第六届世界智能大会",
+      "evidence_span": "参与第六届世界智能大会"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "2022博鳌亚洲论坛热带雨林展",
+      "evidence_span": "2022博鳌亚洲论坛热带雨林展"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "重庆来福士网络无线工程项目",
+      "evidence_span": "重庆来福士网络无线工程项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "瑞华实业无线覆盖项目",
+      "evidence_span": "瑞华实业无线覆盖项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山西省物联网园区项目",
+      "evidence_span": "山西省物联网园区项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "乐山市综治平台项目",
+      "evidence_span": "乐山市综治平台项目"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "整合营销",
+        "evidence_span": "整合营销、酒店及景区三大板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "酒店",
+        "evidence_span": "整合营销、酒店及景区三大板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "景区经营",
+        "evidence_span": "整合营销、酒店及景区三大板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "旅行社业务",
+        "evidence_span": "旅行社业务是公司发展的奠基之石"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "IT产品销售与技术服务",
+        "evidence_span": "公司IT产品销售与技术服务业务主要为IT分销与系统集成服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国际化文化旅游综合运营商",
+        "evidence_span": "国际化文化旅游综合运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合旅游目的地",
+        "evidence_span": "打造综合性旅游目的地"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "小镇运营商",
+        "evidence_span": "中国最成功的小镇运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乌镇景区",
+        "evidence_span": "乌镇景区"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "古北水镇景区",
+        "evidence_span": "古北水镇景区"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "山水酒店",
+        "evidence_span": "山水酒店"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涵唐酒店",
+        "evidence_span": "自有品牌“涵唐酒店”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "遨游互联网旅游服务平台",
+        "evidence_span": "互联网旅游服务平台“遨游”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "耀悦高端定制化旅游服务",
+        "evidence_span": "高端定制化旅游服务品牌“耀悦”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "会议管理",
+        "evidence_span": "会议管理业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公关传播",
+        "evidence_span": "公关传播业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育营销",
+        "evidence_span": "体育营销业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "博览展览",
+        "evidence_span": "博览展览业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IT分销",
+        "evidence_span": "IT分销与系统集成服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "系统集成服务",
+        "evidence_span": "IT分销与系统集成服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定制游",
+        "evidence_span": "定制游"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "周边游",
+        "evidence_span": "周边游"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乡村游",
+        "evidence_span": "乡村游"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房车游",
+        "evidence_span": "房车游"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "红色旅游",
+        "evidence_span": "红色旅游"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "研学服务",
+        "evidence_span": "提供研学服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "康养旅游产品",
+        "evidence_span": "康养旅游产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "IT技术产品",
+        "evidence_span": "IT技术产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "冬奥会",
+        "evidence_span": "为冬奥会提供票务筹划、现场执行等服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "迪拜世博会中国馆",
+        "evidence_span": "为迪拜世博会中国馆及荷兰世园会中国园提供运营服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荷兰世园会中国园",
+        "evidence_span": "为迪拜世博会中国馆及荷兰世园会中国园提供运营服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "第六届世界智能大会",
+        "evidence_span": "参与第六届世界智能大会"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "2022博鳌亚洲论坛热带雨林展",
+        "evidence_span": "2022博鳌亚洲论坛热带雨林展"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "重庆来福士网络无线工程项目",
+        "evidence_span": "重庆来福士网络无线工程项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "瑞华实业无线覆盖项目",
+        "evidence_span": "瑞华实业无线覆盖项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山西省物联网园区项目",
+        "evidence_span": "山西省物联网园区项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "乐山市综治平台项目",
+        "evidence_span": "乐山市综治平台项目"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:29:41"
+}

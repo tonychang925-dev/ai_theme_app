@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:00:49", "result": {"chunk_id": "a51d5eb0019a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落提到小米计划在2026年推出增程式SUV，这涉及产品规划知识，但以传闻形式呈现并混合了其他品牌事件，需要进一步裁决以提取稳定知识。"}}

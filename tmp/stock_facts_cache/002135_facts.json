@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "钢结构建筑",
+      "evidence_span": "钢结构板块主要业务为钢结构建筑及围护系统的设计、制造、安装"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "围护系统的设计",
+      "evidence_span": "钢结构板块主要业务为钢结构建筑及围护系统的设计、制造、安装"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "制造",
+      "evidence_span": "钢结构板块主要业务为钢结构建筑及围护系统的设计、制造、安装"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安装",
+      "evidence_span": "钢结构板块主要业务为钢结构建筑及围护系统的设计、制造、安装"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "房屋建筑",
+      "evidence_span": "房屋建筑和市政基础设施等项目的工程总承包"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "市政基础设施等项目的工程总承包",
+      "evidence_span": "房屋建筑和市政基础设施等项目的工程总承包"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "涤纶长丝的生产",
+      "evidence_span": "化纤板块主要业务为涤纶长丝的生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "化纤板块主要业务为涤纶长丝的生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "装配式集成建筑服务商",
+      "evidence_span": "是装配式集成建筑服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "空间钢结构领域中的龙头企业之一",
+      "evidence_span": "是空间钢结构领域中的龙头企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家装配式建筑产业基地",
+      "evidence_span": "住建部全国首批“国家装配式建筑产业基地”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大跨度空间钢结构",
+      "evidence_span": "产品涵盖大跨度空间钢结构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高层重钢结构",
+      "evidence_span": "高层重钢结构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻钢结构",
+      "evidence_span": "轻钢结构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装配式钢结构",
+      "evidence_span": "装配式钢结构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏建筑一体化业务",
+      "evidence_span": "积极布局光伏建筑一体化业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涤纶预取向丝(POY)",
+      "evidence_span": "产品包括涤纶预取向丝(POY)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涤纶牵引丝(FDY)",
+      "evidence_span": "涤纶牵引丝(FDY)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚酯切片",
+      "evidence_span": "聚酯切片等系列"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "桁架加劲多腔体钢板组合剪力墙建筑体系",
+      "evidence_span": "桁架加劲多腔体钢板组合剪力墙建筑体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "东南SPB光伏建筑一体化技术",
+      "evidence_span": "东南SPB光伏建筑一体化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空间网格结构全自产一体化技术",
+      "evidence_span": "空间网格结构全自产一体化技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江省建筑设计研究院",
+      "evidence_span": "与浙江省建筑设计研究院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中南建筑设计院股份有限公司",
+      "evidence_span": "中南建筑设计院股份有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江大学建筑设计研究院有限公司",
+      "evidence_span": "浙江大学建筑设计研究院有限公司等10余家公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "装配式建筑",
+      "evidence_span": "大力发展钢结构等装配式建筑"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色建筑",
+      "evidence_span": "绿色建筑引领者"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "钢结构建筑及围护系统的设计、制造、安装",
+        "evidence_span": "钢结构板块主要业务为钢结构建筑及围护系统的设计、制造、安装"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "房屋建筑和市政基础设施等项目的工程总承包",
+        "evidence_span": "房屋建筑和市政基础设施等项目的工程总承包"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "涤纶长丝的生产和销售",
+        "evidence_span": "化纤板块主要业务为涤纶长丝的生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "装配式集成建筑服务商",
+        "evidence_span": "是装配式集成建筑服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "空间钢结构领域中的龙头企业之一",
+        "evidence_span": "是空间钢结构领域中的龙头企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家装配式建筑产业基地",
+        "evidence_span": "住建部全国首批“国家装配式建筑产业基地”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大跨度空间钢结构",
+        "evidence_span": "产品涵盖大跨度空间钢结构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高层重钢结构",
+        "evidence_span": "高层重钢结构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻钢结构",
+        "evidence_span": "轻钢结构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装配式钢结构",
+        "evidence_span": "装配式钢结构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏建筑一体化业务",
+        "evidence_span": "积极布局光伏建筑一体化业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涤纶预取向丝(POY)",
+        "evidence_span": "产品包括涤纶预取向丝(POY)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涤纶牵引丝(FDY)",
+        "evidence_span": "涤纶牵引丝(FDY)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚酯切片",
+        "evidence_span": "聚酯切片等系列"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "桁架加劲多腔体钢板组合剪力墙建筑体系",
+        "evidence_span": "桁架加劲多腔体钢板组合剪力墙建筑体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "东南SPB光伏建筑一体化技术",
+        "evidence_span": "东南SPB光伏建筑一体化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空间网格结构全自产一体化技术",
+        "evidence_span": "空间网格结构全自产一体化技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江省建筑设计研究院",
+        "evidence_span": "与浙江省建筑设计研究院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中南建筑设计院股份有限公司",
+        "evidence_span": "中南建筑设计院股份有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江大学建筑设计研究院有限公司",
+        "evidence_span": "浙江大学建筑设计研究院有限公司等10余家公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "装配式建筑",
+        "evidence_span": "大力发展钢结构等装配式建筑"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色建筑",
+        "evidence_span": "绿色建筑引领者"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:05:58"
+}

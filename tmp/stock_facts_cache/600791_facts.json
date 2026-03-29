@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产开发",
+      "evidence_span": "公司以房地产开发业务为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商品住宅开发",
+      "evidence_span": "涵盖商品住宅开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "共有产权房建设",
+      "evidence_span": "共有产权房建设"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "保障房建设",
+      "evidence_span": "保障房建设等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国资背景的房地产开发公司",
+      "evidence_span": "具有国资背景并专注于房地产开发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "京能·云璟壹号项目",
+      "evidence_span": "京能·云璟壹号项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "京能丨电建·洺悦湾项目",
+      "evidence_span": "京能丨电建·洺悦湾项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "京能·丽墅项目",
+      "evidence_span": "京能·丽墅项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "京能·西山印项目",
+      "evidence_span": "京能·西山印项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "京能·海语城项目",
+      "evidence_span": "京能·海语城项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "京能·雍清丽苑项目",
+      "evidence_span": "京能·雍清丽苑项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "京能·天下川项目",
+      "evidence_span": "京能·天下川项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金泰丽富嘉园",
+      "evidence_span": "金泰丽富嘉园"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "京能丨龙湖·熙上",
+      "evidence_span": "京能丨龙湖·熙上"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京龙湖中佰置业有限公司",
+      "evidence_span": "联合北京龙湖中佰置业有限公司"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产开发",
+        "evidence_span": "公司以房地产开发业务为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商品住宅开发",
+        "evidence_span": "涵盖商品住宅开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "共有产权房建设",
+        "evidence_span": "共有产权房建设"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "保障房建设",
+        "evidence_span": "保障房建设等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国资背景的房地产开发公司",
+        "evidence_span": "具有国资背景并专注于房地产开发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "京能·云璟壹号项目",
+        "evidence_span": "京能·云璟壹号项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "京能丨电建·洺悦湾项目",
+        "evidence_span": "京能丨电建·洺悦湾项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "京能·丽墅项目",
+        "evidence_span": "京能·丽墅项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "京能·西山印项目",
+        "evidence_span": "京能·西山印项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "京能·海语城项目",
+        "evidence_span": "京能·海语城项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "京能·雍清丽苑项目",
+        "evidence_span": "京能·雍清丽苑项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "京能·天下川项目",
+        "evidence_span": "京能·天下川项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金泰丽富嘉园",
+        "evidence_span": "金泰丽富嘉园"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "京能丨龙湖·熙上",
+        "evidence_span": "京能丨龙湖·熙上"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京龙湖中佰置业有限公司",
+        "evidence_span": "联合北京龙湖中佰置业有限公司"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:18:14"
+}

@@ -1,0 +1,389 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "病人监护",
+      "evidence_span": "业务主要涵盖病人监护"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "心电诊断",
+      "evidence_span": "业务主要涵盖...心电诊断"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "妇幼健康",
+      "evidence_span": "业务主要涵盖...妇幼健康"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超声影像",
+      "evidence_span": "业务主要涵盖...超声影像"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体外诊断",
+      "evidence_span": "业务主要涵盖...体外诊断"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧医疗",
+      "evidence_span": "业务主要涵盖...智慧医疗"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产医疗设备领军企业",
+      "evidence_span": "国产医疗设备领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国心电产品的领军品牌之一",
+      "evidence_span": "已成长为中国心电产品的领军品牌之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "干式血气生化分析仪",
+      "evidence_span": "推出公司第一款干式血气生化分析器仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "i15干式血气分析仪",
+      "evidence_span": "公司i15干式血气分析仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "i20干式血气分析仪",
+      "evidence_span": "研发出全新一代i20干式血气分析仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "湿式血气分析仪",
+      "evidence_span": "计划于2023年推出湿式血气分析仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "m16磁敏免疫分析仪",
+      "evidence_span": "推出m16磁敏免疫分析仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动血细胞分析仪",
+      "evidence_span": "全自动血细胞分析仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ClariLight分子诊断平台",
+      "evidence_span": "收购英国LGC公司的快速诊断（POCT）ClariLight分子诊断平台业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中高端彩超设备",
+      "evidence_span": "拥有以LX9和AX8为代表的中高端彩超设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "便携式黑白超声",
+      "evidence_span": "以便携式黑白超声DUS60为代表的低端设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "静态心电",
+      "evidence_span": "包括三大心电检查类别——静态心电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运动心电",
+      "evidence_span": "运动心电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动态心电",
+      "evidence_span": "动态心电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动态血压",
+      "evidence_span": "动态血压"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "心电网络解决方案",
+      "evidence_span": "重点布局心电网络解决方案系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普勒胎心仪",
+      "evidence_span": "早期以普勒胎心仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "胎儿监护仪",
+      "evidence_span": "胎儿、母亲监护仪系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "母亲监护仪",
+      "evidence_span": "胎儿、母亲监护仪系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阴道镜产品系列",
+      "evidence_span": "推出包括含阴道镜产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "妇科高频电刀系列产品",
+      "evidence_span": "妇科高频电刀系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物刺激反馈仪",
+      "evidence_span": "推出其首款生物刺激反馈仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "监护设备",
+      "evidence_span": "监护设备由3.97亿元提升至14.71亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合信息化解决方案",
+      "evidence_span": "转型为提供综合信息化解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "干式血气分析技术",
+      "evidence_span": "干式血气分析仪"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "湿式血气分析技术",
+      "evidence_span": "湿式血气分析仪"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分子诊断技术",
+      "evidence_span": "进一步开拓分子诊断领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "武汉亚洲心脏病医院",
+      "evidence_span": "在武汉亚洲心脏病医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广东省妇幼保健院",
+      "evidence_span": "广东省妇幼保健院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "湖南省人民医院",
+      "evidence_span": "湖南省人民医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深圳市人民医院",
+      "evidence_span": "深圳市人民医院"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产替代进程正不断推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "病人监护",
+        "evidence_span": "业务主要涵盖病人监护"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "心电诊断",
+        "evidence_span": "业务主要涵盖...心电诊断"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "妇幼健康",
+        "evidence_span": "业务主要涵盖...妇幼健康"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "超声影像",
+        "evidence_span": "业务主要涵盖...超声影像"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体外诊断",
+        "evidence_span": "业务主要涵盖...体外诊断"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧医疗",
+        "evidence_span": "业务主要涵盖...智慧医疗"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产医疗设备领军企业",
+        "evidence_span": "国产医疗设备领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国心电产品的领军品牌之一",
+        "evidence_span": "已成长为中国心电产品的领军品牌之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "干式血气生化分析仪",
+        "evidence_span": "推出公司第一款干式血气生化分析器仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "i15干式血气分析仪",
+        "evidence_span": "公司i15干式血气分析仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "i20干式血气分析仪",
+        "evidence_span": "研发出全新一代i20干式血气分析仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "湿式血气分析仪",
+        "evidence_span": "计划于2023年推出湿式血气分析仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "m16磁敏免疫分析仪",
+        "evidence_span": "推出m16磁敏免疫分析仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动血细胞分析仪",
+        "evidence_span": "全自动血细胞分析仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ClariLight分子诊断平台",
+        "evidence_span": "收购英国LGC公司的快速诊断（POCT）ClariLight分子诊断平台业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中高端彩超设备",
+        "evidence_span": "拥有以LX9和AX8为代表的中高端彩超设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "便携式黑白超声",
+        "evidence_span": "以便携式黑白超声DUS60为代表的低端设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "静态心电",
+        "evidence_span": "包括三大心电检查类别——静态心电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运动心电",
+        "evidence_span": "运动心电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动态心电",
+        "evidence_span": "动态心电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动态血压",
+        "evidence_span": "动态血压"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "心电网络解决方案",
+        "evidence_span": "重点布局心电网络解决方案系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普勒胎心仪",
+        "evidence_span": "早期以普勒胎心仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "胎儿监护仪",
+        "evidence_span": "胎儿、母亲监护仪系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "母亲监护仪",
+        "evidence_span": "胎儿、母亲监护仪系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阴道镜产品系列",
+        "evidence_span": "推出包括含阴道镜产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "妇科高频电刀系列产品",
+        "evidence_span": "妇科高频电刀系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物刺激反馈仪",
+        "evidence_span": "推出其首款生物刺激反馈仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "监护设备",
+        "evidence_span": "监护设备由3.97亿元提升至14.71亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合信息化解决方案",
+        "evidence_span": "转型为提供综合信息化解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "干式血气分析技术",
+        "evidence_span": "干式血气分析仪"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "湿式血气分析技术",
+        "evidence_span": "湿式血气分析仪"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分子诊断技术",
+        "evidence_span": "进一步开拓分子诊断领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "武汉亚洲心脏病医院",
+        "evidence_span": "在武汉亚洲心脏病医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广东省妇幼保健院",
+        "evidence_span": "广东省妇幼保健院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "湖南省人民医院",
+        "evidence_span": "湖南省人民医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深圳市人民医院",
+        "evidence_span": "深圳市人民医院"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产替代进程正不断推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:12:33"
+}

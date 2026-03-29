@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "运动控制",
+      "evidence_span": "聚焦运动控制领域超过20年"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内步进及运动控制器龙头",
+      "evidence_span": "国内步进及运动控制器龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "运动控制行业国产替代先行者",
+      "evidence_span": "雷赛智能运动控制行业国产替代先行者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "步进系统、PC-Based运控卡领先企业",
+      "evidence_span": "雷赛智能步进系统、PC-Based运控卡领先企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "控制器",
+      "evidence_span": "控制器、驱动器、电机营收占比合计超80%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驱动器",
+      "evidence_span": "控制器、驱动器、电机营收占比合计超80%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机",
+      "evidence_span": "控制器、驱动器、电机营收占比合计超80%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "伺服电机及驱动器",
+      "evidence_span": "核心产品包括伺服电机及驱动器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "步进电机及驱动器",
+      "evidence_span": "核心产品包括步进电机及驱动器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一体式电机",
+      "evidence_span": "核心产品包括一体式电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运动控制卡",
+      "evidence_span": "核心产品包括运动控制卡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运动控制器",
+      "evidence_span": "核心产品包括运动控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "伺服驱动器",
+      "evidence_span": "伺服系统为自动化运动控制环节的核心部件，通常由伺服驱动器、伺服电机和伺服反馈装置（编码器）组成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "伺服电机",
+      "evidence_span": "伺服系统为自动化运动控制环节的核心部件，通常由伺服驱动器、伺服电机和伺服反馈装置（编码器）组成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "伺服反馈装置（编码器）",
+      "evidence_span": "伺服系统为自动化运动控制环节的核心部件，通常由伺服驱动器、伺服电机和伺服反馈装置（编码器）组成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "步进驱动器",
+      "evidence_span": "步进系统为运动控制系统重要环节之一，由步进驱动器与步进电机组成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "步进电机",
+      "evidence_span": "步进系统为运动控制系统重要环节之一，由步进驱动器与步进电机组成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MPLC运动控制产品",
+      "evidence_span": "早在2011年已推出MPLC运动控制产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "mPLC2系列基本型运动控制PLC",
+      "evidence_span": "目前布局的mPLC2系列基本型运动控制PLC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LT1000系列触摸屏产品",
+      "evidence_span": "并配备LT1000系列触摸屏产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PLC与运动控制技术结合",
+      "evidence_span": "公司结合PLC与运动控制技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电子制造",
+      "evidence_span": "2019年主要下游包括电子制造"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特种机床",
+      "evidence_span": "2019年主要下游包括特种机床"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "喷绘印刷",
+      "evidence_span": "2019年主要下游包括喷绘印刷"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "5G",
+      "evidence_span": "2020年公司在5G、半导体、光伏等新兴行业拓展顺利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "半导体",
+      "evidence_span": "2020年公司在5G、半导体、光伏等新兴行业拓展顺利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "光伏",
+      "evidence_span": "2020年公司在5G、半导体、光伏等新兴行业拓展顺利"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "雷赛智能运动控制行业国产替代先行者"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "运动控制",
+        "evidence_span": "聚焦运动控制领域超过20年"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内步进及运动控制器龙头",
+        "evidence_span": "国内步进及运动控制器龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "运动控制行业国产替代先行者",
+        "evidence_span": "雷赛智能运动控制行业国产替代先行者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "步进系统、PC-Based运控卡领先企业",
+        "evidence_span": "雷赛智能步进系统、PC-Based运控卡领先企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "控制器",
+        "evidence_span": "控制器、驱动器、电机营收占比合计超80%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驱动器",
+        "evidence_span": "控制器、驱动器、电机营收占比合计超80%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机",
+        "evidence_span": "控制器、驱动器、电机营收占比合计超80%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "伺服电机及驱动器",
+        "evidence_span": "核心产品包括伺服电机及驱动器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "步进电机及驱动器",
+        "evidence_span": "核心产品包括步进电机及驱动器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一体式电机",
+        "evidence_span": "核心产品包括一体式电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运动控制卡",
+        "evidence_span": "核心产品包括运动控制卡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运动控制器",
+        "evidence_span": "核心产品包括运动控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "伺服驱动器",
+        "evidence_span": "伺服系统为自动化运动控制环节的核心部件，通常由伺服驱动器、伺服电机和伺服反馈装置（编码器）组成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "伺服电机",
+        "evidence_span": "伺服系统为自动化运动控制环节的核心部件，通常由伺服驱动器、伺服电机和伺服反馈装置（编码器）组成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "伺服反馈装置（编码器）",
+        "evidence_span": "伺服系统为自动化运动控制环节的核心部件，通常由伺服驱动器、伺服电机和伺服反馈装置（编码器）组成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "步进驱动器",
+        "evidence_span": "步进系统为运动控制系统重要环节之一，由步进驱动器与步进电机组成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "步进电机",
+        "evidence_span": "步进系统为运动控制系统重要环节之一，由步进驱动器与步进电机组成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MPLC运动控制产品",
+        "evidence_span": "早在2011年已推出MPLC运动控制产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "mPLC2系列基本型运动控制PLC",
+        "evidence_span": "目前布局的mPLC2系列基本型运动控制PLC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LT1000系列触摸屏产品",
+        "evidence_span": "并配备LT1000系列触摸屏产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PLC与运动控制技术结合",
+        "evidence_span": "公司结合PLC与运动控制技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电子制造",
+        "evidence_span": "2019年主要下游包括电子制造"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特种机床",
+        "evidence_span": "2019年主要下游包括特种机床"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "喷绘印刷",
+        "evidence_span": "2019年主要下游包括喷绘印刷"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "5G",
+        "evidence_span": "2020年公司在5G、半导体、光伏等新兴行业拓展顺利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "半导体",
+        "evidence_span": "2020年公司在5G、半导体、光伏等新兴行业拓展顺利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "光伏",
+        "evidence_span": "2020年公司在5G、半导体、光伏等新兴行业拓展顺利"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "雷赛智能运动控制行业国产替代先行者"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:05:59"
+}

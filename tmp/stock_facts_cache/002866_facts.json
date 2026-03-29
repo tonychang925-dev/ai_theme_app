@@ -1,0 +1,369 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "笔记本电脑键盘薄膜开关线路板",
+      "evidence_span": "笔记本电脑键盘薄膜开关线路板（MTS）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "笔记本电脑触控板",
+      "evidence_span": "笔记本电脑触控板（TouchPad）及按键（Button）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "按键",
+      "evidence_span": "笔记本电脑触控板（TouchPad）及按键（Button）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "柔性印刷线路板",
+      "evidence_span": "柔性印刷线路板（FPC）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "钠离子电池",
+      "evidence_span": "钠离子电池"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "正负极材料",
+      "evidence_span": "正负极材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电解液",
+      "evidence_span": "电解液"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "笔记本电脑零组件供应商",
+      "evidence_span": "笔记本电脑零组件的国内隐形冠军"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内键盘龙头",
+      "evidence_span": "国内键盘龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国际MTS规模化厂商",
+      "evidence_span": "国际MTS规模化厂商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "笔记本电脑键盘薄膜开关线路板",
+      "evidence_span": "笔记本电脑键盘薄膜开关线路板（MTS）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "笔记本电脑触控板",
+      "evidence_span": "笔记本电脑触控板（TouchPad）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "笔记本电脑按键",
+      "evidence_span": "按键（Button）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "柔性印刷线路板",
+      "evidence_span": "柔性印刷线路板（FPC）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钠离子电池",
+      "evidence_span": "钠离子电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "正负极材料",
+      "evidence_span": "正负极材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电解液",
+      "evidence_span": "电解液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G天线",
+      "evidence_span": "5G天线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "背光类键盘产品",
+      "evidence_span": "背光类键盘产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "键盘设计结构",
+      "evidence_span": "拥有国际先进的键盘设计结构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PCB技术研发",
+      "evidence_span": "长期专注并深化PCB技术研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G相关产品研发技术",
+      "evidence_span": "提前进行了5G相关产品研发技术的储备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新材料、新产品、新制程、新设备和新技术",
+      "evidence_span": "新材料、新产品、新制程、新设备和新技术五大主轴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "三星"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东芝",
+      "evidence_span": "东芝"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联想",
+      "evidence_span": "联想"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "华为"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "仁宝",
+      "evidence_span": "仁宝"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英业达",
+      "evidence_span": "英业达"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "纬创",
+      "evidence_span": "纬创"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Thinkpad",
+      "evidence_span": "Thinkpad"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Lenovo",
+      "evidence_span": "Lenovo"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Microsoft",
+      "evidence_span": "Micosoft"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "小米"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富士康",
+      "evidence_span": "富士康"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化替代",
+      "evidence_span": "深度受益国产化替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "笔记本电脑键盘薄膜开关线路板",
+        "evidence_span": "笔记本电脑键盘薄膜开关线路板（MTS）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "笔记本电脑触控板及按键",
+        "evidence_span": "笔记本电脑触控板（TouchPad）及按键（Button）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "柔性印刷线路板",
+        "evidence_span": "柔性印刷线路板（FPC）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "钠离子电池",
+        "evidence_span": "钠离子电池"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "正负极材料",
+        "evidence_span": "正负极材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电解液",
+        "evidence_span": "电解液"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "笔记本电脑零组件供应商",
+        "evidence_span": "笔记本电脑零组件的国内隐形冠军"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内键盘龙头",
+        "evidence_span": "国内键盘龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国际MTS规模化厂商",
+        "evidence_span": "国际MTS规模化厂商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "笔记本电脑键盘薄膜开关线路板",
+        "evidence_span": "笔记本电脑键盘薄膜开关线路板（MTS）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "笔记本电脑触控板",
+        "evidence_span": "笔记本电脑触控板（TouchPad）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "笔记本电脑按键",
+        "evidence_span": "按键（Button）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "柔性印刷线路板",
+        "evidence_span": "柔性印刷线路板（FPC）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钠离子电池",
+        "evidence_span": "钠离子电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "正负极材料",
+        "evidence_span": "正负极材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电解液",
+        "evidence_span": "电解液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G天线",
+        "evidence_span": "5G天线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "背光类键盘产品",
+        "evidence_span": "背光类键盘产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "键盘设计结构",
+        "evidence_span": "拥有国际先进的键盘设计结构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PCB技术研发",
+        "evidence_span": "长期专注并深化PCB技术研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G相关产品研发技术",
+        "evidence_span": "提前进行了5G相关产品研发技术的储备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高密度、薄型化、高频高速、功能模组、取代性技术、汽车电子、能源管理、高阶任意层研发",
+        "evidence_span": "高密度、薄型化、高频高速、功能模组、取代性技术、汽车电子、能源管理、高阶任意层等研发方向"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新材料、新产品、新制程、新设备和新技术",
+        "evidence_span": "新材料、新产品、新制程、新设备和新技术五大主轴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "三星"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东芝",
+        "evidence_span": "东芝"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联想",
+        "evidence_span": "联想"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "华为"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "仁宝",
+        "evidence_span": "仁宝"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英业达",
+        "evidence_span": "英业达"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "纬创",
+        "evidence_span": "纬创"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Thinkpad",
+        "evidence_span": "Thinkpad"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Lenovo",
+        "evidence_span": "Lenovo"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Microsoft",
+        "evidence_span": "Micosoft"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "小米"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富士康",
+        "evidence_span": "富士康"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化替代",
+        "evidence_span": "深度受益国产化替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:09:43"
+}

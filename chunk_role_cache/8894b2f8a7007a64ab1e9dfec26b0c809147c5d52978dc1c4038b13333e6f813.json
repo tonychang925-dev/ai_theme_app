@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "55d6572bfef5", "label": "knowledge_like", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落以西门子收到芯片软件限制取消通知的事件为引子，但提到了EDA（电子设计自动化）软件作为半导体设备的关键组成部分，这有助于理解半导体设备的技术路径和核心构成，具有知识性，但稳定性一般。"}}

@@ -1,0 +1,154 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "熔断器",
+      "evidence_span": "主营业务为熔断器及相关配件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "相关配件的研发",
+      "evidence_span": "主营业务为熔断器及相关配件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "主营业务为熔断器及相关配件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主营业务为熔断器及相关配件的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内电力熔断器龙头",
+      "evidence_span": "国内电力熔断器龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内领先的电力熔断器生产商",
+      "evidence_span": "国内领先的电力熔断器生产商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力熔断器",
+      "evidence_span": "主要产品为电力熔断器、电子类熔断器、激励熔断器，其中主导产品为电力熔断器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子类熔断器",
+      "evidence_span": "主要产品为电力熔断器、电子类熔断器、激励熔断器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激励熔断器",
+      "evidence_span": "主要产品为电力熔断器、电子类熔断器、激励熔断器"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "主要客户包括宁德时代、阳光电源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阳光电源",
+      "evidence_span": "主要客户包括宁德时代、阳光电源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特斯拉",
+      "evidence_span": "成为第一家与特斯拉合作的国产品牌汽车高压熔断器供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特变电工",
+      "evidence_span": "与阳光电源、特变电工、许继电气等企业建立合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "许继电气",
+      "evidence_span": "与阳光电源、特变电工、许继电气等企业建立合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源趋势",
+      "evidence_span": "受益于新能源趋势高速成长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "熔断器行业品牌集中在美日欧，国产替代空间较大"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "熔断器及相关配件的研发、生产和销售",
+        "evidence_span": "主营业务为熔断器及相关配件的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内电力熔断器龙头",
+        "evidence_span": "国内电力熔断器龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内领先的电力熔断器生产商",
+        "evidence_span": "国内领先的电力熔断器生产商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力熔断器",
+        "evidence_span": "主要产品为电力熔断器、电子类熔断器、激励熔断器，其中主导产品为电力熔断器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子类熔断器",
+        "evidence_span": "主要产品为电力熔断器、电子类熔断器、激励熔断器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激励熔断器",
+        "evidence_span": "主要产品为电力熔断器、电子类熔断器、激励熔断器"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "主要客户包括宁德时代、阳光电源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阳光电源",
+        "evidence_span": "主要客户包括宁德时代、阳光电源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特斯拉",
+        "evidence_span": "成为第一家与特斯拉合作的国产品牌汽车高压熔断器供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特变电工",
+        "evidence_span": "与阳光电源、特变电工、许继电气等企业建立合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "许继电气",
+        "evidence_span": "与阳光电源、特变电工、许继电气等企业建立合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源趋势",
+        "evidence_span": "受益于新能源趋势高速成长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "熔断器行业品牌集中在美日欧，国产替代空间较大"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:21:41"
+}

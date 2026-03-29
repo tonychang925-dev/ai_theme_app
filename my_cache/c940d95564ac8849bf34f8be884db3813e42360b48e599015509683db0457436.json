@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "2c87fb6de240", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落描述俄罗斯和美国政治言论及期限设定，是纯事件性新闻，与军工本体知识无关。"}}

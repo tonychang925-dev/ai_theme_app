@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:55:16", "result": {"chunk_id": "68b38ad1dc15", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述华为入局人形机器人并计划量产的市场消息，是公司动态和事件，无静态知识。"}}

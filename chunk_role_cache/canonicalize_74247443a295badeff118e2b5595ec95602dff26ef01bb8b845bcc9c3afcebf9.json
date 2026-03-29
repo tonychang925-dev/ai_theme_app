@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:36:44", "result": {"span_uid": "d4a81f87ae11", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "技术进展", "stability": "low", "reason": "片段仅为名词短语，无法形成完整、独立的知识表达；原上下文涉及具体研究团队和事件，属于阶段性技术进展，但当前文本不完整，不适合保留。"}}

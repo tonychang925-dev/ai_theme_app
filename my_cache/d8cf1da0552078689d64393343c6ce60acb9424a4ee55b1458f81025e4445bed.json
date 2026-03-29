@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "c7b53cbfa152", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落简要提及国务院印发的政策文件，属于事件发布，没有详细说明建筑设计的具体知识，因此分类为pure_event。"}}

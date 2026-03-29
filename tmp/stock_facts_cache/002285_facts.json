@@ -1,0 +1,484 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "交易服务",
+      "evidence_span": "公司主要业务包括交易服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "交易后服务",
+      "evidence_span": "公司主要业务包括交易后服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产运营",
+      "evidence_span": "公司主要业务包括资产运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产投资",
+      "evidence_span": "公司主要业务包括资产投资"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新房代理销售龙头企业",
+      "evidence_span": "公司是我国新房代理销售龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国地产综合服务行业第一股",
+      "evidence_span": "中国地产综合服务行业第一股"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "房地产代销龙头",
+      "evidence_span": "世联行房地产代销龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集中式长租龙头",
+      "evidence_span": "集中式长租龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新房代理销售",
+      "evidence_span": "交易服务包括新房代理销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电商交易",
+      "evidence_span": "交易服务包括电商交易"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "存量交易",
+      "evidence_span": "交易服务包括存量交易"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金融服务",
+      "evidence_span": "交易后服务包括金融服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装修装饰",
+      "evidence_span": "交易后服务包括装修装饰"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社区管家",
+      "evidence_span": "交易后服务包括社区管家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "长租公寓",
+      "evidence_span": "资产运营包含长租公寓"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物业管理",
+      "evidence_span": "资产运营包含物业管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工商物业运营",
+      "evidence_span": "资产运营包含工商物业运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "顾问策划",
+      "evidence_span": "资产运营包含顾问策划"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "销售权收购",
+      "evidence_span": "资产投资业务目前以“销售权收购”为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "REITs业务",
+      "evidence_span": "未来将积极拓展REITs业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市资产管理业务",
+      "evidence_span": "大资管业务主要包括城市资产管理业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空间运营及招商业务",
+      "evidence_span": "大资管业务主要包括空间运营及招商业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "顾问业务",
+      "evidence_span": "大资管业务主要包括顾问业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市公共设施管理",
+      "evidence_span": "城市资产管理业务是围绕各类产业物业、公建设施和城市空间，为政府端和企业端客户提供城市公共设施管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "企业综合设施管理",
+      "evidence_span": "城市资产管理业务是围绕各类产业物业、公建设施和城市空间，为政府端和企业端客户提供企业综合设施管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "招商租赁",
+      "evidence_span": "空间运营及招商业务为物业所有者或持有者提供商办楼宇、产业园、公寓、酒店等招商租赁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运营服务",
+      "evidence_span": "空间运营及招商业务为物业所有者或持有者提供商办楼宇、产业园、公寓、酒店等运营服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装修服务",
+      "evidence_span": "空间运营及招商业务为物业所有者或持有者提供商办楼宇、产业园、公寓、酒店等装修服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "政策建议",
+      "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供政策建议"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "土地规划建议",
+      "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供土地规划建议"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "项目开发策略",
+      "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供项目开发策略"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产业综合服务",
+      "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供产业综合服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产打理咨询",
+      "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供资产打理咨询"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物业管理一级资质",
+      "evidence_span": "公司具有物业管理一级资质"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国际质量管理ISO9001认证",
+      "evidence_span": "旗下北京安信行已经通过国际质量管理ISO9001认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "环境管理ISO14001认证",
+      "evidence_span": "旗下北京安信行已经通过环境管理ISO14001认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "职业健康安全管理OHS18001认证",
+      "evidence_span": "旗下北京安信行已经通过职业健康安全管理OHS18001认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府端客户",
+      "evidence_span": "为政府端和企业端客户提供物业管理、城市公共设施管理、企业综合设施管理等基础运营服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "企业端客户",
+      "evidence_span": "为政府端和企业端客户提供物业管理、城市公共设施管理、企业综合设施管理等基础运营服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "物业所有者或持有者",
+      "evidence_span": "空间运营及招商业务为物业所有者或持有者提供商办楼宇、产业园、公寓、酒店等招商租赁、运营及装修服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "地方政府",
+      "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供政策建议、土地规划建议、项目开发策略、产业综合服务、资产打理咨询等服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "开发商",
+      "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供政策建议、土地规划建议、项目开发策略、产业综合服务、资产打理咨询等服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "产业企业",
+      "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供政策建议、土地规划建议、项目开发策略、产业综合服务、资产打理咨询等服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "资产持有机构/金融机构",
+      "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供政策建议、土地规划建议、项目开发策略、产业综合服务、资产打理咨询等服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "互联网+业务",
+      "evidence_span": "积极布局互联网+业务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "金融服务业务",
+      "evidence_span": "积极布局互联网+业务和金融服务业务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "长租崛起享政策红利",
+      "evidence_span": "长租崛起享政策红利"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "交易服务",
+        "evidence_span": "公司主要业务包括交易服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "交易后服务",
+        "evidence_span": "公司主要业务包括交易后服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产运营",
+        "evidence_span": "公司主要业务包括资产运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产投资",
+        "evidence_span": "公司主要业务包括资产投资"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新房代理销售龙头企业",
+        "evidence_span": "公司是我国新房代理销售龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国地产综合服务行业第一股",
+        "evidence_span": "中国地产综合服务行业第一股"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "房地产代销龙头",
+        "evidence_span": "世联行房地产代销龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集中式长租龙头",
+        "evidence_span": "集中式长租龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新房代理销售",
+        "evidence_span": "交易服务包括新房代理销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电商交易",
+        "evidence_span": "交易服务包括电商交易"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "存量交易",
+        "evidence_span": "交易服务包括存量交易"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金融服务",
+        "evidence_span": "交易后服务包括金融服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装修装饰",
+        "evidence_span": "交易后服务包括装修装饰"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社区管家",
+        "evidence_span": "交易后服务包括社区管家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "长租公寓",
+        "evidence_span": "资产运营包含长租公寓"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物业管理",
+        "evidence_span": "资产运营包含物业管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工商物业运营",
+        "evidence_span": "资产运营包含工商物业运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "顾问策划",
+        "evidence_span": "资产运营包含顾问策划"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "销售权收购",
+        "evidence_span": "资产投资业务目前以“销售权收购”为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "REITs业务",
+        "evidence_span": "未来将积极拓展REITs业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市资产管理业务",
+        "evidence_span": "大资管业务主要包括城市资产管理业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空间运营及招商业务",
+        "evidence_span": "大资管业务主要包括空间运营及招商业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "顾问业务",
+        "evidence_span": "大资管业务主要包括顾问业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物业管理",
+        "evidence_span": "城市资产管理业务是围绕各类产业物业、公建设施和城市空间，为政府端和企业端客户提供物业管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市公共设施管理",
+        "evidence_span": "城市资产管理业务是围绕各类产业物业、公建设施和城市空间，为政府端和企业端客户提供城市公共设施管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "企业综合设施管理",
+        "evidence_span": "城市资产管理业务是围绕各类产业物业、公建设施和城市空间，为政府端和企业端客户提供企业综合设施管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "招商租赁",
+        "evidence_span": "空间运营及招商业务为物业所有者或持有者提供商办楼宇、产业园、公寓、酒店等招商租赁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运营服务",
+        "evidence_span": "空间运营及招商业务为物业所有者或持有者提供商办楼宇、产业园、公寓、酒店等运营服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装修服务",
+        "evidence_span": "空间运营及招商业务为物业所有者或持有者提供商办楼宇、产业园、公寓、酒店等装修服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "政策建议",
+        "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供政策建议"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "土地规划建议",
+        "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供土地规划建议"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "项目开发策略",
+        "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供项目开发策略"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产业综合服务",
+        "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供产业综合服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产打理咨询",
+        "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供资产打理咨询"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物业管理一级资质",
+        "evidence_span": "公司具有物业管理一级资质"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国际质量管理ISO9001认证",
+        "evidence_span": "旗下北京安信行已经通过国际质量管理ISO9001认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "环境管理ISO14001认证",
+        "evidence_span": "旗下北京安信行已经通过环境管理ISO14001认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "职业健康安全管理OHS18001认证",
+        "evidence_span": "旗下北京安信行已经通过职业健康安全管理OHS18001认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府端客户",
+        "evidence_span": "为政府端和企业端客户提供物业管理、城市公共设施管理、企业综合设施管理等基础运营服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "企业端客户",
+        "evidence_span": "为政府端和企业端客户提供物业管理、城市公共设施管理、企业综合设施管理等基础运营服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "物业所有者或持有者",
+        "evidence_span": "空间运营及招商业务为物业所有者或持有者提供商办楼宇、产业园、公寓、酒店等招商租赁、运营及装修服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "地方政府",
+        "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供政策建议、土地规划建议、项目开发策略、产业综合服务、资产打理咨询等服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "开发商",
+        "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供政策建议、土地规划建议、项目开发策略、产业综合服务、资产打理咨询等服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "产业企业",
+        "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供政策建议、土地规划建议、项目开发策略、产业综合服务、资产打理咨询等服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "资产持有机构/金融机构",
+        "evidence_span": "咨询顾问业务为地方政府、开发商、产业企业、资产持有机构/金融机构等客户提供政策建议、土地规划建议、项目开发策略、产业综合服务、资产打理咨询等服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "互联网+业务",
+        "evidence_span": "积极布局互联网+业务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "金融服务业务",
+        "evidence_span": "积极布局互联网+业务和金融服务业务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "长租崛起享政策红利",
+        "evidence_span": "长租崛起享政策红利"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:01:21"
+}

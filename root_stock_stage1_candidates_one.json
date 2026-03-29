@@ -1,0 +1,288 @@
+[
+  {
+    "event_id": "evt_0e9d40aa1937",
+    "gt_subject_key": "",
+    "theme_name": "卫星互联",
+    "root_theme_candidates": [
+      {
+        "root_subject_key": "9019807",
+        "root_subject_name": "卫星互联网",
+        "stage1_theme_score": 0.0,
+        "theme_source": "db_theme_profiles",
+        "directions": [
+          {
+            "subject_key": "9019807",
+            "subject_name": "卫星互联网",
+            "level": 1,
+            "semantic_type": "产业链/供应链",
+            "strategy_type": "industry_chain",
+            "reason": "9019807：一、卫星互联网产业动态 2025年12月25日 中国民营航天企业蓝箭航天近日完成IPO上市辅导，标志着国内商业航天领域资本化进程提速。",
+            "source": "db_theme_profiles",
+            "stocks": [
+              {
+                "direction_key": "9019807",
+                "direction_name": "卫星互联网",
+                "stock_id": "688070",
+                "stock_name": "纵横股份",
+                "stage1_total_score": 0.792604,
+                "confidence_level": "semantic_only",
+                "anchor_hits": [],
+                "must_hits": [],
+                "should_hits": [],
+                "negative_hits": [],
+                "matched_fact_ids": [],
+                "matched_fact_types": [],
+                "distinct_fact_id_count": 0,
+                "distinct_fact_type_count": 0,
+                "primary_hit_score": 0.0,
+                "gate_reason": "pass_semantic_pool_only",
+                "profile_soft_anchor_hits": []
+              },
+              {
+                "direction_key": "9019807",
+                "direction_name": "卫星互联网",
+                "stock_id": "300136",
+                "stock_name": "信维通信",
+                "stage1_total_score": 0.776898,
+                "confidence_level": "semantic_only",
+                "anchor_hits": [],
+                "must_hits": [],
+                "should_hits": [],
+                "negative_hits": [],
+                "matched_fact_ids": [],
+                "matched_fact_types": [],
+                "distinct_fact_id_count": 0,
+                "distinct_fact_type_count": 0,
+                "primary_hit_score": 0.0,
+                "gate_reason": "pass_semantic_pool_only",
+                "profile_soft_anchor_hits": []
+              },
+              {
+                "direction_key": "9019807",
+                "direction_name": "卫星互联网",
+                "stock_id": "300819",
+                "stock_name": "聚杰微纤",
+                "stage1_total_score": 0.719539,
+                "confidence_level": "semantic_only",
+                "anchor_hits": [],
+                "must_hits": [],
+                "should_hits": [],
+                "negative_hits": [],
+                "matched_fact_ids": [],
+                "matched_fact_types": [],
+                "distinct_fact_id_count": 0,
+                "distinct_fact_type_count": 0,
+                "primary_hit_score": 0.0,
+                "gate_reason": "pass_semantic_pool_only",
+                "profile_soft_anchor_hits": []
+              }
+            ]
+          }
+        ],
+        "root_stocks": [
+          {
+            "root_subject_key": "9019807",
+            "root_subject_name": "卫星互联网",
+            "stock_id": "688070",
+            "stock_name": "纵横股份",
+            "root_score": 0.734083,
+            "best_direction_score": 0.792604,
+            "direction_count": 1,
+            "matched_direction_keys": [
+              "9019807"
+            ],
+            "matched_direction_names": [
+              "卫星互联网"
+            ],
+            "matched_fact_ids": [],
+            "matched_fact_types": [],
+            "matched_terms": [],
+            "negative_hits": [],
+            "matched_directions": [
+              {
+                "subject_key": "9019807",
+                "subject_name": "卫星互联网",
+                "score": 0.792604,
+                "confidence_level": "semantic_only",
+                "anchor_hits": [],
+                "matched_terms": [],
+                "matched_fact_ids": [],
+                "gate_reason": "pass_semantic_pool_only"
+              }
+            ],
+            "evidence_json": {
+              "root_subject_key": "9019807",
+              "root_subject_name": "卫星互联网",
+              "root_score": 0.734083,
+              "best_direction_score": 0.792604,
+              "direction_count": 1,
+              "matched_directions": [
+                {
+                  "subject_key": "9019807",
+                  "subject_name": "卫星互联网",
+                  "score": 0.792604,
+                  "confidence_level": "semantic_only",
+                  "anchor_hits": [],
+                  "matched_terms": [],
+                  "matched_fact_ids": [],
+                  "gate_reason": "pass_semantic_pool_only"
+                }
+              ],
+              "matched_fact_ids": [],
+              "matched_fact_types": [],
+              "matched_terms": [],
+              "negative_hits": [],
+              "top_direction": "卫星互联网",
+              "audit": {
+                "rule_version": "stage1_gate_v8",
+                "coverage_enabled": true,
+                "anchor_required": true,
+                "dual_pass_enabled": true
+              }
+            },
+            "leaf_status": "leafs_exist_but_unmatched",
+            "best_leaf_subject_key": null,
+            "best_leaf_subject_name": null,
+            "best_leaf_score": 0.0,
+            "secondary_leaf_subject_key": null,
+            "matched_leafs": []
+          },
+          {
+            "root_subject_key": "9019807",
+            "root_subject_name": "卫星互联网",
+            "stock_id": "300136",
+            "stock_name": "信维通信",
+            "root_score": 0.721519,
+            "best_direction_score": 0.776898,
+            "direction_count": 1,
+            "matched_direction_keys": [
+              "9019807"
+            ],
+            "matched_direction_names": [
+              "卫星互联网"
+            ],
+            "matched_fact_ids": [],
+            "matched_fact_types": [],
+            "matched_terms": [],
+            "negative_hits": [],
+            "matched_directions": [
+              {
+                "subject_key": "9019807",
+                "subject_name": "卫星互联网",
+                "score": 0.776898,
+                "confidence_level": "semantic_only",
+                "anchor_hits": [],
+                "matched_terms": [],
+                "matched_fact_ids": [],
+                "gate_reason": "pass_semantic_pool_only"
+              }
+            ],
+            "evidence_json": {
+              "root_subject_key": "9019807",
+              "root_subject_name": "卫星互联网",
+              "root_score": 0.721519,
+              "best_direction_score": 0.776898,
+              "direction_count": 1,
+              "matched_directions": [
+                {
+                  "subject_key": "9019807",
+                  "subject_name": "卫星互联网",
+                  "score": 0.776898,
+                  "confidence_level": "semantic_only",
+                  "anchor_hits": [],
+                  "matched_terms": [],
+                  "matched_fact_ids": [],
+                  "gate_reason": "pass_semantic_pool_only"
+                }
+              ],
+              "matched_fact_ids": [],
+              "matched_fact_types": [],
+              "matched_terms": [],
+              "negative_hits": [],
+              "top_direction": "卫星互联网",
+              "audit": {
+                "rule_version": "stage1_gate_v8",
+                "coverage_enabled": true,
+                "anchor_required": true,
+                "dual_pass_enabled": true
+              }
+            },
+            "leaf_status": "leafs_exist_but_unmatched",
+            "best_leaf_subject_key": null,
+            "best_leaf_subject_name": null,
+            "best_leaf_score": 0.0,
+            "secondary_leaf_subject_key": null,
+            "matched_leafs": []
+          },
+          {
+            "root_subject_key": "9019807",
+            "root_subject_name": "卫星互联网",
+            "stock_id": "300819",
+            "stock_name": "聚杰微纤",
+            "root_score": 0.675631,
+            "best_direction_score": 0.719539,
+            "direction_count": 1,
+            "matched_direction_keys": [
+              "9019807"
+            ],
+            "matched_direction_names": [
+              "卫星互联网"
+            ],
+            "matched_fact_ids": [],
+            "matched_fact_types": [],
+            "matched_terms": [],
+            "negative_hits": [],
+            "matched_directions": [
+              {
+                "subject_key": "9019807",
+                "subject_name": "卫星互联网",
+                "score": 0.719539,
+                "confidence_level": "semantic_only",
+                "anchor_hits": [],
+                "matched_terms": [],
+                "matched_fact_ids": [],
+                "gate_reason": "pass_semantic_pool_only"
+              }
+            ],
+            "evidence_json": {
+              "root_subject_key": "9019807",
+              "root_subject_name": "卫星互联网",
+              "root_score": 0.675631,
+              "best_direction_score": 0.719539,
+              "direction_count": 1,
+              "matched_directions": [
+                {
+                  "subject_key": "9019807",
+                  "subject_name": "卫星互联网",
+                  "score": 0.719539,
+                  "confidence_level": "semantic_only",
+                  "anchor_hits": [],
+                  "matched_terms": [],
+                  "matched_fact_ids": [],
+                  "gate_reason": "pass_semantic_pool_only"
+                }
+              ],
+              "matched_fact_ids": [],
+              "matched_fact_types": [],
+              "matched_terms": [],
+              "negative_hits": [],
+              "top_direction": "卫星互联网",
+              "audit": {
+                "rule_version": "stage1_gate_v8",
+                "coverage_enabled": true,
+                "anchor_required": true,
+                "dual_pass_enabled": true
+              }
+            },
+            "leaf_status": "leafs_exist_but_unmatched",
+            "best_leaf_subject_key": null,
+            "best_leaf_subject_name": null,
+            "best_leaf_score": 0.0,
+            "secondary_leaf_subject_key": null,
+            "matched_leafs": []
+          }
+        ]
+      }
+    ]
+  }
+]

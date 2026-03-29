@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:15:46", "result": {"span_uid": "b6882584c2a0", "action": "rewrite", "canonical_text": "中国卫星互联网星座建设采用高低轨融合方式推进，已完成多次卫星发射。", "final_type": "signal", "final_role": "建设进展", "stability": "medium", "reason": "原文包含具体时间点和发射次数等事件细节，改写后保留高低轨融合方式和建设进展的核心信息，使其更稳定、可独立理解。"}}

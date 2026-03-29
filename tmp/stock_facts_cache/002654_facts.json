@@ -1,0 +1,759 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "LED封装",
+      "evidence_span": "公司主要从事LED封装、照明应用和亮化照明工程业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "照明应用",
+      "evidence_span": "公司主要从事LED封装、照明应用和亮化照明工程业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "亮化照明工程",
+      "evidence_span": "公司主要从事LED封装、照明应用和亮化照明工程业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电视广告内容营销",
+      "evidence_span": "以及电视广告内容营销和互联网数字营销广告传媒业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "互联网数字营销广告传媒",
+      "evidence_span": "以及电视广告内容营销和互联网数字营销广告传媒业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体电子产业",
+      "evidence_span": "大力发展以半导体电子产业（含LED）为核心的新一代信息技术产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "分布式综合能源产业",
+      "evidence_span": "培育和发展分布式综合能源产业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "LED光源器件封装和照明产品提供商",
+      "evidence_span": "LED光源器件封装和照明产品提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内LED封装行业的领先者",
+      "evidence_span": "国内LED封装行业的领先者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "LED制造龙头",
+      "evidence_span": "转型数字营销的LED制造龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贴片式LED",
+      "evidence_span": "贴片式LED"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直插式LED",
+      "evidence_span": "直插式LED"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "红外线接收头",
+      "evidence_span": "红外线接收头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "背光灯条模组",
+      "evidence_span": "背光灯条模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "路灯",
+      "evidence_span": "路灯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三防灯",
+      "evidence_span": "三防灯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工矿灯",
+      "evidence_span": "工矿灯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "标识模组",
+      "evidence_span": "标识模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "灯带",
+      "evidence_span": "灯带"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直条灯",
+      "evidence_span": "直条灯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED照明合同能源管理服务",
+      "evidence_span": "LED照明合同能源管理服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公共建筑综合能源服务",
+      "evidence_span": "公共建筑综合能源服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业综合能源服务",
+      "evidence_span": "工业综合能源服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电视广告内容植入营销",
+      "evidence_span": "电视广告内容植入营销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动互联网精准广告营销服务",
+      "evidence_span": "移动互联网精准广告营销服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "嵌入式固态存储",
+      "evidence_span": "嵌入式固态存储"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "监控级固态存储",
+      "evidence_span": "监控级固态存储"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业与车规级SSD",
+      "evidence_span": "工业与车规级SSD"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中端消费级SSD",
+      "evidence_span": "中端消费级SSD"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "闪存封测定制",
+      "evidence_span": "闪存封测定制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Mini LED 电视背光",
+      "evidence_span": "Mini LED 电视背光"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Mini背光",
+      "evidence_span": "Mini背光"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车载超氛围灯及背光",
+      "evidence_span": "车载超氛围灯及背光"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "影视照明摄影灯",
+      "evidence_span": "影视照明摄影灯"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视觉检测照明",
+      "evidence_span": "视觉检测照明"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧城市中台",
+      "evidence_span": "智慧城市中台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能网关平台",
+      "evidence_span": "智能网关平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "中间件管理平台",
+      "evidence_span": "中间件管理平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧亮化控制平台",
+      "evidence_span": "智慧亮化控制平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "存储器研发中心",
+      "evidence_span": "存储器研发中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "存储器封装及测试项目",
+      "evidence_span": "存储器封装及测试项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "存储应用研发技术",
+      "evidence_span": "存储应用研发技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "晶圆封装设备",
+      "evidence_span": "晶圆封装设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模组生产设备与测试技术",
+      "evidence_span": "模组生产设备与测试技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国IROBOT",
+      "evidence_span": "美国IROBOT"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科沃斯",
+      "evidence_span": "科沃斯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美的",
+      "evidence_span": "美的"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "小米"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安克创新",
+      "evidence_span": "安克创新"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石头科技",
+      "evidence_span": "石头科技"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "吉利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "红旗",
+      "evidence_span": "红旗"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏",
+      "evidence_span": "小鹏"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "蔚来"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国农业银行",
+      "evidence_span": "中国农业银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广发银行",
+      "evidence_span": "广发银行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深赣高铁",
+      "evidence_span": "深赣高铁"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京机场",
+      "evidence_span": "北京机场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华润置地",
+      "evidence_span": "华润置地"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万科地产",
+      "evidence_span": "万科地产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "华为"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "乐高",
+      "evidence_span": "乐高"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "王府井百货集团",
+      "evidence_span": "王府井百货集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "重庆百货集团",
+      "evidence_span": "重庆百货集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "岁宝百货集团",
+      "evidence_span": "岁宝百货集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "红星爱琴海购物中心",
+      "evidence_span": "红星爱琴海购物中心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "老板电器",
+      "evidence_span": "老板电器"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蒙牛",
+      "evidence_span": "蒙牛"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "康巴赫",
+      "evidence_span": "康巴赫"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "香飘飘",
+      "evidence_span": "香飘飘"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽传祺",
+      "evidence_span": "广汽传祺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东阳光",
+      "evidence_span": "东阳光"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "火星人",
+      "evidence_span": "火星人"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "存储半导体国产替代",
+      "evidence_span": "抢抓国产存储晶圆将规模化放量及存储半导体国产替代产生的市场机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "LED封装",
+        "evidence_span": "公司主要从事LED封装、照明应用和亮化照明工程业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "照明应用",
+        "evidence_span": "公司主要从事LED封装、照明应用和亮化照明工程业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "亮化照明工程",
+        "evidence_span": "公司主要从事LED封装、照明应用和亮化照明工程业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电视广告内容营销",
+        "evidence_span": "以及电视广告内容营销和互联网数字营销广告传媒业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "互联网数字营销广告传媒",
+        "evidence_span": "以及电视广告内容营销和互联网数字营销广告传媒业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体电子产业",
+        "evidence_span": "大力发展以半导体电子产业（含LED）为核心的新一代信息技术产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "分布式综合能源产业",
+        "evidence_span": "培育和发展分布式综合能源产业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "LED光源器件封装和照明产品提供商",
+        "evidence_span": "LED光源器件封装和照明产品提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内LED封装行业的领先者",
+        "evidence_span": "国内LED封装行业的领先者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "LED制造龙头",
+        "evidence_span": "转型数字营销的LED制造龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贴片式LED",
+        "evidence_span": "贴片式LED"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直插式LED",
+        "evidence_span": "直插式LED"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "红外线接收头",
+        "evidence_span": "红外线接收头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "背光灯条模组",
+        "evidence_span": "背光灯条模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "路灯",
+        "evidence_span": "路灯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三防灯",
+        "evidence_span": "三防灯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工矿灯",
+        "evidence_span": "工矿灯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "标识模组",
+        "evidence_span": "标识模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "灯带",
+        "evidence_span": "灯带"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直条灯",
+        "evidence_span": "直条灯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED照明合同能源管理服务",
+        "evidence_span": "LED照明合同能源管理服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公共建筑综合能源服务",
+        "evidence_span": "公共建筑综合能源服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业综合能源服务",
+        "evidence_span": "工业综合能源服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电视广告内容植入营销",
+        "evidence_span": "电视广告内容植入营销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动互联网精准广告营销服务",
+        "evidence_span": "移动互联网精准广告营销服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "嵌入式固态存储",
+        "evidence_span": "嵌入式固态存储"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "监控级固态存储",
+        "evidence_span": "监控级固态存储"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业与车规级SSD",
+        "evidence_span": "工业与车规级SSD"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中端消费级SSD",
+        "evidence_span": "中端消费级SSD"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "闪存封测定制",
+        "evidence_span": "闪存封测定制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Mini LED 电视背光",
+        "evidence_span": "Mini LED 电视背光"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Mini背光",
+        "evidence_span": "Mini背光"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车载超氛围灯及背光",
+        "evidence_span": "车载超氛围灯及背光"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "影视照明摄影灯",
+        "evidence_span": "影视照明摄影灯"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视觉检测照明",
+        "evidence_span": "视觉检测照明"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧城市中台",
+        "evidence_span": "智慧城市中台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能网关平台",
+        "evidence_span": "智能网关平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "中间件管理平台",
+        "evidence_span": "中间件管理平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧亮化控制平台",
+        "evidence_span": "智慧亮化控制平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "存储器研发中心",
+        "evidence_span": "存储器研发中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "存储器封装及测试项目",
+        "evidence_span": "存储器封装及测试项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "存储应用研发技术",
+        "evidence_span": "存储应用研发技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "晶圆封装设备",
+        "evidence_span": "晶圆封装设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模组生产设备与测试技术",
+        "evidence_span": "模组生产设备与测试技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国IROBOT",
+        "evidence_span": "美国IROBOT"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科沃斯",
+        "evidence_span": "科沃斯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美的",
+        "evidence_span": "美的"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "小米"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安克创新",
+        "evidence_span": "安克创新"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石头科技",
+        "evidence_span": "石头科技"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "吉利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "红旗",
+        "evidence_span": "红旗"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏",
+        "evidence_span": "小鹏"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "蔚来"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国农业银行",
+        "evidence_span": "中国农业银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广发银行",
+        "evidence_span": "广发银行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深赣高铁",
+        "evidence_span": "深赣高铁"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京机场",
+        "evidence_span": "北京机场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华润置地",
+        "evidence_span": "华润置地"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万科地产",
+        "evidence_span": "万科地产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "华为"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "乐高",
+        "evidence_span": "乐高"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "王府井百货集团",
+        "evidence_span": "王府井百货集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "重庆百货集团",
+        "evidence_span": "重庆百货集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "岁宝百货集团",
+        "evidence_span": "岁宝百货集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "红星爱琴海购物中心",
+        "evidence_span": "红星爱琴海购物中心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "老板电器",
+        "evidence_span": "老板电器"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蒙牛",
+        "evidence_span": "蒙牛"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "康巴赫",
+        "evidence_span": "康巴赫"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "香飘飘",
+        "evidence_span": "香飘飘"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽传祺",
+        "evidence_span": "广汽传祺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东阳光",
+        "evidence_span": "东阳光"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "火星人",
+        "evidence_span": "火星人"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "存储半导体国产替代",
+        "evidence_span": "抢抓国产存储晶圆将规模化放量及存储半导体国产替代产生的市场机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:05:15"
+}

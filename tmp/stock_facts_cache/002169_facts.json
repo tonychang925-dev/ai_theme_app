@@ -1,0 +1,434 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字能源技术",
+      "evidence_span": "目前公司主营业务为数字能源技术与产品和综合能源服务两大类"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "产品",
+      "evidence_span": "目前公司主营业务为数字能源技术与产品和综合能源服务两大类"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "综合能源服务",
+      "evidence_span": "目前公司主营业务为数字能源技术与产品和综合能源服务两大类"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "变频专业厂家",
+      "evidence_span": "公司已成为国内知名的变频专业厂家"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "储能行业级联型高压储能技术路线的标杆企业",
+      "evidence_span": "公司现已成为储能行业级联型高压储能技术路线的标杆企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端电力电缆产品研发、生产、销售企业",
+      "evidence_span": "公司子公司岭南电缆是专业的集高端电力电缆产品研发、生产、销售于一体的高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配网中性点接地成套装置",
+      "evidence_span": "配网中性点接地成套装置：系列产品已在国家电网、南方电网绝大部分地市级供电局广泛运用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消弧并小电阻接地成套装置",
+      "evidence_span": "公司近年新研制的“消弧并小电阻接地成套装置”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压变频调速系统",
+      "evidence_span": "高压变频调速系统：经过持续的产品创新升级以及市场的不断拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电站型储能系统",
+      "evidence_span": "公司的储能产品序列包括电站型储能系统（高压直挂级联型高压储能）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "需求侧储能系统",
+      "evidence_span": "需求侧储能系统（多模组分散式集成储能）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动储能产品",
+      "evidence_span": "移动储能产品及移动储能测试车（35kV）等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动储能测试车",
+      "evidence_span": "移动储能产品及移动储能测试车（35kV）等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "港口船舶岸基电源系统",
+      "evidence_span": "公司自主研发的港口船舶岸基电源系统具有较强市场竞争力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源并网测试设备产品",
+      "evidence_span": "新能源并网测试设备产品：公司先后为南方电网、国家电网开发了6~35kV等级大容量并网移动测试装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "UPS电源系列产品",
+      "evidence_span": "UPS电源系列产品：公司控股孙公司广东创电科技有限公司，专注于电源系统设备研制和工程服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端电力电缆产品",
+      "evidence_span": "公司子公司岭南电缆是专业的集高端电力电缆产品研发、生产、销售于一体的高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主配网一体化规划支撑平台",
+      "evidence_span": "已在多个省级电力公司开展“主配网一体化规划支撑平台”和“业务工作平台”的开发和试点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "业务工作平台",
+      "evidence_span": "已在多个省级电力公司开展“主配网一体化规划支撑平台”和“业务工作平台”的开发和试点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "完整配网故障一体化处理整体解决方案",
+      "evidence_span": "公司研制的“完整配网故障一体化处理整体解决方案”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业互联网边缘网关",
+      "evidence_span": "开发了具有自主知识产权的工业互联网边缘网关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "用电监测和能源管理平台",
+      "evidence_span": "部署在智光私有云的用电监测和能源管理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发电厂节能增效",
+      "evidence_span": "持续做强三大核心优势业务—“发电厂节能增效、工业电气节能增效和工业余热余压发电利用”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业电气节能增效",
+      "evidence_span": "持续做强三大核心优势业务—“发电厂节能增效、工业电气节能增效和工业余热余压发电利用”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业余热余压发电利用",
+      "evidence_span": "持续做强三大核心优势业务—“发电厂节能增效、工业电气节能增效和工业余热余压发电利用”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏新能源投资建设运营",
+      "evidence_span": "已逐步实现从传统用户工程为主向光伏新能源投资建设运营为主的核心业务转变"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智光级联型直接高压大容量储能技术",
+      "evidence_span": "智光级联型直接高压大容量储能技术已应用于国家电网、南方电网、华能集团、华电集团、广东省能源投资集团、粤芯半导体等客户"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智光级联型高压储能技术",
+      "evidence_span": "智光级联型高压储能技术已得到市场充分认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "系列产品已在国家电网、南方电网绝大部分地市级供电局广泛运用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "系列产品已在国家电网、南方电网绝大部分地市级供电局广泛运用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华能集团",
+      "evidence_span": "智光级联型直接高压大容量储能技术已应用于国家电网、南方电网、华能集团、华电集团、广东省能源投资集团、粤芯半导体等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华电集团",
+      "evidence_span": "智光级联型直接高压大容量储能技术已应用于国家电网、南方电网、华能集团、华电集团、广东省能源投资集团、粤芯半导体等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广东省能源投资集团",
+      "evidence_span": "智光级联型直接高压大容量储能技术已应用于国家电网、南方电网、华能集团、华电集团、广东省能源投资集团、粤芯半导体等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "粤芯半导体",
+      "evidence_span": "智光级联型直接高压大容量储能技术已应用于国家电网、南方电网、华能集团、华电集团、广东省能源投资集团、粤芯半导体等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "许继集团",
+      "evidence_span": "该类测试车已被许继集团、大唐集团等陆续采购"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大唐集团",
+      "evidence_span": "该类测试车已被许继集团、大唐集团等陆续采购"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京地铁",
+      "evidence_span": "公司服务于北京地铁超过10年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "成都地铁",
+      "evidence_span": "成都地铁多条地铁采用公司产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "佛山地铁",
+      "evidence_span": "目前公司正助力佛山地铁建设，为其多条地铁线提供UPS及综合应用解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "湖北省电力公司",
+      "evidence_span": "该系统解决方案已在湖北省电力公司、海南电网公司等推广应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海南电网公司",
+      "evidence_span": "该系统解决方案已在湖北省电力公司、海南电网公司等推广应用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电改后市场的线下拓展先行者",
+      "evidence_span": "智光电气电改后市场的线下拓展先行者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电力体制改革",
+      "evidence_span": "智光电气深度报告-迎接电力体制改革浪潮,构建用户侧管理网络平台"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字能源技术与产品",
+        "evidence_span": "目前公司主营业务为数字能源技术与产品和综合能源服务两大类"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "综合能源服务",
+        "evidence_span": "目前公司主营业务为数字能源技术与产品和综合能源服务两大类"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "变频专业厂家",
+        "evidence_span": "公司已成为国内知名的变频专业厂家"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "储能行业级联型高压储能技术路线的标杆企业",
+        "evidence_span": "公司现已成为储能行业级联型高压储能技术路线的标杆企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端电力电缆产品研发、生产、销售企业",
+        "evidence_span": "公司子公司岭南电缆是专业的集高端电力电缆产品研发、生产、销售于一体的高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配网中性点接地成套装置",
+        "evidence_span": "配网中性点接地成套装置：系列产品已在国家电网、南方电网绝大部分地市级供电局广泛运用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消弧并小电阻接地成套装置",
+        "evidence_span": "公司近年新研制的“消弧并小电阻接地成套装置”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压变频调速系统",
+        "evidence_span": "高压变频调速系统：经过持续的产品创新升级以及市场的不断拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电站型储能系统",
+        "evidence_span": "公司的储能产品序列包括电站型储能系统（高压直挂级联型高压储能）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "需求侧储能系统",
+        "evidence_span": "需求侧储能系统（多模组分散式集成储能）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动储能产品",
+        "evidence_span": "移动储能产品及移动储能测试车（35kV）等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动储能测试车",
+        "evidence_span": "移动储能产品及移动储能测试车（35kV）等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "港口船舶岸基电源系统",
+        "evidence_span": "公司自主研发的港口船舶岸基电源系统具有较强市场竞争力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源并网测试设备产品",
+        "evidence_span": "新能源并网测试设备产品：公司先后为南方电网、国家电网开发了6~35kV等级大容量并网移动测试装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "UPS电源系列产品",
+        "evidence_span": "UPS电源系列产品：公司控股孙公司广东创电科技有限公司，专注于电源系统设备研制和工程服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端电力电缆产品",
+        "evidence_span": "公司子公司岭南电缆是专业的集高端电力电缆产品研发、生产、销售于一体的高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主配网一体化规划支撑平台",
+        "evidence_span": "已在多个省级电力公司开展“主配网一体化规划支撑平台”和“业务工作平台”的开发和试点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "业务工作平台",
+        "evidence_span": "已在多个省级电力公司开展“主配网一体化规划支撑平台”和“业务工作平台”的开发和试点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "完整配网故障一体化处理整体解决方案",
+        "evidence_span": "公司研制的“完整配网故障一体化处理整体解决方案”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业互联网边缘网关",
+        "evidence_span": "开发了具有自主知识产权的工业互联网边缘网关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "用电监测和能源管理平台",
+        "evidence_span": "部署在智光私有云的用电监测和能源管理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发电厂节能增效",
+        "evidence_span": "持续做强三大核心优势业务—“发电厂节能增效、工业电气节能增效和工业余热余压发电利用”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业电气节能增效",
+        "evidence_span": "持续做强三大核心优势业务—“发电厂节能增效、工业电气节能增效和工业余热余压发电利用”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业余热余压发电利用",
+        "evidence_span": "持续做强三大核心优势业务—“发电厂节能增效、工业电气节能增效和工业余热余压发电利用”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏新能源投资建设运营",
+        "evidence_span": "已逐步实现从传统用户工程为主向光伏新能源投资建设运营为主的核心业务转变"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智光级联型直接高压大容量储能技术",
+        "evidence_span": "智光级联型直接高压大容量储能技术已应用于国家电网、南方电网、华能集团、华电集团、广东省能源投资集团、粤芯半导体等客户"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智光级联型高压储能技术",
+        "evidence_span": "智光级联型高压储能技术已得到市场充分认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "系列产品已在国家电网、南方电网绝大部分地市级供电局广泛运用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "系列产品已在国家电网、南方电网绝大部分地市级供电局广泛运用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华能集团",
+        "evidence_span": "智光级联型直接高压大容量储能技术已应用于国家电网、南方电网、华能集团、华电集团、广东省能源投资集团、粤芯半导体等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华电集团",
+        "evidence_span": "智光级联型直接高压大容量储能技术已应用于国家电网、南方电网、华能集团、华电集团、广东省能源投资集团、粤芯半导体等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广东省能源投资集团",
+        "evidence_span": "智光级联型直接高压大容量储能技术已应用于国家电网、南方电网、华能集团、华电集团、广东省能源投资集团、粤芯半导体等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "粤芯半导体",
+        "evidence_span": "智光级联型直接高压大容量储能技术已应用于国家电网、南方电网、华能集团、华电集团、广东省能源投资集团、粤芯半导体等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "许继集团",
+        "evidence_span": "该类测试车已被许继集团、大唐集团等陆续采购"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大唐集团",
+        "evidence_span": "该类测试车已被许继集团、大唐集团等陆续采购"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京地铁",
+        "evidence_span": "公司服务于北京地铁超过10年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "成都地铁",
+        "evidence_span": "成都地铁多条地铁采用公司产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "佛山地铁",
+        "evidence_span": "目前公司正助力佛山地铁建设，为其多条地铁线提供UPS及综合应用解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "湖北省电力公司",
+        "evidence_span": "该系统解决方案已在湖北省电力公司、海南电网公司等推广应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海南电网公司",
+        "evidence_span": "该系统解决方案已在湖北省电力公司、海南电网公司等推广应用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电改后市场的线下拓展先行者",
+        "evidence_span": "智光电气电改后市场的线下拓展先行者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电力体制改革",
+        "evidence_span": "智光电气深度报告-迎接电力体制改革浪潮,构建用户侧管理网络平台"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:16:14"
+}

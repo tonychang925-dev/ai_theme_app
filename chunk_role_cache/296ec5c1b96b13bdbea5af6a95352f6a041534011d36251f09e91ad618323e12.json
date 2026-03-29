@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:43", "result": {"chunk_id": "d777feed5b80", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落主要报告SEMI关于中国大陆芯片制造设备支出的数据（如250亿美元），属于市场统计和景气数据，是事件性内容，而非半导体设备的静态说明。"}}

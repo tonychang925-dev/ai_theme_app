@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电影发行",
+      "evidence_span": "公司的主营业务为电影发行及放映业务，具体包括电影发行和版权销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "院线经营",
+      "evidence_span": "公司的主营业务为电影发行及放映业务，具体包括...院线经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "影院投资",
+      "evidence_span": "公司的主营业务为电影发行及放映业务，具体包括...影院投资、开发和经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "开发",
+      "evidence_span": "公司的主营业务为电影发行及放映业务，具体包括...影院投资、开发和经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "经营",
+      "evidence_span": "公司的主营业务为电影发行及放映业务，具体包括...影院投资、开发和经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "广告营销",
+      "evidence_span": "公司的主营业务为电影发行及放映业务，具体包括...广告营销"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务",
+      "evidence_span": "公司的主营业务为电影发行及放映业务，具体包括...技术服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专业化发行公司",
+      "evidence_span": "形成了“专业化发行公司+综合型院线+高端影院经营”的完整电影发行放映产业链"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合型院线",
+      "evidence_span": "形成了“专业化发行公司+综合型院线+高端影院经营”的完整电影发行放映产业链"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端影院经营",
+      "evidence_span": "形成了“专业化发行公司+综合型院线+高端影院经营”的完整电影发行放映产业链"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电影发行放映产业链",
+      "evidence_span": "形成了“专业化发行公司+综合型院线+高端影院经营”的完整电影发行放映产业链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "影片放映服务",
+      "evidence_span": "影院经营业务主要为电影观众提供影片放映服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "餐饮、卖品、衍生品销售",
+      "evidence_span": "同时还从事餐饮、卖品、衍生品销售等增值服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "影院广告经营业务",
+      "evidence_span": "以及映前广告、场地广告等影院广告经营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "影院设计咨询、建设及经营管理服务",
+      "evidence_span": "公司还提供专业化的影院设计咨询、建设及经营管理服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "院线统一管理、统一供片",
+      "evidence_span": "院线经营系电影发行及影院放映之间的桥梁，主要负责对以资产联结或者供片联结方式加入院线的影院进行统一管理、统一供片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硬件设施及软件服务支持",
+      "evidence_span": "院线公司也会对院线内的加盟影院提供硬件设施及软件服务的支持"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电影营销推广策略制定、实施",
+      "evidence_span": "电影发行业务主要包括影片的营销推广策略制定、实施及与院线洽谈排片方案等工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "版权经营、代理授权",
+      "evidence_span": "发行业务还包括版权经营、代理授权等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IP品牌管理",
+      "evidence_span": "上影元文化...业务板块涵盖IP品牌管理、整合营销、商品新零售及沉浸式娱乐体验"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整合营销",
+      "evidence_span": "上影元文化...业务板块涵盖IP品牌管理、整合营销、商品新零售及沉浸式娱乐体验"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品新零售",
+      "evidence_span": "上影元文化...业务板块涵盖IP品牌管理、整合营销、商品新零售及沉浸式娱乐体验"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "沉浸式娱乐体验",
+      "evidence_span": "上影元文化...业务板块涵盖IP品牌管理、整合营销、商品新零售及沉浸式娱乐体验"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "加盟影院",
+      "evidence_span": "联和院线加盟影院总数达 746 家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电影全产业链龙头",
+      "evidence_span": "上海电影电影全产业链龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "发行+放映产业链",
+      "evidence_span": "上海电影品牌形象良好，“发行+放映”产业链及区位优势显著"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电影发行",
+        "evidence_span": "公司的主营业务为电影发行及放映业务，具体包括电影发行和版权销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "院线经营",
+        "evidence_span": "公司的主营业务为电影发行及放映业务，具体包括...院线经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "影院投资、开发和经营",
+        "evidence_span": "公司的主营业务为电影发行及放映业务，具体包括...影院投资、开发和经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "广告营销",
+        "evidence_span": "公司的主营业务为电影发行及放映业务，具体包括...广告营销"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "技术服务",
+        "evidence_span": "公司的主营业务为电影发行及放映业务，具体包括...技术服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专业化发行公司",
+        "evidence_span": "形成了“专业化发行公司+综合型院线+高端影院经营”的完整电影发行放映产业链"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合型院线",
+        "evidence_span": "形成了“专业化发行公司+综合型院线+高端影院经营”的完整电影发行放映产业链"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端影院经营",
+        "evidence_span": "形成了“专业化发行公司+综合型院线+高端影院经营”的完整电影发行放映产业链"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电影发行放映产业链",
+        "evidence_span": "形成了“专业化发行公司+综合型院线+高端影院经营”的完整电影发行放映产业链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "影片放映服务",
+        "evidence_span": "影院经营业务主要为电影观众提供影片放映服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "餐饮、卖品、衍生品销售",
+        "evidence_span": "同时还从事餐饮、卖品、衍生品销售等增值服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "影院广告经营业务",
+        "evidence_span": "以及映前广告、场地广告等影院广告经营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "影院设计咨询、建设及经营管理服务",
+        "evidence_span": "公司还提供专业化的影院设计咨询、建设及经营管理服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "院线统一管理、统一供片",
+        "evidence_span": "院线经营系电影发行及影院放映之间的桥梁，主要负责对以资产联结或者供片联结方式加入院线的影院进行统一管理、统一供片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硬件设施及软件服务支持",
+        "evidence_span": "院线公司也会对院线内的加盟影院提供硬件设施及软件服务的支持"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电影营销推广策略制定、实施",
+        "evidence_span": "电影发行业务主要包括影片的营销推广策略制定、实施及与院线洽谈排片方案等工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "版权经营、代理授权",
+        "evidence_span": "发行业务还包括版权经营、代理授权等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IP品牌管理",
+        "evidence_span": "上影元文化...业务板块涵盖IP品牌管理、整合营销、商品新零售及沉浸式娱乐体验"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整合营销",
+        "evidence_span": "上影元文化...业务板块涵盖IP品牌管理、整合营销、商品新零售及沉浸式娱乐体验"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品新零售",
+        "evidence_span": "上影元文化...业务板块涵盖IP品牌管理、整合营销、商品新零售及沉浸式娱乐体验"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "沉浸式娱乐体验",
+        "evidence_span": "上影元文化...业务板块涵盖IP品牌管理、整合营销、商品新零售及沉浸式娱乐体验"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "加盟影院",
+        "evidence_span": "联和院线加盟影院总数达 746 家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电影全产业链龙头",
+        "evidence_span": "上海电影电影全产业链龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "发行+放映产业链",
+        "evidence_span": "上海电影品牌形象良好，“发行+放映”产业链及区位优势显著"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:26:08"
+}

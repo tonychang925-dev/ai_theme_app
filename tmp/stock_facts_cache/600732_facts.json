@@ -1,0 +1,99 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "晶硅太阳能电池",
+      "evidence_span": "深耕晶硅太阳能电池领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光伏电池片龙头",
+      "evidence_span": "全球光伏电池片龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专业化电池片龙头",
+      "evidence_span": "专业化电池片龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏电池片",
+      "evidence_span": "全球光伏电池片龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ABC电池片",
+      "evidence_span": "爱旭ABC电池片技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ABC电池片技术",
+      "evidence_span": "爱旭ABC电池片技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "IBC技术",
+      "evidence_span": "在IBC技术基础上进行了创新升级"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球晶硅组件企业",
+      "evidence_span": "深受全球晶硅组件企业的青睐"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏电池新技术龙头",
+      "evidence_span": "光伏电池新技术龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "晶硅太阳能电池",
+        "evidence_span": "深耕晶硅太阳能电池领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光伏电池片龙头",
+        "evidence_span": "全球光伏电池片龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专业化电池片龙头",
+        "evidence_span": "专业化电池片龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏电池片",
+        "evidence_span": "全球光伏电池片龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ABC电池片",
+        "evidence_span": "爱旭ABC电池片技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ABC电池片技术",
+        "evidence_span": "爱旭ABC电池片技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "IBC技术",
+        "evidence_span": "在IBC技术基础上进行了创新升级"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球晶硅组件企业",
+        "evidence_span": "深受全球晶硅组件企业的青睐"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏电池新技术龙头",
+        "evidence_span": "光伏电池新技术龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:09:58"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "5d8f4cfee6e2", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述OpenAI硬件部门总监在社交平台透露将开发配备定制传感器的机器人，这是一个具体的事件动态，没有提供静态知识或稳定定义，因此归类为pure_event。"}}

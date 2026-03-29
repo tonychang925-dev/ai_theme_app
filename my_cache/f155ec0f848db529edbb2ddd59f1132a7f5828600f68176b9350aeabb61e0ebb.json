@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:58:46", "result": {"chunk_id": "fc78e6115b74", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含九号公司发布新品和建设网络的事件，但也提及产品迭代升级、智能两轮电动车等可能涉及题材知识的内容，混合了事件和潜在知识。"}}

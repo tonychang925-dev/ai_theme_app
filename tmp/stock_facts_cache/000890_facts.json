@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "金属制品业务",
+      "evidence_span": "公司金属制品业务主要是生产、销售多种用途、不同规格的钢丝产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保业务",
+      "evidence_span": "公司环保业务主要以控股子公司大连广泰源环保科技有限公司为主体开展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "金属制品供应商",
+      "evidence_span": "公司作为国内知名的金属制品供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "垃圾渗滤液处理企业",
+      "evidence_span": "广泰源一家以高难度废水处理、液体分离、化工浓缩为业务的高科技环保公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "弹簧钢丝",
+      "evidence_span": "按照用途分有弹簧钢丝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "打包钢丝",
+      "evidence_span": "打包钢丝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车座椅骨架钢丝",
+      "evidence_span": "汽车座椅骨架钢丝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软轴软管钢丝",
+      "evidence_span": "软轴软管钢丝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制绳钢丝",
+      "evidence_span": "制绳钢丝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "垃圾渗滤液处理设备",
+      "evidence_span": "主要从事生活垃圾渗滤液处理设备的开发、生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "垃圾渗滤液处理运营管理服务",
+      "evidence_span": "生活垃圾渗滤液处理设备的运营管理服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "V-MVR无垢机械式蒸发设备",
+      "evidence_span": "广泰源研发的 V-MVR无垢机械式蒸发设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "V-MVR+VP核心技术",
+      "evidence_span": "尤其是在使用V-MVR+VP这一核心技术处理垃圾渗滤液方面业绩突出"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "零污染液体排放处理工艺",
+      "evidence_span": "率先提出零污染液体排放处理工艺理念"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "蒸发技术处理垃圾渗滤液",
+      "evidence_span": "成为利用蒸发技术处理垃圾渗滤液的领先企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集装箱式标准化设备",
+      "evidence_span": "广泰源针对渗滤液应急处理市场研发推出第三代集装箱式标准化设备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "垃圾填埋场",
+      "evidence_span": "处理对象主要为垃圾填埋场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "垃圾焚烧厂",
+      "evidence_span": "垃圾焚烧厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "餐厨垃圾场所",
+      "evidence_span": "餐厨垃圾等场所"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "金属制品业务",
+        "evidence_span": "公司金属制品业务主要是生产、销售多种用途、不同规格的钢丝产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保业务",
+        "evidence_span": "公司环保业务主要以控股子公司大连广泰源环保科技有限公司为主体开展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "金属制品供应商",
+        "evidence_span": "公司作为国内知名的金属制品供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "垃圾渗滤液处理企业",
+        "evidence_span": "广泰源一家以高难度废水处理、液体分离、化工浓缩为业务的高科技环保公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "弹簧钢丝",
+        "evidence_span": "按照用途分有弹簧钢丝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "打包钢丝",
+        "evidence_span": "打包钢丝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车座椅骨架钢丝",
+        "evidence_span": "汽车座椅骨架钢丝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软轴软管钢丝",
+        "evidence_span": "软轴软管钢丝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制绳钢丝",
+        "evidence_span": "制绳钢丝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "垃圾渗滤液处理设备",
+        "evidence_span": "主要从事生活垃圾渗滤液处理设备的开发、生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "垃圾渗滤液处理运营管理服务",
+        "evidence_span": "生活垃圾渗滤液处理设备的运营管理服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "V-MVR无垢机械式蒸发设备",
+        "evidence_span": "广泰源研发的 V-MVR无垢机械式蒸发设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "V-MVR+VP核心技术",
+        "evidence_span": "尤其是在使用V-MVR+VP这一核心技术处理垃圾渗滤液方面业绩突出"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "零污染液体排放处理工艺",
+        "evidence_span": "率先提出零污染液体排放处理工艺理念"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "蒸发技术处理垃圾渗滤液",
+        "evidence_span": "成为利用蒸发技术处理垃圾渗滤液的领先企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集装箱式标准化设备",
+        "evidence_span": "广泰源针对渗滤液应急处理市场研发推出第三代集装箱式标准化设备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "垃圾填埋场",
+        "evidence_span": "处理对象主要为垃圾填埋场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "垃圾焚烧厂",
+        "evidence_span": "垃圾焚烧厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "餐厨垃圾场所",
+        "evidence_span": "餐厨垃圾等场所"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:44:52"
+}

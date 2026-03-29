@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "9ac4d85d6f99", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述台积电SoIC产能的具体扩张计划和时间表，涉及客户需求、产能数字和未来预测，属于单次事件性动态，未揭示半导体设备本身的结构或关键技术。"}}

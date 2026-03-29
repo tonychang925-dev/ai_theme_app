@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:24:22", "result": {"chunk_id": "548a286158f5", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落简短描述特朗普征税函事件，包括生效日期和税率，属于政策动态，与稀土永磁本体知识无关。"}}

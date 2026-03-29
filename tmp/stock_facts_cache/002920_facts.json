@@ -1,0 +1,609 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能座舱",
+      "evidence_span": "聚焦智能座舱、智能驾驶和网联服务三大领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能驾驶",
+      "evidence_span": "聚焦智能座舱、智能驾驶和网联服务三大领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "网联服务",
+      "evidence_span": "聚焦智能座舱、智能驾驶和网联服务三大领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车电子行业领航者",
+      "evidence_span": "成长为汽车电子行业的领航者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产Tier1龙头",
+      "evidence_span": "德赛西威“三轮驱动”的国产Tier1龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车智能时代资深玩家",
+      "evidence_span": "汽车智能时代资深玩家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "座舱域控制器",
+      "evidence_span": "主要产品包括座舱域控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能座舱系统",
+      "evidence_span": "主要产品包括座舱域控制器、智能座舱系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息娱乐系统",
+      "evidence_span": "主要产品包括座舱域控制器、智能座舱系统、信息娱乐系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "显示模组及系统",
+      "evidence_span": "显示模组及系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液晶仪表",
+      "evidence_span": "液晶仪表"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传感器",
+      "evidence_span": "主要产品包括传感器（超声波雷达，摄像头，毫米波雷达等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大算力域控制器",
+      "evidence_span": "大算力域控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能泊车系统",
+      "evidence_span": "智能泊车系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环视系统",
+      "evidence_span": "环视系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驾驶员监控系统",
+      "evidence_span": "驾驶员监控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整车级OTA",
+      "evidence_span": "主要产品包括整车级OTA"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络安全",
+      "evidence_span": "网络安全"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蓝鲸OS终端软件",
+      "evidence_span": "蓝鲸OS终端软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能进入",
+      "evidence_span": "智能进入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "座舱安全管家",
+      "evidence_span": "座舱安全管家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息安全",
+      "evidence_span": "信息安全等网联服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载智能中央计算平台ICP Aurora",
+      "evidence_span": "发布业内首款可量产车载智能中央计算平台——ICP Aurora"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Vcare服务平台",
+      "evidence_span": "德赛西威打造Vcare服务平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全栈自研解决方案",
+      "evidence_span": "从智能传感器到智能驾驶域控制器及相关算法的全栈自研解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Hypervisor架构",
+      "evidence_span": "公司量产了基于Hypervisor架构的新一代智能座舱"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高低速融合技术",
+      "evidence_span": "基于高低速融合技术概念，向主机厂提供智能驾驶整体解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "跨域融合",
+      "evidence_span": "软件集成智能座舱、智能驾驶、网联服务等在内的核心功能域，实现了跨域融合"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽大众",
+      "evidence_span": "欧美系车厂主要包括一汽大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽大众",
+      "evidence_span": "上汽大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众集团",
+      "evidence_span": "大众集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江淮大众",
+      "evidence_span": "江淮大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "SCANIA",
+      "evidence_span": "SCANIA"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "MAN",
+      "evidence_span": "MAN"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃尔沃",
+      "evidence_span": "沃尔沃"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用汽车",
+      "evidence_span": "上汽通用汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安福特",
+      "evidence_span": "长安福特"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "DAF",
+      "evidence_span": "DAF等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽丰田",
+      "evidence_span": "日系客户主要包括广汽丰田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽丰田",
+      "evidence_span": "一汽丰田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰田（印度尼西亚）",
+      "evidence_span": "丰田（印度尼西亚）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雷克萨斯",
+      "evidence_span": "雷克萨斯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本马自达",
+      "evidence_span": "日本马自达"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安马自达",
+      "evidence_span": "长安马自达"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽马自达",
+      "evidence_span": "一汽马自达"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风日产",
+      "evidence_span": "东风日产等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利汽车",
+      "evidence_span": "国内自主品牌车厂主要包括吉利汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城汽车",
+      "evidence_span": "长城汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽乘用车",
+      "evidence_span": "广汽乘用车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安汽车",
+      "evidence_span": "长安汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽乘用车",
+      "evidence_span": "上汽乘用车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽红旗",
+      "evidence_span": "一汽红旗"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞汽车",
+      "evidence_span": "奇瑞汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "理想汽车",
+      "evidence_span": "理想汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏汽车",
+      "evidence_span": "小鹏汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来汽车",
+      "evidence_span": "蔚来汽车等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英伟达",
+      "evidence_span": "公司深度绑定英伟达"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高通技术公司",
+      "evidence_span": "公司与高通技术公司达成战略合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车智能化核心受益者",
+      "evidence_span": "汽车智能化的核心受益者"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能座舱",
+        "evidence_span": "聚焦智能座舱、智能驾驶和网联服务三大领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能驾驶",
+        "evidence_span": "聚焦智能座舱、智能驾驶和网联服务三大领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "网联服务",
+        "evidence_span": "聚焦智能座舱、智能驾驶和网联服务三大领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车电子行业领航者",
+        "evidence_span": "成长为汽车电子行业的领航者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产Tier1龙头",
+        "evidence_span": "德赛西威“三轮驱动”的国产Tier1龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车智能时代资深玩家",
+        "evidence_span": "汽车智能时代资深玩家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "座舱域控制器",
+        "evidence_span": "主要产品包括座舱域控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能座舱系统",
+        "evidence_span": "主要产品包括座舱域控制器、智能座舱系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息娱乐系统",
+        "evidence_span": "主要产品包括座舱域控制器、智能座舱系统、信息娱乐系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "显示模组及系统",
+        "evidence_span": "显示模组及系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液晶仪表",
+        "evidence_span": "液晶仪表"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传感器",
+        "evidence_span": "主要产品包括传感器（超声波雷达，摄像头，毫米波雷达等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大算力域控制器",
+        "evidence_span": "大算力域控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能泊车系统",
+        "evidence_span": "智能泊车系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环视系统",
+        "evidence_span": "环视系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驾驶员监控系统",
+        "evidence_span": "驾驶员监控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整车级OTA",
+        "evidence_span": "主要产品包括整车级OTA"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络安全",
+        "evidence_span": "网络安全"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蓝鲸OS终端软件",
+        "evidence_span": "蓝鲸OS终端软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能进入",
+        "evidence_span": "智能进入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "座舱安全管家",
+        "evidence_span": "座舱安全管家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息安全",
+        "evidence_span": "信息安全等网联服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载智能中央计算平台ICP Aurora",
+        "evidence_span": "发布业内首款可量产车载智能中央计算平台——ICP Aurora"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Vcare服务平台",
+        "evidence_span": "德赛西威打造Vcare服务平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全栈自研解决方案",
+        "evidence_span": "从智能传感器到智能驾驶域控制器及相关算法的全栈自研解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Hypervisor架构",
+        "evidence_span": "公司量产了基于Hypervisor架构的新一代智能座舱"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高低速融合技术",
+        "evidence_span": "基于高低速融合技术概念，向主机厂提供智能驾驶整体解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "跨域融合",
+        "evidence_span": "软件集成智能座舱、智能驾驶、网联服务等在内的核心功能域，实现了跨域融合"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽大众",
+        "evidence_span": "欧美系车厂主要包括一汽大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽大众",
+        "evidence_span": "上汽大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众集团",
+        "evidence_span": "大众集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江淮大众",
+        "evidence_span": "江淮大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "SCANIA",
+        "evidence_span": "SCANIA"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "MAN",
+        "evidence_span": "MAN"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃尔沃",
+        "evidence_span": "沃尔沃"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用汽车",
+        "evidence_span": "上汽通用汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安福特",
+        "evidence_span": "长安福特"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "DAF",
+        "evidence_span": "DAF等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽丰田",
+        "evidence_span": "日系客户主要包括广汽丰田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽丰田",
+        "evidence_span": "一汽丰田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰田（印度尼西亚）",
+        "evidence_span": "丰田（印度尼西亚）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雷克萨斯",
+        "evidence_span": "雷克萨斯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本马自达",
+        "evidence_span": "日本马自达"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安马自达",
+        "evidence_span": "长安马自达"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽马自达",
+        "evidence_span": "一汽马自达"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风日产",
+        "evidence_span": "东风日产等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利汽车",
+        "evidence_span": "国内自主品牌车厂主要包括吉利汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城汽车",
+        "evidence_span": "长城汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽乘用车",
+        "evidence_span": "广汽乘用车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安汽车",
+        "evidence_span": "长安汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽乘用车",
+        "evidence_span": "上汽乘用车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽红旗",
+        "evidence_span": "一汽红旗"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞汽车",
+        "evidence_span": "奇瑞汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "理想汽车",
+        "evidence_span": "理想汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏汽车",
+        "evidence_span": "小鹏汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来汽车",
+        "evidence_span": "蔚来汽车等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英伟达",
+        "evidence_span": "公司深度绑定英伟达"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高通技术公司",
+        "evidence_span": "公司与高通技术公司达成战略合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车智能化核心受益者",
+        "evidence_span": "汽车智能化的核心受益者"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:39:30"
+}

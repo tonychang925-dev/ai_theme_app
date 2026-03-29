@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "焊接钢管研发",
+      "evidence_span": "公司是国内最大的焊接钢管研发、生产、销售企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "焊接钢管生产",
+      "evidence_span": "公司是国内最大的焊接钢管研发、生产、销售企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "焊接钢管销售",
+      "evidence_span": "公司是国内最大的焊接钢管研发、生产、销售企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内最大的焊接钢管研发、生产、销售企业",
+      "evidence_span": "公司是国内最大的焊接钢管研发、生产、销售企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "制造业单项冠军示范企业",
+      "evidence_span": "2019年公司被国家工信部评为“制造业单项冠军示范企业”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "焊接圆管",
+      "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镀锌圆管",
+      "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方矩焊管",
+      "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方矩镀锌管",
+      "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢塑复合管",
+      "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "螺旋焊管",
+      "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不锈钢管",
+      "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管件",
+      "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盘扣脚手架",
+      "evidence_span": "唐山新型建材盘扣脚手架、方管事业部经营逐渐步入正轨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油气管",
+      "evidence_span": "葫芦岛钢管油气管、塔基管等特种管材经营平稳"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "塔基管",
+      "evidence_span": "葫芦岛钢管油气管、塔基管等特种管材经营平稳"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不锈钢水管",
+      "evidence_span": "管道科技在万吨级不锈钢水管项目已稳产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不锈钢工业用管",
+      "evidence_span": "另一个两万吨级不锈钢工业用管项目正在建设中"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大口径承插型螺旋焊管",
+      "evidence_span": "一米以上大口径承插型螺旋焊管已经实现批量生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高钢级管线用管",
+      "evidence_span": "高钢级管线用管得到重点用户批量应用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "现代农业标准化大棚用管",
+      "evidence_span": "持续加大现代农业标准化大棚用管的新品生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方矩管",
+      "evidence_span": "完成开发大壁厚和超薄壁、高强度的超小和超大极限规格方矩管、圆管的生产和供货"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圆管",
+      "evidence_span": "完成开发大壁厚和超薄壁、高强度的超小和超大极限规格方矩管、圆管的生产和供货"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "承插型盘扣式钢管脚手架",
+      "evidence_span": "实现“承插型盘扣式钢管脚手架”新产品的达产和稳产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "螺旋焊管加防腐的全覆盖能力",
+      "evidence_span": "公司已具备螺旋焊管加防腐的全覆盖能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "焊管缺陷在线自动检选",
+      "evidence_span": "推进“焊管缺陷在线自动检选”项目试验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钢管的智能制造",
+      "evidence_span": "持续推进钢管的智能制造"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内多家央企",
+      "evidence_span": "已与国内多家央企和大型国企建立了战略合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型国企",
+      "evidence_span": "已与国内多家央企和大型国企建立了战略合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型水务工程项目",
+      "evidence_span": "并不断增加大型水务工程项目"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "焊接钢管研发",
+        "evidence_span": "公司是国内最大的焊接钢管研发、生产、销售企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "焊接钢管生产",
+        "evidence_span": "公司是国内最大的焊接钢管研发、生产、销售企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "焊接钢管销售",
+        "evidence_span": "公司是国内最大的焊接钢管研发、生产、销售企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内最大的焊接钢管研发、生产、销售企业",
+        "evidence_span": "公司是国内最大的焊接钢管研发、生产、销售企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "制造业单项冠军示范企业",
+        "evidence_span": "2019年公司被国家工信部评为“制造业单项冠军示范企业”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "焊接圆管",
+        "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镀锌圆管",
+        "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方矩焊管",
+        "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方矩镀锌管",
+        "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢塑复合管",
+        "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "螺旋焊管",
+        "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不锈钢管",
+        "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管件",
+        "evidence_span": "公司主营业务包括焊接圆管、镀锌圆管、方矩焊管、方矩镀锌管、钢塑复合管、螺旋焊管、不锈钢管、管件的研发制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盘扣脚手架",
+        "evidence_span": "唐山新型建材盘扣脚手架、方管事业部经营逐渐步入正轨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油气管",
+        "evidence_span": "葫芦岛钢管油气管、塔基管等特种管材经营平稳"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "塔基管",
+        "evidence_span": "葫芦岛钢管油气管、塔基管等特种管材经营平稳"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不锈钢水管",
+        "evidence_span": "管道科技在万吨级不锈钢水管项目已稳产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不锈钢工业用管",
+        "evidence_span": "另一个两万吨级不锈钢工业用管项目正在建设中"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大口径承插型螺旋焊管",
+        "evidence_span": "一米以上大口径承插型螺旋焊管已经实现批量生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高钢级管线用管",
+        "evidence_span": "高钢级管线用管得到重点用户批量应用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "现代农业标准化大棚用管",
+        "evidence_span": "持续加大现代农业标准化大棚用管的新品生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方矩管",
+        "evidence_span": "完成开发大壁厚和超薄壁、高强度的超小和超大极限规格方矩管、圆管的生产和供货"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圆管",
+        "evidence_span": "完成开发大壁厚和超薄壁、高强度的超小和超大极限规格方矩管、圆管的生产和供货"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "承插型盘扣式钢管脚手架",
+        "evidence_span": "实现“承插型盘扣式钢管脚手架”新产品的达产和稳产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "螺旋焊管加防腐的全覆盖能力",
+        "evidence_span": "公司已具备螺旋焊管加防腐的全覆盖能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "焊管缺陷在线自动检选",
+        "evidence_span": "推进“焊管缺陷在线自动检选”项目试验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钢管的智能制造",
+        "evidence_span": "持续推进钢管的智能制造"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内多家央企",
+        "evidence_span": "已与国内多家央企和大型国企建立了战略合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型国企",
+        "evidence_span": "已与国内多家央企和大型国企建立了战略合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型水务工程项目",
+        "evidence_span": "并不断增加大型水务工程项目"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:31:10"
+}

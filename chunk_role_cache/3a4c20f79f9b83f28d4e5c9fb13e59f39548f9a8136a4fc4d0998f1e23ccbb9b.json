@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "f5b3c48a3acb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含全球晶圆厂设备支出预测和投资趋势，提供了关于半导体设备市场规模的潜在知识，但以事件报道形式呈现，混合了行业动态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "8ece3e2f8de7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含伊朗遭遇网络攻击的事件细节，但也涉及关键基础设施防护等安全知识，混合了事件和潜在知识，需要进一步裁决以提取稳定信息。"}}

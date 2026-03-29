@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "b243b9449aec", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含潜在知识（EUV国内进展、体制转变、商业公司主导），但混合了事件性描述（报告表述、时间线如2025试生产），需要进一步裁决以提取稳定信息。"}}

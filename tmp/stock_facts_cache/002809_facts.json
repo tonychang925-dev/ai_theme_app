@@ -1,0 +1,489 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "混凝土外加剂",
+      "evidence_span": "始终专注于混凝土外加剂行业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精细化工",
+      "evidence_span": "布局精细化工"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "混凝土外加剂专业制造商",
+      "evidence_span": "混凝土外加剂专业制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国混凝土外加剂龙头企业之一",
+      "evidence_span": "全国混凝土外加剂龙头企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专精特新“小巨人”企业",
+      "evidence_span": "专精特新“小巨人”企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚羧酸系减水剂",
+      "evidence_span": "以聚羧酸系减水剂为主导产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "萘系外加剂",
+      "evidence_span": "萘系外加剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚羧酸保坍保塑剂",
+      "evidence_span": "聚羧酸保坍保塑剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "萘系减水剂",
+      "evidence_span": "萘系减水剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "萘系保坍保塑剂",
+      "evidence_span": "萘系保坍保塑剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "葡萄糖酸钠外加剂",
+      "evidence_span": "葡萄糖酸钠外加剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "泵送剂",
+      "evidence_span": "泵送剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "缓凝剂",
+      "evidence_span": "缓凝剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "早强剂",
+      "evidence_span": "早强剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防冻剂",
+      "evidence_span": "防冻剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "引气剂",
+      "evidence_span": "引气剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防水剂",
+      "evidence_span": "防水剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "速凝剂",
+      "evidence_span": "速凝剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "混凝土速凝剂",
+      "evidence_span": "混凝土速凝剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "混凝土脱模剂",
+      "evidence_span": "混凝土脱模剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "混凝土工程纤维",
+      "evidence_span": "混凝土工程纤维"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "混凝土减缩剂",
+      "evidence_span": "混凝土减缩剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水泥经销业务",
+      "evidence_span": "开展了少量水泥经销业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高分子化学聚合",
+      "evidence_span": "采用现代化自动化高分子化学聚合的方法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "聚羧酸外加剂原材料聚醚大单体设计能力",
+      "evidence_span": "具有单独设计聚羧酸外加剂原材料聚醚大单体能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "六碳系列高效减水剂和保坍剂",
+      "evidence_span": "开发六碳系列高效减水剂和保坍剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "聚羧酸大单体合成技术",
+      "evidence_span": "合成的降粘型聚羧酸"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "免蒸养聚羧酸外加剂",
+      "evidence_span": "免蒸养聚羧酸外加剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "预制混凝土超早强外加剂",
+      "evidence_span": "预制混凝土超早强外加剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "纳米早强剂",
+      "evidence_span": "纳米早强剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "环氧乙烷衍生物和环氧丙烷衍生物研发",
+      "evidence_span": "环氧乙烷衍生物和环氧丙烷衍生物的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "非离子表面活性剂研发",
+      "evidence_span": "非离子表面活性剂的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "聚醚多元醇研发",
+      "evidence_span": "聚醚多元醇的产品研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "羟基酯研发",
+      "evidence_span": "羟基酯的产品研发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华润水泥",
+      "evidence_span": "华润水泥"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海建工",
+      "evidence_span": "上海建工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天津冶建",
+      "evidence_span": "天津冶建"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三和管桩",
+      "evidence_span": "三和管桩"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国建材",
+      "evidence_span": "中国建材"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京建工",
+      "evidence_span": "北京建工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中建八局",
+      "evidence_span": "中建八局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁一局",
+      "evidence_span": "中铁一局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁十四局",
+      "evidence_span": "中铁十四局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁大桥局",
+      "evidence_span": "中铁大桥局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁十五局",
+      "evidence_span": "中铁十五局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宏基管桩",
+      "evidence_span": "宏基管桩"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中建西部建设",
+      "evidence_span": "中建西部建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "基建投资",
+      "evidence_span": "基建投资利成长"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "混凝土外加剂",
+        "evidence_span": "始终专注于混凝土外加剂行业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精细化工",
+        "evidence_span": "布局精细化工"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "混凝土外加剂专业制造商",
+        "evidence_span": "混凝土外加剂专业制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国混凝土外加剂龙头企业之一",
+        "evidence_span": "全国混凝土外加剂龙头企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专精特新“小巨人”企业",
+        "evidence_span": "专精特新“小巨人”企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚羧酸系减水剂",
+        "evidence_span": "以聚羧酸系减水剂为主导产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "萘系外加剂",
+        "evidence_span": "萘系外加剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚羧酸保坍保塑剂",
+        "evidence_span": "聚羧酸保坍保塑剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "萘系减水剂",
+        "evidence_span": "萘系减水剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "萘系保坍保塑剂",
+        "evidence_span": "萘系保坍保塑剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "葡萄糖酸钠外加剂",
+        "evidence_span": "葡萄糖酸钠外加剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "泵送剂",
+        "evidence_span": "泵送剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "缓凝剂",
+        "evidence_span": "缓凝剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "早强剂",
+        "evidence_span": "早强剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防冻剂",
+        "evidence_span": "防冻剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "引气剂",
+        "evidence_span": "引气剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防水剂",
+        "evidence_span": "防水剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "速凝剂",
+        "evidence_span": "速凝剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "混凝土速凝剂",
+        "evidence_span": "混凝土速凝剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "混凝土脱模剂",
+        "evidence_span": "混凝土脱模剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "混凝土工程纤维",
+        "evidence_span": "混凝土工程纤维"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "混凝土减缩剂",
+        "evidence_span": "混凝土减缩剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水泥经销业务",
+        "evidence_span": "开展了少量水泥经销业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高分子化学聚合",
+        "evidence_span": "采用现代化自动化高分子化学聚合的方法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "聚羧酸外加剂原材料聚醚大单体设计能力",
+        "evidence_span": "具有单独设计聚羧酸外加剂原材料聚醚大单体能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "六碳系列高效减水剂和保坍剂",
+        "evidence_span": "开发六碳系列高效减水剂和保坍剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "聚羧酸大单体合成技术",
+        "evidence_span": "合成的降粘型聚羧酸"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "免蒸养聚羧酸外加剂",
+        "evidence_span": "免蒸养聚羧酸外加剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "预制混凝土超早强外加剂",
+        "evidence_span": "预制混凝土超早强外加剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "纳米早强剂",
+        "evidence_span": "纳米早强剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "环氧乙烷衍生物和环氧丙烷衍生物研发",
+        "evidence_span": "环氧乙烷衍生物和环氧丙烷衍生物的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "非离子表面活性剂研发",
+        "evidence_span": "非离子表面活性剂的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "聚醚多元醇研发",
+        "evidence_span": "聚醚多元醇的产品研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "羟基酯研发",
+        "evidence_span": "羟基酯的产品研发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华润水泥",
+        "evidence_span": "华润水泥"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海建工",
+        "evidence_span": "上海建工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津冶建",
+        "evidence_span": "天津冶建"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三和管桩",
+        "evidence_span": "三和管桩"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国建材",
+        "evidence_span": "中国建材"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京建工",
+        "evidence_span": "北京建工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中建八局",
+        "evidence_span": "中建八局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁一局",
+        "evidence_span": "中铁一局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁十四局",
+        "evidence_span": "中铁十四局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁大桥局",
+        "evidence_span": "中铁大桥局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁十五局",
+        "evidence_span": "中铁十五局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宏基管桩",
+        "evidence_span": "宏基管桩"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中建西部建设",
+        "evidence_span": "中建西部建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "基建投资",
+        "evidence_span": "基建投资利成长"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:47:18"
+}

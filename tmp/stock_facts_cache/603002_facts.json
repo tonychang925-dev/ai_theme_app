@@ -1,0 +1,334 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子级环氧树脂的生产",
+      "evidence_span": "公司主业由“电子级环氧树脂的生产与销售”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主业由“电子级环氧树脂的生产与销售”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "覆铜板生产",
+      "evidence_span": "延伸至下游“覆铜板、半固化片生产与销售”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半固化片生产",
+      "evidence_span": "延伸至下游“覆铜板、半固化片生产与销售”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内电子级环氧树脂领域龙头公司",
+      "evidence_span": "国内电子级环氧树脂领域龙头公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内领先的环氧树脂制造商",
+      "evidence_span": "国内领先的环氧树脂制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电子级环氧树脂业领先者",
+      "evidence_span": "电子级环氧树脂业领先者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "领先的电子级环氧树脂供应商",
+      "evidence_span": "领先的电子级环氧树脂供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环氧树脂",
+      "evidence_span": "公司主要从事电子级环氧树脂、覆铜板两大类产品的生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "覆铜板",
+      "evidence_span": "公司主要从事电子级环氧树脂、覆铜板两大类产品的生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半固化片",
+      "evidence_span": "延伸至下游“覆铜板、半固化片生产与销售”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液态环氧树脂",
+      "evidence_span": "建设年产14万吨液态环氧树脂生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级功能性环氧树脂",
+      "evidence_span": "年产8万吨电子级功能性环氧树脂项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低溴环氧树脂",
+      "evidence_span": "年产50,000吨低溴环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高溴环氧树脂",
+      "evidence_span": "年产5,000吨高溴环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无铅环氧树脂",
+      "evidence_span": "年产4,500吨无铅环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "溶剂型环氧树脂",
+      "evidence_span": "年产10,000吨溶剂型环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固态环氧树脂",
+      "evidence_span": "年产10,000吨固态环氧树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高频高速树脂",
+      "evidence_span": "年产500吨高频高速树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能性高阶覆铜板",
+      "evidence_span": "功能性高阶覆铜板电子材料项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高频高速5G覆铜板",
+      "evidence_span": "高频高速5G覆铜板开发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无卤高CTI覆铜板",
+      "evidence_span": "无卤高CTI、低膨胀系数、高耐热性覆铜板材料的开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "DCS全自动化控制",
+      "evidence_span": "以DCS全自动化控制的方式进行生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高频高速树脂开发",
+      "evidence_span": "针对多种高频高速树脂进行开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "聚醚树脂开发",
+      "evidence_span": "常规聚醚树脂已经在2022年推广至终端客户进行评估认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无卤含磷聚醚树脂开发",
+      "evidence_span": "新开发的无卤含磷聚醚树脂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超5G树脂开发",
+      "evidence_span": "公司超5G树脂已经获得实验室成品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英特尔",
+      "evidence_span": "进入Inte英特尔高频高速板选材参考平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广达",
+      "evidence_span": "通过终端广达、富士康认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富士康",
+      "evidence_span": "通过终端广达、富士康认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浪潮",
+      "evidence_span": "终端浪潮、纬创已在认证中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "纬创",
+      "evidence_span": "终端浪潮、纬创已在认证中"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国内电子化学品产业崛起",
+      "evidence_span": "有望受益国内电子化学品产业崛起"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子级环氧树脂的生产与销售",
+        "evidence_span": "公司主业由“电子级环氧树脂的生产与销售”"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "覆铜板生产与销售",
+        "evidence_span": "延伸至下游“覆铜板、半固化片生产与销售”"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半固化片生产与销售",
+        "evidence_span": "延伸至下游“覆铜板、半固化片生产与销售”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内电子级环氧树脂领域龙头公司",
+        "evidence_span": "国内电子级环氧树脂领域龙头公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内领先的环氧树脂制造商",
+        "evidence_span": "国内领先的环氧树脂制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电子级环氧树脂业领先者",
+        "evidence_span": "电子级环氧树脂业领先者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "领先的电子级环氧树脂供应商",
+        "evidence_span": "领先的电子级环氧树脂供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环氧树脂",
+        "evidence_span": "公司主要从事电子级环氧树脂、覆铜板两大类产品的生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "覆铜板",
+        "evidence_span": "公司主要从事电子级环氧树脂、覆铜板两大类产品的生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半固化片",
+        "evidence_span": "延伸至下游“覆铜板、半固化片生产与销售”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液态环氧树脂",
+        "evidence_span": "建设年产14万吨液态环氧树脂生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级功能性环氧树脂",
+        "evidence_span": "年产8万吨电子级功能性环氧树脂项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低溴环氧树脂",
+        "evidence_span": "年产50,000吨低溴环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高溴环氧树脂",
+        "evidence_span": "年产5,000吨高溴环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无铅环氧树脂",
+        "evidence_span": "年产4,500吨无铅环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "溶剂型环氧树脂",
+        "evidence_span": "年产10,000吨溶剂型环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固态环氧树脂",
+        "evidence_span": "年产10,000吨固态环氧树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高频高速树脂",
+        "evidence_span": "年产500吨高频高速树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能性高阶覆铜板",
+        "evidence_span": "功能性高阶覆铜板电子材料项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高频高速5G覆铜板",
+        "evidence_span": "高频高速5G覆铜板开发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无卤高CTI覆铜板",
+        "evidence_span": "无卤高CTI、低膨胀系数、高耐热性覆铜板材料的开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "DCS全自动化控制",
+        "evidence_span": "以DCS全自动化控制的方式进行生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高频高速树脂开发",
+        "evidence_span": "针对多种高频高速树脂进行开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "聚醚树脂开发",
+        "evidence_span": "常规聚醚树脂已经在2022年推广至终端客户进行评估认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无卤含磷聚醚树脂开发",
+        "evidence_span": "新开发的无卤含磷聚醚树脂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超5G树脂开发",
+        "evidence_span": "公司超5G树脂已经获得实验室成品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英特尔",
+        "evidence_span": "进入Inte英特尔高频高速板选材参考平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广达",
+        "evidence_span": "通过终端广达、富士康认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富士康",
+        "evidence_span": "通过终端广达、富士康认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浪潮",
+        "evidence_span": "终端浪潮、纬创已在认证中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "纬创",
+        "evidence_span": "终端浪潮、纬创已在认证中"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国内电子化学品产业崛起",
+        "evidence_span": "有望受益国内电子化学品产业崛起"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:50:50"
+}

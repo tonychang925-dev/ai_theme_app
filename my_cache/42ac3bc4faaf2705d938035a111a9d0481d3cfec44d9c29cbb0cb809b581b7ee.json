@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "00717288e180", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述美国出口管制事件，但详细列出了受影响的半导体相关实体（如设备、材料、EDA公司），这些信息可能对理解半导体产业链结构有价值，因此归类为candidate_mixed。"}}

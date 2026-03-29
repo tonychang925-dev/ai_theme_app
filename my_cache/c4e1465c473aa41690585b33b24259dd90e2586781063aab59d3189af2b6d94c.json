@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:01:57", "result": {"chunk_id": "72ad7798316b", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落提到华为申请近200个带有'界'字的商标，包括具体名称，这涉及华为品牌战略的静态知识，但以记者检索的事件形式呈现，可能对构建华为商标或品牌知识有价值，因此归类为候选混合状态。"}}

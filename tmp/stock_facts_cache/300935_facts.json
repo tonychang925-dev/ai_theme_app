@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "建筑结构设计软件产品开发",
+      "evidence_span": "公司的主营业务为建筑结构设计和BIM相关软件产品的开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "BIM相关软件产品开发",
+      "evidence_span": "公司的主营业务为建筑结构设计和BIM相关软件产品的开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "软件产品销售",
+      "evidence_span": "销售模式从软件产品销售为绝对主导向产品销售与产品服务并重方向发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务",
+      "evidence_span": "为客户提供与软件产品相关的技术服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "BIM优质企业",
+      "evidence_span": "BIM优质企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "建筑结构设计隐形冠军",
+      "evidence_span": "建筑结构设计隐形冠军"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产建筑结构设计CAE领军",
+      "evidence_span": "盈建科小而美的国产建筑结构设计CAE领军"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "建筑结构设计软件领军企业",
+      "evidence_span": "建筑结构设计软件领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高新技术企业",
+      "evidence_span": "高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "YJK建筑结构设计软件系统",
+      "evidence_span": "推出了YJK建筑结构设计软件系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BIM数据协同产品",
+      "evidence_span": "BIM数据协同及BIM生态产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BIM生态产品",
+      "evidence_span": "BIM数据协同及BIM生态产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "桥梁设计软件",
+      "evidence_span": "桥梁设计软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "YJK-VIP服务",
+      "evidence_span": "提高YJK-VIP服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大版本升级服务",
+      "evidence_span": "大版本升级服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高校实训系统",
+      "evidence_span": "高校实训系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "桥梁结构设计系统",
+      "evidence_span": "桥梁结构设计系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "施工设计系统",
+      "evidence_span": "施工设计系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国外规范软件",
+      "evidence_span": "公司的国外规范软件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自主BIM设计平台",
+      "evidence_span": "自主BIM设计平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "协同管理平台",
+      "evidence_span": "协同管理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BIM装配式建筑解决方案",
+      "evidence_span": "BIM装配式建筑解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自研2D图形平台",
+      "evidence_span": "盈建科的自研2D、3D图形平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自研3D图形平台",
+      "evidence_span": "盈建科的自研2D、3D图形平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "建筑领域CAE全国领先的有限元分析",
+      "evidence_span": "在建筑领域CAE全国领先的有限元分析"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高水平的迭代计算方法",
+      "evidence_span": "高水平的迭代计算方法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三维实体元节点精细分析软件",
+      "evidence_span": "盈建科三维实体元节点精细分析软件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建筑设计单位",
+      "evidence_span": "主要下游客户为建筑设计单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "地产公司",
+      "evidence_span": "地产公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高等院校",
+      "evidence_span": "高等院校"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内一流设计院所或集团",
+      "evidence_span": "主要客户包括各大国内一流设计院所或集团"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "工业软件国货之光",
+      "evidence_span": "点亮工业软件“国货之光”"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产工业软件",
+      "evidence_span": "盈建科国产工业软件迎来发展春天"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "建筑结构设计软件产品开发",
+        "evidence_span": "公司的主营业务为建筑结构设计和BIM相关软件产品的开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "BIM相关软件产品开发",
+        "evidence_span": "公司的主营业务为建筑结构设计和BIM相关软件产品的开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "软件产品销售",
+        "evidence_span": "销售模式从软件产品销售为绝对主导向产品销售与产品服务并重方向发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "技术服务",
+        "evidence_span": "为客户提供与软件产品相关的技术服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "BIM优质企业",
+        "evidence_span": "BIM优质企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "建筑结构设计隐形冠军",
+        "evidence_span": "建筑结构设计隐形冠军"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产建筑结构设计CAE领军",
+        "evidence_span": "盈建科小而美的国产建筑结构设计CAE领军"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "建筑结构设计软件领军企业",
+        "evidence_span": "建筑结构设计软件领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高新技术企业",
+        "evidence_span": "高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "YJK建筑结构设计软件系统",
+        "evidence_span": "推出了YJK建筑结构设计软件系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BIM数据协同产品",
+        "evidence_span": "BIM数据协同及BIM生态产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BIM生态产品",
+        "evidence_span": "BIM数据协同及BIM生态产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "桥梁设计软件",
+        "evidence_span": "桥梁设计软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "YJK-VIP服务",
+        "evidence_span": "提高YJK-VIP服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大版本升级服务",
+        "evidence_span": "大版本升级服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高校实训系统",
+        "evidence_span": "高校实训系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "桥梁结构设计系统",
+        "evidence_span": "桥梁结构设计系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "施工设计系统",
+        "evidence_span": "施工设计系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国外规范软件",
+        "evidence_span": "公司的国外规范软件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自主BIM设计平台",
+        "evidence_span": "自主BIM设计平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "协同管理平台",
+        "evidence_span": "协同管理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BIM装配式建筑解决方案",
+        "evidence_span": "BIM装配式建筑解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自研2D图形平台",
+        "evidence_span": "盈建科的自研2D、3D图形平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自研3D图形平台",
+        "evidence_span": "盈建科的自研2D、3D图形平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "建筑领域CAE全国领先的有限元分析",
+        "evidence_span": "在建筑领域CAE全国领先的有限元分析"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高水平的迭代计算方法",
+        "evidence_span": "高水平的迭代计算方法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三维实体元节点精细分析软件",
+        "evidence_span": "盈建科三维实体元节点精细分析软件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建筑设计单位",
+        "evidence_span": "主要下游客户为建筑设计单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "地产公司",
+        "evidence_span": "地产公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高等院校",
+        "evidence_span": "高等院校"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内一流设计院所或集团",
+        "evidence_span": "主要客户包括各大国内一流设计院所或集团"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "工业软件国货之光",
+        "evidence_span": "点亮工业软件“国货之光”"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产工业软件",
+        "evidence_span": "盈建科国产工业软件迎来发展春天"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:49:48"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "7b7ae58c2d3c", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含商务部的政策事件和日本刺激计划，但提及国家第三代半导体技术创新中心等平台，可能隐含半导体创新相关的知识，因此归类为candidate_mixed。"}}

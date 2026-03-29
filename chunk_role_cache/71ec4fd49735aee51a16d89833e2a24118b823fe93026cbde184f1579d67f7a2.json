@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "55d6572bfef5", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述西门子收到美国取消芯片软件限制通知的事件，但后半部分提供了西门子EDA作为全球三大EDA公司之一的静态说明，包括其提供的软件、硬件和服务组合，混合了事件和知识。"}}

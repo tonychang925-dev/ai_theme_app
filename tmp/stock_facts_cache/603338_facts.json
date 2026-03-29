@@ -1,0 +1,139 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能高空作业平台研发",
+      "evidence_span": "致力于各类智能高空作业平台研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能高空作业平台生产",
+      "evidence_span": "致力于各类智能高空作业平台研发、生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能高空作业平台销售",
+      "evidence_span": "致力于各类智能高空作业平台研发、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能高空作业平台服务",
+      "evidence_span": "致力于各类智能高空作业平台研发、生产、销售和服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端装备制造企业",
+      "evidence_span": "高端装备制造企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球高空作业平台前三制造商",
+      "evidence_span": "全球高空作业平台前三制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内行业的龙头企业",
+      "evidence_span": "国内行业的龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "剪叉式高空作业平台",
+      "evidence_span": "实现了由剪叉式到臂式以及高端剪叉式产品的过渡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "臂式高空作业平台",
+      "evidence_span": "实现了由剪叉式到臂式以及高端剪叉式产品的过渡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端剪叉式高空作业平台",
+      "evidence_span": "实现了由剪叉式到臂式以及高端剪叉式产品的过渡"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "意大利MAGNI公司",
+      "evidence_span": "投资意大利MAGNI公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国CMEC公司",
+      "evidence_span": "收购美国CMEC公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国TEUPEN公司",
+      "evidence_span": "收购了德国TEUPEN公司"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能高空作业平台研发",
+        "evidence_span": "致力于各类智能高空作业平台研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能高空作业平台生产",
+        "evidence_span": "致力于各类智能高空作业平台研发、生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能高空作业平台销售",
+        "evidence_span": "致力于各类智能高空作业平台研发、生产、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能高空作业平台服务",
+        "evidence_span": "致力于各类智能高空作业平台研发、生产、销售和服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端装备制造企业",
+        "evidence_span": "高端装备制造企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球高空作业平台前三制造商",
+        "evidence_span": "全球高空作业平台前三制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内行业的龙头企业",
+        "evidence_span": "国内行业的龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "剪叉式高空作业平台",
+        "evidence_span": "实现了由剪叉式到臂式以及高端剪叉式产品的过渡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "臂式高空作业平台",
+        "evidence_span": "实现了由剪叉式到臂式以及高端剪叉式产品的过渡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端剪叉式高空作业平台",
+        "evidence_span": "实现了由剪叉式到臂式以及高端剪叉式产品的过渡"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "意大利MAGNI公司",
+        "evidence_span": "投资意大利MAGNI公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国CMEC公司",
+        "evidence_span": "收购美国CMEC公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国TEUPEN公司",
+        "evidence_span": "收购了德国TEUPEN公司"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:02:34"
+}

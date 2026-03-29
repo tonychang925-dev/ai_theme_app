@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "f36d4893e8ff", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "总结了特定时间段（第三季度）内多家半导体设备厂商的业绩表现和排名情况，属于定期的财务业绩事件汇总，信息具有时效性。"}}

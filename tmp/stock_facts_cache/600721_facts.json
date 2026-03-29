@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "小分子化学药品研发",
+      "evidence_span": "主要致力于小分子化学药品研发和注册申报"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "注册申报",
+      "evidence_span": "主要致力于小分子化学药品研发和注册申报"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "多肽药物开发",
+      "evidence_span": "多肽药物开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "临床试验",
+      "evidence_span": "组织实施Ⅰ~Ⅳ期临床试验"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生物等效试验",
+      "evidence_span": "生物等效试验"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医学科学服务",
+      "evidence_span": "医学科学服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "研发立项咨询服务",
+      "evidence_span": "研发立项咨询服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数据管理",
+      "evidence_span": "数据管理及统计服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "统计服务",
+      "evidence_span": "数据管理及统计服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "第三方检测",
+      "evidence_span": "第三方检测"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性CRO公司",
+      "evidence_span": "是提供一体化解决方案的综合性CRO公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新药早期发现与筛选服务",
+      "evidence_span": "新药早期发现与筛选"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药物CMC开发服务",
+      "evidence_span": "药物CMC开发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "临床试验服务",
+      "evidence_span": "临床试验"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "注册申报服务",
+      "evidence_span": "注册申报"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BE/PK生物样品分析服务",
+      "evidence_span": "BE/PK生物样品分析"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药学检测服务",
+      "evidence_span": "药学检测服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "临床SMO服务",
+      "evidence_span": "临床SMO"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据服务",
+      "evidence_span": "数据服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MAH服务",
+      "evidence_span": "MAH服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "API及中间体生产供应",
+      "evidence_span": "API及中间体生产供应"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "缓控释制剂技术平台",
+      "evidence_span": "缓控释制剂技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "局部外用和经皮给药技术平台",
+      "evidence_span": "局部外用和经皮给药技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "吸入制剂技术平台",
+      "evidence_span": "吸入制剂技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂注射剂及液体制剂技术平台",
+      "evidence_span": "复杂注射剂及液体制剂技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "手性药物合成技术",
+      "evidence_span": "手性药物合成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "缓控释技术",
+      "evidence_span": "缓控释技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "吸入给药技术",
+      "evidence_span": "吸入给药"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "经皮吸收技术",
+      "evidence_span": "经皮吸收"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂注射剂技术",
+      "evidence_span": "复杂注射剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "口溶膜药物产业化技术",
+      "evidence_span": "口溶膜药物产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多肽药物产业化技术",
+      "evidence_span": "多肽药物产业化"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国制药企业100强中超50家",
+      "evidence_span": "其中包含中国制药企业100强中超50家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一致性评价",
+      "evidence_span": "一致性评价"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "小分子化学药品研发和注册申报",
+        "evidence_span": "主要致力于小分子化学药品研发和注册申报"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "多肽药物开发",
+        "evidence_span": "多肽药物开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "临床试验",
+        "evidence_span": "组织实施Ⅰ~Ⅳ期临床试验"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生物等效试验",
+        "evidence_span": "生物等效试验"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医学科学服务",
+        "evidence_span": "医学科学服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "研发立项咨询服务",
+        "evidence_span": "研发立项咨询服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数据管理及统计服务",
+        "evidence_span": "数据管理及统计服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "第三方检测",
+        "evidence_span": "第三方检测"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性CRO公司",
+        "evidence_span": "是提供一体化解决方案的综合性CRO公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新药早期发现与筛选服务",
+        "evidence_span": "新药早期发现与筛选"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药物CMC开发服务",
+        "evidence_span": "药物CMC开发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "临床试验服务",
+        "evidence_span": "临床试验"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "注册申报服务",
+        "evidence_span": "注册申报"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BE/PK生物样品分析服务",
+        "evidence_span": "BE/PK生物样品分析"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药学检测服务",
+        "evidence_span": "药学检测服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "临床SMO服务",
+        "evidence_span": "临床SMO"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据服务",
+        "evidence_span": "数据服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MAH服务",
+        "evidence_span": "MAH服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "API及中间体生产供应",
+        "evidence_span": "API及中间体生产供应"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "缓控释制剂技术平台",
+        "evidence_span": "缓控释制剂技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "局部外用和经皮给药技术平台",
+        "evidence_span": "局部外用和经皮给药技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "吸入制剂技术平台",
+        "evidence_span": "吸入制剂技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂注射剂及液体制剂技术平台",
+        "evidence_span": "复杂注射剂及液体制剂技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "手性药物合成技术",
+        "evidence_span": "手性药物合成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "缓控释技术",
+        "evidence_span": "缓控释技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "吸入给药技术",
+        "evidence_span": "吸入给药"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "经皮吸收技术",
+        "evidence_span": "经皮吸收"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂注射剂技术",
+        "evidence_span": "复杂注射剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "口溶膜药物产业化技术",
+        "evidence_span": "口溶膜药物产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多肽药物产业化技术",
+        "evidence_span": "多肽药物产业化"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国制药企业100强中超50家",
+        "evidence_span": "其中包含中国制药企业100强中超50家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一致性评价",
+        "evidence_span": "一致性评价"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:09:01"
+}

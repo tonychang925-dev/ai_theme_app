@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "b54015485dff", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了CoWoS技术的应用（知识性）和产能紧缺、扩张计划（事件性），技术应用部分可能沉淀为封装技术的稳定知识。"}}

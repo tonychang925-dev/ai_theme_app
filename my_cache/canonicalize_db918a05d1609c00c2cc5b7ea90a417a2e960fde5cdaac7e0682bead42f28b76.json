@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:33:07", "result": {"span_uid": "b02dac8f6c67", "action": "keep", "canonical_text": "增强现实（AR）是一种将虚拟对象呈现在真实世界中的技术。", "final_type": "related", "final_role": "关联技术定义", "stability": "high", "reason": "该片段提供了AR技术的稳定定义，与苹果MR题材高度相关，但并非直接定义苹果MR本体，因此归类为related。文本已改写为更独立、稳定的知识表达。"}}

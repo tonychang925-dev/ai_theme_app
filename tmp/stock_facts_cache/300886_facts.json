@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "内酯系列香料的研发",
+      "evidence_span": "公司主要从事内酯系列香料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主要从事内酯系列香料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要从事内酯系列香料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "丙位内酯系列合成香料",
+      "evidence_span": "年产3000吨丙位内酯系列合成香料建设项目"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "内酯类食用香料生产商和供应商",
+      "evidence_span": "目前国内较大的内酯类食用香料生产商和供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "香料香精行业的知名企业",
+      "evidence_span": "已成为我国香料香精行业的知名企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国轻工业香料行业十强企业",
+      "evidence_span": "连续多年入选中国轻工业联合会发布的“中国轻工业香料行业十强企业”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丙位内酯系列香料",
+      "evidence_span": "公司主要产品为丙位内酯系列香料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丁位内酯系列香料",
+      "evidence_span": "公司主要产品为丙位内酯系列香料和丁位内酯系列香料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内酯类香料",
+      "evidence_span": "公司通过技术研究、工艺绿色化改造、副产物开发、资源综合利用等集成创新实现了“传统产品+新工艺”，进一步提升了内酯类香料的市场竞争力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "香气控制经验",
+      "evidence_span": "积累了丰富的香气控制经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "搅拌和滴加技术",
+      "evidence_span": "公司自主研发特有的搅拌和滴加技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "香气整理工艺",
+      "evidence_span": "香气整理工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "脱杂工艺",
+      "evidence_span": "先进的脱杂工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "加氢技术",
+      "evidence_span": "采用加氢技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新型氧化剂氧化技术",
+      "evidence_span": "新型氧化剂氧化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "膜分离技术",
+      "evidence_span": "膜分离技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "固体催化剂自动过滤技术",
+      "evidence_span": "固体催化剂自动过滤技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "副产物回收资源综合利用技术",
+      "evidence_span": "副产物回收资源综合利用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化控制系统",
+      "evidence_span": "生产全流程采用自动化控制系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "芬美意",
+      "evidence_span": "与包括芬美意在内的国际知名公司建立了稳定的业务关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇华顿",
+      "evidence_span": "奇华顿"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际香料",
+      "evidence_span": "国际香料"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "曼氏",
+      "evidence_span": "曼氏"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝洁",
+      "evidence_span": "宝洁"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "乐达",
+      "evidence_span": "乐达"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德之馨",
+      "evidence_span": "德之馨"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高砂",
+      "evidence_span": "高砂"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "内酯系列香料的研发、生产和销售",
+        "evidence_span": "公司主要从事内酯系列香料的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "丙位内酯系列合成香料",
+        "evidence_span": "年产3000吨丙位内酯系列合成香料建设项目"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "内酯类食用香料生产商和供应商",
+        "evidence_span": "目前国内较大的内酯类食用香料生产商和供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "香料香精行业的知名企业",
+        "evidence_span": "已成为我国香料香精行业的知名企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国轻工业香料行业十强企业",
+        "evidence_span": "连续多年入选中国轻工业联合会发布的“中国轻工业香料行业十强企业”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丙位内酯系列香料",
+        "evidence_span": "公司主要产品为丙位内酯系列香料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丁位内酯系列香料",
+        "evidence_span": "公司主要产品为丙位内酯系列香料和丁位内酯系列香料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内酯类香料",
+        "evidence_span": "公司通过技术研究、工艺绿色化改造、副产物开发、资源综合利用等集成创新实现了“传统产品+新工艺”，进一步提升了内酯类香料的市场竞争力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "香气控制经验",
+        "evidence_span": "积累了丰富的香气控制经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "搅拌和滴加技术",
+        "evidence_span": "公司自主研发特有的搅拌和滴加技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "香气整理工艺",
+        "evidence_span": "香气整理工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "脱杂工艺",
+        "evidence_span": "先进的脱杂工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "加氢技术",
+        "evidence_span": "采用加氢技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新型氧化剂氧化技术",
+        "evidence_span": "新型氧化剂氧化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "膜分离技术",
+        "evidence_span": "膜分离技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "固体催化剂自动过滤技术",
+        "evidence_span": "固体催化剂自动过滤技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "副产物回收资源综合利用技术",
+        "evidence_span": "副产物回收资源综合利用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化控制系统",
+        "evidence_span": "生产全流程采用自动化控制系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "芬美意",
+        "evidence_span": "与包括芬美意在内的国际知名公司建立了稳定的业务关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇华顿",
+        "evidence_span": "奇华顿"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际香料",
+        "evidence_span": "国际香料"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "曼氏",
+        "evidence_span": "曼氏"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝洁",
+        "evidence_span": "宝洁"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "乐达",
+        "evidence_span": "乐达"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德之馨",
+        "evidence_span": "德之馨"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高砂",
+        "evidence_span": "高砂"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:36:12"
+}

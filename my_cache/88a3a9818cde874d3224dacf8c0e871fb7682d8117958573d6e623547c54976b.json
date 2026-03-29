@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:56:58", "result": {"chunk_id": "7c7a9b80698f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了Figure的重要变化，包括终止与OpenAI合作、自研人工智能机器人突破、签约新客户等事件。这些信息可能含有关于公司战略、技术进展和商业化潜力的知识，但以事件形式呈现，混合了动态内容，适合作为候选知识。"}}

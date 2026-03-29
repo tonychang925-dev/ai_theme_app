@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "cf64bc6735b2", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述上海推出低空运输服务和北京电动飞机首飞，这些都是具体的事件或新闻，包含日期和动态进展，没有提供静态的题材知识。"}}

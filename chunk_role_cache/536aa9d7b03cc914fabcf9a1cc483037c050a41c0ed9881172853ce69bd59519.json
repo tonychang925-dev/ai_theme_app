@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:58:48", "result": {"chunk_id": "905bcec1f759", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了能量奇点公司托卡马克装置的具体实验事件（日期、实验次数、结果），属于动态新闻，但同时也包含对高温超导托卡马克工程可靠性和运行稳定性的验证，这涉及核聚变技术的静态知识要素，因此混合了事件和知识。"}}

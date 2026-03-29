@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "092829e0a4e8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "引用了SIA关于全球和中国半导体销售额连续10个月同比正增长的数据。这反映了行业周期状态，具有一定知识性。但“根据...数据”的表述和具体的时间跨度（连续10个月）使其带有数据发布/统计事件的特征，边界不干净。"}}

@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全芯片",
+      "evidence_span": "公司立足“安全芯片+特种通信”战略布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种通信",
+      "evidence_span": "公司立足“安全芯片+特种通信”战略布局"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集成电路设计企业",
+      "evidence_span": "在集成电路设计领域，公司在可信识别芯片领域保持国内领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二代身份证芯片和模块",
+      "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户提供包括二代身份证芯片和模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社保卡芯片和模块",
+      "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户提供包括二代身份证芯片和模块、社保卡芯片和模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金融支付芯片",
+      "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户提供包括二代身份证芯片和模块、社保卡芯片和模块、金融支付芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "指纹传感器和指纹算法芯片",
+      "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户提供包括二代身份证芯片和模块、社保卡芯片和模块、金融支付芯片、指纹传感器和指纹算法芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "读卡器芯片",
+      "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户提供包括二代身份证芯片和模块、社保卡芯片和模块、金融支付芯片、指纹传感器和指纹算法芯片、读卡器芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "终端安全芯片",
+      "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户提供包括二代身份证芯片和模块、社保卡芯片和模块、金融支付芯片、指纹传感器和指纹算法芯片、读卡器芯片、终端安全芯片等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物联网安全芯片",
+      "evidence_span": "物联网安全芯片成功完成市场开拓"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用移动通信",
+      "evidence_span": "特种通信业务，公司持续聚焦专用移动通信、专用宽带电台、宽带移动安全应用三大主营业务方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用宽带电台",
+      "evidence_span": "特种通信业务，公司持续聚焦专用移动通信、专用宽带电台、宽带移动安全应用三大主营业务方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "宽带移动安全应用",
+      "evidence_span": "特种通信业务，公司持续聚焦专用移动通信、专用宽带电台、宽带移动安全应用三大主营业务方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G创新应用",
+      "evidence_span": "在宽带移动安全应用业务方向，通过融合创新应用，成为系统解决方案及5Ｇ创新应用开拓者"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能安全",
+      "evidence_span": "公司依托智能安全、生物识别等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物识别",
+      "evidence_span": "公司依托智能安全、生物识别等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统安全设计",
+      "evidence_span": "公司拥有领先的安全芯片技术，包括系统安全设计、算法安全设计、物理安全设计和安全探测等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "算法安全设计",
+      "evidence_span": "公司拥有领先的安全芯片技术，包括系统安全设计、算法安全设计、物理安全设计和安全探测等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物理安全设计",
+      "evidence_span": "公司拥有领先的安全芯片技术，包括系统安全设计、算法安全设计、物理安全设计和安全探测等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "安全探测",
+      "evidence_span": "公司拥有领先的安全芯片技术，包括系统安全设计、算法安全设计、物理安全设计和安全探测等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "接入网关键技术",
+      "evidence_span": "在通信体制方面，具有接入网和自组网关键技术和核心波形积累"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自组网关键技术",
+      "evidence_span": "在通信体制方面，具有接入网和自组网关键技术和核心波形积累"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "专网基站国产化软硬件平台定制能力",
+      "evidence_span": "在自主可控方面，具备专网基站及核心网产品的国产化软硬件平台定制能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核心网产品国产化软硬件平台定制能力",
+      "evidence_span": "在自主可控方面，具备专网基站及核心网产品的国产化软硬件平台定制能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安",
+      "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "社保",
+      "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融",
+      "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "城市管理",
+      "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交通",
+      "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "商业银行",
+      "evidence_span": "金融IC卡芯片在多家商业银行实现稳定供货"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产替代主线清晰"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "安全主题",
+      "evidence_span": "“安全主题”重视度再提高"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "安全芯片",
+        "evidence_span": "公司立足“安全芯片+特种通信”战略布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种通信",
+        "evidence_span": "公司立足“安全芯片+特种通信”战略布局"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集成电路设计企业",
+        "evidence_span": "在集成电路设计领域，公司在可信识别芯片领域保持国内领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二代身份证芯片和模块",
+        "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户提供包括二代身份证芯片和模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社保卡芯片和模块",
+        "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户提供包括二代身份证芯片和模块、社保卡芯片和模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金融支付芯片",
+        "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户提供包括二代身份证芯片和模块、社保卡芯片和模块、金融支付芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "指纹传感器和指纹算法芯片",
+        "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户提供包括二代身份证芯片和模块、社保卡芯片和模块、金融支付芯片、指纹传感器和指纹算法芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "读卡器芯片",
+        "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户提供包括二代身份证芯片和模块、社保卡芯片和模块、金融支付芯片、指纹传感器和指纹算法芯片、读卡器芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "终端安全芯片",
+        "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户提供包括二代身份证芯片和模块、社保卡芯片和模块、金融支付芯片、指纹传感器和指纹算法芯片、读卡器芯片、终端安全芯片等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物联网安全芯片",
+        "evidence_span": "物联网安全芯片成功完成市场开拓"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用移动通信",
+        "evidence_span": "特种通信业务，公司持续聚焦专用移动通信、专用宽带电台、宽带移动安全应用三大主营业务方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用宽带电台",
+        "evidence_span": "特种通信业务，公司持续聚焦专用移动通信、专用宽带电台、宽带移动安全应用三大主营业务方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "宽带移动安全应用",
+        "evidence_span": "特种通信业务，公司持续聚焦专用移动通信、专用宽带电台、宽带移动安全应用三大主营业务方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G创新应用",
+        "evidence_span": "在宽带移动安全应用业务方向，通过融合创新应用，成为系统解决方案及5Ｇ创新应用开拓者"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能安全",
+        "evidence_span": "公司依托智能安全、生物识别等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物识别",
+        "evidence_span": "公司依托智能安全、生物识别等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统安全设计",
+        "evidence_span": "公司拥有领先的安全芯片技术，包括系统安全设计、算法安全设计、物理安全设计和安全探测等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "算法安全设计",
+        "evidence_span": "公司拥有领先的安全芯片技术，包括系统安全设计、算法安全设计、物理安全设计和安全探测等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物理安全设计",
+        "evidence_span": "公司拥有领先的安全芯片技术，包括系统安全设计、算法安全设计、物理安全设计和安全探测等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "安全探测",
+        "evidence_span": "公司拥有领先的安全芯片技术，包括系统安全设计、算法安全设计、物理安全设计和安全探测等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "接入网关键技术",
+        "evidence_span": "在通信体制方面，具有接入网和自组网关键技术和核心波形积累"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自组网关键技术",
+        "evidence_span": "在通信体制方面，具有接入网和自组网关键技术和核心波形积累"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "专网基站国产化软硬件平台定制能力",
+        "evidence_span": "在自主可控方面，具备专网基站及核心网产品的国产化软硬件平台定制能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核心网产品国产化软硬件平台定制能力",
+        "evidence_span": "在自主可控方面，具备专网基站及核心网产品的国产化软硬件平台定制能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安",
+        "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "社保",
+        "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融",
+        "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "城市管理",
+        "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交通",
+        "evidence_span": "面向公安、社保、金融、城市管理、交通等行业客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "商业银行",
+        "evidence_span": "金融IC卡芯片在多家商业银行实现稳定供货"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产替代主线清晰"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "安全主题",
+        "evidence_span": "“安全主题”重视度再提高"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:38:27"
+}

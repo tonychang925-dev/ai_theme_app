@@ -1,0 +1,244 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "网络",
+      "evidence_span": "聚焦网络和数据安全"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数据安全",
+      "evidence_span": "聚焦网络和数据安全"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "网络靶场和人才建设领域领军企业",
+      "evidence_span": "是网络靶场和人才建设领域领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级专精特新“小巨人”企业",
+      "evidence_span": "是国家级专精特新“小巨人”企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络靶场系列产品",
+      "evidence_span": "网络靶场系列产品作为公司的主打产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字风洞产品体系",
+      "evidence_span": "独创了“数字风洞”产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全管控与蜜罐产品",
+      "evidence_span": "安全管控与蜜罐类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全工具类产品",
+      "evidence_span": "安全工具类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全防护系列服务",
+      "evidence_span": "安全防护系列服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络安全竞赛服务",
+      "evidence_span": "网络安全竞赛服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线上安全培训",
+      "evidence_span": "线上安全培训"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线下安全培训",
+      "evidence_span": "线下安全培训"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "网络空间平行仿真技术",
+      "evidence_span": "形成了网络空间平行仿真技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "网络空间攻防对抗技术",
+      "evidence_span": "网络空间攻防对抗技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "平行仿真技术体系",
+      "evidence_span": "基于永信至诚多年研发实践的平行仿真技术体系构建而成"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政企用户",
+      "evidence_span": "面向政企用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府监管部门",
+      "evidence_span": "主要面向政府监管部门"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "个人用户",
+      "evidence_span": "面向个人用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "企事业单位",
+      "evidence_span": "面向企事业单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中央网信办",
+      "evidence_span": "支撑了中央网信办"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安部",
+      "evidence_span": "公安部"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工信部",
+      "evidence_span": "工信部"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "教育部",
+      "evidence_span": "教育部"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字中国和网络强国建设",
+      "evidence_span": "为数字中国和网络强国建设提供高能效的安全保障"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "网络和数据安全",
+        "evidence_span": "聚焦网络和数据安全"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "网络靶场和人才建设领域领军企业",
+        "evidence_span": "是网络靶场和人才建设领域领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级专精特新“小巨人”企业",
+        "evidence_span": "是国家级专精特新“小巨人”企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络靶场系列产品",
+        "evidence_span": "网络靶场系列产品作为公司的主打产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字风洞产品体系",
+        "evidence_span": "独创了“数字风洞”产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全管控与蜜罐产品",
+        "evidence_span": "安全管控与蜜罐类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全工具类产品",
+        "evidence_span": "安全工具类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全防护系列服务",
+        "evidence_span": "安全防护系列服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络安全竞赛服务",
+        "evidence_span": "网络安全竞赛服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线上安全培训",
+        "evidence_span": "线上安全培训"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线下安全培训",
+        "evidence_span": "线下安全培训"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "网络空间平行仿真技术",
+        "evidence_span": "形成了网络空间平行仿真技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "网络空间攻防对抗技术",
+        "evidence_span": "网络空间攻防对抗技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "平行仿真技术体系",
+        "evidence_span": "基于永信至诚多年研发实践的平行仿真技术体系构建而成"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政企用户",
+        "evidence_span": "面向政企用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府监管部门",
+        "evidence_span": "主要面向政府监管部门"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "个人用户",
+        "evidence_span": "面向个人用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "企事业单位",
+        "evidence_span": "面向企事业单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中央网信办",
+        "evidence_span": "支撑了中央网信办"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安部",
+        "evidence_span": "公安部"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工信部",
+        "evidence_span": "工信部"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "教育部",
+        "evidence_span": "教育部"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字中国和网络强国建设",
+        "evidence_span": "为数字中国和网络强国建设提供高能效的安全保障"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:40:59"
+}

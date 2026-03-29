@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "期货经纪业务",
+      "evidence_span": "期货经纪业务是指代理客户进行期货交易的中间业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基金销售业务",
+      "evidence_span": "基金销售业务是指公司接受基金管理人的委托"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产管理业务",
+      "evidence_span": "资产管理业务是指公司非公开募集资金或者接受单一客户或特定多个客户的书面财产委托"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "风险管理业务",
+      "evidence_span": "风险管理业务主要包括基差贸易、场外衍生品业务和做市业务等风险管理服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "境外金融服务业务",
+      "evidence_span": "公司通过新永安金控及其子公司开展境外金融服务业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "期货公司",
+      "evidence_span": "公司是浙江省内分支机构数量最多的期货公司之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "衍生品投行",
+      "evidence_span": "打造行业领先、独具特色的衍生品投行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基差贸易",
+      "evidence_span": "基差贸易业务签订期现贸易合同3万余份"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "场外衍生品业务",
+      "evidence_span": "场外衍生品业务顶住行情考验和竞争压力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "做市业务",
+      "evidence_span": "做市业务持续拓宽做市品种覆盖面"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "期货+现货服务",
+      "evidence_span": "形成“期货+现货”“期货+工程配送”“期货+仓储物流”等业务模式组成的“期货+”服务体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保险+期货",
+      "evidence_span": "“保险+期货”成为公司助力乡村振兴、共同富裕的重要抓手"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主动管理期货及衍生品系列产品",
+      "evidence_span": "持续打造以主动管理期货及衍生品系列产品为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FOF系列产品",
+      "evidence_span": "“CTA联盟”等FOF系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "债券资管产品",
+      "evidence_span": "债券资管产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "期货+工程配送",
+      "evidence_span": "优化“期货+工程配送”业务模式"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "期货+仓储物流",
+      "evidence_span": "拓展“期货+仓储物流”业务模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数智化运营体系",
+      "evidence_span": "公司构建了富有永安特色的数智化运营体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化运维大屏",
+      "evidence_span": "智能化运维大屏集重要业务数据展示、监控告警、自动化作业、容灾切换等于一体"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "管理驾驶舱",
+      "evidence_span": "优化迭代管理驾驶舱"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "实体企业",
+      "evidence_span": "累计服务实体企业约1.3万家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "私募基金管理人",
+      "evidence_span": "与64家管理人建立合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "服务实体经济",
+      "evidence_span": "秉持服务实体经济初心"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "风险管理",
+      "evidence_span": "突出期货和衍生品为国民经济、实体经济服务的功能定位，明确了期货市场价格发现、风险管理、资源配置的三大基本功能"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "期货经纪业务",
+        "evidence_span": "期货经纪业务是指代理客户进行期货交易的中间业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基金销售业务",
+        "evidence_span": "基金销售业务是指公司接受基金管理人的委托"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产管理业务",
+        "evidence_span": "资产管理业务是指公司非公开募集资金或者接受单一客户或特定多个客户的书面财产委托"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "风险管理业务",
+        "evidence_span": "风险管理业务主要包括基差贸易、场外衍生品业务和做市业务等风险管理服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "境外金融服务业务",
+        "evidence_span": "公司通过新永安金控及其子公司开展境外金融服务业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "期货公司",
+        "evidence_span": "公司是浙江省内分支机构数量最多的期货公司之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "衍生品投行",
+        "evidence_span": "打造行业领先、独具特色的衍生品投行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基差贸易",
+        "evidence_span": "基差贸易业务签订期现贸易合同3万余份"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "场外衍生品业务",
+        "evidence_span": "场外衍生品业务顶住行情考验和竞争压力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "做市业务",
+        "evidence_span": "做市业务持续拓宽做市品种覆盖面"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "期货+现货服务",
+        "evidence_span": "形成“期货+现货”“期货+工程配送”“期货+仓储物流”等业务模式组成的“期货+”服务体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保险+期货",
+        "evidence_span": "“保险+期货”成为公司助力乡村振兴、共同富裕的重要抓手"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主动管理期货及衍生品系列产品",
+        "evidence_span": "持续打造以主动管理期货及衍生品系列产品为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FOF系列产品",
+        "evidence_span": "“CTA联盟”等FOF系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "债券资管产品",
+        "evidence_span": "债券资管产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "期货+工程配送",
+        "evidence_span": "优化“期货+工程配送”业务模式"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "期货+仓储物流",
+        "evidence_span": "拓展“期货+仓储物流”业务模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数智化运营体系",
+        "evidence_span": "公司构建了富有永安特色的数智化运营体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化运维大屏",
+        "evidence_span": "智能化运维大屏集重要业务数据展示、监控告警、自动化作业、容灾切换等于一体"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "管理驾驶舱",
+        "evidence_span": "优化迭代管理驾驶舱"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "实体企业",
+        "evidence_span": "累计服务实体企业约1.3万家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "私募基金管理人",
+        "evidence_span": "与64家管理人建立合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "服务实体经济",
+        "evidence_span": "秉持服务实体经济初心"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "风险管理",
+        "evidence_span": "突出期货和衍生品为国民经济、实体经济服务的功能定位，明确了期货市场价格发现、风险管理、资源配置的三大基本功能"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:50:22"
+}

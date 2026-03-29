@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "c26f9ba5d12c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述东航C919执飞新航线的具体事件，是商业运营动态，没有提供静态知识。"}}

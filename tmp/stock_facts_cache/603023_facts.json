@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车电子控制产品",
+      "evidence_span": "公司是国内汽车电子控制产品供应商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "客车车身电子产品",
+      "evidence_span": "主要生产汽车CAN总线控制系统、控制器等客车车身电子产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车电子控制产品供应商",
+      "evidence_span": "公司是国内汽车电子控制产品供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "客车车身电子领先供应商",
+      "evidence_span": "威帝股份客车车身电子领先供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "整车制造商的一级配套商",
+      "evidence_span": "公司主要是作为整车制造商的一级配套商直接向其配套供货"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CAN总线控制系统",
+      "evidence_span": "主要生产汽车CAN总线控制系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "总线控制单元",
+      "evidence_span": "公司的主要产品包括CAN总线控制系统、总线控制单元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "控制器（ECU控制单元）",
+      "evidence_span": "控制器（ECU控制单元）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云总线车联网系统",
+      "evidence_span": "云总线车联网系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传感器",
+      "evidence_span": "传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全液晶仪表",
+      "evidence_span": "全液晶仪表"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能驾驶座舱系统",
+      "evidence_span": "智能驾驶座舱系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽车电子产品研发",
+      "evidence_span": "一直致力于汽车电子产品的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "IATF16949质量管理体系",
+      "evidence_span": "产品研发实行项目管理制结合IATF16949质量管理体系的方式"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "厦门金龙",
+      "evidence_span": "公司成为厦门金龙、厦门金旅、北汽福田、中通客车等国内客车龙头企业的主要配套商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "厦门金旅",
+      "evidence_span": "公司成为厦门金龙、厦门金旅、北汽福田、中通客车等国内客车龙头企业的主要配套商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽福田",
+      "evidence_span": "公司成为厦门金龙、厦门金旅、北汽福田、中通客车等国内客车龙头企业的主要配套商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中通客车",
+      "evidence_span": "公司成为厦门金龙、厦门金旅、北汽福田、中通客车等国内客车龙头企业的主要配套商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源客车渗透率提升",
+      "evidence_span": "短期受益新能源客车渗透率提升"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "车联网",
+      "evidence_span": "车联网将成为增长点"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能驾驶",
+      "evidence_span": "智能驾驶潜在标的"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车电子控制产品",
+        "evidence_span": "公司是国内汽车电子控制产品供应商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "客车车身电子产品",
+        "evidence_span": "主要生产汽车CAN总线控制系统、控制器等客车车身电子产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车电子控制产品供应商",
+        "evidence_span": "公司是国内汽车电子控制产品供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "客车车身电子领先供应商",
+        "evidence_span": "威帝股份客车车身电子领先供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "整车制造商的一级配套商",
+        "evidence_span": "公司主要是作为整车制造商的一级配套商直接向其配套供货"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CAN总线控制系统",
+        "evidence_span": "主要生产汽车CAN总线控制系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "总线控制单元",
+        "evidence_span": "公司的主要产品包括CAN总线控制系统、总线控制单元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "控制器（ECU控制单元）",
+        "evidence_span": "控制器（ECU控制单元）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云总线车联网系统",
+        "evidence_span": "云总线车联网系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传感器",
+        "evidence_span": "传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全液晶仪表",
+        "evidence_span": "全液晶仪表"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能驾驶座舱系统",
+        "evidence_span": "智能驾驶座舱系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽车电子产品研发",
+        "evidence_span": "一直致力于汽车电子产品的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "IATF16949质量管理体系",
+        "evidence_span": "产品研发实行项目管理制结合IATF16949质量管理体系的方式"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "厦门金龙",
+        "evidence_span": "公司成为厦门金龙、厦门金旅、北汽福田、中通客车等国内客车龙头企业的主要配套商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "厦门金旅",
+        "evidence_span": "公司成为厦门金龙、厦门金旅、北汽福田、中通客车等国内客车龙头企业的主要配套商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽福田",
+        "evidence_span": "公司成为厦门金龙、厦门金旅、北汽福田、中通客车等国内客车龙头企业的主要配套商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中通客车",
+        "evidence_span": "公司成为厦门金龙、厦门金旅、北汽福田、中通客车等国内客车龙头企业的主要配套商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源客车渗透率提升",
+        "evidence_span": "短期受益新能源客车渗透率提升"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "车联网",
+        "evidence_span": "车联网将成为增长点"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能驾驶",
+        "evidence_span": "智能驾驶潜在标的"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:00:10"
+}

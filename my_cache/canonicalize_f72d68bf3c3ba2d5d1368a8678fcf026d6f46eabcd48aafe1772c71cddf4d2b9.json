@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:43:26", "result": {"span_uid": "95bdcfacbfd2", "action": "rewrite", "canonical_text": "高通AI200芯片主要应用于AI推理（运行AI模型）环节，而非模型训练。", "final_type": "core", "final_role": "AI200应用定位", "stability": "high", "reason": "改写后去除了新闻口吻，保留了应用定位这一稳定知识，可作为高通AI芯片的核心功能定义。"}}

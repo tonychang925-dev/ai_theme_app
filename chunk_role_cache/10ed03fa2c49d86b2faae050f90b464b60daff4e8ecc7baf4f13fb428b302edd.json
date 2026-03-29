@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "d777feed5b80", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落提供中国大陆在芯片制造设备上的支出数据，并与地区比较，属于行业景气数据，未揭示设备本身的结构或关键技术。"}}

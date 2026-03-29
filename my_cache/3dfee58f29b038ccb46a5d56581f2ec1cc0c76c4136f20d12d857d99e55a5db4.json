@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:01:57", "result": {"chunk_id": "73693c2e2cdf", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落包含仓颉编程语言官网上线和腾讯QQ纯血鸿蒙版上架的事件信息，但同时也涉及华为鸿蒙生态的软件和开发者工具知识，可能对构建华为生态系统知识有价值，因此归类为候选混合状态。"}}

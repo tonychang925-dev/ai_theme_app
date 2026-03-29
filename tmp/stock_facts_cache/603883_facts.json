@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "药品",
+      "evidence_span": "经营业务包括药品及健康相关商品的销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "健康相关商品的销售",
+      "evidence_span": "经营业务包括药品及健康相关商品的销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "药品批发",
+      "evidence_span": "经营业务包括药品及健康相关商品的销售，药品批发与制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中成药",
+      "evidence_span": "药品批发与制造(主要为中成药及中药饮片制造)"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中药饮片制造",
+      "evidence_span": "药品批发与制造(主要为中成药及中药饮片制造)"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "DTP专业药房",
+      "evidence_span": "同时大力发展DTP专业药房、中医馆和电子商务O2O等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中医馆",
+      "evidence_span": "同时大力发展DTP专业药房、中医馆和电子商务O2O等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子商务O2O",
+      "evidence_span": "同时大力发展DTP专业药房、中医馆和电子商务O2O等业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "连锁药店企业",
+      "evidence_span": "全国化布局领先的连锁药店企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "药店龙头",
+      "evidence_span": "老百姓全国布局的药店龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国头部药房",
+      "evidence_span": "全国头部药房"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "连锁药店标杆",
+      "evidence_span": "覆盖全国的连锁药店标杆"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "零售龙头",
+      "evidence_span": "零售龙头开启高速增长新征程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中西成药",
+      "evidence_span": "公司主要产品包括中西成药、非药品、中药以及其它产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非药品",
+      "evidence_span": "公司主要产品包括中西成药、非药品、中药以及其它产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药产品",
+      "evidence_span": "公司主要产品包括中西成药、非药品、中药以及其它产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高值处方药",
+      "evidence_span": "DTP以销售高值处方药为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "慢病管理服务",
+      "evidence_span": "慢病管理方面"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线上O2O业务",
+      "evidence_span": "积极布局线上O2O业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管理咨询和供应链整合服务",
+      "evidence_span": "联盟是向中小连锁药房提供管理咨询和供应链整合服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "平价药房模式",
+      "evidence_span": "首创中国平价药房模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "直营、星火、加盟、联盟四轮驱动门店扩张",
+      "evidence_span": "公司通过直营、星火、加盟、联盟四轮驱动门店扩张"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "星火并购",
+      "evidence_span": "星火并购是通过控股方式收购标的50%-100%股权"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "加盟业务",
+      "evidence_span": "加盟业务通过二级子公司“老百姓健康药房”专门运营"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "联盟业务",
+      "evidence_span": "联盟是向中小连锁药房提供管理咨询和供应链整合服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化建设",
+      "evidence_span": "公司不断加强数字化建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据驱动的药品供应链体系",
+      "evidence_span": "构建以数据驱动的药品供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "慢病患者",
+      "evidence_span": "帮助慢病患者科学管理慢性疾病"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中小连锁药房",
+      "evidence_span": "联盟是向中小连锁药房提供管理咨询和供应链整合服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "处方外流",
+      "evidence_span": "积极迎接处方外流"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "药品及健康相关商品的销售",
+        "evidence_span": "经营业务包括药品及健康相关商品的销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "药品批发",
+        "evidence_span": "经营业务包括药品及健康相关商品的销售，药品批发与制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中成药及中药饮片制造",
+        "evidence_span": "药品批发与制造(主要为中成药及中药饮片制造)"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "DTP专业药房",
+        "evidence_span": "同时大力发展DTP专业药房、中医馆和电子商务O2O等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中医馆",
+        "evidence_span": "同时大力发展DTP专业药房、中医馆和电子商务O2O等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子商务O2O",
+        "evidence_span": "同时大力发展DTP专业药房、中医馆和电子商务O2O等业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "连锁药店企业",
+        "evidence_span": "全国化布局领先的连锁药店企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "药店龙头",
+        "evidence_span": "老百姓全国布局的药店龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国头部药房",
+        "evidence_span": "全国头部药房"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "连锁药店标杆",
+        "evidence_span": "覆盖全国的连锁药店标杆"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "零售龙头",
+        "evidence_span": "零售龙头开启高速增长新征程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中西成药",
+        "evidence_span": "公司主要产品包括中西成药、非药品、中药以及其它产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非药品",
+        "evidence_span": "公司主要产品包括中西成药、非药品、中药以及其它产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药产品",
+        "evidence_span": "公司主要产品包括中西成药、非药品、中药以及其它产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高值处方药",
+        "evidence_span": "DTP以销售高值处方药为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "慢病管理服务",
+        "evidence_span": "慢病管理方面"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线上O2O业务",
+        "evidence_span": "积极布局线上O2O业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管理咨询和供应链整合服务",
+        "evidence_span": "联盟是向中小连锁药房提供管理咨询和供应链整合服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "平价药房模式",
+        "evidence_span": "首创中国平价药房模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "直营、星火、加盟、联盟四轮驱动门店扩张",
+        "evidence_span": "公司通过直营、星火、加盟、联盟四轮驱动门店扩张"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "星火并购",
+        "evidence_span": "星火并购是通过控股方式收购标的50%-100%股权"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "加盟业务",
+        "evidence_span": "加盟业务通过二级子公司“老百姓健康药房”专门运营"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "联盟业务",
+        "evidence_span": "联盟是向中小连锁药房提供管理咨询和供应链整合服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化建设",
+        "evidence_span": "公司不断加强数字化建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据驱动的药品供应链体系",
+        "evidence_span": "构建以数据驱动的药品供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "慢病患者",
+        "evidence_span": "帮助慢病患者科学管理慢性疾病"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中小连锁药房",
+        "evidence_span": "联盟是向中小连锁药房提供管理咨询和供应链整合服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "处方外流",
+        "evidence_span": "积极迎接处方外流"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:22:49"
+}

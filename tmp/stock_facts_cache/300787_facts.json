@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "消费电子零配件ODM",
+      "evidence_span": "公司是领先的消费电子零配件ODM厂商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "消费电子定制化产品",
+      "evidence_span": "专注于为零售品牌客户提供消费电子定制化产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "消费电子零配件ODM厂商",
+      "evidence_span": "公司是领先的消费电子零配件ODM厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "零售端ODM龙头",
+      "evidence_span": "长期零售端ODM龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信号线束产品",
+      "evidence_span": "公司主要产品包括信号线束产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信号适配器产品",
+      "evidence_span": "公司主要产品包括信号适配器产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电源适配器产品",
+      "evidence_span": "公司主要产品包括电源适配器产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Type-C类型线束",
+      "evidence_span": "线束类产品：主要包括Type-C类型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HDMI类型线束",
+      "evidence_span": "线束类产品：主要包括HDMI类型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信号转换器",
+      "evidence_span": "信号适配器产品：主要包括信号转换器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "切换器",
+      "evidence_span": "信号适配器产品：主要包括切换器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "延长器",
+      "evidence_span": "信号适配器产品：主要包括延长器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有线充电器",
+      "evidence_span": "电源适配器产品：主要包括有线充电器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线充电器",
+      "evidence_span": "电源适配器产品：主要包括无线充电器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能排插",
+      "evidence_span": "电源适配器产品：主要包括智能排插"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Type-C技术标准测试",
+      "evidence_span": "最早拥有通过Type-C技术标准测试的会员之一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "贝尔金",
+      "evidence_span": "已与贝尔金建立稳定的长期合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安克创新",
+      "evidence_span": "已与安克创新建立稳定的长期合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚马逊",
+      "evidence_span": "已与亚马逊建立稳定的长期合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "StarTech",
+      "evidence_span": "已与StarTech建立稳定的长期合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Trippe",
+      "evidence_span": "已与Trippe建立稳定的长期合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "无线充电迅速普及",
+      "evidence_span": "受益无线充电迅速普及"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "快充带来爆发",
+      "evidence_span": "海能实业受益快充带来爆发"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "消费电子零配件ODM",
+        "evidence_span": "公司是领先的消费电子零配件ODM厂商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "消费电子定制化产品",
+        "evidence_span": "专注于为零售品牌客户提供消费电子定制化产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "消费电子零配件ODM厂商",
+        "evidence_span": "公司是领先的消费电子零配件ODM厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "零售端ODM龙头",
+        "evidence_span": "长期零售端ODM龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信号线束产品",
+        "evidence_span": "公司主要产品包括信号线束产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信号适配器产品",
+        "evidence_span": "公司主要产品包括信号适配器产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电源适配器产品",
+        "evidence_span": "公司主要产品包括电源适配器产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Type-C类型线束",
+        "evidence_span": "线束类产品：主要包括Type-C类型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HDMI类型线束",
+        "evidence_span": "线束类产品：主要包括HDMI类型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信号转换器",
+        "evidence_span": "信号适配器产品：主要包括信号转换器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "切换器",
+        "evidence_span": "信号适配器产品：主要包括切换器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "延长器",
+        "evidence_span": "信号适配器产品：主要包括延长器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有线充电器",
+        "evidence_span": "电源适配器产品：主要包括有线充电器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线充电器",
+        "evidence_span": "电源适配器产品：主要包括无线充电器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能排插",
+        "evidence_span": "电源适配器产品：主要包括智能排插"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Type-C技术标准测试",
+        "evidence_span": "最早拥有通过Type-C技术标准测试的会员之一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "贝尔金",
+        "evidence_span": "已与贝尔金建立稳定的长期合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安克创新",
+        "evidence_span": "已与安克创新建立稳定的长期合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚马逊",
+        "evidence_span": "已与亚马逊建立稳定的长期合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "StarTech",
+        "evidence_span": "已与StarTech建立稳定的长期合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Trippe",
+        "evidence_span": "已与Trippe建立稳定的长期合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "无线充电迅速普及",
+        "evidence_span": "受益无线充电迅速普及"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "快充带来爆发",
+        "evidence_span": "海能实业受益快充带来爆发"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:16:45"
+}

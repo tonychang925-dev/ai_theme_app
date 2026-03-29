@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "0cdde165a4e2", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落主要包含低空经济基础设施和飞行器的静态知识（如定义、构成、优势），但以深圳建设'四张网'为例，可能隐含了具体事件或政策实施信息，因此混合了知识性和潜在的事件性内容。"}}

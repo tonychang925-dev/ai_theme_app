@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:22:58", "result": {"span_uid": "a5fefe00af50", "action": "rewrite", "canonical_text": "HBM在2024年和2025年面临供应短缺，库存已基本售罄。", "final_type": "signal", "final_role": "供需状况", "stability": "low", "reason": "原文是具体年份的供需状况，包含事件化信息，但改写后保留了供需短缺的稳定事实，可作为短期景气信号，稳定性较低。"}}

@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "内燃机进气系统",
+      "evidence_span": "公司主营业务为内燃机进气系统及配件产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "配件产品的研发",
+      "evidence_span": "公司主营业务为内燃机进气系统及配件产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主营业务为内燃机进气系统及配件产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营业务为内燃机进气系统及配件产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "摩托车进气系统",
+      "evidence_span": "摩托车进气系统及配件系公司主要产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "配件",
+      "evidence_span": "摩托车进气系统及配件系公司主要产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车进气系统",
+      "evidence_span": "汽车进气系统及配件系公司主要产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "通用机械进气系统",
+      "evidence_span": "通用机械进气系统及配件"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "内燃机进气系统制造厂商",
+      "evidence_span": "专业内燃机进气系统制造厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "摩托车内燃机进气系统行业的佼佼者",
+      "evidence_span": "公司作为国内摩托车内燃机进气系统行业的佼佼者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "摩托车进气系统及配件",
+      "evidence_span": "摩托车进气系统及配件系公司主要产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车进气系统及配件",
+      "evidence_span": "汽车进气系统及配件系公司主要产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通用机械进气系统及配件",
+      "evidence_span": "通用机械进气系统及配件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空气滤清器",
+      "evidence_span": "空气滤清器的市场占有率在30%以上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "炭罐产品",
+      "evidence_span": "应用于其混动车型中的炭罐产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽集团",
+      "evidence_span": "公司对广汽集团的收入"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利集团",
+      "evidence_span": "公司对吉利集团的收入"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司对比亚迪的收入"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞集团",
+      "evidence_span": "公司对奇瑞集团的收入"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城汽车",
+      "evidence_span": "长城汽车是公司2019年开拓的新客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大长江集团",
+      "evidence_span": "对大长江集团等客户供应份额的提升"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本田",
+      "evidence_span": "公司系本田、雅马哈等世界知名摩托车品牌的进气系统核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雅马哈",
+      "evidence_span": "公司系本田、雅马哈等世界知名摩托车品牌的进气系统核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "豪爵",
+      "evidence_span": "豪爵（大长江）、隆鑫、力帆和宗申等其他国内主流摩托车品牌的进气系统配套供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "隆鑫",
+      "evidence_span": "豪爵（大长江）、隆鑫、力帆和宗申等其他国内主流摩托车品牌的进气系统配套供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "力帆",
+      "evidence_span": "豪爵（大长江）、隆鑫、力帆和宗申等其他国内主流摩托车品牌的进气系统配套供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宗申",
+      "evidence_span": "豪爵（大长江）、隆鑫、力帆和宗申等其他国内主流摩托车品牌的进气系统配套供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "空气滤清器在国内二轮燃油摩托车领域市占率约四成",
+      "evidence_span": "空气滤清器在国内二轮燃油摩托车领域市占率约四成"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "内燃机进气系统及配件产品的研发、生产和销售",
+        "evidence_span": "公司主营业务为内燃机进气系统及配件产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "摩托车进气系统及配件",
+        "evidence_span": "摩托车进气系统及配件系公司主要产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车进气系统及配件",
+        "evidence_span": "汽车进气系统及配件系公司主要产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "通用机械进气系统及配件",
+        "evidence_span": "通用机械进气系统及配件"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "内燃机进气系统制造厂商",
+        "evidence_span": "专业内燃机进气系统制造厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "摩托车内燃机进气系统行业的佼佼者",
+        "evidence_span": "公司作为国内摩托车内燃机进气系统行业的佼佼者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "摩托车进气系统及配件",
+        "evidence_span": "摩托车进气系统及配件系公司主要产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车进气系统及配件",
+        "evidence_span": "汽车进气系统及配件系公司主要产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通用机械进气系统及配件",
+        "evidence_span": "通用机械进气系统及配件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空气滤清器",
+        "evidence_span": "空气滤清器的市场占有率在30%以上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "炭罐产品",
+        "evidence_span": "应用于其混动车型中的炭罐产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽集团",
+        "evidence_span": "公司对广汽集团的收入"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利集团",
+        "evidence_span": "公司对吉利集团的收入"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司对比亚迪的收入"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞集团",
+        "evidence_span": "公司对奇瑞集团的收入"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城汽车",
+        "evidence_span": "长城汽车是公司2019年开拓的新客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大长江集团",
+        "evidence_span": "对大长江集团等客户供应份额的提升"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本田",
+        "evidence_span": "公司系本田、雅马哈等世界知名摩托车品牌的进气系统核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雅马哈",
+        "evidence_span": "公司系本田、雅马哈等世界知名摩托车品牌的进气系统核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "豪爵",
+        "evidence_span": "豪爵（大长江）、隆鑫、力帆和宗申等其他国内主流摩托车品牌的进气系统配套供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "隆鑫",
+        "evidence_span": "豪爵（大长江）、隆鑫、力帆和宗申等其他国内主流摩托车品牌的进气系统配套供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "力帆",
+        "evidence_span": "豪爵（大长江）、隆鑫、力帆和宗申等其他国内主流摩托车品牌的进气系统配套供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宗申",
+        "evidence_span": "豪爵（大长江）、隆鑫、力帆和宗申等其他国内主流摩托车品牌的进气系统配套供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "空气滤清器在国内二轮燃油摩托车领域市占率约四成",
+        "evidence_span": "空气滤清器在国内二轮燃油摩托车领域市占率约四成"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:55:37"
+}

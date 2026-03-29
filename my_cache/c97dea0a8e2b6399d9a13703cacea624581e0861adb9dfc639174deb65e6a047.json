@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "35eed08255cd", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段描述了北约成员国达成军费支出目标的事件，但包含了2035年前将年度国防开支提高至GDP的5%、其中3.5%用于核心军费支出等具体数据，这些信息可能对军工产业背景或国际环境有参考价值，属于混合知识。"}}

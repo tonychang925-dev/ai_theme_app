@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "ceb7a7d4c1e8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提到了广东省支持东莞发展半导体关键环节（如集成电路设计、制造等），这属于政策知识，但以具体政策发布事件形式呈现，因此混合了事件信息，适合作为知识候选。"}}

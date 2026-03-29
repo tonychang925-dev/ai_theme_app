@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "bc7d9ca9a523", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提到拜登政府的贸易限制措施，并指出东京电子和阿斯麦的产品是芯片生产设备，对整个芯片行业至关重要。这直接揭示了半导体设备的关键对象和重要性，提供了题材相关的知识性信息。"}}

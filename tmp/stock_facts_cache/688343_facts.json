@@ -1,0 +1,399 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "人工智能算法",
+      "evidence_span": "以人工智能算法、芯片技术为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "人工智能芯片",
+      "evidence_span": "以人工智能算法、芯片技术为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字城市运营管理",
+      "evidence_span": "主营业务聚焦的服务场景分为数字城市运营管理和人居生活智慧化升级两大业务场景"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "人居生活智慧化升级",
+      "evidence_span": "主营业务聚焦的服务场景分为数字城市运营管理和人居生活智慧化升级两大业务场景"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "人工智能企业",
+      "evidence_span": "公司作为业内领先的人工智能企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "自主安全计算产业生态链的重要支撑单位",
+      "evidence_span": "云天励飞是中国电子主导的“自主安全计算产业生态链”的重要支撑单位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "算法软件",
+      "evidence_span": "为客户提供算法软件、芯片等自研核心产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芯片",
+      "evidence_span": "为客户提供算法软件、芯片等自研核心产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧安防AI解决方案",
+      "evidence_span": "公司在数字城市领域提供的AI产品及解决方案当前主要应用在智慧安防场景"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市治理AI解决方案",
+      "evidence_span": "在城市治理等场景亦有项目落地"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧社区解决方案",
+      "evidence_span": "公司在人居生活智慧化升级的应用场景主要以智慧社区、智慧园区以及智慧泛商业为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧园区解决方案",
+      "evidence_span": "公司在人居生活智慧化升级的应用场景主要以智慧社区、智慧园区以及智慧泛商业为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧泛商业AI解决方案",
+      "evidence_span": "公司在人居生活智慧化升级的应用场景主要以智慧社区、智慧园区以及智慧泛商业为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧道路巡检解决方案",
+      "evidence_span": "智慧道路巡检解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "端侧智能芯片",
+      "evidence_span": "端侧智能芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工智能算法SDK",
+      "evidence_span": "公司的人工智能算法可以软件开发工具包（SDK）的形式提供给客户使用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基于自研智能芯片的可重定义端侧设备",
+      "evidence_span": "基于自研智能芯片的可重定义端侧设备等终端设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运用公司算法技术的标准化端侧设备",
+      "evidence_span": "运用公司算法技术的标准化端侧设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运用公司算法或芯片技术的边缘计算设备",
+      "evidence_span": "运用公司算法或芯片技术的边缘计算设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IP授权",
+      "evidence_span": "将相关研发成果通过“IP授权”的方式实现收入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能算法平台",
+      "evidence_span": "核心技术平台包括算法技术平台、人工智能芯片技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能芯片技术平台",
+      "evidence_span": "核心技术平台包括算法技术平台、人工智能芯片技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海量类别高精度度量学习技术",
+      "evidence_span": "海量类别高精度度量学习技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高密度图像、特征搜索技术",
+      "evidence_span": "高密度图像、特征搜索技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大容量视频结构化技术",
+      "evidence_span": "大容量视频结构化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于结构化数据的图模型学习和预测技术",
+      "evidence_span": "基于结构化数据的图模型学习和预测技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三维场景化人员分析技术",
+      "evidence_span": "三维场景化人员分析技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "被动活体技术",
+      "evidence_span": "被动活体技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "芯片技术",
+      "evidence_span": "芯片技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工具链技术",
+      "evidence_span": "工具链技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基础系统软件技术",
+      "evidence_span": "基础系统软件技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "算法芯片化能力",
+      "evidence_span": "面向场景的算法芯片化能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海康威视",
+      "evidence_span": "已与海康威视、阿里巴巴平头哥建立了业务合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里巴巴平头哥",
+      "evidence_span": "已与海康威视、阿里巴巴平头哥建立了业务合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电子",
+      "evidence_span": "云天励飞与中国电子已在信创产业生态链的诸多领域展开合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国长城",
+      "evidence_span": "云天励飞与中国长城签署战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国系统",
+      "evidence_span": "云天励飞与中国系统签订数据要素生态合作框架协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中电光谷",
+      "evidence_span": "云天励飞与中电光谷签署战略合作协议"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "视觉AI",
+      "evidence_span": "专注于视觉AI领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "人工智能算法",
+        "evidence_span": "以人工智能算法、芯片技术为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "人工智能芯片",
+        "evidence_span": "以人工智能算法、芯片技术为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字城市运营管理",
+        "evidence_span": "主营业务聚焦的服务场景分为数字城市运营管理和人居生活智慧化升级两大业务场景"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "人居生活智慧化升级",
+        "evidence_span": "主营业务聚焦的服务场景分为数字城市运营管理和人居生活智慧化升级两大业务场景"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "人工智能企业",
+        "evidence_span": "公司作为业内领先的人工智能企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "自主安全计算产业生态链的重要支撑单位",
+        "evidence_span": "云天励飞是中国电子主导的“自主安全计算产业生态链”的重要支撑单位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "算法软件",
+        "evidence_span": "为客户提供算法软件、芯片等自研核心产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芯片",
+        "evidence_span": "为客户提供算法软件、芯片等自研核心产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧安防AI解决方案",
+        "evidence_span": "公司在数字城市领域提供的AI产品及解决方案当前主要应用在智慧安防场景"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市治理AI解决方案",
+        "evidence_span": "在城市治理等场景亦有项目落地"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧社区解决方案",
+        "evidence_span": "公司在人居生活智慧化升级的应用场景主要以智慧社区、智慧园区以及智慧泛商业为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧园区解决方案",
+        "evidence_span": "公司在人居生活智慧化升级的应用场景主要以智慧社区、智慧园区以及智慧泛商业为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧泛商业AI解决方案",
+        "evidence_span": "公司在人居生活智慧化升级的应用场景主要以智慧社区、智慧园区以及智慧泛商业为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧道路巡检解决方案",
+        "evidence_span": "智慧道路巡检解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "端侧智能芯片",
+        "evidence_span": "端侧智能芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工智能算法SDK",
+        "evidence_span": "公司的人工智能算法可以软件开发工具包（SDK）的形式提供给客户使用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基于自研智能芯片的可重定义端侧设备",
+        "evidence_span": "基于自研智能芯片的可重定义端侧设备等终端设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运用公司算法技术的标准化端侧设备",
+        "evidence_span": "运用公司算法技术的标准化端侧设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运用公司算法或芯片技术的边缘计算设备",
+        "evidence_span": "运用公司算法或芯片技术的边缘计算设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IP授权",
+        "evidence_span": "将相关研发成果通过“IP授权”的方式实现收入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能算法平台",
+        "evidence_span": "核心技术平台包括算法技术平台、人工智能芯片技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能芯片技术平台",
+        "evidence_span": "核心技术平台包括算法技术平台、人工智能芯片技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海量类别高精度度量学习技术",
+        "evidence_span": "海量类别高精度度量学习技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高密度图像、特征搜索技术",
+        "evidence_span": "高密度图像、特征搜索技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大容量视频结构化技术",
+        "evidence_span": "大容量视频结构化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于结构化数据的图模型学习和预测技术",
+        "evidence_span": "基于结构化数据的图模型学习和预测技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三维场景化人员分析技术",
+        "evidence_span": "三维场景化人员分析技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "被动活体技术",
+        "evidence_span": "被动活体技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "芯片技术",
+        "evidence_span": "芯片技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工具链技术",
+        "evidence_span": "工具链技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基础系统软件技术",
+        "evidence_span": "基础系统软件技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "算法芯片化能力",
+        "evidence_span": "面向场景的算法芯片化能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海康威视",
+        "evidence_span": "已与海康威视、阿里巴巴平头哥建立了业务合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里巴巴平头哥",
+        "evidence_span": "已与海康威视、阿里巴巴平头哥建立了业务合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电子",
+        "evidence_span": "云天励飞与中国电子已在信创产业生态链的诸多领域展开合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国长城",
+        "evidence_span": "云天励飞与中国长城签署战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国系统",
+        "evidence_span": "云天励飞与中国系统签订数据要素生态合作框架协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中电光谷",
+        "evidence_span": "云天励飞与中电光谷签署战略合作协议"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "视觉AI",
+        "evidence_span": "专注于视觉AI领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:13:01"
+}

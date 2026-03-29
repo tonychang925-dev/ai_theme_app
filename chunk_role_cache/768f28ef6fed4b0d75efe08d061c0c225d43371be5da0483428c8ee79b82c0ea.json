@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "0d8d37816fbf", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落提供了光刻胶的定义、核心构成（光敏材料）和在半导体制造中的关键作用（光刻环节），是纯静态说明，不涉及事件或动态信息，可用于题材本体构建。"}}

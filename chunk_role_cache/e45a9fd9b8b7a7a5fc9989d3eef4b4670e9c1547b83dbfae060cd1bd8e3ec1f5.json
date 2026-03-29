@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:43", "result": {"chunk_id": "d2dc837b8319", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要介绍了广州开发区发布的政策措施，内容涉及EDA软件、IP核、半导体材料（如光掩模、光刻胶）和设备（如光刻、刻蚀设备）的国产化，这些是半导体设备领域的核心知识，但以政策发布事件形式呈现，因此属于混合内容，知识价值较高。"}}

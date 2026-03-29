@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "8570527e0500", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落混合了事件信息（Meta与EssilorLuxottica合作、鸿海携手Porotech进军AR眼镜市场）和潜在知识（如显示屏用于展示通知或虚拟助手回复、MicroLED晶圆制程产线计划），可能包含可用于AR眼镜本体构建的技术或战略布局信息。"}}

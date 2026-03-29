@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:14:42", "result": {"span_uid": "e6576273d5a8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "太空数据中心建设", "stability": "low", "reason": "该片段是具体的技术方案或事件（在特定轨道建设大型数据中心），属于阶段性进展，但信息不完整且依赖具体上下文，无法形成稳定、独立的知识块。"}}

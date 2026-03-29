@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:54:25", "result": {"span_uid": "cbd96374efe6", "action": "rewrite", "canonical_text": "华为智界S7搭载HarmonyOS 4智能座舱和华为高阶智能驾驶系统。", "final_type": "core", "final_role": "核心技术配置", "stability": "high", "reason": "原文本描述核心技术特性，改写为稳定知识，属于核心知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "90703a620f24", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落包含英伟达作为HBM最大买家的静态知识，以及未来产品（如Blackwell Ultra）和HBM3e比重的预测，但基于具体报告和日期，涉及事件性信息，因此归类为混合候选。"}}

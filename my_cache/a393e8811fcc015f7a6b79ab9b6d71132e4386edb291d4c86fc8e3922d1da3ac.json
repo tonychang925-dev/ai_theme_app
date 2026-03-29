@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "b0777dfbde37", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述SK海力士和三星接获特斯拉HBM4供应要求、研发样品等具体事件，涉及公司动态和采购决策，无静态知识。"}}

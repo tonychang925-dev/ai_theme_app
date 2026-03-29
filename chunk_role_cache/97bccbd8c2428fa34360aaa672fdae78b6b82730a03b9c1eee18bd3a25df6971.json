@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "33b52e03ac96", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落包含关于集成电路大基金三期项目和上海微电子研发28纳米浸没式光刻机的潜在知识，但混有事件爆料和预计交付时间，需进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,76 @@
+{
+  "must": [
+    "AI内容审核",
+    "风险识别",
+    "鉴别深度伪造内容",
+    "实时直播",
+    "海量短视频",
+    "AI生成内容"
+  ],
+  "should": [
+    "政策合规",
+    "平台运营",
+    "内容安全",
+    "社会治理",
+    "直播",
+    "短视频",
+    "数字水印",
+    "溯源技术",
+    "违规营销",
+    "AI换脸",
+    "AI合成音视频",
+    "视频生成模型"
+  ],
+  "not": [
+    "字节跳动",
+    "Seedance2.0",
+    "内测",
+    "用户反馈",
+    "紧急优化",
+    "产品调整"
+  ],
+  "evidence_refs": [
+    {
+      "term": "AI内容审核",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI内容审核"
+    },
+    {
+      "term": "风险识别",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "风险识别"
+    },
+    {
+      "term": "鉴别深度伪造内容",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "鉴别深度伪造内容"
+    },
+    {
+      "term": "实时直播",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "实时直播"
+    },
+    {
+      "term": "海量短视频",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "海量短视频"
+    },
+    {
+      "term": "AI生成内容",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI生成内容"
+    }
+  ],
+  "subject_id": "9063886",
+  "quality": "strong",
+  "generated_at": "2026-03-10T10:12:08",
+  "semantic_type": "技术应用与合规需求",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

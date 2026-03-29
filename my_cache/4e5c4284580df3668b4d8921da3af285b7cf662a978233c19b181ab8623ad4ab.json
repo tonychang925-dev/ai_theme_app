@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "ce7800bf3eb3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述工业和信息化部在新闻发布会上的表态和具体行动（如资金发放、项目推荐），聚焦投资带动和技术改造，属于政府动态和事件性内容。虽然可能间接影响建筑设计领域，但未直接提供建筑设计本身的稳定知识，更偏向纯事件。"}}

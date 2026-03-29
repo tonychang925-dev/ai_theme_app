@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:35:49", "result": {"span_uid": "661954cfc6bc", "action": "rewrite", "canonical_text": "空客天津工厂作为中国商飞（COMAC）的竞争与学习标杆，有助于激发创新和效率提升。", "final_type": "related", "final_role": "对国产大飞机的竞争与学习效应", "stability": "medium", "reason": "原文包含具体事件口吻（“存在”），改写为更稳定的知识表达，保留对题材相关影响的核心信息。"}}

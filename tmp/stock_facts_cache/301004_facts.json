@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "保温杯壶生产制造",
+      "evidence_span": "国内领先的保温杯壶生产制造商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "不锈钢真空保温器皿生产制造",
+      "evidence_span": "国内少数较大规模的不锈钢真空保温器皿生产制造企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "保温杯壶生产制造商",
+      "evidence_span": "国内领先的保温杯壶生产制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "不锈钢真空保温器皿生产制造企业",
+      "evidence_span": "国内少数较大规模的不锈钢真空保温器皿生产制造企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "OEM/ODM代工企业",
+      "evidence_span": "OEM/ODM代工为公司最主要业务模式"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "真空不锈钢保温器皿",
+      "evidence_span": "公司主要产品为真空不锈钢保温器皿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不锈钢真空保温器皿",
+      "evidence_span": "不锈钢真空保温容器是最主要产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保温杯",
+      "evidence_span": "产品包括不锈钢真空保温器皿（保温杯、保温瓶、焖烧罐、保温壶、智能杯等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保温瓶",
+      "evidence_span": "产品包括不锈钢真空保温器皿（保温杯、保温瓶、焖烧罐、保温壶、智能杯等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "焖烧罐",
+      "evidence_span": "产品包括不锈钢真空保温器皿（保温杯、保温瓶、焖烧罐、保温壶、智能杯等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保温壶",
+      "evidence_span": "产品包括不锈钢真空保温器皿（保温杯、保温瓶、焖烧罐、保温壶、智能杯等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能杯",
+      "evidence_span": "产品包括不锈钢真空保温器皿（保温杯、保温瓶、焖烧罐、保温壶、智能杯等）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不锈钢器皿",
+      "evidence_span": "产品包括不锈钢真空保温器皿（保温杯、保温瓶、焖烧罐、保温壶、智能杯等）、不锈钢器皿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "塑料器皿",
+      "evidence_span": "塑料器皿（PP、AS、Tritan等材质）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃器皿",
+      "evidence_span": "玻璃器皿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新材料的日用饮品、食品容器",
+      "evidence_span": "其他新材料的日用饮品、食品容器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不锈钢保温杯",
+      "evidence_span": "产品均以不锈钢保温杯和玻璃杯为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃杯",
+      "evidence_span": "产品均以不锈钢保温杯和玻璃杯为主"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水胀模具技术",
+      "evidence_span": "公司的多项水胀模具技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "旋薄设备",
+      "evidence_span": "公司与设备厂家共同开发的旋薄设备可将0.4mm不锈钢材料杯体旋薄至0.07mm"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水性有机硅表面喷涂技术",
+      "evidence_span": "公司的水性有机硅表面喷涂技术可实现不锈钢器皿的内部易清洗和抗腐蚀性能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "真空气染印技术",
+      "evidence_span": "公司自主开发的真空气染印技术可提高杯体表面印花图案的渗透性"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化生产线技术改造",
+      "evidence_span": "积极推行工厂“机器换人”的自动化生产线技术改造和设备更新"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "PMI",
+      "evidence_span": "客户涵盖PMI、TAKEYA等国际知名保温器皿企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TAKEYA",
+      "evidence_span": "客户涵盖PMI、TAKEYA等国际知名保温器皿企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "S’well",
+      "evidence_span": "核心客户包括美国PMI、S’well、日本Takeya等国际知名保温杯品牌公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ETS",
+      "evidence_span": "形成了以PMI、Takeya、ETS、S’well等公司为主的核心客户群体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Jordane",
+      "evidence_span": "公司是S’well和Jordane的第一大供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "户外需求爆发",
+      "evidence_span": "户外需求爆发催化景气上行"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "保温杯壶生产制造",
+        "evidence_span": "国内领先的保温杯壶生产制造商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "不锈钢真空保温器皿生产制造",
+        "evidence_span": "国内少数较大规模的不锈钢真空保温器皿生产制造企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "保温杯壶生产制造商",
+        "evidence_span": "国内领先的保温杯壶生产制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "不锈钢真空保温器皿生产制造企业",
+        "evidence_span": "国内少数较大规模的不锈钢真空保温器皿生产制造企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "OEM/ODM代工企业",
+        "evidence_span": "OEM/ODM代工为公司最主要业务模式"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "真空不锈钢保温器皿",
+        "evidence_span": "公司主要产品为真空不锈钢保温器皿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不锈钢真空保温器皿",
+        "evidence_span": "不锈钢真空保温容器是最主要产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保温杯",
+        "evidence_span": "产品包括不锈钢真空保温器皿（保温杯、保温瓶、焖烧罐、保温壶、智能杯等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保温瓶",
+        "evidence_span": "产品包括不锈钢真空保温器皿（保温杯、保温瓶、焖烧罐、保温壶、智能杯等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "焖烧罐",
+        "evidence_span": "产品包括不锈钢真空保温器皿（保温杯、保温瓶、焖烧罐、保温壶、智能杯等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保温壶",
+        "evidence_span": "产品包括不锈钢真空保温器皿（保温杯、保温瓶、焖烧罐、保温壶、智能杯等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能杯",
+        "evidence_span": "产品包括不锈钢真空保温器皿（保温杯、保温瓶、焖烧罐、保温壶、智能杯等）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不锈钢器皿",
+        "evidence_span": "产品包括不锈钢真空保温器皿（保温杯、保温瓶、焖烧罐、保温壶、智能杯等）、不锈钢器皿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "塑料器皿",
+        "evidence_span": "塑料器皿（PP、AS、Tritan等材质）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃器皿",
+        "evidence_span": "玻璃器皿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新材料的日用饮品、食品容器",
+        "evidence_span": "其他新材料的日用饮品、食品容器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不锈钢保温杯",
+        "evidence_span": "产品均以不锈钢保温杯和玻璃杯为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃杯",
+        "evidence_span": "产品均以不锈钢保温杯和玻璃杯为主"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水胀模具技术",
+        "evidence_span": "公司的多项水胀模具技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "旋薄设备",
+        "evidence_span": "公司与设备厂家共同开发的旋薄设备可将0.4mm不锈钢材料杯体旋薄至0.07mm"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水性有机硅表面喷涂技术",
+        "evidence_span": "公司的水性有机硅表面喷涂技术可实现不锈钢器皿的内部易清洗和抗腐蚀性能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "真空气染印技术",
+        "evidence_span": "公司自主开发的真空气染印技术可提高杯体表面印花图案的渗透性"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化生产线技术改造",
+        "evidence_span": "积极推行工厂“机器换人”的自动化生产线技术改造和设备更新"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "PMI",
+        "evidence_span": "客户涵盖PMI、TAKEYA等国际知名保温器皿企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TAKEYA",
+        "evidence_span": "客户涵盖PMI、TAKEYA等国际知名保温器皿企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "S’well",
+        "evidence_span": "核心客户包括美国PMI、S’well、日本Takeya等国际知名保温杯品牌公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ETS",
+        "evidence_span": "形成了以PMI、Takeya、ETS、S’well等公司为主的核心客户群体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Jordane",
+        "evidence_span": "公司是S’well和Jordane的第一大供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "户外需求爆发",
+        "evidence_span": "户外需求爆发催化景气上行"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:14:58"
+}

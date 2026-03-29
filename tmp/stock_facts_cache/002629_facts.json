@@ -1,0 +1,399 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "油田环保治理",
+      "evidence_span": "公司的主要业务为油田环保治理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "井下作业技术服务",
+      "evidence_span": "公司的主要业务为...井下作业技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "管具检维修服务",
+      "evidence_span": "公司的主要业务为...管具检维修服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "石化产品的生产",
+      "evidence_span": "公司的主要业务为...石化产品的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司的主要业务为...石化产品的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新材料的研发",
+      "evidence_span": "公司的主要业务为...新材料的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司的主要业务为...新材料的研发、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "油田环保技术服务提供商",
+      "evidence_span": "西南地区市场占有率较高的油田环保技术服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性油服公司",
+      "evidence_span": "公司已成为具有钻井技术服务、井下作业技术服务、管具检维修服务、环保治理技术服务等多方位覆盖的综合性油服公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "钻井液技术服务领军者",
+      "evidence_span": "民营钻井液技术服务领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "油服细分行业区域龙头",
+      "evidence_span": "油服细分行业区域龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油气田废水处理",
+      "evidence_span": "公司主要从事油气田废水处理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "渣泥预处理及池体清理",
+      "evidence_span": "公司主要从事...渣泥预处理及池体清理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "泥浆不落地技术服务",
+      "evidence_span": "公司主要从事...泥浆不落地技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "废弃物资源化利用",
+      "evidence_span": "公司主要从事...废弃物资源化利用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清洁化生产项目技术咨询服务",
+      "evidence_span": "公司主要从事...清洁化生产项目技术咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保隐患治理",
+      "evidence_span": "公司主要从事...环保隐患治理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "噪音治理",
+      "evidence_span": "公司主要从事...噪音治理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钻井技术服务",
+      "evidence_span": "具体包括钻井技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钻井液技术服务",
+      "evidence_span": "具体包括...钻井液技术服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连续油管技术",
+      "evidence_span": "具体包括...连续油管技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "修井技术",
+      "evidence_span": "具体包括...修井技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "试油（气）技术",
+      "evidence_span": "具体包括...试油（气）技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气井提高采收率技术",
+      "evidence_span": "具体包括...气井提高采收率技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油井提高采收率技术",
+      "evidence_span": "具体包括...油井提高采收率技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酸化压裂技术",
+      "evidence_span": "具体包括...酸化压裂技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "套管完井技术",
+      "evidence_span": "具体包括...套管完井技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "祼眼完井技术",
+      "evidence_span": "具体包括...祼眼完井技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特色工具产品",
+      "evidence_span": "具体包括...特色工具产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钻具、工具检维修及现场探伤业务",
+      "evidence_span": "公司新疆项目部从事钻具、工具检维修及现场探伤业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "辐照交联光缆料",
+      "evidence_span": "业务涵盖辐照交联光缆料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "辐照交联布电线料",
+      "evidence_span": "业务涵盖...辐照交联布电线料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端工程改性材料",
+      "evidence_span": "业务涵盖...高端工程改性材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能管道功能母料",
+      "evidence_span": "业务涵盖...高性能管道功能母料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钻井技术服务",
+      "evidence_span": "在钻井技术服务...等领域形成了国际先进、国内领先的特色技术群"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "油田环保技术服务",
+      "evidence_span": "在...油田环保技术服务...等领域形成了国际先进、国内领先的特色技术群"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "防腐工程技术服务",
+      "evidence_span": "在...防腐工程技术服务...等领域形成了国际先进、国内领先的特色技术群"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "井下作业技术服务",
+      "evidence_span": "在...井下作业技术服务等领域形成了国际先进、国内领先的特色技术群"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "中石化“百亿气田”计划受益者",
+      "evidence_span": "中石化“百亿气田”计划受益者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益元坝气田规模开发",
+      "evidence_span": "受益元坝气田规模开发"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "油田环保治理",
+        "evidence_span": "公司的主要业务为油田环保治理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "井下作业技术服务",
+        "evidence_span": "公司的主要业务为...井下作业技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "管具检维修服务",
+        "evidence_span": "公司的主要业务为...管具检维修服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "石化产品的生产与销售",
+        "evidence_span": "公司的主要业务为...石化产品的生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新材料的研发、生产与销售",
+        "evidence_span": "公司的主要业务为...新材料的研发、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "油田环保技术服务提供商",
+        "evidence_span": "西南地区市场占有率较高的油田环保技术服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性油服公司",
+        "evidence_span": "公司已成为具有钻井技术服务、井下作业技术服务、管具检维修服务、环保治理技术服务等多方位覆盖的综合性油服公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "钻井液技术服务领军者",
+        "evidence_span": "民营钻井液技术服务领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "油服细分行业区域龙头",
+        "evidence_span": "油服细分行业区域龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油气田废水处理",
+        "evidence_span": "公司主要从事油气田废水处理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "渣泥预处理及池体清理",
+        "evidence_span": "公司主要从事...渣泥预处理及池体清理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "泥浆不落地技术服务",
+        "evidence_span": "公司主要从事...泥浆不落地技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "废弃物资源化利用",
+        "evidence_span": "公司主要从事...废弃物资源化利用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清洁化生产项目技术咨询服务",
+        "evidence_span": "公司主要从事...清洁化生产项目技术咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保隐患治理",
+        "evidence_span": "公司主要从事...环保隐患治理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "噪音治理",
+        "evidence_span": "公司主要从事...噪音治理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钻井技术服务",
+        "evidence_span": "具体包括钻井技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钻井液技术服务",
+        "evidence_span": "具体包括...钻井液技术服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连续油管技术",
+        "evidence_span": "具体包括...连续油管技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "修井技术",
+        "evidence_span": "具体包括...修井技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "试油（气）技术",
+        "evidence_span": "具体包括...试油（气）技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气井提高采收率技术",
+        "evidence_span": "具体包括...气井提高采收率技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油井提高采收率技术",
+        "evidence_span": "具体包括...油井提高采收率技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酸化压裂技术",
+        "evidence_span": "具体包括...酸化压裂技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "套管完井技术",
+        "evidence_span": "具体包括...套管完井技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "祼眼完井技术",
+        "evidence_span": "具体包括...祼眼完井技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特色工具产品",
+        "evidence_span": "具体包括...特色工具产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钻具、工具检维修及现场探伤业务",
+        "evidence_span": "公司新疆项目部从事钻具、工具检维修及现场探伤业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "辐照交联光缆料",
+        "evidence_span": "业务涵盖辐照交联光缆料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "辐照交联布电线料",
+        "evidence_span": "业务涵盖...辐照交联布电线料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端工程改性材料",
+        "evidence_span": "业务涵盖...高端工程改性材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能管道功能母料",
+        "evidence_span": "业务涵盖...高性能管道功能母料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钻井技术服务",
+        "evidence_span": "在钻井技术服务...等领域形成了国际先进、国内领先的特色技术群"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "油田环保技术服务",
+        "evidence_span": "在...油田环保技术服务...等领域形成了国际先进、国内领先的特色技术群"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "防腐工程技术服务",
+        "evidence_span": "在...防腐工程技术服务...等领域形成了国际先进、国内领先的特色技术群"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "井下作业技术服务",
+        "evidence_span": "在...井下作业技术服务等领域形成了国际先进、国内领先的特色技术群"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "中石化“百亿气田”计划受益者",
+        "evidence_span": "中石化“百亿气田”计划受益者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益元坝气田规模开发",
+        "evidence_span": "受益元坝气田规模开发"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:56:37"
+}

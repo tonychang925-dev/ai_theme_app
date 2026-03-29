@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "a7aa4c850dd7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了中国船舶换股吸收合并中国重工的具体事件（审核通过、重组完成），属于动态新闻，但同时也包含了重组后中国船舶成为全球最大造船上市公司、手持订单量占全球市场超18%等静态知识（公司地位、市场份额），这些信息对军工集团产业构建有潜在价值，因此归类为混合候选。"}}

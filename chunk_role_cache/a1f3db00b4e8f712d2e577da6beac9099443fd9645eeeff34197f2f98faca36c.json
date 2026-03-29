@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "913144d7f932", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报道美国国际贸易委员会对特定半导体设备的337调查终裁，包括法律裁决和措施，是具体监管事件，未提供半导体设备题材的稳定知识。"}}

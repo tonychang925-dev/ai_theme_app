@@ -1,0 +1,104 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "双氧水的生产",
+      "evidence_span": "公司主营双氧水的生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主营双氧水的生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双氧水",
+      "evidence_span": "主营双氧水的生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "27.5%双氧水",
+      "evidence_span": "27.5%双氧水价格整体表现为先涨后跌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "50%双氧水",
+      "evidence_span": "公司原有的2万吨/年浓品（即50%双氧水）生产系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "蒽醌钯催化剂工艺",
+      "evidence_span": "公司采用蒽醌钯催化剂工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双氧水装置扩产6万吨/年技术升级改造",
+      "evidence_span": "加快双氧水装置扩产6万吨/年技术升级改造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双氧水2万吨/年浓品技改项目",
+      "evidence_span": "双氧水2万吨/年浓品技改项目建设"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广西柳化氯碱有限公司",
+      "evidence_span": "通过长协方式向广西柳化氯碱有限公司进行采购"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广西电网有限责任公司柳州鹿寨供电局",
+      "evidence_span": "由广西电网有限责任公司柳州鹿寨供电局供应"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "双氧水的生产和销售",
+        "evidence_span": "公司主营双氧水的生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双氧水",
+        "evidence_span": "主营双氧水的生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "27.5%双氧水",
+        "evidence_span": "27.5%双氧水价格整体表现为先涨后跌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "50%双氧水",
+        "evidence_span": "公司原有的2万吨/年浓品（即50%双氧水）生产系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "蒽醌钯催化剂工艺",
+        "evidence_span": "公司采用蒽醌钯催化剂工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双氧水装置扩产6万吨/年技术升级改造",
+        "evidence_span": "加快双氧水装置扩产6万吨/年技术升级改造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双氧水2万吨/年浓品技改项目",
+        "evidence_span": "双氧水2万吨/年浓品技改项目建设"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广西柳化氯碱有限公司",
+        "evidence_span": "通过长协方式向广西柳化氯碱有限公司进行采购"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广西电网有限责任公司柳州鹿寨供电局",
+        "evidence_span": "由广西电网有限责任公司柳州鹿寨供电局供应"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:11:54"
+}

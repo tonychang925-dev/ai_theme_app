@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "分子检测酶原料",
+      "evidence_span": "公司的核心产品包括分子检测酶原料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "核酸保存试剂",
+      "evidence_span": "公司的核心产品包括...核酸保存试剂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "核酸提取纯化试剂",
+      "evidence_span": "公司的核心产品包括...核酸提取纯化试剂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "分子诊断试剂盒",
+      "evidence_span": "公司的核心产品包括...分子诊断试剂盒"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "分子检测服务",
+      "evidence_span": "将业务拓展至消化道疾病和呼吸道传染病的筛查和诊断领域，开发了多款创新型产品及服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "生物科技企业",
+      "evidence_span": "是国内少数实现分子检测核心环节完整业务布局的生物科技企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "分子检测核心环节完整业务布局企业",
+      "evidence_span": "是国内少数实现分子检测核心环节完整业务布局的生物科技企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内游离DNA保存试剂领军企业",
+      "evidence_span": "公司已成为国内游离DNA保存试剂的领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内核酸提取纯化试剂主要供应商",
+      "evidence_span": "公司是国内核酸提取纯化试剂主要供应商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分子检测酶原料",
+      "evidence_span": "公司的核心产品包括分子检测酶原料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核酸保存试剂",
+      "evidence_span": "公司的核心产品包括...核酸保存试剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核酸提取纯化试剂",
+      "evidence_span": "公司的核心产品包括...核酸提取纯化试剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分子诊断试剂盒",
+      "evidence_span": "公司的核心产品包括...分子诊断试剂盒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型冠状病毒快速核酸检测试剂盒",
+      "evidence_span": "公司的新型冠状病毒（SARS-CoV-2）快速核酸检测试剂盒（PCR荧光探针法）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "幽门螺杆菌分子检测技术",
+      "evidence_span": "公司自主研发的幽门螺杆菌分子检测技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消化道疾病检测服务",
+      "evidence_span": "将业务拓展至消化道疾病...的筛查和诊断领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "呼吸道传染病检测服务",
+      "evidence_span": "将业务拓展至...呼吸道传染病的筛查和诊断领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "酶原料技术平台",
+      "evidence_span": "已陆续形成酶原料...技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核酸保存技术平台",
+      "evidence_span": "已陆续形成...核酸保存...技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核酸提取纯化技术平台",
+      "evidence_span": "已陆续形成...核酸提取纯化...技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "荧光定量PCR技术平台",
+      "evidence_span": "已陆续形成...荧光定量PCR...技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基因测序技术平台",
+      "evidence_span": "已陆续形成...基因测序...技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核酸质谱技术平台",
+      "evidence_span": "已陆续形成...核酸质谱技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "适用于免提取的核酸保存技术",
+      "evidence_span": "应用了“适用于免提取的核酸保存技术”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一步法RT-PCR技术",
+      "evidence_span": "应用了...“一步法RT-PCR技术”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "试剂产品冷冻干燥技术",
+      "evidence_span": "应用了...“试剂产品冷冻干燥技术”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "分子检测行业中下游参与者",
+      "evidence_span": "公司产品主要供应分子检测行业中下游的参与者"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众群体",
+      "evidence_span": "积极为大众群体...开展分子检测服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医疗机构",
+      "evidence_span": "积极为...医疗机构...开展分子检测服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科研院所",
+      "evidence_span": "积极为...科研院所开展分子检测服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "分子检测国产化",
+      "evidence_span": "酶是分子诊断试剂中发挥最核心生物学功能的组成部分...其市场长期被外资企业垄断"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "分子检测酶原料",
+        "evidence_span": "公司的核心产品包括分子检测酶原料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "核酸保存试剂",
+        "evidence_span": "公司的核心产品包括...核酸保存试剂"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "核酸提取纯化试剂",
+        "evidence_span": "公司的核心产品包括...核酸提取纯化试剂"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "分子诊断试剂盒",
+        "evidence_span": "公司的核心产品包括...分子诊断试剂盒"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "分子检测服务",
+        "evidence_span": "将业务拓展至消化道疾病和呼吸道传染病的筛查和诊断领域，开发了多款创新型产品及服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "生物科技企业",
+        "evidence_span": "是国内少数实现分子检测核心环节完整业务布局的生物科技企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "分子检测核心环节完整业务布局企业",
+        "evidence_span": "是国内少数实现分子检测核心环节完整业务布局的生物科技企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内游离DNA保存试剂领军企业",
+        "evidence_span": "公司已成为国内游离DNA保存试剂的领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内核酸提取纯化试剂主要供应商",
+        "evidence_span": "公司是国内核酸提取纯化试剂主要供应商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分子检测酶原料",
+        "evidence_span": "公司的核心产品包括分子检测酶原料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核酸保存试剂",
+        "evidence_span": "公司的核心产品包括...核酸保存试剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核酸提取纯化试剂",
+        "evidence_span": "公司的核心产品包括...核酸提取纯化试剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分子诊断试剂盒",
+        "evidence_span": "公司的核心产品包括...分子诊断试剂盒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型冠状病毒快速核酸检测试剂盒",
+        "evidence_span": "公司的新型冠状病毒（SARS-CoV-2）快速核酸检测试剂盒（PCR荧光探针法）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "幽门螺杆菌分子检测技术",
+        "evidence_span": "公司自主研发的幽门螺杆菌分子检测技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消化道疾病检测服务",
+        "evidence_span": "将业务拓展至消化道疾病...的筛查和诊断领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "呼吸道传染病检测服务",
+        "evidence_span": "将业务拓展至...呼吸道传染病的筛查和诊断领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "酶原料技术平台",
+        "evidence_span": "已陆续形成酶原料...技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核酸保存技术平台",
+        "evidence_span": "已陆续形成...核酸保存...技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核酸提取纯化技术平台",
+        "evidence_span": "已陆续形成...核酸提取纯化...技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "荧光定量PCR技术平台",
+        "evidence_span": "已陆续形成...荧光定量PCR...技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基因测序技术平台",
+        "evidence_span": "已陆续形成...基因测序...技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核酸质谱技术平台",
+        "evidence_span": "已陆续形成...核酸质谱技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "适用于免提取的核酸保存技术",
+        "evidence_span": "应用了“适用于免提取的核酸保存技术”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一步法RT-PCR技术",
+        "evidence_span": "应用了...“一步法RT-PCR技术”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "试剂产品冷冻干燥技术",
+        "evidence_span": "应用了...“试剂产品冷冻干燥技术”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "分子检测行业中下游参与者",
+        "evidence_span": "公司产品主要供应分子检测行业中下游的参与者"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众群体",
+        "evidence_span": "积极为大众群体...开展分子检测服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医疗机构",
+        "evidence_span": "积极为...医疗机构...开展分子检测服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科研院所",
+        "evidence_span": "积极为...科研院所开展分子检测服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "分子检测国产化",
+        "evidence_span": "酶是分子诊断试剂中发挥最核心生物学功能的组成部分...其市场长期被外资企业垄断"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:32:31"
+}

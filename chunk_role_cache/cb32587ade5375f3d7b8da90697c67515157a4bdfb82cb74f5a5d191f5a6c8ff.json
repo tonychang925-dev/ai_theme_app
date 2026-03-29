@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:43", "result": {"chunk_id": "b16629dcaa82", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含集成电路配套材料（如湿化学品、高纯靶材、电子气体）等可能涉及半导体设备相关材料的知识，但混合了具体政策行动方案和事件，需要进一步裁决以提取稳定知识。"}}

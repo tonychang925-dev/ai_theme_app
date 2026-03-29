@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "氯碱化工",
+      "evidence_span": "公司主要从事业务为氯碱化工及农业节水业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农业节水业",
+      "evidence_span": "公司主要从事业务为氯碱化工及农业节水业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "氯碱一体化企业",
+      "evidence_span": "新疆天业氯碱一体化优势显著"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内一体化特种PVC龙头",
+      "evidence_span": "新疆天业国内一体化特种PVC龙头成本优势显著"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PVC树脂",
+      "evidence_span": "拥有89万吨PVC产能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通用PVC",
+      "evidence_span": "包括69万吨通用PVC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种树脂",
+      "evidence_span": "10万吨特种树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "糊树脂",
+      "evidence_span": "10万吨糊树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "离子膜烧碱",
+      "evidence_span": "65万吨离子膜烧碱产能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电石",
+      "evidence_span": "134万吨电石产能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水泥",
+      "evidence_span": "405万吨电石渣制水泥装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "熟料",
+      "evidence_span": "熟料64.45万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电",
+      "evidence_span": "供电21.11亿度"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸汽",
+      "evidence_span": "供汽185.50万吉焦"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乙二醇",
+      "evidence_span": "乙二醇项目打开长期成长空间"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PBAT",
+      "evidence_span": "投资0.98亿元投资建设PBAT项目50万吨/年"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "树脂生产技术",
+      "evidence_span": "树脂生产技术、节水滴灌技术优势明显"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "节水滴灌技术",
+      "evidence_span": "树脂生产技术、节水滴灌技术优势明显"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "国企改革打开成长空间"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "氯碱化工",
+        "evidence_span": "公司主要从事业务为氯碱化工及农业节水业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农业节水业",
+        "evidence_span": "公司主要从事业务为氯碱化工及农业节水业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "氯碱一体化企业",
+        "evidence_span": "新疆天业氯碱一体化优势显著"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内一体化特种PVC龙头",
+        "evidence_span": "新疆天业国内一体化特种PVC龙头成本优势显著"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PVC树脂",
+        "evidence_span": "拥有89万吨PVC产能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通用PVC",
+        "evidence_span": "包括69万吨通用PVC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种树脂",
+        "evidence_span": "10万吨特种树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "糊树脂",
+        "evidence_span": "10万吨糊树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "离子膜烧碱",
+        "evidence_span": "65万吨离子膜烧碱产能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电石",
+        "evidence_span": "134万吨电石产能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水泥",
+        "evidence_span": "405万吨电石渣制水泥装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "熟料",
+        "evidence_span": "熟料64.45万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电",
+        "evidence_span": "供电21.11亿度"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸汽",
+        "evidence_span": "供汽185.50万吉焦"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乙二醇",
+        "evidence_span": "乙二醇项目打开长期成长空间"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PBAT",
+        "evidence_span": "投资0.98亿元投资建设PBAT项目50万吨/年"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "树脂生产技术",
+        "evidence_span": "树脂生产技术、节水滴灌技术优势明显"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "节水滴灌技术",
+        "evidence_span": "树脂生产技术、节水滴灌技术优势明显"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "国企改革打开成长空间"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:12:39"
+}

@@ -1,0 +1,599 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子元器件",
+      "evidence_span": "形成电子元器件、高端铝箔、化工新材料、能源材料四大板块业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端铝箔",
+      "evidence_span": "形成电子元器件、高端铝箔、化工新材料、能源材料四大板块业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化工新材料",
+      "evidence_span": "形成电子元器件、高端铝箔、化工新材料、能源材料四大板块业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "能源材料",
+      "evidence_span": "形成电子元器件、高端铝箔、化工新材料、能源材料四大板块业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铝箔产业链龙头",
+      "evidence_span": "东阳光国内电极箔龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电极箔龙头",
+      "evidence_span": "东阳光国内电极箔龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "平台型新材料公司",
+      "evidence_span": "将公司打造成为面向新能源应用领域的平台型新材料公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电极箔",
+      "evidence_span": "产品主要为铝电解电容器用电极箔（包含腐蚀箔和化成箔）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "积层箔",
+      "evidence_span": "积层箔为公司与日本东洋铝业经过多年共同研发的新一代电极箔技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝电解电容器",
+      "evidence_span": "铝电解电容器产品种类丰富"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软磁材料",
+      "evidence_span": "产品主要为铝电解电容器用电极箔（包含腐蚀箔和化成箔）、积层箔、铝电解电容器、软磁材料等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子光箔",
+      "evidence_span": "产品主要为电子光箔、亲水箔、钎焊箔、电池铝箔等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "亲水箔",
+      "evidence_span": "产品主要为电子光箔、亲水箔、钎焊箔、电池铝箔等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钎焊箔",
+      "evidence_span": "产品主要为电子光箔、亲水箔、钎焊箔、电池铝箔等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池铝箔",
+      "evidence_span": "产品主要为电子光箔、亲水箔、钎焊箔、电池铝箔等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氯碱化工产品",
+      "evidence_span": "产品主要包括氯碱化工产品、新型环保制冷剂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型环保制冷剂",
+      "evidence_span": "产品主要包括氯碱化工产品、新型环保制冷剂等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸铁锂",
+      "evidence_span": "产品主要包括磷酸铁锂、三元材料等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三元材料",
+      "evidence_span": "产品主要包括磷酸铁锂、三元材料等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "积层化成箔工艺",
+      "evidence_span": "推动积层化成箔工艺的开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子光箔-电极箔-铝电解电容器一体化产业链",
+      "evidence_span": "建立“电子光箔-电极箔（包含腐蚀箔和化成箔）-铝电解电容器”为一体的电子元器件产业链"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氯氟循环经济产业链",
+      "evidence_span": "氯碱化工-甲烷氯化物-氟化工（主要为新型环保制冷剂）-氟树脂的氯氟循环经济产业链"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本NCC",
+      "evidence_span": "客户群体均为全球知名的铝电解电容器企业，包括日本NCC"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "RUBYCON",
+      "evidence_span": "客户群体均为全球知名的铝电解电容器企业，包括日本NCC、RUBYCON"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "NICHICON",
+      "evidence_span": "客户群体均为全球知名的铝电解电容器企业，包括日本NCC、RUBYCON、NICHICON"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TDK",
+      "evidence_span": "客户群体均为全球知名的铝电解电容器企业，包括日本NCC、RUBYCON、NICHICON、TDK"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三和",
+      "evidence_span": "韩国的三和及三莹"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三莹",
+      "evidence_span": "韩国的三和及三莹"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "台湾金日",
+      "evidence_span": "台湾金日、立隆、丰宾"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "立隆",
+      "evidence_span": "台湾金日、立隆、丰宾"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰宾",
+      "evidence_span": "台湾金日、立隆、丰宾"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "艾华集团",
+      "evidence_span": "国内的艾华集团、江海股份等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江海股份",
+      "evidence_span": "国内的艾华集团、江海股份等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "客户包括三星、海信、TCL、视源及固德威等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海信",
+      "evidence_span": "客户包括三星、海信、TCL、视源及固德威等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TCL",
+      "evidence_span": "客户包括三星、海信、TCL、视源及固德威等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "视源",
+      "evidence_span": "客户包括三星、海信、TCL、视源及固德威等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "固德威",
+      "evidence_span": "客户包括三星、海信、TCL、视源及固德威等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "格力",
+      "evidence_span": "产品稳定供货给格力、美的、松下、LG、海尔、海信等国内主流空调生产企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美的",
+      "evidence_span": "产品稳定供货给格力、美的、松下、LG、海尔、海信等国内主流空调生产企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "松下",
+      "evidence_span": "产品稳定供货给格力、美的、松下、LG、海尔、海信等国内主流空调生产企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LG",
+      "evidence_span": "产品稳定供货给格力、美的、松下、LG、海尔、海信等国内主流空调生产企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海尔",
+      "evidence_span": "产品稳定供货给格力、美的、松下、LG、海尔、海信等国内主流空调生产企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本电装",
+      "evidence_span": "主要客户包括世界汽车零部件的顶级供应商日本电装、德国马勒贝洱、法国法雷奥、韩国翰昂等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国马勒贝洱",
+      "evidence_span": "主要客户包括世界汽车零部件的顶级供应商日本电装、德国马勒贝洱、法国法雷奥、韩国翰昂等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法国法雷奥",
+      "evidence_span": "主要客户包括世界汽车零部件的顶级供应商日本电装、德国马勒贝洱、法国法雷奥、韩国翰昂等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国翰昂",
+      "evidence_span": "主要客户包括世界汽车零部件的顶级供应商日本电装、德国马勒贝洱、法国法雷奥、韩国翰昂等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "玖龙纸业",
+      "evidence_span": "现已经成为玖龙纸业、蓝月亮、新宙邦、金发科技、广州自来水等国内知名企业及各行业龙头企业的合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蓝月亮",
+      "evidence_span": "现已经成为玖龙纸业、蓝月亮、新宙邦、金发科技、广州自来水等国内知名企业及各行业龙头企业的合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新宙邦",
+      "evidence_span": "现已经成为玖龙纸业、蓝月亮、新宙邦、金发科技、广州自来水等国内知名企业及各行业龙头企业的合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金发科技",
+      "evidence_span": "现已经成为玖龙纸业、蓝月亮、新宙邦、金发科技、广州自来水等国内知名企业及各行业龙头企业的合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广州自来水",
+      "evidence_span": "现已经成为玖龙纸业、蓝月亮、新宙邦、金发科技、广州自来水等国内知名企业及各行业龙头企业的合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本大金",
+      "evidence_span": "包括格力、美的、海尔、海信、日本大金、韩国三星、美国霍尼韦尔等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国霍尼韦尔",
+      "evidence_span": "包括格力、美的、海尔、海信、日本大金、韩国三星、美国霍尼韦尔等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "瑞浦兰钧",
+      "evidence_span": "公司与瑞浦兰钧、南都电源、珠海鹏辉等客户建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南都电源",
+      "evidence_span": "公司与瑞浦兰钧、南都电源、珠海鹏辉等客户建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "珠海鹏辉",
+      "evidence_span": "公司与瑞浦兰钧、南都电源、珠海鹏辉等客户建立了良好的合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源产业链布局",
+      "evidence_span": "加大对新能源产业链布局"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源应用领域",
+      "evidence_span": "将公司打造成为面向新能源应用领域的平台型新材料公司"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子元器件",
+        "evidence_span": "形成电子元器件、高端铝箔、化工新材料、能源材料四大板块业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端铝箔",
+        "evidence_span": "形成电子元器件、高端铝箔、化工新材料、能源材料四大板块业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化工新材料",
+        "evidence_span": "形成电子元器件、高端铝箔、化工新材料、能源材料四大板块业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "能源材料",
+        "evidence_span": "形成电子元器件、高端铝箔、化工新材料、能源材料四大板块业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铝箔产业链龙头",
+        "evidence_span": "东阳光国内电极箔龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电极箔龙头",
+        "evidence_span": "东阳光国内电极箔龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "平台型新材料公司",
+        "evidence_span": "将公司打造成为面向新能源应用领域的平台型新材料公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电极箔",
+        "evidence_span": "产品主要为铝电解电容器用电极箔（包含腐蚀箔和化成箔）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "积层箔",
+        "evidence_span": "积层箔为公司与日本东洋铝业经过多年共同研发的新一代电极箔技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝电解电容器",
+        "evidence_span": "铝电解电容器产品种类丰富"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软磁材料",
+        "evidence_span": "产品主要为铝电解电容器用电极箔（包含腐蚀箔和化成箔）、积层箔、铝电解电容器、软磁材料等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子光箔",
+        "evidence_span": "产品主要为电子光箔、亲水箔、钎焊箔、电池铝箔等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "亲水箔",
+        "evidence_span": "产品主要为电子光箔、亲水箔、钎焊箔、电池铝箔等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钎焊箔",
+        "evidence_span": "产品主要为电子光箔、亲水箔、钎焊箔、电池铝箔等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池铝箔",
+        "evidence_span": "产品主要为电子光箔、亲水箔、钎焊箔、电池铝箔等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氯碱化工产品",
+        "evidence_span": "产品主要包括氯碱化工产品、新型环保制冷剂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型环保制冷剂",
+        "evidence_span": "产品主要包括氯碱化工产品、新型环保制冷剂等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸铁锂",
+        "evidence_span": "产品主要包括磷酸铁锂、三元材料等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三元材料",
+        "evidence_span": "产品主要包括磷酸铁锂、三元材料等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "积层化成箔工艺",
+        "evidence_span": "推动积层化成箔工艺的开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子光箔-电极箔-铝电解电容器一体化产业链",
+        "evidence_span": "建立“电子光箔-电极箔（包含腐蚀箔和化成箔）-铝电解电容器”为一体的电子元器件产业链"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氯氟循环经济产业链",
+        "evidence_span": "氯碱化工-甲烷氯化物-氟化工（主要为新型环保制冷剂）-氟树脂的氯氟循环经济产业链"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本NCC",
+        "evidence_span": "客户群体均为全球知名的铝电解电容器企业，包括日本NCC"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "RUBYCON",
+        "evidence_span": "客户群体均为全球知名的铝电解电容器企业，包括日本NCC、RUBYCON"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "NICHICON",
+        "evidence_span": "客户群体均为全球知名的铝电解电容器企业，包括日本NCC、RUBYCON、NICHICON"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TDK",
+        "evidence_span": "客户群体均为全球知名的铝电解电容器企业，包括日本NCC、RUBYCON、NICHICON、TDK"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三和",
+        "evidence_span": "韩国的三和及三莹"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三莹",
+        "evidence_span": "韩国的三和及三莹"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "台湾金日",
+        "evidence_span": "台湾金日、立隆、丰宾"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "立隆",
+        "evidence_span": "台湾金日、立隆、丰宾"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰宾",
+        "evidence_span": "台湾金日、立隆、丰宾"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "艾华集团",
+        "evidence_span": "国内的艾华集团、江海股份等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江海股份",
+        "evidence_span": "国内的艾华集团、江海股份等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "客户包括三星、海信、TCL、视源及固德威等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海信",
+        "evidence_span": "客户包括三星、海信、TCL、视源及固德威等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TCL",
+        "evidence_span": "客户包括三星、海信、TCL、视源及固德威等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "视源",
+        "evidence_span": "客户包括三星、海信、TCL、视源及固德威等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "固德威",
+        "evidence_span": "客户包括三星、海信、TCL、视源及固德威等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "格力",
+        "evidence_span": "产品稳定供货给格力、美的、松下、LG、海尔、海信等国内主流空调生产企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美的",
+        "evidence_span": "产品稳定供货给格力、美的、松下、LG、海尔、海信等国内主流空调生产企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "松下",
+        "evidence_span": "产品稳定供货给格力、美的、松下、LG、海尔、海信等国内主流空调生产企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LG",
+        "evidence_span": "产品稳定供货给格力、美的、松下、LG、海尔、海信等国内主流空调生产企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海尔",
+        "evidence_span": "产品稳定供货给格力、美的、松下、LG、海尔、海信等国内主流空调生产企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本电装",
+        "evidence_span": "主要客户包括世界汽车零部件的顶级供应商日本电装、德国马勒贝洱、法国法雷奥、韩国翰昂等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国马勒贝洱",
+        "evidence_span": "主要客户包括世界汽车零部件的顶级供应商日本电装、德国马勒贝洱、法国法雷奥、韩国翰昂等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法国法雷奥",
+        "evidence_span": "主要客户包括世界汽车零部件的顶级供应商日本电装、德国马勒贝洱、法国法雷奥、韩国翰昂等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国翰昂",
+        "evidence_span": "主要客户包括世界汽车零部件的顶级供应商日本电装、德国马勒贝洱、法国法雷奥、韩国翰昂等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "玖龙纸业",
+        "evidence_span": "现已经成为玖龙纸业、蓝月亮、新宙邦、金发科技、广州自来水等国内知名企业及各行业龙头企业的合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蓝月亮",
+        "evidence_span": "现已经成为玖龙纸业、蓝月亮、新宙邦、金发科技、广州自来水等国内知名企业及各行业龙头企业的合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新宙邦",
+        "evidence_span": "现已经成为玖龙纸业、蓝月亮、新宙邦、金发科技、广州自来水等国内知名企业及各行业龙头企业的合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金发科技",
+        "evidence_span": "现已经成为玖龙纸业、蓝月亮、新宙邦、金发科技、广州自来水等国内知名企业及各行业龙头企业的合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广州自来水",
+        "evidence_span": "现已经成为玖龙纸业、蓝月亮、新宙邦、金发科技、广州自来水等国内知名企业及各行业龙头企业的合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本大金",
+        "evidence_span": "包括格力、美的、海尔、海信、日本大金、韩国三星、美国霍尼韦尔等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国霍尼韦尔",
+        "evidence_span": "包括格力、美的、海尔、海信、日本大金、韩国三星、美国霍尼韦尔等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "瑞浦兰钧",
+        "evidence_span": "公司与瑞浦兰钧、南都电源、珠海鹏辉等客户建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南都电源",
+        "evidence_span": "公司与瑞浦兰钧、南都电源、珠海鹏辉等客户建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "珠海鹏辉",
+        "evidence_span": "公司与瑞浦兰钧、南都电源、珠海鹏辉等客户建立了良好的合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源产业链布局",
+        "evidence_span": "加大对新能源产业链布局"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源应用领域",
+        "evidence_span": "将公司打造成为面向新能源应用领域的平台型新材料公司"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:57:16"
+}

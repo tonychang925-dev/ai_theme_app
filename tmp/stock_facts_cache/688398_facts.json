@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "真空绝热材料研发",
+      "evidence_span": "专业从事真空绝热材料的研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "真空绝热材料生产",
+      "evidence_span": "专业从事真空绝热材料的生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "真空绝热材料销售",
+      "evidence_span": "专业从事真空绝热材料的销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "真空绝热材料应用领域知名供应商",
+      "evidence_span": "全球真空绝热材料应用领域的新型绝热材料知名供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "真空绝热产业领军者",
+      "evidence_span": "真空绝热产业领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "VIP行业龙头",
+      "evidence_span": "VIP行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专精特新型企业",
+      "evidence_span": "专精特新型企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "真空绝热板",
+      "evidence_span": "主要产品为真空绝热板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保温箱",
+      "evidence_span": "主要产品为保温箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "真空玻璃",
+      "evidence_span": "真空玻璃"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属VIP",
+      "evidence_span": "开发出金属VIP样品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高性能低成本芯材配方及成型技术",
+      "evidence_span": "高性能低成本芯材配方及成型技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "阻隔膜精确检测、遴选及高性能阻隔膜制备技术",
+      "evidence_span": "阻隔膜精确检测、遴选及高性能阻隔膜制备技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "吸附剂制备及配方优化技术",
+      "evidence_span": "吸附剂制备及配方优化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "真空绝热板导热系数检测技术",
+      "evidence_span": "真空绝热板导热系数检测技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "真空绝热板整体制造工艺技术",
+      "evidence_span": "真空绝热板整体制造工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "真空玻璃自动化生产技术",
+      "evidence_span": "初步掌握了真空玻璃自动化生产技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "三星"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LG",
+      "evidence_span": "LG"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日立",
+      "evidence_span": "日立"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "惠而浦",
+      "evidence_span": "惠而浦"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博西家电",
+      "evidence_span": "博西家电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "斐雪派克",
+      "evidence_span": "斐雪派克"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿奇立克",
+      "evidence_span": "阿奇立克"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "WINIA",
+      "evidence_span": "WINIA"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海尔",
+      "evidence_span": "海尔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美的",
+      "evidence_span": "美的"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美菱",
+      "evidence_span": "美菱"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海信",
+      "evidence_span": "海信"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国赛默飞世尔",
+      "evidence_span": "美国赛默飞世尔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海尔生物医疗",
+      "evidence_span": "海尔生物医疗"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "真空绝热材料研发",
+        "evidence_span": "专业从事真空绝热材料的研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "真空绝热材料生产",
+        "evidence_span": "专业从事真空绝热材料的生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "真空绝热材料销售",
+        "evidence_span": "专业从事真空绝热材料的销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "真空绝热材料应用领域知名供应商",
+        "evidence_span": "全球真空绝热材料应用领域的新型绝热材料知名供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "真空绝热产业领军者",
+        "evidence_span": "真空绝热产业领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "VIP行业龙头",
+        "evidence_span": "VIP行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专精特新型企业",
+        "evidence_span": "专精特新型企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "真空绝热板",
+        "evidence_span": "主要产品为真空绝热板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保温箱",
+        "evidence_span": "主要产品为保温箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "真空玻璃",
+        "evidence_span": "真空玻璃"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属VIP",
+        "evidence_span": "开发出金属VIP样品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高性能低成本芯材配方及成型技术",
+        "evidence_span": "高性能低成本芯材配方及成型技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "阻隔膜精确检测、遴选及高性能阻隔膜制备技术",
+        "evidence_span": "阻隔膜精确检测、遴选及高性能阻隔膜制备技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "吸附剂制备及配方优化技术",
+        "evidence_span": "吸附剂制备及配方优化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "真空绝热板导热系数检测技术",
+        "evidence_span": "真空绝热板导热系数检测技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "真空绝热板整体制造工艺技术",
+        "evidence_span": "真空绝热板整体制造工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "真空玻璃自动化生产技术",
+        "evidence_span": "初步掌握了真空玻璃自动化生产技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "三星"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LG",
+        "evidence_span": "LG"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日立",
+        "evidence_span": "日立"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "惠而浦",
+        "evidence_span": "惠而浦"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博西家电",
+        "evidence_span": "博西家电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "斐雪派克",
+        "evidence_span": "斐雪派克"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿奇立克",
+        "evidence_span": "阿奇立克"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "WINIA",
+        "evidence_span": "WINIA"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海尔",
+        "evidence_span": "海尔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美的",
+        "evidence_span": "美的"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美菱",
+        "evidence_span": "美菱"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海信",
+        "evidence_span": "海信"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国赛默飞世尔",
+        "evidence_span": "美国赛默飞世尔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海尔生物医疗",
+        "evidence_span": "海尔生物医疗"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:26:31"
+}

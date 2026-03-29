@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "户外休闲家具",
+      "evidence_span": "户外休闲家具及用品的优质供应商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "用品",
+      "evidence_span": "户外休闲家具及用品的优质供应商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "遮阳制品",
+      "evidence_span": "公司拥有遮阳制品和户外休闲家具两大产品系列"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "户外休闲家具及用品的优质供应商",
+      "evidence_span": "户外休闲家具及用品的优质供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "ODM制造商",
+      "evidence_span": "从OEM模式向ODM/OBM模式转型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "遮阳篷",
+      "evidence_span": "遮阳产品包括遮阳篷和遮阳伞"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "遮阳伞",
+      "evidence_span": "遮阳产品包括遮阳篷和遮阳伞"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "宠物屋",
+      "evidence_span": "户外休闲家具中包括宠物屋、户外家具、晾晒产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户外家具",
+      "evidence_span": "户外休闲家具中包括宠物屋、户外家具、晾晒产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "晾晒产品",
+      "evidence_span": "户外休闲家具中包括宠物屋、户外家具、晾晒产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星空篷",
+      "evidence_span": "2020年公司推出星空篷系列产品并快速放量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "折叠篷",
+      "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车篷",
+      "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星空篷廊架",
+      "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直伞",
+      "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "吊伞",
+      "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗风吊伞",
+      "evidence_span": "具有柔性伞骨的抗风吊伞"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "易组装多功能百叶廊架",
+      "evidence_span": "易组装多功能百叶廊架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高密度防水里昂伞",
+      "evidence_span": "高密度防水里昂伞"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "折叠篷核心技术",
+      "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽车篷核心技术",
+      "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "星空篷廊架核心技术",
+      "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "直伞核心技术",
+      "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "吊伞核心技术",
+      "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃尔玛",
+      "evidence_span": "与沃尔玛、美国JEC、好市多和美国BA等客户建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国JEC",
+      "evidence_span": "与沃尔玛、美国JEC、好市多和美国BA等客户建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "好市多",
+      "evidence_span": "与沃尔玛、美国JEC、好市多和美国BA等客户建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国BA",
+      "evidence_span": "与沃尔玛、美国JEC、好市多和美国BA等客户建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国FHP",
+      "evidence_span": "与美国JEC、德国FHP、法国JJA等优质品牌商建立了长期、稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法国JJA",
+      "evidence_span": "与美国JEC、德国FHP、法国JJA等优质品牌商建立了长期、稳定的合作关系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "户外休闲家具及用品",
+        "evidence_span": "户外休闲家具及用品的优质供应商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "遮阳制品",
+        "evidence_span": "公司拥有遮阳制品和户外休闲家具两大产品系列"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "户外休闲家具",
+        "evidence_span": "公司拥有遮阳制品和户外休闲家具两大产品系列"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "户外休闲家具及用品的优质供应商",
+        "evidence_span": "户外休闲家具及用品的优质供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "ODM制造商",
+        "evidence_span": "从OEM模式向ODM/OBM模式转型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "遮阳篷",
+        "evidence_span": "遮阳产品包括遮阳篷和遮阳伞"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "遮阳伞",
+        "evidence_span": "遮阳产品包括遮阳篷和遮阳伞"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "宠物屋",
+        "evidence_span": "户外休闲家具中包括宠物屋、户外家具、晾晒产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户外家具",
+        "evidence_span": "户外休闲家具中包括宠物屋、户外家具、晾晒产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "晾晒产品",
+        "evidence_span": "户外休闲家具中包括宠物屋、户外家具、晾晒产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星空篷",
+        "evidence_span": "2020年公司推出星空篷系列产品并快速放量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "折叠篷",
+        "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车篷",
+        "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星空篷廊架",
+        "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直伞",
+        "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "吊伞",
+        "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗风吊伞",
+        "evidence_span": "具有柔性伞骨的抗风吊伞"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "易组装多功能百叶廊架",
+        "evidence_span": "易组装多功能百叶廊架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高密度防水里昂伞",
+        "evidence_span": "高密度防水里昂伞"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "折叠篷核心技术",
+        "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽车篷核心技术",
+        "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "星空篷廊架核心技术",
+        "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "直伞核心技术",
+        "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "吊伞核心技术",
+        "evidence_span": "公司在折叠篷、汽车篷、星空篷廊架、直伞、吊伞等方面掌握多项核心技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃尔玛",
+        "evidence_span": "与沃尔玛、美国JEC、好市多和美国BA等客户建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国JEC",
+        "evidence_span": "与沃尔玛、美国JEC、好市多和美国BA等客户建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "好市多",
+        "evidence_span": "与沃尔玛、美国JEC、好市多和美国BA等客户建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国BA",
+        "evidence_span": "与沃尔玛、美国JEC、好市多和美国BA等客户建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国FHP",
+        "evidence_span": "与美国JEC、德国FHP、法国JJA等优质品牌商建立了长期、稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法国JJA",
+        "evidence_span": "与美国JEC、德国FHP、法国JJA等优质品牌商建立了长期、稳定的合作关系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:14:14"
+}

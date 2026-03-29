@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "海洋防务装备",
+      "evidence_span": "聚焦主责主业，聚力兴装强军"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "船舶海工装备",
+      "evidence_span": "深耕“海洋防务装备”“船舶海工装备”“海洋科技创新装备”三大产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "海洋科技创新装备",
+      "evidence_span": "深耕“海洋防务装备”“船舶海工装备”“海洋科技创新装备”三大产业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大型综合性海洋与防务装备企业集团",
+      "evidence_span": "大型综合性海洋与防务装备企业集团"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家核心军工生产企业",
+      "evidence_span": "国家核心军工生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "华南地区最具有实力的船舶产品开发和设计中心之一",
+      "evidence_span": "华南地区最具有实力的船舶产品开发和设计中心之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用舰船",
+      "evidence_span": "主要产品包括以军用舰船、海警装备、公务船等为代表的防务装备产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海警装备",
+      "evidence_span": "主要产品包括以军用舰船、海警装备、公务船等为代表的防务装备产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公务船",
+      "evidence_span": "主要产品包括以军用舰船、海警装备、公务船等为代表的防务装备产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "支线集装箱船",
+      "evidence_span": "以支线集装箱船、挖泥船、海洋工程平台、风电安装平台等为代表的船舶海工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "挖泥船",
+      "evidence_span": "以支线集装箱船、挖泥船、海洋工程平台、风电安装平台等为代表的船舶海工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海洋工程平台",
+      "evidence_span": "以支线集装箱船、挖泥船、海洋工程平台、风电安装平台等为代表的船舶海工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电安装平台",
+      "evidence_span": "以支线集装箱船、挖泥船、海洋工程平台、风电安装平台等为代表的船舶海工产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能源装备",
+      "evidence_span": "能源装备、工程机械、工业互联网平台为代表的船海应用业务产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程机械",
+      "evidence_span": "能源装备、工程机械、工业互联网平台为代表的船海应用业务产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业互联网平台",
+      "evidence_span": "能源装备、工程机械、工业互联网平台为代表的船海应用业务产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能型无人系统母船",
+      "evidence_span": "智能型无人系统母船“珠海云号”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电平台",
+      "evidence_span": "三峡2000吨风电平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢结构工程",
+      "evidence_span": "承接建造了深中通道、港珠澳大桥等重点项目的钢结构工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海上风电装备",
+      "evidence_span": "海上风电装备成功出口海外市场"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区域总装造船模式",
+      "evidence_span": "具备区域总装造船模式和多船型同时建造能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多船型同时建造能力",
+      "evidence_span": "具备区域总装造船模式和多船型同时建造能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家级企业技术中心",
+      "evidence_span": "拥有国家级企业技术中心、博士后科研工作站、海洋工程研发设计国家工程实验室"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "博士后科研工作站",
+      "evidence_span": "拥有国家级企业技术中心、博士后科研工作站、海洋工程研发设计国家工程实验室"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海洋工程研发设计国家工程实验室",
+      "evidence_span": "拥有国家级企业技术中心、博士后科研工作站、海洋工程研发设计国家工程实验室"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主知识产权的核心技术",
+      "evidence_span": "掌握并拥有自主知识产权的核心技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国海军",
+      "evidence_span": "中国海军华南地区最重要的军用舰船生产和保障基地"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益民船供给侧改革",
+      "evidence_span": "受益民船供给侧改革与远洋海军建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益远洋海军建设",
+      "evidence_span": "受益民船供给侧改革与远洋海军建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于军船建造加速",
+      "evidence_span": "受益于军船建造加速与国企改革提速"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于国企改革提速",
+      "evidence_span": "受益于军船建造加速与国企改革提速"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于海军装备快速发展",
+      "evidence_span": "中船防务军船受益于海军装备快速发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益航母编队建设",
+      "evidence_span": "未来受益航母编队建设"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "海洋防务装备",
+        "evidence_span": "聚焦主责主业，聚力兴装强军"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "船舶海工装备",
+        "evidence_span": "深耕“海洋防务装备”“船舶海工装备”“海洋科技创新装备”三大产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "海洋科技创新装备",
+        "evidence_span": "深耕“海洋防务装备”“船舶海工装备”“海洋科技创新装备”三大产业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大型综合性海洋与防务装备企业集团",
+        "evidence_span": "大型综合性海洋与防务装备企业集团"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家核心军工生产企业",
+        "evidence_span": "国家核心军工生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "华南地区最具有实力的船舶产品开发和设计中心之一",
+        "evidence_span": "华南地区最具有实力的船舶产品开发和设计中心之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用舰船",
+        "evidence_span": "主要产品包括以军用舰船、海警装备、公务船等为代表的防务装备产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海警装备",
+        "evidence_span": "主要产品包括以军用舰船、海警装备、公务船等为代表的防务装备产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公务船",
+        "evidence_span": "主要产品包括以军用舰船、海警装备、公务船等为代表的防务装备产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "支线集装箱船",
+        "evidence_span": "以支线集装箱船、挖泥船、海洋工程平台、风电安装平台等为代表的船舶海工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "挖泥船",
+        "evidence_span": "以支线集装箱船、挖泥船、海洋工程平台、风电安装平台等为代表的船舶海工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海洋工程平台",
+        "evidence_span": "以支线集装箱船、挖泥船、海洋工程平台、风电安装平台等为代表的船舶海工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电安装平台",
+        "evidence_span": "以支线集装箱船、挖泥船、海洋工程平台、风电安装平台等为代表的船舶海工产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能源装备",
+        "evidence_span": "能源装备、工程机械、工业互联网平台为代表的船海应用业务产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程机械",
+        "evidence_span": "能源装备、工程机械、工业互联网平台为代表的船海应用业务产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业互联网平台",
+        "evidence_span": "能源装备、工程机械、工业互联网平台为代表的船海应用业务产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能型无人系统母船",
+        "evidence_span": "智能型无人系统母船“珠海云号”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电平台",
+        "evidence_span": "三峡2000吨风电平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢结构工程",
+        "evidence_span": "承接建造了深中通道、港珠澳大桥等重点项目的钢结构工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海上风电装备",
+        "evidence_span": "海上风电装备成功出口海外市场"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区域总装造船模式",
+        "evidence_span": "具备区域总装造船模式和多船型同时建造能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多船型同时建造能力",
+        "evidence_span": "具备区域总装造船模式和多船型同时建造能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家级企业技术中心",
+        "evidence_span": "拥有国家级企业技术中心、博士后科研工作站、海洋工程研发设计国家工程实验室"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "博士后科研工作站",
+        "evidence_span": "拥有国家级企业技术中心、博士后科研工作站、海洋工程研发设计国家工程实验室"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海洋工程研发设计国家工程实验室",
+        "evidence_span": "拥有国家级企业技术中心、博士后科研工作站、海洋工程研发设计国家工程实验室"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主知识产权的核心技术",
+        "evidence_span": "掌握并拥有自主知识产权的核心技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国海军",
+        "evidence_span": "中国海军华南地区最重要的军用舰船生产和保障基地"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益民船供给侧改革",
+        "evidence_span": "受益民船供给侧改革与远洋海军建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益远洋海军建设",
+        "evidence_span": "受益民船供给侧改革与远洋海军建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于军船建造加速",
+        "evidence_span": "受益于军船建造加速与国企改革提速"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于国企改革提速",
+        "evidence_span": "受益于军船建造加速与国企改革提速"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于海军装备快速发展",
+        "evidence_span": "中船防务军船受益于海军装备快速发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益航母编队建设",
+        "evidence_span": "未来受益航母编队建设"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:00:05"
+}

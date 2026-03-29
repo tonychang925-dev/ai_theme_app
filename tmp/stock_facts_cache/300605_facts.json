@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧城市行业综合解决方案项目总承包服务",
+      "evidence_span": "公司主营业务收入主要来源于智慧城市行业综合解决方案项目总承包服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧城市行业综合解决方案提供商",
+      "evidence_span": "公司是一家智慧城市行业解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型智慧城市综合解决方案",
+      "evidence_span": "主要包括新型智慧城市、智慧城市运行管理服务平台、智慧园区等综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据中心",
+      "evidence_span": "数据中心、大数据服务等新型基础设施建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大数据服务",
+      "evidence_span": "数据中心、大数据服务等新型基础设施建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧公安综合解决方案",
+      "evidence_span": "主要包括智慧公安、智慧司法、市域治理、智慧监所、公安社会治安防控体系、智慧社区等综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧司法综合解决方案",
+      "evidence_span": "主要包括智慧公安、智慧司法、市域治理、智慧监所、公安社会治安防控体系、智慧社区等综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市域治理综合解决方案",
+      "evidence_span": "主要包括智慧公安、智慧司法、市域治理、智慧监所、公安社会治安防控体系、智慧社区等综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧监所综合解决方案",
+      "evidence_span": "主要包括智慧公安、智慧司法、市域治理、智慧监所、公安社会治安防控体系、智慧社区等综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公安社会治安防控体系综合解决方案",
+      "evidence_span": "主要包括智慧公安、智慧司法、市域治理、智慧监所、公安社会治安防控体系、智慧社区等综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧社区综合解决方案",
+      "evidence_span": "主要包括智慧公安、智慧司法、市域治理、智慧监所、公安社会治安防控体系、智慧社区等综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧校园综合解决方案",
+      "evidence_span": "主要包括智慧校园、智慧文体、智慧医疗、再生资源回收循环利用系统等综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧文体综合解决方案",
+      "evidence_span": "主要包括智慧校园、智慧文体、智慧医疗、再生资源回收循环利用系统等综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧医疗综合解决方案",
+      "evidence_span": "主要包括智慧校园、智慧文体、智慧医疗、再生资源回收循环利用系统等综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "再生资源回收循环利用系统综合解决方案",
+      "evidence_span": "主要包括智慧校园、智慧文体、智慧医疗、再生资源回收循环利用系统等综合解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧养老服务平台",
+      "evidence_span": "在业内领先开发了“智慧+”智慧养老服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社区居家养老服务",
+      "evidence_span": "提供社区居家养老和社区机构养老服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社区机构养老服务",
+      "evidence_span": "提供社区居家养老和社区机构养老服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧养老服务软件",
+      "evidence_span": "自主研发智慧养老服务软件和居家安全照护、失智老人定位等为老科技产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "居家安全照护产品",
+      "evidence_span": "自主研发智慧养老服务软件和居家安全照护、失智老人定位等为老科技产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "失智老人定位产品",
+      "evidence_span": "自主研发智慧养老服务软件和居家安全照护、失智老人定位等为老科技产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微尚为老商城",
+      "evidence_span": "建立微尚为老商城，提供线上养老服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "软件开发",
+      "evidence_span": "基于合同约定向客户提供方案设计、软件开发、设备采购、项目实施、集成调试、竣工验收直至运行维护的一站式服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统调试",
+      "evidence_span": "公司的工程分包行为不涉及项目主体工程或核心业务，公司独立解决技术难点和关键点并对项目施工全过程负责"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧养老",
+      "evidence_span": "智慧养老潜力巨大"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧城市行业综合解决方案项目总承包服务",
+        "evidence_span": "公司主营业务收入主要来源于智慧城市行业综合解决方案项目总承包服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧城市行业综合解决方案提供商",
+        "evidence_span": "公司是一家智慧城市行业解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型智慧城市综合解决方案",
+        "evidence_span": "主要包括新型智慧城市、智慧城市运行管理服务平台、智慧园区等综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据中心",
+        "evidence_span": "数据中心、大数据服务等新型基础设施建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大数据服务",
+        "evidence_span": "数据中心、大数据服务等新型基础设施建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧公安综合解决方案",
+        "evidence_span": "主要包括智慧公安、智慧司法、市域治理、智慧监所、公安社会治安防控体系、智慧社区等综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧司法综合解决方案",
+        "evidence_span": "主要包括智慧公安、智慧司法、市域治理、智慧监所、公安社会治安防控体系、智慧社区等综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市域治理综合解决方案",
+        "evidence_span": "主要包括智慧公安、智慧司法、市域治理、智慧监所、公安社会治安防控体系、智慧社区等综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧监所综合解决方案",
+        "evidence_span": "主要包括智慧公安、智慧司法、市域治理、智慧监所、公安社会治安防控体系、智慧社区等综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公安社会治安防控体系综合解决方案",
+        "evidence_span": "主要包括智慧公安、智慧司法、市域治理、智慧监所、公安社会治安防控体系、智慧社区等综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧社区综合解决方案",
+        "evidence_span": "主要包括智慧公安、智慧司法、市域治理、智慧监所、公安社会治安防控体系、智慧社区等综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧校园综合解决方案",
+        "evidence_span": "主要包括智慧校园、智慧文体、智慧医疗、再生资源回收循环利用系统等综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧文体综合解决方案",
+        "evidence_span": "主要包括智慧校园、智慧文体、智慧医疗、再生资源回收循环利用系统等综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧医疗综合解决方案",
+        "evidence_span": "主要包括智慧校园、智慧文体、智慧医疗、再生资源回收循环利用系统等综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "再生资源回收循环利用系统综合解决方案",
+        "evidence_span": "主要包括智慧校园、智慧文体、智慧医疗、再生资源回收循环利用系统等综合解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧养老服务平台",
+        "evidence_span": "在业内领先开发了“智慧+”智慧养老服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社区居家养老服务",
+        "evidence_span": "提供社区居家养老和社区机构养老服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社区机构养老服务",
+        "evidence_span": "提供社区居家养老和社区机构养老服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧养老服务软件",
+        "evidence_span": "自主研发智慧养老服务软件和居家安全照护、失智老人定位等为老科技产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "居家安全照护产品",
+        "evidence_span": "自主研发智慧养老服务软件和居家安全照护、失智老人定位等为老科技产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "失智老人定位产品",
+        "evidence_span": "自主研发智慧养老服务软件和居家安全照护、失智老人定位等为老科技产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微尚为老商城",
+        "evidence_span": "建立微尚为老商城，提供线上养老服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "软件开发",
+        "evidence_span": "基于合同约定向客户提供方案设计、软件开发、设备采购、项目实施、集成调试、竣工验收直至运行维护的一站式服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统调试",
+        "evidence_span": "公司的工程分包行为不涉及项目主体工程或核心业务，公司独立解决技术难点和关键点并对项目施工全过程负责"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧养老",
+        "evidence_span": "智慧养老潜力巨大"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:34:29"
+}

@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "无线嵌入式M2M终端",
+      "evidence_span": "移为通信无线嵌入式M2M终端龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球M2M终端产品主要供应商",
+      "evidence_span": "公司已成为全球M2M终端产品主要供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "行业产业链中游",
+      "evidence_span": "位于行业产业链中游"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载信息智能终端",
+      "evidence_span": "车载信息智能终端产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产管理信息智能终端",
+      "evidence_span": "资产管理信息智能终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "个人安全智能终端",
+      "evidence_span": "个人安全智能终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动物溯源管理产品",
+      "evidence_span": "动物溯源管理产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载视频产品",
+      "evidence_span": "公司车载视频产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OBD终端产品",
+      "evidence_span": "公司OBD终端产品GV501LG"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电动自行车网联设备",
+      "evidence_span": "拟推出一款智能电动自行车网联设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业无线路由器",
+      "evidence_span": "工业无线路由器系公司拟新增产品条线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "RFID技术应用",
+      "evidence_span": "RFID技术应用领域有望不断拓展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "RFID技术",
+      "evidence_span": "动物溯源管理产品主要应用RFID技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "蜂窝连接技术",
+      "evidence_span": "采用蜂窝连接技术和多种工业标准接口"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全球频段LTE Cat 4网络制式",
+      "evidence_span": "支持全球频段LTE Cat 4网络制式"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Bird",
+      "evidence_span": "已与共享电动滑板领域海外知名公司Bird"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Lime",
+      "evidence_span": "Lime"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LyftScooter",
+      "evidence_span": "LyftScooter"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "UberScooter",
+      "evidence_span": "UberScooter"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国建设银行股份有限公司",
+      "evidence_span": "在中国建设银行股份有限公司物联网标签读写器采购项目招标中成功中标"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "物联网终端龙头",
+      "evidence_span": "物联网终端龙头再起航"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电动两轮车智能化时代的车载终端龙头",
+      "evidence_span": "电动两轮车智能化时代的车载终端龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "无线嵌入式M2M终端",
+        "evidence_span": "移为通信无线嵌入式M2M终端龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球M2M终端产品主要供应商",
+        "evidence_span": "公司已成为全球M2M终端产品主要供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "行业产业链中游",
+        "evidence_span": "位于行业产业链中游"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载信息智能终端",
+        "evidence_span": "车载信息智能终端产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产管理信息智能终端",
+        "evidence_span": "资产管理信息智能终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "个人安全智能终端",
+        "evidence_span": "个人安全智能终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动物溯源管理产品",
+        "evidence_span": "动物溯源管理产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载视频产品",
+        "evidence_span": "公司车载视频产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OBD终端产品",
+        "evidence_span": "公司OBD终端产品GV501LG"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电动自行车网联设备",
+        "evidence_span": "拟推出一款智能电动自行车网联设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业无线路由器",
+        "evidence_span": "工业无线路由器系公司拟新增产品条线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "RFID技术应用",
+        "evidence_span": "RFID技术应用领域有望不断拓展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "RFID技术",
+        "evidence_span": "动物溯源管理产品主要应用RFID技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "蜂窝连接技术",
+        "evidence_span": "采用蜂窝连接技术和多种工业标准接口"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全球频段LTE Cat 4网络制式",
+        "evidence_span": "支持全球频段LTE Cat 4网络制式"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Bird",
+        "evidence_span": "已与共享电动滑板领域海外知名公司Bird"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Lime",
+        "evidence_span": "Lime"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LyftScooter",
+        "evidence_span": "LyftScooter"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "UberScooter",
+        "evidence_span": "UberScooter"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国建设银行股份有限公司",
+        "evidence_span": "在中国建设银行股份有限公司物联网标签读写器采购项目招标中成功中标"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "物联网终端龙头",
+        "evidence_span": "物联网终端龙头再起航"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电动两轮车智能化时代的车载终端龙头",
+        "evidence_span": "电动两轮车智能化时代的车载终端龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:28:44"
+}

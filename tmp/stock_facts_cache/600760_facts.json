@@ -1,0 +1,139 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "飞机制造",
+      "evidence_span": "主营业务为飞机制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空产品制造",
+      "evidence_span": "以航空产品制造为核心主业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国歼击机的摇篮",
+      "evidence_span": "被誉为“中国歼击机的摇篮”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空防务装备的主要研制基地",
+      "evidence_span": "我国航空防务装备的主要研制基地"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海空军航空兵建设骨干企业",
+      "evidence_span": "海空军航空兵建设骨干企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "歼-11系列机型",
+      "evidence_span": "主要研制生产歼-11、歼-15、歼-16和歼-35等系列机型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "歼-15系列机型",
+      "evidence_span": "主要研制生产歼-11、歼-15、歼-16和歼-35等系列机型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "歼-16系列机型",
+      "evidence_span": "主要研制生产歼-11、歼-15、歼-16和歼-35等系列机型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "歼-35系列机型",
+      "evidence_span": "主要研制生产歼-11、歼-15、歼-16和歼-35等系列机型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FC-31“鹘鹰”战斗机",
+      "evidence_span": "FC-31“鹘鹰”是中航沈飞自行研制的中型多用途隐身四代战斗机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自行研制",
+      "evidence_span": "由我国自行研制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主研发",
+      "evidence_span": "是我国自主研发的首型固定翼舰载多用途战斗机"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "是我国国产在役唯一航母舰载机"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "飞机制造",
+        "evidence_span": "主营业务为飞机制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空产品制造",
+        "evidence_span": "以航空产品制造为核心主业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国歼击机的摇篮",
+        "evidence_span": "被誉为“中国歼击机的摇篮”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空防务装备的主要研制基地",
+        "evidence_span": "我国航空防务装备的主要研制基地"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海空军航空兵建设骨干企业",
+        "evidence_span": "海空军航空兵建设骨干企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "歼-11系列机型",
+        "evidence_span": "主要研制生产歼-11、歼-15、歼-16和歼-35等系列机型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "歼-15系列机型",
+        "evidence_span": "主要研制生产歼-11、歼-15、歼-16和歼-35等系列机型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "歼-16系列机型",
+        "evidence_span": "主要研制生产歼-11、歼-15、歼-16和歼-35等系列机型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "歼-35系列机型",
+        "evidence_span": "主要研制生产歼-11、歼-15、歼-16和歼-35等系列机型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FC-31“鹘鹰”战斗机",
+        "evidence_span": "FC-31“鹘鹰”是中航沈飞自行研制的中型多用途隐身四代战斗机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自行研制",
+        "evidence_span": "由我国自行研制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主研发",
+        "evidence_span": "是我国自主研发的首型固定翼舰载多用途战斗机"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "是我国国产在役唯一航母舰载机"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:14:37"
+}

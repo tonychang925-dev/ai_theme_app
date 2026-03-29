@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "b54015485dff", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落开头部分介绍了台积电CoWoS先进封装技术的应用场景（如AI及高性能芯片厂商的主流选择）和采用该技术的芯片示例（英伟达A100/H100、AMD MI300），这些是可用于知识构建的静态信息；但后半部分涉及产能紧缺、需求强劲和未来产能计划等事件性内容。整体混合了知识和事件。"}}

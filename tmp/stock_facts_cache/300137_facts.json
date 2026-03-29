@@ -1,0 +1,464 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态环境监测",
+      "evidence_span": "生态环境监测"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "双碳技术服务",
+      "evidence_span": "双碳技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态大脑",
+      "evidence_span": "生态大脑"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运维服务",
+      "evidence_span": "运维服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环境大数据分析",
+      "evidence_span": "环境大数据分析及决策支持服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "决策支持服务",
+      "evidence_span": "环境大数据分析及决策支持服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "VOCs治理",
+      "evidence_span": "VOCs治理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "区域污水治理",
+      "evidence_span": "区域污水治理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "社会化检测",
+      "evidence_span": "社会化检测"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环境监测仪器仪表行业知名品牌",
+      "evidence_span": "中国环境监测仪器仪表行业知名品牌"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合服务商",
+      "evidence_span": "集环境监测、环境管理、环境治理为一体的综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环保物联网领军",
+      "evidence_span": "环保物联网领军"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生态环境网格化监控系统",
+      "evidence_span": "生态环境网格化监控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空气质量连续自动监测系统",
+      "evidence_span": "空气质量连续自动监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑扬尘在线监测系统",
+      "evidence_span": "建筑扬尘在线监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大气颗粒物组分分析及源解析系统",
+      "evidence_span": "大气颗粒物组分分析及源解析系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业园区在线监测系统",
+      "evidence_span": "工业园区在线监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机动车尾气遥感监测系统",
+      "evidence_span": "机动车尾气遥感监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OBD远程监控系统",
+      "evidence_span": "OBD远程监控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地表水水质自动监测系统",
+      "evidence_span": "地表水水质自动监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地下水水质自动监测系统",
+      "evidence_span": "地下水水质自动监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环境污染事故应急监测指挥决策系统",
+      "evidence_span": "环境污染事故应急监测指挥决策系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污染源监测",
+      "evidence_span": "污染源监测"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大气网格化监控系统",
+      "evidence_span": "大气网格化监控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水网格化监控系统",
+      "evidence_span": "水网格化监控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "颗粒物粒径谱精细溯源系统",
+      "evidence_span": "颗粒物粒径谱精细溯源系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水生态监测系统",
+      "evidence_span": "水生态监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "温室气体系列监测设备",
+      "evidence_span": "温室气体系列监测设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳排放与碳资产管理系统",
+      "evidence_span": "碳排放与碳资产管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "区域温室气体源汇分布反演系统",
+      "evidence_span": "区域温室气体源汇分布反演系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一体化分散式生活污水处理系统",
+      "evidence_span": "一体化分散式生活污水处理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网环境监测",
+      "evidence_span": "物联网环境监测"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据分析技术",
+      "evidence_span": "大数据分析技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧生态环境精准管理信息化平台",
+      "evidence_span": "智慧生态环境精准管理信息化平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "常温一氧化碳净化炭",
+      "evidence_span": "常温一氧化碳净化炭"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "溶剂回收炭",
+      "evidence_span": "溶剂回收炭"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "蜂窝状活性炭",
+      "evidence_span": "蜂窝状活性炭"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "活性炭纤维",
+      "evidence_span": "活性炭纤维"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分子筛",
+      "evidence_span": "分子筛"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大风量低浓度有机废气净化技术",
+      "evidence_span": "大风量低浓度有机废气净化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "溶剂回收技术",
+      "evidence_span": "溶剂回收"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "节能组合净化槽",
+      "evidence_span": "节能组合净化槽"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "大气网格化市场爆发",
+      "evidence_span": "先河环保大气网格化市场爆发"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "网格化监测需求爆发",
+      "evidence_span": "网格化监测需求爆发"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "京津冀生态治理政策加码",
+      "evidence_span": "京津冀生态治理政策加码"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双碳时代",
+      "evidence_span": "双碳时代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态环境监测",
+        "evidence_span": "生态环境监测"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "双碳技术服务",
+        "evidence_span": "双碳技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态大脑",
+        "evidence_span": "生态大脑"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "运维服务",
+        "evidence_span": "运维服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环境大数据分析及决策支持服务",
+        "evidence_span": "环境大数据分析及决策支持服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "VOCs治理",
+        "evidence_span": "VOCs治理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "区域污水治理",
+        "evidence_span": "区域污水治理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "社会化检测",
+        "evidence_span": "社会化检测"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环境监测仪器仪表行业知名品牌",
+        "evidence_span": "中国环境监测仪器仪表行业知名品牌"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合服务商",
+        "evidence_span": "集环境监测、环境管理、环境治理为一体的综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环保物联网领军",
+        "evidence_span": "环保物联网领军"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生态环境网格化监控系统",
+        "evidence_span": "生态环境网格化监控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空气质量连续自动监测系统",
+        "evidence_span": "空气质量连续自动监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑扬尘在线监测系统",
+        "evidence_span": "建筑扬尘在线监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大气颗粒物组分分析及源解析系统",
+        "evidence_span": "大气颗粒物组分分析及源解析系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业园区在线监测系统",
+        "evidence_span": "工业园区在线监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机动车尾气遥感监测系统",
+        "evidence_span": "机动车尾气遥感监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OBD远程监控系统",
+        "evidence_span": "OBD远程监控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地表水水质自动监测系统",
+        "evidence_span": "地表水水质自动监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地下水水质自动监测系统",
+        "evidence_span": "地下水水质自动监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环境污染事故应急监测指挥决策系统",
+        "evidence_span": "环境污染事故应急监测指挥决策系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污染源监测",
+        "evidence_span": "污染源监测"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大气网格化监控系统",
+        "evidence_span": "大气网格化监控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水网格化监控系统",
+        "evidence_span": "水网格化监控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "颗粒物粒径谱精细溯源系统",
+        "evidence_span": "颗粒物粒径谱精细溯源系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水生态监测系统",
+        "evidence_span": "水生态监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "温室气体系列监测设备",
+        "evidence_span": "温室气体系列监测设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳排放与碳资产管理系统",
+        "evidence_span": "碳排放与碳资产管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "区域温室气体源汇分布反演系统",
+        "evidence_span": "区域温室气体源汇分布反演系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一体化分散式生活污水处理系统",
+        "evidence_span": "一体化分散式生活污水处理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网环境监测",
+        "evidence_span": "物联网环境监测"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据分析技术",
+        "evidence_span": "大数据分析技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧生态环境精准管理信息化平台",
+        "evidence_span": "智慧生态环境精准管理信息化平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "常温一氧化碳净化炭",
+        "evidence_span": "常温一氧化碳净化炭"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "溶剂回收炭",
+        "evidence_span": "溶剂回收炭"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "蜂窝状活性炭",
+        "evidence_span": "蜂窝状活性炭"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "活性炭纤维",
+        "evidence_span": "活性炭纤维"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分子筛",
+        "evidence_span": "分子筛"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大风量低浓度有机废气净化技术",
+        "evidence_span": "大风量低浓度有机废气净化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "溶剂回收技术",
+        "evidence_span": "溶剂回收"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "节能组合净化槽",
+        "evidence_span": "节能组合净化槽"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "大气网格化市场爆发",
+        "evidence_span": "先河环保大气网格化市场爆发"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "网格化监测需求爆发",
+        "evidence_span": "网格化监测需求爆发"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "京津冀生态治理政策加码",
+        "evidence_span": "京津冀生态治理政策加码"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双碳时代",
+        "evidence_span": "双碳时代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:52:26"
+}

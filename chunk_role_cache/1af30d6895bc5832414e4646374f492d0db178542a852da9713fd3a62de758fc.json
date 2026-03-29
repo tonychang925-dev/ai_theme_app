@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "e6dff6749f2c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述国家集成电路产业投资基金三期成立的具体事件（包括日期和注册资本），但同时也包含了对投资方向（核心技术和关键零部件、国际先进技术对接）的静态说明，这些信息可能用于构建半导体设备题材的知识，因此属于混合内容。"}}

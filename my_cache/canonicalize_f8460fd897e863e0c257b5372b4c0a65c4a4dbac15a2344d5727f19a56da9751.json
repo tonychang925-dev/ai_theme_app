@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:17:45", "result": {"span_uid": "bbbce4422977", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段涉及华为与台积电在先进封装领域的比较，属于具体公司事件和主观推测，无法形成稳定、可独立成立的题材知识块。"}}

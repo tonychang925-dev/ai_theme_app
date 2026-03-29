@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:11", "result": {"chunk_id": "0127e1c26560", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体的公司收购事件，包括公司名称、收购金额和股份比例，属于明确的商业动态，没有提供关于灵巧手本身的静态知识。"}}

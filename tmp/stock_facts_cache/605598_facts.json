@@ -1,0 +1,59 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "地基处理",
+      "evidence_span": "公司主要的业务类型为地基处理和桩基工程，其中地基处理业务收入占比超过80%"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "桩基工程",
+      "evidence_span": "公司主要的业务类型为地基处理和桩基工程"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国际软地基处理龙头",
+      "evidence_span": "国际软地基处理龙头，技术实力领先"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "岩土工程综合服务",
+      "evidence_span": "公司为全球客户提供集勘察、设计、施工、监测于一体的岩土工程综合服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "深度参与“一带一路”建设"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "地基处理",
+        "evidence_span": "公司主要的业务类型为地基处理和桩基工程，其中地基处理业务收入占比超过80%"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "桩基工程",
+        "evidence_span": "公司主要的业务类型为地基处理和桩基工程"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国际软地基处理龙头",
+        "evidence_span": "国际软地基处理龙头，技术实力领先"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "岩土工程综合服务",
+        "evidence_span": "公司为全球客户提供集勘察、设计、施工、监测于一体的岩土工程综合服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "深度参与“一带一路”建设"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:27:21"
+}

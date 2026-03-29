@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "钛白粉",
+      "evidence_span": "公司主营产品钛白粉"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "磷酸铁",
+      "evidence_span": "公司主营产品磷酸铁"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "钛白粉生产企业",
+      "evidence_span": "国内较早的钛白粉生产企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "磷酸铁行业头部企业",
+      "evidence_span": "控股子公司铜陵纳源作为磷酸铁行业头部企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钛白粉",
+      "evidence_span": "钛白粉作为最佳的白色颜料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸铁",
+      "evidence_span": "公司控股子公司铜陵纳源主要生产产品为磷酸铁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金红石型钛白粉",
+      "evidence_span": "开发出了高耐候的致密复合膜金红石型钛白粉产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高档塑料专用金红石型钛白粉",
+      "evidence_span": "高档塑料、油墨专用金红石型钛白粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油墨专用金红石型钛白粉",
+      "evidence_span": "高档塑料、油墨专用金红石型钛白粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏背膜用金红石型钛白粉",
+      "evidence_span": "光伏背膜用金红石型钛白粉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池级纳米磷酸铁",
+      "evidence_span": "已形成5万吨/年电池级纳米磷酸铁产能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压实磷酸铁",
+      "evidence_span": "5万吨/年高压实磷酸铁项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硫酸法钛白粉生产工艺",
+      "evidence_span": "硫酸法钛白粉生产工艺日臻成熟"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钛白粉外加晶种水解技术",
+      "evidence_span": "在钛白粉外加晶种水解技术、多元素盐处理掺杂技术、多元复合包膜技术、产品粒径控制技术和表面修饰技术等方面处于国内领先"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多元素盐处理掺杂技术",
+      "evidence_span": "在钛白粉外加晶种水解技术、多元素盐处理掺杂技术、多元复合包膜技术、产品粒径控制技术和表面修饰技术等方面处于国内领先"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多元复合包膜技术",
+      "evidence_span": "在钛白粉外加晶种水解技术、多元素盐处理掺杂技术、多元复合包膜技术、产品粒径控制技术和表面修饰技术等方面处于国内领先"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产品粒径控制技术",
+      "evidence_span": "在钛白粉外加晶种水解技术、多元素盐处理掺杂技术、多元复合包膜技术、产品粒径控制技术和表面修饰技术等方面处于国内领先"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "表面修饰技术",
+      "evidence_span": "在钛白粉外加晶种水解技术、多元素盐处理掺杂技术、多元复合包膜技术、产品粒径控制技术和表面修饰技术等方面处于国内领先"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高性能致密复合膜钛白粉关键技术",
+      "evidence_span": "高性能致密复合膜钛白粉关键技术研究和产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高耐候性钛白粉关键技术",
+      "evidence_span": "高耐候性钛白粉关键技术研究及产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TiO2水解在线自动化控制",
+      "evidence_span": "TiO2水解在线自动化控制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钛白粉后处理包覆技术",
+      "evidence_span": "钛白粉后处理包覆技术研发和平台建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磷酸铁大型化、连续化、自动化生产线",
+      "evidence_span": "形成了大型化、连续化、自动化生产线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁锂行业的top5企业",
+      "evidence_span": "公司主要客户均为铁锂行业的top5企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "湖南裕能新能源电池材料股份有限公司",
+      "evidence_span": "与湖南裕能新能源电池材料股份有限公司合作的5万吨/年高压实磷酸铁项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合肥国轩科宏新能源科技有限公司",
+      "evidence_span": "控股子公司铜陵纳源与合肥国轩科宏新能源科技有限公司合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "钛白复苏弹性大",
+      "evidence_span": "钛白复苏弹性大,布局锂电谋长远"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "布局锂电谋长远",
+      "evidence_span": "钛白复苏弹性大,布局锂电谋长远"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "钛白粉与磷酸铁双主业推动",
+      "evidence_span": "钛白粉与磷酸铁双主业推动，公司前景广阔"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "钛白粉",
+        "evidence_span": "公司主营产品钛白粉"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "磷酸铁",
+        "evidence_span": "公司主营产品磷酸铁"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "钛白粉生产企业",
+        "evidence_span": "国内较早的钛白粉生产企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "磷酸铁行业头部企业",
+        "evidence_span": "控股子公司铜陵纳源作为磷酸铁行业头部企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钛白粉",
+        "evidence_span": "钛白粉作为最佳的白色颜料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸铁",
+        "evidence_span": "公司控股子公司铜陵纳源主要生产产品为磷酸铁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金红石型钛白粉",
+        "evidence_span": "开发出了高耐候的致密复合膜金红石型钛白粉产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高档塑料专用金红石型钛白粉",
+        "evidence_span": "高档塑料、油墨专用金红石型钛白粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油墨专用金红石型钛白粉",
+        "evidence_span": "高档塑料、油墨专用金红石型钛白粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏背膜用金红石型钛白粉",
+        "evidence_span": "光伏背膜用金红石型钛白粉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池级纳米磷酸铁",
+        "evidence_span": "已形成5万吨/年电池级纳米磷酸铁产能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压实磷酸铁",
+        "evidence_span": "5万吨/年高压实磷酸铁项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硫酸法钛白粉生产工艺",
+        "evidence_span": "硫酸法钛白粉生产工艺日臻成熟"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钛白粉外加晶种水解技术",
+        "evidence_span": "在钛白粉外加晶种水解技术、多元素盐处理掺杂技术、多元复合包膜技术、产品粒径控制技术和表面修饰技术等方面处于国内领先"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多元素盐处理掺杂技术",
+        "evidence_span": "在钛白粉外加晶种水解技术、多元素盐处理掺杂技术、多元复合包膜技术、产品粒径控制技术和表面修饰技术等方面处于国内领先"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多元复合包膜技术",
+        "evidence_span": "在钛白粉外加晶种水解技术、多元素盐处理掺杂技术、多元复合包膜技术、产品粒径控制技术和表面修饰技术等方面处于国内领先"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产品粒径控制技术",
+        "evidence_span": "在钛白粉外加晶种水解技术、多元素盐处理掺杂技术、多元复合包膜技术、产品粒径控制技术和表面修饰技术等方面处于国内领先"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "表面修饰技术",
+        "evidence_span": "在钛白粉外加晶种水解技术、多元素盐处理掺杂技术、多元复合包膜技术、产品粒径控制技术和表面修饰技术等方面处于国内领先"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高性能致密复合膜钛白粉关键技术",
+        "evidence_span": "高性能致密复合膜钛白粉关键技术研究和产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高耐候性钛白粉关键技术",
+        "evidence_span": "高耐候性钛白粉关键技术研究及产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TiO2水解在线自动化控制",
+        "evidence_span": "TiO2水解在线自动化控制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钛白粉后处理包覆技术",
+        "evidence_span": "钛白粉后处理包覆技术研发和平台建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磷酸铁大型化、连续化、自动化生产线",
+        "evidence_span": "形成了大型化、连续化、自动化生产线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁锂行业的top5企业",
+        "evidence_span": "公司主要客户均为铁锂行业的top5企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "湖南裕能新能源电池材料股份有限公司",
+        "evidence_span": "与湖南裕能新能源电池材料股份有限公司合作的5万吨/年高压实磷酸铁项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合肥国轩科宏新能源科技有限公司",
+        "evidence_span": "控股子公司铜陵纳源与合肥国轩科宏新能源科技有限公司合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "钛白复苏弹性大",
+        "evidence_span": "钛白复苏弹性大,布局锂电谋长远"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "布局锂电谋长远",
+        "evidence_span": "钛白复苏弹性大,布局锂电谋长远"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "钛白粉与磷酸铁双主业推动",
+        "evidence_span": "钛白粉与磷酸铁双主业推动，公司前景广阔"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:06:30"
+}

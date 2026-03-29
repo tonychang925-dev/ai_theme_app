@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "激光显示",
+      "evidence_span": "全球领先激光显示科技企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "核心器件研发制造",
+      "evidence_span": "拥有原创技术、核心专利、核心器件研发制造能力"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "激光显示科技企业",
+      "evidence_span": "全球领先激光显示科技企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "激光显示行业龙头",
+      "evidence_span": "激光显示龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "激光显示卖铲人",
+      "evidence_span": "激光显示卖铲人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光电影放映机光源",
+      "evidence_span": "激光电影放映机光源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光商教投影机",
+      "evidence_span": "激光商教投影机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光工程投影机",
+      "evidence_span": "激光工程投影机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光电视",
+      "evidence_span": "激光电视"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能微投",
+      "evidence_span": "智能微投"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光源与光机",
+      "evidence_span": "核心器件光源与光机业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光投影整机",
+      "evidence_span": "激光投影整机销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "影院放映服务",
+      "evidence_span": "影院租赁服务业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ALPD®激光荧光显示技术",
+      "evidence_span": "独创ALPD®激光荧光显示技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "蓝激光+荧光架构",
+      "evidence_span": "ALPD®技术采用蓝激光+荧光的架构获得三基色"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "巴可",
+      "evidence_span": "全球电影放映机龙头巴可唯一的激光电影放映机光源供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中影股份",
+      "evidence_span": "与中影股份和中影器材合资成立中影光峰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中影器材",
+      "evidence_span": "与中影股份和中影器材合资成立中影光峰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "为小米代工的小米品牌智能微投"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "激光显示",
+      "evidence_span": "激光显示"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "激光显示",
+        "evidence_span": "全球领先激光显示科技企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "核心器件研发制造",
+        "evidence_span": "拥有原创技术、核心专利、核心器件研发制造能力"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "激光显示科技企业",
+        "evidence_span": "全球领先激光显示科技企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "激光显示行业龙头",
+        "evidence_span": "激光显示龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "激光显示卖铲人",
+        "evidence_span": "激光显示卖铲人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光电影放映机光源",
+        "evidence_span": "激光电影放映机光源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光商教投影机",
+        "evidence_span": "激光商教投影机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光工程投影机",
+        "evidence_span": "激光工程投影机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光电视",
+        "evidence_span": "激光电视"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能微投",
+        "evidence_span": "智能微投"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光源与光机",
+        "evidence_span": "核心器件光源与光机业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光投影整机",
+        "evidence_span": "激光投影整机销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "影院放映服务",
+        "evidence_span": "影院租赁服务业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ALPD®激光荧光显示技术",
+        "evidence_span": "独创ALPD®激光荧光显示技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "蓝激光+荧光架构",
+        "evidence_span": "ALPD®技术采用蓝激光+荧光的架构获得三基色"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "巴可",
+        "evidence_span": "全球电影放映机龙头巴可唯一的激光电影放映机光源供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中影股份",
+        "evidence_span": "与中影股份和中影器材合资成立中影光峰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中影器材",
+        "evidence_span": "与中影股份和中影器材合资成立中影光峰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "为小米代工的小米品牌智能微投"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "激光显示",
+        "evidence_span": "激光显示"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:31:38"
+}

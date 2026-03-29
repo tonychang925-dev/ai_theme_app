@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "单体维生素研发",
+      "evidence_span": "公司是一家专业从事单体维生素研发、生产和销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "单体维生素生产",
+      "evidence_span": "公司是一家专业从事单体维生素研发、生产和销售的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "单体维生素销售",
+      "evidence_span": "公司是一家专业从事单体维生素研发、生产和销售的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "单体维生素领军企业",
+      "evidence_span": "国内单体维生素领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球B族维生素市场的重要供应商",
+      "evidence_span": "公司是全球B族维生素市场的重要供应商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维生素B6",
+      "evidence_span": "产品包括维生素B6、维生素B1、生物素、叶酸等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维生素B1",
+      "evidence_span": "产品包括维生素B6、维生素B1、生物素、叶酸等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物素",
+      "evidence_span": "产品包括维生素B6、维生素B1、生物素、叶酸等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "叶酸",
+      "evidence_span": "产品包括维生素B6、维生素B1、生物素、叶酸等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维生素D3",
+      "evidence_span": "其他维生素产品包括维生素D3、抗坏血酸棕榈酸酯、维生素E粉等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗坏血酸棕榈酸酯",
+      "evidence_span": "其他维生素产品包括维生素D3、抗坏血酸棕榈酸酯、维生素E粉等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维生素E粉",
+      "evidence_span": "其他维生素产品包括维生素D3、抗坏血酸棕榈酸酯、维生素E粉等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ABL",
+      "evidence_span": "精细化工品主要为ABL"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "维生素B1关键中间体ABL的自产",
+      "evidence_span": "2021年实现维生素B1关键中间体ABL的自产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "综合回收利用技术",
+      "evidence_span": "完善综合回收利用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂化学反应的工业化生产能力",
+      "evidence_span": "拥有复杂化学反应的工业化生产能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "饲料行业客户",
+      "evidence_span": "为全球饲料、医药、食品等行业的客户提供配套服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医药行业客户",
+      "evidence_span": "为全球饲料、医药、食品等行业的客户提供配套服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "食品行业客户",
+      "evidence_span": "为全球饲料、医药、食品等行业的客户提供配套服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "维生素国产化",
+      "evidence_span": "中国已经成为维生素的主要生产国和出口国"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "单体维生素研发",
+        "evidence_span": "公司是一家专业从事单体维生素研发、生产和销售的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "单体维生素生产",
+        "evidence_span": "公司是一家专业从事单体维生素研发、生产和销售的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "单体维生素销售",
+        "evidence_span": "公司是一家专业从事单体维生素研发、生产和销售的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "单体维生素领军企业",
+        "evidence_span": "国内单体维生素领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球B族维生素市场的重要供应商",
+        "evidence_span": "公司是全球B族维生素市场的重要供应商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维生素B6",
+        "evidence_span": "产品包括维生素B6、维生素B1、生物素、叶酸等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维生素B1",
+        "evidence_span": "产品包括维生素B6、维生素B1、生物素、叶酸等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物素",
+        "evidence_span": "产品包括维生素B6、维生素B1、生物素、叶酸等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "叶酸",
+        "evidence_span": "产品包括维生素B6、维生素B1、生物素、叶酸等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维生素D3",
+        "evidence_span": "其他维生素产品包括维生素D3、抗坏血酸棕榈酸酯、维生素E粉等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗坏血酸棕榈酸酯",
+        "evidence_span": "其他维生素产品包括维生素D3、抗坏血酸棕榈酸酯、维生素E粉等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维生素E粉",
+        "evidence_span": "其他维生素产品包括维生素D3、抗坏血酸棕榈酸酯、维生素E粉等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ABL",
+        "evidence_span": "精细化工品主要为ABL"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "维生素B1关键中间体ABL的自产",
+        "evidence_span": "2021年实现维生素B1关键中间体ABL的自产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "综合回收利用技术",
+        "evidence_span": "完善综合回收利用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂化学反应的工业化生产能力",
+        "evidence_span": "拥有复杂化学反应的工业化生产能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "饲料行业客户",
+        "evidence_span": "为全球饲料、医药、食品等行业的客户提供配套服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医药行业客户",
+        "evidence_span": "为全球饲料、医药、食品等行业的客户提供配套服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "食品行业客户",
+        "evidence_span": "为全球饲料、医药、食品等行业的客户提供配套服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "维生素国产化",
+        "evidence_span": "中国已经成为维生素的主要生产国和出口国"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:44:00"
+}

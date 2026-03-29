@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "400638509b69", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述广东省政府发布政策的具体事件，鼓励发展集成电路关键环节，虽然涉及半导体产业链，但焦点是政策新闻，未详细说明半导体设备的具体构成或技术。"}}

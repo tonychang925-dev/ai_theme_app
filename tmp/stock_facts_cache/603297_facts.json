@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "光学显微镜",
+      "evidence_span": "主要从事光学显微镜、光学元组件和其他光学产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光学元组件",
+      "evidence_span": "主要从事光学显微镜、光学元组件和其他光学产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其他光学产品",
+      "evidence_span": "主要从事光学显微镜、光学元组件和其他光学产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内光学显微镜优质企业",
+      "evidence_span": "国内光学显微镜优质企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光学精密仪器及核心光学部件供应商",
+      "evidence_span": "永新光学是中国光学精密仪器及核心光学部件供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内光学显微镜单项制造冠军",
+      "evidence_span": "国内光学显微镜单项制造冠军"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光学精密制造龙头",
+      "evidence_span": "光学精密制造龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内高端光学镜头龙头",
+      "evidence_span": "永新光学国内高端光学镜头龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "显微光学领导者",
+      "evidence_span": "永新光学显微光学领导者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物显微镜",
+      "evidence_span": "主要产品包括生物显微镜及工业显微镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业显微镜",
+      "evidence_span": "主要产品包括生物显微镜及工业显微镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "条码扫描仪镜头",
+      "evidence_span": "条码扫描仪镜头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "平面光学元件",
+      "evidence_span": "平面光学元件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专业成像光学镜片及镜头",
+      "evidence_span": "专业成像光学镜片及镜头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端光学显微镜",
+      "evidence_span": "高端光学显微镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "共聚焦显微镜",
+      "evidence_span": "共聚焦显微镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机器视觉镜头",
+      "evidence_span": "机器视觉镜头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载镜头",
+      "evidence_span": "车载镜头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光雷达",
+      "evidence_span": "激光雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液体镜头",
+      "evidence_span": "液体镜头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星载光学监控镜头",
+      "evidence_span": "星载光学监控镜头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "太空显微实验仪",
+      "evidence_span": "太空显微实验仪"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高端显微镜制造能力",
+      "evidence_span": "公司是国内少数具备高端显微镜制造能力的企业之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超分辨显微系统的大数值孔径物镜设计与制备技术",
+      "evidence_span": "掌握了超分辨显微系统的大数值孔径物镜、高性能荧光滤光片等核心部件设计与制备技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高性能荧光滤光片设计与制备技术",
+      "evidence_span": "掌握了超分辨显微系统的大数值孔径物镜、高性能荧光滤光片等核心部件设计与制备技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "FSED超分辨显微系统制造技术",
+      "evidence_span": "完成FSED超分辨显微系统制造等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "液体镜头量产",
+      "evidence_span": "全球第一批实现液体镜头量产企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "康耐视",
+      "evidence_span": "为机器视觉全球领先品牌康耐视及Zebra等供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Zebra",
+      "evidence_span": "为机器视觉全球领先品牌康耐视及Zebra等供货"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "高端仪器国产替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "光学显微镜",
+        "evidence_span": "主要从事光学显微镜、光学元组件和其他光学产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光学元组件",
+        "evidence_span": "主要从事光学显微镜、光学元组件和其他光学产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "其他光学产品",
+        "evidence_span": "主要从事光学显微镜、光学元组件和其他光学产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内光学显微镜优质企业",
+        "evidence_span": "国内光学显微镜优质企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光学精密仪器及核心光学部件供应商",
+        "evidence_span": "永新光学是中国光学精密仪器及核心光学部件供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内光学显微镜单项制造冠军",
+        "evidence_span": "国内光学显微镜单项制造冠军"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光学精密制造龙头",
+        "evidence_span": "光学精密制造龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内高端光学镜头龙头",
+        "evidence_span": "永新光学国内高端光学镜头龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "显微光学领导者",
+        "evidence_span": "永新光学显微光学领导者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物显微镜",
+        "evidence_span": "主要产品包括生物显微镜及工业显微镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业显微镜",
+        "evidence_span": "主要产品包括生物显微镜及工业显微镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "条码扫描仪镜头",
+        "evidence_span": "条码扫描仪镜头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "平面光学元件",
+        "evidence_span": "平面光学元件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专业成像光学镜片及镜头",
+        "evidence_span": "专业成像光学镜片及镜头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端光学显微镜",
+        "evidence_span": "高端光学显微镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "共聚焦显微镜",
+        "evidence_span": "共聚焦显微镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机器视觉镜头",
+        "evidence_span": "机器视觉镜头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载镜头",
+        "evidence_span": "车载镜头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光雷达",
+        "evidence_span": "激光雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液体镜头",
+        "evidence_span": "液体镜头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星载光学监控镜头",
+        "evidence_span": "星载光学监控镜头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "太空显微实验仪",
+        "evidence_span": "太空显微实验仪"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高端显微镜制造能力",
+        "evidence_span": "公司是国内少数具备高端显微镜制造能力的企业之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超分辨显微系统的大数值孔径物镜设计与制备技术",
+        "evidence_span": "掌握了超分辨显微系统的大数值孔径物镜、高性能荧光滤光片等核心部件设计与制备技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高性能荧光滤光片设计与制备技术",
+        "evidence_span": "掌握了超分辨显微系统的大数值孔径物镜、高性能荧光滤光片等核心部件设计与制备技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "FSED超分辨显微系统制造技术",
+        "evidence_span": "完成FSED超分辨显微系统制造等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "液体镜头量产",
+        "evidence_span": "全球第一批实现液体镜头量产企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "康耐视",
+        "evidence_span": "为机器视觉全球领先品牌康耐视及Zebra等供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Zebra",
+        "evidence_span": "为机器视觉全球领先品牌康耐视及Zebra等供货"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "高端仪器国产替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:53:38"
+}

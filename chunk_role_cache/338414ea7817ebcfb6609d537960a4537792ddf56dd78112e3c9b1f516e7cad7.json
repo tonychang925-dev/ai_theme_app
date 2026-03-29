@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:24:22", "result": {"chunk_id": "d118ca897cea", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含全球稀土储量分布和中国的具体数据等静态知识，但后半部分提到自2024年起开采配额集中于特定集团，涉及时间性动态和事件信息，混合了稳定知识和事件。"}}

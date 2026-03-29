@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "b3326b182f8d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含政策发布事件，但政策内容涉及光刻胶等半导体材料的鼓励发展，提供了有价值的产业知识，可能用于题材本体构建，因此属于混合内容。"}}

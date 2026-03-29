@@ -1,0 +1,494 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "光纤激光器件",
+      "evidence_span": "主营业务是光纤激光器件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光通讯器件",
+      "evidence_span": "主营业务是光通讯器件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "激光雷达光源模块",
+      "evidence_span": "主营业务是激光雷达光源模块及器件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "器件",
+      "evidence_span": "主营业务是激光雷达光源模块及器件"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光电子器件生产商",
+      "evidence_span": "行业领先的光电子器件生产商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光芯片及器件制造商",
+      "evidence_span": "稀缺光芯片及器件制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光纤激光器件",
+      "evidence_span": "主要产品是光纤激光器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光通讯器件",
+      "evidence_span": "主要产品是光通讯器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光雷达光源模块及器件",
+      "evidence_span": "主要产品是激光雷达光源模块及器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光隔离器",
+      "evidence_span": "高性能的光学器件，如光隔离器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "密集光纤阵列连接器",
+      "evidence_span": "密集光纤阵列连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MEMS VOA 光开关",
+      "evidence_span": "MEMS VOA 光开关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "偏振分束/合束器",
+      "evidence_span": "偏振分束/合束器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "耦合器",
+      "evidence_span": "耦合器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "波分复用器",
+      "evidence_span": "波分复用器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铌酸锂调制器",
+      "evidence_span": "铌酸锂调制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自由空间准直输出光纤隔离器",
+      "evidence_span": "应用于脉冲光纤激光器的自由空间准直输出光纤隔离器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "在线隔离器",
+      "evidence_span": "在线隔离器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光纤光栅",
+      "evidence_span": "应用于连续光纤激光器的光纤光栅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光纤合束器",
+      "evidence_span": "光纤合束器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光纤输出头",
+      "evidence_span": "光纤输出头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "10kW 激光合束器",
+      "evidence_span": "10kW 激光合束器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3kW 光纤光栅",
+      "evidence_span": "3kW 光纤光栅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "500W 隔离器",
+      "evidence_span": "500W 隔离器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "10kW 激光输出头",
+      "evidence_span": "10kW 激光输出头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端微型光纤连接产品",
+      "evidence_span": "高端微型光纤连接产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微光学连接产品",
+      "evidence_span": "微光学连接产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保偏光纤阵列",
+      "evidence_span": "保偏光纤阵列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高密度光纤阵列产品",
+      "evidence_span": "高密度光纤阵列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "400/800Gbps 薄膜铌酸锂相干驱动调制器",
+      "evidence_span": "400/800Gbps 薄膜铌酸锂相干驱动调制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "20/40GHz 体材料铌酸锂模拟调制器",
+      "evidence_span": "20/40GHz 体材料铌酸锂模拟调制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "10Gbps 体材料铌酸锂零啁啾强度调制器",
+      "evidence_span": "10Gbps 体材料铌酸锂零啁啾强度调制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "10GHz 体材料铌酸锂相位调制器",
+      "evidence_span": "10GHz 体材料铌酸锂相位调制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铌酸锂调制器芯片",
+      "evidence_span": "铌酸锂调制器芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铌酸锂调制器模块",
+      "evidence_span": "铌酸锂调制器模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "1550nm发射光源模块",
+      "evidence_span": "基于铒镱共掺光纤放大器的 1550nm发射光源模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铌酸锂 IQ 调制器",
+      "evidence_span": "铌酸锂 IQ 调制器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铌酸锂调制器芯片制程技术",
+      "evidence_span": "铌酸锂调制器芯片制程技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铌酸锂调制器模块封装技术",
+      "evidence_span": "铌酸锂调制器模块封装技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高功率器件热管理技术",
+      "evidence_span": "高功率器件热管理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高可靠性光纤器件制造技术",
+      "evidence_span": "高可靠性光纤器件制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "保偏器件应力轴对位技术",
+      "evidence_span": "保偏器件应力轴对位技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光纤端面微结构处理技术",
+      "evidence_span": "光纤端面微结构处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光学微连接组件的先进制造和封装技术",
+      "evidence_span": "光学微连接组件的先进制造和封装技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速光学连接组件的设计能力",
+      "evidence_span": "高速光学连接组件的设计能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "定制产品批量生产的快速转化能力",
+      "evidence_span": "对定制产品批量生产的快速转化能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "薄膜铌酸锂光子集成技术",
+      "evidence_span": "新一代薄膜铌酸锂光子集成技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球主流头部数据通讯公司",
+      "evidence_span": "成为全球主流头部数据通讯公司的核心供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "铌酸锂调制器国产化",
+      "evidence_span": "卡位铌酸锂调制器国产化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "光纤激光器件",
+        "evidence_span": "主营业务是光纤激光器件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光通讯器件",
+        "evidence_span": "主营业务是光通讯器件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "激光雷达光源模块及器件",
+        "evidence_span": "主营业务是激光雷达光源模块及器件"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光电子器件生产商",
+        "evidence_span": "行业领先的光电子器件生产商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光芯片及器件制造商",
+        "evidence_span": "稀缺光芯片及器件制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光纤激光器件",
+        "evidence_span": "主要产品是光纤激光器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光通讯器件",
+        "evidence_span": "主要产品是光通讯器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光雷达光源模块及器件",
+        "evidence_span": "主要产品是激光雷达光源模块及器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光隔离器",
+        "evidence_span": "高性能的光学器件，如光隔离器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "密集光纤阵列连接器",
+        "evidence_span": "密集光纤阵列连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MEMS VOA 光开关",
+        "evidence_span": "MEMS VOA 光开关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "偏振分束/合束器",
+        "evidence_span": "偏振分束/合束器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "耦合器",
+        "evidence_span": "耦合器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "波分复用器",
+        "evidence_span": "波分复用器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铌酸锂调制器",
+        "evidence_span": "铌酸锂调制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自由空间准直输出光纤隔离器",
+        "evidence_span": "应用于脉冲光纤激光器的自由空间准直输出光纤隔离器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "在线隔离器",
+        "evidence_span": "在线隔离器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光纤光栅",
+        "evidence_span": "应用于连续光纤激光器的光纤光栅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光纤合束器",
+        "evidence_span": "光纤合束器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光纤输出头",
+        "evidence_span": "光纤输出头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "10kW 激光合束器",
+        "evidence_span": "10kW 激光合束器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3kW 光纤光栅",
+        "evidence_span": "3kW 光纤光栅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "500W 隔离器",
+        "evidence_span": "500W 隔离器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "10kW 激光输出头",
+        "evidence_span": "10kW 激光输出头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端微型光纤连接产品",
+        "evidence_span": "高端微型光纤连接产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微光学连接产品",
+        "evidence_span": "微光学连接产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保偏光纤阵列",
+        "evidence_span": "保偏光纤阵列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高密度光纤阵列产品",
+        "evidence_span": "高密度光纤阵列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "400/800Gbps 薄膜铌酸锂相干驱动调制器",
+        "evidence_span": "400/800Gbps 薄膜铌酸锂相干驱动调制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "20/40GHz 体材料铌酸锂模拟调制器",
+        "evidence_span": "20/40GHz 体材料铌酸锂模拟调制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "10Gbps 体材料铌酸锂零啁啾强度调制器",
+        "evidence_span": "10Gbps 体材料铌酸锂零啁啾强度调制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "10GHz 体材料铌酸锂相位调制器",
+        "evidence_span": "10GHz 体材料铌酸锂相位调制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铌酸锂调制器芯片",
+        "evidence_span": "铌酸锂调制器芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铌酸锂调制器模块",
+        "evidence_span": "铌酸锂调制器模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "1550nm发射光源模块",
+        "evidence_span": "基于铒镱共掺光纤放大器的 1550nm发射光源模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铌酸锂 IQ 调制器",
+        "evidence_span": "铌酸锂 IQ 调制器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铌酸锂调制器芯片制程技术",
+        "evidence_span": "铌酸锂调制器芯片制程技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铌酸锂调制器模块封装技术",
+        "evidence_span": "铌酸锂调制器模块封装技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高功率器件热管理技术",
+        "evidence_span": "高功率器件热管理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高可靠性光纤器件制造技术",
+        "evidence_span": "高可靠性光纤器件制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "保偏器件应力轴对位技术",
+        "evidence_span": "保偏器件应力轴对位技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光纤端面微结构处理技术",
+        "evidence_span": "光纤端面微结构处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光学微连接组件的先进制造和封装技术",
+        "evidence_span": "光学微连接组件的先进制造和封装技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速光学连接组件的设计能力",
+        "evidence_span": "高速光学连接组件的设计能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "定制产品批量生产的快速转化能力",
+        "evidence_span": "对定制产品批量生产的快速转化能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "薄膜铌酸锂光子集成技术",
+        "evidence_span": "新一代薄膜铌酸锂光子集成技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球主流头部数据通讯公司",
+        "evidence_span": "成为全球主流头部数据通讯公司的核心供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "铌酸锂调制器国产化",
+        "evidence_span": "卡位铌酸锂调制器国产化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:37:30"
+}

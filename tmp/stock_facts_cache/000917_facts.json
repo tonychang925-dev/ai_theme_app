@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "文旅文创",
+      "evidence_span": "确定了以文旅文创、投资管理、创新传媒等为核心构建新型传媒集团"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资管理",
+      "evidence_span": "确定了以文旅文创、投资管理、创新传媒等为核心构建新型传媒集团"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "创新传媒",
+      "evidence_span": "确定了以文旅文创、投资管理、创新传媒等为核心构建新型传媒集团"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "广告",
+      "evidence_span": "公司传媒类业务主要包括广告、游戏等两大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "游戏",
+      "evidence_span": "公司传媒类业务主要包括广告、游戏等两大板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新型传媒集团",
+      "evidence_span": "打造移动互联网时代新型传媒集团"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "圣爵菲斯酒店",
+      "evidence_span": "公司文旅板块的运营主体主要包括 圣爵菲斯酒店、世界之窗主题乐园等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "世界之窗主题乐园",
+      "evidence_span": "公司文旅板块的运营主体主要包括 圣爵菲斯酒店、世界之窗主题乐园等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电视媒体代理",
+      "evidence_span": "韵洪传播主要覆盖电视媒体代理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高铁户外媒体自营",
+      "evidence_span": "高铁户外媒体自营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《劲舞团》",
+      "evidence_span": "主打 游戏为《劲舞团》、《机动战士敢达 OL》、《爱情公寓消消乐》等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《机动战士敢达 OL》",
+      "evidence_span": "主打 游戏为《劲舞团》、《机动战士敢达 OL》、《爱情公寓消消乐》等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《爱情公寓消消乐》",
+      "evidence_span": "主打 游戏为《劲舞团》、《机动战士敢达 OL》、《爱情公寓消消乐》等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "湖南电视台",
+      "evidence_span": "其中对湖南 电视台的传统电视广告代理占其总量的 4 成"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "芒果 TV",
+      "evidence_span": "芒果 TV、优酷等新媒体的核心代理商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "优酷",
+      "evidence_span": "芒果 TV、优酷等新媒体的核心代理商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "文旅文创",
+        "evidence_span": "确定了以文旅文创、投资管理、创新传媒等为核心构建新型传媒集团"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资管理",
+        "evidence_span": "确定了以文旅文创、投资管理、创新传媒等为核心构建新型传媒集团"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "创新传媒",
+        "evidence_span": "确定了以文旅文创、投资管理、创新传媒等为核心构建新型传媒集团"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "广告",
+        "evidence_span": "公司传媒类业务主要包括广告、游戏等两大板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "游戏",
+        "evidence_span": "公司传媒类业务主要包括广告、游戏等两大板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新型传媒集团",
+        "evidence_span": "打造移动互联网时代新型传媒集团"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "圣爵菲斯酒店",
+        "evidence_span": "公司文旅板块的运营主体主要包括 圣爵菲斯酒店、世界之窗主题乐园等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "世界之窗主题乐园",
+        "evidence_span": "公司文旅板块的运营主体主要包括 圣爵菲斯酒店、世界之窗主题乐园等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电视媒体代理",
+        "evidence_span": "韵洪传播主要覆盖电视媒体代理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高铁户外媒体自营",
+        "evidence_span": "高铁户外媒体自营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《劲舞团》",
+        "evidence_span": "主打 游戏为《劲舞团》、《机动战士敢达 OL》、《爱情公寓消消乐》等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《机动战士敢达 OL》",
+        "evidence_span": "主打 游戏为《劲舞团》、《机动战士敢达 OL》、《爱情公寓消消乐》等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《爱情公寓消消乐》",
+        "evidence_span": "主打 游戏为《劲舞团》、《机动战士敢达 OL》、《爱情公寓消消乐》等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "湖南电视台",
+        "evidence_span": "其中对湖南 电视台的传统电视广告代理占其总量的 4 成"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "芒果 TV",
+        "evidence_span": "芒果 TV、优酷等新媒体的核心代理商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "优酷",
+        "evidence_span": "芒果 TV、优酷等新媒体的核心代理商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:47:40"
+}

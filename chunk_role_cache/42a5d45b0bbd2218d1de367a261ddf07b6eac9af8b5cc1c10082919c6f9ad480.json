@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "d4f2613694b5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了武汉发布人形机器人产业三年行动方案和政策措施，包含政策出台的具体事件（如最高支持6000万元），但同时也涉及产业支持措施和行动方案，可能包含可用于题材本体构建的稳定知识（如政策框架），因此归类为candidate_mixed。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "2f22ebddf468", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落核心是SEMI发布行业预测报告这一事件。但报告内容（2024年预计1090亿美元，2025年预计1280亿美元）是重要的行业数据预测，具有知识价值。由于这些数据以事件形式发布且带有时间性，属于事件与行业知识的混合。"}}

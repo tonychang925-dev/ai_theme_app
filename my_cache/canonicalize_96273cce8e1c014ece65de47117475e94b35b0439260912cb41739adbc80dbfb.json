@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:44:00", "result": {"span_uid": "d8c052b6b860", "action": "rewrite", "canonical_text": "高通的营收主要由半导体业务（QCT）和技术授权业务（QTL）构成，其中半导体业务是主要的收入来源。", "final_type": "related", "final_role": "营收结构", "stability": "high", "reason": "原文提供了高通营收结构的基本信息，去除了具体的财务数据和日期，保留了稳定的业务构成知识。"}}

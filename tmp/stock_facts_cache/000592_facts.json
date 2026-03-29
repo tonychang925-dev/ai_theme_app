@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "造林营林",
+      "evidence_span": "造林营林业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "林木产品加工",
+      "evidence_span": "林木产品加工与销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "林木产品加工与销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "贸易业务",
+      "evidence_span": "贸易业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "平潭综合实验区开放开发的相关业务",
+      "evidence_span": "平潭综合实验区开放开发的相关业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "林业企业",
+      "evidence_span": "公司所处行业为林业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "福建省林业产业化龙头企业",
+      "evidence_span": "福建省林业产业化龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国木业百强企业",
+      "evidence_span": "中国木业百强企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中高密度纤维板",
+      "evidence_span": "主要产品规格为1-40mm的中高密度纤维板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超薄型纤维板",
+      "evidence_span": "15万立方米连续压机超薄板生产线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无醛添加纤维板",
+      "evidence_span": "无醛添加（MDI）试产已取得成功"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烟草化肥贸易",
+      "evidence_span": "烟草化肥贸易"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "木材贸易",
+      "evidence_span": "木材贸易"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中福海峡建材城",
+      "evidence_span": "中福海峡建材城"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中福海峡置业项目",
+      "evidence_span": "中福海峡置业项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "林板一体化",
+      "evidence_span": "林板一体化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连续压机超薄板生产线",
+      "evidence_span": "连续压机超薄板生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "迪芬巴赫连续压机中纤板生产线",
+      "evidence_span": "迪芬巴赫连续压机中纤板生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "个性化定制生产",
+      "evidence_span": "幅面规格可按个性化定制生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "菌草技术",
+      "evidence_span": "菌草技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国林业集团",
+      "evidence_span": "与中国林业集团合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福建农林大学国家菌草中心",
+      "evidence_span": "福建农林大学国家菌草中心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福建省农科院",
+      "evidence_span": "福建省农科院"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "平潭综合实验区开发",
+      "evidence_span": "平潭综合实验区的开放开发已上升为国家战略"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "林业碳汇项目",
+      "evidence_span": "林业碳汇项目开发"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "造林营林",
+        "evidence_span": "造林营林业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "林木产品加工与销售",
+        "evidence_span": "林木产品加工与销售业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "贸易业务",
+        "evidence_span": "贸易业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "平潭综合实验区开放开发的相关业务",
+        "evidence_span": "平潭综合实验区开放开发的相关业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "林业企业",
+        "evidence_span": "公司所处行业为林业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "福建省林业产业化龙头企业",
+        "evidence_span": "福建省林业产业化龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国木业百强企业",
+        "evidence_span": "中国木业百强企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中高密度纤维板",
+        "evidence_span": "主要产品规格为1-40mm的中高密度纤维板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超薄型纤维板",
+        "evidence_span": "15万立方米连续压机超薄板生产线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无醛添加纤维板",
+        "evidence_span": "无醛添加（MDI）试产已取得成功"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烟草化肥贸易",
+        "evidence_span": "烟草化肥贸易"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "木材贸易",
+        "evidence_span": "木材贸易"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中福海峡建材城",
+        "evidence_span": "中福海峡建材城"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中福海峡置业项目",
+        "evidence_span": "中福海峡置业项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "林板一体化",
+        "evidence_span": "林板一体化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连续压机超薄板生产线",
+        "evidence_span": "连续压机超薄板生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "迪芬巴赫连续压机中纤板生产线",
+        "evidence_span": "迪芬巴赫连续压机中纤板生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "个性化定制生产",
+        "evidence_span": "幅面规格可按个性化定制生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "菌草技术",
+        "evidence_span": "菌草技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国林业集团",
+        "evidence_span": "与中国林业集团合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福建农林大学国家菌草中心",
+        "evidence_span": "福建农林大学国家菌草中心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福建省农科院",
+        "evidence_span": "福建省农科院"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "平潭综合实验区开发",
+        "evidence_span": "平潭综合实验区的开放开发已上升为国家战略"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "林业碳汇项目",
+        "evidence_span": "林业碳汇项目开发"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:05:25"
+}

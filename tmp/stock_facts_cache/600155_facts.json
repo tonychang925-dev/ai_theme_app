@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "证券业务",
+      "evidence_span": "公司以证券业务为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "塑料管型材业务",
+      "evidence_span": "形成了证券业务与塑料管型材业务双主业的经营模式"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "控股型平台",
+      "evidence_span": "集产业研究、科技开发、投融资为一体的控股型平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性中型券商",
+      "evidence_span": "华创证券：以贵州为大本营的综合性中型券商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "投资银行",
+      "evidence_span": "主要业务包含投资银行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "财富管理",
+      "evidence_span": "主要业务包含财富管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产管理",
+      "evidence_span": "主要业务包含资产管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "研究与机构服务",
+      "evidence_span": "主要业务包含研究与机构服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券经纪",
+      "evidence_span": "主要业务包含证券经纪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自营投资",
+      "evidence_span": "主要业务包含自营投资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信用交易",
+      "evidence_span": "主要业务包含信用交易"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "期货交易",
+      "evidence_span": "主要业务包含期货交易"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "私募投融资",
+      "evidence_span": "主要业务包含私募投融资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "另类投资",
+      "evidence_span": "主要业务包含另类投资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金融工程",
+      "evidence_span": "主要业务包含金融工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合金融服务",
+      "evidence_span": "主要通过华创证券提供综合金融服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "贵州",
+      "evidence_span": "公司以贵州为大本营和服务中心"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "证券业务",
+        "evidence_span": "公司以证券业务为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "塑料管型材业务",
+        "evidence_span": "形成了证券业务与塑料管型材业务双主业的经营模式"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "控股型平台",
+        "evidence_span": "集产业研究、科技开发、投融资为一体的控股型平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性中型券商",
+        "evidence_span": "华创证券：以贵州为大本营的综合性中型券商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "投资银行",
+        "evidence_span": "主要业务包含投资银行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "财富管理",
+        "evidence_span": "主要业务包含财富管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产管理",
+        "evidence_span": "主要业务包含资产管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "研究与机构服务",
+        "evidence_span": "主要业务包含研究与机构服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券经纪",
+        "evidence_span": "主要业务包含证券经纪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自营投资",
+        "evidence_span": "主要业务包含自营投资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信用交易",
+        "evidence_span": "主要业务包含信用交易"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "期货交易",
+        "evidence_span": "主要业务包含期货交易"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "私募投融资",
+        "evidence_span": "主要业务包含私募投融资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "另类投资",
+        "evidence_span": "主要业务包含另类投资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金融工程",
+        "evidence_span": "主要业务包含金融工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合金融服务",
+        "evidence_span": "主要通过华创证券提供综合金融服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "贵州",
+        "evidence_span": "公司以贵州为大本营和服务中心"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:31:42"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "6596b6fb037e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述国家发改委主任在记者会上关于设备更新需求的发言，涉及具体政策表态和市场估算，属于时间性动态事件，不提供半导体设备题材的稳定定义或构成知识。"}}

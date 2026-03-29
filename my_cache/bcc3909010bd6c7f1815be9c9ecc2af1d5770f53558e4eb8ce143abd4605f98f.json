@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:01:57", "result": {"chunk_id": "0482e95a2ce1", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段列举数字能源的组成部分，是纯静态的结构说明，无事件或动态信息。"}}

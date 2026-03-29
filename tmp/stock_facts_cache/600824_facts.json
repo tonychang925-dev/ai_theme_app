@@ -1,0 +1,419 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业批发零售",
+      "evidence_span": "商业批发零售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业物业租赁",
+      "evidence_span": "商业物业租赁"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "典当产业",
+      "evidence_span": "典当产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "餐饮旅游",
+      "evidence_span": "餐饮旅游"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "养老服务",
+      "evidence_span": "养老服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "线上销售",
+      "evidence_span": "线上销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性商业企业",
+      "evidence_span": "综合性商业企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "上海国资综合性商业企业",
+      "evidence_span": "上海国资综合性商业企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内衣",
+      "evidence_span": "内衣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄金珠宝",
+      "evidence_span": "黄金珠宝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "照相器材",
+      "evidence_span": "照相器材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "床上用品",
+      "evidence_span": "床上用品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物业租赁",
+      "evidence_span": "物业租赁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "典当",
+      "evidence_span": "典当"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酒店餐饮旅游",
+      "evidence_span": "酒店餐饮旅游"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "养老服务",
+      "evidence_span": "养老服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特色连锁品牌实体门店柜",
+      "evidence_span": "特色连锁品牌实体门店柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商铺和写字楼租赁",
+      "evidence_span": "商铺和写字楼"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "厂房租赁",
+      "evidence_span": "厂房"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特色精品酒店服务",
+      "evidence_span": "特色精品酒店"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专业特色养老服务",
+      "evidence_span": "专业特色养老服务机构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线上旗舰店销售",
+      "evidence_span": "在天猫商城、京东商城等主流电商平台开设了旗舰店"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微店销售",
+      "evidence_span": "微店"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电视直销",
+      "evidence_span": "电视直销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "古今内衣品牌产品",
+      "evidence_span": "古今内衣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天宝龙凤品牌产品",
+      "evidence_span": "天宝龙凤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星光摄影器材城产品",
+      "evidence_span": "星光摄影器材城产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "上海床上用品公司产品",
+      "evidence_span": "上海床上用品公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "上上品牌产品",
+      "evidence_span": "上上品牌产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "东方典当品牌服务",
+      "evidence_span": "东方典当"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金辰大酒店服务",
+      "evidence_span": "金辰大酒店"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金辰颐养院服务",
+      "evidence_span": "金辰颐养院"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线上线下结合的销售网络",
+      "evidence_span": "线上线下结合的销售网络"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ERP会员管理",
+      "evidence_span": "ERP会员管理"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天猫商城",
+      "evidence_span": "天猫商城"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东商城",
+      "evidence_span": "京东商城"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德同资本",
+      "evidence_span": "德同资本"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "国企改革"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "转型投资控股平台",
+      "evidence_span": "转型投资控股平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "金融创新",
+      "evidence_span": "金融创新"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "资产整合",
+      "evidence_span": "资产整合"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业批发零售",
+        "evidence_span": "商业批发零售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业物业租赁",
+        "evidence_span": "商业物业租赁"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "典当产业",
+        "evidence_span": "典当产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "餐饮旅游",
+        "evidence_span": "餐饮旅游"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "养老服务",
+        "evidence_span": "养老服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "线上销售",
+        "evidence_span": "线上销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性商业企业",
+        "evidence_span": "综合性商业企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "上海国资综合性商业企业",
+        "evidence_span": "上海国资综合性商业企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内衣",
+        "evidence_span": "内衣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄金珠宝",
+        "evidence_span": "黄金珠宝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "照相器材",
+        "evidence_span": "照相器材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "床上用品",
+        "evidence_span": "床上用品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物业租赁",
+        "evidence_span": "物业租赁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "典当",
+        "evidence_span": "典当"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酒店餐饮旅游",
+        "evidence_span": "酒店餐饮旅游"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "养老服务",
+        "evidence_span": "养老服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特色连锁品牌实体门店柜",
+        "evidence_span": "特色连锁品牌实体门店柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商铺和写字楼租赁",
+        "evidence_span": "商铺和写字楼"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "厂房租赁",
+        "evidence_span": "厂房"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特色精品酒店服务",
+        "evidence_span": "特色精品酒店"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专业特色养老服务",
+        "evidence_span": "专业特色养老服务机构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线上旗舰店销售",
+        "evidence_span": "在天猫商城、京东商城等主流电商平台开设了旗舰店"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微店销售",
+        "evidence_span": "微店"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电视直销",
+        "evidence_span": "电视直销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "古今内衣品牌产品",
+        "evidence_span": "古今内衣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天宝龙凤品牌产品",
+        "evidence_span": "天宝龙凤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星光摄影器材城产品",
+        "evidence_span": "星光摄影器材城产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "上海床上用品公司产品",
+        "evidence_span": "上海床上用品公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "上上品牌产品",
+        "evidence_span": "上上品牌产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "东方典当品牌服务",
+        "evidence_span": "东方典当"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金辰大酒店服务",
+        "evidence_span": "金辰大酒店"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金辰颐养院服务",
+        "evidence_span": "金辰颐养院"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线上线下结合的销售网络",
+        "evidence_span": "线上线下结合的销售网络"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ERP会员管理",
+        "evidence_span": "ERP会员管理"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天猫商城",
+        "evidence_span": "天猫商城"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东商城",
+        "evidence_span": "京东商城"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德同资本",
+        "evidence_span": "德同资本"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "国企改革"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "转型投资控股平台",
+        "evidence_span": "转型投资控股平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "金融创新",
+        "evidence_span": "金融创新"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "资产整合",
+        "evidence_span": "资产整合"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:25:37"
+}

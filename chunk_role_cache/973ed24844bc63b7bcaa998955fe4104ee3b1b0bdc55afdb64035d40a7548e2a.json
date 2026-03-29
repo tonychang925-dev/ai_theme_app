@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "092829e0a4e8", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含全球和中国半导体销售额增长趋势（连续10个月同比正增长）这一可能沉淀为知识的内容，但基于SIA数据和日期提示，混有事件性元素，因此分类为candidate_mixed。"}}

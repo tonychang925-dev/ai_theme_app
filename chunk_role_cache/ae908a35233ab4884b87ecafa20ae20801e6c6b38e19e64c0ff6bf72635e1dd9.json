@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "383d1eefff8b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落非常简短，仅陈述了苹果和OpenAI向台积电预订芯片这一具体商业事件，信息单一，属于明确的事件动态。"}}

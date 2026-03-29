@@ -1,0 +1,204 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "石油钻采井口装备",
+      "evidence_span": "公司主要为石油、天然气钻修井提供钻采井口装备和工具的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工具的研发",
+      "evidence_span": "公司主要为石油、天然气钻修井提供钻采井口装备和工具的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "公司主要为石油、天然气钻修井提供钻采井口装备和工具的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要为石油、天然气钻修井提供钻采井口装备和工具的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轨道交通产品",
+      "evidence_span": "继续深化发展轨道交通产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "石油钻采设备供应商",
+      "evidence_span": "如通股份优秀的石油钻采设备供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "井口装备细分市场龙头",
+      "evidence_span": "井口装备细分市场龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球石油钻采设备供应商",
+      "evidence_span": "如通股份国内领先的全球石油钻采设备供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "提升设备",
+      "evidence_span": "按照在使用过程中发挥的功能，分为提升设备、卡持设备和旋扣设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡持设备",
+      "evidence_span": "按照在使用过程中发挥的功能，分为提升设备、卡持设备和旋扣设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旋扣设备",
+      "evidence_span": "按照在使用过程中发挥的功能，分为提升设备、卡持设备和旋扣设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钻修井自动化产品",
+      "evidence_span": "重点围绕钻井井口自动化产品做好开发和推广工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大规格大载荷产品",
+      "evidence_span": "尤其是大规格大载荷产品的市场占有率"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制动盘",
+      "evidence_span": "做好制动盘的市场拓展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "钻修井自动化技术",
+      "evidence_span": "加大了对钻修井自动化等新产品的研发、推广和技术储备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化智能化装备技术",
+      "evidence_span": "主要客户持续加大对自动化智能化装备投入力度"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油集团",
+      "evidence_span": "公司客户覆盖了中石油集团、中石化集团、中海油三大石油公司下属的油服公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化集团",
+      "evidence_span": "公司客户覆盖了中石油集团、中石化集团、中海油三大石油公司下属的油服公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中海油",
+      "evidence_span": "公司客户覆盖了中石油集团、中石化集团、中海油三大石油公司下属的油服公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际知名油服公司",
+      "evidence_span": "公司为国内油服公司、油气钻采设备生产厂商和国际知名油服公司提供产品和服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "伴随一带一路走出国门"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "石油钻采井口装备和工具的研发、生产和销售",
+        "evidence_span": "公司主要为石油、天然气钻修井提供钻采井口装备和工具的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "轨道交通产品",
+        "evidence_span": "继续深化发展轨道交通产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "石油钻采设备供应商",
+        "evidence_span": "如通股份优秀的石油钻采设备供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "井口装备细分市场龙头",
+        "evidence_span": "井口装备细分市场龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球石油钻采设备供应商",
+        "evidence_span": "如通股份国内领先的全球石油钻采设备供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "提升设备",
+        "evidence_span": "按照在使用过程中发挥的功能，分为提升设备、卡持设备和旋扣设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡持设备",
+        "evidence_span": "按照在使用过程中发挥的功能，分为提升设备、卡持设备和旋扣设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旋扣设备",
+        "evidence_span": "按照在使用过程中发挥的功能，分为提升设备、卡持设备和旋扣设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钻修井自动化产品",
+        "evidence_span": "重点围绕钻井井口自动化产品做好开发和推广工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大规格大载荷产品",
+        "evidence_span": "尤其是大规格大载荷产品的市场占有率"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制动盘",
+        "evidence_span": "做好制动盘的市场拓展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "钻修井自动化技术",
+        "evidence_span": "加大了对钻修井自动化等新产品的研发、推广和技术储备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化智能化装备技术",
+        "evidence_span": "主要客户持续加大对自动化智能化装备投入力度"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油集团",
+        "evidence_span": "公司客户覆盖了中石油集团、中石化集团、中海油三大石油公司下属的油服公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化集团",
+        "evidence_span": "公司客户覆盖了中石油集团、中石化集团、中海油三大石油公司下属的油服公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中海油",
+        "evidence_span": "公司客户覆盖了中石油集团、中石化集团、中海油三大石油公司下属的油服公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际知名油服公司",
+        "evidence_span": "公司为国内油服公司、油气钻采设备生产厂商和国际知名油服公司提供产品和服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "伴随一带一路走出国门"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:01:02"
+}

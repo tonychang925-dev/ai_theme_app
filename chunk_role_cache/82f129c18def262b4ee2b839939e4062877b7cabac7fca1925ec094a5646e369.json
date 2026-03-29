@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "68ecf3971097", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落报道了特定时间点（2023年11月）中国大陆进口光刻设备的具体事件，包括数量、价值和同比增长数据，这是一个纯粹的市场动态和事件进展，没有提供稳定的半导体设备知识。"}}

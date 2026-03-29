@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "0f275d4a2e03", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落提到三星可能减少ASML EUV光刻机采购规模，这是一个具体的公司动态事件，虽然涉及关键设备（EUV光刻机），但未解释其技术路径或产业链角色，不适合作为稳定题材知识。"}}

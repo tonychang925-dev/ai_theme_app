@@ -1,0 +1,184 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电线电缆制造",
+      "evidence_span": "公司主营各型电线电缆制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "系统研发",
+      "evidence_span": "系统研发及工程化服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程化服务",
+      "evidence_span": "系统研发及工程化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电线电缆",
+      "evidence_span": "各型电线电缆产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海上风电电缆",
+      "evidence_span": "海上风电电缆业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压及特高压电力电缆",
+      "evidence_span": "高压及特高压（500kV以上）电力电缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空线缆",
+      "evidence_span": "航空线缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信光纤光缆",
+      "evidence_span": "通信光纤光缆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分布式光伏电站",
+      "evidence_span": "分布式光伏电站"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光储电站",
+      "evidence_span": "光储电站投资"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航空电缆系统认证",
+      "evidence_span": "航空电缆系统已获得中国商飞等企业认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "EWIS技术",
+      "evidence_span": "航空线缆EWIS技术处于全国领先地位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国电投山东半岛3号海风项目",
+      "evidence_span": "向国电投山东半岛3 号海风项目交付9 条220kV 大长度光电复合海缆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华能山东半岛项目",
+      "evidence_span": "向华能山东半岛项目交付9 条220kV 大长度光电复合海缆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福建长乐外海项目",
+      "evidence_span": "向福建长乐外海项目交付9 条220kV 大长度光电复合海缆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华能大连庄河项目",
+      "evidence_span": "向华能大连庄河等项目交付9 条220kV 大长度光电复合海缆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国商飞",
+      "evidence_span": "航空电缆系统已获得中国商飞等企业认证"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海缆行业第一阵营",
+      "evidence_span": "快速切入海缆行业第一阵营"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电线电缆制造",
+        "evidence_span": "公司主营各型电线电缆制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "系统研发及工程化服务",
+        "evidence_span": "系统研发及工程化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电线电缆",
+        "evidence_span": "各型电线电缆产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海上风电电缆",
+        "evidence_span": "海上风电电缆业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压及特高压电力电缆",
+        "evidence_span": "高压及特高压（500kV以上）电力电缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空线缆",
+        "evidence_span": "航空线缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信光纤光缆",
+        "evidence_span": "通信光纤光缆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分布式光伏电站",
+        "evidence_span": "分布式光伏电站"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光储电站",
+        "evidence_span": "光储电站投资"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航空电缆系统认证",
+        "evidence_span": "航空电缆系统已获得中国商飞等企业认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "EWIS技术",
+        "evidence_span": "航空线缆EWIS技术处于全国领先地位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国电投山东半岛3号海风项目",
+        "evidence_span": "向国电投山东半岛3 号海风项目交付9 条220kV 大长度光电复合海缆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华能山东半岛项目",
+        "evidence_span": "向华能山东半岛项目交付9 条220kV 大长度光电复合海缆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福建长乐外海项目",
+        "evidence_span": "向福建长乐外海项目交付9 条220kV 大长度光电复合海缆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华能大连庄河项目",
+        "evidence_span": "向华能大连庄河等项目交付9 条220kV 大长度光电复合海缆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国商飞",
+        "evidence_span": "航空电缆系统已获得中国商飞等企业认证"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海缆行业第一阵营",
+        "evidence_span": "快速切入海缆行业第一阵营"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:55:01"
+}

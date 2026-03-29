@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "日用陶瓷制品",
+      "evidence_span": "公司主要从事日用陶瓷制品的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "陶瓷新材料",
+      "evidence_span": "同时涉及陶瓷新材料和电瓷等工业陶瓷"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电瓷",
+      "evidence_span": "同时涉及陶瓷新材料和电瓷等工业陶瓷"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "日用陶瓷行业领军者",
+      "evidence_span": "作为日用陶瓷行业的领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内最大的出口日用陶瓷生产商",
+      "evidence_span": "国内最大的出口日用陶瓷生产商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "餐具",
+      "evidence_span": "公司的日用陶瓷产品包括餐具、茶具、酒瓶、咖啡具、洗漱具、酒瓶、装饰摆件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "茶具",
+      "evidence_span": "公司的日用陶瓷产品包括餐具、茶具、酒瓶、咖啡具、洗漱具、酒瓶、装饰摆件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酒瓶",
+      "evidence_span": "公司的日用陶瓷产品包括餐具、茶具、酒瓶、咖啡具、洗漱具、酒瓶、装饰摆件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "咖啡具",
+      "evidence_span": "公司的日用陶瓷产品包括餐具、茶具、酒瓶、咖啡具、洗漱具、酒瓶、装饰摆件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洗漱具",
+      "evidence_span": "公司的日用陶瓷产品包括餐具、茶具、酒瓶、咖啡具、洗漱具、酒瓶、装饰摆件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装饰摆件",
+      "evidence_span": "公司的日用陶瓷产品包括餐具、茶具、酒瓶、咖啡具、洗漱具、酒瓶、装饰摆件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物陶瓷块",
+      "evidence_span": "陶瓷新材料有生物陶瓷块、耐磨氧化锆球、刚玉莫来石支柱等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "耐磨氧化锆球",
+      "evidence_span": "陶瓷新材料有生物陶瓷块、耐磨氧化锆球、刚玉莫来石支柱等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "刚玉莫来石支柱",
+      "evidence_span": "陶瓷新材料有生物陶瓷块、耐磨氧化锆球、刚玉莫来石支柱等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陶瓷支柱绝缘子",
+      "evidence_span": "电瓷有陶瓷支柱绝缘子等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "色釉陶瓷个性化",
+      "evidence_span": "以色釉陶瓷个性化、创意化立足行业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "创意化",
+      "evidence_span": "以色釉陶瓷个性化、创意化立足行业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "釉下五彩瓷",
+      "evidence_span": "公司产品以色釉陶瓷、釉下五彩瓷等日用陶瓷为主"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能制造技改升级",
+      "evidence_span": "公司智能制造技改升级持续多年"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "等静压干粉成型技术",
+      "evidence_span": "采用自动化程度更高的等静压干粉成型技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宜家",
+      "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "贵州茅台",
+      "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "威廉索拿马",
+      "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃尔玛",
+      "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉普森",
+      "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "布鲁斯特",
+      "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "五粮液",
+      "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "日用陶瓷制品",
+        "evidence_span": "公司主要从事日用陶瓷制品的研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "陶瓷新材料",
+        "evidence_span": "同时涉及陶瓷新材料和电瓷等工业陶瓷"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电瓷",
+        "evidence_span": "同时涉及陶瓷新材料和电瓷等工业陶瓷"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "日用陶瓷行业领军者",
+        "evidence_span": "作为日用陶瓷行业的领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内最大的出口日用陶瓷生产商",
+        "evidence_span": "国内最大的出口日用陶瓷生产商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "餐具",
+        "evidence_span": "公司的日用陶瓷产品包括餐具、茶具、酒瓶、咖啡具、洗漱具、酒瓶、装饰摆件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "茶具",
+        "evidence_span": "公司的日用陶瓷产品包括餐具、茶具、酒瓶、咖啡具、洗漱具、酒瓶、装饰摆件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酒瓶",
+        "evidence_span": "公司的日用陶瓷产品包括餐具、茶具、酒瓶、咖啡具、洗漱具、酒瓶、装饰摆件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "咖啡具",
+        "evidence_span": "公司的日用陶瓷产品包括餐具、茶具、酒瓶、咖啡具、洗漱具、酒瓶、装饰摆件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洗漱具",
+        "evidence_span": "公司的日用陶瓷产品包括餐具、茶具、酒瓶、咖啡具、洗漱具、酒瓶、装饰摆件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装饰摆件",
+        "evidence_span": "公司的日用陶瓷产品包括餐具、茶具、酒瓶、咖啡具、洗漱具、酒瓶、装饰摆件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物陶瓷块",
+        "evidence_span": "陶瓷新材料有生物陶瓷块、耐磨氧化锆球、刚玉莫来石支柱等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "耐磨氧化锆球",
+        "evidence_span": "陶瓷新材料有生物陶瓷块、耐磨氧化锆球、刚玉莫来石支柱等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "刚玉莫来石支柱",
+        "evidence_span": "陶瓷新材料有生物陶瓷块、耐磨氧化锆球、刚玉莫来石支柱等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陶瓷支柱绝缘子",
+        "evidence_span": "电瓷有陶瓷支柱绝缘子等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "色釉陶瓷个性化",
+        "evidence_span": "以色釉陶瓷个性化、创意化立足行业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "创意化",
+        "evidence_span": "以色釉陶瓷个性化、创意化立足行业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "釉下五彩瓷",
+        "evidence_span": "公司产品以色釉陶瓷、釉下五彩瓷等日用陶瓷为主"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能制造技改升级",
+        "evidence_span": "公司智能制造技改升级持续多年"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "等静压干粉成型技术",
+        "evidence_span": "采用自动化程度更高的等静压干粉成型技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宜家",
+        "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "贵州茅台",
+        "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "威廉索拿马",
+        "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃尔玛",
+        "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉普森",
+        "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "布鲁斯特",
+        "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "五粮液",
+        "evidence_span": "公司主要客户包括宜家、贵州茅台、威廉索拿马、沃尔玛、吉普森、布鲁斯特、五粮液等行业内全球知名企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:10:31"
+}

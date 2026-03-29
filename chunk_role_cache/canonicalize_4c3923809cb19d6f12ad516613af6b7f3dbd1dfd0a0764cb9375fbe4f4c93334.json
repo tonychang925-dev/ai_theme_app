@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:36:44", "result": {"span_uid": "d4a99f66675d", "action": "keep", "canonical_text": "光刻胶是一种在特定光源照射下发生局部溶解度变化的光敏材料，在集成电路制造中主要用于光刻环节。", "final_type": "core", "final_role": "定义与核心机制", "stability": "high", "reason": "直接定义光刻胶的基本属性和核心功能，是稳定、独立的知识表达。"}}

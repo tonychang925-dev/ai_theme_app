@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:00:37", "result": {"span_uid": "9995d35afef3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文描述了2025年1月8日全球首台全高温超导托卡马克核聚变实验装置洪荒70实现120秒稳态长脉冲等离子体运行的具体事件，属于阶段性技术进展。但作为具体事件信息，无法形成稳定、独立的知识块，且可能随时间过时，因此丢弃。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:58:48", "result": {"chunk_id": "58500f89b95f", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件（2025年中国国际核聚变与核能源产业大会暨博览会的举办时间、地点），属于时间性动态，没有提供关于可控核聚变本身的静态知识。"}}

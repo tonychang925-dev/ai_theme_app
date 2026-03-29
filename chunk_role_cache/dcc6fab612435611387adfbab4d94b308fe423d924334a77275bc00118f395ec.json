@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "2fa330221373", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落报告国内首个低空飞行器风洞落成启用的事件，但详细解释了风洞的定义、功能和在飞行器研发中的重要性，包含静态知识（如空气动力学特性、实验平台），对题材本体有价值，因此归类为混合候选。"}}

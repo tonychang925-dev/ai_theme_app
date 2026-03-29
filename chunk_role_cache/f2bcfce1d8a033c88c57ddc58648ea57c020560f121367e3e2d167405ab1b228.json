@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "e1f4f6897460", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述台积电的厂务工程竞标和CoWoS设备急单事件，但提到了CoWoS（先进封装技术）的产能和订单能见度，可能包含半导体设备应用场景或技术路径的候选知识。"}}

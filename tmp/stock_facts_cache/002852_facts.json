@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "食用植物油的研发",
+      "evidence_span": "主要从事食用植物油的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食用植物油的生产",
+      "evidence_span": "主要从事食用植物油的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "食用植物油的销售",
+      "evidence_span": "主要从事食用植物油的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "菜籽油细分赛道龙头",
+      "evidence_span": "菜籽油细分赛道龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性油脂加工企业",
+      "evidence_span": "综合性油脂加工企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "包装菜籽油类产品",
+      "evidence_span": "以包装菜籽油类产品为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纯菜籽油",
+      "evidence_span": "纯菜籽油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "菜籽调和油",
+      "evidence_span": "菜籽调和油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他油品",
+      "evidence_span": "其他油品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "散装油",
+      "evidence_span": "散装油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "包装油",
+      "evidence_span": "包装油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粕类",
+      "evidence_span": "压榨生产的粕类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高油酸菜籽油",
+      "evidence_span": "高油酸菜籽油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "茶籽油",
+      "evidence_span": "茶籽油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "餐饮桶装油",
+      "evidence_span": "餐饮桶装油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "餐饮油软包装",
+      "evidence_span": "餐饮油软包装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风味菜籽油",
+      "evidence_span": "风味菜籽油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "调和油",
+      "evidence_span": "调和油"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "餐饮油",
+      "evidence_span": "餐饮油"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "压榨",
+      "evidence_span": "油菜籽通过压榨后为菜籽原油"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精炼",
+      "evidence_span": "经过精炼、罐装后销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "罐装",
+      "evidence_span": "经过精炼、罐装后销售"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合作经销商",
+      "evidence_span": "合作经销商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型连锁KA卖场",
+      "evidence_span": "大型连锁KA卖场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "线上平台",
+      "evidence_span": "线上平台"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "食用植物油的研发",
+        "evidence_span": "主要从事食用植物油的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食用植物油的生产",
+        "evidence_span": "主要从事食用植物油的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "食用植物油的销售",
+        "evidence_span": "主要从事食用植物油的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "菜籽油细分赛道龙头",
+        "evidence_span": "菜籽油细分赛道龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性油脂加工企业",
+        "evidence_span": "综合性油脂加工企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "包装菜籽油类产品",
+        "evidence_span": "以包装菜籽油类产品为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纯菜籽油",
+        "evidence_span": "纯菜籽油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "菜籽调和油",
+        "evidence_span": "菜籽调和油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他油品",
+        "evidence_span": "其他油品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "散装油",
+        "evidence_span": "散装油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "包装油",
+        "evidence_span": "包装油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粕类",
+        "evidence_span": "压榨生产的粕类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高油酸菜籽油",
+        "evidence_span": "高油酸菜籽油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "茶籽油",
+        "evidence_span": "茶籽油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "餐饮桶装油",
+        "evidence_span": "餐饮桶装油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "餐饮油软包装",
+        "evidence_span": "餐饮油软包装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风味菜籽油",
+        "evidence_span": "风味菜籽油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "调和油",
+        "evidence_span": "调和油"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "餐饮油",
+        "evidence_span": "餐饮油"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "压榨",
+        "evidence_span": "油菜籽通过压榨后为菜籽原油"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精炼",
+        "evidence_span": "经过精炼、罐装后销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "罐装",
+        "evidence_span": "经过精炼、罐装后销售"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合作经销商",
+        "evidence_span": "合作经销商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型连锁KA卖场",
+        "evidence_span": "大型连锁KA卖场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "线上平台",
+        "evidence_span": "线上平台"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:05:43"
+}

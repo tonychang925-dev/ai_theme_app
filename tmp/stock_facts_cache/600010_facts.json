@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "矿产资源开发利用",
+      "evidence_span": "公司主要从事矿产资源开发利用、钢铁产品的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "钢铁产品的生产",
+      "evidence_span": "公司主要从事矿产资源开发利用、钢铁产品的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要从事矿产资源开发利用、钢铁产品的生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "稀土精矿",
+      "evidence_span": "主要产品有稀土精矿、萤石精矿等矿产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "萤石精矿",
+      "evidence_span": "主要产品有稀土精矿、萤石精矿等矿产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑用钢材",
+      "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷热轧卷板",
+      "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镀锌钢板",
+      "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中厚板",
+      "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无缝管",
+      "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "重轨",
+      "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "型钢",
+      "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "稀土钢产品",
+      "evidence_span": "稀土钢的研发生产有50多年"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "焦副产品",
+      "evidence_span": "包钢股份煤焦化工分公司主要产品有冶金焦炭、焦炉煤气、粗苯、煤焦油及改质沥青、蒽油、洗油、焦化萘、轻油、酚油、粗酚、硫铵和焦化粗硫磺等16个产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "钢铁生产企业",
+      "evidence_span": "钢铁生产总体装备水平达到国内外一流"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "稀土资源企业",
+      "evidence_span": "从传统钢铁厂到稀土资源龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球轻稀土资源龙头",
+      "evidence_span": "逐步转型为全球轻稀土资源龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "稀土钢新材料综合供应商和服务商",
+      "evidence_span": "实现打造国内领先、品牌卓著的稀土钢新材料综合供应商和服务商的高质量发展目标"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "稀土钢研发生产",
+      "evidence_span": "稀土钢的研发生产有50多年"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G智慧矿区无人驾驶",
+      "evidence_span": "5G智慧矿区无人驾驶常态化运营"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器人3D岗位代替人工",
+      "evidence_span": "50余台机器人实现“3D岗位”代替人工"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "冷轧平整线自动贴签机器人",
+      "evidence_span": "自主设计研发的冷轧平整线自动贴签机器人成功上线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北方稀土",
+      "evidence_span": "稀土精矿供给北方稀土"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "稀土资源价值重估",
+      "evidence_span": "包钢股份稀土资源价值重估，钢铁业务景气回升"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "稀土国产化",
+      "evidence_span": "稀土是发展新兴产业和国防军工不可或缺的关键元素"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "矿产资源开发利用",
+        "evidence_span": "公司主要从事矿产资源开发利用、钢铁产品的生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "钢铁产品的生产与销售",
+        "evidence_span": "公司主要从事矿产资源开发利用、钢铁产品的生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "稀土精矿",
+        "evidence_span": "主要产品有稀土精矿、萤石精矿等矿产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "萤石精矿",
+        "evidence_span": "主要产品有稀土精矿、萤石精矿等矿产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑用钢材",
+        "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷热轧卷板",
+        "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镀锌钢板",
+        "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中厚板",
+        "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无缝管",
+        "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "重轨",
+        "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "型钢",
+        "evidence_span": "建筑用钢材、冷热轧卷板、镀锌钢板、中厚板、无缝管、重轨、型钢等钢铁产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "稀土钢产品",
+        "evidence_span": "稀土钢的研发生产有50多年"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "焦副产品",
+        "evidence_span": "包钢股份煤焦化工分公司主要产品有冶金焦炭、焦炉煤气、粗苯、煤焦油及改质沥青、蒽油、洗油、焦化萘、轻油、酚油、粗酚、硫铵和焦化粗硫磺等16个产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "钢铁生产企业",
+        "evidence_span": "钢铁生产总体装备水平达到国内外一流"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "稀土资源企业",
+        "evidence_span": "从传统钢铁厂到稀土资源龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球轻稀土资源龙头",
+        "evidence_span": "逐步转型为全球轻稀土资源龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "稀土钢新材料综合供应商和服务商",
+        "evidence_span": "实现打造国内领先、品牌卓著的稀土钢新材料综合供应商和服务商的高质量发展目标"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "稀土钢研发生产",
+        "evidence_span": "稀土钢的研发生产有50多年"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G智慧矿区无人驾驶",
+        "evidence_span": "5G智慧矿区无人驾驶常态化运营"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器人3D岗位代替人工",
+        "evidence_span": "50余台机器人实现“3D岗位”代替人工"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "冷轧平整线自动贴签机器人",
+        "evidence_span": "自主设计研发的冷轧平整线自动贴签机器人成功上线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北方稀土",
+        "evidence_span": "稀土精矿供给北方稀土"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "稀土资源价值重估",
+        "evidence_span": "包钢股份稀土资源价值重估，钢铁业务景气回升"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "稀土国产化",
+        "evidence_span": "稀土是发展新兴产业和国防军工不可或缺的关键元素"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:54:08"
+}

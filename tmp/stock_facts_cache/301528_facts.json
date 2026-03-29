@@ -1,0 +1,489 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "无损检测设备研发",
+      "evidence_span": "专业从事无损检测设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "无损检测设备生产",
+      "evidence_span": "专业从事无损检测设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "无损检测设备销售",
+      "evidence_span": "专业从事无损检测设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "超声无损检测设备提供商",
+      "evidence_span": "超声无损检测设备提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无损检测设备及检测方案的专业提供商",
+      "evidence_span": "为工业无损检测设备及检测方案的专业提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业无损检测设备",
+      "evidence_span": "产品包括工业超声及自动化检测设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超声换能器",
+      "evidence_span": "产品包括工业超声及自动化检测设备、超声换能器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "检测配套零部件",
+      "evidence_span": "超声换能器及其他检测配套零部件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "便携式超声相控阵检测仪",
+      "evidence_span": "研发的Phascan便携式超声相控阵探伤仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超声板卡检测设备",
+      "evidence_span": "公司开发了超声板卡检测设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化检查设备",
+      "evidence_span": "公司自动化检查设备集成了检测设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "相控阵超声换能器",
+      "evidence_span": "公司超声换能器包括相控阵超声换能器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业超声换能器",
+      "evidence_span": "公司超声换能器包括相控阵超声换能器、工业超声换能器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医用超声换能器",
+      "evidence_span": "公司超声换能器包括相控阵超声换能器、工业超声换能器和医用超声换能器产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "扫查装置",
+      "evidence_span": "公司配套零部件产品主要包括扫查装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "楔块",
+      "evidence_span": "公司配套零部件产品主要包括扫查装置、楔块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连接线",
+      "evidence_span": "连接超声检测设备和超声换能器的连接线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "转换器",
+      "evidence_span": "转换器、各类接头以及耦合剂等附件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "耦合剂",
+      "evidence_span": "各类接头以及耦合剂等附件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超声相控阵技术",
+      "evidence_span": "自成立以来一直专注于超声相控阵检测设备的产品研发和技术应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全聚焦检测技术",
+      "evidence_span": "公司进一步研发了全聚焦检测仪"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复合材料换能器设计与制造能力",
+      "evidence_span": "拥有自主核心技术的复合材料/换能器设计与制造能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "便携式3D全聚焦成像技术",
+      "evidence_span": "便携式3D全聚焦成像技术及相关制造技术达到国际领先水平"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国中车",
+      "evidence_span": "轨道交通行业的中国中车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "能源电力行业的国家电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "南方电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国航天科技集团",
+      "evidence_span": "航空航天行业的中国航天科技集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国航空工业集团",
+      "evidence_span": "中国航空工业集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国商飞",
+      "evidence_span": "中国商飞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国核工业集团",
+      "evidence_span": "核电行业的中国核工业集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中广核",
+      "evidence_span": "中广核"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家核电",
+      "evidence_span": "国家核电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国一重",
+      "evidence_span": "重型机械行业的中国一重"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国二重",
+      "evidence_span": "中国二重"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三一重工",
+      "evidence_span": "三一重工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中联重科",
+      "evidence_span": "中联重科"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "哈尔滨锅炉厂",
+      "evidence_span": "特种设备行业的哈尔滨锅炉厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东方电气",
+      "evidence_span": "东方电气"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "新能源汽车行业的比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "BD医疗",
+      "evidence_span": "医疗器械行业的BD医疗"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沈德医疗",
+      "evidence_span": "沈德医疗"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国科学院",
+      "evidence_span": "科学研究方面的中国科学院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国工程物理研究院",
+      "evidence_span": "中国工程物理研究院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "清华大学",
+      "evidence_span": "清华大学"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京航空航天大学",
+      "evidence_span": "北京航空航天大学"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "SGS通标",
+      "evidence_span": "检测服务行业的SGS通标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国特种设备检测研究院",
+      "evidence_span": "中国特种设备检测研究院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广东特种设备检测研究院",
+      "evidence_span": "广东特种设备检测研究院"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "无损检测设备研发",
+        "evidence_span": "专业从事无损检测设备的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "无损检测设备生产",
+        "evidence_span": "专业从事无损检测设备的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "无损检测设备销售",
+        "evidence_span": "专业从事无损检测设备的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "超声无损检测设备提供商",
+        "evidence_span": "超声无损检测设备提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无损检测设备及检测方案的专业提供商",
+        "evidence_span": "为工业无损检测设备及检测方案的专业提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业无损检测设备",
+        "evidence_span": "产品包括工业超声及自动化检测设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超声换能器",
+        "evidence_span": "产品包括工业超声及自动化检测设备、超声换能器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "检测配套零部件",
+        "evidence_span": "超声换能器及其他检测配套零部件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "便携式超声相控阵检测仪",
+        "evidence_span": "研发的Phascan便携式超声相控阵探伤仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超声板卡检测设备",
+        "evidence_span": "公司开发了超声板卡检测设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化检查设备",
+        "evidence_span": "公司自动化检查设备集成了检测设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "相控阵超声换能器",
+        "evidence_span": "公司超声换能器包括相控阵超声换能器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业超声换能器",
+        "evidence_span": "公司超声换能器包括相控阵超声换能器、工业超声换能器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医用超声换能器",
+        "evidence_span": "公司超声换能器包括相控阵超声换能器、工业超声换能器和医用超声换能器产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "扫查装置",
+        "evidence_span": "公司配套零部件产品主要包括扫查装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "楔块",
+        "evidence_span": "公司配套零部件产品主要包括扫查装置、楔块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连接线",
+        "evidence_span": "连接超声检测设备和超声换能器的连接线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "转换器",
+        "evidence_span": "转换器、各类接头以及耦合剂等附件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "耦合剂",
+        "evidence_span": "各类接头以及耦合剂等附件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超声相控阵技术",
+        "evidence_span": "自成立以来一直专注于超声相控阵检测设备的产品研发和技术应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全聚焦检测技术",
+        "evidence_span": "公司进一步研发了全聚焦检测仪"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复合材料换能器设计与制造能力",
+        "evidence_span": "拥有自主核心技术的复合材料/换能器设计与制造能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "便携式3D全聚焦成像技术",
+        "evidence_span": "便携式3D全聚焦成像技术及相关制造技术达到国际领先水平"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国中车",
+        "evidence_span": "轨道交通行业的中国中车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "能源电力行业的国家电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "南方电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国航天科技集团",
+        "evidence_span": "航空航天行业的中国航天科技集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国航空工业集团",
+        "evidence_span": "中国航空工业集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国商飞",
+        "evidence_span": "中国商飞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国核工业集团",
+        "evidence_span": "核电行业的中国核工业集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中广核",
+        "evidence_span": "中广核"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家核电",
+        "evidence_span": "国家核电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国一重",
+        "evidence_span": "重型机械行业的中国一重"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国二重",
+        "evidence_span": "中国二重"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三一重工",
+        "evidence_span": "三一重工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中联重科",
+        "evidence_span": "中联重科"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "哈尔滨锅炉厂",
+        "evidence_span": "特种设备行业的哈尔滨锅炉厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东方电气",
+        "evidence_span": "东方电气"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "新能源汽车行业的比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "BD医疗",
+        "evidence_span": "医疗器械行业的BD医疗"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沈德医疗",
+        "evidence_span": "沈德医疗"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国科学院",
+        "evidence_span": "科学研究方面的中国科学院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国工程物理研究院",
+        "evidence_span": "中国工程物理研究院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "清华大学",
+        "evidence_span": "清华大学"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京航空航天大学",
+        "evidence_span": "北京航空航天大学"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "SGS通标",
+        "evidence_span": "检测服务行业的SGS通标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国特种设备检测研究院",
+        "evidence_span": "中国特种设备检测研究院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广东特种设备检测研究院",
+        "evidence_span": "广东特种设备检测研究院"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:48:26"
+}

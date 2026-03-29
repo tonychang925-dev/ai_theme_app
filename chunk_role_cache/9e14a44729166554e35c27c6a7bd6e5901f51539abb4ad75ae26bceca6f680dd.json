@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "a57386554786", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了华为的先进封装技术专利，涉及封装设计、桥接技术、HBM集成等，直接揭示了半导体设备中先进封装环节的技术路径和关键构成，有助于理解题材本身的技术边界和受益方向，而不仅仅是事件报道。"}}

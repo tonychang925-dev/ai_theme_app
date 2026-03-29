@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "71f35549b481", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含两部分：第一部分提到工业和信息化部目录中列出氟化氪和氟化氩光刻机，并描述氟化氩光刻机的技术参数（如分辨率、套刻精度、支持工艺），这提供了关于光刻机类型的稳定知识；第二部分是关于苹果包下台积电产能的事件新闻。混合了知识和事件，适合作为候选知识。"}}

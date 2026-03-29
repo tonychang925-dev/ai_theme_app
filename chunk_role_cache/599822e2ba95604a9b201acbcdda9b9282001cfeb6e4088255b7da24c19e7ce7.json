@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "20bd8c9d10c4", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述了中国首个基于视觉扩散架构的人形机器人任务生成式R-DDPRM模型的发布事件，但包含模型创新之处和功能等潜在知识，混合了事件和知识，需进一步裁决。"}}

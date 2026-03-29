@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:23:14", "result": {"chunk_id": "52e811537943", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述日本部署中程防空导弹的具体事件，包含日期和动态信息，但同时也提供了与那国岛的地理位置、历史部署等静态背景知识，这些知识可能对海军题材有参考价值，因此归类为混合候选。"}}

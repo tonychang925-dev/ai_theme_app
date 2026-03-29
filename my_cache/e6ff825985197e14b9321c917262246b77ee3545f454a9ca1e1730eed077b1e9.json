@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "8448e90de0ef", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段前半部分关于银杏叶和六代机的内容是噪音，但后半部分描述东航将使用C919执飞上海-香港航线的具体事件，同时涉及C919在地区航线商业运营的背景知识，混合了事件和知识。"}}

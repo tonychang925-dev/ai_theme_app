@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "e94c90110f6a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落提到国家相关部委有望设立低空经济专管司局，这是一个潜在的监管或政策变化，属于事件性内容。"}}

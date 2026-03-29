@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "d3fc3430754b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述2025年电影大盘票房的实时数据和时间对比，属于具体事件和市场表现，不包含可用于题材本体构建的稳定知识。"}}

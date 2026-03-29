@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "5643b4b16351", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落涉及SSD价格变化和市场趋势，包含事件性数据（如价格环比上涨），但同时也提供了存储市场（如AI服务器需求）的背景知识，可能对理解HBM相关存储环境有价值，因此分类为candidate_mixed。"}}

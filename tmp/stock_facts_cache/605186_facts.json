@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧药房",
+      "evidence_span": "主营业务涵盖智慧药房"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能化静配中心",
+      "evidence_span": "主营业务涵盖...智能化静配中心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能化药品耗材管理",
+      "evidence_span": "主营业务涵盖...智能化药品耗材管理三大细分领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医药自动化设备与医药信息化服务提供商",
+      "evidence_span": "是一家医药自动化设备与医药信息化服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧药房第一股",
+      "evidence_span": "国内“智慧药房第一股”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧药房项目",
+      "evidence_span": "智慧药房项目是公司主要营收来源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能化静配中心项目",
+      "evidence_span": "智能化静配中心项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能化药品耗材管理项目",
+      "evidence_span": "智能化药品耗材管理项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动发药机",
+      "evidence_span": "主要产品包括 B 型、D 型、H 型、D-plus 型自动发药机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动补药机",
+      "evidence_span": "自主生产全自动补药机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配液机器人",
+      "evidence_span": "具备两款配液机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能药品管理柜",
+      "evidence_span": "智能药品管理柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能耗材管理柜",
+      "evidence_span": "智能耗材管理柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移动医疗卫生服务车项目",
+      "evidence_span": "移动医疗卫生服务车项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能化中药房项目",
+      "evidence_span": "推出智能化中药房项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动实验室项目",
+      "evidence_span": "全自动实验室项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发热门诊自助药房",
+      "evidence_span": "发热门诊自助药房"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "软硬件系统集成技术",
+      "evidence_span": "涉及软硬件系统集成技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据处理技术",
+      "evidence_span": "数据处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "设备统筹管理技术",
+      "evidence_span": "设备统筹管理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动发药技术",
+      "evidence_span": "自动发药技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动补药技术",
+      "evidence_span": "自动补药技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器人应用技术",
+      "evidence_span": "机器人应用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全自动补药模块",
+      "evidence_span": "D-plus 型补药模块可实现无人值守情况下的全自动补药"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医院",
+      "evidence_span": "应用场景主要包括医院各科室"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "零售药店",
+      "evidence_span": "零售药店"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医药流通企业",
+      "evidence_span": "医药流通企业药库"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国药控股湖北有限公司",
+      "evidence_span": "与国药控股湖北有限公司就湖北省基层医疗车项目签署相关医疗设备供货合同"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧药房",
+        "evidence_span": "主营业务涵盖智慧药房"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能化静配中心",
+        "evidence_span": "主营业务涵盖...智能化静配中心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能化药品耗材管理",
+        "evidence_span": "主营业务涵盖...智能化药品耗材管理三大细分领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医药自动化设备与医药信息化服务提供商",
+        "evidence_span": "是一家医药自动化设备与医药信息化服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧药房第一股",
+        "evidence_span": "国内“智慧药房第一股”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧药房项目",
+        "evidence_span": "智慧药房项目是公司主要营收来源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能化静配中心项目",
+        "evidence_span": "智能化静配中心项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能化药品耗材管理项目",
+        "evidence_span": "智能化药品耗材管理项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动发药机",
+        "evidence_span": "主要产品包括 B 型、D 型、H 型、D-plus 型自动发药机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动补药机",
+        "evidence_span": "自主生产全自动补药机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配液机器人",
+        "evidence_span": "具备两款配液机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能药品管理柜",
+        "evidence_span": "智能药品管理柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能耗材管理柜",
+        "evidence_span": "智能耗材管理柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移动医疗卫生服务车项目",
+        "evidence_span": "移动医疗卫生服务车项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能化中药房项目",
+        "evidence_span": "推出智能化中药房项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动实验室项目",
+        "evidence_span": "全自动实验室项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发热门诊自助药房",
+        "evidence_span": "发热门诊自助药房"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "软硬件系统集成技术",
+        "evidence_span": "涉及软硬件系统集成技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据处理技术",
+        "evidence_span": "数据处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "设备统筹管理技术",
+        "evidence_span": "设备统筹管理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动发药技术",
+        "evidence_span": "自动发药技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动补药技术",
+        "evidence_span": "自动补药技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器人应用技术",
+        "evidence_span": "机器人应用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全自动补药模块",
+        "evidence_span": "D-plus 型补药模块可实现无人值守情况下的全自动补药"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医院",
+        "evidence_span": "应用场景主要包括医院各科室"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "零售药店",
+        "evidence_span": "零售药店"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医药流通企业",
+        "evidence_span": "医药流通企业药库"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国药控股湖北有限公司",
+        "evidence_span": "与国药控股湖北有限公司就湖北省基层医疗车项目签署相关医疗设备供货合同"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:05:27"
+}

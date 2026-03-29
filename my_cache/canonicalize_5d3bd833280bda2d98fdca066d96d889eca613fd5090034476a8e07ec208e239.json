@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:53:12", "result": {"span_uid": "7c539bac6d70", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "medium", "reason": "该片段是市场战略方向，属于主观或计划性表述，无法形成稳定、独立的知识块，且语义重心偏向趋势性信息，但不够具体和稳定，因此丢弃。"}}

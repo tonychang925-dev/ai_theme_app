@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:58:48", "result": {"chunk_id": "9293bd79f1ac", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落主要描述Alphabet与CFS公司的商业化电力采购事件，属于具体动态，但结尾部分提到了核聚变作为太阳与恒星的能源机制以及尚未商业化应用的知识，混合了事件和静态说明，具有潜在知识价值。"}}

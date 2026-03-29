@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "68ecf3971097", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要基于媒体报道描述具体进口数据（时间、数量、价值、同比变化），属于新闻事件，没有明显可沉淀的稳定知识，因此判为pure_event。"}}

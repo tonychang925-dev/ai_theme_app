@@ -1,0 +1,569 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "海港码头货物的装卸",
+      "evidence_span": "核心业务为海港码头货物的装卸、堆存及港务管理业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "海港码头货物的堆存",
+      "evidence_span": "核心业务为海港码头货物的装卸、堆存及港务管理业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "港务管理业务",
+      "evidence_span": "核心业务为海港码头货物的装卸、堆存及港务管理业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "码头",
+      "evidence_span": "码头和其他港口设施经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其他港口设施经营",
+      "evidence_span": "码头和其他港口设施经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "港口货物装卸",
+      "evidence_span": "港口货物装卸、仓储服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "仓储服务",
+      "evidence_span": "港口货物装卸、仓储服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "船舶港口服务业务经营",
+      "evidence_span": "船舶港口服务业务经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "普通货运",
+      "evidence_span": "普通货运"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "港口机械",
+      "evidence_span": "港口机械、设施、设备租赁、维修服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设施",
+      "evidence_span": "港口机械、设施、设备租赁、维修服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设备租赁",
+      "evidence_span": "港口机械、设施、设备租赁、维修服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设备维修服务",
+      "evidence_span": "港口机械、设施、设备租赁、维修服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "机械设备",
+      "evidence_span": "机械设备、电器设备制造、安装、维修"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电器设备制造",
+      "evidence_span": "机械设备、电器设备制造、安装、维修"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电器设备安装",
+      "evidence_span": "机械设备、电器设备制造、安装、维修"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电器设备维修",
+      "evidence_span": "机械设备、电器设备制造、安装、维修"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工索具制造",
+      "evidence_span": "工索具制造、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工索具销售",
+      "evidence_span": "工索具制造、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "散货包装服务",
+      "evidence_span": "散货包装服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "实业投资",
+      "evidence_span": "实业投资"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国际枢纽海港",
+      "evidence_span": "国际枢纽海港"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国沿海主要港口之一",
+      "evidence_span": "全国沿海27个主要港口之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "一带一路交汇点建设的核心区和战略先导区",
+      "evidence_span": "一带一路交汇点建设的核心区和战略先导区"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁矿石装卸",
+      "evidence_span": "作业的货种主要有铁矿石"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤炭装卸",
+      "evidence_span": "作业的货种主要有...煤炭"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有色矿装卸",
+      "evidence_span": "作业的货种主要有...有色矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "红土镍矿装卸",
+      "evidence_span": "作业的货种主要有...红土镍矿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢铁装卸",
+      "evidence_span": "作业的货种主要有...钢铁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "胶合板装卸",
+      "evidence_span": "作业的货种主要有...胶合板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机械设备装卸",
+      "evidence_span": "作业的货种主要有...机械设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粮食装卸",
+      "evidence_span": "作业的货种主要有...粮食"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氧化铝装卸",
+      "evidence_span": "作业的货种主要有...氧化铝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "焦炭装卸",
+      "evidence_span": "作业的货种主要有...焦炭"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集装箱装卸",
+      "evidence_span": "集装箱专业化泊位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液体化工装卸",
+      "evidence_span": "液体化工等专业化泊位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "散化肥装卸",
+      "evidence_span": "散化肥等专业化泊位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中韩客货班轮航线",
+      "evidence_span": "控股经营两条中韩客货班轮航线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "万吨级以上泊位",
+      "evidence_span": "拥有万吨级以上泊位近40个"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "专业化泊位",
+      "evidence_span": "包括铁矿石、煤炭、氧化铝、散化肥、液体化工等专业化泊位"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集装箱专业化泊位",
+      "evidence_span": "集装箱专业化泊位"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集装箱客滚码头",
+      "evidence_span": "集装箱客滚码头"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大、中、小泊位布局合理",
+      "evidence_span": "大、中、小泊位布局合理、配套齐全"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "1万吨级至20万吨级船型靠泊作业",
+      "evidence_span": "可适应自1万吨级至20万吨级等多种船型靠泊作业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "近200万平方米场地和仓库",
+      "evidence_span": "拥有近200万平方米场地和仓库"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "先进港口作业设备",
+      "evidence_span": "配备了先进港口作业设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "健全的网格化集疏运体系",
+      "evidence_span": "健全的网格化集疏运体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电气化铁路线",
+      "evidence_span": "陇海兰新铁路连云港至阿拉山口全长4,100公里的铁路线全部实现了电气化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海铁联运集疏港",
+      "evidence_span": "海铁联运集疏港的需求"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国际远洋和近洋班轮航线",
+      "evidence_span": "开辟了多条国际远洋和近洋班轮、集装箱航线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "集装箱航线",
+      "evidence_span": "开辟了多条国际远洋和近洋班轮、集装箱航线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海河联运",
+      "evidence_span": "海河、海铁等联运方式"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路交汇点建设",
+      "evidence_span": "一带一路交汇点建设的核心区和战略先导区"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "陆海联运",
+      "evidence_span": "陆海联运、双向开放是港口的最大优势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双向开放",
+      "evidence_span": "陆海联运、双向开放是港口的最大优势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "丝绸之路经济带",
+      "evidence_span": "港口陆上货运班列联通丝绸之路经济带沿线主要节点城市"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海上丝绸之路",
+      "evidence_span": "海上班轮航线覆盖了海上丝绸之路各沿途国家和地区"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "中国（江苏）自由贸易试验区连云港片区",
+      "evidence_span": "中国（江苏）自由贸易试验区连云港片区的重要组成部分"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "海港码头货物的装卸",
+        "evidence_span": "核心业务为海港码头货物的装卸、堆存及港务管理业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "海港码头货物的堆存",
+        "evidence_span": "核心业务为海港码头货物的装卸、堆存及港务管理业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "港务管理业务",
+        "evidence_span": "核心业务为海港码头货物的装卸、堆存及港务管理业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "码头和其他港口设施经营",
+        "evidence_span": "码头和其他港口设施经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "港口货物装卸",
+        "evidence_span": "港口货物装卸、仓储服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "仓储服务",
+        "evidence_span": "港口货物装卸、仓储服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "船舶港口服务业务经营",
+        "evidence_span": "船舶港口服务业务经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "普通货运",
+        "evidence_span": "普通货运"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "港口机械、设施、设备租赁",
+        "evidence_span": "港口机械、设施、设备租赁、维修服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "港口机械、设施、设备维修服务",
+        "evidence_span": "港口机械、设施、设备租赁、维修服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机械设备、电器设备制造",
+        "evidence_span": "机械设备、电器设备制造、安装、维修"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机械设备、电器设备安装",
+        "evidence_span": "机械设备、电器设备制造、安装、维修"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机械设备、电器设备维修",
+        "evidence_span": "机械设备、电器设备制造、安装、维修"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工索具制造",
+        "evidence_span": "工索具制造、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工索具销售",
+        "evidence_span": "工索具制造、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "散货包装服务",
+        "evidence_span": "散货包装服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "实业投资",
+        "evidence_span": "实业投资"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国际枢纽海港",
+        "evidence_span": "国际枢纽海港"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国沿海主要港口之一",
+        "evidence_span": "全国沿海27个主要港口之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "一带一路交汇点建设的核心区和战略先导区",
+        "evidence_span": "一带一路交汇点建设的核心区和战略先导区"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁矿石装卸",
+        "evidence_span": "作业的货种主要有铁矿石"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤炭装卸",
+        "evidence_span": "作业的货种主要有...煤炭"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有色矿装卸",
+        "evidence_span": "作业的货种主要有...有色矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "红土镍矿装卸",
+        "evidence_span": "作业的货种主要有...红土镍矿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢铁装卸",
+        "evidence_span": "作业的货种主要有...钢铁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "胶合板装卸",
+        "evidence_span": "作业的货种主要有...胶合板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机械设备装卸",
+        "evidence_span": "作业的货种主要有...机械设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粮食装卸",
+        "evidence_span": "作业的货种主要有...粮食"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氧化铝装卸",
+        "evidence_span": "作业的货种主要有...氧化铝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "焦炭装卸",
+        "evidence_span": "作业的货种主要有...焦炭"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集装箱装卸",
+        "evidence_span": "集装箱专业化泊位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液体化工装卸",
+        "evidence_span": "液体化工等专业化泊位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "散化肥装卸",
+        "evidence_span": "散化肥等专业化泊位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中韩客货班轮航线",
+        "evidence_span": "控股经营两条中韩客货班轮航线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "万吨级以上泊位",
+        "evidence_span": "拥有万吨级以上泊位近40个"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "专业化泊位",
+        "evidence_span": "包括铁矿石、煤炭、氧化铝、散化肥、液体化工等专业化泊位"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集装箱专业化泊位",
+        "evidence_span": "集装箱专业化泊位"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集装箱客滚码头",
+        "evidence_span": "集装箱客滚码头"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大、中、小泊位布局合理",
+        "evidence_span": "大、中、小泊位布局合理、配套齐全"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "1万吨级至20万吨级船型靠泊作业",
+        "evidence_span": "可适应自1万吨级至20万吨级等多种船型靠泊作业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "近200万平方米场地和仓库",
+        "evidence_span": "拥有近200万平方米场地和仓库"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "先进港口作业设备",
+        "evidence_span": "配备了先进港口作业设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "健全的网格化集疏运体系",
+        "evidence_span": "健全的网格化集疏运体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电气化铁路线",
+        "evidence_span": "陇海兰新铁路连云港至阿拉山口全长4,100公里的铁路线全部实现了电气化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海铁联运集疏港",
+        "evidence_span": "海铁联运集疏港的需求"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国际远洋和近洋班轮航线",
+        "evidence_span": "开辟了多条国际远洋和近洋班轮、集装箱航线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "集装箱航线",
+        "evidence_span": "开辟了多条国际远洋和近洋班轮、集装箱航线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海河联运",
+        "evidence_span": "海河、海铁等联运方式"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路交汇点建设",
+        "evidence_span": "一带一路交汇点建设的核心区和战略先导区"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "陆海联运",
+        "evidence_span": "陆海联运、双向开放是港口的最大优势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双向开放",
+        "evidence_span": "陆海联运、双向开放是港口的最大优势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "丝绸之路经济带",
+        "evidence_span": "港口陆上货运班列联通丝绸之路经济带沿线主要节点城市"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海上丝绸之路",
+        "evidence_span": "海上班轮航线覆盖了海上丝绸之路各沿途国家和地区"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "中国（江苏）自由贸易试验区连云港片区",
+        "evidence_span": "中国（江苏）自由贸易试验区连云港片区的重要组成部分"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:06:58"
+}

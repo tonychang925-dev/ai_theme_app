@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "2595fd1e2cc4", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落聚焦于浙江省政府印发措施并提出发展目标的事件，没有涉及低空经济本身的静态知识，属于纯事件描述。"}}

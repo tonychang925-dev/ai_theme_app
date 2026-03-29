@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型PVC复合材料地板研发",
+      "evidence_span": "主营业务为新型PVC复合材料地板的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型PVC复合材料地板生产",
+      "evidence_span": "主营业务为新型PVC复合材料地板的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型PVC复合材料地板销售",
+      "evidence_span": "主营业务为新型PVC复合材料地板的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内PVC复合地板龙头厂商",
+      "evidence_span": "新股精要—国内PVC复合地板龙头厂商天振股份"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "PVC地板行业龙头企业",
+      "evidence_span": "公司在行业内深耕多年，目前已成长为国内PVC地板行业龙头企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "ODM模式PVC地板生产企业",
+      "evidence_span": "公司属于该类模式"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "木塑复合地板",
+      "evidence_span": "具体产品包括木塑复合地板（WPC地板）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石塑复合地板",
+      "evidence_span": "石塑复合地板（SPC地板）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻镁地板",
+      "evidence_span": "玻镁地板（MGO地板）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "塑晶地板",
+      "evidence_span": "塑晶地板（LVT地板）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "WPC发泡芯板二次定型生产工艺技术",
+      "evidence_span": "WPC发泡芯板二次定型生产工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复合地板静音防水工艺技术",
+      "evidence_span": "复合地板静音防水工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SPC挤塑一次成型工艺技术",
+      "evidence_span": "SPC挤塑一次成型工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PVC地板在线对花技术",
+      "evidence_span": "PVC地板在线对花技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LVT地板在线贴合技术",
+      "evidence_span": "LVT地板在线贴合技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动计量石塑配混料操作系统",
+      "evidence_span": "自动计量石塑配混料操作系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "SHAW",
+      "evidence_span": "与SHAW、TARKETT、MANNINGTON、LUMBER LIQUIDATORS和MOHAWK等全球知名的一线地板品牌商、建材零售商建立了长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TARKETT",
+      "evidence_span": "与SHAW、TARKETT、MANNINGTON、LUMBER LIQUIDATORS和MOHAWK等全球知名的一线地板品牌商、建材零售商建立了长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "MANNINGTON",
+      "evidence_span": "与SHAW、TARKETT、MANNINGTON、LUMBER LIQUIDATORS和MOHAWK等全球知名的一线地板品牌商、建材零售商建立了长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LUMBER LIQUIDATORS",
+      "evidence_span": "与SHAW、TARKETT、MANNINGTON、LUMBER LIQUIDATORS和MOHAWK等全球知名的一线地板品牌商、建材零售商建立了长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "MOHAWK",
+      "evidence_span": "与SHAW、TARKETT、MANNINGTON、LUMBER LIQUIDATORS和MOHAWK等全球知名的一线地板品牌商、建材零售商建立了长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Home Depot",
+      "evidence_span": "通过HomeLegendLLC进入全球排名前列的家居建材用品零售商Home Depot（世界 500强企业）的供应体系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色环保",
+      "evidence_span": "PVC地板作为一种新型绿色环保地面装饰材料"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型PVC复合材料地板研发",
+        "evidence_span": "主营业务为新型PVC复合材料地板的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型PVC复合材料地板生产",
+        "evidence_span": "主营业务为新型PVC复合材料地板的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型PVC复合材料地板销售",
+        "evidence_span": "主营业务为新型PVC复合材料地板的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内PVC复合地板龙头厂商",
+        "evidence_span": "新股精要—国内PVC复合地板龙头厂商天振股份"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "PVC地板行业龙头企业",
+        "evidence_span": "公司在行业内深耕多年，目前已成长为国内PVC地板行业龙头企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "ODM模式PVC地板生产企业",
+        "evidence_span": "公司属于该类模式"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "木塑复合地板",
+        "evidence_span": "具体产品包括木塑复合地板（WPC地板）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石塑复合地板",
+        "evidence_span": "石塑复合地板（SPC地板）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻镁地板",
+        "evidence_span": "玻镁地板（MGO地板）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "塑晶地板",
+        "evidence_span": "塑晶地板（LVT地板）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "WPC发泡芯板二次定型生产工艺技术",
+        "evidence_span": "WPC发泡芯板二次定型生产工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复合地板静音防水工艺技术",
+        "evidence_span": "复合地板静音防水工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SPC挤塑一次成型工艺技术",
+        "evidence_span": "SPC挤塑一次成型工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PVC地板在线对花技术",
+        "evidence_span": "PVC地板在线对花技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LVT地板在线贴合技术",
+        "evidence_span": "LVT地板在线贴合技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动计量石塑配混料操作系统",
+        "evidence_span": "自动计量石塑配混料操作系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "SHAW",
+        "evidence_span": "与SHAW、TARKETT、MANNINGTON、LUMBER LIQUIDATORS和MOHAWK等全球知名的一线地板品牌商、建材零售商建立了长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TARKETT",
+        "evidence_span": "与SHAW、TARKETT、MANNINGTON、LUMBER LIQUIDATORS和MOHAWK等全球知名的一线地板品牌商、建材零售商建立了长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "MANNINGTON",
+        "evidence_span": "与SHAW、TARKETT、MANNINGTON、LUMBER LIQUIDATORS和MOHAWK等全球知名的一线地板品牌商、建材零售商建立了长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LUMBER LIQUIDATORS",
+        "evidence_span": "与SHAW、TARKETT、MANNINGTON、LUMBER LIQUIDATORS和MOHAWK等全球知名的一线地板品牌商、建材零售商建立了长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "MOHAWK",
+        "evidence_span": "与SHAW、TARKETT、MANNINGTON、LUMBER LIQUIDATORS和MOHAWK等全球知名的一线地板品牌商、建材零售商建立了长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Home Depot",
+        "evidence_span": "通过HomeLegendLLC进入全球排名前列的家居建材用品零售商Home Depot（世界 500强企业）的供应体系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色环保",
+        "evidence_span": "PVC地板作为一种新型绿色环保地面装饰材料"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:29:38"
+}

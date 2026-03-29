@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "8364ff474297", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述国家金融监管总局发布风险提示的事件，属于监管动态。同时，它涉及新型电信网络诈骗（如“AI换脸拟声”类诈骗）这一安全防护与监管题材的关键要素，可能含有可用于题材本体构建的稳定知识（如诈骗类型和防范措施），因此混合了事件和知识。"}}

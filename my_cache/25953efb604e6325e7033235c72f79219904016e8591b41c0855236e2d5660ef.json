@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "aed04adfae9a", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段是中国商飞的声明，包含中国有望成为全球最大航空运输市场的预测性知识，但以事件形式发布，混合了静态知识和事件元素。"}}

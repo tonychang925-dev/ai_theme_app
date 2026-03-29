@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "3980af8cc4ff", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落详细说明了国内勘察设计单位的分类（部级院、省级院、市级院）及其特点、业务范围和历史背景，属于静态描述行业结构和关键要素，没有事件信息。"}}

@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "文化传媒",
+      "evidence_span": "文化传媒板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "机械制造",
+      "evidence_span": "机械制造板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源",
+      "evidence_span": "新能源板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工业金属管件制造商",
+      "evidence_span": "国内最大的工业金属管件制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "金属管件生产企业",
+      "evidence_span": "目前国内规模较大的金属管件生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属管件",
+      "evidence_span": "金属管件、法兰、管系、压力容器的生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "法兰",
+      "evidence_span": "金属管件、法兰、管系、压力容器的生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "管系",
+      "evidence_span": "金属管件、法兰、管系、压力容器的生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压力容器",
+      "evidence_span": "金属管件、法兰、管系、压力容器的生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电视剧",
+      "evidence_span": "电视剧、电影等项目的投资、策划、制作、发行、营销及其衍生品开发业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电影",
+      "evidence_span": "电视剧、电影等项目的投资、策划、制作、发行、营销及其衍生品开发业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络剧",
+      "evidence_span": "在电视剧、电影、网络剧等项目上主要通过投资、制作、发行、销售影视项目来获取收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "屋顶分布式光伏电站",
+      "evidence_span": "光伏电站的开发、投资、建设及运营"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大口径管件",
+      "evidence_span": "大口径管件产品已在国内外多个重点项目上应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新型复合材料管件",
+      "evidence_span": "新型复合材料管件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "标准化管系模块",
+      "evidence_span": "标准化管系模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海工管件（系）",
+      "evidence_span": "海工管件（系）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "特殊材料管件",
+      "evidence_span": "特殊材料管件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "定制管件",
+      "evidence_span": "定制管件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "中石化"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "中石油"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中海油",
+      "evidence_span": "中海油"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源转型",
+      "evidence_span": "迈出向新能源转型发展的第一步"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "文化传媒",
+        "evidence_span": "文化传媒板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机械制造",
+        "evidence_span": "机械制造板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源",
+        "evidence_span": "新能源板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工业金属管件制造商",
+        "evidence_span": "国内最大的工业金属管件制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "金属管件生产企业",
+        "evidence_span": "目前国内规模较大的金属管件生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属管件",
+        "evidence_span": "金属管件、法兰、管系、压力容器的生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "法兰",
+        "evidence_span": "金属管件、法兰、管系、压力容器的生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "管系",
+        "evidence_span": "金属管件、法兰、管系、压力容器的生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压力容器",
+        "evidence_span": "金属管件、法兰、管系、压力容器的生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电视剧",
+        "evidence_span": "电视剧、电影等项目的投资、策划、制作、发行、营销及其衍生品开发业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电影",
+        "evidence_span": "电视剧、电影等项目的投资、策划、制作、发行、营销及其衍生品开发业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络剧",
+        "evidence_span": "在电视剧、电影、网络剧等项目上主要通过投资、制作、发行、销售影视项目来获取收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "屋顶分布式光伏电站",
+        "evidence_span": "光伏电站的开发、投资、建设及运营"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大口径管件",
+        "evidence_span": "大口径管件产品已在国内外多个重点项目上应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新型复合材料管件",
+        "evidence_span": "新型复合材料管件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "标准化管系模块",
+        "evidence_span": "标准化管系模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海工管件（系）",
+        "evidence_span": "海工管件（系）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "特殊材料管件",
+        "evidence_span": "特殊材料管件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "定制管件",
+        "evidence_span": "定制管件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "中石化"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "中石油"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中海油",
+        "evidence_span": "中海油"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源转型",
+        "evidence_span": "迈出向新能源转型发展的第一步"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:53:38"
+}

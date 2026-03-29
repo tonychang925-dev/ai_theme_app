@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "8606f88d4c40", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含消费者对预制菜的认知度、购买意愿和顾虑等有价值知识，但基于《2024北京餐饮业观察报告》这一具体调研事件，混有时间性数据，需要进一步裁决以提取稳定知识。"}}

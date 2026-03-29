@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "96b8861b6941", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "段落基于智库报告，描述了EUV光刻机研发、商业公司主导、体制转变等事件进展（如最快2025试生产），但同时也隐含了半导体产业国产替代的结构性知识（如由科研院所转向商业公司主导，央企协调），知识边界不清，混有事件元素。"}}

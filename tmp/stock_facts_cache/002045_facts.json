@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "音响电声类业务",
+      "evidence_span": "公司主营业务以音响电声类业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电池业务",
+      "evidence_span": "锂电池业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "VR",
+      "evidence_span": "VR/AR业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "AR业务",
+      "evidence_span": "VR/AR业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球电声制造领先企业",
+      "evidence_span": "全球电声制造领先企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "扬声器",
+      "evidence_span": "扬声器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蓝牙音箱",
+      "evidence_span": "蓝牙音箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Wi-Fi音箱",
+      "evidence_span": "Wi-Fi音箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电脑周边音响",
+      "evidence_span": "电脑周边音响"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能音箱",
+      "evidence_span": "智能音箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI音箱",
+      "evidence_span": "AI音箱业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车音响",
+      "evidence_span": "汽车音响业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂离子电池",
+      "evidence_span": "锂离子电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VR/AR声学组件",
+      "evidence_span": "VR/AR声学业务包括组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VR/AR声学整机",
+      "evidence_span": "VR/AR声学业务包括整机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传统耳机",
+      "evidence_span": "传统耳机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "soundbar",
+      "evidence_span": "soundbar"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI眼镜",
+      "evidence_span": "AI眼镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI耳机",
+      "evidence_span": "AI耳机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载音响系统",
+      "evidence_span": "车载音响系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "扬声器设计及制造经验",
+      "evidence_span": "积累了70余年扬声器设计及制造经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽车功放软硬件开发",
+      "evidence_span": "汽车功放软、硬件开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "音频算法研究",
+      "evidence_span": "音频算法研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统声学改制和调音",
+      "evidence_span": "系统声学改制和调音"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内外主要VR企业",
+      "evidence_span": "与国内外主要VR企业深度绑定"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "音响电声类业务",
+        "evidence_span": "公司主营业务以音响电声类业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电池业务",
+        "evidence_span": "锂电池业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "VR/AR业务",
+        "evidence_span": "VR/AR业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球电声制造领先企业",
+        "evidence_span": "全球电声制造领先企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "扬声器",
+        "evidence_span": "扬声器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蓝牙音箱",
+        "evidence_span": "蓝牙音箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Wi-Fi音箱",
+        "evidence_span": "Wi-Fi音箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电脑周边音响",
+        "evidence_span": "电脑周边音响"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能音箱",
+        "evidence_span": "智能音箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI音箱",
+        "evidence_span": "AI音箱业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车音响",
+        "evidence_span": "汽车音响业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂离子电池",
+        "evidence_span": "锂离子电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VR/AR声学组件",
+        "evidence_span": "VR/AR声学业务包括组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VR/AR声学整机",
+        "evidence_span": "VR/AR声学业务包括整机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传统耳机",
+        "evidence_span": "传统耳机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "soundbar",
+        "evidence_span": "soundbar"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI眼镜",
+        "evidence_span": "AI眼镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI耳机",
+        "evidence_span": "AI耳机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载音响系统",
+        "evidence_span": "车载音响系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "扬声器设计及制造经验",
+        "evidence_span": "积累了70余年扬声器设计及制造经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽车功放软硬件开发",
+        "evidence_span": "汽车功放软、硬件开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "音频算法研究",
+        "evidence_span": "音频算法研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统声学改制和调音",
+        "evidence_span": "系统声学改制和调音"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内外主要VR企业",
+        "evidence_span": "与国内外主要VR企业深度绑定"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:36:40"
+}

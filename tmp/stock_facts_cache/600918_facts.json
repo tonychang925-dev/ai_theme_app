@@ -1,0 +1,459 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资银行业务",
+      "evidence_span": "投资银行业务是为各类型企业和机构客户提供股票保荐与承销、债券承销、资产证券化、新三板推荐挂牌、并购重组等全业务链的一揽子综合金融服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "财富管理业务",
+      "evidence_span": "财富管理业务是为公司各类客户提供证券经纪服务、投资顾问服务、产品配置服务、综合金融服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "机构业务",
+      "evidence_span": "机构业务是指为各类机构客户提供的研究、托管外包、交易等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资业务",
+      "evidence_span": "投资业务是指公司以自有资金开展权益类证券、固定收益类证券、衍生金融工具等金融产品的交易和做市业务，以及通过全资子公司中泰创投开展的另类投资业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信用业务",
+      "evidence_span": "信用业务是为客户提供融资融券、股票质押式回购交易、约定购回式证券交易和上市公司股权激励行权融资等证券融资类业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产管理业务",
+      "evidence_span": "资产管理业务主要是通过全资子公司中泰资本、控股子公司中泰资管及参股公司万家基金开展的业务，包括私募投资基金管理、集合资产管理、单一资产管理、专项资产管理、公募基金管理等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "国际业务",
+      "evidence_span": "国际业务主要是通过全资子公司中泰国际在香港开展企业融资、跨境及结构性投融资、财富管理和经纪、资产管理、固定收益产品销售及交易、投资、研究和机构销售等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "期货业务",
+      "evidence_span": "期货业务主要通过控股子公司中泰期货开展为客户提供与期货及衍生品有关的产品和服务，包括期货经纪、期货交易咨询及资产管理"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国大型综合类券商",
+      "evidence_span": "全国大型综合类券商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合类证券公司",
+      "evidence_span": "公司是经中国证监会批准设立的综合类证券公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "股票保荐与承销",
+      "evidence_span": "投资银行业务是为各类型企业和机构客户提供股票保荐与承销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "债券承销",
+      "evidence_span": "投资银行业务是为各类型企业和机构客户提供债券承销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产证券化",
+      "evidence_span": "投资银行业务是为各类型企业和机构客户提供资产证券化"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新三板推荐挂牌",
+      "evidence_span": "投资银行业务是为各类型企业和机构客户提供新三板推荐挂牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "并购重组",
+      "evidence_span": "投资银行业务是为各类型企业和机构客户提供并购重组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券经纪服务",
+      "evidence_span": "财富管理业务是为公司各类客户提供证券经纪服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "投资顾问服务",
+      "evidence_span": "财富管理业务是为公司各类客户提供投资顾问服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产品配置服务",
+      "evidence_span": "财富管理业务是为公司各类客户提供产品配置服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合金融服务",
+      "evidence_span": "财富管理业务是为公司各类客户提供综合金融服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "研究服务",
+      "evidence_span": "机构业务是指为各类机构客户提供的研究"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "托管外包",
+      "evidence_span": "机构业务是指为各类机构客户提供的托管外包"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交易业务",
+      "evidence_span": "机构业务是指为各类机构客户提供的交易等业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融资融券",
+      "evidence_span": "信用业务是为客户提供融资融券"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "股票质押式回购交易",
+      "evidence_span": "信用业务是为客户提供股票质押式回购交易"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "约定购回式证券交易",
+      "evidence_span": "信用业务是为客户提供约定购回式证券交易"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "上市公司股权激励行权融资",
+      "evidence_span": "信用业务是为客户提供上市公司股权激励行权融资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "私募投资基金管理",
+      "evidence_span": "资产管理业务主要是通过全资子公司中泰资本、控股子公司中泰资管及参股公司万家基金开展的业务，包括私募投资基金管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集合资产管理",
+      "evidence_span": "资产管理业务主要是通过全资子公司中泰资本、控股子公司中泰资管及参股公司万家基金开展的业务，包括集合资产管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单一资产管理",
+      "evidence_span": "资产管理业务主要是通过全资子公司中泰资本、控股子公司中泰资管及参股公司万家基金开展的业务，包括单一资产管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专项资产管理",
+      "evidence_span": "资产管理业务主要是通过全资子公司中泰资本、控股子公司中泰资管及参股公司万家基金开展的业务，包括专项资产管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公募基金管理",
+      "evidence_span": "资产管理业务主要是通过全资子公司中泰资本、控股子公司中泰资管及参股公司万家基金开展的业务，包括公募基金管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "期货经纪",
+      "evidence_span": "期货业务主要通过控股子公司中泰期货开展为客户提供与期货及衍生品有关的产品和服务，包括期货经纪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "期货交易咨询",
+      "evidence_span": "期货业务主要通过控股子公司中泰期货开展为客户提供与期货及衍生品有关的产品和服务，包括期货交易咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产管理",
+      "evidence_span": "期货业务主要通过控股子公司中泰期货开展为客户提供与期货及衍生品有关的产品和服务，包括资产管理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "XTP系统",
+      "evidence_span": "凭借公司XTP系统在量化交易领域的优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "极致交易系统XTP",
+      "evidence_span": "打造了极致交易系统XTP"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "齐富通APP",
+      "evidence_span": "打造了齐富通APP"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山东省属国企",
+      "evidence_span": "进一步加强对省属国企的服务和覆盖力度"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "央企客户",
+      "evidence_span": "公司加大央企客户的开拓和服务力度"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "商业银行",
+      "evidence_span": "不断深化与商业银行、保险公司等大型金融机构之间的业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保险公司",
+      "evidence_span": "不断深化与商业银行、保险公司等大型金融机构之间的业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公募基金",
+      "evidence_span": "新增拓展公私募、资管、银行等各类型客户153家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "私募基金",
+      "evidence_span": "新增拓展公私募、资管、银行等各类型客户153家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "资管机构",
+      "evidence_span": "新增拓展公私募、资管、银行等各类型客户153家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "银行",
+      "evidence_span": "新增拓展公私募、资管、银行等各类型客户153家"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资银行业务",
+        "evidence_span": "投资银行业务是为各类型企业和机构客户提供股票保荐与承销、债券承销、资产证券化、新三板推荐挂牌、并购重组等全业务链的一揽子综合金融服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "财富管理业务",
+        "evidence_span": "财富管理业务是为公司各类客户提供证券经纪服务、投资顾问服务、产品配置服务、综合金融服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机构业务",
+        "evidence_span": "机构业务是指为各类机构客户提供的研究、托管外包、交易等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资业务",
+        "evidence_span": "投资业务是指公司以自有资金开展权益类证券、固定收益类证券、衍生金融工具等金融产品的交易和做市业务，以及通过全资子公司中泰创投开展的另类投资业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信用业务",
+        "evidence_span": "信用业务是为客户提供融资融券、股票质押式回购交易、约定购回式证券交易和上市公司股权激励行权融资等证券融资类业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产管理业务",
+        "evidence_span": "资产管理业务主要是通过全资子公司中泰资本、控股子公司中泰资管及参股公司万家基金开展的业务，包括私募投资基金管理、集合资产管理、单一资产管理、专项资产管理、公募基金管理等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "国际业务",
+        "evidence_span": "国际业务主要是通过全资子公司中泰国际在香港开展企业融资、跨境及结构性投融资、财富管理和经纪、资产管理、固定收益产品销售及交易、投资、研究和机构销售等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "期货业务",
+        "evidence_span": "期货业务主要通过控股子公司中泰期货开展为客户提供与期货及衍生品有关的产品和服务，包括期货经纪、期货交易咨询及资产管理"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国大型综合类券商",
+        "evidence_span": "全国大型综合类券商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合类证券公司",
+        "evidence_span": "公司是经中国证监会批准设立的综合类证券公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "股票保荐与承销",
+        "evidence_span": "投资银行业务是为各类型企业和机构客户提供股票保荐与承销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "债券承销",
+        "evidence_span": "投资银行业务是为各类型企业和机构客户提供债券承销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产证券化",
+        "evidence_span": "投资银行业务是为各类型企业和机构客户提供资产证券化"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新三板推荐挂牌",
+        "evidence_span": "投资银行业务是为各类型企业和机构客户提供新三板推荐挂牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "并购重组",
+        "evidence_span": "投资银行业务是为各类型企业和机构客户提供并购重组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券经纪服务",
+        "evidence_span": "财富管理业务是为公司各类客户提供证券经纪服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "投资顾问服务",
+        "evidence_span": "财富管理业务是为公司各类客户提供投资顾问服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产品配置服务",
+        "evidence_span": "财富管理业务是为公司各类客户提供产品配置服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合金融服务",
+        "evidence_span": "财富管理业务是为公司各类客户提供综合金融服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "研究服务",
+        "evidence_span": "机构业务是指为各类机构客户提供的研究"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "托管外包",
+        "evidence_span": "机构业务是指为各类机构客户提供的托管外包"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交易业务",
+        "evidence_span": "机构业务是指为各类机构客户提供的交易等业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融资融券",
+        "evidence_span": "信用业务是为客户提供融资融券"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "股票质押式回购交易",
+        "evidence_span": "信用业务是为客户提供股票质押式回购交易"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "约定购回式证券交易",
+        "evidence_span": "信用业务是为客户提供约定购回式证券交易"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "上市公司股权激励行权融资",
+        "evidence_span": "信用业务是为客户提供上市公司股权激励行权融资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "私募投资基金管理",
+        "evidence_span": "资产管理业务主要是通过全资子公司中泰资本、控股子公司中泰资管及参股公司万家基金开展的业务，包括私募投资基金管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集合资产管理",
+        "evidence_span": "资产管理业务主要是通过全资子公司中泰资本、控股子公司中泰资管及参股公司万家基金开展的业务，包括集合资产管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单一资产管理",
+        "evidence_span": "资产管理业务主要是通过全资子公司中泰资本、控股子公司中泰资管及参股公司万家基金开展的业务，包括单一资产管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专项资产管理",
+        "evidence_span": "资产管理业务主要是通过全资子公司中泰资本、控股子公司中泰资管及参股公司万家基金开展的业务，包括专项资产管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公募基金管理",
+        "evidence_span": "资产管理业务主要是通过全资子公司中泰资本、控股子公司中泰资管及参股公司万家基金开展的业务，包括公募基金管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "期货经纪",
+        "evidence_span": "期货业务主要通过控股子公司中泰期货开展为客户提供与期货及衍生品有关的产品和服务，包括期货经纪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "期货交易咨询",
+        "evidence_span": "期货业务主要通过控股子公司中泰期货开展为客户提供与期货及衍生品有关的产品和服务，包括期货交易咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产管理",
+        "evidence_span": "期货业务主要通过控股子公司中泰期货开展为客户提供与期货及衍生品有关的产品和服务，包括资产管理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "XTP系统",
+        "evidence_span": "凭借公司XTP系统在量化交易领域的优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "极致交易系统XTP",
+        "evidence_span": "打造了极致交易系统XTP"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "齐富通APP",
+        "evidence_span": "打造了齐富通APP"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山东省属国企",
+        "evidence_span": "进一步加强对省属国企的服务和覆盖力度"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "央企客户",
+        "evidence_span": "公司加大央企客户的开拓和服务力度"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "商业银行",
+        "evidence_span": "不断深化与商业银行、保险公司等大型金融机构之间的业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保险公司",
+        "evidence_span": "不断深化与商业银行、保险公司等大型金融机构之间的业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公募基金",
+        "evidence_span": "新增拓展公私募、资管、银行等各类型客户153家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "私募基金",
+        "evidence_span": "新增拓展公私募、资管、银行等各类型客户153家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "资管机构",
+        "evidence_span": "新增拓展公私募、资管、银行等各类型客户153家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "银行",
+        "evidence_span": "新增拓展公私募、资管、银行等各类型客户153家"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:49:52"
+}

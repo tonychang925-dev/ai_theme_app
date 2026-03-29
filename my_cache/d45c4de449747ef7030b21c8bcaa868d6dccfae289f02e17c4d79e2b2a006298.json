@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:41:18", "result": {"chunk_id": "778bfd6d685b", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落主要描述鲜啤福鹿家关联公司的静态信息，包括成立时间、法定代表人、注册资本和经营范围，这些是题材的核心构成要素，不涉及事件或动态变化，属于纯静态说明。"}}

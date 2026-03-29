@@ -1,0 +1,89 @@
+{
+  "event_id": "evt_fbc14c988eab",
+  "theme_name": "液冷数据中心",
+  "event_type": "行业观点",
+  "entities": [
+    {
+      "name": "英伟达",
+      "type": "公司",
+      "normalized": "英伟达"
+    },
+    {
+      "name": "SanDisk",
+      "type": "公司",
+      "normalized": "SanDisk"
+    },
+    {
+      "name": "西部数据",
+      "type": "公司",
+      "normalized": "西部数据"
+    },
+    {
+      "name": "美光科技",
+      "type": "公司",
+      "normalized": "美光科技"
+    },
+    {
+      "name": "数据中心",
+      "type": "行业",
+      "normalized": "数据中心"
+    },
+    {
+      "name": "芯片",
+      "type": "产品",
+      "normalized": "芯片"
+    }
+  ],
+  "summary": "英伟达CFO表示数据中心芯片需求增长，相关存储芯片公司股价大涨。",
+  "causal_claim": [
+    "数据中心芯片需求增长",
+    "存储芯片需求提升",
+    "存储芯片公司股价上涨"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "数据中心芯片需求",
+      "芯片需求增长"
+    ],
+    "normalized_terms": {
+      "英伟达": "英伟达",
+      "SanDisk": "SanDisk",
+      "西部数据": "西部数据",
+      "美光科技": "美光科技",
+      "数据中心": "数据中心",
+      "芯片": "芯片"
+    },
+    "evidence_spans": [
+      {
+        "text": "英伟达首席财务官表示，数据中心芯片需求较此前预测的5000亿美元有所增长。",
+        "start": 0,
+        "end": 50
+      },
+      {
+        "text": "SanDisk收涨超27%，创去年2月份以来最大单日涨幅。",
+        "start": 51,
+        "end": 85
+      },
+      {
+        "text": "西部数据涨超16%，创逾五年来最大单日涨幅。",
+        "start": 86,
+        "end": 115
+      },
+      {
+        "text": "美光科技涨超10%，再创历史新高，总市值达到3865亿美元",
+        "start": 116,
+        "end": 150
+      }
+    ],
+    "core_concepts": [
+      "数据中心芯片需求",
+      "存储芯片",
+      "股价上涨"
+    ]
+  },
+  "severity_score": 0.7,
+  "confidence": 0.9,
+  "source_weight": 1.2,
+  "timestamp": null,
+  "raw_text": "英伟达首席财务官表示，数据中心芯片需求较此前预测的5000亿美元有所增长。SanDisk收涨超27%，创去年2月份以来最大单日涨幅。西部数据涨超16%，创逾五年来最大单日涨幅。美光科技涨超10%，再创历史新高，总市值达到3865亿美元（新闻来源：财联社）"
+}

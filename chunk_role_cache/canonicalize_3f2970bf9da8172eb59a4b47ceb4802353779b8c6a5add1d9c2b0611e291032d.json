@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:04:06", "result": {"span_uid": "c21e029186ee", "action": "rewrite", "canonical_text": "纳米压印光刻机是一种半导体制造设备，具有低能耗的特点。", "final_type": "related", "final_role": "光刻机类型与特性", "stability": "high", "reason": "去事件化改写，保留技术类型和能耗优势作为稳定知识，但具体公司交付事件被移除，使其更独立。"}}

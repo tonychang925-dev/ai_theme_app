@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "火力发电",
+      "evidence_span": "集火力发电、风力发电、供热、供汽、煤炭购销为一体的综合性区域基础能源公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "风力发电",
+      "evidence_span": "集火力发电、风力发电、供热、供汽、煤炭购销为一体的综合性区域基础能源公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "供热",
+      "evidence_span": "集火力发电、风力发电、供热、供汽、煤炭购销为一体的综合性区域基础能源公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "供汽",
+      "evidence_span": "集火力发电、风力发电、供热、供汽、煤炭购销为一体的综合性区域基础能源公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭购销",
+      "evidence_span": "集火力发电、风力发电、供热、供汽、煤炭购销为一体的综合性区域基础能源公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性区域基础能源公司",
+      "evidence_span": "集火力发电、风力发电、供热、供汽、煤炭购销为一体的综合性区域基础能源公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力",
+      "evidence_span": "公司主要产品为电力和热力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热力",
+      "evidence_span": "公司主要产品为电力和热力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热水",
+      "evidence_span": "公司生产的热水和蒸汽直接供给居民或单位用户"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸汽",
+      "evidence_span": "公司生产的热水和蒸汽直接供给居民或单位用户"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "风电项目全容量并网",
+      "evidence_span": "辽宁阜新娘及营子及辽宁阜新双山子风电项目已全容量并网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电网",
+      "evidence_span": "公司所发电量并入电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "居民用户",
+      "evidence_span": "公司生产的热水和蒸汽直接供给居民或单位用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "单位用户",
+      "evidence_span": "公司生产的热水和蒸汽直接供给居民或单位用户"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "火力发电",
+        "evidence_span": "集火力发电、风力发电、供热、供汽、煤炭购销为一体的综合性区域基础能源公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "风力发电",
+        "evidence_span": "集火力发电、风力发电、供热、供汽、煤炭购销为一体的综合性区域基础能源公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "供热",
+        "evidence_span": "集火力发电、风力发电、供热、供汽、煤炭购销为一体的综合性区域基础能源公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "供汽",
+        "evidence_span": "集火力发电、风力发电、供热、供汽、煤炭购销为一体的综合性区域基础能源公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭购销",
+        "evidence_span": "集火力发电、风力发电、供热、供汽、煤炭购销为一体的综合性区域基础能源公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性区域基础能源公司",
+        "evidence_span": "集火力发电、风力发电、供热、供汽、煤炭购销为一体的综合性区域基础能源公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力",
+        "evidence_span": "公司主要产品为电力和热力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热力",
+        "evidence_span": "公司主要产品为电力和热力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热水",
+        "evidence_span": "公司生产的热水和蒸汽直接供给居民或单位用户"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸汽",
+        "evidence_span": "公司生产的热水和蒸汽直接供给居民或单位用户"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "风电项目全容量并网",
+        "evidence_span": "辽宁阜新娘及营子及辽宁阜新双山子风电项目已全容量并网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电网",
+        "evidence_span": "公司所发电量并入电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "居民用户",
+        "evidence_span": "公司生产的热水和蒸汽直接供给居民或单位用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "单位用户",
+        "evidence_span": "公司生产的热水和蒸汽直接供给居民或单位用户"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:08:06"
+}

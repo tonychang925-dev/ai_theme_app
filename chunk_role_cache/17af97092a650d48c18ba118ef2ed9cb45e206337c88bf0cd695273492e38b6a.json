@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "8b23463f2fb6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含ASML对EUV技术扩展的预期，涉及半导体设备的技术知识（如EUV技术、光刻产品组合），但以公司动态形式呈现，属于混合事件和静态知识的候选内容。"}}

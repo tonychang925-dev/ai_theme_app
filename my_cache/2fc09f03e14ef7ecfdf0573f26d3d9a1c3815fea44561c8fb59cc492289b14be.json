@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "678b1489dc44", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落混合了事件（长江存储扩产、市场份额预测、生产线试运行时间）和潜在知识（半导体设备国产替代、存储与逻辑半导体的工艺差异、蚀刻和沉积工艺突破），这些知识可能对半导体产业构建有价值，但夹杂了时间性动态，需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "a57386554786", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含华为专利技术的静态说明（如四芯片封装设计、桥接技术、HBM集成等），这些是半导体设备领域的知识，但同时也涉及事件信息（华为申请专利、媒体报道、与台积电比较、台湾实体名单），因此属于混合内容。"}}

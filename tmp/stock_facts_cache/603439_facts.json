@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "中成药",
+      "evidence_span": "公司坚持以发展中成药为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "儿科用药",
+      "evidence_span": "覆盖儿科用药"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "呼吸系统用药",
+      "evidence_span": "覆盖呼吸系统用药"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "心脑血管疾病用药",
+      "evidence_span": "心脑血管疾病用药"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "现代化中药制药企业",
+      "evidence_span": "现代化中药制药企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家高新技术企业",
+      "evidence_span": "国家高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国民族特需商品定点生产企业",
+      "evidence_span": "全国民族特需商品定点生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "儿科咽喉用药的龙头企业",
+      "evidence_span": "儿科咽喉用药的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "贵州苗药传承者",
+      "evidence_span": "贵州三力贵州苗药传承者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "开喉剑喷雾剂（儿童型）",
+      "evidence_span": "开喉剑喷雾剂（儿童型）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "开喉剑喷雾剂系列产品",
+      "evidence_span": "开喉剑喷雾剂系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芪胶升白胶囊",
+      "evidence_span": "芪胶升白胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "妇科再造胶囊",
+      "evidence_span": "妇科再造胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "日舒安洗液",
+      "evidence_span": "日舒安洗液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄芪颗粒",
+      "evidence_span": "黄芪颗粒"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "苗药验方经验",
+      "evidence_span": "结合苗药验方经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "现代科学技术",
+      "evidence_span": "现代科学技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "儿童专科医院",
+      "evidence_span": "已覆盖国内超过 97%以上的儿童专科医院"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "呼吸系统疾病中成药市场将恢复并增长",
+      "evidence_span": "呼吸系统疾病中成药市场将恢复并增长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "儿科用药市场即将迎来新空间",
+      "evidence_span": "儿科用药市场即将迎来新空间"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "中成药",
+        "evidence_span": "公司坚持以发展中成药为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "儿科用药",
+        "evidence_span": "覆盖儿科用药"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "呼吸系统用药",
+        "evidence_span": "覆盖呼吸系统用药"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "心脑血管疾病用药",
+        "evidence_span": "心脑血管疾病用药"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "现代化中药制药企业",
+        "evidence_span": "现代化中药制药企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家高新技术企业",
+        "evidence_span": "国家高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国民族特需商品定点生产企业",
+        "evidence_span": "全国民族特需商品定点生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "儿科咽喉用药的龙头企业",
+        "evidence_span": "儿科咽喉用药的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "贵州苗药传承者",
+        "evidence_span": "贵州三力贵州苗药传承者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "开喉剑喷雾剂（儿童型）",
+        "evidence_span": "开喉剑喷雾剂（儿童型）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "开喉剑喷雾剂系列产品",
+        "evidence_span": "开喉剑喷雾剂系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芪胶升白胶囊",
+        "evidence_span": "芪胶升白胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "妇科再造胶囊",
+        "evidence_span": "妇科再造胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "日舒安洗液",
+        "evidence_span": "日舒安洗液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄芪颗粒",
+        "evidence_span": "黄芪颗粒"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "苗药验方经验",
+        "evidence_span": "结合苗药验方经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "现代科学技术",
+        "evidence_span": "现代科学技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "儿童专科医院",
+        "evidence_span": "已覆盖国内超过 97%以上的儿童专科医院"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "呼吸系统疾病中成药市场将恢复并增长",
+        "evidence_span": "呼吸系统疾病中成药市场将恢复并增长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "儿科用药市场即将迎来新空间",
+        "evidence_span": "儿科用药市场即将迎来新空间"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:23:12"
+}

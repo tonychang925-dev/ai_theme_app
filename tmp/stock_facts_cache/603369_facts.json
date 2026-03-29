@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "白酒生产",
+      "evidence_span": "公司以白酒生产和销售为主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "白酒销售",
+      "evidence_span": "公司以白酒生产和销售为主营业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "江苏省第二大白酒品牌",
+      "evidence_span": "是江苏省第二大白酒品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绵柔醇厚的中度浓香型白酒",
+      "evidence_span": "主打绵柔醇厚的中度浓香型白酒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国缘品牌",
+      "evidence_span": "拥有“国缘”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "今世缘品牌",
+      "evidence_span": "拥有“今世缘”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高沟品牌",
+      "evidence_span": "拥有“高沟”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国缘系列",
+      "evidence_span": "国缘系列主攻次高端与高端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "今世缘系列",
+      "evidence_span": "今世缘定位中端白酒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高沟系列",
+      "evidence_span": "高沟定位低端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国缘核心单品对开",
+      "evidence_span": "国缘核心单品对开"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国缘核心单品四开",
+      "evidence_span": "四开覆盖300~600元价格带"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国缘V系",
+      "evidence_span": "公司布局V系向高端战略性延伸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国缘K系",
+      "evidence_span": "发力K系强化次高端优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国缘雅系",
+      "evidence_span": "雅系补充百元价位带"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "典藏系列",
+      "evidence_span": "主导产品为典藏系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "典藏20年",
+      "evidence_span": "聚焦推广典藏20年"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "典藏30年",
+      "evidence_span": "战略培育典藏30年"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "典藏10年",
+      "evidence_span": "核心大单品典藏10年"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "典藏15年",
+      "evidence_span": "典藏15年占位省内250元价格带"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高沟品牌新品",
+      "evidence_span": "高沟品牌战略暨新品上市发布会隆重举行"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "优质酒酿造技改扩产",
+      "evidence_span": "启动6000吨优质酒酿造技改扩产项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "陶坛储存能力",
+      "evidence_span": "今世缘的陶坛储存能力达到了5万吨"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化立体仓储物流中心",
+      "evidence_span": "新建自动化立体仓储物流中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化灌装中心",
+      "evidence_span": "智能化灌装中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "陶坛酒库",
+      "evidence_span": "5万吨陶坛酒库"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化酿酒陈贮中心",
+      "evidence_span": "南厂区智能化酿酒陈贮中心项目"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "白酒婚庆联姻",
+      "evidence_span": "今世缘白酒婚庆联姻开启新篇章"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "次高端新锐",
+      "evidence_span": "今世缘缘自苏酒，次高端新锐"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "中国高端中度白酒",
+      "evidence_span": "创领“中国高端中度白酒”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "白酒生产",
+        "evidence_span": "公司以白酒生产和销售为主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "白酒销售",
+        "evidence_span": "公司以白酒生产和销售为主营业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "江苏省第二大白酒品牌",
+        "evidence_span": "是江苏省第二大白酒品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绵柔醇厚的中度浓香型白酒",
+        "evidence_span": "主打绵柔醇厚的中度浓香型白酒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国缘品牌",
+        "evidence_span": "拥有“国缘”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "今世缘品牌",
+        "evidence_span": "拥有“今世缘”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高沟品牌",
+        "evidence_span": "拥有“高沟”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国缘系列",
+        "evidence_span": "国缘系列主攻次高端与高端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "今世缘系列",
+        "evidence_span": "今世缘定位中端白酒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高沟系列",
+        "evidence_span": "高沟定位低端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国缘核心单品对开",
+        "evidence_span": "国缘核心单品对开"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国缘核心单品四开",
+        "evidence_span": "四开覆盖300~600元价格带"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国缘V系",
+        "evidence_span": "公司布局V系向高端战略性延伸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国缘K系",
+        "evidence_span": "发力K系强化次高端优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国缘雅系",
+        "evidence_span": "雅系补充百元价位带"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "典藏系列",
+        "evidence_span": "主导产品为典藏系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "典藏20年",
+        "evidence_span": "聚焦推广典藏20年"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "典藏30年",
+        "evidence_span": "战略培育典藏30年"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "典藏10年",
+        "evidence_span": "核心大单品典藏10年"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "典藏15年",
+        "evidence_span": "典藏15年占位省内250元价格带"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高沟品牌新品",
+        "evidence_span": "高沟品牌战略暨新品上市发布会隆重举行"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "优质酒酿造技改扩产",
+        "evidence_span": "启动6000吨优质酒酿造技改扩产项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "陶坛储存能力",
+        "evidence_span": "今世缘的陶坛储存能力达到了5万吨"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化立体仓储物流中心",
+        "evidence_span": "新建自动化立体仓储物流中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化灌装中心",
+        "evidence_span": "智能化灌装中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "陶坛酒库",
+        "evidence_span": "5万吨陶坛酒库"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化酿酒陈贮中心",
+        "evidence_span": "南厂区智能化酿酒陈贮中心项目"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "白酒婚庆联姻",
+        "evidence_span": "今世缘白酒婚庆联姻开启新篇章"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "次高端新锐",
+        "evidence_span": "今世缘缘自苏酒，次高端新锐"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "中国高端中度白酒",
+        "evidence_span": "创领“中国高端中度白酒”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:07:49"
+}

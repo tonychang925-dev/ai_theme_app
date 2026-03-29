@@ -1,0 +1,399 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "BIM平台软件",
+      "evidence_span": "公司是国内优秀的BIM 平台软件及行业数字化应用和运营的服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "行业数字化应用",
+      "evidence_span": "公司是国内优秀的BIM 平台软件及行业数字化应用和运营的服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运营服务",
+      "evidence_span": "公司是国内优秀的BIM 平台软件及行业数字化应用和运营的服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电力能源行业全产业链一体化信息化服务",
+      "evidence_span": "为电力能源行业提供全产业链一体化信息化服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "软件服务",
+      "evidence_span": "公司主营业务收入主要分为五大类，分别是软件服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务",
+      "evidence_span": "公司主营业务收入主要分为五大类，分别是...技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "软件销售",
+      "evidence_span": "公司主营业务收入主要分为五大类，分别是...软件销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "硬件销售",
+      "evidence_span": "公司主营业务收入主要分为五大类，分别是...硬件销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建造合同（EPC）",
+      "evidence_span": "公司主营业务收入主要分为五大类，分别是...建造合同（EPC）"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内BIM行业龙头",
+      "evidence_span": "国内BIM行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能电网资产全生命周期管理信息化的领航者",
+      "evidence_span": "智能电网资产全生命周期管理信息化的领航者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大场景工业设计软件厂商",
+      "evidence_span": "大场景工业设计软件厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "能源互联网综合服务提供商",
+      "evidence_span": "能源互联网综合服务提供商乘风破浪"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能电网信息化龙头",
+      "evidence_span": "恒华科技智能电网信息化龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产BIM软件领跑者",
+      "evidence_span": "恒华科技国产BIM软件领跑者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合能源云运营服务商",
+      "evidence_span": "打造综合能源云运营服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基于BIM的三维设计",
+      "evidence_span": "以基于BIM的三维设计为切入点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电网信息化三维协同设计",
+      "evidence_span": "通过电网信息化三维协同设计"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电网工程基于BIM技术的数字化交付",
+      "evidence_span": "电网工程基于BIM 技术的数字化交付"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基于BIM技术的工程建设过程管控",
+      "evidence_span": "基于BIM技术的工程建设过程管控"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产运行维护的可视化管理",
+      "evidence_span": "资产运行维护的可视化管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电、光伏配套储能等项目的咨询与设计服务",
+      "evidence_span": "承接风电、光伏配套储能等项目的咨询与设计工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全阶段设计服务",
+      "evidence_span": "负责该项目全阶段设计服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力服务",
+      "evidence_span": "获得接中珑云（涿州）智能数字产业园电力服务等典型项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配售电服务",
+      "evidence_span": "公司在配售电、用户负荷调节等领域重点布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "用户负荷调节服务",
+      "evidence_span": "公司在配售电、用户负荷调节等领域重点布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "虚拟电厂业务",
+      "evidence_span": "虚拟电厂等新业务业积极发力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力全生命周期SaaS云",
+      "evidence_span": "全面布局电力全生命周期SaaS云"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电网“天猫”云平台",
+      "evidence_span": "打造电网“天猫”云平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主可控BIM核心技术",
+      "evidence_span": "公司拥有自主可控BIM 核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "完全自主可控底层核心技术平台",
+      "evidence_span": "基于完全自主可控底层核心技术平台进行BIM应用构建"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BIM在电网工程建设全周期的贯通",
+      "evidence_span": "实现了BIM在电网工程建设全周期的贯通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电网及其下属公司",
+      "evidence_span": "主要客户为电网及其下属公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "设计院",
+      "evidence_span": "主要客户为...设计院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新华水电莎车县20万千瓦配套储能项目",
+      "evidence_span": "新华水电莎车县20万千瓦配套储能项目中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中珑云（涿州）智能数字产业园",
+      "evidence_span": "获得接中珑云（涿州）智能数字产业园电力服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电力信创",
+      "evidence_span": "电力信创与改革的核心受益者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "BIM的国产替代空间有望超100亿元"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源",
+      "evidence_span": "新能源隐形IT龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电力现货交易改革",
+      "evidence_span": "电力现货交易改革等机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "BIM平台软件及行业数字化应用和运营服务",
+        "evidence_span": "公司是国内优秀的BIM 平台软件及行业数字化应用和运营的服务商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电力能源行业全产业链一体化信息化服务",
+        "evidence_span": "为电力能源行业提供全产业链一体化信息化服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "软件服务",
+        "evidence_span": "公司主营业务收入主要分为五大类，分别是软件服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "技术服务",
+        "evidence_span": "公司主营业务收入主要分为五大类，分别是...技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "软件销售",
+        "evidence_span": "公司主营业务收入主要分为五大类，分别是...软件销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "硬件销售",
+        "evidence_span": "公司主营业务收入主要分为五大类，分别是...硬件销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "建造合同（EPC）",
+        "evidence_span": "公司主营业务收入主要分为五大类，分别是...建造合同（EPC）"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内BIM行业龙头",
+        "evidence_span": "国内BIM行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能电网资产全生命周期管理信息化的领航者",
+        "evidence_span": "智能电网资产全生命周期管理信息化的领航者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大场景工业设计软件厂商",
+        "evidence_span": "大场景工业设计软件厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "能源互联网综合服务提供商",
+        "evidence_span": "能源互联网综合服务提供商乘风破浪"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能电网信息化龙头",
+        "evidence_span": "恒华科技智能电网信息化龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产BIM软件领跑者",
+        "evidence_span": "恒华科技国产BIM软件领跑者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合能源云运营服务商",
+        "evidence_span": "打造综合能源云运营服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基于BIM的三维设计",
+        "evidence_span": "以基于BIM的三维设计为切入点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电网信息化三维协同设计",
+        "evidence_span": "通过电网信息化三维协同设计"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电网工程基于BIM技术的数字化交付",
+        "evidence_span": "电网工程基于BIM 技术的数字化交付"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基于BIM技术的工程建设过程管控",
+        "evidence_span": "基于BIM技术的工程建设过程管控"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产运行维护的可视化管理",
+        "evidence_span": "资产运行维护的可视化管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电、光伏配套储能等项目的咨询与设计服务",
+        "evidence_span": "承接风电、光伏配套储能等项目的咨询与设计工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全阶段设计服务",
+        "evidence_span": "负责该项目全阶段设计服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力服务",
+        "evidence_span": "获得接中珑云（涿州）智能数字产业园电力服务等典型项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配售电服务",
+        "evidence_span": "公司在配售电、用户负荷调节等领域重点布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "用户负荷调节服务",
+        "evidence_span": "公司在配售电、用户负荷调节等领域重点布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "虚拟电厂业务",
+        "evidence_span": "虚拟电厂等新业务业积极发力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力全生命周期SaaS云",
+        "evidence_span": "全面布局电力全生命周期SaaS云"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电网“天猫”云平台",
+        "evidence_span": "打造电网“天猫”云平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主可控BIM核心技术",
+        "evidence_span": "公司拥有自主可控BIM 核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "完全自主可控底层核心技术平台",
+        "evidence_span": "基于完全自主可控底层核心技术平台进行BIM应用构建"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BIM在电网工程建设全周期的贯通",
+        "evidence_span": "实现了BIM在电网工程建设全周期的贯通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电网及其下属公司",
+        "evidence_span": "主要客户为电网及其下属公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "设计院",
+        "evidence_span": "主要客户为...设计院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新华水电莎车县20万千瓦配套储能项目",
+        "evidence_span": "新华水电莎车县20万千瓦配套储能项目中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中珑云（涿州）智能数字产业园",
+        "evidence_span": "获得接中珑云（涿州）智能数字产业园电力服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电力信创",
+        "evidence_span": "电力信创与改革的核心受益者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "BIM的国产替代空间有望超100亿元"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源",
+        "evidence_span": "新能源隐形IT龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电力现货交易改革",
+        "evidence_span": "电力现货交易改革等机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:59:46"
+}

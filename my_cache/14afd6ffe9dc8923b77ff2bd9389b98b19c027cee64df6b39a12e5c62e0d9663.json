@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:54:59", "result": {"chunk_id": "c0130c9b8841", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态描述了汽车零部件DSO（直接供应商优化）对供应商的核心益处，包括账期缩短、风险降低、现金流改善和财务负担减轻等关键要素，不涉及任何事件、时间动态或新闻信息，纯属题材本体知识构建。"}}

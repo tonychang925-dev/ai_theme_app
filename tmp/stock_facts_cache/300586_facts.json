@@ -1,0 +1,274 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "橡胶",
+      "evidence_span": "公司主营业务涵盖橡胶及塑料制品（色母粒及其他制品）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "塑料制品",
+      "evidence_span": "公司主营业务涵盖橡胶及塑料制品（色母粒及其他制品）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精细化工",
+      "evidence_span": "公司主营业务涵盖精细化工（三聚氯氰及其他化工品）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗卫生材料",
+      "evidence_span": "公司主营业务涵盖医疗卫生材料（熔喷布）"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "色母粒行业领跑者",
+      "evidence_span": "公司已成为行业领跑者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球三聚氯氰龙头",
+      "evidence_span": "公司一跃成为全球三聚氯氰龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "色母粒",
+      "evidence_span": "公司主营业务涵盖橡胶及塑料制品（色母粒及其他制品）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三聚氯氰",
+      "evidence_span": "公司主营业务涵盖精细化工（三聚氯氰及其他化工品）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "熔喷布",
+      "evidence_span": "公司主营业务涵盖医疗卫生材料（熔喷布）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "湿法隔膜",
+      "evidence_span": "公司坚定布局湿法隔膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "白色母粒",
+      "evidence_span": "公司色母粒产品主要包括白色母粒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黑色母粒",
+      "evidence_span": "公司色母粒产品主要包括黑色母粒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩色母粒",
+      "evidence_span": "公司色母粒产品主要包括彩色母粒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能母粒",
+      "evidence_span": "公司色母粒产品主要包括功能母粒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物基可降解母粒",
+      "evidence_span": "建设功能母粒及生物基可降解母粒产业化项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氢氰酸法工艺",
+      "evidence_span": "营创三征工艺为氢氰酸法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水性芳纶涂料涂覆工艺",
+      "evidence_span": "涂布膜目前有使用水性芳纶涂料的工艺储备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联合利华",
+      "evidence_span": "合作对象涵盖国内国际知名品牌，包括联合利华"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恒安集团",
+      "evidence_span": "合作对象涵盖国内国际知名品牌，包括恒安集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦当劳",
+      "evidence_span": "合作对象涵盖国内国际知名品牌，包括麦当劳"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "可口可乐",
+      "evidence_span": "合作对象涵盖国内国际知名品牌，包括可口可乐"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "伊利",
+      "evidence_span": "合作对象涵盖国内国际知名品牌，包括伊利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "顺丰",
+      "evidence_span": "合作对象涵盖国内国际知名品牌，包括顺丰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东",
+      "evidence_span": "合作对象涵盖国内国际知名品牌，包括京东"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保力新",
+      "evidence_span": "公司与老牌锂电厂商保利新签订湿法隔膜《采购框架合同》"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "锂电隔膜",
+      "evidence_span": "隔膜业务是公司切入新能源赛道的重要布局"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "钠电",
+      "evidence_span": "美联新材打造钠电普鲁士龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "橡胶及塑料制品",
+        "evidence_span": "公司主营业务涵盖橡胶及塑料制品（色母粒及其他制品）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精细化工",
+        "evidence_span": "公司主营业务涵盖精细化工（三聚氯氰及其他化工品）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗卫生材料",
+        "evidence_span": "公司主营业务涵盖医疗卫生材料（熔喷布）"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "色母粒行业领跑者",
+        "evidence_span": "公司已成为行业领跑者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球三聚氯氰龙头",
+        "evidence_span": "公司一跃成为全球三聚氯氰龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "色母粒",
+        "evidence_span": "公司主营业务涵盖橡胶及塑料制品（色母粒及其他制品）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三聚氯氰",
+        "evidence_span": "公司主营业务涵盖精细化工（三聚氯氰及其他化工品）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "熔喷布",
+        "evidence_span": "公司主营业务涵盖医疗卫生材料（熔喷布）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "湿法隔膜",
+        "evidence_span": "公司坚定布局湿法隔膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "白色母粒",
+        "evidence_span": "公司色母粒产品主要包括白色母粒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黑色母粒",
+        "evidence_span": "公司色母粒产品主要包括黑色母粒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩色母粒",
+        "evidence_span": "公司色母粒产品主要包括彩色母粒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能母粒",
+        "evidence_span": "公司色母粒产品主要包括功能母粒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物基可降解母粒",
+        "evidence_span": "建设功能母粒及生物基可降解母粒产业化项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氢氰酸法工艺",
+        "evidence_span": "营创三征工艺为氢氰酸法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水性芳纶涂料涂覆工艺",
+        "evidence_span": "涂布膜目前有使用水性芳纶涂料的工艺储备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联合利华",
+        "evidence_span": "合作对象涵盖国内国际知名品牌，包括联合利华"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恒安集团",
+        "evidence_span": "合作对象涵盖国内国际知名品牌，包括恒安集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦当劳",
+        "evidence_span": "合作对象涵盖国内国际知名品牌，包括麦当劳"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "可口可乐",
+        "evidence_span": "合作对象涵盖国内国际知名品牌，包括可口可乐"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "伊利",
+        "evidence_span": "合作对象涵盖国内国际知名品牌，包括伊利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "顺丰",
+        "evidence_span": "合作对象涵盖国内国际知名品牌，包括顺丰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东",
+        "evidence_span": "合作对象涵盖国内国际知名品牌，包括京东"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保力新",
+        "evidence_span": "公司与老牌锂电厂商保利新签订湿法隔膜《采购框架合同》"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "锂电隔膜",
+        "evidence_span": "隔膜业务是公司切入新能源赛道的重要布局"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "钠电",
+        "evidence_span": "美联新材打造钠电普鲁士龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:26:44"
+}

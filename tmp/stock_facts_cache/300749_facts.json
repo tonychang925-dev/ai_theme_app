@@ -1,0 +1,554 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "定制家居",
+      "evidence_span": "公司主要从事定制家居"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精品五金",
+      "evidence_span": "公司主要从事精品五金"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能门锁",
+      "evidence_span": "公司主要从事智能门锁"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能晾衣机",
+      "evidence_span": "公司主要从事智能晾衣机"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "集创门窗",
+      "evidence_span": "公司主要从事集创门窗"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全屋一体化高端整体定制家居解决方案综合服务商",
+      "evidence_span": "是国内领先的全屋一体化高端整体定制家居解决方案综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "定制家居行业知名品牌",
+      "evidence_span": "公司作为国内定制家居行业知名品牌之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定制衣柜",
+      "evidence_span": "拥有定制衣柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定制橱柜",
+      "evidence_span": "定制橱柜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "定制生态门",
+      "evidence_span": "定制生态门"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "系统门窗",
+      "evidence_span": "系统门窗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端木作",
+      "evidence_span": "高端木作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "护墙板",
+      "evidence_span": "护墙板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卫浴",
+      "evidence_span": "卫浴"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "厨电",
+      "evidence_span": "厨电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能锁",
+      "evidence_span": "智能锁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能晾衣架",
+      "evidence_span": "智能晾衣架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精品五金",
+      "evidence_span": "精品五金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软体家具配套",
+      "evidence_span": "软体家具配套"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "室内门锁",
+      "evidence_span": "精品五金产品主要包括室内门锁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能门锁",
+      "evidence_span": "智能门锁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能晾衣机",
+      "evidence_span": "智能晾衣机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卫浴五金",
+      "evidence_span": "卫浴五金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移门五金",
+      "evidence_span": "移门五金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门控五金",
+      "evidence_span": "门控五金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家具五金",
+      "evidence_span": "家具五金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝合金门窗",
+      "evidence_span": "主要产品涵盖室内外铝合金门窗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "推拉门",
+      "evidence_span": "推拉门"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全景阳台门",
+      "evidence_span": "全景阳台门"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阳光房",
+      "evidence_span": "阳光房"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生态房门",
+      "evidence_span": "室内生态房门"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卫浴门",
+      "evidence_span": "卫浴门"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "隔断门",
+      "evidence_span": "隔断门"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大规模柔性化定制生产能力",
+      "evidence_span": "公司拥有的定制家具产品大规模柔性化定制生产能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精品五金技术集成应用于定制家具产品",
+      "evidence_span": "精品五金技术集成应用于定制家具产品优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能升降柜",
+      "evidence_span": "目前公司已开发了智能升降柜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能滑动门",
+      "evidence_span": "智能滑动门"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能升降化妆台",
+      "evidence_span": "公司也开发了智能升降化妆台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能升降储物柜",
+      "evidence_span": "衣柜中配备智能升降储物柜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "衣柜滑动门自动开启",
+      "evidence_span": "衣柜滑动门自动开启"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "防霉除湿衣柜",
+      "evidence_span": "防霉除湿衣柜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磁悬浮滑动门",
+      "evidence_span": "磁悬浮滑动门"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速精密连续冲压成型",
+      "evidence_span": "包括高速精密连续冲压成型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "静音滑轮二次注塑成型",
+      "evidence_span": "静音滑轮二次注塑成型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "吊轮的高承重及耐磨工艺",
+      "evidence_span": "吊轮的高承重及耐磨工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "门扇四端面精裁铣型一次成型",
+      "evidence_span": "门扇四端面精裁铣型一次成型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "门扇锁具孔及暗铰孔加工",
+      "evidence_span": "门扇锁具孔及暗铰孔加工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "商品房购买者",
+      "evidence_span": "公司产品的主要消费群体包括商品房（毛坯房）购买者"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "存量房装修消费者",
+      "evidence_span": "存量房装修消费者"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "精装楼盘的房地产开发商",
+      "evidence_span": "精装楼盘的房地产开发商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家装公司",
+      "evidence_span": "家装公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "房地产开发建筑商",
+      "evidence_span": "大宗客户模式是公司向房屋装修领域的房地产开发建筑商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "装修公司",
+      "evidence_span": "装修公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能家居",
+      "evidence_span": "智能家居"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "定制家居",
+        "evidence_span": "公司主要从事定制家居"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精品五金",
+        "evidence_span": "公司主要从事精品五金"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能门锁",
+        "evidence_span": "公司主要从事智能门锁"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能晾衣机",
+        "evidence_span": "公司主要从事智能晾衣机"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "集创门窗",
+        "evidence_span": "公司主要从事集创门窗"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全屋一体化高端整体定制家居解决方案综合服务商",
+        "evidence_span": "是国内领先的全屋一体化高端整体定制家居解决方案综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "定制家居行业知名品牌",
+        "evidence_span": "公司作为国内定制家居行业知名品牌之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定制衣柜",
+        "evidence_span": "拥有定制衣柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定制橱柜",
+        "evidence_span": "定制橱柜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "定制生态门",
+        "evidence_span": "定制生态门"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "系统门窗",
+        "evidence_span": "系统门窗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端木作",
+        "evidence_span": "高端木作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "护墙板",
+        "evidence_span": "护墙板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卫浴",
+        "evidence_span": "卫浴"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "厨电",
+        "evidence_span": "厨电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能锁",
+        "evidence_span": "智能锁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能晾衣架",
+        "evidence_span": "智能晾衣架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精品五金",
+        "evidence_span": "精品五金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软体家具配套",
+        "evidence_span": "软体家具配套"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "室内门锁",
+        "evidence_span": "精品五金产品主要包括室内门锁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能门锁",
+        "evidence_span": "智能门锁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能晾衣机",
+        "evidence_span": "智能晾衣机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卫浴五金",
+        "evidence_span": "卫浴五金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移门五金",
+        "evidence_span": "移门五金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门控五金",
+        "evidence_span": "门控五金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家具五金",
+        "evidence_span": "家具五金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝合金门窗",
+        "evidence_span": "主要产品涵盖室内外铝合金门窗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "推拉门",
+        "evidence_span": "推拉门"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全景阳台门",
+        "evidence_span": "全景阳台门"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阳光房",
+        "evidence_span": "阳光房"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生态房门",
+        "evidence_span": "室内生态房门"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卫浴门",
+        "evidence_span": "卫浴门"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "隔断门",
+        "evidence_span": "隔断门"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "护墙板",
+        "evidence_span": "护墙板"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大规模柔性化定制生产能力",
+        "evidence_span": "公司拥有的定制家具产品大规模柔性化定制生产能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精品五金技术集成应用于定制家具产品",
+        "evidence_span": "精品五金技术集成应用于定制家具产品优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能升降柜",
+        "evidence_span": "目前公司已开发了智能升降柜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能滑动门",
+        "evidence_span": "智能滑动门"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能升降化妆台",
+        "evidence_span": "公司也开发了智能升降化妆台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能升降储物柜",
+        "evidence_span": "衣柜中配备智能升降储物柜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "衣柜滑动门自动开启",
+        "evidence_span": "衣柜滑动门自动开启"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "防霉除湿衣柜",
+        "evidence_span": "防霉除湿衣柜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磁悬浮滑动门",
+        "evidence_span": "磁悬浮滑动门"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速精密连续冲压成型",
+        "evidence_span": "包括高速精密连续冲压成型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "静音滑轮二次注塑成型",
+        "evidence_span": "静音滑轮二次注塑成型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "吊轮的高承重及耐磨工艺",
+        "evidence_span": "吊轮的高承重及耐磨工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "门扇四端面精裁铣型一次成型",
+        "evidence_span": "门扇四端面精裁铣型一次成型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "门扇锁具孔及暗铰孔加工",
+        "evidence_span": "门扇锁具孔及暗铰孔加工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "商品房购买者",
+        "evidence_span": "公司产品的主要消费群体包括商品房（毛坯房）购买者"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "存量房装修消费者",
+        "evidence_span": "存量房装修消费者"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "精装楼盘的房地产开发商",
+        "evidence_span": "精装楼盘的房地产开发商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家装公司",
+        "evidence_span": "家装公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "房地产开发建筑商",
+        "evidence_span": "大宗客户模式是公司向房屋装修领域的房地产开发建筑商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "装修公司",
+        "evidence_span": "装修公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能家居",
+        "evidence_span": "智能家居"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:10:48"
+}

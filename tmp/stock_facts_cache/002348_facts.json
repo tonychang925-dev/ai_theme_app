@@ -1,0 +1,464 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "玩具",
+      "evidence_span": "玩具及相关业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "相关业务",
+      "evidence_span": "玩具及相关业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "互联网教育业务",
+      "evidence_span": "互联网教育业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内电子电动塑胶玩具出口龙头企业",
+      "evidence_span": "为国内电子电动塑胶玩具出口龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动火车",
+      "evidence_span": "主要产品包括电动火车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "互动对打机器人",
+      "evidence_span": "互动对打机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动车",
+      "evidence_span": "电动车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线控仿真飞机",
+      "evidence_span": "线控仿真飞机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能女仔",
+      "evidence_span": "智能女仔"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保磁性学习写字板",
+      "evidence_span": "环保磁性学习写字板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子电动玩具",
+      "evidence_span": "品类覆盖电子电动玩具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "塑胶玩具",
+      "evidence_span": "塑胶玩具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "毛绒玩具",
+      "evidence_span": "毛绒玩具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益智玩具",
+      "evidence_span": "益智玩具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能互动玩具",
+      "evidence_span": "智能互动玩具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "知名IP形象授权玩具",
+      "evidence_span": "知名IP形象授权玩具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "礼品",
+      "evidence_span": "礼品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "K12智慧教育一站式解决方案",
+      "evidence_span": "提供K12智慧教育一站式解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教育信息化系统集成服务",
+      "evidence_span": "教育信息化系统集成服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧云课堂",
+      "evidence_span": "智慧云课堂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧教育硬件软件产品销售",
+      "evidence_span": "智慧教育硬件软件产品销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "课后服务",
+      "evidence_span": "课后服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "增值业务",
+      "evidence_span": "增值业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云基础设施",
+      "evidence_span": "业务范围覆盖云基础设施"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教育云平台",
+      "evidence_span": "教育云平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三个课堂",
+      "evidence_span": "三个课堂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教育专网",
+      "evidence_span": "教育专网"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字校园",
+      "evidence_span": "数字校园"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "校餐（午休）服务",
+      "evidence_span": "学生服务项目主要包括校餐（午休）服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "430课后服务",
+      "evidence_span": "430课后服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "研学旅行",
+      "evidence_span": "研学旅行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络研修",
+      "evidence_span": "教师培训项目主要包括网络研修"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集中面授",
+      "evidence_span": "集中面授"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "校本研修",
+      "evidence_span": "校本研修"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "课后兴趣班",
+      "evidence_span": "课后兴趣班涵盖非遗传承、人文美育、科学益智、音乐、体育、美术等品类"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云计算",
+      "evidence_span": "以云计算、大数据、智能硬件、物联网、人工智能等核心技术为支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据",
+      "evidence_span": "以云计算、大数据、智能硬件、物联网、人工智能等核心技术为支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能硬件",
+      "evidence_span": "以云计算、大数据、智能硬件、物联网、人工智能等核心技术为支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网",
+      "evidence_span": "以云计算、大数据、智能硬件、物联网、人工智能等核心技术为支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能",
+      "evidence_span": "以云计算、大数据、智能硬件、物联网、人工智能等核心技术为支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "流媒体",
+      "evidence_span": "已经积累了云计算、大数据、人工智能、智能硬件、流媒体等与互联网智慧教育相关的核心技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华润万家",
+      "evidence_span": "开拓了华润万家、大润发、卜蜂莲花、中国玩具反斗城等大型百货商超、连锁卖场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大润发",
+      "evidence_span": "开拓了华润万家、大润发、卜蜂莲花、中国玩具反斗城等大型百货商超、连锁卖场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "卜蜂莲花",
+      "evidence_span": "开拓了华润万家、大润发、卜蜂莲花、中国玩具反斗城等大型百货商超、连锁卖场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国玩具反斗城",
+      "evidence_span": "开拓了华润万家、大润发、卜蜂莲花、中国玩具反斗城等大型百货商超、连锁卖场"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "玩具+教育",
+      "evidence_span": "公司已经形成“玩具+教育”双主营业务协同发展的格局"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "玩具及相关业务",
+        "evidence_span": "玩具及相关业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "互联网教育业务",
+        "evidence_span": "互联网教育业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内电子电动塑胶玩具出口龙头企业",
+        "evidence_span": "为国内电子电动塑胶玩具出口龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动火车",
+        "evidence_span": "主要产品包括电动火车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "互动对打机器人",
+        "evidence_span": "互动对打机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动车",
+        "evidence_span": "电动车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线控仿真飞机",
+        "evidence_span": "线控仿真飞机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能女仔",
+        "evidence_span": "智能女仔"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保磁性学习写字板",
+        "evidence_span": "环保磁性学习写字板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子电动玩具",
+        "evidence_span": "品类覆盖电子电动玩具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "塑胶玩具",
+        "evidence_span": "塑胶玩具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "毛绒玩具",
+        "evidence_span": "毛绒玩具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益智玩具",
+        "evidence_span": "益智玩具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能互动玩具",
+        "evidence_span": "智能互动玩具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "知名IP形象授权玩具",
+        "evidence_span": "知名IP形象授权玩具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "礼品",
+        "evidence_span": "礼品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "K12智慧教育一站式解决方案",
+        "evidence_span": "提供K12智慧教育一站式解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教育信息化系统集成服务",
+        "evidence_span": "教育信息化系统集成服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧云课堂",
+        "evidence_span": "智慧云课堂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧教育硬件软件产品销售",
+        "evidence_span": "智慧教育硬件软件产品销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "课后服务",
+        "evidence_span": "课后服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "增值业务",
+        "evidence_span": "增值业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云基础设施",
+        "evidence_span": "业务范围覆盖云基础设施"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教育云平台",
+        "evidence_span": "教育云平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三个课堂",
+        "evidence_span": "三个课堂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教育专网",
+        "evidence_span": "教育专网"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字校园",
+        "evidence_span": "数字校园"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "校餐（午休）服务",
+        "evidence_span": "学生服务项目主要包括校餐（午休）服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "430课后服务",
+        "evidence_span": "430课后服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "研学旅行",
+        "evidence_span": "研学旅行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络研修",
+        "evidence_span": "教师培训项目主要包括网络研修"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集中面授",
+        "evidence_span": "集中面授"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "校本研修",
+        "evidence_span": "校本研修"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "课后兴趣班",
+        "evidence_span": "课后兴趣班涵盖非遗传承、人文美育、科学益智、音乐、体育、美术等品类"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云计算",
+        "evidence_span": "以云计算、大数据、智能硬件、物联网、人工智能等核心技术为支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据",
+        "evidence_span": "以云计算、大数据、智能硬件、物联网、人工智能等核心技术为支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能硬件",
+        "evidence_span": "以云计算、大数据、智能硬件、物联网、人工智能等核心技术为支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网",
+        "evidence_span": "以云计算、大数据、智能硬件、物联网、人工智能等核心技术为支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能",
+        "evidence_span": "以云计算、大数据、智能硬件、物联网、人工智能等核心技术为支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "流媒体",
+        "evidence_span": "已经积累了云计算、大数据、人工智能、智能硬件、流媒体等与互联网智慧教育相关的核心技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华润万家",
+        "evidence_span": "开拓了华润万家、大润发、卜蜂莲花、中国玩具反斗城等大型百货商超、连锁卖场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大润发",
+        "evidence_span": "开拓了华润万家、大润发、卜蜂莲花、中国玩具反斗城等大型百货商超、连锁卖场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "卜蜂莲花",
+        "evidence_span": "开拓了华润万家、大润发、卜蜂莲花、中国玩具反斗城等大型百货商超、连锁卖场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国玩具反斗城",
+        "evidence_span": "开拓了华润万家、大润发、卜蜂莲花、中国玩具反斗城等大型百货商超、连锁卖场"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "玩具+教育",
+        "evidence_span": "公司已经形成“玩具+教育”双主营业务协同发展的格局"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:09:35"
+}

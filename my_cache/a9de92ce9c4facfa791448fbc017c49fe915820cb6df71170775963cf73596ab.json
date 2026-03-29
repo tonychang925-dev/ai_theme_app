@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "2fdf5be929ca", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "段落主要说明量子计算对RSA加密算法的威胁，包括技术细节和影响，是静态的加密安全知识，没有明确的事件发布或时间推进。"}}

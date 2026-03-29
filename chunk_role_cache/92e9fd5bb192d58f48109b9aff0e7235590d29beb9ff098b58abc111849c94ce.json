@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "b70824a7d6bd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述华为展示快充自动充电机器人并宣布量产计划的事件，是一个具体的产品发布和时间性动态，没有静态知识，因此归类为pure_event。"}}

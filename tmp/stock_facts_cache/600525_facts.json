@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能电网设备",
+      "evidence_span": "智能电网设备与能源互联网技术服务实现营业收入46.63亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "能源互联网技术服务",
+      "evidence_span": "智能电网设备与能源互联网技术服务实现营业收入46.63亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "消费类电子智能设备",
+      "evidence_span": "消费类电子智能设备及其他领域智能设备实现营业收入24.96亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其他领域智能设备",
+      "evidence_span": "消费类电子智能设备及其他领域智能设备实现营业收入24.96亿元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "磷酸铁锂材料",
+      "evidence_span": "金锂科技主要从事锂电池正极材料磷酸铁锂的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工业及电力系统智能化数字化领域的先行者",
+      "evidence_span": "公司是工业及电力系统智能化数字化领域的先行者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电力自动化行业第一梯队企业",
+      "evidence_span": "长园深瑞是电力自动化行业第一梯队企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能装备及解决方案供应商",
+      "evidence_span": "运泰利作为智能装备及解决方案供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电网保护控制及自动化",
+      "evidence_span": "长园深瑞主要产品：电网保护控制及自动化"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能配用电",
+      "evidence_span": "智能配用电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合能源及碳中和",
+      "evidence_span": "综合能源及碳中和"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力电缆附件",
+      "evidence_span": "长园电力主要产品：1kV-500kV电力电缆附件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合绝缘子",
+      "evidence_span": "长园高能专业生产高电压复合绝缘子及其系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业安全防误全面解决方案",
+      "evidence_span": "长园共创产品覆盖传统电力系统全领域，以及“石油石化、轨道交通、煤矿、通信”等工业安全新领域，提供工业安全防误全面解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "检测设备",
+      "evidence_span": "运泰利作为智能装备及解决方案供应商，主要提供检测设备、自动化组装设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化组装设备",
+      "evidence_span": "运泰利作为智能装备及解决方案供应商，主要提供检测设备、自动化组装设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸铁锂正极材料",
+      "evidence_span": "金锂科技主要从事锂电池正极材料磷酸铁锂的研发、生产和销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主可控设备",
+      "evidence_span": "自主可控设备顺利通过入网检测"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能运维技术",
+      "evidence_span": "深化智能运维技术革新"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "图像识别技术",
+      "evidence_span": "聚焦图像识别、智能在线巡视技术提升"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能在线巡视技术",
+      "evidence_span": "聚焦图像识别、智能在线巡视技术提升"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "330kV海底电缆附件研制关键技术",
+      "evidence_span": "自主掌握330kV海底电缆附件研制关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "±535kV直流电缆试验终端",
+      "evidence_span": "成功研制±535kV直流电缆试验终端"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电学测试",
+      "evidence_span": "电学测试、声学测试、光学测试保持稳定增长"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "声学测试",
+      "evidence_span": "电学测试、声学测试、光学测试保持稳定增长"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光学测试",
+      "evidence_span": "电学测试、声学测试、光学测试保持稳定增长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中广核",
+      "evidence_span": "中广核等框架项目优质中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华能",
+      "evidence_span": "中广核、华能等框架项目优质中标"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "菲律宾电网",
+      "evidence_span": "菲律宾电网实现从69kV到500kV全电压等级覆盖"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "埃塞俄比亚",
+      "evidence_span": "埃塞俄比亚大规模电网改造项目成功开局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "赣锋锂电",
+      "evidence_span": "下游客户主要包括赣锋锂电、雄韬股份、双登富朗特、鹏辉能源、星恒电源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雄韬股份",
+      "evidence_span": "下游客户主要包括赣锋锂电、雄韬股份、双登富朗特、鹏辉能源、星恒电源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "双登富朗特",
+      "evidence_span": "下游客户主要包括赣锋锂电、雄韬股份、双登富朗特、鹏辉能源、星恒电源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "鹏辉能源",
+      "evidence_span": "下游客户主要包括赣锋锂电、雄韬股份、双登富朗特、鹏辉能源、星恒电源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "星恒电源",
+      "evidence_span": "下游客户主要包括赣锋锂电、雄韬股份、双登富朗特、鹏辉能源、星恒电源等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "伟创力",
+      "evidence_span": "与下游知名客户伟创力、富士康等建立了长期合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富士康",
+      "evidence_span": "与下游知名客户伟创力、富士康等建立了长期合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司已与比亚迪、汇川新能源、中车时代等优质客户建立稳定合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汇川新能源",
+      "evidence_span": "公司已与比亚迪、汇川新能源、中车时代等优质客户建立稳定合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中车时代",
+      "evidence_span": "公司已与比亚迪、汇川新能源、中车时代等优质客户建立稳定合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新型电力系统建设",
+      "evidence_span": "有望受益于新型电力系统建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能行业",
+      "evidence_span": "储能行业是长期优质超级赛道"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车",
+      "evidence_span": "长园集团布局新能源汽车产业,建立新的业务增长点"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能电网设备与能源互联网技术服务",
+        "evidence_span": "智能电网设备与能源互联网技术服务实现营业收入46.63亿元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "消费类电子智能设备及其他领域智能设备",
+        "evidence_span": "消费类电子智能设备及其他领域智能设备实现营业收入24.96亿元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "磷酸铁锂材料",
+        "evidence_span": "金锂科技主要从事锂电池正极材料磷酸铁锂的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工业及电力系统智能化数字化领域的先行者",
+        "evidence_span": "公司是工业及电力系统智能化数字化领域的先行者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电力自动化行业第一梯队企业",
+        "evidence_span": "长园深瑞是电力自动化行业第一梯队企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能装备及解决方案供应商",
+        "evidence_span": "运泰利作为智能装备及解决方案供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电网保护控制及自动化",
+        "evidence_span": "长园深瑞主要产品：电网保护控制及自动化"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能配用电",
+        "evidence_span": "智能配用电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合能源及碳中和",
+        "evidence_span": "综合能源及碳中和"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力电缆附件",
+        "evidence_span": "长园电力主要产品：1kV-500kV电力电缆附件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合绝缘子",
+        "evidence_span": "长园高能专业生产高电压复合绝缘子及其系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业安全防误全面解决方案",
+        "evidence_span": "长园共创产品覆盖传统电力系统全领域，以及“石油石化、轨道交通、煤矿、通信”等工业安全新领域，提供工业安全防误全面解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "检测设备",
+        "evidence_span": "运泰利作为智能装备及解决方案供应商，主要提供检测设备、自动化组装设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化组装设备",
+        "evidence_span": "运泰利作为智能装备及解决方案供应商，主要提供检测设备、自动化组装设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸铁锂正极材料",
+        "evidence_span": "金锂科技主要从事锂电池正极材料磷酸铁锂的研发、生产和销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主可控设备",
+        "evidence_span": "自主可控设备顺利通过入网检测"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能运维技术",
+        "evidence_span": "深化智能运维技术革新"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "图像识别技术",
+        "evidence_span": "聚焦图像识别、智能在线巡视技术提升"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能在线巡视技术",
+        "evidence_span": "聚焦图像识别、智能在线巡视技术提升"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "330kV海底电缆附件研制关键技术",
+        "evidence_span": "自主掌握330kV海底电缆附件研制关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "±535kV直流电缆试验终端",
+        "evidence_span": "成功研制±535kV直流电缆试验终端"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电学测试",
+        "evidence_span": "电学测试、声学测试、光学测试保持稳定增长"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "声学测试",
+        "evidence_span": "电学测试、声学测试、光学测试保持稳定增长"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光学测试",
+        "evidence_span": "电学测试、声学测试、光学测试保持稳定增长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中广核",
+        "evidence_span": "中广核等框架项目优质中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华能",
+        "evidence_span": "中广核、华能等框架项目优质中标"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "菲律宾电网",
+        "evidence_span": "菲律宾电网实现从69kV到500kV全电压等级覆盖"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "埃塞俄比亚",
+        "evidence_span": "埃塞俄比亚大规模电网改造项目成功开局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "赣锋锂电",
+        "evidence_span": "下游客户主要包括赣锋锂电、雄韬股份、双登富朗特、鹏辉能源、星恒电源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雄韬股份",
+        "evidence_span": "下游客户主要包括赣锋锂电、雄韬股份、双登富朗特、鹏辉能源、星恒电源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "双登富朗特",
+        "evidence_span": "下游客户主要包括赣锋锂电、雄韬股份、双登富朗特、鹏辉能源、星恒电源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "鹏辉能源",
+        "evidence_span": "下游客户主要包括赣锋锂电、雄韬股份、双登富朗特、鹏辉能源、星恒电源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "星恒电源",
+        "evidence_span": "下游客户主要包括赣锋锂电、雄韬股份、双登富朗特、鹏辉能源、星恒电源等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "伟创力",
+        "evidence_span": "与下游知名客户伟创力、富士康等建立了长期合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富士康",
+        "evidence_span": "与下游知名客户伟创力、富士康等建立了长期合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司已与比亚迪、汇川新能源、中车时代等优质客户建立稳定合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汇川新能源",
+        "evidence_span": "公司已与比亚迪、汇川新能源、中车时代等优质客户建立稳定合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中车时代",
+        "evidence_span": "公司已与比亚迪、汇川新能源、中车时代等优质客户建立稳定合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新型电力系统建设",
+        "evidence_span": "有望受益于新型电力系统建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能行业",
+        "evidence_span": "储能行业是长期优质超级赛道"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车",
+        "evidence_span": "长园集团布局新能源汽车产业,建立新的业务增长点"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:27:20"
+}

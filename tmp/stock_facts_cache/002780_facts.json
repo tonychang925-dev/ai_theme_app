@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "连锁零售多品牌多品类专业优质户外运动用品",
+      "evidence_span": "公司以连锁零售多品牌多品类专业优质户外运动用品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运营X-BIONIC黑科技运动奢侈品牌",
+      "evidence_span": "运营X-BIONIC黑科技运动奢侈品牌"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "代理运营瑞典山系经典品牌Klattermusen（攀山鼠）",
+      "evidence_span": "代理运营瑞典山系经典品牌Klattermusen（攀山鼠）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "代理运营意大利手工匠心传承鞋品CRISPI",
+      "evidence_span": "意大利手工匠心传承鞋品CRISPI"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "代理运营经典工装鞋靴品牌DANNER",
+      "evidence_span": "经典工装鞋靴品牌DANNER"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "代理运营战术背包品牌Mystery Ranch",
+      "evidence_span": "战术背包品牌Mystery Ranch"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "代理运营专业户外鞋品牌LA SPORTIVA",
+      "evidence_span": "专业户外鞋品牌LA SPORTIVA"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "组织户外活动赛事团建",
+      "evidence_span": "组织户外活动赛事团建"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设计建设运营亲子青少年综合素质教育项目",
+      "evidence_span": "设计建设运营“松鼠部落亲子户外乐园+鹰极安全教育培训+SANFO HOOD野奢营地+三夫小勇士”亲子青少年综合素质教育项目"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专业户外用品连锁零售商",
+      "evidence_span": "专业户外用品连锁零售商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "户外运动产业发展的引领者",
+      "evidence_span": "是中国户外运动产业发展的引领者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家体育产业示范单位",
+      "evidence_span": "被国家体育总局评为“国家体育产业示范单位”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户外服装",
+      "evidence_span": "产品分为户外服装、户外鞋袜与户外装备三大类别"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户外鞋袜",
+      "evidence_span": "产品分为户外服装、户外鞋袜与户外装备三大类别"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户外装备",
+      "evidence_span": "产品分为户外服装、户外鞋袜与户外装备三大类别"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "X-BIONIC黑科技运动奢侈品牌产品",
+      "evidence_span": "运营X-BIONIC黑科技运动奢侈品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SANFO PLUS品牌产品",
+      "evidence_span": "SANFO PLUS优化现有品类迭代升级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "代理品牌产品",
+      "evidence_span": "代理经销国内外300余个中高端户外优质品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "野奢帐篷营地服务",
+      "evidence_span": "共同打造野奢帐篷营地，提供住宿、餐食等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户外活动赛事团建服务",
+      "evidence_span": "组织户外活动赛事团建"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "亲子青少年综合素质教育服务",
+      "evidence_span": "设计建设运营亲子青少年综合素质教育项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "X-BIONIC仿生科技",
+      "evidence_span": "X-BIONIC仿生科技"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "X-BIONIC视网膜高清一体织科技RETINA",
+      "evidence_span": "X-BIONIC视网膜高清一体织科技RETINA"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "与国际优质功能面料公司合作",
+      "evidence_span": "与GORE-TEX、Schoeller、Polartec、Pertex、Primaloft、Allied、Toray、Cordura、Carvico等国际优质材料合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家体育总局冬季运动管理中心",
+      "evidence_span": "成为国家体育总局冬季运动管理中心功能内衣供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国铁人三项协会",
+      "evidence_span": "三夫赛事与中国铁人三项协会深度绑定"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "世界500强企业",
+      "evidence_span": "其中数十家世界500强企业、上市公司及新兴互联网科技公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上市公司",
+      "evidence_span": "其中数十家世界500强企业、上市公司及新兴互联网科技公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新兴互联网科技公司",
+      "evidence_span": "其中数十家世界500强企业、上市公司及新兴互联网科技公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "户外产业受益明显",
+      "evidence_span": "户外产业受益明显"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "连锁零售多品牌多品类专业优质户外运动用品",
+        "evidence_span": "公司以连锁零售多品牌多品类专业优质户外运动用品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "运营X-BIONIC黑科技运动奢侈品牌",
+        "evidence_span": "运营X-BIONIC黑科技运动奢侈品牌"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "代理运营瑞典山系经典品牌Klattermusen（攀山鼠）",
+        "evidence_span": "代理运营瑞典山系经典品牌Klattermusen（攀山鼠）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "代理运营意大利手工匠心传承鞋品CRISPI",
+        "evidence_span": "意大利手工匠心传承鞋品CRISPI"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "代理运营经典工装鞋靴品牌DANNER",
+        "evidence_span": "经典工装鞋靴品牌DANNER"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "代理运营战术背包品牌Mystery Ranch",
+        "evidence_span": "战术背包品牌Mystery Ranch"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "代理运营专业户外鞋品牌LA SPORTIVA",
+        "evidence_span": "专业户外鞋品牌LA SPORTIVA"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "组织户外活动赛事团建",
+        "evidence_span": "组织户外活动赛事团建"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "设计建设运营亲子青少年综合素质教育项目",
+        "evidence_span": "设计建设运营“松鼠部落亲子户外乐园+鹰极安全教育培训+SANFO HOOD野奢营地+三夫小勇士”亲子青少年综合素质教育项目"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专业户外用品连锁零售商",
+        "evidence_span": "专业户外用品连锁零售商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "户外运动产业发展的引领者",
+        "evidence_span": "是中国户外运动产业发展的引领者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家体育产业示范单位",
+        "evidence_span": "被国家体育总局评为“国家体育产业示范单位”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户外服装",
+        "evidence_span": "产品分为户外服装、户外鞋袜与户外装备三大类别"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户外鞋袜",
+        "evidence_span": "产品分为户外服装、户外鞋袜与户外装备三大类别"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户外装备",
+        "evidence_span": "产品分为户外服装、户外鞋袜与户外装备三大类别"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "X-BIONIC黑科技运动奢侈品牌产品",
+        "evidence_span": "运营X-BIONIC黑科技运动奢侈品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SANFO PLUS品牌产品",
+        "evidence_span": "SANFO PLUS优化现有品类迭代升级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "代理品牌产品",
+        "evidence_span": "代理经销国内外300余个中高端户外优质品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "野奢帐篷营地服务",
+        "evidence_span": "共同打造野奢帐篷营地，提供住宿、餐食等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户外活动赛事团建服务",
+        "evidence_span": "组织户外活动赛事团建"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "亲子青少年综合素质教育服务",
+        "evidence_span": "设计建设运营亲子青少年综合素质教育项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "X-BIONIC仿生科技",
+        "evidence_span": "X-BIONIC仿生科技"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "X-BIONIC视网膜高清一体织科技RETINA",
+        "evidence_span": "X-BIONIC视网膜高清一体织科技RETINA"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "与国际优质功能面料公司合作",
+        "evidence_span": "与GORE-TEX、Schoeller、Polartec、Pertex、Primaloft、Allied、Toray、Cordura、Carvico等国际优质材料合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家体育总局冬季运动管理中心",
+        "evidence_span": "成为国家体育总局冬季运动管理中心功能内衣供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国铁人三项协会",
+        "evidence_span": "三夫赛事与中国铁人三项协会深度绑定"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "世界500强企业",
+        "evidence_span": "其中数十家世界500强企业、上市公司及新兴互联网科技公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上市公司",
+        "evidence_span": "其中数十家世界500强企业、上市公司及新兴互联网科技公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新兴互联网科技公司",
+        "evidence_span": "其中数十家世界500强企业、上市公司及新兴互联网科技公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "户外产业受益明显",
+        "evidence_span": "户外产业受益明显"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:38:45"
+}

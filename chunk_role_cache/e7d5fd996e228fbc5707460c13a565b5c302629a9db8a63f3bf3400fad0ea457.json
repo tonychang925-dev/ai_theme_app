@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "8bf6c8464f13", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述2024世界机器人大会的举办时间、参展企业和产品数量、人形机器人整机亮相等事件信息，属于新闻公告性质，缺乏静态知识内容。"}}

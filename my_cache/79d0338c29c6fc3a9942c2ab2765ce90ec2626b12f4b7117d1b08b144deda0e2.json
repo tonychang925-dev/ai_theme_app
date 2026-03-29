@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:52:35", "result": {"chunk_id": "3459600b0bd5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落涉及行业定位和发展战略等静态知识，但包含具体事件信息（如2021年9月科创板IPO过会、拟募资金额），这些是时间性动态，因此归类为candidate_mixed，以保留潜在知识价值，同时标记事件内容。"}}

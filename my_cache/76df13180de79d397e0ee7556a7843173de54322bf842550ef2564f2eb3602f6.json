@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "d7756c0b5998", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要报告2024年贺岁档票房的实时事件，包括具体日期、票房数字和影片排名，属于新闻动态，没有提供静态的题材知识。"}}

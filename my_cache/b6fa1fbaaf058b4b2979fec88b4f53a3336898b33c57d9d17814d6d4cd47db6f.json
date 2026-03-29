@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:55:16", "result": {"chunk_id": "51f661bf9156", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落纯粹解释具身智能的定义、核心构成和关键要素（如集成环境理解、智能交互等），是静态说明题材本身，没有涉及任何事件、新闻或时间性动态。"}}

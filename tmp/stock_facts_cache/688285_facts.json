@@ -1,0 +1,509 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "铁路电气化接触网系统设备",
+      "evidence_span": "公司业务包括：铁路电气化接触网系统设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市轨道交通供电系统设备",
+      "evidence_span": "公司业务包括：城市轨道交通供电系统设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轨外产品",
+      "evidence_span": "公司业务包括：轨外产品的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内电气化铁路和城市轨道交通供电装备领域的龙头企业",
+      "evidence_span": "国内电气化铁路和城市轨道交通供电装备领域的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "轨道交通牵引供电装备制造商",
+      "evidence_span": "打造世界一流的牵引供电装备制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "系统方案服务商",
+      "evidence_span": "打造世界一流的系统方案服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电气化铁路接触网产品",
+      "evidence_span": "公司主要产品为电气化铁路接触网产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市轨道交通供电设备",
+      "evidence_span": "公司主要产品为城市轨道交通供电设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防松螺母",
+      "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为防松螺母"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "槽道紧固件",
+      "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为槽道紧固件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "不锈钢标准紧固件",
+      "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为不锈钢标准紧固件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冲压件",
+      "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为冲压件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压电气法兰和壳体",
+      "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为高压电气法兰和壳体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车底盘铸造铝合金副车架",
+      "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为新能源汽车底盘铸造铝合金副车架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电设备铝合金铸件",
+      "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为风电设备铝合金铸件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商用车液力缓速器铸造铝合金零件",
+      "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为商用车液力缓速器铸造铝合金零件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空中列车供电轨系统产品",
+      "evidence_span": "“空中列车供电轨系统产品研究”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "山地轨道交通供电轨系统",
+      "evidence_span": "“山地轨道交通供电轨系统技术研究”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整体钢腕臂系统",
+      "evidence_span": "“整体钢腕臂系统、腕臂吊弦预配程序开发及工艺优化和高温高湿高盐环境接触网腕臂悬挂系统腐蚀防护关键技术及应用”项目产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "系列化槽道及配套紧固件",
+      "evidence_span": "“系列化槽道及配套紧固件研究”项目产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地铁第三轨系统",
+      "evidence_span": "接触轨的产品可以按供电模式分为地铁第三轨系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磁浮供电系统",
+      "evidence_span": "接触轨的产品可以按供电模式分为磁浮供电系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超级电容充电轨供电系统",
+      "evidence_span": "接触轨的产品可以按供电模式分为超级电容充电轨供电系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "跨座式单轨供电系统",
+      "evidence_span": "接触轨的产品可以按供电模式分为跨座式单轨供电系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "APM（三相交流600V接触轨）",
+      "evidence_span": "接触轨的产品可以按供电模式分为APM（三相交流600V接触轨）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空中悬挂供电系统",
+      "evidence_span": "接触轨的产品可以按供电模式分为空中悬挂供电系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铝合金铸造智能化研究",
+      "evidence_span": "《铝合金铸造智能化研究》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "轨道交通系列分相绝缘器的研制",
+      "evidence_span": "《轨道交通系列分相绝缘器的研制》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电气化铁路接触网零部件系统优化研究",
+      "evidence_span": "《电气化铁路接触网零部件系统优化研究》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "棘轮下锚补偿装置智能装配技术",
+      "evidence_span": "《棘轮下锚补偿装置智能装配技术研究》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电气化铁路锻造式无螺栓整体吊弦及定位线夹的研制",
+      "evidence_span": "《电气化铁路锻造式无螺栓整体吊弦及定位线夹的研制》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "刚性接触网垂直悬吊系统产品优化研究",
+      "evidence_span": "《刚性接触网垂直悬吊系统产品优化研究》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "轨道供电装备安装维护系统三维可视轻量化研究",
+      "evidence_span": "《轨道供电装备安装维护系统三维可视轻量化研究》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高原铁路分段绝缘设备技术研究",
+      "evidence_span": "国家铁路局科研项目《高原铁路分段绝缘设备技术研究》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电气化铁路接触网供电装备体系研究",
+      "evidence_span": "《电气化铁路接触网供电装备体系研究》"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速铁路接触网装备锻造自动化技术及抗风可靠性研究",
+      "evidence_span": "《高速铁路接触网装备锻造自动化技术及抗风可靠性研究》"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各铁路局",
+      "evidence_span": "公司客户主要为各铁路局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁路专线公司",
+      "evidence_span": "公司客户主要为铁路专线公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁路施工相关总包单位",
+      "evidence_span": "公司客户主要为铁路施工相关总包单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "城市地铁公司",
+      "evidence_span": "公司客户主要为各类城市地铁公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西安双特智能传动有限公司",
+      "evidence_span": "公司与西安双特智能传动有限公司签订800万元的供货协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京沪高铁",
+      "evidence_span": "公司为世界上运营里程最长、标准最高的京沪高铁供应产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "哈大高铁",
+      "evidence_span": "公司为国内极寒地区设计建设标准最高的哈大高铁供应产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "郑西高铁",
+      "evidence_span": "公司为第一条全国产化的郑西高铁供应产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京沈高铁",
+      "evidence_span": "公司为第一条运用简统化制式的京沈高铁供应产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海明珠线一期",
+      "evidence_span": "公司为第一条国产化轻轨上海明珠线一期供应产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广州地铁二号线",
+      "evidence_span": "公司为第一条刚性接触网国产化地铁广州地铁二号线供应产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广州地铁四号线",
+      "evidence_span": "公司为国内首次采用全国产化的钢铝复合接触轨供电系统的广州地铁四号线供应产品"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "部分产品填补了我国轨道交通供电系统关键零件国产化的空白"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "部分产品填补了我国轨道交通供电系统关键零件国产化的空白"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "铁路电气化接触网系统设备",
+        "evidence_span": "公司业务包括：铁路电气化接触网系统设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市轨道交通供电系统设备",
+        "evidence_span": "公司业务包括：城市轨道交通供电系统设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "轨外产品",
+        "evidence_span": "公司业务包括：轨外产品的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内电气化铁路和城市轨道交通供电装备领域的龙头企业",
+        "evidence_span": "国内电气化铁路和城市轨道交通供电装备领域的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "轨道交通牵引供电装备制造商",
+        "evidence_span": "打造世界一流的牵引供电装备制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "系统方案服务商",
+        "evidence_span": "打造世界一流的系统方案服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电气化铁路接触网产品",
+        "evidence_span": "公司主要产品为电气化铁路接触网产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市轨道交通供电设备",
+        "evidence_span": "公司主要产品为城市轨道交通供电设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防松螺母",
+        "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为防松螺母"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "槽道紧固件",
+        "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为槽道紧固件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "不锈钢标准紧固件",
+        "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为不锈钢标准紧固件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冲压件",
+        "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为冲压件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压电气法兰和壳体",
+        "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为高压电气法兰和壳体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车底盘铸造铝合金副车架",
+        "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为新能源汽车底盘铸造铝合金副车架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电设备铝合金铸件",
+        "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为风电设备铝合金铸件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商用车液力缓速器铸造铝合金零件",
+        "evidence_span": "轨外产品占公司业务的比重较低，产品用途比较分散，主要为商用车液力缓速器铸造铝合金零件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空中列车供电轨系统产品",
+        "evidence_span": "“空中列车供电轨系统产品研究”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "山地轨道交通供电轨系统",
+        "evidence_span": "“山地轨道交通供电轨系统技术研究”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整体钢腕臂系统",
+        "evidence_span": "“整体钢腕臂系统、腕臂吊弦预配程序开发及工艺优化和高温高湿高盐环境接触网腕臂悬挂系统腐蚀防护关键技术及应用”项目产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "系列化槽道及配套紧固件",
+        "evidence_span": "“系列化槽道及配套紧固件研究”项目产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地铁第三轨系统",
+        "evidence_span": "接触轨的产品可以按供电模式分为地铁第三轨系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磁浮供电系统",
+        "evidence_span": "接触轨的产品可以按供电模式分为磁浮供电系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超级电容充电轨供电系统",
+        "evidence_span": "接触轨的产品可以按供电模式分为超级电容充电轨供电系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "跨座式单轨供电系统",
+        "evidence_span": "接触轨的产品可以按供电模式分为跨座式单轨供电系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "APM（三相交流600V接触轨）",
+        "evidence_span": "接触轨的产品可以按供电模式分为APM（三相交流600V接触轨）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空中悬挂供电系统",
+        "evidence_span": "接触轨的产品可以按供电模式分为空中悬挂供电系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铝合金铸造智能化研究",
+        "evidence_span": "《铝合金铸造智能化研究》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "轨道交通系列分相绝缘器的研制",
+        "evidence_span": "《轨道交通系列分相绝缘器的研制》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电气化铁路接触网零部件系统优化研究",
+        "evidence_span": "《电气化铁路接触网零部件系统优化研究》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "棘轮下锚补偿装置智能装配技术",
+        "evidence_span": "《棘轮下锚补偿装置智能装配技术研究》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电气化铁路锻造式无螺栓整体吊弦及定位线夹的研制",
+        "evidence_span": "《电气化铁路锻造式无螺栓整体吊弦及定位线夹的研制》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "刚性接触网垂直悬吊系统产品优化研究",
+        "evidence_span": "《刚性接触网垂直悬吊系统产品优化研究》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "轨道供电装备安装维护系统三维可视轻量化研究",
+        "evidence_span": "《轨道供电装备安装维护系统三维可视轻量化研究》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高原铁路分段绝缘设备技术研究",
+        "evidence_span": "国家铁路局科研项目《高原铁路分段绝缘设备技术研究》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电气化铁路接触网供电装备体系研究",
+        "evidence_span": "《电气化铁路接触网供电装备体系研究》"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速铁路接触网装备锻造自动化技术及抗风可靠性研究",
+        "evidence_span": "《高速铁路接触网装备锻造自动化技术及抗风可靠性研究》"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各铁路局",
+        "evidence_span": "公司客户主要为各铁路局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁路专线公司",
+        "evidence_span": "公司客户主要为铁路专线公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁路施工相关总包单位",
+        "evidence_span": "公司客户主要为铁路施工相关总包单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "城市地铁公司",
+        "evidence_span": "公司客户主要为各类城市地铁公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西安双特智能传动有限公司",
+        "evidence_span": "公司与西安双特智能传动有限公司签订800万元的供货协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京沪高铁",
+        "evidence_span": "公司为世界上运营里程最长、标准最高的京沪高铁供应产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "哈大高铁",
+        "evidence_span": "公司为国内极寒地区设计建设标准最高的哈大高铁供应产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "郑西高铁",
+        "evidence_span": "公司为第一条全国产化的郑西高铁供应产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京沈高铁",
+        "evidence_span": "公司为第一条运用简统化制式的京沈高铁供应产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海明珠线一期",
+        "evidence_span": "公司为第一条国产化轻轨上海明珠线一期供应产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广州地铁二号线",
+        "evidence_span": "公司为第一条刚性接触网国产化地铁广州地铁二号线供应产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广州地铁四号线",
+        "evidence_span": "公司为国内首次采用全国产化的钢铝复合接触轨供电系统的广州地铁四号线供应产品"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "部分产品填补了我国轨道交通供电系统关键零件国产化的空白"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "部分产品填补了我国轨道交通供电系统关键零件国产化的空白"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:55:55"
+}

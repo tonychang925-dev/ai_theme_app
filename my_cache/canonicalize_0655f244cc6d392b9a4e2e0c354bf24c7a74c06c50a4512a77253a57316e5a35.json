@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:00:08", "result": {"span_uid": "c0c931bbf002", "action": "rewrite", "canonical_text": "政策鼓励发展轻量化、智能化、网联化的电动自行车产品，并推广应用北斗高精度定位技术。", "final_type": "signal", "final_role": "政策鼓励方向", "stability": "high", "reason": "该片段提供了政策鼓励方向，属于稳定、可独立成立的知识，但需去除新闻口吻和具体日期，改写为一般性陈述。"}}

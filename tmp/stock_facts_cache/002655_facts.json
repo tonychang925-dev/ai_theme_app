@@ -1,0 +1,379 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "微型精密电声元器件",
+      "evidence_span": "主营业务为微型精密电声元器件及电声组件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电声组件的研发",
+      "evidence_span": "主营业务为微型精密电声元器件及电声组件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "主营业务为微型精密电声元器件及电声组件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主营业务为微型精密电声元器件及电声组件的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电声技术解决方案提供",
+      "evidence_span": "电声技术解决方案提供商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密电声元器件",
+      "evidence_span": "精密电声元器件、零组件业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "零组件业务",
+      "evidence_span": "精密电声元器件、零组件业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体封测业务",
+      "evidence_span": "半导体封测业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车电子业务",
+      "evidence_span": "汽车电子业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专业的电声元器件及电声组件制造商和服务商",
+      "evidence_span": "专业的电声元器件及电声组件制造商和服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电声技术解决方案提供商",
+      "evidence_span": "电声技术解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内领先的微型电声元器件的制造商",
+      "evidence_span": "国内领先的微型电声元器件的制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "消费电子微电声元器件专业供应商",
+      "evidence_span": "消费电子微电声元器件专业供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电声元器件一线供应商",
+      "evidence_span": "电声元器件一线供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MEMS声学传感器",
+      "evidence_span": "主要产品包括MEMS声学传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驻极体声学传感器（ECM）",
+      "evidence_span": "驻极体声学传感器（ECM）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载语音模组",
+      "evidence_span": "车载语音模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "RNC振动传感器模组",
+      "evidence_span": "RNC振动传感器模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微型扬声器/受话器及其阵列模组",
+      "evidence_span": "微型扬声器/受话器及其阵列模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微型麦克风",
+      "evidence_span": "主要产品包括微型麦克风"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载麦克风",
+      "evidence_span": "车载麦克风"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "麦克风",
+      "evidence_span": "目前的主要产品是麦克风"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "喇叭",
+      "evidence_span": "目前的主要产品是麦克风和喇叭"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中控显示屏",
+      "evidence_span": "有中控显示屏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "K歌麦克风",
+      "evidence_span": "K歌麦克风"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载耳机",
+      "evidence_span": "车载耳机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载无线充",
+      "evidence_span": "车载无线充"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微型驻极体麦克风研发生产技术",
+      "evidence_span": "整合微型驻极体麦克风研发生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微型扬声器/受话器研发生产技术",
+      "evidence_span": "微型扬声器/受话器研发生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硅微麦克风研发生产技术",
+      "evidence_span": "硅微麦克风研发生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车载通讯研发生产技术",
+      "evidence_span": "车载通讯研发生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人机交互研发生产技术",
+      "evidence_span": "人机交互研发生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "声学相位调制技术",
+      "evidence_span": "拥有独特的声学相位调制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MEMS芯片设计研发",
+      "evidence_span": "拥有自己的MEMS芯片设计研发团队"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "完整的封测线",
+      "evidence_span": "完整的封测线"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球科技和汽车电子领域领先厂商",
+      "evidence_span": "同全球科技和汽车电子领域领先厂商保持了长期良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球科技和汽车电子行业领先客户",
+      "evidence_span": "同全球科技和汽车电子行业领先客户延续了长期良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "传统汽车豪华品牌",
+      "evidence_span": "客户覆盖众多传统汽车豪华品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源汽车品牌",
+      "evidence_span": "客户覆盖众多传统汽车豪华品牌和新能源汽车品牌"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "微型精密电声元器件及电声组件的研发、生产和销售",
+        "evidence_span": "主营业务为微型精密电声元器件及电声组件的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电声技术解决方案提供",
+        "evidence_span": "电声技术解决方案提供商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密电声元器件、零组件业务",
+        "evidence_span": "精密电声元器件、零组件业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体封测业务",
+        "evidence_span": "半导体封测业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车电子业务",
+        "evidence_span": "汽车电子业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专业的电声元器件及电声组件制造商和服务商",
+        "evidence_span": "专业的电声元器件及电声组件制造商和服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电声技术解决方案提供商",
+        "evidence_span": "电声技术解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内领先的微型电声元器件的制造商",
+        "evidence_span": "国内领先的微型电声元器件的制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "消费电子微电声元器件专业供应商",
+        "evidence_span": "消费电子微电声元器件专业供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电声元器件一线供应商",
+        "evidence_span": "电声元器件一线供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MEMS声学传感器",
+        "evidence_span": "主要产品包括MEMS声学传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驻极体声学传感器（ECM）",
+        "evidence_span": "驻极体声学传感器（ECM）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载语音模组",
+        "evidence_span": "车载语音模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "RNC振动传感器模组",
+        "evidence_span": "RNC振动传感器模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微型扬声器/受话器及其阵列模组",
+        "evidence_span": "微型扬声器/受话器及其阵列模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微型麦克风",
+        "evidence_span": "主要产品包括微型麦克风"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载麦克风",
+        "evidence_span": "车载麦克风"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "麦克风",
+        "evidence_span": "目前的主要产品是麦克风"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "喇叭",
+        "evidence_span": "目前的主要产品是麦克风和喇叭"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中控显示屏",
+        "evidence_span": "有中控显示屏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "K歌麦克风",
+        "evidence_span": "K歌麦克风"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载耳机",
+        "evidence_span": "车载耳机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载无线充",
+        "evidence_span": "车载无线充"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微型驻极体麦克风研发生产技术",
+        "evidence_span": "整合微型驻极体麦克风研发生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微型扬声器/受话器研发生产技术",
+        "evidence_span": "微型扬声器/受话器研发生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硅微麦克风研发生产技术",
+        "evidence_span": "硅微麦克风研发生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车载通讯研发生产技术",
+        "evidence_span": "车载通讯研发生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人机交互研发生产技术",
+        "evidence_span": "人机交互研发生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "声学相位调制技术",
+        "evidence_span": "拥有独特的声学相位调制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MEMS芯片设计研发",
+        "evidence_span": "拥有自己的MEMS芯片设计研发团队"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "完整的封测线",
+        "evidence_span": "完整的封测线"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球科技和汽车电子领域领先厂商",
+        "evidence_span": "同全球科技和汽车电子领域领先厂商保持了长期良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球科技和汽车电子行业领先客户",
+        "evidence_span": "同全球科技和汽车电子行业领先客户延续了长期良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "传统汽车豪华品牌",
+        "evidence_span": "客户覆盖众多传统汽车豪华品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源汽车品牌",
+        "evidence_span": "客户覆盖众多传统汽车豪华品牌和新能源汽车品牌"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:06:18"
+}

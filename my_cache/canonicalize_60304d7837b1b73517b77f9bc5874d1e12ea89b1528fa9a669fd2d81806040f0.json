@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:25:51", "result": {"span_uid": "34b42d1a6cff", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文包含未来技术重点、全球布局和产业挑战，多为预测性、事件性或进展性信息，无法整理成稳定、可独立成立的知识块，且部分内容（如具体基地、行动）具有强时效性和事件特征。"}}

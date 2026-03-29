@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "企业综合信息服务",
+      "evidence_span": "公司主要业务涉及企业综合信息服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有线电视网络",
+      "evidence_span": "公司主要业务涉及有线电视网络"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产开发",
+      "evidence_span": "公司主要业务涉及房地产开发"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "企业综合信息服务提供商",
+      "evidence_span": "已成为服务业务全面、服务行业覆盖广、对标能力强、具有行业影响力的企业综合信息服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "客户联络中心外包服务行业的头部企业",
+      "evidence_span": "已发展成为客户联络中心外包服务行业的头部企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "有线电视行业投资区域最广、覆盖用户最多的上市公司",
+      "evidence_span": "是目前国内有线电视行业投资区域最广、覆盖用户最多的上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客户联络中心",
+      "evidence_span": "为客户提供客户联络中心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "企信通",
+      "evidence_span": "为金融机构、电信运营商、互联网公司等众多企业客户提供企信通"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云通信",
+      "evidence_span": "为金融机构、电信运营商、互联网公司等众多企业客户提供云通信"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "权益服务平台",
+      "evidence_span": "同时还积极拓展权益服务平台业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据审核标注",
+      "evidence_span": "同时还积极拓展数据审核标注业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电视节目基本服务",
+      "evidence_span": "为所在区域用户提供电视节目基本服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频点播",
+      "evidence_span": "为所在区域用户提供视频点播"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高清影视",
+      "evidence_span": "为所在区域用户提供高清影视"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有线宽带",
+      "evidence_span": "为所在区域用户提供有线宽带"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主研发的业务平台",
+      "evidence_span": "依托于串联客户全周期的服务流程、自主研发的业务平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能技术支撑",
+      "evidence_span": "依托于串联客户全周期的服务流程、自主研发的业务平台、人工智能技术支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G消息平台功能完备性获证平台",
+      "evidence_span": "九五融合通信5G消息平台成为首批5G消息平台功能完备性获证平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主知识产权PaaS技术平台",
+      "evidence_span": "鸿联九五打造的自主知识产权PaaS技术平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融机构",
+      "evidence_span": "为金融机构、电信运营商、互联网公司等众多企业客户提供客户联络中心、企信通、云通信等全业务流程解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电信运营商",
+      "evidence_span": "为金融机构、电信运营商、互联网公司等众多企业客户提供客户联络中心、企信通、云通信等全业务流程解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "互联网公司",
+      "evidence_span": "为金融机构、电信运营商、互联网公司等众多企业客户提供客户联络中心、企信通、云通信等全业务流程解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "银行",
+      "evidence_span": "尤其是在银行、证券、保险行业拥有良好的形象与口碑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "证券",
+      "evidence_span": "尤其是在银行、证券、保险行业拥有良好的形象与口碑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保险",
+      "evidence_span": "尤其是在银行、证券、保险行业拥有良好的形象与口碑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "互联网头部公司",
+      "evidence_span": "积累了一定规模的互联网头部公司、人工智能数据服务商客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "人工智能数据服务商",
+      "evidence_span": "积累了一定规模的互联网头部公司、人工智能数据服务商客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "70家世界五百强企业",
+      "evidence_span": "与70家世界五百强企业，120家中国五百强企业建立了长期合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "120家中国五百强企业",
+      "evidence_span": "与70家世界五百强企业，120家中国五百强企业建立了长期合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "网络强国",
+      "evidence_span": "党的二十大指出，要加快建设网络强国、数字中国"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字中国",
+      "evidence_span": "党的二十大指出，要加快建设网络强国、数字中国"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "企业综合信息服务",
+        "evidence_span": "公司主要业务涉及企业综合信息服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有线电视网络",
+        "evidence_span": "公司主要业务涉及有线电视网络"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产开发",
+        "evidence_span": "公司主要业务涉及房地产开发"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "企业综合信息服务提供商",
+        "evidence_span": "已成为服务业务全面、服务行业覆盖广、对标能力强、具有行业影响力的企业综合信息服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "客户联络中心外包服务行业的头部企业",
+        "evidence_span": "已发展成为客户联络中心外包服务行业的头部企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "有线电视行业投资区域最广、覆盖用户最多的上市公司",
+        "evidence_span": "是目前国内有线电视行业投资区域最广、覆盖用户最多的上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客户联络中心",
+        "evidence_span": "为客户提供客户联络中心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "企信通",
+        "evidence_span": "为金融机构、电信运营商、互联网公司等众多企业客户提供企信通"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云通信",
+        "evidence_span": "为金融机构、电信运营商、互联网公司等众多企业客户提供云通信"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "权益服务平台",
+        "evidence_span": "同时还积极拓展权益服务平台业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据审核标注",
+        "evidence_span": "同时还积极拓展数据审核标注业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电视节目基本服务",
+        "evidence_span": "为所在区域用户提供电视节目基本服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频点播",
+        "evidence_span": "为所在区域用户提供视频点播"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高清影视",
+        "evidence_span": "为所在区域用户提供高清影视"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有线宽带",
+        "evidence_span": "为所在区域用户提供有线宽带"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主研发的业务平台",
+        "evidence_span": "依托于串联客户全周期的服务流程、自主研发的业务平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能技术支撑",
+        "evidence_span": "依托于串联客户全周期的服务流程、自主研发的业务平台、人工智能技术支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G消息平台功能完备性获证平台",
+        "evidence_span": "九五融合通信5G消息平台成为首批5G消息平台功能完备性获证平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主知识产权PaaS技术平台",
+        "evidence_span": "鸿联九五打造的自主知识产权PaaS技术平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融机构",
+        "evidence_span": "为金融机构、电信运营商、互联网公司等众多企业客户提供客户联络中心、企信通、云通信等全业务流程解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电信运营商",
+        "evidence_span": "为金融机构、电信运营商、互联网公司等众多企业客户提供客户联络中心、企信通、云通信等全业务流程解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "互联网公司",
+        "evidence_span": "为金融机构、电信运营商、互联网公司等众多企业客户提供客户联络中心、企信通、云通信等全业务流程解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "银行",
+        "evidence_span": "尤其是在银行、证券、保险行业拥有良好的形象与口碑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "证券",
+        "evidence_span": "尤其是在银行、证券、保险行业拥有良好的形象与口碑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保险",
+        "evidence_span": "尤其是在银行、证券、保险行业拥有良好的形象与口碑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "互联网头部公司",
+        "evidence_span": "积累了一定规模的互联网头部公司、人工智能数据服务商客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "人工智能数据服务商",
+        "evidence_span": "积累了一定规模的互联网头部公司、人工智能数据服务商客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "70家世界五百强企业",
+        "evidence_span": "与70家世界五百强企业，120家中国五百强企业建立了长期合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "120家中国五百强企业",
+        "evidence_span": "与70家世界五百强企业，120家中国五百强企业建立了长期合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "网络强国",
+        "evidence_span": "党的二十大指出，要加快建设网络强国、数字中国"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字中国",
+        "evidence_span": "党的二十大指出，要加快建设网络强国、数字中国"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:41:07"
+}

@@ -1,0 +1,379 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧医卫",
+      "evidence_span": "作为公司“3+2”架构中的重要业务板块，智慧医卫"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧政务",
+      "evidence_span": "作为公司“3+2”架构中的重要业务板块，智慧政务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "ICT业务",
+      "evidence_span": "ICT业务通过信息技术应用创新、云计算、大数据、人工智能、网络安全、数字园区等创新技术驱动和升级业务革新"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市信息化领域的领先企业",
+      "evidence_span": "国内城市信息化领域的领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "可信赖的新IT综合服务商",
+      "evidence_span": "作为可信赖的新IT综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字化经济的赋能者",
+      "evidence_span": "作为数字化经济的赋能者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧医卫全线产品和解决方案",
+      "evidence_span": "形成了覆盖医疗保障、药品管理、区域卫生、公共卫生、医疗服务、基层卫生等领域的全线产品和解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧医保/医药服务",
+      "evidence_span": "智慧医保/医药板块重点围绕三大领域推动市场布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧医疗解决方案",
+      "evidence_span": "公司智慧医疗板块市场继续拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一网通办解决方案",
+      "evidence_span": "公司作为上海市“一网通办”建设的主要承建商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一网统管解决方案",
+      "evidence_span": "推出大建管、大民生、大市场、大平安等业务领域的一网统管解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市安全解决方案",
+      "evidence_span": "城市安全领域，主要聚焦在公共安全、大司法、智慧交通和工业互联等四个方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "民生服务解决方案",
+      "evidence_span": "民生服务领域，持续夯实G端业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教育文创解决方案",
+      "evidence_span": "教育文创领域，业务涵盖区域教育、数字校园等方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息技术应用创新服务",
+      "evidence_span": "公司信创业务以国家“新基建”战略为指引"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "系统集成解决方案",
+      "evidence_span": "万达信息的系统集成解决方案具有突出优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络安全服务",
+      "evidence_span": "万达信息的网络安全业务主要包括"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字园区解决方案",
+      "evidence_span": "数字园区作为新一代信息技术与数字化制造业深度融合的产物"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "互联网+医疗健康",
+      "evidence_span": "互联网+医疗健康、政商一体化和智保通商保协同服务平台等全行业领先的产品和解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "政商一体化",
+      "evidence_span": "互联网+医疗健康、政商一体化和智保通商保协同服务平台等全行业领先的产品和解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智保通商保协同服务平台",
+      "evidence_span": "互联网+医疗健康、政商一体化和智保通商保协同服务平台等全行业领先的产品和解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "城市级数据中枢",
+      "evidence_span": "公司构建城市级“数据中枢”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "实时动态观管防一体化城运总平台",
+      "evidence_span": "公司建立实时动态“观管防”一体化的城运总平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云计算",
+      "evidence_span": "ICT业务通过信息技术应用创新、云计算、大数据、人工智能、网络安全、数字园区等创新技术驱动"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据",
+      "evidence_span": "ICT业务通过信息技术应用创新、云计算、大数据、人工智能、网络安全、数字园区等创新技术驱动"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能",
+      "evidence_span": "ICT业务通过信息技术应用创新、云计算、大数据、人工智能、网络安全、数字园区等创新技术驱动"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G网络",
+      "evidence_span": "结合5G网络集群通讯、云计算、工业智脑、物联网、边缘计算等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网",
+      "evidence_span": "结合5G网络集群通讯、云计算、工业智脑、物联网、边缘计算等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "边缘计算",
+      "evidence_span": "结合5G网络集群通讯、云计算、工业智脑、物联网、边缘计算等技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国人寿",
+      "evidence_span": "协同中国人寿为相关地市医保管理部门提供智能监管和支付改革等技术服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中行",
+      "evidence_span": "公司积极拓展与中行、工行、建行、交行等金融机构在政银合作领域的政务服务项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工行",
+      "evidence_span": "公司积极拓展与中行、工行、建行、交行等金融机构在政银合作领域的政务服务项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建行",
+      "evidence_span": "公司积极拓展与中行、工行、建行、交行等金融机构在政银合作领域的政务服务项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交行",
+      "evidence_span": "公司积极拓展与中行、工行、建行、交行等金融机构在政银合作领域的政务服务项目"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "大健康产业闭环",
+      "evidence_span": "国寿多维支持，倾力打造大健康产业闭环"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "保险+科技",
+      "evidence_span": "万达信息国寿战略入主，“保险+科技”打造大健康产业新生态"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信创产业",
+      "evidence_span": "信创产业正逐步按照这个顺序实现新产品、新技术自主可控"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧医卫",
+        "evidence_span": "作为公司“3+2”架构中的重要业务板块，智慧医卫"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧政务",
+        "evidence_span": "作为公司“3+2”架构中的重要业务板块，智慧政务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "ICT业务",
+        "evidence_span": "ICT业务通过信息技术应用创新、云计算、大数据、人工智能、网络安全、数字园区等创新技术驱动和升级业务革新"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市信息化领域的领先企业",
+        "evidence_span": "国内城市信息化领域的领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "可信赖的新IT综合服务商",
+        "evidence_span": "作为可信赖的新IT综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字化经济的赋能者",
+        "evidence_span": "作为数字化经济的赋能者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧医卫全线产品和解决方案",
+        "evidence_span": "形成了覆盖医疗保障、药品管理、区域卫生、公共卫生、医疗服务、基层卫生等领域的全线产品和解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧医保/医药服务",
+        "evidence_span": "智慧医保/医药板块重点围绕三大领域推动市场布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧医疗解决方案",
+        "evidence_span": "公司智慧医疗板块市场继续拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一网通办解决方案",
+        "evidence_span": "公司作为上海市“一网通办”建设的主要承建商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一网统管解决方案",
+        "evidence_span": "推出大建管、大民生、大市场、大平安等业务领域的一网统管解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市安全解决方案",
+        "evidence_span": "城市安全领域，主要聚焦在公共安全、大司法、智慧交通和工业互联等四个方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "民生服务解决方案",
+        "evidence_span": "民生服务领域，持续夯实G端业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教育文创解决方案",
+        "evidence_span": "教育文创领域，业务涵盖区域教育、数字校园等方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息技术应用创新服务",
+        "evidence_span": "公司信创业务以国家“新基建”战略为指引"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "系统集成解决方案",
+        "evidence_span": "万达信息的系统集成解决方案具有突出优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络安全服务",
+        "evidence_span": "万达信息的网络安全业务主要包括"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字园区解决方案",
+        "evidence_span": "数字园区作为新一代信息技术与数字化制造业深度融合的产物"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "互联网+医疗健康",
+        "evidence_span": "互联网+医疗健康、政商一体化和智保通商保协同服务平台等全行业领先的产品和解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "政商一体化",
+        "evidence_span": "互联网+医疗健康、政商一体化和智保通商保协同服务平台等全行业领先的产品和解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智保通商保协同服务平台",
+        "evidence_span": "互联网+医疗健康、政商一体化和智保通商保协同服务平台等全行业领先的产品和解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "城市级数据中枢",
+        "evidence_span": "公司构建城市级“数据中枢”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "实时动态观管防一体化城运总平台",
+        "evidence_span": "公司建立实时动态“观管防”一体化的城运总平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云计算",
+        "evidence_span": "ICT业务通过信息技术应用创新、云计算、大数据、人工智能、网络安全、数字园区等创新技术驱动"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据",
+        "evidence_span": "ICT业务通过信息技术应用创新、云计算、大数据、人工智能、网络安全、数字园区等创新技术驱动"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能",
+        "evidence_span": "ICT业务通过信息技术应用创新、云计算、大数据、人工智能、网络安全、数字园区等创新技术驱动"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G网络",
+        "evidence_span": "结合5G网络集群通讯、云计算、工业智脑、物联网、边缘计算等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网",
+        "evidence_span": "结合5G网络集群通讯、云计算、工业智脑、物联网、边缘计算等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "边缘计算",
+        "evidence_span": "结合5G网络集群通讯、云计算、工业智脑、物联网、边缘计算等技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国人寿",
+        "evidence_span": "协同中国人寿为相关地市医保管理部门提供智能监管和支付改革等技术服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中行",
+        "evidence_span": "公司积极拓展与中行、工行、建行、交行等金融机构在政银合作领域的政务服务项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工行",
+        "evidence_span": "公司积极拓展与中行、工行、建行、交行等金融机构在政银合作领域的政务服务项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建行",
+        "evidence_span": "公司积极拓展与中行、工行、建行、交行等金融机构在政银合作领域的政务服务项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交行",
+        "evidence_span": "公司积极拓展与中行、工行、建行、交行等金融机构在政银合作领域的政务服务项目"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "大健康产业闭环",
+        "evidence_span": "国寿多维支持，倾力打造大健康产业闭环"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "保险+科技",
+        "evidence_span": "万达信息国寿战略入主，“保险+科技”打造大健康产业新生态"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信创产业",
+        "evidence_span": "信创产业正逐步按照这个顺序实现新产品、新技术自主可控"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:59:16"
+}

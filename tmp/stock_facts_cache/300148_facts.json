@@ -1,0 +1,184 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "图书出版",
+      "evidence_span": "公司目前主要从事图书出版与发行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "发行",
+      "evidence_span": "公司目前主要从事图书出版与发行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "教育服务",
+      "evidence_span": "公司目前主要从事图书出版与发行，教育服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "手机游戏的研发",
+      "evidence_span": "手机游戏的研发、发行、代理与运营等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "手机游戏的发行",
+      "evidence_span": "手机游戏的研发、发行、代理与运营等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "手机游戏的代理",
+      "evidence_span": "手机游戏的研发、发行、代理与运营等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "手机游戏的运营",
+      "evidence_span": "手机游戏的研发、发行、代理与运营等业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "青少年教育娱乐全天候供应商",
+      "evidence_span": "打造青少年教育娱乐全天候供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教育读本",
+      "evidence_span": "重点推进控股子公司人民今典的教育读本"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《习近平新时代中国特色社会主义思想学生读本(大学)》",
+      "evidence_span": "《习近平新时代中国特色社会主义思想学生读本(大学)》等项目落地"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手机游戏",
+      "evidence_span": "公司运营的游戏均为手机游戏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《王者纷争》",
+      "evidence_span": "公司自研的《王者纷争》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《风云天下OL》",
+      "evidence_span": "《风云天下OL》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《忘仙》",
+      "evidence_span": "《忘仙》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《塔王之王》",
+      "evidence_span": "《塔王之王》等多款长周期精品游戏"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "研运一体化",
+      "evidence_span": "游戏业务坚持研运一体化"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各省学生用书目录",
+      "evidence_span": "教育读本成功进入各省学生用书目录"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "文化+教育+科技",
+      "evidence_span": "公司紧密围绕“文化+教育+科技”的战略定位"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "图书出版与发行",
+        "evidence_span": "公司目前主要从事图书出版与发行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "教育服务",
+        "evidence_span": "公司目前主要从事图书出版与发行，教育服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "手机游戏的研发",
+        "evidence_span": "手机游戏的研发、发行、代理与运营等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "手机游戏的发行",
+        "evidence_span": "手机游戏的研发、发行、代理与运营等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "手机游戏的代理",
+        "evidence_span": "手机游戏的研发、发行、代理与运营等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "手机游戏的运营",
+        "evidence_span": "手机游戏的研发、发行、代理与运营等业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "青少年教育娱乐全天候供应商",
+        "evidence_span": "打造青少年教育娱乐全天候供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教育读本",
+        "evidence_span": "重点推进控股子公司人民今典的教育读本"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《习近平新时代中国特色社会主义思想学生读本(大学)》",
+        "evidence_span": "《习近平新时代中国特色社会主义思想学生读本(大学)》等项目落地"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手机游戏",
+        "evidence_span": "公司运营的游戏均为手机游戏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《王者纷争》",
+        "evidence_span": "公司自研的《王者纷争》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《风云天下OL》",
+        "evidence_span": "《风云天下OL》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《忘仙》",
+        "evidence_span": "《忘仙》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《塔王之王》",
+        "evidence_span": "《塔王之王》等多款长周期精品游戏"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "研运一体化",
+        "evidence_span": "游戏业务坚持研运一体化"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各省学生用书目录",
+        "evidence_span": "教育读本成功进入各省学生用书目录"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "文化+教育+科技",
+        "evidence_span": "公司紧密围绕“文化+教育+科技”的战略定位"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:54:05"
+}

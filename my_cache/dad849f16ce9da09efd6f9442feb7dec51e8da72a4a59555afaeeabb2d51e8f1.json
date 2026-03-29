@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:23:14", "result": {"chunk_id": "f2b48662c7ca", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段提及中国超大型水下无人机的新闻事件，但隐含了水下无人机作为海军装备的技术信息，可能包含对海军无人化转型的稳定知识，尽管以事件形式呈现，仍值得进一步裁决。"}}

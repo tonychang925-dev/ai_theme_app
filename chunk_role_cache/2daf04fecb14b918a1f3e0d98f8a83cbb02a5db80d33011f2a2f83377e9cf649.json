@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "84c839663c90", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述人形机器人论坛召开的事件，但提到了发布标准（如《人形机器人分类分级应用指南》），这些标准可能包含有价值的静态知识，尽管以事件形式呈现。"}}

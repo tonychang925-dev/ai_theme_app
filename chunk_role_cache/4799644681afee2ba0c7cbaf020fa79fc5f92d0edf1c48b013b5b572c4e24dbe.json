@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T12:19:46", "result": {"chunk_id": "6ec214d229b5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述华为与中芯国际提交SAQP芯片专利和三星电子工会罢工两个事件，但SAQP技术部分提到了使用DUV光刻机生产3纳米芯片的技术细节，这可能有价值于半导体设备知识构建，混合了事件和技术信息。"}}

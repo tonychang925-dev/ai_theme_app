@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "微电子焊接材料研发",
+      "evidence_span": "深耕微电子焊接材料的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "微电子焊接材料生产",
+      "evidence_span": "深耕微电子焊接材料的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "微电子焊接材料销售",
+      "evidence_span": "深耕微电子焊接材料的研发、生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "微电子焊接材料龙头",
+      "evidence_span": "唯特偶电子焊接材料龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锡膏",
+      "evidence_span": "主要产品包括锡膏、焊锡丝、焊锡条等微电子焊接材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "焊锡丝",
+      "evidence_span": "主要产品包括锡膏、焊锡丝、焊锡条等微电子焊接材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "焊锡条",
+      "evidence_span": "主要产品包括锡膏、焊锡丝、焊锡条等微电子焊接材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "助焊剂",
+      "evidence_span": "助焊剂、清洗剂等辅助焊接材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清洗剂",
+      "evidence_span": "助焊剂、清洗剂等辅助焊接材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低温无铅锡膏",
+      "evidence_span": "公司研发的低温无铅锡膏、超细粒度锡膏、水溶性锡膏、低温焊锡丝、水基型清洗剂已通过华为认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超细粒度锡膏",
+      "evidence_span": "公司研发的低温无铅锡膏、超细粒度锡膏、水溶性锡膏、低温焊锡丝、水基型清洗剂已通过华为认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水溶性锡膏",
+      "evidence_span": "公司研发的低温无铅锡膏、超细粒度锡膏、水溶性锡膏、低温焊锡丝、水基型清洗剂已通过华为认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低温焊锡丝",
+      "evidence_span": "公司研发的低温无铅锡膏、超细粒度锡膏、水溶性锡膏、低温焊锡丝、水基型清洗剂已通过华为认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水基型清洗剂",
+      "evidence_span": "公司研发的低温无铅锡膏、超细粒度锡膏、水溶性锡膏、低温焊锡丝、水基型清洗剂已通过华为认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "已通过华为认证"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产替代趋势持续"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "微电子焊接材料研发",
+        "evidence_span": "深耕微电子焊接材料的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "微电子焊接材料生产",
+        "evidence_span": "深耕微电子焊接材料的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "微电子焊接材料销售",
+        "evidence_span": "深耕微电子焊接材料的研发、生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "微电子焊接材料龙头",
+        "evidence_span": "唯特偶电子焊接材料龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锡膏",
+        "evidence_span": "主要产品包括锡膏、焊锡丝、焊锡条等微电子焊接材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "焊锡丝",
+        "evidence_span": "主要产品包括锡膏、焊锡丝、焊锡条等微电子焊接材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "焊锡条",
+        "evidence_span": "主要产品包括锡膏、焊锡丝、焊锡条等微电子焊接材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "助焊剂",
+        "evidence_span": "助焊剂、清洗剂等辅助焊接材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清洗剂",
+        "evidence_span": "助焊剂、清洗剂等辅助焊接材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低温无铅锡膏",
+        "evidence_span": "公司研发的低温无铅锡膏、超细粒度锡膏、水溶性锡膏、低温焊锡丝、水基型清洗剂已通过华为认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超细粒度锡膏",
+        "evidence_span": "公司研发的低温无铅锡膏、超细粒度锡膏、水溶性锡膏、低温焊锡丝、水基型清洗剂已通过华为认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水溶性锡膏",
+        "evidence_span": "公司研发的低温无铅锡膏、超细粒度锡膏、水溶性锡膏、低温焊锡丝、水基型清洗剂已通过华为认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低温焊锡丝",
+        "evidence_span": "公司研发的低温无铅锡膏、超细粒度锡膏、水溶性锡膏、低温焊锡丝、水基型清洗剂已通过华为认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水基型清洗剂",
+        "evidence_span": "公司研发的低温无铅锡膏、超细粒度锡膏、水溶性锡膏、低温焊锡丝、水基型清洗剂已通过华为认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "已通过华为认证"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产替代趋势持续"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:21:13"
+}

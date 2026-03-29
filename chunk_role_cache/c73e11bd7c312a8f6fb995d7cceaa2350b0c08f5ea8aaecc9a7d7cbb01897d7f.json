@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "71f35549b481", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落包含两部分：第一部分介绍了工业和信息化部目录中氟化氩光刻机的技术参数（如分辨率、套刻精度、支持工艺），这是稳定的技术知识；第二部分是关于苹果包下台积电产能的事件报道。由于混有知识和事件，边界不清，适合分类为candidate_mixed。"}}

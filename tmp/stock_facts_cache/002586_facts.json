@@ -1,0 +1,304 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "水利工程",
+      "evidence_span": "公司主营业务为对建筑工程的爆破设计施工、安全评估、安全监理，工程地质勘测，土石方工程、水利工程规划设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "海堤工程",
+      "evidence_span": "公司主营业务为对建筑工程的爆破设计施工、安全评估、安全监理，工程地质勘测，土石方工程、水利工程规划设计，生态环保、海堤工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "河道治理工程",
+      "evidence_span": "河道治理工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水库工程",
+      "evidence_span": "水库工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市防洪工程",
+      "evidence_span": "城市防洪工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "农田水利工程",
+      "evidence_span": "农田水利工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "市政道路桥梁工程",
+      "evidence_span": "市政道路桥梁工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "市政管网工程",
+      "evidence_span": "市政管网工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "园林景观绿化工程",
+      "evidence_span": "园林景观绿化工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "房屋建筑工程",
+      "evidence_span": "房屋建筑工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "港口",
+      "evidence_span": "港口与航道工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航道工程",
+      "evidence_span": "港口与航道工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "爆破",
+      "evidence_span": "业务覆盖水利、市政、房建、港航、爆破等专业建设领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海堤工程建设龙头",
+      "evidence_span": "高速发展中的海堤工程建设龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "海堤工程施工专业化企业",
+      "evidence_span": "国内现代海堤工程施工专业化水平位居前列的企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "水利建设行业领先者",
+      "evidence_span": "在巩固全国水利系统海堤建设行业领先者地位的基础上"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水利工程施工",
+      "evidence_span": "公司主营业务为对建筑工程的爆破设计施工、安全评估、安全监理，工程地质勘测，土石方工程、水利工程规划设计"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海堤工程施工",
+      "evidence_span": "公司主营业务为对建筑工程的爆破设计施工、安全评估、安全监理，工程地质勘测，土石方工程、水利工程规划设计，生态环保、海堤工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生态治理解决方案",
+      "evidence_span": "打造集规划、设计、投资、建设、运营于一体化的生态治理解决方案提供商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "箱涵式水闸浮运安装工艺",
+      "evidence_span": "公司创新了箱涵式水闸浮运安装工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂软基上爆破挤淤筑堤方法",
+      "evidence_span": "复杂软基上爆破挤淤筑堤方法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "深孔微差爆破",
+      "evidence_span": "成功应用了深孔微差爆破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "深水爆夯",
+      "evidence_span": "深水爆夯"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "淤泥快速脱水固化",
+      "evidence_span": "淤泥快速脱水固化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "淤泥资源化利用",
+      "evidence_span": "淤泥资源化利用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大型人工湿地",
+      "evidence_span": "大型人工湿地"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "黑臭河道整治",
+      "evidence_span": "黑臭河道整治"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水下塑料排水板加固软基方法",
+      "evidence_span": "水下塑料排水板加固软基方法及设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "螺旋式淤泥快速固结技术",
+      "evidence_span": "螺旋式淤泥固化机的应用解决了滩涂软基原位处理的世界性技术难题"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "建筑渣土资源化利用技术",
+      "evidence_span": "采用我公司建筑渣土资源化利用技术"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "水利工程",
+        "evidence_span": "公司主营业务为对建筑工程的爆破设计施工、安全评估、安全监理，工程地质勘测，土石方工程、水利工程规划设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "海堤工程",
+        "evidence_span": "公司主营业务为对建筑工程的爆破设计施工、安全评估、安全监理，工程地质勘测，土石方工程、水利工程规划设计，生态环保、海堤工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "河道治理工程",
+        "evidence_span": "河道治理工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水库工程",
+        "evidence_span": "水库工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市防洪工程",
+        "evidence_span": "城市防洪工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "农田水利工程",
+        "evidence_span": "农田水利工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "市政道路桥梁工程",
+        "evidence_span": "市政道路桥梁工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "市政管网工程",
+        "evidence_span": "市政管网工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "园林景观绿化工程",
+        "evidence_span": "园林景观绿化工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "房屋建筑工程",
+        "evidence_span": "房屋建筑工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "港口与航道工程",
+        "evidence_span": "港口与航道工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "爆破",
+        "evidence_span": "业务覆盖水利、市政、房建、港航、爆破等专业建设领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海堤工程建设龙头",
+        "evidence_span": "高速发展中的海堤工程建设龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "海堤工程施工专业化企业",
+        "evidence_span": "国内现代海堤工程施工专业化水平位居前列的企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "水利建设行业领先者",
+        "evidence_span": "在巩固全国水利系统海堤建设行业领先者地位的基础上"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水利工程施工",
+        "evidence_span": "公司主营业务为对建筑工程的爆破设计施工、安全评估、安全监理，工程地质勘测，土石方工程、水利工程规划设计"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海堤工程施工",
+        "evidence_span": "公司主营业务为对建筑工程的爆破设计施工、安全评估、安全监理，工程地质勘测，土石方工程、水利工程规划设计，生态环保、海堤工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生态治理解决方案",
+        "evidence_span": "打造集规划、设计、投资、建设、运营于一体化的生态治理解决方案提供商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "箱涵式水闸浮运安装工艺",
+        "evidence_span": "公司创新了箱涵式水闸浮运安装工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂软基上爆破挤淤筑堤方法",
+        "evidence_span": "复杂软基上爆破挤淤筑堤方法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "深孔微差爆破",
+        "evidence_span": "成功应用了深孔微差爆破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "深水爆夯",
+        "evidence_span": "深水爆夯"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "淤泥快速脱水固化",
+        "evidence_span": "淤泥快速脱水固化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "淤泥资源化利用",
+        "evidence_span": "淤泥资源化利用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大型人工湿地",
+        "evidence_span": "大型人工湿地"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "黑臭河道整治",
+        "evidence_span": "黑臭河道整治"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水下塑料排水板加固软基方法",
+        "evidence_span": "水下塑料排水板加固软基方法及设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "螺旋式淤泥快速固结技术",
+        "evidence_span": "螺旋式淤泥固化机的应用解决了滩涂软基原位处理的世界性技术难题"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "建筑渣土资源化利用技术",
+        "evidence_span": "采用我公司建筑渣土资源化利用技术"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:41:56"
+}

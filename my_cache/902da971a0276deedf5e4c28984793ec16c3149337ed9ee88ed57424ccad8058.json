@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:01:57", "result": {"chunk_id": "5389c22c17ed", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述终端业务的覆盖范围和营收地位，是华为业务结构的静态说明，无事件或动态内容。"}}

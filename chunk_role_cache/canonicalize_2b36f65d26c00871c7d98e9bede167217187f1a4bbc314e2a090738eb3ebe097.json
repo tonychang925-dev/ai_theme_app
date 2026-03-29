@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:44:17", "result": {"span_uid": "b1abb28f88f1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段描述一项蒸发冷却新技术的研发进展和潜在优势，属于技术进展信号，但信息基于具体研究事件且表达不完整，无法整理为稳定、可独立成立的知识表达。"}}

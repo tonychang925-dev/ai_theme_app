@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "ca6b2fa44f5e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述一个具体事件：国家集成电路产业投资基金三期股份有限公司注册成立，包括日期和注册资本，是纯粹的事件公告，不包含静态知识。"}}

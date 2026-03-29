@@ -1,0 +1,164 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "重组蛋白质",
+      "evidence_span": "主要从事重组蛋白质及其长效修饰药物研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其长效修饰药物研发",
+      "evidence_span": "主要从事重组蛋白质及其长效修饰药物研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其长效修饰药物生产",
+      "evidence_span": "主要从事重组蛋白质及其长效修饰药物生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其长效修饰药物销售",
+      "evidence_span": "主要从事重组蛋白质及其长效修饰药物销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家创新型生物医药企业",
+      "evidence_span": "国家创新型生物医药企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内聚乙二醇蛋白质长效药物领域领军企业",
+      "evidence_span": "国内聚乙二醇蛋白质长效药物领域领军企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "派格宾",
+      "evidence_span": "派格宾（长效干扰素）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特尔立",
+      "evidence_span": "特尔立（重组人粒细胞巨噬细胞刺激因子）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特尔津",
+      "evidence_span": "特尔津（重组人粒细胞刺激因子）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特尔康",
+      "evidence_span": "特尔康（重组人白介素-11）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚乙二醇重组人生长激素",
+      "evidence_span": "聚乙二醇重组人生长激素（YPEG-GH）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚乙二醇重组人粒细胞刺激因子",
+      "evidence_span": "聚乙二醇重组人粒细胞刺激因子（YPEG-G-CSF）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚乙二醇重组人促红素",
+      "evidence_span": "聚乙二醇重组人促红素（YPEG-EPO）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人干扰素α2b喷雾剂",
+      "evidence_span": "人干扰素α2b喷雾剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "长效修饰平台",
+      "evidence_span": "长效修饰平台厚积薄发"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "乙肝临床治愈",
+      "evidence_span": "聚焦慢乙肝临床治愈"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "重组蛋白质及其长效修饰药物研发",
+        "evidence_span": "主要从事重组蛋白质及其长效修饰药物研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "重组蛋白质及其长效修饰药物生产",
+        "evidence_span": "主要从事重组蛋白质及其长效修饰药物生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "重组蛋白质及其长效修饰药物销售",
+        "evidence_span": "主要从事重组蛋白质及其长效修饰药物销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家创新型生物医药企业",
+        "evidence_span": "国家创新型生物医药企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内聚乙二醇蛋白质长效药物领域领军企业",
+        "evidence_span": "国内聚乙二醇蛋白质长效药物领域领军企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "派格宾",
+        "evidence_span": "派格宾（长效干扰素）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特尔立",
+        "evidence_span": "特尔立（重组人粒细胞巨噬细胞刺激因子）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特尔津",
+        "evidence_span": "特尔津（重组人粒细胞刺激因子）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特尔康",
+        "evidence_span": "特尔康（重组人白介素-11）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚乙二醇重组人生长激素",
+        "evidence_span": "聚乙二醇重组人生长激素（YPEG-GH）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚乙二醇重组人粒细胞刺激因子",
+        "evidence_span": "聚乙二醇重组人粒细胞刺激因子（YPEG-G-CSF）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚乙二醇重组人促红素",
+        "evidence_span": "聚乙二醇重组人促红素（YPEG-EPO）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人干扰素α2b喷雾剂",
+        "evidence_span": "人干扰素α2b喷雾剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "长效修饰平台",
+        "evidence_span": "长效修饰平台厚积薄发"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "乙肝临床治愈",
+        "evidence_span": "聚焦慢乙肝临床治愈"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:50:40"
+}

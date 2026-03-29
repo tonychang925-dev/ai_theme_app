@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "c57a37aebaa3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述北京丰台区召开大会并设定产值目标的具体事件，没有提供低空经济的本体知识，属于纯事件动态。"}}

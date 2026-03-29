@@ -1,0 +1,454 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子材料",
+      "evidence_span": "彤程新材目前三大主要业务分别为电子材料、可降解材料、汽车/轮胎用特种材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "可降解材料",
+      "evidence_span": "彤程新材目前三大主要业务分别为电子材料、可降解材料、汽车/轮胎用特种材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车",
+      "evidence_span": "彤程新材目前三大主要业务分别为电子材料、可降解材料、汽车/轮胎用特种材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轮胎用特种材料",
+      "evidence_span": "彤程新材目前三大主要业务分别为电子材料、可降解材料、汽车/轮胎用特种材料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特种橡胶助剂龙头",
+      "evidence_span": "彤程新材特种橡胶助剂龙头，多元布局建设电子材料平台型公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新材料综合服务商",
+      "evidence_span": "彤程新材成立于1999年，总部位于上海，是全球领先的新材料综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内半导体光刻胶龙头",
+      "evidence_span": "旗下北京科华是稀缺的国内半导体光刻胶龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国最大的集成电路光刻胶本土供应商",
+      "evidence_span": "北京科华是目前中国最大的集成电路光刻胶本土供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内最大的液晶正性光刻胶本土供应商",
+      "evidence_span": "北旭电子是国内最大的液晶正性光刻胶本土供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国最大的橡胶用酚醛树脂生产商",
+      "evidence_span": "公司连续多年是中国最大的橡胶用酚醛树脂生产商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "G线光刻胶",
+      "evidence_span": "目前已经量产G/I线、KrF光刻胶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "I线光刻胶",
+      "evidence_span": "目前已经量产G/I线、KrF光刻胶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "KrF光刻胶",
+      "evidence_span": "目前已经量产G/I线、KrF光刻胶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "增粘树脂",
+      "evidence_span": "产品包括增粘树脂、补强树脂和粘合树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "补强树脂",
+      "evidence_span": "产品包括增粘树脂、补强树脂和粘合树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粘合树脂",
+      "evidence_span": "产品包括增粘树脂、补强树脂和粘合树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级酚醛树脂",
+      "evidence_span": "已成功自主开发电子级酚醛树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环氧塑封料",
+      "evidence_span": "在光刻胶、环氧塑封料、覆铜板等领域均有布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "覆铜板",
+      "evidence_span": "在光刻胶、环氧塑封料、覆铜板等领域均有布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液晶正性光刻胶",
+      "evidence_span": "北旭电子是国内最大的液晶正性光刻胶本土供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "对-叔丁基苯酚",
+      "evidence_span": "公司生产的高纯度“对-叔丁基苯酚”在聚碳酸酯行业中使用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PBAT聚合技术",
+      "evidence_span": "通过引进巴斯夫授权的PBAT聚合技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "14nm以上光刻胶工艺",
+      "evidence_span": "其种类涵盖国内14nm以上大部分工艺需求"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "KrF光刻胶关键层工艺突破",
+      "evidence_span": "KrF产品在Poly、AA、Metal等关键层工艺完成了重大突破"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中芯国际",
+      "evidence_span": "I线光刻胶和KrF光刻胶批量供应于中芯国际、华虹宏力、长江存储、华力微电子、武汉新芯、华润上华等13家12寸客户和17家8寸客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华虹宏力",
+      "evidence_span": "I线光刻胶和KrF光刻胶批量供应于中芯国际、华虹宏力、长江存储、华力微电子、武汉新芯、华润上华等13家12寸客户和17家8寸客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长江存储",
+      "evidence_span": "I线光刻胶和KrF光刻胶批量供应于中芯国际、华虹宏力、长江存储、华力微电子、武汉新芯、华润上华等13家12寸客户和17家8寸客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华力微电子",
+      "evidence_span": "I线光刻胶和KrF光刻胶批量供应于中芯国际、华虹宏力、长江存储、华力微电子、武汉新芯、华润上华等13家12寸客户和17家8寸客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "武汉新芯",
+      "evidence_span": "I线光刻胶和KrF光刻胶批量供应于中芯国际、华虹宏力、长江存储、华力微电子、武汉新芯、华润上华等13家12寸客户和17家8寸客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华润上华",
+      "evidence_span": "I线光刻胶和KrF光刻胶批量供应于中芯国际、华虹宏力、长江存储、华力微电子、武汉新芯、华润上华等13家12寸客户和17家8寸客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "普利司通",
+      "evidence_span": "客户覆盖全球轮胎75强，包括普利司通、米其林、固特异、马牌、倍耐力等国际知名轮胎企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "米其林",
+      "evidence_span": "客户覆盖全球轮胎75强，包括普利司通、米其林、固特异、马牌、倍耐力等国际知名轮胎企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "固特异",
+      "evidence_span": "客户覆盖全球轮胎75强，包括普利司通、米其林、固特异、马牌、倍耐力等国际知名轮胎企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "马牌",
+      "evidence_span": "客户覆盖全球轮胎75强，包括普利司通、米其林、固特异、马牌、倍耐力等国际知名轮胎企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "倍耐力",
+      "evidence_span": "客户覆盖全球轮胎75强，包括普利司通、米其林、固特异、马牌、倍耐力等国际知名轮胎企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三菱瓦斯",
+      "evidence_span": "主要客户包括三菱瓦斯、LG、帝人、万华、科思创等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LG",
+      "evidence_span": "主要客户包括三菱瓦斯、LG、帝人、万华、科思创等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "帝人",
+      "evidence_span": "主要客户包括三菱瓦斯、LG、帝人、万华、科思创等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万华",
+      "evidence_span": "主要客户包括三菱瓦斯、LG、帝人、万华、科思创等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科思创",
+      "evidence_span": "主要客户包括三菱瓦斯、LG、帝人、万华、科思创等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "巴斯夫",
+      "evidence_span": "公司是德国BASF、EVONIK、法国道达尔、日本住友化学等国际领先材料供应商在中国轮胎橡胶行业的唯一或主要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "EVONIK",
+      "evidence_span": "公司是德国BASF、EVONIK、法国道达尔、日本住友化学等国际领先材料供应商在中国轮胎橡胶行业的唯一或主要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法国道达尔",
+      "evidence_span": "公司是德国BASF、EVONIK、法国道达尔、日本住友化学等国际领先材料供应商在中国轮胎橡胶行业的唯一或主要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本住友化学",
+      "evidence_span": "公司是德国BASF、EVONIK、法国道达尔、日本住友化学等国际领先材料供应商在中国轮胎橡胶行业的唯一或主要合作伙伴"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光刻胶国产替代",
+      "evidence_span": "彤程新材科华杜邦战略合作，加速光刻胶国产替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子材料",
+        "evidence_span": "彤程新材目前三大主要业务分别为电子材料、可降解材料、汽车/轮胎用特种材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "可降解材料",
+        "evidence_span": "彤程新材目前三大主要业务分别为电子材料、可降解材料、汽车/轮胎用特种材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车/轮胎用特种材料",
+        "evidence_span": "彤程新材目前三大主要业务分别为电子材料、可降解材料、汽车/轮胎用特种材料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特种橡胶助剂龙头",
+        "evidence_span": "彤程新材特种橡胶助剂龙头，多元布局建设电子材料平台型公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新材料综合服务商",
+        "evidence_span": "彤程新材成立于1999年，总部位于上海，是全球领先的新材料综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内半导体光刻胶龙头",
+        "evidence_span": "旗下北京科华是稀缺的国内半导体光刻胶龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国最大的集成电路光刻胶本土供应商",
+        "evidence_span": "北京科华是目前中国最大的集成电路光刻胶本土供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内最大的液晶正性光刻胶本土供应商",
+        "evidence_span": "北旭电子是国内最大的液晶正性光刻胶本土供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国最大的橡胶用酚醛树脂生产商",
+        "evidence_span": "公司连续多年是中国最大的橡胶用酚醛树脂生产商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "G线光刻胶",
+        "evidence_span": "目前已经量产G/I线、KrF光刻胶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "I线光刻胶",
+        "evidence_span": "目前已经量产G/I线、KrF光刻胶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "KrF光刻胶",
+        "evidence_span": "目前已经量产G/I线、KrF光刻胶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "增粘树脂",
+        "evidence_span": "产品包括增粘树脂、补强树脂和粘合树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "补强树脂",
+        "evidence_span": "产品包括增粘树脂、补强树脂和粘合树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粘合树脂",
+        "evidence_span": "产品包括增粘树脂、补强树脂和粘合树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级酚醛树脂",
+        "evidence_span": "已成功自主开发电子级酚醛树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环氧塑封料",
+        "evidence_span": "在光刻胶、环氧塑封料、覆铜板等领域均有布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "覆铜板",
+        "evidence_span": "在光刻胶、环氧塑封料、覆铜板等领域均有布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液晶正性光刻胶",
+        "evidence_span": "北旭电子是国内最大的液晶正性光刻胶本土供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "对-叔丁基苯酚",
+        "evidence_span": "公司生产的高纯度“对-叔丁基苯酚”在聚碳酸酯行业中使用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PBAT聚合技术",
+        "evidence_span": "通过引进巴斯夫授权的PBAT聚合技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "14nm以上光刻胶工艺",
+        "evidence_span": "其种类涵盖国内14nm以上大部分工艺需求"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "KrF光刻胶关键层工艺突破",
+        "evidence_span": "KrF产品在Poly、AA、Metal等关键层工艺完成了重大突破"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中芯国际",
+        "evidence_span": "I线光刻胶和KrF光刻胶批量供应于中芯国际、华虹宏力、长江存储、华力微电子、武汉新芯、华润上华等13家12寸客户和17家8寸客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华虹宏力",
+        "evidence_span": "I线光刻胶和KrF光刻胶批量供应于中芯国际、华虹宏力、长江存储、华力微电子、武汉新芯、华润上华等13家12寸客户和17家8寸客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长江存储",
+        "evidence_span": "I线光刻胶和KrF光刻胶批量供应于中芯国际、华虹宏力、长江存储、华力微电子、武汉新芯、华润上华等13家12寸客户和17家8寸客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华力微电子",
+        "evidence_span": "I线光刻胶和KrF光刻胶批量供应于中芯国际、华虹宏力、长江存储、华力微电子、武汉新芯、华润上华等13家12寸客户和17家8寸客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "武汉新芯",
+        "evidence_span": "I线光刻胶和KrF光刻胶批量供应于中芯国际、华虹宏力、长江存储、华力微电子、武汉新芯、华润上华等13家12寸客户和17家8寸客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华润上华",
+        "evidence_span": "I线光刻胶和KrF光刻胶批量供应于中芯国际、华虹宏力、长江存储、华力微电子、武汉新芯、华润上华等13家12寸客户和17家8寸客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "普利司通",
+        "evidence_span": "客户覆盖全球轮胎75强，包括普利司通、米其林、固特异、马牌、倍耐力等国际知名轮胎企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "米其林",
+        "evidence_span": "客户覆盖全球轮胎75强，包括普利司通、米其林、固特异、马牌、倍耐力等国际知名轮胎企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "固特异",
+        "evidence_span": "客户覆盖全球轮胎75强，包括普利司通、米其林、固特异、马牌、倍耐力等国际知名轮胎企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "马牌",
+        "evidence_span": "客户覆盖全球轮胎75强，包括普利司通、米其林、固特异、马牌、倍耐力等国际知名轮胎企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "倍耐力",
+        "evidence_span": "客户覆盖全球轮胎75强，包括普利司通、米其林、固特异、马牌、倍耐力等国际知名轮胎企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三菱瓦斯",
+        "evidence_span": "主要客户包括三菱瓦斯、LG、帝人、万华、科思创等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LG",
+        "evidence_span": "主要客户包括三菱瓦斯、LG、帝人、万华、科思创等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "帝人",
+        "evidence_span": "主要客户包括三菱瓦斯、LG、帝人、万华、科思创等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万华",
+        "evidence_span": "主要客户包括三菱瓦斯、LG、帝人、万华、科思创等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科思创",
+        "evidence_span": "主要客户包括三菱瓦斯、LG、帝人、万华、科思创等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "巴斯夫",
+        "evidence_span": "公司是德国BASF、EVONIK、法国道达尔、日本住友化学等国际领先材料供应商在中国轮胎橡胶行业的唯一或主要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "EVONIK",
+        "evidence_span": "公司是德国BASF、EVONIK、法国道达尔、日本住友化学等国际领先材料供应商在中国轮胎橡胶行业的唯一或主要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法国道达尔",
+        "evidence_span": "公司是德国BASF、EVONIK、法国道达尔、日本住友化学等国际领先材料供应商在中国轮胎橡胶行业的唯一或主要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本住友化学",
+        "evidence_span": "公司是德国BASF、EVONIK、法国道达尔、日本住友化学等国际领先材料供应商在中国轮胎橡胶行业的唯一或主要合作伙伴"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光刻胶国产替代",
+        "evidence_span": "彤程新材科华杜邦战略合作，加速光刻胶国产替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:44:30"
+}

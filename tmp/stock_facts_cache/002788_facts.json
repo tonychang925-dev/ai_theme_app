@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药分销",
+      "evidence_span": "本公司从事医药分销和零售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药零售连锁",
+      "evidence_span": "本公司主营业务为药品、中药饮片、医疗器械等分销及医药零售连锁"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗器械分销",
+      "evidence_span": "本公司主营业务为药品、中药饮片、医疗器械等分销"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中药饮片业务",
+      "evidence_span": "公司加大对中药饮片业务的投入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "第三方物流服务",
+      "evidence_span": "为客户提供医药产品第三方物流服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "福建省最大的医药流通企业",
+      "evidence_span": "系福建省最大的医药流通企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域医药商业龙头",
+      "evidence_span": "鹭燕医药福建医药商业龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药品",
+      "evidence_span": "本公司主营业务为药品、中药饮片、医疗器械等分销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药饮片",
+      "evidence_span": "本公司主营业务为药品、中药饮片、医疗器械等分销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗器械",
+      "evidence_span": "本公司主营业务为药品、中药饮片、医疗器械等分销"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DTP药房服务",
+      "evidence_span": "大力引进DTP品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三方冷链仓储和配送服务",
+      "evidence_span": "为疫苗生产企业和疾控部门提供宫颈癌、流感、狂犬疫苗等疫苗的第三方冷链仓储和配送服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "纯销模式",
+      "evidence_span": "纯销模式为本公司的主要经营模式"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公立医疗机构",
+      "evidence_span": "客户（主要是公立医疗机构）资信较好"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医院",
+      "evidence_span": "直接出售给医院、诊所、药店等终端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "诊所",
+      "evidence_span": "直接出售给医院、诊所、药店等终端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "药店",
+      "evidence_span": "直接出售给医院、诊所、药店等终端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "疫苗生产企业",
+      "evidence_span": "为疫苗生产企业和疾控部门提供宫颈癌、流感、狂犬疫苗等疫苗的第三方冷链仓储和配送服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "疾控部门",
+      "evidence_span": "为疫苗生产企业和疾控部门提供宫颈癌、流感、狂犬疫苗等疫苗的第三方冷链仓储和配送服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "中医药振兴发展",
+      "evidence_span": "随着国家推动中医药振兴发展战略的实施"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药分销",
+        "evidence_span": "本公司从事医药分销和零售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药零售连锁",
+        "evidence_span": "本公司主营业务为药品、中药饮片、医疗器械等分销及医药零售连锁"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗器械分销",
+        "evidence_span": "本公司主营业务为药品、中药饮片、医疗器械等分销"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中药饮片业务",
+        "evidence_span": "公司加大对中药饮片业务的投入"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "第三方物流服务",
+        "evidence_span": "为客户提供医药产品第三方物流服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "福建省最大的医药流通企业",
+        "evidence_span": "系福建省最大的医药流通企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域医药商业龙头",
+        "evidence_span": "鹭燕医药福建医药商业龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药品",
+        "evidence_span": "本公司主营业务为药品、中药饮片、医疗器械等分销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药饮片",
+        "evidence_span": "本公司主营业务为药品、中药饮片、医疗器械等分销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗器械",
+        "evidence_span": "本公司主营业务为药品、中药饮片、医疗器械等分销"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DTP药房服务",
+        "evidence_span": "大力引进DTP品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三方冷链仓储和配送服务",
+        "evidence_span": "为疫苗生产企业和疾控部门提供宫颈癌、流感、狂犬疫苗等疫苗的第三方冷链仓储和配送服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "纯销模式",
+        "evidence_span": "纯销模式为本公司的主要经营模式"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公立医疗机构",
+        "evidence_span": "客户（主要是公立医疗机构）资信较好"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医院",
+        "evidence_span": "直接出售给医院、诊所、药店等终端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "诊所",
+        "evidence_span": "直接出售给医院、诊所、药店等终端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "药店",
+        "evidence_span": "直接出售给医院、诊所、药店等终端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "疫苗生产企业",
+        "evidence_span": "为疫苗生产企业和疾控部门提供宫颈癌、流感、狂犬疫苗等疫苗的第三方冷链仓储和配送服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "疾控部门",
+        "evidence_span": "为疫苗生产企业和疾控部门提供宫颈癌、流感、狂犬疫苗等疫苗的第三方冷链仓储和配送服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "中医药振兴发展",
+        "evidence_span": "随着国家推动中医药振兴发展战略的实施"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:41:10"
+}

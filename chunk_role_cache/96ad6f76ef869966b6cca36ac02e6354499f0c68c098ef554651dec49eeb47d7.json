@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "1fefc4f07c07", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述四川天府新区政策出台事件，但包含具体政策内容（如补贴细节），可能隐含低空经济产业发展的知识（如支持措施），混合了事件和潜在知识，需要进一步裁决。"}}

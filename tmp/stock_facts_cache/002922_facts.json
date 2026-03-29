@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源变压器",
+      "evidence_span": "形成了以能源产品（新能源变压器及工业控制用变压器为主）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业控制变压器",
+      "evidence_span": "形成了以能源产品（新能源变压器及工业控制用变压器为主）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "照明产品",
+      "evidence_span": "形成了以能源产品（新能源变压器及工业控制用变压器为主）和照明产品（照明电源及照明灯具为主）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车载电源",
+      "evidence_span": "同时布局了车载电源、通讯电源以及储能等新的应用领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "通讯电源",
+      "evidence_span": "同时布局了车载电源、通讯电源以及储能等新的应用领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "储能",
+      "evidence_span": "同时布局了车载电源、通讯电源以及储能等新的应用领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专业供应商",
+      "evidence_span": "是一家向全球市场提供变压器、电源及电源组件的专业供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "上游零部件供应商",
+      "evidence_span": "公司作为上游零部件供应商也将收获更广阔的市场空间"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高频磁性器件（电感）",
+      "evidence_span": "此类产品主要包括配套于光伏逆变器的高频磁性器件（电感）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏发电并网的升压变压器",
+      "evidence_span": "应用于光伏发电并网的升压变压器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环形变压器",
+      "evidence_span": "公司工控变压器产品包括环形变压器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方形变压器",
+      "evidence_span": "公司工控变压器产品包括环形变压器、方形变压器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "开关电源",
+      "evidence_span": "公司工控变压器产品包括环形变压器、方形变压器、开关电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "移相变压器",
+      "evidence_span": "公司工控变压器产品包括环形变压器、方形变压器、开关电源、移相变压器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "干式变压器",
+      "evidence_span": "公司工控变压器产品包括环形变压器、方形变压器、开关电源、移相变压器、干式变压器等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED照明电源",
+      "evidence_span": "目前，公司照明产品以照明电源为主，包括LED照明电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "景观灯电气箱",
+      "evidence_span": "目前，公司照明产品以照明电源为主，包括LED照明电源以及景观灯电气箱等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "吸顶灯",
+      "evidence_span": "产品主要面向北美市场，均为定制类产品，包括吸顶灯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卫浴灯",
+      "evidence_span": "产品主要面向北美市场，均为定制类产品，包括吸顶灯、卫浴灯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "吊灯",
+      "evidence_span": "产品主要面向北美市场，均为定制类产品，包括吸顶灯、卫浴灯、吊灯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "筒灯",
+      "evidence_span": "产品主要面向北美市场，均为定制类产品，包括吸顶灯、卫浴灯、吊灯、筒灯等室内产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低压景观灯",
+      "evidence_span": "产品主要面向北美市场，均为定制类产品，包括吸顶灯、卫浴灯、吊灯、筒灯等室内产品以及低压景观灯等户外产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "巴拿马电源的移相变压器",
+      "evidence_span": "公司是该移相变压器产品的唯一供应商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "移相变压器研发",
+      "evidence_span": "公司参与了该电源核心部件移相变压器研发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阳光电源",
+      "evidence_span": "大批量供应于阳光电源和华为等逆变器厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "大批量供应于阳光电源和华为等逆变器厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日立",
+      "evidence_span": "该类产品的客户主要包括日立"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "明电舍",
+      "evidence_span": "该类产品的客户主要包括日立、明电舍"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世",
+      "evidence_span": "该类产品的客户主要包括日立、明电舍、博世"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "罗克韦尔",
+      "evidence_span": "该类产品的客户主要包括日立、明电舍、博世、罗克韦尔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "施耐德",
+      "evidence_span": "该类产品的客户主要包括日立、明电舍、博世、罗克韦尔、施耐德"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中鼎",
+      "evidence_span": "该类产品的客户主要包括日立、明电舍、博世、罗克韦尔、施耐德、中鼎等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宜家",
+      "evidence_span": "公司是国内少数同时与宜家、欧司朗、Kichler以及家得宝等国际知名企业形成长期稳定战略合作的企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧司朗",
+      "evidence_span": "公司是国内少数同时与宜家、欧司朗、Kichler以及家得宝等国际知名企业形成长期稳定战略合作的企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Kichler",
+      "evidence_span": "公司是国内少数同时与宜家、欧司朗、Kichler以及家得宝等国际知名企业形成长期稳定战略合作的企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家得宝",
+      "evidence_span": "公司是国内少数同时与宜家、欧司朗、Kichler以及家得宝等国际知名企业形成长期稳定战略合作的企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LOWES",
+      "evidence_span": "主要客户为家得宝、LOWES以及品牌商Kichler、Jimway等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Jimway",
+      "evidence_span": "主要客户为家得宝、LOWES以及品牌商Kichler、Jimway等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "锦浪科技",
+      "evidence_span": "实现锦浪科技、特变电工、固德威等逆变器厂商的突破"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特变电工",
+      "evidence_span": "实现锦浪科技、特变电工、固德威等逆变器厂商的突破"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "固德威",
+      "evidence_span": "实现锦浪科技、特变电工、固德威等逆变器厂商的突破"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里巴巴",
+      "evidence_span": "公司参与了该电源核心部件移相变压器研发"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源变压器",
+        "evidence_span": "形成了以能源产品（新能源变压器及工业控制用变压器为主）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业控制变压器",
+        "evidence_span": "形成了以能源产品（新能源变压器及工业控制用变压器为主）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "照明产品",
+        "evidence_span": "形成了以能源产品（新能源变压器及工业控制用变压器为主）和照明产品（照明电源及照明灯具为主）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车载电源",
+        "evidence_span": "同时布局了车载电源、通讯电源以及储能等新的应用领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "通讯电源",
+        "evidence_span": "同时布局了车载电源、通讯电源以及储能等新的应用领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "储能",
+        "evidence_span": "同时布局了车载电源、通讯电源以及储能等新的应用领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专业供应商",
+        "evidence_span": "是一家向全球市场提供变压器、电源及电源组件的专业供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "上游零部件供应商",
+        "evidence_span": "公司作为上游零部件供应商也将收获更广阔的市场空间"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高频磁性器件（电感）",
+        "evidence_span": "此类产品主要包括配套于光伏逆变器的高频磁性器件（电感）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏发电并网的升压变压器",
+        "evidence_span": "应用于光伏发电并网的升压变压器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环形变压器",
+        "evidence_span": "公司工控变压器产品包括环形变压器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方形变压器",
+        "evidence_span": "公司工控变压器产品包括环形变压器、方形变压器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "开关电源",
+        "evidence_span": "公司工控变压器产品包括环形变压器、方形变压器、开关电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "移相变压器",
+        "evidence_span": "公司工控变压器产品包括环形变压器、方形变压器、开关电源、移相变压器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "干式变压器",
+        "evidence_span": "公司工控变压器产品包括环形变压器、方形变压器、开关电源、移相变压器、干式变压器等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED照明电源",
+        "evidence_span": "目前，公司照明产品以照明电源为主，包括LED照明电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "景观灯电气箱",
+        "evidence_span": "目前，公司照明产品以照明电源为主，包括LED照明电源以及景观灯电气箱等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "吸顶灯",
+        "evidence_span": "产品主要面向北美市场，均为定制类产品，包括吸顶灯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卫浴灯",
+        "evidence_span": "产品主要面向北美市场，均为定制类产品，包括吸顶灯、卫浴灯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "吊灯",
+        "evidence_span": "产品主要面向北美市场，均为定制类产品，包括吸顶灯、卫浴灯、吊灯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "筒灯",
+        "evidence_span": "产品主要面向北美市场，均为定制类产品，包括吸顶灯、卫浴灯、吊灯、筒灯等室内产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低压景观灯",
+        "evidence_span": "产品主要面向北美市场，均为定制类产品，包括吸顶灯、卫浴灯、吊灯、筒灯等室内产品以及低压景观灯等户外产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "巴拿马电源的移相变压器",
+        "evidence_span": "公司是该移相变压器产品的唯一供应商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "移相变压器研发",
+        "evidence_span": "公司参与了该电源核心部件移相变压器研发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阳光电源",
+        "evidence_span": "大批量供应于阳光电源和华为等逆变器厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "大批量供应于阳光电源和华为等逆变器厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日立",
+        "evidence_span": "该类产品的客户主要包括日立"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "明电舍",
+        "evidence_span": "该类产品的客户主要包括日立、明电舍"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世",
+        "evidence_span": "该类产品的客户主要包括日立、明电舍、博世"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "罗克韦尔",
+        "evidence_span": "该类产品的客户主要包括日立、明电舍、博世、罗克韦尔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "施耐德",
+        "evidence_span": "该类产品的客户主要包括日立、明电舍、博世、罗克韦尔、施耐德"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中鼎",
+        "evidence_span": "该类产品的客户主要包括日立、明电舍、博世、罗克韦尔、施耐德、中鼎等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宜家",
+        "evidence_span": "公司是国内少数同时与宜家、欧司朗、Kichler以及家得宝等国际知名企业形成长期稳定战略合作的企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧司朗",
+        "evidence_span": "公司是国内少数同时与宜家、欧司朗、Kichler以及家得宝等国际知名企业形成长期稳定战略合作的企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Kichler",
+        "evidence_span": "公司是国内少数同时与宜家、欧司朗、Kichler以及家得宝等国际知名企业形成长期稳定战略合作的企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家得宝",
+        "evidence_span": "公司是国内少数同时与宜家、欧司朗、Kichler以及家得宝等国际知名企业形成长期稳定战略合作的企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LOWES",
+        "evidence_span": "主要客户为家得宝、LOWES以及品牌商Kichler、Jimway等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Jimway",
+        "evidence_span": "主要客户为家得宝、LOWES以及品牌商Kichler、Jimway等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "锦浪科技",
+        "evidence_span": "实现锦浪科技、特变电工、固德威等逆变器厂商的突破"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特变电工",
+        "evidence_span": "实现锦浪科技、特变电工、固德威等逆变器厂商的突破"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "固德威",
+        "evidence_span": "实现锦浪科技、特变电工、固德威等逆变器厂商的突破"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里巴巴",
+        "evidence_span": "公司参与了该电源核心部件移相变压器研发"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:40:54"
+}

@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "精细化工",
+      "evidence_span": "精细化工业务为公司的主要业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保水处理",
+      "evidence_span": "公司业务主要涉及精细化工、环保水处理、光伏发电及商品贸易"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏发电",
+      "evidence_span": "公司业务主要涉及精细化工、环保水处理、光伏发电及商品贸易"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商品贸易",
+      "evidence_span": "公司业务主要涉及精细化工、环保水处理、光伏发电及商品贸易"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "聚丙烯酰胺生产供应商",
+      "evidence_span": "公司是行业领先的三次采油和水处理重要原材料——聚丙烯酰胺生产供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丙烯酰胺",
+      "evidence_span": "公司主要产品包括丙烯酰胺、聚丙烯酰胺、表面活性剂等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚丙烯酰胺",
+      "evidence_span": "公司主要产品包括丙烯酰胺、聚丙烯酰胺、表面活性剂等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "表面活性剂",
+      "evidence_span": "公司主要产品包括丙烯酰胺、聚丙烯酰胺、表面活性剂等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "稠油降粘剂",
+      "evidence_span": "公司的产品包括丙烯酰胺、聚丙烯酰胺、表面活性剂、稠油降粘剂等系列产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微生物法丙烯酰胺生产工艺",
+      "evidence_span": "形成了一整套自主专有的微生物法丙烯酰胺、阴离子聚丙烯酰胺、阳离子聚丙烯酰胺、表面活性剂等生产工艺和技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "阴离子聚丙烯酰胺生产工艺",
+      "evidence_span": "形成了一整套自主专有的微生物法丙烯酰胺、阴离子聚丙烯酰胺、阳离子聚丙烯酰胺、表面活性剂等生产工艺和技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "阳离子聚丙烯酰胺生产工艺",
+      "evidence_span": "形成了一整套自主专有的微生物法丙烯酰胺、阴离子聚丙烯酰胺、阳离子聚丙烯酰胺、表面活性剂等生产工艺和技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "表面活性剂生产工艺",
+      "evidence_span": "形成了一整套自主专有的微生物法丙烯酰胺、阴离子聚丙烯酰胺、阳离子聚丙烯酰胺、表面活性剂等生产工艺和技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "油田水精细化除油技术",
+      "evidence_span": "攻克了油田水精细化除油、高效除硅、深度软化脱盐等多项技术难题"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效除硅技术",
+      "evidence_span": "攻克了油田水精细化除油、高效除硅、深度软化脱盐等多项技术难题"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "深度软化脱盐技术",
+      "evidence_span": "攻克了油田水精细化除油、高效除硅、深度软化脱盐等多项技术难题"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高难度稠油采出水资源化工艺技术",
+      "evidence_span": "形成具有自主知识产权的高难度稠油采出水资源化工艺技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "是中石化、中石油重要的供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "是中石化、中石油重要的供应商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "精细化工",
+        "evidence_span": "精细化工业务为公司的主要业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保水处理",
+        "evidence_span": "公司业务主要涉及精细化工、环保水处理、光伏发电及商品贸易"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏发电",
+        "evidence_span": "公司业务主要涉及精细化工、环保水处理、光伏发电及商品贸易"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商品贸易",
+        "evidence_span": "公司业务主要涉及精细化工、环保水处理、光伏发电及商品贸易"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "聚丙烯酰胺生产供应商",
+        "evidence_span": "公司是行业领先的三次采油和水处理重要原材料——聚丙烯酰胺生产供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丙烯酰胺",
+        "evidence_span": "公司主要产品包括丙烯酰胺、聚丙烯酰胺、表面活性剂等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚丙烯酰胺",
+        "evidence_span": "公司主要产品包括丙烯酰胺、聚丙烯酰胺、表面活性剂等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "表面活性剂",
+        "evidence_span": "公司主要产品包括丙烯酰胺、聚丙烯酰胺、表面活性剂等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "稠油降粘剂",
+        "evidence_span": "公司的产品包括丙烯酰胺、聚丙烯酰胺、表面活性剂、稠油降粘剂等系列产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微生物法丙烯酰胺生产工艺",
+        "evidence_span": "形成了一整套自主专有的微生物法丙烯酰胺、阴离子聚丙烯酰胺、阳离子聚丙烯酰胺、表面活性剂等生产工艺和技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "阴离子聚丙烯酰胺生产工艺",
+        "evidence_span": "形成了一整套自主专有的微生物法丙烯酰胺、阴离子聚丙烯酰胺、阳离子聚丙烯酰胺、表面活性剂等生产工艺和技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "阳离子聚丙烯酰胺生产工艺",
+        "evidence_span": "形成了一整套自主专有的微生物法丙烯酰胺、阴离子聚丙烯酰胺、阳离子聚丙烯酰胺、表面活性剂等生产工艺和技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "表面活性剂生产工艺",
+        "evidence_span": "形成了一整套自主专有的微生物法丙烯酰胺、阴离子聚丙烯酰胺、阳离子聚丙烯酰胺、表面活性剂等生产工艺和技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "油田水精细化除油技术",
+        "evidence_span": "攻克了油田水精细化除油、高效除硅、深度软化脱盐等多项技术难题"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效除硅技术",
+        "evidence_span": "攻克了油田水精细化除油、高效除硅、深度软化脱盐等多项技术难题"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "深度软化脱盐技术",
+        "evidence_span": "攻克了油田水精细化除油、高效除硅、深度软化脱盐等多项技术难题"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高难度稠油采出水资源化工艺技术",
+        "evidence_span": "形成具有自主知识产权的高难度稠油采出水资源化工艺技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "是中石化、中石油重要的供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "是中石化、中石油重要的供应商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:12:03"
+}

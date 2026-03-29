@@ -1,0 +1,78 @@
+{
+  "must": [
+    "火箭发射",
+    "载人航天",
+    "卫星互联网",
+    "可回收火箭发射",
+    "猎鹰9号",
+    "星舰"
+  ],
+  "should": [
+    "垂直回收技术",
+    "龙飞船",
+    "星盾",
+    "NASA",
+    "埃隆·马斯克",
+    "频谱",
+    "埃隆・马斯克",
+    "全球最大的卫星网络",
+    "重塑了全球商业航天的竞争格局",
+    "降低太空发射成本",
+    "人类未来移民火星",
+    "建立自给自足的火星殖民地"
+  ],
+  "not": [
+    "世界首富",
+    "首次公开募股",
+    "IPO计划",
+    "特朗普政府",
+    "得克萨斯州",
+    "联邦野生动物保护区",
+    "冲击8000亿美元估值",
+    "明年IPO"
+  ],
+  "evidence_refs": [
+    {
+      "term": "火箭发射",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "火箭发射"
+    },
+    {
+      "term": "载人航天",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "载人航天"
+    },
+    {
+      "term": "卫星互联网",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "卫星互联网"
+    },
+    {
+      "term": "可回收火箭发射",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "可回收火箭发射"
+    },
+    {
+      "term": "猎鹰9号",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "猎鹰9号"
+    },
+    {
+      "term": "星舰",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "星舰"
+    }
+  ],
+  "subject_id": "9060949",
+  "quality": "strong",
+  "generated_at": "2026-03-13T11:59:34",
+  "semantic_type": "公司业务与技术突破",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

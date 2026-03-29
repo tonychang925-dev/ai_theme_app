@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "97cd99affaa2", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落混合了事件（华为申请专利、台湾将华为和中芯国际列入实体名单）和潜在知识（四芯片封装设计、桥接技术如CoWoS-L、先进封装技术、利用成熟制程通过封装提升性能），这些知识可能对半导体封装和AI芯片领域构建有较高价值，但以专利和新闻事件形式呈现。"}}

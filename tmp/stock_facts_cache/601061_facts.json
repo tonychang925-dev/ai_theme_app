@@ -1,0 +1,144 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "金属",
+      "evidence_span": "公司主营业务为金属及矿产品贸易"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "矿产品贸易",
+      "evidence_span": "公司主营业务为金属及矿产品贸易"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "黑色金属产品贸易",
+      "evidence_span": "公司经营的黑色金属产品主要为铁矿石产品和钢材产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "有色金属产品贸易",
+      "evidence_span": "公司经营的有色金属产品主要包括铜产品，铌产品，铝产品及镍产品等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其他贸易产品贸易",
+      "evidence_span": "公司的其他贸易品种主要包括煤炭产品和液化天然气产品等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "CBMM中国市场独家分销商",
+      "evidence_span": "公司作为CBMM中国市场独家分销商与其签订了独家分销协议"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铁矿石产品",
+      "evidence_span": "公司铁矿石产品主要包括粉矿，块矿，球团矿产品等贸易品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢材产品",
+      "evidence_span": "公司钢材产品主要包括冷卷，热卷，酸洗卷，镀锌卷等贸易品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铜产品",
+      "evidence_span": "公司铜产品主要包括铜精矿，粗铜和电解铜等贸易品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铌产品",
+      "evidence_span": "公司铌产品主要包括铌铁，镍铌，氧化铌等铌合金及铌化合物等贸易品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝产品",
+      "evidence_span": "公司铝产品主要包括电解铝，氧化铝及铝土矿等贸易品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤炭产品",
+      "evidence_span": "公司的其他贸易品种主要包括煤炭产品和液化天然气产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液化天然气产品",
+      "evidence_span": "公司的其他贸易品种主要包括煤炭产品和液化天然气产品等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "CBMM",
+      "evidence_span": "公司作为CBMM中国市场独家分销商与其签订了独家分销协议"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "金属及矿产品贸易",
+        "evidence_span": "公司主营业务为金属及矿产品贸易"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "黑色金属产品贸易",
+        "evidence_span": "公司经营的黑色金属产品主要为铁矿石产品和钢材产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "有色金属产品贸易",
+        "evidence_span": "公司经营的有色金属产品主要包括铜产品，铌产品，铝产品及镍产品等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "其他贸易产品贸易",
+        "evidence_span": "公司的其他贸易品种主要包括煤炭产品和液化天然气产品等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "CBMM中国市场独家分销商",
+        "evidence_span": "公司作为CBMM中国市场独家分销商与其签订了独家分销协议"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铁矿石产品",
+        "evidence_span": "公司铁矿石产品主要包括粉矿，块矿，球团矿产品等贸易品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢材产品",
+        "evidence_span": "公司钢材产品主要包括冷卷，热卷，酸洗卷，镀锌卷等贸易品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铜产品",
+        "evidence_span": "公司铜产品主要包括铜精矿，粗铜和电解铜等贸易品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铌产品",
+        "evidence_span": "公司铌产品主要包括铌铁，镍铌，氧化铌等铌合金及铌化合物等贸易品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝产品",
+        "evidence_span": "公司铝产品主要包括电解铝，氧化铝及铝土矿等贸易品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤炭产品",
+        "evidence_span": "公司的其他贸易品种主要包括煤炭产品和液化天然气产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液化天然气产品",
+        "evidence_span": "公司的其他贸易品种主要包括煤炭产品和液化天然气产品等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "CBMM",
+        "evidence_span": "公司作为CBMM中国市场独家分销商与其签订了独家分销协议"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:10:44"
+}

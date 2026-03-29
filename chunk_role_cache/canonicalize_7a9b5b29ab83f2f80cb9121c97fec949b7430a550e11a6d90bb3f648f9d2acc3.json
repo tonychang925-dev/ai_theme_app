@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:47:32", "result": {"span_uid": "e90c35e2d133", "action": "rewrite", "canonical_text": "智能眼镜市场规模预计将快速增长，年复合增速较高。", "final_type": "signal", "final_role": "市场规模趋势", "stability": "medium", "reason": "该片段包含市场规模预测信息，体现了产业景气信号，但具体数值和年份可能随时间变化，适合改写为更稳定的趋势描述。"}}

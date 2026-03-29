@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:12:54", "result": {"chunk_id": "48182b3d2b09", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段静态说明造纸成本结构，包括木浆系和废纸系的原料成本占比、能源动力成本占比、关键原材料（如木浆、废纸）比重，以及成本优势因素，属于题材本体知识。"}}

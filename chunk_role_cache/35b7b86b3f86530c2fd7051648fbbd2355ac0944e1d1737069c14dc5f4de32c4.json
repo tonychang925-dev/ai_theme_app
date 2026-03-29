@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T12:19:46", "result": {"chunk_id": "e1f4f6897460", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述台积电的厂务工程竞标、设备急单和产能扩张等事件，但同时也提到了CoWoS技术、先进封装和产能数据，这些可能含有半导体设备相关的有价值知识（如技术环节和产能机制），混合了事件信息，需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:31:44", "result": {"chunk_id": "3fa9e68121db", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落宣布苹果公司的特别活动及预计产品发布，属于明确的事件公告，不包含苹果MR的静态知识。"}}

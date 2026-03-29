@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "3d2ec5a48a49", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述多家半导体公司中报业绩预增的具体事件，特别是长川科技的财务数据，没有提供半导体本体知识，纯属市场表现动态。"}}

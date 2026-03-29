@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "6ec214d229b5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述华为与中芯国际提交SAQP专利和三星电子罢工，包含技术合作事件和罢工事件，但SAQP技术描述可能沉淀为知识。"}}

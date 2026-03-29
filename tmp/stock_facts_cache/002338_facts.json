@@ -1,0 +1,409 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "光机电一体化产品研制",
+      "evidence_span": "主营业务是研制光机电一体化产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光电测控仪器设备研发",
+      "evidence_span": "从事的主要业务为光电测控仪器设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "从事的主要业务为光电测控仪器设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "从事的主要业务为光电测控仪器设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型医疗仪器研发",
+      "evidence_span": "新型医疗仪器、光学材料和光栅编码器等产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光学材料研发",
+      "evidence_span": "新型医疗仪器、光学材料和光栅编码器等产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光栅编码器研发",
+      "evidence_span": "新型医疗仪器、光学材料和光栅编码器等产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国防光电测控仪器设备供应商",
+      "evidence_span": "主导了国内国防光电测控仪器设备的升级和更新换代"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "信息化军品供应商",
+      "evidence_span": "奥普光电中科院光机 所平台下的信息化军品供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光电经纬仪光机分系统",
+      "evidence_span": "主要产品是光电经纬仪光机分系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空/航天相机光机分系统",
+      "evidence_span": "主要产品是航空/航天相机光机分系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型雷达天线座",
+      "evidence_span": "主要产品是新型雷达天线座"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密转台",
+      "evidence_span": "主要产品是精密转台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型医疗仪器",
+      "evidence_span": "主要产品是新型医疗仪器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光学材料",
+      "evidence_span": "主要产品是光学材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光栅传感器",
+      "evidence_span": "主要产品是光栅传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能碳纤维复合材料制品",
+      "evidence_span": "主要产品是高性能碳纤维复合材料制品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光电瞄准系统",
+      "evidence_span": "主导产品为光电瞄准系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光电导引系统",
+      "evidence_span": "主导产品为光电导引系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光栅编码器",
+      "evidence_span": "主导产品为光栅编码器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "k9光学玻璃",
+      "evidence_span": "主导产品为k9光学玻璃"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高精度绝对式光栅尺",
+      "evidence_span": "禹衡光学生产的高精度绝对式光栅尺"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "编码器",
+      "evidence_span": "禹衡光学生产的高精度绝对式光栅尺和编码器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CMOS图像传感器",
+      "evidence_span": "长光辰芯是国内CMOS图像传感器龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳纤维复合材料制品",
+      "evidence_span": "长光宇航产品主要应用于商业航天、空间相机、武器装备等领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "非球面超精密铣磨设备",
+      "evidence_span": "奥普光电研制的两大设备：非球面超精密铣磨设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多自由度快速研抛设备",
+      "evidence_span": "奥普光电研制的两大设备：多自由度快速研抛设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "纳米级光学元件加工",
+      "evidence_span": "公司光学元件加工的面型精度、表面粗糙度可达纳米级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高端光栅尺量产能力",
+      "evidence_span": "禹衡光学是国内唯一能够实现量产的高端光栅尺生产商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "增量式反射尺1μm最高精度",
+      "evidence_span": "增量式反射尺实现1μm最高精度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大行程封闭式钢带尺测量长度可达14米",
+      "evidence_span": "公司大行程封闭式钢带尺测量长度可达14米"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华中数控",
+      "evidence_span": "客户覆盖华中数控"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广州数控",
+      "evidence_span": "客户覆盖广州数控"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沈阳机床",
+      "evidence_span": "客户覆盖沈阳机床"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大连机床",
+      "evidence_span": "客户覆盖大连机床"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科德数控",
+      "evidence_span": "客户覆盖科德数控"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海机床",
+      "evidence_span": "客户覆盖上海机床"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "半导体设备厂商",
+      "evidence_span": "公司小批量供应半导体设备厂商的高精尺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "人形机器人主流厂家",
+      "evidence_span": "公司与人形机器人主流厂家进行接触"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "深度受益国产替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军转民",
+      "evidence_span": "军转民开启广阔市场空间"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "光机电一体化产品研制",
+        "evidence_span": "主营业务是研制光机电一体化产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光电测控仪器设备研发、生产与销售",
+        "evidence_span": "从事的主要业务为光电测控仪器设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型医疗仪器研发、生产与销售",
+        "evidence_span": "新型医疗仪器、光学材料和光栅编码器等产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光学材料研发、生产与销售",
+        "evidence_span": "新型医疗仪器、光学材料和光栅编码器等产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光栅编码器研发、生产与销售",
+        "evidence_span": "新型医疗仪器、光学材料和光栅编码器等产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国防光电测控仪器设备供应商",
+        "evidence_span": "主导了国内国防光电测控仪器设备的升级和更新换代"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "信息化军品供应商",
+        "evidence_span": "奥普光电中科院光机 所平台下的信息化军品供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光电经纬仪光机分系统",
+        "evidence_span": "主要产品是光电经纬仪光机分系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空/航天相机光机分系统",
+        "evidence_span": "主要产品是航空/航天相机光机分系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型雷达天线座",
+        "evidence_span": "主要产品是新型雷达天线座"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密转台",
+        "evidence_span": "主要产品是精密转台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型医疗仪器",
+        "evidence_span": "主要产品是新型医疗仪器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光学材料",
+        "evidence_span": "主要产品是光学材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光栅传感器",
+        "evidence_span": "主要产品是光栅传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能碳纤维复合材料制品",
+        "evidence_span": "主要产品是高性能碳纤维复合材料制品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光电瞄准系统",
+        "evidence_span": "主导产品为光电瞄准系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光电导引系统",
+        "evidence_span": "主导产品为光电导引系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光栅编码器",
+        "evidence_span": "主导产品为光栅编码器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "k9光学玻璃",
+        "evidence_span": "主导产品为k9光学玻璃"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高精度绝对式光栅尺",
+        "evidence_span": "禹衡光学生产的高精度绝对式光栅尺"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "编码器",
+        "evidence_span": "禹衡光学生产的高精度绝对式光栅尺和编码器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CMOS图像传感器",
+        "evidence_span": "长光辰芯是国内CMOS图像传感器龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳纤维复合材料制品",
+        "evidence_span": "长光宇航产品主要应用于商业航天、空间相机、武器装备等领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "非球面超精密铣磨设备",
+        "evidence_span": "奥普光电研制的两大设备：非球面超精密铣磨设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多自由度快速研抛设备",
+        "evidence_span": "奥普光电研制的两大设备：多自由度快速研抛设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "纳米级光学元件加工",
+        "evidence_span": "公司光学元件加工的面型精度、表面粗糙度可达纳米级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高端光栅尺量产能力",
+        "evidence_span": "禹衡光学是国内唯一能够实现量产的高端光栅尺生产商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "增量式反射尺1μm最高精度",
+        "evidence_span": "增量式反射尺实现1μm最高精度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大行程封闭式钢带尺测量长度可达14米",
+        "evidence_span": "公司大行程封闭式钢带尺测量长度可达14米"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华中数控",
+        "evidence_span": "客户覆盖华中数控"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广州数控",
+        "evidence_span": "客户覆盖广州数控"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沈阳机床",
+        "evidence_span": "客户覆盖沈阳机床"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大连机床",
+        "evidence_span": "客户覆盖大连机床"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科德数控",
+        "evidence_span": "客户覆盖科德数控"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海机床",
+        "evidence_span": "客户覆盖上海机床"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "半导体设备厂商",
+        "evidence_span": "公司小批量供应半导体设备厂商的高精尺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "人形机器人主流厂家",
+        "evidence_span": "公司与人形机器人主流厂家进行接触"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "深度受益国产替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军转民",
+        "evidence_span": "军转民开启广阔市场空间"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:08:49"
+}

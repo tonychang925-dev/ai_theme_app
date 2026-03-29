@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "da3a3f431e12", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落引用了Counterpoint在特定时间点（2024年第二季度）发布的行业营收增长数据报告，这是一个动态的市场数据发布事件，而非稳定的本体知识。"}}

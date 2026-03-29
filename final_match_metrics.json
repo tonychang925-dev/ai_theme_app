@@ -1,0 +1,23 @@
+{
+  "events": 100,
+  "processed": 2,
+  "top1_accuracy": 1.0,
+  "top3_accuracy": 1.0,
+  "top5_accuracy": 1.0,
+  "per_theme_metrics": [
+    {
+      "gt_subject_key": "9030409",
+      "gt_theme_name": "AI/AR眼镜",
+      "total": 2,
+      "top1_hit": 2,
+      "top3_hit": 2,
+      "top5_hit": 2,
+      "top1_accuracy": 1.0,
+      "top3_accuracy": 1.0,
+      "top5_accuracy": 1.0,
+      "most_common_top1_pred": "9030409",
+      "most_common_top1_pred_count": 2,
+      "confusion_top3": []
+    }
+  ]
+}

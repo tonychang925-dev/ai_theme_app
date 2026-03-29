@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "1ded4c0319fe", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了低空通信技术和设备在展会上的展示，包含静态知识（如5G-A、TDOA技术、设备功能）和动态事件（如大会展示、企业介绍），混合了知识性和事件性内容，可能对理解低空经济支撑技术有价值。"}}

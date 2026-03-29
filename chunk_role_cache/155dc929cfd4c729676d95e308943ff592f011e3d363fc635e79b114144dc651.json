@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "abd981bf1c7b", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述普渡机器人发布PUDU D9的事件，包含产品规格（如高度、重量、自由度）和技术目标，这些可能提供有价值的稳定知识，但混合了事件信息，因此归类为candidate_mixed。"}}

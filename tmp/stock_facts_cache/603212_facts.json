@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏材料",
+      "evidence_span": "公司产品领域以光伏为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "非光伏类业务",
+      "evidence_span": "以锂电池为主的非光伏类业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球背板龙头",
+      "evidence_span": "全球背板龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "POE胶膜的先行者",
+      "evidence_span": "公司作为POE胶膜的先行者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "薄膜高分子平台型公司",
+      "evidence_span": "薄膜高分子平台型公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "KPK和KPF型背板",
+      "evidence_span": "主要产品包括KPK和KPF型背板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "POE电池封装胶膜",
+      "evidence_span": "POE电池封装胶膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "背板修补胶带",
+      "evidence_span": "原创的背板修补胶带"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "修补液",
+      "evidence_span": "修补液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏封装胶膜",
+      "evidence_span": "光伏封装胶膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3C材料",
+      "evidence_span": "3C材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涂覆型背板",
+      "evidence_span": "涂覆型背板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电芯蓝膜",
+      "evidence_span": "电芯蓝膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "侧板膜",
+      "evidence_span": "侧板膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CCS热压膜",
+      "evidence_span": "CCS热压膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池FFC绝缘膜",
+      "evidence_span": "锂电池FFC绝缘膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池热管理导热材料",
+      "evidence_span": "电池热管理导热材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热失控防火材料",
+      "evidence_span": "热失控防火材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能胶水类",
+      "evidence_span": "功能胶水类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水冷板冷贴膜",
+      "evidence_span": "水冷板冷贴膜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "膜类技术平台",
+      "evidence_span": "膜类技术平台化发展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高分子薄膜材料",
+      "evidence_span": "立足高分子薄膜材料"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "歌尔股份",
+      "evidence_span": "成功切入歌尔股份"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "格力电器",
+      "evidence_span": "格力电器"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陶氏化学",
+      "evidence_span": "与陶氏化学在POE树脂性能、质量等技术问题保持了密切的沟通交流"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LG化学",
+      "evidence_span": "公司已与LG化学建立合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "产品已切入宁德时代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国轩高科",
+      "evidence_span": "国轩高科"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "孚能科技",
+      "evidence_span": "孚能科技"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源业务放量",
+      "evidence_span": "充分受益新能源业务放量"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏材料",
+        "evidence_span": "公司产品领域以光伏为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "非光伏类业务",
+        "evidence_span": "以锂电池为主的非光伏类业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球背板龙头",
+        "evidence_span": "全球背板龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "POE胶膜的先行者",
+        "evidence_span": "公司作为POE胶膜的先行者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "薄膜高分子平台型公司",
+        "evidence_span": "薄膜高分子平台型公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "KPK和KPF型背板",
+        "evidence_span": "主要产品包括KPK和KPF型背板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "POE电池封装胶膜",
+        "evidence_span": "POE电池封装胶膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "背板修补胶带",
+        "evidence_span": "原创的背板修补胶带"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "修补液",
+        "evidence_span": "修补液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏封装胶膜",
+        "evidence_span": "光伏封装胶膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3C材料",
+        "evidence_span": "3C材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涂覆型背板",
+        "evidence_span": "涂覆型背板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电芯蓝膜",
+        "evidence_span": "电芯蓝膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "侧板膜",
+        "evidence_span": "侧板膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CCS热压膜",
+        "evidence_span": "CCS热压膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池FFC绝缘膜",
+        "evidence_span": "锂电池FFC绝缘膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池热管理导热材料",
+        "evidence_span": "电池热管理导热材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热失控防火材料",
+        "evidence_span": "热失控防火材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能胶水类",
+        "evidence_span": "功能胶水类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水冷板冷贴膜",
+        "evidence_span": "水冷板冷贴膜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "膜类技术平台",
+        "evidence_span": "膜类技术平台化发展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高分子薄膜材料",
+        "evidence_span": "立足高分子薄膜材料"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "歌尔股份",
+        "evidence_span": "成功切入歌尔股份"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "格力电器",
+        "evidence_span": "格力电器"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陶氏化学",
+        "evidence_span": "与陶氏化学在POE树脂性能、质量等技术问题保持了密切的沟通交流"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LG化学",
+        "evidence_span": "公司已与LG化学建立合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "产品已切入宁德时代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国轩高科",
+        "evidence_span": "国轩高科"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "孚能科技",
+        "evidence_span": "孚能科技"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源业务放量",
+        "evidence_span": "充分受益新能源业务放量"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:41:41"
+}

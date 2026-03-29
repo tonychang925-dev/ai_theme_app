@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "啤酒酿造设备",
+      "evidence_span": "啤酒酿造设备贡献主要业绩增量"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "无菌灌装设备",
+      "evidence_span": "无菌灌装设备占比次之"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精酿啤酒",
+      "evidence_span": "精酿啤酒作为公司2021年的新兴业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "啤酒设备龙头",
+      "evidence_span": "啤酒设备龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "啤酒酿造设备",
+      "evidence_span": "啤酒酿造设备贡献主要业绩增量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无菌灌装设备",
+      "evidence_span": "无菌灌装设备占比次之"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精酿啤酒",
+      "evidence_span": "精酿啤酒作为公司2021年的新兴业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能售酒机",
+      "evidence_span": "智能售酒机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "易拉罐无菌灌装线",
+      "evidence_span": "世界首条易拉罐无菌灌装线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "keg桶无菌灌装机",
+      "evidence_span": "世界首台keg桶无菌灌装机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "德式小麦啤酒",
+      "evidence_span": "以德式小麦为例"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鲜啤30公里",
+      "evidence_span": "自有品牌“鲜啤30公里”较大突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无菌冷灌技术",
+      "evidence_span": "受益于公司的无菌冷灌技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "吹灌旋和无菌包装技术",
+      "evidence_span": "吹灌旋和无菌包装技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "盒马",
+      "evidence_span": "与盒马、麦德龙、大润发、丰茂烤串、海底捞等全国连锁系统开展合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦德龙",
+      "evidence_span": "与盒马、麦德龙、大润发、丰茂烤串、海底捞等全国连锁系统开展合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大润发",
+      "evidence_span": "与盒马、麦德龙、大润发、丰茂烤串、海底捞等全国连锁系统开展合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰茂烤串",
+      "evidence_span": "与盒马、麦德龙、大润发、丰茂烤串、海底捞等全国连锁系统开展合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海底捞",
+      "evidence_span": "与盒马、麦德龙、大润发、丰茂烤串、海底捞等全国连锁系统开展合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "啤酒消费升级",
+      "evidence_span": "啤酒消费升级为设备商带来机会"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "精酿蓝海",
+      "evidence_span": "乐惠国际啤酒设备龙头发力精酿蓝海"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "啤酒酿造设备",
+        "evidence_span": "啤酒酿造设备贡献主要业绩增量"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "无菌灌装设备",
+        "evidence_span": "无菌灌装设备占比次之"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精酿啤酒",
+        "evidence_span": "精酿啤酒作为公司2021年的新兴业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "啤酒设备龙头",
+        "evidence_span": "啤酒设备龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "啤酒酿造设备",
+        "evidence_span": "啤酒酿造设备贡献主要业绩增量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无菌灌装设备",
+        "evidence_span": "无菌灌装设备占比次之"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精酿啤酒",
+        "evidence_span": "精酿啤酒作为公司2021年的新兴业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能售酒机",
+        "evidence_span": "智能售酒机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "易拉罐无菌灌装线",
+        "evidence_span": "世界首条易拉罐无菌灌装线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "keg桶无菌灌装机",
+        "evidence_span": "世界首台keg桶无菌灌装机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "德式小麦啤酒",
+        "evidence_span": "以德式小麦为例"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鲜啤30公里",
+        "evidence_span": "自有品牌“鲜啤30公里”较大突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无菌冷灌技术",
+        "evidence_span": "受益于公司的无菌冷灌技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "吹灌旋和无菌包装技术",
+        "evidence_span": "吹灌旋和无菌包装技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "盒马",
+        "evidence_span": "与盒马、麦德龙、大润发、丰茂烤串、海底捞等全国连锁系统开展合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦德龙",
+        "evidence_span": "与盒马、麦德龙、大润发、丰茂烤串、海底捞等全国连锁系统开展合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大润发",
+        "evidence_span": "与盒马、麦德龙、大润发、丰茂烤串、海底捞等全国连锁系统开展合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰茂烤串",
+        "evidence_span": "与盒马、麦德龙、大润发、丰茂烤串、海底捞等全国连锁系统开展合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海底捞",
+        "evidence_span": "与盒马、麦德龙、大润发、丰茂烤串、海底捞等全国连锁系统开展合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "啤酒消费升级",
+        "evidence_span": "啤酒消费升级为设备商带来机会"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "精酿蓝海",
+        "evidence_span": "乐惠国际啤酒设备龙头发力精酿蓝海"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:15:54"
+}

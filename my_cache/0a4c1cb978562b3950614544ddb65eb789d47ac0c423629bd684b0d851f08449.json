@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:31:44", "result": {"chunk_id": "98bc1d2eacb3", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述苹果股价上涨和市值变化的具体市场表现事件，带有日期和价格数据，属于新闻性动态，不包含题材本体知识。"}}

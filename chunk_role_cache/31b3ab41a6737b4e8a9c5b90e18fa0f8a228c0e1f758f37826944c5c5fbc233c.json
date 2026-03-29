@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "446a0d6662d2", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述了卫星互联网建设加速的事件（如发射次数、组网进展），但包含了高低轨融合方式、星座建设阶段、网络效用和成本效应等静态知识，这些信息对题材本体构建有价值，尽管混合了时间性动态。"}}

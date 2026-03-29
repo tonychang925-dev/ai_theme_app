@@ -1,0 +1,55 @@
+{
+  "event_id": "evt_b1df2d508b94",
+  "theme_name": "稀土永磁",
+  "event_type": "其他",
+  "entities": [
+    {
+      "name": "Critical Metals",
+      "type": "公司",
+      "normalized": "Critical Metals"
+    },
+    {
+      "name": "USA Rare Earth",
+      "type": "公司",
+      "normalized": "USA Rare Earth"
+    },
+    {
+      "name": "MP Materials",
+      "type": "公司",
+      "normalized": "MP Materials"
+    }
+  ],
+  "summary": "美股稀土股盘前普涨，Critical Metals大涨38%，USA Rare Earth涨超11%，MP Materials涨超7%。",
+  "causal_claim": [
+    "稀土股上涨",
+    "市场关注",
+    "稀土永磁题材"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "稀土股",
+      "盘前普涨"
+    ],
+    "normalized_terms": {
+      "Critical Metals": "Critical Metals",
+      "USA Rare Earth": "USA Rare Earth",
+      "MP Materials": "MP Materials"
+    },
+    "evidence_spans": [
+      {
+        "text": "美股稀土股盘前普涨，Critical Metals大涨38%，USA Rare Earth涨超11%，MP Materials涨超7%。",
+        "start": 0,
+        "end": 70
+      }
+    ],
+    "core_concepts": [
+      "稀土",
+      "股价上涨"
+    ]
+  },
+  "severity_score": 0.6,
+  "confidence": 0.9,
+  "source_weight": 1.2,
+  "timestamp": null,
+  "raw_text": "美股稀土股盘前普涨，Critical Metals大涨38%，USA Rare Earth涨超11%，MP Materials涨超7%。（新闻来源：财联社）"
+}

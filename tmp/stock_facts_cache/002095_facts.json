@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "互联网信息服务",
+      "evidence_span": "专业从事互联网信息服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子商务",
+      "evidence_span": "专业从事互联网信息服务、电子商务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "专业搜索引擎",
+      "evidence_span": "专业从事互联网信息服务、电子商务、专业搜索引擎"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "企业应用软件开发",
+      "evidence_span": "专业从事互联网信息服务、电子商务、专业搜索引擎和企业应用软件开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "行业电子商务运营",
+      "evidence_span": "国内最大行业电子商务运营商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "综合B2B运营",
+      "evidence_span": "领先的综合B2B运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "行业电子商务运营商",
+      "evidence_span": "国内最大行业电子商务运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合B2B运营商",
+      "evidence_span": "领先的综合B2B运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化工行业商务资讯服务",
+      "evidence_span": "化工行业的商务资讯服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纺织行业商务资讯服务",
+      "evidence_span": "纺织行业的商务资讯服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网站建设和维护服务",
+      "evidence_span": "网站建设和维护服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "广告服务",
+      "evidence_span": "广告服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "B2B一体电商交易平台",
+      "evidence_span": "打造一个垂直闭合的B2B一体电商交易平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交易服务",
+      "evidence_span": "为产业链各个节点项下的供应商提供交易、金融、物流等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金融服务",
+      "evidence_span": "为产业链各个节点项下的供应商提供交易、金融、物流等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物流服务",
+      "evidence_span": "为产业链各个节点项下的供应商提供交易、金融、物流等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字贸易服务",
+      "evidence_span": "为原材料领域的生产商、经销商与下游用户提供各类数字贸易服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产业大数据",
+      "evidence_span": "建立了产业链各个节点项下的产能、价格、供应商等产业大数据"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "原材料价格大数据",
+      "evidence_span": "利用公司原材料价格大数据"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产业互联网",
+      "evidence_span": "利用公司原材料价格大数据、产业互联网及供应链金融等工具"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "供应链金融",
+      "evidence_span": "供应链金融发展顺利"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "互联网信息服务",
+        "evidence_span": "专业从事互联网信息服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子商务",
+        "evidence_span": "专业从事互联网信息服务、电子商务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "专业搜索引擎",
+        "evidence_span": "专业从事互联网信息服务、电子商务、专业搜索引擎"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "企业应用软件开发",
+        "evidence_span": "专业从事互联网信息服务、电子商务、专业搜索引擎和企业应用软件开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "行业电子商务运营",
+        "evidence_span": "国内最大行业电子商务运营商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "综合B2B运营",
+        "evidence_span": "领先的综合B2B运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "行业电子商务运营商",
+        "evidence_span": "国内最大行业电子商务运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合B2B运营商",
+        "evidence_span": "领先的综合B2B运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化工行业商务资讯服务",
+        "evidence_span": "化工行业的商务资讯服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纺织行业商务资讯服务",
+        "evidence_span": "纺织行业的商务资讯服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网站建设和维护服务",
+        "evidence_span": "网站建设和维护服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "广告服务",
+        "evidence_span": "广告服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "B2B一体电商交易平台",
+        "evidence_span": "打造一个垂直闭合的B2B一体电商交易平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交易服务",
+        "evidence_span": "为产业链各个节点项下的供应商提供交易、金融、物流等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金融服务",
+        "evidence_span": "为产业链各个节点项下的供应商提供交易、金融、物流等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物流服务",
+        "evidence_span": "为产业链各个节点项下的供应商提供交易、金融、物流等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字贸易服务",
+        "evidence_span": "为原材料领域的生产商、经销商与下游用户提供各类数字贸易服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产业大数据",
+        "evidence_span": "建立了产业链各个节点项下的产能、价格、供应商等产业大数据"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "原材料价格大数据",
+        "evidence_span": "利用公司原材料价格大数据"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产业互联网",
+        "evidence_span": "利用公司原材料价格大数据、产业互联网及供应链金融等工具"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "供应链金融",
+        "evidence_span": "供应链金融发展顺利"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:44:29"
+}

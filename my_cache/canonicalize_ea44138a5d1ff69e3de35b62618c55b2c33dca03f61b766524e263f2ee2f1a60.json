@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:03:04", "result": {"span_uid": "3801d4f8aae4", "action": "keep", "canonical_text": "华为全球开发者数量已超过1180万。", "final_type": "signal", "final_role": "开发者生态规模", "stability": "high", "reason": "该片段描述了华为开发者生态的规模，是一个相对稳定的数据点，体现了生态发展的阶段性状态，属于景气变化信息。"}}

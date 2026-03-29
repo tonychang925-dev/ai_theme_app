@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "be9c46a877e7", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落引用北约宣言，提到军费支出用于关键基础设施防护和网络安全，这包含有价值的防护知识，但以事件形式呈现，混合了静态知识和政策背景。"}}

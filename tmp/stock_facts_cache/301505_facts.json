@@ -1,0 +1,204 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "规划设计",
+      "evidence_span": "公司主营业务收入主要由规划设计和工程设计构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程设计",
+      "evidence_span": "公司主营业务收入主要由规划设计和工程设计构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程总承包",
+      "evidence_span": "开拓了工程总承包及管理和智慧城市业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "管理",
+      "evidence_span": "开拓了工程总承包及管理和智慧城市业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧城市",
+      "evidence_span": "开拓了工程总承包及管理和智慧城市业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "规划设计与工程设计企业",
+      "evidence_span": "公司是江苏省内知名的规划设计与工程设计企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "规划设计业务",
+      "evidence_span": "公司规划设计业务收入分别为20,412.81万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程设计业务",
+      "evidence_span": "工程设计业务收入分别为14,054.49万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程总承包及管理业务",
+      "evidence_span": "工程总承包及管理业务收入分别为470.28万元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧城市业务",
+      "evidence_span": "智慧城市业务收入分别为91.98万元"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "历史文化保护",
+      "evidence_span": "在历史文化保护、城市更新、城市交通、乡村振兴等领域形成了自身的核心技术特色"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "城市更新",
+      "evidence_span": "在历史文化保护、城市更新、城市交通、乡村振兴等领域形成了自身的核心技术特色"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "城市交通",
+      "evidence_span": "在历史文化保护、城市更新、城市交通、乡村振兴等领域形成了自身的核心技术特色"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "乡村振兴",
+      "evidence_span": "在历史文化保护、城市更新、城市交通、乡村振兴等领域形成了自身的核心技术特色"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "地方政府",
+      "evidence_span": "客户多为各地方政府及其下属自然资源局、建设局等政府部门"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府部门",
+      "evidence_span": "客户多为各地方政府及其下属自然资源局、建设局等政府部门"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "事业单位",
+      "evidence_span": "客户多为各地方政府及其下属自然资源局、建设局等政府部门或者隶属政府部门的派出机构和事业单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "村民委员会",
+      "evidence_span": "村民委员会等组织"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府机构",
+      "evidence_span": "公司客户主要为政府机构及国有企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国有企业",
+      "evidence_span": "公司客户主要为政府机构及国有企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "规划设计",
+        "evidence_span": "公司主营业务收入主要由规划设计和工程设计构成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程设计",
+        "evidence_span": "公司主营业务收入主要由规划设计和工程设计构成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程总承包及管理",
+        "evidence_span": "开拓了工程总承包及管理和智慧城市业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧城市",
+        "evidence_span": "开拓了工程总承包及管理和智慧城市业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "规划设计与工程设计企业",
+        "evidence_span": "公司是江苏省内知名的规划设计与工程设计企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "规划设计业务",
+        "evidence_span": "公司规划设计业务收入分别为20,412.81万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程设计业务",
+        "evidence_span": "工程设计业务收入分别为14,054.49万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程总承包及管理业务",
+        "evidence_span": "工程总承包及管理业务收入分别为470.28万元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧城市业务",
+        "evidence_span": "智慧城市业务收入分别为91.98万元"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "历史文化保护",
+        "evidence_span": "在历史文化保护、城市更新、城市交通、乡村振兴等领域形成了自身的核心技术特色"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "城市更新",
+        "evidence_span": "在历史文化保护、城市更新、城市交通、乡村振兴等领域形成了自身的核心技术特色"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "城市交通",
+        "evidence_span": "在历史文化保护、城市更新、城市交通、乡村振兴等领域形成了自身的核心技术特色"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "乡村振兴",
+        "evidence_span": "在历史文化保护、城市更新、城市交通、乡村振兴等领域形成了自身的核心技术特色"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "地方政府",
+        "evidence_span": "客户多为各地方政府及其下属自然资源局、建设局等政府部门"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府部门",
+        "evidence_span": "客户多为各地方政府及其下属自然资源局、建设局等政府部门"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "事业单位",
+        "evidence_span": "客户多为各地方政府及其下属自然资源局、建设局等政府部门或者隶属政府部门的派出机构和事业单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "村民委员会",
+        "evidence_span": "村民委员会等组织"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府机构",
+        "evidence_span": "公司客户主要为政府机构及国有企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国有企业",
+        "evidence_span": "公司客户主要为政府机构及国有企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:42:28"
+}

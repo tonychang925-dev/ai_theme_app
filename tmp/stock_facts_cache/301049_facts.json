@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业危险废物处置服务",
+      "evidence_span": "主要提供的服务为工业危险废物和医疗废物处置服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗废物处置服务",
+      "evidence_span": "主要提供的服务为工业危险废物和医疗废物处置服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "废弃电器电子产品拆解服务",
+      "evidence_span": "主要提供的服务为工业危险废物和医疗废物处置服务以及废弃电器电子产品拆解服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业危险废物资源化利用产品",
+      "evidence_span": "主要生产的产品为部分工业危险废物资源化利用产品和废弃电器电子产品拆解产物"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "废弃电器电子产品拆解产物",
+      "evidence_span": "主要生产的产品为部分工业危险废物资源化利用产品和废弃电器电子产品拆解产物"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合型环保企业",
+      "evidence_span": "专注于废物处理和资源化利用、节能环保技术研发的综合型环保企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合型危险废物处置平台",
+      "evidence_span": "作为综合型危险废物处置平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域龙头之一",
+      "evidence_span": "处置能力排名省内前列，属于区域龙头之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "滁州市唯一的医疗废物集中处置机构",
+      "evidence_span": "公司是滁州市唯一的医疗废物集中处置机构"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "安徽省仅有的6家纳入国家废弃电器电子产品处理基金补贴名单的企业之一",
+      "evidence_span": "公司是安徽省仅有的6家纳入国家废弃电器电子产品处理基金补贴名单的企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "再生包装桶",
+      "evidence_span": "将再生包装桶重新对外销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "废弃电器电子产品拆解产物",
+      "evidence_span": "将拆解产物分为可以再行综合利用的产物"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "危险废物处置技术",
+      "evidence_span": "危险废物处置行业相关技术主要包括无害化安全处置技术和资源化利用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子废物拆解技术",
+      "evidence_span": "电子废物的资源化利用处置等在内的一系列技术均取得明显进步"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "废硫酸综合利用技术",
+      "evidence_span": "推进了废硫酸综合利用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "废弃电器电子产品模块化回收线技术",
+      "evidence_span": "废弃电器电子产品模块化回收线技术及方法的规范应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "废旧锂离子电池极片材料回收技术",
+      "evidence_span": "废旧锂离子电池极片材料回收技术规范等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "危废全闭环无害化处置技术",
+      "evidence_span": "公司“危废全闭环无害化处置技术及产业示范”项目获安徽省科学技术奖三等奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "再生桶生产工艺及智控技术",
+      "evidence_span": "公司再生桶生产工艺及智控技术研究与示范获得中华环保联合会科学技术奖科技进步奖二等奖"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工业企业",
+      "evidence_span": "公司主要向工业企业、医疗机构等客户提供危险废物处置服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医疗机构",
+      "evidence_span": "公司主要向工业企业、医疗机构等客户提供危险废物处置服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "废旧家电回收企业",
+      "evidence_span": "公司与废旧家电回收企业等进行业务洽谈并签订采购合同"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "废物处理和资源化利用",
+      "evidence_span": "专注于废物处理和资源化利用、节能环保技术研发的综合型环保企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "节能环保",
+      "evidence_span": "专注于废物处理和资源化利用、节能环保技术研发的综合型环保企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "资源循环利用",
+      "evidence_span": "政策明确资源循环利用将作为产业发展方向"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "循环经济",
+      "evidence_span": "循环经济相关产业规模有望得到扩张"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色低碳循环经济",
+      "evidence_span": "“十四五”工业绿色发展规划提出聚焦“双碳”、发展绿色低碳循环经济"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "无废城市",
+      "evidence_span": "未来将积极就打造“无废城市”的参与进行探索与建设"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业危险废物处置服务",
+        "evidence_span": "主要提供的服务为工业危险废物和医疗废物处置服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗废物处置服务",
+        "evidence_span": "主要提供的服务为工业危险废物和医疗废物处置服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "废弃电器电子产品拆解服务",
+        "evidence_span": "主要提供的服务为工业危险废物和医疗废物处置服务以及废弃电器电子产品拆解服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业危险废物资源化利用产品",
+        "evidence_span": "主要生产的产品为部分工业危险废物资源化利用产品和废弃电器电子产品拆解产物"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "废弃电器电子产品拆解产物",
+        "evidence_span": "主要生产的产品为部分工业危险废物资源化利用产品和废弃电器电子产品拆解产物"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合型环保企业",
+        "evidence_span": "专注于废物处理和资源化利用、节能环保技术研发的综合型环保企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合型危险废物处置平台",
+        "evidence_span": "作为综合型危险废物处置平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域龙头之一",
+        "evidence_span": "处置能力排名省内前列，属于区域龙头之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "滁州市唯一的医疗废物集中处置机构",
+        "evidence_span": "公司是滁州市唯一的医疗废物集中处置机构"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "安徽省仅有的6家纳入国家废弃电器电子产品处理基金补贴名单的企业之一",
+        "evidence_span": "公司是安徽省仅有的6家纳入国家废弃电器电子产品处理基金补贴名单的企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "再生包装桶",
+        "evidence_span": "将再生包装桶重新对外销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "废弃电器电子产品拆解产物",
+        "evidence_span": "将拆解产物分为可以再行综合利用的产物"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "危险废物处置技术",
+        "evidence_span": "危险废物处置行业相关技术主要包括无害化安全处置技术和资源化利用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子废物拆解技术",
+        "evidence_span": "电子废物的资源化利用处置等在内的一系列技术均取得明显进步"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "废硫酸综合利用技术",
+        "evidence_span": "推进了废硫酸综合利用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "废弃电器电子产品模块化回收线技术",
+        "evidence_span": "废弃电器电子产品模块化回收线技术及方法的规范应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "废旧锂离子电池极片材料回收技术",
+        "evidence_span": "废旧锂离子电池极片材料回收技术规范等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "危废全闭环无害化处置技术",
+        "evidence_span": "公司“危废全闭环无害化处置技术及产业示范”项目获安徽省科学技术奖三等奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "再生桶生产工艺及智控技术",
+        "evidence_span": "公司再生桶生产工艺及智控技术研究与示范获得中华环保联合会科学技术奖科技进步奖二等奖"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工业企业",
+        "evidence_span": "公司主要向工业企业、医疗机构等客户提供危险废物处置服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医疗机构",
+        "evidence_span": "公司主要向工业企业、医疗机构等客户提供危险废物处置服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "废旧家电回收企业",
+        "evidence_span": "公司与废旧家电回收企业等进行业务洽谈并签订采购合同"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "废物处理和资源化利用",
+        "evidence_span": "专注于废物处理和资源化利用、节能环保技术研发的综合型环保企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "节能环保",
+        "evidence_span": "专注于废物处理和资源化利用、节能环保技术研发的综合型环保企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "资源循环利用",
+        "evidence_span": "政策明确资源循环利用将作为产业发展方向"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "循环经济",
+        "evidence_span": "循环经济相关产业规模有望得到扩张"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色低碳循环经济",
+        "evidence_span": "“十四五”工业绿色发展规划提出聚焦“双碳”、发展绿色低碳循环经济"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "无废城市",
+        "evidence_span": "未来将积极就打造“无废城市”的参与进行探索与建设"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:25:29"
+}

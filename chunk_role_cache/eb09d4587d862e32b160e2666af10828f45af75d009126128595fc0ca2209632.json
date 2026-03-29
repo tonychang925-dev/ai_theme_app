@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "8c94b934e37a", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段描述了中国西部卫星产业园投用的具体事件（9月即将投用），但同时也提到了打造卫星产业链示范载体和设立产业基金，这些信息可能隐含产业链结构知识，可用于题材构建。"}}

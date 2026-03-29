@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "d2a72533f187", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述东部战区对德舰过航台湾海峡的跟监警戒事件，包括日期（2024年9月14日）和军事响应，属于新闻性动态，不涉及静态的军工题材知识。"}}

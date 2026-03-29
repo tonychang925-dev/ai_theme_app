@@ -1,0 +1,314 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "互联网数字营销业务",
+      "evidence_span": "互联网数字营销业务是公司当前主要的收入来源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "旅游目的地投资开发",
+      "evidence_span": "旅游目的地投资开发及运营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运营业务",
+      "evidence_span": "旅游目的地投资开发及运营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "个性化定制旅行服务业务",
+      "evidence_span": "个性化定制旅行服务业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "文旅消费综合服务商",
+      "evidence_span": "定位为“文旅消费综合服务商”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "互联网数字营销服务",
+      "evidence_span": "互联网数字营销业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游目的地整体解决方案",
+      "evidence_span": "为旅游项目提供整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "个性化旅行综合服务",
+      "evidence_span": "个性化旅行综合服务业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水上旅游业态运营",
+      "evidence_span": "水上旅游业态运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主题定制旅游",
+      "evidence_span": "主题定制旅游"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游资源集采",
+      "evidence_span": "旅游资源集采"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户外营地业态开发运营及咨询服务",
+      "evidence_span": "户外营地业态开发运营及咨询服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直播电商业务",
+      "evidence_span": "深耕直播电商业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抖音本地生活业务",
+      "evidence_span": "拓展抖音本地生活业务领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息流广告业务",
+      "evidence_span": "巩固公司信息流广告业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "内容创意及整合营销",
+      "evidence_span": "内容创意及整合营销优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "旅游目的地开发运营",
+      "evidence_span": "旅游目的地开发运营优势"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "网易",
+      "evidence_span": "主要客户包括网易"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "IGG",
+      "evidence_span": "主要客户包括网易、IGG等游戏行业的公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "腾讯",
+      "evidence_span": "深耕细作网易、腾讯等KA客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "B站",
+      "evidence_span": "投放的主要媒体为抖音、快手、B站等互联网媒体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "抖音",
+      "evidence_span": "投放的主要媒体为抖音、快手、B站等互联网媒体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "快手",
+      "evidence_span": "投放的主要媒体为抖音、快手、B站等互联网媒体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "武当山",
+      "evidence_span": "成功与国内武当山、龙虎山、三清山、龙门石窟、西湖等世界遗产景区合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "龙虎山",
+      "evidence_span": "成功与国内武当山、龙虎山、三清山、龙门石窟、西湖等世界遗产景区合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三清山",
+      "evidence_span": "成功与国内武当山、龙虎山、三清山、龙门石窟、西湖等世界遗产景区合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "龙门石窟",
+      "evidence_span": "成功与国内武当山、龙虎山、三清山、龙门石窟、西湖等世界遗产景区合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西湖",
+      "evidence_span": "成功与国内武当山、龙虎山、三清山、龙门石窟、西湖等世界遗产景区合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法国卢浮宫",
+      "evidence_span": "首次开展了跨境与法国卢浮宫进行的IP授权业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江西鹰潭市余江区",
+      "evidence_span": "承接了江西鹰潭市余江区《全域旅游规划》《红色旅游专项规划》的编制"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "露营品牌“嗨king”",
+      "evidence_span": "与露营品牌“嗨king”建立了江西区域内的战略合作关系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "互联网数字营销业务",
+        "evidence_span": "互联网数字营销业务是公司当前主要的收入来源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "旅游目的地投资开发及运营业务",
+        "evidence_span": "旅游目的地投资开发及运营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "个性化定制旅行服务业务",
+        "evidence_span": "个性化定制旅行服务业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "文旅消费综合服务商",
+        "evidence_span": "定位为“文旅消费综合服务商”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "互联网数字营销服务",
+        "evidence_span": "互联网数字营销业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游目的地整体解决方案",
+        "evidence_span": "为旅游项目提供整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "个性化旅行综合服务",
+        "evidence_span": "个性化旅行综合服务业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水上旅游业态运营",
+        "evidence_span": "水上旅游业态运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主题定制旅游",
+        "evidence_span": "主题定制旅游"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游资源集采",
+        "evidence_span": "旅游资源集采"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户外营地业态开发运营及咨询服务",
+        "evidence_span": "户外营地业态开发运营及咨询服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直播电商业务",
+        "evidence_span": "深耕直播电商业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抖音本地生活业务",
+        "evidence_span": "拓展抖音本地生活业务领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息流广告业务",
+        "evidence_span": "巩固公司信息流广告业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "内容创意及整合营销",
+        "evidence_span": "内容创意及整合营销优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "旅游目的地开发运营",
+        "evidence_span": "旅游目的地开发运营优势"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "网易",
+        "evidence_span": "主要客户包括网易"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "IGG",
+        "evidence_span": "主要客户包括网易、IGG等游戏行业的公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "腾讯",
+        "evidence_span": "深耕细作网易、腾讯等KA客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "B站",
+        "evidence_span": "投放的主要媒体为抖音、快手、B站等互联网媒体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "抖音",
+        "evidence_span": "投放的主要媒体为抖音、快手、B站等互联网媒体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "快手",
+        "evidence_span": "投放的主要媒体为抖音、快手、B站等互联网媒体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "武当山",
+        "evidence_span": "成功与国内武当山、龙虎山、三清山、龙门石窟、西湖等世界遗产景区合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "龙虎山",
+        "evidence_span": "成功与国内武当山、龙虎山、三清山、龙门石窟、西湖等世界遗产景区合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三清山",
+        "evidence_span": "成功与国内武当山、龙虎山、三清山、龙门石窟、西湖等世界遗产景区合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "龙门石窟",
+        "evidence_span": "成功与国内武当山、龙虎山、三清山、龙门石窟、西湖等世界遗产景区合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西湖",
+        "evidence_span": "成功与国内武当山、龙虎山、三清山、龙门石窟、西湖等世界遗产景区合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法国卢浮宫",
+        "evidence_span": "首次开展了跨境与法国卢浮宫进行的IP授权业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江西鹰潭市余江区",
+        "evidence_span": "承接了江西鹰潭市余江区《全域旅游规划》《红色旅游专项规划》的编制"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "露营品牌“嗨king”",
+        "evidence_span": "与露营品牌“嗨king”建立了江西区域内的战略合作关系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:02:02"
+}

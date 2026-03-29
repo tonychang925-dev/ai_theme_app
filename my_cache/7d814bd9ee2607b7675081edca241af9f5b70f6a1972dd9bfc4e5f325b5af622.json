@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "e6cdef64f24c", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "简短描述三星HBM3e芯片通过测试并即将谈判供应的事件，纯属动态新闻，无题材本体知识。"}}

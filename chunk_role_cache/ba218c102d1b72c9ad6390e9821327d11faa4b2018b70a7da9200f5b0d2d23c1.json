@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "23dba839f6df", "label": "knowledge_like", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述华为与中芯国际的SAQP专利技术，涉及使用DUV光刻机生产3纳米芯片，这解释了技术路径和应用场景的一部分，提供了知识性信息，但结合了具体公司动态，稳定性一般。"}}

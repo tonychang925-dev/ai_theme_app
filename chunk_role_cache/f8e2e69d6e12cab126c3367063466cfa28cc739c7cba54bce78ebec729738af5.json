@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "623720c5c10c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "非常简短的一句话，描述三星电子研发综合体进机并导入ASML High NA EUV光刻设备这一具体事件。无任何背景知识或解释。"}}

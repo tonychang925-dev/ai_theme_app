@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "生物医药",
+      "evidence_span": "以生物医药为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产",
+      "evidence_span": "房地产为辅"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "生长激素龙头",
+      "evidence_span": "生长激素龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "生物药龙头",
+      "evidence_span": "生物药龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "基因药物龙头",
+      "evidence_span": "基因药物龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生长激素粉针剂型",
+      "evidence_span": "推出生长激素粉针剂型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生长激素水针剂型",
+      "evidence_span": "推出亚洲首支生长激素水针剂型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PEG长效重组人生长激素水针剂",
+      "evidence_span": "上市了全球第一支PEG长效重组人生长激素水针剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生长激素隐针电子注射笔",
+      "evidence_span": "推出全球首支生长激素隐针电子注射笔"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "重组人促卵泡素",
+      "evidence_span": "重组人促卵泡素产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水痘减毒活疫苗",
+      "evidence_span": "水痘减毒活疫苗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "狂犬疫苗",
+      "evidence_span": "狂犬疫苗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鼻喷流感疫苗",
+      "evidence_span": "鼻喷流感疫苗"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "带状疱疹减毒活疫苗",
+      "evidence_span": "带状疱疹减毒活疫苗"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "病毒规模化培养技术平台",
+      "evidence_span": "病毒规模化培养技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "制剂及佐剂技术平台",
+      "evidence_span": "制剂及佐剂技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基因工程技术平台",
+      "evidence_span": "基因工程技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "细菌性疫苗技术平台",
+      "evidence_span": "细菌性疫苗技术平台"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "生长激素国产替代",
+      "evidence_span": "实现生长激素国产替代进口"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "带状疱疹疫苗国产替代打破国外垄断局面"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "生物医药",
+        "evidence_span": "以生物医药为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产",
+        "evidence_span": "房地产为辅"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "生长激素龙头",
+        "evidence_span": "生长激素龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "生物药龙头",
+        "evidence_span": "生物药龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "基因药物龙头",
+        "evidence_span": "基因药物龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生长激素粉针剂型",
+        "evidence_span": "推出生长激素粉针剂型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生长激素水针剂型",
+        "evidence_span": "推出亚洲首支生长激素水针剂型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PEG长效重组人生长激素水针剂",
+        "evidence_span": "上市了全球第一支PEG长效重组人生长激素水针剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生长激素隐针电子注射笔",
+        "evidence_span": "推出全球首支生长激素隐针电子注射笔"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "重组人促卵泡素",
+        "evidence_span": "重组人促卵泡素产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水痘减毒活疫苗",
+        "evidence_span": "水痘减毒活疫苗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "狂犬疫苗",
+        "evidence_span": "狂犬疫苗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鼻喷流感疫苗",
+        "evidence_span": "鼻喷流感疫苗"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "带状疱疹减毒活疫苗",
+        "evidence_span": "带状疱疹减毒活疫苗"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "病毒规模化培养技术平台",
+        "evidence_span": "病毒规模化培养技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "制剂及佐剂技术平台",
+        "evidence_span": "制剂及佐剂技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基因工程技术平台",
+        "evidence_span": "基因工程技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "细菌性疫苗技术平台",
+        "evidence_span": "细菌性疫苗技术平台"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "生长激素国产替代",
+        "evidence_span": "实现生长激素国产替代进口"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "带状疱疹疫苗国产替代打破国外垄断局面"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:13:11"
+}

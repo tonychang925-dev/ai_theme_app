@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "6a4dbd3033e3", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落简要提及复旦大学团队研发半导体性光刻胶的事件，属于研发进展动态，没有提供详细技术知识，信息量有限。"}}

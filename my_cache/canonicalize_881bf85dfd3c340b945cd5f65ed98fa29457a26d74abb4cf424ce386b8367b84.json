@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:54:25", "result": {"span_uid": "6b8d54db2a71", "action": "rewrite", "canonical_text": "华为智界是华为智选车业务与奇瑞合作推出的汽车品牌，其首款车型为智界S7。", "final_type": "core", "final_role": "品牌定义与首款车型", "stability": "high", "reason": "原文本为事件性描述，改写为稳定知识，定义了华为智界的品牌属性和首款车型，适合作为核心知识。"}}

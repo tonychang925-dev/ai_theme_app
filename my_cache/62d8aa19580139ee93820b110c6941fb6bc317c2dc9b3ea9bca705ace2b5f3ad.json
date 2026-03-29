@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:01:57", "result": {"chunk_id": "a29e252d32c2", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段详细说明ICT基础设施业务的核心地位和构成，包含静态知识，但提及'2023年全球电信设备市场份额'等时间性数据，混合了事件信息，需裁决以提取稳定知识。"}}

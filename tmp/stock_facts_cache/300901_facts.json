@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "时尚产品设计",
+      "evidence_span": "中胤时尚是一家以时尚产品设计为核心业务的创意设计企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "鞋履设计",
+      "evidence_span": "主要应用于鞋履设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "图案设计",
+      "evidence_span": "以及应用于各类消费品外观的图案设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "供应链整合服务",
+      "evidence_span": "公司在提供设计服务的同时亦向客户提供供应链整合服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "第三方专业时尚设计企业",
+      "evidence_span": "作为第三方专业时尚设计行业的先发进入者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "量贩式设计企业",
+      "evidence_span": "公司作为稀缺的具备量贩式设计能力的时尚产品设计企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鞋履设计方案",
+      "evidence_span": "鞋履设计业务的实质为设计团队结合对时尚潮流的把握进行设计构思，形成包括时尚图案、元素、版式、材料、配色等在内的鞋履整体设计方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "图案设计方案",
+      "evidence_span": "图案设计业务是设计师根据其对现下时尚元素的理解，形成适用于终端消费品外观的整体设计方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鞋履成品",
+      "evidence_span": "公司组织外部生产厂商生产相应款式，向其批量采购，或通过公司的生产基地自行生产，再销售予客户"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "年均近10,000款鞋样的量贩式设计能力",
+      "evidence_span": "具备了年均近10,000款鞋样的量贩式设计能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效的设计体系",
+      "evidence_span": "公司通过集中化的采风流程及模块化的设计流程搭建了能够精准把握市场、设计产出速度快且数量多的高效的设计体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模块化设计流程",
+      "evidence_span": "公司形成了鞋楦、鞋底等基础构件设计及鞋材、配色、饰扣等造型设计模块化分工的流水线式设计流程"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "波兰CCC",
+      "evidence_span": "公司形成了一批以波兰CCC为代表的国内外知名鞋企客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众鞋履品牌",
+      "evidence_span": "成为越来越多大众鞋履品牌的产品设计合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "传统鞋履OEM制造企业",
+      "evidence_span": "公司亦向国内广大传统鞋履OEM制造企业、贸易企业输出时尚产品设计"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "贸易企业",
+      "evidence_span": "公司亦向国内广大传统鞋履OEM制造企业、贸易企业输出时尚产品设计"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "时尚产品设计",
+        "evidence_span": "中胤时尚是一家以时尚产品设计为核心业务的创意设计企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "鞋履设计",
+        "evidence_span": "主要应用于鞋履设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "图案设计",
+        "evidence_span": "以及应用于各类消费品外观的图案设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "供应链整合服务",
+        "evidence_span": "公司在提供设计服务的同时亦向客户提供供应链整合服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "第三方专业时尚设计企业",
+        "evidence_span": "作为第三方专业时尚设计行业的先发进入者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "量贩式设计企业",
+        "evidence_span": "公司作为稀缺的具备量贩式设计能力的时尚产品设计企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鞋履设计方案",
+        "evidence_span": "鞋履设计业务的实质为设计团队结合对时尚潮流的把握进行设计构思，形成包括时尚图案、元素、版式、材料、配色等在内的鞋履整体设计方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "图案设计方案",
+        "evidence_span": "图案设计业务是设计师根据其对现下时尚元素的理解，形成适用于终端消费品外观的整体设计方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鞋履成品",
+        "evidence_span": "公司组织外部生产厂商生产相应款式，向其批量采购，或通过公司的生产基地自行生产，再销售予客户"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "年均近10,000款鞋样的量贩式设计能力",
+        "evidence_span": "具备了年均近10,000款鞋样的量贩式设计能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效的设计体系",
+        "evidence_span": "公司通过集中化的采风流程及模块化的设计流程搭建了能够精准把握市场、设计产出速度快且数量多的高效的设计体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模块化设计流程",
+        "evidence_span": "公司形成了鞋楦、鞋底等基础构件设计及鞋材、配色、饰扣等造型设计模块化分工的流水线式设计流程"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "波兰CCC",
+        "evidence_span": "公司形成了一批以波兰CCC为代表的国内外知名鞋企客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众鞋履品牌",
+        "evidence_span": "成为越来越多大众鞋履品牌的产品设计合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "传统鞋履OEM制造企业",
+        "evidence_span": "公司亦向国内广大传统鞋履OEM制造企业、贸易企业输出时尚产品设计"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "贸易企业",
+        "evidence_span": "公司亦向国内广大传统鞋履OEM制造企业、贸易企业输出时尚产品设计"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:43:29"
+}

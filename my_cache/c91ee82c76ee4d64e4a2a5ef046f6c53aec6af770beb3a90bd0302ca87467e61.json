@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "c0a441588715", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了住房和城乡建设部在新闻发布会上宣布的政策措施（如房屋体检、房屋养老金、房屋保险制度），并提及试点城市。这包含政策发布的事件信息，但也涉及建筑设计相关的安全管理机制知识，可能对题材本体构建有价值，因此分类为candidate_mixed。"}}

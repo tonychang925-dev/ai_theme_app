@@ -1,0 +1,419 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "控制电机",
+      "evidence_span": "公司主营业务控制电机及其驱动系统业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其驱动系统业务",
+      "evidence_span": "公司主营业务控制电机及其驱动系统业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电源",
+      "evidence_span": "公司电源与照明系统控制类业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "照明系统控制类业务",
+      "evidence_span": "公司电源与照明系统控制类业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设备状态管理系统业务",
+      "evidence_span": "设备状态管理系统业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "贸易代理业务",
+      "evidence_span": "贸易代理业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "混合式步进电机全球主要供应商",
+      "evidence_span": "在混合式步进电机技术和业务领域已挤身为世界主要供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "系统级运动控制解决方案提供商",
+      "evidence_span": "向系统级运动控制解决方案提供商的目标迈进"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "LED控制与驱动领域系统级的产品提供商",
+      "evidence_span": "是LED控制与驱动领域系统级的产品提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "步进电机",
+      "evidence_span": "公司的步进电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直流无刷电机",
+      "evidence_span": "直流无刷电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "伺服电机",
+      "evidence_span": "伺服电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空心杯电机",
+      "evidence_span": "空心杯电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直线电机模组",
+      "evidence_span": "直线电机模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动缸",
+      "evidence_span": "电动缸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "步进系统",
+      "evidence_span": "步进系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "步进伺服系统",
+      "evidence_span": "步进伺服系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交流伺服系统",
+      "evidence_span": "交流伺服系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直流无刷系统",
+      "evidence_span": "直流无刷系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空心杯伺服系统",
+      "evidence_span": "空心杯伺服系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集成式控制系统",
+      "evidence_span": "集成式控制系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED智能照明控制与驱动系统",
+      "evidence_span": "LED智能照明控制与驱动系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业电源",
+      "evidence_span": "工业电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电控产品",
+      "evidence_span": "电控产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "混合式步进电机技术",
+      "evidence_span": "在混合式步进电机技术和业务领域已挤身为世界主要供应商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "直流无刷电机技术",
+      "evidence_span": "直流无刷电机技术亦在全球居于前列水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "交流伺服电机技术",
+      "evidence_span": "交流伺服电机技术亦在全球居于前列水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空心杯电机技术",
+      "evidence_span": "空心杯电机技术亦在全球居于前列水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "单芯片多轴驱动技术",
+      "evidence_span": "单芯片多轴驱动"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多圈绝对值编码器技术",
+      "evidence_span": "多圈绝对值编码器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "二自由度伺服控制技术",
+      "evidence_span": "二自由度伺服控制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "伺服控制技术架构",
+      "evidence_span": "伺服控制技术架构"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LED驱动技术",
+      "evidence_span": "LED驱动技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "计算机应用软件技术",
+      "evidence_span": "计算机应用软件技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "通信技术",
+      "evidence_span": "通信技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能控制技术",
+      "evidence_span": "智能控制技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球顶级医疗器械和生化分析仪器公司",
+      "evidence_span": "与全球顶级医疗器械和生化分析仪器公司长期紧密合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "松下电器",
+      "evidence_span": "主要代理松下电器的继电器产品"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G建设加速",
+      "evidence_span": "有望受益于5G建设加速"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "机器人+应用",
+      "evidence_span": "《“机器人+”应用行动实施方案》"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能制造",
+      "evidence_span": "《“十四五”智能制造发展规划》"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电机能效提升",
+      "evidence_span": "《电机能效提升计划（2021-2023年）》"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "控制电机及其驱动系统业务",
+        "evidence_span": "公司主营业务控制电机及其驱动系统业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电源与照明系统控制类业务",
+        "evidence_span": "公司电源与照明系统控制类业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "设备状态管理系统业务",
+        "evidence_span": "设备状态管理系统业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "贸易代理业务",
+        "evidence_span": "贸易代理业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "混合式步进电机全球主要供应商",
+        "evidence_span": "在混合式步进电机技术和业务领域已挤身为世界主要供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "系统级运动控制解决方案提供商",
+        "evidence_span": "向系统级运动控制解决方案提供商的目标迈进"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "LED控制与驱动领域系统级的产品提供商",
+        "evidence_span": "是LED控制与驱动领域系统级的产品提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "步进电机",
+        "evidence_span": "公司的步进电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直流无刷电机",
+        "evidence_span": "直流无刷电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "伺服电机",
+        "evidence_span": "伺服电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空心杯电机",
+        "evidence_span": "空心杯电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直线电机模组",
+        "evidence_span": "直线电机模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动缸",
+        "evidence_span": "电动缸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "步进系统",
+        "evidence_span": "步进系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "步进伺服系统",
+        "evidence_span": "步进伺服系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交流伺服系统",
+        "evidence_span": "交流伺服系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直流无刷系统",
+        "evidence_span": "直流无刷系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空心杯伺服系统",
+        "evidence_span": "空心杯伺服系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集成式控制系统",
+        "evidence_span": "集成式控制系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED智能照明控制与驱动系统",
+        "evidence_span": "LED智能照明控制与驱动系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业电源",
+        "evidence_span": "工业电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电控产品",
+        "evidence_span": "电控产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "混合式步进电机技术",
+        "evidence_span": "在混合式步进电机技术和业务领域已挤身为世界主要供应商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "直流无刷电机技术",
+        "evidence_span": "直流无刷电机技术亦在全球居于前列水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "交流伺服电机技术",
+        "evidence_span": "交流伺服电机技术亦在全球居于前列水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空心杯电机技术",
+        "evidence_span": "空心杯电机技术亦在全球居于前列水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "单芯片多轴驱动技术",
+        "evidence_span": "单芯片多轴驱动"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多圈绝对值编码器技术",
+        "evidence_span": "多圈绝对值编码器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "二自由度伺服控制技术",
+        "evidence_span": "二自由度伺服控制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "伺服控制技术架构",
+        "evidence_span": "伺服控制技术架构"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LED驱动技术",
+        "evidence_span": "LED驱动技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "计算机应用软件技术",
+        "evidence_span": "计算机应用软件技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "通信技术",
+        "evidence_span": "通信技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能控制技术",
+        "evidence_span": "智能控制技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球顶级医疗器械和生化分析仪器公司",
+        "evidence_span": "与全球顶级医疗器械和生化分析仪器公司长期紧密合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "松下电器",
+        "evidence_span": "主要代理松下电器的继电器产品"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G建设加速",
+        "evidence_span": "有望受益于5G建设加速"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "机器人+应用",
+        "evidence_span": "《“机器人+”应用行动实施方案》"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能制造",
+        "evidence_span": "《“十四五”智能制造发展规划》"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电机能效提升",
+        "evidence_span": "《电机能效提升计划（2021-2023年）》"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:02:59"
+}

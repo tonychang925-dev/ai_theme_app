@@ -1,0 +1,114 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "CMP设备",
+      "evidence_span": "公司以自有CMP设备和自主CMP技术为依托"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "晶圆再生业务",
+      "evidence_span": "报告期内晶圆再生业务和关键耗材销售和维保等技术服务业务发展迅速"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "关键耗材销售",
+      "evidence_span": "报告期内晶圆再生业务和关键耗材销售和维保等技术服务业务发展迅速"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "维保等技术服务业务",
+      "evidence_span": "报告期内晶圆再生业务和关键耗材销售和维保等技术服务业务发展迅速"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产CMP设备龙头",
+      "evidence_span": "华海清科领先国内其他厂商，占据国产CMP设备主要市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CMP设备",
+      "evidence_span": "公司以自有CMP设备和自主CMP技术为依托"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "12英寸减薄抛光一体机",
+      "evidence_span": "于2020年研发出12英寸减薄抛光一体机Versatile-GP 300"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "晶圆再生服务",
+      "evidence_span": "晶圆再生是指对晶圆制程中用过的控挡片进行回收处理使其达到新片标准"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CMP技术",
+      "evidence_span": "公司以自有CMP设备和自主CMP技术为依托"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "减薄、CMP和清洗技术",
+      "evidence_span": "集先进的减薄、CMP和清洗技术于一体"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "受益进口替代大潮"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "CMP设备",
+        "evidence_span": "公司以自有CMP设备和自主CMP技术为依托"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "晶圆再生业务",
+        "evidence_span": "报告期内晶圆再生业务和关键耗材销售和维保等技术服务业务发展迅速"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "关键耗材销售和维保等技术服务业务",
+        "evidence_span": "报告期内晶圆再生业务和关键耗材销售和维保等技术服务业务发展迅速"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产CMP设备龙头",
+        "evidence_span": "华海清科领先国内其他厂商，占据国产CMP设备主要市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CMP设备",
+        "evidence_span": "公司以自有CMP设备和自主CMP技术为依托"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "12英寸减薄抛光一体机",
+        "evidence_span": "于2020年研发出12英寸减薄抛光一体机Versatile-GP 300"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "晶圆再生服务",
+        "evidence_span": "晶圆再生是指对晶圆制程中用过的控挡片进行回收处理使其达到新片标准"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CMP技术",
+        "evidence_span": "公司以自有CMP设备和自主CMP技术为依托"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "减薄、CMP和清洗技术",
+        "evidence_span": "集先进的减薄、CMP和清洗技术于一体"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "受益进口替代大潮"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:01:47"
+}

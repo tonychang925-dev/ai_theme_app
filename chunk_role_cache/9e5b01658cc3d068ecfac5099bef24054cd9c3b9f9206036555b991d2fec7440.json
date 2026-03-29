@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "38120d56b1ce", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "段落描述多个事件（世界机器人大赛、工博会、信息通信展览会），包括华为展示人形机器人产品，但都是具体事件或展会动态，没有提供稳定的题材本体知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:18:46", "result": {"span_uid": "331ef9866c18", "action": "rewrite", "canonical_text": "半导体设备的安装和调试通常需要较长的测试时间。", "final_type": "related", "final_role": "设备安装特性", "stability": "medium", "reason": "该片段描述了半导体设备安装的通用特性，属于相关环节信息，但原文本有事件化口吻，改写后更稳定。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:34", "result": {"chunk_id": "05858f3acdf0", "decision": "related_but_event_only", "confidence": 0.85, "reason": "该段主要描述公司财务业绩和三星引进High-NA EUV光刻机的具体事件，涉及设备安装和运行时间表，属于新闻事件和行业动态，不适合作为半导体设备本体的定义输入。"}}

@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "瓷介电容器",
+      "evidence_span": "公司以瓷介电容器、滤波器等 电子元器件的技术研发、产品生产和销售为主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "滤波器",
+      "evidence_span": "公司以瓷介电容器、滤波器等 电子元器件的技术研发、产品生产和销售为主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子元器件代理",
+      "evidence_span": "公司代理国际知名厂商的多条 产品线"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特种 MLCC 核心供应商",
+      "evidence_span": "公司深耕行业二十余年，是我国特种 MLCC 核心供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高可靠电子元器件工艺龙头",
+      "evidence_span": "鸿远电子高可靠电子元器件工艺龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用MLCC核心供应商",
+      "evidence_span": "军用MLCC核心供应商，品类拓展迎发展契机"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高可靠电容专家",
+      "evidence_span": "鸿远电子高可靠电容专家，自产业务发展迅速"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特种陶瓷电容小巨人",
+      "evidence_span": "特种陶瓷电容小巨人，受益航天强国增长可期"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "MLCC核心企业",
+      "evidence_span": "MLCC核心企业，优质民参军典范"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军用MLCC领头羊",
+      "evidence_span": "鸿远电子军用MLCC领头羊，军民融合促发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "瓷介电容器",
+      "evidence_span": "公司自产业务包括瓷介电容 器、滤波器及其他电子元器件等多系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "滤波器",
+      "evidence_span": "公司自产业务包括瓷介电容 器、滤波器及其他电子元器件等多系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电容",
+      "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电阻",
+      "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电感",
+      "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频器件",
+      "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分立器件",
+      "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连接器",
+      "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集成电路",
+      "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航天领域",
+      "evidence_span": "公司深耕航天 领域，圆满完成“神州”、“嫦娥”、“长征”系列等配套任务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航空领域",
+      "evidence_span": "产品广泛应用于航天、航空、 电子信息、兵器、船舶等高可靠领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电子信息领域",
+      "evidence_span": "产品广泛应用于航天、航空、 电子信息、兵器、船舶等高可靠领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "兵器领域",
+      "evidence_span": "产品广泛应用于航天、航空、 电子信息、兵器、船舶等高可靠领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "船舶领域",
+      "evidence_span": "产品广泛应用于航天、航空、 电子信息、兵器、船舶等高可靠领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "5G通信领域",
+      "evidence_span": "以及 5G 通信、轨道交通、医疗电子等民用高端领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "轨道交通领域",
+      "evidence_span": "以及 5G 通信、轨道交通、医疗电子等民用高端领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医疗电子领域",
+      "evidence_span": "以及 5G 通信、轨道交通、医疗电子等民用高端领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "航天强国",
+      "evidence_span": "特种陶瓷电容小巨人，受益航天强国增长可期"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产替代空间广阔"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "瓷介电容器",
+        "evidence_span": "公司以瓷介电容器、滤波器等 电子元器件的技术研发、产品生产和销售为主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "滤波器",
+        "evidence_span": "公司以瓷介电容器、滤波器等 电子元器件的技术研发、产品生产和销售为主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子元器件代理",
+        "evidence_span": "公司代理国际知名厂商的多条 产品线"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特种 MLCC 核心供应商",
+        "evidence_span": "公司深耕行业二十余年，是我国特种 MLCC 核心供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高可靠电子元器件工艺龙头",
+        "evidence_span": "鸿远电子高可靠电子元器件工艺龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用MLCC核心供应商",
+        "evidence_span": "军用MLCC核心供应商，品类拓展迎发展契机"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高可靠电容专家",
+        "evidence_span": "鸿远电子高可靠电容专家，自产业务发展迅速"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特种陶瓷电容小巨人",
+        "evidence_span": "特种陶瓷电容小巨人，受益航天强国增长可期"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "MLCC核心企业",
+        "evidence_span": "MLCC核心企业，优质民参军典范"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军用MLCC领头羊",
+        "evidence_span": "鸿远电子军用MLCC领头羊，军民融合促发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "瓷介电容器",
+        "evidence_span": "公司自产业务包括瓷介电容 器、滤波器及其他电子元器件等多系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "滤波器",
+        "evidence_span": "公司自产业务包括瓷介电容 器、滤波器及其他电子元器件等多系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电容",
+        "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电阻",
+        "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电感",
+        "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频器件",
+        "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分立器件",
+        "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连接器",
+        "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集成电路",
+        "evidence_span": "产品品类主要为电容、电阻、电感、射频器件、分立器件、连接器、集成电路等 多种系列的电子元器件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航天领域",
+        "evidence_span": "公司深耕航天 领域，圆满完成“神州”、“嫦娥”、“长征”系列等配套任务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航空领域",
+        "evidence_span": "产品广泛应用于航天、航空、 电子信息、兵器、船舶等高可靠领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电子信息领域",
+        "evidence_span": "产品广泛应用于航天、航空、 电子信息、兵器、船舶等高可靠领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "兵器领域",
+        "evidence_span": "产品广泛应用于航天、航空、 电子信息、兵器、船舶等高可靠领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "船舶领域",
+        "evidence_span": "产品广泛应用于航天、航空、 电子信息、兵器、船舶等高可靠领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "5G通信领域",
+        "evidence_span": "以及 5G 通信、轨道交通、医疗电子等民用高端领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "轨道交通领域",
+        "evidence_span": "以及 5G 通信、轨道交通、医疗电子等民用高端领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医疗电子领域",
+        "evidence_span": "以及 5G 通信、轨道交通、医疗电子等民用高端领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "航天强国",
+        "evidence_span": "特种陶瓷电容小巨人，受益航天强国增长可期"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产替代空间广阔"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:46:51"
+}

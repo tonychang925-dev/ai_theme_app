@@ -1,0 +1,409 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "中成药",
+      "evidence_span": "公司主要从事中成药、化学药和女性卫生用品的研制、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化学药",
+      "evidence_span": "公司主要从事中成药、化学药和女性卫生用品的研制、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "女性卫生用品",
+      "evidence_span": "公司主要从事中成药、化学药和女性卫生用品的研制、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "药品批发",
+      "evidence_span": "以及药品的批发和零售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "药品零售",
+      "evidence_span": "以及药品的批发和零售业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "妇科中成药领域领先企业",
+      "evidence_span": "公司处于国内女性医药健康领域的领先地位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "妇科药龙头",
+      "evidence_span": "妇科龙头,进军女性大健康领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "妇科千金片",
+      "evidence_span": "主要产品妇科千金片是国家基本药物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "妇科千金胶囊",
+      "evidence_span": "妇科千金片（胶囊）在城市零售药店妇科炎症中成药市场的份额为29.3%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "补血益母丸",
+      "evidence_span": "补血益母丸（颗粒）在产后恢复类中成药市场的份额占比从2017年的1.9%上升至8.1%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "补血益母颗粒",
+      "evidence_span": "补血益母丸（颗粒）在产后恢复类中成药市场的份额占比从2017年的1.9%上升至8.1%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "椿乳凝胶",
+      "evidence_span": "主要产品有妇科千金片（胶囊）、补血益母丸（颗粒）、椿乳凝胶、妇科断红饮胶囊等11个独家品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "妇科断红饮胶囊",
+      "evidence_span": "主要产品有妇科千金片（胶囊）、补血益母丸（颗粒）、椿乳凝胶、妇科断红饮胶囊等11个独家品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "千金净雅卫生巾",
+      "evidence_span": "千金净雅卫生巾在SCI英国《数学与计算生物学》期刊完成发表"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "千金润洗护系列产品",
+      "evidence_span": "女性健康衍生品有千金净雅卫生巾、千金润洗护系列产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盐酸贝那普利片",
+      "evidence_span": "盐酸贝那普利片获得生产批件，位列同品种全国第三"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "富马酸丙酚替诺福韦片",
+      "evidence_span": "富马酸丙酚替诺福韦片等2个品种完成发补研究"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水飞蓟宾葡甲胺片",
+      "evidence_span": "千金协力药业主要产品水飞蓟宾葡甲胺片销售同比增长10.3%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "苯磺酸氨氯地平片",
+      "evidence_span": "苯磺酸氨氯地平片积极参加国家集采接续项目，实现同比增长21.1%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加味逍遥丸",
+      "evidence_span": "2022年妇科千金片、益母颗粒、加味逍遥丸均进入了零售市场妇科TOP20品种榜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益母颗粒",
+      "evidence_span": "2022年妇科千金片、益母颗粒、加味逍遥丸均进入了零售市场妇科TOP20品种榜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "千金大药房",
+      "evidence_span": "千金大药房门店总数约达1600家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "千金养生坊新款内衣裤专洗凝露",
+      "evidence_span": "千金养生坊新款内衣裤专洗凝露成功入选CCTV《国货优选》栏目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药保湿面膜",
+      "evidence_span": "新开发了中药保湿面膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "醺黑加仑酒",
+      "evidence_span": "对醺黑加仑酒调整了糖酸比，降低了酒体甜腻感"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复方老姜茶确定了以姜、红糖、红枣、佛手、枸杞为原料的新配方",
+      "evidence_span": "复方老姜茶确定了以姜、红糖、红枣、佛手、枸杞为原料的新配方"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超薄型经期裤",
+      "evidence_span": "超薄型经期裤、老品升级等3个项目完成结题"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "中药精提物在内衣裤洗液中应用研究",
+      "evidence_span": "完成了中药精提物在内衣裤洗液中应用研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "酒石酸唑吡坦原料完成研究及备案",
+      "evidence_span": "酒石酸唑吡坦原料完成研究及备案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "阿魏酸哌嗪生产工艺优化升级",
+      "evidence_span": "阿魏酸哌嗪完成生产工艺、质量标准优化升级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "妇科千金片益气化瘀药效作用机制研究",
+      "evidence_span": "开展妇科千金片益气化瘀药效作用机制研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "补血益母丸药理毒理研究",
+      "evidence_span": "重点开展补血益母丸药理毒理研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "妇科千金方在面膜、洗液的深化研究",
+      "evidence_span": "重点开展妇科千金方、补血益母方在面膜、洗液的深化研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "半脱脂纯棉水刺无纺布运用于“千金净雅”主系列产品",
+      "evidence_span": "完成半脱脂纯棉水刺无纺布运用于“千金净雅”主系列产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美团",
+      "evidence_span": "O2O板块美团、饿了么、京东到家门店覆盖率分别达到71.6%"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "饿了么",
+      "evidence_span": "O2O板块美团、饿了么、京东到家门店覆盖率分别达到71.6%、66.8%"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东到家",
+      "evidence_span": "O2O板块美团、饿了么、京东到家门店覆盖率分别达到71.6%、66.8%、24.4%"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建行",
+      "evidence_span": "与建行合作的“联合会员系统”正式上线"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "女性大健康",
+      "evidence_span": "以妇科中药为核心，逐步向女性大健康产业领域延伸"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "中药衍生系列",
+      "evidence_span": "跳出本业，做中药衍生系列"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "中成药",
+        "evidence_span": "公司主要从事中成药、化学药和女性卫生用品的研制、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化学药",
+        "evidence_span": "公司主要从事中成药、化学药和女性卫生用品的研制、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "女性卫生用品",
+        "evidence_span": "公司主要从事中成药、化学药和女性卫生用品的研制、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "药品批发",
+        "evidence_span": "以及药品的批发和零售业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "药品零售",
+        "evidence_span": "以及药品的批发和零售业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "妇科中成药领域领先企业",
+        "evidence_span": "公司处于国内女性医药健康领域的领先地位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "妇科药龙头",
+        "evidence_span": "妇科龙头,进军女性大健康领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "妇科千金片",
+        "evidence_span": "主要产品妇科千金片是国家基本药物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "妇科千金胶囊",
+        "evidence_span": "妇科千金片（胶囊）在城市零售药店妇科炎症中成药市场的份额为29.3%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "补血益母丸",
+        "evidence_span": "补血益母丸（颗粒）在产后恢复类中成药市场的份额占比从2017年的1.9%上升至8.1%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "补血益母颗粒",
+        "evidence_span": "补血益母丸（颗粒）在产后恢复类中成药市场的份额占比从2017年的1.9%上升至8.1%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "椿乳凝胶",
+        "evidence_span": "主要产品有妇科千金片（胶囊）、补血益母丸（颗粒）、椿乳凝胶、妇科断红饮胶囊等11个独家品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "妇科断红饮胶囊",
+        "evidence_span": "主要产品有妇科千金片（胶囊）、补血益母丸（颗粒）、椿乳凝胶、妇科断红饮胶囊等11个独家品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "千金净雅卫生巾",
+        "evidence_span": "千金净雅卫生巾在SCI英国《数学与计算生物学》期刊完成发表"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "千金润洗护系列产品",
+        "evidence_span": "女性健康衍生品有千金净雅卫生巾、千金润洗护系列产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盐酸贝那普利片",
+        "evidence_span": "盐酸贝那普利片获得生产批件，位列同品种全国第三"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "富马酸丙酚替诺福韦片",
+        "evidence_span": "富马酸丙酚替诺福韦片等2个品种完成发补研究"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水飞蓟宾葡甲胺片",
+        "evidence_span": "千金协力药业主要产品水飞蓟宾葡甲胺片销售同比增长10.3%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "苯磺酸氨氯地平片",
+        "evidence_span": "苯磺酸氨氯地平片积极参加国家集采接续项目，实现同比增长21.1%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加味逍遥丸",
+        "evidence_span": "2022年妇科千金片、益母颗粒、加味逍遥丸均进入了零售市场妇科TOP20品种榜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益母颗粒",
+        "evidence_span": "2022年妇科千金片、益母颗粒、加味逍遥丸均进入了零售市场妇科TOP20品种榜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "千金大药房",
+        "evidence_span": "千金大药房门店总数约达1600家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "千金养生坊新款内衣裤专洗凝露",
+        "evidence_span": "千金养生坊新款内衣裤专洗凝露成功入选CCTV《国货优选》栏目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药保湿面膜",
+        "evidence_span": "新开发了中药保湿面膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "醺黑加仑酒",
+        "evidence_span": "对醺黑加仑酒调整了糖酸比，降低了酒体甜腻感"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复方老姜茶确定了以姜、红糖、红枣、佛手、枸杞为原料的新配方",
+        "evidence_span": "复方老姜茶确定了以姜、红糖、红枣、佛手、枸杞为原料的新配方"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超薄型经期裤",
+        "evidence_span": "超薄型经期裤、老品升级等3个项目完成结题"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "中药精提物在内衣裤洗液中应用研究",
+        "evidence_span": "完成了中药精提物在内衣裤洗液中应用研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "酒石酸唑吡坦原料完成研究及备案",
+        "evidence_span": "酒石酸唑吡坦原料完成研究及备案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "阿魏酸哌嗪生产工艺优化升级",
+        "evidence_span": "阿魏酸哌嗪完成生产工艺、质量标准优化升级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "妇科千金片益气化瘀药效作用机制研究",
+        "evidence_span": "开展妇科千金片益气化瘀药效作用机制研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "补血益母丸药理毒理研究",
+        "evidence_span": "重点开展补血益母丸药理毒理研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "妇科千金方在面膜、洗液的深化研究",
+        "evidence_span": "重点开展妇科千金方、补血益母方在面膜、洗液的深化研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "半脱脂纯棉水刺无纺布运用于“千金净雅”主系列产品",
+        "evidence_span": "完成半脱脂纯棉水刺无纺布运用于“千金净雅”主系列产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美团",
+        "evidence_span": "O2O板块美团、饿了么、京东到家门店覆盖率分别达到71.6%"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "饿了么",
+        "evidence_span": "O2O板块美团、饿了么、京东到家门店覆盖率分别达到71.6%、66.8%"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东到家",
+        "evidence_span": "O2O板块美团、饿了么、京东到家门店覆盖率分别达到71.6%、66.8%、24.4%"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建行",
+        "evidence_span": "与建行合作的“联合会员系统”正式上线"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "女性大健康",
+        "evidence_span": "以妇科中药为核心，逐步向女性大健康产业领域延伸"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "中药衍生系列",
+        "evidence_span": "跳出本业，做中药衍生系列"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:18:57"
+}

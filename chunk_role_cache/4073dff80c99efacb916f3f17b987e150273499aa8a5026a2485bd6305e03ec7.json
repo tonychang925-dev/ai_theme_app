@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "4a48141a0dc5", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述长鑫存储启动上市辅导的公司事件，主要涉及DRAM芯片，与光刻胶题材无关，属于无信息量或无关内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "82c040c98a26", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了民航局成立领导小组以推进低空经济发展的组织机制和后续工作重点，包含静态知识（如领导小组的组成、职责、工作机制）和动态事件（如优化调整领导小组、下一步工作计划），混合了知识性和事件性内容，适合作为候选知识进一步处理。"}}

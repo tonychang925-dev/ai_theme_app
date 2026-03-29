@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端抗生素",
+      "evidence_span": "公司深耕高端抗生素和抗病毒领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "抗病毒领域",
+      "evidence_span": "公司深耕高端抗生素和抗病毒领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中间体",
+      "evidence_span": "公司营收主要由中间体、原料药、CDMO、制剂四大板块构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "原料药",
+      "evidence_span": "公司营收主要由中间体、原料药、CDMO、制剂四大板块构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "CDMO",
+      "evidence_span": "公司营收主要由中间体、原料药、CDMO、制剂四大板块构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "制剂",
+      "evidence_span": "公司营收主要由中间体、原料药、CDMO、制剂四大板块构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电池电解液添加剂业务",
+      "evidence_span": "积极布局锂电池电解液添加剂业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "β-内酰胺酶抑制剂领导者",
+      "evidence_span": "富祥药业β-内酰胺酶抑制剂领导者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "抗菌原料药、中间体新秀",
+      "evidence_span": "抗菌原料药、中间体新秀新增外企订单有助业绩高增长"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "抗感染领域优质原料药企",
+      "evidence_span": "富祥药业抗感染领域优质原料药企"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "抗生素细分领域龙头",
+      "evidence_span": "富祥药业抗生素细分领域龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专注产业链中上游的抗菌药物生产企业",
+      "evidence_span": "富祥药业专注产业链中上游的抗菌药物生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "他唑巴坦原料药/中间体",
+      "evidence_span": "他唑巴坦原料药/中间体、舒巴坦原料药/中间体、洛韦类药物中间体的全球主要供应商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "舒巴坦原料药/中间体",
+      "evidence_span": "他唑巴坦原料药/中间体、舒巴坦原料药/中间体、洛韦类药物中间体的全球主要供应商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洛韦类药物中间体",
+      "evidence_span": "他唑巴坦原料药/中间体、舒巴坦原料药/中间体、洛韦类药物中间体的全球主要供应商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳酸亚乙烯酯（VC）",
+      "evidence_span": "积极布局碳酸亚乙烯酯（VC）和氟代碳酸乙烯酯（FEC）等电解液添加剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氟代碳酸乙烯酯（FEC）",
+      "evidence_span": "积极布局碳酸亚乙烯酯（VC）和氟代碳酸乙烯酯（FEC）等电解液添加剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "医药中间体-原料药-制剂一体化",
+      "evidence_span": "打造“医药中间体-原料药-制剂一体化”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "外企",
+      "evidence_span": "抗菌原料药、中间体新秀新增外企订单有助业绩高增长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "CDMO业务协同延展",
+      "evidence_span": "富祥药业抗感染领域优质原料药企，CDMO业务协同延展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "抗生素升级“卖水人”",
+      "evidence_span": "抗生素升级“卖水人”，量利齐升正当时"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端抗生素",
+        "evidence_span": "公司深耕高端抗生素和抗病毒领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "抗病毒领域",
+        "evidence_span": "公司深耕高端抗生素和抗病毒领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中间体",
+        "evidence_span": "公司营收主要由中间体、原料药、CDMO、制剂四大板块构成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "原料药",
+        "evidence_span": "公司营收主要由中间体、原料药、CDMO、制剂四大板块构成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "CDMO",
+        "evidence_span": "公司营收主要由中间体、原料药、CDMO、制剂四大板块构成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "制剂",
+        "evidence_span": "公司营收主要由中间体、原料药、CDMO、制剂四大板块构成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电池电解液添加剂业务",
+        "evidence_span": "积极布局锂电池电解液添加剂业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "β-内酰胺酶抑制剂领导者",
+        "evidence_span": "富祥药业β-内酰胺酶抑制剂领导者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "抗菌原料药、中间体新秀",
+        "evidence_span": "抗菌原料药、中间体新秀新增外企订单有助业绩高增长"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "抗感染领域优质原料药企",
+        "evidence_span": "富祥药业抗感染领域优质原料药企"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "抗生素细分领域龙头",
+        "evidence_span": "富祥药业抗生素细分领域龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专注产业链中上游的抗菌药物生产企业",
+        "evidence_span": "富祥药业专注产业链中上游的抗菌药物生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "他唑巴坦原料药/中间体",
+        "evidence_span": "他唑巴坦原料药/中间体、舒巴坦原料药/中间体、洛韦类药物中间体的全球主要供应商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "舒巴坦原料药/中间体",
+        "evidence_span": "他唑巴坦原料药/中间体、舒巴坦原料药/中间体、洛韦类药物中间体的全球主要供应商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洛韦类药物中间体",
+        "evidence_span": "他唑巴坦原料药/中间体、舒巴坦原料药/中间体、洛韦类药物中间体的全球主要供应商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳酸亚乙烯酯（VC）",
+        "evidence_span": "积极布局碳酸亚乙烯酯（VC）和氟代碳酸乙烯酯（FEC）等电解液添加剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氟代碳酸乙烯酯（FEC）",
+        "evidence_span": "积极布局碳酸亚乙烯酯（VC）和氟代碳酸乙烯酯（FEC）等电解液添加剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "医药中间体-原料药-制剂一体化",
+        "evidence_span": "打造“医药中间体-原料药-制剂一体化”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "外企",
+        "evidence_span": "抗菌原料药、中间体新秀新增外企订单有助业绩高增长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "CDMO业务协同延展",
+        "evidence_span": "富祥药业抗感染领域优质原料药企，CDMO业务协同延展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "抗生素升级“卖水人”",
+        "evidence_span": "抗生素升级“卖水人”，量利齐升正当时"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:53:52"
+}

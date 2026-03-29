@@ -1,0 +1,384 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "化学原料药",
+      "evidence_span": "公司主要从事化学原料药(含中间体)及制剂产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中间体",
+      "evidence_span": "公司主要从事化学原料药(含中间体)及制剂产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "制剂产品",
+      "evidence_span": "公司主要从事化学原料药(含中间体)及制剂产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "合同研发生产服务(CDMO)",
+      "evidence_span": "并可根据客户需求提供合同研发生产服务(CDMO)"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球非甾体抗炎类原料药领先企业",
+      "evidence_span": "全球非甾体抗炎类原料药领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球布洛芬和右旋布洛芬原料药主要生产厂商",
+      "evidence_span": "尤其是布洛芬和右旋布洛芬原料药，是全球主要生产厂商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非甾体抗炎类原料药",
+      "evidence_span": "原料药及中间体业务：包括非甾体抗炎类原料药、心血管类、抗肿瘤类原料药及中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "心血管类原料药",
+      "evidence_span": "原料药及中间体业务：包括非甾体抗炎类原料药、心血管类、抗肿瘤类原料药及中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗肿瘤类原料药",
+      "evidence_span": "原料药及中间体业务：包括非甾体抗炎类原料药、心血管类、抗肿瘤类原料药及中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "布洛芬原料药",
+      "evidence_span": "公司原料药产品主要为非甾体抗炎类原料药布洛芬和右旋布洛芬"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "右旋布洛芬原料药",
+      "evidence_span": "公司原料药产品主要为非甾体抗炎类原料药布洛芬和右旋布洛芬"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "托拉塞米原料药",
+      "evidence_span": "心血管类原料药托拉塞米和米力衣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "米力农原料药",
+      "evidence_span": "心血管类原料药托拉塞米和米力衣"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "醋酸阿比特龙原料药",
+      "evidence_span": "抗肿瘤类原料药醋酸阿比特龙、磷酸氟达拉滨和盐酸格拉司琼"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸氟达拉滨原料药",
+      "evidence_span": "抗肿瘤类原料药醋酸阿比特龙、磷酸氟达拉滨和盐酸格拉司琼"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盐酸格拉司琼原料药",
+      "evidence_span": "抗肿瘤类原料药醋酸阿比特龙、磷酸氟达拉滨和盐酸格拉司琼"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "解热镇痛类制剂",
+      "evidence_span": "制剂业务：主要是利用公司自产原料药开发的解热镇痛类、心血管类和抗感染类等制剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "心血管类制剂",
+      "evidence_span": "制剂业务：主要是利用公司自产原料药开发的解热镇痛类、心血管类和抗感染类等制剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗感染类制剂",
+      "evidence_span": "制剂业务：主要是利用公司自产原料药开发的解热镇痛类、心血管类和抗感染类等制剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "托拉塞米片",
+      "evidence_span": "公司的制剂产品主要为心血管类制剂托拉塞米片和非甾体抗炎类制剂布洛芬颗粒等制剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "布洛芬颗粒",
+      "evidence_span": "公司的制剂产品主要为心血管类制剂托拉塞米片和非甾体抗炎类制剂布洛芬颗粒等制剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中间体",
+      "evidence_span": "合同研发生产服务(CDMO) ：包括中间体，关键起始物料和原料药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "关键起始物料",
+      "evidence_span": "合同研发生产服务(CDMO) ：包括中间体，关键起始物料和原料药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "原料药",
+      "evidence_span": "合同研发生产服务(CDMO) ：包括中间体，关键起始物料和原料药"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "布洛芬1,2-芳基重排改良新工艺",
+      "evidence_span": "公司&ldquo;布洛芬1,2-芳基重排改良新工艺&rdquo;、&ldquo; 布洛芬工艺创新开发及循环技术开发&rdquo;荣获湖北省科技进步奖二等奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "布洛芬工艺创新开发及循环技术开发",
+      "evidence_span": "公司&ldquo;布洛芬1,2-芳基重排改良新工艺&rdquo;、&ldquo; 布洛芬工艺创新开发及循环技术开发&rdquo;荣获湖北省科技进步奖二等奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "右旋布洛芬的研制",
+      "evidence_span": "&ldquo; 右旋布洛芬的研制&rdquo;、&ldquo; 盐酸格拉司琼新工艺&rdquo;荣获湖北省科技进步奖三等奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "盐酸格拉司琼新工艺",
+      "evidence_span": "&ldquo; 右旋布洛芬的研制&rdquo;、&ldquo; 盐酸格拉司琼新工艺&rdquo;荣获湖北省科技进步奖三等奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "托拉塞米的纯化方法",
+      "evidence_span": "&ldquo;托拉塞米的纯化方法&rdquo;、&ldquo;一种醋酸阿比特龙 的制备方法&rdquo;荣获湖北省技术发明奖三等奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "醋酸阿比特龙的制备方法",
+      "evidence_span": "&ldquo;托拉塞米的纯化方法&rdquo;、&ldquo;一种醋酸阿比特龙 的制备方法&rdquo;荣获湖北省技术发明奖三等奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "挑战原研公司工艺专利的能力",
+      "evidence_span": "公司具有挑战原研公司工艺专利的能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "开发新的工艺路线",
+      "evidence_span": "开发新的工艺路线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "原料药、片剂、颗粒剂、硬胶囊剂等生产条件和能力",
+      "evidence_span": "具备了原料药、片剂、颗粒剂、硬胶囊剂等生产条件和能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国FDA",
+      "evidence_span": "公司原料药产品布洛芬、米力农、盐酸格拉司琼、磷酸氟达拉滨、氟马西尼等原料药产品多次通过美国FDA的现场检查"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法国药监局",
+      "evidence_span": "布洛芬和托拉塞米通过法国药监局和欧洲药品质量管理局的现场检查"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧洲药品质量管理局",
+      "evidence_span": "布洛芬和托拉塞米通过法国药监局和欧洲药品质量管理局的现场检查"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国药监局",
+      "evidence_span": "布洛芬与右旋布洛芬通过韩国药监局的现场检查"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "原料药+制剂一体化",
+      "evidence_span": "公司建设了覆盖原料药和制剂上下游一体化的生产基地"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "化学原料药及中间体",
+        "evidence_span": "公司主要从事化学原料药(含中间体)及制剂产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "制剂产品",
+        "evidence_span": "公司主要从事化学原料药(含中间体)及制剂产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "合同研发生产服务(CDMO)",
+        "evidence_span": "并可根据客户需求提供合同研发生产服务(CDMO)"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球非甾体抗炎类原料药领先企业",
+        "evidence_span": "全球非甾体抗炎类原料药领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球布洛芬和右旋布洛芬原料药主要生产厂商",
+        "evidence_span": "尤其是布洛芬和右旋布洛芬原料药，是全球主要生产厂商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非甾体抗炎类原料药",
+        "evidence_span": "原料药及中间体业务：包括非甾体抗炎类原料药、心血管类、抗肿瘤类原料药及中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "心血管类原料药",
+        "evidence_span": "原料药及中间体业务：包括非甾体抗炎类原料药、心血管类、抗肿瘤类原料药及中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗肿瘤类原料药",
+        "evidence_span": "原料药及中间体业务：包括非甾体抗炎类原料药、心血管类、抗肿瘤类原料药及中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "布洛芬原料药",
+        "evidence_span": "公司原料药产品主要为非甾体抗炎类原料药布洛芬和右旋布洛芬"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "右旋布洛芬原料药",
+        "evidence_span": "公司原料药产品主要为非甾体抗炎类原料药布洛芬和右旋布洛芬"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "托拉塞米原料药",
+        "evidence_span": "心血管类原料药托拉塞米和米力衣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "米力农原料药",
+        "evidence_span": "心血管类原料药托拉塞米和米力衣"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "醋酸阿比特龙原料药",
+        "evidence_span": "抗肿瘤类原料药醋酸阿比特龙、磷酸氟达拉滨和盐酸格拉司琼"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸氟达拉滨原料药",
+        "evidence_span": "抗肿瘤类原料药醋酸阿比特龙、磷酸氟达拉滨和盐酸格拉司琼"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盐酸格拉司琼原料药",
+        "evidence_span": "抗肿瘤类原料药醋酸阿比特龙、磷酸氟达拉滨和盐酸格拉司琼"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "解热镇痛类制剂",
+        "evidence_span": "制剂业务：主要是利用公司自产原料药开发的解热镇痛类、心血管类和抗感染类等制剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "心血管类制剂",
+        "evidence_span": "制剂业务：主要是利用公司自产原料药开发的解热镇痛类、心血管类和抗感染类等制剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗感染类制剂",
+        "evidence_span": "制剂业务：主要是利用公司自产原料药开发的解热镇痛类、心血管类和抗感染类等制剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "托拉塞米片",
+        "evidence_span": "公司的制剂产品主要为心血管类制剂托拉塞米片和非甾体抗炎类制剂布洛芬颗粒等制剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "布洛芬颗粒",
+        "evidence_span": "公司的制剂产品主要为心血管类制剂托拉塞米片和非甾体抗炎类制剂布洛芬颗粒等制剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中间体",
+        "evidence_span": "合同研发生产服务(CDMO) ：包括中间体，关键起始物料和原料药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "关键起始物料",
+        "evidence_span": "合同研发生产服务(CDMO) ：包括中间体，关键起始物料和原料药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "原料药",
+        "evidence_span": "合同研发生产服务(CDMO) ：包括中间体，关键起始物料和原料药"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "布洛芬1,2-芳基重排改良新工艺",
+        "evidence_span": "公司&ldquo;布洛芬1,2-芳基重排改良新工艺&rdquo;、&ldquo; 布洛芬工艺创新开发及循环技术开发&rdquo;荣获湖北省科技进步奖二等奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "布洛芬工艺创新开发及循环技术开发",
+        "evidence_span": "公司&ldquo;布洛芬1,2-芳基重排改良新工艺&rdquo;、&ldquo; 布洛芬工艺创新开发及循环技术开发&rdquo;荣获湖北省科技进步奖二等奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "右旋布洛芬的研制",
+        "evidence_span": "&ldquo; 右旋布洛芬的研制&rdquo;、&ldquo; 盐酸格拉司琼新工艺&rdquo;荣获湖北省科技进步奖三等奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "盐酸格拉司琼新工艺",
+        "evidence_span": "&ldquo; 右旋布洛芬的研制&rdquo;、&ldquo; 盐酸格拉司琼新工艺&rdquo;荣获湖北省科技进步奖三等奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "托拉塞米的纯化方法",
+        "evidence_span": "&ldquo;托拉塞米的纯化方法&rdquo;、&ldquo;一种醋酸阿比特龙 的制备方法&rdquo;荣获湖北省技术发明奖三等奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "醋酸阿比特龙的制备方法",
+        "evidence_span": "&ldquo;托拉塞米的纯化方法&rdquo;、&ldquo;一种醋酸阿比特龙 的制备方法&rdquo;荣获湖北省技术发明奖三等奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "挑战原研公司工艺专利的能力",
+        "evidence_span": "公司具有挑战原研公司工艺专利的能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "开发新的工艺路线",
+        "evidence_span": "开发新的工艺路线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "原料药、片剂、颗粒剂、硬胶囊剂等生产条件和能力",
+        "evidence_span": "具备了原料药、片剂、颗粒剂、硬胶囊剂等生产条件和能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国FDA",
+        "evidence_span": "公司原料药产品布洛芬、米力农、盐酸格拉司琼、磷酸氟达拉滨、氟马西尼等原料药产品多次通过美国FDA的现场检查"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法国药监局",
+        "evidence_span": "布洛芬和托拉塞米通过法国药监局和欧洲药品质量管理局的现场检查"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧洲药品质量管理局",
+        "evidence_span": "布洛芬和托拉塞米通过法国药监局和欧洲药品质量管理局的现场检查"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国药监局",
+        "evidence_span": "布洛芬与右旋布洛芬通过韩国药监局的现场检查"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "原料药+制剂一体化",
+        "evidence_span": "公司建设了覆盖原料药和制剂上下游一体化的生产基地"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:52:17"
+}

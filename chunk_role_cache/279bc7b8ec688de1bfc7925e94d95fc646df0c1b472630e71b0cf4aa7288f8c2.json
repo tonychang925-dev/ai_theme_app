@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "f6345fd5eeb9", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段描述具体事件（直升机载客航线开通）和政策动态（自然资源部推进实景三维中国建设），属于时间性动态，没有提供低空经济的静态知识。"}}

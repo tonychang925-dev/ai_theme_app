@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "能源工程",
+      "evidence_span": "公司主营业务将进一步聚焦能源工程、化工装备、国防建设等三大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化工装备",
+      "evidence_span": "公司主营业务将进一步聚焦能源工程、化工装备、国防建设等三大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "国防建设",
+      "evidence_span": "公司主营业务将进一步聚焦能源工程、化工装备、国防建设等三大板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端装备制造企业",
+      "evidence_span": "以张化机为主体的高端装备制造业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国防建设装备制造企业",
+      "evidence_span": "以无锡红旗船厂为主体的国防建设业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工程服务商",
+      "evidence_span": "控股子公司中机电力...是一家能够提供全生命周期解决方案的工程服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源工程设计",
+      "evidence_span": "具备承接以风力发电、光伏发电为主的新能源工程设计、咨询和EPC总承包业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源工程咨询",
+      "evidence_span": "具备承接以风力发电、光伏发电为主的新能源工程设计、咨询和EPC总承包业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源工程EPC总承包",
+      "evidence_span": "具备承接以风力发电、光伏发电为主的新能源工程设计、咨询和EPC总承包业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非标容器",
+      "evidence_span": "张化机是国内从事非标容器的大型企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "国防相关专用设备",
+      "evidence_span": "子公司红旗船厂有限公司是国内最早进入某国防相关专用设备的专业装备制造企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷氢化反应器",
+      "evidence_span": "硅料生产所需的冷氢化反应器、还原炉、换热器、塔器等多晶硅核心设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "还原炉",
+      "evidence_span": "硅料生产所需的冷氢化反应器、还原炉、换热器、塔器等多晶硅核心设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "换热器",
+      "evidence_span": "硅料生产所需的冷氢化反应器、还原炉、换热器、塔器等多晶硅核心设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "塔器",
+      "evidence_span": "硅料生产所需的冷氢化反应器、还原炉、换热器、塔器等多晶硅核心设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "熔盐塔式二次反射光热发电技术",
+      "evidence_span": "公司募投项目所采用的熔盐塔式二次反射光热发电技术属国内首创"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "清洁能源",
+      "evidence_span": "战略转型清洁能源综合服务商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军工核电",
+      "evidence_span": "连续布局军工核电领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新型煤化工",
+      "evidence_span": "受益新型煤化工"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电改",
+      "evidence_span": "受益电改及一带一路"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "受益电改及一带一路"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军民融合",
+      "evidence_span": "清洁能源+军民融合"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "能源工程",
+        "evidence_span": "公司主营业务将进一步聚焦能源工程、化工装备、国防建设等三大板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化工装备",
+        "evidence_span": "公司主营业务将进一步聚焦能源工程、化工装备、国防建设等三大板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "国防建设",
+        "evidence_span": "公司主营业务将进一步聚焦能源工程、化工装备、国防建设等三大板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端装备制造企业",
+        "evidence_span": "以张化机为主体的高端装备制造业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国防建设装备制造企业",
+        "evidence_span": "以无锡红旗船厂为主体的国防建设业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工程服务商",
+        "evidence_span": "控股子公司中机电力...是一家能够提供全生命周期解决方案的工程服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源工程设计",
+        "evidence_span": "具备承接以风力发电、光伏发电为主的新能源工程设计、咨询和EPC总承包业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源工程咨询",
+        "evidence_span": "具备承接以风力发电、光伏发电为主的新能源工程设计、咨询和EPC总承包业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源工程EPC总承包",
+        "evidence_span": "具备承接以风力发电、光伏发电为主的新能源工程设计、咨询和EPC总承包业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非标容器",
+        "evidence_span": "张化机是国内从事非标容器的大型企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "国防相关专用设备",
+        "evidence_span": "子公司红旗船厂有限公司是国内最早进入某国防相关专用设备的专业装备制造企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷氢化反应器",
+        "evidence_span": "硅料生产所需的冷氢化反应器、还原炉、换热器、塔器等多晶硅核心设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "还原炉",
+        "evidence_span": "硅料生产所需的冷氢化反应器、还原炉、换热器、塔器等多晶硅核心设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "换热器",
+        "evidence_span": "硅料生产所需的冷氢化反应器、还原炉、换热器、塔器等多晶硅核心设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "塔器",
+        "evidence_span": "硅料生产所需的冷氢化反应器、还原炉、换热器、塔器等多晶硅核心设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "熔盐塔式二次反射光热发电技术",
+        "evidence_span": "公司募投项目所采用的熔盐塔式二次反射光热发电技术属国内首创"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "清洁能源",
+        "evidence_span": "战略转型清洁能源综合服务商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军工核电",
+        "evidence_span": "连续布局军工核电领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新型煤化工",
+        "evidence_span": "受益新型煤化工"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电改",
+        "evidence_span": "受益电改及一带一路"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "受益电改及一带一路"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军民融合",
+        "evidence_span": "清洁能源+军民融合"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:37:24"
+}

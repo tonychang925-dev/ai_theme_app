@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:41:55", "result": {"span_uid": "029650070f6b", "action": "keep", "canonical_text": "预制菜行业入局者众多，但规模化企业数量较少，市场仍高度分散。", "final_type": "signal", "final_role": "市场结构特征", "stability": "high", "reason": "该片段描述了预制菜行业的市场结构特征（分散性），体现了产业现状，信息稳定且可独立理解。"}}

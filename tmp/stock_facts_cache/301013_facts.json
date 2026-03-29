@@ -1,0 +1,234 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化",
+      "evidence_span": "专注于自动化、智能化设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能化设备的研发",
+      "evidence_span": "专注于自动化、智能化设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "专注于自动化、智能化设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "专注于自动化、智能化设备的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能制造解决方案",
+      "evidence_span": "致力于成为新一代信息和通信技术领域领先的智能制造决方案提供商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子元器件产品",
+      "evidence_span": "向下游新型电子元器件等电子核心基础零部件领域拓展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "设备制造厂商",
+      "evidence_span": "公司作为设备制造厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "移动智能终端检测领域行业较为领先的企业",
+      "evidence_span": "公司现已成为国内移动智能终端检测领域行业较为领先的企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能制造设备",
+      "evidence_span": "公司主要产品为智能制造设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "检测类设备",
+      "evidence_span": "智能制造设备，包括检测类和制程类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制程类设备",
+      "evidence_span": "智能制造设备，包括检测类和制程类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OLED柔性屏的覆膜设备",
+      "evidence_span": "成功研发出针对OLED柔性屏的覆膜设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高附加值的中高压产品",
+      "evidence_span": "重点开发高附加值的中高压产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高频微波产品",
+      "evidence_span": "高频微波产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "射频测试",
+      "evidence_span": "射频测试"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "滤波器调谐",
+      "evidence_span": "滤波器调谐"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "柔性OLED屏贴覆",
+      "evidence_span": "柔性OLED屏贴覆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "公司客户包括华为"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荣耀",
+      "evidence_span": "荣耀"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富士康",
+      "evidence_span": "富士康"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "维谛技术",
+      "evidence_span": "维谛技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TCL",
+      "evidence_span": "TCL"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富士胶片",
+      "evidence_span": "富士胶片"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球领先的信息与通信技术（ICT）企业",
+      "evidence_span": "与全球领先的信息与通信技术（ICT）企业建立了长期稳定的合作关系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动化、智能化设备的研发、生产和销售",
+        "evidence_span": "专注于自动化、智能化设备的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能制造解决方案",
+        "evidence_span": "致力于成为新一代信息和通信技术领域领先的智能制造决方案提供商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子元器件产品",
+        "evidence_span": "向下游新型电子元器件等电子核心基础零部件领域拓展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "设备制造厂商",
+        "evidence_span": "公司作为设备制造厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "移动智能终端检测领域行业较为领先的企业",
+        "evidence_span": "公司现已成为国内移动智能终端检测领域行业较为领先的企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能制造设备",
+        "evidence_span": "公司主要产品为智能制造设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "检测类设备",
+        "evidence_span": "智能制造设备，包括检测类和制程类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制程类设备",
+        "evidence_span": "智能制造设备，包括检测类和制程类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OLED柔性屏的覆膜设备",
+        "evidence_span": "成功研发出针对OLED柔性屏的覆膜设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高附加值的中高压产品",
+        "evidence_span": "重点开发高附加值的中高压产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高频微波产品",
+        "evidence_span": "高频微波产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "射频测试",
+        "evidence_span": "射频测试"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "滤波器调谐",
+        "evidence_span": "滤波器调谐"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "柔性OLED屏贴覆",
+        "evidence_span": "柔性OLED屏贴覆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "公司客户包括华为"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荣耀",
+        "evidence_span": "荣耀"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富士康",
+        "evidence_span": "富士康"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "维谛技术",
+        "evidence_span": "维谛技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TCL",
+        "evidence_span": "TCL"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富士胶片",
+        "evidence_span": "富士胶片"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球领先的信息与通信技术（ICT）企业",
+        "evidence_span": "与全球领先的信息与通信技术（ICT）企业建立了长期稳定的合作关系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:18:09"
+}

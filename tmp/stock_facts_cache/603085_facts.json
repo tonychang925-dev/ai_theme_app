@@ -1,0 +1,334 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "乘用车座椅",
+      "evidence_span": "主营业务为乘用车座椅"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空座椅",
+      "evidence_span": "主营业务为航空座椅"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程机械",
+      "evidence_span": "主营业务为工程机械与商用车座椅"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商用车座椅",
+      "evidence_span": "主营业务为工程机械与商用车座椅"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "儿童安全座椅",
+      "evidence_span": "主营业务为儿童安全座椅"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工程机械座椅国家标准的起草单位之一",
+      "evidence_span": "工程机械座椅国家标准的起草单位之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专业的车辆座椅供应商",
+      "evidence_span": "专业的车辆座椅供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工程机械座椅龙头",
+      "evidence_span": "工程机械座椅龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车座椅专家",
+      "evidence_span": "汽车座椅专家"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "民营汽车座椅总成企业",
+      "evidence_span": "民营汽车座椅总成企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球一流的座椅专业供应商",
+      "evidence_span": "致力于成为全球一流的座椅专业供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乘用车座椅总成",
+      "evidence_span": "乘用车座椅产品主要为新能源汽车及传统燃油车提供座椅总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空座椅",
+      "evidence_span": "航空座椅产品主要为全球各地的航空公司提供的民航飞机旅客座椅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程机械座椅",
+      "evidence_span": "工程机械与商用车座椅产品主要包括挖掘机座椅、装载机座椅、叉车座椅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商用车座椅",
+      "evidence_span": "工程机械与商用车座椅产品主要包括重卡座椅和大中客车座椅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "儿童安全座椅",
+      "evidence_span": "儿童安全座椅产品是为不同年龄段的儿童设计、安装在汽车内、能有效提高儿童乘车安全性的座椅"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "碳纤维复合材料技术",
+      "evidence_span": "在碳纤维复合材料领域掌握了多项关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铝合金骨架技术",
+      "evidence_span": "在铝合金骨架领域掌握了多项关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "气囊减振技术",
+      "evidence_span": "在气囊减振等领域掌握了多项关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航空座椅轻量化技术",
+      "evidence_span": "碳纤维复合材料航空座椅使公司航空座椅产品在座椅轻量化方面具备了国际领先的竞争优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽车座椅轻量化技术",
+      "evidence_span": "铝合金骨架汽车座椅产品，使得公司汽车座椅的轻量化技术居于行业领先地位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽集团",
+      "evidence_span": "上汽集团是目前公司乘用车业务的战略重点客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽",
+      "evidence_span": "成功进入北汽供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风",
+      "evidence_span": "成功进入东风供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞",
+      "evidence_span": "成功进入奇瑞供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新势力造车企业",
+      "evidence_span": "成功进入新势力造车企业供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "波音",
+      "evidence_span": "具有波音、空客的线装机及翻新机的供应商资质"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "空客",
+      "evidence_span": "具有波音、空客的线装机及翻新机的供应商资质"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "卡特彼勒",
+      "evidence_span": "产品已成功配套于卡特彼勒"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三一重工",
+      "evidence_span": "产品已成功配套于三一重工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "徐工",
+      "evidence_span": "产品已成功配套于徐工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "柳工",
+      "evidence_span": "产品已成功配套于柳工"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "座椅国产替代",
+      "evidence_span": "天成自控座椅国产替代先锋"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "乘用车座椅",
+        "evidence_span": "主营业务为乘用车座椅"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空座椅",
+        "evidence_span": "主营业务为航空座椅"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程机械与商用车座椅",
+        "evidence_span": "主营业务为工程机械与商用车座椅"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "儿童安全座椅",
+        "evidence_span": "主营业务为儿童安全座椅"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工程机械座椅国家标准的起草单位之一",
+        "evidence_span": "工程机械座椅国家标准的起草单位之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专业的车辆座椅供应商",
+        "evidence_span": "专业的车辆座椅供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工程机械座椅龙头",
+        "evidence_span": "工程机械座椅龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车座椅专家",
+        "evidence_span": "汽车座椅专家"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "民营汽车座椅总成企业",
+        "evidence_span": "民营汽车座椅总成企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球一流的座椅专业供应商",
+        "evidence_span": "致力于成为全球一流的座椅专业供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乘用车座椅总成",
+        "evidence_span": "乘用车座椅产品主要为新能源汽车及传统燃油车提供座椅总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空座椅",
+        "evidence_span": "航空座椅产品主要为全球各地的航空公司提供的民航飞机旅客座椅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程机械座椅",
+        "evidence_span": "工程机械与商用车座椅产品主要包括挖掘机座椅、装载机座椅、叉车座椅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商用车座椅",
+        "evidence_span": "工程机械与商用车座椅产品主要包括重卡座椅和大中客车座椅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "儿童安全座椅",
+        "evidence_span": "儿童安全座椅产品是为不同年龄段的儿童设计、安装在汽车内、能有效提高儿童乘车安全性的座椅"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "碳纤维复合材料技术",
+        "evidence_span": "在碳纤维复合材料领域掌握了多项关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铝合金骨架技术",
+        "evidence_span": "在铝合金骨架领域掌握了多项关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "气囊减振技术",
+        "evidence_span": "在气囊减振等领域掌握了多项关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航空座椅轻量化技术",
+        "evidence_span": "碳纤维复合材料航空座椅使公司航空座椅产品在座椅轻量化方面具备了国际领先的竞争优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽车座椅轻量化技术",
+        "evidence_span": "铝合金骨架汽车座椅产品，使得公司汽车座椅的轻量化技术居于行业领先地位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽集团",
+        "evidence_span": "上汽集团是目前公司乘用车业务的战略重点客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽",
+        "evidence_span": "成功进入北汽供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风",
+        "evidence_span": "成功进入东风供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞",
+        "evidence_span": "成功进入奇瑞供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新势力造车企业",
+        "evidence_span": "成功进入新势力造车企业供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "波音",
+        "evidence_span": "具有波音、空客的线装机及翻新机的供应商资质"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "空客",
+        "evidence_span": "具有波音、空客的线装机及翻新机的供应商资质"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "卡特彼勒",
+        "evidence_span": "产品已成功配套于卡特彼勒"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三一重工",
+        "evidence_span": "产品已成功配套于三一重工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "徐工",
+        "evidence_span": "产品已成功配套于徐工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "柳工",
+        "evidence_span": "产品已成功配套于柳工"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "座椅国产替代",
+        "evidence_span": "天成自控座椅国产替代先锋"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:19:11"
+}

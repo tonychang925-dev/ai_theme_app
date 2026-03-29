@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "预制菜",
+      "evidence_span": "预制菜行业第一股"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "预制菜领先企业",
+      "evidence_span": "预制菜领先企业，深耕基地市场，向外稳步拓张"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "预制菜领先品牌",
+      "evidence_span": "味知香预制菜领先品牌，门店扩张加速成长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "牛肉类产品",
+      "evidence_span": "牛肉类产品作为公司的优势主打产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家禽类产品",
+      "evidence_span": "家禽类产品的营收由2018年的0.6亿增长到2021年的1.05亿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鱼类产品",
+      "evidence_span": "2021年家禽类、鱼类、虾类、猪肉类、其他类分别以1.05亿、0.98亿、0.97亿、0.58亿、0.26亿的营收"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "虾类产品",
+      "evidence_span": "2021年家禽类、鱼类、虾类、猪肉类、其他类分别以1.05亿、0.98亿、0.97亿、0.58亿、0.26亿的营收"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "猪肉类产品",
+      "evidence_span": "2021年家禽类、鱼类、虾类、猪肉类、其他类分别以1.05亿、0.98亿、0.97亿、0.58亿、0.26亿的营收"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汤煲类产品",
+      "evidence_span": "公司现有8大产品线，包含牛肉类、羊肉类、猪肉类、家禽类、水产类、汤煲类、素菜类、火锅类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "素菜类产品",
+      "evidence_span": "公司现有8大产品线，包含牛肉类、羊肉类、猪肉类、家禽类、水产类、汤煲类、素菜类、火锅类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "火锅类产品",
+      "evidence_span": "公司现有8大产品线，包含牛肉类、羊肉类、猪肉类、家禽类、水产类、汤煲类、素菜类、火锅类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "羊肉类产品",
+      "evidence_span": "公司现有8大产品线，包含牛肉类、羊肉类、猪肉类、家禽类、水产类、汤煲类、素菜类、火锅类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水产类产品",
+      "evidence_span": "产品品类超过 300 种，覆盖肉禽类、水产类及其他类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肉禽类产品",
+      "evidence_span": "产品品类超过 300 种，覆盖肉禽类、水产类及其他类"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "加盟店",
+      "evidence_span": "公司已拥有1319家加盟店"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "经销商",
+      "evidence_span": "合作经销商572家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "批发客户",
+      "evidence_span": "公司批发客户已达381名"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "酒店",
+      "evidence_span": "批发渠道客户一般从事冷冻食品批发业务，此类客户主要从公司采购“馔玉”品牌产品后销售给酒店、餐厅、食堂等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "餐厅",
+      "evidence_span": "批发渠道客户一般从事冷冻食品批发业务，此类客户主要从公司采购“馔玉”品牌产品后销售给酒店、餐厅、食堂等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "食堂",
+      "evidence_span": "批发渠道客户一般从事冷冻食品批发业务，此类客户主要从公司采购“馔玉”品牌产品后销售给酒店、餐厅、食堂等客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "个人消费者",
+      "evidence_span": "零售渠道客户面向个人消费者"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "柔性化生产线",
+      "evidence_span": "公司建立了柔性化生产线，能够根据下游需求灵活地生产多种产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "冷链物流配送体系",
+      "evidence_span": "公司自建了较为完善的冷链物流配送体系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "预制菜",
+        "evidence_span": "预制菜行业第一股"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "预制菜领先企业",
+        "evidence_span": "预制菜领先企业，深耕基地市场，向外稳步拓张"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "预制菜领先品牌",
+        "evidence_span": "味知香预制菜领先品牌，门店扩张加速成长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "牛肉类产品",
+        "evidence_span": "牛肉类产品作为公司的优势主打产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家禽类产品",
+        "evidence_span": "家禽类产品的营收由2018年的0.6亿增长到2021年的1.05亿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鱼类产品",
+        "evidence_span": "2021年家禽类、鱼类、虾类、猪肉类、其他类分别以1.05亿、0.98亿、0.97亿、0.58亿、0.26亿的营收"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "虾类产品",
+        "evidence_span": "2021年家禽类、鱼类、虾类、猪肉类、其他类分别以1.05亿、0.98亿、0.97亿、0.58亿、0.26亿的营收"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "猪肉类产品",
+        "evidence_span": "2021年家禽类、鱼类、虾类、猪肉类、其他类分别以1.05亿、0.98亿、0.97亿、0.58亿、0.26亿的营收"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汤煲类产品",
+        "evidence_span": "公司现有8大产品线，包含牛肉类、羊肉类、猪肉类、家禽类、水产类、汤煲类、素菜类、火锅类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "素菜类产品",
+        "evidence_span": "公司现有8大产品线，包含牛肉类、羊肉类、猪肉类、家禽类、水产类、汤煲类、素菜类、火锅类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "火锅类产品",
+        "evidence_span": "公司现有8大产品线，包含牛肉类、羊肉类、猪肉类、家禽类、水产类、汤煲类、素菜类、火锅类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "羊肉类产品",
+        "evidence_span": "公司现有8大产品线，包含牛肉类、羊肉类、猪肉类、家禽类、水产类、汤煲类、素菜类、火锅类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水产类产品",
+        "evidence_span": "产品品类超过 300 种，覆盖肉禽类、水产类及其他类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肉禽类产品",
+        "evidence_span": "产品品类超过 300 种，覆盖肉禽类、水产类及其他类"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "加盟店",
+        "evidence_span": "公司已拥有1319家加盟店"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "经销商",
+        "evidence_span": "合作经销商572家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "批发客户",
+        "evidence_span": "公司批发客户已达381名"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "酒店",
+        "evidence_span": "批发渠道客户一般从事冷冻食品批发业务，此类客户主要从公司采购“馔玉”品牌产品后销售给酒店、餐厅、食堂等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "餐厅",
+        "evidence_span": "批发渠道客户一般从事冷冻食品批发业务，此类客户主要从公司采购“馔玉”品牌产品后销售给酒店、餐厅、食堂等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "食堂",
+        "evidence_span": "批发渠道客户一般从事冷冻食品批发业务，此类客户主要从公司采购“馔玉”品牌产品后销售给酒店、餐厅、食堂等客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "个人消费者",
+        "evidence_span": "零售渠道客户面向个人消费者"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "柔性化生产线",
+        "evidence_span": "公司建立了柔性化生产线，能够根据下游需求灵活地生产多种产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "冷链物流配送体系",
+        "evidence_span": "公司自建了较为完善的冷链物流配送体系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:54:08"
+}

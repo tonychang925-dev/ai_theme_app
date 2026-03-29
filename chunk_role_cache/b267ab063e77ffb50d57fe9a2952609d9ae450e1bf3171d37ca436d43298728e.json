@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T12:19:46", "result": {"chunk_id": "f36d4893e8ff", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落总结第三季度设备厂商的业绩表现，包括净利润变化和公司案例，是市场数据或财务事件，无静态知识。"}}

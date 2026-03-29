@@ -1,0 +1,499 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "无人机业务",
+      "evidence_span": "公司主要从事无人机业务和新材料业务两大业务板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新材料业务",
+      "evidence_span": "公司主要从事无人机业务和新材料业务两大业务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内中高端无人机产业的主导力量",
+      "evidence_span": "是国内中高端无人机产业的主导力量"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无人机载智能弹药产业的重要力量",
+      "evidence_span": "无人机载智能弹药产业的重要力量"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无人机应用技术服务的核心力量",
+      "evidence_span": "无人机应用技术服务的核心力量"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无人机产业链链长",
+      "evidence_span": "打造无人机产业链链长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩虹系列无人机",
+      "evidence_span": "自主研发彩虹系列无人机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射手系列空地导弹",
+      "evidence_span": "射手系列空地导弹"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩虹-3中空多用途无人机",
+      "evidence_span": "彩虹-3中空多用途无人机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩虹-4中空侦察/打击无人机",
+      "evidence_span": "彩虹-4中空侦察/打击无人机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩虹-5中高空长航时无人机",
+      "evidence_span": "彩虹-5中高空长航时无人机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩虹-804D复合翼垂直起降无人机",
+      "evidence_span": "彩虹-804D复合翼垂直起降无人机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩虹-6大型双发高速多用途无人机",
+      "evidence_span": "彩虹-6大型双发高速多用途无人机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩虹-7隐身无人机",
+      "evidence_span": "彩虹-7隐身无人机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩虹-10无人倾转旋翼机",
+      "evidence_span": "彩虹-10无人倾转旋翼机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩虹-101无人自转旋翼机",
+      "evidence_span": "彩虹-101无人自转旋翼机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩虹-817微型攻击无人机",
+      "evidence_span": "彩虹-817微型攻击无人机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能集群无人机系统",
+      "evidence_span": "智能集群无人机系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "巡飞弹",
+      "evidence_span": "巡飞弹"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能聚酯薄膜",
+      "evidence_span": "功能聚酯薄膜业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光学膜",
+      "evidence_span": "光学膜业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "耐水解老化型太阳能背板基膜",
+      "evidence_span": "耐水解老化型太阳能背板基膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高阻隔PET",
+      "evidence_span": "高阻隔PET"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超级PET",
+      "evidence_span": "超级PET"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三层各异复合结构太阳能背板基膜",
+      "evidence_span": "三层各异复合结构太阳能背板基膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低收缩触摸开关用薄膜",
+      "evidence_span": "低收缩触摸开关用薄膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "偏光片保护膜",
+      "evidence_span": "偏光片保护膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "偏光片离型膜",
+      "evidence_span": "偏光片离型膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MLCC离型膜",
+      "evidence_span": "MLCC离型膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光阻干膜",
+      "evidence_span": "光阻干膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "窗膜",
+      "evidence_span": "窗膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "反射膜",
+      "evidence_span": "反射膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "增亮膜",
+      "evidence_span": "增亮膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光学复合膜",
+      "evidence_span": "光学复合膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贴合涂布膜",
+      "evidence_span": "贴合涂布膜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空气动力核心技术",
+      "evidence_span": "气动核心技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "总体设计",
+      "evidence_span": "总体设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "结构强度",
+      "evidence_span": "结构强度"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "导航飞控",
+      "evidence_span": "导航飞控"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "综合航电",
+      "evidence_span": "综合航电"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "指挥控制",
+      "evidence_span": "指挥控制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "载荷应用",
+      "evidence_span": "载荷应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "试验试飞",
+      "evidence_span": "试验试飞"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "功能型太阳能背板基膜制备技术",
+      "evidence_span": "功能型太阳能背板基膜制备技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超薄功能性聚酯薄膜制备技术",
+      "evidence_span": "超薄功能性聚酯薄膜制备技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球多个国家和地区",
+      "evidence_span": "与全球多个国家和地区的用户建立交流合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "非洲国家",
+      "evidence_span": "远销非洲"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚洲国家",
+      "evidence_span": "亚洲的十余个国家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "军贸与国内市场双轮驱动",
+      "evidence_span": "军贸与国内市场双轮驱动"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "无人机业务",
+        "evidence_span": "公司主要从事无人机业务和新材料业务两大业务板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新材料业务",
+        "evidence_span": "公司主要从事无人机业务和新材料业务两大业务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内中高端无人机产业的主导力量",
+        "evidence_span": "是国内中高端无人机产业的主导力量"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无人机载智能弹药产业的重要力量",
+        "evidence_span": "无人机载智能弹药产业的重要力量"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无人机应用技术服务的核心力量",
+        "evidence_span": "无人机应用技术服务的核心力量"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无人机产业链链长",
+        "evidence_span": "打造无人机产业链链长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩虹系列无人机",
+        "evidence_span": "自主研发彩虹系列无人机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射手系列空地导弹",
+        "evidence_span": "射手系列空地导弹"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩虹-3中空多用途无人机",
+        "evidence_span": "彩虹-3中空多用途无人机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩虹-4中空侦察/打击无人机",
+        "evidence_span": "彩虹-4中空侦察/打击无人机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩虹-5中高空长航时无人机",
+        "evidence_span": "彩虹-5中高空长航时无人机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩虹-804D复合翼垂直起降无人机",
+        "evidence_span": "彩虹-804D复合翼垂直起降无人机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩虹-6大型双发高速多用途无人机",
+        "evidence_span": "彩虹-6大型双发高速多用途无人机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩虹-7隐身无人机",
+        "evidence_span": "彩虹-7隐身无人机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩虹-10无人倾转旋翼机",
+        "evidence_span": "彩虹-10无人倾转旋翼机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩虹-101无人自转旋翼机",
+        "evidence_span": "彩虹-101无人自转旋翼机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩虹-817微型攻击无人机",
+        "evidence_span": "彩虹-817微型攻击无人机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能集群无人机系统",
+        "evidence_span": "智能集群无人机系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "巡飞弹",
+        "evidence_span": "巡飞弹"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能聚酯薄膜",
+        "evidence_span": "功能聚酯薄膜业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光学膜",
+        "evidence_span": "光学膜业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "耐水解老化型太阳能背板基膜",
+        "evidence_span": "耐水解老化型太阳能背板基膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高阻隔PET",
+        "evidence_span": "高阻隔PET"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超级PET",
+        "evidence_span": "超级PET"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三层各异复合结构太阳能背板基膜",
+        "evidence_span": "三层各异复合结构太阳能背板基膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低收缩触摸开关用薄膜",
+        "evidence_span": "低收缩触摸开关用薄膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "偏光片保护膜",
+        "evidence_span": "偏光片保护膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "偏光片离型膜",
+        "evidence_span": "偏光片离型膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MLCC离型膜",
+        "evidence_span": "MLCC离型膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光阻干膜",
+        "evidence_span": "光阻干膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "窗膜",
+        "evidence_span": "窗膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "反射膜",
+        "evidence_span": "反射膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "增亮膜",
+        "evidence_span": "增亮膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光学复合膜",
+        "evidence_span": "光学复合膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贴合涂布膜",
+        "evidence_span": "贴合涂布膜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空气动力核心技术",
+        "evidence_span": "气动核心技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "总体设计",
+        "evidence_span": "总体设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "结构强度",
+        "evidence_span": "结构强度"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "导航飞控",
+        "evidence_span": "导航飞控"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "综合航电",
+        "evidence_span": "综合航电"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "指挥控制",
+        "evidence_span": "指挥控制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "载荷应用",
+        "evidence_span": "载荷应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "试验试飞",
+        "evidence_span": "试验试飞"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "功能型太阳能背板基膜制备技术",
+        "evidence_span": "功能型太阳能背板基膜制备技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超薄功能性聚酯薄膜制备技术",
+        "evidence_span": "超薄功能性聚酯薄膜制备技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球多个国家和地区",
+        "evidence_span": "与全球多个国家和地区的用户建立交流合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "非洲国家",
+        "evidence_span": "远销非洲"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚洲国家",
+        "evidence_span": "亚洲的十余个国家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "军贸与国内市场双轮驱动",
+        "evidence_span": "军贸与国内市场双轮驱动"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:34:02"
+}

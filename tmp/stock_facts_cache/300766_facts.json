@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "数据智能服务",
+      "evidence_span": "专业的数据智能服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "开发者服务",
+      "evidence_span": "以推送等开发者服务为基础"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "公共服务",
+      "evidence_span": "公共服务规模显著增长"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "增长服务",
+      "evidence_span": "增长服务技术升级"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "品牌服务",
+      "evidence_span": "品牌服务相关数据"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数据智能服务商",
+      "evidence_span": "专业的数据智能服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "推送技术服务商",
+      "evidence_span": "专业的推送技术服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数据智能企业",
+      "evidence_span": "国内率先在A股上市的“数据智能”企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数据要素市场参与者",
+      "evidence_span": "作为数据要素市场的早期参与者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "个推SDK",
+      "evidence_span": "推送技术解决方案——“个推SDK”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一键验证",
+      "evidence_span": "一键验证产品“个验”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数智化用户运营平台",
+      "evidence_span": "推出数智化用户运营平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DiOS数据智能操作系统",
+      "evidence_span": "构建了DiOS数据智能操作系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数智绿波产品",
+      "evidence_span": "联合生态伙伴推出“数智绿波”产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消息推送业务系统",
+      "evidence_span": "面向金融客户提供消息推送业务系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "推送技术",
+      "evidence_span": "以推送技术起家"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据治理能力",
+      "evidence_span": "深厚的数据治理能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据智能操作系统",
+      "evidence_span": "DiOS数据智能操作系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据联合计算模式",
+      "evidence_span": "大数据联合计算模式的首倡者"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据炼造五步法",
+      "evidence_span": "大数据应用方法论“数据炼造五步法”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "人民日报",
+      "evidence_span": "服务对象包括人民日报"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东",
+      "evidence_span": "服务对象包括京东"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "全面覆盖华为"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "全面覆盖小米"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "全面覆盖OPPO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "vivo",
+      "evidence_span": "全面覆盖vivo"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "创维旗下酷开网络",
+      "evidence_span": "与创维旗下酷开网络成立深圳市爱易迅数据有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽乘用车",
+      "evidence_span": "与上汽乘用车开展深度战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪DiLink",
+      "evidence_span": "与比亚迪DiLink开展深度战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "零跑汽车",
+      "evidence_span": "与零跑汽车开展深度战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江高信",
+      "evidence_span": "联合生态伙伴浙江高信"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数据要素市场化改革",
+      "evidence_span": "数据要素市场化改革"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字中国建设",
+      "evidence_span": "数字中国建设整体布局规划"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "数据智能服务",
+        "evidence_span": "专业的数据智能服务商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "开发者服务",
+        "evidence_span": "以推送等开发者服务为基础"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "公共服务",
+        "evidence_span": "公共服务规模显著增长"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "增长服务",
+        "evidence_span": "增长服务技术升级"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "品牌服务",
+        "evidence_span": "品牌服务相关数据"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数据智能服务商",
+        "evidence_span": "专业的数据智能服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "推送技术服务商",
+        "evidence_span": "专业的推送技术服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数据智能企业",
+        "evidence_span": "国内率先在A股上市的“数据智能”企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数据要素市场参与者",
+        "evidence_span": "作为数据要素市场的早期参与者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "个推SDK",
+        "evidence_span": "推送技术解决方案——“个推SDK”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一键验证",
+        "evidence_span": "一键验证产品“个验”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数智化用户运营平台",
+        "evidence_span": "推出数智化用户运营平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DiOS数据智能操作系统",
+        "evidence_span": "构建了DiOS数据智能操作系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数智绿波产品",
+        "evidence_span": "联合生态伙伴推出“数智绿波”产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消息推送业务系统",
+        "evidence_span": "面向金融客户提供消息推送业务系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "推送技术",
+        "evidence_span": "以推送技术起家"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据治理能力",
+        "evidence_span": "深厚的数据治理能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据智能操作系统",
+        "evidence_span": "DiOS数据智能操作系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据联合计算模式",
+        "evidence_span": "大数据联合计算模式的首倡者"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据炼造五步法",
+        "evidence_span": "大数据应用方法论“数据炼造五步法”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "人民日报",
+        "evidence_span": "服务对象包括人民日报"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东",
+        "evidence_span": "服务对象包括京东"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "全面覆盖华为"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "全面覆盖小米"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "全面覆盖OPPO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "vivo",
+        "evidence_span": "全面覆盖vivo"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "创维旗下酷开网络",
+        "evidence_span": "与创维旗下酷开网络成立深圳市爱易迅数据有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽乘用车",
+        "evidence_span": "与上汽乘用车开展深度战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪DiLink",
+        "evidence_span": "与比亚迪DiLink开展深度战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "零跑汽车",
+        "evidence_span": "与零跑汽车开展深度战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江高信",
+        "evidence_span": "联合生态伙伴浙江高信"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数据要素市场化改革",
+        "evidence_span": "数据要素市场化改革"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字中国建设",
+        "evidence_span": "数字中国建设整体布局规划"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:15:17"
+}

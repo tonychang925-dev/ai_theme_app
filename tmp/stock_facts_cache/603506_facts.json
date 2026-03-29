@@ -1,0 +1,319 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "住宅类物业服务",
+      "evidence_span": "住宅包括多层住宅、高层住宅、排屋和别墅"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商写类物业服务",
+      "evidence_span": "商写包括办公写字楼、商业综合体、产业园区、工业园区、市场等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市服务类物业服务",
+      "evidence_span": "城市服务包括学校、医院、文旅、场馆、交通枢纽、市政环卫等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物业增值服务",
+      "evidence_span": "物业增值服务：公司积极探索实践城市空间运营和场景服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产管理服务",
+      "evidence_span": "资产管理服务：资产管理业务主要包括产商运营、住宿运营两大业务板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "独立第三方物业服务企业",
+      "evidence_span": "公司成立于1994年，是一家独立第三方物业服务企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "A股物业服务企业",
+      "evidence_span": "2018年上市成为首家登陆A股市场的物业服务企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市运营综合服务商",
+      "evidence_span": "致力于向国内领先的城市运营综合服务商转型升级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物业管理服务",
+      "evidence_span": "以物业管理服务为基础"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社区零售服务",
+      "evidence_span": "社区零售板块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "到家服务",
+      "evidence_span": "到家服务板块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "美居服务",
+      "evidence_span": "美居服务板块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中介租售服务",
+      "evidence_span": "中介租售以“直营+联营”模式同时开展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "社区空间运营服务",
+      "evidence_span": "社区空间运营板块多维度发力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产商运营服务",
+      "evidence_span": "产商运营领域，作为公司资产管理服务重点发展方向"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "住宿运营服务",
+      "evidence_span": "住宿运营领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "案场服务",
+      "evidence_span": "案场服务：公司为开发商的售楼处现场提供标准化与专业化的客服、礼宾、保洁等服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "顾问咨询服务",
+      "evidence_span": "顾问咨询服务：按服务对象可以分为前期物业顾问业务和物业管理顾问咨询业务两类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清洁服务",
+      "evidence_span": "乐勤清洁，多年商办、园区清洁服务经验"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维修服务",
+      "evidence_span": "乐勤楼宇，专业从事智能化设施改造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装饰装修服务",
+      "evidence_span": "乐勤装饰，基于智慧化住宅发展趋势，整合装饰行业上下游资源"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧服务平台",
+      "evidence_span": "旗下全资子公司悦都科技负责公司智慧平台建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "悦嘉家平台",
+      "evidence_span": "公司全新改版悦嘉家平台，发布悦嘉家7.0版本"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车场管控平台",
+      "evidence_span": "进一步推动车场管控平台建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "领导视窗平台",
+      "evidence_span": "公司上线领导视窗平台，实现五大看板数据实时化、在线化管控"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁建城市开发有限公司",
+      "evidence_span": "公司与中铁建城市开发有限公司（以下简称“铁建城发”）签署战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山东春泽华翰控股集团",
+      "evidence_span": "公司与山东春泽华翰控股集团（以下简称“春泽华翰”）新签战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "物产中大集团",
+      "evidence_span": "公司与世界五百强、浙江省属特大型国企物产中大集团签订战略合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "乌镇实业（桐乡）有限公司",
+      "evidence_span": "公司已于4月完成与乌镇实业（桐乡）有限公司的战略合作协议签署"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "房地产开发商",
+      "evidence_span": "前期物业顾问业务：主要面向房地产开发商、承建商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中小型物业公司",
+      "evidence_span": "物业管理顾问咨询业务：主要面向中小型物业公司"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "住宅类物业服务",
+        "evidence_span": "住宅包括多层住宅、高层住宅、排屋和别墅"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商写类物业服务",
+        "evidence_span": "商写包括办公写字楼、商业综合体、产业园区、工业园区、市场等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市服务类物业服务",
+        "evidence_span": "城市服务包括学校、医院、文旅、场馆、交通枢纽、市政环卫等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物业增值服务",
+        "evidence_span": "物业增值服务：公司积极探索实践城市空间运营和场景服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产管理服务",
+        "evidence_span": "资产管理服务：资产管理业务主要包括产商运营、住宿运营两大业务板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "独立第三方物业服务企业",
+        "evidence_span": "公司成立于1994年，是一家独立第三方物业服务企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "A股物业服务企业",
+        "evidence_span": "2018年上市成为首家登陆A股市场的物业服务企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市运营综合服务商",
+        "evidence_span": "致力于向国内领先的城市运营综合服务商转型升级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物业管理服务",
+        "evidence_span": "以物业管理服务为基础"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社区零售服务",
+        "evidence_span": "社区零售板块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "到家服务",
+        "evidence_span": "到家服务板块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "美居服务",
+        "evidence_span": "美居服务板块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中介租售服务",
+        "evidence_span": "中介租售以“直营+联营”模式同时开展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "社区空间运营服务",
+        "evidence_span": "社区空间运营板块多维度发力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产商运营服务",
+        "evidence_span": "产商运营领域，作为公司资产管理服务重点发展方向"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "住宿运营服务",
+        "evidence_span": "住宿运营领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "案场服务",
+        "evidence_span": "案场服务：公司为开发商的售楼处现场提供标准化与专业化的客服、礼宾、保洁等服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "顾问咨询服务",
+        "evidence_span": "顾问咨询服务：按服务对象可以分为前期物业顾问业务和物业管理顾问咨询业务两类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清洁服务",
+        "evidence_span": "乐勤清洁，多年商办、园区清洁服务经验"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维修服务",
+        "evidence_span": "乐勤楼宇，专业从事智能化设施改造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装饰装修服务",
+        "evidence_span": "乐勤装饰，基于智慧化住宅发展趋势，整合装饰行业上下游资源"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧服务平台",
+        "evidence_span": "旗下全资子公司悦都科技负责公司智慧平台建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "悦嘉家平台",
+        "evidence_span": "公司全新改版悦嘉家平台，发布悦嘉家7.0版本"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车场管控平台",
+        "evidence_span": "进一步推动车场管控平台建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "领导视窗平台",
+        "evidence_span": "公司上线领导视窗平台，实现五大看板数据实时化、在线化管控"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁建城市开发有限公司",
+        "evidence_span": "公司与中铁建城市开发有限公司（以下简称“铁建城发”）签署战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山东春泽华翰控股集团",
+        "evidence_span": "公司与山东春泽华翰控股集团（以下简称“春泽华翰”）新签战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "物产中大集团",
+        "evidence_span": "公司与世界五百强、浙江省属特大型国企物产中大集团签订战略合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "乌镇实业（桐乡）有限公司",
+        "evidence_span": "公司已于4月完成与乌镇实业（桐乡）有限公司的战略合作协议签署"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "房地产开发商",
+        "evidence_span": "前期物业顾问业务：主要面向房地产开发商、承建商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中小型物业公司",
+        "evidence_span": "物业管理顾问咨询业务：主要面向中小型物业公司"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:28:24"
+}

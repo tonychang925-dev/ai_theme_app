@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车密封条生产",
+      "evidence_span": "主要生产汽车密封条"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "本土汽车密封条行业龙头",
+      "evidence_span": "已成为本土汽车密封条行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车密封条制造商",
+      "evidence_span": "专注汽车密封条的制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车门玻璃升降系统车门密封系统",
+      "evidence_span": "主要产品有车门玻璃升降系统车门密封系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非车门密封条",
+      "evidence_span": "非车门密封条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "装饰条及总成件",
+      "evidence_span": "装饰条及总成件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "欧式导槽",
+      "evidence_span": "高毛利率产品欧式导槽快速放量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无边框密封条",
+      "evidence_span": "唯一实现无边框密封条批量配套"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工装模具和专用设备开发能力",
+      "evidence_span": "具备较强的工装模具和专用设备开发能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产品整体配套方案的设计能力",
+      "evidence_span": "产品整体配套方案的设计能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "同步开发能力",
+      "evidence_span": "同步开发能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模具自制",
+      "evidence_span": "工装模具的自制率达到 90%以上"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "原材料混炼胶自制",
+      "evidence_span": "原材料混炼胶自制比例 95%以上"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽大众",
+      "evidence_span": "配套客户有一汽大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽大众",
+      "evidence_span": "上汽大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用",
+      "evidence_span": "上汽通用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风日产",
+      "evidence_span": "东风日产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利汽车",
+      "evidence_span": "吉利汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安汽车",
+      "evidence_span": "长安汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全国前9大乘用车厂商",
+      "evidence_span": "全国前9大乘用车厂商均为公司客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "吉利、长安、奇瑞等自主品牌占比较高"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安",
+      "evidence_span": "吉利、长安、奇瑞等自主品牌占比较高"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞",
+      "evidence_span": "吉利、长安、奇瑞等自主品牌占比较高"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "大众等合资品牌中也实现了突破"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "进口替代百亿蓝海静待发掘"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自主品牌车崛起受益",
+      "evidence_span": "跟随中国自主品牌车厂崛起，受益于产品升级"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车密封条生产",
+        "evidence_span": "主要生产汽车密封条"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "本土汽车密封条行业龙头",
+        "evidence_span": "已成为本土汽车密封条行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车密封条制造商",
+        "evidence_span": "专注汽车密封条的制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车门玻璃升降系统车门密封系统",
+        "evidence_span": "主要产品有车门玻璃升降系统车门密封系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非车门密封条",
+        "evidence_span": "非车门密封条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "装饰条及总成件",
+        "evidence_span": "装饰条及总成件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "欧式导槽",
+        "evidence_span": "高毛利率产品欧式导槽快速放量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无边框密封条",
+        "evidence_span": "唯一实现无边框密封条批量配套"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工装模具和专用设备开发能力",
+        "evidence_span": "具备较强的工装模具和专用设备开发能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产品整体配套方案的设计能力",
+        "evidence_span": "产品整体配套方案的设计能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "同步开发能力",
+        "evidence_span": "同步开发能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模具自制",
+        "evidence_span": "工装模具的自制率达到 90%以上"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "原材料混炼胶自制",
+        "evidence_span": "原材料混炼胶自制比例 95%以上"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽大众",
+        "evidence_span": "配套客户有一汽大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽大众",
+        "evidence_span": "上汽大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用",
+        "evidence_span": "上汽通用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风日产",
+        "evidence_span": "东风日产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利汽车",
+        "evidence_span": "吉利汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安汽车",
+        "evidence_span": "长安汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全国前9大乘用车厂商",
+        "evidence_span": "全国前9大乘用车厂商均为公司客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "吉利、长安、奇瑞等自主品牌占比较高"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安",
+        "evidence_span": "吉利、长安、奇瑞等自主品牌占比较高"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞",
+        "evidence_span": "吉利、长安、奇瑞等自主品牌占比较高"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "大众等合资品牌中也实现了突破"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "进口替代百亿蓝海静待发掘"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自主品牌车崛起受益",
+        "evidence_span": "跟随中国自主品牌车厂崛起，受益于产品升级"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:44:29"
+}

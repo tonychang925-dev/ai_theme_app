@@ -1,0 +1,84 @@
+{
+  "event_id": "evt_2b6889e2c6bf",
+  "theme_name": "SpaceX",
+  "event_type": "融资IPO",
+  "entities": [
+    {
+      "name": "SpaceX",
+      "type": "公司",
+      "normalized": "SpaceX"
+    },
+    {
+      "name": "马斯克",
+      "type": "人物",
+      "normalized": "马斯克"
+    },
+    {
+      "name": "星舰",
+      "type": "产品",
+      "normalized": "Starship"
+    },
+    {
+      "name": "星链",
+      "type": "产品",
+      "normalized": "Starlink"
+    }
+  ],
+  "summary": "马斯克回应SpaceX估值传闻，称不准确，并强调公司现金流为正，估值取决于星舰和星链进展。",
+  "causal_claim": [
+    "估值传闻",
+    "IPO预期",
+    "商业航天"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "估值",
+      "IPO",
+      "现金流",
+      "股票回购",
+      "星舰",
+      "星链",
+      "全球直连手机网络",
+      "频谱"
+    ],
+    "normalized_terms": {
+      "SpaceX": "SpaceX",
+      "马斯克": "马斯克",
+      "星舰": "Starship",
+      "星链": "Starlink"
+    },
+    "evidence_spans": [
+      {
+        "text": "针对商业航天龙头SpaceX“冲击8000亿美元估值，并瞄准明年IPO”的最新传闻",
+        "start": 0,
+        "end": 50
+      },
+      {
+        "text": "他在社交媒体上发帖称，SpaceX以8000亿美元估值融资的消息“并不准确”（not accurate）",
+        "start": 50,
+        "end": 100
+      },
+      {
+        "text": "SpaceX已经是一家多年现金流为正的公司，每年会进行两次股票回购",
+        "start": 100,
+        "end": 150
+      },
+      {
+        "text": "估值的提升取决于星舰（Starship）和星链（Starlink）的推进进展，以及获得全球直连手机网络的频谱",
+        "start": 150,
+        "end": 200
+      }
+    ],
+    "core_concepts": [
+      "估值传闻",
+      "IPO",
+      "商业航天",
+      "现金流"
+    ]
+  },
+  "severity_score": 0.6,
+  "confidence": 0.9,
+  "source_weight": 1.2,
+  "timestamp": "2025-12-07T00:00:00Z",
+  "raw_text": "2025年12月7日,针对商业航天龙头SpaceX“冲击8000亿美元估值，并瞄准明年IPO”的最新传闻，世界首富马斯克在北京时间周日凌晨公开回应。他在社交媒体上发帖称，SpaceX以8000亿美元估值融资的消息“并不准确”（not accurate）。他也接着表示，SpaceX已经是一家多年现金流为正的公司，每年会进行两次股票回购，为员工和投资者提供流动性。估值的提升取决于星舰（Starship）和星链（Starlink）的推进进展，以及获得全球直连手机网络的频谱，这将大幅扩大公司可服务市场的规模。（新闻来源：科创板日报）"
+}

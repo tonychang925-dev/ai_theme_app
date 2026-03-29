@@ -1,0 +1,369 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "商用车",
+      "evidence_span": "公司的主要业务是生产和销售商用车"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "SUV",
+      "evidence_span": "生产和销售商用车、SUV"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "零部件",
+      "evidence_span": "本公司亦生产发动机、铸件和其他零部件"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "轻型商用车的行业领导者",
+      "evidence_span": "轻型商用车的行业领导者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "福特高性价比SUV的提供者",
+      "evidence_span": "是福特高性价比SUV的提供者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市及干线物流产品和服务综合方案的供应商",
+      "evidence_span": "商用车定位于城市及干线物流产品和服务综合方案的供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "JMC品牌轻型卡车",
+      "evidence_span": "主要产品包括JMC品牌轻型卡车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "JMC品牌皮卡",
+      "evidence_span": "主要产品包括JMC品牌...皮卡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "JMC品牌轻型客车",
+      "evidence_span": "主要产品包括JMC品牌...轻型客车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驭胜品牌SUV",
+      "evidence_span": "驭胜品牌SUV"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "福特品牌轻客",
+      "evidence_span": "福特品牌轻客"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "福特品牌MPV",
+      "evidence_span": "福特品牌...MPV"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发动机",
+      "evidence_span": "本公司亦生产发动机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铸件",
+      "evidence_span": "本公司亦生产...铸件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他零部件",
+      "evidence_span": "本公司亦生产...其他零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新全顺+新世代全顺Pro",
+      "evidence_span": "推出新全顺+新世代全顺Pro"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特顺+福顺",
+      "evidence_span": "特顺+福顺的轻客产品组合"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "江铃福顺",
+      "evidence_span": "最新上市的江铃福顺"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "凯运+全新一代轻卡",
+      "evidence_span": "最新推出的“凯运+”全新一代轻卡车型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "域虎7改款",
+      "evidence_span": "推出了域虎7改款产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "宝典低货台及平底货箱车型",
+      "evidence_span": "宝典产品线推出低货台及平底货箱车型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动驾驶",
+      "evidence_span": "开发自动驾驶"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能网联",
+      "evidence_span": "开发...智能网联功能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "轻量化",
+      "evidence_span": "新能源、轻量化等方面的技术储备"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世",
+      "evidence_span": "博世"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大陆",
+      "evidence_span": "大陆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "盖瑞特",
+      "evidence_span": "盖瑞特"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "云内动力",
+      "evidence_span": "云内动力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "采埃孚",
+      "evidence_span": "采埃孚"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "纳铁福",
+      "evidence_span": "纳铁福"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "已与宁德时代...建立战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苏州汇川",
+      "evidence_span": "苏州汇川等领头企业建立战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "腾讯",
+      "evidence_span": "与腾讯...等企业强强携手"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恒润",
+      "evidence_span": "恒润"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科大讯飞",
+      "evidence_span": "科大讯飞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德赛西威",
+      "evidence_span": "德赛西威等企业强强携手"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "商用车",
+        "evidence_span": "公司的主要业务是生产和销售商用车"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "SUV",
+        "evidence_span": "生产和销售商用车、SUV"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "零部件",
+        "evidence_span": "本公司亦生产发动机、铸件和其他零部件"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "轻型商用车的行业领导者",
+        "evidence_span": "轻型商用车的行业领导者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "福特高性价比SUV的提供者",
+        "evidence_span": "是福特高性价比SUV的提供者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市及干线物流产品和服务综合方案的供应商",
+        "evidence_span": "商用车定位于城市及干线物流产品和服务综合方案的供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "JMC品牌轻型卡车",
+        "evidence_span": "主要产品包括JMC品牌轻型卡车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "JMC品牌皮卡",
+        "evidence_span": "主要产品包括JMC品牌...皮卡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "JMC品牌轻型客车",
+        "evidence_span": "主要产品包括JMC品牌...轻型客车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驭胜品牌SUV",
+        "evidence_span": "驭胜品牌SUV"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "福特品牌轻客",
+        "evidence_span": "福特品牌轻客"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "福特品牌MPV",
+        "evidence_span": "福特品牌...MPV"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发动机",
+        "evidence_span": "本公司亦生产发动机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铸件",
+        "evidence_span": "本公司亦生产...铸件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他零部件",
+        "evidence_span": "本公司亦生产...其他零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新全顺+新世代全顺Pro",
+        "evidence_span": "推出新全顺+新世代全顺Pro"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特顺+福顺",
+        "evidence_span": "特顺+福顺的轻客产品组合"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "江铃福顺",
+        "evidence_span": "最新上市的江铃福顺"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "凯运+全新一代轻卡",
+        "evidence_span": "最新推出的“凯运+”全新一代轻卡车型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "域虎7改款",
+        "evidence_span": "推出了域虎7改款产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "宝典低货台及平底货箱车型",
+        "evidence_span": "宝典产品线推出低货台及平底货箱车型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动驾驶",
+        "evidence_span": "开发自动驾驶"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能网联",
+        "evidence_span": "开发...智能网联功能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "轻量化",
+        "evidence_span": "新能源、轻量化等方面的技术储备"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世",
+        "evidence_span": "博世"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大陆",
+        "evidence_span": "大陆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "盖瑞特",
+        "evidence_span": "盖瑞特"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "云内动力",
+        "evidence_span": "云内动力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "采埃孚",
+        "evidence_span": "采埃孚"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "纳铁福",
+        "evidence_span": "纳铁福"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "已与宁德时代...建立战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苏州汇川",
+        "evidence_span": "苏州汇川等领头企业建立战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "腾讯",
+        "evidence_span": "与腾讯...等企业强强携手"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恒润",
+        "evidence_span": "恒润"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科大讯飞",
+        "evidence_span": "科大讯飞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德赛西威",
+        "evidence_span": "德赛西威等企业强强携手"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:01:53"
+}

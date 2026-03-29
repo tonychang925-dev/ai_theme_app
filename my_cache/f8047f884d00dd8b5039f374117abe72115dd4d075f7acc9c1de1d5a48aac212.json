@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:58:46", "result": {"chunk_id": "3511f61b067d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落开头描述雅迪等推出钠电车型的事件，但后续包含两轮车的定义、行业销量、置换需求、政策标准、集中度等静态知识，混合了事件和大量有价值知识。"}}

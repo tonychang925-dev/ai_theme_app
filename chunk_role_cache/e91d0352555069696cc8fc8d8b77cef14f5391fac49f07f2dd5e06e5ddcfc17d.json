@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "2c14f7f42551", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述北方华创发布上半年净利润公告，是具体公司业绩事件，无静态知识内容。"}}

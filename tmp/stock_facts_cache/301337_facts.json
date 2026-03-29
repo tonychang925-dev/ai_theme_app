@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医院智能通讯交互系统",
+      "evidence_span": "公司主要从事医院智能通讯交互系统的研发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "病房智能通讯交互系统",
+      "evidence_span": "主营业务收入包括医院智能通讯交互系统销售收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门诊服务交互系统",
+      "evidence_span": "主营业务收入包括医院智能通讯交互系统销售收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一代病房交互系统",
+      "evidence_span": "一代病房交互系统系公司较为传统的产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二代病房交互系统",
+      "evidence_span": "二代病房交互系统主要由主机、床头分机、门口分机、显示屏等组成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三代病房交互系统",
+      "evidence_span": "公司的三代病房交互系统，在原有产品的基础上，进一步集成了护理智能看板、智能床旁交互、病房互动电视以及远程探视与监护等模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分机",
+      "evidence_span": "公司分机及配件的销售收入主要来源于医院智能通讯交互分机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配件",
+      "evidence_span": "公司分机及配件的销售收入主要来源于医院智能通讯交互分机、显示屏等产品的销售收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液晶电视",
+      "evidence_span": "公司门诊服务交互系统中产品众多，主要分为液晶电视、交互一体机、发布一体机、软件、配件及其他"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交互一体机",
+      "evidence_span": "公司门诊服务交互系统中产品众多，主要分为液晶电视、交互一体机、发布一体机、软件、配件及其他"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发布一体机",
+      "evidence_span": "公司门诊服务交互系统中产品众多，主要分为液晶电视、交互一体机、发布一体机、软件、配件及其他"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软件",
+      "evidence_span": "公司门诊服务交互系统中产品众多，主要分为液晶电视、交互一体机、发布一体机、软件、配件及其他"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医院",
+      "evidence_span": "公司医院智能通讯交互系统及其分机、配件的终端用户是医院、养老院等各类医疗机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "养老院",
+      "evidence_span": "公司医院智能通讯交互系统及其分机、配件的终端用户是医院、养老院等各类医疗机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医院建设集成商",
+      "evidence_span": "公司主营业务收入的客户类型结构中，以医院建设集成商为主"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医院智能通讯交互系统",
+        "evidence_span": "公司主要从事医院智能通讯交互系统的研发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "病房智能通讯交互系统",
+        "evidence_span": "主营业务收入包括医院智能通讯交互系统销售收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门诊服务交互系统",
+        "evidence_span": "主营业务收入包括医院智能通讯交互系统销售收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一代病房交互系统",
+        "evidence_span": "一代病房交互系统系公司较为传统的产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二代病房交互系统",
+        "evidence_span": "二代病房交互系统主要由主机、床头分机、门口分机、显示屏等组成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三代病房交互系统",
+        "evidence_span": "公司的三代病房交互系统，在原有产品的基础上，进一步集成了护理智能看板、智能床旁交互、病房互动电视以及远程探视与监护等模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分机",
+        "evidence_span": "公司分机及配件的销售收入主要来源于医院智能通讯交互分机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配件",
+        "evidence_span": "公司分机及配件的销售收入主要来源于医院智能通讯交互分机、显示屏等产品的销售收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液晶电视",
+        "evidence_span": "公司门诊服务交互系统中产品众多，主要分为液晶电视、交互一体机、发布一体机、软件、配件及其他"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交互一体机",
+        "evidence_span": "公司门诊服务交互系统中产品众多，主要分为液晶电视、交互一体机、发布一体机、软件、配件及其他"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发布一体机",
+        "evidence_span": "公司门诊服务交互系统中产品众多，主要分为液晶电视、交互一体机、发布一体机、软件、配件及其他"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软件",
+        "evidence_span": "公司门诊服务交互系统中产品众多，主要分为液晶电视、交互一体机、发布一体机、软件、配件及其他"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医院",
+        "evidence_span": "公司医院智能通讯交互系统及其分机、配件的终端用户是医院、养老院等各类医疗机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "养老院",
+        "evidence_span": "公司医院智能通讯交互系统及其分机、配件的终端用户是医院、养老院等各类医疗机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医院建设集成商",
+        "evidence_span": "公司主营业务收入的客户类型结构中，以医院建设集成商为主"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:24:23"
+}

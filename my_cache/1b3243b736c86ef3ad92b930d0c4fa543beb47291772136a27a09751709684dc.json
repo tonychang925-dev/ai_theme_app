@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:55:16", "result": {"chunk_id": "32f346c677b7", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含具身智能的定义和核心构成（如强调智能系统与环境的实时互动能力），这些是静态知识，但同时描述了华为具身智能中心的正式运营、签署合作备忘录等具体事件，因此属于混合内容，需要进一步裁决。"}}

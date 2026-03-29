@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "466a12939e48", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：西门子收到美国取消芯片软件限制的通知，包含时间（2025年7月3日），属于动态新闻，没有提供静态的半导体知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "19acd03b7273", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "描述机器人部队执行任务、无人系统俘虏战俘等军事技术应用，可能蕴含无人作战知识，但以乌克兰冲突中的具体事件形式呈现，混合了新闻元素。"}}

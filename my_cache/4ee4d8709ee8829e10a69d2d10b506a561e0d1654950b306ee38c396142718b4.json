@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "f5b3c48a3acb", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含全球晶圆厂设备支出的预测数据（如SEMI预计2025-2027年支出突破4000亿美元），这些信息可能用于构建半导体设备市场的知识，但混合了事件性报道（'据报道'）和动态描述（'持续上涨'、'迎来发展红利'），因此作为候选知识需要进一步裁决。"}}

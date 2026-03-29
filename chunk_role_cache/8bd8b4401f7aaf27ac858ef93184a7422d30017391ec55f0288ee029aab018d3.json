@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "5a2cf68659c4", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述佳能交付首台新型纳米压印光刻机的事件，但提到了能耗优势（只要十分之一），这直接揭示了光刻机技术的一个关键突破方向，属于半导体设备的技术信息，有助于理解题材的技术路径。"}}

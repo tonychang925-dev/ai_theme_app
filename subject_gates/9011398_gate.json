@@ -1,0 +1,75 @@
+{
+  "must": [
+    "光刻",
+    "清洗",
+    "刻蚀",
+    "离子注入",
+    "沉积",
+    "封装设备"
+  ],
+  "should": [
+    "先进封装技术",
+    "四芯片封装设计",
+    "湿化学品",
+    "高纯靶材",
+    "电子气体",
+    "半导体封装材料",
+    "光掩模",
+    "光刻胶",
+    "抛光材料",
+    "EDA（电子设计自动化）软件",
+    "关键IP（知识产权）核",
+    "国产化替代"
+  ],
+  "not": [
+    "英伟达",
+    "AMD",
+    "上调GPU价格",
+    "美国政府",
+    "台积电",
+    "终止VEU地位",
+    "三星",
+    "SK海力士"
+  ],
+  "evidence_refs": [
+    {
+      "term": "光刻",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光刻"
+    },
+    {
+      "term": "清洗",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "清洗"
+    },
+    {
+      "term": "刻蚀",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "刻蚀"
+    },
+    {
+      "term": "离子注入",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "离子注入"
+    },
+    {
+      "term": "沉积",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "沉积"
+    },
+    {
+      "term": "封装设备",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "封装设备"
+    }
+  ],
+  "subject_id": "9011398",
+  "quality": "strong",
+  "generated_at": "2026-03-10T09:12:12"
+}

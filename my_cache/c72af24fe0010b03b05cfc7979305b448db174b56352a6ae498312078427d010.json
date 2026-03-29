@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:10:23", "result": {"chunk_id": "766ef0333afd", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述了华为Mate70芯片性能的具体事件，但包含芯片制程工艺（5nm）和处理能力等静态知识，混合了事件信息，可能对题材本体构建有价值，需要进一步裁决。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:31:44", "result": {"chunk_id": "105da10059a4", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落报道苹果团队开发智能眼镜产品和平价版Vision Pro的计划，涉及产品路线信息，可能对题材知识构建有用，但以新闻动态形式出现，混合了事件元素。"}}

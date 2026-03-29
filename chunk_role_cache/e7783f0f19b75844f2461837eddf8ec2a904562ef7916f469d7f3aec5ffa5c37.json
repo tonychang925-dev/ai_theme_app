@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "e6dff6749f2c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了大基金三期的成立事件，但同时也提到了投资方向（核心技术和关键零部件）和国际技术对接，这些内容可能包含对半导体设备产业投资策略的稳定知识，因此混合了事件和潜在知识。"}}

@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "图书出版",
+      "evidence_span": "主营业务为图书、报刊、电子音像出版物的出版和发行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "报刊出版",
+      "evidence_span": "主营业务为图书、报刊、电子音像出版物的出版和发行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子音像出版物出版",
+      "evidence_span": "主营业务为图书、报刊、电子音像出版物的出版和发行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "出版物发行",
+      "evidence_span": "主营业务为图书、报刊、电子音像出版物的出版和发行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "印刷物资供应",
+      "evidence_span": "印刷物资供应和印刷业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "印刷业务",
+      "evidence_span": "印刷物资供应和印刷业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家教材重要出版基地",
+      "evidence_span": "国家教材重要出版基地之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "广东省出版发行业龙头",
+      "evidence_span": "南方传媒广东省出版发行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "广东出版传媒龙头",
+      "evidence_span": "南方传媒广东出版传媒龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中小学教材",
+      "evidence_span": "图书出版物主要为中小学教材、教辅、一般图书"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教辅",
+      "evidence_span": "图书出版物主要为中小学教材、教辅、一般图书"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一般图书",
+      "evidence_span": "图书出版物主要为中小学教材、教辅、一般图书"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子出版物",
+      "evidence_span": "电子出版物及音像制品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "音像制品",
+      "evidence_span": "电子出版物及音像制品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "报刊",
+      "evidence_span": "报刊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字教材平台",
+      "evidence_span": "粤教翔云数字教材平台应用稳步提升"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧作业系统",
+      "evidence_span": "南方智慧作业系统完成初期研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "融媒体内容",
+      "evidence_span": "着力推动数字化转型升级和融媒体业务高质量发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "文化用品批发零售",
+      "evidence_span": "文化用品批发、零售、连锁经营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "广告服务",
+      "evidence_span": "盈利模式为广告收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印刷加工",
+      "evidence_span": "印刷业务是对出版物的印制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纸张销售",
+      "evidence_span": "公司出版用纸的统供销售业务，并对外销售纸张和造纸原料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "印刷耗材销售",
+      "evidence_span": "印刷设备、印刷耗材、印刷油墨、印刷包装材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字出版",
+      "evidence_span": "数字出版快速发展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "媒体融合",
+      "evidence_span": "媒体融合蓬勃发展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线上销售平台",
+      "evidence_span": "线上销售开新局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广东省中小学生",
+      "evidence_span": "开学前全部送达1700余万学生手中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "港澳地区",
+      "evidence_span": "持续做好粤版港澳教材和读本的出版发行工作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "教材教辅市场",
+      "evidence_span": "南方传媒深耕教材教辅市场"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字化布局",
+      "evidence_span": "南方传媒广东出版发行龙头，布局数字化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "图书出版",
+        "evidence_span": "主营业务为图书、报刊、电子音像出版物的出版和发行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "报刊出版",
+        "evidence_span": "主营业务为图书、报刊、电子音像出版物的出版和发行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子音像出版物出版",
+        "evidence_span": "主营业务为图书、报刊、电子音像出版物的出版和发行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "出版物发行",
+        "evidence_span": "主营业务为图书、报刊、电子音像出版物的出版和发行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "印刷物资供应",
+        "evidence_span": "印刷物资供应和印刷业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "印刷业务",
+        "evidence_span": "印刷物资供应和印刷业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家教材重要出版基地",
+        "evidence_span": "国家教材重要出版基地之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "广东省出版发行业龙头",
+        "evidence_span": "南方传媒广东省出版发行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "广东出版传媒龙头",
+        "evidence_span": "南方传媒广东出版传媒龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中小学教材",
+        "evidence_span": "图书出版物主要为中小学教材、教辅、一般图书"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教辅",
+        "evidence_span": "图书出版物主要为中小学教材、教辅、一般图书"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一般图书",
+        "evidence_span": "图书出版物主要为中小学教材、教辅、一般图书"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子出版物",
+        "evidence_span": "电子出版物及音像制品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "音像制品",
+        "evidence_span": "电子出版物及音像制品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "报刊",
+        "evidence_span": "报刊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字教材平台",
+        "evidence_span": "粤教翔云数字教材平台应用稳步提升"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧作业系统",
+        "evidence_span": "南方智慧作业系统完成初期研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "融媒体内容",
+        "evidence_span": "着力推动数字化转型升级和融媒体业务高质量发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "文化用品批发零售",
+        "evidence_span": "文化用品批发、零售、连锁经营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "广告服务",
+        "evidence_span": "盈利模式为广告收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印刷加工",
+        "evidence_span": "印刷业务是对出版物的印制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纸张销售",
+        "evidence_span": "公司出版用纸的统供销售业务，并对外销售纸张和造纸原料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "印刷耗材销售",
+        "evidence_span": "印刷设备、印刷耗材、印刷油墨、印刷包装材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字出版",
+        "evidence_span": "数字出版快速发展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "媒体融合",
+        "evidence_span": "媒体融合蓬勃发展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线上销售平台",
+        "evidence_span": "线上销售开新局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广东省中小学生",
+        "evidence_span": "开学前全部送达1700余万学生手中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "港澳地区",
+        "evidence_span": "持续做好粤版港澳教材和读本的出版发行工作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "教材教辅市场",
+        "evidence_span": "南方传媒深耕教材教辅市场"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字化布局",
+        "evidence_span": "南方传媒广东出版发行龙头，布局数字化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:43:09"
+}

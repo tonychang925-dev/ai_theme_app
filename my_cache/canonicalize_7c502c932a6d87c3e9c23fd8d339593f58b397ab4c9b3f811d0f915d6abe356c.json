@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:22:58", "result": {"span_uid": "6bf867a232d8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品技术规格", "stability": "high", "reason": "原文是具体产品（Blackwell Ultra）的技术规格，属于事件化信息，无法形成独立稳定的题材知识块。"}}

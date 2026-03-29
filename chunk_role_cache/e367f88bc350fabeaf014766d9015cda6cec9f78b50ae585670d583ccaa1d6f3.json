@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_3", "model": "deepseek-chat", "timestamp": "2026-03-08T09:33:12", "result": {"chunk_id": "57957389119d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落聚焦于美国出口管控措施的实施及其对台积电的影响，以事件报道为主，缺乏对半导体设备本体的静态说明。"}}

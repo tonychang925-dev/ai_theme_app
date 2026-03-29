@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "家用医疗器械",
+      "evidence_span": "可孚医疗科技股份有限公司是位于湖南长沙的一家国内领先的大型、综合性家用医疗器械企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "听力服务",
+      "evidence_span": "可孚医疗全生命周期健康管理龙头，家用医疗器械+听力服务携手并进"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全生命周期个人健康管理领先企业",
+      "evidence_span": "全生命周期个人健康管理领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "家用医疗器械企业",
+      "evidence_span": "可孚医疗科技股份有限公司是位于湖南长沙的一家国内领先的大型、综合性家用医疗器械企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "健康监测产品",
+      "evidence_span": "公司主要产品涵盖五大领域：健康监测、康复辅具、呼吸支持、中医理疗、医疗护理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "康复辅具",
+      "evidence_span": "公司主要产品涵盖五大领域：健康监测、康复辅具、呼吸支持、中医理疗、医疗护理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "呼吸支持产品",
+      "evidence_span": "公司主要产品涵盖五大领域：健康监测、康复辅具、呼吸支持、中医理疗、医疗护理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中医理疗产品",
+      "evidence_span": "公司主要产品涵盖五大领域：健康监测、康复辅具、呼吸支持、中医理疗、医疗护理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗护理产品",
+      "evidence_span": "公司主要产品涵盖五大领域：健康监测、康复辅具、呼吸支持、中医理疗、医疗护理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "血压计",
+      "evidence_span": "公司迭代推出了血压计、护理床、红外体温计、雾化器、轮椅等多款高品质畅销产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "护理床",
+      "evidence_span": "公司迭代推出了血压计、护理床、红外体温计、雾化器、轮椅等多款高品质畅销产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "红外体温计",
+      "evidence_span": "公司迭代推出了血压计、护理床、红外体温计、雾化器、轮椅等多款高品质畅销产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "雾化器",
+      "evidence_span": "公司迭代推出了血压计、护理床、红外体温计、雾化器、轮椅等多款高品质畅销产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轮椅",
+      "evidence_span": "公司迭代推出了血压计、护理床、红外体温计、雾化器、轮椅等多款高品质畅销产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "助听器验配一体化服务",
+      "evidence_span": "健耳助听器验配中心于2018年开始设立，为客户提供专业的助听器验配一体化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新型冠状病毒抗原自测试剂盒",
+      "evidence_span": "新型冠状病毒抗原自测试剂盒已获得欧盟CE认证"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "血氧仪",
+      "evidence_span": "公司有多个型号的血氧仪，用于监测脉搏血氧饱和度、脉率和灌注度"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "老百姓",
+      "evidence_span": "公司连锁药房核心客户包括老百姓、益丰、千金、国药控股、大参林、海王星辰等全国知名的连锁药房企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "益丰",
+      "evidence_span": "公司连锁药房核心客户包括老百姓、益丰、千金、国药控股、大参林、海王星辰等全国知名的连锁药房企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "千金",
+      "evidence_span": "公司连锁药房核心客户包括老百姓、益丰、千金、国药控股、大参林、海王星辰等全国知名的连锁药房企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国药控股",
+      "evidence_span": "公司连锁药房核心客户包括老百姓、益丰、千金、国药控股、大参林、海王星辰等全国知名的连锁药房企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大参林",
+      "evidence_span": "公司连锁药房核心客户包括老百姓、益丰、千金、国药控股、大参林、海王星辰等全国知名的连锁药房企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海王星辰",
+      "evidence_span": "公司连锁药房核心客户包括老百姓、益丰、千金、国药控股、大参林、海王星辰等全国知名的连锁药房企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "热景生物",
+      "evidence_span": "公司与热景生物、诺唯赞、博奥赛斯、艾康生物等企业形成业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "诺唯赞",
+      "evidence_span": "公司与热景生物、诺唯赞、博奥赛斯、艾康生物等企业形成业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博奥赛斯",
+      "evidence_span": "公司与热景生物、诺唯赞、博奥赛斯、艾康生物等企业形成业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "艾康生物",
+      "evidence_span": "公司与热景生物、诺唯赞、博奥赛斯、艾康生物等企业形成业务合作"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "家用医疗器械",
+        "evidence_span": "可孚医疗科技股份有限公司是位于湖南长沙的一家国内领先的大型、综合性家用医疗器械企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "听力服务",
+        "evidence_span": "可孚医疗全生命周期健康管理龙头，家用医疗器械+听力服务携手并进"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全生命周期个人健康管理领先企业",
+        "evidence_span": "全生命周期个人健康管理领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "家用医疗器械企业",
+        "evidence_span": "可孚医疗科技股份有限公司是位于湖南长沙的一家国内领先的大型、综合性家用医疗器械企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "健康监测产品",
+        "evidence_span": "公司主要产品涵盖五大领域：健康监测、康复辅具、呼吸支持、中医理疗、医疗护理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "康复辅具",
+        "evidence_span": "公司主要产品涵盖五大领域：健康监测、康复辅具、呼吸支持、中医理疗、医疗护理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "呼吸支持产品",
+        "evidence_span": "公司主要产品涵盖五大领域：健康监测、康复辅具、呼吸支持、中医理疗、医疗护理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中医理疗产品",
+        "evidence_span": "公司主要产品涵盖五大领域：健康监测、康复辅具、呼吸支持、中医理疗、医疗护理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗护理产品",
+        "evidence_span": "公司主要产品涵盖五大领域：健康监测、康复辅具、呼吸支持、中医理疗、医疗护理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "血压计",
+        "evidence_span": "公司迭代推出了血压计、护理床、红外体温计、雾化器、轮椅等多款高品质畅销产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "护理床",
+        "evidence_span": "公司迭代推出了血压计、护理床、红外体温计、雾化器、轮椅等多款高品质畅销产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "红外体温计",
+        "evidence_span": "公司迭代推出了血压计、护理床、红外体温计、雾化器、轮椅等多款高品质畅销产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "雾化器",
+        "evidence_span": "公司迭代推出了血压计、护理床、红外体温计、雾化器、轮椅等多款高品质畅销产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轮椅",
+        "evidence_span": "公司迭代推出了血压计、护理床、红外体温计、雾化器、轮椅等多款高品质畅销产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "助听器验配一体化服务",
+        "evidence_span": "健耳助听器验配中心于2018年开始设立，为客户提供专业的助听器验配一体化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新型冠状病毒抗原自测试剂盒",
+        "evidence_span": "新型冠状病毒抗原自测试剂盒已获得欧盟CE认证"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "血氧仪",
+        "evidence_span": "公司有多个型号的血氧仪，用于监测脉搏血氧饱和度、脉率和灌注度"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "老百姓",
+        "evidence_span": "公司连锁药房核心客户包括老百姓、益丰、千金、国药控股、大参林、海王星辰等全国知名的连锁药房企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "益丰",
+        "evidence_span": "公司连锁药房核心客户包括老百姓、益丰、千金、国药控股、大参林、海王星辰等全国知名的连锁药房企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "千金",
+        "evidence_span": "公司连锁药房核心客户包括老百姓、益丰、千金、国药控股、大参林、海王星辰等全国知名的连锁药房企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国药控股",
+        "evidence_span": "公司连锁药房核心客户包括老百姓、益丰、千金、国药控股、大参林、海王星辰等全国知名的连锁药房企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大参林",
+        "evidence_span": "公司连锁药房核心客户包括老百姓、益丰、千金、国药控股、大参林、海王星辰等全国知名的连锁药房企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海王星辰",
+        "evidence_span": "公司连锁药房核心客户包括老百姓、益丰、千金、国药控股、大参林、海王星辰等全国知名的连锁药房企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "热景生物",
+        "evidence_span": "公司与热景生物、诺唯赞、博奥赛斯、艾康生物等企业形成业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "诺唯赞",
+        "evidence_span": "公司与热景生物、诺唯赞、博奥赛斯、艾康生物等企业形成业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博奥赛斯",
+        "evidence_span": "公司与热景生物、诺唯赞、博奥赛斯、艾康生物等企业形成业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "艾康生物",
+        "evidence_span": "公司与热景生物、诺唯赞、博奥赛斯、艾康生物等企业形成业务合作"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:31:47"
+}

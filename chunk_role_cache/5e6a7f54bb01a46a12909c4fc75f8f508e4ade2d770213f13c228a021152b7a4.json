@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "99ac722ffb15", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述摩尔线程和沐曦集成电路IPO申请获受理的具体事件，属于企业融资动态，没有涉及半导体设备的技术或构成，因此归为pure_event。"}}

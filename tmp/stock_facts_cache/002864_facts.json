@@ -1,0 +1,449 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "中成药生产",
+      "evidence_span": "公司属于医药制造业中的中成药生产行业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "药材规范化种植",
+      "evidence_span": "集药材规范化种植、药品生产、研发、销售及医药物流为核心产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "药品生产",
+      "evidence_span": "集药材规范化种植、药品生产、研发、销售及医药物流为核心产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "药品研发",
+      "evidence_span": "集药材规范化种植、药品生产、研发、销售及医药物流为核心产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "药品销售",
+      "evidence_span": "集药材规范化种植、药品生产、研发、销售及医药物流为核心产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药物流",
+      "evidence_span": "集药材规范化种植、药品生产、研发、销售及医药物流为核心产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药商业业务",
+      "evidence_span": "医药商业业务主要是涉及子公司医药股份和博华医药作为医药流通企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中药饮片业务",
+      "evidence_span": "中药饮片业务主要为子公司盘龙植物药业对外销售的中药饮片类产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中药配方颗粒业务",
+      "evidence_span": "中药配方颗粒业务主要为子公司医药股份对外销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗机构制剂业务",
+      "evidence_span": "医疗机构制剂业务主要为子公司盘龙医药研究院负责备案及注册的研发工作"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大健康产业",
+      "evidence_span": "全面进军医药大健康产业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "现代高新技术企业",
+      "evidence_span": "公司是集药材规范化种植、药品生产、研发、销售及医药物流为核心产业的现代高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医药工业企业",
+      "evidence_span": "公司作为医药工业企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盘龙七片",
+      "evidence_span": "主导品种盘龙七片为独家生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "骨松宝片",
+      "evidence_span": "骨松宝片治疗骨折骨痛"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盘龙七药酒",
+      "evidence_span": "拥有4个独家品种：盘龙七片、盘龙七药酒、金茵利胆胶囊和克比热提片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金茵利胆胶囊",
+      "evidence_span": "拥有4个独家品种：盘龙七片、盘龙七药酒、金茵利胆胶囊和克比热提片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "克比热提片",
+      "evidence_span": "拥有4个独家品种：盘龙七片、盘龙七药酒、金茵利胆胶囊和克比热提片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复方醋酸棉酚片",
+      "evidence_span": "拥有自主知识产权的复方醋酸棉酚片、醋酸棉酚原料药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "醋酸棉酚原料药",
+      "evidence_span": "拥有自主知识产权的复方醋酸棉酚片、醋酸棉酚原料药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益母草颗粒",
+      "evidence_span": "除主导产品盘龙七片外加大益母草颗粒、杞菊地黄胶囊、参苓白术散、护肝片等现有基药产品终端市场布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "杞菊地黄胶囊",
+      "evidence_span": "除主导产品盘龙七片外加大益母草颗粒、杞菊地黄胶囊、参苓白术散、护肝片等现有基药产品终端市场布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "参苓白术散",
+      "evidence_span": "除主导产品盘龙七片外加大益母草颗粒、杞菊地黄胶囊、参苓白术散、护肝片等现有基药产品终端市场布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "护肝片",
+      "evidence_span": "除主导产品盘龙七片外加大益母草颗粒、杞菊地黄胶囊、参苓白术散、护肝片等现有基药产品终端市场布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小儿咽扁颗粒",
+      "evidence_span": "加快小儿咽扁颗粒、骨松宝片等未来过亿元潜力产品的市场发展培育"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盘龙七系列牙膏",
+      "evidence_span": "实现了盘龙七系列牙膏、盘龙牌补水面膜、黄芪茯茶以及葛黄面等大健康系列产品的开发并成功上市销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盘龙牌补水面膜",
+      "evidence_span": "实现了盘龙七系列牙膏、盘龙牌补水面膜、黄芪茯茶以及葛黄面等大健康系列产品的开发并成功上市销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄芪茯茶",
+      "evidence_span": "实现了盘龙七系列牙膏、盘龙牌补水面膜、黄芪茯茶以及葛黄面等大健康系列产品的开发并成功上市销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "葛黄面",
+      "evidence_span": "实现了盘龙七系列牙膏、盘龙牌补水面膜、黄芪茯茶以及葛黄面等大健康系列产品的开发并成功上市销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "口腔健康产品",
+      "evidence_span": "推出了覆盖口腔健康、功能食品、洗护用品及医疗器械等大健康产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能食品",
+      "evidence_span": "推出了覆盖口腔健康、功能食品、洗护用品及医疗器械等大健康产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洗护用品",
+      "evidence_span": "推出了覆盖口腔健康、功能食品、洗护用品及医疗器械等大健康产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗器械",
+      "evidence_span": "推出了覆盖口腔健康、功能食品、洗护用品及医疗器械等大健康产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保健食品",
+      "evidence_span": "公司当前生产范围包含19个剂型、74个药品生产批准文号，1个保健食品和1个保健用品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保健用品",
+      "evidence_span": "公司当前生产范围包含19个剂型、74个药品生产批准文号，1个保健食品和1个保健用品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高端外用凝胶透皮给药平台",
+      "evidence_span": "布局高端外用凝胶透皮给药平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "药物制剂智能工厂",
+      "evidence_span": "打造药物制剂智能工厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全国公立医院",
+      "evidence_span": "全国公立医院市场份额居前"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内520余家医药商业公司",
+      "evidence_span": "已与国内520余家医药商业公司建立了长期稳定的业务关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内等级医院3800余家",
+      "evidence_span": "通过上述医药商业公司将主导产品覆盖到国内等级医院3800余家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OTC连锁药店和单体药店4000余家",
+      "evidence_span": "OTC连锁药店和单体药店4000余家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "社区医院、卫生院、诊所达4500余家",
+      "evidence_span": "社区医院、卫生院、诊所达4500余家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "中医药传承创新发展",
+      "evidence_span": "促进中医传承创新发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "老龄化慢病用药市场需求",
+      "evidence_span": "老龄化程度加深扩大慢病用药市场需求"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "中成药生产",
+        "evidence_span": "公司属于医药制造业中的中成药生产行业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "药材规范化种植",
+        "evidence_span": "集药材规范化种植、药品生产、研发、销售及医药物流为核心产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "药品生产",
+        "evidence_span": "集药材规范化种植、药品生产、研发、销售及医药物流为核心产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "药品研发",
+        "evidence_span": "集药材规范化种植、药品生产、研发、销售及医药物流为核心产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "药品销售",
+        "evidence_span": "集药材规范化种植、药品生产、研发、销售及医药物流为核心产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药物流",
+        "evidence_span": "集药材规范化种植、药品生产、研发、销售及医药物流为核心产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药商业业务",
+        "evidence_span": "医药商业业务主要是涉及子公司医药股份和博华医药作为医药流通企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中药饮片业务",
+        "evidence_span": "中药饮片业务主要为子公司盘龙植物药业对外销售的中药饮片类产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中药配方颗粒业务",
+        "evidence_span": "中药配方颗粒业务主要为子公司医药股份对外销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗机构制剂业务",
+        "evidence_span": "医疗机构制剂业务主要为子公司盘龙医药研究院负责备案及注册的研发工作"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大健康产业",
+        "evidence_span": "全面进军医药大健康产业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "现代高新技术企业",
+        "evidence_span": "公司是集药材规范化种植、药品生产、研发、销售及医药物流为核心产业的现代高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医药工业企业",
+        "evidence_span": "公司作为医药工业企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盘龙七片",
+        "evidence_span": "主导品种盘龙七片为独家生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "骨松宝片",
+        "evidence_span": "骨松宝片治疗骨折骨痛"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盘龙七药酒",
+        "evidence_span": "拥有4个独家品种：盘龙七片、盘龙七药酒、金茵利胆胶囊和克比热提片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金茵利胆胶囊",
+        "evidence_span": "拥有4个独家品种：盘龙七片、盘龙七药酒、金茵利胆胶囊和克比热提片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "克比热提片",
+        "evidence_span": "拥有4个独家品种：盘龙七片、盘龙七药酒、金茵利胆胶囊和克比热提片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复方醋酸棉酚片",
+        "evidence_span": "拥有自主知识产权的复方醋酸棉酚片、醋酸棉酚原料药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "醋酸棉酚原料药",
+        "evidence_span": "拥有自主知识产权的复方醋酸棉酚片、醋酸棉酚原料药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益母草颗粒",
+        "evidence_span": "除主导产品盘龙七片外加大益母草颗粒、杞菊地黄胶囊、参苓白术散、护肝片等现有基药产品终端市场布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "杞菊地黄胶囊",
+        "evidence_span": "除主导产品盘龙七片外加大益母草颗粒、杞菊地黄胶囊、参苓白术散、护肝片等现有基药产品终端市场布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "参苓白术散",
+        "evidence_span": "除主导产品盘龙七片外加大益母草颗粒、杞菊地黄胶囊、参苓白术散、护肝片等现有基药产品终端市场布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "护肝片",
+        "evidence_span": "除主导产品盘龙七片外加大益母草颗粒、杞菊地黄胶囊、参苓白术散、护肝片等现有基药产品终端市场布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小儿咽扁颗粒",
+        "evidence_span": "加快小儿咽扁颗粒、骨松宝片等未来过亿元潜力产品的市场发展培育"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盘龙七系列牙膏",
+        "evidence_span": "实现了盘龙七系列牙膏、盘龙牌补水面膜、黄芪茯茶以及葛黄面等大健康系列产品的开发并成功上市销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盘龙牌补水面膜",
+        "evidence_span": "实现了盘龙七系列牙膏、盘龙牌补水面膜、黄芪茯茶以及葛黄面等大健康系列产品的开发并成功上市销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄芪茯茶",
+        "evidence_span": "实现了盘龙七系列牙膏、盘龙牌补水面膜、黄芪茯茶以及葛黄面等大健康系列产品的开发并成功上市销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "葛黄面",
+        "evidence_span": "实现了盘龙七系列牙膏、盘龙牌补水面膜、黄芪茯茶以及葛黄面等大健康系列产品的开发并成功上市销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "口腔健康产品",
+        "evidence_span": "推出了覆盖口腔健康、功能食品、洗护用品及医疗器械等大健康产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能食品",
+        "evidence_span": "推出了覆盖口腔健康、功能食品、洗护用品及医疗器械等大健康产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洗护用品",
+        "evidence_span": "推出了覆盖口腔健康、功能食品、洗护用品及医疗器械等大健康产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗器械",
+        "evidence_span": "推出了覆盖口腔健康、功能食品、洗护用品及医疗器械等大健康产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保健食品",
+        "evidence_span": "公司当前生产范围包含19个剂型、74个药品生产批准文号，1个保健食品和1个保健用品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保健用品",
+        "evidence_span": "公司当前生产范围包含19个剂型、74个药品生产批准文号，1个保健食品和1个保健用品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高端外用凝胶透皮给药平台",
+        "evidence_span": "布局高端外用凝胶透皮给药平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "药物制剂智能工厂",
+        "evidence_span": "打造药物制剂智能工厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全国公立医院",
+        "evidence_span": "全国公立医院市场份额居前"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内520余家医药商业公司",
+        "evidence_span": "已与国内520余家医药商业公司建立了长期稳定的业务关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内等级医院3800余家",
+        "evidence_span": "通过上述医药商业公司将主导产品覆盖到国内等级医院3800余家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OTC连锁药店和单体药店4000余家",
+        "evidence_span": "OTC连锁药店和单体药店4000余家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "社区医院、卫生院、诊所达4500余家",
+        "evidence_span": "社区医院、卫生院、诊所达4500余家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "中医药传承创新发展",
+        "evidence_span": "促进中医传承创新发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "老龄化慢病用药市场需求",
+        "evidence_span": "老龄化程度加深扩大慢病用药市场需求"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:08:44"
+}

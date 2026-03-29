@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:43", "result": {"chunk_id": "2f22ebddf468", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落报告SEMI发布的2024-2025年半导体制造设备全球销售额预测数据，属于景气数据事件，但数据可能反映行业增长趋势，隐含市场规模的稳定知识，混合事件信息。"}}

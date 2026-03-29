@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "民爆器材产品研发",
+      "evidence_span": "民爆器材产品研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "民爆器材产品生产",
+      "evidence_span": "民爆器材产品生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "民爆器材产品销售",
+      "evidence_span": "民爆器材产品销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "爆破服务",
+      "evidence_span": "爆破"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "配送服务",
+      "evidence_span": "配送"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程技术服务",
+      "evidence_span": "工程技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态产业运营管理业务",
+      "evidence_span": "生态产业运营管理业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内民爆行业优秀服务商",
+      "evidence_span": "保利联合国内民爆行业优秀服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域民爆龙头",
+      "evidence_span": "区域民爆龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大型综合民爆服务商",
+      "evidence_span": "大型综合民爆服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级高新技术企业",
+      "evidence_span": "国家级高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业炸药",
+      "evidence_span": "工业炸药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业雷管",
+      "evidence_span": "工业雷管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业导爆索（管）",
+      "evidence_span": "工业导爆索（管）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "个性化民爆产品",
+      "evidence_span": "个性化民爆产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数码电子雷管",
+      "evidence_span": "数码电子雷管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程爆破服务",
+      "evidence_span": "工程爆破服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "矿山修复治理项目",
+      "evidence_span": "矿山修复治理项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全域土地综合整治试点项目",
+      "evidence_span": "全域土地综合整治试点项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "危化配送业务",
+      "evidence_span": "危化配送业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子雷管及生产工艺技术及装备",
+      "evidence_span": "电子雷管及生产工艺技术及装备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业雷管自动化生产技术及装备",
+      "evidence_span": "工业雷管自动化生产技术及装备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业互联网十安全民爆企业智慧安全管理系统",
+      "evidence_span": "工业互联网十安全民爆企业智慧安全管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "长效型多孔粒状铵油炸药配方",
+      "evidence_span": "长效型多孔粒状铵油炸药配方"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高含水量乳化炸药工艺配方",
+      "evidence_span": "高含水量乳化炸药工艺配方"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业炸药智能制造工艺技术及装备",
+      "evidence_span": "工业炸药智能制造工艺技术及装备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "乳化炸药井下小型混装车及工艺技术",
+      "evidence_span": "乳化炸药井下小型混装车及工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂环境爆破拆除技术",
+      "evidence_span": "复杂环境爆破拆除技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精确延时爆破关键技术及工程应用",
+      "evidence_span": "精确延时爆破关键技术及工程应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "矿山开采",
+      "evidence_span": "矿山开采"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "水利水电",
+      "evidence_span": "水利水电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "基础设施建设",
+      "evidence_span": "基础设施建设"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "城市改造",
+      "evidence_span": "城市改造"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国防建设",
+      "evidence_span": "国防建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于西部大开发",
+      "evidence_span": "受益于西部大开发"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "民爆器材产品研发",
+        "evidence_span": "民爆器材产品研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "民爆器材产品生产",
+        "evidence_span": "民爆器材产品生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "民爆器材产品销售",
+        "evidence_span": "民爆器材产品销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "爆破服务",
+        "evidence_span": "爆破"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "配送服务",
+        "evidence_span": "配送"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程技术服务",
+        "evidence_span": "工程技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态产业运营管理业务",
+        "evidence_span": "生态产业运营管理业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内民爆行业优秀服务商",
+        "evidence_span": "保利联合国内民爆行业优秀服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域民爆龙头",
+        "evidence_span": "区域民爆龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大型综合民爆服务商",
+        "evidence_span": "大型综合民爆服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级高新技术企业",
+        "evidence_span": "国家级高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业炸药",
+        "evidence_span": "工业炸药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业雷管",
+        "evidence_span": "工业雷管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业导爆索（管）",
+        "evidence_span": "工业导爆索（管）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "个性化民爆产品",
+        "evidence_span": "个性化民爆产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数码电子雷管",
+        "evidence_span": "数码电子雷管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程爆破服务",
+        "evidence_span": "工程爆破服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "矿山修复治理项目",
+        "evidence_span": "矿山修复治理项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全域土地综合整治试点项目",
+        "evidence_span": "全域土地综合整治试点项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "危化配送业务",
+        "evidence_span": "危化配送业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子雷管及生产工艺技术及装备",
+        "evidence_span": "电子雷管及生产工艺技术及装备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业雷管自动化生产技术及装备",
+        "evidence_span": "工业雷管自动化生产技术及装备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业互联网十安全民爆企业智慧安全管理系统",
+        "evidence_span": "工业互联网十安全民爆企业智慧安全管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "长效型多孔粒状铵油炸药配方",
+        "evidence_span": "长效型多孔粒状铵油炸药配方"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高含水量乳化炸药工艺配方",
+        "evidence_span": "高含水量乳化炸药工艺配方"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业炸药智能制造工艺技术及装备",
+        "evidence_span": "工业炸药智能制造工艺技术及装备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "乳化炸药井下小型混装车及工艺技术",
+        "evidence_span": "乳化炸药井下小型混装车及工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂环境爆破拆除技术",
+        "evidence_span": "复杂环境爆破拆除技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精确延时爆破关键技术及工程应用",
+        "evidence_span": "精确延时爆破关键技术及工程应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "矿山开采",
+        "evidence_span": "矿山开采"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "水利水电",
+        "evidence_span": "水利水电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "基础设施建设",
+        "evidence_span": "基础设施建设"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "城市改造",
+        "evidence_span": "城市改造"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国防建设",
+        "evidence_span": "国防建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于西部大开发",
+        "evidence_span": "受益于西部大开发"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:35:30"
+}

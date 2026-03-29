@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "6d25f9fa0a73", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述中国商飞亚太办事处揭牌仪式事件，但包含C919出海和国际化背景知识，以及中新航空合作信息，混合了事件和静态知识。"}}

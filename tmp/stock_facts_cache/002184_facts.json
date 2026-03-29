@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业电气自动化业务",
+      "evidence_span": "主营业务包括工业电气自动化业务、工业信息化业务和新能源业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业信息化业务",
+      "evidence_span": "主营业务包括工业电气自动化业务、工业信息化业务和新能源业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源业务",
+      "evidence_span": "主营业务包括工业电气自动化业务、工业信息化业务和新能源业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能制造解决方案商",
+      "evidence_span": "积极转型中的智能制造解决方案商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "风电行业整机装备制造头部企业的主流设备供应商",
+      "evidence_span": "已成为风电行业整机装备制造头部企业的主流设备供应商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业以太网交换机",
+      "evidence_span": "产品包括工业以太网交换机、安全策略及智慧网管软件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "NetSCADA 组态软件",
+      "evidence_span": "产品包括 NetSCADA 组态软件、智慧排产物流调度软件（WMS+WCS）、智慧网络一体化平台软件、iWorx 工业互联软件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧排产物流调度软件（WMS+WCS）",
+      "evidence_span": "产品包括 NetSCADA 组态软件、智慧排产物流调度软件（WMS+WCS）、智慧网络一体化平台软件、iWorx 工业互联软件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧网络一体化平台软件",
+      "evidence_span": "产品包括 NetSCADA 组态软件、智慧排产物流调度软件（WMS+WCS）、智慧网络一体化平台软件、iWorx 工业互联软件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "iWorx 工业互联软件",
+      "evidence_span": "产品包括 NetSCADA 组态软件、智慧排产物流调度软件（WMS+WCS）、智慧网络一体化平台软件、iWorx 工业互联软件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "H＆i Server 高可靠性服务器",
+      "evidence_span": "产品与服务包括 H＆i Server 高可靠性服务器、超融合工业企业数据中心及 IndusCloud 工业私有云解决方案等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超融合工业企业数据中心",
+      "evidence_span": "产品与服务包括 H＆i Server 高可靠性服务器、超融合工业企业数据中心及 IndusCloud 工业私有云解决方案等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IndusCloud 工业私有云解决方案",
+      "evidence_span": "产品与服务包括 H＆i Server 高可靠性服务器、超融合工业企业数据中心及 IndusCloud 工业私有云解决方案等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源混合动力系统",
+      "evidence_span": "主要产品包括新能源混合动力系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电风机变流器产品",
+      "evidence_span": "产品包括可覆盖行业所需的系列全功率、双馈风电风机变流器产品及系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电风机存量市场的运维、改造及备件服务",
+      "evidence_span": "风电风机存量市场的运维、改造及备件服务业务近年来持续增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能 PCS、BMS 系统产品",
+      "evidence_span": "探索和发展储能 PCS、BMS 系统产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业自动化控制技术",
+      "evidence_span": "开展以工业自动化控制技术、工业信息化技术及其融合技术为主要特征的软硬件产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业信息化技术",
+      "evidence_span": "开展以工业自动化控制技术、工业信息化技术及其融合技术为主要特征的软硬件产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化与信息化融合技术",
+      "evidence_span": "开展以工业自动化控制技术、工业信息化技术及其融合技术为主要特征的软硬件产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大功率电力电子技术",
+      "evidence_span": "基于十几年来大功率电力电子技术的积累和成熟的开发试验平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化控制、电力电子、储能等技术相融合",
+      "evidence_span": "通过提供自动化控制、电力电子、储能等技术相融合的产品与解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "机械设备制造行业 OEM 用户",
+      "evidence_span": "为机械设备制造行业 OEM 用户和电力、交通、市政等项目市场的电气成套商与系统集成商等用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "风电行业整机装备制造头部企业",
+      "evidence_span": "已成为风电行业整机装备制造头部企业的主流设备供应商之一"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能制造",
+      "evidence_span": "聚焦智能制造"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "工业互联网",
+      "evidence_span": "具有行业特征的工业互联网系统解决方案"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源",
+      "evidence_span": "新能源业务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业电气自动化业务",
+        "evidence_span": "主营业务包括工业电气自动化业务、工业信息化业务和新能源业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业信息化业务",
+        "evidence_span": "主营业务包括工业电气自动化业务、工业信息化业务和新能源业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源业务",
+        "evidence_span": "主营业务包括工业电气自动化业务、工业信息化业务和新能源业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能制造解决方案商",
+        "evidence_span": "积极转型中的智能制造解决方案商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "风电行业整机装备制造头部企业的主流设备供应商",
+        "evidence_span": "已成为风电行业整机装备制造头部企业的主流设备供应商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业以太网交换机",
+        "evidence_span": "产品包括工业以太网交换机、安全策略及智慧网管软件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "NetSCADA 组态软件",
+        "evidence_span": "产品包括 NetSCADA 组态软件、智慧排产物流调度软件（WMS+WCS）、智慧网络一体化平台软件、iWorx 工业互联软件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧排产物流调度软件（WMS+WCS）",
+        "evidence_span": "产品包括 NetSCADA 组态软件、智慧排产物流调度软件（WMS+WCS）、智慧网络一体化平台软件、iWorx 工业互联软件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧网络一体化平台软件",
+        "evidence_span": "产品包括 NetSCADA 组态软件、智慧排产物流调度软件（WMS+WCS）、智慧网络一体化平台软件、iWorx 工业互联软件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "iWorx 工业互联软件",
+        "evidence_span": "产品包括 NetSCADA 组态软件、智慧排产物流调度软件（WMS+WCS）、智慧网络一体化平台软件、iWorx 工业互联软件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "H＆i Server 高可靠性服务器",
+        "evidence_span": "产品与服务包括 H＆i Server 高可靠性服务器、超融合工业企业数据中心及 IndusCloud 工业私有云解决方案等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超融合工业企业数据中心",
+        "evidence_span": "产品与服务包括 H＆i Server 高可靠性服务器、超融合工业企业数据中心及 IndusCloud 工业私有云解决方案等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IndusCloud 工业私有云解决方案",
+        "evidence_span": "产品与服务包括 H＆i Server 高可靠性服务器、超融合工业企业数据中心及 IndusCloud 工业私有云解决方案等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源混合动力系统",
+        "evidence_span": "主要产品包括新能源混合动力系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电风机变流器产品",
+        "evidence_span": "产品包括可覆盖行业所需的系列全功率、双馈风电风机变流器产品及系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电风机存量市场的运维、改造及备件服务",
+        "evidence_span": "风电风机存量市场的运维、改造及备件服务业务近年来持续增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能 PCS、BMS 系统产品",
+        "evidence_span": "探索和发展储能 PCS、BMS 系统产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业自动化控制技术",
+        "evidence_span": "开展以工业自动化控制技术、工业信息化技术及其融合技术为主要特征的软硬件产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业信息化技术",
+        "evidence_span": "开展以工业自动化控制技术、工业信息化技术及其融合技术为主要特征的软硬件产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化与信息化融合技术",
+        "evidence_span": "开展以工业自动化控制技术、工业信息化技术及其融合技术为主要特征的软硬件产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大功率电力电子技术",
+        "evidence_span": "基于十几年来大功率电力电子技术的积累和成熟的开发试验平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化控制、电力电子、储能等技术相融合",
+        "evidence_span": "通过提供自动化控制、电力电子、储能等技术相融合的产品与解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "机械设备制造行业 OEM 用户",
+        "evidence_span": "为机械设备制造行业 OEM 用户和电力、交通、市政等项目市场的电气成套商与系统集成商等用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电力、交通、市政等项目市场的电气成套商与系统集成商",
+        "evidence_span": "为机械设备制造行业 OEM 用户和电力、交通、市政等项目市场的电气成套商与系统集成商等用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交通、电力、港口、化工、冶金、矿产、制药、市政管廊等行业用户",
+        "evidence_span": "主要为交通、电力、港口、化工、冶金、矿产、制药、市政管廊等行业用户提供安全可靠的自动化、信息化产品服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "风电行业整机装备制造头部企业",
+        "evidence_span": "已成为风电行业整机装备制造头部企业的主流设备供应商之一"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能制造",
+        "evidence_span": "聚焦智能制造"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "工业互联网",
+        "evidence_span": "具有行业特征的工业互联网系统解决方案"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源",
+        "evidence_span": "新能源业务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:19:38"
+}

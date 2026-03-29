@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:39:50", "result": {"span_uid": "b71fe2559cef", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述赛博越野旅行车的技术特点，与特斯拉FSD题材直接相关性较弱，且属于具体车型的事件性描述，无法形成独立稳定的题材知识块。"}}

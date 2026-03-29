@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:02:48", "result": {"span_uid": "fb68e4a51de3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为具体事件性信息（商标申请策略和数量），属于阶段性动态，无法形成稳定、可独立理解的知识块，且与题材核心知识关联较弱。"}}

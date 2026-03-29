@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:31:43", "result": {"chunk_id": "684ea313ea13", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述以色列总理的声明和行动，是具体事件动态，没有提供导弹本身的静态知识。"}}

@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "现代中药",
+      "evidence_span": "形成了现代中药、化药以及生物药三大板块协同发展的产业布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化药",
+      "evidence_span": "形成了现代中药、化药以及生物药三大板块协同发展的产业布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生物药",
+      "evidence_span": "形成了现代中药、化药以及生物药三大板块协同发展的产业布局"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中药现代化领军企业",
+      "evidence_span": "是现代中药国际化领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中药创新药的龙头企业",
+      "evidence_span": "已成为中药创新药的龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复方丹参滴丸",
+      "evidence_span": "研制出了其成名产品也是当今的重点产品“复方丹参滴丸”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒂清（替莫唑胺胶囊）",
+      "evidence_span": "新药物蒂清（替莫唑胺胶囊）获得新药证书和生产批件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普佑克",
+      "evidence_span": "国家一类生物溶栓新药“普佑克”上市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "养血清脑丸/颗粒",
+      "evidence_span": "养血清脑丸/颗粒：养血平肝，活血通络"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芪参益气滴丸",
+      "evidence_span": "芪参益气滴丸：益气通脉、活血止痛"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水飞蓟宾胶囊（水林佳）",
+      "evidence_span": "公司化学药以肝病药物水飞蓟宾胶囊（水林佳）和肿瘤免疫类药物群为核心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "他达拉非",
+      "evidence_span": "而他达拉非等新兴品种的上市和高速增长也为公司的化药板块注入了活力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "四位一体研发模式",
+      "evidence_span": "公司打造了自主研发、产品引进、合作研发、投资市场许可优先权的“四位一体”研发模式"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国Arbor公司",
+      "evidence_span": "天士力与美国Arbor公司共同进行复方丹参滴丸的临床开发研究和药政申报工作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "中药现代化",
+      "evidence_span": "明确成分、稳定生产、循证研究,中药现代化标准的制定者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "中药创新",
+      "evidence_span": "中药创新药的利好政策频出，国家愈发支持中药创新发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "现代中药",
+        "evidence_span": "形成了现代中药、化药以及生物药三大板块协同发展的产业布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化药",
+        "evidence_span": "形成了现代中药、化药以及生物药三大板块协同发展的产业布局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "生物药",
+        "evidence_span": "形成了现代中药、化药以及生物药三大板块协同发展的产业布局"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中药现代化领军企业",
+        "evidence_span": "是现代中药国际化领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中药创新药的龙头企业",
+        "evidence_span": "已成为中药创新药的龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复方丹参滴丸",
+        "evidence_span": "研制出了其成名产品也是当今的重点产品“复方丹参滴丸”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒂清（替莫唑胺胶囊）",
+        "evidence_span": "新药物蒂清（替莫唑胺胶囊）获得新药证书和生产批件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普佑克",
+        "evidence_span": "国家一类生物溶栓新药“普佑克”上市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "养血清脑丸/颗粒",
+        "evidence_span": "养血清脑丸/颗粒：养血平肝，活血通络"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芪参益气滴丸",
+        "evidence_span": "芪参益气滴丸：益气通脉、活血止痛"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水飞蓟宾胶囊（水林佳）",
+        "evidence_span": "公司化学药以肝病药物水飞蓟宾胶囊（水林佳）和肿瘤免疫类药物群为核心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "他达拉非",
+        "evidence_span": "而他达拉非等新兴品种的上市和高速增长也为公司的化药板块注入了活力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "四位一体研发模式",
+        "evidence_span": "公司打造了自主研发、产品引进、合作研发、投资市场许可优先权的“四位一体”研发模式"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国Arbor公司",
+        "evidence_span": "天士力与美国Arbor公司共同进行复方丹参滴丸的临床开发研究和药政申报工作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "中药现代化",
+        "evidence_span": "明确成分、稳定生产、循证研究,中药现代化标准的制定者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "中药创新",
+        "evidence_span": "中药创新药的利好政策频出，国家愈发支持中药创新发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:29:01"
+}

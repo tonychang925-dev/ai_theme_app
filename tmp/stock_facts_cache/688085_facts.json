@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "骨科脊柱植入产品",
+      "evidence_span": "公司是骨科脊柱植入产品领域的龙头企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "创伤领域",
+      "evidence_span": "逐步拓展到创伤领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超声骨刀",
+      "evidence_span": "不断布局超声骨刀"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超声止血刀",
+      "evidence_span": "不断布局超声骨刀、超声止血刀"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运动医学",
+      "evidence_span": "不断布局超声骨刀、超声止血刀、运动医学等新领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "骨科脊柱植入产品领域的龙头企业",
+      "evidence_span": "公司是骨科脊柱植入产品领域的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "骨科创新践行者",
+      "evidence_span": "骨科创新践行者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产脊柱新锐",
+      "evidence_span": "三友医疗医工合作驱动的国产脊柱新锐"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Zina系统",
+      "evidence_span": "Zina系统开创性地使用高分子可透光材料及全新植入物工具技术"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三代双头螺钉",
+      "evidence_span": "第三代双头螺钉最新设计基于第一代及第二代有以下革新"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超声骨刀",
+      "evidence_span": "超声骨刀正在初步替代传统截骨工具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超声止血刀",
+      "evidence_span": "不断布局超声骨刀、超声止血刀"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运动医学产品",
+      "evidence_span": "不断布局超声骨刀、超声止血刀、运动医学等新领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高分子可透光材料",
+      "evidence_span": "Zina系统开创性地使用高分子可透光材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全新植入物工具技术",
+      "evidence_span": "Zina系统开创性地使用高分子可透光材料及全新植入物工具技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双钉槽多平面调节",
+      "evidence_span": "可实现双钉槽见多平面调节"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自断长尾钉座",
+      "evidence_span": "可选自断长尾钉座"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "渐进式压棒复位矫形",
+      "evidence_span": "可通过渐进式压棒进行复位矫形"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "集采中标加速国内渗透",
+      "evidence_span": "三友医疗集采中标加速国内渗透"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "FDA获批打开出海通道",
+      "evidence_span": "FDA获批打开出海通道"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "骨科脊柱植入产品",
+        "evidence_span": "公司是骨科脊柱植入产品领域的龙头企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "创伤领域",
+        "evidence_span": "逐步拓展到创伤领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "超声骨刀",
+        "evidence_span": "不断布局超声骨刀"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "超声止血刀",
+        "evidence_span": "不断布局超声骨刀、超声止血刀"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "运动医学",
+        "evidence_span": "不断布局超声骨刀、超声止血刀、运动医学等新领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "骨科脊柱植入产品领域的龙头企业",
+        "evidence_span": "公司是骨科脊柱植入产品领域的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "骨科创新践行者",
+        "evidence_span": "骨科创新践行者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产脊柱新锐",
+        "evidence_span": "三友医疗医工合作驱动的国产脊柱新锐"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Zina系统",
+        "evidence_span": "Zina系统开创性地使用高分子可透光材料及全新植入物工具技术"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三代双头螺钉",
+        "evidence_span": "第三代双头螺钉最新设计基于第一代及第二代有以下革新"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超声骨刀",
+        "evidence_span": "超声骨刀正在初步替代传统截骨工具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超声止血刀",
+        "evidence_span": "不断布局超声骨刀、超声止血刀"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运动医学产品",
+        "evidence_span": "不断布局超声骨刀、超声止血刀、运动医学等新领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高分子可透光材料",
+        "evidence_span": "Zina系统开创性地使用高分子可透光材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全新植入物工具技术",
+        "evidence_span": "Zina系统开创性地使用高分子可透光材料及全新植入物工具技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双钉槽多平面调节",
+        "evidence_span": "可实现双钉槽见多平面调节"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自断长尾钉座",
+        "evidence_span": "可选自断长尾钉座"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "渐进式压棒复位矫形",
+        "evidence_span": "可通过渐进式压棒进行复位矫形"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "集采中标加速国内渗透",
+        "evidence_span": "三友医疗集采中标加速国内渗透"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "FDA获批打开出海通道",
+        "evidence_span": "FDA获批打开出海通道"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:55:23"
+}

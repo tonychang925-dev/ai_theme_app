@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "39413fbbd077", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落包含应用材料的财报发布和中微公司的法律诉讼，两者都是具体事件（业绩公告和起诉），无静态知识内容。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:43:21", "result": {"chunk_id": "83208aa953bf", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述上市后的潜在影响和公司计划，如'若成功上市'、'计划通过募资'，侧重于未来事件和展望，而非静态知识。"}}

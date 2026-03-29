@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "624eae22dfca", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述机构对国产大飞机市场前景的预测，包括批量生产阶段、市场价值和增速，混有事件信息（如进入黄金期）和潜在知识（如市场分析），需要进一步裁决。"}}

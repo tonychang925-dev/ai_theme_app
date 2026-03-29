@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "1661ccfc38a8", "label": "candidate_mixed", "confidence": 0.6, "ontology_value": "medium", "reason": "该段落提到了低空经济发展的关键方面（规模化、网络化、智能化、规范化），这些是静态知识，但以人民日报报道的事件形式呈现，因此属于候选混合状态。"}}

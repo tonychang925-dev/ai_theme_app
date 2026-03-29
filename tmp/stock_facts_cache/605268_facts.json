@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全门",
+      "evidence_span": "公司专注于安全门和安全锁的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全锁",
+      "evidence_span": "公司专注于安全门和安全锁的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能家居全生态闭环",
+      "evidence_span": "逐步打造智能家居全生态闭环"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "安防门、锁领跑者",
+      "evidence_span": "国内安防门、锁领跑者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "安全门、锁行业首家上市企业",
+      "evidence_span": "国内安防门、锁首家上市企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "门、锁国家标准和公安部标准制定单位",
+      "evidence_span": "2003年成为门、锁国家标准和公安部标准制定单位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢质安全门",
+      "evidence_span": "钢质安全门是公司营收占比最大的产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他门",
+      "evidence_span": "其他门包含木门和其他金属材质门"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "木门",
+      "evidence_span": "其他门中的木门是未来发展的重点"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能锁",
+      "evidence_span": "安全锁主要包括智能锁和机械锁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机械锁",
+      "evidence_span": "安全锁主要包括智能锁和机械锁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能门窗锁",
+      "evidence_span": "当前公司也在向智能门窗锁、全屋定制、智能集成等方向延伸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全屋定制",
+      "evidence_span": "当前公司也在向智能门窗锁、全屋定制、智能集成等方向延伸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能集成",
+      "evidence_span": "当前公司也在向智能门窗锁、全屋定制、智能集成等方向延伸"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多向自动锁",
+      "evidence_span": "1998年成功研制“多向自动锁”获国家发明专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能制造",
+      "evidence_span": "智能制造行业领先"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "未来工厂",
+      "evidence_span": "长恬基地2021年获评永康市首家“未来工厂”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "定制生产规模化",
+      "evidence_span": "智能制造驱动“定制生产规模化”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚萨合莱",
+      "evidence_span": "王力集团与亚萨合莱（全球智能门锁和安防龙头）设立合资公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型房地产公司",
+      "evidence_span": "成为知名房地产商的供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "公司与华为、阿里巴巴、富士康、英特尔、海康威视等世界知名企业强强联合"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里巴巴",
+      "evidence_span": "公司与华为、阿里巴巴、富士康、英特尔、海康威视等世界知名企业强强联合"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富士康",
+      "evidence_span": "公司与华为、阿里巴巴、富士康、英特尔、海康威视等世界知名企业强强联合"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英特尔",
+      "evidence_span": "公司与华为、阿里巴巴、富士康、英特尔、海康威视等世界知名企业强强联合"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海康威视",
+      "evidence_span": "公司与华为、阿里巴巴、富士康、英特尔、海康威视等世界知名企业强强联合"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能家居",
+      "evidence_span": "逐步打造智能家居全生态闭环"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "安全门",
+        "evidence_span": "公司专注于安全门和安全锁的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "安全锁",
+        "evidence_span": "公司专注于安全门和安全锁的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能家居全生态闭环",
+        "evidence_span": "逐步打造智能家居全生态闭环"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "安防门、锁领跑者",
+        "evidence_span": "国内安防门、锁领跑者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "安全门、锁行业首家上市企业",
+        "evidence_span": "国内安防门、锁首家上市企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "门、锁国家标准和公安部标准制定单位",
+        "evidence_span": "2003年成为门、锁国家标准和公安部标准制定单位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢质安全门",
+        "evidence_span": "钢质安全门是公司营收占比最大的产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他门",
+        "evidence_span": "其他门包含木门和其他金属材质门"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "木门",
+        "evidence_span": "其他门中的木门是未来发展的重点"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能锁",
+        "evidence_span": "安全锁主要包括智能锁和机械锁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机械锁",
+        "evidence_span": "安全锁主要包括智能锁和机械锁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能门窗锁",
+        "evidence_span": "当前公司也在向智能门窗锁、全屋定制、智能集成等方向延伸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全屋定制",
+        "evidence_span": "当前公司也在向智能门窗锁、全屋定制、智能集成等方向延伸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能集成",
+        "evidence_span": "当前公司也在向智能门窗锁、全屋定制、智能集成等方向延伸"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多向自动锁",
+        "evidence_span": "1998年成功研制“多向自动锁”获国家发明专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能制造",
+        "evidence_span": "智能制造行业领先"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "未来工厂",
+        "evidence_span": "长恬基地2021年获评永康市首家“未来工厂”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "定制生产规模化",
+        "evidence_span": "智能制造驱动“定制生产规模化”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚萨合莱",
+        "evidence_span": "王力集团与亚萨合莱（全球智能门锁和安防龙头）设立合资公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型房地产公司",
+        "evidence_span": "成为知名房地产商的供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "公司与华为、阿里巴巴、富士康、英特尔、海康威视等世界知名企业强强联合"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里巴巴",
+        "evidence_span": "公司与华为、阿里巴巴、富士康、英特尔、海康威视等世界知名企业强强联合"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富士康",
+        "evidence_span": "公司与华为、阿里巴巴、富士康、英特尔、海康威视等世界知名企业强强联合"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英特尔",
+        "evidence_span": "公司与华为、阿里巴巴、富士康、英特尔、海康威视等世界知名企业强强联合"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海康威视",
+        "evidence_span": "公司与华为、阿里巴巴、富士康、英特尔、海康威视等世界知名企业强强联合"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能家居",
+        "evidence_span": "逐步打造智能家居全生态闭环"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:16:42"
+}

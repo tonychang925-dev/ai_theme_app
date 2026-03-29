@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "57957389119d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "内容为业内消息透露的美国出口管控措施及台积电的应对行动，属于具体的事件进展报道，信息具有时效性和动态性。"}}

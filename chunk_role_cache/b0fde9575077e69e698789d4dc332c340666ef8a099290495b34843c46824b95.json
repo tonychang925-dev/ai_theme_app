@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "043f235881d0", "label": "strict_knowledge", "confidence": 0.96, "ontology_value": "high", "reason": "该段落分类了光刻胶的类型（基于曝光波长）并解释了波长与分辨率的关系，是静态的结构和机制说明，不包含事件信息。"}}

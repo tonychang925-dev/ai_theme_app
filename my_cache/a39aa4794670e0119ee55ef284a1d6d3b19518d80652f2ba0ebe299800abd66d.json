@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:58:46", "result": {"chunk_id": "bf11bf827605", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述工信部公布企业名单的具体事件，属于政策执行动态，没有提供关于两轮车题材的静态定义或核心构成知识。"}}

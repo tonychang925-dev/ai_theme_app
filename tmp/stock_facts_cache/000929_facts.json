@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "啤酒",
+      "evidence_span": "主要业务是啤酒"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "麦芽",
+      "evidence_span": "主要业务是啤酒、麦芽及饮料的研发、生产、加工与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "饮料",
+      "evidence_span": "主要业务是啤酒、麦芽及饮料的研发、生产、加工与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "地域性品牌啤酒生产企业",
+      "evidence_span": "公司是一家地域性品牌啤酒生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄河纯生",
+      "evidence_span": "“黄河”品牌产品主要包括 10 度黄河纯生"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄河王",
+      "evidence_span": "“黄河”品牌产品主要包括 10 度黄河纯生、黄河王"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "劲浪",
+      "evidence_span": "“黄河”品牌产品主要包括 10 度黄河纯生、黄河王、劲浪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄河印象",
+      "evidence_span": "“黄河”品牌产品主要包括 10 度黄河纯生、黄河王、劲浪、黄河印象"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄河大浪",
+      "evidence_span": "“黄河”品牌产品主要包括 10 度黄河纯生、黄河王、劲浪、黄河印象、黄河大浪等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "青海湖青稞白啤",
+      "evidence_span": "“青海湖”品牌产品主要包括青海湖青稞白啤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "青海湖精酿青稞",
+      "evidence_span": "“青海湖”品牌产品主要包括青海湖青稞白啤、青海湖精酿青稞"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "青海湖高原青稞",
+      "evidence_span": "“青海湖”品牌产品主要包括青海湖青稞白啤、青海湖精酿青稞、青海湖高原青稞等系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄河丝路原浆",
+      "evidence_span": "新品主要有黄河丝路原浆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄河鲜啤",
+      "evidence_span": "新品主要有黄河丝路原浆、黄河鲜啤等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄河麦芽",
+      "evidence_span": "主要生产“黄河”、“青海湖”啤酒和“黄河”麦芽等系列产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新品研发能力",
+      "evidence_span": "较强的新品研发能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "甘肃市场",
+      "evidence_span": "公司啤酒产品主要在甘肃和青海两省市场销售"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "青海市场",
+      "evidence_span": "公司啤酒产品主要在甘肃和青海两省市场销售"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "啤酒",
+        "evidence_span": "主要业务是啤酒"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "麦芽",
+        "evidence_span": "主要业务是啤酒、麦芽及饮料的研发、生产、加工与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "饮料",
+        "evidence_span": "主要业务是啤酒、麦芽及饮料的研发、生产、加工与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "地域性品牌啤酒生产企业",
+        "evidence_span": "公司是一家地域性品牌啤酒生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄河纯生",
+        "evidence_span": "“黄河”品牌产品主要包括 10 度黄河纯生"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄河王",
+        "evidence_span": "“黄河”品牌产品主要包括 10 度黄河纯生、黄河王"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "劲浪",
+        "evidence_span": "“黄河”品牌产品主要包括 10 度黄河纯生、黄河王、劲浪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄河印象",
+        "evidence_span": "“黄河”品牌产品主要包括 10 度黄河纯生、黄河王、劲浪、黄河印象"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄河大浪",
+        "evidence_span": "“黄河”品牌产品主要包括 10 度黄河纯生、黄河王、劲浪、黄河印象、黄河大浪等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "青海湖青稞白啤",
+        "evidence_span": "“青海湖”品牌产品主要包括青海湖青稞白啤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "青海湖精酿青稞",
+        "evidence_span": "“青海湖”品牌产品主要包括青海湖青稞白啤、青海湖精酿青稞"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "青海湖高原青稞",
+        "evidence_span": "“青海湖”品牌产品主要包括青海湖青稞白啤、青海湖精酿青稞、青海湖高原青稞等系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄河丝路原浆",
+        "evidence_span": "新品主要有黄河丝路原浆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄河鲜啤",
+        "evidence_span": "新品主要有黄河丝路原浆、黄河鲜啤等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄河麦芽",
+        "evidence_span": "主要生产“黄河”、“青海湖”啤酒和“黄河”麦芽等系列产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新品研发能力",
+        "evidence_span": "较强的新品研发能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "甘肃市场",
+        "evidence_span": "公司啤酒产品主要在甘肃和青海两省市场销售"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "青海市场",
+        "evidence_span": "公司啤酒产品主要在甘肃和青海两省市场销售"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:49:09"
+}

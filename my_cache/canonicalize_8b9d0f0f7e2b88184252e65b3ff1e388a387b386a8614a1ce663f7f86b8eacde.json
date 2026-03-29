@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:03:04", "result": {"span_uid": "f7078b25875b", "action": "rewrite", "canonical_text": "ICT基础设施业务是华为的核心业务之一，涵盖运营商业务、企业业务和ICT基础设施产业。", "final_type": "core", "final_role": "核心业务构成", "stability": "high", "reason": "该片段定义了华为的核心业务构成，属于题材本体知识。已进行去新闻口吻改写，去除主观评价（如“王牌”），保留核心事实。"}}

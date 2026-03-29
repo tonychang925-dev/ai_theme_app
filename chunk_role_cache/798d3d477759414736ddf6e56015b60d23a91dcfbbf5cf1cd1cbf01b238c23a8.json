@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "371731de04d9", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述了商务部对荷兰扩大光刻机管制范围一事的回应和表态，属于具体的外交或政策事件动态，不包含可沉淀的稳定知识。"}}

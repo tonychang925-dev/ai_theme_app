@@ -1,0 +1,174 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资",
+      "evidence_span": "公司从事的主要业务包括投资与管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "管理",
+      "evidence_span": "公司从事的主要业务包括投资与管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子设备制造",
+      "evidence_span": "公司从事的主要业务包括电子设备制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子器件制造",
+      "evidence_span": "公司从事的主要业务包括电子器件制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水质净化",
+      "evidence_span": "公司从事的主要业务包括水质净化"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗器械业",
+      "evidence_span": "公司从事的主要业务包括医疗器械业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "私募股权投资基金管理人",
+      "evidence_span": "6家子公司取得私募股权投资基金管理人牌照"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "非标自动化生产设备制造高新技术企业",
+      "evidence_span": "是非标自动化生产设备制造高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "省级锂离子动力电池专用工艺装备工程技术研究中心",
+      "evidence_span": "省级锂离子动力电池专用工艺装备工程技术研究中心"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "省级铝电解电容器工程技术研究中心",
+      "evidence_span": "省级铝电解电容器工程技术研究中心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源自动化生产设备",
+      "evidence_span": "华冠科技主要从事新能源自动化生产设备及其配套软件的研发、生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝电解电容器",
+      "evidence_span": "华冠电容器主要从事铝电解电容器生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污水处理业务",
+      "evidence_span": "力合环保主要以BOT、TOT方式从事污水处理业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锂电池组装线技术研究开发",
+      "evidence_span": "锂电池组装线技术研究开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锂电池大圆柱卷绕机关键技术研究开发",
+      "evidence_span": "锂电池大圆柱卷绕机关键技术研究开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速卷绕机产品开发",
+      "evidence_span": "高速卷绕机产品开发"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "粤港澳大湾区建设",
+      "evidence_span": "公司可充分受益于粤港澳大湾区建设带来的产业集聚效应"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资与管理",
+        "evidence_span": "公司从事的主要业务包括投资与管理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子设备制造",
+        "evidence_span": "公司从事的主要业务包括电子设备制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子器件制造",
+        "evidence_span": "公司从事的主要业务包括电子器件制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水质净化",
+        "evidence_span": "公司从事的主要业务包括水质净化"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗器械业",
+        "evidence_span": "公司从事的主要业务包括医疗器械业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "私募股权投资基金管理人",
+        "evidence_span": "6家子公司取得私募股权投资基金管理人牌照"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "非标自动化生产设备制造高新技术企业",
+        "evidence_span": "是非标自动化生产设备制造高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "省级锂离子动力电池专用工艺装备工程技术研究中心",
+        "evidence_span": "省级锂离子动力电池专用工艺装备工程技术研究中心"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "省级铝电解电容器工程技术研究中心",
+        "evidence_span": "省级铝电解电容器工程技术研究中心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源自动化生产设备",
+        "evidence_span": "华冠科技主要从事新能源自动化生产设备及其配套软件的研发、生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝电解电容器",
+        "evidence_span": "华冠电容器主要从事铝电解电容器生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污水处理业务",
+        "evidence_span": "力合环保主要以BOT、TOT方式从事污水处理业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锂电池组装线技术研究开发",
+        "evidence_span": "锂电池组装线技术研究开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锂电池大圆柱卷绕机关键技术研究开发",
+        "evidence_span": "锂电池大圆柱卷绕机关键技术研究开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速卷绕机产品开发",
+        "evidence_span": "高速卷绕机产品开发"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "粤港澳大湾区建设",
+        "evidence_span": "公司可充分受益于粤港澳大湾区建设带来的产业集聚效应"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:00:34"
+}

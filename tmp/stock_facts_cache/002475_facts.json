@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "消费电子",
+      "evidence_span": "产品主要涵盖消费电子、汽车、通信、工业及医疗等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车",
+      "evidence_span": "产品主要涵盖消费电子、汽车、通信、工业及医疗等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "通信",
+      "evidence_span": "产品主要涵盖消费电子、汽车、通信、工业及医疗等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业",
+      "evidence_span": "产品主要涵盖消费电子、汽车、通信、工业及医疗等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗",
+      "evidence_span": "产品主要涵盖消费电子、汽车、通信、工业及医疗等领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精密制造平台",
+      "evidence_span": "5G+AI时代的精密制造平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "消费电子龙头",
+      "evidence_span": "立讯精密无边界扩张的消费电子龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核心零部件",
+      "evidence_span": "从核心零部件、模组到系统组装的一体化智造解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模组",
+      "evidence_span": "从核心零部件、模组到系统组装的一体化智造解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "系统组装",
+      "evidence_span": "从核心零部件、模组到系统组装的一体化智造解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电连接",
+      "evidence_span": "主要业务为电连接、光模块、电源和热管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光模块",
+      "evidence_span": "主要业务为电连接、光模块、电源和热管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电源",
+      "evidence_span": "主要业务为电连接、光模块、电源和热管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热管理",
+      "evidence_span": "主要业务为电连接、光模块、电源和热管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据中心电线",
+      "evidence_span": "数据中心电线(主要为 MPO 光通信)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI服务器",
+      "evidence_span": "AI服务器业务营收分别为 9.4 亿港元和 25.6 亿港元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压线束",
+      "evidence_span": "在高压、高速线束方面持续发力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速线束",
+      "evidence_span": "在高压、高速线束方面持续发力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压连接器",
+      "evidence_span": "汽车连接器方面，高压产品稳定供货"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低压连接器",
+      "evidence_span": "低压、高速产品在主流车厂项目中也取得突破"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速连接器",
+      "evidence_span": "低压、高速产品在主流车厂项目中也取得突破"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能驾舱",
+      "evidence_span": "智能驾舱和智能辅助驾驶领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能辅助驾驶",
+      "evidence_span": "智能驾舱和智能辅助驾驶领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能底盘",
+      "evidence_span": "2024年新布局的智能底盘产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力系统",
+      "evidence_span": "动力系统已实现批量稳定供货"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一体化智造解决方案",
+      "evidence_span": "从核心零部件、模组到系统组装的一体化智造解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苹果",
+      "evidence_span": "苹果业务稳健成长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "主流车厂",
+      "evidence_span": "低压、高速产品在主流车厂项目中也取得突破"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "头部客户",
+      "evidence_span": "自主研发的产品也获得了头部客户定点"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "AI算力驱动",
+      "evidence_span": "通讯业务受益 AI 算力驱动获得高速成长"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "消费电子",
+        "evidence_span": "产品主要涵盖消费电子、汽车、通信、工业及医疗等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车",
+        "evidence_span": "产品主要涵盖消费电子、汽车、通信、工业及医疗等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "通信",
+        "evidence_span": "产品主要涵盖消费电子、汽车、通信、工业及医疗等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业",
+        "evidence_span": "产品主要涵盖消费电子、汽车、通信、工业及医疗等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗",
+        "evidence_span": "产品主要涵盖消费电子、汽车、通信、工业及医疗等领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精密制造平台",
+        "evidence_span": "5G+AI时代的精密制造平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "消费电子龙头",
+        "evidence_span": "立讯精密无边界扩张的消费电子龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核心零部件",
+        "evidence_span": "从核心零部件、模组到系统组装的一体化智造解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模组",
+        "evidence_span": "从核心零部件、模组到系统组装的一体化智造解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "系统组装",
+        "evidence_span": "从核心零部件、模组到系统组装的一体化智造解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电连接",
+        "evidence_span": "主要业务为电连接、光模块、电源和热管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光模块",
+        "evidence_span": "主要业务为电连接、光模块、电源和热管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电源",
+        "evidence_span": "主要业务为电连接、光模块、电源和热管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热管理",
+        "evidence_span": "主要业务为电连接、光模块、电源和热管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据中心电线",
+        "evidence_span": "数据中心电线(主要为 MPO 光通信)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI服务器",
+        "evidence_span": "AI服务器业务营收分别为 9.4 亿港元和 25.6 亿港元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压线束",
+        "evidence_span": "在高压、高速线束方面持续发力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速线束",
+        "evidence_span": "在高压、高速线束方面持续发力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压连接器",
+        "evidence_span": "汽车连接器方面，高压产品稳定供货"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低压连接器",
+        "evidence_span": "低压、高速产品在主流车厂项目中也取得突破"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速连接器",
+        "evidence_span": "低压、高速产品在主流车厂项目中也取得突破"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能驾舱",
+        "evidence_span": "智能驾舱和智能辅助驾驶领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能辅助驾驶",
+        "evidence_span": "智能驾舱和智能辅助驾驶领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能底盘",
+        "evidence_span": "2024年新布局的智能底盘产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力系统",
+        "evidence_span": "动力系统已实现批量稳定供货"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一体化智造解决方案",
+        "evidence_span": "从核心零部件、模组到系统组装的一体化智造解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苹果",
+        "evidence_span": "苹果业务稳健成长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "主流车厂",
+        "evidence_span": "低压、高速产品在主流车厂项目中也取得突破"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "头部客户",
+        "evidence_span": "自主研发的产品也获得了头部客户定点"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "AI算力驱动",
+        "evidence_span": "通讯业务受益 AI 算力驱动获得高速成长"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:11:19"
+}

@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业零售",
+      "evidence_span": "“商业零售+仓储物流”双轮驱动"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "仓储物流",
+      "evidence_span": "“商业零售+仓储物流”双轮驱动"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "福建商业龙头企业",
+      "evidence_span": "福建商业龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "基础设施提供商和运营商",
+      "evidence_span": "专注于现代生活消费和物流领域的基础设施提供商和运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超级百货",
+      "evidence_span": "业态主要包括超级百货、购物中心、线上云商城等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "购物中心",
+      "evidence_span": "业态主要包括超级百货、购物中心、线上云商城等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线上云商城",
+      "evidence_span": "业态主要包括超级百货、购物中心、线上云商城等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "现代高端仓储物流设施",
+      "evidence_span": "打造现代高端仓储物流设施"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "供应链体系解决方案",
+      "evidence_span": "为客户提供标准化、定制化的供应链体系解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东",
+      "evidence_span": "公司拥有京东、顺丰、SHEIN（希音）、国药等20多家优质大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "顺丰",
+      "evidence_span": "公司拥有京东、顺丰、SHEIN（希音）、国药等20多家优质大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "SHEIN（希音）",
+      "evidence_span": "公司拥有京东、顺丰、SHEIN（希音）、国药等20多家优质大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国药",
+      "evidence_span": "公司拥有京东、顺丰、SHEIN（希音）、国药等20多家优质大客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国黑石集团",
+      "evidence_span": "公司与美国黑石集团达成战略合作"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业零售",
+        "evidence_span": "“商业零售+仓储物流”双轮驱动"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "仓储物流",
+        "evidence_span": "“商业零售+仓储物流”双轮驱动"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "福建商业龙头企业",
+        "evidence_span": "福建商业龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "基础设施提供商和运营商",
+        "evidence_span": "专注于现代生活消费和物流领域的基础设施提供商和运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超级百货",
+        "evidence_span": "业态主要包括超级百货、购物中心、线上云商城等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "购物中心",
+        "evidence_span": "业态主要包括超级百货、购物中心、线上云商城等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线上云商城",
+        "evidence_span": "业态主要包括超级百货、购物中心、线上云商城等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "现代高端仓储物流设施",
+        "evidence_span": "打造现代高端仓储物流设施"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "供应链体系解决方案",
+        "evidence_span": "为客户提供标准化、定制化的供应链体系解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东",
+        "evidence_span": "公司拥有京东、顺丰、SHEIN（希音）、国药等20多家优质大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "顺丰",
+        "evidence_span": "公司拥有京东、顺丰、SHEIN（希音）、国药等20多家优质大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "SHEIN（希音）",
+        "evidence_span": "公司拥有京东、顺丰、SHEIN（希音）、国药等20多家优质大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国药",
+        "evidence_span": "公司拥有京东、顺丰、SHEIN（希音）、国药等20多家优质大客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国黑石集团",
+        "evidence_span": "公司与美国黑石集团达成战略合作"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:01:46"
+}

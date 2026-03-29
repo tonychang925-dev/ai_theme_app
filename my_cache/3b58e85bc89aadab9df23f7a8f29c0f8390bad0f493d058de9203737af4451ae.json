@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "10527e46a35d", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落系统介绍了军工产业链的定义、核心构成（上中下游）、关键领域（航天、航空、船舶等）和机制（如军民融合），是纯静态说明，无事件或时间性内容，直接用于题材本体构建。"}}

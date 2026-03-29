@@ -1,0 +1,254 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "研发",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，核心环节是产业链的关键组成部分。'研发'是军工产业链的核心环节之一，直接指向产业的技术创新和产品开发，能稳定识别军工产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "生产",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，核心环节是产业链的关键组成部分。'生产'是军工产业链的核心环节之一，直接指向装备制造和系统集成，能稳定识别军工产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "特种金属材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，优先识别材料对象。'特种金属材料'是军工上游关键材料，直接支撑装备制造，能稳定指向军工产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "复合材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，优先识别材料对象。'复合材料'是军工上游关键材料，用于提升装备性能，能稳定指向军工产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "电子元器件",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，优先识别零部件对象。'电子元器件'是军工上游关键零部件，支撑电子系统和装备，能稳定指向军工产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "军用飞机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，优先识别装备对象。'军用飞机'是中游核心装备，直接体现军工产业对象，能稳定识别军工领域，适合作为must锚点。"
+      },
+      {
+        "term": "舰船",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，优先识别装备对象。'舰船'是中游核心装备，直接体现军工产业对象，能稳定识别军工领域，适合作为must锚点。"
+      },
+      {
+        "term": "坦克",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，优先识别装备对象。'坦克'是中游核心装备，直接体现军工产业对象，能稳定识别军工领域，适合作为must锚点。"
+      },
+      {
+        "term": "导弹",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，优先识别装备对象。'导弹'是中游核心装备，直接体现军工产业对象，能稳定识别军工领域，适合作为must锚点。"
+      },
+      {
+        "term": "雷达",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，优先识别系统对象。'雷达'是中游关键系统，用于军事探测和指挥，能稳定指向军工产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "歼-35A",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "歼-35A是军用飞机的一种具体型号，直接属于军工产业链中游装备与系统的核心对象，符合题材名称'军工'的核心语义，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "海基载核巡航导弹(SLCM-N)系统",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该系统是导弹装备的具体实例，属于军工产业链中游装备与系统的核心对象，直接贴合题材名称'军工'的核心含义，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "航母舰载机舰基保障体系",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该体系涉及舰船和军用飞机的保障环节，属于军工产业链中游装备与系统的关键组成部分，符合题材名称'军工'的核心语义，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "军队",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "军队是军工产业链下游的核心用户，直接对应题材名称'军工'的核心含义（国防和军事应用），能稳定指向关键主体和最终环节，适合作为must锚点。"
+      },
+      {
+        "term": "航天",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "航天是军工产业链涵盖的核心领域之一，直接属于题材名称'军工'的范畴，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "航空",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "航空是军工产业链涵盖的核心领域之一，直接对应题材名称'军工'的核心含义，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "船舶",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "船舶是军工产业链涵盖的核心领域之一，直接属于题材名称'军工'的范畴，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "兵器",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "兵器是军工产业链涵盖的核心领域之一，直接贴合题材名称'军工'的核心语义，能稳定指向产业对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "军民融合",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，需优先识别稳定指向产业对象、关键环节的术语。'军民融合'是军工产业链的核心领域之一，直接体现军工产业与民用产业的互动和整合，是产业对象的关键环节，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "江西省军工控股集团",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，需优先识别稳定指向产业对象、关键主体的术语。'江西省军工控股集团'是军工产业链中的关键投资平台和主体，直接代表军工产业实体，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "弗吉尼亚级攻击潜艇",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，需优先识别稳定指向装备、产品、技术对象的术语。'弗吉尼亚级攻击潜艇'是军工产业链中的核心军事装备，直接代表军工产品，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "海军",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，需优先识别稳定指向产业对象、关键环节的术语。'海军'是军工产业链的核心用户和涵盖领域，直接代表军事分支，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "空军",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，需优先识别稳定指向产业对象、关键环节的术语。'空军'是军工产业链的核心用户和涵盖领域，直接代表军事分支，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "陆军",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，需优先识别稳定指向产业对象、关键环节的术语。'陆军'是军工产业链的核心用户和涵盖领域，直接代表军事分支，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "火箭军",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'军工'，策略类型为industry_chain，需优先识别稳定指向产业对象、关键环节的术语。'火箭军'是军工产业链的核心用户和涵盖领域，直接代表军事分支，符合题材名称的核心语义，适合作为must锚点。"
+      },
+      {
+        "term": "军工材料",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "该术语直接对应题材名称'军工'的核心产业对象，属于军工产业链上游的关键材料环节，能稳定指向军工产业的技术对象和材料对象，符合industry_chain策略类型下优先识别产业对象/技术对象/关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "直-10ME攻击直升机",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "该术语属于军用装备，直接对应题材名称'军工'的核心产业对象，是军工产业链中游装备与系统的具体产品，能稳定指向军工产业的关键环节和产品，符合industry_chain策略类型下优先识别产业对象/技术对象/关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "装甲车",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.8,
+        "reason": "该术语属于军用装备，直接对应题材名称'军工'的核心产业对象，是军工产业链中游装备与系统的典型产品，能稳定指向军工产业的关键环节和产品，符合industry_chain策略类型下优先识别产业对象/技术对象/关键环节的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "销售",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'军工'，策略类型为industry_chain。'销售'是产业链环节，但与军工的核心定义（国家安全、国防建设）不够直接一致，军工产品通常由政府或军队采购，商业销售特征较弱，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "服务",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'军工'，策略类型为industry_chain。'服务'是产业链环节，但更偏向下游维护和支持，与军工的核心对象（装备、技术）不够直接，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "政府",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "政府是军工产业链下游的用户之一，但与题材名称'军工'的核心语义（军事和国防）相比不够直接，更多涉及政策和管理层面，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "电子",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "电子是军工产业链的涵盖领域之一，但与题材名称'军工'的核心语义相比不够直接（电子领域广泛，不特指军事应用），更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "核工业",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "核工业是军工产业链的涵盖领域之一，但与题材名称'军工'的核心语义相比不够直接（核工业涉及民用和军事双重用途），更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "军事物流",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "军事物流是军工产业链的涵盖领域之一，但与题材名称'军工'的核心语义相比不够直接（物流更多是支持环节，而非核心装备或技术对象），更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "新余国科",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'军工'，策略类型为industry_chain。'新余国科'是军工产业链中的具体企业，虽与军工相关，但作为个体公司，不如产业对象、关键环节等术语更直接贴合题材名称的核心语义，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "国泰集团",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'军工'，策略类型为industry_chain。'国泰集团'是军工产业链中的具体企业，虽与军工相关，但作为个体公司，不如产业对象、关键环节等术语更直接贴合题材名称的核心语义，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "国科军工",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'军工'，策略类型为industry_chain。'国科军工'是军工产业链中的具体企业，虽与军工相关，但作为个体公司，不如产业对象、关键环节等术语更直接贴合题材名称的核心语义，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "佐治亚州金斯湾",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'军工'，策略类型为industry_chain。'佐治亚州金斯湾'是军工产业链中的具体基地或地点，虽与军工相关，但作为地理位置，不如产业对象、装备等术语更直接贴合题材名称的核心语义，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "华盛顿州的班戈基地",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'军工'，策略类型为industry_chain。'华盛顿州的班戈基地'是军工产业链中的具体基地或地点，虽与军工相关，但作为地理位置，不如产业对象、装备等术语更直接贴合题材名称的核心语义，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "F-16战机",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "该术语虽为军用飞机，与军工相关，但作为具体的外国装备型号，与题材名称'军工'定义的核心语义（泛指军工产业链）不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      },
+      {
+        "term": "BM-21火箭弹",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.65,
+        "reason": "该术语虽为军事装备，与军工相关，但作为具体的弹药型号，与题材名称'军工'定义的核心语义（泛指军工产业链）不够直接吻合，更适合作为辅助识别信息，判为secondary_anchor。"
+      }
+    ]
+  }
+}

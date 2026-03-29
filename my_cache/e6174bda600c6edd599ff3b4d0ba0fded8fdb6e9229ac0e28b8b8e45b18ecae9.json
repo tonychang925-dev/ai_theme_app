@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "1f0746a7d2dc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述工信部等设立大飞机基础研究联合基金的事件，但包含基金聚焦的领域（如安全可靠、绿色环保等），这些可能涉及C919的长期发展需求和技术方向，混有事件和潜在知识。"}}

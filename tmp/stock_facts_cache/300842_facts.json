@@ -1,0 +1,409 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏导电银浆",
+      "evidence_span": "公司主要产品为光伏导电银浆"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体电子导电粘合剂",
+      "evidence_span": "公司主要产品为光伏导电银浆和半导体电子导电粘合剂产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光伏导电银浆龙头制造企业",
+      "evidence_span": "公司是全国光伏导电银浆龙头制造企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "太阳能导电银浆与金属化方案供应商",
+      "evidence_span": "行业领先的太阳能导电银浆与金属化方案供应商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产光伏银浆领导者",
+      "evidence_span": "帝科股份国产光伏银浆领导者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产正面银浆第一梯队",
+      "evidence_span": "帝科股份国产正面银浆第一梯队"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏导电银浆",
+      "evidence_span": "公司主要产品为光伏导电银浆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体电子导电粘合剂",
+      "evidence_span": "公司主要产品为光伏导电银浆和半导体电子导电粘合剂产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "P型BSF电池导电银浆",
+      "evidence_span": "应用于P型BSF电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "P型PERC电池导电银浆",
+      "evidence_span": "应用于P型PERC电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "N型TOPCon电池导电银浆",
+      "evidence_span": "应用于N型TOPCon电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "N型HJT电池导电银浆",
+      "evidence_span": "应用于N型HJT电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "N型IBC电池导电银浆",
+      "evidence_span": "应用于N型IBC电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DK91/DK92/DK93系列高效导电银浆",
+      "evidence_span": "DK91/DK92/DK93系列高效导电银浆已经成为光伏正银行业知名品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DK61/DK71系列银浆",
+      "evidence_span": "公司研发生产的DK61/DK71等系列银浆也已实现规模化出货"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DECA200系列高性能芯片与模组粘接导电胶",
+      "evidence_span": "公司研制的DECA200、DECA400系列高性能芯片与模组粘接导电胶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DECA400系列高性能芯片与模组粘接导电胶",
+      "evidence_span": "公司研制的DECA200、DECA400系列高性能芯片与模组粘接导电胶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "太阳能叠瓦组件导电胶",
+      "evidence_span": "太阳能叠瓦组件导电胶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体及显示照明领域的封装和装联材料",
+      "evidence_span": "半导体及显示照明领域的封装和装联材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "导电银浆技术平台",
+      "evidence_span": "基于共享的导电银浆技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TOPCon电池正、背面导电银浆的全套金属化方案",
+      "evidence_span": "TOPCon电池正、背面导电银浆的全套金属化方案的开发与产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HJT电池正、背面低温导电银浆产品的全套金属化方案",
+      "evidence_span": "HJT电池正、背面低温导电银浆产品的全套金属化方案的开发与产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HJT电池低温银包铜技术",
+      "evidence_span": "HJT电池低温银包铜技术的开发与产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铅碲玻璃粉技术",
+      "evidence_span": "铅碲玻璃粉已逐步发展成为目前主流的P型电池及下一代主流N-TOPCon电池金属化浆料中不可缺少的核心材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "银粉制备方法和工艺技术",
+      "evidence_span": "拥有适合光伏导电银浆体系的银粉制备方法和工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "银包铜导电浆料技术",
+      "evidence_span": "开发了诸如银包铜导电浆料等相关技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "有机硅和微凝胶等技术体系",
+      "evidence_span": "引入了有机硅和微凝胶等技术体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "细线印刷浆料技术",
+      "evidence_span": "在细线印刷浆料的技术领域，Solamet®业务具备深入的机理理解和应用经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "接触P+发射极的银浆和银铝浆技术",
+      "evidence_span": "形成了接触P+发射极的银浆和银铝浆技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "贱金属导电浆料技术",
+      "evidence_span": "贱金属导电浆料技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低温银包铜导电浆料技术",
+      "evidence_span": "低温银包铜导电浆料技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通威太阳能",
+      "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天合光能",
+      "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "晶科能源",
+      "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "晶澳太阳能",
+      "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "爱旭科技",
+      "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩华新能源",
+      "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "正泰太阳能",
+      "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "DOWA",
+      "evidence_span": "公司已经与DOWA建立直接合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "帝科股份国产光伏银浆领导者，国产替代聚力前行"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏导电银浆",
+        "evidence_span": "公司主要产品为光伏导电银浆"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体电子导电粘合剂",
+        "evidence_span": "公司主要产品为光伏导电银浆和半导体电子导电粘合剂产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光伏导电银浆龙头制造企业",
+        "evidence_span": "公司是全国光伏导电银浆龙头制造企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "太阳能导电银浆与金属化方案供应商",
+        "evidence_span": "行业领先的太阳能导电银浆与金属化方案供应商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产光伏银浆领导者",
+        "evidence_span": "帝科股份国产光伏银浆领导者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产正面银浆第一梯队",
+        "evidence_span": "帝科股份国产正面银浆第一梯队"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏导电银浆",
+        "evidence_span": "公司主要产品为光伏导电银浆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体电子导电粘合剂",
+        "evidence_span": "公司主要产品为光伏导电银浆和半导体电子导电粘合剂产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "P型BSF电池导电银浆",
+        "evidence_span": "应用于P型BSF电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "P型PERC电池导电银浆",
+        "evidence_span": "应用于P型PERC电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "N型TOPCon电池导电银浆",
+        "evidence_span": "应用于N型TOPCon电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "N型HJT电池导电银浆",
+        "evidence_span": "应用于N型HJT电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "N型IBC电池导电银浆",
+        "evidence_span": "应用于N型IBC电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DK91/DK92/DK93系列高效导电银浆",
+        "evidence_span": "DK91/DK92/DK93系列高效导电银浆已经成为光伏正银行业知名品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DK61/DK71系列银浆",
+        "evidence_span": "公司研发生产的DK61/DK71等系列银浆也已实现规模化出货"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DECA200系列高性能芯片与模组粘接导电胶",
+        "evidence_span": "公司研制的DECA200、DECA400系列高性能芯片与模组粘接导电胶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DECA400系列高性能芯片与模组粘接导电胶",
+        "evidence_span": "公司研制的DECA200、DECA400系列高性能芯片与模组粘接导电胶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "太阳能叠瓦组件导电胶",
+        "evidence_span": "太阳能叠瓦组件导电胶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体及显示照明领域的封装和装联材料",
+        "evidence_span": "半导体及显示照明领域的封装和装联材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "导电银浆技术平台",
+        "evidence_span": "基于共享的导电银浆技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TOPCon电池正、背面导电银浆的全套金属化方案",
+        "evidence_span": "TOPCon电池正、背面导电银浆的全套金属化方案的开发与产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HJT电池正、背面低温导电银浆产品的全套金属化方案",
+        "evidence_span": "HJT电池正、背面低温导电银浆产品的全套金属化方案的开发与产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HJT电池低温银包铜技术",
+        "evidence_span": "HJT电池低温银包铜技术的开发与产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铅碲玻璃粉技术",
+        "evidence_span": "铅碲玻璃粉已逐步发展成为目前主流的P型电池及下一代主流N-TOPCon电池金属化浆料中不可缺少的核心材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "银粉制备方法和工艺技术",
+        "evidence_span": "拥有适合光伏导电银浆体系的银粉制备方法和工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "银包铜导电浆料技术",
+        "evidence_span": "开发了诸如银包铜导电浆料等相关技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "有机硅和微凝胶等技术体系",
+        "evidence_span": "引入了有机硅和微凝胶等技术体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "细线印刷浆料技术",
+        "evidence_span": "在细线印刷浆料的技术领域，Solamet®业务具备深入的机理理解和应用经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "接触P+发射极的银浆和银铝浆技术",
+        "evidence_span": "形成了接触P+发射极的银浆和银铝浆技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "贱金属导电浆料技术",
+        "evidence_span": "贱金属导电浆料技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低温银包铜导电浆料技术",
+        "evidence_span": "低温银包铜导电浆料技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通威太阳能",
+        "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天合光能",
+        "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "晶科能源",
+        "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "晶澳太阳能",
+        "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "爱旭科技",
+        "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩华新能源",
+        "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "正泰太阳能",
+        "evidence_span": "与通威太阳能、天合光能、晶科能源、晶澳太阳能、爱旭科技、韩华新能源、正泰太阳能等光伏产业知名厂商建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "DOWA",
+        "evidence_span": "公司已经与DOWA建立直接合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "帝科股份国产光伏银浆领导者，国产替代聚力前行"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:28:39"
+}

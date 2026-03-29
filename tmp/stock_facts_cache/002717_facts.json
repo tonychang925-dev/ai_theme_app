@@ -1,0 +1,264 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态环境建设",
+      "evidence_span": "公司主要围绕生态环境建设与修复和文化旅游开展经营活动"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "修复",
+      "evidence_span": "公司主要围绕生态环境建设与修复和文化旅游开展经营活动"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "文化旅游",
+      "evidence_span": "公司主要围绕生态环境建设与修复和文化旅游开展经营活动"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城乡服务运营商",
+      "evidence_span": "岭南股份已明确城乡服务运营商的企业定位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "园林绿化工程",
+      "evidence_span": "园林绿化工程是城市建设工程中的一类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生态修复",
+      "evidence_span": "生态保护修复是守住自然生态安全边界、促进自然生态系统质量整体改善的重要保障"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水务水环境治理",
+      "evidence_span": "水务水环境治理业务：岭南股份下属控股子公司——岭南水务集团有限公司是岭南大生态板块的重要组成部分"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水利工程",
+      "evidence_span": "水务水环境治理业务表现为水利工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城乡水务",
+      "evidence_span": "水务水环境治理业务表现为水利工程，水务投资、建设、运营“三位一体”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水生态水环境",
+      "evidence_span": "其业务涵盖水利工程、城乡水务、水生态水环境"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "文化科技项目全产业链服务",
+      "evidence_span": "为主题公园、旅游景区、科博场馆提供集创意设计、技术研发、项目实施、内容制作的主题文化科技项目全产业链服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主题乐园投资运营",
+      "evidence_span": "恒润科技集团旗下恒润文旅发展公司，整合资源与优势，聚焦主题乐园投资运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "文商农旅(民宿)投资运营",
+      "evidence_span": "恒润科技集团旗下恒润文旅发展公司，整合资源与优势，聚焦主题乐园投资运营、文商农旅(民宿)投资运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "古镇活化业务",
+      "evidence_span": "恒润科技集团旗下恒润文旅发展公司，整合资源与优势，聚焦主题乐园投资运营、文商农旅(民宿)投资运营、古镇活化业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "文化大数据交易",
+      "evidence_span": "恒润科技集团旗下恒润文化数字公司为全国文化大数据交易中心场内交易主体综合席位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固展临展业务",
+      "evidence_span": "岭南股份旗下德马吉展览聚焦固展临展业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "VR、AR、MR等沉浸技术",
+      "evidence_span": "随着VR、AR、MR等沉浸技术在市场的普及"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "虚拟交互技术",
+      "evidence_span": "在虚拟交互技术层面，随着VR、AR、MR等沉浸技术在市场的普及"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字传播",
+      "evidence_span": "数字传播、虚拟交互等数字技术已经成为当前文旅市场推动产品迭代和产业创新的主动力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各级政府",
+      "evidence_span": "下游为园林景观产品及服务的采购者，包括各级政府、企事业单位，房地产商等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "企事业单位",
+      "evidence_span": "下游为园林景观产品及服务的采购者，包括各级政府、企事业单位，房地产商等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "房地产商",
+      "evidence_span": "下游为园林景观产品及服务的采购者，包括各级政府、企事业单位，房地产商等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "主题公园",
+      "evidence_span": "为主题公园、旅游景区、科博场馆提供集创意设计、技术研发、项目实施、内容制作的主题文化科技项目全产业链服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "旅游景区",
+      "evidence_span": "为主题公园、旅游景区、科博场馆提供集创意设计、技术研发、项目实施、内容制作的主题文化科技项目全产业链服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科博场馆",
+      "evidence_span": "为主题公园、旅游景区、科博场馆提供集创意设计、技术研发、项目实施、内容制作的主题文化科技项目全产业链服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "生态+文旅",
+      "evidence_span": "岭南股份围绕“生态+文旅”的战略发展方向"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "生态环境建设与修复",
+        "evidence_span": "公司主要围绕生态环境建设与修复和文化旅游开展经营活动"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "文化旅游",
+        "evidence_span": "公司主要围绕生态环境建设与修复和文化旅游开展经营活动"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城乡服务运营商",
+        "evidence_span": "岭南股份已明确城乡服务运营商的企业定位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "园林绿化工程",
+        "evidence_span": "园林绿化工程是城市建设工程中的一类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生态修复",
+        "evidence_span": "生态保护修复是守住自然生态安全边界、促进自然生态系统质量整体改善的重要保障"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水务水环境治理",
+        "evidence_span": "水务水环境治理业务：岭南股份下属控股子公司——岭南水务集团有限公司是岭南大生态板块的重要组成部分"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水利工程",
+        "evidence_span": "水务水环境治理业务表现为水利工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城乡水务",
+        "evidence_span": "水务水环境治理业务表现为水利工程，水务投资、建设、运营“三位一体”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水生态水环境",
+        "evidence_span": "其业务涵盖水利工程、城乡水务、水生态水环境"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "文化科技项目全产业链服务",
+        "evidence_span": "为主题公园、旅游景区、科博场馆提供集创意设计、技术研发、项目实施、内容制作的主题文化科技项目全产业链服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主题乐园投资运营",
+        "evidence_span": "恒润科技集团旗下恒润文旅发展公司，整合资源与优势，聚焦主题乐园投资运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "文商农旅(民宿)投资运营",
+        "evidence_span": "恒润科技集团旗下恒润文旅发展公司，整合资源与优势，聚焦主题乐园投资运营、文商农旅(民宿)投资运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "古镇活化业务",
+        "evidence_span": "恒润科技集团旗下恒润文旅发展公司，整合资源与优势，聚焦主题乐园投资运营、文商农旅(民宿)投资运营、古镇活化业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "文化大数据交易",
+        "evidence_span": "恒润科技集团旗下恒润文化数字公司为全国文化大数据交易中心场内交易主体综合席位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固展临展业务",
+        "evidence_span": "岭南股份旗下德马吉展览聚焦固展临展业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "VR、AR、MR等沉浸技术",
+        "evidence_span": "随着VR、AR、MR等沉浸技术在市场的普及"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "虚拟交互技术",
+        "evidence_span": "在虚拟交互技术层面，随着VR、AR、MR等沉浸技术在市场的普及"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字传播",
+        "evidence_span": "数字传播、虚拟交互等数字技术已经成为当前文旅市场推动产品迭代和产业创新的主动力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各级政府",
+        "evidence_span": "下游为园林景观产品及服务的采购者，包括各级政府、企事业单位，房地产商等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "企事业单位",
+        "evidence_span": "下游为园林景观产品及服务的采购者，包括各级政府、企事业单位，房地产商等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "房地产商",
+        "evidence_span": "下游为园林景观产品及服务的采购者，包括各级政府、企事业单位，房地产商等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "主题公园",
+        "evidence_span": "为主题公园、旅游景区、科博场馆提供集创意设计、技术研发、项目实施、内容制作的主题文化科技项目全产业链服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "旅游景区",
+        "evidence_span": "为主题公园、旅游景区、科博场馆提供集创意设计、技术研发、项目实施、内容制作的主题文化科技项目全产业链服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科博场馆",
+        "evidence_span": "为主题公园、旅游景区、科博场馆提供集创意设计、技术研发、项目实施、内容制作的主题文化科技项目全产业链服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "生态+文旅",
+        "evidence_span": "岭南股份围绕“生态+文旅”的战略发展方向"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:20:11"
+}

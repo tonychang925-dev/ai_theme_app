@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "土地一级开发",
+      "evidence_span": "主要经营业务为土地一级开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "供水",
+      "evidence_span": "主要经营业务为土地一级开发、供水、污水处理、户外广告传媒、出租车运营等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "污水处理",
+      "evidence_span": "主要经营业务为土地一级开发、供水、污水处理、户外广告传媒、出租车运营等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "户外广告传媒",
+      "evidence_span": "主要经营业务为土地一级开发、供水、污水处理、户外广告传媒、出租车运营等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "出租车运营",
+      "evidence_span": "主要经营业务为土地一级开发、供水、污水处理、户外广告传媒、出租车运营等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市综合运营商",
+      "evidence_span": "公司系具体从事铁岭凡河新区 22平方公里土地一级开发以及铁岭凡河新区城市基础设施建设、运营工作的城市综合运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "铁岭市新城区唯一一家土地一级开发商",
+      "evidence_span": "公司系铁岭市新城区唯一一家土地一级开发商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "土地一级开发",
+      "evidence_span": "主要经营业务为土地一级开发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "供水服务",
+      "evidence_span": "经营供水、污水处理、出租车运营及广告传媒业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污水处理服务",
+      "evidence_span": "经营供水、污水处理、出租车运营及广告传媒业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "出租车运营服务",
+      "evidence_span": "经营供水、污水处理、出租车运营及广告传媒业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "广告传媒服务",
+      "evidence_span": "经营供水、污水处理、出租车运营及广告传媒业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风机塔筒",
+      "evidence_span": "公司全资子公司辽宁昌和风电设备有限公司已与昌图两家风电项目公司签订风机塔筒销售合同"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "九通一平",
+      "evidence_span": "实施市政基础设施建设，做到“九通一平”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁岭市政府",
+      "evidence_span": "公司受铁岭市政府和铁岭市土地储备中心的委托"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁岭市土地储备中心",
+      "evidence_span": "公司受铁岭市政府和铁岭市土地储备中心的委托"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "昌图两家风电项目公司",
+      "evidence_span": "公司全资子公司辽宁昌和风电设备有限公司已与昌图两家风电项目公司签订风机塔筒销售合同"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新型城镇化受益代表",
+      "evidence_span": "土地价值快速提升,新型城镇化受益代表"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "土地一级开发",
+        "evidence_span": "主要经营业务为土地一级开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "供水",
+        "evidence_span": "主要经营业务为土地一级开发、供水、污水处理、户外广告传媒、出租车运营等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "污水处理",
+        "evidence_span": "主要经营业务为土地一级开发、供水、污水处理、户外广告传媒、出租车运营等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "户外广告传媒",
+        "evidence_span": "主要经营业务为土地一级开发、供水、污水处理、户外广告传媒、出租车运营等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "出租车运营",
+        "evidence_span": "主要经营业务为土地一级开发、供水、污水处理、户外广告传媒、出租车运营等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市综合运营商",
+        "evidence_span": "公司系具体从事铁岭凡河新区 22平方公里土地一级开发以及铁岭凡河新区城市基础设施建设、运营工作的城市综合运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "铁岭市新城区唯一一家土地一级开发商",
+        "evidence_span": "公司系铁岭市新城区唯一一家土地一级开发商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "土地一级开发",
+        "evidence_span": "主要经营业务为土地一级开发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "供水服务",
+        "evidence_span": "经营供水、污水处理、出租车运营及广告传媒业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污水处理服务",
+        "evidence_span": "经营供水、污水处理、出租车运营及广告传媒业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "出租车运营服务",
+        "evidence_span": "经营供水、污水处理、出租车运营及广告传媒业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "广告传媒服务",
+        "evidence_span": "经营供水、污水处理、出租车运营及广告传媒业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风机塔筒",
+        "evidence_span": "公司全资子公司辽宁昌和风电设备有限公司已与昌图两家风电项目公司签订风机塔筒销售合同"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "九通一平",
+        "evidence_span": "实施市政基础设施建设，做到“九通一平”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁岭市政府",
+        "evidence_span": "公司受铁岭市政府和铁岭市土地储备中心的委托"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁岭市土地储备中心",
+        "evidence_span": "公司受铁岭市政府和铁岭市土地储备中心的委托"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "昌图两家风电项目公司",
+        "evidence_span": "公司全资子公司辽宁昌和风电设备有限公司已与昌图两家风电项目公司签订风机塔筒销售合同"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新型城镇化受益代表",
+        "evidence_span": "土地价值快速提升,新型城镇化受益代表"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:36:23"
+}

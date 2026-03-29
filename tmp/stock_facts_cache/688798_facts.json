@@ -1,0 +1,439 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "模拟芯片设计",
+      "evidence_span": "国内一家专注于模拟的芯片设计公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数模混合芯片市场",
+      "evidence_span": "深耕数模混合芯片市场"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "模拟芯片设计公司",
+      "evidence_span": "国内一家专注于模拟的芯片设计公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "音频功放IC设计龙头",
+      "evidence_span": "音频功放IC设计龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高成长模拟芯片领军者",
+      "evidence_span": "高成长模拟芯片领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数模混合设计专家",
+      "evidence_span": "艾为电子数模混合设计专家"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "消费电子模拟芯片龙头",
+      "evidence_span": "艾为电子消费电子模拟芯片龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "音频功放芯片",
+      "evidence_span": "音频功放芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED驱动芯片",
+      "evidence_span": "LED驱动芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电源管理芯片",
+      "evidence_span": "电源管理芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频前端芯片",
+      "evidence_span": "射频前端芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "马达驱动芯片",
+      "evidence_span": "马达驱动芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "过压保护OVP芯片",
+      "evidence_span": "过压保护OVP芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "背光灯驱动芯片",
+      "evidence_span": "背光灯驱动芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "闪光灯驱动芯片",
+      "evidence_span": "闪光灯驱动芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LCD Bias",
+      "evidence_span": "LCD Bias"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OLED Power",
+      "evidence_span": "OLED Power"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TOF LDD Driver",
+      "evidence_span": "TOF LDD Driver"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "接收端开关",
+      "evidence_span": "接收端开关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GPS低噪声放大器",
+      "evidence_span": "GPS低噪声放大器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LTE低噪声放大器",
+      "evidence_span": "LTE低噪声放大器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FM低噪声放大器",
+      "evidence_span": "FM低噪声放大器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GSM功率发大器",
+      "evidence_span": "GSM功率发大器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "过压保护OVP产品导通阻抗",
+      "evidence_span": "过压保护OVP产品在导通阻抗以及输入直流耐压能力已经达到行业最高水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "过压保护OVP产品输入直流耐压能力",
+      "evidence_span": "过压保护OVP产品在导通阻抗以及输入直流耐压能力已经达到行业最高水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "背光灯驱动芯片电流精度",
+      "evidence_span": "背光灯驱动芯片在电流精度和效率也到达行业最高水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "背光灯驱动芯片效率",
+      "evidence_span": "背光灯驱动芯片在电流精度和效率也到达行业最高水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "闪光灯驱动芯片电流精度",
+      "evidence_span": "闪光灯驱动芯片在电流精度、效率和单路最大电流达到行业最高水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "闪光灯驱动芯片效率",
+      "evidence_span": "闪光灯驱动芯片在电流精度、效率和单路最大电流达到行业最高水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "闪光灯驱动芯片单路最大电流",
+      "evidence_span": "闪光灯驱动芯片在电流精度、效率和单路最大电流达到行业最高水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线性充电芯片最大充电电流",
+      "evidence_span": "线性充电芯片在最大充电电流充电电压精度和输入正向最高直流耐压上也具有先进性"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线性充电芯片充电电压精度",
+      "evidence_span": "线性充电芯片在最大充电电流充电电压精度和输入正向最高直流耐压上也具有先进性"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线性充电芯片输入正向最高直流耐压",
+      "evidence_span": "线性充电芯片在最大充电电流充电电压精度和输入正向最高直流耐压上也具有先进性"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "主要客户包括华为"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荣耀",
+      "evidence_span": "主要客户包括华为、荣耀"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "主要客户包括华为、荣耀、三星"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "主要客户包括华为、荣耀、三星、小米"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "主要客户包括华为、荣耀、三星、小米、OPPO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "vivo",
+      "evidence_span": "主要客户包括华为、荣耀、三星、小米、OPPO、vivo"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "传音",
+      "evidence_span": "主要客户包括华为、荣耀、三星、小米、OPPO、vivo、传音"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "闻泰",
+      "evidence_span": "主要客户包括华为、荣耀、三星、小米、OPPO、vivo、传音、闻泰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "龙旗",
+      "evidence_span": "主要客户包括华为、荣耀、三星、小米、OPPO、vivo、传音、闻泰、龙旗等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "受益国产替代趋势"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "模拟芯片设计",
+        "evidence_span": "国内一家专注于模拟的芯片设计公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数模混合芯片市场",
+        "evidence_span": "深耕数模混合芯片市场"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "模拟芯片设计公司",
+        "evidence_span": "国内一家专注于模拟的芯片设计公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "音频功放IC设计龙头",
+        "evidence_span": "音频功放IC设计龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高成长模拟芯片领军者",
+        "evidence_span": "高成长模拟芯片领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数模混合设计专家",
+        "evidence_span": "艾为电子数模混合设计专家"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "消费电子模拟芯片龙头",
+        "evidence_span": "艾为电子消费电子模拟芯片龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "音频功放芯片",
+        "evidence_span": "音频功放芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED驱动芯片",
+        "evidence_span": "LED驱动芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电源管理芯片",
+        "evidence_span": "电源管理芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频前端芯片",
+        "evidence_span": "射频前端芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "马达驱动芯片",
+        "evidence_span": "马达驱动芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "过压保护OVP芯片",
+        "evidence_span": "过压保护OVP芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "背光灯驱动芯片",
+        "evidence_span": "背光灯驱动芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "闪光灯驱动芯片",
+        "evidence_span": "闪光灯驱动芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LCD Bias",
+        "evidence_span": "LCD Bias"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OLED Power",
+        "evidence_span": "OLED Power"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TOF LDD Driver",
+        "evidence_span": "TOF LDD Driver"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "接收端开关",
+        "evidence_span": "接收端开关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GPS低噪声放大器",
+        "evidence_span": "GPS低噪声放大器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LTE低噪声放大器",
+        "evidence_span": "LTE低噪声放大器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FM低噪声放大器",
+        "evidence_span": "FM低噪声放大器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GSM功率发大器",
+        "evidence_span": "GSM功率发大器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "过压保护OVP产品导通阻抗",
+        "evidence_span": "过压保护OVP产品在导通阻抗以及输入直流耐压能力已经达到行业最高水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "过压保护OVP产品输入直流耐压能力",
+        "evidence_span": "过压保护OVP产品在导通阻抗以及输入直流耐压能力已经达到行业最高水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "背光灯驱动芯片电流精度",
+        "evidence_span": "背光灯驱动芯片在电流精度和效率也到达行业最高水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "背光灯驱动芯片效率",
+        "evidence_span": "背光灯驱动芯片在电流精度和效率也到达行业最高水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "闪光灯驱动芯片电流精度",
+        "evidence_span": "闪光灯驱动芯片在电流精度、效率和单路最大电流达到行业最高水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "闪光灯驱动芯片效率",
+        "evidence_span": "闪光灯驱动芯片在电流精度、效率和单路最大电流达到行业最高水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "闪光灯驱动芯片单路最大电流",
+        "evidence_span": "闪光灯驱动芯片在电流精度、效率和单路最大电流达到行业最高水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线性充电芯片最大充电电流",
+        "evidence_span": "线性充电芯片在最大充电电流充电电压精度和输入正向最高直流耐压上也具有先进性"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线性充电芯片充电电压精度",
+        "evidence_span": "线性充电芯片在最大充电电流充电电压精度和输入正向最高直流耐压上也具有先进性"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线性充电芯片输入正向最高直流耐压",
+        "evidence_span": "线性充电芯片在最大充电电流充电电压精度和输入正向最高直流耐压上也具有先进性"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "主要客户包括华为"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荣耀",
+        "evidence_span": "主要客户包括华为、荣耀"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "主要客户包括华为、荣耀、三星"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "主要客户包括华为、荣耀、三星、小米"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "主要客户包括华为、荣耀、三星、小米、OPPO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "vivo",
+        "evidence_span": "主要客户包括华为、荣耀、三星、小米、OPPO、vivo"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "传音",
+        "evidence_span": "主要客户包括华为、荣耀、三星、小米、OPPO、vivo、传音"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "闻泰",
+        "evidence_span": "主要客户包括华为、荣耀、三星、小米、OPPO、vivo、传音、闻泰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "龙旗",
+        "evidence_span": "主要客户包括华为、荣耀、三星、小米、OPPO、vivo、传音、闻泰、龙旗等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "受益国产替代趋势"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:46:55"
+}

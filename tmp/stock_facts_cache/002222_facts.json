@@ -1,0 +1,729 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "非线性光学晶体",
+      "evidence_span": "主要从事非线性光学晶体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "激光晶体",
+      "evidence_span": "主要从事...激光晶体"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密光学元件",
+      "evidence_span": "主要从事...精密光学元件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "激光器件",
+      "evidence_span": "主要从事...激光器件"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球LBO晶体龙头企业",
+      "evidence_span": "全球LBO晶体龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球BBO晶体龙头企业",
+      "evidence_span": "全球...BBO晶体龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "激光器材料巨头",
+      "evidence_span": "福晶科技激光器材料巨头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球光学晶体龙头",
+      "evidence_span": "全球光学晶体龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球非线性晶体领军者",
+      "evidence_span": "福晶科技全球非线性晶体领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "激光行业隐形冠军",
+      "evidence_span": "福晶科技激光行业隐形冠军"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "非线性光学晶体龙头厂商",
+      "evidence_span": "现已成为全球知名的...非线性光学晶体...龙头厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "激光产业链上游关键元器件供应商",
+      "evidence_span": "公司为激光器厂商提供关键元器件，主要产品和业务处于激光产业链的上游"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LBO晶体",
+      "evidence_span": "全球知名的 LBO 晶体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BBO晶体",
+      "evidence_span": "全球知名的...BBO 晶体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Nd:YVO4晶体",
+      "evidence_span": "全球知名的...Nd:YVO4 晶体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磁光晶体",
+      "evidence_span": "全球知名的...磁光晶体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密光学元件",
+      "evidence_span": "全球知名的...精密及超精密光学元件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高功率光隔离器",
+      "evidence_span": "全球知名的...高功率光隔离器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "声光器件",
+      "evidence_span": "全球知名的...声光...器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电光器件",
+      "evidence_span": "全球知名的...电光器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非线性光学晶体元器件",
+      "evidence_span": "晶体元器件（非线性光学晶体元器件 + 激光晶体元器件）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光晶体元器件",
+      "evidence_span": "晶体元器件（非线性光学晶体元器件 + 激光晶体元器件）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双折射晶体",
+      "evidence_span": "双折射晶体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "闪烁晶体",
+      "evidence_span": "闪烁晶体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "窗口片",
+      "evidence_span": "窗口片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "反射镜",
+      "evidence_span": "反射镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "棱镜",
+      "evidence_span": "棱镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "偏振器",
+      "evidence_span": "偏振器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "柱面镜",
+      "evidence_span": "柱面镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "球面透镜",
+      "evidence_span": "球面透镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非球面透镜",
+      "evidence_span": "非球面透镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "波片",
+      "evidence_span": "波片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分光镜",
+      "evidence_span": "分光镜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "衍射光栅",
+      "evidence_span": "衍射光栅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磁光器件",
+      "evidence_span": "激光器件产品包括磁光器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驱动器",
+      "evidence_span": "驱动器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光纤传输系统",
+      "evidence_span": "光纤传输系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光开关",
+      "evidence_span": "光开关"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光学镜头",
+      "evidence_span": "光学镜头"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "熔盐法晶体生长技术",
+      "evidence_span": "发展了熔盐法...等多种晶体生长技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "提拉法晶体生长技术",
+      "evidence_span": "发展了...提拉法...等多种晶体生长技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水溶液法晶体生长技术",
+      "evidence_span": "发展了...水溶液法...等多种晶体生长技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "坩埚下降法晶体生长技术",
+      "evidence_span": "发展了...坩埚下降法等多种晶体生长技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全息光栅产线",
+      "evidence_span": "建立了全息光栅...等多条先进的超精密光学产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "非球面数控研磨抛光产线",
+      "evidence_span": "建立了...非球面数控研磨抛光...等多条先进的超精密光学产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "离子束抛光产线",
+      "evidence_span": "建立了...离子束抛光...等多条先进的超精密光学产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磁流变抛光产线",
+      "evidence_span": "建立了...磁流变抛光...等多条先进的超精密光学产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大型双抛产线",
+      "evidence_span": "建立了...大型双抛...等多条先进的超精密光学产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大型环抛产线",
+      "evidence_span": "建立了...大型环抛等多条先进的超精密光学产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "IAD镀膜工艺",
+      "evidence_span": "IAD...等各类镀膜工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "IBS镀膜工艺",
+      "evidence_span": "IBS...等各类镀膜工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MS镀膜工艺",
+      "evidence_span": "MS...等各类镀膜工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "EB镀膜工艺",
+      "evidence_span": "EB 等各类镀膜工艺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "相干",
+      "evidence_span": "客户主要为相干"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "光谱物理",
+      "evidence_span": "光谱物理"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通快",
+      "evidence_span": "通快"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "IPG",
+      "evidence_span": "IPG"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Lumentum",
+      "evidence_span": "Lumentum"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恩耐",
+      "evidence_span": "恩耐"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大族激光",
+      "evidence_span": "大族激光"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英诺激光",
+      "evidence_span": "英诺激光"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英谷激光",
+      "evidence_span": "英谷激光"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华日激光",
+      "evidence_span": "华日激光"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "锐科激光",
+      "evidence_span": "锐科激光"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "创鑫激光",
+      "evidence_span": "创鑫激光"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杰普特",
+      "evidence_span": "杰普特等国内外知名激光器公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "紫外替代需求",
+      "evidence_span": "紫外替代需求确定"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "超快渗透率上行",
+      "evidence_span": "受益超快渗透率上行"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "消费电子产业加工升级",
+      "evidence_span": "消费电子产业加工升级引领非线性光学晶体龙头业绩爆发"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "柔性OLED制程",
+      "evidence_span": "借力柔性 OLED制程"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "紫外固体激光加速渗透",
+      "evidence_span": "紫外固体激光加速渗透"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "部分器件类产品打破国外厂商垄断局面并实现国产替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "非线性光学晶体",
+        "evidence_span": "主要从事非线性光学晶体"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "激光晶体",
+        "evidence_span": "主要从事...激光晶体"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密光学元件",
+        "evidence_span": "主要从事...精密光学元件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "激光器件",
+        "evidence_span": "主要从事...激光器件"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球LBO晶体龙头企业",
+        "evidence_span": "全球LBO晶体龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球BBO晶体龙头企业",
+        "evidence_span": "全球...BBO晶体龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "激光器材料巨头",
+        "evidence_span": "福晶科技激光器材料巨头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球光学晶体龙头",
+        "evidence_span": "全球光学晶体龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球非线性晶体领军者",
+        "evidence_span": "福晶科技全球非线性晶体领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "激光行业隐形冠军",
+        "evidence_span": "福晶科技激光行业隐形冠军"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "非线性光学晶体龙头厂商",
+        "evidence_span": "现已成为全球知名的...非线性光学晶体...龙头厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "激光产业链上游关键元器件供应商",
+        "evidence_span": "公司为激光器厂商提供关键元器件，主要产品和业务处于激光产业链的上游"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LBO晶体",
+        "evidence_span": "全球知名的 LBO 晶体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BBO晶体",
+        "evidence_span": "全球知名的...BBO 晶体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Nd:YVO4晶体",
+        "evidence_span": "全球知名的...Nd:YVO4 晶体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磁光晶体",
+        "evidence_span": "全球知名的...磁光晶体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密光学元件",
+        "evidence_span": "全球知名的...精密及超精密光学元件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高功率光隔离器",
+        "evidence_span": "全球知名的...高功率光隔离器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "声光器件",
+        "evidence_span": "全球知名的...声光...器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电光器件",
+        "evidence_span": "全球知名的...电光器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非线性光学晶体元器件",
+        "evidence_span": "晶体元器件（非线性光学晶体元器件 + 激光晶体元器件）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光晶体元器件",
+        "evidence_span": "晶体元器件（非线性光学晶体元器件 + 激光晶体元器件）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双折射晶体",
+        "evidence_span": "双折射晶体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "闪烁晶体",
+        "evidence_span": "闪烁晶体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "窗口片",
+        "evidence_span": "窗口片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "反射镜",
+        "evidence_span": "反射镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "棱镜",
+        "evidence_span": "棱镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "偏振器",
+        "evidence_span": "偏振器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "柱面镜",
+        "evidence_span": "柱面镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "球面透镜",
+        "evidence_span": "球面透镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非球面透镜",
+        "evidence_span": "非球面透镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "波片",
+        "evidence_span": "波片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分光镜",
+        "evidence_span": "分光镜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "衍射光栅",
+        "evidence_span": "衍射光栅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磁光器件",
+        "evidence_span": "激光器件产品包括磁光器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驱动器",
+        "evidence_span": "驱动器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光纤传输系统",
+        "evidence_span": "光纤传输系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光开关",
+        "evidence_span": "光开关"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光学镜头",
+        "evidence_span": "光学镜头"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "熔盐法晶体生长技术",
+        "evidence_span": "发展了熔盐法...等多种晶体生长技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "提拉法晶体生长技术",
+        "evidence_span": "发展了...提拉法...等多种晶体生长技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水溶液法晶体生长技术",
+        "evidence_span": "发展了...水溶液法...等多种晶体生长技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "坩埚下降法晶体生长技术",
+        "evidence_span": "发展了...坩埚下降法等多种晶体生长技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全息光栅产线",
+        "evidence_span": "建立了全息光栅...等多条先进的超精密光学产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "非球面数控研磨抛光产线",
+        "evidence_span": "建立了...非球面数控研磨抛光...等多条先进的超精密光学产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "离子束抛光产线",
+        "evidence_span": "建立了...离子束抛光...等多条先进的超精密光学产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磁流变抛光产线",
+        "evidence_span": "建立了...磁流变抛光...等多条先进的超精密光学产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大型双抛产线",
+        "evidence_span": "建立了...大型双抛...等多条先进的超精密光学产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大型环抛产线",
+        "evidence_span": "建立了...大型环抛等多条先进的超精密光学产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "IAD镀膜工艺",
+        "evidence_span": "IAD...等各类镀膜工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "IBS镀膜工艺",
+        "evidence_span": "IBS...等各类镀膜工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MS镀膜工艺",
+        "evidence_span": "MS...等各类镀膜工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "EB镀膜工艺",
+        "evidence_span": "EB 等各类镀膜工艺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "相干",
+        "evidence_span": "客户主要为相干"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "光谱物理",
+        "evidence_span": "光谱物理"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通快",
+        "evidence_span": "通快"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "IPG",
+        "evidence_span": "IPG"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Lumentum",
+        "evidence_span": "Lumentum"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恩耐",
+        "evidence_span": "恩耐"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大族激光",
+        "evidence_span": "大族激光"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英诺激光",
+        "evidence_span": "英诺激光"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英谷激光",
+        "evidence_span": "英谷激光"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华日激光",
+        "evidence_span": "华日激光"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "锐科激光",
+        "evidence_span": "锐科激光"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "创鑫激光",
+        "evidence_span": "创鑫激光"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杰普特",
+        "evidence_span": "杰普特等国内外知名激光器公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "紫外替代需求",
+        "evidence_span": "紫外替代需求确定"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "超快渗透率上行",
+        "evidence_span": "受益超快渗透率上行"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "消费电子产业加工升级",
+        "evidence_span": "消费电子产业加工升级引领非线性光学晶体龙头业绩爆发"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "柔性OLED制程",
+        "evidence_span": "借力柔性 OLED制程"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "紫外固体激光加速渗透",
+        "evidence_span": "紫外固体激光加速渗透"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "部分器件类产品打破国外厂商垄断局面并实现国产替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:30:33"
+}

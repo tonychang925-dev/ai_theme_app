@@ -1,0 +1,78 @@
+{
+  "must": [
+    "AR眼镜",
+    "摄像头",
+    "光学模组",
+    "CPU处理中心",
+    "微显示屏",
+    "光学方案"
+  ],
+  "should": [
+    "架托",
+    "传感器",
+    "芯片",
+    "棱镜方案",
+    "Birdbath",
+    "自由曲面",
+    "全息投影",
+    "LCD",
+    "LCOS",
+    "DLP",
+    "MicroOLED",
+    "智能眼镜"
+  ],
+  "not": [
+    "发布会",
+    "Galaxy Unpacked",
+    "公开展示",
+    "正式发售",
+    "生产计划",
+    "出货",
+    "战略投资",
+    "闪极科技"
+  ],
+  "evidence_refs": [
+    {
+      "term": "AR眼镜",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AR眼镜"
+    },
+    {
+      "term": "微显示屏",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "微显示屏"
+    },
+    {
+      "term": "光学方案",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光学方案"
+    },
+    {
+      "term": "摄像头",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "摄像头"
+    },
+    {
+      "term": "光学模组",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "光学模组"
+    },
+    {
+      "term": "CPU处理中心",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "CPU处理中心"
+    }
+  ],
+  "subject_id": "9030409",
+  "quality": "strong",
+  "generated_at": "2026-03-13T10:57:41",
+  "semantic_type": "技术产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

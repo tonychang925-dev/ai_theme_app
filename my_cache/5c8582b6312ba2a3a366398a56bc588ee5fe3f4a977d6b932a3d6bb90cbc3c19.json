@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "034fc1e2bc56", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落仅描述特朗普对伊朗的言论，是一个具体政治事件，没有提供军工题材的稳定知识，属于纯事件。"}}

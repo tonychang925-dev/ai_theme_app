@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "盐矿开采",
+      "evidence_span": "公司主要从事盐矿的开采"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "盐",
+      "evidence_span": "盐及盐化工产品的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "盐化工产品的生产",
+      "evidence_span": "盐及盐化工产品的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "盐及盐化工产品的生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "江苏省内主要食用盐生产基地",
+      "evidence_span": "江苏省内主要食用盐生产基地"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "产销一体的盐行业龙头企业",
+      "evidence_span": "产销一体的盐行业龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内制盐前十强企业",
+      "evidence_span": "国内制盐前十强企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "食盐",
+      "evidence_span": "主要产品包括食盐"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "两碱工业盐",
+      "evidence_span": "两碱工业盐"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小工业盐",
+      "evidence_span": "小工业盐"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纯碱",
+      "evidence_span": "纯碱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氯化钙",
+      "evidence_span": "氯化钙生产、加工"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小苏打",
+      "evidence_span": "小苏打生产、加工"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "井下循环制纯碱工艺",
+      "evidence_span": "自主研发的井下循环制纯碱工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "盐岩水溶充填开采技术",
+      "evidence_span": "盐岩水溶充填开采技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高杂质盐岩水平井储气库技术",
+      "evidence_span": "高杂质盐岩水平井储气库技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油储气库公司",
+      "evidence_span": "公司与中石油储气库公司共同组建国能公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "盐改",
+      "evidence_span": "苏盐井神盐改破冰"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "盐矿开采",
+        "evidence_span": "公司主要从事盐矿的开采"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "盐及盐化工产品的生产与销售",
+        "evidence_span": "盐及盐化工产品的生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "江苏省内主要食用盐生产基地",
+        "evidence_span": "江苏省内主要食用盐生产基地"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "产销一体的盐行业龙头企业",
+        "evidence_span": "产销一体的盐行业龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内制盐前十强企业",
+        "evidence_span": "国内制盐前十强企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "食盐",
+        "evidence_span": "主要产品包括食盐"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "两碱工业盐",
+        "evidence_span": "两碱工业盐"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小工业盐",
+        "evidence_span": "小工业盐"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纯碱",
+        "evidence_span": "纯碱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氯化钙",
+        "evidence_span": "氯化钙生产、加工"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小苏打",
+        "evidence_span": "小苏打生产、加工"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "井下循环制纯碱工艺",
+        "evidence_span": "自主研发的井下循环制纯碱工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "盐岩水溶充填开采技术",
+        "evidence_span": "盐岩水溶充填开采技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高杂质盐岩水平井储气库技术",
+        "evidence_span": "高杂质盐岩水平井储气库技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油储气库公司",
+        "evidence_span": "公司与中石油储气库公司共同组建国能公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "盐改",
+        "evidence_span": "苏盐井神盐改破冰"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:53:58"
+}

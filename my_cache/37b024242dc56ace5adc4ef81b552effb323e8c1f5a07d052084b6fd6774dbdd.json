@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:43:21", "result": {"chunk_id": "0b7fad4676cb", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段介绍股东结构和融资历程，属于公司背景的静态知识，尽管提到融资轮次，但未指定具体事件时间或动态变化，侧重于稳定信息。"}}

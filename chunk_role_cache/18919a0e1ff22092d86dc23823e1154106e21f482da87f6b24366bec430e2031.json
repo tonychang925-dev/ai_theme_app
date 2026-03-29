@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_3", "model": "deepseek-chat", "timestamp": "2026-03-08T09:33:12", "result": {"chunk_id": "2f22ebddf468", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落引用SEMI报告，预测半导体制造设备销售额，是事件性数据发布，但包含设备市场增长趋势和细分市场信息，可能对题材知识构建有价值。"}}

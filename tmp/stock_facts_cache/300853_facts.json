@@ -1,0 +1,499 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业设备检测",
+      "evidence_span": "公司主要从事工业设备检测及故障诊断领域的智能机器人、智能监测检测及控制设备的研发、制造、推广及应用"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "故障诊断",
+      "evidence_span": "公司主要从事工业设备检测及故障诊断领域的智能机器人、智能监测检测及控制设备的研发、制造、推广及应用"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能机器人研发生产",
+      "evidence_span": "公司是一家长期专注于工业设备检测及故障诊断领域的智能机器人及智能监测检测设备研发、制造、推广及应用的企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能监测检测",
+      "evidence_span": "公司的主要产品形态分为智能机器人和智能监测检测及控制设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "控制设备",
+      "evidence_span": "公司的主要产品形态分为智能机器人和智能监测检测及控制设备"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "工业大健康领域机器人研发生产的领先企业",
+      "evidence_span": "成为工业大健康领域机器人研发生产的领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级专精特新“小巨人”企业",
+      "evidence_span": "公司于2020年被工信部认定为国家级专精特新“小巨人”企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "巡检机器人工作组秘书处单位",
+      "evidence_span": "公司担任巡检机器人工作组秘书处单位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "室外轮式巡检机器人",
+      "evidence_span": "室外轮式巡检机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "室内轮式巡检机器人",
+      "evidence_span": "室内轮式巡检机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "开关室操作机器人",
+      "evidence_span": "开关室操作机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "室内挂轨巡检机器人",
+      "evidence_span": "室内挂轨巡检机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "极寒适应型变电站巡检机器人",
+      "evidence_span": "极寒适应型变电站巡检机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "输电线路巡检/除冰机器人",
+      "evidence_span": "输电线路巡检/除冰机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨交线路巡检机器人",
+      "evidence_span": "轨交线路巡检机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "列车车底检测机器人",
+      "evidence_span": "列车车底检测机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双轨式钢轨超声波探伤仪",
+      "evidence_span": "双轨式钢轨超声波探伤仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "配网工程管控监理机器人",
+      "evidence_span": "配网工程管控监理机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无人机",
+      "evidence_span": "无人机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "变压器油中气体在线监测系统",
+      "evidence_span": "变压器油中气体在线监测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "图像/视频监测装置",
+      "evidence_span": "图像/视频监测装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海缆监测一体化平台",
+      "evidence_span": "海缆监测一体化平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧站房",
+      "evidence_span": "智慧站房"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能安全帽",
+      "evidence_span": "智能安全帽"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "故障监测装置",
+      "evidence_span": "故障监测装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防爆轮式巡检机器人",
+      "evidence_span": "防爆轮式巡检机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业罐体高空壁厚测量无人机",
+      "evidence_span": "工业罐体高空壁厚测量无人机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消防物联集中监控子系统",
+      "evidence_span": "消防物联集中监控子系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水下机器人",
+      "evidence_span": "布局水下机器人本体技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多传感器融合",
+      "evidence_span": "通过充分利用多传感器融合、人工智能、机器人及大数据分析等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能",
+      "evidence_span": "通过充分利用多传感器融合、人工智能、机器人及大数据分析等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器人技术",
+      "evidence_span": "通过充分利用多传感器融合、人工智能、机器人及大数据分析等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据分析",
+      "evidence_span": "通过充分利用多传感器融合、人工智能、机器人及大数据分析等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "即时定位与地图构建技术",
+      "evidence_span": "以即时定位与地图构建技术、图像识别技术、边缘计算、云计算及深度学习为核心的软件系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "图像识别技术",
+      "evidence_span": "以即时定位与地图构建技术、图像识别技术、边缘计算、云计算及深度学习为核心的软件系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "边缘计算",
+      "evidence_span": "以即时定位与地图构建技术、图像识别技术、边缘计算、云计算及深度学习为核心的软件系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云计算",
+      "evidence_span": "以即时定位与地图构建技术、图像识别技术、边缘计算、云计算及深度学习为核心的软件系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "深度学习",
+      "evidence_span": "以即时定位与地图构建技术、图像识别技术、边缘计算、云计算及深度学习为核心的软件系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "传感器智能感知",
+      "evidence_span": "积累了传感器智能感知、机器人运动控制、基于人工智能的光-热-声多维状态高精检测、机器人安全柔性控制以及海量异构大数据分析等关键核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器人运动控制",
+      "evidence_span": "积累了传感器智能感知、机器人运动控制、基于人工智能的光-热-声多维状态高精检测、机器人安全柔性控制以及海量异构大数据分析等关键核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于人工智能的光-热-声多维状态高精检测",
+      "evidence_span": "积累了传感器智能感知、机器人运动控制、基于人工智能的光-热-声多维状态高精检测、机器人安全柔性控制以及海量异构大数据分析等关键核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器人安全柔性控制",
+      "evidence_span": "积累了传感器智能感知、机器人运动控制、基于人工智能的光-热-声多维状态高精检测、机器人安全柔性控制以及海量异构大数据分析等关键核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海量异构大数据分析",
+      "evidence_span": "积累了传感器智能感知、机器人运动控制、基于人工智能的光-热-声多维状态高精检测、机器人安全柔性控制以及海量异构大数据分析等关键核心技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天津一号轨道交通运营有限公司",
+      "evidence_span": "天津一号轨道交通运营有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江交投轨道交通科技有限公司",
+      "evidence_span": "浙江交投轨道交通科技有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "成都大汇智联科技有限公司",
+      "evidence_span": "成都大汇智联科技有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁上海设计院集团有限公司",
+      "evidence_span": "中铁上海设计院集团有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新疆交通建设集团股份有限公司",
+      "evidence_span": "新疆交通建设集团股份有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江长龙航空有限公司",
+      "evidence_span": "浙江长龙航空有限公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "人工智能+工业大健康",
+      "evidence_span": "公司规划了“人工智能+工业大健康”的战略目标"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业设备检测及故障诊断",
+        "evidence_span": "公司主要从事工业设备检测及故障诊断领域的智能机器人、智能监测检测及控制设备的研发、制造、推广及应用"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能机器人研发生产",
+        "evidence_span": "公司是一家长期专注于工业设备检测及故障诊断领域的智能机器人及智能监测检测设备研发、制造、推广及应用的企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能监测检测及控制设备",
+        "evidence_span": "公司的主要产品形态分为智能机器人和智能监测检测及控制设备"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "工业大健康领域机器人研发生产的领先企业",
+        "evidence_span": "成为工业大健康领域机器人研发生产的领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级专精特新“小巨人”企业",
+        "evidence_span": "公司于2020年被工信部认定为国家级专精特新“小巨人”企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "巡检机器人工作组秘书处单位",
+        "evidence_span": "公司担任巡检机器人工作组秘书处单位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "室外轮式巡检机器人",
+        "evidence_span": "室外轮式巡检机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "室内轮式巡检机器人",
+        "evidence_span": "室内轮式巡检机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "开关室操作机器人",
+        "evidence_span": "开关室操作机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "室内挂轨巡检机器人",
+        "evidence_span": "室内挂轨巡检机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "极寒适应型变电站巡检机器人",
+        "evidence_span": "极寒适应型变电站巡检机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "输电线路巡检/除冰机器人",
+        "evidence_span": "输电线路巡检/除冰机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨交线路巡检机器人",
+        "evidence_span": "轨交线路巡检机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "列车车底检测机器人",
+        "evidence_span": "列车车底检测机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双轨式钢轨超声波探伤仪",
+        "evidence_span": "双轨式钢轨超声波探伤仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "配网工程管控监理机器人",
+        "evidence_span": "配网工程管控监理机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无人机",
+        "evidence_span": "无人机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "变压器油中气体在线监测系统",
+        "evidence_span": "变压器油中气体在线监测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "图像/视频监测装置",
+        "evidence_span": "图像/视频监测装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海缆监测一体化平台",
+        "evidence_span": "海缆监测一体化平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧站房",
+        "evidence_span": "智慧站房"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能安全帽",
+        "evidence_span": "智能安全帽"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "故障监测装置",
+        "evidence_span": "故障监测装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防爆轮式巡检机器人",
+        "evidence_span": "防爆轮式巡检机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业罐体高空壁厚测量无人机",
+        "evidence_span": "工业罐体高空壁厚测量无人机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消防物联集中监控子系统",
+        "evidence_span": "消防物联集中监控子系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水下机器人",
+        "evidence_span": "布局水下机器人本体技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多传感器融合",
+        "evidence_span": "通过充分利用多传感器融合、人工智能、机器人及大数据分析等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能",
+        "evidence_span": "通过充分利用多传感器融合、人工智能、机器人及大数据分析等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器人技术",
+        "evidence_span": "通过充分利用多传感器融合、人工智能、机器人及大数据分析等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据分析",
+        "evidence_span": "通过充分利用多传感器融合、人工智能、机器人及大数据分析等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "即时定位与地图构建技术",
+        "evidence_span": "以即时定位与地图构建技术、图像识别技术、边缘计算、云计算及深度学习为核心的软件系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "图像识别技术",
+        "evidence_span": "以即时定位与地图构建技术、图像识别技术、边缘计算、云计算及深度学习为核心的软件系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "边缘计算",
+        "evidence_span": "以即时定位与地图构建技术、图像识别技术、边缘计算、云计算及深度学习为核心的软件系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云计算",
+        "evidence_span": "以即时定位与地图构建技术、图像识别技术、边缘计算、云计算及深度学习为核心的软件系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "深度学习",
+        "evidence_span": "以即时定位与地图构建技术、图像识别技术、边缘计算、云计算及深度学习为核心的软件系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "传感器智能感知",
+        "evidence_span": "积累了传感器智能感知、机器人运动控制、基于人工智能的光-热-声多维状态高精检测、机器人安全柔性控制以及海量异构大数据分析等关键核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器人运动控制",
+        "evidence_span": "积累了传感器智能感知、机器人运动控制、基于人工智能的光-热-声多维状态高精检测、机器人安全柔性控制以及海量异构大数据分析等关键核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于人工智能的光-热-声多维状态高精检测",
+        "evidence_span": "积累了传感器智能感知、机器人运动控制、基于人工智能的光-热-声多维状态高精检测、机器人安全柔性控制以及海量异构大数据分析等关键核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器人安全柔性控制",
+        "evidence_span": "积累了传感器智能感知、机器人运动控制、基于人工智能的光-热-声多维状态高精检测、机器人安全柔性控制以及海量异构大数据分析等关键核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海量异构大数据分析",
+        "evidence_span": "积累了传感器智能感知、机器人运动控制、基于人工智能的光-热-声多维状态高精检测、机器人安全柔性控制以及海量异构大数据分析等关键核心技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天津一号轨道交通运营有限公司",
+        "evidence_span": "天津一号轨道交通运营有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江交投轨道交通科技有限公司",
+        "evidence_span": "浙江交投轨道交通科技有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "成都大汇智联科技有限公司",
+        "evidence_span": "成都大汇智联科技有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁上海设计院集团有限公司",
+        "evidence_span": "中铁上海设计院集团有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新疆交通建设集团股份有限公司",
+        "evidence_span": "新疆交通建设集团股份有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江长龙航空有限公司",
+        "evidence_span": "浙江长龙航空有限公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "人工智能+工业大健康",
+        "evidence_span": "公司规划了“人工智能+工业大健康”的战略目标"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:32:09"
+}

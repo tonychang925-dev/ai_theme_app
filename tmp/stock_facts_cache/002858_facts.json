@@ -1,0 +1,424 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "体育赛事经营",
+      "evidence_span": "以体育赛事经营、体育俱乐部经营、体育场馆经营、体育装备制造与销售与市场营销服务为主要经营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体育俱乐部经营",
+      "evidence_span": "以体育赛事经营、体育俱乐部经营、体育场馆经营、体育装备制造与销售与市场营销服务为主要经营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体育场馆经营",
+      "evidence_span": "以体育赛事经营、体育俱乐部经营、体育场馆经营、体育装备制造与销售与市场营销服务为主要经营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "体育装备制造",
+      "evidence_span": "以体育赛事经营、体育俱乐部经营、体育场馆经营、体育装备制造与销售与市场营销服务为主要经营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "以体育赛事经营、体育俱乐部经营、体育场馆经营、体育装备制造与销售与市场营销服务为主要经营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "市场营销服务",
+      "evidence_span": "以体育赛事经营、体育俱乐部经营、体育场馆经营、体育装备制造与销售与市场营销服务为主要经营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "空间板块",
+      "evidence_span": "公司主营业务划分为空间、IP和数字化三大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "IP板块",
+      "evidence_span": "公司主营业务划分为空间、IP和数字化三大板块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字化板块",
+      "evidence_span": "公司主营业务划分为空间、IP和数字化三大板块"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车运动运营服务商",
+      "evidence_span": "领先的汽车运动运营服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全民健身数字化服务",
+      "evidence_span": "定位全民健身数字化服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育赛事经营",
+      "evidence_span": "体育赛事经营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育场馆经营",
+      "evidence_span": "体育场馆经营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "体育俱乐部经营",
+      "evidence_span": "体育俱乐部经营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡丁车场馆经营",
+      "evidence_span": "卡丁车场馆即“赛卡联盟”连锁品牌经营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "赛车运动及驾驶体验中心",
+      "evidence_span": "赛车运动及驾驶体验中心的场馆运营模式各有不同"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字体育平台",
+      "evidence_span": "大力发展体育数字化业务。定位全民健身数字化服务，着力打造数字体育平台建设及产业生态"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "悦动圈运动APP",
+      "evidence_span": "悦动天下旗下明星产品“悦动圈”运动APP"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运动银行",
+      "evidence_span": "打造“运动银行”运动数字化服务能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI体育",
+      "evidence_span": "“AI体育”，依托悦动圈国内领先的AI运动识别算法及最大的AI动作库"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字化解决方案",
+      "evidence_span": "通过推广基于SAAS+PASS的数字化解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡丁车代理",
+      "evidence_span": "进口卡丁车的代理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡丁车研发制造",
+      "evidence_span": "国产卡丁车的研发制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡丁车装备代理",
+      "evidence_span": "驾驶卡丁车所需的装备代理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡丁车培训",
+      "evidence_span": "卡丁车培训"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卡丁车赛事运营",
+      "evidence_span": "卡丁车赛事运营"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI+IOT研发和技术能力",
+      "evidence_span": "充分发挥悦动天下AI+IOT等研发和技术能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI运动识别算法",
+      "evidence_span": "依托悦动圈国内领先的AI运动识别算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AI动作库",
+      "evidence_span": "最大的AI动作库"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "整车厂",
+      "evidence_span": "赞助商覆盖整车厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "油品企业",
+      "evidence_span": "赞助商覆盖整车厂、油品企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "轮胎企业",
+      "evidence_span": "轮胎企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "性能配件企业",
+      "evidence_span": "性能配件企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "快速消费品企业",
+      "evidence_span": "快速消费品企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "互联网企业",
+      "evidence_span": "互联网企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽大众333车队",
+      "evidence_span": "公司的上汽大众333车队和MGXPOWER车队就属于厂商车队"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "MGXPOWER车队",
+      "evidence_span": "公司的上汽大众333车队和MGXPOWER车队就属于厂商车队"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国体育报业总社",
+      "evidence_span": "公司先后与中国体育报业总社、新华网达成战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新华网",
+      "evidence_span": "公司先后与中国体育报业总社、新华网达成战略合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字体育",
+      "evidence_span": "中国全民健身、数字体育的领跑者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车运动全产业链",
+      "evidence_span": "力盛体育汽车运动全产业链覆盖"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "虚拟现实与元宇宙",
+      "evidence_span": "公司是中国信通院牵头组建的“虚拟现实与元宇宙产业联盟（XRMA）”发起会员单位之一"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "体育赛事经营",
+        "evidence_span": "以体育赛事经营、体育俱乐部经营、体育场馆经营、体育装备制造与销售与市场营销服务为主要经营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体育俱乐部经营",
+        "evidence_span": "以体育赛事经营、体育俱乐部经营、体育场馆经营、体育装备制造与销售与市场营销服务为主要经营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体育场馆经营",
+        "evidence_span": "以体育赛事经营、体育俱乐部经营、体育场馆经营、体育装备制造与销售与市场营销服务为主要经营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "体育装备制造与销售",
+        "evidence_span": "以体育赛事经营、体育俱乐部经营、体育场馆经营、体育装备制造与销售与市场营销服务为主要经营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "市场营销服务",
+        "evidence_span": "以体育赛事经营、体育俱乐部经营、体育场馆经营、体育装备制造与销售与市场营销服务为主要经营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "空间板块",
+        "evidence_span": "公司主营业务划分为空间、IP和数字化三大板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "IP板块",
+        "evidence_span": "公司主营业务划分为空间、IP和数字化三大板块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字化板块",
+        "evidence_span": "公司主营业务划分为空间、IP和数字化三大板块"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车运动运营服务商",
+        "evidence_span": "领先的汽车运动运营服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全民健身数字化服务",
+        "evidence_span": "定位全民健身数字化服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育赛事经营",
+        "evidence_span": "体育赛事经营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育场馆经营",
+        "evidence_span": "体育场馆经营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "体育俱乐部经营",
+        "evidence_span": "体育俱乐部经营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡丁车场馆经营",
+        "evidence_span": "卡丁车场馆即“赛卡联盟”连锁品牌经营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "赛车运动及驾驶体验中心",
+        "evidence_span": "赛车运动及驾驶体验中心的场馆运营模式各有不同"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字体育平台",
+        "evidence_span": "大力发展体育数字化业务。定位全民健身数字化服务，着力打造数字体育平台建设及产业生态"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "悦动圈运动APP",
+        "evidence_span": "悦动天下旗下明星产品“悦动圈”运动APP"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运动银行",
+        "evidence_span": "打造“运动银行”运动数字化服务能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI体育",
+        "evidence_span": "“AI体育”，依托悦动圈国内领先的AI运动识别算法及最大的AI动作库"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字化解决方案",
+        "evidence_span": "通过推广基于SAAS+PASS的数字化解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡丁车代理",
+        "evidence_span": "进口卡丁车的代理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡丁车研发制造",
+        "evidence_span": "国产卡丁车的研发制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡丁车装备代理",
+        "evidence_span": "驾驶卡丁车所需的装备代理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡丁车培训",
+        "evidence_span": "卡丁车培训"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卡丁车赛事运营",
+        "evidence_span": "卡丁车赛事运营"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI+IOT研发和技术能力",
+        "evidence_span": "充分发挥悦动天下AI+IOT等研发和技术能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI运动识别算法",
+        "evidence_span": "依托悦动圈国内领先的AI运动识别算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AI动作库",
+        "evidence_span": "最大的AI动作库"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "整车厂",
+        "evidence_span": "赞助商覆盖整车厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "油品企业",
+        "evidence_span": "赞助商覆盖整车厂、油品企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "轮胎企业",
+        "evidence_span": "轮胎企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "性能配件企业",
+        "evidence_span": "性能配件企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "快速消费品企业",
+        "evidence_span": "快速消费品企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "互联网企业",
+        "evidence_span": "互联网企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽大众333车队",
+        "evidence_span": "公司的上汽大众333车队和MGXPOWER车队就属于厂商车队"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "MGXPOWER车队",
+        "evidence_span": "公司的上汽大众333车队和MGXPOWER车队就属于厂商车队"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国体育报业总社",
+        "evidence_span": "公司先后与中国体育报业总社、新华网达成战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新华网",
+        "evidence_span": "公司先后与中国体育报业总社、新华网达成战略合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字体育",
+        "evidence_span": "中国全民健身、数字体育的领跑者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车运动全产业链",
+        "evidence_span": "力盛体育汽车运动全产业链覆盖"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "虚拟现实与元宇宙",
+        "evidence_span": "公司是中国信通院牵头组建的“虚拟现实与元宇宙产业联盟（XRMA）”发起会员单位之一"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:07:03"
+}

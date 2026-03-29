@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "a18a121d5a5f", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述EASA试飞员对C919进行试飞，这是具体事件（时间性动态），但同时也涉及C919获得西方安全认证的进程和全球市场竞争的背景知识，混合了事件和静态知识。"}}

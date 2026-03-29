@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "9e45b2678495", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述台积电引进高数值孔径极紫外光刻机的具体事件，包括时间（9月底前）和价格信息，是动态新闻，没有提供关于半导体设备本身的稳定知识。"}}

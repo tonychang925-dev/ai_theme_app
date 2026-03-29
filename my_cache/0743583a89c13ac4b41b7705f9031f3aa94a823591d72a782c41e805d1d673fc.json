@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "2f2040c1c111", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述以色列对伊朗的空袭行动，是一个具体军事事件，虽然提及核计划，但主要是事件描述，没有提供军工题材的稳定知识，属于纯事件。"}}

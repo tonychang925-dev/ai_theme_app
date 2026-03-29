@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "节能节水系统",
+      "evidence_span": "公司目前主要业务分为：1、节能节水系统"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏新能源系统",
+      "evidence_span": "2、光伏新能源系统"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "节能和光伏核心装备供应商",
+      "evidence_span": "行业领先的节能和光伏核心装备供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光伏新能源材料供应商",
+      "evidence_span": "重要光伏新能源材料供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "多晶硅还原炉龙头",
+      "evidence_span": "双良节能多晶硅还原炉龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "溴化锂冷热机组",
+      "evidence_span": "溴化锂冷热机组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "换热器",
+      "evidence_span": "换热器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空冷系统",
+      "evidence_span": "空冷系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多晶硅还原炉",
+      "evidence_span": "多晶硅还原炉"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大尺寸单晶硅棒",
+      "evidence_span": "大尺寸单晶硅棒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅片",
+      "evidence_span": "硅片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高效光伏组件",
+      "evidence_span": "高效光伏组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿电制氢系统",
+      "evidence_span": "公司首套绿电制氢系统顺利交付"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CDM液冷换热模块",
+      "evidence_span": "公司开发的CDM液冷换热模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "真空换热技术",
+      "evidence_span": "公司从事真空换热技术研发和产品销售超过三十年"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "半导体级多晶硅还原炉开发",
+      "evidence_span": "具备半导体级多晶硅还原炉的开发以及技术储备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "单晶硅热场设计技术",
+      "evidence_span": "公司利用独特的热场设计技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大尺寸硅片生产",
+      "evidence_span": "可以满足182mm及210mm等大尺寸硅片生产要求"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大全",
+      "evidence_span": "公司为大全、新特、合盛、东立、东方希望、其亚、永祥等业内龙头企业量身打造近千台还原炉"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新特",
+      "evidence_span": "公司为大全、新特、合盛、东立、东方希望、其亚、永祥等业内龙头企业量身打造近千台还原炉"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通威",
+      "evidence_span": "已与通威、新特、大全等硅料生产企业建立了长期稳定的供应链关系和战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "爱旭",
+      "evidence_span": "已和通威、爱旭、润阳、天合光能等多家下游电池厂商建立合作并签订销售长单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天合光能",
+      "evidence_span": "已和通威、爱旭、润阳、天合光能等多家下游电池厂商建立合作并签订销售长单"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳中和",
+      "evidence_span": "顺碳中和发展潮流"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "双碳",
+      "evidence_span": "“一体两翼”布局迎接“双碳”时代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "节能节水系统",
+        "evidence_span": "公司目前主要业务分为：1、节能节水系统"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏新能源系统",
+        "evidence_span": "2、光伏新能源系统"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "节能和光伏核心装备供应商",
+        "evidence_span": "行业领先的节能和光伏核心装备供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光伏新能源材料供应商",
+        "evidence_span": "重要光伏新能源材料供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "多晶硅还原炉龙头",
+        "evidence_span": "双良节能多晶硅还原炉龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "溴化锂冷热机组",
+        "evidence_span": "溴化锂冷热机组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "换热器",
+        "evidence_span": "换热器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空冷系统",
+        "evidence_span": "空冷系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多晶硅还原炉",
+        "evidence_span": "多晶硅还原炉"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大尺寸单晶硅棒",
+        "evidence_span": "大尺寸单晶硅棒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅片",
+        "evidence_span": "硅片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高效光伏组件",
+        "evidence_span": "高效光伏组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿电制氢系统",
+        "evidence_span": "公司首套绿电制氢系统顺利交付"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CDM液冷换热模块",
+        "evidence_span": "公司开发的CDM液冷换热模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "真空换热技术",
+        "evidence_span": "公司从事真空换热技术研发和产品销售超过三十年"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "半导体级多晶硅还原炉开发",
+        "evidence_span": "具备半导体级多晶硅还原炉的开发以及技术储备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "单晶硅热场设计技术",
+        "evidence_span": "公司利用独特的热场设计技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大尺寸硅片生产",
+        "evidence_span": "可以满足182mm及210mm等大尺寸硅片生产要求"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大全",
+        "evidence_span": "公司为大全、新特、合盛、东立、东方希望、其亚、永祥等业内龙头企业量身打造近千台还原炉"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新特",
+        "evidence_span": "公司为大全、新特、合盛、东立、东方希望、其亚、永祥等业内龙头企业量身打造近千台还原炉"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通威",
+        "evidence_span": "已与通威、新特、大全等硅料生产企业建立了长期稳定的供应链关系和战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "爱旭",
+        "evidence_span": "已和通威、爱旭、润阳、天合光能等多家下游电池厂商建立合作并签订销售长单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天合光能",
+        "evidence_span": "已和通威、爱旭、润阳、天合光能等多家下游电池厂商建立合作并签订销售长单"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳中和",
+        "evidence_span": "顺碳中和发展潮流"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "双碳",
+        "evidence_span": "“一体两翼”布局迎接“双碳”时代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:19:28"
+}

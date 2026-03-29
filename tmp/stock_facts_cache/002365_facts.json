@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "牛磺酸产品的研发",
+      "evidence_span": "牛磺酸产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "牛磺酸产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "牛磺酸产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环氧乙烷的生产",
+      "evidence_span": "环氧乙烷的生产、销售以及聚羧酸系减水剂单体、减水剂等相关产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售以",
+      "evidence_span": "环氧乙烷的生产、销售以及聚羧酸系减水剂单体、减水剂等相关产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "聚羧酸系减水剂单体",
+      "evidence_span": "环氧乙烷的生产、销售以及聚羧酸系减水剂单体、减水剂等相关产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "减水剂等相关产品的研发",
+      "evidence_span": "环氧乙烷的生产、销售以及聚羧酸系减水剂单体、减水剂等相关产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "保健食品的研发",
+      "evidence_span": "保健食品的研发、生产和销售以及国外保健食品的进口与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "国外保健食品的进口",
+      "evidence_span": "保健食品的研发、生产和销售以及国外保健食品的进口与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "与健康领域相关的股权或实业投资",
+      "evidence_span": "与健康领域相关的股权或实业投资"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大的牛磺酸生产基地",
+      "evidence_span": "全球最大的牛磺酸生产基地"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "牛磺酸",
+      "evidence_span": "牛磺酸为公司的主导产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环氧乙烷",
+      "evidence_span": "环氧乙烷的生产、销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚羧酸系减水剂单体",
+      "evidence_span": "聚羧酸系减水剂单体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "减水剂",
+      "evidence_span": "减水剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "易加能系列保健食品",
+      "evidence_span": "易加能系列保健食品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "健美生系列营养素补充剂",
+      "evidence_span": "健美生系列营养素补充剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "年产4万吨牛磺酸食品添加剂项目新工艺",
+      "evidence_span": "加快推进“年产4万吨牛磺酸食品添加剂项目”新工艺的应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化、智能化新设备的装备应用",
+      "evidence_span": "实施自动化、智能化新设备的装备应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一种制备高纯度牛磺酸和盐的方法和系统",
+      "evidence_span": "一种制备高纯度牛磺酸和盐的方法和系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一种全回收处理牛磺酸母液的方法和生产系统",
+      "evidence_span": "一种全回收处理牛磺酸母液的方法和生产系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一种去除羟乙基磺酸盐中硫酸根的方法",
+      "evidence_span": "一种去除羟乙基磺酸盐中硫酸根的方法"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "红牛",
+      "evidence_span": "为红牛、雀巢、可口可乐等世界级公司的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雀巢",
+      "evidence_span": "为红牛、雀巢、可口可乐等世界级公司的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "可口可乐",
+      "evidence_span": "为红牛、雀巢、可口可乐等世界级公司的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天猫",
+      "evidence_span": "与天猫、京东、唯品会、考拉等平台继续保持战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东",
+      "evidence_span": "与天猫、京东、唯品会、考拉等平台继续保持战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "唯品会",
+      "evidence_span": "与天猫、京东、唯品会、考拉等平台继续保持战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "考拉",
+      "evidence_span": "与天猫、京东、唯品会、考拉等平台继续保持战略合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "加拿大健美生",
+      "evidence_span": "与加拿大健美生签订的经销协议"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "牛磺酸产品的研发、生产和销售",
+        "evidence_span": "牛磺酸产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环氧乙烷的生产、销售以及聚羧酸系减水剂单体、减水剂等相关产品的研发、生产和销售",
+        "evidence_span": "环氧乙烷的生产、销售以及聚羧酸系减水剂单体、减水剂等相关产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "保健食品的研发、生产和销售以及国外保健食品的进口与销售",
+        "evidence_span": "保健食品的研发、生产和销售以及国外保健食品的进口与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "与健康领域相关的股权或实业投资",
+        "evidence_span": "与健康领域相关的股权或实业投资"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大的牛磺酸生产基地",
+        "evidence_span": "全球最大的牛磺酸生产基地"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "牛磺酸",
+        "evidence_span": "牛磺酸为公司的主导产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环氧乙烷",
+        "evidence_span": "环氧乙烷的生产、销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚羧酸系减水剂单体",
+        "evidence_span": "聚羧酸系减水剂单体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "减水剂",
+        "evidence_span": "减水剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "易加能系列保健食品",
+        "evidence_span": "易加能系列保健食品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "健美生系列营养素补充剂",
+        "evidence_span": "健美生系列营养素补充剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "年产4万吨牛磺酸食品添加剂项目新工艺",
+        "evidence_span": "加快推进“年产4万吨牛磺酸食品添加剂项目”新工艺的应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化、智能化新设备的装备应用",
+        "evidence_span": "实施自动化、智能化新设备的装备应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一种制备高纯度牛磺酸和盐的方法和系统",
+        "evidence_span": "一种制备高纯度牛磺酸和盐的方法和系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一种全回收处理牛磺酸母液的方法和生产系统",
+        "evidence_span": "一种全回收处理牛磺酸母液的方法和生产系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一种去除羟乙基磺酸盐中硫酸根的方法",
+        "evidence_span": "一种去除羟乙基磺酸盐中硫酸根的方法"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "红牛",
+        "evidence_span": "为红牛、雀巢、可口可乐等世界级公司的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雀巢",
+        "evidence_span": "为红牛、雀巢、可口可乐等世界级公司的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "可口可乐",
+        "evidence_span": "为红牛、雀巢、可口可乐等世界级公司的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天猫",
+        "evidence_span": "与天猫、京东、唯品会、考拉等平台继续保持战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东",
+        "evidence_span": "与天猫、京东、唯品会、考拉等平台继续保持战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "唯品会",
+        "evidence_span": "与天猫、京东、唯品会、考拉等平台继续保持战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "考拉",
+        "evidence_span": "与天猫、京东、唯品会、考拉等平台继续保持战略合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "加拿大健美生",
+        "evidence_span": "与加拿大健美生签订的经销协议"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:25:36"
+}

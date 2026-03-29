@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "a7ebc2267c06", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落混有事件（长江存储扩产、生产线试运行）和知识（NAND与逻辑半导体工艺差异、蚀刻和沉积工艺突破），边界不清，可能含稳定知识但夹带事件推进。"}}

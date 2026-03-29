@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "a86124a957db", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述财政部和税务总局发布的印花税政策，是一个政策事件，与军工集团本体知识无关。"}}

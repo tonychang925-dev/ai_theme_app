@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "d2dc837b8319", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "段落主要描述政策发布事件，但政策内容包含有价值的静态知识（如EDA软件、IP核、半导体材料、设备国产化等半导体设备产业链要素），需要后续抽取。"}}

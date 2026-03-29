@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "4950d7f897a5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落提到三星、SK海力士、美光对无助焊剂键合技术感兴趣并进行技术准备，这包含HBM4的技术知识（无助焊剂键合），但以事件形式（公司兴趣和准备）呈现，混合了事件信息。"}}

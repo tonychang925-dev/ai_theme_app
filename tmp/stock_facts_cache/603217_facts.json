@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高品质精细化工产品的研发",
+      "evidence_span": "主要从事高品质精细化工产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "主要从事高品质精细化工产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主要从事高品质精细化工产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "二元酸二甲酯",
+      "evidence_span": "主要产品包括二元酸二甲酯"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "二元醇",
+      "evidence_span": "主要产品包括...二元醇"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种增塑剂",
+      "evidence_span": "主要产品包括...特种增塑剂三个系列"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精细化工细分赛道龙头",
+      "evidence_span": "精细化工细分赛道龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "混合二元酸二甲酯全球龙头企业",
+      "evidence_span": "混合二元酸二甲酯全球龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "二甲酯二元醇龙头",
+      "evidence_span": "二甲酯二元醇龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "混合二元酸二甲酯",
+      "evidence_span": "主要产品为混合二元酸二甲酯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DMS",
+      "evidence_span": "二元酸二甲酯系列产品有混合二元酸二甲酯、 DMS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DMG",
+      "evidence_span": "二元酸二甲酯系列产品有...DMG"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DMA",
+      "evidence_span": "二元酸二甲酯系列产品有...DMA"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "1,6-己二醇",
+      "evidence_span": "二元醇系列产品主要包括 1,6-己二醇"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "1,5-戊二醇",
+      "evidence_span": "二元醇系列产品主要包括...1,5-戊二醇"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "邻苯二甲酸二仲辛酯",
+      "evidence_span": "邻苯二甲酸二仲辛酯产能国内领先"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保溶剂",
+      "evidence_span": "6 万吨/年环保溶剂（混合二元酸二甲酯）项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "脂肪醇",
+      "evidence_span": "3 万吨/年脂肪醇项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多功能环保增塑剂",
+      "evidence_span": "6 万吨/年多功能环保增塑剂项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "受阻胺类光稳定剂",
+      "evidence_span": "3.5 万吨/年受阻胺类光稳定剂项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚碳酸酯二元醇",
+      "evidence_span": "0.2 万吨/年聚碳酸酯二元醇项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银粉",
+      "evidence_span": "0.1 万吨/年银粉项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "己二酸二甲酯加氢法制备",
+      "evidence_span": "公司采用己二酸二甲酯加氢法制备"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新材料新能源行业",
+      "evidence_span": "进军新材料新能源行业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏新增长曲线",
+      "evidence_span": "布局 1000 吨银粉项目开辟光伏新增长曲线"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高品质精细化工产品的研发、生产和销售",
+        "evidence_span": "主要从事高品质精细化工产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "二元酸二甲酯",
+        "evidence_span": "主要产品包括二元酸二甲酯"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "二元醇",
+        "evidence_span": "主要产品包括...二元醇"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特种增塑剂",
+        "evidence_span": "主要产品包括...特种增塑剂三个系列"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精细化工细分赛道龙头",
+        "evidence_span": "精细化工细分赛道龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "混合二元酸二甲酯全球龙头企业",
+        "evidence_span": "混合二元酸二甲酯全球龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "二甲酯二元醇龙头",
+        "evidence_span": "二甲酯二元醇龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "混合二元酸二甲酯",
+        "evidence_span": "主要产品为混合二元酸二甲酯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DMS",
+        "evidence_span": "二元酸二甲酯系列产品有混合二元酸二甲酯、 DMS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DMG",
+        "evidence_span": "二元酸二甲酯系列产品有...DMG"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DMA",
+        "evidence_span": "二元酸二甲酯系列产品有...DMA"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "1,6-己二醇",
+        "evidence_span": "二元醇系列产品主要包括 1,6-己二醇"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "1,5-戊二醇",
+        "evidence_span": "二元醇系列产品主要包括...1,5-戊二醇"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "邻苯二甲酸二仲辛酯",
+        "evidence_span": "邻苯二甲酸二仲辛酯产能国内领先"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保溶剂",
+        "evidence_span": "6 万吨/年环保溶剂（混合二元酸二甲酯）项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "脂肪醇",
+        "evidence_span": "3 万吨/年脂肪醇项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多功能环保增塑剂",
+        "evidence_span": "6 万吨/年多功能环保增塑剂项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "受阻胺类光稳定剂",
+        "evidence_span": "3.5 万吨/年受阻胺类光稳定剂项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚碳酸酯二元醇",
+        "evidence_span": "0.2 万吨/年聚碳酸酯二元醇项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银粉",
+        "evidence_span": "0.1 万吨/年银粉项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "己二酸二甲酯加氢法制备",
+        "evidence_span": "公司采用己二酸二甲酯加氢法制备"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新材料新能源行业",
+        "evidence_span": "进军新材料新能源行业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏新增长曲线",
+        "evidence_span": "布局 1000 吨银粉项目开辟光伏新增长曲线"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:42:35"
+}

@@ -1,0 +1,554 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "制冰设备业务",
+      "evidence_span": "制冰设备业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "压缩机（组）产品",
+      "evidence_span": "压缩机（组）产品及系统应用"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "系统应用",
+      "evidence_span": "压缩机（组）产品及系统应用"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "油气服务业务",
+      "evidence_span": "油气服务业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中央空调系统业务",
+      "evidence_span": "中央空调系统业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "氢能源业务",
+      "evidence_span": "氢能源业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "制冰系统制造商",
+      "evidence_span": "国内规模最大的制冰系统制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "冷热与新能源装备制造高新技术企业",
+      "evidence_span": "冷热与新能源装备制造高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "油气开发地面工程一体化解决方案提供商",
+      "evidence_span": "国内知名油气开发地面工程一体化解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "建筑环境系统集成服务商",
+      "evidence_span": "国内优秀的建筑环境系统集成服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "燃料电池空压系统提供商",
+      "evidence_span": "经验丰富的燃料电池空压系统提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制冰设备及制冰系统",
+      "evidence_span": "制冰设备及制冰系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "活塞压缩机",
+      "evidence_span": "活塞压缩机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "螺杆压缩机",
+      "evidence_span": "螺杆压缩机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "离心式压缩机",
+      "evidence_span": "离心式压缩机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模块化开启式螺杆盐水机组",
+      "evidence_span": "全系列模块化开启式螺杆盐水机组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低温乙烯桶泵供液机组",
+      "evidence_span": "低温乙烯桶泵供液机组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氨气液分离器",
+      "evidence_span": "氨气液分离器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制冷造雪系统",
+      "evidence_span": "制冷造雪系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风力驱动氨热泵机组",
+      "evidence_span": "风力驱动氨热泵机组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二氧化碳开启式螺杆压缩机",
+      "evidence_span": "二氧化碳开启式螺杆压缩机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CO2复叠制冷系统",
+      "evidence_span": "CO2复叠制冷系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生产运行维护服务",
+      "evidence_span": "生产运行维护"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仪表与控制系统维护服务",
+      "evidence_span": "仪表与控制系统维护"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LNG生产服务",
+      "evidence_span": "LNG生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电气维护服务",
+      "evidence_span": "电气维护"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "脱硫及硫磺回收服务",
+      "evidence_span": "脱硫及硫磺回收"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压缩机维护服务",
+      "evidence_span": "压缩机维护"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油气井试采服务",
+      "evidence_span": "油气井试采"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "井筒检测服务",
+      "evidence_span": "井筒检测"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中央空调系统集成安装服务",
+      "evidence_span": "中央空调系统的集成安装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢燃料电池空压机",
+      "evidence_span": "燃料电池空压机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢气循环泵",
+      "evidence_span": "氢气循环泵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢燃料电池系统",
+      "evidence_span": "氢燃料电池系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "活塞压缩机技术",
+      "evidence_span": "活塞压缩机技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "螺杆压缩机技术",
+      "evidence_span": "螺杆压缩机技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "离心压缩机技术",
+      "evidence_span": "离心压缩机技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速离心式空压机技术",
+      "evidence_span": "高速离心式空压机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "天然工质制冷剂技术",
+      "evidence_span": "天然工质制冷剂的制冷技术和热泵技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化生产和检测设备",
+      "evidence_span": "高精度、全自动化、智能化生产和检测设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业物联网平台",
+      "evidence_span": "工业物联网平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "中石油"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "中石化"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中海油",
+      "evidence_span": "中海油"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "中国移动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国电信",
+      "evidence_span": "中国电信"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里巴巴集团",
+      "evidence_span": "阿里巴巴集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为技术有限公司",
+      "evidence_span": "华为技术有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国联合网络通信浙江联通",
+      "evidence_span": "中国联合网络通信浙江联通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化福建石油分公司",
+      "evidence_span": "中石化福建石油分公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福大紫金氢能科技公司",
+      "evidence_span": "福大紫金氢能科技公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "燃料电池产业链",
+      "evidence_span": "布局燃料电池产业链"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "氢燃料电池产业",
+      "evidence_span": "深度布局氢燃料电池产业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "冷链物流",
+      "evidence_span": "冷链物流"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "氢能源",
+      "evidence_span": "氢能源"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "制冰设备业务",
+        "evidence_span": "制冰设备业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "压缩机（组）产品及系统应用",
+        "evidence_span": "压缩机（组）产品及系统应用"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "油气服务业务",
+        "evidence_span": "油气服务业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中央空调系统业务",
+        "evidence_span": "中央空调系统业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "氢能源业务",
+        "evidence_span": "氢能源业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "制冰系统制造商",
+        "evidence_span": "国内规模最大的制冰系统制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "冷热与新能源装备制造高新技术企业",
+        "evidence_span": "冷热与新能源装备制造高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "油气开发地面工程一体化解决方案提供商",
+        "evidence_span": "国内知名油气开发地面工程一体化解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "建筑环境系统集成服务商",
+        "evidence_span": "国内优秀的建筑环境系统集成服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "燃料电池空压系统提供商",
+        "evidence_span": "经验丰富的燃料电池空压系统提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制冰设备及制冰系统",
+        "evidence_span": "制冰设备及制冰系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "活塞压缩机",
+        "evidence_span": "活塞压缩机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "螺杆压缩机",
+        "evidence_span": "螺杆压缩机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "离心式压缩机",
+        "evidence_span": "离心式压缩机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模块化开启式螺杆盐水机组",
+        "evidence_span": "全系列模块化开启式螺杆盐水机组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低温乙烯桶泵供液机组",
+        "evidence_span": "低温乙烯桶泵供液机组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氨气液分离器",
+        "evidence_span": "氨气液分离器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制冷造雪系统",
+        "evidence_span": "制冷造雪系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风力驱动氨热泵机组",
+        "evidence_span": "风力驱动氨热泵机组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二氧化碳开启式螺杆压缩机",
+        "evidence_span": "二氧化碳开启式螺杆压缩机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CO2复叠制冷系统",
+        "evidence_span": "CO2复叠制冷系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生产运行维护服务",
+        "evidence_span": "生产运行维护"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仪表与控制系统维护服务",
+        "evidence_span": "仪表与控制系统维护"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LNG生产服务",
+        "evidence_span": "LNG生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电气维护服务",
+        "evidence_span": "电气维护"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "脱硫及硫磺回收服务",
+        "evidence_span": "脱硫及硫磺回收"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压缩机维护服务",
+        "evidence_span": "压缩机维护"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油气井试采服务",
+        "evidence_span": "油气井试采"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "井筒检测服务",
+        "evidence_span": "井筒检测"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中央空调系统集成安装服务",
+        "evidence_span": "中央空调系统的集成安装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢燃料电池空压机",
+        "evidence_span": "燃料电池空压机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢气循环泵",
+        "evidence_span": "氢气循环泵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢燃料电池系统",
+        "evidence_span": "氢燃料电池系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "活塞压缩机技术",
+        "evidence_span": "活塞压缩机技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "螺杆压缩机技术",
+        "evidence_span": "螺杆压缩机技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "离心压缩机技术",
+        "evidence_span": "离心压缩机技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速离心式空压机技术",
+        "evidence_span": "高速离心式空压机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "天然工质制冷剂技术",
+        "evidence_span": "天然工质制冷剂的制冷技术和热泵技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化生产和检测设备",
+        "evidence_span": "高精度、全自动化、智能化生产和检测设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业物联网平台",
+        "evidence_span": "工业物联网平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "中石油"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "中石化"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中海油",
+        "evidence_span": "中海油"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "中国移动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国电信",
+        "evidence_span": "中国电信"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里巴巴集团",
+        "evidence_span": "阿里巴巴集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为技术有限公司",
+        "evidence_span": "华为技术有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国联合网络通信浙江联通",
+        "evidence_span": "中国联合网络通信浙江联通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化福建石油分公司",
+        "evidence_span": "中石化福建石油分公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福大紫金氢能科技公司",
+        "evidence_span": "福大紫金氢能科技公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "燃料电池产业链",
+        "evidence_span": "布局燃料电池产业链"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "氢燃料电池产业",
+        "evidence_span": "深度布局氢燃料电池产业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "冷链物流",
+        "evidence_span": "冷链物流"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "氢能源",
+        "evidence_span": "氢能源"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:59:58"
+}

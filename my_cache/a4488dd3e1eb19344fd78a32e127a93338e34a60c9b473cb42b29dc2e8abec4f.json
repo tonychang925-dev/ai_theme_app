@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "a7c611594bf5", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体事件：长鑫存储启动上市辅导，包含时间（2025年7月7日）、公司信息和股权结构，属于公司动态新闻，没有提供静态的半导体知识。"}}

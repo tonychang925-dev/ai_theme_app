@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "92b06b56c91a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述了中国政府采购网发布的招标公告、项目获批、投资估算、建设工期等具体事件和动态，属于新闻或公告性质，没有提供建筑设计本身的静态知识，因此分类为pure_event。"}}

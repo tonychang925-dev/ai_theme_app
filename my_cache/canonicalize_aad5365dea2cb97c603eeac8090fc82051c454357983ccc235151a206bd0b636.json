@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:35:36", "result": {"span_uid": "7fa80db60357", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "该片段是关于北约国防开支的具体目标和结构，属于外国军事政策事件，与“军工9大集团”题材直接关联度低，且是具体预测性信息，不稳定。"}}

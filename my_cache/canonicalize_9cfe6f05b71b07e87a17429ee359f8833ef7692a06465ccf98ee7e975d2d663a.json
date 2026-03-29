@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:47:57", "result": {"span_uid": "cb6fd18de4d5", "action": "rewrite", "canonical_text": "韧性城市建设的目标包括提升城市安全韧性，实现城市运行更安全、有序、智慧和高效。", "final_type": "related", "final_role": "城市设计目标", "stability": "medium", "reason": "原文描述了韧性城市建设的具体目标，改写后去除了时间节点和事件背景，保留了设计原则的稳定表达。"}}

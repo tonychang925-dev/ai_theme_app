@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:29:44", "result": {"chunk_id": "9c1becfb3c36", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落包含ICT基础设施业务的静态知识（如核心业务构成、产业细分），但混有事件信息（2023年全球电信设备市场份额统计），因此优先判为candidate_mixed，需要进一步裁决以提取稳定知识。"}}

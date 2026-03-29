@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "96b8861b6941", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了EUV光刻机研发和产业体制转变的事件，但包含了具体的技术路径（EUV产线时间表）、关键公司角色和协调机制，这些可能作为半导体设备国产化知识的候选内容。"}}

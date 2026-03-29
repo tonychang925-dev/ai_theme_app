@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:21:45", "result": {"span_uid": "bdb249673614", "action": "keep", "canonical_text": "HBM（高带宽存储器）是一种应用于CPU/GPU的新型内存芯片，通过将多个DDR芯片堆叠并与GPU封装在一起，形成大容量、高位宽的DDR组合阵列。", "final_type": "core", "final_role": "定义与构成", "stability": "high", "reason": "直接定义HBM是什么及其核心构成方式，信息稳定且可独立成立。"}}

@@ -1,0 +1,409 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "乘用车",
+      "evidence_span": "主要包括三大业务板块，分别为乘用车、皮卡等轻型车业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "皮卡等轻型车业务",
+      "evidence_span": "主要包括三大业务板块，分别为乘用车、皮卡等轻型车业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "客车",
+      "evidence_span": "客车及特种车等商用车业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特种车等商用车业务",
+      "evidence_span": "客车及特种车等商用车业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车桥等汽车零配件业务",
+      "evidence_span": "车桥等汽车零配件业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车整车、汽车车桥及零部件为主营业务的上市公司",
+      "evidence_span": "公司是以汽车整车、汽车车桥及零部件为主营业务的上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纯电动城市客车",
+      "evidence_span": "10-12米纯电动城市客车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄海N系列皮卡",
+      "evidence_span": "黄海N系列皮卡"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢能源客车",
+      "evidence_span": "成功研发出氢能源客车新产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "曙光车桥",
+      "evidence_span": "曙光车桥产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源车桥",
+      "evidence_span": "新能源车桥产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微型新能源乘用车",
+      "evidence_span": "微型新能源乘用车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "A系列轻客",
+      "evidence_span": "A系列轻客"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氢能源技术",
+      "evidence_span": "公司在氢能源技术方面取得新突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "驾驶员行为分析系统",
+      "evidence_span": "驾驶员行为分析系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车辆驾驶主动防御系统",
+      "evidence_span": "车辆驾驶主动防御系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高清人脸识别系统",
+      "evidence_span": "高清人脸识别系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "整车控制器",
+      "evidence_span": "自主研发的整车控制器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "同轴直联式整体纯电动驱动桥",
+      "evidence_span": "国家首款同轴直联式整体纯电动驱动桥发明专利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "呼和浩特公交",
+      "evidence_span": "呼和浩特公交457辆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丹东公交",
+      "evidence_span": "丹东公交123辆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "国家电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安部",
+      "evidence_span": "公安部"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "水利系统",
+      "evidence_span": "水利系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "森林消防",
+      "evidence_span": "森林消防"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽集团传祺",
+      "evidence_span": "广汽集团传祺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用五菱",
+      "evidence_span": "上汽通用五菱"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽大通",
+      "evidence_span": "上汽大通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽集团",
+      "evidence_span": "一汽集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "二汽集团",
+      "evidence_span": "二汽集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安汽车",
+      "evidence_span": "长安汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽福田",
+      "evidence_span": "北汽福田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江淮汽车",
+      "evidence_span": "江淮汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利汽车",
+      "evidence_span": "吉利汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金龙汽车",
+      "evidence_span": "金龙汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国移动",
+      "evidence_span": "中国移动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国石油",
+      "evidence_span": "中国石油"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国武警部队",
+      "evidence_span": "中国武警部队"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国陆军总装备部",
+      "evidence_span": "中国陆军总装备部"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车转型",
+      "evidence_span": "加快新能源汽车转型步伐"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "氢能产业发展",
+      "evidence_span": "氢能产业发展正步入快车道"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "乘用车、皮卡等轻型车业务",
+        "evidence_span": "主要包括三大业务板块，分别为乘用车、皮卡等轻型车业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "客车及特种车等商用车业务",
+        "evidence_span": "客车及特种车等商用车业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车桥等汽车零配件业务",
+        "evidence_span": "车桥等汽车零配件业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车整车、汽车车桥及零部件为主营业务的上市公司",
+        "evidence_span": "公司是以汽车整车、汽车车桥及零部件为主营业务的上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纯电动城市客车",
+        "evidence_span": "10-12米纯电动城市客车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄海N系列皮卡",
+        "evidence_span": "黄海N系列皮卡"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢能源客车",
+        "evidence_span": "成功研发出氢能源客车新产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "曙光车桥",
+        "evidence_span": "曙光车桥产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源车桥",
+        "evidence_span": "新能源车桥产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微型新能源乘用车",
+        "evidence_span": "微型新能源乘用车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "A系列轻客",
+        "evidence_span": "A系列轻客"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氢能源技术",
+        "evidence_span": "公司在氢能源技术方面取得新突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "驾驶员行为分析系统",
+        "evidence_span": "驾驶员行为分析系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车辆驾驶主动防御系统",
+        "evidence_span": "车辆驾驶主动防御系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高清人脸识别系统",
+        "evidence_span": "高清人脸识别系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "整车控制器",
+        "evidence_span": "自主研发的整车控制器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "同轴直联式整体纯电动驱动桥",
+        "evidence_span": "国家首款同轴直联式整体纯电动驱动桥发明专利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "呼和浩特公交",
+        "evidence_span": "呼和浩特公交457辆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丹东公交",
+        "evidence_span": "丹东公交123辆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "国家电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安部",
+        "evidence_span": "公安部"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "水利系统",
+        "evidence_span": "水利系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "森林消防",
+        "evidence_span": "森林消防"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽集团传祺",
+        "evidence_span": "广汽集团传祺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用五菱",
+        "evidence_span": "上汽通用五菱"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽大通",
+        "evidence_span": "上汽大通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽集团",
+        "evidence_span": "一汽集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "二汽集团",
+        "evidence_span": "二汽集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安汽车",
+        "evidence_span": "长安汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽福田",
+        "evidence_span": "北汽福田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江淮汽车",
+        "evidence_span": "江淮汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利汽车",
+        "evidence_span": "吉利汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金龙汽车",
+        "evidence_span": "金龙汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国移动",
+        "evidence_span": "中国移动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国石油",
+        "evidence_span": "中国石油"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国武警部队",
+        "evidence_span": "中国武警部队"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国陆军总装备部",
+        "evidence_span": "中国陆军总装备部"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车转型",
+        "evidence_span": "加快新能源汽车转型步伐"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "氢能产业发展",
+        "evidence_span": "氢能产业发展正步入快车道"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:52:11"
+}

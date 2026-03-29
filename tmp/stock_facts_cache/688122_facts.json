@@ -1,0 +1,399 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "钛合金",
+      "evidence_span": "公司主营钛合金、超导线材、高温合金"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "超导线材",
+      "evidence_span": "公司主营钛合金、超导线材、高温合金"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高温合金",
+      "evidence_span": "公司主营钛合金、超导线材、高温合金"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "钛合金行业优质企业",
+      "evidence_span": "钛合金行业优质企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端金属材料成型工艺领军者",
+      "evidence_span": "西部超导高端金属材料成型工艺领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "军工材料核心供应商",
+      "evidence_span": "军工材料核心供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空钛材龙头",
+      "evidence_span": "西部超导航空钛材龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空金属材料领跑者",
+      "evidence_span": "航空金属材料领跑者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端航材核心供应商",
+      "evidence_span": "高端航材核心供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端钛合金龙头",
+      "evidence_span": "西部超导高端钛合金龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内高端钛材料供应商",
+      "evidence_span": "国内高端钛材料供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "三大主要军用钛合金供应商",
+      "evidence_span": "我国三大主要军用钛合金供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "少数高温合金生产商",
+      "evidence_span": "少数高温合金生产商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内唯一的低温超导线材生产企业",
+      "evidence_span": "国内唯一的低温超导线材生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球唯一的铌钛锭棒、超导线材、超导磁体的全流程生产企业",
+      "evidence_span": "全球唯一的铌钛锭棒、超导线材、超导磁体的全流程生产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空航天用钛合金棒材",
+      "evidence_span": "航空航天用钛合金棒材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空航天用钛合金丝材",
+      "evidence_span": "航空航天用钛合金丝材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空航天用钛合金锻坯",
+      "evidence_span": "航空航天用钛合金锻坯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超导线材",
+      "evidence_span": "超导线材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空发动机用高温合金材料",
+      "evidence_span": "航空发动机用高温合金材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超导磁体",
+      "evidence_span": "超导磁体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铌钛超导线材",
+      "evidence_span": "超导线材（铌钛/铌三锡）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铌三锡超导线材",
+      "evidence_span": "超导线材（铌钛/铌三锡）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铌钛锭棒",
+      "evidence_span": "铌钛锭棒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "四代军用飞机所需棒材",
+      "evidence_span": "四代军用飞机/发动机所需棒材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "四代军用飞机所需丝材",
+      "evidence_span": "四代军用飞机/发动机所需丝材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "四代军用飞机所需锻坯",
+      "evidence_span": "四代军用飞机/发动机所需锻坯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空发动机用变形高温合金",
+      "evidence_span": "公司主营航空发动机用变形高温合金"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低温超导线生产技术",
+      "evidence_span": "掌握低温超导线生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铌钛锭棒、超导线材、超导磁体的全流程生产",
+      "evidence_span": "铌钛锭棒、超导线材、超导磁体的全流程生产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "GE",
+      "evidence_span": "下游主要客户为GE/西门子等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子",
+      "evidence_span": "下游主要客户为GE/西门子等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于下游军民两用飞机快速增长",
+      "evidence_span": "受益于下游军民两用飞机快速增长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于军工行业高景气发展",
+      "evidence_span": "受益于军工行业高景气发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益航空新型号放量",
+      "evidence_span": "受益航空新型号放量"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于新一代机型持续放量",
+      "evidence_span": "受益于新一代机型持续放量"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于下游设备放量",
+      "evidence_span": "受益于下游设备放量"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "受益于市占率提升",
+      "evidence_span": "受益于市占率提升"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "大飞机国产化开辟钛合金市场新空间",
+      "evidence_span": "大飞机国产化开辟钛合金市场新空间"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "钛合金",
+        "evidence_span": "公司主营钛合金、超导线材、高温合金"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "超导线材",
+        "evidence_span": "公司主营钛合金、超导线材、高温合金"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高温合金",
+        "evidence_span": "公司主营钛合金、超导线材、高温合金"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "钛合金行业优质企业",
+        "evidence_span": "钛合金行业优质企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端金属材料成型工艺领军者",
+        "evidence_span": "西部超导高端金属材料成型工艺领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "军工材料核心供应商",
+        "evidence_span": "军工材料核心供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空钛材龙头",
+        "evidence_span": "西部超导航空钛材龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空金属材料领跑者",
+        "evidence_span": "航空金属材料领跑者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端航材核心供应商",
+        "evidence_span": "高端航材核心供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端钛合金龙头",
+        "evidence_span": "西部超导高端钛合金龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内高端钛材料供应商",
+        "evidence_span": "国内高端钛材料供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "三大主要军用钛合金供应商",
+        "evidence_span": "我国三大主要军用钛合金供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "少数高温合金生产商",
+        "evidence_span": "少数高温合金生产商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内唯一的低温超导线材生产企业",
+        "evidence_span": "国内唯一的低温超导线材生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球唯一的铌钛锭棒、超导线材、超导磁体的全流程生产企业",
+        "evidence_span": "全球唯一的铌钛锭棒、超导线材、超导磁体的全流程生产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空航天用钛合金棒材",
+        "evidence_span": "航空航天用钛合金棒材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空航天用钛合金丝材",
+        "evidence_span": "航空航天用钛合金丝材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空航天用钛合金锻坯",
+        "evidence_span": "航空航天用钛合金锻坯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超导线材",
+        "evidence_span": "超导线材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空发动机用高温合金材料",
+        "evidence_span": "航空发动机用高温合金材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超导磁体",
+        "evidence_span": "超导磁体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铌钛超导线材",
+        "evidence_span": "超导线材（铌钛/铌三锡）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铌三锡超导线材",
+        "evidence_span": "超导线材（铌钛/铌三锡）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铌钛锭棒",
+        "evidence_span": "铌钛锭棒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "四代军用飞机所需棒材",
+        "evidence_span": "四代军用飞机/发动机所需棒材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "四代军用飞机所需丝材",
+        "evidence_span": "四代军用飞机/发动机所需丝材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "四代军用飞机所需锻坯",
+        "evidence_span": "四代军用飞机/发动机所需锻坯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空发动机用变形高温合金",
+        "evidence_span": "公司主营航空发动机用变形高温合金"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低温超导线生产技术",
+        "evidence_span": "掌握低温超导线生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铌钛锭棒、超导线材、超导磁体的全流程生产",
+        "evidence_span": "铌钛锭棒、超导线材、超导磁体的全流程生产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "GE",
+        "evidence_span": "下游主要客户为GE/西门子等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子",
+        "evidence_span": "下游主要客户为GE/西门子等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于下游军民两用飞机快速增长",
+        "evidence_span": "受益于下游军民两用飞机快速增长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于军工行业高景气发展",
+        "evidence_span": "受益于军工行业高景气发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益航空新型号放量",
+        "evidence_span": "受益航空新型号放量"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于新一代机型持续放量",
+        "evidence_span": "受益于新一代机型持续放量"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于下游设备放量",
+        "evidence_span": "受益于下游设备放量"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "受益于市占率提升",
+        "evidence_span": "受益于市占率提升"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "大飞机国产化开辟钛合金市场新空间",
+        "evidence_span": "大飞机国产化开辟钛合金市场新空间"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:02:55"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "6d740f288842", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述公司注册成立的具体事件，属于企业动态，没有提供关于低空经济本身的静态定义或核心构成知识。"}}

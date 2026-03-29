@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "明胶空心胶囊",
+      "evidence_span": "公司主要业务为明胶空心胶囊和肠溶明胶空心胶囊的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "肠溶明胶空心胶囊",
+      "evidence_span": "公司主要业务为明胶空心胶囊和肠溶明胶空心胶囊的研发、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "药用空心胶囊生产企业",
+      "evidence_span": "行业内规模最大的药用空心胶囊生产企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药用空心胶囊",
+      "evidence_span": "能够生产各种规格、品种的药用空心胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗交联胶囊",
+      "evidence_span": "抗交联胶囊、抗脆碎胶囊、耐强酸强碱的肠溶胶囊、速溶型HPMC空心胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗脆碎胶囊",
+      "evidence_span": "抗交联胶囊、抗脆碎胶囊、耐强酸强碱的肠溶胶囊、速溶型HPMC空心胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "耐强酸强碱的肠溶胶囊",
+      "evidence_span": "抗交联胶囊、抗脆碎胶囊、耐强酸强碱的肠溶胶囊、速溶型HPMC空心胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "速溶型HPMC空心胶囊",
+      "evidence_span": "速溶型HPMC空心胶囊取得突破，正在转化为商业化生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "产品定制服务",
+      "evidence_span": "并提供专业化的产品定制服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "肠溶包衣新材料的制备和应用方法",
+      "evidence_span": "掌握了国内先进的肠溶包衣新材料的制备和应用方法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "特型明胶空心胶囊生产技术",
+      "evidence_span": "特型明胶空心胶囊生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "肠溶明胶空心胶囊包衣配方",
+      "evidence_span": "肠溶明胶空心胶囊包衣配方"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化空心胶囊装备制造能力",
+      "evidence_span": "拥有自主研发的智能化空心胶囊装备制造能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空心胶囊非菌化生产",
+      "evidence_span": "公司较早在行业中实现空心胶囊非菌化生产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "制药企业",
+      "evidence_span": "公司产品获得了众多制药企业的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型制药企业",
+      "evidence_span": "与多家大型制药企业建立了稳固的合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医药生产企业",
+      "evidence_span": "形成包括了医药生产企业和部分保健品、医学研究院在内的庞大营销网络"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "保健品企业",
+      "evidence_span": "形成包括了医药生产企业和部分保健品、医学研究院在内的庞大营销网络"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医学研究院",
+      "evidence_span": "形成包括了医药生产企业和部分保健品、医学研究院在内的庞大营销网络"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "明胶空心胶囊",
+        "evidence_span": "公司主要业务为明胶空心胶囊和肠溶明胶空心胶囊的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "肠溶明胶空心胶囊",
+        "evidence_span": "公司主要业务为明胶空心胶囊和肠溶明胶空心胶囊的研发、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "药用空心胶囊生产企业",
+        "evidence_span": "行业内规模最大的药用空心胶囊生产企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药用空心胶囊",
+        "evidence_span": "能够生产各种规格、品种的药用空心胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗交联胶囊",
+        "evidence_span": "抗交联胶囊、抗脆碎胶囊、耐强酸强碱的肠溶胶囊、速溶型HPMC空心胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗脆碎胶囊",
+        "evidence_span": "抗交联胶囊、抗脆碎胶囊、耐强酸强碱的肠溶胶囊、速溶型HPMC空心胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "耐强酸强碱的肠溶胶囊",
+        "evidence_span": "抗交联胶囊、抗脆碎胶囊、耐强酸强碱的肠溶胶囊、速溶型HPMC空心胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "速溶型HPMC空心胶囊",
+        "evidence_span": "速溶型HPMC空心胶囊取得突破，正在转化为商业化生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "产品定制服务",
+        "evidence_span": "并提供专业化的产品定制服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "肠溶包衣新材料的制备和应用方法",
+        "evidence_span": "掌握了国内先进的肠溶包衣新材料的制备和应用方法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "特型明胶空心胶囊生产技术",
+        "evidence_span": "特型明胶空心胶囊生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "肠溶明胶空心胶囊包衣配方",
+        "evidence_span": "肠溶明胶空心胶囊包衣配方"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化空心胶囊装备制造能力",
+        "evidence_span": "拥有自主研发的智能化空心胶囊装备制造能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空心胶囊非菌化生产",
+        "evidence_span": "公司较早在行业中实现空心胶囊非菌化生产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "制药企业",
+        "evidence_span": "公司产品获得了众多制药企业的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型制药企业",
+        "evidence_span": "与多家大型制药企业建立了稳固的合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医药生产企业",
+        "evidence_span": "形成包括了医药生产企业和部分保健品、医学研究院在内的庞大营销网络"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "保健品企业",
+        "evidence_span": "形成包括了医药生产企业和部分保健品、医学研究院在内的庞大营销网络"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医学研究院",
+        "evidence_span": "形成包括了医药生产企业和部分保健品、医学研究院在内的庞大营销网络"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:50:41"
+}

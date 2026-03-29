@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "磷酸铁锂电池业务",
+      "evidence_span": "90%以上为磷酸铁锂电池业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "三元电池业务",
+      "evidence_span": "三元电池布局已成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "储能业务",
+      "evidence_span": "储能市场户储、大储齐头并进"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内动力铁锂电池TOP3企业",
+      "evidence_span": "系国内动力铁锂电池 TOP3 企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "动力电池上市第一股",
+      "evidence_span": "成为国内动力电池上市第一股"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸铁锂电池",
+      "evidence_span": "磷酸铁锂电池业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三元电池",
+      "evidence_span": "三元电池布局已成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能电池",
+      "evidence_span": "储能电池循环寿命等技术领域取得长远突破"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "标准电芯",
+      "evidence_span": "大众标准电芯项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸铁锂正极材料",
+      "evidence_span": "专注于动力电池中磷酸铁锂正极材料的生产和制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳酸锂",
+      "evidence_span": "碳酸锂布局领先"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "302Wh/kg高镍三元电池生产能力",
+      "evidence_span": "具备能量密度 302Wh/kg 的高镍三元电池生产能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "230Wh/kg LFP电芯设计定型",
+      "evidence_span": "已完成 230Wh/kg LFP 电芯的设计和定型"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江淮",
+      "evidence_span": "陆续和 江淮、上汽、北汽、金龙、中通等知名车企在电动轿车领域达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽",
+      "evidence_span": "陆续和 江淮、上汽、北汽、金龙、中通等知名车企在电动轿车领域达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北汽",
+      "evidence_span": "陆续和 江淮、上汽、北汽、金龙、中通等知名车企在电动轿车领域达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金龙",
+      "evidence_span": "陆续和 江淮、上汽、北汽、金龙、中通等知名车企在电动轿车领域达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中通",
+      "evidence_span": "陆续和 江淮、上汽、北汽、金龙、中通等知名车企在电动轿车领域达成合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞",
+      "evidence_span": "国轩重点为奇瑞、吉利、上汽通用、长安等前排车企的纯动车型进行铁锂电池配套"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "国轩重点为奇瑞、吉利、上汽通用、长安等前排车企的纯动车型进行铁锂电池配套"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用",
+      "evidence_span": "国轩重点为奇瑞、吉利、上汽通用、长安等前排车企的纯动车型进行铁锂电池配套"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安",
+      "evidence_span": "国轩重点为奇瑞、吉利、上汽通用、长安等前排车企的纯动车型进行铁锂电池配套"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众集团",
+      "evidence_span": "引进大众集团成为公司第一大股东"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "获华为、国家电网等优质下游客户认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "获华为、国家电网等优质下游客户认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Invenergy",
+      "evidence_span": "和 Invenergy、Jinko 等公司建立了全方位战略合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Jinko",
+      "evidence_span": "和 Invenergy、Jinko 等公司建立了全方位战略合作伙伴关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华能集团",
+      "evidence_span": "客户包括国家电网、华能集团、皖能集团、华为等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "皖能集团",
+      "evidence_span": "客户包括国家电网、华能集团、皖能集团、华为等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能加速放量",
+      "evidence_span": "储能加速放量"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "磷酸铁锂电池业务",
+        "evidence_span": "90%以上为磷酸铁锂电池业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "三元电池业务",
+        "evidence_span": "三元电池布局已成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "储能业务",
+        "evidence_span": "储能市场户储、大储齐头并进"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内动力铁锂电池TOP3企业",
+        "evidence_span": "系国内动力铁锂电池 TOP3 企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "动力电池上市第一股",
+        "evidence_span": "成为国内动力电池上市第一股"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸铁锂电池",
+        "evidence_span": "磷酸铁锂电池业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三元电池",
+        "evidence_span": "三元电池布局已成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能电池",
+        "evidence_span": "储能电池循环寿命等技术领域取得长远突破"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "标准电芯",
+        "evidence_span": "大众标准电芯项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸铁锂正极材料",
+        "evidence_span": "专注于动力电池中磷酸铁锂正极材料的生产和制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳酸锂",
+        "evidence_span": "碳酸锂布局领先"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "302Wh/kg高镍三元电池生产能力",
+        "evidence_span": "具备能量密度 302Wh/kg 的高镍三元电池生产能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "230Wh/kg LFP电芯设计定型",
+        "evidence_span": "已完成 230Wh/kg LFP 电芯的设计和定型"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江淮",
+        "evidence_span": "陆续和 江淮、上汽、北汽、金龙、中通等知名车企在电动轿车领域达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽",
+        "evidence_span": "陆续和 江淮、上汽、北汽、金龙、中通等知名车企在电动轿车领域达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北汽",
+        "evidence_span": "陆续和 江淮、上汽、北汽、金龙、中通等知名车企在电动轿车领域达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金龙",
+        "evidence_span": "陆续和 江淮、上汽、北汽、金龙、中通等知名车企在电动轿车领域达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中通",
+        "evidence_span": "陆续和 江淮、上汽、北汽、金龙、中通等知名车企在电动轿车领域达成合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞",
+        "evidence_span": "国轩重点为奇瑞、吉利、上汽通用、长安等前排车企的纯动车型进行铁锂电池配套"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "国轩重点为奇瑞、吉利、上汽通用、长安等前排车企的纯动车型进行铁锂电池配套"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用",
+        "evidence_span": "国轩重点为奇瑞、吉利、上汽通用、长安等前排车企的纯动车型进行铁锂电池配套"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安",
+        "evidence_span": "国轩重点为奇瑞、吉利、上汽通用、长安等前排车企的纯动车型进行铁锂电池配套"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众集团",
+        "evidence_span": "引进大众集团成为公司第一大股东"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "获华为、国家电网等优质下游客户认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "获华为、国家电网等优质下游客户认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Invenergy",
+        "evidence_span": "和 Invenergy、Jinko 等公司建立了全方位战略合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Jinko",
+        "evidence_span": "和 Invenergy、Jinko 等公司建立了全方位战略合作伙伴关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华能集团",
+        "evidence_span": "客户包括国家电网、华能集团、皖能集团、华为等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "皖能集团",
+        "evidence_span": "客户包括国家电网、华能集团、皖能集团、华为等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能加速放量",
+        "evidence_span": "储能加速放量"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:42:47"
+}

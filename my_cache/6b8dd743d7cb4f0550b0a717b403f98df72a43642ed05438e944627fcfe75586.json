@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:00:49", "result": {"chunk_id": "a1c15ec13dfd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述小米高管在特定时间（2024年8月17日晚）的直播活动和欧洲之行，涉及合作探索和市场进入计划，属于动态事件，没有静态知识。"}}

@@ -1,0 +1,244 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "产业云",
+      "evidence_span": "是一家专注于产业云和大数据综合解决方案的国家级高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大数据综合解决方案",
+      "evidence_span": "是一家专注于产业云和大数据综合解决方案的国家级高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "通信行业BOSS系统",
+      "evidence_span": "公司以通信行业BOSS系统为基本盘"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "ICT产品分销",
+      "evidence_span": "提供ICT产品分销、软件开发及智能运营服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "软件开发",
+      "evidence_span": "提供ICT产品分销、软件开发及智能运营服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能运营服务",
+      "evidence_span": "提供ICT产品分销、软件开发及智能运营服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合型ICT方案供应商",
+      "evidence_span": "向综合型ICT方案供应商迈进"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ICT产品分销",
+      "evidence_span": "提供ICT产品分销、软件开发及智能运营服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软件开发",
+      "evidence_span": "提供ICT产品分销、软件开发及智能运营服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能运营服务",
+      "evidence_span": "提供ICT产品分销、软件开发及智能运营服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工智能技术基座",
+      "evidence_span": "已构建起完整的人工智能技术基座与行业智能全栈产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "行业智能全栈产品体系",
+      "evidence_span": "已构建起完整的人工智能技术基座与行业智能全栈产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AI解决方案",
+      "evidence_span": "为关键领域客户提供自主可控的 AI 解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能技术基座",
+      "evidence_span": "已构建起完整的人工智能技术基座与行业智能全栈产品体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微调部署",
+      "evidence_span": "并开展微调部署、量化压缩及算法调优等深度研发工作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "量化压缩",
+      "evidence_span": "并开展微调部署、量化压缩及算法调优等深度研发工作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "算法调优",
+      "evidence_span": "并开展微调部署、量化压缩及算法调优等深度研发工作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电信运营商",
+      "evidence_span": "深度服务电信运营商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融",
+      "evidence_span": "并拓展至金融、政府等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府",
+      "evidence_span": "并拓展至金融、政府等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "子公司金华威是华为、超聚变、大疆政企业务的总经销商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "超聚变",
+      "evidence_span": "子公司金华威是华为、超聚变、大疆政企业务的总经销商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大疆",
+      "evidence_span": "子公司金华威是华为、超聚变、大疆政企业务的总经销商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化信创",
+      "evidence_span": "公司积极推进国产化信创布局"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "产业云和大数据综合解决方案",
+        "evidence_span": "是一家专注于产业云和大数据综合解决方案的国家级高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "通信行业BOSS系统",
+        "evidence_span": "公司以通信行业BOSS系统为基本盘"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "ICT产品分销",
+        "evidence_span": "提供ICT产品分销、软件开发及智能运营服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "软件开发",
+        "evidence_span": "提供ICT产品分销、软件开发及智能运营服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能运营服务",
+        "evidence_span": "提供ICT产品分销、软件开发及智能运营服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合型ICT方案供应商",
+        "evidence_span": "向综合型ICT方案供应商迈进"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ICT产品分销",
+        "evidence_span": "提供ICT产品分销、软件开发及智能运营服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软件开发",
+        "evidence_span": "提供ICT产品分销、软件开发及智能运营服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能运营服务",
+        "evidence_span": "提供ICT产品分销、软件开发及智能运营服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工智能技术基座",
+        "evidence_span": "已构建起完整的人工智能技术基座与行业智能全栈产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "行业智能全栈产品体系",
+        "evidence_span": "已构建起完整的人工智能技术基座与行业智能全栈产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AI解决方案",
+        "evidence_span": "为关键领域客户提供自主可控的 AI 解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能技术基座",
+        "evidence_span": "已构建起完整的人工智能技术基座与行业智能全栈产品体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微调部署",
+        "evidence_span": "并开展微调部署、量化压缩及算法调优等深度研发工作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "量化压缩",
+        "evidence_span": "并开展微调部署、量化压缩及算法调优等深度研发工作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "算法调优",
+        "evidence_span": "并开展微调部署、量化压缩及算法调优等深度研发工作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电信运营商",
+        "evidence_span": "深度服务电信运营商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融",
+        "evidence_span": "并拓展至金融、政府等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府",
+        "evidence_span": "并拓展至金融、政府等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "子公司金华威是华为、超聚变、大疆政企业务的总经销商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "超聚变",
+        "evidence_span": "子公司金华威是华为、超聚变、大疆政企业务的总经销商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大疆",
+        "evidence_span": "子公司金华威是华为、超聚变、大疆政企业务的总经销商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化信创",
+        "evidence_span": "公司积极推进国产化信创布局"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:51:24"
+}

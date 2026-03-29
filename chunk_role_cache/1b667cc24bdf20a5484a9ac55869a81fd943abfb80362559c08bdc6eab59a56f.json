@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "092829e0a4e8", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落提供全球和中国半导体销售额连续增长的数据（稳定知识），但以事件形式呈现（根据SIA数据），边界不清，可能含知识但非纯粹静态说明。"}}

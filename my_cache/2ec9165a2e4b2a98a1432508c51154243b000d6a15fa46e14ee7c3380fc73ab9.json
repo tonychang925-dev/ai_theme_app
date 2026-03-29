@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:53:30", "result": {"chunk_id": "87fa264b698d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落聚焦于余承东在微博上透露智界新S7发布的事件，属于公司动态和新闻公告，不包含题材的静态定义或核心构成。"}}

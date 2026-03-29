@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:32:56", "result": {"span_uid": "bac579fc9dcc", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场规模预测", "stability": "low", "reason": "该片段是关于MR市场规模的具体预测数据，包括到2025年的市场规模和复合增速，属于阶段性预测信息，但数据不稳定且依赖具体研报，无法形成独立稳定的知识块。"}}

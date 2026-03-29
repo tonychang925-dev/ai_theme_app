@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "d1e8ee5c48dc", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了住房和城乡建设部发布通知的具体事件，属于政策发布动态，没有提供建筑设计本身的定义、结构或机制等静态知识，因此归类为纯事件。"}}

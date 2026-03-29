@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:47:32", "result": {"span_uid": "78e046151ab3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品发布事件", "stability": "low", "reason": "该片段描述INMO影目科技新品发布会的具体事件，属于新闻事件，无法形成稳定知识块。"}}

@@ -1,0 +1,19 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "国防信息化",
+      "evidence_span": "国防信息化领域具备一定的优势地位"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "国防信息化",
+        "evidence_span": "国防信息化领域具备一定的优势地位"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:53:06"
+}

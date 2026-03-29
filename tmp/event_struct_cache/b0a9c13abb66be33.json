@@ -1,0 +1,70 @@
+{
+  "event_id": "evt_c3bc27b3695a",
+  "theme_name": "液冷数据中心",
+  "event_type": "技术突破",
+  "entities": [
+    {
+      "name": "微软",
+      "type": "公司",
+      "normalized": "微软"
+    },
+    {
+      "name": "萨提亚·纳德拉",
+      "type": "人物",
+      "normalized": "萨提亚·纳德拉"
+    },
+    {
+      "name": "Corintis",
+      "type": "公司",
+      "normalized": "Corintis"
+    },
+    {
+      "name": "瑞士",
+      "type": "国家",
+      "normalized": "瑞士"
+    }
+  ],
+  "summary": "微软CEO宣布开发出微流体冷却技术，能将芯片最高温升降低65%。",
+  "causal_claim": [
+    "微流体冷却技术",
+    "芯片降温",
+    "液冷数据中心"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "微流体冷却技术",
+      "芯片最高温升降低65%",
+      "AI设计",
+      "仿生结构",
+      "冷却液精准覆盖芯片热点"
+    ],
+    "normalized_terms": {
+      "微软": "微软",
+      "萨提亚·纳德拉": "萨提亚·纳德拉",
+      "Corintis": "Corintis",
+      "瑞士": "瑞士"
+    },
+    "evidence_spans": [
+      {
+        "text": "微软CEO萨提亚·纳德拉宣布，其团队已成功开发出微流体冷却技术；该技术能将芯片最高温升降低65%。",
+        "start": 0,
+        "end": 60
+      },
+      {
+        "text": "微软与瑞士初创公司Corintis合作，借助AI设计出仿生结构使冷却液精准覆盖芯片热点。",
+        "start": 60,
+        "end": 110
+      }
+    ],
+    "core_concepts": [
+      "微流体冷却",
+      "芯片降温",
+      "AI设计"
+    ]
+  },
+  "severity_score": 0.8,
+  "confidence": 0.95,
+  "source_weight": 1.2,
+  "timestamp": null,
+  "raw_text": "微软CEO萨提亚·纳德拉宣布，其团队已成功开发出微流体冷却技术；该技术能将芯片最高温升降低65%。微软与瑞士初创公司Corintis合作，借助AI设计出仿生结构使冷却液精准覆盖芯片热点。（新闻来源：财联社）"
+}

@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "滴眼液",
+      "evidence_span": "公司的主营业务为滴眼液与大输液系列产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "大输液系列产品",
+      "evidence_span": "公司的主营业务为滴眼液与大输液系列产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "眼科用药",
+      "evidence_span": "医药制造板块：主要涵盖眼科用药（抗白内障类）"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "抗微生物药",
+      "evidence_span": "医药制造板块：主要涵盖眼科用药（抗白内障类）、抗微生物药（头孢菌素类）、抗微生物药（喹诺酮类）等细分治疗领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗服务",
+      "evidence_span": "医疗服务板块：公司全资孙公司泰州妇产医院为二级甲等专科医院"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "白内障滴眼液龙头企业",
+      "evidence_span": "白内障滴眼液龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "滴眼剂特色生产企业",
+      "evidence_span": "滴眼剂特色生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "眼科用药领域专业生产商",
+      "evidence_span": "眼科用药领域专业生产商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "眼科细分市场品牌企业",
+      "evidence_span": "眼科细分市场品牌企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "领先的白内障医药企业",
+      "evidence_span": "领先的白内障医药企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "白内障治疗专业企业",
+      "evidence_span": "白内障治疗专业企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "莎普爱思滴眼液",
+      "evidence_span": "主要产品包括预防、治疗白内障的莎普爱思滴眼液等系列眼科药品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "葡萄糖注射液",
+      "evidence_span": "葡萄糖注射液、氯化钠注射液、乳酸左氧氟沙星注射液、甲磺酸帕珠沙星注射液等大输液制剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氯化钠注射液",
+      "evidence_span": "葡萄糖注射液、氯化钠注射液、乳酸左氧氟沙星注射液、甲磺酸帕珠沙星注射液等大输液制剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乳酸左氧氟沙星注射液",
+      "evidence_span": "葡萄糖注射液、氯化钠注射液、乳酸左氧氟沙星注射液、甲磺酸帕珠沙星注射液等大输液制剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甲磺酸帕珠沙星注射液",
+      "evidence_span": "葡萄糖注射液、氯化钠注射液、乳酸左氧氟沙星注射液、甲磺酸帕珠沙星注射液等大输液制剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "苄达赖氨酸滴眼液",
+      "evidence_span": "主要产品包括苄达赖氨酸滴眼液、头孢克肟产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "头孢克肟产品",
+      "evidence_span": "主要产品包括苄达赖氨酸滴眼液、头孢克肟产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "诊疗服务",
+      "evidence_span": "合并泰州医院全年诊疗服务收入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新药研发项目评估能力",
+      "evidence_span": "公司已形成较强的新药研发项目评估能力与开发能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新药开发能力",
+      "evidence_span": "公司已形成较强的新药研发项目评估能力与开发能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内大型医药流通企业",
+      "evidence_span": "公司与国内大型医药流通企业、医药零售企业有稳固的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医药零售企业",
+      "evidence_span": "公司与国内大型医药流通企业、医药零售企业有稳固的合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "大健康OTC市场",
+      "evidence_span": "战略进军大健康OTC市场"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "滴眼液",
+        "evidence_span": "公司的主营业务为滴眼液与大输液系列产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "大输液系列产品",
+        "evidence_span": "公司的主营业务为滴眼液与大输液系列产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "眼科用药",
+        "evidence_span": "医药制造板块：主要涵盖眼科用药（抗白内障类）"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "抗微生物药",
+        "evidence_span": "医药制造板块：主要涵盖眼科用药（抗白内障类）、抗微生物药（头孢菌素类）、抗微生物药（喹诺酮类）等细分治疗领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗服务",
+        "evidence_span": "医疗服务板块：公司全资孙公司泰州妇产医院为二级甲等专科医院"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "白内障滴眼液龙头企业",
+        "evidence_span": "白内障滴眼液龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "滴眼剂特色生产企业",
+        "evidence_span": "滴眼剂特色生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "眼科用药领域专业生产商",
+        "evidence_span": "眼科用药领域专业生产商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "眼科细分市场品牌企业",
+        "evidence_span": "眼科细分市场品牌企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "领先的白内障医药企业",
+        "evidence_span": "领先的白内障医药企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "白内障治疗专业企业",
+        "evidence_span": "白内障治疗专业企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "莎普爱思滴眼液",
+        "evidence_span": "主要产品包括预防、治疗白内障的莎普爱思滴眼液等系列眼科药品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "葡萄糖注射液",
+        "evidence_span": "葡萄糖注射液、氯化钠注射液、乳酸左氧氟沙星注射液、甲磺酸帕珠沙星注射液等大输液制剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氯化钠注射液",
+        "evidence_span": "葡萄糖注射液、氯化钠注射液、乳酸左氧氟沙星注射液、甲磺酸帕珠沙星注射液等大输液制剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乳酸左氧氟沙星注射液",
+        "evidence_span": "葡萄糖注射液、氯化钠注射液、乳酸左氧氟沙星注射液、甲磺酸帕珠沙星注射液等大输液制剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甲磺酸帕珠沙星注射液",
+        "evidence_span": "葡萄糖注射液、氯化钠注射液、乳酸左氧氟沙星注射液、甲磺酸帕珠沙星注射液等大输液制剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "苄达赖氨酸滴眼液",
+        "evidence_span": "主要产品包括苄达赖氨酸滴眼液、头孢克肟产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "头孢克肟产品",
+        "evidence_span": "主要产品包括苄达赖氨酸滴眼液、头孢克肟产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "诊疗服务",
+        "evidence_span": "合并泰州医院全年诊疗服务收入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新药研发项目评估能力",
+        "evidence_span": "公司已形成较强的新药研发项目评估能力与开发能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新药开发能力",
+        "evidence_span": "公司已形成较强的新药研发项目评估能力与开发能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内大型医药流通企业",
+        "evidence_span": "公司与国内大型医药流通企业、医药零售企业有稳固的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医药零售企业",
+        "evidence_span": "公司与国内大型医药流通企业、医药零售企业有稳固的合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "大健康OTC市场",
+        "evidence_span": "战略进军大健康OTC市场"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:30:03"
+}

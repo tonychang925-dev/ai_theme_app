@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "412ab548bafe", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述ASML首席执行官对出口限制的评论和预计措施，属于公司动态和事件性新闻，未涉及半导体设备的技术或构成。"}}

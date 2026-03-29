@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "400638509b69", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落引用广东省政策文件，鼓励发展集成电路设计、制造、封装测试、材料等半导体关键环节，这涉及半导体产业链的环节知识，具有潜在构建价值，但以政策发布事件形式呈现，混有事件性内容。"}}

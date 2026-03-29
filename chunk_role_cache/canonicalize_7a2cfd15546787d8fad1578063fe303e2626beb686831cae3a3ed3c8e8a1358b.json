@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:14:42", "result": {"span_uid": "8a1b2cbd0f0d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "商业运营时间线", "stability": "low", "reason": "该片段是具体的时间预测（2-3年实现服务），属于阶段性信号，但依赖牌照发放等具体事件，且预测性质强，无法形成稳定知识块。"}}

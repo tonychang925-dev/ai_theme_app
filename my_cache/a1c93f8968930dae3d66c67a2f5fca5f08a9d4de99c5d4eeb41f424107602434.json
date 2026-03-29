@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "8f8ebbbb7371", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段落涉及特斯拉分享FSD发展路线图，包括具体时间点和功能计划，可能包含关于FSD技术演进和未来规划的稳定知识，但以事件形式呈现。"}}

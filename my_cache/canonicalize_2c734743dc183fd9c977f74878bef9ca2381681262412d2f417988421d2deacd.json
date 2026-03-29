@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:39:50", "result": {"span_uid": "4d60d81e7928", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特斯拉制定FSD软件开发路线图的具体事件，属于短期计划或公告，缺乏稳定、可独立成立的知识表达，不适合作为题材知识入库。"}}

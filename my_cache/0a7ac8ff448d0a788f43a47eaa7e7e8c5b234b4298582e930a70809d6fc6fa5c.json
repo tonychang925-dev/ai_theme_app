@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:11", "result": {"chunk_id": "363395d5151e", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件（深圳智能机器人灵巧手大赛决赛），包括时间、地点和活动内容，属于时间性动态，没有提供关于灵巧手本身的静态知识。"}}

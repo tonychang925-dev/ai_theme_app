@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "c0723733b356", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落描述国家部门印发实施方案的事件，但内容涉及数据流通安全治理的具体措施，如防范数据滥用，混合了政策事件和防护知识。"}}

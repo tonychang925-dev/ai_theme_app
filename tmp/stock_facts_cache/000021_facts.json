@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "存储半导体",
+      "evidence_span": "公司主营业务为存储半导体、高端制造和计量智能终端"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端制造",
+      "evidence_span": "公司主营业务为存储半导体、高端制造和计量智能终端"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "计量智能终端",
+      "evidence_span": "公司主营业务为存储半导体、高端制造和计量智能终端"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "EMS企业",
+      "evidence_span": "深科技是全球领先的 EMS 企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "存储封测企业",
+      "evidence_span": "国内最大的独立DRAM内存芯片封测企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "硬盘磁头制造商",
+      "evidence_span": "全球第二大硬盘磁头制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端存储芯片的封装与测试",
+      "evidence_span": "主要从事高端存储芯片的封装与测试"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅基片制造",
+      "evidence_span": "公司业务主要涉及硅基片制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能电表",
+      "evidence_span": "公司聚焦于为智能电表、气表与水表计量终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能气表",
+      "evidence_span": "公司聚焦于为智能电表、气表与水表计量终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能水表",
+      "evidence_span": "公司聚焦于为智能电表、气表与水表计量终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "能源管理系统解决方案",
+      "evidence_span": "能源管理系统解决方案的研发、生产、销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固态硬盘 SSD",
+      "evidence_span": "引进了新产品固态硬盘 SSD"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "指纹芯片",
+      "evidence_span": "引进了新产品指纹芯片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "DRAM芯片封装和测试",
+      "evidence_span": "公司主营动态随机存储(DRAM)芯片封装和测试业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SiP闪存芯片量产",
+      "evidence_span": "公司正式量产 SiP 闪存芯片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "NAND Flash芯片封测",
+      "evidence_span": "启动了 NAND Flash 芯片的封测技术改造项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3D NAND技术",
+      "evidence_span": "该产品采用 3D NAND 技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "8层堆叠",
+      "evidence_span": "可叠加 8层 die"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "16层叠技术",
+      "evidence_span": "SSD 芯片可以实现 16 层叠技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LPDDR4/X封测服务",
+      "evidence_span": "公司开始提供 LPDDR4/X 相关产品的封测服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "FlipChip芯片封装技术",
+      "evidence_span": "完成了 FlipChip 芯片封装技术的导入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "8层堆叠产品的量产能力",
+      "evidence_span": "具备了不同类型存储芯片的 8层堆叠产品的量产能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金士顿科技",
+      "evidence_span": "与美国金士顿科技公司展开深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球三大硬盘厂商",
+      "evidence_span": "是全球三大硬盘厂商的核心供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "存储国产化",
+      "evidence_span": "卡位存储国产化黄金赛道"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "深科技存储国产替代持续进阶"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "存储半导体",
+        "evidence_span": "公司主营业务为存储半导体、高端制造和计量智能终端"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端制造",
+        "evidence_span": "公司主营业务为存储半导体、高端制造和计量智能终端"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "计量智能终端",
+        "evidence_span": "公司主营业务为存储半导体、高端制造和计量智能终端"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "EMS企业",
+        "evidence_span": "深科技是全球领先的 EMS 企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "存储封测企业",
+        "evidence_span": "国内最大的独立DRAM内存芯片封测企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "硬盘磁头制造商",
+        "evidence_span": "全球第二大硬盘磁头制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端存储芯片的封装与测试",
+        "evidence_span": "主要从事高端存储芯片的封装与测试"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅基片制造",
+        "evidence_span": "公司业务主要涉及硅基片制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能电表",
+        "evidence_span": "公司聚焦于为智能电表、气表与水表计量终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能气表",
+        "evidence_span": "公司聚焦于为智能电表、气表与水表计量终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能水表",
+        "evidence_span": "公司聚焦于为智能电表、气表与水表计量终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "能源管理系统解决方案",
+        "evidence_span": "能源管理系统解决方案的研发、生产、销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固态硬盘 SSD",
+        "evidence_span": "引进了新产品固态硬盘 SSD"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "指纹芯片",
+        "evidence_span": "引进了新产品指纹芯片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "DRAM芯片封装和测试",
+        "evidence_span": "公司主营动态随机存储(DRAM)芯片封装和测试业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SiP闪存芯片量产",
+        "evidence_span": "公司正式量产 SiP 闪存芯片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "NAND Flash芯片封测",
+        "evidence_span": "启动了 NAND Flash 芯片的封测技术改造项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3D NAND技术",
+        "evidence_span": "该产品采用 3D NAND 技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "8层堆叠",
+        "evidence_span": "可叠加 8层 die"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "16层叠技术",
+        "evidence_span": "SSD 芯片可以实现 16 层叠技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LPDDR4/X封测服务",
+        "evidence_span": "公司开始提供 LPDDR4/X 相关产品的封测服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "FlipChip芯片封装技术",
+        "evidence_span": "完成了 FlipChip 芯片封装技术的导入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "8层堆叠产品的量产能力",
+        "evidence_span": "具备了不同类型存储芯片的 8层堆叠产品的量产能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金士顿科技",
+        "evidence_span": "与美国金士顿科技公司展开深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球三大硬盘厂商",
+        "evidence_span": "是全球三大硬盘厂商的核心供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "存储国产化",
+        "evidence_span": "卡位存储国产化黄金赛道"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "深科技存储国产替代持续进阶"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:41:54"
+}

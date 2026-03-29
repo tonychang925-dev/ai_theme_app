@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T12:19:46", "result": {"chunk_id": "a57386554786", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了华为申请专利的事件，但包含了对先进封装技术（如桥接技术、HBM集成、成熟制程与封装整合）的静态知识说明，这些内容可用于半导体设备题材的本体构建，因此属于混合事件与知识的候选状态。"}}

@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "轨道扣件",
+      "evidence_span": "公司主要业务为轨道扣件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子元器件配件",
+      "evidence_span": "公司主要业务为电子元器件配件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高分子改性材料",
+      "evidence_span": "公司主要业务为高分子改性材料"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "轨道扣件非金属部件供应商",
+      "evidence_span": "祥和实业铁路扣件非金属部件供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "非金属扣件行业标杆",
+      "evidence_span": "非金属扣件行业标杆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速铁路轨道扣件非金属部件",
+      "evidence_span": "主要研发、生产和销售高速铁路、重载铁路等轨道扣件非金属部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市轨道交通扣件系统",
+      "evidence_span": "适用于城际、市域、地铁、有轨电车等城市轨道扣件系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝电解电容器用橡胶密封塞",
+      "evidence_span": "主要研发、生产和销售应用于铝电解电容器的橡胶密封塞"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电容器用底座",
+      "evidence_span": "表面贴装铝电解电容器用底座"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电容器用盖板",
+      "evidence_span": "端子（牛角型）电容盖板"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程塑料",
+      "evidence_span": "主要研发、生产和销售工程塑料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "EVA改性颗粒",
+      "evidence_span": "EVA等改性材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "轨道扣件非金属部件CRCC认证",
+      "evidence_span": "通过高铁、重载铁路、城市轨道交通扣件零部件15大类别145个系列产品的CRCC认证"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "耐150℃高温长寿命橡胶密封塞",
+      "evidence_span": "新产品耐150℃高温长寿命橡胶密封塞"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "耐550V以上特高压电容器用橡胶密封塞",
+      "evidence_span": "耐550V以上特高压电容器用橡胶密封塞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中原利达",
+      "evidence_span": "公司是扣件集成供应商中原利达的非金属部件主要供货商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "尼吉康",
+      "evidence_span": "与尼吉康（日资）等全球知名电容器公司形成长期稳定合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三莹",
+      "evidence_span": "与三莹（韩资）等全球知名电容器公司形成长期稳定合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "立隆",
+      "evidence_span": "与立隆（台资）等全球知名电容器公司形成长期稳定合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "艾华集团",
+      "evidence_span": "与艾华集团等全球知名电容器公司形成长期稳定合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江海股份",
+      "evidence_span": "与江海股份等全球知名电容器公司形成长期稳定合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "轨交建设大发展",
+      "evidence_span": "受益于轨交建设大发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "轨道扣件",
+        "evidence_span": "公司主要业务为轨道扣件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子元器件配件",
+        "evidence_span": "公司主要业务为电子元器件配件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高分子改性材料",
+        "evidence_span": "公司主要业务为高分子改性材料"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "轨道扣件非金属部件供应商",
+        "evidence_span": "祥和实业铁路扣件非金属部件供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "非金属扣件行业标杆",
+        "evidence_span": "非金属扣件行业标杆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速铁路轨道扣件非金属部件",
+        "evidence_span": "主要研发、生产和销售高速铁路、重载铁路等轨道扣件非金属部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市轨道交通扣件系统",
+        "evidence_span": "适用于城际、市域、地铁、有轨电车等城市轨道扣件系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝电解电容器用橡胶密封塞",
+        "evidence_span": "主要研发、生产和销售应用于铝电解电容器的橡胶密封塞"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电容器用底座",
+        "evidence_span": "表面贴装铝电解电容器用底座"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电容器用盖板",
+        "evidence_span": "端子（牛角型）电容盖板"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程塑料",
+        "evidence_span": "主要研发、生产和销售工程塑料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "EVA改性颗粒",
+        "evidence_span": "EVA等改性材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "轨道扣件非金属部件CRCC认证",
+        "evidence_span": "通过高铁、重载铁路、城市轨道交通扣件零部件15大类别145个系列产品的CRCC认证"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "耐150℃高温长寿命橡胶密封塞",
+        "evidence_span": "新产品耐150℃高温长寿命橡胶密封塞"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "耐550V以上特高压电容器用橡胶密封塞",
+        "evidence_span": "耐550V以上特高压电容器用橡胶密封塞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中原利达",
+        "evidence_span": "公司是扣件集成供应商中原利达的非金属部件主要供货商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "尼吉康",
+        "evidence_span": "与尼吉康（日资）等全球知名电容器公司形成长期稳定合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三莹",
+        "evidence_span": "与三莹（韩资）等全球知名电容器公司形成长期稳定合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "立隆",
+        "evidence_span": "与立隆（台资）等全球知名电容器公司形成长期稳定合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "艾华集团",
+        "evidence_span": "与艾华集团等全球知名电容器公司形成长期稳定合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江海股份",
+        "evidence_span": "与江海股份等全球知名电容器公司形成长期稳定合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "轨交建设大发展",
+        "evidence_span": "受益于轨交建设大发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:27:39"
+}

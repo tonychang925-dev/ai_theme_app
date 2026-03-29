@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:38:06", "result": {"chunk_id": "7e6e8dae32bf", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "medium", "reason": "该段落包含两部分：前半部分描述MSCI指数新增的具体事件（如时间、纳入和剔除标的、生效日期），属于动态信息；后半部分介绍MSCI指数的定义和权威性，属于静态知识。由于混合了事件和知识，且知识部分有价值，应优先标为candidate_mixed。"}}

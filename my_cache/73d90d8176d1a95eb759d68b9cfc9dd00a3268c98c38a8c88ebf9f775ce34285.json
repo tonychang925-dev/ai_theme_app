@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "26094b225333", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段明确定义预制菜，描述其核心构成（标准化作业、农产品原料、成品或半成品）、关键要素（冷链运输）和机制（减少损耗、技术支撑），是纯静态说明，无事件信息，可用于题材本体构建。"}}

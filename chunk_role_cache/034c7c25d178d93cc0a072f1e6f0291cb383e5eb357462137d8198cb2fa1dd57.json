@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "d2dc837b8319", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "内容为《广州开发区 黄埔区支持集成电路产业高质量发展若干政策措施》的具体支持方向和领域清单，包括EDA/IP、半导体材料、制造设备及零部件等。这是稳定、本体性的产业政策知识框架，不涉及具体事件进展或动态，具有高沉淀价值。"}}

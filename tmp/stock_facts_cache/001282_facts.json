@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车锻造零部件",
+      "evidence_span": "主营汽车锻造零部件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锻件产品",
+      "evidence_span": "公司主营业务收入包括锻件产品销售收入和受托加工服务收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "受托加工服务",
+      "evidence_span": "公司主营业务收入包括锻件产品销售收入和受托加工服务收入"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级专精特新“小巨人”",
+      "evidence_span": "国家级专精特新“小巨人”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轮毂轴承类锻造件",
+      "evidence_span": "轮毂轴承类锻造件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压共轨类锻造件",
+      "evidence_span": "高压共轨类锻造件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "球头拉杆类锻造件",
+      "evidence_span": "球头拉杆类锻造件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "转向节类锻造件",
+      "evidence_span": "转向节类锻造件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "节叉类锻造件",
+      "evidence_span": "节叉类锻造件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轴类锻造件",
+      "evidence_span": "轴类锻造件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他类锻造件",
+      "evidence_span": "其他类锻造件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "舍弗勒",
+      "evidence_span": "如舍弗勒、博世、采埃孚、麦格纳、利纳马等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世",
+      "evidence_span": "如舍弗勒、博世、采埃孚、麦格纳、利纳马等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "采埃孚",
+      "evidence_span": "如舍弗勒、博世、采埃孚、麦格纳、利纳马等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦格纳",
+      "evidence_span": "如舍弗勒、博世、采埃孚、麦格纳、利纳马等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "利纳马",
+      "evidence_span": "如舍弗勒、博世、采埃孚、麦格纳、利纳马等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "利纳马汽车系统（无锡）有限公司",
+      "evidence_span": "利纳马汽车系统（无锡）有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Schaeffler Tech.AG&Co.KG",
+      "evidence_span": "Schaeffler Tech.AG&Co.KG"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车锻造零部件",
+        "evidence_span": "主营汽车锻造零部件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锻件产品",
+        "evidence_span": "公司主营业务收入包括锻件产品销售收入和受托加工服务收入"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "受托加工服务",
+        "evidence_span": "公司主营业务收入包括锻件产品销售收入和受托加工服务收入"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级专精特新“小巨人”",
+        "evidence_span": "国家级专精特新“小巨人”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轮毂轴承类锻造件",
+        "evidence_span": "轮毂轴承类锻造件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压共轨类锻造件",
+        "evidence_span": "高压共轨类锻造件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "球头拉杆类锻造件",
+        "evidence_span": "球头拉杆类锻造件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "转向节类锻造件",
+        "evidence_span": "转向节类锻造件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "节叉类锻造件",
+        "evidence_span": "节叉类锻造件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轴类锻造件",
+        "evidence_span": "轴类锻造件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他类锻造件",
+        "evidence_span": "其他类锻造件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "舍弗勒",
+        "evidence_span": "如舍弗勒、博世、采埃孚、麦格纳、利纳马等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世",
+        "evidence_span": "如舍弗勒、博世、采埃孚、麦格纳、利纳马等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "采埃孚",
+        "evidence_span": "如舍弗勒、博世、采埃孚、麦格纳、利纳马等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦格纳",
+        "evidence_span": "如舍弗勒、博世、采埃孚、麦格纳、利纳马等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "利纳马",
+        "evidence_span": "如舍弗勒、博世、采埃孚、麦格纳、利纳马等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "利纳马汽车系统（无锡）有限公司",
+        "evidence_span": "利纳马汽车系统（无锡）有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Schaeffler Tech.AG&Co.KG",
+        "evidence_span": "Schaeffler Tech.AG&Co.KG"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:18:56"
+}

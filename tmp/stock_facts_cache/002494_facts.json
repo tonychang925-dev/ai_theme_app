@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "裘皮制品的设计",
+      "evidence_span": "主要经营业务有裘皮制品的设计、研发和制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "研发",
+      "evidence_span": "主要经营业务有裘皮制品的设计、研发和制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "制造",
+      "evidence_span": "主要经营业务有裘皮制品的设计、研发和制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "裘皮时尚产业",
+      "evidence_span": "公司是以裘皮时尚产业发展为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "原材料市场平台",
+      "evidence_span": "一是原材料市场平台"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "裘皮服装终端消费平台",
+      "evidence_span": "裘皮服装终端消费平台华斯国际裘皮城"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "裘皮电商孵化园",
+      "evidence_span": "华斯裘皮电商孵化园"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "裘皮行业的领先企业",
+      "evidence_span": "国内裘皮行业的领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "裘皮制品制造商",
+      "evidence_span": "裘皮制品制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "裘皮业领导商",
+      "evidence_span": "裘皮业领导商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "裘皮行业全产业链龙头",
+      "evidence_span": "裘皮行业全产业链龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整皮服装",
+      "evidence_span": "整皮服装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "裘布服装",
+      "evidence_span": "裘布服装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "编织服装",
+      "evidence_span": "编织服装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "时装",
+      "evidence_span": "时装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "裘皮饰品",
+      "evidence_span": "裘皮饰品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "裘皮皮张",
+      "evidence_span": "裘皮皮张"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "裘皮面料",
+      "evidence_span": "裘皮面料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加工费",
+      "evidence_span": "加工费"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "租金",
+      "evidence_span": "租金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物业费",
+      "evidence_span": "物业费"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "雕花工艺",
+      "evidence_span": "雕花"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "印花工艺",
+      "evidence_span": "印花"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "镶花工艺",
+      "evidence_span": "镶花"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一毛多色工艺",
+      "evidence_span": "一毛多色"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "毛革一体化工艺",
+      "evidence_span": "毛革一体化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "裘革硝染废水恒温生化处理技术",
+      "evidence_span": "裘革硝染废水恒温生化处理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "裘革硝染废水处理及循环技术",
+      "evidence_span": "裘革硝染废水处理及循环技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全系统水资源循环利用技术",
+      "evidence_span": "全系统水资源循环利用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "毛皮酸性染料染色液循环利用工艺",
+      "evidence_span": "毛皮酸性染料染色液循环利用工艺"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西欧地区的国际一线品牌商",
+      "evidence_span": "OEM产品的主要销售对象是西欧地区的国际一线品牌商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内外中高档裘皮制造商",
+      "evidence_span": "国内外中高档裘皮制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内外中高档裘皮经销商",
+      "evidence_span": "国内外中高档裘皮经销商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "网红经济",
+      "evidence_span": "网红经济插上想象翅膀"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "社交电商",
+      "evidence_span": "社交电商全产业链日臻完善"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "移动社交电商",
+      "evidence_span": "华斯股份移动社交电商创造电商3.0时代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "裘皮制品的设计、研发和制造",
+        "evidence_span": "主要经营业务有裘皮制品的设计、研发和制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "裘皮时尚产业",
+        "evidence_span": "公司是以裘皮时尚产业发展为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "原材料市场平台",
+        "evidence_span": "一是原材料市场平台"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "裘皮服装终端消费平台",
+        "evidence_span": "裘皮服装终端消费平台华斯国际裘皮城"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "裘皮电商孵化园",
+        "evidence_span": "华斯裘皮电商孵化园"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "裘皮行业的领先企业",
+        "evidence_span": "国内裘皮行业的领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "裘皮制品制造商",
+        "evidence_span": "裘皮制品制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "裘皮业领导商",
+        "evidence_span": "裘皮业领导商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "裘皮行业全产业链龙头",
+        "evidence_span": "裘皮行业全产业链龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整皮服装",
+        "evidence_span": "整皮服装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "裘布服装",
+        "evidence_span": "裘布服装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "编织服装",
+        "evidence_span": "编织服装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "时装",
+        "evidence_span": "时装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "裘皮饰品",
+        "evidence_span": "裘皮饰品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "裘皮皮张",
+        "evidence_span": "裘皮皮张"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "裘皮面料",
+        "evidence_span": "裘皮面料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加工费",
+        "evidence_span": "加工费"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "租金",
+        "evidence_span": "租金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物业费",
+        "evidence_span": "物业费"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "雕花工艺",
+        "evidence_span": "雕花"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "印花工艺",
+        "evidence_span": "印花"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "镶花工艺",
+        "evidence_span": "镶花"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一毛多色工艺",
+        "evidence_span": "一毛多色"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "毛革一体化工艺",
+        "evidence_span": "毛革一体化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "裘革硝染废水恒温生化处理技术",
+        "evidence_span": "裘革硝染废水恒温生化处理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "裘革硝染废水处理及循环技术",
+        "evidence_span": "裘革硝染废水处理及循环技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全系统水资源循环利用技术",
+        "evidence_span": "全系统水资源循环利用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "毛皮酸性染料染色液循环利用工艺",
+        "evidence_span": "毛皮酸性染料染色液循环利用工艺"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西欧地区的国际一线品牌商",
+        "evidence_span": "OEM产品的主要销售对象是西欧地区的国际一线品牌商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内外中高档裘皮制造商",
+        "evidence_span": "国内外中高档裘皮制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内外中高档裘皮经销商",
+        "evidence_span": "国内外中高档裘皮经销商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "网红经济",
+        "evidence_span": "网红经济插上想象翅膀"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "社交电商",
+        "evidence_span": "社交电商全产业链日臻完善"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "移动社交电商",
+        "evidence_span": "华斯股份移动社交电商创造电商3.0时代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:18:18"
+}

@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空发动机控制系统",
+      "evidence_span": "航空发动机控制系统及衍生产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "衍生产品",
+      "evidence_span": "航空发动机控制系统及衍生产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "国际合作业务",
+      "evidence_span": "国际合作业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "非航空产品",
+      "evidence_span": "非航空产品及其他"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其他",
+      "evidence_span": "非航空产品及其他"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空发动机控制系统垄断性企业",
+      "evidence_span": "航发控制我国航空发动机控制系统垄断性企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航发产业链核心节点",
+      "evidence_span": "航发控制产业链核心节点"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空发动机控制系统龙头企业",
+      "evidence_span": "航发控制系统龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃油泵",
+      "evidence_span": "主要产品包括燃油泵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主燃油调节器",
+      "evidence_span": "主燃油调节器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加力燃油调节器",
+      "evidence_span": "加力燃油调节器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主/加力燃油分配器",
+      "evidence_span": "主/加力燃油分配器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "喷口调节器",
+      "evidence_span": "喷口调节器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "调节器",
+      "evidence_span": "主要产品为燃油泵、调节器、分配器、控制器等航空发动机控制系统产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分配器",
+      "evidence_span": "主要产品为燃油泵、调节器、分配器、控制器等航空发动机控制系统产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "控制器",
+      "evidence_span": "主要产品为燃油泵、调节器、分配器、控制器等航空发动机控制系统产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直升机发动机燃油调节器",
+      "evidence_span": "我国直升机发动机燃油调节器主要供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "作动器",
+      "evidence_span": "为飞机和发动机配套各类作动器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阀",
+      "evidence_span": "为飞机和发动机配套各类作动器、阀等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃油控制类产品",
+      "evidence_span": "参与部分项目的燃油控制类产品研制"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地面兵装、军车动力燃油与控制系统及衍生产品",
+      "evidence_span": "大力发展在地面兵装、军车动力燃油与控制系统及衍生产品业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全谱系的两机产品设计、制造、试验和服务保障的核心技术",
+      "evidence_span": "拥有支撑全谱系的两机产品设计、制造、试验和服务保障的核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃油控制等机械液压执行机构",
+      "evidence_span": "在控制系统关键子系统以燃油控制等机械液压执行机构方面处于垄断地位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内各大航空发动机主机单位",
+      "evidence_span": "与国内各大航空发动机主机单位均保持密切合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际知名厂商",
+      "evidence_span": "与国际知名厂商建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "伴随着军、民飞机的核心零部件国产替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "发动机重大专项受益",
+      "evidence_span": "发动机重大专项受益巨大"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空发动机控制系统及衍生产品",
+        "evidence_span": "航空发动机控制系统及衍生产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "国际合作业务",
+        "evidence_span": "国际合作业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "非航空产品及其他",
+        "evidence_span": "非航空产品及其他"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空发动机控制系统垄断性企业",
+        "evidence_span": "航发控制我国航空发动机控制系统垄断性企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航发产业链核心节点",
+        "evidence_span": "航发控制产业链核心节点"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空发动机控制系统龙头企业",
+        "evidence_span": "航发控制系统龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃油泵",
+        "evidence_span": "主要产品包括燃油泵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主燃油调节器",
+        "evidence_span": "主燃油调节器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加力燃油调节器",
+        "evidence_span": "加力燃油调节器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主/加力燃油分配器",
+        "evidence_span": "主/加力燃油分配器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "喷口调节器",
+        "evidence_span": "喷口调节器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "调节器",
+        "evidence_span": "主要产品为燃油泵、调节器、分配器、控制器等航空发动机控制系统产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分配器",
+        "evidence_span": "主要产品为燃油泵、调节器、分配器、控制器等航空发动机控制系统产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "控制器",
+        "evidence_span": "主要产品为燃油泵、调节器、分配器、控制器等航空发动机控制系统产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直升机发动机燃油调节器",
+        "evidence_span": "我国直升机发动机燃油调节器主要供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "作动器",
+        "evidence_span": "为飞机和发动机配套各类作动器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阀",
+        "evidence_span": "为飞机和发动机配套各类作动器、阀等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃油控制类产品",
+        "evidence_span": "参与部分项目的燃油控制类产品研制"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地面兵装、军车动力燃油与控制系统及衍生产品",
+        "evidence_span": "大力发展在地面兵装、军车动力燃油与控制系统及衍生产品业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全谱系的两机产品设计、制造、试验和服务保障的核心技术",
+        "evidence_span": "拥有支撑全谱系的两机产品设计、制造、试验和服务保障的核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃油控制等机械液压执行机构",
+        "evidence_span": "在控制系统关键子系统以燃油控制等机械液压执行机构方面处于垄断地位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内各大航空发动机主机单位",
+        "evidence_span": "与国内各大航空发动机主机单位均保持密切合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际知名厂商",
+        "evidence_span": "与国际知名厂商建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "伴随着军、民飞机的核心零部件国产替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "发动机重大专项受益",
+        "evidence_span": "发动机重大专项受益巨大"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:24:14"
+}

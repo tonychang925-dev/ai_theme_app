@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "半钢子午线轮胎",
+      "evidence_span": "2009年完成了第一条半钢子午线轮胎的生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空轮胎",
+      "evidence_span": "突破海外封锁，航空胎业务稳步发展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "轮胎智能制造企业",
+      "evidence_span": "森麒麟智能制造引领前进方向"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空轮胎合格供应商",
+      "evidence_span": "成为中国商飞ARJ21-700航空轮胎合格供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半钢胎",
+      "evidence_span": "公司的半钢胎各项指标均与国际知名一线品牌持平"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空轮胎",
+      "evidence_span": "航空胎业务稳步发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "翻新轮胎",
+      "evidence_span": "年产8万条航空轮胎（含5万条翻新轮胎）项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航空轮胎技术",
+      "evidence_span": "2007年公司开始探索航空胎的技术以及产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航空轮胎试验线",
+      "evidence_span": "收购了森泰达集团取得航空轮胎试验线资产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航空轮胎动态模拟测试",
+      "evidence_span": "通过了国家级航空轮胎试验中心的动态模拟测试"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航空轮胎设计和生产资质",
+      "evidence_span": "获得民航总局颁发的航空轮胎技术标准规定项目批准书（CTSOA证书）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航空轮胎装机使用资格和销售资质",
+      "evidence_span": "获取中国民航总局颁发的重要改装设计批准书（MDA）"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国商飞ARJ21-700",
+      "evidence_span": "成为中国商飞ARJ21-700航空轮胎合格供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "高端制造",
+      "evidence_span": "高端制造走向全球"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能制造",
+      "evidence_span": "森麒麟智能制造引领前进方向"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "全球化",
+      "evidence_span": "森麒麟高端化、智能化、全球化驱动成长"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "半钢子午线轮胎",
+        "evidence_span": "2009年完成了第一条半钢子午线轮胎的生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空轮胎",
+        "evidence_span": "突破海外封锁，航空胎业务稳步发展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "轮胎智能制造企业",
+        "evidence_span": "森麒麟智能制造引领前进方向"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空轮胎合格供应商",
+        "evidence_span": "成为中国商飞ARJ21-700航空轮胎合格供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半钢胎",
+        "evidence_span": "公司的半钢胎各项指标均与国际知名一线品牌持平"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空轮胎",
+        "evidence_span": "航空胎业务稳步发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "翻新轮胎",
+        "evidence_span": "年产8万条航空轮胎（含5万条翻新轮胎）项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航空轮胎技术",
+        "evidence_span": "2007年公司开始探索航空胎的技术以及产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航空轮胎试验线",
+        "evidence_span": "收购了森泰达集团取得航空轮胎试验线资产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航空轮胎动态模拟测试",
+        "evidence_span": "通过了国家级航空轮胎试验中心的动态模拟测试"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航空轮胎设计和生产资质",
+        "evidence_span": "获得民航总局颁发的航空轮胎技术标准规定项目批准书（CTSOA证书）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航空轮胎装机使用资格和销售资质",
+        "evidence_span": "获取中国民航总局颁发的重要改装设计批准书（MDA）"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国商飞ARJ21-700",
+        "evidence_span": "成为中国商飞ARJ21-700航空轮胎合格供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "高端制造",
+        "evidence_span": "高端制造走向全球"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能制造",
+        "evidence_span": "森麒麟智能制造引领前进方向"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "全球化",
+        "evidence_span": "森麒麟高端化、智能化、全球化驱动成长"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:07:47"
+}

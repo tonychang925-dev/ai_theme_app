@@ -1,0 +1,176 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "白酒消费",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "题材名称'春节五大消费'直接指向春节期间的消费品类，'白酒消费'是原始知识证据中明确列出的五大品类之一，直接对应事件对象和核心消费领域，符合event_driven策略下优先识别事件对象/核心数据口径的要求。"
+      },
+      {
+        "term": "春节旅游消费",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "作为原始知识证据中明确列出的五大品类之一，直接贴合题材名称的核心语义，是春节消费事件的关键组成部分，适合作为must锚点以稳定识别该事件驱动题材。"
+      },
+      {
+        "term": "礼盒消费",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.95,
+        "reason": "原始知识证据中明确列为五大品类之一，直接对应'春节五大消费'的事件对象，是核心消费领域，符合event_driven策略下对事件对象的优先识别。"
+      },
+      {
+        "term": "旅游",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'春节五大消费'中的核心消费品类之一（春节五大消费品类包括旅游），符合事件驱动类策略下的事件对象/核心数据口径，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "礼盒",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'春节五大消费'中的核心消费品类之一（春节五大消费品类包括礼盒），符合事件驱动类策略下的事件对象/核心数据口径，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "白酒",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'春节五大消费'中的核心消费品类之一（春节五大消费品类包括白酒），符合事件驱动类策略下的事件对象/核心数据口径，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "电影",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'春节五大消费'中的核心消费品类之一（春节五大消费品类包括电影），符合事件驱动类策略下的事件对象/核心数据口径，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "烟花",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "直接对应题材名称'春节五大消费'中的核心消费品类之一（春节五大消费品类包括烟花），符合事件驱动类策略下的事件对象/核心数据口径，适合作为最终门禁的must锚点。"
+      },
+      {
+        "term": "高端名酒",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称'春节五大消费'的核心语义是春节期间的五大消费品类，'高端名酒'直接对应'白酒消费'这一核心品类，且是春节消费的重要对象，符合event_driven策略类型下'事件对象'的判定重点，适合作为must锚点。"
+      },
+      {
+        "term": "出境游",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "'出境游'直接对应'春节旅游消费'这一核心品类，是春节五大消费的重要组成部分，符合event_driven策略类型下'事件对象'的判定重点，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "高端礼盒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "虽属于礼盒消费的具体产品类型，在知识上重要，但更偏向具体产品细节，与题材名称定义的核心消费品类相比不够直接，更适合作为辅助识别信息进入should。"
+      },
+      {
+        "term": "次高端宴席用酒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "是白酒消费下的具体产品类型，与题材名称的核心语义（消费品类）间接相关，但不够直接，更适合作为should以补充细节。"
+      },
+      {
+        "term": "低度酒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "作为白酒消费中的细分产品类型，反映消费趋势，但与'春节五大消费'的直接事件对象相比不够核心，更适合作为辅助信息。"
+      },
+      {
+        "term": "保健酒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于白酒消费的具体产品类型，知识上相关，但更偏向产品细节，不如核心消费品类直接贴合题材名称，适合作为should。"
+      },
+      {
+        "term": "坚果水果礼盒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "是礼盒消费的具体产品类型，虽在消费领域内，但更具体化，与题材名称定义的核心消费品类相比不够直接，适合作为辅助识别。"
+      },
+      {
+        "term": "健康滋补礼盒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "作为礼盒消费的细分产品，反映健康趋势，但更偏向产品细节，不如核心消费品类直接对应事件对象，适合进入should。"
+      },
+      {
+        "term": "非遗工艺礼盒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.85,
+        "reason": "属于礼盒消费的具体产品类型，与文化趋势相关，但更具体，与题材名称的核心语义不够直接一致，更适合作为辅助信息。"
+      },
+      {
+        "term": "国内冰雪",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "是春节旅游消费的热门目的地之一，属于消费趋势或具体地点，与'春节五大消费'的核心消费品类相比间接相关，更适合作为should补充旅游消费细节。"
+      },
+      {
+        "term": "避寒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "作为春节旅游消费的目的地类型，反映旅游趋势，但更具体化，不如核心消费品类直接贴合题材名称，适合作为辅助识别信息。"
+      },
+      {
+        "term": "非遗体验地",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于春节旅游消费中的具体目的地类型，与题材名称'春节五大消费'的核心语义（五大消费品类）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "出境短线游",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于春节旅游消费的具体形式，与题材名称'春节五大消费'的核心语义（五大消费品类）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "长线游地区",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "属于春节旅游消费的具体目的地类型，与题材名称'春节五大消费'的核心语义（五大消费品类）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "高端白酒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于白酒消费的具体产品类型，与题材名称'春节五大消费'的核心语义（五大消费品类）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "次高端白酒",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "属于白酒消费的具体产品类型，与题材名称'春节五大消费'的核心语义（五大消费品类）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "螺钿",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "可能与非遗工艺礼盒相关，但与题材名称'春节五大消费'的核心语义（五大消费品类）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "刺绣",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.6,
+        "reason": "可能与非遗工艺礼盒相关，但与题材名称'春节五大消费'的核心语义（五大消费品类）不够直接吻合，更适合作为辅助识别信息。"
+      },
+      {
+        "term": "民俗游",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "'民俗游'属于春节旅游消费的具体趋势之一，与题材名称'春节五大消费'相关，但更偏向消费领域内的细分特点，而非最核心的消费品类或直接事件对象，更适合作为should辅助识别。"
+      },
+      {
+        "term": "出境长线游",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "'出境长线游'是'出境游'的细分类型，虽与春节旅游消费相关，但更具体化，不如'出境游'直接贴合题材名称的核心语义，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

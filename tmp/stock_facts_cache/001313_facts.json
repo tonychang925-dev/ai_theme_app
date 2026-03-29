@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "水产饲料研发",
+      "evidence_span": "公司主要从事水产饲料研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水产饲料生产",
+      "evidence_span": "公司主要从事水产饲料研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水产饲料销售",
+      "evidence_span": "公司主要从事水产饲料研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水产动保产品",
+      "evidence_span": "除水产饲料外，公司其他产品还包括水产动保产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水产品",
+      "evidence_span": "除水产饲料外，公司其他产品还包括水产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "预制菜",
+      "evidence_span": "除水产饲料外，公司其他产品还包括预制菜"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "水产饲料企业",
+      "evidence_span": "水产饲料企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "特种水产饲料企业",
+      "evidence_span": "一直深耕特种水产饲料领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "虾料",
+      "evidence_span": "虾料、海水鱼料等特种水产饲料是公司的优势产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海水鱼料",
+      "evidence_span": "虾料、海水鱼料等特种水产饲料是公司的优势产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种水产饲料",
+      "evidence_span": "以虾料、海水鱼料等特种水产饲料为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普通水产饲料",
+      "evidence_span": "按产品类型划分为特种水产饲料和普通水产饲料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海鲈鱼料",
+      "evidence_span": "海鲈鱼料、金鲳鱼料、大黄鱼料、石斑鱼料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金鲳鱼料",
+      "evidence_span": "海鲈鱼料、金鲳鱼料、大黄鱼料、石斑鱼料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大黄鱼料",
+      "evidence_span": "海鲈鱼料、金鲳鱼料、大黄鱼料、石斑鱼料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石斑鱼料",
+      "evidence_span": "海鲈鱼料、金鲳鱼料、大黄鱼料、石斑鱼料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄颡鱼料",
+      "evidence_span": "黄颡鱼料、乌鳢料、加州鲈鱼料等为代表的特种水产饲料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乌鳢料",
+      "evidence_span": "黄颡鱼料、乌鳢料、加州鲈鱼料等为代表的特种水产饲料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加州鲈鱼料",
+      "evidence_span": "黄颡鱼料、乌鳢料、加州鲈鱼料等为代表的特种水产饲料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "膨化草鱼料",
+      "evidence_span": "膨化草鱼料、膨化罗非鱼料等为代表的普通水产饲料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "膨化罗非鱼料",
+      "evidence_span": "膨化草鱼料、膨化罗非鱼料等为代表的普通水产饲料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水产预制菜",
+      "evidence_span": "积极布局以高端水产蛋白为核心的新兴水产品预制菜产业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水产动物营养与饲料技术参数研究",
+      "evidence_span": "进行水产动物营养与饲料技术参数研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高效配合饲料研发",
+      "evidence_span": "研发不同水产养殖动物各生长阶段的高效配合饲料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "配方技术",
+      "evidence_span": "通过产品技术研发提升产品配方技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "终端养殖户",
+      "evidence_span": "服务终端养殖户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "经销商",
+      "evidence_span": "采取“经销为主、直销为辅”的销售模式"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "水产饲料研发",
+        "evidence_span": "公司主要从事水产饲料研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水产饲料生产",
+        "evidence_span": "公司主要从事水产饲料研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水产饲料销售",
+        "evidence_span": "公司主要从事水产饲料研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水产动保产品",
+        "evidence_span": "除水产饲料外，公司其他产品还包括水产动保产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水产品",
+        "evidence_span": "除水产饲料外，公司其他产品还包括水产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "预制菜",
+        "evidence_span": "除水产饲料外，公司其他产品还包括预制菜"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "水产饲料企业",
+        "evidence_span": "水产饲料企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "特种水产饲料企业",
+        "evidence_span": "一直深耕特种水产饲料领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "虾料",
+        "evidence_span": "虾料、海水鱼料等特种水产饲料是公司的优势产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海水鱼料",
+        "evidence_span": "虾料、海水鱼料等特种水产饲料是公司的优势产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种水产饲料",
+        "evidence_span": "以虾料、海水鱼料等特种水产饲料为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普通水产饲料",
+        "evidence_span": "按产品类型划分为特种水产饲料和普通水产饲料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海鲈鱼料",
+        "evidence_span": "海鲈鱼料、金鲳鱼料、大黄鱼料、石斑鱼料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金鲳鱼料",
+        "evidence_span": "海鲈鱼料、金鲳鱼料、大黄鱼料、石斑鱼料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大黄鱼料",
+        "evidence_span": "海鲈鱼料、金鲳鱼料、大黄鱼料、石斑鱼料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石斑鱼料",
+        "evidence_span": "海鲈鱼料、金鲳鱼料、大黄鱼料、石斑鱼料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄颡鱼料",
+        "evidence_span": "黄颡鱼料、乌鳢料、加州鲈鱼料等为代表的特种水产饲料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乌鳢料",
+        "evidence_span": "黄颡鱼料、乌鳢料、加州鲈鱼料等为代表的特种水产饲料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加州鲈鱼料",
+        "evidence_span": "黄颡鱼料、乌鳢料、加州鲈鱼料等为代表的特种水产饲料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "膨化草鱼料",
+        "evidence_span": "膨化草鱼料、膨化罗非鱼料等为代表的普通水产饲料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "膨化罗非鱼料",
+        "evidence_span": "膨化草鱼料、膨化罗非鱼料等为代表的普通水产饲料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水产预制菜",
+        "evidence_span": "积极布局以高端水产蛋白为核心的新兴水产品预制菜产业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水产动物营养与饲料技术参数研究",
+        "evidence_span": "进行水产动物营养与饲料技术参数研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高效配合饲料研发",
+        "evidence_span": "研发不同水产养殖动物各生长阶段的高效配合饲料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "配方技术",
+        "evidence_span": "通过产品技术研发提升产品配方技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "终端养殖户",
+        "evidence_span": "服务终端养殖户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "经销商",
+        "evidence_span": "采取“经销为主、直销为辅”的销售模式"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:21:44"
+}

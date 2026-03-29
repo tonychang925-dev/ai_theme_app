@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T12:20:33", "result": {"chunk_id": "55d6572bfef5", "decision": "drop", "confidence": 0.7, "knowledge_value": "low", "reason": "段落主要描述西门子收到美国取消芯片软件限制的通知，这是一个事件性信息，缺乏半导体设备领域的实质性知识内容。", "knowledge_spans": [], "event_residue": "", "drop_target": "event"}}

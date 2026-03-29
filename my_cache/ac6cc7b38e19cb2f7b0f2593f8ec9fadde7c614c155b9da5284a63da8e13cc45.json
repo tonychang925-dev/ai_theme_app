@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "43eb601f03bc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落涉及武器采购计划和国防部回应，可能隐含军品出口政策或装备分享等知识，但以新闻报道形式呈现，混合了事件元素，需进一步裁决以提取潜在稳定知识。"}}

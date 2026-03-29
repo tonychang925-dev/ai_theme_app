@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "车载扬声器制造",
+      "evidence_span": "上声电子是国内车载扬声器制造龙头"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "声学系统研发制造",
+      "evidence_span": "公司至此开始从单一产品向系统产品及服务转型"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "调音服务",
+      "evidence_span": "上声在声学系统硬件之后，有望进一步向调音业务深入发展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "自主车载扬声器供应商",
+      "evidence_span": "全球一流、国内最大的自主车载扬声器供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "车载扬声器制造龙头",
+      "evidence_span": "上声电子是国内车载扬声器制造龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产化替代先锋",
+      "evidence_span": "成为国产化替代先锋"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "扬声器",
+      "evidence_span": "公司99%收入来自扬声器业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "独立功放",
+      "evidence_span": "主要包括扬声器、独立功放以及行人警示器（AVAS）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "行人警示器（AVAS）",
+      "evidence_span": "主要包括扬声器、独立功放以及行人警示器（AVAS）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整车声学系统",
+      "evidence_span": "公司开始为蔚来ES8配套整车声学系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端一体化声学系统产品",
+      "evidence_span": "上声电子以独立功放为核心载体来研发、制造、销售高端一体化声学系统产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纸盆",
+      "evidence_span": "生产纸盆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盆架",
+      "evidence_span": "盆架"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功放",
+      "evidence_span": "功放、AVAS"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "声学信号处理方向相关算法及软件的研究",
+      "evidence_span": "主要致力于声学信号处理方向相关算法及软件的研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "材料工艺与结构设计",
+      "evidence_span": "研发要点在于材料工艺与结构设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "软件系统设计",
+      "evidence_span": "研发要点新增软件系统设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "零件集成硬件系统",
+      "evidence_span": "零件集成硬件系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "关键振动发声部件纸盆、盆架独特配方与自制能力",
+      "evidence_span": "具备关键振动发声部件纸盆、盆架独特配方与自制能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来ES8",
+      "evidence_span": "公司开始为蔚来ES8配套整车声学系统"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化替代",
+      "evidence_span": "成为国产化替代先锋"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车电动化",
+      "evidence_span": "深度受益汽车电动化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "车载扬声器制造",
+        "evidence_span": "上声电子是国内车载扬声器制造龙头"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "声学系统研发制造",
+        "evidence_span": "公司至此开始从单一产品向系统产品及服务转型"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "调音服务",
+        "evidence_span": "上声在声学系统硬件之后，有望进一步向调音业务深入发展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "自主车载扬声器供应商",
+        "evidence_span": "全球一流、国内最大的自主车载扬声器供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "车载扬声器制造龙头",
+        "evidence_span": "上声电子是国内车载扬声器制造龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产化替代先锋",
+        "evidence_span": "成为国产化替代先锋"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "扬声器",
+        "evidence_span": "公司99%收入来自扬声器业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "独立功放",
+        "evidence_span": "主要包括扬声器、独立功放以及行人警示器（AVAS）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "行人警示器（AVAS）",
+        "evidence_span": "主要包括扬声器、独立功放以及行人警示器（AVAS）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整车声学系统",
+        "evidence_span": "公司开始为蔚来ES8配套整车声学系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端一体化声学系统产品",
+        "evidence_span": "上声电子以独立功放为核心载体来研发、制造、销售高端一体化声学系统产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纸盆",
+        "evidence_span": "生产纸盆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盆架",
+        "evidence_span": "盆架"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功放",
+        "evidence_span": "功放、AVAS"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "声学信号处理方向相关算法及软件的研究",
+        "evidence_span": "主要致力于声学信号处理方向相关算法及软件的研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "材料工艺与结构设计",
+        "evidence_span": "研发要点在于材料工艺与结构设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "软件系统设计",
+        "evidence_span": "研发要点新增软件系统设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "零件集成硬件系统",
+        "evidence_span": "零件集成硬件系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "关键振动发声部件纸盆、盆架独特配方与自制能力",
+        "evidence_span": "具备关键振动发声部件纸盆、盆架独特配方与自制能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来ES8",
+        "evidence_span": "公司开始为蔚来ES8配套整车声学系统"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化替代",
+        "evidence_span": "成为国产化替代先锋"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车电动化",
+        "evidence_span": "深度受益汽车电动化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:43:26"
+}

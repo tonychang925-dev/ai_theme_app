@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "5a2cf68659c4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段提到佳能交付新型纳米压印光刻机，可能包含光刻机技术或设备类型的知识，但以交付事件形式呈现，需进一步裁决以提取稳定知识。"}}

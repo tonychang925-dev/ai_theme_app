@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:01:57", "result": {"chunk_id": "c334ff97d74e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段说明智能汽车解决方案业务的成立时间和目标，包含静态知识，但提及'成立于2019年'等时间性信息，混合了事件元素，需裁决以提取稳定知识。"}}

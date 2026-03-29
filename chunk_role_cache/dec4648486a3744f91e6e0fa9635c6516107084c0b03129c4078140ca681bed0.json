@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "19c57290ca76", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述美国商会关于出口限制的传闻和时间性动态，属于具体政策事件和新闻更新，不涉及半导体设备的本体知识。"}}

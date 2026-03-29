@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "174b24093a4a", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述C919完成第十架飞机交付和巴西航司订购计划，是具体的事件动态，没有提供静态知识。"}}

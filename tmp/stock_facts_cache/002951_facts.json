@@ -1,0 +1,134 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "烟标研发",
+      "evidence_span": "烟标等包装印刷品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "烟标等包装印刷品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "烟标等包装印刷品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "镭射包装材料镭射膜",
+      "evidence_span": "烟标及相关镭射包装材料镭射膜和镭射纸等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "镭射纸",
+      "evidence_span": "烟标及相关镭射包装材料镭射膜和镭射纸等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "烟标及相关配套产品生产商",
+      "evidence_span": "生产高品质的烟标及相关配套产品"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "市场主力品牌的长期服务商",
+      "evidence_span": "公司作为市场主力品牌的长期服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "烟标",
+      "evidence_span": "公司主要产品是高技术和高附加值的烟标"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "镭射转移纸",
+      "evidence_span": "实现烟标上游包装材料镭射转移纸的量产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电化铝",
+      "evidence_span": "实现烟标上游包装材料电化铝的量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超高精度、高稳定性和高度自动化的生产设备",
+      "evidence_span": "拥有行业领先的超高精度、高稳定性和高度自动化的生产设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生产设备创新性二次改进",
+      "evidence_span": "运用长期积累的生产经验和工艺对生产设备进行创新性的二次改进"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "新产品开发能力",
+      "evidence_span": "凭借强大的新产品开发能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各大中烟公司",
+      "evidence_span": "积极参与各大中烟公司在产品改版升级和新烟标产品的设计开发"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "烟标研发、生产和销售",
+        "evidence_span": "烟标等包装印刷品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "镭射包装材料镭射膜和镭射纸",
+        "evidence_span": "烟标及相关镭射包装材料镭射膜和镭射纸等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "烟标及相关配套产品生产商",
+        "evidence_span": "生产高品质的烟标及相关配套产品"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "市场主力品牌的长期服务商",
+        "evidence_span": "公司作为市场主力品牌的长期服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "烟标",
+        "evidence_span": "公司主要产品是高技术和高附加值的烟标"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "镭射转移纸",
+        "evidence_span": "实现烟标上游包装材料镭射转移纸的量产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电化铝",
+        "evidence_span": "实现烟标上游包装材料电化铝的量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超高精度、高稳定性和高度自动化的生产设备",
+        "evidence_span": "拥有行业领先的超高精度、高稳定性和高度自动化的生产设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生产设备创新性二次改进",
+        "evidence_span": "运用长期积累的生产经验和工艺对生产设备进行创新性的二次改进"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "新产品开发能力",
+        "evidence_span": "凭借强大的新产品开发能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各大中烟公司",
+        "evidence_span": "积极参与各大中烟公司在产品改版升级和新烟标产品的设计开发"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:51:14"
+}

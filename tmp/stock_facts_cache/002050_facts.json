@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "制冷空调电器零部件业务",
+      "evidence_span": "主营业务是制冷空调电器零部件业务和汽车零部件业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车零部件业务",
+      "evidence_span": "主营业务是制冷空调电器零部件业务和汽车零部件业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大的制冷控制元器件制造商",
+      "evidence_span": "公司是全球最大的制冷控制元器件制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球领先的汽车空调及热管理系统控制部件制造商",
+      "evidence_span": "全球领先的汽车空调及热管理系统控制部件制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "四通换向阀",
+      "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电磁阀",
+      "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微通道换热器",
+      "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Omega泵",
+      "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热力膨胀阀",
+      "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子膨胀阀",
+      "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子水泵",
+      "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源车热管理集成组件",
+      "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仿生机器人机电执行器",
+      "evidence_span": "已布局仿生机器人机电执行器业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IDC液冷",
+      "evidence_span": "积极布局IDC液冷"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "热管理技术",
+      "evidence_span": "热管理技术应用场景拓展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "热泵技术",
+      "evidence_span": "热泵技术正从传统家电领域逐步拓展至数据中心、储能热管理等场景"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奔驰",
+      "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "理想",
+      "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Stellantis",
+      "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电装",
+      "evidence_span": "客户覆盖电装、韩昂、马勒、法雷奥等汽车热管理集成商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩昂",
+      "evidence_span": "客户覆盖电装、韩昂、马勒、法雷奥等汽车热管理集成商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "马勒",
+      "evidence_span": "客户覆盖电装、韩昂、马勒、法雷奥等汽车热管理集成商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法雷奥",
+      "evidence_span": "客户覆盖电装、韩昂、马勒、法雷奥等汽车热管理集成商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车热管理",
+      "evidence_span": "新能源汽车热管理行业量价齐升"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能热管理",
+      "evidence_span": "公司借助自身热管理优势切入储能赛道"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "制冷空调电器零部件业务",
+        "evidence_span": "主营业务是制冷空调电器零部件业务和汽车零部件业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车零部件业务",
+        "evidence_span": "主营业务是制冷空调电器零部件业务和汽车零部件业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大的制冷控制元器件制造商",
+        "evidence_span": "公司是全球最大的制冷控制元器件制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球领先的汽车空调及热管理系统控制部件制造商",
+        "evidence_span": "全球领先的汽车空调及热管理系统控制部件制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "四通换向阀",
+        "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电磁阀",
+        "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微通道换热器",
+        "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Omega泵",
+        "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热力膨胀阀",
+        "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子膨胀阀",
+        "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子水泵",
+        "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源车热管理集成组件",
+        "evidence_span": "主要产品是四通换向阀、电磁阀、微通道换热器、Omega泵、热力膨胀阀、电子膨胀阀、电子水泵、新能源车热管理集成组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仿生机器人机电执行器",
+        "evidence_span": "已布局仿生机器人机电执行器业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IDC液冷",
+        "evidence_span": "积极布局IDC液冷"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "热管理技术",
+        "evidence_span": "热管理技术应用场景拓展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "热泵技术",
+        "evidence_span": "热泵技术正从传统家电领域逐步拓展至数据中心、储能热管理等场景"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奔驰",
+        "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "理想",
+        "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Stellantis",
+        "evidence_span": "与奔驰、宝马、比亚迪、吉利、理想、蔚来、Stellantis等知名车企合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电装",
+        "evidence_span": "客户覆盖电装、韩昂、马勒、法雷奥等汽车热管理集成商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩昂",
+        "evidence_span": "客户覆盖电装、韩昂、马勒、法雷奥等汽车热管理集成商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "马勒",
+        "evidence_span": "客户覆盖电装、韩昂、马勒、法雷奥等汽车热管理集成商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法雷奥",
+        "evidence_span": "客户覆盖电装、韩昂、马勒、法雷奥等汽车热管理集成商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车热管理",
+        "evidence_span": "新能源汽车热管理行业量价齐升"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能热管理",
+        "evidence_span": "公司借助自身热管理优势切入储能赛道"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:37:56"
+}

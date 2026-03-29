@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "cd11255cc0a6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述了陆军首次披露无人化作战模式的事件，但核心内容涉及无人机和机器协同作战的作战模式知识，这对陆军题材（如作战方式、技术应用）有较高价值，尽管以事件形式呈现。"}}

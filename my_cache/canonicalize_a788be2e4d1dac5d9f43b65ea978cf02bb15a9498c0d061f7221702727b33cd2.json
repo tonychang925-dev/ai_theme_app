@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:54:06", "result": {"span_uid": "581fce3cddbc", "action": "keep", "canonical_text": "包装行业的主要功能是在产品流通过程中保护产品、方便储运、促进销售。包装材料主要包括纸包装、塑料包装、金属包装、玻璃包装等。", "final_type": "core", "final_role": "行业功能与材料分类", "stability": "high", "reason": "该片段定义了包装行业的核心功能和主要材料分类，信息稳定且可独立成立，无需改写。"}}

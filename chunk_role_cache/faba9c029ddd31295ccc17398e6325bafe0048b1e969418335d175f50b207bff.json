@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:58", "result": {"chunk_id": "e5cc0986d632", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落提到工信部等四部门发布的《通用航空装备创新应用实施方案（2024-2030年）》及其目标（到2030年成为低空经济增长推动力），这包含政策内容和长期规划知识，但以政策发布事件形式呈现，需要裁决以提取稳定知识。"}}

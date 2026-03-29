@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "热电联产业务",
+      "evidence_span": "公司在规划的供热区域内从事热电联产业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸汽",
+      "evidence_span": "主要产品为蒸汽和电力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力",
+      "evidence_span": "主要产品为蒸汽和电力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "造纸企业",
+      "evidence_span": "生产的蒸汽主要供应给园区内的造纸、纺织印染、食品乳业、家居制造等企业使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "纺织印染企业",
+      "evidence_span": "生产的蒸汽主要供应给园区内的造纸、纺织印染、食品乳业、家居制造等企业使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "食品乳业企业",
+      "evidence_span": "生产的蒸汽主要供应给园区内的造纸、纺织印染、食品乳业、家居制造等企业使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家居制造企业",
+      "evidence_span": "生产的蒸汽主要供应给园区内的造纸、纺织印染、食品乳业、家居制造等企业使用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网",
+      "evidence_span": "生产的电力主要销售给国家电网终端电力用户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "维达纸业",
+      "evidence_span": "主要客户维达纸业、华邦公司和凯丰公司均在造纸行业具有一定的知名度"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华邦公司",
+      "evidence_span": "主要客户维达纸业、华邦公司和凯丰公司均在造纸行业具有一定的知名度"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "凯丰公司",
+      "evidence_span": "主要客户维达纸业、华邦公司和凯丰公司均在造纸行业具有一定的知名度"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域性公用热电联产企业",
+      "evidence_span": "公司是园区内最早投产运营的区域性公用热电联产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集中供热企业",
+      "evidence_span": "浙江龙游经济开发区城北片区实质上唯一的集中供热企业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高温高压参数锅炉",
+      "evidence_span": "公司燃煤热电联产采用高温高压参数的锅炉和背压式汽轮发电机组"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "背压式汽轮发电机组",
+      "evidence_span": "公司燃煤热电联产采用高温高压参数的锅炉和背压式汽轮发电机组"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "环保超低排放",
+      "evidence_span": "并全部实现了环保超低排放"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧电厂平台",
+      "evidence_span": "公司实现了智慧电厂平台的应用和管理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物质热电联产技术",
+      "evidence_span": "加大对生物质热电联产技术、环保排放技术的研发投入"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "节能",
+      "evidence_span": "热电联产具有节约能源、改善环境、提高供热质量、增加电力供应等综合效益"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "环保",
+      "evidence_span": "热电联产具有节约能源、改善环境、提高供热质量、增加电力供应等综合效益"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "生物质能",
+      "evidence_span": "生物质能是重要的可再生能源，具有绿色、低碳、清洁、可再生等特点"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "循环经济",
+      "evidence_span": "生物质热电联产有利于改变我国能源结构、改善生态环境、延长农业产业链、增加农民收入，是国家大力提倡的循环经济的具体实践"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "热电联产业务",
+        "evidence_span": "公司在规划的供热区域内从事热电联产业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸汽",
+        "evidence_span": "主要产品为蒸汽和电力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力",
+        "evidence_span": "主要产品为蒸汽和电力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "造纸企业",
+        "evidence_span": "生产的蒸汽主要供应给园区内的造纸、纺织印染、食品乳业、家居制造等企业使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "纺织印染企业",
+        "evidence_span": "生产的蒸汽主要供应给园区内的造纸、纺织印染、食品乳业、家居制造等企业使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "食品乳业企业",
+        "evidence_span": "生产的蒸汽主要供应给园区内的造纸、纺织印染、食品乳业、家居制造等企业使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家居制造企业",
+        "evidence_span": "生产的蒸汽主要供应给园区内的造纸、纺织印染、食品乳业、家居制造等企业使用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网",
+        "evidence_span": "生产的电力主要销售给国家电网终端电力用户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "维达纸业",
+        "evidence_span": "主要客户维达纸业、华邦公司和凯丰公司均在造纸行业具有一定的知名度"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华邦公司",
+        "evidence_span": "主要客户维达纸业、华邦公司和凯丰公司均在造纸行业具有一定的知名度"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "凯丰公司",
+        "evidence_span": "主要客户维达纸业、华邦公司和凯丰公司均在造纸行业具有一定的知名度"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域性公用热电联产企业",
+        "evidence_span": "公司是园区内最早投产运营的区域性公用热电联产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集中供热企业",
+        "evidence_span": "浙江龙游经济开发区城北片区实质上唯一的集中供热企业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高温高压参数锅炉",
+        "evidence_span": "公司燃煤热电联产采用高温高压参数的锅炉和背压式汽轮发电机组"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "背压式汽轮发电机组",
+        "evidence_span": "公司燃煤热电联产采用高温高压参数的锅炉和背压式汽轮发电机组"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "环保超低排放",
+        "evidence_span": "并全部实现了环保超低排放"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧电厂平台",
+        "evidence_span": "公司实现了智慧电厂平台的应用和管理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物质热电联产技术",
+        "evidence_span": "加大对生物质热电联产技术、环保排放技术的研发投入"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "节能",
+        "evidence_span": "热电联产具有节约能源、改善环境、提高供热质量、增加电力供应等综合效益"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "环保",
+        "evidence_span": "热电联产具有节约能源、改善环境、提高供热质量、增加电力供应等综合效益"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "生物质能",
+        "evidence_span": "生物质能是重要的可再生能源，具有绿色、低碳、清洁、可再生等特点"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "循环经济",
+        "evidence_span": "生物质热电联产有利于改变我国能源结构、改善生态环境、延长农业产业链、增加农民收入，是国家大力提倡的循环经济的具体实践"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:26:05"
+}

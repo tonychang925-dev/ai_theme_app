@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:45:16", "result": {"span_uid": "9f1d4aaf3cb4", "action": "keep", "canonical_text": "视涯科技是一家专注于硅基OLED显示器研发、生产和销售的企业，总部位于合肥。", "final_type": "core", "final_role": "公司主营业务", "stability": "high", "reason": "该片段定义了视涯科技的核心业务和定位，是题材的本体信息，稳定且可独立成立。"}}

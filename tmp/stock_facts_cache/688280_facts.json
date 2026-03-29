@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源汽车电驱动系统",
+      "evidence_span": "精进电动是新能源汽车电驱动系统国内领军企业之一，从事电驱动系统的研发、生产、销售及服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新能源汽车电驱动系统国内领军企业",
+      "evidence_span": "精进电动是新能源汽车电驱动系统国内领军企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "一级零部件供应商",
+      "evidence_span": "公司能够直接向整车企业提供系统级产品，在汽车行业具有核心价值的动力总成及控制领域享有“一级零部件供应商”的战略地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电驱动系统",
+      "evidence_span": "公司核心产品为新能源汽车电驱动系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驱动电机总成",
+      "evidence_span": "电驱动系统包括三大总成：驱动电机总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "控制器总成",
+      "evidence_span": "电驱动系统包括三大总成：控制器总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传动总成",
+      "evidence_span": "电驱动系统包括三大总成：传动总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三合一电驱动系统",
+      "evidence_span": "公司向市场推出了多款基于方导体技术，深度集成和高度轻量化的1000牛米至3500牛米扭矩的商用车三合一动力总成系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高功率密度桥驱系统",
+      "evidence_span": "公司向市场推出了基于方导体电机技术的高功率密度桥驱系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳化硅控制器",
+      "evidence_span": "公司为欧洲商用车客户开发的领先的碳化硅控制器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "方导体电机技术",
+      "evidence_span": "公司向市场推出了基于方导体电机技术的高功率密度桥驱系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "油冷电机技术",
+      "evidence_span": "公司在国内最早突破油冷电机技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电磁齿嵌式离合器技术",
+      "evidence_span": "公司电磁齿嵌式离合器技术主要应用于混动系统、两档变速器、四轮驱动系统的辅助电驱桥切分等产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "增程器电机技术",
+      "evidence_span": "公司自主研发了两代增程器电机技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "第三代碳化硅半导体控制器技术",
+      "evidence_span": "公司基于第三代半导体技术开发的碳化硅（SiC）控制器总成"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Steantis",
+      "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如Steantis"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国一汽",
+      "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如中国一汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海汽车",
+      "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如上海汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利集团",
+      "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如吉利集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏汽车",
+      "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如小鹏汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福田集团",
+      "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如福田集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中通客车",
+      "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如中通客车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风集团",
+      "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如东风集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TRATON集团",
+      "evidence_span": "公司除了与国外的Steantis、TRATON集团及其下属的MAN、斯堪尼亚、大众商用车、艾利逊等传统著名车企及一级零部件供应商建立了紧密的业务关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽集团",
+      "evidence_span": "精进电动油冷电机产品已与Steantis集团、广汽集团、吉利集团等国内外知名整车企业实现量产合作"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源汽车电驱动系统",
+        "evidence_span": "精进电动是新能源汽车电驱动系统国内领军企业之一，从事电驱动系统的研发、生产、销售及服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新能源汽车电驱动系统国内领军企业",
+        "evidence_span": "精进电动是新能源汽车电驱动系统国内领军企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "一级零部件供应商",
+        "evidence_span": "公司能够直接向整车企业提供系统级产品，在汽车行业具有核心价值的动力总成及控制领域享有“一级零部件供应商”的战略地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电驱动系统",
+        "evidence_span": "公司核心产品为新能源汽车电驱动系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驱动电机总成",
+        "evidence_span": "电驱动系统包括三大总成：驱动电机总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "控制器总成",
+        "evidence_span": "电驱动系统包括三大总成：控制器总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传动总成",
+        "evidence_span": "电驱动系统包括三大总成：传动总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三合一电驱动系统",
+        "evidence_span": "公司向市场推出了多款基于方导体技术，深度集成和高度轻量化的1000牛米至3500牛米扭矩的商用车三合一动力总成系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高功率密度桥驱系统",
+        "evidence_span": "公司向市场推出了基于方导体电机技术的高功率密度桥驱系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳化硅控制器",
+        "evidence_span": "公司为欧洲商用车客户开发的领先的碳化硅控制器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "方导体电机技术",
+        "evidence_span": "公司向市场推出了基于方导体电机技术的高功率密度桥驱系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "油冷电机技术",
+        "evidence_span": "公司在国内最早突破油冷电机技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电磁齿嵌式离合器技术",
+        "evidence_span": "公司电磁齿嵌式离合器技术主要应用于混动系统、两档变速器、四轮驱动系统的辅助电驱桥切分等产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "增程器电机技术",
+        "evidence_span": "公司自主研发了两代增程器电机技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "第三代碳化硅半导体控制器技术",
+        "evidence_span": "公司基于第三代半导体技术开发的碳化硅（SiC）控制器总成"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Steantis",
+        "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如Steantis"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国一汽",
+        "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如中国一汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海汽车",
+        "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如上海汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利集团",
+        "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如吉利集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏汽车",
+        "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如小鹏汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福田集团",
+        "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如福田集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中通客车",
+        "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如中通客车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风集团",
+        "evidence_span": "公司业务聚焦产品技术领先，客户构成主要为行业内的头部企业，比如东风集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TRATON集团",
+        "evidence_span": "公司除了与国外的Steantis、TRATON集团及其下属的MAN、斯堪尼亚、大众商用车、艾利逊等传统著名车企及一级零部件供应商建立了紧密的业务关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽集团",
+        "evidence_span": "精进电动油冷电机产品已与Steantis集团、广汽集团、吉利集团等国内外知名整车企业实现量产合作"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:52:12"
+}

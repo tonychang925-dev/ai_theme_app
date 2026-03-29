@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "能源板块",
+      "evidence_span": "主营业务为能源+金融“双轮驱动”"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融板块",
+      "evidence_span": "主营业务为能源+金融“双轮驱动”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域火电龙头",
+      "evidence_span": "低估值区域火电龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合能源服务供应商",
+      "evidence_span": "致力于成为综合能源服务供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "信托公司",
+      "evidence_span": "江苏信托在行业内具有较高的知名度和影响力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力生产",
+      "evidence_span": "主要从事电力、热力生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热力生产",
+      "evidence_span": "主要从事电力、热力生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤炭销售业务",
+      "evidence_span": "煤炭销售业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "售电业务",
+      "evidence_span": "售电业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固有业务",
+      "evidence_span": "业务分为固有业务和信托业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信托业务",
+      "evidence_span": "业务分为固有业务和信托业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集合资金信托",
+      "evidence_span": "公司的信托业务主要包括集合资金信托、单一资金信托、财产权信托等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单一资金信托",
+      "evidence_span": "公司的信托业务主要包括集合资金信托、单一资金信托、财产权信托等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "财产权信托",
+      "evidence_span": "公司的信托业务主要包括集合资金信托、单一资金信托、财产权信托等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "债权投资",
+      "evidence_span": "公司信托产品主要包括债权投资、股权投资、证券投资类及资产证券化、家族信托等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "股权投资",
+      "evidence_span": "公司信托产品主要包括债权投资、股权投资、证券投资类及资产证券化、家族信托等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券投资类",
+      "evidence_span": "公司信托产品主要包括债权投资、股权投资、证券投资类及资产证券化、家族信托等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产证券化",
+      "evidence_span": "公司信托产品主要包括债权投资、股权投资、证券投资类及资产证券化、家族信托等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家族信托",
+      "evidence_span": "公司信托产品主要包括债权投资、股权投资、证券投资类及资产证券化、家族信托等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "慈善信托",
+      "evidence_span": "成立“苏信弘善”慈善信托品牌"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超临界/超超临界机组",
+      "evidence_span": "公司在运行超临界/超超临界机组占在运行控股煤机装机总容量比例为83.58%"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "熔盐储热技术",
+      "evidence_span": "靖江发电率先将熔盐储热技术应用到煤电领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "深度调峰改造",
+      "evidence_span": "机组深度调峰改造负荷率低至15%"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江苏电网",
+      "evidence_span": "所生产的电力主要输入江苏电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山西电网",
+      "evidence_span": "部分输入山西电网"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网公司",
+      "evidence_span": "公司向国家电网公司销售电力"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "能源保供",
+      "evidence_span": "火电起到确保电力稳定供应，兜底电力供需安全的作用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源转型",
+      "evidence_span": "关注新能源转型"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "能源板块",
+        "evidence_span": "主营业务为能源+金融“双轮驱动”"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融板块",
+        "evidence_span": "主营业务为能源+金融“双轮驱动”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域火电龙头",
+        "evidence_span": "低估值区域火电龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合能源服务供应商",
+        "evidence_span": "致力于成为综合能源服务供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "信托公司",
+        "evidence_span": "江苏信托在行业内具有较高的知名度和影响力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力生产",
+        "evidence_span": "主要从事电力、热力生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热力生产",
+        "evidence_span": "主要从事电力、热力生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤炭销售业务",
+        "evidence_span": "煤炭销售业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "售电业务",
+        "evidence_span": "售电业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固有业务",
+        "evidence_span": "业务分为固有业务和信托业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信托业务",
+        "evidence_span": "业务分为固有业务和信托业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集合资金信托",
+        "evidence_span": "公司的信托业务主要包括集合资金信托、单一资金信托、财产权信托等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单一资金信托",
+        "evidence_span": "公司的信托业务主要包括集合资金信托、单一资金信托、财产权信托等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "财产权信托",
+        "evidence_span": "公司的信托业务主要包括集合资金信托、单一资金信托、财产权信托等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "债权投资",
+        "evidence_span": "公司信托产品主要包括债权投资、股权投资、证券投资类及资产证券化、家族信托等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "股权投资",
+        "evidence_span": "公司信托产品主要包括债权投资、股权投资、证券投资类及资产证券化、家族信托等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券投资类",
+        "evidence_span": "公司信托产品主要包括债权投资、股权投资、证券投资类及资产证券化、家族信托等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产证券化",
+        "evidence_span": "公司信托产品主要包括债权投资、股权投资、证券投资类及资产证券化、家族信托等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家族信托",
+        "evidence_span": "公司信托产品主要包括债权投资、股权投资、证券投资类及资产证券化、家族信托等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "慈善信托",
+        "evidence_span": "成立“苏信弘善”慈善信托品牌"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超临界/超超临界机组",
+        "evidence_span": "公司在运行超临界/超超临界机组占在运行控股煤机装机总容量比例为83.58%"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "熔盐储热技术",
+        "evidence_span": "靖江发电率先将熔盐储热技术应用到煤电领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "深度调峰改造",
+        "evidence_span": "机组深度调峰改造负荷率低至15%"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江苏电网",
+        "evidence_span": "所生产的电力主要输入江苏电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山西电网",
+        "evidence_span": "部分输入山西电网"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网公司",
+        "evidence_span": "公司向国家电网公司销售电力"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "能源保供",
+        "evidence_span": "火电起到确保电力稳定供应，兜底电力供需安全的作用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源转型",
+        "evidence_span": "关注新能源转型"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:49:48"
+}

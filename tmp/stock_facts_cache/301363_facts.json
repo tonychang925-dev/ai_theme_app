@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "家用呼吸机组件",
+      "evidence_span": "家用呼吸机组件业务是公司核心业务之一"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "人工植入耳蜗组件",
+      "evidence_span": "人工植入耳蜗组件业务也是公司的核心业务之一"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗器械精密组件",
+      "evidence_span": "专注于医疗器械精密组件及产品的设计开发、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "产品的设计开发",
+      "evidence_span": "专注于医疗器械精密组件及产品的设计开发、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "制造",
+      "evidence_span": "专注于医疗器械精密组件及产品的设计开发、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "专注于医疗器械精密组件及产品的设计开发、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自主医疗器械产品",
+      "evidence_span": "着力于自主医疗器械产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "健康防护类产品",
+      "evidence_span": "健康防护类产品的研发、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗器械产品受托生产",
+      "evidence_span": "为全球医疗器械客户提供医疗器械产品受托生产及合约制造服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "合约制造服务",
+      "evidence_span": "为全球医疗器械客户提供医疗器械产品受托生产及合约制造服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国家用呼吸机组件和人工植入耳蜗制造龙头企业",
+      "evidence_span": "中国家用呼吸机组件和人工植入耳蜗制造龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "家用呼吸机组件龙头",
+      "evidence_span": "家用呼吸机组件龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国最大的家用呼吸机组件和人工植入耳蜗组件制造商",
+      "evidence_span": "中国最大的家用呼吸机组件和人工植入耳蜗组件制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内最大的人工植入耳蜗组件制造商",
+      "evidence_span": "国内最大的人工植入耳蜗组件制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "呼吸机主机组件",
+      "evidence_span": "主要产品包括呼吸机主机组件和呼吸面罩组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "呼吸面罩组件",
+      "evidence_span": "主要产品包括呼吸机主机组件和呼吸面罩组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "外置声音处理器组件",
+      "evidence_span": "主要产品包括外置声音处理器组件、植入体组件和附件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "植入体组件",
+      "evidence_span": "主要产品包括外置声音处理器组件、植入体组件和附件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "附件",
+      "evidence_span": "主要产品包括外置声音处理器组件、植入体组件和附件等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医用肺功能仪",
+      "evidence_span": "公司目前的医疗器械产品主要为自主研发的医用肺功能仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密模具及自动化设备",
+      "evidence_span": "积极发展精密模具及自动化设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家用及消费电子组件",
+      "evidence_span": "家用及消费电子组件等业务领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "呼吸机主机组件组装测试及追溯技术",
+      "evidence_span": "公司拥有呼吸机主机组件组装测试及追溯技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "呼吸机湿化器水箱防渗漏技术",
+      "evidence_span": "呼吸机湿化器水箱防渗漏技术等呼吸机主机组件领域核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "薄壁注塑技术",
+      "evidence_span": "应用薄壁注塑技术注塑一层或多层密封材料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "嵌件注塑工艺",
+      "evidence_span": "将该导热片采用嵌件注塑工艺进行湿化器产品生产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核心检测算法",
+      "evidence_span": "核心检测算法可以将任何环境温度下可变的电性能阻值还原成25℃温度下的等效值"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "医疗器械开发技术",
+      "evidence_span": "医疗器械组件及产品的开发技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "塑胶和液态硅胶精密模具及成型技术",
+      "evidence_span": "塑胶和液态硅胶精密模具及成型技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化技术",
+      "evidence_span": "自动化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密制造技术",
+      "evidence_span": "精密制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "医疗器械合规管理体系",
+      "evidence_span": "完善的医疗器械合规管理体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "客户A",
+      "evidence_span": "与其现在的第一大客户（客户A）展开业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "客户B",
+      "evidence_span": "公司与人工植入耳蜗制造商客户B的合作则开始于2011年"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球医疗器械客户",
+      "evidence_span": "为全球医疗器械客户提供医疗器械产品受托生产及合约制造服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "家用呼吸机渗透率不断提高",
+      "evidence_span": "家用呼吸机渗透率不断提高"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "人工植入耳蜗市场需求空间和未来的市场潜力可期",
+      "evidence_span": "人工植入耳蜗市场需求空间和未来的市场潜力可期"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "家用呼吸机组件",
+        "evidence_span": "家用呼吸机组件业务是公司核心业务之一"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "人工植入耳蜗组件",
+        "evidence_span": "人工植入耳蜗组件业务也是公司的核心业务之一"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗器械精密组件及产品的设计开发、制造和销售",
+        "evidence_span": "专注于医疗器械精密组件及产品的设计开发、制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自主医疗器械产品",
+        "evidence_span": "着力于自主医疗器械产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "健康防护类产品",
+        "evidence_span": "健康防护类产品的研发、制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗器械产品受托生产及合约制造服务",
+        "evidence_span": "为全球医疗器械客户提供医疗器械产品受托生产及合约制造服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国家用呼吸机组件和人工植入耳蜗制造龙头企业",
+        "evidence_span": "中国家用呼吸机组件和人工植入耳蜗制造龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "家用呼吸机组件龙头",
+        "evidence_span": "家用呼吸机组件龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国最大的家用呼吸机组件和人工植入耳蜗组件制造商",
+        "evidence_span": "中国最大的家用呼吸机组件和人工植入耳蜗组件制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内最大的人工植入耳蜗组件制造商",
+        "evidence_span": "国内最大的人工植入耳蜗组件制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "呼吸机主机组件",
+        "evidence_span": "主要产品包括呼吸机主机组件和呼吸面罩组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "呼吸面罩组件",
+        "evidence_span": "主要产品包括呼吸机主机组件和呼吸面罩组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "外置声音处理器组件",
+        "evidence_span": "主要产品包括外置声音处理器组件、植入体组件和附件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "植入体组件",
+        "evidence_span": "主要产品包括外置声音处理器组件、植入体组件和附件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "附件",
+        "evidence_span": "主要产品包括外置声音处理器组件、植入体组件和附件等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医用肺功能仪",
+        "evidence_span": "公司目前的医疗器械产品主要为自主研发的医用肺功能仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密模具及自动化设备",
+        "evidence_span": "积极发展精密模具及自动化设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家用及消费电子组件",
+        "evidence_span": "家用及消费电子组件等业务领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "呼吸机主机组件组装测试及追溯技术",
+        "evidence_span": "公司拥有呼吸机主机组件组装测试及追溯技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "呼吸机湿化器水箱防渗漏技术",
+        "evidence_span": "呼吸机湿化器水箱防渗漏技术等呼吸机主机组件领域核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "薄壁注塑技术",
+        "evidence_span": "应用薄壁注塑技术注塑一层或多层密封材料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "嵌件注塑工艺",
+        "evidence_span": "将该导热片采用嵌件注塑工艺进行湿化器产品生产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核心检测算法",
+        "evidence_span": "核心检测算法可以将任何环境温度下可变的电性能阻值还原成25℃温度下的等效值"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "医疗器械开发技术",
+        "evidence_span": "医疗器械组件及产品的开发技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "塑胶和液态硅胶精密模具及成型技术",
+        "evidence_span": "塑胶和液态硅胶精密模具及成型技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化技术",
+        "evidence_span": "自动化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密制造技术",
+        "evidence_span": "精密制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "医疗器械合规管理体系",
+        "evidence_span": "完善的医疗器械合规管理体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "客户A",
+        "evidence_span": "与其现在的第一大客户（客户A）展开业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "客户B",
+        "evidence_span": "公司与人工植入耳蜗制造商客户B的合作则开始于2011年"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球医疗器械客户",
+        "evidence_span": "为全球医疗器械客户提供医疗器械产品受托生产及合约制造服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "家用呼吸机渗透率不断提高",
+        "evidence_span": "家用呼吸机渗透率不断提高"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "人工植入耳蜗市场需求空间和未来的市场潜力可期",
+        "evidence_span": "人工植入耳蜗市场需求空间和未来的市场潜力可期"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:31:39"
+}

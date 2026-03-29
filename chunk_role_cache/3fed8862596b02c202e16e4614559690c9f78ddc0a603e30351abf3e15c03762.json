@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:49", "result": {"chunk_id": "29b98f1c9ac6", "decision": "ontology_useful", "confidence": 0.9, "reason": "该段落提到了刻蚀机这一半导体设备的关键对象，并涉及国产化替代这一核心环节，有助于定义半导体设备题材的本体结构。"}}

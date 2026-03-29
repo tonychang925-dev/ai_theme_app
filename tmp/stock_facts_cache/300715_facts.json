@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型建筑防水材料研发",
+      "evidence_span": "公司主营业务为新型建筑防水材料研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型建筑防水材料生产",
+      "evidence_span": "公司主营业务为新型建筑防水材料研发、生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型建筑防水材料销售",
+      "evidence_span": "公司主营业务为新型建筑防水材料研发、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "防水工程施工服务",
+      "evidence_span": "公司主营业务为新型建筑防水材料研发、生产、销售和防水工程施工服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高分子防水材料领先企业",
+      "evidence_span": "高分子防水材料领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高分子卷材细分市场领先者",
+      "evidence_span": "确立了自身在高分子卷材细分市场领域的领先地位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "白色聚氨酯防水涂料细分市场领先者",
+      "evidence_span": "确立了自身在白色聚氨酯防水涂料细分市场领域的领先地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防水卷材",
+      "evidence_span": "主要产品为防水卷材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防水涂料",
+      "evidence_span": "主要产品为防水卷材、防水涂料两大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高分子防水卷材",
+      "evidence_span": "高分子防水卷材引领者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "白色聚氨酯防水涂料",
+      "evidence_span": "白色聚氨酯防水涂料细分市场"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高分子防水材料研发",
+      "evidence_span": "国内最早从事高分子防水材料研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高分子防水材料推广应用",
+      "evidence_span": "国内最早从事高分子防水材料研发和推广应用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "万科",
+      "evidence_span": "公司与万科达成长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "碧桂园",
+      "evidence_span": "公司与碧桂园达成长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "绿地",
+      "evidence_span": "公司与绿地达成长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新城",
+      "evidence_span": "公司与新城达成长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中海",
+      "evidence_span": "公司与中海达成长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "融创",
+      "evidence_span": "公司与融创达成长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蓝光",
+      "evidence_span": "公司与蓝光达成长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "当代",
+      "evidence_span": "公司与当代达成长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荣盛",
+      "evidence_span": "公司与荣盛达成长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中南置地",
+      "evidence_span": "公司与中南置地达成长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "祥生",
+      "evidence_span": "公司与祥生达成长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "50多家地产品牌",
+      "evidence_span": "与50多家地产品牌达成长期战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "500多家经销商",
+      "evidence_span": "已与500多家经销商达成合作共赢关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏屋顶新机遇",
+      "evidence_span": "紧抓光伏屋顶新机遇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "BIPV",
+      "evidence_span": "BIPV与高分子扎实推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型建筑防水材料研发",
+        "evidence_span": "公司主营业务为新型建筑防水材料研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型建筑防水材料生产",
+        "evidence_span": "公司主营业务为新型建筑防水材料研发、生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型建筑防水材料销售",
+        "evidence_span": "公司主营业务为新型建筑防水材料研发、生产、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "防水工程施工服务",
+        "evidence_span": "公司主营业务为新型建筑防水材料研发、生产、销售和防水工程施工服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高分子防水材料领先企业",
+        "evidence_span": "高分子防水材料领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高分子卷材细分市场领先者",
+        "evidence_span": "确立了自身在高分子卷材细分市场领域的领先地位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "白色聚氨酯防水涂料细分市场领先者",
+        "evidence_span": "确立了自身在白色聚氨酯防水涂料细分市场领域的领先地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防水卷材",
+        "evidence_span": "主要产品为防水卷材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防水涂料",
+        "evidence_span": "主要产品为防水卷材、防水涂料两大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高分子防水卷材",
+        "evidence_span": "高分子防水卷材引领者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "白色聚氨酯防水涂料",
+        "evidence_span": "白色聚氨酯防水涂料细分市场"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高分子防水材料研发",
+        "evidence_span": "国内最早从事高分子防水材料研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高分子防水材料推广应用",
+        "evidence_span": "国内最早从事高分子防水材料研发和推广应用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "万科",
+        "evidence_span": "公司与万科达成长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "碧桂园",
+        "evidence_span": "公司与碧桂园达成长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "绿地",
+        "evidence_span": "公司与绿地达成长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新城",
+        "evidence_span": "公司与新城达成长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中海",
+        "evidence_span": "公司与中海达成长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "融创",
+        "evidence_span": "公司与融创达成长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蓝光",
+        "evidence_span": "公司与蓝光达成长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "当代",
+        "evidence_span": "公司与当代达成长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荣盛",
+        "evidence_span": "公司与荣盛达成长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中南置地",
+        "evidence_span": "公司与中南置地达成长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "祥生",
+        "evidence_span": "公司与祥生达成长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "50多家地产品牌",
+        "evidence_span": "与50多家地产品牌达成长期战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "500多家经销商",
+        "evidence_span": "已与500多家经销商达成合作共赢关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏屋顶新机遇",
+        "evidence_span": "紧抓光伏屋顶新机遇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "BIPV",
+        "evidence_span": "BIPV与高分子扎实推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T01:00:23"
+}

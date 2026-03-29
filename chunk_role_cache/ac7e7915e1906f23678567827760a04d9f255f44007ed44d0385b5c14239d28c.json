@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "05858f3acdf0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落混合了公司公告（如北方华创、中微公司业绩）和事件报道（三星引进光刻机），同时提及High-NA EUV技术知识，因此归类为candidate_mixed。"}}

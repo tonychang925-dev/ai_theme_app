@@ -1,0 +1,224 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭开采",
+      "evidence_span": "公司下辖7个煤矿"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司下辖7个煤矿"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "热电联产",
+      "evidence_span": "公司下辖2个热电联产的电厂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铁路运输",
+      "evidence_span": "公司拥有与煤矿配套的铁路运输系统"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大型煤炭供应商",
+      "evidence_span": "辽宁省及周边钢铁企业运距最短的大型煤炭供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "热电联产企业",
+      "evidence_span": "辽阳市是最大的热电联产企业和灯塔市是唯一的热电联产企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冶金煤",
+      "evidence_span": "各矿煤种以冶金煤为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力煤",
+      "evidence_span": "同时还有部分动力煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力",
+      "evidence_span": "电力产品主要销售给国家电网公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "供暖服务",
+      "evidence_span": "供暖收费面积2,768万平方米"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主焦煤",
+      "evidence_span": "公司主要煤炭品种有主焦煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气煤",
+      "evidence_span": "公司主要煤炭品种有...气煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肥煤",
+      "evidence_span": "公司主要煤炭品种有...肥煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "瘦煤",
+      "evidence_span": "公司主要煤炭品种有...瘦煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贫瘦煤",
+      "evidence_span": "公司主要煤炭品种有...贫瘦煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贫煤",
+      "evidence_span": "公司主要煤炭品种有...贫煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无烟煤",
+      "evidence_span": "公司主要煤炭品种有...无烟煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三分之一焦煤",
+      "evidence_span": "公司主要煤炭品种有...三分之一焦煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "褐煤",
+      "evidence_span": "公司主要煤炭品种有...褐煤"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型钢铁企业",
+      "evidence_span": "主要销售给大型钢铁企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电厂",
+      "evidence_span": "销售给电厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电网公司",
+      "evidence_span": "电力产品主要销售给国家电网公司"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭开采与销售",
+        "evidence_span": "公司下辖7个煤矿"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "热电联产",
+        "evidence_span": "公司下辖2个热电联产的电厂"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铁路运输",
+        "evidence_span": "公司拥有与煤矿配套的铁路运输系统"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大型煤炭供应商",
+        "evidence_span": "辽宁省及周边钢铁企业运距最短的大型煤炭供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "热电联产企业",
+        "evidence_span": "辽阳市是最大的热电联产企业和灯塔市是唯一的热电联产企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冶金煤",
+        "evidence_span": "各矿煤种以冶金煤为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力煤",
+        "evidence_span": "同时还有部分动力煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力",
+        "evidence_span": "电力产品主要销售给国家电网公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "供暖服务",
+        "evidence_span": "供暖收费面积2,768万平方米"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主焦煤",
+        "evidence_span": "公司主要煤炭品种有主焦煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气煤",
+        "evidence_span": "公司主要煤炭品种有...气煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肥煤",
+        "evidence_span": "公司主要煤炭品种有...肥煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "瘦煤",
+        "evidence_span": "公司主要煤炭品种有...瘦煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贫瘦煤",
+        "evidence_span": "公司主要煤炭品种有...贫瘦煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贫煤",
+        "evidence_span": "公司主要煤炭品种有...贫煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无烟煤",
+        "evidence_span": "公司主要煤炭品种有...无烟煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三分之一焦煤",
+        "evidence_span": "公司主要煤炭品种有...三分之一焦煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "褐煤",
+        "evidence_span": "公司主要煤炭品种有...褐煤"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型钢铁企业",
+        "evidence_span": "主要销售给大型钢铁企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电厂",
+        "evidence_span": "销售给电厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电网公司",
+        "evidence_span": "电力产品主要销售给国家电网公司"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:14:20"
+}

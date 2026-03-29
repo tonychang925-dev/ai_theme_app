@@ -1,0 +1,75 @@
+{
+  "must": [
+    "低空飞行器制造",
+    "低空运营服务",
+    "无人机",
+    "电动垂直起降航空器",
+    "低空通信网络",
+    "飞行保障"
+  ],
+  "should": [
+    "传统通航产业",
+    "通用机场和起降点",
+    "低空飞行数字化管理服务系统",
+    "低空网络基础设施",
+    "5G-A的低空智联网覆盖",
+    "空天地一体化网络",
+    "通信、感知、人工智能和大数据技术",
+    "飞行器部件",
+    "民航民用无人驾驶航空试验区",
+    "通用航空服务",
+    "民用航空器驾驶员培训",
+    "飞行器制造"
+  ],
+  "not": [
+    "国际低空经济博览会",
+    "低空经济产业联盟",
+    "华东低空经济产业联盟",
+    "长三角低空经济产业联盟",
+    "上海市经济信息化委",
+    "上海机场集团",
+    "低空经济服务专委会",
+    "上海市航空学会"
+  ],
+  "evidence_refs": [
+    {
+      "term": "低空飞行器制造",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "低空飞行器制造"
+    },
+    {
+      "term": "低空运营服务",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "低空运营服务"
+    },
+    {
+      "term": "无人机",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "无人机"
+    },
+    {
+      "term": "电动垂直起降航空器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "电动垂直起降航空器"
+    },
+    {
+      "term": "低空通信网络",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "低空通信网络"
+    },
+    {
+      "term": "飞行保障",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "飞行保障"
+    }
+  ],
+  "subject_id": "9025720",
+  "quality": "strong",
+  "generated_at": "2026-03-09T20:33:43"
+}

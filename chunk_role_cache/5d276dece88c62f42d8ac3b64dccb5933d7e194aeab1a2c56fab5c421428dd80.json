@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "ccc6ba4bd69c", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落报道台积电预计从ASML接收光刻机的具体事件，以时间推进和公司动态为主。"}}

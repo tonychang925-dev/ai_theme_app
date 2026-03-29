@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "906aae6b1c27", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落简要报道工信部加强数据安全保护的事件，属于新闻动态，没有提供详细的静态知识。"}}

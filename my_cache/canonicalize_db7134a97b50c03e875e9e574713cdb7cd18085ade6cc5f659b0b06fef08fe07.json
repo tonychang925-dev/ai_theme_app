@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:14:55", "result": {"span_uid": "8271225e7103", "action": "rewrite", "canonical_text": "Arauco公司有156万吨阔叶浆产能计划投产。", "final_type": "signal", "final_role": "产能扩张计划", "stability": "high", "reason": "该片段描述具体公司的未来产能扩张计划，属于阶段性变化信息，改写后去除了具体时间（2022Q4），使其更稳定、可独立理解。"}}

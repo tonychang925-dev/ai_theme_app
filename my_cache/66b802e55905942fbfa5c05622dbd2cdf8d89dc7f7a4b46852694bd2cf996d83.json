@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "85ae9cef1684", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落主要提供了十大军工集团的历史背景、形成过程、组成和职能等静态知识，但夹杂了具体的重组事件和时间信息（如1999年、2016年、2018年、2019年），因此属于混合内容，需要进一步裁决以提取稳定知识。"}}

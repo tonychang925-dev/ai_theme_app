@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "9c0ab3c8bdbc", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落报道了小鹏汇天飞行汽车在珠海航展首秀和广州车展接受预定的具体事件，属于产品发布和市场动态，不包含低空经济的静态知识，因此判为pure_event。"}}

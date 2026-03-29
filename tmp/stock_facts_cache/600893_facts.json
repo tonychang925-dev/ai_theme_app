@@ -1,0 +1,264 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空发动机",
+      "evidence_span": "公司主要业务分为三类：航空发动机及衍生产品业务、外贸出口转包业务、非航空产品及其他业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "衍生产品业务",
+      "evidence_span": "公司主要业务分为三类：航空发动机及衍生产品业务、外贸出口转包业务、非航空产品及其他业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "外贸出口转包业务",
+      "evidence_span": "公司主要业务分为三类：航空发动机及衍生产品业务、外贸出口转包业务、非航空产品及其他业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "非航空产品",
+      "evidence_span": "公司主要业务分为三类：航空发动机及衍生产品业务、外贸出口转包业务、非航空产品及其他业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其他业务",
+      "evidence_span": "公司主要业务分为三类：航空发动机及衍生产品业务、外贸出口转包业务、非航空产品及其他业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空发动机整机龙头",
+      "evidence_span": "航空发动机整机龙头，新老军用机型需求叠加"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "三/四代主战机型发动机国内唯一供应商",
+      "evidence_span": "三/四代主战机型发动机国内唯一供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空发动机及燃气轮机整机",
+      "evidence_span": "主要产品和服务有航空发动机及燃气轮机整机、部件，维修保障服务以及航空发动机零部件出口转包等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空发动机部件",
+      "evidence_span": "主要产品和服务有航空发动机及燃气轮机整机、部件，维修保障服务以及航空发动机零部件出口转包等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维修保障服务",
+      "evidence_span": "主要产品和服务有航空发动机及燃气轮机整机、部件，维修保障服务以及航空发动机零部件出口转包等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空发动机零部件出口转包",
+      "evidence_span": "主要产品和服务有航空发动机及燃气轮机整机、部件，维修保障服务以及航空发动机零部件出口转包等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡扇发动机",
+      "evidence_span": "航发动力具备涡扇、涡轴、涡喷、涡桨发动机系列研制生产能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡轴发动机",
+      "evidence_span": "航发动力具备涡扇、涡轴、涡喷、涡桨发动机系列研制生产能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡喷发动机",
+      "evidence_span": "航发动力具备涡扇、涡轴、涡喷、涡桨发动机系列研制生产能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡桨发动机",
+      "evidence_span": "航发动力具备涡扇、涡轴、涡喷、涡桨发动机系列研制生产能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡扇10",
+      "evidence_span": "例如涡扇10、涡轴8、涡喷14、涡桨6等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡轴8",
+      "evidence_span": "例如涡扇10、涡轴8、涡喷14、涡桨6等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡喷14",
+      "evidence_span": "例如涡扇10、涡轴8、涡喷14、涡桨6等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡桨6",
+      "evidence_span": "例如涡扇10、涡轴8、涡喷14、涡桨6等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡扇-20",
+      "evidence_span": "涡扇-10与涡扇-20或将贡献西航未来主要业绩"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡扇-18",
+      "evidence_span": "目前国内能适配运-20的两款国产发动机为涡扇-18与涡扇-20"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "WJ-6",
+      "evidence_span": "其产品WJ-6技术成熟稳定"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡扇-11",
+      "evidence_span": "公司涡扇-11作为我国教练机与无人机配套"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "WS-13",
+      "evidence_span": "代表产品包括“泰山”（WS-13）等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "涡扇、涡轴、涡喷、涡桨发动机系列研制生产能力",
+      "evidence_span": "航发动力具备涡扇、涡轴、涡喷、涡桨发动机系列研制生产能力"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "受益于国产替代的中期逻辑"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空发动机及衍生产品业务",
+        "evidence_span": "公司主要业务分为三类：航空发动机及衍生产品业务、外贸出口转包业务、非航空产品及其他业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "外贸出口转包业务",
+        "evidence_span": "公司主要业务分为三类：航空发动机及衍生产品业务、外贸出口转包业务、非航空产品及其他业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "非航空产品及其他业务",
+        "evidence_span": "公司主要业务分为三类：航空发动机及衍生产品业务、外贸出口转包业务、非航空产品及其他业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空发动机整机龙头",
+        "evidence_span": "航空发动机整机龙头，新老军用机型需求叠加"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "三/四代主战机型发动机国内唯一供应商",
+        "evidence_span": "三/四代主战机型发动机国内唯一供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空发动机及燃气轮机整机",
+        "evidence_span": "主要产品和服务有航空发动机及燃气轮机整机、部件，维修保障服务以及航空发动机零部件出口转包等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空发动机部件",
+        "evidence_span": "主要产品和服务有航空发动机及燃气轮机整机、部件，维修保障服务以及航空发动机零部件出口转包等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维修保障服务",
+        "evidence_span": "主要产品和服务有航空发动机及燃气轮机整机、部件，维修保障服务以及航空发动机零部件出口转包等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空发动机零部件出口转包",
+        "evidence_span": "主要产品和服务有航空发动机及燃气轮机整机、部件，维修保障服务以及航空发动机零部件出口转包等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡扇发动机",
+        "evidence_span": "航发动力具备涡扇、涡轴、涡喷、涡桨发动机系列研制生产能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡轴发动机",
+        "evidence_span": "航发动力具备涡扇、涡轴、涡喷、涡桨发动机系列研制生产能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡喷发动机",
+        "evidence_span": "航发动力具备涡扇、涡轴、涡喷、涡桨发动机系列研制生产能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡桨发动机",
+        "evidence_span": "航发动力具备涡扇、涡轴、涡喷、涡桨发动机系列研制生产能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡扇10",
+        "evidence_span": "例如涡扇10、涡轴8、涡喷14、涡桨6等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡轴8",
+        "evidence_span": "例如涡扇10、涡轴8、涡喷14、涡桨6等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡喷14",
+        "evidence_span": "例如涡扇10、涡轴8、涡喷14、涡桨6等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡桨6",
+        "evidence_span": "例如涡扇10、涡轴8、涡喷14、涡桨6等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡扇-20",
+        "evidence_span": "涡扇-10与涡扇-20或将贡献西航未来主要业绩"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡扇-18",
+        "evidence_span": "目前国内能适配运-20的两款国产发动机为涡扇-18与涡扇-20"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "WJ-6",
+        "evidence_span": "其产品WJ-6技术成熟稳定"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡扇-11",
+        "evidence_span": "公司涡扇-11作为我国教练机与无人机配套"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "WS-13",
+        "evidence_span": "代表产品包括“泰山”（WS-13）等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "涡扇、涡轴、涡喷、涡桨发动机系列研制生产能力",
+        "evidence_span": "航发动力具备涡扇、涡轴、涡喷、涡桨发动机系列研制生产能力"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "受益于国产替代的中期逻辑"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "未来国产替代空间广阔"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:47:10"
+}

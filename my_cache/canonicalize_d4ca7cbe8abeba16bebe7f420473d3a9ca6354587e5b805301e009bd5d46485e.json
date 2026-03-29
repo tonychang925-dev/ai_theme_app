@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:14:22", "result": {"span_uid": "dfb35edb52ca", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "全球纸浆发货数据", "stability": "medium", "reason": "该片段提供了世界20产浆国发货量和对中国发货量的环比、同比数据，但这是具体时间点的统计信息，属于短期信号，无法形成稳定、独立的知识表达，因此丢弃。"}}

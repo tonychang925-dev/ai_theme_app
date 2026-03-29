@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "7e667161818d", "label": "knowledge_like", "confidence": 0.7, "ontology_value": "medium", "reason": "该段提供了国际半导体产业协会关于中国大陆芯片制造设备支出的数据，反映了市场结构和区域重要性，具有知识性价值，但以事件形式报告，稳定性一般。"}}

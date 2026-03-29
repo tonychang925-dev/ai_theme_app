@@ -1,0 +1,234 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "心脏电生理设备",
+      "evidence_span": "全球少数同时完成心脏电生理设备与耗材完整布局的厂商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "耗材",
+      "evidence_span": "全球少数同时完成心脏电生理设备与耗材完整布局的厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "心脏电生理设备与耗材完整布局厂商",
+      "evidence_span": "全球少数同时完成心脏电生理设备与耗材完整布局的厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "三维心脏电生理设备与耗材完整解决方案国产厂商",
+      "evidence_span": "首个能够提供三维心脏电生理设备与耗材完整解决方案的国产厂商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Columbus®三维心脏电生理标测系统",
+      "evidence_span": "公司自主研发的 Columbus®三维心脏电生理标测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磁定位标测导管产品线",
+      "evidence_span": "公司创新开发了国产唯一的磁定位标测导管产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磁定位型可调弯标测导管",
+      "evidence_span": "磁定位型可调弯标测导管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一次性使用磁定位环形标测导管",
+      "evidence_span": "一次性使用磁定位环形标测导管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磁定位型射频消融导管",
+      "evidence_span": "磁定位型射频消融导管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微电极射频消融导管",
+      "evidence_span": "微电极射频消融导管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷盐水灌注射频消融导管",
+      "evidence_span": "冷盐水灌注射频消融导管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Flashpoint®肾动脉射频消融导管",
+      "evidence_span": "公司自主研发的Flashpoint®肾动脉射频消融导管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高密度标测导管",
+      "evidence_span": "公司高密度标测导管和压力感知导管上市在即"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压力感知导管",
+      "evidence_span": "公司高密度标测导管和压力感知导管上市在即"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "磁电双定位标测系统",
+      "evidence_span": "首个获批上市的国产磁电双定位标测系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "能量治疗技术平台",
+      "evidence_span": "公司依托能量治疗技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "射频消融能量技术",
+      "evidence_span": "射频+冷冻两大主流消融能量技术的突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "冷冻消融能量技术",
+      "evidence_span": "射频+冷冻两大主流消融能量技术的突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高密度标测模块",
+      "evidence_span": "公司标测系统已经内置高密度标测模块及压力感知模块"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "压力感知模块",
+      "evidence_span": "公司标测系统已经内置高密度标测模块及压力感知模块"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全国31个省、自治区和直辖市的700余家终端医院",
+      "evidence_span": "公司产品已覆盖全国31个省、自治区和直辖市的700余家终端医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法国、意大利、西班牙等22个国家和地区",
+      "evidence_span": "并出口至法国、意大利、西班牙等22个国家和地区"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产替代势在必行"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "心脏电生理设备与耗材",
+        "evidence_span": "全球少数同时完成心脏电生理设备与耗材完整布局的厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "心脏电生理设备与耗材完整布局厂商",
+        "evidence_span": "全球少数同时完成心脏电生理设备与耗材完整布局的厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "三维心脏电生理设备与耗材完整解决方案国产厂商",
+        "evidence_span": "首个能够提供三维心脏电生理设备与耗材完整解决方案的国产厂商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Columbus®三维心脏电生理标测系统",
+        "evidence_span": "公司自主研发的 Columbus®三维心脏电生理标测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磁定位标测导管产品线",
+        "evidence_span": "公司创新开发了国产唯一的磁定位标测导管产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磁定位型可调弯标测导管",
+        "evidence_span": "磁定位型可调弯标测导管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一次性使用磁定位环形标测导管",
+        "evidence_span": "一次性使用磁定位环形标测导管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磁定位型射频消融导管",
+        "evidence_span": "磁定位型射频消融导管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微电极射频消融导管",
+        "evidence_span": "微电极射频消融导管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷盐水灌注射频消融导管",
+        "evidence_span": "冷盐水灌注射频消融导管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Flashpoint®肾动脉射频消融导管",
+        "evidence_span": "公司自主研发的Flashpoint®肾动脉射频消融导管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高密度标测导管",
+        "evidence_span": "公司高密度标测导管和压力感知导管上市在即"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压力感知导管",
+        "evidence_span": "公司高密度标测导管和压力感知导管上市在即"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "磁电双定位标测系统",
+        "evidence_span": "首个获批上市的国产磁电双定位标测系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "能量治疗技术平台",
+        "evidence_span": "公司依托能量治疗技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "射频消融能量技术",
+        "evidence_span": "射频+冷冻两大主流消融能量技术的突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "冷冻消融能量技术",
+        "evidence_span": "射频+冷冻两大主流消融能量技术的突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高密度标测模块",
+        "evidence_span": "公司标测系统已经内置高密度标测模块及压力感知模块"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "压力感知模块",
+        "evidence_span": "公司标测系统已经内置高密度标测模块及压力感知模块"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全国31个省、自治区和直辖市的700余家终端医院",
+        "evidence_span": "公司产品已覆盖全国31个省、自治区和直辖市的700余家终端医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法国、意大利、西班牙等22个国家和地区",
+        "evidence_span": "并出口至法国、意大利、西班牙等22个国家和地区"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产替代势在必行"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:16:09"
+}

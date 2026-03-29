@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "913144d7f932", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "段落描述美国国际贸易委员会的终裁和具体措施（如排除令、保证金），是监管事件，无静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:49", "result": {"chunk_id": "71f35549b481", "decision": "ontology_useful", "confidence": 0.75, "reason": "该段落的第一部分列出了光刻机等关键设备的技术规格和工艺支持，有助于定义半导体设备的结构边界和关键对象；第二部分涉及制程产能，但整体仍以设备为中心。"}}

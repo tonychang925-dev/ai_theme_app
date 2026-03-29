@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高性能过滤材料",
+      "evidence_span": "公司主要从事高性能过滤材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "功能性过滤材料",
+      "evidence_span": "功能性过滤材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "功能性过滤网",
+      "evidence_span": "功能性过滤网"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "各类过滤器",
+      "evidence_span": "各类过滤器的生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "空调过滤行业龙头企业",
+      "evidence_span": "公司目前已经成为空调过滤行业的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "空滤行业隐形冠军",
+      "evidence_span": "空滤行业隐形冠军"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "细分子行业优质龙头企业",
+      "evidence_span": "细分子行业优质龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空调过滤网",
+      "evidence_span": "产品主要应用于空调过滤网"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空调过滤器",
+      "evidence_span": "空调过滤器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空气净化器",
+      "evidence_span": "空气净化器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新风系统",
+      "evidence_span": "新风系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "洗地机过滤网",
+      "evidence_span": "小家电(如洗地机过滤网)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车空调过滤器",
+      "evidence_span": "汽车空调过滤器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载空气净化器",
+      "evidence_span": "车载空气净化器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空调抗病毒口罩",
+      "evidence_span": "空调抗病毒口罩"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纳米银抗毒空气过滤器",
+      "evidence_span": "公司生产的 纳米银抗毒空气过滤器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HEPA空气过滤系统",
+      "evidence_span": "HEPA 空气过滤系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗病毒材料自主研发",
+      "evidence_span": "公司生产的抗病毒材料为自主研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗病毒材料量产能力",
+      "evidence_span": "具备量产能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "3M",
+      "evidence_span": "与空滤顶尖企业 3M 深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三菱电机",
+      "evidence_span": "目前已经量产客户包括三菱电机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日立",
+      "evidence_span": "日立"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富士通",
+      "evidence_span": "富士通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大金",
+      "evidence_span": "应用于大金空调内的占比超过 80%"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "松下",
+      "evidence_span": "松下空调的总数超过 13000 台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "添可智能科技",
+      "evidence_span": "洗地机过滤器的主要意向客户为添可智能科技"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车空气滤开拓第二增长曲线",
+      "evidence_span": "新能源汽车空气滤开拓第二增长曲线"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "PM2.5室内空气治理龙头",
+      "evidence_span": "PM2.5室内空气治理龙头"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高性能过滤材料",
+        "evidence_span": "公司主要从事高性能过滤材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "功能性过滤材料",
+        "evidence_span": "功能性过滤材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "功能性过滤网",
+        "evidence_span": "功能性过滤网"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "各类过滤器",
+        "evidence_span": "各类过滤器的生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "空调过滤行业龙头企业",
+        "evidence_span": "公司目前已经成为空调过滤行业的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "空滤行业隐形冠军",
+        "evidence_span": "空滤行业隐形冠军"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "细分子行业优质龙头企业",
+        "evidence_span": "细分子行业优质龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空调过滤网",
+        "evidence_span": "产品主要应用于空调过滤网"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空调过滤器",
+        "evidence_span": "空调过滤器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空气净化器",
+        "evidence_span": "空气净化器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新风系统",
+        "evidence_span": "新风系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "洗地机过滤网",
+        "evidence_span": "小家电(如洗地机过滤网)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车空调过滤器",
+        "evidence_span": "汽车空调过滤器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载空气净化器",
+        "evidence_span": "车载空气净化器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空调抗病毒口罩",
+        "evidence_span": "空调抗病毒口罩"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纳米银抗毒空气过滤器",
+        "evidence_span": "公司生产的 纳米银抗毒空气过滤器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HEPA空气过滤系统",
+        "evidence_span": "HEPA 空气过滤系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗病毒材料自主研发",
+        "evidence_span": "公司生产的抗病毒材料为自主研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗病毒材料量产能力",
+        "evidence_span": "具备量产能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "3M",
+        "evidence_span": "与空滤顶尖企业 3M 深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三菱电机",
+        "evidence_span": "目前已经量产客户包括三菱电机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日立",
+        "evidence_span": "日立"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富士通",
+        "evidence_span": "富士通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大金",
+        "evidence_span": "应用于大金空调内的占比超过 80%"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "松下",
+        "evidence_span": "松下空调的总数超过 13000 台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "添可智能科技",
+        "evidence_span": "洗地机过滤器的主要意向客户为添可智能科技"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车空气滤开拓第二增长曲线",
+        "evidence_span": "新能源汽车空气滤开拓第二增长曲线"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "PM2.5室内空气治理龙头",
+        "evidence_span": "PM2.5室内空气治理龙头"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:55:14"
+}

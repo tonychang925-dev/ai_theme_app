@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "污泥脱水干化",
+      "evidence_span": "公司主营业务是为城镇和工业（园区）污水处理厂（站）提供污泥脱水干化及废气净化技术装备及服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "废气净化",
+      "evidence_span": "公司主营业务是为城镇和工业（园区）污水处理厂（站）提供污泥脱水干化及废气净化技术装备及服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "节能降碳",
+      "evidence_span": "依托核心技术，公司业务逐步向工业固废与特种物料固液分离、节能降碳领域拓展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端装备制造企业",
+      "evidence_span": "复洁环保是一家专注于污泥等物料脱水干化与固液分离、恶臭污染物及挥发性有机污染物净化的高端装备制造企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "污泥处理处置先行者",
+      "evidence_span": "复洁环保作为我国污泥处理处置、工业固废与特种物料固液分离、废气净化领域的先行者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家专精特新“小巨人”企业",
+      "evidence_span": "国家专精特新“小巨人”企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低温真空脱水干化一体化技术装备",
+      "evidence_span": "低温真空脱水干化一体化技术装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "废气净化成套技术装备",
+      "evidence_span": "废气净化成套技术装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高温水源热泵技术装备",
+      "evidence_span": "高温水源热泵技术装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污泥处理服务",
+      "evidence_span": "为客户提供污泥处理服务和解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低温真空脱水干化一体化技术",
+      "evidence_span": "拥有具有自主知识产权的低温真空脱水干化一体化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "废气净化系列技术",
+      "evidence_span": "废气净化系列技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高温水源热泵技术",
+      "evidence_span": "创新开发应用高温水源热泵技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "渭化集团彬州",
+      "evidence_span": "在“煤化工”领域承接的渭化集团彬州、重化工、洁能公司及浙石化等多个气化细渣脱水干化项目顺利实施"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "重化工",
+      "evidence_span": "在“煤化工”领域承接的渭化集团彬州、重化工、洁能公司及浙石化等多个气化细渣脱水干化项目顺利实施"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "洁能公司",
+      "evidence_span": "在“煤化工”领域承接的渭化集团彬州、重化工、洁能公司及浙石化等多个气化细渣脱水干化项目顺利实施"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙石化",
+      "evidence_span": "在“煤化工”领域承接的渭化集团彬州、重化工、洁能公司及浙石化等多个气化细渣脱水干化项目顺利实施"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "污泥处理",
+      "evidence_span": "污泥脱水干化一体化设备龙头，技术领先受益行业快速发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "污泥脱水干化",
+        "evidence_span": "公司主营业务是为城镇和工业（园区）污水处理厂（站）提供污泥脱水干化及废气净化技术装备及服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "废气净化",
+        "evidence_span": "公司主营业务是为城镇和工业（园区）污水处理厂（站）提供污泥脱水干化及废气净化技术装备及服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "节能降碳",
+        "evidence_span": "依托核心技术，公司业务逐步向工业固废与特种物料固液分离、节能降碳领域拓展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端装备制造企业",
+        "evidence_span": "复洁环保是一家专注于污泥等物料脱水干化与固液分离、恶臭污染物及挥发性有机污染物净化的高端装备制造企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "污泥处理处置先行者",
+        "evidence_span": "复洁环保作为我国污泥处理处置、工业固废与特种物料固液分离、废气净化领域的先行者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家专精特新“小巨人”企业",
+        "evidence_span": "国家专精特新“小巨人”企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低温真空脱水干化一体化技术装备",
+        "evidence_span": "低温真空脱水干化一体化技术装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "废气净化成套技术装备",
+        "evidence_span": "废气净化成套技术装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高温水源热泵技术装备",
+        "evidence_span": "高温水源热泵技术装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污泥处理服务",
+        "evidence_span": "为客户提供污泥处理服务和解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低温真空脱水干化一体化技术",
+        "evidence_span": "拥有具有自主知识产权的低温真空脱水干化一体化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "废气净化系列技术",
+        "evidence_span": "废气净化系列技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高温水源热泵技术",
+        "evidence_span": "创新开发应用高温水源热泵技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "渭化集团彬州",
+        "evidence_span": "在“煤化工”领域承接的渭化集团彬州、重化工、洁能公司及浙石化等多个气化细渣脱水干化项目顺利实施"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "重化工",
+        "evidence_span": "在“煤化工”领域承接的渭化集团彬州、重化工、洁能公司及浙石化等多个气化细渣脱水干化项目顺利实施"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "洁能公司",
+        "evidence_span": "在“煤化工”领域承接的渭化集团彬州、重化工、洁能公司及浙石化等多个气化细渣脱水干化项目顺利实施"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙石化",
+        "evidence_span": "在“煤化工”领域承接的渭化集团彬州、重化工、洁能公司及浙石化等多个气化细渣脱水干化项目顺利实施"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "污泥处理",
+        "evidence_span": "污泥脱水干化一体化设备龙头，技术领先受益行业快速发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:11:14"
+}

@@ -1,0 +1,444 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "钽铌",
+      "evidence_span": "公司目前主要从事钽铌及其制品业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其制品业务",
+      "evidence_span": "公司目前主要从事钽铌及其制品业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型材料应用",
+      "evidence_span": "子公司依托公司全产业链资源优势积极开拓新型材料应用"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "世界钽铌行业三强之一",
+      "evidence_span": "为世界钽铌行业三强之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全流程生产企业",
+      "evidence_span": "是国内唯一的覆盖钽铌矿石的湿法冶炼、火法冶炼以及钽粉、钽丝、射频超导腔等钽铌制品制备的全流程生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球极少数能够生产超导铌材和铌钛材的公司之一",
+      "evidence_span": "东方钽业是全球极少数能够生产超导铌材和铌钛材的公司之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "唯一兼具材料生产和超导腔制造能力的公司",
+      "evidence_span": "唯一兼具材料生产和超导腔制造能力的公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钽丝",
+      "evidence_span": "钽丝、钽粉市占率均位于全球前列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钽粉",
+      "evidence_span": "钽丝、钽粉市占率均位于全球前列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电容器级钽粉",
+      "evidence_span": "公司主导产品电容器级钽粉、钽丝产品产销量多年位居行业前列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钽丝产品",
+      "evidence_span": "公司主导产品电容器级钽粉、钽丝产品产销量多年位居行业前列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "射频超导腔",
+      "evidence_span": "子公司东方超导主要从事超导腔高纯铌材及射频超导腔"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高温红外辐射涂层材料",
+      "evidence_span": "分公司宇发高温材料主要从事高温红外辐射涂层材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钽铌及其合金3D打印用粉末",
+      "evidence_span": "子公司东方智造主要从事钽铌及其合金3D打印用粉末和3D打印产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3D打印产品",
+      "evidence_span": "子公司东方智造主要从事钽铌及其合金3D打印用粉末和3D打印产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钠还原高比容钽粉",
+      "evidence_span": "钠还原高比容钽粉（FTW系列）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中压片状钽粉",
+      "evidence_span": "中压片状钽粉（FTP系列）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子轰击高压钽粉",
+      "evidence_span": "电子轰击高压钽粉（FTD系列）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯冶金级钽粉",
+      "evidence_span": "高纯冶金级钽粉（FTA系列）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯钽靶用高纯钽粉",
+      "evidence_span": "公司开发出高纯钽靶用高纯钽粉实现大批量销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "12寸钽靶",
+      "evidence_span": "12寸钽靶认证也取得重大进展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多孔钽培养基",
+      "evidence_span": "包括多孔钽培养基、钽牙钉种植体、颅骨多孔结构、椎间融合器、多孔钽骨小梁等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钽牙钉种植体",
+      "evidence_span": "包括多孔钽培养基、钽牙钉种植体、颅骨多孔结构、椎间融合器、多孔钽骨小梁等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "颅骨多孔结构",
+      "evidence_span": "包括多孔钽培养基、钽牙钉种植体、颅骨多孔结构、椎间融合器、多孔钽骨小梁等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "椎间融合器",
+      "evidence_span": "包括多孔钽培养基、钽牙钉种植体、颅骨多孔结构、椎间融合器、多孔钽骨小梁等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多孔钽骨小梁",
+      "evidence_span": "包括多孔钽培养基、钽牙钉种植体、颅骨多孔结构、椎间融合器、多孔钽骨小梁等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超导铌材",
+      "evidence_span": "东方钽业是全球极少数能够生产超导铌材和铌钛材的公司之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铌钛材",
+      "evidence_span": "东方钽业是全球极少数能够生产超导铌材和铌钛材的公司之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超导腔高纯铌板材料",
+      "evidence_span": "完善了包括超导腔高纯铌板材料的制备与检验"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属铍及其合金",
+      "evidence_span": "主要从事金属铍及其合金、粉体材料及电子浆料、氧化物粉体及靶材等研究开发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粉体材料及电子浆料",
+      "evidence_span": "主要从事金属铍及其合金、粉体材料及电子浆料、氧化物粉体及靶材等研究开发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氧化物粉体及靶材",
+      "evidence_span": "主要从事金属铍及其合金、粉体材料及电子浆料、氧化物粉体及靶材等研究开发、生产和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铍铜业务",
+      "evidence_span": "主要覆盖铍铜业务、电子浆料以及靶材等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "3D打印技术",
+      "evidence_span": "东方智造通过3D打印技术实现钽材结构件的医疗领域应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超导腔高纯铌板材料的制备与检验",
+      "evidence_span": "完善了包括超导腔高纯铌板材料的制备与检验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超导腔半腔冲压与精加工",
+      "evidence_span": "超导腔半腔冲压与精加工"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子束焊接",
+      "evidence_span": "电子束焊接"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超导腔射频频率与场平坦化调整",
+      "evidence_span": "超导腔射频频率与场平坦化调整"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超导腔后处理工艺",
+      "evidence_span": "超导腔后处理工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超导腔性能测试",
+      "evidence_span": "超导腔性能测试"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美英德日韩等国的主要钽电容器制造商",
+      "evidence_span": "与美英德日韩等国的主要钽电容器制造商均建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家大型军工企业",
+      "evidence_span": "客户主要为国家大型军工企业以及科研院所"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科研院所",
+      "evidence_span": "客户主要为国家大型军工企业以及科研院所"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "钽靶材国产化",
+      "evidence_span": "加速了钽靶材国产化进程"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "钽铌及其制品业务",
+        "evidence_span": "公司目前主要从事钽铌及其制品业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型材料应用",
+        "evidence_span": "子公司依托公司全产业链资源优势积极开拓新型材料应用"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "世界钽铌行业三强之一",
+        "evidence_span": "为世界钽铌行业三强之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全流程生产企业",
+        "evidence_span": "是国内唯一的覆盖钽铌矿石的湿法冶炼、火法冶炼以及钽粉、钽丝、射频超导腔等钽铌制品制备的全流程生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球极少数能够生产超导铌材和铌钛材的公司之一",
+        "evidence_span": "东方钽业是全球极少数能够生产超导铌材和铌钛材的公司之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "唯一兼具材料生产和超导腔制造能力的公司",
+        "evidence_span": "唯一兼具材料生产和超导腔制造能力的公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钽丝",
+        "evidence_span": "钽丝、钽粉市占率均位于全球前列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钽粉",
+        "evidence_span": "钽丝、钽粉市占率均位于全球前列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电容器级钽粉",
+        "evidence_span": "公司主导产品电容器级钽粉、钽丝产品产销量多年位居行业前列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钽丝产品",
+        "evidence_span": "公司主导产品电容器级钽粉、钽丝产品产销量多年位居行业前列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "射频超导腔",
+        "evidence_span": "子公司东方超导主要从事超导腔高纯铌材及射频超导腔"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高温红外辐射涂层材料",
+        "evidence_span": "分公司宇发高温材料主要从事高温红外辐射涂层材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钽铌及其合金3D打印用粉末",
+        "evidence_span": "子公司东方智造主要从事钽铌及其合金3D打印用粉末和3D打印产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3D打印产品",
+        "evidence_span": "子公司东方智造主要从事钽铌及其合金3D打印用粉末和3D打印产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钠还原高比容钽粉",
+        "evidence_span": "钠还原高比容钽粉（FTW系列）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中压片状钽粉",
+        "evidence_span": "中压片状钽粉（FTP系列）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子轰击高压钽粉",
+        "evidence_span": "电子轰击高压钽粉（FTD系列）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯冶金级钽粉",
+        "evidence_span": "高纯冶金级钽粉（FTA系列）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯钽靶用高纯钽粉",
+        "evidence_span": "公司开发出高纯钽靶用高纯钽粉实现大批量销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "12寸钽靶",
+        "evidence_span": "12寸钽靶认证也取得重大进展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多孔钽培养基",
+        "evidence_span": "包括多孔钽培养基、钽牙钉种植体、颅骨多孔结构、椎间融合器、多孔钽骨小梁等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钽牙钉种植体",
+        "evidence_span": "包括多孔钽培养基、钽牙钉种植体、颅骨多孔结构、椎间融合器、多孔钽骨小梁等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "颅骨多孔结构",
+        "evidence_span": "包括多孔钽培养基、钽牙钉种植体、颅骨多孔结构、椎间融合器、多孔钽骨小梁等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "椎间融合器",
+        "evidence_span": "包括多孔钽培养基、钽牙钉种植体、颅骨多孔结构、椎间融合器、多孔钽骨小梁等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多孔钽骨小梁",
+        "evidence_span": "包括多孔钽培养基、钽牙钉种植体、颅骨多孔结构、椎间融合器、多孔钽骨小梁等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超导铌材",
+        "evidence_span": "东方钽业是全球极少数能够生产超导铌材和铌钛材的公司之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铌钛材",
+        "evidence_span": "东方钽业是全球极少数能够生产超导铌材和铌钛材的公司之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超导腔高纯铌板材料",
+        "evidence_span": "完善了包括超导腔高纯铌板材料的制备与检验"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属铍及其合金",
+        "evidence_span": "主要从事金属铍及其合金、粉体材料及电子浆料、氧化物粉体及靶材等研究开发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粉体材料及电子浆料",
+        "evidence_span": "主要从事金属铍及其合金、粉体材料及电子浆料、氧化物粉体及靶材等研究开发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氧化物粉体及靶材",
+        "evidence_span": "主要从事金属铍及其合金、粉体材料及电子浆料、氧化物粉体及靶材等研究开发、生产和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铍铜业务",
+        "evidence_span": "主要覆盖铍铜业务、电子浆料以及靶材等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "3D打印技术",
+        "evidence_span": "东方智造通过3D打印技术实现钽材结构件的医疗领域应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超导腔高纯铌板材料的制备与检验",
+        "evidence_span": "完善了包括超导腔高纯铌板材料的制备与检验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超导腔半腔冲压与精加工",
+        "evidence_span": "超导腔半腔冲压与精加工"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子束焊接",
+        "evidence_span": "电子束焊接"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超导腔射频频率与场平坦化调整",
+        "evidence_span": "超导腔射频频率与场平坦化调整"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超导腔后处理工艺",
+        "evidence_span": "超导腔后处理工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超导腔性能测试",
+        "evidence_span": "超导腔性能测试"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美英德日韩等国的主要钽电容器制造商",
+        "evidence_span": "与美英德日韩等国的主要钽电容器制造商均建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家大型军工企业",
+        "evidence_span": "客户主要为国家大型军工企业以及科研院所"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科研院所",
+        "evidence_span": "客户主要为国家大型军工企业以及科研院所"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "钽靶材国产化",
+        "evidence_span": "加速了钽靶材国产化进程"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:59:54"
+}

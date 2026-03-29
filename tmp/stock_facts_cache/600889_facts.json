@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "粘胶短纤",
+      "evidence_span": "粘胶短纤全年累计产量28,527吨"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "PET发泡材料",
+      "evidence_span": "PET发泡产品销售27211立方米"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "莱赛尔纤维",
+      "evidence_span": "紧盯4万吨莱赛尔项目开车目标"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "粘胶纤维生产企业",
+      "evidence_span": "公司从事粘胶纤维生产近五十多年"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新材料领域企业",
+      "evidence_span": "立足新材料领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粘胶短丝",
+      "evidence_span": "粘胶短丝全年累计产量28,527吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PET发泡材料",
+      "evidence_span": "PET发泡产品销售27211立方米"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BLOCK",
+      "evidence_span": "BLOCK销售10027立方米"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芯材",
+      "evidence_span": "芯材销售17184立方米"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "莱赛尔纤维",
+      "evidence_span": "年产4万吨莱赛尔纤维项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能PET结构泡沫产品",
+      "evidence_span": "高性能PET结构泡沫产品并实现量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "莱赛尔纤维生产技术",
+      "evidence_span": "莱赛尔项目已全面进入收尾阶段"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PET结构泡沫量产技术",
+      "evidence_span": "高性能PET结构泡沫产品并实现量产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "风电行业",
+      "evidence_span": "PET发泡材料下游风电行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家居领域",
+      "evidence_span": "支持越科开拓和布局家居、建筑、汽车、船舶等非风电领域市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建筑领域",
+      "evidence_span": "支持越科开拓和布局家居、建筑、汽车、船舶等非风电领域市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车领域",
+      "evidence_span": "支持越科开拓和布局家居、建筑、汽车、船舶等非风电领域市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "船舶领域",
+      "evidence_span": "支持越科开拓和布局家居、建筑、汽车、船舶等非风电领域市场"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "按时序全面落实国企改革三年行动"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "替代进口产品，填补了国内空白"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "粘胶短纤",
+        "evidence_span": "粘胶短纤全年累计产量28,527吨"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "PET发泡材料",
+        "evidence_span": "PET发泡产品销售27211立方米"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "莱赛尔纤维",
+        "evidence_span": "紧盯4万吨莱赛尔项目开车目标"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "粘胶纤维生产企业",
+        "evidence_span": "公司从事粘胶纤维生产近五十多年"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新材料领域企业",
+        "evidence_span": "立足新材料领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粘胶短丝",
+        "evidence_span": "粘胶短丝全年累计产量28,527吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PET发泡材料",
+        "evidence_span": "PET发泡产品销售27211立方米"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BLOCK",
+        "evidence_span": "BLOCK销售10027立方米"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芯材",
+        "evidence_span": "芯材销售17184立方米"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "莱赛尔纤维",
+        "evidence_span": "年产4万吨莱赛尔纤维项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能PET结构泡沫产品",
+        "evidence_span": "高性能PET结构泡沫产品并实现量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "莱赛尔纤维生产技术",
+        "evidence_span": "莱赛尔项目已全面进入收尾阶段"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PET结构泡沫量产技术",
+        "evidence_span": "高性能PET结构泡沫产品并实现量产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "风电行业",
+        "evidence_span": "PET发泡材料下游风电行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家居领域",
+        "evidence_span": "支持越科开拓和布局家居、建筑、汽车、船舶等非风电领域市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建筑领域",
+        "evidence_span": "支持越科开拓和布局家居、建筑、汽车、船舶等非风电领域市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车领域",
+        "evidence_span": "支持越科开拓和布局家居、建筑、汽车、船舶等非风电领域市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "船舶领域",
+        "evidence_span": "支持越科开拓和布局家居、建筑、汽车、船舶等非风电领域市场"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "按时序全面落实国企改革三年行动"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "替代进口产品，填补了国内空白"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:45:34"
+}

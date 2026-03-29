@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "c663d6816d2a", "label": "pure_event", "confidence": 0.9, "ontology_value": "medium", "reason": "该段描述国家卫健委发布食品安全标准立项计划的具体事件，涉及政策出台和时间点，属于监管动态，虽与预制菜相关，但主要是事件性内容，不构成静态知识。"}}

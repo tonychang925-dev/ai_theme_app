@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:31:44", "result": {"chunk_id": "108b46e1b8f9", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述Vision Pro预售情况和供应链消息，包括具体日期和事件进展，属于新闻动态，没有提供稳定的题材知识。"}}

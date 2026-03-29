@@ -1,0 +1,514 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "乳制品制造业",
+      "evidence_span": "公司主要从事乳制品制造业及畜牧业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "畜牧业",
+      "evidence_span": "公司主要从事乳制品制造业及畜牧业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "加工乳制品",
+      "evidence_span": "主要业务涉及加工乳制品、冷食冷饮及奶牛养殖、繁育等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "冷食冷饮",
+      "evidence_span": "主要业务涉及加工乳制品、冷食冷饮及奶牛养殖、繁育等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "奶牛养殖",
+      "evidence_span": "主要业务涉及加工乳制品、冷食冷饮及奶牛养殖、繁育等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "奶牛繁育",
+      "evidence_span": "主要业务涉及加工乳制品、冷食冷饮及奶牛养殖、繁育等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国乳业的先行者",
+      "evidence_span": "作为中国乳业的先行者、实践者和见证者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国乳业的实践者",
+      "evidence_span": "作为中国乳业的先行者、实践者和见证者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国乳业的见证者",
+      "evidence_span": "作为中国乳业的先行者、实践者和见证者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国北方知名的鲜奶品牌",
+      "evidence_span": "作为中国北方知名的鲜奶品牌"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "华北最大的奶酪生产商",
+      "evidence_span": "华北最大的奶酪生产商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国际知名餐饮品牌麦当劳等的核心乳制品供应商",
+      "evidence_span": "国际知名餐饮品牌麦当劳等的核心乳制品供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低温鲜奶",
+      "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低温酸奶",
+      "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "常温牛奶",
+      "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "常温酸奶",
+      "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "奶粉",
+      "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "奶酪",
+      "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冰淇淋",
+      "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "72℃鲜奶",
+      "evidence_span": "明星产品72℃鲜奶、极致系列产品、奶酪产品收入同比均有大幅增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "极致系列产品",
+      "evidence_span": "明星产品72℃鲜奶、极致系列产品、奶酪产品收入同比均有大幅增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "奶酪产品",
+      "evidence_span": "明星产品72℃鲜奶、极致系列产品、奶酪产品收入同比均有大幅增长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "极致1+1原生双蛋白牛奶",
+      "evidence_span": "上市行业首款富含A2β-酪蛋白并保留更多25%活性蛋白的“极致1+1原生双蛋白牛奶”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双低G（低GI、低GL）益糖平牛奶",
+      "evidence_span": "国内首款针对血糖敏感人群的“双低G（低GI、低GL）益糖平牛奶”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "简卡0蔗糖酸奶",
+      "evidence_span": "简卡0蔗糖酸奶、三元宫廷酪乳风味酸乳、海盐椰子及北海道牛乳风味奶浆、八喜轻卡系列冰淇淋"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三元宫廷酪乳风味酸乳",
+      "evidence_span": "简卡0蔗糖酸奶、三元宫廷酪乳风味酸乳、海盐椰子及北海道牛乳风味奶浆、八喜轻卡系列冰淇淋"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海盐椰子风味奶浆",
+      "evidence_span": "简卡0蔗糖酸奶、三元宫廷酪乳风味酸乳、海盐椰子及北海道牛乳风味奶浆、八喜轻卡系列冰淇淋"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "北海道牛乳风味奶浆",
+      "evidence_span": "简卡0蔗糖酸奶、三元宫廷酪乳风味酸乳、海盐椰子及北海道牛乳风味奶浆、八喜轻卡系列冰淇淋"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "八喜轻卡系列冰淇淋",
+      "evidence_span": "简卡0蔗糖酸奶、三元宫廷酪乳风味酸乳、海盐椰子及北海道牛乳风味奶浆、八喜轻卡系列冰淇淋"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高达芝士片",
+      "evidence_span": "上市不同使用特性的高达芝士片等奶酪产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液态奶系列产品",
+      "evidence_span": "公司液态奶系列产品实现营业收入46.57亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固态奶系列产品",
+      "evidence_span": "固态奶系列产品实现营业收入7.41亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冰淇淋及其他系列产品",
+      "evidence_span": "冰淇淋及其他系列产品实现营业收入14.41亿元"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "72℃超低温杀菌技术",
+      "evidence_span": "以公司特有的72℃超低温杀菌技术为基础"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "奶牛育种技术",
+      "evidence_span": "公司依托70年奶牛育种与饲养技术沉淀"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "奶牛饲养技术",
+      "evidence_span": "公司依托70年奶牛育种与饲养技术沉淀"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "奶牛养殖大数据平台",
+      "evidence_span": "依托自主研发的大数据运营中心，打造奶牛养殖大数据平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生乳指纹图谱技术",
+      "evidence_span": "自主创新运用生乳指纹图谱、微生物分布地图、快速检测、在线监测、信息溯源等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微生物分布地图技术",
+      "evidence_span": "自主创新运用生乳指纹图谱、微生物分布地图、快速检测、在线监测、信息溯源等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "快速检测技术",
+      "evidence_span": "自主创新运用生乳指纹图谱、微生物分布地图、快速检测、在线监测、信息溯源等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "在线监测技术",
+      "evidence_span": "自主创新运用生乳指纹图谱、微生物分布地图、快速检测、在线监测、信息溯源等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信息溯源技术",
+      "evidence_span": "自主创新运用生乳指纹图谱、微生物分布地图、快速检测、在线监测、信息溯源等技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "中国母婴营养组学数据库",
+      "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "中国母乳模拟与评价技术",
+      "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "母婴益生菌技术",
+      "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "膜过滤技术",
+      "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "干酪加工技术",
+      "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "72℃低温杀菌技术",
+      "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "常见牛奶杀菌强度鉴别快检技术",
+      "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦当劳",
+      "evidence_span": "国际知名餐饮品牌麦当劳等的核心乳制品供应商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "乳制品制造业",
+        "evidence_span": "公司主要从事乳制品制造业及畜牧业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "畜牧业",
+        "evidence_span": "公司主要从事乳制品制造业及畜牧业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "加工乳制品",
+        "evidence_span": "主要业务涉及加工乳制品、冷食冷饮及奶牛养殖、繁育等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "冷食冷饮",
+        "evidence_span": "主要业务涉及加工乳制品、冷食冷饮及奶牛养殖、繁育等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "奶牛养殖",
+        "evidence_span": "主要业务涉及加工乳制品、冷食冷饮及奶牛养殖、繁育等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "奶牛繁育",
+        "evidence_span": "主要业务涉及加工乳制品、冷食冷饮及奶牛养殖、繁育等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国乳业的先行者",
+        "evidence_span": "作为中国乳业的先行者、实践者和见证者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国乳业的实践者",
+        "evidence_span": "作为中国乳业的先行者、实践者和见证者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国乳业的见证者",
+        "evidence_span": "作为中国乳业的先行者、实践者和见证者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国北方知名的鲜奶品牌",
+        "evidence_span": "作为中国北方知名的鲜奶品牌"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "华北最大的奶酪生产商",
+        "evidence_span": "华北最大的奶酪生产商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国际知名餐饮品牌麦当劳等的核心乳制品供应商",
+        "evidence_span": "国际知名餐饮品牌麦当劳等的核心乳制品供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低温鲜奶",
+        "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低温酸奶",
+        "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "常温牛奶",
+        "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "常温酸奶",
+        "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "奶粉",
+        "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "奶酪",
+        "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冰淇淋",
+        "evidence_span": "公司旗下拥有低温鲜奶、低温酸奶、常温牛奶、常温酸奶、奶粉、奶酪、冰淇淋等几大产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "72℃鲜奶",
+        "evidence_span": "明星产品72℃鲜奶、极致系列产品、奶酪产品收入同比均有大幅增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "极致系列产品",
+        "evidence_span": "明星产品72℃鲜奶、极致系列产品、奶酪产品收入同比均有大幅增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "奶酪产品",
+        "evidence_span": "明星产品72℃鲜奶、极致系列产品、奶酪产品收入同比均有大幅增长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "极致1+1原生双蛋白牛奶",
+        "evidence_span": "上市行业首款富含A2β-酪蛋白并保留更多25%活性蛋白的“极致1+1原生双蛋白牛奶”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双低G（低GI、低GL）益糖平牛奶",
+        "evidence_span": "国内首款针对血糖敏感人群的“双低G（低GI、低GL）益糖平牛奶”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "简卡0蔗糖酸奶",
+        "evidence_span": "简卡0蔗糖酸奶、三元宫廷酪乳风味酸乳、海盐椰子及北海道牛乳风味奶浆、八喜轻卡系列冰淇淋"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三元宫廷酪乳风味酸乳",
+        "evidence_span": "简卡0蔗糖酸奶、三元宫廷酪乳风味酸乳、海盐椰子及北海道牛乳风味奶浆、八喜轻卡系列冰淇淋"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海盐椰子风味奶浆",
+        "evidence_span": "简卡0蔗糖酸奶、三元宫廷酪乳风味酸乳、海盐椰子及北海道牛乳风味奶浆、八喜轻卡系列冰淇淋"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "北海道牛乳风味奶浆",
+        "evidence_span": "简卡0蔗糖酸奶、三元宫廷酪乳风味酸乳、海盐椰子及北海道牛乳风味奶浆、八喜轻卡系列冰淇淋"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "八喜轻卡系列冰淇淋",
+        "evidence_span": "简卡0蔗糖酸奶、三元宫廷酪乳风味酸乳、海盐椰子及北海道牛乳风味奶浆、八喜轻卡系列冰淇淋"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高达芝士片",
+        "evidence_span": "上市不同使用特性的高达芝士片等奶酪产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "奶酪产品",
+        "evidence_span": "上市不同使用特性的高达芝士片等奶酪产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液态奶系列产品",
+        "evidence_span": "公司液态奶系列产品实现营业收入46.57亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固态奶系列产品",
+        "evidence_span": "固态奶系列产品实现营业收入7.41亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冰淇淋及其他系列产品",
+        "evidence_span": "冰淇淋及其他系列产品实现营业收入14.41亿元"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "72℃超低温杀菌技术",
+        "evidence_span": "以公司特有的72℃超低温杀菌技术为基础"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "奶牛育种技术",
+        "evidence_span": "公司依托70年奶牛育种与饲养技术沉淀"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "奶牛饲养技术",
+        "evidence_span": "公司依托70年奶牛育种与饲养技术沉淀"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "奶牛养殖大数据平台",
+        "evidence_span": "依托自主研发的大数据运营中心，打造奶牛养殖大数据平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生乳指纹图谱技术",
+        "evidence_span": "自主创新运用生乳指纹图谱、微生物分布地图、快速检测、在线监测、信息溯源等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微生物分布地图技术",
+        "evidence_span": "自主创新运用生乳指纹图谱、微生物分布地图、快速检测、在线监测、信息溯源等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "快速检测技术",
+        "evidence_span": "自主创新运用生乳指纹图谱、微生物分布地图、快速检测、在线监测、信息溯源等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "在线监测技术",
+        "evidence_span": "自主创新运用生乳指纹图谱、微生物分布地图、快速检测、在线监测、信息溯源等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信息溯源技术",
+        "evidence_span": "自主创新运用生乳指纹图谱、微生物分布地图、快速检测、在线监测、信息溯源等技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "中国母婴营养组学数据库",
+        "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "中国母乳模拟与评价技术",
+        "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "母婴益生菌技术",
+        "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "膜过滤技术",
+        "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "干酪加工技术",
+        "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "72℃低温杀菌技术",
+        "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "常见牛奶杀菌强度鉴别快检技术",
+        "evidence_span": "已创制多项具有自主知识产权的中国母婴营养组学数据库、中国母乳模拟与评价、母婴益生菌、膜过滤、干酪加工、72℃低温杀菌及常见牛奶杀菌强度鉴别快检技术等核心技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦当劳",
+        "evidence_span": "国际知名餐饮品牌麦当劳等的核心乳制品供应商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:13:41"
+}

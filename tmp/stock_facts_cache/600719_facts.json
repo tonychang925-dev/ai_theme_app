@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "热电联产",
+      "evidence_span": "公司主营业务为热电联产、集中供热"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "集中供热",
+      "evidence_span": "公司主营业务为热电联产、集中供热"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大连地区供热、供电联产龙头企业",
+      "evidence_span": "大连地区供热、供电联产龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大连地区集中供热主要企业",
+      "evidence_span": "是大连地区集中供热主要企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力",
+      "evidence_span": "主要产品有电力和热力两大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热力",
+      "evidence_span": "主要产品有电力和热力两大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业蒸汽",
+      "evidence_span": "共有电力、工业蒸汽、高温水和供暖四个品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高温水",
+      "evidence_span": "共有电力、工业蒸汽、高温水和供暖四个品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "供暖",
+      "evidence_span": "共有电力、工业蒸汽、高温水和供暖四个品种"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "热电联产系统",
+      "evidence_span": "所属北海热电厂既有热电联产系统已达到超低排放标准"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽改水项目",
+      "evidence_span": "大连市中心区汽改水项目持续推进"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "供热智慧平台",
+      "evidence_span": "以供热智慧平台建设为依托"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大连市城市中心区核心供热企业服务对象",
+      "evidence_span": "服务对象集中分布于主城区核心商圈及大型生活区"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东港商务区供热市场",
+      "evidence_span": "独占东港商务区供热市场资源"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "热电联产",
+        "evidence_span": "公司主营业务为热电联产、集中供热"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "集中供热",
+        "evidence_span": "公司主营业务为热电联产、集中供热"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大连地区供热、供电联产龙头企业",
+        "evidence_span": "大连地区供热、供电联产龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大连地区集中供热主要企业",
+        "evidence_span": "是大连地区集中供热主要企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力",
+        "evidence_span": "主要产品有电力和热力两大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热力",
+        "evidence_span": "主要产品有电力和热力两大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业蒸汽",
+        "evidence_span": "共有电力、工业蒸汽、高温水和供暖四个品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高温水",
+        "evidence_span": "共有电力、工业蒸汽、高温水和供暖四个品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "供暖",
+        "evidence_span": "共有电力、工业蒸汽、高温水和供暖四个品种"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "热电联产系统",
+        "evidence_span": "所属北海热电厂既有热电联产系统已达到超低排放标准"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽改水项目",
+        "evidence_span": "大连市中心区汽改水项目持续推进"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "供热智慧平台",
+        "evidence_span": "以供热智慧平台建设为依托"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大连市城市中心区核心供热企业服务对象",
+        "evidence_span": "服务对象集中分布于主城区核心商圈及大型生活区"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东港商务区供热市场",
+        "evidence_span": "独占东港商务区供热市场资源"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:08:28"
+}

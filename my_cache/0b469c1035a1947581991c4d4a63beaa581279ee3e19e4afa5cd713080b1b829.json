@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "5557a8f5431d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落提到了台积电SoIC产能扩充的计划和需求背景（AI、HPC），这包含技术知识，但混合了具体事件（产能变化时间表），因此适合作为知识候选。"}}

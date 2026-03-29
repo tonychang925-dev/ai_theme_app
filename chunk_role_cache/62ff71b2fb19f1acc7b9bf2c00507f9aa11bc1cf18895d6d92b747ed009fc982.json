@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T12:19:46", "result": {"chunk_id": "96b8861b6941", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落包含事件性内容（如报告表述、体制转变、领导小组、试生产时间），但也涉及半导体设备领域的知识，如EUV光刻机、关键公司、研发资金、国产替代机制等，这些可能对题材本体构建有价值，因此混合了事件和知识。"}}

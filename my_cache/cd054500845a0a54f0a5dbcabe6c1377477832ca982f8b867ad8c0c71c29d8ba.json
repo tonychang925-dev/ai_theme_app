@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "2f22ebddf468", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落引用SEMI报告，提供半导体制造设备全球销售额的预测数据，属于事件性报告，但包含设备市场增长趋势等可能用于知识构建的信息，混合事件和知识。"}}

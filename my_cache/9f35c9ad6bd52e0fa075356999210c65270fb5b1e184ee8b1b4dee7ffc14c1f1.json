@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "119293fefbca", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含事件信息（EASA实地检查），但提供了C919认证进展、运营数据（如航线数量和乘客人次）等背景知识，这些可能对题材本体构建有价值。"}}

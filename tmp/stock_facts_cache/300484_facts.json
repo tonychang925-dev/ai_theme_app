@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源汽车驱动",
+      "evidence_span": "蓝海华腾聚焦于新能源汽车驱动和工业自动化控制"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业自动化控制",
+      "evidence_span": "蓝海华腾聚焦于新能源汽车驱动和工业自动化控制"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电动汽车电机控制器供应商",
+      "evidence_span": "公司作为国内主流的电动汽车电机控制器和中低压变频器供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中低压变频器供应商",
+      "evidence_span": "公司作为国内主流的电动汽车电机控制器和中低压变频器供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车电机控制器",
+      "evidence_span": "专注于电动汽车电机控制器、中低压变频器、伺服驱动器等产品的研发、制造、销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中低压变频器",
+      "evidence_span": "专注于电动汽车电机控制器、中低压变频器、伺服驱动器等产品的研发、制造、销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "伺服驱动器",
+      "evidence_span": "专注于电动汽车电机控制器、中低压变频器、伺服驱动器等产品的研发、制造、销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主驱多合一集成控制器",
+      "evidence_span": "涵盖主驱多合一集成控制器、主/辅驱集成控制器、混合动力集成控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "混合动力集成控制器",
+      "evidence_span": "涵盖主驱多合一集成控制器、主/辅驱集成控制器、混合动力集成控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机+主驱控制器集成系统",
+      "evidence_span": "电机+主驱控制器集成系统、电机+变速箱+主驱控制器集成系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机+变速箱+主驱控制器集成系统",
+      "evidence_span": "电机+主驱控制器集成系统、电机+变速箱+主驱控制器集成系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客户定制化产品",
+      "evidence_span": "以及客户定制化产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "异步伺服驱动器",
+      "evidence_span": "伺服驱动器包括异步伺服驱动器和同步伺服驱动器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "同步伺服驱动器",
+      "evidence_span": "伺服驱动器包括异步伺服驱动器和同步伺服驱动器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无速度传感器矢量控制技术",
+      "evidence_span": "公司拥有先进的无速度传感器矢量控制技术和有速度传感器矢量控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "有速度传感器矢量控制技术",
+      "evidence_span": "公司拥有先进的无速度传感器矢量控制技术和有速度传感器矢量控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高性能同步和异步电机矢量控制技术",
+      "evidence_span": "公司产品搭载高性能同步和异步电机矢量控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "转矩控制技术",
+      "evidence_span": "转矩控制技术，自动辨识电机的特性参数"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源汽车整车企业",
+      "evidence_span": "新能源汽车驱动产品客户主要为新能源汽车整车或者系统集成商等企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "系统集成商",
+      "evidence_span": "新能源汽车驱动产品客户主要为新能源汽车整车或者系统集成商等企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "知名车企",
+      "evidence_span": "在国内外市场中与众多知名车企构建了可信赖的长期合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "系统总成厂家",
+      "evidence_span": "公司也与产业链多家系统总成厂家、零部件厂家保持密切合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "零部件厂家",
+      "evidence_span": "公司也与产业链多家系统总成厂家、零部件厂家保持密切合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化进口替代",
+      "evidence_span": "为工业自动化领域实现制造升级和国产化进口替代创造良好的外部环境"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源汽车驱动",
+        "evidence_span": "蓝海华腾聚焦于新能源汽车驱动和工业自动化控制"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业自动化控制",
+        "evidence_span": "蓝海华腾聚焦于新能源汽车驱动和工业自动化控制"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电动汽车电机控制器供应商",
+        "evidence_span": "公司作为国内主流的电动汽车电机控制器和中低压变频器供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中低压变频器供应商",
+        "evidence_span": "公司作为国内主流的电动汽车电机控制器和中低压变频器供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车电机控制器",
+        "evidence_span": "专注于电动汽车电机控制器、中低压变频器、伺服驱动器等产品的研发、制造、销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中低压变频器",
+        "evidence_span": "专注于电动汽车电机控制器、中低压变频器、伺服驱动器等产品的研发、制造、销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "伺服驱动器",
+        "evidence_span": "专注于电动汽车电机控制器、中低压变频器、伺服驱动器等产品的研发、制造、销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主驱多合一集成控制器",
+        "evidence_span": "涵盖主驱多合一集成控制器、主/辅驱集成控制器、混合动力集成控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "混合动力集成控制器",
+        "evidence_span": "涵盖主驱多合一集成控制器、主/辅驱集成控制器、混合动力集成控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机+主驱控制器集成系统",
+        "evidence_span": "电机+主驱控制器集成系统、电机+变速箱+主驱控制器集成系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机+变速箱+主驱控制器集成系统",
+        "evidence_span": "电机+主驱控制器集成系统、电机+变速箱+主驱控制器集成系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客户定制化产品",
+        "evidence_span": "以及客户定制化产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "异步伺服驱动器",
+        "evidence_span": "伺服驱动器包括异步伺服驱动器和同步伺服驱动器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "同步伺服驱动器",
+        "evidence_span": "伺服驱动器包括异步伺服驱动器和同步伺服驱动器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无速度传感器矢量控制技术",
+        "evidence_span": "公司拥有先进的无速度传感器矢量控制技术和有速度传感器矢量控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "有速度传感器矢量控制技术",
+        "evidence_span": "公司拥有先进的无速度传感器矢量控制技术和有速度传感器矢量控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高性能同步和异步电机矢量控制技术",
+        "evidence_span": "公司产品搭载高性能同步和异步电机矢量控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "转矩控制技术",
+        "evidence_span": "转矩控制技术，自动辨识电机的特性参数"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源汽车整车企业",
+        "evidence_span": "新能源汽车驱动产品客户主要为新能源汽车整车或者系统集成商等企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "系统集成商",
+        "evidence_span": "新能源汽车驱动产品客户主要为新能源汽车整车或者系统集成商等企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "知名车企",
+        "evidence_span": "在国内外市场中与众多知名车企构建了可信赖的长期合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "系统总成厂家",
+        "evidence_span": "公司也与产业链多家系统总成厂家、零部件厂家保持密切合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "零部件厂家",
+        "evidence_span": "公司也与产业链多家系统总成厂家、零部件厂家保持密切合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化进口替代",
+        "evidence_span": "为工业自动化领域实现制造升级和国产化进口替代创造良好的外部环境"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:50:19"
+}

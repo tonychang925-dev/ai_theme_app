@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:54:25", "result": {"span_uid": "2802626c10a6", "action": "rewrite", "canonical_text": "华为智界S7配备21英寸锻造轮毂、Brembo高性能卡钳和碳纤维尾翼，以增强高性能运动特性。", "final_type": "related", "final_role": "高性能硬件配置", "stability": "medium", "reason": "原文本描述具体配置，改写为稳定知识，但属于关联环节而非核心定义，适合作为相关知识。"}}

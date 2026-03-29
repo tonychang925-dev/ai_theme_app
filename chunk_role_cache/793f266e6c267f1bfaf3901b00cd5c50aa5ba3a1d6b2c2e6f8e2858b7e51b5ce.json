@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "a7ebc2267c06", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落虽然以长江存储扩产和国产替代的事件为背景，但提到了半导体设备国产替代、蚀刻和沉积工艺突破、国产设备生产线等关键环节和技术路径，这些内容有助于理解半导体设备题材的构成和应用场景，具有知识性价值，但稳定性较弱。"}}

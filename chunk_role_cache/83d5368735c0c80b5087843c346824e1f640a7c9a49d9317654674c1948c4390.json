@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "2a80e97f1c0b", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落主要描述星纪魅族与博士眼镜的战略合作签约仪式，包括时间、地点和参与人员，是具体的企业合作事件，没有提供AR眼镜的静态知识。"}}

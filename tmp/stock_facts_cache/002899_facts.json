@@ -1,0 +1,334 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "健身器材开发制造",
+      "evidence_span": "专注于全品类、多系列健身器材开发制造及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "专注于全品类、多系列健身器材开发制造及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "品牌化运营",
+      "evidence_span": "品牌化运营的健身器材品牌厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "健身器材品牌厂商",
+      "evidence_span": "英派斯领先的健身器材品牌厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内健身器材行业的领先企业",
+      "evidence_span": "国内健身器材行业的领先企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商用产品",
+      "evidence_span": "公司产品主要分为商用产品、家用产品、户外产品等类别"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家用产品",
+      "evidence_span": "公司产品主要分为商用产品、家用产品、户外产品等类别"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户外产品",
+      "evidence_span": "公司产品主要分为商用产品、家用产品、户外产品等类别"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "室内有氧器械",
+      "evidence_span": "涵盖室内有氧器械、室内力量器械以及室外健身路径、笼式足球等各式产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "室内力量器械",
+      "evidence_span": "涵盖室内有氧器械、室内力量器械以及室外健身路径、笼式足球等各式产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "室外健身路径",
+      "evidence_span": "涵盖室内有氧器械、室内力量器械以及室外健身路径、笼式足球等各式产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "笼式足球",
+      "evidence_span": "涵盖室内有氧器械、室内力量器械以及室外健身路径、笼式足球等各式产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "健身器材整体解决方案",
+      "evidence_span": "为健身俱乐部、星级酒店、企事业单位等商用客户提供多品类成系列一站式的健身器材整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧体育平台系统",
+      "evidence_span": "自主研发新一代应用于AI健身步道、室外健身路径、室外智慧场地、智慧社区健身中心、单位内设的智慧健身中心等场所的智慧体育平台系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "浪加（WeSwag）品牌产品",
+      "evidence_span": "推出针对入门级健身人士开发的全新（互联网）家用品牌产品——浪加（WeSwag）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "跑步机",
+      "evidence_span": "浪加品牌第一阶段的产品规划包含跑步机、健身车、动感单车、划船器、椭圆机等五大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "健身车",
+      "evidence_span": "浪加品牌第一阶段的产品规划包含跑步机、健身车、动感单车、划船器、椭圆机等五大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动感单车",
+      "evidence_span": "浪加品牌第一阶段的产品规划包含跑步机、健身车、动感单车、划船器、椭圆机等五大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "划船器",
+      "evidence_span": "浪加品牌第一阶段的产品规划包含跑步机、健身车、动感单车、划船器、椭圆机等五大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "椭圆机",
+      "evidence_span": "浪加品牌第一阶段的产品规划包含跑步机、健身车、动感单车、划船器、椭圆机等五大类产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网、大数据、人工智能等新一代数字科技技术",
+      "evidence_span": "采用物联网、大数据、人工智能等新一代数字科技技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "产品定制化设计和生产能力",
+      "evidence_span": "公司还具备产品定制化设计和生产能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "PRECOR",
+      "evidence_span": "为PRECOR、BH等国际知名健身器材品牌代工生产健身器材"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "BH",
+      "evidence_span": "为PRECOR、BH等国际知名健身器材品牌代工生产健身器材"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "健身俱乐部",
+      "evidence_span": "向健身房、政府、企事业单位、军警单位、大专院校等商用客户、家庭用户销售公司各类室内有氧、力量及户外产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "星级酒店",
+      "evidence_span": "为健身俱乐部、星级酒店、企事业单位等商用客户提供多品类成系列一站式的健身器材整体解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "企事业单位",
+      "evidence_span": "向健身房、政府、企事业单位、军警单位、大专院校等商用客户、家庭用户销售公司各类室内有氧、力量及户外产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军警单位",
+      "evidence_span": "向健身房、政府、企事业单位、军警单位、大专院校等商用客户、家庭用户销售公司各类室内有氧、力量及户外产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大专院校",
+      "evidence_span": "向健身房、政府、企事业单位、军警单位、大专院校等商用客户、家庭用户销售公司各类室内有氧、力量及户外产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家庭用户",
+      "evidence_span": "向健身房、政府、企事业单位、军警单位、大专院校等商用客户、家庭用户销售公司各类室内有氧、力量及户外产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "体育局",
+      "evidence_span": "通过参与全民健身采购等方式向体育局、教育局等单位销售公司各类室内有氧、力量及户外产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "教育局",
+      "evidence_span": "通过参与全民健身采购等方式向体育局、教育局等单位销售公司各类室内有氧、力量及户外产品"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "全民健身",
+      "evidence_span": "通过参与全民健身采购等方式向体育局、教育局等单位销售公司各类室内有氧、力量及户外产品"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "健身器材开发制造及销售",
+        "evidence_span": "专注于全品类、多系列健身器材开发制造及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "品牌化运营",
+        "evidence_span": "品牌化运营的健身器材品牌厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "健身器材品牌厂商",
+        "evidence_span": "英派斯领先的健身器材品牌厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内健身器材行业的领先企业",
+        "evidence_span": "国内健身器材行业的领先企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商用产品",
+        "evidence_span": "公司产品主要分为商用产品、家用产品、户外产品等类别"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家用产品",
+        "evidence_span": "公司产品主要分为商用产品、家用产品、户外产品等类别"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户外产品",
+        "evidence_span": "公司产品主要分为商用产品、家用产品、户外产品等类别"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "室内有氧器械",
+        "evidence_span": "涵盖室内有氧器械、室内力量器械以及室外健身路径、笼式足球等各式产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "室内力量器械",
+        "evidence_span": "涵盖室内有氧器械、室内力量器械以及室外健身路径、笼式足球等各式产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "室外健身路径",
+        "evidence_span": "涵盖室内有氧器械、室内力量器械以及室外健身路径、笼式足球等各式产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "笼式足球",
+        "evidence_span": "涵盖室内有氧器械、室内力量器械以及室外健身路径、笼式足球等各式产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "健身器材整体解决方案",
+        "evidence_span": "为健身俱乐部、星级酒店、企事业单位等商用客户提供多品类成系列一站式的健身器材整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧体育平台系统",
+        "evidence_span": "自主研发新一代应用于AI健身步道、室外健身路径、室外智慧场地、智慧社区健身中心、单位内设的智慧健身中心等场所的智慧体育平台系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "浪加（WeSwag）品牌产品",
+        "evidence_span": "推出针对入门级健身人士开发的全新（互联网）家用品牌产品——浪加（WeSwag）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "跑步机",
+        "evidence_span": "浪加品牌第一阶段的产品规划包含跑步机、健身车、动感单车、划船器、椭圆机等五大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "健身车",
+        "evidence_span": "浪加品牌第一阶段的产品规划包含跑步机、健身车、动感单车、划船器、椭圆机等五大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动感单车",
+        "evidence_span": "浪加品牌第一阶段的产品规划包含跑步机、健身车、动感单车、划船器、椭圆机等五大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "划船器",
+        "evidence_span": "浪加品牌第一阶段的产品规划包含跑步机、健身车、动感单车、划船器、椭圆机等五大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "椭圆机",
+        "evidence_span": "浪加品牌第一阶段的产品规划包含跑步机、健身车、动感单车、划船器、椭圆机等五大类产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网、大数据、人工智能等新一代数字科技技术",
+        "evidence_span": "采用物联网、大数据、人工智能等新一代数字科技技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "产品定制化设计和生产能力",
+        "evidence_span": "公司还具备产品定制化设计和生产能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "PRECOR",
+        "evidence_span": "为PRECOR、BH等国际知名健身器材品牌代工生产健身器材"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "BH",
+        "evidence_span": "为PRECOR、BH等国际知名健身器材品牌代工生产健身器材"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "健身俱乐部",
+        "evidence_span": "向健身房、政府、企事业单位、军警单位、大专院校等商用客户、家庭用户销售公司各类室内有氧、力量及户外产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "星级酒店",
+        "evidence_span": "为健身俱乐部、星级酒店、企事业单位等商用客户提供多品类成系列一站式的健身器材整体解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "企事业单位",
+        "evidence_span": "向健身房、政府、企事业单位、军警单位、大专院校等商用客户、家庭用户销售公司各类室内有氧、力量及户外产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军警单位",
+        "evidence_span": "向健身房、政府、企事业单位、军警单位、大专院校等商用客户、家庭用户销售公司各类室内有氧、力量及户外产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大专院校",
+        "evidence_span": "向健身房、政府、企事业单位、军警单位、大专院校等商用客户、家庭用户销售公司各类室内有氧、力量及户外产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家庭用户",
+        "evidence_span": "向健身房、政府、企事业单位、军警单位、大专院校等商用客户、家庭用户销售公司各类室内有氧、力量及户外产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "体育局",
+        "evidence_span": "通过参与全民健身采购等方式向体育局、教育局等单位销售公司各类室内有氧、力量及户外产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "教育局",
+        "evidence_span": "通过参与全民健身采购等方式向体育局、教育局等单位销售公司各类室内有氧、力量及户外产品"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "全民健身",
+        "evidence_span": "通过参与全民健身采购等方式向体育局、教育局等单位销售公司各类室内有氧、力量及户外产品"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:19:50"
+}

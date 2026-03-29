@@ -1,0 +1,579 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车改性塑料",
+      "evidence_span": "公司主营汽车改性塑料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "LCP材料",
+      "evidence_span": "公司产品主要为汽车改性塑料及LCP材料"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂离子电池业务",
+      "evidence_span": "大力发展ICT材料业务和锂离子电池业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "改性塑料龙头",
+      "evidence_span": "改性塑料龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车新材料企业",
+      "evidence_span": "深耕汽车新材料业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内唯一拥有多种LCP树脂合成工艺技术路径的公司",
+      "evidence_span": "国内唯一拥有多种LCP树脂合成工艺技术路径的公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内唯一一家拉通LCP产业链的企业",
+      "evidence_span": "国内唯一一家拉通产业链，同时具备LCP树脂合成、改性、吹膜和纺丝技术及量产能力的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "改性聚烯烃",
+      "evidence_span": "改性聚烯烃（改性PP）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "改性ABS",
+      "evidence_span": "改性ABS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阻燃塑料",
+      "evidence_span": "各种阻燃塑料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PC/ABS合金",
+      "evidence_span": "PC/ABS合金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PC/PA合金",
+      "evidence_span": "PC/PA合金"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻纤增强热塑性塑料",
+      "evidence_span": "玻纤增强热塑性塑料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LCP薄膜",
+      "evidence_span": "LCP薄膜产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LCP高强细旦丝",
+      "evidence_span": "LCP高强细旦丝产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LCP改性树脂",
+      "evidence_span": "LCP改性树脂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "方形磷酸铁锂电池",
+      "evidence_span": "方形磷酸铁锂电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三元圆柱电池",
+      "evidence_span": "三元圆柱电池"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信储能电芯",
+      "evidence_span": "通信储能电芯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家储电芯",
+      "evidence_span": "家储电芯"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LCP树脂合成技术",
+      "evidence_span": "LCP树脂合成技术和工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LCP改性技术",
+      "evidence_span": "具备LCP树脂合成、改性、吹膜和纺丝技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LCP吹膜技术",
+      "evidence_span": "具备LCP树脂合成、改性、吹膜和纺丝技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LCP纺丝技术",
+      "evidence_span": "具备LCP树脂合成、改性、吹膜和纺丝技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LCP量产能力",
+      "evidence_span": "具备LCP树脂合成、改性、吹膜和纺丝技术及量产能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Ⅰ型LCP树脂合成能力",
+      "evidence_span": "补充了Ⅰ型LCP树脂的合成能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Ⅱ型LCP树脂合成能力",
+      "evidence_span": "公司LCP树脂合成路线拓宽至Ⅰ、Ⅱ型LCP树脂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "宝马"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奔驰",
+      "evidence_span": "奔驰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "长城"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "吉利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通用",
+      "evidence_span": "通用"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福特",
+      "evidence_span": "福特"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "克莱斯勒",
+      "evidence_span": "克莱斯勒"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安",
+      "evidence_span": "长安"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奇瑞",
+      "evidence_span": "奇瑞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "延锋伟世通",
+      "evidence_span": "延锋伟世通"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "佛吉亚",
+      "evidence_span": "佛吉亚"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华翔电子",
+      "evidence_span": "华翔电子"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德科斯米尔",
+      "evidence_span": "德科斯米尔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TTI",
+      "evidence_span": "TTI"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南京泉峰",
+      "evidence_span": "南京泉峰"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江苏东成",
+      "evidence_span": "江苏东成"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝时得",
+      "evidence_span": "宝时得"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "ITW",
+      "evidence_span": "ITW"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "史丹利百得",
+      "evidence_span": "史丹利百得"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世",
+      "evidence_span": "博世"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国铁塔",
+      "evidence_span": "中国铁塔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大秦新能源",
+      "evidence_span": "大秦新能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "移动",
+      "evidence_span": "移动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Exicom",
+      "evidence_span": "Exicom"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃太能源",
+      "evidence_span": "沃太能源"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产替代需求空间大"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G新材料",
+      "evidence_span": "聚焦5G新材料"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能",
+      "evidence_span": "乘储能东风"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车改性塑料",
+        "evidence_span": "公司主营汽车改性塑料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "LCP材料",
+        "evidence_span": "公司产品主要为汽车改性塑料及LCP材料"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂离子电池业务",
+        "evidence_span": "大力发展ICT材料业务和锂离子电池业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "改性塑料龙头",
+        "evidence_span": "改性塑料龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车新材料企业",
+        "evidence_span": "深耕汽车新材料业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内唯一拥有多种LCP树脂合成工艺技术路径的公司",
+        "evidence_span": "国内唯一拥有多种LCP树脂合成工艺技术路径的公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内唯一一家拉通LCP产业链的企业",
+        "evidence_span": "国内唯一一家拉通产业链，同时具备LCP树脂合成、改性、吹膜和纺丝技术及量产能力的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "改性聚烯烃",
+        "evidence_span": "改性聚烯烃（改性PP）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "改性ABS",
+        "evidence_span": "改性ABS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阻燃塑料",
+        "evidence_span": "各种阻燃塑料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PC/ABS合金",
+        "evidence_span": "PC/ABS合金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PC/PA合金",
+        "evidence_span": "PC/PA合金"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻纤增强热塑性塑料",
+        "evidence_span": "玻纤增强热塑性塑料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LCP薄膜",
+        "evidence_span": "LCP薄膜产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LCP高强细旦丝",
+        "evidence_span": "LCP高强细旦丝产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LCP改性树脂",
+        "evidence_span": "LCP改性树脂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "方形磷酸铁锂电池",
+        "evidence_span": "方形磷酸铁锂电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三元圆柱电池",
+        "evidence_span": "三元圆柱电池"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信储能电芯",
+        "evidence_span": "通信储能电芯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家储电芯",
+        "evidence_span": "家储电芯"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LCP树脂合成技术",
+        "evidence_span": "LCP树脂合成技术和工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LCP改性技术",
+        "evidence_span": "具备LCP树脂合成、改性、吹膜和纺丝技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LCP吹膜技术",
+        "evidence_span": "具备LCP树脂合成、改性、吹膜和纺丝技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LCP纺丝技术",
+        "evidence_span": "具备LCP树脂合成、改性、吹膜和纺丝技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LCP量产能力",
+        "evidence_span": "具备LCP树脂合成、改性、吹膜和纺丝技术及量产能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Ⅰ型LCP树脂合成能力",
+        "evidence_span": "补充了Ⅰ型LCP树脂的合成能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Ⅱ型LCP树脂合成能力",
+        "evidence_span": "公司LCP树脂合成路线拓宽至Ⅰ、Ⅱ型LCP树脂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "宝马"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奔驰",
+        "evidence_span": "奔驰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "长城"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "吉利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通用",
+        "evidence_span": "通用"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福特",
+        "evidence_span": "福特"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "克莱斯勒",
+        "evidence_span": "克莱斯勒"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安",
+        "evidence_span": "长安"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奇瑞",
+        "evidence_span": "奇瑞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "延锋伟世通",
+        "evidence_span": "延锋伟世通"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "佛吉亚",
+        "evidence_span": "佛吉亚"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华翔电子",
+        "evidence_span": "华翔电子"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德科斯米尔",
+        "evidence_span": "德科斯米尔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TTI",
+        "evidence_span": "TTI"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南京泉峰",
+        "evidence_span": "南京泉峰"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江苏东成",
+        "evidence_span": "江苏东成"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝时得",
+        "evidence_span": "宝时得"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "ITW",
+        "evidence_span": "ITW"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "史丹利百得",
+        "evidence_span": "史丹利百得"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世",
+        "evidence_span": "博世"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国铁塔",
+        "evidence_span": "中国铁塔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大秦新能源",
+        "evidence_span": "大秦新能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "移动",
+        "evidence_span": "移动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Exicom",
+        "evidence_span": "Exicom"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃太能源",
+        "evidence_span": "沃太能源"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产替代需求空间大"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G新材料",
+        "evidence_span": "聚焦5G新材料"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能",
+        "evidence_span": "乘储能东风"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:06:50"
+}

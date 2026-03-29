@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空发动机关键零部件",
+      "evidence_span": "公司专注于航空发动机关键零部件及医疗骨科植入锻件的研发、生产及销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗骨科植入锻件",
+      "evidence_span": "公司专注于航空发动机关键零部件及医疗骨科植入锻件的研发、生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高性能零部件制造商",
+      "evidence_span": "专业的航空发动机及医疗骨科领域的高性能零部件制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "成品零部件供应商",
+      "evidence_span": "在航空产业链中属于成品零部件供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空发动机压气机叶片",
+      "evidence_span": "主要产品包括航空发动机压气机叶片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "转动件及结构件",
+      "evidence_span": "转动件及结构件（整体叶盘及整流器、机匣、涡轮盘及压气机盘等盘环件）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗骨科植入锻件",
+      "evidence_span": "医疗骨科植入锻件等高性能零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工髋关节-股骨柄",
+      "evidence_span": "主要产品包括人工髋关节-股骨柄"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工髋关节-髋臼杯",
+      "evidence_span": "人工髋关节-髋臼杯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工膝关节-胫骨托",
+      "evidence_span": "人工膝关节-胫骨托"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工创伤类-骨板",
+      "evidence_span": "人工创伤类-骨板等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精锻技术",
+      "evidence_span": "以精锻技术实现压气机叶片规模量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模具逆向设计及逆向制造",
+      "evidence_span": "掌握了模具逆向设计及逆向制造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "叶片前后缘自适应抛修",
+      "evidence_span": "叶片前后缘自适应抛修"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "整体叶盘分层复合铣",
+      "evidence_span": "已掌握了整体叶盘分层复合铣"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "叶型双面喷丸强化",
+      "evidence_span": "叶型双面喷丸强化等多项精密机加工领域核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "惯性摩擦焊接技术",
+      "evidence_span": "采用惯性摩擦焊技术能够满足发动机转子鼓筒的技术和经济指标要求"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "NADCAP认证特种工艺",
+      "evidence_span": "公司的热处理、化学处理、无损检测、表面强化、金属材料制造（锻造）等五大类特种工艺已取得NADCAP认证"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法国赛峰",
+      "evidence_span": "公司与法国赛峰续签长期供货协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国GE航空",
+      "evidence_span": "公司已按计划完成GE公司十级高压压气机叶片的研制"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英国RR公司",
+      "evidence_span": "英国RR公司的压气机叶片（共17级）完成了锻造的验证样件提交"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国航发集团",
+      "evidence_span": "公司客户覆盖了法国赛峰、美国GE航空、英国RR、中国航发集团等国内外主流航空发动机厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "施乐辉公司",
+      "evidence_span": "胫骨托产品已正式批量供应施乐辉公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "强生医疗",
+      "evidence_span": "公司是强生医疗在亚太地区的重要合格供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "威高骨科",
+      "evidence_span": "威高骨科等均为公司客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产发动机发展机会",
+      "evidence_span": "受益于国产发动机发展机会"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产品牌的进口替代趋势加快"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空发动机关键零部件",
+        "evidence_span": "公司专注于航空发动机关键零部件及医疗骨科植入锻件的研发、生产及销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗骨科植入锻件",
+        "evidence_span": "公司专注于航空发动机关键零部件及医疗骨科植入锻件的研发、生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高性能零部件制造商",
+        "evidence_span": "专业的航空发动机及医疗骨科领域的高性能零部件制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "成品零部件供应商",
+        "evidence_span": "在航空产业链中属于成品零部件供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空发动机压气机叶片",
+        "evidence_span": "主要产品包括航空发动机压气机叶片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "转动件及结构件",
+        "evidence_span": "转动件及结构件（整体叶盘及整流器、机匣、涡轮盘及压气机盘等盘环件）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗骨科植入锻件",
+        "evidence_span": "医疗骨科植入锻件等高性能零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工髋关节-股骨柄",
+        "evidence_span": "主要产品包括人工髋关节-股骨柄"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工髋关节-髋臼杯",
+        "evidence_span": "人工髋关节-髋臼杯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工膝关节-胫骨托",
+        "evidence_span": "人工膝关节-胫骨托"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工创伤类-骨板",
+        "evidence_span": "人工创伤类-骨板等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精锻技术",
+        "evidence_span": "以精锻技术实现压气机叶片规模量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模具逆向设计及逆向制造",
+        "evidence_span": "掌握了模具逆向设计及逆向制造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "叶片前后缘自适应抛修",
+        "evidence_span": "叶片前后缘自适应抛修"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "整体叶盘分层复合铣",
+        "evidence_span": "已掌握了整体叶盘分层复合铣"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "叶型双面喷丸强化",
+        "evidence_span": "叶型双面喷丸强化等多项精密机加工领域核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "惯性摩擦焊接技术",
+        "evidence_span": "采用惯性摩擦焊技术能够满足发动机转子鼓筒的技术和经济指标要求"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "NADCAP认证特种工艺",
+        "evidence_span": "公司的热处理、化学处理、无损检测、表面强化、金属材料制造（锻造）等五大类特种工艺已取得NADCAP认证"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法国赛峰",
+        "evidence_span": "公司与法国赛峰续签长期供货协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国GE航空",
+        "evidence_span": "公司已按计划完成GE公司十级高压压气机叶片的研制"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英国RR公司",
+        "evidence_span": "英国RR公司的压气机叶片（共17级）完成了锻造的验证样件提交"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国航发集团",
+        "evidence_span": "公司客户覆盖了法国赛峰、美国GE航空、英国RR、中国航发集团等国内外主流航空发动机厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "施乐辉公司",
+        "evidence_span": "胫骨托产品已正式批量供应施乐辉公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "强生医疗",
+        "evidence_span": "公司是强生医疗在亚太地区的重要合格供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "威高骨科",
+        "evidence_span": "威高骨科等均为公司客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产发动机发展机会",
+        "evidence_span": "受益于国产发动机发展机会"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产品牌的进口替代趋势加快"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:38:43"
+}

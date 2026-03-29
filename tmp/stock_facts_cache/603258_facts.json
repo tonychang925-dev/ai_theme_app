@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "端游研发",
+      "evidence_span": "以端游和手游的研发与运营为核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运营",
+      "evidence_span": "以端游和手游的研发与运营为核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "手游研发",
+      "evidence_span": "以端游和手游的研发与运营为核心业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "H5游戏",
+      "evidence_span": "布局了H5游戏"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "VR游戏",
+      "evidence_span": "布局了VR游戏"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "主机游戏",
+      "evidence_span": "主机、单机游戏"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "单机游戏",
+      "evidence_span": "主机、单机游戏"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "APP平台",
+      "evidence_span": "APP平台"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "漫画",
+      "evidence_span": "漫画"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电竞赛事",
+      "evidence_span": "电竞赛事"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精品游戏研发商",
+      "evidence_span": "深耕竞技品类的精品游戏研发商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "研运一体化网游开发运营商",
+      "evidence_span": "国内领先的研运一体化网游开发运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《梦三国》端游",
+      "evidence_span": "端游产品《梦三国》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《梦塔防》端游",
+      "evidence_span": "端游产品《梦三国》、《梦塔防》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《梦三国手游》（复刻版）",
+      "evidence_span": "手游产品《梦三国手游》（复刻版）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《我的侠客》手游",
+      "evidence_span": "手游产品《我的侠客》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《解神者》手游",
+      "evidence_span": "手游产品《解神者》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《梦塔防手游》",
+      "evidence_span": "手游产品《梦塔防手游》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《野蛮人大作战》手游",
+      "evidence_span": "手游产品《野蛮人大作战》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《瞳》VR游戏",
+      "evidence_span": "VR游戏《瞳》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《怼怼梦三国》H5游戏",
+      "evidence_span": "H5游戏《怼怼梦三国》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《H5闪电玩平台》",
+      "evidence_span": "平台产品包括《H5闪电玩平台》"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "《口袋梦三国》平台",
+      "evidence_span": "《口袋梦三国》等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "端转手",
+      "evidence_span": "核心产品顺利实现“端转手”"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "端转手",
+      "evidence_span": "核心产品顺利实现“端转手”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "端游研发与运营",
+        "evidence_span": "以端游和手游的研发与运营为核心业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "手游研发与运营",
+        "evidence_span": "以端游和手游的研发与运营为核心业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "H5游戏",
+        "evidence_span": "布局了H5游戏"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "VR游戏",
+        "evidence_span": "布局了VR游戏"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "主机游戏",
+        "evidence_span": "主机、单机游戏"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "单机游戏",
+        "evidence_span": "主机、单机游戏"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "APP平台",
+        "evidence_span": "APP平台"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "漫画",
+        "evidence_span": "漫画"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电竞赛事",
+        "evidence_span": "电竞赛事"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精品游戏研发商",
+        "evidence_span": "深耕竞技品类的精品游戏研发商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "研运一体化网游开发运营商",
+        "evidence_span": "国内领先的研运一体化网游开发运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《梦三国》端游",
+        "evidence_span": "端游产品《梦三国》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《梦塔防》端游",
+        "evidence_span": "端游产品《梦三国》、《梦塔防》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《梦三国手游》（复刻版）",
+        "evidence_span": "手游产品《梦三国手游》（复刻版）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《我的侠客》手游",
+        "evidence_span": "手游产品《我的侠客》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《解神者》手游",
+        "evidence_span": "手游产品《解神者》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《梦塔防手游》",
+        "evidence_span": "手游产品《梦塔防手游》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《野蛮人大作战》手游",
+        "evidence_span": "手游产品《野蛮人大作战》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《瞳》VR游戏",
+        "evidence_span": "VR游戏《瞳》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《怼怼梦三国》H5游戏",
+        "evidence_span": "H5游戏《怼怼梦三国》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《H5闪电玩平台》",
+        "evidence_span": "平台产品包括《H5闪电玩平台》"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "《口袋梦三国》平台",
+        "evidence_span": "《口袋梦三国》等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "端转手",
+        "evidence_span": "核心产品顺利实现“端转手”"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "端转手",
+        "evidence_span": "核心产品顺利实现“端转手”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:44:58"
+}

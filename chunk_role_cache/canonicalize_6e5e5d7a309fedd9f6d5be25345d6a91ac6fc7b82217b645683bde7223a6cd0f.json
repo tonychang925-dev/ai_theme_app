@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:37:14", "result": {"span_uid": "cc616693bfed", "action": "rewrite", "canonical_text": "光刻胶是用于高端半导体和传感器制造的关键材料。", "final_type": "core", "final_role": "光刻胶应用领域", "stability": "high", "reason": "原文本为残句，改写为完整定义，去除了政策背景，保留了光刻胶在半导体和传感器制造中的核心应用。"}}

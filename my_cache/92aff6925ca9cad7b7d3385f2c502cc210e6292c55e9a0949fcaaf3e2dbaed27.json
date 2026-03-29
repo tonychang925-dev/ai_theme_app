@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:11", "result": {"chunk_id": "827811f64ee4", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了特斯拉第三代机器人的推出时间、量产计划和产量目标，属于具体的时间性动态和产品规划，没有提供灵巧手的核心知识。"}}

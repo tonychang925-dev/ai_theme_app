@@ -1,0 +1,534 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "卫星运营",
+      "evidence_span": "公司是国内领先的卫星运营与应用服务提供商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "应用服务",
+      "evidence_span": "公司是国内领先的卫星运营与应用服务提供商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "遥感服务",
+      "evidence_span": "航天宏图遥感和北斗导航卫星应用服务商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "北斗导航卫星应用服务",
+      "evidence_span": "航天宏图遥感和北斗导航卫星应用服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "自主遥感服务的全产业链提供商",
+      "evidence_span": "国内领先的自主遥感服务的全产业链提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "遥感服务行业龙头",
+      "evidence_span": "作为国内遥感服务行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "空天垂直领域的平台厂商",
+      "evidence_span": "航天宏图空天垂直领域的平台厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "时空数据应用的领先服务商",
+      "evidence_span": "航天宏图时空数据应用的领先服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "卫星遥感及北斗数据处理软件领军者",
+      "evidence_span": "航天宏图卫星遥感及北斗数据处理软件领军者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "遥感软件PIE",
+      "evidence_span": "公司研发了具有完全自主知识产权的遥感软件 PIE"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PIE-Map产品",
+      "evidence_span": "发布 PIE-Map 产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "态势展现业务系统解决方案",
+      "evidence_span": "基于此推出了态势展现、数据分析、信息保障服务、导航服务评估等多个业务系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据分析业务系统解决方案",
+      "evidence_span": "基于此推出了态势展现、数据分析、信息保障服务、导航服务评估等多个业务系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息保障服务业务系统解决方案",
+      "evidence_span": "基于此推出了态势展现、数据分析、信息保障服务、导航服务评估等多个业务系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "导航服务评估业务系统解决方案",
+      "evidence_span": "基于此推出了态势展现、数据分析、信息保障服务、导航服务评估等多个业务系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "遥感云服务平台PIE-Engine",
+      "evidence_span": "公司推出拥有国内首个遥感云服务平台 PIE-Engine"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PIE-Earth Meta新一代数字孪生地球平台",
+      "evidence_span": "PIE-Earth Meta 新一代数字孪生地球平台发布"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "火情监测预警指挥调度平台",
+      "evidence_span": "公司推出的火情监测预警指挥调度平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PIE-Engine SAR云服务平台",
+      "evidence_span": "公司基于自主研发的 PIE-Engine SAR 云服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "时空大数据平台",
+      "evidence_span": "公司基于自主研发的 PIE-Engine SAR 云服务平台和时空大数据平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无人机",
+      "evidence_span": "自主研发了多款无人机、传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传感器",
+      "evidence_span": "自主研发了多款无人机、传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PIE-Basic",
+      "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PIE-Ortho",
+      "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PIE-SAR",
+      "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PIE-HYP",
+      "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PIE-UAV",
+      "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PIE-SIAS",
+      "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PIE-AI",
+      "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空天信息专业处理平台PIE-Engine Factory",
+      "evidence_span": "该平台集成了空天信息专业处理平台 PIE-Engine Factory"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "时空数据实时分析计算平台PIE-Engine Studio",
+      "evidence_span": "时空数据实时分析计算平台 PIE-Engine Studio"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人工智能解译平台PIE-Engine AI",
+      "evidence_span": "人工智能解译平台 PIE-Engine AI"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PIE-Engine Earth智慧地球可视化终端",
+      "evidence_span": "PIE-Engine Earth 智慧地球可视化终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "InSAR卫星星座",
+      "evidence_span": "公司拟于 2022 年底发射国内首个商业化 InSAR 卫星星座"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大规模区域网平差技术",
+      "evidence_span": "在大规模区域网平差、异源影像匹配技术、SAR 数据处理、高光谱载荷数据处理等方面取得了突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "异源影像匹配技术",
+      "evidence_span": "在大规模区域网平差、异源影像匹配技术、SAR 数据处理、高光谱载荷数据处理等方面取得了突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SAR数据处理技术",
+      "evidence_span": "在大规模区域网平差、异源影像匹配技术、SAR 数据处理、高光谱载荷数据处理等方面取得了突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高光谱载荷数据处理技术",
+      "evidence_span": "在大规模区域网平差、异源影像匹配技术、SAR 数据处理、高光谱载荷数据处理等方面取得了突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "遥感影像处理软件平台",
+      "evidence_span": "公司自主创新研制的遥感影像处理软件平台 PIE"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字孪生地球低代码构建平台",
+      "evidence_span": "打造的数字孪生地球低代码构建平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府",
+      "evidence_span": "为政府综合治理及国防建设提供空天大数据分析提供服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国防建设",
+      "evidence_span": "为政府综合治理及国防建设提供空天大数据分析提供服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "自然资源行业",
+      "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "应急管理行业",
+      "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "生态环境行业",
+      "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "气象海洋行业",
+      "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "农业林业行业",
+      "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "环境咨询行业",
+      "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "水文水利行业",
+      "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "防灾减灾行业",
+      "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "城市规划行业",
+      "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "基础软件平台迎国产化替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "自主可控",
+      "evidence_span": "航天宏图自主可控的卫星遥感和北斗应用服务商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "卫星运营与应用服务",
+        "evidence_span": "公司是国内领先的卫星运营与应用服务提供商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "遥感服务",
+        "evidence_span": "航天宏图遥感和北斗导航卫星应用服务商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "北斗导航卫星应用服务",
+        "evidence_span": "航天宏图遥感和北斗导航卫星应用服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "自主遥感服务的全产业链提供商",
+        "evidence_span": "国内领先的自主遥感服务的全产业链提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "遥感服务行业龙头",
+        "evidence_span": "作为国内遥感服务行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "空天垂直领域的平台厂商",
+        "evidence_span": "航天宏图空天垂直领域的平台厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "时空数据应用的领先服务商",
+        "evidence_span": "航天宏图时空数据应用的领先服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "卫星遥感及北斗数据处理软件领军者",
+        "evidence_span": "航天宏图卫星遥感及北斗数据处理软件领军者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "遥感软件PIE",
+        "evidence_span": "公司研发了具有完全自主知识产权的遥感软件 PIE"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PIE-Map产品",
+        "evidence_span": "发布 PIE-Map 产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "态势展现业务系统解决方案",
+        "evidence_span": "基于此推出了态势展现、数据分析、信息保障服务、导航服务评估等多个业务系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据分析业务系统解决方案",
+        "evidence_span": "基于此推出了态势展现、数据分析、信息保障服务、导航服务评估等多个业务系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息保障服务业务系统解决方案",
+        "evidence_span": "基于此推出了态势展现、数据分析、信息保障服务、导航服务评估等多个业务系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "导航服务评估业务系统解决方案",
+        "evidence_span": "基于此推出了态势展现、数据分析、信息保障服务、导航服务评估等多个业务系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "遥感云服务平台PIE-Engine",
+        "evidence_span": "公司推出拥有国内首个遥感云服务平台 PIE-Engine"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PIE-Earth Meta新一代数字孪生地球平台",
+        "evidence_span": "PIE-Earth Meta 新一代数字孪生地球平台发布"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "火情监测预警指挥调度平台",
+        "evidence_span": "公司推出的火情监测预警指挥调度平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PIE-Engine SAR云服务平台",
+        "evidence_span": "公司基于自主研发的 PIE-Engine SAR 云服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "时空大数据平台",
+        "evidence_span": "公司基于自主研发的 PIE-Engine SAR 云服务平台和时空大数据平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无人机",
+        "evidence_span": "自主研发了多款无人机、传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传感器",
+        "evidence_span": "自主研发了多款无人机、传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PIE-Basic",
+        "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PIE-Ortho",
+        "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PIE-SAR",
+        "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PIE-HYP",
+        "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PIE-UAV",
+        "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PIE-SIAS",
+        "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PIE-AI",
+        "evidence_span": "主要产品包含 PIE-Basic、PIE-Ortho、PIE-SAR、PIE-HYP、 PIE-UAV、PIE-SIAS 及 PIE-AI 等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空天信息专业处理平台PIE-Engine Factory",
+        "evidence_span": "该平台集成了空天信息专业处理平台 PIE-Engine Factory"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "时空数据实时分析计算平台PIE-Engine Studio",
+        "evidence_span": "时空数据实时分析计算平台 PIE-Engine Studio"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人工智能解译平台PIE-Engine AI",
+        "evidence_span": "人工智能解译平台 PIE-Engine AI"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PIE-Engine Earth智慧地球可视化终端",
+        "evidence_span": "PIE-Engine Earth 智慧地球可视化终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "InSAR卫星星座",
+        "evidence_span": "公司拟于 2022 年底发射国内首个商业化 InSAR 卫星星座"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大规模区域网平差技术",
+        "evidence_span": "在大规模区域网平差、异源影像匹配技术、SAR 数据处理、高光谱载荷数据处理等方面取得了突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "异源影像匹配技术",
+        "evidence_span": "在大规模区域网平差、异源影像匹配技术、SAR 数据处理、高光谱载荷数据处理等方面取得了突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SAR数据处理技术",
+        "evidence_span": "在大规模区域网平差、异源影像匹配技术、SAR 数据处理、高光谱载荷数据处理等方面取得了突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高光谱载荷数据处理技术",
+        "evidence_span": "在大规模区域网平差、异源影像匹配技术、SAR 数据处理、高光谱载荷数据处理等方面取得了突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "遥感影像处理软件平台",
+        "evidence_span": "公司自主创新研制的遥感影像处理软件平台 PIE"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字孪生地球低代码构建平台",
+        "evidence_span": "打造的数字孪生地球低代码构建平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府",
+        "evidence_span": "为政府综合治理及国防建设提供空天大数据分析提供服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国防建设",
+        "evidence_span": "为政府综合治理及国防建设提供空天大数据分析提供服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "自然资源行业",
+        "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "应急管理行业",
+        "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "生态环境行业",
+        "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "气象海洋行业",
+        "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "农业林业行业",
+        "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "环境咨询行业",
+        "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "水文水利行业",
+        "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "防灾减灾行业",
+        "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "城市规划行业",
+        "evidence_span": "覆盖自然资源、应急管理、生态环境、气象海洋、农业林业、环境咨询、水文水利、防灾减灾、城市规划等十多个行业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "基础软件平台迎国产化替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "自主可控",
+        "evidence_span": "航天宏图自主可控的卫星遥感和北斗应用服务商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:51:08"
+}

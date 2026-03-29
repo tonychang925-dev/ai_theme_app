@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "41484b2e8069", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落提到了MLCC（多层陶瓷电容器，常用于半导体相关领域）的复苏趋势、出货量增长和需求因素（如AI服务器），这包含行业知识，但混合了具体事件（第二季度数据、产线稼动率变化），因此适合作为知识候选。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:00:49", "result": {"chunk_id": "af59d190d75e", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "段落描述小米在特定时间（2024年7月15日）获得独立造车资质的事件，属于公司动态，没有提供关于题材本体的静态说明。"}}

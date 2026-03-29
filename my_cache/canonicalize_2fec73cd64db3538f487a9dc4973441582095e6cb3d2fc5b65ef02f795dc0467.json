@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:29:00", "result": {"span_uid": "6f641d191378", "action": "rewrite", "canonical_text": "中国电影市场在重要档期如春节档表现突出，部分影片票房领先，反映了市场的韧性和发展潜力。", "final_type": "signal", "final_role": "市场票房表现", "stability": "medium", "reason": "该片段描述了电影市场的票房数据和档期表现，体现了市场景气信号。已去事件化和去新闻口吻，改写为稳定知识表达。"}}

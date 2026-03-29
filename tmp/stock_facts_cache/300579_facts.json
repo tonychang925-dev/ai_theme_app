@@ -1,0 +1,279 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子认证服务",
+      "evidence_span": "公司主营业务包括电子认证服务及产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "产品",
+      "evidence_span": "公司主营业务包括电子认证服务及产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全集成",
+      "evidence_span": "安全集成业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全咨询",
+      "evidence_span": "安全咨询及运维服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运维服务",
+      "evidence_span": "安全咨询及运维服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内领先的CA机构",
+      "evidence_span": "国内领先的CA机构"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电子认证第一股",
+      "evidence_span": "数字认证电子认证第一股"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电子认证龙头",
+      "evidence_span": "数字认证电子认证龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "安全可靠领域电子认证类产品主要提供商",
+      "evidence_span": "公司已为安全可靠领域电子认证类产品主要提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字证书",
+      "evidence_span": "发放数字证书"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子签名服务",
+      "evidence_span": "生成并验证电子签名的服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全集成业务",
+      "evidence_span": "安全集成业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风险评估",
+      "evidence_span": "风险评估"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "合规咨询",
+      "evidence_span": "合规咨询"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全巡检",
+      "evidence_span": "安全巡检"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信创产品",
+      "evidence_span": "公司积极推进信创产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云服务",
+      "evidence_span": "云服务业务发展步入快车道"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云密码",
+      "evidence_span": "云密码"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云信任",
+      "evidence_span": "云信任"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云安全",
+      "evidence_span": "云安全"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云签名",
+      "evidence_span": "云签名"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可信电子合同",
+      "evidence_span": "可信电子合同"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公有云签名服务平台",
+      "evidence_span": "公有云签名服务平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云服务的基础技术研发",
+      "evidence_span": "着力进行云服务的基础技术研发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府机构",
+      "evidence_span": "向政府机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "企事业单位",
+      "evidence_span": "企事业单位"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "个人",
+      "evidence_span": "个人"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "商用密码应用",
+      "evidence_span": "数字认证在商用密码应用领域已具备较大优势"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子认证服务及产品",
+        "evidence_span": "公司主营业务包括电子认证服务及产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "安全集成",
+        "evidence_span": "安全集成业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "安全咨询及运维服务",
+        "evidence_span": "安全咨询及运维服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内领先的CA机构",
+        "evidence_span": "国内领先的CA机构"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电子认证第一股",
+        "evidence_span": "数字认证电子认证第一股"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电子认证龙头",
+        "evidence_span": "数字认证电子认证龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "安全可靠领域电子认证类产品主要提供商",
+        "evidence_span": "公司已为安全可靠领域电子认证类产品主要提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字证书",
+        "evidence_span": "发放数字证书"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子签名服务",
+        "evidence_span": "生成并验证电子签名的服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全集成业务",
+        "evidence_span": "安全集成业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风险评估",
+        "evidence_span": "风险评估"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "合规咨询",
+        "evidence_span": "合规咨询"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全巡检",
+        "evidence_span": "安全巡检"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信创产品",
+        "evidence_span": "公司积极推进信创产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云服务",
+        "evidence_span": "云服务业务发展步入快车道"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云密码",
+        "evidence_span": "云密码"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云信任",
+        "evidence_span": "云信任"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云安全",
+        "evidence_span": "云安全"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云签名",
+        "evidence_span": "云签名"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可信电子合同",
+        "evidence_span": "可信电子合同"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公有云签名服务平台",
+        "evidence_span": "公有云签名服务平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云服务的基础技术研发",
+        "evidence_span": "着力进行云服务的基础技术研发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府机构",
+        "evidence_span": "向政府机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "企事业单位",
+        "evidence_span": "企事业单位"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "个人",
+        "evidence_span": "个人"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "商用密码应用",
+        "evidence_span": "数字认证在商用密码应用领域已具备较大优势"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:23:33"
+}

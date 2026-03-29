@@ -1,0 +1,224 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "相控阵T",
+      "evidence_span": "铖昌科技致力于相控阵T/R芯片的研制"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "R芯片研制",
+      "evidence_span": "铖昌科技致力于相控阵T/R芯片的研制"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "卫星互联网业务",
+      "evidence_span": "向卫星互联网、5G毫米波通信等新兴领域多元化发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "5G毫米波通信业务",
+      "evidence_span": "向卫星互联网、5G毫米波通信等新兴领域多元化发展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "相控阵T/R芯片完整解决方案厂商",
+      "evidence_span": "国内少数能提供相控阵T/R芯片完整解决方案厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "微波毫米波射频集成电路创新链代表",
+      "evidence_span": "微波毫米波射频集成电路创新链的典型代表"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "相控阵T/R芯片",
+      "evidence_span": "公司主要产品相控阵T/R芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "放大器类芯片",
+      "evidence_span": "公司主要产品可分为放大器类芯片、幅相控制类芯片和无源类芯片三类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "幅相控制类芯片",
+      "evidence_span": "公司主要产品可分为放大器类芯片、幅相控制类芯片和无源类芯片三类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无源类芯片",
+      "evidence_span": "公司主要产品可分为放大器类芯片、幅相控制类芯片和无源类芯片三类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "星载相控阵T/R套片",
+      "evidence_span": "公司与主要客户A01客户销售的主要产品为星载相控阵T/R套片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "模拟波束赋形芯片",
+      "evidence_span": "完成了星载及地面用模拟波束赋形芯片的迭代定型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微波毫米波模拟相控阵T/R芯片自主可控",
+      "evidence_span": "一直致力于推进微波毫米波模拟相控阵T/R芯片的自主可控"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "定制化设计能力",
+      "evidence_span": "公司可根据客户不同的应用需求开展定制化设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "毫米波应用模拟波束赋形芯片研发",
+      "evidence_span": "公司已完成毫米波应用的模拟波束赋形芯片的研发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军工部门",
+      "evidence_span": "公司与军工部门、军工集团及下属单位、多家科研院所及优势企业、主流通信设备生产商等均建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "军工集团及下属单位",
+      "evidence_span": "公司与军工部门、军工集团及下属单位、多家科研院所及优势企业、主流通信设备生产商等均建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科研院所",
+      "evidence_span": "公司与军工部门、军工集团及下属单位、多家科研院所及优势企业、主流通信设备生产商等均建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "主流通信设备生产商",
+      "evidence_span": "公司与军工部门、军工集团及下属单位、多家科研院所及优势企业、主流通信设备生产商等均建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "A01客户",
+      "evidence_span": "公司与主要客户A01客户销售的主要产品为星载相控阵T/R套片"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "卫星互联网快速成长",
+      "evidence_span": "相控阵TR芯片龙头有望受益于卫星互联网快速成长趋势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "中国星链快速发展",
+      "evidence_span": "受益于中国“星链”快速发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "相控阵T/R芯片研制",
+        "evidence_span": "铖昌科技致力于相控阵T/R芯片的研制"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "卫星互联网业务",
+        "evidence_span": "向卫星互联网、5G毫米波通信等新兴领域多元化发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "5G毫米波通信业务",
+        "evidence_span": "向卫星互联网、5G毫米波通信等新兴领域多元化发展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "相控阵T/R芯片完整解决方案厂商",
+        "evidence_span": "国内少数能提供相控阵T/R芯片完整解决方案厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "微波毫米波射频集成电路创新链代表",
+        "evidence_span": "微波毫米波射频集成电路创新链的典型代表"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "相控阵T/R芯片",
+        "evidence_span": "公司主要产品相控阵T/R芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "放大器类芯片",
+        "evidence_span": "公司主要产品可分为放大器类芯片、幅相控制类芯片和无源类芯片三类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "幅相控制类芯片",
+        "evidence_span": "公司主要产品可分为放大器类芯片、幅相控制类芯片和无源类芯片三类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无源类芯片",
+        "evidence_span": "公司主要产品可分为放大器类芯片、幅相控制类芯片和无源类芯片三类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "星载相控阵T/R套片",
+        "evidence_span": "公司与主要客户A01客户销售的主要产品为星载相控阵T/R套片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "模拟波束赋形芯片",
+        "evidence_span": "完成了星载及地面用模拟波束赋形芯片的迭代定型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微波毫米波模拟相控阵T/R芯片自主可控",
+        "evidence_span": "一直致力于推进微波毫米波模拟相控阵T/R芯片的自主可控"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "定制化设计能力",
+        "evidence_span": "公司可根据客户不同的应用需求开展定制化设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "毫米波应用模拟波束赋形芯片研发",
+        "evidence_span": "公司已完成毫米波应用的模拟波束赋形芯片的研发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军工部门",
+        "evidence_span": "公司与军工部门、军工集团及下属单位、多家科研院所及优势企业、主流通信设备生产商等均建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "军工集团及下属单位",
+        "evidence_span": "公司与军工部门、军工集团及下属单位、多家科研院所及优势企业、主流通信设备生产商等均建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科研院所",
+        "evidence_span": "公司与军工部门、军工集团及下属单位、多家科研院所及优势企业、主流通信设备生产商等均建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "主流通信设备生产商",
+        "evidence_span": "公司与军工部门、军工集团及下属单位、多家科研院所及优势企业、主流通信设备生产商等均建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "A01客户",
+        "evidence_span": "公司与主要客户A01客户销售的主要产品为星载相控阵T/R套片"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "卫星互联网快速成长",
+        "evidence_span": "相控阵TR芯片龙头有望受益于卫星互联网快速成长趋势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "中国星链快速发展",
+        "evidence_span": "受益于中国“星链”快速发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:17:42"
+}

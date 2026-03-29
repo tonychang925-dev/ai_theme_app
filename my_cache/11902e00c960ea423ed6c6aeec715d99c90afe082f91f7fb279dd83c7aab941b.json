@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:58:46", "result": {"chunk_id": "89e4ac7a5cbf", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段提到最新修订的《电动自行车安全技术规范》公开征求意见，并具体说明最高设计车速不超过25km/h和增加北斗定位、实时通信功能，这些是电动自行车的核心技术规范知识，但以征求意见的事件形式呈现。"}}

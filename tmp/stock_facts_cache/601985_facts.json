@@ -1,0 +1,164 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "核电的开发",
+      "evidence_span": "主要业务涵盖核电的开发、投资、建设与运营管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资",
+      "evidence_span": "主要业务涵盖核电的开发、投资、建设与运营管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建设",
+      "evidence_span": "主要业务涵盖核电的开发、投资、建设与运营管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运营管理",
+      "evidence_span": "主要业务涵盖核电的开发、投资、建设与运营管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "风能太阳能等清洁能源项目的开发",
+      "evidence_span": "风能太阳能等清洁能源项目的开发与投资"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "核电技术服务市场",
+      "evidence_span": "开拓核电技术服务市场"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "敏捷端新产业",
+      "evidence_span": "探索敏捷端新产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "核能多用途利用产业",
+      "evidence_span": "核能多用途利用产业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "核电运营企业龙头",
+      "evidence_span": "中国核电是我国核电运营企业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "核电行业领导者",
+      "evidence_span": "中国核电核电行业领导者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核电",
+      "evidence_span": "核电业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电",
+      "evidence_span": "风电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "太阳能发电",
+      "evidence_span": "太阳能发电"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "华龙一号",
+      "evidence_span": "具有我国自主知识产权的华龙一号"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中核汇能",
+      "evidence_span": "收购中核汇能"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "核电国产化",
+      "evidence_span": "国产化降低核电成本"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "核电重启",
+      "evidence_span": "核电审批正式重启"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "核电的开发、投资、建设与运营管理",
+        "evidence_span": "主要业务涵盖核电的开发、投资、建设与运营管理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "风能太阳能等清洁能源项目的开发与投资",
+        "evidence_span": "风能太阳能等清洁能源项目的开发与投资"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "核电技术服务市场",
+        "evidence_span": "开拓核电技术服务市场"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "敏捷端新产业",
+        "evidence_span": "探索敏捷端新产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "核能多用途利用产业",
+        "evidence_span": "核能多用途利用产业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "核电运营企业龙头",
+        "evidence_span": "中国核电是我国核电运营企业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "核电行业领导者",
+        "evidence_span": "中国核电核电行业领导者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核电",
+        "evidence_span": "核电业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电",
+        "evidence_span": "风电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "太阳能发电",
+        "evidence_span": "太阳能发电"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "华龙一号",
+        "evidence_span": "具有我国自主知识产权的华龙一号"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中核汇能",
+        "evidence_span": "收购中核汇能"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "核电国产化",
+        "evidence_span": "国产化降低核电成本"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "核电重启",
+        "evidence_span": "核电审批正式重启"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:47:57"
+}

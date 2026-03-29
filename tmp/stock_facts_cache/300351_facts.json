@@ -1,0 +1,674 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "轨道交通",
+      "evidence_span": "轨道交通与工业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业",
+      "evidence_span": "轨道交通与工业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "车载",
+      "evidence_span": "车载与能源信息"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "能源信息",
+      "evidence_span": "车载与能源信息"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "军工",
+      "evidence_span": "军工与航空航天"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空航天",
+      "evidence_span": "军工与航空航天"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "轨交连接器龙头企业",
+      "evidence_span": "是轨交连接器龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "连接器平台型企业",
+      "evidence_span": "永贵电器连接器平台型企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连接器",
+      "evidence_span": "产品包含连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充电枪",
+      "evidence_span": "产品包含连接器、充电枪和线束、PDU等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线束",
+      "evidence_span": "产品包含连接器、充电枪和线束、PDU等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PDU",
+      "evidence_span": "产品包含连接器、充电枪和线束、PDU等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门系统",
+      "evidence_span": "连接器、门系统、减振器、贯通道、计轴信号系统、受电弓、蓄电池箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "减振器",
+      "evidence_span": "连接器、门系统、减振器、贯通道、计轴信号系统、受电弓、蓄电池箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贯通道",
+      "evidence_span": "连接器、门系统、减振器、贯通道、计轴信号系统、受电弓、蓄电池箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "计轴信号系统",
+      "evidence_span": "连接器、门系统、减振器、贯通道、计轴信号系统、受电弓、蓄电池箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "受电弓",
+      "evidence_span": "连接器、门系统、减振器、贯通道、计轴信号系统、受电弓、蓄电池箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蓄电池箱",
+      "evidence_span": "连接器、门系统、减振器、贯通道、计轴信号系统、受电弓、蓄电池箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压连接器",
+      "evidence_span": "高压连接器及线束组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线束组件",
+      "evidence_span": "高压连接器及线束组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PDU/BDU",
+      "evidence_span": "PDU/BDU"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充/换电接口",
+      "evidence_span": "充/换电接口及线束"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交/直流充电枪",
+      "evidence_span": "交/直流充电枪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大电流液冷直流充电枪",
+      "evidence_span": "大电流液冷直流充电枪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防水连接器",
+      "evidence_span": "防水连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电源连接器",
+      "evidence_span": "电源/信号/储能/充电连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信号连接器",
+      "evidence_span": "电源/信号/储能/充电连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能连接器",
+      "evidence_span": "电源/信号/储能/充电连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充电连接器",
+      "evidence_span": "电源/信号/储能/充电连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G设备连接器",
+      "evidence_span": "5G设备连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用圆形电连接器",
+      "evidence_span": "军用圆形电连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用微矩形电连接器",
+      "evidence_span": "军用微矩形电连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机柜连接器",
+      "evidence_span": "机柜连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空电子模块式连接器",
+      "evidence_span": "航空电子模块式连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核用连接器",
+      "evidence_span": "核用连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用圆形多芯光纤连接器",
+      "evidence_span": "军用圆形多芯光纤连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军港岸电连接器",
+      "evidence_span": "军港岸电连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用网口连接器",
+      "evidence_span": "军用网口连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃烧结连接器",
+      "evidence_span": "玻璃烧结连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用深水连接器",
+      "evidence_span": "军用深水连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "军用射频连接器",
+      "evidence_span": "军用射频连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种军用连接器",
+      "evidence_span": "特种军用连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电缆组件",
+      "evidence_span": "电缆组件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大功率连接器技术",
+      "evidence_span": "拥有多年高铁领域大功率连接器的底层技术积累"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电缆技术",
+      "evidence_span": "对电缆技术的研究较为透彻"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "液冷大电流充电枪技术",
+      "evidence_span": "公司液冷大电流充电枪电流指标可达到600A"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "主要客户为比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "主要客户为比亚迪、吉利、长安、上汽、小康、华为等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安",
+      "evidence_span": "主要客户为比亚迪、吉利、长安、上汽、小康、华为等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽",
+      "evidence_span": "主要客户为比亚迪、吉利、长安、上汽、小康、华为等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小康",
+      "evidence_span": "主要客户为比亚迪、吉利、长安、上汽、小康、华为等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "主要客户为比亚迪、吉利、长安、上汽、小康、华为等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国中车集团",
+      "evidence_span": "配套供应于中国中车集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁路总公司",
+      "evidence_span": "配套供应于中国中车集团、铁路总公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "城市地铁运营公司",
+      "evidence_span": "建有轨道交通的城市地铁运营公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽",
+      "evidence_span": "广汽、一汽等国产一线品牌及合资品牌供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽",
+      "evidence_span": "广汽、一汽等国产一线品牌及合资品牌供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特锐德",
+      "evidence_span": "特锐德、威迈斯等桩端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "威迈斯",
+      "evidence_span": "特锐德、威迈斯等桩端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中兴通讯",
+      "evidence_span": "配套服务于华为、中兴通讯、大唐移动、维谛技术等公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大唐移动",
+      "evidence_span": "配套服务于华为、中兴通讯、大唐移动、维谛技术等公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "维谛技术",
+      "evidence_span": "配套服务于华为、中兴通讯、大唐移动、维谛技术等公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "理想",
+      "evidence_span": "比亚迪、吉利、理想、本田、许继集团、特来电等国内外知名整车厂与桩端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本田",
+      "evidence_span": "比亚迪、吉利、理想、本田、许继集团、特来电等国内外知名整车厂与桩端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "许继集团",
+      "evidence_span": "比亚迪、吉利、理想、本田、许继集团、特来电等国内外知名整车厂与桩端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特来电",
+      "evidence_span": "比亚迪、吉利、理想、本田、许继集团、特来电等国内外知名整车厂与桩端客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国十一大军工集团",
+      "evidence_span": "主要配套于中国十一大军工集团"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "国产化引领发展良机"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "轨道交通与工业",
+        "evidence_span": "轨道交通与工业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "车载与能源信息",
+        "evidence_span": "车载与能源信息"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "军工与航空航天",
+        "evidence_span": "军工与航空航天"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "轨交连接器龙头企业",
+        "evidence_span": "是轨交连接器龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "连接器平台型企业",
+        "evidence_span": "永贵电器连接器平台型企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连接器",
+        "evidence_span": "产品包含连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充电枪",
+        "evidence_span": "产品包含连接器、充电枪和线束、PDU等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线束",
+        "evidence_span": "产品包含连接器、充电枪和线束、PDU等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PDU",
+        "evidence_span": "产品包含连接器、充电枪和线束、PDU等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门系统",
+        "evidence_span": "连接器、门系统、减振器、贯通道、计轴信号系统、受电弓、蓄电池箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "减振器",
+        "evidence_span": "连接器、门系统、减振器、贯通道、计轴信号系统、受电弓、蓄电池箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贯通道",
+        "evidence_span": "连接器、门系统、减振器、贯通道、计轴信号系统、受电弓、蓄电池箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "计轴信号系统",
+        "evidence_span": "连接器、门系统、减振器、贯通道、计轴信号系统、受电弓、蓄电池箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "受电弓",
+        "evidence_span": "连接器、门系统、减振器、贯通道、计轴信号系统、受电弓、蓄电池箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蓄电池箱",
+        "evidence_span": "连接器、门系统、减振器、贯通道、计轴信号系统、受电弓、蓄电池箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压连接器",
+        "evidence_span": "高压连接器及线束组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线束组件",
+        "evidence_span": "高压连接器及线束组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PDU/BDU",
+        "evidence_span": "PDU/BDU"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充/换电接口",
+        "evidence_span": "充/换电接口及线束"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交/直流充电枪",
+        "evidence_span": "交/直流充电枪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大电流液冷直流充电枪",
+        "evidence_span": "大电流液冷直流充电枪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防水连接器",
+        "evidence_span": "防水连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电源连接器",
+        "evidence_span": "电源/信号/储能/充电连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信号连接器",
+        "evidence_span": "电源/信号/储能/充电连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能连接器",
+        "evidence_span": "电源/信号/储能/充电连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充电连接器",
+        "evidence_span": "电源/信号/储能/充电连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G设备连接器",
+        "evidence_span": "5G设备连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用圆形电连接器",
+        "evidence_span": "军用圆形电连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用微矩形电连接器",
+        "evidence_span": "军用微矩形电连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机柜连接器",
+        "evidence_span": "机柜连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空电子模块式连接器",
+        "evidence_span": "航空电子模块式连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核用连接器",
+        "evidence_span": "核用连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用圆形多芯光纤连接器",
+        "evidence_span": "军用圆形多芯光纤连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军港岸电连接器",
+        "evidence_span": "军港岸电连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用网口连接器",
+        "evidence_span": "军用网口连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃烧结连接器",
+        "evidence_span": "玻璃烧结连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用深水连接器",
+        "evidence_span": "军用深水连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "军用射频连接器",
+        "evidence_span": "军用射频连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种军用连接器",
+        "evidence_span": "特种军用连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电缆组件",
+        "evidence_span": "电缆组件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大功率连接器技术",
+        "evidence_span": "拥有多年高铁领域大功率连接器的底层技术积累"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电缆技术",
+        "evidence_span": "对电缆技术的研究较为透彻"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "液冷大电流充电枪技术",
+        "evidence_span": "公司液冷大电流充电枪电流指标可达到600A"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "主要客户为比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "主要客户为比亚迪、吉利、长安、上汽、小康、华为等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安",
+        "evidence_span": "主要客户为比亚迪、吉利、长安、上汽、小康、华为等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽",
+        "evidence_span": "主要客户为比亚迪、吉利、长安、上汽、小康、华为等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小康",
+        "evidence_span": "主要客户为比亚迪、吉利、长安、上汽、小康、华为等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "主要客户为比亚迪、吉利、长安、上汽、小康、华为等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国中车集团",
+        "evidence_span": "配套供应于中国中车集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁路总公司",
+        "evidence_span": "配套供应于中国中车集团、铁路总公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "城市地铁运营公司",
+        "evidence_span": "建有轨道交通的城市地铁运营公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽",
+        "evidence_span": "广汽、一汽等国产一线品牌及合资品牌供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽",
+        "evidence_span": "广汽、一汽等国产一线品牌及合资品牌供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特锐德",
+        "evidence_span": "特锐德、威迈斯等桩端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "威迈斯",
+        "evidence_span": "特锐德、威迈斯等桩端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中兴通讯",
+        "evidence_span": "配套服务于华为、中兴通讯、大唐移动、维谛技术等公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大唐移动",
+        "evidence_span": "配套服务于华为、中兴通讯、大唐移动、维谛技术等公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "维谛技术",
+        "evidence_span": "配套服务于华为、中兴通讯、大唐移动、维谛技术等公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "理想",
+        "evidence_span": "比亚迪、吉利、理想、本田、许继集团、特来电等国内外知名整车厂与桩端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本田",
+        "evidence_span": "比亚迪、吉利、理想、本田、许继集团、特来电等国内外知名整车厂与桩端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "许继集团",
+        "evidence_span": "比亚迪、吉利、理想、本田、许继集团、特来电等国内外知名整车厂与桩端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特来电",
+        "evidence_span": "比亚迪、吉利、理想、本田、许继集团、特来电等国内外知名整车厂与桩端客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国十一大军工集团",
+        "evidence_span": "主要配套于中国十一大军工集团"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "国产化引领发展良机"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T20:12:01"
+}

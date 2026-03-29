@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "d777feed5b80", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "段落引用了SEMI关于上半年中国大陆芯片设备支出的具体数据，并进行了比较。这属于特定时间段的统计数据和事件性报道，而非稳定的本体性知识。"}}

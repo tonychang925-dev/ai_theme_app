@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "8ad3a98fc1d3", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段描述预制菜产业链的结构特征（入局者众多、规模化企业少、市场分散），是纯静态说明行业现状，无事件信息，可用于题材本体构建。"}}

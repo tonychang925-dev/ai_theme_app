@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "9a527c795831", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "涉及国家与中国商谈武器采购、国防部回应等具体外交和军贸事件，属于动态新闻，无稳定知识构建内容。"}}

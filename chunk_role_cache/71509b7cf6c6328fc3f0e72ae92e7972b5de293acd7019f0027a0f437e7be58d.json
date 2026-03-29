@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "5cb2011876f6", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含中国电子展事件和行业会议，但提供了国产半导体设备销售收入、市场占有率数据以及全球封测市场规模预测，这些数据具有知识价值，可用于构建半导体设备产业知识，因此是混合内容。"}}

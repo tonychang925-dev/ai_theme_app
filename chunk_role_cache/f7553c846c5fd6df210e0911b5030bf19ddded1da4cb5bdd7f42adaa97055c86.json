@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "b16629dcaa82", "label": "knowledge_like", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述了上海市奉贤区的产业发展行动方案，提到了湿化学品、高纯靶材、电子气体、半导体封装材料等集成电路配套材料，以及国产替代方向，这些内容涉及半导体设备产业链的关键环节和材料应用，有助于题材边界理解，但以政策事件为背景。"}}

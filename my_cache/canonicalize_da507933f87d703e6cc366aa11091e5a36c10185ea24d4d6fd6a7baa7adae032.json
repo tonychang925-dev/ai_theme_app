@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:45:16", "result": {"span_uid": "41bccb8491aa", "action": "keep", "canonical_text": "视涯科技董事长顾铁同时是A股上市公司奕瑞科技的创始人。", "final_type": "related", "final_role": "董事长背景关联", "stability": "high", "reason": "该片段提供了与题材相关的关联主体信息，稳定且可独立理解。"}}

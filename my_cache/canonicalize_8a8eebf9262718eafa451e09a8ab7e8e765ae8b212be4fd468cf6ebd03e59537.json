@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:32:56", "result": {"span_uid": "136775343603", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "竞争对手动态与量产信息", "stability": "low", "reason": "该片段包含Meta的AR眼镜原型展示和苹果Vision Pro量产的具体事件信息，属于阶段性进展和竞争对手动态，但信息不稳定且依赖具体新闻事件，无法形成独立稳定的知识块。"}}

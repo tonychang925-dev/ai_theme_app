@@ -1,0 +1,394 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "冷轧产品",
+      "evidence_span": "冷轧产品占业务收入的60.26%"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝",
+      "evidence_span": "铝、型材产品的占业务收入14.8%"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "型材产品",
+      "evidence_span": "铝、型材产品的占业务收入14.8%"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铝合金锭",
+      "evidence_span": "主营产品类别有冷轧产品，铝、型材产品，铝合金锭"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "氧化铝",
+      "evidence_span": "主营产品类别有冷轧产品，铝、型材产品，铝合金锭，氧化铝"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "热轧卷",
+      "evidence_span": "主营产品类别有冷轧产品，铝、型材产品，铝合金锭，氧化铝，热轧卷"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高精度铝箔",
+      "evidence_span": "主营产品类别有冷轧产品，铝、型材产品，铝合金锭，氧化铝，热轧卷，高精度铝箔等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电力/氧化铝-电解铝-铝加工全产业链布局的龙头企业",
+      "evidence_span": "一家电力/氧化铝-电解铝-铝加工全产业链布局的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内汽车铝板制造领军者",
+      "evidence_span": "公司是国内汽车铝板制造领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内首家乘用车四门两盖铝板生产商",
+      "evidence_span": "作为国内首家乘用车四门两盖铝板生产商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内唯一一家可以批量供货汽车板的企业",
+      "evidence_span": "南山铝业是国内唯一一家可以批量供货汽车板的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力",
+      "evidence_span": "公司主要产品包括上游产品电力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸汽",
+      "evidence_span": "公司主要产品包括上游产品电力、蒸汽"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氧化铝",
+      "evidence_span": "公司主要产品包括上游产品电力、蒸汽、氧化铝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝合金锭",
+      "evidence_span": "公司主要产品包括上游产品电力、蒸汽、氧化铝、铝合金锭"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝板带箔",
+      "evidence_span": "下游产品铝板带箔"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "挤压型材",
+      "evidence_span": "下游产品铝板带箔、挤压型材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压延材",
+      "evidence_span": "下游产品铝板带箔、挤压型材、压延材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大型机械机加工结构件",
+      "evidence_span": "下游产品铝板带箔、挤压型材、压延材及大型机械机加工结构件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车铝板",
+      "evidence_span": "南山铝业是国内唯一一家可以批量供货汽车板的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "航空板",
+      "evidence_span": "波音、空客、罗罗、中商飞等全球主流航企均是南山铝业航空板合作客户"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力电池箔",
+      "evidence_span": "公司动力电池箔产品布局高端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "型材",
+      "evidence_span": "型材方面，公司不断推进产业结构高端化"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "包装材料",
+      "evidence_span": "包装材料方面，公司与下游客户加强合作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "航空板材连轧生产线",
+      "evidence_span": "南山铝业航空板材连轧生产线由南山铝业股份有限公司投资建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "10-12μ高强电池箔",
+      "evidence_span": "目前主要供应的产品10-12μ高强电池箔"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "供货钠离子电池的技术能力",
+      "evidence_span": "公司已具备供货钠离子电池的技术能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "波音",
+      "evidence_span": "波音、空客、罗罗、中商飞等全球主流航企均是南山铝业航空板合作客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "空客",
+      "evidence_span": "波音、空客、罗罗、中商飞等全球主流航企均是南山铝业航空板合作客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "罗罗",
+      "evidence_span": "波音、空客、罗罗、中商飞等全球主流航企均是南山铝业航空板合作客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中商飞",
+      "evidence_span": "波音、空客、罗罗、中商飞等全球主流航企均是南山铝业航空板合作客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "加强与宁德时代、比亚迪、中创新航、国轩高科、亿纬锂能、欣旺达等国内龙头电池企业的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "加强与宁德时代、比亚迪、中创新航、国轩高科、亿纬锂能、欣旺达等国内龙头电池企业的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中创新航",
+      "evidence_span": "加强与宁德时代、比亚迪、中创新航、国轩高科、亿纬锂能、欣旺达等国内龙头电池企业的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国轩高科",
+      "evidence_span": "加强与宁德时代、比亚迪、中创新航、国轩高科、亿纬锂能、欣旺达等国内龙头电池企业的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿纬锂能",
+      "evidence_span": "加强与宁德时代、比亚迪、中创新航、国轩高科、亿纬锂能、欣旺达等国内龙头电池企业的合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欣旺达",
+      "evidence_span": "加强与宁德时代、比亚迪、中创新航、国轩高科、亿纬锂能、欣旺达等国内龙头电池企业的合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "航空板国产替代",
+      "evidence_span": "逐步实现航空板国产替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车轻量化发展",
+      "evidence_span": "助力汽车轻量化发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "冷轧产品",
+        "evidence_span": "冷轧产品占业务收入的60.26%"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝、型材产品",
+        "evidence_span": "铝、型材产品的占业务收入14.8%"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铝合金锭",
+        "evidence_span": "主营产品类别有冷轧产品，铝、型材产品，铝合金锭"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "氧化铝",
+        "evidence_span": "主营产品类别有冷轧产品，铝、型材产品，铝合金锭，氧化铝"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "热轧卷",
+        "evidence_span": "主营产品类别有冷轧产品，铝、型材产品，铝合金锭，氧化铝，热轧卷"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高精度铝箔",
+        "evidence_span": "主营产品类别有冷轧产品，铝、型材产品，铝合金锭，氧化铝，热轧卷，高精度铝箔等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电力/氧化铝-电解铝-铝加工全产业链布局的龙头企业",
+        "evidence_span": "一家电力/氧化铝-电解铝-铝加工全产业链布局的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内汽车铝板制造领军者",
+        "evidence_span": "公司是国内汽车铝板制造领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内首家乘用车四门两盖铝板生产商",
+        "evidence_span": "作为国内首家乘用车四门两盖铝板生产商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内唯一一家可以批量供货汽车板的企业",
+        "evidence_span": "南山铝业是国内唯一一家可以批量供货汽车板的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力",
+        "evidence_span": "公司主要产品包括上游产品电力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸汽",
+        "evidence_span": "公司主要产品包括上游产品电力、蒸汽"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氧化铝",
+        "evidence_span": "公司主要产品包括上游产品电力、蒸汽、氧化铝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝合金锭",
+        "evidence_span": "公司主要产品包括上游产品电力、蒸汽、氧化铝、铝合金锭"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝板带箔",
+        "evidence_span": "下游产品铝板带箔"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "挤压型材",
+        "evidence_span": "下游产品铝板带箔、挤压型材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压延材",
+        "evidence_span": "下游产品铝板带箔、挤压型材、压延材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大型机械机加工结构件",
+        "evidence_span": "下游产品铝板带箔、挤压型材、压延材及大型机械机加工结构件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车铝板",
+        "evidence_span": "南山铝业是国内唯一一家可以批量供货汽车板的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "航空板",
+        "evidence_span": "波音、空客、罗罗、中商飞等全球主流航企均是南山铝业航空板合作客户"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力电池箔",
+        "evidence_span": "公司动力电池箔产品布局高端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "型材",
+        "evidence_span": "型材方面，公司不断推进产业结构高端化"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "包装材料",
+        "evidence_span": "包装材料方面，公司与下游客户加强合作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "航空板材连轧生产线",
+        "evidence_span": "南山铝业航空板材连轧生产线由南山铝业股份有限公司投资建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "10-12μ高强电池箔",
+        "evidence_span": "目前主要供应的产品10-12μ高强电池箔"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "供货钠离子电池的技术能力",
+        "evidence_span": "公司已具备供货钠离子电池的技术能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "波音",
+        "evidence_span": "波音、空客、罗罗、中商飞等全球主流航企均是南山铝业航空板合作客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "空客",
+        "evidence_span": "波音、空客、罗罗、中商飞等全球主流航企均是南山铝业航空板合作客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "罗罗",
+        "evidence_span": "波音、空客、罗罗、中商飞等全球主流航企均是南山铝业航空板合作客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中商飞",
+        "evidence_span": "波音、空客、罗罗、中商飞等全球主流航企均是南山铝业航空板合作客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "加强与宁德时代、比亚迪、中创新航、国轩高科、亿纬锂能、欣旺达等国内龙头电池企业的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "加强与宁德时代、比亚迪、中创新航、国轩高科、亿纬锂能、欣旺达等国内龙头电池企业的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中创新航",
+        "evidence_span": "加强与宁德时代、比亚迪、中创新航、国轩高科、亿纬锂能、欣旺达等国内龙头电池企业的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国轩高科",
+        "evidence_span": "加强与宁德时代、比亚迪、中创新航、国轩高科、亿纬锂能、欣旺达等国内龙头电池企业的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿纬锂能",
+        "evidence_span": "加强与宁德时代、比亚迪、中创新航、国轩高科、亿纬锂能、欣旺达等国内龙头电池企业的合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欣旺达",
+        "evidence_span": "加强与宁德时代、比亚迪、中创新航、国轩高科、亿纬锂能、欣旺达等国内龙头电池企业的合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "航空板国产替代",
+        "evidence_span": "逐步实现航空板国产替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车轻量化发展",
+        "evidence_span": "助力汽车轻量化发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:40:58"
+}

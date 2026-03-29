@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "药械流通",
+      "evidence_span": "公司以“药械流通”为主业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "北京区域医疗机构直销",
+      "evidence_span": "以北京区域医疗机构直销为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "全国药品分销",
+      "evidence_span": "涵盖全国药品分销"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药零售",
+      "evidence_span": "医药零售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药工业",
+      "evidence_span": "医药工业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "口腔学术服务",
+      "evidence_span": "口腔学术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药物流",
+      "evidence_span": "医药物流"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "麻醉药品、一类精神药品全国性批发企业",
+      "evidence_span": "公司是全国三家麻醉药品、一类精神药品全国性批发企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "北京地区医药商业龙头",
+      "evidence_span": "国药股份资产重组奠定北京医药商业龙头地位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医药流通企业",
+      "evidence_span": "医药流通行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "麻醉药品分销",
+      "evidence_span": "麻精药品分销业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一类精神药品分销",
+      "evidence_span": "麻醉药品、一类精神药品全国性批发企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普通药品分销",
+      "evidence_span": "普通药品分销业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化学制药生产",
+      "evidence_span": "国瑞药业是一家以生产化学制药为主的国家高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特医食品",
+      "evidence_span": "国药特医主要专注于中国特医食品市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药物流服务",
+      "evidence_span": "第三方专业的医药物流服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "口腔无痛产品线",
+      "evidence_span": "口腔无痛产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "牙周黏膜产品线",
+      "evidence_span": "牙周黏膜产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "感控产品线",
+      "evidence_span": "感控产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "正畸美白产品线",
+      "evidence_span": "正畸美白产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DTP药品",
+      "evidence_span": "引进8个DTP相关药品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "血液制品分销",
+      "evidence_span": "公司血液制品业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "进口保税分销服务",
+      "evidence_span": "进口保税业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化转型",
+      "evidence_span": "公司数字化转型工作稳步推进"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京地区一、二、三级医院",
+      "evidence_span": "100%覆盖北京地区一、二、三级医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "基层医疗机构",
+      "evidence_span": "基层医疗覆盖超过4700家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "零售终端",
+      "evidence_span": "覆盖零售终端超过8万家门店"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全国500强连锁药店",
+      "evidence_span": "涵盖全国500强连锁"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "单体药店",
+      "evidence_span": "众多单体药店"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "二级分销商",
+      "evidence_span": "600多家二级分销商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全国麻精医疗客户",
+      "evidence_span": "辐射50000余家全国麻精医疗客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "麻药特许经营",
+      "evidence_span": "以麻药特许经营为核心"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "药械流通",
+        "evidence_span": "公司以“药械流通”为主业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "北京区域医疗机构直销",
+        "evidence_span": "以北京区域医疗机构直销为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "全国药品分销",
+        "evidence_span": "涵盖全国药品分销"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药零售",
+        "evidence_span": "医药零售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药工业",
+        "evidence_span": "医药工业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "口腔学术服务",
+        "evidence_span": "口腔学术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药物流",
+        "evidence_span": "医药物流"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "麻醉药品、一类精神药品全国性批发企业",
+        "evidence_span": "公司是全国三家麻醉药品、一类精神药品全国性批发企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "北京地区医药商业龙头",
+        "evidence_span": "国药股份资产重组奠定北京医药商业龙头地位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医药流通企业",
+        "evidence_span": "医药流通行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "麻醉药品分销",
+        "evidence_span": "麻精药品分销业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一类精神药品分销",
+        "evidence_span": "麻醉药品、一类精神药品全国性批发企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普通药品分销",
+        "evidence_span": "普通药品分销业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化学制药生产",
+        "evidence_span": "国瑞药业是一家以生产化学制药为主的国家高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特医食品",
+        "evidence_span": "国药特医主要专注于中国特医食品市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药物流服务",
+        "evidence_span": "第三方专业的医药物流服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "口腔无痛产品线",
+        "evidence_span": "口腔无痛产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "牙周黏膜产品线",
+        "evidence_span": "牙周黏膜产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "感控产品线",
+        "evidence_span": "感控产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "正畸美白产品线",
+        "evidence_span": "正畸美白产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DTP药品",
+        "evidence_span": "引进8个DTP相关药品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "血液制品分销",
+        "evidence_span": "公司血液制品业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "进口保税分销服务",
+        "evidence_span": "进口保税业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化转型",
+        "evidence_span": "公司数字化转型工作稳步推进"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京地区一、二、三级医院",
+        "evidence_span": "100%覆盖北京地区一、二、三级医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "基层医疗机构",
+        "evidence_span": "基层医疗覆盖超过4700家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "零售终端",
+        "evidence_span": "覆盖零售终端超过8万家门店"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全国500强连锁药店",
+        "evidence_span": "涵盖全国500强连锁"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "单体药店",
+        "evidence_span": "众多单体药店"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "二级分销商",
+        "evidence_span": "600多家二级分销商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全国麻精医疗客户",
+        "evidence_span": "辐射50000余家全国麻精医疗客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "麻药特许经营",
+        "evidence_span": "以麻药特许经营为核心"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:24:34"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:12:54", "result": {"chunk_id": "a648f042a604", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段描述2024年纸市场提价事件，包括多家公司发布涨价函和具体时间、价格调整，属于公司公告和市场动态，无静态知识。"}}

@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "热处理设备制造",
+      "evidence_span": "公司热处理主要业务涵盖了热处理设备制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "专业热处理加工服务",
+      "evidence_span": "公司热处理主要业务涵盖了专业热处理加工服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "热处理设备售后服务",
+      "evidence_span": "公司热处理主要业务涵盖了热处理设备售后服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "热处理工艺技术咨询服务",
+      "evidence_span": "公司热处理主要业务涵盖了热处理工艺技术咨询服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "互联网财税业务",
+      "evidence_span": "互联网财税业务板块专注于财税信息化领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "热处理综合解决方案提供商",
+      "evidence_span": "公司是国内领先的热处理综合解决方案提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧电子税务局专业服务商",
+      "evidence_span": "是智慧电子税务局专业服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区块链电子发票专业服务商",
+      "evidence_span": "区块链电子发票专业服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "AI智能咨询服务专业服务商",
+      "evidence_span": "AI智能咨询服务专业服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "税务热线咨询专业服务商",
+      "evidence_span": "税务热线咨询专业服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可控气氛热处理设备",
+      "evidence_span": "公司制造各类可控气氛热处理设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非气氛加热热处理设备",
+      "evidence_span": "非气氛加热热处理设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专业热处理加工服务",
+      "evidence_span": "公司提供专业热处理加工服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧电子税务局",
+      "evidence_span": "智慧电子税务局作为公司的拳头产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "征纳互动产品",
+      "evidence_span": "公司打造的征纳互动产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能咨询产品",
+      "evidence_span": "智能咨询产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "区块链平台",
+      "evidence_span": "区块链平台也进一步得到了省级政务单位和国资集团的充分验证"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字纳服产品",
+      "evidence_span": "数字纳服产品在市场覆盖面和新技术应用上具有行业领先性"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新商合规宝",
+      "evidence_span": "金财互联推出新合规宝产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "区块链电子发票技术",
+      "evidence_span": "该环节使用了金财互联自行研发的区块链电子发票技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "LMS智能热处理产线",
+      "evidence_span": "公司加强“LMS智能热处理产线”的推广应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "SCADA数据采集系统",
+      "evidence_span": "SCADA数据采集系统的推广应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能热处理工厂管理系统",
+      "evidence_span": "丰东热技术对智能热处理工厂管理系统（FMS）项目进行立项"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云计算",
+      "evidence_span": "运用“云计算”等新一代技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据",
+      "evidence_span": "运用“大数据”等新一代技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能",
+      "evidence_span": "运用“人工智能”等新一代技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链",
+      "evidence_span": "区块链在电子发票领域应用有着巨大的优势"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "税务机关",
+      "evidence_span": "面向税务机关提供项目开发、产品销售及服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "财税服务机构",
+      "evidence_span": "面向财税服务机构提供数字化解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "企业级客户",
+      "evidence_span": "面向企业级客户提供项目开发、产品销售及服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中小企业",
+      "evidence_span": "面向中小企业提供数字化解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "集团企业",
+      "evidence_span": "面向集团企业提供数字化解决方案"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电商平台",
+      "evidence_span": "公司与电商平台签订合同"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "线上电子商务经营者",
+      "evidence_span": "为线上电子商务经营者提供一站式的纳税服务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳达峰、碳中和",
+      "evidence_span": "在国家“碳达峰、碳中和”政策引领下，热处理行业正迎来新的发展机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "热处理设备制造",
+        "evidence_span": "公司热处理主要业务涵盖了热处理设备制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "专业热处理加工服务",
+        "evidence_span": "公司热处理主要业务涵盖了专业热处理加工服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "热处理设备售后服务",
+        "evidence_span": "公司热处理主要业务涵盖了热处理设备售后服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "热处理工艺技术咨询服务",
+        "evidence_span": "公司热处理主要业务涵盖了热处理工艺技术咨询服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "互联网财税业务",
+        "evidence_span": "互联网财税业务板块专注于财税信息化领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "热处理综合解决方案提供商",
+        "evidence_span": "公司是国内领先的热处理综合解决方案提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧电子税务局专业服务商",
+        "evidence_span": "是智慧电子税务局专业服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区块链电子发票专业服务商",
+        "evidence_span": "区块链电子发票专业服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "AI智能咨询服务专业服务商",
+        "evidence_span": "AI智能咨询服务专业服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "税务热线咨询专业服务商",
+        "evidence_span": "税务热线咨询专业服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可控气氛热处理设备",
+        "evidence_span": "公司制造各类可控气氛热处理设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非气氛加热热处理设备",
+        "evidence_span": "非气氛加热热处理设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专业热处理加工服务",
+        "evidence_span": "公司提供专业热处理加工服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧电子税务局",
+        "evidence_span": "智慧电子税务局作为公司的拳头产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "征纳互动产品",
+        "evidence_span": "公司打造的征纳互动产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能咨询产品",
+        "evidence_span": "智能咨询产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "区块链平台",
+        "evidence_span": "区块链平台也进一步得到了省级政务单位和国资集团的充分验证"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字纳服产品",
+        "evidence_span": "数字纳服产品在市场覆盖面和新技术应用上具有行业领先性"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新商合规宝",
+        "evidence_span": "金财互联推出新合规宝产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "区块链电子发票技术",
+        "evidence_span": "该环节使用了金财互联自行研发的区块链电子发票技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "LMS智能热处理产线",
+        "evidence_span": "公司加强“LMS智能热处理产线”的推广应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "SCADA数据采集系统",
+        "evidence_span": "SCADA数据采集系统的推广应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能热处理工厂管理系统",
+        "evidence_span": "丰东热技术对智能热处理工厂管理系统（FMS）项目进行立项"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云计算",
+        "evidence_span": "运用“云计算”等新一代技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据",
+        "evidence_span": "运用“大数据”等新一代技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能",
+        "evidence_span": "运用“人工智能”等新一代技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链",
+        "evidence_span": "区块链在电子发票领域应用有着巨大的优势"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "税务机关",
+        "evidence_span": "面向税务机关提供项目开发、产品销售及服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "财税服务机构",
+        "evidence_span": "面向财税服务机构提供数字化解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "企业级客户",
+        "evidence_span": "面向企业级客户提供项目开发、产品销售及服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中小企业",
+        "evidence_span": "面向中小企业提供数字化解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "集团企业",
+        "evidence_span": "面向集团企业提供数字化解决方案"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电商平台",
+        "evidence_span": "公司与电商平台签订合同"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "线上电子商务经营者",
+        "evidence_span": "为线上电子商务经营者提供一站式的纳税服务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳达峰、碳中和",
+        "evidence_span": "在国家“碳达峰、碳中和”政策引领下，热处理行业正迎来新的发展机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:32:34"
+}

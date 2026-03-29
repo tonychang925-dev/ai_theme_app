@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "f24e5ed53d38", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了中国星网预计发射时间的具体事件，但同时也提到了低轨卫星互联网星座和“中国版星链”的比喻，这些信息可能隐含卫星互联网类型或比较知识。"}}

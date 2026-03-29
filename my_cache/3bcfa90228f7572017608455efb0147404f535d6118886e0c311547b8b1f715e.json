@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "8d24858765cd", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述马斯克对特斯拉自动驾驶最新版本的言论，属于具体事件或新闻动态，不包含静态知识构建内容。"}}

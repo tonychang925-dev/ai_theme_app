@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "绿色银行",
+      "evidence_span": "着力打造“绿色银行、财富银行、投资银行”三张名片"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "财富银行",
+      "evidence_span": "着力打造“绿色银行、财富银行、投资银行”三张名片"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资银行",
+      "evidence_span": "着力打造“绿色银行、财富银行、投资银行”三张名片"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商行+投行",
+      "evidence_span": "以“商行+投行”战略为核心不断推进转型升级"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "绿色金融行业先行者",
+      "evidence_span": "公司是国内绿色金融行业先行者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色信贷产品",
+      "evidence_span": "推出了相关绿色信贷产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "理财业务",
+      "evidence_span": "理财业务做强做大"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产托管业务",
+      "evidence_span": "资产托管业务规模 14.93 万亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券投资基金托管",
+      "evidence_span": "证券投资基金托管规模 2.36 万亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信托产品托管",
+      "evidence_span": "信托产品托管规模保持全行业第二"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银行理财托管",
+      "evidence_span": "银行理财托管规模保持全行业第三"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色境外债承销",
+      "evidence_span": "绿色境外债承销规模 14.84 亿美元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色债券承销",
+      "evidence_span": "绿色债券承销规模同比增长 12.49%至 178.05 亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "投贷联动业务",
+      "evidence_span": "主要以投贷联动业务为主"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "绿色供应链",
+      "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "半导体",
+      "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "生物医药",
+      "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源",
+      "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "碳捕集",
+      "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "协作机器人",
+      "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "功率半导体",
+      "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色金融",
+      "evidence_span": "顺新能源周期大势，全面拥抱绿色资产"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "绿色银行",
+        "evidence_span": "着力打造“绿色银行、财富银行、投资银行”三张名片"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "财富银行",
+        "evidence_span": "着力打造“绿色银行、财富银行、投资银行”三张名片"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资银行",
+        "evidence_span": "着力打造“绿色银行、财富银行、投资银行”三张名片"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商行+投行",
+        "evidence_span": "以“商行+投行”战略为核心不断推进转型升级"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "绿色金融行业先行者",
+        "evidence_span": "公司是国内绿色金融行业先行者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色信贷产品",
+        "evidence_span": "推出了相关绿色信贷产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "理财业务",
+        "evidence_span": "理财业务做强做大"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产托管业务",
+        "evidence_span": "资产托管业务规模 14.93 万亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券投资基金托管",
+        "evidence_span": "证券投资基金托管规模 2.36 万亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信托产品托管",
+        "evidence_span": "信托产品托管规模保持全行业第二"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银行理财托管",
+        "evidence_span": "银行理财托管规模保持全行业第三"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色境外债承销",
+        "evidence_span": "绿色境外债承销规模 14.84 亿美元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色债券承销",
+        "evidence_span": "绿色债券承销规模同比增长 12.49%至 178.05 亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "投贷联动业务",
+        "evidence_span": "主要以投贷联动业务为主"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "绿色供应链",
+        "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "半导体",
+        "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "生物医药",
+        "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源",
+        "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "碳捕集",
+        "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "协作机器人",
+        "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "功率半导体",
+        "evidence_span": "深耕绿色供应链、半导体、生物医药、新能源、碳捕集、协作机器人、功率半导体等新兴行业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色金融",
+        "evidence_span": "顺新能源周期大势，全面拥抱绿色资产"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:15:02"
+}

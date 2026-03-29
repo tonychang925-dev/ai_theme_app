@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "5bb2f74f9969", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要描述一个具体事件（美光科技获得美国政府拨款和贷款），没有提供关于HBM本体的静态知识，属于时间性动态。"}}

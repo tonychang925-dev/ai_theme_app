@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:42:44", "result": {"chunk_id": "783e783365b6", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明国内上市分销企业的业务分类和被动元器件分销的特点（如信息化要求、毛利率、抗风险能力），不涉及具体事件或时间动态，是题材本体的稳定知识。"}}

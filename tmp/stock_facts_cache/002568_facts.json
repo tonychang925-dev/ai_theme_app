@@ -1,0 +1,219 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "预调酒业务",
+      "evidence_span": "开启预调酒业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "威士忌烈酒业务",
+      "evidence_span": "开辟威士忌烈酒新业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "预调酒行业绝对龙头",
+      "evidence_span": "百润为中国预调酒行业绝对龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "RIO预调鸡尾酒",
+      "evidence_span": "RIO预调鸡尾酒全面开拓市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微醺系列",
+      "evidence_span": "微醺系列为主力产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "经典系列",
+      "evidence_span": "经典系列为主力产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清爽系列",
+      "evidence_span": "推出清爽系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "强爽系列",
+      "evidence_span": "推出强爽系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻享系列",
+      "evidence_span": "轻享系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "本榨系列",
+      "evidence_span": "本榨系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "从减系列",
+      "evidence_span": "从减系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "夜狮系列",
+      "evidence_span": "夜狮系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "限定/联名/定制系列",
+      "evidence_span": "限定/联名/定制系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "梅酒产品",
+      "evidence_span": "推出梅酒产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "气泡水HEYPOP系列",
+      "evidence_span": "升级版气泡水HEYPOP系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "威士忌产品",
+      "evidence_span": "形成威士忌产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "麦芽威士忌酒",
+      "evidence_span": "打造麦芽威士忌酒"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "威士忌陈酿熟成技术",
+      "evidence_span": "推进麦芽威士忌陈酿熟成项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "黄酒桶陈酿技术",
+      "evidence_span": "创造性使用黄酒桶"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "预调酒行业增长",
+      "evidence_span": "预调酒行业有望维持较快增长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "威士忌市场发展",
+      "evidence_span": "威士忌市场发展空间较大"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "预调酒业务",
+        "evidence_span": "开启预调酒业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "威士忌烈酒业务",
+        "evidence_span": "开辟威士忌烈酒新业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "预调酒行业绝对龙头",
+        "evidence_span": "百润为中国预调酒行业绝对龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "RIO预调鸡尾酒",
+        "evidence_span": "RIO预调鸡尾酒全面开拓市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微醺系列",
+        "evidence_span": "微醺系列为主力产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "经典系列",
+        "evidence_span": "经典系列为主力产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清爽系列",
+        "evidence_span": "推出清爽系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "强爽系列",
+        "evidence_span": "推出强爽系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻享系列",
+        "evidence_span": "轻享系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "本榨系列",
+        "evidence_span": "本榨系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "从减系列",
+        "evidence_span": "从减系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "夜狮系列",
+        "evidence_span": "夜狮系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "限定/联名/定制系列",
+        "evidence_span": "限定/联名/定制系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "梅酒产品",
+        "evidence_span": "推出梅酒产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "气泡水HEYPOP系列",
+        "evidence_span": "升级版气泡水HEYPOP系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "威士忌产品",
+        "evidence_span": "形成威士忌产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "麦芽威士忌酒",
+        "evidence_span": "打造麦芽威士忌酒"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "威士忌陈酿熟成技术",
+        "evidence_span": "推进麦芽威士忌陈酿熟成项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "黄酒桶陈酿技术",
+        "evidence_span": "创造性使用黄酒桶"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "预调酒行业增长",
+        "evidence_span": "预调酒行业有望维持较快增长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "威士忌市场发展",
+        "evidence_span": "威士忌市场发展空间较大"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:38:01"
+}

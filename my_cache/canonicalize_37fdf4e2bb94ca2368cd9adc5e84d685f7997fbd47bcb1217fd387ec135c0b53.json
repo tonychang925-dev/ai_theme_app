@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:08:28", "result": {"span_uid": "b9d9e08225fa", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "无人装备协同作战", "stability": "low", "reason": "该片段是具体战争事件（迫使投降），高度依赖新闻上下文，无法形成稳定、独立的知识表达，不适合入库。"}}

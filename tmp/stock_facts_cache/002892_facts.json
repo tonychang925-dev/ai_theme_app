@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "微特电机研发",
+      "evidence_span": "中国最大的微特电机研发、制造和出口企业之一"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "微特电机制造",
+      "evidence_span": "中国最大的微特电机研发、制造和出口企业之一"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "微特电机出口",
+      "evidence_span": "中国最大的微特电机研发、制造和出口企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "罩极电机龙头",
+      "evidence_span": "罩极电机龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "微特电机国内龙头",
+      "evidence_span": "微特电机国内龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "罩极电机",
+      "evidence_span": "主要产品包括罩极电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "串激电机",
+      "evidence_span": "主要产品包括罩极电机、串激电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直流无刷电机",
+      "evidence_span": "主要产品包括罩极电机、串激电机、直流无刷电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "伺服系统",
+      "evidence_span": "主要产品包括罩极电机、串激电机、直流无刷电机、伺服系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "步进电机",
+      "evidence_span": "主要产品包括罩极电机、串激电机、直流无刷电机、伺服系统、步进电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密泵",
+      "evidence_span": "主要产品包括罩极电机、串激电机、直流无刷电机、伺服系统、步进电机、精密泵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能驱控系统",
+      "evidence_span": "为全球高端客户提供电机及智能驱控系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单相罩极电机",
+      "evidence_span": "单相罩极电机（含贯流风机）是公司的主打产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贯流风机",
+      "evidence_span": "单相罩极电机（含贯流风机）是公司的主打产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电机研发能力",
+      "evidence_span": "在电机研发能力和品质保障上有明显的优势"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "伊莱克斯",
+      "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "惠而浦",
+      "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通用电气",
+      "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿瑟力克",
+      "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "松下",
+      "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美的",
+      "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海信",
+      "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海康威视",
+      "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广电运通",
+      "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苹果",
+      "evidence_span": "开拓了苹果、华为、富士康、宁德时代、海康威视等一批优质客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "开拓了苹果、华为、富士康、宁德时代、海康威视等一批优质客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "富士康",
+      "evidence_span": "开拓了苹果、华为、富士康、宁德时代、海康威视等一批优质客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "开拓了苹果、华为、富士康、宁德时代、海康威视等一批优质客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "智能电机及驱控系统领域的高端产品及技术被外企垄断，属于国内工业4.0“卡脖子”领域，相关瓶颈亟待突破，进口替代前景巨大"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "微特电机研发",
+        "evidence_span": "中国最大的微特电机研发、制造和出口企业之一"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "微特电机制造",
+        "evidence_span": "中国最大的微特电机研发、制造和出口企业之一"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "微特电机出口",
+        "evidence_span": "中国最大的微特电机研发、制造和出口企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "罩极电机龙头",
+        "evidence_span": "罩极电机龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "微特电机国内龙头",
+        "evidence_span": "微特电机国内龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "罩极电机",
+        "evidence_span": "主要产品包括罩极电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "串激电机",
+        "evidence_span": "主要产品包括罩极电机、串激电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直流无刷电机",
+        "evidence_span": "主要产品包括罩极电机、串激电机、直流无刷电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "伺服系统",
+        "evidence_span": "主要产品包括罩极电机、串激电机、直流无刷电机、伺服系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "步进电机",
+        "evidence_span": "主要产品包括罩极电机、串激电机、直流无刷电机、伺服系统、步进电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密泵",
+        "evidence_span": "主要产品包括罩极电机、串激电机、直流无刷电机、伺服系统、步进电机、精密泵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能驱控系统",
+        "evidence_span": "为全球高端客户提供电机及智能驱控系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单相罩极电机",
+        "evidence_span": "单相罩极电机（含贯流风机）是公司的主打产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贯流风机",
+        "evidence_span": "单相罩极电机（含贯流风机）是公司的主打产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电机研发能力",
+        "evidence_span": "在电机研发能力和品质保障上有明显的优势"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "伊莱克斯",
+        "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "惠而浦",
+        "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通用电气",
+        "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿瑟力克",
+        "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "松下",
+        "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美的",
+        "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海信",
+        "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海康威视",
+        "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广电运通",
+        "evidence_span": "成为伊莱克斯（Electrolux）、惠而浦（Whirlpool）、通用电气（GE）、阿瑟力克（Arcelik）、松下（Panasonic）、美的、海信、海康威视、广电运通等国内外知名家电企业的重要供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苹果",
+        "evidence_span": "开拓了苹果、华为、富士康、宁德时代、海康威视等一批优质客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "开拓了苹果、华为、富士康、宁德时代、海康威视等一批优质客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "富士康",
+        "evidence_span": "开拓了苹果、华为、富士康、宁德时代、海康威视等一批优质客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "开拓了苹果、华为、富士康、宁德时代、海康威视等一批优质客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "智能电机及驱控系统领域的高端产品及技术被外企垄断，属于国内工业4.0“卡脖子”领域，相关瓶颈亟待突破，进口替代前景巨大"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:18:14"
+}

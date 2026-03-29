@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:29:44", "result": {"chunk_id": "13bb6584038e", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态说明华为智能汽车解决方案业务的成立时间、目标和定位，是纯静态的定义和机制说明，不涉及事件或时间性动态。"}}

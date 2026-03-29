@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:34:19", "result": {"span_uid": "86fd67456eb4", "action": "rewrite", "canonical_text": "国家金融监管总局发布防范新型电信网络诈骗的风险提示，其中包含“AI换脸拟声”类诈骗。", "final_type": "signal", "final_role": "风险提示内容", "stability": "medium", "reason": "原文本为具体事件（发布风险提示），改写为去事件化、可独立成立的知识表达，体现监管动态信号。"}}

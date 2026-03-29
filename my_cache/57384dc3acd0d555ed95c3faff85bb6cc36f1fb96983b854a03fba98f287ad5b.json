@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "384dde681411", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述中国国航和南航接收首架C919飞机的事件，标志着多用户运营新阶段，是具体的事件动态。"}}

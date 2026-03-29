@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "f9c76d16965a", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落包含发那科机器人在工业机器人领域的静态知识（如全球地位、与ABB等并称），但混合了上海电气的收购事件和公司公告，因此作为知识候选需要进一步裁决。"}}

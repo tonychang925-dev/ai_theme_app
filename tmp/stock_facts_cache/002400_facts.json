@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "整合营销服务",
+      "evidence_span": "不断提升整合营销能力"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "出海营销",
+      "evidence_span": "出海营销已经成为公司重要的发展方向之一"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "社会化营销",
+      "evidence_span": "打造省广在社会化营销赛道的新增长曲线"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大型综合性广告公司",
+      "evidence_span": "中国本土最优秀的大型综合性广告公司之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧营销生态平台运营商",
+      "evidence_span": "以“智慧营销生态平台运营商”的角色整合价值链"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大数据驱动的全产业链全营销平台",
+      "evidence_span": "着力打造大数据技术驱动的全产业链全营销平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧营销产品矩阵",
+      "evidence_span": "不断优化智慧营销产品矩阵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大数据用户画像云平台",
+      "evidence_span": "自建大数据用户画像云平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整合营销服务",
+      "evidence_span": "为客户提供全方位营销服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据技术驱动",
+      "evidence_span": "大数据技术驱动的全产业链全营销平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "IP+MC+云技术的新营销发展范式",
+      "evidence_span": "依托于IP+MC+云技术的新营销发展范式"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中型客户",
+      "evidence_span": "以中型客户为支撑基础"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大品牌客户",
+      "evidence_span": "大品牌客户为核心突破点"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源汽车头部客户",
+      "evidence_span": "在新能源汽车板块，也收获了部分头部客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国际性客户",
+      "evidence_span": "拓展了部分国际性客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "移动互联网客户",
+      "evidence_span": "新兴行业和移动互联网客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "大数据平台加大业绩弹性",
+      "evidence_span": "大数据平台加大业绩弹性"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "整合营销服务",
+        "evidence_span": "不断提升整合营销能力"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "出海营销",
+        "evidence_span": "出海营销已经成为公司重要的发展方向之一"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "社会化营销",
+        "evidence_span": "打造省广在社会化营销赛道的新增长曲线"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大型综合性广告公司",
+        "evidence_span": "中国本土最优秀的大型综合性广告公司之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧营销生态平台运营商",
+        "evidence_span": "以“智慧营销生态平台运营商”的角色整合价值链"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大数据驱动的全产业链全营销平台",
+        "evidence_span": "着力打造大数据技术驱动的全产业链全营销平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧营销产品矩阵",
+        "evidence_span": "不断优化智慧营销产品矩阵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大数据用户画像云平台",
+        "evidence_span": "自建大数据用户画像云平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整合营销服务",
+        "evidence_span": "为客户提供全方位营销服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据技术驱动",
+        "evidence_span": "大数据技术驱动的全产业链全营销平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "IP+MC+云技术的新营销发展范式",
+        "evidence_span": "依托于IP+MC+云技术的新营销发展范式"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中型客户",
+        "evidence_span": "以中型客户为支撑基础"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大品牌客户",
+        "evidence_span": "大品牌客户为核心突破点"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源汽车头部客户",
+        "evidence_span": "在新能源汽车板块，也收获了部分头部客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国际性客户",
+        "evidence_span": "拓展了部分国际性客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "移动互联网客户",
+        "evidence_span": "新兴行业和移动互联网客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "大数据平台加大业绩弹性",
+        "evidence_span": "大数据平台加大业绩弹性"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:36:07"
+}

@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "教育业务",
+      "evidence_span": "公司主营业务主要分为三大板块：1、教育业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "游戏业务",
+      "evidence_span": "公司主营业务主要分为三大板块：2、游戏业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "户外广告业务",
+      "evidence_span": "公司主营业务主要分为三大板块：3、以竞拍、自建等方式获取经营户外广告业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "学校教育",
+      "evidence_span": "教育业务：学校教育、智慧教育和课外培训"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧教育",
+      "evidence_span": "教育业务：学校教育、智慧教育和课外培训"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "课外培训",
+      "evidence_span": "教育业务：学校教育、智慧教育和课外培训"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自研游戏产品",
+      "evidence_span": "游戏业务：自研游戏产品、与游戏运营平台联合运营游戏项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "联合运营游戏项目",
+      "evidence_span": "游戏业务：自研游戏产品、与游戏运营平台联合运营游戏项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户外广告业务",
+      "evidence_span": "以竞拍、自建等方式获取经营户外广告业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "楼宇租赁",
+      "evidence_span": "并同时兼顾楼宇租赁及小额贷款业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小额贷款业务",
+      "evidence_span": "并同时兼顾楼宇租赁及小额贷款业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "区域化教育服务类支撑项目",
+      "evidence_span": "生学教育持续加码区域化教育服务类支撑项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生命教育产品线",
+      "evidence_span": "公司重点打造“生命教育”产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字文化产权交易平台",
+      "evidence_span": "成都文化产权交易所正式启动全国首家数字文化产权交易平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链技术",
+      "evidence_span": "未来或将结合区块链等技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "成都传媒集团",
+      "evidence_span": "公司背靠成都传媒集团和国家图书馆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家图书馆",
+      "evidence_span": "公司背靠成都传媒集团和国家图书馆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各大公共和民间博物馆",
+      "evidence_span": "依托各大公共和民间博物馆、文旅部下属各大文化机构等推进文交所平台发展"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "文旅部下属各大文化机构",
+      "evidence_span": "依托各大公共和民间博物馆、文旅部下属各大文化机构等推进文交所平台发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字经济",
+      "evidence_span": "以“智慧教育、数字文创、现代传媒”等新经济领域为重点，大力发展数字经济"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "教育业务",
+        "evidence_span": "公司主营业务主要分为三大板块：1、教育业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "游戏业务",
+        "evidence_span": "公司主营业务主要分为三大板块：2、游戏业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "户外广告业务",
+        "evidence_span": "公司主营业务主要分为三大板块：3、以竞拍、自建等方式获取经营户外广告业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "学校教育",
+        "evidence_span": "教育业务：学校教育、智慧教育和课外培训"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧教育",
+        "evidence_span": "教育业务：学校教育、智慧教育和课外培训"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "课外培训",
+        "evidence_span": "教育业务：学校教育、智慧教育和课外培训"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自研游戏产品",
+        "evidence_span": "游戏业务：自研游戏产品、与游戏运营平台联合运营游戏项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "联合运营游戏项目",
+        "evidence_span": "游戏业务：自研游戏产品、与游戏运营平台联合运营游戏项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户外广告业务",
+        "evidence_span": "以竞拍、自建等方式获取经营户外广告业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "楼宇租赁",
+        "evidence_span": "并同时兼顾楼宇租赁及小额贷款业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小额贷款业务",
+        "evidence_span": "并同时兼顾楼宇租赁及小额贷款业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "区域化教育服务类支撑项目",
+        "evidence_span": "生学教育持续加码区域化教育服务类支撑项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生命教育产品线",
+        "evidence_span": "公司重点打造“生命教育”产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字文化产权交易平台",
+        "evidence_span": "成都文化产权交易所正式启动全国首家数字文化产权交易平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链技术",
+        "evidence_span": "未来或将结合区块链等技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "成都传媒集团",
+        "evidence_span": "公司背靠成都传媒集团和国家图书馆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家图书馆",
+        "evidence_span": "公司背靠成都传媒集团和国家图书馆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各大公共和民间博物馆",
+        "evidence_span": "依托各大公共和民间博物馆、文旅部下属各大文化机构等推进文交所平台发展"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "文旅部下属各大文化机构",
+        "evidence_span": "依托各大公共和民间博物馆、文旅部下属各大文化机构等推进文交所平台发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字经济",
+        "evidence_span": "以“智慧教育、数字文创、现代传媒”等新经济领域为重点，大力发展数字经济"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:43:42"
+}

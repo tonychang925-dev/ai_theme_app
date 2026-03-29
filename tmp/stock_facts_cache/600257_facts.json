@@ -1,0 +1,184 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "健康产品的生产",
+      "evidence_span": "板块一是健康产品的生产与销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售业务",
+      "evidence_span": "板块一是健康产品的生产与销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "健康医疗服务业务",
+      "evidence_span": "板块二是以康复护理医院运营管理的健康医疗服务业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "健康产品与健康医疗服务提供商",
+      "evidence_span": "以健康产品+健康医疗服务为发展战略"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "淡水鱼类及相关水产品的养殖、加工和销售",
+      "evidence_span": "淡水鱼类及相关水产品的养殖、加工和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "白酒产品的生产与销售",
+      "evidence_span": "白酒产品的生产与销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "药品、保健品、医疗器械等健康产品的连锁零售及批发",
+      "evidence_span": "药品、保健品、医疗器械等健康产品的连锁零售及批发业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "康复护理医疗服务",
+      "evidence_span": "康复护理医疗服务业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预制菜品",
+      "evidence_span": "公司的预制菜品主要有剁椒鳙鱼头、剁椒鲢鱼头、跳跳蛙、火山烤鱼、水煮黑鱼片、酸菜鱼片、荷田小龙虾系列、藕田小龙虾系列、麻辣QQ龙虾尾、吮指虾尾等预制菜品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大水面净水渔业水环境治理技术",
+      "evidence_span": "大水面净水渔业水环境治理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "德山酒古法酿造技艺",
+      "evidence_span": "采用独特的德山酒古法酿造技艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "淡水鱼深加工关键技术",
+      "evidence_span": "淡水鱼深加工关键技术研究与示范获湖南省科学技术进步奖一等奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "淡水鱼类远缘杂交关键技术",
+      "evidence_span": "淡水鱼类远缘杂交关键技术获得国家科技进步二等奖"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本土医疗卫生机构",
+      "evidence_span": "通过与本土医疗卫生机构合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "第三终端药房及诊所",
+      "evidence_span": "第三终端药房及诊所"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全国众多商业公司",
+      "evidence_span": "全国众多商业公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型零售连锁公司",
+      "evidence_span": "大型零售连锁公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "大健康产业升级转型",
+      "evidence_span": "实现向大健康产业升级转型"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "健康产品的生产与销售业务",
+        "evidence_span": "板块一是健康产品的生产与销售业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "健康医疗服务业务",
+        "evidence_span": "板块二是以康复护理医院运营管理的健康医疗服务业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "健康产品与健康医疗服务提供商",
+        "evidence_span": "以健康产品+健康医疗服务为发展战略"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "淡水鱼类及相关水产品的养殖、加工和销售",
+        "evidence_span": "淡水鱼类及相关水产品的养殖、加工和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "白酒产品的生产与销售",
+        "evidence_span": "白酒产品的生产与销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "药品、保健品、医疗器械等健康产品的连锁零售及批发",
+        "evidence_span": "药品、保健品、医疗器械等健康产品的连锁零售及批发业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "康复护理医疗服务",
+        "evidence_span": "康复护理医疗服务业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预制菜品",
+        "evidence_span": "公司的预制菜品主要有剁椒鳙鱼头、剁椒鲢鱼头、跳跳蛙、火山烤鱼、水煮黑鱼片、酸菜鱼片、荷田小龙虾系列、藕田小龙虾系列、麻辣QQ龙虾尾、吮指虾尾等预制菜品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大水面净水渔业水环境治理技术",
+        "evidence_span": "大水面净水渔业水环境治理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "德山酒古法酿造技艺",
+        "evidence_span": "采用独特的德山酒古法酿造技艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "淡水鱼深加工关键技术",
+        "evidence_span": "淡水鱼深加工关键技术研究与示范获湖南省科学技术进步奖一等奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "淡水鱼类远缘杂交关键技术",
+        "evidence_span": "淡水鱼类远缘杂交关键技术获得国家科技进步二等奖"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本土医疗卫生机构",
+        "evidence_span": "通过与本土医疗卫生机构合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "第三终端药房及诊所",
+        "evidence_span": "第三终端药房及诊所"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全国众多商业公司",
+        "evidence_span": "全国众多商业公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型零售连锁公司",
+        "evidence_span": "大型零售连锁公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "大健康产业升级转型",
+        "evidence_span": "实现向大健康产业升级转型"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:47:09"
+}

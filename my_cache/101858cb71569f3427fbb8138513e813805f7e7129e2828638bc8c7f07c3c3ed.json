@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:01:57", "result": {"chunk_id": "82979fc41505", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段是华为的官方静态介绍，包括创立时间、业务定位、员工规模和服务范围，纯属定义和核心构成，无事件信息。"}}

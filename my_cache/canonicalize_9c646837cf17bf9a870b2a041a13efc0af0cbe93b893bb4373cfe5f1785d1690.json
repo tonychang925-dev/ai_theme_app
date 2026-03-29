@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:35:49", "result": {"span_uid": "b5b541a2d65b", "action": "keep", "canonical_text": "空客天津总装线创造大量高端就业岗位，并吸引全球顶尖航空人才汇聚天津，形成人才高地。", "final_type": "signal", "final_role": "人才集聚效应", "stability": "high", "reason": "原文相对稳定，但去掉“第二条总装线将”等未来时态和具体服务业列举，使其更通用。"}}

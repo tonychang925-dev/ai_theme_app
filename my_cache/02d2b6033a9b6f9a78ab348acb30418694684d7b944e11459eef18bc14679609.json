@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "19d464717a30", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述俄罗斯和美国领导人之间的言论和外交动态，涉及最后通牒和战争威胁，但没有提供关于陆军本身的静态知识或核心构成，与题材本体无关。"}}

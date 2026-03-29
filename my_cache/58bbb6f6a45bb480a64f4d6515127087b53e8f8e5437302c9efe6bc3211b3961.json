@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "d34d422bd2fd", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述了一个具体军事事件（南部战区在南海黄岩岛附近组织联合战巡），包含明确日期和动态活动，主要用于新闻报道，不涉及军工题材的静态知识构建。"}}

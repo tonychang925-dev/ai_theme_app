@@ -1,0 +1,71 @@
+{
+  "must": [
+    "芯片",
+    "服务器",
+    "AI芯片昇腾910D",
+    "先进封装",
+    "华为"
+  ],
+  "should": [
+    "一体机",
+    "软硬件系统",
+    "大模型",
+    "国产框架原生大模型",
+    "国产硬件平台",
+    "中国信息通信研究院",
+    "华为云",
+    "盛合晶微",
+    "哈勃投资",
+    "桥接技术",
+    "多芯片封装整合",
+    "HBM技术"
+  ],
+  "not": [
+    "美国政府",
+    "台积电",
+    "南京厂",
+    "验证最终用户",
+    "VEU地位",
+    "申请许可",
+    "采购美系半导体设备",
+    "三星"
+  ],
+  "evidence_refs": [
+    {
+      "term": "芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "芯片"
+    },
+    {
+      "term": "服务器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "服务器"
+    },
+    {
+      "term": "AI芯片昇腾910D",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "AI芯片昇腾910D"
+    },
+    {
+      "term": "先进封装",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "先进封装"
+    },
+    {
+      "term": "华为",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "华为"
+    }
+  ],
+  "subject_id": "9028660",
+  "quality": "medium",
+  "generated_at": "2026-03-10T11:57:10",
+  "semantic_type": "技术突破与产业链协同",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

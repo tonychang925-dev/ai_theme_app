@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:00:08", "result": {"span_uid": "d048ff0cd06f", "action": "keep", "canonical_text": "两轮车指的是自行车、摩托车、两轮电动车等，是日常生活中的休闲及交通工具。", "final_type": "core", "final_role": "基本定义", "stability": "high", "reason": "该片段直接定义了两轮车的基本概念和构成，属于核心本体知识，稳定且可独立成立，无需改写。"}}

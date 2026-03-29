@@ -1,0 +1,68 @@
+{
+  "must": [
+    "支持突破高端训练芯片",
+    "端侧推理芯片",
+    "人工智能服务器",
+    "进口芯片",
+    "人工智能芯片"
+  ],
+  "should": [
+    "远程关闭",
+    "许可锁定",
+    "追踪定位",
+    "使用监测",
+    "使用限制",
+    "远程更新",
+    "地理定位",
+    "硬件记录",
+    "片上治理机制",
+    "高速互联",
+    "智算云操作系统",
+    "出口管制政策"
+  ],
+  "not": [
+    "英伟达公司",
+    "违反反垄断法",
+    "市场监管总局",
+    "实施进一步调查",
+    "DeepSeek",
+    "玉渊谭天",
+    "美国给芯片安后门",
+    "H20芯片"
+  ],
+  "evidence_refs": [
+    {
+      "term": "支持突破高端训练芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "支持突破高端训练芯片"
+    },
+    {
+      "term": "端侧推理芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "端侧推理芯片"
+    },
+    {
+      "term": "人工智能服务器",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工智能服务器"
+    },
+    {
+      "term": "进口芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "进口芯片"
+    },
+    {
+      "term": "人工智能芯片",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "人工智能芯片"
+    }
+  ],
+  "subject_id": "9055378",
+  "quality": "medium",
+  "generated_at": "2026-03-09T20:18:58"
+}

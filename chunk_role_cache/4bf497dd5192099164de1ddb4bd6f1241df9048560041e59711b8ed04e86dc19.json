@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "ccd1050a9f6b", "label": "pure_event", "confidence": 0.8, "ontology_value": "low", "reason": "该段落报告美国国际贸易委员会对特定半导体设备发布终裁和措施的具体事件，包括日期、调查编码和处罚细节，属于监管进展，不提供题材定义或稳定知识。"}}

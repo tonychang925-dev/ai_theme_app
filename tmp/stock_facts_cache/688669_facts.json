@@ -1,0 +1,449 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "化工原料",
+      "evidence_span": "主营业务为化工原料和化工新材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化工新材料",
+      "evidence_span": "主营业务为化工原料和化工新材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高性能塑料及树脂制造商",
+      "evidence_span": "国内具备差异化竞争优势的高性能塑料及树脂制造商之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新材料高新技术企业",
+      "evidence_span": "公司系一家拥有核心原创技术及专利的新材料高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阻燃剂",
+      "evidence_span": "化工原料包括阻燃剂、磷化学产品、液化石油气产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷化学产品",
+      "evidence_span": "化工原料包括阻燃剂、磷化学产品、液化石油气产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液化石油气产品",
+      "evidence_span": "化工原料包括阻燃剂、磷化学产品、液化石油气产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "改性塑料粒子",
+      "evidence_span": "化工新材料包括改性塑料粒子及塑料制品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "塑料制品",
+      "evidence_span": "化工新材料包括改性塑料粒子及塑料制品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "EPP（发泡聚丙烯）",
+      "evidence_span": "主要建设内容为改性塑料粒子、EPP（发泡聚丙烯）、智能保温箱及汽车零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能保温箱",
+      "evidence_span": "主要建设内容为改性塑料粒子、EPP（发泡聚丙烯）、智能保温箱及汽车零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车零部件",
+      "evidence_span": "主要建设内容为改性塑料粒子、EPP（发泡聚丙烯）、智能保温箱及汽车零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无卤阻燃剂",
+      "evidence_span": "设计年产能5万吨无卤阻燃剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "聚苯乙烯",
+      "evidence_span": "建设内容为年产20万吨聚苯乙烯及中试实验中心"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液晶显示器导光板",
+      "evidence_span": "液晶显示器导光板、扩散板扩产项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "扩散板",
+      "evidence_span": "液晶显示器导光板、扩散板扩产项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "五氧化二磷",
+      "evidence_span": "项目设计产能2万吨五氧化二磷和10万吨多聚磷酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多聚磷酸",
+      "evidence_span": "项目设计产能2万吨五氧化二磷和10万吨多聚磷酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑模架租赁",
+      "evidence_span": "通过开展建筑模架、EPP循环保温箱和PP循环中空板包装箱的租赁业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "EPP循环保温箱租赁",
+      "evidence_span": "通过开展建筑模架、EPP循环保温箱和PP循环中空板包装箱的租赁业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PP循环中空板包装箱租赁",
+      "evidence_span": "通过开展建筑模架、EPP循环保温箱和PP循环中空板包装箱的租赁业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PS扩散板",
+      "evidence_span": "PS扩散板是公司的主要改性塑料产品之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无卤阻燃剂化学合成与复配应用技术",
+      "evidence_span": "核心技术，包括无卤阻燃剂化学合成与复配应用技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "阻燃改性塑料制备技术",
+      "evidence_span": "核心技术，包括无卤阻燃剂化学合成与复配应用技术、阻燃改性塑料制备技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "功能性高分子材料技术",
+      "evidence_span": "核心技术，包括无卤阻燃剂化学合成与复配应用技术、阻燃改性塑料制备技术、功能性高分子材料技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "AkzoNobel（阿克苏诺贝尔）",
+      "evidence_span": "受到国际知名化工企业AkzoNobel（阿克苏诺贝尔）的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "PPG（庞贝捷）",
+      "evidence_span": "受到国际知名化工企业AkzoNobel（阿克苏诺贝尔）、PPG（庞贝捷）的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Sika（西卡）",
+      "evidence_span": "受到国际知名化工企业AkzoNobel（阿克苏诺贝尔）、PPG（庞贝捷）、Sika（西卡）等的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天赐材料",
+      "evidence_span": "高纯度多聚磷酸产品得到天赐材料认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "力升集团",
+      "evidence_span": "与力升集团、中裕电器等建立了长期稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中裕电器",
+      "evidence_span": "与力升集团、中裕电器等建立了长期稳定合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美的",
+      "evidence_span": "电子电器类粒子得到国内知名家电品牌美的、格力、格兰仕的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "格力",
+      "evidence_span": "电子电器类粒子得到国内知名家电品牌美的、格力、格兰仕的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "格兰仕",
+      "evidence_span": "电子电器类粒子得到国内知名家电品牌美的、格力、格兰仕的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日产",
+      "evidence_span": "汽车类粒子及制品进入日产、大众、小鹏、蔚来等国内外知名企业的供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "汽车类粒子及制品进入日产、大众、小鹏、蔚来等国内外知名企业的供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏",
+      "evidence_span": "汽车类粒子及制品进入日产、大众、小鹏、蔚来等国内外知名企业的供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "汽车类粒子及制品进入日产、大众、小鹏、蔚来等国内外知名企业的供应链体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国三星电子",
+      "evidence_span": "公司成为韩国三星电子、韩国LGE等国际知名企业PS扩散板全球核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韩国LGE",
+      "evidence_span": "公司成为韩国三星电子、韩国LGE等国际知名企业PS扩散板全球核心供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海信",
+      "evidence_span": "公司成为韩国三星电子、韩国LGE、海信等国际知名企业PS扩散板全球核心供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "可循环材料",
+      "evidence_span": "可循环材料及新能源材料成长空间广阔"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源材料",
+      "evidence_span": "可循环材料及新能源材料成长空间广阔"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "可循环包装业务",
+      "evidence_span": "废旧物资循环利用指导意见出台，利好公司可循环包装业务推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "化工原料",
+        "evidence_span": "主营业务为化工原料和化工新材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化工新材料",
+        "evidence_span": "主营业务为化工原料和化工新材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高性能塑料及树脂制造商",
+        "evidence_span": "国内具备差异化竞争优势的高性能塑料及树脂制造商之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新材料高新技术企业",
+        "evidence_span": "公司系一家拥有核心原创技术及专利的新材料高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阻燃剂",
+        "evidence_span": "化工原料包括阻燃剂、磷化学产品、液化石油气产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷化学产品",
+        "evidence_span": "化工原料包括阻燃剂、磷化学产品、液化石油气产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液化石油气产品",
+        "evidence_span": "化工原料包括阻燃剂、磷化学产品、液化石油气产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "改性塑料粒子",
+        "evidence_span": "化工新材料包括改性塑料粒子及塑料制品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "塑料制品",
+        "evidence_span": "化工新材料包括改性塑料粒子及塑料制品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "EPP（发泡聚丙烯）",
+        "evidence_span": "主要建设内容为改性塑料粒子、EPP（发泡聚丙烯）、智能保温箱及汽车零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能保温箱",
+        "evidence_span": "主要建设内容为改性塑料粒子、EPP（发泡聚丙烯）、智能保温箱及汽车零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车零部件",
+        "evidence_span": "主要建设内容为改性塑料粒子、EPP（发泡聚丙烯）、智能保温箱及汽车零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无卤阻燃剂",
+        "evidence_span": "设计年产能5万吨无卤阻燃剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "聚苯乙烯",
+        "evidence_span": "建设内容为年产20万吨聚苯乙烯及中试实验中心"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液晶显示器导光板",
+        "evidence_span": "液晶显示器导光板、扩散板扩产项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "扩散板",
+        "evidence_span": "液晶显示器导光板、扩散板扩产项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "五氧化二磷",
+        "evidence_span": "项目设计产能2万吨五氧化二磷和10万吨多聚磷酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多聚磷酸",
+        "evidence_span": "项目设计产能2万吨五氧化二磷和10万吨多聚磷酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑模架租赁",
+        "evidence_span": "通过开展建筑模架、EPP循环保温箱和PP循环中空板包装箱的租赁业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "EPP循环保温箱租赁",
+        "evidence_span": "通过开展建筑模架、EPP循环保温箱和PP循环中空板包装箱的租赁业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PP循环中空板包装箱租赁",
+        "evidence_span": "通过开展建筑模架、EPP循环保温箱和PP循环中空板包装箱的租赁业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PS扩散板",
+        "evidence_span": "PS扩散板是公司的主要改性塑料产品之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无卤阻燃剂化学合成与复配应用技术",
+        "evidence_span": "核心技术，包括无卤阻燃剂化学合成与复配应用技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "阻燃改性塑料制备技术",
+        "evidence_span": "核心技术，包括无卤阻燃剂化学合成与复配应用技术、阻燃改性塑料制备技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "功能性高分子材料技术",
+        "evidence_span": "核心技术，包括无卤阻燃剂化学合成与复配应用技术、阻燃改性塑料制备技术、功能性高分子材料技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "AkzoNobel（阿克苏诺贝尔）",
+        "evidence_span": "受到国际知名化工企业AkzoNobel（阿克苏诺贝尔）的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "PPG（庞贝捷）",
+        "evidence_span": "受到国际知名化工企业AkzoNobel（阿克苏诺贝尔）、PPG（庞贝捷）的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Sika（西卡）",
+        "evidence_span": "受到国际知名化工企业AkzoNobel（阿克苏诺贝尔）、PPG（庞贝捷）、Sika（西卡）等的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天赐材料",
+        "evidence_span": "高纯度多聚磷酸产品得到天赐材料认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "力升集团",
+        "evidence_span": "与力升集团、中裕电器等建立了长期稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中裕电器",
+        "evidence_span": "与力升集团、中裕电器等建立了长期稳定合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美的",
+        "evidence_span": "电子电器类粒子得到国内知名家电品牌美的、格力、格兰仕的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "格力",
+        "evidence_span": "电子电器类粒子得到国内知名家电品牌美的、格力、格兰仕的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "格兰仕",
+        "evidence_span": "电子电器类粒子得到国内知名家电品牌美的、格力、格兰仕的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日产",
+        "evidence_span": "汽车类粒子及制品进入日产、大众、小鹏、蔚来等国内外知名企业的供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "汽车类粒子及制品进入日产、大众、小鹏、蔚来等国内外知名企业的供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏",
+        "evidence_span": "汽车类粒子及制品进入日产、大众、小鹏、蔚来等国内外知名企业的供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "汽车类粒子及制品进入日产、大众、小鹏、蔚来等国内外知名企业的供应链体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国三星电子",
+        "evidence_span": "公司成为韩国三星电子、韩国LGE等国际知名企业PS扩散板全球核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韩国LGE",
+        "evidence_span": "公司成为韩国三星电子、韩国LGE等国际知名企业PS扩散板全球核心供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海信",
+        "evidence_span": "公司成为韩国三星电子、韩国LGE、海信等国际知名企业PS扩散板全球核心供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "可循环材料",
+        "evidence_span": "可循环材料及新能源材料成长空间广阔"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源材料",
+        "evidence_span": "可循环材料及新能源材料成长空间广阔"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "可循环包装业务",
+        "evidence_span": "废旧物资循环利用指导意见出台，利好公司可循环包装业务推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:36:03"
+}

@@ -1,0 +1,359 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车锻造铝合金车轮的研发",
+      "evidence_span": "公司主营业务为汽车锻造铝合金车轮的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车锻造铝合金车轮的设计",
+      "evidence_span": "公司主营业务为汽车锻造铝合金车轮的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车锻造铝合金车轮的制造",
+      "evidence_span": "公司主营业务为汽车锻造铝合金车轮的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车锻造铝合金车轮的销售",
+      "evidence_span": "公司主营业务为汽车锻造铝合金车轮的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家级专精特新“小巨人”",
+      "evidence_span": "国家级专精特新“小巨人”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车锻造铝合金车轮企业",
+      "evidence_span": "公司主营业务为汽车锻造铝合金车轮的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高新技术企业",
+      "evidence_span": "是国内较早开始应用锻造工艺生产汽车铝合金车轮的高新技术企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车锻造铝合金车轮",
+      "evidence_span": "公司主要产品为汽车锻造铝合金车轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商用车车轮",
+      "evidence_span": "包括商用车车轮和乘用车车轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乘用车车轮",
+      "evidence_span": "包括商用车车轮和乘用车车轮"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锻造绞线盘",
+      "evidence_span": "公司生产的其他产品包括锻造绞线盘"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车轮配件",
+      "evidence_span": "公司生产的其他产品包括锻造绞线盘、车轮配件等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锻造工艺",
+      "evidence_span": "公司一直从事锻造铝合金车轮的研发、设计、制造和销售"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模具设计",
+      "evidence_span": "掌握了模具设计、高速精密加工和表面去应力技术等多类核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速精密加工",
+      "evidence_span": "掌握了模具设计、高速精密加工和表面去应力技术等多类核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "表面去应力技术",
+      "evidence_span": "掌握了模具设计、高速精密加工和表面去应力技术等多类核心技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "豪梅特",
+      "evidence_span": "公司产品已直接配套豪梅特"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风柳汽",
+      "evidence_span": "公司产品已直接配套豪梅特、东风柳汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陕西重汽",
+      "evidence_span": "公司产品已直接配套豪梅特、东风柳汽、陕西重汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司产品已直接配套豪梅特、东风柳汽、陕西重汽、比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中车时代",
+      "evidence_span": "公司产品已直接配套豪梅特、东风柳汽、陕西重汽、比亚迪、中车时代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Rivian",
+      "evidence_span": "目前已通过J.T.Morton、Superior分别配套美国新能源汽车制造商Rivian"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Lucid",
+      "evidence_span": "目前已通过J.T.Morton、Superior分别配套美国新能源汽车制造商Rivian、Lucid"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Paccar",
+      "evidence_span": "并进入Paccar（美国）的供应链"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "戴姆勒",
+      "evidence_span": "公司通过WheelPros供应给戴姆勒等整车制造商售后体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "WheelPros",
+      "evidence_span": "并与WheelPros（美国）等品牌商保持持续良好的业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "AmericanWheels",
+      "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）等品牌商保持持续良好的业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "FleetPride",
+      "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）等品牌商保持持续良好的业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Loves",
+      "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）、Loves（美国）等品牌商保持持续良好的业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Forgiato",
+      "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）、Loves（美国）、Forgiato（美国）等品牌商保持持续良好的业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Jost",
+      "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）、Loves（美国）、Forgiato（美国）、Jost等品牌商保持持续良好的业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "KalTire",
+      "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）、Loves（美国）、Forgiato（美国）、Jost、KalTire（加拿大）等品牌商保持持续良好的业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "S.M.Heights",
+      "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）、Loves（美国）、Forgiato（美国）、Jost、KalTire（加拿大）、S.M.Heights（韩国）等品牌商保持持续良好的业务合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Weds",
+      "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）、Loves（美国）、Forgiato（美国）、Jost、KalTire（加拿大）、S.M.Heights（韩国）、Weds（日本）等品牌商保持持续良好的业务合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "轻量化材料应用",
+      "evidence_span": "公司的主营业务属于国家鼓励类产业中的“十六、汽车 2、轻量化材料应用”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车锻造铝合金车轮的研发",
+        "evidence_span": "公司主营业务为汽车锻造铝合金车轮的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车锻造铝合金车轮的设计",
+        "evidence_span": "公司主营业务为汽车锻造铝合金车轮的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车锻造铝合金车轮的制造",
+        "evidence_span": "公司主营业务为汽车锻造铝合金车轮的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车锻造铝合金车轮的销售",
+        "evidence_span": "公司主营业务为汽车锻造铝合金车轮的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家级专精特新“小巨人”",
+        "evidence_span": "国家级专精特新“小巨人”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车锻造铝合金车轮企业",
+        "evidence_span": "公司主营业务为汽车锻造铝合金车轮的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高新技术企业",
+        "evidence_span": "是国内较早开始应用锻造工艺生产汽车铝合金车轮的高新技术企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车锻造铝合金车轮",
+        "evidence_span": "公司主要产品为汽车锻造铝合金车轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商用车车轮",
+        "evidence_span": "包括商用车车轮和乘用车车轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乘用车车轮",
+        "evidence_span": "包括商用车车轮和乘用车车轮"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锻造绞线盘",
+        "evidence_span": "公司生产的其他产品包括锻造绞线盘"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车轮配件",
+        "evidence_span": "公司生产的其他产品包括锻造绞线盘、车轮配件等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锻造工艺",
+        "evidence_span": "公司一直从事锻造铝合金车轮的研发、设计、制造和销售"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模具设计",
+        "evidence_span": "掌握了模具设计、高速精密加工和表面去应力技术等多类核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速精密加工",
+        "evidence_span": "掌握了模具设计、高速精密加工和表面去应力技术等多类核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "表面去应力技术",
+        "evidence_span": "掌握了模具设计、高速精密加工和表面去应力技术等多类核心技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "豪梅特",
+        "evidence_span": "公司产品已直接配套豪梅特"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风柳汽",
+        "evidence_span": "公司产品已直接配套豪梅特、东风柳汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陕西重汽",
+        "evidence_span": "公司产品已直接配套豪梅特、东风柳汽、陕西重汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司产品已直接配套豪梅特、东风柳汽、陕西重汽、比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中车时代",
+        "evidence_span": "公司产品已直接配套豪梅特、东风柳汽、陕西重汽、比亚迪、中车时代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Rivian",
+        "evidence_span": "目前已通过J.T.Morton、Superior分别配套美国新能源汽车制造商Rivian"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Lucid",
+        "evidence_span": "目前已通过J.T.Morton、Superior分别配套美国新能源汽车制造商Rivian、Lucid"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Paccar",
+        "evidence_span": "并进入Paccar（美国）的供应链"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "戴姆勒",
+        "evidence_span": "公司通过WheelPros供应给戴姆勒等整车制造商售后体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "WheelPros",
+        "evidence_span": "并与WheelPros（美国）等品牌商保持持续良好的业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "AmericanWheels",
+        "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）等品牌商保持持续良好的业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "FleetPride",
+        "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）等品牌商保持持续良好的业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Loves",
+        "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）、Loves（美国）等品牌商保持持续良好的业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Forgiato",
+        "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）、Loves（美国）、Forgiato（美国）等品牌商保持持续良好的业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Jost",
+        "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）、Loves（美国）、Forgiato（美国）、Jost等品牌商保持持续良好的业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "KalTire",
+        "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）、Loves（美国）、Forgiato（美国）、Jost、KalTire（加拿大）等品牌商保持持续良好的业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "S.M.Heights",
+        "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）、Loves（美国）、Forgiato（美国）、Jost、KalTire（加拿大）、S.M.Heights（韩国）等品牌商保持持续良好的业务合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Weds",
+        "evidence_span": "并与WheelPros（美国）、AmericanWheels（美国）、FleetPride（美国）、Loves（美国）、Forgiato（美国）、Jost、KalTire（加拿大）、S.M.Heights（韩国）、Weds（日本）等品牌商保持持续良好的业务合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "轻量化材料应用",
+        "evidence_span": "公司的主营业务属于国家鼓励类产业中的“十六、汽车 2、轻量化材料应用”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:51:11"
+}

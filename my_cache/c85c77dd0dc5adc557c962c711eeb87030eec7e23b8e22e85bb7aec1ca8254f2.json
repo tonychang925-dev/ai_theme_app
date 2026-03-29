@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "a621f5aa3480", "label": "strict_knowledge", "confidence": 0.8, "ontology_value": "high", "reason": "该段落描述了半导体封测的静态知识，包括市场规模、产业趋势、龙头企业信息，虽然提及了进程和增长，但主要是结构性说明，没有具体事件或时间性动态。"}}

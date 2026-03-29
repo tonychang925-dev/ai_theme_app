@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:36:44", "result": {"span_uid": "bb4a1cb7b0d5", "action": "keep", "canonical_text": "光刻胶是半导体制造关键材料，光刻是精细线路图形加工中最重要的工艺，决定着芯片的最小特征尺寸。", "final_type": "core", "final_role": "关键作用与工艺重要性", "stability": "high", "reason": "阐述光刻胶在半导体制造中的关键地位和光刻工艺的核心作用，是稳定、独立的知识表达。"}}

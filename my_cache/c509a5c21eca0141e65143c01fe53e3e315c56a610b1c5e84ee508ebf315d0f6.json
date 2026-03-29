@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:10:23", "result": {"chunk_id": "aaa96f95d879", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述华为即将发布AI推理技术成果的具体事件，包括时间、地点和预期影响，属于公司动态和新闻，没有提供稳定的题材本体知识。"}}

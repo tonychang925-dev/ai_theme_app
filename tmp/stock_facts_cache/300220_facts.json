@@ -1,0 +1,519 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端数字激光装备制造",
+      "evidence_span": "继续经营以高端数字激光装备制造为主的工业智能应用"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "IP衍生品运营",
+      "evidence_span": "以IP衍生品运营业务为主的商业智能应用"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "激光加工设备制造商",
+      "evidence_span": "公司高端数字激光装备制造业务的主要产品是激光加工设备"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "潮玩IP衍生品运营商",
+      "evidence_span": "公司IP衍生品运营业务主要产品是潮玩（盲盒）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "平面光纤激光切割机",
+      "evidence_span": "主要产品系平面光纤激光切割机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光纤激光切管机",
+      "evidence_span": "光纤激光切管机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化产线系统解决方案",
+      "evidence_span": "自动化产线系统解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视觉系列激光切割机",
+      "evidence_span": "主要产品有视觉系列激光切割机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "振镜系列激光打孔切割机",
+      "evidence_span": "振镜系列激光打孔切割机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小幅面激光雕刻切割机",
+      "evidence_span": "小幅面激光雕刻切割机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大幅面激光切割裁床",
+      "evidence_span": "大幅面激光切割裁床"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速智能激光模切机",
+      "evidence_span": "高速智能激光模切机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "皮革鞋材喷墨画线机",
+      "evidence_span": "皮革鞋材喷墨画线机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光熔覆系统集成",
+      "evidence_span": "激光熔覆业务包括激光熔覆系统集成和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "耐磨耐腐蚀涂层加工服务",
+      "evidence_span": "耐磨耐腐蚀涂层加工服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "矿用设备耐磨零部件",
+      "evidence_span": "矿用设备耐磨零部件制造和销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "NFT系列产品",
+      "evidence_span": "公司全力推广NFT系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能零售终端设备",
+      "evidence_span": "智能零售终端设备制造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光器研发制造",
+      "evidence_span": "形成了从激光器、激光元器件研发制造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光元器件研发制造",
+      "evidence_span": "形成了从激光器、激光元器件研发制造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业结构设计",
+      "evidence_span": "工业结构设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电路设计",
+      "evidence_span": "电路设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "软硬件设计",
+      "evidence_span": "软硬件设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "系统集成解决方案",
+      "evidence_span": "系统集成解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多卡盘组合激光切管机",
+      "evidence_span": "推出的多卡盘组合激光切管机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动视觉识别异形管件截面激光切管机",
+      "evidence_span": "推出的自动视觉识别异形管件截面激光切管机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铝管无渣切割方案",
+      "evidence_span": "在自行车行业推出了铝管无渣切割方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "切管、打孔、攻牙、标记一体自动化解决方案",
+      "evidence_span": "切管、打孔、攻牙、标记一体自动化解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模块化大幅面可拆装式高速切割机",
+      "evidence_span": "研发了模块化的大幅面可拆装式的高速切割机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速智能激光模切系统",
+      "evidence_span": "加大了高速智能激光模切系统的研发投入"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "卷对卷高速智能激光模切系统",
+      "evidence_span": "完成了卷对卷、卷对片高速智能激光模切系统的迭代升级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "卷对片高速智能激光模切系统",
+      "evidence_span": "完成了卷对卷、卷对片高速智能激光模切系统的迭代升级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视觉系列激光切割平台软件",
+      "evidence_span": "完成了视觉系列激光切割平台相关软件的自主研发和升级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高速高精度激光裁床",
+      "evidence_span": "对高速高精度激光裁床进行了加工幅面、激光功率、配套功能等方面的迭代升级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "第四代萃耐特激光熔覆系统",
+      "evidence_span": "公司自主研发的第四代萃耐特激光熔覆系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "煤矿客户",
+      "evidence_span": "下游煤矿客户对高端智能化开采装备的激光熔覆需求持续增加"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "健身器材行业",
+      "evidence_span": "主要应用在健身器材、钢制家具、汽车管件等行业的金属加工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "钢制家具行业",
+      "evidence_span": "主要应用在健身器材、钢制家具、汽车管件等行业的金属加工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车管件行业",
+      "evidence_span": "主要应用在健身器材、钢制家具、汽车管件等行业的金属加工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工业柔性材料行业",
+      "evidence_span": "应用于工业柔性材料、数码印花、数码标签、汽车、皮革鞋材以及牛仔家纺等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "数码印花行业",
+      "evidence_span": "应用于工业柔性材料、数码印花、数码标签、汽车、皮革鞋材以及牛仔家纺等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "数码标签行业",
+      "evidence_span": "应用于工业柔性材料、数码印花、数码标签、汽车、皮革鞋材以及牛仔家纺等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "皮革鞋材行业",
+      "evidence_span": "应用于工业柔性材料、数码印花、数码标签、汽车、皮革鞋材以及牛仔家纺等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "牛仔家纺行业",
+      "evidence_span": "应用于工业柔性材料、数码印花、数码标签、汽车、皮革鞋材以及牛仔家纺等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "矿业设备行业",
+      "evidence_span": "主要应用在矿业设备、工程机械、石油钻探、海工船舶、电力能源、钢铁冶金等工业领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工程机械行业",
+      "evidence_span": "主要应用在矿业设备、工程机械、石油钻探、海工船舶、电力能源、钢铁冶金等工业领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石油钻探行业",
+      "evidence_span": "主要应用在矿业设备、工程机械、石油钻探、海工船舶、电力能源、钢铁冶金等工业领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海工船舶行业",
+      "evidence_span": "主要应用在矿业设备、工程机械、石油钻探、海工船舶、电力能源、钢铁冶金等工业领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电力能源行业",
+      "evidence_span": "主要应用在矿业设备、工程机械、石油钻探、海工船舶、电力能源、钢铁冶金等工业领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "钢铁冶金行业",
+      "evidence_span": "主要应用在矿业设备、工程机械、石油钻探、海工船舶、电力能源、钢铁冶金等工业领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字技术商业化",
+      "evidence_span": "公司将始终把数字技术商业化作为战略定位"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端数字激光装备制造",
+        "evidence_span": "继续经营以高端数字激光装备制造为主的工业智能应用"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "IP衍生品运营",
+        "evidence_span": "以IP衍生品运营业务为主的商业智能应用"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "激光加工设备制造商",
+        "evidence_span": "公司高端数字激光装备制造业务的主要产品是激光加工设备"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "潮玩IP衍生品运营商",
+        "evidence_span": "公司IP衍生品运营业务主要产品是潮玩（盲盒）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "平面光纤激光切割机",
+        "evidence_span": "主要产品系平面光纤激光切割机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光纤激光切管机",
+        "evidence_span": "光纤激光切管机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化产线系统解决方案",
+        "evidence_span": "自动化产线系统解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视觉系列激光切割机",
+        "evidence_span": "主要产品有视觉系列激光切割机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "振镜系列激光打孔切割机",
+        "evidence_span": "振镜系列激光打孔切割机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小幅面激光雕刻切割机",
+        "evidence_span": "小幅面激光雕刻切割机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大幅面激光切割裁床",
+        "evidence_span": "大幅面激光切割裁床"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速智能激光模切机",
+        "evidence_span": "高速智能激光模切机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "皮革鞋材喷墨画线机",
+        "evidence_span": "皮革鞋材喷墨画线机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光熔覆系统集成",
+        "evidence_span": "激光熔覆业务包括激光熔覆系统集成和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "耐磨耐腐蚀涂层加工服务",
+        "evidence_span": "耐磨耐腐蚀涂层加工服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "矿用设备耐磨零部件",
+        "evidence_span": "矿用设备耐磨零部件制造和销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "NFT系列产品",
+        "evidence_span": "公司全力推广NFT系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能零售终端设备",
+        "evidence_span": "智能零售终端设备制造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光器研发制造",
+        "evidence_span": "形成了从激光器、激光元器件研发制造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光元器件研发制造",
+        "evidence_span": "形成了从激光器、激光元器件研发制造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业结构设计",
+        "evidence_span": "工业结构设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电路设计",
+        "evidence_span": "电路设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "软硬件设计",
+        "evidence_span": "软硬件设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "系统集成解决方案",
+        "evidence_span": "系统集成解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多卡盘组合激光切管机",
+        "evidence_span": "推出的多卡盘组合激光切管机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动视觉识别异形管件截面激光切管机",
+        "evidence_span": "推出的自动视觉识别异形管件截面激光切管机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铝管无渣切割方案",
+        "evidence_span": "在自行车行业推出了铝管无渣切割方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "切管、打孔、攻牙、标记一体自动化解决方案",
+        "evidence_span": "切管、打孔、攻牙、标记一体自动化解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模块化大幅面可拆装式高速切割机",
+        "evidence_span": "研发了模块化的大幅面可拆装式的高速切割机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速智能激光模切系统",
+        "evidence_span": "加大了高速智能激光模切系统的研发投入"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "卷对卷高速智能激光模切系统",
+        "evidence_span": "完成了卷对卷、卷对片高速智能激光模切系统的迭代升级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "卷对片高速智能激光模切系统",
+        "evidence_span": "完成了卷对卷、卷对片高速智能激光模切系统的迭代升级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视觉系列激光切割平台软件",
+        "evidence_span": "完成了视觉系列激光切割平台相关软件的自主研发和升级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高速高精度激光裁床",
+        "evidence_span": "对高速高精度激光裁床进行了加工幅面、激光功率、配套功能等方面的迭代升级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "第四代萃耐特激光熔覆系统",
+        "evidence_span": "公司自主研发的第四代萃耐特激光熔覆系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "煤矿客户",
+        "evidence_span": "下游煤矿客户对高端智能化开采装备的激光熔覆需求持续增加"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "健身器材行业",
+        "evidence_span": "主要应用在健身器材、钢制家具、汽车管件等行业的金属加工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "钢制家具行业",
+        "evidence_span": "主要应用在健身器材、钢制家具、汽车管件等行业的金属加工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车管件行业",
+        "evidence_span": "主要应用在健身器材、钢制家具、汽车管件等行业的金属加工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工业柔性材料行业",
+        "evidence_span": "应用于工业柔性材料、数码印花、数码标签、汽车、皮革鞋材以及牛仔家纺等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "数码印花行业",
+        "evidence_span": "应用于工业柔性材料、数码印花、数码标签、汽车、皮革鞋材以及牛仔家纺等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "数码标签行业",
+        "evidence_span": "应用于工业柔性材料、数码印花、数码标签、汽车、皮革鞋材以及牛仔家纺等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "皮革鞋材行业",
+        "evidence_span": "应用于工业柔性材料、数码印花、数码标签、汽车、皮革鞋材以及牛仔家纺等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "牛仔家纺行业",
+        "evidence_span": "应用于工业柔性材料、数码印花、数码标签、汽车、皮革鞋材以及牛仔家纺等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "矿业设备行业",
+        "evidence_span": "主要应用在矿业设备、工程机械、石油钻探、海工船舶、电力能源、钢铁冶金等工业领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工程机械行业",
+        "evidence_span": "主要应用在矿业设备、工程机械、石油钻探、海工船舶、电力能源、钢铁冶金等工业领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石油钻探行业",
+        "evidence_span": "主要应用在矿业设备、工程机械、石油钻探、海工船舶、电力能源、钢铁冶金等工业领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海工船舶行业",
+        "evidence_span": "主要应用在矿业设备、工程机械、石油钻探、海工船舶、电力能源、钢铁冶金等工业领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电力能源行业",
+        "evidence_span": "主要应用在矿业设备、工程机械、石油钻探、海工船舶、电力能源、钢铁冶金等工业领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "钢铁冶金行业",
+        "evidence_span": "主要应用在矿业设备、工程机械、石油钻探、海工船舶、电力能源、钢铁冶金等工业领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字技术商业化",
+        "evidence_span": "公司将始终把数字技术商业化作为战略定位"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:16:59"
+}

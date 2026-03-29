@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高端智能控制器",
+      "evidence_span": "公司深耕高端智能控制器领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "变频驱动器",
+      "evidence_span": "专注于高端智能控制器、变频驱动器"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字电源",
+      "evidence_span": "专注于高端智能控制器、变频驱动器、数字电源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能物联",
+      "evidence_span": "专注于高端智能控制器、变频驱动器、数字电源、智能物联"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "逆变器",
+      "evidence_span": "专注于高端智能控制器、变频驱动器、数字电源、智能物联以及逆变器"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "储能",
+      "evidence_span": "专注于高端智能控制器、变频驱动器、数字电源、智能物联以及逆变器和储能"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能控制器产品制造商",
+      "evidence_span": "公司是业内知名的智能控制器产品制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大型家用及商用电器电控产品",
+      "evidence_span": "公司产品主要分类为大型家用及商用电器电控产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小型家电电控产品",
+      "evidence_span": "公司产品主要分类为大型家用及商用电器电控产品、小型家电电控产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车电子电控产品",
+      "evidence_span": "公司产品主要分类为大型家用及商用电器电控产品、小型家电电控产品、汽车电子电控产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动工具电控产品",
+      "evidence_span": "公司产品主要分类为大型家用及商用电器电控产品、小型家电电控产品、汽车电子电控产品以及电动工具电控产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载变频空调控制器",
+      "evidence_span": "公司研发的车载变频空调控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃气冰箱控制器",
+      "evidence_span": "公司研发的车载变频空调控制器、燃气冰箱控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载冰箱控制器",
+      "evidence_span": "公司研发的车载变频空调控制器、燃气冰箱控制器、车载冰箱控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "变频压缩机驱动器",
+      "evidence_span": "公司研发的车载变频空调控制器、燃气冰箱控制器、车载冰箱控制器、变频压缩机驱动器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载制冷控制器",
+      "evidence_span": "公司研发的车载变频空调控制器、燃气冰箱控制器、车载冰箱控制器、变频压缩机驱动器、逆变器、车载制冷控制器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载制热温控器",
+      "evidence_span": "公司研发的车载变频空调控制器、燃气冰箱控制器、车载冰箱控制器、变频压缩机驱动器、逆变器、车载制冷控制器、车载制热温控器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家用储能",
+      "evidence_span": "公司储能产品为三大类：家用储能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户外储能",
+      "evidence_span": "公司储能产品为三大类：家用储能、户外储能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微型逆变器",
+      "evidence_span": "微型逆变器不排除做自有品牌"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池多功能电源箱",
+      "evidence_span": "已中标南方电网的锂电池多功能电源箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PDU项目产品",
+      "evidence_span": "已中标南方电网的锂电池多功能电源箱、PDU项目产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3KW户用储能产品",
+      "evidence_span": "销往欧美市场的3KW户用储能产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "制冷系统控制技术平台",
+      "evidence_span": "公司核心技术平台包括制冷系统控制技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "变频控制技术平台",
+      "evidence_span": "公司核心技术平台包括制冷系统控制技术平台、变频控制技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字高压电源技术平台",
+      "evidence_span": "公司核心技术平台包括制冷系统控制技术平台、变频控制技术平台、数字高压电源技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能物联技术平台",
+      "evidence_span": "公司核心技术平台包括制冷系统控制技术平台、变频控制技术平台、数字高压电源技术平台、智能物联技术平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "先进电池管理技术",
+      "evidence_span": "集中力量研究和发展先进电池管理技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "储能双向逆变控制技术",
+      "evidence_span": "集中力量研究和发展先进电池管理技术和储能双向逆变控制技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TTI",
+      "evidence_span": "2016年开拓了TTI电动工具电控业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "多美达",
+      "evidence_span": "公司于2005年开拓了多美达汽车电子电控业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "已中标南方电网的锂电池多功能电源箱"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能逆变",
+      "evidence_span": "振邦智能扎根家电和工具控制，储能逆变新贵"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高端智能控制器",
+        "evidence_span": "公司深耕高端智能控制器领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "变频驱动器",
+        "evidence_span": "专注于高端智能控制器、变频驱动器"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字电源",
+        "evidence_span": "专注于高端智能控制器、变频驱动器、数字电源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能物联",
+        "evidence_span": "专注于高端智能控制器、变频驱动器、数字电源、智能物联"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "逆变器",
+        "evidence_span": "专注于高端智能控制器、变频驱动器、数字电源、智能物联以及逆变器"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "储能",
+        "evidence_span": "专注于高端智能控制器、变频驱动器、数字电源、智能物联以及逆变器和储能"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能控制器产品制造商",
+        "evidence_span": "公司是业内知名的智能控制器产品制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大型家用及商用电器电控产品",
+        "evidence_span": "公司产品主要分类为大型家用及商用电器电控产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小型家电电控产品",
+        "evidence_span": "公司产品主要分类为大型家用及商用电器电控产品、小型家电电控产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车电子电控产品",
+        "evidence_span": "公司产品主要分类为大型家用及商用电器电控产品、小型家电电控产品、汽车电子电控产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动工具电控产品",
+        "evidence_span": "公司产品主要分类为大型家用及商用电器电控产品、小型家电电控产品、汽车电子电控产品以及电动工具电控产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载变频空调控制器",
+        "evidence_span": "公司研发的车载变频空调控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃气冰箱控制器",
+        "evidence_span": "公司研发的车载变频空调控制器、燃气冰箱控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载冰箱控制器",
+        "evidence_span": "公司研发的车载变频空调控制器、燃气冰箱控制器、车载冰箱控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "变频压缩机驱动器",
+        "evidence_span": "公司研发的车载变频空调控制器、燃气冰箱控制器、车载冰箱控制器、变频压缩机驱动器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载制冷控制器",
+        "evidence_span": "公司研发的车载变频空调控制器、燃气冰箱控制器、车载冰箱控制器、变频压缩机驱动器、逆变器、车载制冷控制器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载制热温控器",
+        "evidence_span": "公司研发的车载变频空调控制器、燃气冰箱控制器、车载冰箱控制器、变频压缩机驱动器、逆变器、车载制冷控制器、车载制热温控器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家用储能",
+        "evidence_span": "公司储能产品为三大类：家用储能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户外储能",
+        "evidence_span": "公司储能产品为三大类：家用储能、户外储能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微型逆变器",
+        "evidence_span": "微型逆变器不排除做自有品牌"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池多功能电源箱",
+        "evidence_span": "已中标南方电网的锂电池多功能电源箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PDU项目产品",
+        "evidence_span": "已中标南方电网的锂电池多功能电源箱、PDU项目产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3KW户用储能产品",
+        "evidence_span": "销往欧美市场的3KW户用储能产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "制冷系统控制技术平台",
+        "evidence_span": "公司核心技术平台包括制冷系统控制技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "变频控制技术平台",
+        "evidence_span": "公司核心技术平台包括制冷系统控制技术平台、变频控制技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字高压电源技术平台",
+        "evidence_span": "公司核心技术平台包括制冷系统控制技术平台、变频控制技术平台、数字高压电源技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能物联技术平台",
+        "evidence_span": "公司核心技术平台包括制冷系统控制技术平台、变频控制技术平台、数字高压电源技术平台、智能物联技术平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "先进电池管理技术",
+        "evidence_span": "集中力量研究和发展先进电池管理技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "储能双向逆变控制技术",
+        "evidence_span": "集中力量研究和发展先进电池管理技术和储能双向逆变控制技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TTI",
+        "evidence_span": "2016年开拓了TTI电动工具电控业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "多美达",
+        "evidence_span": "公司于2005年开拓了多美达汽车电子电控业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "已中标南方电网的锂电池多功能电源箱"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能逆变",
+        "evidence_span": "振邦智能扎根家电和工具控制，储能逆变新贵"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:31:18"
+}

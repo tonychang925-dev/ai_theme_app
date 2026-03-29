@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药产品的研发",
+      "evidence_span": "主要从事医药产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药产品的生产",
+      "evidence_span": "主要从事医药产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医药产品的销售",
+      "evidence_span": "主要从事医药产品的研发、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医药制造业",
+      "evidence_span": "本公司所处行业为医药制造业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复方嗜酸乳杆菌片",
+      "evidence_span": "母公司的主导产品主要包括复方嗜酸乳杆菌片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风湿祛痛胶囊",
+      "evidence_span": "母公司的主导产品主要包括...风湿祛痛胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清肝健脾口服液",
+      "evidence_span": "母公司的主导产品主要包括...清肝健脾口服液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芩石利咽口服液",
+      "evidence_span": "母公司的主导产品主要包括...芩石利咽口服液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "骨瓜提取物制剂",
+      "evidence_span": "主要产品为骨瓜提取物制剂"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "血栓通注射液",
+      "evidence_span": "主要产品为...血栓通注射液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "清开灵片",
+      "evidence_span": "主要产品为...清开灵片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小儿热速清颗粒",
+      "evidence_span": "主要产品为...小儿热速清颗粒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小金丸",
+      "evidence_span": "主要产品包括小金丸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天然麝香小金丸",
+      "evidence_span": "主要产品包括...天然麝香小金丸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消咳喘胶囊",
+      "evidence_span": "主要产品包括...消咳喘胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "九味羌活颗粒",
+      "evidence_span": "主要产品包括...九味羌活颗粒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "元胡止痛分散片",
+      "evidence_span": "主要产品包括...元胡止痛分散片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "温胃舒片",
+      "evidence_span": "主要产品包括...温胃舒片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蜡样芽孢杆菌活菌胶囊",
+      "evidence_span": "主导产品蜡样芽孢杆菌活菌胶囊"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蜡样芽孢杆菌活菌片",
+      "evidence_span": "主导产品...蜡样芽孢杆菌活菌片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超微粉碎技术",
+      "evidence_span": "小金丸采用超微粉碎技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "创新药",
+      "evidence_span": "通化金马布局创新药和医疗产业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "医疗产业",
+      "evidence_span": "通化金马布局创新药和医疗产业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药产品的研发",
+        "evidence_span": "主要从事医药产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药产品的生产",
+        "evidence_span": "主要从事医药产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医药产品的销售",
+        "evidence_span": "主要从事医药产品的研发、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医药制造业",
+        "evidence_span": "本公司所处行业为医药制造业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复方嗜酸乳杆菌片",
+        "evidence_span": "母公司的主导产品主要包括复方嗜酸乳杆菌片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风湿祛痛胶囊",
+        "evidence_span": "母公司的主导产品主要包括...风湿祛痛胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清肝健脾口服液",
+        "evidence_span": "母公司的主导产品主要包括...清肝健脾口服液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芩石利咽口服液",
+        "evidence_span": "母公司的主导产品主要包括...芩石利咽口服液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "骨瓜提取物制剂",
+        "evidence_span": "主要产品为骨瓜提取物制剂"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "血栓通注射液",
+        "evidence_span": "主要产品为...血栓通注射液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "清开灵片",
+        "evidence_span": "主要产品为...清开灵片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小儿热速清颗粒",
+        "evidence_span": "主要产品为...小儿热速清颗粒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小金丸",
+        "evidence_span": "主要产品包括小金丸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天然麝香小金丸",
+        "evidence_span": "主要产品包括...天然麝香小金丸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消咳喘胶囊",
+        "evidence_span": "主要产品包括...消咳喘胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "九味羌活颗粒",
+        "evidence_span": "主要产品包括...九味羌活颗粒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "元胡止痛分散片",
+        "evidence_span": "主要产品包括...元胡止痛分散片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "温胃舒片",
+        "evidence_span": "主要产品包括...温胃舒片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蜡样芽孢杆菌活菌胶囊",
+        "evidence_span": "主导产品蜡样芽孢杆菌活菌胶囊"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蜡样芽孢杆菌活菌片",
+        "evidence_span": "主导产品...蜡样芽孢杆菌活菌片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超微粉碎技术",
+        "evidence_span": "小金丸采用超微粉碎技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "创新药",
+        "evidence_span": "通化金马布局创新药和医疗产业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "医疗产业",
+        "evidence_span": "通化金马布局创新药和医疗产业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:29:29"
+}

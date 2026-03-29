@@ -1,0 +1,494 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "气门嘴",
+      "evidence_span": "公司的传统业务包括气门嘴"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "排气管件",
+      "evidence_span": "公司的传统业务包括...排气管件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "平衡块",
+      "evidence_span": "公司的传统业务包括...平衡块"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "TPMS",
+      "evidence_span": "公司的传统业务包括...TPMS"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "轻量化结构件",
+      "evidence_span": "公司的传统业务包括...轻量化结构件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "空气悬架",
+      "evidence_span": "新业务包括空气悬架"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "传感器",
+      "evidence_span": "新业务包括...传感器"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "ADAS",
+      "evidence_span": "新业务包括...ADAS"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "TPMS全球龙头",
+      "evidence_span": "TPMS（轮胎气压监测系统）全球龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球第三大TPMS供应商",
+      "evidence_span": "是全球第三大TPMS供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内液压成型管件细分市场的主流配套企业",
+      "evidence_span": "公司已成为国内液压成型管件细分市场的主流配套企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TPMS发射器",
+      "evidence_span": "公司TPMS发射器产品出货量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空气弹簧",
+      "evidence_span": "目前可提供的产品包括空气弹簧"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储气罐",
+      "evidence_span": "目前可提供的产品包括...储气罐"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车身高度传感器",
+      "evidence_span": "目前可提供的产品包括...车身高度...传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "加速度传感器",
+      "evidence_span": "目前可提供的产品包括...加速度传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压力传感器",
+      "evidence_span": "公司具体产品包括压力...传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光学传感器",
+      "evidence_span": "公司具体产品包括...光学...传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轮速传感器",
+      "evidence_span": "公司具体产品包括...轮速...传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "位置传感器",
+      "evidence_span": "公司具体产品包括...位置...传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电流传感器",
+      "evidence_span": "公司具体产品包括...电流...传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "摄像头",
+      "evidence_span": "目前主要产品包括摄像头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "毫米波雷达",
+      "evidence_span": "目前主要产品包括...毫米波雷达"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铝质件",
+      "evidence_span": "公司的轻量化产品主要包括铝质件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液压成型的结构件",
+      "evidence_span": "公司的轻量化产品主要包括...液压成型的结构件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车道偏离警示系统",
+      "evidence_span": "已经批产的项目包括车道偏离警示系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "疲劳驾驶预警系统",
+      "evidence_span": "已经批产的项目包括...疲劳驾驶预警系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盲区检测系统",
+      "evidence_span": "已经批产的项目包括...盲区检测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "360环视系统",
+      "evidence_span": "已经批产的项目包括...360环视系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "紧急制动系统",
+      "evidence_span": "已经批产的项目包括...紧急制动系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全球主要车企",
+      "evidence_span": "终端客户覆盖全球主要车企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "头部新能源车企",
+      "evidence_span": "已经获得多家头部新能源车企的定点"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "采埃孚",
+      "evidence_span": "商用车客户覆盖采埃孚"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安道拓",
+      "evidence_span": "商用车客户覆盖...安道拓"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "光华荣昌",
+      "evidence_span": "商用车客户覆盖...光华荣昌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海科曼",
+      "evidence_span": "商用车客户覆盖...上海科曼"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海斯坦普",
+      "evidence_span": "客户覆盖海斯坦普"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海汇众",
+      "evidence_span": "客户覆盖...上海汇众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浦项奥斯特姆",
+      "evidence_span": "客户覆盖...浦项奥斯特姆"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "客户覆盖...长城"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风柳汽",
+      "evidence_span": "客户覆盖...东风柳汽"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "客户覆盖...比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "已经量产的客户包括吉利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽",
+      "evidence_span": "已经量产的客户包括...一汽"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "TPMS国产龙头",
+      "evidence_span": "TPMS国产龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车电子新贵",
+      "evidence_span": "汽车电子新贵"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国六传感器",
+      "evidence_span": "国六传感器"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "轻量化",
+      "evidence_span": "轻量化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "气门嘴",
+        "evidence_span": "公司的传统业务包括气门嘴"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "排气管件",
+        "evidence_span": "公司的传统业务包括...排气管件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "平衡块",
+        "evidence_span": "公司的传统业务包括...平衡块"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "TPMS",
+        "evidence_span": "公司的传统业务包括...TPMS"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "轻量化结构件",
+        "evidence_span": "公司的传统业务包括...轻量化结构件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "空气悬架",
+        "evidence_span": "新业务包括空气悬架"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "传感器",
+        "evidence_span": "新业务包括...传感器"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "ADAS",
+        "evidence_span": "新业务包括...ADAS"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "TPMS全球龙头",
+        "evidence_span": "TPMS（轮胎气压监测系统）全球龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球第三大TPMS供应商",
+        "evidence_span": "是全球第三大TPMS供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内液压成型管件细分市场的主流配套企业",
+        "evidence_span": "公司已成为国内液压成型管件细分市场的主流配套企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TPMS发射器",
+        "evidence_span": "公司TPMS发射器产品出货量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空气弹簧",
+        "evidence_span": "目前可提供的产品包括空气弹簧"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储气罐",
+        "evidence_span": "目前可提供的产品包括...储气罐"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车身高度传感器",
+        "evidence_span": "目前可提供的产品包括...车身高度...传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加速度传感器",
+        "evidence_span": "目前可提供的产品包括...加速度传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压力传感器",
+        "evidence_span": "公司具体产品包括压力...传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光学传感器",
+        "evidence_span": "公司具体产品包括...光学...传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轮速传感器",
+        "evidence_span": "公司具体产品包括...轮速...传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "位置传感器",
+        "evidence_span": "公司具体产品包括...位置...传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "加速度传感器",
+        "evidence_span": "公司具体产品包括...加速度...传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电流传感器",
+        "evidence_span": "公司具体产品包括...电流...传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "摄像头",
+        "evidence_span": "目前主要产品包括摄像头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "毫米波雷达",
+        "evidence_span": "目前主要产品包括...毫米波雷达"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铝质件",
+        "evidence_span": "公司的轻量化产品主要包括铝质件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液压成型的结构件",
+        "evidence_span": "公司的轻量化产品主要包括...液压成型的结构件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车道偏离警示系统",
+        "evidence_span": "已经批产的项目包括车道偏离警示系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "疲劳驾驶预警系统",
+        "evidence_span": "已经批产的项目包括...疲劳驾驶预警系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盲区检测系统",
+        "evidence_span": "已经批产的项目包括...盲区检测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "360环视系统",
+        "evidence_span": "已经批产的项目包括...360环视系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "紧急制动系统",
+        "evidence_span": "已经批产的项目包括...紧急制动系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全球主要车企",
+        "evidence_span": "终端客户覆盖全球主要车企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "头部新能源车企",
+        "evidence_span": "已经获得多家头部新能源车企的定点"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "采埃孚",
+        "evidence_span": "商用车客户覆盖采埃孚"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安道拓",
+        "evidence_span": "商用车客户覆盖...安道拓"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "光华荣昌",
+        "evidence_span": "商用车客户覆盖...光华荣昌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海科曼",
+        "evidence_span": "商用车客户覆盖...上海科曼"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海斯坦普",
+        "evidence_span": "客户覆盖海斯坦普"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海汇众",
+        "evidence_span": "客户覆盖...上海汇众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浦项奥斯特姆",
+        "evidence_span": "客户覆盖...浦项奥斯特姆"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "客户覆盖...长城"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风柳汽",
+        "evidence_span": "客户覆盖...东风柳汽"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "客户覆盖...比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "已经量产的客户包括吉利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽",
+        "evidence_span": "已经量产的客户包括...一汽"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "TPMS国产龙头",
+        "evidence_span": "TPMS国产龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车电子新贵",
+        "evidence_span": "汽车电子新贵"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国六传感器",
+        "evidence_span": "国六传感器"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "轻量化",
+        "evidence_span": "轻量化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:39:14"
+}

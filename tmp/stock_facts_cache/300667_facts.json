@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "工业监测系统",
+      "evidence_span": "主营业务为工业监测系统、检测分析系统及MEMS传感器芯片的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "检测分析系统",
+      "evidence_span": "主营业务为工业监测系统、检测分析系统及MEMS传感器芯片的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "MEMS传感器芯片",
+      "evidence_span": "主营业务为工业监测系统、检测分析系统及MEMS传感器芯片的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能传感器和光电仪器产品、系统解决方案和应用服务提供商",
+      "evidence_span": "公司是一家智能传感器和光电仪器产品、系统解决方案和应用服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新型智能传感器产品研发、生产和销售企业",
+      "evidence_span": "公司是国内最早从事新型智能传感器产品研发、生产和销售的企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产光电分析仪器设计制造企业",
+      "evidence_span": "也是国产光电分析仪器设计制造领域率先进行自主研发的企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业监测系统",
+      "evidence_span": "为工业和科研客户提供工业监测系统、检测分析系统及MEMS传感器芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "检测分析系统",
+      "evidence_span": "为工业和科研客户提供工业监测系统、检测分析系统及MEMS传感器芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MEMS传感器芯片",
+      "evidence_span": "为工业和科研客户提供工业监测系统、检测分析系统及MEMS传感器芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MEMS压力传感器芯片",
+      "evidence_span": "包括MEMS压力传感器芯片和压力传感器模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压力传感器模组",
+      "evidence_span": "包括MEMS压力传感器芯片和压力传感器模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线传感器网络系列产品",
+      "evidence_span": "自主研发生产的无线传感器网络系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属化光纤",
+      "evidence_span": "金属化光纤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通用光栅光谱仪",
+      "evidence_span": "通用光栅光谱仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "荧光光谱仪",
+      "evidence_span": "荧光光谱仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "拉曼光谱仪",
+      "evidence_span": "拉曼光谱仪"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密位移控制单元",
+      "evidence_span": "精密位移控制单元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OLED/LCD显示器件光色评价系统",
+      "evidence_span": "OLED/LCD显示器件光色评价系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光敏感知技术",
+      "evidence_span": "公司已经掌握了光敏、力敏等先进感知技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "力敏感知技术",
+      "evidence_span": "公司已经掌握了光敏、力敏等先进感知技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "感知+连接+智能综合性技术",
+      "evidence_span": "融合“感知+连接+智能”的综合性技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MEMS传感器封测",
+      "evidence_span": "MEMS传感器封测实验室"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工业和科研客户",
+      "evidence_span": "为工业和科研客户提供工业监测系统、检测分析系统及MEMS传感器芯片"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汽车电子领域客户",
+      "evidence_span": "主要针对汽车电子、消费电子及医疗器械等领域客户提供产品定制化批量生产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "消费电子领域客户",
+      "evidence_span": "主要针对汽车电子、消费电子及医疗器械等领域客户提供产品定制化批量生产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医疗器械领域客户",
+      "evidence_span": "主要针对汽车电子、消费电子及医疗器械等领域客户提供产品定制化批量生产"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能传感龙头",
+      "evidence_span": "必创科技智能传感龙头，工业互联核心，智能制造抓手"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "工业互联核心",
+      "evidence_span": "必创科技智能传感龙头，工业互联核心，智能制造抓手"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能制造抓手",
+      "evidence_span": "必创科技智能传感龙头，工业互联核心，智能制造抓手"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "工业监测系统",
+        "evidence_span": "主营业务为工业监测系统、检测分析系统及MEMS传感器芯片的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "检测分析系统",
+        "evidence_span": "主营业务为工业监测系统、检测分析系统及MEMS传感器芯片的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "MEMS传感器芯片",
+        "evidence_span": "主营业务为工业监测系统、检测分析系统及MEMS传感器芯片的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能传感器和光电仪器产品、系统解决方案和应用服务提供商",
+        "evidence_span": "公司是一家智能传感器和光电仪器产品、系统解决方案和应用服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新型智能传感器产品研发、生产和销售企业",
+        "evidence_span": "公司是国内最早从事新型智能传感器产品研发、生产和销售的企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产光电分析仪器设计制造企业",
+        "evidence_span": "也是国产光电分析仪器设计制造领域率先进行自主研发的企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业监测系统",
+        "evidence_span": "为工业和科研客户提供工业监测系统、检测分析系统及MEMS传感器芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "检测分析系统",
+        "evidence_span": "为工业和科研客户提供工业监测系统、检测分析系统及MEMS传感器芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MEMS传感器芯片",
+        "evidence_span": "为工业和科研客户提供工业监测系统、检测分析系统及MEMS传感器芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MEMS压力传感器芯片",
+        "evidence_span": "包括MEMS压力传感器芯片和压力传感器模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压力传感器模组",
+        "evidence_span": "包括MEMS压力传感器芯片和压力传感器模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线传感器网络系列产品",
+        "evidence_span": "自主研发生产的无线传感器网络系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属化光纤",
+        "evidence_span": "金属化光纤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通用光栅光谱仪",
+        "evidence_span": "通用光栅光谱仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "荧光光谱仪",
+        "evidence_span": "荧光光谱仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "拉曼光谱仪",
+        "evidence_span": "拉曼光谱仪"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密位移控制单元",
+        "evidence_span": "精密位移控制单元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OLED/LCD显示器件光色评价系统",
+        "evidence_span": "OLED/LCD显示器件光色评价系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光敏感知技术",
+        "evidence_span": "公司已经掌握了光敏、力敏等先进感知技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "力敏感知技术",
+        "evidence_span": "公司已经掌握了光敏、力敏等先进感知技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "感知+连接+智能综合性技术",
+        "evidence_span": "融合“感知+连接+智能”的综合性技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MEMS传感器封测",
+        "evidence_span": "MEMS传感器封测实验室"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工业和科研客户",
+        "evidence_span": "为工业和科研客户提供工业监测系统、检测分析系统及MEMS传感器芯片"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汽车电子领域客户",
+        "evidence_span": "主要针对汽车电子、消费电子及医疗器械等领域客户提供产品定制化批量生产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "消费电子领域客户",
+        "evidence_span": "主要针对汽车电子、消费电子及医疗器械等领域客户提供产品定制化批量生产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医疗器械领域客户",
+        "evidence_span": "主要针对汽车电子、消费电子及医疗器械等领域客户提供产品定制化批量生产"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能传感龙头",
+        "evidence_span": "必创科技智能传感龙头，工业互联核心，智能制造抓手"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "工业互联核心",
+        "evidence_span": "必创科技智能传感龙头，工业互联核心，智能制造抓手"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能制造抓手",
+        "evidence_span": "必创科技智能传感龙头，工业互联核心，智能制造抓手"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:49:46"
+}

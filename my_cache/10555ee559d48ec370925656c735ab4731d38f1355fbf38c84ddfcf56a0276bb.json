@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "dc3b77987651", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述2024年大湾区动漫电玩节的举办事件，包括时间、地点和参与情况，属于具体活动报道，与影视题材本体知识关联较弱。"}}

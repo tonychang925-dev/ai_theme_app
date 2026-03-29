@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "dbc3090399ad", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落混合了事件（日本地震、中芯国际业绩会）和静态知识（九州半导体产业产值占比、企业分布）。知识部分（如九州占日本半导体产值56.3%）对题材本体构建有价值，但夹杂事件信息，需进一步裁决。"}}

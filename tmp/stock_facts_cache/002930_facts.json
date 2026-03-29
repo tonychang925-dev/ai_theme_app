@@ -1,0 +1,154 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "码头储罐综合服务",
+      "evidence_span": "核心业务为码头储罐综合服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "化工仓库综合服务",
+      "evidence_span": "主要业务包括码头储罐综合服务、化工仓库综合服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中转",
+      "evidence_span": "主要业务包括码头储罐综合服务、化工仓库综合服务、中转及其他服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "其他服务",
+      "evidence_span": "主要业务包括码头储罐综合服务、化工仓库综合服务、中转及其他服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物流链管理服务",
+      "evidence_span": "主要业务包括码头储罐综合服务、化工仓库综合服务、中转及其他服务、物流链管理服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "增值服务",
+      "evidence_span": "主要业务包括码头储罐综合服务、化工仓库综合服务、中转及其他服务、物流链管理服务以及增值服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "石化仓储龙头",
+      "evidence_span": "公司是我国石化仓储龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "危化品物流综合服务商",
+      "evidence_span": "公司是国内领先的危化品物流综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "液体化工仓储龙头",
+      "evidence_span": "宏川智慧液体化工仓储龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "码头仓储一体化服务提供商",
+      "evidence_span": "宏川智慧优秀的码头仓储一体化服务提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "石化仓储业务",
+      "evidence_span": "石化仓储是石化产业链中的关键环节"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液体危化品仓储",
+      "evidence_span": "液体危化品仓储领域的“密尔克卫”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "固体赛道",
+      "evidence_span": "切入固体赛道"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "并购拓产",
+      "evidence_span": "宏川智慧并购拓产助力发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "产能扩张",
+      "evidence_span": "关注行业高景气度与公司产能扩张共振"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "码头储罐综合服务",
+        "evidence_span": "核心业务为码头储罐综合服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "化工仓库综合服务",
+        "evidence_span": "主要业务包括码头储罐综合服务、化工仓库综合服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中转及其他服务",
+        "evidence_span": "主要业务包括码头储罐综合服务、化工仓库综合服务、中转及其他服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物流链管理服务",
+        "evidence_span": "主要业务包括码头储罐综合服务、化工仓库综合服务、中转及其他服务、物流链管理服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "增值服务",
+        "evidence_span": "主要业务包括码头储罐综合服务、化工仓库综合服务、中转及其他服务、物流链管理服务以及增值服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "石化仓储龙头",
+        "evidence_span": "公司是我国石化仓储龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "危化品物流综合服务商",
+        "evidence_span": "公司是国内领先的危化品物流综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "液体化工仓储龙头",
+        "evidence_span": "宏川智慧液体化工仓储龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "码头仓储一体化服务提供商",
+        "evidence_span": "宏川智慧优秀的码头仓储一体化服务提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "石化仓储业务",
+        "evidence_span": "石化仓储是石化产业链中的关键环节"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液体危化品仓储",
+        "evidence_span": "液体危化品仓储领域的“密尔克卫”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "固体赛道",
+        "evidence_span": "切入固体赛道"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "并购拓产",
+        "evidence_span": "宏川智慧并购拓产助力发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "产能扩张",
+        "evidence_span": "关注行业高景气度与公司产能扩张共振"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:42:17"
+}

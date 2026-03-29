@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "b7c26846a494", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述暑期档总票房破50亿和影片票房冠军的事件，包含具体时间和数据，是市场动态，无静态知识。"}}

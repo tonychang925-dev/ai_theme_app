@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电池电解液添加剂研发",
+      "evidence_span": "公司专注于锂电池电解液添加剂研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电池电解液添加剂生产",
+      "evidence_span": "公司专注于锂电池电解液添加剂研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电池电解液添加剂销售",
+      "evidence_span": "公司专注于锂电池电解液添加剂研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "特殊有机硅生产",
+      "evidence_span": "产品主要有电子化学品及特殊有机硅两大系列"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电解液添加剂龙头企业",
+      "evidence_span": "电解液添加剂龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "VC和FEC市场领先的供应商",
+      "evidence_span": "是碳酸亚乙烯酯（VC）和氟代碳酸乙烯酯（FEC）市场领先的供应商之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳酸亚乙烯酯（VC）",
+      "evidence_span": "产品主要有电子化学品及特殊有机硅两大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氟代碳酸乙烯酯（FEC）",
+      "evidence_span": "产品主要有电子化学品及特殊有机硅两大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双草酸硼酸锂（BOB）",
+      "evidence_span": "公司电解液添加剂业务主要分为三大类产品，分别是碳酸亚乙烯酯（VC）、氟代碳酸乙烯酯（FEC）和双草酸硼酸锂（BOB）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特殊有机硅产品",
+      "evidence_span": "产品主要有电子化学品及特殊有机硅两大系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双氟磺酰亚胺锂（LiFSI）",
+      "evidence_span": "对双氟磺酰亚胺锂（LiFSI）等新型锂电池电解液添加剂已形成小批量量产或技术储备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二氟磷酸锂（LiDFP）",
+      "evidence_span": "对双氟磺酰亚胺锂（LiFSI）、二氟磷酸锂（LiDFP）、双氟草酸硼酸锂（LiDFOB）等新型锂电池电解液添加剂已形成小批量量产或技术储备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双氟草酸硼酸锂（LiDFOB）",
+      "evidence_span": "对双氟磺酰亚胺锂（LiFSI）、二氟磷酸锂（LiDFP）、双氟草酸硼酸锂（LiDFOB）等新型锂电池电解液添加剂已形成小批量量产或技术储备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氯代碳酸乙烯酯（CEC）",
+      "evidence_span": "建设年产8 万吨氯代碳酸乙烯酯（CEC）项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能长寿命石墨负极材料",
+      "evidence_span": "公司子公司华赢新能源研发的高性能长寿命石墨负极材料的开发和产业化已处于中试阶段"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双草酸硼酸钠",
+      "evidence_span": "公司双草酸硼酸钠和双氟磺酰亚胺钠为钠离子电池产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双氟磺酰亚胺钠",
+      "evidence_span": "公司双草酸硼酸钠和双氟磺酰亚胺钠为钠离子电池产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "卤素置换工艺制备FEC",
+      "evidence_span": "在国内率先开发出一条不同于国际主流采用氟气氟化的卤素置换工艺路线制备FEC"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "非光气法生产异氰酸酯硅烷技术",
+      "evidence_span": "公司是少数拥有“非光气法生产异氰酸酯硅烷”技术的生产商之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "光催化氯化工艺",
+      "evidence_span": "公司自主开发了光催化氯化、连续精馏等工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连续精馏工艺",
+      "evidence_span": "公司自主开发了光催化氯化、连续精馏等工艺技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抑制VC变色和变质的方法",
+      "evidence_span": "自主开发出抑制VC 变色和变质的方法"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天赐材料",
+      "evidence_span": "与天赐材料、国泰华荣、三菱化学等主要客户有多年合作经历"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国泰华荣",
+      "evidence_span": "与天赐材料、国泰华荣、三菱化学等主要客户有多年合作经历"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三菱化学",
+      "evidence_span": "与天赐材料、国泰华荣、三菱化学等主要客户有多年合作经历"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "2021年公司分别与宁德时代、比亚迪、天赐材料签署了长期合作协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "2021年公司分别与宁德时代、比亚迪、天赐材料签署了长期合作协议"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电解液添加剂国产化",
+      "evidence_span": "成功实现了电解液添加剂的国产化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电池电解液添加剂研发",
+        "evidence_span": "公司专注于锂电池电解液添加剂研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电池电解液添加剂生产",
+        "evidence_span": "公司专注于锂电池电解液添加剂研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电池电解液添加剂销售",
+        "evidence_span": "公司专注于锂电池电解液添加剂研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "特殊有机硅生产",
+        "evidence_span": "产品主要有电子化学品及特殊有机硅两大系列"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电解液添加剂龙头企业",
+        "evidence_span": "电解液添加剂龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "VC和FEC市场领先的供应商",
+        "evidence_span": "是碳酸亚乙烯酯（VC）和氟代碳酸乙烯酯（FEC）市场领先的供应商之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳酸亚乙烯酯（VC）",
+        "evidence_span": "产品主要有电子化学品及特殊有机硅两大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氟代碳酸乙烯酯（FEC）",
+        "evidence_span": "产品主要有电子化学品及特殊有机硅两大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双草酸硼酸锂（BOB）",
+        "evidence_span": "公司电解液添加剂业务主要分为三大类产品，分别是碳酸亚乙烯酯（VC）、氟代碳酸乙烯酯（FEC）和双草酸硼酸锂（BOB）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特殊有机硅产品",
+        "evidence_span": "产品主要有电子化学品及特殊有机硅两大系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双氟磺酰亚胺锂（LiFSI）",
+        "evidence_span": "对双氟磺酰亚胺锂（LiFSI）等新型锂电池电解液添加剂已形成小批量量产或技术储备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二氟磷酸锂（LiDFP）",
+        "evidence_span": "对双氟磺酰亚胺锂（LiFSI）、二氟磷酸锂（LiDFP）、双氟草酸硼酸锂（LiDFOB）等新型锂电池电解液添加剂已形成小批量量产或技术储备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双氟草酸硼酸锂（LiDFOB）",
+        "evidence_span": "对双氟磺酰亚胺锂（LiFSI）、二氟磷酸锂（LiDFP）、双氟草酸硼酸锂（LiDFOB）等新型锂电池电解液添加剂已形成小批量量产或技术储备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氯代碳酸乙烯酯（CEC）",
+        "evidence_span": "建设年产8 万吨氯代碳酸乙烯酯（CEC）项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能长寿命石墨负极材料",
+        "evidence_span": "公司子公司华赢新能源研发的高性能长寿命石墨负极材料的开发和产业化已处于中试阶段"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双草酸硼酸钠",
+        "evidence_span": "公司双草酸硼酸钠和双氟磺酰亚胺钠为钠离子电池产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双氟磺酰亚胺钠",
+        "evidence_span": "公司双草酸硼酸钠和双氟磺酰亚胺钠为钠离子电池产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "卤素置换工艺制备FEC",
+        "evidence_span": "在国内率先开发出一条不同于国际主流采用氟气氟化的卤素置换工艺路线制备FEC"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "非光气法生产异氰酸酯硅烷技术",
+        "evidence_span": "公司是少数拥有“非光气法生产异氰酸酯硅烷”技术的生产商之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "光催化氯化工艺",
+        "evidence_span": "公司自主开发了光催化氯化、连续精馏等工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连续精馏工艺",
+        "evidence_span": "公司自主开发了光催化氯化、连续精馏等工艺技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抑制VC变色和变质的方法",
+        "evidence_span": "自主开发出抑制VC 变色和变质的方法"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天赐材料",
+        "evidence_span": "与天赐材料、国泰华荣、三菱化学等主要客户有多年合作经历"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国泰华荣",
+        "evidence_span": "与天赐材料、国泰华荣、三菱化学等主要客户有多年合作经历"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三菱化学",
+        "evidence_span": "与天赐材料、国泰华荣、三菱化学等主要客户有多年合作经历"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "2021年公司分别与宁德时代、比亚迪、天赐材料签署了长期合作协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "2021年公司分别与宁德时代、比亚迪、天赐材料签署了长期合作协议"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电解液添加剂国产化",
+        "evidence_span": "成功实现了电解液添加剂的国产化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:17:10"
+}

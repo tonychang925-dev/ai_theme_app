@@ -1,0 +1,529 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "连接器",
+      "evidence_span": "专业从事连接器和屏蔽罩为主的精密电子元件研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "屏蔽罩",
+      "evidence_span": "专业从事连接器和屏蔽罩为主的精密电子元件研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车连接器供应商",
+      "evidence_span": "国内领先的汽车连接器供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精密电子元件制造商",
+      "evidence_span": "专注手机和汽车领域的精密电子元件制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手机精密连接器",
+      "evidence_span": "手机电子类产品包括手机精密连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手机精密屏蔽罩及结构件",
+      "evidence_span": "手机电子类产品包括手机精密屏蔽罩及结构件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车精密连接器及配件、组件",
+      "evidence_span": "汽车电子类产品包括高压高电流、高清高速高频等汽车精密连接器及配件、组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车精密屏蔽罩及结构件",
+      "evidence_span": "汽车电子类产品包括汽车精密屏蔽罩及结构件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "板端连接器",
+      "evidence_span": "产品包括板端连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "线端连接器端子及护套",
+      "evidence_span": "产品包括线端连接器端子及护套"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高电压高电流连接器",
+      "evidence_span": "布局新型连接器领域，与 Tier1 及整车厂合作同步研发多类高电压高电流连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高清高速连接器",
+      "evidence_span": "布局新型连接器领域，与 Tier1 及整车厂合作同步研发多类高清高速连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高频连接器",
+      "evidence_span": "布局新型连接器领域，与 Tier1 及整车厂合作同步研发多类高频连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "毫米波雷达模块连接器",
+      "evidence_span": "不断完善毫米波雷达模块连接器整体解决方案产品布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光雷达模块连接器",
+      "evidence_span": "不断完善激光雷达模块连接器整体解决方案产品布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "域控制器系统连接器",
+      "evidence_span": "不断完善域控制器系统连接器整体解决方案产品布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动驾驶系统连接器",
+      "evidence_span": "不断完善自动驾驶系统连接器整体解决方案产品布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能驾驶舱系统连接器",
+      "evidence_span": "不断完善智能驾驶舱系统连接器整体解决方案产品布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电控系统连接器",
+      "evidence_span": "不断完善电控系统连接器整体解决方案产品布局"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连接器设计",
+      "evidence_span": "具备连接器和屏蔽罩设计、开发和生产能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "屏蔽罩设计",
+      "evidence_span": "具备连接器和屏蔽罩设计、开发和生产能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模具开发技术",
+      "evidence_span": "以先进的模具开发技术为支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密冲压制造技术",
+      "evidence_span": "以先进的模具开发技术、精密冲压和注塑等制造技术为支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "注塑制造技术",
+      "evidence_span": "以先进的模具开发技术、精密冲压和注塑等制造技术为支撑"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精密冲压模具设计",
+      "evidence_span": "导入先进的设计软件进行高精密冲压和注塑模具设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精密注塑成型模具设计",
+      "evidence_span": "导入先进的设计软件进行高精密冲压和注塑模具设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密端子冲压模具加工",
+      "evidence_span": "具备各种高精密度的注塑成型模具、精密端子冲压模具的加工和组试能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密五金件冲压模具加工",
+      "evidence_span": "具备各种高精密度的注塑成型模具、精密五金件冲压模具的加工和组试能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽车精密连接器研发经验",
+      "evidence_span": "具备丰富的汽车精密连接器研发经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高电流高电压产品生产能力",
+      "evidence_span": "初步具备生产高电流高电压等新型产品能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高频高速传输产品生产能力",
+      "evidence_span": "初步具备生产高频高速传输等新型产品能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "法雷奥",
+      "evidence_span": "已实现对法雷奥等国内外知名汽车 Tier1 供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦格纳",
+      "evidence_span": "已实现对麦格纳等国内外知名汽车 Tier1 供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科世达",
+      "evidence_span": "已实现对科世达等国内外知名汽车 Tier1 供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "已实现对比亚迪等国内外知名汽车 Tier1 供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "已实现对宁德时代等国内外知名汽车 Tier1 供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蜂巢电驱",
+      "evidence_span": "已实现对蜂巢电驱等国内外知名汽车 Tier1 供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汇川技术",
+      "evidence_span": "已实现对汇川技术等国内外知名汽车 Tier1 供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "均胜电子",
+      "evidence_span": "已实现对均胜电子等国内外知名汽车 Tier1 供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "马瑞利",
+      "evidence_span": "已实现对马瑞利等国内外知名汽车 Tier1 供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德系整车厂",
+      "evidence_span": "产品终端覆盖德系主流整车厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日系整车厂",
+      "evidence_span": "产品终端覆盖日系主流整车厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美系整车厂",
+      "evidence_span": "产品终端覆盖美系主流整车厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内自主品牌一线车企",
+      "evidence_span": "产品终端覆盖国内自主品牌一线车企"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特斯拉",
+      "evidence_span": "产品终端覆盖特斯拉等全球新能源领先品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏",
+      "evidence_span": "产品终端覆盖小鹏等全球新能源领先品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "理想",
+      "evidence_span": "产品终端覆盖理想等全球新能源领先品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "蔚来",
+      "evidence_span": "产品终端覆盖蔚来等全球新能源领先品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金康",
+      "evidence_span": "产品终端覆盖金康等全球新能源领先品牌"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车电动化",
+      "evidence_span": "顺应汽车电动化、智能化、网联化发展趋势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车智能化",
+      "evidence_span": "顺应汽车电动化、智能化、网联化发展趋势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "汽车网联化",
+      "evidence_span": "顺应汽车电动化、智能化、网联化发展趋势"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "连接器",
+        "evidence_span": "专业从事连接器和屏蔽罩为主的精密电子元件研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "屏蔽罩",
+        "evidence_span": "专业从事连接器和屏蔽罩为主的精密电子元件研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车连接器供应商",
+        "evidence_span": "国内领先的汽车连接器供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精密电子元件制造商",
+        "evidence_span": "专注手机和汽车领域的精密电子元件制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手机精密连接器",
+        "evidence_span": "手机电子类产品包括手机精密连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手机精密屏蔽罩及结构件",
+        "evidence_span": "手机电子类产品包括手机精密屏蔽罩及结构件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车精密连接器及配件、组件",
+        "evidence_span": "汽车电子类产品包括高压高电流、高清高速高频等汽车精密连接器及配件、组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车精密屏蔽罩及结构件",
+        "evidence_span": "汽车电子类产品包括汽车精密屏蔽罩及结构件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "板端连接器",
+        "evidence_span": "产品包括板端连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "线端连接器端子及护套",
+        "evidence_span": "产品包括线端连接器端子及护套"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高电压高电流连接器",
+        "evidence_span": "布局新型连接器领域，与 Tier1 及整车厂合作同步研发多类高电压高电流连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高清高速连接器",
+        "evidence_span": "布局新型连接器领域，与 Tier1 及整车厂合作同步研发多类高清高速连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高频连接器",
+        "evidence_span": "布局新型连接器领域，与 Tier1 及整车厂合作同步研发多类高频连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "毫米波雷达模块连接器",
+        "evidence_span": "不断完善毫米波雷达模块连接器整体解决方案产品布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光雷达模块连接器",
+        "evidence_span": "不断完善激光雷达模块连接器整体解决方案产品布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "域控制器系统连接器",
+        "evidence_span": "不断完善域控制器系统连接器整体解决方案产品布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动驾驶系统连接器",
+        "evidence_span": "不断完善自动驾驶系统连接器整体解决方案产品布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能驾驶舱系统连接器",
+        "evidence_span": "不断完善智能驾驶舱系统连接器整体解决方案产品布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电控系统连接器",
+        "evidence_span": "不断完善电控系统连接器整体解决方案产品布局"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连接器设计",
+        "evidence_span": "具备连接器和屏蔽罩设计、开发和生产能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "屏蔽罩设计",
+        "evidence_span": "具备连接器和屏蔽罩设计、开发和生产能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模具开发技术",
+        "evidence_span": "以先进的模具开发技术为支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密冲压制造技术",
+        "evidence_span": "以先进的模具开发技术、精密冲压和注塑等制造技术为支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "注塑制造技术",
+        "evidence_span": "以先进的模具开发技术、精密冲压和注塑等制造技术为支撑"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精密冲压模具设计",
+        "evidence_span": "导入先进的设计软件进行高精密冲压和注塑模具设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精密注塑成型模具设计",
+        "evidence_span": "导入先进的设计软件进行高精密冲压和注塑模具设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密端子冲压模具加工",
+        "evidence_span": "具备各种高精密度的注塑成型模具、精密端子冲压模具的加工和组试能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密五金件冲压模具加工",
+        "evidence_span": "具备各种高精密度的注塑成型模具、精密五金件冲压模具的加工和组试能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽车精密连接器研发经验",
+        "evidence_span": "具备丰富的汽车精密连接器研发经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高电流高电压产品生产能力",
+        "evidence_span": "初步具备生产高电流高电压等新型产品能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高频高速传输产品生产能力",
+        "evidence_span": "初步具备生产高频高速传输等新型产品能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "法雷奥",
+        "evidence_span": "已实现对法雷奥等国内外知名汽车 Tier1 供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦格纳",
+        "evidence_span": "已实现对麦格纳等国内外知名汽车 Tier1 供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科世达",
+        "evidence_span": "已实现对科世达等国内外知名汽车 Tier1 供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "已实现对比亚迪等国内外知名汽车 Tier1 供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "已实现对宁德时代等国内外知名汽车 Tier1 供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蜂巢电驱",
+        "evidence_span": "已实现对蜂巢电驱等国内外知名汽车 Tier1 供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汇川技术",
+        "evidence_span": "已实现对汇川技术等国内外知名汽车 Tier1 供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "均胜电子",
+        "evidence_span": "已实现对均胜电子等国内外知名汽车 Tier1 供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "马瑞利",
+        "evidence_span": "已实现对马瑞利等国内外知名汽车 Tier1 供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德系整车厂",
+        "evidence_span": "产品终端覆盖德系主流整车厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日系整车厂",
+        "evidence_span": "产品终端覆盖日系主流整车厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美系整车厂",
+        "evidence_span": "产品终端覆盖美系主流整车厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内自主品牌一线车企",
+        "evidence_span": "产品终端覆盖国内自主品牌一线车企"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特斯拉",
+        "evidence_span": "产品终端覆盖特斯拉等全球新能源领先品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏",
+        "evidence_span": "产品终端覆盖小鹏等全球新能源领先品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "理想",
+        "evidence_span": "产品终端覆盖理想等全球新能源领先品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "蔚来",
+        "evidence_span": "产品终端覆盖蔚来等全球新能源领先品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金康",
+        "evidence_span": "产品终端覆盖金康等全球新能源领先品牌"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车电动化",
+        "evidence_span": "顺应汽车电动化、智能化、网联化发展趋势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车智能化",
+        "evidence_span": "顺应汽车电动化、智能化、网联化发展趋势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "汽车网联化",
+        "evidence_span": "顺应汽车电动化、智能化、网联化发展趋势"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:41:45"
+}

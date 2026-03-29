@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:30:35", "result": {"span_uid": "db56bbcd83a0", "action": "rewrite", "canonical_text": "华为的终端业务覆盖手机、个人电脑和平板电脑、可穿戴设备、移动宽带终端、家庭终端等产品。", "final_type": "core", "final_role": "终端业务构成", "stability": "high", "reason": "去除了营收占比等具体事件化表述，保留了业务覆盖范围，形成稳定知识块。"}}

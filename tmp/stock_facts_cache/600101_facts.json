@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电力",
+      "evidence_span": "公司的主要业务有：电力、自来水、综合能源服务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自来水",
+      "evidence_span": "公司的主要业务有：电力、自来水、综合能源服务等"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "综合能源服务",
+      "evidence_span": "公司的主要业务有：电力、自来水、综合能源服务等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国有控股的电力、自来水生产经营及综合能源服务企业",
+      "evidence_span": "公司是国有控股的电力、自来水生产经营及综合能源服务企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "水力发电公司",
+      "evidence_span": "作为“绿色能源”的水力发电公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力供应",
+      "evidence_span": "电力和自来水的生产与供应为公司的核心业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自来水供应",
+      "evidence_span": "电力和自来水的生产与供应为公司的核心业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电水设计安装",
+      "evidence_span": "公司综合能源服务主要包括电水设计安装、智能运维、市场化售电、电动车充电、二次供水等经营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能运维",
+      "evidence_span": "公司综合能源服务主要包括电水设计安装、智能运维、市场化售电、电动车充电、二次供水等经营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市场化售电",
+      "evidence_span": "公司综合能源服务主要包括电水设计安装、智能运维、市场化售电、电动车充电、二次供水等经营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动车充电",
+      "evidence_span": "公司综合能源服务主要包括电水设计安装、智能运维、市场化售电、电动车充电、二次供水等经营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "二次供水",
+      "evidence_span": "公司综合能源服务主要包括电水设计安装、智能运维、市场化售电、电动车充电、二次供水等经营业务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水力发电",
+      "evidence_span": "水能资源是非常重要的可再生能源"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能电网调度系统",
+      "evidence_span": "启动新一代智能电网调度系统、配网设备状态监测系统建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "配网设备状态监测系统",
+      "evidence_span": "启动新一代智能电网调度系统、配网设备状态监测系统建设"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "遂宁市本级和船山区、安居区",
+      "evidence_span": "供电区域为遂宁市本级和船山区、安居区"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "遂宁市本级和船山区城区",
+      "evidence_span": "供水区域为遂宁市本级和船山区城区"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色能源",
+      "evidence_span": "作为“绿色能源”的水力发电公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳达峰、碳中和",
+      "evidence_span": "在“碳达峰、碳中和”目标下，电力行业绿色低碳转型成效显著"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电力",
+        "evidence_span": "公司的主要业务有：电力、自来水、综合能源服务等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自来水",
+        "evidence_span": "公司的主要业务有：电力、自来水、综合能源服务等"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "综合能源服务",
+        "evidence_span": "公司的主要业务有：电力、自来水、综合能源服务等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国有控股的电力、自来水生产经营及综合能源服务企业",
+        "evidence_span": "公司是国有控股的电力、自来水生产经营及综合能源服务企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "水力发电公司",
+        "evidence_span": "作为“绿色能源”的水力发电公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力供应",
+        "evidence_span": "电力和自来水的生产与供应为公司的核心业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自来水供应",
+        "evidence_span": "电力和自来水的生产与供应为公司的核心业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电水设计安装",
+        "evidence_span": "公司综合能源服务主要包括电水设计安装、智能运维、市场化售电、电动车充电、二次供水等经营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能运维",
+        "evidence_span": "公司综合能源服务主要包括电水设计安装、智能运维、市场化售电、电动车充电、二次供水等经营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市场化售电",
+        "evidence_span": "公司综合能源服务主要包括电水设计安装、智能运维、市场化售电、电动车充电、二次供水等经营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动车充电",
+        "evidence_span": "公司综合能源服务主要包括电水设计安装、智能运维、市场化售电、电动车充电、二次供水等经营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "二次供水",
+        "evidence_span": "公司综合能源服务主要包括电水设计安装、智能运维、市场化售电、电动车充电、二次供水等经营业务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水力发电",
+        "evidence_span": "水能资源是非常重要的可再生能源"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能电网调度系统",
+        "evidence_span": "启动新一代智能电网调度系统、配网设备状态监测系统建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "配网设备状态监测系统",
+        "evidence_span": "启动新一代智能电网调度系统、配网设备状态监测系统建设"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "遂宁市本级和船山区、安居区",
+        "evidence_span": "供电区域为遂宁市本级和船山区、安居区"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "遂宁市本级和船山区城区",
+        "evidence_span": "供水区域为遂宁市本级和船山区城区"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色能源",
+        "evidence_span": "作为“绿色能源”的水力发电公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳达峰、碳中和",
+        "evidence_span": "在“碳达峰、碳中和”目标下，电力行业绿色低碳转型成效显著"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:17:28"
+}

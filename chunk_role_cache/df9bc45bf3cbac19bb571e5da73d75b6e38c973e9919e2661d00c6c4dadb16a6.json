@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "15dfbc5527de", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述北京大学团队通过技术解析光刻胶分子结构并指导开发产业化方案，包含光刻胶微观结构和减少缺陷的知识，但以具体研究事件形式呈现，混合了事件信息，可能对题材知识构建有价值。"}}

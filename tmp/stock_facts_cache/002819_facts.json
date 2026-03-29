@@ -1,0 +1,529 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "仪器销售",
+      "evidence_span": "仪器销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "仪器租赁",
+      "evidence_span": "仪器租赁业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "系统集成",
+      "evidence_span": "系统集成业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业保理",
+      "evidence_span": "商业保理业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "招标代理",
+      "evidence_span": "招标代理业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "信息安全保密",
+      "evidence_span": "信息安全保密业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "虹膜识别",
+      "evidence_span": "虹膜识别业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "政务集成",
+      "evidence_span": "政务集成业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "先进测试技术与科技服务商",
+      "evidence_span": "中国领先的先进测试技术与科技服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "仪器租赁先行者",
+      "evidence_span": "国内仪器租赁的先行者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子测量仪器",
+      "evidence_span": "电子测量仪器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "测试应用解决方案",
+      "evidence_span": "全面测试应用解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车三电测试系统",
+      "evidence_span": "新能源汽车三电测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电磁兼容测试系统",
+      "evidence_span": "电磁兼容测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据采集系统",
+      "evidence_span": "数据采集系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "太阳能光伏测试系统",
+      "evidence_span": "太阳能光伏测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线充电测试系统",
+      "evidence_span": "无线充电测试系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内网安全管理类产品",
+      "evidence_span": "内网安全管理类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数据清除类产品",
+      "evidence_span": "数据清除类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "保密应用软件类产品",
+      "evidence_span": "保密应用软件类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电磁泄露防护类产品",
+      "evidence_span": "电磁泄露防护类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通讯保密设备类产品",
+      "evidence_span": "通讯保密设备类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "检查工具类产品",
+      "evidence_span": "检查工具类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "虹膜采集设备",
+      "evidence_span": "虹膜采集设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "虹膜识别设备",
+      "evidence_span": "虹膜识别设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "虹膜识别及管理系统",
+      "evidence_span": "虹膜识别及管理系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "计算机网络系统",
+      "evidence_span": "计算机网络系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "网络安全系统",
+      "evidence_span": "网络安全系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子政务应用系统",
+      "evidence_span": "电子政务应用系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主研发测试应用系统",
+      "evidence_span": "自主研发了多项测试应用系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "计算机软件著作权",
+      "evidence_span": "获得了78项计算机软件著作权"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基础软件和政务信息化技术研究",
+      "evidence_span": "开展基础软件和政务信息化相关技术研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信息安全保密技术自主研发",
+      "evidence_span": "信息安全保密相关的基础技术自主研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "虹膜识别技术",
+      "evidence_span": "进入虹膜识别领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "信创产品适配",
+      "evidence_span": "做了大量的适配工作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电子制造行业",
+      "evidence_span": "电子制造"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通讯及信息技术行业",
+      "evidence_span": "通讯及信息技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "教育科研行业",
+      "evidence_span": "教育科研"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "航空航天行业",
+      "evidence_span": "航空航天"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工业过程控制行业",
+      "evidence_span": "工业过程控制"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "交通运输行业",
+      "evidence_span": "交通运输"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新能源行业",
+      "evidence_span": "新能源"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "半导体企业",
+      "evidence_span": "半导体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通信企业",
+      "evidence_span": "通信"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电子信息相关企业",
+      "evidence_span": "电子信息相关企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安行业",
+      "evidence_span": "公安"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "矿山行业",
+      "evidence_span": "矿山"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "出入境行业",
+      "evidence_span": "出入境"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "党政机关",
+      "evidence_span": "党政机关"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大型国有企业",
+      "evidence_span": "大型国有企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "信息安全保密相关的基础技术自主研发和国产化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信创",
+      "evidence_span": "信创"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "仪器销售",
+        "evidence_span": "仪器销售业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "仪器租赁",
+        "evidence_span": "仪器租赁业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "系统集成",
+        "evidence_span": "系统集成业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业保理",
+        "evidence_span": "商业保理业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "招标代理",
+        "evidence_span": "招标代理业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "信息安全保密",
+        "evidence_span": "信息安全保密业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "虹膜识别",
+        "evidence_span": "虹膜识别业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "政务集成",
+        "evidence_span": "政务集成业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "先进测试技术与科技服务商",
+        "evidence_span": "中国领先的先进测试技术与科技服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "仪器租赁先行者",
+        "evidence_span": "国内仪器租赁的先行者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子测量仪器",
+        "evidence_span": "电子测量仪器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "测试应用解决方案",
+        "evidence_span": "全面测试应用解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车三电测试系统",
+        "evidence_span": "新能源汽车三电测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电磁兼容测试系统",
+        "evidence_span": "电磁兼容测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据采集系统",
+        "evidence_span": "数据采集系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "太阳能光伏测试系统",
+        "evidence_span": "太阳能光伏测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线充电测试系统",
+        "evidence_span": "无线充电测试系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内网安全管理类产品",
+        "evidence_span": "内网安全管理类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数据清除类产品",
+        "evidence_span": "数据清除类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "保密应用软件类产品",
+        "evidence_span": "保密应用软件类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电磁泄露防护类产品",
+        "evidence_span": "电磁泄露防护类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通讯保密设备类产品",
+        "evidence_span": "通讯保密设备类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "检查工具类产品",
+        "evidence_span": "检查工具类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "虹膜采集设备",
+        "evidence_span": "虹膜采集设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "虹膜识别设备",
+        "evidence_span": "虹膜识别设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "虹膜识别及管理系统",
+        "evidence_span": "虹膜识别及管理系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "计算机网络系统",
+        "evidence_span": "计算机网络系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "网络安全系统",
+        "evidence_span": "网络安全系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子政务应用系统",
+        "evidence_span": "电子政务应用系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主研发测试应用系统",
+        "evidence_span": "自主研发了多项测试应用系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "计算机软件著作权",
+        "evidence_span": "获得了78项计算机软件著作权"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基础软件和政务信息化技术研究",
+        "evidence_span": "开展基础软件和政务信息化相关技术研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信息安全保密技术自主研发",
+        "evidence_span": "信息安全保密相关的基础技术自主研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "虹膜识别技术",
+        "evidence_span": "进入虹膜识别领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "信创产品适配",
+        "evidence_span": "做了大量的适配工作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电子制造行业",
+        "evidence_span": "电子制造"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通讯及信息技术行业",
+        "evidence_span": "通讯及信息技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "教育科研行业",
+        "evidence_span": "教育科研"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "航空航天行业",
+        "evidence_span": "航空航天"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工业过程控制行业",
+        "evidence_span": "工业过程控制"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "交通运输行业",
+        "evidence_span": "交通运输"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新能源行业",
+        "evidence_span": "新能源"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "半导体企业",
+        "evidence_span": "半导体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通信企业",
+        "evidence_span": "通信"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电子信息相关企业",
+        "evidence_span": "电子信息相关企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安行业",
+        "evidence_span": "公安"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "矿山行业",
+        "evidence_span": "矿山"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "出入境行业",
+        "evidence_span": "出入境"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "党政机关",
+        "evidence_span": "党政机关"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大型国有企业",
+        "evidence_span": "大型国有企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "信息安全保密相关的基础技术自主研发和国产化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信创",
+        "evidence_span": "信创"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:51:59"
+}

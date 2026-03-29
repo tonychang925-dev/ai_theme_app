@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "64d10f7e3d72", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落描述银河太空舱和Robot Mall 4S店的营业事件，但涉及人形机器人示范区、零售业态、产品集合等应用场景和商业模式知识，混合了事件和潜在稳定信息，因此属于混合候选。"}}

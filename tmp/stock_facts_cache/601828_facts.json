@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "自营商场",
+      "evidence_span": "公司业务主要由自营商场、委管商场、建造施工及设计、家装及商品销售四大板块构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "委管商场",
+      "evidence_span": "公司业务主要由自营商场、委管商场、建造施工及设计、家装及商品销售四大板块构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建造施工",
+      "evidence_span": "公司业务主要由自营商场、委管商场、建造施工及设计、家装及商品销售四大板块构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设计",
+      "evidence_span": "公司业务主要由自营商场、委管商场、建造施工及设计、家装及商品销售四大板块构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "家装",
+      "evidence_span": "公司业务主要由自营商场、委管商场、建造施工及设计、家装及商品销售四大板块构成"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商品销售",
+      "evidence_span": "公司业务主要由自营商场、委管商场、建造施工及设计、家装及商品销售四大板块构成"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "连锁家居商场龙头",
+      "evidence_span": "全国领先的连锁家居商场，多年稳居行业第一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "家居商场龙头",
+      "evidence_span": "家居商场龙头，平台价值凸显"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家居建材商场",
+      "evidence_span": "美凯龙家具建材卖场龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家装服务",
+      "evidence_span": "家装业务主要采用自营模式在家居商场内开设直营门店"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商品销售",
+      "evidence_span": "商品销售及家装收入达到13.96亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建造施工服务",
+      "evidence_span": "承接部分委管商场业主或者外部商业物业业主的商场建筑安装以及装饰施工业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "设计服务",
+      "evidence_span": "公司业务主要由自营商场、委管商场、建造施工及设计、家装及商品销售四大板块构成"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全屋整装全链路ERP系统",
+      "evidence_span": "自主研发全屋整装全链路ERP系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字营销工具",
+      "evidence_span": "数字营销工具及CRM系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CRM系统",
+      "evidence_span": "数字营销工具及CRM系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "家装核心业务流管理系统",
+      "evidence_span": "家装核心业务流管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "C端客户小程序",
+      "evidence_span": "C端客户小程序"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "供应商订单管理系统",
+      "evidence_span": "供应商订单管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "防霉防渗防开裂防潮别墅降噪专利",
+      "evidence_span": "在防霉、防渗、防开裂、防潮、别墅降噪等方面均取得实用新型专利"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里巴巴",
+      "evidence_span": "联合阿里巴巴，共同拓展家居新零售领域布局"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "品牌商户",
+      "evidence_span": "吸引优质品牌商户入驻商场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "地产商",
+      "evidence_span": "与地产商合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "家居新零售",
+      "evidence_span": "联合阿里巴巴，共同拓展家居新零售领域布局"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字化转型",
+      "evidence_span": "推动产业数字化转型"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "自营商场",
+        "evidence_span": "公司业务主要由自营商场、委管商场、建造施工及设计、家装及商品销售四大板块构成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "委管商场",
+        "evidence_span": "公司业务主要由自营商场、委管商场、建造施工及设计、家装及商品销售四大板块构成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "建造施工及设计",
+        "evidence_span": "公司业务主要由自营商场、委管商场、建造施工及设计、家装及商品销售四大板块构成"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "家装及商品销售",
+        "evidence_span": "公司业务主要由自营商场、委管商场、建造施工及设计、家装及商品销售四大板块构成"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "连锁家居商场龙头",
+        "evidence_span": "全国领先的连锁家居商场，多年稳居行业第一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "家居商场龙头",
+        "evidence_span": "家居商场龙头，平台价值凸显"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家居建材商场",
+        "evidence_span": "美凯龙家具建材卖场龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家装服务",
+        "evidence_span": "家装业务主要采用自营模式在家居商场内开设直营门店"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商品销售",
+        "evidence_span": "商品销售及家装收入达到13.96亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建造施工服务",
+        "evidence_span": "承接部分委管商场业主或者外部商业物业业主的商场建筑安装以及装饰施工业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "设计服务",
+        "evidence_span": "公司业务主要由自营商场、委管商场、建造施工及设计、家装及商品销售四大板块构成"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全屋整装全链路ERP系统",
+        "evidence_span": "自主研发全屋整装全链路ERP系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字营销工具",
+        "evidence_span": "数字营销工具及CRM系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CRM系统",
+        "evidence_span": "数字营销工具及CRM系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "家装核心业务流管理系统",
+        "evidence_span": "家装核心业务流管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "C端客户小程序",
+        "evidence_span": "C端客户小程序"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "供应商订单管理系统",
+        "evidence_span": "供应商订单管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "防霉防渗防开裂防潮别墅降噪专利",
+        "evidence_span": "在防霉、防渗、防开裂、防潮、别墅降噪等方面均取得实用新型专利"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里巴巴",
+        "evidence_span": "联合阿里巴巴，共同拓展家居新零售领域布局"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "品牌商户",
+        "evidence_span": "吸引优质品牌商户入驻商场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "地产商",
+        "evidence_span": "与地产商合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "家居新零售",
+        "evidence_span": "联合阿里巴巴，共同拓展家居新零售领域布局"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字化转型",
+        "evidence_span": "推动产业数字化转型"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:39:06"
+}

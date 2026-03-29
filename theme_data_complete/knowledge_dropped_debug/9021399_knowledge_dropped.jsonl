@@ -1,0 +1,5 @@
+{"span_uid": "cc30c7af173f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "技术进展", "stability": "low", "reason": "片段描述具体厂商在特定时间点对HBM4技术的兴趣和准备，属于事件性、进展性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "71242485d4d4", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "技术进展", "stability": "low", "reason": "片段描述具体厂商在特定时间点考虑引入先进封装技术，属于事件性、进展性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "611dc0892fb4", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体公司（SK海力士）的短期需求预测，属于事件性、主观性信息，无法形成稳定、可独立成立的知识表达。"}
+{"span_uid": "4a9e81b1ccf6", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体公司（三星电子）的产品开发流程和时间表，属于事件性、临时性信息，无法形成稳定、可独立成立的知识表达。"}
+{"span_uid": "6bf867a232d8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品技术规格", "stability": "high", "reason": "原文是具体产品（Blackwell Ultra）的技术规格，属于事件化信息，无法形成独立稳定的题材知识块。"}

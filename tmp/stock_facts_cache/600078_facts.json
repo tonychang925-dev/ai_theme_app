@@ -1,0 +1,154 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "黄磷生产",
+      "evidence_span": "公司主要从事黄磷、磷酸、磷酸盐等精细磷化工系列产品的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "公司主要从事黄磷、磷酸、磷酸盐等精细磷化工系列产品的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "磷酸生产",
+      "evidence_span": "公司主要从事黄磷、磷酸、磷酸盐等精细磷化工系列产品的生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "磷酸盐生产",
+      "evidence_span": "公司主要从事黄磷、磷酸、磷酸盐等精细磷化工系列产品的生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精细磷化工企业",
+      "evidence_span": "国内精细化程度高、产品种类多和技术成熟的精细磷化工企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "矿电磷运一体化企业",
+      "evidence_span": "矿、电、磷、运产业布局优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "食品级磷酸",
+      "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电器级磷酸",
+      "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯电子级磷酸",
+      "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "牙膏级磷酸氢钙",
+      "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药级磷酸氢钙",
+      "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "磷酸盐",
+      "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子化学品",
+      "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "牙膏级磷酸氢钙技术",
+      "evidence_span": "公司牙膏级磷酸氢钙保持国际先进技术水平"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "黄磷涨价弹性大",
+      "evidence_span": "ST澄星磷化工一体化发展，受益黄磷涨价弹性大"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "黄磷生产与销售",
+        "evidence_span": "公司主要从事黄磷、磷酸、磷酸盐等精细磷化工系列产品的生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "磷酸生产与销售",
+        "evidence_span": "公司主要从事黄磷、磷酸、磷酸盐等精细磷化工系列产品的生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "磷酸盐生产与销售",
+        "evidence_span": "公司主要从事黄磷、磷酸、磷酸盐等精细磷化工系列产品的生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精细磷化工企业",
+        "evidence_span": "国内精细化程度高、产品种类多和技术成熟的精细磷化工企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "矿电磷运一体化企业",
+        "evidence_span": "矿、电、磷、运产业布局优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "食品级磷酸",
+        "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电器级磷酸",
+        "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯电子级磷酸",
+        "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "牙膏级磷酸氢钙",
+        "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药级磷酸氢钙",
+        "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "磷酸盐",
+        "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子化学品",
+        "evidence_span": "形成了食品级磷酸、电器级磷酸、高纯电子级磷酸、牙膏级及医药级磷酸氢钙、磷酸盐和电子化学品等技术含量高，品类丰富的下游精细磷化工产品系列"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "牙膏级磷酸氢钙技术",
+        "evidence_span": "公司牙膏级磷酸氢钙保持国际先进技术水平"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "黄磷涨价弹性大",
+        "evidence_span": "ST澄星磷化工一体化发展，受益黄磷涨价弹性大"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:13:08"
+}

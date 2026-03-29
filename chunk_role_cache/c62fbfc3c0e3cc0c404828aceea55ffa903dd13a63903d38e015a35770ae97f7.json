@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "58899cef62dc", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落描述了超轻薄碳化硅AR眼镜的展示事件，包含具体技术参数（如重量、厚度）和产品原型信息，这些是AR眼镜的静态技术知识。但段落以发布会事件为背景，混合了事件动态，因此属于候选混合状态。"}}

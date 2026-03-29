@@ -1,0 +1,146 @@
+{
+  "result": {
+    "primary_anchor": [
+      {
+        "term": "大宗纸",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'造纸'，核心语义是造纸行业。'大宗纸'是造纸行业的主要产品分类之一，直接对应造纸的核心产出对象，能稳定指向产业对象，适合作为must锚点。"
+      },
+      {
+        "term": "木浆系",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'造纸'，'木浆系'是造纸的重要技术路径和产品分类，直接关联造纸的核心原材料和工艺，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "废纸系",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'造纸'，'废纸系'是造纸的另一重要技术路径和产品分类，直接关联造纸的核心原材料和环保工艺，能稳定指向技术对象和关键环节，适合作为must锚点。"
+      },
+      {
+        "term": "木浆",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'造纸'，'木浆'是造纸的核心原材料之一，直接对应造纸的关键材料对象，能稳定指向产业对象和成本结构，适合作为must锚点。"
+      },
+      {
+        "term": "废纸",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'造纸'，'废纸'是造纸的另一核心原材料，直接对应造纸的关键材料对象和环保环节，能稳定指向产业对象和成本结构，适合作为must锚点。"
+      },
+      {
+        "term": "自有浆线",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'造纸'，核心语义是造纸行业。'自有浆线'是造纸产业链的关键环节，直接指向造纸企业的核心生产能力和成本控制能力，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "自备电厂",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'造纸'，核心语义是造纸行业。'自备电厂'是造纸产业链的关键环节，直接指向造纸企业的能源成本控制能力，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "废纸回收渠道",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.9,
+        "reason": "题材名称为'造纸'，核心语义是造纸行业。'废纸回收渠道'是废纸系造纸的关键环节，直接指向原材料供应链的稳定性，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。"
+      },
+      {
+        "term": "海外再生纤维产能",
+        "anchor_level": "primary_anchor",
+        "confidence": 0.85,
+        "reason": "题材名称为'造纸'，核心语义是造纸行业。'海外再生纤维产能'是废纸系造纸的关键环节，直接指向原材料供应链的扩展能力，符合industry_chain策略类型下优先识别关键环节的要求，适合作为must锚点。"
+      }
+    ],
+    "secondary_anchor": [
+      {
+        "term": "特种纸",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'造纸'，'特种纸'是造纸行业的产品分类之一，但与题材名称定义的核心语义（造纸行业整体）相比不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "生活用纸",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'造纸'，'生活用纸'是造纸行业的产品分类之一，但与题材名称定义的核心语义（造纸行业整体）相比不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "工业用纸",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'造纸'，'工业用纸'是造纸行业的产品分类之一，但与题材名称定义的核心语义（造纸行业整体）相比不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "国废",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称为'造纸'，'国废'是废纸的具体分类，与题材名称定义的核心语义（造纸行业整体）相比不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "外废",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称为'造纸'，'外废'是废纸的具体分类，与题材名称定义的核心语义（造纸行业整体）相比不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "煤炭",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'造纸'，'煤炭'是造纸的能源动力成本组成部分，但与题材名称定义的核心语义（造纸行业整体）相比不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "直接材料成本",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.7,
+        "reason": "题材名称为'造纸'，'直接材料成本'是造纸成本结构的一部分，但与题材名称定义的核心语义（造纸行业整体）相比不够直接，更适合作为辅助识别信息，进入should。"
+      },
+      {
+        "term": "全球商品浆需求量",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'造纸'，核心语义是造纸行业。'全球商品浆需求量'是造纸行业上游的供需数据，虽然相关，但更偏向宏观市场指标，与题材名称定义的核心产业对象不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "针叶浆需求量",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'造纸'，核心语义是造纸行业。'针叶浆需求量'是造纸行业上游的细分供需数据，虽然相关，但更偏向具体原材料类型的数据，与题材名称定义的核心产业对象不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "阔叶浆需求量",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'造纸'，核心语义是造纸行业。'阔叶浆需求量'是造纸行业上游的细分供需数据，虽然相关，但更偏向具体原材料类型的数据，与题材名称定义的核心产业对象不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "瓦楞纸",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称为'造纸'，核心语义是造纸行业。'瓦楞纸'是造纸行业的具体产品类型，虽然相关，但更偏向下游纸品分类，与题材名称定义的核心产业对象不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "再生牛卡纸",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称为'造纸'，核心语义是造纸行业。'再生牛卡纸'是造纸行业的具体产品类型，虽然相关，但更偏向下游纸品分类，与题材名称定义的核心产业对象不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "高强瓦楞纸",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.75,
+        "reason": "题材名称为'造纸'，核心语义是造纸行业。'高强瓦楞纸'是造纸行业的具体产品类型，虽然相关，但更偏向下游纸品分类，与题材名称定义的核心产业对象不够直接吻合，更适合作为should辅助识别。"
+      },
+      {
+        "term": "阔叶浆产能",
+        "anchor_level": "secondary_anchor",
+        "confidence": 0.8,
+        "reason": "题材名称为'造纸'，核心语义是造纸行业。'阔叶浆产能'是造纸行业上游的原材料产能，虽然相关，但更偏向具体原材料类型的供应能力，与题材名称定义的核心产业对象不够直接吻合，更适合作为should辅助识别。"
+      }
+    ]
+  }
+}

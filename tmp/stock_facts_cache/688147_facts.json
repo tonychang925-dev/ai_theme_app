@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "光伏设备",
+      "evidence_span": "光伏设备为公司主要优势产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体设备",
+      "evidence_span": "半导体设备逐步放量"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光伏ALD设备龙头企业",
+      "evidence_span": "光伏ALD设备龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "本土ALD设备领军者",
+      "evidence_span": "微导纳米本土ALD设备领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "薄膜沉积设备生产商",
+      "evidence_span": "国内领先的薄膜沉积设备生产商微导纳米"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ALD系统",
+      "evidence_span": "夸父(KF)系列原子层沉积(ALD)系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PEALD/PECVD系统",
+      "evidence_span": "祝融(ZR)管式 PEALD/PECVD 系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "薄膜沉积系统",
+      "evidence_span": "后羿(HY)系列 ALD/PEALD/PECVD 薄膜沉积系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ALD设备",
+      "evidence_span": "凤凰(P)系列原子层沉积镀膜系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TOPCon整线工艺解决方案",
+      "evidence_span": "TOPCon整线工艺解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "XBC电池专用设备",
+      "evidence_span": "应用于 XBC 和钙钛矿叠层电池的专用设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钙钛矿电池量产设备",
+      "evidence_span": "获得国内客户百兆瓦级量产设备订单"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "原子层沉淀技术(ALD)",
+      "evidence_span": "以原子层沉淀技术(ALD)为核心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CVD设备",
+      "evidence_span": "逐步拓展 CVD 等设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "PEALD与PECVD技术集成",
+      "evidence_span": "集成PEALD与PECVD技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Highk原子层沉积设备",
+      "evidence_span": "量产型 Highk 原子层沉积设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "28nm节点逻辑前道生产线应用",
+      "evidence_span": "应用于28nm 节点逻辑前道生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HfO2、ZrO2、La203沉积工艺",
+      "evidence_span": "ALD 设备沉积的 HfO2、ZrO2、La203"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TOPCon真空类设备全覆盖",
+      "evidence_span": "实现了 TOPCon 真空类设备的全覆盖"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "爱旭",
+      "evidence_span": "爱旭、隆基已投产和拟投产的电池生产线中"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "隆基",
+      "evidence_span": "爱旭、隆基已投产和拟投产的电池生产线中"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "N型TOPCon电池扩产",
+      "evidence_span": "受益N型TOPCon电池扩产"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "光伏设备",
+        "evidence_span": "光伏设备为公司主要优势产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体设备",
+        "evidence_span": "半导体设备逐步放量"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光伏ALD设备龙头企业",
+        "evidence_span": "光伏ALD设备龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "本土ALD设备领军者",
+        "evidence_span": "微导纳米本土ALD设备领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "薄膜沉积设备生产商",
+        "evidence_span": "国内领先的薄膜沉积设备生产商微导纳米"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ALD系统",
+        "evidence_span": "夸父(KF)系列原子层沉积(ALD)系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PEALD/PECVD系统",
+        "evidence_span": "祝融(ZR)管式 PEALD/PECVD 系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "薄膜沉积系统",
+        "evidence_span": "后羿(HY)系列 ALD/PEALD/PECVD 薄膜沉积系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ALD设备",
+        "evidence_span": "凤凰(P)系列原子层沉积镀膜系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TOPCon整线工艺解决方案",
+        "evidence_span": "TOPCon整线工艺解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "XBC电池专用设备",
+        "evidence_span": "应用于 XBC 和钙钛矿叠层电池的专用设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钙钛矿电池量产设备",
+        "evidence_span": "获得国内客户百兆瓦级量产设备订单"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "原子层沉淀技术(ALD)",
+        "evidence_span": "以原子层沉淀技术(ALD)为核心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CVD设备",
+        "evidence_span": "逐步拓展 CVD 等设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "PEALD与PECVD技术集成",
+        "evidence_span": "集成PEALD与PECVD技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Highk原子层沉积设备",
+        "evidence_span": "量产型 Highk 原子层沉积设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "28nm节点逻辑前道生产线应用",
+        "evidence_span": "应用于28nm 节点逻辑前道生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HfO2、ZrO2、La203沉积工艺",
+        "evidence_span": "ALD 设备沉积的 HfO2、ZrO2、La203"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TOPCon真空类设备全覆盖",
+        "evidence_span": "实现了 TOPCon 真空类设备的全覆盖"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "爱旭",
+        "evidence_span": "爱旭、隆基已投产和拟投产的电池生产线中"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "隆基",
+        "evidence_span": "爱旭、隆基已投产和拟投产的电池生产线中"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "N型TOPCon电池扩产",
+        "evidence_span": "受益N型TOPCon电池扩产"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:17:38"
+}

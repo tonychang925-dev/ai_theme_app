@@ -1,0 +1,69 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源电站投资",
+      "evidence_span": "新能源电站的投资"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源EPC工程",
+      "evidence_span": "新能源EPC工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设备销售",
+      "evidence_span": "设备销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电站运维",
+      "evidence_span": "电站运维"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "太阳能电池硅材料生产与加工设备研发、生产、销售企业",
+      "evidence_span": "江苏省太阳能电池硅材料生产与加工设备研发、生产、销售企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "太阳能电池硅材料生产与加工设备",
+      "evidence_span": "太阳能电池硅材料生产与加工设备研发、生产、销售"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源电站投资",
+        "evidence_span": "新能源电站的投资"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源EPC工程",
+        "evidence_span": "新能源EPC工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "设备销售",
+        "evidence_span": "设备销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电站运维",
+        "evidence_span": "电站运维"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "太阳能电池硅材料生产与加工设备研发、生产、销售企业",
+        "evidence_span": "江苏省太阳能电池硅材料生产与加工设备研发、生产、销售企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "太阳能电池硅材料生产与加工设备",
+        "evidence_span": "太阳能电池硅材料生产与加工设备研发、生产、销售"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:44:51"
+}

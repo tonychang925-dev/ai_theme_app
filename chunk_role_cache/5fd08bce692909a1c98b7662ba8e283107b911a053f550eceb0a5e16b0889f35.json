@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T12:12:07", "result": {"chunk_id": "c48022cacd47", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述Manus加入Meta的具体事件，包括交易声明、CEO表态、运营细节和统计数据，这些都属于时间性动态和公司公告，没有提供关于AI智能体Manus的静态定义、核心构成或机制等稳定知识。"}}

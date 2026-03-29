@@ -1,0 +1,12 @@
+{"span_uid": "ad6f63b7285d", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "medium", "reason": "片段是具体的部署计划，包含时间节点和监管审核等事件性信息，无法整理成稳定、独立的知识块。"}
+{"span_uid": "ad3755fa76a2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "medium", "reason": "片段是具体的开放计划，包含时间、区域和条件等事件性信息，无法整理成稳定、独立的知识块。"}
+{"span_uid": "157897b2572f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "片段是主观展望和口号式表述，缺乏具体事实支撑，无法形成有效知识块。"}
+{"span_uid": "e15c0f4e1471", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "high", "reason": "片段是版本更新的事件性陈述，仅提及技术进展但无具体内容，无法整理成独立、完整的知识表达。"}
+{"span_uid": "4afc8e05c0e2", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体公司CEO的预测性表述，涉及未来时间点和具体服务推出计划，属于事件性、预测性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "7a27708ced0c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅为功能更新方式的简短描述，是残句且依赖上下文，无法形成完整、独立的知识块。"}
+{"span_uid": "742521327ec0", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为具体公司CEO的申请和承诺行为，属于事件性信息，无法形成稳定、可独立成立的知识块。"}
+{"span_uid": "b71fe2559cef", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述赛博越野旅行车的技术特点，与特斯拉FSD题材直接相关性较弱，且属于具体车型的事件性描述，无法形成独立稳定的题材知识块。"}
+{"span_uid": "4d60d81e7928", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述特斯拉制定FSD软件开发路线图的具体事件，属于短期计划或公告，缺乏稳定、可独立成立的知识表达，不适合作为题材知识入库。"}
+{"span_uid": "4fdb59347119", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述在特定硬件上推出具体软件版本的事件，属于短期技术更新，无法形成稳定、可脱离上下文独立理解的知识块。"}
+{"span_uid": "2b5c58b0e72f", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段为残句，仅提及Cybertruck自动泊车功能与FSD，缺乏完整语义，无法构成独立知识表达。"}
+{"span_uid": "fe3d28c36f75", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "特定版本功能更新，属于事件性信息，无法形成稳定知识块"}

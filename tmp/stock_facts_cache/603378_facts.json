@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "建筑涂料",
+      "evidence_span": "以建筑涂料为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "保温装饰板",
+      "evidence_span": "自主研发了保温装饰板"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "防火保温新材料",
+      "evidence_span": "防火保温新材料研发、制造、服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "防水材料",
+      "evidence_span": "防水材料分别实现收入"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高新技术企业",
+      "evidence_span": "高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "建筑涂料和保温材料的领先品牌",
+      "evidence_span": "建筑涂料和保温材料的领先品牌"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内工程涂料龙头",
+      "evidence_span": "国内工程涂料龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能性建筑涂料",
+      "evidence_span": "功能性建筑涂料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "建筑节能材料",
+      "evidence_span": "建筑节能材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防水卷材",
+      "evidence_span": "防水卷材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程涂料",
+      "evidence_span": "工程涂料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家装涂料",
+      "evidence_span": "家装涂料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "真金防火保温板",
+      "evidence_span": "真金防火保温板"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "研发",
+      "evidence_span": "研发、制造、服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "龙头地产",
+      "evidence_span": "龙头地产增速高，带动其优质供应商快速发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "行业集中度提升",
+      "evidence_span": "受益于行业集中度提升"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "建筑涂料",
+        "evidence_span": "以建筑涂料为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "保温装饰板",
+        "evidence_span": "自主研发了保温装饰板"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "防火保温新材料",
+        "evidence_span": "防火保温新材料研发、制造、服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "防水材料",
+        "evidence_span": "防水材料分别实现收入"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高新技术企业",
+        "evidence_span": "高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "建筑涂料和保温材料的领先品牌",
+        "evidence_span": "建筑涂料和保温材料的领先品牌"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内工程涂料龙头",
+        "evidence_span": "国内工程涂料龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能性建筑涂料",
+        "evidence_span": "功能性建筑涂料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "建筑节能材料",
+        "evidence_span": "建筑节能材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防水卷材",
+        "evidence_span": "防水卷材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程涂料",
+        "evidence_span": "工程涂料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家装涂料",
+        "evidence_span": "家装涂料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "真金防火保温板",
+        "evidence_span": "真金防火保温板"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "研发",
+        "evidence_span": "研发、制造、服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "龙头地产",
+        "evidence_span": "龙头地产增速高，带动其优质供应商快速发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "行业集中度提升",
+        "evidence_span": "受益于行业集中度提升"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:08:53"
+}

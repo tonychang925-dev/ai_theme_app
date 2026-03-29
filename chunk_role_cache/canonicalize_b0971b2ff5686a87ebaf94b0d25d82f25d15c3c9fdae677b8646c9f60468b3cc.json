@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:04:06", "result": {"span_uid": "2eeced9bafb2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "文本是具体公司的产能数值和时间点，属于事件性、短期信息，无法形成稳定、独立的知识块。"}}

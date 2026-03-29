@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "中高端数控机床核心功能部件",
+      "evidence_span": "公司是一家专业从事中高端数控机床、机器人、新能源汽车核心功能部件等的研发设计、生产制造、销售与维修服务的国家高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "机器人核心功能部件",
+      "evidence_span": "公司是一家专业从事中高端数控机床、机器人、新能源汽车核心功能部件等的研发设计、生产制造、销售与维修服务的国家高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源汽车核心功能部件",
+      "evidence_span": "公司是一家专业从事中高端数控机床、机器人、新能源汽车核心功能部件等的研发设计、生产制造、销售与维修服务的国家高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高速精密电主轴领域国家高新技术企业",
+      "evidence_span": "高速精密电主轴及其零配件领域国家高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "主轴行业领先企业",
+      "evidence_span": "公司是国内主轴行业的领先企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主轴",
+      "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "转台",
+      "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直线电机",
+      "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数控系统",
+      "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "谐波减速器",
+      "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "伺服电机",
+      "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驱动器",
+      "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传感器",
+      "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢能源汽车燃料电池压缩机",
+      "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "曝气鼓风机",
+      "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直驱类高速风机",
+      "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机器人关节模组",
+      "evidence_span": "公司还进一步开发了机器人关节模组、末端执行机构等相关产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "末端执行机构",
+      "evidence_span": "公司还进一步开发了机器人关节模组、末端执行机构等相关产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运动控制器",
+      "evidence_span": "Cybelec瑞士和Cybelec中国是运动控制器产品的研发和生产主体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "伺服驱动",
+      "evidence_span": "Infranor法国是公司伺服驱动产品的研发和生产主体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维修服务",
+      "evidence_span": "公司还可提供PCB行业、消费电子行业不同品牌、不同系列的上百种主轴的维修服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "零配件",
+      "evidence_span": "公司能够自主生产各类型主轴所需的大部分零配件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高性能谐波减速器技术",
+      "evidence_span": "公司先后攻克了智能机器人用“高性能谐波减速器”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精度编码器技术",
+      "evidence_span": "公司先后攻克了智能机器人用“高精度编码器”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一体化关节模组技术",
+      "evidence_span": "公司先后攻克了智能机器人用“一体化关节模组”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "六维力传感器技术",
+      "evidence_span": "公司先后攻克了智能机器人用“六维力传感器”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "控制系统技术",
+      "evidence_span": "公司先后攻克了智能机器人用“控制系统”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃料电池空压机技术",
+      "evidence_span": "公司已取得了7项燃料电池空压机领域的发明专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "谐波减速器测试平台",
+      "evidence_span": "公司还开发了专业的谐波减速器测试平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "机床制造商",
+      "evidence_span": "公司客户主要包括机床制造商、机床终端用户、工业机器人系统集成厂商和工业机器人终端用户等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "机床终端用户",
+      "evidence_span": "公司客户主要包括机床制造商、机床终端用户、工业机器人系统集成厂商和工业机器人终端用户等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工业机器人系统集成厂商",
+      "evidence_span": "公司客户主要包括机床制造商、机床终端用户、工业机器人系统集成厂商和工业机器人终端用户等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "工业机器人终端用户",
+      "evidence_span": "公司客户主要包括机床制造商、机床终端用户、工业机器人系统集成厂商和工业机器人终端用户等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "打破了智能机器人核心功能部件依赖进口的局面，实现了智能机器人核心功能部件的全国产化"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "中高端数控机床核心功能部件",
+        "evidence_span": "公司是一家专业从事中高端数控机床、机器人、新能源汽车核心功能部件等的研发设计、生产制造、销售与维修服务的国家高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机器人核心功能部件",
+        "evidence_span": "公司是一家专业从事中高端数控机床、机器人、新能源汽车核心功能部件等的研发设计、生产制造、销售与维修服务的国家高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源汽车核心功能部件",
+        "evidence_span": "公司是一家专业从事中高端数控机床、机器人、新能源汽车核心功能部件等的研发设计、生产制造、销售与维修服务的国家高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高速精密电主轴领域国家高新技术企业",
+        "evidence_span": "高速精密电主轴及其零配件领域国家高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "主轴行业领先企业",
+        "evidence_span": "公司是国内主轴行业的领先企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主轴",
+        "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "转台",
+        "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直线电机",
+        "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数控系统",
+        "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "谐波减速器",
+        "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "伺服电机",
+        "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驱动器",
+        "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传感器",
+        "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢能源汽车燃料电池压缩机",
+        "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "曝气鼓风机",
+        "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直驱类高速风机",
+        "evidence_span": "公司的主要产品包括主轴、转台、直线电机、数控系统、谐波减速器、伺服电机、驱动器、传感器、氢能源汽车燃料电池压缩机、曝气鼓风机、直驱类高速风机等高端装备核心功能部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机器人关节模组",
+        "evidence_span": "公司还进一步开发了机器人关节模组、末端执行机构等相关产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "末端执行机构",
+        "evidence_span": "公司还进一步开发了机器人关节模组、末端执行机构等相关产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运动控制器",
+        "evidence_span": "Cybelec瑞士和Cybelec中国是运动控制器产品的研发和生产主体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "伺服驱动",
+        "evidence_span": "Infranor法国是公司伺服驱动产品的研发和生产主体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维修服务",
+        "evidence_span": "公司还可提供PCB行业、消费电子行业不同品牌、不同系列的上百种主轴的维修服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "零配件",
+        "evidence_span": "公司能够自主生产各类型主轴所需的大部分零配件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高性能谐波减速器技术",
+        "evidence_span": "公司先后攻克了智能机器人用“高性能谐波减速器”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精度编码器技术",
+        "evidence_span": "公司先后攻克了智能机器人用“高精度编码器”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一体化关节模组技术",
+        "evidence_span": "公司先后攻克了智能机器人用“一体化关节模组”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "六维力传感器技术",
+        "evidence_span": "公司先后攻克了智能机器人用“六维力传感器”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "控制系统技术",
+        "evidence_span": "公司先后攻克了智能机器人用“控制系统”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃料电池空压机技术",
+        "evidence_span": "公司已取得了7项燃料电池空压机领域的发明专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "谐波减速器测试平台",
+        "evidence_span": "公司还开发了专业的谐波减速器测试平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "机床制造商",
+        "evidence_span": "公司客户主要包括机床制造商、机床终端用户、工业机器人系统集成厂商和工业机器人终端用户等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "机床终端用户",
+        "evidence_span": "公司客户主要包括机床制造商、机床终端用户、工业机器人系统集成厂商和工业机器人终端用户等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工业机器人系统集成厂商",
+        "evidence_span": "公司客户主要包括机床制造商、机床终端用户、工业机器人系统集成厂商和工业机器人终端用户等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "工业机器人终端用户",
+        "evidence_span": "公司客户主要包括机床制造商、机床终端用户、工业机器人系统集成厂商和工业机器人终端用户等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "打破了智能机器人核心功能部件依赖进口的局面，实现了智能机器人核心功能部件的全国产化"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:59:04"
+}

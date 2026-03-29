@@ -1,0 +1,419 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "网络安全基础产品",
+      "evidence_span": "公司网络安全基础产品、安全平台、安全服务占比皆在30%左右"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全平台",
+      "evidence_span": "公司网络安全基础产品、安全平台、安全服务占比皆在30%左右"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全服务",
+      "evidence_span": "公司网络安全基础产品、安全平台、安全服务占比皆在30%左右"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "云安全标杆供应商",
+      "evidence_span": "云安全“标杆供应商”"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新型安全领域服务商",
+      "evidence_span": "安恒信息新型安全领域服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新兴安全供应商",
+      "evidence_span": "安恒信息新兴安全供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "安全SaaS排头兵",
+      "evidence_span": "安恒信息新兴安全先锋队，安全SaaS排头兵"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合信息安全解决方案",
+      "evidence_span": "提出了有针对性的综合信息安全解决方案及新型产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专业安全产品",
+      "evidence_span": "形成了以“新场景、新服务”为方向的专业安全产品和服务体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一站式专业安全服务",
+      "evidence_span": "为用户提供从安全规划、安全设计、安全建设到安全运营的一站式专业安全服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基础网络安全产品",
+      "evidence_span": "已实现基础网络安全产品、云安全产品、大数据安全类产品、商用密码产品等产品领域的全面突破"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云安全产品",
+      "evidence_span": "已实现基础网络安全产品、云安全产品、大数据安全类产品、商用密码产品等产品领域的全面突破"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大数据安全类产品",
+      "evidence_span": "已实现基础网络安全产品、云安全产品、大数据安全类产品、商用密码产品等产品领域的全面突破"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商用密码产品",
+      "evidence_span": "已实现基础网络安全产品、云安全产品、大数据安全类产品、商用密码产品等产品领域的全面突破"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合信创解决方案",
+      "evidence_span": "形成网络安全、数据安全、商用密码应用等综合信创解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AiGuard数据安全解决方案",
+      "evidence_span": "AiGuard数据安全解决方案基于公司CAPE能力模型为核心思想"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AiSort数据安全分级与风险评估系统",
+      "evidence_span": "AiSort（数据安全分级与风险评估系统）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AiMask数据脱敏系统",
+      "evidence_span": "AiMask（数据脱敏系统）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AiGate数据安全网关系统",
+      "evidence_span": "AiGate（数据安全网关系统）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AiThink用户与实体行为分析系统",
+      "evidence_span": "AiThink（用户与实体行为分析系统）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AiTrust零信任",
+      "evidence_span": "AiTrust（零信任）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AiLand安全岛",
+      "evidence_span": "AiLand（安全岛）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "AiLand数据安全岛产品",
+      "evidence_span": "公司AiLand数据安全岛产品覆盖政务、跨境数据流通、金融、公益、医疗、教育等多个领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Web应用防火墙",
+      "evidence_span": "公司Web应用防火墙在硬件WAF市场市占率第二，软件WAF市场市占率第四"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "语义分析技术",
+      "evidence_span": "公司将语义分析、机器学习、行为分析等技术融入WAF"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器学习技术",
+      "evidence_span": "公司将语义分析、机器学习、行为分析等技术融入WAF"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "行为分析技术",
+      "evidence_span": "公司将语义分析、机器学习、行为分析等技术融入WAF"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "隐私计算可信执行环境全自研",
+      "evidence_span": "在隐私计算可信执行环境方向实现了全自研、国产化和自主可控"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政府部门",
+      "evidence_span": "公司新一代智能WAF广泛应用于政府部门、金融、运营商等众多客户场景"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融",
+      "evidence_span": "公司新一代智能WAF广泛应用于政府部门、金融、运营商等众多客户场景"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "运营商",
+      "evidence_span": "公司新一代智能WAF广泛应用于政府部门、金融、运营商等众多客户场景"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安",
+      "evidence_span": "并在公安、网信、金融行业持续落地"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "网信",
+      "evidence_span": "并在公安、网信、金融行业持续落地"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金融行业",
+      "evidence_span": "并在公安、网信、金融行业持续落地"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "政务",
+      "evidence_span": "公司AiLand数据安全岛产品覆盖政务、跨境数据流通、金融、公益、医疗、教育等多个领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "跨境数据流通",
+      "evidence_span": "公司AiLand数据安全岛产品覆盖政务、跨境数据流通、金融、公益、医疗、教育等多个领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公益",
+      "evidence_span": "公司AiLand数据安全岛产品覆盖政务、跨境数据流通、金融、公益、医疗、教育等多个领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "医疗",
+      "evidence_span": "公司AiLand数据安全岛产品覆盖政务、跨境数据流通、金融、公益、医疗、教育等多个领域"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "教育",
+      "evidence_span": "公司AiLand数据安全岛产品覆盖政务、跨境数据流通、金融、公益、医疗、教育等多个领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "信创",
+      "evidence_span": "发力信创，完善生态合作体系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "在隐私计算可信执行环境方向实现了全自研、国产化和自主可控"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "网络安全基础产品",
+        "evidence_span": "公司网络安全基础产品、安全平台、安全服务占比皆在30%左右"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "安全平台",
+        "evidence_span": "公司网络安全基础产品、安全平台、安全服务占比皆在30%左右"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "安全服务",
+        "evidence_span": "公司网络安全基础产品、安全平台、安全服务占比皆在30%左右"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "云安全标杆供应商",
+        "evidence_span": "云安全“标杆供应商”"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新型安全领域服务商",
+        "evidence_span": "安恒信息新型安全领域服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新兴安全供应商",
+        "evidence_span": "安恒信息新兴安全供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "安全SaaS排头兵",
+        "evidence_span": "安恒信息新兴安全先锋队，安全SaaS排头兵"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合信息安全解决方案",
+        "evidence_span": "提出了有针对性的综合信息安全解决方案及新型产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专业安全产品",
+        "evidence_span": "形成了以“新场景、新服务”为方向的专业安全产品和服务体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一站式专业安全服务",
+        "evidence_span": "为用户提供从安全规划、安全设计、安全建设到安全运营的一站式专业安全服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基础网络安全产品",
+        "evidence_span": "已实现基础网络安全产品、云安全产品、大数据安全类产品、商用密码产品等产品领域的全面突破"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云安全产品",
+        "evidence_span": "已实现基础网络安全产品、云安全产品、大数据安全类产品、商用密码产品等产品领域的全面突破"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大数据安全类产品",
+        "evidence_span": "已实现基础网络安全产品、云安全产品、大数据安全类产品、商用密码产品等产品领域的全面突破"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商用密码产品",
+        "evidence_span": "已实现基础网络安全产品、云安全产品、大数据安全类产品、商用密码产品等产品领域的全面突破"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合信创解决方案",
+        "evidence_span": "形成网络安全、数据安全、商用密码应用等综合信创解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AiGuard数据安全解决方案",
+        "evidence_span": "AiGuard数据安全解决方案基于公司CAPE能力模型为核心思想"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AiSort数据安全分级与风险评估系统",
+        "evidence_span": "AiSort（数据安全分级与风险评估系统）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AiMask数据脱敏系统",
+        "evidence_span": "AiMask（数据脱敏系统）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AiGate数据安全网关系统",
+        "evidence_span": "AiGate（数据安全网关系统）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AiThink用户与实体行为分析系统",
+        "evidence_span": "AiThink（用户与实体行为分析系统）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AiTrust零信任",
+        "evidence_span": "AiTrust（零信任）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AiLand安全岛",
+        "evidence_span": "AiLand（安全岛）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "AiLand数据安全岛产品",
+        "evidence_span": "公司AiLand数据安全岛产品覆盖政务、跨境数据流通、金融、公益、医疗、教育等多个领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Web应用防火墙",
+        "evidence_span": "公司Web应用防火墙在硬件WAF市场市占率第二，软件WAF市场市占率第四"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "语义分析技术",
+        "evidence_span": "公司将语义分析、机器学习、行为分析等技术融入WAF"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器学习技术",
+        "evidence_span": "公司将语义分析、机器学习、行为分析等技术融入WAF"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "行为分析技术",
+        "evidence_span": "公司将语义分析、机器学习、行为分析等技术融入WAF"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "隐私计算可信执行环境全自研",
+        "evidence_span": "在隐私计算可信执行环境方向实现了全自研、国产化和自主可控"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政府部门",
+        "evidence_span": "公司新一代智能WAF广泛应用于政府部门、金融、运营商等众多客户场景"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融",
+        "evidence_span": "公司新一代智能WAF广泛应用于政府部门、金融、运营商等众多客户场景"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "运营商",
+        "evidence_span": "公司新一代智能WAF广泛应用于政府部门、金融、运营商等众多客户场景"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安",
+        "evidence_span": "并在公安、网信、金融行业持续落地"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "网信",
+        "evidence_span": "并在公安、网信、金融行业持续落地"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金融行业",
+        "evidence_span": "并在公安、网信、金融行业持续落地"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "政务",
+        "evidence_span": "公司AiLand数据安全岛产品覆盖政务、跨境数据流通、金融、公益、医疗、教育等多个领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "跨境数据流通",
+        "evidence_span": "公司AiLand数据安全岛产品覆盖政务、跨境数据流通、金融、公益、医疗、教育等多个领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公益",
+        "evidence_span": "公司AiLand数据安全岛产品覆盖政务、跨境数据流通、金融、公益、医疗、教育等多个领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "医疗",
+        "evidence_span": "公司AiLand数据安全岛产品覆盖政务、跨境数据流通、金融、公益、医疗、教育等多个领域"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "教育",
+        "evidence_span": "公司AiLand数据安全岛产品覆盖政务、跨境数据流通、金融、公益、医疗、教育等多个领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "信创",
+        "evidence_span": "发力信创，完善生态合作体系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "在隐私计算可信执行环境方向实现了全自研、国产化和自主可控"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:35:14"
+}

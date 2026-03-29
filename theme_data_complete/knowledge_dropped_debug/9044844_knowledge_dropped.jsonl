@@ -1,0 +1,3 @@
+{"span_uid": "9a887869ae14", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段主要描述了一次具体事件（2025年SEMICON China展会上的产品发布），包含新闻口吻和事件化表述（如“首次亮相即发布五款重磅产品”、“高调登场”），无法整理成稳定、可独立成立的知识块。"}
+{"span_uid": "7016f31ab8fc", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品命名策略与市场对标", "stability": "low", "reason": "该片段主要涉及产品命名策略和市场对标姿态，属于主观解读和事件性描述，无法形成稳定、独立的知识块。"}
+{"span_uid": "d41f6b6cced2", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "量产时间规划", "stability": "low", "reason": "该片段基于业内传闻描述量产时间表，属于不确定的事件性信息，无法形成稳定、独立的知识块。"}

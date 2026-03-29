@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:43:26", "result": {"span_uid": "04d908a0736c", "action": "rewrite", "canonical_text": "高通AI200芯片支持高达768GB的LPDDR内存（低功耗动态随机存取存储器）。", "final_type": "related", "final_role": "AI200内存规格", "stability": "high", "reason": "改写后去除了具体发布日期，保留了内存规格这一稳定技术参数，属于相关技术细节。"}}

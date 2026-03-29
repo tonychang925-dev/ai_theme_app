@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:58:46", "result": {"chunk_id": "de7dbebaaa1c", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段主要描述广州市司法局相关负责人表示将适时对电动自行车实行总量控制并发布配套文件，这是一个具体的地方政策动态事件，没有提供稳定的题材本体知识。"}}

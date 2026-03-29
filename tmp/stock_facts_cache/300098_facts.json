@@ -1,0 +1,464 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "车联网",
+      "evidence_span": "业务聚焦于“车联网及智慧交通”“公共安全”两大高价值战略赛道"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧交通",
+      "evidence_span": "业务聚焦于“车联网及智慧交通”“公共安全”两大高价值战略赛道"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "公共安全",
+      "evidence_span": "业务聚焦于“车联网及智慧交通”“公共安全”两大高价值战略赛道"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧城市物联网产品与服务提供商",
+      "evidence_span": "致力于成为领先的智慧城市物联网产品与服务提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "物联网应用企业",
+      "evidence_span": "是国内少数覆盖公路、铁路及轨交业务，具备车联网全栈式产品覆盖、交通咨询设计规划、大型系统项目交付能力的物联网应用企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "物联网连接及终端和应用",
+      "evidence_span": "主要产品及服务分为“物联网连接及终端和应用”“警务终端及警务信息化应用”“软件系统及解决方案”三大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "警务终端及警务信息化应用",
+      "evidence_span": "主要产品及服务分为“物联网连接及终端和应用”“警务终端及警务信息化应用”“软件系统及解决方案”三大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "软件系统及解决方案",
+      "evidence_span": "主要产品及服务分为“物联网连接及终端和应用”“警务终端及警务信息化应用”“软件系统及解决方案”三大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车辆电子标识产品及解决方案",
+      "evidence_span": "车辆电子标识产品及解决方案——作为车辆的电子身份识别"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能网联及车路协同产品及解决方案",
+      "evidence_span": "智能网联及车路协同产品及解决方案——国家智慧交通战略布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车端产品及解决方案",
+      "evidence_span": "车端产品及解决方案——国内车载阵营第一梯队"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道交通产品与解决方案",
+      "evidence_span": "轨道交通产品与解决方案——多年保持细分市场头部地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载终端",
+      "evidence_span": "打造了包括车载终端、路侧设备、通信模组、V2X平台在内的完整的产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "路侧设备",
+      "evidence_span": "打造了包括车载终端、路侧设备、通信模组、V2X平台在内的完整的产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信模组",
+      "evidence_span": "打造了包括车载终端、路侧设备、通信模组、V2X平台在内的完整的产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "V2X平台",
+      "evidence_span": "打造了包括车载终端、路侧设备、通信模组、V2X平台在内的完整的产品体系"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载前装终端T-Box",
+      "evidence_span": "公司车联网主要产品有4G、5G Only、5G+C-V2X车载前装模组、车载前装终端T-Box、全功能车载诊断后装产品OBD等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全功能车载诊断后装产品OBD",
+      "evidence_span": "公司车联网主要产品有4G、5G Only、5G+C-V2X车载前装模组、车载前装终端T-Box、全功能车载诊断后装产品OBD等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GYK轨道车运行控制设备",
+      "evidence_span": "打造了以“GYK轨道车运行控制设备”“机车综合无线通信设备CIR”以及“轨道车安全信息化系统”三大系列为主的产品和解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机车综合无线通信设备CIR",
+      "evidence_span": "打造了以“GYK轨道车运行控制设备”“机车综合无线通信设备CIR”以及“轨道车安全信息化系统”三大系列为主的产品和解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轨道车安全信息化系统",
+      "evidence_span": "打造了以“GYK轨道车运行控制设备”“机车综合无线通信设备CIR”以及“轨道车安全信息化系统”三大系列为主的产品和解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G+V2X通信",
+      "evidence_span": "立足5G+V2X通信、人工智能、超高频RFID、增强现实、大数据分析挖掘等核心技术的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能",
+      "evidence_span": "立足5G+V2X通信、人工智能、超高频RFID、增强现实、大数据分析挖掘等核心技术的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超高频RFID",
+      "evidence_span": "立足5G+V2X通信、人工智能、超高频RFID、增强现实、大数据分析挖掘等核心技术的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "增强现实",
+      "evidence_span": "立足5G+V2X通信、人工智能、超高频RFID、增强现实、大数据分析挖掘等核心技术的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据分析挖掘",
+      "evidence_span": "立足5G+V2X通信、人工智能、超高频RFID、增强现实、大数据分析挖掘等核心技术的研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "C-V2X技术",
+      "evidence_span": "基于C-V2X技术，针对城市“点、线、区”多场景，打造城市级商用智能网联解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "雷达和视频的感知融合技术",
+      "evidence_span": "通过雷达和视频的感知融合技术，实时感知道路信息各类环境、交通状态、交通事件信息"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安",
+      "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽",
+      "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国大陆",
+      "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Mobis",
+      "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "先锋",
+      "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "均胜",
+      "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃达丰",
+      "evidence_span": "头部通信运营商沃达丰等展开合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国铁集团",
+      "evidence_span": "服务客户包括国铁集团、中国中铁、中国铁建、中国中车、中石油、中石化、国内多家地铁单位等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国中铁",
+      "evidence_span": "服务客户包括国铁集团、中国中铁、中国铁建、中国中车、中石油、中石化、国内多家地铁单位等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国铁建",
+      "evidence_span": "服务客户包括国铁集团、中国中铁、中国铁建、中国中车、中石油、中石化、国内多家地铁单位等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国中车",
+      "evidence_span": "服务客户包括国铁集团、中国中铁、中国铁建、中国中车、中石油、中石化、国内多家地铁单位等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "服务客户包括国铁集团、中国中铁、中国铁建、中国中车、中石油、中石化、国内多家地铁单位等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石化",
+      "evidence_span": "服务客户包括国铁集团、中国中铁、中国铁建、中国中车、中石油、中石化、国内多家地铁单位等"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "物联网",
+      "evidence_span": "掌握物联网和视频人工智能核心技术"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧城市",
+      "evidence_span": "致力于成为领先的智慧城市物联网产品与服务提供商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "车联网",
+      "evidence_span": "深度布局物联网+公共安全，战略聚焦车联网"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "车联网及智慧交通",
+        "evidence_span": "业务聚焦于“车联网及智慧交通”“公共安全”两大高价值战略赛道"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "公共安全",
+        "evidence_span": "业务聚焦于“车联网及智慧交通”“公共安全”两大高价值战略赛道"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧城市物联网产品与服务提供商",
+        "evidence_span": "致力于成为领先的智慧城市物联网产品与服务提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "物联网应用企业",
+        "evidence_span": "是国内少数覆盖公路、铁路及轨交业务，具备车联网全栈式产品覆盖、交通咨询设计规划、大型系统项目交付能力的物联网应用企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "物联网连接及终端和应用",
+        "evidence_span": "主要产品及服务分为“物联网连接及终端和应用”“警务终端及警务信息化应用”“软件系统及解决方案”三大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "警务终端及警务信息化应用",
+        "evidence_span": "主要产品及服务分为“物联网连接及终端和应用”“警务终端及警务信息化应用”“软件系统及解决方案”三大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "软件系统及解决方案",
+        "evidence_span": "主要产品及服务分为“物联网连接及终端和应用”“警务终端及警务信息化应用”“软件系统及解决方案”三大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车辆电子标识产品及解决方案",
+        "evidence_span": "车辆电子标识产品及解决方案——作为车辆的电子身份识别"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能网联及车路协同产品及解决方案",
+        "evidence_span": "智能网联及车路协同产品及解决方案——国家智慧交通战略布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车端产品及解决方案",
+        "evidence_span": "车端产品及解决方案——国内车载阵营第一梯队"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道交通产品与解决方案",
+        "evidence_span": "轨道交通产品与解决方案——多年保持细分市场头部地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载终端",
+        "evidence_span": "打造了包括车载终端、路侧设备、通信模组、V2X平台在内的完整的产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "路侧设备",
+        "evidence_span": "打造了包括车载终端、路侧设备、通信模组、V2X平台在内的完整的产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信模组",
+        "evidence_span": "打造了包括车载终端、路侧设备、通信模组、V2X平台在内的完整的产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "V2X平台",
+        "evidence_span": "打造了包括车载终端、路侧设备、通信模组、V2X平台在内的完整的产品体系"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载前装终端T-Box",
+        "evidence_span": "公司车联网主要产品有4G、5G Only、5G+C-V2X车载前装模组、车载前装终端T-Box、全功能车载诊断后装产品OBD等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全功能车载诊断后装产品OBD",
+        "evidence_span": "公司车联网主要产品有4G、5G Only、5G+C-V2X车载前装模组、车载前装终端T-Box、全功能车载诊断后装产品OBD等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GYK轨道车运行控制设备",
+        "evidence_span": "打造了以“GYK轨道车运行控制设备”“机车综合无线通信设备CIR”以及“轨道车安全信息化系统”三大系列为主的产品和解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机车综合无线通信设备CIR",
+        "evidence_span": "打造了以“GYK轨道车运行控制设备”“机车综合无线通信设备CIR”以及“轨道车安全信息化系统”三大系列为主的产品和解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轨道车安全信息化系统",
+        "evidence_span": "打造了以“GYK轨道车运行控制设备”“机车综合无线通信设备CIR”以及“轨道车安全信息化系统”三大系列为主的产品和解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G+V2X通信",
+        "evidence_span": "立足5G+V2X通信、人工智能、超高频RFID、增强现实、大数据分析挖掘等核心技术的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能",
+        "evidence_span": "立足5G+V2X通信、人工智能、超高频RFID、增强现实、大数据分析挖掘等核心技术的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超高频RFID",
+        "evidence_span": "立足5G+V2X通信、人工智能、超高频RFID、增强现实、大数据分析挖掘等核心技术的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "增强现实",
+        "evidence_span": "立足5G+V2X通信、人工智能、超高频RFID、增强现实、大数据分析挖掘等核心技术的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据分析挖掘",
+        "evidence_span": "立足5G+V2X通信、人工智能、超高频RFID、增强现实、大数据分析挖掘等核心技术的研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "C-V2X技术",
+        "evidence_span": "基于C-V2X技术，针对城市“点、线、区”多场景，打造城市级商用智能网联解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "雷达和视频的感知融合技术",
+        "evidence_span": "通过雷达和视频的感知融合技术，实时感知道路信息各类环境、交通状态、交通事件信息"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安",
+        "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽",
+        "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国大陆",
+        "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Mobis",
+        "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "先锋",
+        "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "均胜",
+        "evidence_span": "公司已经为车联网行业合作伙伴如吉利、长安、比亚迪、广汽、德国大陆、Mobis、先锋、均胜等提供安全可靠的车联网无线连接服务和车载终端产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃达丰",
+        "evidence_span": "头部通信运营商沃达丰等展开合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国铁集团",
+        "evidence_span": "服务客户包括国铁集团、中国中铁、中国铁建、中国中车、中石油、中石化、国内多家地铁单位等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国中铁",
+        "evidence_span": "服务客户包括国铁集团、中国中铁、中国铁建、中国中车、中石油、中石化、国内多家地铁单位等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国铁建",
+        "evidence_span": "服务客户包括国铁集团、中国中铁、中国铁建、中国中车、中石油、中石化、国内多家地铁单位等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国中车",
+        "evidence_span": "服务客户包括国铁集团、中国中铁、中国铁建、中国中车、中石油、中石化、国内多家地铁单位等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "服务客户包括国铁集团、中国中铁、中国铁建、中国中车、中石油、中石化、国内多家地铁单位等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石化",
+        "evidence_span": "服务客户包括国铁集团、中国中铁、中国铁建、中国中车、中石油、中石化、国内多家地铁单位等"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "物联网",
+        "evidence_span": "掌握物联网和视频人工智能核心技术"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧城市",
+        "evidence_span": "致力于成为领先的智慧城市物联网产品与服务提供商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "车联网",
+        "evidence_span": "深度布局物联网+公共安全，战略聚焦车联网"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T21:29:47"
+}

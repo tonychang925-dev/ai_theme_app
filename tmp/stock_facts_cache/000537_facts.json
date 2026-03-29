@@ -1,0 +1,99 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源发电",
+      "evidence_span": "转型为新能源发电主业公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陆地风电",
+      "evidence_span": "目前经营项目包括：陆地风电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "海上风电",
+      "evidence_span": "目前经营项目包括：海上风电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏发电",
+      "evidence_span": "目前经营项目包括：光伏发电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光热发电",
+      "evidence_span": "目前经营项目包括：光热发电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能",
+      "evidence_span": "目前经营项目包括：储能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "海上风电开发经验",
+      "evidence_span": "公司具备海上风电等高技术要求项目的开发经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多能互补项目集成开发经验",
+      "evidence_span": "公司具备较强多能互补项目集成开发经验"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源转型",
+      "evidence_span": "开启新能源转型"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源发电",
+        "evidence_span": "转型为新能源发电主业公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陆地风电",
+        "evidence_span": "目前经营项目包括：陆地风电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "海上风电",
+        "evidence_span": "目前经营项目包括：海上风电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏发电",
+        "evidence_span": "目前经营项目包括：光伏发电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光热发电",
+        "evidence_span": "目前经营项目包括：光热发电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能",
+        "evidence_span": "目前经营项目包括：储能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "海上风电开发经验",
+        "evidence_span": "公司具备海上风电等高技术要求项目的开发经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多能互补项目集成开发经验",
+        "evidence_span": "公司具备较强多能互补项目集成开发经验"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源转型",
+        "evidence_span": "开启新能源转型"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:00:43"
+}

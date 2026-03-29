@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "27c05ea1da83", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落包含扎克伯格对AR眼镜未来前景的观点（如成为计算平台核心）和苹果开发智能眼镜的信息，这些可能是有价值的行业知识，但混合了具体事件（如Meta与雷朋合作产品走红、博士眼镜股价大涨），因此判为候选混合状态。"}}

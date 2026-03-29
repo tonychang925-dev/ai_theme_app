@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:56:58", "result": {"chunk_id": "e4449f537ca9", "label": "noise", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要介绍2025年世界机器人大会的举办时间、地点、主题和赛事组成，与Figure机器人本体无关。这是通用行业事件信息，无助于构建特定题材知识，属于噪音内容。"}}

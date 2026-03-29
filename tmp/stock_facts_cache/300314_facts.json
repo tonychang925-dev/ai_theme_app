@@ -1,0 +1,139 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "婴儿保育设备",
+      "evidence_span": "形成了多条产品线，涵盖婴儿保育和吻合器两大领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "吻合器",
+      "evidence_span": "形成了多条产品线，涵盖婴儿保育和吻合器两大领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "婴儿保育设备龙头企业",
+      "evidence_span": "戴维医疗为国内婴儿保育设备龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电动腔镜吻合器领跑者",
+      "evidence_span": "国内电动腔镜吻合器领跑者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "婴儿培养箱",
+      "evidence_span": "婴儿保育设备包括婴儿培养箱、婴儿辐射保暖台、黄疸治疗设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "婴儿辐射保暖台",
+      "evidence_span": "婴儿保育设备包括婴儿培养箱、婴儿辐射保暖台、黄疸治疗设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "黄疸治疗设备",
+      "evidence_span": "婴儿保育设备包括婴儿培养箱、婴儿辐射保暖台、黄疸治疗设备等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "开放式吻合器",
+      "evidence_span": "公司目前主要有开放式吻合器、腔镜吻合器、电动腔镜吻合器三大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "腔镜吻合器",
+      "evidence_span": "公司目前主要有开放式吻合器、腔镜吻合器、电动腔镜吻合器三大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动腔镜吻合器",
+      "evidence_span": "公司目前主要有开放式吻合器、腔镜吻合器、电动腔镜吻合器三大类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一次性腔镜用电动切割吻合器",
+      "evidence_span": "公司的一次性腔镜用电动切割吻合器是国内首创的一款电动吻合器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "第三代电动腔镜吻合器生产销售",
+      "evidence_span": "2018 年成为国内首家第三代电动腔镜吻合器生产销售的内资企业"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "联盟集采驱动业绩腾飞",
+      "evidence_span": "电动吻合器龙头企业，联盟集采驱动业绩腾飞"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "婴儿保育设备",
+        "evidence_span": "形成了多条产品线，涵盖婴儿保育和吻合器两大领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "吻合器",
+        "evidence_span": "形成了多条产品线，涵盖婴儿保育和吻合器两大领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "婴儿保育设备龙头企业",
+        "evidence_span": "戴维医疗为国内婴儿保育设备龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电动腔镜吻合器领跑者",
+        "evidence_span": "国内电动腔镜吻合器领跑者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "婴儿培养箱",
+        "evidence_span": "婴儿保育设备包括婴儿培养箱、婴儿辐射保暖台、黄疸治疗设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "婴儿辐射保暖台",
+        "evidence_span": "婴儿保育设备包括婴儿培养箱、婴儿辐射保暖台、黄疸治疗设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "黄疸治疗设备",
+        "evidence_span": "婴儿保育设备包括婴儿培养箱、婴儿辐射保暖台、黄疸治疗设备等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "开放式吻合器",
+        "evidence_span": "公司目前主要有开放式吻合器、腔镜吻合器、电动腔镜吻合器三大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "腔镜吻合器",
+        "evidence_span": "公司目前主要有开放式吻合器、腔镜吻合器、电动腔镜吻合器三大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动腔镜吻合器",
+        "evidence_span": "公司目前主要有开放式吻合器、腔镜吻合器、电动腔镜吻合器三大类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一次性腔镜用电动切割吻合器",
+        "evidence_span": "公司的一次性腔镜用电动切割吻合器是国内首创的一款电动吻合器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "第三代电动腔镜吻合器生产销售",
+        "evidence_span": "2018 年成为国内首家第三代电动腔镜吻合器生产销售的内资企业"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "联盟集采驱动业绩腾飞",
+        "evidence_span": "电动吻合器龙头企业，联盟集采驱动业绩腾飞"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T22:37:14"
+}

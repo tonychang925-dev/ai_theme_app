@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "4d2dc3b2525f", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含低空产业发展的政策导向和产业链知识（如改造传统通航、发展eVTOL等），但以工信部座谈会事件为框架，混合了知识和事件。"}}

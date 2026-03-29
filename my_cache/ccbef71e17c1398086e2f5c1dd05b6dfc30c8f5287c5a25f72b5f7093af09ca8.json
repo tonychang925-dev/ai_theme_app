@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:58:46", "result": {"chunk_id": "8a88c8d46fd6", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段详细描述了《电动自行车用锂离子电池健康评估工作指引》征求意见中的具体指标（如内阻大于0.5Ω、放电容量衰减率超过50%等），这些是锂离子电池健康评估的稳定技术知识，但以征求意见的事件形式呈现。"}}

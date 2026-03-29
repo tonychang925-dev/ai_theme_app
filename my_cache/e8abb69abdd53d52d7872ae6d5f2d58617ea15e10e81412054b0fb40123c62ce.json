@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:56:58", "result": {"chunk_id": "95bad7a661b8", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个具体事件：Figure AI创始人发布了一段机器人跑步的视频，并提到了控制器和神经网络控制。这属于公司动态和产品展示，没有提供关于题材本体的静态知识。"}}

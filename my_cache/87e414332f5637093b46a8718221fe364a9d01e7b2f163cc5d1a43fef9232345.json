@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "3cc805afc306", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落提到协会建议排查英特尔产品网络安全风险，这包含潜在的安全防护知识，但以事件形式呈现，混合了建议和动态信息。"}}

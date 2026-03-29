@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "e02a555fdf40", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "描述韩国统计厅公布的芯片库存和出口数据，具体到4月份，属于景气数据发布事件，无HBM本体知识。"}}

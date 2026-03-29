@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "液晶显示用偏光片",
+      "evidence_span": "公司主要业务是以液晶显示用偏光片为代表的高新技术产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自有物业的经营管理业务",
+      "evidence_span": "自有物业的经营管理业务及高档纺织服装业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高档纺织服装业务",
+      "evidence_span": "自有物业的经营管理业务及高档纺织服装业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "偏光片研发、生产和销售企业",
+      "evidence_span": "公司是国内主要的偏光片研发、生产和销售企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "偏光片行业的领先企业",
+      "evidence_span": "是国内偏光片行业的领先企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TN型偏光片",
+      "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "STN型偏光片",
+      "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TFT型偏光片",
+      "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OLED型偏光片",
+      "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3D偏光片",
+      "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "染料片",
+      "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "触摸屏用光学膜",
+      "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OLED电视用偏光片",
+      "evidence_span": "OLED电视用偏光片产品成功实现量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "偏光片成套专有技术",
+      "evidence_span": "拥有能够满足客户需求的偏光片成套专有技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "OLED用偏光片新产品开发及产业化",
+      "evidence_span": "OLED用偏光片新产品的开发及产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "偏光片生产用原材料国产化研究",
+      "evidence_span": "偏光片生产用原材料的国产化研究"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华星光电",
+      "evidence_span": "已成为华星光电、京东方、夏普、LGD、深天马、惠科等主流面板企业的合格供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东方",
+      "evidence_span": "已成为华星光电、京东方、夏普、LGD、深天马、惠科等主流面板企业的合格供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "夏普",
+      "evidence_span": "已成为华星光电、京东方、夏普、LGD、深天马、惠科等主流面板企业的合格供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LGD",
+      "evidence_span": "已成为华星光电、京东方、夏普、LGD、深天马、惠科等主流面板企业的合格供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深天马",
+      "evidence_span": "已成为华星光电、京东方、夏普、LGD、深天马、惠科等主流面板企业的合格供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "惠科",
+      "evidence_span": "已成为华星光电、京东方、夏普、LGD、深天马、惠科等主流面板企业的合格供应商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产替代存在较大空间"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "液晶显示用偏光片",
+        "evidence_span": "公司主要业务是以液晶显示用偏光片为代表的高新技术产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自有物业的经营管理业务",
+        "evidence_span": "自有物业的经营管理业务及高档纺织服装业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高档纺织服装业务",
+        "evidence_span": "自有物业的经营管理业务及高档纺织服装业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "偏光片研发、生产和销售企业",
+        "evidence_span": "公司是国内主要的偏光片研发、生产和销售企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "偏光片行业的领先企业",
+        "evidence_span": "是国内偏光片行业的领先企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TN型偏光片",
+        "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "STN型偏光片",
+        "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TFT型偏光片",
+        "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OLED型偏光片",
+        "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3D偏光片",
+        "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "染料片",
+        "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "触摸屏用光学膜",
+        "evidence_span": "产品涵盖TN、STN、TFT、OLED、3D、染料片、触摸屏用光学膜等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OLED电视用偏光片",
+        "evidence_span": "OLED电视用偏光片产品成功实现量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "偏光片成套专有技术",
+        "evidence_span": "拥有能够满足客户需求的偏光片成套专有技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "OLED用偏光片新产品开发及产业化",
+        "evidence_span": "OLED用偏光片新产品的开发及产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "偏光片生产用原材料国产化研究",
+        "evidence_span": "偏光片生产用原材料的国产化研究"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华星光电",
+        "evidence_span": "已成为华星光电、京东方、夏普、LGD、深天马、惠科等主流面板企业的合格供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东方",
+        "evidence_span": "已成为华星光电、京东方、夏普、LGD、深天马、惠科等主流面板企业的合格供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "夏普",
+        "evidence_span": "已成为华星光电、京东方、夏普、LGD、深天马、惠科等主流面板企业的合格供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LGD",
+        "evidence_span": "已成为华星光电、京东方、夏普、LGD、深天马、惠科等主流面板企业的合格供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深天马",
+        "evidence_span": "已成为华星光电、京东方、夏普、LGD、深天马、惠科等主流面板企业的合格供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "惠科",
+        "evidence_span": "已成为华星光电、京东方、夏普、LGD、深天马、惠科等主流面板企业的合格供应商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产替代存在较大空间"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T12:48:04"
+}

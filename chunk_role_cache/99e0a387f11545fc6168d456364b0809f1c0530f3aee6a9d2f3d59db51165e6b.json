@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:43", "result": {"chunk_id": "a7ebc2267c06", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含长江存储扩产、国产替代、蚀刻和沉积工艺突破等可能涉及半导体设备知识的内容，但混合了具体事件（如产线试运行、产能预测），需要进一步裁决以提取稳定知识。"}}

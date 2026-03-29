@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:33:47", "result": {"span_uid": "fe7de1d247b3", "action": "drop", "canonical_text": "", "final_type": "related", "final_role": "企业受益因素分析", "stability": "low", "reason": "原文是机构对网络安全公司受益因素的分析，包含主观预测和事件性信息，无法整理成稳定、独立的知识块。"}}

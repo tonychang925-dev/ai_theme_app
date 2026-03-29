@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "d72ac6b579b7", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "描述了阿斯麦在特定日期提前发布业绩不及预期这一具体事件，及其对半导体板块和纳指的即时影响，属于市场动态事件。"}}

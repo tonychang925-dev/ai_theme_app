@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "9376723c001a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落描述无人艇复合装甲通过测试和交付，包含技术细节如面密度降低67%、'减重不减防'等静态知识，但混有事件信息（测试、交付），适合作为候选知识。"}}

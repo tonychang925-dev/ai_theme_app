@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "b9c6204ec30c", "label": "strict_knowledge", "confidence": 0.85, "ontology_value": "high", "reason": "该段落回顾了工程勘察设计行业的发展历程，包括历史背景、壁垒变化、竞争度提高和市场化机制形成等，属于静态说明行业演变和核心构成，没有夹杂具体事件或时间性动态。"}}

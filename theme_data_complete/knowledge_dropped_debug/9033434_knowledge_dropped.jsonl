@@ -1,0 +1,4 @@
+{"span_uid": "ab1ef8fe95f8", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为具体事件性信息（搭载鸿蒙5.0的设备数量突破1000万台），属于阶段性进展，无法整理成稳定、可脱离上下文的知识表达，且语义重心在事件本身而非稳定知识。"}
+{"span_uid": "fb68e4a51de3", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "", "stability": "low", "reason": "原文为具体事件性信息（商标申请策略和数量），属于阶段性动态，无法形成稳定、可独立理解的知识块，且与题材核心知识关联较弱。"}
+{"span_uid": "7aa12a94bdd4", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述仓颉编程语言官网上线和公测版本开放下载的具体事件，属于一次性进展，无法形成稳定、可独立理解的知识表达，且与华为题材的直接关联性较弱。"}
+{"span_uid": "5c7716d4541a", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述华为Mate 70系列的具体生产计划和零部件投产变化，属于短期事件和预测性信息，无法形成稳定、可独立理解的知识表达。"}

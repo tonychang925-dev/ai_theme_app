@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能物流系统",
+      "evidence_span": "公司主要从事智能物流系统的研发、设计、生产、销售并提供相关服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能专用车",
+      "evidence_span": "公司主要产品包括智能物流系统（含智能分拣系统、智能传输系统）以及智能专用车等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能物流系统领域领先的综合解决方案提供商",
+      "evidence_span": "是国内智能物流系统领域领先的综合解决方案提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能分拣系统",
+      "evidence_span": "公司主要产品包括智能物流系统（含智能分拣系统、智能传输系统）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能传输系统",
+      "evidence_span": "公司主要产品包括智能物流系统（含智能分拣系统、智能传输系统）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交叉带分拣机",
+      "evidence_span": "公司主要智能分拣设备包括交叉带分拣机、落格式分拣机、往复式分拣机、异形件高速自动分拣机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "落格式分拣机",
+      "evidence_span": "公司主要智能分拣设备包括交叉带分拣机、落格式分拣机、往复式分拣机、异形件高速自动分拣机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "往复式分拣机",
+      "evidence_span": "公司主要智能分拣设备包括交叉带分拣机、落格式分拣机、往复式分拣机、异形件高速自动分拣机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "异形件高速自动分拣机",
+      "evidence_span": "公司主要智能分拣设备包括交叉带分拣机、落格式分拣机、往复式分拣机、异形件高速自动分拣机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "胶带输送系统",
+      "evidence_span": "公司主要智能传输设备包括胶带输送系统、辊筒输送系统、分合流输送设备、各类滑槽及其控制系统、倾斜胶带输送分配系统、智能模组带输送系统、伸缩胶带机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "辊筒输送系统",
+      "evidence_span": "公司主要智能传输设备包括胶带输送系统、辊筒输送系统、分合流输送设备、各类滑槽及其控制系统、倾斜胶带输送分配系统、智能模组带输送系统、伸缩胶带机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分合流输送设备",
+      "evidence_span": "公司主要智能传输设备包括胶带输送系统、辊筒输送系统、分合流输送设备、各类滑槽及其控制系统、倾斜胶带输送分配系统、智能模组带输送系统、伸缩胶带机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "倾斜胶带输送分配系统",
+      "evidence_span": "公司主要智能传输设备包括胶带输送系统、辊筒输送系统、分合流输送设备、各类滑槽及其控制系统、倾斜胶带输送分配系统、智能模组带输送系统、伸缩胶带机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能模组带输送系统",
+      "evidence_span": "公司主要智能传输设备包括胶带输送系统、辊筒输送系统、分合流输送设备、各类滑槽及其控制系统、倾斜胶带输送分配系统、智能模组带输送系统、伸缩胶带机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "伸缩胶带机",
+      "evidence_span": "公司主要智能传输设备包括胶带输送系统、辊筒输送系统、分合流输送设备、各类滑槽及其控制系统、倾斜胶带输送分配系统、智能模组带输送系统、伸缩胶带机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "路演展示车",
+      "evidence_span": "公司的智能专用车包括路演展示车、专用运输车、自动装卸车等多种类型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "专用运输车",
+      "evidence_span": "公司的智能专用车包括路演展示车、专用运输车、自动装卸车等多种类型"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动装卸车",
+      "evidence_span": "公司的智能专用车包括路演展示车、专用运输车、自动装卸车等多种类型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机器视觉",
+      "evidence_span": "在机器视觉、嵌入式等核心技术研究方面持续发力并深化布局"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "嵌入式",
+      "evidence_span": "在机器视觉、嵌入式等核心技术研究方面持续发力并深化布局"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "快件智能检测",
+      "evidence_span": "以快件智能检测为代表的人工智能新技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自研电辊筒",
+      "evidence_span": "自研电辊筒和控制器完成批量应用测试"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "控制器",
+      "evidence_span": "自研电辊筒和控制器完成批量应用测试"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "邮政集团",
+      "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "顺丰",
+      "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东",
+      "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德邦",
+      "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "韵达",
+      "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "燕文物流",
+      "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "3M中国",
+      "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海尔家电",
+      "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国烟草",
+      "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南方电网",
+      "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能物流系统",
+        "evidence_span": "公司主要从事智能物流系统的研发、设计、生产、销售并提供相关服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能专用车",
+        "evidence_span": "公司主要产品包括智能物流系统（含智能分拣系统、智能传输系统）以及智能专用车等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能物流系统领域领先的综合解决方案提供商",
+        "evidence_span": "是国内智能物流系统领域领先的综合解决方案提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能分拣系统",
+        "evidence_span": "公司主要产品包括智能物流系统（含智能分拣系统、智能传输系统）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能传输系统",
+        "evidence_span": "公司主要产品包括智能物流系统（含智能分拣系统、智能传输系统）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交叉带分拣机",
+        "evidence_span": "公司主要智能分拣设备包括交叉带分拣机、落格式分拣机、往复式分拣机、异形件高速自动分拣机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "落格式分拣机",
+        "evidence_span": "公司主要智能分拣设备包括交叉带分拣机、落格式分拣机、往复式分拣机、异形件高速自动分拣机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "往复式分拣机",
+        "evidence_span": "公司主要智能分拣设备包括交叉带分拣机、落格式分拣机、往复式分拣机、异形件高速自动分拣机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "异形件高速自动分拣机",
+        "evidence_span": "公司主要智能分拣设备包括交叉带分拣机、落格式分拣机、往复式分拣机、异形件高速自动分拣机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "胶带输送系统",
+        "evidence_span": "公司主要智能传输设备包括胶带输送系统、辊筒输送系统、分合流输送设备、各类滑槽及其控制系统、倾斜胶带输送分配系统、智能模组带输送系统、伸缩胶带机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "辊筒输送系统",
+        "evidence_span": "公司主要智能传输设备包括胶带输送系统、辊筒输送系统、分合流输送设备、各类滑槽及其控制系统、倾斜胶带输送分配系统、智能模组带输送系统、伸缩胶带机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分合流输送设备",
+        "evidence_span": "公司主要智能传输设备包括胶带输送系统、辊筒输送系统、分合流输送设备、各类滑槽及其控制系统、倾斜胶带输送分配系统、智能模组带输送系统、伸缩胶带机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "倾斜胶带输送分配系统",
+        "evidence_span": "公司主要智能传输设备包括胶带输送系统、辊筒输送系统、分合流输送设备、各类滑槽及其控制系统、倾斜胶带输送分配系统、智能模组带输送系统、伸缩胶带机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能模组带输送系统",
+        "evidence_span": "公司主要智能传输设备包括胶带输送系统、辊筒输送系统、分合流输送设备、各类滑槽及其控制系统、倾斜胶带输送分配系统、智能模组带输送系统、伸缩胶带机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "伸缩胶带机",
+        "evidence_span": "公司主要智能传输设备包括胶带输送系统、辊筒输送系统、分合流输送设备、各类滑槽及其控制系统、倾斜胶带输送分配系统、智能模组带输送系统、伸缩胶带机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "路演展示车",
+        "evidence_span": "公司的智能专用车包括路演展示车、专用运输车、自动装卸车等多种类型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "专用运输车",
+        "evidence_span": "公司的智能专用车包括路演展示车、专用运输车、自动装卸车等多种类型"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动装卸车",
+        "evidence_span": "公司的智能专用车包括路演展示车、专用运输车、自动装卸车等多种类型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机器视觉",
+        "evidence_span": "在机器视觉、嵌入式等核心技术研究方面持续发力并深化布局"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "嵌入式",
+        "evidence_span": "在机器视觉、嵌入式等核心技术研究方面持续发力并深化布局"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "快件智能检测",
+        "evidence_span": "以快件智能检测为代表的人工智能新技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自研电辊筒",
+        "evidence_span": "自研电辊筒和控制器完成批量应用测试"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "控制器",
+        "evidence_span": "自研电辊筒和控制器完成批量应用测试"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "邮政集团",
+        "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "顺丰",
+        "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东",
+        "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德邦",
+        "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "韵达",
+        "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "燕文物流",
+        "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "3M中国",
+        "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海尔家电",
+        "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国烟草",
+        "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南方电网",
+        "evidence_span": "主要客户群体包括邮政集团、顺丰、京东、德邦、韵达、燕文物流、华为、3M中国、海尔家电、中国烟草、南方电网等行业内龙头企业和知名企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T14:27:56"
+}

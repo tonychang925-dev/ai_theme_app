@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:55:16", "result": {"chunk_id": "b9f8678f2bc4", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述华为联合开展机器人应用（事件）和央企成立创新联合体（事件），但涉及机器人应用场景（潜在知识），需裁决。"}}

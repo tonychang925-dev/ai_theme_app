@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "ab3230cea954", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落报道德国总理默茨关于乌克兰获得远程武器系统的言论和俄官员关于核手段的声明，属于具体政策讨论和威胁性表态，是时间性新闻事件，无陆军题材的静态知识。"}}

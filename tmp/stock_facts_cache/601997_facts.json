@@ -1,0 +1,79 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "银行业务",
+      "evidence_span": "贵阳银行"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城商行",
+      "evidence_span": "机构网点实现贵州88个县域全覆盖的城商行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贷款",
+      "evidence_span": "贷款总额2,960.51亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "存款",
+      "evidence_span": "存款总额4,003.86亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储蓄存款",
+      "evidence_span": "储蓄存款余额1,855.26亿元"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "区域经济发展",
+      "evidence_span": "受益区域经济发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "西南地区发展红利",
+      "evidence_span": "享西南地区发展红利"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "银行业务",
+        "evidence_span": "贵阳银行"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城商行",
+        "evidence_span": "机构网点实现贵州88个县域全覆盖的城商行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贷款",
+        "evidence_span": "贷款总额2,960.51亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "存款",
+        "evidence_span": "存款总额4,003.86亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储蓄存款",
+        "evidence_span": "储蓄存款余额1,855.26亿元"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "区域经济发展",
+        "evidence_span": "受益区域经济发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "西南地区发展红利",
+        "evidence_span": "享西南地区发展红利"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:49:18"
+}

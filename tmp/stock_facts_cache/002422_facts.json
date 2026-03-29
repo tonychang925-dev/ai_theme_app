@@ -1,0 +1,349 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "大输液",
+      "evidence_span": "发展初期以大输液产品为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "非输液药品",
+      "evidence_span": "非输液药品板块营收快速增长"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "抗生素中间体原料药",
+      "evidence_span": "公司业务主要涉及大输液、非输液药品、抗生素中间体原料药、以及创新药"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "创新药",
+      "evidence_span": "公司业务主要涉及大输液、非输液药品、抗生素中间体原料药、以及创新药"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "大输液龙头",
+      "evidence_span": "成为全国大输液龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "集采头部供应商",
+      "evidence_span": "成为集采头部中标供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "硫氰酸红霉素生产商",
+      "evidence_span": "科伦已成为中国主要的硫氰酸红霉素生产商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "7-ACA龙头企业",
+      "evidence_span": "公司头孢菌素关键性中间体7-ACA龙头地位稳固"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可立袋",
+      "evidence_span": "公司自主研发的可立袋为国内外首创"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肠外营养产品",
+      "evidence_span": "肠外营养产品是公司输液领域重要品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粉液双室袋产品",
+      "evidence_span": "公司首个粉液双室袋产品注射用头孢他啶/5%葡萄糖注射液获批上市"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仿制药",
+      "evidence_span": "仿制药是公司研发战略的基础"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抗生素中间体",
+      "evidence_span": "川宁生物主要产品是抗生素中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硫氰酸红霉素",
+      "evidence_span": "川宁生物主要生产硫氰酸红霉素"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "头孢类中间体",
+      "evidence_span": "川宁生物主要生产硫氰酸红霉素和头孢等系列中间体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "7-ACA",
+      "evidence_span": "公司头孢菌素关键性中间体7-ACA龙头地位稳固"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "6-APA",
+      "evidence_span": "公司青霉素类抗生素中间体6-APA发展前景广阔"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ADC药物",
+      "evidence_span": "公司有3款ADC产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TROP2-ADC",
+      "evidence_span": "SKB264（TROP-2ADC）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Claudin18.2-ADC",
+      "evidence_span": "SKB315是公司开发的全新的具有自主知识产权的靶向Claudin18.2的ADC药物"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "HER2-ADC",
+      "evidence_span": "A166为科伦博泰与Sorrento的全资子公司Levena Biopharma合作的全球首个通过赖氛酸定点定量偶联、具有创新Linker和高活性毒素小分子的第三代抗HER2-ADC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PD-L1单抗",
+      "evidence_span": "进展最快的是PD-L1单抗（A167）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "EGFR单抗",
+      "evidence_span": "其次是EGFR单抗（A140）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "STING激动剂",
+      "evidence_span": "公司自研新一代小分子STING激动剂KL340399注射液"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "琥珀酸曲格列汀片",
+      "evidence_span": "琥珀酸曲格列汀片是一种新型超长效口服降糖药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "枸橼酸西地那非口崩片",
+      "evidence_span": "枸橼酸西地那非口崩片为公司首款获批的口崩片"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "可立袋专利技术",
+      "evidence_span": "拥有二十多项专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "粉液双室袋核心技术",
+      "evidence_span": "已掌握粉液双室袋核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物发酵技术",
+      "evidence_span": "川宁生物将继续从事生物发酵产业化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "合成生物学",
+      "evidence_span": "以合成生物学研究为核心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "酶工程平台",
+      "evidence_span": "迈向以合成生物学和酶工程平台为重要发展的新时代"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "ADC技术",
+      "evidence_span": "ADC技术不断改进"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "默沙东",
+      "evidence_span": "公司与默沙东分别实现两个ADC产品海外授权合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "有望成为首个国产上市TROP2-ADC"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "大输液",
+        "evidence_span": "发展初期以大输液产品为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "非输液药品",
+        "evidence_span": "非输液药品板块营收快速增长"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "抗生素中间体原料药",
+        "evidence_span": "公司业务主要涉及大输液、非输液药品、抗生素中间体原料药、以及创新药"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "创新药",
+        "evidence_span": "公司业务主要涉及大输液、非输液药品、抗生素中间体原料药、以及创新药"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "大输液龙头",
+        "evidence_span": "成为全国大输液龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "集采头部供应商",
+        "evidence_span": "成为集采头部中标供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "硫氰酸红霉素生产商",
+        "evidence_span": "科伦已成为中国主要的硫氰酸红霉素生产商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "7-ACA龙头企业",
+        "evidence_span": "公司头孢菌素关键性中间体7-ACA龙头地位稳固"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可立袋",
+        "evidence_span": "公司自主研发的可立袋为国内外首创"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肠外营养产品",
+        "evidence_span": "肠外营养产品是公司输液领域重要品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粉液双室袋产品",
+        "evidence_span": "公司首个粉液双室袋产品注射用头孢他啶/5%葡萄糖注射液获批上市"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仿制药",
+        "evidence_span": "仿制药是公司研发战略的基础"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抗生素中间体",
+        "evidence_span": "川宁生物主要产品是抗生素中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硫氰酸红霉素",
+        "evidence_span": "川宁生物主要生产硫氰酸红霉素"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "头孢类中间体",
+        "evidence_span": "川宁生物主要生产硫氰酸红霉素和头孢等系列中间体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "7-ACA",
+        "evidence_span": "公司头孢菌素关键性中间体7-ACA龙头地位稳固"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "6-APA",
+        "evidence_span": "公司青霉素类抗生素中间体6-APA发展前景广阔"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ADC药物",
+        "evidence_span": "公司有3款ADC产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TROP2-ADC",
+        "evidence_span": "SKB264（TROP-2ADC）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Claudin18.2-ADC",
+        "evidence_span": "SKB315是公司开发的全新的具有自主知识产权的靶向Claudin18.2的ADC药物"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "HER2-ADC",
+        "evidence_span": "A166为科伦博泰与Sorrento的全资子公司Levena Biopharma合作的全球首个通过赖氛酸定点定量偶联、具有创新Linker和高活性毒素小分子的第三代抗HER2-ADC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PD-L1单抗",
+        "evidence_span": "进展最快的是PD-L1单抗（A167）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "EGFR单抗",
+        "evidence_span": "其次是EGFR单抗（A140）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "STING激动剂",
+        "evidence_span": "公司自研新一代小分子STING激动剂KL340399注射液"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "琥珀酸曲格列汀片",
+        "evidence_span": "琥珀酸曲格列汀片是一种新型超长效口服降糖药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "枸橼酸西地那非口崩片",
+        "evidence_span": "枸橼酸西地那非口崩片为公司首款获批的口崩片"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "可立袋专利技术",
+        "evidence_span": "拥有二十多项专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "粉液双室袋核心技术",
+        "evidence_span": "已掌握粉液双室袋核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物发酵技术",
+        "evidence_span": "川宁生物将继续从事生物发酵产业化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "合成生物学",
+        "evidence_span": "以合成生物学研究为核心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "酶工程平台",
+        "evidence_span": "迈向以合成生物学和酶工程平台为重要发展的新时代"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "ADC技术",
+        "evidence_span": "ADC技术不断改进"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "默沙东",
+        "evidence_span": "公司与默沙东分别实现两个ADC产品海外授权合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "有望成为首个国产上市TROP2-ADC"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:47:20"
+}

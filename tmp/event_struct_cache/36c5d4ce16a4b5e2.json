@@ -1,0 +1,55 @@
+{
+  "event_id": "evt_2e1c8e0e9e40",
+  "theme_name": "光刻胶",
+  "event_type": "制裁",
+  "entities": [
+    {
+      "name": "日本",
+      "type": "国家",
+      "normalized": "日本"
+    },
+    {
+      "name": "中国",
+      "type": "国家",
+      "normalized": "中国"
+    },
+    {
+      "name": "光刻胶",
+      "type": "产品",
+      "normalized": "光刻胶"
+    }
+  ],
+  "summary": "日本被曝光实际上停止向中国出口光刻胶",
+  "causal_claim": [
+    "出口停止",
+    "光刻胶短缺",
+    "国产替代"
+  ],
+  "evidence_set": {
+    "tech_phrases": [
+      "出口停止",
+      "光刻胶"
+    ],
+    "normalized_terms": {
+      "日本": "日本",
+      "中国": "中国",
+      "光刻胶": "光刻胶"
+    },
+    "evidence_spans": [
+      {
+        "text": "日本实际上停止向中国出口光刻胶的状况被曝光",
+        "start": 0,
+        "end": 25
+      }
+    ],
+    "core_concepts": [
+      "制裁",
+      "出口管制"
+    ]
+  },
+  "severity_score": 0.8,
+  "confidence": 0.9,
+  "source_weight": 1.0,
+  "timestamp": null,
+  "raw_text": "日本实际上停止向中国出口光刻胶的状况被曝光（新闻来源：亚洲时报）"
+}

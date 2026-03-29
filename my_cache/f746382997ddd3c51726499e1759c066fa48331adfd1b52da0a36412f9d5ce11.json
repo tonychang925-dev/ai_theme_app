@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:58:46", "result": {"chunk_id": "048be8136dad", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段仅简要说明工信部公开征求对《电动自行车安全技术规范（征求意见稿）》的意见，这是一个具体的政策征求意见事件，没有提供详细的静态知识内容。"}}

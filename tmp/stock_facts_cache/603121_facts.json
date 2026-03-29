@@ -1,0 +1,489 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "动力总成业务",
+      "evidence_span": "公司业务分为动力总成业务及传感器业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "传感器业务",
+      "evidence_span": "公司业务分为动力总成业务及传感器业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "涡轮增压配件龙头",
+      "evidence_span": "华培动力涡轮增压配件龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "二级供应商",
+      "evidence_span": "公司作为二级供应商供应放气阀组件、涡轮壳和中间壳等产品给一级供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "三级供应商",
+      "evidence_span": "公司还作为三级供应商，供应放气阀组件类产品给二级供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "放气阀组件",
+      "evidence_span": "动力总成业务涵盖的主要产品为汽车发动机涡轮增压系统的核心零部件，包括放气阀组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡轮壳",
+      "evidence_span": "动力总成业务涵盖的主要产品为汽车发动机涡轮增压系统的核心零部件，包括放气阀组件、涡轮壳"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中间壳",
+      "evidence_span": "动力总成业务涵盖的主要产品为汽车发动机涡轮增压系统的核心零部件，包括放气阀组件、涡轮壳和中间壳"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压力传感器",
+      "evidence_span": "主要产品涵盖全压力量程范围的压力传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "速度位置传感器",
+      "evidence_span": "主要产品涵盖全压力量程范围的压力传感器、速度位置传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "温度传感器",
+      "evidence_span": "主要产品涵盖全压力量程范围的压力传感器、速度位置传感器、温度传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "尿素品质传感器",
+      "evidence_span": "主要产品涵盖全压力量程范围的压力传感器、速度位置传感器、温度传感器、尿素品质传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "核心芯片",
+      "evidence_span": "主要产品涵盖全压力量程范围的压力传感器、速度位置传感器、温度传感器、尿素品质传感器等多品类传感器及部分核心芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压力温度一体化传感器",
+      "evidence_span": "研发匹配纯电动新能源车及燃料电池热管理系统的压力温度一体化传感器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PTC水加热器",
+      "evidence_span": "研发匹配纯电动新能源车及燃料电池热管理系统的压力温度一体化传感器及PTC水加热器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢气泄漏监控传感器",
+      "evidence_span": "匹配基于电池包安全监控的压力及氢气泄漏监控传感器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "陶瓷压阻压力传感器技术",
+      "evidence_span": "子公司盛迈克拥有陶瓷压阻压力传感器、陶瓷电容压力传感器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "陶瓷电容压力传感器技术",
+      "evidence_span": "子公司盛迈克拥有陶瓷压阻压力传感器、陶瓷电容压力传感器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高压传感器技术",
+      "evidence_span": "子公司盛迈克拥有基于金属基底的高压传感器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "专用信号调理芯片技术",
+      "evidence_span": "子公司盛迈克拥有专用信号调理芯片技术相关的多项专利"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "陶瓷电容技术",
+      "evidence_span": "子公司盛邦具备包含陶瓷电容、MEMS压阻及其充油芯体技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MEMS压阻技术",
+      "evidence_span": "子公司盛邦具备包含陶瓷电容、MEMS压阻及其充油芯体技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "充油芯体技术",
+      "evidence_span": "子公司盛邦具备包含陶瓷电容、MEMS压阻及其充油芯体技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "玻璃微熔技术",
+      "evidence_span": "子公司盛邦具备玻璃微熔的核心技术能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全量程压力传感器覆盖能力",
+      "evidence_span": "子公司盛邦实现了全量程压力传感器的覆盖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微熔技术高压传感器生产线",
+      "evidence_span": "通过自主研发建立了基于微熔技术的高压传感器生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核心芯片自主设计能力",
+      "evidence_span": "使得公司具备部分核心车规级芯片的自主设计、封装测试的能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博格华纳",
+      "evidence_span": "客户包括博格华纳、盖瑞特、三菱重工、石川岛播磨、博马科技、德国大陆等全球知名涡轮增压器整机制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "盖瑞特",
+      "evidence_span": "客户包括博格华纳、盖瑞特、三菱重工、石川岛播磨、博马科技、德国大陆等全球知名涡轮增压器整机制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三菱重工",
+      "evidence_span": "客户包括博格华纳、盖瑞特、三菱重工、石川岛播磨、博马科技、德国大陆等全球知名涡轮增压器整机制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "石川岛播磨",
+      "evidence_span": "客户包括博格华纳、盖瑞特、三菱重工、石川岛播磨、博马科技、德国大陆等全球知名涡轮增压器整机制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博马科技",
+      "evidence_span": "客户包括博格华纳、盖瑞特、三菱重工、石川岛播磨、博马科技、德国大陆等全球知名涡轮增压器整机制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国大陆",
+      "evidence_span": "客户包括博格华纳、盖瑞特、三菱重工、石川岛播磨、博马科技、德国大陆等全球知名涡轮增压器整机制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美达工业",
+      "evidence_span": "供应放气阀组件类产品给二级供应商，包括美达工业、科华控股等涡轮增压器零部件制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科华控股",
+      "evidence_span": "供应放气阀组件类产品给二级供应商，包括美达工业、科华控股等涡轮增压器零部件制造商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽解放",
+      "evidence_span": "客户涵盖一汽解放、中国重汽、陕汽、三一重工等商用车及工程机械整机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国重汽",
+      "evidence_span": "客户涵盖一汽解放、中国重汽、陕汽、三一重工等商用车及工程机械整机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "陕汽",
+      "evidence_span": "客户涵盖一汽解放、中国重汽、陕汽、三一重工等商用车及工程机械整机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三一重工",
+      "evidence_span": "客户涵盖一汽解放、中国重汽、陕汽、三一重工等商用车及工程机械整机厂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "潍柴动力",
+      "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "康明斯",
+      "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世",
+      "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "玉柴",
+      "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "锡柴",
+      "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "云内",
+      "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "常柴",
+      "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "推动关键零部件的国产替代"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "传感器国产替代",
+      "evidence_span": "紧紧抓住“传感器国产替代”的时代机遇"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "动力总成业务",
+        "evidence_span": "公司业务分为动力总成业务及传感器业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "传感器业务",
+        "evidence_span": "公司业务分为动力总成业务及传感器业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "涡轮增压配件龙头",
+        "evidence_span": "华培动力涡轮增压配件龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "二级供应商",
+        "evidence_span": "公司作为二级供应商供应放气阀组件、涡轮壳和中间壳等产品给一级供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "三级供应商",
+        "evidence_span": "公司还作为三级供应商，供应放气阀组件类产品给二级供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "放气阀组件",
+        "evidence_span": "动力总成业务涵盖的主要产品为汽车发动机涡轮增压系统的核心零部件，包括放气阀组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡轮壳",
+        "evidence_span": "动力总成业务涵盖的主要产品为汽车发动机涡轮增压系统的核心零部件，包括放气阀组件、涡轮壳"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中间壳",
+        "evidence_span": "动力总成业务涵盖的主要产品为汽车发动机涡轮增压系统的核心零部件，包括放气阀组件、涡轮壳和中间壳"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压力传感器",
+        "evidence_span": "主要产品涵盖全压力量程范围的压力传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "速度位置传感器",
+        "evidence_span": "主要产品涵盖全压力量程范围的压力传感器、速度位置传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "温度传感器",
+        "evidence_span": "主要产品涵盖全压力量程范围的压力传感器、速度位置传感器、温度传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "尿素品质传感器",
+        "evidence_span": "主要产品涵盖全压力量程范围的压力传感器、速度位置传感器、温度传感器、尿素品质传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "核心芯片",
+        "evidence_span": "主要产品涵盖全压力量程范围的压力传感器、速度位置传感器、温度传感器、尿素品质传感器等多品类传感器及部分核心芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压力温度一体化传感器",
+        "evidence_span": "研发匹配纯电动新能源车及燃料电池热管理系统的压力温度一体化传感器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PTC水加热器",
+        "evidence_span": "研发匹配纯电动新能源车及燃料电池热管理系统的压力温度一体化传感器及PTC水加热器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢气泄漏监控传感器",
+        "evidence_span": "匹配基于电池包安全监控的压力及氢气泄漏监控传感器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "陶瓷压阻压力传感器技术",
+        "evidence_span": "子公司盛迈克拥有陶瓷压阻压力传感器、陶瓷电容压力传感器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "陶瓷电容压力传感器技术",
+        "evidence_span": "子公司盛迈克拥有陶瓷压阻压力传感器、陶瓷电容压力传感器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高压传感器技术",
+        "evidence_span": "子公司盛迈克拥有基于金属基底的高压传感器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "专用信号调理芯片技术",
+        "evidence_span": "子公司盛迈克拥有专用信号调理芯片技术相关的多项专利"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "陶瓷电容技术",
+        "evidence_span": "子公司盛邦具备包含陶瓷电容、MEMS压阻及其充油芯体技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MEMS压阻技术",
+        "evidence_span": "子公司盛邦具备包含陶瓷电容、MEMS压阻及其充油芯体技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "充油芯体技术",
+        "evidence_span": "子公司盛邦具备包含陶瓷电容、MEMS压阻及其充油芯体技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "玻璃微熔技术",
+        "evidence_span": "子公司盛邦具备玻璃微熔的核心技术能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全量程压力传感器覆盖能力",
+        "evidence_span": "子公司盛邦实现了全量程压力传感器的覆盖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微熔技术高压传感器生产线",
+        "evidence_span": "通过自主研发建立了基于微熔技术的高压传感器生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核心芯片自主设计能力",
+        "evidence_span": "使得公司具备部分核心车规级芯片的自主设计、封装测试的能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博格华纳",
+        "evidence_span": "客户包括博格华纳、盖瑞特、三菱重工、石川岛播磨、博马科技、德国大陆等全球知名涡轮增压器整机制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "盖瑞特",
+        "evidence_span": "客户包括博格华纳、盖瑞特、三菱重工、石川岛播磨、博马科技、德国大陆等全球知名涡轮增压器整机制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三菱重工",
+        "evidence_span": "客户包括博格华纳、盖瑞特、三菱重工、石川岛播磨、博马科技、德国大陆等全球知名涡轮增压器整机制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "石川岛播磨",
+        "evidence_span": "客户包括博格华纳、盖瑞特、三菱重工、石川岛播磨、博马科技、德国大陆等全球知名涡轮增压器整机制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博马科技",
+        "evidence_span": "客户包括博格华纳、盖瑞特、三菱重工、石川岛播磨、博马科技、德国大陆等全球知名涡轮增压器整机制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国大陆",
+        "evidence_span": "客户包括博格华纳、盖瑞特、三菱重工、石川岛播磨、博马科技、德国大陆等全球知名涡轮增压器整机制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美达工业",
+        "evidence_span": "供应放气阀组件类产品给二级供应商，包括美达工业、科华控股等涡轮增压器零部件制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科华控股",
+        "evidence_span": "供应放气阀组件类产品给二级供应商，包括美达工业、科华控股等涡轮增压器零部件制造商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽解放",
+        "evidence_span": "客户涵盖一汽解放、中国重汽、陕汽、三一重工等商用车及工程机械整机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国重汽",
+        "evidence_span": "客户涵盖一汽解放、中国重汽、陕汽、三一重工等商用车及工程机械整机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "陕汽",
+        "evidence_span": "客户涵盖一汽解放、中国重汽、陕汽、三一重工等商用车及工程机械整机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三一重工",
+        "evidence_span": "客户涵盖一汽解放、中国重汽、陕汽、三一重工等商用车及工程机械整机厂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "潍柴动力",
+        "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "康明斯",
+        "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世",
+        "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "玉柴",
+        "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "锡柴",
+        "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "云内",
+        "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "常柴",
+        "evidence_span": "客户涵盖潍柴动力、康明斯、博世、玉柴、锡柴、云内、常柴等国内外主流发动机厂商"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "推动关键零部件的国产替代"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "传感器国产替代",
+        "evidence_span": "紧紧抓住“传感器国产替代”的时代机遇"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:23:52"
+}

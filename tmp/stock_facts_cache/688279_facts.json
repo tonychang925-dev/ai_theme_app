@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "BLDC电机驱动控制专用芯片的研发",
+      "evidence_span": "长期从事 BLDC 电机（直流无刷电机）驱动控制专用芯片的研发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "BLDC电机驱动控制专用芯片的设计",
+      "evidence_span": "长期从事 BLDC 电机（直流无刷电机）驱动控制专用芯片的设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "BLDC电机驱动控制专用芯片的销售",
+      "evidence_span": "长期从事 BLDC 电机（直流无刷电机）驱动控制专用芯片的销售业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内 BLDC 电机驱动控制芯片龙头",
+      "evidence_span": "国内 BLDC 电机驱动控制芯片龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电机驱动控制专用芯片的研发设计企业",
+      "evidence_span": "电机驱动控制专用芯片的研发设计企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "BLDCM驱动控制芯片龙头",
+      "evidence_span": "BLDCM驱动控制芯片龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球高性能电机驱动控制芯片领导者",
+      "evidence_span": "全球高性能电机驱动控制芯片领导者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机主控芯片 MCU/ASIC",
+      "evidence_span": "包括电机主控芯片 MCU/ASIC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机驱动芯片 HVIC",
+      "evidence_span": "电机驱动芯片 HVIC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机专用功率器件 MOSFET",
+      "evidence_span": "电机专用功率器件MOSFET"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机驱动控制芯片 MCU/HVIC",
+      "evidence_span": "公司主要产品为电机驱动控制芯片 MCU/HVIC 等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车规级BLDC电机控制专用芯片 FU6832N1",
+      "evidence_span": "车规级BLDC电机控制专用芯片FU6832N1"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自主知识产权专用ME内核",
+      "evidence_span": "自主知识产权专用ME内核加持"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "算法硬件化",
+      "evidence_span": "算法硬件化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电机控制器件集成化",
+      "evidence_span": "电机控制器件集成化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硬件方式实现电机控制 FOC 算法",
+      "evidence_span": "电机控制专用内核采用硬件方式实现电机控制 FOC 算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无感 FOC 控制方案",
+      "evidence_span": "无感 FOC 控制方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "芯片内部集成电源、驱动或功率器件",
+      "evidence_span": "主控芯片则在单一晶圆上集成了电源、驱动或功率器件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "飞利浦",
+      "evidence_span": "客户遍及飞利浦"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美的",
+      "evidence_span": "美的"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科沃斯",
+      "evidence_span": "科沃斯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电产",
+      "evidence_span": "电产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内主要新能源汽车厂商",
+      "evidence_span": "已进入部分国内主要新能源汽车厂商的配套"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "电机国产替代",
+      "evidence_span": "电机国产替代的推进"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "BLDC电机驱动控制专用芯片的研发",
+        "evidence_span": "长期从事 BLDC 电机（直流无刷电机）驱动控制专用芯片的研发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "BLDC电机驱动控制专用芯片的设计",
+        "evidence_span": "长期从事 BLDC 电机（直流无刷电机）驱动控制专用芯片的设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "BLDC电机驱动控制专用芯片的销售",
+        "evidence_span": "长期从事 BLDC 电机（直流无刷电机）驱动控制专用芯片的销售业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内 BLDC 电机驱动控制芯片龙头",
+        "evidence_span": "国内 BLDC 电机驱动控制芯片龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电机驱动控制专用芯片的研发设计企业",
+        "evidence_span": "电机驱动控制专用芯片的研发设计企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "BLDCM驱动控制芯片龙头",
+        "evidence_span": "BLDCM驱动控制芯片龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球高性能电机驱动控制芯片领导者",
+        "evidence_span": "全球高性能电机驱动控制芯片领导者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机主控芯片 MCU/ASIC",
+        "evidence_span": "包括电机主控芯片 MCU/ASIC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机驱动芯片 HVIC",
+        "evidence_span": "电机驱动芯片 HVIC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机专用功率器件 MOSFET",
+        "evidence_span": "电机专用功率器件MOSFET"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机驱动控制芯片 MCU/HVIC",
+        "evidence_span": "公司主要产品为电机驱动控制芯片 MCU/HVIC 等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车规级BLDC电机控制专用芯片 FU6832N1",
+        "evidence_span": "车规级BLDC电机控制专用芯片FU6832N1"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自主知识产权专用ME内核",
+        "evidence_span": "自主知识产权专用ME内核加持"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "算法硬件化",
+        "evidence_span": "算法硬件化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电机控制器件集成化",
+        "evidence_span": "电机控制器件集成化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硬件方式实现电机控制 FOC 算法",
+        "evidence_span": "电机控制专用内核采用硬件方式实现电机控制 FOC 算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无感 FOC 控制方案",
+        "evidence_span": "无感 FOC 控制方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "芯片内部集成电源、驱动或功率器件",
+        "evidence_span": "主控芯片则在单一晶圆上集成了电源、驱动或功率器件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "飞利浦",
+        "evidence_span": "客户遍及飞利浦"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美的",
+        "evidence_span": "美的"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科沃斯",
+        "evidence_span": "科沃斯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电产",
+        "evidence_span": "电产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内主要新能源汽车厂商",
+        "evidence_span": "已进入部分国内主要新能源汽车厂商的配套"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "电机国产替代",
+        "evidence_span": "电机国产替代的推进"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:51:21"
+}

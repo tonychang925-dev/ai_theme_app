@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "121f74064143", "label": "strict_knowledge", "confidence": 0.98, "ontology_value": "high", "reason": "该段落静态说明AR眼镜的关键零部件、构成部分、技术路径和成本结构，包括微显示屏、光学方案、传感器、芯片等核心要素的定义和分类，不包含任何事件、时间推进或动态信息，纯属题材本体构建的稳定知识。"}}

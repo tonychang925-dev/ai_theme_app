@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "29b98f1c9ac6", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "描述了广东省发布的关于推动特定设备研发和国产化替代的政策导向或行动计划，属于地方政策动态事件。"}}

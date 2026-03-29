@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "fa9fdfe24f72", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段提及全固态电池产业化进程和电池企业布局航空电动领域，包含静态知识（如企业布局和联合开发模式），但也涉及事件性信息（如'官宣获得突破'和'产业化进程提速'），因此属于混合内容，需要进一步裁决以提取稳定知识。"}}

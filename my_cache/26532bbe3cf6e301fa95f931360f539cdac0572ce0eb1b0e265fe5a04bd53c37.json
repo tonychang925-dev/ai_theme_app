@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "9b194578af14", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落是财政部副部长在发布会上的表态，涉及政策工具使用，属于事件性内容，没有提供建筑设计静态知识，因此分类为pure_event。"}}

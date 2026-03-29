@@ -1,0 +1,244 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "港口建设",
+      "evidence_span": "核心业务基建建设具体包括港口建设"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "道路",
+      "evidence_span": "核心业务基建建设具体包括道路与桥梁"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "桥梁建设",
+      "evidence_span": "核心业务基建建设具体包括道路与桥梁"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铁路建设",
+      "evidence_span": "核心业务基建建设具体包括铁路建设"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市建设",
+      "evidence_span": "核心业务基建建设具体包括城市建设"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "海外工程",
+      "evidence_span": "核心业务基建建设具体包括海外工程"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基建设计",
+      "evidence_span": "基建设计与疏浚业务构成重要补充"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "疏浚业务",
+      "evidence_span": "基建设计与疏浚业务构成重要补充"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "城市综合开发运营",
+      "evidence_span": "打造城市综合开发运营产业链"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球头部基础设施综合服务商",
+      "evidence_span": "中国交建全球头部基础设施综合服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "世界最大港口设计与建设公司",
+      "evidence_span": "世界最大港口、公路与桥梁设计与建设公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "世界最大公路与桥梁设计与建设公司",
+      "evidence_span": "世界最大港口、公路与桥梁设计与建设公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "世界最大疏浚公司",
+      "evidence_span": "世界最大疏浚公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国最大国际工程承包公司",
+      "evidence_span": "中国最大国际工程承包公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高速公路投资商",
+      "evidence_span": "高速公路投资商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市综合开发龙头",
+      "evidence_span": "成就城市综合开发龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "咨询规划服务",
+      "evidence_span": "业务涵盖咨询规划、勘察设计、项目监理等全流程服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "勘察设计服务",
+      "evidence_span": "业务涵盖咨询规划、勘察设计、项目监理等全流程服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "项目监理服务",
+      "evidence_span": "业务涵盖咨询规划、勘察设计、项目监理等全流程服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公路勘设工程",
+      "evidence_span": "承担青藏高速等众多公路勘设工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "港航勘设工程",
+      "evidence_span": "洋山深水港等众多港航勘设工程"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "一带一路",
+      "evidence_span": "成就“一带一路”国际工程先锋"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "REITs",
+      "evidence_span": "将充分受益于REITs的历史性机遇"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国企改革",
+      "evidence_span": "国企改革再添新动力"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "港口建设",
+        "evidence_span": "核心业务基建建设具体包括港口建设"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "道路与桥梁建设",
+        "evidence_span": "核心业务基建建设具体包括道路与桥梁"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铁路建设",
+        "evidence_span": "核心业务基建建设具体包括铁路建设"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市建设",
+        "evidence_span": "核心业务基建建设具体包括城市建设"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "海外工程",
+        "evidence_span": "核心业务基建建设具体包括海外工程"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基建设计",
+        "evidence_span": "基建设计与疏浚业务构成重要补充"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "疏浚业务",
+        "evidence_span": "基建设计与疏浚业务构成重要补充"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "城市综合开发运营",
+        "evidence_span": "打造城市综合开发运营产业链"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球头部基础设施综合服务商",
+        "evidence_span": "中国交建全球头部基础设施综合服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "世界最大港口设计与建设公司",
+        "evidence_span": "世界最大港口、公路与桥梁设计与建设公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "世界最大公路与桥梁设计与建设公司",
+        "evidence_span": "世界最大港口、公路与桥梁设计与建设公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "世界最大疏浚公司",
+        "evidence_span": "世界最大疏浚公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国最大国际工程承包公司",
+        "evidence_span": "中国最大国际工程承包公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高速公路投资商",
+        "evidence_span": "高速公路投资商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市综合开发龙头",
+        "evidence_span": "成就城市综合开发龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "咨询规划服务",
+        "evidence_span": "业务涵盖咨询规划、勘察设计、项目监理等全流程服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "勘察设计服务",
+        "evidence_span": "业务涵盖咨询规划、勘察设计、项目监理等全流程服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "项目监理服务",
+        "evidence_span": "业务涵盖咨询规划、勘察设计、项目监理等全流程服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公路勘设工程",
+        "evidence_span": "承担青藏高速等众多公路勘设工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "港航勘设工程",
+        "evidence_span": "洋山深水港等众多港航勘设工程"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "一带一路",
+        "evidence_span": "成就“一带一路”国际工程先锋"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "REITs",
+        "evidence_span": "将充分受益于REITs的历史性机遇"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国企改革",
+        "evidence_span": "国企改革再添新动力"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:36:43"
+}

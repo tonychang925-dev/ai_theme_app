@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:57:27", "result": {"span_uid": "63d74893f81c", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "发展阶段描述", "stability": "low", "reason": "原片段为事件性描述（进入批量生产与交付阶段）和主观预测（有望迈入黄金期），无法整理成稳定、可独立成立的知识块，且稳定性低，故丢弃。"}}

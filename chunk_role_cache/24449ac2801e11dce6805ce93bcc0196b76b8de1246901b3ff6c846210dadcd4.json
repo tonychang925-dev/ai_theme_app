@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "9a19692dcdbf", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "段落与chunk_id 5cb2011876f6内容高度相似，描述事件并引用市场数据，重复但仍有潜在知识价值，需要后续去重和抽取。"}}

@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "棉花加工机械成套设备",
+      "evidence_span": "公司坚持立足棉花加工机械成套设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "棉花采摘机械",
+      "evidence_span": "主要从事棉花采摘机械及棉花加工机械成套设备的研发、生产及销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "棉花加工机械制造行业的龙头企业",
+      "evidence_span": "公司是国内棉花加工机械制造行业的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "棉机行业领军品牌",
+      "evidence_span": "是国内棉机行业领军品牌"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "打包采棉机制造企业",
+      "evidence_span": "是国内为数不多的打包采棉机制造企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轧花设备",
+      "evidence_span": "轧花设备主要包括轧花机、籽棉清理机、皮棉清理机、液压打包机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "剥绒设备",
+      "evidence_span": "剥绒设备主要包括剥绒机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "六行自走式打包采棉机",
+      "evidence_span": "主要包括六行自走式打包采棉机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三行自走式打包采棉机",
+      "evidence_span": "三行自走式打包采棉机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三行自走式箱式采棉机",
+      "evidence_span": "三行自走式箱式采棉机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能配肥机",
+      "evidence_span": "其他产品主要有智能配肥机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玉米收获机",
+      "evidence_span": "玉米收获机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "秸秆打捆机",
+      "evidence_span": "秸秆打捆机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粮食烘干机",
+      "evidence_span": "粮食烘干机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "棉花采摘及加工全程机械化设备",
+      "evidence_span": "是国内提供机采棉采摘及加工全程机械化设备的主要厂商之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "打包采棉机",
+      "evidence_span": "研制并批量市场推广打包采棉机"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "箱式采棉机基本实现国产替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "棉花加工机械成套设备",
+        "evidence_span": "公司坚持立足棉花加工机械成套设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "棉花采摘机械",
+        "evidence_span": "主要从事棉花采摘机械及棉花加工机械成套设备的研发、生产及销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "棉花加工机械制造行业的龙头企业",
+        "evidence_span": "公司是国内棉花加工机械制造行业的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "棉机行业领军品牌",
+        "evidence_span": "是国内棉机行业领军品牌"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "打包采棉机制造企业",
+        "evidence_span": "是国内为数不多的打包采棉机制造企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轧花设备",
+        "evidence_span": "轧花设备主要包括轧花机、籽棉清理机、皮棉清理机、液压打包机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "剥绒设备",
+        "evidence_span": "剥绒设备主要包括剥绒机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "六行自走式打包采棉机",
+        "evidence_span": "主要包括六行自走式打包采棉机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三行自走式打包采棉机",
+        "evidence_span": "三行自走式打包采棉机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三行自走式箱式采棉机",
+        "evidence_span": "三行自走式箱式采棉机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能配肥机",
+        "evidence_span": "其他产品主要有智能配肥机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玉米收获机",
+        "evidence_span": "玉米收获机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "秸秆打捆机",
+        "evidence_span": "秸秆打捆机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粮食烘干机",
+        "evidence_span": "粮食烘干机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "棉花采摘及加工全程机械化设备",
+        "evidence_span": "是国内提供机采棉采摘及加工全程机械化设备的主要厂商之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "打包采棉机",
+        "evidence_span": "研制并批量市场推广打包采棉机"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "箱式采棉机基本实现国产替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:00:34"
+}

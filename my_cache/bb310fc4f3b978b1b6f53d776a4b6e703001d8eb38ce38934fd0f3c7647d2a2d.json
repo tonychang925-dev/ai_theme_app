@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:29:44", "result": {"chunk_id": "035950b90b62", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落静态列举华为数字能源的组成部分，是纯静态的结构和关键要素说明，不包含事件或时间性动态。"}}

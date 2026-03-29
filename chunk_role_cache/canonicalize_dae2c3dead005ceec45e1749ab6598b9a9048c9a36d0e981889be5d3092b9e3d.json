@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:47:32", "result": {"span_uid": "72de1b5e3750", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "企业合作事件", "stability": "low", "reason": "该片段描述Meta与EssilorLuxottica合作的具体事件，包括产品价格和计划，属于新闻事件，无法形成稳定知识块。"}}

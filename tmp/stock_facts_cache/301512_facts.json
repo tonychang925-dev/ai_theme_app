@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化设备",
+      "evidence_span": "公司主营业务收入为自动化设备、自动化线体、夹治具等的销售收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化线体",
+      "evidence_span": "公司主营业务收入为自动化设备、自动化线体、夹治具等的销售收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "夹治具",
+      "evidence_span": "公司主营业务收入为自动化设备、自动化线体、夹治具等的销售收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "改造",
+      "evidence_span": "公司主营业务收入为自动化设备、自动化线体、夹治具等的销售收入和改造及技术服务收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务",
+      "evidence_span": "公司主营业务收入为自动化设备、自动化线体、夹治具等的销售收入和改造及技术服务收入"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "自动化设备厂商",
+      "evidence_span": "自动化设备、自动化线体及夹治具厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "自动化线体厂商",
+      "evidence_span": "自动化设备、自动化线体及夹治具厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "夹治具厂商",
+      "evidence_span": "自动化设备、自动化线体及夹治具厂商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密检测设备",
+      "evidence_span": "自动化设备包括精密检测设备和精密组装设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密组装设备",
+      "evidence_span": "自动化设备包括精密检测设备和精密组装设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手机玻璃高精度贴膜机",
+      "evidence_span": "成功开发了手机玻璃高精度贴膜机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PCB板自动翻板机",
+      "evidence_span": "成功开发了手机玻璃高精度贴膜机、PCB板自动翻板机等新的优势产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "平板检测设备",
+      "evidence_span": "向比亚迪批量销售平板检测等设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手机锁螺丝设备",
+      "evidence_span": "新开发手机方向的锁螺丝设备等优势产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池精密检测设备",
+      "evidence_span": "新开发电池方向的精密检测设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "显示模组全自动组装线",
+      "evidence_span": "显示模组全自动组装线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FATP段性能测试自动上下料线体",
+      "evidence_span": "应用于手机组装的FATP段性能测试自动上下料线体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力电池成品检测线",
+      "evidence_span": "应用于新能源领域的动力电池成品检测线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "平面度检测及上下料线体",
+      "evidence_span": "批量销售了35台平面度检测及上下料线体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "显示模组全自动组装线配套夹治具",
+      "evidence_span": "夹治具主要为公司生产的显示模组全自动组装线配套使用"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "设备改造服务",
+      "evidence_span": "设备改造：通过对原有设备的部分特定零部件或软件部分的替换或升级以提升原设备的功能"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "技术服务",
+      "evidence_span": "技术服务：提供相关自动化设备及线体的单次设备调试、维护保养、故障分析及恢复，以及提供相关自动化设备及线体的期间维保服务等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "整线智能解决方案",
+      "evidence_span": "公司以自动化设备为基础，凭借整线智能解决方案优势"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苹果产业链",
+      "evidence_span": "主要供货苹果产业链"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "向比亚迪批量销售平板检测等设备"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动化设备",
+        "evidence_span": "公司主营业务收入为自动化设备、自动化线体、夹治具等的销售收入"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动化线体",
+        "evidence_span": "公司主营业务收入为自动化设备、自动化线体、夹治具等的销售收入"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "夹治具",
+        "evidence_span": "公司主营业务收入为自动化设备、自动化线体、夹治具等的销售收入"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "改造及技术服务",
+        "evidence_span": "公司主营业务收入为自动化设备、自动化线体、夹治具等的销售收入和改造及技术服务收入"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "自动化设备厂商",
+        "evidence_span": "自动化设备、自动化线体及夹治具厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "自动化线体厂商",
+        "evidence_span": "自动化设备、自动化线体及夹治具厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "夹治具厂商",
+        "evidence_span": "自动化设备、自动化线体及夹治具厂商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密检测设备",
+        "evidence_span": "自动化设备包括精密检测设备和精密组装设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密组装设备",
+        "evidence_span": "自动化设备包括精密检测设备和精密组装设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手机玻璃高精度贴膜机",
+        "evidence_span": "成功开发了手机玻璃高精度贴膜机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PCB板自动翻板机",
+        "evidence_span": "成功开发了手机玻璃高精度贴膜机、PCB板自动翻板机等新的优势产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "平板检测设备",
+        "evidence_span": "向比亚迪批量销售平板检测等设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手机锁螺丝设备",
+        "evidence_span": "新开发手机方向的锁螺丝设备等优势产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池精密检测设备",
+        "evidence_span": "新开发电池方向的精密检测设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "显示模组全自动组装线",
+        "evidence_span": "显示模组全自动组装线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FATP段性能测试自动上下料线体",
+        "evidence_span": "应用于手机组装的FATP段性能测试自动上下料线体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力电池成品检测线",
+        "evidence_span": "应用于新能源领域的动力电池成品检测线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "平面度检测及上下料线体",
+        "evidence_span": "批量销售了35台平面度检测及上下料线体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "显示模组全自动组装线配套夹治具",
+        "evidence_span": "夹治具主要为公司生产的显示模组全自动组装线配套使用"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "设备改造服务",
+        "evidence_span": "设备改造：通过对原有设备的部分特定零部件或软件部分的替换或升级以提升原设备的功能"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "技术服务",
+        "evidence_span": "技术服务：提供相关自动化设备及线体的单次设备调试、维护保养、故障分析及恢复，以及提供相关自动化设备及线体的期间维保服务等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "整线智能解决方案",
+        "evidence_span": "公司以自动化设备为基础，凭借整线智能解决方案优势"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苹果产业链",
+        "evidence_span": "主要供货苹果产业链"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "向比亚迪批量销售平板检测等设备"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:44:40"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "b35e75040298", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落提到北京拟在晨昏轨道建设大型数据中心系统以实现AI算力上太空，这涉及卫星互联网的应用场景和潜在技术方向，包含有价值的知识，但以计划或动态形式呈现，可能混有事件信息。"}}

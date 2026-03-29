@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:58:48", "result": {"chunk_id": "8355f4e9965e", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落描述上交所产业沙龙事件（日期、参与方），是会议动态，但主题涉及可控核聚变产业链讨论，包括高温超导带材、聚变实验堆等产业发展前景和技术突破，这混合了事件和潜在知识内容。"}}

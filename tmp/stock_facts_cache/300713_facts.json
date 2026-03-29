@@ -1,0 +1,184 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能高频开关电源核心部件产品",
+      "evidence_span": "公司业务定位于智能高频开关电源核心部件产品及解决方案供应商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "解决方案",
+      "evidence_span": "公司业务定位于智能高频开关电源核心部件产品及解决方案供应商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电力电子产品的研发",
+      "evidence_span": "主要从事电力电子行业领域中智能高频开关电源及相关电力电子产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "主要从事电力电子行业领域中智能高频开关电源及相关电力电子产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主要从事电力电子行业领域中智能高频开关电源及相关电力电子产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能高频开关电源核心部件产品及解决方案供应商",
+      "evidence_span": "公司业务定位于智能高频开关电源核心部件产品及解决方案供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车充电电源模块",
+      "evidence_span": "电动汽车充电电源产品包括：电动汽车充电电源模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车充电电源系统",
+      "evidence_span": "电动汽车充电电源产品包括：电动汽车充电电源系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直流充电的核心部件及成套系统",
+      "evidence_span": "公司主要提供直流充电的核心部件及成套系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力操作电源充电模块",
+      "evidence_span": "电力操作电源产品主要包括电力操作电源充电模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "监控模块",
+      "evidence_span": "电力操作电源产品主要包括监控模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力操作电源系统",
+      "evidence_span": "电力操作电源产品主要包括电力操作电源系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信电源",
+      "evidence_span": "其它电源产品主要包括通信电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动汽车车载电源模块",
+      "evidence_span": "其它电源产品主要包括电动汽车车载电源模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "逆变器电源",
+      "evidence_span": "其它电源产品主要包括逆变器电源"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直流照明产品",
+      "evidence_span": "其它电源产品主要包括直流照明产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能高频开关电源技术",
+      "evidence_span": "在智能高频开关电源领域里，具有良好的技术储备和可持续研发能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "部件小型化、标准化工艺设计",
+      "evidence_span": "公司通过研发及合理的工艺设计，在部件小型化、标准化方面取得良好进展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车充电设备技术创新",
+      "evidence_span": "积极担当新能源汽车充电设备技术创新的探索和实践"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能高频开关电源核心部件产品及解决方案",
+        "evidence_span": "公司业务定位于智能高频开关电源核心部件产品及解决方案供应商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电力电子产品的研发、生产和销售",
+        "evidence_span": "主要从事电力电子行业领域中智能高频开关电源及相关电力电子产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能高频开关电源核心部件产品及解决方案供应商",
+        "evidence_span": "公司业务定位于智能高频开关电源核心部件产品及解决方案供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车充电电源模块",
+        "evidence_span": "电动汽车充电电源产品包括：电动汽车充电电源模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车充电电源系统",
+        "evidence_span": "电动汽车充电电源产品包括：电动汽车充电电源系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直流充电的核心部件及成套系统",
+        "evidence_span": "公司主要提供直流充电的核心部件及成套系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力操作电源充电模块",
+        "evidence_span": "电力操作电源产品主要包括电力操作电源充电模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "监控模块",
+        "evidence_span": "电力操作电源产品主要包括监控模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力操作电源系统",
+        "evidence_span": "电力操作电源产品主要包括电力操作电源系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信电源",
+        "evidence_span": "其它电源产品主要包括通信电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动汽车车载电源模块",
+        "evidence_span": "其它电源产品主要包括电动汽车车载电源模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "逆变器电源",
+        "evidence_span": "其它电源产品主要包括逆变器电源"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直流照明产品",
+        "evidence_span": "其它电源产品主要包括直流照明产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能高频开关电源技术",
+        "evidence_span": "在智能高频开关电源领域里，具有良好的技术储备和可持续研发能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "部件小型化、标准化工艺设计",
+        "evidence_span": "公司通过研发及合理的工艺设计，在部件小型化、标准化方面取得良好进展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车充电设备技术创新",
+        "evidence_span": "积极担当新能源汽车充电设备技术创新的探索和实践"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:59:35"
+}

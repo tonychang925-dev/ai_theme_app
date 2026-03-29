@@ -1,0 +1,84 @@
+{
+  "must": [
+    "校园",
+    "学习",
+    "考试",
+    "教学",
+    "政策名称",
+    "涉及领域",
+    "影响主体",
+    "教育",
+    "政策法规"
+  ],
+  "should": [
+    "学生",
+    "教师",
+    "课程"
+  ],
+  "not": [
+    "股价",
+    "涨跌幅",
+    "云计算",
+    "区块链",
+    "IPO"
+  ],
+  "evidence_refs": [
+    {
+      "term": "校园",
+      "source": "政策名称",
+      "source_id": "政策名称",
+      "span_text": "校园"
+    },
+    {
+      "term": "学习",
+      "source": "政策名称",
+      "source_id": "政策名称",
+      "span_text": "学习"
+    },
+    {
+      "term": "考试",
+      "source": "政策名称",
+      "source_id": "政策名称",
+      "span_text": "考试"
+    },
+    {
+      "term": "教学",
+      "source": "政策名称",
+      "source_id": "政策名称",
+      "span_text": "教学"
+    },
+    {
+      "term": "政策名称",
+      "source": "dimensions",
+      "source_id": "dimensions",
+      "span_text": "政策名称"
+    },
+    {
+      "term": "涉及领域",
+      "source": "dimensions",
+      "source_id": "dimensions",
+      "span_text": "涉及领域"
+    },
+    {
+      "term": "影响主体",
+      "source": "dimensions",
+      "source_id": "dimensions",
+      "span_text": "影响主体"
+    },
+    {
+      "term": "教育",
+      "source": "concept",
+      "source_id": "concept",
+      "span_text": "教育"
+    },
+    {
+      "term": "政策法规",
+      "source": "type",
+      "source_id": "type",
+      "span_text": "政策法规"
+    }
+  ],
+  "subject_id": "9013990",
+  "quality": "weak",
+  "generated_at": "2026-03-07T10:23:20"
+}

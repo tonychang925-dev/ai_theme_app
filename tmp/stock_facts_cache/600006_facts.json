@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "全系列轻型商用车整车",
+      "evidence_span": "公司是肩负东风公司轻型商用车事业的大型股份制企业，是全系列轻型商用车整车以及动力总成的研发、生产制造和销售及服务为一体的全价值链制造企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "动力总成",
+      "evidence_span": "公司是肩负东风公司轻型商用车事业的大型股份制企业，是全系列轻型商用车整车以及动力总成的研发、生产制造和销售及服务为一体的全价值链制造企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻型卡车",
+      "evidence_span": "公司轻型商用车生产车型涵盖轻型卡车、轻型客车、客车底盘、新能源物流车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轻型客车",
+      "evidence_span": "公司轻型商用车生产车型涵盖轻型卡车、轻型客车、客车底盘、新能源物流车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客车底盘",
+      "evidence_span": "公司轻型商用车生产车型涵盖轻型卡车、轻型客车、客车底盘、新能源物流车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源物流车",
+      "evidence_span": "公司轻型商用车生产车型涵盖轻型卡车、轻型客车、客车底盘、新能源物流车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "东风凯普特",
+      "evidence_span": "产品品牌包括东风凯普特、东风多利卡、东风福瑞卡、东风途逸、东风小霸王、东风御风等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "东风多利卡",
+      "evidence_span": "产品品牌包括东风凯普特、东风多利卡、东风福瑞卡、东风途逸、东风小霸王、东风御风等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "东风福瑞卡",
+      "evidence_span": "产品品牌包括东风凯普特、东风多利卡、东风福瑞卡、东风途逸、东风小霸王、东风御风等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "东风途逸",
+      "evidence_span": "产品品牌包括东风凯普特、东风多利卡、东风福瑞卡、东风途逸、东风小霸王、东风御风等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "东风小霸王",
+      "evidence_span": "产品品牌包括东风凯普特、东风多利卡、东风福瑞卡、东风途逸、东风小霸王、东风御风等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "东风御风",
+      "evidence_span": "产品品牌包括东风凯普特、东风多利卡、东风福瑞卡、东风途逸、东风小霸王、东风御风等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "东风康明斯系列柴油发动机",
+      "evidence_span": "发动机业务包括东风康明斯系列柴油发动机、日产轻型柴油发动机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "日产轻型柴油发动机",
+      "evidence_span": "发动机业务包括东风康明斯系列柴油发动机、日产轻型柴油发动机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧物流车",
+      "evidence_span": "打造智慧物流/环卫车、自动配送/售卖车、通勤车等多个自动驾驶车辆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧环卫车",
+      "evidence_span": "打造智慧物流/环卫车、自动配送/售卖车、通勤车等多个自动驾驶车辆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动配送车",
+      "evidence_span": "打造智慧物流/环卫车、自动配送/售卖车、通勤车等多个自动驾驶车辆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动售卖车",
+      "evidence_span": "打造智慧物流/环卫车、自动配送/售卖车、通勤车等多个自动驾驶车辆"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通勤车",
+      "evidence_span": "打造智慧物流/环卫车、自动配送/售卖车、通勤车等多个自动驾驶车辆"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "整车调校技术",
+      "evidence_span": "整车调校技术能力达到行业国内领先水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能网联自主开发能力",
+      "evidence_span": "着力提升智能网联自主开发能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日产",
+      "evidence_span": "通过与日产、康明斯等外方合作伙伴的深入合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "康明斯",
+      "evidence_span": "通过与日产、康明斯等外方合作伙伴的深入合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源物流车机遇",
+      "evidence_span": "东风汽车电动物流车机遇来临"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "全系列轻型商用车整车",
+        "evidence_span": "公司是肩负东风公司轻型商用车事业的大型股份制企业，是全系列轻型商用车整车以及动力总成的研发、生产制造和销售及服务为一体的全价值链制造企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "动力总成",
+        "evidence_span": "公司是肩负东风公司轻型商用车事业的大型股份制企业，是全系列轻型商用车整车以及动力总成的研发、生产制造和销售及服务为一体的全价值链制造企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻型卡车",
+        "evidence_span": "公司轻型商用车生产车型涵盖轻型卡车、轻型客车、客车底盘、新能源物流车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轻型客车",
+        "evidence_span": "公司轻型商用车生产车型涵盖轻型卡车、轻型客车、客车底盘、新能源物流车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客车底盘",
+        "evidence_span": "公司轻型商用车生产车型涵盖轻型卡车、轻型客车、客车底盘、新能源物流车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源物流车",
+        "evidence_span": "公司轻型商用车生产车型涵盖轻型卡车、轻型客车、客车底盘、新能源物流车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "东风凯普特",
+        "evidence_span": "产品品牌包括东风凯普特、东风多利卡、东风福瑞卡、东风途逸、东风小霸王、东风御风等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "东风多利卡",
+        "evidence_span": "产品品牌包括东风凯普特、东风多利卡、东风福瑞卡、东风途逸、东风小霸王、东风御风等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "东风福瑞卡",
+        "evidence_span": "产品品牌包括东风凯普特、东风多利卡、东风福瑞卡、东风途逸、东风小霸王、东风御风等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "东风途逸",
+        "evidence_span": "产品品牌包括东风凯普特、东风多利卡、东风福瑞卡、东风途逸、东风小霸王、东风御风等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "东风小霸王",
+        "evidence_span": "产品品牌包括东风凯普特、东风多利卡、东风福瑞卡、东风途逸、东风小霸王、东风御风等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "东风御风",
+        "evidence_span": "产品品牌包括东风凯普特、东风多利卡、东风福瑞卡、东风途逸、东风小霸王、东风御风等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "东风康明斯系列柴油发动机",
+        "evidence_span": "发动机业务包括东风康明斯系列柴油发动机、日产轻型柴油发动机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "日产轻型柴油发动机",
+        "evidence_span": "发动机业务包括东风康明斯系列柴油发动机、日产轻型柴油发动机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧物流车",
+        "evidence_span": "打造智慧物流/环卫车、自动配送/售卖车、通勤车等多个自动驾驶车辆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧环卫车",
+        "evidence_span": "打造智慧物流/环卫车、自动配送/售卖车、通勤车等多个自动驾驶车辆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动配送车",
+        "evidence_span": "打造智慧物流/环卫车、自动配送/售卖车、通勤车等多个自动驾驶车辆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动售卖车",
+        "evidence_span": "打造智慧物流/环卫车、自动配送/售卖车、通勤车等多个自动驾驶车辆"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通勤车",
+        "evidence_span": "打造智慧物流/环卫车、自动配送/售卖车、通勤车等多个自动驾驶车辆"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "整车调校技术",
+        "evidence_span": "整车调校技术能力达到行业国内领先水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能网联自主开发能力",
+        "evidence_span": "着力提升智能网联自主开发能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日产",
+        "evidence_span": "通过与日产、康明斯等外方合作伙伴的深入合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "康明斯",
+        "evidence_span": "通过与日产、康明斯等外方合作伙伴的深入合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源物流车机遇",
+        "evidence_span": "东风汽车电动物流车机遇来临"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:53:29"
+}

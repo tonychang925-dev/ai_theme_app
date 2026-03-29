@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "05858f3acdf0", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "段落混有事件（公司公告、三星引进光刻机）和知识（High-NA EUV为2纳米以下先进制程所需设备），边界不清，可能含知识但以事件形式呈现。"}}

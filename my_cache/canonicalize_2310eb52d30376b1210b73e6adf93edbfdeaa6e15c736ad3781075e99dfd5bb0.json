@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:32:56", "result": {"span_uid": "673e29466997", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "产品线规划", "stability": "low", "reason": "该片段是关于苹果智能眼镜产品线规划的具体事件和预测信息，包括平价版Vision Pro和第二代Vision Pro的研发，属于阶段性进展，但信息不稳定且依赖具体新闻来源，无法形成独立稳定的知识块。"}}

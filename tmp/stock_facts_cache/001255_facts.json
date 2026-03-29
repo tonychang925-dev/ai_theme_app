@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电气绝缘材料研发",
+      "evidence_span": "主要从事电气绝缘材料等高分子复合材料的研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高分子复合材料研发",
+      "evidence_span": "主要从事电气绝缘材料等高分子复合材料的研发、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电气绝缘材料研发企业",
+      "evidence_span": "电气绝缘材料研发企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "绝缘材料小巨人",
+      "evidence_span": "绝缘材料小巨人"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国电器工业协会绝缘分会副理事长单位",
+      "evidence_span": "中国电器工业协会绝缘分会副理事长单位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绝缘树脂",
+      "evidence_span": "主要产品为绝缘树脂、槽楔与层压制品、纤维制品、云母制品和绑扎制品等绝缘材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "槽楔与层压制品",
+      "evidence_span": "主要产品为绝缘树脂、槽楔与层压制品、纤维制品、云母制品和绑扎制品等绝缘材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "纤维制品",
+      "evidence_span": "主要产品为绝缘树脂、槽楔与层压制品、纤维制品、云母制品和绑扎制品等绝缘材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "云母制品",
+      "evidence_span": "主要产品为绝缘树脂、槽楔与层压制品、纤维制品、云母制品和绑扎制品等绝缘材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绑扎制品",
+      "evidence_span": "主要产品为绝缘树脂、槽楔与层压制品、纤维制品、云母制品和绑扎制品等绝缘材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绝缘系统解决方案",
+      "evidence_span": "为风力发电、轨道交通、工业电机、家用电器、新能源汽车、水力发电等领域提供绝缘系统解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "B级、F级、H级、C级及以上等各耐热等级绝缘材料生产能力",
+      "evidence_span": "具备研发和生产B级、F级、H级、C级及以上等各耐热等级绝缘材料的能力"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国中车",
+      "evidence_span": "与中国中车、南京汽轮、金风科技、中船重工等国内知名企业建立合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南京汽轮",
+      "evidence_span": "与中国中车、南京汽轮、金风科技、中船重工等国内知名企业建立合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "金风科技",
+      "evidence_span": "与中国中车、南京汽轮、金风科技、中船重工等国内知名企业建立合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中船重工",
+      "evidence_span": "与中国中车、南京汽轮、金风科技、中船重工等国内知名企业建立合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "在有机硅浸渍漆、聚酰亚胺薄膜补强云母带和磁性槽楔等高端产品国产替代领域与国外大型企业也存在着直接竞争关系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电气绝缘材料研发",
+        "evidence_span": "主要从事电气绝缘材料等高分子复合材料的研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高分子复合材料研发",
+        "evidence_span": "主要从事电气绝缘材料等高分子复合材料的研发、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电气绝缘材料研发企业",
+        "evidence_span": "电气绝缘材料研发企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "绝缘材料小巨人",
+        "evidence_span": "绝缘材料小巨人"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国电器工业协会绝缘分会副理事长单位",
+        "evidence_span": "中国电器工业协会绝缘分会副理事长单位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绝缘树脂",
+        "evidence_span": "主要产品为绝缘树脂、槽楔与层压制品、纤维制品、云母制品和绑扎制品等绝缘材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "槽楔与层压制品",
+        "evidence_span": "主要产品为绝缘树脂、槽楔与层压制品、纤维制品、云母制品和绑扎制品等绝缘材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "纤维制品",
+        "evidence_span": "主要产品为绝缘树脂、槽楔与层压制品、纤维制品、云母制品和绑扎制品等绝缘材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "云母制品",
+        "evidence_span": "主要产品为绝缘树脂、槽楔与层压制品、纤维制品、云母制品和绑扎制品等绝缘材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绑扎制品",
+        "evidence_span": "主要产品为绝缘树脂、槽楔与层压制品、纤维制品、云母制品和绑扎制品等绝缘材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绝缘系统解决方案",
+        "evidence_span": "为风力发电、轨道交通、工业电机、家用电器、新能源汽车、水力发电等领域提供绝缘系统解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "B级、F级、H级、C级及以上等各耐热等级绝缘材料生产能力",
+        "evidence_span": "具备研发和生产B级、F级、H级、C级及以上等各耐热等级绝缘材料的能力"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国中车",
+        "evidence_span": "与中国中车、南京汽轮、金风科技、中船重工等国内知名企业建立合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南京汽轮",
+        "evidence_span": "与中国中车、南京汽轮、金风科技、中船重工等国内知名企业建立合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "金风科技",
+        "evidence_span": "与中国中车、南京汽轮、金风科技、中船重工等国内知名企业建立合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中船重工",
+        "evidence_span": "与中国中车、南京汽轮、金风科技、中船重工等国内知名企业建立合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "在有机硅浸渍漆、聚酰亚胺薄膜补强云母带和磁性槽楔等高端产品国产替代领域与国外大型企业也存在着直接竞争关系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:15:15"
+}

@@ -1,0 +1,699 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车流体管路",
+      "evidence_span": "公司主营业务为汽车流体管路和汽车密封部件的设计、研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车密封部件",
+      "evidence_span": "公司主营业务为汽车流体管路和汽车密封部件的设计、研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车胶管行业的大型企业",
+      "evidence_span": "已成为我国汽车胶管行业的大型企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内优质的汽车胶管供应商",
+      "evidence_span": "国内优质的汽车胶管供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车流体管路行业引领地位",
+      "evidence_span": "多年来一直处于汽车流体管路行业引领地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热管理系统管路及总成",
+      "evidence_span": "热管理系统管路及总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "燃油系统管路及总成",
+      "evidence_span": "燃油系统管路及总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "进气系统管路及总成",
+      "evidence_span": "进气系统管路及总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车身其他附件管路及总成",
+      "evidence_span": "车身其他附件管路及总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车整车密封条",
+      "evidence_span": "汽车密封件产品主要为汽车整车密封条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门框密封条",
+      "evidence_span": "门框密封条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "窗框密封条",
+      "evidence_span": "窗框密封条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车门内外水切",
+      "evidence_span": "车门内外水切"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "前后挡风玻璃密封条",
+      "evidence_span": "前后挡风玻璃密封条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发动机舱密封条",
+      "evidence_span": "发动机舱密封条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "行李箱密封条",
+      "evidence_span": "行李箱密封条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天窗密封条",
+      "evidence_span": "天窗密封条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车顶饰条",
+      "evidence_span": "车顶饰条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电机冷却管路",
+      "evidence_span": "电机冷却管路"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池包外冷却管路",
+      "evidence_span": "电池包外冷却管路"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电池包内冷却管路",
+      "evidence_span": "电池包内冷却管路"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "日韩系结构顶盖装饰条",
+      "evidence_span": "日韩系结构顶盖装饰条"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "欧式呢槽结构产品",
+      "evidence_span": "欧式呢槽结构产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "250余项配方技术",
+      "evidence_span": "成功研发并应用250余项配方技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TPV材料柔性管路",
+      "evidence_span": "TPV材料柔性管路"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "半柔性管路",
+      "evidence_span": "半柔性管路"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "多层塑料管路",
+      "evidence_span": "多层塑料管路"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "单层塑料管路",
+      "evidence_span": "单层塑料管路"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "波纹管路",
+      "evidence_span": "波纹管路"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "VDA型冷却管路快插接头自制",
+      "evidence_span": "已成功实现VDA型冷却管路快插接头自制"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "欧式呢槽密封条产品设计开发",
+      "evidence_span": "完成了欧式呢槽密封条产品设计开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无边框项目开发",
+      "evidence_span": "成功实现了首款无边框项目开发落地"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "零面差结构密封条的原创设计",
+      "evidence_span": "零面差结构密封条的原创设计"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽大众",
+      "evidence_span": "一汽大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽大众",
+      "evidence_span": "上汽大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城汽车",
+      "evidence_span": "长城汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪汽车",
+      "evidence_span": "比亚迪汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽集团",
+      "evidence_span": "一汽集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安汽车",
+      "evidence_span": "长安汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海大众动力总成",
+      "evidence_span": "上海大众动力总成"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众一汽发动机",
+      "evidence_span": "大众一汽发动机"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽通用五菱",
+      "evidence_span": "上汽通用五菱"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风日产",
+      "evidence_span": "东风日产"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽本田",
+      "evidence_span": "广汽本田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京现代",
+      "evidence_span": "北京现代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利汽车",
+      "evidence_span": "吉利汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽三菱",
+      "evidence_span": "广汽三菱"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽丰田",
+      "evidence_span": "一汽丰田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "捷豹路虎",
+      "evidence_span": "捷豹路虎"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽轿车",
+      "evidence_span": "一汽轿车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风本田",
+      "evidence_span": "东风本田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽丰田",
+      "evidence_span": "广汽丰田"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "沃尔沃",
+      "evidence_span": "沃尔沃"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽乘用车",
+      "evidence_span": "广汽乘用车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "江铃汽车",
+      "evidence_span": "江铃汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长安福特",
+      "evidence_span": "长安福特"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "神龙汽车",
+      "evidence_span": "神龙汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小鹏汽车",
+      "evidence_span": "小鹏汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "宁德时代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "零跑",
+      "evidence_span": "零跑"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "哪吒",
+      "evidence_span": "哪吒"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众安徽汽车",
+      "evidence_span": "大众安徽汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "集度汽车",
+      "evidence_span": "集度汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "极氪汽车",
+      "evidence_span": "极氪汽车"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风岚图",
+      "evidence_span": "东风岚图"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿波罗智能科技有限公司",
+      "evidence_span": "阿波罗智能科技有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合众新能源汽车",
+      "evidence_span": "合众新能源汽车"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "加快进口替代的进程"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "深度国产替代",
+      "evidence_span": "中国汽车零部件行业正迈入“深度国产替代”时代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车流体管路",
+        "evidence_span": "公司主营业务为汽车流体管路和汽车密封部件的设计、研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车密封部件",
+        "evidence_span": "公司主营业务为汽车流体管路和汽车密封部件的设计、研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车胶管行业的大型企业",
+        "evidence_span": "已成为我国汽车胶管行业的大型企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内优质的汽车胶管供应商",
+        "evidence_span": "国内优质的汽车胶管供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车流体管路行业引领地位",
+        "evidence_span": "多年来一直处于汽车流体管路行业引领地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热管理系统管路及总成",
+        "evidence_span": "热管理系统管路及总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "燃油系统管路及总成",
+        "evidence_span": "燃油系统管路及总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "进气系统管路及总成",
+        "evidence_span": "进气系统管路及总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车身其他附件管路及总成",
+        "evidence_span": "车身其他附件管路及总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车整车密封条",
+        "evidence_span": "汽车密封件产品主要为汽车整车密封条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门框密封条",
+        "evidence_span": "门框密封条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "窗框密封条",
+        "evidence_span": "窗框密封条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车门内外水切",
+        "evidence_span": "车门内外水切"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "前后挡风玻璃密封条",
+        "evidence_span": "前后挡风玻璃密封条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发动机舱密封条",
+        "evidence_span": "发动机舱密封条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "行李箱密封条",
+        "evidence_span": "行李箱密封条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天窗密封条",
+        "evidence_span": "天窗密封条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车顶饰条",
+        "evidence_span": "车顶饰条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电机冷却管路",
+        "evidence_span": "电机冷却管路"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池包外冷却管路",
+        "evidence_span": "电池包外冷却管路"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电池包内冷却管路",
+        "evidence_span": "电池包内冷却管路"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "日韩系结构顶盖装饰条",
+        "evidence_span": "日韩系结构顶盖装饰条"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "欧式呢槽结构产品",
+        "evidence_span": "欧式呢槽结构产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "250余项配方技术",
+        "evidence_span": "成功研发并应用250余项配方技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TPV材料柔性管路",
+        "evidence_span": "TPV材料柔性管路"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "半柔性管路",
+        "evidence_span": "半柔性管路"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "多层塑料管路",
+        "evidence_span": "多层塑料管路"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "单层塑料管路",
+        "evidence_span": "单层塑料管路"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "波纹管路",
+        "evidence_span": "波纹管路"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "VDA型冷却管路快插接头自制",
+        "evidence_span": "已成功实现VDA型冷却管路快插接头自制"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "欧式呢槽密封条产品设计开发",
+        "evidence_span": "完成了欧式呢槽密封条产品设计开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无边框项目开发",
+        "evidence_span": "成功实现了首款无边框项目开发落地"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "零面差结构密封条的原创设计",
+        "evidence_span": "零面差结构密封条的原创设计"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽大众",
+        "evidence_span": "一汽大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽大众",
+        "evidence_span": "上汽大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城汽车",
+        "evidence_span": "长城汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪汽车",
+        "evidence_span": "比亚迪汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽集团",
+        "evidence_span": "一汽集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安汽车",
+        "evidence_span": "长安汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海大众动力总成",
+        "evidence_span": "上海大众动力总成"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众一汽发动机",
+        "evidence_span": "大众一汽发动机"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽通用五菱",
+        "evidence_span": "上汽通用五菱"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风日产",
+        "evidence_span": "东风日产"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽本田",
+        "evidence_span": "广汽本田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京现代",
+        "evidence_span": "北京现代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利汽车",
+        "evidence_span": "吉利汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽三菱",
+        "evidence_span": "广汽三菱"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽丰田",
+        "evidence_span": "一汽丰田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "捷豹路虎",
+        "evidence_span": "捷豹路虎"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽轿车",
+        "evidence_span": "一汽轿车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风本田",
+        "evidence_span": "东风本田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽丰田",
+        "evidence_span": "广汽丰田"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "沃尔沃",
+        "evidence_span": "沃尔沃"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽乘用车",
+        "evidence_span": "广汽乘用车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "江铃汽车",
+        "evidence_span": "江铃汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长安福特",
+        "evidence_span": "长安福特"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "神龙汽车",
+        "evidence_span": "神龙汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小鹏汽车",
+        "evidence_span": "小鹏汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "宁德时代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "零跑",
+        "evidence_span": "零跑"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "哪吒",
+        "evidence_span": "哪吒"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众安徽汽车",
+        "evidence_span": "大众安徽汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "集度汽车",
+        "evidence_span": "集度汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "极氪汽车",
+        "evidence_span": "极氪汽车"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风岚图",
+        "evidence_span": "东风岚图"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿波罗智能科技有限公司",
+        "evidence_span": "阿波罗智能科技有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合众新能源汽车",
+        "evidence_span": "合众新能源汽车"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "加快进口替代的进程"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "深度国产替代",
+        "evidence_span": "中国汽车零部件行业正迈入“深度国产替代”时代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:07:47"
+}

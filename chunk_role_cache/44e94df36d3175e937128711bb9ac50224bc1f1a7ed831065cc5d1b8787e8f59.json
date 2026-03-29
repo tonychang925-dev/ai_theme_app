@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "c9296d2cca79", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了国内EUV光刻机研发的进展、关键公司、体制转变和试生产时间，提供了半导体设备国产替代的结构性信息，有助于理解题材边界和关键环节，但基于事件报告形式，稳定性较弱。"}}

@@ -1,0 +1,389 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车电子",
+      "evidence_span": "公司生产的产品主要应用在汽车电子领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "非汽车连接器",
+      "evidence_span": "公司的非汽车连接器及零部件广泛应用于消费电子、通讯、工业以及医疗等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "零部件",
+      "evidence_span": "公司的非汽车连接器及零部件广泛应用于消费电子、通讯、工业以及医疗等领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密模具",
+      "evidence_span": "精密模具及备件的收入"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "备件",
+      "evidence_span": "精密模具及备件的收入"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车零部件一级供应商",
+      "evidence_span": "公司主要客户为全球知名汽车零部件一级供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "喷油器部件",
+      "evidence_span": "喷油器部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压传感器部件",
+      "evidence_span": "高压传感器部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力系统零部件",
+      "evidence_span": "动力系统零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "尾气处理单元部件",
+      "evidence_span": "尾气处理单元部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "EMC滤波器组件",
+      "evidence_span": "EMC滤波器组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发动机凸轮轴控制部件",
+      "evidence_span": "第二代发动机凸轮轴控制部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MQB信号处理器",
+      "evidence_span": "MQB信号处理器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IGBT功率模块部件",
+      "evidence_span": "IGBT功率模块部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "底盘系统零部件",
+      "evidence_span": "底盘系统零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传动控制系统部件",
+      "evidence_span": "传动控制系统部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车连接器及零部件",
+      "evidence_span": "汽车连接器及零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连接器端口密封件",
+      "evidence_span": "连接器端口密封件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连接器盖锁",
+      "evidence_span": "连接器盖锁"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非汽车连接器及零部件",
+      "evidence_span": "非汽车连接器及零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "泰科电子电源插座连接器",
+      "evidence_span": "泰科电子电源插座连接器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "富士通消费电子连接器及零部件",
+      "evidence_span": "富士通消费电子连接器及零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双色通讯连接器部件",
+      "evidence_span": "双色通讯连接器部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密模具",
+      "evidence_span": "精密模具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子水泵定子组件",
+      "evidence_span": "电子水泵定子组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涡轮增压电子执行器壳体",
+      "evidence_span": "涡轮增压电子执行器壳体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "KEYLESS无钥匙启动系统控制器壳体",
+      "evidence_span": "KEYLESS无钥匙启动系统控制器壳体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MEA滤波器组件",
+      "evidence_span": "MEA滤波器组件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "第三代凸轮控制阀线圈部件",
+      "evidence_span": "第三代凸轮控制阀线圈部件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "定制化",
+      "evidence_span": "公司产品具有定制化程度高的特点"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世",
+      "evidence_span": "公司的外销收入主要客户为博世"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "泰科电子",
+      "evidence_span": "公司的外销收入主要客户为泰科电子"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博格华纳",
+      "evidence_span": "公司的外销收入主要客户为博格华纳"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安费诺",
+      "evidence_span": "发行人与安费诺合作的双色通讯连接器部件项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽英飞凌",
+      "evidence_span": "上汽英飞凌IGBT功率模块部件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华域皮尔博格",
+      "evidence_span": "华域皮尔博格电子水泵定子组件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中原内配",
+      "evidence_span": "中原内配涡轮增压电子执行器壳体"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联合电子",
+      "evidence_span": "联合电子MEA滤波器组件"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "舍弗勒",
+      "evidence_span": "舍弗勒的第三代凸轮控制阀线圈部件"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车电子",
+        "evidence_span": "公司生产的产品主要应用在汽车电子领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "非汽车连接器及零部件",
+        "evidence_span": "公司的非汽车连接器及零部件广泛应用于消费电子、通讯、工业以及医疗等领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密模具及备件",
+        "evidence_span": "精密模具及备件的收入"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车零部件一级供应商",
+        "evidence_span": "公司主要客户为全球知名汽车零部件一级供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "喷油器部件",
+        "evidence_span": "喷油器部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压传感器部件",
+        "evidence_span": "高压传感器部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力系统零部件",
+        "evidence_span": "动力系统零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "尾气处理单元部件",
+        "evidence_span": "尾气处理单元部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "EMC滤波器组件",
+        "evidence_span": "EMC滤波器组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发动机凸轮轴控制部件",
+        "evidence_span": "第二代发动机凸轮轴控制部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MQB信号处理器",
+        "evidence_span": "MQB信号处理器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IGBT功率模块部件",
+        "evidence_span": "IGBT功率模块部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "底盘系统零部件",
+        "evidence_span": "底盘系统零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传动控制系统部件",
+        "evidence_span": "传动控制系统部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车连接器及零部件",
+        "evidence_span": "汽车连接器及零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连接器端口密封件",
+        "evidence_span": "连接器端口密封件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连接器盖锁",
+        "evidence_span": "连接器盖锁"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非汽车连接器及零部件",
+        "evidence_span": "非汽车连接器及零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "泰科电子电源插座连接器",
+        "evidence_span": "泰科电子电源插座连接器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "富士通消费电子连接器及零部件",
+        "evidence_span": "富士通消费电子连接器及零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双色通讯连接器部件",
+        "evidence_span": "双色通讯连接器部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密模具",
+        "evidence_span": "精密模具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子水泵定子组件",
+        "evidence_span": "电子水泵定子组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涡轮增压电子执行器壳体",
+        "evidence_span": "涡轮增压电子执行器壳体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "KEYLESS无钥匙启动系统控制器壳体",
+        "evidence_span": "KEYLESS无钥匙启动系统控制器壳体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MEA滤波器组件",
+        "evidence_span": "MEA滤波器组件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "第三代凸轮控制阀线圈部件",
+        "evidence_span": "第三代凸轮控制阀线圈部件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "定制化",
+        "evidence_span": "公司产品具有定制化程度高的特点"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世",
+        "evidence_span": "公司的外销收入主要客户为博世"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "泰科电子",
+        "evidence_span": "公司的外销收入主要客户为泰科电子"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博格华纳",
+        "evidence_span": "公司的外销收入主要客户为博格华纳"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安费诺",
+        "evidence_span": "发行人与安费诺合作的双色通讯连接器部件项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽英飞凌",
+        "evidence_span": "上汽英飞凌IGBT功率模块部件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华域皮尔博格",
+        "evidence_span": "华域皮尔博格电子水泵定子组件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中原内配",
+        "evidence_span": "中原内配涡轮增压电子执行器壳体"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联合电子",
+        "evidence_span": "联合电子MEA滤波器组件"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "舍弗勒",
+        "evidence_span": "舍弗勒的第三代凸轮控制阀线圈部件"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:42:02"
+}

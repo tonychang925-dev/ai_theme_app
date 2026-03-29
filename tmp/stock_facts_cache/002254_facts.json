@@ -1,0 +1,149 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "氨纶",
+      "evidence_span": "专注氨纶、芳纶等高性能纤维及上下游制品的研发生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "芳纶",
+      "evidence_span": "专注氨纶、芳纶等高性能纤维及上下游制品的研发生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高性能纤维",
+      "evidence_span": "专注氨纶、芳纶等高性能纤维及上下游制品的研发生产"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "芳纶行业领军者",
+      "evidence_span": "公司是国内芳纶行业领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高性能纤维生产商",
+      "evidence_span": "高性能纤维生产商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氨纶丝",
+      "evidence_span": "主要产品为“纽士达”牌氨纶丝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "间位芳纶",
+      "evidence_span": "主要产品为“泰美达”牌间位芳纶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "对位芳纶",
+      "evidence_span": "主要产品为“泰普龙”牌对位芳纶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芳纶纸",
+      "evidence_span": "主要产品为“民士达”牌芳纶纸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能发光纤维",
+      "evidence_span": "智能发光纤维的产业化生产"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "芳纶涂覆锂电隔膜",
+      "evidence_span": "芳纶涂覆锂电隔膜已进入中试阶段"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "纤维绿色处理化技术",
+      "evidence_span": "纤维绿色处理化技术及芳纶涂覆锂电隔膜已进入中试阶段"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "材料国产化",
+      "evidence_span": "泰和新材材料国产化硬实力起家"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "芳纶加速进口替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "氨纶",
+        "evidence_span": "专注氨纶、芳纶等高性能纤维及上下游制品的研发生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "芳纶",
+        "evidence_span": "专注氨纶、芳纶等高性能纤维及上下游制品的研发生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高性能纤维",
+        "evidence_span": "专注氨纶、芳纶等高性能纤维及上下游制品的研发生产"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "芳纶行业领军者",
+        "evidence_span": "公司是国内芳纶行业领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高性能纤维生产商",
+        "evidence_span": "高性能纤维生产商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氨纶丝",
+        "evidence_span": "主要产品为“纽士达”牌氨纶丝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "间位芳纶",
+        "evidence_span": "主要产品为“泰美达”牌间位芳纶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "对位芳纶",
+        "evidence_span": "主要产品为“泰普龙”牌对位芳纶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芳纶纸",
+        "evidence_span": "主要产品为“民士达”牌芳纶纸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能发光纤维",
+        "evidence_span": "智能发光纤维的产业化生产"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "芳纶涂覆锂电隔膜",
+        "evidence_span": "芳纶涂覆锂电隔膜已进入中试阶段"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "纤维绿色处理化技术",
+        "evidence_span": "纤维绿色处理化技术及芳纶涂覆锂电隔膜已进入中试阶段"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "材料国产化",
+        "evidence_span": "泰和新材材料国产化硬实力起家"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "芳纶加速进口替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:40:47"
+}

@@ -1,0 +1,239 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子陶瓷类电子元件",
+      "evidence_span": "主要从事电子陶瓷类电子元件、基础材料的研发、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基础材料",
+      "evidence_span": "主要从事电子陶瓷类电子元件、基础材料的研发、生产、销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电子陶瓷龙头企业",
+      "evidence_span": "公司是深耕电子陶瓷领域 50 余年的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家高新技术企业",
+      "evidence_span": "公司被评为国家高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国制造业单项冠军示范企业",
+      "evidence_span": "中国制造业单项冠军示范企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光纤连接器陶瓷插芯",
+      "evidence_span": "光纤连接器陶瓷插芯、氧化铝陶瓷基板、电阻器用陶瓷基体等产销量均居全球前列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氧化铝陶瓷基板",
+      "evidence_span": "光纤连接器陶瓷插芯、氧化铝陶瓷基板、电阻器用陶瓷基体等产销量均居全球前列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电阻器用陶瓷基体",
+      "evidence_span": "光纤连接器陶瓷插芯、氧化铝陶瓷基板、电阻器用陶瓷基体等产销量均居全球前列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通信部件",
+      "evidence_span": "以通信部件、电子元件及材料、半导体部件、陶瓷燃料电池部件等产品为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子元件及材料",
+      "evidence_span": "以通信部件、电子元件及材料、半导体部件、陶瓷燃料电池部件等产品为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "半导体部件",
+      "evidence_span": "以通信部件、电子元件及材料、半导体部件、陶瓷燃料电池部件等产品为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "陶瓷燃料电池部件",
+      "evidence_span": "以通信部件、电子元件及材料、半导体部件、陶瓷燃料电池部件等产品为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MLCC",
+      "evidence_span": "MLCC 业务占比大"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高容量 MLCC",
+      "evidence_span": "公司高容量 MLCC 产品已通过国内重要通信行业标杆客户的认证并实现小批量供货"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中大尺寸 MLCC",
+      "evidence_span": "三环集团的主要产品为中大尺寸 MLCC"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "原材料粉体制备技术",
+      "evidence_span": "攻克了原材料粉体制备技术这一技术壁垒"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "坯体成型",
+      "evidence_span": "实现了坯体成型、坯体烧结、精密加工等环节覆盖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "坯体烧结",
+      "evidence_span": "实现了坯体成型、坯体烧结、精密加工等环节覆盖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密加工",
+      "evidence_span": "实现了坯体成型、坯体烧结、精密加工等环节覆盖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "垂直一体化生产体系",
+      "evidence_span": "这一垂直一体化生产体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内重要通信行业标杆客户",
+      "evidence_span": "公司高容量 MLCC 产品已通过国内重要通信行业标杆客户的认证并实现小批量供货"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "并能逐步满足客户对高容量 MLCC 的国产替代需求"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化",
+      "evidence_span": "加码MLCC拥抱国产化大浪潮"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子陶瓷类电子元件",
+        "evidence_span": "主要从事电子陶瓷类电子元件、基础材料的研发、生产、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基础材料",
+        "evidence_span": "主要从事电子陶瓷类电子元件、基础材料的研发、生产、销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电子陶瓷龙头企业",
+        "evidence_span": "公司是深耕电子陶瓷领域 50 余年的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家高新技术企业",
+        "evidence_span": "公司被评为国家高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国制造业单项冠军示范企业",
+        "evidence_span": "中国制造业单项冠军示范企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光纤连接器陶瓷插芯",
+        "evidence_span": "光纤连接器陶瓷插芯、氧化铝陶瓷基板、电阻器用陶瓷基体等产销量均居全球前列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氧化铝陶瓷基板",
+        "evidence_span": "光纤连接器陶瓷插芯、氧化铝陶瓷基板、电阻器用陶瓷基体等产销量均居全球前列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电阻器用陶瓷基体",
+        "evidence_span": "光纤连接器陶瓷插芯、氧化铝陶瓷基板、电阻器用陶瓷基体等产销量均居全球前列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通信部件",
+        "evidence_span": "以通信部件、电子元件及材料、半导体部件、陶瓷燃料电池部件等产品为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子元件及材料",
+        "evidence_span": "以通信部件、电子元件及材料、半导体部件、陶瓷燃料电池部件等产品为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "半导体部件",
+        "evidence_span": "以通信部件、电子元件及材料、半导体部件、陶瓷燃料电池部件等产品为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "陶瓷燃料电池部件",
+        "evidence_span": "以通信部件、电子元件及材料、半导体部件、陶瓷燃料电池部件等产品为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MLCC",
+        "evidence_span": "MLCC 业务占比大"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高容量 MLCC",
+        "evidence_span": "公司高容量 MLCC 产品已通过国内重要通信行业标杆客户的认证并实现小批量供货"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中大尺寸 MLCC",
+        "evidence_span": "三环集团的主要产品为中大尺寸 MLCC"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "原材料粉体制备技术",
+        "evidence_span": "攻克了原材料粉体制备技术这一技术壁垒"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "坯体成型",
+        "evidence_span": "实现了坯体成型、坯体烧结、精密加工等环节覆盖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "坯体烧结",
+        "evidence_span": "实现了坯体成型、坯体烧结、精密加工等环节覆盖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密加工",
+        "evidence_span": "实现了坯体成型、坯体烧结、精密加工等环节覆盖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "垂直一体化生产体系",
+        "evidence_span": "这一垂直一体化生产体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内重要通信行业标杆客户",
+        "evidence_span": "公司高容量 MLCC 产品已通过国内重要通信行业标杆客户的认证并实现小批量供货"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "并能逐步满足客户对高容量 MLCC 的国产替代需求"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化",
+        "evidence_span": "加码MLCC拥抱国产化大浪潮"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:17:48"
+}

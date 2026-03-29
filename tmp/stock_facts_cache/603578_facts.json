@@ -1,0 +1,269 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "低温储藏设备玻璃门体",
+      "evidence_span": "公司主要从事各类低温储藏设备玻璃门体及深加工玻璃产品的设计、研发、生产与销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "深加工玻璃产品",
+      "evidence_span": "公司主要从事各类低温储藏设备玻璃门体及深加工玻璃产品的设计、研发、生产与销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "低温储藏设备玻璃门体企业",
+      "evidence_span": "国内最早专业生产低温储藏设备玻璃门体的企业之一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "饮料柜玻璃门体",
+      "evidence_span": "为下游知名企业配套供应各类饮料柜、酒柜、冰箱、冷柜用的中空或单层玻璃门体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "酒柜玻璃门体",
+      "evidence_span": "为下游知名企业配套供应各类饮料柜、酒柜、冰箱、冷柜用的中空或单层玻璃门体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冰箱玻璃门体",
+      "evidence_span": "为下游知名企业配套供应各类饮料柜、酒柜、冰箱、冷柜用的中空或单层玻璃门体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冷柜玻璃门体",
+      "evidence_span": "为下游知名企业配套供应各类饮料柜、酒柜、冰箱、冷柜用的中空或单层玻璃门体"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "食品冷柜玻璃门体",
+      "evidence_span": "公司产品应用设备主要应用于饮料柜、酒柜、食品冷柜、新零售冷柜、生物医药冷柜等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新零售冷柜玻璃门体",
+      "evidence_span": "公司产品应用设备主要应用于饮料柜、酒柜、食品冷柜、新零售冷柜、生物医药冷柜等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物医药冷柜玻璃门体",
+      "evidence_span": "公司产品应用设备主要应用于饮料柜、酒柜、食品冷柜、新零售冷柜、生物医药冷柜等领域"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "玻璃深加工",
+      "evidence_span": "公司同时具备玻璃深加工如钢化、镀膜、丝印、合片等所需的技术积累和设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "玻璃钢化",
+      "evidence_span": "公司同时具备玻璃深加工如钢化、镀膜、丝印、合片等所需的技术积累和设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "玻璃镀膜",
+      "evidence_span": "公司同时具备玻璃深加工如钢化、镀膜、丝印、合片等所需的技术积累和设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "玻璃丝印",
+      "evidence_span": "公司同时具备玻璃深加工如钢化、镀膜、丝印、合片等所需的技术积累和设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "玻璃合片",
+      "evidence_span": "公司同时具备玻璃深加工如钢化、镀膜、丝印、合片等所需的技术积累和设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一体化制造",
+      "evidence_span": "公司已建立了完整的玻璃深加工、型材加工制作、总装装配的整体门体制造流程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "定制化生产能力",
+      "evidence_span": "公司重视客户的个性需求，为客户提供定制化的产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海尔智家",
+      "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海容冷链",
+      "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海信容声",
+      "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "松下冷链",
+      "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美的集团",
+      "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合肥华凌",
+      "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海尔生物",
+      "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "星星冷链",
+      "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "澳柯玛",
+      "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "低温储藏设备玻璃门体",
+        "evidence_span": "公司主要从事各类低温储藏设备玻璃门体及深加工玻璃产品的设计、研发、生产与销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "深加工玻璃产品",
+        "evidence_span": "公司主要从事各类低温储藏设备玻璃门体及深加工玻璃产品的设计、研发、生产与销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "低温储藏设备玻璃门体企业",
+        "evidence_span": "国内最早专业生产低温储藏设备玻璃门体的企业之一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "饮料柜玻璃门体",
+        "evidence_span": "为下游知名企业配套供应各类饮料柜、酒柜、冰箱、冷柜用的中空或单层玻璃门体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "酒柜玻璃门体",
+        "evidence_span": "为下游知名企业配套供应各类饮料柜、酒柜、冰箱、冷柜用的中空或单层玻璃门体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冰箱玻璃门体",
+        "evidence_span": "为下游知名企业配套供应各类饮料柜、酒柜、冰箱、冷柜用的中空或单层玻璃门体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冷柜玻璃门体",
+        "evidence_span": "为下游知名企业配套供应各类饮料柜、酒柜、冰箱、冷柜用的中空或单层玻璃门体"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "食品冷柜玻璃门体",
+        "evidence_span": "公司产品应用设备主要应用于饮料柜、酒柜、食品冷柜、新零售冷柜、生物医药冷柜等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新零售冷柜玻璃门体",
+        "evidence_span": "公司产品应用设备主要应用于饮料柜、酒柜、食品冷柜、新零售冷柜、生物医药冷柜等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物医药冷柜玻璃门体",
+        "evidence_span": "公司产品应用设备主要应用于饮料柜、酒柜、食品冷柜、新零售冷柜、生物医药冷柜等领域"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "玻璃深加工",
+        "evidence_span": "公司同时具备玻璃深加工如钢化、镀膜、丝印、合片等所需的技术积累和设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "玻璃钢化",
+        "evidence_span": "公司同时具备玻璃深加工如钢化、镀膜、丝印、合片等所需的技术积累和设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "玻璃镀膜",
+        "evidence_span": "公司同时具备玻璃深加工如钢化、镀膜、丝印、合片等所需的技术积累和设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "玻璃丝印",
+        "evidence_span": "公司同时具备玻璃深加工如钢化、镀膜、丝印、合片等所需的技术积累和设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "玻璃合片",
+        "evidence_span": "公司同时具备玻璃深加工如钢化、镀膜、丝印、合片等所需的技术积累和设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一体化制造",
+        "evidence_span": "公司已建立了完整的玻璃深加工、型材加工制作、总装装配的整体门体制造流程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "定制化生产能力",
+        "evidence_span": "公司重视客户的个性需求，为客户提供定制化的产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海尔智家",
+        "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海容冷链",
+        "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海信容声",
+        "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "松下冷链",
+        "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美的集团",
+        "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合肥华凌",
+        "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海尔生物",
+        "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "星星冷链",
+        "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "澳柯玛",
+        "evidence_span": "与海尔智家、海容冷链、海信容声、松下冷链、美的集团、合肥华凌、海尔生物、星星冷链、澳柯玛等知名企业建立了良好的合作关系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:35:49"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:03:01", "result": {"span_uid": "dc9f22c79e11", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段仅列举公司名称，属于具体事件中的实体列表，无法形成独立、稳定的知识表达，不适合作为题材知识块。"}}

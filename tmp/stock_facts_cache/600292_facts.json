@@ -1,0 +1,564 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "烟气治理",
+      "evidence_span": "业务继续聚焦烟气治理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水处理",
+      "evidence_span": "业务继续聚焦烟气治理、水处理等细分领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "脱硫脱硝除尘工程总承包",
+      "evidence_span": "主要业务仍然集中在脱硫脱硝除尘工程总承包"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "脱硫脱硝特许经营",
+      "evidence_span": "主要业务仍然集中在脱硫脱硝特许经营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "脱硝催化剂制造",
+      "evidence_span": "主要业务仍然集中在脱硝催化剂制造及再生"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "再生",
+      "evidence_span": "主要业务仍然集中在脱硝催化剂制造及再生"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "除尘器设备制造",
+      "evidence_span": "主要业务仍然集中在除尘器设备制造及安装"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安装",
+      "evidence_span": "主要业务仍然集中在除尘器设备制造及安装"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水务工程",
+      "evidence_span": "主要业务仍然集中在水务工程及运营等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运营",
+      "evidence_span": "主要业务仍然集中在水务工程及运营等业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源",
+      "evidence_span": "有序向新能源及生态治理行业拓展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生态治理",
+      "evidence_span": "有序向新能源及生态治理行业拓展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "碳捕集",
+      "evidence_span": "持续做好CCUS碳捕集及资源化利用技术的突破"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资源化利用",
+      "evidence_span": "持续做好CCUS碳捕集及资源化利用技术的突破"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "废旧电池回收利用",
+      "evidence_span": "废旧锂电池回收利用项目完成立项"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "废旧光伏组件回收",
+      "evidence_span": "光伏组件、风机叶片回收项目通过立项审批"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "风机叶片回收",
+      "evidence_span": "光伏组件、风机叶片回收项目通过立项审批"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "先进环保低碳技术提供商",
+      "evidence_span": "先进环保低碳技术提供商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "能源生态融合发展集成商",
+      "evidence_span": "能源生态融合发展集成商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "绿能低碳生态科技产业运营商",
+      "evidence_span": "绿能低碳生态科技产业运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环保产业平台",
+      "evidence_span": "一平台（环保产业平台）"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "环保产业创新中心",
+      "evidence_span": "一中心（环保产业创新中心）"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "能源生态融合发展技术总成和专业服务单位",
+      "evidence_span": "两单位（能源生态融合发展技术总成和专业服务单位）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "脱硝催化剂",
+      "evidence_span": "脱硝催化剂制造及再生"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "除尘器设备",
+      "evidence_span": "除尘器设备制造及安装"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水处理工程",
+      "evidence_span": "水处理工程与运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水务运营",
+      "evidence_span": "水处理工程与运营"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "节能服务",
+      "evidence_span": "节能服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保物联网大数据服务",
+      "evidence_span": "环保物联网大数据服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CO2吸收剂",
+      "evidence_span": "CO2吸收剂及绿氢转化催化剂制造能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿氢转化催化剂",
+      "evidence_span": "CO2吸收剂及绿氢转化催化剂制造能力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能电池集成组装",
+      "evidence_span": "储能电池集成组装（PACK）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃煤电厂脱硫废水烟气蒸发零排放",
+      "evidence_span": "燃煤电厂脱硫废水烟气蒸发零排放"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工业废水零排放",
+      "evidence_span": "工业废水零排放"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于MVR蒸发结晶的SCR催化剂再生含砷废水污染物零排放",
+      "evidence_span": "基于MVR蒸发结晶的SCR催化剂再生含砷废水污染物零排放"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃煤电厂废水零排放MVR模块化系统及预处理系统",
+      "evidence_span": "燃煤电厂废水零排放MVR模块化系统及预处理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "污水处理厂智慧管理系统",
+      "evidence_span": "污水处理厂智慧管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "燃煤电厂水系统智慧运营管理系统",
+      "evidence_span": "燃煤电厂水系统智慧运营管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "市政污水处理高效沉淀及过滤",
+      "evidence_span": "市政污水处理高效沉淀及过滤"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低碳氮比市政污水生化处理",
+      "evidence_span": "低碳氮比市政污水生化处理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "乡村污水一体化装置",
+      "evidence_span": "乡村污水一体化装置"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无动力厌氧一体化污水处理",
+      "evidence_span": "无动力厌氧一体化污水处理"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分散式污水一体化处理装备",
+      "evidence_span": "分散式污水一体化处理装备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "市政污泥燃料化技术",
+      "evidence_span": "市政污泥燃料化技术及应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "薄壁式蜂窝燃煤电厂脱硝催化剂",
+      "evidence_span": "16、18、20、22孔薄壁式蜂窝燃煤电厂脱硝催化剂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "25孔超低温脱硝催化剂",
+      "evidence_span": "25孔超低温脱硝催化剂配方及生产技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "55孔高孔数脱硝催化剂",
+      "evidence_span": "55孔高孔数脱硝催化剂生产技术开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "烟气脱硫",
+      "evidence_span": "烟气脱硫、脱硝、除尘、脱汞、二氧化碳捕集等自主知识产权技术的开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "烟气脱硝",
+      "evidence_span": "烟气脱硫、脱硝、除尘、脱汞、二氧化碳捕集等自主知识产权技术的开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "烟气除尘",
+      "evidence_span": "烟气脱硫、脱硝、除尘、脱汞、二氧化碳捕集等自主知识产权技术的开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "烟气脱汞",
+      "evidence_span": "烟气脱硫、脱硝、除尘、脱汞、二氧化碳捕集等自主知识产权技术的开发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "二氧化碳捕集",
+      "evidence_span": "烟气脱硫、脱硝、除尘、脱汞、二氧化碳捕集等自主知识产权技术的开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家电投集团",
+      "evidence_span": "获取国家电投集团外订单18.23亿元"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大唐",
+      "evidence_span": "包括大唐、山西同煤等大客户订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山西同煤",
+      "evidence_span": "包括大唐、山西同煤等大客户订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "40家以上燃煤电厂",
+      "evidence_span": "已经与40家以上燃煤电厂建立合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "脱硫脱硝",
+      "evidence_span": "脱硫脱硝大潮的受益者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "工业水治理",
+      "evidence_span": "工业水治理的弄潮儿"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "烟气治理",
+        "evidence_span": "业务继续聚焦烟气治理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水处理",
+        "evidence_span": "业务继续聚焦烟气治理、水处理等细分领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "脱硫脱硝除尘工程总承包",
+        "evidence_span": "主要业务仍然集中在脱硫脱硝除尘工程总承包"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "脱硫脱硝特许经营",
+        "evidence_span": "主要业务仍然集中在脱硫脱硝特许经营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "脱硝催化剂制造及再生",
+        "evidence_span": "主要业务仍然集中在脱硝催化剂制造及再生"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "除尘器设备制造及安装",
+        "evidence_span": "主要业务仍然集中在除尘器设备制造及安装"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水务工程及运营",
+        "evidence_span": "主要业务仍然集中在水务工程及运营等业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源及生态治理",
+        "evidence_span": "有序向新能源及生态治理行业拓展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "碳捕集及资源化利用",
+        "evidence_span": "持续做好CCUS碳捕集及资源化利用技术的突破"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "废旧电池回收利用",
+        "evidence_span": "废旧锂电池回收利用项目完成立项"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "废旧光伏组件回收",
+        "evidence_span": "光伏组件、风机叶片回收项目通过立项审批"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "风机叶片回收",
+        "evidence_span": "光伏组件、风机叶片回收项目通过立项审批"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "先进环保低碳技术提供商",
+        "evidence_span": "先进环保低碳技术提供商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "能源生态融合发展集成商",
+        "evidence_span": "能源生态融合发展集成商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "绿能低碳生态科技产业运营商",
+        "evidence_span": "绿能低碳生态科技产业运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环保产业平台",
+        "evidence_span": "一平台（环保产业平台）"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "环保产业创新中心",
+        "evidence_span": "一中心（环保产业创新中心）"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "能源生态融合发展技术总成和专业服务单位",
+        "evidence_span": "两单位（能源生态融合发展技术总成和专业服务单位）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "脱硝催化剂",
+        "evidence_span": "脱硝催化剂制造及再生"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "除尘器设备",
+        "evidence_span": "除尘器设备制造及安装"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水处理工程",
+        "evidence_span": "水处理工程与运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水务运营",
+        "evidence_span": "水处理工程与运营"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "节能服务",
+        "evidence_span": "节能服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保物联网大数据服务",
+        "evidence_span": "环保物联网大数据服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CO2吸收剂",
+        "evidence_span": "CO2吸收剂及绿氢转化催化剂制造能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿氢转化催化剂",
+        "evidence_span": "CO2吸收剂及绿氢转化催化剂制造能力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能电池集成组装",
+        "evidence_span": "储能电池集成组装（PACK）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃煤电厂脱硫废水烟气蒸发零排放",
+        "evidence_span": "燃煤电厂脱硫废水烟气蒸发零排放"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工业废水零排放",
+        "evidence_span": "工业废水零排放"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于MVR蒸发结晶的SCR催化剂再生含砷废水污染物零排放",
+        "evidence_span": "基于MVR蒸发结晶的SCR催化剂再生含砷废水污染物零排放"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃煤电厂废水零排放MVR模块化系统及预处理系统",
+        "evidence_span": "燃煤电厂废水零排放MVR模块化系统及预处理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "污水处理厂智慧管理系统",
+        "evidence_span": "污水处理厂智慧管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "燃煤电厂水系统智慧运营管理系统",
+        "evidence_span": "燃煤电厂水系统智慧运营管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "市政污水处理高效沉淀及过滤",
+        "evidence_span": "市政污水处理高效沉淀及过滤"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低碳氮比市政污水生化处理",
+        "evidence_span": "低碳氮比市政污水生化处理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "乡村污水一体化装置",
+        "evidence_span": "乡村污水一体化装置"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无动力厌氧一体化污水处理",
+        "evidence_span": "无动力厌氧一体化污水处理"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分散式污水一体化处理装备",
+        "evidence_span": "分散式污水一体化处理装备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "市政污泥燃料化技术",
+        "evidence_span": "市政污泥燃料化技术及应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "薄壁式蜂窝燃煤电厂脱硝催化剂",
+        "evidence_span": "16、18、20、22孔薄壁式蜂窝燃煤电厂脱硝催化剂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "25孔超低温脱硝催化剂",
+        "evidence_span": "25孔超低温脱硝催化剂配方及生产技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "55孔高孔数脱硝催化剂",
+        "evidence_span": "55孔高孔数脱硝催化剂生产技术开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "烟气脱硫",
+        "evidence_span": "烟气脱硫、脱硝、除尘、脱汞、二氧化碳捕集等自主知识产权技术的开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "烟气脱硝",
+        "evidence_span": "烟气脱硫、脱硝、除尘、脱汞、二氧化碳捕集等自主知识产权技术的开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "烟气除尘",
+        "evidence_span": "烟气脱硫、脱硝、除尘、脱汞、二氧化碳捕集等自主知识产权技术的开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "烟气脱汞",
+        "evidence_span": "烟气脱硫、脱硝、除尘、脱汞、二氧化碳捕集等自主知识产权技术的开发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "二氧化碳捕集",
+        "evidence_span": "烟气脱硫、脱硝、除尘、脱汞、二氧化碳捕集等自主知识产权技术的开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家电投集团",
+        "evidence_span": "获取国家电投集团外订单18.23亿元"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大唐",
+        "evidence_span": "包括大唐、山西同煤等大客户订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山西同煤",
+        "evidence_span": "包括大唐、山西同煤等大客户订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "40家以上燃煤电厂",
+        "evidence_span": "已经与40家以上燃煤电厂建立合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "脱硫脱硝",
+        "evidence_span": "脱硫脱硝大潮的受益者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "工业水治理",
+        "evidence_span": "工业水治理的弄潮儿"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:51:11"
+}

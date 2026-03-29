@@ -1,0 +1,369 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "模拟芯片设计",
+      "evidence_span": "国内领先的模拟芯片设计公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "模拟芯片设计公司",
+      "evidence_span": "国内领先的模拟芯片设计公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DC/DC芯片",
+      "evidence_span": "公司主要产品涵盖DC/DC芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充电管理芯片",
+      "evidence_span": "公司主要产品涵盖DC/DC芯片、充电管理芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超级快充芯片",
+      "evidence_span": "超级快充芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池快充芯片",
+      "evidence_span": "锂电池快充芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "端口保护和信号切换芯片",
+      "evidence_span": "端口保护和信号切换芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "音频和数据切换芯片",
+      "evidence_span": "音频和数据切换芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "负载开关芯片",
+      "evidence_span": "负载开关芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "USB Type-C接口保护芯片",
+      "evidence_span": "USB Type-C接口保护芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车规级DC/DC芯片",
+      "evidence_span": "车规级DC/DC芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压电荷泵产品",
+      "evidence_span": "高压电荷泵产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Buck 降压型芯片",
+      "evidence_span": "DC/DC 芯片包括Buck 降压型芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Boost 升压型芯片",
+      "evidence_span": "DC/DC 芯片包括Buck 降压型芯片和Boost 升压型芯片"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电荷泵",
+      "evidence_span": "电荷泵"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AEC-Q100标准",
+      "evidence_span": "车规级DC/DC芯片达到AEC-Q100标准"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高通全球汽车级平台参考设计",
+      "evidence_span": "进入高通全球汽车级平台参考设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MTK平台参考设计",
+      "evidence_span": "锂电池快充芯片已进入MTK平台参考设计"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "负载瞬态响应",
+      "evidence_span": "负载瞬态响应"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "输出纹波",
+      "evidence_span": "输出纹波"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Qualcomm",
+      "evidence_span": "DC/DC芯片已实现向Qualcomm量产出货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "MTK",
+      "evidence_span": "DC/DC芯片已实现向MTK量产出货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "DC/DC芯片已实现向三星量产出货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "DC/DC芯片已实现向小米量产出货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "传音",
+      "evidence_span": "DC/DC芯片已实现向传音量产出货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奥迪",
+      "evidence_span": "车规级DC/DC芯片已实现向奥迪出货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "现代",
+      "evidence_span": "车规级DC/DC芯片已实现向现代出货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "起亚",
+      "evidence_span": "车规级DC/DC芯片已实现向起亚出货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "高压电荷泵产品被应用于华为mate30Pro"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一加",
+      "evidence_span": "高压电荷泵产品被应用于一加9Pro"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "VIVO",
+      "evidence_span": "端口保护和信号切换芯片主要客户包括VIVO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "端口保护和信号切换芯片主要客户包括OPPO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荣耀",
+      "evidence_span": "端口保护和信号切换芯片主要客户包括荣耀"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TCL",
+      "evidence_span": "最终品牌客户覆盖TCL"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "YuraTech",
+      "evidence_span": "车规级芯片实现了向YuraTech出货"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产模拟芯片",
+      "evidence_span": "国产模拟芯片佼佼者"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "模拟芯片设计",
+        "evidence_span": "国内领先的模拟芯片设计公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "模拟芯片设计公司",
+        "evidence_span": "国内领先的模拟芯片设计公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DC/DC芯片",
+        "evidence_span": "公司主要产品涵盖DC/DC芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充电管理芯片",
+        "evidence_span": "公司主要产品涵盖DC/DC芯片、充电管理芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超级快充芯片",
+        "evidence_span": "超级快充芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池快充芯片",
+        "evidence_span": "锂电池快充芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "端口保护和信号切换芯片",
+        "evidence_span": "端口保护和信号切换芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "音频和数据切换芯片",
+        "evidence_span": "音频和数据切换芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "负载开关芯片",
+        "evidence_span": "负载开关芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "USB Type-C接口保护芯片",
+        "evidence_span": "USB Type-C接口保护芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车规级DC/DC芯片",
+        "evidence_span": "车规级DC/DC芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压电荷泵产品",
+        "evidence_span": "高压电荷泵产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Buck 降压型芯片",
+        "evidence_span": "DC/DC 芯片包括Buck 降压型芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Boost 升压型芯片",
+        "evidence_span": "DC/DC 芯片包括Buck 降压型芯片和Boost 升压型芯片"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电荷泵",
+        "evidence_span": "电荷泵"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AEC-Q100标准",
+        "evidence_span": "车规级DC/DC芯片达到AEC-Q100标准"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高通全球汽车级平台参考设计",
+        "evidence_span": "进入高通全球汽车级平台参考设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MTK平台参考设计",
+        "evidence_span": "锂电池快充芯片已进入MTK平台参考设计"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "负载瞬态响应",
+        "evidence_span": "负载瞬态响应"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "输出纹波",
+        "evidence_span": "输出纹波"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Qualcomm",
+        "evidence_span": "DC/DC芯片已实现向Qualcomm量产出货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "MTK",
+        "evidence_span": "DC/DC芯片已实现向MTK量产出货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "DC/DC芯片已实现向三星量产出货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "DC/DC芯片已实现向小米量产出货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "传音",
+        "evidence_span": "DC/DC芯片已实现向传音量产出货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奥迪",
+        "evidence_span": "车规级DC/DC芯片已实现向奥迪出货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "现代",
+        "evidence_span": "车规级DC/DC芯片已实现向现代出货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "起亚",
+        "evidence_span": "车规级DC/DC芯片已实现向起亚出货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "高压电荷泵产品被应用于华为mate30Pro"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一加",
+        "evidence_span": "高压电荷泵产品被应用于一加9Pro"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "VIVO",
+        "evidence_span": "端口保护和信号切换芯片主要客户包括VIVO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "端口保护和信号切换芯片主要客户包括OPPO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荣耀",
+        "evidence_span": "端口保护和信号切换芯片主要客户包括荣耀"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TCL",
+        "evidence_span": "最终品牌客户覆盖TCL"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "YuraTech",
+        "evidence_span": "车规级芯片实现了向YuraTech出货"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产模拟芯片",
+        "evidence_span": "国产模拟芯片佼佼者"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T12:29:29"
+}

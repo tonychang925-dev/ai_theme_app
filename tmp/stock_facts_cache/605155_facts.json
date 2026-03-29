@@ -1,0 +1,289 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "功能性遮阳材料",
+      "evidence_span": "公司主要从事功能性遮阳材料的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "功能性遮阳成品",
+      "evidence_span": "并逐步向功能性遮阳成品拓展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "功能性遮阳材料细分领域的龙头企业",
+      "evidence_span": "已成为我国功能性遮阳材料细分领域的龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "阳光面料",
+      "evidence_span": "主要产品包括阳光面料、涂层面料和可调光面料等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涂层面料",
+      "evidence_span": "主要产品包括阳光面料、涂层面料和可调光面料等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可调光面料",
+      "evidence_span": "主要产品包括阳光面料、涂层面料和可调光面料等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蜂巢帘帘料",
+      "evidence_span": "科发内容涉及涂层材料、PVC包覆丝材料、可调光遮阳材料、蜂巢帘帘料、成品帘、墙布、席梦思等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "成品帘",
+      "evidence_span": "科发内容涉及涂层材料、PVC包覆丝材料、可调光遮阳材料、蜂巢帘帘料、成品帘、墙布、席梦思等领域"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "梦幻帘",
+      "evidence_span": "推出第五代“梦幻帘”产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "可回收遮阳面料",
+      "evidence_span": "研发使用环保再生材料生产可回收遮阳面料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "耐低温阻燃PVC包覆丝面料",
+      "evidence_span": "“耐低温阻燃PVC包覆丝面料”是与相关高等院校合作研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "压花PVC浸轧功能性复合遮阳材料",
+      "evidence_span": "公司产品通过了“压花PVC浸轧功能性复合遮阳材料”等5个省级新产品鉴定"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高耐光色牢度抗菌PVC包覆丝面料",
+      "evidence_span": "通过了“（高耐光色牢度抗菌PVC包覆丝面料）”浙江制造精品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "阻燃抗菌改性粒子配方技术",
+      "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高氧指数改性粒子配方技术",
+      "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗紫外线改性粒子配方技术",
+      "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "抗紫外线隔热涂层配方技术",
+      "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "阻燃环保涂层配方技术",
+      "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "镀铝技术",
+      "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "涂层厚度控制技术",
+      "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "竖向粘结可调光功能性遮阳材料研发",
+      "evidence_span": "开始了“竖向粘结可调光功能性遮阳材料研发”等7个项目研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "相变储能建筑用涂层面料及其制备方法",
+      "evidence_span": "公司对“相变储能建筑用涂层面料及其制备方法”等7个科技研究成果进行了专利申报"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "增强PVC涂层柔性用聚硅氧烷-聚氨酯聚合物的制备及应用",
+      "evidence_span": "其中“一种增强PVC涂层柔性用聚硅氧烷-聚氨酯聚合物的制备及应用”等4个为国外专利申报"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "HunterDougas",
+      "evidence_span": "进一步赢得了HunterDougas、Vertiux等国际知名客户的认可"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Vertiux",
+      "evidence_span": "进一步赢得了HunterDougas、Vertiux等国际知名客户的认可"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "建筑节能",
+      "evidence_span": "建筑遮阳行业需求与建筑节能产业发展息息相关"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "绿色建材",
+      "evidence_span": "当绿色建材成为建筑行业的一种趋势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新材料",
+      "evidence_span": "属于国家鼓励发展的新材料行业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "功能性遮阳材料",
+        "evidence_span": "公司主要从事功能性遮阳材料的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "功能性遮阳成品",
+        "evidence_span": "并逐步向功能性遮阳成品拓展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "功能性遮阳材料细分领域的龙头企业",
+        "evidence_span": "已成为我国功能性遮阳材料细分领域的龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "阳光面料",
+        "evidence_span": "主要产品包括阳光面料、涂层面料和可调光面料等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涂层面料",
+        "evidence_span": "主要产品包括阳光面料、涂层面料和可调光面料等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可调光面料",
+        "evidence_span": "主要产品包括阳光面料、涂层面料和可调光面料等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蜂巢帘帘料",
+        "evidence_span": "科发内容涉及涂层材料、PVC包覆丝材料、可调光遮阳材料、蜂巢帘帘料、成品帘、墙布、席梦思等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "成品帘",
+        "evidence_span": "科发内容涉及涂层材料、PVC包覆丝材料、可调光遮阳材料、蜂巢帘帘料、成品帘、墙布、席梦思等领域"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "梦幻帘",
+        "evidence_span": "推出第五代“梦幻帘”产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "可回收遮阳面料",
+        "evidence_span": "研发使用环保再生材料生产可回收遮阳面料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "耐低温阻燃PVC包覆丝面料",
+        "evidence_span": "“耐低温阻燃PVC包覆丝面料”是与相关高等院校合作研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "压花PVC浸轧功能性复合遮阳材料",
+        "evidence_span": "公司产品通过了“压花PVC浸轧功能性复合遮阳材料”等5个省级新产品鉴定"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高耐光色牢度抗菌PVC包覆丝面料",
+        "evidence_span": "通过了“（高耐光色牢度抗菌PVC包覆丝面料）”浙江制造精品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "阻燃抗菌改性粒子配方技术",
+        "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高氧指数改性粒子配方技术",
+        "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗紫外线改性粒子配方技术",
+        "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "抗紫外线隔热涂层配方技术",
+        "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "阻燃环保涂层配方技术",
+        "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "镀铝技术",
+        "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "涂层厚度控制技术",
+        "evidence_span": "包括阻燃抗菌改性粒子配方技术、高氧指数改性粒子配方技术、抗紫外线改性粒子配方技术、抗紫外线隔热涂层配方技术和阻燃环保涂层配方技术、镀铝技术和涂层厚度控制技术等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "竖向粘结可调光功能性遮阳材料研发",
+        "evidence_span": "开始了“竖向粘结可调光功能性遮阳材料研发”等7个项目研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "相变储能建筑用涂层面料及其制备方法",
+        "evidence_span": "公司对“相变储能建筑用涂层面料及其制备方法”等7个科技研究成果进行了专利申报"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "增强PVC涂层柔性用聚硅氧烷-聚氨酯聚合物的制备及应用",
+        "evidence_span": "其中“一种增强PVC涂层柔性用聚硅氧烷-聚氨酯聚合物的制备及应用”等4个为国外专利申报"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "HunterDougas",
+        "evidence_span": "进一步赢得了HunterDougas、Vertiux等国际知名客户的认可"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Vertiux",
+        "evidence_span": "进一步赢得了HunterDougas、Vertiux等国际知名客户的认可"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "建筑节能",
+        "evidence_span": "建筑遮阳行业需求与建筑节能产业发展息息相关"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "绿色建材",
+        "evidence_span": "当绿色建材成为建筑行业的一种趋势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新材料",
+        "evidence_span": "属于国家鼓励发展的新材料行业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T10:59:16"
+}

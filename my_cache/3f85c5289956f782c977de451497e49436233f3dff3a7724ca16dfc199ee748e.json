@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "9a092f36cfc1", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述2024年中秋档新片票房的实时突破事件，包含具体日期和票房数字，属于新闻动态，没有涉及题材的稳定知识。"}}

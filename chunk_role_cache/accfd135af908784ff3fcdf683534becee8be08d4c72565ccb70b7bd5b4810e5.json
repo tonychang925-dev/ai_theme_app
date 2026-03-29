@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "f3293fca98e6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述Meta Connect 2024开发者大会的举行时间、议程和主题演讲，属于具体事件公告，没有提供AR眼镜的静态知识或技术细节。"}}

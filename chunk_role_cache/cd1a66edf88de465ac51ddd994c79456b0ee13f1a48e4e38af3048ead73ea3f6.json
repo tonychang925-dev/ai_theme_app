@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "05858f3acdf0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落混合了公司业绩公告（如北方华创、中微公司净利润）和三星电子引进High-NA EUV光刻机的技术动态，后者涉及先进制程设备知识，但以事件形式呈现，属于候选混合内容。"}}

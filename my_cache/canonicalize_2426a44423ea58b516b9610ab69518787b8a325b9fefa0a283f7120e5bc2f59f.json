@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:23:12", "result": {"span_uid": "be14ff32426d", "action": "rewrite", "canonical_text": "人工智能需求的增长可能导致高带宽存储芯片（HBM）供应短缺持续较长时间", "final_type": "signal", "final_role": "供需变化信号", "stability": "medium", "reason": "原文本包含具体时间预测（今年一整年）和新闻口吻，改写为更稳定的趋势性表达，保留人工智能需求与HBM供应短缺的关联，体现景气变化"}}

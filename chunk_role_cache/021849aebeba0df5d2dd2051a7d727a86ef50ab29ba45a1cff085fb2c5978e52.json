@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "6904adb8dbb5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述小米公司承担的国家重点研发计划项目启动会的事件。这完全是公司动态和时间性事件，没有涉及人形机器人本体的静态知识，因此分类为pure_event。"}}

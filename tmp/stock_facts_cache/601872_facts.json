@@ -1,0 +1,179 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "原油运输",
+      "evidence_span": "主营业务涉及原油运输"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "干散货运输",
+      "evidence_span": "主营业务涉及干散货运输"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "LNG运输",
+      "evidence_span": "主营业务涉及LNG运输"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "滚装运输",
+      "evidence_span": "主营业务涉及滚装运输"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "件杂货运输",
+      "evidence_span": "主营业务涉及件杂货运输"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "世界领先综合航运公司",
+      "evidence_span": "世界领先综合航运公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "VLCC和VLOC规模位居世界第一",
+      "evidence_span": "VLCC和VLOC规模位居世界第一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国海上能源运输的缔造者、整合者和领军者",
+      "evidence_span": "招商轮船中国海上能源运输的缔造者、整合者和领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "进口天然气产业链上的重要一环",
+      "evidence_span": "进口天然气产业链上的重要一环"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VLCC船队",
+      "evidence_span": "VLCC船队规模位居世界第一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VLOC船队",
+      "evidence_span": "VLOC船队规模位居世界第一"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LNG船舶",
+      "evidence_span": "运营LNG船舶14艘"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "滚装船",
+      "evidence_span": "共计经营25艘滚装船"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "杂货船",
+      "evidence_span": "运营7艘杂货船"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "活畜运输",
+      "evidence_span": "新增活畜运输业务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "淡水河谷",
+      "evidence_span": "与淡水河谷签订了长达20-27年的VLOC长期运输合同"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "服务一带一路战略",
+      "evidence_span": "服务“一带一路”战略"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "原油运输",
+        "evidence_span": "主营业务涉及原油运输"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "干散货运输",
+        "evidence_span": "主营业务涉及干散货运输"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "LNG运输",
+        "evidence_span": "主营业务涉及LNG运输"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "滚装运输",
+        "evidence_span": "主营业务涉及滚装运输"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "件杂货运输",
+        "evidence_span": "主营业务涉及件杂货运输"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "世界领先综合航运公司",
+        "evidence_span": "世界领先综合航运公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "VLCC和VLOC规模位居世界第一",
+        "evidence_span": "VLCC和VLOC规模位居世界第一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国海上能源运输的缔造者、整合者和领军者",
+        "evidence_span": "招商轮船中国海上能源运输的缔造者、整合者和领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "进口天然气产业链上的重要一环",
+        "evidence_span": "进口天然气产业链上的重要一环"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VLCC船队",
+        "evidence_span": "VLCC船队规模位居世界第一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VLOC船队",
+        "evidence_span": "VLOC船队规模位居世界第一"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LNG船舶",
+        "evidence_span": "运营LNG船舶14艘"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "滚装船",
+        "evidence_span": "共计经营25艘滚装船"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "杂货船",
+        "evidence_span": "运营7艘杂货船"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "活畜运输",
+        "evidence_span": "新增活畜运输业务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "淡水河谷",
+        "evidence_span": "与淡水河谷签订了长达20-27年的VLOC长期运输合同"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "服务一带一路战略",
+        "evidence_span": "服务“一带一路”战略"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:41:16"
+}

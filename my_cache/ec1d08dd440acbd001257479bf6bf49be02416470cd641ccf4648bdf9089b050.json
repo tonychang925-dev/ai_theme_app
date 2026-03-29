@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:31:43", "result": {"chunk_id": "19bba87999ee", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含关于导弹的静态知识（如03式中程防空导弹的定义和用途），但混合了日本部署导弹的具体事件和时间信息，因此属于候选混合状态，需要进一步裁决以提取稳定知识。"}}

@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "火力发电",
+      "evidence_span": "已成为河南省集火力发电、新能源、抽水蓄能、煤炭贸易物流、综合能源服务于一体的省级资本控股的综合能源上市公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源",
+      "evidence_span": "已成为河南省集火力发电、新能源、抽水蓄能、煤炭贸易物流、综合能源服务于一体的省级资本控股的综合能源上市公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "抽水蓄能",
+      "evidence_span": "已成为河南省集火力发电、新能源、抽水蓄能、煤炭贸易物流、综合能源服务于一体的省级资本控股的综合能源上市公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭贸易物流",
+      "evidence_span": "已成为河南省集火力发电、新能源、抽水蓄能、煤炭贸易物流、综合能源服务于一体的省级资本控股的综合能源上市公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "综合能源服务",
+      "evidence_span": "已成为河南省集火力发电、新能源、抽水蓄能、煤炭贸易物流、综合能源服务于一体的省级资本控股的综合能源上市公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "省级资本控股的综合能源上市公司",
+      "evidence_span": "已成为河南省集火力发电、新能源、抽水蓄能、煤炭贸易物流、综合能源服务于一体的省级资本控股的综合能源上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "火电项目投资管理",
+      "evidence_span": "1.火电项目投资管理业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤炭物流业务",
+      "evidence_span": "2.煤炭物流业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源业务",
+      "evidence_span": "3.新能源业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合能源服务业务",
+      "evidence_span": "4.综合能源服务业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "售电业务",
+      "evidence_span": "开拓售电业务，争取市场交易电量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风电",
+      "evidence_span": "公司在运风电装机366MW"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "生物质热电",
+      "evidence_span": "生物质热电装机30MW"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集中式光伏发电",
+      "evidence_span": "集中式光伏发电装机7MWp"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分布式光伏发电",
+      "evidence_span": "分布式光伏发电装机126.77MWp"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抽水蓄能项目",
+      "evidence_span": "河南鲁山抽水蓄能1300MW项目获得核准并筹建"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "集中式电化学储能电站",
+      "evidence_span": "鹤壁鹤淇100MW/200MWh集中式电化学储能电站获得批准并筹建"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超临界发电机组",
+      "evidence_span": "天益公司2×600MW超临界发电机组"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超超临界发电机组",
+      "evidence_span": "中益公司2×660MW超超临界发电机组"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "热电联产机组",
+      "evidence_span": "濮阳豫能2×660MW超超临界热电联产机组"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "调相机改造",
+      "evidence_span": "鸭电公司#2机组（350MW亚临界发电机组）完成调相机改造"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "能源保供",
+      "evidence_span": "扛起电力保供责任"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "清洁能源",
+      "evidence_span": "成为河南省清洁能源领跑者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新型电力系统",
+      "evidence_span": "勇做新型电力系统开拓者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "煤电低碳转型",
+      "evidence_span": "担任煤电企业低碳转型破局者"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "火力发电",
+        "evidence_span": "已成为河南省集火力发电、新能源、抽水蓄能、煤炭贸易物流、综合能源服务于一体的省级资本控股的综合能源上市公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源",
+        "evidence_span": "已成为河南省集火力发电、新能源、抽水蓄能、煤炭贸易物流、综合能源服务于一体的省级资本控股的综合能源上市公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "抽水蓄能",
+        "evidence_span": "已成为河南省集火力发电、新能源、抽水蓄能、煤炭贸易物流、综合能源服务于一体的省级资本控股的综合能源上市公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭贸易物流",
+        "evidence_span": "已成为河南省集火力发电、新能源、抽水蓄能、煤炭贸易物流、综合能源服务于一体的省级资本控股的综合能源上市公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "综合能源服务",
+        "evidence_span": "已成为河南省集火力发电、新能源、抽水蓄能、煤炭贸易物流、综合能源服务于一体的省级资本控股的综合能源上市公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "省级资本控股的综合能源上市公司",
+        "evidence_span": "已成为河南省集火力发电、新能源、抽水蓄能、煤炭贸易物流、综合能源服务于一体的省级资本控股的综合能源上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "火电项目投资管理",
+        "evidence_span": "1.火电项目投资管理业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤炭物流业务",
+        "evidence_span": "2.煤炭物流业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源业务",
+        "evidence_span": "3.新能源业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合能源服务业务",
+        "evidence_span": "4.综合能源服务业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "售电业务",
+        "evidence_span": "开拓售电业务，争取市场交易电量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风电",
+        "evidence_span": "公司在运风电装机366MW"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "生物质热电",
+        "evidence_span": "生物质热电装机30MW"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集中式光伏发电",
+        "evidence_span": "集中式光伏发电装机7MWp"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分布式光伏发电",
+        "evidence_span": "分布式光伏发电装机126.77MWp"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抽水蓄能项目",
+        "evidence_span": "河南鲁山抽水蓄能1300MW项目获得核准并筹建"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "集中式电化学储能电站",
+        "evidence_span": "鹤壁鹤淇100MW/200MWh集中式电化学储能电站获得批准并筹建"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超临界发电机组",
+        "evidence_span": "天益公司2×600MW超临界发电机组"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超超临界发电机组",
+        "evidence_span": "中益公司2×660MW超超临界发电机组"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "热电联产机组",
+        "evidence_span": "濮阳豫能2×660MW超超临界热电联产机组"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "调相机改造",
+        "evidence_span": "鸭电公司#2机组（350MW亚临界发电机组）完成调相机改造"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "能源保供",
+        "evidence_span": "扛起电力保供责任"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "清洁能源",
+        "evidence_span": "成为河南省清洁能源领跑者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新型电力系统",
+        "evidence_span": "勇做新型电力系统开拓者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "煤电低碳转型",
+        "evidence_span": "担任煤电企业低碳转型破局者"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:28:47"
+}

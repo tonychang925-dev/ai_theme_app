@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:43:18", "result": {"chunk_id": "1a74349a02ee", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述了研究团队发表新技术的事件，但内容涉及蒸发冷却技术作为替代传统冷却方案的静态知识，可能对题材构建有参考价值，因此归类为混合候选。"}}

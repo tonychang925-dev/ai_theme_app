@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭生产",
+      "evidence_span": "公司从事的主要业务有：煤炭生产及销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售业务",
+      "evidence_span": "公司从事的主要业务有：煤炭生产及销售业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭采掘",
+      "evidence_span": "经营范围主要为：煤炭采掘、加工、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭加工",
+      "evidence_span": "经营范围主要为：煤炭采掘、加工、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭销售",
+      "evidence_span": "经营范围主要为：煤炭采掘、加工、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "机械制造",
+      "evidence_span": "机械制造、修理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高岭土加工",
+      "evidence_span": "高岭土加工、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "建筑工程施工",
+      "evidence_span": "建筑工程施工"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铁路工程施工",
+      "evidence_span": "铁路工程施工"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "铁路运输",
+      "evidence_span": "铁路运输及本集团铁路线维护"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力煤",
+      "evidence_span": "主要产品有动力煤等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电力行业",
+      "evidence_span": "主要用于电力、水泥、建材等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "水泥行业",
+      "evidence_span": "主要用于电力、水泥、建材等行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建材行业",
+      "evidence_span": "主要用于电力、水泥、建材等行业"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能开采",
+      "evidence_span": "以智能开采、系统优化、科技保安为抓手"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧矿山改造升级",
+      "evidence_span": "加速推进智慧矿山改造升级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化系统补漏和升级",
+      "evidence_span": "推动智能化系统补漏和升级"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数智化管控平台建设",
+      "evidence_span": "加速数智化管控平台建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "煤矿5G通信系统核心网",
+      "evidence_span": "实施煤矿5G通信系统核心网与试验段建造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "选煤厂智能化改造",
+      "evidence_span": "推进选煤厂智能化改造"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能干选系统",
+      "evidence_span": "主要包括智能干选系统、智能密控系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能密控系统",
+      "evidence_span": "主要包括智能干选系统、智能密控系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "巡检机器人",
+      "evidence_span": "安装巡检机器人"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能通风",
+      "evidence_span": "开展智能通风、无线AP项目建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "排硫排矸技术",
+      "evidence_span": "提高排硫排矸技术"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭生产及销售业务",
+        "evidence_span": "公司从事的主要业务有：煤炭生产及销售业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭采掘",
+        "evidence_span": "经营范围主要为：煤炭采掘、加工、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭加工",
+        "evidence_span": "经营范围主要为：煤炭采掘、加工、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭销售",
+        "evidence_span": "经营范围主要为：煤炭采掘、加工、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机械制造",
+        "evidence_span": "机械制造、修理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高岭土加工",
+        "evidence_span": "高岭土加工、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "建筑工程施工",
+        "evidence_span": "建筑工程施工"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铁路工程施工",
+        "evidence_span": "铁路工程施工"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "铁路运输",
+        "evidence_span": "铁路运输及本集团铁路线维护"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力煤",
+        "evidence_span": "主要产品有动力煤等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电力行业",
+        "evidence_span": "主要用于电力、水泥、建材等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "水泥行业",
+        "evidence_span": "主要用于电力、水泥、建材等行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建材行业",
+        "evidence_span": "主要用于电力、水泥、建材等行业"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能开采",
+        "evidence_span": "以智能开采、系统优化、科技保安为抓手"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧矿山改造升级",
+        "evidence_span": "加速推进智慧矿山改造升级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化系统补漏和升级",
+        "evidence_span": "推动智能化系统补漏和升级"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数智化管控平台建设",
+        "evidence_span": "加速数智化管控平台建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "煤矿5G通信系统核心网",
+        "evidence_span": "实施煤矿5G通信系统核心网与试验段建造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "选煤厂智能化改造",
+        "evidence_span": "推进选煤厂智能化改造"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能干选系统",
+        "evidence_span": "主要包括智能干选系统、智能密控系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能密控系统",
+        "evidence_span": "主要包括智能干选系统、智能密控系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "巡检机器人",
+        "evidence_span": "安装巡检机器人"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能通风",
+        "evidence_span": "开展智能通风、无线AP项目建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "排硫排矸技术",
+        "evidence_span": "提高排硫排矸技术"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:04:00"
+}

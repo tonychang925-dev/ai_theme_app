@@ -1,0 +1,489 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "种鸭养殖",
+      "evidence_span": "种鸭养殖"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "孵化",
+      "evidence_span": "孵化"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "禽苗销售",
+      "evidence_span": "禽苗销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "饲料生产",
+      "evidence_span": "饲料生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商品鸭屠宰加工",
+      "evidence_span": "商品鸭屠宰加工"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "冻品销售",
+      "evidence_span": "冻品销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "熟食",
+      "evidence_span": "熟食"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "羽绒",
+      "evidence_span": "羽绒及羽绒制品生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "羽绒制品生产",
+      "evidence_span": "羽绒及羽绒制品生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "羽绒及羽绒制品生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国家大型禽类食品加工企业",
+      "evidence_span": "国家大型禽类食品加工企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内肉鸭产业链一体化的领军者",
+      "evidence_span": "国内肉鸭产业链一体化的领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内羽绒生产龙头企业之一",
+      "evidence_span": "国内羽绒生产龙头企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "唯一一家羽绒生产类的A股上市公司",
+      "evidence_span": "唯一一家羽绒生产类的A股上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "羽绒",
+      "evidence_span": "主要产品为羽绒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鸭肉生鲜冻品",
+      "evidence_span": "鸭肉生鲜冻品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "鸭制熟食",
+      "evidence_span": "鸭制熟食"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "预制菜",
+      "evidence_span": "预制菜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "休闲小零食",
+      "evidence_span": "休闲小零食"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "火锅食材",
+      "evidence_span": "火锅食材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卤制品",
+      "evidence_span": "卤制品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "河南双汇",
+      "evidence_span": "河南双汇"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南京桂花鸭",
+      "evidence_span": "南京桂花鸭"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "全聚德",
+      "evidence_span": "全聚德"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "煌上煌",
+      "evidence_span": "煌上煌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "麦德龙",
+      "evidence_span": "麦德龙"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "盒马鲜生",
+      "evidence_span": "盒马鲜生"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "绝味",
+      "evidence_span": "绝味"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "统一",
+      "evidence_span": "统一"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "永辉",
+      "evidence_span": "永辉"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大润发",
+      "evidence_span": "大润发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丹尼斯",
+      "evidence_span": "丹尼斯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "胖东来",
+      "evidence_span": "胖东来"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东",
+      "evidence_span": "京东"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "天猫",
+      "evidence_span": "天猫"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美团",
+      "evidence_span": "美团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "兴盛优选",
+      "evidence_span": "兴盛优选"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海底捞",
+      "evidence_span": "海底捞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "回味",
+      "evidence_span": "回味"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小龙坎",
+      "evidence_span": "小龙坎"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "波司登",
+      "evidence_span": "波司登"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "雪中飞",
+      "evidence_span": "雪中飞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "千仞岗",
+      "evidence_span": "千仞岗"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "安踏",
+      "evidence_span": "安踏"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "特步",
+      "evidence_span": "特步"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海澜之家",
+      "evidence_span": "海澜之家"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "七匹狼",
+      "evidence_span": "七匹狼"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "以纯",
+      "evidence_span": "以纯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "唐立特",
+      "evidence_span": "唐立特"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "种鸭养殖",
+        "evidence_span": "种鸭养殖"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "孵化",
+        "evidence_span": "孵化"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "禽苗销售",
+        "evidence_span": "禽苗销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "饲料生产",
+        "evidence_span": "饲料生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商品鸭屠宰加工",
+        "evidence_span": "商品鸭屠宰加工"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "冻品销售",
+        "evidence_span": "冻品销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "熟食",
+        "evidence_span": "熟食"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "羽绒及羽绒制品生产和销售",
+        "evidence_span": "羽绒及羽绒制品生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国家大型禽类食品加工企业",
+        "evidence_span": "国家大型禽类食品加工企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内肉鸭产业链一体化的领军者",
+        "evidence_span": "国内肉鸭产业链一体化的领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内羽绒生产龙头企业之一",
+        "evidence_span": "国内羽绒生产龙头企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "唯一一家羽绒生产类的A股上市公司",
+        "evidence_span": "唯一一家羽绒生产类的A股上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "羽绒",
+        "evidence_span": "主要产品为羽绒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鸭肉生鲜冻品",
+        "evidence_span": "鸭肉生鲜冻品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "鸭制熟食",
+        "evidence_span": "鸭制熟食"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "预制菜",
+        "evidence_span": "预制菜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "休闲小零食",
+        "evidence_span": "休闲小零食"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "火锅食材",
+        "evidence_span": "火锅食材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卤制品",
+        "evidence_span": "卤制品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "河南双汇",
+        "evidence_span": "河南双汇"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南京桂花鸭",
+        "evidence_span": "南京桂花鸭"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "全聚德",
+        "evidence_span": "全聚德"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "煌上煌",
+        "evidence_span": "煌上煌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "麦德龙",
+        "evidence_span": "麦德龙"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "盒马鲜生",
+        "evidence_span": "盒马鲜生"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "绝味",
+        "evidence_span": "绝味"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "统一",
+        "evidence_span": "统一"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "永辉",
+        "evidence_span": "永辉"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大润发",
+        "evidence_span": "大润发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丹尼斯",
+        "evidence_span": "丹尼斯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "胖东来",
+        "evidence_span": "胖东来"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东",
+        "evidence_span": "京东"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "天猫",
+        "evidence_span": "天猫"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美团",
+        "evidence_span": "美团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "兴盛优选",
+        "evidence_span": "兴盛优选"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海底捞",
+        "evidence_span": "海底捞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "回味",
+        "evidence_span": "回味"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小龙坎",
+        "evidence_span": "小龙坎"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "波司登",
+        "evidence_span": "波司登"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "雪中飞",
+        "evidence_span": "雪中飞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "千仞岗",
+        "evidence_span": "千仞岗"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "安踏",
+        "evidence_span": "安踏"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "特步",
+        "evidence_span": "特步"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海澜之家",
+        "evidence_span": "海澜之家"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "七匹狼",
+        "evidence_span": "七匹狼"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "以纯",
+        "evidence_span": "以纯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "唐立特",
+        "evidence_span": "唐立特"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:05:53"
+}

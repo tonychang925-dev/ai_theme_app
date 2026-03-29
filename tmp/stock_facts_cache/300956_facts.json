@@ -1,0 +1,379 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "消费电子产品结构件模组",
+      "evidence_span": "公司主要从事消费电子产品结构件模组及相关精密模具的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "精密模具",
+      "evidence_span": "公司主要从事消费电子产品结构件模组及相关精密模具的研发、设计、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新型太阳能电池",
+      "evidence_span": "主要从事新型太阳能电池、高效光伏组件的研发、生产、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "高效光伏组件",
+      "evidence_span": "主要从事新型太阳能电池、高效光伏组件的研发、生产、销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "笔记本电脑结构件领域的领先企业",
+      "evidence_span": "已成为国内笔记本电脑结构件领域的领先企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "专业结构件厂商",
+      "evidence_span": "这也就导致了专业结构件厂商的诞生"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "笔记本电脑结构件模组",
+      "evidence_span": "公司的主要产品为笔记本电脑结构件模组及相关精密模具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "笔记本电脑结构件配套精密模具",
+      "evidence_span": "笔记本电脑结构件配套精密模具"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "塑胶结构件",
+      "evidence_span": "塑胶结构件是起结构支撑固定等作用的塑胶部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属结构件",
+      "evidence_span": "金属结构件是外观主体件和起结构支撑固定等作用的金属部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "背盖",
+      "evidence_span": "笔记本电脑结构件模组可以分为背盖、前框、上盖、下盖等四大件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "前框",
+      "evidence_span": "笔记本电脑结构件模组可以分为背盖、前框、上盖、下盖等四大件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "上盖",
+      "evidence_span": "笔记本电脑结构件模组可以分为背盖、前框、上盖、下盖等四大件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "下盖",
+      "evidence_span": "笔记本电脑结构件模组可以分为背盖、前框、上盖、下盖等四大件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模具开发",
+      "evidence_span": "公司在模具开发、注塑、冲压、自动化组装、检测等工艺环节"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "注塑",
+      "evidence_span": "公司在模具开发、注塑、冲压、自动化组装、检测等工艺环节"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "冲压",
+      "evidence_span": "公司在模具开发、注塑、冲压、自动化组装、检测等工艺环节"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化组装",
+      "evidence_span": "公司在模具开发、注塑、冲压、自动化组装、检测等工艺环节"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "检测",
+      "evidence_span": "公司在模具开发、注塑、冲压、自动化组装、检测等工艺环节"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "喷漆",
+      "evidence_span": "公司外协加工主要涉及笔记本电脑结构件的喷漆、溅镀等工序"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "溅镀",
+      "evidence_span": "公司外协加工主要涉及笔记本电脑结构件的喷漆、溅镀等工序"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "喷砂",
+      "evidence_span": "生产工艺包括成型、喷砂、埋钉、溅镀、喷漆、冲压、CNC加工、组装等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "埋钉",
+      "evidence_span": "生产工艺包括成型、喷砂、埋钉、溅镀、喷漆、冲压、CNC加工、组装等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CNC加工",
+      "evidence_span": "生产工艺包括成型、喷砂、埋钉、溅镀、喷漆、冲压、CNC加工、组装等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "组装",
+      "evidence_span": "生产工艺包括成型、喷砂、埋钉、溅镀、喷漆、冲压、CNC加工、组装等"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联宝",
+      "evidence_span": "公司与联宝、仁宝、纬创、华勤等全球知名的笔记本电脑代工厂建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "仁宝",
+      "evidence_span": "公司与联宝、仁宝、纬创、华勤等全球知名的笔记本电脑代工厂建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "纬创",
+      "evidence_span": "公司与联宝、仁宝、纬创、华勤等全球知名的笔记本电脑代工厂建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华勤",
+      "evidence_span": "公司与联宝、仁宝、纬创、华勤等全球知名的笔记本电脑代工厂建立了长期稳定的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联想",
+      "evidence_span": "服务的笔记本电脑终端应用品牌包括联想、戴尔、小米、宏碁、惠普等全球主流及新兴笔记本电脑品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "戴尔",
+      "evidence_span": "服务的笔记本电脑终端应用品牌包括联想、戴尔、小米、宏碁、惠普等全球主流及新兴笔记本电脑品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "服务的笔记本电脑终端应用品牌包括联想、戴尔、小米、宏碁、惠普等全球主流及新兴笔记本电脑品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宏碁",
+      "evidence_span": "服务的笔记本电脑终端应用品牌包括联想、戴尔、小米、宏碁、惠普等全球主流及新兴笔记本电脑品牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "惠普",
+      "evidence_span": "服务的笔记本电脑终端应用品牌包括联想、戴尔、小米、宏碁、惠普等全球主流及新兴笔记本电脑品牌"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏产业",
+      "evidence_span": "进军光伏领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳中和",
+      "evidence_span": "中国国家主席在第七十五届联合国大会上提出2060年前实现碳中和的目标"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳达峰",
+      "evidence_span": "首次将“碳达峰、碳中和目标”写入发展规划"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "消费电子产品结构件模组",
+        "evidence_span": "公司主要从事消费电子产品结构件模组及相关精密模具的研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "精密模具",
+        "evidence_span": "公司主要从事消费电子产品结构件模组及相关精密模具的研发、设计、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新型太阳能电池",
+        "evidence_span": "主要从事新型太阳能电池、高效光伏组件的研发、生产、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "高效光伏组件",
+        "evidence_span": "主要从事新型太阳能电池、高效光伏组件的研发、生产、销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "笔记本电脑结构件领域的领先企业",
+        "evidence_span": "已成为国内笔记本电脑结构件领域的领先企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "专业结构件厂商",
+        "evidence_span": "这也就导致了专业结构件厂商的诞生"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "笔记本电脑结构件模组",
+        "evidence_span": "公司的主要产品为笔记本电脑结构件模组及相关精密模具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "笔记本电脑结构件配套精密模具",
+        "evidence_span": "笔记本电脑结构件配套精密模具"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "塑胶结构件",
+        "evidence_span": "塑胶结构件是起结构支撑固定等作用的塑胶部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属结构件",
+        "evidence_span": "金属结构件是外观主体件和起结构支撑固定等作用的金属部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "背盖",
+        "evidence_span": "笔记本电脑结构件模组可以分为背盖、前框、上盖、下盖等四大件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "前框",
+        "evidence_span": "笔记本电脑结构件模组可以分为背盖、前框、上盖、下盖等四大件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "上盖",
+        "evidence_span": "笔记本电脑结构件模组可以分为背盖、前框、上盖、下盖等四大件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "下盖",
+        "evidence_span": "笔记本电脑结构件模组可以分为背盖、前框、上盖、下盖等四大件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模具开发",
+        "evidence_span": "公司在模具开发、注塑、冲压、自动化组装、检测等工艺环节"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "注塑",
+        "evidence_span": "公司在模具开发、注塑、冲压、自动化组装、检测等工艺环节"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "冲压",
+        "evidence_span": "公司在模具开发、注塑、冲压、自动化组装、检测等工艺环节"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化组装",
+        "evidence_span": "公司在模具开发、注塑、冲压、自动化组装、检测等工艺环节"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "检测",
+        "evidence_span": "公司在模具开发、注塑、冲压、自动化组装、检测等工艺环节"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "喷漆",
+        "evidence_span": "公司外协加工主要涉及笔记本电脑结构件的喷漆、溅镀等工序"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "溅镀",
+        "evidence_span": "公司外协加工主要涉及笔记本电脑结构件的喷漆、溅镀等工序"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "喷砂",
+        "evidence_span": "生产工艺包括成型、喷砂、埋钉、溅镀、喷漆、冲压、CNC加工、组装等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "埋钉",
+        "evidence_span": "生产工艺包括成型、喷砂、埋钉、溅镀、喷漆、冲压、CNC加工、组装等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CNC加工",
+        "evidence_span": "生产工艺包括成型、喷砂、埋钉、溅镀、喷漆、冲压、CNC加工、组装等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "组装",
+        "evidence_span": "生产工艺包括成型、喷砂、埋钉、溅镀、喷漆、冲压、CNC加工、组装等"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联宝",
+        "evidence_span": "公司与联宝、仁宝、纬创、华勤等全球知名的笔记本电脑代工厂建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "仁宝",
+        "evidence_span": "公司与联宝、仁宝、纬创、华勤等全球知名的笔记本电脑代工厂建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "纬创",
+        "evidence_span": "公司与联宝、仁宝、纬创、华勤等全球知名的笔记本电脑代工厂建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华勤",
+        "evidence_span": "公司与联宝、仁宝、纬创、华勤等全球知名的笔记本电脑代工厂建立了长期稳定的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联想",
+        "evidence_span": "服务的笔记本电脑终端应用品牌包括联想、戴尔、小米、宏碁、惠普等全球主流及新兴笔记本电脑品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "戴尔",
+        "evidence_span": "服务的笔记本电脑终端应用品牌包括联想、戴尔、小米、宏碁、惠普等全球主流及新兴笔记本电脑品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "服务的笔记本电脑终端应用品牌包括联想、戴尔、小米、宏碁、惠普等全球主流及新兴笔记本电脑品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宏碁",
+        "evidence_span": "服务的笔记本电脑终端应用品牌包括联想、戴尔、小米、宏碁、惠普等全球主流及新兴笔记本电脑品牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "惠普",
+        "evidence_span": "服务的笔记本电脑终端应用品牌包括联想、戴尔、小米、宏碁、惠普等全球主流及新兴笔记本电脑品牌"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏产业",
+        "evidence_span": "进军光伏领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳中和",
+        "evidence_span": "中国国家主席在第七十五届联合国大会上提出2060年前实现碳中和的目标"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳达峰",
+        "evidence_span": "首次将“碳达峰、碳中和目标”写入发展规划"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:04:55"
+}

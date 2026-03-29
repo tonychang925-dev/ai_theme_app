@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "6ec214d229b5", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "段落前半部分描述了华为与中芯国际提交SAQP专利和合作开发3纳米芯片的事件，但涉及技术细节（如使用DUV生产3纳米芯片），可能包含稳定知识；后半部分为三星电子罢工事件。整体混有知识和事件。"}}

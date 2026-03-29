@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "8b23463f2fb6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述了ASML公司对未来技术扩展和产品组合的预期声明，这是一个具体的企业动态或展望，属于事件性信息，不包含稳定的、可沉淀的静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:49:02", "result": {"span_uid": "6b0656316ca1", "action": "rewrite", "canonical_text": "低空经济通感一体化建设和车路云一体化建设是建筑设计领域的新兴需求来源。", "final_type": "signal", "final_role": "新兴技术驱动的需求变化", "stability": "medium", "reason": "原文为事件性预测，改写为稳定知识表达，体现新兴技术对建筑设计需求的催化作用，属于阶段性变化信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "c44ae860d1c6", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述新华网刊文和征求意见稿的新闻事件，无具体知识细节，属于事件报道。"}}

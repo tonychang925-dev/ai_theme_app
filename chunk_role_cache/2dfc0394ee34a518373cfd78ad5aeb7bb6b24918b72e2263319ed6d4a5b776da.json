@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "414ed7695f9b", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落是北方华创的业绩公告，属于公司具体事件，没有涉及半导体设备的知识性描述。"}}

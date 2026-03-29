@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:51:46", "result": {"span_uid": "eb4d102fb09d", "action": "keep", "canonical_text": "半导体产业链的关键环节包括集成电路设计、制造、封装测试和材料。", "final_type": "core", "final_role": "产业链环节", "stability": "high", "reason": "原文是政策鼓励表述，但直接定义了半导体产业链的构成环节，改写后去除了事件化和地点信息，保留了核心本体知识。"}}

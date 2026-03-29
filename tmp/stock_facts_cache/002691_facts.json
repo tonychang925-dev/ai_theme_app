@@ -1,0 +1,529 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "支护机具",
+      "evidence_span": "主营支护机具"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "安全钻机",
+      "evidence_span": "主营支护机具、安全钻机"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "掘进设备",
+      "evidence_span": "主营支护机具、安全钻机、掘进设备"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运输机械",
+      "evidence_span": "主营支护机具、安全钻机、掘进设备和运输机械"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "矿山装备的专业供应商与服务商",
+      "evidence_span": "是矿山装备的专业供应商与服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "煤炭支护机具龙头",
+      "evidence_span": "煤炭支护机具龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锚杆支护机具的骨干生产厂家",
+      "evidence_span": "锚杆支护机具的骨干生产厂家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "双臂锚杆钻车",
+      "evidence_span": "公司生产的双臂锚杆钻车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单臂锚杆钻车",
+      "evidence_span": "单臂锚杆钻车是公司设计研发的智能化钻锚机器人"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MQT-130/3.5气动锚杆钻机",
+      "evidence_span": "MQT-130/3.5气动锚杆钻机获得2020年中国煤炭机械工业优质品牌产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连续钻进钻车",
+      "evidence_span": "公司自主研发生产了连续钻进钻车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "30米防冲防突专用钻车",
+      "evidence_span": "30米防冲防突专用钻车等系列化智能钻车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全方位液压钻车",
+      "evidence_span": "全方位液压钻车获得全国煤矿支护技术创新成果一等奖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连续自动钻进防突防冲钻车",
+      "evidence_span": "连续自动钻进防突防冲钻车研究与制造"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ZDY4000S全液压坑道钻机",
+      "evidence_span": "ZDY4000S全液压坑道钻机获得2020年中国煤炭机械工业优质品牌产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "掘探一体机",
+      "evidence_span": "公司生产的掘探一体机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "煤矿用大坡度掘进机",
+      "evidence_span": "煤矿用大坡度掘进机结构稳定"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "3D成型整铸刮板输送机",
+      "evidence_span": "公司生产的运输机械类产品主要是3D成型整铸刮板输送机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "单轨吊运输装备",
+      "evidence_span": "公司生产的运输机械类产品主要是3D成型整铸刮板输送机和单轨吊运输装备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SGZ800/1050整体铸造刮板输送机",
+      "evidence_span": "SGZ800/1050整体铸造刮板输送机获得2020年中国煤炭机械工业优质品牌产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DX防爆特殊型蓄电池单轨吊运输系统",
+      "evidence_span": "DX防爆特殊型蓄电池单轨吊运输系统根据矿井使用条件和要求"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能防爆柴油机单轨吊机车",
+      "evidence_span": "智能防爆柴油机单轨吊机车以国III防爆柴油机为动力"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整铸转载机",
+      "evidence_span": "目前公司3D成型整铸装备系列产品主要包括整铸刮板输送机、整铸转载机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "破碎机",
+      "evidence_span": "整铸转载机、破碎机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "整铸齿轨",
+      "evidence_span": "破碎机、整铸齿轨等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防爆特殊型蓄电池单轨吊机车",
+      "evidence_span": "单轨吊运输装备主要包括防爆特殊型蓄电池单轨吊机车"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能防爆柴油机单轨吊",
+      "evidence_span": "智能防爆柴油机单轨吊等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动装卸钻杆",
+      "evidence_span": "应用自动装卸钻杆"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能钻杆库",
+      "evidence_span": "智能钻杆库"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "远程操作",
+      "evidence_span": "远程操作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动输送锚索",
+      "evidence_span": "自动输送锚索"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精确定位",
+      "evidence_span": "精确定位等关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一键启动自动钻进",
+      "evidence_span": "实现一键启动自动钻进的功能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动上下杆技术",
+      "evidence_span": "形成了自动上下杆技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "远程操作技术",
+      "evidence_span": "远程操作技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一键全自动钻孔技术",
+      "evidence_span": "一键全自动钻孔技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能防卡钻技术",
+      "evidence_span": "智能防卡钻技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连续通水技术",
+      "evidence_span": "连续通水技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能诊断显示技术",
+      "evidence_span": "智能诊断显示技术等多项关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "全方位折叠钻臂",
+      "evidence_span": "应用全方位折叠钻臂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "双独立控制系统",
+      "evidence_span": "双独立控制系统等关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "整体精密铸造工艺",
+      "evidence_span": "采用了独创的整体精密铸造工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大型宽幅全帧智能3D砂型打印技术与装备",
+      "evidence_span": "2021年大型宽幅全帧智能3D砂型打印技术与装备取得中国煤炭工业协会颁发的科学技术成果鉴定证书"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能驾驶系统软件",
+      "evidence_span": "配套自主研发的智能驾驶系统软件"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "远程视频数据监控技术",
+      "evidence_span": "应用远程视频数据监控技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超速保护控制技术",
+      "evidence_span": "超速保护控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机车故障预警及自主诊断技术",
+      "evidence_span": "机车故障预警及自主诊断技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "变速切驱防溜车技术",
+      "evidence_span": "变速切驱防溜车技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动避障技术",
+      "evidence_span": "自动避障技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精准定位技术",
+      "evidence_span": "精准定位技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "轨道检测技术",
+      "evidence_span": "轨道检测技术等关键技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各大煤矿集团",
+      "evidence_span": "广泛应用于各大煤矿集团"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "支护机具",
+        "evidence_span": "主营支护机具"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "安全钻机",
+        "evidence_span": "主营支护机具、安全钻机"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "掘进设备",
+        "evidence_span": "主营支护机具、安全钻机、掘进设备"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "运输机械",
+        "evidence_span": "主营支护机具、安全钻机、掘进设备和运输机械"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "矿山装备的专业供应商与服务商",
+        "evidence_span": "是矿山装备的专业供应商与服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "煤炭支护机具龙头",
+        "evidence_span": "煤炭支护机具龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锚杆支护机具的骨干生产厂家",
+        "evidence_span": "锚杆支护机具的骨干生产厂家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "双臂锚杆钻车",
+        "evidence_span": "公司生产的双臂锚杆钻车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单臂锚杆钻车",
+        "evidence_span": "单臂锚杆钻车是公司设计研发的智能化钻锚机器人"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MQT-130/3.5气动锚杆钻机",
+        "evidence_span": "MQT-130/3.5气动锚杆钻机获得2020年中国煤炭机械工业优质品牌产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连续钻进钻车",
+        "evidence_span": "公司自主研发生产了连续钻进钻车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "30米防冲防突专用钻车",
+        "evidence_span": "30米防冲防突专用钻车等系列化智能钻车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全方位液压钻车",
+        "evidence_span": "全方位液压钻车获得全国煤矿支护技术创新成果一等奖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连续自动钻进防突防冲钻车",
+        "evidence_span": "连续自动钻进防突防冲钻车研究与制造"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ZDY4000S全液压坑道钻机",
+        "evidence_span": "ZDY4000S全液压坑道钻机获得2020年中国煤炭机械工业优质品牌产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "掘探一体机",
+        "evidence_span": "公司生产的掘探一体机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "煤矿用大坡度掘进机",
+        "evidence_span": "煤矿用大坡度掘进机结构稳定"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "3D成型整铸刮板输送机",
+        "evidence_span": "公司生产的运输机械类产品主要是3D成型整铸刮板输送机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "单轨吊运输装备",
+        "evidence_span": "公司生产的运输机械类产品主要是3D成型整铸刮板输送机和单轨吊运输装备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SGZ800/1050整体铸造刮板输送机",
+        "evidence_span": "SGZ800/1050整体铸造刮板输送机获得2020年中国煤炭机械工业优质品牌产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DX防爆特殊型蓄电池单轨吊运输系统",
+        "evidence_span": "DX防爆特殊型蓄电池单轨吊运输系统根据矿井使用条件和要求"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能防爆柴油机单轨吊机车",
+        "evidence_span": "智能防爆柴油机单轨吊机车以国III防爆柴油机为动力"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整铸转载机",
+        "evidence_span": "目前公司3D成型整铸装备系列产品主要包括整铸刮板输送机、整铸转载机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "破碎机",
+        "evidence_span": "整铸转载机、破碎机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "整铸齿轨",
+        "evidence_span": "破碎机、整铸齿轨等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防爆特殊型蓄电池单轨吊机车",
+        "evidence_span": "单轨吊运输装备主要包括防爆特殊型蓄电池单轨吊机车"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能防爆柴油机单轨吊",
+        "evidence_span": "智能防爆柴油机单轨吊等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动装卸钻杆",
+        "evidence_span": "应用自动装卸钻杆"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能钻杆库",
+        "evidence_span": "智能钻杆库"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "远程操作",
+        "evidence_span": "远程操作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动输送锚索",
+        "evidence_span": "自动输送锚索"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精确定位",
+        "evidence_span": "精确定位等关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一键启动自动钻进",
+        "evidence_span": "实现一键启动自动钻进的功能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动上下杆技术",
+        "evidence_span": "形成了自动上下杆技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "远程操作技术",
+        "evidence_span": "远程操作技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一键全自动钻孔技术",
+        "evidence_span": "一键全自动钻孔技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能防卡钻技术",
+        "evidence_span": "智能防卡钻技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连续通水技术",
+        "evidence_span": "连续通水技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能诊断显示技术",
+        "evidence_span": "智能诊断显示技术等多项关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "全方位折叠钻臂",
+        "evidence_span": "应用全方位折叠钻臂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "双独立控制系统",
+        "evidence_span": "双独立控制系统等关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "整体精密铸造工艺",
+        "evidence_span": "采用了独创的整体精密铸造工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大型宽幅全帧智能3D砂型打印技术与装备",
+        "evidence_span": "2021年大型宽幅全帧智能3D砂型打印技术与装备取得中国煤炭工业协会颁发的科学技术成果鉴定证书"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能驾驶系统软件",
+        "evidence_span": "配套自主研发的智能驾驶系统软件"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "远程视频数据监控技术",
+        "evidence_span": "应用远程视频数据监控技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超速保护控制技术",
+        "evidence_span": "超速保护控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机车故障预警及自主诊断技术",
+        "evidence_span": "机车故障预警及自主诊断技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "变速切驱防溜车技术",
+        "evidence_span": "变速切驱防溜车技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动避障技术",
+        "evidence_span": "自动避障技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精准定位技术",
+        "evidence_span": "精准定位技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "轨道检测技术",
+        "evidence_span": "轨道检测技术等关键技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各大煤矿集团",
+        "evidence_span": "广泛应用于各大煤矿集团"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:14:07"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:56:15", "result": {"chunk_id": "1c5c2b94f93c", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含两个事件：歼35A亮相航展和C919发动机首次更换。后者涉及C919维护和运营知识，但以事件形式描述，混合了事件和知识。"}}

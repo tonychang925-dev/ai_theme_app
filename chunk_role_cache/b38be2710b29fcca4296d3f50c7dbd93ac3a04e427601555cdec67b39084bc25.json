@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "80d660d38057", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述美国商会邮件、拜登政府出口限制计划等具体事件和时间推进，属于新闻动态，没有提供稳定的半导体设备知识。"}}

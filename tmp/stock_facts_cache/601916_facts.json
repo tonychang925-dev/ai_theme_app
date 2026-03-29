@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "全国性股份制商业银行",
+      "evidence_span": "浙商银行是我国唯一一家总部位于浙江省的全国性股份制商业银行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "深耕浙江",
+      "evidence_span": "深耕浙江、立足长三角地区形成自身经营特色"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "立足长三角",
+      "evidence_span": "深耕浙江、立足长三角地区形成自身经营特色"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "布局全国",
+      "evidence_span": "布局全国"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "五大业务板块协同发展",
+      "evidence_span": "推进五大板块协同发展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "浙江省最重要金融平台",
+      "evidence_span": "浙江省最重要金融平台"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国性股份制商业银行",
+      "evidence_span": "全国性股份制商业银行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "支付结算",
+      "evidence_span": "支付结算"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "贸易融资",
+      "evidence_span": "贸易融资"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金融科技",
+      "evidence_span": "金融科技"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大零售",
+      "evidence_span": "大零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大跨境",
+      "evidence_span": "大跨境"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大资管",
+      "evidence_span": "大资管"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "财富管理",
+      "evidence_span": "财富管理全新启航"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "供应链金融",
+      "evidence_span": "供应链金融"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色金融",
+      "evidence_span": "绿色金融"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "普惠金融",
+      "evidence_span": "普惠金融"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "应收账款全生命周期管理平台",
+      "evidence_span": "应收账款全生命周期管理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "财富管理平台",
+      "evidence_span": "财富管理平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "投行业务管理平台",
+      "evidence_span": "投行业务管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CZ智投平台",
+      "evidence_span": "CZ智投"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信汇宝跨境电商贷",
+      "evidence_span": "信汇宝跨境电商贷"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化改革",
+      "evidence_span": "数字化改革系统开启"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江省各级政府",
+      "evidence_span": "与各级政府通力密切合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "民营企业",
+      "evidence_span": "民营经济发达，孕育了一批优质的民营企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中小微企业",
+      "evidence_span": "中小微企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "制造业实业",
+      "evidence_span": "制造业实业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "供应链客户",
+      "evidence_span": "供应链客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "平台化战略",
+      "evidence_span": "平台化战略"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "全国性股份制商业银行",
+        "evidence_span": "浙商银行是我国唯一一家总部位于浙江省的全国性股份制商业银行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "深耕浙江",
+        "evidence_span": "深耕浙江、立足长三角地区形成自身经营特色"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "立足长三角",
+        "evidence_span": "深耕浙江、立足长三角地区形成自身经营特色"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "布局全国",
+        "evidence_span": "布局全国"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "五大业务板块协同发展",
+        "evidence_span": "推进五大板块协同发展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "浙江省最重要金融平台",
+        "evidence_span": "浙江省最重要金融平台"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国性股份制商业银行",
+        "evidence_span": "全国性股份制商业银行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "支付结算",
+        "evidence_span": "支付结算"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "贸易融资",
+        "evidence_span": "贸易融资"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金融科技",
+        "evidence_span": "金融科技"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大零售",
+        "evidence_span": "大零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大跨境",
+        "evidence_span": "大跨境"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大资管",
+        "evidence_span": "大资管"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "财富管理",
+        "evidence_span": "财富管理全新启航"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "供应链金融",
+        "evidence_span": "供应链金融"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色金融",
+        "evidence_span": "绿色金融"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "普惠金融",
+        "evidence_span": "普惠金融"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "应收账款全生命周期管理平台",
+        "evidence_span": "应收账款全生命周期管理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "财富管理平台",
+        "evidence_span": "财富管理平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "投行业务管理平台",
+        "evidence_span": "投行业务管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CZ智投平台",
+        "evidence_span": "CZ智投"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信汇宝跨境电商贷",
+        "evidence_span": "信汇宝跨境电商贷"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化改革",
+        "evidence_span": "数字化改革系统开启"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江省各级政府",
+        "evidence_span": "与各级政府通力密切合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "民营企业",
+        "evidence_span": "民营经济发达，孕育了一批优质的民营企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中小微企业",
+        "evidence_span": "中小微企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "制造业实业",
+        "evidence_span": "制造业实业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "供应链客户",
+        "evidence_span": "供应链客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "平台化战略",
+        "evidence_span": "平台化战略"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:43:54"
+}

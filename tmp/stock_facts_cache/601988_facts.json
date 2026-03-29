@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "商业银行",
+      "evidence_span": "本行从事银行业及有关的金融服务，包括商业银行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "投资银行",
+      "evidence_span": "本行从事银行业及有关的金融服务，包括投资银行"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "直接投资",
+      "evidence_span": "本行从事银行业及有关的金融服务，包括直接投资"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "证券",
+      "evidence_span": "本行从事银行业及有关的金融服务，包括证券"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "保险",
+      "evidence_span": "本行从事银行业及有关的金融服务，包括保险"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "基金",
+      "evidence_span": "本行从事银行业及有关的金融服务，包括基金"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "飞机租赁",
+      "evidence_span": "本行从事银行业及有关的金融服务，包括飞机租赁"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资产管理",
+      "evidence_span": "本行从事银行业及有关的金融服务，包括资产管理"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融科技",
+      "evidence_span": "本行从事银行业及有关的金融服务，包括金融科技"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融租赁",
+      "evidence_span": "本行从事银行业及有关的金融服务，包括金融租赁"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国有商业银行",
+      "evidence_span": "中国第四大国有商业银行"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国际化大行",
+      "evidence_span": "价值低估的国际化大行"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信贷服务",
+      "evidence_span": "持续调整优化信贷结构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "消费金融",
+      "evidence_span": "创新消费金融场景"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小微企业金融服务",
+      "evidence_span": "加大对小微企业、民营经济的支持力度"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乡村振兴金融服务",
+      "evidence_span": "服务乡村振兴"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绿色金融",
+      "evidence_span": "促进经济社会绿色低碳循环发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房地产金融服务",
+      "evidence_span": "支持房地产市场平稳发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "个人授信业务",
+      "evidence_span": "支持个人授信业务的稳定发展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "资产管理业务",
+      "evidence_span": "进一步加强资管业务风险的集团统筹管理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字人民币业务",
+      "evidence_span": "促进数字人民币业务和场景建设双向赋能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能风控",
+      "evidence_span": "智能风控取得快速进展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "风险管理数字化转型",
+      "evidence_span": "加快推进风险管理向数字化转型"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "云计算技术",
+      "evidence_span": "加快云计算、大数据、人工智能、物联网等技术的运用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据技术",
+      "evidence_span": "加快云计算、大数据、人工智能、物联网等技术的运用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能技术",
+      "evidence_span": "加快云计算、大数据、人工智能、物联网等技术的运用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网技术",
+      "evidence_span": "加快云计算、大数据、人工智能、物联网等技术的运用"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "海外业务优势",
+      "evidence_span": "中国银行海外业务优势突出"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国际化",
+      "evidence_span": "国际化、多元化程度高"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "全球化综合化",
+      "evidence_span": "全球化综合化领先"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "商业银行",
+        "evidence_span": "本行从事银行业及有关的金融服务，包括商业银行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "投资银行",
+        "evidence_span": "本行从事银行业及有关的金融服务，包括投资银行"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "直接投资",
+        "evidence_span": "本行从事银行业及有关的金融服务，包括直接投资"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "证券",
+        "evidence_span": "本行从事银行业及有关的金融服务，包括证券"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "保险",
+        "evidence_span": "本行从事银行业及有关的金融服务，包括保险"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "基金",
+        "evidence_span": "本行从事银行业及有关的金融服务，包括基金"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "飞机租赁",
+        "evidence_span": "本行从事银行业及有关的金融服务，包括飞机租赁"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资产管理",
+        "evidence_span": "本行从事银行业及有关的金融服务，包括资产管理"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融科技",
+        "evidence_span": "本行从事银行业及有关的金融服务，包括金融科技"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融租赁",
+        "evidence_span": "本行从事银行业及有关的金融服务，包括金融租赁"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国有商业银行",
+        "evidence_span": "中国第四大国有商业银行"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国际化大行",
+        "evidence_span": "价值低估的国际化大行"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信贷服务",
+        "evidence_span": "持续调整优化信贷结构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "消费金融",
+        "evidence_span": "创新消费金融场景"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小微企业金融服务",
+        "evidence_span": "加大对小微企业、民营经济的支持力度"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乡村振兴金融服务",
+        "evidence_span": "服务乡村振兴"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绿色金融",
+        "evidence_span": "促进经济社会绿色低碳循环发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房地产金融服务",
+        "evidence_span": "支持房地产市场平稳发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "个人授信业务",
+        "evidence_span": "支持个人授信业务的稳定发展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "资产管理业务",
+        "evidence_span": "进一步加强资管业务风险的集团统筹管理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字人民币业务",
+        "evidence_span": "促进数字人民币业务和场景建设双向赋能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能风控",
+        "evidence_span": "智能风控取得快速进展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "风险管理数字化转型",
+        "evidence_span": "加快推进风险管理向数字化转型"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "云计算技术",
+        "evidence_span": "加快云计算、大数据、人工智能、物联网等技术的运用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据技术",
+        "evidence_span": "加快云计算、大数据、人工智能、物联网等技术的运用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能技术",
+        "evidence_span": "加快云计算、大数据、人工智能、物联网等技术的运用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网技术",
+        "evidence_span": "加快云计算、大数据、人工智能、物联网等技术的运用"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "海外业务优势",
+        "evidence_span": "中国银行海外业务优势突出"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国际化",
+        "evidence_span": "国际化、多元化程度高"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "全球化综合化",
+        "evidence_span": "全球化综合化领先"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:48:29"
+}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "fd64182d5687", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落包含对数据安全重要性和网安产业需求的静态知识（如产品线扩展能力、解决方案提供能力等），但混合了《网络数据安全管理条例》发布和执行的事件信息，因此属于候选混合状态。"}}

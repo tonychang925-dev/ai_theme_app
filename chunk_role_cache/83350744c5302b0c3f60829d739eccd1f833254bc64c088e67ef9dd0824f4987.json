@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "49148f03cfd6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述时的科技与阿联酋企业签署采购协议的具体事件，包括订单金额、商业化落地等商业动态，无静态知识说明，属于纯事件。"}}

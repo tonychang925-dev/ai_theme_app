@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:27:01", "result": {"chunk_id": "6f38db22616a", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落前半部分报告票房事件（突破80亿元），后半部分描述了国家电影局的政策活动（电影惠民消费季），可能隐含政策知识，但混合了事件信息，需进一步裁决。"}}

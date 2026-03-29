@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:31:44", "result": {"chunk_id": "541ceacc18c6", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述FDA对苹果AirPods Pro 2听力辅助功能的分类，这是一个具体事件或监管进展，与苹果MR题材本体（如头显设备、技术原理）无直接关联。"}}

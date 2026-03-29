@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电新能源材料",
+      "evidence_span": "聚焦于锂电新能源业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂盐",
+      "evidence_span": "业务延伸至锂盐及稀土产品等新能源材料领域"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "稀土产品",
+      "evidence_span": "业务延伸至锂盐及稀土产品等新能源材料领域"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂业新星",
+      "evidence_span": "不容忽视的锂业新星"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂业新贵",
+      "evidence_span": "锂业新贵认知兑现"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂业新秀",
+      "evidence_span": "盛新锂能华丽蜕变，锂业新秀"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂业龙头",
+      "evidence_span": "盛新锂能资源、规模优势突出的锂业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂业纯正标的",
+      "evidence_span": "跻身国内第一梯队的锂业纯正标的"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "二线锂业新秀",
+      "evidence_span": "盛新锂能成长中的二线锂业新秀"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂精矿",
+      "evidence_span": "锂精矿 7.5 万吨/年"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳酸锂",
+      "evidence_span": "折合碳酸锂 41.93 万吨"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氢氧化锂",
+      "evidence_span": "年产 3 万吨锂盐（全部为氢氧化锂）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "金属锂",
+      "evidence_span": "规划产能为年产 1,000 吨金属锂"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "锂辉石提锂",
+      "evidence_span": "布局锂辉石提锂和盐湖提锂项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "盐湖提锂",
+      "evidence_span": "布局锂辉石提锂和盐湖提锂项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "定增引入比亚迪作为战略投资者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "锂产业链一体化",
+      "evidence_span": "锂产业链一体化新星"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "锂+稀土双轮驱动",
+      "evidence_span": "“锂+稀土”双轮驱动"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电新能源材料",
+        "evidence_span": "聚焦于锂电新能源业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂盐",
+        "evidence_span": "业务延伸至锂盐及稀土产品等新能源材料领域"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "稀土产品",
+        "evidence_span": "业务延伸至锂盐及稀土产品等新能源材料领域"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂业新星",
+        "evidence_span": "不容忽视的锂业新星"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂业新贵",
+        "evidence_span": "锂业新贵认知兑现"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂业新秀",
+        "evidence_span": "盛新锂能华丽蜕变，锂业新秀"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂业龙头",
+        "evidence_span": "盛新锂能资源、规模优势突出的锂业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂业纯正标的",
+        "evidence_span": "跻身国内第一梯队的锂业纯正标的"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "二线锂业新秀",
+        "evidence_span": "盛新锂能成长中的二线锂业新秀"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂精矿",
+        "evidence_span": "锂精矿 7.5 万吨/年"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳酸锂",
+        "evidence_span": "折合碳酸锂 41.93 万吨"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氢氧化锂",
+        "evidence_span": "年产 3 万吨锂盐（全部为氢氧化锂）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "金属锂",
+        "evidence_span": "规划产能为年产 1,000 吨金属锂"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "锂辉石提锂",
+        "evidence_span": "布局锂辉石提锂和盐湖提锂项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "盐湖提锂",
+        "evidence_span": "布局锂辉石提锂和盐湖提锂项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "定增引入比亚迪作为战略投资者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "锂产业链一体化",
+        "evidence_span": "锂产业链一体化新星"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "锂+稀土双轮驱动",
+        "evidence_span": "“锂+稀土”双轮驱动"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:38:33"
+}

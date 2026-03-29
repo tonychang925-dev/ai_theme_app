@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "078234397ed5", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述国务院国资委发布的政策指导，涉及市值管理改进，是一个具体事件，没有提供军工集团本身的静态知识。"}}

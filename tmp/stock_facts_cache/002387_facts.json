@@ -1,0 +1,174 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "AMOLED新型显示产品的研发",
+      "evidence_span": "主营业务为AMOLED新型显示产品的研发、生产、销售和技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "主营业务为AMOLED新型显示产品的研发、生产、销售和技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主营业务为AMOLED新型显示产品的研发、生产、销售和技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务",
+      "evidence_span": "主营业务为AMOLED新型显示产品的研发、生产、销售和技术服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国产OLED领军企业",
+      "evidence_span": "国产OLED领军企业逐步成长"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中小尺寸AMOLED显示器件",
+      "evidence_span": "主要产品为中小尺寸AMOLED显示器件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "折叠产品",
+      "evidence_span": "公司折叠产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "屏下摄像产品",
+      "evidence_span": "屏下摄像等全球领先技术均有产品批量交付终端客户"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超高刷新率产品",
+      "evidence_span": "超高刷新率等全球领先技术均有产品批量交付终端客户"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃基Micro-LED拼接屏",
+      "evidence_span": "辰显光电成功推出中国大陆首款自主开发的玻璃基Micro-LED拼接屏"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "屏下摄像技术",
+      "evidence_span": "在屏下摄像领域不断实现技术突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高刷新率技术",
+      "evidence_span": "在高刷新率领域不断实现技术突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "柔性穿戴技术",
+      "evidence_span": "在柔性穿戴领域不断实现技术突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "1～120Hz大范围的动态刷新率低功耗技术",
+      "evidence_span": "可实现1～120Hz大范围的动态刷新率低功耗产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一线品牌客户",
+      "evidence_span": "在一线品牌客户导入方面持续取得新的进展"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "头部品牌客户",
+      "evidence_span": "均已交付头部品牌客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "品牌客户",
+      "evidence_span": "合肥线已于2021年8月下旬实现对品牌客户的量产交付"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产OLED领军企业",
+      "evidence_span": "国产OLED领军企业逐步成长"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "AMOLED新型显示产品的研发、生产、销售和技术服务",
+        "evidence_span": "主营业务为AMOLED新型显示产品的研发、生产、销售和技术服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国产OLED领军企业",
+        "evidence_span": "国产OLED领军企业逐步成长"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中小尺寸AMOLED显示器件",
+        "evidence_span": "主要产品为中小尺寸AMOLED显示器件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "折叠产品",
+        "evidence_span": "公司折叠产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "屏下摄像产品",
+        "evidence_span": "屏下摄像等全球领先技术均有产品批量交付终端客户"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超高刷新率产品",
+        "evidence_span": "超高刷新率等全球领先技术均有产品批量交付终端客户"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃基Micro-LED拼接屏",
+        "evidence_span": "辰显光电成功推出中国大陆首款自主开发的玻璃基Micro-LED拼接屏"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "屏下摄像技术",
+        "evidence_span": "在屏下摄像领域不断实现技术突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高刷新率技术",
+        "evidence_span": "在高刷新率领域不断实现技术突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "柔性穿戴技术",
+        "evidence_span": "在柔性穿戴领域不断实现技术突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "1～120Hz大范围的动态刷新率低功耗技术",
+        "evidence_span": "可实现1～120Hz大范围的动态刷新率低功耗产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一线品牌客户",
+        "evidence_span": "在一线品牌客户导入方面持续取得新的进展"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "头部品牌客户",
+        "evidence_span": "均已交付头部品牌客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "品牌客户",
+        "evidence_span": "合肥线已于2021年8月下旬实现对品牌客户的量产交付"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产OLED领军企业",
+        "evidence_span": "国产OLED领军企业逐步成长"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:32:45"
+}

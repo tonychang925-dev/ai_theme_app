@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:37:14", "result": {"span_uid": "f32e9c1e2191", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文本是具体的企业产品进展事件，包含新闻口吻和预测性表述，无法整理成稳定、可独立成立的知识块。"}}

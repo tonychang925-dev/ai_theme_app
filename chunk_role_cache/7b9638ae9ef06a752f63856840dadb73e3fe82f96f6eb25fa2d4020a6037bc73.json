@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:58:48", "result": {"chunk_id": "55ac1816276e", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "段落报告了中国科学院EAST装置的具体实验发现（日期、团队宣布），是事件性内容，但核心是证实托卡马克密度自由区的存在和突破密度极限的方法，这提供了磁约束核聚变高密度运行的重要物理依据，属于有价值的静态知识，因此混合了事件和知识。"}}

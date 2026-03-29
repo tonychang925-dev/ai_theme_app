@@ -1,0 +1,274 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "烟标业务",
+      "evidence_span": "烟标业务实现销售收入59,389万元"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "社会包装",
+      "evidence_span": "社会包装及文创产品的承接主体是瑞明科技"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "文创业务",
+      "evidence_span": "社会包装及文创产品的承接主体是瑞明科技"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "防伪行业企业",
+      "evidence_span": "公司专注“防伪”行业30多年"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "烟草包装配套企业",
+      "evidence_span": "公司所属烟草包装配套行业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光全息防伪纸",
+      "evidence_span": "公司主要产品为激光全息防伪纸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光全息防伪膜",
+      "evidence_span": "公司主要产品为激光全息防伪膜"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "防伪拉线",
+      "evidence_span": "公司主要产品为防伪拉线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水松纸",
+      "evidence_span": "公司主要产品为水松纸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "铂金浮雕系列产品",
+      "evidence_span": "铂金浮雕系列产品的销售收入及销售收入占比逐年提高"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非铂金浮雕系列产品",
+      "evidence_span": "非铂金浮雕系列产品主要以传统镭射产品为主"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "铂金浮雕技术",
+      "evidence_span": "通过收购瑞明科技，引入铂金浮雕技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光全息技术",
+      "evidence_span": "将铂金浮雕技术与激光全息技术结合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精准定位技术",
+      "evidence_span": "将铂金浮雕技术与精准定位技术结合"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微结构光学铂金浮雕",
+      "evidence_span": "公司在微结构光学铂金浮雕方面从技术、设备到产品生产整体处于行业领先水平"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中华",
+      "evidence_span": "烟标产品配套的烟草品牌主要有“中华”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "利群",
+      "evidence_span": "烟标产品配套的烟草品牌主要有“利群”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "黄鹤楼",
+      "evidence_span": "烟标产品配套的烟草品牌主要有“黄鹤楼”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "黄山",
+      "evidence_span": "烟标产品配套的烟草品牌主要有“黄山”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "泰山",
+      "evidence_span": "烟标产品配套的烟草品牌主要有“泰山”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "剑南春",
+      "evidence_span": "配套的品牌主要有“剑南春”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "汾酒",
+      "evidence_span": "配套的品牌主要有“汾酒”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "舍得",
+      "evidence_span": "配套的品牌主要有“舍得”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奥特曼卡游龙头企业",
+      "evidence_span": "主要为国内“奥特曼”卡游龙头企业提供卡牌深加工服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧莱雅",
+      "evidence_span": "配套的品牌主要有“欧莱雅”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高露洁",
+      "evidence_span": "配套的品牌主要有“高露洁”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "片仔癀",
+      "evidence_span": "配套的品牌主要有“片仔癀”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "烟标业务",
+        "evidence_span": "烟标业务实现销售收入59,389万元"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "社会包装及文创业务",
+        "evidence_span": "社会包装及文创产品的承接主体是瑞明科技"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "防伪行业企业",
+        "evidence_span": "公司专注“防伪”行业30多年"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "烟草包装配套企业",
+        "evidence_span": "公司所属烟草包装配套行业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光全息防伪纸",
+        "evidence_span": "公司主要产品为激光全息防伪纸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光全息防伪膜",
+        "evidence_span": "公司主要产品为激光全息防伪膜"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "防伪拉线",
+        "evidence_span": "公司主要产品为防伪拉线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水松纸",
+        "evidence_span": "公司主要产品为水松纸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "铂金浮雕系列产品",
+        "evidence_span": "铂金浮雕系列产品的销售收入及销售收入占比逐年提高"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非铂金浮雕系列产品",
+        "evidence_span": "非铂金浮雕系列产品主要以传统镭射产品为主"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "铂金浮雕技术",
+        "evidence_span": "通过收购瑞明科技，引入铂金浮雕技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光全息技术",
+        "evidence_span": "将铂金浮雕技术与激光全息技术结合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精准定位技术",
+        "evidence_span": "将铂金浮雕技术与精准定位技术结合"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微结构光学铂金浮雕",
+        "evidence_span": "公司在微结构光学铂金浮雕方面从技术、设备到产品生产整体处于行业领先水平"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中华",
+        "evidence_span": "烟标产品配套的烟草品牌主要有“中华”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "利群",
+        "evidence_span": "烟标产品配套的烟草品牌主要有“利群”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "黄鹤楼",
+        "evidence_span": "烟标产品配套的烟草品牌主要有“黄鹤楼”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "黄山",
+        "evidence_span": "烟标产品配套的烟草品牌主要有“黄山”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "泰山",
+        "evidence_span": "烟标产品配套的烟草品牌主要有“泰山”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "剑南春",
+        "evidence_span": "配套的品牌主要有“剑南春”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "汾酒",
+        "evidence_span": "配套的品牌主要有“汾酒”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "舍得",
+        "evidence_span": "配套的品牌主要有“舍得”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奥特曼卡游龙头企业",
+        "evidence_span": "主要为国内“奥特曼”卡游龙头企业提供卡牌深加工服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧莱雅",
+        "evidence_span": "配套的品牌主要有“欧莱雅”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高露洁",
+        "evidence_span": "配套的品牌主要有“高露洁”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "片仔癀",
+        "evidence_span": "配套的品牌主要有“片仔癀”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T09:38:28"
+}

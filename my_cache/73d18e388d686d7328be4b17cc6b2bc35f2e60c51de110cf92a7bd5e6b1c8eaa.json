@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:05:07", "result": {"chunk_id": "a417b6968b1a", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段描述了B-21隐形轰炸机的生产加速、预算、时间线等细节，包含静态知识（如生产速率、资金分配），但混合了事件信息（如2026财年预算、特朗普政府法案），因此属于候选混合状态。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T12:55:44", "result": {"chunk_id": "6ec214d229b5", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段落描述华为与中芯国际提交SAQP芯片专利和计划合作开发3纳米芯片的事件，但提及使用DUV光刻机生产3纳米级制程的技术细节，可能隐含半导体设备技术（如光刻机应用）的静态知识，混合事件信息。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "61d3abe72009", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述了FSD的功能（静止起步、停车和倒车）和未来扩张计划（扩展到欧洲和中国市场），包含静态知识（功能说明）和事件性内容（时间表和监管依赖），因此属于混合状态，需要进一步裁决以提取稳定知识。"}}

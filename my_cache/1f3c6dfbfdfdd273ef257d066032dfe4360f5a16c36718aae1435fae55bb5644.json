@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:31:43", "result": {"chunk_id": "1c1c4834b7a0", "label": "noise", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要涉及历史和政治声明，与导弹题材的本体知识（如定义、结构、机制）无关，属于噪音内容。"}}

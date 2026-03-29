@@ -1,0 +1,304 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车底盘",
+      "evidence_span": "专注于研发和生产汽车底盘及悬架系统"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "悬架系统",
+      "evidence_span": "专注于研发和生产汽车底盘及悬架系统"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "机器人关节核心部件",
+      "evidence_span": "积极开拓机器人关节核心部件"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "低空经济领域轴承",
+      "evidence_span": "低空经济领域的轴承等新业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "独立汽车零部件系统供应商龙头",
+      "evidence_span": "独立汽车零部件系统供应商龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "世界级汽车底盘系统零部件企业",
+      "evidence_span": "迈向世界级汽车底盘系统零部件企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "万向节",
+      "evidence_span": "核心产品包括万向节"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "传动轴",
+      "evidence_span": "核心产品包括传动轴"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轮毂单元",
+      "evidence_span": "核心产品包括轮毂单元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "轴承",
+      "evidence_span": "核心产品包括轴承"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "制动系统",
+      "evidence_span": "核心产品包括制动系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "等速驱动轴",
+      "evidence_span": "等速驱动轴国内自主品牌规模前列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "ABS产品",
+      "evidence_span": "ABS产品在细分市场占有率达10%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "后处理系统",
+      "evidence_span": "后处理系统国内规模前三"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "国家级企业技术中心",
+      "evidence_span": "设有国家级企业技术中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "博士后科研工作站",
+      "evidence_span": "博士后科研工作站"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "授权专利3528项",
+      "evidence_span": "累积获得了授权专利3528项"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "发明专利511项",
+      "evidence_span": "其中发明专利511项"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奔驰",
+      "evidence_span": "公司为奔驰长期稳定供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝马",
+      "evidence_span": "公司为宝马长期稳定供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "丰田",
+      "evidence_span": "公司为丰田长期稳定供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大众",
+      "evidence_span": "公司为大众长期稳定供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "通用",
+      "evidence_span": "公司为通用长期稳定供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福特",
+      "evidence_span": "公司为福特长期稳定供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽",
+      "evidence_span": "公司为一汽长期稳定供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽",
+      "evidence_span": "公司为上汽长期稳定供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽",
+      "evidence_span": "公司为广汽长期稳定供货"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国重汽",
+      "evidence_span": "公司为中国重汽长期稳定供货"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车零部件转型",
+      "evidence_span": "积极向新能源汽车零部件转型"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车投资标的",
+      "evidence_span": "万向钱潮就是新能源车投资标的"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车底盘及悬架系统",
+        "evidence_span": "专注于研发和生产汽车底盘及悬架系统"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "机器人关节核心部件",
+        "evidence_span": "积极开拓机器人关节核心部件"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "低空经济领域轴承",
+        "evidence_span": "低空经济领域的轴承等新业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "独立汽车零部件系统供应商龙头",
+        "evidence_span": "独立汽车零部件系统供应商龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "世界级汽车底盘系统零部件企业",
+        "evidence_span": "迈向世界级汽车底盘系统零部件企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "万向节",
+        "evidence_span": "核心产品包括万向节"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "传动轴",
+        "evidence_span": "核心产品包括传动轴"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轮毂单元",
+        "evidence_span": "核心产品包括轮毂单元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "轴承",
+        "evidence_span": "核心产品包括轴承"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "制动系统",
+        "evidence_span": "核心产品包括制动系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "等速驱动轴",
+        "evidence_span": "等速驱动轴国内自主品牌规模前列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "ABS产品",
+        "evidence_span": "ABS产品在细分市场占有率达10%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "后处理系统",
+        "evidence_span": "后处理系统国内规模前三"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "国家级企业技术中心",
+        "evidence_span": "设有国家级企业技术中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "博士后科研工作站",
+        "evidence_span": "博士后科研工作站"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "授权专利3528项",
+        "evidence_span": "累积获得了授权专利3528项"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "发明专利511项",
+        "evidence_span": "其中发明专利511项"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奔驰",
+        "evidence_span": "公司为奔驰长期稳定供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝马",
+        "evidence_span": "公司为宝马长期稳定供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "丰田",
+        "evidence_span": "公司为丰田长期稳定供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大众",
+        "evidence_span": "公司为大众长期稳定供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "通用",
+        "evidence_span": "公司为通用长期稳定供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福特",
+        "evidence_span": "公司为福特长期稳定供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽",
+        "evidence_span": "公司为一汽长期稳定供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽",
+        "evidence_span": "公司为上汽长期稳定供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽",
+        "evidence_span": "公司为广汽长期稳定供货"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国重汽",
+        "evidence_span": "公司为中国重汽长期稳定供货"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车零部件转型",
+        "evidence_span": "积极向新能源汽车零部件转型"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车投资标的",
+        "evidence_span": "万向钱潮就是新能源车投资标的"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T13:02:58"
+}

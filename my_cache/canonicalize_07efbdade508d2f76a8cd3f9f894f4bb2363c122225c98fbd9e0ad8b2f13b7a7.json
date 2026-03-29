@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:17:45", "result": {"span_uid": "f1028e2189b3", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述华为特定专利技术细节，属于具体公司事件和预测性信息，无法整理成稳定、可独立成立的题材知识块。"}}

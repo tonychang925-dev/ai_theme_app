@@ -1,0 +1,259 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "银行业务",
+      "evidence_span": "我国银行业总资产稳健增长"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融服务实体经济",
+      "evidence_span": "坚持金融服务实体经济导向"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "绿色金融",
+      "evidence_span": "大力发展绿色金融"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "乡村振兴金融服务",
+      "evidence_span": "全面支持乡村振兴"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "城市商业银行",
+      "evidence_span": "城市商业银行总资产在全行业的占比保持稳定"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "A+H两地上市银行",
+      "evidence_span": "发挥“A+H”两地上市优势"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "客户贷款及垫款",
+      "evidence_span": "客户贷款及垫款利息收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证券投资",
+      "evidence_span": "证券投资利息收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "担保及承诺业务",
+      "evidence_span": "担保及承诺业务收入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字信贷产品",
+      "evidence_span": "推广“绿业贷”“科创贷”等特色化数字信贷产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "涉农场景化数字产品",
+      "evidence_span": "研发涉农场景化数字产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能风控平台",
+      "evidence_span": "完善智能风控平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字风控体系",
+      "evidence_span": "“风铃智评”数字风控体系"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "反洗钱系统",
+      "evidence_span": "开发上线了较完善的反洗钱系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据资产运营平台",
+      "evidence_span": "打造数据资产运营平台"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "实体企业",
+      "evidence_span": "重点支持实体企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "战略新兴产业集群",
+      "evidence_span": "重点支持战略新兴产业集群"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "普惠金融客群",
+      "evidence_span": "重点支持普惠金融"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "个人消费金融客群",
+      "evidence_span": "重点支持个人消费金融"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "科技创新企业",
+      "evidence_span": "重点支持科技创新"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "“专精特新”客群",
+      "evidence_span": "加强对“专精特新”客群的金融支持"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "重点发展产业链企业客群",
+      "evidence_span": "加强对重点发展产业链企业客群的金融支持"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新型农业经营主体",
+      "evidence_span": "重点加大新型农业经营主体信贷支持"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "成渝地区双城经济圈建设",
+      "evidence_span": "积极融入成渝地区双城经济圈建设"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "西部陆海新通道建设",
+      "evidence_span": "抢抓西部陆海新通道建设"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "银行业务",
+        "evidence_span": "我国银行业总资产稳健增长"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融服务实体经济",
+        "evidence_span": "坚持金融服务实体经济导向"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "绿色金融",
+        "evidence_span": "大力发展绿色金融"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "乡村振兴金融服务",
+        "evidence_span": "全面支持乡村振兴"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "城市商业银行",
+        "evidence_span": "城市商业银行总资产在全行业的占比保持稳定"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "A+H两地上市银行",
+        "evidence_span": "发挥“A+H”两地上市优势"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "客户贷款及垫款",
+        "evidence_span": "客户贷款及垫款利息收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证券投资",
+        "evidence_span": "证券投资利息收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "担保及承诺业务",
+        "evidence_span": "担保及承诺业务收入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字信贷产品",
+        "evidence_span": "推广“绿业贷”“科创贷”等特色化数字信贷产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "涉农场景化数字产品",
+        "evidence_span": "研发涉农场景化数字产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能风控平台",
+        "evidence_span": "完善智能风控平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字风控体系",
+        "evidence_span": "“风铃智评”数字风控体系"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "反洗钱系统",
+        "evidence_span": "开发上线了较完善的反洗钱系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据资产运营平台",
+        "evidence_span": "打造数据资产运营平台"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "实体企业",
+        "evidence_span": "重点支持实体企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "战略新兴产业集群",
+        "evidence_span": "重点支持战略新兴产业集群"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "普惠金融客群",
+        "evidence_span": "重点支持普惠金融"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "个人消费金融客群",
+        "evidence_span": "重点支持个人消费金融"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "科技创新企业",
+        "evidence_span": "重点支持科技创新"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "“专精特新”客群",
+        "evidence_span": "加强对“专精特新”客群的金融支持"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "重点发展产业链企业客群",
+        "evidence_span": "加强对重点发展产业链企业客群的金融支持"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新型农业经营主体",
+        "evidence_span": "重点加大新型农业经营主体信贷支持"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "成渝地区双城经济圈建设",
+        "evidence_span": "积极融入成渝地区双城经济圈建设"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "西部陆海新通道建设",
+        "evidence_span": "抢抓西部陆海新通道建设"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:45:49"
+}

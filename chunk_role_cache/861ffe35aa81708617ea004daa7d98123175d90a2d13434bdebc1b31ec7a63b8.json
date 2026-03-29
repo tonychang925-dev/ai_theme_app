@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_atomic_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T19:23:16", "result": {"chunk_id": "400638509b69", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述广东省政府印发措施并鼓励东莞发展半导体项目，这是具体政策公告和事件，没有稳定知识。"}}

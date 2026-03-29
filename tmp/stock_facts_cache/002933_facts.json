@@ -1,0 +1,329 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空装备产品研发",
+      "evidence_span": "公司主营业务是以伺服控制技术为核心的航空装备产品的研发、生产、销售及相关服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空装备产品生产",
+      "evidence_span": "公司主营业务是以伺服控制技术为核心的航空装备产品的研发、生产、销售及相关服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空装备产品销售",
+      "evidence_span": "公司主营业务是以伺服控制技术为核心的航空装备产品的研发、生产、销售及相关服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "航空装备产品相关服务",
+      "evidence_span": "公司主营业务是以伺服控制技术为核心的航空装备产品的研发、生产、销售及相关服务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "航空装备制造商",
+      "evidence_span": "以伺服控制技术为核心的航空装备制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高新技术企业",
+      "evidence_span": "公司系从事高端装备制造的高新技术企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "机载设备关键供应商",
+      "evidence_span": "公司为我国军机之挂架随动系统、炮塔随动系统、雷达天线收放装置、电动吊声绞车、浮标投放装置等机载设备的关键供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "直升机、固定翼飞机全电/多电技术产品核心供应商",
+      "evidence_span": "是直升机、固定翼飞机全电/多电技术产品的核心供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机载悬挂/发射装置类产品",
+      "evidence_span": "公司机载设备类产品目前主要包括机载悬挂/发射装置类产品、飞机信息管理与记录系统类等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "飞机信息管理与记录系统类产品",
+      "evidence_span": "公司机载设备类产品目前主要包括机载悬挂/发射装置类产品、飞机信息管理与记录系统类等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "武器随动系统",
+      "evidence_span": "武器随动系统——主要包括综合外挂梁系统、挂架随动系统、炮塔随动系统等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全电作动系统",
+      "evidence_span": "全电作动系统——主要包括折叠系统、电动吊声绞车、浮标投放装置、雷达天线收放装置等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合外挂梁系统",
+      "evidence_span": "武器随动系统——主要包括综合外挂梁系统、挂架随动系统、炮塔随动系统等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "挂架随动系统",
+      "evidence_span": "武器随动系统——主要包括综合外挂梁系统、挂架随动系统、炮塔随动系统等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "炮塔随动系统",
+      "evidence_span": "武器随动系统——主要包括综合外挂梁系统、挂架随动系统、炮塔随动系统等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "折叠系统",
+      "evidence_span": "全电作动系统——主要包括折叠系统、电动吊声绞车、浮标投放装置、雷达天线收放装置等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动吊声绞车",
+      "evidence_span": "全电作动系统——主要包括折叠系统、电动吊声绞车、浮标投放装置、雷达天线收放装置等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "浮标投放装置",
+      "evidence_span": "全电作动系统——主要包括折叠系统、电动吊声绞车、浮标投放装置、雷达天线收放装置等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "雷达天线收放装置",
+      "evidence_span": "全电作动系统——主要包括折叠系统、电动吊声绞车、浮标投放装置、雷达天线收放装置等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机载用视频处理系统",
+      "evidence_span": "包括机载用视频处理系统和视频记录仪等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视频记录仪",
+      "evidence_span": "包括机载用视频处理系统和视频记录仪等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "技术服务",
+      "evidence_span": "技术服务是指公司凭借在机载设备方面的技术积累，接受用户、主机厂商、主机配套厂商或科研院所的委托，为其提供的科研、开发、测试等方面的服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "综合测试与保障系统产品",
+      "evidence_span": "公司还向客户提供综合测试与保障系统产品、少量的机载设备检测、维修等其他服务"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "伺服控制技术",
+      "evidence_span": "以伺服控制技术为核心的航空装备制造商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "伺服驱动技术",
+      "evidence_span": "专注于伺服驱动技术、高精度传动技术和视频处理技术的开发与应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高精度传动技术",
+      "evidence_span": "专注于伺服驱动技术、高精度传动技术和视频处理技术的开发与应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "视频处理技术",
+      "evidence_span": "专注于伺服驱动技术、高精度传动技术和视频处理技术的开发与应用"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能控制技术",
+      "evidence_span": "机载悬挂/发射装置类产品是以智能控制技术/精密传动技术为基础的随动系统类产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密传动技术",
+      "evidence_span": "机载悬挂/发射装置类产品是以智能控制技术/精密传动技术为基础的随动系统类产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "军用全数字交流伺服技术",
+      "evidence_span": "公司拥有军用全数字交流伺服技术的自主知识产权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中航工业旗下多家机载配套单位",
+      "evidence_span": "公司与中航工业旗下多家机载配套单位长期保持密切合作的关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国防军工",
+      "evidence_span": "公司产品主要应用于国防军工领域"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空装备产品研发",
+        "evidence_span": "公司主营业务是以伺服控制技术为核心的航空装备产品的研发、生产、销售及相关服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空装备产品生产",
+        "evidence_span": "公司主营业务是以伺服控制技术为核心的航空装备产品的研发、生产、销售及相关服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空装备产品销售",
+        "evidence_span": "公司主营业务是以伺服控制技术为核心的航空装备产品的研发、生产、销售及相关服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "航空装备产品相关服务",
+        "evidence_span": "公司主营业务是以伺服控制技术为核心的航空装备产品的研发、生产、销售及相关服务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "航空装备制造商",
+        "evidence_span": "以伺服控制技术为核心的航空装备制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高新技术企业",
+        "evidence_span": "公司系从事高端装备制造的高新技术企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "机载设备关键供应商",
+        "evidence_span": "公司为我国军机之挂架随动系统、炮塔随动系统、雷达天线收放装置、电动吊声绞车、浮标投放装置等机载设备的关键供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "直升机、固定翼飞机全电/多电技术产品核心供应商",
+        "evidence_span": "是直升机、固定翼飞机全电/多电技术产品的核心供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机载悬挂/发射装置类产品",
+        "evidence_span": "公司机载设备类产品目前主要包括机载悬挂/发射装置类产品、飞机信息管理与记录系统类等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "飞机信息管理与记录系统类产品",
+        "evidence_span": "公司机载设备类产品目前主要包括机载悬挂/发射装置类产品、飞机信息管理与记录系统类等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "武器随动系统",
+        "evidence_span": "武器随动系统——主要包括综合外挂梁系统、挂架随动系统、炮塔随动系统等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全电作动系统",
+        "evidence_span": "全电作动系统——主要包括折叠系统、电动吊声绞车、浮标投放装置、雷达天线收放装置等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合外挂梁系统",
+        "evidence_span": "武器随动系统——主要包括综合外挂梁系统、挂架随动系统、炮塔随动系统等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "挂架随动系统",
+        "evidence_span": "武器随动系统——主要包括综合外挂梁系统、挂架随动系统、炮塔随动系统等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "炮塔随动系统",
+        "evidence_span": "武器随动系统——主要包括综合外挂梁系统、挂架随动系统、炮塔随动系统等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "折叠系统",
+        "evidence_span": "全电作动系统——主要包括折叠系统、电动吊声绞车、浮标投放装置、雷达天线收放装置等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动吊声绞车",
+        "evidence_span": "全电作动系统——主要包括折叠系统、电动吊声绞车、浮标投放装置、雷达天线收放装置等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "浮标投放装置",
+        "evidence_span": "全电作动系统——主要包括折叠系统、电动吊声绞车、浮标投放装置、雷达天线收放装置等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "雷达天线收放装置",
+        "evidence_span": "全电作动系统——主要包括折叠系统、电动吊声绞车、浮标投放装置、雷达天线收放装置等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机载用视频处理系统",
+        "evidence_span": "包括机载用视频处理系统和视频记录仪等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视频记录仪",
+        "evidence_span": "包括机载用视频处理系统和视频记录仪等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "技术服务",
+        "evidence_span": "技术服务是指公司凭借在机载设备方面的技术积累，接受用户、主机厂商、主机配套厂商或科研院所的委托，为其提供的科研、开发、测试等方面的服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "综合测试与保障系统产品",
+        "evidence_span": "公司还向客户提供综合测试与保障系统产品、少量的机载设备检测、维修等其他服务"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "伺服控制技术",
+        "evidence_span": "以伺服控制技术为核心的航空装备制造商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "伺服驱动技术",
+        "evidence_span": "专注于伺服驱动技术、高精度传动技术和视频处理技术的开发与应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高精度传动技术",
+        "evidence_span": "专注于伺服驱动技术、高精度传动技术和视频处理技术的开发与应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "视频处理技术",
+        "evidence_span": "专注于伺服驱动技术、高精度传动技术和视频处理技术的开发与应用"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能控制技术",
+        "evidence_span": "机载悬挂/发射装置类产品是以智能控制技术/精密传动技术为基础的随动系统类产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密传动技术",
+        "evidence_span": "机载悬挂/发射装置类产品是以智能控制技术/精密传动技术为基础的随动系统类产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "军用全数字交流伺服技术",
+        "evidence_span": "公司拥有军用全数字交流伺服技术的自主知识产权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中航工业旗下多家机载配套单位",
+        "evidence_span": "公司与中航工业旗下多家机载配套单位长期保持密切合作的关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国防军工",
+        "evidence_span": "公司产品主要应用于国防军工领域"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T19:46:34"
+}

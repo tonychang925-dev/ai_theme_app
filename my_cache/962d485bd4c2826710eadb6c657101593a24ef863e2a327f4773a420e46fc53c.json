@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:40:58", "result": {"chunk_id": "be147f88a352", "label": "strict_knowledge", "confidence": 0.9, "ontology_value": "high", "reason": "该段落描述了预制菜产业链中不同类型玩家的核心竞争力、消费者客群和发展优势，属于静态说明题材本身的结构和关键要素，不包含事件、新闻或时间性动态。"}}

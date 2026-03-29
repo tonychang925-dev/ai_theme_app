@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "495c67af6075", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述了上海推行建筑'光伏+'应用的政策事件，但涉及建筑设计中的可持续技术应用（光伏集成），可能包含设计实践或趋势知识，因此混合了事件和知识。"}}

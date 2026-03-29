@@ -1,0 +1,549 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "版权综合服务",
+      "evidence_span": "公司主要业务为版权综合服务和商务信息用纸业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "商务信息用纸业务",
+      "evidence_span": "公司主要业务为版权综合服务和商务信息用纸业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "权威数字版权综合服务商",
+      "evidence_span": "安妮股份权威数字版权综合服务商正式起航"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数字版权服务龙头",
+      "evidence_span": "安妮股份收购畅元国讯 打造数字版权服务龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国版权最具影响力企业之一",
+      "evidence_span": "中国版权最具影响力企业之一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中国版权区块链联盟主要发起单位及理事长单位",
+      "evidence_span": "中国版权区块链联盟主要发起单位及理事长单位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "版权综合服务平台",
+      "evidence_span": "版权家版权综合服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "确权服务",
+      "evidence_span": "全面经营包括确权、维权、交易在内的版权综合服务业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "维权服务",
+      "evidence_span": "全面经营包括确权、维权、交易在内的版权综合服务业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交易服务",
+      "evidence_span": "全面经营包括确权、维权、交易在内的版权综合服务业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "版权监测服务",
+      "evidence_span": "版权监测维权平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "取证服务",
+      "evidence_span": "开发了取证宝"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商用纸品",
+      "evidence_span": "产品主要包括商用纸品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "办公纸品",
+      "evidence_span": "办公纸品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "彩票产品制造供应与服务",
+      "evidence_span": "为国家彩票中心提供产品制造供应与服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无纸化彩票销售整体解决方案",
+      "evidence_span": "无纸化彩票销售的整体解决方案提供与服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "标签业务",
+      "evidence_span": "标签业务主要的产品范围为汽车润滑油标签、日化产品标签、酒水饮料标签、防伪标签等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链技术",
+      "evidence_span": "版权区块链联盟"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能技术",
+      "evidence_span": "通过 AI 自动比对全网内容与用户存证内容的相似性"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据技术",
+      "evidence_span": "自建大数据中心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "爬虫搜索技术",
+      "evidence_span": "全网爬虫搜索技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超级智能生产管理系统",
+      "evidence_span": "超级智能生产管理系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国福利彩票",
+      "evidence_span": "服务包括中国福利彩票打印纸"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "必胜客",
+      "evidence_span": "必胜客"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "肯德基",
+      "evidence_span": "肯德基"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东方既白",
+      "evidence_span": "东方既白"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "海底捞",
+      "evidence_span": "海底捞"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东商城",
+      "evidence_span": "京东商城"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "家乐福",
+      "evidence_span": "家乐福"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "新华书店",
+      "evidence_span": "新华书店"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "BP",
+      "evidence_span": "为 BP"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "RIO",
+      "evidence_span": "RIO"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "固特异",
+      "evidence_span": "固特异"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "BOSCH",
+      "evidence_span": "BOSCH"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TOTAL",
+      "evidence_span": "TOTAL"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中石油",
+      "evidence_span": "中石油"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "SK",
+      "evidence_span": "SK"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "龙蟠",
+      "evidence_span": "龙蟠"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "高露洁",
+      "evidence_span": "高露洁"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "胜牌",
+      "evidence_span": "胜牌"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福斯",
+      "evidence_span": "福斯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "农夫山泉",
+      "evidence_span": "农夫山泉"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "香飘飘",
+      "evidence_span": "香飘飘"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联合利华",
+      "evidence_span": "联合利华"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "白猫",
+      "evidence_span": "白猫"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "养生堂",
+      "evidence_span": "养生堂"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "活力二八",
+      "evidence_span": "活力二八"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国药",
+      "evidence_span": "国药"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "道达尔",
+      "evidence_span": "道达尔"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿克苏",
+      "evidence_span": "阿克苏"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "鱼跃集团",
+      "evidence_span": "鱼跃集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "老村长",
+      "evidence_span": "老村长"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里巴巴",
+      "evidence_span": "阿里巴巴"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "版权综合服务",
+        "evidence_span": "公司主要业务为版权综合服务和商务信息用纸业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "商务信息用纸业务",
+        "evidence_span": "公司主要业务为版权综合服务和商务信息用纸业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "权威数字版权综合服务商",
+        "evidence_span": "安妮股份权威数字版权综合服务商正式起航"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数字版权服务龙头",
+        "evidence_span": "安妮股份收购畅元国讯 打造数字版权服务龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国版权最具影响力企业之一",
+        "evidence_span": "中国版权最具影响力企业之一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中国版权区块链联盟主要发起单位及理事长单位",
+        "evidence_span": "中国版权区块链联盟主要发起单位及理事长单位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "版权综合服务平台",
+        "evidence_span": "版权家版权综合服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "确权服务",
+        "evidence_span": "全面经营包括确权、维权、交易在内的版权综合服务业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "维权服务",
+        "evidence_span": "全面经营包括确权、维权、交易在内的版权综合服务业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交易服务",
+        "evidence_span": "全面经营包括确权、维权、交易在内的版权综合服务业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "版权监测服务",
+        "evidence_span": "版权监测维权平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "取证服务",
+        "evidence_span": "开发了取证宝"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商用纸品",
+        "evidence_span": "产品主要包括商用纸品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "办公纸品",
+        "evidence_span": "办公纸品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "彩票产品制造供应与服务",
+        "evidence_span": "为国家彩票中心提供产品制造供应与服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无纸化彩票销售整体解决方案",
+        "evidence_span": "无纸化彩票销售的整体解决方案提供与服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "标签业务",
+        "evidence_span": "标签业务主要的产品范围为汽车润滑油标签、日化产品标签、酒水饮料标签、防伪标签等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链技术",
+        "evidence_span": "版权区块链联盟"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能技术",
+        "evidence_span": "通过 AI 自动比对全网内容与用户存证内容的相似性"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据技术",
+        "evidence_span": "自建大数据中心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "爬虫搜索技术",
+        "evidence_span": "全网爬虫搜索技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超级智能生产管理系统",
+        "evidence_span": "超级智能生产管理系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国福利彩票",
+        "evidence_span": "服务包括中国福利彩票打印纸"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "必胜客",
+        "evidence_span": "必胜客"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "肯德基",
+        "evidence_span": "肯德基"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东方既白",
+        "evidence_span": "东方既白"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "海底捞",
+        "evidence_span": "海底捞"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东商城",
+        "evidence_span": "京东商城"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "家乐福",
+        "evidence_span": "家乐福"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "新华书店",
+        "evidence_span": "新华书店"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "BP",
+        "evidence_span": "为 BP"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "RIO",
+        "evidence_span": "RIO"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "固特异",
+        "evidence_span": "固特异"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "BOSCH",
+        "evidence_span": "BOSCH"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TOTAL",
+        "evidence_span": "TOTAL"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中石油",
+        "evidence_span": "中石油"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "SK",
+        "evidence_span": "SK"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "龙蟠",
+        "evidence_span": "龙蟠"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "高露洁",
+        "evidence_span": "高露洁"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "胜牌",
+        "evidence_span": "胜牌"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福斯",
+        "evidence_span": "福斯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "农夫山泉",
+        "evidence_span": "农夫山泉"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "香飘飘",
+        "evidence_span": "香飘飘"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联合利华",
+        "evidence_span": "联合利华"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "白猫",
+        "evidence_span": "白猫"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "养生堂",
+        "evidence_span": "养生堂"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "活力二八",
+        "evidence_span": "活力二八"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国药",
+        "evidence_span": "国药"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "道达尔",
+        "evidence_span": "道达尔"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿克苏",
+        "evidence_span": "阿克苏"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "鱼跃集团",
+        "evidence_span": "鱼跃集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "老村长",
+        "evidence_span": "老村长"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里巴巴",
+        "evidence_span": "阿里巴巴"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:38:13"
+}

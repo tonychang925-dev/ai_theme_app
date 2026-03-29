@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:12:29", "result": {"chunk_id": "371731de04d9", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "段落描述荷兰扩大光刻机管制范围的事件以及中方的回应，涉及政策变化和国际沟通，属于时事动态，与半导体设备本体知识无关。"}}

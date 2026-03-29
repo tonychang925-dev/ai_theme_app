@@ -1,0 +1,244 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "功能糖研发",
+      "evidence_span": "主要从事功能糖的研发、制造及方案服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "制造",
+      "evidence_span": "主要从事功能糖的研发、制造及方案服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "方案服务",
+      "evidence_span": "主要从事功能糖的研发、制造及方案服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "留学服务",
+      "evidence_span": "保龄宝切入留学服务行业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "功能糖行业领军企业",
+      "evidence_span": "目前是国内功能糖行业的领军企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "功能糖领域首家上市公司",
+      "evidence_span": "中国功能糖领域首家上市公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "功能糖龙头企业",
+      "evidence_span": "中国功能糖领域的龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能糖系列",
+      "evidence_span": "主要产品包括功能糖系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "糖醇系列",
+      "evidence_span": "糖醇系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "膳食纤维系列",
+      "evidence_span": "膳食纤维系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "淀粉及淀粉糖系列",
+      "evidence_span": "淀粉及淀粉糖系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医药原辅料系列",
+      "evidence_span": "医药原辅料系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益生元终端",
+      "evidence_span": "益生元终端"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "益生元系列",
+      "evidence_span": "益生元系列产品主要包括低聚异麦芽糖、低聚果糖、低聚半乳糖、蔗果三糖、母乳寡糖等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能糖醇系列",
+      "evidence_span": "功能糖醇系列产品主要为赤藓糖醇"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新糖源系列",
+      "evidence_span": "新糖源系列产品主要为阿洛酮糖和结晶果糖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "淀粉糖系列",
+      "evidence_span": "淀粉糖系列产品主要包括果葡糖浆、麦芽糊精等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动物营养系列",
+      "evidence_span": "动物营养系列产品主要包括蛋白饲料、发酵饲料、玉米肽蛋白、绿色功能性饲料添加剂等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "酶工程",
+      "evidence_span": "始终专注于酶工程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "发酵工程",
+      "evidence_span": "发酵工程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "现代生物工程技术",
+      "evidence_span": "现代生物工程技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "阿洛酮糖研发",
+      "evidence_span": "从事阿洛酮糖研发至今已近十年"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "减糖",
+      "evidence_span": "全球减糖趋势不断深化"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "健康",
+      "evidence_span": "健康、教育双轮驱动"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "功能糖研发、制造及方案服务",
+        "evidence_span": "主要从事功能糖的研发、制造及方案服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "留学服务",
+        "evidence_span": "保龄宝切入留学服务行业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "功能糖行业领军企业",
+        "evidence_span": "目前是国内功能糖行业的领军企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "功能糖领域首家上市公司",
+        "evidence_span": "中国功能糖领域首家上市公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "功能糖龙头企业",
+        "evidence_span": "中国功能糖领域的龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能糖系列",
+        "evidence_span": "主要产品包括功能糖系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "糖醇系列",
+        "evidence_span": "糖醇系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "膳食纤维系列",
+        "evidence_span": "膳食纤维系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "淀粉及淀粉糖系列",
+        "evidence_span": "淀粉及淀粉糖系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医药原辅料系列",
+        "evidence_span": "医药原辅料系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益生元终端",
+        "evidence_span": "益生元终端"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "益生元系列",
+        "evidence_span": "益生元系列产品主要包括低聚异麦芽糖、低聚果糖、低聚半乳糖、蔗果三糖、母乳寡糖等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "膳食纤维系列",
+        "evidence_span": "膳食纤维系列产品主要包括抗性糊精和聚葡萄糖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能糖醇系列",
+        "evidence_span": "功能糖醇系列产品主要为赤藓糖醇"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新糖源系列",
+        "evidence_span": "新糖源系列产品主要为阿洛酮糖和结晶果糖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "淀粉糖系列",
+        "evidence_span": "淀粉糖系列产品主要包括果葡糖浆、麦芽糊精等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动物营养系列",
+        "evidence_span": "动物营养系列产品主要包括蛋白饲料、发酵饲料、玉米肽蛋白、绿色功能性饲料添加剂等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "酶工程",
+        "evidence_span": "始终专注于酶工程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "发酵工程",
+        "evidence_span": "发酵工程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "现代生物工程技术",
+        "evidence_span": "现代生物工程技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "阿洛酮糖研发",
+        "evidence_span": "从事阿洛酮糖研发至今已近十年"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "减糖",
+        "evidence_span": "全球减糖趋势不断深化"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "健康",
+        "evidence_span": "健康、教育双轮驱动"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:01:44"
+}

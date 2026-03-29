@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:34:19", "result": {"span_uid": "203a34952c0e", "action": "rewrite", "canonical_text": "《网络暴力信息治理规定》是我国首部针对网络暴力信息治理的专门性立法，已施行。", "final_type": "signal", "final_role": "专门立法施行", "stability": "high", "reason": "原文本包含具体施行日期，改写为去事件化、稳定的事实性知识，体现法规进展信号。"}}

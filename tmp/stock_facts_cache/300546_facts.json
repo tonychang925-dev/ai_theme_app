@@ -1,0 +1,249 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "身份识别",
+      "evidence_span": "以身份识别为核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能证卡",
+      "evidence_span": "以智能证卡起家"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧交通",
+      "evidence_span": "智慧交通卡位优势显著"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "出入境安全证照龙头",
+      "evidence_span": "出入境安全证照龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智能证卡整体解决方案供应商",
+      "evidence_span": "稀缺的智能证卡整体解决方案供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端身份识别与管理服务提供商",
+      "evidence_span": "高端身份识别与管理服务提供商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能证卡设备",
+      "evidence_span": "以智能证卡设备成为深圳通主要设备供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市公共交通整体解决方案",
+      "evidence_span": "为城市公共交通提供整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "安全证照设备",
+      "evidence_span": "安全证照设备供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "户政自助办理机",
+      "evidence_span": "户政自助办理机（雄帝EMP2933）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公交车载收费设备",
+      "evidence_span": "公交车载收费设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "公交扫码支付项目",
+      "evidence_span": "参与公交扫码支付项目53个"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "银联公交项目",
+      "evidence_span": "银联公交项目47个"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交通部互联互通项目",
+      "evidence_span": "交通部互联互通项目42个"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "可信身份识别与加密核心技术",
+      "evidence_span": "掌握可信身份识别与加密核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生物识别",
+      "evidence_span": "生物识别（人脸识别、指纹等）"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据安全",
+      "evidence_span": "数据安全"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "区块链",
+      "evidence_span": "区块链"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深圳通",
+      "evidence_span": "深圳通主要设备供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安部",
+      "evidence_span": "中标12年公安部全国电子护照设备采购项目"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "公安部门",
+      "evidence_span": "为公安等部门提供全方位技术支持"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "支付宝",
+      "evidence_span": "支付宝是国内最主要手机支付途径"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "微信",
+      "evidence_span": "微信生态圈"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "公交SaaS",
+      "evidence_span": "参股蓝泰源进入公交SaaS"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "身份识别",
+        "evidence_span": "以身份识别为核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能证卡",
+        "evidence_span": "以智能证卡起家"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧交通",
+        "evidence_span": "智慧交通卡位优势显著"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "出入境安全证照龙头",
+        "evidence_span": "出入境安全证照龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智能证卡整体解决方案供应商",
+        "evidence_span": "稀缺的智能证卡整体解决方案供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端身份识别与管理服务提供商",
+        "evidence_span": "高端身份识别与管理服务提供商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能证卡设备",
+        "evidence_span": "以智能证卡设备成为深圳通主要设备供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市公共交通整体解决方案",
+        "evidence_span": "为城市公共交通提供整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "安全证照设备",
+        "evidence_span": "安全证照设备供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "户政自助办理机",
+        "evidence_span": "户政自助办理机（雄帝EMP2933）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公交车载收费设备",
+        "evidence_span": "公交车载收费设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "公交扫码支付项目",
+        "evidence_span": "参与公交扫码支付项目53个"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "银联公交项目",
+        "evidence_span": "银联公交项目47个"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交通部互联互通项目",
+        "evidence_span": "交通部互联互通项目42个"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "可信身份识别与加密核心技术",
+        "evidence_span": "掌握可信身份识别与加密核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生物识别",
+        "evidence_span": "生物识别（人脸识别、指纹等）"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据安全",
+        "evidence_span": "数据安全"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "区块链",
+        "evidence_span": "区块链"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深圳通",
+        "evidence_span": "深圳通主要设备供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安部",
+        "evidence_span": "中标12年公安部全国电子护照设备采购项目"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "公安部门",
+        "evidence_span": "为公安等部门提供全方位技术支持"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "支付宝",
+        "evidence_span": "支付宝是国内最主要手机支付途径"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "微信",
+        "evidence_span": "微信生态圈"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "公交SaaS",
+        "evidence_span": "参股蓝泰源进入公交SaaS"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:11:44"
+}

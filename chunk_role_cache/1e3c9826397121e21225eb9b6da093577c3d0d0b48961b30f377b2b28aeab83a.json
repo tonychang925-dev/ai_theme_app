@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "f64783bd01d5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述亿航智能的订单和合作协议等具体公司动态，属于明确的事件发布，没有提供关于低空经济本身的静态定义或核心构成知识。"}}

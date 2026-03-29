@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:31:44", "result": {"chunk_id": "5f38be4833bc", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述苹果获得智能戒指专利，并提及与Vision Pro等设备的交互功能，可能包含有价值的知识（如苹果生态联动），但以专利事件形式呈现，混合了事件信息，需要进一步裁决。"}}

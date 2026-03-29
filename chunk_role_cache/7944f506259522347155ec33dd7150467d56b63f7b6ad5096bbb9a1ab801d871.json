@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "714ee9c67d43", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段描述了一个会议召开和公司揭牌的具体事件，属于政策或组织动态，没有涉及低空经济的定义、结构等静态知识。"}}

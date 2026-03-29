@@ -1,0 +1,469 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能手机业务",
+      "evidence_span": "公司的主营业务为智能手机、智能汽车及新领域业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能汽车业务",
+      "evidence_span": "公司的主营业务为智能手机、智能汽车及新领域业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新领域业务",
+      "evidence_span": "公司的主营业务为智能手机、智能汽车及新领域业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "光学光电行业龙头",
+      "evidence_span": "光学光电行业龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高像素摄像头模组的主流供应商",
+      "evidence_span": "已成为行业内的高像素摄像头模组的主流供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中高端摄像头产品的主力供应商",
+      "evidence_span": "公司智能手机业务稳中求进，是中高端摄像头产品的主力供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "屏下指纹识别模组的主要供应商",
+      "evidence_span": "成为目前屏下指纹识别模组的主要供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内整车厂商的TIER 1供应商",
+      "evidence_span": "顺利成为国内整车厂商的TIER 1供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光学影像模组",
+      "evidence_span": "公司主营业务产品包括光学影像模组、光学镜头、微电子及智能汽车相关产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光学镜头",
+      "evidence_span": "公司主营业务产品包括光学影像模组、光学镜头、微电子及智能汽车相关产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "微电子产品",
+      "evidence_span": "公司主营业务产品包括光学影像模组、光学镜头、微电子及智能汽车相关产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能汽车相关产品",
+      "evidence_span": "公司主营业务产品包括光学影像模组、光学镜头、微电子及智能汽车相关产品等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "摄像头模组",
+      "evidence_span": "智能手机是摄像头模组的主要应用市场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "指纹识别模组",
+      "evidence_span": "公司2015年正式量产出货指纹识别模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光学屏下指纹识别模组",
+      "evidence_span": "在光学屏下指纹识别模组和超声波屏下指纹识别模组均处于龙头地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超声波屏下指纹识别模组",
+      "evidence_span": "在光学屏下指纹识别模组和超声波屏下指纹识别模组均处于龙头地位"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车载摄像头",
+      "evidence_span": "公司全面布局车载摄像头、毫米波雷达、激光雷达、驾驶域控制器产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "毫米波雷达",
+      "evidence_span": "公司全面布局车载摄像头、毫米波雷达、激光雷达、驾驶域控制器产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "激光雷达",
+      "evidence_span": "公司全面布局车载摄像头、毫米波雷达、激光雷达、驾驶域控制器产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "驾驶域控制器",
+      "evidence_span": "公司全面布局车载摄像头、毫米波雷达、激光雷达、驾驶域控制器产品线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "抬头显示（HUD）",
+      "evidence_span": "延伸至毫米波雷达、激光雷达、抬头显示（HUD）等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能座舱",
+      "evidence_span": "开发出高端三屏互动智能座舱和全数字智能仪表"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全数字智能仪表",
+      "evidence_span": "开发出高端三屏互动智能座舱和全数字智能仪表"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VR/AR光学镜头",
+      "evidence_span": "公司可以提供VR非球面透镜、VR/AR镜头组、VR目镜等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VR/AR影像模组",
+      "evidence_span": "拓展FPV摄像模组、SLAM双摄模组、VR眼动追踪模组和VR定位摄像头模组"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VR/AR光机模组",
+      "evidence_span": "对LCOS光波导模组、BIRD BATH双目光机模组、LED光波导模组和PANCAKE光机方案等技术路线进行布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VR/AR整机组装制造服务",
+      "evidence_span": "公司也布局VR/AR眼镜和头戴式设备的整机组装制造服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机器视觉深度相机模块",
+      "evidence_span": "公司同步发布自研的机器视觉深度相机模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能门锁VGA TOF人脸识别方案",
+      "evidence_span": "公司发布首款用于智能门锁的VGA TOF人脸识别方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "AA对焦工艺",
+      "evidence_span": "自主开发的AA对焦工艺"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高自动化水平的产线",
+      "evidence_span": "高自动化水平的产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大规模量产能力",
+      "evidence_span": "大规模量产能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高像素超级解像算法",
+      "evidence_span": "自主开发的高像素超级解像算法"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "超级EIS防抖算法",
+      "evidence_span": "超级EIS防抖算法达到行业顶尖的水平"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MGL高画质模组量产",
+      "evidence_span": "MGL高画质模组、CMP/GMP小型化模组、浮动对焦微距模组、潜望式长焦微距模组实现量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "CMP/GMP小型化模组量产",
+      "evidence_span": "MGL高画质模组、CMP/GMP小型化模组、浮动对焦微距模组、潜望式长焦微距模组实现量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "浮动对焦微距模组量产",
+      "evidence_span": "MGL高画质模组、CMP/GMP小型化模组、浮动对焦微距模组、潜望式长焦微距模组实现量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "潜望式长焦微距模组量产",
+      "evidence_span": "MGL高画质模组、CMP/GMP小型化模组、浮动对焦微距模组、潜望式长焦微距模组实现量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一亿像素7P光学镜头小批量产",
+      "evidence_span": "一亿像素7P光学镜头和潜望式3X长焦镜头启动小批量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "潜望式3X长焦镜头小批量产",
+      "evidence_span": "一亿像素7P光学镜头和潜望式3X长焦镜头启动小批量产"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "短距毫米波雷达",
+      "evidence_span": "公司短距毫米波雷达能实现近场、低速检测"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "4D纯固态激光雷达",
+      "evidence_span": "公司研发4D纯固态激光雷达"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内主流手机厂商",
+      "evidence_span": "均已进入国内主流手机厂商镜头供应链"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "20余家国内汽车厂商",
+      "evidence_span": "目前已取得20余家国内汽车厂商的供货商资质"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内多家主机厂",
+      "evidence_span": "公司纯固态激光雷达已与国内多家主机厂、造车新势力首次技术对接"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "造车新势力",
+      "evidence_span": "公司纯固态激光雷达已与国内多家主机厂、造车新势力首次技术对接"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能手机业务",
+        "evidence_span": "公司的主营业务为智能手机、智能汽车及新领域业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能汽车业务",
+        "evidence_span": "公司的主营业务为智能手机、智能汽车及新领域业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新领域业务",
+        "evidence_span": "公司的主营业务为智能手机、智能汽车及新领域业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "光学光电行业龙头",
+        "evidence_span": "光学光电行业龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高像素摄像头模组的主流供应商",
+        "evidence_span": "已成为行业内的高像素摄像头模组的主流供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中高端摄像头产品的主力供应商",
+        "evidence_span": "公司智能手机业务稳中求进，是中高端摄像头产品的主力供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "屏下指纹识别模组的主要供应商",
+        "evidence_span": "成为目前屏下指纹识别模组的主要供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内整车厂商的TIER 1供应商",
+        "evidence_span": "顺利成为国内整车厂商的TIER 1供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光学影像模组",
+        "evidence_span": "公司主营业务产品包括光学影像模组、光学镜头、微电子及智能汽车相关产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光学镜头",
+        "evidence_span": "公司主营业务产品包括光学影像模组、光学镜头、微电子及智能汽车相关产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "微电子产品",
+        "evidence_span": "公司主营业务产品包括光学影像模组、光学镜头、微电子及智能汽车相关产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能汽车相关产品",
+        "evidence_span": "公司主营业务产品包括光学影像模组、光学镜头、微电子及智能汽车相关产品等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "摄像头模组",
+        "evidence_span": "智能手机是摄像头模组的主要应用市场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "指纹识别模组",
+        "evidence_span": "公司2015年正式量产出货指纹识别模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光学屏下指纹识别模组",
+        "evidence_span": "在光学屏下指纹识别模组和超声波屏下指纹识别模组均处于龙头地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超声波屏下指纹识别模组",
+        "evidence_span": "在光学屏下指纹识别模组和超声波屏下指纹识别模组均处于龙头地位"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车载摄像头",
+        "evidence_span": "公司全面布局车载摄像头、毫米波雷达、激光雷达、驾驶域控制器产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "毫米波雷达",
+        "evidence_span": "公司全面布局车载摄像头、毫米波雷达、激光雷达、驾驶域控制器产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "激光雷达",
+        "evidence_span": "公司全面布局车载摄像头、毫米波雷达、激光雷达、驾驶域控制器产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "驾驶域控制器",
+        "evidence_span": "公司全面布局车载摄像头、毫米波雷达、激光雷达、驾驶域控制器产品线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "抬头显示（HUD）",
+        "evidence_span": "延伸至毫米波雷达、激光雷达、抬头显示（HUD）等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能座舱",
+        "evidence_span": "开发出高端三屏互动智能座舱和全数字智能仪表"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全数字智能仪表",
+        "evidence_span": "开发出高端三屏互动智能座舱和全数字智能仪表"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VR/AR光学镜头",
+        "evidence_span": "公司可以提供VR非球面透镜、VR/AR镜头组、VR目镜等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VR/AR影像模组",
+        "evidence_span": "拓展FPV摄像模组、SLAM双摄模组、VR眼动追踪模组和VR定位摄像头模组"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VR/AR光机模组",
+        "evidence_span": "对LCOS光波导模组、BIRD BATH双目光机模组、LED光波导模组和PANCAKE光机方案等技术路线进行布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VR/AR整机组装制造服务",
+        "evidence_span": "公司也布局VR/AR眼镜和头戴式设备的整机组装制造服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机器视觉深度相机模块",
+        "evidence_span": "公司同步发布自研的机器视觉深度相机模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能门锁VGA TOF人脸识别方案",
+        "evidence_span": "公司发布首款用于智能门锁的VGA TOF人脸识别方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "AA对焦工艺",
+        "evidence_span": "自主开发的AA对焦工艺"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高自动化水平的产线",
+        "evidence_span": "高自动化水平的产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大规模量产能力",
+        "evidence_span": "大规模量产能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高像素超级解像算法",
+        "evidence_span": "自主开发的高像素超级解像算法"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "超级EIS防抖算法",
+        "evidence_span": "超级EIS防抖算法达到行业顶尖的水平"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MGL高画质模组量产",
+        "evidence_span": "MGL高画质模组、CMP/GMP小型化模组、浮动对焦微距模组、潜望式长焦微距模组实现量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "CMP/GMP小型化模组量产",
+        "evidence_span": "MGL高画质模组、CMP/GMP小型化模组、浮动对焦微距模组、潜望式长焦微距模组实现量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "浮动对焦微距模组量产",
+        "evidence_span": "MGL高画质模组、CMP/GMP小型化模组、浮动对焦微距模组、潜望式长焦微距模组实现量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "潜望式长焦微距模组量产",
+        "evidence_span": "MGL高画质模组、CMP/GMP小型化模组、浮动对焦微距模组、潜望式长焦微距模组实现量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一亿像素7P光学镜头小批量产",
+        "evidence_span": "一亿像素7P光学镜头和潜望式3X长焦镜头启动小批量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "潜望式3X长焦镜头小批量产",
+        "evidence_span": "一亿像素7P光学镜头和潜望式3X长焦镜头启动小批量产"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "短距毫米波雷达",
+        "evidence_span": "公司短距毫米波雷达能实现近场、低速检测"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "4D纯固态激光雷达",
+        "evidence_span": "公司研发4D纯固态激光雷达"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内主流手机厂商",
+        "evidence_span": "均已进入国内主流手机厂商镜头供应链"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "20余家国内汽车厂商",
+        "evidence_span": "目前已取得20余家国内汽车厂商的供货商资质"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内多家主机厂",
+        "evidence_span": "公司纯固态激光雷达已与国内多家主机厂、造车新势力首次技术对接"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "造车新势力",
+        "evidence_span": "公司纯固态激光雷达已与国内多家主机厂、造车新势力首次技术对接"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:59:50"
+}

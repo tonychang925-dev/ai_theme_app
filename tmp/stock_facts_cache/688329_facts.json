@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化药房板块",
+      "evidence_span": "自动化药房板块仍是公司核心基本盘"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化病区板块",
+      "evidence_span": "自动化病区板块同步发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化物流板块",
+      "evidence_span": "自动化物流板块同步发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "维保",
+      "evidence_span": "维保及技术服务是公司的主要收入来源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务",
+      "evidence_span": "维保及技术服务是公司的主要收入来源"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医疗物资智能化管理整体解决方案提供商",
+      "evidence_span": "主要为各级医疗服务机构提供医疗物资智能化管理整体解决方案"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "药房自动化龙头",
+      "evidence_span": "艾隆科技药房自动化龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全场景医疗物资智能化管理专家",
+      "evidence_span": "全场景医疗物资智能化管理专家"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "门/急诊自动化药房系列产品",
+      "evidence_span": "门/急诊自动化药房系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "静配中心自动化药房",
+      "evidence_span": "静配中心自动化药房"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PIVAS排药助手",
+      "evidence_span": "PIVAS排药助手"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "针剂统排机",
+      "evidence_span": "针剂统排机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "盘点机",
+      "evidence_span": "盘点机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "输液贴签机",
+      "evidence_span": "输液贴签机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "输液成品分拣机",
+      "evidence_span": "输液成品分拣机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "小微自助药房",
+      "evidence_span": "小微自助药房"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市中央药房",
+      "evidence_span": "城市中央药房"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中药个性化智能制剂系统",
+      "evidence_span": "中药个性化智能制剂系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能麻精药品管理柜",
+      "evidence_span": "智能麻精药品管理柜"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网、大数据分析搭建的人机交互平台",
+      "evidence_span": "依托于物联网、大数据分析搭建的人机交互平台"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动化机器人、智能传感等技术",
+      "evidence_span": "运用自动化机器人、智能传感等技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "各级医疗服务机构",
+      "evidence_span": "为各级医疗服务机构提供高效、安全、全面、智能的医疗物资存储、分发、管理及传输服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中南大学湘雅二医院",
+      "evidence_span": "中南大学湘雅二医院"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苏州大学附属第一医院",
+      "evidence_span": "苏州大学附属第一医院"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "医疗新基建",
+      "evidence_span": "艾隆科技受益于医疗新基建"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动化药房板块",
+        "evidence_span": "自动化药房板块仍是公司核心基本盘"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动化病区板块",
+        "evidence_span": "自动化病区板块同步发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动化物流板块",
+        "evidence_span": "自动化物流板块同步发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "维保及技术服务",
+        "evidence_span": "维保及技术服务是公司的主要收入来源"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医疗物资智能化管理整体解决方案提供商",
+        "evidence_span": "主要为各级医疗服务机构提供医疗物资智能化管理整体解决方案"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "药房自动化龙头",
+        "evidence_span": "艾隆科技药房自动化龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全场景医疗物资智能化管理专家",
+        "evidence_span": "全场景医疗物资智能化管理专家"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "门/急诊自动化药房系列产品",
+        "evidence_span": "门/急诊自动化药房系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "静配中心自动化药房",
+        "evidence_span": "静配中心自动化药房"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PIVAS排药助手",
+        "evidence_span": "PIVAS排药助手"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "针剂统排机",
+        "evidence_span": "针剂统排机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "盘点机",
+        "evidence_span": "盘点机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "输液贴签机",
+        "evidence_span": "输液贴签机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "输液成品分拣机",
+        "evidence_span": "输液成品分拣机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "小微自助药房",
+        "evidence_span": "小微自助药房"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市中央药房",
+        "evidence_span": "城市中央药房"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中药个性化智能制剂系统",
+        "evidence_span": "中药个性化智能制剂系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能麻精药品管理柜",
+        "evidence_span": "智能麻精药品管理柜"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网、大数据分析搭建的人机交互平台",
+        "evidence_span": "依托于物联网、大数据分析搭建的人机交互平台"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动化机器人、智能传感等技术",
+        "evidence_span": "运用自动化机器人、智能传感等技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "各级医疗服务机构",
+        "evidence_span": "为各级医疗服务机构提供高效、安全、全面、智能的医疗物资存储、分发、管理及传输服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中南大学湘雅二医院",
+        "evidence_span": "中南大学湘雅二医院"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苏州大学附属第一医院",
+        "evidence_span": "苏州大学附属第一医院"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "医疗新基建",
+        "evidence_span": "艾隆科技受益于医疗新基建"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:10:34"
+}

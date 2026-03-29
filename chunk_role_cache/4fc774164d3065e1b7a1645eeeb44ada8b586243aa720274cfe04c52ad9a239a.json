@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "b54015485dff", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "段落开头说明CoWoS先进封装技术是AI及高性能芯片的主流选择，并列举应用案例（英伟达A100/H100、AMD MI300），揭示了半导体设备中封装环节的关键应用场景和受益方向；后续产能描述属于事件性内容，但整体以知识性为主。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v5_0_0_semantic_reviewer", "model": "deepseek-chat", "timestamp": "2026-03-08T13:13:06", "result": {"chunk_id": "33b52e03ac96", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含爆料和消息（大基金三期规模、光刻机研发交付时间），属于事件，但提及光刻机技术细节（28纳米浸没式、SSA/800-10W型号）和国产化进展，这些可能沉淀为知识，因此判为candidate_mixed。"}}

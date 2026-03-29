@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:58:55", "result": {"chunk_id": "115879279202", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落报道德国计划采购国防物资和增加国防开支的事件，但包含采购细节（如战斗机和装甲车数量）和战略转变信息，这些可能对陆军题材（如军事采购、国防政策）有价值，但混合了事件动态。"}}

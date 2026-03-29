@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:37:40", "result": {"chunk_id": "5b5dde530746", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落详细说明FSD V12的技术架构、核心变化（如端到端自动驾驶、神经网络控制、训练数据等），属于静态定义和机制描述，无事件信息，适合用于题材本体构建。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "60dc676ca2c2", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落简要提及微电子公布光刻机领域新专利信息，属于公司公告类事件，未提供足够知识性内容来定义题材本体。"}}

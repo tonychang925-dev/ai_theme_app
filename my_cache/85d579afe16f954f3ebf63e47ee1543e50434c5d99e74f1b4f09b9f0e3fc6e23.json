@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:29:35", "result": {"chunk_id": "a75b0cdac14a", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述CrowdStrike日本子公司回应“电脑蓝屏”事件，包括调查原因和考虑对策，属于公司动态和具体事件，没有提供安全防护与监管题材的静态定义、结构或机制等知识。"}}

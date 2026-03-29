@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:48:30", "result": {"span_uid": "ee87fe6f93af", "action": "rewrite", "canonical_text": "建筑光伏+应用是建筑设计领域的一种能源技术，指在建筑中集成光伏发电系统以实现能源自给或补充。", "final_type": "related", "final_role": "建筑能源技术", "stability": "medium", "reason": "原文本为短语，缺乏完整定义。改写后形成独立知识表达，描述建筑设计中的一种关联技术，属于相关领域信息。"}}

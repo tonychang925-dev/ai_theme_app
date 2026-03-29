@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:48:30", "result": {"span_uid": "499d41a41f6c", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "原文本为具体政策文件中的建设方向描述，属于事件性、趋势性信息，且与建筑设计关联度较弱，无法形成稳定知识块。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:52:35", "result": {"chunk_id": "fce1148f5632", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "low", "reason": "该段落总结华卓精科的技术根基、行业角色和战略价值，包含静态知识（如清华大学技术基础、国家支持），但混有事件性建议（如投资者需关注量产进度和客户拓展），以及政策支持等可能隐含动态信息，因此归类为candidate_mixed，整体信息量较低且偏向总结性。"}}

@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "民爆业务",
+      "evidence_span": "公司自成立以来主要从事民爆及白炭黑业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "白炭黑业务",
+      "evidence_span": "公司自成立以来主要从事民爆及白炭黑业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "工程爆破整体解决方案",
+      "evidence_span": "为客户提供工程爆破整体解决方案"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "山西民爆龙头",
+      "evidence_span": "同德化工山西民爆龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "区域内龙头",
+      "evidence_span": "民爆行业会形成区域内龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "胶状乳化炸药",
+      "evidence_span": "产品涵盖胶状乳化炸药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "粉状乳化炸药",
+      "evidence_span": "粉状乳化炸药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "多孔粒状铵油现场混装炸药",
+      "evidence_span": "多孔粒状铵油现场混装炸药"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乳化铵油炸药",
+      "evidence_span": "乳化铵油炸药等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工业炸药",
+      "evidence_span": "民爆器材（主要为工业炸药）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PBAT",
+      "evidence_span": "建设6万吨PBAT"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BDO",
+      "evidence_span": "24万吨BDO项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏级多晶硅原料",
+      "evidence_span": "成功开发生产出以硅泥为原料的独特的光伏级多晶硅原料"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "硅泥冶金法提纯技术",
+      "evidence_span": "硅泥冶金法提纯技术产业化研发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "电石生产企业",
+      "evidence_span": "公司周边的电石、甲醇生产企业同时也是公司民爆产品的客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "甲醇生产企业",
+      "evidence_span": "公司周边的电石、甲醇生产企业同时也是公司民爆产品的客户"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "可降解塑料",
+      "evidence_span": "积极拓展可降解塑料和光伏业务"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏业务",
+      "evidence_span": "积极拓展可降解塑料和光伏业务"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "民爆业务",
+        "evidence_span": "公司自成立以来主要从事民爆及白炭黑业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "白炭黑业务",
+        "evidence_span": "公司自成立以来主要从事民爆及白炭黑业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "工程爆破整体解决方案",
+        "evidence_span": "为客户提供工程爆破整体解决方案"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "山西民爆龙头",
+        "evidence_span": "同德化工山西民爆龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "区域内龙头",
+        "evidence_span": "民爆行业会形成区域内龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "胶状乳化炸药",
+        "evidence_span": "产品涵盖胶状乳化炸药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "粉状乳化炸药",
+        "evidence_span": "粉状乳化炸药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "多孔粒状铵油现场混装炸药",
+        "evidence_span": "多孔粒状铵油现场混装炸药"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乳化铵油炸药",
+        "evidence_span": "乳化铵油炸药等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工业炸药",
+        "evidence_span": "民爆器材（主要为工业炸药）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PBAT",
+        "evidence_span": "建设6万吨PBAT"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BDO",
+        "evidence_span": "24万吨BDO项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏级多晶硅原料",
+        "evidence_span": "成功开发生产出以硅泥为原料的独特的光伏级多晶硅原料"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "硅泥冶金法提纯技术",
+        "evidence_span": "硅泥冶金法提纯技术产业化研发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "电石生产企业",
+        "evidence_span": "公司周边的电石、甲醇生产企业同时也是公司民爆产品的客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "甲醇生产企业",
+        "evidence_span": "公司周边的电石、甲醇生产企业同时也是公司民爆产品的客户"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "可降解塑料",
+        "evidence_span": "积极拓展可降解塑料和光伏业务"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏业务",
+        "evidence_span": "积极拓展可降解塑料和光伏业务"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:12:41"
+}

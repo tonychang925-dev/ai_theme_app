@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "ad2254400a49", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述长安汽车的具体事件，包括签约、宣布计划和时间节点（如2026年前推出产品），属于公司动态和时间性动态，没有提供静态的题材定义或核心知识。"}}

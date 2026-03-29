@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:34", "result": {"chunk_id": "a7ebc2267c06", "decision": "related_but_event_only", "confidence": 0.8, "reason": "该段主要描述长江存储的扩产计划、市场份额预测和国产设备生产线试运行等具体事件，虽然提及半导体设备国产替代和工艺突破，但核心是新闻事件和公司动态，而非定义半导体设备题材的本体要素。"}}

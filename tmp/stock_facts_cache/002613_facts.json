@@ -1,0 +1,369 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "玻璃深加工设备",
+      "evidence_span": "公司主要从事玻璃深加工设备及产品的研发、设计、制造、销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "深加工玻璃产品",
+      "evidence_span": "公司主要从事玻璃深加工设备及产品的研发、设计、制造、销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "玻璃钢化设备生产经营企业",
+      "evidence_span": "唯一生产经营玻璃钢化设备的国内A股上市公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "玻璃深加工装备及产品解决方案供应商",
+      "evidence_span": "是实力雄厚的大型玻璃深加工装备及产品解决方案供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃钢化设备",
+      "evidence_span": "主要产品包括玻璃钢化设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端深加工玻璃",
+      "evidence_span": "主要产品包括玻璃钢化设备、高端深加工玻璃等核心产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低辐射Low-E镀膜设备",
+      "evidence_span": "进一步拓展了低辐射Low-E镀膜设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃深加工自动化连线",
+      "evidence_span": "进一步拓展了玻璃深加工自动化连线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "玻璃切割设备",
+      "evidence_span": "进一步拓展了玻璃切割设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "仓储系统",
+      "evidence_span": "进一步拓展了仓储系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "三元流风机",
+      "evidence_span": "进一步拓展了“三元流”风机等产业产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "钢化玻璃",
+      "evidence_span": "公司深加工玻璃主要包括钢化玻璃"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中空玻璃",
+      "evidence_span": "公司深加工玻璃主要包括钢化玻璃、中空玻璃"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "夹层玻璃",
+      "evidence_span": "公司深加工玻璃主要包括钢化玻璃、中空玻璃、夹层玻璃"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低辐射镀膜（Low-E）玻璃",
+      "evidence_span": "公司深加工玻璃主要包括钢化玻璃、中空玻璃、夹层玻璃、低辐射镀膜（Low-E）玻璃"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "复合玻璃产品",
+      "evidence_span": "由钢化玻璃或夹层玻璃组合加工而成的复合玻璃产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连续式玻璃钢化生产设备",
+      "evidence_span": "公司自主研发生产的高产能超长连续式玻璃钢化生产设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化系统",
+      "evidence_span": "公司的自动化系统是将以上复杂的玻璃加工过程、管理实现工厂自动化整套解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "低辐射镀膜玻璃设备",
+      "evidence_span": "低辐射镀膜（Low-E）玻璃生产线用于生产低辐射镀膜（Low-E）玻璃"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "硅巢产品",
+      "evidence_span": "硅巢产品具备“轻质高强、节能保温、隔水防腐、耐火阻燃、装饰一体、经久抗震、施工快速、健康舒适、绿色环保”九大性能集成优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "玻璃深加工技术",
+      "evidence_span": "公司依托在玻璃深加工方面长久积累下来的技术优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三元流技术",
+      "evidence_span": "北玻风机产品通过“三元流”技术在通风机行业应用为创新基础"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "玻璃深加工自动化连线技术",
+      "evidence_span": "公司的自动化系统是将以上复杂的玻璃加工过程、管理实现工厂自动化整套解决方案"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "低辐射镀膜技术",
+      "evidence_span": "公司自主研发的低辐射镀膜（Low-E）玻璃设备是生产深加工玻璃中的Low-E玻璃的专用设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连续钢化玻璃生产技术",
+      "evidence_span": "公司自主研发的连续钢化玻璃生产设备，用于光伏玻璃产品生产加工"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "圣戈班",
+      "evidence_span": "其中包含圣戈班、旭硝子、南玻、福耀、信义、福莱特等诸多国内外知名玻璃企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "旭硝子",
+      "evidence_span": "其中包含圣戈班、旭硝子、南玻、福耀、信义、福莱特等诸多国内外知名玻璃企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "南玻",
+      "evidence_span": "其中包含圣戈班、旭硝子、南玻、福耀、信义、福莱特等诸多国内外知名玻璃企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福耀",
+      "evidence_span": "其中包含圣戈班、旭硝子、南玻、福耀、信义、福莱特等诸多国内外知名玻璃企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "信义",
+      "evidence_span": "其中包含圣戈班、旭硝子、南玻、福耀、信义、福莱特等诸多国内外知名玻璃企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福莱特",
+      "evidence_span": "其中包含圣戈班、旭硝子、南玻、福耀、信义、福莱特等诸多国内外知名玻璃企业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为旗舰店",
+      "evidence_span": "还作为多家华为旗舰店、知名美国高科技电子产品公司总部及销售旗舰店"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "知名美国高科技电子产品公司",
+      "evidence_span": "还作为多家华为旗舰店、知名美国高科技电子产品公司总部及销售旗舰店"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "玻璃加工设备进口替代空间广阔"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "光伏玻璃产业",
+      "evidence_span": "公司自主研发的连续钢化玻璃生产设备，用于光伏玻璃产品生产加工"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "节能绿色建筑",
+      "evidence_span": "节能绿色建筑助力碳中和碳达峰"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "玻璃深加工设备",
+        "evidence_span": "公司主要从事玻璃深加工设备及产品的研发、设计、制造、销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "深加工玻璃产品",
+        "evidence_span": "公司主要从事玻璃深加工设备及产品的研发、设计、制造、销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "玻璃钢化设备生产经营企业",
+        "evidence_span": "唯一生产经营玻璃钢化设备的国内A股上市公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "玻璃深加工装备及产品解决方案供应商",
+        "evidence_span": "是实力雄厚的大型玻璃深加工装备及产品解决方案供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃钢化设备",
+        "evidence_span": "主要产品包括玻璃钢化设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端深加工玻璃",
+        "evidence_span": "主要产品包括玻璃钢化设备、高端深加工玻璃等核心产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低辐射Low-E镀膜设备",
+        "evidence_span": "进一步拓展了低辐射Low-E镀膜设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃深加工自动化连线",
+        "evidence_span": "进一步拓展了玻璃深加工自动化连线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "玻璃切割设备",
+        "evidence_span": "进一步拓展了玻璃切割设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "仓储系统",
+        "evidence_span": "进一步拓展了仓储系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "三元流风机",
+        "evidence_span": "进一步拓展了“三元流”风机等产业产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "钢化玻璃",
+        "evidence_span": "公司深加工玻璃主要包括钢化玻璃"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中空玻璃",
+        "evidence_span": "公司深加工玻璃主要包括钢化玻璃、中空玻璃"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "夹层玻璃",
+        "evidence_span": "公司深加工玻璃主要包括钢化玻璃、中空玻璃、夹层玻璃"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低辐射镀膜（Low-E）玻璃",
+        "evidence_span": "公司深加工玻璃主要包括钢化玻璃、中空玻璃、夹层玻璃、低辐射镀膜（Low-E）玻璃"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "复合玻璃产品",
+        "evidence_span": "由钢化玻璃或夹层玻璃组合加工而成的复合玻璃产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连续式玻璃钢化生产设备",
+        "evidence_span": "公司自主研发生产的高产能超长连续式玻璃钢化生产设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化系统",
+        "evidence_span": "公司的自动化系统是将以上复杂的玻璃加工过程、管理实现工厂自动化整套解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "低辐射镀膜玻璃设备",
+        "evidence_span": "低辐射镀膜（Low-E）玻璃生产线用于生产低辐射镀膜（Low-E）玻璃"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "硅巢产品",
+        "evidence_span": "硅巢产品具备“轻质高强、节能保温、隔水防腐、耐火阻燃、装饰一体、经久抗震、施工快速、健康舒适、绿色环保”九大性能集成优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "玻璃深加工技术",
+        "evidence_span": "公司依托在玻璃深加工方面长久积累下来的技术优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三元流技术",
+        "evidence_span": "北玻风机产品通过“三元流”技术在通风机行业应用为创新基础"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "玻璃深加工自动化连线技术",
+        "evidence_span": "公司的自动化系统是将以上复杂的玻璃加工过程、管理实现工厂自动化整套解决方案"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "低辐射镀膜技术",
+        "evidence_span": "公司自主研发的低辐射镀膜（Low-E）玻璃设备是生产深加工玻璃中的Low-E玻璃的专用设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连续钢化玻璃生产技术",
+        "evidence_span": "公司自主研发的连续钢化玻璃生产设备，用于光伏玻璃产品生产加工"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "圣戈班",
+        "evidence_span": "其中包含圣戈班、旭硝子、南玻、福耀、信义、福莱特等诸多国内外知名玻璃企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "旭硝子",
+        "evidence_span": "其中包含圣戈班、旭硝子、南玻、福耀、信义、福莱特等诸多国内外知名玻璃企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "南玻",
+        "evidence_span": "其中包含圣戈班、旭硝子、南玻、福耀、信义、福莱特等诸多国内外知名玻璃企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福耀",
+        "evidence_span": "其中包含圣戈班、旭硝子、南玻、福耀、信义、福莱特等诸多国内外知名玻璃企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "信义",
+        "evidence_span": "其中包含圣戈班、旭硝子、南玻、福耀、信义、福莱特等诸多国内外知名玻璃企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福莱特",
+        "evidence_span": "其中包含圣戈班、旭硝子、南玻、福耀、信义、福莱特等诸多国内外知名玻璃企业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为旗舰店",
+        "evidence_span": "还作为多家华为旗舰店、知名美国高科技电子产品公司总部及销售旗舰店"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "知名美国高科技电子产品公司",
+        "evidence_span": "还作为多家华为旗舰店、知名美国高科技电子产品公司总部及销售旗舰店"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "玻璃加工设备进口替代空间广阔"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "光伏玻璃产业",
+        "evidence_span": "公司自主研发的连续钢化玻璃生产设备，用于光伏玻璃产品生产加工"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "节能绿色建筑",
+        "evidence_span": "节能绿色建筑助力碳中和碳达峰"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T17:52:59"
+}

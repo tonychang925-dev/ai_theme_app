@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "六氟磷酸锂",
+      "evidence_span": "公司是国内晶体六氟磷酸锂龙头"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "湿电子化学品",
+      "evidence_span": "湿电子化学品加速推进"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "六氟磷酸锂全球龙头",
+      "evidence_span": "六氟磷酸锂全球龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无机氟化工龙头企业",
+      "evidence_span": "无机氟化工龙头企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "晶体六氟磷酸锂",
+      "evidence_span": "公司是国内晶体六氟磷酸锂龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级氢氟酸",
+      "evidence_span": "公司电子级氢氟酸突破至 UPSSS（G5）级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级硫酸",
+      "evidence_span": "大力布局其他湿电子化学品，包括电子级硫酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级盐酸",
+      "evidence_span": "大力布局其他湿电子化学品，包括电子级硫酸。电子级盐酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级硝酸",
+      "evidence_span": "电子级硝酸"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级氨水",
+      "evidence_span": "电子级氨水"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级 BOE",
+      "evidence_span": "电子级 BOE"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子级硅烷",
+      "evidence_span": "公司还具备年产 4000 吨电子级硅烷产能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "UPSSS（G5）级氢氟酸生产技术",
+      "evidence_span": "公司电子级氢氟酸突破至 UPSSS（G5）级"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源",
+      "evidence_span": "乘新能源、半导体东风"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "半导体",
+      "evidence_span": "乘新能源、半导体东风"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "六氟磷酸锂",
+        "evidence_span": "公司是国内晶体六氟磷酸锂龙头"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "湿电子化学品",
+        "evidence_span": "湿电子化学品加速推进"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "六氟磷酸锂全球龙头",
+        "evidence_span": "六氟磷酸锂全球龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无机氟化工龙头企业",
+        "evidence_span": "无机氟化工龙头企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "晶体六氟磷酸锂",
+        "evidence_span": "公司是国内晶体六氟磷酸锂龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级氢氟酸",
+        "evidence_span": "公司电子级氢氟酸突破至 UPSSS（G5）级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级硫酸",
+        "evidence_span": "大力布局其他湿电子化学品，包括电子级硫酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级盐酸",
+        "evidence_span": "大力布局其他湿电子化学品，包括电子级硫酸。电子级盐酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级硝酸",
+        "evidence_span": "电子级硝酸"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级氨水",
+        "evidence_span": "电子级氨水"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级 BOE",
+        "evidence_span": "电子级 BOE"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子级硅烷",
+        "evidence_span": "公司还具备年产 4000 吨电子级硅烷产能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "UPSSS（G5）级氢氟酸生产技术",
+        "evidence_span": "公司电子级氢氟酸突破至 UPSSS（G5）级"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源",
+        "evidence_span": "乘新能源、半导体东风"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "半导体",
+        "evidence_span": "乘新能源、半导体东风"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T16:44:45"
+}

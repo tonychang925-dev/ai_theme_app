@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "国内沿海散装液体危险货物的水上运输业务",
+      "evidence_span": "公司主要从事国内沿海散装液体危险货物的水上运输业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "液体化学品运输",
+      "evidence_span": "包括液体化学品、成品油、液化石油气的海上运输"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "成品油运输",
+      "evidence_span": "包括液体化学品、成品油、液化石油气的海上运输"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "液化石油气运输",
+      "evidence_span": "包括液体化学品、成品油、液化石油气的海上运输"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "液体散装化学品航运企业",
+      "evidence_span": "公司是国内领先的液体散装化学品航运企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "沿海液货危险品水运龙头",
+      "evidence_span": "兴通股份沿海液货危险品水运龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "内贸化学品航运龙头",
+      "evidence_span": "中国内贸化学品航运龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化学品运输业务",
+      "evidence_span": "公司核心业务为化学品运输业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "成品油运输业务",
+      "evidence_span": "成品油运输营收为1.11亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LPG运输业务",
+      "evidence_span": "LPG运输分别实现营收0.17亿元"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江石化",
+      "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国石化",
+      "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国海油",
+      "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中海壳牌",
+      "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福建联合石化",
+      "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "恒力石化",
+      "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国航油",
+      "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荣盛控股",
+      "evidence_span": "前五大客户中，荣盛控股连续两年为公司第一大客户"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "国内沿海散装液体危险货物的水上运输业务",
+        "evidence_span": "公司主要从事国内沿海散装液体危险货物的水上运输业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "液体化学品运输",
+        "evidence_span": "包括液体化学品、成品油、液化石油气的海上运输"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "成品油运输",
+        "evidence_span": "包括液体化学品、成品油、液化石油气的海上运输"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "液化石油气运输",
+        "evidence_span": "包括液体化学品、成品油、液化石油气的海上运输"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "液体散装化学品航运企业",
+        "evidence_span": "公司是国内领先的液体散装化学品航运企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "沿海液货危险品水运龙头",
+        "evidence_span": "兴通股份沿海液货危险品水运龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "内贸化学品航运龙头",
+        "evidence_span": "中国内贸化学品航运龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化学品运输业务",
+        "evidence_span": "公司核心业务为化学品运输业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "成品油运输业务",
+        "evidence_span": "成品油运输营收为1.11亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LPG运输业务",
+        "evidence_span": "LPG运输分别实现营收0.17亿元"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江石化",
+        "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国石化",
+        "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国海油",
+        "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中海壳牌",
+        "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福建联合石化",
+        "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "恒力石化",
+        "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国航油",
+        "evidence_span": "公司与浙江石化、中国石化、中国海油、中海壳牌、福建联合石化、恒力石化、中国航油等大型石化企业建立了长期稳定的战略合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荣盛控股",
+        "evidence_span": "前五大客户中，荣盛控股连续两年为公司第一大客户"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:41:07"
+}

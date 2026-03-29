@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:38:06", "result": {"chunk_id": "8f2d339da77c", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态描述MSCI全球标准指数系列的具体构成（如全球指数、新兴市场指数、ACWI指数），包括定义和覆盖范围，纯属知识内容。"}}

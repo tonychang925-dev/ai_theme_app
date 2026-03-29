@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "f00f34f81b40", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落聚焦于小鹏汇天在航展上的批量预订签约仪式，是具体事件描述，涉及订单和客户领域，没有提供题材的静态定义或核心构成。"}}

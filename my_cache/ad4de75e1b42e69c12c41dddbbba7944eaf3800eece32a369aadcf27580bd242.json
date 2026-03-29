@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "3cb3073c0dc9", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含长江存储扩产、市场份额预测等事件信息，但也涉及半导体设备国产替代、工艺差异等可能对存储行业有参考价值的静态知识，混合了事件和潜在知识。"}}

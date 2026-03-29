@@ -1,0 +1,339 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "OLED上游材料",
+      "evidence_span": "致力于OLED上游材料及制造设备领域的研发和生产"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "OLED制造设备",
+      "evidence_span": "致力于OLED上游材料及制造设备领域的研发和生产"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "OLED材料及蒸发源设备领先企业",
+      "evidence_span": "国内OLED材料及蒸发源设备领先企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "OLED上游国产化领军企业",
+      "evidence_span": "OLED上游国产化领军企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "有机发光材料",
+      "evidence_span": "核心产品有机发光材料和蒸发源市占率长期保持国内前列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "蒸发源",
+      "evidence_span": "核心产品有机发光材料和蒸发源市占率长期保持国内前列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "发光功能材料",
+      "evidence_span": "全面覆盖了发光功能材料、电子功能材料、空穴功能材料及其他功能材料四大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子功能材料",
+      "evidence_span": "全面覆盖了发光功能材料、电子功能材料、空穴功能材料及其他功能材料四大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空穴功能材料",
+      "evidence_span": "全面覆盖了发光功能材料、电子功能材料、空穴功能材料及其他功能材料四大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "其他功能材料",
+      "evidence_span": "全面覆盖了发光功能材料、电子功能材料、空穴功能材料及其他功能材料四大类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "薄膜封装材料",
+      "evidence_span": "奥来德系国内首家在这一领域实现突破的封装材料供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "PI基板材料",
+      "evidence_span": "奥来德投资1.8亿元改造厂区企业现有厂房扩建一套PI基板材料中试生产线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "OLED单体材料生产能力",
+      "evidence_span": "拥有一体化自主创新能力的OLED单体材料生产商"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线性蒸发源技术",
+      "evidence_span": "奥来德目前所生产的蒸发源属于线性蒸发源"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "适配Tokki蒸镀机接口",
+      "evidence_span": "奥来德根据市场需求制定了适配Tokki蒸镀机接口的产品路线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "热流体模型构造",
+      "evidence_span": "奥来德重点通过构造热流体模型，解决了蒸发源的系统加热均匀性及稳定性等问题"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "温控、加热、冷却、坩埚及喷嘴系统研发",
+      "evidence_span": "同时还研发了新型的温控、加热、冷却、坩埚及喷嘴系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "稳定蒸镀技术",
+      "evidence_span": "在关键性能上已经实现在10-1000nm膜厚范围内稳定蒸镀，连续250小时稳定蒸镀"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精确比例共同蒸镀",
+      "evidence_span": "可以满足不同材料的精确比例共同蒸镀"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "薄膜封装材料技术",
+      "evidence_span": "奥来德系国内首家在这一领域实现突破的封装材料供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "成都京东方",
+      "evidence_span": "陆续取得了成都京东方、云谷（固安）、武汉华星、武汉天马及合肥维信诺等知名面板厂商的蒸发源订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "云谷（固安）",
+      "evidence_span": "陆续取得了成都京东方、云谷（固安）、武汉华星、武汉天马及合肥维信诺等知名面板厂商的蒸发源订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "武汉华星",
+      "evidence_span": "陆续取得了成都京东方、云谷（固安）、武汉华星、武汉天马及合肥维信诺等知名面板厂商的蒸发源订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "武汉天马",
+      "evidence_span": "陆续取得了成都京东方、云谷（固安）、武汉华星、武汉天马及合肥维信诺等知名面板厂商的蒸发源订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "合肥维信诺",
+      "evidence_span": "陆续取得了成都京东方、云谷（固安）、武汉华星、武汉天马及合肥维信诺等知名面板厂商的蒸发源订单"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "和辉光电",
+      "evidence_span": "公司有机发光材料已与和辉光电、信利集团、维信诺、华星光电、深天马、京东方等知名AMOLED企业建立了深厚的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "信利集团",
+      "evidence_span": "公司有机发光材料已与和辉光电、信利集团、维信诺、华星光电、深天马、京东方等知名AMOLED企业建立了深厚的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "维信诺",
+      "evidence_span": "公司有机发光材料已与和辉光电、信利集团、维信诺、华星光电、深天马、京东方等知名AMOLED企业建立了深厚的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华星光电",
+      "evidence_span": "公司有机发光材料已与和辉光电、信利集团、维信诺、华星光电、深天马、京东方等知名AMOLED企业建立了深厚的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深天马",
+      "evidence_span": "公司有机发光材料已与和辉光电、信利集团、维信诺、华星光电、深天马、京东方等知名AMOLED企业建立了深厚的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "京东方",
+      "evidence_span": "公司有机发光材料已与和辉光电、信利集团、维信诺、华星光电、深天马、京东方等知名AMOLED企业建立了深厚的合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "国产化替代大势所趋"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "OLED上游国产化",
+      "evidence_span": "OLED上游国产化领军企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "OLED上游材料",
+        "evidence_span": "致力于OLED上游材料及制造设备领域的研发和生产"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "OLED制造设备",
+        "evidence_span": "致力于OLED上游材料及制造设备领域的研发和生产"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "OLED材料及蒸发源设备领先企业",
+        "evidence_span": "国内OLED材料及蒸发源设备领先企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "OLED上游国产化领军企业",
+        "evidence_span": "OLED上游国产化领军企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "有机发光材料",
+        "evidence_span": "核心产品有机发光材料和蒸发源市占率长期保持国内前列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "蒸发源",
+        "evidence_span": "核心产品有机发光材料和蒸发源市占率长期保持国内前列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "发光功能材料",
+        "evidence_span": "全面覆盖了发光功能材料、电子功能材料、空穴功能材料及其他功能材料四大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子功能材料",
+        "evidence_span": "全面覆盖了发光功能材料、电子功能材料、空穴功能材料及其他功能材料四大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空穴功能材料",
+        "evidence_span": "全面覆盖了发光功能材料、电子功能材料、空穴功能材料及其他功能材料四大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "其他功能材料",
+        "evidence_span": "全面覆盖了发光功能材料、电子功能材料、空穴功能材料及其他功能材料四大类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "薄膜封装材料",
+        "evidence_span": "奥来德系国内首家在这一领域实现突破的封装材料供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "PI基板材料",
+        "evidence_span": "奥来德投资1.8亿元改造厂区企业现有厂房扩建一套PI基板材料中试生产线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "OLED单体材料生产能力",
+        "evidence_span": "拥有一体化自主创新能力的OLED单体材料生产商"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线性蒸发源技术",
+        "evidence_span": "奥来德目前所生产的蒸发源属于线性蒸发源"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "适配Tokki蒸镀机接口",
+        "evidence_span": "奥来德根据市场需求制定了适配Tokki蒸镀机接口的产品路线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "热流体模型构造",
+        "evidence_span": "奥来德重点通过构造热流体模型，解决了蒸发源的系统加热均匀性及稳定性等问题"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "温控、加热、冷却、坩埚及喷嘴系统研发",
+        "evidence_span": "同时还研发了新型的温控、加热、冷却、坩埚及喷嘴系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "稳定蒸镀技术",
+        "evidence_span": "在关键性能上已经实现在10-1000nm膜厚范围内稳定蒸镀，连续250小时稳定蒸镀"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精确比例共同蒸镀",
+        "evidence_span": "可以满足不同材料的精确比例共同蒸镀"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "薄膜封装材料技术",
+        "evidence_span": "奥来德系国内首家在这一领域实现突破的封装材料供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "成都京东方",
+        "evidence_span": "陆续取得了成都京东方、云谷（固安）、武汉华星、武汉天马及合肥维信诺等知名面板厂商的蒸发源订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "云谷（固安）",
+        "evidence_span": "陆续取得了成都京东方、云谷（固安）、武汉华星、武汉天马及合肥维信诺等知名面板厂商的蒸发源订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "武汉华星",
+        "evidence_span": "陆续取得了成都京东方、云谷（固安）、武汉华星、武汉天马及合肥维信诺等知名面板厂商的蒸发源订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "武汉天马",
+        "evidence_span": "陆续取得了成都京东方、云谷（固安）、武汉华星、武汉天马及合肥维信诺等知名面板厂商的蒸发源订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "合肥维信诺",
+        "evidence_span": "陆续取得了成都京东方、云谷（固安）、武汉华星、武汉天马及合肥维信诺等知名面板厂商的蒸发源订单"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "和辉光电",
+        "evidence_span": "公司有机发光材料已与和辉光电、信利集团、维信诺、华星光电、深天马、京东方等知名AMOLED企业建立了深厚的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "信利集团",
+        "evidence_span": "公司有机发光材料已与和辉光电、信利集团、维信诺、华星光电、深天马、京东方等知名AMOLED企业建立了深厚的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "维信诺",
+        "evidence_span": "公司有机发光材料已与和辉光电、信利集团、维信诺、华星光电、深天马、京东方等知名AMOLED企业建立了深厚的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华星光电",
+        "evidence_span": "公司有机发光材料已与和辉光电、信利集团、维信诺、华星光电、深天马、京东方等知名AMOLED企业建立了深厚的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深天马",
+        "evidence_span": "公司有机发光材料已与和辉光电、信利集团、维信诺、华星光电、深天马、京东方等知名AMOLED企业建立了深厚的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "京东方",
+        "evidence_span": "公司有机发光材料已与和辉光电、信利集团、维信诺、华星光电、深天马、京东方等知名AMOLED企业建立了深厚的合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "国产化替代大势所趋"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "OLED上游国产化",
+        "evidence_span": "OLED上游国产化领军企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:22:15"
+}

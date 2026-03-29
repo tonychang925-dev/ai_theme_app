@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "塑胶复合材料",
+      "evidence_span": "公司是一家专业从事塑胶复合材料的研发、生产、销售业务的高新技术企业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "气密材料",
+      "evidence_span": "公司主要产品可分为气密材料和柔性材料两大类"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "柔性材料",
+      "evidence_span": "公司主要产品可分为气密材料和柔性材料两大类"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "拉丝气垫材料、充气游艇材料领域的先行者",
+      "evidence_span": "公司为拉丝气垫材料、充气游艇材料领域的先行者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端气密材料制造商",
+      "evidence_span": "高端气密材料制造商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "拉丝气垫材料",
+      "evidence_span": "气密材料包括拉丝气垫材料和充气游艇材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充气游艇材料",
+      "evidence_span": "气密材料包括拉丝气垫材料和充气游艇材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "篷盖材料",
+      "evidence_span": "柔性材料包括篷盖材料和灯箱广告材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "灯箱广告材料",
+      "evidence_span": "柔性材料包括篷盖材料和灯箱广告材料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "超薄特种电容薄膜",
+      "evidence_span": "年产5,700吨超薄特种电容薄膜建设项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "塑胶复合材料全流程生产能力",
+      "evidence_span": "具备塑胶复合材料整经、织造、压延、上浆、贴合等全流程生产能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "五层一体贴合技术",
+      "evidence_span": "基于五层一体贴合技术的游艇新材料"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "全民健身时代",
+      "evidence_span": "与全民健身时代共振"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "水上运动市场",
+      "evidence_span": "水上运动市场未来可期"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源电容薄膜",
+      "evidence_span": "布局新能源电容薄膜"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "塑胶复合材料",
+        "evidence_span": "公司是一家专业从事塑胶复合材料的研发、生产、销售业务的高新技术企业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "气密材料",
+        "evidence_span": "公司主要产品可分为气密材料和柔性材料两大类"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "柔性材料",
+        "evidence_span": "公司主要产品可分为气密材料和柔性材料两大类"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "拉丝气垫材料、充气游艇材料领域的先行者",
+        "evidence_span": "公司为拉丝气垫材料、充气游艇材料领域的先行者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端气密材料制造商",
+        "evidence_span": "高端气密材料制造商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "拉丝气垫材料",
+        "evidence_span": "气密材料包括拉丝气垫材料和充气游艇材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充气游艇材料",
+        "evidence_span": "气密材料包括拉丝气垫材料和充气游艇材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "篷盖材料",
+        "evidence_span": "柔性材料包括篷盖材料和灯箱广告材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "灯箱广告材料",
+        "evidence_span": "柔性材料包括篷盖材料和灯箱广告材料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "超薄特种电容薄膜",
+        "evidence_span": "年产5,700吨超薄特种电容薄膜建设项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "塑胶复合材料全流程生产能力",
+        "evidence_span": "具备塑胶复合材料整经、织造、压延、上浆、贴合等全流程生产能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "五层一体贴合技术",
+        "evidence_span": "基于五层一体贴合技术的游艇新材料"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "全民健身时代",
+        "evidence_span": "与全民健身时代共振"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "水上运动市场",
+        "evidence_span": "水上运动市场未来可期"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源电容薄膜",
+        "evidence_span": "布局新能源电容薄膜"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T11:04:11"
+}

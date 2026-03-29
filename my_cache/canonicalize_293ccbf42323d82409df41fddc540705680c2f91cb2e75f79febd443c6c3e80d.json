@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:18:14", "result": {"span_uid": "da75a2619aa9", "action": "rewrite", "canonical_text": "EUV光刻技术是半导体制造中的关键先进技术，具有持续扩展和产品组合多样化的潜力。", "final_type": "related", "final_role": "关键先进技术", "stability": "medium", "reason": "原片段为具体公司的计划表述，改写为更稳定、独立的技术知识，强调其在半导体设备中的重要性。"}}

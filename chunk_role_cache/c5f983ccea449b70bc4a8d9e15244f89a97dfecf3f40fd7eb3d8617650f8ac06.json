@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-08T14:09:04", "result": {"chunk_id": "6ae9762b1d72", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "medium", "reason": "该段包含多个事件（如优必选聆讯、特斯拉参展、政策发布等），但涉及市场份额、公司股权结构等潜在知识，混合性强，需进一步提取知识。"}}

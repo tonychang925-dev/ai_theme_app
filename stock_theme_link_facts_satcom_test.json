@@ -1,0 +1,113 @@
+[
+  {
+    "run_id": "2026-03-28_satcom_test_001",
+    "event_id": "evt_0e9d40aa1937",
+    "root_subject_key": "9019807",
+    "root_subject_name": "卫星互联网",
+    "direction_subject_key": "9019807",
+    "direction_subject_name": "卫星互联网",
+    "stock_id": "688070",
+    "stock_name": "纵横股份",
+    "stage1_score": 0.734083,
+    "stage1_confidence": "",
+    "stage1_gate_reason": "",
+    "link_level": "semantic_only",
+    "link_type": "other",
+    "confidence": 0.0,
+    "select_reason": "股票纵横股份（688070）是工业无人机企业，专注于垂直起降固定翼无人机等产品，应用于电力、测绘、警用安防、应急救援等行业。题材卫星互联网涉及卫星制造、发射、组网等技术，相关事件包括商业火箭发射、卫星互联网低轨卫星组发射、政策支持等。股票证据中未提及卫星、火箭、航天发射或卫星互联网相关技术、产品或业务，仅通过无人机在低空应用（如测绘、巡检）可能与卫星互联网的“低空”或“通信”概念有间接语义关联，但无直接证据支持核心映射。Stage1 score 0.734083 表明有一定关联可能性，但证据不足。",
+    "evidence_json": {
+      "stock_id": "688070",
+      "stock_name": "纵横股份",
+      "remark": "国内垂直起降固定翼无人机领域领先的工业无人机企业",
+      "lightspots": [
+        "“大鹏纵横”，我国工业级无人机领军者",
+        "三季报收入50%增长；坚定看好公司长期发展",
+        "1H22订单同比大增75%；2Q22单季度实现盈利"
+      ],
+      "detail_html_text_snippets": [
+        "公司专注于工业无人机相关产品的研发、生产、销售及服务",
+        "产品包括垂直起降固定翼无人机、多旋翼无人机、无人值守系统",
+        "应用于电力、测绘、警用安防、应急救援、智慧矿山等行业",
+        "云：即无人机综合云管控平台",
+        "网：即多样化的地面站通信系统",
+        "端：即各类型、各级别的无人机飞行平台及其载荷"
+      ],
+      "topic_context": {
+        "root_subject_name": "卫星互联网",
+        "subject_reason": "9019807：一、卫星互联网产业动态 2025年12月25日 中国民营航天企业蓝箭航天近日完成IPO上市辅导，标志着国内商业航天领域资本化进程提速。"
+      },
+      "events_relevant": [
+        "evt_0a756b576b20: 中国在海南商业航天发射场成功发射卫星互联网低轨卫星组。",
+        "evt_4afa2b9d3553: 文昌国际航天城年产1000颗卫星的超级工厂即将投产。",
+        "evt_dde2b446dcca: 北京召开太空数据中心建设工作推进会，涉及卫星组网。"
+      ],
+      "stage1_score": 0.734083
+    }
+  },
+  {
+    "run_id": "2026-03-28_satcom_test_001",
+    "event_id": "evt_0e9d40aa1937",
+    "root_subject_key": "9019807",
+    "root_subject_name": "卫星互联网",
+    "direction_subject_key": "9019807",
+    "direction_subject_name": "卫星互联网",
+    "stock_id": "300136",
+    "stock_name": "信维通信",
+    "stage1_score": 0.721519,
+    "stage1_confidence": "",
+    "stage1_gate_reason": "",
+    "link_level": "semantic_only",
+    "link_type": "other",
+    "confidence": 0.0,
+    "select_reason": "股票信维通信（300136）是一家一站式泛射频解决方案提供商，业务涉及天线、滤波器、无线充电、电磁屏蔽等，主要应用于5G、手机、汽车互联等领域。题材卫星互联网涉及卫星制造、发射、组网等环节。从静态证据看，股票业务与卫星互联网无直接关联，如无卫星天线、卫星通信射频器件等明确证据。事件列表中，如蓝箭航天IPO、朱雀三号火箭发射、卫星互联网低轨卫星组发射等，均未提及信维通信参与。Stage1 score为0.721519，表明有一定语义关联可能，但证据不足。因此，基于语义关联（如射频技术可能间接应用于卫星通信），但无具体证据支持直接关联。",
+    "evidence_json": {
+      "stock_evidence_fields_used": [
+        "stock_name",
+        "remark",
+        "lightspots",
+        "detail_html_text"
+      ],
+      "topic_context_fields_used": [
+        "root_subject_name",
+        "subject_reason"
+      ],
+      "events_considered": [
+        "evt_0e9d40aa1937",
+        "evt_0a756b576b20",
+        "evt_6269c84e61a9",
+        "evt_7f2dbad42079",
+        "evt_821d30072655"
+      ],
+      "stage1_score": 0.721519
+    }
+  },
+  {
+    "run_id": "2026-03-28_satcom_test_001",
+    "event_id": "evt_0e9d40aa1937",
+    "root_subject_key": "9019807",
+    "root_subject_name": "卫星互联网",
+    "direction_subject_key": "9019807",
+    "direction_subject_name": "卫星互联网",
+    "stock_id": "300819",
+    "stock_name": "聚杰微纤",
+    "stage1_score": 0.675631,
+    "stage1_confidence": "",
+    "stage1_gate_reason": "",
+    "link_level": "semantic_only",
+    "link_type": "other",
+    "confidence": 0.2,
+    "select_reason": "股票聚杰微纤（300819）主营业务为超细复合纤维面料及制成品的研发、生产、销售，属于纺织服装行业，与卫星互联网题材无直接关联。卫星互联网题材涉及商业航天、火箭发射、卫星制造、太空数据中心等核心领域，而股票证据中未提及任何航天、卫星、火箭、发射、太空、通信等相关业务或技术。Stage1 score为0.675631，表明有一定语义关联可能性，但静态证据不足。事件列表中无事件直接涉及该股票，股票详情中无相关业务描述。因此，仅基于语义或间接关联（如材料可能用于航天服装，但无证据支持），判断为语义关联。",
+    "evidence_json": {
+      "stock_id": "300819",
+      "stock_name": "聚杰微纤",
+      "remark": "中国超细纤维面料精品生产基地，国家高新科技企业",
+      "detail_html_text_snippet": "公司专注于超细复合纤维面料及制成品的研发、生产、销售业务，系国内最早从事超细复合纤维材料加工、应用的企业之一",
+      "stage1_score": 0.675631,
+      "topic_context": {
+        "root_subject_name": "卫星互联网",
+        "subject_reason": "9019807：一、卫星互联网产业动态 2025年12月25日 中国民营航天企业蓝箭航天近日完成IPO上市辅导，标志着国内商业航天领域资本化进程提速。"
+      },
+      "events_relevance": "无事件直接涉及聚杰微纤；事件核心概念包括卫星互联网、商业航天、火箭发射、卫星制造等，与股票业务不匹配。"
+    }
+  }
+]

@@ -1,0 +1,309 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "图书出版",
+      "evidence_span": "公司业务模式以图书的出版、发行为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "图书发行",
+      "evidence_span": "公司业务模式以图书的出版、发行为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "报刊传媒",
+      "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "阅读服务",
+      "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子商务",
+      "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "教育服务",
+      "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "印制生产",
+      "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物流配送",
+      "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "资本经营",
+      "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "西南地区出版发行龙头企业",
+      "evidence_span": "公司是西南地区出版发行龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "四川省唯一具备教材发行资质的单位",
+      "evidence_span": "新华文轩作为四川省唯一具备教材发行资质的单位"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "四川省义务教育阶段中小学生教材单一来源采购的供货方",
+      "evidence_span": "是四川省义务教育阶段中小学生教材单一来源采购的供货方"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "省内教育信息化及教育装备产品和服务的主要运营商",
+      "evidence_span": "公司是省内教育信息化及教育装备产品和服务的主要运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教材教辅",
+      "evidence_span": "出版业务中，教材教辅占比过半"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一般图书",
+      "evidence_span": "一般图书占比近 30%"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "教育信息化及装备业务",
+      "evidence_span": "教育信息化及装备业务收入分别为 6.69 亿"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "文轩智慧校园",
+      "evidence_span": "开发了文轩智慧校园、智慧课堂等教育信息化产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧课堂",
+      "evidence_span": "开发了文轩智慧校园、智慧课堂等教育信息化产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "学科专业教室",
+      "evidence_span": "学科专业教室和创客空间等教育装备产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "创客空间",
+      "evidence_span": "学科专业教室和创客空间等教育装备产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主题时政类出版物",
+      "evidence_span": "高效完成主题时政类出版物的征订发行工作"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "少儿类图书",
+      "evidence_span": "少儿类图书出版聚焦内容建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "线上线下协同增效的营销模式",
+      "evidence_span": "构建“线上+线下”协同增效的营销模式"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化先发优势",
+      "evidence_span": "凭借数字化先发优势开发了文轩智慧校园"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "四川省教育厅",
+      "evidence_span": "每学年与省教育厅签订“城乡义务教育阶段学生免费教科书采购合同书”"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Disney",
+      "evidence_span": "获得 Disney、DK 等全球著名出版传媒机构的多种授权"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "DK",
+      "evidence_span": "获得 Disney、DK 等全球著名出版传媒机构的多种授权"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "出版发行主业稳健增长",
+      "evidence_span": "新华文轩出版发行主业稳健增长"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "互联网业务表现亮眼",
+      "evidence_span": "互联网业务表现亮眼"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字教育将成未来看点",
+      "evidence_span": "数字教育将成未来看点"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "图书出版",
+        "evidence_span": "公司业务模式以图书的出版、发行为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "图书发行",
+        "evidence_span": "公司业务模式以图书的出版、发行为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "报刊传媒",
+        "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "阅读服务",
+        "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子商务",
+        "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "教育服务",
+        "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "印制生产",
+        "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物流配送",
+        "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "资本经营",
+        "evidence_span": "在图书出版、报刊传媒、阅读服务、电子商务、教育服务、印制生产、物流配送、资本经营等领域全面发展"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "西南地区出版发行龙头企业",
+        "evidence_span": "公司是西南地区出版发行龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "四川省唯一具备教材发行资质的单位",
+        "evidence_span": "新华文轩作为四川省唯一具备教材发行资质的单位"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "四川省义务教育阶段中小学生教材单一来源采购的供货方",
+        "evidence_span": "是四川省义务教育阶段中小学生教材单一来源采购的供货方"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "省内教育信息化及教育装备产品和服务的主要运营商",
+        "evidence_span": "公司是省内教育信息化及教育装备产品和服务的主要运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教材教辅",
+        "evidence_span": "出版业务中，教材教辅占比过半"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一般图书",
+        "evidence_span": "一般图书占比近 30%"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "教育信息化及装备业务",
+        "evidence_span": "教育信息化及装备业务收入分别为 6.69 亿"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "文轩智慧校园",
+        "evidence_span": "开发了文轩智慧校园、智慧课堂等教育信息化产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧课堂",
+        "evidence_span": "开发了文轩智慧校园、智慧课堂等教育信息化产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "学科专业教室",
+        "evidence_span": "学科专业教室和创客空间等教育装备产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "创客空间",
+        "evidence_span": "学科专业教室和创客空间等教育装备产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主题时政类出版物",
+        "evidence_span": "高效完成主题时政类出版物的征订发行工作"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "少儿类图书",
+        "evidence_span": "少儿类图书出版聚焦内容建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "线上线下协同增效的营销模式",
+        "evidence_span": "构建“线上+线下”协同增效的营销模式"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化先发优势",
+        "evidence_span": "凭借数字化先发优势开发了文轩智慧校园"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "四川省教育厅",
+        "evidence_span": "每学年与省教育厅签订“城乡义务教育阶段学生免费教科书采购合同书”"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Disney",
+        "evidence_span": "获得 Disney、DK 等全球著名出版传媒机构的多种授权"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "DK",
+        "evidence_span": "获得 Disney、DK 等全球著名出版传媒机构的多种授权"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "出版发行主业稳健增长",
+        "evidence_span": "新华文轩出版发行主业稳健增长"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "互联网业务表现亮眼",
+        "evidence_span": "互联网业务表现亮眼"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字教育将成未来看点",
+        "evidence_span": "数字教育将成未来看点"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:38:20"
+}

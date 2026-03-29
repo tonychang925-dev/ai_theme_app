@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:44:20", "result": {"chunk_id": "7cc6d66eedd1", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落静态说明3D显示的定义、分类（眼镜式和裸眼式）、裸眼3D技术的原理、背景、主流技术手段（如光屏障式、柱状透镜等），纯属知识性介绍，没有事件内容。"}}

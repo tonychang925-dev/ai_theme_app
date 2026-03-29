@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_semantic_stable", "model": "deepseek-chat", "timestamp": "2026-03-08T19:37:33", "result": {"chunk_id": "198ec0611d09", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "明确描述了国庆假期期间港股科技股（特别是中芯国际）的股价涨幅，是典型的市场短期行情事件。"}}

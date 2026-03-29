@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic", "model": "deepseek-chat", "timestamp": "2026-03-08T12:19:46", "result": {"chunk_id": "274c3332061e", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落基于美国修订出口管理条例的事件，但列举了与半导体设备相关的实体和领域（如涂胶显影、刻蚀、薄膜沉积、清洗、去胶、离子注入、CMP、封装测试等），这些内容提供了半导体设备细分领域的知识，混合了事件信息。"}}

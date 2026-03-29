@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v3", "model": "deepseek-chat", "timestamp": "2026-03-07T19:21:44", "result": {"chunk_id": "773ce63259f4", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段与chunk_id 2c443040386a类似，在事件背景下提供半导体设备销售收入和增长数据，有助于理解行业规模和趋势，但基于具体时间点统计，稳定性较弱。"}}

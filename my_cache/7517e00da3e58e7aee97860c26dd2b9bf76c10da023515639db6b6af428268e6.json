@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "7dbed253a1a5", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段主要描述特朗普关于伊朗核问题的言论和潜在军事行动，是具体的时间性动态事件，不涉及军工集团本身的定义、结构或稳定知识，与题材本体关联较弱。"}}

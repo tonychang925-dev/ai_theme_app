@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:17:45", "result": {"span_uid": "e56c5102e5ad", "action": "keep", "canonical_text": "半导体设备涵盖了涂胶显影、刻蚀、薄膜沉积、清洗、去胶、离子注入、CMP和封装测试等大部分领域。", "final_type": "core", "final_role": "设备领域分类", "stability": "high", "reason": "该片段直接定义了半导体设备的主要技术领域，内容稳定、可独立成立，无需改写。"}}

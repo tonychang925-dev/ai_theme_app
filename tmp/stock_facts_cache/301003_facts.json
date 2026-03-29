@@ -1,0 +1,209 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "改性塑料产品的研发",
+      "evidence_span": "公司主要从事改性塑料产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "改性塑料产品的生产",
+      "evidence_span": "公司主要从事改性塑料产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "改性塑料产品的销售",
+      "evidence_span": "公司主要从事改性塑料产品的研发、生产和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "改性塑料行业中具有独特竞争优势及较强品牌影响力的企业",
+      "evidence_span": "公司已发展成为国内改性塑料行业中具有独特竞争优势及较强品牌影响力的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能改性尼龙",
+      "evidence_span": "主要产品包括高性能改性尼龙"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高性能改性聚酯",
+      "evidence_span": "高性能改性聚酯"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工程化聚烯烃",
+      "evidence_span": "工程化聚烯烃"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "色母粒",
+      "evidence_span": "色母粒和功能性母粒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "功能性母粒",
+      "evidence_span": "色母粒和功能性母粒"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "改性PA6",
+      "evidence_span": "改性PA6"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "改性PA66",
+      "evidence_span": "改性PA66"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "改性PC/PBT",
+      "evidence_span": "改性PC/PBT"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "改性PC/ABS",
+      "evidence_span": "改性PC/ABS"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "改性PBT",
+      "evidence_span": "改性PBT"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "改性PP",
+      "evidence_span": "改性PP"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "原材料研究",
+      "evidence_span": "在原材料研究、配方开发及优化、添加剂优化、工艺流程设计和优化等各方面持续投入资源进行研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "配方开发及优化",
+      "evidence_span": "在原材料研究、配方开发及优化、添加剂优化、工艺流程设计和优化等各方面持续投入资源进行研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "添加剂优化",
+      "evidence_span": "在原材料研究、配方开发及优化、添加剂优化、工艺流程设计和优化等各方面持续投入资源进行研发"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "工艺流程设计和优化",
+      "evidence_span": "在原材料研究、配方开发及优化、添加剂优化、工艺流程设计和优化等各方面持续投入资源进行研发"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "进口替代",
+      "evidence_span": "实现了部分进口替代"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "改性塑料产品的研发",
+        "evidence_span": "公司主要从事改性塑料产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "改性塑料产品的生产",
+        "evidence_span": "公司主要从事改性塑料产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "改性塑料产品的销售",
+        "evidence_span": "公司主要从事改性塑料产品的研发、生产和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "改性塑料行业中具有独特竞争优势及较强品牌影响力的企业",
+        "evidence_span": "公司已发展成为国内改性塑料行业中具有独特竞争优势及较强品牌影响力的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能改性尼龙",
+        "evidence_span": "主要产品包括高性能改性尼龙"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高性能改性聚酯",
+        "evidence_span": "高性能改性聚酯"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工程化聚烯烃",
+        "evidence_span": "工程化聚烯烃"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "色母粒",
+        "evidence_span": "色母粒和功能性母粒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "功能性母粒",
+        "evidence_span": "色母粒和功能性母粒"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "改性PA6",
+        "evidence_span": "改性PA6"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "改性PA66",
+        "evidence_span": "改性PA66"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "改性PC/PBT",
+        "evidence_span": "改性PC/PBT"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "改性PC/ABS",
+        "evidence_span": "改性PC/ABS"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "改性PBT",
+        "evidence_span": "改性PBT"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "改性PP",
+        "evidence_span": "改性PP"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "原材料研究",
+        "evidence_span": "在原材料研究、配方开发及优化、添加剂优化、工艺流程设计和优化等各方面持续投入资源进行研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "配方开发及优化",
+        "evidence_span": "在原材料研究、配方开发及优化、添加剂优化、工艺流程设计和优化等各方面持续投入资源进行研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "添加剂优化",
+        "evidence_span": "在原材料研究、配方开发及优化、添加剂优化、工艺流程设计和优化等各方面持续投入资源进行研发"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "工艺流程设计和优化",
+        "evidence_span": "在原材料研究、配方开发及优化、添加剂优化、工艺流程设计和优化等各方面持续投入资源进行研发"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "进口替代",
+        "evidence_span": "实现了部分进口替代"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:14:04"
+}

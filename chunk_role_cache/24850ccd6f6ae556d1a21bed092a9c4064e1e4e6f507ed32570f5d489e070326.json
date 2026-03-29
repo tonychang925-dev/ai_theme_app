@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "87ff95d2767d", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段包含低空经济作为未来产业的政策性知识（如建立投入增长机制），但以具体事件（北京市委实施意见发布）为背景，混合了静态知识和事件信息。"}}

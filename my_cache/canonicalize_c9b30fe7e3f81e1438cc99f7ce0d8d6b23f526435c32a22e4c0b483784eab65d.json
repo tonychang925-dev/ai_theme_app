@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:52:03", "result": {"span_uid": "4349ec513a23", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述台积电具体的厂务工程竞标时间表，属于单一公司的事件性信息，无法整理成稳定、可独立成立的题材知识块。"}}

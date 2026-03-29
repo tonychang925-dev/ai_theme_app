@@ -1,0 +1,169 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "核能发电",
+      "evidence_span": "主营业务为建设、运营及管理核电站，销售该等核电站所发电力"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "核电站建设",
+      "evidence_span": "主营业务为建设、运营及管理核电站"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "核电站运营管理",
+      "evidence_span": "主营业务为建设、运营及管理核电站"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内核能发电的龙头企业",
+      "evidence_span": "国内核能发电的龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大的纯核电运营商",
+      "evidence_span": "全球最大的纯核电运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球一流核电运营商",
+      "evidence_span": "全球一流核电运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "清洁能源供应商",
+      "evidence_span": "回报稳定的清洁能源供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中广核核能发电的唯一平台",
+      "evidence_span": "本公司是中广核核能发电的唯一平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电力",
+      "evidence_span": "公司的主要产品是电力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "三代核电技术华龙一号",
+      "evidence_span": "研究开发了具有自主知识产权的三代核电技术华龙一号"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "压水堆技术路线",
+      "evidence_span": "公司专注于发展压水堆技术路线"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "设计、建造、运营一体化",
+      "evidence_span": "设计、建造、运营一体化，协同效应明显"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "核电运营管理经验",
+      "evidence_span": "公司拥有超过25年的核电运营管理经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "群堆、群厂管理经验",
+      "evidence_span": "拥有十多年群堆、群厂管理经验"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "碳达峰碳中和",
+      "evidence_span": "助力实现碳达峰碳中和"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "清洁能源",
+      "evidence_span": "回报稳定的清洁能源供应商"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "核能发电",
+        "evidence_span": "主营业务为建设、运营及管理核电站，销售该等核电站所发电力"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "核电站建设",
+        "evidence_span": "主营业务为建设、运营及管理核电站"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "核电站运营管理",
+        "evidence_span": "主营业务为建设、运营及管理核电站"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内核能发电的龙头企业",
+        "evidence_span": "国内核能发电的龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大的纯核电运营商",
+        "evidence_span": "全球最大的纯核电运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球一流核电运营商",
+        "evidence_span": "全球一流核电运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "清洁能源供应商",
+        "evidence_span": "回报稳定的清洁能源供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中广核核能发电的唯一平台",
+        "evidence_span": "本公司是中广核核能发电的唯一平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电力",
+        "evidence_span": "公司的主要产品是电力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "三代核电技术华龙一号",
+        "evidence_span": "研究开发了具有自主知识产权的三代核电技术华龙一号"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "压水堆技术路线",
+        "evidence_span": "公司专注于发展压水堆技术路线"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "设计、建造、运营一体化",
+        "evidence_span": "设计、建造、运营一体化，协同效应明显"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "核电运营管理经验",
+        "evidence_span": "公司拥有超过25年的核电运营管理经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "群堆、群厂管理经验",
+        "evidence_span": "拥有十多年群堆、群厂管理经验"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "碳达峰碳中和",
+        "evidence_span": "助力实现碳达峰碳中和"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "清洁能源",
+        "evidence_span": "回报稳定的清洁能源供应商"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T20:34:26"
+}

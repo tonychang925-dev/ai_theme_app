@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "973a967e94e6", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落主要描述JSR在韩国建设光刻胶生产基地的事件，属于公司动态和项目进展，不包含静态知识。"}}

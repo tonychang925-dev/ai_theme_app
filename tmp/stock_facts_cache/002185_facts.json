@@ -1,0 +1,299 @@
+{
+  "facts": [
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球第六大封测厂商",
+      "evidence_span": "华天科技全球第六大封测厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内第三大封测厂",
+      "evidence_span": "国内第三大、全球第六大封测厂"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "集成电路封装测试",
+      "evidence_span": "公司集成电路封装产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "引线框架类产品",
+      "evidence_span": "引线框架类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "基板类产品",
+      "evidence_span": "基板类产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "晶圆级产品",
+      "evidence_span": "晶圆级产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "DIP/SDIP系列",
+      "evidence_span": "DIP/SDIP系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SOT系列",
+      "evidence_span": "SOT系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SOP系列",
+      "evidence_span": "SOP系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SSOP/TSSOP/eTSSOP系列",
+      "evidence_span": "SSOP/TSSOP/eTSSOP系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "QFP/LQFP/TQFP系列",
+      "evidence_span": "QFP/LQFP/TQFP系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "QFN/DFN系列",
+      "evidence_span": "QFN/DFN系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "BGA/LGA系列",
+      "evidence_span": "BGA/LGA系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FC系列",
+      "evidence_span": "FC系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MCM（MCP）系列",
+      "evidence_span": "MCM（MCP）系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "SiP系列",
+      "evidence_span": "SiP系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "WLP系列",
+      "evidence_span": "WLP系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TSV系列",
+      "evidence_span": "TSV系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "Bumping系列",
+      "evidence_span": "Bumping系列"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "MEMS系列",
+      "evidence_span": "MEMS系列"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "引线框架类封装",
+      "evidence_span": "引线框架类产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基板类封装",
+      "evidence_span": "基板类产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "晶圆级封装",
+      "evidence_span": "晶圆级产品"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "TSV",
+      "evidence_span": "TSV"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Bumping",
+      "evidence_span": "Bumping"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "WLCSP",
+      "evidence_span": "WLCSP"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Fan-Out",
+      "evidence_span": "Fan-Out"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "芯片国产化替代",
+      "evidence_span": "受益于芯片国产化替代加速"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "5G商用",
+      "evidence_span": "受益于...5G商用的封测代工企业"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球第六大封测厂商",
+        "evidence_span": "华天科技全球第六大封测厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内第三大封测厂",
+        "evidence_span": "国内第三大、全球第六大封测厂"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "集成电路封装测试",
+        "evidence_span": "公司集成电路封装产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "引线框架类产品",
+        "evidence_span": "引线框架类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "基板类产品",
+        "evidence_span": "基板类产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "晶圆级产品",
+        "evidence_span": "晶圆级产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "DIP/SDIP系列",
+        "evidence_span": "DIP/SDIP系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SOT系列",
+        "evidence_span": "SOT系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SOP系列",
+        "evidence_span": "SOP系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SSOP/TSSOP/eTSSOP系列",
+        "evidence_span": "SSOP/TSSOP/eTSSOP系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "QFP/LQFP/TQFP系列",
+        "evidence_span": "QFP/LQFP/TQFP系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "QFN/DFN系列",
+        "evidence_span": "QFN/DFN系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "BGA/LGA系列",
+        "evidence_span": "BGA/LGA系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FC系列",
+        "evidence_span": "FC系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MCM（MCP）系列",
+        "evidence_span": "MCM（MCP）系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "SiP系列",
+        "evidence_span": "SiP系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "WLP系列",
+        "evidence_span": "WLP系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TSV系列",
+        "evidence_span": "TSV系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "Bumping系列",
+        "evidence_span": "Bumping系列"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "MEMS系列",
+        "evidence_span": "MEMS系列"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "引线框架类封装",
+        "evidence_span": "引线框架类产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基板类封装",
+        "evidence_span": "基板类产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "晶圆级封装",
+        "evidence_span": "晶圆级产品"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "TSV",
+        "evidence_span": "TSV"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Bumping",
+        "evidence_span": "Bumping"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "WLCSP",
+        "evidence_span": "WLCSP"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Fan-Out",
+        "evidence_span": "Fan-Out"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "芯片国产化替代",
+        "evidence_span": "受益于芯片国产化替代加速"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "5G商用",
+        "evidence_span": "受益于...5G商用的封测代工企业"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T15:20:10"
+}

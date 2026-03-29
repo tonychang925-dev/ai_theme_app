@@ -1,0 +1,529 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "自动化设备的研发",
+      "evidence_span": "主要从事自动化设备的研发、设计、生产、销售及技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "设计",
+      "evidence_span": "主要从事自动化设备的研发、设计、生产、销售及技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生产",
+      "evidence_span": "主要从事自动化设备的研发、设计、生产、销售及技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "销售",
+      "evidence_span": "主要从事自动化设备的研发、设计、生产、销售及技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "技术服务",
+      "evidence_span": "主要从事自动化设备的研发、设计、生产、销售及技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "消费电子产业",
+      "evidence_span": "公司业务包括消费电子产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "汽车产业",
+      "evidence_span": "公司业务包括...汽车产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "家电产业",
+      "evidence_span": "公司业务包括...家电产业"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗行业",
+      "evidence_span": "公司业务包括...医疗行业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "数控绕线龙头企业",
+      "evidence_span": "田中精机数控绕线龙头企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "无线充电绕线设备领军代表",
+      "evidence_span": "田中精机无线充电绕线设备领军代表"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高端设备制造商",
+      "evidence_span": "田中精机高端设备制造商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国内数控绕线行业领军者",
+      "evidence_span": "田中精机国内数控绕线行业领军者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球无线充电独角兽",
+      "evidence_span": "田中精机全球无线充电独角兽"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "3C自动化创新引领者",
+      "evidence_span": "3C自动化创新引领者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "精密绕线设备领域的领导者",
+      "evidence_span": "公司是国内精密绕线设备领域的领导者"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数控自动化标准机",
+      "evidence_span": "公司产品主要包括数控自动化标准机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数控自动化非标准机",
+      "evidence_span": "公司产品主要包括...非标准机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数控自动化特殊设备",
+      "evidence_span": "公司产品主要包括...数控自动化特殊设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "视觉检测设备",
+      "evidence_span": "该等设备主要包括视觉检测设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "焊锡设备",
+      "evidence_span": "该等设备主要包括...焊锡设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "插端子设备",
+      "evidence_span": "该等设备主要包括...插端子设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自动化测试",
+      "evidence_span": "可以为客户提供自动化测试"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密装配",
+      "evidence_span": "可以为客户提供...精密装配"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全自动生产线的整体解决方案",
+      "evidence_span": "可以为客户提供...全自动生产线的整体解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无线充电设备",
+      "evidence_span": "田中精机无线充电设备逐步释放"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绕线设备",
+      "evidence_span": "田中精机无线充电带来绕线设备增量"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精雕机",
+      "evidence_span": "精雕机黑马驰骋新市场"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子线圈自动化生产成套设备核心技术",
+      "evidence_span": "掌握了源自日本的电子线圈自动化生产成套设备核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密绕线技术",
+      "evidence_span": "实现了精密绕线技术在新兴产业内的横向拓展"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无线充电设备研发",
+      "evidence_span": "在无线充电...设备研发上积累了丰富的经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "快充设备研发",
+      "evidence_span": "在...快充...设备研发上积累了丰富的经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车规级变压器设备研发",
+      "evidence_span": "在...配套车规级变压器...设备研发上积累了丰富的经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "音圈设备研发",
+      "evidence_span": "在...音圈...设备研发上积累了丰富的经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "震动马达设备研发",
+      "evidence_span": "在...震动马达...设备研发上积累了丰富的经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "伺服电机设备研发",
+      "evidence_span": "在...伺服电机...设备研发上积累了丰富的经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电梯曳引机设备研发",
+      "evidence_span": "在...电梯曳引机...设备研发上积累了丰富的经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "汽车转向助力EPS电机设备研发",
+      "evidence_span": "在...汽车转向助力EPS电机为代表的汽车相关配套产品...设备研发上积累了丰富的经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "柔性装配设备研发",
+      "evidence_span": "在...柔性装配...设备研发上积累了丰富的经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "激光雷达自动化装配设备研发",
+      "evidence_span": "在...以激光雷达自动化装配为代表的精密装配...设备研发上积累了丰富的经验"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自动上料",
+      "evidence_span": "实现包括自动上料...在内的全流程工序的自动化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "绕线",
+      "evidence_span": "实现包括...绕线...在内的全流程工序的自动化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "移载",
+      "evidence_span": "实现包括...移载...在内的全流程工序的自动化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "焊锡",
+      "evidence_span": "实现包括...焊锡...在内的全流程工序的自动化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "插端子",
+      "evidence_span": "实现包括...插端子...在内的全流程工序的自动化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "包胶",
+      "evidence_span": "实现包括...包胶...在内的全流程工序的自动化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "检测",
+      "evidence_span": "实现包括...检测...在内的全流程工序的自动化"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数据上传",
+      "evidence_span": "实现包括...数据上传...在内的全流程工序的自动化"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内知名的汽车配件制造商",
+      "evidence_span": "公司与多家国内知名的汽车配件制造商...建立了良好的合作关系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "消费电子产品制造商",
+      "evidence_span": "公司与...消费电子产品制造商建立了良好的合作关系"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "无线充电",
+      "evidence_span": "受益无线充电和消费电子双玻璃升级大趋势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "消费电子双玻璃升级",
+      "evidence_span": "受益无线充电和消费电子双玻璃升级大趋势"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "3C自动化",
+      "evidence_span": "切入3C自动化领域"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智能制造",
+      "evidence_span": "逐步探索智能制造"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "自动化设备的研发、设计、生产、销售及技术服务",
+        "evidence_span": "主要从事自动化设备的研发、设计、生产、销售及技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "消费电子产业",
+        "evidence_span": "公司业务包括消费电子产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "汽车产业",
+        "evidence_span": "公司业务包括...汽车产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "家电产业",
+        "evidence_span": "公司业务包括...家电产业"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗行业",
+        "evidence_span": "公司业务包括...医疗行业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "数控绕线龙头企业",
+        "evidence_span": "田中精机数控绕线龙头企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "无线充电绕线设备领军代表",
+        "evidence_span": "田中精机无线充电绕线设备领军代表"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高端设备制造商",
+        "evidence_span": "田中精机高端设备制造商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国内数控绕线行业领军者",
+        "evidence_span": "田中精机国内数控绕线行业领军者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球无线充电独角兽",
+        "evidence_span": "田中精机全球无线充电独角兽"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "3C自动化创新引领者",
+        "evidence_span": "3C自动化创新引领者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "精密绕线设备领域的领导者",
+        "evidence_span": "公司是国内精密绕线设备领域的领导者"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数控自动化标准机",
+        "evidence_span": "公司产品主要包括数控自动化标准机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数控自动化非标准机",
+        "evidence_span": "公司产品主要包括...非标准机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数控自动化特殊设备",
+        "evidence_span": "公司产品主要包括...数控自动化特殊设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "视觉检测设备",
+        "evidence_span": "该等设备主要包括视觉检测设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "焊锡设备",
+        "evidence_span": "该等设备主要包括...焊锡设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "插端子设备",
+        "evidence_span": "该等设备主要包括...插端子设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自动化测试",
+        "evidence_span": "可以为客户提供自动化测试"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密装配",
+        "evidence_span": "可以为客户提供...精密装配"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全自动生产线的整体解决方案",
+        "evidence_span": "可以为客户提供...全自动生产线的整体解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无线充电设备",
+        "evidence_span": "田中精机无线充电设备逐步释放"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绕线设备",
+        "evidence_span": "田中精机无线充电带来绕线设备增量"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精雕机",
+        "evidence_span": "精雕机黑马驰骋新市场"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子线圈自动化生产成套设备核心技术",
+        "evidence_span": "掌握了源自日本的电子线圈自动化生产成套设备核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密绕线技术",
+        "evidence_span": "实现了精密绕线技术在新兴产业内的横向拓展"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无线充电设备研发",
+        "evidence_span": "在无线充电...设备研发上积累了丰富的经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "快充设备研发",
+        "evidence_span": "在...快充...设备研发上积累了丰富的经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车规级变压器设备研发",
+        "evidence_span": "在...配套车规级变压器...设备研发上积累了丰富的经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "音圈设备研发",
+        "evidence_span": "在...音圈...设备研发上积累了丰富的经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "震动马达设备研发",
+        "evidence_span": "在...震动马达...设备研发上积累了丰富的经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "伺服电机设备研发",
+        "evidence_span": "在...伺服电机...设备研发上积累了丰富的经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电梯曳引机设备研发",
+        "evidence_span": "在...电梯曳引机...设备研发上积累了丰富的经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "汽车转向助力EPS电机设备研发",
+        "evidence_span": "在...汽车转向助力EPS电机为代表的汽车相关配套产品...设备研发上积累了丰富的经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "柔性装配设备研发",
+        "evidence_span": "在...柔性装配...设备研发上积累了丰富的经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "激光雷达自动化装配设备研发",
+        "evidence_span": "在...以激光雷达自动化装配为代表的精密装配...设备研发上积累了丰富的经验"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自动上料",
+        "evidence_span": "实现包括自动上料...在内的全流程工序的自动化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "绕线",
+        "evidence_span": "实现包括...绕线...在内的全流程工序的自动化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "移载",
+        "evidence_span": "实现包括...移载...在内的全流程工序的自动化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "焊锡",
+        "evidence_span": "实现包括...焊锡...在内的全流程工序的自动化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "插端子",
+        "evidence_span": "实现包括...插端子...在内的全流程工序的自动化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "包胶",
+        "evidence_span": "实现包括...包胶...在内的全流程工序的自动化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "检测",
+        "evidence_span": "实现包括...检测...在内的全流程工序的自动化"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数据上传",
+        "evidence_span": "实现包括...数据上传...在内的全流程工序的自动化"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内知名的汽车配件制造商",
+        "evidence_span": "公司与多家国内知名的汽车配件制造商...建立了良好的合作关系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "消费电子产品制造商",
+        "evidence_span": "公司与...消费电子产品制造商建立了良好的合作关系"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "无线充电",
+        "evidence_span": "受益无线充电和消费电子双玻璃升级大趋势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "消费电子双玻璃升级",
+        "evidence_span": "受益无线充电和消费电子双玻璃升级大趋势"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "3C自动化",
+        "evidence_span": "切入3C自动化领域"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智能制造",
+        "evidence_span": "逐步探索智能制造"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T23:41:44"
+}

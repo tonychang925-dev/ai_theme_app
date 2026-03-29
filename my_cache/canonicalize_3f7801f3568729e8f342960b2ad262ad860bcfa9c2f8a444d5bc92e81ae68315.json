@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:40:58", "result": {"span_uid": "751ad1e2ad6d", "action": "keep", "canonical_text": "灵巧手是人形机器人的核心零部件。", "final_type": "core", "final_role": "灵巧手功能定位", "stability": "high", "reason": "原文直接定义灵巧手在机器人中的核心角色，是稳定、独立成立的本体知识，无需改写。"}}

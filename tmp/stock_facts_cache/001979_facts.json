@@ -1,0 +1,64 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "社区开发",
+      "evidence_span": "社区开发与运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "运营",
+      "evidence_span": "社区开发与运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "园区开发",
+      "evidence_span": "园区开发与运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "邮轮产业建设",
+      "evidence_span": "邮轮产业建设与运营"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "央企地产龙头",
+      "evidence_span": "央企地产龙头"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "招商局集团",
+      "evidence_span": "背靠招商局"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "社区开发与运营",
+        "evidence_span": "社区开发与运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "园区开发与运营",
+        "evidence_span": "园区开发与运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "邮轮产业建设与运营",
+        "evidence_span": "邮轮产业建设与运营"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "央企地产龙头",
+        "evidence_span": "央企地产龙头"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "招商局集团",
+        "evidence_span": "背靠招商局"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:29:45"
+}

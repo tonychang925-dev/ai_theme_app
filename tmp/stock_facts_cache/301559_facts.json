@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "罐式集装箱行业",
+      "evidence_span": "主要从事罐式集装箱行业的设计研发、生产制造和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "医疗设备部件业务",
+      "evidence_span": "并衍生出医疗设备部件业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环保领域业务",
+      "evidence_span": "公司正积极探索环保领域业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球领先的化工物流装备制造企业",
+      "evidence_span": "是全球领先的化工物流装备制造企业和全生命周期服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全生命周期服务商",
+      "evidence_span": "是全球领先的化工物流装备制造企业和全生命周期服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "罐式集装箱行业龙头",
+      "evidence_span": "作为罐式集装箱行业龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "罐式集装箱",
+      "evidence_span": "公司研发、制造及销售全系列产品的罐式集装箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "标准不锈钢液体罐箱",
+      "evidence_span": "涵盖标准不锈钢液体罐箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "特种不锈钢液体罐箱",
+      "evidence_span": "特种不锈钢液体罐箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳钢气体罐箱",
+      "evidence_span": "碳钢气体罐箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "碳钢粉末罐箱",
+      "evidence_span": "碳钢粉末罐箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "罐箱后市场服务",
+      "evidence_span": "为罐式集装箱提供维修、清洗、翻新、改造等后市场服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "罐箱信息服务",
+      "evidence_span": "基于物联网技术提供定制化的罐箱信息服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医疗设备部件",
+      "evidence_span": "公司衍生出医疗设备部件业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "罐箱加热设备",
+      "evidence_span": "公司成功推出了罐箱加热、制冷设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "罐箱制冷设备",
+      "evidence_span": "公司成功推出了罐箱加热、制冷设备"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能传感技术",
+      "evidence_span": "主要包括智能传感技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "虚拟仿真设计与研发技术",
+      "evidence_span": "虚拟仿真设计与研发技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "冷热链储运装备设计与制造技术",
+      "evidence_span": "冷热链储运装备设计与制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "特殊介质储运技术",
+      "evidence_span": "特殊介质储运技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "结构轻量化设计与优化技术",
+      "evidence_span": "结构轻量化设计与优化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "机械设备自动化制造技术",
+      "evidence_span": "机械设备自动化制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高端医疗配套设备精密制造技术",
+      "evidence_span": "高端医疗配套设备精密制造技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "复杂结构精确成型控制技术",
+      "evidence_span": "复杂结构精确成型控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "力学测试与表征技术",
+      "evidence_span": "力学测试与表征技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "EXSIF",
+      "evidence_span": "直接客户主要包括 EXSIF"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Streem Group",
+      "evidence_span": "Streem Group"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "CS Leasing",
+      "evidence_span": "CS Leasing"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Peacock Container",
+      "evidence_span": "Peacock Container"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Trifleet",
+      "evidence_span": "Trifleet"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Stolt Tank Containers",
+      "evidence_span": "Stolt Tank Containers"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Bertschi",
+      "evidence_span": "Bertschi"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Den Hartogh",
+      "evidence_span": "Den Hartogh"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Eagle Liner",
+      "evidence_span": "Eagle Liner"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Suttons International",
+      "evidence_span": "Suttons International"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "君正",
+      "evidence_span": "君正"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中铁铁龙",
+      "evidence_span": "中铁铁龙"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "Milkyway",
+      "evidence_span": "Milkyway"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西门子",
+      "evidence_span": "公司医疗设备部件主要客户包括西门子"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联影医疗",
+      "evidence_span": "联影医疗"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "健信核磁",
+      "evidence_span": "健信核磁"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "飞利浦",
+      "evidence_span": "并与医疗影像设备厂商飞利浦展开深度业务合作"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "罐式集装箱行业",
+        "evidence_span": "主要从事罐式集装箱行业的设计研发、生产制造和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "医疗设备部件业务",
+        "evidence_span": "并衍生出医疗设备部件业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环保领域业务",
+        "evidence_span": "公司正积极探索环保领域业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球领先的化工物流装备制造企业",
+        "evidence_span": "是全球领先的化工物流装备制造企业和全生命周期服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全生命周期服务商",
+        "evidence_span": "是全球领先的化工物流装备制造企业和全生命周期服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "罐式集装箱行业龙头",
+        "evidence_span": "作为罐式集装箱行业龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "罐式集装箱",
+        "evidence_span": "公司研发、制造及销售全系列产品的罐式集装箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "标准不锈钢液体罐箱",
+        "evidence_span": "涵盖标准不锈钢液体罐箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "特种不锈钢液体罐箱",
+        "evidence_span": "特种不锈钢液体罐箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳钢气体罐箱",
+        "evidence_span": "碳钢气体罐箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "碳钢粉末罐箱",
+        "evidence_span": "碳钢粉末罐箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "罐箱后市场服务",
+        "evidence_span": "为罐式集装箱提供维修、清洗、翻新、改造等后市场服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "罐箱信息服务",
+        "evidence_span": "基于物联网技术提供定制化的罐箱信息服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医疗设备部件",
+        "evidence_span": "公司衍生出医疗设备部件业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "罐箱加热设备",
+        "evidence_span": "公司成功推出了罐箱加热、制冷设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "罐箱制冷设备",
+        "evidence_span": "公司成功推出了罐箱加热、制冷设备"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能传感技术",
+        "evidence_span": "主要包括智能传感技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "虚拟仿真设计与研发技术",
+        "evidence_span": "虚拟仿真设计与研发技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "冷热链储运装备设计与制造技术",
+        "evidence_span": "冷热链储运装备设计与制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "特殊介质储运技术",
+        "evidence_span": "特殊介质储运技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "结构轻量化设计与优化技术",
+        "evidence_span": "结构轻量化设计与优化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "机械设备自动化制造技术",
+        "evidence_span": "机械设备自动化制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高端医疗配套设备精密制造技术",
+        "evidence_span": "高端医疗配套设备精密制造技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "复杂结构精确成型控制技术",
+        "evidence_span": "复杂结构精确成型控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "力学测试与表征技术",
+        "evidence_span": "力学测试与表征技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "EXSIF",
+        "evidence_span": "直接客户主要包括 EXSIF"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Streem Group",
+        "evidence_span": "Streem Group"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "CS Leasing",
+        "evidence_span": "CS Leasing"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Peacock Container",
+        "evidence_span": "Peacock Container"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Trifleet",
+        "evidence_span": "Trifleet"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Stolt Tank Containers",
+        "evidence_span": "Stolt Tank Containers"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Bertschi",
+        "evidence_span": "Bertschi"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Den Hartogh",
+        "evidence_span": "Den Hartogh"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Eagle Liner",
+        "evidence_span": "Eagle Liner"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Suttons International",
+        "evidence_span": "Suttons International"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "君正",
+        "evidence_span": "君正"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中铁铁龙",
+        "evidence_span": "中铁铁龙"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Milkyway",
+        "evidence_span": "Milkyway"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西门子",
+        "evidence_span": "公司医疗设备部件主要客户包括西门子"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联影医疗",
+        "evidence_span": "联影医疗"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "健信核磁",
+        "evidence_span": "健信核磁"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "飞利浦",
+        "evidence_span": "并与医疗影像设备厂商飞利浦展开深度业务合作"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T03:52:37"
+}

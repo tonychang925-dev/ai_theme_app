@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "6ec214d229b5", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述华为与中芯国际的芯片专利合作和三星电子的罢工事件，是具体公司的事件性新闻，没有提供半导体设备题材的稳定知识。"}}

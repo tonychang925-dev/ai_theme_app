@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:23:14", "result": {"chunk_id": "f06b28db5f66", "label": "candidate_mixed", "confidence": 0.9, "ontology_value": "high", "reason": "该段开头是中国船舶的业绩公告事件，但后续大量内容详细描述中国海军产业的规模、技术、产业链等静态知识，这些是海军题材的核心构成信息，尽管混合了事件部分，整体具有高本体价值。"}}

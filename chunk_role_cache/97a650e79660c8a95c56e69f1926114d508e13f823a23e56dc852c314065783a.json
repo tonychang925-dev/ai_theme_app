@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T10:45:16", "result": {"chunk_id": "c1592c3f0acb", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述Rokid公司关于《黑神话：悟空》AR体验直播的具体事件，包括日期和操作方式，属于产品推广和活动公告，不包含静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_1", "model": "deepseek-chat", "timestamp": "2026-03-07T22:36:46", "result": {"chunk_id": "9a19692dcdbf", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落基于展会事件，但包含了对中国半导体设备产业增长数据（如销售收入、市场占有率）的静态说明，这些是知识性内容，但混合了事件信息。"}}

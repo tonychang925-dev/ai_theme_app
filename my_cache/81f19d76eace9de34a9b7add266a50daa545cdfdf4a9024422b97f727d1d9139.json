@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "1eb071453b5f", "label": "strict_knowledge", "confidence": 0.95, "ontology_value": "high", "reason": "该段落纯粹列出了十大军工集团的具体名称，属于静态说明题材的核心构成，没有涉及任何事件、时间或动态信息，可直接用于构建题材本体。"}}

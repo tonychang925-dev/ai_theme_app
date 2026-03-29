@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:25:20", "result": {"span_uid": "36b04ea335f8", "action": "drop", "canonical_text": "", "final_type": "", "final_role": "", "stability": "", "reason": "该片段描述03式中程防空导弹的性能参数，属于具体装备的细节信息，与海军题材的本体定义、相关环节或景气信号关联较弱，无法形成稳定、可独立理解的知识块。"}}

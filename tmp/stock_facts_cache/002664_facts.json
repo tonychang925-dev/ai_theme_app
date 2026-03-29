@@ -1,0 +1,199 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电机核心零部件业务",
+      "evidence_span": "公司主要从事各类电机核心零部件业务的研发、制造和销售业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "汽车发电机定子生产企业",
+      "evidence_span": "全球领先的汽车发电机定子生产企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电机零配件供应商",
+      "evidence_span": "公司是全球领先的电机零配件供应商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车发电机定子及总成",
+      "evidence_span": "汽车发电机定子及总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汽车微特电机转子",
+      "evidence_span": "汽车微特电机转子"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动自行车定子及总成",
+      "evidence_span": "电动自行车定子及总成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电梯曳引机定子",
+      "evidence_span": "电梯曳引机定子"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电动工具电机转子",
+      "evidence_span": "电动工具电机转子"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "VVT(汽车可变气门正时系统)",
+      "evidence_span": "VVT(汽车可变气门正时系统)"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "家电电机转子",
+      "evidence_span": "家电电机转子"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "精密冲压模具研发及制作",
+      "evidence_span": "公司生产工艺业界领先的关键在于精密冲压模具的研发及制作"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "模具配套开发能力",
+      "evidence_span": "优秀的模具配套开发能力和前段服务能力"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能制造产线开发",
+      "evidence_span": "公司具备一支高素质的智能制造产线开发团队"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利威睿",
+      "evidence_span": "吉利威睿"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联电",
+      "evidence_span": "联电"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海电驱动",
+      "evidence_span": "上海电驱动"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "东风电驱动",
+      "evidence_span": "东风电驱动"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源汽车快速增长",
+      "evidence_span": "受益新能源汽车快速增长"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电机核心零部件业务",
+        "evidence_span": "公司主要从事各类电机核心零部件业务的研发、制造和销售业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "汽车发电机定子生产企业",
+        "evidence_span": "全球领先的汽车发电机定子生产企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电机零配件供应商",
+        "evidence_span": "公司是全球领先的电机零配件供应商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车发电机定子及总成",
+        "evidence_span": "汽车发电机定子及总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汽车微特电机转子",
+        "evidence_span": "汽车微特电机转子"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动自行车定子及总成",
+        "evidence_span": "电动自行车定子及总成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电梯曳引机定子",
+        "evidence_span": "电梯曳引机定子"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电动工具电机转子",
+        "evidence_span": "电动工具电机转子"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "VVT(汽车可变气门正时系统)",
+        "evidence_span": "VVT(汽车可变气门正时系统)"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "家电电机转子",
+        "evidence_span": "家电电机转子"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "精密冲压模具研发及制作",
+        "evidence_span": "公司生产工艺业界领先的关键在于精密冲压模具的研发及制作"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "模具配套开发能力",
+        "evidence_span": "优秀的模具配套开发能力和前段服务能力"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能制造产线开发",
+        "evidence_span": "公司具备一支高素质的智能制造产线开发团队"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利威睿",
+        "evidence_span": "吉利威睿"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联电",
+        "evidence_span": "联电"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海电驱动",
+        "evidence_span": "上海电驱动"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "东风电驱动",
+        "evidence_span": "东风电驱动"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源汽车快速增长",
+        "evidence_span": "受益新能源汽车快速增长"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T18:06:53"
+}

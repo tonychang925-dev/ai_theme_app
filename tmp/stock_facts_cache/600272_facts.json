@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "中医药流通",
+      "evidence_span": "以中医药流通、中医药学服务（中医问诊服务）和服装批发、零售为主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中医药学服务",
+      "evidence_span": "以中医药流通、中医药学服务（中医问诊服务）和服装批发、零售为主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服装批发",
+      "evidence_span": "以中医药流通、中医药学服务（中医问诊服务）和服装批发、零售为主营业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服装零售",
+      "evidence_span": "以中医药流通、中医药学服务（中医问诊服务）和服装批发、零售为主营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中成药批发",
+      "evidence_span": "医药板块主要是中、西成药的批发、零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "西成药批发",
+      "evidence_span": "医药板块主要是中、西成药的批发、零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中成药零售",
+      "evidence_span": "医药板块主要是中、西成药的批发、零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "西成药零售",
+      "evidence_span": "医药板块主要是中、西成药的批发、零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "中医药药学服务",
+      "evidence_span": "以中华老字号“雷允上”为品牌的中医药药学服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高档滋补品销售",
+      "evidence_span": "自主品牌“上雷”牌高档滋补品（枫斗、虫草、燕窝、海参等）的销售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "衬衫批发",
+      "evidence_span": "服装板块主要从事以中华老字号“开开”品牌衬衫和羊毛衫以及“开开”品牌服饰系列的批发和零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "衬衫零售",
+      "evidence_span": "服装板块主要从事以中华老字号“开开”品牌衬衫和羊毛衫以及“开开”品牌服饰系列的批发和零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "羊毛衫批发",
+      "evidence_span": "服装板块主要从事以中华老字号“开开”品牌衬衫和羊毛衫以及“开开”品牌服饰系列的批发和零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "羊毛衫零售",
+      "evidence_span": "服装板块主要从事以中华老字号“开开”品牌衬衫和羊毛衫以及“开开”品牌服饰系列的批发和零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "服饰系列批发",
+      "evidence_span": "服装板块主要从事以中华老字号“开开”品牌衬衫和羊毛衫以及“开开”品牌服饰系列的批发和零售"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "服饰系列零售",
+      "evidence_span": "服装板块主要从事以中华老字号“开开”品牌衬衫和羊毛衫以及“开开”品牌服饰系列的批发和零售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "医药流通企业",
+      "evidence_span": "公司医药板块雷西公司充分发挥医药流通企业的优势"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中华老字号企业",
+      "evidence_span": "公司旗下“雷允上”与“开开”两大品牌都是国家商务部认定的“中华老字号”"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "中医药流通",
+        "evidence_span": "以中医药流通、中医药学服务（中医问诊服务）和服装批发、零售为主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中医药学服务",
+        "evidence_span": "以中医药流通、中医药学服务（中医问诊服务）和服装批发、零售为主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "服装批发",
+        "evidence_span": "以中医药流通、中医药学服务（中医问诊服务）和服装批发、零售为主营业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "服装零售",
+        "evidence_span": "以中医药流通、中医药学服务（中医问诊服务）和服装批发、零售为主营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中成药批发",
+        "evidence_span": "医药板块主要是中、西成药的批发、零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "西成药批发",
+        "evidence_span": "医药板块主要是中、西成药的批发、零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中成药零售",
+        "evidence_span": "医药板块主要是中、西成药的批发、零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "西成药零售",
+        "evidence_span": "医药板块主要是中、西成药的批发、零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "中医药药学服务",
+        "evidence_span": "以中华老字号“雷允上”为品牌的中医药药学服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高档滋补品销售",
+        "evidence_span": "自主品牌“上雷”牌高档滋补品（枫斗、虫草、燕窝、海参等）的销售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "衬衫批发",
+        "evidence_span": "服装板块主要从事以中华老字号“开开”品牌衬衫和羊毛衫以及“开开”品牌服饰系列的批发和零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "衬衫零售",
+        "evidence_span": "服装板块主要从事以中华老字号“开开”品牌衬衫和羊毛衫以及“开开”品牌服饰系列的批发和零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "羊毛衫批发",
+        "evidence_span": "服装板块主要从事以中华老字号“开开”品牌衬衫和羊毛衫以及“开开”品牌服饰系列的批发和零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "羊毛衫零售",
+        "evidence_span": "服装板块主要从事以中华老字号“开开”品牌衬衫和羊毛衫以及“开开”品牌服饰系列的批发和零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "服饰系列批发",
+        "evidence_span": "服装板块主要从事以中华老字号“开开”品牌衬衫和羊毛衫以及“开开”品牌服饰系列的批发和零售"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "服饰系列零售",
+        "evidence_span": "服装板块主要从事以中华老字号“开开”品牌衬衫和羊毛衫以及“开开”品牌服饰系列的批发和零售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "医药流通企业",
+        "evidence_span": "公司医药板块雷西公司充分发挥医药流通企业的优势"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中华老字号企业",
+        "evidence_span": "公司旗下“雷允上”与“开开”两大品牌都是国家商务部认定的“中华老字号”"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:48:37"
+}

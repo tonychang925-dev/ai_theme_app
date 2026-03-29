@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v8", "model": "deepseek-chat", "timestamp": "2026-03-07T21:45:15", "result": {"chunk_id": "50b1b0998787", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述美国政府将实体列入黑名单和芯片管制等具体事件，没有提供稳定的半导体设备知识。"}}

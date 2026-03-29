@@ -1,0 +1,499 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "轨道交通业务",
+      "evidence_span": "形成“以轨道交通产品为核心业务、以新能源汽车零部件产品为成长业务、以智能健康产品等为种子业务”的多元产业格局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新能源汽车零部件业务",
+      "evidence_span": "形成“以轨道交通产品为核心业务、以新能源汽车零部件产品为成长业务、以智能健康产品等为种子业务”的多元产业格局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能健康产品业务",
+      "evidence_span": "形成“以轨道交通产品为核心业务、以新能源汽车零部件产品为成长业务、以智能健康产品等为种子业务”的多元产业格局"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "轨道车辆门系统龙头",
+      "evidence_span": "公司轨道车辆门系统产品全球市场占有率位居第一"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "智慧交通装备平台",
+      "evidence_span": "以机电技术为核心的智慧交通装备平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动车及干线铁路车辆门系统",
+      "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "城市轨道车辆门系统",
+      "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "站台安全门系统",
+      "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "内部装饰",
+      "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统、内部装饰、连接器、闸机扇门模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "连接器",
+      "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统、内部装饰、连接器、闸机扇门模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "闸机扇门模块",
+      "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统、内部装饰、连接器、闸机扇门模块"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "车辆门系统维保及配件业务",
+      "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统、内部装饰、连接器、闸机扇门模块及车辆门系统维保及配件业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源汽车充放电连接系统",
+      "evidence_span": "新能源汽车零部件产品主要有充放电连接系统、换电连接系统、高低压连接器、高压分配单元及充电桩等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "换电连接系统",
+      "evidence_span": "新能源汽车零部件产品主要有充放电连接系统、换电连接系统、高低压连接器、高压分配单元及充电桩等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高低压连接器",
+      "evidence_span": "新能源汽车零部件产品主要有充放电连接系统、换电连接系统、高低压连接器、高压分配单元及充电桩等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高压分配单元",
+      "evidence_span": "新能源汽车零部件产品主要有充放电连接系统、换电连接系统、高低压连接器、高压分配单元及充电桩等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "充电桩",
+      "evidence_span": "新能源汽车零部件产品主要有充放电连接系统、换电连接系统、高低压连接器、高压分配单元及充电桩等产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "新能源公交车门系统",
+      "evidence_span": "公司自主研制的新能源公交车门系统产品在国内市场占有率持续得到提升"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "精密汽车零部件",
+      "evidence_span": "制造生产的精密汽车零部件产品主要包括差速器轴、传动轴、安全系统、汽车变速箱等零部件"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能轮椅",
+      "evidence_span": "智能轮椅入选“工信部医疗领域机器人应用优秀场景”推荐目录"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "医用电动移位车",
+      "evidence_span": "医用电动移位车纳入人卫社基础护理学视频教材"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "失能照护方案",
+      "evidence_span": "失能照护方案列入江苏省和上海市健康养老产品推广目录"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "门系统数字驱动控制技术",
+      "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "二维承载驱动机构技术",
+      "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "内置塞拉技术",
+      "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "微动塞拉技术",
+      "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "变导程驱动与锁闭技术",
+      "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MVB及双冗余控制网络技术",
+      "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能诊断与以太网通讯技术",
+      "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "轨道车门PHM系统",
+      "evidence_span": "公司首创轨道车门PHM（故障预测与健康管理）系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "基于超融合云架构的PHM2.0",
+      "evidence_span": "基于超融合云架构的PHM2.0已在多条线路上试运行"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连接器耐振动技术",
+      "evidence_span": "深耕连接器耐振动、电磁屏蔽和高载流技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连接器电磁屏蔽技术",
+      "evidence_span": "深耕连接器耐振动、电磁屏蔽和高载流技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "连接器高载流技术",
+      "evidence_span": "深耕连接器耐振动、电磁屏蔽和高载流技术"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国中车",
+      "evidence_span": "是中国中车、阿尔斯通、CAF、TALGO等国际著名轨道车辆制造商战略合作伙伴和供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿尔斯通",
+      "evidence_span": "是中国中车、阿尔斯通、CAF、TALGO等国际著名轨道车辆制造商战略合作伙伴和供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "CAF",
+      "evidence_span": "是中国中车、阿尔斯通、CAF、TALGO等国际著名轨道车辆制造商战略合作伙伴和供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "TALGO",
+      "evidence_span": "是中国中车、阿尔斯通、CAF、TALGO等国际著名轨道车辆制造商战略合作伙伴和供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "奔驰",
+      "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广汽丰田",
+      "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽丰田",
+      "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "捷豹路虎",
+      "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上汽",
+      "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉利",
+      "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "大陆电子",
+      "evidence_span": "新增捷豹路虎、大陆电子、博世等10个新客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "博世",
+      "evidence_span": "新增捷豹路虎、大陆电子、博世等10个新客户"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "长城",
+      "evidence_span": "欧标插座、欧标模式二新产品在长城、比亚迪取得项目定点"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "轨道交通国产化",
+      "evidence_span": "是中国轨道车辆门系统国产化研发和制造基地"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "轨道交通业务",
+        "evidence_span": "形成“以轨道交通产品为核心业务、以新能源汽车零部件产品为成长业务、以智能健康产品等为种子业务”的多元产业格局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新能源汽车零部件业务",
+        "evidence_span": "形成“以轨道交通产品为核心业务、以新能源汽车零部件产品为成长业务、以智能健康产品等为种子业务”的多元产业格局"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能健康产品业务",
+        "evidence_span": "形成“以轨道交通产品为核心业务、以新能源汽车零部件产品为成长业务、以智能健康产品等为种子业务”的多元产业格局"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "轨道车辆门系统龙头",
+        "evidence_span": "公司轨道车辆门系统产品全球市场占有率位居第一"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "智慧交通装备平台",
+        "evidence_span": "以机电技术为核心的智慧交通装备平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动车及干线铁路车辆门系统",
+        "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "城市轨道车辆门系统",
+        "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "站台安全门系统",
+        "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "内部装饰",
+        "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统、内部装饰、连接器、闸机扇门模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "连接器",
+        "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统、内部装饰、连接器、闸机扇门模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "闸机扇门模块",
+        "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统、内部装饰、连接器、闸机扇门模块"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "车辆门系统维保及配件业务",
+        "evidence_span": "主要产品包括动车及干线铁路车辆门系统、城市轨道车辆门系统、站台安全门系统、内部装饰、连接器、闸机扇门模块及车辆门系统维保及配件业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源汽车充放电连接系统",
+        "evidence_span": "新能源汽车零部件产品主要有充放电连接系统、换电连接系统、高低压连接器、高压分配单元及充电桩等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "换电连接系统",
+        "evidence_span": "新能源汽车零部件产品主要有充放电连接系统、换电连接系统、高低压连接器、高压分配单元及充电桩等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高低压连接器",
+        "evidence_span": "新能源汽车零部件产品主要有充放电连接系统、换电连接系统、高低压连接器、高压分配单元及充电桩等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高压分配单元",
+        "evidence_span": "新能源汽车零部件产品主要有充放电连接系统、换电连接系统、高低压连接器、高压分配单元及充电桩等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "充电桩",
+        "evidence_span": "新能源汽车零部件产品主要有充放电连接系统、换电连接系统、高低压连接器、高压分配单元及充电桩等产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "新能源公交车门系统",
+        "evidence_span": "公司自主研制的新能源公交车门系统产品在国内市场占有率持续得到提升"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "精密汽车零部件",
+        "evidence_span": "制造生产的精密汽车零部件产品主要包括差速器轴、传动轴、安全系统、汽车变速箱等零部件"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能轮椅",
+        "evidence_span": "智能轮椅入选“工信部医疗领域机器人应用优秀场景”推荐目录"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "医用电动移位车",
+        "evidence_span": "医用电动移位车纳入人卫社基础护理学视频教材"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "失能照护方案",
+        "evidence_span": "失能照护方案列入江苏省和上海市健康养老产品推广目录"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "门系统数字驱动控制技术",
+        "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "二维承载驱动机构技术",
+        "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "内置塞拉技术",
+        "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "微动塞拉技术",
+        "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "变导程驱动与锁闭技术",
+        "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MVB及双冗余控制网络技术",
+        "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能诊断与以太网通讯技术",
+        "evidence_span": "公司拥有门系统数字驱动控制、二维承载驱动机构、内置塞拉、微动塞拉、变导程驱动与锁闭、MVB及双冗余控制网络、智能诊断与以太网通讯8大核心技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "轨道车门PHM系统",
+        "evidence_span": "公司首创轨道车门PHM（故障预测与健康管理）系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "基于超融合云架构的PHM2.0",
+        "evidence_span": "基于超融合云架构的PHM2.0已在多条线路上试运行"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连接器耐振动技术",
+        "evidence_span": "深耕连接器耐振动、电磁屏蔽和高载流技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连接器电磁屏蔽技术",
+        "evidence_span": "深耕连接器耐振动、电磁屏蔽和高载流技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "连接器高载流技术",
+        "evidence_span": "深耕连接器耐振动、电磁屏蔽和高载流技术"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国中车",
+        "evidence_span": "是中国中车、阿尔斯通、CAF、TALGO等国际著名轨道车辆制造商战略合作伙伴和供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿尔斯通",
+        "evidence_span": "是中国中车、阿尔斯通、CAF、TALGO等国际著名轨道车辆制造商战略合作伙伴和供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "CAF",
+        "evidence_span": "是中国中车、阿尔斯通、CAF、TALGO等国际著名轨道车辆制造商战略合作伙伴和供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "TALGO",
+        "evidence_span": "是中国中车、阿尔斯通、CAF、TALGO等国际著名轨道车辆制造商战略合作伙伴和供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "奔驰",
+        "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广汽丰田",
+        "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽丰田",
+        "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "捷豹路虎",
+        "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上汽",
+        "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉利",
+        "evidence_span": "是奔驰、广汽丰田、一汽丰田、捷豹路虎、比亚迪、上汽、吉利等国内外知名汽车厂商的重要合作伙伴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "大陆电子",
+        "evidence_span": "新增捷豹路虎、大陆电子、博世等10个新客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "博世",
+        "evidence_span": "新增捷豹路虎、大陆电子、博世等10个新客户"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "长城",
+        "evidence_span": "欧标插座、欧标模式二新产品在长城、比亚迪取得项目定点"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "轨道交通国产化",
+        "evidence_span": "是中国轨道车辆门系统国产化研发和制造基地"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:22:38"
+}

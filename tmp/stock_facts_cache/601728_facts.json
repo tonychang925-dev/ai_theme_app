@@ -1,0 +1,254 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "移动通信服务",
+      "evidence_span": "公司营收主体仍然是传统通信业务(移动通信服务、固网及智慧家庭服务)"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "固网",
+      "evidence_span": "公司营收主体仍然是传统通信业务(移动通信服务、固网及智慧家庭服务)"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧家庭服务",
+      "evidence_span": "公司营收主体仍然是传统通信业务(移动通信服务、固网及智慧家庭服务)"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "产业数字化服务",
+      "evidence_span": "产业数字化服务从 2020 年的 840亿元增长至 2024 年的 1466 亿元"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "电信运营商",
+      "evidence_span": "中国电信成为了只经营固网和数据通信业务的电信运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球头部电信运营商",
+      "evidence_span": "公司已经成为为全球头部电信运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G网络",
+      "evidence_span": "5G 网络实现全国乡镇及以上区域连续覆盖"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "5G-A战略布局",
+      "evidence_span": "持续加强 5G-A 战略布局"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "卫星移动通信系统",
+      "evidence_span": "积极推动高中低轨协同的卫星移动通信系统建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天翼物联网平台",
+      "evidence_span": "天翼物联网平台支持亿级超大规模终端安全可靠接入"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "量子计算云平台",
+      "evidence_span": "“天衍”量子计算云平台实现算力规模和算力类型双重升级"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "量子城域网",
+      "evidence_span": "合肥量子城域网入选全国首批“数字中国典型案例”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "直连天通卫星手机",
+      "evidence_span": "推出 25 款支持直连天通卫星的消费类手机"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G中高频基站",
+      "evidence_span": "5G 中高频基站总规模达 137.5 万站"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "载波聚合",
+      "evidence_span": "在 121 个城市规模部署载波聚合约 7 万站"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Redcap覆盖",
+      "evidence_span": "Redcap覆盖超 200 城"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "QKD、PQC与经典密码融合的新型密码体系",
+      "evidence_span": "依托 QKD、PQC 与经典密码融合的新型密码体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "中国电信已与华为、荣耀、小米、OPPO、vivo、中兴等国内主流厂商推出"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "荣耀",
+      "evidence_span": "中国电信已与华为、荣耀、小米、OPPO、vivo、中兴等国内主流厂商推出"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "小米",
+      "evidence_span": "中国电信已与华为、荣耀、小米、OPPO、vivo、中兴等国内主流厂商推出"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "OPPO",
+      "evidence_span": "中国电信已与华为、荣耀、小米、OPPO、vivo、中兴等国内主流厂商推出"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "vivo",
+      "evidence_span": "中国电信已与华为、荣耀、小米、OPPO、vivo、中兴等国内主流厂商推出"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中兴",
+      "evidence_span": "中国电信已与华为、荣耀、小米、OPPO、vivo、中兴等国内主流厂商推出"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数据资源入表",
+      "evidence_span": "数据资源入表带来估值提升空间"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "产业数字化",
+      "evidence_span": "产业数字化打开成长空间"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "移动通信服务",
+        "evidence_span": "公司营收主体仍然是传统通信业务(移动通信服务、固网及智慧家庭服务)"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "固网及智慧家庭服务",
+        "evidence_span": "公司营收主体仍然是传统通信业务(移动通信服务、固网及智慧家庭服务)"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "产业数字化服务",
+        "evidence_span": "产业数字化服务从 2020 年的 840亿元增长至 2024 年的 1466 亿元"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "电信运营商",
+        "evidence_span": "中国电信成为了只经营固网和数据通信业务的电信运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球头部电信运营商",
+        "evidence_span": "公司已经成为为全球头部电信运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G网络",
+        "evidence_span": "5G 网络实现全国乡镇及以上区域连续覆盖"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "5G-A战略布局",
+        "evidence_span": "持续加强 5G-A 战略布局"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "卫星移动通信系统",
+        "evidence_span": "积极推动高中低轨协同的卫星移动通信系统建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天翼物联网平台",
+        "evidence_span": "天翼物联网平台支持亿级超大规模终端安全可靠接入"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "量子计算云平台",
+        "evidence_span": "“天衍”量子计算云平台实现算力规模和算力类型双重升级"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "量子城域网",
+        "evidence_span": "合肥量子城域网入选全国首批“数字中国典型案例”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "直连天通卫星手机",
+        "evidence_span": "推出 25 款支持直连天通卫星的消费类手机"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G中高频基站",
+        "evidence_span": "5G 中高频基站总规模达 137.5 万站"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "载波聚合",
+        "evidence_span": "在 121 个城市规模部署载波聚合约 7 万站"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Redcap覆盖",
+        "evidence_span": "Redcap覆盖超 200 城"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "QKD、PQC与经典密码融合的新型密码体系",
+        "evidence_span": "依托 QKD、PQC 与经典密码融合的新型密码体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "中国电信已与华为、荣耀、小米、OPPO、vivo、中兴等国内主流厂商推出"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "荣耀",
+        "evidence_span": "中国电信已与华为、荣耀、小米、OPPO、vivo、中兴等国内主流厂商推出"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "小米",
+        "evidence_span": "中国电信已与华为、荣耀、小米、OPPO、vivo、中兴等国内主流厂商推出"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "OPPO",
+        "evidence_span": "中国电信已与华为、荣耀、小米、OPPO、vivo、中兴等国内主流厂商推出"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "vivo",
+        "evidence_span": "中国电信已与华为、荣耀、小米、OPPO、vivo、中兴等国内主流厂商推出"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中兴",
+        "evidence_span": "中国电信已与华为、荣耀、小米、OPPO、vivo、中兴等国内主流厂商推出"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数据资源入表",
+        "evidence_span": "数据资源入表带来估值提升空间"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "产业数字化",
+        "evidence_span": "产业数字化打开成长空间"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:33:14"
+}

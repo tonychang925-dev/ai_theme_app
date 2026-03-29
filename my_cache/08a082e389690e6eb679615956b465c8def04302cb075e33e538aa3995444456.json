@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:48:39", "result": {"chunk_id": "14ba31ac933b", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述了一个政策事件：特朗普宣布对芯片和半导体征收关税，包含时间（2025年8月7日）和具体政策内容，属于动态新闻，没有提供静态的半导体知识。"}}

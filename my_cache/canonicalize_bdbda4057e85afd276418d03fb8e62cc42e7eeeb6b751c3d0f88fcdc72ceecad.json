@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:33:08", "result": {"span_uid": "2583cf410a6f", "action": "rewrite", "canonical_text": "量子计算在理论上可能威胁椭圆曲线密码学等加密技术，影响其安全性。", "final_type": "signal", "final_role": "量子计算对加密技术的潜在影响", "stability": "medium", "reason": "该片段描述技术进展对安全的影响，体现了阶段性变化，但需去事件化（移除具体上下文和新闻口吻）以形成更稳定的知识表达。"}}

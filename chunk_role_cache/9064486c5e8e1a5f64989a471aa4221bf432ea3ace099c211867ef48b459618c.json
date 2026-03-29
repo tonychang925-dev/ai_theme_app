@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_semantic_fixed", "model": "deepseek-chat", "timestamp": "2026-03-08T13:45:43", "result": {"chunk_id": "6ec214d229b5", "label": "candidate_mixed", "confidence": 0.7, "ontology_value": "medium", "reason": "该段落描述华为与中芯国际的专利合作和三星的罢工事件，前半部分涉及SAQP技术和DUV光刻机的使用，可能含有对半导体制造技术的静态知识，但混合了具体事件，需进一步裁决。"}}

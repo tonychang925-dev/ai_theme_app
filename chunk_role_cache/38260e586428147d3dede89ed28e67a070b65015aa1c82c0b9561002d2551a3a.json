@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:34:11", "result": {"chunk_id": "43446b4ac130", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落描述美国出口管制事件，但涉及半导体产业链实体清单，包括光刻胶相关公司，可能提供供应链知识，因此属于混合内容。"}}

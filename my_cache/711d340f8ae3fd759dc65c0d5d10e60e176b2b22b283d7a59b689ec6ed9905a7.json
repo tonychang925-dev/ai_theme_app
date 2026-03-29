@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:31:43", "result": {"chunk_id": "97f713b30209", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述特朗普关于伊朗核检查和轰炸的言论，是具体事件和动态，不包含导弹的静态知识。"}}

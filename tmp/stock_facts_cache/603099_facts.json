@@ -1,0 +1,434 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "旅游客运",
+      "evidence_span": "旅游客运是公司的核心业务及盈利核心"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "旅行社业务",
+      "evidence_span": "公司下属子公司天池国旅依托长白山景区提供产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "酒店管理",
+      "evidence_span": "公司于2017年进军酒店行业，建立全资子公司——吉林省天池酒店管理有限责任公司"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "温泉水开发",
+      "evidence_span": "蓝景温泉公司是以长白山天然火山自溢温泉水为主营产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "利用",
+      "evidence_span": "蓝景温泉公司是以长白山天然火山自溢温泉水为主营产品"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "企业管理咨询",
+      "evidence_span": "2017年设立全资子公司吉林省天池企业管理咨询有限公司，进军企业管理咨询行业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "长白山管委会唯一的国有控股上市公司",
+      "evidence_span": "长白山管委会唯一的国有控股上市公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "长白山保护开发区最大的旅游客运公司",
+      "evidence_span": "公司是长白山保护开发区最大的旅游客运公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合旅游服务商",
+      "evidence_span": "观光客运运营者迈向综合旅游服务商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保车经营许可及收费权",
+      "evidence_span": "公司独家拥有长白山景区内环保车、倒站车的经营许可及收费权"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "倒站车经营许可及收费权",
+      "evidence_span": "公司独家拥有长白山景区内环保车、倒站车的经营许可及收费权"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游客运经营许可",
+      "evidence_span": "公司通过招、拍、挂程序取得了长白山景区内旅游客运、区间和环山公路旅游包车客运经营许可（权）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环山公路旅游包车客运经营许可",
+      "evidence_span": "公司通过招、拍、挂程序取得了长白山景区内旅游客运、区间和环山公路旅游包车客运经营许可（权）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环长白山旅游快线",
+      "evidence_span": "景区外的环长白山旅游快线连接了长白山西景区、北景区及景区外的部分景点和客源集中地"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "包车业务",
+      "evidence_span": "疫情以来公司城区运营板块的包车和租车业务受到了游客的普遍欢迎"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "租车业务",
+      "evidence_span": "疫情以来公司城区运营板块的包车和租车业务受到了游客的普遍欢迎"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高端旅游接待",
+      "evidence_span": "公司下属子公司天池国旅依托长白山景区提供产品，以高端旅游接待为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "休闲度假特种旅游产品",
+      "evidence_span": "产品主要以休闲度假等特种旅游产品为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "自行车骑行",
+      "evidence_span": "王牌产品包括自行车骑行、天池婚礼、日出观光等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "天池婚礼",
+      "evidence_span": "王牌产品包括自行车骑行、天池婚礼、日出观光等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "日出观光",
+      "evidence_span": "王牌产品包括自行车骑行、天池婚礼、日出观光等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "探险旅游项目",
+      "evidence_span": "天池国旅是唯一一家获得主管单位批准在指定区域范围内开展探险、科考旅游项目的旅行社"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "科考旅游项目",
+      "evidence_span": "天池国旅是唯一一家获得主管单位批准在指定区域范围内开展探险、科考旅游项目的旅行社"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冰雪旅游季产品",
+      "evidence_span": "公司紧密围绕“赏雪必看、滑雪必玩、戏雪必选、雪季必游”来打造冰雪旅游季产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "深度冰雪体验系列产品",
+      "evidence_span": "开发出主题鲜明体验感强的深度冰雪体验系列产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "住宿服务",
+      "evidence_span": "业务覆盖住宿服务、餐饮服务、会议服务、旅游信息咨询等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "餐饮服务",
+      "evidence_span": "业务覆盖住宿服务、餐饮服务、会议服务、旅游信息咨询等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "会议服务",
+      "evidence_span": "业务覆盖住宿服务、餐饮服务、会议服务、旅游信息咨询等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游信息咨询",
+      "evidence_span": "业务覆盖住宿服务、餐饮服务、会议服务、旅游信息咨询等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "长白山天然火山自溢温泉水",
+      "evidence_span": "蓝景温泉公司是以长白山天然火山自溢温泉水为主营产品"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "温泉度假主题公园项目",
+      "evidence_span": "将长白山火山温泉部落打造形成国内顶级的温泉度假主题公园项目"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "森林生态博物馆",
+      "evidence_span": "主要是建设一个国内首家集科普展示互动于一体的森林生态博物馆和亲子度假酒店"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "亲子度假酒店",
+      "evidence_span": "主要是建设一个国内首家集科普展示互动于一体的森林生态博物馆和亲子度假酒店"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "景区开发管理",
+      "evidence_span": "目前公司主要负责长白山景区开发管理、旅游纪念品研发销售、服务设施建设等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "旅游纪念品研发销售",
+      "evidence_span": "目前公司主要负责长白山景区开发管理、旅游纪念品研发销售、服务设施建设等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "服务设施建设",
+      "evidence_span": "目前公司主要负责长白山景区开发管理、旅游纪念品研发销售、服务设施建设等"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "安全管理标准",
+      "evidence_span": "通过建立安全管理标准、服务管理标准等操作化流程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "服务管理标准",
+      "evidence_span": "通过建立安全管理标准、服务管理标准等操作化流程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "山地酒店运营管理经验",
+      "evidence_span": "已经形成了自有的山地酒店的运营管理经验及管理标准"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "山地自然类景区管理标准化体系",
+      "evidence_span": "建立了一套比较完整具有独特山地自然类景区特色的管理标准化体系"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "英国洲际酒店集团",
+      "evidence_span": "与英国洲际酒店集团合作，建设品牌为皇冠假日的五星级温泉度假酒店"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "冰雪旅游",
+      "evidence_span": "长白山联动冬奥冰雪游前景广阔"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "冬奥冰雪游",
+      "evidence_span": "长白山联动冬奥冰雪游前景广阔"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "旅游客运",
+        "evidence_span": "旅游客运是公司的核心业务及盈利核心"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "旅行社业务",
+        "evidence_span": "公司下属子公司天池国旅依托长白山景区提供产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "酒店管理",
+        "evidence_span": "公司于2017年进军酒店行业，建立全资子公司——吉林省天池酒店管理有限责任公司"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "温泉水开发及利用",
+        "evidence_span": "蓝景温泉公司是以长白山天然火山自溢温泉水为主营产品"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "企业管理咨询",
+        "evidence_span": "2017年设立全资子公司吉林省天池企业管理咨询有限公司，进军企业管理咨询行业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "长白山管委会唯一的国有控股上市公司",
+        "evidence_span": "长白山管委会唯一的国有控股上市公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "长白山保护开发区最大的旅游客运公司",
+        "evidence_span": "公司是长白山保护开发区最大的旅游客运公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合旅游服务商",
+        "evidence_span": "观光客运运营者迈向综合旅游服务商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保车经营许可及收费权",
+        "evidence_span": "公司独家拥有长白山景区内环保车、倒站车的经营许可及收费权"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "倒站车经营许可及收费权",
+        "evidence_span": "公司独家拥有长白山景区内环保车、倒站车的经营许可及收费权"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游客运经营许可",
+        "evidence_span": "公司通过招、拍、挂程序取得了长白山景区内旅游客运、区间和环山公路旅游包车客运经营许可（权）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环山公路旅游包车客运经营许可",
+        "evidence_span": "公司通过招、拍、挂程序取得了长白山景区内旅游客运、区间和环山公路旅游包车客运经营许可（权）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环长白山旅游快线",
+        "evidence_span": "景区外的环长白山旅游快线连接了长白山西景区、北景区及景区外的部分景点和客源集中地"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "包车业务",
+        "evidence_span": "疫情以来公司城区运营板块的包车和租车业务受到了游客的普遍欢迎"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "租车业务",
+        "evidence_span": "疫情以来公司城区运营板块的包车和租车业务受到了游客的普遍欢迎"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高端旅游接待",
+        "evidence_span": "公司下属子公司天池国旅依托长白山景区提供产品，以高端旅游接待为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "休闲度假特种旅游产品",
+        "evidence_span": "产品主要以休闲度假等特种旅游产品为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "自行车骑行",
+        "evidence_span": "王牌产品包括自行车骑行、天池婚礼、日出观光等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "天池婚礼",
+        "evidence_span": "王牌产品包括自行车骑行、天池婚礼、日出观光等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "日出观光",
+        "evidence_span": "王牌产品包括自行车骑行、天池婚礼、日出观光等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "探险旅游项目",
+        "evidence_span": "天池国旅是唯一一家获得主管单位批准在指定区域范围内开展探险、科考旅游项目的旅行社"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "科考旅游项目",
+        "evidence_span": "天池国旅是唯一一家获得主管单位批准在指定区域范围内开展探险、科考旅游项目的旅行社"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冰雪旅游季产品",
+        "evidence_span": "公司紧密围绕“赏雪必看、滑雪必玩、戏雪必选、雪季必游”来打造冰雪旅游季产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "深度冰雪体验系列产品",
+        "evidence_span": "开发出主题鲜明体验感强的深度冰雪体验系列产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "住宿服务",
+        "evidence_span": "业务覆盖住宿服务、餐饮服务、会议服务、旅游信息咨询等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "餐饮服务",
+        "evidence_span": "业务覆盖住宿服务、餐饮服务、会议服务、旅游信息咨询等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "会议服务",
+        "evidence_span": "业务覆盖住宿服务、餐饮服务、会议服务、旅游信息咨询等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游信息咨询",
+        "evidence_span": "业务覆盖住宿服务、餐饮服务、会议服务、旅游信息咨询等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "长白山天然火山自溢温泉水",
+        "evidence_span": "蓝景温泉公司是以长白山天然火山自溢温泉水为主营产品"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "温泉度假主题公园项目",
+        "evidence_span": "将长白山火山温泉部落打造形成国内顶级的温泉度假主题公园项目"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "森林生态博物馆",
+        "evidence_span": "主要是建设一个国内首家集科普展示互动于一体的森林生态博物馆和亲子度假酒店"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "亲子度假酒店",
+        "evidence_span": "主要是建设一个国内首家集科普展示互动于一体的森林生态博物馆和亲子度假酒店"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "景区开发管理",
+        "evidence_span": "目前公司主要负责长白山景区开发管理、旅游纪念品研发销售、服务设施建设等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "旅游纪念品研发销售",
+        "evidence_span": "目前公司主要负责长白山景区开发管理、旅游纪念品研发销售、服务设施建设等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "服务设施建设",
+        "evidence_span": "目前公司主要负责长白山景区开发管理、旅游纪念品研发销售、服务设施建设等"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "安全管理标准",
+        "evidence_span": "通过建立安全管理标准、服务管理标准等操作化流程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "服务管理标准",
+        "evidence_span": "通过建立安全管理标准、服务管理标准等操作化流程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "山地酒店运营管理经验",
+        "evidence_span": "已经形成了自有的山地酒店的运营管理经验及管理标准"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "山地自然类景区管理标准化体系",
+        "evidence_span": "建立了一套比较完整具有独特山地自然类景区特色的管理标准化体系"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "英国洲际酒店集团",
+        "evidence_span": "与英国洲际酒店集团合作，建设品牌为皇冠假日的五星级温泉度假酒店"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "冰雪旅游",
+        "evidence_span": "长白山联动冬奥冰雪游前景广阔"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "冬奥冰雪游",
+        "evidence_span": "长白山联动冬奥冰雪游前景广阔"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:20:41"
+}

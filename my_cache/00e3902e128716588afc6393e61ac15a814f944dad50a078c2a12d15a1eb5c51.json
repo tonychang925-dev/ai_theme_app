@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:42:44", "result": {"chunk_id": "bcdf645ceb6d", "label": "candidate_mixed", "confidence": 0.75, "ontology_value": "medium", "reason": "该段落描述国内分销行业的发展背景和现状，包含静态知识（如产业转移、企业涌现），但混合了具体数据（如2017年和2021年销售金额）和事件性内容，需要裁决。"}}

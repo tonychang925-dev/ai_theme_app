@@ -1,0 +1,69 @@
+{
+  "must": [
+    "可控核聚变",
+    "核聚变",
+    "磁约束",
+    "惯性约束",
+    "国际热核聚变实验堆（ITER）",
+    "中国聚变工程实验堆（CFETR）"
+  ],
+  "should": [
+    "核裂变",
+    "重力约束",
+    "主机",
+    "缓冲结构",
+    "支持结构",
+    "辅助系统",
+    "燃料循环系统",
+    "电力系统",
+    "场地基础设施",
+    "环向磁体",
+    "配套设备",
+    "建设运营"
+  ],
+  "not": [],
+  "evidence_refs": [
+    {
+      "term": "可控核聚变",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "可控核聚变"
+    },
+    {
+      "term": "核聚变",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "核聚变"
+    },
+    {
+      "term": "磁约束",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "磁约束"
+    },
+    {
+      "term": "惯性约束",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "惯性约束"
+    },
+    {
+      "term": "国际热核聚变实验堆（ITER）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "国际热核聚变实验堆（ITER）"
+    },
+    {
+      "term": "中国聚变工程实验堆（CFETR）",
+      "source": "primary_anchor",
+      "source_id": "primary_anchor",
+      "span_text": "中国聚变工程实验堆（CFETR）"
+    }
+  ],
+  "subject_id": "9017950",
+  "quality": "strong",
+  "generated_at": "2026-03-14T09:42:42",
+  "semantic_type": "技术突破与产业链",
+  "strategy_type": "industry_chain",
+  "source_type": 1
+}

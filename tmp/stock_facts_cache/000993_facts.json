@@ -1,0 +1,204 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "电力生产",
+      "evidence_span": "公司主营业务为电力生产与开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "开发",
+      "evidence_span": "公司主营业务为电力生产与开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "水电",
+      "evidence_span": "主要以水电、风电为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "风电",
+      "evidence_span": "主要以水电、风电为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "房地产",
+      "evidence_span": "本公司拥有一家全资子公司宁德市东晟房地产有限公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国有控股上市公司",
+      "evidence_span": "闽东电力作为国有控股上市公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "宁德市唯一的国有控股上市公司",
+      "evidence_span": "公司作为宁德市唯一的国有控股上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "水力发电",
+      "evidence_span": "发电业务是公司主营业务，主要包括水力发电和风力发电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "风力发电",
+      "evidence_span": "发电业务是公司主营业务，主要包括水力发电和风力发电"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "光伏发电",
+      "evidence_span": "公司目前在光伏行业的布局方面也已初显成效"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "工商业屋顶分布式光伏发电",
+      "evidence_span": "工商业屋顶分布式光伏发电项目福建省白马船厂项目动工建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "食用菌+光伏示范项目",
+      "evidence_span": "古田县鹤塘镇西洋村食用菌+光伏示范项目动工建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "地产项目",
+      "evidence_span": "开发地产项目“泰丽园”、“泰怡园”、“泰和园”等项目"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "水电站远程集控",
+      "evidence_span": "进一步推进水电站远程集控"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "风机运行综合性能提升",
+      "evidence_span": "进一步提高风机运行综合性能"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德市局或下属各供电公司",
+      "evidence_span": "主要向宁德市局或下属各供电公司趸售上网电量"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福建省电力公司",
+      "evidence_span": "主要向福建省电力公司趸售上网电量"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "吉林省电力公司",
+      "evidence_span": "主要向吉林省电力公司趸售上网电量"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "清洁能源",
+      "evidence_span": "公司致力于清洁能源、新能源等领域的发展"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源",
+      "evidence_span": "公司致力于清洁能源、新能源等领域的发展"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "电力生产与开发",
+        "evidence_span": "公司主营业务为电力生产与开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "水电",
+        "evidence_span": "主要以水电、风电为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "风电",
+        "evidence_span": "主要以水电、风电为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "房地产",
+        "evidence_span": "本公司拥有一家全资子公司宁德市东晟房地产有限公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国有控股上市公司",
+        "evidence_span": "闽东电力作为国有控股上市公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "宁德市唯一的国有控股上市公司",
+        "evidence_span": "公司作为宁德市唯一的国有控股上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "水力发电",
+        "evidence_span": "发电业务是公司主营业务，主要包括水力发电和风力发电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "风力发电",
+        "evidence_span": "发电业务是公司主营业务，主要包括水力发电和风力发电"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "光伏发电",
+        "evidence_span": "公司目前在光伏行业的布局方面也已初显成效"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "工商业屋顶分布式光伏发电",
+        "evidence_span": "工商业屋顶分布式光伏发电项目福建省白马船厂项目动工建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "食用菌+光伏示范项目",
+        "evidence_span": "古田县鹤塘镇西洋村食用菌+光伏示范项目动工建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "地产项目",
+        "evidence_span": "开发地产项目“泰丽园”、“泰怡园”、“泰和园”等项目"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "水电站远程集控",
+        "evidence_span": "进一步推进水电站远程集控"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "风机运行综合性能提升",
+        "evidence_span": "进一步提高风机运行综合性能"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德市局或下属各供电公司",
+        "evidence_span": "主要向宁德市局或下属各供电公司趸售上网电量"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福建省电力公司",
+        "evidence_span": "主要向福建省电力公司趸售上网电量"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "吉林省电力公司",
+        "evidence_span": "主要向吉林省电力公司趸售上网电量"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "清洁能源",
+        "evidence_span": "公司致力于清洁能源、新能源等领域的发展"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源",
+        "evidence_span": "公司致力于清洁能源、新能源等领域的发展"
+      }
+    ]
+  },
+  "cached_at": "2026-03-12T14:04:35"
+}

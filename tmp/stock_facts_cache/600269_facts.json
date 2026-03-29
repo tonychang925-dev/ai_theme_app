@@ -1,0 +1,429 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "高速公路运营",
+      "evidence_span": "公司主营业务包括高速公路运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智慧交通",
+      "evidence_span": "公司主营业务包括智慧交通"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "实业投资",
+      "evidence_span": "公司主营业务包括实业投资"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "金融投资",
+      "evidence_span": "公司主营业务包括金融投资"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高速公路管养企业",
+      "evidence_span": "江西省内最大的高速公路管养企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "国有控股公路类上市公司",
+      "evidence_span": "省属唯一一家国有控股公路类上市公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "通行服务",
+      "evidence_span": "实现通行服务收入33.62亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智慧交通业务",
+      "evidence_span": "实现智慧交通业务收入11.97亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "成品油销售",
+      "evidence_span": "实现成品油销售收入16.38亿元"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高速公路机电工程建设",
+      "evidence_span": "从事高速公路机电工程建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "运行维护服务",
+      "evidence_span": "运行维护服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交通机电产品研发",
+      "evidence_span": "交通机电产品研发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "应用软件开发",
+      "evidence_span": "应用软件开发"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "信息化系统集成",
+      "evidence_span": "信息化系统集成"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "机电养护",
+      "evidence_span": "机电养护"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "油品销售",
+      "evidence_span": "深耕油品销售主业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "房地产运营",
+      "evidence_span": "房地产运营业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市政园林景观绿化工程",
+      "evidence_span": "聚焦市政园林景观绿化工程主业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "污水处理",
+      "evidence_span": "实现污水处理"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "市政工程",
+      "evidence_span": "市政工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "交安工程",
+      "evidence_span": "交安工程"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环保型沥青搅拌站",
+      "evidence_span": "环保型沥青搅拌站建设"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商业保理",
+      "evidence_span": "成功获批江西省地方金融监管局颁发的商业保理牌照"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧收费",
+      "evidence_span": "重点聚焦“智慧收费”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智慧隧道",
+      "evidence_span": "“智慧隧道”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "物联网",
+      "evidence_span": "“物联网”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "北斗",
+      "evidence_span": "“北斗”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "车型识别收费稽核系统",
+      "evidence_span": "“车型识别收费稽核系统”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "隧道智慧巡检终端",
+      "evidence_span": "“隧道智慧巡检终端”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能设备控制终端",
+      "evidence_span": "“智能设备控制终端”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "BIM",
+      "evidence_span": "积极探索BIM"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据",
+      "evidence_span": "大数据"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人工智能",
+      "evidence_span": "人工智能"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "5G",
+      "evidence_span": "5G"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "VR",
+      "evidence_span": "VR"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "社会公众消费者",
+      "evidence_span": "主要客户为社会公众消费者"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "巴基斯坦",
+      "evidence_span": "远销巴基斯坦"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "孟加拉",
+      "evidence_span": "孟加拉等国"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "交通强国",
+      "evidence_span": "加快建设交通强国"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "数字经济",
+      "evidence_span": "数字经济做优做强“一号发展工程”"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "智慧交通",
+      "evidence_span": "大力发展智慧交通"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源",
+      "evidence_span": "积极拓展新能源业态"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "高速公路运营",
+        "evidence_span": "公司主营业务包括高速公路运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智慧交通",
+        "evidence_span": "公司主营业务包括智慧交通"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "实业投资",
+        "evidence_span": "公司主营业务包括实业投资"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "金融投资",
+        "evidence_span": "公司主营业务包括金融投资"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高速公路管养企业",
+        "evidence_span": "江西省内最大的高速公路管养企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "国有控股公路类上市公司",
+        "evidence_span": "省属唯一一家国有控股公路类上市公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "通行服务",
+        "evidence_span": "实现通行服务收入33.62亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智慧交通业务",
+        "evidence_span": "实现智慧交通业务收入11.97亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "成品油销售",
+        "evidence_span": "实现成品油销售收入16.38亿元"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高速公路机电工程建设",
+        "evidence_span": "从事高速公路机电工程建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "运行维护服务",
+        "evidence_span": "运行维护服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交通机电产品研发",
+        "evidence_span": "交通机电产品研发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "应用软件开发",
+        "evidence_span": "应用软件开发"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "信息化系统集成",
+        "evidence_span": "信息化系统集成"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "机电养护",
+        "evidence_span": "机电养护"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "油品销售",
+        "evidence_span": "深耕油品销售主业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "房地产运营",
+        "evidence_span": "房地产运营业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市政园林景观绿化工程",
+        "evidence_span": "聚焦市政园林景观绿化工程主业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "污水处理",
+        "evidence_span": "实现污水处理"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "市政工程",
+        "evidence_span": "市政工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "交安工程",
+        "evidence_span": "交安工程"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环保型沥青搅拌站",
+        "evidence_span": "环保型沥青搅拌站建设"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商业保理",
+        "evidence_span": "成功获批江西省地方金融监管局颁发的商业保理牌照"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧收费",
+        "evidence_span": "重点聚焦“智慧收费”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智慧隧道",
+        "evidence_span": "“智慧隧道”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "物联网",
+        "evidence_span": "“物联网”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "北斗",
+        "evidence_span": "“北斗”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "车型识别收费稽核系统",
+        "evidence_span": "“车型识别收费稽核系统”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "隧道智慧巡检终端",
+        "evidence_span": "“隧道智慧巡检终端”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能设备控制终端",
+        "evidence_span": "“智能设备控制终端”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "BIM",
+        "evidence_span": "积极探索BIM"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据",
+        "evidence_span": "大数据"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人工智能",
+        "evidence_span": "人工智能"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "5G",
+        "evidence_span": "5G"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "VR",
+        "evidence_span": "VR"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "社会公众消费者",
+        "evidence_span": "主要客户为社会公众消费者"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "巴基斯坦",
+        "evidence_span": "远销巴基斯坦"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "孟加拉",
+        "evidence_span": "孟加拉等国"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "交通强国",
+        "evidence_span": "加快建设交通强国"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "数字经济",
+        "evidence_span": "数字经济做优做强“一号发展工程”"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "智慧交通",
+        "evidence_span": "大力发展智慧交通"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源",
+        "evidence_span": "积极拓展新能源业态"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T04:48:09"
+}

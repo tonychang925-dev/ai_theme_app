@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-13T11:11:25", "result": {"chunk_id": "2566bf5df256", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落提到海南印发行动方案，加快培育商业航天全产业链，包括具体措施、目标和时间线，这涉及卫星互联网的产业链构成和发展规划，包含有价值的知识，但以政策事件形式呈现。"}}

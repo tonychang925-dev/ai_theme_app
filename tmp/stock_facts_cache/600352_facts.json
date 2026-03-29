@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "染料业务",
+      "evidence_span": "染料业务依然是公司利润的主要来源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "助剂业务",
+      "evidence_span": "以染料、助剂为主的纺织用化学品业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "中间体业务",
+      "evidence_span": "中间体业务依然是公司利润的主要来源"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "间苯二胺业务",
+      "evidence_span": "以间苯二胺、间苯二酚为主的中间体业务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "间苯二酚业务",
+      "evidence_span": "以间苯二胺、间苯二酚为主的中间体业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球最大的纺织用化学品生产服务商",
+      "evidence_span": "公司已成为全球最大的纺织用化学品生产服务商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球染料及中间体龙头",
+      "evidence_span": "全球染料及中间体龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "间苯二胺的全球行业龙头",
+      "evidence_span": "公司成为间苯二胺的全球行业龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "染料",
+      "evidence_span": "以染料、助剂为主的纺织用化学品业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "助剂",
+      "evidence_span": "以染料、助剂为主的纺织用化学品业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "间苯二胺",
+      "evidence_span": "以间苯二胺、间苯二酚为主的中间体业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "间苯二酚",
+      "evidence_span": "以间苯二胺、间苯二酚为主的中间体业务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "分散染料",
+      "evidence_span": "分散染料产销量再创历史新高"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "对苯二胺",
+      "evidence_span": "向相关中间体如间苯二酚、对苯二胺和间氨基苯酚的生产拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "间氨基苯酚",
+      "evidence_span": "向相关中间体如间苯二酚、对苯二胺和间氨基苯酚的生产拓展"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "还原物",
+      "evidence_span": "配套还原物等有机生态融合的系列中间体品种"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "减水剂",
+      "evidence_span": "在浙江上虞生产基地构建了染料-中间体-硫酸-减水剂循环经济一体化产业园"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "染料-中间体-硫酸-减水剂循环经济一体化",
+      "evidence_span": "构建了染料-中间体-硫酸-减水剂循环经济一体化产业园"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "分散染料全流程升级改造",
+      "evidence_span": "分散染料全流程升级改造项目的实施"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高盐高COD废水处理关键技术",
+      "evidence_span": "系列高盐高COD废水处理关键技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "染料配套中间体项目绿色清洁新技术",
+      "evidence_span": "染料配套中间体项目绿色清洁新技术的开发"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "日本住友化学株式会社",
+      "evidence_span": "间苯二酚的竞争对手主要为日本的住友化学株式会社"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "染料业务",
+        "evidence_span": "染料业务依然是公司利润的主要来源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "助剂业务",
+        "evidence_span": "以染料、助剂为主的纺织用化学品业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "中间体业务",
+        "evidence_span": "中间体业务依然是公司利润的主要来源"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "间苯二胺业务",
+        "evidence_span": "以间苯二胺、间苯二酚为主的中间体业务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "间苯二酚业务",
+        "evidence_span": "以间苯二胺、间苯二酚为主的中间体业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球最大的纺织用化学品生产服务商",
+        "evidence_span": "公司已成为全球最大的纺织用化学品生产服务商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球染料及中间体龙头",
+        "evidence_span": "全球染料及中间体龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "间苯二胺的全球行业龙头",
+        "evidence_span": "公司成为间苯二胺的全球行业龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "染料",
+        "evidence_span": "以染料、助剂为主的纺织用化学品业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "助剂",
+        "evidence_span": "以染料、助剂为主的纺织用化学品业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "间苯二胺",
+        "evidence_span": "以间苯二胺、间苯二酚为主的中间体业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "间苯二酚",
+        "evidence_span": "以间苯二胺、间苯二酚为主的中间体业务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "分散染料",
+        "evidence_span": "分散染料产销量再创历史新高"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "对苯二胺",
+        "evidence_span": "向相关中间体如间苯二酚、对苯二胺和间氨基苯酚的生产拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "间氨基苯酚",
+        "evidence_span": "向相关中间体如间苯二酚、对苯二胺和间氨基苯酚的生产拓展"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "还原物",
+        "evidence_span": "配套还原物等有机生态融合的系列中间体品种"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "减水剂",
+        "evidence_span": "在浙江上虞生产基地构建了染料-中间体-硫酸-减水剂循环经济一体化产业园"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "染料-中间体-硫酸-减水剂循环经济一体化",
+        "evidence_span": "构建了染料-中间体-硫酸-减水剂循环经济一体化产业园"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "分散染料全流程升级改造",
+        "evidence_span": "分散染料全流程升级改造项目的实施"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高盐高COD废水处理关键技术",
+        "evidence_span": "系列高盐高COD废水处理关键技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "染料配套中间体项目绿色清洁新技术",
+        "evidence_span": "染料配套中间体项目绿色清洁新技术的开发"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "日本住友化学株式会社",
+        "evidence_span": "间苯二酚的竞争对手主要为日本的住友化学株式会社"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:00:45"
+}

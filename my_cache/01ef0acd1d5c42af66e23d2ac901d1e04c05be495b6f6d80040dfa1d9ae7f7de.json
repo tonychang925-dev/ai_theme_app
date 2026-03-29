@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:34:18", "result": {"chunk_id": "f2dcc3ad81bb", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述福建舰航母的海试事件，是一个具体动态，没有提供军工集团的静态知识。"}}

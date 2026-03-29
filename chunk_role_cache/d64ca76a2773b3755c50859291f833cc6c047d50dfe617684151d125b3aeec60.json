@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "f5b3c48a3acb", "label": "knowledge_like", "confidence": 0.85, "ontology_value": "medium", "reason": "该段落虽然基于SEMI的预测数据（事件性），但直接揭示了全球晶圆厂设备支出的趋势、投资额和地域分布，特别是提到中国保持第一的投资地位，这有助于理解半导体设备赛道的市场需求和发展红利，提供了题材相关的结构性信息。"}}

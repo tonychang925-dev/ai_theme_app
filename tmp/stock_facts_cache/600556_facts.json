@@ -1,0 +1,294 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "红人营销平台服务",
+      "evidence_span": "WEIQ 红人营销平台是基于大数据技术为红人（内容创业者）与企业提供在线红人营销服务的撮合与交易平台"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新媒体商业创新数据产品",
+      "evidence_span": "新媒体商业创新数据产品—热浪数据"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "新媒体商业创新服务",
+      "evidence_span": "新媒体商业创新服务—IMSOCIAL 红人加速器"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "自媒体排行",
+      "evidence_span": "自媒体排行及版权管理机构：TOPKLOUT 克劳锐"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "版权管理",
+      "evidence_span": "自媒体排行及版权管理机构：TOPKLOUT 克劳锐"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "红人经济生态链创新业务",
+      "evidence_span": "布局了新消费产渠、红人职业教育、潮流内容街区西五街等创新业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "红人新经济公司",
+      "evidence_span": "成为A股首家红人新经济公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "新媒体营销龙头平台",
+      "evidence_span": "天下秀新媒体营销龙头平台价值凸显"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "超级连接器",
+      "evidence_span": "公司坚定践行去中心化的创业者经济生态中“超级连接器”战略目标"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "WEIQ 红人营销平台",
+      "evidence_span": "WEIQ 红人营销平台（简称：WEIQ 平台）"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "热浪数据",
+      "evidence_span": "热浪数据是公司独家运营的短视频直播电商一站式数据服务平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "WEIQ-SAAS 系统",
+      "evidence_span": "WEIQ-SAAS 系统致力于赋能广大代理商客户在自媒体采买服务中实现降本增效"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "IMSOCIAL 红人加速器",
+      "evidence_span": "IMSOCIAL 红人加速器是红人（内容创业者）的成长加速平台"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TOPKLOUT 克劳锐",
+      "evidence_span": "TOPKLOUT 克劳锐作为红人经济生态的第三方权威评价机构"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "虹宇宙",
+      "evidence_span": "3D 虚拟生活社区“虹宇宙”"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "TopHolder 头号藏家",
+      "evidence_span": "自媒体数字藏品工具集“TopHolder 头号藏家”"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "社交大数据监测系统",
+      "evidence_span": "公司开发出国内首个社交大数据监测系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "行业及社会化电商系统",
+      "evidence_span": "公司开发出国内第一个行业及社会化电商系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "大数据技术",
+      "evidence_span": "基于大数据技术为红人（内容创业者）与企业提供在线红人营销服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中粮集团",
+      "evidence_span": "成为中粮集团社会化营销唯一服务商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里巴巴",
+      "evidence_span": "公司正式成为阿里巴巴社交全案供应商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "欧莱雅",
+      "evidence_span": "天下秀曾与欧莱雅、宝洁、联合利华等知名国际大牌有过合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝洁",
+      "evidence_span": "正式成为宝洁社交营销云服务商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "联合利华",
+      "evidence_span": "天下秀曾与欧莱雅、宝洁、联合利华等知名国际大牌有过合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "450余家品牌企业广告主",
+      "evidence_span": "为国内外450余家品牌企业广告主提供社会化营销服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "8万余家中小企业、广告主",
+      "evidence_span": "8万余家中小企业、广告主提供社会化营销服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "微博",
+      "evidence_span": "与微博达成战略合作"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "红人新经济",
+      "evidence_span": "成为A股首家红人新经济公司"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "Web 3.0",
+      "evidence_span": "积极布局Web 3.0路径下的创作者生态"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "红人营销平台服务",
+        "evidence_span": "WEIQ 红人营销平台是基于大数据技术为红人（内容创业者）与企业提供在线红人营销服务的撮合与交易平台"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新媒体商业创新数据产品",
+        "evidence_span": "新媒体商业创新数据产品—热浪数据"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "新媒体商业创新服务",
+        "evidence_span": "新媒体商业创新服务—IMSOCIAL 红人加速器"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "自媒体排行及版权管理",
+        "evidence_span": "自媒体排行及版权管理机构：TOPKLOUT 克劳锐"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "红人经济生态链创新业务",
+        "evidence_span": "布局了新消费产渠、红人职业教育、潮流内容街区西五街等创新业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "红人新经济公司",
+        "evidence_span": "成为A股首家红人新经济公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "新媒体营销龙头平台",
+        "evidence_span": "天下秀新媒体营销龙头平台价值凸显"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "超级连接器",
+        "evidence_span": "公司坚定践行去中心化的创业者经济生态中“超级连接器”战略目标"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "WEIQ 红人营销平台",
+        "evidence_span": "WEIQ 红人营销平台（简称：WEIQ 平台）"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "热浪数据",
+        "evidence_span": "热浪数据是公司独家运营的短视频直播电商一站式数据服务平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "WEIQ-SAAS 系统",
+        "evidence_span": "WEIQ-SAAS 系统致力于赋能广大代理商客户在自媒体采买服务中实现降本增效"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "IMSOCIAL 红人加速器",
+        "evidence_span": "IMSOCIAL 红人加速器是红人（内容创业者）的成长加速平台"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TOPKLOUT 克劳锐",
+        "evidence_span": "TOPKLOUT 克劳锐作为红人经济生态的第三方权威评价机构"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "虹宇宙",
+        "evidence_span": "3D 虚拟生活社区“虹宇宙”"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "TopHolder 头号藏家",
+        "evidence_span": "自媒体数字藏品工具集“TopHolder 头号藏家”"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "社交大数据监测系统",
+        "evidence_span": "公司开发出国内首个社交大数据监测系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "行业及社会化电商系统",
+        "evidence_span": "公司开发出国内第一个行业及社会化电商系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "大数据技术",
+        "evidence_span": "基于大数据技术为红人（内容创业者）与企业提供在线红人营销服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中粮集团",
+        "evidence_span": "成为中粮集团社会化营销唯一服务商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里巴巴",
+        "evidence_span": "公司正式成为阿里巴巴社交全案供应商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "欧莱雅",
+        "evidence_span": "天下秀曾与欧莱雅、宝洁、联合利华等知名国际大牌有过合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝洁",
+        "evidence_span": "正式成为宝洁社交营销云服务商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "联合利华",
+        "evidence_span": "天下秀曾与欧莱雅、宝洁、联合利华等知名国际大牌有过合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "450余家品牌企业广告主",
+        "evidence_span": "为国内外450余家品牌企业广告主提供社会化营销服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "8万余家中小企业、广告主",
+        "evidence_span": "8万余家中小企业、广告主提供社会化营销服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "微博",
+        "evidence_span": "与微博达成战略合作"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "红人新经济",
+        "evidence_span": "成为A股首家红人新经济公司"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "Web 3.0",
+        "evidence_span": "积极布局Web 3.0路径下的创作者生态"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T05:36:16"
+}

@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "旅客运输服务",
+      "evidence_span": "本线列车提供旅客运输服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "路网服务",
+      "evidence_span": "向跨线列车提供路网服务"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "京沪高速铁路",
+      "evidence_span": "核心资产是连通“长三角”与“京津冀”的京沪高速铁路"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "合蚌客运专线",
+      "evidence_span": "持有合蚌客运专线"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "合福铁路安徽段",
+      "evidence_span": "合福铁路安徽段"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "郑阜铁路安徽段",
+      "evidence_span": "郑阜铁路安徽段"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "商合杭铁路安徽段",
+      "evidence_span": "商合杭铁路安徽段"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高铁运营公司",
+      "evidence_span": "京沪高铁公司运营的铁路位置图"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京铁路局",
+      "evidence_span": "向北京铁路局、济南铁路局、上海铁路局租赁动车组"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "济南铁路局",
+      "evidence_span": "向北京铁路局、济南铁路局、上海铁路局租赁动车组"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海铁路局",
+      "evidence_span": "向北京铁路局、济南铁路局、上海铁路局租赁动车组"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京局集团",
+      "evidence_span": "与北京局集团、济南局集团、上海局集团签署的相关协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "济南局集团",
+      "evidence_span": "与北京局集团、济南局集团、上海局集团签署的相关协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "上海局集团",
+      "evidence_span": "与北京局集团、济南局集团、上海局集团签署的相关协议"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "其他铁路运输企业",
+      "evidence_span": "其他铁路运输企业担当的列车"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "旅客运输服务",
+        "evidence_span": "本线列车提供旅客运输服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "路网服务",
+        "evidence_span": "向跨线列车提供路网服务"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "京沪高速铁路",
+        "evidence_span": "核心资产是连通“长三角”与“京津冀”的京沪高速铁路"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "合蚌客运专线",
+        "evidence_span": "持有合蚌客运专线"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "合福铁路安徽段",
+        "evidence_span": "合福铁路安徽段"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "郑阜铁路安徽段",
+        "evidence_span": "郑阜铁路安徽段"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "商合杭铁路安徽段",
+        "evidence_span": "商合杭铁路安徽段"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高铁运营公司",
+        "evidence_span": "京沪高铁公司运营的铁路位置图"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京铁路局",
+        "evidence_span": "向北京铁路局、济南铁路局、上海铁路局租赁动车组"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "济南铁路局",
+        "evidence_span": "向北京铁路局、济南铁路局、上海铁路局租赁动车组"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海铁路局",
+        "evidence_span": "向北京铁路局、济南铁路局、上海铁路局租赁动车组"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京局集团",
+        "evidence_span": "与北京局集团、济南局集团、上海局集团签署的相关协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "济南局集团",
+        "evidence_span": "与北京局集团、济南局集团、上海局集团签署的相关协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "上海局集团",
+        "evidence_span": "与北京局集团、济南局集团、上海局集团签署的相关协议"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "其他铁路运输企业",
+        "evidence_span": "其他铁路运输企业担当的列车"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:38:38"
+}

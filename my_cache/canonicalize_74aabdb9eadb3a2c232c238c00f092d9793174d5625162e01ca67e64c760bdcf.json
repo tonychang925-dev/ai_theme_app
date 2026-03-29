@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:18:14", "result": {"span_uid": "f43d0efa363f", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "市场增长预测", "stability": "low", "reason": "原片段为具体年份的预测数据，与span_uid 6655a90186ff重复，且为事件性信息，不适合保留。"}}

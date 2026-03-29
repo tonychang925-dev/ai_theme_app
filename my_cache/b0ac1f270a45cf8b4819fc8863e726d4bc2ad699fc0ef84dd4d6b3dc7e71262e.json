@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:58:46", "result": {"chunk_id": "d48e14071667", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落描述钱江摩托公布半年报和净利润增加的具体事件，属于公司业绩公告，没有提供关于两轮车题材的静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:41:20", "result": {"chunk_id": "b8028e9e1f33", "label": "pure_event", "confidence": 0.95, "ontology_value": "low", "reason": "该段落主要描述SK海力士在2027年启用洁净室的具体事件，包括时间、地点、产能扩张等动态信息，虽然结尾提到'ISO3级洁净室介绍'，但整体以事件为主，不包含稳定的题材本体知识。"}}

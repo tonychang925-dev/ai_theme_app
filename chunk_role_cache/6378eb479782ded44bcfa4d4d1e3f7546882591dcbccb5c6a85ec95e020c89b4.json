@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T14:35:57", "result": {"chunk_id": "89ace525004d", "label": "candidate_mixed", "confidence": 0.85, "ontology_value": "high", "reason": "该段包含上海市通信管理局发布的指导意见，涉及低空智联网基础设施、网络覆盖、监管平台等静态知识，但以政策发布形式呈现，混合了事件元素，需要裁决以提取可用于题材构建的稳定知识。"}}

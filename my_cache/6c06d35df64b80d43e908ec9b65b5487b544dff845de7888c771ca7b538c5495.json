@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T15:00:49", "result": {"chunk_id": "c189295bee24", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "high", "reason": "该段落以技术发布会事件为背景，但详细列出了小米汽车的核心技术点（如电池安全标准、电机参数、CTB技术），这些是可用于题材本体构建的稳定知识，尽管混合了事件信息。"}}

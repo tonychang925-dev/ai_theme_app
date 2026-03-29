@@ -1,0 +1,674 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "深冷技术工艺开发",
+      "evidence_span": "从事各类深冷技术工艺的开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "深冷装备设计",
+      "evidence_span": "深冷装备的设计"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "深冷装备制造",
+      "evidence_span": "深冷装备的制造"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "深冷装备销售",
+      "evidence_span": "深冷装备的销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "深冷系统整体解决方案",
+      "evidence_span": "为客户提供深冷系统整体解决方案"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "深冷装备行业知名企业",
+      "evidence_span": "国内深冷装备行业内的知名企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "跨空气分离设备和液化天然气装置领域的内资企业",
+      "evidence_span": "国内少数跨空气分离设备、液化天然气装置两个领域的内资企业"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "空气分离设备制造企业",
+      "evidence_span": "公司目前是国内领先的空气分离设备制造企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "空气分离设备",
+      "evidence_span": "公司主要产品为空气分离设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液化天然气装置",
+      "evidence_span": "公司主要产品为液化天然气装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绕管式换热器",
+      "evidence_span": "公司主要产品为绕管式换热器"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化工冷箱",
+      "evidence_span": "公司主要产品为化工冷箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液体贮槽",
+      "evidence_span": "公司主要产品为液体贮槽"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "大中型空气分离设备",
+      "evidence_span": "公司空气分离设备产品分为大中型空气分离设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全液体空气分离设备",
+      "evidence_span": "公司空气分离设备产品分为全液体空气分离设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "氦、氖、氪、氙气体提取设备",
+      "evidence_span": "公司空气分离设备产品分为氦、氖、氪、氙气体提取设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "高纯氮设备",
+      "evidence_span": "公司空气分离设备产品分为高纯氮设备"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "常规天然气液化提纯装置",
+      "evidence_span": "公司的液化天然气装置产品包括常规天然气液化提纯装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "化工尾气分离提纯液化装置",
+      "evidence_span": "公司的液化天然气装置产品包括化工尾气分离提纯液化装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "非常规天然气提纯液化装置",
+      "evidence_span": "公司的液化天然气装置产品包括非常规天然气提纯液化装置"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "甲烷分离冷箱",
+      "evidence_span": "目前按功能或领域主要包括甲烷分离冷箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "乙烯冷箱",
+      "evidence_span": "目前按功能或领域主要包括乙烯冷箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "丙烷脱氢冷箱",
+      "evidence_span": "目前按功能或领域主要包括丙烷脱氢冷箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "CO-H2分离冷箱",
+      "evidence_span": "目前按功能或领域主要包括CO-H2分离冷箱"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液氮洗冷箱",
+      "evidence_span": "目前按功能或领域主要包括液氮洗冷箱"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "空气分离设备技术",
+      "evidence_span": "涵盖了空气分离设备技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "天然气处理及液化技术",
+      "evidence_span": "涵盖了天然气处理及液化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "化工冷箱技术",
+      "evidence_span": "涵盖了化工冷箱技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "撬装模块化技术",
+      "evidence_span": "涵盖了撬装模块化技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "设备及焊接技术",
+      "evidence_span": "涵盖了设备及焊接技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化技术与启动控制技术",
+      "evidence_span": "涵盖了智能化技术与启动控制技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "富氧流程",
+      "evidence_span": "开发出70-90%的富氧流程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "纯氧流程",
+      "evidence_span": "99.6%纯氧流程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电子氧流程",
+      "evidence_span": "99.9999%的电子氧流程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氮气纯度品质",
+      "evidence_span": "在氮气纯度品质方面已做到0.1PPMO2"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "Ppb级电子级氮气",
+      "evidence_span": "正在研究国产化Ppb级电子级氮气"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "HeNeKrXe粗制和精制技术",
+      "evidence_span": "HeNeKrXe粗制和精制技术已逐步掌握"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氮循环流程",
+      "evidence_span": "开发出氮循环流程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "氮甲烷流程",
+      "evidence_span": "开发出氮甲烷流程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "MRC流程",
+      "evidence_span": "开发出MRC流程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "C3-MRC流程",
+      "evidence_span": "开发出C3‐MRC流程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "级联制冷流程",
+      "evidence_span": "开发出级联制冷流程"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "高压板翅式换热器",
+      "evidence_span": "高压板翅式换热器实现了国内技术突破"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "IFV汽化器",
+      "evidence_span": "绕管式换热器中采用IFV汽化器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "移动式撬块冷箱技术",
+      "evidence_span": "移动式撬块冷箱技术实现热撬块、冷撬块、控制撬块的模块化"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "德国林德集团",
+      "evidence_span": "德国林德集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国空气产品公司",
+      "evidence_span": "美国空气产品公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "美国普莱克斯",
+      "evidence_span": "美国普莱克斯"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "盈德气体投资有限公司",
+      "evidence_span": "盈德气体投资有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "意大利达涅利集团",
+      "evidence_span": "意大利达涅利集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京市燃气集团有限责任公司",
+      "evidence_span": "北京市燃气集团有限责任公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "深圳市燃气集团有限公司",
+      "evidence_span": "深圳市燃气集团有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国石油天然气股份有限公司",
+      "evidence_span": "中国石油天然气股份有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国海洋石油总公司",
+      "evidence_span": "中国海洋石油总公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝武钢铁集团股份有限公司",
+      "evidence_span": "宝武钢铁集团股份有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国核工业集团公司",
+      "evidence_span": "中国核工业集团公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "白银有色集团股份有限公司",
+      "evidence_span": "白银有色集团股份有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国冶金科工集团有限公司",
+      "evidence_span": "中国冶金科工集团有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "西安陕鼓动力股份有限公司",
+      "evidence_span": "西安陕鼓动力股份有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山西国新能源股份有限公司",
+      "evidence_span": "山西国新能源股份有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "山西阳煤集团有限责任公司",
+      "evidence_span": "山西阳煤集团有限责任公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广州广钢气体能源股份有限公司",
+      "evidence_span": "广州广钢气体能源股份有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "广西南国铜业有限责任公司",
+      "evidence_span": "广西南国铜业有限责任公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "本溪钢铁（集团）有限责任公司",
+      "evidence_span": "本溪钢铁（集团）有限责任公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "佛山华普气体科技有限公司",
+      "evidence_span": "佛山华普气体科技有限公司"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宝武清洁能源鄂州有限公司",
+      "evidence_span": "宝武清洁能源鄂州有限公司"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "深冷技术工艺开发",
+        "evidence_span": "从事各类深冷技术工艺的开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "深冷装备设计",
+        "evidence_span": "深冷装备的设计"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "深冷装备制造",
+        "evidence_span": "深冷装备的制造"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "深冷装备销售",
+        "evidence_span": "深冷装备的销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "深冷系统整体解决方案",
+        "evidence_span": "为客户提供深冷系统整体解决方案"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "深冷装备行业知名企业",
+        "evidence_span": "国内深冷装备行业内的知名企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "跨空气分离设备和液化天然气装置领域的内资企业",
+        "evidence_span": "国内少数跨空气分离设备、液化天然气装置两个领域的内资企业"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "空气分离设备制造企业",
+        "evidence_span": "公司目前是国内领先的空气分离设备制造企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "空气分离设备",
+        "evidence_span": "公司主要产品为空气分离设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液化天然气装置",
+        "evidence_span": "公司主要产品为液化天然气装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绕管式换热器",
+        "evidence_span": "公司主要产品为绕管式换热器"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化工冷箱",
+        "evidence_span": "公司主要产品为化工冷箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液体贮槽",
+        "evidence_span": "公司主要产品为液体贮槽"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "大中型空气分离设备",
+        "evidence_span": "公司空气分离设备产品分为大中型空气分离设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全液体空气分离设备",
+        "evidence_span": "公司空气分离设备产品分为全液体空气分离设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "氦、氖、氪、氙气体提取设备",
+        "evidence_span": "公司空气分离设备产品分为氦、氖、氪、氙气体提取设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "高纯氮设备",
+        "evidence_span": "公司空气分离设备产品分为高纯氮设备"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "常规天然气液化提纯装置",
+        "evidence_span": "公司的液化天然气装置产品包括常规天然气液化提纯装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "化工尾气分离提纯液化装置",
+        "evidence_span": "公司的液化天然气装置产品包括化工尾气分离提纯液化装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "非常规天然气提纯液化装置",
+        "evidence_span": "公司的液化天然气装置产品包括非常规天然气提纯液化装置"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "甲烷分离冷箱",
+        "evidence_span": "目前按功能或领域主要包括甲烷分离冷箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "乙烯冷箱",
+        "evidence_span": "目前按功能或领域主要包括乙烯冷箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "丙烷脱氢冷箱",
+        "evidence_span": "目前按功能或领域主要包括丙烷脱氢冷箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "CO-H2分离冷箱",
+        "evidence_span": "目前按功能或领域主要包括CO-H2分离冷箱"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液氮洗冷箱",
+        "evidence_span": "目前按功能或领域主要包括液氮洗冷箱"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "空气分离设备技术",
+        "evidence_span": "涵盖了空气分离设备技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "天然气处理及液化技术",
+        "evidence_span": "涵盖了天然气处理及液化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "化工冷箱技术",
+        "evidence_span": "涵盖了化工冷箱技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "撬装模块化技术",
+        "evidence_span": "涵盖了撬装模块化技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "设备及焊接技术",
+        "evidence_span": "涵盖了设备及焊接技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化技术与启动控制技术",
+        "evidence_span": "涵盖了智能化技术与启动控制技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "富氧流程",
+        "evidence_span": "开发出70-90%的富氧流程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "纯氧流程",
+        "evidence_span": "99.6%纯氧流程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电子氧流程",
+        "evidence_span": "99.9999%的电子氧流程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氮气纯度品质",
+        "evidence_span": "在氮气纯度品质方面已做到0.1PPMO2"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "Ppb级电子级氮气",
+        "evidence_span": "正在研究国产化Ppb级电子级氮气"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "HeNeKrXe粗制和精制技术",
+        "evidence_span": "HeNeKrXe粗制和精制技术已逐步掌握"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氮循环流程",
+        "evidence_span": "开发出氮循环流程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "氮甲烷流程",
+        "evidence_span": "开发出氮甲烷流程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "MRC流程",
+        "evidence_span": "开发出MRC流程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "C3-MRC流程",
+        "evidence_span": "开发出C3‐MRC流程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "级联制冷流程",
+        "evidence_span": "开发出级联制冷流程"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "高压板翅式换热器",
+        "evidence_span": "高压板翅式换热器实现了国内技术突破"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "IFV汽化器",
+        "evidence_span": "绕管式换热器中采用IFV汽化器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "移动式撬块冷箱技术",
+        "evidence_span": "移动式撬块冷箱技术实现热撬块、冷撬块、控制撬块的模块化"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "德国林德集团",
+        "evidence_span": "德国林德集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国空气产品公司",
+        "evidence_span": "美国空气产品公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "美国普莱克斯",
+        "evidence_span": "美国普莱克斯"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "盈德气体投资有限公司",
+        "evidence_span": "盈德气体投资有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "意大利达涅利集团",
+        "evidence_span": "意大利达涅利集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "Petrofac International (UAE) LLC",
+        "evidence_span": "Petrofac International（UAE）LLC"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京市燃气集团有限责任公司",
+        "evidence_span": "北京市燃气集团有限责任公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "深圳市燃气集团有限公司",
+        "evidence_span": "深圳市燃气集团有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国石油天然气股份有限公司",
+        "evidence_span": "中国石油天然气股份有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国海洋石油总公司",
+        "evidence_span": "中国海洋石油总公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝武钢铁集团股份有限公司",
+        "evidence_span": "宝武钢铁集团股份有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国核工业集团公司",
+        "evidence_span": "中国核工业集团公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "白银有色集团股份有限公司",
+        "evidence_span": "白银有色集团股份有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国冶金科工集团有限公司",
+        "evidence_span": "中国冶金科工集团有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "西安陕鼓动力股份有限公司",
+        "evidence_span": "西安陕鼓动力股份有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山西国新能源股份有限公司",
+        "evidence_span": "山西国新能源股份有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "山西阳煤集团有限责任公司",
+        "evidence_span": "山西阳煤集团有限责任公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广州广钢气体能源股份有限公司",
+        "evidence_span": "广州广钢气体能源股份有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "广西南国铜业有限责任公司",
+        "evidence_span": "广西南国铜业有限责任公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "本溪钢铁（集团）有限责任公司",
+        "evidence_span": "本溪钢铁（集团）有限责任公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "佛山华普气体科技有限公司",
+        "evidence_span": "佛山华普气体科技有限公司"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宝武清洁能源鄂州有限公司",
+        "evidence_span": "宝武清洁能源鄂州有限公司"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T08:33:27"
+}

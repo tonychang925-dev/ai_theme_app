@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:45:41", "result": {"chunk_id": "42c5c0c01ae0", "label": "candidate_mixed", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落主要描述了设计公司的行业特性、技术要求和未来趋势，包含有价值的静态知识（如智力密集型、BIM技术应用），但结尾部分提及了未来订单向龙头企业靠拢等预测性内容，可能混有事件或市场动态，需要进一步裁决。"}}

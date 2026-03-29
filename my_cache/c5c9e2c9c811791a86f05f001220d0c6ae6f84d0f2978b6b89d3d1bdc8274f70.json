@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T23:18:21", "result": {"chunk_id": "ce2c7edb9d5d", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段基于江波龙发布的投资者关系活动记录，描述存储产品价格预测和市场需求等事件性信息，属于公司公告和市场分析。"}}

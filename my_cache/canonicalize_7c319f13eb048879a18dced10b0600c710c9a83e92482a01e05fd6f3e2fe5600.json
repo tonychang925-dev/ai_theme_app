@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-09T22:34:19", "result": {"span_uid": "2ea30f65db8a", "action": "keep", "canonical_text": "我国工业信息安全产业规模超过200亿元，仍处于快速成长期。", "final_type": "signal", "final_role": "产业规模现状", "stability": "high", "reason": "原文本为稳定的事实性数据，可独立成立，体现产业景气变化信号。"}}

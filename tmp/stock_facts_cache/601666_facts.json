@@ -1,0 +1,189 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭开采",
+      "evidence_span": "主营业务为煤炭开采、洗选加工和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "洗选加工",
+      "evidence_span": "主营业务为煤炭开采、洗选加工和销售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "煤炭销售",
+      "evidence_span": "主营业务为煤炭开采、洗选加工和销售"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "中南地区焦煤龙头",
+      "evidence_span": "平煤股份中南地区焦煤龙头"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "混煤",
+      "evidence_span": "煤炭产品分为混煤和冶炼精煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "冶炼精煤",
+      "evidence_span": "煤炭产品分为混煤和冶炼精煤"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "主焦精",
+      "evidence_span": "精煤主要为主焦精、1/3焦精和肥精等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "1/3焦精",
+      "evidence_span": "精煤主要为主焦精、1/3焦精和肥精等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "肥精",
+      "evidence_span": "精煤主要为主焦精、1/3焦精和肥精等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "优质低硫主焦煤",
+      "evidence_span": "公司优质低硫主焦煤极具规模优势和品质优势"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "煤炭洗选深加工",
+      "evidence_span": "大力发展煤炭洗选深加工"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "炼焦煤选煤厂",
+      "evidence_span": "公司现有炼焦煤选煤厂4座"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能矿山建设",
+      "evidence_span": "大力推进智能矿山建设"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化采煤工作面",
+      "evidence_span": "建成全省首个智能化采煤工作面"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化综采工作面",
+      "evidence_span": "28个智能化综采工作面"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能化综掘工作面",
+      "evidence_span": "57个智能化综掘工作面"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "万兆网和智能化综合管控平台",
+      "evidence_span": "14个主体矿井全部实施万兆网和智能化综合管控平台建设"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内多家大型钢铁企业",
+      "evidence_span": "与国内多家大型钢铁企业建立起长期稳定的战略合作伙伴关系"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭开采",
+        "evidence_span": "主营业务为煤炭开采、洗选加工和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "洗选加工",
+        "evidence_span": "主营业务为煤炭开采、洗选加工和销售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "煤炭销售",
+        "evidence_span": "主营业务为煤炭开采、洗选加工和销售"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "中南地区焦煤龙头",
+        "evidence_span": "平煤股份中南地区焦煤龙头"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "混煤",
+        "evidence_span": "煤炭产品分为混煤和冶炼精煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "冶炼精煤",
+        "evidence_span": "煤炭产品分为混煤和冶炼精煤"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "主焦精",
+        "evidence_span": "精煤主要为主焦精、1/3焦精和肥精等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "1/3焦精",
+        "evidence_span": "精煤主要为主焦精、1/3焦精和肥精等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "肥精",
+        "evidence_span": "精煤主要为主焦精、1/3焦精和肥精等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "优质低硫主焦煤",
+        "evidence_span": "公司优质低硫主焦煤极具规模优势和品质优势"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "煤炭洗选深加工",
+        "evidence_span": "大力发展煤炭洗选深加工"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "炼焦煤选煤厂",
+        "evidence_span": "公司现有炼焦煤选煤厂4座"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能矿山建设",
+        "evidence_span": "大力推进智能矿山建设"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化采煤工作面",
+        "evidence_span": "建成全省首个智能化采煤工作面"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化综采工作面",
+        "evidence_span": "28个智能化综采工作面"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能化综掘工作面",
+        "evidence_span": "57个智能化综掘工作面"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "万兆网和智能化综合管控平台",
+        "evidence_span": "14个主体矿井全部实施万兆网和智能化综合管控平台建设"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内多家大型钢铁企业",
+        "evidence_span": "与国内多家大型钢铁企业建立起长期稳定的战略合作伙伴关系"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T07:29:20"
+}

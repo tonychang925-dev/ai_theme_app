@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4", "model": "deepseek-chat", "timestamp": "2026-03-07T20:20:17", "result": {"chunk_id": "05858f3acdf0", "label": "knowledge_like", "confidence": 0.8, "ontology_value": "medium", "reason": "该段落前半部分为北方华创和中微公司的业绩公告，属pure_event；但后半部分提到High-NA EUV光刻机为2纳米以下先进制程所需设备，并关联三星的引进计划，这直接揭示了半导体设备中光刻机技术的关键环节（先进制程依赖）和国产替代方向，具有知识价值。"}}

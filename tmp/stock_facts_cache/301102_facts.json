@@ -1,0 +1,229 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字媒体资源的开发",
+      "evidence_span": "主营数字媒体资源的开发"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "数字媒体资源的运营",
+      "evidence_span": "主营数字媒体资源的运营"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "广告发布业务",
+      "evidence_span": "主营广告发布业务"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "高铁数字媒体综合运营商",
+      "evidence_span": "公司为高铁数字媒体综合运营商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全国性高铁媒体运营商",
+      "evidence_span": "公司为全国性高铁媒体运营商"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "全国铁路车站数字媒体广告",
+      "evidence_span": "主要运营全国铁路车站数字媒体广告"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数码刷屏机",
+      "evidence_span": "采用数码刷屏机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电视视频机",
+      "evidence_span": "电视视频机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LED大屏",
+      "evidence_span": "LED大屏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "裸眼3D大屏",
+      "evidence_span": "布局裸眼3D大屏"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "独立网络管理系统",
+      "evidence_span": "通过独立网络管理系统"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "数字化远程管控",
+      "evidence_span": "进行数字化远程管控"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "一键式广告发布服务",
+      "evidence_span": "提供一键式广告发布服务"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "铁路局集团",
+      "evidence_span": "与铁路局集团长期深度合作"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽大众",
+      "evidence_span": "一汽大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "舍得酒业",
+      "evidence_span": "舍得酒业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "阿里巴巴",
+      "evidence_span": "阿里巴巴"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中洲集团",
+      "evidence_span": "中洲集团"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "娃哈哈",
+      "evidence_span": "娃哈哈"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "五粮液",
+      "evidence_span": "五粮液"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "高铁数字媒体",
+      "evidence_span": "高铁数字媒体龙头"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "裸眼3D",
+      "evidence_span": "布局裸眼3D大屏"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字媒体资源的开发",
+        "evidence_span": "主营数字媒体资源的开发"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "数字媒体资源的运营",
+        "evidence_span": "主营数字媒体资源的运营"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "广告发布业务",
+        "evidence_span": "主营广告发布业务"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "高铁数字媒体综合运营商",
+        "evidence_span": "公司为高铁数字媒体综合运营商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全国性高铁媒体运营商",
+        "evidence_span": "公司为全国性高铁媒体运营商"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "全国铁路车站数字媒体广告",
+        "evidence_span": "主要运营全国铁路车站数字媒体广告"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数码刷屏机",
+        "evidence_span": "采用数码刷屏机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电视视频机",
+        "evidence_span": "电视视频机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LED大屏",
+        "evidence_span": "LED大屏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "裸眼3D大屏",
+        "evidence_span": "布局裸眼3D大屏"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "独立网络管理系统",
+        "evidence_span": "通过独立网络管理系统"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "数字化远程管控",
+        "evidence_span": "进行数字化远程管控"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "一键式广告发布服务",
+        "evidence_span": "提供一键式广告发布服务"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "铁路局集团",
+        "evidence_span": "与铁路局集团长期深度合作"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽大众",
+        "evidence_span": "一汽大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "舍得酒业",
+        "evidence_span": "舍得酒业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "阿里巴巴",
+        "evidence_span": "阿里巴巴"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中洲集团",
+        "evidence_span": "中洲集团"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "娃哈哈",
+        "evidence_span": "娃哈哈"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "五粮液",
+        "evidence_span": "五粮液"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "高铁数字媒体",
+        "evidence_span": "高铁数字媒体龙头"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "裸眼3D",
+        "evidence_span": "布局裸眼3D大屏"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T02:35:06"
+}

@@ -1,0 +1,700 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "大数据",
+      "evidence_span": "主营业务分为大数据与服务业务、人脸及生物特征识别业务..."
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "服务业务",
+      "evidence_span": "主营业务分为大数据与服务业务、人脸及生物特征识别业务..."
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "人脸",
+      "evidence_span": "主营业务分为大数据与服务业务、人脸及生物特征识别业务..."
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "生物特征识别业务",
+      "evidence_span": "主营业务分为大数据与服务业务、人脸及生物特征识别业务..."
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "笔智能交互业务",
+      "evidence_span": "主营业务分为大数据与服务业务、人脸及生物特征识别业务..."
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能终端产品",
+      "evidence_span": "主营业务分为大数据与服务业务、人脸及生物特征识别业务..."
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "人工智能领域内创新型高科技公司",
+      "evidence_span": "汉王科技是人工智能领域内创新型高科技公司"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "计算机视觉、大数据、智能交互的技术、产品及服务提供商",
+      "evidence_span": "是业内领先的计算机视觉、大数据、智能交互的技术..."
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "笔智能交互领域的引领者",
+      "evidence_span": "在笔智能交互业务领域，公司是笔智能交互领域的引领者"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "老牌OCR技术龙头",
+      "evidence_span": "汉王作为老牌OCR技术龙头"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "全球第一家做出嵌入式人脸识别智能终端的企业",
+      "evidence_span": "汉王是全球第一家做出嵌入式人脸识别智能终端的企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "e典笔",
+      "evidence_span": "通用产品，如e典笔、汉王电纸书、汉王笔..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汉王电纸书",
+      "evidence_span": "通用产品，如e典笔、汉王电纸书、汉王笔..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "汉王笔",
+      "evidence_span": "通用产品，如e典笔、汉王电纸书、汉王笔..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "文本王",
+      "evidence_span": "通用产品，如e典笔、汉王电纸书、汉王笔..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "名片通",
+      "evidence_span": "通用产品，如e典笔、汉王电纸书、汉王笔..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绘图板",
+      "evidence_span": "通用产品，如e典笔、汉王电纸书、汉王笔..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "文表识别解决方案",
+      "evidence_span": "针对教育、金融等行业应用的文表识别解决方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手写手机",
+      "evidence_span": "手写手机、OCR等多种技术授权方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "OCR技术授权方案",
+      "evidence_span": "手写手机、OCR等多种技术授权方案"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "证照识别硬件产品",
+      "evidence_span": "辅助方案实施的硬件产品，如证照识别等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "红外人脸产品",
+      "evidence_span": "主要产品包括红外人脸产品、人证核验终端..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人证核验终端",
+      "evidence_span": "主要产品包括红外人脸产品、人证核验终端..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人脸识别终端",
+      "evidence_span": "主要产品包括红外人脸产品、人证核验终端..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人脸仪",
+      "evidence_span": "主要产品包括红外人脸产品、人证核验终端..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数字绘画产品",
+      "evidence_span": "数字绘画产品、无纸化签批、智能终端配套电容笔..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "无纸化签批",
+      "evidence_span": "数字绘画产品、无纸化签批、智能终端配套电容笔..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "智能终端配套电容笔",
+      "evidence_span": "数字绘画产品、无纸化签批、智能终端配套电容笔..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手写板",
+      "evidence_span": "数字绘画产品、无纸化签批、智能终端配套电容笔..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "手写签批屏",
+      "evidence_span": "无纸化签批产品如手写签批屏、触控一体机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "触控一体机",
+      "evidence_span": "无纸化签批产品如手写签批屏、触控一体机等"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绘画板",
+      "evidence_span": "数字绘画产品如绘画板、绘画屏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "绘画屏",
+      "evidence_span": "数字绘画产品如绘画板、绘画屏"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数位板",
+      "evidence_span": "主要产品包括数位板、数位屏、官方配件和数码办公类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "数位屏",
+      "evidence_span": "主要产品包括数位板、数位屏、官方配件和数码办公类"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "人脸抓拍机",
+      "evidence_span": "人脸识别产品及通用性平台软件，如人脸抓拍机..."
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "扬尘监测",
+      "evidence_span": "人脸识别产品及通用性平台软件，如人脸抓拍机..."
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "计算机视觉技术",
+      "evidence_span": "长期从事于计算机视觉（图像及文字识别、生物特征识别）..."
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "自然语言理解技术",
+      "evidence_span": "长期从事于计算机视觉...自然语言理解、智能人机交互技术的研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "智能人机交互技术",
+      "evidence_span": "长期从事于计算机视觉...自然语言理解、智能人机交互技术的研究"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "手写识别技术",
+      "evidence_span": "汉王制造手写识别技术成功授权微软"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "无线无源电磁触控技术",
+      "evidence_span": "获得了无线无源专利技术，成为当时全球拥有此技术的两家公司之一"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "OCR技术",
+      "evidence_span": "汉王OCR技术获得国家科技进步二等奖"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "笔触控与轨迹识别技术",
+      "evidence_span": "公司核心技术之一笔触控与轨迹识别技术"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电磁触控技术",
+      "evidence_span": "主要分为电磁触控技术、电容触控技术两个核心方向"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电容触控技术",
+      "evidence_span": "主要分为电磁触控技术、电容触控技术两个核心方向"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "人脸识别技术",
+      "evidence_span": "人脸识别技术将应用到金砖峰会"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "戴口罩人脸识别",
+      "evidence_span": "快速实现戴口罩人脸识别并进行商业化推广"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "微软",
+      "evidence_span": "汉王制造手写识别技术成功授权微软"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "建行",
+      "evidence_span": "OCR票据识别系统相继应用于建行、浦发银行等金融行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浦发银行",
+      "evidence_span": "OCR票据识别系统相继应用于建行、浦发银行等金融行业"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "众多车企",
+      "evidence_span": "成为众多车企的人机智能交互技术提供商"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国第一历史档案馆",
+      "evidence_span": "已积累中国第一历史档案馆、故宫博物院、国家图书馆等..."
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "故宫博物院",
+      "evidence_span": "已积累中国第一历史档案馆、故宫博物院、国家图书馆等..."
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国家图书馆",
+      "evidence_span": "已积累中国第一历史档案馆、故宫博物院、国家图书馆等..."
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "协和医院",
+      "evidence_span": "已积累了包括协和医院、解放军301总医院、同仁医院等..."
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "解放军301总医院",
+      "evidence_span": "已积累了包括协和医院、解放军301总医院、同仁医院等..."
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "同仁医院",
+      "evidence_span": "已积累了包括协和医院、解放军301总医院、同仁医院等..."
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内银行和运营商80%左右的无纸化签批市场",
+      "evidence_span": "覆盖了国内银行和运营商80%左右的无纸化签批市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亚马逊",
+      "evidence_span": "通过亚马逊、eBay等海外电商平台销往海外60多个国家和地区"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "eBay",
+      "evidence_span": "通过亚马逊、eBay等海外电商平台销往海外60多个国家和地区"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内知名手机厂商",
+      "evidence_span": "为国内知名手机厂商、微软、索尼、传音等企业提供产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "索尼",
+      "evidence_span": "为国内知名手机厂商、微软、索尼、传音等企业提供产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "传音",
+      "evidence_span": "为国内知名手机厂商、微软、索尼、传音等企业提供产品"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华西医院",
+      "evidence_span": "在协和医院、华西医院在内的顶级医疗机构"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "北京、天津两市的三级法院系统",
+      "evidence_span": "北京、天津两市的三级法院系统"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "国内五大行",
+      "evidence_span": "国内五大行"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "中国农业银行",
+      "evidence_span": "相关技术及产品在北京鸟巢金色大厅、中国农业银行..."
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "人工智能",
+      "evidence_span": "国内人工智能产业的先行者"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产化平台适配",
+      "evidence_span": "已完成国产化平台适配"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "大数据与服务业务",
+        "evidence_span": "主营业务分为大数据与服务业务、人脸及生物特征识别业务..."
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "人脸及生物特征识别业务",
+        "evidence_span": "主营业务分为大数据与服务业务、人脸及生物特征识别业务..."
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "笔智能交互业务",
+        "evidence_span": "主营业务分为大数据与服务业务、人脸及生物特征识别业务..."
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能终端产品",
+        "evidence_span": "主营业务分为大数据与服务业务、人脸及生物特征识别业务..."
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "人工智能领域内创新型高科技公司",
+        "evidence_span": "汉王科技是人工智能领域内创新型高科技公司"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "计算机视觉、大数据、智能交互的技术、产品及服务提供商",
+        "evidence_span": "是业内领先的计算机视觉、大数据、智能交互的技术..."
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "笔智能交互领域的引领者",
+        "evidence_span": "在笔智能交互业务领域，公司是笔智能交互领域的引领者"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "老牌OCR技术龙头",
+        "evidence_span": "汉王作为老牌OCR技术龙头"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "全球第一家做出嵌入式人脸识别智能终端的企业",
+        "evidence_span": "汉王是全球第一家做出嵌入式人脸识别智能终端的企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "e典笔",
+        "evidence_span": "通用产品，如e典笔、汉王电纸书、汉王笔..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汉王电纸书",
+        "evidence_span": "通用产品，如e典笔、汉王电纸书、汉王笔..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "汉王笔",
+        "evidence_span": "通用产品，如e典笔、汉王电纸书、汉王笔..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "文本王",
+        "evidence_span": "通用产品，如e典笔、汉王电纸书、汉王笔..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "名片通",
+        "evidence_span": "通用产品，如e典笔、汉王电纸书、汉王笔..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绘图板",
+        "evidence_span": "通用产品，如e典笔、汉王电纸书、汉王笔..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "文表识别解决方案",
+        "evidence_span": "针对教育、金融等行业应用的文表识别解决方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手写手机",
+        "evidence_span": "手写手机、OCR等多种技术授权方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "OCR技术授权方案",
+        "evidence_span": "手写手机、OCR等多种技术授权方案"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "证照识别硬件产品",
+        "evidence_span": "辅助方案实施的硬件产品，如证照识别等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "红外人脸产品",
+        "evidence_span": "主要产品包括红外人脸产品、人证核验终端..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人证核验终端",
+        "evidence_span": "主要产品包括红外人脸产品、人证核验终端..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人脸识别终端",
+        "evidence_span": "主要产品包括红外人脸产品、人证核验终端..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人脸仪",
+        "evidence_span": "主要产品包括红外人脸产品、人证核验终端..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数字绘画产品",
+        "evidence_span": "数字绘画产品、无纸化签批、智能终端配套电容笔..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "无纸化签批",
+        "evidence_span": "数字绘画产品、无纸化签批、智能终端配套电容笔..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "智能终端配套电容笔",
+        "evidence_span": "数字绘画产品、无纸化签批、智能终端配套电容笔..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手写板",
+        "evidence_span": "数字绘画产品、无纸化签批、智能终端配套电容笔..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "手写签批屏",
+        "evidence_span": "无纸化签批产品如手写签批屏、触控一体机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "触控一体机",
+        "evidence_span": "无纸化签批产品如手写签批屏、触控一体机等"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绘画板",
+        "evidence_span": "数字绘画产品如绘画板、绘画屏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "绘画屏",
+        "evidence_span": "数字绘画产品如绘画板、绘画屏"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数位板",
+        "evidence_span": "主要产品包括数位板、数位屏、官方配件和数码办公类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "数位屏",
+        "evidence_span": "主要产品包括数位板、数位屏、官方配件和数码办公类"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "人脸抓拍机",
+        "evidence_span": "人脸识别产品及通用性平台软件，如人脸抓拍机..."
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "扬尘监测",
+        "evidence_span": "人脸识别产品及通用性平台软件，如人脸抓拍机..."
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "计算机视觉技术",
+        "evidence_span": "长期从事于计算机视觉（图像及文字识别、生物特征识别）..."
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "自然语言理解技术",
+        "evidence_span": "长期从事于计算机视觉...自然语言理解、智能人机交互技术的研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "智能人机交互技术",
+        "evidence_span": "长期从事于计算机视觉...自然语言理解、智能人机交互技术的研究"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "手写识别技术",
+        "evidence_span": "汉王制造手写识别技术成功授权微软"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "无线无源电磁触控技术",
+        "evidence_span": "获得了无线无源专利技术，成为当时全球拥有此技术的两家公司之一"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "OCR技术",
+        "evidence_span": "汉王OCR技术获得国家科技进步二等奖"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "笔触控与轨迹识别技术",
+        "evidence_span": "公司核心技术之一笔触控与轨迹识别技术"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电磁触控技术",
+        "evidence_span": "主要分为电磁触控技术、电容触控技术两个核心方向"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电容触控技术",
+        "evidence_span": "主要分为电磁触控技术、电容触控技术两个核心方向"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "人脸识别技术",
+        "evidence_span": "人脸识别技术将应用到金砖峰会"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "戴口罩人脸识别",
+        "evidence_span": "快速实现戴口罩人脸识别并进行商业化推广"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "微软",
+        "evidence_span": "汉王制造手写识别技术成功授权微软"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "建行",
+        "evidence_span": "OCR票据识别系统相继应用于建行、浦发银行等金融行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浦发银行",
+        "evidence_span": "OCR票据识别系统相继应用于建行、浦发银行等金融行业"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "众多车企",
+        "evidence_span": "成为众多车企的人机智能交互技术提供商"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国第一历史档案馆",
+        "evidence_span": "已积累中国第一历史档案馆、故宫博物院、国家图书馆等..."
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "故宫博物院",
+        "evidence_span": "已积累中国第一历史档案馆、故宫博物院、国家图书馆等..."
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国家图书馆",
+        "evidence_span": "已积累中国第一历史档案馆、故宫博物院、国家图书馆等..."
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "协和医院",
+        "evidence_span": "已积累了包括协和医院、解放军301总医院、同仁医院等..."
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "解放军301总医院",
+        "evidence_span": "已积累了包括协和医院、解放军301总医院、同仁医院等..."
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "同仁医院",
+        "evidence_span": "已积累了包括协和医院、解放军301总医院、同仁医院等..."
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内银行和运营商80%左右的无纸化签批市场",
+        "evidence_span": "覆盖了国内银行和运营商80%左右的无纸化签批市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亚马逊",
+        "evidence_span": "通过亚马逊、eBay等海外电商平台销往海外60多个国家和地区"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "eBay",
+        "evidence_span": "通过亚马逊、eBay等海外电商平台销往海外60多个国家和地区"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内知名手机厂商",
+        "evidence_span": "为国内知名手机厂商、微软、索尼、传音等企业提供产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "索尼",
+        "evidence_span": "为国内知名手机厂商、微软、索尼、传音等企业提供产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "传音",
+        "evidence_span": "为国内知名手机厂商、微软、索尼、传音等企业提供产品"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华西医院",
+        "evidence_span": "在协和医院、华西医院在内的顶级医疗机构"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "北京、天津两市的三级法院系统",
+        "evidence_span": "北京、天津两市的三级法院系统"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "国内五大行",
+        "evidence_span": "国内五大行"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "中国农业银行",
+        "evidence_span": "相关技术及产品在北京鸟巢金色大厅、中国农业银行..."
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "人工智能",
+        "evidence_span": "国内人工智能产业的先行者"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产化平台适配",
+        "evidence_span": "已完成国产化平台适配"
+      }
+    ]
+  },
+  "cached_at": "2026-03-14T13:09:20",
+  "fact_count": 70
+}

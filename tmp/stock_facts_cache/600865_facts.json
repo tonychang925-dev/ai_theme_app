@@ -1,0 +1,119 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "商品零售",
+      "evidence_span": "公司主营业务为商品零售"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "百货商场",
+      "evidence_span": "主要业态为百货商场"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物业租赁",
+      "evidence_span": "其他业务包括物业租赁"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "物业服务",
+      "evidence_span": "其他业务包括...物业服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "文化产业",
+      "evidence_span": "其他业务包括...文化产业等"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "综合性集团公司",
+      "evidence_span": "集百货业、酒店业、旅游业等为一体的综合性集团公司"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "百货商场",
+      "evidence_span": "主要业态为百货商场"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "杭州百货大楼",
+      "evidence_span": "拥有杭州百货大楼一家门店"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "杭州收藏品市场",
+      "evidence_span": "公司自行经营管理杭州收藏品市场"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "浙江银泰百货有限公司",
+      "evidence_span": "公司将杭州百货大楼等百货业资产委托给浙江银泰百货有限公司经营管理"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "杭州市停车产业股份有限公司",
+      "evidence_span": "最终引入杭州市停车产业股份有限公司"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "商品零售",
+        "evidence_span": "公司主营业务为商品零售"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "百货商场",
+        "evidence_span": "主要业态为百货商场"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物业租赁",
+        "evidence_span": "其他业务包括物业租赁"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "物业服务",
+        "evidence_span": "其他业务包括...物业服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "文化产业",
+        "evidence_span": "其他业务包括...文化产业等"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "综合性集团公司",
+        "evidence_span": "集百货业、酒店业、旅游业等为一体的综合性集团公司"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "百货商场",
+        "evidence_span": "主要业态为百货商场"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "杭州百货大楼",
+        "evidence_span": "拥有杭州百货大楼一家门店"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "杭州收藏品市场",
+        "evidence_span": "公司自行经营管理杭州收藏品市场"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "浙江银泰百货有限公司",
+        "evidence_span": "公司将杭州百货大楼等百货业资产委托给浙江银泰百货有限公司经营管理"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "杭州市停车产业股份有限公司",
+        "evidence_span": "最终引入杭州市停车产业股份有限公司"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T06:40:40"
+}

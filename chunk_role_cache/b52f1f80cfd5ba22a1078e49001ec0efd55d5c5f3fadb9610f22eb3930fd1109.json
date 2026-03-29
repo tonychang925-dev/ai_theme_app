@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_3", "model": "deepseek-chat", "timestamp": "2026-03-08T09:33:12", "result": {"chunk_id": "74431937fb8f", "label": "pure_event", "confidence": 0.9, "ontology_value": "low", "reason": "该段落描述长鑫存储启动上市辅导的具体事件，包括公司背景信息，但主要是事件性内容，无半导体设备的静态知识。"}}

@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v4_1_0_semantic_final", "model": "deepseek-chat", "timestamp": "2026-03-10T14:51:28", "result": {"span_uid": "0454648e4ec1", "action": "drop", "canonical_text": "", "final_type": "signal", "final_role": "技术创新平台进展", "stability": "low", "reason": "原文仅为具体平台名称提及，缺乏对半导体技术或产业的实质性知识描述，无法形成有效知识块。"}}

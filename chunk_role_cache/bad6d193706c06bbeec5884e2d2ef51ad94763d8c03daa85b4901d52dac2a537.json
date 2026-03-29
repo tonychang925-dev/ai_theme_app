@@ -1,0 +1,1 @@
+{"prompt_version": "chunk_role_v9_6_final_core_tighten_2", "model": "deepseek-chat", "timestamp": "2026-03-08T11:54:47", "result": {"chunk_id": "913144d7f932", "label": "pure_event", "confidence": 0.85, "ontology_value": "low", "reason": "该段落描述美国国际贸易委员会的终裁事件，包括侵权认定、排除令和保证金等具体措施，属于法律或监管动态，无题材本体知识。"}}

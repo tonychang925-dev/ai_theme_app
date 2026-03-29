@@ -1,0 +1,294 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "锂电池检测系统",
+      "evidence_span": "一家以锂电池检测系统为核心的智能制造解决方案供应商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "智能制造解决方案",
+      "evidence_span": "一家以锂电池检测系统为核心的智能制造解决方案供应商"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "储能",
+      "evidence_span": "着重加强储能及充电桩领域布局"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "充电桩领域",
+      "evidence_span": "着重加强储能及充电桩领域布局"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电后段设备供应商",
+      "evidence_span": "星云股份国内领先的锂电后段设备供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "锂电池检测设备领先企业",
+      "evidence_span": "星云股份锂电池检测设备领先企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池保护板检测系统",
+      "evidence_span": "锂电池保护板检测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池成品检测系统",
+      "evidence_span": "锂电池成品检测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池组BMS检测系统",
+      "evidence_span": "锂电池组BMS检测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池组充放电检测系统",
+      "evidence_span": "锂电池组充放电检测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池组工况模拟检测系统",
+      "evidence_span": "锂电池组工况模拟检测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "锂电池组自动化组装系统",
+      "evidence_span": "锂电池组自动化组装系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "动力电池模组/电池组EOL检测系统",
+      "evidence_span": "动力电池模组/电池组EOL检测系统"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "一体式车载直流充电机",
+      "evidence_span": "一体式车载直流充电机"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "储能智能变流器",
+      "evidence_span": "储能智能变流器"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "电池仿真及过程测试",
+      "evidence_span": "以电池仿真及过程测试、生产制造执行系统（MES）为核心"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "生产制造执行系统（MES）",
+      "evidence_span": "以电池仿真及过程测试、生产制造执行系统（MES）为核心"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "华为",
+      "evidence_span": "华为"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "苹果OEM/ODM",
+      "evidence_span": "苹果OEM/ODM"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "三星",
+      "evidence_span": "三星"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "LG",
+      "evidence_span": "LG"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "松下",
+      "evidence_span": "松下"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "福特",
+      "evidence_span": "福特"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "一汽大众",
+      "evidence_span": "一汽大众"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "比亚迪",
+      "evidence_span": "比亚迪"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "宁德时代",
+      "evidence_span": "宁德时代"
+    },
+    {
+      "fact_type": "customer",
+      "fact_value": "亿纬锂能",
+      "evidence_span": "亿纬锂能"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "储能",
+      "evidence_span": "储能及充电桩业务注入新动能"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "新能源",
+      "evidence_span": "迎新能源和储能双轮驱动"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "锂电池检测系统",
+        "evidence_span": "一家以锂电池检测系统为核心的智能制造解决方案供应商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "智能制造解决方案",
+        "evidence_span": "一家以锂电池检测系统为核心的智能制造解决方案供应商"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "储能及充电桩领域",
+        "evidence_span": "着重加强储能及充电桩领域布局"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电后段设备供应商",
+        "evidence_span": "星云股份国内领先的锂电后段设备供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "锂电池检测设备领先企业",
+        "evidence_span": "星云股份锂电池检测设备领先企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池保护板检测系统",
+        "evidence_span": "锂电池保护板检测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池成品检测系统",
+        "evidence_span": "锂电池成品检测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池组BMS检测系统",
+        "evidence_span": "锂电池组BMS检测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池组充放电检测系统",
+        "evidence_span": "锂电池组充放电检测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池组工况模拟检测系统",
+        "evidence_span": "锂电池组工况模拟检测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "锂电池组自动化组装系统",
+        "evidence_span": "锂电池组自动化组装系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "动力电池模组/电池组EOL检测系统",
+        "evidence_span": "动力电池模组/电池组EOL检测系统"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "一体式车载直流充电机",
+        "evidence_span": "一体式车载直流充电机"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "储能智能变流器",
+        "evidence_span": "储能智能变流器"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "电池仿真及过程测试",
+        "evidence_span": "以电池仿真及过程测试、生产制造执行系统（MES）为核心"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "生产制造执行系统（MES）",
+        "evidence_span": "以电池仿真及过程测试、生产制造执行系统（MES）为核心"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "华为",
+        "evidence_span": "华为"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "苹果OEM/ODM",
+        "evidence_span": "苹果OEM/ODM"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "三星",
+        "evidence_span": "三星"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "LG",
+        "evidence_span": "LG"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "松下",
+        "evidence_span": "松下"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "福特",
+        "evidence_span": "福特"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "一汽大众",
+        "evidence_span": "一汽大众"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "比亚迪",
+        "evidence_span": "比亚迪"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "宁德时代",
+        "evidence_span": "宁德时代"
+      },
+      {
+        "fact_type": "customer",
+        "fact_value": "亿纬锂能",
+        "evidence_span": "亿纬锂能"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "储能",
+        "evidence_span": "储能及充电桩业务注入新动能"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "新能源",
+        "evidence_span": "迎新能源和储能双轮驱动"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T00:41:15"
+}

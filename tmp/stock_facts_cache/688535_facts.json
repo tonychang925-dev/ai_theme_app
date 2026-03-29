@@ -1,0 +1,159 @@
+{
+  "facts": [
+    {
+      "fact_type": "main_business",
+      "fact_value": "半导体封装材料",
+      "evidence_span": "专业从事半导体器件、集成电路、特种器件、LED 支架等电子封装材料的研发、生产、销售和技术服务"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "环氧塑封料",
+      "evidence_span": "公司产品以环氧塑封材料为主"
+    },
+    {
+      "fact_type": "main_business",
+      "fact_value": "电子胶黏剂",
+      "evidence_span": "电子胶黏剂为辅"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "内资半导体封装材料厂商",
+      "evidence_span": "国内极少数同时布局FC底填胶与液态塑封料的内资半导体封装材料厂商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "半导体封装材料供应商",
+      "evidence_span": "国内半导体封装领域知名度较高、产品系列齐全、技术水平领先的专业封装材料供应商"
+    },
+    {
+      "fact_type": "industry_role",
+      "fact_value": "内资半导体环氧塑封料领先企业",
+      "evidence_span": "内资半导体环氧塑封料领先企业"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "环氧塑封料",
+      "evidence_span": "公司产品以环氧塑封材料为主"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "电子胶黏剂",
+      "evidence_span": "电子胶黏剂为辅"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "FC底填胶",
+      "evidence_span": "布局FC底填胶"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "液态塑封料",
+      "evidence_span": "布局液态塑封料"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "GMC",
+      "evidence_span": "布局GMC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "LMC",
+      "evidence_span": "布局LMC"
+    },
+    {
+      "fact_type": "product",
+      "fact_value": "底填",
+      "evidence_span": "布局底填"
+    },
+    {
+      "fact_type": "technology",
+      "fact_value": "环氧塑封料技术",
+      "evidence_span": "在环氧塑封料领域的技术积累和创新研发实力"
+    },
+    {
+      "fact_type": "benefit_logic",
+      "fact_value": "国产替代",
+      "evidence_span": "展现出强劲的市场竞争力和国产替代潜力"
+    }
+  ],
+  "raw_response": {
+    "facts": [
+      {
+        "fact_type": "main_business",
+        "fact_value": "半导体封装材料",
+        "evidence_span": "专业从事半导体器件、集成电路、特种器件、LED 支架等电子封装材料的研发、生产、销售和技术服务"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "环氧塑封料",
+        "evidence_span": "公司产品以环氧塑封材料为主"
+      },
+      {
+        "fact_type": "main_business",
+        "fact_value": "电子胶黏剂",
+        "evidence_span": "电子胶黏剂为辅"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "内资半导体封装材料厂商",
+        "evidence_span": "国内极少数同时布局FC底填胶与液态塑封料的内资半导体封装材料厂商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "半导体封装材料供应商",
+        "evidence_span": "国内半导体封装领域知名度较高、产品系列齐全、技术水平领先的专业封装材料供应商"
+      },
+      {
+        "fact_type": "industry_role",
+        "fact_value": "内资半导体环氧塑封料领先企业",
+        "evidence_span": "内资半导体环氧塑封料领先企业"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "环氧塑封料",
+        "evidence_span": "公司产品以环氧塑封材料为主"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "电子胶黏剂",
+        "evidence_span": "电子胶黏剂为辅"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "FC底填胶",
+        "evidence_span": "布局FC底填胶"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "液态塑封料",
+        "evidence_span": "布局液态塑封料"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "GMC",
+        "evidence_span": "布局GMC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "LMC",
+        "evidence_span": "布局LMC"
+      },
+      {
+        "fact_type": "product",
+        "fact_value": "底填",
+        "evidence_span": "布局底填"
+      },
+      {
+        "fact_type": "technology",
+        "fact_value": "环氧塑封料技术",
+        "evidence_span": "在环氧塑封料领域的技术积累和创新研发实力"
+      },
+      {
+        "fact_type": "benefit_logic",
+        "fact_value": "国产替代",
+        "evidence_span": "展现出强劲的市场竞争力和国产替代潜力"
+      }
+    ]
+  },
+  "cached_at": "2026-03-13T13:43:53"
+}
